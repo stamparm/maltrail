@@ -17,12 +17,12 @@ Options:
   --version     show program's version number and exit
   -h, --help    show this help message and exit
   -i INTERFACE  listen DNS traffic on interface (e.g. eth0)
-  -l LIST_FILE  custom domain list file (optional)
+  -l CUSTOM     custom domain list file (optional)
 ```
 
 ```
 $ sudo python dnscrutinize.py -i eth0
-DNScrutinize #v0.1b
+DNScrutinize #v0.1c
  by: Miroslav Stampar (@stamparm)
 
 [i] loading...
