@@ -1,6 +1,6 @@
 import logging, pickle, optparse, os, re, socket, subprocess, tempfile, time, urllib2, zipfile, zlib
 
-NAME, VERSION, AUTHOR, LICENSE = "DNScrutinize", "0.1b", "Miroslav Stampar (@stamparm)", "Public domain (FREE)"
+NAME, VERSION, AUTHOR, LICENSE = "DNScrutinize", "0.1c", "Miroslav Stampar (@stamparm)", "Public domain (FREE)"
 
 try:
     logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
@@ -100,7 +100,7 @@ def inspect_dns(interface):
 
     try:
         print "[i] inspecting DNS traffic...\n"
-        _ = OUTPUT_FORMAT.format("source", "datetime", "domain", "type", "list")
+        _ = OUTPUT_FORMAT.format("source", "datetime", "domain", "type", "reference")
         print "%s\n%s\n%s" % ("-" * len(_), _, "-" * len(_))
         sniff(iface=interface, prn=sniff_callback, filter="udp dst port 53", store=0)
     except KeyboardInterrupt:
