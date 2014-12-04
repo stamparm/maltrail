@@ -3,6 +3,9 @@ DNScrutinize
 
 **DNScrutinize** is a passive DNS monitoring tool specially designed for malware traffic detection, utilizing publicly available lists for malicious (or generally suspicious) domains: [MDL](http://www.malwaredomainlist.com/hostslist/hosts.txt), [MalwareDomains](http://malwaredomains.lehigh.edu/files/domains.txt) and [abuse.ch](https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist). Preferably it should be run on a box connected to the router's [port mirroring](http://en.wikipedia.org/wiki/Port_mirroring) interface. It uses [Scapy](http://www.secdev.org/projects/scapy/) for sniffing functionality which means that you can expect decent performance.
 
+Sample runs
+----
+
 ```
 $ python dnscrutinize.py -h
 DNScrutinize #v0.1b
