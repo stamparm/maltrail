@@ -1,6 +1,8 @@
 DNScrutinize
 ============
 
+DNScrutinize is a passive DNS traffic analyzer specially designed for malware detection.
+
 ```
 $ python dnscrutinize.py -h
 DNScrutinize #v0.1b
