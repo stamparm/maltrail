@@ -1,7 +1,7 @@
 DNScrutinize
 ============
 
-DNScrutinize is a passive DNS traffic analyzer specially designed for malware detection. It uses specialized lists containing malicious domains: [MDL](http://www.malwaredomainlist.com/hostslist/hosts.txt), [MalwareDomains](http://malwaredomains.lehigh.edu/files/domains.txt) and [abuse.ch](https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist).
+**DNScrutinize** is a passive DNS monitoring tool specially designed for malware detection. It uses specialized lists containing malicious domains: [MDL](http://www.malwaredomainlist.com/hostslist/hosts.txt), [MalwareDomains](http://malwaredomains.lehigh.edu/files/domains.txt) and [abuse.ch](https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist).
 
 ```
 $ python dnscrutinize.py -h
