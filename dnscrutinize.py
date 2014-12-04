@@ -1,6 +1,6 @@
 import logging, pickle, optparse, os, re, socket, subprocess, tempfile, time, urllib2, zipfile, zlib
 
-NAME, VERSION, AUTHOR, LICENSE = "DNScrutinize", "0.1c", "Miroslav Stampar (@stamparm)", "Public domain (FREE)"
+NAME, VERSION, AUTHOR, LICENSE = "DNScrutinize", "0.1d", "Miroslav Stampar (@stamparm)", "Public domain (FREE)"
 
 try:
     logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
@@ -75,8 +75,11 @@ def load_domains(list_file=None):
             if items[0] == "127.0.0.1" and items[1] != "localhost":
                 _domains[items[1]] = ("malware", "MDL")
 
-        with open(DOMAINS_FILE, "w+b") as f:
-            f.write(zlib.compress(pickle.dumps(_domains)))
+        try:
+            with open(DOMAINS_FILE, "w+b") as f:
+                f.write(zlib.compress(pickle.dumps(_domains)))
+        except IOError, ex:
+            print "[!] something went wrong during domains file write ('%s')" % ex
 
     if not _domains:
         print "[i] loading..."
