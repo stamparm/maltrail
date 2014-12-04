@@ -2,7 +2,7 @@ DNScrutinize
 ============
 
 ```
-$ python .\dnscrutinize.py -h
+$ python dnscrutinize.py -h
 DNScrutinize #v0.1b
  by: Miroslav Stampar (@stamparm)
 
