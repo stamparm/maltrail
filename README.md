@@ -33,9 +33,9 @@ DNScrutinize #v0.1d
 |     source     |     datetime      |                 domain                 |     type      |     reference      |
 --------------------------------------------------------------------------------------------------------------------
 | 192.168.0.103  | 05/12/14 00:16:38 |        qberkwtglfmswhwkhmdh.com        |   pwnedlist   |   pwnedlist.com    |
-| 192.168.0.103  | 05/12/14 00:16:51 |              dajiadai.cn               |    malware    |app.webinspector.com|
+| 192.168.0.104  | 05/12/14 00:16:51 |              dajiadai.cn               |    malware    |app.webinspector.com|
 | 192.168.0.103  | 05/12/14 00:17:40 |              com-vt6.net               |    botnet     | www.spamhaus.org   |
-| 192.168.0.103  | 05/12/14 00:18:17 |             www.255668.com             |   malicious   |  www.mwsl.org.cn   |
+| 192.168.0.106  | 05/12/14 00:18:17 |             www.255668.com             |   malicious   |  www.mwsl.org.cn   |
 ...
 ```
 
