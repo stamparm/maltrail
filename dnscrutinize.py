@@ -120,7 +120,7 @@ if __name__ == "__main__":
     print "%s #v%s\n by: %s\n" % (NAME, VERSION, AUTHOR)
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-i", dest="interface", help="listen DNS traffic on interface (e.g. eth0)")
-    parser.add_option("-l", dest="custom", help="custom domain list file (optional)")
+    parser.add_option("-l", dest="custom", help="custom malware domains list file (optional)")
     options, _ = parser.parse_args()
     if options.interface:
         load_domains(options.custom)
