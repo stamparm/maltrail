@@ -8,7 +8,7 @@ Sample runs
 
 ```
 $ python dnscrutinize.py -h
-DNScrutinize #v0.1c
+DNScrutinize #v0.1d
  by: Miroslav Stampar (@stamparm)
 
 Usage: dnscrutinize.py [options]
@@ -17,12 +17,12 @@ Options:
   --version     show program's version number and exit
   -h, --help    show this help message and exit
   -i INTERFACE  listen DNS traffic on interface (e.g. eth0)
-  -l CUSTOM     custom domain list file (optional)
+  -l CUSTOM     custom malware domains list file (optional)
 ```
 
 ```
 $ sudo python dnscrutinize.py -i eth0
-DNScrutinize #v0.1c
+DNScrutinize #v0.1d
  by: Miroslav Stampar (@stamparm)
 
 [i] loading...
