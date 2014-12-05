@@ -85,7 +85,7 @@ def load_domains(list_file=None):
     global _domains
 
     if list_file:
-        content = open(list_file)
+        content = open(list_file, "rb").read()
         for line in content.split('\n'):
             line = line.strip()
             if not line or line.startswith('#'):
@@ -173,11 +173,11 @@ if __name__ == "__main__":
     print "%s #v%s\n by: %s\n" % (NAME, VERSION, AUTHOR)
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-i", dest="interface", help="listen DNS traffic on interface (e.g. eth0)")
-    parser.add_option("-l", dest="custom", help="custom domain list file (optional)")
+    parser.add_option("-l", dest="load", help="load domain list from file (optional)")
     options, _ = parser.parse_args()
     if options.interface:
         _check_sudo()
-        load_domains(options.custom)
+        load_domains(options.load)
         inspect_dns(options.interface)
     else:
         parser.print_help()
