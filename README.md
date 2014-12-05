@@ -8,7 +8,7 @@ Sample runs
 
 ```
 $ python dnscrutinize.py -h
-DNScrutinize #v0.1d
+DNScrutinize #v0.1e
  by: Miroslav Stampar (@stamparm)
 
 Usage: dnscrutinize.py [options]
@@ -22,20 +22,24 @@ Options:
 
 ```
 $ sudo python dnscrutinize.py -i eth0
-DNScrutinize #v0.1d
+DNScrutinize #v0.1e
  by: Miroslav Stampar (@stamparm)
 
-[i] loading...
-[i] 20135 suspicious domain names loaded
+[i] retrieving domain lists...
+ [o] 'https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist'
+ [o] 'http://malwaredomains.lehigh.edu/files/domains.txt'
+ [o] 'http://www.malwaredomainlist.com/hostslist/hosts.txt'
+[i] 20340 suspicious domain names loaded
 [i] inspecting DNS traffic...
 
---------------------------------------------------------------------------------------------------------------------
-|     source     |     datetime      |                 domain                 |     type      |     reference      |
---------------------------------------------------------------------------------------------------------------------
-| 192.168.0.103  | 05/12/14 00:16:38 |        qberkwtglfmswhwkhmdh.com        |   pwnedlist   |   pwnedlist.com    |
-| 192.168.0.104  | 05/12/14 00:16:51 |              dajiadai.cn               |    malware    |app.webinspector.com|
-| 192.168.0.103  | 05/12/14 00:17:40 |              com-vt6.net               |    botnet     | www.spamhaus.org   |
-| 192.168.0.106  | 05/12/14 00:18:17 |             www.255668.com             |   malicious   |  www.mwsl.org.cn   |
+-----------------------------------------------------------------------------------------------------------------
+|      ip       |             domain lookup              |      time       |     type      |     reference      |
+-----------------------------------------------------------------------------------------------------------------
+| 192.168.1.13  |                4btc.cc                 |05/12/14 10:57:46|     zeus      |zeustracker.abuse.ch|
+| 192.168.1.13  |        qberkwtglfmswhwkhmdh.com        |05/12/14 10:58:40|   pwnedlist   |   pwnedlist.com    |
+| 192.168.1.13  |              dajiadai.cn               |05/12/14 10:58:46|    malware    |app.webinspector.com|
+| 192.168.1.13  |             www.255668.com             |05/12/14 10:58:53|   malicious   |  www.mwsl.org.cn   |
+
 ...
 ```
 
