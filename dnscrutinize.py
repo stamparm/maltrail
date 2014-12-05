@@ -10,7 +10,7 @@ except ImportError:
     exit("[!] please install Scapy (e.g. '%s')" % ("sudo apt-get install scapy" if not subprocess.mswindows else "http://www.secdev.org/projects/scapy/doc/installation.html#windows"))
 
 TIMEOUT = 30
-FRESH_LISTS_DELTA_DAYS = 2
+FRESH_LISTS_DELTA_DAYS = 1
 DOMAINS_FILE = "domains.bin"
 OUTPUT_FORMAT = "|{0:^15s}|{1:^40s}|{2:^17s}|{3:^15s}|{4:^20s}|"
 
@@ -135,7 +135,7 @@ def load_domains(list_file=None):
             f.write(zlib.compress(pickle.dumps(_domains)))
 
     if not _domains:
-        print "[i] loading..."
+        print "[i] loading cache..."
         with open(DOMAINS_FILE, "rb") as f:
             _domains = pickle.loads(zlib.decompress(f.read()))
 
