@@ -1,6 +1,6 @@
-import logging, pickle, optparse, os, re, socket, subprocess, tempfile, time, urllib2, zipfile, zlib
+import logging, pickle, optparse, os, re, socket, subprocess, sys, tempfile, time, traceback, urllib2, zipfile, zlib
 
-NAME, VERSION, AUTHOR, LICENSE = "DNScrutinize", "0.1e", "Miroslav Stampar (@stamparm)", "Public domain (FREE)"
+NAME, VERSION, AUTHOR, LICENSE = "DNScrutinize", "0.1f", "Miroslav Stampar (@stamparm)", "Public domain (FREE)"
 
 try:
     logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
@@ -9,8 +9,9 @@ try:
 except ImportError:
     exit("[!] please install Scapy (e.g. '%s')" % ("sudo apt-get install scapy" if not subprocess.mswindows else "http://www.secdev.org/projects/scapy/doc/installation.html#windows"))
 
+ROTATING_CHARS = ('\\', '|', '|', '/', '-')
 TIMEOUT = 30
-FRESH_LISTS_DELTA_DAYS = 1
+FRESH_LISTS_DELTA_DAYS = 10
 DOMAINS_FILE = "domains.bin"
 OUTPUT_FORMAT = "|{0:^15s}|{1:^40s}|{2:^17s}|{3:^15s}|{4:^20s}|"
 
@@ -18,6 +19,7 @@ MALWAREDOMAINLIST_URL = "http://www.malwaredomainlist.com/hostslist/hosts.txt"
 MALWAREDOMAINS_URL = "http://malwaredomains.lehigh.edu/files/domains.txt"
 ZEUS_ABUSECH_URL = "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist"
 
+_header = None
 _console_width = None
 _domains = {}
 
@@ -81,11 +83,23 @@ def _trim_output(value):
 
     return value[:_console_width]
 
-def load_domains(list_file=None):
+def _print_details(ip, domain_lookup, time, type, reference):
+    global _header
+
+    if not _header:
+        _header = _trim_output(OUTPUT_FORMAT.format("ip", "domain lookup", "time", "type", "reference"))
+        print " \n%s\n%s\n%s" % ("-" * len(_header), _header, "-" * len(_header))
+
+    print _trim_output(OUTPUT_FORMAT.format(ip, domain_lookup, time, type, reference))
+
+def load_domains(bulkfile=None):
     global _domains
 
-    if list_file:
-        content = open(list_file, "rb").read()
+    if bulkfile:
+        if not os.path.isfile(bulkfile):
+            exit("[x] file '%s' does not exist" % bulkfile)
+
+        content = open(bulkfile, "rb").read()
         for line in content.split('\n'):
             line = line.strip()
             if not line or line.startswith('#'):
@@ -131,8 +145,11 @@ def load_domains(list_file=None):
             if items[0] == "127.0.0.1" and items[1] != "localhost":
                 _domains[items[1]] = ("malware", "MDL")
 
-        with open(DOMAINS_FILE, "w+b") as f:
-            f.write(zlib.compress(pickle.dumps(_domains)))
+        try:
+            with open(DOMAINS_FILE, "w+b") as f:
+                f.write(zlib.compress(pickle.dumps(_domains)))
+        except IOError, ex:
+            print "[!] something went wrong during cache file write '%s' ('%s')" % (DOMAINS_FILE, ex)
 
     if not _domains:
         print "[i] loading cache..."
@@ -141,24 +158,24 @@ def load_domains(list_file=None):
 
     print "[i] %d suspicious domain names loaded" % len(_domains)
 
-def inspect_dns(interface):
-    def sniff_callback(packet):
-        if packet.haslayer(DNSQR):
-            request = packet.getlayer(DNSQR)
-            if request.qtype == 1:
-                domain = request.qname.strip('.')
-                parts = domain.split('.')
-                for i in xrange(0, len(parts) - 1):
-                    _ = '.'.join(parts[i:])
-                    if _ in _domains:
-                        print _trim_output(OUTPUT_FORMAT.format(packet.getlayer(IP).src, _, time.strftime("%d/%m/%y %H:%M:%S"), _domains[_][0], _domains[_][1]))
-                        break
+def inspect_packet(packet):
+    retval = False
+    if packet.haslayer(DNSQR) and not packet.haslayer(DNSRR):
+        request = packet.getlayer(DNSQR)
+        if request.qtype == 1:
+            domain = request.qname.strip('.')
+            parts = domain.split('.')
+            for i in xrange(0, len(parts) - 1):
+                _ = '.'.join(parts[i:])
+                if _ in _domains:
+                    retval = True
+                    _print_details(packet.getlayer(IP).src, _, time.strftime("%d/%m/%y %H:%M:%S"), _domains[_][0], _domains[_][1])
+                    break
+    return retval
 
+def monitor_dns(interface):
     try:
-        print "[i] inspecting DNS traffic...\n"
-        _ = _trim_output(OUTPUT_FORMAT.format("ip", "domain lookup", "time", "type", "reference"))
-        print "%s\n%s\n%s" % ("-" * len(_), _, "-" * len(_))
-        sniff(iface=interface, prn=sniff_callback, filter="udp dst port 53", store=0)
+        sniff(iface=interface, prn=inspect_packet, filter="udp dst port 53", store=0)
     except KeyboardInterrupt:
         print "\r[x] Ctrl-C pressed"
     except socket.error, ex:
@@ -173,11 +190,37 @@ if __name__ == "__main__":
     print "%s #v%s\n by: %s\n" % (NAME, VERSION, AUTHOR)
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-i", dest="interface", help="listen DNS traffic on interface (e.g. eth0)")
-    parser.add_option("-l", dest="load", help="load domain list from file (optional)")
+    parser.add_option("-r", dest="pcapfile", help="read packets from (.pcap) file")
+    parser.add_option("-l", dest="bulkfile", help="load domain list from file (optional)")
     options, _ = parser.parse_args()
-    if options.interface:
-        _check_sudo()
-        load_domains(options.load)
-        inspect_dns(options.interface)
+    if any((options.interface, options.pcapfile)):
+        if options.interface:
+            _check_sudo()
+        load_domains(options.bulkfile)
+        print "[i] inspecting DNS traffic..."
+        if options.pcapfile:
+            if not os.path.isfile(options.pcapfile):
+                exit("[x] file '%s' does not exist" % options.pcapfile)
+            found = False
+            try:
+                packets = PcapReader(options.pcapfile)
+            except Exception, ex:
+                if "Not a pcap capture file" in traceback.format_exc():
+                    ex = "Not a pcap capture file"
+                exit("[x] there has been a problem with reading file '%s' ('%s')" % (options.pcapfile, ex))
+
+            count = 0
+            for packet in packets:
+                count += 1
+                sys.stdout.write('%s\r' % ROTATING_CHARS[count % len(ROTATING_CHARS)])
+                sys.stdout.flush()
+                result = inspect_packet(packet)
+                found = found or result
+            if not found:
+                print "[i] no suspicious domain lookups found"
+        elif options.interface:
+            monitor_dns(options.interface)
+        if _header:
+            print "-" * len(_header)
     else:
         parser.print_help()
