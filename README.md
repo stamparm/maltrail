@@ -17,7 +17,8 @@ Options:
   --version     show program's version number and exit
   -h, --help    show this help message and exit
   -i INTERFACE  listen DNS traffic on interface (e.g. eth0)
-  -l LOAD       load domain list from file (optional)
+  -r PCAPFILE   read packets from (.pcap) file
+  -l BULKFILE   load domain list from file (optional)
 ```
 
 ```
