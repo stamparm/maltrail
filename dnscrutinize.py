@@ -69,7 +69,6 @@ def _get_console_width(default=80):
     if width is None:
         try:
             import curses
-
             stdscr = curses.initscr()
             _, width = stdscr.getmaxyx()
             curses.endwin()
@@ -207,7 +206,7 @@ def inspect_packet(packet):
 
 def process_pcap(pcapfile):
     """
-    Reads .pcap file and processes packets from it
+    Reads .pcap file and inspects packets from it
     """
 
     print "[i] reading packets from '%s'..." % pcapfile
@@ -231,13 +230,13 @@ def process_pcap(pcapfile):
 
 def monitor_interface(interface):
     """
-    Sniffs/monitors given interface and processes DNS packets found on it
+    Sniffs/monitors given interface and inspects DNS packets found on it
     """
 
     print "[i] monitoring interface '%s'..." % interface
 
     try:
-        sniff(iface=interface, prn=inspect_packet, filter="udp dst port 53", store=0)
+        sniff(iface=interface if interface.lower() != "any" else None, prn=inspect_packet, filter="udp dst port 53", store=0)
     except KeyboardInterrupt:
         print "\r[x] Ctrl-C pressed"
     except socket.error, ex:
