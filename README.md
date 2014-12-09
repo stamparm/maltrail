@@ -8,7 +8,7 @@ Sample runs
 
 ```
 $ python dnscrutinize.py -h
-DNScrutinize #v0.1e
+DNScrutinize #v0.1h
  by: Miroslav Stampar (@stamparm)
 
 Usage: dnscrutinize.py [options]
@@ -23,15 +23,16 @@ Options:
 
 ```
 $ sudo python dnscrutinize.py -i eth0
-DNScrutinize #v0.1e
+DNScrutinize #v0.1h
  by: Miroslav Stampar (@stamparm)
 
 [i] retrieving domain lists...
- [o] 'https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist'
- [o] 'http://malwaredomains.lehigh.edu/files/domains.txt'
  [o] 'http://www.malwaredomainlist.com/hostslist/hosts.txt'
-[i] 20340 suspicious domain names loaded
-[i] inspecting DNS traffic...
+ [o] 'http://malwaredomains.lehigh.edu/files/domains.txt'
+ [o] 'https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist'
+ [o] 'https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules'
+[i] 20817 suspicious domain names loaded
+[i] monitoring interface 'any'...
 
 -----------------------------------------------------------------------------------------------------------------
 |      ip       |             domain lookup              |      time       |     type      |     reference      |

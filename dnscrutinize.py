@@ -114,6 +114,31 @@ def load_domains(bulkfile=None):
     if not os.path.isfile(DOMAINS_FILE) or (time.time() - os.stat(DOMAINS_FILE).st_mtime) / 3600 / 24 > FRESH_LISTS_DELTA_DAYS:
         print "[i] %s domain lists..." % ("updating" if os.path.isfile(DOMAINS_FILE) else "retrieving")
 
+        print " [o] '%s'" % MALWAREDOMAINLIST_URL
+        content = _retrieve_content(MALWAREDOMAINLIST_URL)
+        if "127.0.0.1" not in content:
+            print "[!] something went wrong during remote data retrieval ('%s')" % MALWAREDOMAINLIST_URL
+
+        for line in content.split('\n'):
+            line = line.strip('\r')
+            if not line or line.startswith('#'):
+                continue
+            items = line.split('\s+')
+            if items[0] == "127.0.0.1" and items[1] != "localhost":
+                _domains[items[1]] = ("malware", "MDL")
+
+        print " [o] '%s'" % MALWAREDOMAINS_URL
+        content = _retrieve_content(MALWAREDOMAINS_URL)
+        if "safebrowsing.clients.google.com" not in content:
+            print "[!] something went wrong during remote data retrieval ('%s')" % MALWAREDOMAINS_URL
+
+        for line in content.split('\n'):
+            line = line.strip('\r')
+            if not line or line.startswith('#'):
+                continue
+            items = line.split('\t')
+            _domains[items[2]] = (items[3], items[4].split('/')[0] if '/' in items[4] else items[4])   # (type, original_reference-why_it_was_listed)
+
         print " [o] '%s'" % ZEUS_ABUSECH_URL
         content = _retrieve_content(ZEUS_ABUSECH_URL)
         if "ZeuS" not in content:
@@ -135,31 +160,6 @@ def load_domains(bulkfile=None):
 
         for match in re.finditer(r"(?i)C2 Domain \.?([^\s\"]+)", content):
             _domains[match.group(1)] = ("C&C", "emergingthreats.net")
-
-        print " [o] '%s'" % MALWAREDOMAINS_URL
-        content = _retrieve_content(MALWAREDOMAINS_URL)
-        if "safebrowsing.clients.google.com" not in content:
-            print "[!] something went wrong during remote data retrieval ('%s')" % MALWAREDOMAINS_URL
-
-        for line in content.split('\n'):
-            line = line.strip('\r')
-            if not line or line.startswith('#'):
-                continue
-            items = line.split('\t')
-            _domains[items[2]] = (items[3], items[4].split('/')[0] if '/' in items[4] else items[4])   # (type, original_reference-why_it_was_listed)
-
-        print " [o] '%s'" % MALWAREDOMAINLIST_URL
-        content = _retrieve_content(MALWAREDOMAINLIST_URL)
-        if "127.0.0.1" not in content:
-            print "[!] something went wrong during remote data retrieval ('%s')" % MALWAREDOMAINLIST_URL
-
-        for line in content.split('\n'):
-            line = line.strip('\r')
-            if not line or line.startswith('#'):
-                continue
-            items = line.split('\s+')
-            if items[0] == "127.0.0.1" and items[1] != "localhost":
-                _domains[items[1]] = ("malware", "MDL")
 
         try:
             with open(DOMAINS_FILE, "w+b") as f:
