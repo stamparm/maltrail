@@ -1,6 +1,6 @@
 import logging, pickle, optparse, os, re, socket, subprocess, sys, tempfile, time, traceback, urllib2, zipfile, zlib
 
-NAME, VERSION, AUTHOR, LICENSE = "DNScrutinize", "0.1g", "Miroslav Stampar (@stamparm)", "Public domain (FREE)"
+NAME, VERSION, AUTHOR, LICENSE = "DNScrutinize", "0.1h", "Miroslav Stampar (@stamparm)", "Public domain (FREE)"
 
 try:
     logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
@@ -11,13 +11,14 @@ except ImportError:
 
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
 TIMEOUT = 30
-FRESH_LISTS_DELTA_DAYS = 10
+FRESH_LISTS_DELTA_DAYS = 2
 DOMAINS_FILE = "domains.bin"
-OUTPUT_FORMAT = "|{0:^15s}|{1:^40s}|{2:^17s}|{3:^15s}|{4:^20s}|"
+OUTPUT_FORMAT = "|{0:^15s}|{1:^40s}|{2:^17s}|{3:^15s}|{4:^21s}|"
 
 MALWAREDOMAINLIST_URL = "http://www.malwaredomainlist.com/hostslist/hosts.txt"
 MALWAREDOMAINS_URL = "http://malwaredomains.lehigh.edu/files/domains.txt"
 ZEUS_ABUSECH_URL = "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist"
+EMERGING_THREATS_URL = "https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules"
 
 _header = None
 _console_width = None
@@ -124,6 +125,17 @@ def load_domains(bulkfile=None):
             if not line or line.startswith('#'):
                 continue
             _domains[line] = ("ZeuS", "abuse.ch")
+
+        print " [o] '%s'" % EMERGING_THREATS_URL
+        content = _retrieve_content(EMERGING_THREATS_URL)
+        if "Emerging Threats" not in content:
+            print "[!] something went wrong during remote data retrieval ('%s')" % EMERGING_THREATS_URL
+
+        for match in re.finditer(r"(?i)Suspicious \*?\.([^\s]+) domain", content):
+            _domains[match.group(1)] = ("suspicious", "emergingthreats.net")
+
+        for match in re.finditer(r"(?i)C2 Domain \.?([^\s\"]+)", content):
+            _domains[match.group(1)] = ("C&C", "emergingthreats.net")
 
         print " [o] '%s'" % MALWAREDOMAINS_URL
         content = _retrieve_content(MALWAREDOMAINS_URL)
