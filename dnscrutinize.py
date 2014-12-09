@@ -308,6 +308,11 @@ def monitor_interface(interface):
             _connection.close()
 
 if __name__ == "__main__":
+    if "--quiet" in sys.argv:
+        def print(*args, **kwargs):
+            pass
+        print_function = print
+
     print("%s #v%s\n by: %s\n" % (NAME, VERSION, AUTHOR))
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("--quiet", dest="quiet", action="store_true", help="turn off program's console output")
@@ -316,10 +321,6 @@ if __name__ == "__main__":
     parser.add_option("-l", dest="bulkfile", help="load domain list from file (optional)")
     options, _ = parser.parse_args()
     if any((options.interface, options.pcapfile)):
-        if options.quiet:
-            def print(*args, **kwargs):
-                pass
-            print_function = print
         if options.interface:
             _check_sudo()
         _init_db()
