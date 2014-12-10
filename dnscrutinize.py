@@ -2,7 +2,7 @@
 
 from __future__ import print_function
 
-import logging, pickle, optparse, os, re, socket, sqlite3, subprocess, sys, tempfile, time, traceback, urllib2, zipfile, zlib
+import BaseHTTPServer, logging, pickle, optparse, os, re, socket, SocketServer, sqlite3, subprocess, sys, tempfile, threading, time, traceback, urllib2, zipfile, zlib
 
 NAME, VERSION, AUTHOR, LICENSE = "DNScrutinize", "0.1h", "Miroslav Stampar (@stamparm)", "Public domain (FREE)"
 
@@ -21,6 +21,7 @@ HISTORY_FILE = "history.bin"
 OUTPUT_FORMAT = "|{0:^15s}|{1:^40s}|{2:^17s}|{3:^15s}|{4:^21s}|"
 TIME_FORMAT = "%d/%m/%y %H:%M:%S"
 REPORT_HEADERS = ("ip", "domain lookup", "time", "type", "reference")
+HTTP_REPORTING_PORT = 8338
 
 MALWAREDOMAINLIST_URL = "http://www.malwaredomainlist.com/hostslist/hosts.txt"
 MALWAREDOMAINS_URL = "http://malwaredomains.lehigh.edu/files/domains.txt"
@@ -55,8 +56,7 @@ th{
 _header = None
 _console_width = None
 _domains = {}
-_connection = None
-_cursor = None
+_thread_data = threading.local()
 
 def _retrieve_content(url, data=None):
     try:
@@ -66,39 +66,70 @@ def _retrieve_content(url, data=None):
         retval = ex.read() if hasattr(ex, "read") else getattr(ex, "msg", str())
     return retval or ""
 
-def _html_output(filepath, title, headers, rows):
-    with open(filepath, "w+b") as f:
-        f.write("<!DOCTYPE html>\n<html>\n<head>\n")
-        f.write("<meta http-equiv=\"Content-type\" content=\"text/html;charset=utf8\">\n")
-        f.write("<title>%s</title>\n" % title)
-        f.write(HTML_OUTPUT_CSS)
-        f.write("\n</head>\n<body>\n<table>\n<thead>\n<tr>\n")
-        for header in REPORT_HEADERS:
-            f.write("<th>%s</th>" % header)
-        f.write("\n</tr>\n</thead>\n<tbody>\n")
-        for row in rows:
-            f.write("<tr>")
-            for entry in row:
-               f.write("<td>%s</td>" % entry) 
-            f.write("</tr>")
-        f.write("</tbody>\n</table>\n</body>\n</html>")
+def _html_output(title, headers, rows):
+    retval = ""
+    retval += "<!DOCTYPE html>\n<html>\n<head>\n"
+    retval += "<meta http-equiv=\"Content-type\" content=\"text/html;charset=utf8\">\n"
+    retval += "<title>%s</title>\n" % title
+    retval += HTML_OUTPUT_CSS
+    retval += "\n</head>\n<body>\n<table>\n<thead>\n<tr>\n"
+    for header in REPORT_HEADERS:
+        retval += "<th>%s</th>" % header
+    retval += "\n</tr>\n</thead>\n<tbody>\n"
+    for row in rows:
+        retval += "<tr>"
+        for entry in row:
+            retval += "<td>%s</td>" % entry
+        retval += "</tr>"
+    retval += "</tbody>\n</table>\n</body>\n</html>"
+    return retval
 
-def _init_db():
-    global _connection, _cursor
-    _connection = sqlite3.connect(HISTORY_FILE)
-    _cursor = _connection.cursor()
-    _cursor.execute("CREATE TABLE IF NOT EXISTS history(ip TEXT, domain_lookup TEXT, time REAL, type TEXT, reference TEXT)")
+def _get_cursor():
+    if not hasattr(_thread_data, "cursor"):
+        _thread_data.connection = sqlite3.connect(HISTORY_FILE)
+        _thread_data.cursor = _thread_data.connection.cursor()
+        _thread_data.cursor.execute("CREATE TABLE IF NOT EXISTS history(ip TEXT, domain_lookup TEXT, time REAL, type TEXT, reference TEXT)")
+    return _thread_data.cursor
 
 def _store_db(ip, domain_lookup, time, type_, reference):
-    _cursor.execute("INSERT INTO history VALUES('%s', '%s', %s, '%s', '%s')" % (ip, domain_lookup, time, type_, reference))
+    _get_cursor().execute("INSERT INTO history VALUES('%s', '%s', %s, '%s', '%s')" % (ip, domain_lookup, time, type_, reference))
+
+def _close_db():
+    if hasattr(_thread_data, "cursor"):
+        _thread_data.connection.commit()
+        _thread_data.cursor.close()
+        _thread_data.connection.close()
 
 def _create_report():
-    _cursor.execute("SELECT * FROM history")
-    rows = _cursor.fetchall()
-    if rows:
-        for i in xrange(len(rows)):
-            rows[i] = rows[i][:2] + (time.strftime(TIME_FORMAT, time.localtime(rows[i][2])),) + rows[i][3:]
-        _html_output("/tmp/bla.html", NAME, REPORT_HEADERS, rows)
+    _get_cursor().execute("SELECT * FROM history")
+    rows = _get_cursor().fetchall()
+    for i in xrange(len(rows)):
+        rows[i] = rows[i][:2] + (time.strftime(TIME_FORMAT, time.localtime(rows[i][2])),) + rows[i][3:]
+    return _html_output(NAME, REPORT_HEADERS, rows)
+
+def _start_httpd():
+    class ThreadingServer(SocketServer.ThreadingMixIn, BaseHTTPServer.HTTPServer):
+        pass
+
+    class ReqHandler(BaseHTTPServer.BaseHTTPRequestHandler):
+        def do_GET(self):
+            content = _create_report()
+            length = len(content)
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html")
+            self.send_header("Content-Length", str(length))
+            self.end_headers()
+            self.wfile.write(content)
+
+        def log_message(self, format, *args):
+            return
+
+    server = ThreadingServer(('', HTTP_REPORTING_PORT), ReqHandler)
+    print("[i] using address '%s:%d' for HTTP reporting" % ("*" if not server.server_address[0].strip("0.") else server.server_address[0], server.server_address[1]))
+
+    thread = threading.Thread(target=server.serve_forever)
+    thread.daemon = True
+    thread.start()
 
 def _check_sudo():
     check = None
@@ -230,7 +261,7 @@ def load_domains(bulkfile=None):
 
         try:
             with open(DOMAINS_FILE, "w+b") as f:
-                f.write(zlib.compress(pickle.dumps(_domains)))
+                retval += zlib.compress(pickle.dumps(_domains))
         except IOError, ex:
             print("[!] something went wrong during cache file write '%s' ('%s')" % (DOMAINS_FILE, ex))
 
@@ -302,10 +333,7 @@ def monitor_interface(interface):
         else:
             raise
     finally:
-        if _connection and _cursor:
-            _connection.commit()
-            _cursor.close()
-            _connection.close()
+        _close_db()
 
 if __name__ == "__main__":
     if "--quiet" in sys.argv:
@@ -323,7 +351,7 @@ if __name__ == "__main__":
     if any((options.interface, options.pcapfile)):
         if options.interface:
             _check_sudo()
-        _init_db()
+        _start_httpd()
         load_domains(options.bulkfile)
         if options.pcapfile:
             process_pcap(options.pcapfile)
