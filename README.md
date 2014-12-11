@@ -48,4 +48,4 @@ DNScrutinize #v0.1h
 Requirements
 ----
 
-Python v2.6 or v2.7 is required for running this program, along with [Scapy](http://www.secdev.org/projects/scapy/).
+[Python](http://www.python.org/download/) version **2.6.x** or **2.7.x** is required for running this program, along with [Scapy](http://www.secdev.org/projects/scapy/).
