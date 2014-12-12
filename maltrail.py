@@ -279,44 +279,6 @@ def _check_sudo():
     if check is False:
         exit("[x] please run with sudo/Administrator privileges")
 
-def _get_console_width(default=80):
-    width = None
-
-    if os.getenv("COLUMNS", "").isdigit():
-        width = int(os.getenv("COLUMNS"))
-    else:
-        try:
-            try:
-                FNULL = open(os.devnull, 'w')
-            except IOError:
-                FNULL = None
-            process = subprocess.Popen("stty size", shell=True, stdout=subprocess.PIPE, stderr=FNULL or subprocess.PIPE)
-            stdout, _ = process.communicate()
-            items = stdout.split()
-
-            if len(items) == 2 and items[1].isdigit():
-                width = int(items[1])
-        except OSError:
-            pass
-
-    if width is None:
-        try:
-            import curses
-            stdscr = curses.initscr()
-            _, width = stdscr.getmaxyx()
-            curses.endwin()
-        except:
-            pass
-
-    return width or default
-
-def _trim_output(value):
-    global _console_width
-
-    _console_width = _console_width or _get_console_width()
-
-    return value[:_console_width]
-
 def load_domains(bulkfile=None):
     """
     Loads suspicious/malicious domain lists
