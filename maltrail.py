@@ -53,7 +53,7 @@ HTML_OUTPUT_TEMPLATE = """
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>%s</title>
 <style>
-*{margin:0;padding:0}body{font:10px Verdana,Arial}#wrapper{width:825px;margin:50px auto}.sortable{width:823px;border:1px solid #ccc;border-bottom:none}.sortable th{padding:4px 6px 6px;background:#444;color:#fff;text-align:left;color:#ccc}.sortable td{padding:2px 4px 4px;background:#fff;border-bottom:1px solid #ccc}.sortable .head{background:#444 url(images/sort.gif) 6px center no-repeat;cursor:pointer;padding-left:18px}.sortable .desc{background:#222 url(images/desc.gif) 6px center no-repeat;cursor:pointer;padding-left:18px}.sortable .asc{background:#222 url(images/asc.gif) 6px center no-repeat;cursor:pointer;padding-left:18px}.sortable .head:hover,.sortable .desc:hover,.sortable .asc:hover{color:#fff}.sortable .even td{background:#f2f2f2}.sortable .odd td{background:#fff}
+*{margin:0;padding:0}body{font:10px Verdana,Arial}#wrapper{width:825px;margin:50px auto}.sortable{width:823px;border:1px solid #ccc;border-bottom:none}.sortable th{padding:4px 6px 6px;background:#444;color:#fff;text-align:left;color:#ccc}.sortable td{padding:2px 4px 4px;background:#fff;border-bottom:1px solid #ccc}.sortable .head{background:#444 url(data:image/png;base64,R0lGODlhBQAIAIABALe3t////yH5BAEAAAEALAAAAAAFAAgAAAILTGAHuJ2f2lLI1AIAOw==) 6px center no-repeat;cursor:pointer;padding-left:18px}.sortable .desc{background:#222 url(data:image/png;base64,R0lGODlhBQADAIABAP///////yH5BAEAAAEALAAAAAAFAAMAAAIFhB0XC1sAOw==) 6px center no-repeat;cursor:pointer;padding-left:18px}.sortable .asc{background:#222 url(data:image/png;base64,R0lGODlhBQADAIABAP///////yH5BAEAAAEALAAAAAAFAAMAAAIFTGAHuF0AOw==) 6px center no-repeat;cursor:pointer;padding-left:18px}.sortable .head:hover,.sortable .desc:hover,.sortable .asc:hover{color:#fff}.sortable .even td{background:#f2f2f2}.sortable .odd td{background:#fff}
 </style>
 <script>
 var table=function(){function e(e){this.n=e;this.t;this.b;this.r;this.d;this.p;this.w;this.a=[];this.l=0}function t(e){if(/^\d+\.\d+\.\d+\.\d+$/.test(e)){return true}else{return false}}function n(e){if(/^[\d\/]+ [\d:]+$/.test(e)){return true}else{return false}}function r(e,r){e=e.value,r=r.value;if(t(e)&&t(r)){var i=e.split(".");var s=r.split(".");e=(parseInt(i[0])<<24)+(parseInt(i[1])<<16)+(parseInt(i[2])<<8)+parseInt(i[3])>>>0;r=(parseInt(s[0])<<24)+(parseInt(s[1])<<16)+(parseInt(s[2])<<8)+parseInt(s[3])>>>0}else if(n(e)&&n(r)){e=parseInt(e.replace(/[:\/ ]/g,""));r=parseInt(r.replace(/[:\/ ]/g,""))}return e>r?1:e<r?-1:0}e.prototype.init=function(e,t){this.t=document.getElementById(e);this.b=this.t.getElementsByTagName("tbody")[0];this.r=this.b.rows;var n=this.r.length;for(var r=0;r<n;r++){if(r==0){var i=this.r[r].cells;this.w=i.length;for(var s=0;s<this.w;s++){if(i[s].className!="nosort"){i[s].className="head";i[s].onclick=new Function(this.n+".work(this.cellIndex)")}}}else{this.a[r-1]={};this.l++}}if(t!=null){var o=new Function(this.n+".work("+t+")");o()}};e.prototype.work=function(e){this.b=this.t.getElementsByTagName("tbody")[0];this.r=this.b.rows;var t=this.r[0].cells[e],n;for(n=0;n<this.l;n++){this.a[n].o=n+1;var i=this.r[n+1].cells[e].firstChild;this.a[n].value=i!=null?i.nodeValue:""}for(n=0;n<this.w;n++){var s=this.r[0].cells[n];if(s.className!="nosort"){s.className="head"}}if(this.p==e){this.a.reverse();t.className=this.d?"asc":"desc";this.d=this.d?false:true}else{this.p=e;this.a.sort(r);t.className="asc";this.d=false}var o=document.createElement("tbody");o.appendChild(this.r[0]);for(n=0;n<this.l;n++){var u=this.r[this.a[n].o-1].cloneNode(true);o.appendChild(u);u.className=n%%2==0?"even":"odd"}this.t.replaceChild(o,this.b)};return{sorter:e}}()
@@ -64,7 +64,17 @@ var table=function(){function e(e){this.n=e;this.t;this.b;this.r;this.d;this.p;t
 <table cellpadding="0" cellspacing="0" border="0" class="sortable" id="sorter">
 %s
 </table>
+%s
+</div>
+<script type="text/javascript">
+var sorter=new table.sorter("sorter");
+sorter.init("sorter");
+</script>
+</body>
+</html>
+"""
 
+FILTER_FORM = """
 <form name="search" id="search" method="post" action="/">
 <table style="margin:0; padding-top: 1cm;" border="0" cellpadding="2" cellspacing="2">
 <tbody><tr>
@@ -87,7 +97,6 @@ var table=function(){function e(e){this.n=e;this.t;this.b;this.r;this.d;this.p;t
 <td colspan="2"><select name="dayto">
 <option value="">day
 </option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31
-
 </option></select>
 <select name="monthto">
 <option value="">month
@@ -98,7 +107,6 @@ var table=function(){function e(e){this.n=e;this.t;this.b;this.r;this.d;this.p;t
 </option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014
 </option></select></td>
 </tr>
-
 <tr>
 <td>Domain:</td>
 <td colspan="2">
@@ -110,17 +118,8 @@ var table=function(){function e(e){this.n=e;this.t;this.b;this.r;this.d;this.p;t
 </tbody></table>
 </td>
 </tr>
-
 </tbody></table>
 </form>
-
-</div>
-<script type="text/javascript">
-var sorter=new table.sorter("sorter");
-sorter.init("sorter");
-</script>
-</body>
-</html>
 """
 
 HTTP_RAW_FILES = {
@@ -135,8 +134,8 @@ MALWAREDOMAINS_URL = "http://malwaredomains.lehigh.edu/files/domains.txt"
 ZEUS_ABUSECH_URL = "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist"
 EMERGING_THREATS_URL = "https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules"
 
-_header = None
 _console_width = None
+_history_file = HISTORY_FILE
 _domains = {}
 _thread_data = threading.local()
 
@@ -148,7 +147,7 @@ def _retrieve_content(url, data=None):
         retval = ex.read() if hasattr(ex, "read") else getattr(ex, "msg", str())
     return retval or ""
 
-def _html_output(title, headers, rows):
+def _html_output(title, headers, rows, showfilter=True):
     retval = "<tr>\n"
     for header in REPORT_HEADERS:
         retval += "<th>%s</th>" % header
@@ -158,11 +157,11 @@ def _html_output(title, headers, rows):
         for entry in row:
             retval += "<td>%s</td>" % entry
         retval += "</tr>"
-    return HTML_OUTPUT_TEMPLATE % ("%s report" % NAME, retval)
+    return HTML_OUTPUT_TEMPLATE % ("%s report" % NAME, retval, FILTER_FORM if showfilter else "")
 
 def _get_cursor():
     if not hasattr(_thread_data, "cursor"):
-        _thread_data.connection = sqlite3.connect(HISTORY_FILE, isolation_level=None)
+        _thread_data.connection = sqlite3.connect(_history_file, isolation_level=None)
         _thread_data.cursor = _thread_data.connection.cursor()
         _thread_data.cursor.execute("CREATE TABLE IF NOT EXISTS history(ip TEXT, domain_lookup TEXT, time REAL, type TEXT, reference TEXT)")
     return _thread_data.cursor
@@ -176,7 +175,7 @@ def _close_db():
         _thread_data.cursor.close()
         _thread_data.connection.close()
 
-def _create_report(order=None, limit=None, offset=None, mintime=None, maxtime=None):
+def _create_report(order=None, limit=None, offset=None, mintime=None, maxtime=None, showfilter=True):
     query = "SELECT * FROM history"
     if mintime:
         query += " WHERE time >= %s" % re.sub(r"[^0-9.]", "", str(mintime))
@@ -192,7 +191,7 @@ def _create_report(order=None, limit=None, offset=None, mintime=None, maxtime=No
     rows = _get_cursor().fetchall()
     for i in xrange(len(rows)):
         rows[i] = rows[i][:2] + (time.strftime(TIME_FORMAT, time.localtime(rows[i][2])),) + rows[i][3:]
-    return _html_output(NAME, REPORT_HEADERS, rows)
+    return _html_output(NAME, REPORT_HEADERS, rows, showfilter)
 
 def _start_httpd():
     class ThreadingServer(SocketServer.ThreadingMixIn, BaseHTTPServer.HTTPServer):
@@ -301,15 +300,6 @@ def _trim_output(value):
 
     return value[:_console_width]
 
-def _print_details(ip, domain_lookup, time, type, reference):
-    global _header
-
-    if not _header:
-        _header = _trim_output(OUTPUT_FORMAT.format(*REPORT_HEADERS))
-        print(" \n%s\n%s\n%s" % ("-" * len(_header), _header, "-" * len(_header)))
-
-    print(_trim_output(OUTPUT_FORMAT.format(ip, domain_lookup, time, type, reference)))
-
 def load_domains(bulkfile=None):
     """
     Loads suspicious/malicious domain lists
@@ -408,7 +398,6 @@ def inspect_packet(packet):
                 _ = '.'.join(parts[i:])
                 if _ in _domains:
                     ip, type_, reference = packet.getlayer(IP).src, _domains[_][0], _domains[_][1]
-                    _print_details(ip, domain, time.strftime(TIME_FORMAT, time.localtime(packet.time)), type_, reference)
                     _store_db(ip, domain, packet.time, type_, reference)
                     break
 
@@ -433,8 +422,6 @@ def process_pcap(pcapfile):
         count += 1
         sys.stdout.write('%s\r' % ROTATING_CHARS[count % len(ROTATING_CHARS)])
         inspect_packet(packet)
-    if not _header:
-        print("[i] no suspicious domain lookups found")
 
 def monitor_interface(interface):
     """
@@ -457,11 +444,8 @@ def monitor_interface(interface):
     finally:
         _close_db()
 
-if __name__ == "__main__":
-    if "--quiet" in sys.argv:
-        def print(*args, **kwargs):
-            pass
-        print_function = print
+def main():
+    global _history_file
 
     print("%s #v%s\n by: %s\n" % (NAME, VERSION, AUTHOR))
     parser = optparse.OptionParser(version=VERSION)
@@ -473,13 +457,24 @@ if __name__ == "__main__":
     if any((options.interface, options.pcapfile)):
         if options.interface:
             _check_sudo()
-        _start_httpd()
         load_domains(options.bulkfile)
         if options.pcapfile:
+            _history_file = tempfile.mkstemp()[1]
+            _report_file = tempfile.mkstemp(prefix="%s-" % NAME.lower(), suffix=".html")[1]
             process_pcap(options.pcapfile)
+            with open(_report_file, "w+b") as f:
+                f.write(_create_report(showfilter=False))
+            print("[i] report written to '%s'" % _report_file)
         elif options.interface:
+            _start_httpd()
             monitor_interface(options.interface)
-        if _header:
-            print("-" * len(_header))
     else:
         parser.print_help()
+
+if __name__ == "__main__":
+    if "--quiet" in sys.argv:
+        def print(*args, **kwargs):
+            pass
+        print_function = print
+
+    main()
