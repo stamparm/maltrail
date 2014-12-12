@@ -33,15 +33,6 @@ MalTrail #v0.1l
 [i] loading cache...
 [i] 20944 suspicious domain names loaded
 [i] monitoring interface 'any'...
-
------------------------------------------------------------------------------------------------------------------
-|      ip       |             domain lookup              |      time       |     type      |     reference      |
------------------------------------------------------------------------------------------------------------------
-| 192.168.1.13  |                4btc.cc                 |05/12/14 10:57:46|     zeus      |zeustracker.abuse.ch|
-| 192.168.1.13  |        qberkwtglfmswhwkhmdh.com        |05/12/14 10:58:40|   pwnedlist   |   pwnedlist.com    |
-| 192.168.1.13  |              dajiadai.cn               |05/12/14 10:58:46|    malware    |app.webinspector.com|
-| 192.168.1.13  |             www.255668.com             |05/12/14 10:58:53|   malicious   |  www.mwsl.org.cn   |
-
 ...
 ```
 
