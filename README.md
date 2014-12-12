@@ -10,7 +10,7 @@ Sample runs
 
 ```
 $ python maltrail.py -h
-MalTrail #v0.1h
+MalTrail #v0.1l
  by: Miroslav Stampar (@stamparm)
 
 Usage: maltrail.py [options]
@@ -18,22 +18,20 @@ Usage: maltrail.py [options]
 Options:
   --version     show program's version number and exit
   -h, --help    show this help message and exit
+  --quiet       turn off program's console output
   -i INTERFACE  listen DNS traffic on interface (e.g. eth0)
   -r PCAPFILE   read packets from (.pcap) file
   -l BULKFILE   load domain list from file (optional)
 ```
 
 ```
-$ sudo python maltrail.py -i eth0
-MalTrail #v0.1h
+$ sudo python maltrail.py -i any
+MalTrail #v0.1l
  by: Miroslav Stampar (@stamparm)
 
-[i] retrieving domain lists...
- [o] 'http://www.malwaredomainlist.com/hostslist/hosts.txt'
- [o] 'http://malwaredomains.lehigh.edu/files/domains.txt'
- [o] 'https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist'
- [o] 'https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules'
-[i] 20817 suspicious domain names loaded
+[i] using address '*:8338' for HTTP reporting
+[i] loading cache...
+[i] 20944 suspicious domain names loaded
 [i] monitoring interface 'any'...
 
 -----------------------------------------------------------------------------------------------------------------
