@@ -1,17 +1,17 @@
-DNScrutinize
+MalTrail
 ============
 
-**DNScrutinize** is a passive DNS monitoring tool designed for malware traffic detection, utilizing publicly available specialized lists for malicious (or generally suspicious) domains: [MDL](http://www.malwaredomainlist.com/hostslist/hosts.txt), [MalwareDomains](http://malwaredomains.lehigh.edu/files/domains.txt), [abuse.ch](https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist) and [Emerging Threats](https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules). Preferably it should be run on a (Linux) box connected to the router's [port mirroring](http://en.wikipedia.org/wiki/Port_mirroring) interface or [network tap](http://en.wikipedia.org/wiki/Network_tap) device. It uses [Scapy](http://www.secdev.org/projects/scapy/) library for sniffing purposes, which means that you can expect solid performance.
+**MalTrail** is a malicious traffic monitoring tool designed for malware tracking purposes, utilizing publicly available specialized lists for malicious (or generally suspicious) domains: [MDL](http://www.malwaredomainlist.com/hostslist/hosts.txt), [MalwareDomains](http://malwaredomains.lehigh.edu/files/domains.txt), [abuse.ch](https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist) and [Emerging Threats](https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules). Preferably it should be run on a (Linux) box connected to the router's [port mirroring](http://en.wikipedia.org/wiki/Port_mirroring) interface or [network tap](http://en.wikipedia.org/wiki/Network_tap) device. It uses [Scapy](http://www.secdev.org/projects/scapy/) library for sniffing purposes, which means that you can expect solid performance.
 
 Sample runs
 ----
 
 ```
-$ python dnscrutinize.py -h
-DNScrutinize #v0.1h
+$ python maltrail.py -h
+MalTrail #v0.1h
  by: Miroslav Stampar (@stamparm)
 
-Usage: dnscrutinize.py [options]
+Usage: maltrail.py [options]
 
 Options:
   --version     show program's version number and exit
@@ -22,8 +22,8 @@ Options:
 ```
 
 ```
-$ sudo python dnscrutinize.py -i eth0
-DNScrutinize #v0.1h
+$ sudo python maltrail.py -i eth0
+MalTrail #v0.1h
  by: Miroslav Stampar (@stamparm)
 
 [i] retrieving domain lists...
