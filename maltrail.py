@@ -24,7 +24,7 @@ import zipfile
 import zlib
 
 NAME = "MalTrail"
-VERSION = "0.1l"
+VERSION = "0.1m"
 AUTHOR = "Miroslav Stampar (@stamparm)"
 LICENSE = "Public domain (FREE)"
 
@@ -38,11 +38,12 @@ except ImportError:
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
 TIMEOUT = 30
 FRESH_LISTS_DELTA_DAYS = 2
-DOMAINS_FILE = "domains.bin"
-HISTORY_FILE = "history.bin"
+STORAGE_DIRECTORY = os.path.join(os.path.expanduser("~"), ".%s" % NAME.lower())
+CACHE_FILE = os.path.join(STORAGE_DIRECTORY, "cache.bin")
+HISTORY_FILE = os.path.join(STORAGE_DIRECTORY, "history.bin")
 OUTPUT_FORMAT = "|{0:^15s}|{1:^40s}|{2:^17s}|{3:^15s}|{4:^21s}|"
-TIME_FORMAT = "%y/%m/%d %H:%M:%S"
-REPORT_HEADERS = ("ip", "domain lookup", "time", "type", "reference")
+TIME_FORMAT = "%d/%m/%Y %H:%M:%S"
+REPORT_HEADERS = ("time", "ip", "domain lookup", "type", "reference")
 HTTP_REPORTING_PORT = 8338
 
 # Reference: http://www.scriptiny.com/2008/11/javascript-table-sorter/
@@ -68,7 +69,7 @@ var table=function(){function e(e){this.n=e;this.t;this.b;this.r;this.d;this.p;t
 </div>
 <script type="text/javascript">
 var sorter=new table.sorter("sorter");
-sorter.init("sorter");
+sorter.init("sorter", 0);
 </script>
 </body>
 </html>
@@ -79,41 +80,25 @@ FILTER_FORM = """
 <table style="margin:0; padding-top: 1cm;" border="0" cellpadding="2" cellspacing="2">
 <tbody><tr>
 <td>From:&nbsp;&nbsp;</td>
-<td colspan="2"><select name="dayfrom">
-<option value="">day
-</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31
-</option></select>
-<select name="monthfrom">
-<option value="">month
-</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12
-</option></select>
-<select name="yearfrom">
-<option value="">year
-</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014
-</option></select></td>
+<td colspan="2">
+<select name="dayfrom"><option value="">day</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+<select name="monthfrom"><option value="">month</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select>
+<select name="yearfrom"><option value="">year</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option></select></td>
 </tr>
 <tr>
 <td>To:&nbsp;&nbsp;</td>
-<td colspan="2"><select name="dayto">
-<option value="">day
-</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31
-</option></select>
-<select name="monthto">
-<option value="">month
-</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12
-</option></select>
-<select name="yearto">
-<option value="">year
-</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014
-</option></select></td>
+<td colspan="2">
+<select name="dayto"><option value="">day</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+<select name="monthto"><option value="">month</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select>
+<select name="yearto"><option value="">year</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option></select></td>
 </tr>
 <tr>
 <td>Domain:</td>
 <td colspan="2">
 <table border="0" cellpadding="0" cellspacing="0">
 <tbody><tr>
-    <td class="searchboxWrapper"><input name="domain" value="" type="text"></td>
-    <td><input style="background: url('images/search.gif') no-repeat scroll 0 0 rgba(0, 0, 0, 0); width: 24px" value="" type="submit"></td>
+<td class="searchboxWrapper"><input name="domain" value="" type="text"></td>
+<td><input style="background: url('images/search.gif') no-repeat scroll 0 0 rgba(0, 0, 0, 0); width: 24px" value="" type="submit"></td>
 </tr>
 </tbody></table>
 </td>
@@ -172,6 +157,15 @@ def _close_db():
         _thread_data.cursor.close()
         _thread_data.connection.close()
 
+def _get_time_range():
+    min_, max_ = None, None
+    query = "SELECT MIN(time), MAX(time) FROM history"
+    _get_cursor().execute(query)
+    _ = _get_cursor().fetchone()
+    if _:
+        min_, max_ = _
+    return min_, max_
+
 def _create_report(order=None, limit=None, offset=None, mintime=None, maxtime=None, domain=None):
     query = "SELECT * FROM history"
     if mintime:
@@ -189,7 +183,7 @@ def _create_report(order=None, limit=None, offset=None, mintime=None, maxtime=No
     _get_cursor().execute(query)
     rows = _get_cursor().fetchall()
     for i in xrange(len(rows)):
-        rows[i] = rows[i][:2] + (time.strftime(TIME_FORMAT, time.localtime(rows[i][2])),) + rows[i][3:]
+        rows[i] = (time.strftime(TIME_FORMAT, time.localtime(rows[i][2])),) + rows[i][:2] + rows[i][3:]
     return _html_output(NAME, REPORT_HEADERS, rows)
 
 def _insert_filter(report_html):
@@ -220,12 +214,23 @@ def _start_httpd():
                 for key in params:
                     if params[key]:
                         params[key] = params[key][-1]
+                min_, max_ = _get_time_range()
+                if min_:
+                    _ = time.localtime(min_)
+                    params.setdefault("yearfrom", _.tm_year)
+                    params.setdefault("monthfrom", _.tm_mon)
+                    params.setdefault("dayfrom", _.tm_mday)
+                if max_:
+                    _ = time.localtime(max_)
+                    params.setdefault("yearto", _.tm_year)
+                    params.setdefault("monthto", _.tm_mon)
+                    params.setdefault("dayto", _.tm_mday)
                 if params.get("yearfrom"):
                     params.setdefault("monthfrom", 1)
                     params.setdefault("dayfrom", 1)
                     while True:
                         try:
-                            mintime = time.mktime(time.strptime("%d/%02d/%02d" % (int(params["yearfrom"]), int(params["monthfrom"]), int(params["dayfrom"])), "%Y/%m/%d"))
+                            mintime = time.mktime(time.strptime("%d/%02d/%02d" % (int(params["dayfrom"]), int(params["monthfrom"]), int(params["yearfrom"])), "%d/%m/%Y"))
                             break
                         except ValueError:
                             params["dayfrom"] = int(params["dayfrom"]) - 1
@@ -234,12 +239,16 @@ def _start_httpd():
                     params.setdefault("dayto", 31)
                     while True:
                         try:
-                            maxtime = time.mktime(time.strptime("%d/%02d/%02d 23:59:59" % (int(params["yearto"]), int(params["monthto"]), int(params["dayto"])), "%Y/%m/%d %H:%M:%S"))
+                            maxtime = time.mktime(time.strptime("%d/%02d/%02d 23:59:59" % (int(params["dayto"]), int(params["monthto"]), int(params["yearto"])), "%d/%m/%Y %H:%M:%S"))
                             break
                         except ValueError:
                             params["dayto"] = int(params["dayto"]) - 1
                 content = _create_report(order=params.get("order", "DESC"), limit=params.get("limit"), offset=params.get("offset"), mintime=mintime, maxtime=maxtime, domain=params.get("domain"))
                 content = _insert_filter(content)
+                for param, value in params.items():
+                    content = re.sub(r"(name=\"%s\".+?<option) (value=\"%s\")" % (re.escape(param), re.escape(str(value))), r"\g<1> selected \g<2>", content)
+                if params.get("domain"):
+                    content = content.replace("input name=\"domain\" value=\"\"", "input name=\"domain\" value=\"%s\"" % params["domain"])
                 length = len(content)
                 self.send_response(httplib.OK)
                 self.send_header("Content-Type", "text/html")
@@ -297,8 +306,8 @@ def load_domains(bulkfile=None):
                 continue
             _domains[line] = ("suspicious", "custom")
 
-    if not os.path.isfile(DOMAINS_FILE) or (time.time() - os.stat(DOMAINS_FILE).st_mtime) / 3600 / 24 > FRESH_LISTS_DELTA_DAYS:
-        print("[i] %s domain lists..." % ("updating" if os.path.isfile(DOMAINS_FILE) else "retrieving"))
+    if not os.path.isfile(CACHE_FILE) or (time.time() - os.stat(CACHE_FILE).st_mtime) / 3600 / 24 > FRESH_LISTS_DELTA_DAYS:
+        print("[i] %s domain lists..." % ("updating" if os.path.isfile(CACHE_FILE) else "retrieving"))
 
         print(" [o] '%s'" % MALWAREDOMAINLIST_URL)
         content = _retrieve_content(MALWAREDOMAINLIST_URL)
@@ -348,18 +357,20 @@ def load_domains(bulkfile=None):
             _domains[match.group(1)] = ("C&C", "emergingthreats.net")
 
         try:
-            with open(DOMAINS_FILE, "w+b") as f:
+            if not os.path.isdir(STORAGE_DIRECTORY):
+                os.makedirs(STORAGE_DIRECTORY, 0755)
+            with open(CACHE_FILE, "w+b") as f:
                 f.write(zlib.compress(pickle.dumps(_domains)))
         except Exception, ex:
-            print("[!] something went wrong during cache file write '%s' ('%s')" % (DOMAINS_FILE, ex))
+            print("[!] something went wrong during cache file write '%s' ('%s')" % (CACHE_FILE, ex))
 
     if not _domains:
         print("[i] loading cache...")
         try:
-            with open(DOMAINS_FILE, "rb") as f:
+            with open(CACHE_FILE, "rb") as f:
                 _domains = pickle.loads(zlib.decompress(f.read()))
         except Exception, ex:
-            exit("[x] something went wrong during cache file read '%s' ('%s')" % (DOMAINS_FILE, ex))
+            exit("[x] something went wrong during cache file read '%s' ('%s')" % (CACHE_FILE, ex))
 
     print("[i] %d suspicious domain names loaded" % len(_domains))
 
