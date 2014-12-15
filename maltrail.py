@@ -41,10 +41,10 @@ FRESH_LISTS_DELTA_DAYS = 2
 STORAGE_DIRECTORY = os.path.join(os.path.expanduser("~"), ".%s" % NAME.lower())
 CACHE_FILE = os.path.join(STORAGE_DIRECTORY, "cache.bin")
 HISTORY_FILE = os.path.join(STORAGE_DIRECTORY, "history.bin")
-OUTPUT_FORMAT = "|{0:^15s}|{1:^40s}|{2:^17s}|{3:^15s}|{4:^21s}|"
 TIME_FORMAT = "%d/%m/%Y %H:%M:%S"
-REPORT_HEADERS = ("time", "ip", "domain lookup", "type", "reference")
+REPORT_HEADERS = ("time", "src", "dst", "type", "details", "info", "reference")
 HTTP_REPORTING_PORT = 8338
+HISTORY_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS history(time REAL, src TEXT, dst TEXT, type TEXT, details TEXT, info TEXT, reference TEXT)"
 
 # Reference: http://www.scriptiny.com/2008/11/javascript-table-sorter/
 HTML_OUTPUT_TEMPLATE = """
@@ -145,11 +145,11 @@ def _get_cursor():
     if not hasattr(_thread_data, "cursor"):
         _thread_data.connection = sqlite3.connect(_history_file, isolation_level=None)
         _thread_data.cursor = _thread_data.connection.cursor()
-        _thread_data.cursor.execute("CREATE TABLE IF NOT EXISTS history(ip TEXT, domain_lookup TEXT, time REAL, type TEXT, reference TEXT)")
+        _thread_data.cursor.execute(HISTORY_CREATE_TABLE)
     return _thread_data.cursor
 
-def _store_db(ip, domain_lookup, time, type_, reference):
-    _get_cursor().execute("INSERT INTO history VALUES('%s', '%s', %s, '%s', '%s')" % (ip, domain_lookup, time, type_, reference))
+def _store_db(time, src, dst, type_, details, info, reference):
+    _get_cursor().execute("INSERT INTO history VALUES(%s, '%s', '%s', '%s', '%s', '%s', '%s')" % (time, src, dst, type_, details, info, reference))
 
 def _close_db():
     if hasattr(_thread_data, "cursor"):
@@ -183,7 +183,7 @@ def _create_report(order=None, limit=None, offset=None, mintime=None, maxtime=No
     _get_cursor().execute(query)
     rows = _get_cursor().fetchall()
     for i in xrange(len(rows)):
-        rows[i] = (time.strftime(TIME_FORMAT, time.localtime(rows[i][2])),) + rows[i][:2] + rows[i][3:]
+        rows[i] = (time.strftime(TIME_FORMAT, time.localtime(rows[i][0])),) + rows[i][1:]
     return _html_output(NAME, REPORT_HEADERS, rows)
 
 def _insert_filter(report_html):
@@ -376,20 +376,19 @@ def load_domains(bulkfile=None):
 
 def inspect_packet(packet):
     """
-    Processes packet and prints formatted result if found to be suspicious/malicious
+    Processes packet
     """
 
-    if packet.haslayer(DNSQR) and not packet.haslayer(DNSRR):
+    if packet.haslayer(DNSQR):
         request = packet.getlayer(DNSQR)
-        if request.qtype == 1:
-            domain = request.qname.strip('.')
-            parts = domain.split('.')
-            for i in xrange(0, len(parts) - 1):
-                _ = '.'.join(parts[i:])
-                if _ in _domains:
-                    ip, type_, reference = packet.getlayer(IP).src, _domains[_][0], _domains[_][1]
-                    _store_db(ip, domain, packet.time, type_, reference)
-                    break
+        domain = request.qname.strip('.')
+        parts = domain.split('.')
+        for i in xrange(0, len(parts) - 1):
+            _ = '.'.join(parts[i:])
+            if _ in _domains:
+                src, dst, type_, details, info, reference = packet.getlayer(IP).src, packet.getlayer(IP).dst, "DNS", domain, _domains[_][0], _domains[_][1]
+                _store_db(packet.time, src, dst, type_, details, info, reference)
+                break
 
 def process_pcap(pcapfile):
     """
@@ -421,7 +420,7 @@ def monitor_interface(interface):
     print("[i] monitoring interface '%s'..." % interface)
 
     try:
-        sniff(iface=interface if interface.lower() != "any" else None, prn=inspect_packet, filter="udp dst port 53", store=0)
+        sniff(iface=interface if interface.lower() != "any" else None, prn=inspect_packet, filter="ip", store=0)
     except KeyboardInterrupt:
         print("\r[x] Ctrl-C pressed")
     except socket.error, ex:
@@ -439,7 +438,6 @@ def main():
 
     print("%s #v%s\n by: %s\n" % (NAME, VERSION, AUTHOR))
     parser = optparse.OptionParser(version=VERSION)
-    parser.add_option("--quiet", dest="quiet", action="store_true", help="turn off program's console output")
     parser.add_option("-i", dest="interface", help="listen DNS traffic on interface (e.g. eth0)")
     parser.add_option("-r", dest="pcapfile", help="read packets from (.pcap) file")
     parser.add_option("-l", dest="bulkfile", help="load domain list from file (optional)")
@@ -462,9 +460,4 @@ def main():
         parser.print_help()
 
 if __name__ == "__main__":
-    if "--quiet" in sys.argv:
-        def print(*args, **kwargs):
-            pass
-        print_function = print
-
     main()
