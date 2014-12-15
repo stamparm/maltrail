@@ -46,6 +46,11 @@ REPORT_HEADERS = ("time", "src", "dst", "type", "details", "info", "reference")
 HTTP_REPORTING_PORT = 8338
 HISTORY_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS history(time REAL, src TEXT, dst TEXT, type TEXT, details TEXT, info TEXT, reference TEXT)"
 
+class BLACKLIST:
+    DNS = "DNS"
+    IP = "IP"
+    URL = "URL"
+
 # Reference: http://www.scriptiny.com/2008/11/javascript-table-sorter/
 HTML_OUTPUT_TEMPLATE = """
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -115,10 +120,11 @@ MALWAREDOMAINLIST_URL = "http://www.malwaredomainlist.com/hostslist/hosts.txt"
 MALWAREDOMAINS_URL = "http://malwaredomains.lehigh.edu/files/domains.txt"
 ZEUS_ABUSECH_URL = "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist"
 EMERGING_THREATS_URL = "https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules"
+OPENPHISH_URL = "https://openphish.com/feed.txt"
 
 _console_width = None
 _history_file = HISTORY_FILE
-_domains = {}
+_blacklists = {}
 _thread_data = threading.local()
 
 def _retrieve_content(url, data=None):
@@ -288,12 +294,16 @@ def _check_sudo():
     if check is False:
         exit("[x] please run with sudo/Administrator privileges")
 
-def load_domains(bulkfile=None):
+def load_blacklists(bulkfile=None):
     """
-    Loads suspicious/malicious domain lists
+    Loads blacklists
     """
 
-    global _domains
+    global _blacklists
+
+    for _ in dir(BLACKLIST):
+        if _ == _.upper():
+            _blacklists[getattr(BLACKLIST, _)] = {}
 
     if bulkfile:
         if not os.path.isfile(bulkfile):
@@ -304,10 +314,23 @@ def load_domains(bulkfile=None):
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
-            _domains[line] = ("suspicious", "custom")
+            _blacklists[BLACKLIST.DNS][line] = ("suspicious", "custom")
 
     if not os.path.isfile(CACHE_FILE) or (time.time() - os.stat(CACHE_FILE).st_mtime) / 3600 / 24 > FRESH_LISTS_DELTA_DAYS:
-        print("[i] %s domain lists..." % ("updating" if os.path.isfile(CACHE_FILE) else "retrieving"))
+        print("[i] %s URL blacklists..." % ("updating" if os.path.isfile(CACHE_FILE) else "retrieving"))
+
+        print(" [o] '%s'" % OPENPHISH_URL)
+        content = _retrieve_content(OPENPHISH_URL)
+        if "http://" not in content:
+            print("[!] something went wrong during remote data retrieval ('%s')" % OPENPHISH_URL)
+
+        for line in content.split('\n'):
+            line = line.strip('\r')
+            if not line or line.startswith('#'):
+                continue
+            _blacklists[BLACKLIST.URL][line] = ("phishing", "openphish.com")
+
+        print("[i] %s domain blacklists..." % ("updating" if os.path.isfile(CACHE_FILE) else "retrieving"))
 
         print(" [o] '%s'" % MALWAREDOMAINLIST_URL)
         content = _retrieve_content(MALWAREDOMAINLIST_URL)
@@ -320,7 +343,7 @@ def load_domains(bulkfile=None):
                 continue
             items = line.split('\s+')
             if items[0] == "127.0.0.1" and items[1] != "localhost":
-                _domains[items[1]] = ("malware", "MDL")
+                _blacklists[BLACKLIST.DNS][items[1]] = ("malware", "www.malwaredomainlist.com")
 
         print(" [o] '%s'" % MALWAREDOMAINS_URL)
         content = _retrieve_content(MALWAREDOMAINS_URL)
@@ -332,7 +355,7 @@ def load_domains(bulkfile=None):
             if not line or line.startswith('#'):
                 continue
             items = line.split('\t')
-            _domains[items[2]] = (items[3], items[4].split('/')[0] if '/' in items[4] else items[4])   # (type, original_reference-why_it_was_listed)
+            _blacklists[BLACKLIST.DNS][items[2]] = (items[3], items[4].split('/')[0] if '/' in items[4] else items[4])   # (type, original_reference-why_it_was_listed)
 
         print(" [o] '%s'" % ZEUS_ABUSECH_URL)
         content = _retrieve_content(ZEUS_ABUSECH_URL)
@@ -343,7 +366,7 @@ def load_domains(bulkfile=None):
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
-            _domains[line] = ("ZeuS", "abuse.ch")
+            _blacklists[BLACKLIST.DNS][line] = ("ZeuS", "zeustracker.abuse.ch")
 
         print(" [o] '%s'" % EMERGING_THREATS_URL)
         content = _retrieve_content(EMERGING_THREATS_URL)
@@ -351,28 +374,28 @@ def load_domains(bulkfile=None):
             print("[!] something went wrong during remote data retrieval ('%s')" % EMERGING_THREATS_URL)
 
         for match in re.finditer(r"(?i)Suspicious \*?\.([^\s]+) domain", content):
-            _domains[match.group(1)] = ("suspicious", "emergingthreats.net")
+            _blacklists[BLACKLIST.DNS][match.group(1)] = ("suspicious", "rules.emergingthreats.net")
 
         for match in re.finditer(r"(?i)C2 Domain \.?([^\s\"]+)", content):
-            _domains[match.group(1)] = ("C&C", "emergingthreats.net")
+            _blacklists[BLACKLIST.DNS][match.group(1)] = ("C&C", "rules.emergingthreats.net")
 
         try:
             if not os.path.isdir(STORAGE_DIRECTORY):
                 os.makedirs(STORAGE_DIRECTORY, 0755)
             with open(CACHE_FILE, "w+b") as f:
-                f.write(zlib.compress(pickle.dumps(_domains)))
+                f.write(zlib.compress(pickle.dumps(_blacklists)))
         except Exception, ex:
             print("[!] something went wrong during cache file write '%s' ('%s')" % (CACHE_FILE, ex))
 
-    if not _domains:
+    if not _blacklists:
         print("[i] loading cache...")
         try:
             with open(CACHE_FILE, "rb") as f:
-                _domains = pickle.loads(zlib.decompress(f.read()))
+                _blacklists = pickle.loads(zlib.decompress(f.read()))
         except Exception, ex:
             exit("[x] something went wrong during cache file read '%s' ('%s')" % (CACHE_FILE, ex))
 
-    print("[i] %d suspicious domain names loaded" % len(_domains))
+    print("[i] %d blacklisted domain names loaded" % len(_blacklists[BLACKLIST.DNS]))
 
 def inspect_packet(packet):
     """
@@ -385,10 +408,13 @@ def inspect_packet(packet):
         parts = domain.split('.')
         for i in xrange(0, len(parts) - 1):
             _ = '.'.join(parts[i:])
-            if _ in _domains:
-                src, dst, type_, details, info, reference = packet.getlayer(IP).src, packet.getlayer(IP).dst, "DNS", domain, _domains[_][0], _domains[_][1]
+            if _ in _blacklists[BLACKLIST.DNS]:
+                src, dst, type_, details, info, reference = packet.getlayer(IP).src, packet.getlayer(IP).dst, "DNS", domain, _blacklists[BLACKLIST.DNS][_][0], _blacklists[BLACKLIST.DNS][_][1]
                 _store_db(packet.time, src, dst, type_, details, info, reference)
                 break
+    #elif packet.haslayer(HTTP):
+    #    import pdb
+    #    pdb.set_trace()
 
 def process_pcap(pcapfile):
     """
@@ -445,7 +471,7 @@ def main():
     if any((options.interface, options.pcapfile)):
         if options.interface:
             _check_sudo()
-        load_domains(options.bulkfile)
+        load_blacklists(options.bulkfile)
         if options.pcapfile:
             _history_file = tempfile.mkstemp()[1]
             _report_file = tempfile.mkstemp(prefix="%s-" % NAME.lower(), suffix=".html")[1]
