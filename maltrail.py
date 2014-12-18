@@ -24,7 +24,7 @@ import zipfile
 import zlib
 
 NAME = "MalTrail"
-VERSION = "0.1m"
+VERSION = "0.1n"
 AUTHOR = "Miroslav Stampar (@stamparm)"
 LICENSE = "Public domain (FREE)"
 
@@ -98,11 +98,11 @@ FILTER_FORM = """
 <select name="yearto"><option value="">year</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option></select></td>
 </tr>
 <tr>
-<td>Domain:</td>
+<td>Search:</td>
 <td colspan="2">
 <table border="0" cellpadding="0" cellspacing="0">
 <tbody><tr>
-<td class="searchboxWrapper"><input name="domain" value="" type="text"></td>
+<td class="searchboxWrapper"><input name="search" value="" type="text"></td>
 <td><input style="background: url('images/search.gif') no-repeat scroll 0 0 rgba(0, 0, 0, 0); width: 24px" value="" type="submit"></td>
 </tr>
 </tbody></table>
@@ -172,14 +172,15 @@ def _get_time_range():
         min_, max_ = _
     return min_, max_
 
-def _create_report(order=None, limit=None, offset=None, mintime=None, maxtime=None, domain=None):
+def _create_report(order=None, limit=None, offset=None, mintime=None, maxtime=None, search=None):
     query = "SELECT * FROM history"
     if mintime:
         query += " WHERE time >= %s" % re.sub(r"[^0-9.]", "", str(mintime))
     if maxtime:
         query += " %s time <= %s" % ("AND" if mintime else "WHERE", re.sub(r"[^0-9.]", "", str(maxtime)))
-    if domain:
-        query += " %s domain_lookup LIKE '%%%s%%'" % ("AND" if mintime or maxtime else "WHERE", domain.replace("'", "").strip())
+    if search:
+        search = search.replace("'", "").strip()
+        query += " %s (src LIKE '%%%s%%' OR dst LIKE '%%%s%%' OR type LIKE '%%%s%%' OR details LIKE '%%%s%%' OR info LIKE '%%%s%%' OR reference LIKE '%%%s%%')" % ("AND" if mintime or maxtime else "WHERE", search, search, search, search, search, search)
     if order:
         query += " ORDER BY time %s" % re.sub(r"[^A-Za-z]", "", order)
     if limit:
@@ -249,12 +250,12 @@ def _start_httpd():
                             break
                         except ValueError:
                             params["dayto"] = int(params["dayto"]) - 1
-                content = _create_report(order=params.get("order", "DESC"), limit=params.get("limit"), offset=params.get("offset"), mintime=mintime, maxtime=maxtime, domain=params.get("domain"))
+                content = _create_report(order=params.get("order", "DESC"), limit=params.get("limit"), offset=params.get("offset"), mintime=mintime, maxtime=maxtime, search=params.get("search"))
                 content = _insert_filter(content)
                 for param, value in params.items():
                     content = re.sub(r"(name=\"%s\".+?<option) (value=\"%s\")" % (re.escape(param), re.escape(str(value))), r"\g<1> selected \g<2>", content)
-                if params.get("domain"):
-                    content = content.replace("input name=\"domain\" value=\"\"", "input name=\"domain\" value=\"%s\"" % params["domain"])
+                if params.get("search"):
+                    content = content.replace("input name=\"search\" value=\"\"", "input name=\"search\" value=\"%s\"" % params["search"])
                 length = len(content)
                 self.send_response(httplib.OK)
                 self.send_header("Content-Type", "text/html")
@@ -387,7 +388,7 @@ def load_blacklists(bulkfile=None):
         except Exception, ex:
             print("[!] something went wrong during cache file write '%s' ('%s')" % (CACHE_FILE, ex))
 
-    if not _blacklists:
+    if not max(len(_) for _ in _blacklists.values()):
         print("[i] loading cache...")
         try:
             with open(CACHE_FILE, "rb") as f:
@@ -395,7 +396,8 @@ def load_blacklists(bulkfile=None):
         except Exception, ex:
             exit("[x] something went wrong during cache file read '%s' ('%s')" % (CACHE_FILE, ex))
 
-    print("[i] %d blacklisted domain names loaded" % len(_blacklists[BLACKLIST.DNS]))
+    for type_ in _blacklists:
+        print("[i] %d blacklisted %s items loaded" % (len(_blacklists[type_]), type_))
 
 def inspect_packet(packet):
     """
