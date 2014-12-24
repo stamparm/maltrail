@@ -27,7 +27,7 @@ import zipfile
 import zlib
 
 NAME = "MalTrail"
-VERSION = "0.2a"
+VERSION = "0.2b"
 AUTHOR = "Miroslav Stampar (@stamparm)"
 LICENSE = "Public domain (FREE)"
 
@@ -141,7 +141,9 @@ MALWAREDOMAINLIST_URL = "http://www.malwaredomainlist.com/hostslist/hosts.txt"
 MALWAREDOMAINS_URL = "http://malwaredomains.lehigh.edu/files/domains.txt"
 ZEUS_ABUSECH_URL = "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist"
 EMERGING_THREATS_URL = "https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules"
+DSHIELD_SUSPICIOUS_URL = "http://www.dshield.org/feeds/suspiciousdomains_High.txt"
 OPENPHISH_URL = "https://openphish.com/feed.txt"
+MALC0DE_URL = "http://malc0de.com/rss/"
 
 _console_width = None
 _history_file = HISTORY_FILE
@@ -363,7 +365,7 @@ def _load_blacklists(bulkfile=None, verbose=True):
             _blacklists[BLACKLIST.DNS][line] = ("suspicious", "custom")
 
     if not os.path.isfile(CACHE_FILE) or (time.time() - os.stat(CACHE_FILE).st_mtime) / 3600 / 24 > FRESH_LISTS_DELTA_DAYS:
-        print("[i] %s URL blacklists..." % ("updating" if os.path.isfile(CACHE_FILE) else "retrieving"))
+        print("[i] %s blacklists..." % ("updating" if os.path.isfile(CACHE_FILE) else "retrieving"))
 
         print(" [o] '%s'" % OPENPHISH_URL)
         content = _retrieve_content(OPENPHISH_URL)
@@ -371,7 +373,7 @@ def _load_blacklists(bulkfile=None, verbose=True):
             print("[!] something went wrong during remote data retrieval ('%s')" % OPENPHISH_URL)
 
         for line in content.split('\n'):
-            line = line.strip('\r')
+            line = line.strip()
             if not line or line.startswith('#'):
                 continue
             if '://' in line:
@@ -379,7 +381,24 @@ def _load_blacklists(bulkfile=None, verbose=True):
             line = line.rstrip('/')
             _blacklists[BLACKLIST.URL][line] = ("phishing", "openphish.com")
 
-        print("[i] %s domain blacklists..." % ("updating" if os.path.isfile(CACHE_FILE) else "retrieving"))
+        print(" [o] '%s'" % DSHIELD_SUSPICIOUS_URL)
+        content = _retrieve_content(DSHIELD_SUSPICIOUS_URL)
+        if "DShield.org" not in content:
+            print("[!] something went wrong during remote data retrieval ('%s')" % DSHIELD_SUSPICIOUS_URL)
+
+        for line in content.split('\n'):
+            line = line.strip()
+            if not line or line.startswith('#') or '.' not in line:
+                continue
+            _blacklists[BLACKLIST.DNS][line] = ("suspicious", "dshield.org")
+
+        print(" [o] '%s'" % MALC0DE_URL)
+        content = _retrieve_content(MALC0DE_URL)
+        if "Malc0de Database Feed" not in content:
+            print("[!] something went wrong during remote data retrieval ('%s')" % MALC0DE_URL)
+
+        for match in re.finditer(r"<description>URL: ([^,\s]+)", content):
+            _blacklists[BLACKLIST.URL][match.group(1)] = ("malware", "malc0de.com")
 
         print(" [o] '%s'" % MALWAREDOMAINLIST_URL)
         content = _retrieve_content(MALWAREDOMAINLIST_URL)
@@ -445,7 +464,7 @@ def _load_blacklists(bulkfile=None, verbose=True):
             exit("[x] something went wrong during cache file read '%s' ('%s')" % (CACHE_FILE, ex))
 
     for type_ in _blacklists:
-        print("[i] %d blacklisted %s items loaded" % (len(_blacklists[type_]), type_))
+        print("[i] %d blacklisted %s entries loaded" % (len(_blacklists[type_]), type_))
 
     if not verbose:
         __builtins__.print = __builtins__.original_print
