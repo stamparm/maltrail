@@ -5,13 +5,17 @@ from __future__ import print_function
 import BaseHTTPServer
 import httplib
 import logging
+import multiprocessing
 import pickle
 import optparse
 import os
 import re
-import socket, SocketServer
+import socket
+import SocketServer
 import sqlite3
 import subprocess
+import stat
+import struct
 import sys
 import tempfile
 import threading
@@ -24,16 +28,21 @@ import zipfile
 import zlib
 
 NAME = "MalTrail"
-VERSION = "0.1n"
+VERSION = "0.2a"
 AUTHOR = "Miroslav Stampar (@stamparm)"
 LICENSE = "Public domain (FREE)"
 
-try:
-    logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
+_queue = None
 
-    from scapy.all import *
+try:
+    import pcapy
 except ImportError:
-    exit("[!] please install Scapy (e.g. '%s')" % ("sudo apt-get install scapy" if not subprocess.mswindows else "http://www.secdev.org/projects/scapy/doc/installation.html#windows"))
+    exit("[!] please install Pcapy (e.g. '%s')" % ("sudo apt-get install python-pcapy" if not subprocess.mswindows else "https://breakingcode.wordpress.com/2012/07/16/quickpost-updated-impacketpcapy-installers-for-python-2-5-2-6-2-7/"))
+
+try:
+    import dpkt
+except ImportError:
+    exit("[!] please install dpkt (e.g. '%s')" % ("sudo apt-get install python-dpkt" if not subprocess.mswindows else "https://dpkt.googlecode.com/files/dpkt-1.7.win32.exe"))
 
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
 TIMEOUT = 30
@@ -45,6 +54,7 @@ TIME_FORMAT = "%d/%m/%Y %H:%M:%S"
 REPORT_HEADERS = ("time", "src", "dst", "type", "details", "info", "reference")
 HTTP_REPORTING_PORT = 8338
 HISTORY_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS history(time REAL, src TEXT, dst TEXT, type TEXT, details TEXT, info TEXT, reference TEXT)"
+DEFAULT_CAPTURING_FILTER = None  # DEFAULT_CAPTURING_FILTER = "tcp dst port 80 or udp dst port 53"
 
 class BLACKLIST:
     DNS = "DNS"
@@ -194,9 +204,17 @@ def _create_report(order=None, limit=None, offset=None, mintime=None, maxtime=No
     return _html_output(NAME, REPORT_HEADERS, rows)
 
 def _insert_filter(report_html):
+    """
+    Inserts filtering form inside the HTML report
+    """
+
     return report_html.replace("<!--filter-->", FILTER_FORM)
 
 def _start_httpd():
+    """
+    Starts reporting HTTP server
+    """
+
     class ThreadingServer(SocketServer.ThreadingMixIn, BaseHTTPServer.HTTPServer):
         pass
 
@@ -275,6 +293,12 @@ def _start_httpd():
         def log_message(self, format, *args):
             return
 
+        def finish(self):
+            try:
+                BaseHTTPServer.BaseHTTPRequestHandler.finish(self)
+            except:
+                pass
+
     server = ThreadingServer(('', HTTP_REPORTING_PORT), ReqHandler)
     print("[i] using address '%s:%d' for HTTP reporting" % ("*" if not server.server_address[0].strip("0.") else server.server_address[0], server.server_address[1]))
 
@@ -283,6 +307,10 @@ def _start_httpd():
     thread.start()
 
 def _check_sudo():
+    """
+    Checks for sudo/Administrator privileges (required for packet capturing)
+    """
+
     check = None
 
     if not subprocess.mswindows:
@@ -295,12 +323,18 @@ def _check_sudo():
     if check is False:
         exit("[x] please run with sudo/Administrator privileges")
 
-def load_blacklists(bulkfile=None):
+def _load_blacklists(bulkfile=None, verbose=True):
     """
     Loads blacklists
     """
 
     global _blacklists
+
+    if not verbose:
+        def _(*args, **kwargs):
+            pass
+        __builtins__.original_print = __builtins__.print
+        __builtins__.print = _
 
     for _ in dir(BLACKLIST):
         if _ == _.upper():
@@ -329,6 +363,9 @@ def load_blacklists(bulkfile=None):
             line = line.strip('\r')
             if not line or line.startswith('#'):
                 continue
+            if '://' in line:
+                line = re.search(r"://(.*)", line).group(1)
+            line = line.rstrip('/')
             _blacklists[BLACKLIST.URL][line] = ("phishing", "openphish.com")
 
         print("[i] %s domain blacklists..." % ("updating" if os.path.isfile(CACHE_FILE) else "retrieving"))
@@ -399,24 +436,108 @@ def load_blacklists(bulkfile=None):
     for type_ in _blacklists:
         print("[i] %d blacklisted %s items loaded" % (len(_blacklists[type_]), type_))
 
-def inspect_packet(packet):
+    if not verbose:
+        __builtins__.print = __builtins__.original_print
+
+def _process_packet(packet, timestamp=None):
     """
-    Processes packet
+    Performs all processing on raw packets
     """
 
-    if packet.haslayer(DNSQR):
-        request = packet.getlayer(DNSQR)
-        domain = request.qname.strip('.')
-        parts = domain.split('.')
-        for i in xrange(0, len(parts) - 1):
-            _ = '.'.join(parts[i:])
-            if _ in _blacklists[BLACKLIST.DNS]:
-                src, dst, type_, details, info, reference = packet.getlayer(IP).src, packet.getlayer(IP).dst, "DNS", domain, _blacklists[BLACKLIST.DNS][_][0], _blacklists[BLACKLIST.DNS][_][1]
-                _store_db(packet.time, src, dst, type_, details, info, reference)
-                break
-    #elif packet.haslayer(HTTP):
-    #    import pdb
-    #    pdb.set_trace()
+    eth_length = 14
+    eth_header = packet[:14]
+    eth = struct.unpack('!6s6sH' , eth_header)
+    eth_protocol = socket.ntohs(eth[2])
+ 
+    if eth_protocol == 8:  # IP
+        ip_header = packet[eth_length:20+eth_length]
+        iph = struct.unpack('!BBHHHBBH4s4s' , ip_header)
+        version_ihl = iph[0]
+        version = version_ihl >> 4
+        ihl = version_ihl & 0xF
+        iph_length = ihl * 4
+        protocol = iph[6]
+        src_ip = socket.inet_ntoa(iph[8])
+        dst_ip = socket.inet_ntoa(iph[9])
+
+        if dst_ip in _blacklists[BLACKLIST.IP]:
+            src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.IP, dst_ip, _blacklists[BLACKLIST.IP][dst_ip][0], _blacklists[BLACKLIST.IP][dst_ip][1]
+            _store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
+
+        elif src_ip in _blacklists[BLACKLIST.IP]:
+            src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.IP, src_ip, _blacklists[BLACKLIST.IP][src_ip][0], _blacklists[BLACKLIST.IP][src_ip][1]
+            _store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
+
+        if protocol == socket.IPPROTO_TCP:
+            i = iph_length + eth_length
+            tcp_header = packet[i:i+20]
+            src_port, dst_port, _, _, doff_reserved, _, _, _, _ = struct.unpack('!HHLLBBHHH' , tcp_header)
+            tcph_length = doff_reserved >> 4
+            h_size = eth_length + iph_length + tcph_length * 4
+            data_size = len(packet) - h_size
+            data = packet[h_size:]
+
+            if dst_port == 80 and len(data) > 0:
+                match = re.search(r"(?s)\A\s*(GET|POST|HEAD|PUT) (/[^ ]*) HTTP/[\d.]+.+?Host:\s*([^\s]+)", data)
+                if match:
+                    url = ("%s%s" % (match.group(3), match.group(2))).rstrip('/')
+                    if url in _blacklists[BLACKLIST.URL]:
+                        src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.URL, url, _blacklists[BLACKLIST.URL][url][0], _blacklists[BLACKLIST.URL][url][1]
+                        _store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
+
+        elif protocol == socket.IPPROTO_UDP:
+            i = iph_length + eth_length
+            src_port, dst_port = struct.unpack('!HH' , packet[i:i+4])
+            if dst_port == 53:
+                h_size = eth_length + iph_length + 8
+                data_size = len(packet) - h_size
+                data = packet[h_size:]
+
+                try:
+                    dns = dpkt.dns.DNS(data)
+                except:
+                    pass
+                else:
+                    if dns.opcode == dpkt.dns.DNS_QUERY:
+                        for query in dns.qd:
+                            domain = query.name
+                            parts = domain.split('.')
+                            for i in xrange(0, len(parts) - 1):
+                                _ = '.'.join(parts[i:])
+                                if _ in _blacklists[BLACKLIST.DNS]:
+                                    src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.DNS, domain, _blacklists[BLACKLIST.DNS][_][0], _blacklists[BLACKLIST.DNS][_][1]
+                                    _store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
+                                    break
+
+def _worker(queue):
+    """
+    Worker process used in multiprocessing mode
+    """
+
+    if not _blacklists:
+        _load_blacklists(verbose=False)
+
+    while True:
+        try:
+            packet, timestamp = queue.get()
+            _process_packet(packet, timestamp)
+        except KeyboardInterrupt:
+            break
+
+def _init_multiprocessing():
+    """
+    Inits worker processes used in multiprocessing mode
+    """
+
+    global _queue
+
+    print ("[i] starting %d more processes (%d total)" % (multiprocessing.cpu_count() - 1, multiprocessing.cpu_count()))
+    _queue = multiprocessing.Queue()
+
+    for i in xrange(multiprocessing.cpu_count() - 1):
+        p = multiprocessing.Process(target=_worker, args=(_queue,))
+        p.daemon = True
+        p.start()
 
 def process_pcap(pcapfile):
     """
@@ -428,17 +549,25 @@ def process_pcap(pcapfile):
     if not os.path.isfile(pcapfile):
         exit("[x] file '%s' does not exist" % pcapfile)
     try:
-        packets = PcapReader(pcapfile)
+        packets = dpkt.pcap.Reader(open(pcapfile, "rb"))
     except Exception, ex:
         if "Not a pcap capture file" in traceback.format_exc():
             ex = "Not a pcap capture file"
         exit("[x] there has been a problem with reading file '%s' ('%s')" % (pcapfile, ex))
 
     count = 0
-    for packet in packets:
-        count += 1
-        sys.stdout.write('%s\r' % ROTATING_CHARS[count % len(ROTATING_CHARS)])
-        inspect_packet(packet)
+    try:
+        for timestamp, packet in packets:
+            count += 1
+            sys.stdout.write('%s\r' % ROTATING_CHARS[count % len(ROTATING_CHARS)])
+            _queue.put((packet, timestamp))
+    except KeyboardInterrupt:
+        print("\r[x] Ctrl-C pressed")
+    else:
+        while _queue.qsize():
+            time.sleep(0.5)
+    finally:
+        _queue.close()
 
 def monitor_interface(interface):
     """
@@ -448,7 +577,15 @@ def monitor_interface(interface):
     print("[i] monitoring interface '%s'..." % interface)
 
     try:
-        sniff(iface=interface if interface.lower() != "any" else None, prn=inspect_packet, filter="ip", store=0)
+        cap = pcapy.open_live(interface, 65535, True, 100)
+        cap.setfilter(DEFAULT_CAPTURING_FILTER or "")
+        while True:
+            try:
+                (header, packet) = cap.next()
+                timestamp = header.getts()[0]
+                _queue.put((packet, timestamp))
+            except socket.timeout:
+                pass
     except KeyboardInterrupt:
         print("\r[x] Ctrl-C pressed")
     except socket.error, ex:
@@ -458,8 +595,12 @@ def monitor_interface(interface):
             exit("\n[x] no such device '%s'" % interface)
         else:
             raise
+    else:
+        while _queue.qsize():
+            time.sleep(0.5)
     finally:
         _close_db()
+        _queue.close()
 
 def main():
     global _history_file
@@ -473,10 +614,12 @@ def main():
     if any((options.interface, options.pcapfile)):
         if options.interface:
             _check_sudo()
-        load_blacklists(options.bulkfile)
+        _load_blacklists(options.bulkfile)
+        _init_multiprocessing()
         if options.pcapfile:
             _history_file = tempfile.mkstemp()[1]
             _report_file = tempfile.mkstemp(prefix="%s-" % NAME.lower(), suffix=".html")[1]
+            os.chmod(_report_file, stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH)
             process_pcap(options.pcapfile)
             with open(_report_file, "w+b") as f:
                 f.write(_create_report())
@@ -486,6 +629,8 @@ def main():
             monitor_interface(options.interface)
     else:
         parser.print_help()
+
+    os._exit(0)
 
 if __name__ == "__main__":
     main()
