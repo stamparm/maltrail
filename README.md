@@ -41,4 +41,4 @@ MalTrail #v0.2a
 Requirements
 ----
 
-[Python](http://www.python.org/download/) version **2.6.x** or **2.7.x** is required for running this program, along with [Pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) and [dpkt](https://code.google.com/p/dpkt/) (e.g. `sudo apt-get install python-pcapy python-dpkt`).
+[Python](http://www.python.org/download/) version **2.6.x** or **2.7.x** is required for running this program, along with [Pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) and [dpkt](https://code.google.com/p/dpkt/) (e.g. sample installation on Debian-like systems: `sudo apt-get install python-pcapy python-dpkt`).
