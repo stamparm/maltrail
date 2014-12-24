@@ -5,7 +5,6 @@ from __future__ import print_function
 import BaseHTTPServer
 import httplib
 import logging
-import multiprocessing
 import pickle
 import optparse
 import os
@@ -33,6 +32,18 @@ AUTHOR = "Miroslav Stampar (@stamparm)"
 LICENSE = "Public domain (FREE)"
 
 _queue = None
+_multiprocessing = False
+
+try:
+    import multiprocessing
+
+    # problems on FreeBSD (Reference: http://www.eggheadcafe.com/microsoft/Python/35880259/multiprocessing-on-freebsd.aspx)
+    _ = multiprocessing.Queue()
+
+    if multiprocessing.cpu_count() > 1:
+        _multiprocessing = True
+except (ImportError, OSError, NotImplementedError):
+    pass
 
 try:
     import pcapy
@@ -531,13 +542,14 @@ def _init_multiprocessing():
 
     global _queue
 
-    print ("[i] starting %d more processes (%d total)" % (multiprocessing.cpu_count() - 1, multiprocessing.cpu_count()))
-    _queue = multiprocessing.Queue()
+    if _multiprocessing:
+        print ("[i] starting %d more processes (%d total)" % (multiprocessing.cpu_count() - 1, multiprocessing.cpu_count()))
+        _queue = multiprocessing.Queue()
 
-    for i in xrange(multiprocessing.cpu_count() - 1):
-        p = multiprocessing.Process(target=_worker, args=(_queue,))
-        p.daemon = True
-        p.start()
+        for i in xrange(multiprocessing.cpu_count() - 1):
+            p = multiprocessing.Process(target=_worker, args=(_queue,))
+            p.daemon = True
+            p.start()
 
 def process_pcap(pcapfile):
     """
@@ -560,14 +572,19 @@ def process_pcap(pcapfile):
         for timestamp, packet in packets:
             count += 1
             sys.stdout.write('%s\r' % ROTATING_CHARS[count % len(ROTATING_CHARS)])
-            _queue.put((packet, timestamp))
+            if _queue:
+                _queue.put((packet, timestamp))
+            else:
+                _process_packet(packet, timestamp)
     except KeyboardInterrupt:
         print("\r[x] Ctrl-C pressed")
     else:
-        while _queue.qsize():
-            time.sleep(0.5)
+        if _queue:
+            while _queue.qsize():
+                time.sleep(0.5)
     finally:
-        _queue.close()
+        if _queue:
+            _queue.close()
 
 def monitor_interface(interface):
     """
@@ -583,7 +600,10 @@ def monitor_interface(interface):
             try:
                 (header, packet) = cap.next()
                 timestamp = header.getts()[0]
-                _queue.put((packet, timestamp))
+                if _queue:
+                    _queue.put((packet, timestamp))
+                else:
+                    _process_packet(packet, timestamp)
             except socket.timeout:
                 pass
     except KeyboardInterrupt:
@@ -596,11 +616,13 @@ def monitor_interface(interface):
         else:
             raise
     else:
-        while _queue.qsize():
-            time.sleep(0.5)
+        if _queue:
+            while _queue.qsize():
+                time.sleep(0.5)
     finally:
         _close_db()
-        _queue.close()
+        if _queue:
+            _queue.close()
 
 def main():
     global _history_file
