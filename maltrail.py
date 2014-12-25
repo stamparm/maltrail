@@ -743,18 +743,18 @@ def process_pcap(pcapfile):
         for timestamp, packet in packets:
             count += 1
             sys.stdout.write('%s\r' % ROTATING_CHARS[count % len(ROTATING_CHARS)])
-            if _queue:
+            if _multiprocessing:
                 _queue.put((packet, timestamp))
             else:
                 _process_packet(packet, timestamp)
     except KeyboardInterrupt:
         print("\r[x] Ctrl-C pressed")
     else:
-        if _queue:
+        if _multiprocessing:
             while _queue.qsize():
                 time.sleep(0.5)
     finally:
-        if _queue:
+        if _multiprocessing:
             _queue.close()
 
 def monitor_interface(interface):
@@ -771,7 +771,7 @@ def monitor_interface(interface):
             try:
                 (header, packet) = cap.next()
                 timestamp = header.getts()[0]
-                if _queue:
+                if _multiprocessing:
                     _queue.put((packet, timestamp))
                 else:
                     _process_packet(packet, timestamp)
@@ -787,12 +787,12 @@ def monitor_interface(interface):
         else:
             raise
     else:
-        if _queue:
+        if _multiprocessing:
             while _queue.qsize():
                 time.sleep(0.5)
     finally:
         _close_db()
-        if _queue:
+        if _multiprocessing:
             _queue.close()
 
 def main():
