@@ -1,7 +1,7 @@
 Maltrail
 ============
 
-**Maltrail** is a malicious traffic monitoring tool originally designed for malware tracking purposes, utilizing publicly available specialized lists for malicious (or generally suspicious) domains, URLs and/or IPs. Preferably it should be run on a (Linux) box connected to the router's [port mirroring](http://en.wikipedia.org/wiki/Port_mirroring) interface or [network tap](http://en.wikipedia.org/wiki/Network_tap) device. It uses [Pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) library for sniffing purposes. Also, it runs in multiprocessing mode (depending on # of CPU cores) to maximize the packet processing performance.
+**Maltrail** is a malicious traffic monitoring tool, utilizing publicly available blacklists containing malicious (or generally suspicious) domains, URLs and IPs. It uses [Pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) library for traffic capturing and [dpkt](https://code.google.com/p/dpkt/) for packet parsing. Also, it runs in multiprocessing mode (depending on # of CPU cores) to maximize the packet processing performance.
 
 ![Report](http://i.imgur.com/k7JlIjC.png)
 
@@ -18,18 +18,16 @@ Usage: maltrail.py [options]
 Options:
   --version     show program's version number and exit
   -h, --help    show this help message and exit
-  --quiet       turn off program's console output
   -i INTERFACE  listen DNS traffic on interface (e.g. eth0)
   -r PCAPFILE   read packets from (.pcap) file
-  -l BULKFILE   load domain list from file (optional)
 ```
 
 ```
 # python maltrail.py -i eth0
-Maltrail #v0.2d
+Maltrail #v0.2e
  by: Miroslav Stampar (@stamparm)
 
-[i] updating blacklists...
+[i] retrieving blacklists...
  [o] 'http://cinsscore.com/list/ci-badguys.txt'
  [o] 'http://lists.blocklist.de/lists/all.txt'
  [o] 'https://www.autoshun.org/files/shunlist.csv'
@@ -39,18 +37,21 @@ Maltrail #v0.2d
  [o] 'http://www.nothink.org/blacklist/blacklist_malware_irc.txt'
  [o] 'http://danger.rulez.sk/projects/bruteforceblocker/blist.php'
  [o] 'https://www.maxmind.com/en/anonymous_proxies'
+ [o] 'http://malwared.malwaremustdie.org/rss.php'
  [o] 'http://rules.emergingthreats.net/open/suricata/rules/botcc.rules'
  [o] 'https://myip.ms/files/blacklist/htaccess/latest_blacklist.txt'
  [o] 'https://openphish.com/feed.txt'
+ [o] 'https://lists.malwarepatrol.net/cgi/getfile?receipt=f1417692233&product=8&list=dansguardian'
+ [o] 'http://vxvault.siri-urz.net/URL_List.php'
  [o] 'http://www.dshield.org/feeds/suspiciousdomains_High.txt'
  [o] 'http://malc0de.com/rss/'
  [o] 'http://www.malwaredomainlist.com/hostslist/hosts.txt'
  [o] 'http://malwaredomains.lehigh.edu/files/domains.txt'
  [o] 'https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist'
  [o] 'https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules'
-[i] 10451 blacklisted URL entries loaded
-[i] 45189 blacklisted IP entries loaded
-[i] 25790 blacklisted DNS entries loaded
+[i] 37081 blacklisted URL entries loaded
+[i] 42424 blacklisted IP entries loaded
+[i] 29151 blacklisted DNS entries loaded
 [i] starting 3 more processes (4 total)
 [i] using address '*:8338' for HTTP reporting
 [i] monitoring interface 'eth0'...

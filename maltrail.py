@@ -349,7 +349,7 @@ def _check_sudo():
     if check is False:
         exit("[x] please run with sudo/Administrator privileges")
 
-def _load_blacklists(bulkfile=None, verbose=True):
+def _load_blacklists(verbose=True):
     """
     Loads blacklists
     """
@@ -365,17 +365,6 @@ def _load_blacklists(bulkfile=None, verbose=True):
     for _ in dir(BLACKLIST):
         if _ == _.upper():
             _blacklists[getattr(BLACKLIST, _)] = {}
-
-    if bulkfile:
-        if not os.path.isfile(bulkfile):
-            exit("[x] file '%s' does not exist" % bulkfile)
-
-        content = open(bulkfile, "rb").read()
-        for line in content.split('\n'):
-            line = line.strip()
-            if not line or line.startswith('#'):
-                continue
-            _blacklists[BLACKLIST.DNS][line] = ("suspicious", "custom")
 
     if not os.path.isfile(CACHE_FILE) or (time.time() - os.stat(CACHE_FILE).st_mtime) / 3600 / 24 > FRESH_LISTS_DELTA_DAYS:
         print("[i] %s blacklists..." % ("updating" if os.path.isfile(CACHE_FILE) else "retrieving"))
@@ -813,12 +802,11 @@ def main():
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-i", dest="interface", help="listen DNS traffic on interface (e.g. eth0)")
     parser.add_option("-r", dest="pcapfile", help="read packets from (.pcap) file")
-    parser.add_option("-l", dest="bulkfile", help="load domain list from file (optional)")
     options, _ = parser.parse_args()
     if any((options.interface, options.pcapfile)):
         if options.interface:
             _check_sudo()
-        _load_blacklists(options.bulkfile)
+        _load_blacklists()
         _init_multiprocessing()
         if options.pcapfile:
             _history_file = tempfile.mkstemp()[1]
