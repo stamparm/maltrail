@@ -10,7 +10,7 @@ Sample runs
 
 ```
 # python maltrail.py -h
-MalTrail #v0.2c
+MalTrail #v0.2d
  by: Miroslav Stampar (@stamparm)
 
 Usage: maltrail.py [options]
@@ -26,7 +26,7 @@ Options:
 
 ```
 # python maltrail.py -i eth0
-MalTrail #v0.2c
+MalTrail #v0.2d
  by: Miroslav Stampar (@stamparm)
 
 [i] updating blacklists...
@@ -35,8 +35,11 @@ MalTrail #v0.2c
  [o] 'https://www.autoshun.org/files/shunlist.csv'
  [o] 'https://check.torproject.org/cgi-bin/TorBulkExitList.py?ip=1.1.1.1'
  [o] 'http://www.openbl.org/lists/base.txt'
+ [o] 'http://rules.emergingthreats.net/open/suricata/rules/compromised-ips.txt'
+ [o] 'http://www.nothink.org/blacklist/blacklist_malware_irc.txt'
  [o] 'http://danger.rulez.sk/projects/bruteforceblocker/blist.php'
  [o] 'https://www.maxmind.com/en/anonymous_proxies'
+ [o] 'http://rules.emergingthreats.net/open/suricata/rules/botcc.rules'
  [o] 'https://myip.ms/files/blacklist/htaccess/latest_blacklist.txt'
  [o] 'https://openphish.com/feed.txt'
  [o] 'http://www.dshield.org/feeds/suspiciousdomains_High.txt'
@@ -45,8 +48,8 @@ MalTrail #v0.2c
  [o] 'http://malwaredomains.lehigh.edu/files/domains.txt'
  [o] 'https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist'
  [o] 'https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules'
-[i] 10449 blacklisted URL entries loaded
-[i] 44089 blacklisted IP entries loaded
+[i] 10451 blacklisted URL entries loaded
+[i] 45189 blacklisted IP entries loaded
 [i] 25790 blacklisted DNS entries loaded
 [i] starting 3 more processes (4 total)
 [i] using address '*:8338' for HTTP reporting
