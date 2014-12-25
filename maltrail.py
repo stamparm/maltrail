@@ -27,7 +27,7 @@ import zipfile
 import zlib
 
 NAME = "MalTrail"
-VERSION = "0.2c"
+VERSION = "0.2d"
 AUTHOR = "Miroslav Stampar (@stamparm)"
 LICENSE = "Public domain (FREE)"
 
@@ -140,7 +140,9 @@ HTTP_RAW_FILES = {
 MALWAREDOMAINLIST_URL = "http://www.malwaredomainlist.com/hostslist/hosts.txt"
 MALWAREDOMAINS_URL = "http://malwaredomains.lehigh.edu/files/domains.txt"
 ZEUS_ABUSECH_URL = "https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist"
-EMERGING_THREATS_URL = "https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules"
+EMERGINGTHREATS_DNS_URL = "https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules"
+EMERGINGTHREATS_BOTCC_URL = "http://rules.emergingthreats.net/open/suricata/rules/botcc.rules"
+EMERGINGTHREATS_COMPROMISED_URL = "http://rules.emergingthreats.net/open/suricata/rules/compromised-ips.txt"
 DSHIELD_SUSPICIOUS_URL = "http://www.dshield.org/feeds/suspiciousdomains_High.txt"
 OPENPHISH_URL = "https://openphish.com/feed.txt"
 MALC0DE_URL = "http://malc0de.com/rss/"
@@ -152,8 +154,8 @@ BRUTEFORCEBLOCKER_URL = "http://danger.rulez.sk/projects/bruteforceblocker/blist
 OPENBL_URL = "http://www.openbl.org/lists/base.txt"
 BLOCKLISTDE_URL = "http://lists.blocklist.de/lists/all.txt"
 AUTOSHUN_URL = "https://www.autoshun.org/files/shunlist.csv"
+NOTHINKIRC_URL = "http://www.nothink.org/blacklist/blacklist_malware_irc.txt"
 
-_console_width = None
 _history_file = HISTORY_FILE
 _blacklists = {}
 _thread_data = threading.local()
@@ -426,6 +428,26 @@ def _load_blacklists(bulkfile=None, verbose=True):
                 continue
             _blacklists[BLACKLIST.IP][line] = ("abuser", "openbl.org")
 
+        print(" [o] '%s'" % EMERGINGTHREATS_COMPROMISED_URL)
+        content = _retrieve_content(EMERGINGTHREATS_COMPROMISED_URL)
+
+        for line in content.split('\n'):
+            line = line.strip()
+            if not line or line.startswith('#') or '.' not in line:
+                continue
+            _blacklists[BLACKLIST.IP][line] = ("compromised host", "rules.emergingthreats.net")
+
+        print(" [o] '%s'" % NOTHINKIRC_URL)
+        content = _retrieve_content(NOTHINKIRC_URL)
+        if "Malware IRC" not in content:
+            print("[!] something went wrong during remote data retrieval ('%s')" % NOTHINKIRC_URL)
+
+        for line in content.split('\n'):
+            line = line.strip()
+            if not line or line.startswith('#') or '.' not in line:
+                continue
+            _blacklists[BLACKLIST.IP][line] = ("malware IRC", "nothink.org")
+
         print(" [o] '%s'" % BRUTEFORCEBLOCKER_URL)
         content = _retrieve_content(BRUTEFORCEBLOCKER_URL)
         if "Last Reported" not in content:
@@ -444,6 +466,14 @@ def _load_blacklists(bulkfile=None, verbose=True):
 
         for match in re.finditer(r"proxy/([\d.]+)", content):
             _blacklists[BLACKLIST.IP][match.group(1)] = ("anonymous proxy", "maxmind.com")
+
+        print(" [o] '%s'" % EMERGINGTHREATS_BOTCC_URL)
+        content = _retrieve_content(EMERGINGTHREATS_BOTCC_URL)
+        if "CnC Server" not in content:
+            print("[!] something went wrong during remote data retrieval ('%s')" % EMERGINGTHREATS_BOTCC_URL)
+
+        for match in re.finditer(r"\d+\.\d+\.\d+\.\d+", content):
+            _blacklists[BLACKLIST.IP][match.group(0)] = ("C&C", "rules.emergingthreats.net")
 
         print(" [o] '%s'" % MYIP_URL)
         content = _retrieve_content(MYIP_URL)
@@ -522,10 +552,10 @@ def _load_blacklists(bulkfile=None, verbose=True):
                 continue
             _blacklists[BLACKLIST.DNS][line] = ("ZeuS", "zeustracker.abuse.ch")
 
-        print(" [o] '%s'" % EMERGING_THREATS_URL)
-        content = _retrieve_content(EMERGING_THREATS_URL)
+        print(" [o] '%s'" % EMERGINGTHREATS_DNS_URL)
+        content = _retrieve_content(EMERGINGTHREATS_DNS_URL)
         if "Emerging Threats" not in content:
-            print("[!] something went wrong during remote data retrieval ('%s')" % EMERGING_THREATS_URL)
+            print("[!] something went wrong during remote data retrieval ('%s')" % EMERGINGTHREATS_DNS_URL)
 
         for match in re.finditer(r"(?i)Suspicious \*?\.([^\s]+) domain", content):
             _blacklists[BLACKLIST.DNS][match.group(1)] = ("suspicious", "rules.emergingthreats.net")
