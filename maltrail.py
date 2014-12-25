@@ -718,9 +718,9 @@ def _init_multiprocessing():
         _queue = multiprocessing.Queue()
 
         for i in xrange(multiprocessing.cpu_count() - 1):
-            p = multiprocessing.Process(target=_worker, args=(_queue,))
-            p.daemon = True
-            p.start()
+            process = multiprocessing.Process(target=_worker, args=(_queue,))
+            process.daemon = True
+            process.start()
 
 def process_pcap(pcapfile):
     """
