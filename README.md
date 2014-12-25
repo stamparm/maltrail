@@ -1,7 +1,7 @@
-MalTrail
+Maltrail
 ============
 
-**MalTrail** is a malicious traffic monitoring tool originally designed for malware tracking purposes, utilizing publicly available specialized lists for malicious (or generally suspicious) domains, URLs and/or IPs. Preferably it should be run on a (Linux) box connected to the router's [port mirroring](http://en.wikipedia.org/wiki/Port_mirroring) interface or [network tap](http://en.wikipedia.org/wiki/Network_tap) device. It uses [Pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) library for sniffing purposes. Also, it runs in multiprocessing mode (depending on # of CPU cores) to maximize the packet processing performance.
+**Maltrail** is a malicious traffic monitoring tool originally designed for malware tracking purposes, utilizing publicly available specialized lists for malicious (or generally suspicious) domains, URLs and/or IPs. Preferably it should be run on a (Linux) box connected to the router's [port mirroring](http://en.wikipedia.org/wiki/Port_mirroring) interface or [network tap](http://en.wikipedia.org/wiki/Network_tap) device. It uses [Pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) library for sniffing purposes. Also, it runs in multiprocessing mode (depending on # of CPU cores) to maximize the packet processing performance.
 
 ![Report](http://i.imgur.com/k7JlIjC.png)
 
@@ -10,7 +10,7 @@ Sample runs
 
 ```
 # python maltrail.py -h
-MalTrail #v0.2d
+Maltrail #v0.2d
  by: Miroslav Stampar (@stamparm)
 
 Usage: maltrail.py [options]
@@ -26,7 +26,7 @@ Options:
 
 ```
 # python maltrail.py -i eth0
-MalTrail #v0.2d
+Maltrail #v0.2d
  by: Miroslav Stampar (@stamparm)
 
 [i] updating blacklists...

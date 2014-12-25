@@ -26,7 +26,7 @@ import urlparse
 import zipfile
 import zlib
 
-NAME = "MalTrail"
+NAME = "Maltrail"
 VERSION = "0.2d"
 AUTHOR = "Miroslav Stampar (@stamparm)"
 LICENSE = "Public domain (FREE)"
