@@ -27,7 +27,7 @@ import zipfile
 import zlib
 
 NAME = "MalTrail"
-VERSION = "0.2b"
+VERSION = "0.2c"
 AUTHOR = "Miroslav Stampar (@stamparm)"
 LICENSE = "Public domain (FREE)"
 
@@ -144,6 +144,14 @@ EMERGING_THREATS_URL = "https://rules.emergingthreats.net/open/suricata/rules/em
 DSHIELD_SUSPICIOUS_URL = "http://www.dshield.org/feeds/suspiciousdomains_High.txt"
 OPENPHISH_URL = "https://openphish.com/feed.txt"
 MALC0DE_URL = "http://malc0de.com/rss/"
+MYIP_URL = "https://myip.ms/files/blacklist/htaccess/latest_blacklist.txt"
+CIARMY_URL = "http://cinsscore.com/list/ci-badguys.txt"
+MAXMIND_URL = "https://www.maxmind.com/en/anonymous_proxies"
+TORPROJECT_URL = "https://check.torproject.org/cgi-bin/TorBulkExitList.py?ip=1.1.1.1"
+BRUTEFORCEBLOCKER_URL = "http://danger.rulez.sk/projects/bruteforceblocker/blist.php"
+OPENBL_URL = "http://www.openbl.org/lists/base.txt"
+BLOCKLISTDE_URL = "http://lists.blocklist.de/lists/all.txt"
+AUTOSHUN_URL = "https://www.autoshun.org/files/shunlist.csv"
 
 _console_width = None
 _history_file = HISTORY_FILE
@@ -367,6 +375,84 @@ def _load_blacklists(bulkfile=None, verbose=True):
     if not os.path.isfile(CACHE_FILE) or (time.time() - os.stat(CACHE_FILE).st_mtime) / 3600 / 24 > FRESH_LISTS_DELTA_DAYS:
         print("[i] %s blacklists..." % ("updating" if os.path.isfile(CACHE_FILE) else "retrieving"))
 
+        print(" [o] '%s'" % CIARMY_URL)
+        content = _retrieve_content(CIARMY_URL)
+
+        for line in content.split('\n'):
+            line = line.strip()
+            if not line or line.startswith('#') or '.' not in line:
+                continue
+            _blacklists[BLACKLIST.IP][line] = ("malicious", "cinsscore.com")
+
+        print(" [o] '%s'" % BLOCKLISTDE_URL)
+        content = _retrieve_content(BLOCKLISTDE_URL)
+
+        for line in content.split('\n'):
+            line = line.strip()
+            if not line or line.startswith('#') or '.' not in line:
+                continue
+            _blacklists[BLACKLIST.IP][line] = ("attacker", "blocklist.de")
+
+        print(" [o] '%s'" % AUTOSHUN_URL)
+        content = _retrieve_content(AUTOSHUN_URL)
+        if "Shunlist" not in content:
+            print("[!] something went wrong during remote data retrieval ('%s')" % AUTOSHUN_URL)
+
+        for line in content.split('\n'):
+            line = line.strip()
+            if not line or line.startswith('#') or '.' not in line or "Shunlist" in line:
+                continue
+            _blacklists[BLACKLIST.IP][line.split(',')[0]] = ("attacker", "autoshun.org")
+
+        print(" [o] '%s'" % TORPROJECT_URL)
+        content = _retrieve_content(TORPROJECT_URL)
+        if "Tor exit nodes" not in content:
+            print("[!] something went wrong during remote data retrieval ('%s')" % TORPROJECT_URL)
+
+        for line in content.split('\n'):
+            line = line.strip()
+            if not line or line.startswith('#') or '.' not in line:
+                continue
+            _blacklists[BLACKLIST.IP][line] = ("tor exit node", "check.torproject.org")
+
+        print(" [o] '%s'" % OPENBL_URL)
+        content = _retrieve_content(OPENBL_URL)
+        if "source ip" not in content:
+            print("[!] something went wrong during remote data retrieval ('%s')" % OPENBL_URL)
+
+        for line in content.split('\n'):
+            line = line.strip()
+            if not line or line.startswith('#') or '.' not in line:
+                continue
+            _blacklists[BLACKLIST.IP][line] = ("abuser", "openbl.org")
+
+        print(" [o] '%s'" % BRUTEFORCEBLOCKER_URL)
+        content = _retrieve_content(BRUTEFORCEBLOCKER_URL)
+        if "Last Reported" not in content:
+            print("[!] something went wrong during remote data retrieval ('%s')" % BRUTEFORCEBLOCKER_URL)
+
+        for line in content.split('\n'):
+            line = line.strip()
+            if not line or line.startswith('#') or '.' not in line:
+                continue
+            _blacklists[BLACKLIST.IP][line.split('\t')[0]] = ("brute forcer", "danger.rulez.sk")
+
+        print(" [o] '%s'" % MAXMIND_URL)
+        content = _retrieve_content(MAXMIND_URL)
+        if "Anonymous Proxies " not in content:
+            print("[!] something went wrong during remote data retrieval ('%s')" % MAXMIND_URL)
+
+        for match in re.finditer(r"proxy/([\d.]+)", content):
+            _blacklists[BLACKLIST.IP][match.group(1)] = ("anonymous proxy", "maxmind.com")
+
+        print(" [o] '%s'" % MYIP_URL)
+        content = _retrieve_content(MYIP_URL)
+        if "LIVE BLACKLIST" not in content:
+            print("[!] something went wrong during remote data retrieval ('%s')" % MYIP_URL)
+
+        for match in re.finditer(r"deny from ([\d.]+)", content):
+            _blacklists[BLACKLIST.IP][match.group(1)] = ("spam bot or crawler", "myip.ms")
+
         print(" [o] '%s'" % OPENPHISH_URL)
         content = _retrieve_content(OPENPHISH_URL)
         if "http://" not in content:
@@ -411,7 +497,7 @@ def _load_blacklists(bulkfile=None, verbose=True):
                 continue
             items = line.split('\s+')
             if items[0] == "127.0.0.1" and items[1] != "localhost":
-                _blacklists[BLACKLIST.DNS][items[1]] = ("malware", "www.malwaredomainlist.com")
+                _blacklists[BLACKLIST.DNS][items[1]] = ("malware", "malwaredomainlist.com")
 
         print(" [o] '%s'" % MALWAREDOMAINS_URL)
         content = _retrieve_content(MALWAREDOMAINS_URL)
