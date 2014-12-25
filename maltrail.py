@@ -811,10 +811,10 @@ def main():
         if options.pcapfile:
             _history_file = tempfile.mkstemp()[1]
             _report_file = tempfile.mkstemp(prefix="%s-" % NAME.lower(), suffix=".html")[1]
-            os.chmod(_report_file, stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH)
             process_pcap(options.pcapfile)
             with open(_report_file, "w+b") as f:
                 f.write(_create_report())
+            os.chmod(_report_file, stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH)
             print("[i] report written to '%s'" % _report_file)
         elif options.interface:
             _start_httpd()
