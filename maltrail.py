@@ -27,7 +27,7 @@ import zipfile
 import zlib
 
 NAME = "Maltrail"
-VERSION = "0.2d"
+VERSION = "0.2e"
 AUTHOR = "Miroslav Stampar (@stamparm)"
 LICENSE = "Public domain (FREE)"
 
@@ -155,6 +155,9 @@ OPENBL_URL = "http://www.openbl.org/lists/base.txt"
 BLOCKLISTDE_URL = "http://lists.blocklist.de/lists/all.txt"
 AUTOSHUN_URL = "https://www.autoshun.org/files/shunlist.csv"
 NOTHINKIRC_URL = "http://www.nothink.org/blacklist/blacklist_malware_irc.txt"
+MALWAREPATROL_URL = "https://lists.malwarepatrol.net/cgi/getfile?receipt=f1417692233&product=8&list=dansguardian"
+VXVAULT_URL = "http://vxvault.siri-urz.net/URL_List.php"
+MALWAREMUSTDIE_URL = "http://malwared.malwaremustdie.org/rss.php"
 
 _history_file = HISTORY_FILE
 _blacklists = {}
@@ -467,6 +470,20 @@ def _load_blacklists(bulkfile=None, verbose=True):
         for match in re.finditer(r"proxy/([\d.]+)", content):
             _blacklists[BLACKLIST.IP][match.group(1)] = ("anonymous proxy", "maxmind.com")
 
+        print(" [o] '%s'" % MALWAREMUSTDIE_URL)
+        content = _retrieve_content(MALWAREMUSTDIE_URL)
+        if "Malwared" not in content:
+            print("[!] something went wrong during remote data retrieval ('%s')" % MALWAREMUSTDIE_URL)
+
+        for match in re.finditer(r"<link>http://([^<]+?)/?</link>", content):
+            _blacklists[BLACKLIST.URL][match.group(1)] = ("C&C panel", "malwared.malwaremustdie.org")
+            if '/' in match.group(1):
+                _ = match.group(1).split('/')[0]
+                if re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", _):
+                    _blacklists[BLACKLIST.IP][_] = ("C&C", "malwared.malwaremustdie.org")
+                else:
+                    _blacklists[BLACKLIST.DNS][_] = ("C&C", "malwared.malwaremustdie.org")
+
         print(" [o] '%s'" % EMERGINGTHREATS_BOTCC_URL)
         content = _retrieve_content(EMERGINGTHREATS_BOTCC_URL)
         if "CnC Server" not in content:
@@ -480,7 +497,7 @@ def _load_blacklists(bulkfile=None, verbose=True):
         if "LIVE BLACKLIST" not in content:
             print("[!] something went wrong during remote data retrieval ('%s')" % MYIP_URL)
 
-        for match in re.finditer(r"deny from ([\d.]+)", content):
+        for match in re.finditer(r"deny from (\d+\.\d+\.\d+\.\d+)", content):
             _blacklists[BLACKLIST.IP][match.group(1)] = ("spam bot or crawler", "myip.ms")
 
         print(" [o] '%s'" % OPENPHISH_URL)
@@ -496,6 +513,36 @@ def _load_blacklists(bulkfile=None, verbose=True):
                 line = re.search(r"://(.*)", line).group(1)
             line = line.rstrip('/')
             _blacklists[BLACKLIST.URL][line] = ("phishing", "openphish.com")
+
+        print(" [o] '%s'" % MALWAREPATROL_URL)
+        content = _retrieve_content(MALWAREPATROL_URL)
+        if "Malware Patrol" not in content:
+            print("[!] something went wrong during remote data retrieval ('%s')" % MALWAREPATROL_URL)
+
+        for line in content.split('\n'):
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+            if '://' in line:
+                line = re.search(r"://(.*)", line).group(1)
+            line = line.rstrip('/')
+            if '/' in line:
+                _blacklists[BLACKLIST.URL][line] = ("malware", "malwarepatrol.net")
+            else:
+                _blacklists[BLACKLIST.DNS][line] = ("malware", "malwarepatrol.net")
+
+        print(" [o] '%s'" % VXVAULT_URL)
+        content = _retrieve_content(VXVAULT_URL)
+        if "VX Vault" not in content:
+            print("[!] something went wrong during remote data retrieval ('%s')" % VXVAULT_URL)
+
+        for line in content.split('\n'):
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+            if '://' in line:
+                line = re.search(r"://(.*)", line).group(1)
+                _blacklists[BLACKLIST.URL][line] = ("malware", "vxvault.siri-urz.net")
 
         print(" [o] '%s'" % DSHIELD_SUSPICIOUS_URL)
         content = _retrieve_content(DSHIELD_SUSPICIOUS_URL)
