@@ -714,7 +714,7 @@ def _init_multiprocessing():
     global _queue
 
     if _multiprocessing:
-        print ("[i] starting %d more processes (%d total)" % (multiprocessing.cpu_count() - 1, multiprocessing.cpu_count()))
+        print ("[i] starting %d more processes (%d CPU cores detected)" % (multiprocessing.cpu_count() - 1, multiprocessing.cpu_count()))
         _queue = multiprocessing.Queue()
 
         for i in xrange(multiprocessing.cpu_count() - 1):
