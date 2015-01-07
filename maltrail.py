@@ -5,6 +5,7 @@ from __future__ import print_function
 import BaseHTTPServer
 import httplib
 import logging
+import mmap
 import pickle
 import optparse
 import os
@@ -27,11 +28,13 @@ import zipfile
 import zlib
 
 NAME = "Maltrail"
-VERSION = "0.2e"
+VERSION = "0.2f"
 AUTHOR = "Miroslav Stampar (@stamparm)"
 LICENSE = "Public domain (FREE)"
 
-_queue = None
+_buffer = None
+_head = None
+_head_lock = None
 _multiprocessing = False
 
 try:
@@ -66,6 +69,10 @@ REPORT_HEADERS = ("time", "src", "dst", "type", "details", "info", "reference")
 HTTP_REPORTING_PORT = 8338
 HISTORY_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS history(time REAL, src TEXT, dst TEXT, type TEXT, details TEXT, info TEXT, reference TEXT)"
 DEFAULT_CAPTURING_FILTER = None  # DEFAULT_CAPTURING_FILTER = "tcp dst port 80 or udp dst port 53"
+BUFFER_LENGTH = 10 * 1024 * 1024
+
+END_CONTROL_MARKER = 0xffffffff
+FINISH_CONTROL_MARKER = 0xfefefefe
 
 class BLACKLIST:
     DNS = "DNS"
@@ -626,72 +633,109 @@ def _process_packet(packet, timestamp=None):
     Performs all processing on raw packets
     """
 
-    eth_length = 14
-    eth_header = packet[:14]
-    eth = struct.unpack('!6s6sH' , eth_header)
-    eth_protocol = socket.ntohs(eth[2])
- 
-    if eth_protocol == 8:  # IP
-        ip_header = packet[eth_length:20+eth_length]
-        iph = struct.unpack('!BBHHHBBH4s4s' , ip_header)
-        version_ihl = iph[0]
-        version = version_ihl >> 4
-        ihl = version_ihl & 0xF
-        iph_length = ihl * 4
-        protocol = iph[6]
-        src_ip = socket.inet_ntoa(iph[8])
-        dst_ip = socket.inet_ntoa(iph[9])
+    try:
+        eth_length = 14
+        eth_header = packet[:14]
+        eth = struct.unpack("!6s6sH", eth_header)
+        eth_protocol = socket.ntohs(eth[2])
+     
+        if eth_protocol == 8:  # IP
+            ip_header = packet[eth_length:eth_length + 20]
+            iph = struct.unpack("!BBHHHBBH4s4s", ip_header)
+            version_ihl = iph[0]
+            version = version_ihl >> 4
+            ihl = version_ihl & 0xF
+            iph_length = ihl * 4
+            protocol = iph[6]
+            src_ip = socket.inet_ntoa(iph[8])
+            dst_ip = socket.inet_ntoa(iph[9])
 
-        if dst_ip in _blacklists[BLACKLIST.IP]:
-            src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.IP, dst_ip, _blacklists[BLACKLIST.IP][dst_ip][0], _blacklists[BLACKLIST.IP][dst_ip][1]
-            _store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
+            if dst_ip in _blacklists[BLACKLIST.IP]:
+                src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.IP, dst_ip, _blacklists[BLACKLIST.IP][dst_ip][0], _blacklists[BLACKLIST.IP][dst_ip][1]
+                _store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
 
-        elif src_ip in _blacklists[BLACKLIST.IP]:
-            src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.IP, src_ip, _blacklists[BLACKLIST.IP][src_ip][0], _blacklists[BLACKLIST.IP][src_ip][1]
-            _store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
+            elif src_ip in _blacklists[BLACKLIST.IP]:
+                src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.IP, src_ip, _blacklists[BLACKLIST.IP][src_ip][0], _blacklists[BLACKLIST.IP][src_ip][1]
+                _store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
 
-        if protocol == socket.IPPROTO_TCP:
-            i = iph_length + eth_length
-            tcp_header = packet[i:i+20]
-            src_port, dst_port, _, _, doff_reserved, _, _, _, _ = struct.unpack('!HHLLBBHHH' , tcp_header)
-            tcph_length = doff_reserved >> 4
-            h_size = eth_length + iph_length + tcph_length * 4
-            data_size = len(packet) - h_size
-            data = packet[h_size:]
-
-            if dst_port == 80 and len(data) > 0:
-                match = re.search(r"(?s)\A\s*(GET|POST|HEAD|PUT) (/[^ ]*) HTTP/[\d.]+.+?Host:\s*([^\s]+)", data)
-                if match:
-                    url = ("%s%s" % (match.group(3), match.group(2))).rstrip('/')
-                    if url in _blacklists[BLACKLIST.URL]:
-                        src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.URL, url, _blacklists[BLACKLIST.URL][url][0], _blacklists[BLACKLIST.URL][url][1]
-                        _store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
-
-        elif protocol == socket.IPPROTO_UDP:
-            i = iph_length + eth_length
-            src_port, dst_port = struct.unpack('!HH' , packet[i:i+4])
-            if dst_port == 53:
-                h_size = eth_length + iph_length + 8
+            if protocol == socket.IPPROTO_TCP:
+                i = iph_length + eth_length
+                tcp_header = packet[i:i + 20]
+                src_port, dst_port, _, _, doff_reserved, _, _, _, _ = struct.unpack("!HHLLBBHHH", tcp_header)
+                tcph_length = doff_reserved >> 4
+                h_size = eth_length + iph_length + tcph_length * 4
                 data_size = len(packet) - h_size
                 data = packet[h_size:]
 
-                try:
-                    dns = dpkt.dns.DNS(data)
-                except:
-                    pass
-                else:
-                    if dns.opcode == dpkt.dns.DNS_QUERY:
-                        for query in dns.qd:
-                            domain = query.name
-                            parts = domain.split('.')
-                            for i in xrange(0, len(parts) - 1):
-                                _ = '.'.join(parts[i:])
-                                if _ in _blacklists[BLACKLIST.DNS]:
-                                    src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.DNS, domain, _blacklists[BLACKLIST.DNS][_][0], _blacklists[BLACKLIST.DNS][_][1]
-                                    _store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
-                                    break
+                if dst_port == 80 and len(data) > 0:
+                    match = re.search(r"(?s)\A\s*(GET|POST|HEAD|PUT) (/[^ ]*) HTTP/[\d.]+.+?Host:\s*([^\s]+)", data)
+                    if match:
+                        url = ("%s%s" % (match.group(3), match.group(2))).rstrip('/')
+                        if url in _blacklists[BLACKLIST.URL]:
+                            src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.URL, url, _blacklists[BLACKLIST.URL][url][0], _blacklists[BLACKLIST.URL][url][1]
+                            _store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
 
-def _worker(queue):
+            elif protocol == socket.IPPROTO_UDP:
+                i = iph_length + eth_length
+                src_port, dst_port = struct.unpack("!HH", packet[i:i+4])
+                if dst_port == 53:
+                    h_size = eth_length + iph_length + 8
+                    data_size = len(packet) - h_size
+                    data = packet[h_size:]
+
+                    try:
+                        dns = dpkt.dns.DNS(data)
+                    except:
+                        pass
+                    else:
+                        if dns.opcode == dpkt.dns.DNS_QUERY:
+                            for query in dns.qd:
+                                domain = query.name
+                                parts = domain.split('.')
+                                for i in xrange(0, len(parts) - 1):
+                                    _ = '.'.join(parts[i:])
+                                    if _ in _blacklists[BLACKLIST.DNS]:
+                                        src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.DNS, domain, _blacklists[BLACKLIST.DNS][_][0], _blacklists[BLACKLIST.DNS][_][1]
+                                        _store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
+                                        break
+    except struct.error:
+        pass
+
+def _push_buffer(string):
+    global _head
+
+    if not string:
+        return
+
+    if _head + 4 + len(string) + 4 >= BUFFER_LENGTH:
+        _buffer.seek(_head)
+        _head_lock.acquire()
+        _buffer.write(struct.pack("=I", END_CONTROL_MARKER))
+        _buffer.seek(0)
+        _buffer.write('\x00\x00\x00\x00')
+        _head_lock.release()
+
+        _head = 0
+
+    _buffer.seek(_head + 4)
+    _buffer.write(string)
+    _buffer.write('\x00\x00\x00\x00')
+
+    _ = _head + 4 + len(string)
+
+    _buffer.seek(_head)
+    _head_lock.acquire()
+    _buffer.write(struct.pack("=I", _))
+    _head_lock.release()
+
+    _head = _
+
+def _finish_buffer():
+    _head_lock.acquire()
+    _buffer[_head], _buffer[_head + 1], _buffer[_head + 2], _buffer[_head + 3] = struct.pack("=I", FINISH_CONTROL_MARKER)
+    _head_lock.release()
+
+def _worker(buffer, head_lock):
     """
     Worker process used in multiprocessing mode
     """
@@ -699,10 +743,35 @@ def _worker(queue):
     if not _blacklists:
         _load_blacklists(verbose=False)
 
+    offset = int(multiprocessing.current_process().name)
+    mod = multiprocessing.cpu_count() - 1
+    count = 0
+    current = 0
+
     while True:
         try:
-            packet, timestamp = queue.get()
-            _process_packet(packet, timestamp)
+            while True:
+                buffer.seek(current)
+                head_lock.acquire()
+                next = struct.unpack("=I", buffer.read(4))[0]
+                head_lock.release()
+                if next == END_CONTROL_MARKER:
+                    current = 0
+                    continue
+                elif next == FINISH_CONTROL_MARKER:
+                    return
+                elif next:
+                    break
+                else:
+                    time.sleep(0.001)
+
+            if (count % mod) == offset:
+                content = buffer[current:next]
+                packet, timestamp = content[:-4], struct.unpack("=I", content[-4:])[0]
+                _process_packet(packet, timestamp)
+
+            current = next
+            count += 1
         except KeyboardInterrupt:
             break
 
@@ -711,14 +780,18 @@ def _init_multiprocessing():
     Inits worker processes used in multiprocessing mode
     """
 
-    global _queue
+    global _buffer
+    global _head
+    global _head_lock
 
     if _multiprocessing:
         print ("[i] starting %d more processes (%d CPU cores detected)" % (multiprocessing.cpu_count() - 1, multiprocessing.cpu_count()))
-        _queue = multiprocessing.Queue()
+        _buffer = mmap.mmap(-1, BUFFER_LENGTH)  # http://www.alexonlinux.com/direct-io-in-python
+        _head = 0
+        _head_lock = multiprocessing.Lock()
 
         for i in xrange(multiprocessing.cpu_count() - 1):
-            process = multiprocessing.Process(target=_worker, args=(_queue,))
+            process = multiprocessing.Process(target=_worker, name=str(i), args=(_buffer, _head_lock))
             process.daemon = True
             process.start()
 
@@ -744,18 +817,15 @@ def process_pcap(pcapfile):
             count += 1
             sys.stdout.write('%s\r' % ROTATING_CHARS[count % len(ROTATING_CHARS)])
             if _multiprocessing:
-                _queue.put((packet, timestamp))
+                _push_buffer(packet + struct.pack("=I", timestamp))
             else:
                 _process_packet(packet, timestamp)
+        if _multiprocessing:
+            _finish_buffer()
+            while multiprocessing.active_children():
+                time.sleep(0.001)
     except KeyboardInterrupt:
         print("\r[x] Ctrl-C pressed")
-    else:
-        if _multiprocessing:
-            while _queue.qsize():
-                time.sleep(0.5)
-    finally:
-        if _multiprocessing:
-            _queue.close()
 
 def monitor_interface(interface):
     """
@@ -772,7 +842,7 @@ def monitor_interface(interface):
                 (header, packet) = cap.next()
                 timestamp = header.getts()[0]
                 if _multiprocessing:
-                    _queue.put((packet, timestamp))
+                    _push_buffer(packet + struct.pack("=I", timestamp))
                 else:
                     _process_packet(packet, timestamp)
             except socket.timeout:
@@ -786,14 +856,8 @@ def monitor_interface(interface):
             exit("\n[x] no such device '%s'" % interface)
         else:
             raise
-    else:
-        if _multiprocessing:
-            while _queue.qsize():
-                time.sleep(0.5)
     finally:
         _close_db()
-        if _multiprocessing:
-            _queue.close()
 
 def main():
     global _history_file
