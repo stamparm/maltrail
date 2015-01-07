@@ -10,7 +10,7 @@ Sample runs
 
 ```
 # python maltrail.py -h
-Maltrail #v0.2d
+Maltrail #v0.2f
  by: Miroslav Stampar (@stamparm)
 
 Usage: maltrail.py [options]
@@ -24,7 +24,7 @@ Options:
 
 ```
 # python maltrail.py -i eth0
-Maltrail #v0.2e
+Maltrail #v0.2f
  by: Miroslav Stampar (@stamparm)
 
 [i] retrieving blacklists...
@@ -49,10 +49,10 @@ Maltrail #v0.2e
  [o] 'http://malwaredomains.lehigh.edu/files/domains.txt'
  [o] 'https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist'
  [o] 'https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules'
-[i] 37081 blacklisted URL entries loaded
-[i] 42424 blacklisted IP entries loaded
-[i] 29151 blacklisted DNS entries loaded
-[i] starting 3 more processes (4 total)
+[i] 43422 blacklisted URL entries loaded
+[i] 41587 blacklisted IP entries loaded
+[i] 33284 blacklisted DNS entries loaded
+[i] starting 3 more processes (4 CPU cores detected)
 [i] using address '*:8338' for HTTP reporting
 [i] monitoring interface 'eth0'...
 ```
