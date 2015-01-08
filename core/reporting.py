@@ -1,4 +1,7 @@
+import BaseHTTPServer
+import httplib
 import re
+import SocketServer
 import threading
 import time
 import urllib
@@ -119,7 +122,7 @@ def start_httpd():
                             break
                         except ValueError:
                             params["dayto"] = int(params["dayto"]) - 1
-                content = _create_report(order=params.get("order", "DESC"), limit=params.get("limit"), offset=params.get("offset"), mintime=mintime, maxtime=maxtime, search=params.get("search"))
+                content = create_report(order=params.get("order", "DESC"), limit=params.get("limit"), offset=params.get("offset"), mintime=mintime, maxtime=maxtime, search=params.get("search"))
                 content = _insert_filter(content)
                 for param, value in params.items():
                     content = re.sub(r"(name=\"%s\".+?<option) (value=\"%s\")" % (re.escape(param), re.escape(str(value))), r"\g<1> selected \g<2>", content)

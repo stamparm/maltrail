@@ -47,6 +47,8 @@ try:
 except (ImportError, OSError, NotImplementedError):
     pass
 
+_multiprocessing = False  # temporarly disabling
+
 try:
     import pcapy
 except ImportError:
@@ -372,7 +374,7 @@ def main():
             os.chmod(report_file, stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH)
             print("[i] report written to '%s'" % report_file)
         elif options.interface:
-            _start_httpd()
+            start_httpd()
             monitor_interface(options.interface)
     else:
         parser.print_help()
