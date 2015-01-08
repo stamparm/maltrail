@@ -47,8 +47,6 @@ try:
 except (ImportError, OSError, NotImplementedError):
     pass
 
-_multiprocessing = False  # temporarly disabling
-
 try:
     import pcapy
 except ImportError:
@@ -133,7 +131,7 @@ def _process_packet(packet, timestamp=None):
 
     try:
         eth_length = 14
-        eth_header = packet[:14]
+        eth_header = packet[:eth_length]
         eth = struct.unpack("!6s6sH", eth_header)
         eth_protocol = socket.ntohs(eth[2])
 
@@ -209,7 +207,8 @@ def _push_buffer(string):
         _buffer.seek(_head)
         with _head_lock:
             _buffer.write(struct.pack("=I", END_CONTROL_MARKER))
-            _buffer.seek(0)
+        _buffer.seek(0)
+        with _head_lock:
             _buffer.write("\x00\x00\x00\x00")
 
         _head = 0
@@ -260,7 +259,7 @@ def _worker(buffer, head_lock):
                     time.sleep(0.001)
 
             if (count % mod) == offset:
-                content = buffer[current:next]
+                content = buffer.read(next - current)
                 packet, timestamp = content[:-4], struct.unpack("=I", content[-4:])[0]
                 _process_packet(packet, timestamp)
 
