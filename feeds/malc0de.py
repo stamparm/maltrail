@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+import re
+
+from core.common import retrieve_content
+from core.common import BLACKLIST
+
+__type__ = (BLACKLIST.URL,)
+__url__ = "http://malc0de.com/rss/"
+__check__ = "Malc0de Database Feed"
+__info__ = "malware"
+__reference__ = "malc0de.com"
+
+def fetch():
+    retval = dict((_, {}) for _ in __type__)
+    content = retrieve_content(__url__)
+
+    if __check__ in content:
+        for match in re.finditer(r"<description>URL: ([^,\s]+)", content):
+            retval[BLACKLIST.URL][match.group(1)] = (__info__, __reference__)
+
+    return retval
