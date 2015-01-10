@@ -35,8 +35,8 @@ from core.reporting import *
 from core.settings import *
 
 _buffer = None
-_head = None
-_head_lock = None
+_lock = None
+_count = None
 _multiprocessing = False
 
 try:
@@ -164,12 +164,22 @@ def _process_packet(packet, timestamp=None):
                 data = packet[h_size:]
 
                 if dst_port == 80 and len(data) > 0:
-                    match = re.search(r"(?s)\A\s*(GET|POST|HEAD|PUT) (/[^ ]*) HTTP/[\d.]+.+?Host:\s*([^\s]+)", data)
-                    if match:
-                        url = ("%s%s" % (match.group(3), match.group(2))).rstrip('/')
-                        if url in _blacklists[BLACKLIST.URL]:
-                            src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.URL, url, _blacklists[BLACKLIST.URL][url][0], _blacklists[BLACKLIST.URL][url][1]
-                            store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
+                    index = data.find("\r\nHost:")
+                    if index >= 0:
+                        index = index + len("\r\nHost:")
+                        host = data[index:data.find("\r\n", index)]
+                        host = host.strip()
+                    else:
+                        return
+                    line = data.split("\r\n")[0]
+                    if line.count(' ') == 2 and "HTTP/1" in line:
+                        path = line.split(' ')[1]
+                    else:
+                        return
+                    url = "%s%s" % (host, path.rstrip('/'))
+                    if url in _blacklists[BLACKLIST.URL]:
+                        src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.URL, url, _blacklists[BLACKLIST.URL][url][0], _blacklists[BLACKLIST.URL][url][1]
+                        store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
 
             elif protocol == socket.IPPROTO_UDP:
                 i = iph_length + eth_length
@@ -197,39 +207,30 @@ def _process_packet(packet, timestamp=None):
     except struct.error:
         pass
 
-def _push_buffer(string):
-    global _head
+def _read_block(buffer, i, lock):
+    start = i * BLOCK_LENGTH % BUFFER_LENGTH
+    end = start + BLOCK_LENGTH - 1
+    if buffer[end] == BLOCK_MARKER.END:
+        return None
+    while buffer[end] == BLOCK_MARKER.WRITE:
+        time.sleep(SLEEP_TIME)
+    buffer[end] = BLOCK_MARKER.READ
+    buffer.seek(start)
+    retval = buffer.read(BLOCK_LENGTH)
+    buffer[end] = BLOCK_MARKER.NOP
+    return retval
 
-    if not string:
-        return
+def _write_block(buffer, i, block, lock, marker=None):
+    start = i * BLOCK_LENGTH % BUFFER_LENGTH
+    end = start + BLOCK_LENGTH - 1
+    while buffer[end] == BLOCK_MARKER.READ:
+        time.sleep(SLEEP_TIME)
+    buffer[end] = BLOCK_MARKER.WRITE
+    buffer.seek(start)
+    buffer.write(block)
+    buffer[end] = marker or BLOCK_MARKER.NOP
 
-    if _head + 4 + len(string) + 4 >= BUFFER_LENGTH:
-        _buffer.seek(_head)
-        with _head_lock:
-            _buffer.write(struct.pack("=I", END_CONTROL_MARKER))
-        _buffer.seek(0)
-        with _head_lock:
-            _buffer.write("\x00\x00\x00\x00")
-
-        _head = 0
-
-    _buffer.seek(_head + 4)
-    _buffer.write(string)
-    _buffer.write("\x00\x00\x00\x00")
-
-    _ = _head + 4 + len(string)
-
-    _buffer.seek(_head)
-    with _head_lock:
-        _buffer.write(struct.pack("=I", _))
-
-    _head = _
-
-def _finish_buffer():
-    with _head_lock:
-        _buffer[_head], _buffer[_head + 1], _buffer[_head + 2], _buffer[_head + 3] = struct.pack("=I", FINISH_CONTROL_MARKER)
-
-def _worker(buffer, head_lock):
+def _worker(buffer, n, lock):
     """
     Worker process used in multiprocessing mode
     """
@@ -240,30 +241,18 @@ def _worker(buffer, head_lock):
     offset = int(multiprocessing.current_process().name)
     mod = multiprocessing.cpu_count() - 1
     count = 0
-    current = 0
 
     while True:
         try:
-            while True:
-                buffer.seek(current)
-                with head_lock:
-                    next = struct.unpack("=I", buffer.read(4))[0]
-                if next == END_CONTROL_MARKER:
-                    current = 0
-                    continue
-                elif next == FINISH_CONTROL_MARKER:
-                    return
-                elif next:
-                    break
-                else:
-                    time.sleep(0.001)
-
             if (count % mod) == offset:
-                content = buffer.read(next - current)
-                packet, timestamp = content[:-4], struct.unpack("=I", content[-4:])[0]
+                if count >= n.value:
+                    time.sleep(SLEEP_TIME)
+                    continue
+                content = _read_block(buffer, count, lock)
+                if content is None:
+                    break
+                timestamp, packet, = struct.unpack("=I", content[:4])[0], content[4:]
                 _process_packet(packet, timestamp)
-
-            current = next
             count += 1
         except KeyboardInterrupt:
             break
@@ -274,17 +263,17 @@ def _init_multiprocessing():
     """
 
     global _buffer
-    global _head
-    global _head_lock
+    global _n
+    global _lock
 
     if _multiprocessing:
         print ("[i] creating %d more processes (%d CPU cores detected)" % (multiprocessing.cpu_count() - 1, multiprocessing.cpu_count()))
         _buffer = mmap.mmap(-1, BUFFER_LENGTH)  # http://www.alexonlinux.com/direct-io-in-python
-        _head = 0
-        _head_lock = multiprocessing.Lock()
+        _lock = multiprocessing.Lock()
+        _n = multiprocessing.Value('i')
 
         for i in xrange(multiprocessing.cpu_count() - 1):
-            process = multiprocessing.Process(target=_worker, name=str(i), args=(_buffer, _head_lock))
+            process = multiprocessing.Process(target=_worker, name=str(i), args=(_buffer, _n, _lock))
             process.daemon = True
             process.start()
 
@@ -307,16 +296,20 @@ def process_pcap(pcapfile):
     count = 0
     try:
         for timestamp, packet in packets:
-            count += 1
             sys.stdout.write('%s\r' % ROTATING_CHARS[count % len(ROTATING_CHARS)])
             if _multiprocessing:
-                _push_buffer(packet + struct.pack("=I", timestamp))
+                _write_block(_buffer, count, struct.pack("=I", timestamp) + packet, _lock)
+                _n.value = count + 1
             else:
                 _process_packet(packet, timestamp)
+            count += 1
         if _multiprocessing:
-            _finish_buffer()
+            for _ in xrange(multiprocessing.cpu_count() - 1):
+                _write_block(_buffer, count, "", _lock, BLOCK_MARKER.END)
+                _n.value = count + 1
+                count += 1
             while multiprocessing.active_children():
-                time.sleep(0.001)
+                time.sleep(SLEEP_TIME)
     except KeyboardInterrupt:
         print("\r[x] Ctrl-C pressed")
 
@@ -327,17 +320,20 @@ def monitor_interface(interface):
 
     print("[i] monitoring interface '%s'..." % interface)
 
+    count = 0
     try:
-        cap = pcapy.open_live(interface, 65535, True, 100)
+        cap = pcapy.open_live(interface, 65536, True, 0)
         cap.setfilter(DEFAULT_CAPTURING_FILTER or "")
         while True:
             try:
                 (header, packet) = cap.next()
                 timestamp = header.getts()[0]
                 if _multiprocessing:
-                    _push_buffer(packet + struct.pack("=I", timestamp))
+                    _write_block(_buffer, count, struct.pack("=I", timestamp) + packet, _lock)
+                    _n.value = count + 1
                 else:
                     _process_packet(packet, timestamp)
+                count += 1
             except socket.timeout:
                 pass
     except KeyboardInterrupt:
@@ -350,6 +346,13 @@ def monitor_interface(interface):
         else:
             raise
     finally:
+        if _multiprocessing:
+            for _ in xrange(multiprocessing.cpu_count() - 1):
+                _write_block(_buffer, count, "", _lock, BLOCK_MARKER.END)
+                _n.value = count + 1
+                count += 1
+            while multiprocessing.active_children():
+                time.sleep(SLEEP_TIME)
         close_db()
 
 def main():

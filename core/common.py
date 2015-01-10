@@ -9,6 +9,12 @@ class BLACKLIST:
     IP = "IP"
     URL = "URL"
 
+class BLOCK_MARKER:
+    NOP = chr(0x00)
+    READ = chr(0x01)
+    WRITE = chr(0x02)
+    END = chr(0xFF)
+
 def retrieve_content(url, data=None):
     """
     Retrieves page content from given URL
