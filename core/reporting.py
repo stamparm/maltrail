@@ -11,6 +11,8 @@ from core.common import *
 from core.database import *
 from core.settings import *
 
+reference_urls = {}
+
 def _insert_filter(report_html):
     """
     Inserts filtering form inside the HTML report
@@ -28,7 +30,7 @@ def _html_output(title, headers, rows):
         for entry in row:
             retval += "<td>%s</td>" % entry
         retval += "</tr>"
-    return HTML_OUTPUT_TEMPLATE % ("%s report" % NAME, retval)
+    return HTML_OUTPUT_TEMPLATE % (NAME, retval)
 
 def _get_time_range():
     min_, max_ = None, None
@@ -51,7 +53,7 @@ def create_report(order=None, limit=None, offset=None, mintime=None, maxtime=Non
         query += " %s time <= %s" % ("AND" if mintime else "WHERE", re.sub(r"[^0-9.]", "", str(maxtime)))
     if search:
         search = search.replace("'", "").strip()
-        query += " %s (src LIKE '%%%s%%' OR dst LIKE '%%%s%%' OR type LIKE '%%%s%%' OR details LIKE '%%%s%%' OR info LIKE '%%%s%%' OR reference LIKE '%%%s%%')" % ("AND" if mintime or maxtime else "WHERE", search, search, search, search, search, search)
+        query += " %s (src LIKE '%%%s%%' OR dst LIKE '%%%s%%' OR type LIKE '%%%s%%' OR trigger LIKE '%%%s%%' OR info LIKE '%%%s%%' OR reference LIKE '%%%s%%')" % ("AND" if mintime or maxtime else "WHERE", search, search, search, search, search, search)
     if order:
         query += " ORDER BY time %s" % re.sub(r"[^A-Za-z]", "", order)
     if limit:
@@ -61,7 +63,7 @@ def create_report(order=None, limit=None, offset=None, mintime=None, maxtime=Non
     get_cursor().execute(query)
     rows = get_cursor().fetchall()
     for i in xrange(len(rows)):
-        rows[i] = (time.strftime(TIME_FORMAT, time.localtime(rows[i][0])),) + rows[i][1:]
+        rows[i] = (time.strftime(TIME_FORMAT, time.localtime(rows[i][0])),) + rows[i][1:-1] + ("<a href='%s'>%s</a>" % (reference_urls[rows[i][-1]], rows[i][-1]) if rows[i][-1] in reference_urls else rows[i][-1],)
     return _html_output(NAME, REPORT_HEADERS, rows)
 
 def start_httpd():

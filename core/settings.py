@@ -14,13 +14,14 @@ STORAGE_DIRECTORY = os.path.join(os.path.expanduser("~"), ".%s" % NAME.lower())
 CACHE_FILE = os.path.join(STORAGE_DIRECTORY, "cache.bin")
 HISTORY_FILE = os.path.join(STORAGE_DIRECTORY, "history.bin")
 TIME_FORMAT = "%d/%m/%Y %H:%M:%S"
-REPORT_HEADERS = ("time", "src", "dst", "type", "details", "info", "reference")
+REPORT_HEADERS = ("time", "src", "dst", "type", "trigger", "info", "reference")
 HTTP_REPORTING_PORT = 8338
-HISTORY_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS history(time REAL, src TEXT, dst TEXT, type TEXT, details TEXT, info TEXT, reference TEXT)"
+HISTORY_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS history(time REAL, src TEXT, dst TEXT, type TEXT, trigger TEXT, info TEXT, reference TEXT)"
 DEFAULT_CAPTURING_FILTER = None  # DEFAULT_CAPTURING_FILTER = "tcp dst port 80 or udp dst port 53"
 BLOCK_LENGTH = 65536 + 4 + 1 # max packet size + int for timestamp + byte for mutex
 BUFFER_LENGTH = 15 * 1024 * 1024 / BLOCK_LENGTH * BLOCK_LENGTH
-SLEEP_TIME = 0.00001
+SHORT_SLEEP_TIME = 0.00001
+REGULAR_SLEEP_TIME = 0.001
 NO_BLOCK = -1
 END_BLOCK = -2
 HTTP_REGEX_COMPILED = re.compile(r"(?s)\A\s*(GET|POST|HEAD|PUT) (/[^ ]*) HTTP/[\d.]+.+?Host:\s*([^\s]+)")
@@ -44,10 +45,11 @@ var table=function(){function e(e){this.n=e;this.t;this.b;this.r;this.d;this.p;t
 </head>
 <body>
 <div id="wrapper">
+<!--filter-->
+<h2>Details:</h2>
 <table cellpadding="0" cellspacing="0" border="0" class="sortable" id="sorter">
 %s
 </table>
-<!--filter-->
 </div>
 <script type="text/javascript">
 var sorter=new table.sorter("sorter");
@@ -58,8 +60,9 @@ sorter.init("sorter", 0);
 """
 
 FILTER_FORM = """
+<h2>Filter:</h2>
 <form name="search" id="search" method="post" action="/">
-<table style="margin:0; padding-top: 1cm;" border="0" cellpadding="2" cellspacing="2">
+<table style="margin:0; padding-bottom: 0.5cm;" border="0" cellpadding="2" cellspacing="2">
 <tbody><tr>
 <td>From:&nbsp;&nbsp;</td>
 <td colspan="2">

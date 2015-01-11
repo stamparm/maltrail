@@ -97,6 +97,8 @@ def _load_blacklists(verbose=True):
                     print(" [o] '%s'" % module.__url__)
                     found = False
                     results = function()
+                    if hasattr(module, "__reference__"):
+                        reference_urls[module.__reference__] = module.__url__
                     for key in results:
                         if results[key]:
                             found = True
@@ -109,6 +111,17 @@ def _load_blacklists(verbose=True):
                 f.write(zlib.compress(pickle.dumps(_blacklists)))
         except Exception, ex:
             print("[!] something went wrong during cache file write '%s' ('%s')" % (CACHE_FILE, ex))
+
+    else:
+        sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "feeds")))
+        for filename in glob.glob(os.path.join("feeds", "*.py")):
+            try:
+                module = __import__(os.path.basename(filename).split(".py")[0])
+            except (ImportError, SyntaxError), ex:
+                print("[!] something went wrong during import of feed file '%s' ('%s')" % (filename, ex))
+
+            if hasattr(module, "__reference__"):
+                reference_urls[module.__reference__] = module.__url__
 
     if not max(len(_) for _ in _blacklists.values()):
         print("[i] loading cache...")
@@ -147,17 +160,18 @@ def _process_packet(packet, timestamp=None):
             dst_ip = socket.inet_ntoa(iph[9])
 
             if dst_ip in _blacklists[BLACKLIST.IP]:
-                src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.IP, dst_ip, _blacklists[BLACKLIST.IP][dst_ip][0], _blacklists[BLACKLIST.IP][dst_ip][1]
-                store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
+                src, dst, type_, trigger, info, reference = src_ip, dst_ip, BLACKLIST.IP, dst_ip, _blacklists[BLACKLIST.IP][dst_ip][0], _blacklists[BLACKLIST.IP][dst_ip][1]
+                store_db(timestamp or time.time(), src, dst, type_, trigger, info, reference)
 
             elif src_ip in _blacklists[BLACKLIST.IP]:
-                src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.IP, src_ip, _blacklists[BLACKLIST.IP][src_ip][0], _blacklists[BLACKLIST.IP][src_ip][1]
-                store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
+                src, dst, type_, trigger, info, reference = src_ip, dst_ip, BLACKLIST.IP, src_ip, _blacklists[BLACKLIST.IP][src_ip][0], _blacklists[BLACKLIST.IP][src_ip][1]
+                store_db(timestamp or time.time(), src, dst, type_, trigger, info, reference)
 
             if protocol == socket.IPPROTO_TCP:
                 i = iph_length + eth_length
                 tcp_header = packet[i:i + 20]
-                src_port, dst_port, _, _, doff_reserved, _, _, _, _ = struct.unpack("!HHLLBBHHH", tcp_header)
+                src_port, dst_port, _, _, doff_reserved, flags, _, _, _ = struct.unpack("!HHLLBBHHH", tcp_header)
+                syn = flags == 2
                 tcph_length = doff_reserved >> 4
                 h_size = eth_length + iph_length + tcph_length * 4
                 data_size = len(packet) - h_size
@@ -178,8 +192,8 @@ def _process_packet(packet, timestamp=None):
                         return
                     url = "%s%s" % (host, path.rstrip('/'))
                     if url in _blacklists[BLACKLIST.URL]:
-                        src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.URL, url, _blacklists[BLACKLIST.URL][url][0], _blacklists[BLACKLIST.URL][url][1]
-                        store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
+                        src, dst, type_, trigger, info, reference = src_ip, dst_ip, BLACKLIST.URL, url, _blacklists[BLACKLIST.URL][url][0], _blacklists[BLACKLIST.URL][url][1]
+                        store_db(timestamp or time.time(), src, dst, type_, trigger, info, reference)
 
             elif protocol == socket.IPPROTO_UDP:
                 i = iph_length + eth_length
@@ -201,8 +215,8 @@ def _process_packet(packet, timestamp=None):
                                 for i in xrange(0, len(parts) - 1):
                                     _ = '.'.join(parts[i:])
                                     if _ in _blacklists[BLACKLIST.DNS]:
-                                        src, dst, type_, details, info, reference = src_ip, dst_ip, BLACKLIST.DNS, domain, _blacklists[BLACKLIST.DNS][_][0], _blacklists[BLACKLIST.DNS][_][1]
-                                        store_db(timestamp or time.time(), src, dst, type_, details, info, reference)
+                                        src, dst, type_, trigger, info, reference = src_ip, dst_ip, BLACKLIST.DNS, domain, _blacklists[BLACKLIST.DNS][_][0], _blacklists[BLACKLIST.DNS][_][1]
+                                        store_db(timestamp or time.time(), src, dst, type_, trigger, info, reference)
                                         break
     except struct.error:
         pass
@@ -213,7 +227,7 @@ def _read_block(buffer, i, lock):
     if buffer[end] == BLOCK_MARKER.END:
         return None
     while buffer[end] == BLOCK_MARKER.WRITE:
-        time.sleep(SLEEP_TIME)
+        time.sleep(SHORT_SLEEP_TIME)
     buffer[end] = BLOCK_MARKER.READ
     buffer.seek(start)
     retval = buffer.read(BLOCK_LENGTH)
@@ -224,7 +238,7 @@ def _write_block(buffer, i, block, lock, marker=None):
     start = i * BLOCK_LENGTH % BUFFER_LENGTH
     end = start + BLOCK_LENGTH - 1
     while buffer[end] == BLOCK_MARKER.READ:
-        time.sleep(SLEEP_TIME)
+        time.sleep(SHORT_SLEEP_TIME)
     buffer[end] = BLOCK_MARKER.WRITE
     buffer.seek(start)
     buffer.write(block)
@@ -246,7 +260,7 @@ def _worker(buffer, n, lock):
         try:
             if (count % mod) == offset:
                 if count >= n.value:
-                    time.sleep(SLEEP_TIME)
+                    time.sleep(REGULAR_SLEEP_TIME)
                     continue
                 content = _read_block(buffer, count, lock)
                 if content is None:
@@ -309,7 +323,7 @@ def process_pcap(pcapfile):
                 _n.value = count + 1
                 count += 1
             while multiprocessing.active_children():
-                time.sleep(SLEEP_TIME)
+                time.sleep(REGULAR_SLEEP_TIME)
     except KeyboardInterrupt:
         print("\r[x] Ctrl-C pressed")
 
@@ -352,7 +366,7 @@ def monitor_interface(interface):
                 _n.value = count + 1
                 count += 1
             while multiprocessing.active_children():
-                time.sleep(SLEEP_TIME)
+                time.sleep(REGULAR_SLEEP_TIME)
         close_db()
 
 def main():
