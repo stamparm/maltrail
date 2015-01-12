@@ -282,7 +282,6 @@ def monitor_interface(interface):
 def main():
     global _blacklists
 
-    print("%s #v%s\n by: %s\n" % (NAME, VERSION, AUTHOR))
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-i", dest="interface", help="listen DNS traffic on interface (e.g. eth0)")
     parser.add_option("-r", dest="pcapfile", help="read packets from (.pcap) file")
