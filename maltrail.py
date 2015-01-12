@@ -189,7 +189,7 @@ def _init_multiprocessing():
     if _multiprocessing:
         print ("[i] creating %d more processes (%d CPU cores detected)" % (multiprocessing.cpu_count() - 1, multiprocessing.cpu_count()))
         _buffer = mmap.mmap(-1, BUFFER_LENGTH)  # http://www.alexonlinux.com/direct-io-in-python
-        _n = multiprocessing.Value('i')
+        _n = multiprocessing.Value('i', lock=False)
 
         for i in xrange(multiprocessing.cpu_count() - 1):
             process = multiprocessing.Process(target=_worker, name=str(i), args=(_buffer, _n))
