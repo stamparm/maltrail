@@ -11,8 +11,6 @@ from core.common import *
 from core.database import *
 from core.settings import *
 
-reference_urls = {}
-
 def _insert_filter(report_html):
     """
     Inserts filtering form inside the HTML report
@@ -63,7 +61,7 @@ def create_report(order=None, limit=None, offset=None, mintime=None, maxtime=Non
     get_cursor().execute(query)
     rows = get_cursor().fetchall()
     for i in xrange(len(rows)):
-        rows[i] = (time.strftime(TIME_FORMAT, time.localtime(rows[i][0])),) + rows[i][1:-1] + ("<a href='%s'>%s</a>" % (reference_urls[rows[i][-1]], rows[i][-1]) if rows[i][-1] in reference_urls else rows[i][-1],)
+        rows[i] = (time.strftime(TIME_FORMAT, time.localtime(rows[i][0])),) + rows[i][1:]
     return _html_output(NAME, REPORT_HEADERS, rows)
 
 def start_httpd():

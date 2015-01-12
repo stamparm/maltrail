@@ -25,6 +25,7 @@ REGULAR_SLEEP_TIME = 0.001
 NO_BLOCK = -1
 END_BLOCK = -2
 HTTP_REGEX_COMPILED = re.compile(r"(?s)\A\s*(GET|POST|HEAD|PUT) (/[^ ]*) HTTP/[\d.]+.+?Host:\s*([^\s]+)")
+ROOT_DIR = os.path.join(__file__, "..")
 
 END_CONTROL_MARKER = 0xffffffff
 FINISH_CONTROL_MARKER = 0xfefefefe
