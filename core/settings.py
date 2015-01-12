@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 
+"""
+Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+See the file 'LICENSE' for copying permission
+"""
+
 import os
 
 NAME = "Maltrail"
-VERSION = "0.2f"
+VERSION = "0.3a"
 AUTHOR = "Miroslav Stampar (@stamparm)"
 LICENSE = "Public domain (FREE)"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')

@@ -1,12 +1,10 @@
-Maltrail
-============
+# Maltrail
 
 **Maltrail** is a malicious traffic monitoring tool, utilizing publicly available blacklists containing malicious (or generally suspicious) domains, URLs and IPs. It uses [Pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) library for traffic capturing and [dpkt](https://code.google.com/p/dpkt/) for packet parsing. Also, it runs in multiprocessing mode (depending on # of CPU cores) to maximize the packet processing performance.
 
 ![Report](http://i.imgur.com/k7JlIjC.png)
 
-Sample runs
-----
+## Sample runs
 
 ```
 # python maltrail.py -h
@@ -57,7 +55,10 @@ Maltrail #v0.2f
 [i] monitoring interface 'eth0'...
 ```
 
-Requirements
-----
+## Requirements
 
 [Python](http://www.python.org/download/) version **2.6.x** or **2.7.x** is required for running this program, along with [Pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) and [dpkt](https://code.google.com/p/dpkt/) (e.g. sample installation on Debian-like systems: `sudo apt-get install python-pcapy python-dpkt`).
+
+## License
+
+Maltrail is available under the [MIT license](LICENSE).
