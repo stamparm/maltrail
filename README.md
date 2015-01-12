@@ -8,9 +8,6 @@
 
 ```
 # python maltrail.py -h
-Maltrail #v0.2f
- by: Miroslav Stampar (@stamparm)
-
 Usage: maltrail.py [options]
 
 Options:
@@ -22,9 +19,6 @@ Options:
 
 ```
 # python maltrail.py -i eth0
-Maltrail #v0.2f
- by: Miroslav Stampar (@stamparm)
-
 [i] retrieving blacklists...
  [o] 'http://cinsscore.com/list/ci-badguys.txt'
  [o] 'http://lists.blocklist.de/lists/all.txt'
