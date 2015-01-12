@@ -74,7 +74,7 @@ def _load_blacklists(verbose=True):
 
     _blacklists = dict((getattr(BLACKLIST, _), {}) for _ in dir(BLACKLIST) if _ == _.upper())
 
-    if not os.path.isfile(CACHE_FILE) or (time.time() - os.stat(CACHE_FILE).st_mtime) / 3600 / 24 > FRESH_LISTS_DELTA_DAYS:
+    if not os.path.isfile(CACHE_FILE) or (time.time() - os.stat(CACHE_FILE).st_mtime) / 3600 / 24 > FRESH_LISTS_DELTA_DAYS or os.stat(CACHE_FILE).st_size == 0:
         print("[i] %s blacklists..." % ("updating" if os.path.isfile(CACHE_FILE) else "retrieving"))
 
         try:
