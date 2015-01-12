@@ -2,32 +2,17 @@
 
 from __future__ import print_function
 
-import BaseHTTPServer
-import glob
-import httplib
-import inspect
-import logging
 import mmap
-import pickle
 import optparse
 import os
-import re
 import socket
-import SocketServer
-import sqlite3
 import subprocess
 import stat
 import struct
 import sys
 import tempfile
-import threading
 import time
 import traceback
-import urllib
-import urllib2
-import urlparse
-import zipfile
-import zlib
 
 from core.blacklists import load_blacklists
 from core.common import *
@@ -36,7 +21,6 @@ from core.reporting import *
 from core.settings import *
 
 _buffer = None
-_lock = None
 _count = None
 _multiprocessing = False
 _blacklists = None
@@ -65,21 +49,17 @@ def _process_packet(packet, timestamp=None):
     """
 
     try:
-        eth_length = 14
-        eth_header = packet[:eth_length]
-        eth = struct.unpack("!6s6sH", eth_header)
-        eth_protocol = socket.ntohs(eth[2])
+        eth_header = struct.unpack("!6s6sH", packet[:ETH_LENGTH])
+        eth_protocol = socket.ntohs(eth_header[2])
 
-        if eth_protocol == 8:  # IP
-            ip_header = packet[eth_length:eth_length + 20]
-            iph = struct.unpack("!BBHHHBBH4s4s", ip_header)
-            version_ihl = iph[0]
-            version = version_ihl >> 4
-            ihl = version_ihl & 0xF
-            iph_length = ihl * 4
-            protocol = iph[6]
-            src_ip = socket.inet_ntoa(iph[8])
-            dst_ip = socket.inet_ntoa(iph[9])
+        if eth_protocol == IPPROTO:  # IP
+            ip_header = struct.unpack("!BBHHHBBH4s4s", packet[ETH_LENGTH:ETH_LENGTH + 20])
+            ip_length = ip_header[2]
+            packet = packet[:ETH_LENGTH + ip_length]  # truncate
+            iph_length = (ip_header[0] & 0xF) << 2
+            protocol = ip_header[6]
+            src_ip = socket.inet_ntoa(ip_header[8])
+            dst_ip = socket.inet_ntoa(ip_header[9])
 
             if dst_ip in _blacklists[BLACKLIST.IP]:
                 src, dst, type_, trigger, info, reference = src_ip, dst_ip, BLACKLIST.IP, dst_ip, _blacklists[BLACKLIST.IP][dst_ip][0], _blacklists[BLACKLIST.IP][dst_ip][1]
@@ -90,26 +70,29 @@ def _process_packet(packet, timestamp=None):
                 store_db(timestamp or time.time(), src, dst, type_, trigger, info, reference)
 
             if protocol == socket.IPPROTO_TCP:
-                i = iph_length + eth_length
+                i = iph_length + ETH_LENGTH
                 tcp_header = packet[i:i + 20]
                 src_port, dst_port, _, _, doff_reserved, flags, _, _, _ = struct.unpack("!HHLLBBHHH", tcp_header)
                 syn = flags == 2
                 tcph_length = doff_reserved >> 4
-                h_size = eth_length + iph_length + tcph_length * 4
-                data_size = len(packet) - h_size
+                h_size = ETH_LENGTH + iph_length + tcph_length * 4
                 data = packet[h_size:]
 
                 if dst_port == 80 and len(data) > 0:
+                    index = data.find("\r\n")
+                    if index >= 0:
+                        line = data[:index]
+                        if line.count(' ') == 2 and "HTTP/1" in line:
+                            path = line.split(' ')[1]
+                        else:
+                            return
+                    else:
+                        return
                     index = data.find("\r\nHost:")
                     if index >= 0:
                         index = index + len("\r\nHost:")
                         host = data[index:data.find("\r\n", index)]
                         host = host.strip()
-                    else:
-                        return
-                    line = data.split("\r\n")[0]
-                    if line.count(' ') == 2 and "HTTP/1" in line:
-                        path = line.split(' ')[1]
                     else:
                         return
                     url = "%s%s" % (host, path.rstrip('/'))
@@ -118,11 +101,10 @@ def _process_packet(packet, timestamp=None):
                         store_db(timestamp or time.time(), src, dst, type_, trigger, info, reference)
 
             elif protocol == socket.IPPROTO_UDP:
-                i = iph_length + eth_length
-                src_port, dst_port = struct.unpack("!HH", packet[i:i+4])
+                i = iph_length + ETH_LENGTH
+                src_port, dst_port = struct.unpack("!HH", packet[i:i + 4])
                 if dst_port == 53:
-                    h_size = eth_length + iph_length + 8
-                    data_size = len(packet) - h_size
+                    h_size = ETH_LENGTH + iph_length + 8
                     data = packet[h_size:]
 
                     try:
@@ -143,30 +125,31 @@ def _process_packet(packet, timestamp=None):
     except struct.error:
         pass
 
-def _read_block(buffer, i, lock):
-    start = i * BLOCK_LENGTH % BUFFER_LENGTH
-    end = start + BLOCK_LENGTH - 1
-    if buffer[end] == BLOCK_MARKER.END:
-        return None
-    while buffer[end] == BLOCK_MARKER.WRITE:
-        time.sleep(SHORT_SLEEP_TIME)
-    buffer[end] = BLOCK_MARKER.READ
-    buffer.seek(start)
-    retval = buffer.read(BLOCK_LENGTH)
-    buffer[end] = BLOCK_MARKER.NOP
+def _read_block(buffer, i):
+    offset = i * BLOCK_LENGTH % BUFFER_LENGTH
+    while True:
+        if buffer[offset] == BLOCK_MARKER.END:
+            return None
+        while buffer[offset] == BLOCK_MARKER.WRITE:
+            time.sleep(SHORT_SLEEP_TIME)
+        buffer.seek(offset)
+        buffer.write(BLOCK_MARKER.READ)
+        length = struct.unpack("=H", buffer.read(2))[0]
+        retval = buffer.read(length)
+        if buffer[offset] == BLOCK_MARKER.READ:
+            break
+    buffer[offset] = BLOCK_MARKER.NOP
     return retval
 
-def _write_block(buffer, i, block, lock, marker=None):
-    start = i * BLOCK_LENGTH % BUFFER_LENGTH
-    end = start + BLOCK_LENGTH - 1
-    while buffer[end] == BLOCK_MARKER.READ:
+def _write_block(buffer, i, block, marker=None):
+    offset = i * BLOCK_LENGTH % BUFFER_LENGTH
+    while buffer[offset] == BLOCK_MARKER.READ:
         time.sleep(SHORT_SLEEP_TIME)
-    buffer[end] = BLOCK_MARKER.WRITE
-    buffer.seek(start)
-    buffer.write(block)
-    buffer[end] = marker or BLOCK_MARKER.NOP
+    buffer.seek(offset)
+    buffer.write(BLOCK_MARKER.WRITE + struct.pack("=H", len(block)) + block)
+    buffer[offset] = marker or BLOCK_MARKER.NOP
 
-def _worker(buffer, n, lock):
+def _worker(buffer, n):
     """
     Worker process used in multiprocessing mode
     """
@@ -186,7 +169,7 @@ def _worker(buffer, n, lock):
                 if count >= n.value:
                     time.sleep(REGULAR_SLEEP_TIME)
                     continue
-                content = _read_block(buffer, count, lock)
+                content = _read_block(buffer, count)
                 if content is None:
                     break
                 timestamp, packet, = struct.unpack("=I", content[:4])[0], content[4:]
@@ -202,16 +185,14 @@ def _init_multiprocessing():
 
     global _buffer
     global _n
-    global _lock
 
     if _multiprocessing:
         print ("[i] creating %d more processes (%d CPU cores detected)" % (multiprocessing.cpu_count() - 1, multiprocessing.cpu_count()))
         _buffer = mmap.mmap(-1, BUFFER_LENGTH)  # http://www.alexonlinux.com/direct-io-in-python
-        _lock = multiprocessing.Lock()
         _n = multiprocessing.Value('i')
 
         for i in xrange(multiprocessing.cpu_count() - 1):
-            process = multiprocessing.Process(target=_worker, name=str(i), args=(_buffer, _n, _lock))
+            process = multiprocessing.Process(target=_worker, name=str(i), args=(_buffer, _n))
             process.daemon = True
             process.start()
 
@@ -236,14 +217,14 @@ def process_pcap(pcapfile):
         for timestamp, packet in packets:
             sys.stdout.write('%s\r' % ROTATING_CHARS[count % len(ROTATING_CHARS)])
             if _multiprocessing:
-                _write_block(_buffer, count, struct.pack("=I", timestamp) + packet, _lock)
+                _write_block(_buffer, count, struct.pack("=I", timestamp) + packet)
                 _n.value = count + 1
             else:
                 _process_packet(packet, timestamp)
             count += 1
         if _multiprocessing:
             for _ in xrange(multiprocessing.cpu_count() - 1):
-                _write_block(_buffer, count, "", _lock, BLOCK_MARKER.END)
+                _write_block(_buffer, count, "", BLOCK_MARKER.END)
                 _n.value = count + 1
                 count += 1
             while multiprocessing.active_children():
@@ -260,14 +241,14 @@ def monitor_interface(interface):
 
     count = 0
     try:
-        cap = pcapy.open_live(interface, 65536, True, 0)
+        cap = pcapy.open_live(interface, MAX_PACKET_SIZE, True, 0)
         cap.setfilter(DEFAULT_CAPTURING_FILTER or "")
         while True:
             try:
                 (header, packet) = cap.next()
                 timestamp = header.getts()[0]
                 if _multiprocessing:
-                    _write_block(_buffer, count, struct.pack("=I", timestamp) + packet, _lock)
+                    _write_block(_buffer, count, struct.pack("=I", timestamp) + packet)
                     _n.value = count + 1
                 else:
                     _process_packet(packet, timestamp)
@@ -286,7 +267,7 @@ def monitor_interface(interface):
     finally:
         if _multiprocessing:
             for _ in xrange(multiprocessing.cpu_count() - 1):
-                _write_block(_buffer, count, "", _lock, BLOCK_MARKER.END)
+                _write_block(_buffer, count, "", BLOCK_MARKER.END)
                 _n.value = count + 1
                 count += 1
             while multiprocessing.active_children():

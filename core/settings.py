@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import re
 import os
 
 NAME = "Maltrail"
@@ -18,17 +17,16 @@ REPORT_HEADERS = ("time", "src", "dst", "type", "trigger", "info", "reference")
 HTTP_REPORTING_PORT = 8338
 HISTORY_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS history(time REAL, src TEXT, dst TEXT, type TEXT, trigger TEXT, info TEXT, reference TEXT)"
 DEFAULT_CAPTURING_FILTER = None  # DEFAULT_CAPTURING_FILTER = "tcp dst port 80 or udp dst port 53"
-BLOCK_LENGTH = 65536 + 4 + 1 # max packet size + int for timestamp + byte for mutex
-BUFFER_LENGTH = 15 * 1024 * 1024 / BLOCK_LENGTH * BLOCK_LENGTH
+MAX_PACKET_SIZE = 65535
+BLOCK_LENGTH = 1 + 2 + MAX_PACKET_SIZE + 4 # primitive mutex + short for packet size + max packet size + int for timestamp
+BUFFER_LENGTH = 32 * 1024 * 1024 / BLOCK_LENGTH * BLOCK_LENGTH  # 32MB buffer
 SHORT_SLEEP_TIME = 0.00001
 REGULAR_SLEEP_TIME = 0.001
 NO_BLOCK = -1
 END_BLOCK = -2
-HTTP_REGEX_COMPILED = re.compile(r"(?s)\A\s*(GET|POST|HEAD|PUT) (/[^ ]*) HTTP/[\d.]+.+?Host:\s*([^\s]+)")
-ROOT_DIR = os.path.join(__file__, "..")
-
-END_CONTROL_MARKER = 0xffffffff
-FINISH_CONTROL_MARKER = 0xfefefefe
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+IPPROTO = 8
+ETH_LENGTH = 14
 
 # Reference: http://www.scriptiny.com/2008/11/javascript-table-sorter/
 HTML_OUTPUT_TEMPLATE = """

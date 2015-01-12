@@ -2,6 +2,8 @@
 
 from __future__ import print_function
 
+import glob
+import inspect
 import pickle
 import os
 import sys
@@ -37,7 +39,7 @@ def load_blacklists(verbose=True):
         except Exception, ex:
             exit("[!] something went wrong during cache file write '%s' ('%s')" % (CACHE_FILE, ex))
 
-        sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "feeds")))
+        sys.path.append(os.path.abspath(os.path.join(ROOT_DIR, "feeds")))
         for filename in glob.glob(os.path.join(ROOT_DIR, "feeds", "*.py")):
             try:
                 module = __import__(os.path.basename(filename).split(".py")[0])
