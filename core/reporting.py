@@ -131,6 +131,14 @@ def start_httpd():
                             params["dayto"] = int(params["dayto"]) - 1
                 content = create_report(order=params.get("order", "DESC"), limit=params.get("limit"), offset=params.get("offset"), mintime=mintime, maxtime=maxtime, search=params.get("search"))
                 content = _insert_filter(content)
+                if min_ and max_:
+                    min_year = time.localtime(min_).tm_year
+                    max_year = time.localtime(max_).tm_year
+                    _ = ""
+                    for year in xrange(min_year, max_year + 1):
+                        _ += "<option value=\"%d\">%d</option>" % (year, year)
+                    content = re.sub(r"(<select name=\"yearfrom\">.+?year</option>).+(</select>)", r"\g<1>%s\g<2>" % _, content)
+                    content = re.sub(r"(<select name=\"yearto\">.+?year</option>).+(</select>)", r"\g<1>%s\g<2>" % _, content)
                 for param, value in params.items():
                     content = re.sub(r"(name=\"%s\".+?<option) (value=\"%s\")" % (re.escape(param), re.escape(str(value))), r"\g<1> selected \g<2>", content)
                 if params.get("search"):
