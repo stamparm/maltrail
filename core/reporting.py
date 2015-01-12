@@ -58,7 +58,7 @@ def create_report(order=None, limit=None, offset=None, mintime=None, maxtime=Non
         query += " %s time <= %s" % ("AND" if mintime else "WHERE", re.sub(r"[^0-9.]", "", str(maxtime)))
     if search:
         search = search.replace("'", "").strip()
-        query += " %s (src LIKE '%%%s%%' OR dst LIKE '%%%s%%' OR type LIKE '%%%s%%' OR trigger LIKE '%%%s%%' OR info LIKE '%%%s%%' OR reference LIKE '%%%s%%')" % ("AND" if mintime or maxtime else "WHERE", search, search, search, search, search, search)
+        query += " %s (src LIKE '%%%s%%' OR dst LIKE '%%%s%%' OR type LIKE '%%%s%%' OR trail LIKE '%%%s%%' OR info LIKE '%%%s%%' OR reference LIKE '%%%s%%')" % ("AND" if mintime or maxtime else "WHERE", search, search, search, search, search, search)
     if order:
         query += " ORDER BY time %s" % re.sub(r"[^A-Za-z]", "", order)
     if limit:

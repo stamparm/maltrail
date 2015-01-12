@@ -16,9 +16,9 @@ STORAGE_DIRECTORY = os.path.join(os.path.expanduser("~"), ".%s" % NAME.lower())
 CACHE_FILE = os.path.join(STORAGE_DIRECTORY, "cache.bin")
 HISTORY_FILE = os.path.join(STORAGE_DIRECTORY, "history.bin")
 TIME_FORMAT = "%d/%m/%Y %H:%M:%S"
-REPORT_HEADERS = ("time", "src", "dst", "type", "trigger", "info", "reference")
+REPORT_HEADERS = ("time", "src", "dst", "type", "trail", "info", "reference")
 HTTP_REPORTING_PORT = 8338
-HISTORY_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS history(time REAL, src TEXT, dst TEXT, type TEXT, trigger TEXT, info TEXT, reference TEXT)"
+HISTORY_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS history(time REAL, src TEXT, dst TEXT, type TEXT, trail TEXT, info TEXT, reference TEXT)"
 DEFAULT_CAPTURING_FILTER = None  # DEFAULT_CAPTURING_FILTER = "tcp dst port 80 or udp dst port 53"
 MAX_PACKET_SIZE = 65535
 BLOCK_LENGTH = 1 + 2 + MAX_PACKET_SIZE + 4 # primitive mutex + short for packet size + max packet size + int for timestamp
