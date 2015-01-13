@@ -42,7 +42,16 @@ HTML_OUTPUT_TEMPLATE = """
 $(function() {
     /** This code runs when everything has been loaded on the page */
     /* Inline sparklines take their values from the contents of the tag */
-    $('.inlinesparkline').sparkline('html', {disableTooltips: true}); 
+    $('.inlinesparkline').sparkline('html', {disableTooltips: true});
+
+    "fnDrawCallback": function (oSettings) {
+        $('.spark:not(:has(canvas))').sparkline('html', {
+            type: 'line',
+            minSpotColor: 'red',
+            maxSpotColor: 'green',
+            spotColor: false
+        });
+    }
 });
 var table=function(){
     function sorter(n){
