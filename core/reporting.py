@@ -25,6 +25,35 @@ def _insert_filter(report_html):
 
     return report_html.replace("<!--filter-->", FILTER_FORM)
 
+def _insert_graphics(report_html, rows, minx, maxx):
+    result = ""
+    if rows:
+        buckets = {}
+        items = []
+        types_ = [getattr(BLACKLIST, _) for _ in dir(BLACKLIST) if _ == _.upper()]
+        result = "['Type',  %s],\n" % repr(types_).strip("[]")
+
+        min_, max_ = None, None
+        for row in rows:
+            msticks = int(time.mktime(time.strptime(row[0], TIME_FORMAT)) * 1000)
+            if min_ is None or msticks < min_:
+                min_ = msticks
+            if max_ is None or msticks > max_:
+                max_ = msticks
+            type_ = row[3]
+            items.append((msticks, type_))
+
+        delta = (max_ - min_) / 50
+        current = min_
+        while current <= max_:
+            buckets[int(current)] = [0] * len(types_)
+            current += delta
+        for msticks, type_ in items:
+            buckets[int(min_ + delta * int((msticks - min_) / delta))][types_.index(type_)] += 1
+        for bucket, content in sorted(buckets.items()):
+            result += "[new Date(%d), %s],\n" % (bucket, ", ".join(str(_) for _ in content))
+    return report_html.replace("<!--graphics-->", GRAPHICS_TEMPLATE % (result, "new Date(%d)" % (minx * 1000), "new Date(%d)" % (maxx * 1000)))
+
 def _html_output(title, headers, rows):
     retval = "<tr>\n"
     for header in REPORT_HEADERS:
@@ -46,11 +75,7 @@ def _get_time_range():
         min_, max_ = _
     return min_, max_
 
-def create_report(order=None, limit=None, offset=None, mintime=None, maxtime=None, search=None):
-    """
-    Creates HTML report from database
-    """
-
+def get_rows(order=None, limit=None, offset=None, mintime=None, maxtime=None, search=None):
     query = "SELECT * FROM history"
     if mintime:
         query += " WHERE time >= %s" % re.sub(r"[^0-9.]", "", str(mintime))
@@ -69,6 +94,13 @@ def create_report(order=None, limit=None, offset=None, mintime=None, maxtime=Non
     rows = get_cursor().fetchall()
     for i in xrange(len(rows)):
         rows[i] = (time.strftime(TIME_FORMAT, time.localtime(rows[i][0])),) + rows[i][1:]
+    return rows
+
+def create_report(rows):
+    """
+    Creates HTML report from database
+    """
+
     return _html_output(NAME, REPORT_HEADERS, rows)
 
 def start_httpd():
@@ -129,8 +161,10 @@ def start_httpd():
                             break
                         except ValueError:
                             params["dayto"] = int(params["dayto"]) - 1
-                content = create_report(order=params.get("order", "DESC"), limit=params.get("limit"), offset=params.get("offset"), mintime=mintime, maxtime=maxtime, search=params.get("search"))
+                rows = get_rows(order=params.get("order", "DESC"), limit=params.get("limit"), offset=params.get("offset"), mintime=mintime, maxtime=maxtime, search=params.get("search"))
+                content = create_report(rows)
                 content = _insert_filter(content)
+                content = _insert_graphics(content, rows, mintime, maxtime)
                 if min_ and max_:
                     min_year = time.localtime(min_).tm_year
                     max_year = time.localtime(max_).tm_year

@@ -297,7 +297,7 @@ def main():
             report_file = tempfile.mkstemp(prefix="%s-" % NAME.lower(), suffix=".html")[1]
             process_pcap(options.pcapfile)
             with open(report_file, "w+b") as f:
-                f.write(create_report())
+                f.write(create_report(get_rows()))
             os.chmod(report_file, stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH)
             print("[i] report written to '%s'" % report_file)
         elif options.interface:

@@ -60,6 +60,7 @@ var table=function(){function e(e){this.n=e;this.t;this.b;this.r;this.d;this.p;t
 <body>
 <div id="wrapper">
 <!--filter-->
+<!--graphics-->
 <h2>Details:</h2>
 <table cellpadding="0" cellspacing="0" border="0" class="sortable" id="sorter">
 %s
@@ -71,6 +72,37 @@ sorter.init("sorter", 0);
 </script>
 </body>
 </html>
+"""
+
+GRAPHICS_TEMPLATE = """
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+// Create and populate the data table.
+  var data = google.visualization.arrayToDataTable([
+    %s
+  ]);
+
+  var options = {
+    width: 1000,
+    height: 300,
+    legend: { position: 'top', maxLines: 3 },
+    isStacked: true,
+    hAxis: {title: 'Time', format: 'dd/MM HH:mm', gridlines: { count: 24*4, color: '#CCC' }, minValue:%s, maxValue:%s},
+    vAxis: {title: 'Blacklisted events', format: '#'},
+    //tooltip: {trigger: 'none'},
+    enableInteractivity: false,
+    chartArea : { left: 70, top:30 }
+  };
+
+  var chart = new google.visualization.ColumnChart(document.getElementById("chart_div"));
+  chart.draw(data, options);
+  }
+</script>
+<h2>Visual:</h2>
+<div id="chart_div"></div>
 """
 
 FILTER_FORM = """
