@@ -101,7 +101,7 @@ GRAPHICS_TEMPLATE = """
   chart.draw(data, options);
   }
 </script>
-<h2>Visual:</h2>
+<h2>Graph:</h2>
 <div id="chart_div"></div>
 """
 
