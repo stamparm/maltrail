@@ -2,7 +2,7 @@
 
 **Maltrail** is a malicious traffic monitoring tool, utilizing publicly available blacklists containing malicious (or generally suspicious) domains, URLs and IPs. It uses [Pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) library for traffic capturing and [dpkt](https://code.google.com/p/dpkt/) for packet parsing. Also, it runs in multiprocessing mode (depending on # of CPU cores) to maximize the packet processing performance.
 
-![Report](http://i.imgur.com/bGrAswV.png)
+![Report](http://i.imgur.com/azJGOqE.png)
 
 ## Sample runs
 
