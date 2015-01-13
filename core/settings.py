@@ -44,14 +44,6 @@ $(function() {
     /* Inline sparklines take their values from the contents of the tag */
     $('.inlinesparkline').sparkline('html', {disableTooltips: true});
 
-    "fnDrawCallback": function (oSettings) {
-        $('.spark:not(:has(canvas))').sparkline('html', {
-            type: 'line',
-            minSpotColor: 'red',
-            maxSpotColor: 'green',
-            spotColor: false
-        });
-    }
 });
 var table=function(){
     function sorter(n){
