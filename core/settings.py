@@ -36,6 +36,95 @@ HTML_OUTPUT_TEMPLATE = """
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="http://omnipotent.net/jquery.sparkline/2.1.2/jquery.sparkline.js"></script>
+<script type="text/javascript">
+$(function() {
+    /** This code runs when everything has been loaded on the page */
+    /* Inline sparklines take their values from the contents of the tag */
+    $('.inlinesparkline').sparkline('html', {disableTooltips: true}); 
+});
+var table=function(){
+    function sorter(n){
+        this.n=n; this.t; this.b; this.r; this.d; this.p; this.w; this.a=[]; this.l=0
+    }
+    sorter.prototype.init=function(t,f){
+        this.t=document.getElementById(t);
+        this.b=this.t.getElementsByTagName('tbody')[0];
+        this.r=this.b.rows; var l=this.r.length;
+        for(var i=0;i<l;i++){
+            if(i==0){
+                var c=this.r[i].cells; this.w=c.length;
+                for(var x=0;x<this.w;x++){
+                    if(c[x].className!='nosort'){
+                        c[x].className='head';
+                        c[x].onclick=new Function(this.n+'.work(this.cellIndex)')
+                    }
+                }
+            }else{
+                this.a[i-1]={}; this.l++;
+            }
+        }
+        if(f!=null){
+            var a=new Function(this.n+'.work('+f+')'); a()
+        }
+    }
+    sorter.prototype.work=function(y){
+        this.b=this.t.getElementsByTagName('tbody')[0]; this.r=this.b.rows;
+        var x=this.r[0].cells[y],i;
+        for(i=0;i<this.l;i++){
+            this.a[i].o=i+1; var v=this.r[i+1].cells[y].firstChild;
+            this.a[i].value=(v!=null)?v.nodeValue:''
+        }
+        for(i=0;i<this.w;i++){
+            var c=this.r[0].cells[i];
+            if(c.className!='nosort'){c.className='head'}
+        }
+        if(this.p==y){
+            this.a.reverse(); x.className=(this.d)?'asc':'desc';
+            this.d=(this.d)?false:true
+        }else{
+            this.p=y; this.a.sort(compare); x.className='asc'; this.d=false
+        }
+        var n=document.createElement('tbody');
+        n.appendChild(this.r[0]);
+        for(i=0;i<this.l;i++){
+            var r=this.r[this.a[i].o-1].cloneNode(true);
+            n.appendChild(r); r.className=(i%%2==0)?'even':'odd'
+        }
+        this.t.replaceChild(n,this.b);
+    }
+    function isip(x) {
+        if (/^\d+\.\d+\.\d+\.\d+$/.test(x)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function isdate(x) {
+        if (/^[\d\/]+ [\d:]+$/.test(x)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function compare(f,c){
+        f=f.value,c=c.value;
+        if (isip(f) && isip(c)) {
+            var f_ = f.split(".");
+            var c_ = c.split(".");
+            f = (parseInt(f_[0]) << 24) + (parseInt(f_[1]) << 16) + (parseInt(f_[2]) << 8) + parseInt(f_[3]) >>> 0;
+            c = (parseInt(c_[0]) << 24) + (parseInt(c_[1]) << 16) + (parseInt(c_[2]) << 8) + parseInt(c_[3]) >>> 0;
+        }
+        else if (isdate(f) && isdate(c)) {
+            f = parseInt(f.replace(/[:\/ ]/g,''));
+            c = parseInt(c.replace(/[:\/ ]/g,''));
+        }
+        return (f>c?1:(f<c?-1:0))
+    }
+    return{sorter:sorter}
+}();
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>%s</title>
 <style>
@@ -45,17 +134,14 @@ body {font:10px Verdana,Arial}
 .sortable {width:823px; border:1px solid #ccc; border-bottom:none}
 .sortable th {padding:4px 6px 6px; background:#444; color:#fff; text-align:left; color:#ccc}
 .sortable td {padding:2px 4px 4px; background:#fff; border-bottom:1px solid #ccc}
-.sortable .head {background:#444 url(images/sort.gif) 6px center no-repeat; cursor:pointer; padding-left:18px}
-.sortable .desc {background:#222 url(images/desc.gif) 6px center no-repeat; cursor:pointer; padding-left:18px}
-.sortable .asc {background:#222 url(images/asc.gif) 6px  center no-repeat; cursor:pointer; padding-left:18px}
+.sortable .head {background:#444 url(data:image/png;base64,R0lGODlhBQAIAIABALe3t////yH5BAEAAAEALAAAAAAFAAgAAAILTGAHuJ2f2lLI1AIAOw==) 6px center no-repeat; cursor:pointer; padding-left:18px}
+.sortable .desc {background:#222 url(data:image/png;base64,R0lGODlhBQADAIABAP///////yH5BAEAAAEALAAAAAAFAAMAAAIFhB0XC1sAOw==) 6px center no-repeat; cursor:pointer; padding-left:18px}
+.sortable .asc {background:#222 url(data:image/png;base64,R0lGODlhBQADAIABAP///////yH5BAEAAAEALAAAAAAFAAMAAAIFTGAHuF0AOw==) 6px  center no-repeat; cursor:pointer; padding-left:18px}
 .sortable .head:hover, .sortable .desc:hover, .sortable .asc:hover {color:#fff}
 .sortable .even td {background:#eaeaff}
 .sortable .odd td {background:#fff}
 h2 {padding-bottom: 10px}
 </style>
-<script>
-var table=function(){function e(e){this.n=e;this.t;this.b;this.r;this.d;this.p;this.w;this.a=[];this.l=0}function t(e){if(/^\d+\.\d+\.\d+\.\d+$/.test(e)){return true}else{return false}}function n(e){if(/^[\d\/]+ [\d:]+$/.test(e)){return true}else{return false}}function r(e,r){e=e.value,r=r.value;if(t(e)&&t(r)){var i=e.split(".");var s=r.split(".");e=(parseInt(i[0])<<24)+(parseInt(i[1])<<16)+(parseInt(i[2])<<8)+parseInt(i[3])>>>0;r=(parseInt(s[0])<<24)+(parseInt(s[1])<<16)+(parseInt(s[2])<<8)+parseInt(s[3])>>>0}else if(n(e)&&n(r)){e=parseInt(e.replace(/[:\/ ]/g,""));r=parseInt(r.replace(/[:\/ ]/g,""))}return e>r?1:e<r?-1:0}e.prototype.init=function(e,t){this.t=document.getElementById(e);this.b=this.t.getElementsByTagName("tbody")[0];this.r=this.b.rows;var n=this.r.length;for(var r=0;r<n;r++){if(r==0){var i=this.r[r].cells;this.w=i.length;for(var s=0;s<this.w;s++){if(i[s].className!="nosort"){i[s].className="head";i[s].onclick=new Function(this.n+".work(this.cellIndex)")}}}else{this.a[r-1]={};this.l++}}if(t!=null){var o=new Function(this.n+".work("+t+")");o()}};e.prototype.work=function(e){this.b=this.t.getElementsByTagName("tbody")[0];this.r=this.b.rows;var t=this.r[0].cells[e],n;for(n=0;n<this.l;n++){this.a[n].o=n+1;var i=this.r[n+1].cells[e].firstChild;this.a[n].value=i!=null?i.nodeValue:""}for(n=0;n<this.w;n++){var s=this.r[0].cells[n];if(s.className!="nosort"){s.className="head"}}if(this.p==e){this.a.reverse();t.className=this.d?"asc":"desc";this.d=this.d?false:true}else{this.p=e;this.a.sort(r);t.className="asc";this.d=false}var o=document.createElement("tbody");o.appendChild(this.r[0]);for(n=0;n<this.l;n++){var u=this.r[this.a[n].o-1].cloneNode(true);o.appendChild(u);u.className=n%%2==0?"even":"odd"}this.t.replaceChild(o,this.b)};return{sorter:e}}()
-</script>
 </head>
 <body>
 <div id="wrapper">

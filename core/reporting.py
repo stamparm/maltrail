@@ -61,7 +61,10 @@ def _html_output(title, headers, rows):
     retval += "\n</tr>\n"
     for row in rows:
         retval += "<tr>"
-        for entry in row:
+        _ = ['0'] * 24
+        _[int(re.search(r" (\d+):", row[0]).group(1))] = '1'
+        retval += '<td>%s <span class="inlinesparkline">%s</span></td>' % (row[0], ",".join(_))
+        for entry in row[1:]:
             retval += "<td>%s</td>" % entry
         retval += "</tr>"
     return HTML_OUTPUT_TEMPLATE % (NAME, retval)
