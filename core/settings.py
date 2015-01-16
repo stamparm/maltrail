@@ -131,8 +131,8 @@ var table=function(){
 <style>
 * {margin:0; padding:0}
 body {font:10px Verdana,Arial}
-#wrapper {width:825px; margin:20px}
-.sortable {width:823px; border:1px solid #ccc; border-bottom:none}
+#wrapper {width:1000px; margin:20px}
+.sortable {width:998px; border:1px solid #ccc; border-bottom:none}
 .sortable th {padding:4px 6px 6px; background:#444; color:#fff; text-align:left; color:#ccc}
 .sortable td {padding:2px 4px 4px; background:#fff; border-bottom:1px solid #ccc}
 .sortable .head {background:#444 url(data:image/png;base64,R0lGODlhBQAIAIABALe3t////yH5BAEAAAEALAAAAAAFAAgAAAILTGAHuJ2f2lLI1AIAOw==) 6px center no-repeat; cursor:pointer; padding-left:18px}
@@ -168,27 +168,26 @@ GRAPHICS_TEMPLATE = """
   google.setOnLoadCallback(drawChart);
   function drawChart() {
 // Create and populate the data table.
-  var data = google.visualization.arrayToDataTable([
-    %s
-  ]);
+  %s
 
   var options = {
     width: 1000,
     height: 300,
     legend: { position: 'top', maxLines: 3 },
-    isStacked: true,
-    hAxis: {title: 'Time', format: 'dd/MM HH:mm', gridlines: { count: 24*4, color: '#CCC' }, minValue:%s, maxValue:%s},
-    vAxis: {title: 'Blacklisted events', format: '#'},
+    //hAxis: {title: 'Time', format: 'dd/MM HH:mm:ss', gridlines: { count: 24*4, color: '#CCC' }},
+    hAxis: {minValue:%s, maxValue:%s},
+    vAxis: {format: '#'},
     //tooltip: {trigger: 'none'},
-    enableInteractivity: false,
-    chartArea : { left: 70, top:30 }
+    //enableInteractivity: false,
+    chartArea: {left: 70, top:30},
+    explorer: {}
   };
 
-  var chart = new google.visualization.ColumnChart(document.getElementById("chart_div"));
+  var chart = new google.visualization.LineChart(document.getElementById("chart_div"));
   chart.draw(data, options);
   }
 </script>
-<h2>Graph:</h2>
+<h2>Events:</h2>
 <div id="chart_div"></div>
 """
 

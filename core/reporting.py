@@ -29,9 +29,17 @@ def _insert_graphics(report_html, rows, minx, maxx):
     result = ""
     if rows:
         buckets = {}
-        items = []
+        items = {}
         types_ = [getattr(BLACKLIST, _) for _ in dir(BLACKLIST) if _ == _.upper()]
-        result = "['Type',  %s],\n" % repr(types_).strip("[]")
+        seen_type = set()
+
+        for row in rows:
+            type_ = row[3]
+            seen_type.add(type_)
+
+        for type_ in list(types_):
+            if type_ not in seen_type:
+                types_.remove(type_)
 
         min_, max_ = None, None
         for row in rows:
@@ -41,18 +49,40 @@ def _insert_graphics(report_html, rows, minx, maxx):
             if max_ is None or msticks > max_:
                 max_ = msticks
             type_ = row[3]
-            items.append((msticks, type_))
+            items.setdefault(msticks, [0] * len(types_))
+            items[msticks][types_.index(type_)] += 1
 
-        delta = (max_ - min_) / 50
-        current = min_
-        while current <= max_:
-            buckets[int(current)] = [0] * len(types_)
-            current += delta
-        for msticks, type_ in items:
-            buckets[int(min_ + delta * int((msticks - min_) / delta))][types_.index(type_)] += 1
-        for bucket, content in sorted(buckets.items()):
-            result += "[new Date(%d), %s],\n" % (bucket, ", ".join(str(_) for _ in content))
-    return report_html.replace("<!--graphics-->", GRAPHICS_TEMPLATE % (result, "new Date(%d)" % (minx * 1000), "new Date(%d)" % (maxx * 1000)))
+        result += "var data = new google.visualization.DataTable();\n"
+        result += "data.addColumn('date', 'Date');\n"
+        for type_ in types_:
+            result += "data.addColumn('number', '%s');\n" % type_
+
+        for msticks in sorted(items.keys()):
+            items.setdefault(msticks - 1000, [0] * len(types_))
+            items.setdefault(msticks + 1000, [0] * len(types_))
+        #items.setdefault(min_ - 3600 * 1000, [0] * len(types_))
+        #items.setdefault(max_ + 3600 * 1000, [0] * len(types_))
+        minx = int(minx) * 1000 or min_
+        maxx = int(maxx) * 1000 or max_
+
+        items.setdefault(minx - 3600 * 1000, [0] * len(types_))
+        items.setdefault(maxx + 3600 * 1000, [0] * len(types_))
+
+        result += "data.addRows([\n"
+        for msticks in sorted(items.keys()):
+            result += "[new Date(%d), %s],\n" % (msticks, ", ".join(str(_) for _ in items[msticks]))
+        result += "]);\n"   
+
+        result += "var date_formatter = new google.visualization.DateFormat({\n"
+        result += "pattern: \"dd/MM HH:mm:ss\"\n"
+        result += "});\n"
+        result += "date_formatter.format(data, 0);\n"
+
+        #import pdb; pdb.set_trace()
+        return report_html.replace("<!--graphics-->", GRAPHICS_TEMPLATE % (result, "new Date(%d)" % minx, "new Date(%d)" % maxx))
+        #return report_html.replace("<!--graphics-->", GRAPHICS_TEMPLATE % (result, "new Date(%d)" % (min_ - 3600 * 1000), "new Date(%d)" % (max_ + 3600 * 1000)))
+    else:
+        return report_html
 
 def _html_output(title, headers, rows):
     retval = "<tr>\n"

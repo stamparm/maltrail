@@ -66,19 +66,22 @@ def _process_packet(packet, timestamp=None):
             src_ip = socket.inet_ntoa(ip_header[8])
             dst_ip = socket.inet_ntoa(ip_header[9])
 
-            if dst_ip in _blacklists[BLACKLIST.IP]:
-                src, dst, type_, trail, info, reference = src_ip, dst_ip, BLACKLIST.IP, dst_ip, _blacklists[BLACKLIST.IP][dst_ip][0], _blacklists[BLACKLIST.IP][dst_ip][1]
-                store_db(timestamp or time.time(), src, dst, type_, trail, info, reference)
+            def _check_ips():
+                if dst_ip in _blacklists[BLACKLIST.IP]:
+                    src, dst, type_, trail, info, reference = src_ip, dst_ip, BLACKLIST.IP, dst_ip, _blacklists[BLACKLIST.IP][dst_ip][0], _blacklists[BLACKLIST.IP][dst_ip][1]
+                    store_db(timestamp or time.time(), src, dst, type_, trail, info, reference)
 
-            elif src_ip in _blacklists[BLACKLIST.IP]:
-                src, dst, type_, trail, info, reference = src_ip, dst_ip, BLACKLIST.IP, src_ip, _blacklists[BLACKLIST.IP][src_ip][0], _blacklists[BLACKLIST.IP][src_ip][1]
-                store_db(timestamp or time.time(), src, dst, type_, trail, info, reference)
+                elif src_ip in _blacklists[BLACKLIST.IP]:
+                    src, dst, type_, trail, info, reference = src_ip, dst_ip, BLACKLIST.IP, src_ip, _blacklists[BLACKLIST.IP][src_ip][0], _blacklists[BLACKLIST.IP][src_ip][1]
+                    store_db(timestamp or time.time(), src, dst, type_, trail, info, reference)
 
             if protocol == socket.IPPROTO_TCP:
                 i = iph_length + ETH_LENGTH
                 tcp_header = packet[i:i + 20]
                 src_port, dst_port, _, _, doff_reserved, flags, _, _, _ = struct.unpack("!HHLLBBHHH", tcp_header)
                 syn = flags == 2
+                if syn:
+                    _check_ips()
                 tcph_length = doff_reserved >> 4
                 h_size = ETH_LENGTH + iph_length + tcph_length * 4
                 data = packet[h_size:]
@@ -106,6 +109,7 @@ def _process_packet(packet, timestamp=None):
                         store_db(timestamp or time.time(), src, dst, type_, trail, info, reference)
 
             elif protocol == socket.IPPROTO_UDP:
+                _check_ips()
                 i = iph_length + ETH_LENGTH
                 src_port, dst_port = struct.unpack("!HH", packet[i:i + 4])
                 if dst_port == 53:
