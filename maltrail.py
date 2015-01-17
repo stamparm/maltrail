@@ -48,6 +48,11 @@ try:
 except ImportError:
     exit("[!] please install dpkt (e.g. '%s')" % ("sudo apt-get install python-dpkt" if not subprocess.mswindows else "https://dpkt.googlecode.com/files/dpkt-1.7.win32.exe"))
 
+try:
+    import psutil
+except ImportError:
+    exit("[!] please install psutil (e.g. '%s')" % ("sudo apt-get install python-psutil" if not subprocess.mswindows else "https://pypi.python.org/pypi?:action=display&name=psutil#downloads"))
+
 def _process_packet(packet, timestamp=None):
     """
     Performs all processing on raw packets
@@ -290,20 +295,31 @@ def main():
     parser.add_option("-i", dest="interface", help="listen DNS traffic on interface (e.g. eth0)")
     parser.add_option("-r", dest="pcapfile", help="read packets from (.pcap) file")
     options, _ = parser.parse_args()
+
     if any((options.interface, options.pcapfile)):
         if options.interface:
             if check_sudo() is False:
                 exit("[x] please run with sudo/Administrator privileges")
+
         _blacklists = load_blacklists()
-        _init_multiprocessing()
+
+        if _multiprocessing:
+            _init_multiprocessing()
+
+        process = psutil.Process(os.getpid())
+        process.nice = HIGHEST_PRIORITY
+
         if options.pcapfile:
             set_db(tempfile.mkstemp()[1])
             report_file = tempfile.mkstemp(prefix="%s-" % NAME.lower(), suffix=".html")[1]
             process_pcap(options.pcapfile)
+
             with open(report_file, "w+b") as f:
                 f.write(create_report(get_rows()))
+
             os.chmod(report_file, stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH)
             print("[i] report written to '%s'" % report_file)
+
         elif options.interface:
             start_httpd()
             monitor_interface(options.interface)

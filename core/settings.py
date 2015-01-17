@@ -19,7 +19,7 @@ TIME_FORMAT = "%d/%m/%Y %H:%M:%S"
 REPORT_HEADERS = ("time", "src", "dst", "type", "trail", "info", "reference")
 HTTP_REPORTING_PORT = 8338
 HISTORY_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS history(time REAL, src TEXT, dst TEXT, type TEXT, trail TEXT, info TEXT, reference TEXT)"
-DEFAULT_CAPTURING_FILTER = None  # DEFAULT_CAPTURING_FILTER = "tcp dst port 80 or udp dst port 53"
+DEFAULT_CAPTURING_FILTER = "ip"  # DEFAULT_CAPTURING_FILTER = "tcp dst port 80 or udp dst port 53"
 MAX_PACKET_SIZE = 65535
 BLOCK_LENGTH = 1 + 2 + MAX_PACKET_SIZE + 4 # primitive mutex + short for packet size + max packet size + int for timestamp
 BUFFER_LENGTH = 32 * 1024 * 1024 / BLOCK_LENGTH * BLOCK_LENGTH  # 32MB buffer
@@ -30,6 +30,7 @@ END_BLOCK = -2
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 IPPROTO = 8
 ETH_LENGTH = 14
+HIGHEST_PRIORITY = -20
 
 # Reference: http://www.scriptiny.com/2008/11/javascript-table-sorter/
 HTML_OUTPUT_TEMPLATE = """
