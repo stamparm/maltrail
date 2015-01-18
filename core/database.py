@@ -24,8 +24,8 @@ def get_cursor():
         _thread_data.cursor.execute(HISTORY_CREATE_TABLE)
     return _thread_data.cursor
 
-def store_db(time, src, dst, type_, trail, info, reference):
-    get_cursor().execute("INSERT INTO history VALUES(%s, '%s', '%s', '%s', '%s', '%s', '%s')" % (time, src, dst, type_, trail, info, reference))
+def store_db(sec, usec, src, dst, type_, trail, info, reference):
+    get_cursor().execute("INSERT INTO history VALUES(%s, %s, '%s', '%s', '%s', '%s', '%s', '%s')" % (sec, usec, src, dst, type_, trail, info, reference))
 
 def close_db():
     if hasattr(_thread_data, "cursor"):

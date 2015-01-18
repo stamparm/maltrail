@@ -18,7 +18,7 @@ HISTORY_FILE = os.path.join(STORAGE_DIRECTORY, "history.bin")
 TIME_FORMAT = "%d/%m/%Y %H:%M:%S"
 REPORT_HEADERS = ("time", "src", "dst", "type", "trail", "info", "reference")
 HTTP_REPORTING_PORT = 8338
-HISTORY_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS history(time REAL, src TEXT, dst TEXT, type TEXT, trail TEXT, info TEXT, reference TEXT)"
+HISTORY_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS history(sec INTEGER, usec INTEGER, src TEXT, dst TEXT, type TEXT, trail TEXT, info TEXT, reference TEXT)"
 DEFAULT_CAPTURING_FILTER = "ip"  # DEFAULT_CAPTURING_FILTER = "tcp dst port 80 or udp dst port 53"
 MAX_PACKET_SIZE = 65535
 BLOCK_LENGTH = 1 + 2 + MAX_PACKET_SIZE + 4 # primitive mutex + short for packet size + max packet size + int for timestamp
@@ -38,14 +38,7 @@ HTML_OUTPUT_TEMPLATE = """
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.js"></script>
-<script type="text/javascript" src="http://omnipotent.net/jquery.sparkline/2.1.2/jquery.sparkline.js"></script>
 <script type="text/javascript">
-$(function() {
-    /** This code runs when everything has been loaded on the page */
-    /* Inline sparklines take their values from the contents of the tag */
-    $('.inlinesparkline').sparkline('html', {disableTooltips: true});
-
-});
 var table=function(){
     function sorter(n){
         this.n=n; this.t; this.b; this.r; this.d; this.p; this.w; this.a=[]; this.l=0

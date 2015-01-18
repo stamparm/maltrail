@@ -43,7 +43,7 @@ def _insert_graphics(report_html, rows, minx, maxx):
 
         min_, max_ = None, None
         for row in rows:
-            msticks = int(time.mktime(time.strptime(row[0], TIME_FORMAT)) * 1000)
+            msticks = int(time.mktime(time.strptime(row[0].split('.')[0], TIME_FORMAT)) * 1000)
             if min_ is None or msticks < min_:
                 min_ = msticks
             if max_ is None or msticks > max_:
@@ -93,7 +93,7 @@ def _html_output(title, headers, rows):
         retval += "<tr>"
         _ = ['0'] * 24
         _[int(re.search(r" (\d+):", row[0]).group(1))] = '1'
-        retval += '<td>%s <span class="inlinesparkline">%s</span></td>' % (row[0], ",".join(_))
+        retval += '<td>%s</td>' % row[0]
         for entry in row[1:]:
             retval += "<td>%s</td>" % entry
         retval += "</tr>"
@@ -101,7 +101,7 @@ def _html_output(title, headers, rows):
 
 def _get_time_range():
     min_, max_ = None, None
-    query = "SELECT MIN(time), MAX(time) FROM history"
+    query = "SELECT MIN(sec), MAX(sec) FROM history"
     get_cursor().execute(query)
     _ = get_cursor().fetchone()
     if _:
@@ -111,14 +111,14 @@ def _get_time_range():
 def get_rows(order=None, limit=None, offset=None, mintime=None, maxtime=None, search=None):
     query = "SELECT * FROM history"
     if mintime:
-        query += " WHERE time >= %s" % re.sub(r"[^0-9.]", "", str(mintime))
+        query += " WHERE sec >= %s" % re.sub(r"[^0-9.]", "", str(mintime))
     if maxtime:
-        query += " %s time <= %s" % ("AND" if mintime else "WHERE", re.sub(r"[^0-9.]", "", str(maxtime)))
+        query += " %s sec <= %s" % ("AND" if mintime else "WHERE", re.sub(r"[^0-9.]", "", str(maxtime)))
     if search:
         search = search.replace("'", "").strip()
         query += " %s (src LIKE '%%%s%%' OR dst LIKE '%%%s%%' OR type LIKE '%%%s%%' OR trail LIKE '%%%s%%' OR info LIKE '%%%s%%' OR reference LIKE '%%%s%%')" % ("AND" if mintime or maxtime else "WHERE", search, search, search, search, search, search)
     if order:
-        query += " ORDER BY time %s" % re.sub(r"[^A-Za-z]", "", order)
+        query += " ORDER BY sec %s" % re.sub(r"[^A-Za-z]", "", order)
     if limit:
         query += " LIMIT %s" % re.sub(r"[^0-9]", "", str(limit))
     if offset:
@@ -126,7 +126,7 @@ def get_rows(order=None, limit=None, offset=None, mintime=None, maxtime=None, se
     get_cursor().execute(query)
     rows = get_cursor().fetchall()
     for i in xrange(len(rows)):
-        rows[i] = (time.strftime(TIME_FORMAT, time.localtime(rows[i][0])),) + rows[i][1:]
+        rows[i] = ("%s.%s" % (time.strftime(TIME_FORMAT, time.localtime(rows[i][0])), rows[i][1]),) + rows[i][2:]
     return rows
 
 def create_report(rows):

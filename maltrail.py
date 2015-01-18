@@ -69,11 +69,11 @@ def _process_packet(packet, sec, usec):
             def _check_ips():
                 if dst_ip in _blacklists[BLACKLIST.IP]:
                     src, dst, type_, trail, info, reference = src_ip, dst_ip, BLACKLIST.IP, dst_ip, _blacklists[BLACKLIST.IP][dst_ip][0], _blacklists[BLACKLIST.IP][dst_ip][1]
-                    store_db(sec + 10**-6 * usec, src, dst, type_, trail, info, reference)
+                    store_db(sec, usec, src, dst, type_, trail, info, reference)
 
                 elif src_ip in _blacklists[BLACKLIST.IP]:
                     src, dst, type_, trail, info, reference = src_ip, dst_ip, BLACKLIST.IP, src_ip, _blacklists[BLACKLIST.IP][src_ip][0], _blacklists[BLACKLIST.IP][src_ip][1]
-                    store_db(sec + 10**-6 * usec, src, dst, type_, trail, info, reference)
+                    store_db(sec, usec, src, dst, type_, trail, info, reference)
 
             if protocol == socket.IPPROTO_TCP:
                 i = iph_length + ETH_LENGTH
@@ -112,7 +112,7 @@ def _process_packet(packet, sec, usec):
                         url = "%s%s" % (host, path.rstrip('/'))
                         if url in _blacklists[BLACKLIST.URL]:
                             src, dst, type_, trail, info, reference = src_ip, dst_ip, BLACKLIST.URL, url, _blacklists[BLACKLIST.URL][url][0], _blacklists[BLACKLIST.URL][url][1]
-                            store_db(sec + 10**-6 * usec, src, dst, type_, trail, info, reference)
+                            store_db(sec, usec, src, dst, type_, trail, info, reference)
 
             elif protocol == socket.IPPROTO_UDP:
                 _check_ips()
@@ -138,7 +138,7 @@ def _process_packet(packet, sec, usec):
                                     _ = '.'.join(parts[i:])
                                     if _ in _blacklists[BLACKLIST.DNS]:
                                         src, dst, type_, trail, info, reference = src_ip, dst_ip, BLACKLIST.DNS, domain, _blacklists[BLACKLIST.DNS][_][0], _blacklists[BLACKLIST.DNS][_][1]
-                                        store_db(sec + 10**-6 * usec, src, dst, type_, trail, info, reference)
+                                        store_db(sec, usec, src, dst, type_, trail, info, reference)
                                         break
     except struct.error:
         pass
