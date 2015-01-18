@@ -21,7 +21,7 @@ HTTP_REPORTING_PORT = 8338
 HISTORY_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS history(sec INTEGER, usec INTEGER, src TEXT, dst TEXT, type TEXT, trail TEXT, info TEXT, reference TEXT)"
 DEFAULT_CAPTURING_FILTER = "ip"  # DEFAULT_CAPTURING_FILTER = "tcp dst port 80 or udp dst port 53"
 MAX_PACKET_SIZE = 65535
-BLOCK_LENGTH = 1 + 2 + MAX_PACKET_SIZE + 4 # primitive mutex + short for packet size + max packet size + int for timestamp
+BLOCK_LENGTH = 1 + 2 + 4 + 4 + MAX_PACKET_SIZE # primitive mutex + short for packet size + int for sec + int for usec + max packet size
 BUFFER_LENGTH = 32 * 1024 * 1024 / BLOCK_LENGTH * BLOCK_LENGTH  # 32MB buffer
 SHORT_SLEEP_TIME = 0.00001
 REGULAR_SLEEP_TIME = 0.001
