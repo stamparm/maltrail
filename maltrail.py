@@ -156,7 +156,7 @@ def _read_block(buffer, i):
         buffer[offset] = BLOCK_MARKER.READ
         buffer.seek(offset + 1)
 
-        length = unpack_short(buffer.read(2))
+        length = struct.unpack("=H", buffer.read(2))[0]
         retval = buffer.read(length)
 
         if buffer[offset] == BLOCK_MARKER.READ:
@@ -175,10 +175,10 @@ def _write_block(buffer, i, block, marker=None):
     buffer.seek(offset + 1)
 
     if isinstance(block, basestring):
-        buffer.write(pack_short(len(block)))
+        buffer.write(struct.pack("=H", len(block)))
         buffer.write(block)
     else:
-        buffer.write(pack_short(sum(len(_) for _ in block)))
+        buffer.write(struct.pack("=H", sum(len(_) for _ in block)))
        
         for part in block:
             buffer.write(part)
@@ -211,7 +211,8 @@ def _worker(buffer, n):
                 if content is None:
                     break
 
-                sec, usec, packet, = unpack_int(content[:4]), unpack_int(content[4:8]), content[8:]
+                sec, usec = struct.unpack("=II", content[:8])
+                packet = content[8:]
                 _process_packet(packet, sec, usec)
 
             count += 1
@@ -262,7 +263,7 @@ def process_pcap(pcapfile):
             sec, usec = int(timestamp), int(timestamp * 10**-6)
 
             if _multiprocessing:
-                _write_block(_buffer, _count, (pack_int(sec), pack_int(usec), packet))
+                _write_block(_buffer, _count, (struct.pack("=II", sec, usec), packet))
                 _n.value = _count + 1
             else:
                 _process_packet(packet, sec, usec)
@@ -294,7 +295,7 @@ def monitor_interface(interface):
         try:
             sec, usec = header.getts()
             if _multiprocessing:
-                _write_block(_buffer, _count, (pack_int(sec), pack_int(usec), packet))
+                _write_block(_buffer, _count, (struct.pack("=II", sec, usec), packet))
                 _n.value = _count + 1
             else:
                 _process_packet(packet, sec, usec)
