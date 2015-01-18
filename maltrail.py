@@ -48,7 +48,7 @@ try:
 except ImportError:
     exit("[!] please install dpkt (e.g. 'sudo apt-get install python-dpkt')")
 
-def _process_packet(packet, timestamp=None):
+def _process_packet(packet, sec, usec):
     """
     Performs all processing on raw packets
     """
@@ -69,48 +69,50 @@ def _process_packet(packet, timestamp=None):
             def _check_ips():
                 if dst_ip in _blacklists[BLACKLIST.IP]:
                     src, dst, type_, trail, info, reference = src_ip, dst_ip, BLACKLIST.IP, dst_ip, _blacklists[BLACKLIST.IP][dst_ip][0], _blacklists[BLACKLIST.IP][dst_ip][1]
-                    store_db(timestamp or time.time(), src, dst, type_, trail, info, reference)
+                    store_db(sec + 10**-6 * usec, src, dst, type_, trail, info, reference)
 
                 elif src_ip in _blacklists[BLACKLIST.IP]:
                     src, dst, type_, trail, info, reference = src_ip, dst_ip, BLACKLIST.IP, src_ip, _blacklists[BLACKLIST.IP][src_ip][0], _blacklists[BLACKLIST.IP][src_ip][1]
-                    store_db(timestamp or time.time(), src, dst, type_, trail, info, reference)
+                    store_db(sec + 10**-6 * usec, src, dst, type_, trail, info, reference)
 
             if protocol == socket.IPPROTO_TCP:
                 i = iph_length + ETH_LENGTH
                 tcp_header = packet[i:i + 20]
                 src_port, dst_port, _, _, doff_reserved, flags, _, _, _ = struct.unpack("!HHLLBBHHH", tcp_header)
 
-                syn = flags == 2
-                if syn:
+                syn_only = flags == 2
+                if syn_only:
                     _check_ips()
 
-                tcph_length = doff_reserved >> 4
-                h_size = ETH_LENGTH + iph_length + tcph_length * 4
-                data = packet[h_size:]
+                push_set = flags & 8 != 0
+                if push_set:
+                    tcph_length = doff_reserved >> 4
+                    h_size = ETH_LENGTH + iph_length + tcph_length * 4
+                    data = packet[h_size:]
 
-                if dst_port == 80 and len(data) > 0:
-                    index = data.find("\r\n")
-                    if index >= 0:
-                        line = data[:index]
-                        if line.count(' ') == 2 and "HTTP/1" in line:
-                            path = line.split(' ')[1]
+                    if dst_port == 80 and len(data) > 0:
+                        index = data.find("\r\n")
+                        if index >= 0:
+                            line = data[:index]
+                            if line.count(' ') == 2 and "HTTP/1" in line:
+                                path = line.split(' ')[1]
+                            else:
+                                return
                         else:
                             return
-                    else:
-                        return
 
-                    index = data.find("\r\nHost:")
-                    if index >= 0:
-                        index = index + len("\r\nHost:")
-                        host = data[index:data.find("\r\n", index)]
-                        host = host.strip()
-                    else:
-                        return
+                        index = data.find("\r\nHost:")
+                        if index >= 0:
+                            index = index + len("\r\nHost:")
+                            host = data[index:data.find("\r\n", index)]
+                            host = host.strip()
+                        else:
+                            return
 
-                    url = "%s%s" % (host, path.rstrip('/'))
-                    if url in _blacklists[BLACKLIST.URL]:
-                        src, dst, type_, trail, info, reference = src_ip, dst_ip, BLACKLIST.URL, url, _blacklists[BLACKLIST.URL][url][0], _blacklists[BLACKLIST.URL][url][1]
-                        store_db(timestamp or time.time(), src, dst, type_, trail, info, reference)
+                        url = "%s%s" % (host, path.rstrip('/'))
+                        if url in _blacklists[BLACKLIST.URL]:
+                            src, dst, type_, trail, info, reference = src_ip, dst_ip, BLACKLIST.URL, url, _blacklists[BLACKLIST.URL][url][0], _blacklists[BLACKLIST.URL][url][1]
+                            store_db(sec + 10**-6 * usec, src, dst, type_, trail, info, reference)
 
             elif protocol == socket.IPPROTO_UDP:
                 _check_ips()
@@ -136,7 +138,7 @@ def _process_packet(packet, timestamp=None):
                                     _ = '.'.join(parts[i:])
                                     if _ in _blacklists[BLACKLIST.DNS]:
                                         src, dst, type_, trail, info, reference = src_ip, dst_ip, BLACKLIST.DNS, domain, _blacklists[BLACKLIST.DNS][_][0], _blacklists[BLACKLIST.DNS][_][1]
-                                        store_db(timestamp or time.time(), src, dst, type_, trail, info, reference)
+                                        store_db(sec + 10**-6 * usec, src, dst, type_, trail, info, reference)
                                         break
     except struct.error:
         pass
@@ -151,8 +153,9 @@ def _read_block(buffer, i):
         while buffer[offset] == BLOCK_MARKER.WRITE:
             time.sleep(SHORT_SLEEP_TIME)
 
-        buffer.seek(offset)
-        buffer.write(BLOCK_MARKER.READ)
+        buffer[offset] = BLOCK_MARKER.READ
+        buffer.seek(offset + 1)
+
         length = unpack_short(buffer.read(2))
         retval = buffer.read(length)
 
@@ -168,8 +171,8 @@ def _write_block(buffer, i, block, marker=None):
     while buffer[offset] == BLOCK_MARKER.READ:
         time.sleep(SHORT_SLEEP_TIME)
 
-    buffer.seek(offset)
-    buffer.write(BLOCK_MARKER.WRITE)
+    buffer[offset] = BLOCK_MARKER.WRITE
+    buffer.seek(offset + 1)
 
     if isinstance(block, basestring):
         buffer.write(pack_short(len(block)))
@@ -208,8 +211,8 @@ def _worker(buffer, n):
                 if content is None:
                     break
 
-                timestamp, packet, = unpack_int(content[:4]), content[4:]
-                _process_packet(packet, timestamp)
+                sec, usec, packet, = unpack_int(content[:4]), unpack_int(content[4:8]), content[8:]
+                _process_packet(packet, sec, usec)
 
             count += 1
 
@@ -256,11 +259,13 @@ def process_pcap(pcapfile):
         for timestamp, packet in packets:
             sys.stdout.write('%s\r' % ROTATING_CHARS[_count % len(ROTATING_CHARS)])
 
+            sec, usec = int(timestamp), int(timestamp * 10**-6)
+
             if _multiprocessing:
-                _write_block(_buffer, _count, (pack_int(int(timestamp)), packet))
+                _write_block(_buffer, _count, (pack_int(sec), pack_int(usec), packet))
                 _n.value = _count + 1
             else:
-                _process_packet(packet, timestamp)
+                _process_packet(packet, sec, usec)
 
             _count += 1
 
@@ -289,10 +294,10 @@ def monitor_interface(interface):
         try:
             sec, usec = header.getts()
             if _multiprocessing:
-                _write_block(_buffer, _count, (pack_int(sec), packet))
+                _write_block(_buffer, _count, (pack_int(sec), pack_int(usec), packet))
                 _n.value = _count + 1
             else:
-                _process_packet(packet, timestamp)
+                _process_packet(packet, sec, usec)
             _count += 1
         except socket.timeout:
             pass
