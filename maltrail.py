@@ -79,9 +79,11 @@ def _process_packet(packet, timestamp=None):
                 i = iph_length + ETH_LENGTH
                 tcp_header = packet[i:i + 20]
                 src_port, dst_port, _, _, doff_reserved, flags, _, _, _ = struct.unpack("!HHLLBBHHH", tcp_header)
+
                 syn = flags == 2
                 if syn:
                     _check_ips()
+
                 tcph_length = doff_reserved >> 4
                 h_size = ETH_LENGTH + iph_length + tcph_length * 4
                 data = packet[h_size:]
@@ -96,6 +98,7 @@ def _process_packet(packet, timestamp=None):
                             return
                     else:
                         return
+
                     index = data.find("\r\nHost:")
                     if index >= 0:
                         index = index + len("\r\nHost:")
@@ -103,6 +106,7 @@ def _process_packet(packet, timestamp=None):
                         host = host.strip()
                     else:
                         return
+
                     url = "%s%s" % (host, path.rstrip('/'))
                     if url in _blacklists[BLACKLIST.URL]:
                         src, dst, type_, trail, info, reference = src_ip, dst_ip, BLACKLIST.URL, url, _blacklists[BLACKLIST.URL][url][0], _blacklists[BLACKLIST.URL][url][1]
@@ -110,8 +114,10 @@ def _process_packet(packet, timestamp=None):
 
             elif protocol == socket.IPPROTO_UDP:
                 _check_ips()
+
                 i = iph_length + ETH_LENGTH
                 src_port, dst_port = struct.unpack("!HH", packet[i:i + 4])
+
                 if dst_port == 53:
                     h_size = ETH_LENGTH + iph_length + 8
                     data = packet[h_size:]
@@ -125,6 +131,7 @@ def _process_packet(packet, timestamp=None):
                             for query in dns.qd:
                                 domain = query.name
                                 parts = domain.split('.')
+
                                 for i in xrange(0, len(parts) - 1):
                                     _ = '.'.join(parts[i:])
                                     if _ in _blacklists[BLACKLIST.DNS]:
@@ -140,12 +147,15 @@ def _read_block(buffer, i):
     while True:
         if buffer[offset] == BLOCK_MARKER.END:
             return None
+
         while buffer[offset] == BLOCK_MARKER.WRITE:
             time.sleep(SHORT_SLEEP_TIME)
+
         buffer.seek(offset)
         buffer.write(BLOCK_MARKER.READ)
         length = struct.unpack("=H", buffer.read(2))[0]
         retval = buffer.read(length)
+
         if buffer[offset] == BLOCK_MARKER.READ:
             break
 
@@ -166,9 +176,10 @@ def _write_block(buffer, i, block, marker=None):
         buffer.write(block)
     else:
         buffer.write(struct.pack("=H", sum(len(_) for _ in block)))
-        
+       
         for part in block:
             buffer.write(part)
+
     buffer[offset] = marker or BLOCK_MARKER.NOP
 
 def _worker(buffer, n):
@@ -191,12 +202,17 @@ def _worker(buffer, n):
                 if count >= n.value:
                     time.sleep(REGULAR_SLEEP_TIME)
                     continue
+
                 content = _read_block(buffer, count)
+
                 if content is None:
                     break
+
                 timestamp, packet, = struct.unpack("=I", content[:4])[0], content[4:]
                 _process_packet(packet, timestamp)
+
             count += 1
+
         except KeyboardInterrupt:
             break
 
@@ -239,19 +255,24 @@ def process_pcap(pcapfile):
     try:
         for timestamp, packet in packets:
             sys.stdout.write('%s\r' % ROTATING_CHARS[_count % len(ROTATING_CHARS)])
+
             if _multiprocessing:
                 _write_block(_buffer, _count, (struct.pack("=I", timestamp), packet))
                 _n.value = _count + 1
             else:
                 _process_packet(packet, timestamp)
+
             _count += 1
+
         if _multiprocessing:
             for _ in xrange(multiprocessing.cpu_count() - 1):
                 _write_block(_buffer, _count, "", BLOCK_MARKER.END)
                 _n.value = _count + 1
                 _count += 1
+
             while multiprocessing.active_children():
                 time.sleep(REGULAR_SLEEP_TIME)
+
     except KeyboardInterrupt:
         print("\r[x] Ctrl-C pressed")
 
