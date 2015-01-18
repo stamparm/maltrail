@@ -26,7 +26,7 @@ from core.reporting import *
 from core.settings import *
 
 _buffer = None
-_count = None
+_count = 0
 _multiprocessing = False
 _blacklists = None
 
@@ -41,17 +41,12 @@ except (ImportError, OSError, NotImplementedError):
 try:
     import pcapy
 except ImportError:
-    exit("[!] please install Pcapy (e.g. '%s')" % ("sudo apt-get install python-pcapy" if not subprocess.mswindows else "https://breakingcode.wordpress.com/2012/07/16/quickpost-updated-impacketpcapy-installers-for-python-2-5-2-6-2-7/"))
+    exit("[!] please install Pcapy (e.g. 'sudo apt-get install python-pcapy')")
 
 try:
     import dpkt
 except ImportError:
-    exit("[!] please install dpkt (e.g. '%s')" % ("sudo apt-get install python-dpkt" if not subprocess.mswindows else "https://dpkt.googlecode.com/files/dpkt-1.7.win32.exe"))
-
-try:
-    import psutil
-except ImportError:
-    exit("[!] please install psutil (e.g. '%s')" % ("sudo apt-get install python-psutil" if not subprocess.mswindows else "https://pypi.python.org/pypi?:action=display&name=psutil#downloads"))
+    exit("[!] please install dpkt (e.g. 'sudo apt-get install python-dpkt')")
 
 def _process_packet(packet, timestamp=None):
     """
@@ -141,6 +136,7 @@ def _process_packet(packet, timestamp=None):
 
 def _read_block(buffer, i):
     offset = i * BLOCK_LENGTH % BUFFER_LENGTH
+
     while True:
         if buffer[offset] == BLOCK_MARKER.END:
             return None
@@ -152,15 +148,27 @@ def _read_block(buffer, i):
         retval = buffer.read(length)
         if buffer[offset] == BLOCK_MARKER.READ:
             break
+
     buffer[offset] = BLOCK_MARKER.NOP
     return retval
 
 def _write_block(buffer, i, block, marker=None):
     offset = i * BLOCK_LENGTH % BUFFER_LENGTH
+
     while buffer[offset] == BLOCK_MARKER.READ:
         time.sleep(SHORT_SLEEP_TIME)
+
     buffer.seek(offset)
-    buffer.write(BLOCK_MARKER.WRITE + struct.pack("=H", len(block)) + block)
+    buffer.write(BLOCK_MARKER.WRITE)
+
+    if isinstance(block, basestring):
+        buffer.write(struct.pack("=H", len(block)))
+        buffer.write(block)
+    else:
+        buffer.write(struct.pack("=H", sum(len(_) for _ in block)))
+        
+        for part in block:
+            buffer.write(part)
     buffer[offset] = marker or BLOCK_MARKER.NOP
 
 def _worker(buffer, n):
@@ -215,6 +223,8 @@ def process_pcap(pcapfile):
     Reads .pcap file and inspects packets from it
     """
 
+    global _count
+
     print("[i] reading packets from '%s'..." % pcapfile)
 
     if not os.path.isfile(pcapfile):
@@ -226,21 +236,20 @@ def process_pcap(pcapfile):
             ex = "Not a pcap capture file"
         exit("[x] there has been a problem with reading file '%s' ('%s')" % (pcapfile, ex))
 
-    count = 0
     try:
         for timestamp, packet in packets:
-            sys.stdout.write('%s\r' % ROTATING_CHARS[count % len(ROTATING_CHARS)])
+            sys.stdout.write('%s\r' % ROTATING_CHARS[_count % len(ROTATING_CHARS)])
             if _multiprocessing:
-                _write_block(_buffer, count, struct.pack("=I", timestamp) + packet)
-                _n.value = count + 1
+                _write_block(_buffer, _count, (struct.pack("=I", timestamp), packet))
+                _n.value = _count + 1
             else:
                 _process_packet(packet, timestamp)
-            count += 1
+            _count += 1
         if _multiprocessing:
             for _ in xrange(multiprocessing.cpu_count() - 1):
-                _write_block(_buffer, count, "", BLOCK_MARKER.END)
-                _n.value = count + 1
-                count += 1
+                _write_block(_buffer, _count, "", BLOCK_MARKER.END)
+                _n.value = _count + 1
+                _count += 1
             while multiprocessing.active_children():
                 time.sleep(REGULAR_SLEEP_TIME)
     except KeyboardInterrupt:
@@ -253,22 +262,24 @@ def monitor_interface(interface):
 
     print("[i] monitoring interface '%s'..." % interface)
 
-    count = 0
+    def packet_handler(header, packet):
+        global _count
+
+        try:
+            timestamp = header.getts()[0]
+            if _multiprocessing:
+                _write_block(_buffer, _count, (struct.pack("=I", timestamp), packet))
+                _n.value = _count + 1
+            else:
+                _process_packet(packet, timestamp)
+            _count += 1
+        except socket.timeout:
+            pass
+
     try:
         cap = pcapy.open_live(interface, MAX_PACKET_SIZE, True, 0)
         cap.setfilter(DEFAULT_CAPTURING_FILTER or "")
-        while True:
-            try:
-                (header, packet) = cap.next()
-                timestamp = header.getts()[0]
-                if _multiprocessing:
-                    _write_block(_buffer, count, struct.pack("=I", timestamp) + packet)
-                    _n.value = count + 1
-                else:
-                    _process_packet(packet, timestamp)
-                count += 1
-            except socket.timeout:
-                pass
+        cap.loop(-1, packet_handler)
     except KeyboardInterrupt:
         print("\r[x] Ctrl-C pressed")
     except socket.error, ex:
@@ -281,9 +292,8 @@ def monitor_interface(interface):
     finally:
         if _multiprocessing:
             for _ in xrange(multiprocessing.cpu_count() - 1):
-                _write_block(_buffer, count, "", BLOCK_MARKER.END)
-                _n.value = count + 1
-                count += 1
+                _write_block(_buffer, _n.value, "", BLOCK_MARKER.END)
+                _n.value = _n.value + 1
             while multiprocessing.active_children():
                 time.sleep(REGULAR_SLEEP_TIME)
         close_db()
@@ -306,9 +316,6 @@ def main():
         if _multiprocessing:
             _init_multiprocessing()
 
-        process = psutil.Process(os.getpid())
-        process.nice = HIGHEST_PRIORITY
-
         if options.pcapfile:
             set_db(tempfile.mkstemp()[1])
             report_file = tempfile.mkstemp(prefix="%s-" % NAME.lower(), suffix=".html")[1]
@@ -321,6 +328,14 @@ def main():
             print("[i] report written to '%s'" % report_file)
 
         elif options.interface:
+            try:
+                p = subprocess.Popen("schedtool -n -10 -M 2 -p 10 -a 0x01 %d" % os.getpid(), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                _, stderr = p.communicate()
+                if "not found" in stderr:
+                    print("[!] please install schedtool for better CPU scheduling (e.g. 'sudo apt-get install schedtool')")
+            except:
+                pass
+
             start_httpd()
             monitor_interface(options.interface)
     else:
