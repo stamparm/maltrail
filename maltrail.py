@@ -153,7 +153,7 @@ def _read_block(buffer, i):
 
         buffer.seek(offset)
         buffer.write(BLOCK_MARKER.READ)
-        length = struct.unpack("=H", buffer.read(2))[0]
+        length = unpack_short(buffer.read(2))
         retval = buffer.read(length)
 
         if buffer[offset] == BLOCK_MARKER.READ:
@@ -172,10 +172,10 @@ def _write_block(buffer, i, block, marker=None):
     buffer.write(BLOCK_MARKER.WRITE)
 
     if isinstance(block, basestring):
-        buffer.write(struct.pack("=H", len(block)))
+        buffer.write(pack_short(len(block)))
         buffer.write(block)
     else:
-        buffer.write(struct.pack("=H", sum(len(_) for _ in block)))
+        buffer.write(pack_short(sum(len(_) for _ in block)))
        
         for part in block:
             buffer.write(part)
@@ -208,7 +208,7 @@ def _worker(buffer, n):
                 if content is None:
                     break
 
-                timestamp, packet, = struct.unpack("=I", content[:4])[0], content[4:]
+                timestamp, packet, = unpack_int(content[:4]), content[4:]
                 _process_packet(packet, timestamp)
 
             count += 1
@@ -257,7 +257,7 @@ def process_pcap(pcapfile):
             sys.stdout.write('%s\r' % ROTATING_CHARS[_count % len(ROTATING_CHARS)])
 
             if _multiprocessing:
-                _write_block(_buffer, _count, (struct.pack("=I", timestamp), packet))
+                _write_block(_buffer, _count, (pack_int(int(timestamp)), packet))
                 _n.value = _count + 1
             else:
                 _process_packet(packet, timestamp)
@@ -287,9 +287,9 @@ def monitor_interface(interface):
         global _count
 
         try:
-            timestamp = header.getts()[0]
+            sec, usec = header.getts()
             if _multiprocessing:
-                _write_block(_buffer, _count, (struct.pack("=I", timestamp), packet))
+                _write_block(_buffer, _count, (pack_int(sec), packet))
                 _n.value = _count + 1
             else:
                 _process_packet(packet, timestamp)

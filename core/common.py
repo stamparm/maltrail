@@ -49,3 +49,15 @@ def check_sudo():
         check = ctypes.windll.shell32.IsUserAnAdmin()
 
     return check
+
+def pack_int(value):
+    return chr((value >> 24) & 0xff) + chr((value >> 16) & 0xff) + chr((value >> 8) & 0xff) + chr(value & 0xff)
+
+def unpack_int(value):
+    return (ord(value[0]) << 24) + (ord(value[1]) << 16) + (ord(value[2]) << 8) + ord(value[3])
+
+def pack_short(value):
+    return chr((value >> 8) & 0xff) + chr(value & 0xff)
+
+def unpack_short(value):
+    return (ord(value[0]) << 8) + ord(value[1])
