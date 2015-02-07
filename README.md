@@ -1,5 +1,7 @@
 # Maltrail
 
+(**Note**: expect huge push with lots of changes in March 2015)
+
 **Maltrail** is a malicious traffic monitoring tool, utilizing publicly available blacklists containing malicious (or generally suspicious) domains, URLs and IPs. It uses [Pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) library for traffic capturing and [dpkt](https://code.google.com/p/dpkt/) for packet parsing. Also, it runs in multiprocessing mode (depending on # of CPU cores) to maximize the packet processing performance.
 
 ![Report](http://i.imgur.com/TCgifb3.png)
