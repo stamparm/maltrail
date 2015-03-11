@@ -43,22 +43,24 @@ The following blacklists (i.e. feeds) are being utilized:
 As of static entries, the trails for the following malicious entries have been manually included (from various AV reports):
 
 ```
-alureon, android_stealer, aridviper, axpergle, balamid, bankpatch, bedep, bubnix, carbanak, careto,
-chewbacca, cleaver, computrace, conficker, cosmicduke, couponarific, crilock, cryptolocker,
-cryptowall, ctblocker, cutwail, darkhotel, defru, desertfalcon, destory, dorifel, dorkbot, drixed,
-duqu, dursg, dynamic_domain, dyreza, emotet, equation, expiro, fakeran, fbi_ransomware, fiexp,
-fignotok, fin4, finfisher, gamarue, gauss, geodo, gholee, htran, iframeref, jenxcus, kegotip, kovter,
-lollipop, luckycat, mariposa, miniduke, nettraveler, neurevt, nitol, no-ip_malware, nonbolqu, nuqel,
-nymaim, palevo, pdfjsc, pift, powelike, proslikefan, pushdo, ransirac, redoctober, regin, reveton,
-rustock, sality, sathurbot, scieron, sefnit, shylock, siesta, simda, sinkhole_kaspersky,
-sinkhole_shadowserver, sirefef, smsfakesky, snake, snifula, sofacy, stuxnet, superfish,
-suspicious_domain, suspicious_ipinfo, teerac, torpig, torrentlocker, tugspay, unruy, upatre, vawtrak,
-virut, vobfus, vundo, wiper, zeroaccess, zlob
+alureon, android_stealer, aridviper, axpergle, balamid, bankpatch, bedep, bubnix,
+carbanak, careto, chewbacca, cleaver, computrace, conficker, cosmicduke,
+couponarific, crilock, cryptolocker, cryptowall, ctblocker, cutwail, darkhotel,
+defru, desertfalcon, destory, dorifel, dorkbot, drixed, duqu, dursg, dynamic_domain,
+dyreza, emotet, equation, expiro, fakeran, fbi_ransomware, fiexp, fignotok, fin4,
+finfisher, gamarue, gauss, geodo, gholee, htran, iframeref, jenxcus, kegotip,
+kovter, lollipop, luckycat, mariposa, miniduke, nettraveler, neurevt, nitol,
+no-ip_malware, nonbolqu, nuqel, nymaim, palevo, pdfjsc, pift, powelike, proslikefan,
+pushdo, ransirac, redoctober, regin, reveton, rustock, sality, sathurbot, scieron,
+sefnit, shylock, siesta, simda, sinkhole_kaspersky, sinkhole_shadowserver, sirefef,
+smsfakesky, snake, snifula, sofacy, stuxnet, superfish, suspicious_domain,
+suspicious_ipinfo, teerac, torpig, torrentlocker, tugspay, unruy, upatre, vawtrak,
+virut, vobfus, vundo, wiper, zeroaccess, zlob, etc.
 ```
 
 ## Introduction
 
-Maltrail is a system based on the sensor<->server architecture. Sensor(s) is a standalone component running on the monitoring node (i.e. workstation connected to the SPAN port) where it "sniffs" the passing traffic for "trails" (i.e. blacklisted entries). In case of a positive match, it sends the log event to the (central) server where it is stored inside the appropriate logging directory.
+Maltrail is a system based on the sensor / server architecture. Sensor(s) is a standalone component running on the monitoring node (i.e. workstation connected to the SPAN port) where it "sniffs" the passing traffic for blacklisted trails (i.e. domain names, URLs and/or IPs). In case of a positive match, it sends the log event to the (central) server where it is stored inside the appropriate logging directory. If sensor is being run on same machine as server, logs are stored directly into the logging directory, while if it is being run remotelly, it is being sent via UDP to the server.
 
 **TODO documentation**
 
