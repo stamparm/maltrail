@@ -1,8 +1,10 @@
 # Maltrail
 
-**Maltrail** is a malicious traffic monitoring tool, utilizing publicly available blacklists containing malicious (or generally suspicious) domain names, URLs and IPs.
+**Maltrail** is a malicious traffic monitoring tool, utilizing publicly available blacklists containing malicious (or generally suspicious) domain names, URLs and IPs, along with static lists compiled from various reports.
 
-![Report](http://i.imgur.com/TCgifb3.png)
+**TODO documentation**
+
+![Report](http://i.imgur.com/v8Bqner.png)
 
 ## Requirements
 
