@@ -2,7 +2,7 @@
 
 ## General
 
-**Maltrail** is a malicious traffic monitoring tool, utilizing publicly available blacklists containing malicious (or generally suspicious) domain names, URLs and IPs, along with static lists compiled from various AV reports.
+**Maltrail** is a malicious traffic monitoring system, utilizing publicly available blacklists containing malicious (or generally suspicious) trails (i.e. domain names, URLs and/or IPs), along with static lists compiled from various AV reports.
 
 ![Reporting tool](http://i.imgur.com/GHQYQLe.png)
 
@@ -42,7 +42,6 @@ The following blacklists (i.e. feeds) are being utilized:
 
 As of static entries, the trails for the following malicious entries have been manually included (from various AV reports):
 
-
 ```
 alureon, android_stealer, aridviper, axpergle, balamid, bankpatch, bedep, bubnix, carbanak, careto,
 chewbacca, cleaver, computrace, conficker, cosmicduke, couponarific, crilock, cryptolocker,
@@ -58,6 +57,8 @@ virut, vobfus, vundo, wiper, zeroaccess, zlob
 ```
 
 ## Introduction
+
+Maltrail is a system based on the sensor<->server architecture. Sensor(s) is a standalone component running on the monitoring node (i.e. workstation connected to the SPAN port) where it "sniffs" the passing traffic for "trails" (i.e. blacklisted entries). In case of a positive match, it sends the log event to the (central) server where it is stored inside the appropriate logging directory.
 
 **TODO documentation**
 
