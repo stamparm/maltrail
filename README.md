@@ -4,7 +4,7 @@
 
 **TODO documentation**
 
-![Report](http://i.imgur.com/v8Bqner.png)
+![Report](http://i.imgur.com/GHQYQLe.png)
 
 ## Requirements
 
