@@ -60,7 +60,9 @@ virut, vobfus, vundo, wiper, zeroaccess, zlob, etc.
 
 ## Introduction
 
-Maltrail is a system based on the sensor / server architecture. Sensor(s) is a standalone component running on the monitoring node (i.e. workstation connected to the SPAN port) where it "sniffs" the passing traffic for blacklisted trails (i.e. domain names, URLs and/or IPs). In case of a positive match, it sends the log event to the (central) server where it is stored inside the appropriate logging directory. If sensor is being run on same machine as server, logs are stored directly into the logging directory, while if it is being run remotelly, it is being sent via UDP to the server.
+Maltrail is based on the sensor / server / client architecture. **Sensor**(s) is a standalone component running on the monitoring node (i.e. workstation connected to the SPAN port) where it "sniffs" the passing traffic for blacklisted trails (i.e. domain names, URLs and/or IPs). In case of a positive match, it sends the log event to the (central) server where it is stored inside the appropriate logging directory. If sensor is being run on same machine as server, logs are stored directly into the logging directory, while if it is being run remotelly, it is being sent via UDP to the server.
+
+**Server**'s primary role is to provide backend support for the reporting web application. In most cases, server and sensor will be run on the same machine. So, to prevent potential disruptions, the front-end reporting part is (chosen to be) based on the fat-client architecture. Events (i.e. log entries) for the chosen date are streamed toward the **client**, where the reporting web application is responsible for the presentation part. Data is sent toward the client in compressed chunks, where they are processed sequentially. The final report is created in highly condensed form, practically allowing presentation of unconstrained number of events.
 
 **TODO documentation**
 
