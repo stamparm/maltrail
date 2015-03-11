@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://ask.wireshark.org/questions/10839/filters-for-torpig-sinowal-etc
+
+kolipso.info
+194.146.207.133
+ret9unj.com
+alzan.info
+194.146.207.18
+tsforme.com
+useforme.com
+
+# Reference: http://who.is/nameserver/ns1.torpig-sinkhole.org/
+# Reference: http://who.is/nameserver/ns2.torpig-sinkhole.org/
+
+torpig-sinkhole.org
+212.227.55.84
+87.106.240.162

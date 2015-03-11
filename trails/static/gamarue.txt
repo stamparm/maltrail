@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.microsoft.com/security/portal/threat/Encyclopedia/Entry.aspx?Name=Win32/Gamarue#tab=2
+
+cityhotlove.com
+clothesshopuppy.com
+conpastcon.com
+freefinder.me
+grrrff24213402.com
+grrrff2452.com
+iurhjfnmflsdf.com
+lanamakotrue.com
+mgrsdfkprogerg.com
+pastinwest.com
+puppyclothesshop1.net
+puppyclothesshop2.net

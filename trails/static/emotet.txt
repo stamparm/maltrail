@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Win32/Emotet#tab=2
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/Entry.aspx?Name=Spammer:Win32/Cetsiol.A#tab=2
+# Reference: http://www.securityhome.eu/malware/malware.php?mal_id=1193064972549a82b0400072.08119525
+
+158.255.238.163
+5.39.87.21
+ajeyftrjqeashgda.mobi
+bardubar.com
+cryspellingslaveseducation.eu
+distrbilko.pw
+labamito.ru
+likesomessfortelr.eu
+mail.ps4hacked.es
+naimjax.ru
+qwuyegasd3edarq6yu.org
+thehappylattersforallpeopleoftheworld.eu
+usportrock.ru
+www6067ug.sakura.ne.jp

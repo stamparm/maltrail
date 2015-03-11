@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://contagiominidump.blogspot.com/2012/12/trojanrussmssystemsecurity-toll-fraud.html
+# Reference: https://www.virustotal.com/en/file/664725869278f478e5a50a5e359dc6d5cf4f2a7019d0c122e2fa1e318f19636b/analysis/
+# Reference: https://www.mysonicwall.com/sonicalert/searchresults.aspx?ev=article&id=516
+# Reference: http://securelist.com/blog/incidents/59384/new-threat-trojan-sms-androidos-stealer-a/#page_top
+
+load-center.ru

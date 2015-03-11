@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/Entry.aspx?Name=Win32/Vawtrak#tab=2
+
+188.190.126.87
+188.190.127.87
+195.137.188.50
+195.191.56.247
+195.210.47.173
+afg.com.tw
+countdown.com.tw
+miison.com.tw

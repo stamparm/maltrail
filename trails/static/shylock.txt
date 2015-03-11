@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2011-092916-1617-99&tabid=2
+
+brainsphere.cc
+commonworldme.cc
+extensadv.cc
+gigacat.cc
+nw-serv.cc
+online-upd.at
+somesystems.cc
+stat-servise.cc
+str-main.su
+topbeat.cc
+www-protection.su

@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.circl.lu/pub/tr-24/
+
+microsoft.operaa.net
+123.254.104.51
+microsoftno.operaa.net
+111.68.10.83
+111.68.10.85

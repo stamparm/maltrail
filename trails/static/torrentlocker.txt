@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.welivesecurity.com/wp-content/uploads/2014/12/torrent_locker.pdf
+# Reference: http://www.emergingthreats.net/products/etpro-ruleset/daily-ruleset-update-summary/daily-ruleset-update-summary-12232014
+
+allwayshappy.ru
+casinoroyal7.ru
+cryptdomain.dp.ua
+deadwalk32.ru
+doubleclickads.net
+it-newsblog.ru
+js-static.ru
+lagosadventures.com
+lebanonwarrior.ru
+nigerianbrothers.net
+octoberpics.ru
+princeofnigeria.net
+royalgourp.org
+server38.info
+ssl-server24.ru
+tweeterplanet.ru
+tweeter-stat.ru
+updatemyhost.ru
+walkingdead32.ru
+worldnews247.net

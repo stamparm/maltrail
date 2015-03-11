@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/Entry.aspx?Name=Ransom%3aWin32%2fTeerac#tab=2
+
+cangrybirds493.ru
+lagosadventures.com
+ryptdomain.dp.ua
+systemdriverupdate.ru
+239.255.255.250

@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.csis.dk/en/csis/news/4262/
+# Reference: http://phishme.com/project-dyre-new-rat-slurps-bank-credentials-bypasses-ssl/
+
+/cho1017
+192.99.6.61
+85.25.148.6
+217.12.207.151

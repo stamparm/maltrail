@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.surfright.nl/nl/support/dorifel-decrypter
+# Reference: http://securelist.com/blog/incidents/33898/dorifel-is-much-bigger-than-expected-and-its-still-active-and-growing/
+
+ipo90.com
+1nlreality.sk
+avtoclub.eu
+vnk.sk
+zalil.ru
+yerty90.com
+91.220.35.61
+oianowifna.ru
+greatnewidea1.ru
+greatnewidea12.ru
+www.organizasyonservisi.com
+unionfilesexchnges.su
+184.82.162.163
+184.22.103.202
+184.82.107.86
+158.255.211.28
+149.154.154.47
+184.82.107.87
+184.82.116.202
+184.22.246.252
+windows-update-server.com
+wesaf341.org
+xertgfd.ru

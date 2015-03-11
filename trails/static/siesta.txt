@@ -1,0 +1,35 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fireeye.com/blog/threat-research/2014/03/a-detailed-examination-of-the-siesta-campaign.html
+
+freetrade.allowed.org
+gogotrade.apple.org.ru
+homepage.longmusic.com
+manslist.loopback.nu
+meeting.toh.info
+technology.acmetoy.com
+thales.myftp.info
+tradeproject.rlogin.org
+worldwide.chickenkiller.com
+www.billyjoebobshow.com
+www.bluecoate.com
+www.cloudcominc.com
+www.coachmotor.com
+www.comtoway.com
+www.deebeedesigns.ca
+www.drgeorges.com
+www.heliospartners.com
+www.kayauto.net
+www.microsofthomes.com
+www.mwa.net
+www.oewarehouse.com
+www.offerdahls.com
+www.olmusic100.com
+www.rbaparts.com
+www.rightnowautoparts.com
+www.skyslisten.com
+www.stapharrest.com
+www.whackcard.com
+www.woodagency.com
+23.104.160.86

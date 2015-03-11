@@ -1,0 +1,56 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://kc.mcafee.com/resources/sites/MCAFEE/content/live/PRODUCT_DOCUMENTATION/23000/PD23029/en_US/McAfee%20Labs%20Threat%20Advisory-Rimecud.pdf
+
+bfisback.no-ip.org
+l33t.brand-clothes.net
+prcolina.prichaonica.com
+sandra.prichaonica.com
+pica.banjalucke-ljepotice.ru
+kreten.banjalucke-ljepotice.ru
+sombrero.balkan-hosting.net
+solfire.aljosaborkovic.com
+bf2back.sinip.es
+lalundelau.sinip.es
+qwertasdfg.sinip.es
+butterfly.sinip.es
+legion.sninip.es
+thejacksonfive.mobi
+gusanodeseda.mobi
+juice.losmibracala.org
+teske.pornicarke.com
+shv4.no-ip.biz
+sexme.in
+thesexydude.com
+tamiflux.org
+youare.sexidude.com
+mierda.notengodominio.com
+thejacksonfive.us
+rnd009.t35.com
+butterfly.bigmoney.biz
+extraperlo.biz
+defintelsucks.sinip.es
+defintelsucks.net
+defintelsucks.com
+gusanodeseda.sinip.es
+gusanodeseda.net
+tinaivanovic.sexy-serbian-girls.info
+informaciones.estr.es
+jebena.ananikolic.su
+dzaba.cultarts.com
+84.19.165.194
+peer.pickeklosarske.ru
+kadds.ru
+shv4b.getmyip.com
+booster.estr.es
+legionarios.servecounterstrike.com
+yougotissuez.com
+tamiflux.net
+
+# Reference: http://www.lavasoft.com/mylavasoft/malware-descriptions/blog/trojanwin32rimecudm
+slade.safehousenumber.com
+murik.portal-protection.net.ru
+world.rickstudio.ru
+banana.cocolands.su
+portal.roomshowerbord.com

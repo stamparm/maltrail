@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://who.is/nameserver/ns1.sinkhole.shadowserver.org/
+# Reference: http://who.is/nameserver/ns2.sinkhole.shadowserver.org/
+
+sinkhole.shadowserver.org
+74.208.64.145
+74.208.15.160

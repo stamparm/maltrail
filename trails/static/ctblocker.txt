@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://kc.mcafee.com/resources/sites/MCAFEE/content/live/PRODUCT_DOCUMENTATION/25000/PD25696/en_US/McAfee_Labs_Threat_Advisory-CTB-Locker.pdf
+
+maisondessources.com
+pleiade.asso.fr
+scolapedia.org
+breteau-photographe.com
+voigt-its.de
+jbmsystem.fr
+188.93.8.7
+213.186.33.3
+213.186.33.19
+213.186.33.150

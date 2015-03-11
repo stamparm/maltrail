@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/Entry.aspx?Name=Win32/Dorkbot#tab=2
+
+av.shannen.cc
+lovealiy.com
+shuwhyyu.com
+syegyege.com

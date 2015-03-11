@@ -1,0 +1,45 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.alienvault.com/open-threat-exchange/blog/from-russia-with-love-sofacy-sednit-apt28-is-in-town
+# Reference: http://permalink.gmane.org/gmane.comp.security.ids.snort.emerging-sigs/22170
+# Reference: http://pwc.blogs.com/files/tactical-intelligence-bulletin---sofacy-phishing-.pdf
+
+adawareblock.com
+adobeincorp.com
+azureon-line.com
+checkmalware.info
+checkwinframe.com
+check-fix.com
+hotfix-update.com
+microsofi.org
+microsof-update.com
+scanmalware.info
+secnetcontrol.com
+securitypractic.com
+testservice24.net
+testsnetcontrol.com
+updatepc.org
+updatesoftware24.com
+windows-updater.com
+checkmalware.org
+adawareblock.com
+adobeincorp.com
+azureon-line.com
+checkmalware.info
+checkwinframe.com
+check-fix.com
+hotfix-update.com
+microsofi.org
+microsof-update.com
+scanmalware.info
+secnetcontrol.com
+securitypractic.com
+symanttec.org
+testservice24.net
+testsnetcontrol.com
+updatepc.org
+updatesoftware24.com
+windows-updater.com
+checkmalware.org
+symanttec.org

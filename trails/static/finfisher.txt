@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://securityaffairs.co/wordpress/8085/intelligence/finfisher-the-case-of-a-cyber-espionage-found-everywhere.html
+# Reference: https://community.rapid7.com/community/infosec/blog/2012/08/08/finfisher
+
+tiger.gamma-international.de
+ff-demo.blogdns.org
+112.78.143.26
+121.215.253.151
+78.100.57.165
+213.55.99.74
+94.112.255.116
+213.168.28.91
+54.248.2.220
+202.179.31.227
+80.95.253.44
+81.198.83.44
+86.97.255.50
+77.69.140.194

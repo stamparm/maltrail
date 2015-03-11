@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.malwareurl.com/ns_listing.php?ns=sinkhole.kaspersky.com
+# Reference: http://ipxer.com/sinkhole.kaspersky.com
+
+sinkhole.kaspersky.com
+93.159.228.22

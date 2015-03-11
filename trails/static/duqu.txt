@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://ics-cert.us-cert.gov/jsar/JSAR-11-312-01
+
+206.183.111.97
+77.241.93.160

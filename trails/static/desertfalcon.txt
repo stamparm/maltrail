@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/files/2015/02/The-Desert-Falcons-targeted-attacks.pdf
+
+ahmedfaiez.info
+fpupdate.info
+flushupate.com
+flushupdate.com
+ineltdriver.com
+mediahitech.info
+mixedwork.com
+plmedgroup.com
+pstcmedia.com
+advtravel.info
+linksis.info
+liptona.net
+linkedim.in
+iwork-sys.com
+nauss-lab.com
+nice-mobiles.com
+facebook-emoticons.bitblogoo.com
+abuhmaid.net
+blogging-host.info
+androcity.com
+tvgate.rocks
+188.40.75.132
+188.40.106.84
+188.40.81.136

@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://kc.mcafee.com/resources/sites/MCAFEE/content/live/PRODUCT_DOCUMENTATION/25000/PD25630/en_US/McAfee_Labs_Threat_Advisory_Trojan-Wiper.pdf
+
+203.131.222.102
+217.96.33.164
+88.53.215.64
+212.31.102.100
+58.185.154.99
+200.87.126.116
+217.96.33.164

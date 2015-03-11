@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Worm:Win32/Vobfus.R#tab=2
+
+ns2.thepicturehut.net
+ns4.thepicturehut.net

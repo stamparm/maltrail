@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.f-secure.com/documents/996508/1030745/cosmicduke_whitepaper.pdf
+
+178.21.172.157
+188.116.32.164
+176.74.216.14
+178.63.149.142
+188.241.115.41
+195.43.94.104
+95.154.228.106
+199.231.188.109
+46.246.120.178
+94.242.199.88
+178.170.164.84
+212.76.128.149
+91.224.141.235
+
+dukehole.me

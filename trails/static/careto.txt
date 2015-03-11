@@ -1,0 +1,47 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://discussions.nessus.org/thread/7087
+
+190.10.9.209
+190.105.232.46
+196.40.84.94
+200.122.160.25
+202.150.211.102
+202.150.214.50
+202.75.56.123
+202.75.56.231
+202.75.58.153
+210.48.153.236
+223.25.232.161
+37.235.63.127
+75.126.146.114
+81.0.233.15
+82.208.40.11
+62.149.227.3
+nthost.shacknet.nu
+tunga.homedns.org
+prosoccer1.dyndns.info
+prosoccer2.dyndns.info
+nav1002.ath.cx
+pininfarina.dynalias.com
+wqq.dyndns.org
+pl400.dyndns.org
+services.serveftp.org
+sv.serveftp.org
+cherry1962.dyndns.org
+carrus.gotdns.com
+ricush.ath.cx
+takami.podzone.net
+dfup.selfip.org
+wwnav.selfip.net
+fast8.homeftp.org
+ctronlinenews.dyndns.tv
+mango66.dyndns.org
+gx5639.dyndns.tv
+services.serveftp.org
+redirserver.net
+swupdt.com
+msupdt.com
+appleupdt.com
+linkconf.net

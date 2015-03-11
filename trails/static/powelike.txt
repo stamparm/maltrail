@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://kc.mcafee.com/resources/sites/MCAFEE/content/live/PRODUCT_DOCUMENTATION/25000/PD25582/en_US/McAfee_Labs_Threat_Advisory-Trojan-Powelike.pdf
+
+1e90ff.com
+4169e1.com
+31.184.192.80
+195.2.241.84

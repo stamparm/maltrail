@@ -1,0 +1,41 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.symantec.com/content/en/us/enterprise/media/security_response/docs/Scarab_IOCs_January_2015.txt
+
+apple.dynamic-dns.net
+autocar.ServeUser.com
+blackblog.chatnook.com
+bulldog.toh.info
+cew58e.xxxy.info
+coastnews.darktech.org
+demon.4irc.com
+dynamic.ddns.mobi
+expert.4irc.com
+football.mrbasic.com
+gjjb.flnet.org
+imirnov.ddns.info
+jingnan88.chatnook.com
+lehnjb.epac.to
+logoff.25u.com
+logoff.ddns.info
+ls910329.my03.com
+mailru.25u.com
+Markshell.etowns.net
+mydear.ddns.info
+nazgul.zyns.com
+newdyndns.scieron.com
+newoutlook.darktech.org
+photocard.4irc.com
+pricetag.deaftone.com
+rubberduck.gotgeeks.com
+shutdown.25u.com
+sorry.ns2.name
+sskill.b0ne.com
+text-First.flnet.org
+uudog.4pu.com
+will-smith.dtdns.net
+www.ndcinformation.acmetoy.com
+www.service.authorizeddns.net
+www.text-first.trickip.org
+yellowblog.flnet.org

@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=PWS:Win32/Kegotip.C#tab=2
+
+176.31.104.106
+188.165.227.61
+188.165.227.61
+188.165.228.199
+46.165.243.25
+5.135.178.153
+93.113.37.210
+94.23.32.170
+94.75.227.218
+bestconspires.co.in
+gefuret.org
+localeventit.pro

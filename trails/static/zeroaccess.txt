@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.us-cert.gov/ncas/alerts/TA13-141A
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2011-122300-3915-99&tabid=2
+
+209.68.32.176
+194.165.17.3
+176.53.17.20
+counter.yadro.ru
+
+# Reference: https://kc.mcafee.com/resources/sites/MCAFEE/content/live/PRODUCT_DOCUMENTATION/23000/PD23412/en_US/McAfee%20Labs%20Threat%20Advisory-ZeroAccess.pdf
+
+95.64.46.44
+193.105.154.210
+69.50.212.157
+85.17.226.180
+105.136.39.70
+186.122.36.72
+72.145.1.77
+37.143.150.78
+196.46.237.81
+95.158.98.210
+163.121.78.209
+201.83.26.209
+46.230.116.208

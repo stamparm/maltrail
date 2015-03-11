@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.microsoft.com/security/portal/threat/Encyclopedia/Entry.aspx?Name=Adware:Win32/Lollipop#tab=2
+
+www.lollipop-network.com
+www.andocomparando.es

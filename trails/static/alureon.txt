@@ -1,0 +1,40 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Trojan:Win32/Alureon.gen!U#tab=2
+
+193.138.173.21
+195.2.252.185
+79.143.177.12
+91.203.92.121
+91.207.61.180
+94.142.128.160
+belowsearch.com
+directitfast.com
+explorerex.com
+faststatistic.com
+findsproportal.com
+findzproportal1.com
+microsofttransfer.com
+newsoneclick.com
+perlineportal.com
+powerfulstat.com
+shouldfind.com
+simplybloger.com
+stableclick.com
+symupdate2.com
+tlcstatistic.com
+trafficstatic.com
+trafficstatic.net
+tylerdurden.hoha.ru
+updatemic0.com
+updatemicr0s0ft.net
+webadobeupdate.net
+webieupdate.net
+webmsupdate.net
+webnicrisoft.net
+windowslogonex.com
+youblognews.net
+younewsblog.net
+yourblognews.net
+yournewsblog.net

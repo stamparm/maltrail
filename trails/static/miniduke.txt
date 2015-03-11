@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.securelist.com/en/blog/208194129/The_MiniDuke_Mystery_PDF_0_day_Government_Spy_Assembler_0x29A_Micro_Backdoor
+# Reference: http://blog.crysys.hu/2013/02/miniduke/
+
+arabooks.ch
+artas.org
+tsoftonline.com
+www.eamtm.com
+news.grouptumbler.com
+200.63.46.23
+194.38.160.153
+95.128.72.24
+72.34.47.186
+85.95.236.114
