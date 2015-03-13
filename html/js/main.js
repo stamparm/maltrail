@@ -37,8 +37,8 @@ var LOG_COLUMNS = { TIME: 0, SENSOR: 1, SRC_IP: 2, SRC_PORT: 3, DST_IP: 4, DST_P
 var DATATABLES_COLUMNS = { THREAT: 0, SENSOR: 1, EVENTS: 2, FIRST_TIME: 3, LAST_TIME: 4, SRC_IP: 5, SRC_PORT: 6, DST_IP: 7, DST_PORT: 8, PROTO: 9, TYPE: 10, TRAIL: 11, INFO: 12, REFERENCE: 13, TAGS: 14 }
 var TOP_PORTS = { 19: "CHARGEN", 21: "FTP", 22: "SSH", 23: "Telnet", 25: "SMTP", 53: "DNS", 80: "HTTP", 110: "POP3", 123: "NTP", 143: "IMAP", 161: "SNMP", 389: "LDAP", 443: "HTTPS", 445: "Microsoft-DS", 587: "Submission", 902: "VMware", 990: "FTPS", 993: "IMAPS", 995: "POP3S", 1433: "MsSQL", 1434: "MsSQL", 1723: "PPTP", 1900: "SSDP", 3306: "MySQL", 3389: "RDP", 5060: "SIP", 5900: "VNC", 8080: "HTTP-proxy" }
 var SEARCH_TIP_TIMER = 0;
-//var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
-var SEARCH_TIP_URL = "https://www.google.com/cse?cx=011750002002865445766%3Ay5klxdomj78&ie=UTF-8&q=${query}";
+var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
+//var SEARCH_TIP_URL = "https://www.google.com/cse?cx=011750002002865445766%3Ay5klxdomj78&ie=UTF-8&q=${query}";
 var DAY_SUFFIXES = { 1: "st", 2: "nd", 3: "rd" };
 var DOT_COLUMNS = [ LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP, LOG_COLUMNS.DST_PORT, LOG_COLUMNS.TRAIL, LOG_COLUMNS.PROTO ];
 var ELLIPSIS = '<img src="images/ellipsis.png">';
@@ -51,15 +51,17 @@ $(document).ready(function() {
 
     if (typeof String.prototype.startsWith !== "function") {
         String.prototype.startsWith = function (str){
-            return this.indexOf(str) == 0;
+            return this.indexOf(str) === 0;
         };
     }
 
     if (typeof String.prototype.endsWith !== "function") {
         String.prototype.endsWith = function (str){
-            return this.lastIndexOf(str) == (this.length - 1);
+            return this.lastIndexOf(str) === (this.length - 1);
         };
     }
+
+    Papa.RemoteChunkSize = 1024 * 1024 * 10; // 10 MB (per one chunk request)
 
     Chart.defaults.global.tooltipFontFamily = DEFAULT_FONT_FAMILY;
     Chart.defaults.global.tooltipTitleFontFamily = DEFAULT_FONT_FAMILY;
@@ -116,7 +118,7 @@ function initDialogs() {
         $("#login_dialog").dialog("open")
         .keyup(function(e) {
             // Reference: http://stackoverflow.com/questions/868889/submit-jquery-ui-dialog-on-enter
-            if (e.keyCode == $.ui.keyCode.ENTER) {
+            if (e.keyCode === $.ui.keyCode.ENTER) {
                 $(this).parent().find('.ui-dialog-buttonpane button:last').click();
                 return false;
             }
@@ -211,9 +213,9 @@ function showTour() {
 }
 
 function charTrim(str, chr) {
-    while (str.substr(0, 1) == chr)
+    while (str.substr(0, 1) === chr)
         str = str.substr(1);
-    while (str.substr(str.length - 1) == chr)
+    while (str.substr(str.length - 1) === chr)
         str = str.substr(0, str.length - 1);
     return str;
 }
@@ -478,13 +480,13 @@ function init(url, from, to) {
                         var _ = [];
                         for (var item in data[column])
                             _.push(item);
-                        if ((column == LOG_COLUMNS.SRC_PORT) || (column == LOG_COLUMNS.DST_PORT))
+                        if ((column === LOG_COLUMNS.SRC_PORT) || (column === LOG_COLUMNS.DST_PORT))
                             _.sort(function(a, b) {
                                 a = parseInt(a);
                                 b = parseInt(b);
                                 return a < b ? -1 : (a > b ? 1 : 0);
                             })
-                        else if ((column == LOG_COLUMNS.SRC_IP) || (column == LOG_COLUMNS.DST_IP))
+                        else if ((column === LOG_COLUMNS.SRC_IP) || (column === LOG_COLUMNS.DST_IP))
                             _.sort(function(a, b) {
                                 a = _ipSortingValue(a);
                                 b = _ipSortingValue(b);
@@ -535,7 +537,7 @@ function init(url, from, to) {
                         period += "-" + formatDate(to);
                 }
 
-                if (document.title.indexOf("unauthorized") == -1)
+                if (document.title.indexOf("unauthorized") === -1)
                     document.title = "Maltrail (" + period + ")";
 
                 scrollTo("#main_container");
@@ -625,7 +627,7 @@ function filterDataset(netmask) {
         SHOWN_DATASET = [];
         for (var index = 0; index < ORIGINAL_DATASET.length; index++) {
             row = ORIGINAL_DATASET[index];
-            if (((addrToInt(row[DATATABLES_COLUMNS.SRC_IP]) & mask) == check) || ((addrToInt(row[DATATABLES_COLUMNS.DST_IP]) & mask) == check))
+            if (((addrToInt(row[DATATABLES_COLUMNS.SRC_IP]) & mask) === check) || ((addrToInt(row[DATATABLES_COLUMNS.DST_IP]) & mask) === check))
                 SHOWN_DATASET.push(row);
         }
         initVisual();
@@ -667,12 +669,12 @@ function tagInputKeyUp(event, forcedelete) {
     var tagData = null;
     var newTag = event.target.value;
 
-    if (event.target.parentNode == null)
+    if (event.target.parentNode === null)
         return;
 
-    if ((typeof forcedelete !== "undefined") || (event.keyCode == 8)) {  // appendFilter or Delete
-        if ((typeof newTag === "undefined") || (newTag.length == 0)) {
-            if ((event.keyCode == 8) && (_DELETE_DELETE_PRESS != true)) {
+    if ((typeof forcedelete !== "undefined") || (event.keyCode === 8)) {  // appendFilter or Delete
+        if ((typeof newTag === "undefined") || (newTag.length === 0)) {
+            if ((event.keyCode === 8) && (_DELETE_DELETE_PRESS != true)) {
                 _DELETE_DELETE_PRESS = true;
                 return;
             }
@@ -696,7 +698,7 @@ function tagInputKeyUp(event, forcedelete) {
             }
         }
     }
-    else if ((typeof event.keyCode === "undefined") || (event.keyCode == 13)) {  // blur or Enter
+    else if ((typeof event.keyCode === "undefined") || (event.keyCode === 13)) {  // blur or Enter
         if (newTag.length > 0) {
             table = $('#details').dataTable();
             newTag = newTag.replace(/[^a-zA-Z0-9_]/g, "");
@@ -763,9 +765,9 @@ function _ipSortingValue(a) {
         for (var i = 0; i < m.length; i++) {
             var item = m[i];
 
-            if(item.length == 1) {
+            if(item.length === 1) {
                 x += "00" + item;
-            } else if(item.length == 2) {
+            } else if(item.length === 2) {
                 x += "0" + item;
             } else {
                 x += item;
@@ -789,14 +791,14 @@ function appendFilter(filter, event, istag) {
         if (typeof event !== "undefined") {
             stopPropagation(event);
 
-            if (event.button == 0) {  // left mouse button
+            if (event.button === 0) {  // left mouse button
                 if (!(new RegExp("\\b" + escapeRegExp(filter) + "\\b").test(currentFilter))) {
                     currentFilter = currentFilter + " " + filter;
                     table.fnFilter(currentFilter.trim());
                     // table.DataTable().columns(11).search(currentFilter.trim()).draw();
                 }
             }
-            else if ((istag == true) && (event.button == 1)) {  // middle mouse button
+            else if ((istag === true) && (event.button === 1)) {  // middle mouse button
                 tagInputKeyUp(event, true);
                 event.preventDefault();
             }
@@ -1029,7 +1031,7 @@ function initDetails() {
                         $.ajax("https://stat.ripe.net/data/dns-chain/data.json?resource=" + ip, { dataType:"jsonp", ip: ip, msg: msg})
                         .success(function(json) {
                             var _ = json.data.reverse_nodes[this.ip];
-                            if ((_.length == 0)||(_ == "localhost")) {
+                            if ((_.length === 0)||(_ === "localhost")) {
                                 /*var parts = this.ip.split('.');
                                 _ = "";
                                 for (var i = parts.length - 1; i >= 0; i--)
@@ -1056,19 +1058,19 @@ function initDetails() {
             $.each([DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP], function(index, value) {
                 var cell = $('td:eq(' + value + ')', nRow);
 
-                if (cell == null)
+                if (cell === null)
                     return false;
 
                 var html = cell.html();
 
-                if (html == null)
+                if (html === null)
                     return false;
 
                 if ((html.indexOf('flag') > -1) || (html.indexOf('lan') > -1) || (html.indexOf(',') > -1) || (html.indexOf(ELLIPSIS) > -1))
                     return false;
 
                 var match = html.match(/\d+\.\d+\.\d+\.\d+/);
-                if (match == null)
+                if (match === null)
                     return false;
 
                 var img = "";
@@ -1106,7 +1108,7 @@ function initDetails() {
                     else {
                         setTimeout(function(ip, cell){
                             html = cell.html();
-                            if ((IP_COUNTRY[ip] != null) && (html.indexOf("flag-") == -1)) {
+                            if ((IP_COUNTRY[ip] != null) && (html.indexOf("flag-") === -1)) {
                                 img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '" />'
 
                                 var span_ip = $("<span title=''/>").html(ip + " ");
@@ -1149,7 +1151,7 @@ function initDetails() {
         if (event.target.classList.contains("trail")) {
             clearTimeout(SEARCH_TIP_TIMER);
             SEARCH_TIP_TIMER = setTimeout(function(cell, event) {
-                if ($(".ui-tooltip").length == 0) {
+                if ($(".ui-tooltip").length === 0) {
                     var query = cell[0].innerHTML.replace(/<[^>]+>/g, "").replace(/[()]/g, "").split('/')[0];
                     $(".searchtip").remove();
                     $("body").append(
@@ -1202,17 +1204,17 @@ function initDetails() {
 
     details.off("mouseup");  // clear previous
     details.on("mouseup", "td", function (event) {
-        if (event.button == 0) {  // left mouse button
+        if (event.button === 0) {  // left mouse button
             if (event.target.classList.contains("tag"))
                 appendFilter(event.target.innerHTML, event, true);
             else if (event.target.classList.contains("label-type"))
                 appendFilter('" ' + event.target.innerHTML + '"', event);
         }
-        else if (event.button == 1) {  // middle mouse button
+        else if (event.button === 1) {  // middle mouse button
             if (event.target.classList.contains("tag"))
                 appendFilter(event.target.innerHTML, event, true);
         }
-        else if (event.button == 2) {  // right mouse button
+        else if (event.button === 2) {  // right mouse button
             stopPropagation(event);
         }
     });
@@ -1229,7 +1231,7 @@ String.prototype.hashCode = function() {
 
 Array.prototype.clean = function(deleteValue) {
     for (var i = 0; i < this.length; i++) {
-        if (this[i] == deleteValue) {         
+        if (this[i] === deleteValue) {         
             this.splice(i, 1);
             i--;
         }
@@ -1379,10 +1381,10 @@ function setChartScale(options, maxValue) {
         stepValue = Math.pow(10, Math.floor(Math.log(maxValue) / Math.LN10));
         options.scaleOverride = true;
         options.scaleStartValue = 0;
-        while ((stepValue > 0) && (stepValue == Math.floor(stepValue))) {
+        while ((stepValue > 0) && (stepValue === Math.floor(stepValue))) {
             options.scaleStepWidth = stepValue;
             options.scaleSteps = Math.ceil(maxValue / stepValue);
-            if ((options.scaleSteps >= 5) || (stepValue == 1))
+            if ((options.scaleSteps >= 5) || (stepValue === 1))
                 break;
             else
                 stepValue = stepValue / 2;
@@ -1408,7 +1410,7 @@ function drawInfo(type) {
     $("#" + type.toLowerCase() + "_count").parent().css("text-shadow", "none");
     $("#" + type.toLowerCase() + "_count").parent().css("border", "none");
 
-    if (type == "Events") {
+    if (type === "Events") {
         var ticks = {};
         var labels = [];
         var first = true;
@@ -1485,7 +1487,7 @@ function drawInfo(type) {
             }
         };
     }
-    else if (type == "Trails") {
+    else if (type === "Trails") {
         var data = [];
         var options = {
             segmentStrokeWidth: 1,
@@ -1605,7 +1607,7 @@ function drawInfo(type) {
             }
         });
     }
-    else if (type == "Sources") {
+    else if (type === "Sources") {
         var labels = [];
         var values = [];
         var maxValue = 0;
@@ -1649,7 +1651,7 @@ function drawInfo(type) {
             }
         };
     }
-    else if (type == "Threats") {
+    else if (type === "Threats") {
         var data = [];
         var options = {
             segmentStrokeWidth: 1,
@@ -1807,7 +1809,7 @@ function initVisual() {
         sliceColors.push(OTHER_COLOR);
     }
 
-    if (data.length == 0) {
+    if (data.length === 0) {
         data.push(1);
         sliceColors.push(OTHER_COLOR);
     }
@@ -1854,7 +1856,7 @@ function initVisual() {
         options.sliceColors.push(OTHER_COLOR);
     }
 
-    if (data.length == 0) {
+    if (data.length === 0) {
         data.push(1);
         options.sliceColors.push(OTHER_COLOR);
     }
@@ -2031,7 +2033,7 @@ function query(date) {
 }
 
 function networkFilter(netmask) {
-    if ((netmask.length > 0) && (netmask.indexOf('/') == -1))
+    if ((netmask.length > 0) && (netmask.indexOf('/') === -1))
         netmask = netmask + "/32";
     if ((netmask.length > 0) && (!netmaskValidate(netmask))) {
         $("#netmask").val("");

@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://malwaretips.com/threads/connects-to-tor-hidden-services-through-tor2web.42274/
+
+onion.gq
+onion.lt
+onion.cab
+tor2web.fi
+tor2web.blutmagie.de
+tor2web.org
+tor2web.ru

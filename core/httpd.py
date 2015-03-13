@@ -31,6 +31,7 @@ from core.common import make_mask
 from core.pbkdf2 import pbkdf2
 from core.settings import config
 from core.settings import DATE_FORMAT
+from core.settings import DEFLATE_COMPRESS_LEVEL
 from core.settings import DISABLED_CONTENT_EXTENSIONS
 from core.settings import HTML_DIR
 from core.settings import HTTP_TIME_FORMAT
@@ -109,7 +110,7 @@ def start_httpd(address=None, port=None, join=True, pem=None):
                 if "deflate" in self.headers.getheader("Accept-Encoding", ""):
                     self.send_header("Content-Encoding", "deflate")
                     self.end_headers()
-                    compress = zlib.compressobj()
+                    compress = zlib.compressobj(DEFLATE_COMPRESS_LEVEL)
                 else:
                     self.end_headers()
 
@@ -167,7 +168,7 @@ def start_httpd(address=None, port=None, join=True, pem=None):
 
                 if "deflate" in self.headers.getheader("Accept-Encoding", ""):
                     self.send_header("Content-Encoding", "deflate")
-                    content = zlib.compress(content)
+                    content = zlib.compress(content, DEFLATE_COMPRESS_LEVEL)
 
                 self.send_header("Content-Length", str(length))
                 self.end_headers()
