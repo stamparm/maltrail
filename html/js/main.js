@@ -839,7 +839,7 @@ function initDetails() {
             { "title": "proto", "class": "center" },
             { "title": "type", "class": "center" },
             { "title": "trail", "class": "trail" },
-            { "title": "info", "type": "info" },
+            { "title": "info" },
             { "title": "reference" },
             { "title": "tags" },
         ],
@@ -1277,30 +1277,6 @@ jQuery.extend(jQuery.fn.dataTableExt.oSort, {
     },
     "date-custom-desc": function ( a, b ) {
         return b - a;
-    }
-});
-
-jQuery.extend(jQuery.fn.dataTableExt.oSort, {
-    "info-pre": function ( a ) {
-        var x = "";
-        var match = a.match(/ value="([^"]+)"/);
-
-        if (match != null) {
-            x = match[1].toLowerCase();
-        }
-
-        if (a.indexOf("info-border") != -1)
-            x = "z" + x;
-
-        return x;
-    },
-
-    "info-asc": function ( a, b ) {
-        return ((a < b) ? -1 : ((a > b) ? 1 : 0));
-    },
-
-    "info-desc": function ( a, b ) {
-        return ((a < b) ? 1 : ((a > b) ? -1 : 0));
     }
 });
 
