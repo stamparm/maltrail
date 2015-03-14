@@ -7,6 +7,8 @@
 
 var _THREATS = {};
 var _SOURCES = {};
+var _TOP_SOURCES = [];
+var _SOURCE_EVENTS = {};
 var _TRAILS = {};
 var _FLOOD_TRAILS = {};
 var _HOURS = {};
@@ -19,7 +21,6 @@ var _USER = null;
 
 var IP_COUNTRY = {};
 var TRAIL_TYPES = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900" };
-var SOURCES = [];
 
 var SPARKLINE_WIDTH = 130;
 var CHART_WIDTH = 900;
@@ -48,18 +49,6 @@ $(document).ready(function() {
     initCalHeatmap();
     //initStats();
     initDialogs();
-
-    if (typeof String.prototype.startsWith !== "function") {
-        String.prototype.startsWith = function (str){
-            return this.indexOf(str) === 0;
-        };
-    }
-
-    if (typeof String.prototype.endsWith !== "function") {
-        String.prototype.endsWith = function (str){
-            return this.lastIndexOf(str) === (this.length - 1);
-        };
-    }
 
     Papa.RemoteChunkSize = 1024 * 1024 * 10; // 10 MB (per one chunk request)
 
@@ -324,6 +313,7 @@ function init(url, from, to) {
 
     _THREATS = {};
     _SOURCES = {};
+    _SOURCE_EVENTS = {};
     _TRAILS = {};
     _FLOOD_TRAILS = {};
     _HOURS = {};
@@ -333,8 +323,14 @@ function init(url, from, to) {
     _CHUNK_COUNT = 0;
 
     if (!(document.location.origin.startsWith('http'))) {
-        csv = getDemoCSV();
         demo = true;
+
+        // Reference: http://stackoverflow.com/a/7083594
+        $.ajaxSetup({ async: false });
+        $.getScript("js/demo.js");
+        $.ajaxSetup({ async: true });
+
+        csv = getDemoCSV();
 
         $("#login_link").toggleClass("hidden", true);
         $("#login_splitter").toggleClass("hidden", true);
@@ -437,6 +433,13 @@ function init(url, from, to) {
                     _SOURCES[_] = 1;
                 else
                     _SOURCES[_] += 1;
+
+                if (!(_ in _SOURCE_EVENTS)) {
+                    _SOURCE_EVENTS[_] = {};
+                    for (var key in TRAIL_TYPES)
+                        _SOURCE_EVENTS[_][key] = 0;
+                }
+                _SOURCE_EVENTS[_][data[LOG_COLUMNS.TYPE]] += 1;
 
                 match = time.match(/(\d{4})\-(\d{2})\-(\d{2}) (\d{2}):(\d{2}):(\d{2})/);
 
@@ -779,7 +782,8 @@ function _ipSortingValue(a) {
 }
 
 function _ipCompareValues(a, b) {
-    return _ipSortingValue(a) > _ipSortingValue(b)
+    // Reference: http://stackoverflow.com/a/949970
+    return _ipSortingValue(a) - _ipSortingValue(b);
 }
 
 function appendFilter(filter, event, istag) {
@@ -823,45 +827,44 @@ function appendFilter(filter, event, istag) {
 // DataTables part
 function initDetails() {
     var details = $('#details').dataTable( {
-        "bDestroy": true,
-        "bAutoWidth": false,
-        "data": _DATASET,
-        "columns": [
-            { "title": "threat", "type": "threat", "class": "center" },
-            { "title": "sensor", "class": "center" },
-            { "title": "events", "type": "events", "class": "right" },
-            { "title": "first_seen", "class": "center" },  // "type": "date-custom"
-            { "title": "last_seen", "class": "center" },  // "type": "date-custom"
-            { "title": "src_ip", "type": "ip-address", "class": "right" },
-            { "title": "src_port", "type": "port", "class": "center" },
-            { "title": "dst_ip", "type": "ip-address", "class": "right" },
-            { "title": "dst_port", "type": "port", "class": "center" },
-            { "title": "proto", "class": "center" },
-            { "title": "type", "class": "center" },
-            { "title": "trail", "class": "trail" },
-            { "title": "info" },
-            { "title": "reference" },
-            { "title": "tags" },
+        bDestroy: true,
+        bAutoWidth: false,
+        data: _DATASET,
+        columns: [
+            { title: "threat", type: "threat", class: "center" },
+            { title: "sensor", class: "center" },
+            { title: "events", type: "events", class: "right" },
+            { title: "first_seen", class: "center" },
+            { title: "last_seen", class: "center" },
+            { title: "src_ip", type: "ip-address", class: "right" },
+            { title: "src_port", type: "port", class: "center" },
+            { title: "dst_ip", type: "ip-address", class: "right" },
+            { title: "dst_port", type: "port", class: "center" },
+            { title: "proto", class: "center" },
+            { title: "type", class: "center" },
+            { title: "trail", class: "trail" },
+            { title: "info" },
+            { title: "reference" },
+            { title: "tags" },
         ],
-        "search": {
-            "caseInsensitive": false
+        search: {
+            caseInsensitive: false
         },
-        "iDisplayLength": 25,
-        //"aLengthMenu": [[10, 25, 50, 100, 500, -1], [10, 25, 50, 100, 500, "All"]],
-        "aLengthMenu": [ [10, 25, 50, 100], [10, 25, 50, 100] ],
-        "aaSorting": [ [DATATABLES_COLUMNS.LAST_TIME, 'desc'] ],
-        "bDeferRender": true,
-        "searchDelay": 500,
-        "columnDefs": [
+        iDisplayLength: 25,
+        aLengthMenu: [ [10, 25, 50, 100], [10, 25, 50, 100] ],
+        aaSorting: [ [DATATABLES_COLUMNS.LAST_TIME, 'desc'] ],
+        bDeferRender: true,
+        searchDelay: 500,
+        columnDefs: [
             {
-                "orderSequence": [ "desc", "asc" ], 
-                "targets": [ DATATABLES_COLUMNS.EVENTS ]
+                orderSequence: [ "desc", "asc" ], 
+                targets: [ DATATABLES_COLUMNS.EVENTS ]
             },
             {
-                "orderSequence": [ "desc", "asc" ], 
-                "targets": [ DATATABLES_COLUMNS.LAST_TIME ]
+                orderSequence: [ "desc", "asc" ], 
+                targets: [ DATATABLES_COLUMNS.LAST_TIME ]
             },            {
-                "render": function (data, type, row) {
+                render: function (data, type, row) {
                     if (data.indexOf(',') > -1)
                         data = "<span title='" + data + "'>" + ELLIPSIS + "</span>";
                     else {
@@ -871,10 +874,10 @@ function initDetails() {
                     }
                     return data;
                 },
-                "targets": [ DATATABLES_COLUMNS.SRC_PORT, DATATABLES_COLUMNS.DST_PORT ]
+                targets: [ DATATABLES_COLUMNS.SRC_PORT, DATATABLES_COLUMNS.DST_PORT ]
             },
             {
-                "render": function (data, type, row) {
+                render: function (data, type, row) {
                     if (data.indexOf(',') > -1) {
                         var common = "";
                         if (data.indexOf('(') > -1) {
@@ -886,43 +889,43 @@ function initDetails() {
                     }
                     return data;
                 },
-                "targets": [ DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.TRAIL, DATATABLES_COLUMNS.PROTO ]
+                targets: [ DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.TRAIL, DATATABLES_COLUMNS.PROTO ]
             },
             {
-                "render": function ( data, type, row ) {
+                render: function ( data, type, row ) {
                     return data.length + '<span class="hidden">' + data.join(", ") + '</span>';
                 },
-                "targets": DATATABLES_COLUMNS.EVENTS
+                targets: DATATABLES_COLUMNS.EVENTS
             },
             {
-                "render": function ( data, type, row ) {
+                render: function ( data, type, row ) {
                     return '<span class="label-type label-' + data.toLowerCase() + '">' + data + '</span>';
                 },
-                "targets": DATATABLES_COLUMNS.TYPE
+                targets: DATATABLES_COLUMNS.TYPE
             },
             {
-                "render": function (data, type, row) {
+                render: function (data, type, row) {
                     var parts = data.split(' ');
                     var day = parts[0].split('-')[2];
                     var suffix = DAY_SUFFIXES[parseInt(day)] || "th";
                     return "<div title='" + data + "'><span class='time-day'>" + day + "<sup>th</sup></span> " + parts[1].split('.')[0] + "</div>";
                 },
-                "targets": [ DATATABLES_COLUMNS.FIRST_TIME, DATATABLES_COLUMNS.LAST_TIME ],
+                targets: [ DATATABLES_COLUMNS.FIRST_TIME, DATATABLES_COLUMNS.LAST_TIME ],
             },
             {
-                "render": function (data, type, row) {
+                render: function (data, type, row) {
                     return '<div class="label-type ' + getContrastYIQ(data.substring(0, 6)) + '-label-text" style="background-color: #' + data.substring(0, 6) + '">' + data + '</div>';
                 },
-                "targets": DATATABLES_COLUMNS.THREAT
+                targets: DATATABLES_COLUMNS.THREAT
             },
             {
-                "render": function (data, type, row) {
+                render: function (data, type, row) {
                     return (data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data;
                 },
-                "targets": DATATABLES_COLUMNS.REFERENCE
+                targets: DATATABLES_COLUMNS.REFERENCE
             },
             {
-                "render": function (data, type, row) {
+                render: function (data, type, row) {
                     var retval = "";
                     var tags = data.split('|');
                     for (var index in tags) {
@@ -934,28 +937,28 @@ function initDetails() {
                     retval += "<input class='tag-input' type='text' onkeyup='tagInputKeyUp(event)' onblur='tagInputKeyUp(event)'>";
                     return retval;
                 },
-                "targets": DATATABLES_COLUMNS.TAGS
+                targets: DATATABLES_COLUMNS.TAGS
             },
             {
-               "width": "1%",
-               "targets": [ DATATABLES_COLUMNS.THREAT, DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.FIRST_TIME, DATATABLES_COLUMNS.LAST_TIME, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.SRC_PORT, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.DST_PORT, DATATABLES_COLUMNS.PROTO, DATATABLES_COLUMNS.TYPE ]
+               width: "1%",
+               targets: [ DATATABLES_COLUMNS.THREAT, DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.FIRST_TIME, DATATABLES_COLUMNS.LAST_TIME, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.SRC_PORT, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.DST_PORT, DATATABLES_COLUMNS.PROTO, DATATABLES_COLUMNS.TYPE ]
             },
         ],
-        "oLanguage": {
-            "sLengthMenu": "_MENU_ threats per page",  // Reference: http://www.sprymedia.co.uk/dataTables/example_language.html
-            "sZeroRecords": "No matching threats found",
-            "sInfo": "Showing _START_ to _END_ of <span class='details_total'>_TOTAL_</span> threats",
-            "sInfoEmpty": "Showing 0 to 0 of <span class='details_total'>0</span> total threats",
-            "sInfoFiltered": "(filtered from _MAX_ total threats)",
-            "sSearch": "Filter: "
+        oLanguage: {
+            sLengthMenu: "_MENU_ threats per page",  // Reference: http://www.sprymedia.co.uk/dataTables/example_language.html
+            sZeroRecords: "No matching threats found",
+            sInfo: "Showing _START_ to _END_ of <span class='details_total'>_TOTAL_</span> threats",
+            sInfoEmpty: "Showing 0 to 0 of <span class='details_total'>0</span> total threats",
+            sInfoFiltered: "(filtered from _MAX_ total threats)",
+            sSearch: "Filter: "
         },
-        "dom": 'T<"clear">lfrtip',
-        "tableTools": {
-            "aButtons": [
+        dom: 'T<"clear">lfrtip',
+        tableTools: {
+            aButtons: [
                 {
-                    "sExtends": "text",
-                    "sButtonText": "Clear",
-                    "fnClick": function (nButton, oConfig, oFlash) {
+                    sExtends: "text",
+                    sButtonText: "Clear",
+                    fnClick: function (nButton, oConfig, oFlash) {
                         var table = $('#details').dataTable();
                         var settings = table.fnSettings();
                         table.fnFilter("");
@@ -965,13 +968,13 @@ function initDetails() {
                 },
                 "print",
                 {
-                    "sExtends": "collection",
-                    "sButtonText": "Tools",
-                    "aButtons": [
+                    sExtends: "collection",
+                    sButtonText: "Tools",
+                    aButtons: [
                         {
-                            "sExtends": "text",
-                            "sButtonText": "Flush local storage",
-                            "fnClick": function ( nButton, oConfig, oFlash ) {
+                            sExtends: "text",
+                            sButtonText: "Flush local storage",
+                            fnClick: function ( nButton, oConfig, oFlash ) {
                                 $('<div id="dialog-confirm" title="Flush local storage?"></div>').appendTo('body')
                                 .html('<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and<br>won\'t be recoverable. Are you sure?</p>')
                                 .dialog({
@@ -996,10 +999,7 @@ function initDetails() {
                 }
             ],
         },
-        //"fnDrawCallback": function(oSettings) {
-           //alert( 'DataTables has redrawn the table' );
-        //},
-        "fnRowCallback": function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+        fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
             function nslookup(event, ui) {
                 var elem = $(this);
                 var html = elem.parent().html();
@@ -1229,6 +1229,11 @@ String.prototype.hashCode = function() {
     return murmurhash3_32_gc(this, 13);
 };
 
+// Reference: http://stackoverflow.com/a/12710609
+Array.prototype.insert = function (index, item) {
+  this.splice(index, 0, item);
+};
+
 Array.prototype.clean = function(deleteValue) {
     for (var i = 0; i < this.length; i++) {
         if (this[i] === deleteValue) {         
@@ -1238,6 +1243,18 @@ Array.prototype.clean = function(deleteValue) {
     }
     return this;
 };
+
+if (typeof String.prototype.startsWith !== "function") {
+    String.prototype.startsWith = function (str){
+        return this.indexOf(str) === 0;
+    };
+}
+
+if (typeof String.prototype.endsWith !== "function") {
+    String.prototype.endsWith = function (str){
+        return this.lastIndexOf(str) === (this.length - 1);
+    };
+}
 
 // Reference: http://stackoverflow.com/a/6700
 Object.size = function(obj) {
@@ -1500,76 +1517,76 @@ function drawInfo(type) {
             data.push({ value: other, label: "Other (<1%)", color: OTHER_COLOR })
 
         var pie = new d3pie("chart_area", {
-            "header": {
-                "title": {
-                    "fontSize": 1,
-                    "font": "open sans"
+            header: {
+                title: {
+                    fontSize: 1,
+                    font: DEFAULT_FONT_FAMILY
                 },
-                "subtitle": {
-                    "color": "#999999",
-                    "fontSize": 1,
-                    "font": "open sans"
+                subtitle: {
+                    color: "#999999",
+                    fontSize: 1,
+                    font: DEFAULT_FONT_FAMILY
                 },
-                "titleSubtitlePadding": 0
+                titleSubtitlePadding: 0
             },
-            "footer": {
-                "color": "#999999",
-                "fontSize": 1,
-                "font": "open sans",
-                "location": "bottom-left"
+            footer: {
+                color: "#999999",
+                fontSize: 1,
+                font: DEFAULT_FONT_FAMILY,
+                location: "bottom-left"
             },
-            "size": {
-                "canvasHeight": CHART_HEIGHT,
-                "canvasWidth": CHART_WIDTH
+            size: {
+                canvasHeight: CHART_HEIGHT,
+                canvasWidth: CHART_WIDTH
             },
-            "data": {
-                "content": data
+            data: {
+                content: data
             },
-            "labels": {
-                "inner": {
-                    "hideWhenLessThanPercentage": 101
+            labels: {
+                inner: {
+                    hideWhenLessThanPercentage: 101
                 },
-                "mainLabel": {
-                    "font": DEFAULT_FONT_FAMILY,
-                    "fontSize": PIE_FONT_SIZE
+                mainLabel: {
+                    font: DEFAULT_FONT_FAMILY,
+                    fontSize: PIE_FONT_SIZE
                 },
-                "percentage": {
-                    "color": "#ffffff",
-                    "font": DEFAULT_FONT_FAMILY,
-                    "decimalPlaces": 0
+                percentage: {
+                    color: "#ffffff",
+                    font: DEFAULT_FONT_FAMILY,
+                    decimalPlaces: 0
                 },
-                "value": {
-                    "color": "#adadad",
-                    "font": DEFAULT_FONT_FAMILY,
-                    "fontSize": PIE_FONT_SIZE
+                value: {
+                    color: "#adadad",
+                    font: DEFAULT_FONT_FAMILY,
+                    fontSize: PIE_FONT_SIZE
                 },
-                "lines": {
-                    "enabled": true
+                lines: {
+                    enabled: true
                 }
             },
-            "tooltips": {
-                "enabled": true,
-                "type": "placeholder",
-                "string": "{label}: {value}, {percentage}%",
-                "styles": {
-                    "font": DEFAULT_FONT_FAMILY
+            tooltips: {
+                enabled: true,
+                type: "placeholder",
+                string: "{label}: {value}, {percentage}%",
+                styles: {
+                    font: DEFAULT_FONT_FAMILY
                 }
             },
-            "effects": {
-                "load": {
-                    "speed": 500
+            effects: {
+                load: {
+                    speed: 500
                 },
-                "pullOutSegmentOnClick": {
-                    "effect": "none",
+                pullOutSegmentOnClick: {
+                    effect: "none",
                 }
             },
-            "misc": {
-                "gradient": {
-                    "enabled": true,
-                    "percentage": 100
+            misc: {
+                gradient: {
+                    enabled: true,
+                    percentage: 100
                 }
             },
-            "callbacks": {
+            callbacks: {
                 onClickSegment: function(a) {
                     var filter = a.data.label.replace(/\(([A-Z]+)\)/g, "$1");
 
@@ -1587,30 +1604,35 @@ function drawInfo(type) {
         var labels = [];
         var values = [];
         var maxValue = 0;
+        var datasets = {};
         var options = {
             scaleShowVerticalLines: false,
         };
 
-        for (var i = 0; i < SOURCES.length; i++) {
-            labels.push(SOURCES[i][0]);
-            values.push(SOURCES[i][1]);
-            maxValue = Math.max(SOURCES[i][1], maxValue);
+        for (var key in TRAIL_TYPES)
+            datasets[key] = { fillColor: TRAIL_TYPES[key], data: [] };
+
+        for (var i = 0; i < _TOP_SOURCES.length; i++) {
+            labels.push(_TOP_SOURCES[i][0]);
+            maxValue = Math.max(_TOP_SOURCES[i][1], maxValue);
+
+            for (var key in TRAIL_TYPES)
+                datasets[key].data.push(_SOURCE_EVENTS[_TOP_SOURCES[i][0]][key]);
         }
 
-        //setChartScale(options, maxValue);
+        _ = [];
+        for (var key in TRAIL_TYPES) {
+            console.log(key);
+            _.insert(0, datasets[key]); // StackedBar is drawing from last to first (for some strange reason)
+        }
 
         var data = {
             labels: labels,
-            datasets: [
-                {
-                    fillColor: "rgba(157, 157, 189, 1.0)",
-                    data: values,
-                }
-            ]
+            datasets: _
         };
         var ctx = $('<canvas id="chart_canvas" width="' + CHART_WIDTH + '" height="' + CHART_HEIGHT + '"></canvas>').appendTo('#chart_area')[0].getContext("2d");
         var chart = new Chart(ctx);
-        var bar = chart.Bar(data, options);
+        var bar = chart.StackedBar(data, options);
 
         chart.canvas.onclick = function(evt) {
             var activeBars = bar.getBarsAtEvent(evt);
@@ -1664,19 +1686,19 @@ function drawInfo(type) {
             "header": {
                 "title": {
                     "fontSize": 1,
-                    "font": "open sans"
+                    "font": DEFAULT_FONT_FAMILY
                 },
                 "subtitle": {
                     "color": "#999999",
                     "fontSize": 1,
-                    "font": "open sans"
+                    "font": DEFAULT_FONT_FAMILY
                 },
                 "titleSubtitlePadding": 0
             },
             "footer": {
                 "color": "#999999",
                 "fontSize": 1,
-                "font": "open sans",
+                "font": DEFAULT_FONT_FAMILY,
                 "location": "bottom-left"
             },
             "size": {
@@ -1883,7 +1905,7 @@ function initVisual() {
 
     // Sources sparkline
     _ = [];
-    SOURCES = [];
+    _TOP_SOURCES = [];
     total["Sources"] = Object.size(_SOURCES);
 
     sorted = _sort(_SOURCES);
@@ -1891,6 +1913,11 @@ function initVisual() {
 
     var top = {};
     var ips = [];
+    var zero = [];
+
+    for (var key in TRAIL_TYPES)
+        zero.push(0);
+
     for (var i = 0; i < sorted.length; i++) {
         if (i < MAX_SOURCES_ITEMS) {
             top[sorted[i][0]] = sorted[i][1];
@@ -1900,25 +1927,33 @@ function initVisual() {
             other += sorted[i][1];
     }
 
-    ips = ips.sort(_ipCompareValues);
-    _ = [0];
+    ips.sort(_ipCompareValues);
+    _ = [zero];
 
     for (var i = 0; i < ips.length; i++) {
-        //console.log(ips[i] + ' ' + top[ips[i]]);
-        _.push(top[ips[i]]);
-        SOURCES.push([ips[i], top[ips[i]]]);
+        var _type_counts = [];
+
+        for (var key in TRAIL_TYPES)
+            _type_counts.push(_SOURCE_EVENTS[ips[i]][key]);
+
+        _.push(_type_counts);
+        _TOP_SOURCES.push([ips[i], _type_counts]);
     }
 
     if (other > 0) {
         _.push(other);
-        SOURCES.push(["Other", other]);
+        _TOP_SOURCES.push(["Other", other]);
     }
 
-    _.push(0);  // because of 0 value display problem
+    _.push(zero);  // because of 0 value display problem
 
     var barWidth = Math.min(6, Math.max(2, Math.floor((SPARKLINE_WIDTH / (_.length + 2)) - 1)));
 
-    $('#sources_sparkline').sparkline(_, { width: SPARKLINE_WIDTH, height: '30', type: 'bar', barColor: '#ffffff', barWidth: barWidth, disableInteraction: true, zeroColor: "rgba(0, 0, 0, 0)" });
+    var barColors = [];
+    for (var key in TRAIL_TYPES)
+        barColors.push(TRAIL_TYPES[key]);
+
+    $('#sources_sparkline').sparkline(_, { width: SPARKLINE_WIDTH, height: '30', type: 'bar', barColor: '#ffffff', barWidth: barWidth, disableInteraction: true, zeroColor: "rgba(0, 0, 0, 0)", stackedBarColor: barColors});
 
     var options = { fillColor: false, minSpotColor: "", maxSpotColor: "", spotColor: "", highlightSpotColor: "", highlightLineColor: "", tooltipClassname: "", chartRangeMin: 0, chartRangeMax: _MAX_EVENTS_PER_HOUR, width: SPARKLINE_WIDTH, height: '30', lineWidth: 2 };  // disableInteraction: false, tooltipClassname: "sparkline-tooltip"
 

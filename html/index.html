@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="css/thirdparty.min.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <script type="text/javascript" src="js/thirdparty.min.js"></script>
-        <script type="text/javascript" src="js/papaparse.min.js"></script>
+        <script type="text/javascript" src="js/papaparse.min.js"></script> <!-- required to be as a standalone because of "Worker" functionality -->
     </head>
     <body>
         <script>
@@ -54,6 +54,7 @@
             </div>
         </div>
 
+        <!--Reference for colors: http://www.w3schools.com/tags/ref_colorpicker.asp-->
         <div id="main_container" class="container hidden">
             <div id="summary_section" class="section" style="margin-top: 10px">Summary:</div>
             <div style="width: 100%; text-align: center">
@@ -63,7 +64,9 @@
                         <span class="dynamicsparkline" id="events_sparkline"></span>
                         <h6 style="margin: 10px">Events</h6>
                     </li>
-                    <li class="status-button" style="background: linear-gradient(#668CBF 0%, #245ba4 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Sources')" title="Source IPs">
+                    <!--<li class="status-button" style="background: linear-gradient(#668CBF 0%, #245ba4 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Sources')" title="Source IPs">-->
+                    <!--<li class="status-button" style="background: linear-gradient(#5C5CBD 0%, #3333AD 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Sources')" title="Source IPs">-->
+                        <li class="status-button" style="background: linear-gradient(#4E5EB4 0%, #2236A1 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Sources')" title="Source IPs">
                         <h3 id="sources_count">0</h3>
                         <span class="dynamicsparkline" id="sources_sparkline"></span>
                         <h6 style="margin: 10px">Sources</h6>
@@ -89,7 +92,6 @@
             </table>
         </div>
 
-        <script type="text/javascript" src="js/demo.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>
