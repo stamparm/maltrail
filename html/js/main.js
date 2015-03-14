@@ -1208,7 +1208,10 @@ function initDetails() {
             if (event.target.classList.contains("tag"))
                 appendFilter(event.target.innerHTML, event, true);
             else if (event.target.classList.contains("label-type"))
-                appendFilter('" ' + event.target.innerHTML + '"', event);
+                if (event.target.innerHTML.toUpperCase() === event.target.innerHTML)
+                    appendFilter('" ' + event.target.innerHTML + '"', event);
+                else
+                    appendFilter(event.target.innerHTML, event);
         }
         else if (event.button === 1) {  // middle mouse button
             if (event.target.classList.contains("tag"))
@@ -1454,6 +1457,7 @@ function drawInfo(type) {
         var options = {
             //scaleGridLineColor: "#abb2b4",
             scaleShowVerticalLines: false,
+            scaleShowHorizontalLines: false, // because StackedBar doesn't show them properly
             datasetFill: false,
             bezierCurve: false,
             pointDotRadius: 5,
@@ -1606,7 +1610,7 @@ function drawInfo(type) {
         var maxValue = 0;
         var datasets = {};
         var options = {
-            scaleShowVerticalLines: false,
+            //scaleShowVerticalLines: false, // not working properly
         };
 
         for (var key in TRAIL_TYPES)
