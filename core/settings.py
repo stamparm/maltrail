@@ -51,6 +51,7 @@ SESSION_ID_LENGTH = 16
 SESSION_EXPIRATION_HOURS = 24 * 7
 IPPROTO_LUT = dict(((getattr(socket, _), _.replace("IPPROTO_", "")) for _ in dir(socket) if _.startswith("IPPROTO_")))
 DEFLATE_COMPRESS_LEVEL = 9
+SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD = 32
 
 def _get_total_physmem():
     retval = None

@@ -34,6 +34,7 @@ from core.settings import NO_SUCH_NAME_PER_HOUR_THRESHOLD
 from core.settings import NO_SUCH_NAME_COUNTERS
 from core.settings import REGULAR_SLEEP_TIME
 from core.settings import SNAP_LEN
+from core.settings import SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
 from core.settings import trails
 from core.update import update
 
@@ -186,6 +187,9 @@ def _process_packet(packet, sec, usec):
                                                 trail = "(%s)%s" % (query[:-len(domain)], domain)
                                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, trails[TRAIL.DNS][domain][0], trails[TRAIL.DNS][domain][1]))
                                             break
+
+                                    if len(query) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD:
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "suspicious long name", "(heuristic)"))
 
                             elif (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
                                 if query not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[query][0] != sec / 3600:
