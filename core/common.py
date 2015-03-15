@@ -6,7 +6,10 @@ See the file 'LICENSE' for copying permission
 """
 
 import csv
+import gzip
 import os
+import StringIO
+import struct
 import subprocess
 import urllib
 import urllib2
@@ -23,8 +26,17 @@ def retrieve_content(url, data=None):
     """
 
     try:
-        req = urllib2.Request("".join(url[i].replace(' ', "%20") if i > url.find('?') else url[i] for i in xrange(len(url))), data, {"User-agent": NAME})
-        retval = urllib2.urlopen(req, timeout=TIMEOUT).read()
+        req = urllib2.Request("".join(url[i].replace(' ', "%20") if i > url.find('?') else url[i] for i in xrange(len(url))), data, { "User-agent": NAME, "Accept-encoding": "gzip, deflate" })
+        resp = urllib2.urlopen(req, timeout=TIMEOUT)
+        retval = resp.read()
+        encoding = resp.headers.get("Content-Encoding")
+        if encoding:
+            if encoding.lower() == "deflate":
+                data = StringIO.StringIO(zlib.decompress(retval, -15))
+            else:
+                data = gzip.GzipFile("", "rb", 9, StringIO.StringIO(retval))
+                size = struct.unpack("<l", retval[-4:])[0]
+            retval = data.read()
     except Exception, ex:
         retval = ex.read() if hasattr(ex, "read") else getattr(ex, "msg", str())
     return retval or ""
