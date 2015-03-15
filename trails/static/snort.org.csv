@@ -1,0 +1,173 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://s3.amazonaws.com/snort-org/www/rules/community/community-rules.tar.gz
+
+murik.portal-protection.net.ru,rimecud-r
+slade.safehousenumber.com,rimecud-r
+world.rickstudio.ru,rimecud-r
+portal.roomshowerbord.com,encpk-adu
+api.wipmania.com,dorkbot-ao
+lolcantpwnme.net,dorkbot-s
+rewt.ru,dorkbot-s
+24131192124.com,chebri.c
+mercury.yori.pl,kazy
+suppp.cantvenlinea.biz,bitcoin miner upload
+f.eastmoon.pl,dorkbot
+s.richlab.pl,dorkbot
+gigasbh.org,dorkbot
+xixbh.com,dorkbot
+h.opennews.su,dorkbot
+o.dailyradio.su,dorkbot
+xixbh.net,dorkbot
+photobeat.su,dorkbot
+uranus.kei.su,dorkbot
+gigasphere.su,dorkbot
+ext.myshopers.com,dorkbot
+d1js21szq85hyn.cloudfront.net,adware.bprotector
+xxxxxxxxxxxxxxx.kei.su,dorkbot
+f.dailyradio.su,dorkbot
+www.elitemarketingworld.net,cosmu
+www.rsakillerforever.name,cosmu
+www.allamericanservices.name,cosmu
+msnsolution.nicaze.net,genome
+theimageparlour.net,vobfus worm
+www2.x3x4.su,backdoor
+vseforyou.ru,cridex
+commorgan.ru,cridex
+www.silobiancer.com,rombrast
+goliyonzo.pw,backdoor comet
+zalil.ru,kazy
+soywey.sin-ip.es,palevo botnet
+bigmack.opendns.be,palevo botnet
+trafficconverter.biz,chronopay
+kjwre9fqwieluoi.info,sality
+kukutrustnet777.info,sality
+fasternation.net,pirminay
+memo-stat.com,htbot
+scari-elegante.ro,yakes
+myharlemshake.info,msil
+twinkcam.net,w32/kryptik
+cinnamyn.com,w32/kryptik
+restless.su,gamarue
+claimcrazy.us,kraziomel
+mainenbha.com,kraziomel
+ohtheigh.cc,foreign-r
+hidatabase.cn,silly
+sectempus.biz,prism
+heftyzonealarm.info,ransomware.urausy
+blackicemaccom.biz,ransomware.urausy
+handjobheats.com,injector
+goobzo.com,kazy
+mssql.maurosouza9899.kinghost.net,symmi
+lovesyr.sytes.net,worm dunhihi
+lucas.digitaldesk.biz,banload
+jiang-zem.in,zeus
+722forbidden1.sytes.net,msil variant
+bog5151.zapto.org,dunihi
+kara.no-ip.info,dunihi
+antiq.scifi.ro,linux.backdoor.shellbot
+funny.evils.in,linux.backdoor.shellbot
+appleupdt.com,careto
+carrus.gotdns.com,careto
+cherry1962.dyndns.org,careto
+ctronlinenews.dyndns.tv,careto
+dfup.selfip.org,careto
+fast8.homeftp.org,careto
+gx5639.dyndns.tv,careto
+helpcenter1it6238.cz.cc,careto
+helpcenter2br6932.cc,careto
+linkconf.net,careto
+mango66.dyndns.org,careto
+msupdt.com,careto
+nav1002.ath.cx,careto
+nthost.shacknet.nu,careto
+oco-231-ms.xns01.com,careto
+pininfarina.dynalias.com,careto
+pl400.dyndns.org,careto
+prosoccer1.dyndns.info,careto
+redirserver.net,careto
+ricush.ath.cx,careto
+services.serveftp.org,careto
+sv.serveftp.org,careto
+swupdt.com,careto
+takami.podzone.net,careto
+tunga.homedns.org,careto
+wqq.dyndns.org,careto
+wwnav.selfip.net,careto
+commandcenteral.info,adload.dyhq
+givemefilesnow.info,adload.dyhq
+stylefun.info,adload.dyhq
+hattouma12.no-ip.biz,dunihi
+sidisalim.myvnc.com,dunihi
+abdnjworm.no-ip.biz,jenxcus
+abocasse.zapto.org,jenxcus
+ahmedghost.no-ip.info,jenxcus
+b-trese.no-ip.biz,jenxcus
+dd.no-ip.bz,jenxcus
+debili1.no-ip.biz,jenxcus
+fuck-all.no-ip.info,jenxcus
+hackers1990.no-ip.org,jenxcus
+heartbraker.no-ip.biz,jenxcus
+jnyn-99.no-ip.org,jenxcus
+mda.no-ip.org,jenxcus
+mmrick.zapto.org,jenxcus
+mntm.no-ip.biz,jenxcus
+mootje01.no-ip.org,jenxcus
+mozaya46415.zapto.org,jenxcus
+no99.zapto.org,dunihi
+rouge166821.no-ip.biz,jenxcus
+school-pc.sytes.net,dunihi
+vanonymous.no-ip.org,jenxcus
+vichtorio-israeli.zapto.org,jenxcus
+zkzak.np-ip.biz,jenxcus
+0zz0.com,napolar
+www.rekurigo.com,napolar
+jwqakoy3wdktb0.com,cryptolocker
+pibadfixwug.kz,pushdo
+drags.su,androm
+smsgrabber.url.ph,android ibanking/spy.49
+titan2014.sytes.net,zbot/bublik
+aaukqiooaseseuke.org,ramdo
+eimqqakugeccgwak.org,ramdo
+kucmcamaqsgmaiye.org,ramdo
+uogwoigiuweyccsw.org,ramdo
+darxk.com,minerd
+universal2010.no-ip.org,dunihi
+github.ignorelist.com,barys
+www.uslugi-ryazan.ru,spybanker
+www.give-us-btc.biz,zusy
+infolooks.org,sdbot
+joydagaspy.biz,sdbot
+cd5c5c.com,androm
+disk57.com,androm
+nanoseklo.net,hw32
+spheral.ru,glupteba
+hslh.sytes.net,jenxcus
+prepara.biricell.com.br,spybanker
+flordeliskm26.com.br,delf
+eduarditopallares.mooo.com,vbkrypt
+vampire123.zapto.org,disfa
+enemydont.net,symmi
+saltsecond.net,symmi
+sellsmall.net,symmi
+southblood.net,symmi
+wheelreply.net,symmi
+av4.microsoftsp3.com,plugx
+java.ns1.name,plugx
+wm1.ns01.us,plugx
+good.myftp.org,farfi
+tiptronic.soxx.us,scarsi
+baltichost.org,group 74
+kavkazcentr.info,group 74
+login-osce.org,group 74
+mail.q0v.pl,group 74
+n0vinite.com,group 74
+nato.nshq.in,group 74
+natoexhibitionff14.com,group 74
+novinitie.com,group 74
+q0v.pl,group 74
+qov.hu.com,group 74
+rnil.am,group 74
+smigroup-online.co.uk,group 74
+standartnevvs.com,group 74
