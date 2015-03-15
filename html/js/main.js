@@ -786,6 +786,27 @@ function _ipCompareValues(a, b) {
     return _ipSortingValue(a) - _ipSortingValue(b);
 }
 
+function copyEllipsisToClipboard(event) {
+    var target = $(event.target);
+    var text = target.parent().title;
+    var common = target.parent().parent().html().replace(/<[^>]+>/g, "");
+    if (!text) {
+        var tooltip = $(".ui-tooltip");
+        if (tooltip.length > 0) {
+            text = tooltip.html().replace(/<[^>]+>/g, "");
+
+            if (common) {
+                var _ = text.split(", ");
+                for (var i = 0; i < _.length; i++)
+                    _[i] += common;
+                text = _.join(", ");
+            }
+        }
+        tooltip.remove();
+    }
+    window.prompt("Copy to clipboard (Ctrl+C)", text);
+}
+
 function appendFilter(filter, event, istag) {
     try {
         var table = $('#details').dataTable();
@@ -866,7 +887,7 @@ function initDetails() {
             },            {
                 render: function (data, type, row) {
                     if (data.indexOf(',') > -1)
-                        data = "<span title='" + data + "'>" + ELLIPSIS + "</span>";
+                        data = "<span title='" + data + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
                     else {
                         var port = parseInt(data);
                         if (port in TOP_PORTS)
@@ -885,7 +906,7 @@ function initDetails() {
                             if (_.indexOf('(') > -1)
                                 common = _.replace(/\([^)]+\)/g, "");
                         }
-                        data = "<span title='" + data.split(common).join("").replace(/[()]/g, "") + "'>" + ELLIPSIS + "</span>" + common;
+                        data = "<span title='" + data.split(common).join("").replace(/[()]/g, "") + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>" + common;
                     }
                     return data;
                 },

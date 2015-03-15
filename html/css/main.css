@@ -113,6 +113,7 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
 }
 .header-period {
     text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    font-size: 110%;
 }
 .dotted {
     /*padding: 2.25em 1.6875em;*/
