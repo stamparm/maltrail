@@ -154,7 +154,7 @@ def _process_packet(packet, sec, usec):
                     data = packet[h_size:]
 
                     # Reference: http://www.ccs.neu.edu/home/amislove/teaching/cs4700/fall09/handouts/project1-primer.pdf
-                    if len(data) > 2 and ord(data[2]) & 1:  # QR (query)
+                    if len(data) > 2 and ord(data[2]) == 0x01:  # standard query
                         qdcount = struct.unpack("!H", data[4:6])[0]
                         if qdcount > 0:
                             offset = 12
