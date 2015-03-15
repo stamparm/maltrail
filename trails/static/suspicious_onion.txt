@@ -4,10 +4,13 @@
 .onion
 
 # Reference: http://malwaretips.com/threads/connects-to-tor-hidden-services-through-tor2web.42274/
+# Reference: http://darkspider.info/index.php?menu=list
 
 onion.gq
 onion.lt
 onion.cab
+onion.city
+onion.direct
 tor2web.fi
 tor2web.blutmagie.de
 tor2web.org
