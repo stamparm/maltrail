@@ -2,3 +2,4 @@
 # See the file 'LICENSE' for copying permission
 
 dl.dropboxusercontent.com
+s3.amazonaws.com
