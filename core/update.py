@@ -101,7 +101,7 @@ def update(server=None):
         whitelist = set()
         _ = os.path.abspath(os.path.join(ROOT_DIR, "trails", "whitelist.txt"))
         if os.path.isfile(_):
-            print(" [o] 'whitelist'")
+            print(" [o] '(whitelist)'")
             with open(_, "r") as f:
                 for line in f.xreadlines():
                     line = line.strip()
