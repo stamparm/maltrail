@@ -76,6 +76,7 @@ def update(server=None):
                 module = __import__(os.path.basename(filename).split(".py")[0])
             except (ImportError, SyntaxError), ex:
                 print "[!] something went wrong during import of feed file '%s' ('%s')" % (filename, ex)
+                continue
 
             for name, function in inspect.getmembers(module, inspect.isfunction):
                 if name == "fetch":
