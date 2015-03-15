@@ -30,6 +30,8 @@ from core.settings import config
 from core.settings import ETH_LENGTH
 from core.settings import IPPROTO
 from core.settings import IPPROTO_LUT
+from core.settings import NO_SUCH_NAME_PER_HOUR_THRESHOLD
+from core.settings import NO_SUCH_NAME_COUNTERS
 from core.settings import REGULAR_SLEEP_TIME
 from core.settings import SNAP_LEN
 from core.settings import trails
@@ -149,12 +151,12 @@ def _process_packet(packet, sec, usec):
                     elif src_ip in trails[TRAIL.IP]:
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.IP, src_ip, trails[TRAIL.IP][src_ip][0], trails[TRAIL.IP][src_ip][1]))
 
-                if dst_port == 53:
+                if dst_port == 53 or src_port == 53:
                     h_size = ETH_LENGTH + iph_length + 8
                     data = packet[h_size:]
 
                     # Reference: http://www.ccs.neu.edu/home/amislove/teaching/cs4700/fall09/handouts/project1-primer.pdf
-                    if len(data) > 2 and ord(data[2]) == 0x01:  # standard query
+                    if len(data) > 6:
                         qdcount = struct.unpack("!H", data[4:6])[0]
                         if qdcount > 0:
                             offset = 12
@@ -168,21 +170,31 @@ def _process_packet(packet, sec, usec):
                                 query += data[offset + 1:offset + length + 1] + '.'
                                 offset += length + 1
 
-                            type_, class_ = struct.unpack("!HH", data[offset + 1:offset + 5])
+                            if ord(data[2]) == 0x01:  # standard query
+                                type_, class_ = struct.unpack("!HH", data[offset + 1:offset + 5])
 
-                            # Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
-                            if type_ != 12 and class_ == 1:  # Type != PTR, Class IN
-                                parts = query.split('.')
+                                # Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
+                                if type_ != 12 and class_ == 1:  # Type != PTR, Class IN
+                                    parts = query.split('.')
 
-                                for i in xrange(0, len(parts)):
-                                    domain = '.'.join(parts[i:])
-                                    if domain in trails[TRAIL.DNS]:
-                                        if domain == query:
-                                            trail = domain
-                                        else:
-                                            trail = "(%s)%s" % (query[:-len(domain)], domain)
-                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, trails[TRAIL.DNS][domain][0], trails[TRAIL.DNS][domain][1]))
-                                        break
+                                    for i in xrange(0, len(parts)):
+                                        domain = '.'.join(parts[i:])
+                                        if domain in trails[TRAIL.DNS]:
+                                            if domain == query:
+                                                trail = domain
+                                            else:
+                                                trail = "(%s)%s" % (query[:-len(domain)], domain)
+                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, trails[TRAIL.DNS][domain][0], trails[TRAIL.DNS][domain][1]))
+                                            break
+
+                            elif (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
+                                if query not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[query][0] != sec / 3600:
+                                    NO_SUCH_NAME_COUNTERS[query] = [sec / 3600, 1]
+                                else:
+                                    NO_SUCH_NAME_COUNTERS[query][1] += 1
+
+                                    if NO_SUCH_NAME_COUNTERS[query][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD:
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "suspicious no such name", "(heuristic)"))
 
             elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
                 if dst_ip in trails[TRAIL.IP]:
