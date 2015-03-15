@@ -1939,17 +1939,23 @@ function initVisual() {
     var top = {};
     var ips = [];
     var zero = [];
+    other_events = {};
 
-    for (var key in TRAIL_TYPES)
+    for (var key in TRAIL_TYPES) {
         zero.push(0);
+        other_events[key] = 0;
+    }
 
     for (var i = 0; i < sorted.length; i++) {
         if (i < MAX_SOURCES_ITEMS) {
             top[sorted[i][0]] = sorted[i][1];
             ips.push(sorted[i][0]);
         }
-        else
+        else {
+            for (var key in TRAIL_TYPES)
+                other_events[key] += _SOURCE_EVENTS[sorted[i][0]][key];
             other += sorted[i][1];
+        }
     }
 
     ips.sort(_ipCompareValues);
@@ -1966,8 +1972,14 @@ function initVisual() {
     }
 
     if (other > 0) {
-        _.push(other);
+        var _other_counts = [];
+
+        for (var key in TRAIL_TYPES)
+            _other_counts.push(other_events[key]);
+
+        _.push(_other_counts);
         _TOP_SOURCES.push(["Other", other]);
+        _SOURCE_EVENTS["Other"] = other_events;
     }
 
     _.push(zero);  // because of 0 value display problem
