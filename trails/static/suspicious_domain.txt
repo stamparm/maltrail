@@ -20,7 +20,6 @@
 .consulting
 .xyz
 .club
-.email
 .solutions
 .domains
 .company

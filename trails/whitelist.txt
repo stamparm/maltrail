@@ -1,5 +1,43 @@
 # Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
 # See the file 'LICENSE' for copying permission
 
+# sometimes marked as malicious domains on various lists
+
 dl.dropboxusercontent.com
 s3.amazonaws.com
+
+# having suspicious long (sub)domain names (note: not whitelist-ing all related (e.g. URL) trails)
+
+gstatic.com
+akadns.net
+sophosxl.net
+sophosxl.com
+edgesuite.net
+yahoodns.net
+microsoft.com
+googlevideo.com
+mcafee.com
+cloudfront.net
+akadns.net
+google.com
+yimg.com
+live.com
+a-msedge.net
+pandasecurity.com
+googleapis.com
+akamaihd.net
+trendmicro.com
+amazonaws.com
+netdna-cdn.com
+googlecode.com
+rackcdn.com
+mailprotector.net
+googleusercontent.com
+hotmail.com
+nsatc.net
+bitdefender.net
+fastly.net
+cedexis-radar.net
+mailshell.net
+gexperiments2.com
+gexperiments3.com
