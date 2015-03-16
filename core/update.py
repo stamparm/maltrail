@@ -21,10 +21,12 @@ from core.common import load_trails
 from core.common import retrieve_content
 from core.enums import TRAIL
 from core.settings import config
+from core.settings import read_whitelist
 from core.settings import LOW_PRIORITY_INFO_KEYWORDS
 from core.settings import ROOT_DIR
 from core.settings import TRAILS_FILE
 from core.settings import USERS_DIRECTORY
+from core.settings import WHITELIST
 
 def _fopen_trails(mode):
     retval = open(TRAILS_FILE, mode)
@@ -98,21 +100,11 @@ def update(server=None):
                 del trails[TRAIL.URL][key]
                 trails[TRAIL.URL][key.split('?')[0]] = _
 
-        whitelist = set()
-        _ = os.path.abspath(os.path.join(ROOT_DIR, "trails", "whitelist.txt"))
-        if os.path.isfile(_):
-            print(" [o] '(whitelist)'")
-            with open(_, "r") as f:
-                for line in f.xreadlines():
-                    line = line.strip()
-                    if not line or line.startswith('#'):
-                        continue
-                    else:
-                        whitelist.add(line)
+        read_whitelist()
 
         for type_ in trails:
             for key in trails[type_].keys():
-                if key in whitelist:
+                if key in WHITELIST:
                     del trails[type_][key]
                 else:
                     try:

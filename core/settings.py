@@ -51,7 +51,8 @@ SESSION_ID_LENGTH = 16
 SESSION_EXPIRATION_HOURS = 24 * 7
 IPPROTO_LUT = dict(((getattr(socket, _), _.replace("IPPROTO_", "")) for _ in dir(socket) if _.startswith("IPPROTO_")))
 DEFLATE_COMPRESS_LEVEL = 9
-SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD = 32
+SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD = 24
+WHITELIST = set()
 
 def _get_total_physmem():
     retval = None
@@ -159,5 +160,18 @@ def read_config():
 
             BUFFER_LENGTH = BUFFER_LENGTH / BLOCK_LENGTH * BLOCK_LENGTH
 
+def read_whitelist():
+    WHITELIST.clear()
+    _ = os.path.abspath(os.path.join(ROOT_DIR, "trails", "whitelist.txt"))
+    if os.path.isfile(_):
+        with open(_, "r") as f:
+            for line in f.xreadlines():
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                else:
+                    WHITELIST.add(line)
+
 if __name__ != "__main__":
     read_config()
+    read_whitelist()

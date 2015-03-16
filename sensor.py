@@ -36,6 +36,7 @@ from core.settings import REGULAR_SLEEP_TIME
 from core.settings import SNAP_LEN
 from core.settings import SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
 from core.settings import trails
+from core.settings import WHITELIST
 from core.update import update
 
 _buffer = None
@@ -185,20 +186,31 @@ def _process_packet(packet, sec, usec):
                                                 trail = domain
                                             else:
                                                 trail = "(%s)%s" % (query[:-len(domain)], domain)
+
                                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, trails[TRAIL.DNS][domain][0], trails[TRAIL.DNS][domain][1]))
                                             break
 
-                                    if len(query) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD:
-                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "suspicious long name", "(heuristic)"))
+                                    if any(len(part) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD for part in parts):
+                                        _ = None
+
+                                        if len(parts) > 2:
+                                            if '.'.join(parts[-2:]) not in WHITELIST:
+                                                _ = "(%s.)%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
+                                        else:
+                                            _ = query
+
+                                        if _:
+                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, _, "suspicious long name", "(heuristic)"))
 
                             elif (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
-                                if query not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[query][0] != sec / 3600:
-                                    NO_SUCH_NAME_COUNTERS[query] = [sec / 3600, 1]
-                                else:
-                                    NO_SUCH_NAME_COUNTERS[query][1] += 1
+                                if not query.endswith(".in-addr.arpa"):  # reverse lookups
+                                    if query not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[query][0] != sec / 3600:
+                                        NO_SUCH_NAME_COUNTERS[query] = [sec / 3600, 1]
+                                    else:
+                                        NO_SUCH_NAME_COUNTERS[query][1] += 1
 
-                                    if NO_SUCH_NAME_COUNTERS[query][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD:
-                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "suspicious no such name", "(heuristic)"))
+                                        if NO_SUCH_NAME_COUNTERS[query][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD:
+                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "suspicious no such name", "(heuristic)"))
 
             elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
                 if dst_ip in trails[TRAIL.IP]:
