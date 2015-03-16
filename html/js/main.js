@@ -411,8 +411,9 @@ function init(url, from, to) {
 
                 if (flood)
                     threatText = FLOOD_THREAT_PREFIX + THREAT_INFIX + _;
-                else if (dga)
+                else if (dga) {
                     threatText = data[LOG_COLUMNS.SRC_IP] + THREAT_INFIX + info;
+                }
                 else
                     threatText = data[LOG_COLUMNS.SRC_IP] + THREAT_INFIX + _;
 
@@ -458,7 +459,7 @@ function init(url, from, to) {
 
                 match = time.match(/(\d{4})\-(\d{2})\-(\d{2}) (\d{2}):(\d{2}):(\d{2})/);
 
-                if (match != null) {
+                if (match !== null) {
                     var date = new Date(parseInt(match[1]), parseInt(match[2]) - 1, parseInt(match[3]), parseInt(match[4]), parseInt(match[5]), parseInt(match[6]));
                     var hour = Math.floor(date.getTime() / 60 / 60 / 1000);
 
@@ -488,7 +489,7 @@ function init(url, from, to) {
                 var storedLocally = $.jStorage.get(threatUID);
                 var tagData = "";
             
-                if (storedLocally != null)
+                if (storedLocally !== null)
                     tagData = storedLocally.tagData;
 
                 for (var i = 0; i < DOT_COLUMNS.length; i++) {
@@ -631,7 +632,7 @@ function makeMask(bits) {
 
 function netmaskValidate(netmask) {
     var match = netmask.match(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\/\d{1,2}$/);
-    return match != null
+    return match !== null
 }
 
 /*
@@ -732,7 +733,7 @@ function tagInputKeyUp(event, forcedelete) {
 
     _DELETE_DELETE_PRESS = false;
 
-    if (tagData != null) {
+    if (tagData !== null) {
         var api = table.api();
         var threat = table.fnGetData(position[0], DATATABLES_COLUMNS.THREAT);
         var threatText = (table.fnGetData(position[0], DATATABLES_COLUMNS.SRC_IP) + THREAT_INFIX + table.fnGetData(position[0], DATATABLES_COLUMNS.TRAIL));
@@ -777,7 +778,7 @@ function _ipSortingValue(a) {
     var x = "";
 
     match = a.match(/\d+\.\d+\.\d+\.\d+/);
-    if (match != null) {
+    if (match !== null) {
         var m = match[0].split(".");
 
         for (var i = 0; i < m.length; i++) {
@@ -1041,7 +1042,7 @@ function initDetails() {
                 var html = elem.parent().html();
                 var match = html.match(/\d+\.\d+\.\d+\.\d+/);
 
-                if (match != null) {
+                if (match !== null) {
                     var ip = match[0];
                     $.ajax("https://stat.ripe.net/data/whois/data.json?resource=" + ip, { dataType:"jsonp", ip: ip })
                     .success(function(json) {
@@ -1056,7 +1057,7 @@ function initDetails() {
                             }
                         }
 
-                        if (found != null) {
+                        if (found !== null) {
                             for (var j = 0; j < json.data.records[found].length; j++) {
                                 msg += json.data.records[found][j].key + ": " + json.data.records[found][j].value;
                                 msg += "<br>";
@@ -1133,7 +1134,7 @@ function initDetails() {
                             this.cell.html("").append(span_ip).append($(img).tooltip());
                         });
                     }
-                    else if (IP_COUNTRY[ip] != null) {
+                    else if (IP_COUNTRY[ip] !== null) {
                         img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '" />'
 
                         var span_ip = $("<span title=''/>").html(ip + " ");
@@ -1144,7 +1145,7 @@ function initDetails() {
                     else {
                         setTimeout(function(ip, cell){
                             html = cell.html();
-                            if ((IP_COUNTRY[ip] != null) && (html.indexOf("flag-") === -1)) {
+                            if ((IP_COUNTRY[ip] !== null) && (html.indexOf("flag-") === -1)) {
                                 img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '" />'
 
                                 var span_ip = $("<span title=''/>").html(ip + " ");
@@ -1221,7 +1222,7 @@ function initDetails() {
             filter = $(this).find("div")[0].lastChild.textContent;
         else if (this.innerHTML.indexOf("ellipsis") > -1) {
             match = this.innerHTML.match(/title=["']([^"']+)/);
-            if (match != null)
+            if (match !== null)
                 filter = match[1].replace(/, /g, " ");
             else {
                 var tooltip = $(".ui-tooltip");
@@ -1289,9 +1290,10 @@ if (typeof String.prototype.startsWith !== "function") {
     };
 }
 
+// Reference: http://stackoverflow.com/a/2548133
 if (typeof String.prototype.endsWith !== "function") {
-    String.prototype.endsWith = function (str){
-        return this.lastIndexOf(str) === (this.length - 1);
+    String.prototype.endsWith = function(suffix) {
+        return this.indexOf(suffix, this.length - suffix.length) !== -1;
     };
 }
 
@@ -1371,7 +1373,7 @@ jQuery.extend(jQuery.fn.dataTableExt.oSort, {
         var x = 0;
         var match = a.match(/\d+/);
 
-        if (match != null) {
+        if (match !== null) {
             x = parseInt(match[0]);
         }
 
@@ -1392,7 +1394,7 @@ jQuery.extend(jQuery.fn.dataTableExt.oSort, {
         var x = "";
         var match = a.match(/([0-9a-fA-F]{8})/);
 
-        if (match != null)
+        if (match !== null)
             //x = parseInt(match[1], 16);
             x = match[1];
 
@@ -2041,7 +2043,7 @@ function parseDate(value) {
     var retval = new Date(0);
     var match = value.match(/(\d{4})\-(\d{2})\-(\d{2})/);
 
-    if (match != null)
+    if (match !== null)
         retval = new Date(match[1], match[2] - 1, match[3]);
 
     return retval;
