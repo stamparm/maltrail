@@ -1,6 +1,9 @@
 # Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
 # See the file 'LICENSE' for copying permission
 
+localhost
+127.0.0.1
+
 # triggering suspicious long (sub)domain names (note: this is not whitelist-ing all related (e.g. URL) trails)
 
 gstatic.com
