@@ -30,7 +30,10 @@ var MAX_SOURCES_ITEMS = 40;
 var FLOOD_TRAIL_THRESHOLD = 50;
 var OTHER_COLOR = "#999";
 var THREAT_INFIX = "~>";
-var FLOOD_SUFFIX = "F0";
+var FLOOD_THREAT_PREFIX = "...";
+var DGA_THREAT_SUFFIX = " dga";
+var FLOOD_UID_SUFFIX = "F0";
+var DGA_UID_SUFFIX = "D0";
 var THREAT_PIC_HASH = null; // e.g. https://robohash.org/ or https://flathash.com/
 var DEFAULT_STATUS_BORDER = "1px solid #a8a8a8"
 var DEFAULT_FONT_FAMILY = "Verdana, Geneva, sans-serif";
@@ -295,14 +298,16 @@ function escapeRegExp(str) {
 }
 
 function getThreatUID(threat) {  // e.g. 192.168.0.1~>shv4.no-ip.biz
-    if (!threat.startsWith("..."))
-        return pad(threat.hashCode().toString(16), 8);
+    if (threat.startsWith(FLOOD_THREAT_PREFIX))
+        return pad(threat.hashCode().toString(16), 6).substr(0, 6) + FLOOD_UID_SUFFIX;
+    else if (threat.endsWith(DGA_THREAT_SUFFIX))
+        return pad(threat.hashCode().toString(16), 6).substr(0, 6) + DGA_UID_SUFFIX;
     else
-        return pad(threat.hashCode().toString(16), 6).substr(0, 6) + FLOOD_SUFFIX;
+        return pad(threat.hashCode().toString(16), 8);
 }
 
 function init(url, from, to) {
-    var csv = null;
+    var csv = "";
     var demo = false;
 
     document.title = "Maltrail (loading...)";
@@ -325,12 +330,17 @@ function init(url, from, to) {
     if (!(document.location.origin.startsWith('http'))) {
         demo = true;
 
-        // Reference: http://stackoverflow.com/a/7083594
-        $.ajaxSetup({ async: false });
-        $.getScript("js/demo.js");
-        $.ajaxSetup({ async: true });
+        try {
+            // Reference: http://stackoverflow.com/a/7083594
+            $.ajaxSetup({ async: false });
+            $.getScript("js/demo.js");
+            $.ajaxSetup({ async: true });
 
-        csv = getDemoCSV();
+            csv = getDemoCSV();
+        }
+        catch(err) {
+            alert("please use Firefox to be able to show demo data");
+        }
 
         $("#login_link").toggleClass("hidden", true);
         $("#login_splitter").toggleClass("hidden", true);
@@ -386,18 +396,23 @@ function init(url, from, to) {
 
             for (var i = 0; i < results.data.length; i++) {
                 var data = results.data[i], threatText, match, _;
-                var time = data[LOG_COLUMNS.TIME];
 
                 if (data.length < 2)
                     continue;
+
+                var time = data[LOG_COLUMNS.TIME];
+                var info = data[LOG_COLUMNS.INFO];
 
                 _ = data[LOG_COLUMNS.TRAIL];
                 _ = _.replace(/\([^)]+\)/g, "");
 
                 var flood = _ in _FLOOD_TRAILS;
+                var dga = info.endsWith(DGA_THREAT_SUFFIX);
 
                 if (flood)
-                    threatText = "..." + THREAT_INFIX + _;
+                    threatText = FLOOD_THREAT_PREFIX + THREAT_INFIX + _;
+                else if (dga)
+                    threatText = data[LOG_COLUMNS.SRC_IP] + THREAT_INFIX + info;
                 else
                     threatText = data[LOG_COLUMNS.SRC_IP] + THREAT_INFIX + _;
 
@@ -558,9 +573,9 @@ function init(url, from, to) {
                 initDetails();
                 initVisual();
             }
-                catch(err) {
-                    alert(err);
-                }
+            catch(err) {
+                alert(err);
+            }
 
             $("#main_container").toggleClass("hidden", false);
             $("#main_container").children().toggleClass("hidden", false);  // Reference: http://stackoverflow.com/a/4740050
