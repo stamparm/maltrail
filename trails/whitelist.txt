@@ -42,3 +42,10 @@ fbcdn.net
 ipv6test.net
 mailshell.net
 cloudapp.net
+verisign.net
+herokuapp.com
+outlook.com
+elasticbeanstalk.com
+googledrive.com
+googlegroups.com
+senderbase.org

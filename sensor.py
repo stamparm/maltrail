@@ -163,6 +163,7 @@ def _process_packet(packet, sec, usec):
                         if qdcount > 0:
                             offset = 12
                             query =  ""
+                            found = False
 
                             while len(data) > offset:
                                 length = ord(data[offset])
@@ -171,6 +172,9 @@ def _process_packet(packet, sec, usec):
                                     break
                                 query += data[offset + 1:offset + length + 1] + '.'
                                 offset += length + 1
+
+                            if ' ' in query or '.' not in query:
+                                return
 
                             if ord(data[2]) == 0x01:  # standard query
                                 type_, class_ = struct.unpack("!HH", data[offset + 1:offset + 5])
@@ -187,10 +191,11 @@ def _process_packet(packet, sec, usec):
                                             else:
                                                 trail = "(%s)%s" % (query[:-len(domain)], domain)
 
+                                            found = True
                                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, trails[TRAIL.DNS][domain][0], trails[TRAIL.DNS][domain][1]))
                                             break
 
-                                    if any(len(part) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD for part in parts):
+                                    if not found and any(len(part) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD for part in parts):
                                         _ = None
 
                                         if len(parts) > 2:
@@ -203,7 +208,7 @@ def _process_packet(packet, sec, usec):
                                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, _, "suspicious long name", "(heuristic)"))
 
                             elif (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
-                                if not query.endswith(".in-addr.arpa"):  # reverse lookups
+                                if not (query.endswith(".in-addr.arpa") or query.endswith(".local")):  # reverse lookups
                                     if query not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[query][0] != sec / 3600:
                                         NO_SUCH_NAME_COUNTERS[query] = [sec / 3600, 1]
                                     else:

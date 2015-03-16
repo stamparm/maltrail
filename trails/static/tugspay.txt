@@ -4,7 +4,6 @@
 # Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=TrojanDownloader:Win32/Tugspay.A#tab=2
 
 54.213.138.138
-69.16.175.10
 54.201.5.113
 85.12.8.28
 82.12.5.27
