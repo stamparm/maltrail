@@ -14,6 +14,11 @@
 .ml
 .tk
 
+# Reference: https://thetinhat.com/tutorials/darknets/i2p.html
+# (note: just for lost (non-SOCKS) I2P domain lookups)
+
+.i2p
+
 # Reference: https://blog.malwarebytes.org/online-security/2014/09/malicious-activity-observed-in-new-top-level-domains/
 
 .pictures
