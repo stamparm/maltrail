@@ -1121,7 +1121,7 @@ function initDetails() {
                         .success(function(json) {
                             var span_ip = $("<span title=''/>").html(this.ip + " ");
 
-                            if (json.data.locations.length > 0) {
+                            if ((json.data.locations.length > 0) && (json.data.locations[0].country !== "ANO")) {
                                 IP_COUNTRY[this.ip] = json.data.locations[0].country.toLowerCase().split('-')[0];
                                 img = '<img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[this.ip] + '" title="' + IP_COUNTRY[this.ip].toUpperCase() + '" />';  // title="' + IP_COUNTRY[this.ip].toUpperCase() + '" 
                                 span_ip.tooltip(options);
