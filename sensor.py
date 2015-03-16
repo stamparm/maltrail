@@ -118,26 +118,28 @@ def _process_packet(packet, sec, usec):
                         else:
                             return
 
-                        path = path.split('?')[0]
-                        path = path.rstrip('/')
-                        paths = [path]
+                        url = "%s%s" % (host, path)
 
-                        _ = os.path.splitext(paths[-1])
+                        checks = [path.rstrip('/')]
+                        if '?' in path:
+                            checks.append(path.split('?')[0].rstrip('/'))
+
+                        _ = os.path.splitext(checks[-1])
                         if _[1]:
-                            paths.append(_[0])
+                            checks.append(_[0])
 
-                        if paths[-1].count('/') > 1:
-                            paths.append(paths[-1][:paths[-1].rfind('/')])
+                        if checks[-1].count('/') > 1:
+                            checks.append(checks[-1][:checks[-1].rfind('/')])
 
-                        for path in paths:
-                            if path and path in trails[TRAIL.URL]:
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, path, trails[TRAIL.URL][path][0], trails[TRAIL.URL][path][1]))
-                                break
-
-                            url = "%s%s" % (host, path)
-                            if url in trails[TRAIL.URL]:
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, url, trails[TRAIL.URL][url][0], trails[TRAIL.URL][url][1]))
-                                break
+                        for check in filter(None, checks):
+                            for _ in ("", host):
+                                check = "%s%s" % (_, check)
+                                if check in trails[TRAIL.URL]:
+                                    parts = url.split(check)
+                                    other = ("(%s)" % _ for _ in parts)
+                                    trail = check.join(other)
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, trails[TRAIL.URL][check][0], trails[TRAIL.URL][check][1]))
+                                    break
 
             elif protocol == socket.IPPROTO_UDP:  # UDP
                 i = iph_length + ETH_LENGTH
