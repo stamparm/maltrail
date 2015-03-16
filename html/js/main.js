@@ -2020,8 +2020,12 @@ function initVisual() {
         total["Events"] += total[key];
     }
 
+    sum = 0;
     for (var key in total)
-        $("#" + key.toLowerCase() + "_count").html(numberWithCommas(total[key]))
+        sum += total[key];
+
+    for (var key in total)
+        $("#" + key.toLowerCase() + "_count").html((sum > 0) ? numberWithCommas(total[key]) : '-')
 }
 
 function timestamp(str){
