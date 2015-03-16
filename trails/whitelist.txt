@@ -1,12 +1,7 @@
 # Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
 # See the file 'LICENSE' for copying permission
 
-# sometimes marked as malicious domains on various lists
-
-dl.dropboxusercontent.com
-s3.amazonaws.com
-
-# having suspicious long (sub)domain names (note: not whitelist-ing all related (e.g. URL) trails)
+# triggering suspicious long (sub)domain names (note: this is not whitelist-ing all related (e.g. URL) trails)
 
 gstatic.com
 akadns.net
@@ -39,5 +34,11 @@ bitdefender.net
 fastly.net
 cedexis-radar.net
 mailshell.net
+gexperiments1.com
 gexperiments2.com
 gexperiments3.com
+siteforce.com
+fbcdn.net
+ipv6test.net
+mailshell.net
+cloudapp.net
