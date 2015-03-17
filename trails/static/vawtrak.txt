@@ -11,3 +11,11 @@
 afg.com.tw
 countdown.com.tw
 miison.com.tw
+
+# Reference: http://www.rackspace.com/blog/malicious-email-campaign-spreads-vawtrak-malware/
+
+5.9.99.35
+91.220.131.69
+91.221.36.207
+savepic.su
+woevenglaref.ru
