@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.cyphort.com/babar-suspected-nation-state-spyware-spotlight/
+
+www.horizons-tourisme.com/_vti_bin/_vti_msc/bb/
+www.gezelimmi.com/wp-includes/misc/bb/

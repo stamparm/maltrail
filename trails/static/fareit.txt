@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.f-secure.com/weblog/archives/00002793.html
+
+angryflo.ru
+reggpower.su
+192.163.227.127
+184.107.242.162
+184.107.232.162
+168.144.134.129
