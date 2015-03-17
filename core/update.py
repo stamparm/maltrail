@@ -94,11 +94,25 @@ def update(server=None):
                     if not found:
                         print "[!] something went wrong during remote data retrieval ('%s')" % module.__url__
 
+        # basic cleanup
         for key in trails[TRAIL.URL].keys():
+            if key not in trails[TRAIL.URL]:
+                continue
             if '?' in key:
                 _ = trails[TRAIL.URL][key]
                 del trails[TRAIL.URL][key]
-                trails[TRAIL.URL][key.split('?')[0]] = _
+                key = key.split('?')[0]
+                trails[TRAIL.URL][key] = _
+            if '//' in key:
+                _ = trails[TRAIL.URL][key]
+                del trails[TRAIL.URL][key]
+                key = key.replace('//', '/')
+                trails[TRAIL.URL][key] = _
+            if key != key.lower():
+                _ = trails[TRAIL.URL][key]
+                del trails[TRAIL.URL][key]
+                key = key.lower()
+                trails[TRAIL.URL][key] = _
 
         read_whitelist()
 
