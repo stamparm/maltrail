@@ -104,7 +104,7 @@ def _process_packet(packet, sec, usec):
                         if index >= 0:
                             line = data[:index]
                             if line.count(' ') == 2 and " HTTP/" in line:
-                                path = line.split(' ')[1]
+                                path = line.split(' ')[1].lower()
                             else:
                                 return
                         else:
@@ -136,10 +136,14 @@ def _process_packet(packet, sec, usec):
                                 check = "%s%s" % (_, check)
                                 if check in trails[TRAIL.URL]:
                                     parts = url.split(check)
-                                    other = ("(%s)" % _ for _ in parts)
+                                    other = ("(%s)" % _ if _ else _ for _ in parts)
                                     trail = check.join(other)
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, trails[TRAIL.URL][check][0], trails[TRAIL.URL][check][1]))
-                                    break
+                                    return
+
+                        if url.endswith(".exe") and '.'.join(host.split('.')[-2:]) not in WHITELIST:
+                            trail = "(%s)exe" % url[:-len("exe")]
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious direct .exe download", "(heuristic)"))
 
             elif protocol == socket.IPPROTO_UDP:  # UDP
                 i = iph_length + ETH_LENGTH
@@ -165,7 +169,6 @@ def _process_packet(packet, sec, usec):
                         if qdcount > 0:
                             offset = 12
                             query =  ""
-                            found = False
 
                             while len(data) > offset:
                                 length = ord(data[offset])
@@ -193,16 +196,18 @@ def _process_packet(packet, sec, usec):
                                             else:
                                                 trail = "(%s)%s" % (query[:-len(domain)], domain)
 
-                                            found = True
                                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, trails[TRAIL.DNS][domain][0], trails[TRAIL.DNS][domain][1]))
-                                            break
+                                            return
 
-                                    if not found and any(len(part) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD for part in parts):
+                                    if any(len(part) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD for part in parts):
                                         _ = None
 
                                         if len(parts) > 2:
                                             if '.'.join(parts[-2:]) not in WHITELIST:
                                                 _ = "(%s.)%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
+                                        elif len(parts) == 2:
+                                            if '.'.join(parts) not in WHITELIST:
+                                                _ = "(%s.)%s" % (parts[0], parts[1])
                                         else:
                                             _ = query
 
