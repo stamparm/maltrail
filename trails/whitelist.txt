@@ -4,6 +4,8 @@
 localhost
 127.0.0.1
 
+# note: use second level domains in following sections as those are being checked for whitelist-ing in respective heuristic checks
+
 # triggering suspicious long (sub)domain names (note: this is not whitelist-ing all related (e.g. URL) trails)
 
 gstatic.com
@@ -52,3 +54,24 @@ elasticbeanstalk.com
 googledrive.com
 googlegroups.com
 senderbase.org
+e5.sk
+
+# to ignore in direct exe downloads
+
+windowsupdate.com
+adobe.com
+gvt1.com
+microsoft.com
+google.com
+macromedia.com
+real.com
+sun.com
+avast.com
+googleapis.com
+hp.com
+skype.com
+mcafee.com
+intel.com
+mozilla.net
+toshiba.com
+oracle.com
