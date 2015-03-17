@@ -55,6 +55,7 @@ googledrive.com
 googlegroups.com
 senderbase.org
 e5.sk
+ipv6test.com
 
 # to ignore in direct exe downloads
 
