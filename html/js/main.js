@@ -924,6 +924,11 @@ function initDetails() {
                         }
                         data = "<span title='" + data.split(common).join("").replace(/[()]/g, "") + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>" + common;
                     }
+                    else {
+                        var info = row[DATATABLES_COLUMNS.INFO];
+                        if (info.indexOf('suspicious') > -1)
+                            data = data.replace(/[()]/g, "");
+                    }
                     return data;
                 },
                 targets: [ DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.TRAIL, DATATABLES_COLUMNS.PROTO ]

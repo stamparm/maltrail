@@ -7,6 +7,7 @@ See the file 'LICENSE' for copying permission
 
 import mmap
 import os
+import re
 import socket
 import subprocess
 import struct
@@ -14,6 +15,7 @@ import sys
 import threading
 import time
 import traceback
+import urllib
 
 sys.dont_write_bytecode = True
 
@@ -34,7 +36,9 @@ from core.settings import NO_SUCH_NAME_PER_HOUR_THRESHOLD
 from core.settings import NO_SUCH_NAME_COUNTERS
 from core.settings import REGULAR_SLEEP_TIME
 from core.settings import SNAP_LEN
+from core.settings import SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS
 from core.settings import SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
+from core.settings import SUSPICIOUS_HTTP_QUERY_REGEX
 from core.settings import trails
 from core.settings import WHITELIST
 from core.update import update
@@ -115,6 +119,7 @@ def _process_packet(packet, sec, usec):
                             index = index + len("\r\nHost:")
                             host = data[index:data.find("\r\n", index)]
                             host = host.strip()
+                            host = re.sub(r":80\Z", "", host)
                         else:
                             return
 
@@ -141,9 +146,16 @@ def _process_packet(packet, sec, usec):
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, trails[TRAIL.URL][check][0], trails[TRAIL.URL][check][1]))
                                     return
 
-                        if url.endswith(".exe") and '.'.join(host.split('.')[-2:]) not in WHITELIST:
-                            trail = "(%s)exe" % url[:-len("exe")]
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious direct .exe download", "(heuristic)"))
+                        if re.search(SUSPICIOUS_HTTP_QUERY_REGEX, urllib.unquote(url)):
+                            trail = "%s(%s)" % (host, path)
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious query", "(heuristic)"))
+                            return
+
+                        if ('.') in url:
+                            extension = url[url.rindex('.') + 1:].lower()
+                            if extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and '.'.join(host.split('.')[-2:]) not in WHITELIST:
+                                trail = re.sub(r"(?i)(.*?)(\.%s)" % extension, "(\g<1>)\g<2>", url).replace("%20", " ")
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious direct .%s download" % extension, "(heuristic)"))
 
             elif protocol == socket.IPPROTO_UDP:  # UDP
                 i = iph_length + ETH_LENGTH
@@ -178,7 +190,7 @@ def _process_packet(packet, sec, usec):
                                 query += data[offset + 1:offset + length + 1] + '.'
                                 offset += length + 1
 
-                            if ' ' in query or '.' not in query:
+                            if ' ' in query or '.' not in query or query.endswith(".in-addr.arpa") or query.endswith(".local"):
                                 return
 
                             if ord(data[2]) == 0x01:  # standard query
@@ -194,35 +206,35 @@ def _process_packet(packet, sec, usec):
                                             if domain == query:
                                                 trail = domain
                                             else:
-                                                trail = "(%s)%s" % (query[:-len(domain)], domain)
+                                                _ = ".%s" % domain
+                                                trail = "(%s)%s" % (query[:-len(_)], _)
 
                                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, trails[TRAIL.DNS][domain][0], trails[TRAIL.DNS][domain][1]))
                                             return
 
                                     if any(len(part) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD for part in parts):
-                                        _ = None
+                                        trail = None
 
                                         if len(parts) > 2:
                                             if '.'.join(parts[-2:]) not in WHITELIST:
-                                                _ = "(%s.)%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
+                                                trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
                                         elif len(parts) == 2:
                                             if '.'.join(parts) not in WHITELIST:
-                                                _ = "(%s.)%s" % (parts[0], parts[1])
+                                                trail = "(%s).%s" % (parts[0], parts[1])
                                         else:
-                                            _ = query
+                                            trail = query
 
-                                        if _:
-                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, _, "suspicious long name", "(heuristic)"))
+                                        if trail:
+                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, "suspicious long name", "(heuristic)"))
 
                             elif (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
-                                if not (query.endswith(".in-addr.arpa") or query.endswith(".local")):  # reverse lookups
-                                    if query not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[query][0] != sec / 3600:
-                                        NO_SUCH_NAME_COUNTERS[query] = [sec / 3600, 1]
-                                    else:
-                                        NO_SUCH_NAME_COUNTERS[query][1] += 1
+                                if query not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[query][0] != sec / 3600:
+                                    NO_SUCH_NAME_COUNTERS[query] = [sec / 3600, 1]
+                                else:
+                                    NO_SUCH_NAME_COUNTERS[query][1] += 1
 
-                                        if NO_SUCH_NAME_COUNTERS[query][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD:
-                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "suspicious no such name", "(heuristic)"))
+                                    if NO_SUCH_NAME_COUNTERS[query][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD:
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "suspicious no such name", "(heuristic)"))
 
             elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
                 if dst_ip in trails[TRAIL.IP]:
