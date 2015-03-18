@@ -44,6 +44,8 @@ function getDemoCSV() {
     '"2015-03-10 01:37:18.511291" r2d2 68.12.104.178 59616 68.12.99.2 53 UDP DNS (c.ns.)tk "suspicious domain" (static)\n' +
     '"2015-03-10 01:37:18.511561" r2d2 68.12.104.178 51155 68.12.99.2 53 UDP DNS (d.ns.)tk "suspicious domain" (static)\n' +
     '"2015-03-10 01:37:18.511553" r2d2 68.12.104.178 51155 68.12.99.2 53 UDP DNS (d.ns.)tk "suspicious domain" (static)\n' +
+    '"2015-03-10 01:37:18.510703" r2d2 68.12.104.178 37135 68.12.99.2 53 UDP DNS bar(.foo) "suspicious domain" (static)\n' +
+    '"2015-03-10 01:37:18.510986" r2d2 68.12.104.178 40789 68.12.99.2 53 UDP DNS bar(.foo2) "suspicious domain" (static)\n' +
     '"2015-03-10 01:37:18.676654" r2d2 68.12.104.178 58296 68.12.99.2 53 UDP DNS (tracker.coppersurfer.)tk "suspicious domain" (static)\n' +
     '"2015-03-10 01:37:18.676647" r2d2 68.12.104.178 58296 68.12.99.2 53 UDP DNS (tracker.coppersurfer.)tk "suspicious domain" (static)\n' +
     '"2015-03-10 01:43:22.420630" r2d2 68.12.104.178 58967 81.2.199.97 53 UDP IP 81.2.199.97 asprox atrack.h3x.eu\n' +

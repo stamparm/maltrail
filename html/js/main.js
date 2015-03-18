@@ -915,14 +915,35 @@ function initDetails() {
             },
             {
                 render: function (data, type, row) {
+                    if (data.indexOf(',') > -1)
+                        data = "<span title='" + data + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
+                    return data;
+                },
+                targets: [ DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.PROTO ]
+            },
+            {
+                render: function (data, type, row) {
                     if (data.indexOf(',') > -1) {
                         var common = "";
+                        var left = false;
+
                         if (data.indexOf('(') > -1) {
-                            var _ = data.split(',')[0];
-                            if (_.indexOf('(') > -1)
-                                common = _.replace(/\([^)]+\)/g, "");
+                            var parts = data.split(',');
+                            for (var i = 0; i < parts.length; i++) {
+                                var index = parts[i].indexOf('(');
+                                if (index > -1) {
+                                    if (index === 0)
+                                        left = true;
+                                    common = parts[i].replace(/\([^)]+\)/g, "");
+                                    break;
+                                }
+                            }
                         }
-                        data = "<span title='" + data.split(common).join("").replace(/[()]/g, "") + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>" + common;
+
+                        if (left)
+                            data = "<span title='" + data.split(common).join("").replace(/[()]/g, "") + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>" + common;
+                        else
+                            data = common + "<span title='" + data.split(common).join("").replace(/[()]/g, "") + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
                     }
                     else {
                         var info = row[DATATABLES_COLUMNS.INFO];
@@ -931,7 +952,7 @@ function initDetails() {
                     }
                     return data;
                 },
-                targets: [ DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.TRAIL, DATATABLES_COLUMNS.PROTO ]
+                targets: [ DATATABLES_COLUMNS.TRAIL ]
             },
             {
                 render: function ( data, type, row ) {
