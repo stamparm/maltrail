@@ -13,7 +13,7 @@ from core.enums import TRAIL
 __type__ = (TRAIL.IP,)
 __url__ = "https://www.maxmind.com/en/anonymous_proxies"
 __check__ = "Anonymous Proxies "
-__info__ = "anonymous proxy"
+__info__ = "anonymous proxy (suspicious)"
 __reference__ = "maxmind.com"
 
 def fetch():

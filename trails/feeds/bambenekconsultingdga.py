@@ -21,6 +21,6 @@ def fetch():
 
     if __check__ in content:
         for match in re.finditer(r"(?m)^([^,\s]+),Domain used by ([^,]+) (DGA|-)", content):
-            retval[TRAIL.DNS][match.group(1)] = ("%s dga" % re.sub(r" DGA\Z", "", match.group(2)).lower(), __reference__)
+            retval[TRAIL.DNS][match.group(1)] = ("%s dga (malware)" % re.sub(r" DGA\Z", "", match.group(2)).lower(), __reference__)
 
     return retval

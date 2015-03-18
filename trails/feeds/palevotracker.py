@@ -13,7 +13,7 @@ from core.enums import TRAIL
 __type__ = (TRAIL.IP, TRAIL.DNS)
 __url__ = "https://palevotracker.abuse.ch/blocklists.php?download=combinedblocklist"
 __check__ = "Palevo"
-__info__ = "palevo"
+__info__ = "palevo (malware)"
 __reference__ = "palevotracker.abuse.ch"
 
 def fetch():

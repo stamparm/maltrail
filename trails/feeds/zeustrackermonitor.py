@@ -21,6 +21,6 @@ def fetch():
 
     if __check__ in content:
         for match in re.finditer(r'<td>([^<]+)</td><td><a href="/monitor.php\?host=([^"]+)', content):
-            retval[TRAIL.IP if re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", match.group(2)) else TRAIL.DNS][match.group(1)] = (match.group(2).lower() + " c&c", __reference__)
+            retval[TRAIL.IP if re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", match.group(2)) else TRAIL.DNS][match.group(1)] = (match.group(2).lower() + " (malware)", __reference__)
 
     return retval

@@ -21,6 +21,6 @@ def fetch():
 
     if __check__ in content:
         for match in re.finditer(r"(?m)^([\d.]+),IP used by ([^,]+) C&C", content):
-            retval[TRAIL.IP][match.group(1)] = (match.group(2).lower(), __reference__)
+            retval[TRAIL.IP][match.group(1)] = ("%s (malware)" % match.group(2).lower(), __reference__)
 
     return retval

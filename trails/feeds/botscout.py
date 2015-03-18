@@ -13,7 +13,7 @@ from core.enums import TRAIL
 __type__ = (TRAIL.IP,)
 __url__ = "http://www.botscout.com/last_caught_cache.htm"
 __check__ = "Bot Name"
-__info__ = "spam bot"
+__info__ = "spammer"
 __reference__ = "www.botscout.com"
 
 def fetch():

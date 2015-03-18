@@ -11,7 +11,7 @@ from core.enums import TRAIL
 __type__ = (TRAIL.IP,)
 __url__ = "https://check.torproject.org/cgi-bin/TorBulkExitList.py?ip=1.1.1.1"
 __check__ = "Tor exit nodes"
-__info__ = "tor exit node"
+__info__ = "tor exit node (suspicious)"
 __reference__ = "torproject.org"
 
 def fetch():

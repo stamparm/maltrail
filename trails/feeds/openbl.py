@@ -11,7 +11,7 @@ from core.enums import TRAIL
 __type__ = (TRAIL.IP,)
 __url__ = "http://www.openbl.org/lists/base.txt"
 __check__ = "source ip"
-__info__ = "abuser"
+__info__ = "attacker"
 __reference__ = "openbl.org"
 
 def fetch():

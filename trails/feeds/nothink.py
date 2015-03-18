@@ -11,7 +11,7 @@ from core.enums import TRAIL
 __type__ = (TRAIL.IP,)
 __url__ = "http://www.nothink.org/blacklist/blacklist_malware_irc.txt"
 __check__ = "Malware IRC"
-__info__ = "malware irc"
+__info__ = "malware"
 __reference__ = "nothink.org"
 
 def fetch():

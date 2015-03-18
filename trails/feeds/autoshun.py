@@ -22,6 +22,6 @@ def fetch():
             line = line.strip()
             if not line or line.startswith('#') or '.' not in line or "Shunlist" in line:
                 continue
-            retval[TRAIL.IP][line.split(",")[0]] = (line.split(",", 2)[-1].lower(), __reference__)
+            retval[TRAIL.IP][line.split(",")[0]] = ("%s (attacker)" % line.split(",", 2)[-1].lower(), __reference__)
 
     return retval

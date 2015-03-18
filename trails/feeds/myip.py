@@ -13,7 +13,7 @@ from core.enums import TRAIL
 __type__ = (TRAIL.IP,)
 __url__ = "https://myip.ms/files/blacklist/htaccess/latest_blacklist.txt"
 __check__ = "ADDRESSES DATABASE"
-__info__ = "spam bot or crawler"
+__info__ = "spammer or crawler"
 __reference__ = "myip.ms"
 
 def fetch():

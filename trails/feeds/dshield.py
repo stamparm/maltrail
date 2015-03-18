@@ -11,7 +11,7 @@ from core.enums import TRAIL
 __type__ = (TRAIL.DNS,)
 __url__ = "http://www.dshield.org/feeds/suspiciousdomains_High.txt"
 __check__ = "DShield.org"
-__info__ = "suspicious"
+__info__ = "suspicious domain"
 __reference__ = "dshield.org"
 
 def fetch():

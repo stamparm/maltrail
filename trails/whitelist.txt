@@ -94,3 +94,7 @@ xboxlive.com
 sourceforge.net
 filehippo.com
 symantecliveupdate.com
+ricoh.com
+7-zip.org
+notepad-plus-plus.org
+filehippo.com

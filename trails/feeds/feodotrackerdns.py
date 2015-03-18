@@ -11,7 +11,7 @@ from core.enums import TRAIL
 __type__ = (TRAIL.DNS,)
 __url__ = "https://feodotracker.abuse.ch/blocklist/?download=domainblocklist"
 __check__ = "Feodo"
-__info__ = "feodo"
+__info__ = "feodo (malware)"
 __reference__ = "feodotracker.abuse.ch"
 
 def fetch():

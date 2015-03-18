@@ -13,7 +13,7 @@ from core.enums import TRAIL
 __type__ = (TRAIL.IP,)
 __url__ = "http://atrack.h3x.eu/c2"
 __check__ = "ASPROX Tracker"
-__info__ = "asprox"
+__info__ = "asprox (malware)"
 __reference__ = "atrack.h3x.eu"
 
 def fetch():

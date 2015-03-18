@@ -10,7 +10,7 @@ from core.enums import TRAIL
 
 __type__ = (TRAIL.IP,)
 __url__ = "http://rules.emergingthreats.net/open/suricata/rules/compromised-ips.txt"
-__info__ = "compromised host"
+__info__ = "compromised host (suspicious)"
 __reference__ = "emergingthreats.net"
 
 def fetch():
