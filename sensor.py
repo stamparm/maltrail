@@ -38,7 +38,7 @@ from core.settings import REGULAR_SLEEP_TIME
 from core.settings import SNAP_LEN
 from core.settings import SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS
 from core.settings import SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
-from core.settings import SUSPICIOUS_HTTP_QUERY_REGEX
+from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEX
 from core.settings import trails
 from core.settings import WHITELIST
 from core.update import update
@@ -103,7 +103,7 @@ def _process_packet(packet, sec, usec):
                     h_size = ETH_LENGTH + iph_length + (tcph_length << 2)
                     data = packet[h_size:]
 
-                    if dst_port == 80 and len(data) > 0:
+                    if len(data) > 0 and "HTTP/" in data:
                         index = data.find("\r\n")
                         if index >= 0:
                             line = data[:index]
@@ -146,16 +146,16 @@ def _process_packet(packet, sec, usec):
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, trails[TRAIL.URL][check][0], trails[TRAIL.URL][check][1]))
                                     return
 
-                        if re.search(SUSPICIOUS_HTTP_QUERY_REGEX, urllib.unquote(url)):
+                        if re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)):
                             trail = "%s(%s)" % (host, path)
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious query", "(heuristic)"))
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
                             return
 
                         if ('.') in url:
                             extension = url[url.rindex('.') + 1:].lower()
                             if extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and '.'.join(host.split('.')[-2:]) not in WHITELIST:
-                                trail = re.sub(r"(?i)(.*?)(\.%s)" % extension, "(\g<1>)\g<2>", url).replace("%20", " ")
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious direct .%s download" % extension, "(heuristic)"))
+                                trail = "%s(%s)" % (host, path)
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "direct .%s download (suspicious)" % extension, "(heuristic)"))
 
             elif protocol == socket.IPPROTO_UDP:  # UDP
                 i = iph_length + ETH_LENGTH
@@ -225,7 +225,7 @@ def _process_packet(packet, sec, usec):
                                             trail = query
 
                                         if trail:
-                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, "suspicious long name", "(heuristic)"))
+                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, "long domain name (suspicious)", "(heuristic)"))
 
                             elif (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
                                 if query not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[query][0] != sec / 3600:
@@ -234,7 +234,7 @@ def _process_packet(packet, sec, usec):
                                     NO_SUCH_NAME_COUNTERS[query][1] += 1
 
                                     if NO_SUCH_NAME_COUNTERS[query][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD:
-                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "suspicious no such name", "(heuristic)"))
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "excessive no such domain name (suspicious)", "(heuristic)"))
 
             elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
                 if dst_ip in trails[TRAIL.IP]:
