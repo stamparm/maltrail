@@ -98,3 +98,5 @@ ricoh.com
 7-zip.org
 notepad-plus-plus.org
 filehippo.com
+nvidia.com
+lexmark.com

@@ -151,9 +151,9 @@ def _process_packet(packet, sec, usec):
                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
                             return
 
-                        if ('.') in url:
-                            extension = url[url.rindex('.') + 1:].lower()
-                            if extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and '.'.join(host.split('.')[-2:]) not in WHITELIST:
+                        if ('.') in path:
+                            name, extension = os.path.splitext(path.split('/')[-1])
+                            if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and '.'.join(host.split('.')[-2:]) not in WHITELIST and len(name) < 6:
                                 trail = "%s(%s)" % (host, path)
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "direct .%s download (suspicious)" % extension, "(heuristic)"))
 
@@ -212,7 +212,7 @@ def _process_packet(packet, sec, usec):
                                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, trails[TRAIL.DNS][domain][0], trails[TRAIL.DNS][domain][1]))
                                             return
 
-                                    if any(len(part) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD for part in parts):
+                                    if len(parts[0]) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD and '-' not in parts[0]:
                                         trail = None
 
                                         if len(parts) > 2:

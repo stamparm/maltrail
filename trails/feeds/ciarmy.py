@@ -10,7 +10,7 @@ from core.enums import TRAIL
 
 __type__ = (TRAIL.IP,)
 __url__ = "http://cinsscore.com/list/ci-badguys.txt"
-__info__ = "bad guy (attacker)"
+__info__ = "attacker"
 __reference__ = "cinsscore.com"
 
 def fetch():

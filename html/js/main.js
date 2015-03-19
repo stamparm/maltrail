@@ -31,7 +31,8 @@ var FLOOD_TRAIL_THRESHOLD = 50;
 var OTHER_COLOR = "#999";
 var THREAT_INFIX = "~>";
 var FLOOD_THREAT_PREFIX = "...";
-var DGA_THREAT_SUFFIX = " dga";
+var DGA_THREAT_INFIX = " dga ";
+var SUSPICIOUS_THREAT_INFIX = "suspicious";
 var FLOOD_UID_SUFFIX = "F0";
 var DGA_UID_SUFFIX = "D0";
 var THREAT_PIC_HASH = null; // e.g. https://robohash.org/ or https://flathash.com/
@@ -300,7 +301,7 @@ function escapeRegExp(str) {
 function getThreatUID(threat) {  // e.g. 192.168.0.1~>shv4.no-ip.biz
     if (threat.startsWith(FLOOD_THREAT_PREFIX))
         return pad(threat.hashCode().toString(16), 6).substr(0, 6) + FLOOD_UID_SUFFIX;
-    else if (threat.endsWith(DGA_THREAT_SUFFIX))
+    else if (threat.indexOf(DGA_THREAT_INFIX) > -1)
         return pad(threat.hashCode().toString(16), 6).substr(0, 6) + DGA_UID_SUFFIX;
     else
         return pad(threat.hashCode().toString(16), 8);
@@ -407,13 +408,12 @@ function init(url, from, to) {
                 _ = _.replace(/\([^)]+\)/g, "");
 
                 var flood = _ in _FLOOD_TRAILS;
-                var dga = info.endsWith(DGA_THREAT_SUFFIX);
+                var dga = info.indexOf(DGA_THREAT_INFIX) > -1;
 
                 if (flood)
                     threatText = FLOOD_THREAT_PREFIX + THREAT_INFIX + _;
-                else if (dga) {
+                else if (dga)
                     threatText = data[LOG_COLUMNS.SRC_IP] + THREAT_INFIX + info;
-                }
                 else
                     threatText = data[LOG_COLUMNS.SRC_IP] + THREAT_INFIX + _;
 
@@ -805,7 +805,9 @@ function _ipCompareValues(a, b) {
 function copyEllipsisToClipboard(event) {
     var target = $(event.target);
     var text = target.parent().title;
-    var common = target.parent().parent().html().replace(/<[^>]+>/g, "");
+    var html = target.parent().parent().html();
+    var left = html.startsWith('<');
+    var common = html.replace(/<[^>]+>/g, "");
     if (!text) {
         var tooltip = $(".ui-tooltip");
         if (tooltip.length > 0) {
@@ -813,8 +815,12 @@ function copyEllipsisToClipboard(event) {
 
             if (common) {
                 var _ = text.split(", ");
-                for (var i = 0; i < _.length; i++)
-                    _[i] += common;
+                for (var i = 0; i < _.length; i++) {
+                    if (left)
+                        _[i] += common;
+                    else
+                        _[i] = common + _[i];
+                }
                 text = _.join(", ");
             }
         }
@@ -923,7 +929,9 @@ function initDetails() {
             },
             {
                 render: function (data, type, row) {
-                    if (data.indexOf(',') > -1) {
+                    var info = row[DATATABLES_COLUMNS.INFO];
+
+                    if ((data.indexOf(',') > -1) || (info.indexOf(SUSPICIOUS_THREAT_INFIX) > -1) && (data.indexOf('(') > -1)) {
                         var common = "";
                         var left = false;
 
@@ -944,11 +952,6 @@ function initDetails() {
                             data = "<span title='" + data.split(common).join("").replace(/[()]/g, "") + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>" + common;
                         else
                             data = common + "<span title='" + data.split(common).join("").replace(/[()]/g, "") + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
-                    }
-                    else {
-                        var info = row[DATATABLES_COLUMNS.INFO];
-                        if (info.indexOf('suspicious') > -1)
-                            data = data.replace(/[()]/g, "");
                     }
                     return data;
                 },
