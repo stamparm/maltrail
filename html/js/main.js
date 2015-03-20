@@ -949,9 +949,9 @@ function initDetails() {
                         }
 
                         if (left)
-                            data = "<span title='" + data.split(common).join("").replace(/[()]/g, "") + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>" + common;
+                            data = "<span title='" + escapeHtml(data.split(common).join("").replace(/[()]/g, "")) + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>" + common;
                         else
-                            data = common + "<span title='" + data.split(common).join("").replace(/[()]/g, "") + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
+                            data = common + "<span title='" + escapeHtml(data.split(common).join("").replace(/[()]/g, "")) + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
                     }
                     return data;
                 },
