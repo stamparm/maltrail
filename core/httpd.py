@@ -27,6 +27,7 @@ import zlib
 
 from core.attribdict import AttribDict
 from core.common import addr_to_int
+from core.common import int_to_addr
 from core.common import make_mask
 from core.pbkdf2 import pbkdf2
 from core.settings import config
@@ -242,6 +243,16 @@ def start_httpd(address=None, port=None, join=True, pem=None):
                 self.send_response(httplib.OK)
                 self.send_header("Connection", "close")
                 self.send_header("Set-Cookie", "session=%s; expires=%s; path=/; HttpOnly" % (session_id, time.strftime(HTTP_TIME_FORMAT, time.gmtime(expiration))))
+                if '/' in netfilter:
+                    _ = netfilter.split('/')[-1]
+                    if _.isdigit() and int(_) >= 20:
+                        lower = addr_to_int(netfilter.split('/')[0])
+                        mask = make_mask(int(_))
+                        upper = lower | (0xffffffff ^ mask)
+                        _ = []
+                        for i in xrange(lower, upper + 1):
+                            _.append(int_to_addr(i))
+                        netfilter = ','.join(_)
                 SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilter": netfilter, "expiration": expiration})
             else:
                 time.sleep(UNAUTHORIZED_SLEEP_TIME)
@@ -314,7 +325,7 @@ def start_httpd(address=None, port=None, join=True, pem=None):
                             content = session.range_handle.read(size)
                         else:
                             content, addresses, netmasks = "", set(), []
-                            for _ in set(re.split(r";,", session.netfilter)):
+                            for _ in set(re.split(r"[;,]", session.netfilter)):
                                 if '/' in _:
                                     netmasks.append(_)
                                 elif re.search(r"\A[\d.]+\Z", _):
