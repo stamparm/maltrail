@@ -34,7 +34,7 @@ from core.settings import IPPROTO
 from core.settings import IPPROTO_LUT
 from core.settings import NO_SUCH_NAME_PER_HOUR_THRESHOLD
 from core.settings import NO_SUCH_NAME_COUNTERS
-from core.settings import REGULAR_SLEEP_TIME
+from core.settings import REGULAR_SENSOR_SLEEP_TIME
 from core.settings import SNAP_LEN
 from core.settings import SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS
 from core.settings import SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
@@ -358,7 +358,7 @@ def monitor():
                 write_block(_buffer, _n.value, "", BLOCK_MARKER.END)
                 _n.value = _n.value + 1
             while multiprocessing.active_children():
-                time.sleep(REGULAR_SLEEP_TIME)
+                time.sleep(REGULAR_SENSOR_SLEEP_TIME)
 
 def main():
     try:

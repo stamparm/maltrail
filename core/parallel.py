@@ -15,8 +15,9 @@ from core.enums import BLOCK_MARKER
 from core.settings import BLOCK_LENGTH
 from core.settings import BUFFER_LENGTH
 from core.settings import config
-from core.settings import REGULAR_SLEEP_TIME
-from core.settings import SHORT_SLEEP_TIME
+from core.settings import LOAD_TRAILS_RETRY_SLEEP_TIME
+from core.settings import REGULAR_SENSOR_SLEEP_TIME
+from core.settings import SHORT_SENSOR_SLEEP_TIME
 from core.settings import trails
 from core.settings import TRAILS_FILE
 
@@ -28,7 +29,7 @@ def read_block(buffer, i):
             return None
 
         while buffer[offset] == BLOCK_MARKER.WRITE:
-            time.sleep(SHORT_SLEEP_TIME)
+            time.sleep(SHORT_SENSOR_SLEEP_TIME)
 
         buffer[offset] = BLOCK_MARKER.READ
         buffer.seek(offset + 1)
@@ -46,7 +47,7 @@ def write_block(buffer, i, block, marker=None):
     offset = i * BLOCK_LENGTH % BUFFER_LENGTH
 
     while buffer[offset] == BLOCK_MARKER.READ:
-        time.sleep(SHORT_SLEEP_TIME)
+        time.sleep(SHORT_SENSOR_SLEEP_TIME)
 
     buffer[offset] = BLOCK_MARKER.WRITE
     buffer.seek(offset + 1)
@@ -63,10 +64,15 @@ def worker(buffer, n, offset, mod, process_packet):
 
     def update_timer():
         if (time.time() - os.stat(TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD:
-            _ = load_trails(True)
-            if _:
-                trails.clear()
-                trails.update(_)
+            _ = None
+            while True:
+                _ = load_trails(True)
+                if _:
+                    trails.clear()
+                    trails.update(_)
+                    break
+                else:
+                    time.sleep(LOAD_TRAILS_RETRY_SLEEP_TIME)
         threading.Timer(config.UPDATE_PERIOD, update_timer).start()
 
     update_timer()
@@ -76,7 +82,7 @@ def worker(buffer, n, offset, mod, process_packet):
         try:
             if (count % mod) == offset:
                 if count >= n.value:
-                    time.sleep(REGULAR_SLEEP_TIME)
+                    time.sleep(REGULAR_SENSOR_SLEEP_TIME)
                     continue
 
                 content = read_block(buffer, count)
