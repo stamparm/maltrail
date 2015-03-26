@@ -99,4 +99,7 @@ def load_trails(quiet=False):
         for type_ in retval:
             print "[i] %d %s trails loaded" % (len(retval[type_]), type_)
 
+    if sum(len(retval[_]) for _ in retval) == 0:
+        retval = {}
+
     return retval

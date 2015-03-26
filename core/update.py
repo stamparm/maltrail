@@ -56,15 +56,14 @@ def update(server=None):
 
     if not trails and ((not os.path.isfile(TRAILS_FILE) or (time.time() - os.stat(TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(TRAILS_FILE).st_size == 0)):
         trails = dict((getattr(TRAIL, _), {}) for _ in dir(TRAIL) if _ == _.upper())
-        print "[i] updating trails..."
 
         try:
             if not os.path.isdir(USERS_DIRECTORY):
                 os.makedirs(USERS_DIRECTORY, 0755)
-            with _fopen_trails("w+b") as f:
-                pass
         except Exception, ex:
-            exit("[!] something went wrong during trails file write '%s' ('%s')" % (TRAILS_FILE, ex))
+            exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIRECTORY, ex))
+
+        print "[i] updating trails..."
 
         sys.path.append(os.path.abspath(os.path.join(ROOT_DIR, "trails", "feeds")))
         filenames = glob.glob(os.path.join(sys.path[-1], "*.py"))
