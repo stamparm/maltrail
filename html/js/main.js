@@ -32,6 +32,7 @@ var OTHER_COLOR = "#999";
 var THREAT_INFIX = "~>";
 var FLOOD_THREAT_PREFIX = "...";
 var DGA_THREAT_INFIX = " dga ";
+var DATA_PARTS_DELIMITER = ", ";
 var SUSPICIOUS_THREAT_INFIX = "suspicious";
 var FLOOD_UID_SUFFIX = "F0";
 var DGA_UID_SUFFIX = "D0";
@@ -175,7 +176,7 @@ function initCalHeatmap() {
             label: {
                     position: "bottom"
             },
-            data: location.origin + "/heatmap?from={{d:start}}&to={{d:end}}",
+            data: location.origin + "/counts?from={{d:start}}&to={{d:end}}",
             highlight: [ "now" ],
             subDomainTitleFormat: {
                 empty: "No records on {date}",
@@ -498,7 +499,7 @@ function init(url, from, to) {
                     if (typeof data[column] !== "string") {
                         var _ = [];
                         for (var item in data[column])
-                            _.push(item);
+                            _.push(item.replace(DATA_PARTS_DELIMITER, DATA_PARTS_DELIMITER.replace(" ", "")));
                         if ((column === LOG_COLUMNS.SRC_PORT) || (column === LOG_COLUMNS.DST_PORT))
                             _.sort(function(a, b) {
                                 a = parseInt(a);
@@ -513,7 +514,7 @@ function init(url, from, to) {
                             })
                         else
                             _.sort();
-                        data[column] = _.join(", ");
+                        data[column] = _.join(DATA_PARTS_DELIMITER);
                     }
                 }
 
@@ -814,14 +815,14 @@ function copyEllipsisToClipboard(event) {
             text = tooltip.html().replace(/<[^>]+>/g, "");
 
             if (common) {
-                var _ = text.split(", ");
+                var _ = text.split(DATA_PARTS_DELIMITER);
                 for (var i = 0; i < _.length; i++) {
                     if (left)
                         _[i] += common;
                     else
                         _[i] = common + _[i];
                 }
-                text = _.join(", ");
+                text = _.join(DATA_PARTS_DELIMITER);
             }
         }
         tooltip.remove();
@@ -936,13 +937,13 @@ function initDetails() {
                         var left = false;
 
                         if (data.indexOf('(') > -1) {
-                            var parts = data.split(',');
+                            var parts = data.split(DATA_PARTS_DELIMITER);
                             for (var i = 0; i < parts.length; i++) {
                                 var index = parts[i].indexOf('(');
                                 if (index > -1) {
                                     if (index === 0)
                                         left = true;
-                                    common = parts[i].replace(/\([^)]+\)/g, "");
+                                    common = parts[i].replace(/\(.+\)/g, "");
                                     break;
                                 }
                             }
@@ -959,7 +960,7 @@ function initDetails() {
             },
             {
                 render: function ( data, type, row ) {
-                    return data.length + '<span class="hidden">' + data.join(", ") + '</span>';
+                    return data.length + '<span class="hidden">' + data.join(DATA_PARTS_DELIMITER) + '</span>';
                 },
                 targets: DATATABLES_COLUMNS.EVENTS
             },

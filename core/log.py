@@ -41,27 +41,32 @@ def safe_value(value):
         retval = "\"%s\"" % retval
     return retval
 
-def log_event(event_tuple, remote_host=None, remote_port=None):
+def log_event(event_tuple):
     sec, usec = event_tuple[0], event_tuple[1]
     localtime = "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)
     event = "%s %s %s\n" % (safe_value(localtime), safe_value(config.SENSOR_NAME), " ".join(safe_value(_) for _ in event_tuple[2:]))
-    if remote_host and remote_port:
+    if config.LOG_SERVER:
+        remote_host, remote_port = config.LOG_SERVER.split(':')
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.sendto(event, (remote_host, remote_port))
+        s.sendto("%s %s" % (sec, event), (remote_host, int(remote_port)))
     else:
         handle = get_log_handle(sec)
         os.write(handle, event)
 
-def start_logd(address=None, port=None, join=True):
+def start_logd(address=None, port=None, join=False):
     class ThreadingUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
         pass
 
     class UDPHandler(SocketServer.BaseRequestHandler):
         def handle(self):
             data, _ = self.request
-            print data
+            sec, event = data.split(" ", 1)
+            handle = get_log_handle(int(sec))
+            os.write(handle, event)
 
     server = SocketServer.UDPServer((address, port), UDPHandler)
+
+    print "[i] running UDP server at '%s:%d'" % (server.server_address[0], server.server_address[1])
 
     if join:
         server.serve_forever()

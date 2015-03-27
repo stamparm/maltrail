@@ -26,10 +26,11 @@ def retrieve_content(url, data=None):
     """
 
     try:
-        req = urllib2.Request("".join(url[i].replace(' ', "%20") if i > url.find('?') else url[i] for i in xrange(len(url))), data, { "User-agent": NAME, "Accept-encoding": "gzip, deflate" })
+        req = urllib2.Request("".join(url[i].replace(' ', "%20") if i > url.find('?') else url[i] for i in xrange(len(url))), data, {"User-agent": NAME, "Accept-encoding": "gzip, deflate"})
         resp = urllib2.urlopen(req, timeout=TIMEOUT)
         retval = resp.read()
         encoding = resp.headers.get("Content-Encoding")
+
         if encoding:
             if encoding.lower() == "deflate":
                 data = StringIO.StringIO(zlib.decompress(retval, -15))
@@ -39,6 +40,7 @@ def retrieve_content(url, data=None):
             retval = data.read()
     except Exception, ex:
         retval = ex.read() if hasattr(ex, "read") else getattr(ex, "msg", str())
+
     return retval or ""
 
 def check_sudo():

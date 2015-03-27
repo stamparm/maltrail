@@ -47,6 +47,7 @@ HOSTNAME = socket.gethostname()
 DISABLED_CONTENT_EXTENSIONS = (".py", ".pyc", ".md", ".txt", ".bak", ".conf", ".zip", "~")
 LOW_PRIORITY_INFO_KEYWORDS = ("suspicious", "attacker", "abuser", "malicious", "dnspod")
 SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = {"apk", "exe", "scr"}
+SUSPICIOUS_FILENAMES = {"gate.php"}
 SUSPICIOUS_HTTP_REQUEST_REGEX = r"(?i)(information_schema|sysdatabases|<script|\balert\(|xp_cmdshell|/etc/passwd|\bsleep\(|\bconvert\(|varchar|\bunion\s+(all\s+)?select\b)"
 SESSIONS = {}
 NO_SUCH_NAME_COUNTERS = {}  # this won't be (expensive) shared in multiprocessing run (hence, the threshold will effectively be n-times higher)
@@ -110,6 +111,7 @@ def read_config():
         try:
             array = None
             content = open(CONFIG_FILE, "rb").read()
+
             for line in content.split("\n"):
                 line = re.sub(r"#.+", "", line)
                 if not line.strip():
@@ -141,30 +143,32 @@ def read_config():
                             value = value.replace(match.group(0), os.environ.get(match.group(1), match.group(0)))
                     if subprocess.mswindows and "://" not in value:
                         value = value.replace("/", "\\")
+
                 config[name] = value
 
         except (IOError, OSError):
             pass
 
-        for option in ("MONITOR_INTERFACE", "RING_BUFFER", "LOG_DIRECTORY"):
+        for option in ("MONITOR_INTERFACE", "CAPTURE_BUFFER", "LOG_DIRECTORY"):
             if not option in config:
                 exit("[!] missing mandatory option '%s' in configuration file '%s'" % (option, CONFIG_FILE))
 
-        if config.RING_BUFFER:
-            if config.RING_BUFFER.isdigit():
-                BUFFER_LENGTH = int(config.RING_BUFFER)
-            elif re.search(r"\d+%", config.RING_BUFFER):
+        if config.CAPTURE_BUFFER:
+            if config.CAPTURE_BUFFER.isdigit():
+                BUFFER_LENGTH = int(config.CAPTURE_BUFFER)
+            elif re.search(r"\d+%", config.CAPTURE_BUFFER):
                 physmem = _get_total_physmem()
 
                 if physmem:
-                    BUFFER_LENGTH = physmem * int(re.search(r"(\d+)%", config.RING_BUFFER).group(1)) / 100
+                    BUFFER_LENGTH = physmem * int(re.search(r"(\d+)%", config.CAPTURE_BUFFER).group(1)) / 100
                 else:
-                    exit("[!] unable to determine total physical memory. Please use absolute value for 'memory_status'")
+                    exit("[!] unable to determine total physical memory. Please use absolute value for 'CAPTURE_BUFFER'")
 
             BUFFER_LENGTH = BUFFER_LENGTH / BLOCK_LENGTH * BLOCK_LENGTH
 
 def read_whitelist():
     WHITELIST.clear()
+
     _ = os.path.abspath(os.path.join(ROOT_DIR, "trails", "whitelist.txt"))
     if os.path.isfile(_):
         with open(_, "r") as f:

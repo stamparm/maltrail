@@ -16,6 +16,7 @@ import threading
 import time
 import traceback
 import urllib
+import urlparse
 
 sys.dont_write_bytecode = True
 
@@ -32,12 +33,13 @@ from core.settings import config
 from core.settings import ETH_LENGTH
 from core.settings import IPPROTO
 from core.settings import IPPROTO_LUT
-from core.settings import NO_SUCH_NAME_PER_HOUR_THRESHOLD
 from core.settings import NO_SUCH_NAME_COUNTERS
+from core.settings import NO_SUCH_NAME_PER_HOUR_THRESHOLD
 from core.settings import REGULAR_SENSOR_SLEEP_TIME
 from core.settings import SNAP_LEN
 from core.settings import SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS
 from core.settings import SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
+from core.settings import SUSPICIOUS_FILENAMES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEX
 from core.settings import trails
 from core.settings import WHITELIST
@@ -146,16 +148,22 @@ def _process_packet(packet, sec, usec):
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, trails[TRAIL.URL][check][0], trails[TRAIL.URL][check][1]))
                                     return
 
-                        if re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)):
-                            trail = "%s(%s)" % (host, path)
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
-                            return
-
-                        if ('.') in path:
-                            name, extension = os.path.splitext(path.split('/')[-1])
-                            if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and '.'.join(host.split('.')[-2:]) not in WHITELIST and len(name) < 6:
+                        if config.USE_HEURISTICS:
+                            if re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)):
                                 trail = "%s(%s)" % (host, path)
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "direct .%s download (suspicious)" % extension, "(heuristic)"))
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
+                                return
+
+                            if ('.') in path:
+                                _ = urlparse.urlparse(url)
+                                filename = _.path.split('/')[-1]
+                                name, extension = os.path.splitext(filename)
+                                if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and '.'.join(host.split('.')[-2:]) not in WHITELIST and len(name) < 6:
+                                    trail = "%s(%s)" % (host, path)
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "direct .%s download (suspicious)" % extension, "(heuristic)"))
+                                elif filename in SUSPICIOUS_FILENAMES:
+                                    trail = "%s(%s)" % (host, path)
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious page", "(heuristic)"))
 
             elif protocol == socket.IPPROTO_UDP:  # UDP
                 i = iph_length + ETH_LENGTH
@@ -212,7 +220,7 @@ def _process_packet(packet, sec, usec):
                                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, trails[TRAIL.DNS][domain][0], trails[TRAIL.DNS][domain][1]))
                                             return
 
-                                    if len(parts[0]) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD and '-' not in parts[0]:
+                                    if config.USE_HEURISTICS and len(parts[0]) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD and '-' not in parts[0]:
                                         trail = None
 
                                         if len(parts) > 2:
@@ -227,7 +235,7 @@ def _process_packet(packet, sec, usec):
                                         if trail:
                                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, "long domain name (suspicious)", "(heuristic)"))
 
-                            elif (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
+                            elif config.USE_HEURISTICS and (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
                                 if query not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[query][0] != sec / 3600:
                                     NO_SUCH_NAME_COUNTERS[query] = [sec / 3600, 1]
                                 else:
@@ -255,7 +263,7 @@ def init():
     global _datalink
 
     def update_timer():
-        _ = update(server=config.SERVER_UPDATE)
+        _ = update(server=config.UPDATE_SERVER)
 
         if _:
             trails.clear()

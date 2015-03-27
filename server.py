@@ -13,6 +13,7 @@ import traceback
 sys.dont_write_bytecode = True
 
 from core.httpd import start_httpd
+from core.log import start_logd
 from core.settings import config
 from core.settings import NAME
 from core.update import update
@@ -38,8 +39,11 @@ def main():
 
     update_timer()
 
+    if config.UDP_ADDRESS and config.UDP_PORT:
+        start_logd(address=config.UDP_ADDRESS, port=config.UDP_PORT, join=False)
+
     try:
-        start_httpd(address=config.HTTP_ADDRESS, port=config.HTTP_PORT, pem=config.SSL_PEM if config.USE_SSL else None)
+        start_httpd(address=config.HTTP_ADDRESS, port=config.HTTP_PORT, pem=config.SSL_PEM if config.USE_SSL else None, join=True)
     except KeyboardInterrupt:
         print "\r[x] stopping (Ctrl-C pressed)"
 

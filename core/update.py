@@ -45,7 +45,7 @@ def update(server=None):
     trails = {}
 
     if server:
-        print "[i] retrieving trails from provided 'server_update' server..."
+        print "[i] retrieving trails from provided 'UPDATE_SERVER' server..."
         _ = retrieve_content(server)
         if not _:
             print "[!] unable to retrieve data from '%s'" % server

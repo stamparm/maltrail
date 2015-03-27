@@ -43,7 +43,7 @@ from core.settings import SESSIONS
 from core.settings import TRAILS_FILE
 from core.settings import UNAUTHORIZED_SLEEP_TIME
 
-def start_httpd(address=None, port=None, join=True, pem=None):
+def start_httpd(address=None, port=None, join=False, pem=None):
     """
     Starts HTTP server
     """
@@ -378,8 +378,8 @@ def start_httpd(address=None, port=None, join=True, pem=None):
 
             return content
 
-        def _heatmap(self, params):
-            heatmap = {}
+        def _counts(self, params):
+            counts = {}
 
             session = self.get_session()
 
@@ -421,11 +421,11 @@ def start_httpd(address=None, port=None, join=True, pem=None):
                             content = f.read(io.DEFAULT_BUFFER_SIZE)
                             if size >= io.DEFAULT_BUFFER_SIZE:
                                 total = 1.0 * content.count('\n') * size / io.DEFAULT_BUFFER_SIZE
-                                heatmap[timestamp] = int(round(total / 100) * 100)
+                                counts[timestamp] = int(round(total / 100) * 100)
                             else:
-                                heatmap[timestamp] = content.count('\n')
+                                counts[timestamp] = content.count('\n')
 
-            return json.dumps(heatmap)
+            return json.dumps(counts)
 
     class SSLReqHandler(ReqHandler):
         def setup(self):
@@ -437,7 +437,8 @@ def start_httpd(address=None, port=None, join=True, pem=None):
         server = SSLThreadingServer((address or '', int(port) if port else None), pem, SSLReqHandler)
     else:
         server = ThreadingServer((address or '', int(port) if port else None), ReqHandler)
-    print("[i] running HTTP%s server at '%s:%d'" % ('S' if pem else "", server.server_address[0], server.server_address[1]))
+
+    print "[i] running HTTP%s server at '%s:%d'" % ('S' if pem else "", server.server_address[0], server.server_address[1])
 
     if join:
         server.serve_forever()
