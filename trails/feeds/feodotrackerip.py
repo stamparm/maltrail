@@ -6,16 +6,14 @@ See the file 'LICENSE' for copying permission
 """
 
 from core.common import retrieve_content
-from core.enums import TRAIL
 
-__type__ = (TRAIL.IP,)
 __url__ = "https://feodotracker.abuse.ch/blocklist/?download=ipblocklist"
 __check__ = "Feodo"
 __info__ = "feodo (malware)"
 __reference__ = "feodotracker.abuse.ch"
 
 def fetch():
-    retval = dict((_, {}) for _ in __type__)
+    retval = {}
     content = retrieve_content(__url__)
 
     if __check__ in content:
@@ -23,6 +21,6 @@ def fetch():
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
-            retval[TRAIL.IP][line] = (__info__, __reference__)
+            retval[line] = (__info__, __reference__)
 
     return retval

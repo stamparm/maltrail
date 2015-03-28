@@ -22,7 +22,6 @@ class IPRangeDict(dict):
 
     def _addr_to_int(self, value):
         _ = value.split('.')
-
         return (long(_[0]) << 24) + (long(_[1]) << 16) + (long(_[2]) << 8) + long(_[3])
 
     def __getitem__(self, ip_address):
@@ -40,16 +39,14 @@ class IPRangeDict(dict):
 
     def __setitem__(self, ip_range, value):
         start, end = ip_range
+        entry = (self._addr_to_int(start), self._addr_to_int(end), value)
         key = self._get_key(start)
         last_key = self._get_key(end)
 
         while key <= last_key:
             self.store.setdefault(key, [])
-            self.store[key].append((self._addr_to_int(start), self._addr_to_int(end), value))
+            self.store[key].append(entry)
             key += 1
 
     def __contains__(self, ip_address):
-        return self._get_key(ip_address) in self.store
-
-    def has_key(self, ip_address):
-        return self._get_key(ip_address) in self.store
+        return self[ip_address] is not None

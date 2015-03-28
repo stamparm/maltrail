@@ -95,10 +95,10 @@ def _process_packet(packet, sec, usec):
                 src_port, dst_port, _, _, doff_reserved, flags = struct.unpack("!HHLLBB", packet[i:i+14])
 
                 if flags == 2:  # SYN set (only)
-                    if dst_ip in trails[TRAIL.IP]:
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, dst_ip, trails[TRAIL.IP][dst_ip][0], trails[TRAIL.IP][dst_ip][1]))
-                    elif src_ip in trails[TRAIL.IP]:
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, src_ip, trails[TRAIL.IP][src_ip][0], trails[TRAIL.IP][src_ip][1]))
+                    if dst_ip in trails:
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]))
+                    elif src_ip in trails:
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]))
 
                 if flags & 8 != 0:  # PSH set
                     tcph_length = doff_reserved >> 4
@@ -141,11 +141,11 @@ def _process_packet(packet, sec, usec):
                         for check in filter(None, checks):
                             for _ in ("", host):
                                 check = "%s%s" % (_, check)
-                                if check in trails[TRAIL.URL]:
+                                if check in trails:
                                     parts = url.split(check)
                                     other = ("(%s)" % _ if _ else _ for _ in parts)
                                     trail = check.join(other)
-                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, trails[TRAIL.URL][check][0], trails[TRAIL.URL][check][1]))
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, trails[check][0], trails[check][1]))
                                     return
 
                         if config.USE_HEURISTICS:
@@ -174,10 +174,10 @@ def _process_packet(packet, sec, usec):
                 src_port, dst_port = struct.unpack("!HH", _)
 
                 if src_port != 53:
-                    if dst_ip in trails[TRAIL.IP]:
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.IP, dst_ip, trails[TRAIL.IP][dst_ip][0], trails[TRAIL.IP][dst_ip][1]))
-                    elif src_ip in trails[TRAIL.IP]:
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.IP, src_ip, trails[TRAIL.IP][src_ip][0], trails[TRAIL.IP][src_ip][1]))
+                    if dst_ip in trails:
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]))
+                    elif src_ip in trails:
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]))
 
                 if dst_port == 53 or src_port == 53:
                     h_size = ETH_LENGTH + iph_length + 8
@@ -210,14 +210,14 @@ def _process_packet(packet, sec, usec):
 
                                     for i in xrange(0, len(parts)):
                                         domain = '.'.join(parts[i:])
-                                        if domain in trails[TRAIL.DNS]:
+                                        if domain in trails:
                                             if domain == query:
                                                 trail = domain
                                             else:
                                                 _ = ".%s" % domain
                                                 trail = "(%s)%s" % (query[:-len(_)], _)
 
-                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, trails[TRAIL.DNS][domain][0], trails[TRAIL.DNS][domain][1]))
+                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, trails[domain][0], trails[domain][1]))
                                             return
 
                                     if config.USE_HEURISTICS and len(parts[0]) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD and '-' not in parts[0]:
@@ -245,10 +245,10 @@ def _process_packet(packet, sec, usec):
                                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "excessive no such domain name (suspicious)", "(heuristic)"))
 
             elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
-                if dst_ip in trails[TRAIL.IP]:
-                    log_event((sec, usec, src_ip, '-', dst_ip, '-', IPPROTO_LUT[protocol], TRAIL.IP, dst_ip, trails[TRAIL.IP][dst_ip][0], trails[TRAIL.IP][dst_ip][1]))
-                elif src_ip in trails[TRAIL.IP]:
-                    log_event((sec, usec, src_ip, '-', dst_ip, '-', IPPROTO_LUT[protocol], TRAIL.IP, src_ip, trails[TRAIL.IP][src_ip][0], trails[TRAIL.IP][src_ip][1]))
+                if dst_ip in trails:
+                    log_event((sec, usec, src_ip, '-', dst_ip, '-', IPPROTO_LUT[protocol], TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]))
+                elif src_ip in trails:
+                    log_event((sec, usec, src_ip, '-', dst_ip, '-', IPPROTO_LUT[protocol], TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]))
 
     except Exception, ex:
         print "[x] '%s'" % ex

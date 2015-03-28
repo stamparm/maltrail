@@ -8,16 +8,14 @@ See the file 'LICENSE' for copying permission
 import re
 
 from core.common import retrieve_content
-from core.enums import TRAIL
 
-__type__ = (TRAIL.URL,)
 __url__ = "https://openphish.com/feed.txt"
 __check__ = "http://"
 __info__ = "phishing"
 __reference__ = "openphish.com"
 
 def fetch():
-    retval = dict((_, {}) for _ in __type__)
+    retval = {}
     content = retrieve_content(__url__)
 
     if __check__ in content:
@@ -28,6 +26,6 @@ def fetch():
             if '://' in line:
                 line = re.search(r"://(.*)", line).group(1)
             line = line.rstrip('/')
-            retval[TRAIL.URL][line] = (__info__, __reference__)
+            retval[line] = (__info__, __reference__)
 
     return retval

@@ -55,8 +55,6 @@ def update(server=None):
             trails = load_trails()
 
     if not trails and ((not os.path.isfile(TRAILS_FILE) or (time.time() - os.stat(TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(TRAILS_FILE).st_size == 0)):
-        trails = dict((getattr(TRAIL, _), {}) for _ in dir(TRAIL) if _ == _.upper())
-
         try:
             if not os.path.isdir(USERS_DIRECTORY):
                 os.makedirs(USERS_DIRECTORY, 0755)
@@ -82,59 +80,52 @@ def update(server=None):
             for name, function in inspect.getmembers(module, inspect.isfunction):
                 if name == "fetch":
                     print(" [o] '%s'" % module.__url__)
-                    found = False
                     results = function()
-                    for key in results:
-                        if results[key]:
-                            found = True
-                            for item in results[key].items():
-                                if not (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) and item[0] in trails[key]):
-                                    trails[key][item[0]] = item[1]
-                    if not found:
+                    for item in results.items():
+                        if not (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) and item[0] in trails):
+                            trails[item[0]] = item[1]
+                    if not results:
                         print "[!] something went wrong during remote data retrieval ('%s')" % module.__url__
 
         # basic cleanup
-        for key in trails[TRAIL.URL].keys():
-            if key not in trails[TRAIL.URL]:
+        for key in trails.keys():
+            if key not in trails:
                 continue
             if '?' in key:
-                _ = trails[TRAIL.URL][key]
-                del trails[TRAIL.URL][key]
+                _ = trails[key]
+                del trails[key]
                 key = key.split('?')[0]
-                trails[TRAIL.URL][key] = _
+                trails[key] = _
             if '//' in key:
-                _ = trails[TRAIL.URL][key]
-                del trails[TRAIL.URL][key]
+                _ = trails[key]
+                del trails[key]
                 key = key.replace('//', '/')
-                trails[TRAIL.URL][key] = _
+                trails[key] = _
             if key != key.lower():
-                _ = trails[TRAIL.URL][key]
-                del trails[TRAIL.URL][key]
+                _ = trails[key]
+                del trails[key]
                 key = key.lower()
-                trails[TRAIL.URL][key] = _
+                trails[key] = _
 
         read_whitelist()
 
-        for type_ in trails:
-            for key in trails[type_].keys():
-                if key in WHITELIST:
-                    del trails[type_][key]
-                else:
-                    try:
-                        key.decode("utf8")
-                        trails[type_][key][0].decode("utf8")
-                        trails[type_][key][1].decode("utf8")
-                    except UnicodeDecodeError:
-                        del trails[type_][key]
+        for key in trails.keys():
+            if key in WHITELIST:
+                del trails[key]
+            else:
+                try:
+                    key.decode("utf8")
+                    trails[key][0].decode("utf8")
+                    trails[key][1].decode("utf8")
+                except UnicodeDecodeError:
+                    del trails[key]
 
         try:
-            if sum(len(trails[_]) for _ in trails) > 0:
+            if trails:
                 with _fopen_trails("w+b") as f:
                     writer = csv.writer(f, delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
-                    writer.writerow(("type", "trail", "info", "reference"))
-                    for type_ in trails:
-                        for trail in sorted(trails[type_].keys()):
-                            writer.writerow((type_, trail, trails[type_][trail][0], trails[type_][trail][1]))
+                    for trail in sorted(trails.keys()):
+                        writer.writerow((trail, trails[trail][0], trails[trail][1]))
 
         except Exception, ex:
             print "[!] something went wrong during trails file write '%s' ('%s')" % (TRAILS_FILE, ex)

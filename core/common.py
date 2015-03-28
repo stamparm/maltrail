@@ -84,24 +84,20 @@ def load_trails(quiet=False):
     if not quiet:
         print "[i] loading trails file..."
 
-    retval = dict((getattr(TRAIL, _), {}) for _ in dir(TRAIL) if _ == _.upper())
+    retval = {}
 
     try:
         with open(TRAILS_FILE, "rb") as f:
             reader = csv.reader(f, delimiter=',', quotechar='\"')
-            reader.next()  # discard first (header) line
             for row in reader:
-                type_, trail, info, reference = row
-                retval[type_][trail] = (info, reference)
+                if row.strip():
+                    trail, info, reference = row
+                    retval[trail] = (info, reference)
 
     except Exception, ex:
         exit("[x] something went wrong during trails file read '%s' ('%s')" % (TRAILS_FILE, ex))
 
     if not quiet:
-        for type_ in retval:
-            print "[i] %d %s trails loaded" % (len(retval[type_]), type_)
-
-    if sum(len(retval[_]) for _ in retval) == 0:
-        retval = {}
+        print "[i] %d trails loaded" % len(retval)
 
     return retval
