@@ -812,7 +812,7 @@ function copyEllipsisToClipboard(event) {
     if (!text) {
         var tooltip = $(".ui-tooltip");
         if (tooltip.length > 0) {
-            text = tooltip.html().replace(/<[^>]+>/g, "");
+            text = tooltip.text();
 
             if (common) {
                 var _ = text.split(DATA_PARTS_DELIMITER);
@@ -932,7 +932,7 @@ function initDetails() {
                 render: function (data, type, row) {
                     var info = row[DATATABLES_COLUMNS.INFO];
 
-                    if ((data.indexOf(',') > -1) || (info.indexOf(SUSPICIOUS_THREAT_INFIX) > -1) && (data.indexOf('(') > -1)) {
+                    if ((data.indexOf(',') > -1) || ((info.indexOf(SUSPICIOUS_THREAT_INFIX) > -1) || data.length > 80) && (data.indexOf('(') > -1)) {
                         var common = "";
                         var left = false;
 
@@ -950,9 +950,9 @@ function initDetails() {
                         }
 
                         if (left)
-                            data = "<span title='" + escapeHtml(data.split(common).join("").replace(/[()]/g, "")) + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>" + common;
+                            data = "<span title=\"" + decodeURIComponent(data.split(common).join("").replace(/[()]/g, "")).replace(/"/g, '%22') + "\" onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>" + common;
                         else
-                            data = common + "<span title='" + escapeHtml(data.split(common).join("").replace(/[()]/g, "")) + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
+                            data = common + "<span title=\"" + decodeURIComponent(data.split(common).join("").replace(/[()]/g, "")).replace(/"/g, '%22') + "\" onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
                     }
                     return data;
                 },
