@@ -7,6 +7,7 @@ ip4.me
 ip-addr.es
 ipaddress.com
 ipinfo.info
+ipinfo.io
 ipleak.net
 myipinfo.net
 smart-ip.net

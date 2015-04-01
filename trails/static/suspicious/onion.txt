@@ -14,6 +14,32 @@ tor2web.blutmagie.de
 tor2web.org
 tor2web.ru
 
-# (note: just for lost (non-SOCKS) ONION domain lookups)
+# Reference: http://www.emergingthreats.net/products/etpro-ruleset/daily-ruleset-update-summary/daily-ruleset-update-summary-2015/03/11
+# Reference: http://www.emergingthreats.net/products/etpro-ruleset/daily-ruleset-update-summary/daily-ruleset-update-summary-2015/03/18
+
+t2w.pw
+toraccess.org
+onion.to
+forepaytobb.com
+onion.ca
+onion.sh
+onion.lu
+torwalletpay.com
+welcomoptions.com
+visatastor.com
+drezdonhoster.com
+tor4free.org
+tordomain.org
+welcome2tor.org
+torpovider.org
+way2tor.com
+torgateway.org
+tor-explorer.org
+2kjb9.net
+2kjb10.net
+42k0b13.net
+42kjb11.net
+
+# (note: just for (non-SOCKS) ONION domain lookups)
 
 .onion

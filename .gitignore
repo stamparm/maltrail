@@ -1,4 +1,2 @@
-*.py text eol=lf
-
-*.pyc
+*.py[cod]
 *~

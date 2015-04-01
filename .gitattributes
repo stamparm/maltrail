@@ -1,1 +1,7 @@
 *.py text eol=lf
+*.txt text eol=lf
+*.csv text eol=lf
+*.js text eol=lf
+*.ccs text eol=lf
+*.css text eol=lf
+*.html text eol=lf
