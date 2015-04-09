@@ -90,7 +90,7 @@ def load_trails(quiet=False):
         with open(TRAILS_FILE, "rb") as f:
             reader = csv.reader(f, delimiter=',', quotechar='\"')
             for row in reader:
-                if row.strip():
+                if row:
                     trail, info, reference = row
                     retval[trail] = (info, reference)
 
