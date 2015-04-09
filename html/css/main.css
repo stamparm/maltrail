@@ -1,7 +1,7 @@
 body { font: 11px Verdana, Geneva, sans-serif }
 table { font: 11px Verdana, Geneva, sans-serif }
 td, th { padding: 2px 4px }
-table.dataTable tr { background-color:  #fff; border-color: #a8a8a8 }
+table.dataTable tr { background-color: #fff; border-color: #a8a8a8 }
 table.dataTable td { white-space: nowrap; border-color: #a8a8a8 }
 table.dataTable thead { color: #2f2f2f; border-color: #a8a8a8 }
 table.dataTable thead .sorting { border-color: #a8a8a8; background: url("../images/thirdparty/sort_both.png") no-repeat scroll right center #fff; }
@@ -378,4 +378,7 @@ rect.highlight {
     font-size: 80%;
     padding: 2px 2px;
     margin-bottom: 1px;
+}
+#table-hosts, #table-hosts th, #table-hosts td {
+    border: 1px solid #a8a8a8;
 }

@@ -827,7 +827,7 @@ function copyEllipsisToClipboard(event) {
         }
         tooltip.remove();
     }
-    window.prompt("Copy to clipboard (Ctrl+C)", text);
+    window.prompt("Copy to clipboard (press Ctrl+C)", text);
 }
 
 function appendFilter(filter, event, istag) {
@@ -1038,6 +1038,43 @@ function initDetails() {
                     sExtends: "collection",
                     sButtonText: "Tools",
                     aButtons: [
+                        {
+                            sExtends: "text",
+                            sButtonText: "Edit hosts",
+                            fnClick: function ( nButton, oConfig, oFlash ) {
+                                function _initHosts() {
+                                    $('#table-hosts').editableTableWidget();
+                                    $('#table-hosts td').on('change', function(event, newValue) {
+                                        if (event.target.cellIndex === 0)
+                                            return (newValue.match(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/) !== null);
+                                        else if (event.target.cellIndex === 1)
+                                            return (newValue.match(/^[A-Za-z0-9 ._]+$/) !== null);
+                                    });
+                                };
+                                $('<div id="dialog-hosts" title="Hosts"></div>').appendTo('body')
+                                .html('<table id="table-hosts" class="dataTable"><thead><tr class="ui-widget-header"><th>IP</th><th>Hostname</th></tr></thead><tbody><tr><td>127.0.0.1</td><td>localhost</td></tr></tbody></table>')
+                                .dialog({
+                                    resizable: false,
+                                    width: "auto",
+                                    height: "auto",
+                                    modal: true,
+                                    buttons: {
+                                        "Close": function() {
+                                            $(this).dialog("close");
+                                            $('#dialog-hosts').remove();
+                                        },
+                                        "Add": function() {
+                                            $('#table-hosts tr:last').after('<tr><td>&nbsp;</td><td>&nbsp;</td></tr>');
+                                            _initHosts();
+                                            $("#table-hosts tr:last td:first").focus().click();
+                                        },
+                                    },
+                                    open: function(event, ui) {
+                                        _initHosts();
+                                    }
+                                });
+                            }
+                        },
                         {
                             sExtends: "text",
                             sButtonText: "Flush local storage",
