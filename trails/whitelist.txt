@@ -100,3 +100,6 @@ notepad-plus-plus.org
 filehippo.com
 nvidia.com
 lexmark.com
+
+# have script tags in ad links
+emediate.dk
