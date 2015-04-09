@@ -14,6 +14,39 @@
 .ml
 .tk
 
+# Reference: http://www.getfreedomain.name/
+
+.tk
+.cu.cc
+.eu.org
+.uni.me
+.rr.nu
+.za.pl
+.usa.cc
+.ml
+.cf
+.ga
+.nom.za
+.ze.cx
+.zik.dj
+.pp.ua
+.ven.bz
+.iz.rs
+.co.vu
+.de.gg
+.slx.nl
+.net.ms
+.ipq.co
+.de.vu
+.us.pn
+.at.vc
+.at.hm
+.int.tf
+.eu.mn
+.de.lv
+.biz.ly
+.yi.org
+
 # Reference: http://readwrite.com/2010/10/27/the_worlds_most_dangerous_domains
 
 .vn
