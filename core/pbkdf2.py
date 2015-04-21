@@ -7,14 +7,14 @@ See the file 'LICENSE' for copying permission
 Derivative work from 'python-pbkdf2' by Armin Ronacher (@mitsuhiko)
 """
 
-# Reference: 
-
 import hmac
 import hashlib
 import itertools
 import operator
 import os
 import struct
+
+DEFAULT_ITERATIONS = 10000
 
 # Reference: https://github.com/mitsuhiko/python-pbkdf2
 def pbkdf2(password, salt, iterations=10000, keylen=24, hashfunc=None):
@@ -40,8 +40,14 @@ def pbkdf2(password, salt, iterations=10000, keylen=24, hashfunc=None):
 
 def main():
     password = raw_input("Password: ").strip()
-    iterations = int(raw_input("Iterations (e.g. 10000): ").strip())
-    salt = os.urandom(8)
+
+    try:
+        iterations = int(raw_input("Iterations (e.g. %d): " % DEFAULT_ITERATIONS).strip())
+    except:
+        iterations = DEFAULT_ITERATIONS
+    finally:
+        salt = os.urandom(8)
+
     print "PBKDF2: $%s$%d$%s" % (salt.encode("hex"), iterations, pbkdf2(password, salt).encode("hex"))
 
 if __name__ == '__main__':
