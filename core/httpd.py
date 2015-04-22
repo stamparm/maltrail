@@ -249,17 +249,23 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 self.send_response(httplib.OK)
                 self.send_header("Connection", "close")
                 self.send_header("Set-Cookie", "session=%s; expires=%s; path=/; HttpOnly" % (session_id, time.strftime(HTTP_TIME_FORMAT, time.gmtime(expiration))))
-                if '/' in netfilter:
-                    _ = netfilter.split('/')[-1]
-                    if _.isdigit() and int(_) >= 20:
-                        lower = addr_to_int(netfilter.split('/')[0])
-                        mask = make_mask(int(_))
-                        upper = lower | (0xffffffff ^ mask)
-                        _ = []
-                        for i in xrange(lower, upper + 1):
-                            _.append(int_to_addr(i))
-                        netfilter = ','.join(_)
-                SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilter": netfilter, "expiration": expiration})
+                netfilters = set(re.split(r"[;,]", netfilter))
+                for netfilter in set(netfilters):
+                    if '/' in netfilter:
+                        _ = netfilter.split('/')[-1]
+                        if _.isdigit() and int(_) >= 20:
+                            lower = addr_to_int(netfilter.split('/')[0])
+                            mask = make_mask(int(_))
+                            upper = lower | (0xffffffff ^ mask)
+                            for i in xrange(lower, upper + 1):
+                                netfilters.add(int_to_addr(i))
+                            netfilters.remove(netfilter)
+                    elif '-' in netfilter:
+                        lower, upper = netfilter.split('-')
+                        for i in xrange(addr_to_int(lower), addr_to_int(upper) + 1):
+                            netfilters.add(int_to_addr(i))
+                        netfilters.remove(netfilter)
+                SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilter": ','.join(netfilters), "expiration": expiration})
             else:
                 time.sleep(UNAUTHORIZED_SLEEP_TIME)
                 self.send_response(httplib.UNAUTHORIZED)
