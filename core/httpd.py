@@ -21,6 +21,7 @@ import subprocess
 import sys
 import threading
 import time
+import traceback
 import urllib
 import urlparse
 import zlib
@@ -32,6 +33,7 @@ from core.common import make_mask
 from core.pbkdf2 import pbkdf2
 from core.settings import config
 from core.settings import DATE_FORMAT
+from core.settings import DEBUG
 from core.settings import DEFLATE_COMPRESS_LEVEL
 from core.settings import DISABLED_CONTENT_EXTENSIONS
 from core.settings import HTML_DIR
@@ -53,7 +55,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             try:
                 BaseHTTPServer.HTTPServer.finish_request(self, *args, **kwargs)
             except:
-                pass
+                if DEBUG:
+                    traceback.print_exc()
 
     class SSLThreadingServer(ThreadingServer):
         def __init__(self, server_address, pem, HandlerClass):
@@ -71,7 +74,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             try:
                 request.shutdown()
             except:
-                pass
+                if DEBUG:
+                    traceback.print_exc()
 
     class ReqHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         def do_GET(self):
@@ -219,7 +223,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             try:
                 BaseHTTPServer.BaseHTTPRequestHandler.finish(self)
             except:
-                pass
+                if DEBUG:
+                    traceback.print_exc()
 
         def _login(self, params):
             valid = False
@@ -234,8 +239,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             if (pbkdf2(params.get("password"), hash_parts[1].decode("hex"), int(hash_parts[2])).encode("hex") == hash_parts[3]):
                                 valid = True
                                 break
-                        except (IndexError, ValueError), ex:
-                            pass
+                        except:
+                            if DEBUG:
+                                traceback.print_exc()
 
             if valid:
                 session_id = os.urandom(SESSION_ID_LENGTH).encode("hex")
@@ -326,23 +332,34 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         else:
                             content, addresses, netmasks = "", set(), []
                             for _ in set(re.split(r"[;,]", session.netfilter)):
+                                _ = _.strip()
+                                if not _:
+                                    continue
                                 if '/' in _:
                                     netmasks.append(_)
                                 elif re.search(r"\A[\d.]+\Z", _):
                                     addresses.add(_)
+                                elif re.search(r"\A([\d.]+)\s*-\s*([\d.]+)\Z", _):
+                                    _ = _.replace(" ", "")
+                                    start_address, end_address = _.split('-')
+                                    for address in xrange(addr_to_int(start_address), addr_to_int(end_address) + 1):
+                                        addresses.add(int_to_addr(address))
                                 else:
                                     print "[!] invalid network filter '%s'" % _
                                     return
 
                             for line in session.range_handle.xreadlines():
                                 display = False
-                                for ip in set(re.findall(r"\d+\.\d+\.\d+\.\d+", line)):
-                                    if display:
+                                for match in re.finditer(r" (\d+\.\d+\.\d+\.\d+) ", line):
+                                    if not display:
+                                        ip = match.group(1)
+                                    else:
                                         break
-                                    elif ip in addresses:
+
+                                    if ip in addresses:
                                         display = True
                                         break
-                                    else:
+                                    elif netmasks:
                                         for _ in netmasks:
                                             prefix, mask = _.split('/')
                                             if addr_to_int(ip) & make_mask(int(mask)) == addr_to_int(prefix):
@@ -412,7 +429,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 try:
                     current = datetime.datetime.strptime(os.path.splitext(os.path.basename(filename))[0], DATE_FORMAT)
                 except:
-                    pass
+                    if DEBUG:
+                        traceback.print_exc()
                 else:
                     if min_ <= current <= max_:
                         timestamp = int(time.mktime(current.timetuple()))
