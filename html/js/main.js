@@ -180,7 +180,7 @@ function initCalHeatmap() {
             highlight: [ "now" ],
             subDomainTitleFormat: {
                 empty: "No records on {date}",
-                filled: "~{count} records on {date}"
+                filled: "~{count} (total) records on {date}"
             },
             start: start,
             onClick: function(date, nb) {
