@@ -179,8 +179,8 @@ function initCalHeatmap() {
             data: location.origin + "/counts?from={{d:start}}&to={{d:end}}",
             highlight: [ "now" ],
             subDomainTitleFormat: {
-                empty: "No records on {date}",
-                filled: "~{count} (total) records on {date}"
+                empty: "No events on {date}",
+                filled: "~{count} (total) events on {date}"
             },
             start: start,
             onClick: function(date, nb) {
