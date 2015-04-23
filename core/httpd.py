@@ -6,6 +6,7 @@ See the file 'LICENSE' for copying permission
 """
 
 import BaseHTTPServer
+import cStringIO
 import datetime
 import httplib
 import glob
@@ -246,26 +247,38 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             if valid:
                 session_id = os.urandom(SESSION_ID_LENGTH).encode("hex")
                 expiration = time.time() + 3600 * SESSION_EXPIRATION_HOURS
+
                 self.send_response(httplib.OK)
                 self.send_header("Connection", "close")
                 self.send_header("Set-Cookie", "session=%s; expires=%s; path=/; HttpOnly" % (session_id, time.strftime(HTTP_TIME_FORMAT, time.gmtime(expiration))))
-                netfilters = set(re.split(r"[;,]", netfilter))
-                for netfilter in set(netfilters):
-                    if '/' in netfilter:
-                        _ = netfilter.split('/')[-1]
-                        if _.isdigit() and int(_) >= 20:
-                            lower = addr_to_int(netfilter.split('/')[0])
-                            mask = make_mask(int(_))
-                            upper = lower | (0xffffffff ^ mask)
-                            for i in xrange(lower, upper + 1):
-                                netfilters.add(int_to_addr(i))
+
+                if netfilter in ("", "0.0.0.0/0"):
+                    netfilters = None
+                else:
+                    netfilters = set(re.split(r"[;,]", netfilter))
+                    for netfilter in set(netfilters):
+                        netfilter = netfilter.strip()
+                        if '/' in netfilter:
+                            _ = netfilter.split('/')[-1]
+                            if _.isdigit() and int(_) >= 20:
+                                lower = addr_to_int(netfilter.split('/')[0])
+                                mask = make_mask(int(_))
+                                upper = lower | (0xffffffff ^ mask)
+                                while lower <= upper:
+                                    netfilters.add(int_to_addr(lower))
+                                    lower += 1
+                                netfilters.remove(netfilter)
+                        elif '-' in netfilter:
+                            _ = netfilter.split('-')
+                            lower, upper = addr_to_int(_[0]), addr_to_int(_[0])
+                            while lower <= upper:
+                                netfilters.add(int_to_addr(lower))
+                                lower += 1
                             netfilters.remove(netfilter)
-                    elif '-' in netfilter:
-                        lower, upper = netfilter.split('-')
-                        for i in xrange(addr_to_int(lower), addr_to_int(upper) + 1):
-                            netfilters.add(int_to_addr(i))
-                        netfilters.remove(netfilter)
-                SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilter": ','.join(netfilters), "expiration": expiration})
+                        elif not netfilter:
+                            netfilters.remove(netfilter)
+
+                SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilters": netfilters, "expiration": expiration})
             else:
                 time.sleep(UNAUTHORIZED_SLEEP_TIME)
                 self.send_response(httplib.UNAUTHORIZED)
@@ -330,32 +343,27 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         self.send_header("Connection", "close")
                         self.send_header("Content-Type", "text/plain")
 
-                        if session.netfilter in (None, "", "0.0.0.0/0"):
+                        if session.netfilters is None:
                             session.range_handle.seek(start)
                             self.send_response(httplib.PARTIAL_CONTENT)
                             self.send_header("Content-Range", "bytes %d-%d/%d" % (start, end, total))
                             content = session.range_handle.read(size)
                         else:
-                            content, addresses, netmasks = "", set(), []
-                            for _ in set(re.split(r"[;,]", session.netfilter)):
-                                _ = _.strip()
-                                if not _:
+                            buffer, addresses, netmasks = cStringIO.StringIO(), set(), []
+                            for netfilter in session.netfilters:
+                                if not netfilter:
                                     continue
-                                if '/' in _:
-                                    netmasks.append(_)
-                                elif re.search(r"\A[\d.]+\Z", _):
-                                    addresses.add(_)
-                                elif re.search(r"\A([\d.]+)\s*-\s*([\d.]+)\Z", _):
-                                    _ = _.replace(" ", "")
-                                    start_address, end_address = _.split('-')
-                                    for address in xrange(addr_to_int(start_address), addr_to_int(end_address) + 1):
-                                        addresses.add(int_to_addr(address))
+                                if '/' in netfilter:
+                                    netmasks.append(netfilter)
+                                elif re.search(r"\A[\d.]+\Z", netfilter):
+                                    addresses.add(netfilter)
                                 else:
-                                    print "[!] invalid network filter '%s'" % _
+                                    print "[!] invalid network filter '%s'" % netfilter
                                     return
 
                             for line in session.range_handle.xreadlines():
                                 display = False
+
                                 for match in re.finditer(r" (\d+\.\d+\.\d+\.\d+) ", line):
                                     if not display:
                                         ip = match.group(1)
@@ -374,10 +382,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                                 break
 
                                 if display:
-                                    content += line
-                                    if len(content) >= max_size:
+                                    buffer.write(line)
+                                    if buffer.tell() >= max_size:
                                         break
 
+                            content = buffer.getvalue()
                             end = start + len(content) - 1
                             self.send_header("Content-Range", "bytes %d-%d/%d" % (start, end, end + 1 + max_size * (len(content) >= max_size)))
 
