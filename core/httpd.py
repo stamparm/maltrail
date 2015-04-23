@@ -270,7 +270,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 netfilters.remove(netfilter)
                         elif '-' in netfilter:
                             _ = netfilter.split('-')
-                            lower, upper = addr_to_int(_[0]), addr_to_int(_[0])
+                            lower, upper = addr_to_int(_[0]), addr_to_int(_[1])
                             while lower <= upper:
                                 netfilters.add(int_to_addr(lower))
                                 lower += 1
