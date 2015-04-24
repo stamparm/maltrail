@@ -150,6 +150,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         if_modified_since = self.headers.get("If-Modified-Since")
 
                         if if_modified_since:
+                            if_modified_since = [_ for _ in if_modified_since.split(';') if _.upper().endswith("GMT")][0]
                             if time.mktime(mtime) <= time.mktime(time.strptime(if_modified_since, HTTP_TIME_FORMAT)):
                                 self.send_response(httplib.NOT_MODIFIED)
                                 self.send_header("Connection", "close")
