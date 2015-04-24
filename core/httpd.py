@@ -19,7 +19,6 @@ import re
 import shlex
 import socket
 import SocketServer
-import StringIO
 import subprocess
 import sys
 import threading
@@ -137,17 +136,20 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
                 if "gzip" in self.headers.getheader("Accept-Encoding", ""):
                     self.send_header("Content-Encoding", "gzip")
-                    _ = StringIO.StringIO()
+                    _ = cStringIO.StringIO()
                     compress = gzip.GzipFile("", "w+b", 9, _)
                     compress._stream = _
                     compress.write(content)
+                    compress.flush()
                     compress.close()
                     content = compress._stream.getvalue()
+                else:
+                    self.send_header("Content-Length", str(length))
 
-                self.send_header("Content-Length", str(length))
                 self.end_headers()
                 self.wfile.write(content)
                 self.wfile.flush()
+                self.wfile.close()
 
         def do_POST(self):
             length = self.headers.getheader("Content-Length")
