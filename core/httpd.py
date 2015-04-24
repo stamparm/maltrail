@@ -10,6 +10,7 @@ import cStringIO
 import datetime
 import httplib
 import glob
+import gzip
 import io
 import json
 import mimetypes
@@ -18,6 +19,7 @@ import re
 import shlex
 import socket
 import SocketServer
+import StringIO
 import subprocess
 import sys
 import threading
@@ -25,7 +27,6 @@ import time
 import traceback
 import urllib
 import urlparse
-import zlib
 
 from core.attribdict import AttribDict
 from core.common import addr_to_int
@@ -94,88 +95,54 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 if params[key]:
                     params[key] = params[key][-1]
 
-            if os.path.dirname(path).lower() == "/cgi-bin":
-                path = path.strip('/').lower()
-                cgi_path = os.path.join(HTML_DIR, "cgi-bin", os.path.basename(path))
+            if path == '/':
+                path = "index.html"
 
-                if not os.path.isfile(cgi_path):
+            path = path.strip('/')
+
+            if hasattr(self, "_%s" % path):
+                content = getattr(self, "_%s" % path)(params)
+
+            else:
+                path = path.replace('/', os.path.sep)
+                path = os.path.abspath(os.path.join(HTML_DIR, path)).strip()
+
+                if ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and not path.endswith(DISABLED_CONTENT_EXTENSIONS):
+                    mtime = time.gmtime(os.path.getmtime(path))
+                    if_modified_since = self.headers.get("If-Modified-Since")
+
+                    if if_modified_since:
+                        if_modified_since = [_ for _ in if_modified_since.split(';') if _.upper().endswith("GMT")][0]
+                        if time.mktime(mtime) <= time.mktime(time.strptime(if_modified_since, HTTP_TIME_FORMAT)):
+                            self.send_response(httplib.NOT_MODIFIED)
+                            self.send_header("Connection", "close")
+                            return
+
+                    content = open(path, "rb").read()
+                    last_modified = time.strftime(HTTP_TIME_FORMAT, mtime)
+                    self.send_response(httplib.OK)
+                    self.send_header("Connection", "close")
+                    self.send_header("Content-Type", mimetypes.guess_type(path)[0] or "application/octet-stream")
+                    self.send_header("Last-Modified", last_modified)
+                    self.send_header("Expires", "Sun, 17-Jan-2038 19:14:07 GMT")   # Reference: http://blog.httpwatch.com/2007/12/10/two-simple-rules-for-http-caching/
+                    self.send_header("Cache-Control", "must-revalidate, private")  # Reference: http://stackoverflow.com/a/5084555
+
+                else:
                     self.send_response(httplib.NOT_FOUND)
                     self.send_header("Connection", "close")
                     return
 
-                args = " ".join("--%s=\'%s\'" % (_[0], _[1]) for _ in params.items())
-                args = re.sub(r"(?i)='true'", "", args)
-                cmd = "%s %s %s" % (sys.executable, os.path.join(HTML_DIR, "cgi-bin", os.path.basename(path)), args)
-                process = subprocess.Popen(shlex.split(cmd, posix=not subprocess.mswindows), shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
-                self.send_response(httplib.OK)
-                self.send_header("Connection", "close")
-                self.send_header("Content-Type", "text/plain")
-
-                compress = None
-                if "deflate" in self.headers.getheader("Accept-Encoding", ""):
-                    self.send_header("Content-Encoding", "deflate")
-                    self.end_headers()
-                    compress = zlib.compressobj(DEFLATE_COMPRESS_LEVEL)
-                else:
-                    self.end_headers()
-
-                while True:
-                    data = process.stdout.read(io.DEFAULT_BUFFER_SIZE)
-                    if not data:
-                        break
-                    else:
-                        self.wfile.write(compress.compress(data) if compress else data)
-
-                if compress:
-                    self.wfile.write(compress.flush())
-
-                content = None
-
-            else:
-                if path == '/':
-                    path = "index.html"
-
-                path = path.strip('/')
-
-                if hasattr(self, "_%s" % path):
-                    content = getattr(self, "_%s" % path)(params)
-
-                else:
-                    path = path.replace('/', os.path.sep)
-                    path = os.path.abspath(os.path.join(HTML_DIR, path)).strip()
-
-                    if ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and not path.endswith(DISABLED_CONTENT_EXTENSIONS):
-                        mtime = time.gmtime(os.path.getmtime(path))
-                        if_modified_since = self.headers.get("If-Modified-Since")
-
-                        if if_modified_since:
-                            if_modified_since = [_ for _ in if_modified_since.split(';') if _.upper().endswith("GMT")][0]
-                            if time.mktime(mtime) <= time.mktime(time.strptime(if_modified_since, HTTP_TIME_FORMAT)):
-                                self.send_response(httplib.NOT_MODIFIED)
-                                self.send_header("Connection", "close")
-                                return
-
-                        content = open(path, "rb").read()
-                        last_modified = time.strftime(HTTP_TIME_FORMAT, mtime)
-                        self.send_response(httplib.OK)
-                        self.send_header("Connection", "close")
-                        self.send_header("Content-Type", mimetypes.guess_type(path)[0] or "application/octet-stream")
-                        self.send_header("Last-Modified", last_modified)
-                        self.send_header("Expires", "Sun, 17-Jan-2038 19:14:07 GMT")   # Reference: http://blog.httpwatch.com/2007/12/10/two-simple-rules-for-http-caching/
-                        self.send_header("Cache-Control", "must-revalidate, private")  # Reference: http://stackoverflow.com/a/5084555
-
-                    else:
-                        self.send_response(httplib.NOT_FOUND)
-                        self.send_header("Connection", "close")
-                        return
-
             if content is not None:
                 length = len(content)
 
-                if "deflate" in self.headers.getheader("Accept-Encoding", ""):
-                    self.send_header("Content-Encoding", "deflate")
-                    content = zlib.compress(content, DEFLATE_COMPRESS_LEVEL)
+                if "gzip" in self.headers.getheader("Accept-Encoding", ""):
+                    self.send_header("Content-Encoding", "gzip")
+                    _ = StringIO.StringIO()
+                    compress = gzip.GzipFile("", "w+b", 9, _)
+                    compress._stream = _
+                    compress.write(content)
+                    compress.close()
+                    content = compress._stream.getvalue()
 
                 self.send_header("Content-Length", str(length))
                 self.end_headers()
