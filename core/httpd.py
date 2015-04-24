@@ -136,6 +136,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
                 if "gzip" in self.headers.getheader("Accept-Encoding", ""):
                     self.send_header("Content-Encoding", "gzip")
+                    self.send_header("Transfer-Encoding", "chunked")
                     _ = cStringIO.StringIO()
                     compress = gzip.GzipFile("", "w+b", 9, _)
                     compress._stream = _
