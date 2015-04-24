@@ -65,6 +65,10 @@ $(document).ready(function() {
 
     $("#header_container").sticky( { topSpacing: 0 });
 
+    // Reference: http://tosbourn.com/a-fix-for-window-location-origin-in-internet-explorer/
+    if (!window.location.origin)
+        window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+
     init(location.origin + "/events?date=" + formatDate(new Date()), new Date());
 });
 
@@ -98,7 +102,6 @@ function initDialogs() {
                             $("#login_dialog").effect("highlight", { color: 'red' }, 500);
                         } else {
                             window.location.href = "/";
-                            $(this).dialog("close");
                         }
                     }
                 });
