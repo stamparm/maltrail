@@ -68,6 +68,23 @@ Maltrail is based on the sensor / server / client architecture. **Sensor**(s) is
 
 **TODO documentation**
 
+Server's configuration can be found inside the `maltrail.conf` file's section `Server`:
+
+![Configuration server](http://i.imgur.com/o0loHDL.png)
+
+Option `HTTP_ADDRESS` contains the web server's listening address. Use `0.0.0.0` to listen on all interfaces. Option `HTTP_PORT` contains the web server's listening port. Default listening port is set to `8338`. If option `USE_SSL` is set to `true` then `SSL/TLS` will be used for accessing the web server (e.g. https://192.168.6.10:8338/). In that case, option `SSL_PEM` should be pointing to the server's private/cert PEM file. Option `UPDATE_PERIOD` contains the number of seconds between each trail update. Default value is set to `86400` (i.e. one day). Subsection `USERS` is described further in text.
+
+When entering the web server's user interface, user will be presented with the following authentication dialog:
+
+![User login](http://i.imgur.com/kbaLIM9.png)
+
+User has to enter the proper credentials that have been set by the server's administrator inside the configuration file `maltrail.conf`. Example entries are as follows:
+
+![Configuration users](http://i.imgur.com/QN5UD12.png)
+
+Each user entry constists of the `username:pbkdf2_hash(password):UID:filter_netmask(s)`. Utility `core/pbkdf2.py` is used to calculate the proper `pbkdf2_hash(password)` values. Value `UID` represents the unique user identifier, where it is recommended to use values lower than 1000 for administrative accounts, while higher value for non-administrative accounts. The part `filter_netmask(s)` represents the comma-delimited hard filter(s) that can be used to filter out the shown events depending on user account(s).
+
+
 
 ## Requirements
 
