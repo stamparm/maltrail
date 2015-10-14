@@ -68,22 +68,47 @@ Maltrail is based on the sensor / server / client architecture. **Sensor**(s) is
 
 **TODO documentation**
 
+### Configuration
+
 Server's configuration can be found inside the `maltrail.conf` file's section `Server`:
 
-![Configuration server](http://i.imgur.com/o0loHDL.png)
+![Server's configuration](http://i.imgur.com/o0loHDL.png)
 
 Option `HTTP_ADDRESS` contains the web server's listening address. Use `0.0.0.0` to listen on all interfaces. Option `HTTP_PORT` contains the web server's listening port. Default listening port is set to `8338`. If option `USE_SSL` is set to `true` then `SSL/TLS` will be used for accessing the web server (e.g. https://192.168.6.10:8338/). In that case, option `SSL_PEM` should be pointing to the server's private/cert PEM file. Option `UPDATE_PERIOD` contains the number of seconds between each trail update. Default value is set to `86400` (i.e. one day). Subsection `USERS` is described further in text.
 
-When entering the web server's user interface, user will be presented with the following authentication dialog:
-
-![User login](http://i.imgur.com/kbaLIM9.png)
-
-User has to enter the proper credentials that have been set by the server's administrator inside the configuration file `maltrail.conf`. Example entries are as follows:
+ Example entries are as follows:
 
 ![Configuration users](http://i.imgur.com/QN5UD12.png)
 
-Each user entry constists of the `username:pbkdf2_hash(password):UID:filter_netmask(s)`. Utility `core/pbkdf2.py` is used to calculate the proper `pbkdf2_hash(password)` values. Value `UID` represents the unique user identifier, where it is recommended to use values lower than 1000 for administrative accounts, while higher value for non-administrative accounts. The part `filter_netmask(s)` represents the comma-delimited hard filter(s) that can be used to filter out the shown events depending on user account(s).
+Each user entry constists of the `username:pbkdf2_hash(password):UID:filter_netmask(s)`. Utility `core/pbkdf2.py` is used to calculate the proper `pbkdf2_hash(password)` values. Value `UID` represents the unique user identifier, where it is recommended to use values lower than 1000 for administrative accounts, while higher value for non-administrative accounts. The part `filter_netmask(s)` represents the comma-delimited hard filter(s) that can be used to filter out the shown events depending on the user account(s).
 
+### Reporting web server
+
+When entering the web server's user interface, user will be presented with the following authentication dialog. User has to enter the proper credentials that have been set by the server's administrator inside the configuration file `maltrail.conf`.
+
+![User login](http://i.imgur.com/kbaLIM9.png)
+
+Once inside, user will be presented with the reporting interface as follows:
+
+![Reporting interface](http://i.imgur.com/utZnwJF.png)
+
+The top part holds a sliding timeline where user can select logs for past events (Note: mouse over event will trigger display of tooltip with number of events for current date):
+
+![Timeline](http://i.imgur.com/IA1eGty.png)
+
+Middle part holds a summary of displayed events. *Events* box represents total number of events in a selected 24-hour period, where red line represents IP-based events, blue line represents DNS-based events and yellow line represents URL-based events. *Sources* box represents number of events per top sources in form of a stacked column chart, with total number of sources on top. *Threats* box represents percentage of top threats in form of a pie chart (Note: gray area holds all threats having &lt;1% in total), with total number of threats on top. *Trails* box represents percentage of top trails in form of a pie chart (Note: gray area holds all trails having &lt;1% in total), with total number of trails on top.
+
+![Summary](http://i.imgur.com/4aZBBTo.png)
+
+Bottom part holds a condensed representation of logged events in form of a paginated table. Each entry holds details for a single threat (Note: uniquely identified by a pair *src_ip~trail* or *dst_ip~trail* if the *src_ip* is the same as the *trail* - as in case of attacks coming from the outside):
+
+![Single threat](http://i.imgur.com/hyckzar.png)
+
+Column *threat* holds threat's unique ID (e.g. *85fdb08d*) and color (Note: extruded from the threat's ID), *sensor* holds sensor name(s) where the event has been triggered (e.g. *blitvenica*), *events* holds total number of events for a current threat, *first_seen* holds time of first event in a selected (24h) period (e.g. *06th 08:21:54*), *last_seen* holds time of last event in a selected (24h) period (e.g. *06th 15:21:23*), *src_ip* holds source IP(s) of a threat (e.g. *99.102.41.102*), *src_port* holds source port(s) (e.g. *44556, 44589, 44601* ), *dst_ip* holds destination IP(s) (e.g. *213.202.100.28*), *dst_port* holds destination port(s) (e.g. *80 (HTTP)*), *proto* holds protocol(s), (e.g. *TCP*), *trail* holds a blacklist entry that triggered the event(s), info holds more information about the threat/trail, *reference* holds a source of the blacklisted entry (i.e. trail) and tags holds user defined tags for a given trail.
+
+When moving mouse over *src_ip* and *dst_ip* table entries, information tooltip is being displayed with detailed WHOIS information:
+
+![On mouse over IP](http://i.imgur.com/QVm3SXL.png)
 
 
 ## Requirements
