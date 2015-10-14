@@ -2,7 +2,7 @@
 
 ## General
 
-**Maltrail** is a malicious traffic monitoring system, utilizing publicly available blacklists containing malicious (or generally suspicious) trails (i.e. domain names, URLs and/or IPs), along with static lists compiled from various AV reports.
+**Maltrail** is a malicious traffic monitoring system, utilizing publicly available blacklists containing malicious (or generally suspicious) trails (i.e. domain names, URLs and/or IPs), along with static lists compiled from various AV reports and custom user defined lists.
 
 ![Reporting tool](http://i.imgur.com/GHQYQLe.png)
 
@@ -40,7 +40,7 @@ The following blacklists (i.e. feeds) are being utilized:
 * https://zeustracker.abuse.ch/monitor.php?filter=all
 * https://zeustracker.abuse.ch/blocklist.php?download=compromised
 
-As of static entries, the trails for the following malicious entries have been manually included (from various AV reports):
+As of static entries, the trails for the following malicious entities have been manually included (from various AV reports):
 
 ```
 alureon, android_stealer, aridviper, axpergle, balamid, bankpatch, bedep, bubnix,
@@ -60,13 +60,15 @@ virut, vobfus, vundo, wiper, zeroaccess, zlob, etc.
 
 ## Introduction
 
-Maltrail is based on the sensor / server / client architecture. **Sensor**(s) is a standalone component running on the monitoring node (i.e. workstation connected to the SPAN port) where it "sniffs" the passing traffic for blacklisted trails (i.e. domain names, URLs and/or IPs). In case of a positive match, it sends the log event to the (central) server where it is stored inside the appropriate logging directory. If sensor is being run on same machine as server, logs are stored directly into the logging directory, while if it is being run remotelly, it is being sent via UDP to the server.
+Maltrail is based on the **Sensor&lt;-&gt;Server&lt;-&gt;Client** architecture. **Sensor**(s) is a standalone component running on the monitoring node (i.e. Linux box connected to the SPAN/mirroring port) where it "sniffs" the passing traffic for blacklisted trails (i.e. domain names, URLs and/or IPs). In case of a positive match, it sends the log event to the (central) server where it is being stored inside the appropriate logging directory (i.e. `LOG_DIRECTORY` described in the *Configuration* section). If sensor is being run on the same machine as server (default configuration), logs are stored directly into the logging directory, otherwise they are being sent via UDP to the remote server (i.e. `LOG_SERVER` described in the *Configuration* section).
 
-**Server**'s primary role is to provide backend support for the reporting web application. In most cases, server and sensor will be run on the same machine. So, to prevent potential disruptions, the front-end reporting part is (chosen to be) based on the fat-client architecture. Events (i.e. log entries) for the chosen date are streamed toward the **client**, where the reporting web application is responsible for the presentation part. Data is sent toward the client in compressed chunks, where they are processed sequentially. The final report is created in highly condensed form, practically allowing presentation of unconstrained number of events.
+![Architecture diagram](http://i.imgur.com/peAztNj.png)
+
+**Server**'s primary role is to provide backend support for the reporting web application. In default configuration, server and sensor will be run on the same machine. So, to prevent potential disruptions in sensor activities, the front-end reporting part is based on the ["Fat client"](https://en.wikipedia.org/wiki/Fat_client) architecture. Events (i.e. log entries) for the chosen (24h) period are streamed toward the **Client**, where the reporting web application is solely responsible for the presentation part. Data is sent toward the client in compressed chunks, where they are processed sequentially. The final report is created in a highly condensed form, practically allowing presentation of virtually unlimited number of events.
 
 ## User's manual
 
-**TODO documentation**
+**TODO finish documentation**
 
 ### Configuration
 
