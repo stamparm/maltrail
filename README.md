@@ -45,17 +45,17 @@ As of static entries, the trails for the following malicious entities have been 
 ```
 alureon, android_stealer, aridviper, axpergle, balamid, bankpatch, bedep, bubnix,
 carbanak, careto, chewbacca, cleaver, computrace, conficker, cosmicduke,
-couponarific, crilock, cryptolocker, cryptowall, ctblocker, cutwail, darkhotel,
-defru, desertfalcon, destory, dorifel, dorkbot, drixed, duqu, dursg, dynamic_domain,
+couponarific, crilock, cryptolocker, cryptowall, ctblocker, darkhotel,
+defru, desertfalcon, destory, dorifel, dorkbot, dursg, dynamic_domain,
 dyreza, emotet, equation, expiro, fakeran, fbi_ransomware, fiexp, fignotok, fin4,
-finfisher, gamarue, gauss, geodo, gholee, htran, iframeref, jenxcus, kegotip,
+finfisher, gamarue, gauss, htran, jenxcus, kegotip,
 kovter, lollipop, luckycat, mariposa, miniduke, nettraveler, neurevt, nitol,
 no-ip_malware, nonbolqu, nuqel, nymaim, palevo, pdfjsc, pift, powelike, proslikefan,
-pushdo, ransirac, redoctober, regin, reveton, rustock, sality, sathurbot, scieron,
-sefnit, shylock, siesta, simda, sinkhole_kaspersky, sinkhole_shadowserver, sirefef,
+pushdo, ransirac, redoctober, reveton, sality, sathurbot, scieron,
+sefnit, shylock, siesta, simda, sinkhole_kaspersky, sinkhole_shadowserver,
 smsfakesky, snake, snifula, sofacy, stuxnet, superfish, suspicious_domain,
-suspicious_ipinfo, teerac, torpig, torrentlocker, tugspay, unruy, upatre, vawtrak,
-virut, vobfus, vundo, wiper, zeroaccess, zlob, etc.
+suspicious_ipinfo, teerac, torpig, torrentlocker, unruy, upatre, vawtrak,
+virut, vobfus, vundo, zeroaccess, zlob, etc.
 ```
 
 ## Introduction
