@@ -4,7 +4,7 @@
 
 **Maltrail** is a malicious traffic monitoring system, utilizing publicly available blacklists containing malicious (or generally suspicious) trails (i.e. domain names, URLs and/or IPs), along with static lists compiled from various AV reports and custom user defined lists.
 
-![Reporting tool](http://i.imgur.com/GHQYQLe.png)
+![Reporting tool](http://i.imgur.com/DhWdpmK.png)
 
 The following blacklists (i.e. feeds) are being utilized:
 
