@@ -68,11 +68,9 @@ Maltrail is based on the **Sensor&lt;-&gt;Server&lt;-&gt;Client** architecture. 
 
 ## User's manual
 
-**TODO finish documentation**
-
 ### Configuration
 
-Server's configuration can be found inside the `maltrail.conf` file's section `Server`:
+Server's configuration can be found inside the `maltrail.conf` file's section `[Server]`:
 
 ![Server's configuration](http://i.imgur.com/o0loHDL.png)
 
@@ -80,9 +78,15 @@ Option `HTTP_ADDRESS` contains the web server's listening address. Use `0.0.0.0`
 
  Example entries are as follows:
 
-![Configuration users](http://i.imgur.com/QN5UD12.png)
+![Configuration users](http://i.imgur.com/HnH7E6S.png)
 
 Each user entry constists of the `username:pbkdf2_hash(password):UID:filter_netmask(s)`. Utility `core/pbkdf2.py` is used to calculate the proper `pbkdf2_hash(password)` values. Value `UID` represents the unique user identifier, where it is recommended to use values lower than 1000 for administrative accounts, while higher value for non-administrative accounts. The part `filter_netmask(s)` represents the comma-delimited hard filter(s) that can be used to filter out the shown events depending on the user account(s).
+
+Sensor's configuration can be found inside the `maltrail.conf` file's section `[Sensor]`:
+
+![Sensor's configuration](http://i.imgur.com/L4i5WD2.png)
+
+If option `USE_MULTIPROCESSING` is set to `true` then all CPU cores will be used. One core will be used only for packet capture (with appropriate affinity, IO priority and nice level settings), while other cores will be used for packet processing. Otherwise, everything will be run on a single core. Option `USE_HEURISTICS` turns on heuristic mechanisms (e.g. `long domain name (suspicious)`, `excessive no such domain name (suspicious)`, `direct .exe download (suspicious)`, etc.), potentially introducing false positives. Option `CAPTURE_BUFFER` presents a total memory (in bytes of percentage of total physical memory) to be used in case of multiprocessing mode for storing packet capture in a ring buffer for further processing by non-capturing processes. Option `MONITOR_INTERFACE` should contain the name of the capturing interface. Use value `any` to capture from all interfaces (if OS supports this). Option `CAPTURE_FILTER` should contain the network capture (tcpdump) filter to skip the uninteresting packets and ease the capturing process. Option `SENSOR_NAME` contains the name that should be appearing inside the events `sensor_name` value, so the event from one sensor could be distinguished from the other. If option `LOG_SERVER` is set, then all events are being sent remotely to the **Server**, otherwise they are stored directly into the logging directory set with option `LOG_DIRECTORY` inside the `[Server]` section. In case that the option `UPDATE_SERVER` is set, then all the trails are being pulled from the given location, otherwise they are being updated from trails definitions located inside the installation itself.
 
 ### Reporting web server
 
@@ -98,7 +102,7 @@ The top part holds a sliding timeline where user can select logs for past events
 
 ![Timeline](http://i.imgur.com/IA1eGty.png)
 
-Middle part holds a summary of displayed events. *Events* box represents total number of events in a selected 24-hour period, where red line represents IP-based events, blue line represents DNS-based events and yellow line represents URL-based events. *Sources* box represents number of events per top sources in form of a stacked column chart, with total number of sources on top. *Threats* box represents percentage of top threats in form of a pie chart (Note: gray area holds all threats having &lt;1% in total events), with total number of threats on top. *Trails* box represents percentage of top trails in form of a pie chart (Note: gray area holds all trails having &lt;1% in total events), with total number of trails on top.
+Middle part holds a summary of displayed events. `Events` box represents total number of events in a selected 24-hour period, where red line represents IP-based events, blue line represents DNS-based events and yellow line represents URL-based events. `Sources` box represents number of events per top sources in form of a stacked column chart, with total number of sources on top. `Threats` box represents percentage of top threats in form of a pie chart (Note: gray area holds all threats having &lt;1% in total events), with total number of threats on top. `Trails` box represents percentage of top trails in form of a pie chart (Note: gray area holds all trails having &lt;1% in total events), with total number of trails on top.
 
 ![Summary](http://i.imgur.com/4aZBBTo.png)
 
@@ -106,17 +110,17 @@ Each of those boxes are active, hence the click on one of those will result with
 
 ![Detailed boxes](http://i.imgur.com/iGlOdaN.png)
 
-Bottom part holds a condensed representation of logged events in form of a paginated table. Each entry holds details for a single threat (Note: uniquely identified by a pair *src_ip~trail* or *dst_ip~trail* if the *src_ip* is the same as the *trail* - as in case of attacks coming from the outside):
+Bottom part holds a condensed representation of logged events in form of a paginated table. Each entry holds details for a single threat (Note: uniquely identified by a pair `src_ip~trail` or `dst_ip~trail` if the `src_ip` is the same as the `trail` - as in case of attacks coming from the outside):
 
 ![Single threat](http://i.imgur.com/hyckzar.png)
 
-Column *threat* holds threat's unique ID (e.g. *85fdb08d*) and color (Note: extruded from the threat's ID), *sensor* holds sensor name(s) where the event has been triggered (e.g. *blitvenica*), *events* holds total number of events for a current threat, *first_seen* holds time of first event in a selected (24h) period (e.g. *06th 08:21:54*), *last_seen* holds time of last event in a selected (24h) period (e.g. *06th 15:21:23*), *src_ip* holds source IP(s) of a threat (e.g. *99.102.41.102*), *src_port* holds source port(s) (e.g. *44556, 44589, 44601*), *dst_ip* holds destination IP(s) (e.g. *213.202.100.28*), *dst_port* holds destination port(s) (e.g. *80 (HTTP)*), *proto* holds protocol(s), (e.g. *TCP*), *trail* holds a blacklist entry that triggered the event(s), info holds more information about the threat/trail (e.g. *attacker* for known attacker's IP addresses or *ipinfo* for known IP information service commonly used by malware during a startup), *reference* holds a source of the blacklisted entry (e.g. *(static)* for static trails or *myip.ms* for a dynamic feed retrieved from that same source) and *tags* holds user defined tags for a given trail (e.g. *APT28*).
+Column `threat` holds threat's unique ID (e.g. `85fdb08d`) and color (Note: extruded from the threat's ID), `sensor` holds sensor name(s) where the event has been triggered (e.g. `blitvenica`), `events` holds total number of events for a current threat, `first_seen` holds time of first event in a selected (24h) period (e.g. `06th 08:21:54`), `last_seen` holds time of last event in a selected (24h) period (e.g. `06th 15:21:23`), `src_ip` holds source IP(s) of a threat (e.g. `99.102.41.102`), `src_port` holds source port(s) (e.g. `44556, 44589, 44601`), `dst_ip` holds destination IP(s) (e.g. `213.202.100.28`), `dst_port` holds destination port(s) (e.g. `80 (HTTP)`), `proto` holds protocol(s), (e.g. `TCP`), `trail` holds a blacklist entry that triggered the event(s), info holds more information about the threat/trail (e.g. `attacker` for known attacker's IP addresses or `ipinfo` for known IP information service commonly used by malware during a startup), `reference` holds a source of the blacklisted entry (e.g. `(static)` for static trails or `myip.ms` for a dynamic feed retrieved from that same source) and `tags` holds user defined tags for a given trail (e.g. `APT28`).
 
-When moving mouse over *src_ip* and *dst_ip* table entries, information tooltip is being displayed with detailed WHOIS information:
+When moving mouse over `src_ip` and `dst_ip` table entries, information tooltip is being displayed with detailed WHOIS information:
 
 ![On mouse over IP](http://i.imgur.com/QVm3SXL.png)
 
-Event details that differ in a same threat (e.g. *src_port*, *dst_port*, *proto*, etc.) are condensed in form of a cloud icon. Moving mouse over such icon will result in a display of an information tooltip with all held items:
+Event details that differ in a same threat (e.g. `src_port`, `dst_port`, `proto`, etc.) are condensed in form of a cloud icon. Moving mouse over such icon will result in a display of an information tooltip with all held items:
 
 ![On mouse over cloud](http://i.imgur.com/nU4ZPHZ.png)
 
