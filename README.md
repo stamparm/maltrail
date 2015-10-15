@@ -43,14 +43,14 @@ The following blacklists (i.e. feeds) are being utilized:
 As of static entries, the trails for the following malicious entities have been manually included (from various AV reports):
 
 ```
-alureon, android_stealer, aridviper, axpergle, balamid, bankpatch, bedep, bubnix,
-carbanak, careto, chewbacca, cleaver, computrace, conficker, cosmicduke,
-couponarific, crilock, cryptolocker, cryptowall, ctblocker, darkhotel,
-defru, desertfalcon, destory, dorifel, dorkbot, dursg, dynamic_domain,
-dyreza, emotet, equation, expiro, fakeran, fbi_ransomware, fiexp, fignotok, fin4,
-finfisher, gamarue, gauss, htran, jenxcus, kegotip,
-kovter, lollipop, luckycat, mariposa, miniduke, nettraveler, neurevt, nitol,
-no-ip_malware, nonbolqu, nuqel, nymaim, palevo, pdfjsc, pift, powelike, proslikefan,
+alureon, android_stealer, aridviper, axpergle, balamid, bankpatch, bedep,
+bubnix, carbanak, careto, chewbacca, cleaver, computrace, conficker,
+cosmicduke, couponarific, crilock, cryptolocker, cryptowall, ctblocker,
+darkhotel, defru, desertfalcon, destory, dorifel, dorkbot, dursg, dynamic_domain,
+dyreza, emotet, equation, expiro, fakeran, fbi_ransomware, fiexp, fignotok,
+fin4, finfisher, gamarue, gauss, htran, jenxcus, kegotip, kovter, lollipop
+luckycat, mariposa, miniduke, nettraveler, neurevt, nitol, no-ip_malware,
+nonbolqu, nuqel, nymaim, palevo, pdfjsc, pift, powelike, proslikefan,
 pushdo, ransirac, redoctober, reveton, sality, sathurbot, scieron,
 sefnit, shylock, siesta, simda, sinkhole_kaspersky, sinkhole_shadowserver,
 smsfakesky, snake, snifula, sofacy, stuxnet, superfish, suspicious_domain,
@@ -74,7 +74,7 @@ Server's configuration can be found inside the `maltrail.conf` file's section `[
 
 ![Server's configuration](http://i.imgur.com/o0loHDL.png)
 
-Option `HTTP_ADDRESS` contains the web server's listening address. Use `0.0.0.0` to listen on all interfaces. Option `HTTP_PORT` contains the web server's listening port. Default listening port is set to `8338`. If option `USE_SSL` is set to `true` then `SSL/TLS` will be used for accessing the web server (e.g. https://192.168.6.10:8338/). In that case, option `SSL_PEM` should be pointing to the server's private/cert PEM file. Option `UPDATE_PERIOD` contains the number of seconds between each trail update. Default value is set to `86400` (i.e. one day). Subsection `USERS` is described further in text.
+Option `HTTP_ADDRESS` contains the web server's listening address. Use `0.0.0.0` to listen on all interfaces. Option `HTTP_PORT` contains the web server's listening port. Default listening port is set to `8338`. If option `USE_SSL` is set to `true` then `SSL/TLS` will be used for accessing the web server (e.g. `https://192.168.6.10:8338/`). In that case, option `SSL_PEM` should be pointing to the server's private/cert PEM file. Option `UPDATE_PERIOD` contains the number of seconds between each trail update. Default value is set to `86400` (i.e. one day). Subsection `USERS` is described further in text.
 
  Example entries are as follows:
 
