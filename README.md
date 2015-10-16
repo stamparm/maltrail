@@ -2,7 +2,7 @@
 
 ## General
 
-**Maltrail** is a malicious traffic monitoring system, utilizing publicly available blacklists containing malicious (or generally suspicious) trails (i.e. domain names, URLs and/or IPs), along with static lists compiled from various AV reports and custom user defined lists.
+**Maltrail** is a malicious traffic monitoring system, utilizing publicly available blacklists containing malicious (or generally suspicious) trails (i.e. domain names, URLs and/or IPs), along with static lists compiled from various AV reports and custom user defined lists. Also, it has (optional) heuristic mechanisms that can help in discovery of unknown threats.
 
 ![Reporting tool](http://i.imgur.com/DhWdpmK.png)
 
@@ -60,27 +60,25 @@ virut, vobfus, vundo, zeroaccess, zlob, etc.
 
 ## Introduction
 
-Maltrail is based on the **Sensor&lt;-&gt;Server&lt;-&gt;Client** architecture. **Sensor**(s) is a standalone component running on the monitoring node (i.e. Linux box connected to the SPAN/mirroring port) where it "sniffs" the passing traffic for blacklisted trails (i.e. domain names, URLs and/or IPs). In case of a positive match, it sends the log event to the (central) server where it is being stored inside the appropriate logging directory (i.e. `LOG_DIRECTORY` described in the *Configuration* section). If sensor is being run on the same machine as server (default configuration), logs are stored directly into the logging directory, otherwise they are being sent via UDP to the remote server (i.e. `LOG_SERVER` described in the *Configuration* section).
+Maltrail is based on the **Sensor&lt;-&gt;Server&lt;-&gt;Client** architecture. **Sensor**(s) is a standalone component running on the monitoring node (i.e. Linux box connected to the SPAN/mirroring port) where it "sniffs" the passing traffic for blacklisted items/trails (i.e. domain names, URLs and/or IPs). In case of a positive match, it sends the event details to the (central) **Server** where it is being stored inside the appropriate logging directory (i.e. `LOG_DIRECTORY` described in the *Configuration* section). If sensor is being run on the same machine as server (default configuration), logs are stored directly into the logging directory. Otherwise, they are being sent via UDP to the remote server (i.e. `LOG_SERVER` described in the *Configuration* section).
 
 ![Architecture diagram](http://i.imgur.com/peAztNj.png)
 
-**Server**'s primary role is to provide backend support for the reporting web application. In default configuration, server and sensor will be run on the same machine. So, to prevent potential disruptions in sensor activities, the front-end reporting part is based on the ["Fat client"](https://en.wikipedia.org/wiki/Fat_client) architecture. Events (i.e. log entries) for the chosen (24h) period are streamed toward the **Client**, where the reporting web application is solely responsible for the presentation part. Data is sent toward the client in compressed chunks, where they are processed sequentially. The final report is created in a highly condensed form, practically allowing presentation of virtually unlimited number of events.
+**Server**'s primary role is to store the event details and provide backend support for the reporting web application. In default configuration, server and sensor will be run on the same machine. So, to prevent potential disruptions in sensor activities, the front-end reporting part is based on the ["Fat client"](https://en.wikipedia.org/wiki/Fat_client) architecture. Events (i.e. log entries) for the chosen (24h) period are streamed toward the **Client**, where the reporting web application is solely responsible for the presentation part. Data is sent toward the client in compressed chunks, where they are processed sequentially. The final report is created in a highly condensed form, practically allowing presentation of virtually unlimited number of events.
 
 ## User's manual
 
 ### Configuration
 
-Server's configuration can be found inside the `maltrail.conf` file's section `[Server]`:
+Server's configuration can be found inside the `maltrail.conf` section `[Server]`:
 
 ![Server's configuration](http://i.imgur.com/o0loHDL.png)
 
-Option `HTTP_ADDRESS` contains the web server's listening address. Use `0.0.0.0` to listen on all interfaces. Option `HTTP_PORT` contains the web server's listening port. Default listening port is set to `8338`. If option `USE_SSL` is set to `true` then `SSL/TLS` will be used for accessing the web server (e.g. `https://192.168.6.10:8338/`). In that case, option `SSL_PEM` should be pointing to the server's private/cert PEM file. Option `UPDATE_PERIOD` contains the number of seconds between each trail update. Default value is set to `86400` (i.e. one day). Subsection `USERS` is described further in text.
+Option `HTTP_ADDRESS` contains the web server's listening address (Note: use `0.0.0.0` to listen on all interfaces). Option `HTTP_PORT` contains the web server's listening port. Default listening port is set to `8338`. If option `USE_SSL` is set to `true` then `SSL/TLS` will be used for accessing the web server (e.g. `https://192.168.6.10:8338/`). In that case, option `SSL_PEM` should be pointing to the server's private/cert PEM file. Option `UPDATE_PERIOD` contains the number of seconds between each trail update. Default value is set to `86400` (i.e. one day).
 
- Example entries are as follows:
+Subsection `USERS` contains user's configuration settings. Each user entry constists of the `username:pbkdf2_hash(password):UID:filter_netmask(s)`. Utility `core/pbkdf2.py` is used to calculate the proper `pbkdf2_hash(password)` values. Value `UID` represents the unique user identifier, where it is recommended to use values lower than 1000 for administrative accounts, while higher value for non-administrative accounts. The part `filter_netmask(s)` represents the comma-delimited hard filter(s) that can be used to filter out the shown events depending on the user account(s). Example entries are as follows:
 
 ![Configuration users](http://i.imgur.com/HnH7E6S.png)
-
-Each user entry constists of the `username:pbkdf2_hash(password):UID:filter_netmask(s)`. Utility `core/pbkdf2.py` is used to calculate the proper `pbkdf2_hash(password)` values. Value `UID` represents the unique user identifier, where it is recommended to use values lower than 1000 for administrative accounts, while higher value for non-administrative accounts. The part `filter_netmask(s)` represents the comma-delimited hard filter(s) that can be used to filter out the shown events depending on the user account(s).
 
 Sensor's configuration can be found inside the `maltrail.conf` file's section `[Sensor]`:
 
