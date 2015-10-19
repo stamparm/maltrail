@@ -74,7 +74,7 @@ Server's configuration can be found inside the `maltrail.conf` section `[Server]
 
 ![Server's configuration](http://i.imgur.com/o0loHDL.png)
 
-Option `HTTP_ADDRESS` contains the web server's listening address (Note: use `0.0.0.0` to listen on all interfaces). Option `HTTP_PORT` contains the web server's listening port. Default listening port is set to `8338`. If option `USE_SSL` is set to `true` then `SSL/TLS` will be used for accessing the web server (e.g. `https://192.168.6.10:8338/`). In that case, option `SSL_PEM` should be pointing to the server's private/cert PEM file. Option `UPDATE_PERIOD` contains the number of seconds between each trail update. Default value is set to `86400` (i.e. one day).
+Option `HTTP_ADDRESS` contains the web server's listening address (Note: use `0.0.0.0` to listen on all interfaces). Option `HTTP_PORT` contains the web server's listening port. Default listening port is set to `8338`. If option `USE_SSL` is set to `true` then `SSL/TLS` will be used for accessing the web server (e.g. `https://192.168.6.10:8338/`). In that case, option `SSL_PEM` should be pointing to the server's private/cert PEM file. Option `UPDATE_PERIOD` contains the number of seconds between each automatic trails update (Note: default value is set to `86400` (i.e. one day)) by using definitions inside the `trails` directory (Note: both **Sensor** and **Server** take care of the trails update).
 
 Subsection `USERS` contains user's configuration settings. Each user entry constists of the `username:pbkdf2_hash(password):UID:filter_netmask(s)`. Utility `core/pbkdf2.py` is used to calculate the proper `pbkdf2_hash(password)` values. Value `UID` represents the unique user identifier, where it is recommended to use values lower than 1000 for administrative accounts, while higher value for non-administrative accounts. The part `filter_netmask(s)` represents the comma-delimited hard filter(s) that can be used to filter out the shown events depending on the user account(s). Example entries are as follows:
 
@@ -86,17 +86,31 @@ Sensor's configuration can be found inside the `maltrail.conf` file's section `[
 
 If option `USE_MULTIPROCESSING` is set to `true` then all CPU cores will be used. One core will be used only for packet capture (with appropriate affinity, IO priority and nice level settings), while other cores will be used for packet processing. Otherwise, everything will be run on a single core. Option `USE_HEURISTICS` turns on heuristic mechanisms (e.g. `long domain name (suspicious)`, `excessive no such domain name (suspicious)`, `direct .exe download (suspicious)`, etc.), potentially introducing false positives. Option `CAPTURE_BUFFER` presents a total memory (in bytes of percentage of total physical memory) to be used in case of multiprocessing mode for storing packet capture in a ring buffer for further processing by non-capturing processes. Option `MONITOR_INTERFACE` should contain the name of the capturing interface. Use value `any` to capture from all interfaces (if OS supports this). Option `CAPTURE_FILTER` should contain the network capture (tcpdump) filter to skip the uninteresting packets and ease the capturing process. Option `SENSOR_NAME` contains the name that should be appearing inside the events `sensor_name` value, so the event from one sensor could be distinguished from the other. If option `LOG_SERVER` is set, then all events are being sent remotely to the **Server**, otherwise they are stored directly into the logging directory set with option `LOG_DIRECTORY` inside the `[Server]` section. In case that the option `UPDATE_SERVER` is set, then all the trails are being pulled from the given location, otherwise they are being updated from trails definitions located inside the installation itself.
 
-### Reporting web server
+### Sensor
 
-When entering the web server's user interface, user will be presented with the following authentication dialog. User has to enter the proper credentials that have been set by the server's administrator inside the configuration file `maltrail.conf`.
+When running the sensor (e.g. `sudo python sensor.py`) for the first time and/or after a longer period of non-running, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). After the initialization, it will start monitoring the configured interface (option `MONITOR_INTERFACE` inside the `maltrail.conf`) and write the events to either the configured log directory (option `LOG_DIRECTORY`) or send them remotely to the logging/reporting *Server* (option `LOG_SERVER`).
+
+![Sensor run](http://i.imgur.com/GLev7HJ.png)
+
+Detected events are stored inside the **Server**'s logging directory (i.e. option `LOG_DIRECTORY`) in easy-to-read CSV format (Note: space is used as a delimiter) as single line entries consisting of: `time` `sensor` `src_ip` `src_port` `dst_ip` `dst_port` `proto` `trail_type` `trail` `trail_info` `reference` (e.g. `"2015-10-19 15:48:41.152513" beast 192.168.5.33 32985 8.8.8.8 53 UDP DNS 0000mps.webpreview.dsl.net malicious siteinspector.comodo.com`):
+
+![Sample log](http://i.imgur.com/tAkVQTy.png)
+
+### Server
+
+Same as for **Sensor**, when running the **Server** (e.g. `python server.py`) for the first time and/or after a longer period of non-running, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). Its basic function is to store the log entries inside the logging directory (i.e. option `LOG_DIRECTORY`) and provide the web reporting interface for presenting those same entries to the end-user (Note: there is no need install the 3rd party web server packages like Apache):
+
+![Server run](http://i.imgur.com/16MTDXv.png)
+
+When entering the **Server**'s reporting interface (i.e. via the address defined by options `HTTP_ADDRESS` and `HTTP_PORT`), user will be presented with the following authentication dialog. User has to enter the proper credentials that have been set by the server's administrator inside the configuration file `maltrail.conf`:
 
 ![User login](http://i.imgur.com/kbaLIM9.png)
 
-Once inside, user will be presented with the reporting interface as follows:
+Once inside, user will be presented with the following reporting interface:
 
 ![Reporting interface](http://i.imgur.com/utZnwJF.png)
 
-The top part holds a sliding timeline where user can select logs for past events (Note: mouse over event will trigger display of tooltip with number of events for current date):
+The top part holds a sliding timeline (Note: activated after clicking the current date label and/or the calendar icon ![Calendar icon](http://i.imgur.com/NfNore9.png)) where user can select logs for past events (Note: mouse over event will trigger display of tooltip with number of events for current date). Dates are grouped by months, where 4 months of data is displayed inside the widget itself. However, by using the provided slider (i.e. ![Timeline slider](http://i.imgur.com/SNGVSaP.png)) user can easily access also events from previous months.
 
 ![Timeline](http://i.imgur.com/IA1eGty.png)
 
@@ -114,21 +128,21 @@ Bottom part holds a condensed representation of logged events in form of a pagin
 
 Column `threat` holds threat's unique ID (e.g. `85fdb08d`) and color (Note: extruded from the threat's ID), `sensor` holds sensor name(s) where the event has been triggered (e.g. `blitvenica`), `events` holds total number of events for a current threat, `first_seen` holds time of first event in a selected (24h) period (e.g. `06th 08:21:54`), `last_seen` holds time of last event in a selected (24h) period (e.g. `06th 15:21:23`), `src_ip` holds source IP(s) of a threat (e.g. `99.102.41.102`), `src_port` holds source port(s) (e.g. `44556, 44589, 44601`), `dst_ip` holds destination IP(s) (e.g. `213.202.100.28`), `dst_port` holds destination port(s) (e.g. `80 (HTTP)`), `proto` holds protocol(s), (e.g. `TCP`), `trail` holds a blacklist entry that triggered the event(s), info holds more information about the threat/trail (e.g. `attacker` for known attacker's IP addresses or `ipinfo` for known IP information service commonly used by malware during a startup), `reference` holds a source of the blacklisted entry (e.g. `(static)` for static trails or `myip.ms` for a dynamic feed retrieved from that same source) and `tags` holds user defined tags for a given trail (e.g. `APT28`).
 
-When moving mouse over `src_ip` and `dst_ip` table entries, information tooltip is being displayed with detailed WHOIS information:
+When moving mouse over `src_ip` and `dst_ip` table entries, information tooltip is being displayed with detailed WHOIS information (Note: [RIPE](http://www.ripe.net/) is the information provider):
 
-![On mouse over IP](http://i.imgur.com/QVm3SXL.png)
+![On mouse over IP](http://i.imgur.com/bkYbNSk.png)
 
-Event details that differ in a same threat (e.g. `src_port`, `dst_port`, `proto`, etc.) are condensed in form of a cloud icon. Moving mouse over such icon will result in a display of an information tooltip with all held items:
+Event details (e.g. `src_port`, `dst_port`, `proto`, etc.) that differ inside a same threat entry are condensed in form of a cloud icon (i.e. ![Cloud ellipsis](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/ellipsis.png)). This is performed to get an usable reporting interface with as less rows as possible. Moving mouse over such icon will result in a display of an information tooltip with all items held (e.g. all port numbers being scanned by `attacker`):
 
 ![On mouse over cloud](http://i.imgur.com/nU4ZPHZ.png)
 
-When moving mouse over a threat's trail it will result in a display of search results using the trail performed at [DuckDuckGo](https://duckduckgo.com/) search engine:
+When hovering the mouse pointer over the threat's trail for couple of seconds it will result in a frame display of search results using the trail performed at [DuckDuckGo](https://duckduckgo.com/) search engine. In lots of cases, this provides basic information about the threat itself, eliminating the need for user to do the manual search for it. In upper right corner of the opened frame window there are two extra buttons. By clicking the first one (i.e. ![New tab icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/newtab.png)), the resulting frame will be opened inside the new browser's tab (or window), while by clicking the second one (i.e. ![Close icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/close.png)) will immediately close the frame (Note: the same action is achieved by moving the mouse pointer outside the frame borders):
 
-![On mouse over trail](http://i.imgur.com/rOnQbuh.png)
+![On mouse over trail](http://i.imgur.com/COugB5y.png)
 
 ## Requirements
 
-Installed [Python](http://www.python.org/download/) **2.6.x** or **2.7.x** is required, together with [Pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy).
+Installed [Python](http://www.python.org/download/) **2.6.x** or **2.7.x** is required, together with [Pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) (e.g. `sudo apt-get install python-pcapy`).
 
 ## License
 
