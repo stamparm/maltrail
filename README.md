@@ -110,7 +110,7 @@ Once inside, user will be presented with the following reporting interface:
 
 ![Reporting interface](http://i.imgur.com/utZnwJF.png)
 
-The top part holds a sliding timeline (Note: activated after clicking the current date label and/or the calendar icon ![Calendar icon](http://i.imgur.com/NfNore9.png)) where user can select logs for past events (Note: mouse over event will trigger display of tooltip with number of events for current date). Dates are grouped by months, where 4 months of data is displayed inside the widget itself. However, by using the provided slider (i.e. ![Timeline slider](http://i.imgur.com/SNGVSaP.png)) user can easily access also events from previous months.
+The top part holds a sliding timeline (Note: activated after clicking the current date label and/or the calendar icon ![Calendar icon](http://i.imgur.com/NfNore9.png)) where user can select logs for past events (Note: mouse over event will trigger display of tooltip with number of events for current date). Dates are grouped by months, where 4 months of data are displayed inside the widget itself. However, by using the provided slider (i.e. ![Timeline slider](http://i.imgur.com/SNGVSaP.png)) user can easily access also events from previous months.
 
 ![Timeline](http://i.imgur.com/IA1eGty.png)
 
@@ -136,7 +136,7 @@ Event details (e.g. `src_port`, `dst_port`, `proto`, etc.) that differ inside a 
 
 ![On mouse over cloud](http://i.imgur.com/nU4ZPHZ.png)
 
-When hovering the mouse pointer over the threat's trail for couple of seconds it will result in a frame display of search results using the trail performed at [DuckDuckGo](https://duckduckgo.com/) search engine. In lots of cases, this provides basic information about the threat itself, eliminating the need for user to do the manual search for it. In upper right corner of the opened frame window there are two extra buttons. By clicking the first one (i.e. ![New tab icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/newtab.png)), the resulting frame will be opened inside the new browser's tab (or window), while by clicking the second one (i.e. ![Close icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/close.png)) will immediately close the frame (Note: the same action is achieved by moving the mouse pointer outside the frame borders):
+When hovering the mouse pointer over the threat's trail for couple of seconds it will result in a frame consisted of results using the trail as a search term performed against [DuckDuckGo](https://duckduckgo.com/) search engine. In lots of cases, this provides basic information about the threat itself, eliminating the need for user to do the manual search for it. In upper right corner of the opened frame window there are two extra buttons. By clicking the first one (i.e. ![New tab icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/newtab.png)), the resulting frame will be opened inside the new browser's tab (or window), while by clicking the second one (i.e. ![Close icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/close.png)) will immediately close the frame (Note: the same action is achieved by moving the mouse pointer outside the frame borders):
 
 ![On mouse over trail](http://i.imgur.com/COugB5y.png)
 
