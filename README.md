@@ -2,45 +2,48 @@
 
 ## General
 
-**Maltrail** is a malicious traffic monitoring system, utilizing publicly available blacklists containing malicious (or generally suspicious) trails (i.e. domain names, URLs and/or IPs), along with static lists compiled from various AV reports and custom user defined lists. Also, it has (optional) heuristic mechanisms that can help in discovery of unknown threats.
+**Maltrail** is a malicious traffic monitoring system, utilizing publicly available (black)lists containing malicious (or generally suspicious) trails (i.e. domain names, URLs and/or IPs), along with static lists compiled from various AV reports and custom user defined lists. Also, it has (optional) advanced heuristic mechanisms that can help in discovery of unknown threats.
 
 ![Reporting tool](http://i.imgur.com/DhWdpmK.png)
 
-The following blacklists (i.e. feeds) are being utilized:
+The following (black)lists (i.e. feeds) are being utilized:
 
 * http://atrack.h3x.eu/c2
-* https://www.autoshun.org/files/shunlist.csv
-* http://lists.blocklist.de/lists/all.txt
-* http://danger.rulez.sk/projects/bruteforceblocker/blist.php
+* https://check.torproject.org/cgi-bin/TorBulkExitList.py?ip=1.1.1.1
 * http://cinsscore.com/list/ci-badguys.txt
 * http://cybercrime-tracker.net/all.php
-* http://www.dshield.org/feeds/suspiciousdomains_High.txt
-* http://rules.emergingthreats.net/open/suricata/rules/botcc.rules
-* http://rules.emergingthreats.net/open/suricata/rules/compromised-ips.txt
-* https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules
+* http://danger.rulez.sk/projects/bruteforceblocker/blist.php
 * https://feodotracker.abuse.ch/blocklist/?download=domainblocklist
 * https://feodotracker.abuse.ch/blocklist/?download=ipblocklist
-* http://malc0de.com/rss/
-* http://www.malwaredomainlist.com/hostslist/hosts.txt
-* http://malwaredomains.lehigh.edu/files/domains.txt
-* http://malwared.malwaremustdie.org/rss.php
+* http://lists.blocklist.de/lists/all.txt
 * https://lists.malwarepatrol.net/cgi/getfile?receipt=f1417692233&product=8&list=dansguardian
+* http://malc0de.com/rss/
+* http://malwared.malwaremustdie.org/rss.php
+* http://malwaredomains.lehigh.edu/files/domains.txt
 * http://malwareurls.joxeankoret.com/domains.txt
 * http://malwareurls.joxeankoret.com/normal.txt
-* https://www.maxmind.com/en/anonymous_proxies
 * https://myip.ms/files/blacklist/htaccess/latest_blacklist.txt
+* https://openphish.com/feed.txt
+* http://osint.bambenekconsulting.com/feeds/c2-ipmasterlist.txt
+* http://osint.bambenekconsulting.com/feeds/dga-feed.txt
+* https://palevotracker.abuse.ch/blocklists.php?download=combinedblocklist
+* http://rules.emergingthreats.net/open/suricata/rules/botcc.rules
+* http://rules.emergingthreats.net/open/suricata/rules/compromised-ips.txt
+* http://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules
+* http://vxvault.siri-urz.net/URL_List.php
+* https://zeustracker.abuse.ch/blocklist.php?download=badips
+* https://zeustracker.abuse.ch/blocklist.php?download=compromised
+* https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
+* https://zeustracker.abuse.ch/monitor.php?filter=all
+* https://www.autoshun.org/files/shunlist.csv
+* http://www.botscout.com/last_caught_cache.htm
+* http://www.dshield.org/feeds/suspiciousdomains_High.txt
+* http://www.malwaredomainlist.com/hostslist/hosts.txt
+* https://www.maxmind.com/en/anonymous_proxies
 * http://www.nothink.org/blacklist/blacklist_malware_irc.txt
 * http://www.openbl.org/lists/base.txt
-* https://openphish.com/feed.txt
-* https://palevotracker.abuse.ch/blocklists.php?download=combinedblocklist
-* https://check.torproject.org/cgi-bin/TorBulkExitList.py?ip=1.1.1.1
-* http://vxvault.siri-urz.net/URL_List.php
-* https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
-* https://zeustracker.abuse.ch/blocklist.php?download=badips
-* https://zeustracker.abuse.ch/monitor.php?filter=all
-* https://zeustracker.abuse.ch/blocklist.php?download=compromised
 
-As of static entries, the trails for the following malicious entities have been manually included (from various AV reports):
+As of static entries, the trails for the following malicious entities (e.g. malware C&Cs) have been manually included (from various AV reports):
 
 ```
 alureon, android_stealer, aridviper, axpergle, balamid, bankpatch, bedep,
@@ -60,11 +63,11 @@ virut, vobfus, vundo, zeroaccess, zlob, etc.
 
 ## Introduction
 
-Maltrail is based on the **Sensor&lt;-&gt;Server&lt;-&gt;Client** architecture. **Sensor**(s) is a standalone component running on the monitoring node (i.e. Linux box connected to the SPAN/mirroring port) where it "sniffs" the passing traffic for blacklisted items/trails (i.e. domain names, URLs and/or IPs). In case of a positive match, it sends the event details to the (central) **Server** where it is being stored inside the appropriate logging directory (i.e. `LOG_DIRECTORY` described in the *Configuration* section). If sensor is being run on the same machine as server (default configuration), logs are stored directly into the logging directory. Otherwise, they are being sent via UDP to the remote server (i.e. `LOG_SERVER` described in the *Configuration* section).
+Maltrail is based on the **Sensor&lt;-&gt;Server&lt;-&gt;Client** architecture. **Sensor**(s) is a standalone component running on the monitoring node (e.g. Linux box connected to the SPAN/mirroring port) where it "sniffs" the passing traffic for blacklisted items/trails (i.e. domain names, URLs and/or IPs). In case of a positive match, it sends the event details to the (central) **Server** where it is being stored inside the appropriate logging directory (i.e. `LOG_DIRECTORY` described in the *Configuration* section). If sensor is being run on the same machine as **Server** (default configuration), logs are stored directly into the logging directory. Otherwise, they are being sent via UDP to the remote server (i.e. `LOG_SERVER` described in the *Configuration* section).
 
-![Architecture diagram](http://i.imgur.com/peAztNj.png)
+![Architecture diagram](http://i.imgur.com/ekgKAeZ.png)
 
-**Server**'s primary role is to store the event details and provide backend support for the reporting web application. In default configuration, server and sensor will be run on the same machine. So, to prevent potential disruptions in sensor activities, the front-end reporting part is based on the ["Fat client"](https://en.wikipedia.org/wiki/Fat_client) architecture. Events (i.e. log entries) for the chosen (24h) period are streamed toward the **Client**, where the reporting web application is solely responsible for the presentation part. Data is sent toward the client in compressed chunks, where they are processed sequentially. The final report is created in a highly condensed form, practically allowing presentation of virtually unlimited number of events.
+**Server**'s primary role is to store the event details and provide backend support for the reporting web application. In default configuration, server and sensor will run on the same machine. So, to prevent potential disruptions in sensor activities, the front-end reporting part is based on the ["Fat client"](https://en.wikipedia.org/wiki/Fat_client) architecture. Events (i.e. log entries) for the chosen (24h) period are transferred to the **Client**, where the reporting web application is solely responsible for the presentation part. Data is sent toward the client in compressed chunks, where they are processed sequentially. The final report is created in a highly condensed form, practically allowing presentation of virtually unlimited number of events.
 
 ## User's manual
 
@@ -108,7 +111,7 @@ When entering the **Server**'s reporting interface (i.e. via the address defined
 
 Once inside, user will be presented with the following reporting interface:
 
-![Reporting interface](http://i.imgur.com/utZnwJF.png)
+![Reporting interface](http://i.imgur.com/WZMHyGC.png)
 
 The top part holds a sliding timeline (Note: activated after clicking the current date label and/or the calendar icon ![Calendar icon](http://i.imgur.com/NfNore9.png)) where user can select logs for past events (Note: mouse over event will trigger display of tooltip with number of events for current date). Dates are grouped by months, where 4 months of data are displayed inside the widget itself. However, by using the provided slider (i.e. ![Timeline slider](http://i.imgur.com/SNGVSaP.png)) user can easily access also events from previous months.
 
@@ -142,8 +145,26 @@ When hovering the mouse pointer over the threat's trail for couple of seconds it
 
 ## Requirements
 
-Installed [Python](http://www.python.org/download/) **2.6.x** or **2.7.x** is required, together with [Pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) (e.g. `sudo apt-get install python-pcapy`).
+To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6.x** or **2.7.x** is required, together with [Pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) (e.g. `sudo apt-get install python-pcapy`). There are no other requirements, other than to run the **Sensor** part with the administrative (i.e. root) privileges.
 
-## License
+## License (MIT)
 
-Maltrail is available under the [MIT license](LICENSE).
+Copyright (c) 2014-2015 by Miroslav Stampar. All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
