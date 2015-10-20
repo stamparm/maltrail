@@ -6,7 +6,5 @@ before_install:
     - sudo apt-get update -qq
     - sudo apt-get install -qq libpcap-dev
     - sudo apt-get install -qq python-pcapy
-install:
-    - make build
 script:
     - echo "TODO"
