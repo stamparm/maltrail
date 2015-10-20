@@ -1,4 +1,4 @@
-# Maltrail [![Build Status](https://api.travis-ci.org/stamparm/maltrail.svg?branch=master)](https://api.travis-ci.org/stamparm/maltrail) ![Python 2.6, 2.7](https://img.shields.io/badge/python-2.6,%202.7-blue.svg) ![Dependencies pcapy](https://img.shields.io/badge/dependencies-pcapy-yellow.svg) ![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Twitter](https://img.shields.io/twitter/url/https/github.com/stamparm/maltrail/.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=%5Bobject%20Object%5D)
+# Maltrail [![Build Status](https://api.travis-ci.org/stamparm/maltrail.svg?branch=master)](https://api.travis-ci.org/stamparm/maltrail) ![Python 2.6, 2.7](https://img.shields.io/badge/python-2.6,%202.7-blue.svg) ![Dependencies pcapy](https://img.shields.io/badge/dependencies-pcapy-yellow.svg) ![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Twitter](https://img.shields.io/twitter/url/https/github.com/stamparm/maltrail/.svg?style=social)](https://twitter.com/intent/tweet?text=Maltrail%20-%20malicious%20traffic%20monitoring%20system&url=https%3A%2F%2Fgithub.com%2Fstamparm%2Fmaltrail%2F)
 
 ## General
 
