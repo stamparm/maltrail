@@ -8,40 +8,16 @@
 
 The following (black)lists (i.e. feeds) are being utilized:
 
-* http://atrack.h3x.eu/c2
-* https://check.torproject.org/cgi-bin/TorBulkExitList.py?ip=1.1.1.1
-* http://cinsscore.com/list/ci-badguys.txt
-* http://cybercrime-tracker.net/all.php
-* http://danger.rulez.sk/projects/bruteforceblocker/blist.php
-* https://feodotracker.abuse.ch/blocklist/?download=domainblocklist
-* https://feodotracker.abuse.ch/blocklist/?download=ipblocklist
-* http://lists.blocklist.de/lists/all.txt
-* https://lists.malwarepatrol.net/cgi/getfile?receipt=f1417692233&product=8&list=dansguardian
-* http://malc0de.com/rss/
-* http://malwared.malwaremustdie.org/rss.php
-* http://malwaredomains.lehigh.edu/files/domains.txt
-* http://malwareurls.joxeankoret.com/domains.txt
-* http://malwareurls.joxeankoret.com/normal.txt
-* https://myip.ms/files/blacklist/htaccess/latest_blacklist.txt
-* https://openphish.com/feed.txt
-* http://osint.bambenekconsulting.com/feeds/c2-ipmasterlist.txt
-* http://osint.bambenekconsulting.com/feeds/dga-feed.txt
-* https://palevotracker.abuse.ch/blocklists.php?download=combinedblocklist
-* http://rules.emergingthreats.net/open/suricata/rules/botcc.rules
-* http://rules.emergingthreats.net/open/suricata/rules/compromised-ips.txt
-* http://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules
-* http://vxvault.siri-urz.net/URL_List.php
-* https://zeustracker.abuse.ch/blocklist.php?download=badips
-* https://zeustracker.abuse.ch/blocklist.php?download=compromised
-* https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
-* https://zeustracker.abuse.ch/monitor.php?filter=all
-* https://www.autoshun.org/files/shunlist.csv
-* http://www.botscout.com/last_caught_cache.htm
-* http://www.dshield.org/feeds/suspiciousdomains_High.txt
-* http://www.malwaredomainlist.com/hostslist/hosts.txt
-* https://www.maxmind.com/en/anonymous_proxies
-* http://www.nothink.org/blacklist/blacklist_malware_irc.txt
-* http://www.openbl.org/lists/base.txt
+```
+asprox, autoshun, bambenekconsultingc2, bambenekconsultingdga,
+blocklist, botscout, bruteforceblocker, ciarmy,
+cybercrimetracker, dshield, emergingthreatsbot, emergingthreatscip,
+malc0de, malwaredomainlist, malwaredomains, malwaremustdie,
+malwarepatrol, malwareurlsnormal, maxmind, myip, nothink,
+openbl, openphish, palevotracker, torproject, vxvault,
+zeustrackerdns, zeustrackerip, zeustrackermonitor, zeustrackerurl,
+etc.
+```
 
 As of static entries, the trails for the following malicious entities (e.g. malware C&Cs) have been manually included (from various AV reports):
 
