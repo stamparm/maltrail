@@ -46,19 +46,25 @@ The following (black)lists (i.e. feeds) are being utilized:
 As of static entries, the trails for the following malicious entities (e.g. malware C&Cs) have been manually included (from various AV reports):
 
 ```
-alureon, android_stealer, aridviper, axpergle, balamid, bankpatch, bedep,
-bubnix, carbanak, careto, chewbacca, cleaver, computrace, conficker,
-cosmicduke, couponarific, crilock, cryptolocker, cryptowall, ctblocker,
-darkhotel, defru, desertfalcon, destory, dorifel, dorkbot, dursg, dynamic_domain,
-dyreza, emotet, equation, expiro, fakeran, fbi_ransomware, fiexp, fignotok,
-fin4, finfisher, gamarue, gauss, htran, jenxcus, kegotip, kovter, lollipop
-luckycat, mariposa, miniduke, nettraveler, neurevt, nitol, no-ip_malware,
-nonbolqu, nuqel, nymaim, palevo, pdfjsc, pift, powelike, proslikefan,
-pushdo, ransirac, redoctober, reveton, sality, sathurbot, scieron,
-sefnit, shylock, siesta, simda, sinkhole_kaspersky, sinkhole_shadowserver,
-smsfakesky, snake, snifula, sofacy, stuxnet, superfish, suspicious_domain,
-suspicious_ipinfo, teerac, torpig, torrentlocker, unruy, upatre, vawtrak,
-virut, vobfus, vundo, zeroaccess, zlob, etc.
+alureon, android_stealer, angler, aridviper, axpergle,
+babar, balamid, bankpatch, bedep, black_vine, bubnix,
+carbanak, careto, casper, chewbacca, cleaver, conficker,
+cosmicduke, couponarific, crilock, cryptolocker, cryptowall,
+ctblocker, darkhotel, defru, desertfalcon, destory,
+dorifel, dorkbot, dridex, dukes, dursg, dyreza,
+emotet, equation, evilbunny, expiro, fakeran, fareit,
+fbi_ransomware, fiexp, fignotok, fin4, finfisher,
+gamarue, gauss, htran, jenxcus, kegotip, kovter,
+lollipop, lotus_blossom, luckycat, mariposa, miniduke,
+nbot, nettraveler, neurevt, nitol, no-ip, nonbolqu,
+nuqel, nwt, nymaim, palevo, pdfjsc, pift, plugx,
+powelike, proslikefan, pushdo, ransirac, redoctober,
+reveton, russian_doll, sality, sathurbot, scieron,
+sefnit, shylock, siesta, simda, sinkhole_kaspersky,
+sinkhole_shadowserver, skyper, smsfakesky, snake, snifula,
+sofacy, stuxnet, teerac, teslacrypt, torpig,
+torrentlocker, unruy, upatre, vawtrak, virut, vobfus,
+volatile_cedar, vundo, waterbug, zeroaccess, zlob, etc.
 ```
 
 ## Introduction
