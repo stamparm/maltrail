@@ -206,6 +206,11 @@ When hovering the mouse pointer over the threat's trail for couple of seconds it
 
 ![](http://i.imgur.com/ufQFgt9.png)
 
+### Potential UDP exfiltration (i.e. breach)
+
+![UDP exfiltration 1](http://i.imgur.com/RSrjmO3.png)
+![UDP exfiltration 2](http://i.imgur.com/zW1mbsP.png)
+
 ### False positives
 
 ![Google false positive 1](http://i.imgur.com/wdA1B6O.png)
@@ -214,6 +219,7 @@ When hovering the mouse pointer over the threat's trail for couple of seconds it
 ---
 
 ![Suspicious domain false positive](http://i.imgur.com/ZzXGCo4.png)
+
 
 ## Requirements
 
