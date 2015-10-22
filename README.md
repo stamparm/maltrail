@@ -127,7 +127,7 @@ When hovering the mouse pointer over the threat's trail for couple of seconds it
 
 ## Real-life cases
 
-### Mass scan
+### Mass scans
 
 ![Shodan 1](http://i.imgur.com/0lnXoYj.png)
 ![Shodan 2](http://i.imgur.com/y15UU8S.png)
@@ -142,29 +142,49 @@ When hovering the mouse pointer over the threat's trail for couple of seconds it
 
 ![](http://i.imgur.com/Nz9SL5i.png)
 
-### Anonymous attacker
+### Anonymous attackers
 
 ![Tor attacker](http://i.imgur.com/r9I6udf.png)
 
-### Service attacker
+### Service attackers
 
 ![RDP brute force](http://i.imgur.com/JTYYHRL.png)
 
+---
+
+![SSH attackers filter](http://i.imgur.com/G1W3HrQ.png)
+
+---
+
+![Heartbleed attacker](http://i.imgur.com/F0dG1DT.png)
+
 ### Suspicious domain lookups
 
-![](http://i.imgur.com/5xsvDw1.png)
+![Suspicious static domains](http://i.imgur.com/5xsvDw1.png)
 
 ---
 
-![](http://i.imgur.com/3T5gdgo.png)
+![Suspicious dynamic domains](http://i.imgur.com/yrXtQ5j.png)
 
 ---
 
-![](http://i.imgur.com/31iPRGV.png)
+![Suspicious long domains](http://i.imgur.com/3T5gdgo.png)
+
+---
+
+![Excessive no such domain name](http://i.imgur.com/RYSnVcK.png)
+
+---
+
+![Flood](http://i.imgur.com/xIVwyw4.png)
 
 ### Suspicious ipinfo queries
 
 ![](http://i.imgur.com/RaGvvIg.png)
+
+---
+
+![ipinfo filter](http://i.imgur.com/TmBw0Xs.png)
 
 ### Suspicious direct .exe downloads
 
@@ -179,6 +199,21 @@ When hovering the mouse pointer over the threat's trail for couple of seconds it
 ![](http://i.imgur.com/LXalmDr.png)
 
 ---
+
+![](http://i.imgur.com/GixcFUk.png)
+
+---
+
+![](http://i.imgur.com/ufQFgt9.png)
+
+### False positives
+
+![Google false positive 1](http://i.imgur.com/wdA1B6O.png)
+![Google false positive 2](http://i.imgur.com/l0C3ATK.png)
+
+---
+
+![Suspicious domain false positive](http://i.imgur.com/ZzXGCo4.png)
 
 ## Requirements
 
