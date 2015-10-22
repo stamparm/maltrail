@@ -2,7 +2,7 @@
 
 ## General
 
-**Maltrail** is a malicious traffic monitoring system, utilizing publicly available (black)lists containing malicious (or generally suspicious) trails (i.e. domain names, URLs and/or IPs), along with static trails compiled from various AV reports and custom user defined lists. Also, it has (optional) advanced heuristic mechanisms that can help in discovery of unknown threats (e.g. unknown malware).
+**Maltrail** is a malicious traffic monitoring system, utilizing publicly available (black)lists containing malicious (or generally suspicious) trails (i.e. domain names, URLs and/or IPs), along with static trails compiled from various AV reports and custom user defined lists. Also, it has (optional) advanced heuristic mechanisms that can help in discovery of unknown threats (e.g. new malware).
 
 ![Reporting tool](http://i.imgur.com/DhWdpmK.png)
 
@@ -45,7 +45,7 @@ volatile_cedar, vundo, waterbug, zeroaccess, zlob, etc.
 
 ## Introduction
 
-Maltrail is based on the **Sensor&lt;-&gt;Server&lt;-&gt;Client** architecture. **Sensor**(s) is a standalone component running on the monitoring node (e.g. Linux box connected to the SPAN/mirroring port) where it "sniffs" the passing traffic for blacklisted items/trails (i.e. domain names, URLs and/or IPs). In case of a positive match, it sends the event details to the (central) **Server** where it is being stored inside the appropriate logging directory (i.e. `LOG_DIRECTORY` described in the *Configuration* section). If sensor is being run on the same machine as **Server** (default configuration), logs are stored directly into the logging directory. Otherwise, they are being sent via UDP to the remote server (i.e. `LOG_SERVER` described in the *Configuration* section).
+Maltrail is based on the **Sensor&lt;-&gt;Server&lt;-&gt;Client** architecture. **Sensor**(s) is a standalone component running on the monitoring node (e.g. Linux box connected to the SPAN/mirroring port) where it "sniffs" the passing traffic for blacklisted items/trails (i.e. domain names, URLs and/or IPs). In case of a positive match, it sends the event details to the (central) **Server** where they are being stored inside the appropriate logging directory (i.e. `LOG_DIRECTORY` described in the *Configuration* section). If **Sensor** is being run on the same machine as **Server** (default configuration), logs are stored directly into the local logging directory. Otherwise, they are being sent via UDP messages to the remote server (i.e. `LOG_SERVER` described in the *Configuration* section).
 
 ![Architecture diagram](http://i.imgur.com/ekgKAeZ.png)
 
