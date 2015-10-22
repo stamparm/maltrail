@@ -79,7 +79,7 @@ When running the sensor (e.g. `sudo python sensor.py`) for the first time and/or
 
 Detected events are stored inside the **Server**'s logging directory (i.e. option `LOG_DIRECTORY`) in easy-to-read CSV format (Note: space is used as a delimiter) as single line entries consisting of: `time` `sensor` `src_ip` `src_port` `dst_ip` `dst_port` `proto` `trail_type` `trail` `trail_info` `reference` (e.g. `"2015-10-19 15:48:41.152513" beast 192.168.5.33 32985 8.8.8.8 53 UDP DNS 0000mps.webpreview.dsl.net malicious siteinspector.comodo.com`):
 
-![Sample log](http://i.imgur.com/tAkVQTy.png)
+![Sample log](http://i.imgur.com/l8rxe2y.png)
 
 ### Server
 
@@ -124,6 +124,61 @@ Event details (e.g. `src_port`, `dst_port`, `proto`, etc.) that differ inside a 
 When hovering the mouse pointer over the threat's trail for couple of seconds it will result in a frame consisted of results using the trail as a search term performed against [DuckDuckGo](https://duckduckgo.com/) search engine. In lots of cases, this provides basic information about the threat itself, eliminating the need for user to do the manual search for it. In upper right corner of the opened frame window there are two extra buttons. By clicking the first one (i.e. ![New tab icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/newtab.png)), the resulting frame will be opened inside the new browser's tab (or window), while by clicking the second one (i.e. ![Close icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/close.png)) will immediately close the frame (Note: the same action is achieved by moving the mouse pointer outside the frame borders):
 
 ![On mouse over trail](http://i.imgur.com/COugB5y.png)
+
+## Real-life cases
+
+### Mass scan
+
+![Shodan 1](http://i.imgur.com/0lnXoYj.png)
+![Shodan 2](http://i.imgur.com/y15UU8S.png)
+![Shodan 3](http://i.imgur.com/wqEq00P.png)
+![Shodan 4](http://i.imgur.com/VOKmRTy.png)
+
+---
+
+![SIP scan](http://i.imgur.com/6HmJLGM.png)
+
+---
+
+![](http://i.imgur.com/Nz9SL5i.png)
+
+### Anonymous attacker
+
+![Tor attacker](http://i.imgur.com/r9I6udf.png)
+
+### Service attacker
+
+![RDP brute force](http://i.imgur.com/JTYYHRL.png)
+
+### Suspicious domain lookups
+
+![](http://i.imgur.com/5xsvDw1.png)
+
+---
+
+![](http://i.imgur.com/3T5gdgo.png)
+
+---
+
+![](http://i.imgur.com/31iPRGV.png)
+
+### Suspicious ipinfo queries
+
+![](http://i.imgur.com/RaGvvIg.png)
+
+### Suspicious direct .exe downloads
+
+![](http://i.imgur.com/rQqFCV2.png)
+
+### Suspicious HTTP requests
+
+![](http://i.imgur.com/MIMchaz.png)
+
+### Malware
+
+![](http://i.imgur.com/LXalmDr.png)
+
+---
 
 ## Requirements
 
