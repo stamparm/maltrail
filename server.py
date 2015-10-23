@@ -28,7 +28,7 @@ def main():
         if not config.SSL_PEM or not os.path.isfile(config.SSL_PEM):
             hint = "openssl req -new -x509 -keyout %s -out %s -days 365 -nodes -subj '/O=%s CA/C=EU'" % (config.SSL_PEM or "server.pem", config.SSL_PEM or "server.pem", NAME)
             print "[!] invalid configuration value for 'ssl_pem' ('%s')" % config.SSL_PEM
-            exit ("[i] hint: \"%s\"" % hint)
+            exit("[i] hint: \"%s\"" % hint)
 
     def update_timer():
         update()
