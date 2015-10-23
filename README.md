@@ -129,36 +129,66 @@ When hovering the mouse pointer over the threat's trail for couple of seconds it
 
 ### Mass scans
 
+Mass scans is a fairly new phenomenon where individuals and/or organizations give themself a right to scan the whole 0.0.0.0/0 IP range (i.e. whole Internet) on a daily basis, with disclaimer where they say that if you don't like it then you should contact them privately to be skipped from future scans. To make stuff worse, organizations as [Shodan](https://www.shodan.io/) give all results freely available (to other attackers) through their search engine. In the following screenshots you'll see details of scans that came from that same organization in one single day.
+
+Here is a reverse DNS lookup of the "attacker"'s address:
+
 ![Shodan 1](http://i.imgur.com/0lnXoYj.png)
+
+When hovering the mouse over the `trail` column's content (IP address), you'll be presented with the search results from DuckDuckGo where you'll be able to find more information about the "attacker":
+
 ![Shodan 2](http://i.imgur.com/y15UU8S.png)
-![Shodan 3](http://i.imgur.com/wqEq00P.png)
+
+In the `dst_ip` column, if you have a large organization, you'll be presented with large list of IP addresses affected:
+![Shodan 3](http://i.imgur.com/zwYkwxM.pngg)
+
+In the `dst_port` column you'll be able to see all ports that have been affected by such mass scans:
+
 ![Shodan 4](http://i.imgur.com/VOKmRTy.png)
 
----
+In other similar situations you'll see the same behavior, coming from previously blacklisted attacker(s) (in this case by [cinsscore.com](http://cinsscore.com/)):
+
+![Unknown attacker](http://i.imgur.com/ubJjaq7.png)
+
+One more common behavior is scanning of the whole 0.0.0.0/0 IP range (i.e. Internet) in search for one particular port (e.g. TCP port 443 when [Heartbleed](http://heartbleed.com/) has been found). In the following screenshot you'll find one such case for previously blacklisted attacker(s) (in this case by [autoshun.org](http://autoshun.org/)) targeting the TCP port 5060 (i.e. SIP) in search for [misconfigured VoIP devices](https://isc.sans.edu/diary/Targeting+VoIP%3A+Increase+in+SIP+Connections+on+UDP+port+5060/9193):
 
 ![SIP scan](http://i.imgur.com/6HmJLGM.png)
 
----
-
-![](http://i.imgur.com/Nz9SL5i.png)
-
 ### Anonymous attackers
+
+To spot the potential attackers hidden behind the [Tor](https://www.torproject.org/) anonymity network, Maltrail utilizes publicly available list of Tor exit nodes. In the following screenshot you'll see a case where unknown attacker has been utilizing the Tor network to access the web target (over HTTPS) in our organization's range in rather suspicious way (total 599 connection requests in less than 10 minutes):
 
 ![Tor attacker](http://i.imgur.com/r9I6udf.png)
 
 ### Service attackers
 
+Fairly similar case to the previous one is when previously blacklisted attacker (in this case by [autoshun.org](http://autoshun.org/)) tries to access particular service in our organization's range in rather suspicious way (total 580 connection requests in 15 minutes):
+
 ![RDP brute force](http://i.imgur.com/JTYYHRL.png)
 
----
+If we enter the `SSH attacker` to the `Filter` field, we'll be able to see all similar occurrences for that day, but in this case for port 22 (i.e. SSH):
 
 ![SSH attackers filter](http://i.imgur.com/G1W3HrQ.png)
 
----
+In the following case previously blacklisted attacker (in this case by [autoshun.org](http://autoshun.org/)) has been scanning the whole organization's range in search for potentially vulnerable SSL/HTTPS services (ports 443 and 8443):
 
 ![Heartbleed attacker](http://i.imgur.com/F0dG1DT.png)
 
+### Malware
+
+In case of connection attempts coming from infected computers inside our organization toward already known C&C servers, you'll be able to find threats similar to the following (in this case [CTBLocker](http://www.eset.co.uk/Press-Centre/News/Article/CTBLocker-Ransomware-striking-in-Europe-and-Latin-America) ransomware):
+
+![ctblocker malware](http://i.imgur.com/LXalmDr.png)
+
+![simda malware](http://i.imgur.com/GixcFUk.png)
+
+---
+
+![malware filter](http://i.imgur.com/ufQFgt9.png)
+
 ### Suspicious domain lookups
+
+
 
 ![Suspicious static domains](http://i.imgur.com/5xsvDw1.png)
 
@@ -193,18 +223,6 @@ When hovering the mouse pointer over the threat's trail for couple of seconds it
 ### Suspicious HTTP requests
 
 ![](http://i.imgur.com/4xbeBF7.png)
-
-### Malware
-
-![](http://i.imgur.com/LXalmDr.png)
-
----
-
-![](http://i.imgur.com/GixcFUk.png)
-
----
-
-![](http://i.imgur.com/ufQFgt9.png)
 
 ### Potential UDP exfiltration (i.e. breach)
 
