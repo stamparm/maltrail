@@ -12,14 +12,12 @@ import os
 import subprocess
 import sys
 import time
-import urllib
 
 sys.dont_write_bytecode = True
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))  # to enable calling from current directory too
 
 from core.common import load_trails
 from core.common import retrieve_content
-from core.enums import TRAIL
 from core.settings import config
 from core.settings import read_whitelist
 from core.settings import BAD_TRAIL_PREFIXES

@@ -16,11 +16,8 @@ import json
 import mimetypes
 import os
 import re
-import shlex
 import socket
 import SocketServer
-import subprocess
-import sys
 import threading
 import time
 import traceback
@@ -35,7 +32,6 @@ from core.pbkdf2 import pbkdf2
 from core.settings import config
 from core.settings import DATE_FORMAT
 from core.settings import DEBUG
-from core.settings import DEFLATE_COMPRESS_LEVEL
 from core.settings import DISABLED_CONTENT_EXTENSIONS
 from core.settings import HTML_DIR
 from core.settings import HTTP_TIME_FORMAT

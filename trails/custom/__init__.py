@@ -9,8 +9,6 @@ import glob
 import os
 import re
 
-from core.settings import ROOT_DIR
-
 __url__ = "(custom)"
 __reference__ = "(custom)"
 

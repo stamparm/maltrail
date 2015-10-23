@@ -9,13 +9,12 @@ import csv
 import gzip
 import os
 import StringIO
-import struct
 import subprocess
 import urllib
 import urllib2
 import zipfile
+import zlib
 
-from core.enums import TRAIL
 from core.settings import NAME
 from core.settings import TIMEOUT
 from core.settings import TRAILS_FILE
@@ -36,7 +35,6 @@ def retrieve_content(url, data=None):
                 data = StringIO.StringIO(zlib.decompress(retval, -15))
             else:
                 data = gzip.GzipFile("", "rb", 9, StringIO.StringIO(retval))
-                size = struct.unpack("<l", retval[-4:])[0]
             retval = data.read()
     except Exception, ex:
         retval = ex.read() if hasattr(ex, "read") else getattr(ex, "msg", str())

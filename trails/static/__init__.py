@@ -9,8 +9,6 @@ import glob
 import os
 import re
 
-from core.settings import ROOT_DIR
-
 __url__ = "(static)"
 
 def fetch():
@@ -42,7 +40,7 @@ def fetch():
                     retval[line.strip('.')] = (__info__, __reference__)
 
         for filename in glob.glob(os.path.join(directory, "*.csv")):
-            __reference____ = "%s (static)" % os.path.splitext(os.path.basename(filename))[0]
+            __reference__ = "%s (static)" % os.path.splitext(os.path.basename(filename))[0]
             content = open(filename, "rb").read()
             for line in content.split('\n'):
                 line = line.strip()
