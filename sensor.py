@@ -329,7 +329,7 @@ def _init_multiprocessing():
     global _n
 
     if _multiprocessing:
-        print ("[i] creating %d more processes (%d CPU cores detected)" % (multiprocessing.cpu_count() - 1, multiprocessing.cpu_count()))
+        print "[i] creating %d more processes (%d CPU cores detected)" % (multiprocessing.cpu_count() - 1, multiprocessing.cpu_count())
         _buffer = mmap.mmap(-1, BUFFER_LENGTH)  # http://www.alexonlinux.com/direct-io-in-python
         _n = multiprocessing.Value('L', lock=False)
 
