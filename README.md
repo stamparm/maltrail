@@ -53,7 +53,7 @@ Maltrail is based on the **Sensor&lt;-&gt;Server&lt;-&gt;Client** architecture. 
 
 Note: **Server** component can be skipped altogether, and just use the standalone **Sensor**. In such case, all events would be stored in the local logging directory, while the log entries could be examined either manually or by some CSV reading application.
 
-## User's manual
+## User's guide
 
 ### Configuration
 
@@ -247,7 +247,7 @@ In case of old and/or obsolete malware that sits undetected on organization's in
 
 ## Requirements
 
-To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6.x** or **2.7.x** is required, together with [pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) (e.g. `sudo apt-get install python-pcapy`). There are no other requirements, other than to run the **Sensor** part with the administrative (i.e. root) privileges.
+To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6.x** or **2.7.x** is required, together with [pcapy](http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Pcapy) (e.g. `sudo apt-get install python-pcapy`). There are no other requirements, other than to run the **Sensor** component with the administrative/root privileges.
 
 ## License (MIT)
 
