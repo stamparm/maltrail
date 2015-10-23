@@ -953,9 +953,9 @@ function initDetails() {
                         }
 
                         if (left)
-                            data = "<span title=\"" + decodeURIComponent(data.split(common).join("").replace(/[()]/g, "")).replace(/"/g, '%22') + "\" onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>" + common;
+                            data = "<span title=\"" + decodeURIComponent(data.split(common).join("").replace(/[()]/g, "").replace(/%([^2-7])/g, '%25$1')).replace(/"/g, '%22') + "\" onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>" + common;
                         else
-                            data = common + "<span title=\"" + decodeURIComponent(data.split(common).join("").replace(/[()]/g, "")).replace(/"/g, '%22') + "\" onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
+                            data = common + "<span title=\"" + decodeURIComponent(data.split(common).join("").replace(/[()]/g, "").replace(/%([^2-7])/g, '%25$1')).replace(/"/g, '%22') + "\" onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
                     }
                     return data;
                 },
