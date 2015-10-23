@@ -47,7 +47,7 @@ volatile_cedar, vundo, waterbug, zeroaccess, zlob, etc.
 
 Maltrail is based on the **Sensor&lt;-&gt;Server&lt;-&gt;Client** architecture. **Sensor**(s) is a standalone component running on the monitoring node (e.g. Linux box connected to the SPAN/mirroring port) where it "sniffs" the passing traffic for blacklisted items/trails (i.e. domain names, URLs and/or IPs). In case of a positive match, it sends the event details to the (central) **Server** where they are being stored inside the appropriate logging directory (i.e. `LOG_DIRECTORY` described in the *Configuration* section). If **Sensor** is being run on the same machine as **Server** (default configuration), logs are stored directly into the local logging directory. Otherwise, they are being sent via UDP messages to the remote server (i.e. `LOG_SERVER` described in the *Configuration* section).
 
-![Architecture diagram](http://i.imgur.com/ekgKAeZ.png)
+![Architecture diagram](http://i.imgur.com/Xw4ZrMR.png)
 
 **Server**'s primary role is to store the event details and provide backend support for the reporting web application. In default configuration, server and sensor will run on the same machine. So, to prevent potential disruptions in sensor activities, the front-end reporting part is based on the ["Fat client"](https://en.wikipedia.org/wiki/Fat_client) architecture. Events (i.e. log entries) for the chosen (24h) period are transferred to the **Client**, where the reporting web application is solely responsible for the presentation part. Data is sent toward the client in compressed chunks, where they are processed sequentially. The final report is created in a highly condensed form, practically allowing presentation of virtually unlimited number of events.
 
