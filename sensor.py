@@ -155,7 +155,7 @@ def _process_packet(packet, sec, usec):
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
                                 return
 
-                            if ('.') in path:
+                            if '.' in path:
                                 _ = urlparse.urlparse(url)
                                 filename = _.path.split('/')[-1]
                                 name, extension = os.path.splitext(filename)
@@ -189,7 +189,7 @@ def _process_packet(packet, sec, usec):
                         qdcount = struct.unpack("!H", data[4:6])[0]
                         if qdcount > 0:
                             offset = 12
-                            query =  ""
+                            query = ""
 
                             while len(data) > offset:
                                 length = ord(data[offset])
