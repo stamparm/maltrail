@@ -180,6 +180,10 @@ In case of connection attempts coming from infected computers inside our organiz
 
 ![ctblocker malware](http://i.imgur.com/LXalmDr.png)
 
+In the following case file downloads from blacklisted (in this case by [malwarepatrol.net](https://malwarepatrol.net/)) URL(s) have occurred:
+
+![](http://i.imgur.com/ACQOF40.png)
+
 If we enter the particular malware name (in this case [Simda](https://www.us-cert.gov/ncas/alerts/TA15-105A)) into the `Filter` field, only threats that are known to be linked to this malware will be shown (showing you all affected internal computers):
 
 ![simda malware](http://i.imgur.com/GixcFUk.png)
@@ -190,7 +194,7 @@ More generally, if we enter the `malware` into the `Filter` field, all threats t
 
 ### Suspicious domain lookups
 
-Maltrail uses the static list of TLD domains that are known to be commonly involved in suspicious activities. Most such [TLD](https://en.wikipedia.org/wiki/Top-level_domain) domains are coming from free domain registars (e.g. [Freenom](http://www.freenom.com)), hence they should be under greater scrutiny. In the following screenshot we can find a case where one such TLD domain (i.e. `.cm`) has been used by unknown malware using the [DGA](https://en.wikipedia.org/wiki/Domain_generation_algorithm) algorithm to contact its [C&C](https://www.trendmicro.com/vinfo/us/security/definition/command-and-control-%28c-c%29-server) server(s):
+Maltrail uses the static list of TLD domains that are known to be commonly involved in suspicious activities. Most such [TLD](https://en.wikipedia.org/wiki/Top-level_domain) domains are coming from free domain registars (e.g. [Freenom](http://www.freenom.com)), hence they should be under greater scrutiny. In the following screenshot we can find a case where one such TLD domain `.cm` has been used by unknown malware using the [DGA](https://en.wikipedia.org/wiki/Domain_generation_algorithm) algorithm to contact its [C&C](https://www.trendmicro.com/vinfo/us/security/definition/command-and-control-%28c-c%29-server) server(s):
 
 ![Suspicious static domains](http://i.imgur.com/5xsvDw1.png)
 
