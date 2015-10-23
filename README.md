@@ -192,7 +192,7 @@ When hovering the mouse pointer over the threat's trail for couple of seconds it
 
 ### Suspicious HTTP requests
 
-![](http://i.imgur.com/MIMchaz.png)
+![](http://i.imgur.com/4xbeBF7.png)
 
 ### Malware
 
