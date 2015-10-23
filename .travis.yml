@@ -5,6 +5,7 @@ python:
 before_install:
     - sudo apt-get update -qq
     - sudo apt-get install -qq libpcap-dev
-    - sudo apt-get install -qq python-pcapy
+install:
+    - pip install pcapy
 script:
     - python -c "import server; import sensor"
