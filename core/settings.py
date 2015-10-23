@@ -49,6 +49,7 @@ DEFAULT_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_I
 HOSTNAME = socket.gethostname()
 DISABLED_CONTENT_EXTENSIONS = (".py", ".pyc", ".md", ".txt", ".bak", ".conf", ".zip", "~")
 LOW_PRIORITY_INFO_KEYWORDS = ("suspicious", "attacker", "abuser", "malicious", "dnspod")
+BAD_TRAIL_PREFIXES = ("127.", "192.168.", "localhost")
 SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set(("apk", "exe", "scr"))
 SUSPICIOUS_FILENAMES = set(("gate.php",))
 SUSPICIOUS_HTTP_REQUEST_REGEX = r"(?i)(information_schema|sysdatabases|<script|\balert\(|xp_cmdshell|/etc/passwd|\bsleep\(|\bconvert\(|varchar|\bunion\s+(all\s+)?select\b)"

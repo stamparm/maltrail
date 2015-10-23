@@ -22,6 +22,7 @@ from core.common import retrieve_content
 from core.enums import TRAIL
 from core.settings import config
 from core.settings import read_whitelist
+from core.settings import BAD_TRAIL_PREFIXES
 from core.settings import LOW_PRIORITY_INFO_KEYWORDS
 from core.settings import ROOT_DIR
 from core.settings import TRAILS_FILE
@@ -110,7 +111,7 @@ def update(server=None):
         read_whitelist()
 
         for key in trails.keys():
-            if key in WHITELIST:
+            if key in WHITELIST or any(key.startswith(_) for _ in BAD_TRAIL_PREFIXES):
                 del trails[key]
             else:
                 try:
