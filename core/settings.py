@@ -8,6 +8,7 @@ See the file 'LICENSE' for copying permission
 import os
 import re
 import socket
+import stat
 import subprocess
 
 from core.attribdict import AttribDict
@@ -44,6 +45,7 @@ IPPROTO = 8
 ETH_LENGTH = 14
 CONFIG_FILE = os.path.join(ROOT_DIR, "maltrail.conf")
 SYSTEM_LOG_DIRECTORY = "/var/log" if not subprocess.mswindows else "C:\\Windows\\Logs"
+DEFAULT_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IROTH
 HOSTNAME = socket.gethostname()
 DISABLED_CONTENT_EXTENSIONS = (".py", ".pyc", ".md", ".txt", ".bak", ".conf", ".zip", "~")
 LOW_PRIORITY_INFO_KEYWORDS = ("suspicious", "attacker", "abuser", "malicious", "dnspod")

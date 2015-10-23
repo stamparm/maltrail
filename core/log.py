@@ -8,12 +8,12 @@ See the file 'LICENSE' for copying permission
 import os
 import socket
 import SocketServer
-import stat
 import threading
 import time
 
 from core.common import check_sudo
 from core.settings import config
+from core.settings import DEFAULT_LOG_PERMISSIONS
 from core.settings import TIME_FORMAT
 
 _thread_data = threading.local()
@@ -31,7 +31,7 @@ def get_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
     if _ != getattr(_thread_data, "log_path", None):
         if not os.path.exists(_):
             open(_, "w+").close()
-            os.chmod(_, stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IROTH)
+            os.chmod(_, DEFAULT_LOG_PERMISSIONS)
         _thread_data.log_path = _
         _thread_data.log_handle = os.open(_thread_data.log_path, flags)
     return _thread_data.log_handle
