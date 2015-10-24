@@ -958,6 +958,8 @@ function initDetails() {
                         try {
                             title = decodeURIComponent(title);
                         }
+                        catch(err) {
+                        }
                         finally {
                             title = title.replace(/"/g, '%22');
                         }
