@@ -132,6 +132,10 @@ The top part holds a sliding timeline (Note: activated after clicking the curren
 
 ![Timeline](http://i.imgur.com/WtEolEP.png)
 
+Once clicking the date, all events for that particular date should be loaded and represented by the client's web browser. Depending on number of events and the network connection speed, loading and display of logged events could take from couple of seconds, up to several minutes (e.g. 100,000 events takes around 5 seconds in total). For the whole processing time, all familiar animated loader will be displayed accross the whole user interface:
+
+![Watch](http://i.imgur.com/JgTgezv.png)
+
 Middle part holds a summary of displayed events. `Events` box represents total number of events in a selected 24-hour period, where red line represents IP-based events, blue line represents DNS-based events and yellow line represents URL-based events. `Sources` box represents number of events per top sources in form of a stacked column chart, with total number of sources on top. `Threats` box represents percentage of top threats in form of a pie chart (Note: gray area holds all threats having &lt;1% in total events), with total number of threats on top. `Trails` box represents percentage of top trails in form of a pie chart (Note: gray area holds all trails having &lt;1% in total events), with total number of trails on top.
 
 ![Summary](http://i.imgur.com/4aZBBTo.png)
@@ -157,6 +161,10 @@ Event details (e.g. `src_port`, `dst_port`, `proto`, etc.) that differ inside a 
 When hovering the mouse pointer over the threat's trail for couple of seconds it will result in a frame consisted of results using the trail as a search term performed against [DuckDuckGo](https://duckduckgo.com/) search engine. In lots of cases, this provides basic information about the threat itself, eliminating the need for user to do the manual search for it. In upper right corner of the opened frame window there are two extra buttons. By clicking the first one (i.e. ![New tab icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/newtab.png)), the resulting frame will be opened inside the new browser's tab (or window), while by clicking the second one (i.e. ![Close icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/close.png)) will immediately close the frame (Note: the same action is achieved by moving the mouse pointer outside the frame borders):
 
 ![On mouse over trail](http://i.imgur.com/IvDOIt1.png)
+
+For each threat there is a column `tag` that can be filled with arbitrary "tags" to closely describe all threats sharing the same trail. Also, it is a great way to describe threats individually, so all threats sharing the same tag could be grouped out later.
+
+![Tags](http://i.imgur.com/iI2Alh8.png)
 
 ## Real-life cases
 
