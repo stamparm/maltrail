@@ -162,7 +162,7 @@ When hovering mouse pointer over the threat's trail for couple of seconds it wil
 
 ![On mouse over trail](http://i.imgur.com/IvDOIt1.png)
 
-For each threat there is a column `tag` that can be filled with arbitrary "tags" to closely describe all threats sharing the same trail. Also, it is a great way to describe threats individually, so all threats sharing the same tag could be grouped out later.
+For each threat there is a column `tag` that can be filled with arbitrary "tags" to closely describe all threats sharing the same trail. Also, it is a great way to describe threats individually, so all threats sharing the same tag (e.g. `falsepositive`) could be grouped out later:
 
 ![Tags](http://i.imgur.com/iI2Alh8.png)
 
