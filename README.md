@@ -82,7 +82,7 @@ ping -c 1 136.161.101.53
 cat /var/log/maltrail/$(date +"%Y-%m-%d").log
 ```
 
-![Test](http://i.imgur.com/OFVswH8.png)
+![Test](http://i.imgur.com/lIYntT1.png)
 
 ## User's guide
 
@@ -94,7 +94,7 @@ Server's configuration can be found inside the `maltrail.conf` section `[Server]
 
 Option `HTTP_ADDRESS` contains the web server's listening address (Note: use `0.0.0.0` to listen on all interfaces). Option `HTTP_PORT` contains the web server's listening port. Default listening port is set to `8338`. If option `USE_SSL` is set to `true` then `SSL/TLS` will be used for accessing the web server (e.g. `https://192.168.6.10:8338/`). In that case, option `SSL_PEM` should be pointing to the server's private/cert PEM file. Option `UPDATE_PERIOD` contains the number of seconds between each automatic trails update (Note: default value is set to `86400` (i.e. one day)) by using definitions inside the `trails` directory (Note: both **Sensor** and **Server** take care of the trails update).
 
-Subsection `USERS` contains user's configuration settings. Each user entry constists of the `username:pbkdf2_hash(password):UID:filter_netmask(s)`. Utility `core/pbkdf2.py` is used to calculate the proper `pbkdf2_hash(password)` values. Value `UID` represents the unique user identifier, where it is recommended to use values lower than 1000 for administrative accounts, while higher value for non-administrative accounts. The part `filter_netmask(s)` represents the comma-delimited hard filter(s) that can be used to filter out the shown events depending on the user account(s). Example entries are as follows:
+Subsection `USERS` contains user's configuration settings. Each user entry consists of the `username:pbkdf2_hash(password):UID:filter_netmask(s)`. Utility `core/pbkdf2.py` is used to calculate the proper `pbkdf2_hash(password)` values. Value `UID` represents the unique user identifier, where it is recommended to use values lower than 1000 for administrative accounts, while higher value for non-administrative accounts. The part `filter_netmask(s)` represents the comma-delimited hard filter(s) that can be used to filter out the shown events depending on the user account(s). Example entries are as follows:
 
 ![Configuration users](http://i.imgur.com/HnH7E6S.png)
 
@@ -203,7 +203,7 @@ If we enter the `SSH attacker` to the `Filter` field, we'll be able to see all s
 
 ![SSH attackers filter](http://i.imgur.com/G1W3HrQ.png)
 
-In the following case previously blacklisted attacker (in this case by [autoshun.org](http://autoshun.org/)) has been scanning the whole organization's range in search for potentially vulnerable SSL/HTTPS service(s) (ports 443 and 8443):
+In the following case previously blacklisted attacker (in this case by [autoshun.org](http://autoshun.org/)) has scanned the whole organization's range in search for potentially vulnerable SSL/HTTPS service(s) (ports 443 and 8443):
 
 ![Heartbleed attacker](http://i.imgur.com/F0dG1DT.png)
 
@@ -235,7 +235,7 @@ There are also cases when perfectly valid TLD domains (e.g. `.ru`) are used for 
 
 ![Suspicious long domains](http://i.imgur.com/3T5gdgo.png)
 
-Also, Maltrail uses static [list](https://github.com/stamparm/maltrail/blob/master/trails/static/suspicious/dynamic_domain.txt) of so called "dynamic domains" that are also often used in suspicious activities (e.g. for malware C&C servers that often change the destination's IP addresses):
+Also, Maltrail uses static [list](https://github.com/stamparm/maltrail/blob/master/trails/static/suspicious/dynamic_domain.txt) of so-called "dynamic domains" that are also often used in suspicious activities (e.g. for malware C&C servers that often change the destination's IP addresses):
 
 ![Suspicious dynamic domains](http://i.imgur.com/yrXtQ5j.png)
 
@@ -259,7 +259,7 @@ By using filter `ipinfo` all potentially infected computers in our organization'
 
 ### Suspicious direct file downloads
 
-Maltrail tracks all suspicious direct file download attempts (e.g. `apk`, `exe` and `scr` file extensions). This can trigger lots of false positives, but eventually could help in reconstruction of the chain of infection (Note: legitimate service providers, like Google, usually use encrypted HTTPS to perform this kind of downloads):
+Maltrail tracks all suspicious direct file download attempts (e.g. `apk`, `exe` and `scr` file extensions). This can trigger lots of false positives, but eventually could help in reconstruction of the chain of infection (Note: legitimate service providers, like Google, usually use encrypted HTTPS to do this kind of downloads):
 
 ![Direct .exe download](http://i.imgur.com/rQqFCV2.png)
 
@@ -278,7 +278,7 @@ In the following example, it can be seen an overly suspicious behavior, initiate
 
 ### False positives
 
-Like in all other security solutions, Maltrail is prone to so called "[false positives](https://en.wikipedia.org/wiki/False_positives_and_false_negatives)". In those kind of cases, Maltrail will (especially in case of `heuristic` threats) record a regular user's behavior and mark it as malicious and/or suspicious. In the following example it can be seen that one of feed providers `blocklist.de` marked regular Google servers as `attacker`(s), resulting with the following threats:
+Like in all other security solutions, Maltrail is prone to so-called "[false positives](https://en.wikipedia.org/wiki/False_positives_and_false_negatives)". In those kind of cases, Maltrail will (especially in case of `heuristic` threats) record a regular user's behavior and mark it as malicious and/or suspicious. In the following example it can be seen that one of feed providers `blocklist.de` marked regular Google servers as `attacker`(s), resulting with the following threats:
 
 ![Google false positive 1](http://i.imgur.com/wdA1B6O.png)
 ![Google false positive 2](http://i.imgur.com/l0C3ATK.png)
