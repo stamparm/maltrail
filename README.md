@@ -2,7 +2,7 @@
 
 ## General
 
-**Maltrail** is a malicious traffic monitoring system, utilizing publicly available (black)lists containing malicious (or generally suspicious) trails (i.e. domain names, URLs and/or IPs), along with static trails compiled from various AV reports and custom user defined lists. Also, it has (optional) advanced heuristic mechanisms that can help in discovery of unknown threats (e.g. new malware).
+**Maltrail** is a malicious traffic monitoring system, utilizing publicly available (black)lists containing malicious and/or generally suspicious trails, along with static trails compiled from various AV reports and custom user defined lists, where trail can be domain name (e.g. `zvpprsensinaix.com` for Banjori malware), URL (e.g. 109.162.38.120/harsh02.exe for known malicious executable) or IP address (e.g. `103.224.167.117` for known attacker). Also, it has (optional) advanced heuristic mechanisms that can help in discovery of unknown threats (e.g. new malware).
 
 ![Reporting tool](http://i.imgur.com/JCarjiR.png)
 
