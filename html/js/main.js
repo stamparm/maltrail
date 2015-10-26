@@ -206,10 +206,6 @@ function initCalHeatmap() {
     }
 }
 
-function showTour() {
-    alert("Tour");
-}
-
 function charTrim(str, chr) {
     while (str.substr(0, 1) === chr)
         str = str.substr(1);
