@@ -43,6 +43,7 @@ var LOG_COLUMNS = { TIME: 0, SENSOR: 1, SRC_IP: 2, SRC_PORT: 3, DST_IP: 4, DST_P
 var DATATABLES_COLUMNS = { THREAT: 0, SENSOR: 1, EVENTS: 2, FIRST_TIME: 3, LAST_TIME: 4, SRC_IP: 5, SRC_PORT: 6, DST_IP: 7, DST_PORT: 8, PROTO: 9, TYPE: 10, TRAIL: 11, INFO: 12, REFERENCE: 13, TAGS: 14 }
 var TOP_PORTS = { 19: "CHARGEN", 21: "FTP", 22: "SSH", 23: "Telnet", 25: "SMTP", 53: "DNS", 80: "HTTP", 110: "POP3", 123: "NTP", 143: "IMAP", 161: "SNMP", 389: "LDAP", 443: "HTTPS", 445: "Microsoft-DS", 587: "Submission", 902: "VMware", 990: "FTPS", 993: "IMAPS", 995: "POP3S", 1433: "MsSQL", 1434: "MsSQL", 1723: "PPTP", 1900: "SSDP", 3306: "MySQL", 3389: "RDP", 5060: "SIP", 5900: "VNC", 8080: "HTTP-proxy" }
 var SEARCH_TIP_TIMER = 0;
+var PAPAPARSE_COMPLETE_TIMER = 0;
 var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
 //var SEARCH_TIP_URL = "https://www.google.com/cse?cx=011750002002865445766%3Ay5klxdomj78&ie=UTF-8&q=${query}";
 var DAY_SUFFIXES = { 1: "st", 2: "nd", 3: "rd" };
@@ -479,129 +480,132 @@ function init(url, from, to) {
             }
         },
         complete: function() {
-            // threat sensor first_time last_time count src_ip src_port dst_ip dst_port proto type trail info reference tags
-            for (var threatText in _THREATS) {
-                var threatUID = getThreatUID(threatText);
-                var item = _THREATS[threatText];
-                var count = item[0];
-                var times = item[1];
-                var minTime = item[2];
-                var maxTime = item[3];
-                var data = item[4];
-                var row = [];
+            clearTimeout(PAPAPARSE_COMPLETE_TIMER);
+            PAPAPARSE_COMPLETE_TIMER = setTimeout(function() {
+                // threat sensor first_time last_time count src_ip src_port dst_ip dst_port proto type trail info reference tags
+                for (var threatText in _THREATS) {
+                    var threatUID = getThreatUID(threatText);
+                    var item = _THREATS[threatText];
+                    var count = item[0];
+                    var times = item[1];
+                    var minTime = item[2];
+                    var maxTime = item[3];
+                    var data = item[4];
+                    var row = [];
 
-                var storedLocally = $.jStorage.get(threatUID);
-                var tagData = "";
-            
-                if (storedLocally !== null)
-                    tagData = storedLocally.tagData;
+                    var storedLocally = $.jStorage.get(threatUID);
+                    var tagData = "";
+                
+                    if (storedLocally !== null)
+                        tagData = storedLocally.tagData;
 
-                for (var i = 0; i < DOT_COLUMNS.length; i++) {
-                    var column = DOT_COLUMNS[i];
+                    for (var i = 0; i < DOT_COLUMNS.length; i++) {
+                        var column = DOT_COLUMNS[i];
 
-                    if (typeof data[column] !== "string") {
-                        var _ = [];
-                        for (var item in data[column])
-                            _.push(item.replace(DATA_PARTS_DELIMITER, DATA_PARTS_DELIMITER.replace(" ", "")));
-                        if ((column === LOG_COLUMNS.SRC_PORT) || (column === LOG_COLUMNS.DST_PORT))
-                            _.sort(function(a, b) {
-                                a = parseInt(a);
-                                b = parseInt(b);
-                                return a < b ? -1 : (a > b ? 1 : 0);
-                            })
-                        else if ((column === LOG_COLUMNS.SRC_IP) || (column === LOG_COLUMNS.DST_IP))
-                            _.sort(function(a, b) {
-                                a = _ipSortingValue(a);
-                                b = _ipSortingValue(b);
-                                return a < b ? -1 : (a > b ? 1 : 0);
-                            })
-                        else
-                            _.sort();
-                        data[column] = _.join(DATA_PARTS_DELIMITER);
+                        if (typeof data[column] !== "string") {
+                            var _ = [];
+                            for (var item in data[column])
+                                _.push(item.replace(DATA_PARTS_DELIMITER, DATA_PARTS_DELIMITER.replace(" ", "")));
+                            if ((column === LOG_COLUMNS.SRC_PORT) || (column === LOG_COLUMNS.DST_PORT))
+                                _.sort(function(a, b) {
+                                    a = parseInt(a);
+                                    b = parseInt(b);
+                                    return a < b ? -1 : (a > b ? 1 : 0);
+                                })
+                            else if ((column === LOG_COLUMNS.SRC_IP) || (column === LOG_COLUMNS.DST_IP))
+                                _.sort(function(a, b) {
+                                    a = _ipSortingValue(a);
+                                    b = _ipSortingValue(b);
+                                    return a < b ? -1 : (a > b ? 1 : 0);
+                                })
+                            else
+                                _.sort();
+                            data[column] = _.join(DATA_PARTS_DELIMITER);
+                        }
                     }
+
+                    row.push(threatUID);
+                    row.push(data[LOG_COLUMNS.SENSOR]);
+                    row.push(times);
+                    row.push(minTime);
+                    row.push(maxTime);
+                    row.push(data[LOG_COLUMNS.SRC_IP]);
+                    row.push(data[LOG_COLUMNS.SRC_PORT]);
+                    row.push(data[LOG_COLUMNS.DST_IP]);
+                    row.push(data[LOG_COLUMNS.DST_PORT]);
+                    row.push(data[LOG_COLUMNS.PROTO]);
+                    row.push(data[LOG_COLUMNS.TYPE]);
+                    row.push(data[LOG_COLUMNS.TRAIL]);
+                    row.push(data[LOG_COLUMNS.INFO]);
+                    row.push(data[LOG_COLUMNS.REFERENCE]);
+                    row.push(tagData);
+
+                    _DATASET.push(row);
                 }
 
-                row.push(threatUID);
-                row.push(data[LOG_COLUMNS.SENSOR]);
-                row.push(times);
-                row.push(minTime);
-                row.push(maxTime);
-                row.push(data[LOG_COLUMNS.SRC_IP]);
-                row.push(data[LOG_COLUMNS.SRC_PORT]);
-                row.push(data[LOG_COLUMNS.DST_IP]);
-                row.push(data[LOG_COLUMNS.DST_PORT]);
-                row.push(data[LOG_COLUMNS.PROTO]);
-                row.push(data[LOG_COLUMNS.TYPE]);
-                row.push(data[LOG_COLUMNS.TRAIL]);
-                row.push(data[LOG_COLUMNS.INFO]);
-                row.push(data[LOG_COLUMNS.REFERENCE]);
-                row.push(tagData);
+                if (demo) {
+                    alertify.log("Showing demo data");
 
-                _DATASET.push(row);
-            }
+                    document.title = "Maltrail (demo)"
+                    $("#period_label").html("demo");
+                }
+                else {
+                    if (_DATASET.length > 0)
+                        alertify.success("Processed " + numberWithCommas(_TOTAL_EVENTS) + " events");
+                    else
+                        alertify.log("No events found");
 
-            if (demo) {
-                alertify.log("Showing demo data");
+                    var period = "";
 
-                document.title = "Maltrail (demo)"
-                $("#period_label").html("demo");
-            }
-            else {
-                if (_DATASET.length > 0)
-                    alertify.success("Processed " + numberWithCommas(_TOTAL_EVENTS) + " events");
+                    if (typeof from !== 'undefined') {
+                        period += formatDate(from);
+                        if (typeof to !== 'undefined')
+                            period += "-" + formatDate(to);
+                    }
+
+                    if (document.title.indexOf("unauthorized") === -1)
+                        document.title = "Maltrail (" + period + ")";
+
+                    scrollTo("#main_container");
+
+                    var _ = moment(dayStart(from)).from(dayStart(new Date()));
+                    if (_.indexOf("seconds") != -1)
+                        _ = "today";
+
+                    $("#period_label").html("<b>" + period + "</b> (" + _ + ")");
+                }
+
+                $("#heatmap_container").hide();
+
+                try {
+                    initDetails();
+                    initVisual();
+                }
+                catch(err) {
+                    alert(err);
+                }
+
+                $("#main_container").toggleClass("hidden", false);
+                $("#main_container").children().toggleClass("hidden", false);  // Reference: http://stackoverflow.com/a/4740050
+                $(".dynamicsparkline").parent().children().toggleClass("hidden", false);
+
+                try {
+                    $.sparkline_display_visible();
+                }
+                catch(err) {
+                }
+
+                $("#chart_area").empty();
+
+                if (jQuery.isEmptyObject(_HOURS))
+                    $("li.status-button").css("cursor", "default");
                 else
-                    alertify.log("No events found");
+                    $("li.status-button").css("cursor", "pointer");
 
-                var period = "";
+                resetStatusButtons();
 
-                if (typeof from !== 'undefined') {
-                    period += formatDate(from);
-                    if (typeof to !== 'undefined')
-                        period += "-" + formatDate(to);
-                }
-
-                if (document.title.indexOf("unauthorized") === -1)
-                    document.title = "Maltrail (" + period + ")";
-
-                scrollTo("#main_container");
-
-                var _ = moment(dayStart(from)).from(dayStart(new Date()));
-                if (_.indexOf("seconds") != -1)
-                    _ = "today";
-
-                $("#period_label").html("<b>" + period + "</b> (" + _ + ")");
-            }
-
-            $("#heatmap_container").hide();
-
-            try {
-                initDetails();
-                initVisual();
-            }
-            catch(err) {
-                alert(err);
-            }
-
-            $("#main_container").toggleClass("hidden", false);
-            $("#main_container").children().toggleClass("hidden", false);  // Reference: http://stackoverflow.com/a/4740050
-            $(".dynamicsparkline").parent().children().toggleClass("hidden", false);
-
-            try {
-                $.sparkline_display_visible();
-            }
-            catch(err) {
-            }
-
-            $("#chart_area").empty();
-
-            if (jQuery.isEmptyObject(_HOURS))
-                $("li.status-button").css("cursor", "default");
-            else
-                $("li.status-button").css("cursor", "pointer");
-
-            resetStatusButtons();
-
-            $("body").loader("hide");
+                $("body").loader("hide");
+            }, 500);
         },
     });
 }
@@ -1961,7 +1965,7 @@ function initVisual() {
     _THREATS_SORTED = _sort(_);
     var other = 0;
 
-    data.length = 0;
+    data = [];
     options.sliceColors = [];
 
     var threshold = 0;
