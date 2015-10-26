@@ -1,4 +1,4 @@
-# Maltrail [![Build Status](https://api.travis-ci.org/stamparm/maltrail.svg?branch=master)](https://api.travis-ci.org/stamparm/maltrail) [![Python 2.6, 2.7](https://img.shields.io/badge/python-2.6,%202.7-blue.svg)](https://www.python.org/) [![Dependencies pcapy](https://img.shields.io/badge/dependencies-pcapy-yellow.svg)](https://github.com/CoreSecurity/pcapy) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/stamparm/maltrail#license-mit)
+# Maltrail [![Build Status](https://api.travis-ci.org/stamparm/maltrail.svg?branch=master)](https://api.travis-ci.org/stamparm/maltrail) [![Python 2.6|2.7](https://img.shields.io/badge/python-2.6|2.7-blue.svg)](https://www.python.org/) [![Dependencies pcapy](https://img.shields.io/badge/dependencies-pcapy-yellow.svg)](https://github.com/CoreSecurity/pcapy) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/stamparm/maltrail#license-mit)
 
 ## General
 
@@ -49,7 +49,7 @@ Maltrail is based on the **Sensor** &lt;-&gt; **Server** &lt;-&gt; **Client** ar
 
 ![Architecture diagram](http://i.imgur.com/ekgKAeZ.png)
 
-**Server**'s primary role is to store the event details and provide backend support for the reporting web application. In default configuration, server and sensor will run on the same machine. So, to prevent potential disruptions in sensor activities, the front-end reporting part is based on the ["Fat client"](https://en.wikipedia.org/wiki/Fat_client) architecture. Events (i.e. log entries) for the chosen (24h) period are transferred to the **Client**, where the reporting web application is solely responsible for the presentation part. Data is sent toward the client in compressed chunks, where they are processed sequentially. The final report is created in a highly condensed form, practically allowing presentation of virtually unlimited number of events.
+**Server**'s primary role is to store the event details and provide back-end support for the reporting web application. In default configuration, server and sensor will run on the same machine. So, to prevent potential disruptions in sensor activities, the front-end reporting part is based on the ["Fat client"](https://en.wikipedia.org/wiki/Fat_client) architecture. Events (i.e. log entries) for the chosen (24h) period are transferred to the **Client**, where the reporting web application is solely responsible for the presentation part. Data is sent toward the client in compressed chunks, where they are processed sequentially. The final report is created in a highly condensed form, practically allowing presentation of virtually unlimited number of events.
 
 Note: **Server** component can be skipped altogether, and just use the standalone **Sensor**. In such case, all events would be stored in the local logging directory, while the log entries could be examined either manually or by some CSV reading application.
 
@@ -94,7 +94,7 @@ Server's configuration can be found inside the `maltrail.conf` section `[Server]
 
 Option `HTTP_ADDRESS` contains the web server's listening address (Note: use `0.0.0.0` to listen on all interfaces). Option `HTTP_PORT` contains the web server's listening port. Default listening port is set to `8338`. If option `USE_SSL` is set to `true` then `SSL/TLS` will be used for accessing the web server (e.g. `https://192.168.6.10:8338/`). In that case, option `SSL_PEM` should be pointing to the server's private/cert PEM file. Option `UPDATE_PERIOD` contains the number of seconds between each automatic trails update (Note: default value is set to `86400` (i.e. one day)) by using definitions inside the `trails` directory (Note: both **Sensor** and **Server** take care of the trails update).
 
-Subsection `USERS` contains user's configuration settings. Each user entry consists of the `username:pbkdf2_hash(password):UID:filter_netmask(s)`. Utility `core/pbkdf2.py` is used to calculate the proper `pbkdf2_hash(password)` values. Value `UID` represents the unique user identifier, where it is recommended to use values lower than 1000 for administrative accounts, while higher value for non-administrative accounts. The part `filter_netmask(s)` represents the comma-delimited hard filter(s) that can be used to filter out the shown events depending on the user account(s). Example entries are as follows:
+Subsection `USERS` contains user's configuration settings. Each user entry consists of the `username:pbkdf2_hash(password):UID:filter_netmask(s)`. Utility `core/pbkdf2.py` is used to calculate valid `pbkdf2_hash(password)` values. Value `UID` represents the unique user identifier, where it is recommended to use values lower than 1000 for administrative accounts, while higher value for non-administrative accounts. The part `filter_netmask(s)` represents the comma-delimited hard filter(s) that can be used to filter the shown events depending on the user account(s). Example entries are as follows:
 
 ![Configuration users](http://i.imgur.com/HnH7E6S.png)
 
@@ -102,7 +102,7 @@ Sensor's configuration can be found inside the `maltrail.conf` file's section `[
 
 ![Sensor's configuration](http://i.imgur.com/L4i5WD2.png)
 
-If option `USE_MULTIPROCESSING` is set to `true` then all CPU cores will be used. One core will be used only for packet capture (with appropriate affinity, IO priority and nice level settings), while other cores will be used for packet processing. Otherwise, everything will be run on a single core. Option `USE_HEURISTICS` turns on heuristic mechanisms (e.g. `long domain name (suspicious)`, `excessive no such domain name (suspicious)`, `direct .exe download (suspicious)`, etc.), potentially introducing false positives. Option `CAPTURE_BUFFER` presents a total memory (in bytes of percentage of total physical memory) to be used in case of multiprocessing mode for storing packet capture in a ring buffer for further processing by non-capturing processes. Option `MONITOR_INTERFACE` should contain the name of the capturing interface. Use value `any` to capture from all interfaces (if OS supports this). Option `CAPTURE_FILTER` should contain the network capture (tcpdump) filter to skip the uninteresting packets and ease the capturing process. Option `SENSOR_NAME` contains the name that should be appearing inside the events `sensor_name` value, so the event from one sensor could be distinguished from the other. If option `LOG_SERVER` is set, then all events are being sent remotely to the **Server**, otherwise they are stored directly into the logging directory set with option `LOG_DIRECTORY` inside the `[Server]` section. In case that the option `UPDATE_SERVER` is set, then all the trails are being pulled from the given location, otherwise they are being updated from trails definitions located inside the installation itself.
+If option `USE_MULTIPROCESSING` is set to `true` then all CPU cores will be used. One core will be used only for packet capture (with appropriate affinity, IO priority and nice level settings), while other cores will be used for packet processing. Otherwise, everything will be run on a single core. Option `USE_HEURISTICS` turns on heuristic mechanisms (e.g. `long domain name (suspicious)`, `excessive no such domain name (suspicious)`, `direct .exe download (suspicious)`, etc.), potentially introducing false positives. Option `CAPTURE_BUFFER` presents a total memory (in bytes of percentage of total physical memory) to be used in case of multiprocessing mode for storing packet capture in a ring buffer for further processing by non-capturing processes. Option `MONITOR_INTERFACE` should contain the name of the capturing interface. Use value `any` to capture from all interfaces (if OS supports this). Option `CAPTURE_FILTER` should contain the network capture (`tcpdump`) filter to skip the uninteresting packets and ease the capturing process. Option `SENSOR_NAME` contains the name that should be appearing inside the events `sensor_name` value, so the event from one sensor could be distinguished from the other. If option `LOG_SERVER` is set, then all events are being sent remotely to the **Server**, otherwise they are stored directly into the logging directory set with option `LOG_DIRECTORY` inside the `[Server]` section. In case that the option `UPDATE_SERVER` is set, then all the trails are being pulled from the given location, otherwise they are being updated from trails definitions located inside the installation itself.
 
 ### Sensor
 
@@ -128,11 +128,11 @@ Once inside, user will be presented with the following reporting interface:
 
 ![Reporting interface](http://i.imgur.com/6ZE9oCV.png)
 
-The top part holds a sliding timeline (Note: activated after clicking the current date label and/or the calendar icon ![Calendar icon](http://i.imgur.com/NfNore9.png)) where user can select logs for past events (Note: mouse over event will trigger display of tooltip with number of events for current date). Dates are grouped by months, where 4 months of data are displayed inside the widget itself. However, by using the provided slider (i.e. ![Timeline slider](http://i.imgur.com/SNGVSaP.png)) user can easily access events from previous months.
+The top part holds a sliding timeline (Note: activated after clicking the current date label and/or the calendar icon ![Calendar icon](http://i.imgur.com/NfNore9.png)) where user can select logs for past events (Note: mouse over event will trigger display of tooltip with approximate number of events for current date). Dates are grouped by months, where 4 month period of data are displayed inside the widget itself. However, by using the provided slider (i.e. ![Timeline slider](http://i.imgur.com/SNGVSaP.png)) user can easily access events from previous months.
 
 ![Timeline](http://i.imgur.com/WtEolEP.png)
 
-Once clicking the date, all events for that particular date should be loaded and represented by the client's web browser. Depending on number of events and the network connection speed, loading and display of logged events could take from couple of seconds, up to several minutes (e.g. 100,000 events takes around 5 seconds in total). For the whole processing time, all familiar animated loader will be displayed accross the whole user interface:
+Once clicking the date, all events for that particular date should be loaded and represented by the client's web browser. Depending on number of events and the network connection speed, loading and display of logged events could take from couple of seconds, up to several minutes (e.g. 100,000 events takes around 5 seconds in total). For the whole processing time, all familiar animated loader will be displayed across the user interface:
 
 ![Watch](http://i.imgur.com/JgTgezv.png)
 
@@ -154,11 +154,11 @@ When moving mouse over `src_ip` and `dst_ip` table entries, information tooltip 
 
 ![On mouse over IP](http://i.imgur.com/5XybnY6.png)
 
-Event details (e.g. `src_port`, `dst_port`, `proto`, etc.) that differ inside a same threat entry are condensed in form of a cloud icon (i.e. ![Cloud ellipsis](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/ellipsis.png)). This is performed to get an usable reporting interface with as less rows as possible. Moving mouse over such icon will result in a display of an information tooltip with all items held (e.g. all port numbers being scanned by `attacker`):
+Event details (e.g. `src_port`, `dst_port`, `proto`, etc.) that differ inside same threat entry are condensed in form of a cloud icon (i.e. ![Cloud ellipsis](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/ellipsis.png)). This is performed to get an usable reporting interface with as less rows as possible. Moving mouse over such icon will result in a display of an information tooltip with all items held (e.g. all port numbers being scanned by `attacker`):
 
 ![On mouse over cloud](http://i.imgur.com/ahmQGYJ.png)
 
-When hovering the mouse pointer over the threat's trail for couple of seconds it will result in a frame consisted of results using the trail as a search term performed against [DuckDuckGo](https://duckduckgo.com/) search engine. In lots of cases, this provides basic information about the threat itself, eliminating the need for user to do the manual search for it. In upper right corner of the opened frame window there are two extra buttons. By clicking the first one (i.e. ![New tab icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/newtab.png)), the resulting frame will be opened inside the new browser's tab (or window), while by clicking the second one (i.e. ![Close icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/close.png)) will immediately close the frame (Note: the same action is achieved by moving the mouse pointer outside the frame borders):
+When hovering mouse pointer over the threat's trail for couple of seconds it will result in a frame consisted of results using the trail as a search term performed against [DuckDuckGo](https://duckduckgo.com/) search engine. In lots of cases, this provides basic information about the threat itself, eliminating the need for user to do the manual search for it. In upper right corner of the opened frame window there are two extra buttons. By clicking the first one (i.e. ![New tab icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/newtab.png)), the resulting frame will be opened inside the new browser's tab (or window), while by clicking the second one (i.e. ![Close icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/close.png)) will immediately close the frame (Note: the same action is achieved by moving the mouse pointer outside the frame borders):
 
 ![On mouse over trail](http://i.imgur.com/IvDOIt1.png)
 
@@ -170,13 +170,13 @@ For each threat there is a column `tag` that can be filled with arbitrary "tags"
 
 ### Mass scans
 
-Mass scans is a fairly new phenomenon where individuals and/or organizations give themself a right to scan the whole 0.0.0.0/0 IP range (i.e. whole Internet) on a daily basis, with disclaimer where they say that if you don't like it then you should contact them privately to be skipped from future scans. To make stuff worse, organizations as [Shodan](https://www.shodan.io/) give all results freely available (to other attackers) through their search engine. In the following screenshots you'll see details of scans that came from that same organization in one single day.
+Mass scans is a fairly common phenomenon where individuals and/or organizations give themselves a right to scan the whole 0.0.0.0/0 IP range (i.e. whole Internet) on a daily basis, with disclaimer where they say that if you don't like it then you should contact them privately to be skipped from future scans. To make stuff worse, organizations as [Shodan](https://www.shodan.io/) give all results freely available (to other attackers) through their search engine. In the following screenshots you'll see details of scans that came from that same organization in one single day.
 
 Here is a reverse DNS lookup of the "attacker"'s address:
 
 ![Shodan 1](http://i.imgur.com/0lnXoYj.png)
 
-When hovering the mouse over the `trail` column's content (IP address), you'll be presented with the search results from DuckDuckGo where you'll be able to find more information about the "attacker":
+When hovering mouse pointer over the `trail` column's content (IP address), you'll be presented with the search results from DuckDuckGo where you'll be able to find more information about the "attacker":
 
 ![Shodan 2](http://i.imgur.com/y15UU8S.png)
 
@@ -225,11 +225,11 @@ In the following case file downloads from blacklisted (in this case by [malwarep
 
 ![malicious download](http://i.imgur.com/ACQOF40.png)
 
-If we enter the particular malware name (in this case [Simda](https://www.us-cert.gov/ncas/alerts/TA15-105A)) into the `Filter` field, only threats that are known to be linked to this malware will be shown (showing you all affected internal computers):
+If we enter the particular malware name (in this case [Simda](https://www.us-cert.gov/ncas/alerts/TA15-105A)) into the `Filter` field, only threats that are known to be linked to this malware will be filtered in (showing you all affected internal computers):
 
 ![simda malware](http://i.imgur.com/GixcFUk.png)
 
-More generally, if we enter the `malware` into the `Filter` field, all threats that are known to be triggered by known malware trails (e.g. `IP` addresses) will be shown:
+More generally, if we enter the `malware` into the `Filter` field, all threats that are known to be triggered by known malware trails (e.g. `IP` addresses) will be filtered in:
 
 ![malware filter](http://i.imgur.com/ufQFgt9.png)
 
@@ -265,19 +265,19 @@ Lots of malware uses some kind of `ipinfo` service (e.g. [ipinfo.io](http://ipin
 
 ![ipinfo](http://i.imgur.com/RaGvvIg.png)
 
-By using filter `ipinfo` all potentially infected computers in our organization's range can be listed that display this kind of suspicious behavior:
+By using filter `ipinfo` all potentially infected computers in our organization's range can be listed that share this kind of suspicious behavior:
 
 ![ipinfo filter](http://i.imgur.com/TmBw0Xs.png)
 
 ### Suspicious direct file downloads
 
-Maltrail tracks all suspicious direct file download attempts (e.g. `apk`, `exe` and `scr` file extensions). This can trigger lots of false positives, but eventually could help in reconstruction of the chain of infection (Note: legitimate service providers, like Google, usually use encrypted HTTPS to do this kind of downloads):
+Maltrail tracks all suspicious direct file download attempts (e.g. `apk`, `exe` and `scr` file extensions). This can trigger lots of false positives, but eventually could help in reconstruction of the chain of infection (Note: legitimate service providers, like Google, usually use encrypted HTTPS to perform this kind of downloads):
 
 ![Direct .exe download](http://i.imgur.com/rQqFCV2.png)
 
 ### Suspicious HTTP requests
 
-In case of suspicious requests coming from outer web application security scanners (e.g. searching for SQLi, XSS, LFI, etc. vulnerabilities) and/or the internal user malicious attempts toward unknown web sites, threats like the following will be shown:
+In case of suspicious requests coming from outer web application security scanners (e.g. searching for SQLi, XSS, LFI, etc. vulnerabilities) and/or the internal user malicious attempts toward unknown web sites, threats like the following could be found:
 
 ![](http://i.imgur.com/4xbeBF7.png)
 
@@ -299,7 +299,7 @@ In the following example, access to the perfectly valid `.club` domains resulted
 
 ![Suspicious domain false positive](http://i.imgur.com/ZzXGCo4.png)
 
-Nevertheless, user should invest some extra time and check by himself whether the "suspicious" means malicious or not:
+Nevertheless, administrator(s) should invest some extra time and check by himself whether the "suspicious" means malicious or not:
 
 ![Suspicious .su](http://i.imgur.com/YIqSyNn.png)
 
