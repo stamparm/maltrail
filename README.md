@@ -55,7 +55,7 @@ Note: **Server** component can be skipped altogether, and just use the standalon
 
 ## Quick start
 
-The following set of commands should get your Maltrail **Sensor** up and running (out of the box with default settings monitoring interface "any"):
+The following set of commands should get your Maltrail **Sensor** up and running (out of the box with default settings and monitoring interface "any"):
 
 ```
 git clone git@github.com:stamparm/maltrail.git
@@ -65,7 +65,7 @@ sudo python sensor.py
 
 ![Sensor](http://i.imgur.com/VazAN4k.png)
 
-To start the (optional) **Server** on same machine, open a new terminal and do the following:
+To start the (optional) **Server** on same machine, open a new terminal and execute the following:
 
 ```
 [[ -d maltrail ]] || git clone git@github.com:stamparm/maltrail.git
@@ -75,7 +75,7 @@ python server.py
 
 ![Server](http://i.imgur.com/NZP3SIe.png)
 
-To test that everything is up and running do the following:
+To test that everything is up and running execute the following:
 
 ```
 ping -c 1 136.161.101.53
