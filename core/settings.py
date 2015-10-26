@@ -17,7 +17,7 @@ config = None
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.5c"
+VERSION = "0.6"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
