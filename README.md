@@ -55,7 +55,7 @@ Note: **Server** component can be skipped altogether, and just use the standalon
 
 ## User's guide
 
-### tl;dr
+### Tl;dr
 
 The following set of commands should get your Maltrail **Sensor** up and running (out of the box with default settings):
 
