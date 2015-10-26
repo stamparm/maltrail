@@ -238,7 +238,7 @@ In case of suspicious requests coming from outer web application security scanne
 
 ![](http://i.imgur.com/4xbeBF7.png)
 
-### Potential UDP exfiltration (i.e. breach)
+### Potential UDP exfiltration
 
 In the following example, it can be seen an overly suspicious behavior, initiated by known attacker toward our organization's IP, utilizing large amount of traffic over unknown UDP service port(s):
 
@@ -247,13 +247,18 @@ In the following example, it can be seen an overly suspicious behavior, initiate
 
 ### False positives
 
+Like in all other security solutions, Maltrail is prone to so called "[false positives](https://en.wikipedia.org/wiki/False_positives_and_false_negatives)". In those kind of cases, Maltrail will (especially in case of `heuristic` threats) record a regular user's behavior and mark it as malicious and/or suspicious. In the following example it can be seen that one of feed providers `blocklist.de` marked regular Google servers as `attacker`(s), resulting with the following threats:
+
 ![Google false positive 1](http://i.imgur.com/wdA1B6O.png)
 ![Google false positive 2](http://i.imgur.com/l0C3ATK.png)
 
----
+In the following example, access to the perfectly valid `.club` domains resulted with the following threat:
 
 ![Suspicious domain false positive](http://i.imgur.com/ZzXGCo4.png)
 
+Nevertheless, user should invest some extra time and check by himself whether the "suspicious" means malicious or not:
+
+![Suspicious .su](http://i.imgur.com/YIqSyNn.png)
 
 ## Requirements
 
