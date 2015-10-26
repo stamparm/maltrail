@@ -189,7 +189,7 @@ One more common behavior is scanning of the whole 0.0.0.0/0 IP range (i.e. Inter
 
 ### Anonymous attackers
 
-To spot the potential attackers hidden behind the [Tor](https://www.torproject.org/) anonymity network, Maltrail utilizes publicly available list of Tor exit nodes. In the following screenshot you'll see a case where unknown attacker has been utilizing the Tor network to access the web target (over HTTPS) in our organization's range in rather suspicious way (total 599 connection requests in less than 10 minutes):
+To spot the potential attackers hidden behind the [Tor](https://www.torproject.org/) anonymity network, Maltrail utilizes publicly available [list](https://check.torproject.org/cgi-bin/TorBulkExitList.py?ip=1.1.1.1) of Tor exit nodes. In the following screenshot you'll see a case where unknown attacker has been utilizing the Tor network to access the web target (over HTTPS) in our organization's range in rather suspicious way (total 599 connection requests in less than 10 minutes):
 
 ![Tor attacker](http://i.imgur.com/r9I6udf.png)
 
@@ -215,7 +215,7 @@ In case of connection attempts coming from infected computers inside our organiz
 
 In the following case file downloads from blacklisted (in this case by [malwarepatrol.net](https://malwarepatrol.net/)) URL(s) have occurred:
 
-![](http://i.imgur.com/ACQOF40.png)
+![malicious download](http://i.imgur.com/ACQOF40.png)
 
 If we enter the particular malware name (in this case [Simda](https://www.us-cert.gov/ncas/alerts/TA15-105A)) into the `Filter` field, only threats that are known to be linked to this malware will be shown (showing you all affected internal computers):
 
@@ -227,7 +227,7 @@ More generally, if we enter the `malware` into the `Filter` field, all threats t
 
 ### Suspicious domain lookups
 
-Maltrail uses the static list of TLD domains that are known to be commonly involved in suspicious activities. Most such [TLD](https://en.wikipedia.org/wiki/Top-level_domain) domains are coming from free domain registars (e.g. [Freenom](http://www.freenom.com)), hence they should be under greater scrutiny. In the following screenshot we can find a case where one such TLD domain `.cm` has been used by unknown malware using the [DGA](https://en.wikipedia.org/wiki/Domain_generation_algorithm) algorithm to contact its [C&C](https://www.trendmicro.com/vinfo/us/security/definition/command-and-control-%28c-c%29-server) server(s):
+Maltrail uses the static list of TLD [domains](https://github.com/stamparm/maltrail/blob/master/trails/static/suspicious/domain.txt) that are known to be commonly involved in suspicious activities. Most such [TLD](https://en.wikipedia.org/wiki/Top-level_domain) domains are coming from free domain registrars (e.g. [Freenom](http://www.freenom.com)), hence they should be under greater scrutiny. In the following screenshot we can find a case where one such TLD domain `.cm` has been used by unknown malware using the [DGA](https://en.wikipedia.org/wiki/Domain_generation_algorithm) algorithm to contact its [C&C](https://www.trendmicro.com/vinfo/us/security/definition/command-and-control-%28c-c%29-server) server(s):
 
 ![Suspicious static domains](http://i.imgur.com/5xsvDw1.png)
 
@@ -235,7 +235,7 @@ There are also cases when perfectly valid TLD domains (e.g. `.ru`) are used for 
 
 ![Suspicious long domains](http://i.imgur.com/3T5gdgo.png)
 
-Also, Maltrail uses static list of so called "dynamic domains" that are also often used in suspicious activities (e.g. for malware C&C servers that often change the destination's IP addresses):
+Also, Maltrail uses static [list](https://github.com/stamparm/maltrail/blob/master/trails/static/suspicious/dynamic_domain.txt) of so called "dynamic domains" that are also often used in suspicious activities (e.g. for malware C&C servers that often change the destination's IP addresses):
 
 ![Suspicious dynamic domains](http://i.imgur.com/yrXtQ5j.png)
 
@@ -249,7 +249,7 @@ In case that one trail is responsible for too many threats (e.g. in case of fake
 
 ### Suspicious ipinfo requests
 
-Lots of malware uses some kind of `ipinfo` service (e.g. ipinfo.io) to find out the victim's Internet IP address. In case of regular and especially in out-of-office hours, those kind of requests should be closely monitored, like in the following example:
+Lots of malware uses some kind of `ipinfo` service (e.g. [ipinfo.io](http://ipinfo.io)) to find out the victim's Internet IP address. In case of regular and especially in out-of-office hours, those kind of requests should be closely monitored, like in the following example:
 
 ![ipinfo](http://i.imgur.com/RaGvvIg.png)
 
