@@ -53,9 +53,7 @@ Maltrail is based on the **Sensor&lt;-&gt;Server&lt;-&gt;Client** architecture. 
 
 Note: **Server** component can be skipped altogether, and just use the standalone **Sensor**. In such case, all events would be stored in the local logging directory, while the log entries could be examined either manually or by some CSV reading application.
 
-## User's guide
-
-### Quick start
+## Quick start
 
 The following set of commands should get your Maltrail **Sensor** up and running (out of the box with default settings):
 
@@ -85,6 +83,8 @@ cat /var/log/maltrail/*.log
 ```
 
 ![Test](http://i.imgur.com/2oQ1IBM.png)
+
+## User's guide
 
 ### Configuration
 
