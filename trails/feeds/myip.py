@@ -11,7 +11,7 @@ from core.common import retrieve_content
 
 __url__ = "https://myip.ms/files/blacklist/htaccess/latest_blacklist.txt"
 __check__ = "ADDRESSES DATABASE"
-__info__ = "spammer or crawler"
+__info__ = "crawler"
 __reference__ = "myip.ms"
 
 def fetch():
