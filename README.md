@@ -208,29 +208,39 @@ Also, Maltrail uses static list of so called "dynamic domains" that are also oft
 
 ![Suspicious dynamic domains](http://i.imgur.com/yrXtQ5j.png)
 
-In case of old and/or obsolete malware that sits undetected on organization's infected internal computers, there is often a "phenomenon" where malware continuously tries to contact the long dead C&C server's domain without any DNS resolution. Hence, those kind of (potential) threats will be marked as `excessive no such domain name (suspicious)`:
+In case of old and/or obsolete malware that sits undetected on organization's infected internal computers, there is often a "phenomenon" where malware continuously tries to contact the long dead C&amp;C server's domain without any DNS resolution. Hence, those kind of (potential) threats will be marked as `excessive no such domain name (suspicious)`:
 
 ![Excessive no such domain name](http://i.imgur.com/RYSnVcK.png)
 
+In case that one trail is responsible for too many threats (e.g. in case of fake source IPs like in DNS amplification attacks), all similar threats will be grouped under a single `flood` threat (Note: threat's ID will be marked with `F0`), like in the following example:
+
 ![Flood](http://i.imgur.com/xIVwyw4.png)
 
-### Suspicious ipinfo queries
+### Suspicious ipinfo requests
 
-![](http://i.imgur.com/RaGvvIg.png)
+Lots of malware uses some kind of `ipinfo` service (e.g. ipinfo.io) to find out the victim's Internet IP address. In case of regular and especially in out-of-office hours, those kind of requests should be closely monitored, like in the following example:
 
----
+![ipinfo](http://i.imgur.com/RaGvvIg.png)
+
+By using filter `ipinfo` all potentially infected computers in our organization's range can be listed that display this kind of suspicious behavior:
 
 ![ipinfo filter](http://i.imgur.com/TmBw0Xs.png)
 
-### Suspicious direct .exe downloads
+### Suspicious direct file downloads
 
-![](http://i.imgur.com/rQqFCV2.png)
+Maltrail tracks all suspicious direct file download attempts (e.g. `apk`, `exe` and `scr` file extensions). This can trigger lots of false positives, but eventually could help in reconstruction of the chain of infection (Note: legitimate service providers, like Google, usually use encrypted HTTPS to perform this kind of downloads):
+
+![Direct .exe download](http://i.imgur.com/rQqFCV2.png)
 
 ### Suspicious HTTP requests
+
+In case of suspicious requests coming from outer web application security scanners (e.g. searching for SQLi, XSS, LFI, etc. vulnerabilities) and/or the internal user malicious attempts toward unknown web sites, threats like the following will be shown:
 
 ![](http://i.imgur.com/4xbeBF7.png)
 
 ### Potential UDP exfiltration (i.e. breach)
+
+In the following example, it can be seen an overly suspicious behavior, initiated by known attacker toward our organization's IP, utilizing large amount of traffic over unknown UDP service port(s):
 
 ![UDP exfiltration 1](http://i.imgur.com/RSrjmO3.png)
 ![UDP exfiltration 2](http://i.imgur.com/zW1mbsP.png)
