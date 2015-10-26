@@ -585,7 +585,13 @@ function init(url, from, to) {
             $("#main_container").toggleClass("hidden", false);
             $("#main_container").children().toggleClass("hidden", false);  // Reference: http://stackoverflow.com/a/4740050
             $(".dynamicsparkline").parent().children().toggleClass("hidden", false);
-            $.sparkline_display_visible();
+
+            try {
+                $.sparkline_display_visible();
+            }
+            catch(ex) {
+            }
+
             $("#chart_area").empty();
 
             if (jQuery.isEmptyObject(_HOURS))
