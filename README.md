@@ -75,7 +75,7 @@ python server.py
 
 ![Server](http://i.imgur.com/NZP3SIe.png)
 
-To test that everything is up and running do the following on same machine:
+To test that everything is up and running do the following:
 
 ```
 ping -c 1 136.161.101.53
@@ -158,15 +158,21 @@ Event details (e.g. `src_port`, `dst_port`, `proto`, etc.) that differ inside sa
 
 ![On mouse over cloud](http://i.imgur.com/ahmQGYJ.png)
 
+Clicking on one such icon will open a new dialog containing all stored items (Note: in their uncondensed form) ready to be Copy-Paste(d) for further analysis:
+
+![Ctrl-C dialog](http://i.imgur.com/tigoCcd.png)
+
 When hovering mouse pointer over the threat's trail for couple of seconds it will result in a frame consisted of results using the trail as a search term performed against [DuckDuckGo](https://duckduckgo.com/) search engine. In lots of cases, this provides basic information about the threat itself, eliminating the need for user to do the manual search for it. In upper right corner of the opened frame window there are two extra buttons. By clicking the first one (i.e. ![New tab icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/newtab.png)), the resulting frame will be opened inside the new browser's tab (or window), while by clicking the second one (i.e. ![Close icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/close.png)) will immediately close the frame (Note: the same action is achieved by moving the mouse pointer outside the frame borders):
 
 ![On mouse over trail](http://i.imgur.com/IvDOIt1.png)
 
-For each threat there is a column `tag` that can be filled with arbitrary "tags" to closely describe all threats sharing the same trail. Also, it is a great way to describe threats individually, so all threats sharing the same tag (e.g. `falsepositive`) could be grouped out later:
+For each threat there is a column `tag` that can be filled with arbitrary "tags" to closely describe all threats sharing the same trail. Also, it is a great way to describe threats individually, so all threats sharing the same tag (e.g. `yahoo`) could be grouped out later:
 
 ![Tags](http://i.imgur.com/iI2Alh8.png)
 
 ## Real-life cases
+
+In the following section some of the "usual suspects" scenarios will be described through the real-life cases.
 
 ### Mass scans
 
