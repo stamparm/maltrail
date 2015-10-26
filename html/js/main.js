@@ -589,7 +589,7 @@ function init(url, from, to) {
             try {
                 $.sparkline_display_visible();
             }
-            catch(ex) {
+            catch(err) {
             }
 
             $("#chart_area").empty();
