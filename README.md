@@ -176,24 +176,28 @@ In the following section some of the "usual suspects" scenarios will be describe
 
 ### Mass scans
 
-Mass scans is a fairly common phenomenon where individuals and/or organizations give themselves a right to scan the whole 0.0.0.0/0 IP range (i.e. whole Internet) on a daily basis, with disclaimer where they say that if you don't like it then you should contact them privately to be skipped from future scans. To make stuff worse, organizations as [Shodan](https://www.shodan.io/) give all results freely available (to other attackers) through their search engine. In the following screenshots you'll see details of scans that came from that same organization in one single day.
+Mass scans is a fairly common phenomenon where individuals and/or organizations give themselves a right to scan the whole 0.0.0.0/0 IP range (i.e. whole Internet) on a daily basis, with disclaimer where they say that if you don't like it then you should contact them privately to be skipped from future scans. 
+
+![Shodan FileZilla results](http://i.imgur.com/nwOwLP9.png)
+
+To make stuff worse, organizations as [Shodan](https://www.shodan.io/) and [ZoomEye](http://www.zoomeye.org) give all results freely available (to other potential attackers) through their search engine. In the following screenshots you'll see details of Shodan scans in one single day.
 
 Here is a reverse DNS lookup of the "attacker"'s address:
 
 ![Shodan 1](http://i.imgur.com/0lnXoYj.png)
 
-When hovering mouse pointer over the `trail` column's content (IP address), you'll be presented with the search results from DuckDuckGo where you'll be able to find more information about the "attacker":
+When hovering mouse pointer over the `trail` column's content (IP address), you'll be presented with the search results from [DuckDuckGo](https://duckduckgo.com/) where you'll be able to find more information about the "attacker" (i.e. Shodan):
 
 ![Shodan 2](http://i.imgur.com/y15UU8S.png)
 
-In the `dst_ip` column, if you have a large organization, you'll be presented with large list of IP addresses affected:
+In the `dst_ip` column, if you have a large organization, you'll be presented with large list of scanned IP addresses:
 ![Shodan 3](http://i.imgur.com/zwYkwxM.pngg)
 
-In the `dst_port` column you'll be able to see all ports that have been affected by such mass scans:
+In the `dst_port` column you'll be able to see all ports that have been scanned by such mass scans:
 
 ![Shodan 4](http://i.imgur.com/VOKmRTy.png)
 
-In other similar situations you'll see the same behavior, coming from previously blacklisted attacker(s) (in this case by [cinsscore.com](http://cinsscore.com/)):
+In other similar situations you'll see the same behaviour, coming from blacklisted individual attacker(s) (in this case by [cinsscore.com](http://cinsscore.com/)):
 
 ![Unknown attacker](http://i.imgur.com/ubJjaq7.png)
 
@@ -280,6 +284,10 @@ By using filter `ipinfo` all potentially infected computers in our organization'
 Maltrail tracks all suspicious direct file download attempts (e.g. `apk`, `exe` and `scr` file extensions). This can trigger lots of false positives, but eventually could help in reconstruction of the chain of infection (Note: legitimate service providers, like Google, usually use encrypted HTTPS to perform this kind of downloads):
 
 ![Direct .exe download](http://i.imgur.com/rQqFCV2.png)
+
+For testing purposes, web application "reconnaissance" tool [skipfish](https://code.google.com/p/skipfish/) has been used. As it tries to download blindly numerous `.exe` files, the following related threat has been identified:
+
+![skipfish .exe](http://i.imgur.com/fK9tK9l.png)
 
 ### Suspicious HTTP requests
 
