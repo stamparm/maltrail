@@ -287,6 +287,14 @@ In case of suspicious requests coming from outer web application security scanne
 
 ![](http://i.imgur.com/4xbeBF7.png)
 
+In following example, legal (i.e. "in-house") web application vulnerability scanning run has been marked as "suspicious":
+
+![Vulnerability scan](http://i.imgur.com/dTxc1kk.png)
+
+If we click on the cloud icon (i.e. ![Cloud ellipsis](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/ellipsis.png)) for details and copy paste the whole content to a textual file, we'll be able to see all suspicious HTTP requests:
+
+![Vulnerability scan requests](http://i.imgur.com/GULbEh8.png)
+
 ### Potential UDP exfiltration
 
 In the following example, it can be seen an overly suspicious behavior, initiated by known attacker toward our organization's IP, utilizing large amount of traffic over unknown UDP service port(s):
@@ -316,3 +324,4 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6.x*
 ## License
 
 This software is provided under under a MIT License. See the accompanying [LICENSE](https://github.com/stamparm/maltrail/blob/master/LICENSE) file for more information.
+
