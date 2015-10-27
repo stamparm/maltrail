@@ -4,7 +4,11 @@
 localhost
 127.0.0.1
 
-# note: use second level domains in following sections as those are being checked for whitelist-ing in respective heuristic checks
+# triggering "excessive no such domain name"
+
+teredo.ipv6.microsoft.com
+
+# Note: second level domains should be used in following sections as those are being checked for whitelist-ing in respective heuristic checks
 
 # triggering suspicious long (sub)domain names (note: this is not whitelist-ing all related (e.g. URL) trails)
 
@@ -66,6 +70,10 @@ da3e3.net
 tumblr.com
 igsonar.com
 cdxall.com
+2o7.net
+windows.net
+opendns.com
+
 
 # to ignore in direct exe downloads
 
