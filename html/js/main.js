@@ -34,6 +34,7 @@ var FLOOD_THREAT_PREFIX = "...";
 var DGA_THREAT_INFIX = " dga ";
 var DATA_PARTS_DELIMITER = ", ";
 var SUSPICIOUS_THREAT_INFIX = "suspicious";
+var HEURISTIC_THREAT_INFIX = "heuristic"
 var FLOOD_UID_SUFFIX = "F0";
 var DGA_UID_SUFFIX = "D0";
 var THREAT_PIC_HASH = null; // e.g. https://robohash.org/ or https://flathash.com/
@@ -404,17 +405,22 @@ function init(url, from, to) {
 
                 var time = data[LOG_COLUMNS.TIME];
                 var info = data[LOG_COLUMNS.INFO];
+                var reference = data[LOG_COLUMNS.REFERENCE];
 
                 _ = data[LOG_COLUMNS.TRAIL];
                 _ = _.replace(/\([^)]+\)/g, "");
 
                 var flood = _ in _FLOOD_TRAILS;
                 var dga = info.indexOf(DGA_THREAT_INFIX) > -1;
+                var heuristic = reference.indexOf(HEURISTIC_THREAT_INFIX) > -1;
 
                 if (flood)
                     threatText = FLOOD_THREAT_PREFIX + THREAT_INFIX + _;
                 else if (dga)
                     threatText = data[LOG_COLUMNS.SRC_IP] + THREAT_INFIX + info;
+                else if (heuristic) {
+                    threatText = data[LOG_COLUMNS.SRC_IP] + THREAT_INFIX + _ + info;
+                }
                 else
                     threatText = data[LOG_COLUMNS.SRC_IP] + THREAT_INFIX + _;
 

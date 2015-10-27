@@ -42,6 +42,7 @@ from core.settings import SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS
 from core.settings import SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
 from core.settings import SUSPICIOUS_FILENAMES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEX
+from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
 from core.settings import trails
 from core.settings import WHITELIST
 from core.update import update
@@ -150,6 +151,10 @@ def _process_packet(packet, sec, usec):
                                     return
 
                         if config.USE_HEURISTICS:
+                            if any(char in path for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS):
+                                for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
+                                    path = path.replace(char, urllib.quote(char))
+
                             if re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)):
                                 trail = "%s(%s)" % (host, path)
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
@@ -161,7 +166,7 @@ def _process_packet(packet, sec, usec):
                                 name, extension = os.path.splitext(filename)
                                 if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and '.'.join(host.split('.')[-2:]) not in WHITELIST and len(name) < 6:
                                     trail = "%s(%s)" % (host, path)
-                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "direct .%s download (suspicious)" % extension, "(heuristic)"))
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "direct %s download (suspicious)" % extension, "(heuristic)"))
                                 elif filename in SUSPICIOUS_FILENAMES:
                                     trail = "%s(%s)" % (host, path)
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious page", "(heuristic)"))

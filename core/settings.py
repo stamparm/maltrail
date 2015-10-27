@@ -53,6 +53,7 @@ BAD_TRAIL_PREFIXES = ("127.", "192.168.", "localhost")
 SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".exe", ".scr"))
 SUSPICIOUS_FILENAMES = set(("gate.php",))
 SUSPICIOUS_HTTP_REQUEST_REGEX = r"(?i)(information_schema|/\*.*\*/|floor\(rand\(|order by \d+|sysdatabases|(\.\./){2,}|\bselect\b.*\bfrom\b.*\bwhere\b|\bselect \w+ from \w+|<script|\balert\(|xp_cmdshell|/etc/passwd|<\?php|boot\.ini|\bsleep\(|\bconvert\(|varchar|\bunion\s+(all\s+)?select\b)"
+SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = "( )"
 SESSIONS = {}
 NO_SUCH_NAME_COUNTERS = {}  # this won't be (expensive) shared in multiprocessing run (hence, the threshold will effectively be n-times higher)
 SESSION_ID_LENGTH = 16
