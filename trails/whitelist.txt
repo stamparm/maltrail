@@ -126,9 +126,8 @@ emediate.dk
 # appeared on malwareurls.joxeankoret.com
 tinypic.com
 
-# triggering suspicious http request (fql)
+# triggering suspicious http request
 graph.facebook.com
 api.facebook.com
-
-# triggering suspicious http request (yql)
 query.yahooapis.com
+www.google-analytics.com
