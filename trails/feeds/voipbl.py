@@ -14,7 +14,7 @@ from core.common import retrieve_content
 
 __url__ = "http://www.voipbl.org/update/"
 __check__ = "TOTAL NETBLOCK"
-__info__ = "voip (attacker)"
+__info__ = "attacker"
 __reference__ = "voipbl.org"
 
 def fetch():
