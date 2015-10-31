@@ -23,6 +23,6 @@ def fetch():
             line = line.strip()
             if not line or line.startswith('#') or '.' not in line:
                 continue
-            retval[line.split('\t')[0]] = (__info__, __reference__)
+            retval[line] = (__info__, __reference__)
 
     return retval
