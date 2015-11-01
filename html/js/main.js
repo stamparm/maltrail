@@ -1205,6 +1205,7 @@ function initDetails() {
                 if (match === null)
                     return false;
 
+                var interval = null;
                 var img = "";
                 var ip = match[0];
                 var options = { content: "please wait...", open: nslookup, position: { my: "left center", at: "right+10 top-50" } };
@@ -1238,7 +1239,7 @@ function initDetails() {
                         cell.html("").append(span_ip).append($(img).tooltip());
                     }
                     else {
-                        setTimeout(function(ip, cell){
+                        interval = setInterval(function(ip, cell){
                             html = cell.html();
                             if ((IP_COUNTRY[ip] !== null) && (html.indexOf("flag-") === -1)) {
                                 img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '" />'
@@ -1247,8 +1248,9 @@ function initDetails() {
                                 span_ip.tooltip(options);
 
                                 cell.html("").append(span_ip).append($(img).tooltip());
+                                clearInterval(interval);
                             }
-                        }, 2000, ip, cell);
+                        }, 1000, ip, cell);
                     }
                 }
                 else {
