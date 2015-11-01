@@ -1001,8 +1001,8 @@ function initDetails() {
                 render: function (data, type, row) {
                     var parts = data.split(' ');
                     var day = parts[0].split('-')[2];
-                    var suffix = DAY_SUFFIXES[parseInt(day)] || "th";
-                    return "<div title='" + data + "'><span class='time-day'>" + day + "<sup>th</sup></span> " + parts[1].split('.')[0] + "</div>";
+                    var suffix = DAY_SUFFIXES[parseInt(day) % 10] || "th";
+                    return "<div title='" + data + "'><span class='time-day'>" + day + "<sup>" + suffix + "</sup></span> " + parts[1].split('.')[0] + "</div>";
                 },
                 targets: [ DATATABLES_COLUMNS.FIRST_TIME, DATATABLES_COLUMNS.LAST_TIME ],
             },
