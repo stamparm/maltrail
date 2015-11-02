@@ -1254,7 +1254,7 @@ function initDetails() {
                     }
                 }
                 else {
-                    img = '<img src="images/lan.gif" height="11px" style="margin-bottom: 2px" title="LAN">';
+                    img = '<img src="images/lan.gif" height="11px" style="margin-bottom: 0px" title="LAN">';
                     cell.html(html + " ").append($(img).tooltip());
                 }
             });
