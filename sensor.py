@@ -256,10 +256,7 @@ def _process_packet(packet, sec, usec):
                 elif src_ip in trails:
                     log_event((sec, usec, src_ip, '-', dst_ip, '-', IPPROTO_LUT[protocol], TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]))
 
-    except KeyboardInterrupt:
-        raise
-
-    except:
+    except Exception:
         if DEBUG:
             traceback.print_exc()
 
