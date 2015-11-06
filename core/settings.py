@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.7"
+VERSION = "0.8"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -60,6 +60,7 @@ SESSION_ID_LENGTH = 16
 SESSION_EXPIRATION_HOURS = 24 * 7
 IPPROTO_LUT = dict(((getattr(socket, _), _.replace("IPPROTO_", "")) for _ in dir(socket) if _.startswith("IPPROTO_")))
 DEFLATE_COMPRESS_LEVEL = 9
+PORT_SCANNING_THRESHOLD = 10
 SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD = 24
 MIN_BLACKLIST_MASK = 16
 MAX_BLACKLIST_MASK = 32
