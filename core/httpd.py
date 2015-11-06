@@ -102,6 +102,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 path = path.replace('/', os.path.sep)
                 path = os.path.abspath(os.path.join(HTML_DIR, path)).strip()
 
+                if not os.path.isfile(path) and os.path.isfile("%s.html" % path):
+                    path = "%s.html" % path
+
                 if ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and not path.endswith(DISABLED_CONTENT_EXTENSIONS):
                     mtime = time.gmtime(os.path.getmtime(path))
                     if_modified_since = self.headers.get("If-Modified-Since")
