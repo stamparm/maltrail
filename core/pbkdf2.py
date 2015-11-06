@@ -48,7 +48,7 @@ def main():
     finally:
         salt = os.urandom(8)
 
-    print "PBKDF2: $%s$%d$%s" % (salt.encode("hex"), iterations, pbkdf2(password, salt).encode("hex"))
+    print "PBKDF2: $%s$%d$%s" % (salt.encode("hex"), iterations, pbkdf2(password, salt, iterations).encode("hex"))
 
 if __name__ == '__main__':
     main()
