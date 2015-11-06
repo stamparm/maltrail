@@ -1139,40 +1139,42 @@ function initDetails() {
 
                 if (match !== null) {
                     var ip = match[0];
-                    $.ajax("https://stat.ripe.net/data/whois/data.json?resource=" + ip, { dataType:"jsonp", ip: ip })
+
+                    $.ajax("https://stat.ripe.net/data/dns-chain/data.json?resource=" + ip, { dataType:"jsonp", ip: ip})
                     .success(function(json) {
-                        // Reference: http://bugs.jqueryui.com/ticket/8740#comment:21
-                        var found = null;
-                        var msg = "";
-
-                        for (var i = json.data.records.length - 1; i >= 0 ; i--) {
-                            if ((json.data.records[i][0].key.toLowerCase().indexOf("inetnum") != -1) || (json.data.records[i][0].key.toLowerCase().indexOf("netrange") != -1)){
-                                found = i;
-                                break;
-                            }
+                        var _ = json.data.reverse_nodes[this.ip];
+                        if ((_.length === 0)||(_ === "localhost")) {
+                            _ = "-";
                         }
-
-                        if (found !== null) {
-                            for (var j = 0; j < json.data.records[found].length; j++) {
-                                msg += json.data.records[found][j].key + ": " + json.data.records[found][j].value;
-                                msg += "<br>";
-                            }
-                            msg = msg.replace(/(\-\+)+/g, "--").replace(/(\-\+)+/g, "--");
+                        _ = String(_);
+                        if (_.length > 40) {
+                            _ = _.substring(0, 40) + "<br>" + _.substring(40);
                         }
+                        var msg = "<p><b>" + _ + "</b></p>";
+                        ui.tooltip.find(".ui-tooltip-content").html(msg + "please wait...");
 
-                        $.ajax("https://stat.ripe.net/data/dns-chain/data.json?resource=" + ip, { dataType:"jsonp", ip: ip, msg: msg})
+                        $.ajax("https://stat.ripe.net/data/whois/data.json?resource=" + ip, { dataType:"jsonp", ip: ip, msg: msg })
                         .success(function(json) {
-                            var _ = json.data.reverse_nodes[this.ip];
-                            if ((_.length === 0)||(_ === "localhost")) {
-                                /*var parts = this.ip.split('.');
-                                _ = "";
-                                for (var i = parts.length - 1; i >= 0; i--)
-                                    _ += parts[i] + ".";
-                                _ += "in-addr.arpa";*/
-                                _ = "-";
+                            // Reference: http://bugs.jqueryui.com/ticket/8740#comment:21
+                            var found = null;
+                            var msg = "";
+
+                            for (var i = json.data.records.length - 1; i >= 0 ; i--) {
+                                if ((json.data.records[i][0].key.toLowerCase().indexOf("inetnum") != -1) || (json.data.records[i][0].key.toLowerCase().indexOf("netrange") != -1)){
+                                    found = i;
+                                    break;
+                                }
                             }
-                            var msg = "<p><b>" + _ + "</b></p>" + this.msg;
-                            ui.tooltip.find(".ui-tooltip-content").html(msg);
+
+                            if (found !== null) {
+                                for (var j = 0; j < json.data.records[found].length; j++) {
+                                    msg += json.data.records[found][j].key + ": " + json.data.records[found][j].value;
+                                    msg += "<br>";
+                                }
+                                msg = msg.replace(/(\-\+)+/g, "--").replace(/(\-\+)+/g, "--");
+                            }
+
+                            ui.tooltip.find(".ui-tooltip-content").html(this.msg + msg);
                         });
                     });
                 }

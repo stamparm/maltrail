@@ -41,6 +41,7 @@ from core.settings import SESSION_ID_LENGTH
 from core.settings import SESSIONS
 from core.settings import TRAILS_FILE
 from core.settings import UNAUTHORIZED_SLEEP_TIME
+from core.settings import VERSION
 
 def start_httpd(address=None, port=None, join=False, pem=None):
     """
@@ -131,6 +132,12 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     return
 
             if content is not None:
+                for match in re.finditer(r"<\!(\w+)\!>", content):
+                    name = match.group(1)
+                    _ = getattr(self, "_%s" % name.lower(), None)
+                    if _:
+                        content = self._format(content, **{ name: _() })
+
                 length = len(content)
 
                 if "gzip" in self.headers.getheader("Accept-Encoding", ""):
@@ -196,6 +203,16 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             except:
                 if DEBUG:
                     traceback.print_exc()
+
+        def _version(self):
+            return VERSION
+
+        def _format(self, content, **params):
+            if content:
+                for key, value in params.items():
+                    content = content.replace("<!%s!>" % key, value)
+
+            return content
 
         def _login(self, params):
             valid = False
