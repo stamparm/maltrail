@@ -5,6 +5,7 @@ Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
 See the file 'LICENSE' for copying permission
 """
 
+import optparse
 import os
 import sys
 import threading
@@ -15,10 +16,22 @@ sys.dont_write_bytecode = True
 from core.httpd import start_httpd
 from core.log import start_logd
 from core.settings import config
+from core.settings import read_config
+from core.settings import CONFIG_FILE
 from core.settings import NAME
+from core.settings import VERSION
 from core.update import update
 
 def main():
+
+    print "%s (server) #v%s\n" % (NAME, VERSION)
+
+    parser = optparse.OptionParser(version=VERSION)
+    parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="Configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
+    options, _ = parser.parse_args()
+
+    read_config(options.config_file)
+
     if config.USE_SSL:
         try:
             import OpenSSL

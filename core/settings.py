@@ -13,11 +13,11 @@ import subprocess
 
 from core.attribdict import AttribDict
 
-config = None
+config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.6"
+VERSION = "0.7"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -106,72 +106,72 @@ def _get_total_physmem():
 
     return retval
 
-def read_config():
+def read_config(config_file):
     global BUFFER_LENGTH
     global config
 
-    if not os.path.isfile(CONFIG_FILE):
-        exit("[!] missing configuration file '%s'" % CONFIG_FILE)
-    elif not config:
-        config = AttribDict()
+    if not os.path.isfile(config_file):
+        exit("[!] missing configuration file '%s'" % config_file)
 
-        try:
-            array = None
-            content = open(CONFIG_FILE, "rb").read()
+    config.clear()
 
-            for line in content.split("\n"):
-                line = re.sub(r"#.+", "", line)
-                if not line.strip():
-                    continue
+    try:
+        array = None
+        content = open(config_file, "rb").read()
 
-                if line.count(' ') == 0:
-                    array = line.upper()
-                    config[array] = []
-                    continue
+        for line in content.split("\n"):
+            line = re.sub(r"#.+", "", line)
+            if not line.strip():
+                continue
 
-                if array and line.startswith(' '):
-                    config[array].append(line.strip())
-                    continue
-                else:
-                    array = None
-                    name, value = line = line.strip().split(' ', 1)
-                    name = name.upper()
-                    value = value.strip("'\"")
+            if line.count(' ') == 0:
+                array = line.upper()
+                config[array] = []
+                continue
 
-                if name.startswith("USE_"):
-                    value = value.lower() in ("1", "true")
-                elif value.isdigit():
-                    value = int(value)
-                else:
-                    for match in re.finditer(r"\$([A-Z0-9_]+)", value):
-                        if match.group(1) in globals():
-                            value = value.replace(match.group(0), globals()[match.group(1)])
-                        else:
-                            value = value.replace(match.group(0), os.environ.get(match.group(1), match.group(0)))
-                    if subprocess.mswindows and "://" not in value:
-                        value = value.replace("/", "\\")
+            if array and line.startswith(' '):
+                config[array].append(line.strip())
+                continue
+            else:
+                array = None
+                name, value = line = line.strip().split(' ', 1)
+                name = name.upper()
+                value = value.strip("'\"")
 
-                config[name] = value
+            if name.startswith("USE_"):
+                value = value.lower() in ("1", "true")
+            elif value.isdigit():
+                value = int(value)
+            else:
+                for match in re.finditer(r"\$([A-Z0-9_]+)", value):
+                    if match.group(1) in globals():
+                        value = value.replace(match.group(0), globals()[match.group(1)])
+                    else:
+                        value = value.replace(match.group(0), os.environ.get(match.group(1), match.group(0)))
+                if subprocess.mswindows and "://" not in value:
+                    value = value.replace("/", "\\")
 
-        except (IOError, OSError):
-            pass
+            config[name] = value
 
-        for option in ("MONITOR_INTERFACE", "CAPTURE_BUFFER", "LOG_DIRECTORY"):
-            if not option in config:
-                exit("[!] missing mandatory option '%s' in configuration file '%s'" % (option, CONFIG_FILE))
+    except (IOError, OSError):
+        pass
 
-        if config.CAPTURE_BUFFER:
-            if config.CAPTURE_BUFFER.isdigit():
-                BUFFER_LENGTH = int(config.CAPTURE_BUFFER)
-            elif re.search(r"\d+%", config.CAPTURE_BUFFER):
-                physmem = _get_total_physmem()
+    for option in ("MONITOR_INTERFACE", "CAPTURE_BUFFER", "LOG_DIRECTORY"):
+        if not option in config:
+            exit("[!] missing mandatory option '%s' in configuration file '%s'" % (option, config_file))
 
-                if physmem:
-                    BUFFER_LENGTH = physmem * int(re.search(r"(\d+)%", config.CAPTURE_BUFFER).group(1)) / 100
-                else:
-                    exit("[!] unable to determine total physical memory. Please use absolute value for 'CAPTURE_BUFFER'")
+    if config.CAPTURE_BUFFER:
+        if config.CAPTURE_BUFFER.isdigit():
+            BUFFER_LENGTH = int(config.CAPTURE_BUFFER)
+        elif re.search(r"\d+%", config.CAPTURE_BUFFER):
+            physmem = _get_total_physmem()
 
-            BUFFER_LENGTH = BUFFER_LENGTH / BLOCK_LENGTH * BLOCK_LENGTH
+            if physmem:
+                BUFFER_LENGTH = physmem * int(re.search(r"(\d+)%", config.CAPTURE_BUFFER).group(1)) / 100
+            else:
+                exit("[!] unable to determine total physical memory. Please use absolute value for 'CAPTURE_BUFFER'")
+
+        BUFFER_LENGTH = BUFFER_LENGTH / BLOCK_LENGTH * BLOCK_LENGTH
 
 def read_whitelist():
     WHITELIST.clear()
@@ -187,5 +187,4 @@ def read_whitelist():
                     WHITELIST.add(line)
 
 if __name__ != "__main__":
-    read_config()
     read_whitelist()

@@ -6,6 +6,7 @@ See the file 'LICENSE' for copying permission
 """
 
 import mmap
+import optparse
 import os
 import re
 import socket
@@ -30,12 +31,15 @@ from core.parallel import worker
 from core.parallel import write_block
 from core.settings import BUFFER_LENGTH
 from core.settings import config
+from core.settings import CONFIG_FILE
 from core.settings import DEBUG
 from core.settings import ETH_LENGTH
 from core.settings import IPPROTO
 from core.settings import IPPROTO_LUT
+from core.settings import NAME
 from core.settings import NO_SUCH_NAME_COUNTERS
 from core.settings import NO_SUCH_NAME_PER_HOUR_THRESHOLD
+from core.settings import read_config
 from core.settings import REGULAR_SENSOR_SLEEP_TIME
 from core.settings import SNAP_LEN
 from core.settings import SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS
@@ -44,24 +48,16 @@ from core.settings import SUSPICIOUS_FILENAMES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEX
 from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
 from core.settings import trails
+from core.settings import VERSION
 from core.settings import WHITELIST
 from core.update import update
 
 _buffer = None
 _cap = None
 _count = 0
-_multiprocessing = False
+_multiprocessing = None
 _n = None
 _datalink = None
-
-if config.USE_MULTIPROCESSING:
-    try:
-        import multiprocessing
-
-        if multiprocessing.cpu_count() > 1:
-            _multiprocessing = True
-    except (ImportError, OSError, NotImplementedError):
-        pass
 
 try:
     import pcapy
@@ -267,6 +263,16 @@ def init():
 
     global _cap
     global _datalink
+    global _multiprocessing
+
+    if config.USE_MULTIPROCESSING:
+        try:
+            import multiprocessing
+
+            if multiprocessing.cpu_count() > 1:
+                _multiprocessing = multiprocessing
+        except (ImportError, OSError, NotImplementedError):
+            pass
 
     def update_timer():
         _ = update(server=config.UPDATE_SERVER)
@@ -334,12 +340,12 @@ def _init_multiprocessing():
     global _n
 
     if _multiprocessing:
-        print "[i] creating %d more processes (%d CPU cores detected)" % (multiprocessing.cpu_count() - 1, multiprocessing.cpu_count())
+        print "[i] creating %d more processes (%d CPU cores detected)" % (_multiprocessing.cpu_count() - 1, _multiprocessing.cpu_count())
         _buffer = mmap.mmap(-1, BUFFER_LENGTH)  # http://www.alexonlinux.com/direct-io-in-python
-        _n = multiprocessing.Value('L', lock=False)
+        _n = _multiprocessing.Value('L', lock=False)
 
-        for i in xrange(multiprocessing.cpu_count() - 1):
-            process = multiprocessing.Process(target=worker, name=str(i), args=(_buffer, _n, i, multiprocessing.cpu_count() - 1, _process_packet))
+        for i in xrange(_multiprocessing.cpu_count() - 1):
+            process = _multiprocessing.Process(target=worker, name=str(i), args=(_buffer, _n, i, _multiprocessing.cpu_count() - 1, _process_packet))
             process.daemon = True
             process.start()
 
@@ -368,13 +374,24 @@ def monitor():
         print "\r[x] Ctrl-C pressed"
     finally:
         if _multiprocessing:
-            for _ in xrange(multiprocessing.cpu_count() - 1):
+            for _ in xrange(_multiprocessing.cpu_count() - 1):
                 write_block(_buffer, _n.value, "", BLOCK_MARKER.END)
                 _n.value = _n.value + 1
-            while multiprocessing.active_children():
+            while _multiprocessing.active_children():
                 time.sleep(REGULAR_SENSOR_SLEEP_TIME)
 
 def main():
+    print "%s (sensor) #v%s\n" % (NAME, VERSION)
+
+    parser = optparse.OptionParser(version=VERSION)
+    parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="Configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
+    options, _ = parser.parse_args()
+
+    if not check_sudo():
+        exit("[x] please run with sudo/Administrator privileges")
+
+    read_config(options.config_file)
+
     try:
         init()
         monitor()
