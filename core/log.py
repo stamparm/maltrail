@@ -19,15 +19,15 @@ from core.settings import TIME_FORMAT
 _thread_data = threading.local()
 
 def create_log_directory():
-    if not os.path.isdir(config.LOG_DIRECTORY):
+    if not os.path.isdir(config.LOG_DIR):
         if check_sudo() is False:
             exit("[x] please run with sudo/Administrator privileges")
-        os.makedirs(config.LOG_DIRECTORY)
-    print("[i] using '%s' for log storage" % config.LOG_DIRECTORY)
+        os.makedirs(config.LOG_DIR)
+    print("[i] using '%s' for log storage" % config.LOG_DIR)
 
 def get_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
     localtime = time.localtime(sec)
-    _ = os.path.join(config.LOG_DIRECTORY, "%d-%02d-%02d.log" % (localtime.tm_year, localtime.tm_mon, localtime.tm_mday))
+    _ = os.path.join(config.LOG_DIR, "%d-%02d-%02d.log" % (localtime.tm_year, localtime.tm_mon, localtime.tm_mday))
     if _ != getattr(_thread_data, "log_path", None):
         if not os.path.exists(_):
             open(_, "w+").close()

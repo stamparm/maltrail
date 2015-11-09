@@ -24,7 +24,7 @@ from core.settings import BAD_TRAIL_PREFIXES
 from core.settings import LOW_PRIORITY_INFO_KEYWORDS
 from core.settings import ROOT_DIR
 from core.settings import TRAILS_FILE
-from core.settings import USERS_DIRECTORY
+from core.settings import USERS_DIR
 from core.settings import WHITELIST
 
 def _fopen_trails(mode):
@@ -55,10 +55,10 @@ def update(server=None):
 
     if not trails and ((not os.path.isfile(TRAILS_FILE) or (time.time() - os.stat(TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(TRAILS_FILE).st_size == 0)):
         try:
-            if not os.path.isdir(USERS_DIRECTORY):
-                os.makedirs(USERS_DIRECTORY, 0755)
+            if not os.path.isdir(USERS_DIR):
+                os.makedirs(USERS_DIR, 0755)
         except Exception, ex:
-            exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIRECTORY, ex))
+            exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
 
         print "[i] updating trails..."
 

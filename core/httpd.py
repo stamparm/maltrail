@@ -310,7 +310,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             start, end, size, total = None, None, -1, None
             content = None
-            log_path = os.path.join(config.LOG_DIRECTORY, "%s.log" % params.get("date", ""))
+            log_path = os.path.join(config.LOG_DIR, "%s.log" % params.get("date", ""))
 
             if os.path.exists(log_path):
                 total = os.stat(log_path).st_size
@@ -427,7 +427,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             min_ = min_.replace(hour=0, minute=0, second=0, microsecond=0)
             max_ = max_.replace(hour=23, minute=59, second=59, microsecond=999999)
 
-            for filename in sorted(glob.glob(os.path.join(config.LOG_DIRECTORY, "*.log"))):
+            for filename in sorted(glob.glob(os.path.join(config.LOG_DIR, "*.log"))):
                 try:
                     current = datetime.datetime.strptime(os.path.splitext(os.path.basename(filename))[0], DATE_FORMAT)
                 except:

@@ -23,8 +23,8 @@ DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
 TIMEOUT = 30
 FRESH_LISTS_DELTA_DAYS = 2
-USERS_DIRECTORY = os.path.join(os.path.expanduser("~"), ".%s" % NAME.lower())
-TRAILS_FILE = os.path.join(USERS_DIRECTORY, "trails.csv")
+USERS_DIR = os.path.join(os.path.expanduser("~"), ".%s" % NAME.lower())
+TRAILS_FILE = os.path.join(USERS_DIR, "trails.csv")
 TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 HTTP_DEFAULT_PORT = 8338
 HTTP_TIME_FORMAT = "%a, %d %b %Y %H:%M:%S GMT"  # Reference: http://stackoverflow.com/a/225106
@@ -44,7 +44,7 @@ HTML_DIR = os.path.join(ROOT_DIR, "html")
 IPPROTO = 8
 ETH_LENGTH = 14
 CONFIG_FILE = os.path.join(ROOT_DIR, "maltrail.conf")
-SYSTEM_LOG_DIRECTORY = "/var/log" if not subprocess.mswindows else "C:\\Windows\\Logs"
+SYSTEM_LOG_DIR = "/var/log" if not subprocess.mswindows else "C:\\Windows\\Logs"
 DEFAULT_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IROTH
 HOSTNAME = socket.gethostname()
 DISABLED_CONTENT_EXTENSIONS = (".py", ".pyc", ".md", ".txt", ".bak", ".conf", ".zip", "~")
@@ -157,7 +157,7 @@ def read_config(config_file):
     except (IOError, OSError):
         pass
 
-    for option in ("MONITOR_INTERFACE", "CAPTURE_BUFFER", "LOG_DIRECTORY"):
+    for option in ("MONITOR_INTERFACE", "CAPTURE_BUFFER", "LOG_DIR"):
         if not option in config:
             exit("[!] missing mandatory option '%s' in configuration file '%s'" % (option, config_file))
 

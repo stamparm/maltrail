@@ -9,13 +9,21 @@ import glob
 import os
 import re
 
+from core.settings import config
+from core.settings import ROOT_DIR
+
 __url__ = "(custom)"
 __reference__ = "(custom)"
 
 def fetch():
     retval = {}
 
-    for filename in glob.glob(os.path.join(os.path.dirname(__file__), "*.txt")):
+    if config.CUSTOM_TRAILS_DIR:
+        directory = os.path.abspath(os.path.join(ROOT_DIR, config.CUSTOM_TRAILS_DIR))
+    else:
+        directory = os.path.dirname(__file__)
+
+    for filename in glob.glob(os.path.join(directory, "*.txt")):
         __info__ = os.path.splitext(os.path.basename(filename))[0].replace('_', " ")
         content = open(filename, "rb").read()
         for line in content.split('\n'):
