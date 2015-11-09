@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8"
+VERSION = "0.8.1"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -113,6 +113,8 @@ def read_config(config_file):
 
     if not os.path.isfile(config_file):
         exit("[!] missing configuration file '%s'" % config_file)
+    else:
+        print "[i] using configuration file '%s'" % config_file
 
     config.clear()
 
