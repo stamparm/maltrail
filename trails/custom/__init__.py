@@ -19,7 +19,7 @@ def fetch():
     retval = {}
 
     if config.CUSTOM_TRAILS_DIR:
-        directory = os.path.abspath(os.path.join(ROOT_DIR, config.CUSTOM_TRAILS_DIR))
+        directory = os.path.abspath(os.path.join(ROOT_DIR, os.path.expanduser(config.CUSTOM_TRAILS_DIR)))
     else:
         directory = os.path.dirname(__file__)
 
