@@ -8,7 +8,7 @@ See the file 'LICENSE' for copying permission
 from core.common import retrieve_content
 
 __url__ = "http://talosintel.com/feeds/ip-filter.blf"
-__check__ = ".121."
+__check__ = ".1"
 __info__ = "attacker"
 __reference__ = "talosintel.com"
 

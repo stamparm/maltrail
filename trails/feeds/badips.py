@@ -10,7 +10,7 @@ import re
 from core.common import retrieve_content
 
 __url__ = "https://www.badips.com/get/list/any/2?age=30d"
-__check__ = ".121."
+__check__ = ".1"
 __info__ = "attacker"
 __reference__ = "badips.com"
 
