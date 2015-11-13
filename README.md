@@ -202,7 +202,7 @@ In other similar situations you'll see the same behaviour, coming from blacklist
 
 ![Unknown attacker](http://i.imgur.com/ubJjaq7.png)
 
-One more common behavior is scanning of the whole 0.0.0.0/0 IP range (i.e. Internet) in search for one particular port (e.g. TCP port 443 when [Heartbleed](http://heartbleed.com/) has been found). In the following screenshot you'll find one such case for previously blacklisted attacker(s) (in this case by [autoshun.org](http://autoshun.org/)) targeting the TCP port 5060 (i.e. SIP) in search for [misconfigured VoIP devices](https://isc.sans.edu/diary/Targeting+VoIP%3A+Increase+in+SIP+Connections+on+UDP+port+5060/9193):
+One more common behaviour is scanning of the whole 0.0.0.0/0 IP range (i.e. Internet) in search for one particular port (e.g. TCP port 443 when [Heartbleed](http://heartbleed.com/) has been found). In the following screenshot you'll find one such case for previously blacklisted attacker(s) (in this case by [autoshun.org](http://autoshun.org/)) targeting the TCP port 5060 (i.e. SIP) in search for [misconfigured VoIP devices](https://isc.sans.edu/diary/Targeting+VoIP%3A+Increase+in+SIP+Connections+on+UDP+port+5060/9193):
 
 ![SIP scan](http://i.imgur.com/6HmJLGM.png)
 
@@ -276,13 +276,13 @@ Lots of malware uses some kind of `ipinfo` service (e.g. [ipinfo.io](http://ipin
 
 ![ipinfo](http://i.imgur.com/RaGvvIg.png)
 
-By using filter `ipinfo` all potentially infected computers in our organization's range can be listed that share this kind of suspicious behavior:
+By using filter `ipinfo` all potentially infected computers in our organization's range can be listed that share this kind of suspicious behaviour:
 
 ![ipinfo filter](http://i.imgur.com/TmBw0Xs.png)
 
 ### Suspicious direct file downloads
 
-Maltrail tracks all suspicious direct file download attempts (e.g. `apk`, `exe` and `scr` file extensions). This can trigger lots of false positives, but eventually could help in reconstruction of the chain of infection (Note: legitimate service providers, like Google, usually use encrypted HTTPS to perform this kind of downloads):
+Maltrail tracks all suspicious direct file download attempts (e.g. `.apk`, `.exe` and `.scr` file extensions). This can trigger lots of false positives, but eventually could help in reconstruction of the chain of infection (Note: legitimate service providers, like Google, usually use encrypted HTTPS to perform this kind of downloads):
 
 ![Direct .exe download](http://i.imgur.com/rQqFCV2.png)
 
@@ -292,9 +292,9 @@ For testing purposes, web application "reconnaissance" tool [skipfish](https://c
 
 ### Suspicious HTTP requests
 
-In case of suspicious requests coming from outer web application security scanners (e.g. searching for SQLi, XSS, LFI, etc. vulnerabilities) and/or the internal user malicious attempts toward unknown web sites, threats like the following could be found:
+In case of suspicious requests coming from outer web application security scanners (e.g. searching for SQLi, XSS, LFI, etc. vulnerabilities) and/or the internal user malicious attempts toward unknown web sites, threats like the following could be found (real case of attackers trying to exploit Joomla! CMS CVE-2015-7297, CVE-2015-7857, and CVE-2015-7858 [vulnerabilities](https://blog.sucuri.net/2015/10/joomla-3-4-5-released-fixing-a-serious-sql-injection-vulnerability.html)):
 
-![](http://i.imgur.com/4xbeBF7.png)
+![SQLi com_contenthistory](http://i.imgur.com/TWq9bO5.png)
 
 In following example, legal (i.e. "in-house") web application vulnerability scanning run has been marked as "suspicious":
 
@@ -304,16 +304,26 @@ If we click on the cloud icon (i.e. ![Cloud ellipsis](https://raw.githubusercont
 
 ![Vulnerability scan requests](http://i.imgur.com/GULbEh8.png)
 
+In the following screenshot, a run of popular SQLi vulnerability tool [sqlmap](https://github.com/sqlmapproject/sqlmap/) can be found inside our logs:
+
+![sqlmap scan requests](http://i.imgur.com/lWEhmTx.png)
+
+### Port scanning
+
+In case of too many connection attempts toward considerable amount of different TCP ports, Maltrail will warn about the potential port scanning, as a result of its heuristic mechanism detection. It the following screenshot such warning(s) can be found for a run of popular port scanning tool [nmap](https://nmap.org/):
+
+![nmap scan](https://i.imgur.com/Ur6rWBB.png)
+
 ### Potential UDP exfiltration
 
-In the following example, it can be seen an overly suspicious behavior, initiated by known attacker toward our organization's IP, utilizing large amount of traffic over unknown UDP service port(s):
+In the following example, it can be seen an overly suspicious behaviour, initiated by known attacker toward our organization's IP, utilizing large amount of traffic over unknown UDP service port(s):
 
 ![UDP exfiltration 1](http://i.imgur.com/RSrjmO3.png)
 ![UDP exfiltration 2](http://i.imgur.com/zW1mbsP.png)
 
 ### False positives
 
-Like in all other security solutions, Maltrail is prone to so-called "[false positives](https://en.wikipedia.org/wiki/False_positives_and_false_negatives)". In those kind of cases, Maltrail will (especially in case of `heuristic` threats) record a regular user's behavior and mark it as malicious and/or suspicious. In the following example it can be seen that one of feed providers `blocklist.de` marked regular Google servers as `attacker`(s), resulting with the following threats:
+Like in all other security solutions, Maltrail is prone to so-called "[false positives](https://en.wikipedia.org/wiki/False_positives_and_false_negatives)". In those kind of cases, Maltrail will (especially in case of `heuristic` threats) record a regular user's behaviour and mark it as malicious and/or suspicious. In the following example it can be seen that one of feed providers `blocklist.de` marked regular Google servers as `attacker`(s), resulting with the following threats:
 
 ![Google false positive 1](http://i.imgur.com/wdA1B6O.png)
 ![Google false positive 2](http://i.imgur.com/l0C3ATK.png)
@@ -333,4 +343,3 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6.x*
 ## License
 
 This software is provided under under a MIT License. See the accompanying [LICENSE](https://github.com/stamparm/maltrail/blob/master/LICENSE) file for more information.
-
