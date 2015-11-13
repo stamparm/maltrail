@@ -84,16 +84,17 @@ def load_trails(quiet=False):
 
     retval = {}
 
-    try:
-        with open(TRAILS_FILE, "rb") as f:
-            reader = csv.reader(f, delimiter=',', quotechar='\"')
-            for row in reader:
-                if row:
-                    trail, info, reference = row
-                    retval[trail] = (info, reference)
+    if os.path.isfile(TRAILS_FILE):
+        try:
+            with open(TRAILS_FILE, "rb") as f:
+                reader = csv.reader(f, delimiter=',', quotechar='\"')
+                for row in reader:
+                    if row:
+                        trail, info, reference = row
+                        retval[trail] = (info, reference)
 
-    except Exception, ex:
-        exit("[x] something went wrong during trails file read '%s' ('%s')" % (TRAILS_FILE, ex))
+        except Exception, ex:
+            exit("[x] something went wrong during trails file read '%s' ('%s')" % (TRAILS_FILE, ex))
 
     if not quiet:
         print "[i] %d trails loaded" % len(retval)

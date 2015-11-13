@@ -62,8 +62,11 @@ def update(server=None):
 
         print "[i] updating trails..."
 
-        sys.path.append(os.path.abspath(os.path.join(ROOT_DIR, "trails", "feeds")))
-        filenames = glob.glob(os.path.join(sys.path[-1], "*.py"))
+        if config.USE_FEED_UPDATES:
+            sys.path.append(os.path.abspath(os.path.join(ROOT_DIR, "trails", "feeds")))
+            filenames = glob.glob(os.path.join(sys.path[-1], "*.py"))
+        else:
+            filenames = []
 
         sys.path.append(os.path.abspath(os.path.join(ROOT_DIR, "trails")))
         filenames += [os.path.join(sys.path[-1], "static")]

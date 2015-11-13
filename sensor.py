@@ -310,8 +310,7 @@ def init():
         thread.daemon = True
         thread.start()
 
-    if not config.SKIP_TRAIL_UPDATES:
-        update_timer()
+    update_timer()
 
     create_log_directory()
 
@@ -409,16 +408,12 @@ def main():
 
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="Configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
-    parser.add_option("-s", dest="skip_trail_updates", action="store_true", help="Skip trail updates")
     options, _ = parser.parse_args()
 
     if not check_sudo():
         exit("[x] please run with sudo/Administrator privileges")
 
     read_config(options.config_file)
-
-    if options.skip_trail_updates:
-        config.SKIP_TRAIL_UPDATES = True
 
     try:
         init()
