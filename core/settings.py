@@ -137,9 +137,14 @@ def read_config(config_file):
                 continue
             else:
                 array = None
-                name, value = line = line.strip().split(' ', 1)
-                name = name.upper()
-                value = value.strip("'\"")
+                try:
+                    name, value = line.strip().split(' ', 1)
+                except ValueError:
+                    name = line.strip()
+                    value = ""
+                finally:
+                    name = name.upper()
+                    value = value.strip("'\"")
 
             if name.startswith("USE_"):
                 value = value.lower() in ("1", "true")
