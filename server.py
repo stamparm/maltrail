@@ -28,6 +28,7 @@ def main():
 
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="Configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
+    parser.add_option("-s", dest="skip_trail_updates", action="store_true", help="Skip trail updates")
     options, _ = parser.parse_args()
 
     read_config(options.config_file)
@@ -50,7 +51,10 @@ def main():
         thread.daemon = True
         thread.start()
 
-    update_timer()
+    if not options.skip_trail_updates:
+        update_timer()
+    else:
+        config.SKIP_TRAIL_UPDATES = True
 
     if config.UDP_ADDRESS and config.UDP_PORT:
         start_logd(address=config.UDP_ADDRESS, port=config.UDP_PORT, join=False)
