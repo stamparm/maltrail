@@ -8,7 +8,7 @@ See the file 'LICENSE' for copying permission
 class TRAIL:
     DNS = "DNS"
     IP = "IP"
-    URL = "URL"
+    HTTP = "HTTP"
 
 class BLOCK_MARKER:
     NOP = chr(0x00)

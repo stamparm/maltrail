@@ -20,7 +20,7 @@ var _TOTAL_EVENTS = 0;
 var _USER = null;
 
 var IP_COUNTRY = {};
-var TRAIL_TYPES = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900" };
+var TRAIL_TYPES = { DNS: "#3366cc", IP: "#dc3912", HTTP: "#ff9900" };
 
 var SPARKLINE_WIDTH = 130;
 var CHART_WIDTH = 900;
@@ -2003,7 +2003,7 @@ function initVisual() {
     total["Threats"] = _THREATS_SORTED.length;
     $('#threats_sparkline').sparkline(data, options);
 
-    // URL, DNS and IP sparklines
+    // HTTP, DNS and IP sparklines
     for (var hour in _HOURS) {
         if (min_ === null)
             min_ = hour;
@@ -2112,7 +2112,7 @@ function initVisual() {
 
     total["Events"] = 0;
 
-    for (var key in { URL: "#ff9900", DNS: "#3366cc", IP: "#dc3912" }) {
+    for (var key in { HTTP: "#ff9900", DNS: "#3366cc", IP: "#dc3912" }) {
         options.lineColor = TRAIL_TYPES[key];
         $('#events_sparkline').sparkline(sparklines[key], options);
         options.composite = true;
