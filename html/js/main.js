@@ -21,6 +21,7 @@ var _USER = null;
 
 var IP_COUNTRY = {};
 var TRAIL_TYPES = { DNS: "#3366cc", IP: "#dc3912", HTTP: "#ff9900" };
+var TRAIL_DEPRECATED_COLOR = "#777777";
 
 var SPARKLINE_WIDTH = 130;
 var CHART_WIDTH = 900;
@@ -1648,7 +1649,7 @@ function drawInfo(type) {
                 var type = match[2];
                 var count = item[1];
 
-                data.push({value: count, label: item[0], color: TRAIL_TYPES[type]})
+                data.push({value: count, label: item[0], color: type in TRAIL_TYPES ? TRAIL_TYPES[type] : TRAIL_DEPRECATED_COLOR})
             }
             else
                 other += item[1];
@@ -1937,7 +1938,7 @@ function initVisual() {
         if (_TRAILS_SORTED[i][1] >= threshold) {
             var type = _TRAILS_SORTED[i][0].match(/\(([A-Z]+)\)/)[1];
             data.push(_TRAILS_SORTED[i][1]);
-            sliceColors.push(TRAIL_TYPES[type]);
+            sliceColors.push(type in TRAIL_TYPES ? TRAIL_TYPES[type] : TRAIL_DEPRECATED_COLOR);
         }
         else
             other += _TRAILS_SORTED[i][1];
