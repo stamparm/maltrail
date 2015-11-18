@@ -13,7 +13,7 @@ table.dataTable { border-color: #a8a8a8 }
 table.dataTable .highlighted { background-color: #abb9d3 !important }
 .details_total { font-size: 120%; font-weight: bold }
 .label-type, .tag { background-color: #777777; font-weight: bold; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; border-radius: 3px; padding: 1px 2px; cursor: pointer; cursor: hand;}
-.label-http { background-color: #ff9900 }
+.label-url { background-color: #ff9900 }
 .label-ip { background-color: #dc3912 }
 .label-dns { background-color: #3366cc }
 .tag { margin-right: 2px }

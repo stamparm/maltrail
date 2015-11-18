@@ -20,8 +20,7 @@ var _TOTAL_EVENTS = 0;
 var _USER = null;
 
 var IP_COUNTRY = {};
-var TRAIL_TYPES = { DNS: "#3366cc", IP: "#dc3912", HTTP: "#ff9900" };
-var TRAIL_DEPRECATED_COLOR = "#777777";
+var TRAIL_TYPES = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900" };
 
 var SPARKLINE_WIDTH = 130;
 var CHART_WIDTH = 900;
@@ -994,7 +993,10 @@ function initDetails() {
             },
             {
                 render: function ( data, type, row ) {
-                    return '<span class="label-type label-' + data.toLowerCase() + '">' + data + '</span>';
+                    if (data in TRAIL_TYPES)
+                        return '<span class="label-type label-' + data.toLowerCase() + '">' + data + '</span>';
+                    else
+                        return '<span class="label-type style="background-color: #' + getHashColor(data) + '">' + data + '</span>';
                 },
                 targets: DATATABLES_COLUMNS.TYPE
             },
@@ -1649,7 +1651,7 @@ function drawInfo(type) {
                 var type = match[2];
                 var count = item[1];
 
-                data.push({value: count, label: item[0], color: type in TRAIL_TYPES ? TRAIL_TYPES[type] : TRAIL_DEPRECATED_COLOR})
+                data.push({value: count, label: item[0], color: type in TRAIL_TYPES ? TRAIL_TYPES[type] : "#" + getHashColor(type)})
             }
             else
                 other += item[1];
@@ -1938,7 +1940,7 @@ function initVisual() {
         if (_TRAILS_SORTED[i][1] >= threshold) {
             var type = _TRAILS_SORTED[i][0].match(/\(([A-Z]+)\)/)[1];
             data.push(_TRAILS_SORTED[i][1]);
-            sliceColors.push(type in TRAIL_TYPES ? TRAIL_TYPES[type] : TRAIL_DEPRECATED_COLOR);
+            sliceColors.push(type in TRAIL_TYPES ? TRAIL_TYPES[type] : "#" + getHashColor(type));
         }
         else
             other += _TRAILS_SORTED[i][1];
