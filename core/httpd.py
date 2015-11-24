@@ -111,7 +111,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     mtime = time.gmtime(os.path.getmtime(path))
                     if_modified_since = self.headers.get("If-Modified-Since")
 
-                    if if_modified_since:
+                    if if_modified_since and os.path.split(path)[-1] != "index.html":
                         if_modified_since = [_ for _ in if_modified_since.split(';') if _.upper().endswith("GMT")][0]
                         if time.mktime(mtime) <= time.mktime(time.strptime(if_modified_since, HTTP_TIME_FORMAT)):
                             self.send_response(httplib.NOT_MODIFIED)
