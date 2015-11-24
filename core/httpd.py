@@ -199,8 +199,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             return SERVER_HEADER
 
         def end_headers(self):
-            BaseHTTPServer.BaseHTTPRequestHandler.end_headers(self)
-            self.end_headers = lambda _: None
+            if not hasattr(self, "_end_headers"):
+                BaseHTTPServer.BaseHTTPRequestHandler.end_headers(self)
+                self._end_headers = True
 
         def log_message(self, format, *args):
             return
