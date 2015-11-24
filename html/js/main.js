@@ -102,6 +102,7 @@ function initDialogs() {
                         if(response.status === 401) {
                             $("#login_dialog input").val("");
                             $("#login_dialog").effect("highlight", { color: 'red' }, 500);
+                            $("#username").focus();
                         } else {
                             window.location.href = "/";
                         }

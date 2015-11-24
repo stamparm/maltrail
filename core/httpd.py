@@ -80,6 +80,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             path, query = self.path.split('?', 1) if '?' in self.path else (self.path, "")
             params = {}
             content = None
+            skip = False
 
             if hasattr(self, "data"):
                 params.update(urlparse.parse_qs(self.data))
@@ -115,21 +116,21 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         if time.mktime(mtime) <= time.mktime(time.strptime(if_modified_since, HTTP_TIME_FORMAT)):
                             self.send_response(httplib.NOT_MODIFIED)
                             self.send_header("Connection", "close")
-                            return
+                            skip = True
 
-                    content = open(path, "rb").read()
-                    last_modified = time.strftime(HTTP_TIME_FORMAT, mtime)
-                    self.send_response(httplib.OK)
-                    self.send_header("Connection", "close")
-                    self.send_header("Content-Type", mimetypes.guess_type(path)[0] or "application/octet-stream")
-                    self.send_header("Last-Modified", last_modified)
-                    self.send_header("Expires", "Sun, 17-Jan-2038 19:14:07 GMT")   # Reference: http://blog.httpwatch.com/2007/12/10/two-simple-rules-for-http-caching/
-                    self.send_header("Cache-Control", "must-revalidate, private")  # Reference: http://stackoverflow.com/a/5084555
+                    if not skip:
+                        content = open(path, "rb").read()
+                        last_modified = time.strftime(HTTP_TIME_FORMAT, mtime)
+                        self.send_response(httplib.OK)
+                        self.send_header("Connection", "close")
+                        self.send_header("Content-Type", mimetypes.guess_type(path)[0] or "application/octet-stream")
+                        self.send_header("Last-Modified", last_modified)
+                        self.send_header("Expires", "Sun, 17-Jan-2038 19:14:07 GMT")   # Reference: http://blog.httpwatch.com/2007/12/10/two-simple-rules-for-http-caching/
+                        self.send_header("Cache-Control", "must-revalidate, private")  # Reference: http://stackoverflow.com/a/5084555
 
                 else:
                     self.send_response(httplib.NOT_FOUND)
                     self.send_header("Connection", "close")
-                    return
 
             if content is not None:
                 for match in re.finditer(r"<\!(\w+)\!>", content):
@@ -153,10 +154,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 else:
                     self.send_header("Content-Length", str(length))
 
-                self.end_headers()
+            self.end_headers()
+
+            if content:
                 self.wfile.write(content)
-                self.wfile.flush()
-                self.wfile.close()
+
+            self.wfile.flush()
+            self.wfile.close()
 
         def do_POST(self):
             length = self.headers.getheader("Content-Length")
