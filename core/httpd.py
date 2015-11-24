@@ -198,6 +198,10 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         def version_string(self):
             return SERVER_HEADER
 
+        def end_headers(self):
+            BaseHTTPServer.BaseHTTPRequestHandler.end_headers(self)
+            self.end_headers = lambda _: None
+
         def log_message(self, format, *args):
             return
 
@@ -309,7 +313,6 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             if session is None:
                 self.send_response(httplib.UNAUTHORIZED)
                 self.send_header("Connection", "close")
-                self.end_headers()
                 return None
 
             start, end, size, total = None, None, -1, None
@@ -330,16 +333,18 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         if start == 0 or not session.range_handle:
                             session.range_handle = open(log_path, "rb")
 
-                        self.send_response(httplib.OK)
-                        self.send_header("Connection", "close")
-                        self.send_header("Content-Type", "text/plain")
-
                         if session.netfilters is None:
                             session.range_handle.seek(start)
                             self.send_response(httplib.PARTIAL_CONTENT)
+                            self.send_header("Connection", "close")
+                            self.send_header("Content-Type", "text/plain")
                             self.send_header("Content-Range", "bytes %d-%d/%d" % (start, end, total))
                             content = session.range_handle.read(size)
                         else:
+                            self.send_response(httplib.OK)
+                            self.send_header("Connection", "close")
+                            self.send_header("Content-Type", "text/plain")
+
                             buffer, addresses, netmasks = cStringIO.StringIO(), set(), []
                             for netfilter in session.netfilters:
                                 if not netfilter:
@@ -399,6 +404,10 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             else:
                                 self.wfile.write(data)
 
+            else:
+                self.send_response(httplib.NOT_FOUND)
+                self.send_header("Connection", "close")
+
             return content
 
         def _counts(self, params):
@@ -409,7 +418,6 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             if session is None:
                 self.send_response(httplib.UNAUTHORIZED)
                 self.send_header("Connection", "close")
-                self.end_headers()
                 return None
 
             self.send_response(httplib.OK)
