@@ -100,10 +100,15 @@ function initDialogs() {
                         $("input").prop("disabled", false);
                         $(".ui-dialog-buttonpane button").button("enable");
                         if(response.status === 401) {
+                            alertify.error("Wrong username and/or password");
                             $("#login_dialog input").val("");
                             $("#login_dialog").effect("highlight", { color: 'red' }, 500);
                             $("#username").focus();
-                        } else {
+                        }
+                        else if (response.status === 0) {
+                            alertify.error("Network connection issue");
+                        }
+                        else {
                             window.location.href = "/";
                         }
                     }
@@ -343,7 +348,7 @@ function init(url, from, to) {
             csv = getDemoCSV();
         }
         catch(err) {
-            alert("please use Firefox to be able to show demo data");
+            alert("Please use Firefox to be able to show demo data");
         }
 
         $("#login_link").toggleClass("hidden", true);
