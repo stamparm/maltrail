@@ -103,6 +103,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 path = "index.html"
 
             path = path.strip('/')
+            extension = os.path.splitext(path)[-1].lower()
 
             if hasattr(self, "_%s" % path):
                 content = getattr(self, "_%s" % path)(params)
@@ -114,11 +115,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 if not os.path.isfile(path) and os.path.isfile("%s.html" % path):
                     path = "%s.html" % path
 
-                if ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and not path.endswith(DISABLED_CONTENT_EXTENSIONS):
+                if ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and extension not in DISABLED_CONTENT_EXTENSIONS:
                     mtime = time.gmtime(os.path.getmtime(path))
                     if_modified_since = self.headers.get("If-Modified-Since")
 
-                    if if_modified_since and os.path.split(path)[-1] != "index.html":
+                    if if_modified_since and extension not in (".htm", ".html"):
                         if_modified_since = [_ for _ in if_modified_since.split(';') if _.upper().endswith("GMT")][0]
                         if time.mktime(mtime) <= time.mktime(time.strptime(if_modified_since, HTTP_TIME_FORMAT)):
                             self.send_response(httplib.NOT_MODIFIED)
@@ -132,8 +133,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         self.send_header("Connection", "close")
                         self.send_header("Content-Type", mimetypes.guess_type(path)[0] or "application/octet-stream")
                         self.send_header("Last-Modified", last_modified)
-                        self.send_header("Expires", "Sun, 17-Jan-2038 19:14:07 GMT")   # Reference: http://blog.httpwatch.com/2007/12/10/two-simple-rules-for-http-caching/
-                        self.send_header("Cache-Control", "must-revalidate, private")  # Reference: http://stackoverflow.com/a/5084555
+                        if extension not in (".htm", ".html"):
+                            self.send_header("Expires", "Sun, 17-Jan-2038 19:14:07 GMT")   # Reference: http://blog.httpwatch.com/2007/12/10/two-simple-rules-for-http-caching/
+                            self.send_header("Cache-Control", "max-age=3600, must-revalidate")   # Reference: http://stackoverflow.com/a/5084555
+                        else:
+                            self.send_header("Cache-Control", "no-cache")
 
                 else:
                     self.send_response(httplib.NOT_FOUND)
