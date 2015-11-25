@@ -222,7 +222,7 @@ If we enter the `SSH attacker` to the `Filter` field, we'll be able to see all s
 
 ![SSH attackers filter](http://i.imgur.com/G1W3HrQ.png)
 
-In the following case previously blacklisted attacker (in this case by [autoshun.org](http://autoshun.org/)) has scanned the whole organization's range in search for potentially vulnerable SSL/HTTPS service(s) (ports 443 and 8443):
+In the following case previously blacklisted attacker (in this case by [autoshun.org](http://autoshun.org/)) has scanned the whole organization's range in search for potentially vulnerable HTTPS service(s) (ports 443 and 8443):
 
 ![Heartbleed attacker](http://i.imgur.com/F0dG1DT.png)
 
