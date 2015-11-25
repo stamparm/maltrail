@@ -323,7 +323,7 @@ In the following example, it can be seen an overly suspicious behaviour, initiat
 
 ### False positives
 
-Like in all other security solutions, Maltrail is prone to so-called "[false positives](https://en.wikipedia.org/wiki/False_positives_and_false_negatives)". In those kind of cases, Maltrail will (especially in case of `heuristic` threats) record a regular user's behaviour and mark it as malicious and/or suspicious. In the following example it can be seen that one of feed providers `blocklist.de` marked regular Google servers as `attacker`(s), resulting with the following threats:
+Like in all other security solutions, Maltrail is prone to so-called "[false positives](https://en.wikipedia.org/wiki/False_positives_and_false_negatives)". In those kind of cases, Maltrail will (especially in case of `suspicious` threats) record a regular user's behaviour and mark it as malicious and/or suspicious. In the following example it can be seen that one of feed providers `blocklist.de` marked regular Google servers as `attacker`(s), resulting with the following threats:
 
 ![Google false positive 1](http://i.imgur.com/wdA1B6O.png)
 ![Google false positive 2](http://i.imgur.com/l0C3ATK.png)
