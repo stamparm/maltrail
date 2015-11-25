@@ -2121,7 +2121,7 @@ function initVisual() {
 
     total["Events"] = 0;
 
-    for (var key in { HTTP: "#ff9900", DNS: "#3366cc", IP: "#dc3912" }) {
+    for (var key in TRAIL_TYPES) {
         options.lineColor = TRAIL_TYPES[key];
         $('#events_sparkline').sparkline(sparklines[key], options);
         options.composite = true;
