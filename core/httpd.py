@@ -43,6 +43,13 @@ from core.settings import TRAILS_FILE
 from core.settings import UNAUTHORIZED_SLEEP_TIME
 from core.settings import VERSION
 
+try:
+    # Reference: https://bugs.python.org/issue7980
+    # Reference: http://code-trick.com/python-bug-attribute-error-_strptime/
+    import _strptime
+except ImportError:
+    pass
+
 def start_httpd(address=None, port=None, join=False, pem=None):
     """
     Starts HTTP server
