@@ -34,15 +34,15 @@ var FLOOD_THREAT_PREFIX = "...";
 var DGA_THREAT_INFIX = " dga ";
 var DATA_PARTS_DELIMITER = ", ";
 var SUSPICIOUS_THREAT_INFIX = "suspicious";
-var HEURISTIC_THREAT_INFIX = "heuristic"
+var HEURISTIC_THREAT_INFIX = "heuristic";
 var FLOOD_UID_SUFFIX = "F0";
 var DGA_UID_SUFFIX = "D0";
 var THREAT_PIC_HASH = null; // e.g. https://robohash.org/ or https://flathash.com/
-var DEFAULT_STATUS_BORDER = "1px solid #a8a8a8"
+var DEFAULT_STATUS_BORDER = "1px solid #a8a8a8";
 var DEFAULT_FONT_FAMILY = "Verdana, Geneva, sans-serif";
-var LOG_COLUMNS = { TIME: 0, SENSOR: 1, SRC_IP: 2, SRC_PORT: 3, DST_IP: 4, DST_PORT: 5, PROTO: 6, TYPE: 7, TRAIL: 8, INFO: 9, REFERENCE: 10 }
-var DATATABLES_COLUMNS = { THREAT: 0, SENSOR: 1, EVENTS: 2, FIRST_TIME: 3, LAST_TIME: 4, SRC_IP: 5, SRC_PORT: 6, DST_IP: 7, DST_PORT: 8, PROTO: 9, TYPE: 10, TRAIL: 11, INFO: 12, REFERENCE: 13, TAGS: 14 }
-var TOP_PORTS = { 19: "CHARGEN", 21: "FTP", 22: "SSH", 23: "Telnet", 25: "SMTP", 53: "DNS", 80: "HTTP", 110: "POP3", 123: "NTP", 143: "IMAP", 161: "SNMP", 389: "LDAP", 443: "HTTPS", 445: "Microsoft-DS", 587: "Submission", 902: "VMware", 990: "FTPS", 993: "IMAPS", 995: "POP3S", 1433: "MsSQL", 1434: "MsSQL", 1723: "PPTP", 1900: "SSDP", 3306: "MySQL", 3389: "RDP", 5060: "SIP", 5900: "VNC", 8080: "HTTP-proxy" }
+var LOG_COLUMNS = { TIME: 0, SENSOR: 1, SRC_IP: 2, SRC_PORT: 3, DST_IP: 4, DST_PORT: 5, PROTO: 6, TYPE: 7, TRAIL: 8, INFO: 9, REFERENCE: 10 };
+var DATATABLES_COLUMNS = { THREAT: 0, SENSOR: 1, EVENTS: 2, FIRST_TIME: 3, LAST_TIME: 4, SRC_IP: 5, SRC_PORT: 6, DST_IP: 7, DST_PORT: 8, PROTO: 9, TYPE: 10, TRAIL: 11, INFO: 12, REFERENCE: 13, TAGS: 14 };
+var TOP_PORTS = { 19: "CHARGEN", 21: "FTP", 22: "SSH", 23: "Telnet", 25: "SMTP", 53: "DNS", 80: "HTTP", 110: "POP3", 123: "NTP", 143: "IMAP", 161: "SNMP", 389: "LDAP", 443: "HTTPS", 445: "Microsoft-DS", 587: "Submission", 902: "VMware", 990: "FTPS", 993: "IMAPS", 995: "POP3S", 1433: "MsSQL", 1434: "MsSQL", 1723: "PPTP", 1900: "SSDP", 3306: "MySQL", 3389: "RDP", 5060: "SIP", 5900: "VNC", 8080: "HTTP-proxy" };
 var SEARCH_TIP_TIMER = 0;
 var PAPAPARSE_COMPLETE_TIMER = 0;
 var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
@@ -266,7 +266,7 @@ function getContrast50(hexcolor) {
 
 // Reference: http://stackoverflow.com/questions/340209/generate-colors-between-red-and-green-for-a-power-meter
 function getPercentageColor(percentage) {
-    var power = percentage / 100.;
+    var power = percentage / 100.0;
 
     if ((0 <= power) && (power < 0.5)) {
         green = 1.0;
@@ -508,7 +508,7 @@ function init(url, from, to) {
 
                     var storedLocally = $.jStorage.get(threatUID);
                     var tagData = "";
-                
+
                     if (storedLocally !== null)
                         tagData = storedLocally.tagData;
 
@@ -733,7 +733,7 @@ function tagInputKeyUp(event, forcedelete) {
         var data = row.data();
 
         $.jStorage.set(threat, { threatText: threatText, tagData: tagData });
-        
+
         data[DATATABLES_COLUMNS.TAGS] = tagData;
 
         row.invalidate();
@@ -892,11 +892,11 @@ function initDetails() {
         searchDelay: 500,
         columnDefs: [
             {
-                orderSequence: [ "desc", "asc" ], 
+                orderSequence: [ "desc", "asc" ],
                 targets: [ DATATABLES_COLUMNS.EVENTS ]
             },
             {
-                orderSequence: [ "desc", "asc" ], 
+                orderSequence: [ "desc", "asc" ],
                 targets: [ DATATABLES_COLUMNS.LAST_TIME ]
             },            {
                 render: function (data, type, row) {
@@ -1209,7 +1209,7 @@ function initDetails() {
                                 IP_COUNTRY[this.ip] = "unknown";
                                 img = '<img src="images/blank.gif" class="flag flag-unknown" title="UNKNOWN"/>';
                             }
-                            
+
                             this.cell.html("").append(span_ip).append($(img).tooltip());
                         });
                     }
@@ -1248,7 +1248,7 @@ function initDetails() {
             div[0].title = "";
             // $(".ui-tooltip").append($("<div>bla</div>"))
 
-            div.tooltip({ content: function(callback) { 
+            div.tooltip({ content: function(callback) {
                 setTimeout(function() {
                     var wewe = $("<div id='wewe'>foobar</div>");
                     $('#wewe').sparkline([1,2,3,4,5,4,3,2,1], {disabledHiddenCheck: true});
@@ -1256,7 +1256,7 @@ function initDetails() {
                     setTimeout(function() {
                         $.sparkline_display_visible();
                     }, 100);
-                }, 100); 
+                }, 100);
             return "<div id='ticker'>aa</div>"; }, position: { my: "left center", at: "right+10 top" }});
             */
         },
@@ -1362,7 +1362,7 @@ Array.prototype.insert = function (index, item) {
 
 Array.prototype.clean = function(deleteValue) {
     for (var i = 0; i < this.length; i++) {
-        if (this[i] === deleteValue) {         
+        if (this[i] === deleteValue) {
             this.splice(i, 1);
             i--;
         }
@@ -1393,7 +1393,7 @@ Object.size = function(obj) {
     return size;
 };
 
-$.fn.dataTable.ext.search.push(    
+$.fn.dataTable.ext.search.push(
     function(settings, data, dataIndex) {
         return true;
     }
@@ -2116,7 +2116,7 @@ function initVisual() {
 }
 
 function timestamp(str){
-    return new Date(str).getTime();   
+    return new Date(str).getTime();
 }
 
 function pad(n, width, z) {
