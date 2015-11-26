@@ -475,7 +475,7 @@ function init(url, from, to) {
                 }
                 _SOURCE_EVENTS[_][data[LOG_COLUMNS.TYPE]] += 1;
 
-                match = time.match(/(\d{4})\-(\d{2})\-(\d{2}) (\d{2}):(\d{2}):(\d{2})/);
+                match = time.match(/(\d{4})-(\d{2})-(\d{2})\ (\d{2}):(\d{2}):(\d{2})/);
 
                 if (match !== null) {
                     var date = new Date(parseInt(match[1]), parseInt(match[2]) - 1, parseInt(match[3]), parseInt(match[4]), parseInt(match[5]), parseInt(match[6]));
@@ -627,7 +627,7 @@ function resetStatusButtons() {
     statusButtons = $("li.status-button");
     for (var i = 0; i < statusButtons.length; i++) {
         var button = statusButtons[i];
-        var color = button.style.background.match(/(rgb\([^)]+\)) 100%/)[1];
+        var color = button.style.background.match(/(rgb\([^)]+\))\ 100%/)[1];
         var components = color.match(/\d+/g);
         var luminescence = -0.2;
         for (var j = 0; j < components.length; j++) {
@@ -1057,7 +1057,7 @@ function initDetails() {
                                         if (event.target.cellIndex === 0)
                                             return (newValue.match(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/) !== null);
                                         else if (event.target.cellIndex === 1)
-                                            return (newValue.match(/^[A-Za-z0-9 ._]+$/) !== null);
+                                            return (newValue.match(/^[A-Za-z0-9\ ._]+$/) !== null);
                                     });
                                 };
                                 $('<div id="dialog-hosts" title="Hosts"></div>').appendTo('body')
@@ -1152,7 +1152,7 @@ function initDetails() {
                                     msg += json.data.records[found][j].key + ": " + json.data.records[found][j].value;
                                     msg += "<br>";
                                 }
-                                msg = msg.replace(/(\-\+)+/g, "--").replace(/(\-\+)+/g, "--");
+                                msg = msg.replace(/(-\+)+/g, "--").replace(/(-\+)+/g, "--");
                             }
 
                             ui.tooltip.find(".ui-tooltip-content").html(this.msg + msg);
@@ -1202,7 +1202,7 @@ function initDetails() {
 
                             if ((json.data.locations.length > 0) && (json.data.locations[0].country !== "ANO")) {
                                 IP_COUNTRY[this.ip] = json.data.locations[0].country.toLowerCase().split('-')[0];
-                                img = '<img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[this.ip] + '" title="' + IP_COUNTRY[this.ip].toUpperCase() + '" />';  // title="' + IP_COUNTRY[this.ip].toUpperCase() + '" 
+                                img = '<img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[this.ip] + '" title="' + IP_COUNTRY[this.ip].toUpperCase() + '" />';
                                 span_ip.tooltip(options);
                             }
                             else {
@@ -1303,11 +1303,11 @@ function initDetails() {
         else if (this.innerHTML.indexOf("ellipsis") > -1) {
             match = this.innerHTML.match(/title=["']([^"']+)/);
             if (match !== null)
-                filter = match[1].replace(/, /g, " ");
+                filter = match[1].replace(/,\ /g, " ");
             else {
                 var tooltip = $(".ui-tooltip");
                 if (tooltip.length > 0)
-                    filter = tooltip.html().replace(/, /g, " ");
+                    filter = tooltip.html().replace(/,\ /g, " ");
             }
         }
         else {
@@ -1631,7 +1631,7 @@ function drawInfo(type) {
             var item = _TRAILS_SORTED[i];
 
             if (item[1] >= threshold) {
-                var match = item[0].match(/(.+?) \(([^)]+)\)/);
+                var match = item[0].match(/(.+?)\ \(([^)]+)\)/);
                 var type = match[2];
                 var count = item[1];
 
@@ -1797,7 +1797,7 @@ function drawInfo(type) {
 
             if (item[1] >= threshold) {
                 //var threat = item[0];
-                var threat = item[0].replace(/ \([^)]+\)/g, "");
+                var threat = item[0].replace(/\ \([^)]+\)/g, "");
                 var count = item[1];
                 var color = "#" + threat.substr(0, 6);
 
@@ -2132,7 +2132,7 @@ function formatDate(value) {
 
 function parseDate(value) {
     var retval = new Date(0);
-    var match = value.match(/(\d{4})\-(\d{2})\-(\d{2})/);
+    var match = value.match(/(\d{4})-(\d{2})-(\d{2})/);
 
     if (match !== null)
         retval = new Date(match[1], match[2] - 1, match[3]);
