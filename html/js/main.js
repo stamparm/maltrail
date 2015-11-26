@@ -657,41 +657,6 @@ function netmaskValidate(netmask) {
     return match !== null
 }
 
-/*
-function filterDataset(netmask) {
-    var parts = netmask.split('/');
-
-    if (parts.length === 2) {
-        var mask = makeMask(parts[1]);
-        var check = mask & addrToInt(parts[0]);
-
-        SHOWN_DATASET = [];
-        for (var index = 0; index < ORIGINAL_DATASET.length; index++) {
-            row = ORIGINAL_DATASET[index];
-            if (((addrToInt(row[DATATABLES_COLUMNS.SRC_IP]) & mask) === check) || ((addrToInt(row[DATATABLES_COLUMNS.DST_IP]) & mask) === check))
-                SHOWN_DATASET.push(row);
-        }
-        initVisual();
-        initDetails();
-    }
-    else if (netmask.length === 0) {
-        SHOWN_DATASET = ORIGINAL_DATASET;
-        initVisual();
-        initDetails();
-    }
-
-    $(".alertify-log").remove();
-
-    if (netmask.length > 0)
-        alertify.log("Using network filter '" + netmask + "'", "", 0);
-
-    if (SHOWN_DATASET.length > 0)
-        alertify.success("Filtered " + SHOWN_DATASET.length + " events" + " (out of " + ORIGINAL_DATASET.length + ")");
-    else
-        alertify.log("No events found");
-}
-*/
-
 function searchTipToTab(query) {
     var win = window.open(SEARCH_TIP_URL.replace("${query}", query), '_blank');
 
@@ -1001,8 +966,10 @@ function initDetails() {
                 render: function ( data, type, row ) {
                     if (data in TRAIL_TYPES)
                         return '<span class="label-type label-' + data.toLowerCase() + '">' + data + '</span>';
-                    else
-                        return '<span class="label-type style="background-color: #' + getHashColor(data) + '">' + data + '</span>';
+                    else {
+                        var color = getHashColor(data);
+                        return '<span class="label-type ' + getContrastYIQ(color) + '-label-text" style="background-color: #' + color + '">' + data + '</span>';
+                    }
                 },
                 targets: DATATABLES_COLUMNS.TYPE
             },
@@ -1376,6 +1343,12 @@ function initDetails() {
 String.prototype.hashCode = function() {
     return murmurhash3_32_gc(this, 13);
 };
+
+
+// Reference: http://stackoverflow.com/a/1026087
+String.prototype.capitalizeFirstLetter = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
 
 // Reference: http://stackoverflow.com/a/12710609
 Array.prototype.insert = function (index, item) {
@@ -2012,7 +1985,7 @@ function initVisual() {
     total["Threats"] = _THREATS_SORTED.length;
     $('#threats_sparkline').sparkline(data, options);
 
-    // HTTP, DNS and IP sparklines
+    // URL, DNS and IP sparklines
     for (var hour in _HOURS) {
         if (min_ === null)
             min_ = hour;
@@ -2129,8 +2102,9 @@ function initVisual() {
     }
 
     sum = 0;
-    for (var key in total)
-        sum += total[key];
+    $("[id$=_count]").each(function() {
+        sum += total[$(this).attr("id").replace(/_count/, "").capitalizeFirstLetter()];
+    });
 
     for (var key in total)
         $("#" + key.toLowerCase() + "_count").html((sum > 0) ? numberWithCommas(total[key]) : '-')
@@ -2207,15 +2181,4 @@ function query(date) {
     var url = location.origin + "/events?date=" + formatDate(date);
 
     init(url, date);
-}
-
-function networkFilter(netmask) {
-    if ((netmask.length > 0) && (netmask.indexOf('/') === -1))
-        netmask = netmask + "/32";
-    if ((netmask.length > 0) && (!netmaskValidate(netmask))) {
-        $("#netmask").val("");
-        alertify.error("Invalid netmask");
-    }
-    else
-        filterDataset(netmask);
 }
