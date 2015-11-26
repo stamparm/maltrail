@@ -53,7 +53,12 @@ def update(server=None):
                 f.write(_)
             trails = load_trails()
 
-    if not trails and ((not os.path.isfile(TRAILS_FILE) or (time.time() - os.stat(TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(TRAILS_FILE).st_size == 0)):
+    trail_files = []
+    for dirpath, dirnames, filenames in os.walk(os.path.abspath(os.path.join(ROOT_DIR, "trails"))):
+        for filename in filenames:
+            trail_files.append(os.path.abspath(os.path.join(dirpath, filename)))
+
+    if not trails and ((not os.path.isfile(TRAILS_FILE) or (time.time() - os.stat(TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(TRAILS_FILE).st_size == 0 or any(os.stat(_).st_mtime > os.stat(TRAILS_FILE).st_mtime for _ in trail_files))):
         try:
             if not os.path.isdir(USERS_DIR):
                 os.makedirs(USERS_DIR, 0755)
