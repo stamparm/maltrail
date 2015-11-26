@@ -107,7 +107,7 @@ Option `USE_HEURISTICS` turns on heuristic mechanisms (e.g. `long domain name (s
 
 ### Sensor
 
-When running the sensor (e.g. `sudo python sensor.py`) for the first time and/or after a longer period of non-running, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). After the initialization, it will start monitoring the configured interface (option `MONITOR_INTERFACE` inside the `maltrail.conf`) and write the events to either the configured log directory (option `LOG_DIR`) or send them remotely to the logging/reporting *Server* (option `LOG_SERVER`).
+When running the sensor (e.g. `sudo python sensor.py`) for the first time and/or after a longer period of non-running, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). After the initialization, it will start monitoring the configured interface (option `MONITOR_INTERFACE` inside the `maltrail.conf`) and write the events to either the configured log directory (option `LOG_DIR`) or send them remotely to the logging/reporting **Server** (option `LOG_SERVER`).
 
 ![Sensor run](http://i.imgur.com/GLev7HJ.png)
 
