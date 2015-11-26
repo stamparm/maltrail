@@ -51,6 +51,11 @@ var DAY_SUFFIXES = { 1: "st", 2: "nd", 3: "rd" };
 var DOT_COLUMNS = [ LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP, LOG_COLUMNS.DST_PORT, LOG_COLUMNS.TRAIL, LOG_COLUMNS.PROTO ];
 var ELLIPSIS = '<img src="images/ellipsis.png">';
 
+// Reference: https://danlimerick.wordpress.com/2014/01/18/how-to-catch-javascript-errors-with-window-onerror-even-on-chrome-and-firefox/
+window.onerror = function(errorMsg, url, lineNumber) {
+    alert(errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
+}
+
 // Retrieve (and parse) log data
 $(document).ready(function() {
     initCalHeatmap();
