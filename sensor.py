@@ -327,23 +327,23 @@ def init():
     create_log_directory()
 
     if check_sudo() is False:
-        exit("[x] please run with sudo/Administrator privileges")
+        exit("[!] please run with sudo/Administrator privileges")
 
     if subprocess.mswindows and (config.MONITOR_INTERFACE or "").lower() == "any":
-        exit("[x] virtual interface 'any' is not available on Windows OS")
+        exit("[!] virtual interface 'any' is not available on Windows OS")
 
     if config.MONITOR_INTERFACE not in pcapy.findalldevs():
-        print "[x] interface '%s' not found" % config.MONITOR_INTERFACE
-        exit("[!] available interfaces: '%s'" % ",".join(pcapy.findalldevs()))
+        print "[!] interface '%s' not found" % config.MONITOR_INTERFACE
+        exit("[x] available interfaces: '%s'" % ",".join(pcapy.findalldevs()))
 
     print "[i] opening interface '%s'" % config.MONITOR_INTERFACE
     try:
         _cap = pcapy.open_live(config.MONITOR_INTERFACE, SNAP_LEN, True, 0)
     except socket.error, ex:
         if "permitted" in str(ex):
-            exit("\n[x] please run with sudo/Administrator privileges")
+            exit("\n[!] please run with sudo/Administrator privileges")
         elif "No such device" in str(ex):
-            exit("\n[x] no such device '%s'" % config.MONITOR_INTERFACE)
+            exit("\n[!] no such device '%s'" % config.MONITOR_INTERFACE)
         else:
             raise
 
@@ -356,7 +356,7 @@ def init():
 
     _datalink = _cap.datalink()
     if _datalink not in (pcapy.DLT_EN10MB, pcapy.DLT_LINUX_SLL, pcapy.DLT_PPP):
-        exit("[x] datalink type '%s' not supported" % _datalink)
+        exit("[!] datalink type '%s' not supported" % _datalink)
 
     if _multiprocessing:
         _init_multiprocessing()
@@ -426,7 +426,7 @@ def main():
     options, _ = parser.parse_args()
 
     if not check_sudo():
-        exit("[x] please run with sudo/Administrator privileges")
+        exit("[!] please run with sudo/Administrator privileges")
 
     read_config(options.config_file)
 
@@ -440,7 +440,7 @@ if __name__ == "__main__":
     try:
         main()
     except Exception, ex:
-        print "\r[!] Unhandled exception occurred ('%s')" % ex
-        print "\r[x] Please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc()
+        print "\r[!] unhandled exception occurred ('%s')" % ex
+        print "\r[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc()
 
     os._exit(0)
