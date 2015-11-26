@@ -10,9 +10,11 @@ import socket
 import SocketServer
 import threading
 import time
+import traceback
 
 from core.common import check_sudo
 from core.settings import config
+from core.settings import DEBUG
 from core.settings import DEFAULT_LOG_PERMISSIONS
 from core.settings import TIME_FORMAT
 
@@ -60,10 +62,14 @@ def start_logd(address=None, port=None, join=False):
 
     class UDPHandler(SocketServer.BaseRequestHandler):
         def handle(self):
-            data, _ = self.request
-            sec, event = data.split(" ", 1)
-            handle = get_log_handle(int(sec))
-            os.write(handle, event)
+            try:
+                data, _ = self.request
+                sec, event = data.split(" ", 1)
+                handle = get_log_handle(int(sec))
+                os.write(handle, event)
+            except:
+                if DEBUG:
+                    traceback.print_exc()
 
     server = SocketServer.UDPServer((address, port), UDPHandler)
 
