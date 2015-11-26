@@ -85,18 +85,11 @@ cat /var/log/maltrail/$(date +"%Y-%m-%d").log
 
 ![Test](http://i.imgur.com/lIYntT1.png)
 
-## User's guide
+## Administrator's guide
 
-### Configuration
+### Sensor
 
-Server's configuration can be found inside the `maltrail.conf` section `[Server]`:
-
-![Server's configuration](http://i.imgur.com/bPhU1Dl.png)
-
-Option `HTTP_ADDRESS` contains the web server's listening address (Note: use `0.0.0.0` to listen on all interfaces). Option `HTTP_PORT` contains the web server's listening port. Default listening port is set to `8338`. If option `USE_SSL` is set to `true` then `SSL/TLS` will be used for accessing the web server (e.g. `https://192.168.6.10:8338/`). In that case, option `SSL_PEM` should be pointing to the server's private/cert PEM file. 
-Subsection `USERS` contains user's configuration settings. Each user entry consists of the `username:pbkdf2_hash(password):UID:filter_netmask(s)`. Utility `core/pbkdf2.py` is used to calculate valid `pbkdf2_hash(password)` values. Value `UID` represents the unique user identifier, where it is recommended to use values lower than 1000 for administrative accounts, while higher value for non-administrative accounts. The part `filter_netmask(s)` represents the comma-delimited hard filter(s) that can be used to filter the shown events depending on the user account(s). Default entry is as follows:
-
-![Configuration users](http://i.imgur.com/o0Tp0IY.png)
+#### Configuration
 
 Sensor's configuration can be found inside the `maltrail.conf` file's section `[Sensor]`:
 
@@ -105,7 +98,7 @@ Sensor's configuration can be found inside the `maltrail.conf` file's section `[
 If option `USE_MULTIPROCESSING` is set to `true` then all CPU cores will be used. One core will be used only for packet capture (with appropriate affinity, IO priority and nice level settings), while other cores will be used for packet processing. Otherwise, everything will be run on a single core. Option `USE_FEED_UPDATES` can be used to turn off the trail updates from feeds altogether (and just use the provided static ones). Option `UPDATE_PERIOD` contains the number of seconds between each automatic trails update (Note: default value is set to `86400` (i.e. one day)) by using definitions inside the `trails` directory (Note: both **Sensor** and **Server** take care of the trails update). Option `CUSTOM_TRAILS_DIR` can be used by user to provide location of directory containing the custom trails (`*.txt`) files.
 Option `USE_HEURISTICS` turns on heuristic mechanisms (e.g. `long domain name (suspicious)`, `excessive no such domain name (suspicious)`, `direct .exe download (suspicious)`, etc.), potentially introducing false positives. Option `CAPTURE_BUFFER` presents a total memory (in bytes of percentage of total physical memory) to be used in case of multiprocessing mode for storing packet capture in a ring buffer for further processing by non-capturing processes. Option `MONITOR_INTERFACE` should contain the name of the capturing interface. Use value `any` to capture from all interfaces (if OS supports this). Option `CAPTURE_FILTER` should contain the network capture (`tcpdump`) filter to skip the uninteresting packets and ease the capturing process. Option `SENSOR_NAME` contains the name that should be appearing inside the events `sensor_name` value, so the event from one sensor could be distinguished from the other. If option `LOG_SERVER` is set, then all events are being sent remotely to the **Server**, otherwise they are stored directly into the logging directory set with option `LOG_DIR` inside the `[Server]` section. In case that the option `UPDATE_SERVER` is set, then all the trails are being pulled from the given location, otherwise they are being updated from trails definitions located inside the installation itself.
 
-### Sensor
+#### Running
 
 When running the sensor (e.g. `sudo python sensor.py`) for the first time and/or after a longer period of non-running, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). After the initialization, it will start monitoring the configured interface (option `MONITOR_INTERFACE` inside the `maltrail.conf`) and write the events to either the configured log directory (option `LOG_DIR`) or send them remotely to the logging/reporting **Server** (option `LOG_SERVER`).
 
@@ -117,9 +110,27 @@ Detected events are stored inside the **Server**'s logging directory (i.e. optio
 
 ### Server
 
-Same as for **Sensor**, when running the **Server** (e.g. `python server.py`) for the first time and/or after a longer period of non-running, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). Its basic function is to store the log entries inside the logging directory (i.e. option `LOG_DIR`) and provide the web reporting interface for presenting those same entries to the end-user (Note: there is no need install the 3rd party web server packages like Apache):
+#### Configuration
+
+Server's configuration can be found inside the `maltrail.conf` section `[Server]`:
+
+![Server's configuration](http://i.imgur.com/bPhU1Dl.png)
+
+Option `HTTP_ADDRESS` contains the web server's listening address (Note: use `0.0.0.0` to listen on all interfaces). Option `HTTP_PORT` contains the web server's listening port. Default listening port is set to `8338`. If option `USE_SSL` is set to `true` then `SSL/TLS` will be used for accessing the web server (e.g. `https://192.168.6.10:8338/`). In that case, option `SSL_PEM` should be pointing to the server's private/cert PEM file. 
+
+Subsection `USERS` contains user's configuration settings. Each user entry consists of the `username:pbkdf2_hash(password):UID:filter_netmask(s)`. Utility `core/pbkdf2.py` is used to calculate valid `pbkdf2_hash(password)` values. Value `UID` represents the unique user identifier, where it is recommended to use values lower than 1000 for administrative accounts, while higher value for non-administrative accounts. The part `filter_netmask(s)` represents the comma-delimited hard filter(s) that can be used to filter the shown events depending on the user account(s). Default entry is as follows:
+
+![Configuration users](http://i.imgur.com/o0Tp0IY.png)
+
+#### Running
+
+Same as for **Sensor**, when running the **Server** (e.g. `python server.py`) for the first time and/or after a longer period of non-running, if option `USE_SERVER_UPDATE_TRAILS` is set to `true`, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). Its basic function is to store the log entries inside the logging directory (i.e. option `LOG_DIR`) and provide the web reporting interface for presenting those same entries to the end-user (Note: there is no need install the 3rd party web server packages like Apache):
 
 ![Server run](http://i.imgur.com/16MTDXv.png)
+
+## User's guide
+
+### Reporting interface
 
 When entering the **Server**'s reporting interface (i.e. via the address defined by options `HTTP_ADDRESS` and `HTTP_PORT`), user will be presented with the following authentication dialog. User has to enter the proper credentials that have been set by the server's administrator inside the configuration file `maltrail.conf` (Note: default credentials are `admin:changeme!`):
 
@@ -171,11 +182,11 @@ For each threat there is a column `tag` that can be filled with arbitrary "tags"
 
 ![Tags](http://i.imgur.com/iI2Alh8.png)
 
-## Real-life cases
+### Real-life cases
 
 In the following section some of the "usual suspects" scenarios will be described through the real-life cases.
 
-### Mass scans
+#### Mass scans
 
 Mass scans is a fairly common phenomenon where individuals and/or organizations give themselves a right to scan the whole 0.0.0.0/0 IP range (i.e. whole Internet) on a daily basis, with disclaimer where they say that if you don't like it then you should contact them privately to be skipped from future scans. 
 
@@ -206,13 +217,13 @@ One more common behaviour is scanning of the whole 0.0.0.0/0 IP range (i.e. Inte
 
 ![SIP scan](http://i.imgur.com/6HmJLGM.png)
 
-### Anonymous attackers
+#### Anonymous attackers
 
 To spot the potential attackers hidden behind the [Tor](https://www.torproject.org/) anonymity network, Maltrail utilizes publicly available [list](https://check.torproject.org/cgi-bin/TorBulkExitList.py?ip=1.1.1.1) of Tor exit nodes. In the following screenshot you'll see a case where unknown attacker has been utilizing the Tor network to access the web target (over HTTPS) in our organization's range in rather suspicious way (total 599 connection requests in less than 10 minutes):
 
 ![Tor attacker](http://i.imgur.com/r9I6udf.png)
 
-### Service attackers
+#### Service attackers
 
 Fairly similar case to the previous one is when previously blacklisted attacker (in this case by [autoshun.org](http://autoshun.org/)) tries to access particular service in our organization's range in rather suspicious way (total 580 connection requests in 15 minutes):
 
@@ -226,7 +237,7 @@ In the following case previously blacklisted attacker (in this case by [autoshun
 
 ![Heartbleed attacker](http://i.imgur.com/F0dG1DT.png)
 
-### Malware
+#### Malware
 
 In case of connection attempts coming from infected computers inside our organization toward already known C&C servers, you'll be able to find threats similar to the following (in this case [CTBLocker](http://www.eset.co.uk/Press-Centre/News/Article/CTBLocker-Ransomware-striking-in-Europe-and-Latin-America) ransomware):
 
@@ -244,7 +255,7 @@ More generally, if we enter the `malware` into the `Filter` field, all threats t
 
 ![malware filter](http://i.imgur.com/ufQFgt9.png)
 
-### Suspicious domain lookups
+#### Suspicious domain lookups
 
 Maltrail uses the static list of TLD [domains](https://github.com/stamparm/maltrail/blob/master/trails/static/suspicious/domain.txt) that are known to be commonly involved in suspicious activities. Most such [TLD](https://en.wikipedia.org/wiki/Top-level_domain) domains are coming from free domain registrars (e.g. [Freenom](http://www.freenom.com)), hence they should be under greater scrutiny. In the following screenshot we can find a case where one such TLD domain `.cm` has been used by unknown malware using the [DGA](https://en.wikipedia.org/wiki/Domain_generation_algorithm) algorithm to contact its [C&C](https://www.trendmicro.com/vinfo/us/security/definition/command-and-control-%28c-c%29-server) server(s):
 
@@ -270,7 +281,7 @@ In case that one trail is responsible for too many threats (e.g. in case of fake
 
 ![Flood](http://i.imgur.com/xIVwyw4.png)
 
-### Suspicious ipinfo requests
+#### Suspicious ipinfo requests
 
 Lots of malware uses some kind of `ipinfo` service (e.g. [ipinfo.io](http://ipinfo.io)) to find out the victim's Internet IP address. In case of regular and especially in out-of-office hours, those kind of requests should be closely monitored, like in the following example:
 
@@ -280,7 +291,7 @@ By using filter `ipinfo` all potentially infected computers in our organization'
 
 ![ipinfo filter](http://i.imgur.com/TmBw0Xs.png)
 
-### Suspicious direct file downloads
+#### Suspicious direct file downloads
 
 Maltrail tracks all suspicious direct file download attempts (e.g. `.apk`, `.exe` and `.scr` file extensions). This can trigger lots of false positives, but eventually could help in reconstruction of the chain of infection (Note: legitimate service providers, like Google, usually use encrypted HTTPS to perform this kind of downloads):
 
@@ -290,7 +301,7 @@ For testing purposes, web application "reconnaissance" tool [skipfish](https://c
 
 ![skipfish .exe](http://i.imgur.com/fK9tK9l.png)
 
-### Suspicious HTTP requests
+#### Suspicious HTTP requests
 
 In case of suspicious requests coming from outer web application security scanners (e.g. searching for SQLi, XSS, LFI, etc. vulnerabilities) and/or the internal user malicious attempts toward unknown web sites, threats like the following could be found (real case of attackers trying to exploit Joomla! CMS CVE-2015-7297, CVE-2015-7857, and CVE-2015-7858 [vulnerabilities](https://blog.sucuri.net/2015/10/joomla-3-4-5-released-fixing-a-serious-sql-injection-vulnerability.html)):
 
@@ -308,20 +319,20 @@ In the following screenshot, a run of popular SQLi vulnerability tool [sqlmap](h
 
 ![sqlmap scan requests](http://i.imgur.com/lWEhmTx.png)
 
-### Port scanning
+#### Port scanning
 
 In case of too many connection attempts toward considerable amount of different TCP ports, Maltrail will warn about the potential port scanning, as a result of its heuristic mechanism detection. It the following screenshot such warning(s) can be found for a run of popular port scanning tool [nmap](https://nmap.org/):
 
 ![nmap scan](https://i.imgur.com/Ur6rWBB.png)
 
-### Potential UDP exfiltration
+#### Potential UDP exfiltration
 
 In the following example, it can be seen an overly suspicious behaviour, initiated by known attacker toward our organization's IP, utilizing large amount of traffic over unknown UDP service port(s):
 
 ![UDP exfiltration 1](http://i.imgur.com/RSrjmO3.png)
 ![UDP exfiltration 2](http://i.imgur.com/zW1mbsP.png)
 
-### False positives
+#### False positives
 
 Like in all other security solutions, Maltrail is prone to so-called "[false positives](https://en.wikipedia.org/wiki/False_positives_and_false_negatives)". In those kind of cases, Maltrail will (especially in case of `suspicious` threats) record a regular user's behaviour and mark it as malicious and/or suspicious. In the following example it can be seen that one of feed providers `blocklist.de` marked regular Google servers as `attacker`(s), resulting with the following threats:
 
