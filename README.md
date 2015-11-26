@@ -43,7 +43,7 @@ torrentlocker, unruy, upatre, vawtrak, virut, vobfus,
 volatile_cedar, vundo, waterbug, zeroaccess, zlob, etc.
 ```
 
-## Introduction
+## Architecture
 
 Maltrail is based on the **Sensor** &lt;-&gt; **Server** &lt;-&gt; **Client** architecture. **Sensor**(s) is a standalone component running on the monitoring node (e.g. Linux box connected to the SPAN/mirroring port) or at the standalone machine (e.g. Honeypot) where it "sniffs" the passing traffic for blacklisted items/trails (i.e. domain names, URLs and/or IPs). In case of a positive match, it sends the event details to the (central) **Server** where they are being stored inside the appropriate logging directory (i.e. `LOG_DIR` described in the *Configuration* section). If **Sensor** is being run on the same machine as **Server** (default configuration), logs are stored directly into the local logging directory. Otherwise, they are being sent via UDP messages to the remote server (i.e. `LOG_SERVER` described in the *Configuration* section).
 
