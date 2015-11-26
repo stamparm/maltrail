@@ -347,6 +347,9 @@ def init():
         else:
             raise
 
+    if config.LOG_SERVER and not len(config.LOG_SERVER.split(':')) == 2:
+        exit("[!] invalid configuration value for 'LOG_SERVER' ('%s')" % config.LOG_SERVER)
+
     if config.CAPTURE_FILTER:
         print "[i] setting filter '%s'" % config.CAPTURE_FILTER
         _cap.setfilter(config.CAPTURE_FILTER)
