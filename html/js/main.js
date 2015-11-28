@@ -118,7 +118,7 @@ function initDialogs() {
                         }
                     }
                 });
-            },
+            }
         }
     };
 
@@ -619,7 +619,7 @@ function init(url, from, to) {
 
                 $("body").loader("hide");
             }, 500);
-        },
+        }
     });
 }
 
@@ -866,21 +866,21 @@ function initDetails() {
         bAutoWidth: false,
         data: _DATASET,
         columns: [
-            { title: "threat", type: "threat", class: "center" },
-            { title: "sensor", class: "center" },
-            { title: "events", type: "events", class: "right" },
-            { title: "first_seen", class: "center" },
-            { title: "last_seen", class: "center" },
-            { title: "src_ip", type: "ip-address", class: "right" },
-            { title: "src_port", type: "port", class: "center" },
-            { title: "dst_ip", type: "ip-address", class: "right" },
-            { title: "dst_port", type: "port", class: "center" },
-            { title: "proto", class: "center" },
-            { title: "type", class: "center" },
-            { title: "trail", class: "trail" },
-            { title: "info" },
-            { title: "reference" },
-            { title: "tags" },
+            { "title": "threat", "type": "threat", "class": "center" },
+            { "title": "sensor", "class": "center" },
+            { "title": "events", "type": "events", "class": "right" },
+            { "title": "first_seen", "class": "center" },
+            { "title": "last_seen", "class": "center" },
+            { "title": "src_ip", "type": "ip-address", "class": "right" },
+            { "title": "src_port", "type": "port", "class": "center" },
+            { "title": "dst_ip", "type": "ip-address", "class": "right" },
+            { "title": "dst_port", "type": "port", "class": "center" },
+            { "title": "proto", "class": "center" },
+            { "title": "type", "class": "center" },
+            { "title": "trail", "class": "trail" },
+            { "title": "info" },
+            { "title": "reference" },
+            { "title": "tags" }
         ],
         search: {
             caseInsensitive: false
@@ -986,7 +986,7 @@ function initDetails() {
                     var suffix = (dayint > 10 && dayint < 20) ? "th" : DAY_SUFFIXES[dayint % 10] || "th";
                     return "<div title='" + data + "'><span class='time-day'>" + day + "<sup>" + suffix + "</sup></span> " + parts[1].split('.')[0] + "</div>";
                 },
-                targets: [ DATATABLES_COLUMNS.FIRST_TIME, DATATABLES_COLUMNS.LAST_TIME ],
+                targets: [ DATATABLES_COLUMNS.FIRST_TIME, DATATABLES_COLUMNS.LAST_TIME ]
             },
             {
                 render: function (data, type, row) {
@@ -1018,7 +1018,7 @@ function initDetails() {
             {
                width: "1%",
                targets: [ DATATABLES_COLUMNS.THREAT, DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.FIRST_TIME, DATATABLES_COLUMNS.LAST_TIME, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.SRC_PORT, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.DST_PORT, DATATABLES_COLUMNS.PROTO, DATATABLES_COLUMNS.TYPE ]
-            },
+            }
         ],
         oLanguage: {
             sLengthMenu: "_MENU_ threats per page",  // Reference: http://www.sprymedia.co.uk/dataTables/example_language.html
@@ -1076,7 +1076,7 @@ function initDetails() {
                                             $('#table-hosts tr:last').after('<tr><td>&nbsp;</td><td>&nbsp;</td></tr>');
                                             _initHosts();
                                             $("#table-hosts tr:last td:first").focus().click();
-                                        },
+                                        }
                                     },
                                     open: function(event, ui) {
                                         _initHosts();
@@ -1103,14 +1103,14 @@ function initDetails() {
                                             $(this).dialog("close");
                                             $.jStorage.flush();
                                             location.reload();
-                                        },
+                                        }
                                     }
                                 });
                             }
-                        },
+                        }
                     ]
                 }
-            ],
+            ]
         },
         fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
             function nslookup(event, ui) {
@@ -1259,7 +1259,7 @@ function initDetails() {
                 }, 100);
             return "<div id='ticker'>aa</div>"; }, position: { my: "left center", at: "right+10 top" }});
             */
-        },
+        }
     });
 
     details.off("mouseenter");  // clear previous
@@ -1569,7 +1569,7 @@ function drawInfo(type) {
                     strokeColor: TRAIL_TYPES[type],
                     pointColor: TRAIL_TYPES[type],
                     pointHighlightFill: "#fff",
-                    data: ticks[type],
+                    data: ticks[type]
                 }
             );
         }
@@ -1587,7 +1587,7 @@ function drawInfo(type) {
             pointDotRadius: 5,
             //scaleShowGridLines: false
             tooltipTemplate: "<%if (label){%><%=label.replace(/[^0-9]/, '')%>:00h-<%=label.replace(/[^0-9]/, '')%>:59h: <%}%><%= value %> events",
-            pointHitDetectionRadius: 5,
+            pointHitDetectionRadius: 5
         };
 
         //setChartScale(options, _MAX_EVENTS_PER_HOUR);
@@ -1700,7 +1700,7 @@ function drawInfo(type) {
                     speed: 500
                 },
                 pullOutSegmentOnClick: {
-                    effect: "none",
+                    effect: "none"
                 }
             },
             misc: {
@@ -1860,7 +1860,7 @@ function drawInfo(type) {
                     "speed": 500
                 },
                 "pullOutSegmentOnClick": {
-                    "effect": "none",
+                    "effect": "none"
                 }
             },
             "misc": {
