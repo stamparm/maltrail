@@ -70,7 +70,7 @@ $(document).ready(function() {
     Chart.defaults.global.scaleFontFamily = DEFAULT_FONT_FAMILY;
     Chart.defaults.global.animationSteps = 10;
 
-    $("#header_container").sticky( { topSpacing: 0 });
+    $("#header_container").sticky({ topSpacing: 0 });
 
     // Reference: http://tosbourn.com/a-fix-for-window-location-origin-in-internet-explorer/
     if (!window.location.origin)
@@ -517,8 +517,8 @@ function init(url, from, to) {
 
                         if (typeof data[column] !== "string") {
                             var _ = [];
-                            for (var item in data[column])
-                                _.push(item.replace(DATA_PARTS_DELIMITER, DATA_PARTS_DELIMITER.replace(" ", "")));
+                            for (var entry in data[column])
+                                _.push(entry.replace(DATA_PARTS_DELIMITER, DATA_PARTS_DELIMITER.replace(" ", "")));
                             if ((column === LOG_COLUMNS.SRC_PORT) || (column === LOG_COLUMNS.DST_PORT))
                                 _.sort(function(a, b) {
                                     a = parseInt(a);
@@ -1214,7 +1214,7 @@ function initDetails() {
                         });
                     }
                     else if (IP_COUNTRY[ip] !== null) {
-                        img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '" />'
+                        img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '" />';
 
                         var span_ip = $("<span title=''/>").html(ip + " ");
                         span_ip.tooltip(options);
@@ -1225,7 +1225,7 @@ function initDetails() {
                         interval = setInterval(function(ip, cell){
                             html = cell.html();
                             if ((IP_COUNTRY[ip] !== null) && (html.indexOf("flag-") === -1)) {
-                                img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '" />'
+                                img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '" />';
 
                                 var span_ip = $("<span title=''/>").html(ip + " ");
                                 span_ip.tooltip(options);
@@ -1353,7 +1353,7 @@ String.prototype.hashCode = function() {
 // Reference: http://stackoverflow.com/a/1026087
 String.prototype.capitalizeFirstLetter = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
-}
+};
 
 // Reference: http://stackoverflow.com/a/12710609
 Array.prototype.insert = function (index, item) {
@@ -1611,7 +1611,7 @@ function drawInfo(type) {
     else if (type === "Trails") {
         var data = [];
         var other = 0;
-        var _ = {}
+        var _ = {};
 
         for (var type in TRAIL_TYPES)
             _[type] = [];
@@ -1630,14 +1630,14 @@ function drawInfo(type) {
                 var type = match[2];
                 var count = item[1];
 
-                data.push({value: count, label: item[0], color: type in TRAIL_TYPES ? TRAIL_TYPES[type] : "#" + getHashColor(type)})
+                data.push({value: count, label: item[0], color: type in TRAIL_TYPES ? TRAIL_TYPES[type] : "#" + getHashColor(type)});
             }
             else
                 other += item[1];
         }
 
         if (other > 0)
-            data.push({ value: other, label: "Other (<1%)", color: OTHER_COLOR })
+            data.push({ value: other, label: "Other (<1%)", color: OTHER_COLOR });
 
         var pie = new d3pie("chart_area", {
             header: {
