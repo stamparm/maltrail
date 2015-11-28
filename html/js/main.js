@@ -50,10 +50,21 @@ var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
 var DAY_SUFFIXES = { 1: "st", 2: "nd", 3: "rd" };
 var DOT_COLUMNS = [ LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP, LOG_COLUMNS.DST_PORT, LOG_COLUMNS.TRAIL, LOG_COLUMNS.PROTO ];
 var ELLIPSIS = '<img src="images/ellipsis.png">';
+var CTRL_CLICK_PRESSED = false;
+var CTRL_DATES = [];
 
 // Reference: https://danlimerick.wordpress.com/2014/01/18/how-to-catch-javascript-errors-with-window-onerror-even-on-chrome-and-firefox/
 window.onerror = function(errorMsg, url, lineNumber) {
     alert(errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
+};
+
+window.onkeydown = function(event) {
+    CTRL_DATES.length = 0;
+    CTRL_CLICK_PRESSED = event.ctrlKey;
+};
+
+window.onkeyup = function(event) {
+    CTRL_CLICK_PRESSED = false;
 };
 
 // Retrieve (and parse) log data
@@ -201,7 +212,16 @@ function initCalHeatmap() {
             start: start,
             onClick: function(date, nb) {
                 this.highlight(date);
-                query(date);
+                if (!CTRL_CLICK_PRESSED) {
+                    this.highlight(date);
+                    query(date);
+                }
+                else {
+                    CTRL_DATES.push(date);
+                    this.highlight(CTRL_DATES);
+                    if (CTRL_DATES.length === 2)
+                        query(date);
+                }
             }
         });
     }
