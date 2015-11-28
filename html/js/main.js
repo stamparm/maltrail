@@ -54,7 +54,7 @@ var ELLIPSIS = '<img src="images/ellipsis.png">';
 // Reference: https://danlimerick.wordpress.com/2014/01/18/how-to-catch-javascript-errors-with-window-onerror-even-on-chrome-and-firefox/
 window.onerror = function(errorMsg, url, lineNumber) {
     alert(errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
-}
+};
 
 // Retrieve (and parse) log data
 $(document).ready(function() {
@@ -120,7 +120,7 @@ function initDialogs() {
                 });
             },
         }
-    }
+    };
 
     $('<div id="login_dialog" title="Authentication"><table><tbody><tr><td>Username:</td><td><input id="username" name="username"></td></tr><tr><td>Password:</td><td><input id="password" name="password" type="password" autocomplete="off"></td></tr></tbody></table></div>').appendTo('body').dialog(options);
     $("#login_link").click(function() {
@@ -237,7 +237,7 @@ function isLocalAddress(ip) {
         return true;
     else if (ip.startsWith("172.")) {
         var _ = parseInt(ip.split(".")[1]);
-        return ((_ >= 16) && (_ <= 31))
+        return ((_ >= 16) && (_ <= 31));
     }
     else
         return false;
@@ -384,7 +384,7 @@ function init(url, from, to) {
             _CHUNK_COUNT += 1;
 
             for (var i = 0; i < results.data.length; i++) {
-                var data = results.data[i]
+                var data = results.data[i];
 
                 if (data.length < 2)
                     continue;
@@ -524,13 +524,13 @@ function init(url, from, to) {
                                     a = parseInt(a);
                                     b = parseInt(b);
                                     return a < b ? -1 : (a > b ? 1 : 0);
-                                })
+                                });
                             else if ((column === LOG_COLUMNS.SRC_IP) || (column === LOG_COLUMNS.DST_IP))
                                 _.sort(function(a, b) {
                                     a = _ipSortingValue(a);
                                     b = _ipSortingValue(b);
                                     return a < b ? -1 : (a > b ? 1 : 0);
-                                })
+                                });
                             else
                                 _.sort();
                             data[column] = _.join(DATA_PARTS_DELIMITER);
@@ -559,7 +559,7 @@ function init(url, from, to) {
                 if (demo) {
                     alertify.log("Showing demo data");
 
-                    document.title = "Maltrail (demo)"
+                    document.title = "Maltrail (demo)";
                     $("#period_label").html("demo");
                 }
                 else {
@@ -650,7 +650,7 @@ function scrollTo(id) {
 
 function addrToInt(value) {
     var _ = value.split('.');
-    return (_[0] << 24) + (_[1] << 16) + (_[2] << 8) + (_[3] << 0);
+    return (_[0] << 24) + (_[1] << 16) + (_[2] << 8) + _[3];
 }
 
 function makeMask(bits) {
@@ -659,7 +659,7 @@ function makeMask(bits) {
 
 function netmaskValidate(netmask) {
     var match = netmask.match(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\/\d{1,2}$/);
-    return match !== null
+    return match !== null;
 }
 
 function searchTipToTab(query) {
@@ -685,7 +685,7 @@ function tagInputKeyUp(event, forcedelete) {
 
     if ((typeof forcedelete !== "undefined") || (event.keyCode === 8)) {  // appendFilter or Delete
         if ((typeof newTag === "undefined") || (newTag.length === 0)) {
-            if ((event.keyCode === 8) && (_DELETE_DELETE_PRESS != true)) {
+            if ((event.keyCode === 8) && (_DELETE_DELETE_PRESS !== true)) {
                 _DELETE_DELETE_PRESS = true;
                 return;
             }
@@ -1610,11 +1610,6 @@ function drawInfo(type) {
     }
     else if (type === "Trails") {
         var data = [];
-        var options = {
-            segmentStrokeWidth: 1,
-            tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %> events",
-            animationSteps: 30,
-        };
         var other = 0;
         var _ = {}
 
@@ -1779,12 +1774,6 @@ function drawInfo(type) {
     }
     else if (type === "Threats") {
         var data = [];
-        var options = {
-            segmentStrokeWidth: 1,
-            tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %> events",
-            animationSteps: 30,
-        };
-
         var threshold = 0;
         for (var i = 0; i < _THREATS_SORTED.length; i++)
             threshold += _THREATS_SORTED[i][1];
