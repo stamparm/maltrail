@@ -304,6 +304,8 @@ function getPercentageColor(percentage) {
 }
 
 function getContrastYIQ(hexcolor){
+    if (hexcolor.charAt(0) === "#")
+        hexcolor = hexcolor.slice(1);
     var r = parseInt(hexcolor.substr(0, 2), 16);
     var g = parseInt(hexcolor.substr(2, 2), 16);
     var b = parseInt(hexcolor.substr(4, 2), 16);
@@ -317,14 +319,14 @@ function getTagHtml(tag) {
 
     if (tag.length > 0) {
         var color = getHashColor(tag);
-        retval = String.prototype.concat.apply("", ['<span class="tag ', getContrastYIQ(color), '-label-text" style="background-color: #', color, '">', tag, '</span>']);
+        retval = String.prototype.concat.apply("", ['<span class="tag ', getContrastYIQ(color), '-label-text" style="background-color: ', color, '">', tag, '</span>']);
     }
 
     return retval;
 }
 
 function getHashColor(value) {
-    return pad(value.hashCode().toString(16), 6).substring(0, 6);
+    return "#" + pad(value.hashCode().toString(16), 6).substring(0, 6);
 }
 
 // Reference: http://stackoverflow.com/a/6969486
@@ -417,7 +419,7 @@ function init(url, from, to) {
                     trailSources[_] = { };
 
                 if (!(data[LOG_COLUMNS.TYPE] in TRAIL_TYPES))
-                    TRAIL_TYPES[data[LOG_COLUMNS.TYPE]] = "#" + getHashColor(data[LOG_COLUMNS.TYPE]);
+                    TRAIL_TYPES[data[LOG_COLUMNS.TYPE]] = getHashColor(data[LOG_COLUMNS.TYPE]);
 
                 trailSources[_][data[LOG_COLUMNS.SRC_IP]] = true;
 
@@ -994,12 +996,8 @@ function initDetails() {
             },
             {
                 render: function ( data, type, row ) {
-                    if (data in TRAIL_TYPES)
-                        return '<span class="label-type" style="background-color: ' + TRAIL_TYPES[data] + '">' + data + '</span>';
-                    else {
-                        var color = getHashColor(data);
-                        return '<span class="label-type ' + getContrastYIQ(color) + '-label-text" style="background-color: #' + color + '">' + data + '</span>';
-                    }
+                    var color = data in TRAIL_TYPES ? TRAIL_TYPES[data] : getHashColor(data);
+                    return '<span class="label-type ' + getContrastYIQ(color) + '-label-text" style="background-color: ' + color + '">' + data + '</span>';
                 },
                 targets: DATATABLES_COLUMNS.TYPE
             },
@@ -1655,7 +1653,7 @@ function drawInfo(type) {
                 var type = match[2];
                 var count = item[1];
 
-                data.push({value: count, label: item[0], color: type in TRAIL_TYPES ? TRAIL_TYPES[type] : "#" + getHashColor(type)});
+                data.push({value: count, label: item[0], color: type in TRAIL_TYPES ? TRAIL_TYPES[type] : getHashColor(type)});
             }
             else
                 other += item[1];
@@ -1937,7 +1935,7 @@ function initVisual() {
         if (_TRAILS_SORTED[i][1] >= threshold) {
             var type = _TRAILS_SORTED[i][0].match(/\(([A-Z]+)\)/)[1];
             data.push(_TRAILS_SORTED[i][1]);
-            sliceColors.push(type in TRAIL_TYPES ? TRAIL_TYPES[type] : "#" + getHashColor(type));
+            sliceColors.push(type in TRAIL_TYPES ? TRAIL_TYPES[type] : getHashColor(type));
         }
         else
             other += _TRAILS_SORTED[i][1];
