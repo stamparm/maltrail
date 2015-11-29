@@ -368,6 +368,8 @@ function init(url, from, to) {
     if (!(document.location.origin.startsWith('http'))) {
         demo = true;
 
+        $(".bottom").html($(".bottom").html().replace(/ \(.+\)/, ""));
+
         try {
             // Reference: http://stackoverflow.com/a/7083594
             $.ajaxSetup({ async: false });
