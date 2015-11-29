@@ -178,7 +178,7 @@ def _process_packet(packet, sec, usec):
                                 parts = url.split(check)
                                 other = ("(%s)" % _ if _ else _ for _ in parts)
                                 trail = check.join(other)
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, trail, trails[check][0], trails[check][1]))
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, trails[check][0], trails[check][1]))
                                 return
 
                     if config.USE_HEURISTICS:
@@ -188,7 +188,7 @@ def _process_packet(packet, sec, usec):
 
                         if re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)) and host not in WHITELIST:
                             trail = "%s(%s)" % (host, path)
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, trail, "suspicious http request", "(heuristic)"))
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
                             return
 
                         if '.' in path:
@@ -197,10 +197,10 @@ def _process_packet(packet, sec, usec):
                             name, extension = os.path.splitext(filename)
                             if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and '.'.join(host.split('.')[-2:]) not in WHITELIST and len(name) < 6:
                                 trail = "%s(%s)" % (host, path)
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, trail, "direct %s download (suspicious)" % extension, "(heuristic)"))
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "direct %s download (suspicious)" % extension, "(heuristic)"))
                             elif filename in SUSPICIOUS_FILENAMES:
                                 trail = "%s(%s)" % (host, path)
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, trail, "suspicious page", "(heuristic)"))
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious page", "(heuristic)"))
 
         elif protocol == socket.IPPROTO_UDP:  # UDP
             i = iph_length + ETH_LENGTH
