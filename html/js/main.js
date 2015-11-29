@@ -20,7 +20,6 @@ var _TOTAL_EVENTS = 0;
 var _USER = null;
 
 var IP_COUNTRY = {};
-var _PREDEFINED_TRAIL_TYPES = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900" };
 var TRAIL_TYPES = { };
 
 var SPARKLINE_WIDTH = 130;
@@ -53,6 +52,7 @@ var DOT_COLUMNS = [ LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP
 var ELLIPSIS = '<img src="images/ellipsis.png">';
 var CTRL_CLICK_PRESSED = false;
 var CTRL_DATES = [];
+var PREFERRED_TRAIL_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900" };
 
 // Reference: https://danlimerick.wordpress.com/2014/01/18/how-to-catch-javascript-errors-with-window-onerror-even-on-chrome-and-firefox/
 window.onerror = function(errorMsg, url, lineNumber) {
@@ -359,7 +359,7 @@ function init(url, from, to) {
     _TRAILS = {};
     _FLOOD_TRAILS = {};
     _HOURS = {};
-    TRAIL_TYPES = $.extend({}, _PREDEFINED_TRAIL_TYPES);
+    TRAIL_TYPES = {};
 
     _DATASET.length = 0;
     _TOTAL_EVENTS = 0;
@@ -421,7 +421,7 @@ function init(url, from, to) {
                     trailSources[_] = { };
 
                 if (!(data[LOG_COLUMNS.TYPE] in TRAIL_TYPES))
-                    TRAIL_TYPES[data[LOG_COLUMNS.TYPE]] = getHashColor(data[LOG_COLUMNS.TYPE]);
+                    TRAIL_TYPES[data[LOG_COLUMNS.TYPE]] = PREFERRED_TRAIL_COLORS[data[LOG_COLUMNS.TYPE]] || getHashColor(data[LOG_COLUMNS.TYPE]);
 
                 trailSources[_][data[LOG_COLUMNS.SRC_IP]] = true;
 
