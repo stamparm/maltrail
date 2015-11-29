@@ -1545,13 +1545,13 @@ function drawInfo(type) {
     if (jQuery.isEmptyObject(_HOURS))
         return;
 
-    if ($("#" + type.toLowerCase() + "_count").parent()[0].style.boxShadow.startsWith("none")) {
+    if ($("#" + type.toLowerCase() + "_count").parent()[0].style.textShadow.startsWith("none")) {
         resetStatusButtons();
         return;
     }
 
     resetStatusButtons();
-    $("#" + type.toLowerCase() + "_count").parent().css("box-shadow", "none");
+    $("#" + type.toLowerCase() + "_count").parent().css("box-shadow", "inset 0px 0px 1px 1px white");
     $("#" + type.toLowerCase() + "_count").parent().css("text-shadow", "none");
     $("#" + type.toLowerCase() + "_count").parent().css("border", "none");
 
