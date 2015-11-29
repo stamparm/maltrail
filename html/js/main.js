@@ -52,7 +52,7 @@ var DOT_COLUMNS = [ LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP
 var ELLIPSIS = '<img src="images/ellipsis.png">';
 var CTRL_CLICK_PRESSED = false;
 var CTRL_DATES = [];
-var PREFERRED_TRAIL_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900" };
+var PREFERRED_TRAIL_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900", UA: "#9900cc" };
 
 // Reference: https://danlimerick.wordpress.com/2014/01/18/how-to-catch-javascript-errors-with-window-onerror-even-on-chrome-and-firefox/
 window.onerror = function(errorMsg, url, lineNumber) {
@@ -2112,13 +2112,19 @@ function initVisual() {
 
     total["Events"] = 0;
 
+    var found = false;
     for (var key in total) {
         if (key.toUpperCase() === key) {
             options.lineColor = TRAIL_TYPES[key];
             $('#events_sparkline').sparkline(sparklines[key], options);
             options.composite = true;
             total["Events"] += total[key];
+            found = true;
         }
+    }
+
+    if (!found) {
+        $('#events_sparkline').sparkline([], options);
     }
 
     sum = 0;
