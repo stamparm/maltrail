@@ -20,7 +20,8 @@ var _TOTAL_EVENTS = 0;
 var _USER = null;
 
 var IP_COUNTRY = {};
-var TRAIL_TYPES = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900" };
+var _PREDEFINED_TRAIL_TYPES = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900" };
+var TRAIL_TYPES = { };
 
 var SPARKLINE_WIDTH = 130;
 var CHART_WIDTH = 900;
@@ -356,6 +357,7 @@ function init(url, from, to) {
     _TRAILS = {};
     _FLOOD_TRAILS = {};
     _HOURS = {};
+    TRAIL_TYPES = $.extend({}, _PREDEFINED_TRAIL_TYPES);
 
     _DATASET.length = 0;
     _TOTAL_EVENTS = 0;
@@ -413,6 +415,9 @@ function init(url, from, to) {
 
                 if (!(_ in trailSources))
                     trailSources[_] = { };
+
+                if (!(data[LOG_COLUMNS.TYPE] in TRAIL_TYPES))
+                    TRAIL_TYPES[data[LOG_COLUMNS.TYPE]] = "#" + getHashColor(data[LOG_COLUMNS.TYPE]);
 
                 trailSources[_][data[LOG_COLUMNS.SRC_IP]] = true;
 
@@ -990,7 +995,7 @@ function initDetails() {
             {
                 render: function ( data, type, row ) {
                     if (data in TRAIL_TYPES)
-                        return '<span class="label-type label-' + data.toLowerCase() + '">' + data + '</span>';
+                        return '<span class="label-type" style="background-color: ' + TRAIL_TYPES[data] + '">' + data + '</span>';
                     else {
                         var color = getHashColor(data);
                         return '<span class="label-type ' + getContrastYIQ(color) + '-label-text" style="background-color: #' + color + '">' + data + '</span>';
@@ -1765,7 +1770,6 @@ function drawInfo(type) {
 
         _ = [];
         for (var key in TRAIL_TYPES) {
-            console.log(key);
             _.insert(0, datasets[key]); // StackedBar is drawing from last to first (for some strange reason)
         }
 
@@ -2108,11 +2112,13 @@ function initVisual() {
 
     total["Events"] = 0;
 
-    for (var key in TRAIL_TYPES) {
-        options.lineColor = TRAIL_TYPES[key];
-        $('#events_sparkline').sparkline(sparklines[key], options);
-        options.composite = true;
-        total["Events"] += total[key];
+    for (var key in total) {
+        if (key.toUpperCase() === key) {
+            options.lineColor = TRAIL_TYPES[key];
+            $('#events_sparkline').sparkline(sparklines[key], options);
+            options.composite = true;
+            total["Events"] += total[key];
+        }
     }
 
     sum = 0;
