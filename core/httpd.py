@@ -18,6 +18,7 @@ import os
 import re
 import socket
 import SocketServer
+import subprocess
 import threading
 import time
 import traceback
@@ -35,6 +36,7 @@ from core.settings import DEBUG
 from core.settings import DISABLED_CONTENT_EXTENSIONS
 from core.settings import HTML_DIR
 from core.settings import HTTP_TIME_FORMAT
+from core.settings import NAME
 from core.settings import SERVER_HEADER
 from core.settings import SESSION_EXPIRATION_HOURS
 from core.settings import SESSION_ID_LENGTH
@@ -290,6 +292,12 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             self.send_header("Content-Type", "text/plain")
             content = "Login %s" % ("success" if valid else "failed")
+
+            try:
+                subprocess.check_output("logger -p auth.info -t \"%s[%d]\" \"%s password for %s from %s port %s\"" % (NAME.lower(), os.getpid(), "Accepted" if valid else "Failed", params.get("username"), self.client_address[0], self.client_address[1]), stderr=subprocess.STDOUT, shell=True)
+            except Exception:
+                if DEBUG:
+                    traceback.print_exc()
 
             return content
 
