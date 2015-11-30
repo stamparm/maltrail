@@ -1754,7 +1754,8 @@ function drawInfo(type) {
         var maxValue = 0;
         var datasets = {};
         var options = {
-            //scaleShowVerticalLines: false, // not working properly
+            scaleShowVerticalLines: false,
+            scaleShowHorizontalLines: false
         };
 
         for (var key in TRAIL_TYPES)
