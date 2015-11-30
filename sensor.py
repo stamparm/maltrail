@@ -180,8 +180,6 @@ def _process_packet(packet, sec, usec):
 
                         if not found and len(user_agent) < SUSPICIOUS_UA_LENGTH_THRESHOLD:
                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.UA, user_agent, "suspicious user agent (too short)", "(heuristic)"))
-                    else:
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, url, "suspicious http request (missing user-agent header)", "(heuristic)"))
 
                     checks = [path.rstrip('/')]
                     if '?' in path:
