@@ -160,7 +160,8 @@ def _process_packet(packet, sec, usec):
                         host = re.sub(r":80\Z", "", host)
                     else:
                         host = dst_ip
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing user-agent header)", "(heuristic)"))
+                        if config.USE_MISSING_HOST:
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing host header)", "(heuristic)"))
 
                     url = "%s%s" % (host, path)
 
@@ -181,7 +182,7 @@ def _process_packet(packet, sec, usec):
 
                         if not found and config.USE_SHORT_OR_MISSING_USER_AGENT:
                             if user_agent is None:
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, url, "suspicious http request (missing user-agent header)", "(heuristic)"))
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, url, "suspicious http request (missing user agent header)", "(heuristic)"))
                             elif len(user_agent) < SUSPICIOUS_UA_LENGTH_THRESHOLD:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.UA, user_agent, "suspicious user agent (too short)", "(heuristic)"))
 
