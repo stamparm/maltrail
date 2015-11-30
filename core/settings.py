@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.30"
+VERSION = "0.8.31"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -54,6 +54,7 @@ SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".exe", ".scr"))
 SUSPICIOUS_FILENAMES = set(("gate.php",))
 SUSPICIOUS_HTTP_REQUEST_REGEX = r"(?i)information_schema|=\d+'(&|\Z)|\b(AND|OR|SELECT)\b.*/\*.*\*/|/\*.*\*/.*\b(AND|OR|SELECT)\b|\b(AND|OR)[^\w]+\d+['\") ]?[=><]['\"( ]?\d+|(alert|confirm|prompt)\((\d+|document\.|[^\w]*XSS)|\bping -[nc] \d+|floor\(rand\(|ORDER BY \d+|sysdatabases|(\.\./){3,}(?!images)|\bSELECT\b(?!.*(yql|fql)).*\bFROM\b.*\bWHERE\b|\bSELECT \w+ FROM (?!(yql|fql))\w+|<script.*?>|\balert\(|xp_cmdshell|/etc/passwd|<\?php|boot\.ini|\bwindows[\\/]win\.ini|\bsleep\(|\bWAITFOR[^\w]+DELAY\b|\bCONVERT\(|VARCHAR|\bUNION\s+(ALL\s+)?SELECT\b"
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = "( )"
+SUSPICIOUS_UA_REGEXES = (("malware", r"(?i)Mazilla|iexplorer|<\|>|nsis_inetc \(mozilla\)|Mozilla\/5\.0 WinInet|Wget\/1\.9\+cvs-stable \(Red Hat modified\)|Mozilla/5\.0 \(Windows NT 6\.1\)|RookIE\/1\.0|Mozilla\/4\.0 \(compatible; MSIE 8\.0; Windows NT 5\.1; Trident\/4\.0\)|Mozilla\/4\.0 \(compatible; MSIE 6\.0; Windows NT 5\.1; SV1\)|Mozilla\/4\.0 \(compatible; MSIE; Win32\)|Mozilla\/4\.0 \(compatible;MSIE 7\.0;Windows NT 6\.0\)|Opera\/9\.80|SearchProtect|Mozilla/4\.0 \(compatible; MSIE 8\.0; Windows NT 6\.0\)|AutoIt|InetAll"), ("bot", r"(?i)lwp-|nmap|fimap|nsauditor|HTTrack|libWeb|clsHTTP|zmeu|dirbuster|hydra|masscan|openvas|sqlmap|havij|bsqlbf|sqlninja|pangolin|sql power injector|mysqloit|absinthe|acunetix|nikto|w3af|nessus|python|perl|nexpose|netsparker|loic|hoic|httperf|owasp|BabyKrokodil|blackhat|WordPress/\d|libwww|Morfeus|ZmEu|WhiteHat Team|Snoopy|xmlset_roodkcableoj28840ybtide|ScanAlert|Sucuri Integrity Monitor|SiteLockSpide|CrowdStrike|Jakarta|ISC Systems iRc|Missigua Locator|WEP Search|PHPCrawl"))
 SESSIONS = {}
 NO_SUCH_NAME_COUNTERS = {}  # this won't be (expensive) shared in multiprocessing run (hence, the threshold will effectively be n-times higher)
 SESSION_ID_LENGTH = 16

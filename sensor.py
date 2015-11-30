@@ -48,6 +48,7 @@ from core.settings import SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
 from core.settings import SUSPICIOUS_FILENAMES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEX
 from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
+from core.settings import SUSPICIOUS_UA_REGEXES
 from core.settings import trails
 from core.settings import VERSION
 from core.settings import WHITELIST
@@ -149,6 +150,19 @@ def _process_packet(packet, sec, usec):
                             return
                     else:
                         return
+
+                    user_agent = None
+                    index = data.find("\r\nUser-Agent:")
+                    if index >= 0:
+                        index = index + len("\r\nUser-Agent:")
+                        user_agent = urllib.unquote(data[index:data.find("\r\n", index)]).strip()
+
+                    if user_agent:
+                        for key, regex in SUSPICIOUS_UA_REGEXES:
+                            if re.search(regex, user_agent):
+                                user_agent = user_agent.replace('(', "&#40;").replace(')', "&#41;")
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.UA, user_agent, "suspicious user agent (%s)" % key, "(heuristic)", user_agent))
+                                break
 
                     index = data.find("\r\nHost:")
                     if index >= 0:
