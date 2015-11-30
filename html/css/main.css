@@ -379,8 +379,14 @@ rect.highlight {
     padding: 2px 2px;
     margin-bottom: 1px;
 }
+.bottom {
+    position: fixed;
+    bottom: 5px;
+    text-align: center;
+    width: 100%;
+    z-index: -1;
+}
 #table-hosts, #table-hosts th, #table-hosts td {
     border: 1px solid #a8a8a8;
 }
-.bottom { position: fixed; bottom: 5px; text-align: center; width: 100%; z-index: -1; }
-#chart_area { background-color: white }
+#chart_area { background-color: white; }

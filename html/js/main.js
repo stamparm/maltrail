@@ -53,6 +53,7 @@ var ELLIPSIS = '<img src="images/ellipsis.png">';
 var CTRL_CLICK_PRESSED = false;
 var CTRL_DATES = [];
 var PREFERRED_TRAIL_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900", UA: "#9900cc" };
+var CHART_TOOLTIP_FORMAT = "<%= datasetLabel %>: <%= value %>";
 
 // Reference: https://danlimerick.wordpress.com/2014/01/18/how-to-catch-javascript-errors-with-window-onerror-even-on-chrome-and-firefox/
 window.onerror = function(errorMsg, url, lineNumber) {
@@ -1611,7 +1612,9 @@ function drawInfo(type) {
             bezierCurve: false,
             pointDotRadius: 5,
             //scaleShowGridLines: false
-            tooltipTemplate: "<%if (label){%><%=label.replace(/[^0-9]/, '')%>:00h-<%=label.replace(/[^0-9]/, '')%>:59h: <%}%><%= value %> events",
+            //tooltipTemplate: "<%if (label){%><%=label.replace(/[^0-9]/, '')%>:00h-<%=label.replace(/[^0-9]/, '')%>:59h: <%}%><%= value %> events",
+            tooltipTemplate: CHART_TOOLTIP_FORMAT,
+            multiTooltipTemplate: CHART_TOOLTIP_FORMAT,  // Reference: http://stackoverflow.com/a/24622442
             pointHitDetectionRadius: 5
         };
 
@@ -1755,11 +1758,13 @@ function drawInfo(type) {
         var datasets = {};
         var options = {
             scaleShowVerticalLines: false,
-            scaleShowHorizontalLines: false
+            scaleShowHorizontalLines: false,
+            tooltipTemplate: CHART_TOOLTIP_FORMAT,
+            multiTooltipTemplate: CHART_TOOLTIP_FORMAT  // Reference: http://stackoverflow.com/a/24622442
         };
 
         for (var key in TRAIL_TYPES)
-            datasets[key] = { fillColor: TRAIL_TYPES[key], data: [] };
+            datasets[key] = { fillColor: TRAIL_TYPES[key], label: key, data: [] };
 
         for (var i = 0; i < _TOP_SOURCES.length; i++) {
             labels.push(_TOP_SOURCES[i][0]);
@@ -1778,6 +1783,7 @@ function drawInfo(type) {
             labels: labels,
             datasets: _
         };
+
         var ctx = $('<canvas id="chart_canvas" width="' + CHART_WIDTH + '" height="' + CHART_HEIGHT + '"></canvas>').appendTo('#chart_area')[0].getContext("2d");
         var chart = new Chart(ctx);
         var bar = chart.StackedBar(data, options);
