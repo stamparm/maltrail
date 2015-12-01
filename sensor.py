@@ -49,7 +49,7 @@ from core.settings import SUSPICIOUS_FILENAMES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEX
 from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
 from core.settings import SUSPICIOUS_UA_LENGTH_THRESHOLD
-from core.settings import SUSPICIOUS_UA_REGEXES
+from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
 from core.settings import VERSION
 from core.settings import WHITELIST
@@ -172,13 +172,11 @@ def _process_packet(packet, sec, usec):
                         user_agent = urllib.unquote(data[index:data.find("\r\n", index)]).strip()
 
                     if config.USE_HEURISTICS:
+                        found = False
                         if user_agent:
-                            found = False
-                            for key, regex in SUSPICIOUS_UA_REGEXES:
-                                if re.search(regex, user_agent):
-                                    found = True
-                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.UA, user_agent.replace('(', "&#40;").replace(')', "&#41;"), "suspicious user agent (%s)" % key, "(heuristic)"))
-                                    break
+                            if re.search(SUSPICIOUS_UA_REGEX, user_agent):
+                                found = True
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.UA, user_agent.replace('(', "&#40;").replace(')', "&#41;"), "suspicious user agent", "(heuristic)"))
 
                         if not found and config.USE_SHORT_OR_MISSING_USER_AGENT:
                             if user_agent is None:
