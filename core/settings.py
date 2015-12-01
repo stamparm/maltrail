@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.36"
+VERSION = "0.8.37"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -54,7 +54,7 @@ SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".exe", ".scr"))
 SUSPICIOUS_FILENAMES = set(("gate.php",))
 SUSPICIOUS_HTTP_REQUEST_REGEX = r"(?i)information_schema|=\d+'(&|\Z)|\b(AND|OR|SELECT)\b.*/\*.*\*/|/\*.*\*/.*\b(AND|OR|SELECT)\b|\b(AND|OR)[^\w]+\d+['\") ]?[=><]['\"( ]?\d+|(alert|confirm|prompt)\((\d+|document\.|[^\w]*XSS)|\bping -[nc] \d+|floor\(rand\(|ORDER BY \d+|sysdatabases|(\.\./){3,}(?!images)|\bSELECT\b(?!.*(yql|fql)).*\bFROM\b.*\bWHERE\b|\bSELECT \w+ FROM (?!(yql|fql))\w+|<script.*?>|\balert\(|xp_cmdshell|/etc/passwd|<\?php|boot\.ini|\bwindows[\\/]win\.ini|\bsleep\(|\bWAITFOR[^\w]+DELAY\b|\bCONVERT\(|VARCHAR|\bUNION\s+(ALL\s+)?SELECT\b"
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = "( )"
-SUSPICIOUS_UA_REGEX = r"(?i)7db0f6de-8de7-4841-9084-28fa914b0f2e|<\|>|absinthe|acunetix|apachebench|autoit|babykrokodil|beacon|blackhat|bsqlbf|clshttp|crowdstrike|datacha0s|dirbuster|fimap|havij|hoic|http_down|httperf|httrack|hydra|immoral|inetall|isc systems irc|jakarta|jorgee|letitgo|libweb|libwww|loic|lwp-|masscan|mazilla|metasploit|missigua locator|morfeus|msiecrawler|mysqloit|nessus|netsparker|nexpose|nikto|nmap|nsauditor|nsis_inetc|offline explorer|openvas|(opera|mozilla|iexplorer|firefox|chrome)( [\d.]+)?\Z|owasp|pangolin|phpcrawl|pilipinas|rookie|scanalert|searchprotect|sitelockspide|sitesnagger|sitesucker|snoopy|sql power injector|sqlmap|sqlninja|sucuri integrity monitor|teleport|tools\.ua\.random|w3af|webstripper|webvulncrawl|wep search|wget|whitehat team|winhttp|\Awininet|wordpress|xmlset_roodkcableoj28840ybtide|zealbot|zmeu|zmeu"
+SUSPICIOUS_UA_REGEX = r"(?i)7db0f6de-8de7-4841-9084-28fa914b0f2e|<\|>|absinthe|acunetix|apachebench|autoit|babykrokodil|beacon|blackhat|bsqlbf|clshttp|crowdstrike|datacha0s|dirbuster|fimap|havij|hoic|http_down|httperf|httrack|hydra|immoral|inetall|isc systems irc|jakarta|jorgee|letitgo|libweb|libwww|loic|lwp-|masscan|mazilla|metasploit|missigua locator|morfeus|msiecrawler|mysqloit|nessus|netsparker|nexpose|nikto|nmap|nsauditor|nsis_inetc|offline explorer|openvas|(opera|mozilla|iexplorer|firefox|chrome)( [\d.]+)?\Z|owasp|pangolin|phpcrawl|pilipinas|rookie|scanalert|searchprotect|sitelockspide|sitesnagger|sitesucker|snoopy|sql power injector|sqlmap|sqlninja|sucuri integrity monitor|teleport|tools\.ua\.random|w3af|webstripper|webvulncrawl|wep search|wget[^ ]+\Z|whitehat team|\Awinhttp|\Awininet|wordpress|xmlset_roodkcableoj28840ybtide|zealbot|zmeu|zmeu"
 SUSPICIOUS_UA_LENGTH_THRESHOLD = 10
 SESSIONS = {}
 NO_SUCH_NAME_COUNTERS = {}  # this won't be (expensive) shared in multiprocessing run (hence, the threshold will effectively be n-times higher)
