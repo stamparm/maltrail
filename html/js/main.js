@@ -1379,14 +1379,14 @@ function initDetails() {
         if (event.button === 0) {  // left mouse button
             if (event.target.classList.contains("tag"))
                 appendFilter(event.target.innerHTML, event, true);
-            else if (event.target.classList.toString().startsWith("severity")) {
+            else if (event.target.classList.toString().startsWith("severity"))
                 appendFilter(event.target.innerHTML, event);
-            }
             else if (event.target.classList.contains("label-type"))
-                if (event.target.innerHTML.toUpperCase() === event.target.innerHTML)
-                    appendFilter('" ' + event.target.innerHTML + '"', event);
-                else
-                    appendFilter(event.target.innerHTML, event);
+                appendFilter(event.target.innerHTML, event);
+//                 if (event.target.innerHTML.toUpperCase() === event.target.innerHTML)
+//                     appendFilter('" ' + event.target.innerHTML + '"', event);
+//                 else
+//                     appendFilter(event.target.innerHTML, event);
         }
         else if (event.button === 1) {  // middle mouse button
             if (event.target.classList.contains("tag"))
