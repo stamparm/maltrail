@@ -6,6 +6,12 @@
         <title>Maltrail</title>
         <link rel="stylesheet" type="text/css" href="css/thirdparty.min.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <script type="text/javascript">
+            // Reference: https://danlimerick.wordpress.com/2014/01/18/how-to-catch-javascript-errors-with-window-onerror-even-on-chrome-and-firefox/
+            window.onerror = function(errorMsg, url, lineNumber) {
+                alert(errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
+            };
+        </script>
         <script type="text/javascript" src="js/thirdparty.min.js"></script>
         <script type="text/javascript" src="js/papaparse.min.js"></script> <!-- required to be as a standalone because of "Worker" functionality -->
     </head>

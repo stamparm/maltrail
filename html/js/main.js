@@ -57,11 +57,6 @@ var SEVERITY = { LOW: 1, MEDIUM: 2, HIGH: 3 };
 var CHART_TOOLTIP_FORMAT = "<%= datasetLabel %>: <%= value %>";
 var INFO_SEVERITY_KEYWORDS = {"(malware)": SEVERITY.HIGH, "reputation": SEVERITY.LOW, "attacker": SEVERITY.LOW, "spammer": SEVERITY.LOW, "compromised": SEVERITY.LOW, "crawler": SEVERITY.LOW, "scanning": SEVERITY.LOW }
 
-// Reference: https://danlimerick.wordpress.com/2014/01/18/how-to-catch-javascript-errors-with-window-onerror-even-on-chrome-and-firefox/
-window.onerror = function(errorMsg, url, lineNumber) {
-    alert(errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
-};
-
 window.onkeydown = function(event) {
     CTRL_DATES.length = 0;
     CTRL_CLICK_PRESSED = event.ctrlKey;
