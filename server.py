@@ -5,13 +5,18 @@ Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
 See the file 'LICENSE' for copying permission
 """
 
-import optparse
-import os
+from __future__ import print_function
+
 import sys
-import threading
-import traceback
 
 sys.dont_write_bytecode = True
+
+import core.versioncheck
+
+import optparse
+import os
+import threading
+import traceback
 
 from core.httpd import start_httpd
 from core.log import start_logd
@@ -24,7 +29,7 @@ from core.update import update
 
 def main():
 
-    print "%s (server) #v%s\n" % (NAME, VERSION)
+    print("%s (server) #v%s\n" % (NAME, VERSION))
 
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="Configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
@@ -57,13 +62,13 @@ def main():
             update_timer()
         start_httpd(address=config.HTTP_ADDRESS, port=config.HTTP_PORT, pem=config.SSL_PEM if config.USE_SSL else None, join=True)
     except KeyboardInterrupt:
-        print "\r[x] stopping (Ctrl-C pressed)"
+        print("\r[x] stopping (Ctrl-C pressed)")
 
 if __name__ == "__main__":
     try:
         main()
-    except Exception, ex:
-        print "\r[!] Unhandled exception occurred ('%s')" % ex
-        print "\r[x] Please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc()
+    except Exception as ex:
+        print("\r[!] Unhandled exception occurred ('%s')" % ex)
+        print("\r[x] Please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc())
 
     os._exit(0)

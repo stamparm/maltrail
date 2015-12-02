@@ -5,6 +5,14 @@ Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
 See the file 'LICENSE' for copying permission
 """
 
+from __future__ import print_function
+
+import sys
+
+sys.dont_write_bytecode = True
+
+import core.versioncheck
+
 import mmap
 import optparse
 import os
@@ -12,14 +20,11 @@ import re
 import socket
 import subprocess
 import struct
-import sys
 import threading
 import time
 import traceback
 import urllib
 import urlparse
-
-sys.dont_write_bytecode = True
 
 from core.common import check_sudo
 from core.common import load_trails
@@ -371,13 +376,13 @@ def init():
         exit("[!] virtual interface 'any' is not available on Windows OS")
 
     if config.MONITOR_INTERFACE not in pcapy.findalldevs():
-        print "[!] interface '%s' not found" % config.MONITOR_INTERFACE
+        print("[!] interface '%s' not found" % config.MONITOR_INTERFACE)
         exit("[x] available interfaces: '%s'" % ",".join(pcapy.findalldevs()))
 
-    print "[i] opening interface '%s'" % config.MONITOR_INTERFACE
+    print("[i] opening interface '%s'" % config.MONITOR_INTERFACE)
     try:
         _cap = pcapy.open_live(config.MONITOR_INTERFACE, SNAP_LEN, True, 0)
-    except socket.error, ex:
+    except socket.error as ex:
         if "permitted" in str(ex):
             exit("\n[!] please run with sudo/Administrator privileges")
         elif "No such device" in str(ex):
@@ -389,7 +394,7 @@ def init():
         exit("[!] invalid configuration value for 'LOG_SERVER' ('%s')" % config.LOG_SERVER)
 
     if config.CAPTURE_FILTER:
-        print "[i] setting filter '%s'" % config.CAPTURE_FILTER
+        print("[i] setting filter '%s'" % config.CAPTURE_FILTER)
         _cap.setfilter(config.CAPTURE_FILTER)
 
     _datalink = _cap.datalink()
@@ -403,7 +408,7 @@ def init():
         p = subprocess.Popen("schedtool -n -2 -M 2 -p 10 -a 0x01 %d" % os.getpid(), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         _, stderr = p.communicate()
         if "not found" in stderr:
-            print "[!] please install schedtool for better CPU scheduling (e.g. 'sudo apt-get install schedtool')"
+            print("[!] please install schedtool for better CPU scheduling (e.g. 'sudo apt-get install schedtool')")
     except:
         pass
 
@@ -416,7 +421,7 @@ def _init_multiprocessing():
     global _n
 
     if _multiprocessing:
-        print "[i] creating %d more processes (%d CPU cores detected)" % (_multiprocessing.cpu_count() - 1, _multiprocessing.cpu_count())
+        print("[i] creating %d more processes (%d CPU cores detected)" % (_multiprocessing.cpu_count() - 1, _multiprocessing.cpu_count()))
         _buffer = mmap.mmap(-1, BUFFER_LENGTH)  # http://www.alexonlinux.com/direct-io-in-python
         _n = _multiprocessing.Value('L', lock=False)
 
@@ -447,7 +452,7 @@ def monitor():
     try:
         _cap.loop(-1, packet_handler)
     except KeyboardInterrupt:
-        print "\r[x] Ctrl-C pressed"
+        print("\r[x] Ctrl-C pressed")
     finally:
         if _multiprocessing:
             for _ in xrange(_multiprocessing.cpu_count() - 1):
@@ -457,7 +462,7 @@ def monitor():
                 time.sleep(REGULAR_SENSOR_SLEEP_TIME)
 
 def main():
-    print "%s (sensor) #v%s\n" % (NAME, VERSION)
+    print("%s (sensor) #v%s\n" % (NAME, VERSION))
 
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="Configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
@@ -472,13 +477,13 @@ def main():
         init()
         monitor()
     except KeyboardInterrupt:
-        print "\r[x] stopping (Ctrl-C pressed)"
+        print("\r[x] stopping (Ctrl-C pressed)")
 
 if __name__ == "__main__":
     try:
         main()
-    except Exception, ex:
-        print "\r[!] unhandled exception occurred ('%s')" % ex
-        print "\r[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc()
+    except Exception as ex:
+        print("\r[!] unhandled exception occurred ('%s')" % ex)
+        print("\r[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc())
 
     os._exit(0)
