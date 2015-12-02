@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.56"
+VERSION = "0.8.57"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -64,8 +64,6 @@ IPPROTO_LUT = dict(((getattr(socket, _), _.replace("IPPROTO_", "")) for _ in dir
 DEFLATE_COMPRESS_LEVEL = 9
 PORT_SCANNING_THRESHOLD = 10
 SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD = 24
-MIN_BLACKLIST_MASK = 16
-MAX_BLACKLIST_MASK = 32
 WHITELIST = set()
 
 def _get_total_physmem():
