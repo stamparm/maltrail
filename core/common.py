@@ -97,6 +97,11 @@ def load_trails(quiet=False):
             exit("[x] something went wrong during trails file read '%s' ('%s')" % (TRAILS_FILE, ex))
 
     if not quiet:
-        print "[i] %d trails loaded" % len(retval)
+        _ = len(retval)
+        try:
+            _ = '{0:,}'.format(_)
+        except:
+            pass
+        print "[i] %s trails loaded" % _
 
     return retval

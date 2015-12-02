@@ -96,7 +96,7 @@ def update(server=None):
                     for item in results.items():
                         if not (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) and item[0] in trails):
                             trails[item[0]] = item[1]
-                    if not results:
+                    if not results and "abuse.ch" not in module.__url__:
                         print "[!] something went wrong during remote data retrieval ('%s')" % module.__url__
 
         # basic cleanup

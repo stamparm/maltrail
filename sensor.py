@@ -73,6 +73,36 @@ except ImportError:
     else:
         exit("[!] please install Pcapy (e.g. 'apt-get install python-pcapy')")
 
+def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto):
+    parts = query.split('.')
+
+    for i in xrange(0, len(parts)):
+        domain = '.'.join(parts[i:])
+        if domain in trails:
+            if domain == query:
+                trail = domain
+            else:
+                _ = ".%s" % domain
+                trail = "(%s)%s" % (query[:-len(_)], _)
+
+            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[domain][0], trails[domain][1]))
+            return
+
+    if config.USE_HEURISTICS and len(parts[0]) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD and '-' not in parts[0]:
+        trail = None
+
+        if len(parts) > 2:
+            if '.'.join(parts[-2:]) not in WHITELIST:
+                trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
+        elif len(parts) == 2:
+            if '.'.join(parts) not in WHITELIST:
+                trail = "(%s).%s" % (parts[0], parts[1])
+        else:
+            trail = query
+
+        if trail:
+            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, "long domain name (suspicious)", "(heuristic)"))
+
 def _process_packet(packet, sec, usec):
     """
     Processes single (raw) packet
@@ -163,7 +193,18 @@ def _process_packet(packet, sec, usec):
                         if config.USE_MISSING_HOST:
                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing host header)", "(heuristic)"))
 
-                    url = "%s%s" % (host, path)
+                    if "://" in path:
+                        url = path.split("://", 1)[1]
+
+                        if '/' not in url:
+                            url = "%s/" % url
+
+                        host, path = url.split('/', 1)
+                        path = "/%s" % path
+                        proxy_domain = host.split(':')[0]
+                        _check_domain(proxy_domain, sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP")
+                    else:
+                        url = "%s%s" % (host, path)
 
                     user_agent = None
                     index = data.find("\r\nUser-Agent:")
@@ -267,34 +308,7 @@ def _process_packet(packet, sec, usec):
 
                             # Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
                             if type_ != 12 and class_ == 1:  # Type != PTR, Class IN
-                                parts = query.split('.')
-
-                                for i in xrange(0, len(parts)):
-                                    domain = '.'.join(parts[i:])
-                                    if domain in trails:
-                                        if domain == query:
-                                            trail = domain
-                                        else:
-                                            _ = ".%s" % domain
-                                            trail = "(%s)%s" % (query[:-len(_)], _)
-
-                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, trails[domain][0], trails[domain][1]))
-                                        return
-
-                                if config.USE_HEURISTICS and len(parts[0]) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD and '-' not in parts[0]:
-                                    trail = None
-
-                                    if len(parts) > 2:
-                                        if '.'.join(parts[-2:]) not in WHITELIST:
-                                            trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
-                                    elif len(parts) == 2:
-                                        if '.'.join(parts) not in WHITELIST:
-                                            trail = "(%s).%s" % (parts[0], parts[1])
-                                    else:
-                                        trail = query
-
-                                    if trail:
-                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, trail, "long domain name (suspicious)", "(heuristic)"))
+                                _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP")
 
                         elif config.USE_HEURISTICS and (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
                             if query not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[query][0] != sec / 3600:
