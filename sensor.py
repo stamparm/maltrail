@@ -405,7 +405,14 @@ def init():
         _init_multiprocessing()
 
     try:
-        p = subprocess.Popen("schedtool -n -2 -M 2 -p 10 -a 0x01 %d" % os.getpid(), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        try:
+            mod = int(subprocess.check_output("grep -c ^processor /proc/cpuinfo", stderr=subprocess.STDOUT, shell=True).strip())
+            used = subprocess.check_output("for pid in $(ps aux | grep python | grep sensor.py | grep -E -o 'root[ ]*[0-9]*' | tr -d '[:alpha:] '); do schedtool $pid; done | grep -E -o 'AFFINITY .*' | cut -d ' ' -f 2 | grep -v 0xf", stderr=subprocess.STDOUT, shell=True).strip().split('\n')
+            max_used = max(int(_, 16) for _ in used)
+            affinity = max(1, (max_used << 1) % 2 ** mod)
+        except:
+            affinity = 1
+        p = subprocess.Popen("schedtool -n -2 -M 2 -p 10 -a 0x%02x %d" % (affinity, os.getpid()), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         _, stderr = p.communicate()
         if "not found" in stderr:
             print("[!] please install schedtool for better CPU scheduling (e.g. 'sudo apt-get install schedtool')")
