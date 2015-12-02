@@ -1166,12 +1166,13 @@ function initDetails() {
                             var found = null;
                             var msg = "";
 
-                            for (var i = json.data.records.length - 1; i >= 0 ; i--) {
-                                if ((json.data.records[i][0].key.toLowerCase().indexOf("inetnum") != -1) || (json.data.records[i][0].key.toLowerCase().indexOf("netrange") != -1)){
-                                    found = i;
-                                    break;
+                            if (json.data.records !== undefined)
+                                for (var i = json.data.records.length - 1; i >= 0 ; i--) {
+                                    if ((json.data.records[i][0].key.toLowerCase().indexOf("inetnum") != -1) || (json.data.records[i][0].key.toLowerCase().indexOf("netrange") != -1)){
+                                        found = i;
+                                        break;
+                                    }
                                 }
-                            }
 
                             if (found !== null) {
                                 for (var j = 0; j < json.data.records[found].length; j++) {
