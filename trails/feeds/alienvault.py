@@ -10,7 +10,7 @@ import re
 from core.common import retrieve_content
 
 __url__ = "https://reputation.alienvault.com/reputation.generic"
-__check__ = "Alienvault IP Reputation Database"
+__check__ = " # Malicious"
 __info__ = "bad reputation"
 __reference__ = "alienvault.com"
 
@@ -23,6 +23,7 @@ def fetch():
             line = line.strip()
             if not line or line.startswith('#') or '.' not in line:
                 continue
-            retval[line.split(" # ")[0]] = (__info__, __reference__)
+            if " # " in line:
+                retval[line.split(" # ")[0]] = ("%s (%s)" % (__info__, line.split(" # ")[1].split()[0].lower()), __reference__)
 
     return retval
