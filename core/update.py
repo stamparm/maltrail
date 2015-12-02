@@ -74,7 +74,7 @@ def update(server=None):
 
         if config.USE_FEED_UPDATES:
             sys.path.append(os.path.abspath(os.path.join(ROOT_DIR, "trails", "feeds")))
-            filenames = glob.glob(os.path.join(sys.path[-1], "*.py"))
+            filenames = sorted(glob.glob(os.path.join(sys.path[-1], "*.py")))
         else:
             filenames = []
 

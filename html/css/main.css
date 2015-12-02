@@ -379,6 +379,30 @@ rect.highlight {
     padding: 2px 2px;
     margin-bottom: 1px;
 }
+.severity-low, .severity-medium, .severity-high {
+    float: center;
+    padding: 1px 2px;
+    cursor: pointer;
+    text-align: center;
+    width: 50px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 90%;
+    font-weight: bold;
+    box-sizing: border-box;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.severity-low {
+    background-color: #73aad8;
+}
+.severity-medium {
+    background-color: #f0ad4e;
+}
+.severity-high {
+    background-color: #d9534f;
+}
 .bottom {
     position: fixed;
     bottom: 5px;

@@ -41,18 +41,19 @@ var THREAT_PIC_HASH = null; // e.g. https://robohash.org/ or https://flathash.co
 var DEFAULT_STATUS_BORDER = "1px solid #a8a8a8";
 var DEFAULT_FONT_FAMILY = "Verdana, Geneva, sans-serif";
 var LOG_COLUMNS = { TIME: 0, SENSOR: 1, SRC_IP: 2, SRC_PORT: 3, DST_IP: 4, DST_PORT: 5, PROTO: 6, TYPE: 7, TRAIL: 8, INFO: 9, REFERENCE: 10 };
-var DATATABLES_COLUMNS = { THREAT: 0, SENSOR: 1, EVENTS: 2, FIRST_TIME: 3, LAST_TIME: 4, SRC_IP: 5, SRC_PORT: 6, DST_IP: 7, DST_PORT: 8, PROTO: 9, TYPE: 10, TRAIL: 11, INFO: 12, REFERENCE: 13, TAGS: 14 };
+var DATATABLES_COLUMNS = { THREAT: 0, SEVERITY: 1, SENSOR: 2, EVENTS: 3, FIRST_TIME: 4, LAST_TIME: 5, SRC_IP: 6, SRC_PORT: 7, DST_IP: 8, DST_PORT: 9, PROTO: 10, TYPE: 11, TRAIL: 12, INFO: 13, REFERENCE: 14, TAGS: 15 };
 var TOP_PORTS = { 19: "CHARGEN", 21: "FTP", 22: "SSH", 23: "Telnet", 25: "SMTP", 53: "DNS", 80: "HTTP", 110: "POP3", 123: "NTP", 143: "IMAP", 161: "SNMP", 389: "LDAP", 443: "HTTPS", 445: "Microsoft-DS", 587: "Submission", 902: "VMware", 990: "FTPS", 993: "IMAPS", 995: "POP3S", 1433: "MsSQL", 1434: "MsSQL", 1723: "PPTP", 1900: "SSDP", 3306: "MySQL", 3389: "RDP", 5060: "SIP", 5900: "VNC", 8080: "HTTP-proxy" };
 var SEARCH_TIP_TIMER = 0;
 var PAPAPARSE_COMPLETE_TIMER = 0;
 var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
 //var SEARCH_TIP_URL = "https://www.google.com/cse?cx=011750002002865445766%3Ay5klxdomj78&ie=UTF-8&q=${query}";
 var DAY_SUFFIXES = { 1: "st", 2: "nd", 3: "rd" };
-var DOT_COLUMNS = [ LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP, LOG_COLUMNS.DST_PORT, LOG_COLUMNS.TRAIL, LOG_COLUMNS.PROTO ];
+var DOT_COLUMNS = [ LOG_COLUMNS.SENSOR, LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP, LOG_COLUMNS.DST_PORT, LOG_COLUMNS.TRAIL, LOG_COLUMNS.PROTO ];
 var ELLIPSIS = '<img src="images/ellipsis.png">';
 var CTRL_CLICK_PRESSED = false;
 var CTRL_DATES = [];
-var PREFERRED_TRAIL_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900", UA: "#9900cc" };
+var PREFERRED_TRAIL_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ffad33", UA: "#9900cc" };
+var SEVERITY = { LOW: 1, MEDIUM: 2, HIGH: 3 };
 var CHART_TOOLTIP_FORMAT = "<%= datasetLabel %>: <%= value %>";
 
 // Reference: https://danlimerick.wordpress.com/2014/01/18/how-to-catch-javascript-errors-with-window-onerror-even-on-chrome-and-firefox/
@@ -535,6 +536,7 @@ function init(url, from, to) {
                     var maxTime = item[3];
                     var data = item[4];
                     var row = [];
+                    var severity = SEVERITY.MEDIUM;
 
                     var storedLocally = $.jStorage.get(threatUID);
                     var tagData = "";
@@ -567,7 +569,27 @@ function init(url, from, to) {
                         }
                     }
 
+                    if (data[LOG_COLUMNS.INFO].contains("(malware)"))
+                        severity = SEVERITY.HIGH;
+                    else if (data[LOG_COLUMNS.REFERENCE].contains("(custom)"))
+                        severity = SEVERITY.HIGH;
+                    else if (data[LOG_COLUMNS.REFERENCE].contains("malwaredomainlist"))
+                        severity = SEVERITY.HIGH;
+                    else if (data[LOG_COLUMNS.INFO].contains("reputation"))
+                        severity = SEVERITY.LOW;
+                    else if (data[LOG_COLUMNS.INFO].contains("attacker"))
+                        severity = SEVERITY.LOW;
+                    else if (data[LOG_COLUMNS.INFO].contains("spammer"))
+                        severity = SEVERITY.LOW;
+                    else if (data[LOG_COLUMNS.INFO].contains("compromised"))
+                        severity = SEVERITY.LOW;
+                    else if (data[LOG_COLUMNS.INFO].contains("crawler"))
+                        severity = SEVERITY.LOW;
+                    else if (data[LOG_COLUMNS.INFO].contains("scanning"))
+                        severity = SEVERITY.LOW;
+
                     row.push(threatUID);
+                    row.push(severity);
                     row.push(data[LOG_COLUMNS.SENSOR]);
                     row.push(times);
                     row.push(minTime);
@@ -897,6 +919,7 @@ function initDetails() {
         data: _DATASET,
         columns: [
             { "title": "threat", "type": "threat", "class": "center" },
+            { "title": "severity", "type": "severity", "class": "center" },
             { "title": "sensor", "class": "center" },
             { "title": "events", "type": "events", "class": "right" },
             { "title": "first_seen", "class": "center" },
@@ -923,12 +946,23 @@ function initDetails() {
         columnDefs: [
             {
                 orderSequence: [ "desc", "asc" ],
-                targets: [ DATATABLES_COLUMNS.EVENTS ]
+                targets: [ DATATABLES_COLUMNS.SEVERITY, DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.LAST_TIME ]
             },
             {
-                orderSequence: [ "desc", "asc" ],
-                targets: [ DATATABLES_COLUMNS.LAST_TIME ]
-            },            {
+                render: function (data, type, row) {
+                    var name = "";
+                    if (data === SEVERITY.LOW)
+                        name = "low"
+                    else if (data === SEVERITY.HIGH)
+                        name = "high"
+                    else if (data === SEVERITY.MEDIUM)
+                        name = "medium";
+                    var retval = "<span class='severity-" + name + "' value='" + data + "'>" + name + "</span>"
+                    return retval;
+                },
+                targets: DATATABLES_COLUMNS.SEVERITY
+            },
+            {
                 render: function (data, type, row) {
                     if (data.indexOf(',') > -1)
                         data = "<span title='" + data + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
@@ -947,7 +981,7 @@ function initDetails() {
                         data = "<span title='" + data + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
                     return data;
                 },
-                targets: [ DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.PROTO ]
+                targets: [ DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.PROTO ]
             },
             {
                 render: function (data, type, row) {
@@ -1043,7 +1077,7 @@ function initDetails() {
             },
             {
                width: "1%",
-               targets: [ DATATABLES_COLUMNS.THREAT, DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.FIRST_TIME, DATATABLES_COLUMNS.LAST_TIME, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.SRC_PORT, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.DST_PORT, DATATABLES_COLUMNS.PROTO, DATATABLES_COLUMNS.TYPE ]
+               targets: [ DATATABLES_COLUMNS.THREAT, DATATABLES_COLUMNS.SEVERITY, DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.FIRST_TIME, DATATABLES_COLUMNS.LAST_TIME, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.SRC_PORT, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.DST_PORT, DATATABLES_COLUMNS.PROTO, DATATABLES_COLUMNS.TYPE ]
             }
         ],
         oLanguage: {
@@ -1351,6 +1385,9 @@ function initDetails() {
         if (event.button === 0) {  // left mouse button
             if (event.target.classList.contains("tag"))
                 appendFilter(event.target.innerHTML, event, true);
+            else if (event.target.classList.toString().startsWith("severity")) {
+                appendFilter(event.target.innerHTML, event);
+            }
             else if (event.target.classList.contains("label-type"))
                 if (event.target.innerHTML.toUpperCase() === event.target.innerHTML)
                     appendFilter('" ' + event.target.innerHTML + '"', event);
@@ -1400,6 +1437,12 @@ Array.prototype.clean = function(deleteValue) {
 if (typeof String.prototype.startsWith !== "function") {
     String.prototype.startsWith = function (str){
         return this.indexOf(str) === 0;
+    };
+}
+
+if (typeof String.prototype.contains !== "function") {
+    String.prototype.startsWith = function (str){
+        return this.indexOf(str) !== -1;
     };
 }
 
@@ -1476,6 +1519,27 @@ jQuery.extend(jQuery.fn.dataTableExt.oSort, {
     },
 
     "events-desc": function ( a, b ) {
+        return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+    }
+});
+
+jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+    "severity-pre": function (a) {
+        var x = 0;
+        var match = a.match(/value=["'](\d+)/);
+
+        if (match !== null) {
+            x = parseInt(match[1]);
+        }
+
+        return x;
+    },
+
+    "severity-asc": function ( a, b ) {
+        return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+    },
+
+    "severity-desc": function ( a, b ) {
         return ((a < b) ? 1 : ((a > b) ? -1 : 0));
     }
 });
