@@ -125,6 +125,7 @@ emediate.dk
 
 # appeared on malwareurls.joxeankoret.com
 tinypic.com
+s3.amazonaws.com
 
 # triggering suspicious http request
 graph.facebook.com
