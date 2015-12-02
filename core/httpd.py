@@ -482,10 +482,16 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.rfile = socket._fileobject(self.request, "rb", self.rbufsize)
             self.wfile = socket._fileobject(self.request, "wb", self.wbufsize)
 
-    if pem:
-        server = SSLThreadingServer((address or '', int(port) if port else None), pem, SSLReqHandler)
-    else:
-        server = ThreadingServer((address or '', int(port) if port else None), ReqHandler)
+    try:
+        if pem:
+            server = SSLThreadingServer((address or '', int(port) if port else None), pem, SSLReqHandler)
+        else:
+            server = ThreadingServer((address or '', int(port) if port else None), ReqHandler)
+    except Exception as ex:
+        if "Address already in use" in str(ex):
+            exit("[!] another instance already running")
+        else:
+            raise
 
     print "[i] running HTTP%s server at '%s:%d'" % ('S' if pem else "", server.server_address[0], server.server_address[1])
 
