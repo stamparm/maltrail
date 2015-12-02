@@ -382,11 +382,11 @@ def init():
     print("[i] opening interface '%s'" % config.MONITOR_INTERFACE)
     try:
         _cap = pcapy.open_live(config.MONITOR_INTERFACE, SNAP_LEN, True, 0)
-    except socket.error as ex:
-        if "permitted" in str(ex):
-            exit("\n[!] please run with sudo/Administrator privileges")
-        elif "No such device" in str(ex):
-            exit("\n[!] no such device '%s'" % config.MONITOR_INTERFACE)
+    except (socket.error, pcapy.PcapError):
+        if "permitted" in str(sys.exc_info()[1]):
+            exit("[!] please run with sudo/Administrator privileges")
+        elif "No such device" in str(sys.exc_info()[1]):
+            exit("[!] no such device '%s'" % config.MONITOR_INTERFACE)
         else:
             raise
 
@@ -482,8 +482,8 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-    except Exception as ex:
-        print("\r[!] unhandled exception occurred ('%s')" % ex)
+    except Exception:
+        print("\r[!] unhandled exception occurred ('%s')" % sys.exc_info()[1])
         print("\r[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc())
 
     os._exit(0)
