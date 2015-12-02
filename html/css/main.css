@@ -395,7 +395,7 @@ rect.highlight {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 .severity-low {
-    background-color: #73aad8;
+    background-color: #8ba8c0;
 }
 .severity-medium {
     background-color: #f0ad4e;

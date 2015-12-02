@@ -55,6 +55,7 @@ var CTRL_DATES = [];
 var PREFERRED_TRAIL_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ffad33", UA: "#9900cc" };
 var SEVERITY = { LOW: 1, MEDIUM: 2, HIGH: 3 };
 var CHART_TOOLTIP_FORMAT = "<%= datasetLabel %>: <%= value %>";
+var INFO_SEVERITY_KEYWORDS = {"(malware)": SEVERITY.HIGH, "reputation": SEVERITY.LOW, "attacker": SEVERITY.LOW, "spammer": SEVERITY.LOW, "compromised": SEVERITY.LOW, "crawler": SEVERITY.LOW, "scanning": SEVERITY.LOW }
 
 // Reference: https://danlimerick.wordpress.com/2014/01/18/how-to-catch-javascript-errors-with-window-onerror-even-on-chrome-and-firefox/
 window.onerror = function(errorMsg, url, lineNumber) {
@@ -569,24 +570,17 @@ function init(url, from, to) {
                         }
                     }
 
-                    if (data[LOG_COLUMNS.INFO].contains("(malware)"))
-                        severity = SEVERITY.HIGH;
-                    else if (data[LOG_COLUMNS.REFERENCE].contains("(custom)"))
+                    if (data[LOG_COLUMNS.REFERENCE].contains("(custom)"))
                         severity = SEVERITY.HIGH;
                     else if (data[LOG_COLUMNS.REFERENCE].contains("malwaredomainlist"))
                         severity = SEVERITY.HIGH;
-                    else if (data[LOG_COLUMNS.INFO].contains("reputation"))
-                        severity = SEVERITY.LOW;
-                    else if (data[LOG_COLUMNS.INFO].contains("attacker"))
-                        severity = SEVERITY.LOW;
-                    else if (data[LOG_COLUMNS.INFO].contains("spammer"))
-                        severity = SEVERITY.LOW;
-                    else if (data[LOG_COLUMNS.INFO].contains("compromised"))
-                        severity = SEVERITY.LOW;
-                    else if (data[LOG_COLUMNS.INFO].contains("crawler"))
-                        severity = SEVERITY.LOW;
-                    else if (data[LOG_COLUMNS.INFO].contains("scanning"))
-                        severity = SEVERITY.LOW;
+                    else {
+                        for (var keyword in INFO_SEVERITY_KEYWORDS)
+                            if (data[LOG_COLUMNS.INFO].contains(keyword)) {
+                                severity = INFO_SEVERITY_KEYWORDS[keyword];
+                                break;
+                            }
+                    }
 
                     row.push(threatUID);
                     row.push(severity);
