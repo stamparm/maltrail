@@ -60,7 +60,6 @@ senderbase.org
 e5.sk
 ipv6test.com
 bstatic.com
-rncdn1.com
 proofpoint.com
 testanalytics.net
 lswcdn.net
@@ -75,6 +74,26 @@ windows.net
 opendns.com
 chip.de
 spiegel.de
+weebly.com
+disqus.com
+wordpress.com
+spotify.com
+blogspot.com
+edgekey.net
+testflightapp.com
+cdxultra.com
+clickbank.net
+anycastb.com
+msv1.invalid
+rncdn.com
+rncdn1.com
+rncdn2.com
+rncdn3.com
+rncdn4.com
+rncdn5.com
+rncdn6.com
+rncdn7.com
+rncdn8.com
 
 
 # to ignore in direct exe downloads

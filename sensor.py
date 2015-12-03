@@ -58,6 +58,7 @@ from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
 from core.settings import VERSION
 from core.settings import WHITELIST
+from core.settings import WHITELIST_HTTP_REQUEST_KEYWORDS
 from core.update import update
 
 _buffer = None
@@ -269,7 +270,7 @@ def _process_packet(packet, sec, usec):
                             for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
                                 path = path.replace(char, urllib.quote(char))
 
-                        if re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)) and host not in WHITELIST:
+                        if re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)) and host not in WHITELIST and not any(_ in path for _ in WHITELIST_HTTP_REQUEST_KEYWORDS):
                             trail = "%s(%s)" % (host, path)
                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
                             return
@@ -278,7 +279,7 @@ def _process_packet(packet, sec, usec):
                             _ = urlparse.urlparse("http://" % url)  # dummy scheme
                             filename = _.path.split('/')[-1]
                             name, extension = os.path.splitext(filename)
-                            if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and '.'.join(host.split('.')[-2:]) not in WHITELIST and len(name) < 6:
+                            if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and '.'.join(host.split('.')[-2:]) not in WHITELIST and not _.query and len(name) < 10:
                                 trail = "%s(%s)" % (host, path)
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "direct %s download (suspicious)" % extension, "(heuristic)"))
                             elif filename in SUSPICIOUS_FILENAMES:
