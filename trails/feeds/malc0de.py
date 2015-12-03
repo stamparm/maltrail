@@ -19,7 +19,8 @@ def fetch():
     content = retrieve_content(__url__)
 
     if __check__ in content:
-        for match in re.finditer(r"<description>URL: ([^,\s]+)", content):
+        for match in re.finditer(r"<description>URL: ([^,\s]+)[ ,]+IP Address: ([\d.]+)", content):
             retval[match.group(1)] = (__info__, __reference__)
+            retval[match.group(2)] = (__info__, __reference__)
 
     return retval
