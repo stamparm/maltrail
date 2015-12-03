@@ -1045,7 +1045,13 @@ function initDetails() {
             },
             {
                 render: function (data, type, row) {
-                    return (data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data;
+                    var duplicates = data.match(/ \((\+\d+)\)$/);
+                    if (duplicates !== null) {
+                        data = data.replace(duplicates[0], "");
+                        return ((data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data) + '<span class="duplicates">' + duplicates[1] + '</span>';
+                    }
+                    else
+                        return (data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data;
                 },
                 targets: DATATABLES_COLUMNS.REFERENCE
             },
@@ -1350,6 +1356,8 @@ function initDetails() {
             filter = $(this).html().replace(/\([^)]+\)/g, "");
         else if ($(this).find(".time-day").length > 0)
             filter = $(this).find("div")[0].lastChild.textContent;
+        else if ($(this).find(".duplicates").length > 0)
+            filter = this.innerHTML.replace(/<span.+/g, " ").replace(/<.+?>/g, " ");
         else if (this.innerHTML.indexOf("ellipsis") > -1) {
             match = this.innerHTML.match(/title=["']([^"']+)/);
             if (match !== null)

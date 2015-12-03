@@ -371,13 +371,16 @@ rect.highlight {
 ::selection {
     background: yellow;
 }
-.time-day {
+.time-day, .duplicates {
     background-color: #eee;
     border-radius: 20px;
     color: #777;
     font-size: 80%;
     padding: 2px 2px;
     margin-bottom: 1px;
+}
+.duplicates {
+    margin-left: 2px;
 }
 .severity-low, .severity-medium, .severity-high {
     float: center;

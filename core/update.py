@@ -42,6 +42,7 @@ def update(server=None):
     """
 
     trails = {}
+    duplicates = {}
 
     if server:
         print "[i] retrieving trails from provided 'UPDATE_SERVER' server..."
@@ -95,6 +96,10 @@ def update(server=None):
                     try:
                         results = function()
                         for item in results.items():
+                            if item[0] in trails:
+                                if item[0] not in duplicates:
+                                    duplicates[item[0]] = 0
+                                duplicates[item[0]] += 1
                             if not (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) and item[0] in trails):
                                 trails[item[0]] = item[1]
                         if not results and "abuse.ch" not in module.__url__:
@@ -121,6 +126,9 @@ def update(server=None):
                 del trails[key]
                 key = key.lower()
                 trails[key] = _
+            if key in duplicates:
+                _ = trails[key]
+                trails[key] = (_[0], "%s (+%d)" % (_[1], duplicates[key]))
 
         read_whitelist()
 
