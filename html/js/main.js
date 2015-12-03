@@ -2101,8 +2101,8 @@ function initVisual() {
             }
             else
                 for (var key in sparklines) {
-                    _MAX_EVENTS_PER_HOUR = Math.max(_MAX_EVENTS_PER_HOUR, _HOURS[hour][key]);
-                    sparklines[key].push(_HOURS[hour][key]);
+                    _MAX_EVENTS_PER_HOUR = Math.max(_MAX_EVENTS_PER_HOUR, _HOURS[hour][key] | 0);
+                    sparklines[key].push(_HOURS[hour][key] | 0);
                 }
         }
     }
