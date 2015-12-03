@@ -23,7 +23,7 @@ var IP_COUNTRY = {};
 var TRAIL_TYPES = {};
 
 var SPARKLINE_WIDTH = 130;
-var CHART_WIDTH = 900;
+var CHART_WIDTH = 1000;
 var CHART_HEIGHT = 600;
 var PIE_FONT_SIZE = 10;
 var MAX_SOURCES_ITEMS = 40;
@@ -2072,7 +2072,7 @@ function initVisual() {
     total["Threats"] = _THREATS_SORTED.length;
     $('#threats_sparkline').sparkline(data, options);
 
-    // URL, DNS and IP sparklines
+    // Events sparklines
     for (var hour in _HOURS) {
         if (min_ === null)
             min_ = hour;
@@ -2150,7 +2150,7 @@ function initVisual() {
         var _type_counts = [];
 
         for (var key in TRAIL_TYPES)
-            _type_counts.push(_SOURCE_EVENTS[ips[i]][key]);
+            _type_counts.push(_SOURCE_EVENTS[ips[i]][key] | 0);
 
         _.push(_type_counts);
         _TOP_SOURCES.push([ips[i], _type_counts]);
@@ -2160,7 +2160,7 @@ function initVisual() {
         var _other_counts = [];
 
         for (var key in TRAIL_TYPES)
-            _other_counts.push(other_events[key]);
+            _other_counts.push(other_events[key] | 0);
 
         _.push(_other_counts);
         _TOP_SOURCES.push(["Other", other]);
