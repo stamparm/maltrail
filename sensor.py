@@ -177,10 +177,12 @@ def _process_packet(packet, sec, usec):
                 data = packet[h_size:]
 
                 if len(data) > 0 and "HTTP/" in data:
+                    method = None
                     index = data.find("\r\n")
                     if index >= 0:
                         line = data[:index]
                         if line.count(' ') == 2 and " HTTP/" in line:
+                            method = line.split(' ')[0].upper()
                             path = line.split(' ')[1].lower()
                         else:
                             return
@@ -205,7 +207,18 @@ def _process_packet(packet, sec, usec):
                             url = "%s/" % url
 
                         host, path = url.split('/', 1)
+                        host = re.sub(r":80\Z", "", host)
                         path = "/%s" % path
+                        proxy_domain = host.split(':')[0]
+                        _check_domain(proxy_domain, sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP")
+                    elif method == "CONNECT":
+                        if '/' in path:
+                            host, path = path.split('/', 1)
+                            path = "/%s" % path
+                        else:
+                            host, path = path, '/'
+                        host = re.sub(r":80\Z", "", host)
+                        url = "%s%s" % (host, path)
                         proxy_domain = host.split(':')[0]
                         _check_domain(proxy_domain, sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP")
                     else:
@@ -262,7 +275,7 @@ def _process_packet(packet, sec, usec):
                             return
 
                         if '.' in path:
-                            _ = urlparse.urlparse(url)
+                            _ = urlparse.urlparse("http://" % url)  # dummy scheme
                             filename = _.path.split('/')[-1]
                             name, extension = os.path.splitext(filename)
                             if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and '.'.join(host.split('.')[-2:]) not in WHITELIST and len(name) < 6:
