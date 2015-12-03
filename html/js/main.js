@@ -20,7 +20,7 @@ var _TOTAL_EVENTS = 0;
 var _USER = null;
 
 var IP_COUNTRY = {};
-var TRAIL_TYPES = { };
+var TRAIL_TYPES = {};
 
 var SPARKLINE_WIDTH = 130;
 var CHART_WIDTH = 900;
@@ -1646,7 +1646,7 @@ function drawInfo(type) {
                 if (first)
                     labels.push(pad(hours, 2) + "h");
 
-                ticks[type].push(_[i][1]);
+                ticks[type].push(_[i][1] | 0);
             }
 
             first = false;
