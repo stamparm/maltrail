@@ -73,6 +73,8 @@ cdxall.com
 2o7.net
 windows.net
 opendns.com
+chip.de
+spiegel.de
 
 
 # to ignore in direct exe downloads
