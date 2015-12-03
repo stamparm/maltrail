@@ -64,22 +64,27 @@
             <div id="summary_section" class="section" style="margin-top: 10px">Summary:</div>
             <div style="width: 100%; text-align: center">
                 <ul style="list-style: outside none none; overflow: hidden; font-family: sans-serif; padding: 0px; display: inline-block">
-                    <li class="status-button" style="background: radial-gradient(#FF944D 0%, #FF6600 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Events')" title="Events">
-                        <h3 id="events_count">-</h3>
-                        <span class="dynamicsparkline" id="events_sparkline"></span>
-                        <h6 style="margin: 10px">Events</h6>
-                    </li>
-                    <li class="status-button" style="background: radial-gradient(#4DBF4D 0%, #00a300 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Sources')" title="Source IPs">
-                        <h3 id="sources_count">-</h3>
-                        <span class="dynamicsparkline" id="sources_sparkline"></span>
-                        <h6 style="margin: 10px">Sources</h6>
-                    </li>
-                    <li class="status-button" style="background: radial-gradient(#E1626C 0%, #cd1e2d 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Threats')" title="Threats">
+                    <li class="status-button" style="background: radial-gradient(#FF944D 0%, #FF6600 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Threats')" title="Threats">
                         <h3 id="threats_count">-</h3>
                         <span class="dynamicsparkline" id="threats_sparkline"></span>
                         <h6 style="margin: 10px">Threats</h6>
                     </li>
-                    <li class="status-button" style="background: radial-gradient(#C671C6 0%, #b84db8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Trails')" title="Trails">
+                    <li class="status-button" style="background: radial-gradient(#ff6666 0%, #ff1a1a 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Severity')" title="Severity">
+                        <h3 id="severity_count">-</h3>
+                        <span class="dynamicsparkline" id="severity_sparkline"></span>
+                        <h6 style="margin: 10px">Severity</h6>
+                    </li>
+                    <li class="status-button" style="background: radial-gradient(#C671C6 0%, #b84db8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Events')" title="Events">
+                        <h3 id="events_count">-</h3>
+                        <span class="dynamicsparkline" id="events_sparkline"></span>
+                        <h6 style="margin: 10px">Events</h6>
+                    </li>
+                    <li class="status-button" style="background: radial-gradient(#4DBF4D 0%, #00A300 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Sources')" title="Source IPs">
+                        <h3 id="sources_count">-</h3>
+                        <span class="dynamicsparkline" id="sources_sparkline"></span>
+                        <h6 style="margin: 10px">Sources</h6>
+                    </li>
+                    <li class="status-button" style="background: radial-gradient(#8598E0 0%, #4865D0 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Trails')" title="Trails">
                         <h3 id="trails_count">-</h3>
                         <span class="dynamicsparkline" id="trails_sparkline"></span>
                         <h6 style="margin: 10px">Trails</h6>

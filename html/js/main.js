@@ -9,6 +9,7 @@ var _THREATS = {};
 var _SOURCES = {};
 var _TOP_SOURCES = [];
 var _SOURCE_EVENTS = {};
+var _SEVERITY_COUNT = {}
 var _TRAILS = {};
 var _FLOOD_TRAILS = {};
 var _HOURS = {};
@@ -54,6 +55,7 @@ var CTRL_CLICK_PRESSED = false;
 var CTRL_DATES = [];
 var PREFERRED_TRAIL_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ffad33", UA: "#9900cc" };
 var SEVERITY = { LOW: 1, MEDIUM: 2, HIGH: 3 };
+var SEVERITY_COLORS = { 1: "#8ba8c0", 2: "#f0ad4e", 3: "#d9534f"};
 var CHART_TOOLTIP_FORMAT = "<%= datasetLabel %>: <%= value %>";
 var INFO_SEVERITY_KEYWORDS = {"(malware)": SEVERITY.HIGH, "reputation": SEVERITY.LOW, "attacker": SEVERITY.LOW, "spammer": SEVERITY.LOW, "compromised": SEVERITY.LOW, "crawler": SEVERITY.LOW, "scanning": SEVERITY.LOW }
 
@@ -357,11 +359,15 @@ function init(url, from, to) {
     _TRAILS = {};
     _FLOOD_TRAILS = {};
     _HOURS = {};
+    _SEVERITY_COUNT = {}
     TRAIL_TYPES = {};
 
     _DATASET.length = 0;
     _TOTAL_EVENTS = 0;
     _CHUNK_COUNT = 0;
+
+    for (var severity in SEVERITY)
+        _SEVERITY_COUNT[SEVERITY[severity]] = 0;
 
     if (!(document.location.origin.startsWith('http'))) {
         demo = true;
@@ -576,6 +582,8 @@ function init(url, from, to) {
                                 break;
                             }
                     }
+
+                    _SEVERITY_COUNT[severity] += 1;
 
                     row.push(threatUID);
                     row.push(severity);
@@ -946,7 +954,7 @@ function initDetails() {
                         name = "high"
                     else if (data === SEVERITY.MEDIUM)
                         name = "medium";
-                    var retval = "<span class='severity-" + name + "' value='" + data + "'>" + name + "</span>"
+                    var retval = "<span class='severity' style='background-color: " + SEVERITY_COLORS[data] + "' value='" + data + "'>" + name + "</span>"
                     return retval;
                 },
                 targets: DATATABLES_COLUMNS.SEVERITY
@@ -1865,6 +1873,100 @@ function drawInfo(type) {
             }
         };
     }
+    else if (type === "Severity") {
+        var data = [];
+
+        for (var severity in _SEVERITY_COUNT) {
+            var count = _SEVERITY_COUNT[severity];
+            var color = SEVERITY_COLORS[severity];
+            var label = "";
+            for (var key in SEVERITY)
+                if (SEVERITY[key] == severity)
+                    label = key.toLowerCase();
+            data.push({value: count, label: label, color: color})
+        }
+
+        var pie = new d3pie("chart_area", {
+            "header": {
+                "title": {
+                    "fontSize": 1,
+                    "font": DEFAULT_FONT_FAMILY
+                },
+                "subtitle": {
+                    "color": "#999999",
+                    "fontSize": 1,
+                    "font": DEFAULT_FONT_FAMILY
+                },
+                "titleSubtitlePadding": 0
+            },
+            "footer": {
+                "color": "#999999",
+                "fontSize": 1,
+                "font": DEFAULT_FONT_FAMILY,
+                "location": "bottom-left"
+            },
+            "size": {
+                "canvasHeight": CHART_HEIGHT,
+                "canvasWidth": CHART_WIDTH
+            },
+            "data": {
+                "content": data
+            },
+            "labels": {
+                "inner": {
+                    "hideWhenLessThanPercentage": 101
+                },
+                "mainLabel": {
+                    "font": DEFAULT_FONT_FAMILY,
+                    "fontSize": PIE_FONT_SIZE
+                },
+                "percentage": {
+                    "color": "#ffffff",
+                    "font": DEFAULT_FONT_FAMILY,
+                    "decimalPlaces": 0
+                },
+                "value": {
+                    "color": "#adadad",
+                    "font": DEFAULT_FONT_FAMILY,
+                    "fontSize": PIE_FONT_SIZE
+                },
+                "lines": {
+                    "enabled": true
+                }
+            },
+            "tooltips": {
+                "enabled": true,
+                "type": "placeholder",
+                "string": "{label}: {value}, {percentage}%",
+                "styles": {
+                    "font": DEFAULT_FONT_FAMILY
+                }
+            },
+            "effects": {
+                "load": {
+                    "speed": 500
+                },
+                "pullOutSegmentOnClick": {
+                    "effect": "none"
+                }
+            },
+            "misc": {
+                "gradient": {
+                    "enabled": true,
+                    "percentage": 100
+                }
+            },
+            "callbacks": {
+                onClickSegment: function(a) {
+                    var filter = a.data.label;
+                    var table = $('#details').dataTable();
+
+                    table.fnFilter(filter);
+                    scrollTo("#details_section");
+                }
+            }
+        });
+    }
     else if (type === "Threats") {
         var data = [];
         var threshold = 0;
@@ -1986,6 +2088,8 @@ function initVisual() {
     var total = {};
     var data = [];
     var other = 0;
+    var severityMax = null;
+    var severityMaxName = null;
 
     _MAX_EVENTS_PER_HOUR = 0;
     _TRAILS_SORTED = _sort(_TRAILS);
@@ -1995,18 +2099,39 @@ function initVisual() {
         total[type] = 0;
     }
 
+    // Severity sparkline
+    for (var severity in _SEVERITY_COUNT) {
+        if (_SEVERITY_COUNT[severity] * severity > severityMax) {
+            severityMax = _SEVERITY_COUNT[severity] * severity;
+            for (var key in SEVERITY)
+                if (SEVERITY[key] == severity)
+                    severityMaxName = key.toLowerCase();
+        }
+        data.push(_SEVERITY_COUNT[severity]);
+        sliceColors.push(SEVERITY_COLORS[severity])
+    }
+
+    total["Severity"] = severityMaxName;
+
+    var options = { type: 'pie', sliceColors: sliceColors, minSpotColor: "", maxSpotColor: "", spotColor: "", highlightSpotColor: "", highlightLineColor: "", tooltipClassname: "", width: '30', height: '30', offset: -90, disableInteraction: true };
+
+    $('#severity_sparkline').sparkline(data, options);
+
+
     // Trails sparkline
     var threshold = 0;
     for (var i = 0; i < _TRAILS_SORTED.length; i++)
         threshold += _TRAILS_SORTED[i][1];
 
     threshold = threshold / 100;
+    options.sliceColors = [];
+    data = [];
 
     for (var i = 0; i < _TRAILS_SORTED.length; i++) {
         if (_TRAILS_SORTED[i][1] >= threshold) {
             var type = _TRAILS_SORTED[i][0].match(/\(([A-Z]+)\)/)[1];
             data.push(_TRAILS_SORTED[i][1]);
-            sliceColors.push(type in TRAIL_TYPES ? TRAIL_TYPES[type] : getHashColor(type));
+            options.sliceColors.push(type in TRAIL_TYPES ? TRAIL_TYPES[type] : getHashColor(type));
         }
         else
             other += _TRAILS_SORTED[i][1];
@@ -2014,17 +2139,15 @@ function initVisual() {
 
     if (other > 0) {
         data.push(other);
-        sliceColors.push(OTHER_COLOR);
+        options.sliceColors.push(OTHER_COLOR);
     }
 
     if (data.length === 0) {
         data.push(1);
-        sliceColors.push(OTHER_COLOR);
+        options.sliceColors.push(OTHER_COLOR);
     }
 
     total["Trails"] = _TRAILS_SORTED.length;
-
-    var options = { type: 'pie', sliceColors: sliceColors, minSpotColor: "", maxSpotColor: "", spotColor: "", highlightSpotColor: "", highlightLineColor: "", tooltipClassname: "", width: '30', height: '30', offset: -90, disableInteraction: true };
 
     $('#trails_sparkline').sparkline(data, options);
 
@@ -2198,7 +2321,7 @@ function initVisual() {
 
     sum = 0;
     $("[id$=_count]").each(function() {
-        sum += total[$(this).attr("id").replace(/_count/, "").capitalizeFirstLetter()];
+        sum += parseInt(total[$(this).attr("id").replace(/_count/, "").capitalizeFirstLetter()]) | 0;
     });
 
     for (var key in total)
