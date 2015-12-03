@@ -92,12 +92,15 @@ def update(server=None):
             for name, function in inspect.getmembers(module, inspect.isfunction):
                 if name == "fetch":
                     print(" [o] '%s'" % module.__url__)
-                    results = function()
-                    for item in results.items():
-                        if not (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) and item[0] in trails):
-                            trails[item[0]] = item[1]
-                    if not results and "abuse.ch" not in module.__url__:
-                        print "[!] something went wrong during remote data retrieval ('%s')" % module.__url__
+                    try:
+                        results = function()
+                        for item in results.items():
+                            if not (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) and item[0] in trails):
+                                trails[item[0]] = item[1]
+                        if not results and "abuse.ch" not in module.__url__:
+                            print "[!] something went wrong during remote data retrieval ('%s')" % module.__url__
+                    except Exception, ex:
+                        print "[!] something went wrong during processing of feed file '%s' ('%s')" % (filename, ex)
 
         # basic cleanup
         for key in trails.keys():
