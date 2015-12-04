@@ -12,18 +12,18 @@ table.dataTable thead > tr > th { padding-left: 10px }
 table.dataTable { border-color: #a8a8a8 }
 table.dataTable .highlighted { background-color: #abb9d3 !important }
 .details_total { font-size: 120%; font-weight: bold }
-.label-type, .tag { background-color: #777777; font-weight: bold; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; border-radius: 3px; padding: 1px 2px; cursor: pointer; cursor: hand; border: 1px solid #000000; }
+.label-type, .tag { background-color: #777777; font-weight: bold; text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; border-radius: 3px; padding: 1px 2px; cursor: pointer; cursor: hand; border: 1px solid #000000; }
 .label-type { font-size: 80%; }
 .label-url { background-color: #ff9900 }
 .label-ip { background-color: #dc3912 }
 .label-dns { background-color: #3366cc }
 .tag { margin-right: 2px }
 .white-label-text {
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25);
     color: white;
 }
 .black-label-text {
-    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25);
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.25);
     color: black;
 }
 .container { margin-left: 10px; margin-right: 10px; width: 99% }
@@ -65,13 +65,13 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     color: #fff;
     display: block;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 11px;
     margin: 5px;
     width: 150px;
     float: left;
     line-height: 20px;
     cursor: pointer;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25);
     /*box-shadow: 0 1px 1px #202020 inset, 0 3px 6px -5px #bbb;*/
     border: 3px solid;
 }
@@ -397,7 +397,7 @@ rect.highlight {
     font-size: 80%;
     font-weight: bold;
     box-sizing: border-box;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25);
     border: 1px solid #000000;
 }
 .bottom {

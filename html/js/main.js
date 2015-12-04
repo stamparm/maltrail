@@ -673,21 +673,10 @@ function init(url, from, to) {
 }
 
 function resetStatusButtons() {
-    statusButtons = $("li.status-button");
-    for (var i = 0; i < statusButtons.length; i++) {
-        var button = statusButtons[i];
-        var color = button.style.background.match(/(rgb\([^)]+\))\ 100%/)[1];
-        var components = color.match(/\d+/g);
-        var luminescence = -0.2;
-        for (var j = 0; j < components.length; j++) {
-            var component = components[j];
-            color = color.replace(component, Math.round(Math.min(Math.max(0, parseInt(component) + (parseInt(component) * luminescence)), 255)));
-        }
-        button.style.border = "1px solid " + color;
-        button.style["-webkit-box-shadow"] = "inset 0px -2px " + color;
-        button.style.boxShadow = "inset 0px -2px " + color;
-        button.style.textShadow = "0 -2px 0 " + color;
-    }
+    $("li.status-button").each(function() {
+        $(this).css("text-shadow", "-1px -1px 0 rgba(0, 0, 0, 0.50)");
+        $(this).css("border", "3px groove black");
+    });
 }
 
 function scrollTo(id) {
@@ -1617,15 +1606,14 @@ function drawInfo(type) {
     if (jQuery.isEmptyObject(_HOURS))
         return;
 
-    if ($("#" + type.toLowerCase() + "_count").parent()[0].style.textShadow.startsWith("none")) {
+    if ($("#" + type.toLowerCase() + "_count").parent()[0].style.border.contains("solid")) {
         resetStatusButtons();
         return;
     }
 
     resetStatusButtons();
-    $("#" + type.toLowerCase() + "_count").parent().css("box-shadow", "inset 0px 0px 1px 1px white");
     $("#" + type.toLowerCase() + "_count").parent().css("text-shadow", "none");
-    $("#" + type.toLowerCase() + "_count").parent().css("border", "none");
+    $("#" + type.toLowerCase() + "_count").parent().css("border", "1px solid black");
 
     if (type === "Events") {
         var ticks = {};
