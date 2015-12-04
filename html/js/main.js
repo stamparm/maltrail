@@ -1612,7 +1612,7 @@ function drawInfo(type) {
 
     resetStatusButtons();
     $("#" + type.toLowerCase() + "_count").parent().css("text-shadow", "none");
-    $("#" + type.toLowerCase() + "_count").parent().css("border", "1px solid rgba(0, 0, 0, 0.50");
+    $("#" + type.toLowerCase() + "_count").parent().css("border", "1px solid rgba(0, 0, 0, 0.25");
 
     if (type === "Events") {
         var ticks = {};
