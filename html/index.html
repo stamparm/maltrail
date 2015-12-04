@@ -10,6 +10,11 @@
             // Reference: https://danlimerick.wordpress.com/2014/01/18/how-to-catch-javascript-errors-with-window-onerror-even-on-chrome-and-firefox/
             window.onerror = function(errorMsg, url, lineNumber) {
                 alert(errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
+                try {
+                    $("body").loader("hide");
+                }
+                catch(err) {
+                }
             };
         </script>
         <script type="text/javascript" src="js/thirdparty.min.js"></script>
@@ -64,30 +69,30 @@
             <div id="summary_section" class="section" style="margin-top: 10px">Summary:</div>
             <div style="width: 100%; text-align: center">
                 <ul style="list-style: outside none none; overflow: hidden; font-family: sans-serif; padding: 0px; display: inline-block">
-                    <li class="status-button" style="background: radial-gradient(#4DBF5D 0%, #369643 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Threats')" title="Threats">
-                        <h3 id="threats_count">-</h3>
+                    <li class="status-button" style="background: radial-gradient(#FFb46D 0%, #FF6600 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Threats')" title="Threats">
+                        <h4 id="threats_count">-</h4>
                         <span class="dynamicsparkline" id="threats_sparkline"></span>
-                        <h6 style="margin: 10px">Threats</h6>
-                    </li>
-                    <li class="status-button" style="background: radial-gradient(#ff7777 0%, #ff3333 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Severity')" title="Severity">
-                        <h3 id="severity_count">-</h3>
-                        <span class="dynamicsparkline" id="severity_sparkline"></span>
-                        <h6 style="margin: 10px">Severity</h6>
+                        <h6>Threats</h6>
                     </li>
                     <li class="status-button" style="background: radial-gradient(#8598f0 0%, #4966e9 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Events')" title="Events">
-                        <h3 id="events_count">-</h3>
+                        <h4 id="events_count">-</h4>
                         <span class="dynamicsparkline" id="events_sparkline"></span>
-                        <h6 style="margin: 10px">Events</h6>
+                        <h6>Events</h6>
                     </li>
-                    <li class="status-button" style="background: radial-gradient(#ff946d 0%, #ff6933 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Sources')" title="Source IPs">
-                        <h3 id="sources_count">-</h3>
+                    <li class="status-button" style="background: radial-gradient(#5DcF5D 0%, #00a300 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Severity')" title="Severity">
+                        <h4 id="severity_count">-</h4>
+                        <span class="dynamicsparkline" id="severity_sparkline"></span>
+                        <h6>Severity</h6>
+                    </li>
+                    <li class="status-button" style="background: radial-gradient(#ff9999 0%, #ff3333 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Sources')" title="Source IPs">
+                        <h4 id="sources_count">-</h4>
                         <span class="dynamicsparkline" id="sources_sparkline"></span>
-                        <h6 style="margin: 10px">Sources</h6>
+                        <h6>Sources</h6>
                     </li>
-                    <li class="status-button" style="background: radial-gradient(#C681C6 0%, #b04fb0 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Trails')" title="Trails">
-                        <h3 id="trails_count">-</h3>
+                    <li class="status-button" style="background: radial-gradient(#d681d6 0%, #b84db8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Trails')" title="Trails">
+                        <h4 id="trails_count">-</h4>
                         <span class="dynamicsparkline" id="trails_sparkline"></span>
-                        <h6 style="margin: 10px">Trails</h6>
+                        <h6>Trails</h6>
                     </li>
                 </ul>
 

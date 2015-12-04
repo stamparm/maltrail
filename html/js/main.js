@@ -42,7 +42,7 @@ var THREAT_PIC_HASH = null; // e.g. https://robohash.org/ or https://flathash.co
 var DEFAULT_STATUS_BORDER = "1px solid #a8a8a8";
 var DEFAULT_FONT_FAMILY = "Verdana, Geneva, sans-serif";
 var LOG_COLUMNS = { TIME: 0, SENSOR: 1, SRC_IP: 2, SRC_PORT: 3, DST_IP: 4, DST_PORT: 5, PROTO: 6, TYPE: 7, TRAIL: 8, INFO: 9, REFERENCE: 10 };
-var DATATABLES_COLUMNS = { THREAT: 0, SEVERITY: 1, SENSOR: 2, EVENTS: 3, FIRST_TIME: 4, LAST_TIME: 5, SRC_IP: 6, SRC_PORT: 7, DST_IP: 8, DST_PORT: 9, PROTO: 10, TYPE: 11, TRAIL: 12, INFO: 13, REFERENCE: 14, TAGS: 15 };
+var DATATABLES_COLUMNS = { THREAT: 0, SENSOR: 1, EVENTS: 2, SEVERITY: 3, FIRST_TIME: 4, LAST_TIME: 5, SRC_IP: 6, SRC_PORT: 7, DST_IP: 8, DST_PORT: 9, PROTO: 10, TYPE: 11, TRAIL: 12, INFO: 13, REFERENCE: 14, TAGS: 15 };
 var TOP_PORTS = { 19: "CHARGEN", 21: "FTP", 22: "SSH", 23: "Telnet", 25: "SMTP", 53: "DNS", 80: "HTTP", 110: "POP3", 123: "NTP", 143: "IMAP", 161: "SNMP", 389: "LDAP", 443: "HTTPS", 445: "Microsoft-DS", 587: "Submission", 902: "VMware", 990: "FTPS", 993: "IMAPS", 995: "POP3S", 1433: "MsSQL", 1434: "MsSQL", 1723: "PPTP", 1900: "SSDP", 3306: "MySQL", 3389: "RDP", 5060: "SIP", 5900: "VNC", 8080: "HTTP-proxy" };
 var SEARCH_TIP_TIMER = 0;
 var PAPAPARSE_COMPLETE_TIMER = 0;
@@ -586,9 +586,9 @@ function init(url, from, to) {
                     _SEVERITY_COUNT[severity] += 1;
 
                     row.push(threatUID);
-                    row.push(severity);
                     row.push(data[LOG_COLUMNS.SENSOR]);
                     row.push(times);
+                    row.push(severity);
                     row.push(minTime);
                     row.push(maxTime);
                     row.push(data[LOG_COLUMNS.SRC_IP]);
@@ -916,9 +916,9 @@ function initDetails() {
         data: _DATASET,
         columns: [
             { "title": "threat", "type": "threat", "class": "center" },
-            { "title": "severity", "type": "severity", "class": "center" },
             { "title": "sensor", "class": "center" },
             { "title": "events", "type": "events", "class": "right" },
+            { "title": "severity", "type": "severity", "class": "center" },
             { "title": "first_seen", "class": "center" },
             { "title": "last_seen", "class": "center" },
             { "title": "src_ip", "type": "ip-address", "class": "right" },
@@ -943,7 +943,7 @@ function initDetails() {
         columnDefs: [
             {
                 orderSequence: [ "desc", "asc" ],
-                targets: [ DATATABLES_COLUMNS.SEVERITY, DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.LAST_TIME ]
+                targets: [ DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.SEVERITY, DATATABLES_COLUMNS.LAST_TIME ]
             },
             {
                 render: function (data, type, row) {
@@ -1080,7 +1080,7 @@ function initDetails() {
             },
             {
                width: "1%",
-               targets: [ DATATABLES_COLUMNS.THREAT, DATATABLES_COLUMNS.SEVERITY, DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.FIRST_TIME, DATATABLES_COLUMNS.LAST_TIME, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.SRC_PORT, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.DST_PORT, DATATABLES_COLUMNS.PROTO, DATATABLES_COLUMNS.TYPE ]
+               targets: [ DATATABLES_COLUMNS.THREAT, DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.SEVERITY, DATATABLES_COLUMNS.FIRST_TIME, DATATABLES_COLUMNS.LAST_TIME, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.SRC_PORT, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.DST_PORT, DATATABLES_COLUMNS.PROTO, DATATABLES_COLUMNS.TYPE ]
             }
         ],
         oLanguage: {
