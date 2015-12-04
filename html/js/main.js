@@ -1020,7 +1020,8 @@ function initDetails() {
             {
                 render: function ( data, type, row ) {
                     var color = data in TRAIL_TYPES ? TRAIL_TYPES[data] : getHashColor(data);
-                    return '<span class="label-type ' + getContrastYIQ(color) + '-label-text" style="background-color: ' + color + '">' + data + '</span>';
+                    //return '<span class="label-type ' + getContrastYIQ(color) + '-label-text" style="background-color: ' + color + '">' + data + '</span>';
+                    return '<span class="label-type white-label-text" style="background-color: ' + color + '">' + data + '</span>';
                 },
                 targets: DATATABLES_COLUMNS.TYPE
             },
