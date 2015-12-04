@@ -691,6 +691,7 @@ function resetStatusButtons() {
 }
 
 function scrollTo(id) {
+    debugger;
     if ($(id).length > 0)
         $("html, body").animate({
             scrollTop: $(id).offset().top
@@ -1702,7 +1703,7 @@ function drawInfo(type) {
                 var table = $('#details').dataTable();
 
                 table.fnFilter(filter);
-                scrollTo("#details_section");
+                scrollTo("#details");
             }
         };
     }
@@ -1815,7 +1816,7 @@ function drawInfo(type) {
                         var table = $('#details').dataTable();
 
                         table.fnFilter(filter);
-                        scrollTo("#details_section");
+                        scrollTo("#details");
                     }
                 }
             }
@@ -1868,7 +1869,7 @@ function drawInfo(type) {
                     var table = $('#details').dataTable();
 
                     table.fnFilter(filter);
-                    scrollTo("#details_section");
+                    scrollTo("#details");
                 }
             }
         };
@@ -1962,7 +1963,7 @@ function drawInfo(type) {
                     var table = $('#details').dataTable();
 
                     table.fnFilter(filter);
-                    scrollTo("#details_section");
+                    scrollTo("#details");
                 }
             }
         });
@@ -2072,7 +2073,7 @@ function drawInfo(type) {
                         var table = $('#details').dataTable();
 
                         table.fnFilter(filter);
-                        scrollTo("#details_section");
+                        scrollTo("#details");
                     }
                 }
             }
