@@ -76,14 +76,13 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     border: 3px solid;
 }
 .status-button h6 {
-    margin-top: 10px;
-    /*margin: 10px;*/
-    font-weight: bold;
+    margin: 8px;
+    font-weight: 500;
     font-size: 90%;
 }
 .status-button h4 {
-    margin-top: 10px;
-    font-weight: bold;
+    margin: 8px;
+    font-weight: 700;
 }
 .header {
     /*background: none repeat scroll 0 0 #555;*/
