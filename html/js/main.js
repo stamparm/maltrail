@@ -680,7 +680,6 @@ function resetStatusButtons() {
 }
 
 function scrollTo(id) {
-    debugger;
     if ($(id).length > 0)
         $("html, body").animate({
             scrollTop: $(id).offset().top
@@ -2079,6 +2078,7 @@ function initVisual() {
     var other = 0;
     var severityMax = null;
     var severityMaxName = null;
+    var severitySum = 0;
 
     _MAX_EVENTS_PER_HOUR = 0;
     _TRAILS_SORTED = _sort(_TRAILS);
@@ -2096,8 +2096,14 @@ function initVisual() {
                 if (SEVERITY[key] == severity)
                     severityMaxName = key.toLowerCase();
         }
+        severitySum += _SEVERITY_COUNT[severity];
         data.push(_SEVERITY_COUNT[severity]);
         sliceColors.push(SEVERITY_COLORS[severity])
+    }
+
+    if (severitySum === 0) {
+        data = [1];
+        sliceColors = [OTHER_COLOR];
     }
 
     total["Severity"] = severityMaxName;
