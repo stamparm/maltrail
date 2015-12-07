@@ -1,4 +1,4 @@
-body { font: 11px Verdana, Geneva, sans-serif }
+body { font: 11px Verdana, Geneva, sans-serif; background-color: #fcfcfc }
 table { font: 11px Verdana, Geneva, sans-serif }
 td, th { padding: 2px 4px }
 table.dataTable tr { background-color: #fff; border-color: #a8a8a8 }
@@ -413,4 +413,4 @@ rect.highlight {
 #table-hosts, #table-hosts th, #table-hosts td {
     border: 1px solid #a8a8a8;
 }
-#chart_area { background-color: white; }
+#chart_area { background-color: #fcfcfc; }
