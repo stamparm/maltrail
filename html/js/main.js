@@ -1051,8 +1051,15 @@ function initDetails() {
                         data = data.replace(duplicates[0], "");
                         return ((data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data) + '<span class="duplicates">' + duplicates[1] + '</span>';
                     }
-                    else
-                        return (data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data;
+
+                    duplicates = data.match(/ \(\+(.+)\)$/);
+                    if (duplicates !== null) {
+                        var items = duplicates[1].split(',');
+                        data = data.replace(duplicates[0], "");
+                        return ((data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data) + '<span title="' + duplicates[1] + '" class="duplicates">+' + items.length + '</span>';
+                    }
+
+                    return (data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data;
                 },
                 targets: DATATABLES_COLUMNS.REFERENCE
             },

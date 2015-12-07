@@ -98,8 +98,8 @@ def update(server=None):
                         for item in results.items():
                             if item[0] in trails:
                                 if item[0] not in duplicates:
-                                    duplicates[item[0]] = 0
-                                duplicates[item[0]] += 1
+                                    duplicates[item[0]] = set((trails[item[0]][1],))
+                                duplicates[item[0]].add(item[1][1])
                             if not (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) and item[0] in trails):
                                 trails[item[0]] = item[1]
                         if not results and "abuse.ch" not in module.__url__:
@@ -128,7 +128,7 @@ def update(server=None):
                 trails[key] = _
             if key in duplicates:
                 _ = trails[key]
-                trails[key] = (_[0], "%s (+%d)" % (_[1], duplicates[key]))
+                trails[key] = (_[0], "%s (+%s)" % (_[1], ','.join(sorted(duplicates[key] - set((_[1],))))))
 
         read_whitelist()
 
