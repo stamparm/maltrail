@@ -675,7 +675,7 @@ function init(url, from, to) {
 function resetStatusButtons() {
     $("li.status-button").each(function() {
         $(this).css("text-shadow", "-1px -1px 0 rgba(0, 0, 0, 0.50)");
-        $(this).css("border", "3px groove black");
+        $(this).css("border", "3px groove rgba(0, 0, 0, 0.50)");
     });
 }
 
