@@ -1439,7 +1439,7 @@ if (typeof String.prototype.startsWith !== "function") {
 }
 
 if (typeof String.prototype.contains !== "function") {
-    String.prototype.startsWith = function (str){
+    String.prototype.contains = function (str){
         return this.indexOf(str) !== -1;
     };
 }
