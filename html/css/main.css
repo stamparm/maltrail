@@ -162,6 +162,7 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
 }
 .ui-tooltip {
     max-width: 600px;
+    white-space: pre-wrap;
 }
 .label {
     font-size: 11px;

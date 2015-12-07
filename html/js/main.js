@@ -1002,6 +1002,9 @@ function initDetails() {
                             title = title.replace(/"/g, '%22');
                         }
 
+                        // Reference: https://stackoverflow.com/questions/3340802/add-line-break-within-tooltips
+                        title = title.replace(/([^\s]{50})/g, "$1&#013;");
+
                         if (left)
                             data = "<span title=\"" + title + "\" onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>" + common;
                         else
