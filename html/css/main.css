@@ -93,6 +93,8 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     border-bottom: solid 1px #000;
     line-height: 25px;
     vertical-align: middle;
+    position: fixed;
+    top: 0px;
 }
 .header-a {
     color: #efefef;
