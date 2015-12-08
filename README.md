@@ -9,35 +9,38 @@
 The following (black)lists (i.e. feeds) are being utilized:
 
 ```
-asprox, autoshun, bambenekconsultingc2, bambenekconsultingdga,
-blocklist, botscout, bruteforceblocker, ciarmy,
-cybercrimetracker, dshield, emergingthreatsbot, emergingthreatscip,
-malc0de, malwaredomainlist, malwaredomains, malwaremustdie,
-malwarepatrol, malwareurlsnormal, maxmind, myip, nothink,
-openbl, openphish, palevotracker, torproject, vxvault,
-zeustrackerdns, zeustrackerip, zeustrackermonitor, zeustrackerurl,
-etc.
+alienvault, asprox, autoshun, badips, bambenekconsultingc2,
+bambenekconsultingdga, binarydefense, blocklist, botscout,
+bruteforceblocker, ciarmy, cruzit, cybercrimetracker, dshielddns,
+dshieldip, emergingthreatsbot, emergingthreatscip,
+malc0de, malwaredomainlist, malwaredomains, malwarepatrol,
+malwareurlsnormal, maxmind, myip, nothink, ntpot, openbl,
+openphish, palevotracker, proxylists, riproxies, rutgers,
+sblam, socksproxy, sslipbl, talosintel, torproject, torstatus,
+voipbl, vxvault, zeustrackerdns, zeustrackerip,
+zeustrackermonitor, zeustrackerurl, etc.
 ```
 
 As of static entries, the trails for the following malicious entities (e.g. malware C&Cs) have been manually included (from various AV reports):
 
 ```
 alureon, android_stealer, angler, aridviper, axpergle,
-babar, balamid, bankpatch, bedep, black_vine, bubnix,
-carbanak, careto, casper, chewbacca, cleaver, conficker,
-cosmicduke, couponarific, crilock, cryptolocker, cryptowall,
-ctblocker, darkhotel, defru, desertfalcon, destory,
-dorifel, dorkbot, dridex, dukes, dursg, dyreza,
-emotet, equation, evilbunny, expiro, fakeran, fareit,
-fbi_ransomware, fiexp, fignotok, fin4, finfisher,
-gamarue, gauss, htran, jenxcus, kegotip, kovter,
-lollipop, lotus_blossom, luckycat, mariposa, miniduke,
-nbot, nettraveler, neurevt, nitol, no-ip, nonbolqu,
-nuqel, nwt, nymaim, palevo, pdfjsc, pift, plugx,
-powelike, proslikefan, pushdo, ransirac, redoctober,
-reveton, russian_doll, sality, sathurbot, scieron,
-sefnit, shylock, siesta, simda, sinkhole_kaspersky,
-sinkhole_shadowserver, skyper, smsfakesky, snake, snifula,
+babar, balamid, bamital, bankpatch, bedep, black_vine,
+bubnix, carbanak, careto, casper, chewbacca, cleaver,
+conficker, cosmicduke, couponarific, crilock, cryptolocker,
+cryptowall, ctblocker, darkhotel, defru, desertfalcon,
+destory, dorifel, dorkbot, dridex, dukes, dursg,
+dyreza, emotet, equation, evilbunny, expiro, fakeran,
+fareit, fbi_ransomware, fiexp, fignotok, fin4,
+finfisher, gamarue, gauss, htran, jenxcus, kegotip,
+kovter, lollipop, lotus_blossom, luckycat, mariposa,
+miniduke, modpos, nbot, nettraveler, neurevt, nitol,
+no-ip, nonbolqu, nuqel, nwt, nymaim, palevo, pdfjsc,
+pift, plugx, ponmocup, powelike, proslikefan, pushdo,
+ransirac, redoctober, reveton, russian_doll, sality,
+sathurbot, scieron, sefnit, shylock, siesta, simda,
+sinkhole_abuse, sinkhole_kaspersky, sinkhole_shadowserver,
+sinkhole_sinkdns, skyper, smsfakesky, snake, snifula,
 sofacy, stuxnet, teerac, teslacrypt, torpig,
 torrentlocker, unruy, upatre, vawtrak, virut, vobfus,
 volatile_cedar, vundo, waterbug, zeroaccess, zlob, etc.
@@ -64,7 +67,7 @@ cd maltrail
 sudo python sensor.py
 ```
 
-![Sensor](http://i.imgur.com/VazAN4k.png)
+![Sensor](http://i.imgur.com/PC3Ze3b.png)
 
 To start the (optional) **Server** on same machine, open a new terminal and execute the following:
 
@@ -74,7 +77,7 @@ cd maltrail
 python server.py
 ```
 
-![Server](http://i.imgur.com/NZP3SIe.png)
+![Server](http://i.imgur.com/XqVOjSe.png)
 
 To test that everything is up and running execute the following:
 
@@ -98,7 +101,7 @@ Sensor's configuration can be found inside the `maltrail.conf` file's section `[
 If option `USE_MULTIPROCESSING` is set to `true` then all CPU cores will be used. One core will be used only for packet capture (with appropriate affinity, IO priority and nice level settings), while other cores will be used for packet processing. Otherwise, everything will be run on a single core. Option `USE_FEED_UPDATES` can be used to turn off the trail updates from feeds altogether (and just use the provided static ones). Option `UPDATE_PERIOD` contains the number of seconds between each automatic trails update (Note: default value is set to `86400` (i.e. one day)) by using definitions inside the `trails` directory (Note: both **Sensor** and **Server** take care of the trails update). Option `CUSTOM_TRAILS_DIR` can be used by user to provide location of directory containing the custom trails (`*.txt`) files.
 Option `USE_HEURISTICS` turns on heuristic mechanisms (e.g. `long domain name (suspicious)`, `excessive no such domain name (suspicious)`, `direct .exe download (suspicious)`, etc.), potentially introducing false positives. Option `CAPTURE_BUFFER` presents a total memory (in bytes of percentage of total physical memory) to be used in case of multiprocessing mode for storing packet capture in a ring buffer for further processing by non-capturing processes. Option `MONITOR_INTERFACE` should contain the name of the capturing interface. Use value `any` to capture from all interfaces (if OS supports this). Option `CAPTURE_FILTER` should contain the network capture (`tcpdump`) filter to skip the uninteresting packets and ease the capturing process. Option `SENSOR_NAME` contains the name that should be appearing inside the events `sensor_name` value, so the event from one sensor could be distinguished from the other. If option `LOG_SERVER` is set, then all events are being sent remotely to the **Server**, otherwise they are stored directly into the logging directory set with option `LOG_DIR` inside the `[Server]` section. In case that the option `UPDATE_SERVER` is set, then all the trails are being pulled from the given location, otherwise they are being updated from trails definitions located inside the installation itself.
 
-#### Startup
+#### Running
 
 When running the sensor (e.g. `sudo python sensor.py`) for the first time and/or after a longer period of non-running, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). After the initialization, it will start monitoring the configured interface (option `MONITOR_INTERFACE` inside the `maltrail.conf`) and write the events to either the configured log directory (option `LOG_DIR`) or send them remotely to the logging/reporting **Server** (option `LOG_SERVER`).
 
@@ -122,7 +125,7 @@ Subsection `USERS` contains user's configuration settings. Each user entry consi
 
 ![Configuration users](http://i.imgur.com/o0Tp0IY.png)
 
-#### Startup
+#### Running
 
 Same as for **Sensor**, when running the **Server** (e.g. `python server.py`) for the first time and/or after a longer period of non-running, if option `USE_SERVER_UPDATE_TRAILS` is set to `true`, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). Its basic function is to store the log entries inside the logging directory (i.e. option `LOG_DIR`) and provide the web reporting interface for presenting those same entries to the end-user (Note: there is no need install the 3rd party web server packages like Apache):
 
