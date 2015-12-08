@@ -17,7 +17,7 @@ table.dataTable .highlighted { background-color: #abb9d3 !important }
 .label-url { background-color: #ff9900 }
 .label-ip { background-color: #dc3912 }
 .label-dns { background-color: #3366cc }
-.tag { margin-right: 2px }
+.tag { margin-right: 2px; font-size: 80% }
 .white-label-text {
     text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25);
     color: white;
