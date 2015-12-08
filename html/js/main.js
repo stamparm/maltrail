@@ -100,7 +100,7 @@ function initDialogs() {
         modal: true,
         buttons: {
             Cancel: function() {
-                $(this).dialog("close");
+                $(this).dialog('destroy').remove();
             },
             "Log In": function() {
                 $.ajax({
@@ -1136,18 +1136,22 @@ function initDetails() {
                                     height: "auto",
                                     modal: true,
                                     buttons: {
-                                        "Close": function() {
+                                        Close: function() {
                                             $(this).dialog("close");
                                             $('#dialog-hosts').remove();
                                         },
-                                        "Add": function() {
-                                            $('#table-hosts tr:last').after('<tr><td>&nbsp;</td><td>&nbsp;</td></tr>');
+                                        Add: function() {
+                                            $('#table-hosts tr:last').after('<tr class="host"><td>&nbsp;</td><td>&nbsp;</td></tr>');
                                             _initHosts();
                                             $("#table-hosts tr:last td:first").focus().click();
                                         }
                                     },
                                     open: function(event, ui) {
                                         _initHosts();
+                                    },
+                                    close: function(event, ui) {
+                                        //$('#table-hosts .host')
+                                        $(this).dialog('destroy').remove();
                                     }
                                 });
                             }
@@ -1172,6 +1176,9 @@ function initDetails() {
                                             $.jStorage.flush();
                                             location.reload();
                                         }
+                                    },
+                                    close: function(event, ui) {
+                                        $(this).dialog('destroy').remove();
                                     }
                                 });
                             }
