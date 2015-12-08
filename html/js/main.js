@@ -856,13 +856,13 @@ function copyEllipsisToClipboard(event) {
         }
         tooltip.remove();
     }
-    window.prompt("Copy to clipboard (press Ctrl+C)", text);
+    window.prompt("Copy details to clipboard (press Ctrl+C)", text);
 }
 
 function copyEventsToClipboard(event) {
     var target = $(event.target);
     var text = target.parent().find("span").text();
-    window.prompt("Copy to clipboard (press Ctrl+C)", text);
+    window.prompt("Copy details to clipboard (press Ctrl+C)", text);
     debugger;
 }
 
@@ -1028,7 +1028,7 @@ function initDetails() {
             },
             {
                 render: function ( data, type, row ) {
-                    return "<div onmouseup='copyEventsToClipboard(event)'>" + data.length + '</div><span class="hidden">' + data.join(DATA_PARTS_DELIMITER) + '</span>';
+                    return "<div onmouseup='copyEventsToClipboard(event)' style='cursor:pointer'>" + data.length + '</div><span class="hidden">' + data.join(DATA_PARTS_DELIMITER) + '</span>';
                 },
                 targets: DATATABLES_COLUMNS.EVENTS
             },
