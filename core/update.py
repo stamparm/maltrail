@@ -71,7 +71,7 @@ def update(server=None):
         except Exception, ex:
             exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
 
-        print "[i] updating trails..."
+        print "[i] updating trails (this might take a while)..."
 
         if config.USE_FEED_UPDATES:
             sys.path.append(os.path.abspath(os.path.join(ROOT_DIR, "trails", "feeds")))
