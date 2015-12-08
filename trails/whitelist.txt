@@ -94,6 +94,7 @@ rncdn5.com
 rncdn6.com
 rncdn7.com
 rncdn8.com
+yahoo.com
 
 
 # to ignore in direct exe downloads

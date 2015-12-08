@@ -493,7 +493,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         else:
             raise
 
-    print "[i] running HTTP%s server at '%s:%d'" % ('S' if pem else "", server.server_address[0], server.server_address[1])
+    print "[i] starting HTTP%s server at '%s:%d'" % ('S' if pem else "", server.server_address[0], server.server_address[1])
+
+    print "[o] running..."
 
     if join:
         server.serve_forever()

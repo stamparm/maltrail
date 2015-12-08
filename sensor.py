@@ -399,7 +399,7 @@ def init():
         if subprocess.mswindows:
             exit("[!] virtual interface 'any' is not available on Windows OS")
         else:
-            print("[!] in case of any problems with packet capture on virtual interface 'any', please put all sniffing interfaces to promiscuous mode manually (e.g. 'sudo ifconfig eth0 promisc')")
+            print("[!] in case of any problems with packet capture on virtual interface 'any', please put all monitoring interfaces to promiscuous mode manually (e.g. 'sudo ifconfig eth0 promisc')")
 
     if config.MONITOR_INTERFACE not in pcapy.findalldevs():
         print("[!] interface '%s' not found" % config.MONITOR_INTERFACE)
@@ -467,6 +467,8 @@ def monitor():
     """
     Sniffs/monitors given capturing interface
     """
+
+    print("[o] running...")
 
     def packet_handler(header, packet):
         global _count
