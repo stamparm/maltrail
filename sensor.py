@@ -345,7 +345,7 @@ def _process_packet(packet, sec, usec):
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
                 i = iph_length + ETH_LENGTH
-                if packet[i] == 0:  # Echo reply
+                if packet[i] != 8:  # Echo request
                     return
 
             if dst_ip in trails:
