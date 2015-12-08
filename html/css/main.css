@@ -414,3 +414,11 @@ rect.highlight {
     border: 1px solid #a8a8a8;
 }
 #chart_area { background-color: #fcfcfc; }
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
