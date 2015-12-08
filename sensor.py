@@ -339,6 +339,11 @@ def _process_packet(packet, sec, usec):
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "excessive no such domain name (suspicious)", "(heuristic)"))
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
+            if protocol == socket.IPPROTO_ICMP:
+                i = iph_length + ETH_LENGTH
+                if packet[i] == 0:  # Echo reply
+                    return
+
             if dst_ip in trails:
                 log_event((sec, usec, src_ip, '-', dst_ip, '-', IPPROTO_LUT[protocol], TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]))
             elif src_ip in trails:
