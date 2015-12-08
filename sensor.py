@@ -94,20 +94,24 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto):
             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[domain][0], trails[domain][1]))
             return
 
-    if config.USE_HEURISTICS and len(parts[0]) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD and '-' not in parts[0]:
-        trail = None
+    if config.USE_HEURISTICS:
+        if len(parts[0]) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD and '-' not in parts[0]:
+            trail = None
 
-        if len(parts) > 2:
-            if '.'.join(parts[-2:]) not in WHITELIST:
-                trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
-        elif len(parts) == 2:
-            if '.'.join(parts) not in WHITELIST:
-                trail = "(%s).%s" % (parts[0], parts[1])
-        else:
-            trail = query
+            if len(parts) > 2:
+                if '.'.join(parts[-2:]) not in WHITELIST:
+                    trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
+            elif len(parts) == 2:
+                if '.'.join(parts) not in WHITELIST:
+                    trail = "(%s).%s" % (parts[0], parts[1])
+            else:
+                trail = query
 
-        if trail:
-            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, "long domain name (suspicious)", "(heuristic)"))
+            if trail:
+                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, "long domain name (suspicious)", "(heuristic)"))
+
+        elif "sinkhole." in query:
+            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, query, "potential sinkhole domain (suspicious)", "(heuristic)"))
 
 def _process_packet(packet, sec, usec):
     """
