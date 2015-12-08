@@ -395,8 +395,11 @@ def init():
     if check_sudo() is False:
         exit("[!] please run with sudo/Administrator privileges")
 
-    if subprocess.mswindows and (config.MONITOR_INTERFACE or "").lower() == "any":
-        exit("[!] virtual interface 'any' is not available on Windows OS")
+    if (config.MONITOR_INTERFACE or "").lower() == "any":
+        if subprocess.mswindows:
+            exit("[!] virtual interface 'any' is not available on Windows OS")
+        else:
+            print("[!] in case of any problems with packet capture on virtual interface 'any', please put all sniffing interfaces to promiscuous mode manually (e.g. 'sudo ifconfig eth0 promisc')")
 
     if config.MONITOR_INTERFACE not in pcapy.findalldevs():
         print("[!] interface '%s' not found" % config.MONITOR_INTERFACE)
