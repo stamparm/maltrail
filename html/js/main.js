@@ -43,7 +43,7 @@ var DEFAULT_STATUS_BORDER = "1px solid #a8a8a8";
 var DEFAULT_FONT_FAMILY = "Verdana, Geneva, sans-serif";
 var LOG_COLUMNS = { TIME: 0, SENSOR: 1, SRC_IP: 2, SRC_PORT: 3, DST_IP: 4, DST_PORT: 5, PROTO: 6, TYPE: 7, TRAIL: 8, INFO: 9, REFERENCE: 10 };
 var DATATABLES_COLUMNS = { THREAT: 0, SENSOR: 1, EVENTS: 2, SEVERITY: 3, FIRST_TIME: 4, LAST_TIME: 5, SRC_IP: 6, SRC_PORT: 7, DST_IP: 8, DST_PORT: 9, PROTO: 10, TYPE: 11, TRAIL: 12, INFO: 13, REFERENCE: 14, TAGS: 15 };
-var TOP_PORTS = { 17: "QOTD", 19: "CHARGEN", 21: "FTP", 22: "SSH", 23: "Telnet", 25: "SMTP", 53: "DNS", 80: "HTTP", 110: "POP3", 123: "NTP", 135: "DCOM-RPC", 143: "IMAP", 161: "SNMP", 389: "LDAP", 443: "HTTPS", 445: "Microsoft-DS", 587: "Submission", 902: "VMware", 990: "FTPS", 993: "IMAPS", 995: "POP3S", 1433: "MsSQL", 1434: "MsSQL", 1723: "PPTP", 1900: "SSDP", 3306: "MySQL", 3389: "RDP", 5060: "SIP", 5900: "VNC", 8080: "HTTP-proxy" };
+var TOP_PORTS = { 17: "QOTD", 19: "CHARGEN", 21: "FTP", 22: "SSH", 23: "Telnet", 25: "SMTP", 53: "DNS", 80: "HTTP", 110: "POP3", 123: "NTP", 135: "DCOM-RPC", 143: "IMAP", 161: "SNMP", 389: "LDAP", 443: "HTTPS", 445: "Microsoft-DS", 587: "Submission", 902: "VMware", 990: "FTPS", 993: "IMAPS", 995: "POP3S", 1433: "MSSQL", 1434: "MSSQL", 1723: "PPTP", 1900: "SSDP", 3306: "MYSQL", 3389: "RDP", 5060: "SIP", 5900: "VNC", 8080: "HTTP-proxy" };
 var SEARCH_TIP_TIMER = 0;
 var PAPAPARSE_COMPLETE_TIMER = 0;
 var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
@@ -950,8 +950,14 @@ function initDetails() {
             },
             {
                 render: function (data, type, row) {
-                    if (data.indexOf(',') > -1)
-                        data = "<span title='" + data + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
+                    if (data.indexOf(',') > -1) {
+                        var parts = data.split(DATA_PARTS_DELIMITER);
+                        for (var i = 0; i < parts.length; i++) {
+                            if (parts[i] in TOP_PORTS)
+                                parts[i] = parts[i] + " (" + TOP_PORTS[parts[i]] + ")";
+                        }
+                        data = "<span title='" + parts.join(DATA_PARTS_DELIMITER) + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
+                    }
                     else {
                         if (data in TOP_PORTS)
                             data = data + " (" + TOP_PORTS[data] + ")";
