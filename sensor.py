@@ -339,7 +339,7 @@ def _process_packet(packet, sec, usec):
                             else:
                                 NO_SUCH_NAME_COUNTERS[query][1] += 1
 
-                                if NO_SUCH_NAME_COUNTERS[query][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD and query not in WHITELIST:
+                                if NO_SUCH_NAME_COUNTERS[query][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD and query not in WHITELIST and '.'.join(query.split('.')[-2:]) not in WHITELIST:
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "excessive no such domain name (suspicious)", "(heuristic)"))
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
