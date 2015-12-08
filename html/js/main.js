@@ -1061,7 +1061,7 @@ function initDetails() {
                     if (duplicates !== null) {
                         var items = duplicates[1].split(',');
                         data = data.replace(duplicates[0], "");
-                        return ((data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data) + '<span title="' + duplicates[1] + '" class="duplicates">+' + items.length + '</span>';
+                        return ((data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data) + '<span title="' + duplicates[1].replace(/,([^ ])/g, ", $1") + '" class="duplicates">+' + items.length + '</span>';
                     }
 
                     return (data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data;
