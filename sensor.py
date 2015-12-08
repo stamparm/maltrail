@@ -80,7 +80,7 @@ except ImportError:
         exit("[!] please install Pcapy (e.g. 'apt-get install python-pcapy')")
 
 def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto):
-    parts = query.split('.')
+    parts = query.lower().split('.')
 
     for i in xrange(0, len(parts)):
         domain = '.'.join(parts[i:])
