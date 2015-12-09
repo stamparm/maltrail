@@ -280,7 +280,7 @@ def _process_packet(packet, sec, usec):
                             return
 
                         if '.' in path:
-                            _ = urlparse.urlparse("http://" % url)  # dummy scheme
+                            _ = urlparse.urlparse("http://%s" % url)  # dummy scheme
                             filename = _.path.split('/')[-1]
                             name, extension = os.path.splitext(filename)
                             if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and '.'.join(host.split('.')[-2:]) not in WHITELIST and not _.query and len(name) < 10:
