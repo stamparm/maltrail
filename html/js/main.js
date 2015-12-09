@@ -1535,7 +1535,7 @@ jQuery.extend(jQuery.fn.dataTableExt.oSort, {
 
 jQuery.extend(jQuery.fn.dataTableExt.oSort, {
     "events-pre": function (a) {
-        return parseInt(a.replace(/<span.+<\/span>/g, ""));
+        return parseInt(a.replace(/<[^>]+>/g, ""));
     },
 
     "events-asc": function ( a, b ) {
