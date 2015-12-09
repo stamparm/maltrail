@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.114"
+VERSION = "0.8.115"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -142,11 +142,11 @@ def read_config(config_file):
                 try:
                     name, value = line.strip().split(' ', 1)
                 except ValueError:
-                    name = line.strip()
+                    name = line
                     value = ""
                 finally:
-                    name = name.upper()
-                    value = value.strip("'\"")
+                    name = name.strip().upper()
+                    value = value.strip("'\"").strip()
 
             if name.startswith("USE_"):
                 value = value.lower() in ("1", "true")
@@ -169,6 +169,10 @@ def read_config(config_file):
     for option in ("MONITOR_INTERFACE", "CAPTURE_BUFFER", "LOG_DIR"):
         if not option in config:
             exit("[!] missing mandatory option '%s' in configuration file '%s'" % (option, config_file))
+
+    for entry in (config.USERS or []):
+        if len(entry.split(':')) != 4:
+            exit("[!] invalid USERS entry '%s'" % entry)
 
     if config.CAPTURE_BUFFER:
         if config.CAPTURE_BUFFER.isdigit():
