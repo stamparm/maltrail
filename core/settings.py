@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.116"
+VERSION = "0.8.117"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -56,7 +56,7 @@ SUSPICIOUS_HTTP_REQUEST_REGEX = r"(?i)information_schema|\b(AND|OR|SELECT)\b.*/\
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = "( )"
 WHITELIST_HTTP_REQUEST_KEYWORDS = ("fql", "yql", "ads", "../images", "../scripts")
 WHITELIST_LONG_DOMAIN_NAME_KEYWORDS = ("blog",)
-SUSPICIOUS_UA_REGEX = r"(?i)7db0f6de-8de7-4841-9084-28fa914b0f2e|<\|>|absinthe|acunetix|apachebench|autoit|babykrokodil|beacon|blackhat|bsqlbf|clshttp|crowdstrike|datacha0s|dirbuster|fimap|havij|hoic|http_down|httperf|httrack|hydra|immoral|inetall|isc systems irc|jakarta|jorgee|letitgo|libweb|libwww|loic|lwp-|masscan|mazilla|metasploit|missigua locator|morfeus|msiecrawler|mysqloit|nessus|netsparker|nexpose|nikto|nmap|nsauditor|nsis_inetc|offline explorer|openvas|\A(opera|mozilla|iexplorer|firefox|chrome)( [\d.]+)?\Z|owasp|pangolin|phpcrawl|pilipinas|rookie|scanalert|searchprotect|sitelockspide|sitesnagger|sitesucker|snoopy|sql power injector|sqlmap|sqlninja|sucuri integrity monitor|teleport|tools\.ua\.random|w3af|webstripper|webvulncrawl|wep search|whitehat team|wordpress|xmlset_roodkcableoj28840ybtide|zealbot|zmeu|zmeu"
+SUSPICIOUS_UA_REGEX = r"(?i)7db0f6de-8de7-4841-9084-28fa914b0f2e|<\|>|absinthe|acunetix|apachebench|autoit|babykrokodil|beacon|blackhat|bsqlbf|clshttp|crowdstrike|datacha0s|dirbuster|fimap|havij|hoic|http_down|httperf|httrack|hydra|immoral|inetall|isc systems irc|\Ajakarta|jorgee|letitgo|libweb|\Alibwww|loic|\Alwp-|masscan|mazilla|metasploit|missigua locator|morfeus|msiecrawler|mysqloit|nessus|netsparker|nexpose|nikto|nmap|nsauditor|nsis_inetc|offline explorer|openvas|\A(opera|mozilla|iexplorer|firefox|chrome)( [\d.]+)?\Z|owasp|pangolin|phpcrawl|pilipinas|rookie|scanalert|searchprotect|sitelockspide|sitesnagger|sitesucker|snoopy|sql power injector|sqlmap|sqlninja|sucuri integrity monitor|teleport|tools\.ua\.random|w3af|webstripper|webvulncrawl|wep search|whitehat team|wordpress|xmlset_roodkcableoj28840ybtide|zealbot|zmeu|zmeu"
 SUSPICIOUS_UA_LENGTH_THRESHOLD = 10
 SESSIONS = {}
 NO_SUCH_NAME_COUNTERS = {}  # this won't be (expensive) shared in multiprocessing run (hence, the threshold will effectively be n-times higher)

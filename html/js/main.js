@@ -935,7 +935,7 @@ function initDetails() {
             caseInsensitive: false
         },
         iDisplayLength: 25,
-        aLengthMenu: [ [10, 25, 50, 100], [10, 25, 50, 100] ],
+        aLengthMenu: [ [10, 25, 50, 100, 200], [10, 25, 50, 100, 200] ],
         aaSorting: [ [DATATABLES_COLUMNS.LAST_TIME, 'desc'] ],
         bDeferRender: true,
         searchDelay: 500,
