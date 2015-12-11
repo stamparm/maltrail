@@ -24,6 +24,9 @@ def fetch():
             if not line or line.startswith('#') or '.' not in line:
                 continue
             if " # " in line:
-                retval[line.split(" # ")[0]] = ("%s (%s)" % (__info__, line.split(" # ")[1].split()[0].lower()), __reference__)
+                reason = line.split(" # ")[1].split()[0].lower()
+                if reason == "scanning":  # too many false positives
+                    continue
+                retval[line.split(" # ")[0]] = ("%s (%s)" % (__info__, reason), __reference__)
 
     return retval
