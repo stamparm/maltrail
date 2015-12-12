@@ -6,14 +6,15 @@
 2search
 404search
 91cast
+\A\w{1,2}\Z
 \A[0-9a-f]{32}
 \A[\W\d]
 \A[^ ]\Z
 \(spkg\)
-\A_test_\Z
+_test_
 aaaabbb
 absinthe
-\Aaccess\Z
+\Aaccess\b
 access down
 acunetix
 ad-protect
@@ -22,7 +23,6 @@ agavadwnl
 \Aagent\Z
 alawar toolbar
 \Aalina v
-\Aantispyware
 antispyware
 antivermeans
 antivirgear
@@ -90,7 +90,7 @@ cs fingerprint module
 \Actt\Z
 customspy
 cyberdog
-\Adalvik/
+\Adalvik
 darecover
 darkness
 datacha0s
@@ -116,7 +116,7 @@ download master
 drivecleaner
 drpcclean
 dsmbvctfre
-\Adummy\Z
+\bdummy\b
 eeloader
 egypack
 \Aei\Z
@@ -128,7 +128,6 @@ errornuker
 eshopee
 evnuker
 \Aexabot
-\Aexample
 \Aexample\Z
 \Aexe2
 \Aexplorer\Z
@@ -170,7 +169,6 @@ gomtour
 gsa-crawler
 gtbank
 guidtracker
-\Ah\Z
 hardcore software
 havij
 \Ahelpsrvc
@@ -184,12 +182,12 @@ httperf
 httpfiledown
 httpgetdata
 httping
-\Ahttps
+\Ahttps\b
 httrack
 huai_huai
 hydra
 i-scan
-\Aiamx
+\biamx
 ibsband-
 \Aie\Z
 ie6 on windows xp
@@ -275,15 +273,13 @@ msdn surfbear
 msgplus3
 \Amsie( [\d.]+)?\Z
 msiecrawler
-\Amsndown\Z
-\Amsndown
-\Amuseon
-\Amy session
-\Amyie
+\bmsndown
+\bmuseon
+\bmy session
+\bmyie\b
 mypcdoc
 mysqloit
 myway
-\An1\Z
 \Anavhelper
 nento
 \bnento
@@ -300,7 +296,6 @@ nit_love
 nmap
 \Anobo
 nqx315
-\Anr
 nsauditor
 nsis_inetc
 \Ansisdl
@@ -327,18 +322,14 @@ phpcrawl
 pilipinas
 pinballcorp
 pint_agency
-\Apint_agency
 pivim
 poller
 \Apopup
-popupblockade
-\Apopupblockade
 proscan-down
 proxydown
 \Apsi\Z
 \Apts\Z
 \Apwmi
-\Apwmi/
 pxyscand
 \Apycurl
 \Apython-urllib
@@ -358,7 +349,7 @@ rivest
 rogue
 rome0321
 rookie
-\Arx bar
+\brx bar
 \Asaiv
 \Asave\Z
 scanalert
@@ -374,7 +365,7 @@ sextrackerwsi
 sgrunt
 \Ashell
 \Ashini
-\Asi25
+\bsi25
 sicklebot
 sickloader
 \Asidebar
@@ -477,7 +468,7 @@ webcount
 webstripper
 webvulncrawl
 wep search
-\Awget 3
+\Awget( \d)?\Z
 whcc
 \Awhitehat
 \Awin32
@@ -518,5 +509,5 @@ zc-bridgev
 \Azcom
 zealbot
 zeroup
-\Azmeu
+\bzmeu\b
 \Azz_
