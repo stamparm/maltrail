@@ -5,8 +5,6 @@ Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
 See the file 'LICENSE' for copying permission
 """
 
-import re
-
 from core.common import retrieve_content
 
 __url__ = "https://reputation.alienvault.com/reputation.generic"
