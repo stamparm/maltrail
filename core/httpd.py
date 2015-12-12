@@ -27,6 +27,7 @@ import urlparse
 
 from core.attribdict import AttribDict
 from core.common import addr_to_int
+from core.common import get_regex
 from core.common import int_to_addr
 from core.common import make_mask
 from core.pbkdf2 import pbkdf2
@@ -261,28 +262,34 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 if netfilter in ("", "0.0.0.0/0"):
                     netfilters = None
                 else:
-                    netfilters = set(re.split(r"[;,]", netfilter))
-                    for netfilter in set(netfilters):
-                        netfilter = netfilter.strip()
-                        if '/' in netfilter:
-                            _ = netfilter.split('/')[-1]
-                            if _.isdigit() and int(_) >= 20:
-                                lower = addr_to_int(netfilter.split('/')[0])
+                    addresses = set()
+                    netmasks = set()
+
+                    for item in set(re.split(r"[;,]", netfilter)):
+                        item = item.strip()
+                        if '/' in item:
+                            _ = item.split('/')[-1]
+                            if _.isdigit() and int(_) >= 16:
+                                lower = addr_to_int(item.split('/')[0])
                                 mask = make_mask(int(_))
                                 upper = lower | (0xffffffff ^ mask)
                                 while lower <= upper:
-                                    netfilters.add(int_to_addr(lower))
+                                    addresses.add(int_to_addr(lower))
                                     lower += 1
-                                netfilters.remove(netfilter)
-                        elif '-' in netfilter:
-                            _ = netfilter.split('-')
+                            else:
+                                netmasks.add(item)
+                        elif '-' in item:
+                            _ = item.split('-')
                             lower, upper = addr_to_int(_[0]), addr_to_int(_[1])
                             while lower <= upper:
-                                netfilters.add(int_to_addr(lower))
+                                addresses.add(int_to_addr(lower))
                                 lower += 1
-                            netfilters.remove(netfilter)
-                        elif not netfilter:
-                            netfilters.remove(netfilter)
+                        elif re.search(r"\d+\.\d+\.\d+\.\d+", item):
+                            addresses.add(item)
+
+                    netfilters = netmasks
+                    if addresses:
+                        netfilters.add(get_regex(addresses))
 
                 SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilters": netfilters, "expiration": expiration})
             else:
@@ -362,7 +369,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             self.send_header("Connection", "close")
                             self.send_header("Content-Type", "text/plain")
 
-                            buffer, addresses, netmasks = cStringIO.StringIO(), set(), []
+                            buffer, addresses, netmasks, regex = cStringIO.StringIO(), set(), [], ""
                             for netfilter in session.netfilters:
                                 if not netfilter:
                                     continue
@@ -370,6 +377,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                     netmasks.append(netfilter)
                                 elif re.search(r"\A[\d.]+\Z", netfilter):
                                     addresses.add(netfilter)
+                                elif '\.' in netfilter:
+                                    regex = r"\b%s\b" % netfilter
                                 else:
                                     print "[!] invalid network filter '%s'" % netfilter
                                     return
@@ -377,22 +386,25 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             for line in session.range_handle.xreadlines():
                                 display = False
 
-                                for match in re.finditer(r" (\d+\.\d+\.\d+\.\d+) ", line):
-                                    if not display:
-                                        ip = match.group(1)
-                                    else:
-                                        break
+                                if regex and re.search(regex, line):
+                                    display = True
+                                elif addresses or netmasks:
+                                    for match in re.finditer(r" (\d+\.\d+\.\d+\.\d+) ", line):
+                                        if not display:
+                                            ip = match.group(1)
+                                        else:
+                                            break
 
-                                    if ip in addresses:
-                                        display = True
-                                        break
-                                    elif netmasks:
-                                        for _ in netmasks:
-                                            prefix, mask = _.split('/')
-                                            if addr_to_int(ip) & make_mask(int(mask)) == addr_to_int(prefix):
-                                                addresses.add(ip)
-                                                display = True
-                                                break
+                                        if ip in addresses:
+                                            display = True
+                                            break
+                                        elif netmasks:
+                                            for _ in netmasks:
+                                                prefix, mask = _.split('/')
+                                                if addr_to_int(ip) & make_mask(int(mask)) == addr_to_int(prefix):
+                                                    addresses.add(ip)
+                                                    display = True
+                                                    break
 
                                 if display:
                                     buffer.write(line)

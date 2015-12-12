@@ -8,6 +8,7 @@ See the file 'LICENSE' for copying permission
 import csv
 import gzip
 import os
+import re
 import StringIO
 import subprocess
 import urllib
@@ -66,10 +67,58 @@ def addr_to_int(value):
     return (long(_[0]) << 24) + (long(_[1]) << 16) + (long(_[2]) << 8) + long(_[3])
 
 def int_to_addr(value):
-    return '.'.join(str(value >> n & 0xFF) for n in (24, 16, 8, 0))
+    return '.'.join(str(value >> n & 0xff) for n in (24, 16, 8, 0))
 
 def make_mask(bits):
     return 0xffffffff ^ (1 << 32 - bits) - 1
+
+def get_regex(items):
+    head = {}
+
+    for item in sorted(items):
+        current = head
+        for char in item:
+            if char not in current:
+                current[char] = {}
+            current = current[char]
+        current[""] = {}
+
+    def process(current):
+        if not current:
+            return ""
+
+        if not any(current[_] for _ in current):
+            if len(current) > 1:
+                items = []
+                previous = None
+                start = None
+                for _ in sorted(current) + [unichr(65535)]:
+                    if previous is not None:
+                        if ord(_) == ord(previous) + 1:
+                            pass
+                        else:
+                            if start != previous:
+                                print start, previous
+                                if start == '0' and previous == '9':
+                                    items.append(r"\d")
+                                else:
+                                    items.append("%s-%s" % (re.escape(start), re.escape(previous)))
+                            else:
+                                items.append(re.escape(previous))
+                            start = _
+                    if start is None:
+                        start = _
+                    previous = _
+
+                return ("[%s]" % "".join(items)) if len(items) > 1 or '-' in items[0] else "".join(items)
+            else:
+                return re.escape(current.keys()[0])
+        else:
+            return ("(%s)" if len(current) > 1 else "%s") % ('|'.join("%s%s" % (re.escape(_), process(current[_])) for _ in sorted(current))).replace('|'.join(str(_) for _ in xrange(10)), r"\d")
+
+    regex = process(head)
+
+    return regex
 
 def retrieve_file(url, filename=None):
     try:
