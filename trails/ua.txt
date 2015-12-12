@@ -1,0 +1,522 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Suspicious user-agent regular expressions
+
+2search
+404search
+91cast
+\A[0-9a-f]{32}
+\A[\W\d]
+\A[^ ]\Z
+\(spkg\)
+\A_test_\Z
+aaaabbb
+absinthe
+\Aaccess\Z
+access down
+acunetix
+ad-protect
+\Aadlib
+agavadwnl
+\Aagent\Z
+alawar toolbar
+\Aalina v
+\Aantispyware
+antispyware
+antivermeans
+antivirgear
+anycleaner
+\Aapache-httpclient
+apachebench
+api-guide test program
+\Aasd
+askpartner
+asktb
+asmupdater
+atomic_email_hunter
+\Aatsu
+attacker
+auctionplusup
+autodl
+autohotkey
+autoit
+autoupdate
+\Aav2010
+\Ab register
+babykrokodil
+\Ababylon
+backdoor
+backdor
+backman
+bad_bot
+\Abaiduspider
+\Abar\Z
+bdsclk
+bdwinrun
+beacon
+bgroom
+binget
+bitkinex
+blackhat
+blacksun
+blahrx
+bnddriveloader
+bndveano4getdownldr
+bot (scan|search)
+\Abrowser\Z
+bsqlbf
+bugmaal
+\Abuild
+\Abundle\Z
+\Abwl\Z
+changhuatong
+chilkatupload
+\Achk profile
+\Achrome( [\d.]+)?\Z
+\Acityreview
+\Acleancop
+clickteam
+clshttp
+\Acommonname
+\Aconnector v
+coolstreaming
+\Acount
+\Acounters
+\Acpush_
+crazybro
+crowdstrike
+cs fingerprint module
+\Actt\Z
+customspy
+cyberdog
+\Adalvik/
+darecover
+darkness
+datacha0s
+\Adbcount
+decebavl
+deepdoupdate
+\Ademo\Z
+\Ademomake
+dialer
+\Adinstaller
+dirbuster
+dns extractor
+doctorpro
+doctorvaccine
+doshowmeanad
+\Adotbot
+downing
+\Adownload agent\Z
+download master
+\Adownloaded
+\Adownloader\Z
+\Adownloadmr
+drivecleaner
+drpcclean
+dsmbvctfre
+\Adummy\Z
+eeloader
+egypack
+\Aei\Z
+emailsiphon
+errn200
+errornuker
+\Aers\Z
+\Aesb\Z
+eshopee
+evnuker
+\Aexabot
+\Aexample
+\Aexample\Z
+\Aexe2
+\Aexplorer\Z
+ezshop
+\Aezula
+facecooker
+fast browser search
+favupdate
+fdmuiless
+\Afeat\b
+\Afetcher\b
+fian3manager
+\Afile\b
+filedownloader
+fimap
+\Afirefox( [\d.]+)?\Z
+fmbvdfresct
+\Afoca
+folderwin
+forthgoer
+fs3update
+fsl \d
+fucking scanner
+fullstuff
+fwversiontestagent
+gabpath
+\Agator
+gbot
+general antivirus
+get_site
+getjob
+gh20
+giftz
+\Aglobal\Z
+go-diva
+godzilla
+gomtour
+\Agoogle page
+gsa-crawler
+gtbank
+guidtracker
+\Ah\Z
+hardcore software
+havij
+\Ahelpsrvc
+hoic
+http_connect
+http_down
+http_filedown
+http_get_comm
+\Ahttp_query
+httperf
+httpfiledown
+httpgetdata
+httping
+\Ahttps
+httrack
+huai_huai
+hydra
+i-scan
+\Aiamx
+ibsband-
+\Aie\Z
+ie6 on windows xp
+ie_6\.0
+iedefender 
+iefeatsl
+\Aiep\Z
+ietoolbar
+\Aiexplore(r)?( [\d.]+)?\Z
+\Aim download
+immoral
+inetall
+\Ainfobox
+\Ainstall_
+installcapital
+installnotify
+\Ainternet\Z
+internet  explorer
+internet antivirus
+\Ainternetsecurity
+invokead
+ioinstall
+isc systems irc
+isecu
+ismazo
+istsvc
+\Aisupd
+\Aiwin 
+\Aiwonsearch
+\Ajakarta
+jorgee
+krmak
+krsystem
+kuku
+letitgo
+\blibweb
+\Alibwww
+lineguide
+linkrunner
+live enterprise suite
+lmaokaazldr
+lobo lunar
+\Alocus 
+\bloic
+\Alotto
+lsosss
+\Alwp-
+\Alynx\Z
+m a mu mu mu
+machaon
+\bmacrovision_dm
+magic netinstaller
+malwarewipe
+\bmama\b
+masscan
+mazilla
+\Ambar
+mbescvdfrt
+\Amc_v1
+\Amdms
+mdodo
+\Ameinv\d
+metasploit
+microgaming install program
+\Amicrosoft\Z
+\Amicrosoft internet explorer\Z
+mirar_
+missigua locator
+mj12bot
+morfeus
+mot-mpx220
+moxilla
+moziea
+mozila
+\Amozilla ( [\d.]+)?\Z
+\Amozilla/3\.0 \(compatible; indy library\)\Z
+mozilla/4\.0 \(compatible; ics\)
+mozillar
+mozzila
+mrgud
+\Ams\Z
+msdn surfbear
+msgplus3
+\Amsie( [\d.]+)?\Z
+msiecrawler
+\Amsndown\Z
+\Amsndown
+\Amuseon
+\Amy session
+\Amyie
+mypcdoc
+mysqloit
+myway
+\An1\Z
+\Anavhelper
+nento
+\bnento
+neonabyupdate
+nessus
+\Anetcfg
+netinstaller
+netscafe
+netsparker
+nexpose
+nguideup
+nikto
+nit_love
+nmap
+\Anobo
+nqx315
+\Anr
+nsauditor
+nsis_inetc
+\Ansisdl
+nuker
+nv32ts
+offline explorer
+oinc
+onandon
+openpage
+openvas
+\Aopera( [\d.]+)?\Z
+\Aossproxy
+ossproxy
+our_agent
+owasp
+pangolin
+\Apass\Z
+pcclear
+\Apcdoc
+pcflashbang
+\Apcsafe
+pcsafe
+phpcrawl
+pilipinas
+pinballcorp
+pint_agency
+\Apint_agency
+pivim
+poller
+\Apopup
+popupblockade
+\Apopupblockade
+proscan-down
+proxydown
+\Apsi\Z
+\Apts\Z
+\Apwmi
+\Apwmi/
+pxyscand
+\Apycurl
+\Apython-urllib
+qdrbi starter
+qqgame
+\Aqvod
+rangecheck/
+recon-ng
+rekom
+releasexp
+rescue/
+revolt
+\Arevolution
+rhyno321
+richcasino
+rivest
+rogue
+rome0321
+rookie
+\Arx bar
+\Asaiv
+\Asave\Z
+scanalert
+scrapebox
+\Asearch toolbar
+searchprotect
+\Asearchtool
+\Asecurityinternet
+sefastsetup
+\Asendfile
+seobot
+sextrackerwsi
+sgrunt
+\Ashell
+\Ashini
+\Asi25
+sicklebot
+sickloader
+\Asidebar
+\Asidesearch
+simpleclient
+sitelockspide
+sitesnagger
+sitesucker
+skolovani
+skw000
+skypee
+slayer
+\bsleep\b
+smaal
+smart-rtp
+\Asme32
+smileware
+snatch-system
+snoopstick 
+snoopy
+\Asogou
+sogouexplorerminisetup
+sogouime
+something
+\Asosospider
+speedrunner
+sprout game
+spydawn
+spyheal
+spylocked
+sql power injector
+sqlmap
+sqlninja
+srinstaller
+srrecover
+ssol netinstaller
+statistican
+stbhoget
+steroid download
+sucuri integrity monitor
+suggestion
+sun4u
+synapse
+system32
+sznotifyident
+tabtoolbarup
+talwinhttpclient
+tbonas
+tcbfrvdems
+tear application
+teleport
+\Atesla
+\Atest\Z
+\Atiehttp
+\Atiny
+\Atoolbar
+tools\.ua\.random
+\Atpsystem
+\Atravel update
+trymedia_dm_
+\Atsa/
+twiceler
+u2clean
+ubrenquatrorusdldr
+\Audonkey
+ultimate fixer
+\Aumbra\Z
+\Aunknown
+\Aupdate\Z
+update internet antivirus
+\Aupdater\Z
+\Aupdates downloader
+updatesodui
+\Auphttp
+\Aus\Z
+\Auser agent
+user_check
+vaccine
+vaccinekiller
+\Avb wininet
+vbtagedit
+vbusers
+vctestclient
+vertexnet
+vhibot
+vikiller ctrl
+viper \d
+virus_kill
+viruscheck
+virusheat
+virusprotectpro
+vmozilla
+vomba
+vulture
+w00tw00t
+w3af
+wb v\d
+webcount
+\Awebfile
+webstripper
+webvulncrawl
+wep search
+\Awget 3
+whcc
+\Awhitehat
+\Awin32
+winbutler
+windoss
+\Awindows 5.1 \(2600\)
+\Awindows internet
+windows updates manager
+winfix master
+winfixmaster
+wininetget/
+\Awinlogon
+\Awinsoftware
+wintouch
+wizpop
+\Awnames
+wordpress
+worked
+wpscan
+wt_get_comm
+\Awta_
+wtinstaller
+wtrecover
+xehanort321
+xiehongwei
+xmlset_roodkcable
+xsock config
+xxx
+\Ayandex
+yhrbg
+yodao
+\Ayok agent
+yourscreen
+z00sagent
+zc xml-rpc
+\Azc xml-rpc
+zc-bridgev
+\Azcom
+zealbot
+zeroup
+\Azmeu
+\Azz_
