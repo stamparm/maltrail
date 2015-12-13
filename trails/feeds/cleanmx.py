@@ -7,10 +7,10 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/malc0de.ipset"
-__check__ = "malc0de"
+__url__ = "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/cleanmx_viruses.ipset"
+__check__ = "cleanmx_viruses"
 __info__ = "malware"
-__reference__ = "malc0de.com"
+__reference__ = "clean-mx.de"
 
 def fetch():
     retval = {}
