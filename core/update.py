@@ -148,7 +148,7 @@ def update(server=None):
             if trails:
                 with _fopen_trails("w+b") as f:
                     writer = csv.writer(f, delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
-                    for trail in sorted(trails.keys()):
+                    for trail in trails:
                         writer.writerow((trail, trails[trail][0], trails[trail][1]))
 
         except Exception, ex:

@@ -7,8 +7,8 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/socks_proxy_30d.ipset"
-__check__ = "socks_proxy_30d"
+__url__ = "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/socks_proxy_7d.ipset"
+__check__ = "socks_proxy_7d"
 __info__ = "proxy (suspicious)"
 __reference__ = "socks-proxy.net"
 
