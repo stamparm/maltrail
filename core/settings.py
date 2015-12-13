@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.131"
+VERSION = "0.8.132"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -194,7 +194,7 @@ def read_whitelist():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "trails", "misc", "whitelist.txt"))
     if os.path.isfile(_):
         with open(_, "r") as f:
-            for line in f.xreadlines():
+            for line in f:
                 line = line.strip()
                 if not line or line.startswith('#'):
                     continue
@@ -210,7 +210,7 @@ def read_ua():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "trails", "misc", "ua.txt"))
     if os.path.isfile(_):
         with open(_, "r") as f:
-            for line in f.xreadlines():
+            for line in f:
                 line = line.strip()
                 if not line or line.startswith('#'):
                     continue

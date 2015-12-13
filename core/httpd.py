@@ -383,7 +383,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                     print "[!] invalid network filter '%s'" % netfilter
                                     return
 
-                            for line in session.range_handle.xreadlines():
+                            for line in session.range_handle:
                                 display = False
 
                                 if regex and re.search(regex, line):
