@@ -143,7 +143,7 @@ def _process_packet(packet, sec, usec):
 
         ip_length = ip_header[2]
         packet = packet[:ETH_LENGTH + ip_length]  # truncate
-        iph_length = (ip_header[0] & 0xF) << 2
+        iph_length = (ip_header[0] & 0xf) << 2
         protocol = ip_header[6]
         src_ip = socket.inet_ntoa(ip_header[8])
         dst_ip = socket.inet_ntoa(ip_header[9])
@@ -326,7 +326,7 @@ def _process_packet(packet, sec, usec):
                             type_, class_ = struct.unpack("!HH", data[offset + 1:offset + 5])
 
                             # Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
-                            if type_ != 12 and class_ == 1:  # Type != PTR, Class IN
+                            if type_ not in (12, 28) and class_ == 1:  # Type not in (PTR, AAAA), Class IN
                                 _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP")
 
                         elif config.USE_HEURISTICS and (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
