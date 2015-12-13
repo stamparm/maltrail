@@ -274,7 +274,7 @@ def _process_packet(packet, sec, usec):
                             for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
                                 path = path.replace(char, urllib.quote(char))
 
-                        if re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)) and host not in WHITELIST and not any(_ in path for _ in WHITELIST_HTTP_REQUEST_KEYWORDS):
+                        if host not in WHITELIST and not any(_ in path for _ in WHITELIST_HTTP_REQUEST_KEYWORDS) and re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)):
                             trail = "%s(%s)" % (host, path)
                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
                             return
