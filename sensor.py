@@ -181,19 +181,15 @@ def _process_packet(packet, sec, usec):
                 h_size = ETH_LENGTH + iph_length + (tcph_length << 2)
                 data = packet[h_size:]
 
-                if len(data) > 0 and "HTTP/" in data:
-                    method = None
-                    index = data.find("\r\n")
-                    if index >= 0:
-                        line = data[:index]
-                        if line.count(' ') == 2 and " HTTP/" in line:
-                            method = line.split(' ')[0].upper()
-                            path = line.split(' ')[1].lower()
-                        else:
-                            return
-                    else:
-                        return
+                method, path = None, None
+                index = data.find("\n")
+                if index >= 0:
+                    line = data[:index]
+                    if line.count(' ') == 2 and " HTTP/" in line:
+                        method = line.split(' ')[0].upper()
+                        path = line.split(' ')[1].lower()
 
+                if method and path:
                     index = data.find("\r\nHost:")
                     if index >= 0:
                         index = index + len("\r\nHost:")
