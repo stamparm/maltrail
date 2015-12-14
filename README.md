@@ -1,3 +1,5 @@
+![Logo](http://i.imgur.com/XxvKxJ3.png)
+
 # Maltrail [![Build Status](https://api.travis-ci.org/stamparm/maltrail.svg?branch=master)](https://api.travis-ci.org/stamparm/maltrail) [![Python 2.6|2.7](https://img.shields.io/badge/python-2.6|2.7-blue.svg)](https://www.python.org/) [![Dependencies pcapy](https://img.shields.io/badge/dependencies-pcapy-yellow.svg)](https://github.com/CoreSecurity/pcapy) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/stamparm/maltrail#license)
 
 ## General
@@ -361,3 +363,4 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6.x*
 ## License
 
 This software is provided under under a MIT License. See the accompanying [LICENSE](https://github.com/stamparm/maltrail/blob/master/LICENSE) file for more information.
+
