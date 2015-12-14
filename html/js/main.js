@@ -156,7 +156,12 @@ function initDialogs() {
         dataType: "text",
         cache: false,
         complete: function(response) {
-            if ((typeof response.responseText !== "undefined") && (response.responseText.length > 0)) {
+            if(response.status === 404) {
+                document.title = "Maltrail";
+                document.body.hidden = true;
+                throw new Error("Maltrail should be accessed ONLY at its server instance's address (e.g. http://127.0.0.1:8338)");
+            }
+            else if ((typeof response.responseText !== "undefined") && (response.responseText.length > 0)) {
                 _USER = response.responseText;
                 $("#login_link").html("Log Out (" + _USER + ")");
                 $("#login_link").off("click");
