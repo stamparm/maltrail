@@ -155,6 +155,3 @@ api.facebook.com
 query.yahooapis.com
 www.google-analytics.com
 
-# Trend Micro OfficeScan
-62691CB3BF62DAF233FB2C02782E7BD2
-

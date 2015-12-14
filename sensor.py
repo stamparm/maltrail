@@ -59,6 +59,7 @@ from core.settings import trails
 from core.settings import VERSION
 from core.settings import WHITELIST
 from core.settings import WHITELIST_HTTP_REQUEST_KEYWORDS
+from core.settings import WHITELIST_UA_KEYWORDS
 from core.update import update
 
 _buffer = None
@@ -236,7 +237,8 @@ def _process_packet(packet, sec, usec):
                         if user_agent:
                             if re.search(SUSPICIOUS_UA_REGEX, user_agent):
                                 found = True
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.UA, user_agent.replace('(', "&#40;").replace(')', "&#41;"), "suspicious user agent", "(heuristic)"))
+                                if not any(_ in user_agent for _ in WHITELIST_UA_KEYWORDS):
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.UA, user_agent.replace('(', "&#40;").replace(')', "&#41;"), "suspicious user agent", "(heuristic)"))
 
                         if not found and config.USE_SHORT_OR_MISSING_USER_AGENT:
                             if user_agent is None:
