@@ -192,14 +192,15 @@ def _process_packet(packet, sec, usec):
                         path = line.split(' ')[1].lower()
 
                 if method and path:
+                    host = dst_ip
                     index = data.find("\r\nHost:")
+
                     if index >= 0:
                         index = index + len("\r\nHost:")
                         host = data[index:data.find("\r\n", index)]
                         host = host.strip()
                         host = re.sub(r":80\Z", "", host)
                     elif config.USE_HEURISTICS and config.USE_MISSING_HOST:
-                        host = dst_ip
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing host header)", "(heuristic)"))
 
                     if "://" in path:
