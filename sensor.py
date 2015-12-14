@@ -159,23 +159,24 @@ def _process_packet(packet, sec, usec):
                 elif src_ip in trails:
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]))
 
-                key = "%s:%s" % (src_ip, dst_ip)
-                if key not in _connect_src_dst:
-                    _connect_src_dst[key] = set()
-                    _connect_src_details[key] = set()
-                _connect_src_dst[key].add(dst_port)
-                _connect_src_details[key].add((sec, usec, src_port, dst_port))
+                if config.USE_HEURISTICS:
+                    key = "%s:%s" % (src_ip, dst_ip)
+                    if key not in _connect_src_dst:
+                        _connect_src_dst[key] = set()
+                        _connect_src_details[key] = set()
+                    _connect_src_dst[key].add(dst_port)
+                    _connect_src_details[key].add((sec, usec, src_port, dst_port))
 
-                if sec > _connect_sec:
-                    for key in _connect_src_dst:
-                        if len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
-                            _src_ip, _dst_ip = key.split(':')
-                            for _sec, _usec, _src_port, _dst_port in _connect_src_details[key]:
-                                log_event((_sec, _usec, _src_ip, _src_port, _dst_ip, _dst_port, "TCP", TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"))
+                    if sec > _connect_sec:
+                        for key in _connect_src_dst:
+                            if len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
+                                _src_ip, _dst_ip = key.split(':')
+                                for _sec, _usec, _src_port, _dst_port in _connect_src_details[key]:
+                                    log_event((_sec, _usec, _src_ip, _src_port, _dst_ip, _dst_port, "TCP", TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"))
 
-                    _connect_sec = sec
-                    _connect_src_dst.clear()
-                    _connect_src_details.clear()
+                        _connect_sec = sec
+                        _connect_src_dst.clear()
+                        _connect_src_details.clear()
 
             if flags & 8 != 0:  # PSH set
                 tcph_length = doff_reserved >> 4
@@ -197,10 +198,9 @@ def _process_packet(packet, sec, usec):
                         host = data[index:data.find("\r\n", index)]
                         host = host.strip()
                         host = re.sub(r":80\Z", "", host)
-                    else:
+                    elif config.USE_HEURISTICS and config.USE_MISSING_HOST:
                         host = dst_ip
-                        if config.USE_MISSING_HOST:
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing host header)", "(heuristic)"))
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing host header)", "(heuristic)"))
 
                     if "://" in path:
                         url = path.split("://", 1)[1]
@@ -331,14 +331,15 @@ def _process_packet(packet, sec, usec):
                             if type_ not in (12, 28) and class_ == 1:  # Type not in (PTR, AAAA), Class IN
                                 _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP")
 
-                        elif config.USE_HEURISTICS and (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
-                            if query not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[query][0] != sec / 3600:
-                                NO_SUCH_NAME_COUNTERS[query] = [sec / 3600, 1]
-                            else:
-                                NO_SUCH_NAME_COUNTERS[query][1] += 1
+                        elif config.USE_HEURISTICS:
+                            if (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
+                                if query not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[query][0] != sec / 3600:
+                                    NO_SUCH_NAME_COUNTERS[query] = [sec / 3600, 1]
+                                else:
+                                    NO_SUCH_NAME_COUNTERS[query][1] += 1
 
-                                if NO_SUCH_NAME_COUNTERS[query][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD and query not in WHITELIST and '.'.join(query.split('.')[-2:]) not in WHITELIST:
-                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "excessive no such domain name (suspicious)", "(heuristic)"))
+                                    if NO_SUCH_NAME_COUNTERS[query][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD and query not in WHITELIST and '.'.join(query.split('.')[-2:]) not in WHITELIST:
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "excessive no such domain name (suspicious)", "(heuristic)"))
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
