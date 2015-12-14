@@ -23,6 +23,7 @@ agavadwnl
 \Aagent\Z
 alawar toolbar
 \Aalina v
+\Aanonym
 antispyware
 antivermeans
 antivirgear
@@ -31,6 +32,7 @@ apachebench
 api-guide test program
 \Aasd
 askpartner
+asktoolbar
 asmupdater
 atomic_email_hunter
 \Aatsu
@@ -62,6 +64,7 @@ blahrx
 bnddriveloader
 bndveano4getdownldr
 bot (scan|search)
+bot for jce
 \Abrowser\Z
 bsqlbf
 bugmaal
@@ -136,8 +139,10 @@ favupdate
 fdmuiless
 \Afeat\b
 \Afetcher\b
+fhscan
 fian3manager
 \Afile\b
+filebulldog
 filedownloader
 fimap
 \Afirefox( [\d.]+)?\Z
@@ -308,6 +313,7 @@ openvas
 ossproxy
 our_agent
 owasp
+owasp_secret_browser
 pangolin
 \Apass\Z
 pcclear
@@ -322,6 +328,7 @@ pint_agency
 pivim
 poller
 \Apopup
+privoxy
 proscan-down
 proxydown
 \Apsi\Z
@@ -354,6 +361,7 @@ scrapebox
 \Asearch toolbar
 searchprotect
 \Asearchtool
+\Aseaport
 \Asecurityinternet
 sefastsetup
 \Asendfile
@@ -449,7 +457,7 @@ vctestclient
 vertexnet
 vhibot
 vikiller ctrl
-viper \d
+\Aviper
 virus_kill
 viruscheck
 virusheat
@@ -468,6 +476,7 @@ wep search
 \Awget( \d)?\Z
 whcc
 \Awhitehat
+widgitoolbar
 \Awin32
 winbutler
 windoss
