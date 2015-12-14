@@ -14,7 +14,6 @@ import traceback
 
 from core.common import check_sudo
 from core.settings import config
-from core.settings import DEBUG
 from core.settings import DEFAULT_LOG_PERMISSIONS
 from core.settings import TIME_FORMAT
 
@@ -68,7 +67,7 @@ def start_logd(address=None, port=None, join=False):
                 handle = get_log_handle(int(sec))
                 os.write(handle, event)
             except:
-                if DEBUG:
+                if config.SHOW_DEBUG:
                     traceback.print_exc()
 
     server = SocketServer.UDPServer((address, port), UDPHandler)

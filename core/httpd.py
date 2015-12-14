@@ -33,7 +33,6 @@ from core.common import make_mask
 from core.pbkdf2 import pbkdf2
 from core.settings import config
 from core.settings import DATE_FORMAT
-from core.settings import DEBUG
 from core.settings import DISABLED_CONTENT_EXTENSIONS
 from core.settings import HTML_DIR
 from core.settings import HTTP_TIME_FORMAT
@@ -63,7 +62,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             try:
                 BaseHTTPServer.HTTPServer.finish_request(self, *args, **kwargs)
             except:
-                if DEBUG:
+                if config.SHOW_DEBUG:
                     traceback.print_exc()
 
     class SSLThreadingServer(ThreadingServer):
@@ -82,7 +81,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             try:
                 request.shutdown()
             except:
-                if DEBUG:
+                if config.SHOW_DEBUG:
                     traceback.print_exc()
 
     class ReqHandler(BaseHTTPServer.BaseHTTPRequestHandler):
@@ -221,7 +220,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             try:
                 BaseHTTPServer.BaseHTTPRequestHandler.finish(self)
             except:
-                if DEBUG:
+                if config.SHOW_DEBUG:
                     traceback.print_exc()
 
         def _version(self):
@@ -248,7 +247,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 valid = True
                                 break
                         except:
-                            if DEBUG:
+                            if config.SHOW_DEBUG:
                                 traceback.print_exc()
 
             if valid:
@@ -303,7 +302,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             try:
                 subprocess.check_output("logger -p auth.info -t \"%s[%d]\" \"%s password for %s from %s port %s\"" % (NAME.lower(), os.getpid(), "Accepted" if valid else "Failed", params.get("username"), self.client_address[0], self.client_address[1]), stderr=subprocess.STDOUT, shell=True)
             except Exception:
-                if DEBUG:
+                if config.SHOW_DEBUG:
                     traceback.print_exc()
 
             return content
@@ -472,7 +471,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 try:
                     current = datetime.datetime.strptime(os.path.splitext(os.path.basename(filename))[0], DATE_FORMAT)
                 except:
-                    if DEBUG:
+                    if config.SHOW_DEBUG:
                         traceback.print_exc()
                 else:
                     if min_ <= current <= max_:

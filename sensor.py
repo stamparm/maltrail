@@ -37,7 +37,6 @@ from core.parallel import write_block
 from core.settings import BUFFER_LENGTH
 from core.settings import config
 from core.settings import CONFIG_FILE
-from core.settings import DEBUG
 from core.settings import ETH_LENGTH
 from core.settings import PPPH_LENGTH
 from core.settings import IPPROTO_LUT
@@ -358,7 +357,7 @@ def _process_packet(packet, sec, usec):
                 log_event((sec, usec, src_ip, '-', dst_ip, '-', IPPROTO_LUT[protocol], TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]))
 
     except Exception:
-        if DEBUG:
+        if config.SHOW_DEBUG:
             traceback.print_exc()
 
 def init():
