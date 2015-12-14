@@ -90,7 +90,7 @@ cat /var/log/maltrail/$(date +"%Y-%m-%d").log
 
 ![Test](http://i.imgur.com/lIYntT1.png)
 
-Access the reporting interface (i.e. **Client**) by visiting the http://127.0.0.1:8338 (default credentials `admin:changeme!`) from your web browser:
+Access the reporting interface (i.e. **Client**) by visiting the http://127.0.0.1:8338 (default credentials: `admin:changeme!`) from your web browser:
 
 ![Reporting interface](http://i.imgur.com/WEHA05S.png)
 
