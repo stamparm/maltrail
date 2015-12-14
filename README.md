@@ -52,7 +52,7 @@ Maltrail is based on the **Sensor** &lt;-&gt; **Server** &lt;-&gt; **Client** ar
 
 ![Architecture diagram](http://i.imgur.com/ekgKAeZ.png)
 
-**Server**'s primary role is to store the event details and provide back-end support for the reporting web application. In default configuration, server and sensor will run on the same machine. So, to prevent potential disruptions in sensor activities, the front-end reporting part is based on the ["Fat client"](https://en.wikipedia.org/wiki/Fat_client) architecture. Events (i.e. log entries) for the chosen (24h) period are transferred to the **Client**, where the reporting web application is solely responsible for the presentation part. Data is sent toward the client in compressed chunks, where they are processed sequentially. The final report is created in a highly condensed form, practically allowing presentation of virtually unlimited number of events.
+**Server**'s primary role is to store the event details and provide back-end support for the reporting web application. In default configuration, server and sensor will run on the same machine. So, to prevent potential disruptions in sensor activities, the front-end reporting part is based on the ["Fat client"](https://en.wikipedia.org/wiki/Fat_client) architecture (i.e. all data post-processing is being done inside the client's web browser instance). Events (i.e. log entries) for the chosen (24h) period are transferred to the **Client**, where the reporting web application is solely responsible for the presentation part. Data is sent toward the client in compressed chunks, where they are processed sequentially. The final report is created in a highly condensed form, practically allowing presentation of virtually unlimited number of events.
 
 Note: **Server** component can be skipped altogether, and just use the standalone **Sensor**. In such case, all events would be stored in the local logging directory, while the log entries could be examined either manually or by some CSV reading application.
 
@@ -87,6 +87,10 @@ cat /var/log/maltrail/$(date +"%Y-%m-%d").log
 ```
 
 ![Test](http://i.imgur.com/lIYntT1.png)
+
+Access the reporting interface (i.e. **Client**) by visiting the http://127.0.0.1:8338 (default credentials `admin:changeme!`) from your web browser:
+
+![Reporting interface](http://i.imgur.com/WEHA05S.png)
 
 ## Administrator's guide
 
