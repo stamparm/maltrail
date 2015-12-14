@@ -1137,3 +1137,8 @@ ze.tc
 zeg.cc
 zicp.net
 zik.dj
+
+# Reference: https://rules.emergingthreats.net/open/suricata/rules/emerging-dns.rules
+.xe.cx
+.nl.ai
+.pw

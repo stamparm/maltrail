@@ -583,7 +583,7 @@ function init(url, from, to) {
                         severity = SEVERITY.HIGH;
                     else if (data[LOG_COLUMNS.REFERENCE].contains("malwaredomainlist"))
                         severity = SEVERITY.HIGH;
-                    else if (data[LOG_COLUMNS.INFO].contains("malware distribution"))
+                    else if (data[LOG_COLUMNS.INFO] === "malware distribution")
                         severity = SEVERITY.MEDIUM;
                     else {
                         for (var keyword in INFO_SEVERITY_KEYWORDS)
