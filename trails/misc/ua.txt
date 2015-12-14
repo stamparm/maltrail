@@ -27,12 +27,10 @@ antispyware
 antivermeans
 antivirgear
 anycleaner
-\Aapache-httpclient
 apachebench
 api-guide test program
 \Aasd
 askpartner
-asktb
 asmupdater
 atomic_email_hunter
 \Aatsu
