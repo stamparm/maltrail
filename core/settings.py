@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.151"
+VERSION = "0.8.152"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -150,7 +150,9 @@ def read_config(config_file):
                     name = name.strip().upper()
                     value = value.strip("'\"").strip()
 
-            if name.startswith("USE_"):
+            if any(name.startswith(_) for _ in ("USE_", "SET_", "CHECK_", "ENABLE_")):
+                value = value.lower() in ("1", "true")
+            elif any(name.startswith(_) for _ in ("DISABLE_",)):
                 value = value.lower() in ("1", "true")
             elif value.isdigit():
                 value = int(value)

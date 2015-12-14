@@ -201,7 +201,7 @@ def _process_packet(packet, sec, usec):
                         host = data[index:data.find("\r\n", index)]
                         host = host.strip()
                         host = re.sub(r":80\Z", "", host)
-                    elif config.USE_HEURISTICS and config.USE_MISSING_HOST:
+                    elif config.USE_HEURISTICS and config.CHECK_MISSING_HOST:
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing host header)", "(heuristic)"))
 
                     if "://" in path:
@@ -245,7 +245,7 @@ def _process_packet(packet, sec, usec):
                             if found:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.UA, user_agent.replace('(', "&#40;").replace(')', "&#41;"), "suspicious user agent", "(heuristic)"))
 
-                        if not found and config.USE_SHORT_OR_MISSING_USER_AGENT:
+                        if not found and config.CHECK_SHORT_OR_MISSING_USER_AGENT:
                             if user_agent is None:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, url, "suspicious http request (missing user agent header)", "(heuristic)"))
                             elif len(user_agent) < SUSPICIOUS_UA_LENGTH_THRESHOLD:
