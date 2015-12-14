@@ -8,7 +8,7 @@
 91cast
 \A\w{1,2}\Z
 \A[0-9a-f]{32}
-\A[\W\d]
+\A[^a-z.]
 \A[^ ]\Z
 \(spkg\)
 _test_
@@ -90,7 +90,6 @@ cs fingerprint module
 \Actt\Z
 customspy
 cyberdog
-\Adalvik
 darecover
 darkness
 datacha0s
@@ -155,7 +154,7 @@ fullstuff
 fwversiontestagent
 gabpath
 \Agator
-gbot
+\Agbot
 general antivirus
 get_site
 getjob
