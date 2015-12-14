@@ -114,9 +114,9 @@ def get_regex(items):
             else:
                 return re.escape(current.keys()[0])
         else:
-            return ("(%s)" if len(current) > 1 else "%s") % ('|'.join("%s%s" % (re.escape(_), process(current[_])) for _ in sorted(current))).replace('|'.join(str(_) for _ in xrange(10)), r"\d")
+            return ("(?:%s)" if len(current) > 1 else "%s") % ('|'.join("%s%s" % (re.escape(_), process(current[_])) for _ in sorted(current))).replace('|'.join(str(_) for _ in xrange(10)), r"\d")
 
-    regex = process(head)
+    regex = process(head).replace(r"(?:|\d)", r"\d?")
 
     return regex
 
