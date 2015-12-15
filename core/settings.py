@@ -107,8 +107,13 @@ def _get_total_physmem():
     if not retval:
         try:
             import psutil
-
             retval = psutil.virtual_memory().total
+        except:
+            pass
+
+    if not retval:
+        try:
+            retval = int(re.search(r"Mem:\s+(\d+)", subprocess.check_output("free -b", shell=True)).group(1))
         except:
             pass
 
