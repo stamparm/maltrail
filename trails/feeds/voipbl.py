@@ -28,7 +28,9 @@ def fetch():
             start_int = addr_to_int(prefix) & make_mask(mask)
             end_int = start_int | ((1 << 32 - mask) - 1)
             if 0 <= end_int - start_int <= 1024:
-                for address in xrange(start_int, end_int + 1):
+                address = start_int
+                while start_int <= address <= end_int:
                     retval[int_to_addr(address)] = (__info__, __reference__)
+                    address += 1
 
     return retval

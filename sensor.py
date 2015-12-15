@@ -78,7 +78,7 @@ try:
     import pcapy
 except ImportError:
     if subprocess.mswindows:
-        exit("[!] please install Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy') and WinPcap (e.g. 'http://www.winpcap.org/install/')")
+        exit("[!] please install WinPcap (e.g. 'http://www.winpcap.org/install/') and Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy')")
     else:
         exit("[!] please install Pcapy (e.g. 'apt-get install python-pcapy')")
 
@@ -404,7 +404,8 @@ def init():
 
     if (config.MONITOR_INTERFACE or "").lower() == "any":
         if subprocess.mswindows:
-            exit("[!] virtual interface 'any' is not available on Windows OS")
+            print("[!] virtual interface 'any' is not available on Windows OS")
+            exit("[x] available interfaces: '%s'" % ",".join(pcapy.findalldevs()))
         else:
             print("[!] in case of any problems with packet capture on virtual interface 'any', please put all monitoring interfaces to promiscuous mode manually (e.g. 'sudo ifconfig eth0 promisc')")
 
