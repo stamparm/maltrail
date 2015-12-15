@@ -29,6 +29,7 @@ from core.attribdict import AttribDict
 from core.common import addr_to_int
 from core.common import get_regex
 from core.common import int_to_addr
+from core.common import ipcat_lookup
 from core.common import make_mask
 from core.pbkdf2 import pbkdf2
 from core.settings import config
@@ -144,6 +145,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 else:
                     self.send_response(httplib.NOT_FOUND)
                     self.send_header("Connection", "close")
+                    content = '<!DOCTYPE html><html lang="en"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL %s was not found on this server.</p></body></html>' % self.path.split('?')[0]
 
             if content is not None:
                 for match in re.finditer(r"<\!(\w+)\!>", content):
@@ -299,11 +301,12 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header("Content-Type", "text/plain")
             content = "Login %s" % ("success" if valid else "failed")
 
-            try:
-                subprocess.check_output("logger -p auth.info -t \"%s[%d]\" \"%s password for %s from %s port %s\"" % (NAME.lower(), os.getpid(), "Accepted" if valid else "Failed", params.get("username"), self.client_address[0], self.client_address[1]), stderr=subprocess.STDOUT, shell=True)
-            except Exception:
-                if config.SHOW_DEBUG:
-                    traceback.print_exc()
+            if not subprocess.mswindows:
+                try:
+                    subprocess.check_output("logger -p auth.info -t \"%s[%d]\" \"%s password for %s from %s port %s\"" % (NAME.lower(), os.getpid(), "Accepted" if valid else "Failed", params.get("username"), self.client_address[0], self.client_address[1]), stderr=subprocess.STDOUT, shell=True)
+                except Exception:
+                    if config.SHOW_DEBUG:
+                        traceback.print_exc()
 
             return content
 
@@ -322,6 +325,24 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header("Content-Type", "text/plain")
 
             return username
+
+        def _ipcat(self, params):
+            session = self.get_session()
+
+            if session is None:
+                self.send_response(httplib.UNAUTHORIZED)
+                self.send_header("Connection", "close")
+                return None
+
+            self.send_response(httplib.OK)
+            self.send_header("Connection", "close")
+            self.send_header("Content-Type", "text/plain")
+
+            try:
+                return (ipcat_lookup(params.get("address")) or "").lower().split(' ')[0]
+            except:
+                if config.SHOW_DEBUG:
+                    traceback.print_exc()
 
         def _trails(self, params):
             self.send_response(httplib.OK)

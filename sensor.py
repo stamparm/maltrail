@@ -59,7 +59,8 @@ from core.settings import VERSION
 from core.settings import WHITELIST
 from core.settings import WHITELIST_HTTP_REQUEST_KEYWORDS
 from core.settings import WHITELIST_UA_KEYWORDS
-from core.update import update
+from core.update import update_ipcat
+from core.update import update_trails
 
 _buffer = None
 _cap = None
@@ -348,7 +349,7 @@ def _process_packet(packet, sec, usec):
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
                 i = iph_length + ETH_LENGTH
-                if packet[i] != 8:  # Echo request
+                if ord(packet[i]) != 8:  # Echo request
                     return
 
             if dst_ip in trails:
@@ -379,7 +380,9 @@ def init():
             pass
 
     def update_timer():
-        _ = update(server=config.UPDATE_SERVER)
+        _ = update_trails(server=config.UPDATE_SERVER)
+
+        update_ipcat()
 
         if _:
             trails.clear()

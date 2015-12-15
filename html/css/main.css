@@ -376,7 +376,7 @@ rect.highlight {
 ::selection {
     background: yellow;
 }
-.time-day, .duplicates {
+.time-day, .duplicates, .ipcat {
     background-color: #eee;
     border-radius: 20px;
     color: #777;
@@ -384,7 +384,7 @@ rect.highlight {
     padding: 2px 2px;
     margin-bottom: 1px;
 }
-.duplicates {
+.duplicates, .ipcat {
     margin-left: 2px;
 }
 .severity {

@@ -21,6 +21,7 @@ var _TOTAL_EVENTS = 0;
 var _USER = null;
 
 var IP_COUNTRY = {};
+var IP_IPCAT = {};
 var TRAIL_TYPES = {};
 
 var SPARKLINE_WIDTH = 130;
@@ -873,7 +874,6 @@ function copyEventsToClipboard(event) {
     var target = $(event.target);
     var text = target.parent().find("span").text();
     window.prompt("Copy details to clipboard (press Ctrl+C)", text);
-    debugger;
 }
 
 function appendFilter(filter, event, istag) {
@@ -1032,6 +1032,7 @@ function initDetails() {
                         else
                             data = common + "<span title=\"" + title + "\" onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
                     }
+
                     return data;
                 },
                 targets: [ DATATABLES_COLUMNS.TRAIL ]
@@ -1263,6 +1264,59 @@ function initDetails() {
                 div.tooltip({ content: "<img src='" + THREAT_PIC_HASH + div[0].innerHTML + "?size=64x64' width='64' height='64'>", position: { my: "left center", at: "right+10 top" }});
             }
 
+            $.each([DATATABLES_COLUMNS.TRAIL], function(index, value) {
+                var cell = $('td:eq(' + value + ')', nRow);
+
+                if (cell === null)
+                    return false;
+
+                var html = cell.html();
+
+                if (html === null)
+                    return false;
+
+                if (html.indexOf('ipcat') > -1)
+                    return false;
+
+                var match = html.match(/\d+\.\d+\.\d+\.\d+/);
+                if (match === null)
+                    return false;
+
+                var interval = null;
+                var img = "";
+                var ip = match[0];
+
+                if (!isLocalAddress(ip)) {
+                    if (!(ip in IP_IPCAT)) {
+                        IP_IPCAT[ip] = null;
+                        $.ajax("/ipcat?address=" + ip, { dataType: "text", ip: ip, cell: cell })
+                        .success(function(text) {
+                            var span_ip = $(text.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(text);
+                            IP_IPCAT[this.ip] = text;
+                            this.cell.append(span_ip);
+                        });
+                    }
+                }
+                else if (IP_IPCAT[ip] !== null) {
+                    var text = IP_IPCAT[this.ip];
+                    var span_ip = $(text.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(text);
+                    this.cell.append(span_ip);
+                }
+                else {
+                    interval = setInterval(function(ip, cell){
+                        html = cell.html();
+                        if (IP_IPCAT[ip] !== null) {
+                            if (html.indexOf("ipcat") === -1) {
+                                var text = IP_IPCAT[this.ip];
+                                var span_ip = $(text.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(text);
+                                this.cell.append(span_ip);
+                            }
+                            clearInterval(interval);
+                        }
+                    }, 500, ip, cell);
+                }
+            });
+
             $.each([DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP], function(index, value) {
                 var cell = $('td:eq(' + value + ')', nRow);
 
@@ -1317,13 +1371,15 @@ function initDetails() {
                     else {
                         interval = setInterval(function(ip, cell){
                             html = cell.html();
-                            if ((IP_COUNTRY[ip] !== null) && (html.indexOf("flag-") === -1)) {
-                                img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '" />';
+                            if (IP_COUNTRY[ip] !== null) {
+                                if (html.indexOf("flag-") === -1) {
+                                    img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '" />';
 
-                                var span_ip = $("<span title=''/>").html(ip + " ");
-                                span_ip.tooltip(options);
+                                    var span_ip = $("<span title=''/>").html(ip + " ");
+                                    span_ip.tooltip(options);
 
-                                cell.html("").append(span_ip).append($(img).tooltip());
+                                    cell.html("").append(span_ip).append($(img).tooltip());
+                                }
                                 clearInterval(interval);
                             }
                         }, 1000, ip, cell);
@@ -1362,7 +1418,7 @@ function initDetails() {
             clearTimeout(SEARCH_TIP_TIMER);
             SEARCH_TIP_TIMER = setTimeout(function(cell, event) {
                 if ($(".ui-tooltip").length === 0) {
-                    var query = cell[0].innerHTML.replace(/<[^>]+>/g, "").replace(/[()]/g, "").split('/')[0];
+                    var query = cell[0].innerHTML.replace(/<span class="ipcat.+span>/g, "").replace(/<[^>]+>/g, "").replace(/[()]/g, "").split('/')[0];
                     $(".searchtip").remove();
                     $("body").append(
                         $('<div class="ui-tooltip searchtip"><div><img src="images/newtab.png" style="cursor: pointer" onclick="searchTipToTab(\'' + query + '\')" title="open in new tab"><img src="images/close.png" style="cursor: pointer; width: 16px; height: 16px" onclick="$(\'.searchtip\').remove()" title="close"></div><iframe src="' + SEARCH_TIP_URL.replace("${query}", query) + '"></iframe><div>')
@@ -1390,7 +1446,7 @@ function initDetails() {
         if ($(this).find(".info-input").length > 0)
             filter = $(this).find(".info-input")[0].value;
         else if ($(this).hasClass("trail"))
-            filter = $(this).html().replace(/\([^)]+\)/g, "");
+            filter = $(this).html().replace(/\([^)]+\)/g, "").replace(/<span.+/g, " ").replace(/<.+?>/g, " ");
         else if ($(this).find(".time-day").length > 0)
             filter = $(this).find("div")[0].lastChild.textContent;
         else if ($(this).find(".duplicates").length > 0)

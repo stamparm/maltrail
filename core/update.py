@@ -9,35 +9,46 @@ import csv
 import glob
 import inspect
 import os
+import sqlite3
 import subprocess
 import sys
 import time
+import urllib
 
 sys.dont_write_bytecode = True
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))  # to enable calling from current directory too
 
+from core.common import addr_to_int
 from core.common import load_trails
 from core.common import retrieve_content
 from core.settings import config
 from core.settings import read_whitelist
 from core.settings import BAD_TRAIL_PREFIXES
+from core.settings import FRESH_IPCAT_DELTA_DAYS
 from core.settings import LOW_PRIORITY_INFO_KEYWORDS
 from core.settings import HIGH_PRIORITY_REFERENCES
+from core.settings import IPCAT_CSV_FILE
+from core.settings import IPCAT_SQLITE_FILE
+from core.settings import IPCAT_URL
 from core.settings import ROOT_DIR
 from core.settings import TRAILS_FILE
 from core.settings import USERS_DIR
 from core.settings import WHITELIST
 
-def _fopen_trails(mode):
-    retval = open(TRAILS_FILE, mode)
-    if "w+" in mode and not subprocess.mswindows:
+def _chown(filepath):
+    if not subprocess.mswindows and os.path.exists(filepath):
         try:
-            os.chown(TRAILS_FILE, int(os.environ.get("SUDO_UID", -1)), int(os.environ.get("SUDO_GID", -1)))
+            os.chown(filepath, int(os.environ.get("SUDO_UID", -1)), int(os.environ.get("SUDO_GID", -1)))
         except Exception, ex:
             print "[x] '%s'" % ex
+
+def _fopen_trails(mode):
+    retval = open(TRAILS_FILE, mode)
+    if "w+" in mode:
+        _chown(TRAILS_FILE)
     return retval
 
-def update(server=None):
+def update_trails(server=None):
     """
     Update trails from feeds
     """
@@ -65,13 +76,15 @@ def update(server=None):
             for filename in filenames:
                 trail_files.append(os.path.abspath(os.path.join(dirpath, filename)))
 
-    if not trails and ((not os.path.isfile(TRAILS_FILE) or (time.time() - os.stat(TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(TRAILS_FILE).st_size == 0 or any(os.stat(_).st_mtime > os.stat(TRAILS_FILE).st_mtime for _ in trail_files))):
-        try:
-            if not os.path.isdir(USERS_DIR):
-                os.makedirs(USERS_DIR, 0755)
-        except Exception, ex:
-            exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
+    try:
+        if not os.path.isdir(USERS_DIR):
+            os.makedirs(USERS_DIR, 0755)
+    except Exception, ex:
+        exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
 
+    _chown(USERS_DIR)
+
+    if not trails and ((not os.path.isfile(TRAILS_FILE) or (time.time() - os.stat(TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(TRAILS_FILE).st_size == 0 or any(os.stat(_).st_mtime > os.stat(TRAILS_FILE).st_mtime for _ in trail_files))):
         print "[i] updating trails (this might take a while)..."
 
         if config.USE_FEED_UPDATES:
@@ -155,6 +168,45 @@ def update(server=None):
             print "[!] something went wrong during trails file write '%s' ('%s')" % (TRAILS_FILE, ex)
 
     return trails
+
+def update_ipcat():
+    try:
+        if not os.path.isdir(USERS_DIR):
+            os.makedirs(USERS_DIR, 0755)
+    except Exception, ex:
+        exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
+
+    _chown(USERS_DIR)
+    _chown(IPCAT_CSV_FILE)
+    _chown(IPCAT_SQLITE_FILE)
+
+    if not os.path.isfile(IPCAT_CSV_FILE) or not os.path.isfile(IPCAT_SQLITE_FILE) or (time.time() - os.stat(IPCAT_CSV_FILE).st_mtime) >= FRESH_IPCAT_DELTA_DAYS * 24 * 3600 or os.stat(IPCAT_SQLITE_FILE).st_size == 0:
+        print "[i] updating ipcat database..."
+
+        try:
+            urllib.urlretrieve(IPCAT_URL, IPCAT_CSV_FILE)
+        except Exception, ex:
+            print "[!] something went wrong during retrieval of '%s' ('%s')" % (IPCAT_URL, ex)
+
+        else:
+            try:
+                if os.path.exists(IPCAT_SQLITE_FILE):
+                    os.remove(IPCAT_SQLITE_FILE)
+
+                with sqlite3.connect(IPCAT_SQLITE_FILE, isolation_level=None, check_same_thread=False) as con:
+                    cur = con.cursor()
+                    cur.execute("CREATE TABLE ranges (start_int INT, end_int INT, name TEXT)")
+
+                    with open(IPCAT_CSV_FILE) as f:
+                        for row in f:
+                            if not row.startswith('#') and not row.startswith('start'):
+                                row = row.strip().split(",")
+                                cur.execute("INSERT INTO ranges VALUES (?, ?, ?)", (addr_to_int(row[0]), addr_to_int(row[1]), row[2]))
+
+                    cur.close()
+                    con.commit()
+            except Exception, ex:
+                print "[!] something went wrong during ipcat database update ('%s')" % ex
 
 def main():
     update()

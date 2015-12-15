@@ -25,7 +25,8 @@ from core.settings import read_config
 from core.settings import CONFIG_FILE
 from core.settings import NAME
 from core.settings import VERSION
-from core.update import update
+from core.update import update_ipcat
+from core.update import update_trails
 
 def main():
 
@@ -48,7 +49,10 @@ def main():
             exit("[!] invalid configuration value for 'SSL_PEM' ('%s')\n[i] hint: \"%s\"" % (config.SSL_PEM, hint))
 
     def update_timer():
-        update()
+        if config.USE_SERVER_UPDATE_TRAILS:
+            update_trails()
+
+        update_ipcat()
 
         thread = threading.Timer(config.UPDATE_PERIOD, update_timer)
         thread.daemon = True
@@ -58,8 +62,7 @@ def main():
         start_logd(address=config.UDP_ADDRESS, port=config.UDP_PORT, join=False)
 
     try:
-        if config.USE_SERVER_UPDATE_TRAILS:
-            update_timer()
+        update_timer()
         start_httpd(address=config.HTTP_ADDRESS, port=config.HTTP_PORT, pem=config.SSL_PEM if config.USE_SSL else None, join=True)
     except KeyboardInterrupt:
         print("\r[x] stopping (Ctrl-C pressed)")

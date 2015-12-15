@@ -9,6 +9,7 @@ import csv
 import gzip
 import os
 import re
+import sqlite3
 import StringIO
 import subprocess
 import urllib
@@ -17,8 +18,12 @@ import zipfile
 import zlib
 
 from core.settings import NAME
+from core.settings import IPCAT_SQLITE_FILE
 from core.settings import TIMEOUT
 from core.settings import TRAILS_FILE
+
+_ipcat_cursor = None
+_ipcat_cache = {}
 
 def retrieve_content(url, data=None):
     """
@@ -41,6 +46,35 @@ def retrieve_content(url, data=None):
         retval = ex.read() if hasattr(ex, "read") else getattr(ex, "msg", str())
 
     return retval or ""
+
+def ipcat_lookup(address):
+    global _ipcat_cursor
+
+    if not address:
+        return None
+
+    if address in _ipcat_cache:
+        retval = _ipcat_cache[address]
+    else:
+        retval = ""
+
+        if _ipcat_cursor is None:
+            if os.path.isfile(IPCAT_SQLITE_FILE):
+                _ipcat_cursor = sqlite3.connect(IPCAT_SQLITE_FILE, isolation_level=None, check_same_thread=False).cursor()
+            else:
+                return None
+
+        try:
+            _ = addr_to_int(address)
+            _ipcat_cursor.execute("SELECT name FROM ranges WHERE start_int <= ? AND end_int >= ?", (_, _))
+            _ = _ipcat_cursor.fetchone()
+            retval = str(_[0]) if _ else retval
+        except:
+            raise ValueError("[x] invalid IP address '%s'" % address)
+
+        _ipcat_cache[address] = retval
+
+    return retval
 
 def check_sudo():
     """
@@ -98,7 +132,6 @@ def get_regex(items):
                             pass
                         else:
                             if start != previous:
-                                print start, previous
                                 if start == '0' and previous == '9':
                                     items.append(r"\d")
                                 else:
@@ -119,13 +152,6 @@ def get_regex(items):
     regex = process(head).replace(r"(?:|\d)", r"\d?")
 
     return regex
-
-def retrieve_file(url, filename=None):
-    try:
-        filename, _ = urllib.urlretrieve(url, filename)
-    except:
-        filename = None
-    return filename
 
 def load_trails(quiet=False):
     if not quiet:
