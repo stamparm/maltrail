@@ -20,6 +20,7 @@ import zlib
 
 from core.settings import NAME
 from core.settings import IPCAT_SQLITE_FILE
+from core.settings import STATIC_IPCAT_LOOKUPS
 from core.settings import TIMEOUT
 from core.settings import TRAILS_FILE
 
@@ -51,6 +52,16 @@ def retrieve_content(url, data=None):
 def ipcat_lookup(address):
     if not address:
         return None
+
+    if not _ipcat_cache:
+        for name in STATIC_IPCAT_LOOKUPS:
+            for value in STATIC_IPCAT_LOOKUPS[name]:
+                if "-" in value:
+                    start, end = value.split('-')
+                    for _ in xrange(addr_to_int(start), addr_to_int(end) + 1):
+                        _ipcat_cache[int_to_addr(_)] = name
+                else:
+                    _ipcat_cache[value] = name
 
     if address in _ipcat_cache:
         retval = _ipcat_cache[address]
