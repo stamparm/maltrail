@@ -177,8 +177,6 @@ def update_ipcat():
         exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
 
     _chown(USERS_DIR)
-    _chown(IPCAT_CSV_FILE)
-    _chown(IPCAT_SQLITE_FILE)
 
     if not os.path.isfile(IPCAT_CSV_FILE) or not os.path.isfile(IPCAT_SQLITE_FILE) or (time.time() - os.stat(IPCAT_CSV_FILE).st_mtime) >= FRESH_IPCAT_DELTA_DAYS * 24 * 3600 or os.stat(IPCAT_SQLITE_FILE).st_size == 0:
         print "[i] updating ipcat database..."
@@ -195,6 +193,7 @@ def update_ipcat():
 
                 with sqlite3.connect(IPCAT_SQLITE_FILE, isolation_level=None, check_same_thread=False) as con:
                     cur = con.cursor()
+                    cur.execute("BEGIN TRANSACTION")
                     cur.execute("CREATE TABLE ranges (start_int INT, end_int INT, name TEXT)")
 
                     with open(IPCAT_CSV_FILE) as f:
@@ -203,10 +202,14 @@ def update_ipcat():
                                 row = row.strip().split(",")
                                 cur.execute("INSERT INTO ranges VALUES (?, ?, ?)", (addr_to_int(row[0]), addr_to_int(row[1]), row[2]))
 
+                    cur.execute("COMMIT")
                     cur.close()
                     con.commit()
             except Exception, ex:
                 print "[!] something went wrong during ipcat database update ('%s')" % ex
+
+    _chown(IPCAT_CSV_FILE)
+    _chown(IPCAT_SQLITE_FILE)
 
 def main():
     update()

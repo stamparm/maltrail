@@ -39,8 +39,8 @@ def get_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
 
 def safe_value(value):
     retval = str(value or '-')
-    if ' ' in retval:
-        retval = "\"%s\"" % retval
+    if any(_ in retval for _ in (' ', '"')):
+        retval = "\"%s\"" % retval.replace('"', '""')
     return retval
 
 def log_event(event_tuple):
