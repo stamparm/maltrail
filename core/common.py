@@ -58,8 +58,11 @@ def ipcat_lookup(address):
             for value in STATIC_IPCAT_LOOKUPS[name]:
                 if "-" in value:
                     start, end = value.split('-')
-                    for _ in xrange(addr_to_int(start), addr_to_int(end) + 1):
-                        _ipcat_cache[int_to_addr(_)] = name
+                    start_int, end_int = addr_to_int(start), addr_to_int(end)
+                    current = start_int
+                    while start_int <= current <= end_int:
+                        _ipcat_cache[int_to_addr(current)] = name
+                        current += 1
                 else:
                     _ipcat_cache[value] = name
 
