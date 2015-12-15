@@ -12,6 +12,7 @@ import re
 import sqlite3
 import StringIO
 import subprocess
+import threading
 import urllib
 import urllib2
 import zipfile
@@ -22,7 +23,7 @@ from core.settings import IPCAT_SQLITE_FILE
 from core.settings import TIMEOUT
 from core.settings import TRAILS_FILE
 
-_ipcat_cursor = None
+_ipcat_cursor = {}
 _ipcat_cache = {}
 
 def retrieve_content(url, data=None):
@@ -48,8 +49,6 @@ def retrieve_content(url, data=None):
     return retval or ""
 
 def ipcat_lookup(address):
-    global _ipcat_cursor
-
     if not address:
         return None
 
@@ -57,17 +56,19 @@ def ipcat_lookup(address):
         retval = _ipcat_cache[address]
     else:
         retval = ""
+        thread = threading.currentThread()
+        cursor = _ipcat_cursor.get(thread)
 
-        if _ipcat_cursor is None:
+        if cursor is None:
             if os.path.isfile(IPCAT_SQLITE_FILE):
-                _ipcat_cursor = sqlite3.connect(IPCAT_SQLITE_FILE, isolation_level=None, check_same_thread=False).cursor()
+                cursor = _ipcat_cursor[thread] = sqlite3.connect(IPCAT_SQLITE_FILE, isolation_level=None).cursor()
             else:
                 return None
 
         try:
             _ = addr_to_int(address)
-            _ipcat_cursor.execute("SELECT name FROM ranges WHERE start_int <= ? AND end_int >= ?", (_, _))
-            _ = _ipcat_cursor.fetchone()
+            cursor.execute("SELECT name FROM ranges WHERE start_int <= ? AND end_int >= ?", (_, _))
+            _ = cursor.fetchone()
             retval = str(_[0]) if _ else retval
         except:
             raise ValueError("[x] invalid IP address '%s'" % address)
