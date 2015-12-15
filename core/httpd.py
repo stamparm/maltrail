@@ -516,9 +516,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
     try:
         if pem:
-            server = SSLThreadingServer((address or '', int(port) if port else None), pem, SSLReqHandler)
+            server = SSLThreadingServer((address or '', int(port) if port else 0), pem, SSLReqHandler)
         else:
-            server = ThreadingServer((address or '', int(port) if port else None), ReqHandler)
+            server = ThreadingServer((address or '', int(port) if port else 0), ReqHandler)
     except Exception as ex:
         if "Address already in use" in str(ex):
             exit("[!] another instance already running")
