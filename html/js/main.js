@@ -43,6 +43,7 @@ var THREAT_PIC_HASH = null; // e.g. https://robohash.org/ or https://flathash.co
 var DEFAULT_STATUS_BORDER = "1px solid #a8a8a8";
 var DEFAULT_FONT_FAMILY = "Verdana, Geneva, sans-serif";
 var LOG_COLUMNS = { TIME: 0, SENSOR: 1, SRC_IP: 2, SRC_PORT: 3, DST_IP: 4, DST_PORT: 5, PROTO: 6, TYPE: 7, TRAIL: 8, INFO: 9, REFERENCE: 10 };
+var LOG_COLUMNS_SIZE = 0;
 var DATATABLES_COLUMNS = { THREAT: 0, SENSOR: 1, EVENTS: 2, SEVERITY: 3, FIRST_TIME: 4, LAST_TIME: 5, SRC_IP: 6, SRC_PORT: 7, DST_IP: 8, DST_PORT: 9, PROTO: 10, TYPE: 11, TRAIL: 12, INFO: 13, REFERENCE: 14, TAGS: 15 };
 var TOP_PORTS = { 17: "QOTD", 19: "CHARGEN", 21: "FTP", 22: "SSH", 23: "Telnet", 25: "SMTP", 53: "DNS", 80: "HTTP", 110: "POP3", 123: "NTP", 135: "DCOM-RPC", 143: "IMAP", 161: "SNMP", 389: "LDAP", 443: "HTTPS", 445: "Microsoft-DS", 587: "Submission", 902: "VMware", 990: "FTPS", 993: "IMAPS", 995: "POP3S", 1433: "MSSQL", 1434: "MSSQL", 1723: "PPTP", 1900: "SSDP", 3306: "MYSQL", 3389: "RDP", 5060: "SIP", 5900: "VNC", 8080: "HTTP-proxy" };
 var SEARCH_TIP_TIMER = 0;
@@ -59,6 +60,8 @@ var SEVERITY = { LOW: 1, MEDIUM: 2, HIGH: 3 };
 var SEVERITY_COLORS = { 1: "#8ba8c0", 2: "#f0ad4e", 3: "#d9534f"};
 var CHART_TOOLTIP_FORMAT = "<%= datasetLabel %>: <%= value %>";
 var INFO_SEVERITY_KEYWORDS = { "malware": SEVERITY.HIGH, "reputation": SEVERITY.LOW, "attacker": SEVERITY.LOW, "spammer": SEVERITY.LOW, "compromised": SEVERITY.LOW, "crawler": SEVERITY.LOW, "scanning": SEVERITY.LOW }
+
+for (var column in LOG_COLUMNS) if (LOG_COLUMNS.hasOwnProperty(column)) LOG_COLUMNS_SIZE++;
 
 window.onkeydown = function(event) {
     CTRL_DATES.length = 0;
@@ -425,7 +428,7 @@ function init(url, from, to) {
             for (var i = 0; i < results.data.length; i++) {
                 var data = results.data[i];
 
-                if (data.length < 2)
+                if (data.length < LOG_COLUMNS_SIZE)
                     continue;
 
                 var _ = data[LOG_COLUMNS.TRAIL].replace(/\([^)]+\)/g, "");
@@ -453,7 +456,7 @@ function init(url, from, to) {
             for (var i = 0; i < results.data.length; i++) {
                 var data = results.data[i], threatText, match, _;
 
-                if (data.length < 2)
+                if (data.length < LOG_COLUMNS_SIZE)
                     continue;
 
                 var time = data[LOG_COLUMNS.TIME];

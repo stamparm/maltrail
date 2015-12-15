@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.157"
+VERSION = "0.8.158"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
