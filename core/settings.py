@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.171"
+VERSION = "0.8.172"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -186,7 +186,7 @@ def read_config(config_file):
         if len(entry.split(':')) != 4:
             exit("[!] invalid USERS entry '%s'" % entry)
 
-    if not (config.HTTP_PORT or "").isdigit():
+    if not str(config.HTTP_PORT or "").isdigit():
         exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % config.HTTP_PORT)
 
     if config.USE_MULTIPROCESSING and subprocess.mswindows:
@@ -194,7 +194,7 @@ def read_config(config_file):
         config.USE_MULTIPROCESSING = False
 
     if config.CAPTURE_BUFFER:
-        if config.CAPTURE_BUFFER.isdigit():
+        if str(config.CAPTURE_BUFFER or "").isdigit():
             BUFFER_LENGTH = int(config.CAPTURE_BUFFER)
         elif re.search(r"\d+%", config.CAPTURE_BUFFER):
             physmem = _get_total_physmem()
