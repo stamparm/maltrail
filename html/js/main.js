@@ -1296,24 +1296,24 @@ function initDetails() {
                             this.cell.append(span_ip);
                         });
                     }
-                }
-                else if (IP_IPCAT[ip] !== null) {
-                    var text = IP_IPCAT[this.ip];
-                    var span_ip = $(text.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(text);
-                    this.cell.append(span_ip);
-                }
-                else {
-                    interval = setInterval(function(ip, cell){
-                        html = cell.html();
-                        if (IP_IPCAT[ip] !== null) {
-                            if (html.indexOf("ipcat") === -1) {
-                                var text = IP_IPCAT[this.ip];
-                                var span_ip = $(text.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(text);
-                                this.cell.append(span_ip);
+                    else if (IP_IPCAT[ip] !== null) {
+                        var text = IP_IPCAT[ip];
+                        var span_ip = $(text.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(text);
+                        cell.append(span_ip);
+                    }
+                    else {
+                        interval = setInterval(function(ip, cell){
+                            html = cell.html();
+                            if (IP_IPCAT[ip] !== null) {
+                                if (html.indexOf("ipcat") === -1) {
+                                    var text = IP_IPCAT[ip];
+                                    var span_ip = $(text.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(text);
+                                    cell.append(span_ip);
+                                }
+                                clearInterval(interval);
                             }
-                            clearInterval(interval);
-                        }
-                    }, 500, ip, cell);
+                        }, 500, ip, cell);
+                    }
                 }
             });
 
