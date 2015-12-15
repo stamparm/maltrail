@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.163"
+VERSION = "0.8.164"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -108,7 +108,7 @@ def _get_total_physmem():
         try:
             import psutil
 
-            retval = psutil.phymem_usage().total
+            retval = psutil.virtual_memory().total
         except:
             pass
 
