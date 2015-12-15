@@ -516,12 +516,14 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
     try:
         if pem:
-            server = SSLThreadingServer((address or '', int(port) if port else 0), pem, SSLReqHandler)
+            server = SSLThreadingServer((address or '', int(port) if (port or "").isdigit() else 0), pem, SSLReqHandler)
         else:
-            server = ThreadingServer((address or '', int(port) if port else 0), ReqHandler)
+            server = ThreadingServer((address or '', int(port) if (port or "").isdigit() else 0), ReqHandler)
     except Exception as ex:
         if "Address already in use" in str(ex):
             exit("[!] another instance already running")
+        elif "Name or service not known" in str(ex):
+            exit("[!] invalid configuration value for 'HTTP_ADDRESS' ('%s')" % config.HTTP_ADDRESS)
         else:
             raise
 

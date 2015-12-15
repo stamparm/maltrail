@@ -71,7 +71,7 @@ if __name__ == "__main__":
     try:
         main()
     except Exception:
-        print("\r[!] Unhandled exception occurred ('%s')" % sys.exc_info()[1])
-        print("\r[x] Please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc())
+        print("\r[!] unhandled exception occurred ('%s')" % sys.exc_info()[1])
+        print("\r[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc())
 
     os._exit(0)

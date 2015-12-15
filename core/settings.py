@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.168"
+VERSION = "0.8.169"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -185,6 +185,9 @@ def read_config(config_file):
     for entry in (config.USERS or []):
         if len(entry.split(':')) != 4:
             exit("[!] invalid USERS entry '%s'" % entry)
+
+    if not (config.HTTP_PORT or "").isdigit():
+        exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % config.HTTP_PORT)
 
     if config.USE_MULTIPROCESSING and subprocess.mswindows:
         print "[x] multiprocessing is currently not supported on Windows OS"
