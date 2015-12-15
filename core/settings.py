@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.161"
+VERSION = "0.8.162"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -60,7 +60,7 @@ SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = "( )"
 SUSPICIOUS_UA_REGEX = ""
 WHITELIST_HTTP_REQUEST_KEYWORDS = ("fql", "yql", "ads", "../images", "../scripts")
 WHITELIST_UA_KEYWORDS = ("62691CB3BF62DAF233FB2C02782E7BD2", "AntiVir-NGUpd", "TMSPS", "AVGSETUP")
-WHITELIST_LONG_DOMAIN_NAME_KEYWORDS = ("blog",)
+WHITELIST_LONG_DOMAIN_NAME_KEYWORDS = ("blogspot",)
 SUSPICIOUS_UA_LENGTH_THRESHOLD = 10
 SESSIONS = {}
 NO_SUCH_NAME_COUNTERS = {}  # this won't be (expensive) shared in multiprocessing run (hence, the threshold will effectively be n-times higher)

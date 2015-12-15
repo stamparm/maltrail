@@ -57,6 +57,7 @@ from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
 from core.settings import VERSION
 from core.settings import WHITELIST
+from core.settings import WHITELIST_LONG_DOMAIN_NAME_KEYWORDS
 from core.settings import WHITELIST_HTTP_REQUEST_KEYWORDS
 from core.settings import WHITELIST_UA_KEYWORDS
 from core.update import update_ipcat
@@ -109,7 +110,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto):
             else:
                 trail = query
 
-            if trail:
+            if trail and not any(_ in trail for _ in WHITELIST_LONG_DOMAIN_NAME_KEYWORDS):
                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, "long domain name (suspicious)", "(heuristic)"))
 
         elif "sinkhole." in query:
