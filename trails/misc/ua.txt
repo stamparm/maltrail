@@ -8,7 +8,6 @@
 91cast
 \A\w{1,2}\Z
 \A[0-9a-f]{32}
-\A[^a-z.]
 \A[^ ]\Z
 \(spkg\)
 _test_
