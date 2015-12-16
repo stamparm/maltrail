@@ -423,8 +423,8 @@ rect.highlight {
     user-select: none;
 }
 #graph_close {
-    margin-left: 190px;
-    margin-top: 20px;
+    position: relative;
+    left: 500px;
     cursor: pointer;
     width: 16px;
     height: 16px;
