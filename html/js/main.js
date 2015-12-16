@@ -1031,11 +1031,15 @@ function initDetails() {
                         // Reference: https://stackoverflow.com/questions/3340802/add-line-break-within-tooltips
                         title = title.replace(/([^\s]{50})/g, "$1&#013;");
 
+                        common = '<span class="trail-text">' + common + '</span>';
+
                         if (left)
                             data = "<span title=\"" + title + "\" onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>" + common;
                         else
                             data = common + "<span title=\"" + title + "\" onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
                     }
+                    else
+                        data = '<span class="trail-text">' + data + '</span>';
 
                     return data;
                 },
@@ -1416,9 +1420,9 @@ function initDetails() {
     });
 
     details.off("mouseenter");  // clear previous
-    details.on("mouseenter", "td", function(event) {
+    details.on("mouseenter", ".trail-text", function(event) {
         var cell = event.target;
-        if (event.target.classList.contains("trail")) {
+        if (event.target.classList.contains("trail-text")) {
             clearTimeout(SEARCH_TIP_TIMER);
             SEARCH_TIP_TIMER = setTimeout(function(cell, event) {
                 if ($(".ui-tooltip").length === 0) {
