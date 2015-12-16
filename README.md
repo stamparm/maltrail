@@ -1,6 +1,6 @@
 ![Logo](http://i.imgur.com/XxvKxJ3.png)
 
-# Maltrail [![Build Status](https://api.travis-ci.org/stamparm/maltrail.svg?branch=master)](https://api.travis-ci.org/stamparm/maltrail) [![Python 2.6|2.7](https://img.shields.io/badge/python-2.6|2.7-blue.svg)](https://www.python.org/) [![Dependencies pcapy](https://img.shields.io/badge/dependencies-pcapy-yellow.svg)](https://github.com/CoreSecurity/pcapy) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/stamparm/maltrail#license)
+# Maltrail [![Build Status](https://api.travis-ci.org/stamparm/maltrail.svg?branch=master)](https://api.travis-ci.org/stamparm/maltrail) [![Python 2.6|2.7](https://img.shields.io/badge/python-2.6|2.7-blue.svg)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-red.svg)](https://github.com/stamparm/maltrail#license)
 
 ## Content
 
@@ -13,6 +13,18 @@
 - [User's guide](#users-guide)
  - [Reporting interface](#reporting-interface)
 - [Real-life cases](#real-life-cases)
+ - [Mass scans](#mass-scans)
+ - [Anonymous attackers](#anonymous-attackers)
+ - [Service attackers](#service-attackers)
+ - [Malware](#malware)
+ - [Suspicious domain lookups](#suspicious-domain-lookups)
+ - [Suspicious ipinfo requests](#suspicious-ipinfo-requests)
+ - [Suspicious direct file downloads](#suspicious-direct-file-downloads)
+ - [Suspicious HTTP requests](#suspicious-http-requests)
+ - [Port scanning](#port-scanning)
+ - [Potential UDP exfiltration](#potential-udp-exfiltration)
+ - [False positives](#false-positives)
+- [Requirements](#requirements)
 - [License](#license)
 
 ## General
