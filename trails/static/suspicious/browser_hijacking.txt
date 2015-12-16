@@ -1,0 +1,42 @@
+# Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://en.wikipedia.org/wiki/Browser_hijacking
+
+atajitos.com
+coolwebsearch.info
+conduit.com
+coupon-server.com
+getwizard.com
+gosave.com
+istartsurf.com
+delta-search.com
+incredibar.com
+onewebsearch.com
+results-hub.com
+rockettab.com
+searchassist.net
+searchult.com
+searchgol.com
+searchnu.com
+snap.do
+taplika.com
+vosteran.com
+
+# Reference: (dork: How to remove Search (Removal Guide))
+
+123rede.com
+dregol.com
+ividi.org
+jogostempo.com
+mysportsxp.com
+omiga-plus.com
+portaldosites.com
+tohotweb.com
+top8844.com
+www-searching.com
+protectedio.com
+easyrecipesaccess.com
+qvo6.com
+sidecubes.com
+start.qone8.com

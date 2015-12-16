@@ -220,7 +220,6 @@ istsvc
 \Aisupd
 \Aiwin
 \Aiwonsearch
-\Ajakarta
 jorgee
 krmak
 krsystem
