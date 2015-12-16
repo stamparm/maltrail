@@ -422,3 +422,10 @@ rect.highlight {
     -ms-user-select: none;
     user-select: none;
 }
+#graph_close {
+    margin-left: 190px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}

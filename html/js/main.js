@@ -191,6 +191,11 @@ function toggleHeatmap() {
     }
 }
 
+function graphClose() {
+    $('#chart_area').empty();
+    resetStatusButtons();
+}
+
 function initCalHeatmap() {
     var start = new Date();
     //start.setYear(start.getYear() - 1);
@@ -692,6 +697,7 @@ function resetStatusButtons() {
         $(this).css("text-shadow", "-1px -1px 0 rgba(0, 0, 0, 0.50)");
         $(this).css("border", "3px groove rgba(0, 0, 0, 0.50)");
     });
+    $("#graph_close").hide();
 }
 
 function scrollTo(id) {
@@ -1717,6 +1723,8 @@ function drawInfo(type) {
     resetStatusButtons();
     $("#" + type.toLowerCase() + "_count").parent().css("text-shadow", "none");
     $("#" + type.toLowerCase() + "_count").parent().css("border", "1px solid rgba(0, 0, 0, 0.25");
+
+    $("#graph_close").removeClass("hidden").show();
 
     if (type === "Events") {
         var ticks = {};
