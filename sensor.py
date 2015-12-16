@@ -56,6 +56,7 @@ from core.settings import SUSPICIOUS_UA_LENGTH_THRESHOLD
 from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
 from core.settings import VERSION
+from core.settings import VLANH_LENGTH
 from core.settings import WHITELIST
 from core.settings import WHITELIST_LONG_DOMAIN_NAME_KEYWORDS
 from core.settings import WHITELIST_HTTP_REQUEST_KEYWORDS
@@ -127,17 +128,20 @@ def _process_packet(packet, sec, usec):
         ip_offset = None
 
         if _datalink == pcapy.DLT_PPP:
-            ppp_protocol = packet[2:4]
-            if ppp_protocol == "\x00\x21":  # IP
+            if ord(packet[2]) == 0 and ord(packet[3]) == 0x21:  # IPv4
                 ip_offset = PPPH_LENGTH
         else:
             if _datalink == pcapy.DLT_LINUX_SLL:
                 packet = packet[2:]
 
-            eth_header = struct.unpack("!HH8sH", packet[:ETH_LENGTH])
-            eth_protocol = socket.ntohs(eth_header[3])
-            if eth_protocol == 8:  # IP
+            # Reference: ftp://ftp.heanet.ie/disk1/sourceforge/t/tp/tpcat/tpcat%20python%20source/TPCAT.py
+
+            if ord(packet[12]) == 8 and ord(packet[13]) == 0:  # IPv4
                 ip_offset = ETH_LENGTH
+
+            elif ord(packet[12]) == 0x81 and ord(packet[13]) == 0:  # VLAN
+                if ord(packet[16]) == 8 and ord(packet[17]) == 0: # IPv4
+                    ip_offset = VLANH_LENGTH
 
         if ip_offset is None:
             return

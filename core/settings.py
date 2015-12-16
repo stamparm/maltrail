@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.173"
+VERSION = "0.8.174"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -44,6 +44,7 @@ END_BLOCK = -2
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 HTML_DIR = os.path.join(ROOT_DIR, "html")
 ETH_LENGTH = 14
+VLANH_LENGTH = 18
 PPPH_LENGTH = 4
 CONFIG_FILE = os.path.join(ROOT_DIR, "maltrail.conf")
 SYSTEM_LOG_DIR = "/var/log" if not subprocess.mswindows else "C:\\Windows\\Logs"
