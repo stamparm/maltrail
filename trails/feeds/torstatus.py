@@ -9,7 +9,7 @@ from core.common import retrieve_content
 
 __url__ = "https://torstatus.blutmagie.de/ip_list_all.php/Tor_ip_list_ALL.csv"
 __info__ = "tor exit node (suspicious)"
-__reference__ = "torstatus.blutmagie.de"
+__reference__ = "blutmagie.de"
 
 def fetch():
     retval = {}

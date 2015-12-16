@@ -11,7 +11,7 @@ from core.common import retrieve_content
 
 __url__ = "https://zeustracker.abuse.ch/monitor.php?filter=all"
 __check__ = "ZeuS Tracker"
-__reference__ = "zeustracker.abuse.ch"
+__reference__ = "abuse.ch"
 
 def fetch():
     retval = {}

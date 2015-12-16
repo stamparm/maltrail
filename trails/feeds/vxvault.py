@@ -12,7 +12,7 @@ from core.common import retrieve_content
 __url__ = "http://vxvault.siri-urz.net/URL_List.php"
 __check__ = "VX Vault"
 __info__ = "malware"
-__reference__ = "vxvault.siri-urz.net"
+__reference__ = "siri-urz.net"
 
 def fetch():
     retval = {}

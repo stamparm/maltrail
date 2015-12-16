@@ -10,7 +10,7 @@ from core.common import retrieve_content
 __url__ = "https://zeustracker.abuse.ch/blocklist.php?download=badips"
 __check__ = "ZeuS"
 __info__ = "zeus (malware)"
-__reference__ = "zeustracker.abuse.ch"
+__reference__ = "abuse.ch"
 
 def fetch():
     retval = {}

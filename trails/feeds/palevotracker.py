@@ -12,7 +12,7 @@ from core.common import retrieve_content
 __url__ = "https://palevotracker.abuse.ch/blocklists.php?download=combinedblocklist"
 __check__ = "Palevo"
 __info__ = "palevo (malware)"
-__reference__ = "palevotracker.abuse.ch"
+__reference__ = "abuse.ch"
 
 def fetch():
     retval = {}
