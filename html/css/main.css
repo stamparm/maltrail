@@ -424,8 +424,11 @@ rect.highlight {
 }
 #graph_close {
     position: relative;
-    left: 500px;
+    left: 508px;
     cursor: pointer;
     width: 16px;
     height: 16px;
+}
+#chart_canvas, svg {
+    border: 1px solid #a8a8a8;
 }
