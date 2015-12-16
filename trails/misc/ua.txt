@@ -3,6 +3,8 @@
 
 # Suspicious user-agent regular expressions
 
+# Reference: https://rules.emergingthreats.net/
+
 2search
 404search
 91cast
@@ -225,7 +227,6 @@ krsystem
 kuku
 letitgo
 \blibweb
-\Alibwww
 lineguide
 linkrunner
 live enterprise suite
@@ -235,7 +236,6 @@ lobo lunar
 \bloic
 \Alotto
 lsosss
-\Alwp-
 \Alynx\Z
 m a mu mu mu
 machaon
@@ -334,8 +334,6 @@ proxydown
 \Apts\Z
 \Apwmi
 pxyscand
-\Apycurl
-\Apython-urllib
 qdrbi starter
 qqgame
 \Aqvod
@@ -516,4 +514,6 @@ zealbot
 zeroup
 \bzmeu\b
 \Azz_
+
+# Reference: https://blog.sucuri.net/2015/12/remote-command-execution-vulnerability-in-joomla.html
 JDatabaseDriverMysqli
