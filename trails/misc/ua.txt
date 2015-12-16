@@ -193,7 +193,7 @@ ibsband-
 \Aie\Z
 ie6 on windows xp
 ie_6\.0
-iedefender 
+iedefender
 iefeatsl
 \Aiep\Z
 ietoolbar
@@ -216,7 +216,7 @@ isecu
 ismazo
 istsvc
 \Aisupd
-\Aiwin 
+\Aiwin
 \Aiwonsearch
 \Ajakarta
 jorgee
@@ -231,7 +231,7 @@ linkrunner
 live enterprise suite
 lmaokaazldr
 lobo lunar
-\Alocus 
+\Alocus
 \bloic
 \Alotto
 lsosss
@@ -388,7 +388,7 @@ smart-rtp
 \Asme32
 smileware
 snatch-system
-snoopstick 
+snoopstick
 snoopy
 \Asogou
 sogouexplorerminisetup
@@ -516,3 +516,4 @@ zealbot
 zeroup
 \bzmeu\b
 \Azz_
+JDatabaseDriverMysqli
