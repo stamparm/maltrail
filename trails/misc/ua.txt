@@ -51,7 +51,6 @@ backdoor
 backdor
 backman
 bad_bot
-\Abaiduspider
 \Abar\Z
 bdsclk
 bdwinrun
@@ -387,7 +386,6 @@ smileware
 snatch-system
 snoopstick
 snoopy
-\Asogou
 sogouexplorerminisetup
 sogouime
 something
