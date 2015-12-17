@@ -39,6 +39,7 @@ from core.settings import HTML_DIR
 from core.settings import HTTP_TIME_FORMAT
 from core.settings import NAME
 from core.settings import SERVER_HEADER
+from core.settings import SESSION_COOKIE_NAME
 from core.settings import SESSION_EXPIRATION_HOURS
 from core.settings import SESSION_ID_LENGTH
 from core.settings import SESSIONS
@@ -186,7 +187,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             cookie = self.headers.get("Cookie")
 
             if cookie:
-                match = re.search(r"session=(.+)", cookie)
+                match = re.search(r"%s=(.+)" % SESSION_COOKIE_NAME, cookie)
                 if match:
                     session = match.group(1)
                     if session in SESSIONS:
@@ -201,7 +202,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             cookie = self.headers.get("Cookie")
 
             if cookie:
-                match = re.search(r"session=(.+)", cookie)
+                match = re.search(r"%s=(.+)" % SESSION_COOKIE_NAME, cookie)
                 if match:
                     session = match.group(1)
                     if session in SESSIONS:
@@ -258,7 +259,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
                 self.send_response(httplib.OK)
                 self.send_header("Connection", "close")
-                self.send_header("Set-Cookie", "session=%s; expires=%s; path=/; HttpOnly" % (session_id, time.strftime(HTTP_TIME_FORMAT, time.gmtime(expiration))))
+                self.send_header("Set-Cookie", "%s=%s; expires=%s; path=/; HttpOnly" % (SESSION_COOKIE_NAME, session_id, time.strftime(HTTP_TIME_FORMAT, time.gmtime(expiration))))
 
                 if netfilter in ("", "0.0.0.0/0"):
                     netfilters = None

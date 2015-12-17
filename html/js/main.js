@@ -77,7 +77,6 @@ $(document).ready(function() {
     $(".disabled").remove();
 
     initCalHeatmap();
-    //initStats();
     initDialogs();
 
     Papa.RemoteChunkSize = 1024 * 1024 * 10; // 10 MB (per one chunk request)

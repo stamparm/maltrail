@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.202"
+VERSION = "0.8.203"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -31,6 +31,7 @@ IPCAT_URL = "https://raw.github.com/client9/ipcat/master/datacenters.csv"
 TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 HTTP_DEFAULT_PORT = 8338
 HTTP_TIME_FORMAT = "%a, %d %b %Y %H:%M:%S GMT"  # Reference: http://stackoverflow.com/a/225106
+SESSION_COOKIE_NAME = "%s_sessid" % NAME.lower()
 SNAP_LEN = 2000
 BLOCK_LENGTH = 1 + 2 + 4 + 4 + SNAP_LEN  # primitive mutex + short for packet size + int for sec + int for usec + max packet size
 SHORT_SENSOR_SLEEP_TIME = 0.00001
