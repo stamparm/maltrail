@@ -34,7 +34,6 @@ from core.log import create_log_directory
 from core.log import log_event
 from core.parallel import worker
 from core.parallel import write_block
-from core.settings import BUFFER_LENGTH
 from core.settings import config
 from core.settings import CONFIG_FILE
 from core.settings import ETH_LENGTH
@@ -467,7 +466,7 @@ def _init_multiprocessing():
 
     if _multiprocessing:
         print("[i] creating %d more processes (%d CPU cores detected)" % (_multiprocessing.cpu_count() - 1, _multiprocessing.cpu_count()))
-        _buffer = mmap.mmap(-1, BUFFER_LENGTH)  # http://www.alexonlinux.com/direct-io-in-python
+        _buffer = mmap.mmap(-1, config.CAPTURE_BUFFER)  # http://www.alexonlinux.com/direct-io-in-python
         _n = _multiprocessing.Value('L', lock=False)
 
         for i in xrange(_multiprocessing.cpu_count() - 1):

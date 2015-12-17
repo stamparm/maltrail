@@ -33,7 +33,6 @@ HTTP_DEFAULT_PORT = 8338
 HTTP_TIME_FORMAT = "%a, %d %b %Y %H:%M:%S GMT"  # Reference: http://stackoverflow.com/a/225106
 SNAP_LEN = 2000
 BLOCK_LENGTH = 1 + 2 + 4 + 4 + SNAP_LEN  # primitive mutex + short for packet size + int for sec + int for usec + max packet size
-BUFFER_LENGTH = 512 * 1024 * 1024 / BLOCK_LENGTH * BLOCK_LENGTH  # 512MB buffer
 SHORT_SENSOR_SLEEP_TIME = 0.00001
 REGULAR_SENSOR_SLEEP_TIME = 0.001
 LOAD_TRAILS_RETRY_SLEEP_TIME = 60
@@ -133,7 +132,6 @@ def _get_total_physmem():
     return retval
 
 def read_config(config_file):
-    global BUFFER_LENGTH
     global config
 
     if not os.path.isfile(config_file):
@@ -209,16 +207,16 @@ def read_config(config_file):
 
     if config.CAPTURE_BUFFER:
         if str(config.CAPTURE_BUFFER or "").isdigit():
-            BUFFER_LENGTH = int(config.CAPTURE_BUFFER)
+            config.CAPTURE_BUFFER = int(config.CAPTURE_BUFFER)
         elif re.search(r"\d+%", config.CAPTURE_BUFFER):
             physmem = _get_total_physmem()
 
             if physmem:
-                BUFFER_LENGTH = physmem * int(re.search(r"(\d+)%", config.CAPTURE_BUFFER).group(1)) / 100
+                config.CAPTURE_BUFFER = physmem * int(re.search(r"(\d+)%", config.CAPTURE_BUFFER).group(1)) / 100
             else:
                 exit("[!] unable to determine total physical memory. Please use absolute value for 'CAPTURE_BUFFER'")
 
-        BUFFER_LENGTH = BUFFER_LENGTH / BLOCK_LENGTH * BLOCK_LENGTH
+        config.CAPTURE_BUFFER = config.CAPTURE_BUFFER / BLOCK_LENGTH * BLOCK_LENGTH
 
 def read_whitelist():
     WHITELIST.clear()

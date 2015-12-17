@@ -13,7 +13,6 @@ import time
 from core.common import load_trails
 from core.enums import BLOCK_MARKER
 from core.settings import BLOCK_LENGTH
-from core.settings import BUFFER_LENGTH
 from core.settings import config
 from core.settings import LOAD_TRAILS_RETRY_SLEEP_TIME
 from core.settings import REGULAR_SENSOR_SLEEP_TIME
@@ -22,7 +21,7 @@ from core.settings import trails
 from core.settings import TRAILS_FILE
 
 def read_block(buffer, i):
-    offset = i * BLOCK_LENGTH % BUFFER_LENGTH
+    offset = i * BLOCK_LENGTH % config.CAPTURE_BUFFER
 
     while True:
         if buffer[offset] == BLOCK_MARKER.END:
@@ -44,7 +43,7 @@ def read_block(buffer, i):
     return retval
 
 def write_block(buffer, i, block, marker=None):
-    offset = i * BLOCK_LENGTH % BUFFER_LENGTH
+    offset = i * BLOCK_LENGTH % config.CAPTURE_BUFFER
 
     while buffer[offset] == BLOCK_MARKER.READ:
         time.sleep(SHORT_SENSOR_SLEEP_TIME)
