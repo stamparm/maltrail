@@ -1459,8 +1459,6 @@ function initDetails() {
 
         if ($(this).find(".info-input").length > 0)
             filter = $(this).find(".info-input")[0].value;
-        else if ($(this).hasClass("trail"))
-            filter = $(this).html().replace(/\([^)]+\)/g, "").replace(/<span.+/g, " ").replace(/<.+?>/g, " ");
         else if ($(this).find(".time-day").length > 0)
             filter = $(this).find("div")[0].lastChild.textContent;
         else if ($(this).find(".duplicates").length > 0)
@@ -1476,7 +1474,7 @@ function initDetails() {
             }
         }
         else {
-            filter = this.innerHTML.replace(/<.+?>/g, " ");
+            filter = this.innerHTML.replace(/<span class="ipcat">.+/g, "").replace(/<.+?>/g, " ");
         }
 
         filter = filter.replace(/\s+/g, " ").trim();
