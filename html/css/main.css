@@ -140,7 +140,10 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     background-size: 4px 4px;
 }
 .disabled {
-    background-color: #333333;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    width: 100%;
 }
 .graph-label {
     font-family: Verdana, Geneva, sans-serif

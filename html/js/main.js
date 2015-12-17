@@ -74,6 +74,8 @@ window.onkeyup = function(event) {
 
 // Retrieve (and parse) log data
 $(document).ready(function() {
+    $(".disabled").remove();
+
     initCalHeatmap();
     //initStats();
     initDialogs();
