@@ -26,6 +26,7 @@ from core.settings import read_whitelist
 from core.settings import BAD_TRAIL_PREFIXES
 from core.settings import FRESH_IPCAT_DELTA_DAYS
 from core.settings import LOW_PRIORITY_INFO_KEYWORDS
+from core.settings import HIGH_PRIORITY_INFO_KEYWORDS
 from core.settings import HIGH_PRIORITY_REFERENCES
 from core.settings import IPCAT_CSV_FILE
 from core.settings import IPCAT_SQLITE_FILE
@@ -114,7 +115,7 @@ def update_trails(server=None):
                                 if item[0] not in duplicates:
                                     duplicates[item[0]] = set((trails[item[0]][1],))
                                 duplicates[item[0]].add(item[1][1])
-                            if not (item[0] in trails and (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) or trails[item[0]][1] in HIGH_PRIORITY_REFERENCES)) or item[1][1] in HIGH_PRIORITY_REFERENCES:
+                            if not (item[0] in trails and (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) or trails[item[0]][1] in HIGH_PRIORITY_REFERENCES)) or item[1][1] in HIGH_PRIORITY_REFERENCES or any(_ in item[1][0] for _ in HIGH_PRIORITY_INFO_KEYWORDS):
                                 trails[item[0]] = item[1]
                         if not results and "abuse.ch" not in module.__url__:
                             print "[!] something went wrong during remote data retrieval ('%s')" % module.__url__

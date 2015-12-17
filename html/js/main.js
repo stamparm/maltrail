@@ -433,9 +433,8 @@ function init(url, from, to) {
             for (var i = 0; i < results.data.length; i++) {
                 var data = results.data[i];
 
-                if (data.length < LOG_COLUMNS_SIZE) {
+                if (data.length < LOG_COLUMNS_SIZE)
                     continue;
-                }
 
                 var _ = data[LOG_COLUMNS.TRAIL].replace(/\([^)]+\)/g, "");
 
