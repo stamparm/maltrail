@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.195"
+VERSION = "0.8.196"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -160,11 +160,16 @@ def read_config(config_file):
 
         for line in content.split("\n"):
             line = line.strip('\r')
-            line = re.sub(r"#.+", "", line)
+            line = re.sub(r"\s*#.+", "", line)
             if not line.strip():
                 continue
 
             if line.count(' ') == 0:
+                if re.search(r"[^\w]", line):
+                    if array == "USERS":
+                        exit("[!] invalid USERS entry '%s'\n[o] (hint: add whitespace at start of line)" % line)
+                    else:
+                        exit("[!] invalid configuration (line: '%s')" % line)
                 array = line.upper()
                 config[array] = []
                 continue
