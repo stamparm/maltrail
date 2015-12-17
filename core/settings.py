@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.188"
+VERSION = "0.8.189"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -108,6 +108,18 @@ def _get_total_physmem():
         try:
             import psutil
             retval = psutil.virtual_memory().total
+        except:
+            pass
+
+    if not retval:
+        try:
+            retval = int(re.search(r"real mem(ory)?\s*=\s*(\d+) ", open("/var/run/dmesg.boot").read()).group(2))
+        except:
+            pass
+
+    if not retval:
+        try:
+            retval = int(re.search(r"hw\.physmem:\s*(\d+)", subprocess.check_output("sysctl hw", shell=True, stderr=subprocess.STDOUT)).group(1))
         except:
             pass
 
