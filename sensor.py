@@ -466,7 +466,10 @@ def _init_multiprocessing():
 
     if _multiprocessing:
         print("[i] creating %d more processes (%d CPU cores detected)" % (_multiprocessing.cpu_count() - 1, _multiprocessing.cpu_count()))
-        _buffer = mmap.mmap(-1, config.CAPTURE_BUFFER)  # http://www.alexonlinux.com/direct-io-in-python
+        try:
+            _buffer = mmap.mmap(-1, config.CAPTURE_BUFFER)  # http://www.alexonlinux.com/direct-io-in-python
+        except:
+            exit("[!] unable to allocate network capture buffer. Please adjust value of 'CAPTURE_BUFFER'")
         _n = _multiprocessing.Value('L', lock=False)
 
         for i in xrange(_multiprocessing.cpu_count() - 1):
