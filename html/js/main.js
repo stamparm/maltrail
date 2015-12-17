@@ -1230,7 +1230,7 @@ function initDetails() {
                     var ip = match[0];
 
                     $.ajax("https://stat.ripe.net/data/dns-chain/data.json?resource=" + ip, { dataType:"jsonp", ip: ip})
-                    .success(function(json) {
+                    .done(function(json) {
                         var _ = json.data.reverse_nodes[this.ip];
                         if ((_.length === 0)||(_ === "localhost")) {
                             _ = "-";
@@ -1243,7 +1243,7 @@ function initDetails() {
                         ui.tooltip.find(".ui-tooltip-content").html(msg + "please wait...");
 
                         $.ajax("https://stat.ripe.net/data/whois/data.json?resource=" + ip, { dataType:"jsonp", ip: ip, msg: msg })
-                        .success(function(json) {
+                        .done(function(json) {
                             // Reference: http://bugs.jqueryui.com/ticket/8740#comment:21
                             var found = null;
                             var msg = "";
@@ -1305,7 +1305,7 @@ function initDetails() {
                     if (!(ip in IP_IPCAT)) {
                         IP_IPCAT[ip] = null;
                         $.ajax("/ipcat?address=" + ip, { dataType: "text", ip: ip, cell: cell })
-                        .success(function(text) {
+                        .done(function(text) {
                             var span_ip = $(text.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(text);
                             IP_IPCAT[this.ip] = text;
                             this.cell.append(span_ip);
@@ -1359,7 +1359,7 @@ function initDetails() {
                     if (!(ip in IP_COUNTRY)) {
                         IP_COUNTRY[ip] = null;
                         $.ajax("https://stat.ripe.net/data/geoloc/data.json?resource=" + ip, { dataType:"jsonp", ip: ip, cell: cell })
-                        .success(function(json) {
+                        .done(function(json) {
                             var span_ip = $("<span title=''/>").html(this.ip + " ");
 
                             if ((json.data.locations.length > 0) && (json.data.locations[0].country !== "ANO")) {
