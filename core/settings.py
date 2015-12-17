@@ -114,6 +114,12 @@ def _get_total_physmem():
 
     if not retval:
         try:
+            retval = 1024 * int(re.search(r"\s+(\d+) K total memory", subprocess.check_output("vmstat -s", shell=True, stderr=subprocess.STDOUT)).group(1))
+        except:
+            pass
+
+    if not retval:
+        try:
             retval = int(re.search(r"Mem:\s+(\d+)", subprocess.check_output("free -b", shell=True, stderr=subprocess.STDOUT)).group(1))
         except:
             pass
