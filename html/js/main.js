@@ -1824,7 +1824,7 @@ function drawInfo(type) {
             var item = _TRAILS_SORTED[i];
 
             if (item[1] >= threshold) {
-                var match = item[0].match(/(.+?)\ \(([^)]+)\)/);
+                var match = item[0].match(/(.*?)\ \(([^)]+)\)/);
                 var type = match[2];
                 var count = item[1];
 
