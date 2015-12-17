@@ -17,7 +17,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.187"
+VERSION = "0.8.188"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -114,7 +114,7 @@ def _get_total_physmem():
 
     if not retval:
         try:
-            retval = int(re.search(r"Mem:\s+(\d+)", subprocess.check_output("free -b", shell=True)).group(1))
+            retval = int(re.search(r"Mem:\s+(\d+)", subprocess.check_output("free -b", shell=True, stderr=subprocess.STDOUT)).group(1))
         except:
             pass
 
