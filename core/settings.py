@@ -119,7 +119,7 @@ def _get_total_physmem():
 
     if not retval:
         try:
-            retval = int(re.search(r"hw\.physmem:\s*(\d+)", subprocess.check_output("sysctl hw", shell=True, stderr=subprocess.STDOUT)).group(1))
+            retval = int(re.search(r"hw\.(physmem|memsize):\s*(\d+)", subprocess.check_output("sysctl hw", shell=True, stderr=subprocess.STDOUT)).group(2))
         except:
             pass
 
