@@ -1386,7 +1386,9 @@ function initDetails() {
                     else {
                         interval = setInterval(function(ip, cell){
                             html = cell.html();
-                            if (IP_COUNTRY[ip] !== null) {
+                            if (typeof html === "undefined")
+                                clearInterval(interval);
+                            else if (IP_COUNTRY[ip] !== null) {
                                 if (html.indexOf("flag-") === -1) {
                                     img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '" />';
 
