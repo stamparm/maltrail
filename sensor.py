@@ -148,14 +148,14 @@ def _process_packet(packet, sec, usec):
         ip_header = struct.unpack("!BBHHHBBH4s4s", packet[ip_offset:ip_offset + 20])
 
         ip_length = ip_header[2]
-        packet = packet[:ETH_LENGTH + ip_length]  # truncate
+        packet = packet[:ip_offset + ip_length]  # truncate
         iph_length = (ip_header[0] & 0xf) << 2
         protocol = ip_header[6]
         src_ip = socket.inet_ntoa(ip_header[8])
         dst_ip = socket.inet_ntoa(ip_header[9])
 
         if protocol == socket.IPPROTO_TCP:  # TCP
-            i = iph_length + ETH_LENGTH
+            i = iph_length + ip_offset
             src_port, dst_port, _, _, doff_reserved, flags = struct.unpack("!HHLLBB", packet[i:i+14])
 
             if flags == 2:  # SYN set (only)
@@ -185,7 +185,7 @@ def _process_packet(packet, sec, usec):
 
             if flags & 8 != 0:  # PSH set
                 tcph_length = doff_reserved >> 4
-                h_size = ETH_LENGTH + iph_length + (tcph_length << 2)
+                h_size = ip_offset + iph_length + (tcph_length << 2)
                 data = packet[h_size:]
 
                 method, path = None, None
@@ -298,7 +298,7 @@ def _process_packet(packet, sec, usec):
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious page", "(heuristic)"))
 
         elif protocol == socket.IPPROTO_UDP:  # UDP
-            i = iph_length + ETH_LENGTH
+            i = iph_length + ip_offset
             _ = packet[i:i + 4]
             if len(_) < 4:
                 return
@@ -312,7 +312,7 @@ def _process_packet(packet, sec, usec):
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]))
 
             if dst_port == 53 or src_port == 53:
-                h_size = ETH_LENGTH + iph_length + 8
+                h_size = ip_offset + iph_length + 8
                 data = packet[h_size:]
 
                 # Reference: http://www.ccs.neu.edu/home/amislove/teaching/cs4700/fall09/handouts/project1-primer.pdf
@@ -352,7 +352,7 @@ def _process_packet(packet, sec, usec):
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
-                i = iph_length + ETH_LENGTH
+                i = iph_length + ip_offset
                 if ord(packet[i]) != 8:  # Echo request
                     return
 
