@@ -856,7 +856,7 @@ function _ipCompareValues(a, b) {
 function copyEllipsisToClipboard(event) {
     var target = $(event.target);
     var text = target.parent().title;
-    var html = target.parent().parent().html();
+    var html = target.parent().parent().html().replace(/<span class="trail-text">/, "");
     var left = html.startsWith('<');
     var common = html.replace(/<[^>]+>/g, "");
     if (!text) {
