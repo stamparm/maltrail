@@ -118,6 +118,12 @@ def _get_total_physmem():
         except:
             pass
 
+    if not retval:
+        try:
+            retval = 1024 * int(re.search(r"KiB Mem:\s*\x1b[^\s]+\s*(\d+)", subprocess.check_output("top -n 1", shell=True, stderr=subprocess.STDOUT)).group(1))
+        except:
+            pass
+
     return retval
 
 def read_config(config_file):
