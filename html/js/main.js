@@ -470,7 +470,7 @@ function init(url, from, to) {
                 var reference = data[LOG_COLUMNS.REFERENCE];
 
                 _ = data[LOG_COLUMNS.TRAIL];
-                _ = _.replace(/\([^)]+\)/g, "");
+                _ = charTrim(_.replace(/\([^)]+\)/g, "").replace(/\{[^}]+\}/g, ""), ' ');
 
                 var flood = _ in _FLOOD_TRAILS;
                 var dga = info.indexOf(DGA_THREAT_INFIX) > -1;
@@ -509,7 +509,7 @@ function init(url, from, to) {
                                 _[column] = { };
                                 _[column][original] = true;
                             }
-                            _[column][data[column]] = true;
+                            _[column][data[column].replace(/\s{[^}]+}/, "")] = true;
                     }
                 }
 
