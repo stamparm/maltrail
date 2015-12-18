@@ -455,8 +455,10 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 self.wfile.write(data)
 
             else:
-                self.send_response(httplib.NOT_FOUND)
+                self.send_response(httplib.NO_CONTENT)
                 self.send_header("Connection", "close")
+                if self.headers.get("Range"):
+                    self.send_header("Content-Range", "bytes 0-0/0")
 
             return content
 
