@@ -176,8 +176,9 @@ def _process_packet(packet, sec, usec):
                         for key in _connect_src_dst:
                             if len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
                                 _src_ip, _dst_ip = key.split(':')
-                                for _sec, _usec, _src_port, _dst_port in _connect_src_details[key]:
-                                    log_event((_sec, _usec, _src_ip, _src_port, _dst_ip, _dst_port, "TCP", TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"))
+                                if _src_ip not in WHITELIST:
+                                    for _sec, _usec, _src_port, _dst_port in _connect_src_details[key]:
+                                        log_event((_sec, _usec, _src_ip, _src_port, _dst_ip, _dst_port, "TCP", TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"))
 
                         _connect_sec = sec
                         _connect_src_dst.clear()
