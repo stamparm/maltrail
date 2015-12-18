@@ -187,7 +187,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             cookie = self.headers.get("Cookie")
 
             if cookie:
-                match = re.search(r"%s=([^;]+)" % SESSION_COOKIE_NAME, cookie)
+                match = re.search(r"%s\s*=\s*([^;]+)" % SESSION_COOKIE_NAME, cookie)
                 if match:
                     session = match.group(1)
                     if session in SESSIONS:
