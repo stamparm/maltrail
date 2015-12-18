@@ -23,6 +23,7 @@ from core.settings import IPCAT_SQLITE_FILE
 from core.settings import STATIC_IPCAT_LOOKUPS
 from core.settings import TIMEOUT
 from core.settings import TRAILS_FILE
+from core.settings import WHITELIST
 
 _ipcat_cursor = {}
 _ipcat_cache = {}
@@ -181,7 +182,8 @@ def load_trails(quiet=False):
                 for row in reader:
                     if row:
                         trail, info, reference = row
-                        retval[trail] = (info, reference)
+                        if trail not in WHITELIST:
+                            retval[trail] = (info, reference)
 
         except Exception, ex:
             exit("[x] something went wrong during trails file read '%s' ('%s')" % (TRAILS_FILE, ex))
