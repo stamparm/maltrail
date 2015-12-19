@@ -139,7 +139,7 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     -moz-background-size: 4px 4px;
     background-size: 4px 4px;
 }
-.disabled {
+#noscript {
     position: absolute;
     top: 50%;
     text-align: center;
@@ -155,15 +155,7 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     position: absolute;
     left: 0px;
     top: 0px;
-    visibility: hidden;
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-    color: white;
-    font: 10px arial, san serif;
-    text-align: left;
-    white-space: nowrap;
-    padding: 5px;
-    z-index: 10000;
+    background-color: black;
 }
 .ui-tooltip {
     max-width: 600px;

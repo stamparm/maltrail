@@ -17,6 +17,7 @@ var _DATASET = [];
 var _TRAILS_SORTED = null;
 var _DELETE_DELETE_PRESS = false;
 var _MAX_EVENTS_PER_HOUR = 0;
+var _MAX_SPARKLINE_PER_HOUR = 0;
 var _TOTAL_EVENTS = 0;
 var _USER = null;
 
@@ -44,7 +45,7 @@ var DEFAULT_STATUS_BORDER = "1px solid #a8a8a8";
 var DEFAULT_FONT_FAMILY = "Verdana, Geneva, sans-serif";
 var LOG_COLUMNS = { TIME: 0, SENSOR: 1, SRC_IP: 2, SRC_PORT: 3, DST_IP: 4, DST_PORT: 5, PROTO: 6, TYPE: 7, TRAIL: 8, INFO: 9, REFERENCE: 10 };
 var LOG_COLUMNS_SIZE = 0;
-var DATATABLES_COLUMNS = { THREAT: 0, SENSOR: 1, EVENTS: 2, SEVERITY: 3, FIRST_SEEN: 4, LAST_SEEN: 5, SRC_IP: 6, SRC_PORT: 7, DST_IP: 8, DST_PORT: 9, PROTO: 10, TYPE: 11, TRAIL: 12, INFO: 13, REFERENCE: 14, TAGS: 15 };
+var DATATABLES_COLUMNS = { THREAT: 0, SENSOR: 1, EVENTS: 2, SEVERITY: 3, FIRST_SEEN: 4, LAST_SEEN: 5, SPARKLINE: 6, SRC_IP: 7, SRC_PORT: 8, DST_IP: 9, DST_PORT: 10, PROTO: 11, TYPE: 12, TRAIL: 13, INFO: 14, REFERENCE: 15, TAGS: 16 };
 var PORT_NAMES = { 1: "tcpmux", 2: "nbp", 4: "echo", 6: "zip", 7: "echo", 9: "discard", 11: "systat", 13: "daytime", 15: "netstat", 17: "qotd", 18: "msp", 19: "chargen", 20: "ftp-data", 21: "ftp", 22: "ssh", 23: "telnet", 25: "smtp", 37: "time", 39: "rlp", 42: "nameserver", 43: "whois", 49: "tacacs", 50: "re-mail-ck", 53: "dns", 57: "mtp", 65: "tacacs-ds", 67: "bootps", 68: "bootpc", 69: "tftp", 70: "gopher", 77: "rje", 79: "finger", 80: "http", 87: "link", 88: "kerberos", 95: "supdup", 98: "linuxconf", 101: "hostnames", 102: "iso-tsap", 104: "acr-nema", 105: "csnet-ns", 106: "poppassd", 107: "rtelnet", 109: "pop2", 110: "pop3", 111: "sunrpc", 113: "auth", 115: "sftp", 117: "uucp-path", 119: "nntp", 123: "ntp", 129: "pwdgen", 135: "dcom-rpc", 137: "netbios-ns", 138: "netbios-dgm", 139: "netbios-ssn", 143: "imap2", 161: "snmp", 162: "snmp-trap", 163: "cmip-man", 164: "cmip-agent", 174: "mailq", 177: "xdmcp", 178: "nextstep", 179: "bgp", 191: "prospero", 194: "irc", 199: "smux", 201: "at-rtmp", 202: "at-nbp", 204: "at-echo", 206: "at-zis", 209: "qmtp", 210: "z3950", 213: "ipx", 220: "imap3", 345: "pawserv", 346: "zserv", 347: "fatserv", 369: "rpc2portmap", 370: "codaauth2", 371: "clearcase", 372: "ulistserv", 389: "ldap", 406: "imsp", 427: "svrloc", 443: "https", 444: "snpp", 445: "microsoft-ds", 464: "kpasswd", 465: "urd", 487: "saft", 500: "isakmp", 502: "modbus", 512: "exec", 513: "login", 514: "shell", 515: "printer", 517: "talk", 518: "ntalk", 520: "route", 525: "timed", 526: "tempo", 530: "courier", 531: "conference", 532: "netnews", 533: "netwall", 538: "gdomap", 540: "uucp", 543: "klogin", 544: "kshell", 546: "dhcpv6-client", 547: "dhcpv6-server", 548: "afpovertcp", 549: "idfp", 554: "rtsp", 556: "remotefs", 563: "nntps", 587: "submission", 607: "nqs", 610: "npmp-local", 611: "npmp-gui", 612: "hmmp-ind", 623: "ipmi", 628: "qmqp", 631: "ipp", 636: "ldaps", 655: "tinc", 706: "silc", 749: "kerberos-adm", 750: "kerberos4", 751: "kerberos-master", 752: "passwd-server", 754: "krb-prop", 760: "krbupdate", 765: "webster", 775: "moira-db", 777: "moira-update", 779: "moira-ureg", 783: "spamd", 808: "omirr", 871: "supfilesrv", 873: "rsync", 901: "swat", 989: "ftps-data", 990: "ftps", 992: "telnets", 993: "imaps", 994: "ircs", 995: "pop3s", 1001: "customs", 1080: "socks", 1093: "proofd", 1094: "rootd", 1099: "rmiregistry", 1109: "kpop", 1127: "supfiledbg", 1178: "skkserv", 1194: "openvpn", 1210: "predict", 1214: "kazaa", 1236: "rmtcfg", 1241: "nessus", 1300: "wipld", 1313: "xtel", 1314: "xtelw", 1352: "lotusnote", 1433: "mssql", 1434: "ms-sql-m", 1524: "ingreslock", 1525: "prospero-np", 1529: "support", 1645: "datametrics", 1646: "sa-msg-port", 1649: "kermit", 1677: "groupwise", 1701: "l2f", 1723: "pptp", 1812: "radius", 1813: "radius-acct", 1863: "msnp", 1900: "upnp", 1957: "unix-status", 1958: "log-server", 1959: "remoteping", 2000: "cisco-sccp", 2003: "cfinger", 2010: "search", 2049: "nfs", 2053: "knetd", 2086: "gnunet", 2101: "rtcm-sc104", 2102: "zephyr-srv", 2103: "zephyr-clt", 2104: "zephyr-hm", 2105: "eklogin", 2111: "kx", 2119: "gsigatekeeper", 2121: "iprop", 2135: "gris", 2150: "ninstall", 2401: "cvspserver", 2430: "venus", 2431: "venus-se", 2432: "codasrv", 2433: "codasrv-se", 2583: "mon", 2600: "zebrasrv", 2601: "zebra", 2602: "ripd", 2603: "ripngd", 2604: "ospfd", 2605: "bgpd", 2606: "ospf6d", 2607: "ospfapi", 2608: "isisd", 2628: "dict", 2792: "f5-globalsite", 2811: "gsiftp", 2947: "gpsd", 2988: "afbackup", 2989: "afmbackup", 3050: "gds-db", 3128: "squid", 3130: "icpv2", 3260: "iscsi-target", 3306: "mysql", 3389: "rdesktop", 3493: "nut", 3632: "distcc", 3689: "daap", 3690: "svn", 4031: "suucp", 4094: "sysrqd", 4190: "sieve", 4224: "xtell", 4353: "f5-iquery", 4369: "epmd", 4373: "remctl", 4500: "ipsec-nat-t", 4557: "fax", 4559: "hylafax", 4569: "iax", 4600: "distmp3", 4691: "mtn", 4899: "radmin-port", 4949: "munin", 5002: "rfe", 5050: "mmcc", 5051: "enbd-cstatd", 5052: "enbd-sstatd", 5060: "sip", 5061: "sip-tls", 5151: "pcrd", 5190: "aol", 5222: "xmpp-client", 5269: "xmpp-server", 5308: "cfengine", 5351: "nat-pmp", 5353: "mdns", 5354: "noclog", 5355: "hostmon", 5357: "wsdapi", 5432: "postgresql", 5555: "rplay", 5556: "freeciv", 5631: "pc-anywhere", 5666: "nrpe", 5667: "nsca", 5672: "amqp", 5674: "mrtd", 5675: "bgpsim", 5680: "canna", 5688: "ggz", 5800: "vnc", 5900: "vnc", 5901: "vnc-1", 5902: "vnc-2", 5903: "vnc-3", 6000: "x11", 6001: "x11-1", 6002: "x11-2", 6003: "x11-3", 6004: "x11-4", 6005: "x11-5", 6006: "x11-6", 6007: "x11-7", 6346: "gnutella-svc", 6347: "gnutella-rtr", 6379: "redis", 6444: "sge-qmaster", 6445: "sge-execd", 6446: "mysql-proxy", 6514: "syslog-tls", 6566: "sane-port", 6667: "ircd", 7000: "afs3-fileserver", 7001: "afs3-callback", 7002: "afs3-prserver", 7003: "afs3-vlserver", 7004: "afs3-kaserver", 7005: "afs3-volser", 7006: "afs3-errors", 7007: "afs3-bos", 7008: "afs3-update", 7009: "afs3-rmtsys", 7100: "font-service", 7547: "cwmp", 8021: "zope-ftp", 8080: "http-alt", 8081: "tproxy", 8088: "omniorb", 8118: "privoxy", 8338: "maltrail", 8339: "tsusen", 8443: "https-alt", 8990: "clc-build-daemon", 9098: "xinetd", 9101: "bacula-dir", 9102: "bacula-fd", 9103: "bacula-sd", 9200: "wap-wsp", 9359: "mandelspawn", 9418: "git", 9667: "xmms2", 9673: "zope", 10000: "webmin", 10050: "zabbix-agent", 10051: "zabbix-trapper", 10080: "amanda", 10081: "kamanda", 10082: "amandaidx", 10083: "amidxtape", 10809: "nbd", 11112: "dicom", 11201: "smsqp", 11211: "memcached", 11371: "hkp", 13720: "bprd", 13721: "bpdbm", 13722: "bpjava-msvc", 13724: "vnetd", 13782: "bpcd", 13783: "vopied", 15345: "xpilot", 17001: "sgi-cmsd", 17002: "sgi-crsd", 17003: "sgi-gcd", 17004: "sgi-cad", 17185: "vxworks", 17500: "db-lsp", 20011: "isdnlog", 20012: "vboxd", 22125: "dcap", 22128: "gsidcap", 22273: "wnn6", 24554: "binkp", 27017: "mongo", 27374: "asp", 30865: "csync2", 53413: "netis", 57000: "dircproxy", 60177: "tfido", 60179: "fido" };
 var SEARCH_TIP_TIMER = 0;
 var PAPAPARSE_COMPLETE_TIMER = 0;
@@ -53,6 +54,7 @@ var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
 var DAY_SUFFIXES = { 1: "st", 2: "nd", 3: "rd" };
 var DOT_COLUMNS = [ LOG_COLUMNS.SENSOR, LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP, LOG_COLUMNS.DST_PORT, LOG_COLUMNS.TRAIL, LOG_COLUMNS.PROTO ];
 var ELLIPSIS = '<img src="images/ellipsis.png" style="cursor:pointer">';
+var SPARKLINE_COLOR = '#ff0000';
 var CTRL_CLICK_PRESSED = false;
 var CTRL_DATES = [];
 var PREFERRED_TRAIL_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ffad33", UA: "#9900cc" };
@@ -74,7 +76,7 @@ window.onkeyup = function(event) {
 
 // Retrieve (and parse) log data
 $(document).ready(function() {
-    $(".disabled").remove();
+    $("#noscript").remove();
 
     initCalHeatmap();
     initDialogs();
@@ -417,6 +419,7 @@ function init(url, from, to) {
         delimiter: ' ',
         //newline: '\n',
         worker: !demo,
+        skipEmptyLines: true,
         chunk: function(results) {
             var title = document.title.replace(/\s?\.\s?/g, '.');
             var parts = title.split('.');
@@ -540,6 +543,11 @@ function init(url, from, to) {
                     }
 
                     _HOURS[hour][data[LOG_COLUMNS.TYPE]] += 1;
+
+                    if (!(threatText in _HOURS[hour]))
+                        _HOURS[hour][threatText] = 0;
+
+                    _HOURS[hour][threatText] += 1;
                 }
             }
         },
@@ -554,6 +562,7 @@ function init(url, from, to) {
                     var times = item[1];
                     var minTime = item[2];
                     var maxTime = item[3];
+                    var sparklineData = [];
                     var data = item[4];
                     var row = [];
                     var severity = SEVERITY.MEDIUM;
@@ -589,6 +598,48 @@ function init(url, from, to) {
                         }
                     }
 
+                    var min_ = null;
+                    var max_ = null;
+                    var _ = [];
+
+                    for (var hour in _HOURS) {
+                        if (min_ === null)
+                            min_ = hour;
+                        else
+                            min_ = Math.min(min_, hour);
+
+                        if (max_ === null)
+                            max_ = hour;
+                        else
+                            max_ = Math.max(max_, hour);
+                    }
+
+                    if ((min_ !== null) && (max_ !== null)) {
+                        var hourms = 60 * 60 * 1000;
+                        min_ = dayStart(min_ * hourms) / hourms;
+                        max_ = dayEnd(max_ * hourms) / hourms;
+
+                        for (var hour = min_; hour <= max_; hour++) {
+                            if (!(hour in _HOURS))
+                                _HOURS[hour] = {};
+                        }
+                    }
+
+                    for (var hour in _HOURS)
+                        _.push([hour >>> 0, _HOURS[hour][threatText]]);
+
+                    _.sort(function(a, b) {
+                        a = a[0];
+                        b = b[0];
+
+                        return a < b ? -1 : (a > b ? 1 : 0);
+                    });
+
+                    for (var i = 0; i < _.length; i++) {
+                        sparklineData.push(_[i][1] | 0);
+                        //_MAX_SPARKLINE_PER_HOUR = Math.max(_MAX_SPARKLINE_PER_HOUR, _[i][1] | 0);
+                    }
+
                     if (data[LOG_COLUMNS.REFERENCE].contains("(custom)"))
                         severity = SEVERITY.HIGH;
                     else if (data[LOG_COLUMNS.REFERENCE].contains("malwaredomainlist"))
@@ -611,6 +662,7 @@ function init(url, from, to) {
                     row.push(severity);
                     row.push(minTime);
                     row.push(maxTime);
+                    row.push(sparklineData.join(","));
                     row.push(data[LOG_COLUMNS.SRC_IP]);
                     row.push(data[LOG_COLUMNS.SRC_PORT]);
                     row.push(data[LOG_COLUMNS.DST_IP]);
@@ -937,6 +989,7 @@ function initDetails() {
             { "title": "severity", "type": "severity", "class": "center" },
             { "title": "first_seen", "class": "center" },
             { "title": "last_seen", "class": "center" },
+            { "title": "sparkline", "type": "sparkline", "class": "center" },
             { "title": "src_ip", "type": "ip-address", "class": "right" },
             { "title": "src_port", "type": "port", "class": "center" },
             { "title": "dst_ip", "type": "ip-address", "class": "right" },
@@ -959,8 +1012,12 @@ function initDetails() {
         columnDefs: [
             {
                 orderSequence: [ "desc", "asc" ],
-                targets: [ DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.SEVERITY, DATATABLES_COLUMNS.LAST_SEEN ]
+                targets: [ DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.SEVERITY, DATATABLES_COLUMNS.LAST_SEEN, DATATABLES_COLUMNS.SPARKLINE ]
             },
+//             {
+//                 orderable: false,
+//                 targets: DATATABLES_COLUMNS.SPARKLINE
+//             },
             {
                 render: function (data, type, row) {
                     var name = "";
@@ -1077,6 +1134,17 @@ function initDetails() {
             },
             {
                 render: function (data, type, row) {
+                    var value = 0;
+                    var items = data.split(",");
+                    for (var i = 0; i < items.length; i++)
+                        if (items[i] != "0")
+                            value += 1;
+                    return "<div class='sparkline' value='" + value + "'>" + data + "</div>";
+                },
+                targets: DATATABLES_COLUMNS.SPARKLINE
+            },
+            {
+                render: function (data, type, row) {
                     return '<div class="label-type ' + getContrastYIQ(data.substring(0, 6)) + '-label-text" style="background-color: #' + data.substring(0, 6) + '">' + data + '</div>';
                 },
                 targets: DATATABLES_COLUMNS.THREAT
@@ -1117,7 +1185,7 @@ function initDetails() {
             },
             {
                width: "1%",
-               targets: [ DATATABLES_COLUMNS.THREAT, DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.SEVERITY, DATATABLES_COLUMNS.FIRST_SEEN, DATATABLES_COLUMNS.LAST_SEEN, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.SRC_PORT, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.DST_PORT, DATATABLES_COLUMNS.PROTO, DATATABLES_COLUMNS.TYPE ]
+               targets: [ DATATABLES_COLUMNS.THREAT, DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.SEVERITY, DATATABLES_COLUMNS.FIRST_SEEN, DATATABLES_COLUMNS.LAST_SEEN, DATATABLES_COLUMNS.SPARKLINE, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.SRC_PORT, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.DST_PORT, DATATABLES_COLUMNS.PROTO, DATATABLES_COLUMNS.TYPE ]
             }
         ],
         oLanguage: {
@@ -1218,6 +1286,9 @@ function initDetails() {
                     ]
                 }
             ]
+        },
+        fnDrawCallback: function( oSettings ) {
+            $(".sparkline:contains(',')").sparkline('html', { type: 'bar', barWidth: 1, barColor: SPARKLINE_COLOR, zeroColor: "rgba(0, 0, 0, 0)", disableInteraction: false, tooltipClassname: "sparkline-tooltip" }); //, chartRangeMin: 0, chartRangeMax: _MAX_SPARKLINE_PER_HOUR });
         },
         fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
             function nslookup(event, ui) {
@@ -1406,24 +1477,6 @@ function initDetails() {
                     cell.html(html + " ").append($(img).tooltip());
                 }
             });
-
-            /*
-            var cell = $('td:eq(' + (DATATABLES_COLUMNS.EVENTS) + ')', nRow);
-            var div = cell.find("div");
-            div[0].title = "";
-            // $(".ui-tooltip").append($("<div>bla</div>"))
-
-            div.tooltip({ content: function(callback) {
-                setTimeout(function() {
-                    var wewe = $("<div id='wewe'>foobar</div>");
-                    $('#wewe').sparkline([1,2,3,4,5,4,3,2,1], {disabledHiddenCheck: true});
-                    $(".ui-tooltip").append(wewe);
-                    setTimeout(function() {
-                        $.sparkline_display_visible();
-                    }, 100);
-                }, 100);
-            return "<div id='ticker'>aa</div>"; }, position: { my: "left center", at: "right+10 top" }});
-            */
         }
     });
 
@@ -1650,13 +1703,27 @@ jQuery.extend(jQuery.fn.dataTableExt.oSort, {
 
 jQuery.extend(jQuery.fn.dataTableExt.oSort, {
     // Reference: https://cdn.datatables.net/plug-ins/3cfcc339e89/sorting/ip-address.js
+    "sparkline-pre": function ( a ) {
+        return parseInt($(a).attr("value"));
+    },
+
+    "sparkline-asc": function ( a, b ) {
+        return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+    },
+
+    "sparkline-desc": function ( a, b ) {
+        return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+    }
+});
+
+jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+    // Reference: https://cdn.datatables.net/plug-ins/3cfcc339e89/sorting/ip-address.js
     "port-pre": function ( a ) {
         var x = 0;
         var match = a.match(/\d+/);
 
-        if (match !== null) {
+        if (match !== null)
             x = parseInt(match[0]);
-        }
 
         return x;
     },
@@ -1749,10 +1816,9 @@ function drawInfo(type) {
 
             for (var i = 0; i < _.length; i++) {
                 var date = new Date(_[i][0] * 60 * 60 * 1000);
-                var hours = date.getHours();
 
                 if (first)
-                    labels.push(pad(hours, 2) + "h");
+                    labels.push(pad(date.getHours(), 2) + "h");
 
                 ticks[type].push(_[i][1] | 0);
             }
@@ -2316,9 +2382,9 @@ function initVisual() {
     }
 
     if ((min_ !== null) && (max_ !== null)) {
-        var _ = 60 * 60 * 1000;
-        min_ = dayStart(min_ * _) / _;
-        max_ = dayEnd(max_ * _) / _;
+        var hourms = 60 * 60 * 1000;
+        min_ = dayStart(min_ * hourms) / hourms;
+        max_ = dayEnd(max_ * hourms) / hourms;
 
         for (var hour = min_; hour <= max_; hour++) {
             if (!(hour in _HOURS)) {
@@ -2407,7 +2473,7 @@ function initVisual() {
 
     $('#sources_sparkline').sparkline(_, { width: SPARKLINE_WIDTH, height: '30', type: 'bar', barColor: '#ffffff', barWidth: barWidth, disableInteraction: true, zeroColor: "rgba(0, 0, 0, 0)", stackedBarColor: barColors});
 
-    var options = { fillColor: false, minSpotColor: "", maxSpotColor: "", spotColor: "", highlightSpotColor: "", highlightLineColor: "", tooltipClassname: "", chartRangeMin: 0, chartRangeMax: _MAX_EVENTS_PER_HOUR, width: SPARKLINE_WIDTH, height: '30', lineWidth: 2 };  // disableInteraction: false, tooltipClassname: "sparkline-tooltip"
+    var options = { fillColor: false, minSpotColor: "", maxSpotColor: "", spotColor: "", highlightSpotColor: "", highlightLineColor: "", tooltipClassname: "", chartRangeMin: 0, chartRangeMax: _MAX_EVENTS_PER_HOUR, width: SPARKLINE_WIDTH, height: '30', lineWidth: 2 };
 
     total["Events"] = 0;
 
