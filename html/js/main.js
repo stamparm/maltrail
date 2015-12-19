@@ -440,7 +440,7 @@ function init(url, from, to) {
                 if (data.length < LOG_COLUMNS_SIZE)
                     continue;
 
-                var _ = data[LOG_COLUMNS.TRAIL].replace(/\([^)]+\)/g, "");
+                var _ = data[LOG_COLUMNS.TRAIL].replace(/\([^)]+\)/g, "").replace(/\{[^}]+\}/g, "");
 
                 if (!(_ in trailSources))
                     trailSources[_] = { };
@@ -839,11 +839,10 @@ function tagInputKeyUp(event, forcedelete) {
     if (tagData !== null) {
         var api = table.api();
         var threat = table.fnGetData(position[0], DATATABLES_COLUMNS.THREAT);
-        var threatText = (table.fnGetData(position[0], DATATABLES_COLUMNS.SRC_IP) + THREAT_INFIX + table.fnGetData(position[0], DATATABLES_COLUMNS.TRAIL));
         var row = api.row(position[0]);
         var data = row.data();
 
-        $.jStorage.set(threat, { threatText: threatText, tagData: tagData });
+        $.jStorage.set(threat, { tagData: tagData });
 
         data[DATATABLES_COLUMNS.TAGS] = tagData;
 
