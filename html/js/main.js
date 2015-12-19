@@ -982,6 +982,7 @@ function initDetails() {
     var details = $('#details').dataTable( {
         bDestroy: true,
         bAutoWidth: false,
+        stateSave: true,
         data: _DATASET,
         columns: [
             { "title": "threat", "type": "threat", "class": "center" },
@@ -1289,6 +1290,10 @@ function initDetails() {
                     ]
                 }
             ]
+        },
+        fnStateSaveParams: function (oSettings, oData) {
+            oData.oSearch.sSearch = "";
+            oData.start = 0;
         },
         fnDrawCallback: function( oSettings ) {
             $(".sparkline:contains(',')").sparkline('html', { type: 'bar', barWidth: 1, barColor: SPARKLINE_COLOR, zeroColor: "rgba(0, 0, 0, 0)", disableInteraction: false, tooltipClassname: "sparkline-tooltip" }); //, chartRangeMin: 0, chartRangeMax: _MAX_SPARKLINE_PER_HOUR });
