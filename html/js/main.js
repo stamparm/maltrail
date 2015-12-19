@@ -1063,7 +1063,7 @@ function initDetails() {
                 render: function (data, type, row) {
                     var info = row[DATATABLES_COLUMNS.INFO];
 
-                    if ((data.indexOf(',') > -1) || ((info.indexOf(SUSPICIOUS_THREAT_INFIX) > -1) || data.length > 80) && (data.indexOf('(') > -1)) {
+                    if ((data.indexOf(',') > -1) || ((info.indexOf(SUSPICIOUS_THREAT_INFIX) > -1) || data.length > 80) && (data.indexOf('(') > -1) || (data.length > 40)) {
                         var common = "";
                         var title = "";
                         var left = false;
