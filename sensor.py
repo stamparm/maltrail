@@ -161,28 +161,29 @@ def _process_packet(packet, sec, usec):
             if flags == 2:  # SYN set (only)
                 if dst_ip in trails:
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]))
-                elif src_ip in trails:
+                elif src_ip in trails and dst_ip != "127.0.0.1":
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]))
 
                 if config.USE_HEURISTICS:
-                    key = "%s:%s" % (src_ip, dst_ip)
-                    if key not in _connect_src_dst:
-                        _connect_src_dst[key] = set()
-                        _connect_src_details[key] = set()
-                    _connect_src_dst[key].add(dst_port)
-                    _connect_src_details[key].add((sec, usec, src_port, dst_port))
+                    if dst_ip != "127.0.0.1":
+                        key = "%s:%s" % (src_ip, dst_ip)
+                        if key not in _connect_src_dst:
+                            _connect_src_dst[key] = set()
+                            _connect_src_details[key] = set()
+                        _connect_src_dst[key].add(dst_port)
+                        _connect_src_details[key].add((sec, usec, src_port, dst_port))
 
-                    if sec > _connect_sec:
-                        for key in _connect_src_dst:
-                            if len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
-                                _src_ip, _dst_ip = key.split(':')
-                                if _src_ip not in WHITELIST:
-                                    for _sec, _usec, _src_port, _dst_port in _connect_src_details[key]:
-                                        log_event((_sec, _usec, _src_ip, _src_port, _dst_ip, _dst_port, "TCP", TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"))
+                        if sec > _connect_sec:
+                            for key in _connect_src_dst:
+                                if len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
+                                    _src_ip, _dst_ip = key.split(':')
+                                    if _src_ip not in WHITELIST:
+                                        for _sec, _usec, _src_port, _dst_port in _connect_src_details[key]:
+                                            log_event((_sec, _usec, _src_ip, _src_port, _dst_ip, _dst_port, "TCP", TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"))
 
-                        _connect_sec = sec
-                        _connect_src_dst.clear()
-                        _connect_src_details.clear()
+                            _connect_sec = sec
+                            _connect_src_dst.clear()
+                            _connect_src_details.clear()
 
             if flags & 8 != 0:  # PSH set
                 tcph_length = doff_reserved >> 4
