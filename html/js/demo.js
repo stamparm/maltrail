@@ -175,7 +175,7 @@ function getDemoCSV() {
     '"2015-03-10 06:49:38.817108" r2d2 68.12.104.178 57694 68.12.99.2 53 UDP DNS (mx.cloudafrica).email "domain (suspicious)" (static)\n' +
     '"2015-03-10 06:49:38.967616" r2d2 68.12.104.178 45063 68.12.99.2 53 UDP DNS (mx01.cloudafrica).email "domain (suspicious)" (static)\n' +
     '"2015-03-10 06:49:38.967613" r2d2 68.12.104.178 45063 68.12.99.2 53 UDP DNS (mx01.cloudafrica).email "domain (suspicious)" (static)\n' +
-    '"2015-03-10 06:50:05.570900" r2d2 68.12.104.178 53493 68.12.99.1 80 TCP UA "Lorem ipsum dolor sit amet consectetuer adipiscing elit. Aenean commodo ligula eget dolor" "suspicious user-agent" (heuristics)\n' +
+    '"2015-03-10 06:50:05.570900" r2d2 68.12.104.178 53493 68.12.99.1 80 TCP UA "Lorem \\(test\\) ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor" "suspicious user-agent" (heuristics)\n' +
     '"2015-03-10 06:50:05.570896" r2d2 68.12.104.178 53493 68.12.99.2 53 UDP DNS gmai.com "fake flash" www.malwaredomains.com\n' +
     '"2015-03-10 06:51:18.268502" r2d2 68.12.104.178 52841 68.12.99.2 53 UDP DNS (topcash).club "domain (suspicious)" (static)\n' +
     '"2015-03-10 06:51:18.268443" r2d2 68.12.104.178 52841 68.12.99.2 53 UDP DNS (topcash).club "domain (suspicious)" (static)\n' +

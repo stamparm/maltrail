@@ -440,6 +440,8 @@ function init(url, from, to) {
                 if (data.length < LOG_COLUMNS_SIZE)
                     continue;
 
+                data[LOG_COLUMNS.TRAIL] = data[LOG_COLUMNS.TRAIL].replace(/\,/g, "&#44;").replace(/\\\(/g, "&#40;").replace(/\\\)/g, "&#41;");
+
                 var _ = data[LOG_COLUMNS.TRAIL].replace(/\([^)]+\)/g, "").replace(/\{[^}]+\}/g, "");
 
                 if (!(_ in trailSources))

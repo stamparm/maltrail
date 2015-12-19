@@ -251,7 +251,7 @@ def _process_packet(packet, sec, usec):
                                 found = _user_agent_cache[user_agent]
 
                             if found:
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.UA, user_agent.replace('(', "&#40;").replace(')', "&#41;"), "suspicious user agent", "(heuristic)"))
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.UA, user_agent.replace('(', "\\(").replace(')', "\\)"), "suspicious user agent", "(heuristic)"))
 
                         if not found and config.CHECK_SHORT_OR_MISSING_USER_AGENT:
                             if user_agent is None:
