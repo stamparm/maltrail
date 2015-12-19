@@ -98,7 +98,11 @@ def update_trails(server=None):
         filenames += [os.path.join(sys.path[-1], "static")]
         filenames += [os.path.join(sys.path[-1], "custom")]
 
-        for filename in filenames:
+        filenames = [_ for _ in filenames if "__init__.py" not in _]
+
+        for i in xrange(len(filenames)):
+            filename = filenames[i]
+
             try:
                 module = __import__(os.path.basename(filename).split(".py")[0])
             except (ImportError, SyntaxError), ex:
@@ -107,7 +111,9 @@ def update_trails(server=None):
 
             for name, function in inspect.getmembers(module, inspect.isfunction):
                 if name == "fetch":
-                    print(" [o] '%s'" % module.__url__)
+                    print(" [o] '%s'%s" % (module.__url__, " " * 20 if len(module.__url__) < 20 else ""))
+                    sys.stdout.write("[?] progress: %d/%d (%d%%)\r" % (i, len(filenames), i * 100 / len(filenames)))
+                    sys.stdout.flush()
                     try:
                         results = function()
                         for item in results.items():
