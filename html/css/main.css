@@ -429,3 +429,6 @@ rect.highlight {
 #chart_canvas, svg {
     border: 1px solid #a8a8a8;
 }
+.cal-heatmap-container {
+    border: none;
+}
