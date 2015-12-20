@@ -62,6 +62,7 @@ var SEVERITY = { LOW: 1, MEDIUM: 2, HIGH: 3 };
 var SEVERITY_COLORS = { 1: "#8ba8c0", 2: "#f0ad4e", 3: "#d9534f"};
 var CHART_TOOLTIP_FORMAT = "<%= datasetLabel %>: <%= value %>";
 var INFO_SEVERITY_KEYWORDS = { "malware": SEVERITY.HIGH, "reputation": SEVERITY.LOW, "attacker": SEVERITY.LOW, "spammer": SEVERITY.LOW, "compromised": SEVERITY.LOW, "crawler": SEVERITY.LOW, "scanning": SEVERITY.LOW }
+var STORAGE_KEY_ACTIVE_STATUS_BUTTON = "STORAGE_KEY_ACTIVE_STATUS_BUTTON";
 
 for (var column in LOG_COLUMNS) if (LOG_COLUMNS.hasOwnProperty(column)) LOG_COLUMNS_SIZE++;
 
@@ -738,7 +739,10 @@ function init(url, from, to) {
                 else
                     $("li.status-button").css("cursor", "pointer");
 
-                resetStatusButtons();
+                if ($.jStorage.get(STORAGE_KEY_ACTIVE_STATUS_BUTTON) !== null)
+                    drawInfo($.jStorage.get(STORAGE_KEY_ACTIVE_STATUS_BUTTON))
+                else
+                    resetStatusButtons();
 
                 $("body").loader("hide");
             }, 500);
@@ -747,6 +751,7 @@ function init(url, from, to) {
 }
 
 function resetStatusButtons() {
+    $.jStorage.deleteKey(STORAGE_KEY_ACTIVE_STATUS_BUTTON);
     $("li.status-button").each(function() {
         $(this).css("text-shadow", "-1px -1px 0 rgba(0, 0, 0, 0.50)");
         $(this).css("border", "3px groove rgba(0, 0, 0, 0.50)");
@@ -1292,7 +1297,7 @@ function initDetails() {
             ]
         },
         fnStateSaveParams: function (oSettings, oData) {
-            oData.oSearch.sSearch = "";
+            oData.search.search = "";
             oData.start = 0;
         },
         fnDrawCallback: function( oSettings ) {
@@ -1796,10 +1801,13 @@ function drawInfo(type) {
     }
 
     resetStatusButtons();
+
     $("#" + type.toLowerCase() + "_count").parent().css("text-shadow", "none");
     $("#" + type.toLowerCase() + "_count").parent().css("border", "1px solid rgba(0, 0, 0, 0.25");
 
     $("#graph_close").removeClass("hidden").show();
+
+    $.jStorage.set(STORAGE_KEY_ACTIVE_STATUS_BUTTON, type);
 
     if (type === "Events") {
         var ticks = {};
