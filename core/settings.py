@@ -20,7 +20,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.232"
+VERSION = "0.8.234"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -289,8 +289,8 @@ def read_worst_asn():
                     key = line.split('.')[0]
                     if key not in WORST_ASNS:
                         WORST_ASNS[key] = []
-                    prefix, mask = line.split('/')
-                    WORST_ASNS[key].append((addr_to_int(prefix), make_mask(int(mask))))
+                    prefix, mask, name = re.search(r"([\d.]+)/(\d+),(.+)", line).groups()
+                    WORST_ASNS[key].append((addr_to_int(prefix), make_mask(int(mask)), name))
 
 if __name__ != "__main__":
     read_whitelist()

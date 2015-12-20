@@ -101,11 +101,11 @@ def worst_asns(address):
         return None
 
     _ = addr_to_int(address)
-    for prefix, mask in WORST_ASNS.get(address.split('.')[0], {}):
+    for prefix, mask, name in WORST_ASNS.get(address.split('.')[0], {}):
         if _ & mask == prefix:
-            return True
+            return name
 
-    return False
+    return None
 
 def check_sudo():
     """
