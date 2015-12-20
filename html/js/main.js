@@ -22,7 +22,7 @@ var _TOTAL_EVENTS = 0;
 var _USER = null;
 
 var IP_COUNTRY = {};
-var IP_IPCAT = {};
+var CHECK_IP = {};
 var TRAIL_TYPES = {};
 
 var SPARKLINE_WIDTH = 130;
@@ -1315,7 +1315,7 @@ function initDetails() {
                     $.ajax("https://stat.ripe.net/data/dns-chain/data.json?resource=" + ip, { dataType:"jsonp", ip: ip})
                     .done(function(json) {
                         var _ = json.data.reverse_nodes[this.ip];
-                        if ((_.length === 0)||(_ === "localhost")) {
+                        if ((_.length === 0) || (_ === "localhost")) {
                             _ = "-";
                         }
                         _ = String(_);
@@ -1385,28 +1385,34 @@ function initDetails() {
                 var ip = match[0];
 
                 if (!isLocalAddress(ip)) {
-                    if (!(ip in IP_IPCAT)) {
-                        IP_IPCAT[ip] = null;
-                        $.ajax("/ipcat?address=" + ip, { dataType: "text", ip: ip, cell: cell })
-                        .done(function(text) {
-                            var span_ip = $(text.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(text);
-                            IP_IPCAT[this.ip] = text;
+                    if (!(ip in CHECK_IP)) {
+                        CHECK_IP[ip] = null;
+                        $.ajax("/check_ip?address=" + ip, { dataType: "jsonp", ip: ip, cell: cell })
+                        .done(function(json) {
+                            var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(json.ipcat);
+                            CHECK_IP[this.ip] = json;
                             this.cell.append(span_ip);
+                            if (json.worst_asns === "true")
+                                this.cell.append($("<img src='images/warning.png' class='worst_asns' title='worst ASNs'>").tooltip());
                         });
                     }
-                    else if (IP_IPCAT[ip] !== null) {
-                        var text = IP_IPCAT[ip];
-                        var span_ip = $(text.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(text);
+                    else if (CHECK_IP[ip] !== null) {
+                        var json = CHECK_IP[ip];
+                        var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(json.ipcat);
                         cell.append(span_ip);
+                        if (json.worst_asns === "true")
+                            cell.append($("<img src='images/warning.png' class='worst_asns' title='worst ASNs'>").tooltip());
                     }
                     else {
                         interval = setInterval(function(ip, cell){
                             html = cell.html();
-                            if (IP_IPCAT[ip] !== null) {
+                            if (CHECK_IP[ip] !== null) {
                                 if (html.indexOf("ipcat") === -1) {
-                                    var text = IP_IPCAT[ip];
-                                    var span_ip = $(text.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(text);
+                                    var json = CHECK_IP[ip];
+                                    var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(json.ipcat);
                                     cell.append(span_ip);
+                                    if (json.worst_asns === "true")
+                                        cell.append($("<img src='images/warning.png' class='worst_asns' title='worst ASNs'>").tooltip());
                                 }
                                 clearInterval(interval);
                             }

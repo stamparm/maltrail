@@ -379,7 +379,7 @@ rect.highlight {
     padding: 2px 2px;
     margin-bottom: 1px;
 }
-.duplicates, .ipcat {
+.duplicates, .ipcat, .worst_asns {
     margin-left: 2px;
 }
 .severity {

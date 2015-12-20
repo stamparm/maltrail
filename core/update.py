@@ -18,7 +18,7 @@ import urllib
 sys.dont_write_bytecode = True
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))  # to enable calling from current directory too
 
-from core.common import addr_to_int
+from core.addr import addr_to_int
 from core.common import load_trails
 from core.common import retrieve_content
 from core.settings import config

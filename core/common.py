@@ -18,12 +18,16 @@ import urllib2
 import zipfile
 import zlib
 
+from core.addr import addr_to_int
+from core.addr import int_to_addr
+from core.addr import make_mask
 from core.settings import NAME
 from core.settings import IPCAT_SQLITE_FILE
 from core.settings import STATIC_IPCAT_LOOKUPS
 from core.settings import TIMEOUT
 from core.settings import TRAILS_FILE
 from core.settings import WHITELIST
+from core.settings import WORST_ASNS
 
 _ipcat_cursor = {}
 _ipcat_cache = {}
@@ -92,6 +96,17 @@ def ipcat_lookup(address):
 
     return retval
 
+def worst_asns(address):
+    if not address:
+        return None
+
+    _ = addr_to_int(address)
+    for prefix, mask in WORST_ASNS.get(address.split('.')[0], {}):
+        if _ & mask == prefix:
+            return True
+
+    return False
+
 def check_sudo():
     """
     Checks for sudo/Administrator privileges
@@ -111,16 +126,6 @@ def check_sudo():
 def extract_zip(filename, path=None):
     _ = zipfile.ZipFile(filename, 'r')
     _.extractall(path)
-
-def addr_to_int(value):
-    _ = value.split('.')
-    return (long(_[0]) << 24) + (long(_[1]) << 16) + (long(_[2]) << 8) + long(_[3])
-
-def int_to_addr(value):
-    return '.'.join(str(value >> n & 0xff) for n in (24, 16, 8, 0))
-
-def make_mask(bits):
-    return 0xffffffff ^ (1 << 32 - bits) - 1
 
 def get_regex(items):
     head = {}

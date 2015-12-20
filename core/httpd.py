@@ -25,12 +25,13 @@ import traceback
 import urllib
 import urlparse
 
+from core.addr import addr_to_int
+from core.addr import int_to_addr
+from core.addr import make_mask
 from core.attribdict import AttribDict
-from core.common import addr_to_int
 from core.common import get_regex
-from core.common import int_to_addr
 from core.common import ipcat_lookup
-from core.common import make_mask
+from core.common import worst_asns
 from core.pbkdf2 import pbkdf2
 from core.settings import config
 from core.settings import DATE_FORMAT
@@ -327,7 +328,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             return username
 
-        def _ipcat(self, params):
+        def _check_ip(self, params):
             session = self.get_session()
 
             if session is None:
@@ -340,7 +341,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header("Content-Type", "text/plain")
 
             try:
-                return (ipcat_lookup(params.get("address")) or "").lower().split(' ')[0]
+                return ("%s" if not params.get("callback") else "%s(%%s)" % params.get("callback")) % json.dumps({"ipcat": (ipcat_lookup(params.get("address")) or "").lower().split(' ')[0], "worst_asns": str(worst_asns(params.get("address"))).lower()})
             except:
                 if config.SHOW_DEBUG:
                     traceback.print_exc()

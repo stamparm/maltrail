@@ -5,6 +5,8 @@ Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
 See the file 'LICENSE' for copying permission
 """
 
+from core.addr import addr_to_int
+
 class IPRangeDict(dict):
     def __init__(self):
         self.store = {}
@@ -20,13 +22,9 @@ class IPRangeDict(dict):
 
         return retval
 
-    def _addr_to_int(self, value):
-        _ = value.split('.')
-        return (long(_[0]) << 24) + (long(_[1]) << 16) + (long(_[2]) << 8) + long(_[3])
-
     def __getitem__(self, ip_address):
         retval = None
-        addr = self._addr_to_int(ip_address)
+        addr = addr_to_int(ip_address)
         key = self._get_key(ip_address)
 
         for item in self.store.get(key, []):
@@ -39,7 +37,7 @@ class IPRangeDict(dict):
 
     def __setitem__(self, ip_range, value):
         start, end = ip_range
-        entry = (self._addr_to_int(start), self._addr_to_int(end), value)
+        entry = (addr_to_int(start), addr_to_int(end), value)
         key = self._get_key(start)
         last_key = self._get_key(end)
 

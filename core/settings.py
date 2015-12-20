@@ -11,13 +11,16 @@ import socket
 import stat
 import subprocess
 
+from core.addr import addr_to_int
+from core.addr import int_to_addr
+from core.addr import make_mask
 from core.attribdict import AttribDict
 
 config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.227"
+VERSION = "0.8.229"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -60,6 +63,7 @@ SUSPICIOUS_FILENAMES = set(("gate.php",))
 SUSPICIOUS_HTTP_REQUEST_REGEX = r"(?i)information_schema|\b(AND|OR|SELECT)\b.*/\*.*\*/|/\*.*\*/.*\b(AND|OR|SELECT)\b|\b(AND|OR)[^\w]+\d+['\") ]?[=><]['\"( ]?\d+|(alert|confirm|prompt)\((\d+|document\.|[^\w]*XSS)|\bping -[nc] \d+|floor\(rand\(|ORDER BY \d+|sysdatabases|(\.\./){3,}(?!images)|\bSELECT\b.*\bFROM\b.*\bWHERE\b|\bSELECT \w+ FROM \w+|<script.*?>|\balert\(|xp_cmdshell|/etc/passwd|<\?php|boot\.ini|\bwindows[\\/]win\.ini|\bsleep\(|\bWAITFOR[^\w]+DELAY\b|\bCONVERT\(|VARCHAR\(|\bUNION\s+(ALL\s+)?SELECT\b"
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = "( )"
 SUSPICIOUS_UA_REGEX = ""
+WORST_ASNS = {}
 WHITELIST_HTTP_REQUEST_KEYWORDS = ("fql", "yql", "ads", "../images/", "../scripts/", "../assets/", "../core/", "../js/")
 WHITELIST_UA_KEYWORDS = ("62691CB3BF62DAF233FB2C02782E7BD2", "AntiVir-NGUpd", "TMSPS", "AVGSETUP", "SDDS", "Sophos", "internal dummy connection")
 WHITELIST_LONG_DOMAIN_NAME_KEYWORDS = ("blogspot",)
@@ -273,6 +277,22 @@ def read_ua():
     if items:
         SUSPICIOUS_UA_REGEX = "(?i)%s" % '|'.join(items)
 
+def read_worst_asn():
+    _ = os.path.abspath(os.path.join(ROOT_DIR, "trails", "misc", "worst_asns.txt"))
+    if os.path.isfile(_):
+        with open(_, "r") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                else:
+                    key = line.split('.')[0]
+                    if key not in WORST_ASNS:
+                        WORST_ASNS[key] = []
+                    prefix, mask = line.split('/')
+                    WORST_ASNS[key].append((addr_to_int(prefix), make_mask(int(mask))))
+
 if __name__ != "__main__":
     read_whitelist()
     read_ua()
+    read_worst_asn()

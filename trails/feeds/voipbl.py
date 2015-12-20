@@ -7,9 +7,9 @@ See the file 'LICENSE' for copying permission
 
 import re
 
-from core.common import addr_to_int
-from core.common import int_to_addr
-from core.common import make_mask
+from core.addr import addr_to_int
+from core.addr import int_to_addr
+from core.addr import make_mask
 from core.common import retrieve_content
 
 __url__ = "http://www.voipbl.org/update/"
