@@ -14,15 +14,20 @@ __url__ = "(static)"
 def fetch():
     retval = {}
 
-    for directory in glob.glob(os.path.join(os.path.dirname(__file__), "*")):
+    for directory in [os.path.dirname(__file__)] + glob.glob(os.path.join(os.path.dirname(__file__), "*")):
         if not os.path.isdir(directory):
             continue
 
         category = os.path.split(directory)[-1]
+        if category == "static":
+            category = None
 
         __reference__ = "(static)"
         for filename in glob.glob(os.path.join(directory, "*.txt")):
-            __info__ = "%s (%s)" % (os.path.splitext(os.path.basename(filename))[0].replace('_', " "), category)
+            __info__ = os.path.splitext(os.path.basename(filename))[0].replace('_', " ")
+            if category:
+                __info__ = "%s (%s)" % (__info__, category)
+
             content = open(filename, "rb").read()
             for line in content.split('\n'):
                 line = line.strip()
@@ -48,7 +53,9 @@ def fetch():
                 if not line or line.startswith('#'):
                     continue
                 value, __info__ = line.split(',', 1)
-                __info__ = "%s (%s)" % (__info__.strip('"'), category)
+                __info__ = __info__.strip('"')
+                if category:
+                    __info__ = "%s (%s)" % (__info__, category)
                 if '://' in value:
                     value = re.search(r"://(.*)", value).group(1)
                 value = value.rstrip('/')

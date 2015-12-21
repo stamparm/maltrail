@@ -504,6 +504,11 @@ def monitor():
 
     try:
         _cap.loop(-1, packet_handler)
+    except SystemError, ex:
+        if "error return without" in str(ex):
+            print("\r[x] Ctrl-C pressed")
+        else:
+            raise
     except KeyboardInterrupt:
         print("\r[x] Ctrl-C pressed")
     finally:
