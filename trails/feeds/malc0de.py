@@ -9,7 +9,7 @@ from core.common import retrieve_content
 
 __url__ = "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/malc0de.ipset"
 __check__ = "malc0de"
-__info__ = "malware distribution"
+__info__ = "malware distribution (suspicious)"
 __reference__ = "malc0de.com"
 
 def fetch():
