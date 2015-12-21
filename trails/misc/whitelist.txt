@@ -97,6 +97,7 @@ rncdn8.com
 yahoo.com
 akamaiedge.net
 akamai.net
+mail-abuse.com
 
 
 # to ignore in direct exe downloads
