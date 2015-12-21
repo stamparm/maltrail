@@ -14,6 +14,9 @@
 .ml
 .tk
 
+# Reference: https://threatpost.com/pushdo-attackers-adjust-algorithm-to-generate-kz-domains/100684/
+.kz
+
 # Reference: http://www.getfreedomain.name/
 
 .tk

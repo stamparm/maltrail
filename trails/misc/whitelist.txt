@@ -95,6 +95,8 @@ rncdn6.com
 rncdn7.com
 rncdn8.com
 yahoo.com
+akamaiedge.net
+akamai.net
 
 
 # to ignore in direct exe downloads
