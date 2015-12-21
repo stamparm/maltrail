@@ -477,7 +477,7 @@ function init(url, from, to) {
                 var reference = data[LOG_COLUMNS.REFERENCE];
 
                 _ = data[LOG_COLUMNS.TRAIL];
-                _ = charTrim(_.replace(/\([^)]+\)/g, "").replace(/\{[^}]+\}/g, ""), ' ');
+                _ = charTrim(charTrim(_.replace(/\([^)]+\)/g, "").replace(/\{[^}]+\}/g, ""), ' '), '.');
 
                 var flood = _ in _FLOOD_TRAILS;
                 var dga = info.indexOf(DGA_THREAT_INFIX) > -1;
@@ -1093,6 +1093,9 @@ function initDetails() {
                         }
 
                         title = data.split(common).join("").replace(/[()]/g, "");
+
+                        if (common.startsWith('.'))
+                            title = title.split(common.substr(1)).join("");
 
                         try {
                             title = decodeURIComponent(title);
