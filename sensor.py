@@ -190,7 +190,7 @@ def _process_packet(packet, sec, usec):
                 h_size = ip_offset + iph_length + (tcph_length << 2)
                 data = packet[h_size:]
 
-                if src_port == 80 and data.startswith("HTTP/") and "X-Sinkhole: Malware sinkhole" in data[:data.find("\r\n\r\n")]:
+                if src_port == 80 and data.startswith("HTTP/") and "X-Sinkhole: Malware" in data[:data.find("\r\n\r\n")]:
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, src_ip, "sinkhole response (malware)", "(heuristic)"))
 
                 method, path = None, None
