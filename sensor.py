@@ -190,6 +190,9 @@ def _process_packet(packet, sec, usec):
                 h_size = ip_offset + iph_length + (tcph_length << 2)
                 data = packet[h_size:]
 
+                if src_port == 80 and data.startswith("HTTP/") and "X-Sinkhole: Malware sinkhole" in data[:data.find("\r\n\r\n")]:
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, src_ip, "sinkhole response (malware)", "(heuristic)"))
+
                 method, path = None, None
                 index = data.find("\n")
                 if index >= 0:
@@ -208,7 +211,7 @@ def _process_packet(packet, sec, usec):
                         host = host.strip()
                         host = re.sub(r":80\Z", "", host)
                         if dst_ip in trails and not (host[-1].isdigit() and ':' not in host):
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, "%s {%s}" % (dst_ip, host), trails[dst_ip][0], trails[dst_ip][1]))
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]))
                     elif config.USE_HEURISTICS and config.CHECK_MISSING_HOST:
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing host header)", "(heuristic)"))
 
