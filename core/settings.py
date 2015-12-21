@@ -20,7 +20,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.242"
+VERSION = "0.8.243"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -41,7 +41,7 @@ SHORT_SENSOR_SLEEP_TIME = 0.00001
 REGULAR_SENSOR_SLEEP_TIME = 0.001
 LOAD_TRAILS_RETRY_SLEEP_TIME = 60
 UNAUTHORIZED_SLEEP_TIME = 5
-NO_SUCH_NAME_PER_HOUR_THRESHOLD = 30
+NO_SUCH_NAME_PER_HOUR_THRESHOLD = 20
 NO_BLOCK = -1
 END_BLOCK = -2
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
