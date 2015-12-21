@@ -158,3 +158,5 @@ api.facebook.com
 query.yahooapis.com
 www.google-analytics.com
 
+# sometimes false positive
+ocsp.digicert.com
