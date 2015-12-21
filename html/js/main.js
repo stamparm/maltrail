@@ -31,6 +31,7 @@ var CHART_HEIGHT = 600;
 var PIE_FONT_SIZE = 10;
 var MAX_SOURCES_ITEMS = 40;
 var FLOOD_TRAIL_THRESHOLD = 50;
+var LONG_TRAIL_THRESHOLD = 40;
 var OTHER_COLOR = "#999";
 var THREAT_INFIX = "~>";
 var FLOOD_THREAT_PREFIX = "...";
@@ -1071,7 +1072,7 @@ function initDetails() {
 
                     data = data.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-                    if ((data.indexOf(',') > -1) || ((info.indexOf(SUSPICIOUS_THREAT_INFIX) > -1) || data.length > 80) && (data.indexOf('(') > -1) || (data.length > 40)) {
+                    if ((data.indexOf(',') > -1) || ((info.indexOf(SUSPICIOUS_THREAT_INFIX) > -1) || data.length > 80) && (data.indexOf('(') > -1) || (data.length > LONG_TRAIL_THRESHOLD)) {
                         var common = "";
                         var title = "";
                         var left = false;
