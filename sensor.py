@@ -25,6 +25,7 @@ import time
 import traceback
 import urllib
 import urlparse
+import platform
 
 from core.common import check_sudo
 from core.common import load_trails
@@ -80,7 +81,10 @@ except ImportError:
     if subprocess.mswindows:
         exit("[!] please install WinPcap (e.g. 'http://www.winpcap.org/install/') and Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy')")
     else:
-        exit("[!] please install Pcapy (e.g. 'apt-get install python-pcapy')")
+        if (platform.linux_distribution()[0].lower() == 'fedora' or 'centos'):
+            exit("[!] please install Pcapy ('sudo yum install pcapy')")
+        else:
+            exit("[!] please install Pcapy (e.g. 'apt-get install python-pcapy')")
 
 def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto):
     parts = query.lower().split('.')
@@ -459,7 +463,10 @@ def init():
         p = subprocess.Popen("schedtool -n -2 -M 2 -p 10 -a 0x%02x %d" % (affinity, os.getpid()), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         _, stderr = p.communicate()
         if "not found" in stderr:
-            print("[!] please install schedtool for better CPU scheduling (e.g. 'sudo apt-get install schedtool')")
+            if (platform.linux_distribution()[0].lower() == 'fedora' or 'centos'):
+                print("[!] please install schedtool for better CPU scheduling ('sudo yum install schedtool')")
+            else:
+                print("[!] please install schedtool for better CPU scheduling (e.g. 'sudo apt-get install schedtool')")
     except:
         pass
 

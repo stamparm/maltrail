@@ -42,7 +42,11 @@ def main():
         try:
             import OpenSSL
         except ImportError:
-            exit("[!] please install pyopenssl (e.g. 'apt-get install python-openssl')")
+            import platform
+            if (platform.linux_distribution()[0].lower() == 'fedora' or 'centos'):
+                exit("[!] please install pyopenssl ('sudo yum install pyOpenSSL')")
+            else:
+                exit("[!] please install pyopenssl (e.g. 'sudo apt-get install python-openssl')")
 
         if not config.SSL_PEM or not os.path.isfile(config.SSL_PEM):
             hint = "openssl req -new -x509 -keyout %s -out %s -days 365 -nodes -subj '/O=%s CA/C=EU'" % (config.SSL_PEM or "server.pem", config.SSL_PEM or "server.pem", NAME)
