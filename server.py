@@ -15,6 +15,7 @@ import core.versioncheck
 
 import optparse
 import os
+import platform
 import threading
 import traceback
 
@@ -42,8 +43,7 @@ def main():
         try:
             import OpenSSL
         except ImportError:
-            import platform
-            if (platform.linux_distribution()[0].lower() == 'fedora' or 'centos'):
+            if platform.linux_distribution()[0].lower() in ("fedora", "centos"):
                 exit("[!] please install pyopenssl ('sudo yum install pyOpenSSL')")
             else:
                 exit("[!] please install pyopenssl (e.g. 'sudo apt-get install python-openssl')")
