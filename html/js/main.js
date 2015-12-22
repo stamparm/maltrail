@@ -372,6 +372,7 @@ function init(url, from, to) {
     document.title = "Maltrail (loading...)";
     $("body").loader("show");
     $("#main_container").toggleClass("hidden", true);
+    $("#heatmap_container").hide();
 
     $(".alertify-log").remove();
 
@@ -714,8 +715,6 @@ function init(url, from, to) {
 
                     $("#period_label").html("<b>" + period + "</b> (" + _ + ")");
                 }
-
-                $("#heatmap_container").hide();
 
                 try {
                     initDetails();
