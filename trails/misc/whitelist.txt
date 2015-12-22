@@ -158,6 +158,7 @@ api.facebook.com
 query.yahooapis.com
 www.google-analytics.com
 
-# sometimes false positive
+# found as false positive in otx.alienvault.com
 digicert.com
 globalsign.net
+creativecommons.org
