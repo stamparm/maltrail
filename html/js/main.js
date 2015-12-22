@@ -373,6 +373,8 @@ function init(url, from, to) {
     $("body").loader("show");
     $("#main_container").toggleClass("hidden", true);
     $("#heatmap_container").hide();
+    $("#header_container").hide();
+    $(".bottom").hide();
 
     $(".alertify-log").remove();
 
@@ -746,6 +748,8 @@ function init(url, from, to) {
                 else
                     resetStatusButtons();
 
+                $(".bottom").show();
+                $("#header_container").show();
                 $("body").loader("hide");
             }, 500);
         }
