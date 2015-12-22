@@ -21,7 +21,7 @@ def fetch():
     if __check__ in content:
         for line in content.split('\n'):
             line = line.strip()
-            if not line or line.startswith('#') or ';' not in line:
+            if not line or line.startswith('#') or ';' not in line or "packetstormsecurity" in line:
                 continue
             items = line.split(';')
             if re.search(r"\d+\.\d+\.\d+\.\d+", items[0]):
