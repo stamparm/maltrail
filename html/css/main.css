@@ -432,3 +432,6 @@ rect.highlight {
 .cal-heatmap-container {
     border: none;
 }
+.loader .loader-load {
+    background: url("../images/thirdparty/loader.gif") no-repeat scroll 50% 50%;
+}
