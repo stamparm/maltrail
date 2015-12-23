@@ -7,6 +7,8 @@ localhost
 # triggering "excessive no such domain name"
 
 teredo.ipv6.microsoft.com
+surbl.org
+spamhaus.org
 
 # Note: second level domains should be used in following sections as those are being checked for whitelist-ing in respective heuristic checks
 
