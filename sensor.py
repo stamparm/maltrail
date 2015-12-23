@@ -354,6 +354,7 @@ def _process_packet(packet, sec, usec):
 
                         elif config.USE_HEURISTICS:
                             if (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
+                                for _ in filter(None, (query, "*.%s" % '.'.join(query.split('.')[-2:]) if query.count('.') > 1 else None)):
                                 if query not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[query][0] != sec / 3600:
                                     NO_SUCH_NAME_COUNTERS[query] = [sec / 3600, 1]
                                 else:
