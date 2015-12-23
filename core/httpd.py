@@ -341,8 +341,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header("Content-Type", "text/plain")
 
             try:
-                _ = worst_asns(params.get("address"))
-                return ("%s" if not params.get("callback") else "%s(%%s)" % params.get("callback")) % json.dumps({"ipcat": (_ or ipcat_lookup(params.get("address")) or "").lower().split(' ')[0], "worst_asns": str(_ is not None).lower()})
+                result_worst = worst_asns(params.get("address"))
+                if result_worst:
+                    result_ipcat = result_worst
+                else:
+                    _ = (ipcat_lookup(params.get("address")) or "").lower().split(' ')
+                    result_ipcat = _[1] if _[0] == 'the' else _[0]
+                return ("%s" if not params.get("callback") else "%s(%%s)" % params.get("callback")) % json.dumps({"ipcat": result_ipcat, "worst_asns": str(result_worst is not None).lower()})
             except:
                 if config.SHOW_DEBUG:
                     traceback.print_exc()
