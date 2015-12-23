@@ -356,12 +356,27 @@ def _process_packet(packet, sec, usec):
                             if (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
                                 for _ in filter(None, (query, "*.%s" % '.'.join(query.split('.')[-2:]) if query.count('.') > 1 else None)):
                                     if _ not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[_][0] != sec / 3600:
-                                        NO_SUCH_NAME_COUNTERS[_] = [sec / 3600, 1]
+                                        NO_SUCH_NAME_COUNTERS[_] = [sec / 3600, 1, set()]
                                     else:
                                         NO_SUCH_NAME_COUNTERS[_][1] += 1
+                                        NO_SUCH_NAME_COUNTERS[_][2].add(query)
 
                                         if NO_SUCH_NAME_COUNTERS[_][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD and _ not in WHITELIST and '.'.join(_.split('.')[-2:]) not in WHITELIST:
-                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, _, "excessive no such domain name (suspicious)", "(heuristic)"))
+                                            if _.startswith("*."):
+                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, "%s%s" % ("(%s)" % ','.join(item.replace(_[1:], "") for item in NO_SUCH_NAME_COUNTERS[_][2]), _[1:]), "excessive no such domain name (suspicious)", "(heuristic)"))
+                                                for item in NO_SUCH_NAME_COUNTERS[_][2]:
+                                                    try:
+                                                        del NO_SUCH_NAME_COUNTERS[item]
+                                                    except KeyError:
+                                                        pass
+                                            else:
+                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, _, "excessive no such domain name (suspicious)", "(heuristic)"))
+
+                                            try:
+                                                del NO_SUCH_NAME_COUNTERS[_]
+                                            except KeyError:
+                                                pass
+
                                             break
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)

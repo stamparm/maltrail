@@ -64,6 +64,7 @@ var SEVERITY_COLORS = { 1: "#8ba8c0", 2: "#f0ad4e", 3: "#d9534f"};
 var CHART_TOOLTIP_FORMAT = "<%= datasetLabel %>: <%= value %>";
 var INFO_SEVERITY_KEYWORDS = { "malware": SEVERITY.HIGH, "reputation": SEVERITY.LOW, "attacker": SEVERITY.LOW, "spammer": SEVERITY.LOW, "compromised": SEVERITY.LOW, "crawler": SEVERITY.LOW, "scanning": SEVERITY.LOW }
 var STORAGE_KEY_ACTIVE_STATUS_BUTTON = "STORAGE_KEY_ACTIVE_STATUS_BUTTON";
+var COMMA_ENCODE_TRAIL_TYPES = { UA: true, URL: true};
 
 for (var column in LOG_COLUMNS) if (LOG_COLUMNS.hasOwnProperty(column)) LOG_COLUMNS_SIZE++;
 
@@ -444,7 +445,10 @@ function init(url, from, to) {
                 if (data.length < LOG_COLUMNS_SIZE)
                     continue;
 
-                data[LOG_COLUMNS.TRAIL] = data[LOG_COLUMNS.TRAIL].replace(/\,/g, "&#44;").replace(/\\\(/g, "&#40;").replace(/\\\)/g, "&#41;");
+                if (data[LOG_COLUMNS.TYPE] in COMMA_ENCODE_TRAIL_TYPES)
+                    data[LOG_COLUMNS.TRAIL] = data[LOG_COLUMNS.TRAIL].replace(/\,/g, "&#44;");
+
+                data[LOG_COLUMNS.TRAIL] = data[LOG_COLUMNS.TRAIL].replace(/\\\(/g, "&#40;").replace(/\\\)/g, "&#41;");
 
                 var _ = data[LOG_COLUMNS.TRAIL].replace(/\([^)]+\)/g, "").replace(/\{[^}]+\}/g, "");
 
@@ -518,7 +522,15 @@ function init(url, from, to) {
                                 _[column] = { };
                                 _[column][original] = true;
                             }
-                            _[column][data[column].replace(/\s{[^}]+}/, "")] = true;
+
+                            var multiple = data[column].match(/\((.*,.*)\)/);
+                            if (multiple) {
+                                var items = multiple[1].split(',');
+                                for (var k = 0; k < items.length; k++)
+                                    _[column]["(" + items[k] + ")" + data[column].replace(multiple[0], "")] = true
+                            }
+                            else
+                                _[column][data[column].replace(/\s{[^}]+}/, "")] = true;
                     }
                 }
 
