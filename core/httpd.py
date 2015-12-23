@@ -534,6 +534,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             exit("[!] another instance already running")
         elif "Name or service not known" in str(ex):
             exit("[!] invalid configuration value for 'HTTP_ADDRESS' ('%s')" % config.HTTP_ADDRESS)
+        elif "Cannot assign requested address" in str(ex):
+            exit("[!] can't use configuration value for 'HTTP_ADDRESS' ('%s')" % config.HTTP_ADDRESS)
         else:
             raise
 
