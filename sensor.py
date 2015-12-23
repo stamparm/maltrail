@@ -355,13 +355,13 @@ def _process_packet(packet, sec, usec):
                         elif config.USE_HEURISTICS:
                             if (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
                                 for _ in filter(None, (query, "*.%s" % '.'.join(query.split('.')[-2:]) if query.count('.') > 1 else None)):
-                                if query not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[query][0] != sec / 3600:
-                                    NO_SUCH_NAME_COUNTERS[query] = [sec / 3600, 1]
-                                else:
-                                    NO_SUCH_NAME_COUNTERS[query][1] += 1
+                                    if _ not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[_][0] != sec / 3600:
+                                        NO_SUCH_NAME_COUNTERS[_] = [sec / 3600, 1]
+                                    else:
+                                        NO_SUCH_NAME_COUNTERS[_][1] += 1
 
-                                    if NO_SUCH_NAME_COUNTERS[query][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD and query not in WHITELIST and '.'.join(query.split('.')[-2:]) not in WHITELIST:
-                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, query, "excessive no such domain name (suspicious)", "(heuristic)"))
+                                        if NO_SUCH_NAME_COUNTERS[_][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD and _ not in WHITELIST and '.'.join(_.split('.')[-2:]) not in WHITELIST:
+                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, _, "excessive no such domain name (suspicious)", "(heuristic)"))
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
