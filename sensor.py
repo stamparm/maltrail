@@ -342,7 +342,7 @@ def _process_packet(packet, sec, usec):
                             query += data[offset + 1:offset + length + 1] + '.'
                             offset += length + 1
 
-                        if ' ' in query or '.' not in query or query.endswith(".in-addr.arpa") or query.endswith(".local"):
+                        if ' ' in query or '.' not in query or query.endswith(".arpa") or query.endswith(".local"):
                             return
 
                         if ord(data[2]) == 0x01:  # standard query

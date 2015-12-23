@@ -1145,3 +1145,8 @@ zik.dj
 .xe.cx
 .nl.ai
 .pw
+
+# Reference: https://en.wikipedia.org/wiki/.sx
+
+.sx
+
