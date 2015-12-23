@@ -1023,6 +1023,30 @@ function initDetails() {
         searchDelay: 500,
         columnDefs: [
             {
+                orderData: [DATATABLES_COLUMNS.SPARKLINE, DATATABLES_COLUMNS.SEVERITY, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.EVENTS], targets: DATATABLES_COLUMNS.SPARKLINE
+            },
+            {
+                orderData: [DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.EVENTS], targets: DATATABLES_COLUMNS.SENSOR
+            },
+            {
+                orderData: [DATATABLES_COLUMNS.SEVERITY, DATATABLES_COLUMNS.EVENTS], targets: DATATABLES_COLUMNS.SEVERITY
+            },
+            {
+                orderData: [DATATABLES_COLUMNS.INFO, DATATABLES_COLUMNS.EVENTS], targets: DATATABLES_COLUMNS.INFO
+            },
+            {
+                orderData: [DATATABLES_COLUMNS.REFERENCE, DATATABLES_COLUMNS.EVENTS], targets: DATATABLES_COLUMNS.REFERENCE
+            },
+            {
+                orderData: [DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.EVENTS], targets: DATATABLES_COLUMNS.SRC_IP
+            },
+            {
+                orderData: [DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.EVENTS], targets: DATATABLES_COLUMNS.DST_IP
+            },
+            {
+                orderData: [DATATABLES_COLUMNS.TYPE, DATATABLES_COLUMNS.EVENTS], targets: DATATABLES_COLUMNS.TYPE
+            },
+            {
                 orderSequence: [ "desc", "asc" ],
                 targets: [ DATATABLES_COLUMNS.EVENTS, DATATABLES_COLUMNS.SEVERITY, DATATABLES_COLUMNS.LAST_SEEN, DATATABLES_COLUMNS.SPARKLINE ]
             },
