@@ -162,3 +162,5 @@ www.google-analytics.com
 digicert.com
 globalsign.net
 creativecommons.org
+arstechnica.co.uk
+hpe.com
