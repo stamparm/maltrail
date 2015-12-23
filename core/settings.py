@@ -20,7 +20,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.277"
+VERSION = "0.8.278"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -49,6 +49,7 @@ HTML_DIR = os.path.join(ROOT_DIR, "html")
 ETH_LENGTH = 14
 VLANH_LENGTH = 18
 PPPH_LENGTH = 4
+MAX_NOFILE = 65000
 CONFIG_FILE = os.path.join(ROOT_DIR, "maltrail.conf")
 SYSTEM_LOG_DIR = "/var/log" if not subprocess.mswindows else "C:\\Windows\\Logs"
 DEFAULT_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IROTH

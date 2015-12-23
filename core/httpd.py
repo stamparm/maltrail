@@ -38,6 +38,7 @@ from core.settings import DATE_FORMAT
 from core.settings import DISABLED_CONTENT_EXTENSIONS
 from core.settings import HTML_DIR
 from core.settings import HTTP_TIME_FORMAT
+from core.settings import MAX_NOFILE
 from core.settings import NAME
 from core.settings import SERVER_HEADER
 from core.settings import SESSION_COOKIE_NAME
@@ -53,6 +54,12 @@ try:
     # Reference: http://code-trick.com/python-bug-attribute-error-_strptime/
     import _strptime
 except ImportError:
+    pass
+
+try:
+    import resource
+    resource.setrlimit(resource.RLIMIT_NOFILE, (MAX_NOFILE, MAX_NOFILE))
+except:
     pass
 
 def start_httpd(address=None, port=None, join=False, pem=None):
