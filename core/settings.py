@@ -20,7 +20,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.270"
+VERSION = "0.8.272"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -248,7 +248,7 @@ def read_config(config_file):
 def read_whitelist():
     WHITELIST.clear()
 
-    _ = os.path.abspath(os.path.join(ROOT_DIR, "trails", "misc", "whitelist.txt"))
+    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "whitelist.txt"))
     if os.path.isfile(_):
         with open(_, "r") as f:
             for line in f:
@@ -264,7 +264,7 @@ def read_ua():
     SUSPICIOUS_UA_REGEX = ""
     items = []
 
-    _ = os.path.abspath(os.path.join(ROOT_DIR, "trails", "misc", "ua.txt"))
+    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "ua.txt"))
     if os.path.isfile(_):
         with open(_, "r") as f:
             for line in f:
@@ -278,7 +278,7 @@ def read_ua():
         SUSPICIOUS_UA_REGEX = "(?i)%s" % '|'.join(items)
 
 def read_worst_asn():
-    _ = os.path.abspath(os.path.join(ROOT_DIR, "trails", "misc", "worst_asns.txt"))
+    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "worst_asns.txt"))
     if os.path.isfile(_):
         with open(_, "r") as f:
             for line in f:
