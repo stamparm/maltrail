@@ -61,6 +61,10 @@ def start_httpd(address=None, port=None, join=False, pem=None):
     """
 
     class ThreadingServer(SocketServer.ThreadingMixIn, BaseHTTPServer.HTTPServer):
+        def server_bind(self):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            BaseHTTPServer.HTTPServer.server_bind(self)
+
         def finish_request(self, *args, **kwargs):
             try:
                 BaseHTTPServer.HTTPServer.finish_request(self, *args, **kwargs)
