@@ -150,6 +150,20 @@ def _process_packet(packet, sec, usec):
         if ip_offset is None:
             return
 
+        if config.USE_HEURISTICS:
+            if sec > _connect_sec:
+                for key in _connect_src_dst:
+                    if len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
+                        _src_ip, _dst_ip = key.split(':')
+                        if _src_ip not in WHITELIST:
+                            _src_ports = set(str(_[2]) for _ in _connect_src_details[key])
+                            _dst_ports = set(str(_[3]) for _ in _connect_src_details[key])
+                            log_event((sec, usec, _src_ip, ','.join(_src_ports), _dst_ip, ','.join(_dst_ports), "TCP", TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"))
+
+                _connect_sec = sec
+                _connect_src_dst.clear()
+                _connect_src_details.clear()
+
         ip_header = struct.unpack("!BBHHHBBH4s4s", packet[ip_offset:ip_offset + 20])
 
         ip_length = ip_header[2]
@@ -177,18 +191,6 @@ def _process_packet(packet, sec, usec):
                             _connect_src_details[key] = set()
                         _connect_src_dst[key].add(dst_port)
                         _connect_src_details[key].add((sec, usec, src_port, dst_port))
-
-                        if sec > _connect_sec:
-                            for key in _connect_src_dst:
-                                if len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
-                                    _src_ip, _dst_ip = key.split(':')
-                                    if _src_ip not in WHITELIST:
-                                        for _sec, _usec, _src_port, _dst_port in _connect_src_details[key]:
-                                            log_event((_sec, _usec, _src_ip, _src_port, _dst_ip, _dst_port, "TCP", TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"))
-
-                            _connect_sec = sec
-                            _connect_src_dst.clear()
-                            _connect_src_details.clear()
 
             if flags & 8 != 0:  # PSH set
                 tcph_length = doff_reserved >> 4

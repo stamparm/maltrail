@@ -519,15 +519,33 @@ function init(url, from, to) {
                         if (data[column] !== _[column])
                             if (typeof _[column] === "string") {
                                 var original = _[column];
+                                var multiple = original.match(/\((.*,.*)\)/) || original.match(/([^ ,]+,[^ ]+)/);
+
                                 _[column] = { };
-                                _[column][original] = true;
+
+                                if (multiple) {
+                                    var items = multiple[1].split(',');
+                                    if (original.contains('('))
+                                        for (var k = 0; k < items.length; k++)
+                                            _[column]["(" + items[k] + ")" + original.replace(multiple[0], "")] = true
+                                    else
+                                        for (var k = 0; k < items.length; k++)
+                                            _[column][items[k]] = true
+                                }
+                                else
+                                    _[column][original.replace(/\s{[^}]+}/, "")] = true;
                             }
 
-                            var multiple = data[column].match(/\((.*,.*)\)/);
+                            var multiple = data[column].match(/\((.*,.*)\)/) || data[column].match(/([^ ,]+,[^ ]+)/);
+
                             if (multiple) {
                                 var items = multiple[1].split(',');
-                                for (var k = 0; k < items.length; k++)
-                                    _[column]["(" + items[k] + ")" + data[column].replace(multiple[0], "")] = true
+                                if (data[column].contains('('))
+                                    for (var k = 0; k < items.length; k++)
+                                        _[column]["(" + items[k] + ")" + data[column].replace(multiple[0], "")] = true
+                                else
+                                    for (var k = 0; k < items.length; k++)
+                                        _[column][items[k]] = true
                             }
                             else
                                 _[column][data[column].replace(/\s{[^}]+}/, "")] = true;
