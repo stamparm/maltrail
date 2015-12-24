@@ -468,7 +468,7 @@ function init(url, from, to) {
 
             for (var _ in trailSources) {
                 if (Object.size(trailSources[_]) > FLOOD_TRAIL_THRESHOLD)
-                    _FLOOD_TRAILS[_] = true;
+                    _FLOOD_TRAILS[charTrim(_, '.')] = true;
             }
 
             for (var i = 0; i < results.data.length; i++) {
