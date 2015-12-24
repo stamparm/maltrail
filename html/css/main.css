@@ -438,3 +438,9 @@ rect.highlight {
     cursor: default;
     pointer-events: none;
 }
+.event-data {
+    cursor: pointer;
+}
+.ellipsis {
+    cursor:pointer;
+}

@@ -54,7 +54,7 @@ var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
 //var SEARCH_TIP_URL = "https://www.google.com/cse?cx=011750002002865445766%3Ay5klxdomj78&ie=UTF-8&q=${query}";
 var DAY_SUFFIXES = { 1: "st", 2: "nd", 3: "rd" };
 var DOT_COLUMNS = [ LOG_COLUMNS.SENSOR, LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP, LOG_COLUMNS.DST_PORT, LOG_COLUMNS.TRAIL, LOG_COLUMNS.PROTO ];
-var ELLIPSIS = '<img src="images/ellipsis.png" style="cursor:pointer">';
+var ELLIPSIS = '<img src="images/ellipsis.png">';
 var SPARKLINE_COLOR = '#ff0000';
 var CTRL_CLICK_PRESSED = false;
 var CTRL_DATES = [];
@@ -1050,6 +1050,7 @@ function initDetails() {
         aLengthMenu: [ [10, 25, 50, 100, 200], [10, 25, 50, 100, 200] ],
         aaSorting: [ [DATATABLES_COLUMNS.LAST_SEEN, 'desc'] ],
         bDeferRender: true,
+        bProcessing: true,
         searchDelay: 500,
         columnDefs: [
             {
@@ -1106,7 +1107,7 @@ function initDetails() {
                             if (parts[i] in PORT_NAMES)
                                 parts[i] = parts[i] + " (" + PORT_NAMES[parts[i]] + ")";
                         }
-                        data = "<span title='" + parts.join(DATA_PARTS_DELIMITER) + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
+                        data = "<span title='" + parts.join(DATA_PARTS_DELIMITER) + "' class='ellipsis'>" + ELLIPSIS + "</span>";
                     }
                     else {
                         if (data in PORT_NAMES)
@@ -1119,7 +1120,7 @@ function initDetails() {
             {
                 render: function (data, type, row) {
                     if (data.indexOf(',') > -1)
-                        data = "<span title='" + data + "' onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
+                        data = "<span title='" + data + "' class='ellipsis'>" + ELLIPSIS + "</span>";
                     return data;
                 },
                 targets: [ DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.PROTO ]
@@ -1168,9 +1169,9 @@ function initDetails() {
                         common = '<span class="trail-text">' + common + '</span>';
 
                         if (left)
-                            data = "<span title=\"" + title + "\" onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>" + common;
+                            data = "<span title=\"" + title + "\" class='ellipsis'>" + ELLIPSIS + "</span>" + common;
                         else
-                            data = common + "<span title=\"" + title + "\" onmouseup='copyEllipsisToClipboard(event)'>" + ELLIPSIS + "</span>";
+                            data = common + "<span title=\"" + title + "\" class='ellipsis'>" + ELLIPSIS + "</span>";
                     }
                     else
                         data = '<span class="trail-text">' + data + '</span>';
@@ -1181,14 +1182,13 @@ function initDetails() {
             },
             {
                 render: function ( data, type, row ) {
-                    return "<div onmouseup='copyEventsToClipboard(event)' style='cursor:pointer'>" + data.length + '</div><span class="hidden">' + data.join(DATA_PARTS_DELIMITER) + '</span>';
+                    return '<div class="event-data">' + data.length + '</div><span class="hidden">' + data.join(DATA_PARTS_DELIMITER) + '</span>';
                 },
                 targets: DATATABLES_COLUMNS.EVENTS
             },
             {
                 render: function ( data, type, row ) {
                     var color = data in TRAIL_TYPES ? TRAIL_TYPES[data] : getHashColor(data);
-                    //return '<span class="label-type ' + getContrastYIQ(color) + '-label-text" style="background-color: ' + color + '">' + data + '</span>';
                     return '<span class="label-type white-label-text" style="background-color: ' + color + '">' + data + '</span>';
                 },
                 targets: DATATABLES_COLUMNS.TYPE
@@ -1208,7 +1208,7 @@ function initDetails() {
                     var value = 0;
                     var items = data.split(",");
                     for (var i = 0; i < items.length; i++)
-                        if (items[i] != "0")
+                        if (items[i] !== "0")
                             value += 1;
                     return "<div class='sparkline' value='" + value + "'>" + data + "</div>";
                 },
@@ -1222,19 +1222,20 @@ function initDetails() {
             },
             {
                 render: function (data, type, row) {
-                    var duplicates = data.match(/ \((\+\d+)\)$/);
-                    if (duplicates !== null) {
-                        data = data.replace(duplicates[0], "");
-                        return ((data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data) + '<span class="duplicates">' + duplicates[1] + '</span>';
-                    }
+                    if (data.contains('(+')) {
+                        var duplicates = data.match(/ \((\+\d+)\)$/);
+                        if (duplicates !== null) {
+                            data = data.replace(duplicates[0], "");
+                            return ((data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data) + '<span class="duplicates">' + duplicates[1] + '</span>';
+                        }
 
-                    duplicates = data.match(/ \(\+(.+)\)$/);
-                    if (duplicates !== null) {
-                        var items = duplicates[1].split(',');
-                        data = data.replace(duplicates[0], "");
-                        return ((data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data) + '<span title="' + duplicates[1].replace(/,([^ ])/g, ", $1") + '" class="duplicates">+' + items.length + '</span>';
+                        duplicates = data.match(/ \(\+(.+)\)$/);
+                        if (duplicates !== null) {
+                            var items = duplicates[1].split(',');
+                            data = data.replace(duplicates[0], "");
+                            return ((data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data) + '<span title="' + duplicates[1].replace(/,([^ ])/g, ", $1") + '" class="duplicates">+' + items.length + '</span>';
+                        }
                     }
-
                     return (data.substr(0, 1) != '(') ? '<i>' + data + '</i>': data;
                 },
                 targets: DATATABLES_COLUMNS.REFERENCE
@@ -1494,7 +1495,7 @@ function initDetails() {
                 if (html === null)
                     return false;
 
-                if ((html.indexOf('flag') > -1) || (html.indexOf('lan') > -1) || (html.indexOf(',') > -1) || (html.indexOf(ELLIPSIS) > -1))
+                if ((html.indexOf('flag') > -1) || (html.indexOf('lan') > -1) || (html.indexOf(',') > -1) || (html.indexOf('ellipsis') > -1))
                     return false;
 
                 var match = html.match(/\d+\.\d+\.\d+\.\d+/);
@@ -1561,7 +1562,7 @@ function initDetails() {
         }
     });
 
-    $(details).find("thead").addClass("noselect")
+    $(details).find("thead").addClass("noselect");
 
     details.off("mouseenter");  // clear previous
     details.on("mouseenter", ".trail-text", function(event) {
@@ -1629,10 +1630,6 @@ function initDetails() {
                 appendFilter(event.target.innerHTML, event);
             else if (event.target.classList.contains("label-type"))
                 appendFilter(event.target.innerHTML, event);
-//                 if (event.target.innerHTML.toUpperCase() === event.target.innerHTML)
-//                     appendFilter('" ' + event.target.innerHTML + '"', event);
-//                 else
-//                     appendFilter(event.target.innerHTML, event);
         }
         else if (event.button === 1) {  // middle mouse button
             if (event.target.classList.contains("tag"))
@@ -1642,6 +1639,9 @@ function initDetails() {
             stopPropagation(event);
         }
     });
+
+    details.on("mouseup", ".event-data", copyEventsToClipboard);
+    details.on("mouseup", ".ellipsis", copyEllipsisToClipboard);
 
     details.off("contextmenu");  // clear previous
     details.on("contextmenu", "td", function (){
