@@ -26,7 +26,11 @@ table.dataTable .highlighted { background-color: #abb9d3 !important }
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.25);
     color: black;
 }
-.container { margin-left: 10px; margin-right: 10px; width: 99% }
+.container {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 99%;
+}
 .container > div > ul { margin: 0px }
 /*.chart-table { width: 100%; margin-top: 10px; margin-bottom: 10px }*/
 .center { margin-left: auto; margin-right: auto; text-align: center }
@@ -95,6 +99,7 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     vertical-align: middle;
     position: fixed;
     top: 0px;
+    white-space: nowrap;
 }
 .header-a {
     color: #efefef;
