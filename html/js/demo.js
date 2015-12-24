@@ -413,8 +413,8 @@ function getDemoCSV() {
     '"2015-03-10 07:16:58.338882" r2d2 68.12.104.178 45416 68.12.99.2 53 UDP DNS sandra.prichaonica.com "palevo (malware)" (static)\n' +
     '"2015-03-10 07:17:06.607773" r2d2 68.12.104.178 53541 68.12.99.2 53 UDP DNS juice.losmibracala.org "palevo (malware)" (static)\n' +
     '"2015-03-10 07:17:06.607775" r2d2 68.12.104.178 53541 68.12.99.2 53 UDP DNS juice.losmibracala.org "palevo (malware)" (static)\n' +
-    '"2015-03-10 07:17:07.059808" r2d2 68.12.104.178 40358 68.12.99.2 53 UDP DNS unioncycler.com fraud http:\n' +
-    '"2015-03-10 07:17:07.059803" r2d2 68.12.104.178 40358 68.12.99.2 53 UDP DNS unioncycler.com fraud http:\n' +
+    '"2015-03-10 07:17:07.059808" r2d2 68.12.104.178 40358 68.12.99.2 53 UDP DNS unioncycler.com fraud www.spamhaus.org\n' +
+    '"2015-03-10 07:17:07.059803" r2d2 68.12.104.178 40358 68.12.99.2 53 UDP DNS unioncycler.com fraud www.spamhaus.org\n' +
     '"2015-03-10 07:17:08.585681" r2d2 68.12.104.178 50990 68.12.99.2 53 UDP DNS peer.pickeklosarske.ru "palevo (malware)" (static)\n' +
     '"2015-03-10 07:17:08.585690" r2d2 68.12.104.178 50990 68.12.99.2 53 UDP DNS peer.pickeklosarske.ru "palevo (malware)" (static)\n' +
     '"2015-03-10 07:17:22.774075" r2d2 68.12.104.178 43767 68.12.99.2 53 UDP DNS l33t.brand-clothes.net "palevo (malware)" (static)\n' +
@@ -431,10 +431,10 @@ function getDemoCSV() {
     '"2015-03-10 07:18:08.510005" r2d2 68.12.104.178 45705 68.12.99.2 53 UDP DNS juice.losmibracala.org "palevo (malware)" (static)\n' +
     '"2015-03-10 07:18:28.814160" r2d2 68.12.104.178 57786 68.12.99.2 53 UDP DNS (zdzupanija).dynu.com "dynamic domain (suspicious)" (static)\n' +
     '"2015-03-10 07:18:28.814162" r2d2 68.12.104.178 57786 68.12.99.2 53 UDP DNS (zdzupanija).dynu.com "dynamic domain (suspicious)" (static)\n' +
-    '"2015-03-10 07:18:30.428365" r2d2 68.12.104.178 41845 68.12.99.2 53 UDP DNS (ns5).nlkoddos.com fraud http:\n' +
-    '"2015-03-10 07:18:30.429061" r2d2 68.12.104.178 42509 68.12.99.2 53 UDP DNS (ns6).nlkoddos.com fraud http:\n' +
-    '"2015-03-10 07:18:30.429078" r2d2 68.12.104.178 42509 68.12.99.2 53 UDP DNS (ns6).nlkoddos.com fraud http:\n' +
-    '"2015-03-10 07:18:30.428363" r2d2 68.12.104.178 41845 68.12.99.2 53 UDP DNS (ns5).nlkoddos.com fraud http:\n' +
+    '"2015-03-10 07:18:30.428365" r2d2 68.12.104.178 41845 68.12.99.2 53 UDP DNS (ns5).nlkoddos.com fraud www.spamhaus.org\n' +
+    '"2015-03-10 07:18:30.429061" r2d2 68.12.104.178 42509 68.12.99.2 53 UDP DNS (ns6).nlkoddos.com fraud www.spamhaus.org\n' +
+    '"2015-03-10 07:18:30.429078" r2d2 68.12.104.178 42509 68.12.99.2 53 UDP DNS (ns6).nlkoddos.com fraud www.spamhaus.org\n' +
+    '"2015-03-10 07:18:30.428363" r2d2 68.12.104.178 41845 68.12.99.2 53 UDP DNS (ns5).nlkoddos.com fraud www.spamhaus.org\n' +
     '"2015-03-10 07:18:30.785236" r2d2 68.12.104.178 35383 68.12.99.2 53 UDP DNS sandra.prichaonica.com "palevo (malware)" (static)\n' +
     '"2015-03-10 07:18:30.785226" r2d2 68.12.104.178 35383 68.12.99.2 53 UDP DNS sandra.prichaonica.com "palevo (malware)" (static)\n' +
     '"2015-03-10 07:18:51.417393" r2d2 68.12.104.178 54275 68.12.99.2 53 UDP DNS l33t.brand-clothes.net "palevo (malware)" (static)\n' +
