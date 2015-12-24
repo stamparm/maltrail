@@ -789,7 +789,7 @@ function resetStatusButtons() {
     $.jStorage.deleteKey(STORAGE_KEY_ACTIVE_STATUS_BUTTON);
     $("li.status-button").each(function() {
         $(this).css("text-shadow", "-1px -1px 0 rgba(0, 0, 0, 0.50)");
-        $(this).css("border", "3px groove rgba(0, 0, 0, 0.50)");
+        $(this).css("border", "3px solid rgba(0, 0, 0, 0.50)");
     });
     $("#graph_close").hide();
 }
@@ -1561,6 +1561,8 @@ function initDetails() {
         }
     });
 
+    $(details).find("thead").addClass("noselect")
+
     details.off("mouseenter");  // clear previous
     details.on("mouseenter", ".trail-text", function(event) {
         var cell = event.target;
@@ -1863,7 +1865,7 @@ function drawInfo(type) {
     if (jQuery.isEmptyObject(_HOURS))
         return;
 
-    if ($("#" + type.toLowerCase() + "_count").parent()[0].style.border.contains("solid")) {
+    if ($("#" + type.toLowerCase() + "_count").parent()[0].style.border.contains("1px")) {
         resetStatusButtons();
         return;
     }

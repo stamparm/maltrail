@@ -365,12 +365,12 @@ rect.highlight {
     padding: 6px 10px;
     line-height: 1.1em;
 }
-::-moz-selection {
+/*::-moz-selection {
     background: yellow;
 }
 ::selection {
     background: yellow;
-}
+}*/
 .time-day, .duplicates, .ipcat {
     background-color: #eee;
     border-radius: 20px;
