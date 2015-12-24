@@ -1865,7 +1865,7 @@ function drawInfo(type) {
     if (jQuery.isEmptyObject(_HOURS))
         return;
 
-    if ($("#" + type.toLowerCase() + "_count").parent()[0].style.border.contains("1px")) {
+    if ($("#" + type.toLowerCase() + "_count").parent()[0].style.border.contains("white")) {
         resetStatusButtons();
         return;
     }
@@ -1873,7 +1873,7 @@ function drawInfo(type) {
     resetStatusButtons();
 
     $("#" + type.toLowerCase() + "_count").parent().css("text-shadow", "none");
-    $("#" + type.toLowerCase() + "_count").parent().css("border", "1px solid rgba(0, 0, 0, 0.25");
+    $("#" + type.toLowerCase() + "_count").parent().css("border", "3px solid white");
 
     $("#graph_close").removeClass("hidden").show();
 
