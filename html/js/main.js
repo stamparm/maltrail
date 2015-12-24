@@ -1359,7 +1359,6 @@ function initDetails() {
             ]
         },
         fnStateSaveParams: function (oSettings, oData) {
-            oData.search.search = "";
             oData.start = 0;
         },
         fnDrawCallback: function( oSettings ) {
