@@ -381,6 +381,7 @@ rect.highlight {
 }
 .duplicates, .ipcat, .worst_asns {
     margin-left: 2px;
+    cursor: default;
 }
 .severity {
     float: center;
@@ -447,4 +448,5 @@ rect.highlight {
     width: 12px;
     height: 12px;
     display: inline-block;
+     vertical-align: middle;
 }
