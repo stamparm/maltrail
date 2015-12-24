@@ -72,7 +72,7 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     border-radius: 11px;
     margin: 5px;
     width: 150px;
-    float: left;
+    display: inline-block;
     line-height: 20px;
     cursor: pointer;
     text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25);
