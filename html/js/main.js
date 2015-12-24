@@ -492,9 +492,8 @@ function init(url, from, to) {
                     threatText = FLOOD_THREAT_PREFIX + THREAT_INFIX + _;
                 else if (dga)
                     threatText = data[LOG_COLUMNS.SRC_IP] + THREAT_INFIX + info;
-                else if (heuristic) {
+                else if (heuristic)
                     threatText = data[LOG_COLUMNS.SRC_IP] + THREAT_INFIX + _ + info;
-                }
                 else
                     threatText = data[LOG_COLUMNS.SRC_IP] + THREAT_INFIX + _;
 
@@ -524,6 +523,7 @@ function init(url, from, to) {
 
                                 if (multiple) {
                                     var items = multiple[1].split(',');
+
                                     if (original.contains('('))
                                         for (var k = 0; k < items.length; k++)
                                             _[column]["(" + items[k] + ")" + original.replace(multiple[0], "")] = true
@@ -559,6 +559,7 @@ function init(url, from, to) {
 
                 if (!(_ in _SOURCE_EVENTS)) {
                     _SOURCE_EVENTS[_] = {};
+
                     for (var key in TRAIL_TYPES)
                         _SOURCE_EVENTS[_][key] = 0;
                 }
@@ -613,8 +614,10 @@ function init(url, from, to) {
 
                         if (typeof data[column] !== "string") {
                             var _ = [];
+
                             for (var entry in data[column])
                                 _.push(entry.replace(DATA_PARTS_DELIMITER, DATA_PARTS_DELIMITER.replace(" ", "")));
+
                             if ((column === LOG_COLUMNS.SRC_PORT) || (column === LOG_COLUMNS.DST_PORT))
                                 _.sort(function(a, b) {
                                     a = parseInt(a);
@@ -629,6 +632,7 @@ function init(url, from, to) {
                                 });
                             else
                                 _.sort();
+
                             data[column] = _.join(DATA_PARTS_DELIMITER);
                         }
                     }
