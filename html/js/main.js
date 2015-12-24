@@ -54,7 +54,6 @@ var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
 //var SEARCH_TIP_URL = "https://www.google.com/cse?cx=011750002002865445766%3Ay5klxdomj78&ie=UTF-8&q=${query}";
 var DAY_SUFFIXES = { 1: "st", 2: "nd", 3: "rd" };
 var DOT_COLUMNS = [ LOG_COLUMNS.SENSOR, LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP, LOG_COLUMNS.DST_PORT, LOG_COLUMNS.TRAIL, LOG_COLUMNS.PROTO ];
-var ELLIPSIS = '<img src="images/ellipsis.png">';
 var SPARKLINE_COLOR = '#ff0000';
 var CTRL_CLICK_PRESSED = false;
 var CTRL_DATES = [];
@@ -1107,7 +1106,7 @@ function initDetails() {
                             if (parts[i] in PORT_NAMES)
                                 parts[i] = parts[i] + " (" + PORT_NAMES[parts[i]] + ")";
                         }
-                        data = "<span title='" + parts.join(DATA_PARTS_DELIMITER) + "' class='ellipsis'>" + ELLIPSIS + "</span>";
+                        data = "<span title='" + parts.join(DATA_PARTS_DELIMITER) + "' class='ellipsis'/>";
                     }
                     else {
                         if (data in PORT_NAMES)
@@ -1120,7 +1119,7 @@ function initDetails() {
             {
                 render: function (data, type, row) {
                     if (data.indexOf(',') > -1)
-                        data = "<span title='" + data + "' class='ellipsis'>" + ELLIPSIS + "</span>";
+                        data = "<span title='" + data + "' class='ellipsis'/>";
                     return data;
                 },
                 targets: [ DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.PROTO ]
@@ -1169,9 +1168,9 @@ function initDetails() {
                         common = '<span class="trail-text">' + common + '</span>';
 
                         if (left)
-                            data = "<span title=\"" + title + "\" class='ellipsis'>" + ELLIPSIS + "</span>" + common;
+                            data = "<span title=\"" + title + "\" class='ellipsis'/>" + common;
                         else
-                            data = common + "<span title=\"" + title + "\" class='ellipsis'>" + ELLIPSIS + "</span>";
+                            data = common + "<span title=\"" + title + "\" class='ellipsis'/>";
                     }
                     else
                         data = '<span class="trail-text">' + data + '</span>';
