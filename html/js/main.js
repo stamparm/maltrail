@@ -1106,7 +1106,7 @@ function initDetails() {
                             if (parts[i] in PORT_NAMES)
                                 parts[i] = parts[i] + " (" + PORT_NAMES[parts[i]] + ")";
                         }
-                        data = "<span title='" + parts.join(DATA_PARTS_DELIMITER) + "' class='ellipsis'/>";
+                        data = "<span title='" + parts.join(DATA_PARTS_DELIMITER) + "' class='ellipsis'></span>";
                     }
                     else {
                         if (data in PORT_NAMES)
@@ -1119,7 +1119,7 @@ function initDetails() {
             {
                 render: function (data, type, row) {
                     if (data.indexOf(',') > -1)
-                        data = "<span title='" + data + "' class='ellipsis'/>";
+                        data = "<span title='" + data + "' class='ellipsis'></span>";
                     return data;
                 },
                 targets: [ DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.PROTO ]
@@ -1168,9 +1168,9 @@ function initDetails() {
                         common = '<span class="trail-text">' + common + '</span>';
 
                         if (left)
-                            data = "<span title=\"" + title + "\" class='ellipsis'/>" + common;
+                            data = "<span title=\"" + title + "\" class='ellipsis'></span>" + common;
                         else
-                            data = common + "<span title=\"" + title + "\" class='ellipsis'/>";
+                            data = common + "<span title=\"" + title + "\" class='ellipsis'></span>";
                     }
                     else
                         data = '<span class="trail-text">' + data + '</span>';
@@ -1451,7 +1451,7 @@ function initDetails() {
                         CHECK_IP[ip] = null;
                         $.ajax("/check_ip?address=" + ip, { dataType: "jsonp", ip: ip, cell: cell })
                         .done(function(json) {
-                            var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(json.ipcat);
+                            var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'></span>" : "<span class='ipcat hidden'></span>").html(json.ipcat);
                             CHECK_IP[this.ip] = json;
                             this.cell.append(span_ip);
                             if (json.worst_asns === "true")
@@ -1460,7 +1460,7 @@ function initDetails() {
                     }
                     else if (CHECK_IP[ip] !== null) {
                         var json = CHECK_IP[ip];
-                        var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(json.ipcat);
+                        var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'></span>" : "<span class='ipcat hidden'></span>").html(json.ipcat);
                         cell.append(span_ip);
                         if (json.worst_asns === "true")
                             cell.append($("<img src='images/thief.png' class='worst_asns' title='malicious ASN'>").tooltip());
@@ -1471,7 +1471,7 @@ function initDetails() {
                             if (CHECK_IP[ip] !== null) {
                                 if (html.indexOf("ipcat") === -1) {
                                     var json = CHECK_IP[ip];
-                                    var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'/>" : "<span class='ipcat hidden'/>").html(json.ipcat);
+                                    var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'></span>" : "<span class='ipcat hidden'></span>").html(json.ipcat);
                                     cell.append(span_ip);
                                     if (json.worst_asns === "true")
                                         cell.append($("<img src='images/thief.png' class='worst_asns' title='malicious ASN'>").tooltip());
@@ -1515,19 +1515,19 @@ function initDetails() {
 
                             if ((json.data.locations.length > 0) && (json.data.locations[0].country !== "ANO")) {
                                 IP_COUNTRY[this.ip] = json.data.locations[0].country.toLowerCase().split('-')[0];
-                                img = '<img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[this.ip] + '" title="' + IP_COUNTRY[this.ip].toUpperCase() + '" />';
+                                img = '<img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[this.ip] + '" title="' + IP_COUNTRY[this.ip].toUpperCase() + '">';
                                 span_ip.tooltip(options);
                             }
                             else {
                                 IP_COUNTRY[this.ip] = "unknown";
-                                img = '<img src="images/blank.gif" class="flag flag-unknown" title="UNKNOWN"/>';
+                                img = '<img src="images/blank.gif" class="flag flag-unknown" title="UNKNOWN">';
                             }
 
                             this.cell.html("").append(span_ip).append($(img).tooltip());
                         });
                     }
                     else if (IP_COUNTRY[ip] !== null) {
-                        img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '" />';
+                        img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '">';
 
                         var span_ip = $("<span title=''/>").html(ip + " ");
                         span_ip.tooltip(options);
@@ -1541,7 +1541,7 @@ function initDetails() {
                                 clearInterval(interval);
                             else if (IP_COUNTRY[ip] !== null) {
                                 if (html.indexOf("flag-") === -1) {
-                                    img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '" />';
+                                    img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '">';
 
                                     var span_ip = $("<span title=''/>").html(ip + " ");
                                     span_ip.tooltip(options);
