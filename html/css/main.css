@@ -35,7 +35,10 @@ table.dataTable .highlighted { background-color: #abb9d3 !important }
 /*.chart-table { width: 100%; margin-top: 10px; margin-bottom: 10px }*/
 .center { margin-left: auto; margin-right: auto; text-align: center }
 .right { margin-left: auto; text-align: right }
-.form-control { width: initial }
+.form-control {
+    width: initial;
+    display: inline-block;
+}
 .hidden { display: none }
 /*.section { font-size: 120%; font-weight: bold; margin-top: 10px; margin-bottom: 10px; visibility: hidden }*/
 div.DTTT_container { margin-left: 5px; margin-top: 2px }
@@ -151,10 +154,13 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     width: 100%;
 }
 .graph-label {
-    font-family: Verdana, Geneva, sans-serif
+    font-family: Verdana, Geneva, sans-serif;
 }
 .dataTables_info {
-    float: left
+    float: left;
+}
+.dataTables_filter {
+    white-space: nowrap;
 }
 .sparkline-tooltip {
     position: absolute;

@@ -1,0 +1,15 @@
+@media screen and (max-width: 900px) {
+    #status_container {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 650px) {
+    .DTTT_container, #details_info {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 460px) {
+    #details_length, .header-li {
+        display: none !important;
+    }
+}
