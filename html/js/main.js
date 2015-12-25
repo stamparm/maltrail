@@ -147,6 +147,7 @@ function initDialogs() {
     };
 
     $("#login_link").click(function() {
+        $("body").loader("hide");
         $('<div id="login_dialog" title="Authentication"><table><tbody><tr><td>Username:</td><td><input id="username" name="username"></td></tr><tr><td>Password:</td><td><input id="password" name="password" type="password" autocomplete="off"></td></tr></tbody></table></div>').appendTo('body').dialog(options);
         $("#login_dialog input").val("");
         $("#login_dialog").dialog("open")
