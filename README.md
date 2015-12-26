@@ -36,16 +36,17 @@
 The following (black)lists (i.e. feeds) are being utilized:
 
 ```
-alienvault, asprox, autoshun, badips, bambenekconsultingc2,
-bambenekconsultingdga, binarydefense, blocklist, botscout,
-bruteforceblocker, ciarmy, cruzit, cybercrimetracker, dshielddns,
-dshieldip, emergingthreatsbot, emergingthreatscip,
-malc0de, malwaredomainlist, malwaredomains, malwarepatrol,
-malwareurlsnormal, maxmind, myip, nothink, ntpot, openbl,
-openphish, palevotracker, proxylists, riproxies, rutgers,
-sblam, socksproxy, sslipbl, talosintel, torproject, torstatus,
-voipbl, vxvault, zeustrackerdns, zeustrackerip,
-zeustrackermonitor, zeustrackerurl, etc.
+alienvault, autoshun, badips, bambenekconsultingc2,
+bambenekconsultingdga, binarydefense, bitcoinnodes, blocklist,
+botscout, bruteforceblocker, ciarmy, cruzit, cybercrimetracker,
+dshielddns, dshieldip, emergingthreatsbot, emergingthreatscip,
+emergingthreatsdns, feodotrackerdns, feodotrackerip, greensnow,
+malwarepatrol, malwareurlsnormal, maxmind, myip, nothink,
+openbl, openphish, palevotracker, proxylists, proxyrss,
+proxy, riproxies, rutgers, sblam, snort, socksproxy,
+sslipbl, sslproxies, torproject, torstatus, voipbl, vxvault,
+zeustrackerdns, zeustrackerip, zeustrackermonitor, zeustrackerurl,
+etc.
 ```
 
 As of static entries, the trails for the following malicious entities (e.g. malware C&Cs) have been manually included (from various AV reports):
@@ -62,12 +63,15 @@ fareit, fbi_ransomware, fiexp, fignotok, fin4,
 finfisher, gamarue, gauss, htran, jenxcus, kegotip,
 kovter, lollipop, lotus_blossom, luckycat, mariposa,
 miniduke, modpos, nbot, nettraveler, neurevt, nitol,
-no-ip, nonbolqu, nuqel, nwt, nymaim, palevo, pdfjsc,
-pift, plugx, ponmocup, powelike, proslikefan, pushdo,
+nonbolqu, nuqel, nwt, nymaim, palevo, pdfjsc, pift,
+plugx, ponmocup, powelike, proslikefan, pushdo,
 ransirac, redoctober, reveton, russian_doll, sality,
 sathurbot, scieron, sefnit, shylock, siesta, simda,
-sinkhole_abuse, sinkhole_kaspersky, sinkhole_shadowserver,
-sinkhole_sinkdns, skyper, smsfakesky, snake, snifula,
+sinkhole_1and1, sinkhole_abuse, sinkhole_blacklistthisdomain,
+sinkhole_certpl, sinkhole_drweb, sinkhole_fbizeus,
+sinkhole_fitsec, sinkhole_georgiatech, sinkhole_kaspersky,
+sinkhole_microsoft, sinkhole_shadowserver, sinkhole_sinkdns,
+sinkhole_zinkhole, skyper, smsfakesky, snake, snifula,
 sofacy, stuxnet, teerac, teslacrypt, torpig,
 torrentlocker, unruy, upatre, vawtrak, virut, vobfus,
 volatile_cedar, vundo, waterbug, zeroaccess, zlob, etc.
