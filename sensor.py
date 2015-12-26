@@ -84,10 +84,12 @@ except ImportError:
     if subprocess.mswindows:
         exit("[!] please install WinPcap (e.g. 'http://www.winpcap.org/install/') and Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy')")
     else:
-        if platform.linux_distribution()[0].lower() in ("fedora", "centos"):
-            exit("[!] please install Pcapy ('sudo yum install pcapy')")
-        else:
-            exit("[!] please install Pcapy (e.g. 'apt-get install python-pcapy')")
+        msg, _ = "[!] please install Pcapy", platform.linux_distribution()[0].lower()
+        for distro, install in {("fedora", "centos"): "sudo yum install pcapy", ("debian", "ubuntu"): "sudo apt-get install python-pcapy"}.items():
+            if _ in distro:
+                msg += " (e.g. '%s')" % install
+                break
+        exit(msg)
 
 def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto):
     parts = query.lower().split('.')
@@ -474,23 +476,26 @@ def init():
     if _multiprocessing:
         _init_multiprocessing()
 
-    try:
+    if not subprocess.mswindows:
         try:
-            mod = int(subprocess.check_output("grep -c ^processor /proc/cpuinfo", stderr=subprocess.STDOUT, shell=True).strip())
-            used = subprocess.check_output("for pid in $(ps aux | grep python | grep sensor.py | grep -E -o 'root[ ]*[0-9]*' | tr -d '[:alpha:] '); do schedtool $pid; done | grep -E -o 'AFFINITY .*' | cut -d ' ' -f 2 | grep -v 0xf", stderr=subprocess.STDOUT, shell=True).strip().split('\n')
-            max_used = max(int(_, 16) for _ in used)
-            affinity = max(1, (max_used << 1) % 2 ** mod)
+            try:
+                mod = int(subprocess.check_output("grep -c ^processor /proc/cpuinfo", stderr=subprocess.STDOUT, shell=True).strip())
+                used = subprocess.check_output("for pid in $(ps aux | grep python | grep sensor.py | grep -E -o 'root[ ]*[0-9]*' | tr -d '[:alpha:] '); do schedtool $pid; done | grep -E -o 'AFFINITY .*' | cut -d ' ' -f 2 | grep -v 0xf", stderr=subprocess.STDOUT, shell=True).strip().split('\n')
+                max_used = max(int(_, 16) for _ in used)
+                affinity = max(1, (max_used << 1) % 2 ** mod)
+            except:
+                affinity = 1
+            p = subprocess.Popen("sched3tool -n -2 -M 2 -p 10 -a 0x%02x %d" % (affinity, os.getpid()), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            _, stderr = p.communicate()
+            if "not found" in stderr:
+                msg, _ = "[!] please install schedtool for better CPU scheduling", platform.linux_distribution()[0].lower()
+                for distro, install in {("fedora", "centos"): "sudo yum install schedtool", ("debian", "ubuntu"): "sudo apt-get install schedtool"}.items():
+                    if _ in distro:
+                        msg += " (e.g. '%s')" % install
+                        break
+                print(msg)
         except:
-            affinity = 1
-        p = subprocess.Popen("schedtool -n -2 -M 2 -p 10 -a 0x%02x %d" % (affinity, os.getpid()), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        _, stderr = p.communicate()
-        if "not found" in stderr:
-            if platform.linux_distribution()[0].lower() in ("fedora", "centos"):
-                print("[!] please install schedtool for better CPU scheduling ('sudo yum install schedtool')")
-            else:
-                print("[!] please install schedtool for better CPU scheduling (e.g. 'sudo apt-get install schedtool')")
-    except:
-        pass
+            pass
 
 def _init_multiprocessing():
     """
