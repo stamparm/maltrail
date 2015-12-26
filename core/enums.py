@@ -17,3 +17,8 @@ class BLOCK_MARKER:
     READ = chr(0x01)
     WRITE = chr(0x02)
     END = chr(0xFF)
+
+class PROTO:
+    TCP = "TCP"
+    UDP = "UDP"
+    ICMP = "ICMP"

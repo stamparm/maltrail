@@ -31,6 +31,7 @@ import platform
 from core.common import check_sudo
 from core.common import load_trails
 from core.enums import BLOCK_MARKER
+from core.enums import PROTO
 from core.enums import TRAIL
 from core.log import create_log_directory
 from core.log import log_event
@@ -41,6 +42,7 @@ from core.settings import CONFIG_FILE
 from core.settings import ETH_LENGTH
 from core.settings import PPPH_LENGTH
 from core.settings import IPPROTO_LUT
+from core.settings import LOCALHOST_IP
 from core.settings import NAME
 from core.settings import NO_SUCH_NAME_COUNTERS
 from core.settings import NO_SUCH_NAME_PER_HOUR_THRESHOLD
@@ -158,7 +160,7 @@ def _process_packet(packet, sec, usec):
                         if _src_ip not in WHITELIST:
                             _src_ports = set(str(_[2]) for _ in _connect_src_details[key])
                             _dst_ports = set(str(_[3]) for _ in _connect_src_details[key])
-                            log_event((sec, usec, _src_ip, ','.join(_src_ports), _dst_ip, ','.join(_dst_ports), "TCP", TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"))
+                            log_event((sec, usec, _src_ip, ','.join(_src_ports), _dst_ip, ','.join(_dst_ports), PROTO.TCP, TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"))
 
                 _connect_sec = sec
                 _connect_src_dst.clear()
@@ -179,12 +181,12 @@ def _process_packet(packet, sec, usec):
 
             if flags == 2:  # SYN set (only)
                 if dst_ip in trails:
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]))
-                elif src_ip in trails and dst_ip != "127.0.0.1":
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]))
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]))
+                elif src_ip in trails and dst_ip != LOCALHOST_IP:
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]))
 
                 if config.USE_HEURISTICS:
-                    if dst_ip != "127.0.0.1":
+                    if dst_ip != LOCALHOST_IP:
                         key = "%s:%s" % (src_ip, dst_ip)
                         if key not in _connect_src_dst:
                             _connect_src_dst[key] = set()
@@ -198,7 +200,7 @@ def _process_packet(packet, sec, usec):
                 data = packet[h_size:]
 
                 if src_port == 80 and data.startswith("HTTP/") and "X-Sinkhole: Malware" in data[:data.find("\r\n\r\n")]:
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, src_ip, "sinkhole response (malware)", "(heuristic)"))
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, "sinkhole response (malware)", "(heuristic)"))
 
                 method, path = None, None
                 index = data.find("\n")
@@ -218,9 +220,9 @@ def _process_packet(packet, sec, usec):
                         host = host.strip()
                         host = re.sub(r":80\Z", "", host)
                         if dst_ip in trails and not (host[-1].isdigit() and ':' not in host):
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]))
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]))
                     elif config.USE_HEURISTICS and config.CHECK_MISSING_HOST:
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing host header)", "(heuristic)"))
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing host header)", "(heuristic)"))
 
                     if "://" in path:
                         url = path.split("://", 1)[1]
@@ -232,7 +234,7 @@ def _process_packet(packet, sec, usec):
                         host = re.sub(r":80\Z", "", host)
                         path = "/%s" % path
                         proxy_domain = host.split(':')[0]
-                        _check_domain(proxy_domain, sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP")
+                        _check_domain(proxy_domain, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP)
                     elif method == "CONNECT":
                         if '/' in path:
                             host, path = path.split('/', 1)
@@ -242,7 +244,7 @@ def _process_packet(packet, sec, usec):
                         host = re.sub(r":80\Z", "", host)
                         url = "%s%s" % (host, path)
                         proxy_domain = host.split(':')[0]
-                        _check_domain(proxy_domain, sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP")
+                        _check_domain(proxy_domain, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP)
                     else:
                         url = "%s%s" % (host, path)
 
@@ -261,13 +263,13 @@ def _process_packet(packet, sec, usec):
                                 found = _user_agent_cache[user_agent]
 
                             if found:
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.UA, user_agent.replace('(', "\\(").replace(')', "\\)"), "suspicious user agent", "(heuristic)"))
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, user_agent.replace('(', "\\(").replace(')', "\\)"), "suspicious user agent", "(heuristic)"))
 
                         if not found and config.CHECK_SHORT_OR_MISSING_USER_AGENT:
                             if user_agent is None:
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.HTTP, url, "suspicious http request (missing user agent header)", "(heuristic)"))
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, url, "suspicious http request (missing user agent header)", "(heuristic)"))
                             elif len(user_agent) < SUSPICIOUS_UA_LENGTH_THRESHOLD:
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.UA, user_agent, "suspicious user agent (too short)", "(heuristic)"))
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, user_agent, "suspicious user agent (too short)", "(heuristic)"))
 
                     checks = [path.rstrip('/')]
                     if '?' in path:
@@ -287,7 +289,7 @@ def _process_packet(packet, sec, usec):
                                 parts = url.split(check)
                                 other = ("(%s)" % _ if _ else _ for _ in parts)
                                 trail = check.join(other)
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, trails[check][0], trails[check][1]))
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, trails[check][0], trails[check][1]))
                                 return
 
                     if config.USE_HEURISTICS:
@@ -297,7 +299,7 @@ def _process_packet(packet, sec, usec):
 
                         if host not in WHITELIST and not any(_ in path for _ in WHITELIST_HTTP_REQUEST_KEYWORDS) and re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)):
                             trail = "%s(%s)" % (host, path)
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
                             return
 
                         if '.' in path:
@@ -306,10 +308,10 @@ def _process_packet(packet, sec, usec):
                             name, extension = os.path.splitext(filename)
                             if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and '.'.join(host.split('.')[-2:]) not in WHITELIST and not _.query and len(name) < 10:
                                 trail = "%s(%s)" % (host, path)
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "direct %s download (suspicious)" % extension, "(heuristic)"))
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "direct %s download (suspicious)" % extension, "(heuristic)"))
                             elif filename in SUSPICIOUS_FILENAMES:
                                 trail = "%s(%s)" % (host, path)
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "TCP", TRAIL.URL, trail, "suspicious page", "(heuristic)"))
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious page", "(heuristic)"))
 
         elif protocol == socket.IPPROTO_UDP:  # UDP
             i = iph_length + ip_offset
@@ -321,9 +323,9 @@ def _process_packet(packet, sec, usec):
 
             if src_port != 53:
                 if dst_ip in trails:
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]))
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]))
                 elif src_ip in trails:
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]))
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]))
 
             if dst_port == 53 or src_port == 53:
                 h_size = ip_offset + iph_length + 8
@@ -352,7 +354,7 @@ def _process_packet(packet, sec, usec):
 
                             # Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
                             if type_ not in (12, 28) and class_ == 1:  # Type not in (PTR, AAAA), Class IN
-                                _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP")
+                                _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP)
 
                         elif config.USE_HEURISTICS:
                             if (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
@@ -365,14 +367,14 @@ def _process_packet(packet, sec, usec):
 
                                         if NO_SUCH_NAME_COUNTERS[_][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD and _ not in WHITELIST and '.'.join(_.split('.')[-2:]) not in WHITELIST:
                                             if _.startswith("*."):
-                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, "%s%s" % ("(%s)" % ','.join(item.replace(_[1:], "") for item in NO_SUCH_NAME_COUNTERS[_][2]), _[1:]), "excessive no such domain name (suspicious)", "(heuristic)"))
+                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, "%s%s" % ("(%s)" % ','.join(item.replace(_[1:], "") for item in NO_SUCH_NAME_COUNTERS[_][2]), _[1:]), "excessive no such domain name (suspicious)", "(heuristic)"))
                                                 for item in NO_SUCH_NAME_COUNTERS[_][2]:
                                                     try:
                                                         del NO_SUCH_NAME_COUNTERS[item]
                                                     except KeyError:
                                                         pass
                                             else:
-                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, "UDP", TRAIL.DNS, _, "excessive no such domain name (suspicious)", "(heuristic)"))
+                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, _, "excessive no such domain name (suspicious)", "(heuristic)"))
 
                                             try:
                                                 del NO_SUCH_NAME_COUNTERS[_]
@@ -384,7 +386,7 @@ def _process_packet(packet, sec, usec):
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
                 i = iph_length + ip_offset
-                if ord(packet[i]) != 8:  # Echo request
+                if ord(packet[i]) != 8:  # Non-echo request
                     return
 
             if dst_ip in trails:
