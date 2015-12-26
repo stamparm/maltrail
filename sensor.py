@@ -40,13 +40,14 @@ from core.parallel import write_block
 from core.settings import config
 from core.settings import CONFIG_FILE
 from core.settings import ETH_LENGTH
-from core.settings import PPPH_LENGTH
+from core.settings import IGNORE_DNS_QUERY_SUFFIXES
 from core.settings import IPPROTO_LUT
 from core.settings import LOCALHOST_IP
 from core.settings import NAME
 from core.settings import NO_SUCH_NAME_COUNTERS
 from core.settings import NO_SUCH_NAME_PER_HOUR_THRESHOLD
 from core.settings import PORT_SCANNING_THRESHOLD
+from core.settings import PPPH_LENGTH
 from core.settings import read_config
 from core.settings import REGULAR_SENSOR_SLEEP_TIME
 from core.settings import SNAP_LEN
@@ -348,7 +349,7 @@ def _process_packet(packet, sec, usec):
                             query += data[offset + 1:offset + length + 1] + '.'
                             offset += length + 1
 
-                        if ' ' in query or '.' not in query or query.endswith(".arpa") or query.endswith(".local"):
+                        if ' ' in query or '.' not in query or any(query.endswith(_) for _ in IGNORE_DNS_QUERY_SUFFIXES):
                             return
 
                         if ord(data[2]) == 0x01:  # standard query
