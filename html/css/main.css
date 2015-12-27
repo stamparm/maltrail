@@ -217,7 +217,7 @@ rect.highlight {
     stroke-width: 2;
 }
 .loader .loader-load {
-    background: #000000 url("../images/thirdparty/loader.gif") no-repeat 50% 50%;
+    background: #000000 url("../images/loader.gif") no-repeat 50% 50%;
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -446,7 +446,7 @@ rect.highlight {
     border: none;
 }
 .loader .loader-load {
-    background: url("../images/thirdparty/loader.gif") no-repeat scroll 50% 50%;
+    background: url("../images/loader.gif") no-repeat scroll 50% 50%;
     cursor: default;
     pointer-events: none;
 }

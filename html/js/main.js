@@ -1459,7 +1459,7 @@ function initDetails() {
                             CHECK_IP[this.ip] = json;
                             this.cell.append(span_ip);
                             if (json.worst_asns === "true")
-                                this.cell.append($("<img src='images/thief.png' class='worst_asns' title='malicious ASN'>").tooltip());
+                                this.cell.append($("<img src='images/blackhat.png' class='worst_asns' title='malicious ASN'>").tooltip());
                         });
                     }
                     else if (CHECK_IP[ip] !== null) {
@@ -1467,7 +1467,7 @@ function initDetails() {
                         var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'></span>" : "<span class='ipcat hidden'></span>").html(json.ipcat);
                         cell.append(span_ip);
                         if (json.worst_asns === "true")
-                            cell.append($("<img src='images/thief.png' class='worst_asns' title='malicious ASN'>").tooltip());
+                            cell.append($("<img src='images/blackhat.png' class='worst_asns' title='malicious ASN'>").tooltip());
                     }
                     else {
                         interval = setInterval(function(ip, cell){
@@ -1478,7 +1478,7 @@ function initDetails() {
                                     var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'></span>" : "<span class='ipcat hidden'></span>").html(json.ipcat);
                                     cell.append(span_ip);
                                     if (json.worst_asns === "true")
-                                        cell.append($("<img src='images/thief.png' class='worst_asns' title='malicious ASN'>").tooltip());
+                                        cell.append($("<img src='images/blackhat.png' class='worst_asns' title='malicious ASN'>").tooltip());
                                 }
                                 clearInterval(interval);
                             }
