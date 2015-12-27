@@ -43,6 +43,7 @@ from core.settings import ETH_LENGTH
 from core.settings import IGNORE_DNS_QUERY_SUFFIXES
 from core.settings import IPPROTO_LUT
 from core.settings import LOCALHOST_IP
+from core.settings import MAX_RESULT_CACHE_ENTRIES
 from core.settings import NAME
 from core.settings import NO_SUCH_NAME_COUNTERS
 from core.settings import NO_SUCH_NAME_PER_HOUR_THRESHOLD
@@ -155,6 +156,9 @@ def _process_packet(packet, sec, usec):
         if ip_offset is None:
             return
 
+        if len(_result_cache) > MAX_RESULT_CACHE_ENTRIES:
+            _result_cache.clear()
+
         if config.USE_HEURISTICS:
             if sec > _connect_sec:
                 for key in _connect_src_dst:
@@ -258,17 +262,16 @@ def _process_packet(packet, sec, usec):
                         user_agent = urllib.unquote(data[index:data.find("\r\n", index)]).strip()
 
                     if config.USE_HEURISTICS:
-                        found = False
+                        result = None
                         if user_agent:
-                            if user_agent not in _result_cache:
-                                found = _result_cache[user_agent] = re.search(SUSPICIOUS_UA_REGEX, user_agent) is not None and not any(_ in user_agent for _ in WHITELIST_UA_KEYWORDS)
-                            else:
-                                found = _result_cache[user_agent]
+                            result = _result_cache.get(user_agent)
+                            if result is None:
+                                result = _result_cache[user_agent] = not any(_ in user_agent for _ in WHITELIST_UA_KEYWORDS) and re.search(SUSPICIOUS_UA_REGEX, user_agent) is not None
 
-                            if found:
+                            if result:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, user_agent.replace('(', "\\(").replace(')', "\\)"), "suspicious user agent", "(heuristic)"))
 
-                        if not found and config.CHECK_SHORT_OR_MISSING_USER_AGENT:
+                        if not result and config.CHECK_SHORT_OR_MISSING_USER_AGENT:
                             if user_agent is None:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, url, "suspicious http request (missing user agent header)", "(heuristic)"))
                             elif len(user_agent) < SUSPICIOUS_UA_LENGTH_THRESHOLD:
@@ -300,7 +303,10 @@ def _process_packet(packet, sec, usec):
                             for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
                                 path = path.replace(char, urllib.quote(char))
 
-                        if host not in WHITELIST and not any(_ in path for _ in WHITELIST_HTTP_REQUEST_KEYWORDS) and re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)):
+                        if host not in WHITELIST and not any(_ in path for _ in WHITELIST_HTTP_REQUEST_KEYWORDS):
+                            result = _result_cache.get(path)
+                            if result is None:
+                                result = _result_cache[path] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)) is not None
                             trail = "%s(%s)" % (host, path)
                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
                             return
