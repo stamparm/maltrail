@@ -13,14 +13,12 @@ import sqlite3
 import StringIO
 import subprocess
 import threading
-import urllib
 import urllib2
 import zipfile
 import zlib
 
 from core.addr import addr_to_int
 from core.addr import int_to_addr
-from core.addr import make_mask
 from core.settings import NAME
 from core.settings import IPCAT_SQLITE_FILE
 from core.settings import STATIC_IPCAT_LOOKUPS

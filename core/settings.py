@@ -12,7 +12,6 @@ import stat
 import subprocess
 
 from core.addr import addr_to_int
-from core.addr import int_to_addr
 from core.addr import make_mask
 from core.attribdict import AttribDict
 
@@ -20,7 +19,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.313"
+VERSION = "0.8.314"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')

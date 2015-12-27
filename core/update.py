@@ -49,7 +49,7 @@ def _fopen_trails(mode):
         _chown(TRAILS_FILE)
     return retval
 
-def update_trails(server=None):
+def update_trails(server=None, force=False):
     """
     Update trails from feeds
     """
@@ -85,10 +85,10 @@ def update_trails(server=None):
 
     _chown(USERS_DIR)
 
-    if not trails and ((not os.path.isfile(TRAILS_FILE) or (time.time() - os.stat(TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(TRAILS_FILE).st_size == 0 or any(os.stat(_).st_mtime > os.stat(TRAILS_FILE).st_mtime for _ in trail_files))):
+    if not trails and (force or not os.path.isfile(TRAILS_FILE) or (time.time() - os.stat(TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(TRAILS_FILE).st_size == 0 or any(os.stat(_).st_mtime > os.stat(TRAILS_FILE).st_mtime for _ in trail_files)):
         print "[i] updating trails (this might take a while)..."
 
-        if config.USE_FEED_UPDATES:
+        if force or config.USE_FEED_UPDATES:
             sys.path.append(os.path.abspath(os.path.join(ROOT_DIR, "trails", "feeds")))
             filenames = sorted(glob.glob(os.path.join(sys.path[-1], "*.py")))
         else:
@@ -176,7 +176,7 @@ def update_trails(server=None):
 
     return trails
 
-def update_ipcat():
+def update_ipcat(force=False):
     try:
         if not os.path.isdir(USERS_DIR):
             os.makedirs(USERS_DIR, 0755)
@@ -185,7 +185,7 @@ def update_ipcat():
 
     _chown(USERS_DIR)
 
-    if not os.path.isfile(IPCAT_CSV_FILE) or not os.path.isfile(IPCAT_SQLITE_FILE) or (time.time() - os.stat(IPCAT_CSV_FILE).st_mtime) >= FRESH_IPCAT_DELTA_DAYS * 24 * 3600 or os.stat(IPCAT_SQLITE_FILE).st_size == 0:
+    if force or not os.path.isfile(IPCAT_CSV_FILE) or not os.path.isfile(IPCAT_SQLITE_FILE) or (time.time() - os.stat(IPCAT_CSV_FILE).st_mtime) >= FRESH_IPCAT_DELTA_DAYS * 24 * 3600 or os.stat(IPCAT_SQLITE_FILE).st_size == 0:
         print "[i] updating ipcat database..."
 
         try:
@@ -219,7 +219,11 @@ def update_ipcat():
     _chown(IPCAT_SQLITE_FILE)
 
 def main():
-    update()
+    try:
+        update_trails(force=True)
+        update_ipcat()
+    except KeyboardInterrupt:
+        print "\r[x] Ctrl-C pressed"
 
 if __name__ == "__main__":
     main()

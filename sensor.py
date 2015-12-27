@@ -26,7 +26,6 @@ import time
 import traceback
 import urllib
 import urlparse
-import platform
 
 from core.common import check_sudo
 from core.common import load_trails
