@@ -182,7 +182,9 @@ function initDialogs() {
             else if (document.location.origin.startsWith('http')) {
                 _USER = "";
                 document.title = "Maltrail (unauthorized)";
-                $("#login_link").click();
+                setTimeout(function() {
+                    $("#login_link").click();
+                }, 1000);
             }
         }
     });
