@@ -1153,7 +1153,7 @@ function initDetails() {
                             }
                         }
 
-                        title = data.split(common).join("").replace(/[()]/g, "");
+                        title = data.replace(common, "").replace(/[()]/g, "");
 
                         if (common.startsWith('.'))
                             title = title.split(common.substr(1)).join("");

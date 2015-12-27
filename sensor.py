@@ -266,10 +266,14 @@ def _process_packet(packet, sec, usec):
                         if user_agent:
                             result = _result_cache.get(user_agent)
                             if result is None:
-                                result = _result_cache[user_agent] = not any(_ in user_agent for _ in WHITELIST_UA_KEYWORDS) and re.search(SUSPICIOUS_UA_REGEX, user_agent) is not None
-
+                                if not any(_ in user_agent for _ in WHITELIST_UA_KEYWORDS):
+                                    match = re.search(SUSPICIOUS_UA_REGEX, user_agent)
+                                    if match:
+                                        result = _result_cache[user_agent] = match.group(0).join(("(%s)" if _ else "%s") % _.replace('(', "\\(").replace(')', "\\)") for _ in user_agent.split(match.group(0), 1))
+                                if not result:
+                                    _result_cache[user_agent] = False
                             if result:
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, user_agent.replace('(', "\\(").replace(')', "\\)"), "suspicious user agent", "(heuristic)"))
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, result, "suspicious user agent", "(heuristic)"))
 
                         if not result and config.CHECK_SHORT_OR_MISSING_USER_AGENT:
                             if user_agent is None:
@@ -307,9 +311,10 @@ def _process_packet(packet, sec, usec):
                             result = _result_cache.get(path)
                             if result is None:
                                 result = _result_cache[path] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)) is not None
-                            trail = "%s(%s)" % (host, path)
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
-                            return
+                            if result:
+                                trail = "%s(%s)" % (host, path)
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
+                                return
 
                         if '.' in path:
                             _ = urlparse.urlparse("http://%s" % url)  # dummy scheme
