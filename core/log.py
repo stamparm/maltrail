@@ -27,7 +27,7 @@ def create_log_directory():
         os.makedirs(config.LOG_DIR)
     print("[i] using '%s' for log storage" % config.LOG_DIR)
 
-def get_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
+def get_event_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
     localtime = time.localtime(sec)
     _ = os.path.join(config.LOG_DIR, "%d-%02d-%02d.log" % (localtime.tm_year, localtime.tm_mon, localtime.tm_mday))
     if _ != getattr(_thread_data, "event_log_path", None):
@@ -35,8 +35,8 @@ def get_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
             open(_, "w+").close()
             os.chmod(_, DEFAULT_LOG_PERMISSIONS)
         _thread_data.event_log_path = _
-        _thread_data.log_handle = os.open(_thread_data.event_log_path, flags)
-    return _thread_data.log_handle
+        _thread_data.event_log_handle = os.open(_thread_data.event_log_path, flags)
+    return _thread_data.event_log_handle
 
 def safe_value(value):
     retval = str(value or '-')
@@ -54,7 +54,7 @@ def log_event(event_tuple):
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             s.sendto("%s %s" % (sec, event), (remote_host, int(remote_port)))
         else:
-            handle = get_log_handle(sec)
+            handle = get_event_log_handle(sec)
             os.write(handle, event)
 
 def start_logd(address=None, port=None, join=False):
@@ -66,7 +66,7 @@ def start_logd(address=None, port=None, join=False):
             try:
                 data, _ = self.request
                 sec, event = data.split(" ", 1)
-                handle = get_log_handle(int(sec))
+                handle = get_event_log_handle(int(sec))
                 os.write(handle, event)
             except:
                 if config.SHOW_DEBUG:
