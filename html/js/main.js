@@ -953,8 +953,8 @@ function _ipCompareValues(a, b) {
 function copyEllipsisToClipboard(event) {
     var target = $(event.target);
     var text = target.parent().title;
-    var html = target.parent().parent().html().replace(/<span class="trail-text">/, "");
-    var left = html.startsWith('<');
+    var html = target.parent().html();
+    var left = html.search(/^<[^>]*ellipsis/) !== -1;
     var common = html.replace(/<[^>]+>/g, "");
     if (!text) {
         var tooltip = $(".ui-tooltip");
