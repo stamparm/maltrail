@@ -20,7 +20,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.311"
+VERSION = "0.8.312"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -243,6 +243,9 @@ def read_config(config_file):
     if config.CAPTURE_BUFFER:
         if str(config.CAPTURE_BUFFER or "").isdigit():
             config.CAPTURE_BUFFER = int(config.CAPTURE_BUFFER)
+        elif re.search(r"\d+\s*[kKmMgG]B", config.CAPTURE_BUFFER):
+            match = re.search(r"(\d+)\s*([kKmMgG])B", config.CAPTURE_BUFFER)
+            config.CAPTURE_BUFFER = int(match.group(1)) * {"K": 1024, "M": 1024 ** 2, "G": 1024 ** 3}[match.group(2).upper()]
         elif re.search(r"\d+%", config.CAPTURE_BUFFER):
             physmem = _get_total_physmem()
 
@@ -250,6 +253,8 @@ def read_config(config_file):
                 config.CAPTURE_BUFFER = physmem * int(re.search(r"(\d+)%", config.CAPTURE_BUFFER).group(1)) / 100
             else:
                 exit("[!] unable to determine total physical memory. Please use absolute value for 'CAPTURE_BUFFER'")
+        else:
+            exit("[!] invalid configuration value for 'CAPTURE_BUFFER' ('%s')" % config.CAPTURE_BUFFER)
 
         config.CAPTURE_BUFFER = config.CAPTURE_BUFFER / BLOCK_LENGTH * BLOCK_LENGTH
 
