@@ -380,10 +380,10 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             start, end, size, total = None, None, -1, None
             content = None
-            log_path = os.path.join(config.LOG_DIR, "%s.log" % params.get("date", ""))
+            event_log_path = os.path.join(config.LOG_DIR, "%s.log" % params.get("date", ""))
 
-            if os.path.exists(log_path):
-                total = os.stat(log_path).st_size
+            if os.path.exists(event_log_path):
+                total = os.stat(event_log_path).st_size
 
                 if self.headers.get("Range"):
                     match = re.search(r"bytes=(\d+)-(\d+)", self.headers["Range"])
@@ -394,7 +394,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         size = end - start + 1
 
                         if start == 0 or not session.range_handle:
-                            session.range_handle = open(log_path, "rb")
+                            session.range_handle = open(event_log_path, "rb")
 
                         if session.netfilters is None:
                             session.range_handle.seek(start)
@@ -464,7 +464,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     self.send_header("Content-Type", "text/plain")
                     self.end_headers()
 
-                    with open(log_path, "rb") as f:
+                    with open(event_log_path, "rb") as f:
                         while True:
                             data = f.read(io.DEFAULT_BUFFER_SIZE)
                             if not data:
