@@ -77,7 +77,7 @@ _datalink = None
 _connect_sec = 0
 _connect_src_dst = {}
 _connect_src_details = {}
-_user_agent_cache = {}
+_result_cache = {}
 
 try:
     import pcapy
@@ -260,10 +260,10 @@ def _process_packet(packet, sec, usec):
                     if config.USE_HEURISTICS:
                         found = False
                         if user_agent:
-                            if user_agent not in _user_agent_cache:
-                                found = _user_agent_cache[user_agent] = re.search(SUSPICIOUS_UA_REGEX, user_agent) is not None and not any(_ in user_agent for _ in WHITELIST_UA_KEYWORDS)
+                            if user_agent not in _result_cache:
+                                found = _result_cache[user_agent] = re.search(SUSPICIOUS_UA_REGEX, user_agent) is not None and not any(_ in user_agent for _ in WHITELIST_UA_KEYWORDS)
                             else:
-                                found = _user_agent_cache[user_agent]
+                                found = _result_cache[user_agent]
 
                             if found:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, user_agent.replace('(', "\\(").replace(')', "\\)"), "suspicious user agent", "(heuristic)"))
