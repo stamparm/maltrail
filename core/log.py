@@ -6,8 +6,10 @@ See the file 'LICENSE' for copying permission
 """
 
 import os
+import signal
 import socket
 import SocketServer
+import subprocess
 import threading
 import time
 import traceback
@@ -105,3 +107,14 @@ def start_logd(address=None, port=None, join=False):
         thread = threading.Thread(target=server.serve_forever)
         thread.daemon = True
         thread.start()
+
+def set_sigterm_handler():
+    def handler(signum, frame):
+        log_error("SIGTERM")
+        raise SystemExit
+
+    if hasattr(signal, "SIGTERM"):
+        signal.signal(signal.SIGTERM, handler)
+
+if __name__ != "__main__":
+    set_sigterm_handler()
