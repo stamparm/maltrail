@@ -255,14 +255,12 @@ def _process_packet(packet, sec, usec):
                     else:
                         url = "%s%s" % (host, path)
 
-                    user_agent = None
-                    index = data.find("\r\nUser-Agent:")
-                    if index >= 0:
-                        index = index + len("\r\nUser-Agent:")
-                        user_agent = urllib.unquote(data[index:data.find("\r\n", index)]).strip()
-
                     if config.USE_HEURISTICS:
-                        result = None
+                        user_agent, result = None, None
+                        match = re.search("(?i)\r\nUser-Agent:([^\r\n]+)", data)
+                        if match:
+                            user_agent = urllib.unquote(match.group(1)).strip()
+
                         if user_agent:
                             result = _result_cache.get(user_agent)
                             if result is None:
