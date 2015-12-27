@@ -1153,7 +1153,14 @@ function initDetails() {
                             }
                         }
 
-                        title = data.replace(common, "").replace(/[()]/g, "");
+                        var parts = data.split(DATA_PARTS_DELIMITER);
+                        for (var i = 0; i < parts.length; i++)
+                            parts[i] = parts[i].replace(common, "").replace(/[()]/g, "");  // replace only first occurrence
+
+                        title = parts.join(DATA_PARTS_DELIMITER);
+
+//                        title = data.replace(common, "").replace(/[()]/g, "");
+//                        title = data.split(common).join("").replace(/[()]/g, "");
 
                         if (common.startsWith('.'))
                             title = title.split(common.substr(1)).join("");
