@@ -34,6 +34,8 @@ from core.enums import BLOCK_MARKER
 from core.enums import PROTO
 from core.enums import TRAIL
 from core.log import create_log_directory
+from core.log import get_error_log_handle
+from core.log import log_error
 from core.log import log_event
 from core.parallel import worker
 from core.parallel import write_block
@@ -483,6 +485,8 @@ def init():
     if _datalink not in (pcapy.DLT_EN10MB, pcapy.DLT_LINUX_SLL, pcapy.DLT_PPP):
         exit("[!] datalink type '%s' not supported" % _datalink)
 
+    get_error_log_handle()
+
     if _multiprocessing:
         _init_multiprocessing()
 
@@ -588,7 +592,10 @@ if __name__ == "__main__":
     try:
         main()
     except Exception:
-        print("\r[!] unhandled exception occurred ('%s')" % sys.exc_info()[1])
-        print("\r[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc())
+        msg = "\r[!] unhandled exception occurred ('%s')" % sys.exc_info()[1]
+        msg += "\n[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc()
+        log_error("\n\n%s" % msg.replace("\r", ""))
+
+        print(msg)
 
     os._exit(0)

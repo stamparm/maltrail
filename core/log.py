@@ -14,7 +14,8 @@ import traceback
 
 from core.common import check_sudo
 from core.settings import config
-from core.settings import DEFAULT_LOG_PERMISSIONS
+from core.settings import DEFAULT_ERROR_LOG_PERMISSIONS
+from core.settings import DEFAULT_EVENT_LOG_PERMISSIONS
 from core.settings import TIME_FORMAT
 from core.settings import WHITELIST
 
@@ -33,10 +34,20 @@ def get_event_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
     if _ != getattr(_thread_data, "event_log_path", None):
         if not os.path.exists(_):
             open(_, "w+").close()
-            os.chmod(_, DEFAULT_LOG_PERMISSIONS)
+            os.chmod(_, DEFAULT_EVENT_LOG_PERMISSIONS)
         _thread_data.event_log_path = _
         _thread_data.event_log_handle = os.open(_thread_data.event_log_path, flags)
     return _thread_data.event_log_handle
+
+def get_error_log_handle(flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
+    if not hasattr(_thread_data, "error_log_handle"):
+        _ = os.path.join(config.LOG_DIR, "error.log")
+        if not os.path.exists(_):
+            open(_, "w+").close()
+            os.chmod(_, DEFAULT_ERROR_LOG_PERMISSIONS)
+        _thread_data.error_log_path = _
+        _thread_data.error_log_handle = os.open(_thread_data.error_log_path, flags)
+    return _thread_data.error_log_handle
 
 def safe_value(value):
     retval = str(value or '-')
@@ -45,17 +56,29 @@ def safe_value(value):
     return retval
 
 def log_event(event_tuple):
-    sec, usec, src_ip, dst_ip = event_tuple[0], event_tuple[1], event_tuple[2], event_tuple[4]
-    if not any(_ in WHITELIST for _ in (src_ip, dst_ip)):
-        localtime = "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)
-        event = "%s %s %s\n" % (safe_value(localtime), safe_value(config.SENSOR_NAME), " ".join(safe_value(_) for _ in event_tuple[2:]))
-        if config.LOG_SERVER:
-            remote_host, remote_port = config.LOG_SERVER.split(':')
-            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            s.sendto("%s %s" % (sec, event), (remote_host, int(remote_port)))
-        else:
-            handle = get_event_log_handle(sec)
-            os.write(handle, event)
+    try:
+        sec, usec, src_ip, dst_ip = event_tuple[0], event_tuple[1], event_tuple[2], event_tuple[4]
+        if not any(_ in WHITELIST for _ in (src_ip, dst_ip)):
+            localtime = "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)
+            event = "%s %s %s\n" % (safe_value(localtime), safe_value(config.SENSOR_NAME), " ".join(safe_value(_) for _ in event_tuple[2:]))
+            if config.LOG_SERVER:
+                remote_host, remote_port = config.LOG_SERVER.split(':')
+                s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                s.sendto("%s %s" % (sec, event), (remote_host, int(remote_port)))
+            else:
+                handle = get_event_log_handle(sec)
+                os.write(handle, event)
+    except (OSError, IOError):
+        if config.SHOW_DEBUG:
+            traceback.print_exc()
+
+def log_error(msg):
+    try:
+        handle = get_error_log_handle()
+        os.write(handle, "%s %s\n" % (time.strftime(TIME_FORMAT, time.localtime()), msg))
+    except (OSError, IOError):
+        if config.SHOW_DEBUG:
+            traceback.print_exc()
 
 def start_logd(address=None, port=None, join=False):
     class ThreadingUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):

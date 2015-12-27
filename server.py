@@ -20,6 +20,7 @@ import threading
 import traceback
 
 from core.httpd import start_httpd
+from core.log import log_error
 from core.log import start_logd
 from core.settings import config
 from core.settings import read_config
@@ -77,7 +78,10 @@ if __name__ == "__main__":
     try:
         main()
     except Exception:
-        print("\r[!] unhandled exception occurred ('%s')" % sys.exc_info()[1])
-        print("\r[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc())
+        msg = "\r[!] unhandled exception occurred ('%s')" % sys.exc_info()[1]
+        msg += "\n[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc()
+        log_error("\n\n%s" % msg.replace("\r", ""))
+
+        print(msg)
 
     os._exit(0)
