@@ -77,6 +77,7 @@ _connect_sec = 0
 _connect_src_dst = {}
 _connect_src_details = {}
 _count = 0
+_count_lock = threading.Lock()
 _multiprocessing = None
 _n = None
 _result_cache = {}
@@ -563,11 +564,13 @@ def monitor():
         try:
             sec, usec = header.getts()
             if _multiprocessing:
-                write_block(_buffer, _count, struct.pack("=II", sec, usec) + data)
-                _n.value = _count + 1
+                with _count_lock:
+                    count = _count
+                    _count += 1
+                write_block(_buffer, count, struct.pack("=II", sec, usec) + data)
+                _n.value = _count
             else:
                 _process_ip(data, sec, usec)
-            _count += 1
         except socket.timeout:
             pass
 
