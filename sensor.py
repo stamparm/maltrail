@@ -521,21 +521,24 @@ def monitor():
 
         ip_offset = None
 
-        if datalink == pcapy.DLT_PPP:
-            if ord(packet[2]) == 0 and ord(packet[3]) == 0x21:  # IPv4
-                ip_offset = PPPH_LENGTH
-        else:
-            if datalink == pcapy.DLT_LINUX_SLL:
-                packet = packet[2:]
+        try:
+            if datalink == pcapy.DLT_PPP:
+                if ord(packet[2]) == 0 and ord(packet[3]) == 0x21:  # IPv4
+                    ip_offset = PPPH_LENGTH
+            else:
+                if datalink == pcapy.DLT_LINUX_SLL:
+                    packet = packet[2:]
 
-            # Reference: ftp://ftp.heanet.ie/disk1/sourceforge/t/tp/tpcat/tpcat%20python%20source/TPCAT.py
+                # Reference: ftp://ftp.heanet.ie/disk1/sourceforge/t/tp/tpcat/tpcat%20python%20source/TPCAT.py
 
-            if ord(packet[12]) == 8 and ord(packet[13]) == 0:  # IPv4
-                ip_offset = ETH_LENGTH
+                if ord(packet[12]) == 8 and ord(packet[13]) == 0:  # IPv4
+                    ip_offset = ETH_LENGTH
 
-            elif ord(packet[12]) == 0x81 and ord(packet[13]) == 0:  # VLAN
-                if ord(packet[16]) == 8 and ord(packet[17]) == 0: # IPv4
-                    ip_offset = VLANH_LENGTH
+                elif ord(packet[12]) == 0x81 and ord(packet[13]) == 0:  # VLAN
+                    if ord(packet[16]) == 8 and ord(packet[17]) == 0: # IPv4
+                        ip_offset = VLANH_LENGTH
+        except IndexError:
+            pass
 
         if ip_offset is None:
             return
