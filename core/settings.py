@@ -19,7 +19,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.319"
+VERSION = "0.8.320"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -64,7 +64,7 @@ LOCALHOST_IP = "127.0.0.1"
 IGNORE_DNS_QUERY_SUFFIXES = (".arpa", ".local")
 SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".exe", ".scr"))
 SUSPICIOUS_FILENAMES = set(("gate.php",))
-SUSPICIOUS_HTTP_REQUEST_REGEX = r"(?i)information_schema|\b(AND|OR|SELECT)\b.*/\*.*\*/|/\*.*\*/.*\b(AND|OR|SELECT)\b|\b(AND|OR)[^\w]+\d+['\") ]?[=><]['\"( ]?\d+|(alert|confirm|prompt)\((\d+|document\.|[^\w]*XSS)|\bping -[nc] \d+|floor\(rand\(|ORDER BY \d+|sysdatabases|(\.\./){3,}(?!images)|\bSELECT\b.*\bFROM\b.*\b(WHERE|GROUP|ORDER)\b|\bSELECT \w+ FROM \w+|<script.*?>|\balert\(|xp_cmdshell|\b(cat|ls)\b /|/etc/passwd|<\?php|boot\.ini|\bwindows[\\/]win\.ini|\b(pg_)?sleep\(|\bWAITFOR[^\w]+DELAY\b|\bCONVERT\(|VARCHAR\(|\bUNION\s+(ALL\s+)?SELECT\b|\bCOUNT\(\*\)|\b(UPDATEXML|EXTRACTVALUE)\(.*CONCAT\(|\bCASE[^\w]+WHEN.*THEN\b|imei=\d{15}|\[<!ENTITY"
+SUSPICIOUS_HTTP_REQUEST_REGEX = r"(?i)information_schema|\b(AND|OR|SELECT)\b.*/\*.*\*/|/\*.*\*/.*\b(AND|OR|SELECT)\b|\b(AND|OR)[^\w]+\d+['\") ]?[=><]['\"( ]?\d+|(alert|confirm|prompt)\((\d+|document\.|[^\w]*XSS)|\bping -[nc] \d+|floor\(rand\(|ORDER BY \d+|sysdatabases|(\.\./){3,}(?!images)|\bSELECT\b.*\bFROM\b.*\b(WHERE|GROUP|ORDER)\b|\bSELECT \w+ FROM \w+|<script.*?>|\balert\(|xp_cmdshell|\b(cat|ls)\b /|/etc/passwd|<\?php|boot\.ini|\bwindows[\\/]win\.ini|\b(pg_)?sleep\(|\bWAITFOR[^\w]+DELAY\b|\bCONVERT\(|VARCHAR\(|\bUNION\s+(ALL\s+)?SELECT\b|\bCOUNT\(\*\)|\b(UPDATEXML|EXTRACTVALUE)\(.*CONCAT\(|\bCASE[^\w]+WHEN.*THEN\b|imei=\d{15}|\[<!ENTITY|\(\|\(\w+=\*|/text\(\)='"
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = "( )"
 SUSPICIOUS_UA_REGEX = ""
 WORST_ASNS = {}
