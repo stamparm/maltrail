@@ -16,6 +16,7 @@ import core.versioncheck
 import optparse
 import os
 import platform
+import subprocess
 import threading
 import traceback
 
