@@ -9,6 +9,7 @@ import os
 import signal
 import socket
 import SocketServer
+import sys
 import threading
 import time
 import traceback
@@ -62,13 +63,16 @@ def log_event(event_tuple):
         if not any(_ in WHITELIST for _ in (src_ip, dst_ip)):
             localtime = "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)
             event = "%s %s %s\n" % (safe_value(localtime), safe_value(config.SENSOR_NAME), " ".join(safe_value(_) for _ in event_tuple[2:]))
+            if not config.DISABLE_LOCAL_LOG_STORAGE:
+                handle = get_event_log_handle(sec)
+                os.write(handle, event)
             if config.LOG_SERVER:
                 remote_host, remote_port = config.LOG_SERVER.split(':')
                 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
                 s.sendto("%s %s" % (sec, event), (remote_host, int(remote_port)))
-            else:
-                handle = get_event_log_handle(sec)
-                os.write(handle, event)
+            if config.DISABLE_LOCAL_LOG_STORAGE and not config.LOG_SERVER:
+                sys.stdout.write(event)
+                sys.stdout.flush()
     except (OSError, IOError):
         if config.SHOW_DEBUG:
             traceback.print_exc()

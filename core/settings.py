@@ -19,7 +19,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.327"
+VERSION = "0.8.328"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -198,9 +198,7 @@ def read_config(config_file):
                     name = name.strip().upper()
                     value = value.strip("'\"").strip()
 
-            if any(name.startswith(_) for _ in ("USE_", "SET_", "CHECK_", "ENABLE_", "SHOW_")):
-                value = value.lower() in ("1", "true")
-            elif any(name.startswith(_) for _ in ("DISABLE_",)):
+            if any(name.startswith(_) for _ in ("USE_", "SET_", "CHECK_", "ENABLE_", "SHOW_", "DISABLE_")):
                 value = value.lower() in ("1", "true")
             elif value.isdigit():
                 value = int(value)
@@ -232,6 +230,9 @@ def read_config(config_file):
     if config.USER_WHITELIST:
         for value in config.USER_WHITELIST.split(','):
             WHITELIST.add(value.strip())
+
+    if config.DISABLE_LOCAL_LOG_STORAGE and not config.LOG_SERVER:
+        print("[x] configuration switch 'DISABLE_LOCAL_LOG_STORAGE' turned on and option 'LOG_SERVER' not set. Falling back to console output of event data")
 
     if not str(config.HTTP_PORT or "").isdigit():
         exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % config.HTTP_PORT)
