@@ -19,7 +19,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.315"
+VERSION = "0.8.316"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -29,7 +29,7 @@ USERS_DIR = os.path.join(os.path.expanduser("~"), ".%s" % NAME.lower())
 TRAILS_FILE = os.path.join(USERS_DIR, "trails.csv")
 IPCAT_CSV_FILE = os.path.join(USERS_DIR, "ipcat.csv")
 IPCAT_SQLITE_FILE = os.path.join(USERS_DIR, "ipcat.sqlite")
-IPCAT_URL = "https://raw.github.com/client9/ipcat/master/datacenters.csv"
+IPCAT_URL = "https://raw.githubusercontent.com/client9/ipcat/master/datacenters.csv"
 TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 HTTP_DEFAULT_PORT = 8338
 HTTP_TIME_FORMAT = "%a, %d %b %Y %H:%M:%S GMT"  # Reference: http://stackoverflow.com/a/225106
