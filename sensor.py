@@ -197,6 +197,7 @@ def _process_ip(ip_data, sec, usec):
                         path = line.split(' ')[1].lower()
 
                 if method and path:
+                    post_data = None
                     host = dst_ip
                     index = tcp_data.find("\r\nHost:")
 
@@ -209,6 +210,10 @@ def _process_ip(ip_data, sec, usec):
                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]))
                     elif config.USE_HEURISTICS and config.CHECK_MISSING_HOST:
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing host header)", "(heuristic)"))
+
+                    index = tcp_data.find("\r\n\r\n")
+                    if index >= 0:
+                        post_data = tcp_data[index:]
 
                     if "://" in path:
                         url = path.split("://", 1)[1]
@@ -284,14 +289,24 @@ def _process_ip(ip_data, sec, usec):
                             for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
                                 path = path.replace(char, urllib.quote(char))
 
-                        if host not in WHITELIST and not any(_ in path for _ in WHITELIST_HTTP_REQUEST_KEYWORDS):
-                            result = _result_cache.get(path)
-                            if result is None:
-                                result = _result_cache[path] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)) is not None
-                            if result:
-                                trail = "%s(%s)" % (host, path)
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
-                                return
+                        if host not in WHITELIST:
+                            if not any(_ in path for _ in WHITELIST_HTTP_REQUEST_KEYWORDS):
+                                result = _result_cache.get(path)
+                                if result is None:
+                                    result = _result_cache[path] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)) is not None
+                                if result:
+                                    trail = "%s(%s)" % (host, path)
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
+                                    return
+
+                            if post_data and not any(_ in post_data for _ in WHITELIST_HTTP_REQUEST_KEYWORDS):
+                                result = _result_cache.get(post_data)
+                                if result is None:
+                                    result = _result_cache[post_data] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(post_data)) is not None
+                                if result:
+                                    trail = "%s( \(%s\) %s)" % (host, method, post_data.strip())
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"))
+                                    return
 
                         if '.' in path:
                             _ = urlparse.urlparse("http://%s" % url)  # dummy scheme
