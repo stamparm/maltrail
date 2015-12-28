@@ -96,7 +96,7 @@ def start_logd(address=None, port=None, join=False):
                 if config.SHOW_DEBUG:
                     traceback.print_exc()
 
-    server = SocketServer.UDPServer((address, port), UDPHandler)
+    server = ThreadingUDPServer((address, port), UDPHandler)
 
     print "[i] running UDP server at '%s:%d'" % (server.server_address[0], server.server_address[1])
 
