@@ -39,6 +39,7 @@ from core.log import log_event
 from core.parallel import worker
 from core.parallel import write_block
 from core.settings import config
+from core.settings import CAPTURE_TIMEOUT
 from core.settings import CONFIG_FILE
 from core.settings import ETH_LENGTH
 from core.settings import IGNORE_DNS_QUERY_SUFFIXES
@@ -71,23 +72,22 @@ from core.update import update_ipcat
 from core.update import update_trails
 
 _buffer = None
-_cap = None
-_count = 0
-_multiprocessing = None
-_n = None
-_datalink = None
+_caps = []
 _connect_sec = 0
 _connect_src_dst = {}
 _connect_src_details = {}
+_count = 0
+_multiprocessing = None
+_n = None
 _result_cache = {}
 
 try:
     import pcapy
 except ImportError:
     if subprocess.mswindows:
-        exit("[!] please install WinPcap (e.g. 'http://www.winpcap.org/install/') and Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy')")
+        exit("[!] please install 'WinPcap' (e.g. 'http://www.winpcap.org/install/') and Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy')")
     else:
-        msg, _ = "[!] please install Pcapy", platform.linux_distribution()[0].lower()
+        msg, _ = "[!] please install 'Pcapy'", platform.linux_distribution()[0].lower()
         for distro, install in {("fedora", "centos"): "sudo yum install pcapy", ("debian", "ubuntu"): "sudo apt-get install python-pcapy"}.items():
             if _ in distro:
                 msg += " (e.g. '%s')" % install
@@ -128,35 +128,14 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto):
         elif "sinkhole" in query:
             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, query, "potential sinkhole domain (suspicious)", "(heuristic)"))
 
-def _process_packet(packet, sec, usec):
+def _process_ip(ip_data, sec, usec):
     """
-    Processes single (raw) packet
+    Processes single (raw) IP layer data
     """
 
     global _connect_sec
 
     try:
-        ip_offset = None
-
-        if _datalink == pcapy.DLT_PPP:
-            if ord(packet[2]) == 0 and ord(packet[3]) == 0x21:  # IPv4
-                ip_offset = PPPH_LENGTH
-        else:
-            if _datalink == pcapy.DLT_LINUX_SLL:
-                packet = packet[2:]
-
-            # Reference: ftp://ftp.heanet.ie/disk1/sourceforge/t/tp/tpcat/tpcat%20python%20source/TPCAT.py
-
-            if ord(packet[12]) == 8 and ord(packet[13]) == 0:  # IPv4
-                ip_offset = ETH_LENGTH
-
-            elif ord(packet[12]) == 0x81 and ord(packet[13]) == 0:  # VLAN
-                if ord(packet[16]) == 8 and ord(packet[17]) == 0: # IPv4
-                    ip_offset = VLANH_LENGTH
-
-        if ip_offset is None:
-            return
-
         if len(_result_cache) > MAX_RESULT_CACHE_ENTRIES:
             _result_cache.clear()
 
@@ -174,18 +153,17 @@ def _process_packet(packet, sec, usec):
                 _connect_src_dst.clear()
                 _connect_src_details.clear()
 
-        ip_header = struct.unpack("!BBHHHBBH4s4s", packet[ip_offset:ip_offset + 20])
+        ip_header = struct.unpack("!BBHHHBBH4s4s", ip_data[:20])
 
         ip_length = ip_header[2]
-        packet = packet[:ip_offset + ip_length]  # truncate
+        ip_data = ip_data[:ip_length]  # truncate
         iph_length = (ip_header[0] & 0xf) << 2
         protocol = ip_header[6]
         src_ip = socket.inet_ntoa(ip_header[8])
         dst_ip = socket.inet_ntoa(ip_header[9])
 
         if protocol == socket.IPPROTO_TCP:  # TCP
-            i = iph_length + ip_offset
-            src_port, dst_port, _, _, doff_reserved, flags = struct.unpack("!HHLLBB", packet[i:i+14])
+            src_port, dst_port, _, _, doff_reserved, flags = struct.unpack("!HHLLBB", ip_data[iph_length:iph_length+14])
 
             if flags == 2:  # SYN set (only)
                 if dst_ip in trails:
@@ -204,27 +182,27 @@ def _process_packet(packet, sec, usec):
 
             if flags & 8 != 0:  # PSH set
                 tcph_length = doff_reserved >> 4
-                h_size = ip_offset + iph_length + (tcph_length << 2)
-                data = packet[h_size:]
+                h_size = iph_length + (tcph_length << 2)
+                tcp_data = ip_data[h_size:]
 
-                if src_port == 80 and data.startswith("HTTP/") and "X-Sinkhole: Malware" in data[:data.find("\r\n\r\n")]:
+                if src_port == 80 and tcp_data.startswith("HTTP/") and "X-Sinkhole: Malware" in tcp_data[:tcp_data.find("\r\n\r\n")]:
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, "sinkhole response (malware)", "(heuristic)"))
 
                 method, path = None, None
-                index = data.find("\n")
+                index = tcp_data.find("\n")
                 if index >= 0:
-                    line = data[:index]
+                    line = tcp_data[:index]
                     if line.count(' ') == 2 and " HTTP/" in line:
                         method = line.split(' ')[0].upper()
                         path = line.split(' ')[1].lower()
 
                 if method and path:
                     host = dst_ip
-                    index = data.find("\r\nHost:")
+                    index = tcp_data.find("\r\nHost:")
 
                     if index >= 0:
                         index = index + len("\r\nHost:")
-                        host = data[index:data.find("\r\n", index)]
+                        host = tcp_data[index:tcp_data.find("\r\n", index)]
                         host = host.strip()
                         host = re.sub(r":80\Z", "", host)
                         if dst_ip in trails and not (host[-1].isdigit() and ':' not in host):
@@ -258,7 +236,7 @@ def _process_packet(packet, sec, usec):
 
                     if config.USE_HEURISTICS:
                         user_agent, result = None, None
-                        match = re.search("(?i)\r\nUser-Agent:([^\r\n]+)", data)
+                        match = re.search("(?i)\r\nUser-Agent:([^\r\n]+)", tcp_data)
                         if match:
                             user_agent = urllib.unquote(match.group(1)).strip()
 
@@ -327,8 +305,7 @@ def _process_packet(packet, sec, usec):
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious page", "(heuristic)"))
 
         elif protocol == socket.IPPROTO_UDP:  # UDP
-            i = iph_length + ip_offset
-            _ = packet[i:i + 4]
+            _ = ip_data[iph_length:iph_length + 4]
             if len(_) < 4:
                 return
 
@@ -341,36 +318,35 @@ def _process_packet(packet, sec, usec):
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]))
 
             if dst_port == 53 or src_port == 53:
-                h_size = ip_offset + iph_length + 8
-                data = packet[h_size:]
+                dns_data = ip_data[iph_length + 8:]
 
                 # Reference: http://www.ccs.neu.edu/home/amislove/teaching/cs4700/fall09/handouts/project1-primer.pdf
-                if len(data) > 6:
-                    qdcount = struct.unpack("!H", data[4:6])[0]
+                if len(dns_data) > 6:
+                    qdcount = struct.unpack("!H", dns_data[4:6])[0]
                     if qdcount > 0:
                         offset = 12
                         query = ""
 
-                        while len(data) > offset:
-                            length = ord(data[offset])
+                        while len(dns_data) > offset:
+                            length = ord(dns_data[offset])
                             if not length:
                                 query = query[:-1]
                                 break
-                            query += data[offset + 1:offset + length + 1] + '.'
+                            query += dns_data[offset + 1:offset + length + 1] + '.'
                             offset += length + 1
 
                         if ' ' in query or '.' not in query or any(query.endswith(_) for _ in IGNORE_DNS_QUERY_SUFFIXES):
                             return
 
-                        if ord(data[2]) == 0x01:  # standard query
-                            type_, class_ = struct.unpack("!HH", data[offset + 1:offset + 5])
+                        if ord(dns_data[2]) == 0x01:  # standard query
+                            type_, class_ = struct.unpack("!HH", dns_data[offset + 1:offset + 5])
 
                             # Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
                             if type_ not in (12, 28) and class_ == 1:  # Type not in (PTR, AAAA), Class IN
                                 _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP)
 
                         elif config.USE_HEURISTICS:
-                            if (ord(data[2]) & 0x80) and (ord(data[3]) == 0x83):  # standard response, recursion available, no such name
+                            if (ord(dns_data[2]) & 0x80) and (ord(dns_data[3]) == 0x83):  # standard response, recursion available, no such name
                                 for _ in filter(None, (query, "*.%s" % '.'.join(query.split('.')[-2:]) if query.count('.') > 1 else None)):
                                     if _ not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[_][0] != sec / 3600:
                                         NO_SUCH_NAME_COUNTERS[_] = [sec / 3600, 1, set()]
@@ -398,8 +374,7 @@ def _process_packet(packet, sec, usec):
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
-                i = iph_length + ip_offset
-                if ord(packet[i]) != 8:  # Non-echo request
+                if ord(ip_data[iph_length]) != 8:  # Non-echo request
                     return
 
             if dst_ip in trails:
@@ -416,8 +391,6 @@ def init():
     Performs sensor initialization
     """
 
-    global _cap
-    global _datalink
     global _multiprocessing
 
     if config.USE_MULTIPROCESSING:
@@ -451,38 +424,43 @@ def init():
     if check_sudo() is False:
         exit("[!] please run with sudo/Administrator privileges")
 
+    interfaces = set(_.strip() for _ in config.MONITOR_INTERFACE.split(','))
+
     if (config.MONITOR_INTERFACE or "").lower() == "any":
-        if subprocess.mswindows:
-            print("[!] virtual interface 'any' is not available on Windows OS")
-            exit("[x] available interfaces: '%s'" % ",".join(pcapy.findalldevs()))
+        if subprocess.mswindows or "any" not in pcapy.findalldevs():
+            print("[x] virtual interface 'any' missing. Replacing it with all interface names")
+            interfaces = pcapy.findalldevs()
         else:
-            print("[!] in case of any problems with packet capture on virtual interface 'any', please put all monitoring interfaces to promiscuous mode manually (e.g. 'sudo ifconfig eth0 promisc')")
+            print("[?] in case of any problems with packet capture on virtual interface 'any', please put all monitoring interfaces to promiscuous mode manually (e.g. 'sudo ifconfig eth0 promisc')")
 
-    if config.MONITOR_INTERFACE not in pcapy.findalldevs():
-        print("[!] interface '%s' not found" % config.MONITOR_INTERFACE)
-        exit("[x] available interfaces: '%s'" % ",".join(pcapy.findalldevs()))
+    for interface in interfaces:
+        if interface.lower() != "any" and interface not in pcapy.findalldevs():
+            hint = "[?] available interfaces: '%s'" % ",".join(pcapy.findalldevs())
+            exit("[!] interface '%s' not found\n%s" % (interface, hint))
 
-    print("[i] opening interface '%s'" % config.MONITOR_INTERFACE)
-    try:
-        _cap = pcapy.open_live(config.MONITOR_INTERFACE, SNAP_LEN, True, 0)
-    except (socket.error, pcapy.PcapError):
-        if "permitted" in str(sys.exc_info()[1]):
-            exit("[!] please run with sudo/Administrator privileges")
-        elif "No such device" in str(sys.exc_info()[1]):
-            exit("[!] no such device '%s'" % config.MONITOR_INTERFACE)
-        else:
-            raise
+        print("[i] opening interface '%s'" % interface)
+        try:
+            _caps.append(pcapy.open_live(interface, SNAP_LEN, True, CAPTURE_TIMEOUT))
+        except (socket.error, pcapy.PcapError):
+            if "permitted" in str(sys.exc_info()[1]):
+                exit("[!] please run with sudo/Administrator privileges")
+            elif "No such device" in str(sys.exc_info()[1]):
+                exit("[!] no such device '%s'" % interface)
+            else:
+                raise
 
     if config.LOG_SERVER and not len(config.LOG_SERVER.split(':')) == 2:
         exit("[!] invalid configuration value for 'LOG_SERVER' ('%s')" % config.LOG_SERVER)
 
     if config.CAPTURE_FILTER:
         print("[i] setting filter '%s'" % config.CAPTURE_FILTER)
-        _cap.setfilter(config.CAPTURE_FILTER)
+        for _cap in _caps:
+            _cap.setfilter(config.CAPTURE_FILTER)
 
-    _datalink = _cap.datalink()
-    if _datalink not in (pcapy.DLT_EN10MB, pcapy.DLT_LINUX_SLL, pcapy.DLT_PPP):
-        exit("[!] datalink type '%s' not supported" % _datalink)
+    for _cap in _caps:
+        _datalink = _cap.datalink()
+        if _datalink not in (pcapy.DLT_EN10MB, pcapy.DLT_LINUX_SLL, pcapy.DLT_PPP):
+            exit("[!] datalink type '%s' not supported" % _datalink)
 
     get_error_log_handle()
 
@@ -501,7 +479,7 @@ def init():
             p = subprocess.Popen("sched3tool -n -2 -M 2 -p 10 -a 0x%02x %d" % (affinity, os.getpid()), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             _, stderr = p.communicate()
             if "not found" in stderr:
-                msg, _ = "[!] please install schedtool for better CPU scheduling", platform.linux_distribution()[0].lower()
+                msg, _ = "[?] please install 'schedtool' for better CPU scheduling", platform.linux_distribution()[0].lower()
                 for distro, install in {("fedora", "centos"): "sudo yum install schedtool", ("debian", "ubuntu"): "sudo apt-get install schedtool"}.items():
                     if _ in distro:
                         msg += " (e.g. '%s')" % install
@@ -527,7 +505,7 @@ def _init_multiprocessing():
         _n = _multiprocessing.Value('L', lock=False)
 
         for i in xrange(_multiprocessing.cpu_count() - 1):
-            process = _multiprocessing.Process(target=worker, name=str(i), args=(_buffer, _n, i, _multiprocessing.cpu_count() - 1, _process_packet))
+            process = _multiprocessing.Process(target=worker, name=str(i), args=(_buffer, _n, i, _multiprocessing.cpu_count() - 1, _process_ip))
             process.daemon = True
             process.start()
 
@@ -538,22 +516,58 @@ def monitor():
 
     print("[o] running...")
 
-    def packet_handler(header, packet):
+    def packet_handler(datalink, header, packet):
         global _count
+
+        ip_offset = None
+
+        if datalink == pcapy.DLT_PPP:
+            if ord(packet[2]) == 0 and ord(packet[3]) == 0x21:  # IPv4
+                ip_offset = PPPH_LENGTH
+        else:
+            if datalink == pcapy.DLT_LINUX_SLL:
+                packet = packet[2:]
+
+            # Reference: ftp://ftp.heanet.ie/disk1/sourceforge/t/tp/tpcat/tpcat%20python%20source/TPCAT.py
+
+            if ord(packet[12]) == 8 and ord(packet[13]) == 0:  # IPv4
+                ip_offset = ETH_LENGTH
+
+            elif ord(packet[12]) == 0x81 and ord(packet[13]) == 0:  # VLAN
+                if ord(packet[16]) == 8 and ord(packet[17]) == 0: # IPv4
+                    ip_offset = VLANH_LENGTH
+
+        if ip_offset is None:
+            return
+
+        data = packet[ip_offset:]
 
         try:
             sec, usec = header.getts()
             if _multiprocessing:
-                write_block(_buffer, _count, struct.pack("=II", sec, usec) + packet)
+                write_block(_buffer, _count, struct.pack("=II", sec, usec) + data)
                 _n.value = _count + 1
             else:
-                _process_packet(packet, sec, usec)
+                _process_ip(data, sec, usec)
             _count += 1
         except socket.timeout:
             pass
 
     try:
-        _cap.loop(-1, packet_handler)
+        def _(_cap):
+            datalink = _cap.datalink()
+            while True:
+                try:
+                    (header, packet) = _cap.next()
+                    packet_handler(datalink, header, packet)
+                except (pcapy.PcapError, socket.timeout):
+                    pass
+
+        for _cap in _caps:
+            threading.Thread(target=_, args=(_cap,)).start()
+
+        while threading.activeCount() > 1:
+            time.sleep(1)
     except SystemError, ex:
         if "error return without" in str(ex):
             print("\r[x] Ctrl-C pressed")

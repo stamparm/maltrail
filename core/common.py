@@ -189,7 +189,7 @@ def load_trails(quiet=False):
                             retval[trail] = (info, reference)
 
         except Exception, ex:
-            exit("[x] something went wrong during trails file read '%s' ('%s')" % (TRAILS_FILE, ex))
+            exit("[!] something went wrong during trails file read '%s' ('%s')" % (TRAILS_FILE, ex))
 
     if not quiet:
         _ = len(retval)

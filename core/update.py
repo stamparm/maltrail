@@ -61,7 +61,7 @@ def update_trails(server=None, force=False):
         print "[i] retrieving trails from provided 'UPDATE_SERVER' server..."
         _ = retrieve_content(server)
         if not _:
-            print "[!] unable to retrieve data from '%s'" % server
+            exit("[!] unable to retrieve data from '%s'" % server)
         else:
             with _fopen_trails("w+b") as f:
                 f.write(_)
@@ -106,7 +106,7 @@ def update_trails(server=None, force=False):
             try:
                 module = __import__(os.path.basename(filename).split(".py")[0])
             except (ImportError, SyntaxError), ex:
-                print "[!] something went wrong during import of feed file '%s' ('%s')" % (filename, ex)
+                print "[x] something went wrong during import of feed file '%s' ('%s')" % (filename, ex)
                 continue
 
             for name, function in inspect.getmembers(module, inspect.isfunction):
@@ -124,9 +124,9 @@ def update_trails(server=None, force=False):
                             if not (item[0] in trails and (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) or trails[item[0]][1] in HIGH_PRIORITY_REFERENCES)) or item[1][1] in HIGH_PRIORITY_REFERENCES or any(_ in item[1][0] for _ in HIGH_PRIORITY_INFO_KEYWORDS):
                                 trails[item[0]] = item[1]
                         if not results and "abuse.ch" not in module.__url__:
-                            print "[!] something went wrong during remote data retrieval ('%s')" % module.__url__
+                            print "[x] something went wrong during remote data retrieval ('%s')" % module.__url__
                     except Exception, ex:
-                        print "[!] something went wrong during processing of feed file '%s' ('%s')" % (filename, ex)
+                        print "[x] something went wrong during processing of feed file '%s' ('%s')" % (filename, ex)
 
         # basic cleanup
         for key in trails.keys():
@@ -172,7 +172,7 @@ def update_trails(server=None, force=False):
                         writer.writerow((trail, trails[trail][0], trails[trail][1]))
 
         except Exception, ex:
-            print "[!] something went wrong during trails file write '%s' ('%s')" % (TRAILS_FILE, ex)
+            print "[x] something went wrong during trails file write '%s' ('%s')" % (TRAILS_FILE, ex)
 
     return trails
 
@@ -191,7 +191,7 @@ def update_ipcat(force=False):
         try:
             urllib.urlretrieve(IPCAT_URL, IPCAT_CSV_FILE)
         except Exception, ex:
-            print "[!] something went wrong during retrieval of '%s' ('%s')" % (IPCAT_URL, ex)
+            print "[x] something went wrong during retrieval of '%s' ('%s')" % (IPCAT_URL, ex)
 
         else:
             try:
@@ -213,7 +213,7 @@ def update_ipcat(force=False):
                     cur.close()
                     con.commit()
             except Exception, ex:
-                print "[!] something went wrong during ipcat database update ('%s')" % ex
+                print "[x] something went wrong during ipcat database update ('%s')" % ex
 
     _chown(IPCAT_CSV_FILE)
     _chown(IPCAT_SQLITE_FILE)

@@ -19,7 +19,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.314"
+VERSION = "0.8.315"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -49,6 +49,7 @@ ETH_LENGTH = 14
 VLANH_LENGTH = 18
 PPPH_LENGTH = 4
 MAX_NOFILE = 65000
+CAPTURE_TIMEOUT = 100  # ms
 CONFIG_FILE = os.path.join(ROOT_DIR, "maltrail.conf")
 SYSTEM_LOG_DIR = "/var/log" if not subprocess.mswindows else "C:\\Windows\\Logs"
 DEFAULT_EVENT_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IROTH
@@ -176,7 +177,7 @@ def read_config(config_file):
             if line.count(' ') == 0:
                 if re.search(r"[^\w]", line):
                     if array == "USERS":
-                        exit("[!] invalid USERS entry '%s'\n[o] (hint: add whitespace at start of line)" % line)
+                        exit("[!] invalid USERS entry '%s'\n[?] (hint: add whitespace at start of line)" % line)
                     else:
                         exit("[!] invalid configuration (line: '%s')" % line)
                 array = line.upper()
