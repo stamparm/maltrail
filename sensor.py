@@ -491,7 +491,7 @@ def init():
                 affinity = max(1, (max_used << 1) % 2 ** mod)
             except:
                 affinity = 1
-            p = subprocess.Popen("sched3tool -n -2 -M 2 -p 10 -a 0x%02x %d" % (affinity, os.getpid()), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            p = subprocess.Popen("schedtool -n -2 -M 2 -p 10 -a 0x%02x %d" % (affinity, os.getpid()), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             _, stderr = p.communicate()
             if "not found" in stderr:
                 msg, _ = "[?] please install 'schedtool' for better CPU scheduling", platform.linux_distribution()[0].lower()
