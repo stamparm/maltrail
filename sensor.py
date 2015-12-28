@@ -74,6 +74,7 @@ from core.update import update_trails
 _buffer = None
 _caps = []
 _connect_sec = 0
+_connect_sec_lock = threading.Lock()
 _connect_src_dst = {}
 _connect_src_details = {}
 _count = 0
@@ -141,7 +142,11 @@ def _process_ip(ip_data, sec, usec):
             _result_cache.clear()
 
         if config.USE_HEURISTICS:
-            if sec > _connect_sec:
+            with _connect_sec_lock:
+                connect_sec = _connect_sec
+                _connect_sec = sec
+
+            if sec > connect_sec:
                 for key in _connect_src_dst:
                     if len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
                         _src_ip, _dst_ip = key.split(':')
@@ -150,7 +155,6 @@ def _process_ip(ip_data, sec, usec):
                             _dst_ports = set(str(_[3]) for _ in _connect_src_details[key])
                             log_event((sec, usec, _src_ip, ','.join(_src_ports), _dst_ip, ','.join(_dst_ports), PROTO.TCP, TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"))
 
-                _connect_sec = sec
                 _connect_src_dst.clear()
                 _connect_src_details.clear()
 
