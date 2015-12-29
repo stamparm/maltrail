@@ -509,17 +509,20 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             min_ = min_.replace(hour=0, minute=0, second=0, microsecond=0)
             max_ = max_.replace(hour=23, minute=59, second=59, microsecond=999999)
 
-            for filename in sorted(glob.glob(os.path.join(config.LOG_DIR, "*.log"))):
+            for filepath in sorted(glob.glob(os.path.join(config.LOG_DIR, "*.log"))):
+                filename = os.path.basename(filepath)
+                if not re.search(r"\A\d{4}-\d{2}-\d{2}\.log\Z", filename):
+                    continue
                 try:
-                    current = datetime.datetime.strptime(os.path.splitext(os.path.basename(filename))[0], DATE_FORMAT)
+                    current = datetime.datetime.strptime(os.path.splitext(filename)[0], DATE_FORMAT)
                 except:
                     if config.SHOW_DEBUG:
                         traceback.print_exc()
                 else:
                     if min_ <= current <= max_:
                         timestamp = int(time.mktime(current.timetuple()))
-                        size = os.path.getsize(filename)
-                        with open(filename, "rb") as f:
+                        size = os.path.getsize(filepath)
+                        with open(filepath, "rb") as f:
                             content = f.read(io.DEFAULT_BUFFER_SIZE)
                             if size >= io.DEFAULT_BUFFER_SIZE:
                                 total = 1.0 * content.count('\n') * size / io.DEFAULT_BUFFER_SIZE
