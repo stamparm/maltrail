@@ -112,11 +112,13 @@ function initDialogs() {
                 $(this).dialog("close");
             },
             "Log In": function() {
+                var SHA256 = new Hashes.SHA256;
+
                 $.ajax({
                     type: "POST",
                     url: "login",
                     dataType: "text",
-                    data: "username=" + $(this).find("#username")[0].value.trim() + "&password=" + $(this).find("#password")[0].value.trim(),
+                    data: "username=" + $(this).find("#username")[0].value.trim() + "&password=" + SHA256.hex($(this).find("#password")[0].value.trim()),
                     cache: false,
                     beforeSend: function() {
                         $("input").prop("disabled", true);

@@ -20,7 +20,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.335"
+VERSION = "0.8.336"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -224,6 +224,8 @@ def read_config(config_file):
     for entry in (config.USERS or []):
         if len(entry.split(':')) != 4:
             exit("[!] invalid USERS entry '%s'" % entry)
+        if re.search(r"\$\d+\$", entry):
+            exit("[!] invalid USERS entry '%s'\n[?] (hint: please update PBKDF2 hashes to SHA256 in your configuration file)" % entry)
 
     if config.SSL_PEM:
         config.SSL_PEM = config.SSL_PEM.replace('/', os.sep)

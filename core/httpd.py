@@ -11,6 +11,7 @@ import datetime
 import httplib
 import glob
 import gzip
+import hashlib
 import io
 import json
 import mimetypes
@@ -32,7 +33,6 @@ from core.attribdict import AttribDict
 from core.common import get_regex
 from core.common import ipcat_lookup
 from core.common import worst_asns
-from core.pbkdf2 import pbkdf2
 from core.settings import config
 from core.settings import DATE_FORMAT
 from core.settings import DISABLED_CONTENT_EXTENSIONS
@@ -255,10 +255,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 for entry in (config.USERS or []):
                     entry = re.sub(r"\s", "", entry)
                     username, stored_hash, uid, netfilter = entry.split(':')
-                    hash_parts = stored_hash.split('$')
                     if username == params.get("username"):
                         try:
-                            if (pbkdf2(params.get("password"), hash_parts[1].decode("hex"), int(hash_parts[2])).encode("hex") == hash_parts[3]):
+                            if params.get("password") == stored_hash:
                                 valid = True
                                 break
                         except:
