@@ -536,7 +536,9 @@ def monitor():
         dlt_offset = DLT_OFFSETS[datalink]
 
         try:
-            if datalink == pcapy.DLT_PPP:
+            if datalink == pcapy.DLT_RAW:
+                ip_offset = dlt_offset
+            elif datalink == pcapy.DLT_PPP:
                 if ord(packet[2]) == 0 and ord(packet[3]) == 0x21:  # IPv4
                     ip_offset = dlt_offset
             else:
