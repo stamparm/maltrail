@@ -435,9 +435,10 @@ def init():
         thread.daemon = True
         thread.start()
 
-    update_timer()
-
     create_log_directory()
+    get_error_log_handle()
+
+    update_timer()
 
     if check_sudo() is False:
         exit("[!] please run with sudo/Administrator privileges")
@@ -474,8 +475,6 @@ def init():
         print("[i] setting filter '%s'" % config.CAPTURE_FILTER)
         for _cap in _caps:
             _cap.setfilter(config.CAPTURE_FILTER)
-
-    get_error_log_handle()
 
     if _multiprocessing:
         _init_multiprocessing()
