@@ -41,7 +41,7 @@ from core.parallel import write_block
 from core.settings import config
 from core.settings import CAPTURE_TIMEOUT
 from core.settings import CONFIG_FILE
-from core.settings import ETH_LENGTH
+from core.settings import DLT_OFFSETS
 from core.settings import IGNORE_DNS_QUERY_SUFFIXES
 from core.settings import IPPROTO_LUT
 from core.settings import LOCALHOST_IP
@@ -50,7 +50,6 @@ from core.settings import NAME
 from core.settings import NO_SUCH_NAME_COUNTERS
 from core.settings import NO_SUCH_NAME_PER_HOUR_THRESHOLD
 from core.settings import PORT_SCANNING_THRESHOLD
-from core.settings import PPPH_LENGTH
 from core.settings import read_config
 from core.settings import REGULAR_SENSOR_SLEEP_TIME
 from core.settings import SNAP_LEN
@@ -63,7 +62,6 @@ from core.settings import SUSPICIOUS_UA_LENGTH_THRESHOLD
 from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
 from core.settings import VERSION
-from core.settings import VLANH_LENGTH
 from core.settings import WHITELIST
 from core.settings import WHITELIST_LONG_DOMAIN_NAME_KEYWORDS
 from core.settings import WHITELIST_HTTP_REQUEST_KEYWORDS
@@ -477,11 +475,6 @@ def init():
         for _cap in _caps:
             _cap.setfilter(config.CAPTURE_FILTER)
 
-    for _cap in _caps:
-        _datalink = _cap.datalink()
-        if _datalink not in (pcapy.DLT_EN10MB, pcapy.DLT_LINUX_SLL, pcapy.DLT_PPP):
-            exit("[!] datalink type '%s' not supported" % _datalink)
-
     get_error_log_handle()
 
     if _multiprocessing:
@@ -540,23 +533,20 @@ def monitor():
         global _count
 
         ip_offset = None
+        dlt_offset = DLT_OFFSETS[datalink]
 
         try:
             if datalink == pcapy.DLT_PPP:
                 if ord(packet[2]) == 0 and ord(packet[3]) == 0x21:  # IPv4
-                    ip_offset = PPPH_LENGTH
+                    ip_offset = dlt_offset
             else:
-                if datalink == pcapy.DLT_LINUX_SLL:
-                    packet = packet[2:]
+                if ord(packet[dlt_offset - 2]) == 8 and ord(packet[dlt_offset - 1]) == 0:  # IPv4
+                    ip_offset = dlt_offset
 
-                # Reference: ftp://ftp.heanet.ie/disk1/sourceforge/t/tp/tpcat/tpcat%20python%20source/TPCAT.py
+                elif ord(packet[dlt_offset - 2]) == 0x81 and ord(packet[dlt_offset - 1]) == 0:  # VLAN
+                    if ord(packet[dlt_offset + 2]) == 8 and ord(packet[dlt_offset + 3]) == 0: # IPv4
+                        ip_offset = dlt_offset + 4
 
-                if ord(packet[12]) == 8 and ord(packet[13]) == 0:  # IPv4
-                    ip_offset = ETH_LENGTH
-
-                elif ord(packet[12]) == 0x81 and ord(packet[13]) == 0:  # VLAN
-                    if ord(packet[16]) == 8 and ord(packet[17]) == 0: # IPv4
-                        ip_offset = VLANH_LENGTH
         except IndexError:
             pass
 
