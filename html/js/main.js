@@ -1947,6 +1947,7 @@ function drawInfo(type) {
         var labels = [];
         var first = true;
         var datasets = [];
+        var totalDays = Math.round(Object.size(_HOURS) / 24);
 
         for (var type in TRAIL_TYPES) {
             var _ = [];
@@ -1963,7 +1964,6 @@ function drawInfo(type) {
                 return a < b ? -1 : (a > b ? 1 : 0);
             });
 
-            var totalDays = Math.round(_.length / 24);
             for (var i = 0; i < _.length; i++) {
                 var date = new Date(_[i][0] * 60 * 60 * 1000);
 
@@ -2000,7 +2000,7 @@ function drawInfo(type) {
             scaleShowHorizontalLines: false, // because StackedBar doesn't show them properly
             datasetFill: false,
             bezierCurve: false,
-            pointDotRadius: 5,
+            pointDotRadius: Math.max(1, 5 - totalDays),
             //scaleShowGridLines: false
             //tooltipTemplate: "<%if (label){%><%=label.replace(/[^0-9]/, '')%>:00h-<%=label.replace(/[^0-9]/, '')%>:59h: <%}%><%= value %> events",
             tooltipTemplate: CHART_TOOLTIP_FORMAT,
