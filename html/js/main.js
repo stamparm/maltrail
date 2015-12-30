@@ -377,6 +377,21 @@ function getThreatUID(threat) {  // e.g. 192.168.0.1~>shv4.no-ip.biz
         return pad(threat.hashCode().toString(16), 8);
 }
 
+function resetView() {
+    var table = $('#details').dataTable();
+
+    $("body").loader("show");
+
+    $("#main_container").toggleClass("hidden", true);
+    $("#heatmap_container").hide();
+    $("#calendar_container").hide();
+
+    table.fnFilter("");
+    graphClose();
+
+    window.location.href = window.location.href;
+}
+
 function init(url, from, to) {
     var csv = "";
     var demo = false;
