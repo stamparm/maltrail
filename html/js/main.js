@@ -718,8 +718,9 @@ function init(url, from, to) {
                     for (var i = 0; i < 24; i++)
                         sparklineData.push(0);
 
+                    var totalDays = Math.round(_.length / 24);
                     for (var i = 0; i < _.length; i++) {
-                        sparklineData[Math.floor(i / (_.length / 24))] += (_[i][1] | 0);
+                        sparklineData[Math.floor(i / totalDays)] += (_[i][1] | 0);
                         //_MAX_SPARKLINE_PER_HOUR = Math.max(_MAX_SPARKLINE_PER_HOUR, _[i][1] | 0);
                     }
 
@@ -1962,11 +1963,16 @@ function drawInfo(type) {
                 return a < b ? -1 : (a > b ? 1 : 0);
             });
 
+            var totalDays = Math.round(_.length / 24);
             for (var i = 0; i < _.length; i++) {
                 var date = new Date(_[i][0] * 60 * 60 * 1000);
 
-                if (first)
-                    labels.push(pad(date.getHours(), 2) + "h");
+                if (first) {
+                    if (i % totalDays === 0)
+                        labels.push(pad(date.getHours(), 2) + "h");
+                    else
+                        labels.push("");
+                }
 
                 ticks[type].push(_[i][1] | 0);
             }
