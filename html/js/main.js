@@ -203,6 +203,7 @@ function toggleHeatmap() {
         $("#heatmap_container").hide();
     else {
         $("#heatmap_container").removeClass("hidden").show();
+        $(".graph-legend").attr("width", 14);  // dirty patch for ugly legend width (missing one pixel)
         scrollTo("#header_container-sticky-wrapper");
     }
 }

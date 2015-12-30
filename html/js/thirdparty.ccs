@@ -10,7 +10,7 @@
 // @code_url https://cdn.jsdelivr.net/jquery.datatables/1.10.10/plugins/tabletools/js/dataTables.tableTools.min.js
 // @code_url https://cdn.jsdelivr.net/raphael/2.1.4/raphael-min.js
 // @code_url https://cdn.jsdelivr.net/d3js/3.5.12/d3.min.js
-// @code_url https://cdn.jsdelivr.net/cal-heatmap/3.5.2/cal-heatmap.min.js
+// @code_url https://raw.githubusercontent.com/wa0x6e/cal-heatmap/master/cal-heatmap.min.js
 // @code_url https://cdn.jsdelivr.net/jquery.sparkline/2.1.2/jquery.sparkline.min.js
 // @code_url https://cdn.jsdelivr.net/jstorage/0.4.12/jstorage.min.js
 // @code_url https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.min.js
