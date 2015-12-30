@@ -26,7 +26,7 @@ var CHECK_IP = {};
 var TRAIL_TYPES = {};
 
 var SPARKLINE_WIDTH = 130;
-var CHART_WIDTH = 1000;
+var CHART_WIDTH = screen.width - 200;
 var CHART_HEIGHT = screen.height - 340;
 var PIE_FONT_SIZE = 10;
 var MAX_SOURCES_ITEMS = 40;
@@ -94,6 +94,7 @@ $(document).ready(function() {
     Chart.defaults.global.animationSteps = 10;
 
     $("#header_container").sticky({ topSpacing: 0 });
+    $("#graph_close").css("left", CHART_WIDTH / 2 - 11)
 
     // Reference: http://tosbourn.com/a-fix-for-window-location-origin-in-internet-explorer/
     if (!window.location.origin)
