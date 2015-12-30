@@ -1070,7 +1070,7 @@ function initDetails() {
     var details = $('#details').dataTable( {
         bDestroy: true,
         bAutoWidth: false,
-        stateSave: true,
+        bStateSave: true,
         data: _DATASET,
         columns: [
             { "title": "threat", "type": "threat", "class": "center" },
