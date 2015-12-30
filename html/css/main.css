@@ -421,7 +421,10 @@ rect.highlight {
 #table-hosts, #table-hosts th, #table-hosts td {
     border: 1px solid #a8a8a8;
 }
-#chart_area { background-color: #fcfcfc; }
+#chart_area {
+    background-color: #fcfcfc;
+    margin-bottom: 30px;
+}
 .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
