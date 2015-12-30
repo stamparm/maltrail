@@ -20,7 +20,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.337"
+VERSION = "0.8.338"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -47,6 +47,7 @@ END_BLOCK = -2
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 HTML_DIR = os.path.join(ROOT_DIR, "html")
 DISPOSED_NONCES = set()
+PING_RESPONSE = "pong"
 MAX_NOFILE = 65000
 CAPTURE_TIMEOUT = 100  # ms
 CONFIG_FILE = os.path.join(ROOT_DIR, "maltrail.conf")

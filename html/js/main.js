@@ -426,6 +426,18 @@ function init(url, from, to) {
         $("#login_splitter").toggleClass("hidden", false);
     }
 
+    $.ajax({
+        type: "GET",
+        url: "ping",
+        dataType: "text",
+        cache: false,
+        complete: function(response) {
+            if ((typeof response.responseText === "undefined") || (response.responseText.length === 0)) {
+                alertify.error("No connection to the server");
+            }
+        }
+    });
+
     Papa.parse(demo ? csv : url, {
         download: !demo,
         delimiter: ' ',

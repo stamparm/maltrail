@@ -41,6 +41,7 @@ from core.settings import HTML_DIR
 from core.settings import HTTP_TIME_FORMAT
 from core.settings import MAX_NOFILE
 from core.settings import NAME
+from core.settings import PING_RESPONSE
 from core.settings import SERVER_HEADER
 from core.settings import SESSION_COOKIE_NAME
 from core.settings import SESSION_EXPIRATION_HOURS
@@ -371,6 +372,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header("Content-Type", "text/plain")
 
             return open(TRAILS_FILE, "rb").read()
+
+        def _ping(self, params):
+            self.send_response(httplib.OK)
+            self.send_header("Connection", "close")
+            self.send_header("Content-Type", "text/plain")
+
+            return PING_RESPONSE
 
         def _events(self, params):
             session = self.get_session()
