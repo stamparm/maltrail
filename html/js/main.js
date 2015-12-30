@@ -715,8 +715,11 @@ function init(url, from, to) {
                         return a < b ? -1 : (a > b ? 1 : 0);
                     });
 
+                    for (var i = 0; i < 24; i++)
+                        sparklineData.push(0);
+
                     for (var i = 0; i < _.length; i++) {
-                        sparklineData.push(_[i][1] | 0);
+                        sparklineData[Math.floor(i / (_.length / 24))] += (_[i][1] | 0);
                         //_MAX_SPARKLINE_PER_HOUR = Math.max(_MAX_SPARKLINE_PER_HOUR, _[i][1] | 0);
                     }
 
