@@ -20,7 +20,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.345"
+VERSION = "0.8.346"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -238,6 +238,12 @@ def read_config(config_file):
 
     if config.DISABLE_LOCAL_LOG_STORAGE and not config.LOG_SERVER:
         print("[x] configuration switch 'DISABLE_LOCAL_LOG_STORAGE' turned on and option 'LOG_SERVER' not set. Falling back to console output of event data")
+
+    if config.UDP_ADDRESS is not None and config.UDP_PORT is None:
+        exit("[!] usage of configuration value 'UDP_ADDRESS' requires also usage of 'UDP_PORT'")
+
+    if config.UDP_ADDRESS is None and config.UDP_PORT is not None:
+        exit("[!] usage of configuration value 'UDP_PORT' requires also usage of 'UDP_ADDRESS'")
 
     if not str(config.HTTP_PORT or "").isdigit():
         exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % config.HTTP_PORT)

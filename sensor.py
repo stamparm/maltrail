@@ -441,7 +441,7 @@ def init():
     update_timer()
 
     if check_sudo() is False:
-        exit("[!] please run with sudo/Administrator privileges")
+        exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
 
     interfaces = set(_.strip() for _ in config.MONITOR_INTERFACE.split(','))
 
@@ -462,7 +462,7 @@ def init():
             _caps.append(pcapy.open_live(interface, SNAP_LEN, True, CAPTURE_TIMEOUT))
         except (socket.error, pcapy.PcapError):
             if "permitted" in str(sys.exc_info()[1]):
-                exit("[!] please run with sudo/Administrator privileges")
+                exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
             elif "No such device" in str(sys.exc_info()[1]):
                 exit("[!] no such device '%s'" % interface)
             else:
@@ -607,7 +607,7 @@ def main():
     options, _ = parser.parse_args()
 
     if not check_sudo():
-        exit("[!] please run with sudo/Administrator privileges")
+        exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
 
     read_config(options.config_file)
 

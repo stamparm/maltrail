@@ -20,6 +20,7 @@ import subprocess
 import threading
 import traceback
 
+from core.common import check_sudo
 from core.httpd import start_httpd
 from core.log import log_error
 from core.log import start_logd
@@ -70,6 +71,9 @@ def main():
         thread.start()
 
     if config.UDP_ADDRESS and config.UDP_PORT:
+        if check_sudo() is False:
+            exit("[!] please run '%s' with sudo/Administrator privileges when using 'UDP_ADDRESS' configuration value" % __file__)
+
         start_logd(address=config.UDP_ADDRESS, port=config.UDP_PORT, join=False)
 
     try:
