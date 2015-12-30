@@ -153,7 +153,8 @@ function initDialogs() {
 
     $("#login_link").click(function() {
         $("body").loader("hide");
-        $('<div id="login_dialog" title="Authentication"><table><tbody><tr><td>Username:</td><td><input id="username" name="username"></td></tr><tr><td>Password:</td><td><input id="password" name="password" type="password" autocomplete="off"></td></tr></tbody></table></div>').appendTo('body').dialog(options);
+        if ($("#login_dialog").length === 0)
+            $('<div id="login_dialog" title="Authentication"><table><tbody><tr><td>Username:</td><td><input id="username" name="username"></td></tr><tr><td>Password:</td><td><input id="password" name="password" type="password" autocomplete="off"></td></tr></tbody></table></div>').appendTo('body').dialog(options);
         $("#login_dialog input").val("");
         $("#login_dialog").dialog("open")
         .keyup(function(e) {
@@ -164,7 +165,9 @@ function initDialogs() {
             }
         });
     });
+}
 
+function checkAuthentication() {
     $.ajax({
         type: "GET",
         url: "whoami",
@@ -176,7 +179,7 @@ function initDialogs() {
                 document.body.hidden = true;
                 throw new Error("Maltrail should be accessed ONLY at its server instance's address (e.g. http://127.0.0.1:8338)");
             }
-            else if ((typeof response.responseText !== "undefined") && (response.responseText.length > 0)) {
+            else if ((response.status === 200) && (typeof response.responseText !== "undefined") && (response.responseText.length > 0)) {
                 _USER = response.responseText;
                 $("#login_link").html("Log Out (" + _USER + ")");
                 $("#login_link").off("click");
@@ -432,9 +435,10 @@ function init(url, from, to) {
         dataType: "text",
         cache: false,
         complete: function(response) {
-            if ((typeof response.responseText === "undefined") || (response.responseText.length === 0)) {
+            if ((typeof response.responseText === "undefined") || (response.responseText.length === 0))
                 alertify.error("No connection to the server");
-            }
+            else
+                checkAuthentication();
         }
     });
 
