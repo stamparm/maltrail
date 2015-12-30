@@ -33,6 +33,7 @@ from core.attribdict import AttribDict
 from core.common import get_regex
 from core.common import ipcat_lookup
 from core.common import worst_asns
+from core.enums import HTTP_HEADER
 from core.settings import config
 from core.settings import DATE_FORMAT
 from core.settings import DISABLED_CONTENT_EXTENSIONS
@@ -135,31 +136,31 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
                 if ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and extension not in DISABLED_CONTENT_EXTENSIONS:
                     mtime = time.gmtime(os.path.getmtime(path))
-                    if_modified_since = self.headers.get("If-Modified-Since")
+                    if_modified_since = self.headers.get(HTTP_HEADER.IF_MODIFIED_SINCE)
 
                     if if_modified_since and extension not in (".htm", ".html"):
                         if_modified_since = [_ for _ in if_modified_since.split(';') if _.upper().endswith("GMT")][0]
                         if time.mktime(mtime) <= time.mktime(time.strptime(if_modified_since, HTTP_TIME_FORMAT)):
                             self.send_response(httplib.NOT_MODIFIED)
-                            self.send_header("Connection", "close")
+                            self.send_header(HTTP_HEADER.CONNECTION, "close")
                             skip = True
 
                     if not skip:
                         content = open(path, "rb").read()
                         last_modified = time.strftime(HTTP_TIME_FORMAT, mtime)
                         self.send_response(httplib.OK)
-                        self.send_header("Connection", "close")
-                        self.send_header("Content-Type", mimetypes.guess_type(path)[0] or "application/octet-stream")
-                        self.send_header("Last-Modified", last_modified)
+                        self.send_header(HTTP_HEADER.CONNECTION, "close")
+                        self.send_header(HTTP_HEADER.CONTENT_TYPE, mimetypes.guess_type(path)[0] or "application/octet-stream")
+                        self.send_header(HTTP_HEADER.LAST_MODIFIED, last_modified)
                         if extension not in (".htm", ".html"):
-                            self.send_header("Expires", "Sun, 17-Jan-2038 19:14:07 GMT")   # Reference: http://blog.httpwatch.com/2007/12/10/two-simple-rules-for-http-caching/
-                            self.send_header("Cache-Control", "max-age=3600, must-revalidate")   # Reference: http://stackoverflow.com/a/5084555
+                            self.send_header(HTTP_HEADER.EXPIRES, "Sun, 17-Jan-2038 19:14:07 GMT")        # Reference: http://blog.httpwatch.com/2007/12/10/two-simple-rules-for-http-caching/
+                            self.send_header(HTTP_HEADER.CACHE_CONTROL, "max-age=3600, must-revalidate")  # Reference: http://stackoverflow.com/a/5084555
                         else:
-                            self.send_header("Cache-Control", "no-cache")
+                            self.send_header(HTTP_HEADER.CACHE_CONTROL, "no-cache")
 
                 else:
                     self.send_response(httplib.NOT_FOUND)
-                    self.send_header("Connection", "close")
+                    self.send_header(HTTP_HEADER.CONNECTION, "close")
                     content = '<!DOCTYPE html><html lang="en"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL %s was not found on this server.</p></body></html>' % self.path.split('?')[0]
 
             if content is not None:
@@ -169,8 +170,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     if _:
                         content = self._format(content, **{ name: _() })
 
-                if "gzip" in self.headers.getheader("Accept-Encoding", ""):
-                    self.send_header("Content-Encoding", "gzip")
+                if "gzip" in self.headers.getheader(HTTP_HEADER.ACCEPT_ENCODING, ""):
+                    self.send_header(HTTP_HEADER.CONTENT_ENCODING, "gzip")
                     _ = cStringIO.StringIO()
                     compress = gzip.GzipFile("", "w+b", 9, _)
                     compress._stream = _
@@ -179,7 +180,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     compress.close()
                     content = compress._stream.getvalue()
 
-                self.send_header("Content-Length", str(len(content)))
+                self.send_header(HTTP_HEADER.CONTENT_LENGTH, str(len(content)))
 
             self.end_headers()
 
@@ -190,7 +191,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.wfile.close()
 
         def do_POST(self):
-            length = self.headers.getheader("Content-Length")
+            length = self.headers.getheader(HTTP_HEADER.CONTENT_LENGTH)
             data = self.rfile.read(int(length))
             data = urllib.unquote_plus(data)
             self.data = data
@@ -198,14 +199,14 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
         def get_session(self):
             retval = None
-            cookie = self.headers.get("Cookie")
+            cookie = self.headers.get(HTTP_HEADER.COOKIE)
 
             if cookie:
                 match = re.search(r"%s\s*=\s*([^;]+)" % SESSION_COOKIE_NAME, cookie)
                 if match:
                     session = match.group(1)
                     if session in SESSIONS:
-                        if SESSIONS[session].client_ip != self.client_address[0] or SESSIONS[session].client_ua != self.headers.get("User-Agent"):
+                        if SESSIONS[session].client_ip != self.client_address[0] or SESSIONS[session].client_ua != self.headers.get(HTTP_HEADER.USER_AGENT):
                             pass
                         elif SESSIONS[session].expiration > time.time():
                             retval = SESSIONS[session]
@@ -215,7 +216,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             return retval
 
         def delete_session(self):
-            cookie = self.headers.get("Cookie")
+            cookie = self.headers.get(HTTP_HEADER.COOKIE)
 
             if cookie:
                 match = re.search(r"%s=(.+)" % SESSION_COOKIE_NAME, cookie)
@@ -275,8 +276,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 expiration = time.time() + 3600 * SESSION_EXPIRATION_HOURS
 
                 self.send_response(httplib.OK)
-                self.send_header("Connection", "close")
-                self.send_header("Set-Cookie", "%s=%s; expires=%s; path=/; HttpOnly" % (SESSION_COOKIE_NAME, session_id, time.strftime(HTTP_TIME_FORMAT, time.gmtime(expiration))))
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                self.send_header(HTTP_HEADER.SET_COOKIE, "%s=%s; expires=%s; path=/; HttpOnly" % (SESSION_COOKIE_NAME, session_id, time.strftime(HTTP_TIME_FORMAT, time.gmtime(expiration))))
 
                 if netfilter in ("", "0.0.0.0/0"):
                     netfilters = None
@@ -310,13 +311,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     if addresses:
                         netfilters.add(get_regex(addresses))
 
-                SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilters": netfilters, "expiration": expiration, "client_ip": self.client_address[0], "client_ua": self.headers.get("User-Agent")})
+                SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilters": netfilters, "expiration": expiration, "client_ip": self.client_address[0], "client_ua": self.headers.get(HTTP_HEADER.USER_AGENT)})
             else:
                 time.sleep(UNAUTHORIZED_SLEEP_TIME)
                 self.send_response(httplib.UNAUTHORIZED)
-                self.send_header("Connection", "close")
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
 
-            self.send_header("Content-Type", "text/plain")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
             content = "Login %s" % ("success" if valid else "failed")
 
             if not subprocess.mswindows:
@@ -331,16 +332,16 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         def _logout(self, params):
             self.delete_session()
             self.send_response(httplib.FOUND)
-            self.send_header("Connection", "close")
-            self.send_header("Location", "/")
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.LOCATION, "/")
 
         def _whoami(self, params):
             session = self.get_session()
             username = session.username if session else ""
 
             self.send_response(httplib.OK)
-            self.send_header("Connection", "close")
-            self.send_header("Content-Type", "text/plain")
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
 
             return username
 
@@ -349,12 +350,12 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             if session is None:
                 self.send_response(httplib.UNAUTHORIZED)
-                self.send_header("Connection", "close")
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
                 return None
 
             self.send_response(httplib.OK)
-            self.send_header("Connection", "close")
-            self.send_header("Content-Type", "text/plain")
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
 
             try:
                 result_worst = worst_asns(params.get("address"))
@@ -370,15 +371,15 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
         def _trails(self, params):
             self.send_response(httplib.OK)
-            self.send_header("Connection", "close")
-            self.send_header("Content-Type", "text/plain")
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
 
             return open(TRAILS_FILE, "rb").read()
 
         def _ping(self, params):
             self.send_response(httplib.OK)
-            self.send_header("Connection", "close")
-            self.send_header("Content-Type", "text/plain")
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
 
             return PING_RESPONSE
 
@@ -387,7 +388,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             if session is None:
                 self.send_response(httplib.UNAUTHORIZED)
-                self.send_header("Connection", "close")
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
                 return None
 
             start, end, size, total = None, None, -1, None
@@ -397,8 +398,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             if os.path.exists(event_log_path):
                 total = os.stat(event_log_path).st_size
 
-                if self.headers.get("Range"):
-                    match = re.search(r"bytes=(\d+)-(\d+)", self.headers["Range"])
+                if self.headers.get(HTTP_HEADER.RANGE):
+                    match = re.search(r"bytes=(\d+)-(\d+)", self.headers[HTTP_HEADER.RANGE])
                     if match:
                         start, end = int(match.group(1)), int(match.group(2))
                         max_size = end - start + 1
@@ -411,14 +412,14 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         if session.netfilters is None:
                             session.range_handle.seek(start)
                             self.send_response(httplib.PARTIAL_CONTENT)
-                            self.send_header("Connection", "close")
-                            self.send_header("Content-Type", "text/plain")
-                            self.send_header("Content-Range", "bytes %d-%d/%d" % (start, end, total))
+                            self.send_header(HTTP_HEADER.CONNECTION, "close")
+                            self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
+                            self.send_header(HTTP_HEADER.CONTENT_RANGE, "bytes %d-%d/%d" % (start, end, total))
                             content = session.range_handle.read(size)
                         else:
                             self.send_response(httplib.OK)
-                            self.send_header("Connection", "close")
-                            self.send_header("Content-Type", "text/plain")
+                            self.send_header(HTTP_HEADER.CONNECTION, "close")
+                            self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
 
                             buffer, addresses, netmasks, regex = cStringIO.StringIO(), set(), [], ""
                             for netfilter in session.netfilters:
@@ -464,7 +465,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
                             content = buffer.getvalue()
                             end = start + len(content) - 1
-                            self.send_header("Content-Range", "bytes %d-%d/%d" % (start, end, end + 1 + max_size * (len(content) >= max_size)))
+                            self.send_header(HTTP_HEADER.CONTENT_RANGE, "bytes %d-%d/%d" % (start, end, end + 1 + max_size * (len(content) >= max_size)))
 
                         if len(content) < max_size:
                             session.range_handle.close()
@@ -472,8 +473,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
                 if size == -1:
                     self.send_response(httplib.OK)
-                    self.send_header("Connection", "close")
-                    self.send_header("Content-Type", "text/plain")
+                    self.send_header(HTTP_HEADER.CONNECTION, "close")
+                    self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
                     self.end_headers()
 
                     with open(event_log_path, "rb") as f:
@@ -486,9 +487,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             else:
                 self.send_response(httplib.NO_CONTENT)
-                self.send_header("Connection", "close")
-                if self.headers.get("Range"):
-                    self.send_header("Content-Range", "bytes 0-0/0")
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                if self.headers.get(HTTP_HEADER.RANGE):
+                    self.send_header(HTTP_HEADER.CONTENT_RANGE, "bytes 0-0/0")
 
             return content
 
@@ -499,12 +500,12 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             if session is None:
                 self.send_response(httplib.UNAUTHORIZED)
-                self.send_header("Connection", "close")
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
                 return None
 
             self.send_response(httplib.OK)
-            self.send_header("Connection", "close")
-            self.send_header("Content-Type", "application/json")
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
 
             match = re.search(r"\d+\-\d+\-\d+", params.get("from", ""))
             if match:
