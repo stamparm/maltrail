@@ -36,6 +36,7 @@ from core.common import worst_asns
 from core.settings import config
 from core.settings import DATE_FORMAT
 from core.settings import DISABLED_CONTENT_EXTENSIONS
+from core.settings import DISPOSED_NONCES
 from core.settings import HTML_DIR
 from core.settings import HTTP_TIME_FORMAT
 from core.settings import MAX_NOFILE
@@ -251,18 +252,20 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         def _login(self, params):
             valid = False
 
-            if params.get("username") and params.get("password"):
-                for entry in (config.USERS or []):
-                    entry = re.sub(r"\s", "", entry)
-                    username, stored_hash, uid, netfilter = entry.split(':')
-                    if username == params.get("username"):
-                        try:
-                            if params.get("password") == stored_hash:
-                                valid = True
-                                break
-                        except:
-                            if config.SHOW_DEBUG:
-                                traceback.print_exc()
+            if params.get("username") and params.get("hash") and params.get("nonce"):
+                if params.get("nonce") not in DISPOSED_NONCES:
+                    DISPOSED_NONCES.add(params.get("nonce"))
+                    for entry in (config.USERS or []):
+                        entry = re.sub(r"\s", "", entry)
+                        username, stored_hash, uid, netfilter = entry.split(':')
+                        if username == params.get("username"):
+                            try:
+                                if params.get("hash") == hashlib.sha256(stored_hash.strip() + params.get("nonce")).hexdigest():
+                                    valid = True
+                                    break
+                            except:
+                                if config.SHOW_DEBUG:
+                                    traceback.print_exc()
 
             if valid:
                 session_id = os.urandom(SESSION_ID_LENGTH).encode("hex")

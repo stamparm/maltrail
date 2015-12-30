@@ -54,7 +54,9 @@ var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
 //var SEARCH_TIP_URL = "https://www.google.com/cse?cx=011750002002865445766%3Ay5klxdomj78&ie=UTF-8&q=${query}";
 var DAY_SUFFIXES = { 1: "st", 2: "nd", 3: "rd" };
 var DOT_COLUMNS = [ LOG_COLUMNS.SENSOR, LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP, LOG_COLUMNS.DST_PORT, LOG_COLUMNS.TRAIL, LOG_COLUMNS.PROTO ];
-var SPARKLINE_COLOR = '#ff0000';
+var SPARKLINE_COLOR = "#ff0000";
+var NONCE_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+var NONCE_LENGTH = 12;
 var CTRL_CLICK_PRESSED = false;
 var CTRL_DATES = [];
 var PREFERRED_TRAIL_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ffad33", UA: "#9900cc" };
@@ -113,12 +115,13 @@ function initDialogs() {
             },
             "Log In": function() {
                 var SHA256 = new Hashes.SHA256;
+                var nonce = generateNonce();
 
                 $.ajax({
                     type: "POST",
                     url: "login",
                     dataType: "text",
-                    data: "username=" + $(this).find("#username")[0].value.trim() + "&password=" + SHA256.hex($(this).find("#password")[0].value.trim()),
+                    data: "username=" + $(this).find("#username")[0].value.trim() + "&hash=" + SHA256.hex(SHA256.hex($(this).find("#password")[0].value.trim()) + nonce) + "&nonce=" + nonce,
                     cache: false,
                     beforeSend: function() {
                         $("input").prop("disabled", true);
@@ -1661,6 +1664,15 @@ function initDetails() {
     details.on("contextmenu", "td", function (){
         return false;
     });
+}
+
+function generateNonce() {
+    var retval = "";
+
+    for(var i = 0; i < NONCE_LENGTH; i++)
+        retval += NONCE_ALPHABET.charAt(Math.floor(Math.random() * NONCE_ALPHABET.length));
+
+    return retval;
 }
 
 String.prototype.hashCode = function() {
