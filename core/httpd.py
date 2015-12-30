@@ -205,7 +205,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 if match:
                     session = match.group(1)
                     if session in SESSIONS:
-                        if SESSIONS[session].expiration > time.time():
+                        if SESSIONS[session].client_ip != self.client_address[0] or SESSIONS[session].client_ua != self.headers.get("User-Agent"):
+                            pass
+                        elif SESSIONS[session].expiration > time.time():
                             retval = SESSIONS[session]
                         else:
                             del SESSIONS[session]
@@ -308,7 +310,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     if addresses:
                         netfilters.add(get_regex(addresses))
 
-                SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilters": netfilters, "expiration": expiration})
+                SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilters": netfilters, "expiration": expiration, "client_ip": self.client_address[0], "client_ua": self.headers.get("User-Agent")})
             else:
                 time.sleep(UNAUTHORIZED_SLEEP_TIME)
                 self.send_response(httplib.UNAUTHORIZED)
