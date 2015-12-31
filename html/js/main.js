@@ -1098,7 +1098,6 @@ function initDetails() {
         aLengthMenu: [ [10, 25, 50, 100, 200], [10, 25, 50, 100, 200] ],
         aaSorting: [ [DATATABLES_COLUMNS.LAST_SEEN, 'desc'] ],
         bDeferRender: true,
-        bProcessing: true,
         searchDelay: 500,
         columnDefs: [
             {

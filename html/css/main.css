@@ -3,27 +3,27 @@ table { font: 11px Verdana, Geneva, sans-serif }
 td, th { padding: 2px 4px }
 table.dataTable tr { background-color: #fff; border-color: #a8a8a8 }
 table.dataTable td { white-space: nowrap; border-color: #a8a8a8 }
-table.dataTable thead { color: #2f2f2f; border-color: #a8a8a8 }
-table.dataTable thead .sorting { border-color: #a8a8a8; background: url("../images/thirdparty/sort_both.png") no-repeat scroll right center #fff; }
-table.dataTable thead .sorting_asc { border-color: #a8a8a8; background: url("../images/thirdparty/sort_asc.png") no-repeat scroll right center #eee; }
-table.dataTable thead .sorting_desc { border-color: #a8a8a8; background: url("../images/thirdparty/sort_desc.png") no-repeat scroll right center #eee; }
+table.dataTable thead { color: #fff; border-color: #a8a8a8; text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.50), -1px 1px 0 rgba(0, 0, 0, 0.50), 1px 1px 0 rgba(0, 0, 0, 0.50), 1px -1px 0 rgba(0, 0, 0, 0.50); }
+table.dataTable thead .sorting { border-color: #a8a8a8; background: url("../images/thirdparty/sort_both.png") no-repeat scroll right center #333; }
+table.dataTable thead .sorting_asc { border-color: #a8a8a8; background: url("../images/thirdparty/sort_asc.png") no-repeat scroll right center #555; }
+table.dataTable thead .sorting_desc { border-color: #a8a8a8; background: url("../images/thirdparty/sort_desc.png") no-repeat scroll right center #555; }
 table.dataTable tr:nth-child(2n+1)  { background-color: #f8f8f8; border-color: #a8a8a8 }
 table.dataTable thead > tr > th { padding-left: 10px }
 table.dataTable { border-color: #a8a8a8 }
 table.dataTable .highlighted { background-color: #abb9d3 !important }
 .details_total { font-size: 120%; font-weight: bold }
-.label-type, .tag { background-color: #777777; font-weight: bold; text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; border-radius: 3px; padding: 1px 2px; cursor: pointer; cursor: hand; border: 1px solid #000000; }
+.label-type, .tag { background-color: #777777; font-weight: bold; text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25), -1px 1px 0 rgba(0, 0, 0, 0.25), 1px 1px 0 rgba(0, 0, 0, 0.25), 1px -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; border-radius: 3px; padding: 1px 2px; cursor: pointer; cursor: hand; border: 1px solid #000000; }
 .label-type { font-size: 80%; }
 .label-url { background-color: #ff9900 }
 .label-ip { background-color: #dc3912 }
 .label-dns { background-color: #3366cc }
 .tag { margin-right: 2px; font-size: 80% }
 .white-label-text {
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25);
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25), -1px 1px 0 rgba(0, 0, 0, 0.25), 1px 1px 0 rgba(0, 0, 0, 0.25), 1px -1px 0 rgba(0, 0, 0, 0.25);
     color: white;
 }
 .black-label-text {
-    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.25);
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.25), -1px 1px 0 rgba(255, 255, 255, 0.25), 1px 1px 0 rgba(255, 255, 255, 0.25), 1px -1px 0 rgba(255, 255, 255, 0.25);
     color: black;
 }
 .container {
@@ -78,7 +78,7 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     display: inline-block;
     line-height: 20px;
     cursor: pointer;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25);
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25), -1px 1px 0 rgba(0, 0, 0, 0.25), 1px 1px 0 rgba(0, 0, 0, 0.25), 1px -1px 0 rgba(0, 0, 0, 0.25);
     /*box-shadow: 0 1px 1px #202020 inset, 0 3px 6px -5px #bbb;*/
     border: 3px solid;
 }
@@ -92,8 +92,8 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     font-weight: bold;
 }
 .header {
-    /*background: none repeat scroll 0 0 #555;*/
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));
+    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
     width: 100%;
     z-index: 10;
     display: table;
@@ -407,7 +407,7 @@ rect.highlight {
     font-size: 80%;
     font-weight: bold;
     box-sizing: border-box;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25);
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25), -1px 1px 0 rgba(0, 0, 0, 0.25), 1px 1px 0 rgba(0, 0, 0, 0.25), 1px -1px 0 rgba(0, 0, 0, 0.25);
     border: 1px solid #000000;
 }
 .bottom {
@@ -463,4 +463,25 @@ rect.highlight {
     height: 12px;
     display: inline-block;
      vertical-align: middle;
+}
+#link_container {
+    text-align: right;
+    display: table-cell;
+    vertical-align: middle;
+    width: 40%;
+}
+#calendar_container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+#logo_container {
+    display: table-cell;
+    font-size: 120%;
+    color: #efefef;
+    padding: 0 10px;
+    width: 40%;
 }
