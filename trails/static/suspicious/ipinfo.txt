@@ -44,3 +44,12 @@ yougetsignal.com
 checkip.dyndns.org
 getmyip.co.uk
 getmyip.org
+myexternalip.com
+whoer.me
+ip-api.com
+iptrackeronline.com
+ipinfodb.com
+meuip.net.br
+geoip.vmn.net
+icanhazip.com
+curlmyip.com
