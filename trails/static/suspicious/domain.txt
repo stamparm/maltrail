@@ -795,8 +795,6 @@ darktech.org
 darweb.com
 ddisk.com
 ddisk.net
-ddns.me
-ddns.net 
 ddo.jp
 de.be
 de.gg
@@ -983,14 +981,6 @@ nl.ai
 nl.am
 nl.gy
 nl.mn
-no-ip.be
-no-ip.biz
-no-ip.ca 
-no-ip.co.uk 
-no-ip.fr
-no-ip.info
-no-ip.net
-no-ip.org
 no.tc
 noc.su
 noip.me

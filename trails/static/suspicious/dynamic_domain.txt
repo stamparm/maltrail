@@ -48,13 +48,15 @@ myvnc.com
 net-freaks.com
 nflfan.org
 nhlfan.net
+no-ip.be
 no-ip.biz
 no-ip.ca
 no-ip.co.uk
+no-ip.fr
 no-ip.info
-noip.me
 no-ip.net
 no-ip.org
+noip.me
 noip.us
 onthewifi.com
 pgafan.net
