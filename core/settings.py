@@ -160,7 +160,10 @@ def _get_total_physmem():
 
 def check_memory():
     print "[?] at least 512MB of free memory required"
-    _ = '0' * CHECK_MEMORY_SIZE
+    try:
+        _ = '0' * CHECK_MEMORY_SIZE
+    except MemoryError:
+        exit("[!] not enough memory")
 
 def read_config(config_file):
     global config
