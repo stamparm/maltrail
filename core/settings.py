@@ -20,7 +20,7 @@ config = AttribDict()
 trails = {}
 
 NAME = "Maltrail"
-VERSION = "0.8.358"
+VERSION = "0.8.359"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -42,6 +42,7 @@ REGULAR_SENSOR_SLEEP_TIME = 0.001
 LOAD_TRAILS_RETRY_SLEEP_TIME = 60
 UNAUTHORIZED_SLEEP_TIME = 5
 NO_SUCH_NAME_PER_HOUR_THRESHOLD = 20
+CHECK_MEMORY_SIZE = 512 * 1024 * 1024
 NO_BLOCK = -1
 END_BLOCK = -2
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -156,6 +157,10 @@ def _get_total_physmem():
             pass
 
     return retval
+
+def check_memory():
+    print "[?] at least 512MB of free memory required"
+    _ = '0' * CHECK_MEMORY_SIZE
 
 def read_config(config_file):
     global config

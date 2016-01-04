@@ -38,6 +38,7 @@ from core.log import log_error
 from core.log import log_event
 from core.parallel import worker
 from core.parallel import write_block
+from core.settings import check_memory
 from core.settings import config
 from core.settings import CAPTURE_TIMEOUT
 from core.settings import CONFIG_FILE
@@ -438,6 +439,7 @@ def init():
     create_log_directory()
     get_error_log_handle()
 
+    check_memory()
     update_timer()
 
     if check_sudo() is False:
