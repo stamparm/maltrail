@@ -1170,7 +1170,15 @@ function initDetails() {
                         data = "<span title='" + data + "' class='ellipsis'></span>";
                     return data;
                 },
-                targets: [ DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP, DATATABLES_COLUMNS.PROTO ]
+                targets: [ DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP ]
+            },
+            {
+                render: function (data, type, row) {
+                    if (data.indexOf(',') > -1)
+                        data = "<span title='" + data + "' class='ellipsis'></span>" + "<span class='hidden'>" + data + "</span>";
+                    return data;
+                },
+                targets: [ DATATABLES_COLUMNS.SENSOR, DATATABLES_COLUMNS.PROTO ]
             },
             {
                 render: function (data, type, row) {
