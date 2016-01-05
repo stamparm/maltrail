@@ -406,6 +406,9 @@ def _process_ip(ip_data, sec, usec):
             elif src_ip in trails:
                 log_event((sec, usec, src_ip, '-', dst_ip, '-', IPPROTO_LUT[protocol], TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]))
 
+    except struct.error:
+        pass
+
     except Exception:
         if config.SHOW_DEBUG:
             traceback.print_exc()
@@ -590,7 +593,7 @@ def monitor():
                 except (pcapy.PcapError, socket.timeout):
                     pass
 
-        if len(_caps) > 1
+        if len(_caps) > 1:
             if _multiprocessing:
                 _locks.count = threading.Lock()
             _locks.connect_sec = threading.Lock()
