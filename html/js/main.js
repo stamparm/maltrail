@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+* Copyright (c) 2014-2016 Miroslav Stampar (@stamparm)
 * See the file 'LICENSE' for copying permission
 */
 

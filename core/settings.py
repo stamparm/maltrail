@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Copyright (c) 2014-2015 Miroslav Stampar (@stamparm)
+Copyright (c) 2014-2016 Miroslav Stampar (@stamparm)
 See the file 'LICENSE' for copying permission
 """
 
@@ -21,7 +21,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.8.364"
+VERSION = "0.9"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
