@@ -27,6 +27,7 @@ import traceback
 import urllib
 import urlparse
 
+from core.attribdict import AttribDict
 from core.common import check_sudo
 from core.common import load_trails
 from core.enums import BLOCK_MARKER
@@ -73,11 +74,10 @@ from core.update import update_trails
 _buffer = None
 _caps = []
 _connect_sec = 0
-_connect_sec_lock = threading.Lock()
 _connect_src_dst = {}
 _connect_src_details = {}
 _count = 0
-_count_lock = threading.Lock()
+_locks = AttribDict()
 _multiprocessing = None
 _n = None
 _result_cache = {}
@@ -141,9 +141,14 @@ def _process_ip(ip_data, sec, usec):
             _result_cache.clear()
 
         if config.USE_HEURISTICS:
-            with _connect_sec_lock:
-                connect_sec = _connect_sec
-                _connect_sec = sec
+            if _locks.connect_sec:
+                _locks.connect_sec.acquire()
+
+            connect_sec = _connect_sec
+            _connect_sec = sec
+
+            if _locks.connect_sec:
+                _locks.connect_sec.release()
 
             if sec > connect_sec:
                 for key in _connect_src_dst:
@@ -561,11 +566,15 @@ def monitor():
         try:
             sec, usec = header.getts()
             if _multiprocessing:
-                with _count_lock:
-                    count = _count
-                    _count += 1
-                write_block(_buffer, count, struct.pack("=II", sec, usec) + data)
+                if _locks.count:
+                    _locks.count.acquire()
+
+                write_block(_buffer, _count, struct.pack("=II", sec, usec) + data)
+                _count += 1
                 _n.value = _count
+
+                if _locks.count:
+                    _locks.count.release()
             else:
                 _process_ip(data, sec, usec)
         except socket.timeout:
@@ -580,6 +589,11 @@ def monitor():
                     packet_handler(datalink, header, packet)
                 except (pcapy.PcapError, socket.timeout):
                     pass
+
+        if len(_caps) > 1
+            if _multiprocessing:
+                _locks.count = threading.Lock()
+            _locks.connect_sec = threading.Lock()
 
         for _cap in _caps:
             threading.Thread(target=_, args=(_cap,)).start()
