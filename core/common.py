@@ -26,6 +26,7 @@ from core.settings import TIMEOUT
 from core.settings import TRAILS_FILE
 from core.settings import WHITELIST
 from core.settings import WORST_ASNS
+from core.trailsdict import TrailsDict
 
 _ipcat_cursor = {}
 _ipcat_cache = {}
@@ -176,7 +177,7 @@ def load_trails(quiet=False):
     if not quiet:
         print "[i] loading trails file..."
 
-    retval = {}
+    retval = TrailsDict()
 
     if os.path.isfile(TRAILS_FILE):
         try:
