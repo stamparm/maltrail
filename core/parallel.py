@@ -89,6 +89,9 @@ def worker(buffer, n, offset, mod, process_packet):
                 if content is None:
                     break
 
+                if len(content) < 8:
+                    continue
+
                 sec, usec = struct.unpack("=II", content[:8])
                 packet = content[8:]
                 process_packet(packet, sec, usec)
