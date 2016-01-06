@@ -47,6 +47,7 @@ from core.settings import DLT_OFFSETS
 from core.settings import IGNORE_DNS_QUERY_SUFFIXES
 from core.settings import IPPROTO_LUT
 from core.settings import LOCALHOST_IP
+from core.settings import MMAP_ZFILL_CHUNK_LENGTH
 from core.settings import MAX_RESULT_CACHE_ENTRIES
 from core.settings import NAME
 from core.settings import NO_SUCH_NAME_COUNTERS
@@ -519,11 +520,17 @@ def _init_multiprocessing():
     global _n
 
     if _multiprocessing:
-        print("[i] creating %d more processes (%d CPU cores detected)" % (_multiprocessing.cpu_count() - 1, _multiprocessing.cpu_count()))
         try:
             _buffer = mmap.mmap(-1, config.CAPTURE_BUFFER)  # http://www.alexonlinux.com/direct-io-in-python
+
+            _ = "\x00" * MMAP_ZFILL_CHUNK_LENGTH
+            for i in xrange(config.CAPTURE_BUFFER / MMAP_ZFILL_CHUNK_LENGTH):
+                _buffer.write(_)
+            _buffer.seek(0)
         except:
             exit("[!] unable to allocate network capture buffer. Please adjust value of 'CAPTURE_BUFFER'")
+
+        print("[i] creating %d more processes (%d CPU cores detected)" % (_multiprocessing.cpu_count() - 1, _multiprocessing.cpu_count()))
         _n = _multiprocessing.Value('L', lock=False)
 
         for i in xrange(_multiprocessing.cpu_count() - 1):
