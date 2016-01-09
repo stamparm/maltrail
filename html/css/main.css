@@ -5,8 +5,8 @@ table.dataTable tr { background-color: #fff; border-color: #a8a8a8 }
 table.dataTable td { white-space: nowrap; border-color: #a8a8a8 }
 table.dataTable thead { color: #fff; border-color: #a8a8a8; text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.50), -1px 1px 0 rgba(0, 0, 0, 0.50), 1px 1px 0 rgba(0, 0, 0, 0.50), 1px -1px 0 rgba(0, 0, 0, 0.50); }
 table.dataTable thead .sorting { border-color: #a8a8a8; background: url("../images/thirdparty/sort_both.png") no-repeat scroll right center #333; }
-table.dataTable thead .sorting_asc { border-color: #a8a8a8; background: url("../images/thirdparty/sort_asc.png") no-repeat scroll right center #555; }
-table.dataTable thead .sorting_desc { border-color: #a8a8a8; background: url("../images/thirdparty/sort_desc.png") no-repeat scroll right center #555; }
+table.dataTable thead .sorting_asc { border-color: #a8a8a8; background: url("../images/thirdparty/sort_asc.png") no-repeat scroll right center #ccc; }
+table.dataTable thead .sorting_desc { border-color: #a8a8a8; background: url("../images/thirdparty/sort_desc.png") no-repeat scroll right center #ccc; }
 table.dataTable tr:nth-child(2n+1)  { background-color: #f8f8f8; border-color: #a8a8a8 }
 table.dataTable thead > tr > th { padding-left: 10px }
 table.dataTable { border-color: #a8a8a8 }
