@@ -41,7 +41,6 @@ var SUSPICIOUS_THREAT_INFIX = "suspicious";
 var HEURISTIC_THREAT_INFIX = "heuristic";
 var FLOOD_UID_SUFFIX = "F0";
 var DGA_UID_SUFFIX = "D0";
-var THREAT_PIC_HASH = null; // e.g. https://robohash.org/ or https://flathash.com/
 var DEFAULT_STATUS_BORDER = "1px solid #a8a8a8";
 var DEFAULT_FONT_FAMILY = "Verdana, Geneva, sans-serif";
 var LOG_COLUMNS = { TIME: 0, SENSOR: 1, SRC_IP: 2, SRC_PORT: 3, DST_IP: 4, DST_PORT: 5, PROTO: 6, TYPE: 7, TRAIL: 8, INFO: 9, REFERENCE: 10 };
@@ -57,6 +56,7 @@ var DOT_COLUMNS = [ LOG_COLUMNS.SENSOR, LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP
 var SPARKLINE_COLOR = "#ff0000";
 var NONCE_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 var NONCE_LENGTH = 12;
+var CHUNK_SIZE = 20 * 1024 * 1024;  // 20MB
 var CTRL_CLICK_PRESSED = false;
 var CTRL_DATES = [];
 var PREFERRED_TRAIL_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ffad33", UA: "#9900cc" };
@@ -85,7 +85,7 @@ $(document).ready(function() {
     initCalHeatmap();
     initDialogs();
 
-    Papa.RemoteChunkSize = 1024 * 1024 * 10; // 10 MB (per one chunk request)
+    Papa.RemoteChunkSize = CHUNK_SIZE; // 10 MB (per one chunk request)
 
     Chart.defaults.global.tooltipFontFamily = DEFAULT_FONT_FAMILY;
     Chart.defaults.global.tooltipTitleFontFamily = DEFAULT_FONT_FAMILY;
@@ -1478,13 +1478,6 @@ function initDetails() {
             }
 
             $('[title]', nRow).tooltip();
-
-            if (THREAT_PIC_HASH !== null) {
-                var cell = $('td:eq(' + (DATATABLES_COLUMNS.THREAT) + ')', nRow);
-                var div = cell.find("div");
-                div[0].title = "";
-                div.tooltip({ content: "<img src='" + THREAT_PIC_HASH + div[0].innerHTML + "?size=64x64' width='64' height='64'>", position: { my: "left center", at: "right+10 top" }});
-            }
 
             $.each([DATATABLES_COLUMNS.TRAIL], function(index, value) {
                 var cell = $('td:eq(' + value + ')', nRow);
