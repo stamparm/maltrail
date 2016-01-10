@@ -18,7 +18,7 @@ def fetch():
     content = retrieve_content(__url__)
 
     if __check__ in content:
-        for match in re.finditer(r"(?m)^([^,\s]+),Domain used by ([^,]+) (DGA|-)", content):
-            retval[match.group(1)] = ("%s dga (malware)" % re.sub(r" DGA\Z", "", match.group(2)).lower(), __reference__)
+        for match in re.finditer(r"(?m)^([^,\s]+),Domain used by ([^ ]+)", content):
+            retval[match.group(1)] = ("%s dga (malware)" % match.group(2).lower(), __reference__)
 
     return retval
