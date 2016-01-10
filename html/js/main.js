@@ -807,11 +807,7 @@ function init(url, from, to) {
                 $("#main_container").children().toggleClass("hidden", false);  // Reference: http://stackoverflow.com/a/4740050
                 $(".dynamicsparkline").parent().children().toggleClass("hidden", false);
 
-                try {
-                    $.sparkline_display_visible();
-                }
-                catch(err) {
-                }
+                $.sparkline_display_visible();
 
                 $("#chart_area").empty();
 
@@ -1272,7 +1268,7 @@ function initDetails() {
                     for (var i = 0; i < items.length; i++)
                         if (items[i] !== "0")
                             value += 1;
-                    return "<div class='sparkline' value='" + value + "'>" + data + "</div>";
+                    return "<div class='sparkline hidden' value='" + value + "'>" + data + "</div>";
                 },
                 targets: DATATABLES_COLUMNS.SPARKLINE
             },
@@ -1426,6 +1422,19 @@ function initDetails() {
         },
         fnDrawCallback: function( oSettings ) {
             $(".sparkline:contains(',')").sparkline('html', { type: 'bar', barWidth: 2, barColor: SPARKLINE_COLOR, disableInteraction: false, tooltipClassname: "sparkline-tooltip" }); //, chartRangeMin: 0, chartRangeMax: _MAX_SPARKLINE_PER_HOUR });
+
+            try {
+                var sparklines = $(".sparkline");
+                (function drawSparklines() {
+                        var hidden = sparklines.filter(".hidden");
+                        hidden.filter(':lt(10)').removeClass("hidden");
+                        $.sparkline_display_visible();
+                        hidden.length && setTimeout(drawSparklines, 100);
+                    }
+                )();
+            }
+            catch(err) {
+            }
         },
         fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
             function nslookup(event, ui) {
