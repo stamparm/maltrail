@@ -4,12 +4,6 @@
 localhost
 127.0.0.1
 
-# triggering "excessive no such domain name"
-
-teredo.ipv6.microsoft.com
-surbl.org
-spamhaus.org
-
 # Note: second level domains should be used in following sections as those are being checked for whitelist-ing in respective heuristic checks
 
 # triggering suspicious long (sub)domain names (note: this is not whitelist-ing all related (e.g. URL) trails)
@@ -169,44 +163,82 @@ hpe.com
 
 # DNSBL
 
-abuseat.org
 abuse.ch
+abuseat.org
+ahbl.org
 anticaptcha.net
+apews.org
 aupads.org
 backscatterer.org
 barracudacentral.org
 bit.nl
+blocklist.de
+blogspambl.com
+burnt-tech.com
+choon.net
 cyberlogic.net
 cymru.com
 digibase.ca
+dns-servicios.com
 dronebl.org
+efnetrbl.org
 emailbasura.org
 fabel.dk
+fast.net
 five-ten-sg.com
+fusionzero.com
+gbudb.net
+gremlin.ru
 gweep.ca
+iip.lu
 imp.ch
 inps.de
 interserver.net
+jippg.org
+justspam.org
+kempt.net
 kundenserver.de
 lashback.com
+leadmon.net
 mailblacklist.com
+mailspike.org
 manitu.net
+mcafee.com
+me.uk
 megarbl.net
 nether.net
+njabl.org
+orbitrbl.com
 org.cn
+pedantic.org
+polarcomm.net
 pte.hu
 rbl.jp
+redhawk.org
 rothen.com
+rv-soft.info
 s5h.net
 sectoor.de
+senderscore.com
 services.net
+solid.net
 sorbs.net
 spamcannibal.org
 spamcop.net
+spameatingmonkey.net
+spamgrouper.com
 spamhaus.org
 spamrats.com
+surbl.org
 surriel.com
+swinog.ch
+technovision.dk
+tornevall.org
+trblspam.com
+triumf.ca
 uceprotect.net
 unsubscore.com
+v4bl.org
+webequipped.com
 woody.ch
 wpbl.info
