@@ -13,6 +13,7 @@ sys.dont_write_bytecode = True
 
 import core.versioncheck
 
+import math
 import mmap
 import optparse
 import os
@@ -57,6 +58,8 @@ from core.settings import read_config
 from core.settings import REGULAR_SENSOR_SLEEP_TIME
 from core.settings import SNAP_LEN
 from core.settings import SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS
+from core.settings import SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD
+from core.settings import SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD
 from core.settings import SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
 from core.settings import SUSPICIOUS_FILENAMES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEX
@@ -396,6 +399,20 @@ def _process_ip(ip_data, sec, usec):
                                             except KeyError:
                                                 pass
 
+                                            break
+
+                                # Reference: https://github.com/exp0se/dga_detector
+                                for part in query.split('.'):
+                                    if part:
+                                        consonants = re.findall("(?i)[bcdfghjklmnpqrstvwxyz]", part)
+                                        if len(consonants) > SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD:
+                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, query, "high consonant no such domain name (suspicious)", "(heuristic)"))
+                                            break
+
+                                        probabilities = (float(part.count(c)) / len(part) for c in set(_ for _ in part))
+                                        entropy = -sum(p * math.log(p) / math.log(2.0) for p in probabilities)
+                                        if entropy > SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD:
+                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, query, "high entropy no such domain name (suspicious)", "(heuristic)"))
                                             break
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
