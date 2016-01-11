@@ -486,7 +486,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 self.wfile.write(data)
 
             else:
-                self.send_response(httplib.NO_CONTENT)
+                self.send_response(httplib.OK)  # instead of httplib.NO_CONTENT (compatibility reasons)
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
                 if self.headers.get(HTTP_HEADER.RANGE):
                     self.send_header(HTTP_HEADER.CONTENT_RANGE, "bytes 0-0/0")
