@@ -66,6 +66,7 @@ from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
 from core.settings import VERSION
 from core.settings import WHITELIST
+from core.settings import WHITELIST_DIRECT_DOWNLOAD_KEYWORDS
 from core.settings import WHITELIST_LONG_DOMAIN_NAME_KEYWORDS
 from core.settings import WHITELIST_HTTP_REQUEST_KEYWORDS
 from core.settings import WHITELIST_UA_KEYWORDS
@@ -322,7 +323,7 @@ def _process_ip(ip_data, sec, usec):
                             _ = urlparse.urlparse("http://%s" % url)  # dummy scheme
                             filename = _.path.split('/')[-1]
                             name, extension = os.path.splitext(filename)
-                            if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and '.'.join(host.split('.')[-2:]) not in WHITELIST and not _.query and len(name) < 10:
+                            if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and not any(_ in path for _ in WHITELIST_DIRECT_DOWNLOAD_KEYWORDS) and '.'.join(host.split('.')[-2:]) not in WHITELIST and not _.query and len(name) < 10:
                                 trail = "%s(%s)" % (host, path)
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "direct %s download (suspicious)" % extension, "(heuristic)"))
                             elif filename in SUSPICIOUS_FILENAMES:
