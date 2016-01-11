@@ -376,12 +376,31 @@ rect.highlight {
     padding: 6px 10px;
     line-height: 1.1em;
 }
-/*::-moz-selection {
-    background: yellow;
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+    background-color: #ccc;
+    border-color: #a8a8a8;
+    color: #fff;
+    cursor: default;
+    font-weight: 700;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5);
 }
-::selection {
-    background: yellow;
-}*/
+.pagination > li > a, .pagination > li > span {
+    color: black;
+    line-height: 1em;
+}
+.pagination > li > a, .pagination > li > span {
+    color: black;
+    line-height: 1em;
+}
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+    color: black;
+}
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+    font-weight: 700;
+}
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+    font-weight: 700;
+}
 .time-day, .duplicates, .ipcat {
     background-color: #eee;
     border-radius: 20px;
