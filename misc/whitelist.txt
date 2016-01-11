@@ -4,7 +4,7 @@
 localhost
 127.0.0.1
 
-# Note: second level domains should be used in following sections as those are being checked for whitelist-ing in respective heuristic checks
+# (note: second level domains should be used in following sections as those are being checked for whitelist-ing in respective heuristic checks)
 
 # triggering suspicious long (sub)domain names (note: this is not whitelist-ing all related (e.g. URL) trails)
 
@@ -161,7 +161,7 @@ creativecommons.org
 arstechnica.co.uk
 hpe.com
 
-# DNSBL
+# DNSBL/RBL
 
 abuse.ch
 abuseat.org
