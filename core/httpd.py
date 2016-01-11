@@ -35,6 +35,7 @@ from core.common import ipcat_lookup
 from core.common import worst_asns
 from core.enums import HTTP_HEADER
 from core.settings import config
+from core.settings import CONTENT_EXTENSIONS_EXCLUSIONS
 from core.settings import DATE_FORMAT
 from core.settings import DISABLED_CONTENT_EXTENSIONS
 from core.settings import DISPOSED_NONCES
@@ -134,7 +135,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 if not os.path.isfile(path) and os.path.isfile("%s.html" % path):
                     path = "%s.html" % path
 
-                if ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and extension not in DISABLED_CONTENT_EXTENSIONS:
+                if ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and (extension not in DISABLED_CONTENT_EXTENSIONS or os.path.split(path)[-1] in CONTENT_EXTENSIONS_EXCLUSIONS):
                     mtime = time.gmtime(os.path.getmtime(path))
                     if_modified_since = self.headers.get(HTTP_HEADER.IF_MODIFIED_SINCE)
 
