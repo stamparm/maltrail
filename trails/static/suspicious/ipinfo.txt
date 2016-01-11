@@ -53,3 +53,4 @@ meuip.net.br
 geoip.vmn.net
 icanhazip.com
 curlmyip.com
+l2.io
