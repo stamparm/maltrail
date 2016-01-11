@@ -4,20 +4,41 @@ td, th { padding: 2px 4px }
 table.dataTable tr { background-color: #fff; border-color: #a8a8a8 }
 table.dataTable td { white-space: nowrap; border-color: #a8a8a8 }
 table.dataTable thead { color: #fff; border-color: #a8a8a8; text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.50), -1px 1px 0 rgba(0, 0, 0, 0.50), 1px 1px 0 rgba(0, 0, 0, 0.50), 1px -1px 0 rgba(0, 0, 0, 0.50); }
-table.dataTable thead .sorting { border-color: #a8a8a8; background: url("../images/thirdparty/sort_both.png") no-repeat scroll right center #333; }
-table.dataTable thead .sorting_asc { border-color: #a8a8a8; background: url("../images/thirdparty/sort_asc.png") no-repeat scroll right center #ccc; }
-table.dataTable thead .sorting_desc { border-color: #a8a8a8; background: url("../images/thirdparty/sort_desc.png") no-repeat scroll right center #ccc; }
+table.dataTable thead .sorting { border-color: #a8a8a8; background: url("../images/thirdparty/sort_both.png") no-repeat scroll right center #333 }
+table.dataTable thead .sorting_asc { border-color: #a8a8a8; background: url("../images/thirdparty/sort_asc.png") no-repeat scroll right center #777 }
+table.dataTable thead .sorting_desc { border-color: #a8a8a8; background: url("../images/thirdparty/sort_desc.png") no-repeat scroll right center #777 }
 table.dataTable tr:nth-child(2n+1)  { background-color: #f8f8f8; border-color: #a8a8a8 }
 table.dataTable thead > tr > th { padding-left: 10px }
 table.dataTable { border-color: #a8a8a8 }
 table.dataTable .highlighted { background-color: #abb9d3 !important }
 .details_total { font-size: 120%; font-weight: bold }
-.label-type, .tag { background-color: #777777; font-weight: bold; text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25), -1px 1px 0 rgba(0, 0, 0, 0.25), 1px 1px 0 rgba(0, 0, 0, 0.25), 1px -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; border-radius: 3px; padding: 1px 2px; cursor: pointer; cursor: hand; border: 1px solid #000000; }
-.label-type { font-size: 80%; }
-.label-url { background-color: #ff9900 }
-.label-ip { background-color: #dc3912 }
-.label-dns { background-color: #3366cc }
-.tag { margin-right: 2px; font-size: 80% }
+.label-type, .tag {
+    background-color: #777777;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25), -1px 1px 0 rgba(0, 0, 0, 0.25), 1px 1px 0 rgba(0, 0, 0, 0.25), 1px -1px 0 rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 1px 2px;
+    cursor: pointer;
+    cursor: hand;
+    border: 1px solid #000000;
+}
+.label-type {
+    font-size: 80%;
+}
+.label-url {
+    background-color: #ff9900;
+}
+.label-ip {
+    background-color: #dc3912;
+}
+.label-dns {
+    background-color: #3366cc;
+}
+.tag {
+    margin-right: 2px;
+    font-size: 80%;
+}
 .white-label-text {
     text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25), -1px 1px 0 rgba(0, 0, 0, 0.25), 1px 1px 0 rgba(0, 0, 0, 0.25), 1px -1px 0 rgba(0, 0, 0, 0.25);
     color: white;
@@ -377,7 +398,7 @@ rect.highlight {
     line-height: 1.1em;
 }
 .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
-    background-color: #ccc;
+    background-color: #777;
     border-color: #a8a8a8;
     color: #fff;
     cursor: default;
@@ -388,18 +409,8 @@ rect.highlight {
     color: black;
     line-height: 1em;
 }
-.pagination > li > a, .pagination > li > span {
-    color: black;
-    line-height: 1em;
-}
 .pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
     color: black;
-}
-.pagination > li:first-child > a, .pagination > li:first-child > span {
-    font-weight: 700;
-}
-.pagination > li:last-child > a, .pagination > li:last-child > span {
-    font-weight: 700;
 }
 .time-day, .duplicates, .ipcat {
     background-color: #eee;
