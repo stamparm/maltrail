@@ -82,6 +82,10 @@ window.onkeyup = function(event) {
 $(document).ready(function() {
     $("#noscript").remove();
 
+    // Reference: http://tosbourn.com/a-fix-for-window-location-origin-in-internet-explorer/
+    if (!window.location.origin)
+        window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+
     initCalHeatmap();
     initDialogs();
 
@@ -95,10 +99,6 @@ $(document).ready(function() {
 
     $("#header_container").sticky({ topSpacing: 0 });
     $("#graph_close").css("left", CHART_WIDTH / 2 - 11)
-
-    // Reference: http://tosbourn.com/a-fix-for-window-location-origin-in-internet-explorer/
-    if (!window.location.origin)
-        window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
 
     init(location.origin + "/events?date=" + formatDate(new Date()), new Date());
 });
@@ -188,7 +188,7 @@ function checkAuthentication() {
                     window.location.href = "logout";
                 });
             }
-            else if (document.location.origin.startsWith('http')) {
+            else if (window.location.origin.startsWith('http')) {
                 _USER = "";
                 document.title = "Maltrail (unauthorized)";
                 setTimeout(function() {
@@ -239,7 +239,7 @@ function initCalHeatmap() {
             label: {
                     position: "bottom"
             },
-            data: location.origin + "/counts?from={{d:start}}&to={{d:end}}",
+            data: window.location.origin + "/counts?from={{d:start}}&to={{d:end}}",
             highlight: [ "now" ],
             subDomainTitleFormat: {
                 empty: "No events on {date}",
@@ -421,7 +421,7 @@ function init(url, from, to) {
     for (var severity in SEVERITY)
         _SEVERITY_COUNT[SEVERITY[severity]] = 0;
 
-    if (!(document.location.origin.startsWith('http'))) {
+    if (!(window.location.origin.startsWith('http'))) {
         demo = true;
 
         $(".bottom").html($(".bottom").html().replace(/ \(.+\)/, ""));
