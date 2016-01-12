@@ -205,8 +205,9 @@ def _process_ip(ip_data, sec, usec):
                     else:
                         index = tcp_data.find("<title>")
                         if index >= 0:
-                            if tcp_data.find("<title>This domain name has been seized", index):
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, "seized domain (suspicious)", "(heuristic)"))
+                            title = tcp_data[index + len("<title>"):tcp_data.find("</title>", index)]
+                            if all(_ in title.lower() for _ in ("this domain", "has been seized")):
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, title, "seized domain (suspicious)", "(heuristic)"))
 
                 method, path = None, None
                 index = tcp_data.find("\n")
