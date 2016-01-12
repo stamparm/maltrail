@@ -200,7 +200,7 @@ def _process_ip(ip_data, sec, usec):
                 tcp_data = ip_data[h_size:]
 
                 if src_port == 80 and tcp_data.startswith("HTTP/"):
-                    if any(_ in tcp_data[:tcp_data.find("\r\n\r\n")] for _ in ("X-Sinkhole:", "Server: Apache 1.0/SinkSoft")):
+                    if any(_ in tcp_data[:tcp_data.find("\r\n\r\n")] for _ in ("X-Sinkhole:", "Server: Apache 1.0/SinkSoft")) or "\r\n\r\nsinkhole" in tcp_data:
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, "sinkhole response (malware)", "(heuristic)"))
                     else:
                         index = tcp_data.find("<title>")
