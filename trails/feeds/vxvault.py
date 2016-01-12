@@ -9,10 +9,10 @@ import re
 
 from core.common import retrieve_content
 
-__url__ = "http://vxvault.siri-urz.net/URL_List.php"
+__url__ = "http://vxvault.net/URL_List.php"
 __check__ = "VX Vault"
 __info__ = "malware"
-__reference__ = "siri-urz.net"
+__reference__ = "vxvault.net"
 
 def fetch():
     retval = {}
