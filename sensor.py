@@ -227,8 +227,8 @@ def _process_ip(ip_data, sec, usec):
                         host = tcp_data[index:tcp_data.find("\r\n", index)]
                         host = host.strip()
                         host = re.sub(r":80\Z", "", host)
-                        if dst_ip in trails and not (host[-1].isdigit() and ':' not in host):
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]))
+                        if not host.split(':')[0][-1].isdigit() and dst_ip in trails:
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, "%s (%s)" % (dst_ip, host.split(':')[0]), trails[dst_ip][0], trails[dst_ip][1]))
                     elif config.USE_HEURISTICS and config.CHECK_MISSING_HOST:
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing host header)", "(heuristic)"))
 
