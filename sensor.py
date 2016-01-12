@@ -194,13 +194,19 @@ def _process_ip(ip_data, sec, usec):
                         _connect_src_dst[key].add(dst_port)
                         _connect_src_details[key].add((sec, usec, src_port, dst_port))
 
-            if flags & 8 != 0:  # PSH set
+            else:
                 tcph_length = doff_reserved >> 4
                 h_size = iph_length + (tcph_length << 2)
                 tcp_data = ip_data[h_size:]
 
-                if src_port == 80 and tcp_data.startswith("HTTP/") and any(_ in tcp_data[:tcp_data.find("\r\n\r\n")] for _ in ("X-Sinkhole:", "Server: Apache 1.0/SinkSoft")):
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, "sinkhole response (malware)", "(heuristic)"))
+                if src_port == 80 and tcp_data.startswith("HTTP/"):
+                    if any(_ in tcp_data[:tcp_data.find("\r\n\r\n")] for _ in ("X-Sinkhole:", "Server: Apache 1.0/SinkSoft")):
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, "sinkhole response (malware)", "(heuristic)"))
+                    else:
+                        index = tcp_data.find("<title>")
+                        if index >= 0:
+                            if tcp_data.find("<title>This domain name has been seized", index):
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, "seized domain (suspicious)", "(heuristic)"))
 
                 method, path = None, None
                 index = tcp_data.find("\n")
