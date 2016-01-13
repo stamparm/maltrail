@@ -129,7 +129,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto):
                 trail = query
 
             if trail and not any(_ in trail for _ in WHITELIST_LONG_DOMAIN_NAME_KEYWORDS):
-                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, "long domain name (suspicious)", "(heuristic)"))
+                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, "long domain (suspicious)", "(heuristic)"))
 
         elif "sinkhole" in query:
             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, query, "potential sinkhole domain (suspicious)", "(heuristic)"))
@@ -394,14 +394,14 @@ def _process_ip(ip_data, sec, usec):
 
                                             if NO_SUCH_NAME_COUNTERS[_][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD and _ not in WHITELIST and '.'.join(_.split('.')[-2:]) not in WHITELIST:
                                                 if _.startswith("*."):
-                                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, "%s%s" % ("(%s)" % ','.join(item.replace(_[1:], "") for item in NO_SUCH_NAME_COUNTERS[_][2]), _[1:]), "excessive no such domain name (suspicious)", "(heuristic)"))
+                                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, "%s%s" % ("(%s)" % ','.join(item.replace(_[1:], "") for item in NO_SUCH_NAME_COUNTERS[_][2]), _[1:]), "excessive no such domain (suspicious)", "(heuristic)"))
                                                     for item in NO_SUCH_NAME_COUNTERS[_][2]:
                                                         try:
                                                             del NO_SUCH_NAME_COUNTERS[item]
                                                         except KeyError:
                                                             pass
                                                 else:
-                                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, _, "excessive no such domain name (suspicious)", "(heuristic)"))
+                                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, _, "excessive no such domain (suspicious)", "(heuristic)"))
 
                                                 try:
                                                     del NO_SUCH_NAME_COUNTERS[_]
@@ -415,13 +415,13 @@ def _process_ip(ip_data, sec, usec):
                                         if part:
                                             consonants = re.findall("(?i)[bcdfghjklmnpqrstvwxyz]", part)
                                             if len(consonants) > SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD:
-                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, query, "high consonant no such domain name (suspicious)", "(heuristic)"))
+                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, query, "consonant threshold no such domain (suspicious)", "(heuristic)"))
                                                 break
 
                                             probabilities = (float(part.count(c)) / len(part) for c in set(_ for _ in part))
                                             entropy = -sum(p * math.log(p) / math.log(2.0) for p in probabilities)
                                             if entropy > SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD:
-                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, query, "high entropy no such domain name (suspicious)", "(heuristic)"))
+                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, query, "entropy threshold no such domain (suspicious)", "(heuristic)"))
                                                 break
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
