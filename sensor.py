@@ -504,7 +504,7 @@ def init():
         exit("[!] invalid configuration value for 'LOG_SERVER' ('%s')" % config.LOG_SERVER)
 
     if config.CAPTURE_FILTER:
-        print("[i] setting filter '%s'" % config.CAPTURE_FILTER)
+        print("[i] setting capture filter '%s'" % config.CAPTURE_FILTER)
         for _cap in _caps:
             _cap.setfilter(config.CAPTURE_FILTER)
 
