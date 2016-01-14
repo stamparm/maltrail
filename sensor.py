@@ -658,8 +658,9 @@ def main():
     print("%s (sensor) #v%s\n" % (NAME, VERSION))
 
     parser = optparse.OptionParser(version=VERSION)
-    parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="Configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
-    parser.add_option("-p", dest="pcap_file", help="Open pcap file for offline analysis")
+    parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
+    parser.add_option("-p", dest="pcap_file", help="open pcap file for offline analysis")
+    parser.add_option("--console", dest="console", action="store_true", help="print events to console (too)")
     options, _ = parser.parse_args()
 
     if not check_sudo():
@@ -674,6 +675,8 @@ def main():
             print("[i] using pcap file '%s'" % options.pcap_file)
 
         config.pcap_file = options.pcap_file
+
+    config.console = options.console
 
     try:
         init()

@@ -37,7 +37,7 @@ def main():
     print("%s (server) #v%s\n" % (NAME, VERSION))
 
     parser = optparse.OptionParser(version=VERSION)
-    parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="Configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
+    parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
     options, _ = parser.parse_args()
 
     read_config(options.config_file)
