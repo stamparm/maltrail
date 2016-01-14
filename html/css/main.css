@@ -1,6 +1,13 @@
-body { font: 11px Verdana, Geneva, sans-serif; background-color: #fcfcfc }
-table { font: 11px Verdana, Geneva, sans-serif }
-td, th { padding: 2px 4px }
+body {
+    font: 11px Verdana, Geneva, sans-serif;
+    background-color: #fcfcfc;
+}
+table {
+    font: 11px Verdana, Geneva, sans-serif;
+}
+td, th {
+    padding: 2px 4px;
+}
 table.dataTable tr { background-color: #fff; border-color: #a8a8a8 }
 table.dataTable td { white-space: nowrap; border-color: #a8a8a8 }
 table.dataTable thead { color: #fff; border-color: #a8a8a8; text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.50), -1px 1px 0 rgba(0, 0, 0, 0.50), 1px 1px 0 rgba(0, 0, 0, 0.50), 1px -1px 0 rgba(0, 0, 0, 0.50); }
@@ -50,6 +57,7 @@ table.dataTable .highlighted { background-color: #abb9d3 !important }
 .container {
     margin: 0px;
     width: 99%;
+    background-color: #fcfcfc;
 }
 .container > div > ul { margin: 0px }
 /*.chart-table { width: 100%; margin-top: 10px; margin-bottom: 10px }*/
@@ -447,8 +455,16 @@ rect.highlight {
     z-index: -1;
     cursor: default;
 }
-#table-hosts, #table-hosts th, #table-hosts td {
+#bottom_blank {
+    position: relative;
+    padding: 10px;
+    z-index: -2;
+}
+#table_hosts, #table_hosts th, #table_hosts td {
     border: 1px solid #a8a8a8;
+}
+#table_hosts th {
+    color: white;
 }
 #chart_area {
     background-color: #fcfcfc;

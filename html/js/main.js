@@ -1351,8 +1351,8 @@ function initDetails() {
                             sButtonText: "Edit hosts",
                             fnClick: function ( nButton, oConfig, oFlash ) {
                                 function _initHosts() {
-                                    $('#table-hosts').editableTableWidget();
-                                    $('#table-hosts td').on('change', function(event, newValue) {
+                                    $('#table_hosts').editableTableWidget();
+                                    $('#table_hosts td').on('change', function(event, newValue) {
                                         if (event.target.cellIndex === 0)
                                             return (newValue.match(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/) !== null);
                                         else if (event.target.cellIndex === 1)
@@ -1360,7 +1360,7 @@ function initDetails() {
                                     });
                                 };
                                 $('<div id="dialog-hosts" title="Hosts"></div>').appendTo('body')
-                                .html('<table id="table-hosts" class="dataTable"><thead><tr class="ui-widget-header"><th>IP</th><th>Hostname</th></tr></thead><tbody><tr><td>127.0.0.1</td><td>localhost</td></tr></tbody></table>')
+                                .html('<table id="table_hosts" class="dataTable"><thead><tr class="ui-widget-header"><th>IP</th><th>Hostname</th></tr></thead><tbody><tr><td>127.0.0.1</td><td>localhost</td></tr></tbody></table>')
                                 .dialog({
                                     resizable: false,
                                     width: "auto",
@@ -1372,16 +1372,16 @@ function initDetails() {
                                             $('#dialog-hosts').remove();
                                         },
                                         Add: function() {
-                                            $('#table-hosts tr:last').after('<tr class="host"><td>&nbsp;</td><td>&nbsp;</td></tr>');
+                                            $('#table_hosts tr:last').after('<tr class="host"><td>&nbsp;</td><td>&nbsp;</td></tr>');
                                             _initHosts();
-                                            $("#table-hosts tr:last td:first").focus().click();
+                                            $("#table_hosts tr:last td:first").focus().click();
                                         }
                                     },
                                     open: function(event, ui) {
                                         _initHosts();
                                     },
                                     close: function(event, ui) {
-                                        //$('#table-hosts .host')
+                                        //$('#table_hosts .host')
                                         $(this).dialog('destroy').remove();
                                     }
                                 });
