@@ -71,8 +71,8 @@ def log_event(event_tuple):
                 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
                 s.sendto("%s %s" % (sec, event), (remote_host, int(remote_port)))
             if config.DISABLE_LOCAL_LOG_STORAGE and not config.LOG_SERVER or config.console:
-                sys.stdout.write(event)
-                sys.stdout.flush()
+                sys.stderr.write(event)
+                sys.stderr.flush()
     except (OSError, IOError):
         if config.SHOW_DEBUG:
             traceback.print_exc()

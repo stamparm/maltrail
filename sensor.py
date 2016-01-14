@@ -668,15 +668,15 @@ def main():
 
     read_config(options.config_file)
 
+    for option in dir(options):
+        if isinstance(getattr(options, option), (basestring, bool)) and not option.startswith('_'):
+            config[option] = getattr(options, option)
+
     if options.pcap_file:
         if not os.path.isfile(options.pcap_file):
             exit("[!] missing pcap file '%s'" % options.pcap_file)
         else:
             print("[i] using pcap file '%s'" % options.pcap_file)
-
-        config.pcap_file = options.pcap_file
-
-    config.console = options.console
 
     try:
         init()
