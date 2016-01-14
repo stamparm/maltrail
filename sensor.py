@@ -475,30 +475,33 @@ def init():
     if check_sudo() is False:
         exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
 
-    interfaces = set(_.strip() for _ in config.MONITOR_INTERFACE.split(','))
+    if config.pcap_file:
+        _caps.append(pcapy.open_offline(config.pcap_file))
+    else:
+        interfaces = set(_.strip() for _ in config.MONITOR_INTERFACE.split(','))
 
-    if (config.MONITOR_INTERFACE or "").lower() == "any":
-        if subprocess.mswindows or "any" not in pcapy.findalldevs():
-            print("[x] virtual interface 'any' missing. Replacing it with all interface names")
-            interfaces = pcapy.findalldevs()
-        else:
-            print("[?] in case of any problems with packet capture on virtual interface 'any', please put all monitoring interfaces to promiscuous mode manually (e.g. 'sudo ifconfig eth0 promisc')")
-
-    for interface in interfaces:
-        if interface.lower() != "any" and interface not in pcapy.findalldevs():
-            hint = "[?] available interfaces: '%s'" % ",".join(pcapy.findalldevs())
-            exit("[!] interface '%s' not found\n%s" % (interface, hint))
-
-        print("[i] opening interface '%s'" % interface)
-        try:
-            _caps.append(pcapy.open_live(interface, SNAP_LEN, True, CAPTURE_TIMEOUT))
-        except (socket.error, pcapy.PcapError):
-            if "permitted" in str(sys.exc_info()[1]):
-                exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
-            elif "No such device" in str(sys.exc_info()[1]):
-                exit("[!] no such device '%s'" % interface)
+        if (config.MONITOR_INTERFACE or "").lower() == "any":
+            if subprocess.mswindows or "any" not in pcapy.findalldevs():
+                print("[x] virtual interface 'any' missing. Replacing it with all interface names")
+                interfaces = pcapy.findalldevs()
             else:
-                raise
+                print("[?] in case of any problems with packet capture on virtual interface 'any', please put all monitoring interfaces to promiscuous mode manually (e.g. 'sudo ifconfig eth0 promisc')")
+
+        for interface in interfaces:
+            if interface.lower() != "any" and interface not in pcapy.findalldevs():
+                hint = "[?] available interfaces: '%s'" % ",".join(pcapy.findalldevs())
+                exit("[!] interface '%s' not found\n%s" % (interface, hint))
+
+            print("[i] opening interface '%s'" % interface)
+            try:
+                _caps.append(pcapy.open_live(interface, SNAP_LEN, True, CAPTURE_TIMEOUT))
+            except (socket.error, pcapy.PcapError):
+                if "permitted" in str(sys.exc_info()[1]):
+                    exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
+                elif "No such device" in str(sys.exc_info()[1]):
+                    exit("[!] no such device '%s'" % interface)
+                else:
+                    raise
 
     if config.LOG_SERVER and not len(config.LOG_SERVER.split(':')) == 2:
         exit("[!] invalid configuration value for 'LOG_SERVER' ('%s')" % config.LOG_SERVER)
@@ -617,6 +620,9 @@ def monitor():
             while True:
                 try:
                     (header, packet) = _cap.next()
+                    if header is None:
+                        _caps.remove(_cap)
+                        break
                     packet_handler(datalink, header, packet)
                 except (pcapy.PcapError, socket.timeout):
                     pass
@@ -629,8 +635,10 @@ def monitor():
         for _cap in _caps:
             threading.Thread(target=_, args=(_cap,)).start()
 
-        while threading.activeCount() > 1:
+        while _caps:
             time.sleep(1)
+
+        print("[x] finished")
     except SystemError, ex:
         if "error return without" in str(ex):
             print("\r[x] Ctrl-C pressed")
@@ -651,12 +659,21 @@ def main():
 
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="Configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
+    parser.add_option("-p", dest="pcap_file", help="Open pcap file for offline analysis")
     options, _ = parser.parse_args()
 
     if not check_sudo():
         exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
 
     read_config(options.config_file)
+
+    if options.pcap_file:
+        if not os.path.isfile(options.pcap_file):
+            exit("[!] missing pcap file '%s'" % options.pcap_file)
+        else:
+            print("[i] using pcap file '%s'" % options.pcap_file)
+
+        config.pcap_file = options.pcap_file
 
     try:
         init()
