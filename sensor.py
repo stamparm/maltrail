@@ -278,12 +278,6 @@ def _process_ip(ip_data, sec, usec):
                             if result:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, result, "suspicious user agent", "(heuristic)"))
 
-                        if not result and config.CHECK_SHORT_OR_MISSING_USER_AGENT:
-                            if user_agent is None:
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, url, "suspicious http request (missing user agent header)", "(heuristic)"))
-                            elif len(user_agent) < SUSPICIOUS_UA_LENGTH_THRESHOLD:
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, user_agent, "suspicious user agent (too short)", "(heuristic)"))
-
                     checks = [path.rstrip('/')]
                     if '?' in path:
                         checks.append(path.split('?')[0].rstrip('/'))
