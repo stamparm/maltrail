@@ -514,3 +514,8 @@ rect.highlight {
     padding: 0 10px;
     width: 40%;
 }
+input[type=search] {
+    background: url("../images/search.png") no-repeat scroll 98% 50%;
+    background-color: white;
+    padding-right: 16px;
+}
