@@ -181,11 +181,17 @@ def _process_packet(packet, sec, usec, ip_offset):
         if protocol == socket.IPPROTO_TCP:  # TCP
             src_port, dst_port, _, _, doff_reserved, flags = struct.unpack("!HHLLBB", ip_data[iph_length:iph_length+14])
 
+            if flags != 2 and config.plugin_functions:
+                if dst_ip in trails:
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]), packet, skip_write=True)
+                elif src_ip in trails and dst_ip != LOCALHOST_IP:
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet, skip_write=True)
+
             if flags == 2:  # SYN set (only)
                 if dst_ip in trails:
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]), packet)
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]), packet, skip_write=True)
                 elif src_ip in trails and dst_ip != LOCALHOST_IP:
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet)
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet, skip_write=True)
 
                 if config.USE_HEURISTICS:
                     if dst_ip != LOCALHOST_IP:
@@ -343,11 +349,11 @@ def _process_packet(packet, sec, usec, ip_offset):
 
             src_port, dst_port = struct.unpack("!HH", _)
 
-            if src_port != 53:
+            if src_port != 53 or config.plugin_functions:
                 if dst_ip in trails:
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]), packet)
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]), packet, skip_write=bool(config.plugin_functions))
                 elif src_ip in trails:
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet)
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet, skip_write=bool(config.plugin_functions))
 
             if dst_port == 53 or src_port == 53:
                 dns_data = ip_data[iph_length + 8:]

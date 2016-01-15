@@ -57,22 +57,23 @@ def safe_value(value):
         retval = "\"%s\"" % retval.replace('"', '""')
     return retval
 
-def log_event(event_tuple, packet=None):
+def log_event(event_tuple, packet=None, skip_write=False):
     try:
         sec, usec, src_ip, dst_ip = event_tuple[0], event_tuple[1], event_tuple[2], event_tuple[4]
         if not any(_ in WHITELIST for _ in (src_ip, dst_ip)):
-            localtime = "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)
-            event = "%s %s %s\n" % (safe_value(localtime), safe_value(config.SENSOR_NAME), " ".join(safe_value(_) for _ in event_tuple[2:]))
-            if not config.DISABLE_LOCAL_LOG_STORAGE:
-                handle = get_event_log_handle(sec)
-                os.write(handle, event)
-            if config.LOG_SERVER:
-                remote_host, remote_port = config.LOG_SERVER.split(':')
-                s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                s.sendto("%s %s" % (sec, event), (remote_host, int(remote_port)))
-            if config.DISABLE_LOCAL_LOG_STORAGE and not config.LOG_SERVER or config.console:
-                sys.stderr.write(event)
-                sys.stderr.flush()
+            if not skip_write:
+                localtime = "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)
+                event = "%s %s %s\n" % (safe_value(localtime), safe_value(config.SENSOR_NAME), " ".join(safe_value(_) for _ in event_tuple[2:]))
+                if not config.DISABLE_LOCAL_LOG_STORAGE:
+                    handle = get_event_log_handle(sec)
+                    os.write(handle, event)
+                if config.LOG_SERVER:
+                    remote_host, remote_port = config.LOG_SERVER.split(':')
+                    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                    s.sendto("%s %s" % (sec, event), (remote_host, int(remote_port)))
+                if config.DISABLE_LOCAL_LOG_STORAGE and not config.LOG_SERVER or config.console:
+                    sys.stderr.write(event)
+                    sys.stderr.flush()
             if config.plugin_functions:
                 for _ in config.plugin_functions:
                     _(event_tuple, packet)
