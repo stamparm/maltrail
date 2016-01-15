@@ -122,6 +122,7 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
 .header {
     background: rgba(0, 0, 0, 0.7);
     background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.50), -1px 1px 0 rgba(0, 0, 0, 0.50), 1px 1px 0 rgba(0, 0, 0, 0.50), 1px -1px 0 rgba(0, 0, 0, 0.50);
     width: 100%;
     z-index: 10;
     display: table;
@@ -152,7 +153,7 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     display: inline-block;
 }
 .header-period {
-    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    color: white;
     font-size: 110%;
 }
 .dotted {
