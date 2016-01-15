@@ -89,12 +89,12 @@ def worker(buffer, n, offset, mod, process_packet):
                 if content is None:
                     break
 
-                if len(content) < 8:
+                if len(content) < 12:
                     continue
 
-                sec, usec = struct.unpack("=II", content[:8])
-                packet = content[8:]
-                process_packet(packet, sec, usec)
+                sec, usec, ip_offset = struct.unpack("=III", content[:12])
+                packet = content[12:]
+                process_packet(packet, sec, usec, ip_offset)
 
             count += 1
 

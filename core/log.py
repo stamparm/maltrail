@@ -57,7 +57,7 @@ def safe_value(value):
         retval = "\"%s\"" % retval.replace('"', '""')
     return retval
 
-def log_event(event_tuple):
+def log_event(event_tuple, packet=None):
     try:
         sec, usec, src_ip, dst_ip = event_tuple[0], event_tuple[1], event_tuple[2], event_tuple[4]
         if not any(_ in WHITELIST for _ in (src_ip, dst_ip)):
@@ -73,6 +73,9 @@ def log_event(event_tuple):
             if config.DISABLE_LOCAL_LOG_STORAGE and not config.LOG_SERVER or config.console:
                 sys.stderr.write(event)
                 sys.stderr.flush()
+            if config.plugin_functions:
+                for _ in config.plugin_functions:
+                    _(event_tuple, packet)
     except (OSError, IOError):
         if config.SHOW_DEBUG:
             traceback.print_exc()
