@@ -161,7 +161,7 @@ creativecommons.org
 arstechnica.co.uk
 hpe.com
 
-# DNSBL/RBL
+# DNSBL/RBL/MHR
 
 abuse.ch
 abuseat.org
@@ -171,6 +171,7 @@ apews.org
 aupads.org
 backscatterer.org
 barracudacentral.org
+berkeley.edu
 bit.nl
 blocklist.de
 blogspambl.com
