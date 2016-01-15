@@ -10,7 +10,6 @@
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/media.css">
         <script type="text/javascript">
-            // Reference: https://danlimerick.wordpress.com/2014/01/18/how-to-catch-javascript-errors-with-window-onerror-even-on-chrome-and-firefox/
             window.onerror = function(errorMsg, url, lineNumber) {
                 alert(errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
                 try {
@@ -22,7 +21,7 @@
             };
         </script>
         <script type="text/javascript" src="js/thirdparty.min.js"></script>
-        <script type="text/javascript" src="js/papaparse.min.js"></script> <!-- required to be as a standalone because of "Worker" functionality -->
+        <script type="text/javascript" src="js/papaparse.min.js"></script>
     </head>
     <body>
         <script>
@@ -60,7 +59,6 @@
             </div>
         </div>
 
-        <!--Reference for colors: http://www.w3schools.com/tags/ref_colorpicker.asp-->
         <div id="main_container" class="container hidden">
             <div id="status_container" style="width: 100%; text-align: center">
                 <div>
