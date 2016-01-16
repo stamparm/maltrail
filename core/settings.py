@@ -21,7 +21,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.9.53"
+VERSION = "0.9.54"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -213,6 +213,10 @@ def read_config(config_file):
                 finally:
                     name = name.strip().upper()
                     value = value.strip("'\"").strip()
+
+            _ = os.environ.get("%s_%s" % (NAME.upper(), name))
+            if _:
+                value = _
 
             if any(name.startswith(_) for _ in ("USE_", "SET_", "CHECK_", "ENABLE_", "SHOW_", "DISABLE_")):
                 value = value.lower() in ("1", "true")
