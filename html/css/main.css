@@ -144,7 +144,7 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     padding-right: 5px;
     cursor: pointer;
 }
-.header-a:hover, #logo:hover {
+.header-a:hover, #logo:hover, .status-button:hover * {
     color: #ffffff;
     text-decoration: none;
     -webkit-transition: 20ms linear 0s;
@@ -153,6 +153,9 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     transition: 20ms linear 0s;
     outline: 0 none;
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.25), -1px 1px 0 rgba(255, 255, 255, 0.25), 1px 1px 0 rgba(255, 255, 255, 0.25), 1px -1px 0 rgba(255, 255, 255, 0.25);
+}
+.status-button:hover * {
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.10), -1px 1px 0 rgba(0, 0, 0, 0.10), 1px 1px 0 rgba(0, 0, 0, 0.10), 1px -1px 0 rgba(0, 0, 0, 0.10);
 }
 .header-a:visited {
     color: #efefef;
