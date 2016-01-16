@@ -119,6 +119,9 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     margin: 8px;
     font-weight: bold;
 }
+#logo {
+    cursor: pointer;
+}
 .header {
     background: rgba(0, 0, 0, 0.7);
     background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
@@ -141,9 +144,15 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     padding-right: 5px;
     cursor: pointer;
 }
-.header-a:hover {
-    color: #efefef;
-    text-decoration: underline;
+.header-a:hover, #logo:hover {
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-transition: 20ms linear 0s;
+    -moz-transition: 20ms linear 0s;
+    -o-transition: 20ms linear 0s;
+    transition: 20ms linear 0s;
+    outline: 0 none;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.25), -1px 1px 0 rgba(255, 255, 255, 0.25), 1px 1px 0 rgba(255, 255, 255, 0.25), 1px -1px 0 rgba(255, 255, 255, 0.25);
 }
 .header-a:visited {
     color: #efefef;
