@@ -24,9 +24,11 @@ chip.de
 clickbank.net
 cloudapp.net
 cloudfront.net
+colocrossing.com
 da3e3.net
 disqus.com
 e5.sk
+edgecastcdn.net
 edgekey.net
 edgesuite.net
 elasticbeanstalk.com
