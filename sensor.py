@@ -616,6 +616,8 @@ def _init_multiprocessing():
             for i in xrange(config.CAPTURE_BUFFER / MMAP_ZFILL_CHUNK_LENGTH):
                 _buffer.write(_)
             _buffer.seek(0)
+        except KeyboardInterrupt:
+            raise
         except:
             exit("[!] unable to allocate network capture buffer. Please adjust value of 'CAPTURE_BUFFER'")
 
