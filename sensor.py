@@ -243,7 +243,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                         host = tcp_data[index:tcp_data.find("\r\n", index)]
                         host = host.strip()
                         host = re.sub(r":80\Z", "", host)
-                        if not host.split(':')[0][-1].isdigit() and dst_ip in trails:
+                        if host and not host.split(':')[0][-1].isdigit() and dst_ip in trails:
                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, "%s (%s)" % (dst_ip, host.split(':')[0]), trails[dst_ip][0], trails[dst_ip][1]), packet)
                     elif config.USE_HEURISTICS and config.CHECK_MISSING_HOST:
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing host header)", "(heuristic)"), packet)
