@@ -152,6 +152,8 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     -o-transition: 20ms linear 0s;
     transition: 20ms linear 0s;
     outline: 0 none;
+}
+.header-a:hover, #logo:hover {
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.25), -1px 1px 0 rgba(255, 255, 255, 0.25), 1px 1px 0 rgba(255, 255, 255, 0.25), 1px -1px 0 rgba(255, 255, 255, 0.25);
 }
 .status-button:hover * {
