@@ -174,7 +174,7 @@ def update_trails(server=None, force=False):
         except Exception, ex:
             print "[x] something went wrong during trails file write '%s' ('%s')" % (TRAILS_FILE, ex)
 
-    print "[i] update done%s" % (40 * " ")
+    print "[i] update finished%s" % (40 * " ")
 
     return trails
 

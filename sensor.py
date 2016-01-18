@@ -609,6 +609,7 @@ def _init_multiprocessing():
     global _n
 
     if _multiprocessing:
+        print("[i] preparing capture buffer...")
         try:
             _buffer = mmap.mmap(-1, config.CAPTURE_BUFFER)  # http://www.alexonlinux.com/direct-io-in-python
 
