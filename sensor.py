@@ -708,18 +708,22 @@ def monitor():
         print("[x] finished")
     except SystemError, ex:
         if "error return without" in str(ex):
-            print("\r[x] Ctrl-C pressed")
+            print("\r[x] stopping (Ctrl-C pressed)")
         else:
             raise
     except KeyboardInterrupt:
-        print("\r[x] Ctrl-C pressed")
+        print("\r[x] stopping (Ctrl-C pressed)")
     finally:
+        print("\r[i] please wait...")
         if _multiprocessing:
-            for _ in xrange(_multiprocessing.cpu_count() - 1):
-                write_block(_buffer, _n.value, "", BLOCK_MARKER.END)
-                _n.value = _n.value + 1
-            while _multiprocessing.active_children():
-                time.sleep(REGULAR_SENSOR_SLEEP_TIME)
+            try:
+                for _ in xrange(_multiprocessing.cpu_count() - 1):
+                    write_block(_buffer, _n.value, "", BLOCK_MARKER.END)
+                    _n.value = _n.value + 1
+                while _multiprocessing.active_children():
+                    time.sleep(REGULAR_SENSOR_SLEEP_TIME)
+            except KeyboardInterrupt:
+                pass
 
 def main():
     print("%s (sensor) #v%s\n" % (NAME, VERSION))
@@ -761,5 +765,7 @@ if __name__ == "__main__":
         log_error("\n\n%s" % msg.replace("\r", ""))
 
         print(msg)
+    finally:
+        print("[i] finished")
 
     os._exit(0)

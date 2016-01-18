@@ -91,5 +91,7 @@ if __name__ == "__main__":
         log_error("\n\n%s" % msg.replace("\r", ""))
 
         print(msg)
+    finally:
+        print("[i] finished")
 
     os._exit(0)
