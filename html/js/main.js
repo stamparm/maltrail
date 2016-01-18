@@ -341,6 +341,7 @@ function getPercentageColor(percentage) {
 function getContrastYIQ(hexcolor){
     if (hexcolor.charAt(0) === "#")
         hexcolor = hexcolor.slice(1);
+
     var r = parseInt(hexcolor.substr(0, 2), 16);
     var g = parseInt(hexcolor.substr(2, 2), 16);
     var b = parseInt(hexcolor.substr(4, 2), 16);
@@ -656,8 +657,11 @@ function init(url, from, to) {
                         if (typeof data[column] !== "string") {
                             var _ = [];
 
-                            for (var entry in data[column])
+                            for (var entry in data[column]) {
+                                if ((data[LOG_COLUMNS.TYPE] === "IP") && (entry.indexOf('(') === -1))
+                                    continue;
                                 _.push(entry.replace(DATA_PARTS_DELIMITER, DATA_PARTS_DELIMITER.replace(" ", "")));
+                            }
 
                             if ((column === LOG_COLUMNS.SRC_PORT) || (column === LOG_COLUMNS.DST_PORT))
                                 _.sort(function(a, b) {
