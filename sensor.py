@@ -383,15 +383,21 @@ def _process_packet(packet, sec, usec, ip_offset):
             if _ == _last_udp:  # skip bursts
                 return
 
-            if src_port != 53 or config.plugin_functions:
-                trail = trails.get(dst_ip) or trails.get(src_ip)
+            if src_port != 53 and dst_port != 53:  # not DNS
+                if dst_ip in trails:
+                    trail = dst_ip
+                elif src_ip in trails:
+                    trail = src_ip
+                else:
+                    trail = None
+
                 if trail:
                     _ = _last_logged_udp
                     _last_logged_udp = _last_udp
                     if _ != _last_logged_udp:
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, trail, trails[trail][0], trails[trail][1]), packet, skip_write=(src_port == 53))
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, trail, trails[trail][0], trails[trail][1]), packet)
 
-            if dst_port == 53 or src_port == 53:
+            else:
                 dns_data = ip_data[iph_length + 8:]
 
                 # Reference: http://www.ccs.neu.edu/home/amislove/teaching/cs4700/fall09/handouts/project1-primer.pdf
@@ -417,6 +423,16 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                             # Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
                             if type_ not in (12, 28) and class_ == 1:  # Type not in (PTR, AAAA), Class IN
+                                if dst_ip in trails:
+                                    trail = dst_ip
+                                elif src_ip in trails:
+                                    trail = src_ip
+                                else:
+                                    trail = None
+
+                                if trail:
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, "%s (%s)" % (trail, query), trails[trail][0], trails[trail][1]), packet)
+
                                 _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, packet)
 
                         elif config.USE_HEURISTICS:

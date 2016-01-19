@@ -40,6 +40,13 @@ class TrailsDict(dict):
         for key in self._trails.keys():
             yield key
 
+    def get(self, key, default=None):
+        if key in self._trails:
+            _ = self._trails[key].split(',')
+            return (self._infos[int(_[0])], self._references[int(_[1])])
+        else:
+            return default
+
     def update(self, value):
         if isinstance(value, TrailsDict):
             if not self._trails:
@@ -65,14 +72,14 @@ class TrailsDict(dict):
     def __len__(self):
         return len(self._trails)
 
-    def __getitem__(self, name):
-        if name in self._trails:
-            _ = self._trails[name].split(',')
+    def __getitem__(self, key):
+        if key in self._trails:
+            _ = self._trails[key].split(',')
             return (self._infos[int(_[0])], self._references[int(_[1])])
         else:
-            return None
+            raise KeyError(key)
 
-    def __setitem__(self, name, value):
+    def __setitem__(self, key, value):
         if isinstance(value, (tuple, list)):
             info, reference = value
             if info not in self._reverse_infos:
@@ -81,6 +88,6 @@ class TrailsDict(dict):
             if reference not in self._reverse_references:
                 self._reverse_references[reference] = len(self._references)
                 self._references.append(reference)
-            self._trails[name] = "%d,%d" % (self._reverse_infos[info], self._reverse_references[reference])
+            self._trails[key] = "%d,%d" % (self._reverse_infos[info], self._reverse_references[reference])
         else:
             raise Exception("unsupported type '%s'" % type(value))
