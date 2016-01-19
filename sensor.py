@@ -235,8 +235,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                 h_size = iph_length + (tcph_length << 2)
                 tcp_data = ip_data[h_size:]
 
-                if config.USE_HEURISTICS:
-                    if src_port == 80 and tcp_data.startswith("HTTP/"):
+                if config.USE_DEEP_HEURISTICS:
+                    if tcp_data.startswith("HTTP/"):
                         if any(_ in tcp_data[:tcp_data.find("\r\n\r\n")] for _ in ("X-Sinkhole:", "Server: Apache 1.0/SinkSoft")) or "\r\n\r\nsinkhole" in tcp_data:
                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, "sinkhole response (malware)", "(heuristic)"), packet)
                         else:
