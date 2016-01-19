@@ -437,12 +437,10 @@ def _process_packet(packet, sec, usec, ip_offset):
                                             entropy = -sum(p * math.log(p) / math.log(2.0) for p in probabilities)
                                             if entropy > SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD:
                                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "entropy threshold no such domain (suspicious)", "(heuristic)"), packet)
-                                                break
 
                                             consonants = re.findall("(?i)[bcdfghjklmnpqrstvwxyz]", part)
                                             if len(consonants) > SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD:
                                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "consonant threshold no such domain (suspicious)", "(heuristic)"), packet)
-                                                break
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
