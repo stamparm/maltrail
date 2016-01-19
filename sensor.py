@@ -86,6 +86,8 @@ _locks = AttribDict()
 _multiprocessing = None
 _n = None
 _result_cache = {}
+_last_syn = None
+_last_logged_syn = None
 
 try:
     import pcapy
@@ -149,6 +151,8 @@ def _process_packet(packet, sec, usec, ip_offset):
     """
 
     global _connect_sec
+    global _last_syn
+    global _last_logged_syn
 
     try:
         if len(_result_cache) > MAX_RESULT_CACHE_ENTRIES:
@@ -196,10 +200,22 @@ def _process_packet(packet, sec, usec, ip_offset):
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet, skip_write=True)
 
             if flags == 2:  # SYN set (only)
+                _ = _last_syn
+                _last_syn = (sec, src_ip, src_port, dst_ip, dst_port)
+                if _ == _last_syn:
+                    return
+
                 if dst_ip in trails:
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]), packet)
+                    _ = _last_logged_syn
+                    _last_logged_syn = _last_syn
+                    if _ != _last_logged_syn:
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]), packet)
+
                 elif src_ip in trails and dst_ip != LOCALHOST_IP:
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet)
+                    _ = _last_logged_syn
+                    _last_logged_syn = _last_syn
+                    if _ != _last_logged_syn:
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet)
 
                 if config.USE_HEURISTICS:
                     if dst_ip != LOCALHOST_IP:
