@@ -9,7 +9,7 @@ from core.common import retrieve_content
 
 __url__ = "http://labs.snort.org/feeds/ip-filter.blf"
 __check__ = ".1"
-__info__ = "known attacker"
+__info__ = "bad reputation"
 __reference__ = "snort.org"
 
 def fetch():

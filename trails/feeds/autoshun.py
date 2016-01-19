@@ -20,6 +20,15 @@ def fetch():
             line = line.strip()
             if not line or line.startswith('#') or '.' not in line or "Shunlist" in line:
                 continue
-            retval[line.split(",")[0]] = ("%s (attacker)" % line.split(",", 2)[-1].lower().strip("'\""), __reference__)
+            line = line.lower()
+            if "malware distribution" in line:
+                info = "malware distribution"
+            elif " ek " in line:
+                info = "malicious"
+            elif any(_ in line for _ in ("c&c", "malware", "botnet", "virus")):
+                info = "malware"
+            else:
+                info = "known attacker"
+            retval[line.split(",")[0]] = (info, __reference__)
 
     return retval
