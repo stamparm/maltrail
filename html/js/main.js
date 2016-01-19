@@ -658,7 +658,7 @@ function init(url, from, to) {
                             var _ = [];
 
                             for (var entry in data[column]) {
-                                if ((data[LOG_COLUMNS.TYPE] === "IP") && (entry.indexOf('(') === -1))
+                                if ((column === LOG_COLUMNS.TRAIL) && (data[LOG_COLUMNS.TYPE] === "IP") && (entry.indexOf('(') === -1))
                                     continue;
                                 _.push(entry.replace(DATA_PARTS_DELIMITER, DATA_PARTS_DELIMITER.replace(" ", "")));
                             }
