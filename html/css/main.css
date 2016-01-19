@@ -446,6 +446,14 @@ rect.highlight {
     margin-left: 2px;
     cursor: default;
 }
+.worst_asns {
+    background: url("../images/warning.png");
+    width: 11px;
+    height: 10px;
+    display: inline-block;
+    background-size: 11px 10px;
+    vertical-align: middle;
+}
 .severity {
     float: center;
     padding: 1px 2px;
