@@ -88,6 +88,8 @@ _n = None
 _result_cache = {}
 _last_syn = None
 _last_logged_syn = None
+_last_udp = None
+_last_logged_udp = None
 
 try:
     import pcapy
@@ -153,6 +155,8 @@ def _process_packet(packet, sec, usec, ip_offset):
     global _connect_sec
     global _last_syn
     global _last_logged_syn
+    global _last_udp
+    global _last_logged_udp
 
     try:
         if len(_result_cache) > MAX_RESULT_CACHE_ENTRIES:
@@ -202,7 +206,7 @@ def _process_packet(packet, sec, usec, ip_offset):
             if flags == 2:  # SYN set (only)
                 _ = _last_syn
                 _last_syn = (sec, src_ip, src_port, dst_ip, dst_port)
-                if _ == _last_syn:
+                if _ == _last_syn:  # skip bursts
                     return
 
                 if dst_ip in trails:
@@ -373,11 +377,18 @@ def _process_packet(packet, sec, usec, ip_offset):
 
             src_port, dst_port = struct.unpack("!HH", _)
 
+            _ = _last_udp
+            _last_udp = (sec, src_ip, src_port, dst_ip, dst_port)
+            if _ == _last_udp:  # skip bursts
+                return
+
             if src_port != 53 or config.plugin_functions:
-                if dst_ip in trails:
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]), packet, skip_write=bool(config.plugin_functions))
-                elif src_ip in trails:
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet, skip_write=bool(config.plugin_functions))
+                trail = trails.get(dst_ip) or trails.get(src_ip)
+                if trail:
+                    _ = _last_logged_udp
+                    _last_logged_udp = _last_udp
+                    if _ != _last_logged_udp:
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, trail, trails[trail][0], trails[trail][1]), packet, skip_write=(src_port == 53))
 
             if dst_port == 53 or src_port == 53:
                 dns_data = ip_data[iph_length + 8:]
