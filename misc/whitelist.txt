@@ -6,6 +6,7 @@ localhost
 
 # triggering suspicious long (sub)domain names (note: this is not whitelist-ing all related (e.g. URL) trails)
 
+1e100.net
 2o7.net
 akadns.net
 akamaiedge.net
@@ -32,6 +33,7 @@ edgecastcdn.net
 edgekey.net
 edgesuite.net
 elasticbeanstalk.com
+eset.com
 fastly.net
 fbcdn.net
 footprintdns.com
