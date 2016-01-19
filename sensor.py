@@ -313,7 +313,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 if not result:
                                     _result_cache[user_agent] = False
                             if result:
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, result, "suspicious user agent", "(heuristic)"), packet)
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, result, "user agent (suspicious)", "(heuristic)"), packet)
 
                     checks = [path.rstrip('/')]
                     if '?' in path:

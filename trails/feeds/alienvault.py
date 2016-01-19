@@ -25,6 +25,6 @@ def fetch():
                 reason = line.split(" # ")[1].split()[0].lower()
                 if reason == "scanning":  # too many false positives
                     continue
-                retval[line.split(" # ")[0]] = ("%s (%s)" % (__info__, reason), __reference__)
+                retval[line.split(" # ")[0]] = (__info__, __reference__)
 
     return retval

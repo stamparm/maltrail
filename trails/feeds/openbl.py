@@ -9,7 +9,7 @@ from core.common import retrieve_content
 
 __url__ = "http://www.openbl.org/lists/base.txt"
 __check__ = "source ip"
-__info__ = "attacker"
+__info__ = "known attacker"
 __reference__ = "openbl.org"
 
 def fetch():

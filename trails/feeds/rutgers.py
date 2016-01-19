@@ -9,7 +9,7 @@ from core.common import retrieve_content
 
 __url__ = "http://report.rutgers.edu/DROP/attackers"
 __check__ = ".1"
-__info__ = "attacker"
+__info__ = "known attacker"
 __reference__ = "rutgers.edu"
 
 def fetch():

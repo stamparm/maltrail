@@ -8,7 +8,7 @@ See the file 'LICENSE' for copying permission
 from core.common import retrieve_content
 
 __url__ = "http://cinsscore.com/list/ci-badguys.txt"
-__info__ = "attacker"
+__info__ = "known attacker"
 __reference__ = "cinsscore.com"
 
 def fetch():

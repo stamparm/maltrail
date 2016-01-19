@@ -9,7 +9,7 @@ from core.common import retrieve_content
 
 __url__ = "http://feeds.dshield.org/top10-2.txt"
 __check__ = ".1"
-__info__ = "top attacker"
+__info__ = "known attacker"
 __reference__ = "dshield.org"
 
 def fetch():

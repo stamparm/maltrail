@@ -9,7 +9,7 @@ from core.common import retrieve_content
 
 __url__ = "http://www.dshield.org/feeds/suspiciousdomains_High.txt"
 __check__ = "DShield.org"
-__info__ = "suspicious domain"
+__info__ = "domain (suspicious)"
 __reference__ = "dshield.org"
 
 def fetch():

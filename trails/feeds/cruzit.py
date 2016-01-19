@@ -9,7 +9,7 @@ from core.common import retrieve_content
 
 __url__ = "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/cruzit_web_attacks.ipset"
 __check__ = "cruzit_web_attacks"
-__info__ = "attacker"
+__info__ = "known attacker"
 __reference__ = "cruzit.com"
 
 def fetch():
