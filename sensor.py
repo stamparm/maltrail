@@ -431,16 +431,26 @@ def _process_packet(packet, sec, usec, ip_offset):
                                             part = query
                                             trail = query
 
-                                        # Reference: https://github.com/exp0se/dga_detector
-                                        if part:
-                                            probabilities = (float(part.count(c)) / len(part) for c in set(_ for _ in part))
-                                            entropy = -sum(p * math.log(p) / math.log(2.0) for p in probabilities)
-                                            if entropy > SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD:
-                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "entropy threshold no such domain (suspicious)", "(heuristic)"), packet)
+                                        result = _result_cache.get(part)
 
-                                            consonants = re.findall("(?i)[bcdfghjklmnpqrstvwxyz]", part)
-                                            if len(consonants) > SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD:
-                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "consonant threshold no such domain (suspicious)", "(heuristic)"), packet)
+                                        if part:
+                                            if result is None:
+                                                # Reference: https://github.com/exp0se/dga_detector
+                                                probabilities = (float(part.count(c)) / len(part) for c in set(_ for _ in part))
+                                                entropy = -sum(p * math.log(p) / math.log(2.0) for p in probabilities)
+                                                if entropy > SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD:
+                                                    result = "entropy threshold no such domain (suspicious)"
+
+                                                if not result:
+                                                    consonants = re.findall("(?i)[bcdfghjklmnpqrstvwxyz]", part)
+                                                    if len(consonants) > SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD:
+                                                        result = "consonant threshold no such domain (suspicious)"
+
+                                                _result_cache[part] = result or False
+
+                                        if result:
+                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, result, "(heuristic)"), packet)
+
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
@@ -704,7 +714,7 @@ def monitor():
         while _caps:
             time.sleep(1)
 
-        print("[x] finished")
+        print("[i] finished")
     except SystemError, ex:
         if "error return without" in str(ex):
             print("\r[x] stopping (Ctrl-C pressed)")
@@ -756,8 +766,14 @@ def main():
         print("\r[x] stopping (Ctrl-C pressed)")
 
 if __name__ == "__main__":
+    show_final = True
+
     try:
         main()
+    except SystemExit, ex:
+        show_final = False
+
+        print(ex)
     except Exception:
         msg = "\r[!] unhandled exception occurred ('%s')" % sys.exc_info()[1]
         msg += "\n[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc()
@@ -765,6 +781,7 @@ if __name__ == "__main__":
 
         print(msg)
     finally:
-        print("[i] finished")
+        if show_final:
+            print("[i] finished")
 
-    os._exit(0)
+        os._exit(0)

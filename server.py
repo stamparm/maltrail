@@ -83,8 +83,14 @@ def main():
         print("\r[x] stopping (Ctrl-C pressed)")
 
 if __name__ == "__main__":
+    show_final = True
+
     try:
         main()
+    except SystemExit, ex:
+        show_final = False
+
+        print(ex)
     except Exception:
         msg = "\r[!] unhandled exception occurred ('%s')" % sys.exc_info()[1]
         msg += "\n[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc()
@@ -92,6 +98,7 @@ if __name__ == "__main__":
 
         print(msg)
     finally:
-        print("[i] finished")
+        if show_final:
+            print("[i] finished")
 
-    os._exit(0)
+        os._exit(0)
