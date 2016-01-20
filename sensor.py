@@ -116,6 +116,10 @@ def _check_domain_whitelisted(query):
     return False
 
 def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, packet=None):
+    if _result_cache.get(query) == False:
+        return
+
+    result = False
     if not _check_domain_whitelisted(query):
         parts = query.lower().split('.')
 
@@ -128,10 +132,11 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
                     _ = ".%s" % domain
                     trail = "(%s)%s" % (query[:-len(_)], _)
 
+                result = True
                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[domain][0], trails[domain][1]), packet)
-                return
+                break
 
-        if config.USE_HEURISTICS:
+        if not result and config.USE_HEURISTICS:
             if len(parts[0]) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD and '-' not in parts[0]:
                 trail = None
 
@@ -143,10 +148,15 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
                     trail = query
 
                 if trail and not any(_ in trail for _ in WHITELIST_LONG_DOMAIN_NAME_KEYWORDS):
+                    result = True
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, "long domain (suspicious)", "(heuristic)"), packet)
 
             elif "sinkhole" in query:
+                result = True
                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, query, "potential sinkhole domain (suspicious)", "(heuristic)"), packet)
+
+    if result == False:
+        _result_cache[query] = False
 
 def _process_packet(packet, sec, usec, ip_offset):
     """
@@ -315,9 +325,12 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                     if config.USE_HEURISTICS:
                         user_agent, result = None, None
-                        match = re.search("(?i)\r\nUser-Agent:([^\r\n]+)", tcp_data)
-                        if match:
-                            user_agent = urllib.unquote(match.group(1)).strip()
+
+                        index = tcp_data.find("\r\nUser-Agent:")
+                        if index >= 0:
+                            index = index + len("\r\nUser-Agent:")
+                            user_agent = tcp_data[index:tcp_data.find("\r\n", index)]
+                            user_agent = urllib.unquote(user_agent).strip()
 
                         if user_agent:
                             result = _result_cache.get(user_agent)
@@ -328,6 +341,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                         result = _result_cache[user_agent] = match.group(0).replace('(', "\\(").join(("(%s)" if _ else "%s") % _.replace('(', "\\(").replace(')', "\\)") for _ in user_agent.split(match.group(0), 1))
                                 if not result:
                                     _result_cache[user_agent] = False
+
                             if result:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, result, "user agent (suspicious)", "(heuristic)"), packet)
 
@@ -506,7 +520,6 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                                             if result:
                                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, result, "(heuristic)"), packet)
-
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
