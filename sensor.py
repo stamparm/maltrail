@@ -187,8 +187,9 @@ def _process_packet(packet, sec, usec, ip_offset):
 
         ip_data = packet[ip_offset:]
         ip_version = ord(ip_data[0]) >> 4
+        localhost_ip = LOCALHOST_IP[ip_version]
 
-        if ip_version == 4:  # IPv4
+        if ip_version == 0x04:  # IPv4
             ip_header = struct.unpack("!BBHHHBBH4s4s", ip_data[:20])
 
             ip_length = ip_header[2]
@@ -196,7 +197,7 @@ def _process_packet(packet, sec, usec, ip_offset):
             protocol = ip_header[6]
             src_ip = socket.inet_ntoa(ip_header[8])
             dst_ip = socket.inet_ntoa(ip_header[9])
-        elif ip_version == 6:  # IPv6
+        elif ip_version == 0x06:  # IPv6
             # Reference: http://chrisgrundemann.com/index.php/2012/introducing-ipv6-understanding-ipv6-addresses/
             ip_header = struct.unpack("!BBHHBB16s16s", ip_data[:40])
             iph_length = 40
@@ -213,7 +214,7 @@ def _process_packet(packet, sec, usec, ip_offset):
             if flags != 2 and config.plugin_functions:
                 if dst_ip in trails:
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]), packet, skip_write=True)
-                elif src_ip in trails and dst_ip != LOCALHOST_IP[ip_version]:
+                elif src_ip in trails and dst_ip != localhost_ip:
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet, skip_write=True)
 
             if flags == 2:  # SYN set (only)
@@ -228,14 +229,14 @@ def _process_packet(packet, sec, usec, ip_offset):
                     if _ != _last_logged_syn:
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]), packet)
 
-                elif src_ip in trails and dst_ip != LOCALHOST_IP[ip_version]:
+                elif src_ip in trails and dst_ip != localhost_ip:
                     _ = _last_logged_syn
                     _last_logged_syn = _last_syn
                     if _ != _last_logged_syn:
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet)
 
                 if config.USE_HEURISTICS:
-                    if dst_ip != LOCALHOST_IP[ip_version]:
+                    if dst_ip != localhost_ip:
                         key = "%s~%s" % (src_ip, dst_ip)
                         if key not in _connect_src_dst:
                             _connect_src_dst[key] = set()
