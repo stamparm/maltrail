@@ -578,7 +578,8 @@
 107.150.52.84  # probe02.projectblindferret.com
 107.150.52.85  # probe03.projectblindferret.com
 107.150.52.86  # probe04.projectblindferret.com
-    
+
+198.20.87.98  # border.census.shodan.io
 66.240.192.138  # census8.shodan.io
 66.240.236.119  # census6.shodan.io
 71.6.135.131  # census7.shodan.io
@@ -593,6 +594,7 @@
 104.236.198.48  # blog.shodan.io
 162.159.244.38  # www.shodan.io
 188.138.9.50  # atlantic.census.shodan.io
+209.126.110.38  # atlantic.dns.shodan.io
 198.20.69.74  # census1.shodan.io
 198.20.69.98  # census2.shodan.io
 198.20.70.114  # census3.shodan.io
