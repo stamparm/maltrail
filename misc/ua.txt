@@ -31,7 +31,7 @@ antivirgear
 anycleaner
 apachebench
 api-guide test program
-\Aasd
+\Aasd\Z
 askpartner
 asktoolbar
 asmupdater
@@ -42,7 +42,6 @@ auctionplusup
 autodl
 autohotkey
 autoit
-autoupdate
 \Aav2010
 \Ab register
 babykrokodil
