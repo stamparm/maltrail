@@ -29,6 +29,7 @@ import traceback
 import urllib
 import urlparse
 
+from core.addr import inet_ntoa6
 from core.attribdict import AttribDict
 from core.common import check_sudo
 from core.common import load_trails
@@ -185,14 +186,26 @@ def _process_packet(packet, sec, usec, ip_offset):
                 _connect_src_details.clear()
 
         ip_data = packet[ip_offset:]
-        ip_header = struct.unpack("!BBHHHBBH4s4s", ip_data[:20])
+        ip_version = ord(ip_data[0]) >> 4
 
-        ip_length = ip_header[2]
-        ip_data = ip_data[:ip_length]  # truncate
-        iph_length = (ip_header[0] & 0xf) << 2
-        protocol = ip_header[6]
-        src_ip = socket.inet_ntoa(ip_header[8])
-        dst_ip = socket.inet_ntoa(ip_header[9])
+        if ip_version == 4:  # IPv4
+            ip_header = struct.unpack("!BBHHHBBH4s4s", ip_data[:20])
+
+            ip_length = ip_header[2]
+            iph_length = (ip_header[0] & 0xf) << 2
+            protocol = ip_header[6]
+            src_ip = socket.inet_ntoa(ip_header[8])
+            dst_ip = socket.inet_ntoa(ip_header[9])
+        elif ip_version == 6:  # IPv6
+            # Reference: http://chrisgrundemann.com/index.php/2012/introducing-ipv6-understanding-ipv6-addresses/
+            ip_header = struct.unpack("!BBHHBB16s16s", ip_data[:40])
+            iph_length = 40
+            payload_length = ip_header[3]
+            protocol = ip_header[4]
+            src_ip = inet_ntoa6(ip_header[6])
+            dst_ip = inet_ntoa6(ip_header[7])
+        else:
+            return
 
         if protocol == socket.IPPROTO_TCP:  # TCP
             src_port, dst_port, _, _, doff_reserved, flags = struct.unpack("!HHLLBB", ip_data[iph_length:iph_length+14])
@@ -703,8 +716,14 @@ def monitor():
                 if ord(packet[dlt_offset - 2]) == 8 and ord(packet[dlt_offset - 1]) == 0:  # IPv4
                     ip_offset = dlt_offset
 
+                elif ord(packet[dlt_offset - 2]) == 0x86 and ord(packet[dlt_offset - 1]) == 0xdd:  # IPv6
+                    ip_offset = dlt_offset
+
                 elif ord(packet[dlt_offset - 2]) == 0x81 and ord(packet[dlt_offset - 1]) == 0:  # VLAN
                     if ord(packet[dlt_offset + 2]) == 8 and ord(packet[dlt_offset + 3]) == 0: # IPv4
+                        ip_offset = dlt_offset + 4
+
+                    elif ord(packet[dlt_offset + 2]) == 0x86 and ord(packet[dlt_offset + 3]) == 0xdd: # IPv4
                         ip_offset = dlt_offset + 4
 
         except IndexError:
