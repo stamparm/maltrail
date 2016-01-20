@@ -176,7 +176,7 @@ def _process_packet(packet, sec, usec, ip_offset):
             if sec > connect_sec:
                 for key in _connect_src_dst:
                     if len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
-                        _src_ip, _dst_ip = key.split(':')
+                        _src_ip, _dst_ip = key.split('~')
                         if _src_ip not in WHITELIST:
                             _src_ports = set(str(_[2]) for _ in _connect_src_details[key])
                             _dst_ports = set(str(_[3]) for _ in _connect_src_details[key])
@@ -236,7 +236,7 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                 if config.USE_HEURISTICS:
                     if dst_ip != LOCALHOST_IP:
-                        key = "%s:%s" % (src_ip, dst_ip)
+                        key = "%s~%s" % (src_ip, dst_ip)
                         if key not in _connect_src_dst:
                             _connect_src_dst[key] = set()
                             _connect_src_details[key] = set()
@@ -507,7 +507,10 @@ def _process_packet(packet, sec, usec, ip_offset):
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
-                if ord(ip_data[iph_length]) != 8:  # Non-echo request
+                if ord(ip_data[iph_length]) != 0x08:  # Non-echo request
+                    return
+            elif protocol == socket.IPPROTO_ICMPV6:
+                if ord(ip_data[iph_length]) != 0x80:  # Non-echo request
                     return
 
             if dst_ip in trails:
@@ -711,6 +714,8 @@ def monitor():
                 ip_offset = dlt_offset
             elif datalink == pcapy.DLT_PPP:
                 if ord(packet[2]) == 0 and ord(packet[3]) == 0x21:  # IPv4
+                    ip_offset = dlt_offset
+                elif ord(packet[2]) == 0 and ord(packet[3]) == 0x57:  # IPv6
                     ip_offset = dlt_offset
             else:
                 if ord(packet[dlt_offset - 2]) == 8 and ord(packet[dlt_offset - 1]) == 0:  # IPv4
