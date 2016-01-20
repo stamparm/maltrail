@@ -4,7 +4,7 @@
 localhost
 127.0.0.1
 
-# triggering suspicious long (sub)domain names (note: this is not whitelist-ing all related (e.g. URL) trails)
+# triggering suspicious (sub)domain names (note: this is not whitelist-ing all related (e.g. URL) trails)
 
 1e100.net
 2o7.net
@@ -12,9 +12,11 @@ akadns.net
 akamaiedge.net
 akamaihd.net
 akamai.net
+akamaitechnologies.com
 amazonaws.com
 a-msedge.net
 anycastb.com
+baidu.com
 bitdefender.net
 blogspot.com
 bstatic.com
@@ -89,6 +91,7 @@ testanalytics.net
 testflightapp.com
 trendmicro.com
 tumblr.com
+verisign.com
 verisign.net
 weebly.com
 windows.net

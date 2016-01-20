@@ -351,7 +351,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"), packet)
                                     return
 
-                            if post_data and not any(_ in post_data for _ in WHITELIST_HTTP_REQUEST_KEYWORDS):
+                            if not any(_ in (post_data or "") for _ in WHITELIST_HTTP_REQUEST_KEYWORDS):
                                 result = _result_cache.get(post_data)
                                 if result is None:
                                     result = _result_cache[post_data] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(post_data)) is not None
@@ -460,35 +460,36 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                                                     break
 
-                                        if len(parts) > 2:
-                                            part = parts[0] if parts[0] != "www" else parts[1]
-                                            trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
-                                        elif len(parts) == 2:
-                                            part = parts[0]
-                                            trail = "(%s).%s" % (parts[0], parts[1])
-                                        else:
-                                            part = query
-                                            trail = query
+                                        if ".intranet." not in query:  # skip checks for (generic) intranet DNS misconfigurations
+                                            if len(parts) > 2:
+                                                part = parts[0] if parts[0] != "www" else parts[1]
+                                                trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
+                                            elif len(parts) == 2:
+                                                part = parts[0]
+                                                trail = "(%s).%s" % (parts[0], parts[1])
+                                            else:
+                                                part = query
+                                                trail = query
 
-                                        result = _result_cache.get(part)
+                                            result = _result_cache.get(part)
 
-                                        if part:
-                                            if result is None:
-                                                # Reference: https://github.com/exp0se/dga_detector
-                                                probabilities = (float(part.count(c)) / len(part) for c in set(_ for _ in part))
-                                                entropy = -sum(p * math.log(p) / math.log(2.0) for p in probabilities)
-                                                if entropy > SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD:
-                                                    result = "entropy threshold no such domain (suspicious)"
+                                            if part:
+                                                if result is None:
+                                                    # Reference: https://github.com/exp0se/dga_detector
+                                                    probabilities = (float(part.count(c)) / len(part) for c in set(_ for _ in part))
+                                                    entropy = -sum(p * math.log(p) / math.log(2.0) for p in probabilities)
+                                                    if entropy > SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD:
+                                                        result = "entropy threshold no such domain (suspicious)"
 
-                                                if not result:
-                                                    consonants = re.findall("(?i)[bcdfghjklmnpqrstvwxyz]", part)
-                                                    if len(consonants) > SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD:
-                                                        result = "consonant threshold no such domain (suspicious)"
+                                                    if not result:
+                                                        consonants = re.findall("(?i)[bcdfghjklmnpqrstvwxyz]", part)
+                                                        if len(consonants) > SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD:
+                                                            result = "consonant threshold no such domain (suspicious)"
 
-                                                _result_cache[part] = result or False
+                                                    _result_cache[part] = result or False
 
-                                        if result:
-                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, result, "(heuristic)"), packet)
+                                            if result:
+                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, result, "(heuristic)"), packet)
 
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
