@@ -175,7 +175,7 @@ def get_regex(items):
 
 def load_trails(quiet=False):
     if not quiet:
-        print "[i] loading trails file..."
+        print "[i] loading trails..."
 
     retval = TrailsDict()
 
