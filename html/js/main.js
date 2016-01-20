@@ -1010,8 +1010,10 @@ function copyEllipsisToClipboard(event) {
                 for (var i = 0; i < _.length; i++) {
                     if (left)
                         _[i] += common;
-                    else
-                        _[i] = common + _[i];
+                    else {
+                        if (!common.endsWith(' '))
+                            _[i] = common + _[i];
+                    }
                 }
                 text = _.join(DATA_PARTS_DELIMITER);
             }

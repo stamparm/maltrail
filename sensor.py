@@ -309,7 +309,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 if not any(_ in user_agent for _ in WHITELIST_UA_KEYWORDS):
                                     match = re.search(SUSPICIOUS_UA_REGEX, user_agent)
                                     if match:
-                                        result = _result_cache[user_agent] = match.group(0).join(("(%s)" if _ else "%s") % _.replace('(', "\\(").replace(')', "\\)") for _ in user_agent.split(match.group(0), 1))
+                                        result = _result_cache[user_agent] = match.group(0).replace('(', "\\(").join(("(%s)" if _ else "%s") % _.replace('(', "\\(").replace(')', "\\)") for _ in user_agent.split(match.group(0), 1))
                                 if not result:
                                     _result_cache[user_agent] = False
                             if result:
