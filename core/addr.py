@@ -23,7 +23,7 @@ def compress_ipv6(address):
         address = address.replace(sorted(zeros, key=lambda _: len(_))[-1], ":", 1)
         address = re.sub(r"(\A|:)0+(\w)", "\g<1>\g<2>", address)
         if address == ":1":
-            address "::1"
+            address = "::1"
     return address
 
 # Note: socket.inet_ntop not available everywhere (Reference: https://docs.python.org/2/library/socket.html#socket.inet_ntop)

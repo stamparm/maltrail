@@ -295,6 +295,8 @@ function isLocalAddress(ip) {
         var _ = parseInt(ip.split(".")[1]);
         return ((_ >= 16) && (_ <= 31));
     }
+    else if (ip === "::1")
+        return true;
     else
         return false;
 }
@@ -1447,7 +1449,7 @@ function initDetails() {
             function nslookup(event, ui) {
                 var elem = $(this);
                 var html = elem.parent().html();
-                var match = html.match(/\d+\.\d+\.\d+\.\d+/);
+                var match = html.match(/\d+\.\d+\.\d+\.\d+/) || html.match(/[\w:]*:[\w:]*/);
 
                 if (match !== null) {
                     var ip = match[0];
@@ -1568,7 +1570,7 @@ function initDetails() {
                 if ((html.indexOf('flag') > -1) || (html.indexOf('lan') > -1) || (html.indexOf(',') > -1) || (html.indexOf('ellipsis') > -1))
                     return false;
 
-                var match = html.match(/\d+\.\d+\.\d+\.\d+/);
+                var match = html.match(/\d+\.\d+\.\d+\.\d+/) || html.match(/[\w:]*:[\w:]*/);
                 if (match === null)
                     return false;
 
@@ -1584,7 +1586,7 @@ function initDetails() {
                         .done(function(json) {
                             var span_ip = $("<span title=''/>").html(this.ip + " ");
 
-                            if ((json.data.locations.length > 0) && (json.data.locations[0].country !== "ANO")) {
+                            if ((typeof json.data.locations !== "undefined") && (json.data.locations.length > 0) && (json.data.locations[0].country !== "ANO")) {
                                 IP_COUNTRY[this.ip] = json.data.locations[0].country.toLowerCase().split('-')[0];
                                 img = '<img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[this.ip] + '" title="' + IP_COUNTRY[this.ip].toUpperCase() + '">';
                                 span_ip.tooltip(options);
