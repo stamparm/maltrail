@@ -712,24 +712,20 @@ def monitor():
         try:
             if datalink == pcapy.DLT_RAW:
                 ip_offset = dlt_offset
+
             elif datalink == pcapy.DLT_PPP:
-                if ord(packet[2]) == 0 and ord(packet[3]) == 0x21:  # IPv4
+                if ord(packet[2]) == 0x00 and ord(packet[3]) == 0x21:  # IPv4
                     ip_offset = dlt_offset
-                elif ord(packet[2]) == 0 and ord(packet[3]) == 0x57:  # IPv6
-                    ip_offset = dlt_offset
-            else:
-                if ord(packet[dlt_offset - 2]) == 8 and ord(packet[dlt_offset - 1]) == 0:  # IPv4
+                elif ord(packet[2]) == 0x00 and ord(packet[3]) == 0x57:  # IPv6
                     ip_offset = dlt_offset
 
+            elif dlt_offset >= 2:
+                if ord(packet[dlt_offset - 2]) == 0x81 and ord(packet[dlt_offset - 1]) == 0x00:  # VLAN
+                    dlt_offset += 4
+                if ord(packet[dlt_offset - 2]) == 0x08 and ord(packet[dlt_offset - 1]) == 0x00:  # IPv4
+                    ip_offset = dlt_offset
                 elif ord(packet[dlt_offset - 2]) == 0x86 and ord(packet[dlt_offset - 1]) == 0xdd:  # IPv6
                     ip_offset = dlt_offset
-
-                elif ord(packet[dlt_offset - 2]) == 0x81 and ord(packet[dlt_offset - 1]) == 0:  # VLAN
-                    if ord(packet[dlt_offset + 2]) == 8 and ord(packet[dlt_offset + 3]) == 0: # IPv4
-                        ip_offset = dlt_offset + 4
-
-                    elif ord(packet[dlt_offset + 2]) == 0x86 and ord(packet[dlt_offset + 3]) == 0xdd: # IPv4
-                        ip_offset = dlt_offset + 4
 
         except IndexError:
             pass
