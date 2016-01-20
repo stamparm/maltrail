@@ -1449,7 +1449,7 @@ function initDetails() {
             function nslookup(event, ui) {
                 var elem = $(this);
                 var html = elem.parent().html();
-                var match = html.match(/\d+\.\d+\.\d+\.\d+/) || html.match(/[\w:]*:[\w:]*/);
+                var match = html.match(/\d+\.\d+\.\d+\.\d+/) || html.match(/[\w:]*:[\w:]*:[\w:]*/);
 
                 if (match !== null) {
                     var ip = match[0];
@@ -1570,7 +1570,7 @@ function initDetails() {
                 if ((html.indexOf('flag') > -1) || (html.indexOf('lan') > -1) || (html.indexOf(',') > -1) || (html.indexOf('ellipsis') > -1))
                     return false;
 
-                var match = html.match(/\d+\.\d+\.\d+\.\d+/) || html.match(/[\w:]*:[\w:]*/);
+                var match = html.match(/\d+\.\d+\.\d+\.\d+/) || html.match(/[\w:]*:[\w:]*:[\w:]*/);
                 if (match === null)
                     return false;
 

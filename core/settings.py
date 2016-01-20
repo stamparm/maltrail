@@ -21,7 +21,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.9.92"
+VERSION = "0.9.93"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -63,7 +63,7 @@ LOW_PRIORITY_INFO_KEYWORDS = ("reputation", "attacker", "spammer", "abuser", "ma
 HIGH_PRIORITY_INFO_KEYWORDS = ("mass scanner",)
 HIGH_PRIORITY_REFERENCES = ("bambenekconsulting.com", "(custom)",)
 BAD_TRAIL_PREFIXES = ("127.", "192.168.", "localhost")
-LOCALHOST_IP = "127.0.0.1"
+LOCALHOST_IP = { 4: "127.0.0.1", 6: "::1" }
 IGNORE_DNS_QUERY_SUFFIXES = (".arpa", ".local")
 SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".exe", ".scr"))
 WHITELIST_DIRECT_DOWNLOAD_KEYWORDS = ("cgi", "/scripts/", "/_vti_bin/", "/bin/")

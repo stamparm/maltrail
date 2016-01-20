@@ -11,7 +11,7 @@ function getDemoCSV() {
     '"2015-03-10 00:17:33.929327" r2d2 61.240.144.66 60000 68.12.104.178 1900 UDP IP 61.240.144.66 "incoming masscan detected" autoshun.org\n' +
     '"2015-03-10 00:17:55.491309" r2d2 199.217.116.159 5232 68.12.104.178 5060 UDP IP 199.217.116.159 "sipvicious scan" autoshun.org\n' +
     '"2015-03-10 00:17:55.491297" r2d2 199.217.116.159 5232 68.12.104.178 5060 UDP IP 199.217.116.159 "sipvicious scan" autoshun.org\n' +
-    '"2015-03-10 00:31:04.649215" r2d2 45.56.80.141 50171 68.12.104.178 8081 TCP IP 45.56.80.141 attacker cinsscore.com\n' +
+    '"2015-03-10 00:31:04.649215" r2d2 2001:4860:4860::8888 50171 2002::1 8081 TCP IP 45.56.80.141 attacker cinsscore.com\n' +
     '"2015-03-10 00:31:04.649207" r2d2 45.56.80.141 50171 68.12.104.178 8081 TCP IP 45.56.80.141 attacker cinsscore.com\n' +
     '"2015-03-10 00:35:29.020389" r2d2 68.12.104.178 48905 68.12.99.2 53 UDP DNS (tracker.coppersurfer).tk "domain (suspicious)" (static)\n' +
     '"2015-03-10 00:35:29.020391" r2d2 68.12.104.178 48905 68.12.99.2 53 UDP DNS (tracker.coppersurfer).tk "domain (suspicious)" (static)\n' +
