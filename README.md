@@ -32,7 +32,7 @@
 
 **Maltrail** is a malicious traffic detection system, utilizing publicly available (black)lists containing malicious and/or generally suspicious trails, along with static trails compiled from various AV reports and custom user defined lists, where trail can be anything from domain name (e.g. `zvpprsensinaix.com` for [Banjori](http://www.johannesbader.ch/2015/02/the-dga-of-banjori/) malware), URL (e.g. `http://109.162.38.120/harsh02.exe` for known malicious [executable](https://www.virustotal.com/en/file/61f56f71b0b04b36d3ef0c14bbbc0df431290d93592d5dd6e3fffcc583ec1e12/analysis/)) or IP address (e.g. `103.224.167.117` for known attacker). Also, it has (optional) advanced heuristic mechanisms that can help in discovery of unknown threats (e.g. new malware).
 
-![Reporting tool](http://i.imgur.com/q57zq6Y.png)
+![Reporting tool](http://i.imgur.com/Sd9eqoa.png)
 
 The following (black)lists (i.e. feeds) are being utilized:
 
@@ -40,17 +40,17 @@ The following (black)lists (i.e. feeds) are being utilized:
 alienvault, autoshun, badips, bambenekconsultingc2,
 bambenekconsultingdga, binarydefense, bitcoinnodes, blocklist,
 botscout, bruteforceblocker, ciarmy, cruzit, cybercrimetracker,
-dshielddns, dshieldip, emergingthreatsbot, emergingthreatscip,
-emergingthreatsdns, feodotrackerdns, feodotrackerip, greensnow,
-malwarepatrol, malwareurlsnormal, maxmind, myip, nothink,
-openbl, openphish, palevotracker, proxylists, proxyrss,
-proxy, riproxies, rutgers, sblam, snort, socksproxy,
-sslipbl, sslproxies, torproject, torstatus, voipbl, vxvault,
-zeustrackerdns, zeustrackerip, zeustrackermonitor, zeustrackerurl,
-etc.
+deepviz, dshielddns, dshieldip, emergingthreatsbot,
+emergingthreatscip, emergingthreatsdns, feodotrackerdns,
+malwaredomainlist, malwaredomains, malwarepatrol, maxmind, myip,
+nothink, openbl, openphish, palevotracker, proxylists,
+proxyrss, proxy, riproxies, rutgers, sblam, snort,
+socksproxy, sslipbl, sslproxies, torproject, torstatus,
+voipbl, vxvault, zeustrackerdns, zeustrackerip,
+zeustrackermonitor, zeustrackerurl, etc.
 ```
 
-As of static entries, the trails for the following malicious entities (e.g. malware C&Cs) have been manually included (from various AV reports):
+As of static entries, the trails for the following malicious entities (e.g. malware C&Cs or sinkholes) have been manually included (from various AV reports):
 
 ```
 alureon, android_stealer, angler, aridviper, axpergle,
@@ -68,10 +68,13 @@ nonbolqu, nuqel, nwt, nymaim, palevo, pdfjsc, pift,
 plugx, ponmocup, powelike, proslikefan, pushdo,
 ransirac, redoctober, reveton, russian_doll, sality,
 sathurbot, scieron, sefnit, shylock, siesta, simda,
-sinkhole_1and1, sinkhole_abuse, sinkhole_blacklistthisdomain,
-sinkhole_certpl, sinkhole_drweb, sinkhole_fbizeus,
-sinkhole_fitsec, sinkhole_georgiatech, sinkhole_kaspersky,
-sinkhole_microsoft, sinkhole_shadowserver, sinkhole_sinkdns,
+sinkhole_1and1, sinkhole_abuse, sinkhole_blacklab,
+sinkhole_blacklistthisdomain, sinkhole_botnethunter,
+sinkhole_certpl, sinkhole_drweb, sinkhole_farsight,
+sinkhole_fbizeus, sinkhole_fitsec, sinkhole_fsi,
+sinkhole_georgiatech, sinkhole_gladtech, sinkhole_kaspersky,
+sinkhole_malwaredns, sinkhole_microsoft, sinkhole_shadowserver,
+sinkhole_sidnlabs, sinkhole_sinkdns, sinkhole_sugarbucket,
 sinkhole_zinkhole, skyper, smsfakesky, snake, snifula,
 sofacy, stuxnet, teerac, teslacrypt, torpig,
 torrentlocker, unruy, upatre, vawtrak, virut, vobfus,
@@ -118,11 +121,11 @@ ping -c 1 136.161.101.53
 cat /var/log/maltrail/$(date +"%Y-%m-%d").log
 ```
 
-![Test](http://i.imgur.com/lIYntT1.png)
+![Test](http://i.imgur.com/NYJg6Kl.png)
 
 Access the reporting interface (i.e. **Client**) by visiting the http://127.0.0.1:8338 (default credentials: `admin:changeme!`) from your web browser:
 
-![Reporting interface](http://i.imgur.com/WEHA05S.png)
+![Reporting interface](http://i.imgur.com/W8zFOmd.png)
 
 ## Administrator's guide
 
@@ -130,24 +133,24 @@ Access the reporting interface (i.e. **Client**) by visiting the http://127.0.0.
 
 Sensor's configuration can be found inside the `maltrail.conf` file's section `[Sensor]`:
 
-![Sensor's configuration](http://i.imgur.com/Xp6i0BO.png)
+![Sensor's configuration](http://i.imgur.com/8yZKH14.png)
 
 If option `USE_MULTIPROCESSING` is set to `true` then all CPU cores will be used. One core will be used only for packet capture (with appropriate affinity, IO priority and nice level settings), while other cores will be used for packet processing. Otherwise, everything will be run on a single core. Option `USE_FEED_UPDATES` can be used to turn off the trail updates from feeds altogether (and just use the provided static ones). Option `UPDATE_PERIOD` contains the number of seconds between each automatic trails update (Note: default value is set to `86400` (i.e. one day)) by using definitions inside the `trails` directory (Note: both **Sensor** and **Server** take care of the trails update). Option `CUSTOM_TRAILS_DIR` can be used by user to provide location of directory containing the custom trails (`*.txt`) files.
 Option `USE_HEURISTICS` turns on heuristic mechanisms (e.g. `long domain name (suspicious)`, `excessive no such domain name (suspicious)`, `direct .exe download (suspicious)`, etc.), potentially introducing false positives. Option `CAPTURE_BUFFER` presents a total memory (in bytes of percentage of total physical memory) to be used in case of multiprocessing mode for storing packet capture in a ring buffer for further processing by non-capturing processes. Option `MONITOR_INTERFACE` should contain the name of the capturing interface. Use value `any` to capture from all interfaces (if OS supports this). Option `CAPTURE_FILTER` should contain the network capture (`tcpdump`) filter to skip the uninteresting packets and ease the capturing process. Option `SENSOR_NAME` contains the name that should be appearing inside the events `sensor_name` value, so the event from one sensor could be distinguished from the other. If option `LOG_SERVER` is set, then all events are being sent remotely to the **Server**, otherwise they are stored directly into the logging directory set with option `LOG_DIR` inside the `[Server]` section. In case that the option `UPDATE_SERVER` is set, then all the trails are being pulled from the given location, otherwise they are being updated from trails definitions located inside the installation itself.
 
 When running the sensor (e.g. `sudo python sensor.py`) for the first time and/or after a longer period of non-running, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). After the initialization, it will start monitoring the configured interface (option `MONITOR_INTERFACE` inside the `maltrail.conf`) and write the events to either the configured log directory (option `LOG_DIR`) or send them remotely to the logging/reporting **Server** (option `LOG_SERVER`).
 
-![Sensor run](http://i.imgur.com/GLev7HJ.png)
+![Sensor run](http://i.imgur.com/A0qROp8.png)
 
 Detected events are stored inside the **Server**'s logging directory (i.e. option `LOG_DIR`) in easy-to-read CSV format (Note: whitespace ' ' is used as a delimiter) as single line entries consisting of: `time` `sensor` `src_ip` `src_port` `dst_ip` `dst_port` `proto` `trail_type` `trail` `trail_info` `reference` (e.g. `"2015-10-19 15:48:41.152513" beast 192.168.5.33 32985 8.8.8.8 53 UDP DNS 0000mps.webpreview.dsl.net malicious siteinspector.comodo.com`):
 
-![Sample log](http://i.imgur.com/l8rxe2y.png)
+![Sample log](http://i.imgur.com/RycgVru.png)
 
 ### Server
 
 Server's configuration can be found inside the `maltrail.conf` section `[Server]`:
 
-![Server's configuration](http://i.imgur.com/wWGXaPM.png)
+![Server's configuration](http://i.imgur.com/TiUpLX8.png)
 
 Option `HTTP_ADDRESS` contains the web server's listening address (Note: use `0.0.0.0` to listen on all interfaces). Option `HTTP_PORT` contains the web server's listening port. Default listening port is set to `8338`. If option `USE_SSL` is set to `true` then `SSL/TLS` will be used for accessing the web server (e.g. `https://192.168.6.10:8338/`). In that case, option `SSL_PEM` should be pointing to the server's private/cert PEM file. 
 
@@ -159,7 +162,7 @@ Option `UDP_ADDRESS` contains the server's log collecting listening address (Not
 
 Same as for **Sensor**, when running the **Server** (e.g. `python server.py`) for the first time and/or after a longer period of non-running, if option `USE_SERVER_UPDATE_TRAILS` is set to `true`, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). Its basic function is to store the log entries inside the logging directory (i.e. option `LOG_DIR`) and provide the web reporting interface for presenting those same entries to the end-user (Note: there is no need install the 3rd party web server packages like Apache):
 
-![Server run](http://i.imgur.com/16MTDXv.png)
+![Server run](http://i.imgur.com/GHdGPw7.png)
 
 ## User's guide
 
@@ -167,53 +170,49 @@ Same as for **Sensor**, when running the **Server** (e.g. `python server.py`) fo
 
 When entering the **Server**'s reporting interface (i.e. via the address defined by options `HTTP_ADDRESS` and `HTTP_PORT`), user will be presented with the following authentication dialog. User has to enter the proper credentials that have been set by the server's administrator inside the configuration file `maltrail.conf` (Note: default credentials are `admin:changeme!`):
 
-![User login](http://i.imgur.com/RRedrEF.png)
+![User login](http://i.imgur.com/WVpASAI.png)
 
 Once inside, user will be presented with the following reporting interface:
 
-![Reporting interface](http://i.imgur.com/KObxQy8.png)
+![Reporting interface](http://i.imgur.com/PZY8JEC.png)
 
 The top part holds a sliding timeline (Note: activated after clicking the current date label and/or the calendar icon ![Calendar icon](http://i.imgur.com/NfNore9.png)) where user can select logs for past events (Note: mouse over event will trigger display of tooltip with approximate number of events for current date). Dates are grouped by months, where 4 month period of data are displayed inside the widget itself. However, by using the provided slider (i.e. ![Timeline slider](http://i.imgur.com/SNGVSaP.png)) user can easily access events from previous months.
 
-![Timeline](http://i.imgur.com/WtEolEP.png)
+![Timeline](http://i.imgur.com/RnIROcn.png)
 
 Once clicking the date, all events for that particular date should be loaded and represented by the client's web browser. Depending on number of events and the network connection speed, loading and display of logged events could take from couple of seconds, up to several minutes (e.g. 100,000 events takes around 5 seconds in total). For the whole processing time, animated loader will be displayed across the disabled user interface:
 
-![Watch](http://i.imgur.com/W9mCUV6.png)
+![Loader](http://i.imgur.com/oX7Rtjo.png)
 
-Middle part holds a summary of displayed events. `Events` box represents total number of events in a selected 24-hour period, where red line represents IP-based events, blue line represents DNS-based events and yellow line represents URL-based events. `Sources` box represents number of events per top sources in form of a stacked column chart, with total number of sources on top. `Threats` box represents percentage of top threats in form of a pie chart (Note: gray area holds all threats having &lt;1% in total events), with total number of threats on top. `Trails` box represents percentage of top trails in form of a pie chart (Note: gray area holds all trails having &lt;1% in total events), with total number of trails on top.
+Middle part holds a summary of displayed events. `Events` box represents total number of events in a selected 24-hour period, where red line represents IP-based events, blue line represents DNS-based events and yellow line represents URL-based events. `Sources` box represents number of events per top sources in form of a stacked column chart, with total number of sources on top. `Threats` box represents percentage of top threats in form of a pie chart (Note: gray area holds all threats having &lt;1% in total events), with total number of threats on top. `Trails` box represents percentage of top trails in form of a pie chart (Note: gray area holds all trails having &lt;1% in total events), with total number of trails on top. Each of those boxes are active, hence the click on one of those will result with a more detailed graph.
 
-![Summary](http://i.imgur.com/4aZBBTo.png)
-
-Each of those boxes are active, hence the click on one of those will result with a more detailed graph:
-
-![Detailed boxes](http://i.imgur.com/iGlOdaN.png)
+![Summary](http://i.imgur.com/5NFbqCb.png)
 
 Bottom part holds a condensed representation of logged events in form of a paginated table. Each entry holds details for a single threat (Note: uniquely identified by a pair `src_ip~trail` or `dst_ip~trail` if the `src_ip` is the same as the `trail` - as in case of attacks coming from the outside):
 
-![Single threat](http://i.imgur.com/ftF6icy.png)
+![Single threat](http://i.imgur.com/IxPwKKZ.png)
 
-Column `threat` holds threat's unique ID (e.g. `85fdb08d`) and color (Note: extruded from the threat's ID), `sensor` holds sensor name(s) where the event has been triggered (e.g. `blitvenica`), `events` holds total number of events for a current threat, `first_seen` holds time of first event in a selected (24h) period (e.g. `06th 08:21:54`), `last_seen` holds time of last event in a selected (24h) period (e.g. `06th 15:21:23`), `src_ip` holds source IP(s) of a threat (e.g. `99.102.41.102`), `src_port` holds source port(s) (e.g. `44556, 44589, 44601`), `dst_ip` holds destination IP(s) (e.g. `213.202.100.28`), `dst_port` holds destination port(s) (e.g. `80 (HTTP)`), `proto` holds protocol(s), (e.g. `TCP`), `trail` holds a blacklist entry that triggered the event(s), `info` holds more information about the threat/trail (e.g. `attacker` for known attacker's IP addresses or `ipinfo` for known IP information service commonly used by malware during a startup), `reference` holds a source of the blacklisted entry (e.g. `(static)` for static trails or `myip.ms` for a dynamic feed retrieved from that same source) and `tags` holds user defined tags for a given trail (e.g. `APT28`).
+Column `threat` holds threat's unique ID (e.g. `85fdb08d`) and color (Note: extruded from the threat's ID), `sensor` holds sensor name(s) where the event has been triggered (e.g. `blitvenica`), `events` holds total number of events for a current threat, `severity` holds evaluated severity of threat (Note: based on values in `info` and `reference` columns), `first_seen` holds time of first event in a selected (24h) period (e.g. `06th 08:21:54`), `last_seen` holds time of last event in a selected (24h) period (e.g. `06th 15:21:23`), `sparkline` holds a small sparkline graph representing threat's activity in selected period, `src_ip` holds source IP(s) of a threat (e.g. `99.102.41.102`), `src_port` holds source port(s) (e.g. `44556, 44589, 44601`), `dst_ip` holds destination IP(s) (e.g. `213.202.100.28`), `dst_port` holds destination port(s) (e.g. `80 (HTTP)`), `proto` holds protocol(s), (e.g. `TCP`), `trail` holds a blacklisted (or heuristic) entry that triggered the event(s), `info` holds more information about the threat/trail (e.g. `known attacker` for known attacker's IP addresses or `ipinfo` for known IP information service commonly used by malware during a startup), `reference` holds a source of the blacklisted entry (e.g. `(static)` for static trails or `myip.ms` for a dynamic feed retrieved from that same source) and `tags` holds user defined tags for a given trail (e.g. `APT28`).
 
-When moving mouse over `src_ip` and `dst_ip` table entries, information tooltip is being displayed with detailed WHOIS information (Note: [RIPE](http://www.ripe.net/) is the information provider):
+When moving mouse over `src_ip` and `dst_ip` table entries, information tooltip is being displayed with detailed reverse DNS and WHOIS information (Note: [RIPE](http://www.ripe.net/) is the information provider):
 
-![On mouse over IP](http://i.imgur.com/5XybnY6.png)
+![On mouse over IP](http://i.imgur.com/U0huj7m.png)
 
 Event details (e.g. `src_port`, `dst_port`, `proto`, etc.) that differ inside same threat entry are condensed in form of a cloud icon (i.e. ![Cloud ellipsis](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/ellipsis.png)). This is performed to get an usable reporting interface with as less rows as possible. Moving mouse over such icon will result in a display of an information tooltip with all items held (e.g. all port numbers being scanned by `attacker`):
 
-![On mouse over cloud](http://i.imgur.com/ahmQGYJ.png)
+![On mouse over cloud](http://i.imgur.com/BfYT2u7.png)
 
 Clicking on one such icon will open a new dialog containing all stored items (Note: in their uncondensed form) ready to be Copy-Paste(d) for further analysis:
 
-![Ctrl-C dialog](http://i.imgur.com/tigoCcd.png)
+![Ctrl-C dialog](http://i.imgur.com/9pgMpiR.png)
 
 When hovering mouse pointer over the threat's trail for couple of seconds it will result in a frame consisted of results using the trail as a search term performed against [DuckDuckGo](https://duckduckgo.com/) search engine. In lots of cases, this provides basic information about the threat itself, eliminating the need for user to do the manual search for it. In upper right corner of the opened frame window there are two extra buttons. By clicking the first one (i.e. ![New tab icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/newtab.png)), the resulting frame will be opened inside the new browser's tab (or window), while by clicking the second one (i.e. ![Close icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/close.png)) will immediately close the frame (Note: the same action is achieved by moving the mouse pointer outside the frame borders):
 
-![On mouse over trail](http://i.imgur.com/IvDOIt1.png)
+![On mouse over trail](http://i.imgur.com/ppoMHub.png)
 
 For each threat there is a column `tag` that can be filled with arbitrary "tags" to closely describe all threats sharing the same trail. Also, it is a great way to describe threats individually, so all threats sharing the same tag (e.g. `yahoo`) could be grouped out later:
 
-![Tags](http://i.imgur.com/iI2Alh8.png)
+![Tags](http://i.imgur.com/u5Z4752.png)
 
 ### Real-life cases
 
