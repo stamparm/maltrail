@@ -338,7 +338,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 if not any(_ in user_agent for _ in WHITELIST_UA_KEYWORDS):
                                     match = re.search(SUSPICIOUS_UA_REGEX, user_agent)
                                     if match:
-                                        result = _result_cache[user_agent] = match.group(0).replace('(', "\\(").join(("(%s)" if _ else "%s") % _.replace('(', "\\(").replace(')', "\\)") for _ in user_agent.split(match.group(0), 1))
+                                        result = _result_cache[user_agent] = match.group(0).replace('(', "\\(").replace(')', "\\)").join(("(%s)" if _ else "%s") % _.replace('(', "\\(").replace(')', "\\)") for _ in user_agent.split(match.group(0), 1))
                                 if not result:
                                     _result_cache[user_agent] = False
 
@@ -818,6 +818,7 @@ def main():
     parser.add_option("-i", dest="pcap_file", help="open pcap file for offline analysis")
     parser.add_option("-p", dest="plugins", help="plugin(s) to be used per event")
     parser.add_option("--console", dest="console", action="store_true", help="print events to console (too)")
+    parser.add_option("--debug", dest="debug", action="store_true", help=optparse.SUPPRESS_HELP)
     options, _ = parser.parse_args()
 
     if not check_sudo():
@@ -828,6 +829,11 @@ def main():
     for option in dir(options):
         if isinstance(getattr(options, option), (basestring, bool)) and not option.startswith('_'):
             config[option] = getattr(options, option)
+
+    if options.debug:
+        config.console = True
+        config.USE_MULTIPROCESSING = False
+        config.SHOW_DEBUG = True
 
     if options.pcap_file:
         if not os.path.isfile(options.pcap_file):

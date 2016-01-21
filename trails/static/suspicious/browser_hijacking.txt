@@ -40,3 +40,7 @@ easyrecipesaccess.com
 qvo6.com
 sidecubes.com
 start.qone8.com
+
+# Reference: https://www.quora.com/Why-I-am-getting-this-malware-message-while-browsing-through-Google-Chrome
+
+sso.anbtr.com
