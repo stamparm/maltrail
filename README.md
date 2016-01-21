@@ -226,20 +226,20 @@ Mass scans is a fairly common phenomenon where individuals and/or organizations 
 
 To make stuff worse, organizations as [Shodan](https://www.shodan.io/) and [ZoomEye](http://www.zoomeye.org) give all results freely available (to other potential attackers) through their search engine. In the following screenshots you'll see details of Shodan scans in one single day.
 
-Here is a reverse DNS lookup of the "attacker"'s address:
+Here is a reverse DNS and WHOIS lookup of the "attacker"'s address:
 
-![Shodan 1](http://i.imgur.com/0lnXoYj.png)
+![Shodan 1](http://i.imgur.com/LQ6Vu00.png)
 
 When hovering mouse pointer over the `trail` column's content (IP address), you'll be presented with the search results from [DuckDuckGo](https://duckduckgo.com/) where you'll be able to find more information about the "attacker" (i.e. Shodan):
 
-![Shodan 2](http://i.imgur.com/y15UU8S.png)
+![Shodan 2](http://i.imgur.com/sv7ONzk.png)
 
 In the `dst_ip` column, if you have a large organization, you'll be presented with large list of scanned IP addresses:
-![Shodan 3](http://i.imgur.com/zwYkwxM.pngg)
+![Shodan 3](http://i.imgur.com/EhAtXs7.png)
 
 In the `dst_port` column you'll be able to see all ports that have been scanned by such mass scans:
 
-![Shodan 4](http://i.imgur.com/VOKmRTy.png)
+![Shodan 4](http://i.imgur.com/Wk8Xjhq.png)
 
 In other similar situations you'll see the same behaviour, coming from blacklisted individual attacker(s) (in this case by [cinsscore.com](http://cinsscore.com/)):
 
