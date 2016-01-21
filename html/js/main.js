@@ -1190,7 +1190,7 @@ function initDetails() {
 
                     data = data.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-                    if ((data.indexOf(',') > -1) || ((info.indexOf(SUSPICIOUS_THREAT_INFIX) > -1) || data.length > 80) && (data.indexOf('(') > -1) || (data.length > LONG_TRAIL_THRESHOLD)) {
+                    if ((data.indexOf(',') > -1) || ((info.indexOf(SUSPICIOUS_THREAT_INFIX) > -1) || data.length > 80) && (data.indexOf('(') > -1) || (data.replace(/\([^)]+\)/g, "").length > LONG_TRAIL_THRESHOLD)) {
                         var common = "";
                         var title = "";
                         var left = false;
