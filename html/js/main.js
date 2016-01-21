@@ -1784,7 +1784,7 @@ Object.size = function(obj) {
     return size;
 };
 
-$.fn.dataTable.ext.search.push(
+jQuery.fn.dataTableExt.afnFiltering.push(
     function(settings, data, dataIndex) {
         return true;
     }
