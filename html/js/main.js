@@ -1331,7 +1331,7 @@ function initDetails() {
             sZeroRecords: "No matching threats found",
             sInfo: "Showing _START_ to _END_ of <span class='details_total'>_TOTAL_</span> threats",
             sInfoEmpty: "Showing 0 to 0 of <span class='details_total'>0</span> total threats",
-            sInfoFiltered: "(filtered from _MAX_ total threats)",
+            sInfoFiltered: "(<span style='color: red'>filtered</span> from _MAX_ total threats)",
             sSearchPlaceholder: "Filter",
             sSearch: ""
         },
