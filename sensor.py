@@ -64,6 +64,7 @@ from core.settings import SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD
 from core.settings import SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD
 from core.settings import SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
 from core.settings import SUSPICIOUS_FILENAMES
+from core.settings import SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION
 from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEX
 from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
 from core.settings import SUSPICIOUS_UA_REGEX
@@ -72,7 +73,7 @@ from core.settings import VERSION
 from core.settings import WHITELIST
 from core.settings import WHITELIST_DIRECT_DOWNLOAD_KEYWORDS
 from core.settings import WHITELIST_LONG_DOMAIN_NAME_KEYWORDS
-from core.settings import WHITELIST_HTTP_REQUEST_KEYWORDS
+from core.settings import WHITELIST_HTTP_REQUEST_PATHS
 from core.settings import WHITELIST_UA_KEYWORDS
 from core.update import update_ipcat
 from core.update import update_trails
@@ -375,6 +376,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 return
 
                     if config.USE_HEURISTICS:
+                        unquoted_path = urllib.unquote(path)
+                        unquoted_post_data = urllib.unquote(post_data or "")
                         for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
                             replacement = SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS[char]
                             path = path.replace(char, replacement)
@@ -382,20 +385,21 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 post_data = post_data.replace(char, replacement)
 
                         if host not in WHITELIST:
-                            if not any(_ in path for _ in WHITELIST_HTTP_REQUEST_KEYWORDS):
-                                result = _result_cache.get(path)
-                                if result is None:
-                                    result = _result_cache[path] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(path)) is not None
-                                if result:
-                                    trail = "%s(%s)" % (host, path)
-                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"), packet)
-                                    return
+                            if not any(_ in unquoted_path for _ in WHITELIST_HTTP_REQUEST_PATHS):
+                                if any(_ in unquoted_path for _ in SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION):
+                                    found = _result_cache.get(unquoted_path)
+                                    if found is None:
+                                        found = _result_cache[unquoted_path] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, unquoted_path) is not None
+                                    if found:
+                                        trail = "%s(%s)" % (host, path)
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"), packet)
+                                        return
 
-                                if post_data:
-                                    result = _result_cache.get(post_data)
-                                    if result is None:
-                                        result = _result_cache[post_data] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(post_data)) is not None
-                                    if result:
+                                if any(_ in unquoted_post_data for _ in SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION):
+                                    found = _result_cache.get(unquoted_post_data)
+                                    if found is None:
+                                        found = _result_cache[unquoted_post_data] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, unquoted_path) is not None
+                                    if found:
                                         trail = "%s(%s \(%s %s\))" % (host, path, method, post_data.strip())
                                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"), packet)
                                         return
