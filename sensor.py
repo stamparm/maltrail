@@ -389,14 +389,14 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"), packet)
                                     return
 
-                            if post_data and not any(_ in post_data for _ in WHITELIST_HTTP_REQUEST_KEYWORDS):
-                                result = _result_cache.get(post_data)
-                                if result is None:
-                                    result = _result_cache[post_data] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(post_data)) is not None
-                                if result:
-                                    trail = "%s(%s \(%s %s\))" % (host, path, method, post_data.strip())
-                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"), packet)
-                                    return
+                                if post_data:
+                                    result = _result_cache.get(post_data)
+                                    if result is None:
+                                        result = _result_cache[post_data] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, urllib.unquote(post_data)) is not None
+                                    if result:
+                                        trail = "%s(%s \(%s %s\))" % (host, path, method, post_data.strip())
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"), packet)
+                                        return
 
                         if '.' in path:
                             _ = urlparse.urlparse("http://%s" % url)  # dummy scheme

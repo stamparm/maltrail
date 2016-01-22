@@ -9,7 +9,6 @@
 404search
 91cast
 \A\w{1,2}\Z
-\A[0-9a-f]{32}
 \A[^ ]\Z
 \(spkg\)
 _test_
