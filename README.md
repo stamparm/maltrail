@@ -84,7 +84,7 @@ volatile_cedar, vundo, waterbug, zeroaccess, zlob, etc.
 
 Maltrail is based on the **Traffic** -&gt; **Sensor** &lt;-&gt; **Server** &lt;-&gt; **Client** architecture. **Sensor**(s) is a standalone component running on the monitoring node (e.g. Linux platform connected passively to the SPAN/mirroring port or transparently inline on a Linux bridge) or at the standalone machine (e.g. Honeypot) where it "monitors" the passing **Traffic** for blacklisted items/trails (i.e. domain names, URLs and/or IPs). In case of a positive match, it sends the event details to the (central) **Server** where they are being stored inside the appropriate logging directory (i.e. `LOG_DIR` described in the *Configuration* section). If **Sensor** is being run on the same machine as **Server** (default configuration), logs are stored directly into the local logging directory. Otherwise, they are being sent via UDP messages to the remote server (i.e. `LOG_SERVER` described in the *Configuration* section).
 
-![Architecture diagram](http://i.imgur.com/uut1tr6.png)
+![Architecture diagram](http://i.imgur.com/2IP9Mh2.png)
 
 **Server**'s primary role is to store the event details and provide back-end support for the reporting web application. In default configuration, server and sensor will run on the same machine. So, to prevent potential disruptions in sensor activities, the front-end reporting part is based on the ["Fat client"](https://en.wikipedia.org/wiki/Fat_client) architecture (i.e. all data post-processing is being done inside the client's web browser instance). Events (i.e. log entries) for the chosen (24h) period are transferred to the **Client**, where the reporting web application is solely responsible for the presentation part. Data is sent toward the client in compressed chunks, where they are processed sequentially. The final report is created in a highly condensed form, practically allowing presentation of virtually unlimited number of events.
 
@@ -381,3 +381,4 @@ This software is provided under under a MIT License. See the accompanying [LICEN
 ## Donate
 
 This project is a result of numerous hours of software development. If you appreciate the work and you want to see it further developed, please consider making a donation via [PayPal](https://www.paypal.com/) to `miroslav.stampar@gmail.com` (current total: `0$`) or via [&#x0243;itcoin](bitcoin:1JCtgmpC1eWvdHXrKfvMAunfvcaaMXLP5G) to `1JCtgmpC1eWvdHXrKfvMAunfvcaaMXLP5G` (current total: `0B`). Thank you very much if you decide to do it.
+
