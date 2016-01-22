@@ -378,6 +378,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                         if any(char in path for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS):
                             for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
                                 path = path.replace(char, urllib.quote(char))
+                                if post_data:
+                                    post_data = post_data.replace(char, urllib.quote(char))
 
                         if host not in WHITELIST:
                             if not any(_ in path for _ in WHITELIST_HTTP_REQUEST_KEYWORDS):
