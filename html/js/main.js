@@ -489,9 +489,7 @@ function init(url, from, to) {
                 if (type in COMMA_ENCODE_TRAIL_TYPES)
                     trail = trail.replace(/\,/g, "&#44;");
 
-                trail = trail.replace(/\\\(/g, "&#40;").replace(/\\\)/g, "&#41;");
-
-                var _ = trail.replace(/\([^)]+\)/g, "");
+                var _ = trail.replace(/\\\(/g, "&#40;").replace(/\\\)/g, "&#41;").replace(/\([^)]+\)/g, "");
 
                 if (!(type in TRAIL_TYPES))
                     TRAIL_TYPES[type] = PREFERRED_TRAIL_COLORS[type] || getHashColor(type);
@@ -514,42 +512,45 @@ function init(url, from, to) {
             }
 
             for (var i = 0; i < results.data.length; i++) {
-                var data = results.data[i], threatText, match, _;
+                var data = results.data[i], threat_text, match, _;
 
                 if (data.length < LOG_COLUMNS_SIZE)
                     continue;
 
                 var time = data[LOG_COLUMNS.TIME];
+                var src_ip = data[LOG_COLUMNS.SRC_IP];
+                var type = data[LOG_COLUMNS.TYPE];
                 var info = data[LOG_COLUMNS.INFO];
                 var reference = data[LOG_COLUMNS.REFERENCE];
 
                 _ = data[LOG_COLUMNS.TRAIL];
-                _ = charTrim(charTrim(_.replace(/\([^)]+\)/g, "").replace(/\{[^}]+\}/g, ""), ' '), '.');
+                _ = charTrim(charTrim(_.replace(/\([^)]+\)/g, ""), ' '), '.');
 
                 var flood = _ in _FLOOD_TRAILS;
                 var heuristic = reference.indexOf(HEURISTIC_THREAT_INFIX) > -1;
 
                 if (flood)
-                    threatText = FLOOD_THREAT_PREFIX + THREAT_INFIX + _;
+                    threat_text = FLOOD_THREAT_PREFIX + THREAT_INFIX + _;
                 else if (heuristic)
-                    threatText = data[LOG_COLUMNS.SRC_IP] + THREAT_INFIX + _ + info;
+                    threat_text = src_ip + THREAT_INFIX + _ + info;
                 else
-                    threatText = data[LOG_COLUMNS.SRC_IP] + THREAT_INFIX + _;
+                    threat_text = src_ip + THREAT_INFIX + _;
 
                 _TOTAL_EVENTS += 1;
 
-                if (!(threatText in _THREATS))
-                    _THREATS[threatText] = [1, [time], time, time, data];  // count, times, minTime, maxTime, (threat)data
+                if (!(threat_text in _THREATS))
+                    _THREATS[threat_text] = [1, [time], time, time, data];  // count, times, minTime, maxTime, (threat)data
                 else {
-                    _THREATS[threatText][0] += 1;
-                    _THREATS[threatText][1].push(time);
+                    var threat_data = _THREATS[threat_text];
+                    threat_data[0] += 1;
+                    threat_data[1].push(time);
 
-                    if (time < _THREATS[threatText][2])
-                        _THREATS[threatText][2] = time;
-                    else if (time > _THREATS[threatText][3])
-                        _THREATS[threatText][3] = time;
+                    if (time < threat_data[2])
+                        threat_data[2] = time;
+                    else if (time > threat_data[3])
+                        threat_data[3] = time;
 
-                    _ = _THREATS[threatText][4];
+                    _ = threat_data[4];
 
                     for (var j = 0; j < DOT_COLUMNS.length; j++) {
                         var column = DOT_COLUMNS[j];
@@ -558,7 +559,7 @@ function init(url, from, to) {
                                 var original = _[column];
                                 var multiple = original.match(/\((.*,.*)\)/) || original.match(/([^ ,]+,[^ ]+)/);
 
-                                _[column] = { };
+                                _[column] = {};
 
                                 if (multiple) {
                                     var items = multiple[1].split(',');
@@ -571,7 +572,7 @@ function init(url, from, to) {
                                             _[column][items[k]] = true
                                 }
                                 else
-                                    _[column][original.replace(/\s{[^}]+}/, "")] = true;
+                                    _[column][original] = true;
                             }
 
                             var multiple = data[column].match(/\((.*,.*)\)/) || data[column].match(/([^ ,]+,[^ ]+)/);
@@ -586,23 +587,22 @@ function init(url, from, to) {
                                         _[column][items[k]] = true
                             }
                             else
-                                _[column][data[column].replace(/\s{[^}]+}/, "")] = true;
+                                _[column][data[column]] = true;
                     }
                 }
 
-                _ = data[LOG_COLUMNS.SRC_IP];
-                if (!(_ in _SOURCES))
-                    _SOURCES[_] = 1;
+                if (!(src_ip in _SOURCES))
+                    _SOURCES[src_ip] = 1;
                 else
-                    _SOURCES[_] += 1;
+                    _SOURCES[src_ip] += 1;
 
-                if (!(_ in _SOURCE_EVENTS)) {
-                    _SOURCE_EVENTS[_] = {};
+                if (!(src_ip in _SOURCE_EVENTS)) {
+                    _SOURCE_EVENTS[src_ip] = {};
 
                     for (var key in TRAIL_TYPES)
-                        _SOURCE_EVENTS[_][key] = 0;
+                        _SOURCE_EVENTS[src_ip][key] = 0;
                 }
-                _SOURCE_EVENTS[_][data[LOG_COLUMNS.TYPE]] += 1;
+                _SOURCE_EVENTS[src_ip][type] += 1;
 
                 match = time.match(/(\d{4})-(\d{2})-(\d{2})\ (\d{2}):(\d{2}):(\d{2})/);
 
@@ -617,12 +617,12 @@ function init(url, from, to) {
                             _HOURS[hour][type] = 0;
                     }
 
-                    _HOURS[hour][data[LOG_COLUMNS.TYPE]] += 1;
+                    _HOURS[hour][type] += 1;
 
-                    if (!(threatText in _HOURS[hour]))
-                        _HOURS[hour][threatText] = 0;
+                    if (!(threat_text in _HOURS[hour]))
+                        _HOURS[hour][threat_text] = 0;
 
-                    _HOURS[hour][threatText] += 1;
+                    _HOURS[hour][threat_text] += 1;
                 }
             }
         },
@@ -630,23 +630,23 @@ function init(url, from, to) {
             clearTimeout(PAPAPARSE_COMPLETE_TIMER);
             PAPAPARSE_COMPLETE_TIMER = setTimeout(function() {
                 // threat sensor first_time last_time count src_ip src_port dst_ip dst_port proto type trail info reference tags
-                for (var threatText in _THREATS) {
-                    var threatUID = getThreatUID(threatText);
-                    var item = _THREATS[threatText];
-                    var count = item[0];
-                    var times = item[1];
-                    var minTime = item[2];
-                    var maxTime = item[3];
-                    var sparklineData = [];
-                    var data = item[4];
+                for (var threat_text in _THREATS) {
+                    var threatUID = getThreatUID(threat_text);
+                    var threat_data = _THREATS[threat_text];
+                    var count = threat_data[0];
+                    var times = threat_data[1];
+                    var minTime = threat_data[2];
+                    var maxTime = threat_data[3];
+                    var sparkline_data = [];
+                    var data = threat_data[4];
                     var row = [];
                     var severity = SEVERITY.MEDIUM;
 
-                    var storedLocally = $.jStorage.get(threatUID);
+                    var stored_locally = $.jStorage.get(threatUID);
                     var tagData = "";
 
-                    if (storedLocally !== null)
-                        tagData = storedLocally.tagData;
+                    if (stored_locally !== null)
+                        tagData = stored_locally.tagData;
 
                     for (var i = 0; i < DOT_COLUMNS.length; i++) {
                         var column = DOT_COLUMNS[i];
@@ -696,9 +696,9 @@ function init(url, from, to) {
                     }
 
                     if ((min_ !== null) && (max_ !== null)) {
-                        var hourms = 60 * 60 * 1000;
-                        min_ = dayStart(min_ * hourms) / hourms;
-                        max_ = dayEnd(max_ * hourms) / hourms;
+                        var ms = 60 * 60 * 1000;
+                        min_ = dayStart(min_ * ms) / ms;
+                        max_ = dayEnd(max_ * ms) / ms;
 
                         for (var hour = min_; hour <= max_; hour++) {
                             if (!(hour in _HOURS))
@@ -707,7 +707,7 @@ function init(url, from, to) {
                     }
 
                     for (var hour in _HOURS)
-                        _.push([hour >>> 0, _HOURS[hour][threatText]]);
+                        _.push([hour >>> 0, _HOURS[hour][threat_text]]);
 
                     _.sort(function(a, b) {
                         a = a[0];
@@ -717,11 +717,11 @@ function init(url, from, to) {
                     });
 
                     for (var i = 0; i < 24; i++)
-                        sparklineData.push(0);
+                        sparkline_data.push(0);
 
-                    var totalDays = Math.round(_.length / 24);
+                    var total_days = Math.round(_.length / 24);
                     for (var i = 0; i < _.length; i++) {
-                        sparklineData[Math.floor(i / totalDays)] += (_[i][1] | 0);
+                        sparkline_data[Math.floor(i / total_days)] += (_[i][1] | 0);
                         //_MAX_SPARKLINE_PER_HOUR = Math.max(_MAX_SPARKLINE_PER_HOUR, _[i][1] | 0);
                     }
 
@@ -743,23 +743,7 @@ function init(url, from, to) {
 
                     _SEVERITY_COUNT[severity] += 1;
 
-                    row.push(threatUID);
-                    row.push(data[LOG_COLUMNS.SENSOR]);
-                    row.push(times);
-                    row.push(severity);
-                    row.push(minTime);
-                    row.push(maxTime);
-                    row.push(sparklineData.join(","));
-                    row.push(data[LOG_COLUMNS.SRC_IP]);
-                    row.push(data[LOG_COLUMNS.SRC_PORT]);
-                    row.push(data[LOG_COLUMNS.DST_IP]);
-                    row.push(data[LOG_COLUMNS.DST_PORT]);
-                    row.push(data[LOG_COLUMNS.PROTO]);
-                    row.push(data[LOG_COLUMNS.TYPE]);
-                    row.push(data[LOG_COLUMNS.TRAIL]);
-                    row.push(data[LOG_COLUMNS.INFO]);
-                    row.push(data[LOG_COLUMNS.REFERENCE]);
-                    row.push(tagData);
+                    row = [threatUID, data[LOG_COLUMNS.SENSOR], times, severity, minTime, maxTime, sparkline_data.join(","), data[LOG_COLUMNS.SRC_IP], data[LOG_COLUMNS.SRC_PORT], data[LOG_COLUMNS.DST_IP], data[LOG_COLUMNS.DST_PORT], data[LOG_COLUMNS.PROTO], data[LOG_COLUMNS.TYPE], data[LOG_COLUMNS.TRAIL], data[LOG_COLUMNS.INFO], data[LOG_COLUMNS.REFERENCE], tagData];
 
                     _DATASET.push(row);
                 }
@@ -1960,7 +1944,7 @@ function drawInfo(type) {
         var labels = [];
         var first = true;
         var datasets = [];
-        var totalDays = Math.round(Object.size(_HOURS) / 24);
+        var total_days = Math.round(Object.size(_HOURS) / 24);
 
         for (var type in TRAIL_TYPES) {
             var _ = [];
@@ -1981,7 +1965,7 @@ function drawInfo(type) {
                 var date = new Date(_[i][0] * 60 * 60 * 1000);
 
                 if (first) {
-                    if (i % totalDays === 0)
+                    if (i % total_days === 0)
                         labels.push(pad(date.getHours(), 2) + "h");
                     else
                         labels.push("");
@@ -2013,7 +1997,7 @@ function drawInfo(type) {
             scaleShowHorizontalLines: false, // because StackedBar doesn't show them properly
             datasetFill: false,
             bezierCurve: false,
-            pointDotRadius: Math.max(1, 5 - totalDays),
+            pointDotRadius: Math.max(1, 5 - total_days),
             //scaleShowGridLines: false
             //tooltipTemplate: "<%if (label){%><%=label.replace(/[^0-9]/, '')%>:00h-<%=label.replace(/[^0-9]/, '')%>:59h: <%}%><%= value %> events",
             tooltipTemplate: CHART_TOOLTIP_FORMAT,
@@ -2549,9 +2533,9 @@ function initVisual() {
     }
 
     if ((min_ !== null) && (max_ !== null)) {
-        var hourms = 60 * 60 * 1000;
-        min_ = dayStart(min_ * hourms) / hourms;
-        max_ = dayEnd(max_ * hourms) / hourms;
+        var ms = 60 * 60 * 1000;
+        min_ = dayStart(min_ * ms) / ms;
+        max_ = dayEnd(max_ * ms) / ms;
 
         for (var hour = min_; hour <= max_; hour++) {
             if (!(hour in _HOURS)) {
