@@ -191,7 +191,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                         if _src_ip not in WHITELIST:
                             _src_ports = set(str(_[2]) for _ in _connect_src_details[key])
                             _dst_ports = set(str(_[3]) for _ in _connect_src_details[key])
-                            log_event((sec, usec, _src_ip, ','.join(_src_ports), _dst_ip, ','.join(_dst_ports), PROTO.TCP, TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"), packet)
+                            log_event((sec, usec, _src_ip, ','.join(_src_ports), _dst_ip, ','.join(_dst_ports), PROTO.TCP, TRAIL.IP, "-", "potential port scanning", "(heuristic)"), packet)
 
                 _connect_src_dst.clear()
                 _connect_src_details.clear()
@@ -202,8 +202,6 @@ def _process_packet(packet, sec, usec, ip_offset):
 
         if ip_version == 0x04:  # IPv4
             ip_header = struct.unpack("!BBHHHBBH4s4s", ip_data[:20])
-
-            ip_length = ip_header[2]
             iph_length = (ip_header[0] & 0xf) << 2
             protocol = ip_header[6]
             src_ip = socket.inet_ntoa(ip_header[8])
@@ -212,7 +210,6 @@ def _process_packet(packet, sec, usec, ip_offset):
             # Reference: http://chrisgrundemann.com/index.php/2012/introducing-ipv6-understanding-ipv6-addresses/
             ip_header = struct.unpack("!BBHHBB16s16s", ip_data[:40])
             iph_length = 40
-            payload_length = ip_header[3]
             protocol = ip_header[4]
             src_ip = inet_ntoa6(ip_header[6])
             dst_ip = inet_ntoa6(ip_header[7])

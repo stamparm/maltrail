@@ -22,7 +22,6 @@
  - [Suspicious direct file downloads](#suspicious-direct-file-downloads)
  - [Suspicious HTTP requests](#suspicious-http-requests)
  - [Port scanning](#port-scanning)
- - [Potential UDP exfiltration](#potential-udp-exfiltration)
  - [False positives](#false-positives)
 - [Requirements](#requirements)
 - [License](#license)
@@ -271,6 +270,10 @@ In case of connection attempts coming from infected computers inside our organiz
 
 ![beebone malware](http://i.imgur.com/GBLWISo.png)
 
+In case of DNS requests containing known [DGA](https://en.wikipedia.org/wiki/Domain_generation_algorithm) domain names, threat will be shown like (in this case [Necurs](https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Win32/Necurs)):
+
+![necurs malware](http://i.imgur.com/8tWj2pm.png)
+
 In the following case file downloads from blacklisted (in this case by [malwarepatrol.net](https://malwarepatrol.net/)) URL(s) have occurred:
 
 ![malware download](http://i.imgur.com/g2NH7sT.png)
@@ -297,7 +300,7 @@ Maltrail uses static [list](https://github.com/stamparm/maltrail/blob/master/tra
 
 ![Suspicious dynamic domains](http://i.imgur.com/1WVLMf9.png)
 
-Also, Maltrail uses static [list](https://github.com/stamparm/maltrail/blob/master/trails/static/suspicious/onion.txt) of "onion"-related domains that are also often used in suspicious activities (e.g. malware contacting C&C servers by using Tor2Web service(s)):
+Also, Maltrail uses static [list](https://github.com/stamparm/maltrail/blob/master/trails/static/suspicious/onion.txt) of "onion"-related domains that are also often used in suspicious activities (e.g. malware contacting C&amp;C servers by using Tor2Web service(s)):
 
 ![Suspicious onion](http://i.imgur.com/QdoAY0w.png)
 
@@ -305,9 +308,9 @@ In case of old and/or obsolete malware that sits undetected on organization's in
 
 ![Excessive no such domain name](http://i.imgur.com/KPwNOM8.png)
 
-In case that one trail is responsible for too many threats (e.g. in case of fake source IPs like in DNS amplification attacks), all similar threats will be grouped under a single `flood` threat (Note: threat's ID will be marked with `F0`), like in the following example:
+In case that one trail is responsible for too many threats (e.g. in case of fake source IPs like in DNS amplification attacks), all similar threats will be grouped under a single `flood` threat (Note: threat's ID will be marked with suffix `F0`), like in the following example:
 
-![Flood](http://i.imgur.com/xIVwyw4.png)
+![Flood](http://i.imgur.com/ZtpMR3d.png)
 
 #### Suspicious ipinfo requests
 
@@ -329,47 +332,43 @@ Maltrail tracks all suspicious direct file download attempts (e.g. `.apk`, `.exe
 
 In case of suspicious requests coming from outer web application security scanners (e.g. searching for SQLi, XSS, LFI, etc. vulnerabilities) and/or the internal user malicious attempts toward unknown web sites, threats like the following could be found (real case of attackers trying to exploit Joomla! CMS CVE-2015-7297, CVE-2015-7857, and CVE-2015-7858 [vulnerabilities](https://blog.sucuri.net/2015/10/joomla-3-4-5-released-fixing-a-serious-sql-injection-vulnerability.html)):
 
-![SQLi com_contenthistory](http://i.imgur.com/TWq9bO5.png)
+![SQLi com_contenthistory](http://i.imgur.com/pZuGXpr.png)
 
-In following example, legal (i.e. "in-house") web application vulnerability scanning run has been marked as "suspicious":
+In following example, web application vulnerability scan has been marked as "suspicious":
 
-![Vulnerability scan](http://i.imgur.com/dTxc1kk.png)
+![Vulnerability scan](http://i.imgur.com/QzcaEsG.png)
 
 If we click on the cloud icon (i.e. ![Cloud ellipsis](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/ellipsis.png)) for details and copy paste the whole content to a textual file, we'll be able to see all suspicious HTTP requests:
 
-![Vulnerability scan requests](http://i.imgur.com/GULbEh8.png)
+![Vulnerability scan requests](http://i.imgur.com/XY9K01o.png)
 
 In the following screenshot, a run of popular SQLi vulnerability tool [sqlmap](https://github.com/sqlmapproject/sqlmap/) can be found inside our logs:
 
-![sqlmap scan requests](http://i.imgur.com/lWEhmTx.png)
+![sqlmap scan requests](http://i.imgur.com/mHZmM7t.png)
 
 #### Port scanning
 
 In case of too many connection attempts toward considerable amount of different TCP ports, Maltrail will warn about the potential port scanning, as a result of its heuristic mechanism detection. It the following screenshot such warning(s) can be found for a run of popular port scanning tool [nmap](https://nmap.org/):
 
-![nmap scan](https://i.imgur.com/Ur6rWBB.png)
-
-#### Potential UDP exfiltration
-
-In the following example, it can be seen an overly suspicious behaviour, initiated by known attacker toward our organization's IP, utilizing large amount of traffic over unknown UDP service port(s):
-
-![UDP exfiltration 1](http://i.imgur.com/RSrjmO3.png)
-![UDP exfiltration 2](http://i.imgur.com/zW1mbsP.png)
+![nmap scan](http://i.imgur.com/VS7L2A3.png)
 
 #### False positives
 
-Like in all other security solutions, Maltrail is prone to so-called "[false positives](https://en.wikipedia.org/wiki/False_positives_and_false_negatives)". In those kind of cases, Maltrail will (especially in case of `suspicious` threats) record a regular user's behaviour and mark it as malicious and/or suspicious. In the following example it can be seen that one of feed providers `blocklist.de` marked regular Google servers as `attacker`(s), resulting with the following threats:
+Like in all other security solutions, Maltrail is prone to "[false positives](https://en.wikipedia.org/wiki/False_positives_and_false_negatives)". In those kind of cases, Maltrail will (especially in case of `suspicious` threats) record a regular user's behaviour and mark it as malicious and/or suspicious. In the following example it can be seen that a blacklist feed provider `blocklist.de` marked regular Google server as `attacker`(s), resulting with the following threat:
 
-![Google false positive 1](http://i.imgur.com/wdA1B6O.png)
-![Google false positive 2](http://i.imgur.com/l0C3ATK.png)
+![Google false positive 1](http://i.imgur.com/HFvCNNK.png)
 
-In the following example, access to the perfectly valid `.club` domains resulted with the following threat:
+By hovering mouse over the trail, frame with results from [DuckDuckGo](https://duckduckgo.com/) search show that this is a regular Google's server:
 
-![Suspicious domain false positive](http://i.imgur.com/ZzXGCo4.png)
+![Google false positive 2](http://i.imgur.com/4cS9NJB.png)
 
-Nevertheless, administrator(s) should invest some extra time and check by himself whether the "suspicious" means malicious or not:
+As another example, access to regular `.work` domains (popular TLD for malicious purposes) resulted with the following threat:
 
-![Suspicious .su](http://i.imgur.com/YIqSyNn.png)
+![Suspicious domain false positive](http://i.imgur.com/Msq8HgH.png)
+
+Nevertheless, administrator(s) should invest some extra time and check (with other means) whether the "suspicious" means malicious or not, as in the following example:
+
+![Suspicious .ws](http://i.imgur.com/bOLmXUE.png)
 
 ## Requirements
 
