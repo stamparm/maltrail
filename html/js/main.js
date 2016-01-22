@@ -480,26 +480,28 @@ function init(url, from, to) {
 
             for (var i = 0; i < results.data.length; i++) {
                 var data = results.data[i];
+                var trail = data[LOG_COLUMNS.TRAIL];
+                var type = data[LOG_COLUMNS.TYPE];
 
                 if (data.length < LOG_COLUMNS_SIZE)
                     continue;
 
-                if (data[LOG_COLUMNS.TYPE] in COMMA_ENCODE_TRAIL_TYPES)
-                    data[LOG_COLUMNS.TRAIL] = data[LOG_COLUMNS.TRAIL].replace(/\,/g, "&#44;");
+                if (type in COMMA_ENCODE_TRAIL_TYPES)
+                    trail = trail.replace(/\,/g, "&#44;");
 
-                data[LOG_COLUMNS.TRAIL] = data[LOG_COLUMNS.TRAIL].replace(/\\\(/g, "&#40;").replace(/\\\)/g, "&#41;");
+                trail = trail.replace(/\\\(/g, "&#40;").replace(/\\\)/g, "&#41;");
 
-                var _ = data[LOG_COLUMNS.TRAIL].replace(/\([^)]+\)/g, "").replace(/\{[^}]+\}/g, "");
+                var _ = trail.replace(/\([^)]+\)/g, "");
+
+                if (!(type in TRAIL_TYPES))
+                    TRAIL_TYPES[type] = PREFERRED_TRAIL_COLORS[type] || getHashColor(type);
 
                 if (!(_ in trailSources))
-                    trailSources[_] = { };
-
-                if (!(data[LOG_COLUMNS.TYPE] in TRAIL_TYPES))
-                    TRAIL_TYPES[data[LOG_COLUMNS.TYPE]] = PREFERRED_TRAIL_COLORS[data[LOG_COLUMNS.TYPE]] || getHashColor(data[LOG_COLUMNS.TYPE]);
+                    trailSources[_] = {};
 
                 trailSources[_][data[LOG_COLUMNS.SRC_IP]] = true;
 
-                _ +=  " (" + data[LOG_COLUMNS.TYPE] + ")";
+                _ +=  " (" + type + ")";
                 if (!(_ in _TRAILS))
                     _TRAILS[_] = 1;
                 else
