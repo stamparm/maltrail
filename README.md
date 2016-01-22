@@ -102,7 +102,7 @@ cd maltrail
 sudo python sensor.py
 ```
 
-![Sensor](http://i.imgur.com/PC3Ze3b.png)
+![Sensor](http://i.imgur.com/E9tt2ek.png)
 
 To start the (optional) **Server** on same machine, open a new terminal and execute the following:
 
@@ -112,7 +112,7 @@ cd maltrail
 python server.py
 ```
 
-![Server](http://i.imgur.com/XqVOjSe.png)
+![Server](http://i.imgur.com/loGW6GA.png)
 
 To test that everything is up and running execute the following:
 
@@ -125,7 +125,7 @@ cat /var/log/maltrail/$(date +"%Y-%m-%d").log
 
 Access the reporting interface (i.e. **Client**) by visiting the http://127.0.0.1:8338 (default credentials: `admin:changeme!`) from your web browser:
 
-![Reporting interface](http://i.imgur.com/W8zFOmd.png)
+![Reporting interface](http://i.imgur.com/1OO3ctq.png)
 
 ## Administrator's guide
 
@@ -243,71 +243,67 @@ In the `dst_port` column you'll be able to see all ports that have been scanned 
 
 In other similar situations you'll see the same behaviour, coming from blacklisted individual attacker(s) (in this case by [cinsscore.com](http://cinsscore.com/)):
 
-![Unknown attacker](http://i.imgur.com/ubJjaq7.png)
+![Known attacker](http://i.imgur.com/wSOOnQM.png)
 
-One more common behaviour is scanning of the whole 0.0.0.0/0 IP range (i.e. Internet) in search for one particular port (e.g. TCP port 443 when [Heartbleed](http://heartbleed.com/) has been found). In the following screenshot you'll find one such case for previously blacklisted attacker(s) (in this case by [autoshun.org](http://autoshun.org/)) targeting the UDP port 5060 (i.e. SIP) in search for [misconfigured VoIP devices](https://isc.sans.edu/diary/Targeting+VoIP%3A+Increase+in+SIP+Connections+on+UDP+port+5060/9193):
+One more common behaviour is scanning of the whole 0.0.0.0/0 IP range (i.e. Internet) in search for one particular port (e.g. TCP port 443 when [Heartbleed](http://heartbleed.com/) has been found). In the following screenshot you'll find one such case for previously blacklisted attacker(s) (in this case by [alienvault.com](http://alienvault.com) and two other blacklists) targeting the UDP port 5060 (i.e. SIP) in search for [misconfigured VoIP devices](https://isc.sans.edu/diary/Targeting+VoIP%3A+Increase+in+SIP+Connections+on+UDP+port+5060/9193):
 
-![SIP scan](http://i.imgur.com/6HmJLGM.png)
+![SIP scan](http://i.imgur.com/dkJfU86.png)
 
 #### Anonymous attackers
 
-To spot the potential attackers hidden behind the [Tor](https://www.torproject.org/) anonymity network, Maltrail utilizes publicly available [list](https://check.torproject.org/cgi-bin/TorBulkExitList.py?ip=1.1.1.1) of Tor exit nodes. In the following screenshot you'll see a case where unknown attacker has been utilizing the Tor network to access the web target (over HTTPS) in our organization's range in rather suspicious way (total 599 connection requests in less than 10 minutes):
+To spot the potential attackers hidden behind the [Tor](https://www.torproject.org/) anonymity network, Maltrail utilizes publicly available lists of Tor exit nodes. In the following screenshot you'll see a case where potential attacker has been utilizing the Tor network to access the web target (over HTTP) in our organization's range in suspicious way (total 171 connection requests in 10 minutes):
 
-![Tor attacker](http://i.imgur.com/r9I6udf.png)
+![Tor attacker](http://i.imgur.com/dXF8r2K.png)
 
 #### Service attackers
 
-Fairly similar case to the previous one is when previously blacklisted attacker (in this case by [autoshun.org](http://autoshun.org/)) tries to access particular service in our organization's range in rather suspicious way (total 580 connection requests in 15 minutes):
+Fairly similar case to the previous one is when previously blacklisted attacker tries to access particular (e.g. non-HTTP(s)) service in our organization's range in rather suspicious way (i.e. total 1513 connection attempts in less than 15 minutes):
 
-![RDP brute force](http://i.imgur.com/JTYYHRL.png)
+![RDP brute force](http://i.imgur.com/Oo2adCf.png)
 
-If we enter the `SSH attacker` to the `Filter` field, we'll be able to see all similar occurrences for that day, but in this case for port 22 (i.e. SSH):
+If we enter the `ssh attacker` to the `Filter` field, we'll be able to see all similar occurrences for that day, but in this case for port 22 (i.e. SSH):
 
-![SSH attackers filter](http://i.imgur.com/G1W3HrQ.png)
-
-In the following case previously blacklisted attacker (in this case by [autoshun.org](http://autoshun.org/)) has scanned the whole organization's range in search for potentially vulnerable HTTPS service(s) (ports 443 and 8443):
-
-![Heartbleed attacker](http://i.imgur.com/F0dG1DT.png)
+![SSH attackers filter](http://i.imgur.com/oCv42jd.png)
 
 #### Malware
 
-In case of connection attempts coming from infected computers inside our organization toward already known C&C servers, you'll be able to find threats similar to the following (in this case [CTBLocker](http://www.eset.co.uk/Press-Centre/News/Article/CTBLocker-Ransomware-striking-in-Europe-and-Latin-America) ransomware):
+In case of connection attempts coming from infected computers inside our organization toward already known C&C servers, you'll be able to find threats similar to the following (in this case [Beebone](https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Win32/Beebone)):
 
-![ctblocker malware](http://i.imgur.com/LXalmDr.png)
+![beebone malware](http://i.imgur.com/GBLWISo.png)
 
 In the following case file downloads from blacklisted (in this case by [malwarepatrol.net](https://malwarepatrol.net/)) URL(s) have occurred:
 
-![malicious download](http://i.imgur.com/ACQOF40.png)
+![malware download](http://i.imgur.com/g2NH7sT.png)
 
-If we enter the particular malware name (in this case [Simda](https://www.us-cert.gov/ncas/alerts/TA15-105A)) into the `Filter` field, only threats that are known to be linked to this malware will be filtered in (showing you all affected internal computers):
+If we enter the particular malware name (in this case [Ramnit](https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Win32%2fRamnit)) into the `Filter` field, only threats that are known to be linked to this malware will be filtered in (showing you all affected internal computers):
 
-![simda malware](http://i.imgur.com/GixcFUk.png)
+![ramnit malware](http://i.imgur.com/zcoPnZk.png)
 
 More generally, if we enter the `malware` into the `Filter` field, all threats that are known to be triggered by known malware trails (e.g. `IP` addresses) will be filtered in:
 
-![malware filter](http://i.imgur.com/ufQFgt9.png)
+![malware filter](http://i.imgur.com/TZecR7n.png)
 
 #### Suspicious domain lookups
 
 Maltrail uses the static list of TLD [domains](https://github.com/stamparm/maltrail/blob/master/trails/static/suspicious/domain.txt) that are known to be commonly involved in suspicious activities. Most such [TLD](https://en.wikipedia.org/wiki/Top-level_domain) domains are coming from free domain registrars (e.g. [Freenom](http://www.freenom.com)), hence they should be under greater scrutiny. In the following screenshot we can find a case where one such TLD domain `.cm` has been used by unknown malware using the [DGA](https://en.wikipedia.org/wiki/Domain_generation_algorithm) algorithm to contact its [C&C](https://www.trendmicro.com/vinfo/us/security/definition/command-and-control-%28c-c%29-server) server(s):
 
-![Suspicious static domains](http://i.imgur.com/5xsvDw1.png)
+![cm DGA](http://i.imgur.com/JTGdtJ0.png)
 
 There are also cases when perfectly valid TLD domains (e.g. `.ru`) are used for suspicious activities, such in this case (e.g. `long domain name (suspicious)`) where the domains are obviously DGA generated by unknown malware:
 
-![Suspicious long domains](http://i.imgur.com/3T5gdgo.png)
+![Suspicious long domains](http://i.imgur.com/EJOS5Qb.png)
 
 Maltrail uses static [list](https://github.com/stamparm/maltrail/blob/master/trails/static/suspicious/dynamic_domain.txt) of so-called "dynamic domains" that are often used in suspicious activities (e.g. for malware C&C servers that often change the destination's IP addresses):
 
-![Suspicious dynamic domains](http://i.imgur.com/yrXtQ5j.png)
+![Suspicious dynamic domains](http://i.imgur.com/1WVLMf9.png)
 
 Also, Maltrail uses static [list](https://github.com/stamparm/maltrail/blob/master/trails/static/suspicious/onion.txt) of "onion"-related domains that are also often used in suspicious activities (e.g. malware contacting C&C servers by using Tor2Web service(s)):
 
-![Suspicious onion](http://i.imgur.com/0TFpi24.png)
+![Suspicious onion](http://i.imgur.com/QdoAY0w.png)
 
-In case of old and/or obsolete malware that sits undetected on organization's infected internal computers, there is often a "phenomenon" where malware continuously tries to contact the long dead C&amp;C server's domain without any DNS resolution. Hence, those kind of (potential) threats will be marked as `excessive no such domain name (suspicious)`:
+In case of old and/or obsolete malware that sits undetected on organization's infected internal computers, there is often a "phenomenon" where malware continuously tries to contact the long dead C&amp;C server's domain without any DNS resolution. Hence, those kind of (potential) threats will be marked as `excessive no such domain (suspicious)`:
 
-![Excessive no such domain name](http://i.imgur.com/RYSnVcK.png)
+![Excessive no such domain name](http://i.imgur.com/KPwNOM8.png)
 
 In case that one trail is responsible for too many threats (e.g. in case of fake source IPs like in DNS amplification attacks), all similar threats will be grouped under a single `flood` threat (Note: threat's ID will be marked with `F0`), like in the following example:
 
@@ -317,21 +313,17 @@ In case that one trail is responsible for too many threats (e.g. in case of fake
 
 Lots of malware uses some kind of `ipinfo` service (e.g. [ipinfo.io](http://ipinfo.io)) to find out the victim's Internet IP address. In case of regular and especially in out-of-office hours, those kind of requests should be closely monitored, like in the following example:
 
-![ipinfo](http://i.imgur.com/RaGvvIg.png)
+![suspicious ipinfo](http://i.imgur.com/3THOoWW.png)
 
 By using filter `ipinfo` all potentially infected computers in our organization's range can be listed that share this kind of suspicious behaviour:
 
-![ipinfo filter](http://i.imgur.com/TmBw0Xs.png)
+![ipinfo filter](http://i.imgur.com/6SMN0at.png)
 
 #### Suspicious direct file downloads
 
 Maltrail tracks all suspicious direct file download attempts (e.g. `.apk`, `.exe` and `.scr` file extensions). This can trigger lots of false positives, but eventually could help in reconstruction of the chain of infection (Note: legitimate service providers, like Google, usually use encrypted HTTPS to perform this kind of downloads):
 
-![Direct .exe download](http://i.imgur.com/rQqFCV2.png)
-
-For testing purposes, web application "reconnaissance" tool [skipfish](https://code.google.com/p/skipfish/) has been used. As it tries to download blindly numerous `.exe` files, the following related threat has been identified:
-
-![skipfish .exe](http://i.imgur.com/fK9tK9l.png)
+![Direct .exe download](http://i.imgur.com/jr5BS1h.png)
 
 #### Suspicious HTTP requests
 
