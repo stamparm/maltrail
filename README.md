@@ -380,5 +380,4 @@ This software is provided under under a MIT License. See the accompanying [LICEN
 
 ## Donate
 
-This project is a result of numerous hours of software development. If you appreciate the work and you want to see it further developed, please consider making a donation via PayPal to `miroslav.stampar@gmail.com` (current total: 0$) or via bitcoins to `1JCtgmpC1eWvdHXrKfvMAunfvcaaMXLP5G` (current total: 0&#x0243;). Thank you very much if you decide to do it.
-
+This project is a result of numerous hours of software development. If you appreciate the work and you want to see it further developed, please consider making a donation via [PayPal](https://www.paypal.com/) to `miroslav.stampar@gmail.com` (current total: `0$`) or via [&#x0243;itcoin](bitcoin:1JCtgmpC1eWvdHXrKfvMAunfvcaaMXLP5G) to `1JCtgmpC1eWvdHXrKfvMAunfvcaaMXLP5G` (current total: `0B`). Thank you very much if you decide to do it.
