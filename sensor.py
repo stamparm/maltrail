@@ -375,11 +375,11 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 return
 
                     if config.USE_HEURISTICS:
-                        if any(char in path for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS):
-                            for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
-                                path = path.replace(char, urllib.quote(char))
-                                if post_data:
-                                    post_data = post_data.replace(char, urllib.quote(char))
+                        for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
+                            replacement = SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS[char]
+                            path = path.replace(char, replacement)
+                            if post_data:
+                                post_data = post_data.replace(char, replacement)
 
                         if host not in WHITELIST:
                             if not any(_ in path for _ in WHITELIST_HTTP_REQUEST_KEYWORDS):
