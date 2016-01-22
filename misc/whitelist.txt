@@ -14,6 +14,7 @@ akamaihd.net
 akamai.net
 akamaitechnologies.com
 amazonaws.com
+amazonses.com
 a-msedge.net
 anycastb.com
 baidu.com

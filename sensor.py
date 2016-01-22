@@ -453,6 +453,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                             query += dns_data[offset + 1:offset + length + 1] + '.'
                             offset += length + 1
 
+                        query = query.lower()
+
                         if ' ' in query or '.' not in query or any(query.endswith(_) for _ in IGNORE_DNS_QUERY_SUFFIXES):
                             return
 
