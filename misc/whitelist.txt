@@ -123,6 +123,7 @@ hp.com
 intel.com
 lenovo.com
 lexmark.com
+logitech.com
 macromedia.com
 majorgeeks.com
 mcafee.com
