@@ -199,7 +199,7 @@ Column `threat` holds threat's unique ID (e.g. `85fdb08d`) and color (Note: extr
 
 When moving mouse over `src_ip` and `dst_ip` table entries, information tooltip is being displayed with detailed reverse DNS and WHOIS information (Note: [RIPE](http://www.ripe.net/) is the information provider):
 
-![On mouse over IP](http://i.imgur.com/U0huj7m.png)
+![On mouse over IP](http://i.imgur.com/BgKchAX.png)
 
 Event details (e.g. `src_port`, `dst_port`, `proto`, etc.) that differ inside same threat entry are condensed in form of a cloud icon (i.e. ![Cloud ellipsis](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/ellipsis.png)). This is performed to get an usable reporting interface with as less rows as possible. Moving mouse over such icon will result in a display of an information tooltip with all items held (e.g. all port numbers being scanned by `attacker`):
 
