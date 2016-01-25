@@ -5,6 +5,7 @@
 .su
 .tt
 .ws
+.gu
 
 # Reference: http://www.freenom.com/en/index.html
 
