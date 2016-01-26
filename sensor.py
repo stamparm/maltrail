@@ -324,11 +324,13 @@ def _process_packet(packet, sec, usec, ip_offset):
                     if config.USE_HEURISTICS:
                         user_agent, result = None, None
 
-                        index = tcp_data.find("\r\nUser-Agent:")
-                        if index >= 0:
-                            index = index + len("\r\nUser-Agent:")
-                            user_agent = tcp_data[index:tcp_data.find("\r\n", index)]
-                            user_agent = urllib.unquote(user_agent).strip()
+                        first_index = tcp_data.find("\r\nUser-Agent:")
+                        if first_index >= 0:
+                            first_index = first_index + len("\r\nUser-Agent:")
+                            last_index = tcp_data.find("\r\n", first_index)
+                            if last_index >= 0:
+                                user_agent = tcp_data[first_index:last_index]
+                                user_agent = urllib.unquote(user_agent).strip()
 
                         if user_agent:
                             result = _result_cache.get(user_agent)
