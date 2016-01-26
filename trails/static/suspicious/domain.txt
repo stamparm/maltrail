@@ -5,7 +5,6 @@
 .su
 .tt
 .ws
-.gu
 
 # Reference: http://www.freenom.com/en/index.html
 
@@ -1140,4 +1139,8 @@ zik.dj
 # Reference: https://en.wikipedia.org/wiki/.sx
 
 .sx
+
+# Reference: https://en.wikipedia.org/wiki/.gu
+
+.gu
 
