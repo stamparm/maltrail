@@ -493,7 +493,8 @@ function init(url, from, to) {
                 if (type in COMMA_ENCODE_TRAIL_TYPES)
                     trail = trail.replace(/\,/g, "&#44;");
 
-                var _ = trail.replace(/\\\(/g, "&#40;").replace(/\\\)/g, "&#41;").replace(/\([^)]+\)/g, "");
+                trail = data[LOG_COLUMNS.TRAIL] = trail.replace(/\\\(/g, "&#40;").replace(/\\\)/g, "&#41;")
+                var _ = trail.replace(/\([^)]+\)/g, "");
 
                 if (!(type in TRAIL_TYPES))
                     TRAIL_TYPES[type] = PREFERRED_TRAIL_COLORS[type] || getHashColor(type);
