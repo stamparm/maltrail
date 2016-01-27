@@ -444,3 +444,7 @@ xpews.mailhosts.org
 z.mailspike.net
 zen.spamhaus.org
 zombie.dnsbl.sorbs.net
+
+# Generic
+
+security-research.dyndns.org
