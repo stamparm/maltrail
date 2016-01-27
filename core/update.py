@@ -149,7 +149,9 @@ def update_trails(server=None, force=False):
                 trails[key] = _
             if key in duplicates:
                 _ = trails[key]
-                trails[key] = (_[0], "%s (+%s)" % (_[1], ','.join(sorted(duplicates[key] - set((_[1],))))))
+                others = sorted(duplicates[key] - set((_[1],)))
+                if others:
+                    trails[key] = (_[0], "%s (+%s)" % (_[1], ','.join(others)))
 
         read_whitelist()
 
