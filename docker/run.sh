@@ -1,4 +1,3 @@
 #!/bin/bash
-python /maltrail/sensor.py &
-python /maltrail/server.py
-
+python /root/maltrail/sensor.py &
+python /root/maltrail/server.py

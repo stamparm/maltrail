@@ -1,6 +1,7 @@
 # Docker run opts
 
-```bash
+```
+bash
 docker build -t maltrail . && \
 docker run -d --net=host --privileged -v /var/log/maltrail/:/var/log/maltrail/ maltrail
 ```
