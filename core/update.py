@@ -246,6 +246,8 @@ def main():
                                 reputation -= 1
                             if "(static)" in lists:
                                 reputation -= 1
+                            reputation -= max(0, lists.count("prox") + lists.count("maxmind") + lists.count("sblam") - 1)   # remove duplicate proxy hits
+                            reputation -= max(0, lists.count("blutmagie") + lists.count("torproject") - 1)                  # remove duplicate tor hits
                             if reputation > 0:  # only live feeds
                                 results.append((ip, reputation))
             results = sorted(results, key=lambda _: _[1], reverse=True)
