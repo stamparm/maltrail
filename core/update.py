@@ -9,6 +9,7 @@ import csv
 import glob
 import inspect
 import os
+import re
 import sqlite3
 import subprocess
 import sys
@@ -43,10 +44,10 @@ def _chown(filepath):
         except Exception, ex:
             print "[x] '%s'" % ex
 
-def _fopen_trails(mode):
-    retval = open(TRAILS_FILE, mode)
+def _fopen(filepath, mode="rb"):
+    retval = open(filepath, mode)
     if "w+" in mode:
-        _chown(TRAILS_FILE)
+        _chown(filepath)
     return retval
 
 def update_trails(server=None, force=False):
@@ -63,7 +64,7 @@ def update_trails(server=None, force=False):
         if not _:
             exit("[!] unable to retrieve data from '%s'" % server)
         else:
-            with _fopen_trails("w+b") as f:
+            with _fopen(TRAILS_FILE, "w+b") as f:
                 f.write(_)
             trails = load_trails()
 
@@ -168,7 +169,7 @@ def update_trails(server=None, force=False):
 
         try:
             if trails:
-                with _fopen_trails("w+b") as f:
+                with _fopen(TRAILS_FILE, "w+b") as f:
                     writer = csv.writer(f, delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
                     for trail in trails:
                         writer.writerow((trail, trails[trail][0], trails[trail][1]))
@@ -228,6 +229,29 @@ def main():
         update_ipcat()
     except KeyboardInterrupt:
         print "\r[x] Ctrl-C pressed"
+    else:
+        if "-r" in sys.argv:
+            results = []
+            with _fopen(TRAILS_FILE) as f:
+                for line in f:
+                    if line and line[0].isdigit():
+                        items = line.split(',', 2)
+                        if re.search(r"\A[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\Z", items[0]):
+                            ip = items[0]
+                            reputation = 1
+                            lists = items[-1]
+                            if '+' in lists:
+                                reputation = 2 + lists.count(',')
+                            if "(custom)" in lists:
+                                reputation -= 1
+                            if "(static)" in lists:
+                                reputation -= 1
+                            if reputation > 0:  # only live feeds
+                                results.append((ip, reputation))
+            results = sorted(results, key=lambda _: _[1], reverse=True)
+            for result in results:
+                sys.stderr.write("%s\t%s\n" % (result[0], result[1]))
+                sys.stderr.flush()
 
 if __name__ == "__main__":
     main()
