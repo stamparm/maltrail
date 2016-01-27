@@ -9,7 +9,7 @@ from core.common import retrieve_content
 
 __url__ = "http://danger.rulez.sk/projects/bruteforceblocker/blist.php"
 __check__ = "Last Reported"
-__info__ = "brute force (attacker)"
+__info__ = "known attacker"
 __reference__ = "rulez.sk"
 
 def fetch():
