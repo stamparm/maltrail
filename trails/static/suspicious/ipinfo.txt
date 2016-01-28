@@ -54,3 +54,7 @@ geoip.vmn.net
 icanhazip.com
 curlmyip.com
 l2.io
+geoip.co.uk
+ip.tyk.nu
+ip.taobao.com
+qualmeuip.com.br
