@@ -133,11 +133,20 @@ def update_trails(server=None, force=False):
         for key in trails.keys():
             if key not in trails:
                 continue
+            if not key:
+                del trails[key]
+                continue
+            if key.startswith("www.") and '/' not in key:
+                del trails[key]
+                key = key[len("www."):]
+                if key:
+                    trails[key] = _
             if '?' in key:
                 _ = trails[key]
                 del trails[key]
                 key = key.split('?')[0]
-                trails[key] = _
+                if key:
+                    trails[key] = _
             if '//' in key:
                 _ = trails[key]
                 del trails[key]
