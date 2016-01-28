@@ -184,7 +184,7 @@ def load_trails(quiet=False):
             with open(TRAILS_FILE, "rb") as f:
                 reader = csv.reader(f, delimiter=',', quotechar='\"')
                 for row in reader:
-                    if row:
+                    if row and len(row) == 3:
                         trail, info, reference = row
                         if trail not in WHITELIST:
                             retval[trail] = (info, reference)
