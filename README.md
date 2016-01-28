@@ -389,3 +389,4 @@ This project is a result of numerous hours of software development. If you appre
 Thank you:
 
 * Thomas Kristner
+* Eduardo Arcusa Les
