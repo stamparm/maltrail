@@ -445,6 +445,12 @@ z.mailspike.net
 zen.spamhaus.org
 zombie.dnsbl.sorbs.net
 
-# Generic
+# Generic (DNS)
 
 security-research.dyndns.org
+dl.dropbox.com
+nirsoft.net
+
+# Generic (URL)
+
+www.nirsoft.net/utils
