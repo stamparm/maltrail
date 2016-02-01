@@ -9,10 +9,13 @@ onion.lt
 onion.cab
 onion.city
 onion.direct
+onion.link
+onion.nu
 tor2web.fi
 tor2web.blutmagie.de
 tor2web.org
 tor2web.ru
+tor-gateways.de
 
 # Reference: http://www.emergingthreats.net/products/etpro-ruleset/daily-ruleset-update-summary/daily-ruleset-update-summary-2015/03/11
 # Reference: http://www.emergingthreats.net/products/etpro-ruleset/daily-ruleset-update-summary/daily-ruleset-update-summary-2015/03/18
