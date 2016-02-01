@@ -136,6 +136,9 @@ def update_trails(server=None, force=False):
             if not key:
                 del trails[key]
                 continue
+            if re.search(r"\A(?i)\.?[a-z]+\Z", key) and not any(_ in trails[key][1] for _ in ("custom", "static")):
+                del trails[key]
+                continue
             if key.startswith("www.") and '/' not in key:
                 del trails[key]
                 key = key[len("www."):]
