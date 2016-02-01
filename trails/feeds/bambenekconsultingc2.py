@@ -19,6 +19,8 @@ def fetch():
 
     if __check__ in content:
         for match in re.finditer(r"(?m)^([\d.]+),IP used by ([^,]+) C&C", content):
-            retval[match.group(1)] = ("%s (malware)" % match.group(2).lower(), __reference__)
+            _ = match.group(2).lower()
+            if _ != "simda":  # too many false positives
+                retval[match.group(1)] = ("%s (malware)" % _, __reference__)
 
     return retval
