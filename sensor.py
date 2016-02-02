@@ -293,7 +293,7 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                     index = tcp_data.find("\r\n\r\n")
                     if index >= 0:
-                        post_data = tcp_data[index:]
+                        post_data = tcp_data[index + 4:]
 
                     if "://" in path:
                         url = path.split("://", 1)[1]
@@ -397,7 +397,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 if any(_ in unquoted_post_data for _ in SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION):
                                     found = _result_cache.get(unquoted_post_data)
                                     if found is None:
-                                        found = _result_cache[unquoted_post_data] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, unquoted_path) is not None
+                                        found = _result_cache[unquoted_post_data] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, unquoted_post_data) is not None
                                     if found:
                                         trail = "%s(%s \(%s %s\))" % (host, path, method, post_data.strip())
                                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"), packet)
