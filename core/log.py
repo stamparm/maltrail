@@ -69,15 +69,15 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False,
                     if sec != getattr(_thread_data, "condensed_events_flush_sec", 0):
                         _thread_data.condensed_events_flush_sec = sec
 
-                        for trail in getattr(_thread_data, "condensed_events", []):
+                        for key in getattr(_thread_data, "condensed_events", []):
                             condensed = False
 
-                            _ = _thread_data.condensed_events[trail][0]
+                            _ = _thread_data.condensed_events[key][0]
                             condensed_localtime, condensed_event = [_[0]], list(_[1])
 
-                            for i in xrange(1, len(_thread_data.condensed_events[trail])):
-                                _ = _thread_data.condensed_events[trail][i]
-                                for j in xrange(2, len(_[1])):  # skip sec and usec
+                            for i in xrange(1, len(_thread_data.condensed_events[key])):
+                                _ = _thread_data.condensed_events[key][i]
+                                for j in xrange(2, 7):  # src_ip, src_port, dst_ip, dst_port, proto
                                     condensed_localtime.append(_[0])
                                     if _[1][j] != condensed_event[j]:
                                         condensed = True
