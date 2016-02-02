@@ -1,6 +1,7 @@
 # Copyright (c) 2014-2016 Miroslav Stampar (@stamparm)
 # See the file 'LICENSE' for copying permission
 
+2ip.tools
 aboutmyip.com
 aruljohn.com
 bahoot.com
@@ -21,6 +22,7 @@ getmyip.org
 icanhazip.com
 ifconfig.co
 ifconfig.me
+inet-ip.info
 ip-1.com
 ip4.me
 ip-addr.es
@@ -31,6 +33,8 @@ ip-adress.com
 ip-adress.eu
 ip.amulex.com
 ip-api.com
+ip-info.org
+ip-info.xyz
 ip.cctv.pk
 ipchicken.com
 ipinfodb.com
