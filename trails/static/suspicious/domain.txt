@@ -1142,3 +1142,15 @@ zik.dj
 
 .gu
 
+# Reference: https://lifars.com/2015/09/the-internets-most-malicious-domains/
+
+.zip
+.review
+.country
+.kim
+.cricket
+.science
+.work
+.party
+.gq
+.link
