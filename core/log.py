@@ -16,6 +16,7 @@ import traceback
 
 from core.common import check_sudo
 from core.settings import config
+from core.settings import CONDENSE_ON_TRAIL_KEYWORDS
 from core.settings import DEFAULT_ERROR_LOG_PERMISSIONS
 from core.settings import DEFAULT_EVENT_LOG_PERMISSIONS
 from core.settings import TIME_FORMAT
@@ -57,12 +58,50 @@ def safe_value(value):
         retval = "\"%s\"" % retval.replace('"', '""')
     return retval
 
-def log_event(event_tuple, packet=None, skip_write=False):
+def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False, localtime=None):
     try:
-        sec, usec, src_ip, dst_ip = event_tuple[0], event_tuple[1], event_tuple[2], event_tuple[4]
+        sec, usec, src_ip, src_port, dst_ip, dst_port, proto, trail_type, trail, info = event_tuple[:10]
         if not any(_ in WHITELIST for _ in (src_ip, dst_ip)):
             if not skip_write:
-                localtime = "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)
+                localtime = localtime or "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)
+
+                if not skip_condensing:
+                    if sec != getattr(_thread_data, "condensed_events_flush_sec", 0):
+                        _thread_data.condensed_events_flush_sec = sec
+
+                        for trail in getattr(_thread_data, "condensed_events", []):
+                            condensed = False
+
+                            _ = _thread_data.condensed_events[trail][0]
+                            condensed_localtime, condensed_event = [_[0]], list(_[1])
+
+                            for i in xrange(1, len(_thread_data.condensed_events[trail])):
+                                _ = _thread_data.condensed_events[trail][i]
+                                for j in xrange(2, len(_[1])):  # skip sec and usec
+                                    condensed_localtime.append(_[0])
+                                    if _[1][j] != condensed_event[j]:
+                                        condensed = True
+                                        if not isinstance(condensed_event[j], list):
+                                            condensed_event[j] = i * [condensed_event[j]]
+                                        condensed_event[j].append(_[1][j])
+
+                            if condensed:
+                                for i in xrange(len(condensed_event)):
+                                    if isinstance(condensed_event[i], list):
+                                        condensed_event[i] = ','.join(str(_) for _ in condensed_event[i])
+
+                            log_event(condensed_event, skip_condensing=True, localtime=','.join(condensed_localtime))
+
+                        _thread_data.condensed_events = {}
+
+                    if any(_ in info for _ in CONDENSE_ON_TRAIL_KEYWORDS):
+                        if not hasattr(_thread_data, "condensed_events"):
+                            _thread_data.condensed_events = {}
+                        if trail not in _thread_data.condensed_events:
+                            _thread_data.condensed_events[trail] = []
+                        _thread_data.condensed_events[trail].append((localtime, event_tuple))
+                        return
+
                 event = "%s %s %s\n" % (safe_value(localtime), safe_value(config.SENSOR_NAME), " ".join(safe_value(_) for _ in event_tuple[2:]))
                 if not config.DISABLE_LOCAL_LOG_STORAGE:
                     handle = get_event_log_handle(sec)

@@ -53,6 +53,7 @@ var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
 //var SEARCH_TIP_URL = "https://www.google.com/cse?cx=011750002002865445766%3Ay5klxdomj78&ie=UTF-8&q=${query}";
 var DAY_SUFFIXES = { 1: "st", 2: "nd", 3: "rd" };
 var DOT_COLUMNS = [ LOG_COLUMNS.SENSOR, LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP, LOG_COLUMNS.DST_PORT, LOG_COLUMNS.TRAIL, LOG_COLUMNS.PROTO ];
+var DATA_CONDENSING_COLUMNS = [ LOG_COLUMNS.TIME, LOG_COLUMNS.SENSOR, LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP, LOG_COLUMNS.DST_PORT, LOG_COLUMNS.PROTO ];
 var SPARKLINE_COLOR = "#ff0000";
 var NONCE_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 var NONCE_LENGTH = 12;
@@ -471,6 +472,7 @@ function init(url, from, to) {
         chunk: function(results) {
             var title = document.title.replace(/\s?\.\s?/g, '.');
             var parts = title.split('.');
+            var total = results.data.length;
             var _ = _CHUNK_COUNT % parts.length;
             var trailSources = { };
 
@@ -482,22 +484,47 @@ function init(url, from, to) {
             document.title = parts.join('.');
             _CHUNK_COUNT += 1;
 
-            for (var i = 0; i < results.data.length; i++) {
+            for (var i = 0; i < total; i++) {
                 var data = results.data[i];
-                var trail = data[LOG_COLUMNS.TRAIL];
-                var type = data[LOG_COLUMNS.TYPE];
 
                 if (data.length < LOG_COLUMNS_SIZE)
                     continue;
+
+                var trail = data[LOG_COLUMNS.TRAIL];
+                var type = data[LOG_COLUMNS.TYPE];
+
+                if (!(type in TRAIL_TYPES))
+                    TRAIL_TYPES[type] = PREFERRED_TRAIL_COLORS[type] || getHashColor(type);
+
+                var count = 0;
+                for (var j = 0; j < DATA_CONDENSING_COLUMNS.length; j++) {
+                    var column = DATA_CONDENSING_COLUMNS[j];
+                    var original = data[column];
+                    if (original.contains(','))
+                        count = Math.max(count, (original.match(/,/g) || []).length);
+                }
+
+                if (count > 0) {  // condensed form
+                    for (var j = 0; j < count + 1; j++) {
+                        var decondesed = data.slice();
+                        for (var k = 0; k < DATA_CONDENSING_COLUMNS.length; k++) {
+                            var current = DATA_CONDENSING_COLUMNS[k];
+                            if (decondesed[current].contains(',')) {
+                                var _ = decondesed[current].split(',');
+                                decondesed[current] = j < _.length ? _[j] : _[_.length - 1];
+                            }
+                        }
+                        results.data.push(decondesed);
+                    }
+                    results.data[i].length = 0;
+                    continue;
+                }
 
                 if (type in COMMA_ENCODE_TRAIL_TYPES)
                     trail = trail.replace(/\,/g, "&#44;");
 
                 trail = data[LOG_COLUMNS.TRAIL] = trail.replace(/\\\(/g, "&#40;").replace(/\\\)/g, "&#41;")
                 var _ = trail.replace(/\([^)]+\)/g, "");
-
-                if (!(type in TRAIL_TYPES))
-                    TRAIL_TYPES[type] = PREFERRED_TRAIL_COLORS[type] || getHashColor(type);
 
                 if (!(_ in trailSources))
                     trailSources[_] = {};
@@ -565,37 +592,11 @@ function init(url, from, to) {
                         if (data[column] !== _[column])
                             if (typeof _[column] === "string") {
                                 var original = _[column];
-                                var multiple = original.match(/\((.*,.*)\)/) || original.match(/([^ ,]+,[^ ]+)/);
-
                                 _[column] = {};
-
-                                if (multiple) {
-                                    var items = multiple[1].split(',');
-
-                                    if (original.contains('('))
-                                        for (var k = 0; k < items.length; k++)
-                                            _[column]["(" + items[k] + ")" + original.replace(multiple[0], "")] = true
-                                    else
-                                        for (var k = 0; k < items.length; k++)
-                                            _[column][items[k]] = true
-                                }
-                                else
-                                    _[column][original] = true;
+                                _[column][original] = true;
                             }
 
-                            var multiple = data[column].match(/\((.*,.*)\)/) || data[column].match(/([^ ,]+,[^ ]+)/);
-
-                            if (multiple) {
-                                var items = multiple[1].split(',');
-                                if (data[column].contains('('))
-                                    for (var k = 0; k < items.length; k++)
-                                        _[column]["(" + items[k] + ")" + data[column].replace(multiple[0], "")] = true
-                                else
-                                    for (var k = 0; k < items.length; k++)
-                                        _[column][items[k]] = true
-                            }
-                            else
-                                _[column][data[column]] = true;
+                        _[column][data[column]] = true;
                     }
                 }
 
