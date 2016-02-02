@@ -17,6 +17,7 @@ import traceback
 from core.common import check_sudo
 from core.settings import config
 from core.settings import CONDENSE_ON_TRAIL_KEYWORDS
+from core.settings import CONDENSED_EVENTS_FLUSH_PERIOD
 from core.settings import DEFAULT_ERROR_LOG_PERMISSIONS
 from core.settings import DEFAULT_EVENT_LOG_PERMISSIONS
 from core.settings import TIME_FORMAT
@@ -66,7 +67,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False,
                 localtime = localtime or "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)
 
                 if not skip_condensing:
-                    if sec != getattr(_thread_data, "condensed_events_flush_sec", 0):
+                    if (sec - getattr(_thread_data, "condensed_events_flush_sec", 0)) > CONDENSED_EVENTS_FLUSH_PERIOD:
                         _thread_data.condensed_events_flush_sec = sec
 
                         for key in getattr(_thread_data, "condensed_events", []):
