@@ -431,18 +431,23 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 elif re.search(r"\A[\d.]+\Z", netfilter):
                                     addresses.add(netfilter)
                                 elif '\.' in netfilter:
-                                    regex = r" %s " % netfilter
+                                    regex = r",?(%s),?" % netfilter
                                 else:
                                     print "[!] invalid network filter '%s'" % netfilter
                                     return
 
                             for line in session.range_handle:
                                 display = False
+                                ip = None
 
-                                if regex and re.search(regex, line):
-                                    display = True
-                                elif addresses or netmasks:
-                                    for match in re.finditer(r" (\d+\.\d+\.\d+\.\d+) ", line):
+                                if regex:
+                                    match = re.search(regex, line)
+                                    if match:
+                                        ip = match.group(1)
+                                        display = True
+
+                                if not display and (addresses or netmasks):
+                                    for match in re.finditer(r",?(\d+\.\d+\.\d+\.\d+),?", line):
                                         if not display:
                                             ip = match.group(1)
                                         else:
@@ -460,6 +465,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                                     break
 
                                 if display:
+                                    if ",%s" % ip in line or "%s," % ip in line:
+                                        line = re.sub(r" ([\d.,]+,)?%s(,[\d.,]+)? " % re.escape(ip), " %s " % ip, line)
                                     buffer.write(line)
                                     if buffer.tell() >= max_size:
                                         break
