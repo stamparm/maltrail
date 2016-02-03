@@ -53,7 +53,7 @@ var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
 //var SEARCH_TIP_URL = "https://www.google.com/cse?cx=011750002002865445766%3Ay5klxdomj78&ie=UTF-8&q=${query}";
 var DAY_SUFFIXES = { 1: "st", 2: "nd", 3: "rd" };
 var DOT_COLUMNS = [ LOG_COLUMNS.SENSOR, LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP, LOG_COLUMNS.DST_PORT, LOG_COLUMNS.TRAIL, LOG_COLUMNS.PROTO ];
-var DATA_CONDENSING_COLUMNS = [ LOG_COLUMNS.TIME, LOG_COLUMNS.SENSOR, LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.SRC_IP, LOG_COLUMNS.DST_IP, LOG_COLUMNS.DST_PORT, LOG_COLUMNS.PROTO ];
+var DATA_CONDENSING_COLUMNS = [ LOG_COLUMNS.SRC_PORT, LOG_COLUMNS.DST_IP, LOG_COLUMNS.DST_PORT, LOG_COLUMNS.PROTO ];
 var SPARKLINE_COLOR = "#ff0000";
 var NONCE_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 var NONCE_LENGTH = 12;
@@ -69,6 +69,12 @@ var STORAGE_KEY_ACTIVE_STATUS_BUTTON = "STORAGE_KEY_ACTIVE_STATUS_BUTTON";
 var COMMA_ENCODE_TRAIL_TYPES = { UA: true, URL: true};
 
 for (var column in LOG_COLUMNS) if (LOG_COLUMNS.hasOwnProperty(column)) LOG_COLUMNS_SIZE++;
+
+var _ = {};
+for (var column in DATA_CONDENSING_COLUMNS) {
+    _[column] = true;
+}
+DATA_CONDENSING_COLUMNS = _;
 
 window.onkeydown = function(event) {
     CTRL_DATES.length = 0;
@@ -496,30 +502,6 @@ function init(url, from, to) {
                 if (!(type in TRAIL_TYPES))
                     TRAIL_TYPES[type] = PREFERRED_TRAIL_COLORS[type] || getHashColor(type);
 
-                var count = 0;
-                for (var j = 0; j < DATA_CONDENSING_COLUMNS.length; j++) {
-                    var column = DATA_CONDENSING_COLUMNS[j];
-                    var original = data[column];
-                    if (original.contains(','))
-                        count = Math.max(count, (original.match(/,/g) || []).length);
-                }
-
-                if (count > 0) {  // condensed form
-                    for (var j = 0; j < count + 1; j++) {
-                        var decondesed = data.slice();
-                        for (var k = 0; k < DATA_CONDENSING_COLUMNS.length; k++) {
-                            var current = DATA_CONDENSING_COLUMNS[k];
-                            if (decondesed[current].contains(',')) {
-                                var _ = decondesed[current].split(',');
-                                decondesed[current] = j < _.length ? _[j] : _[_.length - 1];
-                            }
-                        }
-                        results.data.push(decondesed);
-                    }
-                    results.data[i].length = 0;
-                    continue;
-                }
-
                 if (type in COMMA_ENCODE_TRAIL_TYPES)
                     trail = trail.replace(/\,/g, "&#44;");
 
@@ -544,7 +526,7 @@ function init(url, from, to) {
             }
 
             for (var i = 0; i < results.data.length; i++) {
-                var data = results.data[i], threat_text, match, _;
+                var data = results.data[i], threat_text, threat_data, match, _;
 
                 if (data.length < LOG_COLUMNS_SIZE)
                     continue;
@@ -574,9 +556,9 @@ function init(url, from, to) {
                 _TOTAL_EVENTS += 1;
 
                 if (!(threat_text in _THREATS))
-                    _THREATS[threat_text] = [1, [time], time, time, data];  // count, times, minTime, maxTime, (threat)data
+                    threat_data = _THREATS[threat_text] = [1, [time], time, time, data];  // count, times, minTime, maxTime, (threat)data
                 else {
-                    var threat_data = _THREATS[threat_text];
+                    threat_data = _THREATS[threat_text];
                     threat_data[0] += 1;
                     threat_data[1].push(time);
 
@@ -584,19 +566,38 @@ function init(url, from, to) {
                         threat_data[2] = time;
                     else if (time > threat_data[3])
                         threat_data[3] = time;
+                }
 
-                    _ = threat_data[4];
+                _ = threat_data[4];
 
-                    for (var j = 0; j < DOT_COLUMNS.length; j++) {
-                        var column = DOT_COLUMNS[j];
-                        if (data[column] !== _[column])
-                            if (typeof _[column] === "string") {
-                                var original = _[column];
-                                _[column] = {};
-                                _[column][original] = true;
+                for (var j = 0; j < DOT_COLUMNS.length; j++) {
+                    var column = DOT_COLUMNS[j];
+                    var condensed = (column in DATA_CONDENSING_COLUMNS) && data[column].contains(',');
+                    if (condensed || (data[column] !== _[column])) {
+                        if (typeof _[column] === "string") {
+                            var original = _[column];
+                            _[column] = {};
+
+                            if (condensed) {
+                                var parts = original.split(',');
+                                for (var k = 0; k < parts.length; k++ ) {
+                                    _[column][parts[k]] = true;
+                                }
                             }
+                            else
+                                _[column][original] = true;
+                        }
 
-                        _[column][data[column]] = true;
+                        if (typeof data[column] === "string") {
+                            if (condensed) {
+                                var parts = data[column].split(',');
+                                for (var k = 0; k < parts.length; k++ ) {
+                                    _[column][parts[k]] = true;
+                                }
+                            }
+                            else
+                                _[column][data[column]] = true;
+                        }
                     }
                 }
 

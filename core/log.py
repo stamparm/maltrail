@@ -74,12 +74,11 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False,
                             condensed = False
 
                             _ = _thread_data.condensed_events[key][0]
-                            condensed_localtime, condensed_event = [_[0]], list(_[1])
+                            condensed_localtime, condensed_event = _[0], list(_[1])
 
                             for i in xrange(1, len(_thread_data.condensed_events[key])):
                                 _ = _thread_data.condensed_events[key][i]
-                                for j in xrange(2, 7):  # src_ip, src_port, dst_ip, dst_port, proto
-                                    condensed_localtime.append(_[0])
+                                for j in xrange(3, 7):  # src_port, dst_ip, dst_port, proto
                                     if _[1][j] != condensed_event[j]:
                                         condensed = True
                                         if not isinstance(condensed_event[j], list):
@@ -91,16 +90,17 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False,
                                     if isinstance(condensed_event[i], list):
                                         condensed_event[i] = ','.join(str(_) for _ in condensed_event[i])
 
-                            log_event(condensed_event, skip_condensing=True, localtime=','.join(condensed_localtime))
+                            log_event(condensed_event, skip_condensing=True, localtime=condensed_localtime)
 
                         _thread_data.condensed_events = {}
 
                     if any(_ in info for _ in CONDENSE_ON_TRAIL_KEYWORDS):
                         if not hasattr(_thread_data, "condensed_events"):
                             _thread_data.condensed_events = {}
-                        if trail not in _thread_data.condensed_events:
-                            _thread_data.condensed_events[trail] = []
-                        _thread_data.condensed_events[trail].append((localtime, event_tuple))
+                        key = (src_ip, trail)
+                        if key not in _thread_data.condensed_events:
+                            _thread_data.condensed_events[key] = []
+                        _thread_data.condensed_events[key].append((localtime, event_tuple))
                         return
 
                 event = "%s %s %s\n" % (safe_value(localtime), safe_value(config.SENSOR_NAME), " ".join(safe_value(_) for _ in event_tuple[2:]))
