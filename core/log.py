@@ -59,12 +59,12 @@ def safe_value(value):
         retval = "\"%s\"" % retval.replace('"', '""')
     return retval
 
-def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False, localtime=None):
+def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False):
     try:
         sec, usec, src_ip, src_port, dst_ip, dst_port, proto, trail_type, trail, info = event_tuple[:10]
         if not any(_ in WHITELIST for _ in (src_ip, dst_ip)):
             if not skip_write:
-                localtime = localtime or "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)
+                localtime = "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)
 
                 if not skip_condensing:
                     if (sec - getattr(_thread_data, "condensed_events_flush_sec", 0)) > CONDENSED_EVENTS_FLUSH_PERIOD:
@@ -74,23 +74,23 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False,
                             condensed = False
 
                             _ = _thread_data.condensed_events[key][0]
-                            condensed_localtime, condensed_event = _[0], list(_[1])
+                            condensed_event = list(_)
 
                             for i in xrange(1, len(_thread_data.condensed_events[key])):
                                 _ = _thread_data.condensed_events[key][i]
                                 for j in xrange(3, 7):  # src_port, dst_ip, dst_port, proto
-                                    if _[1][j] != condensed_event[j]:
+                                    if _[j] != condensed_event[j]:
                                         condensed = True
-                                        if not isinstance(condensed_event[j], list):
-                                            condensed_event[j] = i * [condensed_event[j]]
-                                        condensed_event[j].append(_[1][j])
+                                        if not isinstance(condensed_event[j], set):
+                                            condensed_event[j] = set((condensed_event[j],))
+                                        condensed_event[j].add(_[j])
 
                             if condensed:
                                 for i in xrange(len(condensed_event)):
-                                    if isinstance(condensed_event[i], list):
-                                        condensed_event[i] = ','.join(str(_) for _ in condensed_event[i])
+                                    if isinstance(condensed_event[i], set):
+                                        condensed_event[i] = ','.join(str(_) for _ in sorted(condensed_event[i]))
 
-                            log_event(condensed_event, skip_condensing=True, localtime=condensed_localtime)
+                            log_event(condensed_event, skip_condensing=True)
 
                         _thread_data.condensed_events = {}
 
@@ -100,7 +100,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False,
                         key = (src_ip, trail)
                         if key not in _thread_data.condensed_events:
                             _thread_data.condensed_events[key] = []
-                        _thread_data.condensed_events[key].append((localtime, event_tuple))
+                        _thread_data.condensed_events[key].append(event_tuple)
                         return
 
                 event = "%s %s %s\n" % (safe_value(localtime), safe_value(config.SENSOR_NAME), " ".join(safe_value(_) for _ in event_tuple[2:]))
