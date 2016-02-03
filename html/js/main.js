@@ -71,8 +71,8 @@ var COMMA_ENCODE_TRAIL_TYPES = { UA: true, URL: true};
 for (var column in LOG_COLUMNS) if (LOG_COLUMNS.hasOwnProperty(column)) LOG_COLUMNS_SIZE++;
 
 var _ = {};
-for (var column in DATA_CONDENSING_COLUMNS) {
-    _[column] = true;
+for (var i = 0; i < DATA_CONDENSING_COLUMNS.length; i++) {
+    _[DATA_CONDENSING_COLUMNS[i]] = true;
 }
 DATA_CONDENSING_COLUMNS = _;
 
@@ -580,7 +580,7 @@ function init(url, from, to) {
 
                             if (condensed) {
                                 var parts = original.split(',');
-                                for (var k = 0; k < parts.length; k++ ) {
+                                for (var k = 0; k < parts.length; k++) {
                                     _[column][parts[k]] = true;
                                 }
                             }
@@ -591,7 +591,7 @@ function init(url, from, to) {
                         if (typeof data[column] === "string") {
                             if (condensed) {
                                 var parts = data[column].split(',');
-                                for (var k = 0; k < parts.length; k++ ) {
+                                for (var k = 0; k < parts.length; k++) {
                                     _[column][parts[k]] = true;
                                 }
                             }
