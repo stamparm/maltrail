@@ -1161,3 +1161,103 @@ isawesome.net
 areawesome.net
 tux.nu
 tsx.org
+
+# Reference: http://www.nic.de.vu/us/join/
+
+.de.vu
+.at.vu
+.ch.vu
+.de.tc
+.at.tc
+.co.at.tc
+.net.tc
+.de.ms
+.net.ms
+.info.ms
+
+# Reference: http://www.popnic.com/
+
+.uk.pn
+.co.uk.pn
+.us.pn
+.ca.pn
+.au.pn
+.com.au.pn
+.de.pn
+.at.pn
+.co.at.pn
+.ch.pn
+.fr.pn
+.it.pn
+.cn.pn
+.jp.pn
+
+# Reference: http://www.neunic.com/us/start/
+
+.de.vc
+.at.vc
+.co.at.vc
+.or.at.vc
+.ch.vc
+
+# Reference: http://www.homenic.com/us/start/
+
+.at.hm
+
+# Reference: http://www.unonic.com/
+
+.net.tf
+.eu.tf
+.int.tf
+.edu.tf
+.us.tf
+.ca.tf
+.bg.tf
+.ru.tf
+.pl.tf
+.cz.tf
+.de.tf
+.at.tf
+.co.at.tf
+.ch.tf
+.sg.tf
+
+# Reference: http://www.mediadots.com/
+
+.us.mn
+.uk.mn
+.co.uk.mn
+.eu.mn
+.au.mn
+.com.au.mn
+.at.mn
+.co.at.mn
+.fr.mn
+.nl.mn
+.it.mn
+.cn.mn
+.jp.mn
+
+
+# Reference: http://www.lavanic.com/us/start/
+
+.de.lv
+.at.lv
+.co.at.lv
+.or.at.lv
+.ch.lv
+
+
+# Reference: https://iwantmyname.com/domains/dot-free
+
+.free
+
+# Reference: http://www.freedomain.co.nr/
+
+.co.nr
+
+# Reference: http://www.domain.me.pn/
+
+.eu.pn
+.me.pn
+
