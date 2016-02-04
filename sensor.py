@@ -384,7 +384,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 post_data = post_data.replace(char, replacement)
 
                         if host not in WHITELIST:
-                            if not any(_ in unquoted_path for _ in WHITELIST_HTTP_REQUEST_PATHS):
+                            if not any(_ in unquoted_path.lower() for _ in WHITELIST_HTTP_REQUEST_PATHS):
                                 if any(_ in unquoted_path for _ in SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION):
                                     found = _result_cache.get(unquoted_path)
                                     if found is None:
