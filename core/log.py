@@ -72,18 +72,19 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
 
                         for key in getattr(_thread_data, "condensed_events", []):
                             condensed = False
+                            events = _thread_data.condensed_events[key]
 
-                            _ = _thread_data.condensed_events[key][0]
-                            condensed_event = list(_)
+                            first_event = events[0]
+                            condensed_event = [_ for _ in first_event]
 
-                            for i in xrange(1, len(_thread_data.condensed_events[key])):
-                                _ = _thread_data.condensed_events[key][i]
+                            for i in xrange(1, len(events)):
+                                current_event = events[i]
                                 for j in xrange(3, 7):  # src_port, dst_ip, dst_port, proto
-                                    if _[j] != condensed_event[j]:
+                                    if current_event[j] != condensed_event[j]:
                                         condensed = True
                                         if not isinstance(condensed_event[j], set):
                                             condensed_event[j] = set((condensed_event[j],))
-                                        condensed_event[j].add(_[j])
+                                        condensed_event[j].add(current_event[j])
 
                             if condensed:
                                 for i in xrange(len(condensed_event)):
