@@ -48,7 +48,6 @@
 .eu.mn
 .de.lv
 .biz.ly
-.yi.org
 
 # Reference: http://readwrite.com/2010/10/27/the_worlds_most_dangerous_domains
 
@@ -624,7 +623,6 @@ cydots.com
 darweb.com
 ddo.jp
 dhis.org
-dns2go.com
 dnserver.com
 dot.tk
 dtdns.com
@@ -791,8 +789,6 @@ cz.cc
 cz.tc
 cz.tf
 damnserver.com
-darktech.org
-darweb.com
 ddisk.com
 ddisk.net
 ddo.jp
@@ -1114,8 +1110,6 @@ wo.tc
 workisboring.com
 ww.ai
 xana.fr
-xicp.cn
-xicp.net
 xl.cx
 xxl.st
 yicp.net
@@ -1154,3 +1148,16 @@ zik.dj
 .party
 .gq
 .link
+
+# Reference: http://changelog.ca/log/2000/04/07/free-third-level-domain-name-roundup
+
+eyep.net
+fdns.net
+iscool.net
+arecool.net
+isfun.net
+arefun.net
+isawesome.net
+areawesome.net
+tux.nu
+tsx.org

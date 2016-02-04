@@ -10,6 +10,7 @@ checkip.dyndns.org
 checkip.narak.com
 checkmyip.com
 check-my-ip.net
+checkip.dns.he.net
 cmyip.com
 cmyip.net
 crymyip.com
