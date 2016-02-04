@@ -255,7 +255,6 @@ microgaming install program
 \Amicrosoft internet explorer\Z
 mirar_
 missigua locator
-mj12bot
 morfeus
 mot-mpx220
 moxilla
