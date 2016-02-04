@@ -278,16 +278,18 @@ def _process_packet(packet, sec, usec, ip_offset):
                 if method and path:
                     post_data = None
                     host = dst_ip
-                    index = tcp_data.find("\r\nHost:")
+                    first_index = tcp_data.find("\r\nHost:")
 
-                    if index >= 0:
-                        index = index + len("\r\nHost:")
-                        host = tcp_data[index:tcp_data.find("\r\n", index)]
-                        host = host.strip()
-                        if host.endswith(":80"):
-                            host = host[:-3]
-                        if host and host[0].isalpha() and dst_ip in trails:
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, "%s (%s)" % (dst_ip, host.split(':')[0]), trails[dst_ip][0], trails[dst_ip][1]), packet)
+                    if first_index >= 0:
+                        first_index = first_index + len("\r\nHost:")
+                        last_index = tcp_data.find("\r\n", first_index)
+                        if last_index >= 0:
+                            host = tcp_data[first_index:last_index]
+                            host = host.strip()
+                            if host.endswith(":80"):
+                                host = host[:-3]
+                            if host and host[0].isalpha() and dst_ip in trails:
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, "%s (%s)" % (dst_ip, host.split(':')[0]), trails[dst_ip][0], trails[dst_ip][1]), packet)
                     elif config.USE_HEURISTICS and config.CHECK_MISSING_HOST:
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing host header)", "(heuristic)"), packet)
 
