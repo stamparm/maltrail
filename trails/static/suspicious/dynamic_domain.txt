@@ -660,3 +660,12 @@ xicp.net
 
 nodns.ca
 
+# Reference: http://myhome.cx/
+
+dip.jp
+fam.cx
+jpn.ph
+moe.hm
+myhome.cx
+or.tl
+orz.hm
