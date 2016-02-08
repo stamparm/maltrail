@@ -602,6 +602,7 @@ writesthisblog.com
 dlinkddns.com
 autoipset.com
 dahuaddns.com
+ez-dns.com
 
 # Reference: http://dnslookup.me/dynamic-dns/
 
