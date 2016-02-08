@@ -935,8 +935,6 @@ mx.tc
 myactivedirectory.com
 mydissent.net
 myeffect.net
-myftp.biz
-myftp.org
 myfw.us
 myhome.tv
 myip.org
