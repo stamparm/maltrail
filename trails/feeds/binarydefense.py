@@ -9,7 +9,7 @@ from core.common import retrieve_content
 
 __url__ = "http://www.binarydefense.com/banlist.txt"
 __check__ = "Binary Defense Systems"
-__info__ = "malicious"
+__info__ = "bad reputation"
 __reference__ = "binarydefense.com"
 
 def fetch():
