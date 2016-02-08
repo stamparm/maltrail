@@ -1219,7 +1219,7 @@ function initDetails() {
                         }
 
                         // Reference: https://stackoverflow.com/questions/3340802/add-line-break-within-tooltips
-                        title = title.replace(/([^\s]{50})/g, "$1&#013;");
+                        title = title.replace(/([^\s]{60})/g, "$1&#10;");
 
                         common = '<span class="trail-text">' + common + '</span>';
 
