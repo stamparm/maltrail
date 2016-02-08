@@ -1261,3 +1261,32 @@ tsx.org
 .eu.pn
 .me.pn
 
+# Reference: http://freesubdomain.org/
+
+website.tk
+ae.tn
+bd.tn
+cn.tn
+ee.tn
+es.cx
+gr.tn
+hk.tn
+id.vg
+ir.tn
+jp.tn
+kr.tn
+ma.tn
+my.vg
+ng.tn
+nl.tn
+ph.tn
+pk.tn
+pl.tn
+ro.tn
+sa.tn
+sg.tn
+th.tn
+tr.tn
+uk.tn
+vn.tn
+za.tn
