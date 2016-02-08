@@ -1631,7 +1631,7 @@ function initDetails() {
         if (event.target.classList.contains("trail-text")) {
             clearTimeout(SEARCH_TIP_TIMER);
             SEARCH_TIP_TIMER = setTimeout(function(cell, event) {
-                if ($(".ui-tooltip").length === 0) {
+                if ((event.buttons === 0) && ($(".ui-tooltip").length === 0)) {
                     var query = cell[0].innerHTML.replace(/<span class="ipcat.+span>/g, "").replace(/<[^>]+>/g, "").replace(/[()]/g, "").split('/')[0];
                     $(".searchtip").remove();
                     $("body").append(
@@ -1650,6 +1650,11 @@ function initDetails() {
                 clearTimeout(SEARCH_TIP_TIMER);
             });
         }
+    });
+
+    details.off("click", ".trail");
+    details.on("click", ".trail", function(event) {
+        clearTimeout(SEARCH_TIP_TIMER);
     });
 
     details.off("dblclick");  // clear previous
