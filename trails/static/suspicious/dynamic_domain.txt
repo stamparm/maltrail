@@ -600,6 +600,8 @@ writesthisblog.com
 # Generic
 
 dlinkddns.com
+autoipset.com
+dahuaddns.com
 
 # Reference: http://dnslookup.me/dynamic-dns/
 
