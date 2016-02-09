@@ -44,3 +44,7 @@ start.qone8.com
 # Reference: https://www.quora.com/Why-I-am-getting-this-malware-message-while-browsing-through-Google-Chrome
 
 sso.anbtr.com
+
+# Reference: https://www.herdprotect.com/installer.exe-9ede456daf677070fda0db33cec29fbd79fd168f.aspx
+
+yourfileinfo.com
