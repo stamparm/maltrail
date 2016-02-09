@@ -28,7 +28,6 @@ from core.settings import WHITELIST
 from core.settings import WORST_ASNS
 from core.trailsdict import TrailsDict
 
-_ipcat_cursor = {}
 _ipcat_cache = {}
 
 def retrieve_content(url, data=None):
@@ -74,24 +73,19 @@ def ipcat_lookup(address):
         retval = _ipcat_cache[address]
     else:
         retval = ""
-        thread = threading.currentThread()
-        cursor = _ipcat_cursor.get(thread)
 
-        if cursor is None:
-            if os.path.isfile(IPCAT_SQLITE_FILE):
-                cursor = _ipcat_cursor[thread] = sqlite3.connect(IPCAT_SQLITE_FILE, isolation_level=None).cursor()
-            else:
-                return None
+        if os.path.isfile(IPCAT_SQLITE_FILE):
+            with sqlite3.connect(IPCAT_SQLITE_FILE, isolation_level=None) as conn:
+                cursor = conn.cursor()
+                try:
+                    _ = addr_to_int(address)
+                    cursor.execute("SELECT name FROM ranges WHERE start_int <= ? AND end_int >= ?", (_, _))
+                    _ = cursor.fetchone()
+                    retval = str(_[0]) if _ else retval
+                except:
+                    raise ValueError("[x] invalid IP address '%s'" % address)
 
-        try:
-            _ = addr_to_int(address)
-            cursor.execute("SELECT name FROM ranges WHERE start_int <= ? AND end_int >= ?", (_, _))
-            _ = cursor.fetchone()
-            retval = str(_[0]) if _ else retval
-        except:
-            raise ValueError("[x] invalid IP address '%s'" % address)
-
-        _ipcat_cache[address] = retval
+                _ipcat_cache[address] = retval
 
     return retval
 
