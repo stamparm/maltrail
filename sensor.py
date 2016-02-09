@@ -391,7 +391,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     found = _result_cache.get(unquoted_path)
                                     if found is None:
                                         for desc, regex in SUSPICIOUS_HTTP_REQUEST_REGEXES:
-                                            if re.search(regex, unquoted_path):
+                                            if re.search(regex, unquoted_path, re.I):
                                                 found = desc
                                                 break
                                         _result_cache[unquoted_path] = found or ""
@@ -404,7 +404,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     found = _result_cache.get(unquoted_post_data)
                                     if found is None:
                                         for desc, regex in SUSPICIOUS_HTTP_REQUEST_REGEXES:
-                                            if re.search(regex, unquoted_post_data):
+                                            if re.search(regex, unquoted_post_data, re.I):
                                                 found = desc
                                                 break
                                         _result_cache[unquoted_post_data] = found or ""
