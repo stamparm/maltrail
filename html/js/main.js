@@ -68,6 +68,7 @@ var INFO_SEVERITY_KEYWORDS = { "malware": SEVERITY.HIGH, "reputation": SEVERITY.
 var STORAGE_KEY_ACTIVE_STATUS_BUTTON = "STORAGE_KEY_ACTIVE_STATUS_BUTTON";
 var COMMA_ENCODE_TRAIL_TYPES = { UA: true, URL: true};
 var TOOLTIP_FOLDING_REGEX = /([^\s]{60})/g;
+var REPLACE_SINGLE_CLOUD_WITH_BRACES = false;
 
 for (var column in LOG_COLUMNS) if (LOG_COLUMNS.hasOwnProperty(column)) LOG_COLUMNS_SIZE++;
 
@@ -1229,8 +1230,12 @@ function initDetails() {
                         else
                             data = common + "<span title=\"" + title + "\" class='ellipsis'></span>";
                     }
-                    else
-                        data = '<span class="trail-text">' + data.replace('(', '{').replace(')', '}') + '</span>';
+                    else {
+                        if (REPLACE_SINGLE_CLOUD_WITH_BRACES)
+                            data = data.replace('(', '{').replace(')', '}');
+
+                        data = '<span class="trail-text">' + data + '</span>';
+                    }
 
                     return data;
                 },
@@ -1667,6 +1672,8 @@ function initDetails() {
             filter = $(this).find(".info-input")[0].value;
         else if ($(this).find(".time-day").length > 0)
             filter = $(this).find("div")[0].lastChild.textContent;
+        else if ($(this).find(".trail-text").length > 0)
+            filter = $(this).find(".trail-text")[0].lastChild.textContent.replace(/\([^)]+\)/g, "");
         else if ($(this).find(".duplicates").length > 0)
             filter = this.innerHTML.replace(/<span.+/g, " ").replace(/<.+?>/g, " ");
         else if (this.innerHTML.indexOf("ellipsis") > -1) {
