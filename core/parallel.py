@@ -50,10 +50,7 @@ def write_block(buffer, i, block, marker=None):
 
     buffer[offset] = BLOCK_MARKER.WRITE
     buffer.seek(offset + 1)
-
-    buffer.write(struct.pack("=H", len(block)))
-    buffer.write(block)
-
+    buffer.write(struct.pack("=H", len(block)) + block)
     buffer[offset] = marker or BLOCK_MARKER.NOP
 
 def worker(buffer, n, offset, mod, process_packet):
