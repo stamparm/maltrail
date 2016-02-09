@@ -450,6 +450,8 @@ zombie.dnsbl.sorbs.net
 security-research.dyndns.org
 dl.dropbox.com
 nirsoft.net
+gmail.cm
+gmail.cf
 
 # Generic (URL)
 
