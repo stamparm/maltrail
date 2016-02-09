@@ -67,6 +67,7 @@ var CHART_TOOLTIP_FORMAT = "<%= datasetLabel %>: <%= value %>";
 var INFO_SEVERITY_KEYWORDS = { "malware": SEVERITY.HIGH, "reputation": SEVERITY.LOW, "attacker": SEVERITY.LOW, "spammer": SEVERITY.LOW, "compromised": SEVERITY.LOW, "crawler": SEVERITY.LOW, "scanning": SEVERITY.LOW }
 var STORAGE_KEY_ACTIVE_STATUS_BUTTON = "STORAGE_KEY_ACTIVE_STATUS_BUTTON";
 var COMMA_ENCODE_TRAIL_TYPES = { UA: true, URL: true};
+var TOOLTIP_FOLDING_REGEX = /([^\s]{60})/g;
 
 for (var column in LOG_COLUMNS) if (LOG_COLUMNS.hasOwnProperty(column)) LOG_COLUMNS_SIZE++;
 
@@ -1179,7 +1180,7 @@ function initDetails() {
 
                     data = data.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-                    if ((data.indexOf(',') > -1) || ((info.indexOf(SUSPICIOUS_THREAT_INFIX) > -1) && (data.indexOf('(') > -1) && (data.replace(/\([^)]+\)/g, "").replace(/&#\d+;/g, "|").length > LONG_TRAIL_THRESHOLD)) || (data.replace(/\([^)]+\)/g, "").replace(/&#\d+;/g, "|").length > LONG_TRAIL_THRESHOLD)) {
+                    if ((data.indexOf(',') > -1) || (data.replace(/&#\d+;/g, "|").length > LONG_TRAIL_THRESHOLD)) {
                         var common = "";
                         var title = "";
                         var left = false;
@@ -1219,7 +1220,7 @@ function initDetails() {
                         }
 
                         // Reference: https://stackoverflow.com/questions/3340802/add-line-break-within-tooltips
-                        title = title.replace(/([^\s]{60})/g, "$1&#10;");
+                        title = title.replace(TOOLTIP_FOLDING_REGEX, "$1&#10;");
 
                         common = '<span class="trail-text">' + common + '</span>';
 
