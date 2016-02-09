@@ -1230,7 +1230,7 @@ function initDetails() {
                             data = common + "<span title=\"" + title + "\" class='ellipsis'></span>";
                     }
                     else
-                        data = '<span class="trail-text">' + data + '</span>';
+                        data = '<span class="trail-text">' + data.replace('(', '{').replace(')', '}') + '</span>';
 
                     return data;
                 },
