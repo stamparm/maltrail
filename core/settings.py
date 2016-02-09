@@ -22,7 +22,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.9.187"
+VERSION = "0.9.188"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -71,7 +71,18 @@ IGNORE_DNS_QUERY_SUFFIXES = (".arpa", ".local")
 SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".exe", ".scr"))
 WHITELIST_DIRECT_DOWNLOAD_KEYWORDS = ("cgi", "/scripts/", "/_vti_bin/", "/bin/")
 SUSPICIOUS_FILENAMES = set(("gate.php", "suspendedpage.cgi"))
-SUSPICIOUS_HTTP_REQUEST_REGEX = r"(?i)information_schema|\b(AND|OR|SELECT)\b.*/\*.*\*/|/\*.*\*/.*\b(AND|OR|SELECT)\b|\b(AND|OR)[^\w]+\d+['\") ]?[=><]['\"( ]?\d+|(alert|confirm|prompt)\((\d+|document\.|[^\w]*XSS)|\bping -[nc] \d+|floor\(rand\(|ORDER BY \d+|sysdatabases|(\.\./){3,}(?!images)|\bSELECT\b.*\bFROM\b.*\b(WHERE|GROUP|ORDER)\b|\bSELECT \w+ FROM \w+|<script.*?>|\balert\(|xp_cmdshell|/etc/(passwd|shadow|issue|hostname)|\b((boot|system|win)\.ini|system32|cmd\.exe|2>&1|(cat|ls) /|nc -l -p \d+)|>\s*/dev/null|<\?php|\b(pg_)?sleep\(|\bWAITFOR[^\w]+DELAY\b|\bCONVERT\(|VARCHAR\(|\bUNION\s+(ALL\s+)?SELECT\b|\bCOUNT\(\*\)|\b(UPDATEXML|EXTRACTVALUE)\(|\bCASE[^\w]+WHEN.*THEN\b|imei=\d{15}|\[<!ENTITY|\(\|\(\w+=\*|/text\(\)='|\$_(REQUEST|GET|POST)\[|\.htaccess|\.htpasswd|\bwp-config\.php"
+SUSPICIOUS_HTTP_REQUEST_REGEXES = (
+    ("sql injection", r"information_schema|sysdatabases|floor\(rand\(|ORDER BY \d+|\bUNION\s+(ALL\s+)?SELECT\b|\b(UPDATEXML|EXTRACTVALUE)\(|\bCASE[^\w]+WHEN.*THEN\b|\bWAITFOR[^\w]+DELAY\b|\bCONVERT\(|VARCHAR\(|\bCOUNT\(\*\)|\b(pg_)?sleep\(|\bSELECT\b.*\bFROM\b.*\b(WHERE|GROUP|ORDER)\b|\bSELECT \w+ FROM \w+|\b(AND|OR|SELECT)\b.*/\*.*\*/|/\*.*\*/.*\b(AND|OR|SELECT)\b|\b(AND|OR)[^\w]+\d+['\") ]?[=><]['\"( ]?\d+"),
+    ("xml injection", r"/text\(\)='"),
+    ("php injection", r"<\?php"),
+    ("ldap injection", r"\(\|\(\w+=\*"),
+    ("xss injection", r"<script.*?>|\balert\(|(alert|confirm|prompt)\((\d+|document\.|[^\w]*XSS)"),
+    ("xxe injection", r"\[<!ENTITY"),
+    ("data exfiltration", r"imei=\d{15}"),
+    ("config file access", r"\.ht(access|passwd)|\bwp-config\.php"),
+    ("remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|\bping -[nc] \d+|cmd\.exe|/bin/bash|2>&1|(cat|ls) /|nc -l -p \d+|>\s*/dev/null"),
+    ("directory traversal", r"(\.\./){3,}|/etc/(passwd|shadow|issue|hostname)|\b(boot|system|win)\.ini|system32")
+)
 SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION = ("?", "..", ".ht", "=", " ", "'")
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, urllib.quote(_)) for _ in "( )\r\n")
 SUSPICIOUS_UA_REGEX = ""

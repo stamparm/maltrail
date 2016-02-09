@@ -65,7 +65,7 @@ from core.settings import SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD
 from core.settings import SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
 from core.settings import SUSPICIOUS_FILENAMES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION
-from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEX
+from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEXES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
 from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
@@ -291,7 +291,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             if host and host[0].isalpha() and dst_ip in trails:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, "%s (%s)" % (dst_ip, host.split(':')[0]), trails[dst_ip][0], trails[dst_ip][1]), packet)
                     elif config.USE_HEURISTICS and config.CHECK_MISSING_HOST:
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, "%s%s" % (host, path), "suspicious http request (missing host header)", "(heuristic)"), packet)
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, "%s%s" % (host, path), "missing host header (suspicious)", "(heuristic)"), packet)
 
                     index = tcp_data.find("\r\n\r\n")
                     if index >= 0:
@@ -390,19 +390,27 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 if any(_ in unquoted_path for _ in SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION):
                                     found = _result_cache.get(unquoted_path)
                                     if found is None:
-                                        found = _result_cache[unquoted_path] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, unquoted_path) is not None
+                                        for desc, regex in SUSPICIOUS_HTTP_REQUEST_REGEXES:
+                                            if re.search(regex, unquoted_path):
+                                                found = desc
+                                                break
+                                        _result_cache[unquoted_path] = found or ""
                                     if found:
                                         trail = "%s(%s)" % (host, path)
-                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"), packet)
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "potential %s (suspicious)" % found, "(heuristic)"), packet)
                                         return
 
                                 if any(_ in unquoted_post_data for _ in SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION):
                                     found = _result_cache.get(unquoted_post_data)
                                     if found is None:
-                                        found = _result_cache[unquoted_post_data] = re.search(SUSPICIOUS_HTTP_REQUEST_REGEX, unquoted_post_data) is not None
+                                        for desc, regex in SUSPICIOUS_HTTP_REQUEST_REGEXES:
+                                            if re.search(regex, unquoted_post_data):
+                                                found = desc
+                                                break
+                                        _result_cache[unquoted_post_data] = found or ""
                                     if found:
                                         trail = "%s(%s \(%s %s\))" % (host, path, method, post_data.strip())
-                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspicious http request", "(heuristic)"), packet)
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "potential %s (suspicious)" % found, "(heuristic)"), packet)
                                         return
 
                         if '.' in path:
