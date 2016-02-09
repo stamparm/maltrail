@@ -571,14 +571,13 @@ def init():
 
     global _multiprocessing
 
-    if config.USE_MULTIPROCESSING:
-        try:
-            import multiprocessing
+    try:
+        import multiprocessing
 
-            if multiprocessing.cpu_count() > 1:
-                _multiprocessing = multiprocessing
-        except (ImportError, OSError, NotImplementedError):
-            pass
+        if config.PROCESS_COUNT > 1:
+            _multiprocessing = multiprocessing
+    except (ImportError, OSError, NotImplementedError):
+        pass
 
     def update_timer():
         _ = update_trails(server=config.UPDATE_SERVER)
@@ -727,11 +726,11 @@ def _init_multiprocessing():
         except:
             exit("[!] unable to allocate network capture buffer. Please adjust value of 'CAPTURE_BUFFER'")
 
-        print("[i] creating %d more processes (%d CPU cores detected)" % (_multiprocessing.cpu_count() - 1, _multiprocessing.cpu_count()))
+        print("[i] creating %d more processes (out of total %d)" % (config.PROCESS_COUNT - 1, config.PROCESS_COUNT))
         _n = _multiprocessing.Value('L', lock=False)
 
-        for i in xrange(_multiprocessing.cpu_count() - 1):
-            process = _multiprocessing.Process(target=worker, name=str(i), args=(_buffer, _n, i, _multiprocessing.cpu_count() - 1, _process_packet))
+        for i in xrange(config.PROCESS_COUNT - 1):
+            process = _multiprocessing.Process(target=worker, name=str(i), args=(_buffer, _n, i, config.PROCESS_COUNT - 1, _process_packet))
             process.daemon = True
             process.start()
 
@@ -820,7 +819,7 @@ def monitor():
         print("\r[i] please wait...")
         if _multiprocessing:
             try:
-                for _ in xrange(_multiprocessing.cpu_count() - 1):
+                for _ in xrange(config.PROCESS_COUNT - 1):
                     write_block(_buffer, _n.value, "", BLOCK_MARKER.END)
                     _n.value = _n.value + 1
                 while _multiprocessing.active_children():
@@ -850,7 +849,7 @@ def main():
 
     if options.debug:
         config.console = True
-        config.USE_MULTIPROCESSING = False
+        config.PROCESS_COUNT = 1
         config.SHOW_DEBUG = True
 
     if options.pcap_file:

@@ -22,7 +22,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.9.196"
+VERSION = "0.9.197"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -106,6 +106,12 @@ STATIC_IPCAT_LOOKUPS = {"shadowserver.org": ("184.105.139.66-184.105.139.126", "
 
 # Reference: https://gist.github.com/ryanwitt/588678
 DLT_OFFSETS = { 0: 4, 1: 14, 6: 22, 7: 6, 8: 16, 9: 4, 10: 21, 117: 48, 18: 4, 12 if sys.platform.find('openbsd') != -1 else 108: 4, 14 if sys.platform.find('openbsd') != -1 else 12: 0, 113: 16 }
+
+try:
+    import multiprocessing
+    CPU_CORES = multiprocessing.cpu_count()
+except ImportError:
+    CPU_CORES = 1
 
 def _get_total_physmem():
     retval = None
@@ -239,7 +245,7 @@ def read_config(config_file):
             else:
                 for match in re.finditer(r"\$([A-Z0-9_]+)", value):
                     if match.group(1) in globals():
-                        value = value.replace(match.group(0), globals()[match.group(1)])
+                        value = value.replace(match.group(0), str(globals()[match.group(1)]))
                     else:
                         value = value.replace(match.group(0), os.environ.get(match.group(1), match.group(0)))
                 if subprocess.mswindows and "://" not in value:
@@ -267,6 +273,8 @@ def read_config(config_file):
         for value in config.USER_WHITELIST.split(','):
             WHITELIST.add(value.strip())
 
+    config.PROCESS_COUNT = int(config.PROCESS_COUNT or CPU_CORES)
+
     if config.DISABLE_LOCAL_LOG_STORAGE and not config.LOG_SERVER:
         print("[x] configuration switch 'DISABLE_LOCAL_LOG_STORAGE' turned on and option 'LOG_SERVER' not set. Falling back to console output of event data")
 
@@ -279,9 +287,9 @@ def read_config(config_file):
     if not str(config.HTTP_PORT or "").isdigit():
         exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % config.HTTP_PORT)
 
-    if config.USE_MULTIPROCESSING and subprocess.mswindows:
+    if config.PROCESS_COUNT and subprocess.mswindows:
         print "[x] multiprocessing is currently not supported on Windows OS"
-        config.USE_MULTIPROCESSING = False
+        config.PROCESS_COUNT = 1
 
     if config.CAPTURE_BUFFER:
         if str(config.CAPTURE_BUFFER or "").isdigit():
