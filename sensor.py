@@ -753,17 +753,13 @@ def monitor():
                 ip_offset = dlt_offset
 
             elif datalink == pcapy.DLT_PPP:
-                if ord(packet[2]) == 0x00 and ord(packet[3]) == 0x21:  # IPv4
-                    ip_offset = dlt_offset
-                elif ord(packet[2]) == 0x00 and ord(packet[3]) == 0x57:  # IPv6
+                if packet[2:4] in ("\x00\x21", "\x00\x57"):  # (IPv4, IPv6)
                     ip_offset = dlt_offset
 
             elif dlt_offset >= 2:
-                if ord(packet[dlt_offset - 2]) == 0x81 and ord(packet[dlt_offset - 1]) == 0x00:  # VLAN
+                if packet[dlt_offset - 2:dlt_offset] == "\x81\x00":  # VLAN
                     dlt_offset += 4
-                if ord(packet[dlt_offset - 2]) == 0x08 and ord(packet[dlt_offset - 1]) == 0x00:  # IPv4
-                    ip_offset = dlt_offset
-                elif ord(packet[dlt_offset - 2]) == 0x86 and ord(packet[dlt_offset - 1]) == 0xdd:  # IPv6
+                if packet[dlt_offset - 2:dlt_offset] in ("\x08\x00", "\x86\xdd"):  # (IPv4, IPv6)
                     ip_offset = dlt_offset
 
         except IndexError:
