@@ -42,6 +42,33 @@ sidecubes.com
 start.qone8.com
 yourfileinfo.com
 vidcreek.tv
+mystartsearch.com
+search.ask.com
+searchalgo.com
+defaultsearchtab.com
+webssearches.com
+mywebsearch.com
+imesh.net
+mlstat.com
+mysearchdial.com
+spotxchange.com
+dartsearch.net
+scorecardresearch.com
+vidolog.com
+stamplive.com
+qvo6.com
+noticiasalpunto.com
+willyoupressthebutton.com
+ilividlive.com
+
+# Reference: http://www.shouldiremoveit.com/Linkey-104782-program.aspx
+
+mlstat.com
+linkeyproject.com
+
+# Reference: http://www.shouldiremoveit.com/Search-App-by-Ask-123845-program.aspx
+
+search.ask.com
 
 # Reference: http://junkwareremoval.com/category/hijacker
 
