@@ -52,6 +52,7 @@ no-ip.be
 no-ip.biz
 no-ip.ca
 no-ip.co.uk
+no-ip.com
 no-ip.fr
 no-ip.info
 no-ip.net

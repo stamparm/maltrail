@@ -118,6 +118,7 @@ myip.ua.edu
 myip.uconn.edu
 myip.v6shell.org
 myip.zone
+mylocation.org
 qualmeuip.com.br
 readip.info
 showmemyip.com

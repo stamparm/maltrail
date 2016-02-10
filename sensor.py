@@ -69,6 +69,7 @@ from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEXES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
 from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
+from core.settings import VALID_DNS_CHARS
 from core.settings import VERSION
 from core.settings import WHITELIST
 from core.settings import WHITELIST_DIRECT_DOWNLOAD_KEYWORDS
@@ -121,7 +122,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
         return
 
     result = False
-    if not _check_domain_whitelisted(query):
+    if not _check_domain_whitelisted(query) and all(_ in VALID_DNS_CHARS for _ in query):
         parts = query.lower().split('.')
 
         for i in xrange(0, len(parts)):
@@ -514,7 +515,7 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                                                     break
 
-                                        if not any(_ in query for _ in (".intranet.", '-')):
+                                        if not any(_ in query for _ in (".intranet.",)) and all(_ in VALID_DNS_CHARS for _ in query):
                                             if len(parts) > 2:
                                                 part = parts[0] if parts[0] != "www" else parts[1]
                                                 trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
