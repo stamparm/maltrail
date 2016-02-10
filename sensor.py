@@ -470,7 +470,7 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                         query = query.lower()
 
-                        if ' ' in query or '.' not in query or any(query.endswith(_) for _ in IGNORE_DNS_QUERY_SUFFIXES):
+                        if not query or '.' not in query or not all(_ in VALID_DNS_CHARS for _ in query) or any(_ in query for _ in (".intranet.",)) or any(query.endswith(_) for _ in IGNORE_DNS_QUERY_SUFFIXES):
                             return
 
                         if ord(dns_data[2]) == 0x01:  # standard query
@@ -489,6 +489,9 @@ def _process_packet(packet, sec, usec, ip_offset):
                             if (ord(dns_data[2]) & 0x80) and (ord(dns_data[3]) == 0x83):  # standard response, recursion available, no such name
                                 if not _check_domain_whitelisted(query):
                                     parts = query.split('.')
+                                    if parts[-1].isdigit():
+                                        return
+
                                     if not (len(parts) > 4 and all(_.isdigit() and int(_) < 256 for _ in parts[:4])):  # generic check for DNSBL IP lookups
                                         for _ in filter(None, (query, "*.%s" % '.'.join(parts[-2:]) if query.count('.') > 1 else None)):
                                             if _ not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[_][0] != sec / 3600:
@@ -515,35 +518,34 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                                                     break
 
-                                        if not any(_ in query for _ in (".intranet.",)) and all(_ in VALID_DNS_CHARS for _ in query):
-                                            if len(parts) > 2:
-                                                part = parts[0] if parts[0] != "www" else parts[1]
-                                                trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
-                                            elif len(parts) == 2:
-                                                part = parts[0]
-                                                trail = "(%s).%s" % (parts[0], parts[1])
-                                            else:
-                                                part = query
-                                                trail = query
+                                        if len(parts) > 2:
+                                            part = parts[0] if parts[0] != "www" else parts[1]
+                                            trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
+                                        elif len(parts) == 2:
+                                            part = parts[0]
+                                            trail = "(%s).%s" % (parts[0], parts[1])
+                                        else:
+                                            part = query
+                                            trail = query
 
-                                            result = _result_cache.get(part)
+                                        result = _result_cache.get(part)
 
-                                            if part:
-                                                if result is None:
-                                                    # Reference: https://github.com/exp0se/dga_detector
-                                                    probabilities = (float(part.count(c)) / len(part) for c in set(_ for _ in part))
-                                                    entropy = -sum(p * math.log(p) / math.log(2.0) for p in probabilities)
-                                                    if entropy > SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD:
-                                                        result = "entropy threshold no such domain (suspicious)"
+                                        if part:
+                                            if result is None:
+                                                # Reference: https://github.com/exp0se/dga_detector
+                                                probabilities = (float(part.count(c)) / len(part) for c in set(_ for _ in part))
+                                                entropy = -sum(p * math.log(p) / math.log(2.0) for p in probabilities)
+                                                if entropy > SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD:
+                                                    result = "entropy threshold no such domain (suspicious)"
 
-                                                    if not result:
-                                                        if sum(_ in CONSONANTS for _ in part) > SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD:
-                                                            result = "consonant threshold no such domain (suspicious)"
+                                                if not result:
+                                                    if sum(_ in CONSONANTS for _ in part) > SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD:
+                                                        result = "consonant threshold no such domain (suspicious)"
 
-                                                    _result_cache[part] = result or False
+                                                _result_cache[part] = result or False
 
-                                            if result:
-                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, result, "(heuristic)"), packet)
+                                        if result:
+                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, result, "(heuristic)"), packet)
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
