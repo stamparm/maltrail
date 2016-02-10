@@ -184,7 +184,8 @@ s3.amazonaws.com
 graph.facebook.com
 api.facebook.com
 query.yahooapis.com
-www.google-analytics.com
+google-analytics.com
+imei.info
 
 # found as false positive in otx.alienvault.com
 
