@@ -46,6 +46,7 @@ from core.settings import check_memory
 from core.settings import config
 from core.settings import CAPTURE_TIMEOUT
 from core.settings import CONFIG_FILE
+from core.settings import CONSONANTS
 from core.settings import DLT_OFFSETS
 from core.settings import IGNORE_DNS_QUERY_SUFFIXES
 from core.settings import IPPROTO_LUT
@@ -513,7 +514,7 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                                                     break
 
-                                        if ".intranet." not in query:  # skip checks for (generic) intranet DNS misconfigurations
+                                        if not any(_ in query for _ in (".intranet.", '-')):
                                             if len(parts) > 2:
                                                 part = parts[0] if parts[0] != "www" else parts[1]
                                                 trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
@@ -535,8 +536,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                                         result = "entropy threshold no such domain (suspicious)"
 
                                                     if not result:
-                                                        consonants = re.findall("(?i)[bcdfghjklmnpqrstvwxyz]", part)
-                                                        if len(consonants) > SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD:
+                                                        if sum(_ in CONSONANTS for _ in part) > SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD:
                                                             result = "consonant threshold no such domain (suspicious)"
 
                                                     _result_cache[part] = result or False
