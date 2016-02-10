@@ -992,7 +992,7 @@ function copyEllipsisToClipboard(event) {
     var text = target.parent().title;
     var html = target.parent().html();
     var left = html.search(/^<[^>]*ellipsis/) !== -1;
-    var common = html.replace(/<[^>]+>/g, "");
+    var common = html.replace(/<span class="ipcat">[^<]+<\/span>/g, "").replace(/<[^>]+>/g, "");
     if (!text) {
         var tooltip = $(".ui-tooltip");
         if (tooltip.length > 0) {
