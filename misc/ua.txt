@@ -475,6 +475,8 @@ widgitoolbar
 \Awin32
 winbutler
 windoss
+windows nt [3-5]\.\d+
+windows (3\.1|95|98|xp)
 \Awindows 5.1 \(2600\)
 \Awindows internet
 windows updates manager
