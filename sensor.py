@@ -384,7 +384,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             if post_data:
                                 post_data = post_data.replace(char, replacement)
 
-                        if host not in WHITELIST:
+                        if not _check_domain_whitelisted(host):
                             if not any(_ in unquoted_path.lower() for _ in WHITELIST_HTTP_REQUEST_PATHS):
                                 if any(_ in unquoted_path for _ in SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION):
                                     found = _result_cache.get(unquoted_path)
@@ -412,15 +412,15 @@ def _process_packet(packet, sec, usec, ip_offset):
                                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "potential %s (suspicious)" % found, "(heuristic)"), packet)
                                         return
 
-                        if '.' in path:
-                            _ = urlparse.urlparse("http://%s" % url)  # dummy scheme
-                            filename = _.path.split('/')[-1]
-                            name, extension = os.path.splitext(filename)
-                            if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and not any(_ in path for _ in WHITELIST_DIRECT_DOWNLOAD_KEYWORDS) and '.'.join(host.split('.')[-2:]) not in WHITELIST and not _.query and len(name) < 10:
-                                trail = "%s(%s)" % (host, path)
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "direct %s download (suspicious)" % extension, "(heuristic)"), packet)
-                            elif filename == "suspendedpage.cgi":
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspended page (suspicious)", "(heuristic)"), packet)
+                            if '.' in path:
+                                _ = urlparse.urlparse("http://%s" % url)  # dummy scheme
+                                filename = _.path.split('/')[-1]
+                                name, extension = os.path.splitext(filename)
+                                if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and not any(_ in path for _ in WHITELIST_DIRECT_DOWNLOAD_KEYWORDS) and not _.query and len(name) < 10:
+                                    trail = "%s(%s)" % (host, path)
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "direct %s download (suspicious)" % extension, "(heuristic)"), packet)
+                                elif filename == "suspendedpage.cgi":
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspended page (suspicious)", "(heuristic)"), packet)
 
         elif protocol == socket.IPPROTO_UDP:  # UDP
             _ = ip_data[iph_length:iph_length + 4]
