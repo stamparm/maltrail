@@ -43,7 +43,6 @@ start.qone8.com
 yourfileinfo.com
 vidcreek.tv
 mystartsearch.com
-search.ask.com
 searchalgo.com
 defaultsearchtab.com
 webssearches.com
@@ -61,7 +60,6 @@ noticiasalpunto.com
 willyoupressthebutton.com
 ilividlive.com
 glesafe.com
-trafficmanager.net
 searchmagnified.com
 binkiland.com
 downlite.net
@@ -289,6 +287,10 @@ searchonlinenow.net
 snjsearch.com
 beautifulcalendar.net
 top-arama.com
+appexsports.trafficmanager.net
+appexbingfinance.trafficmanager.net
+appexbingweather.trafficmanager.net
+pipoffers.apnpartners.com
 
 # Reference: http://www.shouldiremoveit.com/Linkey-104782-program.aspx
 
@@ -297,7 +299,7 @@ linkeyproject.com
 
 # Reference: http://www.shouldiremoveit.com/Search-App-by-Ask-123845-program.aspx
 
-search.ask.com
+tbapi.search.ask.com
 
 # Reference: http://junkwareremoval.com/category/hijacker
 
