@@ -16,7 +16,7 @@ import traceback
 
 from core.common import check_sudo
 from core.settings import config
-from core.settings import CONDENSE_ON_TRAIL_KEYWORDS
+from core.settings import CONDENSE_ON_INFO_KEYWORDS
 from core.settings import CONDENSED_EVENTS_FLUSH_PERIOD
 from core.settings import DEFAULT_ERROR_LOG_PERMISSIONS
 from core.settings import DEFAULT_EVENT_LOG_PERMISSIONS
@@ -95,7 +95,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
 
                         _thread_data.condensed_events = {}
 
-                    if any(_ in info for _ in CONDENSE_ON_TRAIL_KEYWORDS):
+                    if any(_ in info for _ in CONDENSE_ON_INFO_KEYWORDS):
                         if not hasattr(_thread_data, "condensed_events"):
                             _thread_data.condensed_events = {}
                         key = (src_ip, trail)

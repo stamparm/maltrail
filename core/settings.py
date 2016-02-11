@@ -23,7 +23,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.9.211"
+VERSION = "0.9.212"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -61,7 +61,7 @@ DEFAULT_ERROR_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | st
 HOSTNAME = socket.gethostname()
 DISABLED_CONTENT_EXTENSIONS = (".py", ".pyc", ".md", ".txt", ".bak", ".conf", ".zip", "~")
 CONTENT_EXTENSIONS_EXCLUSIONS = ("robots.txt",)
-CONDENSE_ON_TRAIL_KEYWORDS = ("attacker", "reputation", "scanner")
+CONDENSE_ON_INFO_KEYWORDS = ("attacker", "reputation", "scanner")
 CONDENSED_EVENTS_FLUSH_PERIOD = 10
 LOW_PRIORITY_INFO_KEYWORDS = ("reputation", "attacker", "spammer", "abuser", "malicious", "dnspod", "nicru", "crawler", "compromised")
 HIGH_PRIORITY_INFO_KEYWORDS = ("mass scanner",)
