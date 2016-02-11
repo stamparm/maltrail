@@ -292,6 +292,13 @@ appexbingfinance.trafficmanager.net
 appexbingweather.trafficmanager.net
 pipoffers.apnpartners.com
 
+# Reference: https://www.threatcrowd.org/listMalware.php?antivirus=PUP
+
+stylemy.info
+stylezip.info
+stylefun.info
+styleapp.info
+
 # Reference: http://www.shouldiremoveit.com/Linkey-104782-program.aspx
 
 mlstat.com
