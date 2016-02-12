@@ -686,7 +686,7 @@ def init():
     if _multiprocessing:
         _init_multiprocessing()
 
-    if not subprocess.mswindows:
+    if not subprocess.mswindows and not config.DISABLE_CPU_AFFINITY:
         try:
             try:
                 mod = int(subprocess.check_output("grep -c ^processor /proc/cpuinfo", stderr=subprocess.STDOUT, shell=True).strip())
