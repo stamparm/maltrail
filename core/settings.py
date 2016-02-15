@@ -23,7 +23,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.9.216"
+VERSION = "0.9.217"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -90,7 +90,7 @@ SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, urllib.quote(_)) for _ in 
 SUSPICIOUS_UA_REGEX = ""
 OBSOLETE_UA_REGEX = r"(?i)windows NT [3-5]\.\d+|windows (3\.\d+|95|98|xp)|MSIE [1-6]\.\d+|Navigator/|Safari/[1-4]|Opera/[1-3]|Firefox/1?[0-9]\."
 WORST_ASNS = {}
-WHITELIST_HTTP_REQUEST_PATHS = ("fql", "yql", "ads", "../images/", "../scripts/", "../assets/", "../core/", "../js/", "/gwx/")
+WHITELIST_HTTP_REQUEST_PATHS = ("fql", "yql", "ads", "../images/", "../themes/", "../design/", "../scripts/", "../assets/", "../core/", "../js/", "/gwx/")
 WHITELIST_UA_KEYWORDS = ("AntiVir-NGUpd", "TMSPS", "AVGSETUP", "SDDS", "Sophos", "internal dummy connection")
 WHITELIST_LONG_DOMAIN_NAME_KEYWORDS = ("blogspot",)
 SESSIONS = {}

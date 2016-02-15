@@ -101,7 +101,7 @@ yahoo.com
 yahoodns.net
 yimg.com
 
-# to ignore in direct exe downloads
+# to ignore in direct .exe downloads
 
 360safe.com
 7-zip.org
@@ -116,6 +116,7 @@ bleepingcomputer.com
 cnet.com
 cwfservice.net
 dell.com
+devbuilds.kaspersky-labs.com
 digitalrivercontent.net
 easeus.com
 filehippo.com
