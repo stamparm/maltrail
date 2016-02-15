@@ -18,8 +18,10 @@ import os
 import platform
 import subprocess
 import threading
+import time
 import traceback
 
+from core.common import check_connection
 from core.common import check_sudo
 from core.httpd import start_httpd
 from core.log import log_error
@@ -61,6 +63,16 @@ def main():
             exit("[!] invalid configuration value for 'SSL_PEM' ('%s')\n[?] (hint: \"%s\")" % (config.SSL_PEM, hint))
 
     def update_timer():
+        first = True
+        while not check_connection():
+            sys.stdout.write("[!] can't update because of lack of network connection (waiting..." if first else '.')
+            sys.stdout.flush()
+            time.sleep(60)
+            first = False
+
+        if not first:
+            print(")")
+
         if config.USE_SERVER_UPDATE_TRAILS:
             update_trails()
 

@@ -31,6 +31,7 @@ import urlparse
 
 from core.addr import inet_ntoa6
 from core.attribdict import AttribDict
+from core.common import check_connection
 from core.common import check_sudo
 from core.common import load_trails
 from core.enums import BLOCK_MARKER
@@ -583,6 +584,16 @@ def init():
         pass
 
     def update_timer():
+        first = True
+        while not check_connection():
+            sys.stdout.write("[!] can't update because of lack of network connection (waiting..." if first else '.')
+            sys.stdout.flush()
+            time.sleep(60)
+            first = False
+
+        if not first:
+            print(")")
+
         _ = update_trails(server=config.UPDATE_SERVER)
 
         update_ipcat()

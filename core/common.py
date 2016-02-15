@@ -19,6 +19,7 @@ import zlib
 
 from core.addr import addr_to_int
 from core.addr import int_to_addr
+from core.settings import CHECK_CONNECTION_URL
 from core.settings import NAME
 from core.settings import IPCAT_SQLITE_FILE
 from core.settings import STATIC_IPCAT_LOOKUPS
@@ -166,6 +167,9 @@ def get_regex(items):
     regex = process(head).replace(r"(?:|\d)", r"\d?")
 
     return regex
+
+def check_connection():
+    return len(retrieve_content(CHECK_CONNECTION_URL) or "") > 0
 
 def load_trails(quiet=False):
     if not quiet:
