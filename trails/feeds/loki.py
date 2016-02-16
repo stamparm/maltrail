@@ -9,7 +9,7 @@ import re
 
 from core.common import retrieve_content
 
-__url__ = "https://raw.githubusercontent.com/Neo23x0/Loki/master/iocs/otx-c2-iocs.txt"
+__url__ = "https://raw.githubusercontent.com/Neo23x0/signature-base/39787aaefa6b70b0be6e7dcdc425b65a716170ca/iocs/otx-c2-iocs.txt"
 __check__ = "zapto"
 __info__ = "malware"
 __reference__ = "otx.alienvault.com"
