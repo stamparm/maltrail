@@ -530,9 +530,9 @@ def _process_packet(packet, sec, usec, ip_offset):
                                             part = query
                                             trail = query
 
-                                        result = _result_cache.get(part)
+                                        if part and '-' not in part:
+                                            result = _result_cache.get(part)
 
-                                        if part:
                                             if result is None:
                                                 # Reference: https://github.com/exp0se/dga_detector
                                                 probabilities = (float(part.count(c)) / len(part) for c in set(_ for _ in part))
@@ -546,8 +546,8 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                                                 _result_cache[part] = result or False
 
-                                        if result:
-                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, result, "(heuristic)"), packet)
+                                            if result:
+                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, result, "(heuristic)"), packet)
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
