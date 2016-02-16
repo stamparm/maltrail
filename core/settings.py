@@ -23,7 +23,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.9.223"
+VERSION = "0.9.224"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -85,7 +85,7 @@ SUSPICIOUS_HTTP_REQUEST_REGEXES = (
     ("data leakage", r"im[es]i=\d{15}"),
     ("config file access", r"\.ht(access|passwd)|\bwp-config\.php"),
     ("remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|\bping -[nc] \d+|cmd\.exe|/bin/bash|2>&1|(cat|ls) /|nc -l -p \d+|>\s*/dev/null"),
-    ("directory traversal", r"(\.\./){3,}|/etc/(passwd|shadow|issue|hostname)|\b(boot|system|win)\.ini|system32")
+    ("directory traversal", r"(\.\./){3,}|/etc/(passwd|shadow|issue|hostname)|\b(boot|system|win)\.ini|\bsystem32\b")
 )
 SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION = ("?", "..", ".ht", "=", " ", "'")
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, urllib.quote(_)) for _ in "( )\r\n")
