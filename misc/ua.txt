@@ -324,6 +324,7 @@ pilipinas
 pinballcorp
 pint_agency
 pivim
+pockethttp
 poller
 \Apopup
 privoxy
