@@ -46,6 +46,7 @@ from core.parallel import write_block
 from core.settings import check_memory
 from core.settings import config
 from core.settings import CAPTURE_TIMEOUT
+from core.settings import CHECK_CONNECTION_MAX_RETRIES
 from core.settings import CONFIG_FILE
 from core.settings import CONSONANTS
 from core.settings import DLT_OFFSETS
@@ -584,19 +585,23 @@ def init():
         pass
 
     def update_timer():
-        first = True
-        while not check_connection():
-            sys.stdout.write("[!] can't update because of lack of network connection (waiting..." if first else '.')
+        retries = 0
+        while retries < CHECK_CONNECTION_MAX_RETRIES and not check_connection():
+            sys.stdout.write("[!] can't update because of lack of network connection (waiting..." if not retries else '.')
             sys.stdout.flush()
-            time.sleep(60)
-            first = False
+            time.sleep(10)
+            retries += 1
 
-        if not first:
+        if retries:
             print(")")
 
-        _ = update_trails(server=config.UPDATE_SERVER)
+        if retries == CHECK_CONNECTION_MAX_RETRIES:
+            print("[x] going to continue without update")
+            _ = {}
+        else:
+            _ = update_trails(server=config.UPDATE_SERVER)
 
-        update_ipcat()
+            update_ipcat()
 
         if _:
             trails.clear()

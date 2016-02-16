@@ -28,6 +28,7 @@ from core.log import log_error
 from core.log import start_logd
 from core.settings import config
 from core.settings import read_config
+from core.settings import CHECK_CONNECTION_MAX_RETRIES
 from core.settings import CONFIG_FILE
 from core.settings import NAME
 from core.settings import VERSION
@@ -63,20 +64,23 @@ def main():
             exit("[!] invalid configuration value for 'SSL_PEM' ('%s')\n[?] (hint: \"%s\")" % (config.SSL_PEM, hint))
 
     def update_timer():
-        first = True
-        while not check_connection():
-            sys.stdout.write("[!] can't update because of lack of network connection (waiting..." if first else '.')
+        retries = 0
+        while retries < CHECK_CONNECTION_MAX_RETRIES and not check_connection():
+            sys.stdout.write("[!] can't update because of lack of network connection (waiting..." if not retries else '.')
             sys.stdout.flush()
-            time.sleep(60)
-            first = False
+            time.sleep(10)
+            retries += 1
 
-        if not first:
+        if retries:
             print(")")
 
-        if config.USE_SERVER_UPDATE_TRAILS:
-            update_trails()
+        if retries == CHECK_CONNECTION_MAX_RETRIES:
+            print("[x] going to continue without update")
+        else:
+            if config.USE_SERVER_UPDATE_TRAILS:
+                update_trails()
 
-        update_ipcat()
+            update_ipcat()
 
         thread = threading.Timer(config.UPDATE_PERIOD, update_timer)
         thread.daemon = True

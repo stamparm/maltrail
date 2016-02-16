@@ -187,6 +187,7 @@ api.facebook.com
 query.yahooapis.com
 google-analytics.com
 imei.info
+imeipro.info
 
 # found as false positive in otx.alienvault.com
 
