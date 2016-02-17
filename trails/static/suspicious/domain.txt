@@ -1287,3 +1287,7 @@ tr.tn
 uk.tn
 vn.tn
 za.tn
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=vps-10.com
+
+vps-10.com

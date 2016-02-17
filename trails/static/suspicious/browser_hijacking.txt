@@ -295,6 +295,10 @@ kqzyfj.com
 zapmeta.ws
 ivelog.com
 
+# Reference: http://www.rescuemybrowser.com/fwdservice-com-virus-removal
+
+fwdservice.com
+
 # Reference: https://www.threatcrowd.org/listMalware.php?antivirus=PUP
 
 stylemy.info

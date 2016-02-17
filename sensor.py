@@ -425,6 +425,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "direct %s download (suspicious)" % extension, "(heuristic)"), packet)
                                 elif filename == "suspendedpage.cgi":
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspended page (suspicious)", "(heuristic)"), packet)
+                                elif filename == "defaultwebpage.cgi":
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "non-existent page (suspicious)", "(heuristic)"), packet)
 
         elif protocol == socket.IPPROTO_UDP:  # UDP
             _ = ip_data[iph_length:iph_length + 4]
