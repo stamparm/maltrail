@@ -488,66 +488,72 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, packet)
 
                         elif config.USE_HEURISTICS:
-                            if (ord(dns_data[2]) & 0x80) and (ord(dns_data[3]) == 0x83):  # standard response, recursion available, no such name
-                                if not _check_domain_whitelisted(query):
-                                    parts = query.split('.')
-                                    if parts[-1].isdigit():
-                                        return
+                            if ord(dns_data[2]) & 0x80:  # standard response
+                                if ord(dns_data[3]) == 0x80:  # recursion available, no error
+                                    if (ord(dns_data[offset + 5]) & 0xc0) and (dns_data[offset + 15] == "\x00") and (dns_data[offset + 16] == "\x04"):  # QNAME compression, IPv4 result address
+                                        answer = socket.inet_ntoa(dns_data[offset + 17:offset + 21])
+                                        if answer in trails and "sinkhole" in trails[answer][0]:
+                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, query, "sinkholed domain (malware)", "(heuristic)"), packet)  # (e.g. kitro.pl, devomchart.com, jebena.ananikolic.su, vuvet.cn)
+                                elif ord(dns_data[3]) == 0x83:  # recursion available, no such name
+                                    if not _check_domain_whitelisted(query):
+                                        parts = query.split('.')
+                                        if parts[-1].isdigit():
+                                            return
 
-                                    if not (len(parts) > 4 and all(_.isdigit() and int(_) < 256 for _ in parts[:4])):  # generic check for DNSBL IP lookups
-                                        for _ in filter(None, (query, "*.%s" % '.'.join(parts[-2:]) if query.count('.') > 1 else None)):
-                                            if _ not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[_][0] != sec / 3600:
-                                                NO_SUCH_NAME_COUNTERS[_] = [sec / 3600, 1, set()]
+                                        if not (len(parts) > 4 and all(_.isdigit() and int(_) < 256 for _ in parts[:4])):  # generic check for DNSBL IP lookups
+                                            for _ in filter(None, (query, "*.%s" % '.'.join(parts[-2:]) if query.count('.') > 1 else None)):
+                                                if _ not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[_][0] != sec / 3600:
+                                                    NO_SUCH_NAME_COUNTERS[_] = [sec / 3600, 1, set()]
+                                                else:
+                                                    NO_SUCH_NAME_COUNTERS[_][1] += 1
+                                                    NO_SUCH_NAME_COUNTERS[_][2].add(query)
+
+                                                    if NO_SUCH_NAME_COUNTERS[_][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD:
+                                                        if _.startswith("*."):
+                                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, "%s%s" % ("(%s)" % ','.join(item.replace(_[1:], "") for item in NO_SUCH_NAME_COUNTERS[_][2]), _[1:]), "excessive no such domain (suspicious)", "(heuristic)"), packet)
+                                                            for item in NO_SUCH_NAME_COUNTERS[_][2]:
+                                                                try:
+                                                                    del NO_SUCH_NAME_COUNTERS[item]
+                                                                except KeyError:
+                                                                    pass
+                                                        else:
+                                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, _, "excessive no such domain (suspicious)", "(heuristic)"), packet)
+
+                                                        try:
+                                                            del NO_SUCH_NAME_COUNTERS[_]
+                                                        except KeyError:
+                                                            pass
+
+                                                        break
+
+                                            if len(parts) > 2:
+                                                part = parts[0] if parts[0] != "www" else parts[1]
+                                                trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
+                                            elif len(parts) == 2:
+                                                part = parts[0]
+                                                trail = "(%s).%s" % (parts[0], parts[1])
                                             else:
-                                                NO_SUCH_NAME_COUNTERS[_][1] += 1
-                                                NO_SUCH_NAME_COUNTERS[_][2].add(query)
+                                                part = query
+                                                trail = query
 
-                                                if NO_SUCH_NAME_COUNTERS[_][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD:
-                                                    if _.startswith("*."):
-                                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, "%s%s" % ("(%s)" % ','.join(item.replace(_[1:], "") for item in NO_SUCH_NAME_COUNTERS[_][2]), _[1:]), "excessive no such domain (suspicious)", "(heuristic)"), packet)
-                                                        for item in NO_SUCH_NAME_COUNTERS[_][2]:
-                                                            try:
-                                                                del NO_SUCH_NAME_COUNTERS[item]
-                                                            except KeyError:
-                                                                pass
-                                                    else:
-                                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, _, "excessive no such domain (suspicious)", "(heuristic)"), packet)
+                                            if part and '-' not in part:
+                                                result = _result_cache.get(part)
 
-                                                    try:
-                                                        del NO_SUCH_NAME_COUNTERS[_]
-                                                    except KeyError:
-                                                        pass
+                                                if result is None:
+                                                    # Reference: https://github.com/exp0se/dga_detector
+                                                    probabilities = (float(part.count(c)) / len(part) for c in set(_ for _ in part))
+                                                    entropy = -sum(p * math.log(p) / math.log(2.0) for p in probabilities)
+                                                    if entropy > SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD:
+                                                        result = "entropy threshold no such domain (suspicious)"
 
-                                                    break
+                                                    if not result:
+                                                        if sum(_ in CONSONANTS for _ in part) > SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD:
+                                                            result = "consonant threshold no such domain (suspicious)"
 
-                                        if len(parts) > 2:
-                                            part = parts[0] if parts[0] != "www" else parts[1]
-                                            trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
-                                        elif len(parts) == 2:
-                                            part = parts[0]
-                                            trail = "(%s).%s" % (parts[0], parts[1])
-                                        else:
-                                            part = query
-                                            trail = query
+                                                    _result_cache[part] = result or False
 
-                                        if part and '-' not in part:
-                                            result = _result_cache.get(part)
-
-                                            if result is None:
-                                                # Reference: https://github.com/exp0se/dga_detector
-                                                probabilities = (float(part.count(c)) / len(part) for c in set(_ for _ in part))
-                                                entropy = -sum(p * math.log(p) / math.log(2.0) for p in probabilities)
-                                                if entropy > SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD:
-                                                    result = "entropy threshold no such domain (suspicious)"
-
-                                                if not result:
-                                                    if sum(_ in CONSONANTS for _ in part) > SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD:
-                                                        result = "consonant threshold no such domain (suspicious)"
-
-                                                _result_cache[part] = result or False
-
-                                            if result:
-                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, result, "(heuristic)"), packet)
+                                                if result:
+                                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, result, "(heuristic)"), packet)
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
