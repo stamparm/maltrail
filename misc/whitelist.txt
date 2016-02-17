@@ -47,6 +47,9 @@ gexperiments3.com
 googleapis.com
 googlecode.com
 google.com
+google.com.vn
+google.co.za
+google.kz
 googledrive.com
 googlegroups.com
 googleusercontent.com
