@@ -23,7 +23,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.9.234"
+VERSION = "0.9.235"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -212,7 +212,7 @@ def read_config(config_file):
 
         for line in content.split("\n"):
             line = line.strip('\r')
-            line = re.sub(r"\s*#.+", "", line)
+            line = re.sub(r"\s*#.*", "", line)
             if not line.strip():
                 continue
 

@@ -33,7 +33,7 @@ def fetch():
                 line = line.strip()
                 if not line or line.startswith('#'):
                     continue
-                line = re.sub(r"\s*#.+", "", line)
+                line = re.sub(r"\s*#.*", "", line)
                 if '://' in line:
                     line = re.search(r"://(.*)", line).group(1)
                 line = line.rstrip('/')
