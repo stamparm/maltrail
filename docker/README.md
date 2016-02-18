@@ -2,7 +2,7 @@
 
 ```
 sudo su
-cd /tmp
 docker build -t maltrail . && \
-docker run -d --net=host --privileged -v /var/log/maltrail/:/var/log/maltrail/ maltrail
+docker run -d --net=host --privileged -v /var/log/maltrail/:/var/log/maltrail/ maltrail && \
+docker ps  # reporting interface: http://localhost:8338
 ```
