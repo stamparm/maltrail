@@ -1234,6 +1234,9 @@ function initDetails() {
                         if (REPLACE_SINGLE_CLOUD_WITH_BRACES)
                             data = data.replace('(', '{').replace(')', '}');
 
+                        if (info.contains("sinkholed"))
+                            data = data.replace('(', '').replace(')', '');
+
                         data = '<span class="trail-text">' + data + '</span>';
                     }
 

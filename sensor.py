@@ -477,6 +477,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                         if not query or '.' not in query or not all(_ in VALID_DNS_CHARS for _ in query) or any(_ in query for _ in (".intranet.",)) or any(query.endswith(_) for _ in IGNORE_DNS_QUERY_SUFFIXES):
                             return
 
+                        parts = query.split('.')
+
                         if ord(dns_data[2]) == 0x01:  # standard query
                             type_, class_ = struct.unpack("!HH", dns_data[offset + 1:offset + 5])
 
@@ -495,10 +497,10 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     if (ord(dns_data[offset + 5]) & 0xc0) and (dns_data[offset + 15] == "\x00") and (dns_data[offset + 16] == "\x04"):  # QNAME compression, IPv4 result address
                                         answer = socket.inet_ntoa(dns_data[offset + 17:offset + 21])
                                         if answer in trails and "sinkhole" in trails[answer][0]:
-                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, query, "sinkholed domain (malware)", "(heuristic)"), packet)  # (e.g. kitro.pl, devomchart.com, jebena.ananikolic.su, vuvet.cn)
+                                            trail = "(%s).%s" % ('.'.join(parts[:-1]), '.'.join(parts[-1:]))
+                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "sinkholed domain by %s (malware)" % trails[answer][0].split(" ")[1], "(heuristic)"), packet)  # (e.g. kitro.pl, devomchart.com, jebena.ananikolic.su, vuvet.cn)
                                 elif ord(dns_data[3]) == 0x83:  # recursion available, no such name
                                     if not _check_domain_whitelisted(query):
-                                        parts = query.split('.')
                                         if parts[-1].isdigit():
                                             return
 
