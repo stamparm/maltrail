@@ -9,3 +9,14 @@
 
 parkingcrew.net
 185.53.179.29
+
+ns1.parked.com
+ns2.parked.com
+74.117.112.65
+
+ns3.parked.com
+ns4.parked.com
+ns5.parked.com
+ns6.parked.com
+ns7.parked.com
+74.117.114.21
