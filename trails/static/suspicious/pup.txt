@@ -22,3 +22,7 @@ ads.eorezo.com
 # Reference: http://www.pchell.com/support/hotbar.shtml
 
 hotbar.com
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=dl.revenyou.com
+
+revenyou.com
