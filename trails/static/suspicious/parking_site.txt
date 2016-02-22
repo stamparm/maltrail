@@ -20,3 +20,6 @@ ns5.parked.com
 ns6.parked.com
 ns7.parked.com
 74.117.114.21
+
+sedoparking.com
+72.52.4.90

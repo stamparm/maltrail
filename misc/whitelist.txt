@@ -483,8 +483,9 @@ gmail.cm
 gmail.cf
 db.tt
 
-# Generic (URL)
+# Generic
 
+nirsoft.net
 www.nirsoft.net/utils
 
 # Reference: https://discuss.newrelic.com/t/what-is-bam-nr-data-net/13848
@@ -495,3 +496,71 @@ bam.nr-data.net
 50.31.164.174
 50.31.164.165
 50.31.164.173
+
+# Reference: https://github.com/hanzhang0116/BotDigger/blob/dff7f5f367932eb91e807d5beac7316c35e27a7f/OverloadDNSWebsites
+
+uribl.com
+spamhaus.org
+ahbl.org
+senderscore.com
+dnswl.org
+sorbs.net
+surbl.org
+dob.sibl.support-intelligence.net
+spamcop.net
+cbl.abuseat.org
+list.dsbl.org
+psbl.surriel.com
+ubl.unsubscore.com
+dnsbl-1.uceprotect.net
+dnsbl-2.uceprotect.net
+dnsbl-3.uceprotect.net
+ips.backscatterer.org
+ips.whitelisted.org
+db.wpbl.info
+dnsbl.sorbs.net
+spam.abuse.ch
+dnsbl.abuse.ch
+dnsbl.bit.nl
+dnsbl.inps.de
+dnsbl.manitu.net
+bl.spamcannibal.org
+all.s5h.net
+dnsbl.anonmails.de
+aupads.org
+ips.backscatterer.org
+b.barracudacentral.org
+bl.blocklist.de
+list.blogspambl.com
+bsb.empty.us
+mcafee.com
+dan.me.uk
+rbl.dns-servicios.com
+dnsbl.rv-soft.info
+dul.ru
+dnsbl.dronebl.org
+rbl.efnetrbl.org
+efnet.org
+blackholes.five-ten-sg.com
+dnsbl.iip.lu
+spamrbl.imp.ch
+dnsbl.justspam.org
+dnsbl.kempt.net
+mailspike.net
+rbl.megarbl.net
+nszones.com
+dnsbl.openresolvers.org
+spam.pedantic.org
+rbl.jp
+rbl.schulte.org
+dnsbl.sectoor.de
+bl.spamcannibal.org
+backscatter.spameatingmonkey.net
+spamgrouper.com
+spamsources.fabel.dk
+stopspam.org
+ubl.unsubscore.com
+dnsbl.zapbl.net
+resl.emailreg.org
+ips.whitelisted.org
+sophosxl.net
