@@ -36,11 +36,13 @@ var OTHER_COLOR = "#999";
 var THREAT_INFIX = "~>";
 var FLOOD_THREAT_PREFIX = "...";
 var DGA_THREAT_INFIX = " dga ";  // set by sensor (based on known DGAs)
+var DNS_EXHAUSTION_THREAT_INFIX = " dns exhaustion ";  // set by sensor
 var DATA_PARTS_DELIMITER = ", ";
 var SUSPICIOUS_THREAT_INFIX = "suspicious";
 var HEURISTIC_THREAT_INFIX = "heuristic";
 var FLOOD_UID_SUFFIX = "F0";
 var DGA_UID_SUFFIX = "D0";
+var DNS_EXHAUSTION_UID_SUFFIX = "N0";
 var DEFAULT_STATUS_BORDER = "1px solid #a8a8a8";
 var DEFAULT_FONT_FAMILY = "Verdana, Geneva, sans-serif";
 var LOG_COLUMNS = { TIME: 0, SENSOR: 1, SRC_IP: 2, SRC_PORT: 3, DST_IP: 4, DST_PORT: 5, PROTO: 6, TYPE: 7, TRAIL: 8, INFO: 9, REFERENCE: 10 };
@@ -386,6 +388,8 @@ function getThreatUID(threat) {  // e.g. 192.168.0.1~>shv4.no-ip.biz
         return pad(threat.hashCode().toString(16), 6).substr(0, 6) + FLOOD_UID_SUFFIX;
     else if (threat.indexOf(DGA_THREAT_INFIX) > -1)
         return pad(threat.hashCode().toString(16), 6).substr(0, 6) + DGA_UID_SUFFIX;
+    else if (threat.indexOf(DNS_EXHAUSTION_THREAT_INFIX) > -1)
+        return pad(threat.hashCode().toString(16), 6).substr(0, 6) + DNS_EXHAUSTION_UID_SUFFIX;
     else
         return pad(threat.hashCode().toString(16), 8);
 }
@@ -544,9 +548,12 @@ function init(url, from, to) {
 
                 var flood = _ in _FLOOD_TRAILS;
                 var dga = info.indexOf(DGA_THREAT_INFIX) > -1;
+                var dns_exhaustion = info.indexOf(DNS_EXHAUSTION_THREAT_INFIX) > -1;
                 var heuristic = reference.indexOf(HEURISTIC_THREAT_INFIX) > -1;
 
-                if (flood)
+                if (dns_exhaustion)
+                    threat_text = info + THREAT_INFIX + _;
+                else if (flood)
                     threat_text = FLOOD_THREAT_PREFIX + THREAT_INFIX + _;
                 else if (dga)
                     threat_text = src_ip + THREAT_INFIX + info;
