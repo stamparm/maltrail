@@ -22,6 +22,7 @@
  - [Suspicious direct file downloads](#suspicious-direct-file-downloads)
  - [Suspicious HTTP requests](#suspicious-http-requests)
  - [Port scanning](#port-scanning)
+ - [DNS resource exhaustion](#dns-resource-exhaustion)
  - [False positives](#false-positives)
 - [Requirements](#requirements)
 - [License](#license)
@@ -355,6 +356,12 @@ In the following screenshot, a run of popular SQLi vulnerability tool [sqlmap](h
 In case of too many connection attempts toward considerable amount of different TCP ports, Maltrail will warn about the potential port scanning, as a result of its heuristic mechanism detection. It the following screenshot such warning(s) can be found for a run of popular port scanning tool [nmap](https://nmap.org/):
 
 ![nmap scan](http://i.imgur.com/VS7L2A3.png)
+
+#### DNS resource exhaustion
+
+One popular DDoS attack against the web server(s) infrastructure is the resource exhaustion of its (main) DNS server by making valid DNS recursion queries for (pseudo)random subdomain names (e.g. `abpdrsguvjkyz.www.dedeni.com`):
+
+![DNS resource exhaustion](http://i.imgur.com/ubE2xis.png)
 
 #### False positives
 
