@@ -1291,3 +1291,7 @@ za.tn
 # Reference: https://www.threatcrowd.org/domain.php?domain=vps-10.com
 
 vps-10.com
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=free.fr
+
+free.fr

@@ -299,6 +299,8 @@ getwebbar.com
 ads234.com
 ads345.com
 safesearch.net
+interyield.jmp9.com
+interyield.td563.com
 
 # Reference: http://www.rescuemybrowser.com/fwdservice-com-virus-removal
 
