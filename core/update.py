@@ -20,6 +20,7 @@ sys.dont_write_bytecode = True
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))  # to enable calling from current directory too
 
 from core.addr import addr_to_int
+from core.common import cloudflare_ip
 from core.common import load_trails
 from core.common import retrieve_content
 from core.settings import config
@@ -168,6 +169,8 @@ def update_trails(server=None, force=False):
 
         for key in trails.keys():
             if key in WHITELIST or any(key.startswith(_) for _ in BAD_TRAIL_PREFIXES):
+                del trails[key]
+            elif key.replace('.', "").isdigit() and cloudflare_ip(key):
                 del trails[key]
             else:
                 try:

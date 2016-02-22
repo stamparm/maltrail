@@ -12,7 +12,6 @@ import re
 import sqlite3
 import StringIO
 import subprocess
-import threading
 import urllib2
 import zipfile
 import zlib
@@ -20,6 +19,7 @@ import zlib
 from core.addr import addr_to_int
 from core.addr import int_to_addr
 from core.settings import CHECK_CONNECTION_URL
+from core.settings import CLOUDFLARE_RANGES
 from core.settings import NAME
 from core.settings import IPCAT_SQLITE_FILE
 from core.settings import STATIC_IPCAT_LOOKUPS
@@ -100,6 +100,15 @@ def worst_asns(address):
             return name
 
     return None
+
+def cloudflare_ip(address):
+    if address:
+        _ = addr_to_int(address)
+        for prefix, mask in CLOUDFLARE_RANGES.get(address.split('.')[0], {}):
+            if _ & mask == prefix:
+                return True
+
+    return False
 
 def check_sudo():
     """
