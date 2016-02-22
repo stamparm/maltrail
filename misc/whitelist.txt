@@ -30,6 +30,7 @@ clickbank.net
 cloudapp.net
 cloudfront.net
 colocrossing.com
+councilforeuropeanstudies.org
 da3e3.net
 disqus.com
 e5.sk
@@ -40,6 +41,7 @@ elasticbeanstalk.com
 eset.com
 fastly.net
 fbcdn.net
+fslcdn.net
 footprintdns.com
 footprintpredict.com
 gexperiments1.com
@@ -59,8 +61,10 @@ gstatic.com
 herokuapp.com
 hotmail.com
 igsonar.com
+internationalmonetaryfund.org
 ipv6test.com
 ipv6test.net
+laola1.tv
 live.com
 lswcdn.net
 mail-abuse.com
