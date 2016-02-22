@@ -482,3 +482,12 @@ db.tt
 # Generic (URL)
 
 www.nirsoft.net/utils
+
+# Reference: https://discuss.newrelic.com/t/what-is-bam-nr-data-net/13848
+
+bam.nr-data.net
+50.31.164.166
+50.31.164.175
+50.31.164.174
+50.31.164.165
+50.31.164.173
