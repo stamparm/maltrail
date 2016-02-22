@@ -49,7 +49,9 @@ from core.settings import CAPTURE_TIMEOUT
 from core.settings import CHECK_CONNECTION_MAX_RETRIES
 from core.settings import CONFIG_FILE
 from core.settings import CONSONANTS
+from core.settings import DAILY_SECS
 from core.settings import DLT_OFFSETS
+from core.settings import DNS_EXHAUSTION_THRESHOLD
 from core.settings import IGNORE_DNS_QUERY_SUFFIXES
 from core.settings import IPPROTO_LUT
 from core.settings import LOCALHOST_IP
@@ -95,6 +97,10 @@ _last_syn = None
 _last_logged_syn = None
 _last_udp = None
 _last_logged_udp = None
+_last_dns_exhaustion = None
+_subdomains = {}
+_subdomains_sec = None
+_dns_exhausted_domains = set()
 
 try:
     import pcapy
@@ -172,6 +178,8 @@ def _process_packet(packet, sec, usec, ip_offset):
     global _last_logged_syn
     global _last_udp
     global _last_logged_udp
+    global _last_dns_exhaustion
+    global _subdomains_sec
 
     try:
         if len(_result_cache) > MAX_RESULT_CACHE_ENTRIES:
@@ -482,6 +490,24 @@ def _process_packet(packet, sec, usec, ip_offset):
                         if ord(dns_data[2]) == 0x01:  # standard query
                             type_, class_ = struct.unpack("!HH", dns_data[offset + 1:offset + 5])
 
+                            if len(parts) > 2:
+                                domain = '.'.join(parts[-2:])
+                                if (sec - (_subdomains_sec or 0)) > DAILY_SECS:
+                                    _subdomains.clear()
+                                    _dns_exhausted_domains.clear()
+                                    _subdomains_sec = sec
+                                subdomains = _subdomains.get(domain)
+                                if not subdomains:
+                                    subdomains = _subdomains[domain] = set()
+                                if len(subdomains) < DNS_EXHAUSTION_THRESHOLD:
+                                    subdomains.add('.'.join(parts[:-2]))
+                                elif (sec - (_last_dns_exhaustion or 0)) > 60:
+                                    trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "potential dns exhaustion (suspicious)", "(heuristic)"), packet)
+                                    _dns_exhausted_domains.add(domain)
+                                    _last_dns_exhaustion = sec
+                                    return
+
                             # Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
                             if type_ not in (12, 28) and class_ == 1:  # Type not in (PTR, AAAA), Class IN
                                 if dst_ip in trails:
@@ -500,7 +526,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                             trail = "(%s).%s" % ('.'.join(parts[:-1]), '.'.join(parts[-1:]))
                                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "sinkholed by %s (malware)" % trails[answer][0].split(" ")[1], "(heuristic)"), packet)  # (e.g. kitro.pl, devomchart.com, jebena.ananikolic.su, vuvet.cn)
                                 elif ord(dns_data[3]) == 0x83:  # recursion available, no such name
-                                    if not _check_domain_whitelisted(query):
+                                    if not _check_domain_whitelisted(query) and '.'.join(parts[-2:]) not in _dns_exhausted_domains:
                                         if parts[-1].isdigit():
                                             return
 
