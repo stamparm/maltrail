@@ -744,7 +744,7 @@ bounceme.net
 box.tl
 br.ms
 br.tc
-brasilia.me 
+brasilia.me
 byinter.net
 bz.cm
 c0m.at
@@ -828,7 +828,7 @@ dns2go.com
 dnsfor.me
 dnsiskinky.com
 dtdns.net
-dvrcam.info 
+dvrcam.info
 dy.fi
 dynamicdomain.net
 dynns.com
@@ -911,7 +911,7 @@ ift.fr
 igg.biz
 igg.cc
 iicp.net
-ilovecollege.info 
+ilovecollege.info
 imwork.net
 info.br.ms
 info.br.tc
@@ -1045,7 +1045,7 @@ selfhost.nl
 servebeer.com
 serveblog.net
 servecounterstrike.com
-serveexchange.com 
+serveexchange.com
 servegame.com
 servehalflife.com
 servehttp.com
@@ -1099,7 +1099,7 @@ uk.tc
 uni.cc
 uni.me
 unix.ne.kr
-unusualperson.com 
+unusualperson.com
 uphero.com
 us.mn
 us.ms
