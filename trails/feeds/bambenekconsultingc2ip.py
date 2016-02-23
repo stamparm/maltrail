@@ -9,7 +9,7 @@ import re
 
 from core.common import retrieve_content
 
-__url__ = "http://osint.bambenekconsulting.com/feeds/c2-ipmasterlist.txt"
+__url__ = "http://osint.bambenekconsulting.com/feeds/c2-ipmasterlist-high.txt"
 __check__ = "Master Feed"
 __reference__ = "bambenekconsulting.com"
 
@@ -18,9 +18,7 @@ def fetch():
     content = retrieve_content(__url__)
 
     if __check__ in content:
-        for match in re.finditer(r"(?m)^([\d.]+),IP used by ([^,]+) C&C", content):
-            _ = match.group(2).lower()
-            if _ != "simda":  # too many false positives
-                retval[match.group(1)] = ("%s (malware)" % _, __reference__)
+        for match in re.finditer(r"(?m)^([\d.]+),IP used by ([^,/]+) C&C", content):
+            retval[match.group(1)] = ("%s (malware)" % match.group(2).lower().strip(), __reference__)
 
     return retval
