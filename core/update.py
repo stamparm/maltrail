@@ -137,6 +137,8 @@ def update_trails(server=None, force=False):
             if not key or re.search(r"\A(?i)\.?[a-z]+\Z", key) and not any(_ in trails[key][1] for _ in ("custom", "static")):
                 del trails[key]
                 continue
+            if re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key) and trails[key][0] == "malware":
+                trails[key] = ("potential malware site", trails[key][1])
             if key.startswith("www.") and '/' not in key:
                 _ = trails[key]
                 del trails[key]
@@ -171,7 +173,6 @@ def update_trails(server=None, force=False):
             if key in WHITELIST or any(key.startswith(_) for _ in BAD_TRAIL_PREFIXES):
                 del trails[key]
             elif key.replace('.', "").isdigit() and cdn_ip(key):
-                print key
                 del trails[key]
             else:
                 try:

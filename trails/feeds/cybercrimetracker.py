@@ -33,7 +33,7 @@ def fetch():
             if ':' in line:
                 line = line.split(':')[0]
             if re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", line):
-                retval[line] = (__info__, __reference__)
+                retval[line] = ("potential malware site", __reference__)
             else:
                 retval[line] = (__info__, __reference__)
 
