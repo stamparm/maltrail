@@ -501,11 +501,13 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     subdomains = _subdomains[domain] = set()
                                 if len(subdomains) < DNS_EXHAUSTION_THRESHOLD:
                                     subdomains.add('.'.join(parts[:-2]))
-                                elif (sec - (_last_dns_exhaustion or 0)) > 60:
-                                    trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
-                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "potential dns exhaustion (suspicious)", "(heuristic)"), packet)
-                                    _dns_exhausted_domains.add(domain)
-                                    _last_dns_exhaustion = sec
+                                else:
+                                    if (sec - (_last_dns_exhaustion or 0)) > 60:
+                                        trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "potential dns exhaustion (suspicious)", "(heuristic)"), packet)
+                                        _dns_exhausted_domains.add(domain)
+                                        _last_dns_exhaustion = sec
+
                                     return
 
                             # Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
