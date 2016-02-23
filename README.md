@@ -361,7 +361,7 @@ In case of too many connection attempts toward considerable amount of different 
 
 One popular DDoS attack against the web server(s) infrastructure is the resource exhaustion of its (main) DNS server by making valid DNS recursion queries for (pseudo)random subdomain names (e.g. `abpdrsguvjkyz.www.dedeni.com`):
 
-![DNS resource exhaustion](https://i.imgur.com/ubE2xis.png)
+![DNS resource exhaustion](https://i.imgur.com/RujhnKW.png)
 
 #### False positives
 
