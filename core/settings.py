@@ -23,7 +23,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.9.289"
+VERSION = "0.9.291"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -92,7 +92,7 @@ SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, urllib.quote(_)) for _ in 
 SUSPICIOUS_UA_REGEX = ""
 OBSOLETE_UA_REGEX = r"(?i)windows NT [3-5]\.\d+|windows (3\.\d+|95|98|xp)|MSIE [1-6]\.\d+|Navigator/|Safari/[1-4]|Opera/[1-3]|Firefox/1?[0-9]\."
 WORST_ASNS = {}
-CLOUDFLARE_RANGES = {}
+CDN_RANGES = {}
 WHITELIST_HTTP_REQUEST_PATHS = ("fql", "yql", "ads", "../images/", "../themes/", "../design/", "../scripts/", "../assets/", "../core/", "../js/", "/gwx/")
 WHITELIST_UA_KEYWORDS = ("AntiVir-NGUpd", "TMSPS", "AVGSETUP", "SDDS", "Sophos", "internal dummy connection")
 WHITELIST_LONG_DOMAIN_NAME_KEYWORDS = ("blogspot",)
@@ -368,8 +368,8 @@ def read_worst_asn():
                     prefix, mask, name = re.search(r"([\d.]+)/(\d+),(.+)", line).groups()
                     WORST_ASNS[key].append((addr_to_int(prefix), make_mask(int(mask)), name))
 
-def read_cloudflare_ranges():
-    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "cloudflare.txt"))
+def read_cdn_ranges():
+    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "cdn_ranges.txt"))
     if os.path.isfile(_):
         with open(_, "r") as f:
             for line in f:
@@ -378,13 +378,13 @@ def read_cloudflare_ranges():
                     continue
                 else:
                     key = line.split('.')[0]
-                    if key not in CLOUDFLARE_RANGES:
-                        CLOUDFLARE_RANGES[key] = []
+                    if key not in CDN_RANGES:
+                        CDN_RANGES[key] = []
                     prefix, mask = line.split('/')
-                    CLOUDFLARE_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
+                    CDN_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
 
 if __name__ != "__main__":
     read_whitelist()
     read_ua()
     read_worst_asn()
-    read_cloudflare_ranges()
+    read_cdn_ranges()
