@@ -40,6 +40,7 @@ ip-adress.eu
 ip.amulex.com
 ip-api.com
 ip-detect.net
+ip-check.info
 ip-info.org
 ip-info.xyz
 ip.cctv.pk
@@ -54,6 +55,7 @@ ip.taobao.com
 ip.telize.com
 iptrackeronline.com
 ip.tyk.nu
+j.maxmind.com
 l2.io
 meip.eu
 meuip.net.br
