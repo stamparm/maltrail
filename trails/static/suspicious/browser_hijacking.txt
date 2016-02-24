@@ -306,6 +306,7 @@ filebulldog.com
 ak.ssl.imgfarm.com
 ak.imgfarm.com
 akz.imgfarm.com
+arcadefrontier.com
 
 # Reference: http://www.rescuemybrowser.com/fwdservice-com-virus-removal
 

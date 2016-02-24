@@ -30,3 +30,7 @@ revenyou.com
 # Reference: https://www.mywot.com/en/scorecard/yac.mx
 
 yac.mx
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/adware-and-puas/OpenCandy/detailed-analysis.aspx
+
+opencandy.com
