@@ -632,8 +632,8 @@ function init(url, from, to) {
                     if (!(hour in _HOURS)) {
                         _HOURS[hour] = {};
 
-                        for (var type in TRAIL_TYPES)
-                            _HOURS[hour][type] = 0;
+                        for (var item in TRAIL_TYPES)
+                            _HOURS[hour][item] = 0;
                     }
 
                     _HOURS[hour][type] += 1;
