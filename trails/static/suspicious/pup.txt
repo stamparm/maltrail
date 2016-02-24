@@ -34,3 +34,11 @@ yac.mx
 # Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/adware-and-puas/OpenCandy/detailed-analysis.aspx
 
 opencandy.com
+
+# Reference: http://www.scumware.org/report/letitbit.net
+
+letitbit.net
+
+# Reference: https://forums.geforce.com/default/topic/691148/amd-scams-its-community-with-the-help-of-raptr/
+
+raptr.com
