@@ -204,7 +204,6 @@ tsx.org
 .cn.mn
 .jp.mn
 
-
 # Reference: http://www.lavanic.com/us/start/
 
 .de.lv
@@ -213,10 +212,13 @@ tsx.org
 .or.at.lv
 .ch.lv
 
-
 # Reference: https://iwantmyname.com/domains/dot-free
 
 .free
+
+# Reference: https://en.wikipedia.org/wiki/.vu
+
+.vu
 
 # Reference: http://www.freedomain.co.nr/
 
@@ -534,3 +536,114 @@ vugg.net
 wiggy.me
 zigg.me
 zma.me
+
+# Misc
+
+co.at.gg
+co.at.tc
+co.at.tf
+co.be
+co.cc
+co.nf
+co.nr
+co.tv
+co.uk.tc
+co.za
+.to
+
+ne.jp
+01.ca
+04.mn
+0d.eu
+0m.la
+10.ca
+10.nl
+22.su
+3v.eu
+4f.es
+4n.jp
+51.no
+89.me
+ab.im
+ad.mn
+aj.ru
+am.cx
+an.cl
+au.us
+bi.sh
+bo.rs
+bt.ch
+cg.hk
+co.cl
+cs.pl
+ee.pl
+en.bz
+et.ms
+et.ua
+fg.lv
+ft.cx
+go.ru
+go.si
+ha.la
+hi.tw
+hm.ro
+il.nf
+in.bz
+in.tw
+ix.cl
+iz.tm
+li.hk
+ll.my
+lx.nl
+mp.sh
+mz.se
+nc.gs
+nc.ro
+ng.lt
+ni.cc
+ni.cx
+nl.jp
+oc.su
+oe.dj
+of.lv
+ol.vc
+op.mx
+ot.lt
+ot.nu
+ot.tk
+ow.bz
+ow.im
+oz.ch
+pc.tw
+pe.gs
+pn.md
+pu.hu
+rb.dj
+rc.so
+re.gs
+rm.ee
+rm.ro
+rs.pl
+sh.jp
+sr.sh
+ss.ro
+su.su
+tf.im
+th.cl
+th.cx
+th.ro
+tl.me
+tp.sh
+tr.gr
+tx.nl
+uf.fi
+ul.li
+ul.pl
+um.ms
+ut.se
+ux.ms
+vc.cc
+xn.us
+yb.ca
+ye.rs
+yn.ch
