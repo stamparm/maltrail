@@ -39,6 +39,7 @@ edgekey.net
 edgesuite.net
 elasticbeanstalk.com
 eset.com
+fap.to
 fastly.net
 fbcdn.net
 fslcdn.net
@@ -80,6 +81,7 @@ outlook.com
 pandasecurity.com
 proofpoint.com
 rackcdn.com
+rarbg.to
 rncdn1.com
 rncdn2.com
 rncdn3.com
@@ -96,6 +98,7 @@ sophosxl.net
 sophoslive.net
 spiegel.de
 spotify.com
+tawk.to
 testanalytics.net
 testflightapp.com
 trendmicro.com

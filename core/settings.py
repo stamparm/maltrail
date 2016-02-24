@@ -23,7 +23,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.9.309"
+VERSION = "0.9.310"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -65,7 +65,7 @@ DISABLED_CONTENT_EXTENSIONS = (".py", ".pyc", ".md", ".txt", ".bak", ".conf", ".
 CONTENT_EXTENSIONS_EXCLUSIONS = ("robots.txt",)
 CONDENSE_ON_INFO_KEYWORDS = ("attacker", "reputation", "scanner")
 CONDENSED_EVENTS_FLUSH_PERIOD = 10
-LOW_PRIORITY_INFO_KEYWORDS = ("reputation", "attacker", "spammer", "abuser", "malicious", "dnspod", "nicru", "crawler", "compromised")
+LOW_PRIORITY_INFO_KEYWORDS = ("reputation", "attacker", "spammer", "abuser", "malicious", "dnspod", "nicru", "crawler", "compromised", "obsolete")
 HIGH_PRIORITY_INFO_KEYWORDS = ("mass scanner",)
 HIGH_PRIORITY_REFERENCES = ("bambenekconsulting.com", "(custom)",)
 CONSONANTS = "bcdfghjklmnpqrstvwxyz"
