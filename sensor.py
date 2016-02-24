@@ -115,15 +115,18 @@ except ImportError:
                 break
         exit(msg)
 
-def _check_domain_whitelisted(query):
+def _check_domain_member(query, domains):
     parts = query.lower().split('.')
 
     for i in xrange(0, len(parts)):
         domain = '.'.join(parts[i:])
-        if domain in WHITELIST:
+        if domain in domains:
             return True
 
     return False
+
+def _check_domain_whitelisted(query):
+    return _check_domain_member(query, WHITELIST)
 
 def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, packet=None):
     if _result_cache.get(query) == False:
@@ -421,7 +424,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                         _result_cache[unquoted_post_data] = found or ""
                                     if found:
                                         trail = "%s(%s \(%s %s\))" % (host, path, method, post_data.strip())
-                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "potential %s (suspicious)" % found, "(heuristic)"), packet)
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "potential %s (suspicious)" % found, "(heuristic)"), packet)
                                         return
 
                             if '.' in path:
@@ -533,7 +536,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                             trail = "(%s).%s" % ('.'.join(parts[:-1]), '.'.join(parts[-1:]))
                                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "sinkholed by %s (malware)" % trails[answer][0].split(" ")[1], "(heuristic)"), packet)  # (e.g. kitro.pl, devomchart.com, jebena.ananikolic.su, vuvet.cn)
                                 elif ord(dns_data[3]) == 0x83:  # recursion available, no such name
-                                    if '.'.join(parts[-2:]) not in _dns_exhausted_domains and not _check_domain_whitelisted(query) and not _check_domain(query):
+                                    if '.'.join(parts[-2:]) not in _dns_exhausted_domains and not _check_domain_whitelisted(query) and not _check_domain_member(query, trails):
                                         if parts[-1].isdigit():
                                             return
 
