@@ -82,7 +82,7 @@ SUSPICIOUS_HTTP_REQUEST_REGEXES = (
     ("ldap injection", r"\(\|\(\w+=\*"),
     ("xss injection", r"<script.*?>|\balert\(|(alert|confirm|prompt)\((\d+|document\.|[^\w]*XSS)"),
     ("xxe injection", r"\[<!ENTITY"),
-    ("data leakage", r"im[es]i=\d{15}|\b[be]?ssid=|mac=([0-9a-f]{2}:){5}[0-9a-f]{2}|sim=\d{20}"),
+    ("data leakage", r"im[es]i=\d{15}|(mac|sid)=([0-9a-f]{2}:){5}[0-9a-f]{2}|sim=\d{20}"),
     ("config file access", r"\.ht(access|passwd)|\bwp-config\.php"),
     ("remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|\bping -[nc] \d+|cmd\.exe|/bin/bash|2>&1|(cat|ls) /|nc -l -p \d+|>\s*/dev/null"),
     ("directory traversal", r"(\.\./){3,}|/etc/(passwd|shadow|issue|hostname)|\b(boot|system|win)\.ini|\bsystem32\b")
