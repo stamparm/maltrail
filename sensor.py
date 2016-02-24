@@ -533,7 +533,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                             trail = "(%s).%s" % ('.'.join(parts[:-1]), '.'.join(parts[-1:]))
                                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "sinkholed by %s (malware)" % trails[answer][0].split(" ")[1], "(heuristic)"), packet)  # (e.g. kitro.pl, devomchart.com, jebena.ananikolic.su, vuvet.cn)
                                 elif ord(dns_data[3]) == 0x83:  # recursion available, no such name
-                                    if not _check_domain_whitelisted(query) and '.'.join(parts[-2:]) not in _dns_exhausted_domains:
+                                    if '.'.join(parts[-2:]) not in _dns_exhausted_domains and not _check_domain_whitelisted(query) and not _check_domain(query):
                                         if parts[-1].isdigit():
                                             return
 

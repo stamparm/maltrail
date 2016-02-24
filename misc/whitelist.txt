@@ -485,6 +485,7 @@ nirsoft.net
 gmail.cm
 gmail.cf
 db.tt
+api.zanox.ws
 
 # Generic
 
