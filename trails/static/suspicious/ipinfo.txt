@@ -45,6 +45,7 @@ ip-info.org
 ip-info.xyz
 ip.cctv.pk
 ipchicken.com
+ipify.org
 ipinfodb.com
 ipinfo.info
 ipinfo.io
