@@ -52,11 +52,11 @@
 71.6.216.62   # labs.rapid7.com
 71.6.216.63   # labs.rapid7.com
     
-204.42.253.2  # www.openresolverproject.org
-204.42.253.130  # www.opensnmpproject.org
-204.42.253.131  # www.openntpproject.org
-204.42.253.132  # www.openssdpproject.org
-204.42.254.5  # www.openresolverproject.org
+204.42.253.2  # openresolverproject.org
+204.42.253.130  # opensnmpproject.org
+204.42.253.131  # openntpproject.org
+204.42.253.132  # openssdpproject.org
+204.42.254.5  # openresolverproject.org
 
 141.212.121.0   # researchscan***.eecs.umich.edu
 141.212.121.1   # researchscan***.eecs.umich.edu
@@ -588,15 +588,12 @@
 85.25.103.50  # pacific.census.shodan.io
 93.120.27.62  # census5.shodan.io m247.ro.shodan.io
 104.131.0.69  # hello.data.shodan.io
-104.236.198.48  # blog.shodan.io
-162.159.244.38  # www.shodan.io
 188.138.9.50  # atlantic.census.shodan.io
 209.126.110.38  # atlantic.dns.shodan.io
 198.20.69.74  # census1.shodan.io
 198.20.69.98  # census2.shodan.io
 198.20.70.114  # census3.shodan.io
 198.20.99.130  # census4.shodan.io
-208.180.20.97  # *.shodan.io
     
 74.82.47.1  # (unknown)
 74.82.47.2  # scan-09.shadowserver.org
