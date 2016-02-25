@@ -1,15 +1,17 @@
 # Copyright (c) 2014-2016 Miroslav Stampar (@stamparm)
 # See the file 'LICENSE' for copying permission
 
-# Note: to automatically block IPs from this list (with ipset):
-#
-# sudo su
-# apt-get -qq install iptables ipset &&\
-# ipset -q flush mass_scanners &&\
-# ipset -q create mass_scanners hash:net &&\
-# for ip in $(curl https://raw.githubusercontent.com/stamparm/maltrail/master/trails/static/mass_scanner.txt 2>/dev/null | grep -v "^#" | cut -d " " -f 1); do ipset add mass_scanners $ip; done &&\
-# iptables -I INPUT -m set --match-set mass_scanners src -j DROP
-# iptables -nvL
+#################################################################
+# Note: to automatically block IPs from this list (with ipset): #
+#################################################################
+#  sudo su
+#  apt-get -qq install iptables ipset &&\
+#  ipset -q flush mass_scanners &&\
+#  ipset -q create mass_scanners hash:net &&\
+#  for ip in $(curl https://raw.githubusercontent.com/stamparm/maltrail/master/trails/static/mass_scanner.txt 2>/dev/null | grep -v "^#" | cut -d " " -f 1); do ipset add mass_scanners $ip; done &&\
+#  iptables -I INPUT -m set --match-set mass_scanners src -j DROP
+#  iptables -nvL
+#################################################################
 
 129.82.138.12  # pinger1a.netsec.colostate.edu
 129.82.138.31  # pinger1.netsec.colostate.edu
