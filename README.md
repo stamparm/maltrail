@@ -323,7 +323,7 @@ If we enter the particular malware name (in this case [Ramnit](https://www.micro
 
 More generally, if we enter the `malware` into the `Filter` field, all threats that have been found by malware(-related) trails (e.g. `IP` addresses) will be filtered in:
 
-![malware filter](https://i.imgur.com/jFjBLkT.png)
+![malware filter](https://i.imgur.com/gVYAfSU.png)
 
 #### Suspicious domain lookups
 
