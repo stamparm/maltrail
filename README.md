@@ -23,6 +23,7 @@
  - [Suspicious HTTP requests](#suspicious-http-requests)
  - [Port scanning](#port-scanning)
  - [DNS resource exhaustion](#dns-resource-exhaustion)
+ - [Data leakage](#data-leakage)
  - [False positives](#false-positives)
 - [Requirements](#requirements)
 - [License](#license)
@@ -37,52 +38,85 @@
 The following (black)lists (i.e. feeds) are being utilized:
 
 ```
-alienvault, autoshun, badips, bambenekconsultingc2,
-bambenekconsultingdga, binarydefense, bitcoinnodes, blocklist,
-botscout, bruteforceblocker, ciarmy, cruzit, cybercrimetracker,
-deepviz, dshielddns, dshieldip, emergingthreatsbot,
+alienvault, autoshun, badips, bambenekconsultingc2dns,
+bambenekconsultingc2ip, bambenekconsultingdga, bitcoinnodes,
+blocklist, botscout, bruteforceblocker, ciarmy, cruzit,
+cybercrimetracker, deepviz, dragonresearchgroupssh,
+dragonresearchgroupvnc, dshielddns, dshieldip, emergingthreatsbot,
 emergingthreatscip, emergingthreatsdns, feodotrackerdns,
 malwaredomainlist, malwaredomains, malwarepatrol, maxmind, myip,
-nothink, openbl, openphish, palevotracker, proxylists,
-proxyrss, proxy, riproxies, rutgers, sblam, snort,
-socksproxy, sslipbl, sslproxies, torproject, torstatus,
-voipbl, vxvault, zeustrackerdns, zeustrackerip,
-zeustrackermonitor, zeustrackerurl, etc.
+nothink, openbl, openphish, packetmailcarisirt,
+packetmailramnode, palevotracker, policeman, proxylists,
+proxyrss, proxy, riproxies, rutgers, sblam,
+securityresearch, snort, socksproxy, sslipbl, sslproxies,
+torproject, torstatus, turris, urlvir, voipbl, vxvault,
+zeustrackerdns, zeustrackerip, zeustrackermonitor, zeustrackerurl,
+etc.
 ```
 
-As of static entries, the trails for the following malicious entities (e.g. malware C&Cs or sinkholes) have been manually included (from various AV reports):
+As of static entries, the trails for the following malicious entities (e.g. malware C&Cs or sinkholes) have been manually included (from various AV reports and personal research):
 
 ```
-alureon, android_stealer, angler, aridviper, axpergle,
-babar, balamid, bamital, bankpatch, bedep, black_vine,
-bubnix, carbanak, careto, casper, chewbacca, cleaver,
-conficker, cosmicduke, couponarific, crilock, cryptolocker,
-cryptowall, ctblocker, darkhotel, defru, desertfalcon,
+adwind, alienspy, alureon, android_adrd, android_alienspy,
+android_arspam, android_backflash, android_basebridge,
+android_chuli, android_claco, android_coolreaper,
+android_counterclank, android_cyberwurx, android_dendoroid,
+android_dougalek, android_droidkungfu, android_enesoluty,
+android_ewalls, android_exprespam, android_fakebanco,
+android_fakedown, android_fakelog, android_fakemart,
+android_fakemrat, android_fakeneflic, android_fakesecsuit,
+android_feabme, android_flexispy, android_frogonal,
+android_geinimi, android_ghostpush, android_gmaster,
+android_godwon, android_golddream, android_gonesixty,
+android_ibanking, android_kemoge, android_lockdroid,
+android_lovetrap, android_maistealer, android_maxit,
+android_oneclickfraud, android_opfake, android_ozotshielder,
+android_pikspam, android_pjapps, android_qdplugin,
+android_repane, android_roidsec, android_samsapo,
+android_sandorat, android_selfmite, android_simplocker,
+android_skullkey, android_spytekcell, android_stealer,
+android_stels, android_teelog, android_tetus, android_tonclank,
+android_uracto, android_usbcleaver, android_walkinwat,
+android_windseeker, android_zertsecurity, angler, aridviper,
+axpergle, babar, balamid, bamital, bankapol, bankpatch,
+bayrob, bedep, black_vine, bubnix, carbanak, careto,
+casper, chekua, chewbacca, cleaver, conficker, corebot,
+cosmicduke, couponarific, crilock, cryptolocker, cryptowall,
+ctblocker, cutwail, darkhotel, defru, desertfalcon,
 destory, dorifel, dorkbot, dridex, dukes, dursg,
-dyreza, emotet, equation, evilbunny, expiro, fakeran,
-fareit, fbi_ransomware, fiexp, fignotok, fin4,
-finfisher, gamarue, gauss, htran, jenxcus, kegotip,
-kovter, lollipop, lotus_blossom, luckycat, mariposa,
-miniduke, modpos, nbot, nettraveler, neurevt, nitol,
-nonbolqu, nuqel, nwt, nymaim, palevo, pdfjsc, pift,
-plugx, ponmocup, powelike, proslikefan, pushdo,
-ransirac, redoctober, reveton, russian_doll, sality,
-sathurbot, scieron, sefnit, shylock, siesta, simda,
-sinkhole_1and1, sinkhole_abuse, sinkhole_arbor,
+dyreza, elf_aidra, elf_billgates, elf_darlloz, elf_ekoms,
+elf_fysbis, elf_groundhog, elf_hacked_mint, elf_mayhem,
+elf_mokes, elf_pinscan, elf_rekoobe, elf_shelldos,
+elf_sshscan, elf_themoon, elf_turla, elf_xnote, elf_xorddos,
+emotet, equation, evilbunny, expiro, fakeran, fareit,
+fbi_ransomware, fiexp, fignotok, fin4, finfisher,
+gamarue, gauss, generic, gozi, helompy, htran,
+immortal, ios_keyraider, ios_muda, ios_oneclickfraud,
+ios_specter, jenxcus, kegotip, kolab, kovter, lollipop,
+lotus_blossom, luckycat, mariposa, miniduke, modpos,
+nbot, nettraveler, neurevt, nitol, nivdort, nonbolqu,
+nuqel, nwt, nymaim, onkods, osx_wirelurker, palevo,
+pdfjsc, pift, plugx, ponmocup, powelike, proslikefan,
+pushdo, ramnit, ransirac, reactorbot, redoctober,
+renocide, reveton, russian_doll, sality, sathurbot,
+scieron, seaduke, sefnit, shifu, shylock, siesta,
+simda, sinkhole_1and1, sinkhole_abuse, sinkhole_arbor,
 sinkhole_blacklab, sinkhole_blacklistthisdomain,
 sinkhole_botnethunter, sinkhole_certpl, sinkhole_checkpoint,
 sinkhole_conficker, sinkhole_cryptolocker, sinkhole_drweb,
-sinkhole_dyre, sinkhole_farsight, sinkhole_fbizeus,
-sinkhole_fitsec, sinkhole_fsecure, sinkhole_fsi,
-sinkhole_gameoverzeus, sinkhole_georgiatech, sinkhole_gladtech,
-sinkhole_haiyao, sinkhole_kaspersky, sinkhole_malwaredns,
-sinkhole_microsoft, sinkhole_shadowserver, sinkhole_sidnlabs,
-sinkhole_sinkdns, sinkhole_sugarbucket, sinkhole_unknown,
-sinkhole_xaayda, sinkhole_zinkhole, skyper, smsfakesky,
-snake, snifula, sofacy, stuxnet, teerac, teslacrypt,
-torpig, torrentlocker, unruy, upatre, vawtrak, virut,
-vobfus, volatile_cedar, vundo, waterbug, zeroaccess,
-zlob, etc.
+sinkhole_dynadot, sinkhole_dyre, sinkhole_farsight,
+sinkhole_fbizeus, sinkhole_fitsec, sinkhole_fnord,
+sinkhole_fsecure, sinkhole_fsi, sinkhole_gameoverzeus,
+sinkhole_georgiatech, sinkhole_gladtech, sinkhole_haiyao,
+sinkhole_kaspersky, sinkhole_malwaredns, sinkhole_microsoft,
+sinkhole_shadowserver, sinkhole_sidnlabs, sinkhole_sinkdns,
+sinkhole_sugarbucket, sinkhole_unknown, sinkhole_xaayda,
+sinkhole_zinkhole, skynet, skyper, smsfakesky, snake,
+snifula, sockrat, sofacy, sohanad, stuxnet, teamspy,
+teerac, teslacrypt, themida, tinba, torpig,
+torrentlocker, unruy, upatre, utoti, vawtrak, virut,
+vittalia, vobfus, volatile_cedar, vundo, waterbug,
+xcodeghost, zeroaccess, zeus, zlob, etc.
 ```
 
 ## Architecture
@@ -362,6 +396,12 @@ In case of too many connection attempts toward considerable amount of different 
 One popular DDoS attack against the web server(s) infrastructure is the resource exhaustion of its (main) DNS server by making valid DNS recursion queries for (pseudo)random subdomain names (e.g. `abpdrsguvjkyz.www.dedeni.com`):
 
 ![DNS resource exhaustion](https://i.imgur.com/RujhnKW.png)
+
+#### Data leakage
+
+Miscellaneous programs (especially mobile-based) present malware(-like) behaviour where they send potentially sensitive data to the remote beacon posts. Maltrail will try to capture such behaviour like in the following example:
+
+![Data leakage](https://i.imgur.com/6zt2gXg.png)
 
 #### False positives
 
