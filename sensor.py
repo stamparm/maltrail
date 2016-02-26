@@ -68,6 +68,7 @@ from core.settings import SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS
 from core.settings import SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD
 from core.settings import SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD
 from core.settings import SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
+from core.settings import SUSPICIOUS_HTTP_PATH_REGEXES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION
 from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEXES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
@@ -431,13 +432,14 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 _ = urlparse.urlparse("http://%s" % url)  # dummy scheme
                                 filename = _.path.split('/')[-1]
                                 name, extension = os.path.splitext(filename)
+                                trail = "%s(%s)" % (host, path)
                                 if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and not any(_ in path for _ in WHITELIST_DIRECT_DOWNLOAD_KEYWORDS) and not _.query and len(name) < 10:
-                                    trail = "%s(%s)" % (host, path)
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "direct %s download (suspicious)" % extension, "(heuristic)"), packet)
-                                elif filename == "suspendedpage.cgi":
-                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "suspended page (suspicious)", "(heuristic)"), packet)
-                                elif filename == "defaultwebpage.cgi":
-                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "non-existent page (suspicious)", "(heuristic)"), packet)
+                                else:
+                                    for desc, regex in SUSPICIOUS_HTTP_PATH_REGEXES:
+                                        if re.search(regex, filename, re.I):
+                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "%s (suspicious)" % desc, "(heuristic)"), packet)
+                                            break
 
         elif protocol == socket.IPPROTO_UDP:  # UDP
             _ = ip_data[iph_length:iph_length + 4]
