@@ -129,6 +129,7 @@ cwfservice.net
 dell.com
 devbuilds.kaspersky-labs.com
 digitalrivercontent.net
+divx.com
 easeus.com
 filehippo.com
 foxitsoftware.com
@@ -500,6 +501,10 @@ bam.nr-data.net
 50.31.164.174
 50.31.164.165
 50.31.164.173
+
+# Spam checking service
+
+ctmail.co
 
 # Reference: https://github.com/hanzhang0116/BotDigger/blob/dff7f5f367932eb91e807d5beac7316c35e27a7f/OverloadDNSWebsites
 
