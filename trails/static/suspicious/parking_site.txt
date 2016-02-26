@@ -23,3 +23,9 @@ ns7.parked.com
 
 sedoparking.com
 72.52.4.90
+
+# Reference: https://uk.godaddy.com/help/parking-your-domain-name-338
+# Reference: https://www.virustotal.com/en/ip-address/50.63.202.32/information/
+# (e.g. http://uni-park.com)
+
+50.63.202.32
