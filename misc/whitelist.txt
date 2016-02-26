@@ -30,6 +30,7 @@ clickbank.net
 cloudapp.net
 cloudfront.net
 colocrossing.com
+coppersurfer.tk
 councilforeuropeanstudies.org
 da3e3.net
 disqus.com
@@ -51,6 +52,7 @@ gexperiments3.com
 googleapis.com
 googlecode.com
 google.com
+google.com.ua
 google.com.vn
 google.co.za
 google.kz
@@ -478,21 +480,6 @@ z.mailspike.net
 zen.spamhaus.org
 zombie.dnsbl.sorbs.net
 
-# Generic (DNS)
-
-security-research.dyndns.org
-dl.dropbox.com
-nirsoft.net
-gmail.cm
-gmail.cf
-db.tt
-api.zanox.ws
-
-# Generic
-
-nirsoft.net
-www.nirsoft.net/utils
-
 # Reference: https://discuss.newrelic.com/t/what-is-bam-nr-data-net/13848
 
 bam.nr-data.net
@@ -573,3 +560,16 @@ dnsbl.zapbl.net
 resl.emailreg.org
 ips.whitelisted.org
 sophosxl.net
+
+# Generic
+
+security-research.dyndns.org
+dl.dropbox.com
+nirsoft.net
+gmail.cm
+gmail.cf
+db.tt
+api.zanox.ws
+www.nirsoft.net/utils
+glotorrents.pw
+gplus.to
