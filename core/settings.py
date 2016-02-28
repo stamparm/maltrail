@@ -23,7 +23,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.9.337"
+VERSION = "0.9.338"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -90,7 +90,7 @@ SUSPICIOUS_HTTP_REQUEST_REGEXES = (
 SUSPICIOUS_HTTP_PATH_REGEXES = {
     ("suspended page", r"suspendedpage\.cgi|suspended\.page"),
     ("non-existent page", r"defaultwebpage\.cgi"),
-    ("web shell", r"\A(r57|c99|c100|c99ud-HBA|n3t|nexpl[o0]rer|expl[o0]it|madsp[o0]t|darkshell|popup-pomo|xshell|b0y|nefastica|bypass|safe0ver|staker|ashiyane|anjiyo|rusuh|b374k|locus|syrian|symlinkv3|webroot|webadmin|wst|kacak|h4cker|bv7binary|gazashell|locus7shell|injectionv3|aspxspy|cyberwarrior|ernebypass|pouyaserver|saudi|simattacker|sosyete|tryag|uploadshell_hima|wso|zehir4|lostdc|cybereye|angel|injection|ani_shell).*\.(asp|php)")
+    ("web shell", r"\A((r57|c99|c100|c99ud-HBA|n3t|nexpl[o0]rer|expl[o0]it|madsp[o0]t|darkshell|popup-pomo|xshell|b0y|nefastica|bypass|safe0ver|staker|ashiyane|anjiyo|rusuh|b374k|locus|syrian|symlinkv3|webroot|webadmin|wst|kacak|h4cker|bv7binary|gazashell|locus7shell|injectionv3|aspxspy|cyberwarrior|ernebypass|pouyaserver|saudi|simattacker|sosyete|tryag|pwn|webshell|icesword|h4x0r|uploadshell_hima|wso|zehir4|lostdc|cybereye|angel|injection|ani_shell).*|(cmd|shell))\.(asp|php|jsp)")
 }
 SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION = ("?", "..", ".ht", "=", " ", "'")
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, urllib.quote(_)) for _ in "( )\r\n")
