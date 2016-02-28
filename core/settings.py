@@ -87,11 +87,11 @@ SUSPICIOUS_HTTP_REQUEST_REGEXES = (
     ("remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|\bping -[nc] \d+|cmd\.exe|/bin/bash|2>&1|(cat|ls) /|nc -l -p \d+|>\s*/dev/null"),
     ("directory traversal", r"(\.\./){3,}|/etc/(passwd|shadow|issue|hostname)|\b(boot|system|win)\.ini|\bsystem32\b")
 )
-SUSPICIOUS_HTTP_PATH_REGEXES = {
+SUSPICIOUS_HTTP_PATH_REGEXES = (
     ("suspended page", r"suspendedpage\.cgi|suspended\.page"),
     ("non-existent page", r"defaultwebpage\.cgi"),
     ("web shell", r"\A((r57|c99|c100|c99ud-HBA|n3t|nexpl[o0]rer|expl[o0]it|madsp[o0]t|darkshell|popup-pomo|xshell|b0y|nefastica|bypass|safe0ver|staker|ashiyane|anjiyo|rusuh|b374k|locus|syrian|symlinkv3|webroot|webadmin|wst|kacak|h4cker|bv7binary|gazashell|locus7shell|injectionv3|aspxspy|cyberwarrior|ernebypass|pouyaserver|saudi|simattacker|sosyete|tryag|pwn|webshell|icesword|h4x0r|uploadshell_hima|wso|zehir4|lostdc|cybereye|angel|injection|ani_shell).*|(cmd|shell))\.(asp|php|jsp)")
-}
+)
 SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION = ("?", "..", ".ht", "=", " ", "'")
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, urllib.quote(_)) for _ in "( )\r\n")
 SUSPICIOUS_UA_REGEX = ""
