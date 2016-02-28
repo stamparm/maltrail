@@ -33,6 +33,7 @@ from core.settings import HIGH_PRIORITY_REFERENCES
 from core.settings import IPCAT_CSV_FILE
 from core.settings import IPCAT_SQLITE_FILE
 from core.settings import IPCAT_URL
+from core.settings import PROXIES
 from core.settings import ROOT_DIR
 from core.settings import TRAILS_FILE
 from core.settings import USERS_DIR
@@ -209,7 +210,10 @@ def update_ipcat(force=False):
         print "[i] updating ipcat database..."
 
         try:
-            urllib.urlretrieve(IPCAT_URL, IPCAT_CSV_FILE)
+            if PROXIES:
+                urllib.URLopener(PROXIES).urlretrieve(IPCAT_URL, IPCAT_CSV_FILE)
+            else:
+                urllib.urlretrieve(IPCAT_URL, IPCAT_CSV_FILE)
         except Exception, ex:
             print "[x] something went wrong during retrieval of '%s' ('%s')" % (IPCAT_URL, ex)
 

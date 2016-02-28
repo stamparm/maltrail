@@ -13,6 +13,7 @@ import string
 import subprocess
 import sys
 import urllib
+import urllib2
 
 from core.addr import addr_to_int
 from core.addr import make_mask
@@ -23,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.9.338"
+VERSION = "0.9.339"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -34,7 +35,7 @@ TRAILS_FILE = os.path.join(USERS_DIR, "trails.csv")
 IPCAT_CSV_FILE = os.path.join(USERS_DIR, "ipcat.csv")
 IPCAT_SQLITE_FILE = os.path.join(USERS_DIR, "ipcat.sqlite")
 IPCAT_URL = "https://raw.githubusercontent.com/client9/ipcat/master/datacenters.csv"
-CHECK_CONNECTION_URL = "https://www.google.com"
+CHECK_CONNECTION_URL = "https://www.github.com"
 CHECK_CONNECTION_MAX_RETRIES = 10
 TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 HTTP_DEFAULT_PORT = 8338
@@ -61,6 +62,7 @@ SYSTEM_LOG_DIR = "/var/log" if not subprocess.mswindows else "C:\\Windows\\Logs"
 DEFAULT_EVENT_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IROTH
 DEFAULT_ERROR_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IWGRP | stat.S_IROTH | stat.S_IWOTH
 HOSTNAME = socket.gethostname()
+PROXIES = {}
 DISABLED_CONTENT_EXTENSIONS = (".py", ".pyc", ".md", ".txt", ".bak", ".conf", ".zip", "~")
 CONTENT_EXTENSIONS_EXCLUSIONS = ("robots.txt",)
 CONDENSE_ON_INFO_KEYWORDS = ("attacker", "reputation", "scanner")
@@ -325,6 +327,11 @@ def read_config(config_file):
             exit("[!] invalid configuration value for 'CAPTURE_BUFFER' ('%s')" % config.CAPTURE_BUFFER)
 
         config.CAPTURE_BUFFER = config.CAPTURE_BUFFER / BLOCK_LENGTH * BLOCK_LENGTH
+
+    if config.PROXY_ADDRESS:
+        PROXIES.update({"http": config.PROXY_ADDRESS, "https": config.PROXY_ADDRESS})
+        opener = urllib2.build_opener(urllib2.ProxyHandler(PROXIES))
+        urllib2.install_opener(opener)
 
 def read_whitelist():
     WHITELIST.clear()
