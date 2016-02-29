@@ -18,6 +18,7 @@ amazonses.com
 a-msedge.net
 anycastb.com
 baidu.com
+bdnsrt.org
 bitdefender.net
 blogspot.com
 bstatic.com

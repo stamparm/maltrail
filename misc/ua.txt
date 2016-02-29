@@ -5,6 +5,7 @@
 
 # Reference: https://rules.emergingthreats.net/
 
+\(\) { :;
 2search
 404search
 91cast
@@ -327,6 +328,7 @@ pivim
 pockethttp
 poller
 \Apopup
+printf ["']
 privoxy
 proscan-down
 proxydown
@@ -460,6 +462,7 @@ virusheat
 virusprotectpro
 vmozilla
 vomba
+vulnerable
 vulture
 w00tw00t
 w3af
