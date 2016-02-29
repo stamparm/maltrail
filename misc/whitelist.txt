@@ -28,12 +28,14 @@ cdxultra.com
 cedexis-radar.net
 chip.de
 clickbank.net
+clipconverter.cc
 cloudapp.net
 cloudfront.net
 colocrossing.com
 coppersurfer.tk
 councilforeuropeanstudies.org
 da3e3.net
+demdex.net
 disqus.com
 e5.sk
 edgecastcdn.net
@@ -64,6 +66,7 @@ googlevideo.com
 gstatic.com
 herokuapp.com
 hotmail.com
+ibm.com
 igsonar.com
 internationalmonetaryfund.org
 ipv6test.com
@@ -141,6 +144,7 @@ garr.it
 gimp.org
 googleapis.com
 google.com
+googlesyndication.com
 gvt1.com
 hp.com
 htc.com
