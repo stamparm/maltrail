@@ -24,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.9.341"
+VERSION = "0.9.342"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -84,7 +84,7 @@ SUSPICIOUS_HTTP_REQUEST_REGEXES = (
     ("ldap injection", r"\(\|\(\w+=\*"),
     ("xss injection", r"<script.*?>|\balert\(|(alert|confirm|prompt)\((\d+|document\.|[^\w]*XSS)"),
     ("xxe injection", r"\[<!ENTITY"),
-    ("data leakage", r"im[es]i=\d{15}|(mac|sid)=([0-9a-f]{2}:){5}[0-9a-f]{2}|sim=\d{20}|([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+\b.{0,100}){4}"),
+    ("data leakage", r"im[es]i=\d{15}|(mac|sid)=([0-9a-f]{2}:){5}[0-9a-f]{2}|sim=\d{20}|([a-z0-9_.+-]+@[a-z0-9-.]+\.[a-z]+\b.{0,100}){4}"),
     ("config file access", r"\.ht(access|passwd)|\bwp-config\.php"),
     ("remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|\bping -[nc] \d+|cmd\.exe|/bin/bash|2>&1|(cat|ls) /|nc -l -p \d+|>\s*/dev/null"),
     ("directory traversal", r"(\.\./){3,}|/etc/(passwd|shadow|issue|hostname)|\b(boot|system|win)\.ini|\bsystem32\b")
