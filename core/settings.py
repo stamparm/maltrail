@@ -24,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.10.4"
+VERSION = "0.10.5"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -78,23 +78,23 @@ VALID_DNS_CHARS = string.letters + string.digits + '-' + '.'  # Reference: http:
 SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".exe", ".scr"))
 WHITELIST_DIRECT_DOWNLOAD_KEYWORDS = ("cgi", "/scripts/", "/_vti_bin/", "/bin/", "/pub/softpaq/")
 SUSPICIOUS_HTTP_REQUEST_REGEXES = (
-    ("sql injection", r"information_schema|sysdatabases|sysusers|floor\(rand\(|ORDER BY \d+|\bUNION\s+(ALL\s+)?SELECT\b|\b(UPDATEXML|EXTRACTVALUE)\(|\bCASE[^\w]+WHEN.*THEN\b|\bWAITFOR[^\w]+DELAY\b|\bCONVERT\(|VARCHAR\(|\bCOUNT\(\*\)|\b(pg_)?sleep\(|\bSELECT\b.*\bFROM\b.*\b(WHERE|GROUP|ORDER)\b|\bSELECT \w+ FROM \w+|\b(AND|OR|SELECT)\b.*/\*.*\*/|/\*.*\*/.*\b(AND|OR|SELECT)\b|\b(AND|OR)[^\w]+\d+['\") ]?[=><]['\"( ]?\d+|ODBC;DRIVER"),
-    ("xml injection", r"/text\(\)='"),
-    ("php injection", r"<\?php"),
-    ("ldap injection", r"\(\|\(\w+=\*"),
-    ("xss injection", r"<script.*?>|\balert\(|(alert|confirm|prompt)\((\d+|document\.|response\.write\(|[^\w]*XSS)|onmouseover"),
-    ("xxe injection", r"\[<!ENTITY"),
-    ("data leakage", r"im[es]i=\d{15}|(mac|sid)=([0-9a-f]{2}:){5}[0-9a-f]{2}|sim=\d{20}|([a-z0-9_.+-]+@[a-z0-9-.]+\.[a-z]+\b.{0,100}){4}"),
+    ("potential sql injection", r"information_schema|sysdatabases|sysusers|floor\(rand\(|ORDER BY \d+|\bUNION\s+(ALL\s+)?SELECT\b|\b(UPDATEXML|EXTRACTVALUE)\(|\bCASE[^\w]+WHEN.*THEN\b|\bWAITFOR[^\w]+DELAY\b|\bCONVERT\(|VARCHAR\(|\bCOUNT\(\*\)|\b(pg_)?sleep\(|\bSELECT\b.*\bFROM\b.*\b(WHERE|GROUP|ORDER)\b|\bSELECT \w+ FROM \w+|\b(AND|OR|SELECT)\b.*/\*.*\*/|/\*.*\*/.*\b(AND|OR|SELECT)\b|\b(AND|OR)[^\w]+\d+['\") ]?[=><]['\"( ]?\d+|ODBC;DRIVER|\bINTO\s+(OUT|DUMP)FILE"),
+    ("potential xml injection", r"/text\(\)='"),
+    ("potential php injection", r"<\?php"),
+    ("potential ldap injection", r"\(\|\(\w+=\*"),
+    ("potential xss injection", r"<script.*?>|\balert\(|(alert|confirm|prompt)\((\d+|document\.|response\.write\(|[^\w]*XSS)|onmouseover"),
+    ("potential xxe injection", r"\[<!ENTITY"),
+    ("potential data leakage", r"im[es]i=\d{15}|(mac|sid)=([0-9a-f]{2}:){5}[0-9a-f]{2}|sim=\d{20}|([a-z0-9_.+-]+@[a-z0-9-.]+\.[a-z]+\b.{0,100}){4}"),
     ("config file access", r"\.ht(access|passwd)|\bwp-config\.php"),
-    ("remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|cmd\.exe|/bin/bash|2>&1|(cat|ls) /|nc -l -p \d+|>\s*/dev/null"),
-    ("directory traversal", r"(\.{2,}[/\\]+){3,}|/etc/(passwd|shadow|issue|hostname)|\b(boot|system|win)\.ini|\bsystem32\b|%SYSTEMROOT%"),
-    ("web scan", r"(acunetix|injected_by)_wvs_|SomeCustomInjectedHeader|some_inexistent_file_with_long_name|testasp\.vulnweb\.com/t/fit\.txt|www\.acunetix\.tst|\.bxss\.me|thishouldnotexistandhopefullyitwillnot|OWASP%\d+ZAP|chr\(122\)\.chr\(97\)\.chr\(112\)|Vega-Inject|VEGA123|vega\.invalid|PUT-putfile")
+    ("potential remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|cmd\.exe|/bin/bash|2>&1|(cat|ls) /|nc -l -p \d+|>\s*/dev/null"),
+    ("potential directory traversal", r"(\.{2,}[/\\]+){3,}|/etc/(passwd|shadow|issue|hostname)|\b(boot|system|win)\.ini|\bsystem32\b|%SYSTEMROOT%"),
+    ("potential web scan", r"(acunetix|injected_by)_wvs_|SomeCustomInjectedHeader|some_inexistent_file_with_long_name|testasp\.vulnweb\.com/t/fit\.txt|www\.acunetix\.tst|\.bxss\.me|thishouldnotexistandhopefullyitwillnot|OWASP%\d+ZAP|chr\(122\)\.chr\(97\)\.chr\(112\)|Vega-Inject|VEGA123|vega\.invalid|PUT-putfile|w00tw00t|muieblackcat")
 )
 SUSPICIOUS_HTTP_PATH_REGEXES = (
     ("suspended page", r"suspendedpage\.cgi|suspended\.page"),
     ("non-existent page", r"defaultwebpage\.cgi"),
-    ("web shell", r"\A((r57|c99|c100|c99ud-HBA|n3t|nexpl[o0]rer|expl[o0]it|madsp[o0]t|darkshell|popup-pomo|xshell|b0y|nefastica|bypass|safe0ver|staker|ashiyane|anjiyo|rusuh|b374k|locus|syrian|symlinkv3|webroot|webadmin|wst|kacak|h4cker|bv7binary|gazashell|locus7shell|injectionv3|aspxspy|cyberwarrior|ernebypass|pouyaserver|saudi|simattacker|sosyete|tryag|pwn|webshell|icesword|h4x0r|uploadshell_hima|wso|zehir4|lostdc|cybereye|angel|ani_shell).*|(cmd|shell))\.(asp|php|jsp)"),
-    ("web scan", r"inexistent_file_name\.inexistent|test-for-some-inexistent-file|long_inexistent_path|some-inexistent-website\.acu|unexisting")
+    ("potential web shell", r"\A((r57|c99|c100|c99ud-HBA|n3t|nexpl[o0]rer|expl[o0]it|madsp[o0]t|darkshell|popup-pomo|xshell|b0y|nefastica|bypass|safe0ver|staker|ashiyane|anjiyo|rusuh|b374k|locus|syrian|symlinkv3|webroot|webadmin|wst|kacak|h4cker|bv7binary|gazashell|locus7shell|injectionv3|aspxspy|cyberwarrior|ernebypass|pouyaserver|saudi|simattacker|sosyete|tryag|pwn|webshell|icesword|h4x0r|uploadshell_hima|wso|zehir4|lostdc|cybereye|angel|ani_shell).*|(cmd|shell))\.(asp|php|jsp)"),
+    ("potential web scan", r"inexistent_file_name\.inexistent|test-for-some-inexistent-file|long_inexistent_path|some-inexistent-website\.acu")
 )
 SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION = ("?", "..", ".ht", "=", " ", "'")
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, urllib.quote(_)) for _ in "( )\r\n")

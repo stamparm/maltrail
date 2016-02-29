@@ -412,7 +412,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                         _result_cache[unquoted_path] = found or ""
                                     if found:
                                         trail = "%s(%s)" % (host, path)
-                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "potential %s (suspicious)" % found, "(heuristic)"), packet)
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "%s (suspicious)" % found, "(heuristic)"), packet)
                                         return
 
                                 if any(_ in unquoted_post_data for _ in SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION):
@@ -425,7 +425,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                         _result_cache[unquoted_post_data] = found or ""
                                     if found:
                                         trail = "%s(%s \(%s %s\))" % (host, path, method, post_data.strip())
-                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "potential %s (suspicious)" % found, "(heuristic)"), packet)
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "%s (suspicious)" % found, "(heuristic)"), packet)
                                         return
 
                             if '.' in path:
