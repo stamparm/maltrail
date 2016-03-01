@@ -609,7 +609,6 @@ gamespress.com
 easydns4u.com
 dynip.com
 dyndns.dk
-disqus.com
 
 # Reference: http://dnslookup.me/dynamic-dns/
 

@@ -46,6 +46,7 @@ eset.com
 fap.to
 fastly.net
 fbcdn.net
+fortiddns.com
 fslcdn.net
 footprintdns.com
 footprintpredict.com
@@ -86,6 +87,7 @@ opendns.com
 outlook.com
 pandasecurity.com
 proofpoint.com
+pubnub.com
 rackcdn.com
 rarbg.to
 rncdn1.com
@@ -188,6 +190,7 @@ win-rar.com
 winzip.com
 wsusoffline.net
 xboxlive.com
+yahoodns.net
 zdnet.com
 
 # have script tags in ad links
