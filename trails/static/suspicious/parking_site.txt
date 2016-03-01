@@ -29,3 +29,12 @@ sedoparking.com
 # (e.g. http://uni-park.com)
 
 50.63.202.32
+
+# Reference: http://domainbigdata.com/199.59.243.120
+# Reference: https://www.threatcrowd.org/ip.php?ip=199.59.243.120
+
+199.59.243.120
+ns1.bodis.com
+199.59.243.21
+ns2.bodis.com
+199.59.243.22
