@@ -861,7 +861,7 @@ def monitor():
                         break
                     packet_handler(datalink, header, packet)
                 except (pcapy.PcapError, socket.timeout):
-                    pass
+                    time.sleep(REGULAR_SENSOR_SLEEP_TIME)
 
         if len(_caps) > 1:
             if _multiprocessing:
