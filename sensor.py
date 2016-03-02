@@ -380,6 +380,7 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                     if checks[-1].count('/') > 1:
                         checks.append(checks[-1][:checks[-1].rfind('/')])
+                        checks.append(checks[0][checks[0].rfind('/'):].split('?')[0])
 
                     for check in filter(None, checks):
                         for _ in ("", host):
