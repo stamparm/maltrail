@@ -38,3 +38,14 @@ ns1.bodis.com
 199.59.243.21
 ns2.bodis.com
 199.59.243.22
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=hotkeysparking.com
+
+hotkeysparking.com
+8.5.1.33
+melbourne.hotkeysparking.com
+8.5.1.33
+melbourneit.hotkeysparking.com
+8.5.1.16
+eig.hotkeysparking.com
+8.5.1.54
