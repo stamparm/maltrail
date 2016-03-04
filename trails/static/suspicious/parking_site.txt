@@ -49,3 +49,20 @@ melbourneit.hotkeysparking.com
 8.5.1.16
 eig.hotkeysparking.com
 8.5.1.54
+8.5.1.30
+
+# Reference: https://myip.ms/info/whois/91.195.241.121
+# Reference: https://www.virustotal.com/en/ip-address/91.195.241.121/information/
+
+redirect.domcollect.com
+domcollect.com
+91.195.241.121
+
+# Reference: https://myip.ms/info/whois/109.70.26.37
+
+expirepages-kiae-1.nic.ru
+109.70.26.37
+
+# Reference: https://myip.ms/info/whois/172.99.81.161
+
+172.99.81.161
