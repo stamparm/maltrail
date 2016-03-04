@@ -90,6 +90,7 @@ def main():
         if check_sudo() is False:
             exit("[!] please run '%s' with sudo/Administrator privileges when using 'UDP_ADDRESS' configuration value" % __file__)
 
+        create_log_directory()
         start_logd(address=config.UDP_ADDRESS, port=config.UDP_PORT, join=False)
 
     try:
