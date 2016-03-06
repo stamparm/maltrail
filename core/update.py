@@ -140,6 +140,8 @@ def update_trails(server=None, force=False):
                 continue
             if re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key) and trails[key][0] == "malware":
                 trails[key] = ("potential malware site", trails[key][1])
+            if trails[key][0] == "ransomware":
+                trails[key] = ("ransomware (malware)", trails[key][1])
             if key.startswith("www.") and '/' not in key:
                 _ = trails[key]
                 del trails[key]
