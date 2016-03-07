@@ -47,3 +47,31 @@ raptr.com
 # Reference: https://answers.yahoo.com/question/index?qid=20140303182352AAMfdNt
 
 mediaplayercodecpack.com
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2016-030108-4942-99&tabid=2
+
+pcspeeduppro.com
+
+# Reference: https://www.threatcrowd.org/listMalware.php?antivirus=PUA.OneSystemCare
+
+onesystemcare.com
+ionesystemcare.info
+healerweb.net
+magicpro.org
+realget.info
+domenjob.com
+zipoffice.info
+systemhealerhost.net
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2013-090315-5025-99&tabid=2
+
+d3d6wi7c7pa6m0.cloudfront.net
+imp.oi-imp1.com
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2014-102313-0732-99&tabid=2
+
+winzipper.com
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2016-030112-0955-99&tabid=2
+
+tweakbit.com
