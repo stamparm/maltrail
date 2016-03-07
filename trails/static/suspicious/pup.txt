@@ -42,3 +42,8 @@ letitbit.net
 # Reference: https://forums.geforce.com/default/topic/691148/amd-scams-its-community-with-the-help-of-raptr/
 
 raptr.com
+
+# Reference: https://www.virustotal.com/en/file/bc19f0f37781995dcf71861e55c7b54f34254a14f08d4ddd59d36476a60bd087/analysis/
+# Reference: https://answers.yahoo.com/question/index?qid=20140303182352AAMfdNt
+
+mediaplayercodecpack.com
