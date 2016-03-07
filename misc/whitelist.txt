@@ -8,6 +8,7 @@ localhost
 
 1e100.net
 2o7.net
+adsk2.co
 akadns.net
 akamaiedge.net
 akamaihd.net
@@ -16,6 +17,7 @@ akamaitechnologies.com
 amazonaws.com
 amazonses.com
 a-msedge.net
+angsrvr.com
 anycastb.com
 baidu.com
 bdnsrt.org
@@ -43,6 +45,7 @@ edgekey.net
 edgesuite.net
 elasticbeanstalk.com
 eset.com
+example.com
 fap.to
 fastly.net
 fbcdn.net
@@ -69,6 +72,7 @@ herokuapp.com
 hotmail.com
 ibm.com
 igsonar.com
+infernotions.com
 internationalmonetaryfund.org
 ipv6test.com
 ipv6test.net
@@ -107,6 +111,7 @@ sophosxl.net
 sophoslive.net
 spiegel.de
 spotify.com
+street-directory.com.au
 tawk.to
 testanalytics.net
 testflightapp.com
