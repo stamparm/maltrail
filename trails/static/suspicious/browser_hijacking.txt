@@ -6,6 +6,7 @@
 atajitos.com
 coolwebsearch.info
 conduit.com
+conduit-download.com
 conduit-services.com
 coupon-server.com
 getwizard.com
@@ -469,3 +470,7 @@ docksearch.net
 usearch.co.id
 gotsearch.co.uk
 ourwebsearch.com
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=tbccint.com
+
+tbccint.com
