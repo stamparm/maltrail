@@ -66,3 +66,11 @@ expirepages-kiae-1.nic.ru
 # Reference: https://myip.ms/info/whois/172.99.81.161
 
 172.99.81.161
+
+# Reference: https://myip.ms/info/whois/69.64.147.242
+
+69.64.147.242
+
+# Reference: https://myip.ms/info/whois/204.11.56.48
+
+204.11.56.48
