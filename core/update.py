@@ -120,11 +120,13 @@ def update_trails(server=None, force=False):
                     try:
                         results = function()
                         for item in results.items():
+                            if item[0].startswith("www.") and '/' not in item[0]:
+                                item = [item[0][len("www."):], item[1]]
                             if item[0] in trails:
                                 if item[0] not in duplicates:
                                     duplicates[item[0]] = set((trails[item[0]][1],))
                                 duplicates[item[0]].add(item[1][1])
-                            if not (item[0] in trails and (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) or trails[item[0]][1] in HIGH_PRIORITY_REFERENCES)) or item[1][1] in HIGH_PRIORITY_REFERENCES or any(_ in item[1][0] for _ in HIGH_PRIORITY_INFO_KEYWORDS):
+                            if not (item[0] in trails and (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) or trails[item[0]][1] in HIGH_PRIORITY_REFERENCES)) or (item[1][1] in HIGH_PRIORITY_REFERENCES and "history" not in item[1][0]) or any(_ in item[1][0] for _ in HIGH_PRIORITY_INFO_KEYWORDS):
                                 trails[item[0]] = item[1]
                         if not results and "abuse.ch" not in module.__url__:
                             print "[x] something went wrong during remote data retrieval ('%s')" % module.__url__
@@ -167,7 +169,7 @@ def update_trails(server=None, force=False):
             if key in duplicates:
                 _ = trails[key]
                 others = sorted(duplicates[key] - set((_[1],)))
-                if others:
+                if others and " (+" not in _[1]:
                     trails[key] = (_[0], "%s (+%s)" % (_[1], ','.join(others)))
 
         read_whitelist()

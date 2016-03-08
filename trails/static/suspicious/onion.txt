@@ -46,3 +46,8 @@ tor-explorer.org
 # (note: just for (non-SOCKS) ONION domain lookups)
 
 .onion
+
+# Misc
+
+tor4u.net
+door2tor.org
