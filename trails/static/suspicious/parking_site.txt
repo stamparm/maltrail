@@ -58,11 +58,6 @@ redirect.domcollect.com
 domcollect.com
 91.195.241.121
 
-# Reference: https://myip.ms/info/whois/109.70.26.37
-
-expirepages-kiae-1.nic.ru
-109.70.26.37
-
 # Reference: https://myip.ms/info/whois/172.99.81.161
 
 172.99.81.161
@@ -74,3 +69,20 @@ expirepages-kiae-1.nic.ru
 # Reference: https://myip.ms/info/whois/204.11.56.48
 
 204.11.56.48
+
+# Reference: https://myip.ms/info/whois/194.85.61.76
+
+blocked1.nic.ru
+expirepages-kiae-2.nic.ru
+194.85.61.76
+blocked2.nic.ru
+expirepages-kiae-1.nic.ru
+109.70.26.37
+parking1.nic.ru
+193.232.159.33
+parking2.nic.ru
+193.232.158.33
+parking3.nic.ru
+193.232.159.34
+parking4.nic.ru
+193.232.158.34

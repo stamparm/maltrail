@@ -51,3 +51,6 @@ tor-explorer.org
 
 tor4u.net
 door2tor.org
+tor4pay.com
+pay4tor.com
+torsona.com
