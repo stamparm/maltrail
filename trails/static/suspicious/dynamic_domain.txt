@@ -678,3 +678,8 @@ moe.hm
 myhome.cx
 or.tl
 orz.hm
+
+# Reference: http://comexe.net/
+
+comexe.cn
+comexe.net

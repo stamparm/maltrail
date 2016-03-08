@@ -535,18 +535,6 @@ zma.me
 
 # Misc
 
-co.at.gg
-co.at.tc
-co.at.tf
-co.be
-co.cc
-co.nf
-co.nr
-co.tv
-co.uk.tc
-co.za
-.to
-
 ne.jp
 01.ca
 04.mn
@@ -734,17 +722,6 @@ com.au.tc
 com.br.ms
 com.br.tc
 com.net.sc
-comexe.cn
-comexe.net
-comeze.com
-comli.com
-comoj.com
-comuf.com
-comule.com
-comuv.com
-comxa.com
-comyr.com
-comze.com
 coom.in
 cp.cx
 cu.cc
