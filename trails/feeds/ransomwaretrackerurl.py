@@ -5,6 +5,8 @@ Copyright (c) 2014-2016 Miroslav Stampar (@stamparm)
 See the file 'LICENSE' for copying permission
 """
 
+import re
+
 from core.common import retrieve_content
 
 __url__ = "http://ransomwaretracker.abuse.ch/downloads/RW_URLBL.txt"
@@ -21,6 +23,9 @@ def fetch():
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
+            if '://' in line:
+                line = re.search(r"://(.*)", line).group(1)
+            line = line.rstrip('/')
             retval[line] = (__info__, __reference__)
 
     return retval
