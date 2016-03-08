@@ -86,3 +86,11 @@ parking3.nic.ru
 193.232.159.34
 parking4.nic.ru
 193.232.158.34
+
+# Reference: https://myip.ms/info/whois/185.53.179.7
+
+185.53.179.7
+
+https://myip.ms/info/whois/185.53.178.6
+
+185.53.178.6
