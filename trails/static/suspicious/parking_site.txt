@@ -102,3 +102,15 @@ parking4.nic.ru
 # Reference: https://myip.ms/info/whois/31.31.204.59
 
 31.31.204.59
+
+# Reference: https://myip.ms/info/whois/69.172.201.217
+
+69.172.201.217
+
+# Reference: https://myip.ms/info/whois/185.53.179.9
+
+185.53.179.9
+
+# Reference: https://myip.ms/info/whois/54.72.9.51
+
+54.72.9.51
