@@ -24,6 +24,7 @@ import traceback
 from core.common import check_connection
 from core.common import check_sudo
 from core.httpd import start_httpd
+from core.log import create_log_directory
 from core.log import log_error
 from core.log import start_logd
 from core.settings import config
