@@ -3263,3 +3263,11 @@ parking4.nic.ru
 82.98.86.253
 82.98.86.254
 82.98.86.255
+
+# Reference: https://myip.ms/info/whois/199.59.166.109
+
+199.59.166.109
+
+# Reference: https://myip.ms/info/whois/8.5.1.47
+
+8.5.1.47

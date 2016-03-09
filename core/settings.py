@@ -24,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.10.61"
+VERSION = "0.10.63"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -93,13 +93,13 @@ SUSPICIOUS_HTTP_REQUEST_REGEXES = (
 SUSPICIOUS_HTTP_PATH_REGEXES = (
     ("suspended page", r"suspendedpage\.cgi|suspended\.page"),
     ("non-existent page", r"defaultwebpage\.cgi"),
-    ("potential web shell", r"\A((r57|c99|c100|c99ud-HBA|n3t|nexpl[o0]rer|expl[o0]it|madsp[o0]t|darkshell|popup-pomo|xshell|b0y|nefastica|bypass|safe0ver|staker|ashiyane|anjiyo|rusuh|b374k|locus|syrian|symlinkv3|webroot|webadmin|wst|kacak|h4cker|bv7binary|gazashell|locus7shell|injectionv3|aspxspy|cyberwarrior|ernebypass|pouyaserver|saudi|simattacker|sosyete|tryag|pwn|webshell|icesword|h4x0r|uploadshell_hima|wso|zehir4|lostdc|cybereye|angel|ani_shell).*|(cmd|shell))\.(asp|php|jsp)"),
     ("potential web scan", r"inexistent_file_name\.inexistent|test-for-some-inexistent-file|long_inexistent_path|some-inexistent-website\.acu")
 )
 SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION = ("?", "..", ".ht", "=", " ", "'")
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, urllib.quote(_)) for _ in "( )\r\n")
 SUSPICIOUS_UA_REGEX = ""
 OBSOLETE_UA_REGEX = r"(?i)windows NT [3-5]\.\d+|windows (3\.\d+|95|98|xp)|MSIE [1-6]\.\d+|Navigator/|Safari/[1-4]|Opera/[1-3]|Firefox/1?[0-9]\."
+WEB_SHELLS = set()
 WORST_ASNS = {}
 CDN_RANGES = {}
 WHITELIST_HTTP_REQUEST_PATHS = ("fql", "yql", "ads", "../images/", "../themes/", "../design/", "../scripts/", "../assets/", "../core/", "../js/", "/gwx/")
@@ -367,6 +367,19 @@ def read_ua():
     if items:
         SUSPICIOUS_UA_REGEX = "(?i)%s" % '|'.join(items)
 
+def read_web_shells():
+    WEB_SHELLS.clear()
+
+    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "web_shells.txt"))
+    if os.path.isfile(_):
+        with open(_, "r") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                else:
+                    WEB_SHELLS.add(line)
+
 def read_worst_asn():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "worst_asns.txt"))
     if os.path.isfile(_):
@@ -400,5 +413,6 @@ def read_cdn_ranges():
 if __name__ != "__main__":
     read_whitelist()
     read_ua()
+    read_web_shells()
     read_worst_asn()
     read_cdn_ranges()
