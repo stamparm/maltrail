@@ -448,3 +448,4 @@ Thank you:
 
 * Thomas Kristner
 * Eduardo Arcusa Les
+* James Lay
