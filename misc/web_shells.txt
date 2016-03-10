@@ -112,7 +112,6 @@ hshell.php
 htaccess_shell.htaccess
 i47.php
 iframe.php
-img.php
 imhapftp.php
 includeshell.php
 indexer.asp
@@ -233,7 +232,6 @@ troyan.php
 tryag.php
 udpflooder.php
 unitxshell.pl
-update.php
 us3rspl.pl
 v0ld3m0r.php
 v0ld3m0rt.php
