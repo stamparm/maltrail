@@ -57,6 +57,7 @@ footprintpredict.com
 gexperiments1.com
 gexperiments2.com
 gexperiments3.com
+gigaset.net
 googleapis.com
 googlecode.com
 google.com
@@ -208,6 +209,10 @@ emediate.dk
 
 tinypic.com
 s3.amazonaws.com
+
+# appeared on malc0de.com
+
+msecnd.net
 
 # triggering suspicious http request
 

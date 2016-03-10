@@ -24,9 +24,6 @@ ns6.parked.com
 ns7.parked.com
 74.117.114.21
 
-sedoparking.com
-72.52.4.90
-
 # Reference: https://uk.godaddy.com/help/parking-your-domain-name-338
 # Reference: https://www.virustotal.com/en/ip-address/50.63.202.32/information/
 # (e.g. http://uni-park.com)
@@ -3279,3 +3276,29 @@ parking4.nic.ru
 # Reference: https://myip.ms/info/whois/209.99.40.223
 
 209.99.40.223
+
+# Reference: https://myip.ms/info/whois/50.63.202.104
+
+50.63.202.104
+
+sedoparking.com
+
+# Reference: https://myip.ms/info/whois/72.52.4.90
+
+72.52.4.90
+
+# Reference: https://myip.ms/info/whois/72.52.4.91
+
+72.52.4.91
+
+# Reference: https://myip.ms/info/whois/72.52.4.119
+
+72.52.4.119
+
+# Reference: https://myip.ms/info/whois/72.52.4.120
+
+72.52.4.120
+
+# Reference: https://myip.ms/info/whois/72.52.4.121
+
+72.52.4.121

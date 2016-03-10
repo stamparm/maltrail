@@ -477,3 +477,8 @@ ourwebsearch.com
 # Reference: https://www.threatcrowd.org/domain.php?domain=tbccint.com
 
 tbccint.com
+
+# Reference: http://www.freefixer.com/b/remove-seebars-uprise-website-from-chrome-firefox-and-internet-explorer/
+
+seebars.uprise.website
+here.sendevent.net
