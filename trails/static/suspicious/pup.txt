@@ -75,3 +75,73 @@ winzipper.com
 # Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2016-030112-0955-99&tabid=2
 
 tweakbit.com
+
+# Reference: http://junkwareremoval.com/adware/topflix-removal-guide/
+
+topflix.info
+
+# Reference: http://www.shouldiremoveit.com/Tuto4pc-7592-program.aspx
+
+tuto4pc.com
+tuto4pcgroup.com
+
+# Reference: http://junkwareremoval.com/pup/remove-mysafetab-adware/
+
+mysafetab.com
+
+# Reference: http://junkwareremoval.com/pup/anyflix-removal-guide/
+
+anyflix.info
+
+# Reference: http://junkwareremoval.com/pup/driverrestore-removal-guide/
+
+driverrestore.com
+
+# Reference: http://junkwareremoval.com/pup/web-updater-removal-guide/
+
+getwebupdater.com
+
+# Reference: http://junkwareremoval.com/pup/remove-installfaster-new-tab/
+
+installfaster.com
+
+# Reference: http://junkwareremoval.com/pup/quicky-translator-removal-guide/
+
+quickytranslator.com
+
+# Reference: http://junkwareremoval.com/pup/browser-guardian-removal-guide/
+
+browserguardian.com
+
+# Reference: http://junkwareremoval.com/pup/win-security-removal-guide/
+
+winsecurity.net
+
+# Reference: http://junkwareremoval.com/pup/browsing-safeguard-removal-guide/
+
+browsingsafeguard.com
+
+# Reference: http://junkwareremoval.com/pup/browserwatchdog-removal-guide/
+
+browserwatchdog.com
+
+# Reference: http://junkwareremoval.com/pup/tesla-browser-removal-guide/
+
+teslabrowser.com
+
+# Reference: http://junkwareremoval.com/pup/my-speed-test-xp-removal-guide/
+
+myspeedtestxp.com
+
+# Reference: http://junkwareremoval.com/pup/gizmodock-removal-guide/
+
+gizmodock.com
+
+# Reference: http://junkwareremoval.com/pup/remove-hybrid-browser/
+
+hybridbrowser.com
+
+# Reference: http://junkwareremoval.com/pup/weather-ping-removal-guide/
+
+weatherping.com
+
