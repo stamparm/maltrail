@@ -540,12 +540,10 @@ co.at.gg
 co.at.tc
 co.at.tf
 co.be
-co.cc
 co.nf
 co.nr
 co.tv
 co.uk.tc
-co.za
 
 ne.jp
 01.ca
