@@ -433,7 +433,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 filename = _.path.split('/')[-1].lower()
                                 name, extension = os.path.splitext(filename)
                                 trail = "%s(%s)" % (host, path)
-                                if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and not any(_ in path for _ in WHITELIST_DIRECT_DOWNLOAD_KEYWORDS) and not _.query and len(name) < 10:
+                                if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and not any(_ in path for _ in WHITELIST_DIRECT_DOWNLOAD_KEYWORDS) and '=' not in _.query and len(name) < 10:
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "direct %s download (suspicious)" % extension, "(heuristic)"), packet)
                                 elif filename in WEB_SHELLS:
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "potential web shell (suspicious)", "(heuristic)"), packet)
