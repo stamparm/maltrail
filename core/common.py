@@ -94,19 +94,27 @@ def worst_asns(address):
     if not address:
         return None
 
-    _ = addr_to_int(address)
-    for prefix, mask, name in WORST_ASNS.get(address.split('.')[0], {}):
-        if _ & mask == prefix:
-            return name
+    try:
+        _ = addr_to_int(address)
+        for prefix, mask, name in WORST_ASNS.get(address.split('.')[0], {}):
+            if _ & mask == prefix:
+                return name
+    except (IndexError, ValueError):
+        pass
 
     return None
 
 def cdn_ip(address):
-    if address:
+    if not address:
+        return False
+
+    try:
         _ = addr_to_int(address)
         for prefix, mask in CDN_RANGES.get(address.split('.')[0], {}):
             if _ & mask == prefix:
                 return True
+    except (IndexError, ValueError):
+        pass
 
     return False
 

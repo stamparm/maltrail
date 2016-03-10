@@ -177,7 +177,7 @@ def update_trails(server=None, force=False):
         for key in trails.keys():
             if key in WHITELIST or any(key.startswith(_) for _ in BAD_TRAIL_PREFIXES):
                 del trails[key]
-            elif key.replace('.', "").isdigit() and cdn_ip(key):
+            elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key) and cdn_ip(key):
                 del trails[key]
             else:
                 try:

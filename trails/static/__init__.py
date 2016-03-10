@@ -14,7 +14,10 @@ __url__ = "(static)"
 def fetch():
     retval = {}
 
-    for directory in [os.path.dirname(__file__)] + glob.glob(os.path.join(os.path.dirname(__file__), "*")):
+    directories = [os.path.dirname(__file__)] + glob.glob(os.path.join(os.path.dirname(__file__), "*"))
+    directories = sorted(directories, key=lambda _: -1 if "suspicious" in _ else int("custom" in _))
+
+    for directory in directories:
         if not os.path.isdir(directory):
             continue
 
@@ -22,8 +25,11 @@ def fetch():
         if category == "static":
             category = None
 
+        filenames = glob.glob(os.path.join(directory, "*.txt"))
+        filenames = sorted(filenames, key=lambda _: "history" in _)
+
         __reference__ = "(static)"
-        for filename in glob.glob(os.path.join(directory, "*.txt")):
+        for filename in filenames:
             __info__ = os.path.splitext(os.path.basename(filename))[0].replace('_', " ")
             if category:
                 __info__ = "%s (%s)" % (__info__, category)

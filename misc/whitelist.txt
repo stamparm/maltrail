@@ -579,6 +579,7 @@ sophosxl.net
 
 # Generic
 
+defaultmailserver.com
 security-research.dyndns.org
 dl.dropbox.com
 nirsoft.net
@@ -589,3 +590,4 @@ api.zanox.ws
 www.nirsoft.net/utils
 glotorrents.pw
 gplus.to
+t.domdex.com
