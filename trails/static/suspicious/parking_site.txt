@@ -3271,3 +3271,11 @@ parking4.nic.ru
 # Reference: https://myip.ms/info/whois/8.5.1.47
 
 8.5.1.47
+
+# Reference: https://myip.ms/info/whois/209.99.40.222
+
+209.99.40.222
+
+# Reference: https://myip.ms/info/whois/209.99.40.223
+
+209.99.40.223
