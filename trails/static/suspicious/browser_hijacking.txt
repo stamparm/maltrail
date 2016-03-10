@@ -366,7 +366,6 @@ email-dhp.com
 searchtp.com
 searchgamegap.com
 didisearch.com
-sso.anbtr.com
 download-offer.com
 epolife.com
 plugin-search2update.com
@@ -522,3 +521,34 @@ tbccint.com
 
 seebars.uprise.website
 here.sendevent.net
+
+# Reference: http://www.removetips.net/how-to-effectively-remove-starsunnysetgadget-inbrowser-hijacker-removal-guide/
+# Reference: https://www.virustotal.com/en/ip-address/54.69.179.176/information/
+
+starsunnysetgadget.in
+unitspybookukset.net
+bestwebnutfunblack.com
+unitspybookukset.org
+fastunitdatagood.in
+starsunnysetgadget.name
+bestwebnutfunblack.org
+homecompleteblue.in
+trafficonlingetstorage.in
+softwaresupermyuk.in
+fastunitdatagood.name
+epicscanpronice.name
+bestwebnutfunblack.net
+epicscanpronice.in
+bestwebnutfunblack.me
+unitspybookukset.org
+bestwebnutfunblack.com
+bestwebnutfunblack.me
+bestwebnutfunblack.biz
+unitspybookukset.in
+masteriod.info
+masternate.info
+bestwebnutfuntoolkit.in
+masteria.in
+masternard.info
+masteroid.info
+masteroids.info
