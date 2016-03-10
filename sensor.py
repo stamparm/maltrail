@@ -430,7 +430,8 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                             if '.' in path:
                                 _ = urlparse.urlparse("http://%s" % url)  # dummy scheme
-                                filename = _.path.split('/')[-1].lower()
+                                path = path.lower()
+                                filename = _.path.split('/')[-1]
                                 name, extension = os.path.splitext(filename)
                                 trail = "%s(%s)" % (host, path)
                                 if extension and extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and not any(_ in path for _ in WHITELIST_DIRECT_DOWNLOAD_KEYWORDS) and '=' not in _.query and len(name) < 10:
