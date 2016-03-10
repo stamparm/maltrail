@@ -166,10 +166,6 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
                     result = True
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, "long domain (suspicious)", "(heuristic)"), packet)
 
-            elif "sinkhole" in query:
-                result = True
-                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, query, "potential sinkhole domain (suspicious)", "(heuristic)"), packet)
-
     if result == False:
         _result_cache[query] = False
 
@@ -301,11 +297,13 @@ def _process_packet(packet, sec, usec, ip_offset):
                         last_index = tcp_data.find("\r\n", first_index)
                         if last_index >= 0:
                             host = tcp_data[first_index:last_index]
-                            host = host.strip()
+                            host = host.strip().lower()
                             if host.endswith(":80"):
                                 host = host[:-3]
                             if host and host[0].isalpha() and dst_ip in trails:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, "%s (%s)" % (dst_ip, host.split(':')[0]), trails[dst_ip][0], trails[dst_ip][1]), packet)
+                            elif config.CHECK_HOST_DOMAINS and not host.replace('.', "").isdigit():
+                                _check_domain(host, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, packet)
                     elif config.USE_HEURISTICS and config.CHECK_MISSING_HOST:
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, "%s%s" % (host, path), "missing host header (suspicious)", "(heuristic)"), packet)
 
