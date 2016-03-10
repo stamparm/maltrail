@@ -25,6 +25,7 @@ bdnsrt.org
 bitdefender.net
 blogspot.com
 bstatic.com
+cbox.ws
 cdxall.com
 cdxgoog.com
 cdxultra.com
@@ -89,7 +90,9 @@ mcafee.com
 microsoft.com
 msv1.invalid
 netdna-cdn.com
+nowvideo.sx
 nsatc.net
+officeshoes.ws
 opendns.com
 outlook.com
 pandasecurity.com
@@ -119,6 +122,7 @@ testanalytics.net
 testflightapp.com
 trendmicro.com
 tumblr.com
+twitter.com
 verisign.com
 verisign.net
 weebly.com
@@ -127,6 +131,7 @@ wordpress.com
 yahoo.com
 yahoodns.net
 yimg.com
+yvimg.kz
 
 # to ignore in direct .exe downloads
 
@@ -223,6 +228,7 @@ google-analytics.com
 imei.info
 imeipro.info
 sanasecurity.com
+victronenergy.com
 
 # found as false positive in otx.alienvault.com
 
