@@ -544,15 +544,17 @@ def _process_packet(packet, sec, usec, ip_offset):
                                             else:
                                                 _ += 12 + struct.unpack("!H", dns_data[_ + 10: _ + 12])[0]
 
-                                        answer = socket.inet_ntoa(dns_data[_ + 12:_ + 16])
-                                        if answer in trails:
-                                            _ = trails[answer]
-                                            if "sinkhole" in _[0]:
-                                                trail = "(%s).%s" % ('.'.join(parts[:-1]), '.'.join(parts[-1:]))
-                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "sinkholed by %s (malware)" % _[0].split(" ")[1], "(heuristic)"), packet)  # (e.g. kitro.pl, devomchart.com, jebena.ananikolic.su, vuvet.cn)
-                                            elif "parking" in _[0]:
-                                                trail = "(%s).%s" % ('.'.join(parts[:-1]), '.'.join(parts[-1:]))
-                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "parked site (suspicious)", "(heuristic)"), packet)
+                                        _ = dns_data[_ + 12:_ + 16]
+                                        if _:
+                                            answer = socket.inet_ntoa(_)
+                                            if answer in trails:
+                                                _ = trails[answer]
+                                                if "sinkhole" in _[0]:
+                                                    trail = "(%s).%s" % ('.'.join(parts[:-1]), '.'.join(parts[-1:]))
+                                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "sinkholed by %s (malware)" % _[0].split(" ")[1], "(heuristic)"), packet)  # (e.g. kitro.pl, devomchart.com, jebena.ananikolic.su, vuvet.cn)
+                                                elif "parking" in _[0]:
+                                                    trail = "(%s).%s" % ('.'.join(parts[:-1]), '.'.join(parts[-1:]))
+                                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "parked site (suspicious)", "(heuristic)"), packet)
                                     except IndexError:
                                         pass
 
