@@ -111,7 +111,6 @@ hostdevil.pl
 hshell.php
 htaccess_shell.htaccess
 i47.php
-iframe.php
 imhapftp.php
 includeshell.php
 indexer.asp
