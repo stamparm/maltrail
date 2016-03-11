@@ -1721,7 +1721,7 @@ function initDetails() {
             if (event.target.classList.contains("tag"))
                 appendFilter(event.target.innerHTML, event, true);
         }
-        else if (event.button === 2) {  // right mouse button
+        else if (event.button === 2) {  // right mouse button/click
             stopPropagation(event);
         }
     });

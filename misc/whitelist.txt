@@ -604,3 +604,8 @@ www.nirsoft.net/utils
 glotorrents.pw
 gplus.to
 t.domdex.com
+
+# Sh.ty ad network introducing noise with long subdomain names
+
+# mucocutaneousmyrmecophaga.com
+# eclampsialemontree.net
