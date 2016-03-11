@@ -27,6 +27,7 @@ vosteran.com
 
 # Reference: (dork: How to remove Search (Removal Guide))
 
+set.tidaltv.com
 cdn.themobideal.com
 az815563.vo.msecnd.net
 az439107.vo.msecnd.net

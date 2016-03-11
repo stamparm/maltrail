@@ -31,7 +31,6 @@ b374k.php
 b64shell.php
 backdoor.php
 backdoorconnect.pl
-backup.php
 batavi4.php
 blindshell.c
 blood3rpriv8.php
