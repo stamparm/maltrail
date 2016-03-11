@@ -24,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.10.84"
+VERSION = "0.10.85"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -266,8 +266,8 @@ def read_config(config_file):
                         value = value.replace(match.group(0), str(globals()[match.group(1)]))
                     else:
                         value = value.replace(match.group(0), os.environ.get(match.group(1), match.group(0)))
-                if subprocess.mswindows and "://" not in value:
-                    value = value.replace("/", "\\")
+                if name.endswith("_DIR"):
+                    value = os.path.realpath(os.path.join(ROOT_DIR, os.path.expanduser(value)))
 
             config[name] = value
 
