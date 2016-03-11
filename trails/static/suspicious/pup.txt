@@ -145,3 +145,6 @@ hybridbrowser.com
 
 weatherping.com
 
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/adware-and-puas/File%20Association%20Manager/detailed-analysis.aspx
+
+download.yourfileinfo.com
