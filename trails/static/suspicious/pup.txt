@@ -148,3 +148,7 @@ weatherping.com
 # Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/adware-and-puas/File%20Association%20Manager/detailed-analysis.aspx
 
 download.yourfileinfo.com
+
+# Reference: https://www.herdprotect.com/domain-playnow.chaseswing.eu.aspx
+
+chaseswing.eu
