@@ -3,6 +3,7 @@
 
 2ip.tools
 aboutmyip.com
+api.wipmania.com
 aruljohn.com
 bahoot.com
 bearsmyip.com
