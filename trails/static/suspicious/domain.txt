@@ -52,7 +52,6 @@
 
 # Reference: http://readwrite.com/2010/10/27/the_worlds_most_dangerous_domains
 
-.vn
 .cm
 .am
 

@@ -159,3 +159,47 @@ databssint.com
 spccint.com
 spccinta.com
 seccint.com
+
+# Reference: http://www.shouldiremoveit.com/Freeware-de-Toolbar-92555-program.aspx
+
+freeware.de
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/SearchSuite.aspx
+
+secondofferdelivery.com
+
+# Reference: http://malwarefixes.com/threats/pup-optional-bandoo/
+
+bandoo.com
+
+# Reference: https://malwaretips.com/blogs/search-module-plus-goobzo-removal/
+
+www-searching.com
+
+# Reference: http://www.enigmasoftware.com/metrohotspottoolbar-removal/
+
+metrohotspot.com
+
+# Reference: http://www.2-spyware.com/remove-easydocmerge-toolbar.html
+
+easydocmerge.com
+
+# Reference: http://www.enigmasoftware.com/biggamecountdowntoolbar-removal/
+
+biggamecountdown.com
+
+# Reference: http://www.enigmasoftware.com/allvideos283xyzpopups-removal/
+
+allvideos.283.xyz
+
+# Reference: http://www.enigmasoftware.com/clkdowninfo-removal/
+
+clkdown.info
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=khit.cn
+
+khit.cn
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=apnanalytics.com
+
+apnanalytics.com
