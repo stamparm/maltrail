@@ -139,6 +139,7 @@ yvimg.kz
 360safe.com
 7-zip.org
 acer.com
+acropdf.com
 adobe.com
 akeo.ie
 apple.com
@@ -162,6 +163,7 @@ googleapis.com
 google.com
 googlesyndication.com
 gvt1.com
+hitmanpro.com
 hp.com
 htc.com
 intel.com
@@ -175,6 +177,7 @@ majorgeeks.com
 mcafee.com
 microsoft.com
 mozilla.net
+nai.com
 notepad-plus-plus.org
 nvidia.com
 on.net
@@ -195,6 +198,7 @@ softpedia.com
 sonymobile.com
 sourceforge.net
 sun.com
+surfright.nl
 symantecliveupdate.com
 teamviewer.com
 toshiba.com
@@ -605,6 +609,7 @@ www.nirsoft.net/utils
 glotorrents.pw
 gplus.to
 t.domdex.com
+forestapp.cc
 
 # Sh.ty ad network introducing noise with long subdomain names
 
