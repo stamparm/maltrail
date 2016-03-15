@@ -152,3 +152,10 @@ download.yourfileinfo.com
 # Reference: https://www.herdprotect.com/domain-playnow.chaseswing.eu.aspx
 
 chaseswing.eu
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2014-063009-1324-99&tabid=2
+
+databssint.com
+spccint.com
+spccinta.com
+seccint.com
