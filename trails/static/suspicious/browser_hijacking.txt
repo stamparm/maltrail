@@ -83,7 +83,6 @@ mywebsearch.com
 imesh.net
 mlstat.com
 mysearchdial.com
-spotxchange.com
 dartsearch.net
 scorecardresearch.com
 vidolog.com
@@ -552,3 +551,9 @@ masteria.in
 masternard.info
 masteroid.info
 masteroids.info
+
+# Reference: http://www.freefixer.com/b/remove-sync-search-spotxchange-com-from-firefox-chrome-and-internet-explorer/
+# Reference: https://www.urlquery.net/report.php?id=1456783674925
+
+spotxchange.com
+eclampsialemontree.net
