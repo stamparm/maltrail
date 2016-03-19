@@ -683,3 +683,16 @@ orz.hm
 
 comexe.cn
 comexe.net
+
+# Reference: http://www.pubyun.com/products/dyndns/
+
+f3322.net
+3322.org
+8866.org
+9966.org
+8800.org
+2288.org
+6600.org
+7766.org
+webok.net
+eatuo.com
