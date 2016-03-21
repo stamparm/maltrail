@@ -614,4 +614,3 @@ forestapp.cc
 # Sh.ty ad network introducing noise with long subdomain names
 
 # mucocutaneousmyrmecophaga.com
-# eclampsialemontree.net
