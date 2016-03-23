@@ -70,15 +70,15 @@ def update_trails(server=None, force=False):
                 f.write(_)
             trails = load_trails()
 
-    trail_files = []
+    trail_files = set()
     for dirpath, dirnames, filenames in os.walk(os.path.abspath(os.path.join(ROOT_DIR, "trails"))) :
         for filename in filenames:
-            trail_files.append(os.path.abspath(os.path.join(dirpath, filename)))
+            trail_files.add(os.path.abspath(os.path.join(dirpath, filename)))
 
     if config.CUSTOM_TRAILS_DIR:
         for dirpath, dirnames, filenames in os.walk(os.path.abspath(os.path.join(ROOT_DIR, os.path.expanduser(config.CUSTOM_TRAILS_DIR)))) :
             for filename in filenames:
-                trail_files.append(os.path.abspath(os.path.join(dirpath, filename)))
+                trail_files.add(os.path.abspath(os.path.join(dirpath, filename)))
 
     try:
         if not os.path.isdir(USERS_DIR):
