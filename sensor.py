@@ -310,7 +310,10 @@ def _process_packet(packet, sec, usec, ip_offset):
                     if index >= 0:
                         post_data = tcp_data[index + 4:]
 
-                    if "://" in path:
+                    if config.USE_HEURISTICS and dst_port == 80 and path.startswith("http://"):
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, path, "potential proxy probe (suspicious)", "(heuristic)"), packet)
+                        return
+                    elif "://" in path:
                         url = path.split("://", 1)[1]
 
                         if '/' not in url:
