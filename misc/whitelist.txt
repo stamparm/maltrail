@@ -227,13 +227,18 @@ msecnd.net
 
 # triggering suspicious http request
 
-graph.facebook.com
+api.geograph.org.uk
 api.facebook.com
-query.yahooapis.com
+codepen.io
+graph.facebook.com
 google-analytics.com
+htccode.com
 imei.info
 imeipro.info
+quackit.com
+query.yahooapis.com
 sanasecurity.com
+sim-unlock.net
 victronenergy.com
 
 # found as false positive in otx.alienvault.com
