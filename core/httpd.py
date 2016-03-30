@@ -431,7 +431,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 elif re.search(r"\A[\d.]+\Z", netfilter):
                                     addresses.add(netfilter)
                                 elif '\.' in netfilter:
-                                    regex = r",?(%s),?" % netfilter
+                                    regex = r"\b(%s)\b" % netfilter
                                 else:
                                     print "[!] invalid network filter '%s'" % netfilter
                                     return
@@ -447,7 +447,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                         display = True
 
                                 if not display and (addresses or netmasks):
-                                    for match in re.finditer(r",?(\d+\.\d+\.\d+\.\d+),?", line):
+                                    for match in re.finditer(r"\b(\d+\.\d+\.\d+\.\d+)\b", line):
                                         if not display:
                                             ip = match.group(1)
                                         else:
