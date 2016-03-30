@@ -140,8 +140,11 @@ def update_trails(server=None, force=False):
             if not key or re.search(r"\A(?i)\.?[a-z]+\Z", key) and not any(_ in trails[key][1] for _ in ("custom", "static")):
                 del trails[key]
                 continue
-            if re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key) and trails[key][0] == "malware":
-                trails[key] = ("potential malware site", trails[key][1])
+            if re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key):
+                if any(_ in trails[key][0] for _ in ("parking site", "sinkhole")) and key in duplicates:
+                    del duplicates[key]
+                if trails[key][0] == "malware":
+                    trails[key] = ("potential malware site", trails[key][1])
             if trails[key][0] == "ransomware":
                 trails[key] = ("ransomware (malware)", trails[key][1])
             if key.startswith("www.") and '/' not in key:
