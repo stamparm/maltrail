@@ -48,6 +48,7 @@ edgesuite.net
 elasticbeanstalk.com
 eset.com
 example.com
+f-secure.com
 fap.to
 fastly.net
 fbcdn.net
@@ -239,6 +240,7 @@ quackit.com
 query.yahooapis.com
 sanasecurity.com
 sim-unlock.net
+symcb.com
 victronenergy.com
 
 # found as false positive in otx.alienvault.com
