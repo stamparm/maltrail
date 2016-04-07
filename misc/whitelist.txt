@@ -124,6 +124,7 @@ testflightapp.com
 trendmicro.com
 tumblr.com
 twitter.com
+w3schools.com
 verisign.com
 verisign.net
 weebly.com
