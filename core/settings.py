@@ -24,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.10.110"
+VERSION = "0.10.112"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -287,8 +287,18 @@ def read_config(config_file):
         config.SSL_PEM = config.SSL_PEM.replace('/', os.sep)
 
     if config.USER_WHITELIST:
-        for value in config.USER_WHITELIST.split(','):
-            WHITELIST.add(value.strip())
+        if ',' in config.USER_WHITELIST:
+            print("[x] configuration value 'USER_WHITELIST' has been changed. Please use it to set location of whitelist file")
+        elif not os.path.isfile(config.USER_WHITELIST):
+            exit("[!] missing 'USER_WHITELIST' file '%s'" % config.USER_WHITELIST)
+        else:
+            with open(config.USER_WHITELIST, "r") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line or line.startswith('#'):
+                        continue
+                    else:
+                        WHITELIST.add(line)
 
     config.PROCESS_COUNT = int(config.PROCESS_COUNT or CPU_CORES)
 
