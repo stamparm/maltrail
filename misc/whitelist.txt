@@ -145,6 +145,7 @@ acropdf.com
 adobe.com
 akeo.ie
 apple.com
+avantbrowser.com
 avast.com
 avg.com
 bitdefender.com
@@ -212,6 +213,7 @@ winzip.com
 wsusoffline.net
 xboxlive.com
 yahoodns.net
+yandex.net
 zdnet.com
 
 # have script tags in ad links
@@ -229,6 +231,7 @@ msecnd.net
 
 # triggering suspicious http request
 
+216.58.214.76
 api.geograph.org.uk
 api.facebook.com
 codepen.io
@@ -241,6 +244,7 @@ quackit.com
 query.yahooapis.com
 sanasecurity.com
 sim-unlock.net
+sqlzoo.net
 symcb.com
 victronenergy.com
 

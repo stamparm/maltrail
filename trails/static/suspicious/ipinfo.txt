@@ -40,6 +40,7 @@ ip-adress.com
 ip-adress.eu
 ip.amulex.com
 ip-api.com
+ip-ping.ru
 ip.cctv.pk
 ipchecker.info
 ip-check.info
