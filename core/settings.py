@@ -24,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.10.112"
+VERSION = "0.10.111"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -291,14 +291,6 @@ def read_config(config_file):
             print("[x] configuration value 'USER_WHITELIST' has been changed. Please use it to set location of whitelist file")
         elif not os.path.isfile(config.USER_WHITELIST):
             exit("[!] missing 'USER_WHITELIST' file '%s'" % config.USER_WHITELIST)
-        else:
-            with open(config.USER_WHITELIST, "r") as f:
-                for line in f:
-                    line = line.strip()
-                    if not line or line.startswith('#'):
-                        continue
-                    else:
-                        WHITELIST.add(line)
 
     config.PROCESS_COUNT = int(config.PROCESS_COUNT or CPU_CORES)
 
@@ -350,6 +342,15 @@ def read_whitelist():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "whitelist.txt"))
     if os.path.isfile(_):
         with open(_, "r") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                else:
+                    WHITELIST.add(line)
+
+    if config.USER_WHITELIST and os.path.isfile(config.USER_WHITELIST):
+        with open(config.USER_WHITELIST, "r") as f:
             for line in f:
                 line = line.strip()
                 if not line or line.startswith('#'):
