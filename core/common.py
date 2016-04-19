@@ -31,13 +31,13 @@ from core.trailsdict import TrailsDict
 
 _ipcat_cache = {}
 
-def retrieve_content(url, data=None):
+def retrieve_content(url, data=None, headers=None):
     """
     Retrieves page content from given URL
     """
 
     try:
-        req = urllib2.Request("".join(url[i].replace(' ', "%20") if i > url.find('?') else url[i] for i in xrange(len(url))), data, {"User-agent": NAME, "Accept-encoding": "gzip, deflate"})
+        req = urllib2.Request("".join(url[i].replace(' ', "%20") if i > url.find('?') else url[i] for i in xrange(len(url))), data, headers or {"User-agent": NAME, "Accept-encoding": "gzip, deflate"})
         resp = urllib2.urlopen(req, timeout=TIMEOUT)
         retval = resp.read()
         encoding = resp.headers.get("Content-Encoding")
@@ -45,7 +45,7 @@ def retrieve_content(url, data=None):
         if encoding:
             if encoding.lower() == "deflate":
                 data = StringIO.StringIO(zlib.decompress(retval, -15))
-            else:
+            elif encoding.lower() == "gzip":
                 data = gzip.GzipFile("", "rb", 9, StringIO.StringIO(retval))
             retval = data.read()
     except Exception, ex:
