@@ -33,6 +33,7 @@ from core.addr import inet_ntoa6
 from core.attribdict import AttribDict
 from core.common import check_connection
 from core.common import check_sudo
+from core.common import check_whitelisted
 from core.common import load_trails
 from core.enums import BLOCK_MARKER
 from core.enums import PROTO
@@ -200,7 +201,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                 for key in _connect_src_dst:
                     if len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
                         _src_ip, _dst_ip = key.split('~')
-                        if _src_ip not in WHITELIST:
+                        if not check_whitelisted(_src_ip):
                             for _ in _connect_src_details[key]:
                                 log_event((sec, usec, _src_ip, _[2], _dst_ip, _[3], PROTO.TCP, TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"), packet)
 

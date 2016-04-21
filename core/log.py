@@ -14,6 +14,7 @@ import threading
 import time
 import traceback
 
+from core.common import check_whitelisted
 from core.common import check_sudo
 from core.settings import config
 from core.settings import CONDENSE_ON_INFO_KEYWORDS
@@ -21,7 +22,6 @@ from core.settings import CONDENSED_EVENTS_FLUSH_PERIOD
 from core.settings import DEFAULT_ERROR_LOG_PERMISSIONS
 from core.settings import DEFAULT_EVENT_LOG_PERMISSIONS
 from core.settings import TIME_FORMAT
-from core.settings import WHITELIST
 
 _thread_data = threading.local()
 
@@ -62,7 +62,7 @@ def safe_value(value):
 def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False):
     try:
         sec, usec, src_ip, src_port, dst_ip, dst_port, proto, trail_type, trail, info = event_tuple[:10]
-        if not any(_ in WHITELIST for _ in (src_ip, dst_ip)):
+        if not any(check_whitelisted(_) for _ in (src_ip, dst_ip)):
             if not skip_write:
                 localtime = "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)
 

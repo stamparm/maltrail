@@ -21,6 +21,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))) 
 
 from core.addr import addr_to_int
 from core.common import cdn_ip
+from core.common import check_whitelisted
 from core.common import load_trails
 from core.common import retrieve_content
 from core.settings import config
@@ -37,7 +38,6 @@ from core.settings import PROXIES
 from core.settings import ROOT_DIR
 from core.settings import TRAILS_FILE
 from core.settings import USERS_DIR
-from core.settings import WHITELIST
 
 def _chown(filepath):
     if not subprocess.mswindows and os.path.exists(filepath):
@@ -178,7 +178,7 @@ def update_trails(server=None, force=False):
         read_whitelist()
 
         for key in trails.keys():
-            if key in WHITELIST or any(key.startswith(_) for _ in BAD_TRAIL_PREFIXES):
+            if check_whitelisted(key) or any(key.startswith(_) for _ in BAD_TRAIL_PREFIXES):
                 del trails[key]
             elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key) and cdn_ip(key):
                 del trails[key]

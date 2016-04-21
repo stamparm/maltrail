@@ -24,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.10.113"
+VERSION = "0.10.114"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -119,6 +119,7 @@ SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD = 24
 SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD = 7
 SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD = 3.5
 WHITELIST = set()
+WHITELIST_RANGES = set()
 STATIC_IPCAT_LOOKUPS = {"shadowserver.org": ("184.105.139.66-184.105.139.126", "184.105.247.194-184.105.247.254", "74.82.47.1-74.82.47.63", "216.218.206.66-216.218.206.126"), "labs.rapid7.com": ("71.6.216.32-71.6.216.63",), "shodan.io": ("66.240.192.138", "66.240.236.119", "71.6.135.131", "71.6.165.200", "71.6.167.142", "82.221.105.6", "82.221.105.7", "85.25.43.94", "85.25.103.50", "93.120.27.62", "104.131.0.69", "104.236.198.48", "162.159.244.38", "188.138.9.50", "198.20.69.74", "198.20.69.98", "198.20.70.114", "198.20.87.98", "198.20.99.130", "208.180.20.97", "209.126.110.38"), "eecs.umich.edu": ("141.212.121.0-141.212.121.255", "141.212.122.0-141.212.122.255"), "netsec.colostate.edu": ("129.82.138.12", "129.82.138.31", "129.82.138.32", "129.82.138.33", "129.82.138.34", "129.82.138.44"), "ant.isi.edu": ("128.9.168.98", "203.178.148.18", "203.178.148.19"), "eecs.berkeley.edu": ("169.229.3.89", "169.229.3.90", "169.229.3.91", "169.229.3.92", "169.229.3.93", "169.229.3.94"), "openresolverproject.org": ("204.42.253.2", "204.42.254.5"), "opensnmpproject.org": ("204.42.253.130",), "openntpproject.org": ("204.42.253.131",), "openssdpproject.org": ("204.42.253.132",), "projectblindferret.com": ("107.150.52.82-107.150.52.86",), "kudelskisecurity.com": ("185.35.62.0-185.35.62.255",), "riskiq.com": ("64.125.239.0-64.125.239.255",), "comsys.rwth-aachen.de": ("137.226.113.0-137.226.113.63",), "sba-research.org": ("98.189.26.18",)}
 
 # Reference: https://gist.github.com/ryanwitt/588678
@@ -340,6 +341,7 @@ def read_config(config_file):
 
 def read_whitelist():
     WHITELIST.clear()
+    WHITELIST_RANGES.clear()
 
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "whitelist.txt"))
     if os.path.isfile(_):
@@ -348,6 +350,12 @@ def read_whitelist():
                 line = line.strip()
                 if not line or line.startswith('#'):
                     continue
+                elif re.search(r"\A\d+\.\d+\.\d+\.\d+/\d+\Z", line):
+                    try:
+                        prefix, mask = line.split('/')
+                        WHITELIST_RANGES.add((addr_to_int(prefix), int(mask)))
+                    except (IndexError, ValueError):
+                        WHITELIST.add(line)
                 else:
                     WHITELIST.add(line)
 
@@ -357,6 +365,12 @@ def read_whitelist():
                 line = line.strip()
                 if not line or line.startswith('#'):
                     continue
+                elif re.search(r"\A\d+\.\d+\.\d+\.\d+/\d+\Z", line):
+                    try:
+                        prefix, mask = line.split('/')
+                        WHITELIST_RANGES.add((addr_to_int(prefix), int(mask)))
+                    except (IndexError, ValueError):
+                        WHITELIST.add(line)
                 else:
                     WHITELIST.add(line)
 

@@ -26,6 +26,7 @@ from core.settings import STATIC_IPCAT_LOOKUPS
 from core.settings import TIMEOUT
 from core.settings import TRAILS_FILE
 from core.settings import WHITELIST
+from core.settings import WHITELIST_RANGES
 from core.settings import WORST_ASNS
 from core.trailsdict import TrailsDict
 
@@ -188,6 +189,21 @@ def get_regex(items):
 def check_connection():
     return len(retrieve_content(CHECK_CONNECTION_URL) or "") > 0
 
+def check_whitelisted(trail):
+    if trail in WHITELIST:
+        return True
+
+    if trail and trail[0].isdigit():
+        try:
+            _ = addr_to_int(trail)
+            for prefix, mask in WHITELIST_RANGES:
+                if _ & mask == prefix:
+                    return True
+        except (IndexError, ValueError):
+            pass
+
+    return False
+
 def load_trails(quiet=False):
     if not quiet:
         print "[i] loading trails..."
@@ -201,7 +217,7 @@ def load_trails(quiet=False):
                 for row in reader:
                     if row and len(row) == 3:
                         trail, info, reference = row
-                        if trail not in WHITELIST:
+                        if not check_whitelisted(trail):
                             retval[trail] = (info, reference)
 
         except Exception, ex:
