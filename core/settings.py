@@ -24,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.10.114"
+VERSION = "0.10.115"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -40,6 +40,7 @@ CHECK_CONNECTION_MAX_RETRIES = 10
 TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 HTTP_DEFAULT_PORT = 8338
 HTTP_TIME_FORMAT = "%a, %d %b %Y %H:%M:%S GMT"  # Reference: http://stackoverflow.com/a/225106
+CEF_FORMAT = "{syslog_time} {host} CEF:0|{device_vendor}|{device_product}|{device_version}|{signature_id}|{name}|{severity}|{extension}"
 SESSION_COOKIE_NAME = "%s_sessid" % NAME.lower()
 SNAP_LEN = 2000
 BLOCK_LENGTH = 1 + 2 + 4 + 4 + 4 + SNAP_LEN  # primitive mutex + short for packet size + int for sec + int for usec + int for IP offset + max packet size
@@ -300,8 +301,8 @@ def read_config(config_file):
     if config.USE_MULTIPROCESSING:
         print("[x] configuration switch 'USE_MULTIPROCESSING' is deprecated. Please use 'PROCESS_COUNT' instead")
 
-    if config.DISABLE_LOCAL_LOG_STORAGE and not config.LOG_SERVER:
-        print("[x] configuration switch 'DISABLE_LOCAL_LOG_STORAGE' turned on and option 'LOG_SERVER' not set. Falling back to console output of event data")
+    if config.DISABLE_LOCAL_LOG_STORAGE and not any (config.LOG_SERVER, config.SYSLOG_SERVER):
+        print("[x] configuration switch 'DISABLE_LOCAL_LOG_STORAGE' turned on and neither option 'LOG_SERVER' nor 'SYSLOG_SERVER' are set. Falling back to console output of event data")
 
     if config.UDP_ADDRESS is not None and config.UDP_PORT is None:
         exit("[!] usage of configuration value 'UDP_ADDRESS' requires also usage of 'UDP_PORT'")

@@ -765,6 +765,9 @@ def init():
     if config.LOG_SERVER and not len(config.LOG_SERVER.split(':')) == 2:
         exit("[!] invalid configuration value for 'LOG_SERVER' ('%s')" % config.LOG_SERVER)
 
+    if config.SYSLOG_SERVER and not len(config.SYSLOG_SERVER.split(':')) == 2:
+        exit("[!] invalid configuration value for 'SYSLOG_SERVER' ('%s')" % config.SYSLOG_SERVER)
+
     if config.CAPTURE_FILTER:
         print("[i] setting capture filter '%s'" % config.CAPTURE_FILTER)
         for _cap in _caps:

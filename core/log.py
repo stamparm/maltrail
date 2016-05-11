@@ -16,12 +16,17 @@ import traceback
 
 from core.common import check_whitelisted
 from core.common import check_sudo
+from core.settings import CEF_FORMAT
 from core.settings import config
 from core.settings import CONDENSE_ON_INFO_KEYWORDS
 from core.settings import CONDENSED_EVENTS_FLUSH_PERIOD
 from core.settings import DEFAULT_ERROR_LOG_PERMISSIONS
 from core.settings import DEFAULT_EVENT_LOG_PERMISSIONS
+from core.settings import HOSTNAME
+from core.settings import NAME
 from core.settings import TIME_FORMAT
+from core.settings import TRAILS_FILE
+from core.settings import VERSION
 
 _thread_data = threading.local()
 
@@ -108,13 +113,23 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                 if not config.DISABLE_LOCAL_LOG_STORAGE:
                     handle = get_event_log_handle(sec)
                     os.write(handle, event)
+
                 if config.LOG_SERVER:
                     remote_host, remote_port = config.LOG_SERVER.split(':')
                     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
                     s.sendto("%s %s" % (sec, event), (remote_host, int(remote_port)))
-                if config.DISABLE_LOCAL_LOG_STORAGE and not config.LOG_SERVER or config.console:
+
+                if config.SYSLOG_SERVER:
+                    extension = "src=%s spt=%s dst=%s dpt=%s" % (src_ip, src_port, dst_ip, dst_port)
+                    _ = CEF_FORMAT.format(syslog_time=time.strftime("%b %d %H:%M:%S", time.gmtime(int(sec))), host=HOSTNAME, device_vendor=NAME, device_product="sensor", device_version=VERSION, signature_id=time.strftime("%Y-%m-%d", time.gmtime(os.path.getctime(TRAILS_FILE))), name=info, severity=0, extension=extension)
+                    remote_host, remote_port = config.SYSLOG_SERVER.split(':')
+                    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                    s.sendto(_, (remote_host, int(remote_port)))
+
+                if config.DISABLE_LOCAL_LOG_STORAGE and not any(config.LOG_SERVER, config.SYSLOG_SERVER) or config.console:
                     sys.stderr.write(event)
                     sys.stderr.flush()
+
             if config.plugin_functions:
                 for _ in config.plugin_functions:
                     _(event_tuple, packet)
