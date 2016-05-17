@@ -622,9 +622,11 @@ glotorrents.pw
 gplus.to
 t.domdex.com
 forestapp.cc
+frog.wix.com
 8.8.4.4
 8.8.8.8
 
 # Sh.ty ad network introducing noise with long subdomain names
 
-# mucocutaneousmyrmecophaga.com
+mucocutaneousmyrmecophaga.com
+scorecardresearch.com
