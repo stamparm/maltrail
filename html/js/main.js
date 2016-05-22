@@ -1464,7 +1464,7 @@ function initDetails() {
                     $.ajax("https://stat.ripe.net/data/dns-chain/data.json?resource=" + ip, { dataType:"jsonp", ip: ip})
                     .done(function(json) {
                         var _ = json.data.reverse_nodes[this.ip];
-                        if ((_.length === 0) || (_ === "localhost")) {
+                        if ((typeof _ === "undefined") || (_.length === 0) || (_ === "localhost")) {
                             _ = "-";
                         }
                         _ = String(_);
