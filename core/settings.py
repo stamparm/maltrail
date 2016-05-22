@@ -24,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.10.118"
+VERSION = "0.10.119"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -354,7 +354,7 @@ def read_whitelist():
                 elif re.search(r"\A\d+\.\d+\.\d+\.\d+/\d+\Z", line):
                     try:
                         prefix, mask = line.split('/')
-                        WHITELIST_RANGES.add((addr_to_int(prefix), int(mask)))
+                        WHITELIST_RANGES.add((addr_to_int(prefix), make_mask(int(mask))))
                     except (IndexError, ValueError):
                         WHITELIST.add(line)
                 else:
@@ -369,7 +369,7 @@ def read_whitelist():
                 elif re.search(r"\A\d+\.\d+\.\d+\.\d+/\d+\Z", line):
                     try:
                         prefix, mask = line.split('/')
-                        WHITELIST_RANGES.add((addr_to_int(prefix), int(mask)))
+                        WHITELIST_RANGES.add((addr_to_int(prefix), make_mask(int(mask))))
                     except (IndexError, ValueError):
                         WHITELIST.add(line)
                 else:
