@@ -394,10 +394,38 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             start, end, size, total = None, None, -1, None
             content = None
-            event_log_path = os.path.join(config.LOG_DIR, "%s.log" % params.get("date", ""))
+            log_exists = False
+            dates = params.get("date", "")
+            if dates.find("_") == -1:
+                event_log_path = os.path.join(config.LOG_DIR, "%s.log" % dates)
+                if os.path.exists(event_log_path):
+                    range_handle = open(event_log_path, "rb")
+                    log_exists = True
+            else:
+                if dates.count("_") == 1:
+                    logs_data = ""
+                    date_interval = dates.split("_")
+                    try:
+                        start_date = datetime.datetime.strptime(date_interval[0], "%Y-%m-%d").date()
+                        end_date = datetime.datetime.strptime(date_interval[1], "%Y-%m-%d").date()
+                        for i in range(int((end_date - start_date).days) + 1):
+                            date = start_date + datetime.timedelta(i)
+                            event_log_path = os.path.join(config.LOG_DIR, "%s.log" % date.strftime("%Y-%m-%d"))
+                            if os.path.exists(event_log_path):
+                                log_handle = open(event_log_path, "rb")
+                                logs_data += log_handle.read()
+                                log_handle.close()
 
-            if os.path.exists(event_log_path):
-                total = os.stat(event_log_path).st_size
+                    except ValueError: 
+                        log_exists = False
+
+                    range_handle = io.BytesIO(logs_data)
+                    log_exists = True
+
+            if log_exists:
+                range_handle.seek(0, 2)
+                total = range_handle.tell()
+                range_handle.seek(0)
 
                 if self.headers.get(HTTP_HEADER.RANGE):
                     match = re.search(r"bytes=(\d+)-(\d+)", self.headers[HTTP_HEADER.RANGE])
@@ -408,7 +436,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         size = end - start + 1
 
                         if start == 0 or not session.range_handle:
-                            session.range_handle = open(event_log_path, "rb")
+                            session.range_handle = range_handle
 
                         if session.netfilters is None:
                             session.range_handle.seek(start)
@@ -485,7 +513,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
                     self.end_headers()
 
-                    with open(event_log_path, "rb") as f:
+                    with range_handle as f:
                         while True:
                             data = f.read(io.DEFAULT_BUFFER_SIZE)
                             if not data:
