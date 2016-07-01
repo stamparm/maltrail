@@ -172,6 +172,13 @@ cat /var/log/maltrail/$(date +"%Y-%m-%d").log
 
 ![Test](https://i.imgur.com/NYJg6Kl.png)
 
+To stop **Sensor** and **Server** instances (if running in background) execute the following:
+
+```
+sudo pkill -f sensor.py
+pkill -f server.py
+```
+
 Access the reporting interface (i.e. **Client**) by visiting the http://127.0.0.1:8338 (default credentials: `admin:changeme!`) from your web browser:
 
 ![Reporting interface](https://i.imgur.com/VAsq8cs.png)
