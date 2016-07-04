@@ -396,31 +396,30 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             content = None
             log_exists = False
             dates = params.get("date", "")
-            if dates.find("_") == -1:
+            if '_' not in dates:
                 event_log_path = os.path.join(config.LOG_DIR, "%s.log" % dates)
                 if os.path.exists(event_log_path):
                     range_handle = open(event_log_path, "rb")
                     log_exists = True
             else:
-                if dates.count("_") == 1:
-                    logs_data = ""
-                    date_interval = dates.split("_")
-                    try:
-                        start_date = datetime.datetime.strptime(date_interval[0], "%Y-%m-%d").date()
-                        end_date = datetime.datetime.strptime(date_interval[1], "%Y-%m-%d").date()
-                        for i in range(int((end_date - start_date).days) + 1):
-                            date = start_date + datetime.timedelta(i)
-                            event_log_path = os.path.join(config.LOG_DIR, "%s.log" % date.strftime("%Y-%m-%d"))
-                            if os.path.exists(event_log_path):
-                                log_handle = open(event_log_path, "rb")
-                                logs_data += log_handle.read()
-                                log_handle.close()
+                logs_data = ""
+                date_interval = dates.split("_", 1)
+                try:
+                    start_date = datetime.datetime.strptime(date_interval[0], "%Y-%m-%d").date()
+                    end_date = datetime.datetime.strptime(date_interval[1], "%Y-%m-%d").date()
+                    for i in xrange(int((end_date - start_date).days) + 1):
+                        date = start_date + datetime.timedelta(i)
+                        event_log_path = os.path.join(config.LOG_DIR, "%s.log" % date.strftime("%Y-%m-%d"))
+                        if os.path.exists(event_log_path):
+                            log_handle = open(event_log_path, "rb")
+                            logs_data += log_handle.read()
+                            log_handle.close()
 
-                    except ValueError: 
-                        log_exists = False
+                except ValueError:
+                    log_exists = False
 
-                    range_handle = io.BytesIO(logs_data)
-                    log_exists = True
+                range_handle = io.BytesIO(logs_data)
+                log_exists = True
 
             if log_exists:
                 range_handle.seek(0, 2)
