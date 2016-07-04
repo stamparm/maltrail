@@ -267,7 +267,7 @@ function initCalHeatmap() {
                     CTRL_DATES.push(date);
                     this.highlight(CTRL_DATES);
                     if (CTRL_DATES.length === 2)
-                        query(date);
+                        query(date, CTRL_DATES[0]);
                 }
             }
         });
@@ -786,7 +786,7 @@ function init(url, from, to) {
                     if (typeof from !== 'undefined') {
                         period += formatDate(from);
                         if (typeof to !== 'undefined')
-                            period += "-" + formatDate(to);
+                            period += "_" + formatDate(to);
                     }
 
                     if (document.title.indexOf("unauthorized") === -1)
@@ -2753,9 +2753,23 @@ $(document).ready(function() {
         to = dayStart(parseDate(getParameterByName("to")));
 });
 
-function query(date) {
+function query(date1, date2) {
     var range = $("#slider").val();
-    var url = location.origin + "/events?date=" + formatDate(date);
+    if (date2 === undefined) {
+        var url = location.origin + "/events?date=" + formatDate(date1);
 
-    init(url, date);
+        init(url, date1);
+    }
+    else {
+        var d1, d2;
+        if (date1 < date2) {
+            d1 = date1; d2 = date2;
+        }
+        else {
+            d1 = date2; d2 = date1;
+        }
+        var url = location.origin + "/events?date=" + formatDate(d1) + "_" + formatDate(d2);
+
+        init(url, d1, d2);
+    }
 }
