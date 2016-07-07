@@ -400,10 +400,15 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             if ".." in dates:
                 pass
             elif '_' not in dates:
-                event_log_path = os.path.join(config.LOG_DIR, "%s.log" % dates)
-                if os.path.exists(event_log_path):
-                    range_handle = open(event_log_path, "rb")
-                    log_exists = True
+                try:
+                    date = datetime.datetime.strptime(dates, "%Y-%m-%d").strftime("%Y-%m-%d")
+                    event_log_path = os.path.join(config.LOG_DIR, "%s.log" % date)
+                    if os.path.exists(event_log_path):
+                        range_handle = open(event_log_path, "rb")
+                        log_exists = True
+                except ValueError:
+                    print "[!] invalid date format in request"
+                    log_exists = False
             else:
                 logs_data = ""
                 date_interval = dates.split("_", 1)
@@ -418,11 +423,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             logs_data += log_handle.read()
                             log_handle.close()
 
+                    range_handle = io.BytesIO(logs_data)
+                    log_exists = True
                 except ValueError:
+                    print "[!] invalid date format in request"
                     log_exists = False
-
-                range_handle = io.BytesIO(logs_data)
-                log_exists = True
 
             if log_exists:
                 range_handle.seek(0, 2)
