@@ -2001,10 +2001,15 @@ function drawInfo(type) {
 
             for (var i = 0; i < _.length; i++) {
                 var date = new Date(_[i][0] * 60 * 60 * 1000);
-
                 if (first) {
-                    if (i % total_days === 0)
-                        labels.push(pad(date.getHours(), 2) + "h");
+                    if (i % total_days === 0) {
+                        var label = "";
+                        if (total_days > 2) {
+                            label += pad(date.getFullYear(), 4) + "-" + pad(date.getMonth(), 2) + "-" + pad(date.getDate(), 2) + " ";
+                        }
+                        label += pad(date.getHours(), 2) + "h";
+                        labels.push(label);
+                    }
                     else
                         labels.push("");
                 }
