@@ -1081,8 +1081,8 @@ function initDetails() {
             { "title": "sensor", "class": "center" },
             { "title": "events", "type": "events", "class": "right" },
             { "title": "severity", "type": "severity", "class": "center" },
-            { "title": "first_seen", "class": "center" },
-            { "title": "last_seen", "class": "center" },
+            { "title": "first_seen", "class": "center", "sType": "date-custom" },
+            { "title": "last_seen", "class": "center", "sType": "date-custom" },
             { "title": "sparkline", "type": "sparkline", "class": "center" },
             { "title": "src_ip", "type": "ip-address", "class": "right" },
             { "title": "src_port", "type": "port", "class": "center" },
@@ -1809,7 +1809,10 @@ jQuery.extend(jQuery.fn.dataTableExt.oSort, {
     "date-custom-pre": function ( a ) {
         var x;
         if ( $.trim(a) !== '' ) {
-            var frDatea = $.trim(a).split(' ');
+            // extract timestamp from "<div title='yyyy-mm-dd hh:mm:ss.ususus'><span class='time-day'>dd<sup>th</sup></span> hh:mm:ss</div>"
+            var frTimestamp = $.trim(a).split("'")[1];
+            
+            var frDatea = frTimestamp.split(' ');
             var frTimea = frDatea[1].split('.')[0].split(':');
             var frUseca = frDatea[1].split('.')[1];
             var frDatea2 = frDatea[0].split('-');
