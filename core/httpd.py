@@ -396,7 +396,10 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             content = None
             log_exists = False
             dates = params.get("date", "")
-            if '_' not in dates:
+
+            if ".." in dates:
+                pass
+            elif '_' not in dates:
                 event_log_path = os.path.join(config.LOG_DIR, "%s.log" % dates)
                 if os.path.exists(event_log_path):
                     range_handle = open(event_log_path, "rb")
