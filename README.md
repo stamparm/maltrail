@@ -451,8 +451,9 @@ This software is provided under under a MIT License. See the accompanying [LICEN
 
 This project is a result of numerous hours of software development. If you appreciate the work and you want to see it further developed, please consider making a donation via [PayPal](https://www.paypal.com/) to `miroslav.stampar@gmail.com` or via [&#x0243;itcoin](bitcoin:1JCtgmpC1eWvdHXrKfvMAunfvcaaMXLP5G) to `1JCtgmpC1eWvdHXrKfvMAunfvcaaMXLP5G`.
 
-Thank you:
+## Thank you
 
 * Thomas Kristner
 * Eduardo Arcusa Les
 * James Lay
+* Ladislav Baco (@laciKE)
