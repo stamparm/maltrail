@@ -900,7 +900,7 @@ def monitor():
         while _caps:
             time.sleep(1)
 
-        print("[i] finished")
+        print("[i] all capturing interfaces closed")
     except SystemError, ex:
         if "error return without" in str(ex):
             print("\r[x] stopping (Ctrl-C pressed)")
