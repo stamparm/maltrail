@@ -880,13 +880,16 @@ def monitor():
         def _(_cap):
             datalink = _cap.datalink()
             while True:
+                success = False
                 try:
                     (header, packet) = _cap.next()
-                    if header is None:
-                        _caps.remove(_cap)
-                        break
-                    packet_handler(datalink, header, packet)
+                    if header is not None:
+                        success = True
+                        packet_handler(datalink, header, packet)
                 except (pcapy.PcapError, socket.timeout):
+                    pass
+
+                if not success:
                     time.sleep(REGULAR_SENSOR_SLEEP_TIME)
 
         if len(_caps) > 1:
