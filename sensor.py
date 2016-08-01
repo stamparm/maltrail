@@ -65,6 +65,7 @@ from core.settings import PORT_SCANNING_THRESHOLD
 from core.settings import read_config
 from core.settings import REGULAR_SENSOR_SLEEP_TIME
 from core.settings import SNAP_LEN
+from core.settings import SUSPICIOUS_CONTENT_TYPES
 from core.settings import SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS
 from core.settings import SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD
 from core.settings import SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD
@@ -269,16 +270,26 @@ def _process_packet(packet, sec, usec, ip_offset):
                 h_size = iph_length + (tcph_length << 2)
                 tcp_data = ip_data[h_size:]
 
-                if config.USE_DEEP_HEURISTICS:
-                    if tcp_data.startswith("HTTP/"):
-                        if any(_ in tcp_data[:tcp_data.find("\r\n\r\n")] for _ in ("X-Sinkhole:", "X-Malware-Sinkhole:", "Server: You got served", "Server: Apache 1.0/SinkSoft", "sinkdns.org")) or "\r\n\r\nsinkhole" in tcp_data:
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, "sinkhole response (malware)", "(heuristic)"), packet)
-                        else:
-                            index = tcp_data.find("<title>")
-                            if index >= 0:
-                                title = tcp_data[index + len("<title>"):tcp_data.find("</title>", index)]
-                                if all(_ in title.lower() for _ in ("this domain", "has been seized")):
-                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, title, "seized domain (suspicious)", "(heuristic)"), packet)
+                if tcp_data.startswith("HTTP/"):
+                    if any(_ in tcp_data[:tcp_data.find("\r\n\r\n")] for _ in ("X-Sinkhole:", "X-Malware-Sinkhole:", "Server: You got served", "Server: Apache 1.0/SinkSoft", "sinkdns.org")) or "\r\n\r\nsinkhole" in tcp_data:
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, "sinkhole response (malware)", "(heuristic)"), packet)
+                    else:
+                        index = tcp_data.find("<title>")
+                        if index >= 0:
+                            title = tcp_data[index + len("<title>"):tcp_data.find("</title>", index)]
+                            if all(_ in title.lower() for _ in ("this domain", "has been seized")):
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, title, "seized domain (suspicious)", "(heuristic)"), packet)
+
+                    content_type = None
+                    first_index = tcp_data.find("\r\nContent-Type:")
+                    if first_index >= 0:
+                        first_index = first_index + len("\r\nContent-Type:")
+                        last_index = tcp_data.find("\r\n", first_index)
+                        if last_index >= 0:
+                            content_type = tcp_data[first_index:last_index].strip().lower()
+
+                    if content_type and content_type in SUSPICIOUS_CONTENT_TYPES:
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, content_type, "content type (suspicious)", "(heuristic)"), packet)
 
                 method, path = None, None
                 index = tcp_data.find("\r\n")
