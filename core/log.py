@@ -121,7 +121,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
 
                 if config.SYSLOG_SERVER:
                     extension = "src=%s spt=%s dst=%s dpt=%s trail=%s ref=%s" % (src_ip, src_port, dst_ip, dst_port, trail, reference)
-                    _ = CEF_FORMAT.format(syslog_time=time.strftime("%b %d %H:%M:%S", time.gmtime(int(sec))), host=HOSTNAME, device_vendor=NAME, device_product="sensor", device_version=VERSION, signature_id=time.strftime("%Y-%m-%d", time.gmtime(os.path.getctime(TRAILS_FILE))), name=info, severity=0, extension=extension)
+                    _ = CEF_FORMAT.format(syslog_time=time.strftime("%b %d %H:%M:%S", time.localtime(int(sec))), host=HOSTNAME, device_vendor=NAME, device_product="sensor", device_version=VERSION, signature_id=time.strftime("%Y-%m-%d", time.localtime(os.path.getctime(TRAILS_FILE))), name=info, severity=0, extension=extension)
                     remote_host, remote_port = config.SYSLOG_SERVER.split(':')
                     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
                     s.sendto(_, (remote_host, int(remote_port)))
