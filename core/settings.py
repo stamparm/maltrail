@@ -24,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.10.133"
+VERSION = "0.10.134"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -302,7 +302,7 @@ def read_config(config_file):
     if config.USE_MULTIPROCESSING:
         print("[x] configuration switch 'USE_MULTIPROCESSING' is deprecated. Please use 'PROCESS_COUNT' instead")
 
-    if config.DISABLE_LOCAL_LOG_STORAGE and not any (config.LOG_SERVER, config.SYSLOG_SERVER):
+    if config.DISABLE_LOCAL_LOG_STORAGE and not any((config.LOG_SERVER, config.SYSLOG_SERVER)):
         print("[x] configuration switch 'DISABLE_LOCAL_LOG_STORAGE' turned on and neither option 'LOG_SERVER' nor 'SYSLOG_SERVER' are set. Falling back to console output of event data")
 
     if config.UDP_ADDRESS is not None and config.UDP_PORT is None:
