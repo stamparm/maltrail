@@ -20,6 +20,7 @@ curlmyip.com
 findmyipaddress.com
 findmyip.org
 formyip.com
+freegeoip.net
 geoip.co.uk
 geoip.vmn.net
 get-myip.com

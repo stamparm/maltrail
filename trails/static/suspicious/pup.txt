@@ -212,3 +212,8 @@ drp.su
 # Reference: https://malwr.com/analysis/ZGVjOTM1NGZlZTgyNDU0ZmFiZmNmZWIzZTc4OGJlNTc/
 
 searchcubed.net
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2016-080910-2648-99&tabid=2
+
+2ndrequest.me
+4threquest.me
