@@ -669,7 +669,7 @@ def init():
     def update_timer():
         retries = 0
         while retries < CHECK_CONNECTION_MAX_RETRIES and not check_connection():
-            sys.stdout.write("[!] can't update because of lack of network connection (waiting..." if not retries else '.')
+            sys.stdout.write("[!] can't update because of lack of Internet connection (waiting..." if not retries else '.')
             sys.stdout.flush()
             time.sleep(10)
             retries += 1
@@ -678,11 +678,10 @@ def init():
             print(")")
 
         if retries == CHECK_CONNECTION_MAX_RETRIES:
-            print("[x] going to continue without update")
-            _ = {}
+            print("[x] going to continue without online update")
+            _ = update_trails(offline=True)
         else:
             _ = update_trails(server=config.UPDATE_SERVER)
-
             update_ipcat()
 
         if _:

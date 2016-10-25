@@ -52,7 +52,7 @@ def _fopen(filepath, mode="rb"):
         _chown(filepath)
     return retval
 
-def update_trails(server=None, force=False):
+def update_trails(server=None, force=False, offline=False):
     """
     Update trails from feeds
     """
@@ -91,7 +91,7 @@ def update_trails(server=None, force=False):
     if not trails and (force or not os.path.isfile(TRAILS_FILE) or (time.time() - os.stat(TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(TRAILS_FILE).st_size == 0 or any(os.stat(_).st_mtime > os.stat(TRAILS_FILE).st_mtime for _ in trail_files)):
         print "[i] updating trails (this might take a while)..."
 
-        if force or config.USE_FEED_UPDATES:
+        if not offline and (force or config.USE_FEED_UPDATES):
             sys.path.append(os.path.abspath(os.path.join(ROOT_DIR, "trails", "feeds")))
             filenames = sorted(glob.glob(os.path.join(sys.path[-1], "*.py")))
         else:

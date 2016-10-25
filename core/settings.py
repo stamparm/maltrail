@@ -24,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.10.140"
+VERSION = "0.10.141"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -36,7 +36,7 @@ IPCAT_CSV_FILE = os.path.join(USERS_DIR, "ipcat.csv")
 IPCAT_SQLITE_FILE = os.path.join(USERS_DIR, "ipcat.sqlite")
 IPCAT_URL = "https://raw.githubusercontent.com/client9/ipcat/master/datacenters.csv"
 CHECK_CONNECTION_URL = "https://www.github.com"
-CHECK_CONNECTION_MAX_RETRIES = 10
+CHECK_CONNECTION_MAX_RETRIES = 3
 TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 HTTP_DEFAULT_PORT = 8338
 HTTP_TIME_FORMAT = "%a, %d %b %Y %H:%M:%S GMT"  # Reference: http://stackoverflow.com/a/225106
