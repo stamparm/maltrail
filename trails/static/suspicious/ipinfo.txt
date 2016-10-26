@@ -151,6 +151,7 @@ vermiip.es
 vinflag.com
 whatismybrowser.com
 whatismyipaddress.com
+whatismyip.akamai.com
 whatismyip.ca
 whatismyip.com
 whatismyip.com.br
