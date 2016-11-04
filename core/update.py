@@ -253,6 +253,7 @@ def main():
     try:
         update_trails(force=True)
         update_ipcat()
+        print TRAILS_FILE
     except KeyboardInterrupt:
         print "\r[x] Ctrl-C pressed"
     else:
