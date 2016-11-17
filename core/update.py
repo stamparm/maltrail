@@ -15,6 +15,7 @@ import subprocess
 import sys
 import time
 import urllib
+import urlparse
 
 sys.dont_write_bytecode = True
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))  # to enable calling from current directory too
@@ -62,12 +63,12 @@ def update_trails(server=None, force=False, offline=False):
 
     if server:
         print "[i] retrieving trails from provided 'UPDATE_SERVER' server..."
-        _ = retrieve_content(server)
-        if not _:
+        content = retrieve_content(server)
+        if not content:
             exit("[!] unable to retrieve data from '%s'" % server)
         else:
             with _fopen(TRAILS_FILE, "w+b") as f:
-                f.write(_)
+                f.write(content)
             trails = load_trails()
 
     trail_files = set()
@@ -132,6 +133,33 @@ def update_trails(server=None, force=False, offline=False):
                             print "[x] something went wrong during remote data retrieval ('%s')" % module.__url__
                     except Exception, ex:
                         print "[x] something went wrong during processing of feed file '%s' ('%s')" % (filename, ex)
+
+        # custom trails from remote location
+        if config.CUSTOM_TRAILS_URL:
+            print(" [o] '(remote custom)'%s" % (" " * 20))
+            content = retrieve_content(config.CUSTOM_TRAILS_URL)
+            if not content:
+                exit("[!] unable to retrieve data (or empty response) from '%s'" % config.CUSTOM_TRAILS_URL)
+            else:
+                url = config.CUSTOM_TRAILS_URL
+                url = ("http://%s" % url) if not "//" in url else url
+                __info__ = "(remote custom)"
+                __reference__ = urlparse.urlsplit(url).netloc
+                for line in content.split('\n'):
+                    line = line.strip()
+                    if not line or line.startswith('#'):
+                        continue
+                    line = re.sub(r"\s*#.*", "", line)
+                    if '://' in line:
+                        line = re.search(r"://(.*)", line).group(1)
+                    line = line.rstrip('/')
+                    if '/' in line:
+                        trails[line] = (__info__, __reference__)
+                        line = line.split('/')[0]
+                    elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", line):
+                        trails[line] = (__info__, __reference__)
+                    else:
+                        trails[line.strip('.')] = (__info__, __reference__)
 
         # basic cleanup
         for key in trails.keys():
