@@ -978,7 +978,8 @@ if __name__ == "__main__":
     except SystemExit, ex:
         show_final = False
 
-        print(ex)
+        if not isinstance(getattr(ex, "message"), int):
+            print(ex)
     except IOError:
         show_final = False
         log_error("\n\n[!] session abruptly terminated\n[?] (hint: \"https://stackoverflow.com/a/20997655\")")
