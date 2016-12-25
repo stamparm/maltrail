@@ -538,7 +538,7 @@ bam.nr-data.net
 
 # Spam checking service
 
-ctmail.co
+ctmail.com
 
 # Reference: https://github.com/hanzhang0116/BotDigger/blob/dff7f5f367932eb91e807d5beac7316c35e27a7f/OverloadDNSWebsites
 
