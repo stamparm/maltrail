@@ -52,6 +52,9 @@ def retrieve_content(url, data=None, headers=None):
     except Exception, ex:
         retval = ex.read() if hasattr(ex, "read") else getattr(ex, "msg", str())
 
+        if url.startswith("https://") and "handshake failure" in retval:
+            return retrieve_content(url.replace("https://", "http://"), data, headers)
+
     return retval or ""
 
 def ipcat_lookup(address):
