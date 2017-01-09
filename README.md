@@ -458,3 +458,4 @@ This project is a result of numerous hours of software development. If you appre
 * Eduardo Arcusa Les
 * James Lay
 * Ladislav Baco (@laciKE)
+* John Kristoff (@jtkdpu)
