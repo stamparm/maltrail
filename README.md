@@ -42,18 +42,16 @@ alienvault, autoshun, badips, bambenekconsultingc2dns,
 bambenekconsultingc2ip, bambenekconsultingdga, bitcoinnodes,
 blocklist, botscout, bruteforceblocker, ciarmy, cruzit,
 cybercrimetracker, deepviz, dataplanesipinvitation,
-dataplanesipquery, dataplanesipregistration, dataplanesshclient,
-dataplanesshpwauth, dragonresearchgroupssh, dragonresearchgroupvnc,
-dshielddns, dshieldip, emergingthreatsbot, emergingthreatscip,
-emergingthreatsdns, feodotrackerdns, malwaredomainlist,
-malwaredomains, malwarepatrol, maxmind, myip, nothink, openbl,
-openphish, packetmailcarisirt, packetmailramnode, palevotracker,
-policeman, proxylists, proxyrss, proxy, ransomwaretrackerdns,
-ransomwaretrackerip, ransomwaretrackerurl, riproxies, rutgers,
-sblam, securityresearch, snort, socksproxy, sslipbl, sslproxies,
-torproject, torstatus, turris, urlvir, voipbl, vxvault,
-zeustrackerdns, zeustrackerip, zeustrackermonitor, zeustrackerurl,
-etc.
+dataplanesipquery, dataplane, dshielddns, dshieldip, 
+emergingthreatsbot, emergingthreatscip, emergingthreatsdns,
+feodotrackerdns, malwaredomainlist, malwaredomains, malwarepatrol,
+maxmind, myip, nothink, openbl, openphish, packetmailcarisirt,
+packetmailramnode, palevotracker, policeman, proxylists, proxyrss,
+proxy, ransomwaretrackerdns, ransomwaretrackerip,
+ransomwaretrackerurl, riproxies, rutgers, sblam, securityresearch,
+snort, socksproxy, sslipbl, sslproxies, torproject, torstatus,
+turris, urlvir, voipbl, vxvault, zeustrackerdns, zeustrackerip,
+zeustrackermonitor, zeustrackerurl, etc.
 ```
 
 As of static entries, the trails for the following malicious entities (e.g. malware C&Cs or sinkholes) have been manually included (from various AV reports and personal research):
