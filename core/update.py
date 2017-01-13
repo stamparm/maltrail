@@ -42,7 +42,7 @@ def _chown(filepath):
         try:
             os.chown(filepath, int(os.environ.get("SUDO_UID", -1)), int(os.environ.get("SUDO_GID", -1)))
         except Exception, ex:
-            print "[x] '%s'" % ex
+            print "[w] Cannot chown %s: '%s'" % (filepath, ex)
 
 def _fopen(filepath, mode="rb"):
     retval = open(filepath, mode)
