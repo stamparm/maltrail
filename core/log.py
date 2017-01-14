@@ -33,8 +33,8 @@ _thread_data = threading.local()
 def create_log_directory():
     if not os.path.isdir(config.LOG_DIR):
         if check_sudo() is False:
-            exit("[!] please run with sudo/Administrator privileges")
-        os.makedirs(config.LOG_DIR)
+            exit("[!] please rerun with sudo/Administrator privileges")
+        os.makedirs(config.LOG_DIR, 0755)
     print("[i] using '%s' for log storage" % config.LOG_DIR)
 
 def get_event_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):

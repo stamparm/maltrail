@@ -86,8 +86,8 @@ def main():
         thread.daemon = True
         thread.start()
 
-    if config.UDP_ADDRESS and config.UDP_PORT and config.UDP_PORT <= 1024:
-        if check_sudo() is False:
+    if config.UDP_ADDRESS and config.UDP_PORT:
+        if config.UDP_PORT <= 1024 and check_sudo() is False:
             exit("[!] please run '%s' with sudo/Administrator privileges when using 'UDP_ADDRESS' configuration value" % __file__)
 
         create_log_directory()
