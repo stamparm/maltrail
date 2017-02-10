@@ -21,6 +21,7 @@ sys.dont_write_bytecode = True
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))  # to enable calling from current directory too
 
 from core.addr import addr_to_int
+from core.common import bogon_ip
 from core.common import cdn_ip
 from core.common import check_whitelisted
 from core.common import load_trails
@@ -208,7 +209,7 @@ def update_trails(server=None, force=False, offline=False):
         for key in trails.keys():
             if check_whitelisted(key) or any(key.startswith(_) for _ in BAD_TRAIL_PREFIXES):
                 del trails[key]
-            elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key) and cdn_ip(key):
+            elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key) and (bogon_ip(key) or cdn_ip(key)):
                 del trails[key]
             else:
                 try:

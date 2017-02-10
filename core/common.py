@@ -18,6 +18,7 @@ import zlib
 
 from core.addr import addr_to_int
 from core.addr import int_to_addr
+from core.settings import BOGON_RANGES
 from core.settings import CHECK_CONNECTION_URL
 from core.settings import CDN_RANGES
 from core.settings import NAME
@@ -115,6 +116,20 @@ def cdn_ip(address):
     try:
         _ = addr_to_int(address)
         for prefix, mask in CDN_RANGES.get(address.split('.')[0], {}):
+            if _ & mask == prefix:
+                return True
+    except (IndexError, ValueError):
+        pass
+
+    return False
+
+def bogon_ip(address):
+    if not address:
+        return False
+
+    try:
+        _ = addr_to_int(address)
+        for prefix, mask in BOGON_RANGES.get(address.split('.')[0], {}):
             if _ & mask == prefix:
                 return True
     except (IndexError, ValueError):

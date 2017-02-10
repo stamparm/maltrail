@@ -24,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.10.169"
+VERSION = "0.10.170"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -102,6 +102,7 @@ SUSPICIOUS_UA_REGEX = ""
 OBSOLETE_UA_REGEX = r"(?i)windows NT [3-5]\.\d+|windows (3\.\d+|95|98|xp)|MSIE [1-6]\.\d+|Navigator/|Safari/[1-4]|Opera/[1-3]|Firefox/1?[0-9]\."
 WEB_SHELLS = set()
 WORST_ASNS = {}
+BOGON_RANGES = {}
 CDN_RANGES = {}
 WHITELIST_HTTP_REQUEST_PATHS = ("fql", "yql", "ads", "../images/", "../themes/", "../design/", "../scripts/", "../assets/", "../core/", "../js/", "/gwx/")
 WHITELIST_UA_KEYWORDS = ("AntiVir-NGUpd", "TMSPS", "AVGSETUP", "SDDS", "Sophos", "Symantec", "internal dummy connection")
@@ -438,9 +439,25 @@ def read_cdn_ranges():
                     prefix, mask = line.split('/')
                     CDN_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
 
+def read_bogon_ranges():
+    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "bogon_ranges.txt"))
+    if os.path.isfile(_):
+        with open(_, "r") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                else:
+                    key = line.split('.')[0]
+                    if key not in BOGON_RANGES:
+                        BOGON_RANGES[key] = []
+                    prefix, mask = line.split('/')
+                    BOGON_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
+
 if __name__ != "__main__":
     read_whitelist()
     read_ua()
     read_web_shells()
     read_worst_asn()
     read_cdn_ranges()
+    read_bogon_ranges()
