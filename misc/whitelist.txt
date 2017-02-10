@@ -4,6 +4,22 @@
 localhost
 127.0.0.1
 
+# localnet/bogon addresses (e.g. appeared at voipbl.org - 100.64.0.50, 100.64.1.22, etc.)
+
+0.0.0.0/8
+10.0.0.0/8
+100.64.0.0/10
+127.0.0.0/8
+169.254.0.0/16
+172.16.0.0/12
+192.0.0.0/24
+192.0.2.0/24
+192.168.0.0/16
+198.18.0.0/15
+198.51.100.0/24
+203.0.113.0/24
+224.0.0.0/3
+
 # triggering suspicious (sub)domain names (note: this is not whitelist-ing all related (e.g. URL) trails)
 
 1e100.net
