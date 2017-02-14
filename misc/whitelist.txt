@@ -8,6 +8,7 @@ localhost
 
 1e100.net
 2o7.net
+adcash.com
 adsk2.co
 akadns.net
 akamaiedge.net
