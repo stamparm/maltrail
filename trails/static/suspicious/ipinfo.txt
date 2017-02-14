@@ -1,6 +1,7 @@
 # Copyright (c) 2014-2017 Miroslav Stampar (@stamparm)
 # See the file 'LICENSE' for copying permission
 
+2ip.ru
 2ip.tools
 aboutmyip.com
 api.wipmania.com
@@ -22,6 +23,7 @@ findmyip.org
 formyip.com
 freegeoip.net
 geoip.co.uk
+geoiptool.com
 geoip.vmn.net
 get-myip.com
 getmyip.co.uk
@@ -30,22 +32,27 @@ icanhazip.com
 ifconfig.co
 ifconfig.me
 inet-ip.info
+ip138.com
 ip-1.com
+ip2location.com
+ip2nation.com
 ip4.me
 ip-addr.es
 ip-address.cc
 ipaddresscheck.com
 ipaddress.com
 ipaddress.org
+ip-address.ru
 ip-adress.com
 ip-adress.eu
 ip.amulex.com
+ip.anysrc.net
 ip-api.com
-ip-ping.ru
 ip.cctv.pk
 ipchecker.info
 ip-check.info
 ipchicken.com
+ip.cn
 ip-detect.net
 ipify.org
 ipinfodb.com
@@ -55,11 +62,18 @@ ip-info.org
 ip-info.xyz
 ipleak.net
 iplocation.net
+iplogger.ru
+ipmonkey.com
 ip.my-proxy.com
+ip-ping.ru
+ip-score.com
 ip.taobao.com
 ip.telize.com
+ip.tool.la
 iptrackeronline.com
 ip.tyk.nu
+ip.webmasterhome.cn
+ip-who-is.com
 j.maxmind.com
 l2.io
 meip.eu
@@ -68,7 +82,6 @@ mon-ip.com
 mycamip.com
 myexternalip.com
 myglobalip.com
-myip.dnsdynamic.org
 myipaddress.com
 myip.am
 myip.by
@@ -83,6 +96,8 @@ myip.com.ua
 myip.co.nz
 myip.cz
 myip.dk
+myip.dnsdynamic.org
+myip.dnsomatic.com
 myip.dramor.net
 myip.easylife.tw
 myip.es
@@ -99,6 +114,7 @@ myip.is
 myip.israel.net
 myip.jacware.com
 myip.knet.ca
+myip.kz
 myip.ma
 myip.ms
 myip.mudfish.net
@@ -112,6 +128,7 @@ myipnow.com
 myip.nu
 myipnumber.com
 myiponline.com
+myip.ozymo.com
 myip.report
 myip.rs.sr
 myip.ru
@@ -133,6 +150,7 @@ readip.info
 shmyip.com
 show-ip.com
 showipinfo.net
+showip.net
 showmemyip.com
 showmyipaddress.com
 showmyipaddress.eu
@@ -146,6 +164,7 @@ smart-ip.net
 tell-my-ip.com
 tracemyip.com
 tracemyip.org
+trackip.net
 ultratools.com
 utrace.de
 vermiip.es
@@ -173,6 +192,7 @@ whoer.net
 wtfismyip.com
 xmyip.com
 yougetsignal.com
+youip.net
 your-ip-address.com
 your-ip-fast.com
 yourip.us
