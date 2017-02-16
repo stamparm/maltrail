@@ -1439,3 +1439,5 @@
 98.189.26.18    # scan.sba-research.org
 
 93.113.125.11   # nlpproject.info
+
+104.225.9.70    # 5thcolumn.net
