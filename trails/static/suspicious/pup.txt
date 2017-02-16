@@ -217,3 +217,27 @@ searchcubed.net
 
 2ndrequest.me
 4threquest.me
+
+# Reference: https://malwaretips.com/blogs/pup-optional-nextlive-a-removal/
+
+newnext.me
+
+# Reference: https://malwaretips.com/blogs/pup-optional-remarkit-a-removal/
+
+re-markit.co
+
+# Reference: https://malwaretips.com/blogs/remove-chedot-ads/
+
+chedot.com
+
+# Reference: https://malwaretips.com/blogs/remove-advanced-pc-tuneup/
+
+advancedpctuneup.com
+
+# Reference: https://malwaretips.com/blogs/remove-scanguard-virus/
+
+scanguard.com
+
+# Reference: https://malwaretips.com/blogs/remove-pro-pc-cleaner-virus/
+
+propccleaner.com
