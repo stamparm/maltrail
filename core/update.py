@@ -62,6 +62,14 @@ def update_trails(server=None, force=False, offline=False):
     trails = {}
     duplicates = {}
 
+    try:
+        if not os.path.isdir(USERS_DIR):
+            os.makedirs(USERS_DIR, 0755)
+    except Exception, ex:
+        exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
+
+    _chown(USERS_DIR)
+
     if server:
         print "[i] retrieving trails from provided 'UPDATE_SERVER' server..."
         content = retrieve_content(server)
@@ -81,14 +89,6 @@ def update_trails(server=None, force=False, offline=False):
         for dirpath, dirnames, filenames in os.walk(os.path.abspath(os.path.join(ROOT_DIR, os.path.expanduser(config.CUSTOM_TRAILS_DIR)))) :
             for filename in filenames:
                 trail_files.add(os.path.abspath(os.path.join(dirpath, filename)))
-
-    try:
-        if not os.path.isdir(USERS_DIR):
-            os.makedirs(USERS_DIR, 0755)
-    except Exception, ex:
-        exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
-
-    _chown(USERS_DIR)
 
     if not trails and (force or not os.path.isfile(TRAILS_FILE) or (time.time() - os.stat(TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(TRAILS_FILE).st_size == 0 or any(os.stat(_).st_mtime > os.stat(TRAILS_FILE).st_mtime for _ in trail_files)):
         print "[i] updating trails (this might take a while)..."
