@@ -19,7 +19,7 @@ def fetch():
     if __check__ in content:
         for line in content.split('\n'):
             line = line.strip().lower()
-            if not line or line.startswith('#') or '.' not in line:
+            if not line or line.startswith('#') or '.' not in line or line in ("api.ipify.org",):
                 continue
             retval[line] = (__info__, __reference__)
 
