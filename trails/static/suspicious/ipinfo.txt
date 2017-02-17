@@ -54,6 +54,7 @@ ip-check.info
 ipchicken.com
 ip.cn
 ip-detect.net
+ipecho.net
 ipify.org
 ipinfodb.com
 ipinfo.info
