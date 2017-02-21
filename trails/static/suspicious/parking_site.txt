@@ -12,6 +12,9 @@ parkingcrew.net
 185.53.179.8
 185.53.179.9
 185.53.179.29
+162.255.119.149
+192.64.119.91
+198.54.117.212
 
 ns1.parked.com
 ns2.parked.com
@@ -3412,3 +3415,8 @@ sedoparking.com
 
 54.88.133.92
 52.1.32.25
+
+# Uniform Rapid Suspension System (URS)
+
+207.250.29.221
+207.250.29.220
