@@ -25,6 +25,7 @@ freegeoip.net
 geoip.co.uk
 geoiptool.com
 geoip.vmn.net
+geoplugin.net
 get-myip.com
 getmyip.co.uk
 getmyip.org
