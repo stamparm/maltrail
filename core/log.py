@@ -109,6 +109,16 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                         _thread_data.condensed_events[key].append(event_tuple)
                         return
 
+                if getattr(_thread_data, "log_sec", None) != sec:  # log throttling
+                    _thread_data.log_sec = sec
+                    _thread_data.log_trails = set()
+                else:
+                    if any(_ in _thread_data.log_trails for _ in ((src_ip, trail), (dst_ip, trail))):
+                        return
+                    else:
+                        _thread_data.log_trails.add((src_ip, trail))
+                        _thread_data.log_trails.add((dst_ip, trail))
+
                 event = "%s %s %s\n" % (safe_value(localtime), safe_value(config.SENSOR_NAME), " ".join(safe_value(_) for _ in event_tuple[2:]))
                 if not config.DISABLE_LOCAL_LOG_STORAGE:
                     handle = get_event_log_handle(sec)
