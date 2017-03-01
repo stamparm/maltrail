@@ -105,6 +105,9 @@ def update_trails(server=None, force=False, offline=False):
 
         filenames = [_ for _ in filenames if "__init__.py" not in _]
 
+        if config.DISABLED_FEEDS:
+            filenames = [filename for filename in filenames if os.path.splitext(os.path.split(filename)[-1])[0] not in re.split(r"[^\w]+", config.DISABLED_FEEDS)]
+
         for i in xrange(len(filenames)):
             filename = filenames[i]
 

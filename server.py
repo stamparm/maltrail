@@ -94,7 +94,9 @@ def main():
         start_logd(address=config.UDP_ADDRESS, port=config.UDP_PORT, join=False)
 
     try:
-        update_timer()
+        if config.USE_SERVER_UPDATE_TRAILS:
+            update_timer()
+
         start_httpd(address=config.HTTP_ADDRESS, port=config.HTTP_PORT, pem=config.SSL_PEM if config.USE_SSL else None, join=True)
     except KeyboardInterrupt:
         print("\r[x] stopping (Ctrl-C pressed)")
