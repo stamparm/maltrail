@@ -245,3 +245,11 @@ propccleaner.com
 # Reference: https://malwaretips.com/blogs/remove-pixel-uprise-website/
 
 uprise.website
+
+# Reference: https://www.virustotal.com/en/domain/initilizeinstall.net/information/
+
+initilizeinstall.net
+
+# Reference: https://www.virustotal.com/en/domain/resume-install.net/information/
+
+resume-install.net
