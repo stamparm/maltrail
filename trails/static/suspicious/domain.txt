@@ -4949,3 +4949,21 @@ co.be
 # Reference: http://blog.unmaskparasites.com/2012/07/26/runforestrun-now-encrypts-legitimate-js-files/
 
 waw.pl
+
+# Reference: http://www.networkworld.com/article/3091754/security/the-new-internet-domains-are-a-wasteland.html
+
+.xyz
+.domain
+.website
+.info
+.review
+.club
+.date
+.racing
+.download
+.top
+.gdn
+.bid
+.museum
+.mobi
+.stream.
