@@ -241,3 +241,7 @@ scanguard.com
 # Reference: https://malwaretips.com/blogs/remove-pro-pc-cleaner-virus/
 
 propccleaner.com
+
+# Reference: https://malwaretips.com/blogs/remove-pixel-uprise-website/
+
+uprise.website
