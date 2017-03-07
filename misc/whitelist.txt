@@ -230,6 +230,13 @@ s3.amazonaws.com
 # appeared on malc0de.com
 
 msecnd.net
+lang-8.com
+popads.net
+c1.popads.net
+
+# appeared on malwarepatrol.net
+
+hdwallpapers.in
 
 # triggering suspicious http request
 
