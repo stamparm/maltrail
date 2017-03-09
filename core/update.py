@@ -98,7 +98,7 @@ def update_trails(server=None, force=False, offline=False):
             if _ not in sys.path:
                 sys.path.append(_)
 
-            filenames = sorted(glob.glob(os.path.join(sys.path[-1], "*.py")))
+            filenames = sorted(glob.glob(os.path.join(_, "*.py")))
         else:
             filenames = []
 
@@ -106,8 +106,8 @@ def update_trails(server=None, force=False, offline=False):
         if _ not in sys.path:
             sys.path.append(_)
 
-        filenames += [os.path.join(sys.path[-1], "static")]
-        filenames += [os.path.join(sys.path[-1], "custom")]
+        filenames += [os.path.join(_, "static")]
+        filenames += [os.path.join(_, "custom")]
 
         filenames = [_ for _ in filenames if "__init__.py" not in _]
 
