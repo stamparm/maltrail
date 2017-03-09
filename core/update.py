@@ -94,12 +94,18 @@ def update_trails(server=None, force=False, offline=False):
         print "[i] updating trails (this might take a while)..."
 
         if not offline and (force or config.USE_FEED_UPDATES):
-            sys.path.append(os.path.abspath(os.path.join(ROOT_DIR, "trails", "feeds")))
+            _ = os.path.abspath(os.path.join(ROOT_DIR, "trails", "feeds"))
+            if _ not in sys.path:
+                sys.path.append(_)
+
             filenames = sorted(glob.glob(os.path.join(sys.path[-1], "*.py")))
         else:
             filenames = []
 
-        sys.path.append(os.path.abspath(os.path.join(ROOT_DIR, "trails")))
+        _ = os.path.abspath(os.path.join(ROOT_DIR, "trails"))
+        if _ not in sys.path:
+            sys.path.append(_)
+
         filenames += [os.path.join(sys.path[-1], "static")]
         filenames += [os.path.join(sys.path[-1], "custom")]
 
@@ -137,6 +143,12 @@ def update_trails(server=None, force=False, offline=False):
                             print "[x] something went wrong during remote data retrieval ('%s')" % module.__url__
                     except Exception, ex:
                         print "[x] something went wrong during processing of feed file '%s' ('%s')" % (filename, ex)
+
+            try:
+                sys.modules.pop(module.__name__)
+                del module
+            except Exception:
+                pass
 
         # custom trails from remote location
         if config.CUSTOM_TRAILS_URL:
