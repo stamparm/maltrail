@@ -588,25 +588,28 @@
 107.150.52.85  # probe03.projectblindferret.com
 107.150.52.86  # probe04.projectblindferret.com
 
-198.20.87.98  # border.census.shodan.io
+198.20.87.98    # border.census.shodan.io
 66.240.192.138  # census8.shodan.io
 66.240.236.119  # census6.shodan.io
-71.6.135.131  # census7.shodan.io
-71.6.165.200  # census12.shodan.io
-71.6.167.142  # census9.shodan.io
-82.221.105.6  # census10.shodan.io
-82.221.105.7  # census11.shodan.io
-85.25.43.94  # rim.census.shodan.io
-85.25.103.50  # pacific.census.shodan.io
-93.120.27.62  # census5.shodan.io m247.ro.shodan.io
-104.131.0.69  # hello.data.shodan.io
-188.138.9.50  # atlantic.census.shodan.io
+71.6.135.131    # census7.shodan.io
+71.6.165.200    # census12.shodan.io
+71.6.167.142    # census9.shodan.io
+82.221.105.6    # census10.shodan.io
+82.221.105.7    # census11.shodan.io
+85.25.43.94     # rim.census.shodan.io
+85.25.103.50    # pacific.census.shodan.io
+93.120.27.62    # census5.shodan.io m247.ro.shodan.io
+104.131.0.69    # hello.data.shodan.io
+188.138.9.50    # atlantic.census.shodan.io
 209.126.110.38  # atlantic.dns.shodan.io
-198.20.69.74  # census1.shodan.io
-198.20.69.98  # census2.shodan.io
-198.20.70.114  # census3.shodan.io
-198.20.99.130  # census4.shodan.io
-    
+198.20.69.74    # census1.shodan.io
+198.20.69.98    # census2.shodan.io
+198.20.70.114   # census3.shodan.io
+198.20.99.130   # census4.shodan.io
+71.6.146.185    # pirate.census.shodan.io
+71.6.158.166    # ninja.census.shodan.io
+93.174.95.106   # battery.census.shodan.io
+
 74.82.47.1  # (unknown)
 74.82.47.2  # scan-09.shadowserver.org
 74.82.47.3  # scan-10.shadowserver.org
@@ -1441,3 +1444,5 @@
 93.113.125.11   # nlpproject.info
 
 104.225.9.70    # 5thcolumn.net
+
+129.250.206.86  # telnetscanproject.org
