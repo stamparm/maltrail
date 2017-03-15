@@ -609,6 +609,12 @@
 71.6.146.185    # pirate.census.shodan.io
 71.6.158.166    # ninja.census.shodan.io
 93.174.95.106   # battery.census.shodan.io
+66.240.219.146  # burger.census.shodan.io
+71.6.146.186    # inspire.census.shodan.io
+89.248.167.131  # mason.census.shodan.io
+89.248.172.16   # house.census.shodan.io
+94.102.49.193   # cloud.census.shodan.io
+94.102.49.190   # flower.census.shodan.io
 
 74.82.47.1  # (unknown)
 74.82.47.2  # scan-09.shadowserver.org
