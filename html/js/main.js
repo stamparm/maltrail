@@ -499,11 +499,14 @@ function init(url, from, to) {
             for (var i = 0; i < total; i++) {
                 var data = results.data[i];
 
-                if (data.length < LOG_COLUMNS_SIZE)
+                if (data.length !== LOG_COLUMNS_SIZE)
                     continue;
 
                 var trail = data[LOG_COLUMNS.TRAIL];
                 var type = data[LOG_COLUMNS.TYPE];
+
+                if (type.match(/^[A-Z]+$/) === null)
+                    continue;
 
                 if (!(type in TRAIL_TYPES))
                     TRAIL_TYPES[type] = PREFERRED_TRAIL_COLORS[type] || getHashColor(type);
@@ -534,7 +537,7 @@ function init(url, from, to) {
             for (var i = 0; i < results.data.length; i++) {
                 var data = results.data[i], threat_text, threat_data, match, _;
 
-                if (data.length < LOG_COLUMNS_SIZE)
+                if (data.length !== LOG_COLUMNS_SIZE)
                     continue;
 
                 var time = data[LOG_COLUMNS.TIME];
@@ -542,6 +545,9 @@ function init(url, from, to) {
                 var type = data[LOG_COLUMNS.TYPE];
                 var info = data[LOG_COLUMNS.INFO];
                 var reference = data[LOG_COLUMNS.REFERENCE];
+
+                if (type.match(/^[A-Z]+$/) === null)
+                    continue;
 
                 _ = data[LOG_COLUMNS.TRAIL];
                 _ = charTrim(charTrim(_.replace(/\([^)]+\)/g, ""), ' '), '.');
