@@ -513,7 +513,10 @@ def _process_packet(packet, sec, usec, ip_offset):
                             type_, class_ = struct.unpack("!HH", dns_data[offset + 1:offset + 5])
 
                             if len(parts) > 2:
-                                domain = '.'.join(parts[-2:])
+                                if len(parts) > 3 and len(parts[-2]) <= 3:
+                                    domain = '.'.join(parts[-3:])
+                                else:
+                                    domain = '.'.join(parts[-2:])
 
                                 if not _check_domain_whitelisted(domain):  # e.g. <hash>.hashserver.cs.trendmicro.com
                                     if (sec - (_subdomains_sec or 0)) > DAILY_SECS:

@@ -4955,7 +4955,6 @@ waw.pl
 .xyz
 .domain
 .website
-.info
 .review
 .club
 .date
@@ -4966,4 +4965,4 @@ waw.pl
 .bid
 .museum
 .mobi
-.stream.
+.stream
