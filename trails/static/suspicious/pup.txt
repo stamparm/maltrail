@@ -253,3 +253,8 @@ initilizeinstall.net
 # Reference: https://www.virustotal.com/en/domain/resume-install.net/information/
 
 resume-install.net
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2017-031320-5331-99&tabid=2
+
+ustechsupport.com
+
