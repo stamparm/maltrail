@@ -655,8 +655,6 @@ yn.ch
 3322.org
 3322.org.cn
 345.pl
-3d-game.com
-4irc.com
 5166.info
 62ip.net
 6600.org
@@ -686,8 +684,6 @@ au.mn
 au.ms
 au.tc
 avssk.com
-b0ne.com
-bbsindex.com
 be.ma
 be.tc
 bee.pl
@@ -717,7 +713,6 @@ ch.ma
 ch.tc
 ch.tf
 ch.vu
-chatnook.com
 check-it-out.nl
 chorizo.es
 churros.es
@@ -751,7 +746,6 @@ de.gg
 de.ms
 de.tc
 de.tf
-deaftone.com
 dhis.org
 dk.tc
 dns0755.net
@@ -760,7 +754,6 @@ dynamicdomain.net
 dzw.tv
 edu.tc
 edu.tf
-effers.com
 eicp.net
 elguay.com
 elguay.es
@@ -774,7 +767,6 @@ eu.org
 eu.tc
 eu.tf
 findhere.org
-flnet.org
 flu.cc
 fnb.cc
 fr.am
@@ -793,7 +785,6 @@ glf777.com
 glx.nl
 go2ip.cn
 gogoblog.net
-gotgeeks.com
 gv.vg
 h1.ru
 h10.ru
@@ -930,7 +921,6 @@ rr.nu
 ru.tc
 ru.tf
 sarl.tk
-scieron.com
 se.tc
 securityexploits.com
 selfhost.nl
@@ -948,13 +938,10 @@ site88.net
 site90.com
 site90.net
 slx.nl
-slyip.com
-slyip.net
 stx.nl
 sub.cat
 sub.es
 sub.name
-suroot.com
 tc
 team.pro
 th.tc
@@ -1046,7 +1033,6 @@ ddo.jp
 dhis.org
 dnserver.com
 dot.tk
-dtdns.com
 dy.fi
 eu.org
 europnic.com
