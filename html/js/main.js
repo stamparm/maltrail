@@ -752,6 +752,8 @@ function init(url, from, to) {
 
                     if (data[LOG_COLUMNS.REFERENCE].contains("(custom)"))
                         severity = SEVERITY.HIGH;
+                    else if (data[LOG_COLUMNS.REFERENCE].contains("(remote custom)"))
+                        severity = SEVERITY.HIGH;
                     else if (data[LOG_COLUMNS.INFO].contains("potential malware site"))
                         severity = SEVERITY.MEDIUM;
                     else if (data[LOG_COLUMNS.REFERENCE].contains("malwaredomainlist"))
