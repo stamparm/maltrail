@@ -101,6 +101,7 @@ myip.dk
 myip.dnsdynamic.org
 myip.dnsomatic.com
 myip.dramor.net
+myip.dtdns.com
 myip.easylife.tw
 myip.es
 myip.eu
