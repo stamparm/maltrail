@@ -159,8 +159,8 @@ def update_trails(server=None, force=False, offline=False):
             else:
                 url = config.CUSTOM_TRAILS_URL
                 url = ("http://%s" % url) if not "//" in url else url
-                __info__ = "(remote custom)"
-                __reference__ = urlparse.urlsplit(url).netloc
+                __info__ = "blacklisted"
+                __reference__ = "(remote custom)"  # urlparse.urlsplit(url).netloc
                 for line in content.split('\n'):
                     line = line.strip()
                     if not line or line.startswith('#'):
