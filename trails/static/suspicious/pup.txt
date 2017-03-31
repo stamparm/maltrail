@@ -258,3 +258,9 @@ resume-install.net
 
 ustechsupport.com
 
+# Reference: http://software.sonicwall.com/applications/gav/index.asp?ev=v&v_id=21164
+
+www.installtrk.com
+stats.crossrider.com
+app-static.crossrider.com
+cotssl.crossrider.com
