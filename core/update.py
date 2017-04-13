@@ -59,6 +59,7 @@ def update_trails(server=None, force=False, offline=False):
     Update trails from feeds
     """
 
+    success = False
     trails = {}
     duplicates = {}
 
@@ -169,6 +170,10 @@ def update_trails(server=None, force=False, offline=False):
                     if '://' in line:
                         line = re.search(r"://(.*)", line).group(1)
                     line = line.rstrip('/')
+
+                    if line in trails and any(_ in trails[line][1] for _ in ("custom", "static")):
+                        continue
+
                     if '/' in line:
                         trails[line] = (__info__, __reference__)
                         line = line.split('/')[0]
@@ -241,10 +246,14 @@ def update_trails(server=None, force=False, offline=False):
                     for trail in trails:
                         writer.writerow((trail, trails[trail][0], trails[trail][1]))
 
+                success = True
         except Exception, ex:
             print "[x] something went wrong during trails file write '%s' ('%s')" % (TRAILS_FILE, ex)
 
         print "[i] update finished%s" % (40 * " ")
+
+        if success:
+            print "[i] trails stored to '%s'" % TRAILS_FILE
 
     return trails
 
