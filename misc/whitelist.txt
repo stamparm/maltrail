@@ -228,6 +228,10 @@ pinterest.com
 tinypic.com
 s3.amazonaws.com
 
+# appeared on malwaredomains.com
+
+atw.hu
+
 # appeared on malc0de.com
 
 msecnd.net
