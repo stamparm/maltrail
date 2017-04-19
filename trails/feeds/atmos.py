@@ -11,7 +11,7 @@ from core.common import retrieve_content
 
 __url__ = "http://cybercrime-tracker.net/ccam.php"
 __check__ = "Atmos Strategic Monitoring"
-__info__ = "malware"
+__info__ = "atmos (malware)"
 __reference__ = "cybercrime-tracker.net"
 
 def fetch():
