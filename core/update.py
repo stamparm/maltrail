@@ -14,7 +14,7 @@ import sqlite3
 import subprocess
 import sys
 import time
-import urllib
+import urllib2
 import urlparse
 
 sys.dont_write_bytecode = True
@@ -270,10 +270,9 @@ def update_ipcat(force=False):
         print "[i] updating ipcat database..."
 
         try:
-            if PROXIES:
-                urllib.URLopener(PROXIES).urlretrieve(IPCAT_URL, IPCAT_CSV_FILE)
-            else:
-                urllib.urlretrieve(IPCAT_URL, IPCAT_CSV_FILE)
+            with file(IPCAT_CSV_FILE,'wb') as fp:
+                data = urllib2.urlopen(IPCAT_URL)
+                fp.write(data.read())
         except Exception, ex:
             print "[x] something went wrong during retrieval of '%s' ('%s')" % (IPCAT_URL, ex)
 
