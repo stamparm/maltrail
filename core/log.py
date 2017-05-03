@@ -42,9 +42,16 @@ def get_event_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
     localtime = time.localtime(sec)
     _ = os.path.join(config.LOG_DIR, "%d-%02d-%02d.log" % (localtime.tm_year, localtime.tm_mon, localtime.tm_mday))
     if _ != getattr(_thread_data, "event_log_path", None):
+        if getattr(_thread_data, "event_log_handle", None):
+            try:
+                os.close(_thread_data.event_log_handle)
+            except OSError:
+                pass
+
         if not os.path.exists(_):
             open(_, "w+").close()
             os.chmod(_, DEFAULT_EVENT_LOG_PERMISSIONS)
+
         _thread_data.event_log_path = _
         _thread_data.event_log_handle = os.open(_thread_data.event_log_path, flags)
     return _thread_data.event_log_handle
