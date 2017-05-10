@@ -38,23 +38,36 @@ def create_log_directory():
         os.makedirs(config.LOG_DIR, 0755)
     print("[i] using '%s' for log storage" % config.LOG_DIR)
 
-def get_event_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
+def get_event_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY, reuse=True):
+    retval = None
     localtime = time.localtime(sec)
-    _ = os.path.join(config.LOG_DIR, "%d-%02d-%02d.log" % (localtime.tm_year, localtime.tm_mon, localtime.tm_mday))
-    if _ != getattr(_thread_data, "event_log_path", None):
-        if getattr(_thread_data, "event_log_handle", None):
-            try:
-                os.close(_thread_data.event_log_handle)
-            except OSError:
-                pass
 
+    _ = os.path.join(config.LOG_DIR, "%d-%02d-%02d.log" % (localtime.tm_year, localtime.tm_mon, localtime.tm_mday))
+
+    if not reuse:
         if not os.path.exists(_):
             open(_, "w+").close()
             os.chmod(_, DEFAULT_EVENT_LOG_PERMISSIONS)
 
-        _thread_data.event_log_path = _
-        _thread_data.event_log_handle = os.open(_thread_data.event_log_path, flags)
-    return _thread_data.event_log_handle
+        retval = os.open(_, flags)
+    else:
+        if _ != getattr(_thread_data, "event_log_path", None):
+            if getattr(_thread_data, "event_log_handle", None):
+                try:
+                    os.close(_thread_data.event_log_handle)
+                except OSError:
+                    pass
+
+            if not os.path.exists(_):
+                open(_, "w+").close()
+                os.chmod(_, DEFAULT_EVENT_LOG_PERMISSIONS)
+
+            _thread_data.event_log_path = _
+            _thread_data.event_log_handle = os.open(_thread_data.event_log_path, flags)
+
+        retval = _thread_data.event_log_handle
+
+    return retval
 
 def get_error_log_handle(flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
     if not hasattr(_thread_data, "error_log_handle"):
@@ -173,8 +186,9 @@ def start_logd(address=None, port=None, join=False):
             try:
                 data, _ = self.request
                 sec, event = data.split(" ", 1)
-                handle = get_event_log_handle(int(sec))
+                handle = get_event_log_handle(int(sec), reuse=False)
                 os.write(handle, event)
+                os.close(handle)
             except:
                 if config.SHOW_DEBUG:
                     traceback.print_exc()
