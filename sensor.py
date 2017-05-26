@@ -102,6 +102,7 @@ _last_logged_syn = None
 _last_udp = None
 _last_logged_udp = None
 _last_dns_exhaustion = None
+_quit = threading.Event()
 _subdomains = {}
 _subdomains_sec = None
 _dns_exhausted_domains = set()
@@ -899,6 +900,9 @@ def monitor():
                     if header is not None:
                         success = True
                         packet_handler(datalink, header, packet)
+                    elif config.pcap_file:
+                        _quit.set()
+                        break
                 except (pcapy.PcapError, socket.timeout):
                     pass
 
@@ -913,7 +917,7 @@ def monitor():
         for _cap in _caps:
             threading.Thread(target=_, args=(_cap,)).start()
 
-        while _caps:
+        while _caps and not _quit.is_set():
             time.sleep(1)
 
         print("[i] all capturing interfaces closed")
