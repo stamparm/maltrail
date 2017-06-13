@@ -28,6 +28,7 @@ from core.settings import NAME
 from core.settings import TIME_FORMAT
 from core.settings import TRAILS_FILE
 from core.settings import VERSION
+from core.ignore import ignore_event
 
 _thread_data = threading.local()
 

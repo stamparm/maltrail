@@ -28,30 +28,32 @@ def init_ignore():
         with open(_, "r") as f:
             for line in f:
                 line = line.strip()
+                print("[i] IGNORE parse line: %s " % (line))
                 if not line or line.startswith('#'):
                     continue
                 else:
                     try:
                         src_ip, src_port, dst_ip, dst_port = line.split(';')
+                        print("[i] IGNORE add src_ip=%s, src_port=%s, dst_ip=%s, dst_port=%s " % (src_ip, src_port, dst_ip, dst_port)) 
                         INGORE_EVENT.add(  (src_ip, src_port, dst_ip, dst_port)  )
                     except (IndexError, ValueError):
-                        INGORE_EVENT.add(line)
+                        print("[i] IGNORE ERROR, skil config line %s" % line)
              
 
 
 
 def ignore_event(event_tuple):
     sec, usec, src_ip, src_port, dst_ip, dst_port, proto, trail_type, trail, info, reference = event_tuple
-    
+    #print("[i] ignore_event")
     for I_src_ip, I_src_port, I_dst_ip, I_dst_port in INGORE_EVENT:
-        if I_src_ip != '*' and I_src_ip != src_ip :
+        if I_src_ip != "*" and I_src_ip != src_ip :
             continue
-        if I_src_port != '*' and I_src_port != src_port :
+        if I_src_port != "*" and I_src_port != src_port :
             continue
-        if I_dst_ip != '*' and I_dst_ip != dst_ip :
+        if I_dst_ip != "*" and I_dst_ip != dst_ip :
             continue
-        if I_dst_port != '*' and I_dst_port != dst_port :
+        if I_dst_port != "*" and I_dst_port != dst_port :
             continue
-        
+        #print("[i] IGNORE src_ip=%s, src_port=%s, dst_ip=%s, dst_port=%s " % (src_ip, src_port, dst_ip, dst_port))
         return True
     return False
