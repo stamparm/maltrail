@@ -88,6 +88,9 @@ def safe_value(value):
 def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False):
     try:
         sec, usec, src_ip, src_port, dst_ip, dst_port, proto, trail_type, trail, info, reference = event_tuple
+        if ignore_event(event_tuple):
+            return
+        
         if not (any(check_whitelisted(_) for _ in (src_ip, dst_ip)) and trail_type != TRAIL.DNS):  # DNS requests/responses can't be whitelisted based on src_ip/dst_ip
             if not skip_write:
                 localtime = "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)

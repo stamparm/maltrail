@@ -19,6 +19,7 @@ from core.addr import addr_to_int
 from core.addr import make_mask
 from core.attribdict import AttribDict
 from core.trailsdict import TrailsDict
+from core.ignore import init_ignore
 
 config = AttribDict()
 trails = TrailsDict()
@@ -461,3 +462,4 @@ if __name__ != "__main__":
     read_worst_asn()
     read_cdn_ranges()
     read_bogon_ranges()
+    init_ignore()
