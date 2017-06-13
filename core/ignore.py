@@ -7,13 +7,12 @@ example:
 #sintax:
 #src_ip;src_port;dst_ip;dst_port
 #
+#  '*' is use for any
 #
-#this is a comment
-#
-# ignore all from source ip 192.168.0.3
+# ignore all events from source ip 192.168.0.3
 192.168.0.3;*;*;*
 #
-# ignore all request to ssh port 22
+# ignore all events to ssh port 22
 *;*;22;*
 
 """
