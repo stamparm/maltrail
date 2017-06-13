@@ -1,7 +1,21 @@
 #!/usr/bin/env python
 """
-Copyright (c) 2014-2017 Miroslav Stampar (@stamparm)
-See the file 'LICENSE' for copying permission
+simple ignore rule configured by file misc/ignore_event.txt
+
+example:
+
+#sintax:
+#src_ip;src_port;dst_ip;dst_port
+#
+#
+#this is a comment
+#
+# ignore all from source ip 192.168.0.3
+192.168.0.3;*;*;*
+#
+# ignore all request to ssh port 22
+*;*;22;*
+
 """
 
 import csv
