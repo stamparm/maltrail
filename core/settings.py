@@ -19,7 +19,6 @@ from core.addr import addr_to_int
 from core.addr import make_mask
 from core.attribdict import AttribDict
 from core.trailsdict import TrailsDict
-from core.ignore import init_ignore
 
 config = AttribDict()
 trails = TrailsDict()
@@ -124,6 +123,7 @@ SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD = 7
 SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD = 3.5
 WHITELIST = set()
 WHITELIST_RANGES = set()
+INGORE_EVENT = set()
 STATIC_IPCAT_LOOKUPS = {"shadowserver.org": ("184.105.139.66-184.105.139.126", "184.105.247.194-184.105.247.254", "74.82.47.1-74.82.47.63", "216.218.206.66-216.218.206.126"), "labs.rapid7.com": ("71.6.216.32-71.6.216.63",), "shodan.io": ("66.240.192.138", "66.240.236.119", "71.6.135.131", "71.6.165.200", "71.6.167.142", "82.221.105.6", "82.221.105.7", "85.25.43.94", "85.25.103.50", "93.120.27.62", "104.131.0.69", "104.236.198.48", "162.159.244.38", "188.138.9.50", "198.20.69.74", "198.20.69.98", "198.20.70.114", "198.20.87.98", "198.20.99.130", "208.180.20.97", "209.126.110.38"), "eecs.umich.edu": ("141.212.121.0-141.212.121.255", "141.212.122.0-141.212.122.255"), "netsec.colostate.edu": ("129.82.138.12", "129.82.138.31", "129.82.138.32", "129.82.138.33", "129.82.138.34", "129.82.138.44"), "ant.isi.edu": ("128.9.168.98", "203.178.148.18", "203.178.148.19"), "eecs.berkeley.edu": ("169.229.3.89", "169.229.3.90", "169.229.3.91", "169.229.3.92", "169.229.3.93", "169.229.3.94"), "openresolverproject.org": ("204.42.253.2", "204.42.254.5"), "opensnmpproject.org": ("204.42.253.130",), "openntpproject.org": ("204.42.253.131",), "openssdpproject.org": ("204.42.253.132",), "projectblindferret.com": ("107.150.52.82-107.150.52.86",), "kudelskisecurity.com": ("185.35.62.0-185.35.62.255",), "riskiq.com": ("64.125.239.0-64.125.239.255",), "comsys.rwth-aachen.de": ("137.226.113.0-137.226.113.63",), "sba-research.org": ("98.189.26.18",)}
 
 # Reference: https://gist.github.com/ryanwitt/588678
@@ -298,7 +298,13 @@ def read_config(config_file):
             exit("[!] missing 'USER_WHITELIST' file '%s'" % config.USER_WHITELIST)
         else:
             read_whitelist()
-
+            
+    if config.USER_IGNORELIST:
+        if not os.path.isfile(config.USER_IGNORELIST):
+            exit("[!] missing 'USER_IGNORELIST' file '%s'" % config.USER_IGNORELIST)
+        else:
+            read_ignorelist()
+            
     config.PROCESS_COUNT = int(config.PROCESS_COUNT or CPU_CORES)
 
     if config.USE_MULTIPROCESSING:
@@ -377,6 +383,34 @@ def read_whitelist():
                         WHITELIST.add(line)
                 else:
                     WHITELIST.add(line)
+                    
+# add rules to ignore event list from passed file                
+def add_ignorelist(ignorefile):
+    print("[i] IGNORE add file: %s " % (ignorefile))
+    if ignorefile and os.path.isfile(ignorefile):         
+        with open(ignorefile, "r") as f:
+            for line in f:
+                line = line.strip()
+                print("[i] IGNORE parse line: %s " % (line))
+                if not line or line.startswith('#'):
+                    continue
+                else:
+                    try:
+                        src_ip, src_port, dst_ip, dst_port = line.split(';')
+                        print("[i] IGNORE add src_ip=%s, src_port=%s, dst_ip=%s, dst_port=%s " % (src_ip, src_port, dst_ip, dst_port)) 
+                        INGORE_EVENT.add(  (src_ip, src_port, dst_ip, dst_port)  )
+                    except (IndexError, ValueError):
+                        print("[i] IGNORE ERROR, skil config line %s" % line)
+                                           
+def read_ignorelist():
+    INGORE_EVENT.clear()
+    
+    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "ignore_event.txt"))
+    add_ignorelist(_)
+                        
+    if config.USER_WHITELIST and os.path.isfile(config.USER_WHITELIST):     
+        add_ignorelist(config.USER_WHITELIST)           
+        
 
 def read_ua():
     global SUSPICIOUS_UA_REGEX
@@ -457,9 +491,10 @@ def read_bogon_ranges():
 
 if __name__ != "__main__":
     read_whitelist()
+    read_ignorelist()
     read_ua()
     read_web_shells()
     read_worst_asn()
     read_cdn_ranges()
     read_bogon_ranges()
-    init_ignore()
+

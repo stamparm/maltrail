@@ -27,32 +27,8 @@ import subprocess
 import urllib2
 import zipfile
 import zlib
-
-
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-INGORE_EVENT = set()
-
-def init_ignore():
-    INGORE_EVENT.clear()
-
-
-    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "ignore_event.txt"))
-    if os.path.isfile(_):
-        with open(_, "r") as f:
-            for line in f:
-                line = line.strip()
-                print("[i] IGNORE parse line: %s " % (line))
-                if not line or line.startswith('#'):
-                    continue
-                else:
-                    try:
-                        src_ip, src_port, dst_ip, dst_port = line.split(';')
-                        print("[i] IGNORE add src_ip=%s, src_port=%s, dst_ip=%s, dst_port=%s " % (src_ip, src_port, dst_ip, dst_port)) 
-                        INGORE_EVENT.add(  (src_ip, src_port, dst_ip, dst_port)  )
-                    except (IndexError, ValueError):
-                        print("[i] IGNORE ERROR, skil config line %s" % line)
              
-
+from core.settings import INGORE_EVENT
 
 
 def ignore_event(event_tuple):
