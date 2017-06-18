@@ -28,21 +28,22 @@ import urllib2
 import zipfile
 import zlib
              
-from core.settings import INGORE_EVENT
-
+from core.settings import INGORE_EVENTS
 
 def ignore_event(event_tuple):
-    sec, usec, src_ip, src_port, dst_ip, dst_port, proto, trail_type, trail, info, reference = event_tuple
-    #print("[i] ignore_event")
-    for I_src_ip, I_src_port, I_dst_ip, I_dst_port in INGORE_EVENT:
-        if I_src_ip != "*" and I_src_ip != src_ip :
+    retval = False
+    _, _, src_ip, src_port, dst_ip, dst_port, _, _, _, _, _ = event_tuple
+
+    for ignore_src_ip, ignore_src_port, ignore_dst_ip, ignore_dst_port in INGORE_EVENTS:
+        if ignore_src_ip != "*" and ignore_src_ip != src_ip :
             continue
-        if I_src_port != "*" and I_src_port != src_port :
+        if ignore_src_port != "*" and ignore_src_port != src_port :
             continue
-        if I_dst_ip != "*" and I_dst_ip != dst_ip :
+        if ignore_dst_ip != "*" and ignore_dst_ip != dst_ip :
             continue
-        if I_dst_port != "*" and I_dst_port != dst_port :
+        if ignore_dst_port != "*" and ignore_dst_port != dst_port :
             continue
-        #print("[i] IGNORE src_ip=%s, src_port=%s, dst_ip=%s, dst_port=%s " % (src_ip, src_port, dst_ip, dst_port))
-        return True
-    return False
+        retval = True
+        break
+
+    return retval
