@@ -408,7 +408,7 @@ def read_ignorelist():
     
     print("[i] IGNORE List:")
     for ignore_src_ip, ignore_src_port, ignore_dst_ip, ignore_dst_port in INGORE_EVENTS:
-        print("[i] IGNORE src_ip=%s, src_port=%s, dst_ip=%s, dst_port=%s." % (src_ip, src_port, dst_ip, dst_port))
+        print("[i] IGNORE src_ip=%s, src_port=%s, dst_ip=%s, dst_port=%s." % (ignore_src_ip, ignore_src_port, ignore_dst_ip, ignore_dst_port))
 
 def read_ua():
     global SUSPICIOUS_UA_REGEX
