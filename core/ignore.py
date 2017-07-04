@@ -27,7 +27,8 @@ import subprocess
 import urllib2
 import zipfile
 import zlib
-             
+       
+from core.settings import config
 from core.settings import INGORE_EVENTS
 
 def ignore_event(event_tuple):
