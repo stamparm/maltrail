@@ -10,10 +10,10 @@ example:
 #  '*' is use for any
 #
 # ignore all events from source ip 192.168.0.3
-192.168.0.3;*;*;*
+# 192.168.0.3;*;*;*
 #
 # ignore all events to ssh port 22
-*;*;22;*
+# *;*;*;22
 
 """
 
@@ -45,5 +45,7 @@ def ignore_event(event_tuple):
             continue
         retval = True
         break
-
+    
+    if config.SHOW_DEBUG:
+        print("[i] ignore_event src_ip=%s, src_port=%s, dst_ip=%s, dst_port=%s, retval=%s" % (src_ip, src_port, dst_ip, dst_port, retval)) 
     return retval

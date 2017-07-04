@@ -405,7 +405,9 @@ def read_ignorelist():
                         
     if config.USER_IGNORELIST and os.path.isfile(config.USER_IGNORELIST):
         add_ignorelist(config.USER_IGNORELIST)  
-        
+    
+    for ignore_src_ip, ignore_src_port, ignore_dst_ip, ignore_dst_port in INGORE_EVENTS:
+        print("[i] IGNORE src_ip=%s, src_port=%s, dst_ip=%s, dst_port=%s." % (src_ip, src_port, dst_ip, dst_port))
 
 def read_ua():
     global SUSPICIOUS_UA_REGEX
