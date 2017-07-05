@@ -38,11 +38,11 @@ def ignore_event(event_tuple):
     for ignore_src_ip, ignore_src_port, ignore_dst_ip, ignore_dst_port in INGORE_EVENTS:
         if ignore_src_ip != "*" and ignore_src_ip != src_ip :
             continue
-        if ignore_src_port != "*" and ignore_src_port != src_port :
+        if ignore_src_port != "*" and ignore_src_port != str(src_port) :
             continue
         if ignore_dst_ip != "*" and ignore_dst_ip != dst_ip :
             continue
-        if ignore_dst_port != "*" and ignore_dst_port != dst_port :
+        if ignore_dst_port != "*" and ignore_dst_port != str(dst_port) :
             continue
         retval = True
         break
