@@ -1,21 +1,11 @@
 #!/usr/bin/env python
-"""
-simple ignore rule configured by file misc/ignore_event.txt
-
-example:
-
-#sintax:
-#src_ip;src_port;dst_ip;dst_port
-#
-#  '*' is use for any
-#
-# ignore all events from source ip 192.168.0.3
-# 192.168.0.3;*;*;*
-#
-# ignore all events to ssh port 22
-# *;*;*;22
 
 """
+Copyright (c) 2014-2017 Miroslav Stampar (@stamparm)
+See the file 'LICENSE' for copying permission
+"""
+
+# simple ignore rule mechanism configured by file 'misc/ignore_event.txt' and/or user defined `USER_IGNORELIST`
 
 import csv
 import gzip
