@@ -785,7 +785,10 @@ def init():
     if config.CAPTURE_FILTER:
         print("[i] setting capture filter '%s'" % config.CAPTURE_FILTER)
         for _cap in _caps:
-            _cap.setfilter(config.CAPTURE_FILTER)
+            try:
+                _cap.setfilter(config.CAPTURE_FILTER)
+            except:
+                pass
 
     if _multiprocessing:
         _init_multiprocessing()
