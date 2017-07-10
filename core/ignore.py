@@ -19,13 +19,13 @@ import zipfile
 import zlib
        
 from core.settings import config
-from core.settings import INGORE_EVENTS
+from core.settings import IGNORE_EVENTS
 
 def ignore_event(event_tuple):
     retval = False
     _, _, src_ip, src_port, dst_ip, dst_port, _, _, _, _, _ = event_tuple
 
-    for ignore_src_ip, ignore_src_port, ignore_dst_ip, ignore_dst_port in INGORE_EVENTS:
+    for ignore_src_ip, ignore_src_port, ignore_dst_ip, ignore_dst_port in IGNORE_EVENTS:
         if ignore_src_ip != "*" and ignore_src_ip != src_ip :
             continue
         if ignore_src_port != "*" and ignore_src_port != str(src_port) :
