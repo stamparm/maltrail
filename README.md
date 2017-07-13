@@ -265,9 +265,9 @@ When moving mouse over `src_ip` and `dst_ip` table entries, information tooltip 
 
 ![On mouse over IP](https://i.imgur.com/BgKchAX.png)
 
-Event details (e.g. `src_port`, `dst_port`, `proto`, etc.) that differ inside same threat entry are condensed in form of a cloud icon (i.e. ![Cloud ellipsis](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/ellipsis.png)). This is performed to get an usable reporting interface with as less rows as possible. Moving mouse over such icon will result in a display of an information tooltip with all items held (e.g. all port numbers being scanned by `attacker`):
+Event details (e.g. `src_port`, `dst_port`, `proto`, etc.) that differ inside same threat entry are condensed in form of a bubble icon (i.e. ![Ellipsis](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/ellipsis.png)). This is performed to get an usable reporting interface with as less rows as possible. Moving mouse over such icon will result in a display of an information tooltip with all items held (e.g. all port numbers being scanned by `attacker`):
 
-![On mouse over cloud](https://i.imgur.com/BfYT2u7.png)
+![On mouse over bubble](https://i.imgur.com/BfYT2u7.png)
 
 Clicking on one such icon will open a new dialog containing all stored items (Note: in their uncondensed form) ready to be Copy-Paste(d) for further analysis:
 
@@ -406,7 +406,7 @@ In following example, web application vulnerability scan has been marked as "sus
 
 ![Vulnerability scan](https://i.imgur.com/QzcaEsG.png)
 
-If we click on the cloud icon (i.e. ![Cloud ellipsis](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/ellipsis.png)) for details and copy paste the whole content to a textual file, we'll be able to see all suspicious HTTP requests:
+If we click on the bubble icon (i.e. ![Ellipsis](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/ellipsis.png)) for details and copy paste the whole content to a textual file, we'll be able to see all suspicious HTTP requests:
 
 ![Vulnerability scan requests](https://i.imgur.com/XY9K01o.png)
 
