@@ -156,7 +156,7 @@ def update_trails(server=None, force=False, offline=False):
             print(" [o] '(remote custom)'%s" % (" " * 20))
             content = retrieve_content(config.CUSTOM_TRAILS_URL)
             if not content:
-                exit("[!] unable to retrieve data (or empty response) from '%s'" % config.CUSTOM_TRAILS_URL)
+                print "[x] unable to retrieve data (or empty response) from '%s'" % config.CUSTOM_TRAILS_URL
             else:
                 url = config.CUSTOM_TRAILS_URL
                 url = ("http://%s" % url) if not "//" in url else url
