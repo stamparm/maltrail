@@ -7,10 +7,10 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "https://www.packetmail.net/iprep_ramnode.txt"
+__url__ = "http://cybersweat.shop/iprep/iprep_ramnode.txt"
 __check__ = ".1"
 __info__ = "known attacker"
-__reference__ = "packetmail.net"
+__reference__ = "cybersweat.shop"
 
 def fetch():
     retval = {}
