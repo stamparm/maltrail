@@ -15,7 +15,6 @@ import subprocess
 import sys
 import time
 import urllib2
-import urlparse
 
 sys.dont_write_bytecode = True
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))  # to enable calling from current directory too
@@ -36,7 +35,6 @@ from core.settings import HIGH_PRIORITY_REFERENCES
 from core.settings import IPCAT_CSV_FILE
 from core.settings import IPCAT_SQLITE_FILE
 from core.settings import IPCAT_URL
-from core.settings import PROXIES
 from core.settings import ROOT_DIR
 from core.settings import TRAILS_FILE
 from core.settings import USERS_DIR

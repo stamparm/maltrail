@@ -5,7 +5,6 @@ Copyright (c) 2014-2017 Miroslav Stampar (@stamparm)
 See the file 'LICENSE' for copying permission
 """
 
-import re
 import sys
 import string
 import time

@@ -39,7 +39,7 @@ def _open():
         os.close(handle)
         retval = gzip.open(filename)
 
-    except Exception, ex:
+    except:
         pass
 
     return retval

@@ -7,7 +7,6 @@ See the file 'LICENSE' for copying permission
 
 import re
 import sys
-import string
 import time
 
 TIME_FORMAT = "%Y-%m-%d %H:%M:%S"

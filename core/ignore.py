@@ -7,17 +7,6 @@ See the file 'LICENSE' for copying permission
 
 # simple ignore rule mechanism configured by file 'misc/ignore_event.txt' and/or user defined `USER_IGNORELIST`
 
-import csv
-import gzip
-import os
-import re
-import sqlite3
-import StringIO
-import subprocess
-import urllib2
-import zipfile
-import zlib
-       
 from core.settings import config
 from core.settings import IGNORE_EVENTS
 
