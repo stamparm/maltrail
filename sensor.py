@@ -674,14 +674,15 @@ def init():
 
     def update_timer():
         retries = 0
-        while retries < CHECK_CONNECTION_MAX_RETRIES and not check_connection():
-            sys.stdout.write("[!] can't update because of lack of Internet connection (waiting..." if not retries else '.')
-            sys.stdout.flush()
-            time.sleep(10)
-            retries += 1
+        if not config.no_updates:
+            while retries < CHECK_CONNECTION_MAX_RETRIES and not check_connection():
+                sys.stdout.write("[!] can't update because of lack of Internet connection (waiting..." if not retries else '.')
+                sys.stdout.flush()
+                time.sleep(10)
+                retries += 1
 
-        if retries:
-            print(")")
+            if retries:
+                print(")")
 
         if config.no_updates or retries == CHECK_CONNECTION_MAX_RETRIES:
             if retries == CHECK_CONNECTION_MAX_RETRIES:
