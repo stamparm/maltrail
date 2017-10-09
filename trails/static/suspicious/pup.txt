@@ -297,3 +297,6 @@ dv2m1uumnsgtu.cloudfront.net
 d1mxvenloqrqmu.cloudfront.net
 dfrs12kz9qye2.cloudfront.net
 dgkytklfjrqkb.cloudfront.net
+
+# Reference: https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/adw_sensave
+updaterss.com
