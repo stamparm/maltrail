@@ -1,0 +1,36 @@
+# Copyright (c) 2014-2017 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://hackforums.net/printthread.php?tid=5655422
+
+minergate.com
+miningpoolhub.com
+minexmr.com
+moneropool.com
+crypto-pool.fr
+dwarfpool.com
+xmrpool.eu
+prohash.net
+mine.bz
+nanopool.org
+ethereumpool.co
+suprnova.cc
+siamining.com
+
+
+# Reference: https://www.multipool.us/
+
+multipool.us
+
+# Reference: https://github.com/keraf/NoCoin/blob/master/src/blacklist.txt
+
+coinhive.com
+coin-hive.com
+jsecoin.com
+reasedoper.pw
+mataharirama.xyz
+listat.biz
+lmodr.biz
+minecrunch.co
+minemytraffic.com
+crypto-loot.com
