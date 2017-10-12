@@ -4,6 +4,7 @@
 localhost
 127.0.0.1
 local
+localdomain
 
 # triggering suspicious (sub)domain names (note: this is not whitelist-ing all related (e.g. URL) trails)
 
