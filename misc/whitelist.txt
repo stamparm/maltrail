@@ -17,6 +17,7 @@ akamaiedge.net
 akamaihd.net
 akamai.net
 akamaitechnologies.com
+alibaba.com
 amazon.com
 amazonaws.com
 amazonses.com
