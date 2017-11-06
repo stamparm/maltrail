@@ -11,7 +11,7 @@ from core.common import retrieve_content
 
 __url__ = "http://data.netlab.360.com/feeds/dga/locky.txt"
 __check__ = "netlab 360"
-__info__ = "locky (malware)"
+__info__ = "locky dga (malware)"
 __reference__ = "360.com"
 
 def fetch():
