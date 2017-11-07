@@ -652,3 +652,7 @@ put.re
 
 mucocutaneousmyrmecophaga.com
 scorecardresearch.com
+
+# Google crawlers
+
+35.184.0.0/13
