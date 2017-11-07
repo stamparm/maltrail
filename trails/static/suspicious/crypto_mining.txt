@@ -6,6 +6,7 @@
 minergate.com
 miningpoolhub.com
 minexmr.com
+pool.minexmr.com
 moneropool.com
 crypto-pool.fr
 dwarfpool.com
