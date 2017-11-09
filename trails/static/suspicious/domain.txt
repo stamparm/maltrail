@@ -1014,7 +1014,6 @@ co.be
 co.cc
 co.nr
 co.tv
-co.za
 comexe.cn
 cp.cx
 cu.cc
