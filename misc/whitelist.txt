@@ -242,6 +242,7 @@ msecnd.net
 lang-8.com
 popads.net
 c1.popads.net
+githubusercontent.com
 
 # appeared on malwarepatrol.net
 
