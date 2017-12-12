@@ -115,6 +115,7 @@ rncdn7.com
 rncdn8.com
 rncdn.com
 senderbase.org
+siemens.net
 siteforce.com
 sophosxl.com
 sophosxl.net
@@ -128,6 +129,7 @@ testflightapp.com
 trendmicro.com
 tumblr.com
 twitter.com
+ubuntu.com
 w3schools.com
 v-mate.mobi
 verisign.com
