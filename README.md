@@ -458,10 +458,6 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6.x*
 
 This software is provided under under a MIT License. See the accompanying [LICENSE](https://github.com/stamparm/maltrail/blob/master/LICENSE) file for more information.
 
-## Donations
-
-This project is a result of numerous hours of software development. If you appreciate the work and you want to see it further developed, please consider making a donation via [PayPal](https://www.paypal.com/) to `miroslav.stampar@gmail.com` or via [&#x0243;itcoin](bitcoin:1JCtgmpC1eWvdHXrKfvMAunfvcaaMXLP5G) to `1JCtgmpC1eWvdHXrKfvMAunfvcaaMXLP5G`.
-
 ## Thank you
 
 * Thomas Kristner
