@@ -299,4 +299,259 @@ dfrs12kz9qye2.cloudfront.net
 dgkytklfjrqkb.cloudfront.net
 
 # Reference: https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/adw_sensave
+
 updaterss.com
+
+# Reference: http://junkwareremoval.com/hijacker/search-searchquicks-com-removal-procedures/
+
+searchquicks.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-search-searchptrack-com-redirect/
+
+searchptrack.com
+
+# Reference: http://junkwareremoval.com/hijacker/search-froktiser-com-removal-guide/
+
+froktiser.com
+
+# Reference: http://junkwareremoval.com/hijacker/foxsearch-removal-guide/
+
+foxsearch.me
+
+# Reference: http://junkwareremoval.com/hijacker/search-searchw3m-com-removal-procedures/
+
+searchw3m.com
+
+# Reference: http://junkwareremoval.com/hijacker/search-searchvfr-com-removal-steps/
+
+searchvfr.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-terrificshoper-com-hijacker/
+
+terrificshoper.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-gordondeals-co-hijacker/
+
+gordondeals.co
+
+# Reference: http://junkwareremoval.com/hijacker/remove-startinf-com-redirect/
+
+startinf.com
+
+# Reference: http://junkwareremoval.com/hijacker/hp-mysearch-com-removal-guide/
+
+mysearch.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-nowsearch-info-redirect/
+
+nowsearch.info
+
+# Reference: http://junkwareremoval.com/hijacker/remove-search-searchtpg-com-hijacker/
+
+searchtpg.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-search-searchptp-com-redirect/
+
+searchptp.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-hoosearch-com-redirect/
+
+hoosearch.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-search-ishimotto-com-mac-os-safari/
+
+ishimotto.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-webstart-redirect/
+
+webstart.me
+
+# Reference: http://junkwareremoval.com/hijacker/myhomepage-pro-removal-steps/
+
+myhomepage.pro
+
+# Reference: http://junkwareremoval.com/hijacker/search60-com-removal-guide/
+
+search60.com
+
+# Reference: http://junkwareremoval.com/hijacker/12startpage-com-removal-guide/
+
+12startpage.com
+
+# Reference: http://junkwareremoval.com/hijacker/incognito-search-com-removal-steps/
+
+incognito-search.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-search-flagbeg-com-mac-os-safari/
+
+flagbeg.com
+
+# Reference: http://junkwareremoval.com/hijacker/webcrawler-com-removal-guide/
+
+webcrawler.com
+
+# Reference: http://junkwareremoval.com/hijacker/search-anysearchmac-com-removal-guide/
+
+anysearchmac.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-tab-pdfbaron-com-redirect/
+
+pdfbaron.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-myprivacyassistant-com-search/
+
+myprivacyassistant.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-entireweb-com-redirect/
+
+entireweb.com
+
+# Reference: http://junkwareremoval.com/hijacker/searchmobi-net-removal-guide/
+
+searchmobi.net
+
+# Reference: http://junkwareremoval.com/hijacker/googlesearch-removal-guide/
+
+googlesearch.me
+
+# Reference: http://junkwareremoval.com/hijacker/remove-myportal-us-search/
+
+myportal.us
+
+# Reference: http://junkwareremoval.com/hijacker/remove-mbrowser-us-search/
+
+mbrowser.us
+
+# Reference: http://junkwareremoval.com/hijacker/remove-ibrowser-io-search/
+
+ibrowser.io
+
+# Reference: http://junkwareremoval.com/hijacker/remove-gsearch-io-search/
+
+gsearch.io
+
+# Reference: http://junkwareremoval.com/hijacker/remove-gosrch-co-search/
+
+gosrch.co
+
+# Reference: http://junkwareremoval.com/hijacker/remove-gobrowser-mobi-search/
+
+gobrowser.mobi
+
+# Reference: http://junkwareremoval.com/hijacker/remove-websrch-net-search/
+
+websrch.net
+
+# Reference: http://junkwareremoval.com/hijacker/searchpage-com-removal-guide/
+
+searchpage.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-iexplore-co-search/
+
+iexplore.co
+
+# Reference: http://junkwareremoval.com/hijacker/browsersearch-net-removal-guide/
+
+browsersearch.net
+
+# Reference: http://junkwareremoval.com/hijacker/mobisearch-co-removal-guide/
+
+mobisearch.co
+
+# Reference: http://junkwareremoval.com/hijacker/remove-startme-today-redirect/
+
+startme.today
+
+# Reference: http://junkwareremoval.com/hijacker/remove-privateseeker-homepage-private-seeking-com/
+
+private-seeking.com
+
+# Reference: http://junkwareremoval.com/hijacker/expendresults-com-removal-steps/
+
+expendresults.com
+
+# Reference: http://junkwareremoval.com/hijacker/wisesearches-com-removal-guide/
+
+wisesearches.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-search-2000-search2000-com/
+
+search2000.com
+
+# Reference: http://junkwareremoval.com/hijacker/newtab-today-removal-guide/
+
+newtab.today
+
+# Reference: http://junkwareremoval.com/hijacker/remove-search-searchbuscar-com-redirect/
+
+searchbuscar.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-mydailysearch-com-redirect/
+
+mydailysearch.com
+
+# Reference: http://junkwareremoval.com/hijacker/search-hometab-com-removal-guide/
+
+hometab.com
+
+# Reference: https://malwaretips.com/blogs/remove-adamant-pristineapp-com/
+
+pristineapp.com
+
+# Reference: https://malwaretips.com/blogs/remove-pixelk-octogames-net/
+
+octogames.net
+
+# Reference: https://www.pcrisk.com/removal-guides/11926-search-socialaddons-top-redirect
+
+socialaddons.top
+
+# Reference: https://www.pcrisk.com/removal-guides/8565-www-searching-com-redirect
+
+www-searching.com
+
+# Reference: https://www.pcrisk.com/removal-guides/8183-safesear-ch-browser-hijacker
+
+safesear.ch
+
+# Reference: https://www.pcrisk.com/removal-guides/8148-taplika-com-browser-hijacker
+
+taplika.com
+
+# Reference: https://www.pcrisk.com/removal-guides/8398-mysearchpage-net-browser-hijacker
+
+mysearchpage.net
+
+# Reference: https://www.pcrisk.com/removal-guides/7805-default-search-net-virus
+
+default-search.net
+
+# Reference: https://www.pcrisk.com/removal-guides/7154-remove-hao123-browser-hijacker-virus
+
+hao123.com
+
+# Reference: https://www.pcrisk.com/removal-guides/8876-xtab-browser-hijacker
+
+delta-homes.com
+key-find.com
+luckysearches.com
+istartsurf.com
+isearch.omiga-plus.com
+v9.com
+mystartsearch.com
+webssearches.com
+omniboxes.com
+sweet-page.com
+do-search.com
+
+# Reference: https://www.pcrisk.com/removal-guides/8333-lasaoren-com-browser-hijacker
+
+lasaoren.com
+
+# Reference: https://www.pcrisk.com/removal-guides/7049-remove-safe-search-redirect-toolbar
+
+safesearch.net
+
+# Reference: https://www.pcrisk.com/removal-guides/7219-remove-qone8-browser-hijacker
+
+qone8.com
