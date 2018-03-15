@@ -31,6 +31,7 @@ from core.settings import VERSION
 from core.ignore import ignore_event
 
 _condensed_events = {}
+_condensing_thread = None
 _condensing_lock = threading.Lock()
 _thread_data = threading.local()
 
@@ -115,11 +116,14 @@ def flush_condensed_events():
 
         _condensed_events.clear()
 
-    thread = threading.Timer(CONDENSED_EVENTS_FLUSH_PERIOD, flush_condensed_events)
-    thread.daemon = True
-    thread.start()
-
 def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False):
+    global _condensing_thread
+
+    if _condensing_thread is None:
+        _condensing_thread = threading.Timer(CONDENSED_EVENTS_FLUSH_PERIOD, flush_condensed_events)
+        _condensing_thread.daemon = True
+        _condensing_thread.start()
+
     try:
         sec, usec, src_ip, src_port, dst_ip, dst_port, proto, trail_type, trail, info, reference = event_tuple
         if ignore_event(event_tuple):
@@ -223,4 +227,3 @@ def set_sigterm_handler():
 
 if __name__ != "__main__":
     set_sigterm_handler()
-    flush_condensed_events()
