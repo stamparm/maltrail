@@ -90,37 +90,40 @@ def safe_value(value):
     return retval
 
 def flush_condensed_events():
-    with _condensing_lock:
-        for key in _condensed_events:
-            condensed = False
-            events = _condensed_events[key]
+    while True:
+        time.sleep(CONDENSED_EVENTS_FLUSH_PERIOD)
 
-            first_event = events[0]
-            condensed_event = [_ for _ in first_event]
+        with _condensing_lock:
+            for key in _condensed_events:
+                condensed = False
+                events = _condensed_events[key]
 
-            for i in xrange(1, len(events)):
-                current_event = events[i]
-                for j in xrange(3, 7):  # src_port, dst_ip, dst_port, proto
-                    if current_event[j] != condensed_event[j]:
-                        condensed = True
-                        if not isinstance(condensed_event[j], set):
-                            condensed_event[j] = set((condensed_event[j],))
-                        condensed_event[j].add(current_event[j])
+                first_event = events[0]
+                condensed_event = [_ for _ in first_event]
 
-            if condensed:
-                for i in xrange(len(condensed_event)):
-                    if isinstance(condensed_event[i], set):
-                        condensed_event[i] = ','.join(str(_) for _ in sorted(condensed_event[i]))
+                for i in xrange(1, len(events)):
+                    current_event = events[i]
+                    for j in xrange(3, 7):  # src_port, dst_ip, dst_port, proto
+                        if current_event[j] != condensed_event[j]:
+                            condensed = True
+                            if not isinstance(condensed_event[j], set):
+                                condensed_event[j] = set((condensed_event[j],))
+                            condensed_event[j].add(current_event[j])
 
-            log_event(condensed_event, skip_condensing=True)
+                if condensed:
+                    for i in xrange(len(condensed_event)):
+                        if isinstance(condensed_event[i], set):
+                            condensed_event[i] = ','.join(str(_) for _ in sorted(condensed_event[i]))
 
-        _condensed_events.clear()
+                log_event(condensed_event, skip_condensing=True)
+
+            _condensed_events.clear()
 
 def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False):
     global _condensing_thread
 
     if _condensing_thread is None:
-        _condensing_thread = threading.Timer(CONDENSED_EVENTS_FLUSH_PERIOD, flush_condensed_events)
+        _condensing_thread = threading.Thread(target=flush_condensed_events)
         _condensing_thread.daemon = True
         _condensing_thread.start()
 
