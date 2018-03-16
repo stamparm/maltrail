@@ -133,7 +133,7 @@ def _check_domain_member(query, domains):
     return False
 
 def _check_domain_whitelisted(query):
-    return _check_domain_member(query, WHITELIST)
+    return _check_domain_member(re.split(r"(?i)[^A-Z0-9._-]", query or "")[0], WHITELIST)
 
 def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, packet=None):
     if _result_cache.get(query) == False:
