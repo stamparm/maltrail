@@ -660,6 +660,14 @@ scorecardresearch.com
 
 35.184.0.0/13
 
+# Google
+
+216.58.192.0/19
+
 # Bogus (though, valid DNS server)
 
 1.1.1.1
+
+# Teamviewer
+
+37.252.227.51
