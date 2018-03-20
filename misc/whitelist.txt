@@ -659,3 +659,7 @@ scorecardresearch.com
 # Google crawlers
 
 35.184.0.0/13
+
+# Bogus (though, valid DNS server)
+
+1.1.1.1
