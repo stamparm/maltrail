@@ -39,6 +39,13 @@ from core.settings import ROOT_DIR
 from core.settings import TRAILS_FILE
 from core.settings import USERS_DIR
 
+# patch for self-signed certificates (e.g. CUSTOM_TRAILS_URL)
+try:
+    import ssl
+    ssl._create_default_https_context = ssl._create_unverified_context
+except (ImportError, AttributeError):
+    pass
+
 def _chown(filepath):
     if not subprocess.mswindows and os.path.exists(filepath):
         try:
