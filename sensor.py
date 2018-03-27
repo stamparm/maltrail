@@ -136,6 +136,11 @@ def _check_domain_whitelisted(query):
     return _check_domain_member(re.split(r"(?i)[^A-Z0-9._-]", query or "")[0], WHITELIST)
 
 def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, packet=None):
+    if query:
+        query = query.lower()
+        if ':' in query:
+            query = query.split(':', 1)[0]
+
     if _result_cache.get(query) == False:
         return
 
