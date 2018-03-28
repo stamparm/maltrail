@@ -249,6 +249,7 @@ githubusercontent.com
 # appeared on malwarepatrol.net
 
 hdwallpapers.in
+alicdn.com
 
 # triggering suspicious http request
 
