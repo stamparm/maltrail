@@ -1,0 +1,43 @@
+# Reference: https://exchange.xforce.ibmcloud.com/collection/New-Hacking-Team-Samples-Identified-301fc5e82c2c21b14353c72e7c5fac4c
+#            https://blog.eset.ie/2018/03/12/new-traces-of-hacking-team-in-the-wild/
+
+# 149.154.153.223
+perfectroundcookie.com
+projekt.i3kft.hu
+
+# 173.236.149.166
+habbny.com
+
+# 178.79.186.40
+safelogin.info
+
+# 180.235.133.23
+mobilitivities.com
+big0572.com
+zillion-resumes.us
+
+# 188.166.244.225
+blog.hookd.highspecsolutions.com
+
+# 188.226.170.222
+lunchylunch.com
+meridianholding.biz
+
+# 192.243.101.124
+# 192.243.101.125
+
+# 199.175.54.209
+vakinn.net
+birting.net
+camchatlive.net
+draanchel.com
+litetans.com
+
+# 199.175.54.228
+
+# 45.33.108.172
+
+# 46.165.236.62
+myepicporn.com
+
+# 95.110.167.74
