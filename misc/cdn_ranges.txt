@@ -804,3 +804,7 @@
 # Reference: https://bgpview.io/prefix/173.241.240.0/20 (OpenX)
 
 173.241.240.0/20
+
+# Highwinds (appeared on blocklist.de)
+
+205.185.192.0/19
