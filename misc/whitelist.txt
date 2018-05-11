@@ -188,6 +188,7 @@ majorgeeks.com
 mcafee.com
 microsoft.com
 mozilla.net
+msi.com
 nai.com
 notepad-plus-plus.org
 nvidia.com
@@ -196,6 +197,7 @@ oracle.com
 p4dragon.com
 pandasoftware.com
 pdfwordconverter.net
+portableapps.com
 pysoft.com
 rarlab.com
 rarsoft.com

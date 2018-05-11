@@ -537,7 +537,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     if not subdomains:
                                         subdomains = _subdomains[domain] = set()
 
-                                    if len(subdomains) < DNS_EXHAUSTION_THRESHOLD:
+                                    if len(subdomains) < DNS_EXHAUSTION_THRESHOLD and not re.search(r"\A\d+\-\d+\-\d+\-\d+\Z", parts[0]):
                                         subdomains.add('.'.join(parts[:-2]))
                                     else:
                                         if (sec - (_last_dns_exhaustion or 0)) > 60:
