@@ -3,6 +3,7 @@
 
 localhost
 127.0.0.1
+::1
 local
 localdomain
 
@@ -287,6 +288,7 @@ sanasecurity.com
 sim-unlock.net
 sqlzoo.net
 symcb.com
+symcd.com
 victronenergy.com
 
 # found as false positive in otx.alienvault.com
@@ -685,10 +687,6 @@ scorecardresearch.com
 # Google
 
 216.58.192.0/19
-
-# Bogus (though, valid DNS server)
-
-1.1.1.1
 
 # Teamviewer
 
