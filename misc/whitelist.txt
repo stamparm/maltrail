@@ -92,6 +92,10 @@ internationalmonetaryfund.org
 ipv6test.com
 ipv6test.net
 kaspersky.com
+kaspersky.de
+kaspersky.fr
+kaspersky.ru
+kaspersky.ua
 laola1.tv
 live.com
 lswcdn.net
