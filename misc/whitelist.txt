@@ -24,6 +24,7 @@ amazonses.com
 a-msedge.net
 angsrvr.com
 anycastb.com
+anti-virus.by
 baidu.com
 bdnsrt.org
 bitdefender.net
@@ -132,6 +133,7 @@ twitter.com
 ubuntu.com
 w3schools.com
 v-mate.mobi
+vba.com.by
 verisign.com
 verisign.net
 weebly.com
