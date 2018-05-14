@@ -162,12 +162,14 @@ yvimg.kz
 7-zip.org
 acer.com
 acropdf.com
+adinf.com
 adobe.com
 akeo.ie
 apple.com
 avantbrowser.com
 avast.com
 avg.com
+anti-virus.by
 bitdefender.com
 bleepingcomputer.com
 cnet.com
@@ -177,6 +179,7 @@ devbuilds.kaspersky-labs.com
 digitalrivercontent.net
 divx.com
 download.drp.su
+download.geo.drweb.com
 easeus.com
 filehippo.com
 foxitsoftware.com
@@ -229,6 +232,7 @@ symantecliveupdate.com
 teamviewer.com
 toshiba.com
 tucows.com
+vba.com.by
 videolan.org
 windowsupdate.com
 win-rar.com
