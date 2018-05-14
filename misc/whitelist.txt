@@ -11,6 +11,7 @@ localdomain
 1e100.net
 2o7.net
 adcash.com
+adinf.com
 adsk2.co
 akadns.net
 akamaiedge.net
