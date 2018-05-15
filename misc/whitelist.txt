@@ -155,6 +155,9 @@ yahoo.com
 yahoodns.net
 yimg.com
 yvimg.kz
+zillya.com
+zillya.ua
+zillyaoem.com
 
 # to ignore in direct .exe downloads
 
@@ -180,6 +183,7 @@ digitalrivercontent.net
 divx.com
 download.drp.su
 download.geo.drweb.com
+download.zillya.com
 easeus.com
 filehippo.com
 foxitsoftware.com
