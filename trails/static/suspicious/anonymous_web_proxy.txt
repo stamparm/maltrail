@@ -36,6 +36,8 @@ hidemyass.com
 proxfree.com
 proxysite.com
 unblockmyweb.com
+proxy-youtube.com
+hidemy.name
 
 # Reference: http://proxy.org/web_proxies.shtml
 
