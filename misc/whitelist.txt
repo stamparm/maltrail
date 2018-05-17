@@ -59,6 +59,8 @@ edgekey.net
 edgesuite.net
 elasticbeanstalk.com
 eset.com
+eset.ua
+esetnod32.ru
 example.com
 f-secure.com
 fap.to
@@ -182,6 +184,8 @@ devbuilds.kaspersky-labs.com
 digitalrivercontent.net
 divx.com
 download.drp.su
+download.eset.com
+download.esetnod32.ru
 download.geo.drweb.com
 download.zillya.com
 easeus.com
