@@ -22,6 +22,42 @@ siamining.com
 
 multipool.us
 
+# Reference: https://mining-help.ru/
+
+mining-help.ru
+
+# Reference: https://99bitcoins.com
+
+99bitcoins.com
+
+# Reference: https://xmrminer.cc/
+
+xmrminer.cc
+
+# Reference: https://www.monero.how/tutorial-how-to-mine-monero
+
+supportxmr.com
+monero.hashvault.pro
+monerohash.com
+monero.crypto-pool.fr
+xmrpool.net
+poolmining.org
+pool.xmr.pt
+xmr.prohash.net
+xmr.poolto.be
+
+# Reference: http://www.gandalph3000.com/
+
+gandalph3000.com
+
+# Reference: https://pangolinminer.com/
+
+pangolinminer.com
+
+# Reference: https://hellominer.com/
+
+hellominer.com
+
 # Reference: https://github.com/keraf/NoCoin/blob/master/src/blacklist.txt
 
 # coinhive.com
