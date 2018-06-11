@@ -159,33 +159,38 @@ def update_trails(server=None, force=False, offline=False):
         # custom trails from remote location
         if config.CUSTOM_TRAILS_URL:
             print(" [o] '(remote custom)'%s" % (" " * 20))
-            content = retrieve_content(config.CUSTOM_TRAILS_URL)
-            if not content:
-                print "[x] unable to retrieve data (or empty response) from '%s'" % config.CUSTOM_TRAILS_URL
-            else:
-                url = config.CUSTOM_TRAILS_URL
+            for url in re.split(r"[;,]", config.CUSTOM_TRAILS_URL):
+                url = url.strip()
+                if not url:
+                    continue
+
                 url = ("http://%s" % url) if not "//" in url else url
-                __info__ = "blacklisted"
-                __reference__ = "(remote custom)"  # urlparse.urlsplit(url).netloc
-                for line in content.split('\n'):
-                    line = line.strip()
-                    if not line or line.startswith('#'):
-                        continue
-                    line = re.sub(r"\s*#.*", "", line)
-                    if '://' in line:
-                        line = re.search(r"://(.*)", line).group(1)
-                    line = line.rstrip('/')
+                content = retrieve_content(url)
 
-                    if line in trails and any(_ in trails[line][1] for _ in ("custom", "static")):
-                        continue
+                if not content:
+                    print "[x] unable to retrieve data (or empty response) from '%s'" % url
+                else:
+                    __info__ = "blacklisted"
+                    __reference__ = "(remote custom)"  # urlparse.urlsplit(url).netloc
+                    for line in content.split('\n'):
+                        line = line.strip()
+                        if not line or line.startswith('#'):
+                            continue
+                        line = re.sub(r"\s*#.*", "", line)
+                        if '://' in line:
+                            line = re.search(r"://(.*)", line).group(1)
+                        line = line.rstrip('/')
 
-                    if '/' in line:
-                        trails[line] = (__info__, __reference__)
-                        line = line.split('/')[0]
-                    elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", line):
-                        trails[line] = (__info__, __reference__)
-                    else:
-                        trails[line.strip('.')] = (__info__, __reference__)
+                        if line in trails and any(_ in trails[line][1] for _ in ("custom", "static")):
+                            continue
+
+                        if '/' in line:
+                            trails[line] = (__info__, __reference__)
+                            line = line.split('/')[0]
+                        elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", line):
+                            trails[line] = (__info__, __reference__)
+                        else:
+                            trails[line.strip('.')] = (__info__, __reference__)
 
         # basic cleanup
         for key in trails.keys():
