@@ -197,6 +197,8 @@ def update_trails(server=None, force=False, offline=False):
                         for match in re.finditer(r"(\d+\.\d+\.\d+\.\d+)/(\d+)", content):
                             prefix, mask = match.groups()
                             mask = int(mask)
+                            if mask > 32:
+                                continue
                             start_int = addr_to_int(prefix) & make_mask(mask)
                             end_int = start_int | ((1 << 32 - mask) - 1)
                             if 0 <= end_int - start_int <= 1024:
