@@ -157,9 +157,10 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
                     _ = ".%s" % domain
                     trail = "(%s)%s" % (query[:-len(_)], _)
 
-                result = True
-                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[domain][0], trails[domain][1]), packet)
-                break
+                if not ('.' not in domain and re.search(r"(?i)\Ad?ns\d*\.", query)):  # e.g. ns2.nobel.su
+                    result = True
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[domain][0], trails[domain][1]), packet)
+                    break
 
         if not result and config.USE_HEURISTICS:
             if len(parts[0]) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD and '-' not in parts[0]:

@@ -3929,7 +3929,6 @@ smcpr.com
 smoke.hk
 smp.ru
 smtp.biz
-smtp.com
 sofa.org
 solangs.org
 somnio.com
