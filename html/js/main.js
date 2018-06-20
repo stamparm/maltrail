@@ -1555,17 +1555,21 @@ function initDetails() {
                             cell.append($("<span class='worst_asns' title='malicious ASN'></span>").tooltip());
                     }
                     else {
-                        interval = setInterval(function(ip, cell){
-                            html = cell.html();
-                            if (CHECK_IP[ip] !== null) {
-                                if (html.indexOf("ipcat") === -1) {
-                                    var json = CHECK_IP[ip];
-                                    var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'></span>" : "<span class='ipcat hidden'></span>").html(json.ipcat);
-                                    cell.append(span_ip);
-                                    if (json.worst_asns === "true")
-                                        cell.append($("<span class='worst_asns' title='malicious ASN'></span>").tooltip());
-                                }
+                        interval = setInterval(function(ip, cell) {
+                            if (typeof cell === "undefined")
                                 clearInterval(interval);
+                            else {
+                                html = cell.html();
+                                if (CHECK_IP[ip] !== null) {
+                                    if (html.indexOf("ipcat") === -1) {
+                                        var json = CHECK_IP[ip];
+                                        var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'></span>" : "<span class='ipcat hidden'></span>").html(json.ipcat);
+                                        cell.append(span_ip);
+                                        if (json.worst_asns === "true")
+                                            cell.append($("<span class='worst_asns' title='malicious ASN'></span>").tooltip());
+                                    }
+                                    clearInterval(interval);
+                                }
                             }
                         }, 500, ip, cell);
                     }
