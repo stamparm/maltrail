@@ -84,5 +84,6 @@ bitstamp.net
 bittrex.com
 blockchain.info
 coinbase.com
+hitbtc.com
 poloniex.com
 zaif.jp
