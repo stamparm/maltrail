@@ -70,3 +70,19 @@ hellominer.com
 # minecrunch.co
 # minemytraffic.com
 # crypto-loot.com
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/if-you-cant-steal-them-mine-them-cryptocurrency-threat-roundup
+
+auth.hitbtc.com
+binance.com
+bitcoin.com
+bitfinex.com
+bitflyer.jp
+bithumb.com
+bitmex.com
+bitstamp.net
+bittrex.com
+blockchain.info
+coinbase.com
+poloniex.com
+zaif.jp
