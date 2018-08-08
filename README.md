@@ -465,3 +465,4 @@ This software is provided under under a MIT License. See the accompanying [LICEN
 * James Lay
 * Ladislav Baco (@laciKE)
 * John Kristoff (@jtkdpu)
+* Mikhail Kasimov (@MikhailKasimov)
