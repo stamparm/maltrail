@@ -4941,3 +4941,7 @@ waw.pl
 .museum
 .mobi
 .stream
+
+# Reference: https://blog.talosintelligence.com/2018/08/threat-roundup-0803-0810.html
+
+.men
