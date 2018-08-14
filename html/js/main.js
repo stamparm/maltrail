@@ -1625,7 +1625,8 @@ function initDetails() {
                         var span_ip = $("<span title=''/>").html(ip + " ");
                         span_ip.tooltip(options);
 
-                        cell.html("").append(span_ip).append($(img).tooltip());
+                        if (typeof cell !== "undefined")
+                            cell.html("").append(span_ip).append($(img).tooltip());
                     }
                     else {
                         interval = setInterval(function(ip, cell) {
