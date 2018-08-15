@@ -555,3 +555,14 @@ safesearch.net
 # Reference: https://www.pcrisk.com/removal-guides/7219-remove-qone8-browser-hijacker
 
 qone8.com
+
+# Reference: https://blog.talosintelligence.com/2018/08/threat-roundup-0803-0810.html
+
+www.wizzmonetize.com
+ionesystemcare.info
+www.rothsideadome.pw
+www.usatdkeyboardhelper.pw
+
+# Reference: https://blog.talosintelligence.com/2018/08/threat-roundup-0803-0810.html
+
+lip.healthcakes.men
