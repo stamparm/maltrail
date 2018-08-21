@@ -4,3 +4,12 @@
 phish-education.apwg.org
 csd.link
 frog.wix.ru
+
+# Reference: https://twitter.com/malwrhunterteam/status/1031899551542591490
+
+avataarhornefashion.com
+chinaspacplus.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1031901896234033153
+
+ytvertkn.tk
