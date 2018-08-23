@@ -39,3 +39,7 @@ http://145.249.105.19/
 # Reference: https://twitter.com/PhishingAi/status/1031613997445832704
 
 setupoffice365.us
+
+# Reference: https://twitter.com/PhishingAi/status/1030556963619266560
+
+suppappl.xyz
