@@ -43,3 +43,8 @@ setupoffice365.us
 # Reference: https://twitter.com/PhishingAi/status/1030556963619266560
 
 suppappl.xyz
+
+# Reference: https://twitter.com/PhishingAi/status/1030524788337516546
+
+bestbuyca.store
+orangtelecom.com
