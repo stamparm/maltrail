@@ -52,3 +52,7 @@ orangtelecom.com
 # Reference: https://twitter.com/PhishingAi/status/1030197896644157440
 
 ucfgroups.com.hk
+
+# Reference: https://twitter.com/PhishingAi/status/1030193487524769792
+
+000keca.wcomhost.com/PB/
