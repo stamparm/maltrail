@@ -26,8 +26,12 @@ premierstl.com/level3-network/
 
 centralmissouriwhitetails.com
 gtu382gs.f8e2assh3.2018ssl.acritas-energy.com
-=======
+
 # Reference: https://twitter.com/malwrhunterteam/status/1032543718623125504
 
 receiptinvoice-format.com
 mrofficepanel.receiptinvoice-format.com
+
+# Reference: https://twitter.com/PhishingAi/status/1032693998702321664
+
+http://145.249.105.19/
