@@ -48,3 +48,7 @@ suppappl.xyz
 
 bestbuyca.store
 orangtelecom.com
+
+# Reference: https://twitter.com/PhishingAi/status/1030197896644157440
+
+ucfgroups.com.hk
