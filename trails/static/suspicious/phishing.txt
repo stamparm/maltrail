@@ -56,3 +56,25 @@ ucfgroups.com.hk
 # Reference: https://twitter.com/PhishingAi/status/1030193487524769792
 
 000keca.wcomhost.com/PB/
+
+# Reference: https://twitter.com/illegalFawn/status/1032938239802466304
+
+agentrate.com
+agenziadelleentrate.com
+agenziadelleentrate.info
+agenziadelleentrate.it
+agenziadelleentrate.net
+agenziadelleentrate.org
+agenziaent-online.info
+agenziaentrate.com
+agenzia-entrate.com
+agenziaentrate.info
+agenzia-entrate.it
+agenziaentrate.org
+agenzia-entrate.org
+agenziaentrateriscossione.com
+agenziaentrate-riscossione.com
+agenziaentrateriscossione.it
+agenziaentrateriscossione.org
+area-agenzia-en.info
+area-agenziaonline.info
