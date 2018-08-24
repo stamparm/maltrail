@@ -78,3 +78,8 @@ agenziaentrateriscossione.it
 agenziaentrateriscossione.org
 area-agenzia-en.info
 area-agenziaonline.info
+
+# Reference: https://twitter.com/packet_Wire/status/1032651837231509505
+
+officeurl.bid
+storage.googleapis.com/onedrive-rooses-520654945/index.html
