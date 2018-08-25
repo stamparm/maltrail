@@ -27,7 +27,6 @@
  - [False positives](#false-positives)
 - [Requirements](#requirements)
 - [License](#license)
-- [Donations](#donations)
 
 ## Introduction
 
@@ -456,7 +455,7 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6.x*
 
 ## License
 
-This software is provided under under a MIT License. See the accompanying [LICENSE](https://github.com/stamparm/maltrail/blob/master/LICENSE) file for more information.
+This software is provided under a MIT License. See the accompanying [LICENSE](https://github.com/stamparm/maltrail/blob/master/LICENSE) file for more information.
 
 ## Thank you
 
