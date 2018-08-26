@@ -87,3 +87,7 @@ storage.googleapis.com/onedrive-rooses-520654945/index.html
 # Reference: https://twitter.com/PhishingAi/status/1033407600644288512
 
 www.nigeria.gov.ng.gov-ng.com
+
+# Reference: https://twitter.com/ps66uk/status/1033343170233466881
+
+ghastuffuck.usa.cc
