@@ -70,3 +70,8 @@ hellominer.com
 # minecrunch.co
 # minemytraffic.com
 # crypto-loot.com
+
+# Reference: https://www.virustotal.com/#/file/179c5390ba2023402283104fd85d6394033976bc2f21e45d32e7557cafaa7d41/detection
+
+cryptaloot.pro
+www.sparechange.io
