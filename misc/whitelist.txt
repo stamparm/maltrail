@@ -291,6 +291,9 @@ pr-link.at
 esc.net.au
 starlan.com
 pastebin.com
+imgur.com
+alicdn.com
+wordpress.org
 
 # triggering suspicious http request
 
