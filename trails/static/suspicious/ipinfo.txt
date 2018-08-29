@@ -43,6 +43,7 @@ ip-address.cc
 ipaddresscheck.com
 ipaddress.com
 ipaddress.org
+ipaddressworld.com
 ip-address.ru
 ip-adress.com
 ip-adress.eu
