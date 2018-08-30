@@ -7,7 +7,6 @@
 
 # Reference: https://www.virustotal.com/en/ip-address/185.53.179.29/information/
 
-parkingcrew.net
 185.53.179.6
 185.53.179.8
 185.53.179.9
@@ -15,16 +14,7 @@ parkingcrew.net
 162.255.119.149
 192.64.119.91
 198.54.117.212
-
-ns1.parked.com
-ns2.parked.com
 74.117.112.65
-
-ns3.parked.com
-ns4.parked.com
-ns5.parked.com
-ns6.parked.com
-ns7.parked.com
 74.117.114.21
 
 # Reference: https://uk.godaddy.com/help/parking-your-domain-name-338
@@ -37,28 +27,20 @@ ns7.parked.com
 # Reference: https://www.threatcrowd.org/ip.php?ip=199.59.243.120
 
 199.59.243.120
-ns1.bodis.com
 199.59.243.21
-ns2.bodis.com
 199.59.243.22
 
 # Reference: https://www.threatcrowd.org/domain.php?domain=hotkeysparking.com
 
-hotkeysparking.com
 8.5.1.33
-melbourne.hotkeysparking.com
 8.5.1.33
-melbourneit.hotkeysparking.com
 8.5.1.16
-eig.hotkeysparking.com
 8.5.1.54
 8.5.1.30
 
 # Reference: https://myip.ms/info/whois/91.195.241.121
 # Reference: https://www.virustotal.com/en/ip-address/91.195.241.121/information/
 
-redirect.domcollect.com
-domcollect.com
 91.195.241.121
 
 # Reference: https://myip.ms/info/whois/172.99.81.161
@@ -75,19 +57,11 @@ domcollect.com
 
 # Reference: https://myip.ms/info/whois/194.85.61.76
 
-blocked1.nic.ru
-expirepages-kiae-2.nic.ru
 194.85.61.76
-blocked2.nic.ru
-expirepages-kiae-1.nic.ru
 109.70.26.37
-parking1.nic.ru
 193.232.159.33
-parking2.nic.ru
 193.232.158.33
-parking3.nic.ru
 193.232.159.34
-parking4.nic.ru
 193.232.158.34
 
 # Reference: https://myip.ms/info/whois/185.53.179.7
@@ -3287,8 +3261,6 @@ parking4.nic.ru
 # Reference: https://myip.ms/info/whois/50.63.202.104
 
 50.63.202.104
-
-sedoparking.com
 
 # Reference: https://myip.ms/info/whois/72.52.4.90
 

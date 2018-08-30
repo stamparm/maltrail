@@ -97,6 +97,7 @@ infernotions.com
 internationalmonetaryfund.org
 ipv6test.com
 ipv6test.net
+iteam.net.ru
 kaspersky.com
 kaspersky.de
 kaspersky.fr
@@ -170,6 +171,12 @@ yvimg.kz
 zillya.com
 zillya.ua
 zillyaoem.com
+
+# triggering potential DNS exhaustion
+
+dynamic-ip.hinet.net
+kasserver.com
+t-com.hr
 
 # to ignore in direct .exe downloads
 
