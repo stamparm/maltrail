@@ -180,3 +180,7 @@ smtp-verification.umbralaboza.com
 # Reference: https://twitter.com/ps66uk/status/1034485857586229251
 
 amaze.flu.cc
+
+# Reference: https://twitter.com/nullcookies/status/1035230782799925253
+
+somi.or.ke/ebet/
