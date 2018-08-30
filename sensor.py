@@ -311,6 +311,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                     post_data = None
                     host = dst_ip
                     first_index = tcp_data.find("\r\nHost:")
+                    path = path.lower()
 
                     if first_index >= 0:
                         first_index = first_index + len("\r\nHost:")
