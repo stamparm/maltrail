@@ -75,3 +75,7 @@ hellominer.com
 
 cryptaloot.pro
 www.sparechange.io
+
+# Reference: https://blog.talosintelligence.com/2018/08/rocke-champion-of-monero-miners.html
+
+3389.space
