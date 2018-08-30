@@ -3,6 +3,7 @@
 
 2ip.ru
 2ip.tools
+2ip.ua
 aboutmyip.com
 api.wipmania.com
 aruljohn.com
