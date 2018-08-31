@@ -192,3 +192,7 @@ renivaxx01.gettrails.com
 # Reference: https://twitter.com/nullcookies/status/1035310167817170947
 
 de-agb-token23jei84dh8.com
+
+# Reference: https://twitter.com/PhishingAi/status/1035509357633359873
+
+att-network.us
