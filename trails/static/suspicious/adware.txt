@@ -571,3 +571,11 @@ lip.healthcakes.men
 
 z11.cnzz.com
 z4.cnzz.com
+
+# Reference: https://malwaretips.com/blogs/ib-adnxs-popup-virus/
+
+ib.adnxs.com
+
+# Reference: https://howtoremove.guide/s-thebrighttag-com-malware-remove/
+
+thebrighttag.com
