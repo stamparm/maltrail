@@ -12,7 +12,6 @@ crypto-pool.fr
 dwarfpool.com
 xmrpool.eu
 prohash.net
-mine.bz
 nanopool.org
 ethereumpool.co
 suprnova.cc
