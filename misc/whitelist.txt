@@ -705,6 +705,7 @@ frog.wix.com
 1.1.1.1
 9.9.9.9
 opendsp.com
+pool.ntp.org
 tru.am
 put.re
 2606:4700:4700::1001
