@@ -539,16 +539,17 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     if not subdomains:
                                         subdomains = _subdomains[domain] = set()
 
-                                    if len(subdomains) < DNS_EXHAUSTION_THRESHOLD and not re.search(r"\A\d+\-\d+\-\d+\-\d+\Z", parts[0]):
-                                        subdomains.add('.'.join(parts[:-2]))
-                                    else:
-                                        if (sec - (_last_dns_exhaustion or 0)) > 60:
-                                            trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
-                                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "potential dns exhaustion (suspicious)", "(heuristic)"), packet)
-                                            _dns_exhausted_domains.add(domain)
-                                            _last_dns_exhaustion = sec
+                                    if not re.search(r"\A\d+\-\d+\-\d+\-\d+\Z", parts[0]):
+                                        if len(subdomains) < DNS_EXHAUSTION_THRESHOLD:
+                                            subdomains.add('.'.join(parts[:-2]))
+                                        else:
+                                            if (sec - (_last_dns_exhaustion or 0)) > 60:
+                                                trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
+                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "potential dns exhaustion (suspicious)", "(heuristic)"), packet)
+                                                _dns_exhausted_domains.add(domain)
+                                                _last_dns_exhaustion = sec
 
-                                        return
+                                            return
 
                             # Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
                             if type_ not in (12, 28) and class_ == 1:  # Type not in (PTR, AAAA), Class IN
