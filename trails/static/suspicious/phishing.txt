@@ -180,3 +180,15 @@ smtp-verification.umbralaboza.com
 # Reference: https://twitter.com/ps66uk/status/1034485857586229251
 
 amaze.flu.cc
+
+# Reference: https://twitter.com/nullcookies/status/1035230782799925253
+
+somi.or.ke/ebet/
+
+# Reference: https://www.symantec.com/blogs/threat-intelligence/wmic-download-malware
+
+renivaxx01.gettrails.com
+
+# Reference: https://twitter.com/nullcookies/status/1035310167817170947
+
+de-agb-token23jei84dh8.com
