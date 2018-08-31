@@ -216,3 +216,7 @@ modoocop.us
 # Reference: https://twitter.com/PhishingAi/status/1035531571728539648
 
 et-mobility.ref23175.constructionyvanbrazeau.com
+
+# Reference: https://twitter.com/kobebryamV2/status/1035116216573149184
+
+cycleformsf.in
