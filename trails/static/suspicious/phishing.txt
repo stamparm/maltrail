@@ -188,3 +188,7 @@ somi.or.ke/ebet/
 # Reference: https://www.symantec.com/blogs/threat-intelligence/wmic-download-malware
 
 renivaxx01.gettrails.com
+
+# Reference: https://twitter.com/nullcookies/status/1035310167817170947
+
+de-agb-token23jei84dh8.com
