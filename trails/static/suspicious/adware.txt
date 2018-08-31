@@ -579,3 +579,7 @@ ib.adnxs.com
 # Reference: https://howtoremove.guide/s-thebrighttag-com-malware-remove/
 
 thebrighttag.com
+
+# Reference: http://it-help.info/how-to/hijackers/2963-how-to-remove-epicunitscan-info-easily
+
+epicunitscan.info
