@@ -196,3 +196,9 @@ de-agb-token23jei84dh8.com
 # Reference: https://twitter.com/PhishingAi/status/1035509357633359873
 
 att-network.us
+
+# Reference: https://twitter.com/ViriBack/status/1031142390864564225
+
+cheriot-co.com 
+dross-eng.com
+www.deltafood-ae.com
