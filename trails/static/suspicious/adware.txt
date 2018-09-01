@@ -1209,3 +1209,10 @@ reportnl.info
 storagenl.info
 storagepl1.com
 storagepl1.info
+
+# Reference: https://blog.talosintelligence.com/2018/08/threat-roundup-0817-0824.html
+
+downloadfastfree.com
+imp.fusioninstall.com
+install.oinstaller2.com
+secure.oinstaller6.com
