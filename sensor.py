@@ -990,7 +990,9 @@ def main():
         config.SHOW_DEBUG = True
 
     if options.pcap_file:
-        if not os.path.isfile(options.pcap_file):
+        if options.pcap_file == '-':
+            print("[i] using STDIN")
+        elif not os.path.isfile(options.pcap_file):
             exit("[!] missing pcap file '%s'" % options.pcap_file)
         else:
             print("[i] using pcap file '%s'" % options.pcap_file)
