@@ -808,3 +808,7 @@
 # Highwinds (appeared on blocklist.de)
 
 205.185.192.0/19
+
+# Globalfrag (appeared on cybercrime-tracker.net)
+
+23.228.100.128/25

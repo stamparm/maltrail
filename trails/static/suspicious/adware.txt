@@ -1216,3 +1216,8 @@ downloadfastfree.com
 imp.fusioninstall.com
 install.oinstaller2.com
 secure.oinstaller6.com
+
+# Reference: https://www.virustotal.com/en/file/bf03b92b5a35c70d8fc16b4c3083ca4b3e385aa385e8b29ed6c2fc6f9785b572/analysis/
+
+cdnrep.reimage.com
+reimageplus.com
