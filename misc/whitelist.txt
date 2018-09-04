@@ -174,9 +174,12 @@ zillyaoem.com
 
 # triggering potential DNS exhaustion
 
+barracudabrts.com
 dynamic-ip.hinet.net
 kasserver.com
+sl-reverse.com
 t-com.hr
+tedata.net
 
 # to ignore in direct .exe downloads
 
