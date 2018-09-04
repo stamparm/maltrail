@@ -304,6 +304,50 @@ pastebin.com
 imgur.com
 alicdn.com
 wordpress.org
+iobit.com
+static.xvideos.com
+hanstrackr.com
+bitly.com
+silvergames.com
+easydriverpro.com
+sc01.alicdn.com
+sc02.alicdn.com
+any-video-converter.com
+
+# web (JS) miners appearing as "malware" on malwarepatrol.net
+
+coin-hive.com
+jsecoin.com
+cryptoloot.pro
+webassembly.stream
+ppoi.org
+xmrstudio
+webmine.pro
+miner.start
+allfontshere.press
+freecontent.bid
+freecontent.date
+freecontent.faith
+freecontent.party
+freecontent.science
+freecontent.stream
+freecontent.trade
+hostingcloud.accountant
+hostingcloud.bid
+hostingcloud.date
+hostingcloud.download
+hostingcloud.faith
+hostingcloud.loan
+jshosting.bid
+jshosting.date
+jshosting.download
+jshosting.loan
+jshosting.party
+jshosting.racing
+jshosting.review
+jshosting.stream
+jshosting.trade
+jshosting.win
 
 # triggering suspicious http request
 
@@ -324,6 +368,14 @@ sqlzoo.net
 symcb.com
 symcd.com
 victronenergy.com
+
+# old compromised sites on cybercrime-tracker.net
+gripa.hr
+czk-cakovec.hr
+
+# found as false positive on urlvir.com
+
+pdf-archive.com
 
 # found as false positive in otx.alienvault.com
 
