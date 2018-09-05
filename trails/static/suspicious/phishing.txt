@@ -227,6 +227,11 @@ cycleformsf.in
 webstarterz.com
 
 # Reference: https://twitter.com/ViriBack/status/1031142390864564225
+
 cheriot-co.com 
 dross-eng.com
 www.deltafood-ae.com
+
+# Reference: https://twitter.com/PhishingAi/status/1037158782415994880
+
+3e.cl
