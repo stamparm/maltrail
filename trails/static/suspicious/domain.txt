@@ -4944,3 +4944,7 @@ ze.tc
 zeg.cc
 zicp.net
 zik.dj
+
+# Reference: https://twitter.com/PhishingAi/status/1037158782415994880
+
+.cl
