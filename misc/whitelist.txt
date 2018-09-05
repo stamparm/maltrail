@@ -313,6 +313,7 @@ easydriverpro.com
 sc01.alicdn.com
 sc02.alicdn.com
 any-video-converter.com
+adriaticsailor.com
 
 # web (JS) miners appearing as "malware" on malwarepatrol.net
 
@@ -385,6 +386,7 @@ creativecommons.org
 arstechnica.co.uk
 hpe.com
 doubleclick.net
+sify.com
 
 # DNSBL/RBL/MHR
 
@@ -765,11 +767,19 @@ tru.am
 put.re
 2606:4700:4700::1001
 2606:4700:4700::1111
+msn.com
+azureedge.net
+rubrkik.ga
+microsoftstream.com
 
-# Sh.ty ad network introducing noise with long subdomain names
+# Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
 mucocutaneousmyrmecophaga.com
 scorecardresearch.com
+dsp.io
+postaffiliatepro.com
+askmediagroup.com
+litix.io
 
 # Google crawlers
 

@@ -1345,3 +1345,7 @@ usinternetsearch.com
 valuedsearch.com
 virlz.com
 webqueryresults.com
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=allmodel-pro.com
+
+allmodel-pro.com
