@@ -225,3 +225,8 @@ cycleformsf.in
 # Reference: https://twitter.com/illegalFawn/status/1035623955724427264
 
 webstarterz.com
+
+# Reference: https://twitter.com/ViriBack/status/1031142390864564225
+cheriot-co.com 
+dross-eng.com
+www.deltafood-ae.com
