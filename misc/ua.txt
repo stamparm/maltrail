@@ -171,6 +171,7 @@ gomtour
 gsa-crawler
 gtbank
 guidtracker
+Hakai/2.0
 hardcore software
 havij
 \Ahelpsrvc
