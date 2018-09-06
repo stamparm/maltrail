@@ -395,38 +395,38 @@ def _process_packet(packet, sec, usec, ip_offset):
                             if result:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, result, "user agent (suspicious)", "(heuristic)"), packet)
 
-                    checks = [path.rstrip('/')]
-                    if '?' in path:
-                        checks.append(path.split('?')[0].rstrip('/'))
+                    if not _check_domain_whitelisted(host):
+                        checks = [path.rstrip('/')]
+                        if '?' in path:
+                            checks.append(path.split('?')[0].rstrip('/'))
 
-                    _ = os.path.splitext(checks[-1])
-                    if _[1]:
-                        checks.append(_[0])
+                        _ = os.path.splitext(checks[-1])
+                        if _[1]:
+                            checks.append(_[0])
 
-                    if checks[-1].count('/') > 1:
-                        checks.append(checks[-1][:checks[-1].rfind('/')])
-                        checks.append(checks[0][checks[0].rfind('/'):].split('?')[0])
+                        if checks[-1].count('/') > 1:
+                            checks.append(checks[-1][:checks[-1].rfind('/')])
+                            checks.append(checks[0][checks[0].rfind('/'):].split('?')[0])
 
-                    for check in filter(None, checks):
-                        for _ in ("", host):
-                            check = "%s%s" % (_, check)
-                            if check in trails:
-                                parts = url.split(check)
-                                other = ("(%s)" % _ if _ else _ for _ in parts)
-                                trail = check.join(other)
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, trails[check][0], trails[check][1]))
-                                return
+                        for check in filter(None, checks):
+                            for _ in ("", host):
+                                check = "%s%s" % (_, check)
+                                if check in trails:
+                                    parts = url.split(check)
+                                    other = ("(%s)" % _ if _ else _ for _ in parts)
+                                    trail = check.join(other)
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, trails[check][0], trails[check][1]))
+                                    return
 
-                    if config.USE_HEURISTICS:
-                        unquoted_path = urllib.unquote(path)
-                        unquoted_post_data = urllib.unquote(post_data or "")
-                        for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
-                            replacement = SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS[char]
-                            path = path.replace(char, replacement)
-                            if post_data:
-                                post_data = post_data.replace(char, replacement)
+                        if config.USE_HEURISTICS:
+                            unquoted_path = urllib.unquote(path)
+                            unquoted_post_data = urllib.unquote(post_data or "")
+                            for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
+                                replacement = SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS[char]
+                                path = path.replace(char, replacement)
+                                if post_data:
+                                    post_data = post_data.replace(char, replacement)
 
-                        if not _check_domain_whitelisted(host):
                             if not any(_ in unquoted_path.lower() for _ in WHITELIST_HTTP_REQUEST_PATHS):
                                 if any(_ in unquoted_path for _ in SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION):
                                     found = _result_cache.get(unquoted_path)
