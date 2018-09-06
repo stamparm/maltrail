@@ -17,6 +17,9 @@
 /jackmyx86
 /tftp.sh
 /tftp2.sh
+
+# Reference: https://www.virustotal.com/en/file/e0120fc5544f9bc73f88ce4fbc8ba2c80cda73ab09a6092f84e5a77b07abb1d3/analysis/
+
 /cuntybash
 
 # Reference: https://www.virustotal.com/en/ip-address/217.28.218.227/information/
