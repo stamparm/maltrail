@@ -315,6 +315,8 @@ sc02.alicdn.com
 any-video-converter.com
 adriaticsailor.com
 setitagila.ru
+imganuncios.mitula.net
+napravi-sam.com
 
 # web (JS) miners appearing as "malware" on malwarepatrol.net
 
@@ -372,8 +374,12 @@ symcd.com
 victronenergy.com
 
 # old compromised sites on cybercrime-tracker.net
+
 gripa.hr
 czk-cakovec.hr
+nk-slaven-belupo.hr
+fongyeh.com.tw
+ee.ncu.edu.tw
 
 # found as false positive on urlvir.com
 

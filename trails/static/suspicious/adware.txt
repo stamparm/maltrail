@@ -1349,3 +1349,11 @@ webqueryresults.com
 # Reference: https://www.threatcrowd.org/domain.php?domain=allmodel-pro.com
 
 allmodel-pro.com
+
+# Reference: https://removeviruswithease.blogspot.com/2018/07/solution-remove-ua1lunraccom.html
+
+ua1.lunrac.com
+
+# Reference: https://www.virusresearch.org/remove-t-lkqd-net-redirects/
+
+lkqd.net

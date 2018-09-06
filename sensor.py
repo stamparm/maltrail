@@ -141,6 +141,9 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
         if ':' in query:
             query = query.split(':', 1)[0]
 
+    if query.replace('.', "").isdigit():  # IP address
+        return
+
     if _result_cache.get(query) == False:
         return
 
@@ -325,7 +328,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 host = host[:-3]
                             if host and host[0].isalpha() and dst_ip in trails:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, "%s (%s)" % (dst_ip, host.split(':')[0]), trails[dst_ip][0], trails[dst_ip][1]), packet)
-                            elif config.CHECK_HOST_DOMAINS and not host.replace('.', "").isdigit():
+                            elif config.CHECK_HOST_DOMAINS:
                                 _check_domain(host, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, packet)
                     elif config.USE_HEURISTICS and config.CHECK_MISSING_HOST:
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, "%s%s" % (host, path), "missing host header (suspicious)", "(heuristic)"), packet)
