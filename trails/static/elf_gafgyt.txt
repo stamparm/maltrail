@@ -1,0 +1,58 @@
+# Copyright (c) 2014-2018 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://urlhaus.abuse.ch/host/80.211.189.104/
+
+/bins.sh
+/gtop.sh
+/jackmyarmv6
+/jackmyi586
+/jackmyi686
+/jackmym86k
+/jackmymipsel
+/jackmymips
+/jackmypowerpc
+/jackmysh4
+/jackmysparc
+/jackmyx86
+/tftp.sh
+/tftp2.sh
+/cuntybash
+
+# Reference: https://www.virustotal.com/en/ip-address/217.28.218.227/information/
+
+/dingarm
+/dingcurl.sh
+/dingdong.sh
+/dingi686
+/dingmips
+/dingmips64
+/dingmipsel
+/dingppc
+/dingsh4
+/dingsparc
+/dingx64
+
+# Reference: https://www.virustotal.com/en/file/1d3737937d900aab31f2e1acabfb861ffa2a7d11040e67f408d608150cfa6d8c/analysis/
+
+/xlegal1
+/xlegal2
+/xlegal3
+/xlegal4
+/xlegal5
+/xlegal6
+/xlegal7
+/xlegal8
+
+# Reference: https://www.virustotal.com/en/file/f25f507d7ad9e388a41f55a22a9a5f8b5782d9af3f1ca0a34aa117be2ac37e4f/analysis/
+
+/IoTarmv4
+/IoTarmv5
+/IoTi686
+/IoTm68k
+/IoTmips
+/IoTmips64
+/IoTpowerpc
+/IoTsh4
+/IoTsparc
+/IoTx86
