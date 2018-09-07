@@ -7,7 +7,7 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "http://sblam.com/blacklist.txt"
+__url__ = "https://sblam.com/blacklist.txt"
 __check__ = "HTTP spam sources"
 __info__ = "bad reputation (suspicious)"
 __reference__ = "sblam.com"

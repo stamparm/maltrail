@@ -9,7 +9,7 @@ import re
 
 from core.common import retrieve_content
 
-__url__ = "http://cybercrime-tracker.net/ccam.php"
+__url__ = "https://cybercrime-tracker.net/ccam.php"
 __check__ = "Atmos Strategic Monitoring"
 __info__ = "atmos (malware)"
 __reference__ = "cybercrime-tracker.net"

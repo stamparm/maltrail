@@ -9,7 +9,7 @@ import re
 
 from core.common import retrieve_content
 
-__url__ = "http://ransomwaretracker.abuse.ch/downloads/RW_URLBL.txt"
+__url__ = "https://ransomwaretracker.abuse.ch/downloads/RW_URLBL.txt"
 __check__ = "questions"
 __info__ = "ransomware (malware)"
 __reference__ = "abuse.ch"

@@ -7,7 +7,7 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "http://ransomwaretracker.abuse.ch/downloads/RW_IPBL.txt"
+__url__ = "https://ransomwaretracker.abuse.ch/downloads/RW_IPBL.txt"
 __check__ = "questions"
 __info__ = "ransomware (malware)"
 __reference__ = "abuse.ch"

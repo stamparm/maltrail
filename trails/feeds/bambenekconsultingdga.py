@@ -14,7 +14,7 @@ import urllib2
 from core.settings import NAME
 from core.settings import TIMEOUT
 
-__url__ = "http://osint.bambenekconsulting.com/feeds/dga-feed.txt"
+__url__ = "https://osint.bambenekconsulting.com/feeds/dga-feed.txt"
 __check__ = "Domain used by"
 __reference__ = "bambenekconsulting.com"
 

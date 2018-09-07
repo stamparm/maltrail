@@ -8,7 +8,7 @@ See the file 'LICENSE' for copying permission
 from core.common import retrieve_content
 from core.settings import NAME
 
-__url__ = "http://blocklist.greensnow.co/greensnow.txt"
+__url__ = "https://blocklist.greensnow.co/greensnow.txt"
 __check__ = ".1"
 __info__ = "known attacker"
 __reference__ = "greensnow.co"

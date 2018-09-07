@@ -9,7 +9,7 @@ import re
 
 from core.common import retrieve_content
 
-__url__ = "http://osint.bambenekconsulting.com/feeds/c2-ipmasterlist-high.txt"
+__url__ = "https://osint.bambenekconsulting.com/feeds/c2-ipmasterlist-high.txt"
 __check__ = "Master Feed"
 __reference__ = "bambenekconsulting.com"
 

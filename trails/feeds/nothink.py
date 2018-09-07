@@ -7,7 +7,7 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "http://www.nothink.org/blacklist/blacklist_malware_irc.txt"
+__url__ = "https://www.nothink.org/blacklist/blacklist_malware_irc.txt"
 __check__ = "Malware IRC"
 __info__ = "potential malware site"
 __reference__ = "nothink.org"

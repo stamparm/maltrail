@@ -7,7 +7,7 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "http://www.talosintelligence.com/feeds/ip-filter.blf"
+__url__ = "https://www.talosintelligence.com/feeds/ip-filter.blf"
 __check__ = ".1"
 __info__ = "bad reputation"
 __reference__ = "talosintelligence.com"

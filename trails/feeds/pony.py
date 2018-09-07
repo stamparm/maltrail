@@ -9,7 +9,7 @@ import re
 
 from core.common import retrieve_content
 
-__url__ = "http://cybercrime-tracker.net/ccpmgate.php"
+__url__ = "https://cybercrime-tracker.net/ccpmgate.php"
 __check__ = "/gate.php"
 __info__ = "pony (malware)"
 __reference__ = "cybercrime-tracker.net"

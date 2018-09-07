@@ -7,7 +7,7 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "http://feeds.dshield.org/top10-2.txt"
+__url__ = "https://feeds.dshield.org/top10-2.txt"
 __check__ = ".1"
 __info__ = "known attacker"
 __reference__ = "dshield.org"
