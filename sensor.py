@@ -160,7 +160,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
                     _ = ".%s" % domain
                     trail = "(%s)%s" % (query[:-len(_)], _)
 
-                if not ('.' not in domain and re.search(r"(?i)\Ad?ns\d*\.", query)):  # e.g. ns2.nobel.su
+                if not (re.search(r"(?i)\Ad?ns\d*\.", query) and any(_ in trails.get(domain, " ")[0] for _ in ("suspicious", "sinkhole"))):  # e.g. ns2.nobel.su
                     result = True
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[domain][0], trails[domain][1]), packet)
                     break
