@@ -136,6 +136,10 @@ def update_trails(server=None, force=False, offline=False):
                     print(" [o] '%s'%s" % (module.__url__, " " * 20 if len(module.__url__) < 20 else ""))
                     sys.stdout.write("[?] progress: %d/%d (%d%%)\r" % (i, len(filenames), i * 100 / len(filenames)))
                     sys.stdout.flush()
+
+                    if config.DISABLED_TRAILS_INFO_REGEX and re.search(config.DISABLED_TRAILS_INFO_REGEX, getattr(module, "__info__", "")):
+                        continue
+
                     try:
                         results = function()
                         for item in results.items():
@@ -212,7 +216,7 @@ def update_trails(server=None, force=False, offline=False):
             if key not in trails:
                 continue
             if config.DISABLED_TRAILS_INFO_REGEX:
-                if re.search(config.DISABLED_TRAILS_INFO_REGEX, trails[key][1]):
+                if re.search(config.DISABLED_TRAILS_INFO_REGEX, trails[key][0]):
                     del trails[key]
                     continue
             if not key or re.search(r"\A(?i)\.?[a-z]+\Z", key) and not any(_ in trails[key][1] for _ in ("custom", "static")):
