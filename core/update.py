@@ -211,6 +211,10 @@ def update_trails(server=None, force=False, offline=False):
         for key in trails.keys():
             if key not in trails:
                 continue
+            if config.DISABLED_TRAILS_INFO_REGEX:
+                if re.search(config.DISABLED_TRAILS_INFO_REGEX, trails[key][1])
+                    del trails[key]
+                    continue
             if not key or re.search(r"\A(?i)\.?[a-z]+\Z", key) and not any(_ in trails[key][1] for _ in ("custom", "static")):
                 del trails[key]
                 continue
