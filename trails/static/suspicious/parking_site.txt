@@ -3405,3 +3405,8 @@
 # justhost.com
 
 50.87.64.117
+
+# Reference: https://github.com/stamparm/maltrail/pull/332#issuecomment-419673426
+# namecheap.com
+
+68.65.122.95
