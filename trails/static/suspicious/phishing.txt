@@ -239,3 +239,9 @@ www.deltafood-ae.com
 # Reference: https://twitter.com/PhishingAi/status/1037798237103521793
 
 soporteid.us
+
+# Reference: https://twitter.com/ps66uk/status/1037837183271485440
+
+counciltrade.usa.cc
+kobagroup.co.id
+wdloginhelmet.usa.cc
