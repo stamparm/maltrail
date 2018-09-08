@@ -245,3 +245,7 @@ soporteid.us
 counciltrade.usa.cc
 kobagroup.co.id
 wdloginhelmet.usa.cc
+
+# Reference: https://twitter.com/yvesago/status/1038001929232691201
+
+hbntrd-online.com
