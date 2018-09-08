@@ -235,3 +235,7 @@ www.deltafood-ae.com
 # Reference: https://twitter.com/PhishingAi/status/1037158782415994880
 
 3e.cl
+
+# Reference: https://twitter.com/PhishingAi/status/1037798237103521793
+
+soporteid.us
