@@ -42,8 +42,11 @@ def fetch():
                 line = re.sub(r"\s*#.*", "", line)
                 if '://' in line:
                     line = re.search(r"://(.*)", line).group(1)
-                line = line.rstrip('/')
+                    if '/' not in line:
+                        line = "%s/" % line
                 if '/' in line:
+                    if line.count('/') > 1:
+                        line = line.rstrip('/')
                     retval[line] = (__info__, __reference__)
                     line = line.split('/')[0]
                 elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", line):

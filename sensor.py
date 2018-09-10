@@ -421,6 +421,11 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, trails[check][0], trails[check][1]))
                                     return
 
+                        if "%s/" % host in trails:
+                            trail = "%s/" % host
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, trails[trail][0], trails[trail][1]))
+                            return
+
                         if config.USE_HEURISTICS:
                             unquoted_path = urllib.unquote(path)
                             unquoted_post_data = urllib.unquote(post_data or "")
