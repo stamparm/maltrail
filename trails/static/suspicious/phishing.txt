@@ -287,3 +287,39 @@ www.deade.esy.es
 # Reference: https://twitter.com/smica83/status/1038909875143811077
 
 strengthscombined.com
+
+# Reference: https://twitter.com/PhishingAi/status/1037798237103521793
+
+soporteid.us
+
+# Reference: https://twitter.com/PhishingAi/status/1037341353024221184
+
+http://181.174.166.170
+http://91.209.70.8
+89d09dwwd-billing.com
+billing-f0w98ew20.com
+d9vfs9dfv-billing.com
+login.netflix-admin.com
+login.netflix-control.com
+netflix-exp.com
+
+# Reference: https://twitter.com/PhishingAi/status/1037167256138989569
+# Reference: https://paste.ee/p/z6Xng
+
+citycloudbd.com
+ctsluganda.org
+figwit.co.uk
+gayatriea.com
+joaquinpianguita.com
+kazurimanager.com
+mutuprop.com
+neernikunj.com
+riveratorresyasociados.com
+rotarykampalasseseislands.org
+sunbridge.co.ug
+sycjamsa.com
+wisdomhomeloans.com.au
+www.intechsecurity.com.au
+www.intest.com.ve
+www.sumipancarabobo.com.ve
+www.webdesigns.net.au
