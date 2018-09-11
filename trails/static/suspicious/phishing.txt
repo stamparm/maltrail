@@ -339,3 +339,8 @@ health-gov-za.org
 
 http://46.21.147.250
 idealista.it-immobile-15018431-affitto-case.i435490031.eu
+
+# Reference: https://twitter.com/jamestreichle/status/1039311144282927104
+
+http://200.192.246.82:8081/index.php?r=verify
+huit.re/loginpage
