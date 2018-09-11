@@ -306,23 +306,25 @@ netflix-exp.com
 # Reference: https://twitter.com/PhishingAi/status/1037167256138989569
 # Reference: https://paste.ee/p/z6Xng
 
-citycloudbd.com
+citycloudbd.com/pot/Share/share
 ctsluganda.org
-figwit.co.uk
+figwit.co.uk/SEIREN/Office/Share/share
 gayatriea.com
 joaquinpianguita.com
 kazurimanager.com
 mutuprop.com
-neernikunj.com
+neernikunj.com/rss/cgi_bin/Share/share
 riveratorresyasociados.com
-rotarykampalasseseislands.org
-sunbridge.co.ug
+rotarykampalasseseislands.org/nig/sharpoint/share
+sunbridge.co.ug/ADMIN/ch/share/
+sunbridge.co.ug/hot/ch/share/
+sunbridge.co.ug/sars/ch/share
 sycjamsa.com
 wisdomhomeloans.com.au
 www.intechsecurity.com.au
-www.intest.com.ve
+www.intest.com.ve/flexmation_/Share/share
 www.sumipancarabobo.com.ve
-www.webdesigns.net.au
+www.webdesigns.net.au/dustvalue/Share/share/index.php
 
 # Reference: https://twitter.com/PhishingAi/status/1037176371435302912
 
