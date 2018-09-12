@@ -4561,10 +4561,6 @@ zx9.de
 co.cc
 co.be
 
-# Reference: http://blog.unmaskparasites.com/2012/07/26/runforestrun-now-encrypts-legitimate-js-files/
-
-waw.pl
-
 # Reference: http://www.networkworld.com/article/3091754/security/the-new-internet-domains-are-a-wasteland.html
 
 .xyz
