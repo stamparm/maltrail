@@ -17,11 +17,10 @@
 74.117.112.65
 74.117.114.21
 
-# Reference: https://uk.godaddy.com/help/parking-your-domain-name-338
-# Reference: https://www.virustotal.com/en/ip-address/50.63.202.32/information/
-# (e.g. http://uni-park.com)
+# godaddy.com (misc.)
 
 50.63.202.32
+50.63.202.61
 
 # Reference: http://domainbigdata.com/199.59.243.120
 # Reference: https://www.threatcrowd.org/ip.php?ip=199.59.243.120
