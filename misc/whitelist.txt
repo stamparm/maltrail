@@ -787,6 +787,7 @@ dsp.io
 postaffiliatepro.com
 askmediagroup.com
 litix.io
+ubembed.com
 
 # Google crawlers
 
