@@ -4948,3 +4948,7 @@ zik.dj
 # Reference: https://twitter.com/ps66uk/status/1037866649435729921
 
 .fun
+
+# Reference: https://www.virustotal.com/#/domain/dynu.net
+
+dynu.net
