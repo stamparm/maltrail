@@ -3409,3 +3409,12 @@
 # namecheap.com
 
 68.65.122.95
+
+
+# fabulous.com
+
+199.191.50.86
+
+# instantfwding.com
+
+192.184.12.62
