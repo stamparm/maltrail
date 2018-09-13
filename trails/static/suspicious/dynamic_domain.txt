@@ -1231,7 +1231,6 @@ foreignaffair.org
 freedynamicdns.net
 freedynamicdns.org
 geekgalaxy.com
-github.io
 golffan.us
 google.lv
 gotdns.ch
@@ -1259,7 +1258,6 @@ mysecuritycamera.com
 mysecuritycamera.net
 mysecuritycamera.org
 myvnc.com
-ne.jp
 net-freaks.com
 nflfan.org
 nhlfan.net
