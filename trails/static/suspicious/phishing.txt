@@ -435,3 +435,39 @@ rkimf.org
 # Reference: https://twitter.com/packet_Wire/status/1039624736689586182
 
 tucge.com/.well-known/404/ 
+
+# Reference: https://twitter.com/nullcookies/status/1040032150576418817
+
+com-security.co/instagram
+
+# Reference: https://twitter.com/nullcookies/status/1040055342128746496
+# Reference: https://pastebin.com/fm7qkZfw
+
+abnamro-security.com
+applsecu-ver.com
+canada-gouv1.com
+ee-verify.com
+ingappupdate.com
+inloggen-abnamro.com
+inloggen-mijning.com
+inloggen-rabobank.com
+login-abnamro.com
+login-ing.com
+login-rabobank.com
+mobile-alert-scotia.com
+mobile-scotia-web.com
+mobile-scotiabank.com
+mobilescotiaonline.com
+newupdubbel.com
+rabobank-security.com
+scotia-bank-alerts.com
+scotiabank-jm.com
+scotiabankalerts-trinidad.com
+scotiamobilesite.com
+secudubbelbeveilig.com
+securelogin-abnamro.com
+securelogin-ing.com
+securelogin-rabobank.com
+security-ing.comC
+securitycentre-hsbc.com
+ukhsbc-security-online.com
