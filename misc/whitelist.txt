@@ -398,6 +398,7 @@ arstechnica.co.uk
 hpe.com
 doubleclick.net
 sify.com
+publicdomainregistry.com
 
 # DNSBL/RBL/MHR
 
