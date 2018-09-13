@@ -1357,3 +1357,10 @@ ua1.lunrac.com
 # Reference: https://www.virusresearch.org/remove-t-lkqd-net-redirects/
 
 lkqd.net
+
+# Reference: https://documents.trendmicro.com/assets/rpt/rpt-hazards-ahead.pdf
+
+allmodel-pro.com
+sp-storage.spccint.com
+jsgnr.eshopcomp.com
+cnfg.toolbarservices.com

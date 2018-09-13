@@ -285,6 +285,10 @@ s3.amazonaws.com
 
 atw.hu
 
+# appeared on malwaredomainlist.com
+
+hausnet.ru
+
 # appeared on malc0de.com
 
 msecnd.net
