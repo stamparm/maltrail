@@ -471,3 +471,7 @@ securelogin-rabobank.com
 security-ing.comC
 securitycentre-hsbc.com
 ukhsbc-security-online.com
+
+# Reference: https://twitter.com/PhishingAi/status/1040276712133681158
+
+bireyselsube-garanti-kampanyalari.xyz
