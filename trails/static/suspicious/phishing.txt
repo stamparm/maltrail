@@ -288,10 +288,6 @@ www.deade.esy.es
 
 strengthscombined.com
 
-# Reference: https://twitter.com/PhishingAi/status/1037798237103521793
-
-soporteid.us
-
 # Reference: https://twitter.com/PhishingAi/status/1037341353024221184
 
 http://181.174.166.170
