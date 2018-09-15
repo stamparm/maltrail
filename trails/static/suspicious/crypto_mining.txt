@@ -82,3 +82,8 @@ www.sparechange.io
 # Reference: https://github.com/xmrig/xmrig/blob/master/src/net/strategies/DonateStrategy.cpp
 
 fee.xmrig.com
+
+# Reference: https://twitter.com/ViriBack/status/983011333506588672
+# Reference: https://pastebin.com/nwWHHFe0
+
+mineringzz9.zzz.com.ua
