@@ -288,10 +288,6 @@ www.deade.esy.es
 
 strengthscombined.com
 
-# Reference: https://twitter.com/PhishingAi/status/1037798237103521793
-
-soporteid.us
-
 # Reference: https://twitter.com/PhishingAi/status/1037341353024221184
 
 http://181.174.166.170
@@ -471,3 +467,17 @@ securelogin-rabobank.com
 security-ing.comC
 securitycentre-hsbc.com
 ukhsbc-security-online.com
+
+# Reference: https://twitter.com/PhishingAi/status/1040276712133681158
+
+bireyselsube-garanti-kampanyalari.xyz
+
+# Reference: https://twitter.com/PhishingAi/status/1040285581199245313
+
+helps.support
+aedksj6.beget.tech
+raedksj6.beget.tech
+
+# Reference: https://twitter.com/dave_daves/status/1040141068682100736
+
+accessonline-account.com
