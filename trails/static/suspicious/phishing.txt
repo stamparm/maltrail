@@ -485,3 +485,8 @@ accessonline-account.com
 # Reference: https://twitter.com/nullcookies/status/1041327939122618369
 
 naimal.tk
+
+# Reference: https://twitter.com/nullcookies/status/1041320863734407168
+
+driss.cf
+driss.tk
