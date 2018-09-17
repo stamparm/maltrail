@@ -499,3 +499,7 @@ sh.qihongzhanshi.com/twitter_
 
 pdf.investintech.com
 go2l.ink
+
+# Reference: https://twitter.com/smica83/status/1041580806228140032
+
+192.163.212.241/auth/direct/otp/index.php
