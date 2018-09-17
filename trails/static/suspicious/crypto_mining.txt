@@ -82,3 +82,21 @@ www.sparechange.io
 # Reference: https://github.com/xmrig/xmrig/blob/master/src/net/strategies/DonateStrategy.cpp
 
 fee.xmrig.com
+
+# Reference: https://twitter.com/ViriBack/status/983011333506588672
+# Reference: https://pastebin.com/nwWHHFe0
+
+mineringzz9.zzz.com.ua
+
+# Reference: https://twitter.com/bad_packets/status/1038967603048243200
+
+feesocrald.com
+soodatmish.com
+
+# Reference: https://twitter.com/bad_packets/status/1038705757552660480
+
+drupalupdates.tk 
+
+# Reference: https://www.bleepingcomputer.com/news/security/mongo-lock-attack-ransoming-deleted-mongodb-databases/
+
+coincola.com
