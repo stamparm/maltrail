@@ -503,3 +503,15 @@ go2l.ink
 # Reference: https://twitter.com/smica83/status/1041580806228140032
 
 192.163.212.241/auth/direct/otp/index.php
+
+# Reference: https://twitter.com/Techhelplistcom/status/1041550957916680195
+
+alovers.usa.cc
+amazed.usa.cc
+drivings.nut.cc
+eedes.usa.cc
+gels.flu.cc
+roses.nut.cc
+shares.nut.cc
+sweets.nut.cc
+swimmings.flu.cc
