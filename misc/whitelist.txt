@@ -810,3 +810,7 @@ ubembed.com
 
 supremodesk.com
 nanosystems.it
+
+# Microsoft's network connectivity check domain
+
+msftncsi.com
