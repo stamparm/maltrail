@@ -1,0 +1,6 @@
+# Copyright (c) 2014-2018 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/#/ip-address/74.119.239.234
+
+74.119.239.234
