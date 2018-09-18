@@ -21,6 +21,8 @@
 
 50.63.202.32
 50.63.202.61
+184.168.221.82
+184.168.221.83
 
 # Reference: http://domainbigdata.com/199.59.243.120
 # Reference: https://www.threatcrowd.org/ip.php?ip=199.59.243.120
@@ -3381,6 +3383,7 @@
 208.91.197.46
 208.91.196.4
 208.91.197.91
+209.99.40.220
 
 # HugeDomains.com
 
