@@ -527,3 +527,22 @@ bsacompany.ir/vc/
 # Reference: https://twitter.com/smica83/status/1041658334099779584
 
 crescenthomeorphan.org/gallery/7/postmastereng/postmaster/a/
+
+# Reference: https://twitter.com/PhishingAi/status/1042109776224583680
+
+216.252.225.35.bc.googleusercontent.com
+halkbank-paraf-kazan.com
+kuveyturk-mobilsube-giris.com
+mobil-tr-halkbank.com
+tr-mobil-halkduyuru.com
+www-garantibonus.com
+www-garanti.com
+www-garantiduyuru.com
+www-garanti-isube.com
+www-garantiisube.com
+www-garantimobil.com
+www-garantibankasi.com
+www-isube-garanti.com
+www-vakifbank.com
+www-vakfbank.com
+ziraatcepten.com
