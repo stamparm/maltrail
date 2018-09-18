@@ -26,6 +26,10 @@
 184.168.221.82
 184.168.221.83
 
+# enom.com (misc.)
+
+209.200.154.38
+
 # Reference: http://domainbigdata.com/199.59.243.120
 # Reference: https://www.threatcrowd.org/ip.php?ip=199.59.243.120
 
