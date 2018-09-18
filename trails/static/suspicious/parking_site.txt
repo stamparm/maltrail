@@ -30,6 +30,10 @@
 
 209.200.154.38
 
+# pakingcrew.com (misc.)
+
+198.54.117.200
+
 # Reference: http://domainbigdata.com/199.59.243.120
 # Reference: https://www.threatcrowd.org/ip.php?ip=199.59.243.120
 
