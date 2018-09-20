@@ -616,3 +616,31 @@ add-me-sc.com
 # Reference: https://twitter.com/nullcookies/status/1042537633958658048
 
 dope.org/9x/9x/
+
+# Reference: https://twitter.com/PhishingAi/status/1042768334780071936
+
+dconline.org/quotation/eim/login.php
+dconline.org/wp-content/upgrade/office_voy/
+
+# Reference: https://twitter.com/PhishingAi/status/1042427878426599424
+
+download.myaccount-cloud.com
+
+# Reference: https://twitter.com/PhishingAi/status/1042269752402616320
+
+apple.com-clean-macbook.live
+
+# Reference: https://twitter.com/PhishingAi/status/1042394494451109890
+
+704-shop.myshopify.com
+corgi-overload-store.myshopify.com
+woolman.io
+store.lilbub.com
+www.davdev9.com
+shop-demure.com
+faktr-store.com
+www.cubowl.com
+www.danicathreesixty.com
+www.thegldshop.com
+www.elevenmadisonpark.store
+www.wanderlust.store
