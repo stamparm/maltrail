@@ -616,3 +616,42 @@ add-me-sc.com
 # Reference: https://twitter.com/nullcookies/status/1042537633958658048
 
 dope.org/9x/9x/
+
+# Reference: https://citizenlab.ca/2018/01/spying-on-a-budget-inside-a-phishing-operation-with-targets-in-the-tibetan-community/
+
+account-gooogle.info
+accounts-google.cc
+accounts-mailbox.space
+dalailama.space
+drive-accounts-goog1e.cf
+drive-accounts-google.ga
+drive-google.cf
+drive-google.me
+drive-google.ml
+drive-mail.info
+drive-mail-google.cf
+email-netvigator.info
+epochtimes.space
+gmail-profile.com
+google-secure.gq
+google-sign.tk
+httpsaccounts-google.cf
+httpsdrive-google.net
+httpsdrive-google.space
+login-live.us
+mail-attachment-usercontent.space
+mail-defend.space
+mail-defense.space
+mail-defense.tk
+mail-epochtimes.space
+mail-extend.space
+mail-gooog1e.info
+mail-modular.space
+myaccounts-google.online
+mydrive-google.asia
+mydrive-google.online
+postmailsecret.com
+webmail-dalailama.com
+webmail-dalailama.space
+wengiguowengui.space
+yahoo-protect.com
