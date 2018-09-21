@@ -655,3 +655,16 @@ webmail-dalailama.com
 webmail-dalailama.space
 wengiguowengui.space
 yahoo-protect.com
+
+# Reference: https://twitter.com/PhishingAi/status/1042768334780071936
+
+dconline.org/quotation/eim/login.php
+dconline.org/wp-content/upgrade/office_voy/
+
+# Reference: https://twitter.com/PhishingAi/status/1042427878426599424
+
+download.myaccount-cloud.com
+
+# Reference: https://twitter.com/PhishingAi/status/1042269752402616320
+
+apple.com-clean-macbook.live
