@@ -668,3 +668,16 @@ download.myaccount-cloud.com
 # Reference: https://twitter.com/PhishingAi/status/1042269752402616320
 
 apple.com-clean-macbook.live
+
+# Reference: https://citizenlab.ca/2015/08/iran_two_factor_phishing/
+
+account-user.com
+bluehostsupport.com
+logins-verify.com
+login-users.com
+qooqlemail.com
+service-logins.com
+services-mails.com
+signin-users.com
+signin-verify.com
+signs-service.com
