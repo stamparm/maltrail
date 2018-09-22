@@ -668,3 +668,8 @@ download.myaccount-cloud.com
 # Reference: https://twitter.com/PhishingAi/status/1042269752402616320
 
 apple.com-clean-macbook.live
+
+# Reference: https://twitter.com/MaelSecurity/status/1043025067452461056
+
+dhl24.online
+dpdprzesylka.online
