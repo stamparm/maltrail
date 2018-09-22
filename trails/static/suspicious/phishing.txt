@@ -673,3 +673,7 @@ apple.com-clean-macbook.live
 
 dhl24.online
 dpdprzesylka.online
+
+# Reference: https://twitter.com/packet_Wire/status/1043246653233356801
+
+afatolk.no
