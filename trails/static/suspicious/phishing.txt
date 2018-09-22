@@ -668,3 +668,42 @@ download.myaccount-cloud.com
 # Reference: https://twitter.com/PhishingAi/status/1042269752402616320
 
 apple.com-clean-macbook.live
+
+
+# Reference: https://citizenlab.ca/2017/02/nilephish-report/
+
+account-google.serveftp.com
+activate-google.servehttp.com
+aramex-shipping.servehttp.com
+device-activation.servehttp.com
+docs-mails.servehttp.com
+dropboxnotification.servehttp.com
+dropbox-service.serveftp.com
+dropbox-sign.servehttp.com
+dropboxsupport.servehttp.com
+dropbox-verfy.servehttp.com
+fedex-mail.servehttp.com
+fedex-notification.servehttp.com
+fedex-shipping.servehttp.com
+fedex-sign.servehttp.com
+fedex-s.servehttp.com
+googledriver-sign.ddns.net
+googledrive-sign.servehttp.com
+google-maps.servehttp.com
+googlemaps.servehttp.com
+googlesecure-serv.servehttp.com
+googlesignin.servehttp.com
+googleverify-signin.servehttp.com
+mailgooglesign.servehttp.com
+moi-gov.serveftp.com
+myaccount.servehttp.com
+notification-team.servehttp.com
+quota-notification.servehttp.com
+restricted-videos.servehttp.com
+secure-alert.servehttp.com
+secure-team.servehttp.com
+security-myaccount.servehttp.com
+securityteam-notify.servehttp.com
+verification-acc.servehttp.com
+verification-team.servehttp.com
+watchyoutube.servehttp.com
