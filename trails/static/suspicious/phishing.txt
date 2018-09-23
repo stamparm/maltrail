@@ -903,3 +903,7 @@ signs-service.com
 
 c-dept.com
 e-refunds.interac-server1.com
+
+# Reference: https://twitter.com/urlscanio/status/1043933192930119680
+
+account-verifysupport.com
