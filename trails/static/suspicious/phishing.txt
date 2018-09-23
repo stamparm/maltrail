@@ -669,6 +669,13 @@ download.myaccount-cloud.com
 
 apple.com-clean-macbook.live
 
+# Reference: https://twitter.com/g4g5j41n/status/1043336457409032192
+
+kylelierman.com
+
+# Reference: https://twitter.com/kobebryamV2/status/1043262337900322818
+
+supportamazonserviceauntoreply.com
 
 # Reference: https://citizenlab.ca/2017/02/nilephish-report/
 
