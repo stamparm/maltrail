@@ -668,3 +668,7 @@ download.myaccount-cloud.com
 # Reference: https://twitter.com/PhishingAi/status/1042269752402616320
 
 apple.com-clean-macbook.live
+
+# Reference: https://twitter.com/g4g5j41n/status/1043336457409032192
+
+kylelierman.com
