@@ -898,3 +898,12 @@ services-mails.com
 signin-users.com
 signin-verify.com
 signs-service.com
+
+# Reference: https://twitter.com/g4g5j41n/status/1043704689311735809
+
+c-dept.com
+e-refunds.interac-server1.com
+
+# Reference: https://twitter.com/urlscanio/status/1043933192930119680
+
+account-verifysupport.com
