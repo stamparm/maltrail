@@ -10,6 +10,9 @@ ejyoklygase.tk
 examhome.net
 mp3menu.org
 uustoughtonma.org
+
+# Generic detection for compromised Bitrix CMS
+
 /lib/crypta.js
 /bitrix/js/main/core/core_loader.js
 /bitrix/js/main/core/core_tasker.js
