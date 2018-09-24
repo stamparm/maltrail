@@ -9,3 +9,6 @@ ejyoklygase.tk
 examhome.net
 mp3menu.org
 uustoughtonma.org
+/lib/crypta.js
+/bitrix/js/main/core/core_loader.js
+/bitrix/js/main/core/core_tasker.js
