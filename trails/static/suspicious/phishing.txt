@@ -911,3 +911,7 @@ account-verifysupport.com
 # Reference: https://twitter.com/MaelSecurity/status/1044182251444023296
 
 existing-members-gateway-login.com
+
+# Reference: https://twitter.com/MaelSecurity/status/1044464779094618112
+
+microsoft-security-07vb.tk
