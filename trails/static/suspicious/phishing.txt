@@ -923,3 +923,7 @@ secureelogin.pl
 # Referece: https://twitter.com/nullcookies/status/1037871108735811584
 
 terinazroonkka.com
+
+# Reference: https://twitter.com/nullcookies/status/1037867879792869377
+
+wacipurkaylo.com
