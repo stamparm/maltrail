@@ -915,3 +915,7 @@ existing-members-gateway-login.com
 # Reference: https://twitter.com/MaelSecurity/status/1044464779094618112
 
 microsoft-security-07vb.tk
+
+# Reference: https://twitter.com/MaelSecurity/status/1044225554461982720
+
+secureelogin.pl
