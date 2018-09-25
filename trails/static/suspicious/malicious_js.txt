@@ -16,3 +16,7 @@ uustoughtonma.org
 /lib/crypta.js
 /bitrix/js/main/core/core_loader.js
 /bitrix/js/main/core/core_tasker.js
+
+# Reference: https://twitter.com/bad_packets/status/1038967603048243200
+
+play.feesocrald.com/app.js
