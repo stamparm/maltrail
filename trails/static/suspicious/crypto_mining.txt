@@ -25,10 +25,6 @@ multipool.us
 
 mining-help.ru
 
-# Reference: https://99bitcoins.com
-
-99bitcoins.com
-
 # Reference: https://xmrminer.cc/
 
 xmrminer.cc
