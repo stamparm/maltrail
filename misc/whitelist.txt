@@ -107,6 +107,7 @@ kvt.su
 kvt.tools
 kvt-shop.ru
 laola1.tv
+linux.org.ru
 live.com
 lswcdn.net
 mail-abuse.com
