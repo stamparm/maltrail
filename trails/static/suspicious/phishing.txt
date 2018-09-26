@@ -907,3 +907,23 @@ e-refunds.interac-server1.com
 # Reference: https://twitter.com/urlscanio/status/1043933192930119680
 
 account-verifysupport.com
+
+# Reference: https://twitter.com/MaelSecurity/status/1044182251444023296
+
+existing-members-gateway-login.com
+
+# Reference: https://twitter.com/MaelSecurity/status/1044464779094618112
+
+microsoft-security-07vb.tk
+
+# Reference: https://twitter.com/MaelSecurity/status/1044225554461982720
+
+secureelogin.pl
+
+# Referece: https://twitter.com/nullcookies/status/1037871108735811584
+
+terinazroonkka.com
+
+# Reference: https://twitter.com/nullcookies/status/1037867879792869377
+
+wacipurkaylo.com
