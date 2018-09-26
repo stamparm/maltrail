@@ -81,3 +81,7 @@ fee.xmrig.com
 # Reference: https://www.securityhome.eu/malware/malware.php?mal_id=7994909645aa0b75fc035d0.43847858
 
 donate.xmrig.com
+
+# Reference: https://twitter.com/bad_packets/status/1038967603048243200
+
+soodatmish.com
