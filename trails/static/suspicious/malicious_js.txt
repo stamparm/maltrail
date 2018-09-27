@@ -21,6 +21,10 @@ uustoughtonma.org
 # Reference: https://www.virustotal.com/#/file/d527ea936ab99a2e3a25cf8786c66c0e07fc509b9465d48dd26065f034795f19/relations
 
 aster18cdn.nl/app.js
+feesocrald.com/app.js
+istlandoll.com/app.js
+soodatmish.com/app.js
+play.aster18cdn.nl/app.js
 play.feesocrald.com/app.js
 play.istlandoll.com/app.js
-soodatmish.com/app.js
+play.soodatmish.com/app.js
