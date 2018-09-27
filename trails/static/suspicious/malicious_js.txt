@@ -41,6 +41,18 @@ play.soodatmish.com/app.js
 /r/6jHa5
 /r/Lx4er
 
+# Reference: https://twitter.com/bad_packets/status/1042627971368939521
+
+/lib/coinhive.min.js
+
+# Reference: https://www.virustotal.com/#/domain/coinhive.com
+
+/lib/captcha.min.js
+/lib/ch2.min.js
+/lib/coinhive.min.js
+/lib/miner.min.js
+/lib/worker-asmjs.min.js
+
 # Reference: https://www.virustotal.com/#/ip-address/212.109.222.157
 # Generic detection
 

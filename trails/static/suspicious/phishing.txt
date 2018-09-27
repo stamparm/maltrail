@@ -935,3 +935,11 @@ lestarisilam.id/fox/
 # Reference: https://twitter.com/nullcookies/status/1045132776129929218
 
 uiri.go.ug
+
+# Reference: https://twitter.com/MaelSecurity/status/1045337705759035392
+
+verification-of-credentials-online-amricanexpress.com-verify.nextiswithstandusa.com
+
+# Reference: https://twitter.com/PhishingAi/status/1029445322433384448
+
+docomo-services.com
