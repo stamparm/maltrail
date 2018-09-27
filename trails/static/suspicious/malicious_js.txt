@@ -40,3 +40,44 @@ play.soodatmish.com/app.js
 
 /r/6jHa5
 /r/Lx4er
+
+# Reference: https://www.virustotal.com/#/ip-address/212.109.222.157
+# Generic detection
+
+/js/altmanluggage.js
+/js/aureliaskincare.js
+/js/bluerooster.js
+/js/bvibe.js
+/js/caremax.js
+/js/craftalley.js
+/js/curediva.js
+/js/deluxecomfort.js
+/js/deroosbv.js
+/js/dragonkayak.js
+/js/gopestfree.js
+/js/hello1010.js
+/js/herbsnpuja.js
+/js/horusrc.js
+/js/indiamags.js
+/js/justbuttons.js
+/js/kitchenstuff.js
+/js/labohemecafe.js
+/js/lavignery.js
+/js/mitoq.js
+/js/mototorque.js
+/js/notinshops.js
+/js/probanners.js
+/js/ramybrook.js
+/js/rss_pt.js
+/js/siamflorist.js
+/js/simplygems.js
+/js/singerstore.js
+/js/sparxxrx.js
+/js/storageshedsoutlet.js
+/js/themotley.js
+/js/thesingularbathroom.js
+/js/totaram.js
+/js/tradeplumbing.js
+/js/ussi.js
+/js/vladofootwear.js
+/js/wallerbmx.js
