@@ -38,6 +38,5 @@ play.soodatmish.com/app.js
 
 # Reference: https://twitter.com/ViriBack/status/1035692468459720704
 
-paste.ee
-/6jHa5
-/Lx4er
+/r/6jHa5
+/r/Lx4er
