@@ -35,3 +35,9 @@ play.soodatmish.com/app.js
 /webmr.js
 /webmr-2.js
 /webmr-x7.js
+
+# Reference: https://twitter.com/ViriBack/status/1035692468459720704
+
+paste.ee
+/6jHa5
+/Lx4er
