@@ -17,13 +17,31 @@
 74.117.112.65
 74.117.114.21
 
+# co.cc (misc.)
+
+175.126.123.219
+
+# oray.com (misc.)
+
+174.128.255.251
+
+# aliyun.com (misc.)
+
+47.91.170.222
+
 # parkingcrew.net (misc.)
 
 74.206.232.234
+67.55.121.97
+bustbuy.com
 
 # value-domain.com (misc.)
 
 52.25.92.0
+
+# tucowsdomains.com (misc.)
+
+209.200.154.54
 
 # universalfwding.com (misc.)
 
@@ -32,12 +50,20 @@
 199.191.50.73
 199.191.50.185
 199.191.50.163
+208.91.197.132
+209.99.64.18
+208.91.196.105
+
+# domainparking.ru (misc.)
+
+31.31.205.163
 
 # cdnpark.com (misc.)
 
 18.215.128.143
 18.213.250.117
 52.4.209.250
+52.0.217.44
 
 # undeveloped.com (misc.)
 
@@ -50,6 +76,11 @@
 # sitelutions.com (misc.)
 
 108.61.203.22
+
+# namebright.com (misc.)
+
+54.227.195.116
+52.5.230.6
 
 # namesilo.com (misc.)
 
@@ -575,9 +606,18 @@
 50.63.202.253
 50.63.202.254
 
+# parking.reg.ru (misc.)
+
+194.58.112.165
+194.58.112.173
+
 # parklogic.com (misc.)
 
 72.52.178.23
+173.230.141.80
+67.227.226.240
+72.52.179.174
+72.52.179.175
 
 # enom.com (misc.)
 
