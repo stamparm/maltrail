@@ -28,3 +28,10 @@ play.aster18cdn.nl/app.js
 play.feesocrald.com/app.js
 play.istlandoll.com/app.js
 play.soodatmish.com/app.js
+
+# Reference: https://blog.radware.com/security/2018/05/nigelthorn-malware-abuses-chrome-extensions/
+
+/2131.js
+/webmr.js
+/webmr-2.js
+/webmr-x7.js
