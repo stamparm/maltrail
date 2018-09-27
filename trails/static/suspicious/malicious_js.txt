@@ -40,3 +40,7 @@ play.soodatmish.com/app.js
 
 /r/6jHa5
 /r/Lx4er
+
+# Reference: https://twitter.com/bad_packets/status/1042627971368939521
+
+/lib/coinhive.min.js
