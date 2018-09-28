@@ -943,3 +943,47 @@ verification-of-credentials-online-amricanexpress.com-verify.nextiswithstandusa.
 # Reference: https://twitter.com/PhishingAi/status/1029445322433384448
 
 docomo-services.com
+
+# Reference: https://www.virustotal.com/#/ip-address/85.17.26.65
+
+adobed.aba.ae
+al-rafeeq.com
+appservicesdata.aba.ae
+atmos.aba.ae
+bankofamericasecured.aba.ae
+chase.aba.ae
+chasebankonline.aba.ae
+confirm-pay.us
+customer-capiatalone.aba.ae
+facebox.aba.ae
+faxebok.aba.ae
+fib778549.aba.ae
+fspm.hit.ng
+havinceclar.aba.ae
+instakip.aba.ae
+litatamayosoriano.aba.ae
+maybestar.zz.com.ve
+modhes1.aba.ae
+mpp-secure.aba.ae
+online-bnking-unicredit-bulbnk.aba.ae
+online-bulbank-unicredit-v.aba.ae
+paynpal.zz.com.ve
+paypai-account-verify.aba.ae
+paypal.aba.ae
+pdfdoc.aba.ae
+poypol-resolve.aba.ae
+poypol-supp.aba.ae
+ppalcheckinfo.aba.ae
+ppl-verify.aba.ae
+ragink.aba.ae
+service-account-confirmation.aba.ae
+supporter.aba.ae
+supportest.aba.ae
+supportsecure.aba.ae
+takipcigo.com
+takipcinsta.aba.ae
+takipfollow.com
+unicbl67410.aba.ae
+upload-information.aba.ae
+yopi-car.com
+zero.zz.com.ve
