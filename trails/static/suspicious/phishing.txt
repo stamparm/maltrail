@@ -987,3 +987,7 @@ unicbl67410.aba.ae
 upload-information.aba.ae
 yopi-car.com
 zero.zz.com.ve
+
+# Reference: https://twitter.com/smica83/status/1045587050932695040
+
+telenor.hu.web.control2018.config.jutebagsindia.com
