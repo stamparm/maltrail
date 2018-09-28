@@ -16,3 +16,11 @@
 
 /1/gate.php
 /1/screenshot_gate.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1045622528541151232
+
+/hows_yourfever.php
+/introductio_n.php
+/psycho.php
+/review_me.php
+/rootme.php
