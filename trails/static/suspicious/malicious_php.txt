@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2018 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/#/ip-address/85.17.26.65 (#URL section)
+
+/boxMrenewal.php
+/challengevdl.php
+/dd.php
+/girisi.php
+/rerewp.php
+/overviewshn.php
+/signOnV2Screen.php
+/Up-dating.php
