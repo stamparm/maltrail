@@ -52,3 +52,7 @@ play.soodatmish.com/app.js
 /lib/coinhive.min.js
 /lib/miner.min.js
 /lib/worker-asmjs.min.js
+
+# Reference: https://www.virustotal.com/#/url/e2887029795c19d1b0d7e97bcd6b29fd25988ea27e8f958ef9af6f9520f97b45/detection
+
+coinimp.com/scripts/min.js
