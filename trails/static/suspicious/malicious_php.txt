@@ -24,3 +24,7 @@
 /psycho.php
 /review_me.php
 /rootme.php
+
+# Reference: https://www.virustotal.com/#/domain/manapowermta.us
+
+/loomistech/gate.php
