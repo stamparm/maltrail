@@ -998,3 +998,7 @@ bcft.aero/ID/PayPal/Help/
 # Reference: https://twitter.com/smica83/status/1045565335540310017
 
 ezran.my/videopage/wp-includes/index.php
+
+# Reference: https://twitter.com/smica83/status/1045169212363354113
+
+hcflp.co/etc/2/login.php 
