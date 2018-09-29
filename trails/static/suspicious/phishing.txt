@@ -994,3 +994,7 @@ telenor.hu.web.control2018.config.jutebagsindia.com
 # Reference: https://twitter.com/malwrhunterteam/status/1044493557023854592
 
 bcft.aero/ID/PayPal/Help/
+
+# Reference: https://twitter.com/smica83/status/1045565335540310017
+
+ezran.my/videopage/wp-includes/index.php
