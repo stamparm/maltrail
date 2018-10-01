@@ -963,3 +963,7 @@ hcflp.co/etc/2/login.php
 # Reference: https://twitter.com/nullcookies/status/1045829419112312832
 
 eh58.co/main.php
+
+# Reference: https://twitter.com/illegalFawn/status/1046706380005101569
+
+myenipaga.com/nueve_rimbo/
