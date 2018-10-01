@@ -246,3 +246,46 @@ whataresquingies.com/.safetyadvicearea/0405470695-order-receipt
 wildhowlz.com/.advicedetails/027380256-details
 yokosukadoula.com/.advicedetails/0864668306-detail
 zenartfree.com/.advicedetails/1Z2-510491-details
+
+# Reference: https://www.symantec.com/security-center/writeup/2018-092007-1208-99
+# Reference: https://www.virustotal.com/#/ip-address/212.109.222.157
+
+# Generic callback detection
+
+/js/altmanluggage.js
+/js/aureliaskincare.js
+/js/bluerooster.js
+/js/bvibe.js
+/js/caremax.js
+/js/craftalley.js
+/js/curediva.js
+/js/deluxecomfort.js
+/js/deroosbv.js
+/js/dragonkayak.js
+/js/gopestfree.js
+/js/hello1010.js
+/js/herbsnpuja.js
+/js/horusrc.js
+/js/indiamags.js
+/js/justbuttons.js
+/js/kitchenstuff.js
+/js/labohemecafe.js
+/js/lavignery.js
+/js/mitoq.js
+/js/mototorque.js
+/js/notinshops.js
+/js/probanners.js
+/js/ramybrook.js
+/js/rss_pt.js
+/js/siamflorist.js
+/js/simplygems.js
+/js/singerstore.js
+/js/sparxxrx.js
+/js/storageshedsoutlet.js
+/js/themotley.js
+/js/thesingularbathroom.js
+/js/totaram.js
+/js/tradeplumbing.js
+/js/ussi.js
+/js/vladofootwear.js
+/js/wallerbmx.js
