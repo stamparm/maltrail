@@ -28,3 +28,9 @@
 # Reference: https://www.virustotal.com/#/domain/manapowermta.us
 
 /loomistech/gate.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1044957343568388097
+# Reference: https://pastebin.com/st49wnwB
+
+/d2/forum.php
+/mlu/forum.php
