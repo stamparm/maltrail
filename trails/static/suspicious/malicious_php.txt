@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2018 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/#/ip-address/85.17.26.65 (#URL section)
+
+/boxMrenewal.php
+/challengevdl.php
+/dd.php
+/girisi.php
+/rerewp.php
+/overviewshn.php
+/signOnV2Screen.php
+/Up-dating.php
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1045564495723188225
+
+/1/gate.php
+/1/screenshot_gate.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1045622528541151232
+
+/hows_yourfever.php
+/introductio_n.php
+/psycho.php
+/review_me.php
+/rootme.php
+
+# Reference: https://www.virustotal.com/#/domain/manapowermta.us
+
+/loomistech/gate.php
