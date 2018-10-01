@@ -72,6 +72,7 @@ www.sparechange.io
 
 # Reference: https://blog.talosintelligence.com/2018/08/rocke-champion-of-monero-miners.html
 
+8282.space
 3389.space
 
 # Reference: https://github.com/xmrig/xmrig/blob/master/src/net/strategies/DonateStrategy.cpp
