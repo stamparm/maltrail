@@ -943,3 +943,23 @@ verification-of-credentials-online-amricanexpress.com-verify.nextiswithstandusa.
 # Reference: https://twitter.com/PhishingAi/status/1029445322433384448
 
 docomo-services.com
+
+# Reference: https://twitter.com/smica83/status/1045587050932695040
+
+telenor.hu.web.control2018.config.jutebagsindia.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1044493557023854592
+
+bcft.aero/ID/PayPal/Help/
+
+# Reference: https://twitter.com/smica83/status/1045565335540310017
+
+ezran.my/videopage/wp-includes/index.php
+
+# Reference: https://twitter.com/smica83/status/1045169212363354113
+
+hcflp.co/etc/2/login.php
+
+# Reference: https://twitter.com/nullcookies/status/1045829419112312832
+
+eh58.co/main.php
