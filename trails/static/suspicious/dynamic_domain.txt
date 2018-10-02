@@ -1328,3 +1328,8 @@ giize.com
 kozow.com
 loseyourip.com
 theworkpc.com
+
+# Reference: https://hackforums.net/showthread.php?tid=5114777&action=nextoldest
+
+fagdns.com
+thindns.su
