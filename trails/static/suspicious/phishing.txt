@@ -1025,3 +1025,7 @@ isbankasifirsatlar.com
 # Reference: https://twitter.com/urlscanio/status/1047486923223252992
 
 login.blockchaiń.com
+
+# Reference: https://twitter.com/ns_alarms/status/1047439955277086721
+
+vakifbankasi-hediyegb.com
