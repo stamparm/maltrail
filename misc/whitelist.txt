@@ -290,6 +290,7 @@ atw.hu
 # appeared on malwaredomainlist.com
 
 hausnet.ru
+triangleservicesltd.com
 
 # appeared on malc0de.com
 
@@ -386,6 +387,11 @@ czk-cakovec.hr
 nk-slaven-belupo.hr
 fongyeh.com.tw
 ee.ncu.edu.tw
+hupt.hr
+
+# found as false positive on cybercrime-tracker.net
+
+geocities.ws
 
 # found as false positive on urlvir.com
 
