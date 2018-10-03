@@ -1017,3 +1017,7 @@ worldattachments.net/images/
 # Reference: https://twitter.com/ANeilan/status/1047422405109579778
 
 icloud.com.reportapple.us
+
+# Reference: https://twitter.com/ns_alarms/status/1047441164868014080
+
+isbankasifirsatlar.com
