@@ -1001,3 +1001,7 @@ www.saycheese.it/.tmb/.xx.htm
 # Reference: https://twitter.com/YouMayBeHacked/status/1046785910006853632 
 
 tr22n11a.aset.psu.edu
+
+# Reference: https://twitter.com/illegalFawn/status/1047123095272734726
+
+validazionepostitaliane.info/login.html
