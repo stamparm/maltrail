@@ -1021,3 +1021,7 @@ icloud.com.reportapple.us
 # Reference: https://twitter.com/ns_alarms/status/1047441164868014080
 
 isbankasifirsatlar.com
+
+# Reference: https://twitter.com/urlscanio/status/1047486923223252992
+
+login.blockchaiń.com
