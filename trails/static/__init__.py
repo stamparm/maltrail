@@ -25,6 +25,28 @@ def fetch():
         if category == "static":
             category = None
 
+        for filename in glob.glob(os.path.join(directory, "*.csv")):
+            __reference__ = "%s (static)" % os.path.splitext(os.path.basename(filename))[0]
+            content = open(filename, "rb").read()
+            for line in content.split('\n'):
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                value, __info__ = line.split(',', 1)
+                __info__ = __info__.strip('"')
+                if category:
+                    __info__ = "%s (%s)" % (__info__, category)
+                if '://' in value:
+                    value = re.search(r"://(.*)", value).group(1)
+                value = value.rstrip('/')
+                if '/' in value:
+                    retval[value] = (__info__, __reference__)
+                    value = value.split('/')[0]
+                elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", value):
+                    retval[value] = (__info__, __reference__)
+                else:
+                    retval[value.strip('.')] = (__info__, __reference__)
+
         filenames = glob.glob(os.path.join(directory, "*.txt"))
         filenames = sorted(filenames, key=lambda _: "history" in _)
 
@@ -53,27 +75,5 @@ def fetch():
                     retval[line] = (__info__, __reference__)
                 else:
                     retval[line.strip('.')] = (__info__, __reference__)
-
-        for filename in glob.glob(os.path.join(directory, "*.csv")):
-            __reference__ = "%s (static)" % os.path.splitext(os.path.basename(filename))[0]
-            content = open(filename, "rb").read()
-            for line in content.split('\n'):
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                value, __info__ = line.split(',', 1)
-                __info__ = __info__.strip('"')
-                if category:
-                    __info__ = "%s (%s)" % (__info__, category)
-                if '://' in value:
-                    value = re.search(r"://(.*)", value).group(1)
-                value = value.rstrip('/')
-                if '/' in value:
-                    retval[value] = (__info__, __reference__)
-                    value = value.split('/')[0]
-                elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", value):
-                    retval[value] = (__info__, __reference__)
-                else:
-                    retval[value.strip('.')] = (__info__, __reference__)
 
     return retval
