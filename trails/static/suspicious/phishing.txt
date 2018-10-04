@@ -1086,6 +1086,7 @@ trude-riedel.de
 # Reference: https://twitter.com/securitydoggo/status/1045377685629931522
 
 czdesign.sharepoint.com
+login.microsoftonline.com
 
 # Reference: https://twitter.com/securitydoggo/status/1045374758701985792
 
@@ -1094,3 +1095,7 @@ parachutewallet.com
 # Reference: https://twitter.com/securitydoggo/status/1045342925209702407
 
 de.paypal.com.ios-version.com
+
+# Reference: https://twitter.com/securitydoggo/status/1045373382496260096
+
+thewayoflifeservice.com
