@@ -36,3 +36,7 @@
 /4/forum.php
 /d2/forum.php
 /mlu/forum.php
+
+# Reference: https://twitter.com/nullcookies/status/1019569151503986689
+
+/bc0de.php
