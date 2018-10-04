@@ -1090,3 +1090,7 @@ czdesign.sharepoint.com
 # Reference: https://twitter.com/securitydoggo/status/1045374758701985792
 
 parachutewallet.com
+
+# Reference: https://twitter.com/securitydoggo/status/1045342925209702407
+
+de.paypal.com.ios-version.com
