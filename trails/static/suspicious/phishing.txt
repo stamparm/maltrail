@@ -1082,3 +1082,7 @@ conf1rm11id-online.com/.b/
 # Reference: https://twitter.com/neonprimetime/status/1047306547532054529
 
 trude-riedel.de
+
+# Reference: https://twitter.com/securitydoggo/status/1045377685629931522
+
+czdesign.sharepoint.com
