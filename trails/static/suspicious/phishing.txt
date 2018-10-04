@@ -1029,3 +1029,7 @@ login.blockchaiń.com
 # Reference: https://twitter.com/ns_alarms/status/1047439955277086721
 
 vakifbankasi-hediyegb.com
+
+# Reference: https://twitter.com/nullcookies/status/1047636599322935296
+
+hostcofeewebsitesign.000webhostapp.com
