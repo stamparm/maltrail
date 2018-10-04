@@ -1086,7 +1086,6 @@ trude-riedel.de
 # Reference: https://twitter.com/securitydoggo/status/1045377685629931522
 
 czdesign.sharepoint.com
-login.microsoftonline.com
 
 # Reference: https://twitter.com/securitydoggo/status/1045374758701985792
 
