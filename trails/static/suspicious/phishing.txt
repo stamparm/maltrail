@@ -1099,3 +1099,7 @@ de.paypal.com.ios-version.com
 # Reference: https://twitter.com/securitydoggo/status/1045373382496260096
 
 thewayoflifeservice.com
+
+# Reference: https://twitter.com/smica83/status/1047898049505370116
+
+a0238665.xsph.ru/home/
