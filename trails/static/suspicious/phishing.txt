@@ -1037,3 +1037,7 @@ hostcofeewebsitesign.000webhostapp.com
 # Reference: https://twitter.com/nullcookies/status/1047643130135306242
 
 outlookwebss.myfreesites.net
+
+# Reference: https://twitter.com/bad_packets/status/1047608500451336193
+
+eastpennmanufacturing.work
