@@ -40,3 +40,7 @@
 # Reference: https://twitter.com/nullcookies/status/1019569151503986689
 
 /bc0de.php
+
+# Reference: https://twitter.com/devnullek/status/1020015255144017920
+
+/order588.php
