@@ -48,3 +48,7 @@
 # Reference: https://twitter.com/YouMayBeHacked/status/1040368782408069120
 
 /Kostenaufstellung.169156596183882049609578.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1048277465397751808
+
+/onlinegoogle.php
