@@ -111,6 +111,7 @@ linux.org.ru
 live.com
 lswcdn.net
 mail-abuse.com
+mailchimp.com
 mailprotector.net
 mailshell.net
 mcafee.com
@@ -291,6 +292,10 @@ atw.hu
 
 hausnet.ru
 triangleservicesltd.com
+
+# Reference: https://answers.microsoft.com/en-us/msoffice/forum/msoffice_outlook-mso_winother-mso_o365b/sync-euexebid/a2f18771-d49a-44dc-8c2a-0dac6a8eb0b2
+
+sync-eu.exe.bid
 
 # appeared on malc0de.com
 
@@ -794,6 +799,8 @@ microsoftstream.com
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
+adbrn.com
+adsco.re
 mucocutaneousmyrmecophaga.com
 scorecardresearch.com
 dsp.io
