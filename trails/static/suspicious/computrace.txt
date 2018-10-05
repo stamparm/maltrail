@@ -10,3 +10,8 @@ bh.namequery.com
 namequery.nettrace.co.za
 search2.namequery.com
 m229.absolute.com
+
+# Reference: https://twitter.com/Bank_Security/status/1048113406597910528
+# Reference: https://www.ncsc.gov.uk/content/files/protected_files/article_files/IOC-APT28-malware-advisory.pdf (CompuTrace chapter)
+
+fnbcorporate.co.za
