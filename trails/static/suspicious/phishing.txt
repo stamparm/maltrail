@@ -1123,3 +1123,7 @@ soportesubers.com
 soporteuberdriver.com
 ubersoportelima.com
 uber-sp.com
+
+# Reference: https://twitter.com/WifiRumHam/status/1047964577655349251
+
+clickmetertracking.com/dkbm
