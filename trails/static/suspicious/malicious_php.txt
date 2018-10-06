@@ -56,3 +56,7 @@
 # Reference: https://twitter.com/YouMayBeHacked/status/1048341985319444481
 
 /Abrechnung-76-31210998378353168993665795447.php
+
+# Reference: https://twitter.com/DissectMalware/status/1048329071061606400
+
+/90AS98DF.php
