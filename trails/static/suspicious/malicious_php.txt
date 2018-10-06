@@ -40,3 +40,23 @@
 # Reference: https://twitter.com/nullcookies/status/1019569151503986689
 
 /bc0de.php
+
+# Reference: https://twitter.com/devnullek/status/1020015255144017920
+
+/order588.php
+
+# Reference: https://twitter.com/YouMayBeHacked/status/1040368782408069120
+
+/Kostenaufstellung.169156596183882049609578.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1048277465397751808
+
+/onlinegoogle.php
+
+# Reference: https://twitter.com/YouMayBeHacked/status/1048341985319444481
+
+/Abrechnung-76-31210998378353168993665795447.php
+
+# Reference: https://twitter.com/DissectMalware/status/1048329071061606400
+
+/90AS98DF.php
