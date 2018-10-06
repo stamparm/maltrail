@@ -52,3 +52,7 @@
 # Reference: https://twitter.com/James_inthe_box/status/1048277465397751808
 
 /onlinegoogle.php
+
+# Reference: https://twitter.com/YouMayBeHacked/status/1048341985319444481
+
+/Abrechnung-76-31210998378353168993665795447.php
