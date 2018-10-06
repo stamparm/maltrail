@@ -1148,3 +1148,31 @@ www-mercadolivre.com
 # Reference: https://twitter.com/Dashowl/status/1048254893549608960
 
 tr-qnbfinansbankwebsubesi.com
+
+# Reference: https://www.virustotal.com/#/ip-address/85.17.26.65
+
+adobed.aba.ae
+appservicesdata.aba.ae
+bankofamericasecured.aba.ae
+chasebankonline.aba.ae
+confirm-pay.us
+facebox.aba.ae
+faxebok.aba.ae
+instakip.aba.ae
+litatamayosoriano.aba.ae
+mpp-secure.aba.ae
+online-bnking-unicredit-bulbnk.aba.ae
+online-bulbank-unicredit-v.aba.ae
+paynpal.zz.com.ve
+paypai-account-verify.aba.ae
+paypal.aba.ae
+pdfdoc.aba.ae
+poypol-resolve.aba.ae
+poypol-supp.aba.ae
+ppalcheckinfo.aba.ae
+ppl-verify.aba.ae
+ragink.aba.ae
+service-account-confirmation.aba.ae
+supporter.aba.ae
+supportest.aba.ae
+supportsecure.aba.ae
