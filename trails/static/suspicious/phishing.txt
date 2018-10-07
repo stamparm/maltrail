@@ -1176,3 +1176,7 @@ service-account-confirmation.aba.ae
 supporter.aba.ae
 supportest.aba.ae
 supportsecure.aba.ae
+
+# Reference: https://twitter.com/Dashowl/status/1048255143001694208
+
+e-trvakifbankonlineislemler.com
