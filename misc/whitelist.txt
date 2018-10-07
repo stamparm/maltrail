@@ -38,6 +38,18 @@ cdxall.com
 cdxgoog.com
 cdxultra.com
 cedexis-radar.net
+
+# Cisco's FPs on https://blog.talosintelligence.com/2018/10/threat-roundup-0928-1005.html (Win.Malware.Gandcrab-6706045-0)
+
+asl-company.ru
+bethel.com.ve
+dreamhost.com
+help.dreamhost.com
+ispsystem.com
+panel.dreamhost.com
+top-22.ru
+vjccons.com.vn
+www.reg.ru
 chip.de
 clickbank.net
 clipconverter.cc
