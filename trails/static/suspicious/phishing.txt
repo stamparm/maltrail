@@ -1196,3 +1196,7 @@ pvchosechina.com/kb/display/prelogon/preauth/authetication/logon/login.htm
 # Reference: https://twitter.com/illegalFawn/status/1049246820977795072
 
 mail.tim.it.accountupdate.verification.whakataneafc.co.nz
+
+# Reference: https://twitter.com/dave_daves/status/1049202754965712896
+
+zmta.trt1.jus.br.accountupdate.verification.whakataneafc.co.nz
