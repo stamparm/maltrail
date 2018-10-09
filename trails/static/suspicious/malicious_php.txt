@@ -209,3 +209,7 @@
 /zuoshss.php
 /zuos.php
 /zuoss.php
+
+# Reference: https://twitter.com/DynamicAnalysis/status/1049372423647363073
+
+/boaupdatenow.php
