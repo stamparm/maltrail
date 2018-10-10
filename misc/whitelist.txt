@@ -808,6 +808,7 @@ postaffiliatepro.com
 askmediagroup.com
 litix.io
 ubembed.com
+conviva.com
 
 # Google crawlers
 
@@ -829,3 +830,8 @@ nanosystems.it
 # Microsoft's network connectivity check domain
 
 msftncsi.com
+
+# misc.
+
+dropboxusercontent.com
+facebook.com
