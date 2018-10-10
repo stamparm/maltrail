@@ -1253,3 +1253,7 @@ www6.rbc.com.webapp.ukv0.signin.logon.xhtml.ruta-altiplano.com/.well-known/.www6
 # Reference: https://twitter.com/smica83/status/1050032627380576257
 
 beyazyorum.com/activate/Account/index.php
+
+# Reference: https://twitter.com/smica83/status/1050031099441803265
+
+konaskorner.com/achive/doc/pphp/sever/
