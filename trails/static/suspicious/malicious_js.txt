@@ -299,3 +299,7 @@ energytea.org
 lightbulbs-direct.org
 teacoffe.net
 ukcoffe.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1049723562746146816
+
+/wp-load.js
