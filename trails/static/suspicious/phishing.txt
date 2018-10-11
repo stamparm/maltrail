@@ -1283,3 +1283,7 @@ en.citibkc.com
 # Reference: https://twitter.com/Dashowl/status/1050423467940765696
 
 qlndz-online.com/ourtime/ourtime/
+
+# Reference: https://twitter.com/PhishingAi/status/1050438660829544448
+
+patrayachts.com
