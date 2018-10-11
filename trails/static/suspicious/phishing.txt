@@ -1271,3 +1271,7 @@ realfine.com.cn
 # Reference: https://twitter.com/smica83/status/1050324867613188096
 
 fernandavm.com/wp-includes/js/acc/Manage/
+
+# Reference: https://twitter.com/Dashowl/status/1050410415035965442
+
+int7l-online.com/luno/luno_email-update.php
