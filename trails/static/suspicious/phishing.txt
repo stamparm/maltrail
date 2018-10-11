@@ -1257,3 +1257,8 @@ beyazyorum.com/activate/Account/index.php
 # Reference: https://twitter.com/smica83/status/1050031099441803265
 
 konaskorner.com/achive/doc/pphp/sever/
+
+# Reference: https://twitter.com/mgiovamo/status/1050395033113960450
+
+fortegroup.it/wp-admin/includes/-/aruba/
+novetv.com/wp-admin/css/colors/ocean/.../
