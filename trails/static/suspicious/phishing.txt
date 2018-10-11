@@ -1279,3 +1279,7 @@ int7l-online.com/luno/luno_email-update.php
 # Reference: https://twitter.com/sS55752750/status/1050401196140322816
 
 en.citibkc.com
+
+# Reference: https://twitter.com/Dashowl/status/1050423467940765696
+
+qlndz-online.com/ourtime/ourtime/
