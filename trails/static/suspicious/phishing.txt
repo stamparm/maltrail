@@ -1267,3 +1267,7 @@ novetv.com/wp-admin/css/colors/ocean/.../
 
 js26732.com
 realfine.com.cn
+
+# Reference: https://twitter.com/smica83/status/1050324867613188096
+
+fernandavm.com/wp-includes/js/acc/Manage/
