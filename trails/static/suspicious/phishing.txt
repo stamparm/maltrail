@@ -1309,3 +1309,7 @@ secure.bancoposta.sicurezza.poste.it.novatexllc.com/tes/19c74b3773c4f851e6736cb3
 # Reference: https://twitter.com/PhishingAi/status/1050776364066910209
 
 165.227.137.246/en/en/zzz/
+
+# Reference: https://twitter.com/PhishingAi/status/1050750689511526400
+
+situstaruhanbolasbobet.com
