@@ -1329,3 +1329,7 @@ uber-promocodes.com/codigo-promocional-uber/
 # Reference: https://twitter.com/Dashowl/status/1050811069042741249
 
 cliente-uber.com
+
+# Reference: https://twitter.com/Dashowl/status/1050814076144836614
+
+carrefour-serivcio.info
