@@ -1301,3 +1301,7 @@ seoforsocialmedia.org/sjhs/chase/
 # Reference: https://twitter.com/PhishingAi/status/1050491111989436416
 
 hectorluengo.cl/wp-includes/images/crystaI/
+
+# Reference: https://twitter.com/0xFrost/status/1050662419356217344
+
+secure.bancoposta.sicurezza.poste.it.novatexllc.com/tes/19c74b3773c4f851e6736cb3d497f5d9/pos/foo-autenticazione.php
