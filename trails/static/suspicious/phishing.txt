@@ -1287,3 +1287,8 @@ qlndz-online.com/ourtime/ourtime/
 # Reference: https://twitter.com/PhishingAi/status/1050438660829544448
 
 patrayachts.com
+
+# Reference: https://twitter.com/soccia555/status/1050652833098285056
+
+archangeldiary.com/wp-admin/js/widgets/-/FastWeb/FastWeb/
+axso.com/img/prettyPhoto/-
