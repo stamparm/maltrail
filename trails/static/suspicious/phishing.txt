@@ -1313,3 +1313,7 @@ secure.bancoposta.sicurezza.poste.it.novatexllc.com/tes/19c74b3773c4f851e6736cb3
 # Reference: https://twitter.com/PhishingAi/status/1050750689511526400
 
 situstaruhanbolasbobet.com
+
+# Reference: https://twitter.com/PhishingAi/status/1050803887358193664
+
+myetheruimwallet.com
