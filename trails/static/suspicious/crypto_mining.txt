@@ -90,3 +90,7 @@ pool.cortins.tk
 pool.supportxmr.com
 xmr.crypto-pool.fr
 xmrpool.eu
+
+# Reference: https://researchcenter.paloaltonetworks.com/2018/10/unit42-fake-flash-updaters-push-cryptocurrency-miners/
+
+osdsoft.com
