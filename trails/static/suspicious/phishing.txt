@@ -1354,3 +1354,7 @@ rannsoknar.logreglan.is/rannsoknir/skyrslutokur/malsgogn/
 # Reference: https://twitter.com/taku888infinity/status/1051087808696279042
 
 nttdocomo-detects.com
+
+# Reference: https://twitter.com/IpNigh/status/1051076906781724672
+
+sportennis.co.il/folder/dropbox/
