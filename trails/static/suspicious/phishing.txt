@@ -1346,3 +1346,7 @@ nofeechinesetvbox.com/web/cas.nau/service.html
 # Reference: https://twitter.com/nullcookies/status/1050892178040545280
 
 junkurilaka.org
+
+# Reference: https://www.cyren.com/blog/articles/iceland-police-phishing-attack-targets-bank-credentials
+
+rannsoknar.logreglan.is/rannsoknir/skyrslutokur/malsgogn/
