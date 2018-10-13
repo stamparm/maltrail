@@ -1350,3 +1350,7 @@ junkurilaka.org
 # Reference: https://www.cyren.com/blog/articles/iceland-police-phishing-attack-targets-bank-credentials
 
 rannsoknar.logreglan.is/rannsoknir/skyrslutokur/malsgogn/
+
+# Reference: https://twitter.com/taku888infinity/status/1051087808696279042
+
+nttdocomo-detects.com
