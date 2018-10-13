@@ -1375,3 +1375,24 @@ www.lmische.com.au/screen
 # Reference: https://twitter.com/PhishingAi/status/1051109713176219654
 
 housingfinancecommission.com/secured/
+
+# Reference: https://twitter.com/threatbee/status/1051109691827339265
+# Reference: http://threatbee.blogspot.com/2018/10/phishing-indicator-of-compromise-list_79.html
+
+account.activeted.com
+apps-paypal.com-service-config.info
+banking.commerzbank.de-vorgangsnummer-jym6t2vn.top
+donnaatacado.com.br
+ebay.kazahstan.eu
+interbank.dineroexperto.pe
+invistaconstrutora.com.br
+lararachel.com
+microsoft-official-error1004.xyz
+microsoft-warning92.xyz
+paypal.com.information-accountssuspended.flu.cc
+scotiabank-peru.dineroexperto.pe
+shirts.wrapgirlmarketing.com
+usbankonlinelogin.com
+wellsfargouk.com
+www.bkaplan.com
+www.tahsenk.com
