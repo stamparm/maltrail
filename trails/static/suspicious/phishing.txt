@@ -1342,3 +1342,7 @@ portale-online-web-sicurezza.com/aggiorna/
 
 nofeechinesetvbox.com/sso.tamus/Logon.html
 nofeechinesetvbox.com/web/cas.nau/service.html
+
+# Reference: https://twitter.com/nullcookies/status/1050892178040545280
+
+junkurilaka.org
