@@ -1337,3 +1337,8 @@ carrefour-serivcio.info
 # Reference: https://twitter.com/Dashowl/status/1050813548207755264
 
 portale-online-web-sicurezza.com/aggiorna/
+
+# Reference: https://twitter.com/PhishingAi/status/1050914663687380992
+
+nofeechinesetvbox.com/sso.tamus/Logon.html
+nofeechinesetvbox.com/web/cas.nau/service.html
