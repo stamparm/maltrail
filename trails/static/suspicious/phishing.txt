@@ -1417,3 +1417,7 @@ lucyhanselman.nl//PBdJrEyd/MEPS/rhb.com.my/
 lucyhanselman.nl//PBdJrEyd/MEPS/scb/
 lucyhanselman.nl//PBdJrEyd/MEPS/uob/
 mathieugagnon.ca/wp-content/uploads/70afec4c3870416e8cfbd6e16464aa2f/
+
+# Reference: https://twitter.com/PhishingAi/status/1051144014546649088
+
+178.128.255.114
