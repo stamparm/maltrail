@@ -90,3 +90,13 @@ pool.cortins.tk
 pool.supportxmr.com
 xmr.crypto-pool.fr
 xmrpool.eu
+
+# Reference: https://www.cyren.com/blog/articles/facebook-users-threatened-with-spam-run-delivering-crypto-miner-malware
+
+kdhftl.thisaworkstation.space/app/config.php
+obabame.redep.bid/api/cherry/login.php
+plugin.yimad.redep.bid/bgtacgpy
+plugin.yimad.redep.bid/check
+plugin.yimad.redep.bid/config
+plugin.yimad.redep.bid/stream
+plugin.yimad.redep.bid/minezip.php
