@@ -1430,3 +1430,7 @@ junaidjamsh.com
 # Reference: https://twitter.com/nullcookies/status/1051323126880133122
 
 wetransfer0984e4883v003uplaod63cgi00.alrosapjsc.com/wtf/index.php
+
+# Reference: https://phishstats.info:8443/public/dashboard/3bd497a3-9d59-441a-a4e8-6b7544312257
+
+uniasia.net/login.bankofamerica/
