@@ -306,4 +306,4 @@ ukcoffe.com
 
 # Reference: https://twitter.com/malware_traffic/status/1051999693780262912
 
-/jpv6mhj7b2hmuqm/flashplayer_41.22_plugin.js
+/flashplayer_41.22_plugin.js
