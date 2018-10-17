@@ -1525,9 +1525,9 @@ myconsulting.co.id
 
 # Reference: https://twitter.com/nullcookies/status/1052355899422052352
 
-oldies.esy.es/Google_docs/
+oldies.esy.es
 
 # Reference: https://twitter.com/illegalFawn/status/1052505456265060353
 
 sadesign.ch/wp-content/cache/tre
-zindko.net/clienti/posta
+zindko.net
