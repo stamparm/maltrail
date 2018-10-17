@@ -1,0 +1,53 @@
+# Copyright (c) 2014-2018 Miroslav Stampar (@stamparm)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://viriback.com/30-days-later-97-panels/
+
+http://braithwalte.co.uk/ajjuu/admin.php
+http://braithwalte.co.uk/bass/admin.php
+http://bundletops.ml/bundl/etops/admin.php
+http://carikapapa.ml/apapa/carik/admin.php
+http://carikapapa.ml/carik/admin.php
+http://centranets.ml/anets/centr/admin.php
+http://cuogargaming.com/klinsnip/admin.php
+http://cuogargaming.com/sop/admin.php
+http://dazzlelogs.ml/elogs/dazzl/admin.php
+http://dunysaki.ru/buch-A3/admin.php
+http://efficienci.ml/ienci/effic/admin.php
+http://erintoba.info/user/admin.php
+http://gokubid.review/chife/panelnew/admin.php
+http://gokubid.review/indo/panelnew/admin.php
+http://grandmoney.ml/money/grand/admin.php
+http://hostelunke.ml/lunke/admin.php
+http://hostelunke.ml/lunke/hoste/admin.php
+http://hypercosine.ml/cosi/hyper/admin.php
+http://irishgrind.ml/grind/admin.php
+http://irishgrind.ml/irish/grind/admin.php
+http://pharma–partners.com/bfayz/admin.php
+http://pharma–partners.com/nonib/admin.php
+http://pharma–partners.com/twst/admin.php
+http://preutainer.ml/aine/preut/admin.php
+http://rolexkings.ml/king/rolex/admin.php
+http://stauniverseqp.com/office1/admin.php
+http://stauniverseqp.com/roks2/admin.php
+http://suruperet.ml/eret/surup/admin.php
+http://taineruder.ml/ruder/admin.php
+http://taineruder.ml/ruder/carik/admin.php
+http://theonlygoodman.com/alti/admin.php
+http://theonlygoodman.com/aman/admin.php
+http://theonlygoodman.com/bes/admin.php
+http://theonlygoodman.com/dokuz/admin.php
+http://theonlygoodman.com/dort/admin.php
+http://theonlygoodman.com/on/admin.php
+http://theonlygoodman.com/sekiz/admin.php
+http://theonlygoodman.com/yedi/admin.php
+http://thousandan.ml/lumin/sop/admin.php
+http://totalguage.ml/guage/total/admin.php
+http://uy-akwaibom.ru/wise/Panel/admin.php
+http://viettrust-vn.net/adin/admin.php
+http://viettrust-vn.net/juzz/admin.php
+http://vinglosine.ml/osin/vingl/admin.php
+
+# Reference: https://twitter.com/ViriBack/status/1050543003935416321
+
+paklabourercare-gov.ml/darkcoders/login
