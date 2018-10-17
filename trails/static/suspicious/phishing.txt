@@ -1510,3 +1510,7 @@ theparkatariano.com/wp-content/upgrade/Office365-K/Microsoftdocs/
 # Reference: https://twitter.com/smica83/status/1052189908763176960
 
 marygrim.com/eba/english
+
+# Reference: https://twitter.com/smica83/status/1052437732503547904
+
+chess-play.space/anvi/not/lock/index.php 
