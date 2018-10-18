@@ -738,6 +738,7 @@ def init():
         exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
 
     if config.plugins:
+        print("[i] Loading plugins:", config.plugins)
         config.plugin_functions = []
         for plugin in re.split(r"[,;]", config.plugins):
             plugin = plugin.strip()
@@ -777,6 +778,10 @@ def init():
 
                 if not found:
                     exit("[!] missing function 'plugin(event_tuple, packet)' in plugin script '%s'" % filename)
+                else:
+                    print("[i] Plugin initialised:", plugin)
+    else:
+        print("[i] No plugins defined.")
 
     if config.pcap_file:
         _caps.append(pcapy.open_offline(config.pcap_file))
@@ -989,6 +994,9 @@ def main():
         exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
 
     read_config(options.config_file)
+
+    if options.plugins is None and config.PLUGINS:
+        options.plugins = config.PLUGINS
 
     for option in dir(options):
         if isinstance(getattr(options, option), (basestring, bool)) and not option.startswith('_'):
