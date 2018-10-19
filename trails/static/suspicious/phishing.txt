@@ -1598,3 +1598,10 @@ mcdonalds.com-chollo.top
 mcdonalds.com-free.top
 mcdonalds.corn-coupon.win
 mcdonalds.corn-dinero.top
+
+# Reference: https://twitter.com/Techhelplistcom/status/1053145803051671552
+
+cloudexl.us
+hipris.club
+olidboy.club
+tinakou.club
