@@ -56,3 +56,8 @@ paklabourercare-gov.ml/darkcoders/login
 
 ark.treassurebank.org/Panel/admin.php
 fishhd.cn/hmph/panelnew/gate.php
+
+# Reference: https://twitter.com/ScumBots/status/1053281715404374016
+
+/jackposprivate12/loading.php
+/load/jckpos/Panel/loading.php
