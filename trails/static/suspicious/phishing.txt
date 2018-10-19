@@ -1587,3 +1587,7 @@ unicreditprivateservizio.shop
 unicreditprivateattivita.shop
 unicreditprivatebanking.shop
 unicreditbankingprivate.shop
+
+# Reference: https://twitter.com/illegalFawn/status/1053200622365933568
+
+service-cenxi.org
