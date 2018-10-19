@@ -1569,3 +1569,7 @@ webmail-aruba.pierrepratt.com/logincheck
 # Reference: https://twitter.com/smica83/status/1052880713870204929
 
 dealpapa.in/mkbb/display/prelogon/authetication/preauth/logon/login.htm
+
+# Reference: https://twitter.com/Techhelplistcom/status/1052924917535117314
+
+banco-itau-cl-wps-portal.gq
