@@ -63,4 +63,8 @@
 
 # Reference: https://www.hybrid-analysis.com/sample/f65ba1cc50b29dd05ddaa83242f4b7bd0429841bfc4befa9e203cb6621d2389b?environmentId=100
 
-/MLover/loader_mn.php
+/loader_mn.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1053668299165229056
+
+/loader_ma.php
