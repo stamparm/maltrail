@@ -315,3 +315,7 @@ ukcoffe.com
 # Reference: https://twitter.com/securitydoggo/status/919906367254728706
 
 /chronopost-colis-suivi.js
+
+# Reference: https://twitter.com/securitydoggo/status/856526428933943296
+
+/Consulta FGTS.js
