@@ -311,3 +311,7 @@ ukcoffe.com
 # Reference: https://twitter.com/securitydoggo/status/938750437913776128
 
 /SexyHot19.js
+
+# Reference: https://twitter.com/securitydoggo/status/919906367254728706
+
+/chronopost-colis-suivi.js
