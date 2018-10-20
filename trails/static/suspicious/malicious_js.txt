@@ -307,3 +307,7 @@ ukcoffe.com
 # Reference: https://twitter.com/malware_traffic/status/1051999693780262912
 
 /flashplayer_41.22_plugin.js
+
+# Reference: https://twitter.com/securitydoggo/status/938750437913776128
+
+/SexyHot19.js
