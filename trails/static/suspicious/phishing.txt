@@ -1664,3 +1664,7 @@ tradingfirst.usa.cc
 tradingpvt.igg.biz
 trestersprings.usa.cc
 vibla.igg.biz
+
+# Reference: https://twitter.com/ns_alarms/status/1052919369255276544
+
+akbankdirekt70yil.com
