@@ -60,3 +60,7 @@
 # Reference: https://twitter.com/DissectMalware/status/1048329071061606400
 
 /90AS98DF.php
+
+# Reference: https://www.hybrid-analysis.com/sample/f65ba1cc50b29dd05ddaa83242f4b7bd0429841bfc4befa9e203cb6621d2389b?environmentId=100
+
+/MLover/loader_mn.php
