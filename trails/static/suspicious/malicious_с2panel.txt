@@ -69,3 +69,11 @@ farmaboti.es/oil/panel/panelnew/gate.php
 # Reference: https://twitter.com/hexlax/status/1053780496579248130
 
 k3x.xyz
+
+# Reference: https://exchange.xforce.ibmcloud.com/url/sergossss18.myjino.ru/panel/gate.php
+
+sergossss18.myjino.ru/panel/gate.php
+
+# Reference: https://www.virustotal.com/en/url/7305c8bafde11f5f2faf83deaa867508e4be02a9275fb6b5285894c40535d9b3/analysis/
+
+perfectnobody.xyz/Panel/gate.php
