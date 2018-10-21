@@ -65,3 +65,7 @@ fishhd.cn/hmph/panelnew/gate.php
 # Reference: https://twitter.com/Racco42/status/1051847768657014784
 
 farmaboti.es/oil/panel/panelnew/gate.php
+
+# Reference: https://twitter.com/hexlax/status/1053780496579248130
+
+k3x.xyz
