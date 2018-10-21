@@ -81,3 +81,7 @@ perfectnobody.xyz/Panel/gate.php
 # Reference: https://exchange.xforce.ibmcloud.com/url/domsrv.host/panel/gate.php
 
 domsrv.host/panel/gate.php
+
+# Reference: https://exchange.xforce.ibmcloud.com/url/sstorm1k.000webhostapp.com/panel/gate.php
+
+sstorm1k.000webhostapp.com/panel/gate.php
