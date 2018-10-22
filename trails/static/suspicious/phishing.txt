@@ -1672,3 +1672,36 @@ akbankdirekt70yil.com
 # Reference: https://twitter.com/nullcookies/status/1054162933012402176
 
 agc666.com/index/dl
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/hurricane-michael-phishing-schemes-leverage-azure-blob-storage-rake-credentials
+
+adobeadvanceable4826.blob.core.windows.net
+adobeinthralls778398.blob.core.windows.net
+cs7a779f8678a3dx443cxbf5.blob.core.windows.net
+darkcloud.z13.web.core.windows.net
+dropboxembright19604.blob.core.windows.net
+dropboxmarling951049.blob.core.windows.net
+dropboxovertalkative.blob.core.windows.net
+dropboxsphingurus894.blob.core.windows.net
+ducosignsurahs721013.blob.core.windows.net
+ducosignunkept514717.blob.core.windows.net
+excelouttravel858824.blob.core.windows.net
+godaddybeautifier270.blob.core.windows.net
+godaddyreimplant9949.blob.core.windows.net
+henricocountyassiste.blob.core.windows.net
+krdas56-secondary.z19.web.core.windows.net
+office365funguses335.blob.core.windows.net
+office365parasyphilo.blob.core.windows.net
+office365totalized87.blob.core.windows.net
+onedrivebroadwayite7.blob.core.windows.net
+onedrivechowry495462.blob.core.windows.net
+onedrivedocs3.z13.web.core.windows.net
+onedrivedocument0.z13.web.core.windows.net
+onedrivedocument3.z13.web.core.windows.net
+onedriveexactas84338.blob.core.windows.net
+onedrivemoton8532961.blob.core.windows.net
+onedrivemyliobatoid4.blob.core.windows.net
+onedrivenonalphabeti.blob.core.windows.net
+onedrivesuiogothic82.blob.core.windows.net
+onedriveunfragrant26.blob.core.windows.net
+onedriveunfragrant26.blob.core.windows.net
