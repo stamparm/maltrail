@@ -1705,3 +1705,12 @@ onedrivenonalphabeti.blob.core.windows.net
 onedrivesuiogothic82.blob.core.windows.net
 onedriveunfragrant26.blob.core.windows.net
 onedriveunfragrant26.blob.core.windows.net
+
+# Reference: https://twitter.com/nullcookies/status/1054153652653441024
+
+ma-up.com
+tp-114.com
+ut-1199.com
+m.ma-up.com
+m.tp-114.com
+m.ut-1199.com
