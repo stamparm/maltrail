@@ -89,3 +89,7 @@ sstorm1k.000webhostapp.com/panel/gate.php
 # Reference: https://exchange.xforce.ibmcloud.com/url/pony.lovekhao.com/panel/gate.php
 
 pony.lovekhao.com/panel/gate.php
+
+# Reference: https://twitter.com/avman1995/status/1054260755183353858
+
+medipedics.com/ponygrace/Panel/gate.php
