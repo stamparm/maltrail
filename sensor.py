@@ -161,7 +161,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
                     trail = "(%s)%s" % (query[:-len(_)], _)
 
                 if not (re.search(r"(?i)\Ad?ns\d*\.", query) and any(_ in trails.get(domain, " ")[0] for _ in ("suspicious", "sinkhole"))):  # e.g. ns2.nobel.su
-                    if not ((query == trail) and any(_ in trails.get(domain, " ")[0] for _ in ("dynamic",))):  # e.g. noip.com
+                    if not ((query == trail) and any(_ in trails.get(domain, " ")[0] for _ in ("dynamic", "free web"))):  # e.g. noip.com
                         result = True
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[domain][0], trails[domain][1]), packet)
                         break
@@ -735,7 +735,7 @@ def init():
 
     update_timer()
 
-    if check_sudo() is False:
+    if not config.DISABLE_CHECK_SUDO and check_sudo() is False:
         exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
 
     if config.plugins:
@@ -801,7 +801,7 @@ def init():
                 _caps.append(pcapy.open_live(interface, SNAP_LEN, True, CAPTURE_TIMEOUT))
             except (socket.error, pcapy.PcapError):
                 if "permitted" in str(sys.exc_info()[1]):
-                    exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
+                    exit("[!] permission problem occurred ('%s')" % sys.exc_info()[1])
                 elif "No such device" in str(sys.exc_info()[1]):
                     exit("[!] no such device '%s'" % interface)
                 else:
@@ -986,9 +986,6 @@ def main():
     parser.add_option("--debug", dest="debug", action="store_true", help=optparse.SUPPRESS_HELP)
     options, _ = parser.parse_args()
 
-    if not check_sudo():
-        exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
-
     read_config(options.config_file)
 
     for option in dir(options):
@@ -1007,6 +1004,9 @@ def main():
             exit("[!] missing pcap file '%s'" % options.pcap_file)
         else:
             print("[i] using pcap file '%s'" % options.pcap_file)
+
+    if not config.DISABLE_CHECK_SUDO and not check_sudo():
+        exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
 
     try:
         init()

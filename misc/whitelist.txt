@@ -27,6 +27,7 @@ a-msedge.net
 angsrvr.com
 anycastb.com
 anti-virus.by
+azure.com
 baidu.com
 bdnsrt.org
 benkow.cc

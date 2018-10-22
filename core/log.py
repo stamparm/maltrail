@@ -37,7 +37,7 @@ _thread_data = threading.local()
 
 def create_log_directory():
     if not os.path.isdir(config.LOG_DIR):
-        if check_sudo() is False:
+        if not config.DISABLE_CHECK_SUDO and check_sudo() is False:
             exit("[!] please rerun with sudo/Administrator privileges")
         os.makedirs(config.LOG_DIR, 0755)
     print("[i] using '%s' for log storage" % config.LOG_DIR)
