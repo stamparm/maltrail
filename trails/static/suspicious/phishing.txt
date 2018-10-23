@@ -1851,3 +1851,7 @@ verifyaccount-update.host
 verify-your-account-update-information-account.rotextil.ro
 vk.com.id254071132-verification-vla1-2221sourcewiz.xyzyzyx.xyz
 xp-paypalcenterserviceapp.com
+
+# Reference: https://twitter.com/packet_Wire/status/1054427382872977408
+
+zbz.com/wp-content/plugins/Mycred/assets/main.htm
