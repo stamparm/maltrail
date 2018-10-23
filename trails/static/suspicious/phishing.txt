@@ -1864,3 +1864,7 @@ matanel.com/tims08
 # Reference: https://twitter.com/malwrhunterteam/status/1054737113034436609
 
 mirellawalker.com/wp/wp-includes/pomo/app/
+
+# Reference: https://twitter.com/malwrhunterteam/status/1054442203601350656
+
+outcrossing.cf
