@@ -838,3 +838,7 @@ msftncsi.com
 
 dropboxusercontent.com
 facebook.com
+
+# Reference: https://github.com/Bigjoos/U-232-V4
+
+forum-u-232.servebeer.com
