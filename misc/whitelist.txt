@@ -288,6 +288,7 @@ s3.amazonaws.com
 # appeared on malwaredomains.com
 
 atw.hu
+gandi.net
 
 # appeared on malwaredomainlist.com
 
@@ -403,6 +404,7 @@ geocities.ws
 
 pdf-archive.com
 discordapp.com
+cl.ly
 
 # found as false positive in otx.alienvault.com
 
