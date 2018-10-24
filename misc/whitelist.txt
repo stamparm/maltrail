@@ -500,6 +500,10 @@ webequipped.com
 woody.ch
 wpbl.info
 
+# SonicWall
+
+webcfs07.com
+
 # Reference: http://www.blalert.com/dnsbls
 
 0spam.fusionzero.com
@@ -801,6 +805,7 @@ azureedge.net
 rubrkik.ga
 microsoftstream.com
 azurewebsites.net
+office.com
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
@@ -820,6 +825,13 @@ casalemedia.com
 advertising.com
 agentanalytics.com
 rs6.net
+moatpixel.com
+adjust.com
+appsee.com
+found.io
+trafficmanager.net
+report-uri.com
+omtrdc.net
 
 # Google crawlers
 
