@@ -1904,3 +1904,7 @@ com-viewlocation.com
 # Reference: https://twitter.com/nullcookies/status/1054959819910774784
 
 fuatciftci.com.tr/haber/5038/gunz_berry
+
+# Reference: https://twitter.com/smica83/status/1055102419548491776
+
+ajbakery.co.id/wp-content/plugins/md/WEtrans/index.php
