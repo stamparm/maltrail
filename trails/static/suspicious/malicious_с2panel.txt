@@ -62,8 +62,10 @@ fishhd.cn/hmph/panelnew/gate.php
 /jackposprivate12/loading.php
 /load/jckpos/Panel/loading.php
 
+# Reference: https://twitter.com/pancak3lullz/status/1054800229654945792
 # Reference: https://twitter.com/Racco42/status/1051847768657014784
 
+farmaboti.es/oil/panel/panelnew/admin.php
 farmaboti.es/oil/panel/panelnew/gate.php
 
 # Reference: https://twitter.com/hexlax/status/1053780496579248130
