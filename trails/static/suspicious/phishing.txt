@@ -1900,3 +1900,7 @@ com.signin.biz
 com-support.co.uk
 com-verify.co.in
 com-viewlocation.com
+
+# Reference: https://twitter.com/nullcookies/status/1054959819910774784
+
+fuatciftci.com.tr/haber/5038/gunz_berry
