@@ -797,6 +797,7 @@ msn.com
 azureedge.net
 rubrkik.ga
 microsoftstream.com
+azurewebsites.net
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
@@ -812,6 +813,9 @@ ubembed.com
 conviva.com
 hrins.net
 imrworldwide.com
+casalemedia.com
+advertising.com
+agentanalytics.com
 
 # Google crawlers
 
@@ -833,6 +837,10 @@ nanosystems.it
 # Microsoft's network connectivity check domain
 
 msftncsi.com
+
+# Microsoft's SmartScreen
+
+ucsuri.tcs
 
 # misc.
 
