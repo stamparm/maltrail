@@ -402,6 +402,7 @@ geocities.ws
 # found as false positive on urlvir.com
 
 pdf-archive.com
+discordapp.com
 
 # found as false positive in otx.alienvault.com
 
@@ -816,6 +817,7 @@ imrworldwide.com
 casalemedia.com
 advertising.com
 agentanalytics.com
+rs6.net
 
 # Google crawlers
 
@@ -850,3 +852,9 @@ facebook.com
 # Reference: https://github.com/Bigjoos/U-232-V4
 
 forum-u-232.servebeer.com
+
+# Reference: https://apkscan.nviso.be/report/show/e2646fe8fd76bf2c2d413b056b76f7d9
+# Reference: https://www.virustotal.com/#/file/71487fc3f0b75d5e75bf9ae849ee5cd80f0688428fd06103becb80432036a16e/detection
+# Note: Android's Battery Doctor (FP on abuse.ch)
+
+cfg.cml.ksmobile.com
