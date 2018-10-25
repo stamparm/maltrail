@@ -832,6 +832,12 @@ found.io
 trafficmanager.net
 report-uri.com
 omtrdc.net
+playground.xyz
+app.link
+lkqd.net
+yoox.com
+adnxs.com
+ads.playground.xyz
 
 # Google crawlers
 
@@ -862,6 +868,8 @@ ucsuri.tcs
 
 dropboxusercontent.com
 facebook.com
+es.pn
+wywx.xyz
 
 # Reference: https://github.com/Bigjoos/U-232-V4
 

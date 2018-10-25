@@ -1143,10 +1143,6 @@ lip.healthcakes.men
 z11.cnzz.com
 z4.cnzz.com
 
-# Reference: https://malwaretips.com/blogs/ib-adnxs-popup-virus/
-
-ib.adnxs.com
-
 # Reference: https://howtoremove.guide/s-thebrighttag-com-malware-remove/
 
 thebrighttag.com
@@ -1355,10 +1351,6 @@ allmodel-pro.com
 # Reference: https://removeviruswithease.blogspot.com/2018/07/solution-remove-ua1lunraccom.html
 
 ua1.lunrac.com
-
-# Reference: https://www.virusresearch.org/remove-t-lkqd-net-redirects/
-
-lkqd.net
 
 # Reference: https://documents.trendmicro.com/assets/rpt/rpt-hazards-ahead.pdf
 
