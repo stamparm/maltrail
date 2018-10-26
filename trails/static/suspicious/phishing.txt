@@ -1927,3 +1927,8 @@ onlineid.secure05.chaseapp.activityid119005.info
 # Reference: https://twitter.com/nullcookies/status/1055281344312475650
 
 lapwpland.gq/media/filebrowser/fildir/aol/cmThkRqcUe5qBbIUMLTMUxjVXHuoi/RBMC8Qg1BHav4pYFzembFoENcG1gf3H4PaiYU4haol/Verify/AolAccounts
+
+# Reference: https://twitter.com/nullcookies/status/1055601702752137222
+
+microsoft-security-alert-00888.cf
+microsoft-security-alert-00888.ga
