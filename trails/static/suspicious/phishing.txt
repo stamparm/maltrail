@@ -1940,3 +1940,7 @@ wwiscaa.com
 # Reference: https://twitter.com/packet_Wire/status/1055579340128305155
 
 onedrivelearnedness4.blob.core.windows.net/onedrivelearnedness4/index.html
+
+# Reference: https://twitter.com/illegalFawn/status/1055813818658512897
+
+statusmw.com/bcc/
