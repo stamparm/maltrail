@@ -1936,3 +1936,7 @@ microsoft-security-alert-00888.ga
 # Reference: https://twitter.com/nullcookies/status/1055642390990602240
 
 wwiscaa.com
+
+# Reference: https://twitter.com/packet_Wire/status/1055579340128305155
+
+onedrivelearnedness4.blob.core.windows.net/onedrivelearnedness4/index.html
