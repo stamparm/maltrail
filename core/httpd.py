@@ -46,6 +46,7 @@ from core.settings import NAME
 from core.settings import PING_RESPONSE
 from core.settings import SERVER_HEADER
 from core.settings import SESSION_COOKIE_NAME
+from core.settings import SESSION_COOKIE_FLAG_SAMESITE
 from core.settings import SESSION_EXPIRATION_HOURS
 from core.settings import SESSION_ID_LENGTH
 from core.settings import SESSIONS
@@ -278,7 +279,10 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
                 self.send_response(httplib.OK)
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
-                self.send_header(HTTP_HEADER.SET_COOKIE, "%s=%s; expires=%s; path=/; HttpOnly" % (SESSION_COOKIE_NAME, session_id, time.strftime(HTTP_TIME_FORMAT, time.gmtime(expiration))))
+                cookie_flag_samesite = ""
+                if SESSION_COOKIE_FLAG_SAMESITE:
+                    cookie_flag_samesite = " SameSite=strict;"
+                self.send_header(HTTP_HEADER.SET_COOKIE, "%s=%s; expires=%s; path=/; HttpOnly;%s" % (SESSION_COOKIE_NAME, session_id, time.strftime(HTTP_TIME_FORMAT, time.gmtime(expiration)), cookie_flag_samesite))
 
                 if netfilter in ("", "0.0.0.0/0"):
                     netfilters = None
