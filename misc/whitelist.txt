@@ -806,6 +806,13 @@ rubrkik.ga
 microsoftstream.com
 azurewebsites.net
 office.com
+keep2share.cc
+dropboxusercontent.com
+facebook.com
+es.pn
+wywx.xyz
+kaloo.ga
+msgamestudios.com
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
@@ -863,13 +870,6 @@ msftncsi.com
 # Microsoft's SmartScreen
 
 ucsuri.tcs
-
-# misc.
-
-dropboxusercontent.com
-facebook.com
-es.pn
-wywx.xyz
 
 # Reference: https://github.com/Bigjoos/U-232-V4
 
