@@ -9,30 +9,17 @@
         <link rel="stylesheet" type="text/css" href="css/thirdparty.min.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/media.css">
-        <script type="text/javascript">
-            window.onerror = function(errorMsg, url, lineNumber) {
-                alert(errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
-                try {
-                    $("body").loader("hide");
-                    document.title = "Maltrail";
-                }
-                catch(err) {
-                }
-            };
-        </script>
+        <script type="text/javascript" src="js/errorhandler.js"></script>
         <script type="text/javascript" src="js/thirdparty.min.js"></script>
         <script type="text/javascript" src="js/papaparse.min.js"></script>
     </head>
     <body>
-        <script>
-            $("body").loader("show");
-        </script>
         <div id="header_container" class="header noselect">
             <div id="logo_container">
-                <span id="logo" onclick="resetView()"><img src="images/mlogo.png" style="width: 25px">altrail</span>
+                <span id="logo"><img src="images/mlogo.png" style="width: 25px">altrail</span>
             </div>
             <div id="calendar_container">
-                <center><span onclick="toggleHeatmap()" style="cursor: pointer"><a class="header-a header-period" id="period_label"></a><img src="images/calendar.png" style="width: 25px; height: 25px; vertical-align: top"></span></center>
+                <center><span id="spanToggleHeatmap" style="cursor: pointer"><a class="header-a header-period" id="period_label"></a><img src="images/calendar.png" style="width: 25px; height: 25px; vertical-align: top"></span></center>
             </div>
             <ul id="link_container">
                 <li class="header-li"><a class="header-a" href="https://github.com/stamparm/maltrail/blob/master/README.md" id="documentation_link" target="_blank">Documentation</a></li>
@@ -63,27 +50,27 @@
             <div id="status_container" style="width: 100%; text-align: center">
                 <div>
                     <ul style="list-style: outside none none; overflow: hidden; font-family: sans-serif; padding: 0px; display: inline-block; white-space: nowrap">
-                        <li class="status-button noselect" style="background: rgb(31, 119, 180); background: radial-gradient(rgb(174, 199, 232) 0%, rgb(31, 119, 180) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Threats')" title="Threats">
+                        <li id="btnDrawThreats" class="status-button noselect" style="background: rgb(31, 119, 180); background: radial-gradient(rgb(174, 199, 232) 0%, rgb(31, 119, 180) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" title="Threats">
                             <h4 id="threats_count">-</h4>
                             <span class="dynamicsparkline" id="threats_sparkline"></span>
                             <h6>Threats</h6>
                         </li>
-                        <li class="status-button noselect" style="background: rgb(255, 127, 14); background: radial-gradient(rgb(255, 187, 120) 0%, rgb(255, 127, 14) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Events')" title="Events">
+                        <li id="btnDrawEvents" class="status-button noselect" style="background: rgb(255, 127, 14); background: radial-gradient(rgb(255, 187, 120) 0%, rgb(255, 127, 14) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" title="Events">
                             <h4 id="events_count">-</h4>
                             <span class="dynamicsparkline" id="events_sparkline"></span>
                             <h6>Events</h6>
                         </li>
-                        <li class="status-button noselect" style="background: rgb(44, 160, 44); background: radial-gradient(rgb(152, 223, 138) 0%, rgb(44, 160, 44) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Severity')" title="Severity">
+                        <li id="btnDrawSeverity" class="status-button noselect" style="background: rgb(44, 160, 44); background: radial-gradient(rgb(152, 223, 138) 0%, rgb(44, 160, 44) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" title="Severity">
                             <h4 id="severity_count">-</h4>
                             <span class="dynamicsparkline" id="severity_sparkline"></span>
                             <h6>Severity</h6>
                         </li>
-                        <li class="status-button noselect" style="background:rgb(214, 39, 40); background: radial-gradient(rgb(255, 152, 150) 0%, rgb(214, 39, 40) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Sources')" title="Sources">
+                        <li id="btnDrawSources" class="status-button noselect" style="background:rgb(214, 39, 40); background: radial-gradient(rgb(255, 152, 150) 0%, rgb(214, 39, 40) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" title="Sources">
                             <h4 id="sources_count">-</h4>
                             <span class="dynamicsparkline" id="sources_sparkline"></span>
                             <h6>Sources</h6>
                         </li>
-                        <li class="status-button noselect" style="background:rgb(148, 103, 189); background: radial-gradient(rgb(197, 176, 213) 0%, rgb(148, 103, 189) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" onclick="drawInfo('Trails')" title="Trails">
+                        <li id="btnDrawTrails" class="status-button noselect" style="background:rgb(148, 103, 189); background: radial-gradient(rgb(197, 176, 213) 0%, rgb(148, 103, 189) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" title="Trails">
                             <h4 id="trails_count">-</h4>
                             <span class="dynamicsparkline" id="trails_sparkline"></span>
                             <h6>Trails</h6>
@@ -92,7 +79,7 @@
                 </div>
                 <div>
                     <!--<label>title</label>-->
-                    <img id="graph_close" src="images/close.png" class="hidden" onclick="graphClose()" title="close">
+                    <img id="graph_close" src="images/close.png" class="hidden" title="close">
                 </div>
                 <div id="chart_area">
                 </div>
