@@ -35,6 +35,7 @@ class HTTP_HEADER:
     CONTENT_LENGTH = "Content-Length"
     CONTENT_RANGE = "Content-Range"
     CONTENT_TYPE = "Content-Type"
+    CONTENT_SECURITY_POLICY = "Content-Security-Policy"
     COOKIE = "Cookie"
     EXPIRES = "Expires"
     HOST = "Host"

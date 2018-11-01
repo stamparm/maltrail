@@ -1999,7 +1999,6 @@ function setChartScale(options, maxValue) {
 }
 
 function drawInfo(type) {
-    console.info("Execute drawInfo type = "+type);
     //var color = $("#" + type.toLowerCase() + "_count").parent()[0].style["background-color"];
     //$("li.status-button").css("opacity", "0.6");
     $("#chart_area").empty();
