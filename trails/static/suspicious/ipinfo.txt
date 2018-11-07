@@ -17,6 +17,7 @@ checkip.me
 checkip.narak.com
 checkip.net
 checkip.org
+checkip.pw
 checkmyip.com
 check-my-ip.net
 cmyip.com
