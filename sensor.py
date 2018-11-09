@@ -781,8 +781,8 @@ def init():
                 if not found:
                     exit("[!] missing function 'plugin(event_tuple, packet)' in plugin script '%s'" % filename)
 
-    if config.pcap_file:
-        _caps.append(pcapy.open_offline(config.pcap_file))
+    if config.PCAP_FILE:
+        _caps.append(pcapy.open_offline(config.PCAP_FILE))
     else:
         interfaces = set(_.strip() for _ in config.MONITOR_INTERFACE.split(','))
 
