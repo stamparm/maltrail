@@ -813,6 +813,9 @@ es.pn
 wywx.xyz
 kaloo.ga
 msgamestudios.com
+worldssl.net
+vanuatu.com.vu
+sotelma.ml
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
@@ -845,6 +848,8 @@ lkqd.net
 yoox.com
 adnxs.com
 ads.playground.xyz
+btrll.com
+mmstat.com
 
 # Google crawlers
 
