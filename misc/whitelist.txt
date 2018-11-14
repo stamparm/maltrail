@@ -850,6 +850,7 @@ adnxs.com
 ads.playground.xyz
 btrll.com
 mmstat.com
+sdad.guru
 
 # Google crawlers
 
