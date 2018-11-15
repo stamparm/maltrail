@@ -29,6 +29,7 @@
 - [Best practice(s)](#best-practices)
 - [License](#license)
 - [Thank you](#thank-you)
+- [Donations](#donations)
 
 ## Introduction
 
@@ -504,3 +505,7 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * Ladislav Baco (@laciKE)
 * John Kristoff (@jtkdpu)
 * Mikhail Kasimov (@MikhailKasimov)
+
+## Donations
+
+If you wish to donate please contact the author at `miroslav(at)sqlmap.org`
