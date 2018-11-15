@@ -26,7 +26,9 @@
  - [Data leakage](#data-leakage)
  - [False positives](#false-positives)
 - [Requirements](#requirements)
+- [Best practice(s)](#best-practices)
 - [License](#license)
+- [Thank you](#thank-you)
 
 ## Introduction
 
