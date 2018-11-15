@@ -453,6 +453,43 @@ Nevertheless, administrator(s) should invest some extra time and check (with oth
 
 To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6.x** or **2.7.x** is required, together with [pcapy](https://www.coresecurity.com/corelabs-research/open-source-tools/pcapy) (e.g. `sudo apt-get install python-pcapy`). There are no other requirements, other than to run the **Sensor** component with the administrative/root privileges.
 
+## Best practice
+
+1) Install Maltrail (preferably on Debian/Ubuntu Linux OS):
+
+```
+sudo apt-get install git python-pcapy
+cd /tmp
+git clone https://github.com/stamparm/maltrail.git
+sudo mv /tmp/maltrail /opt
+sudo chown -R $USER:$USER /opt/maltrail
+```
+
+2) Set working environment:
+
+```
+sudo mkdir -p /var/log/maltrail
+sudo mkdir -p /etc/maltrail
+sudo cp /opt/maltrail/maltrail.conf /etc/maltrail
+sudo nano /etc/maltrail/maltrail.conf
+```
+
+3) Set running environment (i.e. CRON):
+
+* `crontab -e` (start server & periodic update)
+
+```
+*/5 * * * * if [ -n "$(ps -ef | grep -v grep | grep 'server.py')" ]; then : ; else python /opt/maltrail/server.py -c /etc/maltrail/maltrail.conf; fi
+0 1 * * * cd /opt/maltrail && git pull
+```
+
+* `sudo crontab -e` (start sensor & periodic restart)
+
+```
+*/1 * * * * if [ -n "$(ps -ef | grep -v grep | grep 'sensor.py')" ]; then : ; else python /opt/maltrail/sensor.py -c /etc/maltrail/maltrail.conf; fi
+2 1 * * * /usr/bin/pkill -f maltrail
+```
+
 ## License
 
 This software is provided under a MIT License. See the accompanying [LICENSE](https://github.com/stamparm/maltrail/blob/master/LICENSE) file for more information.
