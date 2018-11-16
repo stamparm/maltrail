@@ -1968,3 +1968,7 @@ lumgg.com/prohu/prelogon/display/preauth/authetication/authetication/logon/index
 # Reference: https://twitter.com/smica83/status/1063328725046046721
 
 foodangra.com/auth/authwrong/aut.php
+
+# Reference: https://twitter.com/PhishingAi/status/1063303729946873857
+
+bankonline-chase.tk
