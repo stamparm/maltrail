@@ -1964,3 +1964,7 @@ takeyourskin.com/login.php
 # Reference: https://twitter.com/smica83/status/1063017996560543744
 
 lumgg.com/prohu/prelogon/display/preauth/authetication/authetication/logon/index.php
+
+# Reference: https://twitter.com/smica83/status/1063328725046046721
+
+foodangra.com/auth/authwrong/aut.php
