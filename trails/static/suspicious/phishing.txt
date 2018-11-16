@@ -1960,3 +1960,7 @@ safety-oro.net/S3456
 # Reference: https://twitter.com/malwrhunterteam/status/1062346787736993793
 
 takeyourskin.com/login.php
+
+# Reference: https://twitter.com/smica83/status/1063017996560543744
+
+lumgg.com/prohu/prelogon/display/preauth/authetication/authetication/logon/index.php
