@@ -1972,3 +1972,7 @@ foodangra.com/auth/authwrong/aut.php
 # Reference: https://twitter.com/PhishingAi/status/1063303729946873857
 
 bankonline-chase.tk
+
+# Reference: https://twitter.com/ANeilan/status/1069751384382324737
+
+update-your-payment-info.tk
