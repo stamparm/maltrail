@@ -75,6 +75,7 @@ from core.settings import SUSPICIOUS_HTTP_PATH_REGEXES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION
 from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEXES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
+from core.settings import SUSPICIOUS_PROXY_PROBE_PRE_CONDITION
 from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
 from core.settings import TRAILS_FILE
@@ -338,8 +339,10 @@ def _process_packet(packet, sec, usec, ip_offset):
                     if index >= 0:
                         post_data = tcp_data[index + 4:]
 
-                    if config.USE_HEURISTICS and dst_port == 80 and path.startswith("http://") and not _check_domain_whitelisted(urlparse.urlparse(path).netloc.split(':')[0]):
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, path, "potential proxy probe (suspicious)", "(heuristic)"), packet)
+                    if config.USE_HEURISTICS and dst_port == 80 and path.startswith("http://") and any(_ in path for _ in SUSPICIOUS_PROXY_PROBE_PRE_CONDITION):
+                        trail = re.sub(r"(http://[^/]+/)(.+)", r"\g<1>(\g<2>)", path)
+                        trail = re.sub(r"(http://)([^/(]+)", lambda match: "%s%s" % (match.group(1), match.group(2).split(':')[0].rstrip('.')), trail)
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "potential proxy probe (suspicious)", "(heuristic)"), packet)
                         return
                     elif "://" in path:
                         url = path.split("://", 1)[1]
@@ -1022,8 +1025,9 @@ if __name__ == "__main__":
     except SystemExit, ex:
         show_final = False
 
-        if not isinstance(getattr(ex, "message"), int):
+        if isinstance(getattr(ex, "message"), basestring):
             print(ex)
+            os._exit(1)
     except IOError:
         show_final = False
         log_error("\n\n[!] session abruptly terminated\n[?] (hint: \"https://stackoverflow.com/a/20997655\")")

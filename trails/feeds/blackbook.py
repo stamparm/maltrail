@@ -7,10 +7,9 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "https://www.cruzit.com/xxwbl2txt.php"
-__check__ = "ipaddress"
-__info__ = "known attacker"
-__reference__ = "cruzit.com"
+__url__ = "https://raw.githubusercontent.com/stamparm/blackbook/master/blackbook.csv"
+__check__ = "Malware"
+__reference__ = "github.com/stamparm/blackbook"
 
 def fetch():
     retval = {}
@@ -21,6 +20,6 @@ def fetch():
             line = line.strip()
             if not line or line.startswith('#') or '.' not in line:
                 continue
-            retval[line] = (__info__, __reference__)
+            retval[line.split(',')[0].strip()] = ("%s (malware)" % line.split(',')[1].strip(), __reference__)
 
     return retval

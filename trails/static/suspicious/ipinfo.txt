@@ -8,10 +8,16 @@ api.wipmania.com
 aruljohn.com
 bahoot.com
 bearsmyip.com
+checkip.amazonaws.com
 checkip.dns.he.net
 checkip.dyndns.com
+checkip.dyndns.it
 checkip.dyndns.org
+checkip.me
 checkip.narak.com
+checkip.net
+checkip.org
+checkip.pw
 checkmyip.com
 check-my-ip.net
 cmyip.com
