@@ -1358,3 +1358,8 @@ allmodel-pro.com
 sp-storage.spccint.com
 jsgnr.eshopcomp.com
 cnfg.toolbarservices.com
+
+# Reference: https://forums.malwarebytes.com/topic/186439-removal-instructions-for-vkontaktedj/
+# Reference: https://www.virustotal.com/#/file/c93d70c03c538ece89b661b2c39063d26f27496582bd922d6dfb203f5f3336d2/detection
+
+dj-reserve.com
