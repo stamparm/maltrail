@@ -1976,3 +1976,7 @@ bankonline-chase.tk
 # Reference: https://twitter.com/ANeilan/status/1069751384382324737
 
 update-your-payment-info.tk
+
+# Reference: https://twitter.com/malwrhunterteam/status/1069970240069664769
+
+fortyonemadison.ga/MOTrainingWorkshop/
