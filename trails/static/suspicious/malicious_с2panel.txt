@@ -109,3 +109,7 @@ xityeksmwi.eu/sload/
 # Reference: https://twitter.com/benkow_/status/1055005039733944320
 
 filipmoris.ru.com/spt/auth.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1069928327861854208
+
+cm-lagoa.pt/panel/gate.php
