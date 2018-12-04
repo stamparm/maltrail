@@ -1980,3 +1980,7 @@ update-your-payment-info.tk
 # Reference: https://twitter.com/malwrhunterteam/status/1069970240069664769
 
 fortyonemadison.ga/MOTrainingWorkshop/
+
+# Reference: https://twitter.com/yvesago/status/1069973246001496065
+
+netflix-ca.com.ua/auth.univ-lorraine.fr/
