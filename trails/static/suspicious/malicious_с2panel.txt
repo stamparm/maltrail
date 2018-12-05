@@ -124,3 +124,25 @@ jelouslaodnn.org/bnAgxoxMGuqZidGE/login.php
 # Reference: https://twitter.com/ViriBack/status/1069980631805894656
 
 bot.jefferyworks.cf
+
+# Reference: https://pastebin.com/p0vBRBTE
+
+betabot.pw/login.php
+mandahp.ie/jjc/PHP/
+riyanshoppingbags.com/skins/betpla/PHP/
+rollscar.pk/auth
+
+masariqroup.com/cynthia/admin.php
+masariqroup.com/kabo/admin.php
+masariqroup.com/kabospy/admin.php
+masariqroup.com/small/admin.php
+masariqroup.com/starmoney/panel/admin.php
+sensimatino.us/brothershar/lokituoyr/admin.php
+slimpityio3.us/slamiptiop/admin.php
+slowidyter.us/derty/eer678y/admin.php
+slowidyter.us/locash7/lokiuyto/admin.php
+
+# Generic trails, based on https://pastebin.com/p0vBRBTE info
+
+/panel/admin.php
+/panelnew/admin.php
