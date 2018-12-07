@@ -1993,3 +1993,7 @@ tamarisvoyages.ma/.xi/
 # Reference: https://twitter.com/smica83/status/1070279615699144704
 
 yanamsteels.com/english/english/index.php
+
+# Reference: https://twitter.com/PhishingAi/status/1070868177456893952
+
+gh5.10f.myftpupload.com
