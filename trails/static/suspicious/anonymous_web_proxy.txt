@@ -1040,3 +1040,7 @@ zblocker.info
 zheat.info
 zippyproxy.com
 zproxy.de
+
+# Reference: https://www.wordfence.com/blog/2018/12/wordpress-botnet-attacking-wordpress/
+
+best-proxies.ru
