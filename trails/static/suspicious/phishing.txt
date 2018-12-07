@@ -1997,3 +1997,7 @@ yanamsteels.com/english/english/index.php
 # Reference: https://twitter.com/PhishingAi/status/1070868177456893952
 
 gh5.10f.myftpupload.com
+
+# Reference: https://twitter.com/smica83/status/1070875384487530496
+
+www.ukmembranes.co.uk/wp-includes/js/tinymce/plugins/inlinepopups/skins/clearlooks2/snookie/https/mail/quota/upgrade/25GB/
