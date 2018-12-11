@@ -2001,3 +2001,7 @@ gh5.10f.myftpupload.com
 # Reference: https://twitter.com/smica83/status/1070875384487530496
 
 www.ukmembranes.co.uk/wp-includes/js/tinymce/plugins/inlinepopups/skins/clearlooks2/snookie/https/mail/quota/upgrade/25GB/
+
+# Reference: Link from phishing mail (Gmail's SPAM folder)
+
+verinow.francecentral.cloudapp.azure.com/aba_finl
