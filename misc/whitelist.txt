@@ -818,6 +818,7 @@ worldssl.net
 vanuatu.com.vu
 sotelma.ml
 robtex.com
+check.googlezip.net
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
