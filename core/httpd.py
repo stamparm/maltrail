@@ -135,7 +135,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 if not os.path.isfile(path) and os.path.isfile("%s.html" % path):
                     path = "%s.html" % path
 
-                if ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and (extension not in DISABLED_CONTENT_EXTENSIONS or os.path.split(path)[-1] in CONTENT_EXTENSIONS_EXCLUSIONS):
+                if any((config.IP_ALIASES,)) and self.path.split('?')[0] == "/js/main.js":
+                    content = open(path, "rb").read()
+                    content = re.sub(r"\bvar IP_ALIASES =.+", "var IP_ALIASES = {%s};" % ", ".join('"%s": "%s"' % (_.split(':', 1)[0].strip(), _.split(':', 1)[-1].strip()) for _ in config.IP_ALIASES), content)
+                    self.send_response(httplib.OK)
+                elif ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and (extension not in DISABLED_CONTENT_EXTENSIONS or os.path.split(path)[-1] in CONTENT_EXTENSIONS_EXCLUSIONS):
                     mtime = time.gmtime(os.path.getmtime(path))
                     if_modified_since = self.headers.get(HTTP_HEADER.IF_MODIFIED_SINCE)
 
