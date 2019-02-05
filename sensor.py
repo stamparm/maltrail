@@ -230,6 +230,9 @@ def _process_packet(packet, sec, usec, ip_offset):
         if ip_version == 0x04:  # IPv4
             ip_header = struct.unpack("!BBHHHBBH4s4s", ip_data[:20])
             iph_length = (ip_header[0] & 0xf) << 2
+            fragment_offset = ip_header[4] & 0x1fff
+            if fragment_offset != 0:
+                return
             protocol = ip_header[6]
             src_ip = socket.inet_ntoa(ip_header[8])
             dst_ip = socket.inet_ntoa(ip_header[9])
