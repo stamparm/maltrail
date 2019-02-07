@@ -1725,7 +1725,7 @@ function initDetails() {
             }
         }
         else {
-            filter = this.innerHTML.replace(/<span class="ipcat">.+/g, "").replace(/<.+?>/g, " ");
+            filter = this.innerHTML.replace(/<span class="ipcat">.+?<\/span>/g, "").replace(/<.+?>/g, " ");
         }
 
         filter = filter.replace(/\s+/g, " ").trim();
