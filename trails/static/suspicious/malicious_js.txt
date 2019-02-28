@@ -307,3 +307,20 @@ ukcoffe.com
 # Reference: https://twitter.com/malware_traffic/status/1051999693780262912
 
 /flashplayer_41.22_plugin.js
+
+# Reference: https://twitter.com/securitydoggo/status/938750437913776128
+
+/SexyHot19.js
+
+# Reference: https://twitter.com/securitydoggo/status/919906367254728706
+
+/chronopost-colis-suivi.js
+
+# Reference: https://twitter.com/securitydoggo/status/856526428933943296
+
+/Consulta FGTS.js
+
+# Reference: https://threatpost.com/card-skimming-google-analytics-angular/142264/
+
+google-analytics.cm/analytics.js
+gooqletagmanager.com/gtm.js
