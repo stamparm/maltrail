@@ -72,6 +72,7 @@ var STORAGE_KEY_ACTIVE_STATUS_BUTTON = "STORAGE_KEY_ACTIVE_STATUS_BUTTON";
 var COMMA_ENCODE_TRAIL_TYPES = { UA: true, URL: true};
 var TOOLTIP_FOLDING_REGEX = /([^\s]{60})/g;
 var REPLACE_SINGLE_CLOUD_WITH_BRACES = false;
+var IP_ALIASES = {};
 
 for (var column in LOG_COLUMNS) if (LOG_COLUMNS.hasOwnProperty(column)) LOG_COLUMNS_SIZE++;
 
@@ -1181,6 +1182,9 @@ function initDetails() {
                 render: function (data, type, row) {
                     if (data.indexOf(',') > -1)
                         data = "<span title='" + data + "' class='ellipsis'></span>";
+                    else if (data in IP_ALIASES) {
+                        data = "<span class='ipcat'>" + IP_ALIASES[data] + "</span>" + data;
+                    }
                     return data;
                 },
                 targets: [ DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP ]
@@ -1606,9 +1610,9 @@ function initDetails() {
                 if (!isLocalAddress(ip)) {
                     if (!(ip in IP_COUNTRY)) {
                         IP_COUNTRY[ip] = null;
-                        $.ajax("https://stat.ripe.net/data/geoloc/data.json?resource=" + ip, { dataType:"jsonp", ip: ip, cell: cell })
+                        $.ajax("https://stat.ripe.net/data/geoloc/data.json?resource=" + ip, { dataType:"jsonp", ip: ip, html: html, cell: cell })
                         .done(function(json) {
-                            var span_ip = $("<span title=''/>").html(this.ip + " ");
+                            var span_ip = $("<span title=''/>").html(this.html + " ");
 
                             if ((typeof json.data.locations !== "undefined") && (json.data.locations.length > 0) && (json.data.locations[0].country !== "ANO")) {
                                 IP_COUNTRY[this.ip] = json.data.locations[0].country.toLowerCase().split('-')[0];
@@ -1626,7 +1630,7 @@ function initDetails() {
                     else if (IP_COUNTRY[ip] !== null) {
                         img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '">';
 
-                        var span_ip = $("<span title=''/>").html(ip + " ");
+                        var span_ip = $("<span title=''/>").html(html + " ");
                         span_ip.tooltip(options);
 
                         if (typeof cell !== "undefined")
@@ -1644,7 +1648,7 @@ function initDetails() {
                                     if (html.indexOf("flag-") === -1) {
                                         img = ' <img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[ip] + '" title="' + IP_COUNTRY[ip].toUpperCase() + '">';
 
-                                        var span_ip = $("<span title=''/>").html(ip + " ");
+                                        var span_ip = $("<span title=''/>").html(html + " ");
                                         span_ip.tooltip(options);
 
                                         cell.html("").append(span_ip).append($(img).tooltip());
@@ -1721,7 +1725,7 @@ function initDetails() {
             }
         }
         else {
-            filter = this.innerHTML.replace(/<span class="ipcat">.+/g, "").replace(/<.+?>/g, " ");
+            filter = this.innerHTML.replace(/<span class="ipcat">.+?<\/span>/g, "").replace(/<.+?>/g, " ");
         }
 
         filter = filter.replace(/\s+/g, " ").trim();

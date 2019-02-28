@@ -28,6 +28,7 @@ from core.common import check_whitelisted
 from core.common import load_trails
 from core.common import retrieve_content
 from core.settings import config
+from core.settings import read_config
 from core.settings import read_whitelist
 from core.settings import BAD_TRAIL_PREFIXES
 from core.settings import FRESH_IPCAT_DELTA_DAYS
@@ -334,6 +335,9 @@ def update_ipcat(force=False):
     _chown(IPCAT_SQLITE_FILE)
 
 def main():
+    if "-c" in sys.argv:
+        read_config(sys.argv[sys.argv.index("-c") + 1])
+
     try:
         update_trails(force=True)
         update_ipcat()
