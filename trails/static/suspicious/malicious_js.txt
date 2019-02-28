@@ -319,3 +319,8 @@ ukcoffe.com
 # Reference: https://twitter.com/securitydoggo/status/856526428933943296
 
 /Consulta FGTS.js
+
+# Reference: https://threatpost.com/card-skimming-google-analytics-angular/142264/
+
+google-analytics.cm/analytics.js
+gooqletagmanager.com/gtm.js
