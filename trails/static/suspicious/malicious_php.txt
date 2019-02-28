@@ -68,3 +68,7 @@
 # Reference: https://twitter.com/James_inthe_box/status/1053668299165229056
 
 /loader_ma.php
+
+# Reference: https://twitter.com/nullcookies/status/1054496925469343744
+
+/anzhuo.php
