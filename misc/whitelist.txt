@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2018 Miroslav Stampar (@stamparm)
+# Copyright (c) 2014-2019 Miroslav Stampar (@stamparm)
 # See the file 'LICENSE' for copying permission
 
 localhost
@@ -288,6 +288,7 @@ s3.amazonaws.com
 # appeared on malwaredomains.com
 
 atw.hu
+gandi.net
 
 # appeared on malwaredomainlist.com
 
@@ -402,6 +403,8 @@ geocities.ws
 # found as false positive on urlvir.com
 
 pdf-archive.com
+discordapp.com
+cl.ly
 
 # found as false positive in otx.alienvault.com
 
@@ -497,6 +500,10 @@ webequipped.com
 woody.ch
 wpbl.info
 
+# SonicWall
+
+webcfs07.com
+
 # Reference: http://www.blalert.com/dnsbls
 
 0spam.fusionzero.com
@@ -591,6 +598,7 @@ l2.apews.org
 list.blogspambl.com
 lookup.dnsbl.iip.lu
 mail-abuse.blacklist.jippg.org
+mail-abuse.com
 misc.dnsbl.sorbs.net
 netbl.spameatingmonkey.net
 netblock.pedantic.org
@@ -797,6 +805,20 @@ msn.com
 azureedge.net
 rubrkik.ga
 microsoftstream.com
+azurewebsites.net
+office.com
+keep2share.cc
+dropboxusercontent.com
+facebook.com
+es.pn
+wywx.xyz
+kaloo.ga
+msgamestudios.com
+worldssl.net
+vanuatu.com.vu
+sotelma.ml
+robtex.com
+check.googlezip.net
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
@@ -812,6 +834,26 @@ ubembed.com
 conviva.com
 hrins.net
 imrworldwide.com
+casalemedia.com
+advertising.com
+agentanalytics.com
+rs6.net
+moatpixel.com
+adjust.com
+appsee.com
+found.io
+trafficmanager.net
+report-uri.com
+omtrdc.net
+playground.xyz
+app.link
+lkqd.net
+yoox.com
+adnxs.com
+ads.playground.xyz
+btrll.com
+mmstat.com
+sdad.guru
 
 # Google crawlers
 
@@ -834,7 +876,16 @@ nanosystems.it
 
 msftncsi.com
 
-# misc.
+# Microsoft's SmartScreen
 
-dropboxusercontent.com
-facebook.com
+ucsuri.tcs
+
+# Reference: https://github.com/Bigjoos/U-232-V4
+
+forum-u-232.servebeer.com
+
+# Reference: https://apkscan.nviso.be/report/show/e2646fe8fd76bf2c2d413b056b76f7d9
+# Reference: https://www.virustotal.com/#/file/71487fc3f0b75d5e75bf9ae849ee5cd80f0688428fd06103becb80432036a16e/detection
+# Note: Android's Battery Doctor (FP on abuse.ch)
+
+cfg.cml.ksmobile.com

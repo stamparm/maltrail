@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2018 Miroslav Stampar (@stamparm)
+# Copyright (c) 2014-2019 Miroslav Stampar (@stamparm)
 # See the file 'LICENSE' for copying permission
 
 # Reference: https://en.wikipedia.org/wiki/Browser_hijacking
@@ -1143,17 +1143,15 @@ lip.healthcakes.men
 z11.cnzz.com
 z4.cnzz.com
 
-# Reference: https://malwaretips.com/blogs/ib-adnxs-popup-virus/
-
-ib.adnxs.com
-
 # Reference: https://howtoremove.guide/s-thebrighttag-com-malware-remove/
 
 thebrighttag.com
 
 # Reference: http://it-help.info/how-to/hijackers/2963-how-to-remove-epicunitscan-info-easily
+# Reference: https://www.symantec.com/security-center/writeup/2015-080623-5927-99#technicaldescription
 
 epicunitscan.info
+mynamedomain.koko
 
 # Reference: https://www.virustotal.com/#/file/2098df714d8b57bbe7e57ce922146e5f8f41aa8d842e2cc10adbb23eccb8ed21/behavior
 # Reference: https://www.threatcrowd.org/ip.php?ip=95.211.95.250
@@ -1354,13 +1352,14 @@ allmodel-pro.com
 
 ua1.lunrac.com
 
-# Reference: https://www.virusresearch.org/remove-t-lkqd-net-redirects/
-
-lkqd.net
-
 # Reference: https://documents.trendmicro.com/assets/rpt/rpt-hazards-ahead.pdf
 
 allmodel-pro.com
 sp-storage.spccint.com
 jsgnr.eshopcomp.com
 cnfg.toolbarservices.com
+
+# Reference: https://forums.malwarebytes.com/topic/186439-removal-instructions-for-vkontaktedj/
+# Reference: https://www.virustotal.com/#/file/c93d70c03c538ece89b661b2c39063d26f27496582bd922d6dfb203f5f3336d2/detection
+
+dj-reserve.com

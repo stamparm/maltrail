@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Copyright (c) 2014-2018 Miroslav Stampar (@stamparm)
+Copyright (c) 2014-2019 Miroslav Stampar (@stamparm)
 See the file 'LICENSE' for copying permission
 """
 
@@ -109,7 +109,9 @@ if __name__ == "__main__":
     except SystemExit, ex:
         show_final = False
 
-        print(ex)
+        if isinstance(getattr(ex, "message"), basestring):
+            print(ex)
+            os._exit(1)
     except IOError:
         show_final = False
         log_error("\n\n[!] session abruptly terminated\n[?] (hint: \"https://stackoverflow.com/a/20997655\")")
