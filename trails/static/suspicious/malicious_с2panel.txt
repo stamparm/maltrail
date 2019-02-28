@@ -142,7 +142,6 @@ slimpityio3.us/slamiptiop/admin.php
 slowidyter.us/derty/eer678y/admin.php
 slowidyter.us/locash7/lokiuyto/admin.php
 
-# Generic trails, based on https://pastebin.com/p0vBRBTE info
+# Generic trail, based on https://pastebin.com/p0vBRBTE
 
-/panel/admin.php
 /panelnew/admin.php
