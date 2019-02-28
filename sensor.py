@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Copyright (c) 2014-2018 Miroslav Stampar (@stamparm)
+Copyright (c) 2014-2019 Miroslav Stampar (@stamparm)
 See the file 'LICENSE' for copying permission
 """
 
@@ -75,6 +75,7 @@ from core.settings import SUSPICIOUS_HTTP_PATH_REGEXES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION
 from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEXES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
+from core.settings import SUSPICIOUS_PROXY_PROBE_PRE_CONDITION
 from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
 from core.settings import TRAILS_FILE
@@ -161,9 +162,10 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
                     trail = "(%s)%s" % (query[:-len(_)], _)
 
                 if not (re.search(r"(?i)\Ad?ns\d*\.", query) and any(_ in trails.get(domain, " ")[0] for _ in ("suspicious", "sinkhole"))):  # e.g. ns2.nobel.su
-                    result = True
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[domain][0], trails[domain][1]), packet)
-                    break
+                    if not ((query == trail) and any(_ in trails.get(domain, " ")[0] for _ in ("dynamic", "free web"))):  # e.g. noip.com
+                        result = True
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[domain][0], trails[domain][1]), packet)
+                        break
 
         if not result and config.USE_HEURISTICS:
             if len(parts[0]) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD and '-' not in parts[0]:
@@ -228,6 +230,9 @@ def _process_packet(packet, sec, usec, ip_offset):
         if ip_version == 0x04:  # IPv4
             ip_header = struct.unpack("!BBHHHBBH4s4s", ip_data[:20])
             iph_length = (ip_header[0] & 0xf) << 2
+            fragment_offset = ip_header[4] & 0x1fff
+            if fragment_offset != 0:
+                return
             protocol = ip_header[6]
             src_ip = socket.inet_ntoa(ip_header[8])
             dst_ip = socket.inet_ntoa(ip_header[9])
@@ -337,8 +342,10 @@ def _process_packet(packet, sec, usec, ip_offset):
                     if index >= 0:
                         post_data = tcp_data[index + 4:]
 
-                    if config.USE_HEURISTICS and dst_port == 80 and path.startswith("http://") and not _check_domain_whitelisted(urlparse.urlparse(path).netloc.split(':')[0]):
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, path, "potential proxy probe (suspicious)", "(heuristic)"), packet)
+                    if config.USE_HEURISTICS and dst_port == 80 and path.startswith("http://") and any(_ in path for _ in SUSPICIOUS_PROXY_PROBE_PRE_CONDITION) and not _check_domain_whitelisted(path.split('/')[2]):
+                        trail = re.sub(r"(http://[^/]+/)(.+)", r"\g<1>(\g<2>)", path)
+                        trail = re.sub(r"(http://)([^/(]+)", lambda match: "%s%s" % (match.group(1), match.group(2).split(':')[0].rstrip('.')), trail)
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "potential proxy probe (suspicious)", "(heuristic)"), packet)
                         return
                     elif "://" in path:
                         url = path.split("://", 1)[1]
@@ -734,7 +741,7 @@ def init():
 
     update_timer()
 
-    if check_sudo() is False:
+    if not config.DISABLE_CHECK_SUDO and check_sudo() is False:
         exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
 
     if config.plugins:
@@ -800,7 +807,7 @@ def init():
                 _caps.append(pcapy.open_live(interface, SNAP_LEN, True, CAPTURE_TIMEOUT))
             except (socket.error, pcapy.PcapError):
                 if "permitted" in str(sys.exc_info()[1]):
-                    exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
+                    exit("[!] permission problem occurred ('%s')" % sys.exc_info()[1])
                 elif "No such device" in str(sys.exc_info()[1]):
                     exit("[!] no such device '%s'" % interface)
                 else:
@@ -985,9 +992,6 @@ def main():
     parser.add_option("--debug", dest="debug", action="store_true", help=optparse.SUPPRESS_HELP)
     options, _ = parser.parse_args()
 
-    if not check_sudo():
-        exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
-
     read_config(options.config_file)
 
     for option in dir(options):
@@ -1007,6 +1011,9 @@ def main():
         else:
             print("[i] using pcap file '%s'" % options.pcap_file)
 
+    if not config.DISABLE_CHECK_SUDO and not check_sudo():
+        exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
+
     try:
         init()
         monitor()
@@ -1021,8 +1028,9 @@ if __name__ == "__main__":
     except SystemExit, ex:
         show_final = False
 
-        if not isinstance(getattr(ex, "message"), int):
+        if isinstance(getattr(ex, "message"), basestring):
             print(ex)
+            os._exit(1)
     except IOError:
         show_final = False
         log_error("\n\n[!] session abruptly terminated\n[?] (hint: \"https://stackoverflow.com/a/20997655\")")

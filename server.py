@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Copyright (c) 2014-2018 Miroslav Stampar (@stamparm)
+Copyright (c) 2014-2019 Miroslav Stampar (@stamparm)
 See the file 'LICENSE' for copying permission
 """
 
@@ -87,7 +87,7 @@ def main():
         thread.start()
 
     if config.UDP_ADDRESS and config.UDP_PORT:
-        if config.UDP_PORT <= 1024 and check_sudo() is False:
+        if config.UDP_PORT <= 1024 and not config.DISABLE_CHECK_SUDO and check_sudo() is False:
             exit("[!] please run '%s' with sudo/Administrator privileges when using 'UDP_ADDRESS' configuration value" % __file__)
 
         create_log_directory()
@@ -109,7 +109,9 @@ if __name__ == "__main__":
     except SystemExit, ex:
         show_final = False
 
-        print(ex)
+        if isinstance(getattr(ex, "message"), basestring):
+            print(ex)
+            os._exit(1)
     except IOError:
         show_final = False
         log_error("\n\n[!] session abruptly terminated\n[?] (hint: \"https://stackoverflow.com/a/20997655\")")
