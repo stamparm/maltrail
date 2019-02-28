@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Copyright (c) 2014-2018 Miroslav Stampar (@stamparm)
+Copyright (c) 2014-2019 Miroslav Stampar (@stamparm)
 See the file 'LICENSE' for copying permission
 """
 
@@ -24,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.10.496"
+VERSION = "0.11.38"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -70,7 +70,7 @@ CONDENSE_ON_INFO_KEYWORDS = ("attacker", "reputation", "scanner", "user agent", 
 CONDENSED_EVENTS_FLUSH_PERIOD = 10
 LOW_PRIORITY_INFO_KEYWORDS = ("reputation", "attacker", "spammer", "abuser", "malicious", "dnspod", "nicru", "crawler", "compromised", "bad history")
 HIGH_PRIORITY_INFO_KEYWORDS = ("mass scanner", "ipinfo")
-HIGH_PRIORITY_REFERENCES = ("bambenekconsulting.com", "(static)", "(custom)")
+HIGH_PRIORITY_REFERENCES = ("bambenekconsulting.com", "github.com/stamparm/blackbook", "(static)", "(custom)")
 CONSONANTS = "bcdfghjklmnpqrstvwxyz"
 BAD_TRAIL_PREFIXES = ("127.", "192.168.", "localhost")
 LOCALHOST_IP = { 4: "127.0.0.1", 6: "::1" }
@@ -97,6 +97,7 @@ SUSPICIOUS_HTTP_PATH_REGEXES = (
     ("potential web scan", r"inexistent_file_name\.inexistent|test-for-some-inexistent-file|long_inexistent_path|some-inexistent-website\.acu")
 )
 SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION = ("?", "..", ".ht", "=", " ", "'")
+SUSPICIOUS_PROXY_PROBE_PRE_CONDITION = ("probe", "proxy", "echo", "check")
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, urllib.quote(_)) for _ in "( )\r\n")
 SUSPICIOUS_UA_REGEX = ""
 OBSOLETE_UA_REGEX = r"(?i)windows NT [3-5]\.\d+|windows (3\.\d+|95|98|xp)|MSIE [1-6]\.\d+|Navigator/|Safari/[1-4]|Opera/[1-3]|Firefox/1?[0-9]\."
