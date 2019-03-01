@@ -72,3 +72,7 @@
 # Reference: https://twitter.com/nullcookies/status/1054496925469343744
 
 /anzhuo.php
+
+# Reference: https://twitter.com/ViriBack/status/1094261293693972480
+
+ibrandworld.com/jsl.php
