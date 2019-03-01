@@ -145,3 +145,7 @@ slowidyter.us/locash7/lokiuyto/admin.php
 # Generic trail, based on https://pastebin.com/p0vBRBTE
 
 /panelnew/admin.php
+
+# Reference: https://twitter.com/ViriBack/status/1094261293693972480
+
+aquavictus.hr/ap/Panel/index.php
