@@ -74,6 +74,11 @@ var TOOLTIP_FOLDING_REGEX = /([^\s]{60})/g;
 var REPLACE_SINGLE_CLOUD_WITH_BRACES = false;
 var IP_ALIASES = {};
 
+$("body").loader("show");
+$("#graph_close").on("click", graphClose);
+$("#spanToggleHeatmap").on("click", toggleHeatmap);
+$("#logo").on("click", resetView);
+
 for (var column in LOG_COLUMNS) if (LOG_COLUMNS.hasOwnProperty(column)) LOG_COLUMNS_SIZE++;
 
 var _ = {};
@@ -94,6 +99,22 @@ window.onkeyup = function(event) {
 // Retrieve (and parse) log data
 $(document).ready(function() {
     $("#noscript").remove();
+    // assign buttons
+    $("#btnDrawThreats").on("click", function() {
+        drawInfo('Threats');
+    });
+    $("#btnDrawEvents").on("click", function() {
+        drawInfo('Events');
+    });
+    $("#btnDrawSeverity").on("click", function() {
+        drawInfo('Severity');
+    });
+    $("#btnDrawSources").on("click", function() {
+        drawInfo('Sources');
+    });
+    $("#btnDrawTrails").on("click", function() {
+        drawInfo('Trails');
+    });
 
     // Reference: http://tosbourn.com/a-fix-for-window-location-origin-in-internet-explorer/
     if (!window.location.origin)
@@ -2807,3 +2828,4 @@ function query(date1, date2) {
         init(url, d1, d2);
     }
 }
+
