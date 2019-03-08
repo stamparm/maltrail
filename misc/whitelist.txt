@@ -90,6 +90,7 @@ googlegroups.com
 googleusercontent.com
 googlevideo.com
 gstatic.com
+h-cdn.com
 herokuapp.com
 hotmail.com
 ibm.com
@@ -430,6 +431,7 @@ barracudacentral.org
 berkeley.edu
 bit.nl
 blocklist.de
+blocklist.messaging.microsoft.com
 blogspambl.com
 burnt-tech.com
 choon.net
@@ -774,6 +776,7 @@ sophosxl.net
 
 # Generic
 
+bing.com
 defaultmailserver.com
 dropboxusercontent.com
 security-research.dyndns.org

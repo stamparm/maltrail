@@ -1363,3 +1363,7 @@ cnfg.toolbarservices.com
 # Reference: https://www.virustotal.com/#/file/c93d70c03c538ece89b661b2c39063d26f27496582bd922d6dfb203f5f3336d2/detection
 
 dj-reserve.com
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/adware-and-puas/Malware%20Protection%20Live/detailed-analysis.aspx
+
+malwareprotectionlive.com
