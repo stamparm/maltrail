@@ -11,6 +11,7 @@ localdomain
 
 1e100.net
 2o7.net
+acer-euro.com
 adcash.com
 adinf.com
 adsk2.co
@@ -165,6 +166,7 @@ v-mate.mobi
 vba.com.by
 verisign.com
 verisign.net
+weborama.fr
 weebly.com
 windows.net
 wordpress.com
@@ -406,6 +408,10 @@ geocities.ws
 pdf-archive.com
 discordapp.com
 cl.ly
+
+# found as false positive on abuse.ch
+
+citibank.com
 
 # found as false positive in otx.alienvault.com
 
@@ -777,7 +783,9 @@ sophosxl.net
 # Generic
 
 bing.com
+cardsgames.club
 defaultmailserver.com
+dict.cc
 dropboxusercontent.com
 security-research.dyndns.org
 dropbox.com
@@ -857,6 +865,7 @@ ads.playground.xyz
 btrll.com
 mmstat.com
 sdad.guru
+markedup.com
 
 # Google crawlers
 
