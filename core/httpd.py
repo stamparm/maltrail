@@ -283,18 +283,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
                 self.send_response(httplib.OK)
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
-                cookie_flag_secure = ""
+
+                cookie = "%s=%s; expires=%s; path=/; HttpOnly" % (SESSION_COOKIE_NAME, session_id, time.strftime(HTTP_TIME_FORMAT, time.gmtime(expiration)))
                 if config.USE_SSL:
-                    cookie_flag_secure = "; Secure"
-                cookie_flag_samesite = ""
+                    cookie += "; Secure"
                 if SESSION_COOKIE_FLAG_SAMESITE:
-                    cookie_flag_samesite = "; SameSite=strict"
-                self.send_header(HTTP_HEADER.SET_COOKIE, "%s=%s; expires=%s; path=/; HttpOnly%s%s" % 
-                                (SESSION_COOKIE_NAME, 
-                                 session_id,
-                                 time.strftime(HTTP_TIME_FORMAT, time.gmtime(expiration)),
-                                 cookie_flag_secure,
-                                 cookie_flag_samesite))
+                    cookie += "; SameSite=strict"
+                self.send_header(HTTP_HEADER.SET_COOKIE, cookie)
 
                 if netfilter in ("", "0.0.0.0/0"):
                     netfilters = None
