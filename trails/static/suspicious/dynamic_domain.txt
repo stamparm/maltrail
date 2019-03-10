@@ -1337,3 +1337,7 @@ thindns.su
 # Reference: https://twitter.com/ScumBots/status/1104653627153698816
 
 codns.com
+
+# Reference: https://twitter.com/ScumBots/status/1104766873009299463
+
+gotdns.ch
