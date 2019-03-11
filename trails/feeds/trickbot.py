@@ -7,9 +7,6 @@ See the file 'LICENSE' for copying permission
 
 import re
 
-from core.addr import addr_to_int
-from core.addr import int_to_addr
-from core.addr import make_mask
 from core.common import retrieve_content
 
 __url__ = "https://github.com/JR0driguezB/malware_configs"
