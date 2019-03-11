@@ -1345,3 +1345,7 @@ gotdns.ch
 # Reference: https://twitter.com/ScumBots/status/1056221998991503361
 
 myq-see.com
+
+# Reference: https://twitter.com/ScumBots/status/1102249032817221632
+
+thddns.net
