@@ -1353,3 +1353,7 @@ thddns.net
 # Reference: https://twitter.com/ScumBots/status/1105050120855449600
 
 kro.kr
+
+# Reference: https://twitter.com/ScumBots/status/1056727832037150727
+
+portmap.io
