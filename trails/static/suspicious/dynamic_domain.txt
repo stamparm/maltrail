@@ -1349,3 +1349,7 @@ myq-see.com
 # Reference: https://twitter.com/ScumBots/status/1102249032817221632
 
 thddns.net
+
+# Reference: https://twitter.com/ScumBots/status/1105050120855449600
+
+kro.kr
