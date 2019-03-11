@@ -149,3 +149,7 @@ slowidyter.us/locash7/lokiuyto/admin.php
 # Reference: https://twitter.com/ViriBack/status/1094261293693972480
 
 aquavictus.hr/ap/Panel/index.php
+
+# Reference: https://securelist.com/a-predatory-tale/89779/
+
+predatortop.xyz/login
