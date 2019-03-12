@@ -4,3 +4,7 @@
 # Reference: https://securelist.com/a-predatory-tale/89779/
 
 vlmi.biz
+
+# Reference: https://otx.alienvault.com/indicator/domain/lolzteam.net
+
+lolzteam.net
