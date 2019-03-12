@@ -782,6 +782,7 @@ sophosxl.net
 
 # Generic
 
+animiranifilmovi.com
 bing.com
 cardsgames.club
 defaultmailserver.com
@@ -830,6 +831,7 @@ vanuatu.com.vu
 sotelma.ml
 robtex.com
 check.googlezip.net
+ingress-guard.tk
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
@@ -866,6 +868,7 @@ btrll.com
 mmstat.com
 sdad.guru
 markedup.com
+yottaa.net
 
 # Google crawlers
 
