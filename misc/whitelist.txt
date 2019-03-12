@@ -833,6 +833,7 @@ sotelma.ml
 robtex.com
 check.googlezip.net
 ingress-guard.tk
+mshome.net
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 

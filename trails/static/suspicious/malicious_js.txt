@@ -324,3 +324,9 @@ ukcoffe.com
 
 google-analytics.cm/analytics.js
 gooqletagmanager.com/gtm.js
+
+# Reference: https://blog.sucuri.net/2018/12/localization-and-customization-of-credit-card-stealing-malware.html
+
+kinfirighbetted.host
+sales4reason.com
+greatwebstat.com
