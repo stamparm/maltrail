@@ -1409,7 +1409,7 @@ function initDetails() {
                     aButtons: [
                         {
                             sExtends: "text",
-                            sButtonText: "Edit aliases",
+                            sButtonText: "Edit custom IP aliases",
                             fnClick: function ( nButton, oConfig, oFlash ) {
                                 function _initAliases() {
                                     $('#table_aliases').editableTableWidget();
