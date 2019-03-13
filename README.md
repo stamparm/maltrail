@@ -29,7 +29,6 @@
 - [Best practice(s)](#best-practices)
 - [License](#license)
 - [Thank you](#thank-you)
-- [Donations](#donations)
 
 ## Introduction
 
