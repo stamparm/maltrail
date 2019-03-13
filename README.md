@@ -504,4 +504,4 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * Ladislav Baco (@laciKE)
 * John Kristoff (@jtkdpu)
 * Mikhail Kasimov (@MikhailKasimov)
-* Michael Münz (@mimugmail)
+* Michael M&uuml;nz (@mimugmail)
