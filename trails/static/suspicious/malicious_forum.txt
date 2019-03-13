@@ -8,3 +8,19 @@ vlmi.biz
 # Reference: https://otx.alienvault.com/indicator/domain/lolzteam.net
 
 lolzteam.net
+
+# Reference: https://www.hybrid-analysis.com/sample/fd3c007e62be86abbbf41c8d286bd550224f37223a2f34f05244ce99b0c249f6
+
+hack-faq.ru
+
+# Reference: https://www.reverse.it/sample/6454ff03f5934f4a48d627aa9e3d19026ff56f242da9158eea25b1ed04174f18
+
+ifud.ws
+
+# Generic trails
+
+bhf.io
+blackbiz.club
+darkweb.su
+darkwebs.ws
+xaker.name
