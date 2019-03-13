@@ -69,6 +69,7 @@ var SEVERITY_COLORS = { 1: "#8ba8c0", 2: "#f0ad4e", 3: "#d9534f"};
 var CHART_TOOLTIP_FORMAT = "<%= datasetLabel %>: <%= value %>";
 var INFO_SEVERITY_KEYWORDS = { "malware": SEVERITY.HIGH, "adversary": SEVERITY.HIGH, "ransomware": SEVERITY.HIGH, "reputation": SEVERITY.LOW, "attacker": SEVERITY.LOW, "spammer": SEVERITY.LOW, "compromised": SEVERITY.LOW, "crawler": SEVERITY.LOW, "scanning": SEVERITY.LOW }
 var STORAGE_KEY_ACTIVE_STATUS_BUTTON = "STORAGE_KEY_ACTIVE_STATUS_BUTTON";
+var STORAGE_KEY_EDIT_ALIASES = "STORAGE_KEY_EDIT_ALIASES";
 var COMMA_ENCODE_TRAIL_TYPES = { UA: true, URL: true};
 var TOOLTIP_FOLDING_REGEX = /([^\s]{60})/g;
 var REPLACE_SINGLE_CLOUD_WITH_BRACES = false;
@@ -1206,6 +1207,13 @@ function initDetails() {
                     else if (data in IP_ALIASES) {
                         data = "<span class='ipcat'>" + IP_ALIASES[data] + "</span>" + data;
                     }
+                    else {
+                        var stored = $.jStorage.get(STORAGE_KEY_EDIT_ALIASES);
+                        if (stored !== null) {
+                            if (data in stored)
+                                data = "<span class='ipcat'>" + stored[data] + "</span>" + data;
+                        }
+                    }
                     return data;
                 },
                 targets: [ DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP ]
@@ -1401,41 +1409,57 @@ function initDetails() {
                     aButtons: [
                         {
                             sExtends: "text",
-                            sButtonText: "Edit hosts",
+                            sButtonText: "Edit aliases",
                             fnClick: function ( nButton, oConfig, oFlash ) {
-                                function _initHosts() {
-                                    $('#table_hosts').editableTableWidget();
-                                    $('#table_hosts td').on('change', function(event, newValue) {
+                                function _initAliases() {
+                                    $('#table_aliases').editableTableWidget();
+                                    $('#table_aliases td').on('change', function(event, newValue) {
                                         if (event.target.cellIndex === 0)
                                             return (newValue.match(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/) !== null);
-                                        else if (event.target.cellIndex === 1)
-                                            return (newValue.match(/^[A-Za-z0-9\ ._]+$/) !== null);
                                     });
                                 };
-                                $('<div id="dialog-hosts" title="Hosts"></div>').appendTo('body')
-                                .html('<table id="table_hosts" class="dataTable"><thead><tr class="ui-widget-header"><th>IP</th><th>Hostname</th></tr></thead><tbody><tr><td>127.0.0.1</td><td>localhost</td></tr></tbody></table>')
+
+                                var html = '<table id="table_aliases" class="dataTable"><thead><tr class="ui-widget-header"><th>IP</th><th>Alias</th></tr></thead><tbody>';
+                                var stored = $.jStorage.get(STORAGE_KEY_EDIT_ALIASES);
+                                if (stored !== null) {
+                                    $.each( stored, function( ip, alias ) {
+                                        html += '<tr class="alias"><td>' + ip + '</td><td>' + alias + '</td></tr>'
+                                    });
+                                }
+                                html += '</tbody></table>'
+
+                                $('<div id="dialog-aliases" title="Aliases"></div>').appendTo('body')
+                                .html(html)
                                 .dialog({
                                     resizable: false,
                                     width: "auto",
                                     height: "auto",
                                     modal: true,
                                     buttons: {
-                                        Close: function() {
-                                            $(this).dialog("close");
-                                            $('#dialog-hosts').remove();
-                                        },
                                         Add: function() {
-                                            $('#table_hosts tr:last').after('<tr class="host"><td>&nbsp;</td><td>&nbsp;</td></tr>');
-                                            _initHosts();
-                                            $("#table_hosts tr:last td:first").focus().click();
+                                            $('#table_aliases tr:last').after('<tr class="alias"><td>&nbsp;</td><td>&nbsp;</td></tr>');
+                                            _initAliases();
+                                            $("#table_aliases tr:last td:first").focus().click();
+                                        },
+                                        Done: function() {
+                                            $(this).dialog("close");
+                                            $('#dialog-aliases').remove();
                                         }
                                     },
                                     open: function(event, ui) {
-                                        _initHosts();
+                                        _initAliases();
                                     },
                                     close: function(event, ui) {
-                                        //$('#table_hosts .host')
-                                        $(this).dialog('destroy').remove();
+                                        var result = {};
+                                        $(this).find(".alias").each(function() {
+                                            var ip = $(this).find("td").eq(0).text();
+                                            var alias = $(this).find("td").eq(1).text();
+                                            if ($.trim(ip) && $.trim(alias))
+                                                result[ip] = alias;
+                                        });
+                                        $.jStorage.set(STORAGE_KEY_EDIT_ALIASES, result);
+
+                                        $(this).dialog("destroy").remove();
                                     }
                                 });
                             }

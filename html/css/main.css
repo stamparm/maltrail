@@ -483,11 +483,15 @@ rect.highlight {
     padding: 10px;
     z-index: -2;
 }
-#table_hosts, #table_hosts th, #table_hosts td {
+#table_aliases, #table_aliases th, #table_aliases td {
     border: 1px solid #a8a8a8;
 }
-#table_hosts th {
+#table_aliases th {
     color: white;
+}
+#table_aliases td {
+    color: black;
+    text-shadow: none;
 }
 #chart_area {
     background-color: #fcfcfc;
