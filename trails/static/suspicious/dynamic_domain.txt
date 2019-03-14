@@ -1376,3 +1376,7 @@ ignorelist.com
 
 afraid.org
 freedns.afraid.org
+
+# Reference: https://www.virustotal.com/#/domain/freshdns.com
+
+freshdns.com
