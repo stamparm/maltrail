@@ -1371,3 +1371,8 @@ p-e.kr
 chickenkiller.com
 crabdance.com
 ignorelist.com
+
+# Reference: https://www.virustotal.com/#/domain/afraid.org
+
+afraid.org
+freedns.afraid.org
