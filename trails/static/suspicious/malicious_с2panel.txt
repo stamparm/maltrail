@@ -152,4 +152,8 @@ aquavictus.hr/ap/Panel/index.php
 
 # Reference: https://securelist.com/a-predatory-tale/89779/
 
-predatortop.xyz/login
+predatortop.xyz/login/
+
+# Reference: https://research.checkpoint.com/simbad-a-rogue-adware-campaign-on-google-play/
+
+addroider.com/users/login/
