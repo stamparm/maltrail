@@ -1375,7 +1375,28 @@ ignorelist.com
 # Reference: https://www.virustotal.com/#/domain/afraid.org
 
 afraid.org
+cast.afraid.org
+dyndns.afraid.org
 freedns.afraid.org
+mail.afraid.org
+ns10.afraid.org
+ns11.afraid.org
+ns12.afraid.org
+ns13.afraid.org
+ns17.afraid.org
+ns1.afraid.org
+ns21.afraid.org
+ns22.afraid.org
+ns2.afraid.org
+ns3.afraid.org
+ns4.afraid.org
+ns6.afraid.org
+ns7.afraid.org
+ns8.afraid.org
+ns9.afraid.org
+sync.afraid.org
+www.afraid.org
+xchat.afraid.org
 
 # Reference: https://www.virustotal.com/#/domain/freshdns.com
 
