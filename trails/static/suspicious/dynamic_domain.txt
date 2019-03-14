@@ -1366,6 +1366,7 @@ ze.am
 
 p-e.kr
 
-# # Reference: https://info.publicintelligence.net/FBI-BlackshadesDomains.xls
+# Reference: https://info.publicintelligence.net/FBI-BlackshadesDomains.xls
 
+chickenkiller.com
 crabdance.com
