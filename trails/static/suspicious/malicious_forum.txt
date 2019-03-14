@@ -17,6 +17,10 @@ hack-faq.ru
 
 ifud.ws
 
+# Reference: https://www.afp.gov.au/news-media/media-releases/sydney-man-charged-selling-personal-details-customers-online-joint
+
+wickedgen.com
+
 # Generic trails
 
 bhf.io
