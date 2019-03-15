@@ -1384,3 +1384,7 @@ afraid.org
 # Reference: https://www.virustotal.com/#/domain/b3ta.org
 
 b3ta.org
+
+# Reference: https://www.virustotal.com/#/file/bc5662f91493da2bd02781832f8728a3eba350e47ed11cd8f927e3cb88a44452/behavior
+
+m-a-f-i-a.com
