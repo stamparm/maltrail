@@ -1388,3 +1388,19 @@ b3ta.org
 # Reference: https://www.virustotal.com/#/domain/ygto.com
 
 ygto.com
+
+# Reference: https://www.virustotal.com/#/domain/ddns.com.br
+
+ddns.com.br
+
+# Reference: https://www.virustotal.com/#/domain/winconnection.net
+
+winconnection.net
+
+# Reference: https://www.virustotal.com/#/domain/minhaempresa.tv
+
+minhaempresa.tv
+
+# Reference: https://www.virustotal.com/#/domain/minhacasa.tv
+
+minhacasa.tv
