@@ -163,9 +163,20 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                     os.write(handle, event)
 
                 if config.LOG_SERVER:
-                    remote_host, remote_port = config.LOG_SERVER.split(':')
-                    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                    s.sendto("%s %s" % (sec, event), (remote_host, int(remote_port)))
+                    if config.LOG_SERVER.count(':') > 1:
+                        remote_host, remote_port = config.LOG_SERVER.replace('[', '').replace(']', '').rsplit(':', 1)
+
+                        # Reference: https://github.com/squeaky-pl/zenchmarks/blob/master/vendor/twisted/internet/tcp.py
+                        _AI_NUMERICSERV = getattr(socket, "AI_NUMERICSERV", 0)
+                        _NUMERIC_ONLY = socket.AI_NUMERICHOST | _AI_NUMERICSERV
+
+                        _address = socket.getaddrinfo(remote_host, int(remote_port) if str(remote_port or "").isdigit() else 0, 0, 0, 0, _NUMERIC_ONLY)[0][4]
+                    else:
+                        remote_host, remote_port = config.LOG_SERVER.split(':')
+                        _address = (remote_host, int(remote_port))
+
+                    s = socket.socket(socket.AF_INET if len(_address) == 2 else socket.AF_INET6, socket.SOCK_DGRAM)
+                    s.sendto("%s %s" % (sec, event), _address)
 
                 if config.SYSLOG_SERVER:
                     extension = "src=%s spt=%s dst=%s dpt=%s trail=%s ref=%s" % (src_ip, src_port, dst_ip, dst_port, trail, reference)
@@ -209,7 +220,21 @@ def start_logd(address=None, port=None, join=False):
                 if config.SHOW_DEBUG:
                     traceback.print_exc()
 
-    server = ThreadingUDPServer((address, port), UDPHandler)
+    # IPv6 support
+    if ':' in (address or ""):
+        address = address.strip("[]")
+
+        SocketServer.UDPServer.address_family = socket.AF_INET6
+
+        # Reference: https://github.com/squeaky-pl/zenchmarks/blob/master/vendor/twisted/internet/tcp.py
+        _AI_NUMERICSERV = getattr(socket, "AI_NUMERICSERV", 0)
+        _NUMERIC_ONLY = socket.AI_NUMERICHOST | _AI_NUMERICSERV
+
+        _address = socket.getaddrinfo(address, int(port) if str(port or "").isdigit() else 0, 0, 0, 0, _NUMERIC_ONLY)[0][4]
+    else:
+        _address = (address or '', int(port) if str(port or "").isdigit() else 0)
+
+    server = ThreadingUDPServer(_address, UDPHandler)
 
     print "[i] running UDP server at '%s:%d'" % (server.server_address[0], server.server_address[1])
 

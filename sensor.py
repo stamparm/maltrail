@@ -813,7 +813,7 @@ def init():
                 else:
                     raise
 
-    if config.LOG_SERVER and not len(config.LOG_SERVER.split(':')) == 2:
+    if config.LOG_SERVER and ':' not in config.LOG_SERVER:
         exit("[!] invalid configuration value for 'LOG_SERVER' ('%s')" % config.LOG_SERVER)
 
     if config.SYSLOG_SERVER and not len(config.SYSLOG_SERVER.split(':')) == 2:
