@@ -608,11 +608,25 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.rfile = socket._fileobject(self.request, "rb", self.rbufsize)
             self.wfile = socket._fileobject(self.request, "wb", self.wbufsize)
 
+    # IPv6 support
+    if ':' in (address or ""):
+        address = address.strip("[]")
+
+        BaseHTTPServer.HTTPServer.address_family = socket.AF_INET6
+
+        # Reference: https://github.com/squeaky-pl/zenchmarks/blob/master/vendor/twisted/internet/tcp.py
+        _AI_NUMERICSERV = getattr(socket, "AI_NUMERICSERV", 0)
+        _NUMERIC_ONLY = socket.AI_NUMERICHOST | _AI_NUMERICSERV
+
+        _address = socket.getaddrinfo(address, int(port) if str(port or "").isdigit() else 0, 0, 0, 0, _NUMERIC_ONLY)[0][4]
+    else:
+        _address = (address or '', int(port) if str(port or "").isdigit() else 0)
+
     try:
         if pem:
-            server = SSLThreadingServer((address or '', int(port) if str(port or "").isdigit() else 0), pem, SSLReqHandler)
+            server = SSLThreadingServer(_address, pem, SSLReqHandler)
         else:
-            server = ThreadingServer((address or '', int(port) if str(port or "").isdigit() else 0), ReqHandler)
+            server = ThreadingServer(_address, ReqHandler)
     except Exception as ex:
         if "Address already in use" in str(ex):
             exit("[!] another instance already running")

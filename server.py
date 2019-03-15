@@ -112,9 +112,6 @@ if __name__ == "__main__":
         if isinstance(getattr(ex, "message"), basestring):
             print(ex)
             os._exit(1)
-    except IOError:
-        show_final = False
-        log_error("\n\n[!] session abruptly terminated\n[?] (hint: \"https://stackoverflow.com/a/20997655\")")
     except Exception:
         msg = "\r[!] unhandled exception occurred ('%s')" % sys.exc_info()[1]
         msg += "\n[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc()
