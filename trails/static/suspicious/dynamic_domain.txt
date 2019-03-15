@@ -1365,3 +1365,13 @@ ze.am
 # Reference: https://twitter.com/ScumBots/status/1105461451580420096
 
 p-e.kr
+
+# Reference: https://info.publicintelligence.net/FBI-BlackshadesDomains.xls
+
+chickenkiller.com
+crabdance.com
+ignorelist.com
+
+# Reference: https://www.virustotal.com/#/domain/freshdns.com
+
+freshdns.com
