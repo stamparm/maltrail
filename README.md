@@ -505,3 +505,4 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * John Kristoff (@jtkdpu)
 * Mikhail Kasimov (@MikhailKasimov)
 * Michael M&uuml;nz (@mimugmail)
+* David Brush
