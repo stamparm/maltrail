@@ -1389,18 +1389,9 @@ b3ta.org
 
 ygto.com
 
-# Reference: https://www.virustotal.com/#/domain/ddns.com.br
+# Reference: https://ddns.winco.com.br/account/create_account.php
 
 ddns.com.br
-
-# Reference: https://www.virustotal.com/#/domain/winconnection.net
-
 winconnection.net
-
-# Reference: https://www.virustotal.com/#/domain/minhaempresa.tv
-
 minhaempresa.tv
-
-# Reference: https://www.virustotal.com/#/domain/minhacasa.tv
-
 minhacasa.tv
