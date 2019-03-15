@@ -1388,3 +1388,10 @@ b3ta.org
 # Reference: https://www.virustotal.com/#/domain/ygto.com
 
 ygto.com
+
+# Reference: https://ddns.winco.com.br/account/create_account.php
+
+ddns.com.br
+winconnection.net
+minhaempresa.tv
+minhacasa.tv
