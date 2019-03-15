@@ -294,7 +294,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     cookie += "; SameSite=strict"
                 self.send_header(HTTP_HEADER.SET_COOKIE, cookie)
 
-                if netfilter in ("", "0.0.0.0/0"):
+                if netfilter in ("", '*', "::", "0.0.0.0/0"):
                     netfilters = None
                 else:
                     addresses = set()
