@@ -1375,3 +1375,7 @@ ignorelist.com
 # Reference: https://www.virustotal.com/#/domain/freshdns.com
 
 freshdns.com
+
+# Reference: https://www.virustotal.com/#/domain/afraid.org
+
+afraid.org
