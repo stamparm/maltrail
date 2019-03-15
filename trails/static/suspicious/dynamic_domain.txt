@@ -1384,3 +1384,7 @@ afraid.org
 # Reference: https://www.virustotal.com/#/domain/b3ta.org
 
 b3ta.org
+
+# Reference: https://www.virustotal.com/#/domain/ygto.com
+
+ygto.com
