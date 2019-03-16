@@ -525,3 +525,7 @@ JDatabaseDriverMysqli
 # Reference: https://www.hybrid-analysis.com/sample/f65ba1cc50b29dd05ddaa83242f4b7bd0429841bfc4befa9e203cb6621d2389b?environmentId=100
 
 4RR0B4R 4 X0T4 D4 TU4 M4E
+
+# Reference: https://twitter.com/bad_packets/status/1106343623996538880
+
+zmap
