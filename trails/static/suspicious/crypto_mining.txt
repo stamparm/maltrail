@@ -94,3 +94,8 @@ xmrpool.eu
 # Reference: https://unit42.paloaltonetworks.com/mac-malware-steals-cryptocurrency-exchanges-cookies/
 
 koto-pool.work
+
+# Reference: https://www.anomali.com/blog/rocke-evolves-its-arsenal-with-a-new-malware-family-written-in-golang
+
+134.209.104.20:51640
+minerxmr.ru
