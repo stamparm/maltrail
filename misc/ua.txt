@@ -526,11 +526,7 @@ JDatabaseDriverMysqli
 
 4RR0B4R 4 X0T4 D4 TU4 M4E
 
-# Reference: https://twitter.com/bad_packets/status/1106343623996538880
-
-zmap
-
 # Reference: https://twitter.com/bad_packets/status/1104618320882393088
 # Reference: https://pastebin.com/raw/Zc7h4vkN
 
-zgrab/0.x
+zgrab
