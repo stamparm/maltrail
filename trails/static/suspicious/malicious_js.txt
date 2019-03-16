@@ -330,3 +330,9 @@ gooqletagmanager.com/gtm.js
 kinfirighbetted.host
 sales4reason.com
 greatwebstat.com
+
+# Reference: https://twitter.com/bad_packets/status/1106430758179110912
+
+blockchainanalyticscdn.com
+5b0c4f7f0587346ad14b9e59704c1d9a.top
+925e40815f619e622ef71abc6923167f.top
