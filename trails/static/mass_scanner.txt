@@ -1486,3 +1486,10 @@
 128.187.82.253
 128.187.82.254
 128.187.82.255
+
+# Reference: https://otx.alienvault.com/pulse/59646c87b126746267e5cf22
+# Reference: https://twitter.com/bad_packets/status/1104618320882393088
+# Reference: https://pastebin.com/raw/Zc7h4vkN
+# Reference: https://www.virustotal.com/#/domain/stretchoid.com
+
+stretchoid.com
