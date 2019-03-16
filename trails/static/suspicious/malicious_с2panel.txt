@@ -157,3 +157,7 @@ predatortop.xyz/login/
 # Reference: https://research.checkpoint.com/simbad-a-rogue-adware-campaign-on-google-play/
 
 addroider.com/users/login/
+
+# Reference: https://twitter.com/James_inthe_box/status/1103617969962213377
+
+/pony/gate.php
