@@ -1453,7 +1453,6 @@
 
 129.250.206.86  # telnetscanproject.org
 
-
 128.187.82.224  # imaal.byu.edu
 128.187.82.225
 128.187.82.226
@@ -1548,9 +1547,6 @@
 
 # Reference: https://twitter.com/bad_packets/status/1102675361496616960
 # Reference: https://www.virustotal.com/#/domain/internettl.org
-
-census.internettl.org
-censusn.internettl.org
 
 104.152.52.21 # internettl.org
 104.152.52.22
