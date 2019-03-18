@@ -534,3 +534,20 @@ zgrab
 # Reference: https://twitter.com/bad_packets/status/1104313051166068737
 
 python-requests
+
+# Reference: https://twitter.com/bad_packets/status/1084336593538707456
+
+Python-urllib
+
+# Reference: https://twitter.com/bad_packets/status/1083657979788816384
+
+Hello, World
+Gemini
+
+# Reference: https://twitter.com/bad_packets/status/1083896276641472514
+
+OSIRIS
+
+# Reference: https://twitter.com/bad_packets/status/1078192846048452608
+
+Rift
