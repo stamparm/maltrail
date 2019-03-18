@@ -1567,3 +1567,9 @@
 104.152.52.37
 104.152.52.38
 104.152.52.39
+
+# Reference: https://twitter.com/bad_packets/status/1082733800780574720
+# Reference: https://www.virustotal.com/gui/domain/binaryedge.io/details
+# Reference: https://www.virustotal.com/gui/domain/binaryedge.ninja/details
+
+172.104.144.112 # binaryedge.ninja
