@@ -99,3 +99,7 @@ koto-pool.work
 
 134.209.104.20:51640
 minerxmr.ru
+
+# Reference: https://twitter.com/bad_packets/status/1100625553822867456
+
+119.23.222.239:26590
