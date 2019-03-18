@@ -530,3 +530,7 @@ JDatabaseDriverMysqli
 # Reference: https://pastebin.com/raw/Zc7h4vkN
 
 zgrab
+
+# Reference: https://twitter.com/bad_packets/status/1104313051166068737
+
+python-requests
