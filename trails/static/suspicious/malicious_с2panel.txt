@@ -165,3 +165,7 @@ addroider.com/users/login/
 # Reference: https://twitter.com/James_inthe_box/status/1102945901025226752
 
 /panelnew/gate.php
+
+# Reference: https://twitter.com/VK_Intel/status/1018656000948260864
+
+/panel/client.php
