@@ -169,3 +169,7 @@ addroider.com/users/login/
 # Reference: https://twitter.com/VK_Intel/status/1018656000948260864
 
 /panel/client.php
+
+# Reference: https://twitter.com/x42x5a/status/1107674030897799168
+
+http://45.67.14.206/login.php
