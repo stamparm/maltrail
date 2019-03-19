@@ -76,3 +76,7 @@
 # Reference: https://twitter.com/ViriBack/status/1094261293693972480
 
 ibrandworld.com/jsl.php
+
+# Reference: https://twitter.com/IpNigh/status/1107567316148150274
+
+/universalmail-notifications/updates.php
