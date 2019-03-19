@@ -336,3 +336,7 @@ greatwebstat.com
 blockchainanalyticscdn.com
 5b0c4f7f0587346ad14b9e59704c1d9a.top
 925e40815f619e622ef71abc6923167f.top
+
+# Reference: https://www.group-ib.com/media/js-sniffer/
+
+gmo.li
