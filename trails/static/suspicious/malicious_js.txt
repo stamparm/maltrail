@@ -340,3 +340,7 @@ blockchainanalyticscdn.com
 # Reference: https://www.group-ib.com/media/js-sniffer/
 
 gmo.li
+
+# Reference: https://twitter.com/VK_Intel/status/1104109897531224065
+
+host.moresecurity.kz/host/info
