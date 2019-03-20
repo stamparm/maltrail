@@ -173,3 +173,11 @@ addroider.com/users/login/
 # Reference: https://twitter.com/x42x5a/status/1107674030897799168
 
 http://45.67.14.206/login.php
+
+# Reference: https://twitter.com/dvk01uk/status/1092685964743503872
+
+/pamss/gate.php
+
+# Reference: https://twitter.com/PRODAFT/status/1105581121595719681
+
+http://89.105.205.103/auth.php
