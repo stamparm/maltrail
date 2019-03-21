@@ -93,3 +93,7 @@ nitdesenders.tianat.cat/tmp/signup.php
 
 /photo/123.php
 /Sep2018/gsm.php
+
+# Reference: https://twitter.com/benkow_/status/1085483319347867649
+
+ /public/hydra.php
