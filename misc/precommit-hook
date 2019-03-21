@@ -57,5 +57,5 @@ FULLPATH=${SCRIPTPATH%/*}/$README
 
 if [ -f $FULLPATH ]
 then
-    sed -i "s/malware_families-[0-9]+/malware_families-`ls -1 ${SCRIPTPATH%/*}/../trails/static/malware/*.txt | grep -v sinkhole | wc -l`/g" $FULLPATH
+    sed -i "s/malware_families\-[0-9]*/malware_families\-`ls -1 ${SCRIPTPATH%/*}/../trails/static/malware/*.txt | grep -v sinkhole | wc -l`/g" $FULLPATH
 fi;
