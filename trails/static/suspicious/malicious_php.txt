@@ -97,3 +97,7 @@ nitdesenders.tianat.cat/tmp/signup.php
 # Reference: https://twitter.com/benkow_/status/1085483319347867649
 
  /public/hydra.php
+
+# Reference: https://twitter.com/anyrun_app/status/1060858198599577601
+
+/ghuae/huadh.php
