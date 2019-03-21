@@ -77,6 +77,10 @@
 103.254.152.0/26
 43.249.37.244/30
 46.28.246.48/29
+77.109.138.34/29
+23.105.70.234/29
+23.108.68.90/29
+149.11.174.80/29
 
 # Reference: http://my.globaldots.com/knowledgebase.php?action=displayarticle&id=41
 
