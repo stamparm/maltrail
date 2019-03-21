@@ -84,3 +84,7 @@ ibrandworld.com/jsl.php
 # Reference: https://twitter.com/Racco42/status/1102488453990830080
 
 /masquare.php
+
+# Reference: https://twitter.com/Racco42/status/1098218160111734789
+
+nitdesenders.tianat.cat/tmp/signup.php
