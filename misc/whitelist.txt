@@ -834,6 +834,7 @@ robtex.com
 check.googlezip.net
 ingress-guard.tk
 mshome.net
+playx.fun
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
