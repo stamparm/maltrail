@@ -185,3 +185,7 @@ http://89.105.205.103/auth.php
 # Reference: https://twitter.com/benkow_/status/1088009157733683200
 
 /zs/chi/cp.php
+
+# Reference: https://twitter.com/ViriBack/status/1080826513266749451
+
+jurasik.serveminecraft.net/index.php
