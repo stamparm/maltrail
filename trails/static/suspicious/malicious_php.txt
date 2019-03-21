@@ -80,3 +80,7 @@ ibrandworld.com/jsl.php
 # Reference: https://twitter.com/IpNigh/status/1107567316148150274
 
 /universalmail-notifications/updates.php
+
+# Reference: https://twitter.com/Racco42/status/1102488453990830080
+
+/masquare.php
