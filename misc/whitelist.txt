@@ -836,6 +836,18 @@ ingress-guard.tk
 mshome.net
 playx.fun
 
+# NS of afraid.org
+
+evergreen.v6.afraid.org
+
+# NS of no-ip.com
+
+nf1.no-ip.com
+nf2.no-ip.com
+nf3.no-ip.com
+nf4.no-ip.com
+nf5.no-ip.com
+
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
 adbrn.com
