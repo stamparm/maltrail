@@ -88,3 +88,20 @@ ibrandworld.com/jsl.php
 # Reference: https://twitter.com/Racco42/status/1098218160111734789
 
 nitdesenders.tianat.cat/tmp/signup.php
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1103983033307271168
+
+/photo/123.php
+/Sep2018/gsm.php
+
+# Reference: https://twitter.com/benkow_/status/1085483319347867649
+
+ /public/hydra.php
+
+# Reference: https://twitter.com/anyrun_app/status/1060858198599577601
+
+/ghuae/huadh.php
+
+# Reference: https://twitter.com/pollo290987/status/1108755025604591622
+
+/loro_4.php
