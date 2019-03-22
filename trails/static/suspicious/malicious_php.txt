@@ -105,3 +105,7 @@ nitdesenders.tianat.cat/tmp/signup.php
 # Reference: https://twitter.com/pollo290987/status/1108755025604591622
 
 /loro_4.php
+
+# Reference: https://www.welivesecurity.com/2018/11/06/supply-chain-attack-cryptocurrency-exchange-gate-io/
+
+statconuter.com/c.php
