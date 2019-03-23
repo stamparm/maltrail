@@ -1403,3 +1403,7 @@ portmap.host
 # Reference: https://twitter.com/JAMESWT_MHT/status/1109090811801673730
 
 warzonedns.com
+
+# Reference: https://twitter.com/ScumBots/status/1109455265085251584
+
+o-r.kr
