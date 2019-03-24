@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://otx.alienvault.com/pulse/5c96b4b5fed1b34723da7b54/
+# Reference: https://blog.alyac.co.kr/2215
+# Reference: https://research.checkpoint.com/silivaccine-a-look-inside-north-koreas-anti-virus/
+
+office360s.ignorelist.com
