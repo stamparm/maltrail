@@ -50,6 +50,7 @@ then
         echo "Something went wrong in VERSION increment"
         exit 1
     fi
+    git add $FULLPATH
 fi;
 
 README="../README.md"
@@ -58,4 +59,5 @@ FULLPATH=${SCRIPTPATH%/*}/$README
 if [ -f $FULLPATH ]
 then
     sed -i "s/malware_families\-[0-9]*/malware_families\-`ls -1 ${SCRIPTPATH%/*}/../trails/static/malware/*.txt | grep -v sinkhole | wc -l`/g" $FULLPATH
+    git add $FULLPATH
 fi;
