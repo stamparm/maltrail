@@ -109,3 +109,8 @@ nitdesenders.tianat.cat/tmp/signup.php
 # Reference: https://www.welivesecurity.com/2018/11/06/supply-chain-attack-cryptocurrency-exchange-gate-io/
 
 statconuter.com/c.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1109832439700971520
+# Reference: https://app.any.run/tasks/f435d89d-30a5-465b-8a8d-b7a042665e0e
+
+/loadbase1.php
