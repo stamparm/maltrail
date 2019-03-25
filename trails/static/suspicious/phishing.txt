@@ -1966,3 +1966,7 @@ stiamccommunity.ml
 stiamcommenity.ml
 stiamcommunity.ml
 stleamcommuniity.ml
+
+# Reference: https://twitter.com/malwrhunterteam/status/1110193748535840768
+
+blockchainupdatenow.ddns.net
