@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/drwetter/status/1081267425637814273
+# Reference: https://arstechnica.com/gadgets/2019/03/hmd-admits-the-nokia-7-plus-was-sending-personal-data-to-china/
+
+zzhc.vnet.cn
