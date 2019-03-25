@@ -348,3 +348,7 @@ host.moresecurity.kz/host/info
 # Reference: https://docs.google.com/document/d/1oYX3uN6KxIX_StzTH0s0yFNNoHDnV8VgmVqU5WoeErc (2018-06-12 Charming Kitten waterhole)
 
 178.32.48.50:8443/node.js
+
+# Reference: https://blog.attacker.net/a-new-wave-of-the-simpleoneline-malware
+
+simpleoneline.online
