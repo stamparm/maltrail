@@ -207,3 +207,8 @@ youip.net
 your-ip-address.com
 your-ip-fast.com
 yourip.us
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1110189315345313792
+# Reference: https://app.any.run/tasks/aeb4a99a-eef5-4c22-926b-2c6f396a3bc8
+
+iplogger.org
