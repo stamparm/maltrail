@@ -79,7 +79,7 @@ def main():
             print("[x] going to continue without online update")
             _ = update_trails(offline=True)
         else:
-            _ = update_trails(server=config.UPDATE_SERVER)
+            _ = update_trails()
             update_ipcat()
 
         thread = threading.Timer(config.UPDATE_PERIOD, update_timer)
