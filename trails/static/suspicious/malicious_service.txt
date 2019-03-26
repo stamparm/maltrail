@@ -1,0 +1,6 @@
+# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/PhysicalDrive0/status/1109871662890127360
+
+lofi.stream
