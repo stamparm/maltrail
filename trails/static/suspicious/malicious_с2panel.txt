@@ -193,3 +193,7 @@ jurasik.serveminecraft.net
 # Reference: https://twitter.com/casual_malware/status/1107441450415992832
 
 /WebPanel/api.php
+
+# Reference: https://blog.fox-it.com/2019/03/27/psixbot-the-evolution-of-a-modular-net-bot/
+
+kyrkymalol.000webhostapp.com/admin/
