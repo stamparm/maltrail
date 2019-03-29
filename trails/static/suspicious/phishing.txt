@@ -1976,3 +1976,7 @@ blockchainupdatenow.ddns.net
 
 oauth2.space
 oauth20.xyz
+
+# Reference: https://twitter.com/IpNigh/status/1111618912062447616
+
+paypal-review.sytes.net
