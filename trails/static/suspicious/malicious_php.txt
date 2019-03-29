@@ -114,3 +114,7 @@ statconuter.com/c.php
 # Reference: https://app.any.run/tasks/f435d89d-30a5-465b-8a8d-b7a042665e0e
 
 /loadbase1.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1111630255763189761
+
+/D2017HL/u.php
