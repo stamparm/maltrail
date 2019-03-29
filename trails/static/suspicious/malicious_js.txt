@@ -352,3 +352,7 @@ host.moresecurity.kz/host/info
 # Reference: https://blog.attacker.net/a-new-wave-of-the-simpleoneline-malware
 
 simpleoneline.online
+
+# Reference: https://twitter.com/malwrhunterteam/status/1111638674041643009
+
+/datetimepicker.js
