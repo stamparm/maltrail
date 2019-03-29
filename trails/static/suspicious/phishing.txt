@@ -1970,3 +1970,9 @@ stleamcommuniity.ml
 # Reference: https://twitter.com/malwrhunterteam/status/1110193748535840768
 
 blockchainupdatenow.ddns.net
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/desktop-mobile-phishing-campaign-targets-south-korean-websites-steals-credentials-via-watering-hole/
+# Reference: https://otx.alienvault.com/pulse/5c9e16949d30a3210a928e66
+
+oauth2.space
+oauth20.xyz
