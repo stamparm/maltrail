@@ -55,7 +55,7 @@ def fetch():
                 if not line:
                     break
                 match = re.search(r"\A([^,\s]+),Domain used by ([^ ]+)", line)
-                if match:
+                if match and '.' in match.group(1):
                     retval[match.group(1)] = ("%s dga (malware)" % match.group(2).lower(), __reference__)
         except:
             pass
