@@ -547,3 +547,7 @@ OSIRIS
 # Reference: https://twitter.com/bad_packets/status/1078192846048452608
 
 Rift
+
+# Reference: https://twitter.com/bad_packets/status/1111777543869194240
+
+HaxerMen
