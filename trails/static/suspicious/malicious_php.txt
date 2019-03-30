@@ -118,3 +118,7 @@ statconuter.com/c.php
 # Reference: https://twitter.com/malwrhunterteam/status/1111630255763189761
 
 /D2017HL/u.php
+
+# Reference: https://twitter.com/IpNigh/status/1111919996266049536
+
+/ahzhnobu48jgm1rksb2zl3sc.php
