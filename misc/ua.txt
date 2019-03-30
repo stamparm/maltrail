@@ -551,3 +551,7 @@ Rift
 # Reference: https://twitter.com/bad_packets/status/1111777543869194240
 
 HaxerMen
+
+# Reference: https://twitter.com/ankit_anubhav/status/1069562868918566914
+
+jexboss
