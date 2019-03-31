@@ -130,3 +130,7 @@ statconuter.com/c.php
 # Reference: https://twitter.com/IpNigh/status/1111872373446377472
 
 /overviewshn.php
+
+# Reference: https://twitter.com/executemalware/status/1112337168138149888
+
+/phpmailer/Pmxyz.php
