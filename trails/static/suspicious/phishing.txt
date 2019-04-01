@@ -1980,3 +1980,7 @@ oauth20.xyz
 # Reference: https://twitter.com/IpNigh/status/1111618912062447616
 
 paypal-review.sytes.net
+
+# Reference: https://twitter.com/FeedPhish/status/1111586238279106561
+
+support-account.netflisx.cf
