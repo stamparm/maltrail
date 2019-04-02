@@ -1407,3 +1407,7 @@ warzonedns.com
 # Reference: https://twitter.com/ScumBots/status/1109455265085251584
 
 o-r.kr
+
+# Reference: https://twitter.com/ScumBots/status/1040311939073826816
+
+hldns.ru
