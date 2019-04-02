@@ -1411,3 +1411,8 @@ o-r.kr
 # Reference: https://twitter.com/ScumBots/status/1040311939073826816
 
 hldns.ru
+
+# Reference: https://twitter.com/pollo290987/status/963073970542129152
+# Reference: https://www.virustotal.com/gui/domain/punkdns.top/details
+
+punkdns.top
