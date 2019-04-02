@@ -134,3 +134,7 @@ statconuter.com/c.php
 # Reference: https://twitter.com/executemalware/status/1112337168138149888
 
 /phpmailer/Pmxyz.php
+
+# Reference: https://twitter.com/albertzsigovits/status/1113096573284728839
+
+/asfdh4/auth.php
