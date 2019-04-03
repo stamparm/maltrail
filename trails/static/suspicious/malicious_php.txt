@@ -138,3 +138,7 @@ statconuter.com/c.php
 # Reference: https://twitter.com/albertzsigovits/status/1113096573284728839
 
 /asfdh4/auth.php
+
+# Reference: https://twitter.com/IpNigh/status/1113287915612798976
+
+/49rrf856hqofcuq6mkdntfdp.php
