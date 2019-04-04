@@ -215,3 +215,7 @@ darbl.icu/asfdh4/auth.php
 # Reference: https://twitter.com/benkow_/status/1090564148184924160
 
 /p4234anel/admin.php
+
+# Reference: https://twitter.com/stecar792/status/1034858782990512128
+
+wasabbybomba.space/auth/login
