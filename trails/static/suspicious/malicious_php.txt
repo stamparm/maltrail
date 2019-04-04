@@ -142,3 +142,10 @@ statconuter.com/c.php
 # Reference: https://twitter.com/IpNigh/status/1113287915612798976
 
 /49rrf856hqofcuq6mkdntfdp.php
+
+# Reference: https://otx.alienvault.com/pulse/5ca5e12bcf299875864044a6
+# Reference: https://www.securityartwork.es/2019/04/02/militaryfinancingmaldoc/
+# Reference: https://blog.trendmicro.co.jp/archives/19054
+
+/7773/index.php
+/9125/gate.php 
