@@ -215,3 +215,8 @@ darbl.icu/asfdh4/auth.php
 # Reference: https://twitter.com/stecar792/status/1034858782990512128
 
 wasabbybomba.space/auth/login
+
+# Reference: https://twitter.com/malwrhunterteam/status/1114160025021423616
+
+/panel/admin.php
+/panel/gate.php
