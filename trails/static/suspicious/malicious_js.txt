@@ -352,3 +352,7 @@ host.moresecurity.kz/host/info
 # Reference: https://blog.attacker.net/a-new-wave-of-the-simpleoneline-malware
 
 simpleoneline.online
+
+# Reference: https://twitter.com/p5yb34m/status/1111707577685991424
+
+givemejs.cc/jquery_ui.js
