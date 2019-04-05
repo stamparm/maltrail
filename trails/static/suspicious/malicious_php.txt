@@ -149,3 +149,8 @@ statconuter.com/c.php
 
 /7773/index.php
 /9125/gate.php 
+
+# Reference: https://www.bromium.com/mapping-malware-distribution-network/
+# Reference: https://otx.alienvault.com/pulse/5ca7142dd898276082584a58
+
+/olala/get.php
