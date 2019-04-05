@@ -208,10 +208,6 @@ powellpablooo.myjino.ru/auth.php
 fnsss77.ru/auth.php
 darbl.icu/asfdh4/auth.php
 
-# Reference: https://twitter.com/ViriBack/status/1094261293693972480
-
-/Panel/index.php
-
 # Reference: https://twitter.com/benkow_/status/1090564148184924160
 
 /p4234anel/admin.php
