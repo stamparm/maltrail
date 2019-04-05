@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/roaming-mantis-part-iv/90332/
+
+171.244.33.114:53
+171.244.33.116:53
+
+# Reference: https://twitter.com/bad_packets/status/1112087547050520577
+
+195.128.124.131:53
+195.128.126.165:53
+
+# Reference: https://twitter.com/bad_packets/status/1079251375987425280
+
+66.70.173.48:53
+
+# Reference: https://twitter.com/parseword/status/1093234498228097024
+
+144.217.191.145:53
