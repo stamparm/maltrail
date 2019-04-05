@@ -154,3 +154,7 @@ statconuter.com/c.php
 # Reference: https://otx.alienvault.com/pulse/5ca7142dd898276082584a58
 
 /olala/get.php
+
+# Reference: https://twitter.com/IpNigh/status/1113959650247041024
+
+/indexxx.php
