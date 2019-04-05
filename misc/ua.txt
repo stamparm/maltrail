@@ -555,3 +555,19 @@ HaxerMen
 # Reference: https://twitter.com/ankit_anubhav/status/1069562868918566914
 
 jexboss
+
+# Reference: https://twitter.com/bad_packets/status/1095565095361368064
+
+Hacks
+
+# Reference: https://twitter.com/bad_packets/status/1096201963497111553
+
+Go-http-client
+
+# Reference: https://twitter.com/bad_packets/status/1088707628442644480
+
+Ronin
+
+# Reference: https://twitter.com/bad_packets/status/1088711085375479809
+
+Oof
