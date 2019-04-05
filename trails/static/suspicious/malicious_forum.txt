@@ -28,3 +28,7 @@ blackbiz.club
 darkweb.su
 darkwebs.ws
 xaker.name
+
+# Reference: https://twitter.com/ankit_anubhav/status/1112761206081835009
+
+sxpreme.eu
