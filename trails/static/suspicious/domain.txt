@@ -4940,3 +4940,7 @@ zik.dj
 # Reference: https://twitter.com/ps66uk/status/1037866649435729921
 
 .fun
+
+# Reference: https://twitter.com/58_158_177_102/status/1087514326607355904
+
+.accountant
