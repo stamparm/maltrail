@@ -254,3 +254,7 @@ http://95.81.0.22/auth.php
 # Reference: https://twitter.com/x42x5a/status/1114468129327984640
 
 westeast.world/auth/login/
+
+# Reference: https://twitter.com/malwrhunterteam/status/1114510622610403328
+
+litehttp.altervista.org/Panel/page.php
