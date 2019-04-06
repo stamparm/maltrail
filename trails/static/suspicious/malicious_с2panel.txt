@@ -250,3 +250,7 @@ http://89.105.205.103/auth.php
 http://91.243.83.31/auth.php
 http://92.63.197.173/auth.php
 http://95.81.0.22/auth.php
+
+# Reference: https://twitter.com/x42x5a/status/1114468129327984640
+
+westeast.world/auth/login/
