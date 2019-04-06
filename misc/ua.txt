@@ -571,3 +571,8 @@ Ronin
 # Reference: https://twitter.com/bad_packets/status/1088711085375479809
 
 Oof
+
+# Reference: https://perchsecurity.com/perch-news/threat-report-sunday-february-3rd-2019/
+
+Cayosin
+Cock
