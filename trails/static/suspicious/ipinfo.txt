@@ -207,3 +207,7 @@ youip.net
 your-ip-address.com
 your-ip-fast.com
 yourip.us
+
+# Reference: https://twitter.com/James_inthe_box/status/1114150925218639872
+
+curlmyip.net
