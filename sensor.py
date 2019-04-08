@@ -123,6 +123,7 @@ except ImportError:
                 break
         exit(msg)
 
+
 def _check_domain_member(query, domains):
     parts = query.lower().split('.')
 
@@ -133,8 +134,10 @@ def _check_domain_member(query, domains):
 
     return False
 
+
 def _check_domain_whitelisted(query):
     return _check_domain_member(re.split(r"(?i)[^A-Z0-9._-]", query or "")[0], WHITELIST)
+
 
 def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, packet=None):
     if query:
@@ -184,6 +187,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
 
     if result == False:
         _result_cache[query] = False
+
 
 def _process_packet(packet, sec, usec, ip_offset):
     """
@@ -682,6 +686,7 @@ def _process_packet(packet, sec, usec, ip_offset):
         if config.SHOW_DEBUG:
             traceback.print_exc()
 
+
 def init():
     """
     Performs sensor initialization
@@ -851,6 +856,7 @@ def init():
         except:
             pass
 
+
 def _init_multiprocessing():
     """
     Inits worker processes used in multiprocessing mode
@@ -880,6 +886,7 @@ def _init_multiprocessing():
             process = _multiprocessing.Process(target=worker, name=str(i), args=(_buffer, _n, i, config.PROCESS_COUNT - 1, _process_packet))
             process.daemon = True
             process.start()
+
 
 def monitor():
     """
@@ -979,6 +986,7 @@ def monitor():
                     time.sleep(REGULAR_SENSOR_SLEEP_TIME)
             except KeyboardInterrupt:
                 pass
+
 
 def main():
     print("%s (sensor) #v%s\n" % (NAME, VERSION))
