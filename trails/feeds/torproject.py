@@ -12,6 +12,7 @@ __check__ = "Tor exit nodes"
 __info__ = "tor exit node (suspicious)"
 __reference__ = "torproject.org"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
