@@ -137,6 +137,7 @@ try:
 except ImportError:
     CPU_CORES = 1
 
+
 def _get_total_physmem():
     retval = None
 
@@ -207,12 +208,14 @@ def _get_total_physmem():
 
     return retval
 
+
 def check_memory():
     print "[?] at least %dMB of free memory required" % (CHECK_MEMORY_SIZE / 1024 / 1024)
     try:
         _ = '0' * CHECK_MEMORY_SIZE
     except MemoryError:
         exit("[!] not enough memory")
+
 
 def read_config(config_file):
     global config
@@ -351,6 +354,7 @@ def read_config(config_file):
         opener = urllib2.build_opener(urllib2.ProxyHandler(PROXIES))
         urllib2.install_opener(opener)
 
+
 def read_whitelist():
     WHITELIST.clear()
     WHITELIST_RANGES.clear()
@@ -387,6 +391,8 @@ def read_whitelist():
                     WHITELIST.add(line)
                     
 # add rules to ignore event list from passed file                
+
+
 def add_ignorelist(filepath):
     if filepath and os.path.isfile(filepath):         
         with open(filepath, "r") as f:
@@ -399,6 +405,7 @@ def add_ignorelist(filepath):
                     src_ip, src_port, dst_ip, dst_port = line.split(';')
                     IGNORE_EVENTS.add((src_ip, src_port, dst_ip, dst_port))
                                            
+
 def read_ignorelist():
     IGNORE_EVENTS.clear()
     
@@ -408,6 +415,7 @@ def read_ignorelist():
     if config.USER_IGNORELIST and os.path.isfile(config.USER_IGNORELIST):
         add_ignorelist(config.USER_IGNORELIST)  
     
+
 def read_ua():
     global SUSPICIOUS_UA_REGEX
 
@@ -427,6 +435,7 @@ def read_ua():
     if items:
         SUSPICIOUS_UA_REGEX = "(?i)%s" % '|'.join(items)
 
+
 def read_web_shells():
     WEB_SHELLS.clear()
 
@@ -439,6 +448,7 @@ def read_web_shells():
                     continue
                 else:
                     WEB_SHELLS.add(line)
+
 
 def read_worst_asn():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "worst_asns.txt"))
@@ -455,6 +465,7 @@ def read_worst_asn():
                     prefix, mask, name = re.search(r"([\d.]+)/(\d+),(.+)", line).groups()
                     WORST_ASNS[key].append((addr_to_int(prefix), make_mask(int(mask)), name))
 
+
 def read_cdn_ranges():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "cdn_ranges.txt"))
     if os.path.isfile(_):
@@ -469,6 +480,7 @@ def read_cdn_ranges():
                         CDN_RANGES[key] = []
                     prefix, mask = line.split('/')
                     CDN_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
+
 
 def read_bogon_ranges():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "bogon_ranges.txt"))
