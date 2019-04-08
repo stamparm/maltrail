@@ -249,3 +249,10 @@ zaco.php
 zehir4.asp
 zehir4.php
 zorro.pl
+
+# Reference: https://github.com/ismailtasdelen/shell-backdoor-list/tree/master/shell/asp
+
+aspcmd.asp
+kacak.asp
+newaspcmd.asp
+pouya.asp
