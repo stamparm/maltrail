@@ -12,6 +12,7 @@ __check__ = ".com"
 __info__ = "crypto mining (suspicious)"
 __reference__ = "github.com/Hestat"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
