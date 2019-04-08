@@ -1,18 +1,6 @@
 #!/usr/bin/env python2
 
-"""
-Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
-See the file 'LICENSE' for copying permission
-"""
-
-from __future__ import print_function  # Requires: Python >= 2.6
-
-import sys
-
-sys.dont_write_bytecode = True
-
 import core.versioncheck
-
 import inspect
 import math
 import mmap
@@ -28,7 +16,6 @@ import time
 import traceback
 import urllib
 import urlparse
-
 from core.addr import inet_ntoa6
 from core.attribdict import AttribDict
 from core.common import check_connection
@@ -89,6 +76,19 @@ from core.settings import WHITELIST_HTTP_REQUEST_PATHS
 from core.settings import WHITELIST_UA_KEYWORDS
 from core.update import update_ipcat
 from core.update import update_trails
+"""
+Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+See the file 'LICENSE' for copying permission
+"""
+
+from __future__ import print_function  # Requires: Python >= 2.6
+
+import sys
+
+sys.dont_write_bytecode = True
+
+
+
 
 _buffer = None
 _caps = []
