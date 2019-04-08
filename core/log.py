@@ -35,12 +35,14 @@ _condensing_thread = None
 _condensing_lock = threading.Lock()
 _thread_data = threading.local()
 
+
 def create_log_directory():
     if not os.path.isdir(config.LOG_DIR):
         if not config.DISABLE_CHECK_SUDO and check_sudo() is False:
             exit("[!] please rerun with sudo/Administrator privileges")
         os.makedirs(config.LOG_DIR, 0755)
     print("[i] using '%s' for log storage" % config.LOG_DIR)
+
 
 def get_event_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY, reuse=True):
     retval = None
@@ -73,6 +75,7 @@ def get_event_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY, reus
 
     return retval
 
+
 def get_error_log_handle(flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
     if not hasattr(_thread_data, "error_log_handle"):
         _ = os.path.join(config.LOG_DIR, "error.log")
@@ -83,11 +86,13 @@ def get_error_log_handle(flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
         _thread_data.error_log_handle = os.open(_thread_data.error_log_path, flags)
     return _thread_data.error_log_handle
 
+
 def safe_value(value):
     retval = str(value or '-')
     if any(_ in retval for _ in (' ', '"')):
         retval = "\"%s\"" % retval.replace('"', '""')
     return retval
+
 
 def flush_condensed_events():
     while True:
@@ -118,6 +123,7 @@ def flush_condensed_events():
                 log_event(condensed_event, skip_condensing=True)
 
             _condensed_events.clear()
+
 
 def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False):
     global _condensing_thread
@@ -196,6 +202,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
         if config.SHOW_DEBUG:
             traceback.print_exc()
 
+
 def log_error(msg):
     try:
         handle = get_error_log_handle()
@@ -203,6 +210,7 @@ def log_error(msg):
     except (OSError, IOError):
         if config.SHOW_DEBUG:
             traceback.print_exc()
+
 
 def start_logd(address=None, port=None, join=False):
     class ThreadingUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
@@ -244,6 +252,7 @@ def start_logd(address=None, port=None, join=False):
         thread = threading.Thread(target=server.serve_forever)
         thread.daemon = True
         thread.start()
+
 
 def set_sigterm_handler():
     def handler(signum, frame):
