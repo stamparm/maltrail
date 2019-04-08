@@ -12,6 +12,7 @@ __check__ = "malwaredomains.com"
 __info__ = "malware"
 __reference__ = "malwaredomains.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
