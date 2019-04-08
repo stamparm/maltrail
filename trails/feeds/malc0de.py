@@ -14,6 +14,7 @@ __check__ = "malc0de"
 __info__ = "malware distribution"
 __reference__ = "malc0de.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
