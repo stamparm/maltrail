@@ -493,4 +493,3 @@ if __name__ != "__main__":
     read_worst_asn()
     read_cdn_ranges()
     read_bogon_ranges()
-
