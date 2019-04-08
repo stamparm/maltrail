@@ -12,6 +12,7 @@ __check__ = ".1"
 __info__ = "known attacker"
 __reference__ = "rutgers.edu"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
