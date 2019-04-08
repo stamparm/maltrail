@@ -12,6 +12,7 @@ __check__ = ".com"
 __info__ = "magento (malware)"
 __reference__ = "github.com/gwillem"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
