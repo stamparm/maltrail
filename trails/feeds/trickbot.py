@@ -14,6 +14,7 @@ __check__ = "mcconf"
 __info__ = "trickbot (malware)"
 __reference__ = "github.com/JR0driguezB"
 
+
 def fetch():
     retval = {}
     content = retrieve_content("https://github.com/JR0driguezB/malware_configs/tree/master/TrickBot/mcconf_files")
