@@ -12,6 +12,7 @@ __check__ = "socks_proxy_7d"
 __info__ = "proxy (suspicious)"
 __reference__ = "socks-proxy.net"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
