@@ -49,6 +49,7 @@ try:
 except (ImportError, AttributeError):
     pass
 
+
 def _chown(filepath):
     if not subprocess.mswindows and os.path.exists(filepath):
         try:
@@ -56,11 +57,13 @@ def _chown(filepath):
         except Exception, ex:
             print "[!] chown problem with '%s' ('%s')" % (filepath, ex)
 
+
 def _fopen(filepath, mode="rb"):
     retval = open(filepath, mode)
     if "w+" in mode:
         _chown(filepath)
     return retval
+
 
 def update_trails(force=False, offline=False):
     """
@@ -292,6 +295,7 @@ def update_trails(force=False, offline=False):
 
     return trails
 
+
 def update_ipcat(force=False):
     try:
         if not os.path.isdir(USERS_DIR):
@@ -334,6 +338,7 @@ def update_ipcat(force=False):
 
     _chown(IPCAT_CSV_FILE)
     _chown(IPCAT_SQLITE_FILE)
+
 
 def main():
     if "-c" in sys.argv:
