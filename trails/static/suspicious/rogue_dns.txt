@@ -18,3 +18,9 @@
 # Reference: https://twitter.com/parseword/status/1093234498228097024
 
 144.217.191.145:53
+
+# Reference: https://twitter.com/bad_packets/status/1114236807367905280
+# Reference: https://www.ixiacom.com/company/blog/paypal-netflix-gmail-and-uber-users-among-targets-new-wave-dns-hijacking-attacks
+
+195.128.124.150:53
+195.128.124.181:53
