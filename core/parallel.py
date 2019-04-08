@@ -20,6 +20,7 @@ from core.settings import SHORT_SENSOR_SLEEP_TIME
 from core.settings import trails
 from core.settings import TRAILS_FILE
 
+
 def read_block(buffer, i):
     offset = i * BLOCK_LENGTH % config.CAPTURE_BUFFER
 
@@ -42,6 +43,7 @@ def read_block(buffer, i):
     buffer[offset] = BLOCK_MARKER.NOP
     return retval
 
+
 def write_block(buffer, i, block, marker=None):
     offset = i * BLOCK_LENGTH % config.CAPTURE_BUFFER
 
@@ -52,6 +54,7 @@ def write_block(buffer, i, block, marker=None):
     buffer.seek(offset + 1)
     buffer.write(struct.pack("=H", len(block)) + block)
     buffer[offset] = marker or BLOCK_MARKER.NOP
+
 
 def worker(buffer, n, offset, mod, process_packet):
     """
