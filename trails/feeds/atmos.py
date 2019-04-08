@@ -14,6 +14,7 @@ __check__ = "Atmos Strategic Monitoring"
 __info__ = "atmos (malware)"
 __reference__ = "cybercrime-tracker.net"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
