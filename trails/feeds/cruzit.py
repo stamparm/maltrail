@@ -12,6 +12,7 @@ __check__ = "ipaddress"
 __info__ = "known attacker"
 __reference__ = "cruzit.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
