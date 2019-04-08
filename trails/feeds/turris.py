@@ -12,6 +12,7 @@ __check__ = ".1"
 __info__ = "bad reputation"
 __reference__ = "turris.cz"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
