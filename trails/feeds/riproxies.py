@@ -12,6 +12,7 @@ __check__ = "ri_web_proxies_30d"
 __info__ = "proxy (suspicious)"
 __reference__ = "rosinstrument.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
