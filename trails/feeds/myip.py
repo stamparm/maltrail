@@ -14,6 +14,7 @@ __check__ = "ADDRESSES DATABASE"
 __info__ = "crawler"
 __reference__ = "myip.ms"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
