@@ -14,6 +14,7 @@ __check__ = "CnC Server"
 __info__ = "potential malware site"
 __reference__ = "emergingthreats.net"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
