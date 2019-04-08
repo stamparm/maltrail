@@ -14,6 +14,7 @@ __check__ = "last_seen"
 __info__ = "cobalt strike (adversary)"
 __reference__ = "github.com/fox-it"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
