@@ -14,6 +14,7 @@ __check__ = "VX Vault"
 __info__ = "malware"
 __reference__ = "vxvault.net"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
