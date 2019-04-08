@@ -12,6 +12,7 @@ __check__ = "DShield.org"
 __info__ = "domain (suspicious)"
 __reference__ = "dshield.org"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
