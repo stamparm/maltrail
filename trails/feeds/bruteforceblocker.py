@@ -12,6 +12,7 @@ __check__ = "Last Reported"
 __info__ = "known attacker"
 __reference__ = "rulez.sk"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
