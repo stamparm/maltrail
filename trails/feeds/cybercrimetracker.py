@@ -14,6 +14,7 @@ __check__ = "cp.php?m=login"
 __info__ = "malware"
 __reference__ = "cybercrime-tracker.net"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
