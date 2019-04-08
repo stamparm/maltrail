@@ -12,6 +12,7 @@ __check__ = "bitcoin_nodes_1d"
 __info__ = "bad reputation (bitcoin node)"
 __reference__ = "bitnodes.io"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
