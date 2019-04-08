@@ -12,6 +12,7 @@ __check__ = "botscout_1d"
 __info__ = "spammer"
 __reference__ = "botscout.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
