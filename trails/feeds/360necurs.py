@@ -14,6 +14,7 @@ __check__ = "netlab 360"
 __info__ = "necurs dga (malware)"
 __reference__ = "360.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
