@@ -12,6 +12,7 @@ __check__ = "HTTP spam sources"
 __info__ = "bad reputation (suspicious)"
 __reference__ = "sblam.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
