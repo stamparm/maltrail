@@ -12,6 +12,7 @@ __check__ = " # Malicious"
 __info__ = "bad reputation"
 __reference__ = "alienvault.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
