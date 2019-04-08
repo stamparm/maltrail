@@ -14,6 +14,7 @@ __check__ = "URLhaus"
 __info__ = "malware"
 __reference__ = "abuse.ch"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
