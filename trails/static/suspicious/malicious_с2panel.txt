@@ -258,3 +258,7 @@ westeast.world/auth/login/
 # Reference: https://twitter.com/malwrhunterteam/status/1114510622610403328
 
 litehttp.altervista.org/Panel/page.php
+
+# Reference: https://twitter.com/nullcookies/status/1115006946216747008
+
+lolkek.club/login
