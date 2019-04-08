@@ -13,6 +13,7 @@ __check__ = ".1"
 __info__ = "known attacker"
 __reference__ = "greensnow.co"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__, headers={"User-agent": NAME})  # having problems with database (appending error messages to the end of gzip stream)
