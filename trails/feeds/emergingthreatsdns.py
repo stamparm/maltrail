@@ -14,6 +14,7 @@ __check__ = "Emerging Threats"
 __info__ = "malware"
 __reference__ = "emergingthreats.net"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
