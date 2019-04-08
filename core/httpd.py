@@ -158,8 +158,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         self.send_header(HTTP_HEADER.CONNECTION, "close")
                         self.send_header(HTTP_HEADER.CONTENT_TYPE, mimetypes.guess_type(path)[0] or "application/octet-stream")
                         self.send_header(HTTP_HEADER.LAST_MODIFIED, last_modified)
-                        self.send_header(HTTP_HEADER.CONTENT_SECURITY_POLICY, "default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; "+
-                                                                              "script-src 'self' 'unsafe-eval' https://stat.ripe.net; connect-src 'self'; form-action 'self'; "+
+                        self.send_header(HTTP_HEADER.CONTENT_SECURITY_POLICY, "default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; " +
+                                                                              "script-src 'self' 'unsafe-eval' https://stat.ripe.net; connect-src 'self'; form-action 'self'; " +
                                                                               "font-src 'self'; frame-src *; worker-src 'self'; block-all-mixed-content;")
                         if extension not in (".htm", ".html"):
                             self.send_header(HTTP_HEADER.EXPIRES, "Sun, 17-Jan-2038 19:14:07 GMT")        # Reference: http://blog.httpwatch.com/2007/12/10/two-simple-rules-for-http-caching/
