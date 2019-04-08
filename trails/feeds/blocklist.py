@@ -11,6 +11,7 @@ __url__ = "https://lists.blocklist.de/lists/all.txt"
 __info__ = "known attacker"
 __reference__ = "blocklist.de"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
