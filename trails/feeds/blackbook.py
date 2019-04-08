@@ -11,6 +11,7 @@ __url__ = "https://raw.githubusercontent.com/stamparm/blackbook/master/blackbook
 __check__ = "Malware"
 __reference__ = "github.com/stamparm/blackbook"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
