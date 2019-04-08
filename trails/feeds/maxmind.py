@@ -14,6 +14,7 @@ __check__ = "Sample List of Higher Risk IP Addresses"
 __info__ = "bad reputation (suspicious)"
 __reference__ = "maxmind.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
