@@ -17,6 +17,7 @@ __check__ = "TOTAL NETBLOCK"
 __info__ = "known attacker"
 __reference__ = "voipbl.org"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
