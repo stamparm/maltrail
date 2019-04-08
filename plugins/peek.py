@@ -11,6 +11,7 @@ import time
 
 TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 
+
 def plugin(event_tuple, packet=None):
     sec, usec, src_ip, src_port, dst_ip, dst_port, proto, type, trail, info, reference = event_tuple
     if packet:
