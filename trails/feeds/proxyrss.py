@@ -12,6 +12,7 @@ __check__ = "proxyrss_1d"
 __info__ = "proxy (suspicious)"
 __reference__ = "proxyrss.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
