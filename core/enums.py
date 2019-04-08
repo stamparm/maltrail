@@ -5,12 +5,15 @@ Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrai
 See the file 'LICENSE' for copying permission
 """
 
+
 class _(type):
    def __getattr__(self, attr):
      return attr
 
+
 class TRAIL(object):
    __metaclass__ = _
+
 
 class BLOCK_MARKER:
     NOP = chr(0x00)
@@ -18,10 +21,12 @@ class BLOCK_MARKER:
     WRITE = chr(0x02)
     END = chr(0xFF)
 
+
 class PROTO:
     TCP = "TCP"
     UDP = "UDP"
     ICMP = "ICMP"
+
 
 class HTTP_HEADER:
     ACCEPT = "Accept"
