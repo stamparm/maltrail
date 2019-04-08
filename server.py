@@ -1,18 +1,6 @@
 #!/usr/bin/env python2
 
-"""
-Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
-See the file 'LICENSE' for copying permission
-"""
-
-from __future__ import print_function  # Requires: Python >= 2.6
-
-import sys
-
-sys.dont_write_bytecode = True
-
 import core.versioncheck
-
 import optparse
 import os
 import platform
@@ -20,7 +8,6 @@ import subprocess
 import threading
 import time
 import traceback
-
 from core.common import check_connection
 from core.common import check_sudo
 from core.httpd import start_httpd
@@ -35,6 +22,19 @@ from core.settings import NAME
 from core.settings import VERSION
 from core.update import update_ipcat
 from core.update import update_trails
+"""
+Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+See the file 'LICENSE' for copying permission
+"""
+
+from __future__ import print_function  # Requires: Python >= 2.6
+
+import sys
+
+sys.dont_write_bytecode = True
+
+
+
 
 def main():
 
