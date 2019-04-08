@@ -262,3 +262,7 @@ litehttp.altervista.org/Panel/page.php
 # Reference: https://twitter.com/nullcookies/status/1115006946216747008
 
 lolkek.club/login
+
+# Reference: https://twitter.com/malwrhunterteam/status/1115289020421025792
+
+bestpage1.com/blockchain2018/
