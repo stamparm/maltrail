@@ -14,6 +14,7 @@ __check__ = "/gate.php"
 __info__ = "pony (malware)"
 __reference__ = "cybercrime-tracker.net"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
