@@ -14,6 +14,7 @@ __check__ = "http://"
 __info__ = "phishing"
 __reference__ = "openphish.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
