@@ -13,6 +13,8 @@ __info__ = "bad reputation"
 __reference__ = "talosintelligence.com"
 
 # Reference: http://blog.snort.org/2015/09/ip-blacklist-feed-has-moved-locations.html
+
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
