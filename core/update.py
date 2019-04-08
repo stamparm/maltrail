@@ -1,24 +1,5 @@
 #!/usr/bin/env python2
 
-"""
-Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
-See the file 'LICENSE' for copying permission
-"""
-
-import csv
-import glob
-import inspect
-import os
-import re
-import sqlite3
-import subprocess
-import sys
-import time
-import urllib2
-
-sys.dont_write_bytecode = True
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))  # to enable calling from current directory too
-
 from core.addr import addr_to_int
 from core.addr import int_to_addr
 from core.addr import make_mask
@@ -41,6 +22,25 @@ from core.settings import IPCAT_URL
 from core.settings import ROOT_DIR
 from core.settings import TRAILS_FILE
 from core.settings import USERS_DIR
+"""
+Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+See the file 'LICENSE' for copying permission
+"""
+
+import csv
+import glob
+import inspect
+import os
+import re
+import sqlite3
+import subprocess
+import sys
+import time
+import urllib2
+
+sys.dont_write_bytecode = True
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))  # to enable calling from current directory too
+
 
 # patch for self-signed certificates (e.g. CUSTOM_TRAILS_URL)
 try:
