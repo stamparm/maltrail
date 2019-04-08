@@ -11,6 +11,7 @@ __url__ = "https://sslbl.abuse.ch/blacklist/sslipblacklist.csv"
 __check__ = "abuse.ch SSL IPBL "
 __reference__ = "abuse.ch"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
