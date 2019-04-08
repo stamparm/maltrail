@@ -36,6 +36,7 @@ from core.settings import VERSION
 from core.update import update_ipcat
 from core.update import update_trails
 
+
 def main():
 
     print("%s (server) #v%s\n" % (NAME, VERSION))
