@@ -14,6 +14,7 @@ __check__ = "distinct users"
 __info__ = "known attacker"
 __reference__ = "abuseipdb.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
