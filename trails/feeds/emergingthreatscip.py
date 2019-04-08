@@ -11,6 +11,7 @@ __url__ = "https://rules.emergingthreats.net/open/suricata/rules/compromised-ips
 __info__ = "compromised (suspicious)"
 __reference__ = "emergingthreats.net"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
