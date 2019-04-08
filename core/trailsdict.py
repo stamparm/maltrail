@@ -7,6 +7,7 @@ See the file 'LICENSE' for copying permission
 
 import re
 
+
 class TrailsDict(dict):
     def __init__(self):
         self._trails = {}
