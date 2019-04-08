@@ -11,6 +11,7 @@ import re
 
 __url__ = "(static)"
 
+
 def fetch():
     retval = {}
 
