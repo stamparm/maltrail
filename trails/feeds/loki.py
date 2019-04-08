@@ -13,6 +13,7 @@ __url__ = "https://raw.githubusercontent.com/Neo23x0/signature-base/master/iocs/
 __check__ = "zapto"
 __reference__ = "otx.alienvault.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
