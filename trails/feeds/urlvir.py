@@ -12,6 +12,7 @@ __check__ = "Updated on"
 __info__ = "malware"
 __reference__ = "urlvir.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
