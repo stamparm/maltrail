@@ -12,6 +12,7 @@ __check__ = "ZeuS"
 __info__ = "zeus (malware)"
 __reference__ = "abuse.ch"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
