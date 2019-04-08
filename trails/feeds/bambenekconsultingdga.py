@@ -18,6 +18,7 @@ __url__ = "https://osint.bambenekconsulting.com/feeds/dga-feed.txt"
 __check__ = "Domain used by"
 __reference__ = "bambenekconsulting.com"
 
+
 def _open():
     retval = None
 
@@ -43,6 +44,7 @@ def _open():
         pass
 
     return retval
+
 
 def fetch():
     retval = {}
