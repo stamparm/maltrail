@@ -11,6 +11,7 @@ __url__ = "http://cinsscore.com/list/ci-badguys.txt"
 __info__ = "known attacker"
 __reference__ = "cinsscore.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
