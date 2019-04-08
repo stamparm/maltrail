@@ -12,6 +12,7 @@ __check__ = "Malware IRC"
 __info__ = "potential malware site"
 __reference__ = "nothink.org"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
