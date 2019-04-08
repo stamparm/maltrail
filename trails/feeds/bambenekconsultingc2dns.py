@@ -13,6 +13,7 @@ __url__ = "https://osint.bambenekconsulting.com/feeds/c2-dommasterlist-high.txt"
 __check__ = "Master Feed"
 __reference__ = "bambenekconsulting.com"
 
+
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
