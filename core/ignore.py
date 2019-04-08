@@ -10,6 +10,7 @@ See the file 'LICENSE' for copying permission
 from core.settings import config
 from core.settings import IGNORE_EVENTS
 
+
 def ignore_event(event_tuple):
     retval = False
     _, _, src_ip, src_port, dst_ip, dst_port, _, _, _, _, _ = event_tuple
