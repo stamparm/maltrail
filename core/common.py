@@ -33,6 +33,7 @@ from core.trailsdict import TrailsDict
 
 _ipcat_cache = {}
 
+
 def retrieve_content(url, data=None, headers=None):
     """
     Retrieves page content from given URL
@@ -57,6 +58,7 @@ def retrieve_content(url, data=None, headers=None):
             return retrieve_content(url.replace("https://", "http://"), data, headers)
 
     return retval or ""
+
 
 def ipcat_lookup(address):
     if not address:
@@ -95,6 +97,7 @@ def ipcat_lookup(address):
 
     return retval
 
+
 def worst_asns(address):
     if not address:
         return None
@@ -108,6 +111,7 @@ def worst_asns(address):
         pass
 
     return None
+
 
 def cdn_ip(address):
     if not address:
@@ -123,6 +127,7 @@ def cdn_ip(address):
 
     return False
 
+
 def bogon_ip(address):
     if not address:
         return False
@@ -136,6 +141,7 @@ def bogon_ip(address):
         pass
 
     return False
+
 
 def check_sudo():
     """
@@ -153,9 +159,11 @@ def check_sudo():
 
     return check
 
+
 def extract_zip(filename, path=None):
     _ = zipfile.ZipFile(filename, 'r')
     _.extractall(path)
+
 
 def get_regex(items):
     head = {}
@@ -204,8 +212,10 @@ def get_regex(items):
 
     return regex
 
+
 def check_connection():
     return len(retrieve_content(CHECK_CONNECTION_URL) or "") > 0
+
 
 def check_whitelisted(trail):
     if trail in WHITELIST:
@@ -221,6 +231,7 @@ def check_whitelisted(trail):
             pass
 
     return False
+
 
 def load_trails(quiet=False):
     if not quiet:
