@@ -11,6 +11,7 @@ __check__ = "DataPlane.org"
 __info__ = "known attacker"
 __reference__ = "dataplane.org"
 
+
 def fetch():
     retval = {}
     for url in ("https://dataplane.org/dnsrd.txt", "https://dataplane.org/dnsrdany.txt", "https://dataplane.org/dnsversion.txt", "https://dataplane.org/sipinvitation.txt", "https://dataplane.org/sipquery.txt", "https://dataplane.org/sipregistration.txt", "https://dataplane.org/sshclient.txt", "https://dataplane.org/sshpwauth.txt", "https://dataplane.org/vncrfb.txt"):
