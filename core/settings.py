@@ -386,9 +386,9 @@ def read_whitelist():
                 else:
                     WHITELIST.add(line)
                     
-# add rules to ignore event list from passed file                
+# add rules to ignore event list from passed file
 def add_ignorelist(filepath):
-    if filepath and os.path.isfile(filepath):         
+    if filepath and os.path.isfile(filepath):
         with open(filepath, "r") as f:
             for line in f:
                 line = re.sub(r"\s+", "", line)
@@ -406,7 +406,7 @@ def read_ignorelist():
     add_ignorelist(_)
                         
     if config.USER_IGNORELIST and os.path.isfile(config.USER_IGNORELIST):
-        add_ignorelist(config.USER_IGNORELIST)  
+        add_ignorelist(config.USER_IGNORELIST)
     
 def read_ua():
     global SUSPICIOUS_UA_REGEX

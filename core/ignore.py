@@ -27,6 +27,6 @@ def ignore_event(event_tuple):
         break
 
     if retval and config.SHOW_DEBUG:
-        print("[i] ignore_event src_ip=%s, src_port=%s, dst_ip=%s, dst_port=%s" % (src_ip, src_port, dst_ip, dst_port)) 
+        print("[i] ignore_event src_ip=%s, src_port=%s, dst_ip=%s, dst_port=%s" % (src_ip, src_port, dst_ip, dst_port))
 
     return retval
