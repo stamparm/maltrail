@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/slayersecurity/status/1115635967875014656
+
+/out-292242810.ps1
+/out-1584466740.ps1
