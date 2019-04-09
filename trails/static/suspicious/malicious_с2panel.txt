@@ -270,3 +270,8 @@ bestpage1.com/blockchain2018/
 # Reference: https://twitter.com/x42x5a/status/1115572987816742912
 
 se1ec.com/login
+
+# Reference: https://otx.alienvault.com/pulse/5cacb6c0bd266902183e424b
+
+gepparlan.myjino.ru/auth.php
+j941521.myjino.ru/auth.php
