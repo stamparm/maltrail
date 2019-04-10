@@ -5,3 +5,7 @@
 
 /out-292242810.ps1
 /out-1584466740.ps1
+
+# Reference: https://twitter.com/slayersecurity/status/1115902366686031878
+
+/spid.ps1
