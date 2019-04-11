@@ -9,3 +9,9 @@
 # Reference: https://twitter.com/slayersecurity/status/1115902366686031878
 
 /spid.ps1
+
+# Reference: https://twitter.com/x42x5a/status/1116272110912065536
+
+/out-113489727.ps1
+/out-734087850.ps1
+/out-1137236610.ps1
