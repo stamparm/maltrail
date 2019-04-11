@@ -279,3 +279,7 @@ j941521.myjino.ru/auth.php
 # Reference: https://twitter.com/makflwana/status/1115953092090941440
 
 /ba2/admin.php
+
+# Reference: https://twitter.com/PRODAFT/status/1115153591134752768
+
+ethereums.network
