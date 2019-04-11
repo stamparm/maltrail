@@ -582,3 +582,7 @@ Cock
 Blade
 Hello-World
 Hito
+
+# Reference: https://securitywithoutborders.org/blog/2019/03/29/exodus.html
+
+it.promofferte
