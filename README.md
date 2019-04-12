@@ -496,6 +496,11 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6.x*
 
 This software is provided under a MIT License. See the accompanying [LICENSE](https://github.com/stamparm/maltrail/blob/master/LICENSE) file for more information.
 
+## Developers
+
+* Miroslav Stampar (@stamparm)
+* Mikhail Kasimov (@MikhailKasimov)
+
 ## Thank you
 
 * Thomas Kristner
@@ -503,6 +508,5 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * James Lay
 * Ladislav Baco (@laciKE)
 * John Kristoff (@jtkdpu)
-* Mikhail Kasimov (@MikhailKasimov)
 * Michael M&uuml;nz (@mimugmail)
 * David Brush
