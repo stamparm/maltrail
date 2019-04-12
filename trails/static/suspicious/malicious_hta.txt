@@ -5,3 +5,8 @@
 # Reference: https://pastebin.com/0bX17LaY
 
 /out-761452637.hta
+
+# Reference: https://github.com/blackorbird/APT_REPORT/blob/master/kimsuky/aptnote0403
+
+/moonx.hta
+/shop/price/com/first.hta
