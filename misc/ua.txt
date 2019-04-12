@@ -576,3 +576,13 @@ Oof
 
 Cayosin
 Cock
+
+# Reference: # Reference: https://unit42.paloaltonetworks.com/mirai-compiled-for-new-processor-surfaces/
+
+Blade
+Hello-World
+Hito
+
+# Reference: https://securitywithoutborders.org/blog/2019/03/29/exodus.html
+
+it.promofferte
