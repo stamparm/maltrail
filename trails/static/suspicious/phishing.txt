@@ -1988,3 +1988,14 @@ support-account.netflisx.cf
 # Reference: https://twitter.com/WhiteHatScum/status/1115684258901889030
 
 micrasoftoffice.dynu.net
+
+# Reference: https://twitter.com/ns_alarms/status/1116642352054059010
+
+isube-denizbank.com
+tr-mobil-ziraat.com
+denizbankyenihizmet.com
+www-qnbfinansbank-cepsuben.com
+
+# Reference: https://twitter.com/PhishingAi/status/1116698912360763392
+
+accounts-go0gle.com
