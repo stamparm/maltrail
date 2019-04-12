@@ -586,3 +586,7 @@ Hito
 # Reference: https://securitywithoutborders.org/blog/2019/03/29/exodus.html
 
 it.promofferte
+
+# Reference: https://twitter.com/SettiDavide89/status/1116682737455382528
+
+ransomware
