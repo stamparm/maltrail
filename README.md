@@ -28,6 +28,7 @@
 - [Requirements](#requirements)
 - [Best practice(s)](#best-practices)
 - [License](#license)
+- [Developers](#developers)
 - [Thank you](#thank-you)
 
 ## Introduction
