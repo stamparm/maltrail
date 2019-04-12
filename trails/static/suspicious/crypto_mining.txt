@@ -103,3 +103,7 @@ minerxmr.ru
 # Reference: https://twitter.com/bad_packets/status/1100625553822867456
 
 119.23.222.239:26590
+
+# Reference: https://twitter.com/James_inthe_box/status/1115591879586795521
+
+47.97.119.5:19988
