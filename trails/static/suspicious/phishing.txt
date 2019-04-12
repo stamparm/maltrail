@@ -1995,3 +1995,7 @@ isube-denizbank.com
 tr-mobil-ziraat.com
 denizbankyenihizmet.com
 www-qnbfinansbank-cepsuben.com
+
+# Reference: https://twitter.com/PhishingAi/status/1116698912360763392
+
+accounts-go0gle.com
