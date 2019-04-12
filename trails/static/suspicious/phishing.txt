@@ -1984,3 +1984,7 @@ paypal-review.sytes.net
 # Reference: https://twitter.com/FeedPhish/status/1111586238279106561
 
 support-account.netflisx.cf
+
+# Reference: https://twitter.com/WhiteHatScum/status/1115684258901889030
+
+micrasoftoffice.dynu.net
