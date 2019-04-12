@@ -29,14 +29,6 @@
 
 /loomistech/gate.php
 
-# Reference: https://twitter.com/James_inthe_box/status/1044957343568388097
-# Reference: https://pastebin.com/st49wnwB
-# Reference: https://pastebin.com/bPV4gVVL
-
-/4/forum.php
-/d2/forum.php
-/mlu/forum.php
-
 # Reference: https://twitter.com/nullcookies/status/1019569151503986689
 
 /bc0de.php
@@ -162,3 +154,9 @@ statconuter.com/c.php
 # Reference: https://twitter.com/ViriBack/status/1114610878056402945
 
 /class-walker-page-up.php
+
+# Reference: http://marketplace.1c-bitrix.ru/blog/remove-virus-miner-from-the-site-to-1cbitrix/ (RU-lang)
+# Generic detection for compromised Bitrix CMS
+
+/bitrix/tools/check_files.php
+/bitrix/gadgets/bitrix/weather/lang/ru/exec/include.php
