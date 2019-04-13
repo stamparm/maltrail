@@ -283,3 +283,7 @@ j941521.myjino.ru/auth.php
 # Reference: https://twitter.com/PRODAFT/status/1115153591134752768
 
 ethereums.network
+
+# Reference: https://twitter.com/K_N1kolenko/status/1098500517272137728
+
+cba.demdex.uk.com
