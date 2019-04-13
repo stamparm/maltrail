@@ -10,3 +10,7 @@
 
 /moonx.hta
 /shop/price/com/first.hta
+
+# Reference: https://twitter.com/neonprimetime/status/1116740246790602753
+
+/wormhta.hta
