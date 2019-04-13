@@ -170,3 +170,7 @@ statconuter.com/c.php
 /kr.php
 /mail30.php
 /faktur.php
+
+# Reference: https://twitter.com/VK_Intel/status/1080919080616439808
+
+/spr_updates.php
