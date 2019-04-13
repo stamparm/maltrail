@@ -160,3 +160,7 @@ statconuter.com/c.php
 
 /bitrix/tools/check_files.php
 /bitrix/gadgets/bitrix/weather/lang/ru/exec/include.php
+
+# Reference: https://twitter.com/LukasStefanko/status/1114065804943867904
+
+/terro.php
