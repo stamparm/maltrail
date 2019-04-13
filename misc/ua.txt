@@ -590,3 +590,7 @@ it.promofferte
 # Reference: https://twitter.com/SettiDavide89/status/1116682737455382528
 
 ransomware
+
+# Reference: https://research.checkpoint.com/the-muddy-waters-of-apt-attacks/
+
+Mozilla/4.0 (compatible; Clever Internet Suite)
