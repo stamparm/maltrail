@@ -287,3 +287,9 @@ ethereums.network
 # Reference: https://twitter.com/K_N1kolenko/status/1098500517272137728
 
 cba.demdex.uk.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1117770064114126849
+
+ark-steal-free.tk
+duperu.ru
+foxpanel734923vbb2.tk
