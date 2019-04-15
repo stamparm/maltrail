@@ -1416,3 +1416,8 @@ hldns.ru
 # Reference: https://www.virustotal.com/gui/domain/punkdns.top/details
 
 punkdns.top
+
+# Reference: https://blog.talosintelligence.com/2018/08/picking-apart-remcos.html
+
+airdns.org
+pdns.cz
