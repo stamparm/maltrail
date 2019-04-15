@@ -2021,3 +2021,7 @@ pa.ypal-notif.com
 
 interac.link
 scotiabankingsecurity.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1117831891267325953
+
+redger.duckdns.org
