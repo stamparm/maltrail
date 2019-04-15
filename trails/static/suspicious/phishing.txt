@@ -1999,3 +1999,11 @@ www-qnbfinansbank-cepsuben.com
 # Reference: https://twitter.com/PhishingAi/status/1116698912360763392
 
 accounts-go0gle.com
+
+# Reference: https://twitter.com/ANeilan/status/1116862576145698816
+
+facebook.thangmedia.info
+
+# Reference: https://twitter.com/JayTHL/status/1116921775663849472
+
+aonedrivesoldadoes78.blob.core.windows.net
