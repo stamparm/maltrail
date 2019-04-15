@@ -2012,3 +2012,7 @@ aonedrivesoldadoes78.blob.core.windows.net
 
 dhlinfo.email
 dhlshipall.com
+
+# Reference: https://twitter.com/PhishingAi/status/1117776171796533249
+
+pa.ypal-notif.com
