@@ -2016,3 +2016,8 @@ dhlshipall.com
 # Reference: https://twitter.com/PhishingAi/status/1117776171796533249
 
 pa.ypal-notif.com
+
+# Reference: https://twitter.com/PhishingAi/status/1117776179962892288
+
+interac.link
+scotiabankingsecurity.com
