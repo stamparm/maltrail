@@ -2007,3 +2007,8 @@ facebook.thangmedia.info
 # Reference: https://twitter.com/JayTHL/status/1116921775663849472
 
 aonedrivesoldadoes78.blob.core.windows.net
+
+# Reference: https://twitter.com/PhishingAi/status/1117780606383902721
+
+dhlinfo.email
+dhlshipall.com
