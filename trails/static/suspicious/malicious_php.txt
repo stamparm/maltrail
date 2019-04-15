@@ -161,16 +161,6 @@ statconuter.com/c.php
 /bitrix/tools/check_files.php
 /bitrix/gadgets/bitrix/weather/lang/ru/exec/include.php
 
-# Reference: https://twitter.com/LukasStefanko/status/1114065804943867904
-
-/terro.php
-
-# Reference: https://twitter.com/JAMESWT_MHT/status/1095672902232477697
-
-/kr.php
-/mail30.php
-/faktur.php
-
 # Reference: https://twitter.com/VK_Intel/status/1080919080616439808
 
 /spr_updates.php
