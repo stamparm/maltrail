@@ -160,3 +160,7 @@ statconuter.com/c.php
 
 /bitrix/tools/check_files.php
 /bitrix/gadgets/bitrix/weather/lang/ru/exec/include.php
+
+# Reference: https://twitter.com/VK_Intel/status/1080919080616439808
+
+/spr_updates.php
