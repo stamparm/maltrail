@@ -107,3 +107,10 @@ minerxmr.ru
 # Reference: https://twitter.com/James_inthe_box/status/1115591879586795521
 
 47.97.119.5:19988
+
+# Reference: https://twitter.com/infosec_dude/status/1117450131417313280
+# Reference: https://www.virustotal.com/gui/ip-address/45.43.27.214/relations
+# Reference: https://twitter.com/James_inthe_box/status/1117881448151666688
+
+45.43.27.214:17555
+r.twotouchauthentication.online
