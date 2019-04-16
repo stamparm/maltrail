@@ -2178,3 +2178,7 @@ cardaccountwellsfargoservice.com
 wellsfargosupport0012.com
 serveraccwellsfargoupdate.com
 accountaccess-wellsfargo2.com
+
+# Reference: https://twitter.com/PhishingAi/status/1118142904336310275
+
+instagramforbusiness.info
