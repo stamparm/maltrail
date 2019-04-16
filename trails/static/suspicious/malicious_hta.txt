@@ -18,3 +18,7 @@
 # Reference: https://twitter.com/InQuest/status/1116772541312401408
 
 /ec470000/file.hta
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1118088254224515072
+
+/out-1618282703.hta
