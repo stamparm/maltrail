@@ -2182,3 +2182,7 @@ accountaccess-wellsfargo2.com
 # Reference: https://twitter.com/PhishingAi/status/1118142904336310275
 
 instagramforbusiness.info
+
+# Reference: https://twitter.com/PhishingAi/status/1118208314372837376
+
+mil-gov.ml
