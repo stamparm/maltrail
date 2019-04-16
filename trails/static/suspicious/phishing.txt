@@ -2171,3 +2171,10 @@ paypal-us-giftcards.netlify.com
 # Reference: https://twitter.com/PhishingAi/status/1118126289280307210
 
 m-faacebook-login.com
+
+# Reference: https://twitter.com/PhishingAi/status/1118140624711159808
+
+cardaccountwellsfargoservice.com
+wellsfargosupport0012.com
+serveraccwellsfargoupdate.com
+accountaccess-wellsfargo2.com
