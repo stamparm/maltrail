@@ -2163,3 +2163,7 @@ milnews.info
 hocdnakamai.ru
 tv.co.ua 
 sinoptik.website
+
+# Reference: https://twitter.com/IpNigh/status/1117995317092339713
+
+paypal-us-giftcards.netlify.com
