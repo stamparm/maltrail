@@ -2116,3 +2116,81 @@ test.ajaradv.com
 7ndread.com
 cloud-webmail.com
 mserver-cloud.com
+
+# Reference: https://otx.alienvault.com/pulse/5cb5ac5441ec5135bbbc9944
+# Reference: https://www.fireeye.com/blog/threat-research/2019/04/spear-phishing-campaign-targets-ukraine-government.html
+
+akamainet021.info
+akamainet022.info
+akamainet023.info
+akamainet024.info
+akamainet066.info
+lmeta.eu
+cx.open
+z1k.pw
+1ua.eu
+24ua.website
+news24ua.info
+notifymail.ru
+gismeteo.website
+is.xn--c1avg
+r2a.pw
+cdn1214.site
+vj2.pw
+mj2.pw
+onlineua.website
+akamaicdn.ru
+cdnakamai.ru
+rarnbier.ru
+mailukr.net
+mail.rarnbier.ru
+mail.mailukr.net
+windowsupdate.kiev.ua
+ukrposhta.website
+fakty.website
+rbc.website
+satv.pw
+uatoday.website
+unian.pw
+cdn1186.site
+slaviasoft.website
+tempuri.org
+censor.website
+novaposhta.website
+rst.website
+xn--90adzbis.xn--c1avg
+milnews.info
+hocdnakamai.ru
+tv.co.ua 
+sinoptik.website
+
+# Reference: https://twitter.com/IpNigh/status/1117995317092339713
+
+paypal-us-giftcards.netlify.com
+
+# Reference: https://twitter.com/PhishingAi/status/1118126289280307210
+
+m-faacebook-login.com
+
+# Reference: https://twitter.com/PhishingAi/status/1118140624711159808
+
+cardaccountwellsfargoservice.com
+wellsfargosupport0012.com
+serveraccwellsfargoupdate.com
+accountaccess-wellsfargo2.com
+
+# Reference: https://twitter.com/PhishingAi/status/1118142904336310275
+
+instagramforbusiness.info
+
+# Reference: https://twitter.com/PhishingAi/status/1118208314372837376
+
+mil-gov.ml
+
+# Reference: https://twitter.com/PhishingAi/status/1118253454336483328
+
+skype-login.com
+
+# Reference: https://raw.githubusercontent.com/blackorbird/APT_REPORT/master/kimsuky/Smoke%20Screen.pdf
+
+nidhelpnaver.com
