@@ -2190,3 +2190,7 @@ mil-gov.ml
 # Reference: https://twitter.com/PhishingAi/status/1118253454336483328
 
 skype-login.com
+
+# Reference: https://raw.githubusercontent.com/blackorbird/APT_REPORT/master/kimsuky/Smoke%20Screen.pdf
+
+nidhelpnaver.com
