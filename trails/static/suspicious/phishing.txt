@@ -2206,3 +2206,7 @@ mail-chimp.info
 # Reference: https://twitter.com/PhishingAi/status/1118566088290160642
 
 account-login-hapo.com
+
+# Reference: https://blog.confiant.com/massive-egobbler-malvertising-campaign-leverages-chrome-vulnerability-to-target-ios-users-a534b95a037f
+
+globalentrylogin.world
