@@ -15,3 +15,8 @@
 /out-113489727.ps1
 /out-734087850.ps1
 /out-1137236610.ps1
+
+# Reference: https://raw.githubusercontent.com/blackorbird/APT_REPORT/master/kimsuky/Smoke%20Screen.pdf
+
+/keylogger.ps1
+/keylogger1.ps1
