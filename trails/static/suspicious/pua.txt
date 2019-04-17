@@ -1789,3 +1789,28 @@ zipbookinstall.info
 zippocracy.com
 ziprata.com
 
+# Reference: https://www.symantec.com/blogs/threat-intelligence/pua-microsoft-store-porn-gambling
+# Reference: https://otx.alienvault.com/pulse/5cb592cc43f18227f4cf3eff
+
+myservicessapps.com
+myservicessapps.com/firebase/offer2.php
+myservicessapps.com/firebase/offer3_1010.php
+myservicessapps.com/firebase/offer3_15_3.php
+myservicessapps.com/firebase/offer3_17_11.php
+myservicessapps.com/firebase/offer3_3.php
+myservicessapps.com/firebase/offer3_arab.php
+myservicessapps.com/firebase/offer3_echo_country_120217.php
+myservicessapps.com/firebase/offer3_ip.php
+myservicessapps.com/firebase/offer3_kfir.php
+myservicessapps.com/firebase/offer3_test.php
+myservicessapps.com/firebase/offer3_test33.php
+myservicessapps.com/firebase/offer3.php
+myservicessapps.com/firebase/offer309.php
+myservicessapps.com/firebase/offer33.php
+myservicessapps.com/firebase/offer333.php
+myservicessapps.com/firebase/offer35.php
+myservicessapps.com/firebase/offer4.php
+myservicessapps.com/firebase/offer5.php
+myservicessapps.com/firebase/offer55.php
+myservicessapps.com/firebase/offer6.php
+myservicessapps.com/firebase/win_new_cl.php
