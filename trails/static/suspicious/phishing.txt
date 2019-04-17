@@ -2194,3 +2194,7 @@ skype-login.com
 # Reference: https://raw.githubusercontent.com/blackorbird/APT_REPORT/master/kimsuky/Smoke%20Screen.pdf
 
 nidhelpnaver.com
+
+# Reference: https://twitter.com/PhishingAi/status/1118501668922880000
+
+spotify-verification.com
