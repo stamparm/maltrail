@@ -2198,3 +2198,7 @@ nidhelpnaver.com
 # Reference: https://twitter.com/PhishingAi/status/1118501668922880000
 
 spotify-verification.com
+
+# Reference: https://twitter.com/PhishingAi/status/1118564264053133313
+
+mail-chimp.info
