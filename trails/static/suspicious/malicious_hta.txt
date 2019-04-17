@@ -27,6 +27,7 @@
 # Reference: https://raw.githubusercontent.com/blackorbird/APT_REPORT/master/kimsuky/Smoke%20Screen.pdf
 
 /Ersrr0.hta
+/first.hta
 /fmaov0.hta
 /fwvuj0.hta
 /Htqgf0.hta
@@ -36,6 +37,7 @@
 /Pkjjy.hta
 /Qfnaq.hta
 /Qzqrn0.hta
+/second.hta
 /szgfj0.hta
 /xtgnb0.hta
 /Yluhi0.hta
