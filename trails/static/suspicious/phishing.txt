@@ -2202,3 +2202,7 @@ spotify-verification.com
 # Reference: https://twitter.com/PhishingAi/status/1118564264053133313
 
 mail-chimp.info
+
+# Reference: https://twitter.com/PhishingAi/status/1118566088290160642
+
+account-login-hapo.com
