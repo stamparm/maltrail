@@ -20,3 +20,8 @@
 
 /keylogger.ps1
 /keylogger1.ps1
+
+# Reference: https://twitter.com/malwrhunterteam/status/1118768633377955840
+
+/bs.ps1
+/indiapro.ps1
