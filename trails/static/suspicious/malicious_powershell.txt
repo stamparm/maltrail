@@ -25,3 +25,8 @@
 
 /bs.ps1
 /indiapro.ps1
+
+# Reference: https://krebsonsecurity.com/wp-content/uploads/2019/04/wiproiocs.txt
+
+/abc.ps1
+/sc.ps1
