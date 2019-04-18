@@ -29,3 +29,11 @@
 
 1.53.252.164:53
 1.53.252.215:53
+
+# Reference: https://blog.talosintelligence.com/2019/04/seaturtle.html
+
+95.179.150.101:53
+ns1.intersecdns.com
+ns2.intersecdns.com
+ns1.lcjcomputing.com
+ns2.lcjcomputing.com
