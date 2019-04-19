@@ -356,3 +356,7 @@ simpleoneline.online
 # Reference: https://twitter.com/p5yb34m/status/1111707577685991424
 
 givemejs.cc/jquery_ui.js
+
+# Reference: https://twitter.com/natmchugh/status/1118851237351497734
+
+so.youneverfind.com/statistics.js
