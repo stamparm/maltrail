@@ -41,3 +41,7 @@
 /szgfj0.hta
 /xtgnb0.hta
 /Yluhi0.hta
+
+# Reference: https://blog.talosintelligence.com/2019/04/threat-source-april-18-new-attacks.html
+
+/we.hta
