@@ -2210,3 +2210,14 @@ account-login-hapo.com
 # Reference: https://blog.confiant.com/massive-egobbler-malvertising-campaign-leverages-chrome-vulnerability-to-target-ios-users-a534b95a037f
 
 globalentrylogin.world
+
+# Reference: https://twitter.com/illegalFawn/status/1118900331369369600
+
+obbligo-aggiornamento-servizi-operazioni.com
+attivazione-sicurezzaweb.com
+unicredit-verifica.net
+sanpaolbancaintesa.com
+
+# Reference: https://twitter.com/urlscanio/status/1119125523269992449
+
+postbank-onlinebanking.info
