@@ -2221,3 +2221,7 @@ sanpaolbancaintesa.com
 # Reference: https://twitter.com/urlscanio/status/1119125523269992449
 
 postbank-onlinebanking.info
+
+# Reference: https://twitter.com/dave_daves/status/1119185135646195712
+
+security-verification.dentistinfrastructuredistort.com
