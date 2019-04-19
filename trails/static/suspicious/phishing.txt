@@ -2217,3 +2217,7 @@ obbligo-aggiornamento-servizi-operazioni.com
 attivazione-sicurezzaweb.com
 unicredit-verifica.net
 sanpaolbancaintesa.com
+
+# Reference: https://twitter.com/urlscanio/status/1119125523269992449
+
+postbank-onlinebanking.info
