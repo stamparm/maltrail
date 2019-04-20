@@ -2229,3 +2229,7 @@ security-verification.dentistinfrastructuredistort.com
 # Reference: https://twitter.com/PhishingAi/status/1119035122840264704
 
 fedex-online.club
+
+# Reference: https://twitter.com/papa_anniekey/status/1119595790891016192
+
+apple.varification-sms.com
