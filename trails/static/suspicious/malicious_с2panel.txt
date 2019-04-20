@@ -297,3 +297,8 @@ foxpanel734923vbb2.tk
 # Reference: https://twitter.com/dave_daves/status/1119185135646195712
 
 hijaiyh.net
+
+# Reference: https://twitter.com/pancak3lullz/status/1119334013246873600
+
+/pony/panel/admin.php
+/pony/panel/gate.php
