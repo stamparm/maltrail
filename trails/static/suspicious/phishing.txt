@@ -2237,3 +2237,7 @@ apple.varification-sms.com
 # Reference: https://twitter.com/PhishingAi/status/1119624651238338561
 
 myaccount-google-com.cf
+
+# Reference: https://twitter.com/PhishingAi/status/1119649138625269760
+
+electrumprivate.com
