@@ -594,3 +594,7 @@ ransomware
 # Reference: https://research.checkpoint.com/the-muddy-waters-of-apt-attacks/
 
 Mozilla/4.0 (compatible; Clever Internet Suite)
+
+# Reference: https://twitter.com/James_inthe_box/status/1119932303088578561
+
+QXQ_35
