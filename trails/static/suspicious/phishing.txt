@@ -2241,3 +2241,7 @@ myaccount-google-com.cf
 # Reference: https://twitter.com/PhishingAi/status/1119649138625269760
 
 electrumprivate.com
+
+# Reference: https://twitter.com/ActorExpose/status/1119702874987089920
+
+linkupbd.com
