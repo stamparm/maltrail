@@ -2346,3 +2346,7 @@ service-verify1.ml
 service-verify3.ml
 service-verify2.ga
 service-verify6.ga
+
+# Reference: https://twitter.com/ANeilan/status/1119783912098738176
+
+paypal.de-sicherheitscenter-login-security-8503734747.ru
