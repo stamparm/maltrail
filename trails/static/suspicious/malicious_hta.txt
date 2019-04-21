@@ -45,3 +45,7 @@
 # Reference: https://blog.talosintelligence.com/2019/04/threat-source-april-18-new-attacks.html
 
 /we.hta
+
+# Reference: https://twitter.com/pancak3lullz/status/1113084930475638784
+
+/9Y4wOJot.hta
