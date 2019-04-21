@@ -302,3 +302,8 @@ hijaiyh.net
 
 /pony/panel/admin.php
 /pony/panel/gate.php
+
+# Reference: https://twitter.com/JayTHL/status/1119686304202207232
+
+/NetSky/login.php
+/auth/NetCloud/login.php
