@@ -2360,3 +2360,7 @@ ssa-update-channel.us
 # Reference: https://twitter.com/KesaGataMe0/status/1119748474226892800
 
 amazon-account-update-co-jp.net
+
+# Reference: https://twitter.com/KesaGataMe0/status/1119871951965573121
+
+mydocomo-puz.com
