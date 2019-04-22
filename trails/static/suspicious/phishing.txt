@@ -2364,3 +2364,11 @@ amazon-account-update-co-jp.net
 # Reference: https://twitter.com/KesaGataMe0/status/1119871951965573121
 
 mydocomo-puz.com
+
+# Reference: https://twitter.com/ns_alarms/status/1120289051041517569
+
+yapikrediicep.com
+denizbankeguvenligi.com
+denizbankhizmet.com
+ziraat-onlinewebsube.com
+xn--denibank-63b.com
