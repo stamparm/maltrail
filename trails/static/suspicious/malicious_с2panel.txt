@@ -297,3 +297,18 @@ foxpanel734923vbb2.tk
 # Reference: https://twitter.com/dave_daves/status/1119185135646195712
 
 hijaiyh.net
+
+# Reference: https://twitter.com/pancak3lullz/status/1119334013246873600
+
+/pony/panel/admin.php
+/pony/panel/gate.php
+
+# Reference: https://twitter.com/JayTHL/status/1119686304202207232
+
+/NetSky/login.php
+/auth/NetCloud/login.php
+
+# Reference: https://twitter.com/ViriBack/status/1120311322917388288
+
+ashleywalkerfuns.com/2hYbb4x/login.php
+dsuda2.com/upload/login.php
