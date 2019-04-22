@@ -2500,3 +2500,7 @@ uniaoaq.co.uk
 uniaoaq.uk
 unieverycationsd.co.uk
 unieverycationsd.uk
+
+# Reference: https://twitter.com/malwrhunterteam/status/1120322602168352768
+
+chasexxxx.ddns.net
