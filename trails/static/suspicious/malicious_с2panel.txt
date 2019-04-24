@@ -312,3 +312,7 @@ hijaiyh.net
 
 ashleywalkerfuns.com/2hYbb4x/login.php
 dsuda2.com/upload/login.php
+
+# Reference: https://research.checkpoint.com/finteam-trojanized-teamviewer-against-government-targets/
+
+/newcpanel_gate/gate.php
