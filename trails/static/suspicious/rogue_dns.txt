@@ -41,8 +41,3 @@ ns2.lcjcomputing.com
 # Reference: https://blog.talosintelligence.com/2018/11/dnspionage-campaign-targets-middle-east.html (DNS Hijack Domains)
 
 185.20.187.8:53
-memail.mea.com.lb
-webmail.finance.gov.lb
-mail.apc.gov.ae
-mail.mgov.ae
-adpvpn.adpolice.gov.ae
