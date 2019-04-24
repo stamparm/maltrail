@@ -37,3 +37,7 @@ ns1.intersecdns.com
 ns2.intersecdns.com
 ns1.lcjcomputing.com
 ns2.lcjcomputing.com
+
+# Reference: https://blog.talosintelligence.com/2018/11/dnspionage-campaign-targets-middle-east.html (DNS Hijack Domains)
+
+185.20.187.8:53
