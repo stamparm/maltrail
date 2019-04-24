@@ -360,3 +360,7 @@ givemejs.cc/jquery_ui.js
 # Reference: https://twitter.com/natmchugh/status/1118851237351497734
 
 so.youneverfind.com/statistics.js
+
+# Reference: https://twitter.com/bad_packets/status/976677742862200832
+
+/5992203285ab3219.3.n.2.1.l60.js
