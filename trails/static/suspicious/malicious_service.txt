@@ -20,3 +20,7 @@ rusmarkethgwhfbn.onion
 # Reference: https://twitter.com/morganezar/status/1119325315858407424
 
 inpivxbflrqrpzxe.onion
+
+# Reference: https://twitter.com/x0rz/status/978608169529245696
+
+revcode.eu
