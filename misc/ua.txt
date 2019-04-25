@@ -606,3 +606,7 @@ iq.46-|-
 # Reference: https://twitter.com/360Netlab/status/974374944711815168
 
 Geth
+
+# Reference: https://www.netskope.com/blog/malicious-google-sites
+
+otlook
