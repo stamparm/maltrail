@@ -211,3 +211,9 @@ yourip.us
 # Reference: https://twitter.com/James_inthe_box/status/1114150925218639872
 
 curlmyip.net
+
+# Reference: https://www.symantec.com/blogs/threat-intelligence/beapy-cryptojacking-worm-china
+# Reference: https://content.connect.symantec.com/sites/default/files/2019-04/Beapy_IOCs.txt
+
+jsonip.com
+ip.42.pl
