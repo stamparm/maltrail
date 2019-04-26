@@ -519,7 +519,9 @@ zeroup
 \Azz_
 
 # Reference: https://blog.sucuri.net/2015/12/remote-command-execution-vulnerability-in-joomla.html
+
 JDatabaseDriverMysqli
+O:
 
 # Reference: https://twitter.com/Racco42/status/1053336574753148928
 # Reference: https://www.hybrid-analysis.com/sample/f65ba1cc50b29dd05ddaa83242f4b7bd0429841bfc4befa9e203cb6621d2389b?environmentId=100
