@@ -610,3 +610,7 @@ Geth
 # Reference: https://www.netskope.com/blog/malicious-google-sites
 
 otlook
+
+# Reference: https://twitter.com/0xrb/status/1121820943972593665
+
+Nakuma
