@@ -2523,3 +2523,7 @@ winom.xyz
 
 message-whatsapp.com
 usb.mine.nu
+
+# Reference: https://twitter.com/david_jursa/status/1121719132137951232
+
+whatsapp-atualizacao.live
