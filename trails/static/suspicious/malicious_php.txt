@@ -168,3 +168,7 @@ statconuter.com/c.php
 # Reference: https://twitter.com/packet_Wire/status/1118528816509591552
 
 /rz7g271ct2iv65rmhwwq42bu.php
+
+# Reference: https://unit42.paloaltonetworks.com/babyshark-malware-part-two-attacks-continue-using-kimjongrat-and-pcrat/
+
+/s0.php
