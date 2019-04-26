@@ -54,3 +54,7 @@
 
 /Vkggy0.hta
 /Usoro.hta
+
+# Reference: https://unit42.paloaltonetworks.com/babyshark-malware-part-two-attacks-continue-using-kimjongrat-and-pcrat/
+
+/Mzfmj.hta
