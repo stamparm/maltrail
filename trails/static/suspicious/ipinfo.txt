@@ -222,3 +222,4 @@ ip.42.pl
 # Reference: https://app.any.run/tasks/c18ca904-42a7-4cda-89ca-8960f38ff406
 
 freegeoip.app
+ip.sb
