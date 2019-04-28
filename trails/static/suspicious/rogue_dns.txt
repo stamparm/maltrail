@@ -41,3 +41,9 @@ ns2.lcjcomputing.com
 # Reference: https://blog.talosintelligence.com/2018/11/dnspionage-campaign-targets-middle-east.html (DNS Hijack Domains)
 
 185.20.187.8:53
+
+# Reference: https://twitter.com/david_jursa/status/1121719132137951232
+
+23.94.149.242:53
+172.245.14.114:53
+198.46.131.130:53
