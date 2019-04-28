@@ -320,3 +320,7 @@ dsuda2.com/upload/login.php
 # Reference: https://twitter.com/ViriBack/status/1122527363772887044
 
 /megumin/panel/
+
+# Reference: https://twitter.com/hexlax/status/988881472403763200
+
+untorsnot.in/voice/gate.php
