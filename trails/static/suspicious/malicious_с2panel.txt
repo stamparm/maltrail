@@ -316,3 +316,7 @@ dsuda2.com/upload/login.php
 # Reference: https://research.checkpoint.com/finteam-trojanized-teamviewer-against-government-targets/
 
 /newcpanel_gate/gate.php
+
+# Reference: https://twitter.com/ViriBack/status/1122527363772887044
+
+/megumin/panel/
