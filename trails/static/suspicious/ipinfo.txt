@@ -223,3 +223,8 @@ ip.42.pl
 
 freegeoip.app
 ip.sb
+
+# Reference: https://www.virustotal.com/gui/domain/rl.ammyy.com/details
+# Reference: https://github.com/stamparm/maltrail/pull/1641
+
+rl.ammyy.com
