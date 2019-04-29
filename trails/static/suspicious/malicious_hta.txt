@@ -58,3 +58,7 @@
 # Reference: https://unit42.paloaltonetworks.com/babyshark-malware-part-two-attacks-continue-using-kimjongrat-and-pcrat/
 
 /Mzfmj.hta
+
+# Reference: https://securelist.com/muddywaters-arsenal/90659/
+
+/km.ps1
