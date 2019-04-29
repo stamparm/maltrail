@@ -2588,3 +2588,7 @@ unusual-paymentz.info
 # Reference: https://twitter.com/JayTHL/status/1122730230379098114
 
 encryptions-secondary.z13.web.core.windows.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1122780173483565057
+
+immigrations-cic-gc.ca
