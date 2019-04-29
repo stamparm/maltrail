@@ -2600,3 +2600,7 @@ support-service.vip
 # Reference: https://twitter.com/malwrhunterteam/status/1122857450032574465
 
 profidentity-update.servebeer.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1122857895970988032
+
+anggapkan-debu.servebeer.com
