@@ -2596,3 +2596,23 @@ immigrations-cic-gc.ca
 # Reference: https://twitter.com/malwrhunterteam/status/1122778485695627265
 
 support-service.vip
+
+# Reference: https://twitter.com/malwrhunterteam/status/1122857450032574465
+
+profidentity-update.servebeer.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1122857895970988032
+
+anggapkan-debu.servebeer.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1122858961550610432
+
+payqaal-com-service-custermes.abolished.com
+
+# Reference: https://twitter.com/JCyberSec_/status/1122888127381635078
+
+mail-nepalarmy-milnp-owa.herokuapp.com
+
+# Reference: https://twitter.com/ActorExpose/status/1122893808969113600
+
+ppporous.co.kr
