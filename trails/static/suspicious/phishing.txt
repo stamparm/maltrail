@@ -2604,3 +2604,7 @@ profidentity-update.servebeer.com
 # Reference: https://twitter.com/malwrhunterteam/status/1122857895970988032
 
 anggapkan-debu.servebeer.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1122858961550610432
+
+payqaal-com-service-custermes.abolished.com
