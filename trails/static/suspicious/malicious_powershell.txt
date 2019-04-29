@@ -30,3 +30,7 @@
 
 /abc.ps1
 /sc.ps1
+
+# Reference: https://securelist.com/muddywaters-arsenal/90659/
+
+/km.ps1
