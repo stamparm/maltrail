@@ -2580,3 +2580,19 @@ internet-security-0ol38us.ml
 icloud-helpopage.serveftp.com
 restore-appleid.apple.com.shiles.gq
 support.apple-verification.mereltwilanguagesemuanyapergi.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1122749025160257538
+
+unusual-paymentz.info
+
+# Reference: https://twitter.com/JayTHL/status/1122730230379098114
+
+encryptions-secondary.z13.web.core.windows.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1122780173483565057
+
+immigrations-cic-gc.ca
+
+# Reference: https://twitter.com/malwrhunterteam/status/1122778485695627265
+
+support-service.vip
