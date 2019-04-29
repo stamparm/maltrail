@@ -2592,3 +2592,7 @@ encryptions-secondary.z13.web.core.windows.net
 # Reference: https://twitter.com/malwrhunterteam/status/1122780173483565057
 
 immigrations-cic-gc.ca
+
+# Reference: https://twitter.com/malwrhunterteam/status/1122778485695627265
+
+support-service.vip
