@@ -152,22 +152,30 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
 
     result = False
     if not _check_domain_whitelisted(query) and all(_ in VALID_DNS_CHARS for _ in query):
-        parts = query.lower().split('.')
+        parts = query.split('.')
 
-        for i in xrange(0, len(parts)):
-            domain = '.'.join(parts[i:])
-            if domain in trails:
-                if domain == query:
-                    trail = domain
-                else:
-                    _ = ".%s" % domain
-                    trail = "(%s)%s" % (query[:-len(_)], _)
+        if ".onion." in query:
+            trail = re.sub(r"(\.onion)(\..*)", r"\1(\2)", query)
+            _ = trail.split('(')[0]
+            if _ in trails:
+                result = True
+                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[_][0], trails[_][1]), packet)
 
-                if not (re.search(r"(?i)\A(d?ns|nf|mx)\d*\.", query) and any(_ in trails.get(domain, " ")[0] for _ in ("suspicious", "sinkhole"))):  # e.g. ns2.nobel.su
-                    if not ((query == trail) and any(_ in trails.get(domain, " ")[0] for _ in ("dynamic", "free web"))):  # e.g. noip.com
-                        result = True
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[domain][0], trails[domain][1]), packet)
-                        break
+        if not result:
+            for i in xrange(0, len(parts)):
+                domain = '.'.join(parts[i:])
+                if domain in trails:
+                    if domain == query:
+                        trail = domain
+                    else:
+                        _ = ".%s" % domain
+                        trail = "(%s)%s" % (query[:-len(_)], _)
+
+                    if not (re.search(r"(?i)\A(d?ns|nf|mx)\d*\.", query) and any(_ in trails.get(domain, " ")[0] for _ in ("suspicious", "sinkhole"))):  # e.g. ns2.nobel.su
+                        if not ((query == trail) and any(_ in trails.get(domain, " ")[0] for _ in ("dynamic", "free web"))):  # e.g. noip.com
+                            result = True
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[domain][0], trails[domain][1]), packet)
+                            break
 
         if not result and config.USE_HEURISTICS:
             if len(parts[0]) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD and '-' not in parts[0]:
