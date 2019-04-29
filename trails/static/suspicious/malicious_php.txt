@@ -168,3 +168,7 @@ statconuter.com/c.php
 # Reference: https://twitter.com/packet_Wire/status/1118528816509591552
 
 /rz7g271ct2iv65rmhwwq42bu.php
+
+# Reference: https://twitter.com/0_1_0_1_0_0_0_0/status/1122804929452814337
+
+/2abjk95b4kwbdpnfdn7uewhr.php
