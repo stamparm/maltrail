@@ -2596,3 +2596,7 @@ immigrations-cic-gc.ca
 # Reference: https://twitter.com/malwrhunterteam/status/1122778485695627265
 
 support-service.vip
+
+# Reference: https://twitter.com/malwrhunterteam/status/1122857450032574465
+
+profidentity-update.servebeer.com
