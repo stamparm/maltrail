@@ -2608,3 +2608,7 @@ anggapkan-debu.servebeer.com
 # Reference: https://twitter.com/malwrhunterteam/status/1122858961550610432
 
 payqaal-com-service-custermes.abolished.com
+
+# Reference: https://twitter.com/JCyberSec_/status/1122888127381635078
+
+mail-nepalarmy-milnp-owa.herokuapp.com
