@@ -370,3 +370,8 @@ so.youneverfind.com/statistics.js
 # Reference: https://securelist.com/muddywaters-arsenal/90659/
 
 dzoz.us/js/js.js
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/tech-support-scam-employs-new-trick-by-using-iframe-to-freeze-browsers/
+# Reference: https://otx.alienvault.com/pulse/5cc71ac7631c3a2f3c67ba7f
+
+/assests/eng_edge_new.html
