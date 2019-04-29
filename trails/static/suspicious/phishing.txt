@@ -2612,3 +2612,7 @@ payqaal-com-service-custermes.abolished.com
 # Reference: https://twitter.com/JCyberSec_/status/1122888127381635078
 
 mail-nepalarmy-milnp-owa.herokuapp.com
+
+# Reference: https://twitter.com/ActorExpose/status/1122893808969113600
+
+ppporous.co.kr
