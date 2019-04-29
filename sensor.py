@@ -23,6 +23,7 @@ import re
 import socket
 import subprocess
 import struct
+import sys
 import threading
 import time
 import traceback
@@ -105,7 +106,8 @@ _last_logged_syn = None
 _last_udp = None
 _last_logged_udp = None
 _last_dns_exhaustion = None
-_quit = threading.Event()
+_done_count = 0
+_done_lock = threading.Lock()
 _subdomains = {}
 _subdomains_sec = None
 _dns_exhausted_domains = set()
@@ -786,7 +788,8 @@ def init():
                     exit("[!] missing function 'plugin(event_tuple, packet)' in plugin script '%s'" % filename)
 
     if config.pcap_file:
-        _caps.append(pcapy.open_offline(config.pcap_file))
+        for _ in config.pcap_file.split(','):
+            _caps.append(pcapy.open_offline(_))
     else:
         interfaces = set(_.strip() for _ in config.MONITOR_INTERFACE.split(','))
 
@@ -932,6 +935,8 @@ def monitor():
 
     try:
         def _(_cap):
+            global _done_count
+
             datalink = _cap.datalink()
             while True:
                 success = False
@@ -941,7 +946,8 @@ def monitor():
                         success = True
                         packet_handler(datalink, header, packet)
                     elif config.pcap_file:
-                        _quit.set()
+                        with _done_lock:
+                            _done_count += 1
                         break
                 except (pcapy.PcapError, socket.timeout):
                     pass
@@ -957,7 +963,7 @@ def monitor():
         for _cap in _caps:
             threading.Thread(target=_, args=(_cap,)).start()
 
-        while _caps and not _quit.is_set():
+        while _caps and not _done_count == (config.pcap_file or "").count(',') + 1:
             time.sleep(1)
 
         print("[i] all capturing interfaces closed")
@@ -983,6 +989,16 @@ def monitor():
 def main():
     print("%s (sensor) #v%s\n" % (NAME, VERSION))
 
+    for i in xrange(1, len(sys.argv)):
+        if sys.argv[i] == "-i":
+            for j in xrange(i + 2, len(sys.argv)):
+                value = sys.argv[j]
+                if os.path.isfile(value):
+                    sys.argv[i + 1] += ",%s" % value
+                    sys.argv[j] = ''
+                else:
+                    break
+
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
     parser.add_option("-i", dest="pcap_file", help="open pcap file for offline analysis")
@@ -1006,10 +1022,12 @@ def main():
     if options.pcap_file:
         if options.pcap_file == '-':
             print("[i] using STDIN")
-        elif not os.path.isfile(options.pcap_file):
-            exit("[!] missing pcap file '%s'" % options.pcap_file)
         else:
-            print("[i] using pcap file '%s'" % options.pcap_file)
+            for _ in options.pcap_file.split(','):
+                if not os.path.isfile(_):
+                    exit("[!] missing pcap file '%s'" % _)
+
+            print("[i] using pcap file(s) '%s'" % options.pcap_file)
 
     if not config.DISABLE_CHECK_SUDO and not check_sudo():
         exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
