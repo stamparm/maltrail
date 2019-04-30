@@ -4948,3 +4948,11 @@ zik.dj
 # Reference: https://twitter.com/malwaremustd1e/status/1122003608927494145
 
 .ooo
+
+# Reference: https://www.spamhaus.org/statistics/tlds/
+
+.loan
+.ltd
+.shop
+.tokyo
+.world
