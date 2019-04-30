@@ -114,3 +114,7 @@ minerxmr.ru
 
 45.43.27.214:17555
 r.twotouchauthentication.online
+
+# Reference: https://twitter.com/luc4m/status/1123126706943008768
+
+139.224.15.175:26591
