@@ -626,3 +626,7 @@ Unzip
 # Reference: https://twitter.com/0xrb/status/1122728648996298752
 
 Cakle
+
+# Reference: https://twitter.com/0xrb/status/1123149312689491973
+
+NoPublicity
