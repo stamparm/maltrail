@@ -2634,3 +2634,7 @@ ripple-infogiveaway.com
 # Reference: https://twitter.com/PhishingAi/status/1123192414942978048
 
 20-15.icu
+
+# Reference: https://twitter.com/PhishingAi/status/1123192411801423872
+
+gob-mx.icu
