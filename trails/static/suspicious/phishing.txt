@@ -2639,3 +2639,7 @@ ripple-infogiveaway.com
 # Reference: https://twitter.com/PhishingAi/status/1123192411801423872
 
 gob-mx.icu
+
+# Reference: https://twitter.com/PhishingAi/status/1123203138255609856
+
+accountidverif.com
