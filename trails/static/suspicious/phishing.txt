@@ -2624,3 +2624,8 @@ ziraatbank.tr.4-16.icu
 # Reference: https://twitter.com/PhishingAi/status/1123050989651521536
 
 onlinechaseaccess.com
+
+# Reference: https://twitter.com/PhishingAi/status/1123048154159386625
+
+bitlhomp.com
+ripple-infogiveaway.com
