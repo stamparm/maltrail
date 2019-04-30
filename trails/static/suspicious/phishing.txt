@@ -2631,5 +2631,6 @@ bitlhomp.com
 ripple-infogiveaway.com
 
 # Reference: https://twitter.com/rpsanch/status/1123059332575318016
+# Reference: https://twitter.com/PhishingAi/status/1123192414942978048
 
-alanfred.20-15.icu
+20-15.icu
