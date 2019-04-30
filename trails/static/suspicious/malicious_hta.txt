@@ -9,7 +9,7 @@
 # Reference: https://github.com/blackorbird/APT_REPORT/blob/master/kimsuky/aptnote0403
 
 /moonx.hta
-/shop/price/com/first.hta
+/first.hta
 
 # Reference: https://twitter.com/neonprimetime/status/1116740246790602753
 
@@ -58,3 +58,8 @@
 # Reference: https://unit42.paloaltonetworks.com/babyshark-malware-part-two-attacks-continue-using-kimjongrat-and-pcrat/
 
 /Mzfmj.hta
+
+# Reference: https://otx.alienvault.com/pulse/5cc85460920fb55c466d6e8d
+
+/Second.hta
+/temp.hta
