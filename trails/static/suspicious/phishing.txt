@@ -2643,3 +2643,7 @@ gob-mx.icu
 # Reference: https://twitter.com/PhishingAi/status/1123203138255609856
 
 accountidverif.com
+
+# Reference: https://twitter.com/PhishingAi/status/1123230284244086784
+
+netflix-paysms12667.com
