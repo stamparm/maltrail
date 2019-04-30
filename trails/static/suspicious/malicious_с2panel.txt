@@ -324,3 +324,7 @@ dsuda2.com/upload/login.php
 # Reference: https://twitter.com/hexlax/status/988881472403763200
 
 untorsnot.in/voice/gate.php
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1123206109421027329
+
+wadameee.club/auth/login
