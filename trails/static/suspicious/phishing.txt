@@ -2620,3 +2620,7 @@ ppporous.co.kr
 # Reference: https://twitter.com/rpsanch/status/1123060265975787521
 
 ziraatbank.tr.4-16.icu
+
+# Reference: https://twitter.com/PhishingAi/status/1123050989651521536
+
+onlinechaseaccess.com
