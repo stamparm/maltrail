@@ -2618,8 +2618,9 @@ mail-nepalarmy-milnp-owa.herokuapp.com
 ppporous.co.kr
 
 # Reference: https://twitter.com/rpsanch/status/1123060265975787521
+# Reference: https://twitter.com/PhishingAi/status/1123192408739647488
 
-ziraatbank.tr.4-16.icu
+4-16.icu
 
 # Reference: https://twitter.com/PhishingAi/status/1123050989651521536
 
@@ -2638,7 +2639,3 @@ ripple-infogiveaway.com
 # Reference: https://twitter.com/PhishingAi/status/1123192411801423872
 
 gob-mx.icu
-
-# Reference: https://twitter.com/PhishingAi/status/1123192408739647488
-
-4-16.icu
