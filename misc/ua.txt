@@ -630,3 +630,7 @@ Cakle
 # Reference: https://twitter.com/0xrb/status/1123149312689491973
 
 NoPublicity
+
+# Reference: https://twitter.com/James_inthe_box/status/1079757827030142976
+
+NetSupport Manager
