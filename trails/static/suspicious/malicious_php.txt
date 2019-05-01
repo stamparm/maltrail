@@ -176,3 +176,12 @@ statconuter.com/c.php
 # Reference: https://twitter.com/pancak3lullz/status/1123233975252787200
 
 /ya63omxqknnm4ar8vb8evwje.php
+
+# Reference: https://twitter.com/GelosSnake/status/1123540164268183552
+
+/mnbv/handler.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1099365566928760834
+
+/rwrw66/1111z.php
+/rwrw66/2222z.php
