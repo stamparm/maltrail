@@ -1,0 +1,6 @@
+# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/JayTHL/status/1123591741347704832
+
+92.222.151.63:36437
