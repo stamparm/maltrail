@@ -34,3 +34,7 @@
 # Reference: https://securelist.com/muddywaters-arsenal/90659/
 
 /km.ps1
+
+# Reference: https://norfolkinfosec.com/osint-reporting-on-dprk-and-ta505-overlap/
+
+/ICAS.ps1
