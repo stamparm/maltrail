@@ -630,3 +630,7 @@ Cakle
 # Reference: https://twitter.com/0xrb/status/1123149312689491973
 
 NoPublicity
+
+# Reference: https://twitter.com/abuse_ch/status/1123520051599085570
+
+Windows Installer
