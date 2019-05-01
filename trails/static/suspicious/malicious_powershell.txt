@@ -38,3 +38,7 @@
 # Reference: https://norfolkinfosec.com/osint-reporting-on-dprk-and-ta505-overlap/
 
 /ICAS.ps1
+
+# Reference: https://twitter.com/VK_Intel/status/1093001266974916608
+
+/dnipu.ps1
