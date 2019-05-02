@@ -386,3 +386,7 @@ http://185.79.156.23/jg/6/panel/admin.php
 http://185.79.156.23/q1df0/panel/admin.php
 http://185.79.156.23/306/panel/admin.php
 http://185.79.156.23/bvb/panel/admin.php
+
+# Reference: https://twitter.com/drok3r/status/1124017680439181313
+
+cc01213.tmweb.ru/panel/admin.php
