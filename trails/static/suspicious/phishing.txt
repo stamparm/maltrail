@@ -2820,3 +2820,7 @@ servizio-bloccocarte-aggiorna-ora.com
 # Reference: https://twitter.com/dave_daves/status/1124234895293865984
 
 posadamistihouse.com
+
+# Reference: https://twitter.com/JCyberSec_/status/1124290346668777505
+
+treiles.cl
