@@ -2753,3 +2753,8 @@ xn--vakfpay-tfb.com
 xn--vww-krakn-ihb.com
 xn--wellsfarg-87a.com
 xn--yapkrd-dwa82azg.com
+
+# Reference: https://twitter.com/PhishingAi/status/1123625611837132800
+
+icloʋd.com
+xn--iclod-1tc.com
