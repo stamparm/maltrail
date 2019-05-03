@@ -2794,3 +2794,7 @@ desjardinsverification.com
 # Reference: https://twitter.com/PhishingAi/status/1123957893546631174
 
 accessd-direct.com
+
+# Reference: https://twitter.com/PhishingAi/status/1123950428985499648
+
+acculogin-accuquote.com
