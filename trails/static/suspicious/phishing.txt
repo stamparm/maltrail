@@ -2806,3 +2806,7 @@ jhwzmm.com
 # Reference: https://twitter.com/PhishingAi/status/1123947416032620549
 
 secure-facebook-login.com
+
+# Reference: https://twitter.com/PhishingAi/status/1123954211484590083
+
+m-faceb0ok-security.co
