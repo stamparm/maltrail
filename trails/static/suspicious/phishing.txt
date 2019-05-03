@@ -2798,3 +2798,7 @@ accessd-direct.com
 # Reference: https://twitter.com/PhishingAi/status/1123950428985499648
 
 acculogin-accuquote.com
+
+# Reference: https://twitter.com/ActorExpose/status/1123949162062594050
+
+jhwzmm.com
