@@ -2786,3 +2786,7 @@ appleinfocheck.com
 # Reference: https://twitter.com/PhishingAi/status/1123959284461600768
 
 accountupdate-complete.support
+
+# Reference: https://twitter.com/PhishingAi/status/1123956673859784710
+
+desjardinsverification.com
