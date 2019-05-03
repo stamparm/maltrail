@@ -2837,3 +2837,7 @@ com187v.support
 # Reference: https://twitter.com/PhishingAi/status/1124387370772647936
 
 instagram.com12i5.support
+
+# Reference: https://twitter.com/demonslay335/status/1124317493751963649
+
+godaddy.sso.my-account.cab
