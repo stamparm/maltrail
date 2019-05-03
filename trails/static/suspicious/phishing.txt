@@ -2816,3 +2816,7 @@ m-faceb0ok-security.co
 bposta.com
 postelogin.com
 servizio-bloccocarte-aggiorna-ora.com
+
+# Reference: https://twitter.com/dave_daves/status/1124234895293865984
+
+posadamistihouse.com
