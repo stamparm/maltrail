@@ -2758,3 +2758,8 @@ xn--yapkrd-dwa82azg.com
 
 icloʋd.com
 xn--iclod-1tc.com
+
+# Reference: https://twitter.com/PhishingAi/status/1123948533550321668
+
+wellsfargö.com
+xn--wellsfarg-87a.com
