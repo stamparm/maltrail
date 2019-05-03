@@ -637,3 +637,8 @@ NetSupport Manager
 # Reference: https://bomccss.hatenablog.jp/entry/2019/04/30/235933 (Japanese)
 
 Google Chrome
+
+# Reference: https://twitter.com/James_inthe_box/status/1124278816753442818
+
+Client
+\bClient\b
