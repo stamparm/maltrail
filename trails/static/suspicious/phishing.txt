@@ -2778,3 +2778,7 @@ sarahmetrics.info
 
 rellatioavdo.uk
 unchorted.com
+
+# Reference: https://twitter.com/PhishingAi/status/1123951686106722304
+
+appleinfocheck.com
