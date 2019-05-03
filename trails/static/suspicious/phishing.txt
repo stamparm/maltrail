@@ -2802,3 +2802,7 @@ acculogin-accuquote.com
 # Reference: https://twitter.com/ActorExpose/status/1123949162062594050
 
 jhwzmm.com
+
+# Reference: https://twitter.com/PhishingAi/status/1123947416032620549
+
+secure-facebook-login.com
