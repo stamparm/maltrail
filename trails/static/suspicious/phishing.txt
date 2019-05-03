@@ -2782,3 +2782,7 @@ unchorted.com
 # Reference: https://twitter.com/PhishingAi/status/1123951686106722304
 
 appleinfocheck.com
+
+# Reference: https://twitter.com/PhishingAi/status/1123959284461600768
+
+accountupdate-complete.support
