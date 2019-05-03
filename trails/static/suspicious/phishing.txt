@@ -2790,3 +2790,7 @@ accountupdate-complete.support
 # Reference: https://twitter.com/PhishingAi/status/1123956673859784710
 
 desjardinsverification.com
+
+# Reference: https://twitter.com/PhishingAi/status/1123957893546631174
+
+accessd-direct.com
