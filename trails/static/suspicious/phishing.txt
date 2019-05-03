@@ -2810,3 +2810,9 @@ secure-facebook-login.com
 # Reference: https://twitter.com/PhishingAi/status/1123954211484590083
 
 m-faceb0ok-security.co
+
+# Reference: https://twitter.com/illegalFawn/status/1124258928643194880
+
+bposta.com
+postelogin.com
+servizio-bloccocarte-aggiorna-ora.com
