@@ -580,7 +580,6 @@ Cock
 
 # Reference: # Reference: https://unit42.paloaltonetworks.com/mirai-compiled-for-new-processor-surfaces/
 
-Blade
 Hello-World
 Hito
 
