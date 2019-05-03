@@ -221,6 +221,16 @@ def update_trails(force=False, offline=False):
                     if re.search(config.DISABLED_TRAILS_INFO_REGEX, trails[key][0]):
                         del trails[key]
                         continue
+
+                try:
+                    _key = key.decode("utf8").encode("idna")
+                    if _key != key:  # for domains with non-ASCII letters (e.g. phishing)
+                        trails[_key] = trails[key]
+                        del trails[key]
+                        key = _key
+                except:
+                    pass
+
                 if not key or re.search(r"\A(?i)\.?[a-z]+\Z", key) and not any(_ in trails[key][1] for _ in ("custom", "static")):
                     del trails[key]
                     continue
