@@ -2833,3 +2833,7 @@ mopl0-m.myftp.biz
 
 com12i5.support
 com187v.support
+
+# Reference: https://twitter.com/PhishingAi/status/1124387370772647936
+
+instagram.com12i5.support
