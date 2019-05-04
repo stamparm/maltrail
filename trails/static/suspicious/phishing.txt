@@ -2846,3 +2846,7 @@ godaddy.sso.my-account.cab
 
 desvnhreuks.xyz
 desjboaueg.xyz
+
+# Reference: https://twitter.com/PhishingAi/status/1124457638299746305
+
+sso-my3.com
