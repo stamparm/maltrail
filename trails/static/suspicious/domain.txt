@@ -4956,3 +4956,8 @@ zik.dj
 .shop
 .tokyo
 .world
+
+# Reference: https://twitter.com/James_inthe_box/status/1125086520229056512
+# Reference: https://www.virustotal.com/gui/domain/iok.la/relations
+
+iok.la
