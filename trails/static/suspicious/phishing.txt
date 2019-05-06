@@ -2910,3 +2910,8 @@ otpbank.hu
 # Reference: https://twitter.com/blackorbird/status/1125308108773871617
 
 orange-groupe.fr
+
+# Reference: https://twitter.com/PhishingAi/status/1125390726831804417
+
+acces-dverification.com
+accesd-mouvdesjardins.com
