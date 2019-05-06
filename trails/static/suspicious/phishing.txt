@@ -2923,3 +2923,8 @@ locked-support.com
 # Reference: https://twitter.com/malwrhunterteam/status/1125397363416289282
 
 billing002-paypal.serveirc.com
+
+# Reference: https://twitter.com/illegalFawn/status/1125314821522698240
+
+timsis.info
+tim-rimborso.com
