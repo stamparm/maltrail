@@ -1,0 +1,36 @@
+# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwaremustd1e/status/1125303785004212224
+# Reference: https://blog.redteam.pl/2019/05/badwpad-dns-suffix-wpad-wpadblocking-com.html
+# Reference: https://blog.redteam.pl/2019/05/badwpad-and-wpad-pl-wpadblocking-com.html
+
+wpad.cat
+wpad.cc
+wpad.computer
+wpad.cz
+wpad.direct
+wpad.domains
+wpad.ee
+wpad.gr
+wpad.group
+wpad.hr
+wpad.im
+wpad.info
+wpad.it
+wpad.live
+wpad.ltd
+wpad.lv
+wpad.name
+wpad.network
+wpad.pl
+wpad.plus
+wpad.pro
+wpad.sk
+wpad.systems
+wpad.tv
+wpad.tw
+wpad.vip
+wpad.ws
+wpad.xxx
+wpad.zone
