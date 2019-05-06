@@ -42,3 +42,7 @@
 # Reference: https://twitter.com/VK_Intel/status/1093001266974916608
 
 /dnipu.ps1
+
+# Reference: https://twitter.com/blackorbird/status/1125308108773871617
+
+/ipconfig.ps1
