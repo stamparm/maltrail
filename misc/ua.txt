@@ -639,11 +639,6 @@ NetSupport Manager
 
 Google Chrome
 
-# Reference: https://twitter.com/James_inthe_box/status/1124278816753442818
-
-Client
-\bClient\b
-
 # Reference: https://fumik0.com/2019/05/03/lets-nuke-megumin-trojan/
 
 Megumin
