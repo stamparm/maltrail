@@ -2928,3 +2928,7 @@ billing002-paypal.serveirc.com
 
 timsis.info
 tim-rimborso.com
+
+# Reference: https://twitter.com/PhishingAi/status/1125408404976033793
+
+mservssldpagmsdnawm.com
