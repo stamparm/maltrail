@@ -3946,3 +3946,8 @@ baezwalltowall.com
 exchange-azure.xyz
 philip-usa.com
 ptlonghigroup.us
+
+# Reference: https://twitter.com/abel1ma/status/1125301943314726912
+
+cert-protection-account-amazon.com
+engine-jump-ama-zon.com
