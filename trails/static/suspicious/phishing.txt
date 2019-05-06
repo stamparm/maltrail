@@ -2919,3 +2919,7 @@ accesd-mouvdesjardins.com
 # Reference: https://twitter.com/malwrhunterteam/status/1125398196493213696
 
 locked-support.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1125397363416289282
+
+billing002-paypal.serveirc.com
