@@ -2925,8 +2925,11 @@ locked-support.com
 billing002-paypal.serveirc.com
 
 # Reference: https://twitter.com/illegalFawn/status/1125314821522698240
+# Reference: https://twitter.com/illegalFawn/status/1125409087645257728
 
 timsis.info
+timsis.org
+timsis.net
 tim-rimborso.com
 
 # Reference: https://twitter.com/PhishingAi/status/1125408404976033793
