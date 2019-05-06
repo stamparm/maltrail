@@ -185,3 +185,7 @@ statconuter.com/c.php
 
 /rwrw66/1111z.php
 /rwrw66/2222z.php
+
+# Reference: https://twitter.com/JCyberSec_/status/1124290346668777505
+
+/g4f9sokfo2ecegn2twq4u3t7.php
