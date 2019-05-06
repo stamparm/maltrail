@@ -580,6 +580,7 @@ Cock
 
 # Reference: # Reference: https://unit42.paloaltonetworks.com/mirai-compiled-for-new-processor-surfaces/
 
+Blade/2.0
 Hello-World
 Hito
 
@@ -637,3 +638,12 @@ NetSupport Manager
 # Reference: https://bomccss.hatenablog.jp/entry/2019/04/30/235933 (Japanese)
 
 Google Chrome
+
+# Reference: https://fumik0.com/2019/05/03/lets-nuke-megumin-trojan/
+
+Megumin
+Megumin/2.0
+
+# Reference: https://twitter.com/bad_packets/status/1124922288862666753
+
+Snickers-Avtech
