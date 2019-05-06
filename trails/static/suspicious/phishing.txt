@@ -2906,3 +2906,7 @@ msresvty.xyz
 
 cobal.ml
 otpbank.hu
+
+# Reference: https://twitter.com/blackorbird/status/1125308108773871617
+
+orange-groupe.fr
