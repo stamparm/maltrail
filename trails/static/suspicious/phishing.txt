@@ -2915,3 +2915,7 @@ orange-groupe.fr
 
 acces-dverification.com
 accesd-mouvdesjardins.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1125398196493213696
+
+locked-support.com
