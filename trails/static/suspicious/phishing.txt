@@ -4235,3 +4235,7 @@ azurewebsites.net
 
 aggiorna-date-2019.org
 ppittaggiorn.com
+
+# Reference: https://twitter.com/PhishingAi/status/1125775772289982464
+
+authentication-vpn-set.com
