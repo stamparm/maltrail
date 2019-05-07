@@ -4230,3 +4230,8 @@ slackautoresponder.com
 # Reference: https://twitter.com/ninjininji/status/1125752160103219202
 
 azurewebsites.net
+
+# Reference: https://twitter.com/illegalFawn/status/1125760127611678721
+
+aggiorna-date-2019.org
+ppittaggiorn.com
