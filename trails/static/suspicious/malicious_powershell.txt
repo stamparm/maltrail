@@ -46,3 +46,7 @@
 # Reference: https://twitter.com/blackorbird/status/1125308108773871617
 
 /ipconfig.ps1
+
+# Reference: https://otx.alienvault.com/pulse/5cd154f0905e39830df5e5f5
+
+/ms17-010.ps1
