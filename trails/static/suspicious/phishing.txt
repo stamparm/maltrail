@@ -4276,3 +4276,7 @@ review-salaries1.firebaseapp.com
 # Reference: https://twitter.com/packet_Wire/status/1125829389713854464
 
 furynationbikers.club
+
+# Reference: https://twitter.com/neonprimetime/status/1125835091132014592
+
+blackshop.tools
