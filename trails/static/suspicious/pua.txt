@@ -1825,6 +1825,11 @@ non-block.net/wpad.dat
 nonblock.net/wpad.dat
 nonblocks.com/wpad.dat
 none-stop.net/wpad.dat
+no-stop.net/wpad.dat
+notblocked.net/wpad.dat
+no-blocked.com/wpad.dat
+nonblock.net/wpad.dat
+none-stop.net/wpad.dat
 noneblock.com/wpad.dat
 nostopped.net/wpad.dat
 stoppblock.biz/wpad.dat
@@ -1845,16 +1850,6 @@ unstops.net/wpad.dat
 unstopweb.com/wpad.dat
 unstopweb.net/wpad.dat
 unstopweb.org/wpad.dat
-no-stop.net/wpad.dat
-notblocked.net/wpad.dat
-no-blocked.com/wpad.dat
-no-blocked.com/wpad.dat
-no-blocked.com/wpad.dat
-no-blocked.com/wpad.dat
-nonblock.net/wpad.dat
-none-stop.net/wpad.dat
-stoppblock.com/wpad.dat
-unstopp.me/wpad.dat
 webunstop.org/wpad.dat
 
 # Reference: https://twitter.com/James_inthe_box/status/1125543661259771904
