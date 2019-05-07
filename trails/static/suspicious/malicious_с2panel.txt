@@ -394,3 +394,7 @@ cc01213.tmweb.ru/panel/admin.php
 # Reference: https://twitter.com/JayTHL/status/1124325778685087745
 
 simbatekhomes.com
+
+# Reference: https://twitter.com/MisterCh0c/status/1125731030567198720
+
+fristaylooo.ml/login/
