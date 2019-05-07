@@ -4239,3 +4239,17 @@ ppittaggiorn.com
 # Reference: https://twitter.com/PhishingAi/status/1125775772289982464
 
 authentication-vpn-set.com
+
+# Reference: https://twitter.com/ANeilan/status/1125804485106896897
+# Reference: https://pastebin.com/98rhCafP
+
+chase-suppors.cf
+chase-suppors.ga
+chase-suppors.gq
+chase-suppors.ml
+chase-supporss.cf
+chase-supporss.ga
+chase-supporss.gq
+chase-supporss.ml
+chase-supporss.tk
+chaseesupportss.tk
