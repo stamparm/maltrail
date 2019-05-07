@@ -4266,3 +4266,9 @@ onedrive-login-live.firebaseapp.com
 
 b-chase-com-515be.firebaseapp.com
 onedrive-file.firebaseapp.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1125826028314796032
+
+review-wage.firebaseapp.com
+review-salaries.firebaseapp.com
+review-salaries1.firebaseapp.com
