@@ -647,3 +647,7 @@ Megumin/2.0
 # Reference: https://twitter.com/bad_packets/status/1124922288862666753
 
 Snickers-Avtech
+
+# Reference: https://twitter.com/ViriBack/status/1120370547974709248
+
+GRequests/0.10
