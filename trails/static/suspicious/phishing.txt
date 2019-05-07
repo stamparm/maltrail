@@ -4211,3 +4211,18 @@ safety-review-section-56.cf
 # Reference: https://twitter.com/malwrhunterteam/status/1125740377070288898
 
 whatsyourname.ddnsking.com
+
+# Reference: https://twitter.com/PhishingAi/status/1125759292081037312
+# Reference: https://pastebin.com/aHSXTVMW
+
+www-slack.com
+slack-email.com
+slack-mail.com
+slack-message.com
+slack-notification.com
+messageslack.com
+online-slack.com
+slackmessage.com
+slackdevelopment.info
+slack-autoresponder.com
+slackautoresponder.com
