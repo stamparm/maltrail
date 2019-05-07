@@ -50,3 +50,7 @@
 # Reference: https://otx.alienvault.com/pulse/5cd154f0905e39830df5e5f5
 
 /ms17-010.ps1
+
+# Reference: https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+
+/msinp.ps1
