@@ -4226,3 +4226,7 @@ slackmessage.com
 slackdevelopment.info
 slack-autoresponder.com
 slackautoresponder.com
+
+# Reference: https://twitter.com/ninjininji/status/1125752160103219202
+
+azurewebsites.net
