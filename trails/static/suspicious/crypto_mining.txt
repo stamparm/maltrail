@@ -118,3 +118,7 @@ r.twotouchauthentication.online
 # Reference: https://twitter.com/luc4m/status/1123126706943008768
 
 139.224.15.175:26591
+
+# Reference: https://twitter.com/avman1995/status/1126004832202964992
+
+xmr.pool.minergate.com
