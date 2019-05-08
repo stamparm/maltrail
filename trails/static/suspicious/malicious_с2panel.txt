@@ -2,6 +2,7 @@
 # See the file 'LICENSE' for copying permission
 
 # Reference: https://viriback.com/30-days-later-97-panels/
+# Reference: https://twitter.com/SevenLayerJedi/status/979030953275293702
 
 braithwalte.co.uk/ajjuu/admin.php
 braithwalte.co.uk/bass/admin.php
@@ -34,14 +35,23 @@ suruperet.ml/eret/surup/admin.php
 taineruder.ml/ruder/admin.php
 taineruder.ml/ruder/carik/admin.php
 theonlygoodman.com/alti/admin.php
+theonlygoodman.com/alti/gate.php
 theonlygoodman.com/aman/admin.php
+theonlygoodman.com/aman/gate.php
 theonlygoodman.com/bes/admin.php
+theonlygoodman.com/bes/gate.php
 theonlygoodman.com/dokuz/admin.php
+theonlygoodman.com/dokuz/gate.php
 theonlygoodman.com/dort/admin.php
+theonlygoodman.com/dort/gate.php
 theonlygoodman.com/on/admin.php
+theonlygoodman.com/on/gate.php
 theonlygoodman.com/sekiz/admin.php
+theonlygoodman.com/sekiz/gate.php
 theonlygoodman.com/yedi/admin.php
+theonlygoodman.com/yedi/gate.php
 thousandan.ml/lumin/sop/admin.php
+thousandan.ml/lumin/sop/gate.php
 totalguage.ml/guage/total/admin.php
 uy-akwaibom.ru/wise/Panel/admin.php
 viettrust-vn.net/adin/admin.php
@@ -394,3 +404,11 @@ cc01213.tmweb.ru/panel/admin.php
 # Reference: https://twitter.com/JayTHL/status/1124325778685087745
 
 simbatekhomes.com
+
+# Reference: https://twitter.com/MisterCh0c/status/1125731030567198720
+
+fristaylooo.ml/login
+
+# Reference: https://twitter.com/RickyLafleur1/status/1054730525653508096
+
+mx.neperepahano.top/login.php
