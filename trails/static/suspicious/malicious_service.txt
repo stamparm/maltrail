@@ -40,3 +40,7 @@ x7bwsmcore5fmx56.onion
 # Reference: https://twitter.com/John_Fokker/status/1124025426626658306
 
 wallstyizjhkrvmj.onion
+
+# Reference: https://twitter.com/rommeljoven17/status/975944681472245760
+
+xttkrsrjsoczm3ah.onion
