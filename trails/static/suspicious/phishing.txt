@@ -4310,3 +4310,7 @@ fixerman.top
 # Reference: https://twitter.com/ps66uk/status/1126065817093849088
 
 loomasubmit.top
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126081463835942913
+
+bankof-america.myvnc.com
