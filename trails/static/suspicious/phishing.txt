@@ -4322,3 +4322,7 @@ officeshare-point.com
 # Reference: https://twitter.com/illegalFawn/status/1126094587817275394
 
 banco-posta.online
+
+# Reference: https://twitter.com/PhishingAi/status/1126096804452261888
+
+login-blockrchain.com
