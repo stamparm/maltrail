@@ -4326,3 +4326,37 @@ banco-posta.online
 # Reference: https://twitter.com/PhishingAi/status/1126096804452261888
 
 login-blockrchain.com
+
+# Reference: https://twitter.com/illegalFawn/status/1126111580947714048
+# Reference: https://ghostbin.com/paste/gogbx/raw
+
+airfrąnce.com
+ămăzon.com
+ăvăst.com
+btcťurķ.com
+btćtuŕķ.com
+bţċturk.com
+coınbase.com
+ebăy.com
+iclọud.com
+ỉnstagram.com
+ņetflix.com
+wellsfärgo.com
+wèllsfargo.com
+yăhoo.com
+γαμοσ.com
+xn--airfrnce-m8a.com
+xn--mzon-zsab.com
+xn--vst-8oab.com
+xn--btcur-s5a33a.com
+xn--bttu-mta40a9g.com
+xn--bturk-4xa92d.com
+xn--conbase-sfb.com
+xn--eby-bpa.com
+xn--iclud-481b.com
+xn--nstagram-w70d.com
+xn--etflix-veb.com
+xn--wellsfrgo-02a.com
+xn--wllsfargo-03a.com
+xn--yhoo-0sa.com
+xn--mxad2amu.com
