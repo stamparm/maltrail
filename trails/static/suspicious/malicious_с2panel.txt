@@ -412,3 +412,7 @@ fristaylooo.ml/login
 # Reference: https://twitter.com/RickyLafleur1/status/1054730525653508096
 
 mx.neperepahano.top/login.php
+
+# Reference: https://twitter.com/de_aviation/status/1125099666218078218
+
+mozilla.theworkpc.com
