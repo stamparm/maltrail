@@ -4314,3 +4314,7 @@ loomasubmit.top
 # Reference: https://twitter.com/malwrhunterteam/status/1126081463835942913
 
 bankof-america.myvnc.com
+
+# Reference: https://twitter.com/IpNigh/status/1126007566084001792
+
+officeshare-point.com
