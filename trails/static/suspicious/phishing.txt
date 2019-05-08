@@ -4207,3 +4207,102 @@ safety-review-section-53.cf
 safety-review-section-54.cf
 safety-review-section-55.cf
 safety-review-section-56.cf
+
+# Reference: https://twitter.com/malwrhunterteam/status/1125740377070288898
+
+whatsyourname.ddnsking.com
+
+# Reference: https://twitter.com/PhishingAi/status/1125759292081037312
+# Reference: https://pastebin.com/aHSXTVMW
+
+www-slack.com
+slack-email.com
+slack-mail.com
+slack-message.com
+slack-notification.com
+messageslack.com
+online-slack.com
+slackmessage.com
+slackdevelopment.info
+slack-autoresponder.com
+slackautoresponder.com
+
+# Reference: https://twitter.com/ninjininji/status/1125752160103219202
+
+azurewebsites.net
+
+# Reference: https://twitter.com/illegalFawn/status/1125760127611678721
+
+aggiorna-date-2019.org
+ppittaggiorn.com
+
+# Reference: https://twitter.com/PhishingAi/status/1125775772289982464
+
+authentication-vpn-set.com
+
+# Reference: https://twitter.com/ANeilan/status/1125804485106896897
+# Reference: https://pastebin.com/98rhCafP
+
+chase-suppors.cf
+chase-suppors.ga
+chase-suppors.gq
+chase-suppors.ml
+chase-supporss.cf
+chase-supporss.ga
+chase-supporss.gq
+chase-supporss.ml
+chase-supporss.tk
+chaseesupportss.tk
+
+# Reference: https://twitter.com/packet_Wire/status/1125813212065271808
+
+webcareforebayallstaff.ontrapages.com
+
+# Reference: https://twitter.com/JayTHL/status/1125820565196029953
+
+onedrive-login-live.firebaseapp.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1125824112461590529
+
+b-chase-com-515be.firebaseapp.com
+onedrive-file.firebaseapp.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1125826028314796032
+
+review-wage.firebaseapp.com
+review-salaries.firebaseapp.com
+review-salaries1.firebaseapp.com
+
+# Reference: https://twitter.com/packet_Wire/status/1125829389713854464
+
+furynationbikers.club
+
+# Reference: https://otx.alienvault.com/pulse/5cd17160a41bc62201dcced4
+# Reference: https://equalit.ie/deflect-labs-report-6/
+
+email-service.host
+email-session.host
+support-email.site
+support-email.host
+email-support.host
+myconnection.website
+ecoit.email
+my-cabinet.com
+my-id.top
+msoffice365-online.org
+secretonline.top
+m-youtube.top
+auth-mail.com
+mail-help-support.info
+mail-support.info
+auth-mail.me
+auth-login.com
+email-x.com
+auth-mail.ru
+mail-auth.top
+msoffice365.win
+bit-ly.host
+m-youtube.org
+vzlom.top
+pochta.top
+fixerman.top
