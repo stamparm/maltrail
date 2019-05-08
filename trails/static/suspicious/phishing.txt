@@ -4318,3 +4318,7 @@ bankof-america.myvnc.com
 # Reference: https://twitter.com/IpNigh/status/1126007566084001792
 
 officeshare-point.com
+
+# Reference: https://twitter.com/illegalFawn/status/1126094587817275394
+
+banco-posta.online
