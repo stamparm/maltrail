@@ -189,3 +189,11 @@ statconuter.com/c.php
 # Reference: https://twitter.com/JCyberSec_/status/1124290346668777505
 
 /g4f9sokfo2ecegn2twq4u3t7.php
+
+# Reference: https://app.any.run/tasks/3068b154-d6f2-4483-ae72-60fbd5f3467f
+
+/cmd.php?hwid=
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1126020627075403776
+
+/pabury473675.php
