@@ -63,3 +63,28 @@
 
 /Second.hta
 /temp.hta
+
+# Reference: https://twitter.com/DissectMalware/status/1126384963497205762
+
+/ihenketata2019.hta
+/out-802561251.hta
+/out-2069830595.hta
+/out-427331541.hta
+/out-270833413.hta
+/out-746027731.hta
+/out-890192022.hta
+/out-1389213074.hta
+/out-325515559.hta
+/out-413662816.hta
+/out-961903221.hta
+/out-1719427273.hta
+/out-167611131.hta
+/out-642154941.hta
+/out-1033585073.hta
+/out-1181438660.hta
+/out-43874915.hta
+/out-288511419.hta
+/out-1053850352.hta
+/out-1841585389.hta
+/task2.hta
+/tk.hta
