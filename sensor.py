@@ -782,7 +782,7 @@ def init():
 
                 try:
                     module = __import__(filename[:-3].encode(sys.getfilesystemencoding()))
-                except (ImportError, SyntaxError), msg:
+                except (ImportError, SyntaxError) as msg:
                     exit("[!] unable to import plugin script '%s' (%s)" % (filename, msg))
 
                 found = False
@@ -975,7 +975,7 @@ def monitor():
             time.sleep(1)
 
         print("[i] all capturing interfaces closed")
-    except SystemError, ex:
+    except SystemError as ex:
         if "error return without" in str(ex):
             print("\r[x] stopping (Ctrl-C pressed)")
         else:
@@ -1051,7 +1051,7 @@ if __name__ == "__main__":
 
     try:
         main()
-    except SystemExit, ex:
+    except SystemExit as ex:
         show_final = False
 
         if isinstance(getattr(ex, "message"), basestring):

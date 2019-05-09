@@ -106,7 +106,7 @@ if __name__ == "__main__":
 
     try:
         main()
-    except SystemExit, ex:
+    except SystemExit as ex:
         show_final = False
 
         if isinstance(getattr(ex, "message"), basestring):
