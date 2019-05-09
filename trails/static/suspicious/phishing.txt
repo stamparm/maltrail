@@ -4380,3 +4380,7 @@ ebusiness.rs
 # Reference: https://twitter.com/ninjininji/status/1126493616858226688
 
 bakaonicetruck.info
+
+# Reference: https://twitter.com/JayTHL/status/1126555618985291776
+
+secured-ourtime.droppages.com
