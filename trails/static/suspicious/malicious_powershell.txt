@@ -54,3 +54,12 @@
 # Reference: https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
 
 /msinp.ps1
+
+# Reference: https://twitter.com/DissectMalware/status/1126384963497205762
+
+/bros.ps1
+/out-1215218964.ps1
+/out-1717054512.ps1
+/out-1552287668.ps1
+/papa.ps1
+/youngest.ps1
