@@ -4388,7 +4388,3 @@ secured-ourtime.droppages.com
 # Reference: https://twitter.com/demonslay335/status/1098699712960651266
 
 mso365.tech
-
-# Reference: https://twitter.com/JayTHL/status/1126723500108959745
-
-windows.net
