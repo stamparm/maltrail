@@ -4443,3 +4443,7 @@ xn--paypa-io3s.com
 xn--redbu-gub.com
 xn--yutube-p9a.com
 xn--yutube-p9a.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126827090563817472
+
+7short1long.de
