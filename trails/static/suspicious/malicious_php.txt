@@ -209,3 +209,7 @@ authconfig.imrris.com/validate.php
 # Reference: https://twitter.com/malwrhunterteam/status/1126830402834968576
 
 authconfig.motonsoft.com/validate.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126834434504822789
+
+oneonlinetrue.com/cgi-bin/handler.php
