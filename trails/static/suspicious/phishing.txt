@@ -4492,6 +4492,10 @@ owamailweb.z9.web.core.windows.net
 
 kjscgck5ypoct.z19.web.core.windows.net
 
+# Reference: https://twitter.com/malwrhunterteam/status/1126850750708109315
+
+at5uspreadsheetbonusksea.z19.web.core.windows.net
+
 # Reference: https://twitter.com/PhishingAi/status/1126821220337508352
 
 personal-accountsuk.com
