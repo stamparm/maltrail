@@ -4459,3 +4459,7 @@ outlook2019update.z19.web.core.windows.net
 # Reference: https://twitter.com/malwrhunterteam/status/1126828126682722304
 
 webmaildomain.z9.web.core.windows.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126830402834968576
+
+onedrives3d64z59r7xdotzi.z19.web.core.windows.net
