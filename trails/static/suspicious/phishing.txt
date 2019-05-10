@@ -4488,6 +4488,10 @@ sharepointeso365notices2.z13.web.core.windows.net
 
 owamailweb.z9.web.core.windows.net
 
+# Reference: https://twitter.com/malwrhunterteam/status/1126848369190686721
+
+kjscgck5ypoct.z19.web.core.windows.net
+
 # Reference: https://twitter.com/PhishingAi/status/1126821220337508352
 
 personal-accountsuk.com
