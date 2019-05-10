@@ -4455,3 +4455,7 @@ argoscard-secure-onlineverify.com
 # Reference: https://twitter.com/malwrhunterteam/status/1126827090563817472
 
 outlook2019update.z19.web.core.windows.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126828126682722304
+
+webmaildomain.z9.web.core.windows.net
