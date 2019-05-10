@@ -213,3 +213,7 @@ authconfig.motonsoft.com/validate.php
 # Reference: https://twitter.com/malwrhunterteam/status/1126834434504822789
 
 oneonlinetrue.com/cgi-bin/handler.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126835745640067074
+
+razire.com/root/handler.php
