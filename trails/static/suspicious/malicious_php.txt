@@ -222,3 +222,5 @@ razire.com/root/handler.php
 
 ptlonghigroup.us/01001/pain.php
 ptlonghigroup.us/01001/pain2.php
+/01001/pain.php
+/01001/pain2.php
