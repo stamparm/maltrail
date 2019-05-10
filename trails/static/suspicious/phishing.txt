@@ -4495,3 +4495,7 @@ personal-accountsuk.com
 # Reference: https://twitter.com/smica83/status/1126840383558815744
 
 wingsts.com
+
+# Reference: https://twitter.com/IpNigh/status/1126820273280430080
+
+covalent-curtains.000webhostapp.com
