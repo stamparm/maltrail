@@ -4496,6 +4496,10 @@ kjscgck5ypoct.z19.web.core.windows.net
 
 at5uspreadsheetbonusksea.z19.web.core.windows.net
 
+# Reference: https://twitter.com/malwrhunterteam/status/1126854210862092288
+
+0ffice365oulookupdates.z31.web.core.windows.net
+
 # Reference: https://twitter.com/PhishingAi/status/1126821220337508352
 
 personal-accountsuk.com
