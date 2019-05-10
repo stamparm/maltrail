@@ -4388,3 +4388,9 @@ secured-ourtime.droppages.com
 # Reference: https://twitter.com/demonslay335/status/1098699712960651266
 
 mso365.tech
+
+# Reference: https://twitter.com/illegalFawn/status/1126760045843177473
+
+unicredit-posta-it-it.com
+it-unicredit-it-posta-it.com
+unicredit.international
