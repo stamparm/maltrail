@@ -4447,3 +4447,7 @@ xn--yutube-p9a.com
 # Reference: https://twitter.com/malwrhunterteam/status/1126827090563817472
 
 7short1long.de
+
+# Reference: https://twitter.com/PhishingAi/status/1126827753704050688
+
+argoscard-secure-onlineverify.com
