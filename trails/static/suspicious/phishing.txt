@@ -4500,6 +4500,10 @@ at5uspreadsheetbonusksea.z19.web.core.windows.net
 
 0ffice365oulookupdates.z31.web.core.windows.net
 
+# Reference: https://twitter.com/malwrhunterteam/status/1126855753791356928
+
+apprackspaceshosting.z32.web.core.windows.net
+
 # Reference: https://twitter.com/PhishingAi/status/1126821220337508352
 
 personal-accountsuk.com
