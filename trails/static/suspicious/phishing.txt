@@ -4479,6 +4479,10 @@ officemtg.z13.web.core.windows.net
 456578897865435647586796.z21.web.core.windows.net
 wrongpassword48759450308.z21.web.core.windows.net
 
+# Reference: https://twitter.com/malwrhunterteam/status/1126844312053067776
+
+sharepointeso365notices2.z13.web.core.windows.net
+
 # Reference: https://twitter.com/PhishingAi/status/1126821220337508352
 
 personal-accountsuk.com
