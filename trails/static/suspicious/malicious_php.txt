@@ -205,3 +205,7 @@ statconuter.com/c.php
 # Reference: https://twitter.com/malwrhunterteam/status/1126821015567384582
 
 authconfig.imrris.com/validate.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126830402834968576
+
+authconfig.motonsoft.com/validate.php
