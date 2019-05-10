@@ -586,7 +586,7 @@ Hito
 
 # Reference: https://securitywithoutborders.org/blog/2019/03/29/exodus.html
 
-it.promofferte
+it\.promofferte
 
 # Reference: https://twitter.com/SettiDavide89/status/1116682737455382528
 
@@ -602,7 +602,7 @@ QXQ_35
 
 # Reference: https://blog.talosintelligence.com/2018/02/targeted-attacks-in-middle-east.html
 
-iq.46
+iq\.46
 
 # Reference: https://twitter.com/360Netlab/status/974374944711815168
 
@@ -642,7 +642,6 @@ Google Chrome
 # Reference: https://fumik0.com/2019/05/03/lets-nuke-megumin-trojan/
 
 Megumin
-Megumin/2.0
 
 # Reference: https://twitter.com/bad_packets/status/1124922288862666753
 
@@ -655,3 +654,7 @@ thricer
 # Reference: https://twitter.com/rommeljoven17/status/1037982220005195776
 
 Owari
+
+# Reference: https://www.hybrid-analysis.com/sample/442fe9bb6820ba79ca48429df8e5a01e991302be2a0d45a35c99c5d006a1d64a
+
+FA\.G\.4\.5
