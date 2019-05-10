@@ -228,3 +228,7 @@ ptlonghigroup.us/01001/pain2.php
 # Reference: https://twitter.com/malwrhunterteam/status/1126844312053067776
 
 /spemmg.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126848369190686721
+
+oneonlinetrue.com/Cacha/handler.php
