@@ -4463,3 +4463,7 @@ webmaildomain.z9.web.core.windows.net
 # Reference: https://twitter.com/malwrhunterteam/status/1126830402834968576
 
 onedrives3d64z59r7xdotzi.z19.web.core.windows.net
+
+# Reference: https://twitter.com/PhishingAi/status/1126821220337508352
+
+personal-accountsuk.com
