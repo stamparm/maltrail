@@ -4507,3 +4507,7 @@ wingsts.com
 # Reference: https://twitter.com/IpNigh/status/1126820273280430080
 
 covalent-curtains.000webhostapp.com
+
+# Reference: https://twitter.com/ninjininji/status/1126847710009499648
+
+alphaprintcompany.xyz
