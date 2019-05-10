@@ -4384,3 +4384,7 @@ bakaonicetruck.info
 # Reference: https://twitter.com/JayTHL/status/1126555618985291776
 
 secured-ourtime.droppages.com
+
+# Reference: https://twitter.com/demonslay335/status/1098699712960651266
+
+mso365.tech
