@@ -4394,3 +4394,8 @@ mso365.tech
 unicredit-posta-it-it.com
 it-unicredit-it-posta-it.com
 unicredit.international
+
+# Reference: https://twitter.com/illegalFawn/status/1126763712709152768
+
+aggiornainfo.com
+registra-dati-privacy.com
