@@ -217,3 +217,8 @@ oneonlinetrue.com/cgi-bin/handler.php
 # Reference: https://twitter.com/malwrhunterteam/status/1126835745640067074
 
 razire.com/root/handler.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126837652571992065
+
+ptlonghigroup.us/01001/pain.php
+ptlonghigroup.us/01001/pain2.php
