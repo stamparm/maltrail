@@ -4470,6 +4470,10 @@ office365usergrantaccess.z11.web.core.windows.net
 oneonlinetrue.com
 dgcusign.com
 
+# Reference: https://twitter.com/malwrhunterteam/status/1126835745640067074
+
+officemtg.z13.web.core.windows.net
+
 # Reference: https://twitter.com/PhishingAi/status/1126821220337508352
 
 personal-accountsuk.com
