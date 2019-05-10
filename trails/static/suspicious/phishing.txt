@@ -4487,3 +4487,7 @@ sharepointeso365notices2.z13.web.core.windows.net
 # Reference: https://twitter.com/PhishingAi/status/1126821220337508352
 
 personal-accountsuk.com
+
+# Reference: https://twitter.com/smica83/status/1126840383558815744
+
+wingsts.com
