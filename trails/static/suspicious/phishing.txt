@@ -4464,6 +4464,10 @@ webmaildomain.z9.web.core.windows.net
 
 onedrives3d64z59r7xdotzi.z19.web.core.windows.net
 
+# Reference: https://twitter.com/malwrhunterteam/status/1126834434504822789
+
+office365usergrantaccess.z11.web.core.windows.net
+
 # Reference: https://twitter.com/PhishingAi/status/1126821220337508352
 
 personal-accountsuk.com
