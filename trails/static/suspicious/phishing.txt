@@ -4560,3 +4560,7 @@ playoffsmode.com
 # Reference: https://twitter.com/IpNigh/status/1127123014099918849
 
 amrenovation.ca
+
+# Reference: https://twitter.com/IpNigh/status/1127064590523817984
+
+member-validation-support.com
