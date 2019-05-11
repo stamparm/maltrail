@@ -4480,8 +4480,16 @@ officemtg.z13.web.core.windows.net
 wrongpassword48759450308.z21.web.core.windows.net
 
 # Reference: https://twitter.com/malwrhunterteam/status/1126844312053067776
+# Reference: https://twitter.com/malwrhunterteam/status/1127124262735814657
 
+sharepointeso365notices1.z13.web.core.windows.net
 sharepointeso365notices2.z13.web.core.windows.net
+sharepointeso365notices3.z13.web.core.windows.net
+sharepointeso365notices4.z13.web.core.windows.net
+sharepointeso365notices5.z13.web.core.windows.net
+sharepointeso365notices6.z13.web.core.windows.net
+sharepointeso365notices7.z13.web.core.windows.net
+sharepointeso365notices9.z13.web.core.windows.net
 67bb1e91008828e39d577f8adbfddccbf.tech
 
 # Reference: https://twitter.com/malwrhunterteam/status/1126846613073346560
