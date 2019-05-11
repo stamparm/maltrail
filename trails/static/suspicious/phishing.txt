@@ -4523,3 +4523,9 @@ alphaprintcompany.xyz
 # Reference: https://twitter.com/dvk01uk/status/1127048977491345408
 
 seguridaddelenlaceweb.weebly.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126900674812362754
+
+clunegc-oneboxmessage-secure.com
+lagosmanamanamn.azurewebsites.net
+meet-away-metric.azurewebsites.net
