@@ -4504,6 +4504,11 @@ at5uspreadsheetbonusksea.z19.web.core.windows.net
 
 apprackspaceshosting.z32.web.core.windows.net
 
+# Reference: https://twitter.com/malwrhunterteam/status/1126862211442532354
+
+659184webapp10052019view.z19.web.core.windows.net
+allzert.win
+
 # Reference: https://twitter.com/PhishingAi/status/1126821220337508352
 
 personal-accountsuk.com
