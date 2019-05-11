@@ -1856,3 +1856,8 @@ webunstop.org/wpad.dat
 
 anyplace-control.com
 anyplace-gateway.info
+
+# Reference: https://twitter.com/raby_mr/status/1126706972466659328
+# Reference: https://app.any.run/tasks/8d827ab9-2ce5-4730-8652-b07328fa7814
+
+lifopp-sacoho.com
