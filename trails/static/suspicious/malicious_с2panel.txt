@@ -429,3 +429,7 @@ iujoaqstqiywertgpu.club/login.php
 # Reference: https://twitter.com/James_inthe_box/status/1126933667429797888
 
 http://194.67.223.90/auth.php
+
+# Reference: https://twitter.com/The_d0c_T0R/status/1127233691451891712
+
+88.184.237.14:8888/login
