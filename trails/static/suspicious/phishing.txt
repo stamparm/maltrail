@@ -4533,3 +4533,7 @@ meet-away-metric.azurewebsites.net
 # Reference: https://twitter.com/malwrhunterteam/status/1126894905668849664
 
 letshaveanotherround.azurewebsites.net
+
+# Reference: https://twitter.com/JayTHL/status/1127101416521306113
+
+pecktiongchooncomdropbox1cp2ueuqqjfanqywmvwhrtqfn4r2e7jznf.azurewebsites.net
