@@ -240,3 +240,9 @@ creacionesdelsac.com/Cacha/handler.php
 # Reference: https://twitter.com/malwrhunterteam/status/1126855753791356928
 
 poa-oreo.co.uk/racks/space/p.php
+
+# Reference: https://twitter.com/malware_traffic/status/810966197881671680
+# Reference: http://malware-traffic-analysis.net/2016/12/19/index.html
+
+/drb31.php
+/d8/ul.php
