@@ -4568,3 +4568,7 @@ member-validation-support.com
 # Reference: https://twitter.com/malwrhunterteam/status/1127233502502633473
 
 docusignsotres.azurewebsites.net
+
+# Reference: https://twitter.com/IpNigh/status/1127242929435754496
+
+servicesupport.ddns.net
