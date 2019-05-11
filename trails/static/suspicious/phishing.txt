@@ -4529,3 +4529,7 @@ seguridaddelenlaceweb.weebly.com
 clunegc-oneboxmessage-secure.com
 lagosmanamanamn.azurewebsites.net
 meet-away-metric.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126894905668849664
+
+letshaveanotherround.azurewebsites.net
