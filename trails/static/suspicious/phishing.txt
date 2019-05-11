@@ -4564,3 +4564,7 @@ amrenovation.ca
 # Reference: https://twitter.com/IpNigh/status/1127064590523817984
 
 member-validation-support.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1127233502502633473
+
+docusignsotres.azurewebsites.net
