@@ -4572,3 +4572,7 @@ docusignsotres.azurewebsites.net
 # Reference: https://twitter.com/IpNigh/status/1127242929435754496
 
 servicesupport.ddns.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1127277860249583616
+
+online-goe.azurewebsites.net
