@@ -425,3 +425,7 @@ r1jy.tk/auth.php
 # Reference: https://app.any.run/tasks/5ec68ba7-0f10-45ac-a0ec-8bb7a84021d1
 
 iujoaqstqiywertgpu.club/login.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1126933667429797888
+
+http://194.67.223.90/auth.php
