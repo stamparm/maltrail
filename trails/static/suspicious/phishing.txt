@@ -4594,3 +4594,7 @@ internet-security-alert-7007.gq
 # Reference: https://twitter.com/Cyberfishio/status/1127567530841792512
 
 l7groupcorp.com
+
+# Reference: https://twitter.com/smica83/status/1127606807315324936
+
+maskridercorp.com
