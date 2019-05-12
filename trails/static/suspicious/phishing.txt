@@ -4590,3 +4590,7 @@ testonloneverify.azurewebsites.net
 internet-security-alert-7007.cf
 internet-security-alert-7007.ga
 internet-security-alert-7007.gq
+
+# Reference: https://twitter.com/Cyberfishio/status/1127567530841792512
+
+l7groupcorp.com
