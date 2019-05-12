@@ -4580,3 +4580,9 @@ online-goe.azurewebsites.net
 # Reference: https://twitter.com/malwrhunterteam/status/1127278911908397061
 
 testonloneverify.azurewebsites.net
+
+# Reference: https://twitter.com/ANeilan/status/1127413051555307520
+
+internet-security-alert-7007.cf
+internet-security-alert-7007.ga
+internet-security-alert-7007.gq
