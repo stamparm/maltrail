@@ -379,3 +379,7 @@ dzoz.us/js/js.js
 # Reference: https://twitter.com/gwillem/status/1127617495911804935
 
 assets.pcrl.co/js/jstracker.min.js
+
+# Reference: https://twitter.com/gwillem/status/1127619061725241349
+
+code.cloudcms.com/alpaca/1.5.17/bootstrap/alpaca.min.css
