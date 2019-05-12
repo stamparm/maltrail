@@ -375,3 +375,7 @@ dzoz.us/js/js.js
 # Reference: https://otx.alienvault.com/pulse/5cc71ac7631c3a2f3c67ba7f
 
 /assests/eng_edge_new.html
+
+# Reference: https://twitter.com/gwillem/status/1127617495911804935
+
+assets.pcrl.co/js/jstracker.min.js
