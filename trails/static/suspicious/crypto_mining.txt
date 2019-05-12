@@ -68,7 +68,7 @@ hellominer.com
 
 # Reference: https://www.virustotal.com/#/file/179c5390ba2023402283104fd85d6394033976bc2f21e45d32e7557cafaa7d41/detection
 
-www.sparechange.io
+sparechange.io
 
 # Reference: https://blog.talosintelligence.com/2018/08/rocke-champion-of-monero-miners.html
 
@@ -118,3 +118,8 @@ r.twotouchauthentication.online
 # Reference: https://twitter.com/luc4m/status/1123126706943008768
 
 139.224.15.175:26591
+
+# Reference: https://www.gdatasoftware.com/blog/2019/05/31695-strange-bits-smuggling-malware-github
+
+zarabotaibitok.ru
+61.128.111.164:3335
