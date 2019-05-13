@@ -4602,3 +4602,28 @@ maskridercorp.com
 # Reference: https://twitter.com/malwrhunterteam/status/1127821291740901376
 
 freefixes12.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1127829035713736710
+
+quickly01.azurewebsites.net
+quickly02.azurewebsites.net
+quickly03.azurewebsites.net
+quickly04.azurewebsites.net
+quickly05.azurewebsites.net
+quickly06.azurewebsites.net
+quickly07.azurewebsites.net
+quickly08.azurewebsites.net
+quickly09.azurewebsites.net
+quickly010.azurewebsites.net
+ktrina2.azurewebsites.net
+ktrina3.azurewebsites.net
+ktrina4.azurewebsites.net
+ktrina5.azurewebsites.net
+ktrina6.azurewebsites.net
+ktrina7.azurewebsites.net
+ktrina8.azurewebsites.net
+ktrina8.azurewebsites.net
+ktrina8.azurewebsites.net
+ktrina9.azurewebsites.net
+ktrina10.azurewebsites.net
+ktrina11.azurewebsites.net
