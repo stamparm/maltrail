@@ -4786,3 +4786,7 @@ officeoutlook365webapp.z8.web.core.windows.net
 # Reference: https://twitter.com/malwrhunterteam/status/1127949648902144000
 
 mychasing.publicvm.com
+
+# Reference: https://twitter.com/ActorExpose/status/1127994474905387009
+
+secureboa.webcindario.com
