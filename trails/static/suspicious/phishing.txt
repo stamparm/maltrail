@@ -4600,8 +4600,14 @@ l7groupcorp.com
 maskridercorp.com
 
 # Reference: https://twitter.com/malwrhunterteam/status/1127821291740901376
+# Reference: https://twitter.com/malwrhunterteam/status/1127832512175198208
 
+freefixes11.azurewebsites.net
 freefixes12.azurewebsites.net
+freefixes13.azurewebsites.net
+freefixes14.azurewebsites.net
+freefixes15.azurewebsites.net
+freefixes16.azurewebsites.net
 
 # Reference: https://twitter.com/malwrhunterteam/status/1127829035713736710
 
