@@ -4777,3 +4777,7 @@ zyaery.com
 # Reference: https://twitter.com/malwrhunterteam/status/1127946486321434624
 
 updatelog-info.servehttp.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1127945201841049600
+
+officeoutlook365webapp.z8.web.core.windows.net
