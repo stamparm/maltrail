@@ -4773,3 +4773,7 @@ zyaerq.com
 zyaert.com
 zyaeru.com
 zyaery.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1127946486321434624
+
+updatelog-info.servehttp.com
