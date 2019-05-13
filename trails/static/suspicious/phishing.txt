@@ -4674,3 +4674,7 @@ secuartyserver01.azurewebsites.net
 attivazione2019.com
 decreto-abilitazione-sicurezzaweb.com
 sicurezzaweb-poste.com
+
+# Reference: https://twitter.com/IpNigh/status/1127786418712010753
+
+verification-int-paypal-login.reviewpayment.net
