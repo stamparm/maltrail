@@ -4795,3 +4795,7 @@ secureboa.webcindario.com
 
 domainpoint.z13.web.core.windows.net
 hi-008.azurewebsites.net
+
+# Reference: https://twitter.com/packet_Wire/status/1128036024431595521
+
+microsofn642b7o2un27wptm.z13.web.core.windows.net
