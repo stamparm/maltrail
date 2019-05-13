@@ -4598,3 +4598,7 @@ l7groupcorp.com
 # Reference: https://twitter.com/smica83/status/1127606807315324936
 
 maskridercorp.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1127821291740901376
+
+freefixes12.azurewebsites.net
