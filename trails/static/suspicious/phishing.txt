@@ -4637,3 +4637,16 @@ ktrina11.azurewebsites.net
 # Reference: https://twitter.com/illegalFawn/status/1127841077845688320
 
 ddwswsd.blogspot.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1127841517723443200
+
+serviceserver11.azurewebsites.net
+serviceserver12.azurewebsites.net
+serviceserver13.azurewebsites.net
+serviceserver14.azurewebsites.net
+serviceserver15.azurewebsites.net
+serviceserver16.azurewebsites.net
+serviceserver17.azurewebsites.net
+serviceserver18.azurewebsites.net
+serviceserver19.azurewebsites.net
+serviceserver20.azurewebsites.net
