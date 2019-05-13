@@ -4668,3 +4668,9 @@ eswert10.azurewebsites.net
 
 secuartyserver.azurewebsites.net
 secuartyserver01.azurewebsites.net
+
+# Reference: https://twitter.com/illegalFawn/status/1127882591527473152
+
+attivazione2019.com
+decreto-abilitazione-sicurezzaweb.com
+sicurezzaweb-poste.com
