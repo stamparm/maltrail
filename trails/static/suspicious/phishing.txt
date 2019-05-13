@@ -4663,3 +4663,8 @@ eswert7.azurewebsites.net
 eswert8.azurewebsites.net
 eswert9.azurewebsites.net
 eswert10.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1127882230280249344
+
+secuartyserver.azurewebsites.net
+secuartyserver01.azurewebsites.net
