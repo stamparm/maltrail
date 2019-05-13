@@ -63,3 +63,7 @@
 /out-1552287668.ps1
 /papa.ps1
 /youngest.ps1
+
+# Reference: https://twitter.com/sudosev/status/1126552059334070272
+
+/Invoke-Mimikatz.ps1
