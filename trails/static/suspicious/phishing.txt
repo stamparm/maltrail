@@ -4633,3 +4633,7 @@ ktrina8.azurewebsites.net
 ktrina9.azurewebsites.net
 ktrina10.azurewebsites.net
 ktrina11.azurewebsites.net
+
+# Reference: https://twitter.com/illegalFawn/status/1127841077845688320
+
+ddwswsd.blogspot.com
