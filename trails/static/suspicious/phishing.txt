@@ -4678,3 +4678,7 @@ sicurezzaweb-poste.com
 # Reference: https://twitter.com/IpNigh/status/1127786418712010753
 
 verification-int-paypal-login.reviewpayment.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1127941875002818561
+
+bsssiii333ssssshhhh.azurewebsites.net
