@@ -4790,3 +4790,8 @@ mychasing.publicvm.com
 # Reference: https://twitter.com/ActorExpose/status/1127994474905387009
 
 secureboa.webcindario.com
+
+# Reference: https://twitter.com/WifiRumHam/status/1127971696126783488
+
+domainpoint.z13.web.core.windows.net
+hi-008.azurewebsites.net
