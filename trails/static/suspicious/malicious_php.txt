@@ -250,3 +250,7 @@ poa-oreo.co.uk/racks/space/p.php
 # Reference: https://twitter.com/malwrhunterteam/status/1127945201841049600
 
 namecakes.com/epl/ajax.php
+
+# Reference: https://twitter.com/WifiRumHam/status/1127971696126783488
+
+westflies.com/api/api.php
