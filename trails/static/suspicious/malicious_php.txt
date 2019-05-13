@@ -246,3 +246,7 @@ poa-oreo.co.uk/racks/space/p.php
 
 /drb31.php
 /d8/ul.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1127945201841049600
+
+namecakes.com/epl/ajax.php
