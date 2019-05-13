@@ -4650,3 +4650,16 @@ serviceserver17.azurewebsites.net
 serviceserver18.azurewebsites.net
 serviceserver19.azurewebsites.net
 serviceserver20.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1127881022165544960
+
+eswert1.azurewebsites.net
+eswert2.azurewebsites.net
+eswert3.azurewebsites.net
+eswert4.azurewebsites.net
+eswert5.azurewebsites.net
+eswert6.azurewebsites.net
+eswert7.azurewebsites.net
+eswert8.azurewebsites.net
+eswert9.azurewebsites.net
+eswert10.azurewebsites.net
