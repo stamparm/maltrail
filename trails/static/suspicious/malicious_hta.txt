@@ -26,6 +26,7 @@
 # Reference: https://twitter.com/blackorbird/status/1118334122592591872
 # Reference: https://raw.githubusercontent.com/blackorbird/APT_REPORT/master/kimsuky/Smoke%20Screen.pdf
 # Reference: https://blog.alyac.co.kr/2299 (Korean)
+# Reference: https://blog.alyac.co.kr/2243 (Korean)
 
 /Ahfzo0.hta
 /Ersrr0.hta
@@ -38,9 +39,11 @@
 /Mylqn0.hta
 /Pkjjy.hta
 /Qfnaq.hta
+/Qfnaq0.hta
 /Qzqrn0.hta
 /second.hta
 /szgfj0.hta
+/Vkggy0.hta
 /xtgnb0.hta
 /Yluhi0.hta
 
