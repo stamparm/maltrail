@@ -4782,3 +4782,7 @@ updatelog-info.servehttp.com
 
 joshuablackwilkins.com
 officeoutlook365webapp.z8.web.core.windows.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1127949648902144000
+
+mychasing.publicvm.com
