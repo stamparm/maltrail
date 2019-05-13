@@ -375,3 +375,16 @@ dzoz.us/js/js.js
 # Reference: https://otx.alienvault.com/pulse/5cc71ac7631c3a2f3c67ba7f
 
 /assests/eng_edge_new.html
+
+# Reference: https://twitter.com/gwillem/status/1127617495911804935
+# Reference: https://twitter.com/CERTA_intNsec/status/1127849427572527104
+
+assets.pcrl.co/js/jstracker.min.js
+
+# Reference: https://twitter.com/gwillem/status/1127619061725241349
+
+code.cloudcms.com/alpaca/1.5.17/bootstrap/alpaca.min.css
+
+# Reference: https://twitter.com/gwillem/status/1127890329175244800
+
+d20iczrsxk7wft.cloudfront.net/botwverified/badge.js
