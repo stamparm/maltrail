@@ -377,6 +377,7 @@ dzoz.us/js/js.js
 /assests/eng_edge_new.html
 
 # Reference: https://twitter.com/gwillem/status/1127617495911804935
+# Reference: https://twitter.com/CERTA_intNsec/status/1127849427572527104
 
 assets.pcrl.co/js/jstracker.min.js
 
