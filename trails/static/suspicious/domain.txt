@@ -4959,6 +4959,6 @@ zik.dj
 
 iok.la
 
-# Reference: # Reference: https://www.ptsecurity.com/ru-ru/research/analytics/operation-taskmasters-2019/ (Russian)
+# Reference: https://www.ptsecurity.com/ru-ru/research/analytics/operation-taskmasters-2019/ (Russian)
 
 5wya.com
