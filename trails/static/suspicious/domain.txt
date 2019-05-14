@@ -4962,3 +4962,8 @@ iok.la
 # Reference: https://www.ptsecurity.com/ru-ru/research/analytics/operation-taskmasters-2019/ (Russian)
 
 5wya.com
+
+# Reference: https://securelist.com/scarcruft-continues-to-evolve-introduces-bluetooth-harvester/90729/
+# Reference: https://www.virustotal.com/gui/domain/nitesbr1.org/details
+
+nitesbr1.org
