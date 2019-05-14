@@ -5155,3 +5155,9 @@ account-confirm-74.ga
 account-confirm-74.gq
 account-confirm-74.tk
 account-confirm-74.ml
+
+# Reference: https://twitter.com/JayTHL/status/1128056178322411520
+
+excelfiles005.blob.core.windows.net
+excelfiles02.blob.core.windows.net
+excelfiles01.blob.core.windows.net
