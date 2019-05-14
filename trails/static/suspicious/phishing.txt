@@ -5260,3 +5260,7 @@ managed18.azurewebsites.net
 # Reference: https://twitter.com/PhishingAi/status/1128297771725799424
 
 cra-arc-gc-canada.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128302366837628929
+
+fa-www9-irs.linkpc.net
