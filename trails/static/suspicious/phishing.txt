@@ -5322,3 +5322,7 @@ office5buqtolhqt8hhvhy.z13.web.core.windows.net
 outlookmails.z32.web.core.windows.net
 preemee.blob.core.windows.net
 azaman.blob.core.windows.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128373209915645952
+
+apple-request.serveirc.com
