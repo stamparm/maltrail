@@ -5326,3 +5326,8 @@ azaman.blob.core.windows.net
 # Reference: https://twitter.com/malwrhunterteam/status/1128373209915645952
 
 apple-request.serveirc.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128386611715223552
+
+bzzzzkkkkeeeeee9999eee.azurewebsites.net
+taxisarvi.tk
