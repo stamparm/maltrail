@@ -5306,3 +5306,19 @@ ullacrbando.co.uk
 ullacrbando.uk
 ullacrtieo.co.uk
 ullacrtieo.uk
+
+# Reference: https://twitter.com/JayTHL/status/1128370652979843072
+# Reference: https://pastebin.com/raw/YmGkRRGd
+
+adobesecuredocument.z13.web.core.windows.net
+jumi.blob.core.windows.net
+microsofbnjgcebq9liknh2x.z13.web.core.windows.net
+microsofdxrt1myjlpb2z39n.z13.web.core.windows.net
+newdeliveryexpertmail.z13.web.core.windows.net
+apata.blob.core.windows.net
+docusignofflce365.z13.web.core.windows.net
+networkwatcherx.z13.web.core.windows.net
+office5buqtolhqt8hhvhy.z13.web.core.windows.net
+outlookmails.z32.web.core.windows.net
+preemee.blob.core.windows.net
+azaman.blob.core.windows.net
