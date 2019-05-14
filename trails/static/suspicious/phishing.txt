@@ -5214,3 +5214,25 @@ xn--etflix-vfb.com
 xn--outloo-1bb.com
 xn--wzzair-i8a.com
 xn--yhoo-bta.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128265737905295360
+
+managed.azurewebsites.net
+managed1.azurewebsites.net
+managed2.azurewebsites.net
+managed3.azurewebsites.net
+managed4.azurewebsites.net
+managed5.azurewebsites.net
+managed6.azurewebsites.net
+managed7.azurewebsites.net
+managed8.azurewebsites.net
+managed9.azurewebsites.net
+managed10.azurewebsites.net
+managed11.azurewebsites.net
+managed12.azurewebsites.net
+managed13.azurewebsites.net
+managed14.azurewebsites.net
+managed15.azurewebsites.net
+managed16.azurewebsites.net
+managed17.azurewebsites.net
+managed18.azurewebsites.net
