@@ -5264,3 +5264,7 @@ cra-arc-gc-canada.com
 # Reference: https://twitter.com/malwrhunterteam/status/1128302366837628929
 
 fa-www9-irs.linkpc.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128339126758137861
+
+mailboxoutlook.z1.web.core.windows.net
