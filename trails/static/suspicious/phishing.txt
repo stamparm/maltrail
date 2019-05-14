@@ -5214,3 +5214,23 @@ xn--etflix-vfb.com
 xn--outloo-1bb.com
 xn--wzzair-i8a.com
 xn--yhoo-bta.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128237669023088641
+
+runtime-server.azurewebsites.net
+runtime-server1.azurewebsites.net
+runtime-server3.azurewebsites.net
+runtime-server4.azurewebsites.net
+runtime-server5.azurewebsites.net
+runtime-server6.azurewebsites.net
+runtime-server7.azurewebsites.net
+runtime-server8.azurewebsites.net
+runtime-server9.azurewebsites.net
+runtime-server10.azurewebsites.net
+runtime-server11.azurewebsites.net
+runtime-server12.azurewebsites.net
+runtime-server13.azurewebsites.net
+runtime-server14.azurewebsites.net
+runtime-server15.azurewebsites.net
+runtime-server16.azurewebsites.net
+runtime-server17.azurewebsites.net
