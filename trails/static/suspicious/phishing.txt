@@ -5161,3 +5161,15 @@ account-confirm-74.ml
 excelfiles005.blob.core.windows.net
 excelfiles02.blob.core.windows.net
 excelfiles01.blob.core.windows.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128233235551588352
+
+2serverconection-65error.azurewebsites.net
+3serverconection-65error.azurewebsites.net
+4serverconection-65error.azurewebsites.net
+5serverconection-65error.azurewebsites.net
+6serverconection-65error.azurewebsites.net
+7serverconection-65error.azurewebsites.net
+8serverconection-65error.azurewebsites.net
+9serverconection-65error.azurewebsites.net
+10serverconection-65error.azurewebsites.net
