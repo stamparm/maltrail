@@ -1426,3 +1426,7 @@ pdns.cz
 # Reference: https://www.virustotal.com/gui/domain/tpddns.cn/relations
 
 tpddns.cn
+
+# Reference: https://www.virustotal.com/gui/domain/strangled.net/details
+
+strangled.net
