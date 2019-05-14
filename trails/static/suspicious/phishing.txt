@@ -5256,3 +5256,7 @@ managed15.azurewebsites.net
 managed16.azurewebsites.net
 managed17.azurewebsites.net
 managed18.azurewebsites.net
+
+# Reference: https://twitter.com/PhishingAi/status/1128297771725799424
+
+cra-arc-gc-canada.com
