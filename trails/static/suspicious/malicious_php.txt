@@ -246,3 +246,33 @@ poa-oreo.co.uk/racks/space/p.php
 
 /drb31.php
 /d8/ul.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1127945201841049600
+
+namecakes.com/epl/ajax.php
+
+# Reference: https://twitter.com/WifiRumHam/status/1127971696126783488
+
+westflies.com/api/api.php
+
+# Reference: https://twitter.com/JayTHL/status/1128173436889653248
+
+/send/ab-apr29-1.php
+/send/ab-apr29-2.php
+/send/cj-apr27-1.php
+/send/cj-apr29-1.php
+/send/cj-apr29-2.php
+/send/cj-may4-1.php
+/send/m24m24-1.php
+/send/m24m24-2.php
+/send/m24m24-3.php
+/send/m24m24-4.php
+/send/f13m13-1.php
+/send/f13m13-2.php
+/send/f13m13-3.php
+/send/f13m13-4.php
+/send/f13m13-5.php
+/send/a10j10-1.php
+/send/m10a10-1.php
+/send/azu.php
+/send/was.php
