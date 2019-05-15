@@ -5451,3 +5451,9 @@ freewaredown.com
 
 microsotfmailsystems.azurewebsites.net
 microsotfmailsystems.blob.core.windows.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128641467751260160
+
+outlook365rackspace.z13.web.core.windows.net
+bluedotsolutoins.com
+office365rackspacewrngpa.z13.web.core.windows.net
