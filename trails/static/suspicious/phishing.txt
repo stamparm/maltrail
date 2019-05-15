@@ -5446,3 +5446,8 @@ peoniindonesia.com
 # Reference: https://twitter.com/dave_daves/status/1128600226250600450
 
 freewaredown.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128634423862284289
+
+microsotfmailsystems.azurewebsites.net
+microsotfmailsystems.blob.core.windows.net
