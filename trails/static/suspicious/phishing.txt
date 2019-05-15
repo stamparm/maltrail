@@ -5925,3 +5925,7 @@ offimailmail365.z13.web.core.windows.net
 # Reference: https://twitter.com/malwrhunterteam/status/1128720589156433920
 
 adobedocumentonline.z13.web.core.windows.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128721773850181633
+
+adobesecuredocument.z13.web.core.windows.net
