@@ -5457,3 +5457,7 @@ microsotfmailsystems.blob.core.windows.net
 outlook365rackspace.z13.web.core.windows.net
 bluedotsolutoins.com
 office365rackspacewrngpa.z13.web.core.windows.net
+
+# Reference: https://twitter.com/PhishingAi/status/1128651271819317249
+
+mapps-biclays-auth.com
