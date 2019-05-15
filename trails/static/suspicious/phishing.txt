@@ -5932,23 +5932,6 @@ adobesecuredocument.z13.web.core.windows.net
 
 # Reference: https://twitter.com/JayTHL/status/1057379402001117185
 
-
-	Online-Utility.org
-Utilities for Online Operating System 	
-
-    Online Utility
-    English Language
-    Text
-    Math
-    Other
-
- 
-
-Online Sort
-	Tweet 	
-
-Result of Sort :
-
 adobeextroversive638.blob.core.windows.net
 adobequantometer3160.blob.core.windows.net
 adobeugli460078226.blob.core.windows.net
