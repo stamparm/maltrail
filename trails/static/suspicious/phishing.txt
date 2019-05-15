@@ -5344,3 +5344,12 @@ systemserverjhgty-65error.azurewebsites.net
 8systemserverjhgty-65error.azurewebsites.net
 9systemserverjhgty-65error.azurewebsites.net
 10systemserverjhgty-65error.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128561311749672962
+
+qqwsswqs1111.azurewebsites.net
+qqwsswqs1112.azurewebsites.net
+qqwsswqs1113.azurewebsites.net
+qqwsswqs1114.azurewebsites.net
+qqwsswqs1115.azurewebsites.net
+qqwsswqs1116.azurewebsites.net
