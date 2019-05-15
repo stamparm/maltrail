@@ -5214,3 +5214,142 @@ xn--etflix-vfb.com
 xn--outloo-1bb.com
 xn--wzzair-i8a.com
 xn--yhoo-bta.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128237669023088641
+
+runtime-server.azurewebsites.net
+runtime-server1.azurewebsites.net
+runtime-server3.azurewebsites.net
+runtime-server4.azurewebsites.net
+runtime-server5.azurewebsites.net
+runtime-server6.azurewebsites.net
+runtime-server7.azurewebsites.net
+runtime-server8.azurewebsites.net
+runtime-server9.azurewebsites.net
+runtime-server10.azurewebsites.net
+runtime-server11.azurewebsites.net
+runtime-server12.azurewebsites.net
+runtime-server13.azurewebsites.net
+runtime-server14.azurewebsites.net
+runtime-server15.azurewebsites.net
+runtime-server16.azurewebsites.net
+runtime-server17.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128265737905295360
+
+managed.azurewebsites.net
+managed1.azurewebsites.net
+managed2.azurewebsites.net
+managed3.azurewebsites.net
+managed4.azurewebsites.net
+managed5.azurewebsites.net
+managed6.azurewebsites.net
+managed7.azurewebsites.net
+managed8.azurewebsites.net
+managed9.azurewebsites.net
+managed10.azurewebsites.net
+managed11.azurewebsites.net
+managed12.azurewebsites.net
+managed13.azurewebsites.net
+managed14.azurewebsites.net
+managed15.azurewebsites.net
+managed16.azurewebsites.net
+managed17.azurewebsites.net
+managed18.azurewebsites.net
+
+# Reference: https://twitter.com/PhishingAi/status/1128297771725799424
+
+cra-arc-gc-canada.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128302366837628929
+
+fa-www9-irs.linkpc.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128339126758137861
+
+mailboxoutlook.z1.web.core.windows.net
+
+# Reference: https://twitter.com/JayTHL/status/1128351569458683906
+# Reference: https://pastebin.com/raw/vAMZqiJS
+
+desllatsubjector.uk
+ds-all-tioreo.co.uk
+ds-all-tioreo.uk
+dsalltioreo.co.uk
+dsalltioreo.uk
+dsaro.co.uk
+dsaro.uk
+dseverytioreo.uk
+dsl-lati-roep.co.uk
+dsl-lati-roep.uk
+dsllatiroep.co.uk
+dsllatiroep.uk
+fallceri2.co.uk
+fallceri2.uk
+fallcerito.co.uk
+fallcerito.uk
+kll-aoe-op.co.uk
+kll-aoe-op.uk
+kllaoeop.co.uk
+kllaoeop.uk
+malle-roe-qp.co.uk
+malle-roe-qp.uk
+malleroeqp.co.uk
+malleroeqp.uk
+nss-lao-rir-to.uk
+nsslaorir2.co.uk
+nsslaorirto.uk
+recessionista.net
+tripcerito.co.uk
+tripcerito.uk
+ullacrbando.co.uk
+ullacrbando.uk
+ullacrtieo.co.uk
+ullacrtieo.uk
+
+# Reference: https://twitter.com/JayTHL/status/1128370652979843072
+# Reference: https://pastebin.com/raw/YmGkRRGd
+
+adobesecuredocument.z13.web.core.windows.net
+jumi.blob.core.windows.net
+microsofbnjgcebq9liknh2x.z13.web.core.windows.net
+microsofdxrt1myjlpb2z39n.z13.web.core.windows.net
+newdeliveryexpertmail.z13.web.core.windows.net
+apata.blob.core.windows.net
+docusignofflce365.z13.web.core.windows.net
+networkwatcherx.z13.web.core.windows.net
+office5buqtolhqt8hhvhy.z13.web.core.windows.net
+outlookmails.z32.web.core.windows.net
+preemee.blob.core.windows.net
+azaman.blob.core.windows.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128373209915645952
+
+apple-request.serveirc.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128386611715223552
+
+bzzzzkkkkeeeeee9999eee.azurewebsites.net
+taxisarvi.tk
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128551391730065408
+
+systemserverjhgty-65error.azurewebsites.net
+2systemserverjhgty-65error.azurewebsites.net
+3systemserverjhgty-65error.azurewebsites.net
+4systemserverjhgty-65error.azurewebsites.net
+5systemserverjhgty-65error.azurewebsites.net
+6systemserverjhgty-65error.azurewebsites.net
+7systemserverjhgty-65error.azurewebsites.net
+8systemserverjhgty-65error.azurewebsites.net
+9systemserverjhgty-65error.azurewebsites.net
+10systemserverjhgty-65error.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128561311749672962
+
+qqwsswqs1111.azurewebsites.net
+qqwsswqs1112.azurewebsites.net
+qqwsswqs1113.azurewebsites.net
+qqwsswqs1114.azurewebsites.net
+qqwsswqs1115.azurewebsites.net
+qqwsswqs1116.azurewebsites.net
