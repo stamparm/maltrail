@@ -5442,3 +5442,7 @@ monitor181.azurewebsites.net
 # Reference: https://twitter.com/IpNigh/status/1128426144733253632
 
 peoniindonesia.com
+
+# Reference: https://twitter.com/dave_daves/status/1128600226250600450
+
+freewaredown.com
