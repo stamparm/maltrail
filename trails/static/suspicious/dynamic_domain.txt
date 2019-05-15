@@ -1426,3 +1426,8 @@ pdns.cz
 # Reference: https://www.virustotal.com/gui/domain/tpddns.cn/relations
 
 tpddns.cn
+
+# Reference: https://www.ptsecurity.com/ru-ru/research/analytics/operation-taskmasters-2019/ (Russian)
+# Reference: https://www.virustotal.com/gui/domain/strangled.net/details
+
+strangled.net
