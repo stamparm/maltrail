@@ -388,3 +388,8 @@ code.cloudcms.com/alpaca/1.5.17/bootstrap/alpaca.min.css
 # Reference: https://twitter.com/gwillem/status/1127890329175244800
 
 d20iczrsxk7wft.cloudfront.net/botwverified/badge.js
+
+# Reference: https://twitter.com/_mmeltzer/status/1128311225228648449
+
+cdn.ryviu.com/js/reviews.js
+ww1-filecloud.com
