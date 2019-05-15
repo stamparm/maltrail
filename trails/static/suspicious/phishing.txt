@@ -5913,3 +5913,7 @@ zbk-online.com
 zenithglo.com
 zenvpn.online
 ziraatbntr.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128722588577013760
+
+maillguard.z32.web.core.windows.net
