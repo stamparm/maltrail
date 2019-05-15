@@ -5921,3 +5921,7 @@ maillguard.z32.web.core.windows.net
 # Reference: https://twitter.com/malwrhunterteam/status/1128724502916018179
 
 offimailmail365.z13.web.core.windows.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128720589156433920
+
+adobedocumentonline.z13.web.core.windows.net
