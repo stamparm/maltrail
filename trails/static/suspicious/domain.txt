@@ -4967,3 +4967,8 @@ iok.la
 # Reference: https://www.virustotal.com/gui/domain/nitesbr1.org/details
 
 nitesbr1.org
+
+# Reference: https://www.virustotal.com/gui/domain/nicevps.net/details
+# Reference: https://twitter.com/PhishingAi/status/1128651276290363392
+
+nicevps.net
