@@ -6032,3 +6032,42 @@ snwebcle.firebaseapp.com
 web-hombnp.firebaseapp.com
 work-pay.firebaseapp.com
 work-wage.firebaseapp.com
+
+# Reference: https://twitter.com/ActorExpose/status/1128755163710349312
+
+cbowa.club
+lbowa.club
+owadropbx.club
+
+# Reference: https://twitter.com/illegalFawn/status/1128996932200931328
+
+unicredlt.cloud
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128995110988001280
+
+outlook-office365mail.azurewebsites.net
+
+# Reference: https://twitter.com/PhishingAi/status/1129114973349634048
+# Reference: https://pastebin.com/cMcjC4cw
+
+addonline.de
+bmigroup-info.com
+libertyveiw.com
+ojsmarine-files.com
+ojsmarine-info.com
+ojsmarine-shared.com
+ptrlvvs.com
+ramacocoal-infos.com
+ramacocoal-verify.com
+ramacocoal-views.com
+rydooviews.com
+saxoninfo.com
+saxonview.com
+saxonviews.com
+staybridge-lincoln.com
+staybridge-lncl.com
+staybridge-suite.com
+staybridgedc-info.com
+staybridgesuite-info.com
+staybridgesuite-lcnln.com
+tobwrkdrv.com
