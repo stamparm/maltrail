@@ -5994,3 +5994,41 @@ wetransferunnatural1.blob.core.windows.net
 # Reference: https://twitter.com/switchingtoguns/status/1128799643439992832
 
 loginonline-com.firebaseapp.com
+
+# Reference: https://twitter.com/switchingtoguns/status/1128812633392467968
+# Reference: http://pastebin.com/raw/V7dEZHXK
+
+april-salaries.firebaseapp.com
+auth-login-live.firebaseapp.com
+b-chase-com-515be.firebaseapp.com
+chama-arens.firebaseapp.com
+chance47-c8c6f.firebaseapp.com
+comes-saned.firebaseapp.com
+damsane-oren.firebaseapp.com
+dence-anedem.firebaseapp.com
+dropbox-com-view-files.firebaseapp.com
+emsauge-runing.firebaseapp.com
+esitesi-57cfa.firebaseapp.com
+gestmsmions.firebaseapp.com
+joinwatsapp.firebaseapp.com
+loginonline-com.firebaseapp.com
+may-wage.firebaseapp.com
+no-amse.firebaseapp.com
+nome-unace.firebaseapp.com
+offalde-gome.firebaseapp.com
+one-history-importan.firebaseapp.com
+onedrive-file.firebaseapp.com
+onedriveauth-login.firebaseapp.com
+payment-april.firebaseapp.com
+pays-review.firebaseapp.com
+quade-man.firebaseapp.com
+quck-net.firebaseapp.com
+review-pays.firebaseapp.com
+review-work.firebaseapp.com
+reviewmay-421ba.firebaseapp.com
+sane-quade.firebaseapp.com
+smoned-odad.firebaseapp.com
+snwebcle.firebaseapp.com
+web-hombnp.firebaseapp.com
+work-pay.firebaseapp.com
+work-wage.firebaseapp.com
