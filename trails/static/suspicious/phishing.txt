@@ -6042,3 +6042,7 @@ owadropbx.club
 # Reference: https://twitter.com/illegalFawn/status/1128996932200931328
 
 unicredlt.cloud
+
+# Reference: https://twitter.com/malwrhunterteam/status/1128995110988001280
+
+outlook-office365mail.azurewebsites.net
