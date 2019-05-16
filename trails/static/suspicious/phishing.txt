@@ -5990,3 +5990,7 @@ onedrivetippled81585.blob.core.windows.net
 onedriveunfragrant26.blob.core.windows.net
 onedriveunverbalized.blob.core.windows.net
 wetransferunnatural1.blob.core.windows.net
+
+# Reference: https://twitter.com/switchingtoguns/status/1128799643439992832
+
+loginonline-com.firebaseapp.com
