@@ -6032,3 +6032,9 @@ snwebcle.firebaseapp.com
 web-hombnp.firebaseapp.com
 work-pay.firebaseapp.com
 work-wage.firebaseapp.com
+
+# Reference: https://twitter.com/ActorExpose/status/1128755163710349312
+
+cbowa.club
+lbowa.club
+owadropbx.club
