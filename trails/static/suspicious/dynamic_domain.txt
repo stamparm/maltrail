@@ -1488,3 +1488,7 @@ h0stname.net
 # Reference: https://www.virustotal.com/gui/domain/n-e-t.name/details
 
 n-e-t.name
+
+# Reference: https://www.virustotal.com/gui/domain/servernux.com/details
+
+servernux.com
