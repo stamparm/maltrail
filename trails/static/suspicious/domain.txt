@@ -4997,3 +4997,8 @@ lacoste587.agency
 # Reference: https://www.virustotal.com/gui/domain/dsquared21.rocks/relations
 
 dsquared21.rocks
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/hugoboss01.store/relations
+
+hugoboss01.store
