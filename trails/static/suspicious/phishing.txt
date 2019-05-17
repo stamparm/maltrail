@@ -6079,3 +6079,10 @@ forms.office.com
 # Reference: https://twitter.com/JayTHL/status/1129249413682139136
 
 onedrive.live.com
+
+# Reference: https://twitter.com/illegalFawn/status/1129316413116690432
+
+abilita-ora-secur-web.com
+aggiornamento-urgente-sicurezzaweb.com
+panclienti.cloud
+verificaclienti.cloud
