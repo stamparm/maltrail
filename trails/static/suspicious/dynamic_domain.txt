@@ -1447,3 +1447,7 @@ coalnet.ru
 # Reference: https://www.virustotal.com/gui/domain/privatedns.org/details
 
 privatedns.org
+
+# Reference: https://www.virustotal.com/gui/domain/dynet.com/details
+
+dynet.com
