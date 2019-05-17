@@ -1460,3 +1460,7 @@ us.to
 # Reference: https://www.virustotal.com/gui/domain/dearabba.org/relations
 
 dearabba.org
+
+# Reference: https://www.virustotal.com/gui/domain/bagus.org/details
+
+bagus.org
