@@ -5058,3 +5058,7 @@ njegidi888.xyz
 # Reference: https://www.virustotal.com/gui/domain/hs.vc/relations
 
 hs.vc
+
+# Reference: https://www.virustotal.com/gui/domain/freesa.org/details
+
+freesa.org
