@@ -1508,3 +1508,7 @@ blizzie.net
 # Reference: https://www.virustotal.com/gui/domain/yngling.com/details
 
 yngling.com
+
+# Reference: https://www.virustotal.com/gui/domain/dyn.ch/details
+
+dyn.ch
