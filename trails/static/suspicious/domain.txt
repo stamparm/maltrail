@@ -5013,7 +5013,6 @@ luisvuitton.tech
 
 supreme12.recipes
 
-
 # Reference: https://github.com/edchavarro/RAT_IoCs
 # Reference: https://www.virustotal.com/gui/domain/peugeot10.cc/relations
 
@@ -5028,3 +5027,8 @@ kfc52.club
 # Reference: https://www.virustotal.com/gui/domain/wolsvagen7.mobi/relations
 
 wolsvagen7.mobi
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/telcel75.asia/relations
+
+telcel75.asia
