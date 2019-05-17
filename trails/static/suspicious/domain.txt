@@ -5036,3 +5036,8 @@ telcel75.asia
 # Reference: https://twitter.com/avman1995/status/1040472512356855808
 
 taijh.xyz
+
+# Reference: https://twitter.com/luc4m/status/1021670673247285248
+# Reference: https://www.virustotal.com/gui/domain/weldwire.top/relations
+
+weldwire.top
