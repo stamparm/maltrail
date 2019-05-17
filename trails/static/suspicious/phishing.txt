@@ -6086,3 +6086,11 @@ abilita-ora-secur-web.com
 aggiornamento-urgente-sicurezzaweb.com
 panclienti.cloud
 verificaclienti.cloud
+
+# Reference: https://twitter.com/malwrhunterteam/status/1129298444642914304
+
+systemconnectiongbff-89error.azurewebsites.net
+2systemconnectiongbff-89error.azurewebsites.net
+3systemconnectiongbff-89error.azurewebsites.net
+4systemconnectiongbff-89error.azurewebsites.net
+5systemconnectiongbff-89error.azurewebsites.net
