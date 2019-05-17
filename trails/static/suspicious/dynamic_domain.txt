@@ -1484,3 +1484,7 @@ hiddencorner.org
 # Reference: https://www.virustotal.com/gui/domain/h0stname.net/details
 
 h0stname.net
+
+# Reference: https://www.virustotal.com/gui/domain/n-e-t.name/details
+
+n-e-t.name
