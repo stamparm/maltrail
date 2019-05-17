@@ -5074,3 +5074,7 @@ inflict.us
 # Reference: https://www.virustotal.com/gui/domain/uk.ms/relations
 
 uk.ms
+
+# Reference: https://www.virustotal.com/gui/domain/computersforpeace.net/relations
+
+computersforpeace.net
