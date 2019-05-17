@@ -5050,3 +5050,7 @@ carolp1.xyz
 # Reference: https://www.virustotal.com/gui/domain/njegidi888.xyz/relations
 
 njegidi888.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/2dons.com/relations
+
+2dons.com
