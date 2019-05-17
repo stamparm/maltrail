@@ -1451,3 +1451,8 @@ privatedns.org
 # Reference: https://www.virustotal.com/gui/domain/dynet.com/details
 
 dynet.com
+
+# Reference: https://twitter.com/ScumBots/status/1127937045719146496
+# Reference: https://www.virustotal.com/gui/domain/us.to/relations
+
+us.to
