@@ -5054,3 +5054,7 @@ njegidi888.xyz
 # Reference: https://www.virustotal.com/gui/domain/2dons.com/relations
 
 2dons.com
+
+# Reference: https://www.virustotal.com/gui/domain/hs.vc/relations
+
+hs.vc
