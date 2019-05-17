@@ -1468,3 +1468,7 @@ bagus.org
 # Reference: https://www.virustotal.com/gui/domain/awiki.org/details
 
 awiki.org
+
+# Reference: https://www.virustotal.com/gui/domain/host2go.net/details
+
+host2go.net
