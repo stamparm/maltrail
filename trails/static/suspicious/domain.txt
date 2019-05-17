@@ -4972,3 +4972,8 @@ nitesbr1.org
 # Reference: https://twitter.com/PhishingAi/status/1128651276290363392
 
 nicevps.net
+
+# Reference: https://twitter.com/ScumBots/status/1128109425787637760
+# Reference: https://www.virustotal.com/gui/domain/eu5.org/relations
+
+eu5.org
