@@ -4972,3 +4972,81 @@ nitesbr1.org
 # Reference: https://twitter.com/PhishingAi/status/1128651276290363392
 
 nicevps.net
+
+# Reference: https://twitter.com/ScumBots/status/1128109425787637760
+# Reference: https://www.virustotal.com/gui/domain/eu5.org/relations
+
+eu5.org
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/100chickens.me/relations
+
+100chickens.me
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/nintendo3.life/relations
+
+nintendo3.life
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/lacoste587.agency/relations
+
+lacoste587.agency
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/dsquared21.rocks/relations
+
+dsquared21.rocks
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/hugoboss01.store/relations
+
+hugoboss01.store
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/luisvuitton.tech/relations
+
+luisvuitton.tech
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/supreme12.recipes/relations
+
+supreme12.recipes
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/peugeot10.cc/relations
+
+peugeot10.cc
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/kfc52.club/relations
+
+kfc52.club
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/wolsvagen7.mobi/relations
+
+wolsvagen7.mobi
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/telcel75.asia/relations
+
+telcel75.asia
+
+# Reference: https://twitter.com/avman1995/status/1040472512356855808
+
+taijh.xyz
+
+# Reference: https://twitter.com/luc4m/status/1021670673247285248
+# Reference: https://www.virustotal.com/gui/domain/weldwire.top/relations
+
+weldwire.top
+
+# Reference: https://twitter.com/ViriBack/status/971430374919122944
+
+carolp1.xyz
+
+# Reference: https://twitter.com/James_inthe_box/status/1044204804354957312
+# Reference: https://www.virustotal.com/gui/domain/njegidi888.xyz/relations
+
+njegidi888.xyz
