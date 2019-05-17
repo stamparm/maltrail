@@ -1504,3 +1504,7 @@ d-n-s.org.uk
 # Reference: https://www.virustotal.com/gui/domain/blizzie.net/details
 
 blizzie.net
+
+# Reference: https://www.virustotal.com/gui/domain/yngling.com/details
+
+yngling.com
