@@ -5023,3 +5023,8 @@ peugeot10.cc
 # Reference: https://www.virustotal.com/gui/domain/kfc52.club/relations
 
 kfc52.club
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/wolsvagen7.mobi/relations
+
+wolsvagen7.mobi
