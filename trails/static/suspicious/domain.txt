@@ -5066,3 +5066,7 @@ freesa.org
 # Reference: https://www.virustotal.com/gui/domain/allisons.org/relations
 
 allisons.org
+
+# Reference: https://www.virustotal.com/gui/domain/inflict.us/relations
+
+inflict.us
