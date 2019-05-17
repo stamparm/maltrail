@@ -4977,3 +4977,8 @@ nicevps.net
 # Reference: https://www.virustotal.com/gui/domain/eu5.org/relations
 
 eu5.org
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/100chickens.me/relations
+
+100chickens.me
