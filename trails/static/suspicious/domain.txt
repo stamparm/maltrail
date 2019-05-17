@@ -4987,4 +4987,8 @@ eu5.org
 # Reference: https://www.virustotal.com/gui/domain/nintendo3.life/relations
 
 nintendo3.life
-nintendo3.life
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/lacoste587.agency/relations
+
+lacoste587.agency
