@@ -6239,3 +6239,7 @@ com-cgi-bin-yo21id04f1.top
 com-cgi-bin-za94mb81d7g-www-desjardins.top
 com-cgi-bin-zg46uv51s0.top
 com-cgi-bin-zj25gi08l3.top
+
+# Reference: https://twitter.com/IpNigh/status/1129356821225984001
+
+tamoraa.waw.pl
