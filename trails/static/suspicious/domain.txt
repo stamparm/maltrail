@@ -5041,3 +5041,7 @@ taijh.xyz
 # Reference: https://www.virustotal.com/gui/domain/weldwire.top/relations
 
 weldwire.top
+
+# Reference: https://twitter.com/ViriBack/status/971430374919122944
+
+carolp1.xyz
