@@ -1443,3 +1443,7 @@ remoteaccess.me
 # Reference: https://www.virustotal.com/gui/domain/coalnet.ru/details
 
 coalnet.ru
+
+# Reference: https://www.virustotal.com/gui/domain/privatedns.org/details
+
+privatedns.org
