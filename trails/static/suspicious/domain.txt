@@ -5012,3 +5012,9 @@ luisvuitton.tech
 # Reference: https://www.virustotal.com/gui/domain/supreme12.recipes/relations
 
 supreme12.recipes
+
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/peugeot10.cc/relations
+
+peugeot10.cc
