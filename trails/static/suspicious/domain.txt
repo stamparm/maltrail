@@ -5007,3 +5007,8 @@ hugoboss01.store
 # Reference: https://www.virustotal.com/gui/domain/luisvuitton.tech/relations
 
 luisvuitton.tech
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/supreme12.recipes/relations
+
+supreme12.recipes
