@@ -6331,3 +6331,7 @@ xn--tsla-lpa.com
 xn--titter-b3c.com
 xn--yotube-435b.com
 xn--yutube-wxa.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1129444513179688960
+
+hostingredirectdetails.azurewebsites.net
