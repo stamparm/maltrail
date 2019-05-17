@@ -5018,3 +5018,8 @@ supreme12.recipes
 # Reference: https://www.virustotal.com/gui/domain/peugeot10.cc/relations
 
 peugeot10.cc
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/kfc52.club/relations
+
+kfc52.club
