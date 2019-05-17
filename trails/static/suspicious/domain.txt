@@ -4992,3 +4992,8 @@ nintendo3.life
 # Reference: https://www.virustotal.com/gui/domain/lacoste587.agency/relations
 
 lacoste587.agency
+
+# Reference: https://github.com/edchavarro/RAT_IoCs
+# Reference: https://www.virustotal.com/gui/domain/dsquared21.rocks/relations
+
+dsquared21.rocks
