@@ -48,3 +48,7 @@ xttkrsrjsoczm3ah.onion
 # Reference: https://twitter.com/BleepinComputer/status/1126555054436225025
 
 jokerootqsrkifko.onion
+
+# Reference: https://twitter.com/0xffff0800/status/1129215041432096773
+
+cve-2019-0708.com
