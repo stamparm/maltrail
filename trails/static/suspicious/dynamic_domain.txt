@@ -1500,3 +1500,7 @@ mysaol.com
 # Reference: https://www.virustotal.com/gui/domain/d-n-s.org.uk/details
 
 d-n-s.org.uk
+
+# Reference: https://www.virustotal.com/gui/domain/blizzie.net/details
+
+blizzie.net
