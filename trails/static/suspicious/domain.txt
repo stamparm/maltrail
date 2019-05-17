@@ -5070,3 +5070,7 @@ allisons.org
 # Reference: https://www.virustotal.com/gui/domain/inflict.us/relations
 
 inflict.us
+
+# Reference: https://www.virustotal.com/gui/domain/uk.ms/relations
+
+uk.ms
