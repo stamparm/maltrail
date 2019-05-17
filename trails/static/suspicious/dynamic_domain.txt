@@ -1431,3 +1431,28 @@ tpddns.cn
 # Reference: https://www.virustotal.com/gui/domain/strangled.net/details
 
 strangled.net
+
+# Reference: https://www.virustotal.com/gui/domain/russkoeumea.com/details
+
+russkoeumea.com
+
+# Reference: https://www.virustotal.com/gui/domain/remoteaccess.me/details
+
+remoteaccess.me
+
+# Reference: https://www.virustotal.com/gui/domain/coalnet.ru/details
+
+coalnet.ru
+
+# Reference: https://www.virustotal.com/gui/domain/privatedns.org/details
+
+privatedns.org
+
+# Reference: https://www.virustotal.com/gui/domain/dynet.com/details
+
+dynet.com
+
+# Reference: https://twitter.com/ScumBots/status/1127937045719146496
+# Reference: https://www.virustotal.com/gui/domain/us.to/relations
+
+us.to
