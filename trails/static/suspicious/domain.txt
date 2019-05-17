@@ -5032,3 +5032,7 @@ wolsvagen7.mobi
 # Reference: https://www.virustotal.com/gui/domain/telcel75.asia/relations
 
 telcel75.asia
+
+# Reference: https://twitter.com/avman1995/status/1040472512356855808
+
+taijh.xyz
