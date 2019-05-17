@@ -1431,3 +1431,7 @@ tpddns.cn
 # Reference: https://www.virustotal.com/gui/domain/strangled.net/details
 
 strangled.net
+
+# Reference: https://www.virustotal.com/gui/domain/russkoeumea.com/details
+
+russkoeumea.com
