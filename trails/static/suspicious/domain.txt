@@ -5045,3 +5045,8 @@ weldwire.top
 # Reference: https://twitter.com/ViriBack/status/971430374919122944
 
 carolp1.xyz
+
+# Reference: https://twitter.com/James_inthe_box/status/1044204804354957312
+# Reference: https://www.virustotal.com/gui/domain/njegidi888.xyz/relations
+
+njegidi888.xyz
