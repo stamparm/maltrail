@@ -1492,3 +1492,7 @@ n-e-t.name
 # Reference: https://www.virustotal.com/gui/domain/servernux.com/details
 
 servernux.com
+
+# Reference: https://www.virustotal.com/gui/domain/mysaol.com/details
+
+mysaol.com
