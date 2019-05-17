@@ -1439,3 +1439,7 @@ russkoeumea.com
 # Reference: https://www.virustotal.com/gui/domain/remoteaccess.me/details
 
 remoteaccess.me
+
+# Reference: https://www.virustotal.com/gui/domain/coalnet.ru/details
+
+coalnet.ru
