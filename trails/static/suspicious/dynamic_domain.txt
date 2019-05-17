@@ -1464,3 +1464,7 @@ dearabba.org
 # Reference: https://www.virustotal.com/gui/domain/bagus.org/details
 
 bagus.org
+
+# Reference: https://www.virustotal.com/gui/domain/awiki.org/details
+
+awiki.org
