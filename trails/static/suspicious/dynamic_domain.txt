@@ -1476,3 +1476,7 @@ host2go.net
 # Reference: https://www.virustotal.com/gui/domain/possessed.us/details
 
 possessed.us
+
+# Reference: https://www.virustotal.com/gui/domain/hiddencorner.org/details
+
+hiddencorner.org
