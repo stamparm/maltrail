@@ -1512,3 +1512,7 @@ yngling.com
 # Reference: https://www.virustotal.com/gui/domain/dyn.ch/details
 
 dyn.ch
+
+# Reference: https://www.virustotal.com/gui/domain/h-o-s-t.name/details
+
+h-o-s-t.name
