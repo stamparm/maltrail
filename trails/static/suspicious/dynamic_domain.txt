@@ -1700,3 +1700,7 @@ my.to
 # Reference: https://www.virustotal.com/gui/domain/ftp.sh/details
 
 ftp.sh
+
+# Reference: https://www.virustotal.com/gui/domain/yao.cl/details
+
+yao.cl
