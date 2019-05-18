@@ -1636,3 +1636,7 @@ verymad.net
 # Reference: https://www.virustotal.com/gui/domain/csproject.org/details
 
 csproject.org
+
+# Reference: https://www.virustotal.com/gui/domain/serverpit.com/relations
+
+serverpit.com
