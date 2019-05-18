@@ -1788,3 +1788,7 @@ dyn.mk
 # Reference: https://www.virustotal.com/gui/domain/e-m-a-i-l.org/details
 
 e-m-a-i-l.org
+
+# Reference: https://www.virustotal.com/gui/domain/dark-byte.net/details
+
+dark-byte.net
