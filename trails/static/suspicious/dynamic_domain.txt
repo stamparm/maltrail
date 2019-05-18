@@ -1580,3 +1580,7 @@ allowed.org
 # Reference: https://www.virustotal.com/gui/domain/jumpingcrab.com/details
 
 jumpingcrab.com
+
+# Reference: https://www.virustotal.com/gui/domain/uk.to/details
+
+uk.to
