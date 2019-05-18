@@ -5146,3 +5146,7 @@ xpresit.net
 # Reference: https://www.virustotal.com/gui/domain/hackquest.com/relations
 
 hackquest.com
+
+# Reference: https://www.virustotal.com/gui/domain/ruok.org/details
+
+ruok.org
