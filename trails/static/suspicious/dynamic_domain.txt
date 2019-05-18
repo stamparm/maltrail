@@ -1768,3 +1768,7 @@ richlorenz.com
 # Reference: https://www.virustotal.com/gui/domain/hmail.us/details
 
 hmail.us
+
+# Reference: https://www.virustotal.com/gui/domain/xxxxx.tw/details
+
+xxxxx.tw
