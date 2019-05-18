@@ -5114,3 +5114,7 @@ root.sx
 # Reference: https://www.virustotal.com/gui/domain/3dxtras.com/details
 
 3dxtras.com
+
+# Reference: https://www.virustotal.com/gui/domain/now.im/relations
+
+now.im
