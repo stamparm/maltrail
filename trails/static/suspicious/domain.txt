@@ -5078,3 +5078,7 @@ uk.ms
 # Reference: https://www.virustotal.com/gui/domain/computersforpeace.net/relations
 
 computersforpeace.net
+
+# Reference: https://www.virustotal.com/gui/domain/byte4byte.com/details
+
+byte4byte.com
