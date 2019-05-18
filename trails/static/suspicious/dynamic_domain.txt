@@ -1524,3 +1524,7 @@ d-n-s.name
 # Reference: https://www.virustotal.com/gui/domain/r-o-o-t.net/details
 
 r-o-o-t.net
+
+# Reference: https://www.virustotal.com/gui/domain/psybnc.org/details
+
+psybnc.org
