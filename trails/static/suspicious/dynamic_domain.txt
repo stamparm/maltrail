@@ -1664,3 +1664,7 @@ nx.tc
 # Reference: https://www.virustotal.com/gui/domain/69.mu/details
 
 69.mu
+
+# Reference: https://www.virustotal.com/gui/domain/t28.net/details
+
+t28.net
