@@ -5110,3 +5110,7 @@ h4ck.me
 # Reference: https://www.virustotal.com/gui/domain/root.sx/relations
 
 root.sx
+
+# Reference: https://www.virustotal.com/gui/domain/3dxtras.com/details
+
+3dxtras.com
