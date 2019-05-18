@@ -5138,3 +5138,7 @@ photo-frame.com
 # Reference: https://www.virustotal.com/gui/domain/javafaq.nu/relations
 
 javafaq.nu
+
+# Reference: https://www.virustotal.com/gui/domain/xpresit.net/relations
+
+xpresit.net
