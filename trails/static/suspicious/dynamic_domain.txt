@@ -1592,3 +1592,7 @@ drunkensailor.org
 # Reference: https://www.virustotal.com/gui/domain/routemehome.com/details
 
 routemehome.com
+
+# Reference: https://www.virustotal.com/gui/domain/abuser.eu/details
+
+abuser.eu
