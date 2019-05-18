@@ -1716,3 +1716,7 @@ raspberryip.com
 # Reference: https://www.virustotal.com/gui/domain/silksky.com/details
 
 silksky.com
+
+# Reference: https://www.virustotal.com/gui/domain/nard.ca/details
+
+nard.ca
