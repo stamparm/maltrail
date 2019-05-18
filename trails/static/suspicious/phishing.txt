@@ -6483,3 +6483,7 @@ pt-idealista-seguranca.com
 
 techptt.usite.pro
 techdptt.000webhostapp.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1129783971422834691
+
+kingdom-of-kuwait---public-institution-for-social-security.azurewebsites.net
