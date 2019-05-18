@@ -5130,3 +5130,7 @@ biz.tm
 # Reference: https://www.virustotal.com/gui/domain/info.tm/details
 
 info.tm
+
+# Reference: https://www.virustotal.com/gui/domain/photo-frame.com/relations
+
+photo-frame.com
