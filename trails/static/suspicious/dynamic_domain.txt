@@ -1684,3 +1684,7 @@ qc.to
 # Reference: https://www.virustotal.com/gui/domain/mine.bz/details
 
 mine.bz
+
+# Reference: https://www.virustotal.com/gui/domain/bot.nu/relations
+
+bot.nu
