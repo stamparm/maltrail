@@ -1660,3 +1660,7 @@ happyforever.com
 # Reference: https://www.virustotal.com/gui/domain/nx.tc/details
 
 nx.tc
+
+# Reference: https://www.virustotal.com/gui/domain/69.mu/details
+
+69.mu
