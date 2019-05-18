@@ -5118,3 +5118,7 @@ root.sx
 # Reference: https://www.virustotal.com/gui/domain/now.im/relations
 
 now.im
+
+# Reference: https://www.virustotal.com/gui/domain/ax.lt/relations
+
+ax.lt
