@@ -1764,3 +1764,7 @@ richlorenz.com
 # Reference: https://www.virustotal.com/gui/domain/4twenty.us/details
 
 4twenty.us
+
+# Reference: https://www.virustotal.com/gui/domain/hmail.us/details
+
+hmail.us
