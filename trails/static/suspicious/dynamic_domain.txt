@@ -1680,3 +1680,7 @@ kalbas.com.vn
 # Reference: https://www.virustotal.com/gui/domain/qc.to/details
 
 qc.to
+
+# Reference: https://www.virustotal.com/gui/domain/mine.bz/details
+
+mine.bz
