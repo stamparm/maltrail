@@ -1552,3 +1552,7 @@ fr.to
 # Reference: https://www.virustotal.com/gui/domain/minecraftr.us/details
 
 minecraftr.us
+
+# Reference: https://www.virustotal.com/gui/domain/spacetechnology.net/details
+
+spacetechnology.net
