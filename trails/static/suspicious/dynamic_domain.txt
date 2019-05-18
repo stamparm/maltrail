@@ -1752,3 +1752,7 @@ bloom.us
 # Reference: https://www.virustotal.com/gui/domain/k22.su/details
 
 k22.su
+
+# Reference: https://www.virustotal.com/gui/domain/richlorenz.com/details
+
+richlorenz.com
