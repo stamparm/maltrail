@@ -5122,3 +5122,7 @@ now.im
 # Reference: https://www.virustotal.com/gui/domain/ax.lt/relations
 
 ax.lt
+
+# Reference: https://www.virustotal.com/gui/domain/biz.tm/relations
+
+biz.tm
