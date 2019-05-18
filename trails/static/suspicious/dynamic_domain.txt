@@ -1784,3 +1784,7 @@ ufodns.com
 # Reference: https://www.virustotal.com/gui/domain/dyn.mk/relations
 
 dyn.mk
+
+# Reference: https://www.virustotal.com/gui/domain/e-m-a-i-l.org/details
+
+e-m-a-i-l.org
