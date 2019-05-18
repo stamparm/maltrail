@@ -6423,3 +6423,16 @@ secure-in.ddns.net
 # Reference: https://www.virustotal.com/gui/domain/vr.lt/relations
 
 paypal-login.com.vr.lt
+
+# Reference: https://twitter.com/malwrhunterteam/status/1129664851264122880
+
+support27.azurewebsites.net
+support28.azurewebsites.net
+support29.azurewebsites.net
+support30.azurewebsites.net
+support31.azurewebsites.net
+support32.azurewebsites.net
+support33.azurewebsites.net
+support34.azurewebsites.net
+support35.azurewebsites.net
+support36.azurewebsites.net
