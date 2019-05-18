@@ -1796,3 +1796,8 @@ dark-byte.net
 # Reference: https://www.virustotal.com/gui/domain/stuns.org/details
 
 stuns.org
+
+# Reference: https://www.virustotal.com/gui/domain/dns-cloud.net/relations
+# Reference: https://www.cloudns.net/dynamic-dns/
+
+dns-cloud.net
