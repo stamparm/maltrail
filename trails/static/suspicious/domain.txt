@@ -5086,3 +5086,7 @@ byte4byte.com
 # Reference: https://www.virustotal.com/gui/domain/ohbah.com/relations
 
 ohbah.com
+
+# Reference: https://www.virustotal.com/gui/domain/k.vu/relations
+
+k.vu
