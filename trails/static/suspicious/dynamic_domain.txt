@@ -1564,3 +1564,7 @@ minecraftnoob.com
 # Reference: https://www.virustotal.com/gui/domain/shop.tm/details
 
 shop.tm
+
+# Reference: https://www.virustotal.com/gui/domain/home.kg/details
+
+home.kg
