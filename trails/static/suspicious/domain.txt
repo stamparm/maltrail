@@ -5134,3 +5134,7 @@ info.tm
 # Reference: https://www.virustotal.com/gui/domain/photo-frame.com/relations
 
 photo-frame.com
+
+# Reference: https://www.virustotal.com/gui/domain/javafaq.nu/relations
+
+javafaq.nu
