@@ -1620,3 +1620,7 @@ mm.my
 # Reference: https://www.virustotal.com/gui/domain/120v.ac/details
 
 120v.ac
+
+# Reference: https://www.virustotal.com/gui/domain/epicgamer.org/details
+
+epicgamer.org
