@@ -5106,3 +5106,7 @@ suka.se
 # Reference: https://www.virustotal.com/gui/domain/h4ck.me/relations
 
 h4ck.me
+
+# Reference: https://www.virustotal.com/gui/domain/root.sx/relations
+
+root.sx
