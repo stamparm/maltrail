@@ -1560,3 +1560,7 @@ spacetechnology.net
 # Reference: https://www.virustotal.com/gui/domain/minecraftnoob.com/details
 
 minecraftnoob.com
+
+# Reference: https://www.virustotal.com/gui/domain/shop.tm/details
+
+shop.tm
