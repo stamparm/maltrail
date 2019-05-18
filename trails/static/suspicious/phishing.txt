@@ -6419,3 +6419,7 @@ cmflfkfkfkriklsb.com
 # Reference: https://twitter.com/IpNigh/status/1129539676602339328
 
 secure-in.ddns.net
+
+# Reference: https://www.virustotal.com/gui/domain/vr.lt/relations
+
+paypal-login.com.vr.lt
