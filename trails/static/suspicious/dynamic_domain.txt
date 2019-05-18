@@ -1776,3 +1776,7 @@ xxxxx.tw
 # Reference: https://www.virustotal.com/gui/domain/ezxdev.org/details
 
 ezxdev.org
+
+# Reference: https://www.virustotal.com/gui/domain/ufodns.com/relations
+
+ufodns.com
