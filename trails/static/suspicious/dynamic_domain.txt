@@ -1696,3 +1696,7 @@ undo.it
 # Reference: https://www.virustotal.com/gui/domain/my.to/details
 
 my.to
+
+# Reference: https://www.virustotal.com/gui/domain/ftp.sh/details
+
+ftp.sh
