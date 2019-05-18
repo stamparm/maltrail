@@ -1544,3 +1544,7 @@ port0.org
 # Reference: https://www.virustotal.com/gui/domain/farted.net/details
 
 farted.net
+
+# Reference: https://www.virustotal.com/gui/domain/fr.to/details
+
+fr.to
