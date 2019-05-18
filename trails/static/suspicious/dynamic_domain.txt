@@ -1656,3 +1656,7 @@ happyforever.com
 # Reference: https://www.virustotal.com/gui/domain/1337.cx/details
 
 1337.cx
+
+# Reference: https://www.virustotal.com/gui/domain/nx.tc/details
+
+nx.tc
