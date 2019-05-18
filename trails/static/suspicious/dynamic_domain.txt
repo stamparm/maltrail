@@ -1712,3 +1712,7 @@ twilightparadox.com
 # Reference: https://www.virustotal.com/gui/domain/raspberryip.com/relations
 
 raspberryip.com
+
+# Reference: https://www.virustotal.com/gui/domain/silksky.com/details
+
+silksky.com
