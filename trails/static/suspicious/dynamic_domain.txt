@@ -1756,3 +1756,7 @@ k22.su
 # Reference: https://www.virustotal.com/gui/domain/richlorenz.com/details
 
 richlorenz.com
+
+# Reference: https://www.virustotal.com/gui/domain/2fine.de/details
+
+2fine.de
