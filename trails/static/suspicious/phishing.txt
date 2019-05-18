@@ -6487,3 +6487,8 @@ techdptt.000webhostapp.com
 # Reference: https://twitter.com/malwrhunterteam/status/1129783971422834691
 
 kingdom-of-kuwait---public-institution-for-social-security.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1129787223736508424
+
+online5-3log.azurewebsites.net
+53log.azurewebsites.net
