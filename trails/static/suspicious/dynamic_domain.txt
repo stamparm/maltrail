@@ -1732,3 +1732,7 @@ iiiii.info
 # Reference: https://www.virustotal.com/gui/domain/iminecraft.se/details
 
 iminecraft.se
+
+# Reference: https://www.virustotal.com/gui/domain/star.is/details
+
+star.is
