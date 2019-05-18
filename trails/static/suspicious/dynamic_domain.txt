@@ -1744,3 +1744,7 @@ good-newz.org
 # Reference: https://www.virustotal.com/gui/domain/ghostnation.org/details
 
 ghostnation.org
+
+# Reference: https://www.virustotal.com/gui/domain/bloom.us/details
+
+bloom.us
