@@ -1728,3 +1728,7 @@ mindhackers.org
 # Reference: https://www.virustotal.com/gui/domain/iiiii.info/details
 
 iiiii.info
+
+# Reference: https://www.virustotal.com/gui/domain/iminecraft.se/details
+
+iminecraft.se
