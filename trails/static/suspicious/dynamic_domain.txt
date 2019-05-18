@@ -1688,3 +1688,7 @@ mine.bz
 # Reference: https://www.virustotal.com/gui/domain/bot.nu/relations
 
 bot.nu
+
+# Reference: https://www.virustotal.com/gui/domain/undo.it/details
+
+undo.it
