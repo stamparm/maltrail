@@ -1584,3 +1584,7 @@ jumpingcrab.com
 # Reference: https://www.virustotal.com/gui/domain/uk.to/details
 
 uk.to
+
+# Reference: https://www.virustotal.com/gui/domain/drunkensailor.org/details
+
+drunkensailor.org
