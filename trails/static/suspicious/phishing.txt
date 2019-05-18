@@ -6478,3 +6478,8 @@ idealista.pt.log-in0.website
 idealista-anuncio-es.com
 idealista-pt-imovel-29575519.site
 pt-idealista-seguranca.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1129688927613403137
+
+techptt.usite.pro
+techdptt.000webhostapp.com
