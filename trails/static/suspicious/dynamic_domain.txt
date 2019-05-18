@@ -1760,3 +1760,7 @@ richlorenz.com
 # Reference: https://www.virustotal.com/gui/domain/2fine.de/details
 
 2fine.de
+
+# Reference: https://www.virustotal.com/gui/domain/4twenty.us/details
+
+4twenty.us
