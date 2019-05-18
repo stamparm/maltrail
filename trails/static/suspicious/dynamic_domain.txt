@@ -1608,3 +1608,7 @@ madhacker.biz
 # Reference: https://www.virustotal.com/gui/domain/zanity.net/details
 
 zanity.net
+
+# Reference: https://www.virustotal.com/gui/domain/404.mn/details
+
+404.mn
