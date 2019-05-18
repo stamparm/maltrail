@@ -1612,3 +1612,7 @@ zanity.net
 # Reference: https://www.virustotal.com/gui/domain/404.mn/details
 
 404.mn
+
+# Reference: https://www.virustotal.com/gui/domain/mm.my/details
+
+mm.my
