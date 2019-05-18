@@ -1648,3 +1648,7 @@ evils.in
 # Reference: https://www.virustotal.com/gui/domain/bigbox.info/details
 
 bigbox.info
+
+# Reference: https://www.virustotal.com/gui/domain/happyforever.com/details
+
+happyforever.com
