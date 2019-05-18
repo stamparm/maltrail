@@ -1516,3 +1516,7 @@ dyn.ch
 # Reference: https://www.virustotal.com/gui/domain/h-o-s-t.name/details
 
 h-o-s-t.name
+
+# Reference: https://www.virustotal.com/gui/domain/d-n-s.name/details
+
+d-n-s.name
