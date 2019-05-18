@@ -1628,3 +1628,7 @@ epicgamer.org
 # Reference: https://www.virustotal.com/gui/domain/soon.it/details
 
 soon.it
+
+# Reference: https://www.virustotal.com/gui/domain/verymad.net/details
+
+verymad.net
