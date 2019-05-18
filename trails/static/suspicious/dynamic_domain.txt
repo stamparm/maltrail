@@ -1644,3 +1644,7 @@ serverpit.com
 # Reference: https://www.virustotal.com/gui/domain/evils.in/details
 
 evils.in
+
+# Reference: https://www.virustotal.com/gui/domain/bigbox.info/details
+
+bigbox.info
