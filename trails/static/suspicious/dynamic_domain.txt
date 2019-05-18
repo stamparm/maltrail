@@ -1672,3 +1672,7 @@ t28.net
 # Reference: https://www.virustotal.com/gui/domain/info.gf/details
 
 info.gf
+
+# Reference: https://www.virustotal.com/gui/domain/kalbas.com.vn/details
+
+kalbas.com.vn
