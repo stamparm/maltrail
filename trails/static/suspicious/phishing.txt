@@ -6444,3 +6444,11 @@ eon.magyar-szamla.digilandcomputing.com
 # Reference: https://twitter.com/malwrhunterteam/status/1129683568735731713
 
 haibleexport.com
+
+# Reference: https://twitter.com/illegalFawn/status/1129740216829452288
+
+aruba-loginmail-online.com
+aruba-loginmail-online.tech
+aruba-loginmail-online.services
+aruba-loginmail-online.email
+arubacloudl.live
