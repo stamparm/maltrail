@@ -5090,3 +5090,7 @@ ohbah.com
 # Reference: https://www.virustotal.com/gui/domain/k.vu/relations
 
 k.vu
+
+# Reference: https://www.virustotal.com/gui/domain/24-7.ro/relations
+
+24-7.ro
