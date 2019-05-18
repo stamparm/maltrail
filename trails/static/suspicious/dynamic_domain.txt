@@ -1740,3 +1740,7 @@ star.is
 # Reference: https://www.virustotal.com/gui/domain/good-newz.org/details
 
 good-newz.org
+
+# Reference: https://www.virustotal.com/gui/domain/ghostnation.org/details
+
+ghostnation.org
