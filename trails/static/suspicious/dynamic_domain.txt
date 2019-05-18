@@ -1532,3 +1532,7 @@ psybnc.org
 # Reference: https://www.virustotal.com/gui/domain/punked.us/details
 
 punked.us
+
+# Reference: https://www.virustotal.com/gui/domain/mooo.info/details
+
+mooo.info
