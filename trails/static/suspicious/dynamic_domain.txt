@@ -1692,3 +1692,7 @@ bot.nu
 # Reference: https://www.virustotal.com/gui/domain/undo.it/details
 
 undo.it
+
+# Reference: https://www.virustotal.com/gui/domain/my.to/details
+
+my.to
