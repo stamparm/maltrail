@@ -1568,3 +1568,7 @@ shop.tm
 # Reference: https://www.virustotal.com/gui/domain/home.kg/details
 
 home.kg
+
+# Reference: https://www.virustotal.com/gui/domain/ro.lt/details
+
+ro.lt
