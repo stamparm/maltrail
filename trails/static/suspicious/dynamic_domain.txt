@@ -1604,3 +1604,7 @@ homelinuxserver.org
 # Reference: https://www.virustotal.com/gui/domain/madhacker.biz/details
 
 madhacker.biz
+
+# Reference: https://www.virustotal.com/gui/domain/zanity.net/details
+
+zanity.net
