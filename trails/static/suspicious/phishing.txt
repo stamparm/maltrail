@@ -6440,3 +6440,7 @@ support36.azurewebsites.net
 # Reference: https://twitter.com/malwrhunterteam/status/1129681065537351680
 
 eon.magyar-szamla.digilandcomputing.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1129683568735731713
+
+haibleexport.com
