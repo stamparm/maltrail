@@ -1556,3 +1556,7 @@ minecraftr.us
 # Reference: https://www.virustotal.com/gui/domain/spacetechnology.net/details
 
 spacetechnology.net
+
+# Reference: https://www.virustotal.com/gui/domain/minecraftnoob.com/details
+
+minecraftnoob.com
