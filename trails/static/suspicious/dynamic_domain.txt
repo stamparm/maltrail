@@ -1624,3 +1624,7 @@ mm.my
 # Reference: https://www.virustotal.com/gui/domain/epicgamer.org/details
 
 epicgamer.org
+
+# Reference: https://www.virustotal.com/gui/domain/soon.it/details
+
+soon.it
