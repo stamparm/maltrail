@@ -1572,3 +1572,7 @@ home.kg
 # Reference: https://www.virustotal.com/gui/domain/ro.lt/details
 
 ro.lt
+
+# Reference: https://www.virustotal.com/gui/domain/allowed.org/details
+
+allowed.org
