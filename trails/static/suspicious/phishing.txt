@@ -6436,3 +6436,7 @@ support33.azurewebsites.net
 support34.azurewebsites.net
 support35.azurewebsites.net
 support36.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1129681065537351680
+
+eon.magyar-szamla.digilandcomputing.com
