@@ -1748,3 +1748,7 @@ ghostnation.org
 # Reference: https://www.virustotal.com/gui/domain/bloom.us/details
 
 bloom.us
+
+# Reference: https://www.virustotal.com/gui/domain/k22.su/details
+
+k22.su
