@@ -5098,3 +5098,7 @@ k.vu
 # Reference: https://www.virustotal.com/gui/domain/vr.lt/relations
 
 vr.lt
+
+# Reference: https://www.virustotal.com/gui/domain/suka.se/relations
+
+suka.se
