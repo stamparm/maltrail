@@ -1576,3 +1576,7 @@ ro.lt
 # Reference: https://www.virustotal.com/gui/domain/allowed.org/details
 
 allowed.org
+
+# Reference: https://www.virustotal.com/gui/domain/jumpingcrab.com/details
+
+jumpingcrab.com
