@@ -1548,3 +1548,7 @@ farted.net
 # Reference: https://www.virustotal.com/gui/domain/fr.to/details
 
 fr.to
+
+# Reference: https://www.virustotal.com/gui/domain/minecraftr.us/details
+
+minecraftr.us
