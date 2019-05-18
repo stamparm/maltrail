@@ -5082,3 +5082,7 @@ computersforpeace.net
 # Reference: https://www.virustotal.com/gui/domain/byte4byte.com/details
 
 byte4byte.com
+
+# Reference: https://www.virustotal.com/gui/domain/ohbah.com/relations
+
+ohbah.com
