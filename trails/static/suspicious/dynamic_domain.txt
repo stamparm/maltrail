@@ -1668,3 +1668,7 @@ nx.tc
 # Reference: https://www.virustotal.com/gui/domain/t28.net/details
 
 t28.net
+
+# Reference: https://www.virustotal.com/gui/domain/info.gf/details
+
+info.gf
