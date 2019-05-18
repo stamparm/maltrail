@@ -5126,3 +5126,7 @@ ax.lt
 # Reference: https://www.virustotal.com/gui/domain/biz.tm/relations
 
 biz.tm
+
+# Reference: https://www.virustotal.com/gui/domain/info.tm/details
+
+info.tm
