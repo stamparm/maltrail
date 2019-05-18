@@ -1736,3 +1736,7 @@ iminecraft.se
 # Reference: https://www.virustotal.com/gui/domain/star.is/details
 
 star.is
+
+# Reference: https://www.virustotal.com/gui/domain/good-newz.org/details
+
+good-newz.org
