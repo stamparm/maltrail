@@ -1528,3 +1528,7 @@ r-o-o-t.net
 # Reference: https://www.virustotal.com/gui/domain/psybnc.org/details
 
 psybnc.org
+
+# Reference: https://www.virustotal.com/gui/domain/punked.us/details
+
+punked.us
