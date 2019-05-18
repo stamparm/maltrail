@@ -1780,3 +1780,7 @@ ezxdev.org
 # Reference: https://www.virustotal.com/gui/domain/ufodns.com/relations
 
 ufodns.com
+
+# Reference: https://www.virustotal.com/gui/domain/dyn.mk/relations
+
+dyn.mk
