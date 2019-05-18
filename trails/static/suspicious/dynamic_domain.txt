@@ -1640,3 +1640,7 @@ csproject.org
 # Reference: https://www.virustotal.com/gui/domain/serverpit.com/relations
 
 serverpit.com
+
+# Reference: https://www.virustotal.com/gui/domain/evils.in/details
+
+evils.in
