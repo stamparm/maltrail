@@ -1616,3 +1616,7 @@ zanity.net
 # Reference: https://www.virustotal.com/gui/domain/mm.my/details
 
 mm.my
+
+# Reference: https://www.virustotal.com/gui/domain/120v.ac/details
+
+120v.ac
