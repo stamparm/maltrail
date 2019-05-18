@@ -1720,3 +1720,7 @@ silksky.com
 # Reference: https://www.virustotal.com/gui/domain/nard.ca/details
 
 nard.ca
+
+# Reference: https://www.virustotal.com/gui/domain/mindhackers.org/details
+
+mindhackers.org
