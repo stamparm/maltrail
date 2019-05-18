@@ -1520,3 +1520,7 @@ h-o-s-t.name
 # Reference: https://www.virustotal.com/gui/domain/d-n-s.name/details
 
 d-n-s.name
+
+# Reference: https://www.virustotal.com/gui/domain/r-o-o-t.net/details
+
+r-o-o-t.net
