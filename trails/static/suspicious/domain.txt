@@ -5142,3 +5142,7 @@ javafaq.nu
 # Reference: https://www.virustotal.com/gui/domain/xpresit.net/relations
 
 xpresit.net
+
+# Reference: https://www.virustotal.com/gui/domain/hackquest.com/relations
+
+hackquest.com
