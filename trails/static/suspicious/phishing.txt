@@ -6452,3 +6452,10 @@ aruba-loginmail-online.tech
 aruba-loginmail-online.services
 aruba-loginmail-online.email
 arubacloudl.live
+
+# Reference: https://twitter.com/illegalFawn/status/1129741361106837511
+
+aggiorna-registrazione-telefonica.org
+attivasicurezzaweb-obbligatoria.com
+avviso-abilitazione-aggiornamento2019.com
+decreto-urgente-sicurezzaweb.com
