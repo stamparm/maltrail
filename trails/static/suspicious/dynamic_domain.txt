@@ -1652,3 +1652,7 @@ bigbox.info
 # Reference: https://www.virustotal.com/gui/domain/happyforever.com/details
 
 happyforever.com
+
+# Reference: https://www.virustotal.com/gui/domain/1337.cx/details
+
+1337.cx
