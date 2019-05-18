@@ -1540,3 +1540,7 @@ mooo.info
 # Reference: https://www.virustotal.com/gui/domain/port0.org/details
 
 port0.org
+
+# Reference: https://www.virustotal.com/gui/domain/farted.net/details
+
+farted.net
