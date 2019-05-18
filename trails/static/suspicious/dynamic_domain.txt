@@ -1792,3 +1792,7 @@ e-m-a-i-l.org
 # Reference: https://www.virustotal.com/gui/domain/dark-byte.net/details
 
 dark-byte.net
+
+# Reference: https://www.virustotal.com/gui/domain/stuns.org/details
+
+stuns.org
