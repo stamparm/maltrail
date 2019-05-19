@@ -7112,3 +7112,10 @@ account-service-v60.ga
 account-service-v60.gq
 account-service-v60.ml
 account-service-v60.tk
+
+# Reference: https://twitter.com/illegalFawn/status/1130024654448537600
+
+dipartimento-anagrafe-posteit.com
+nuova-sicurezzaweb-obbligatoria.com
+sistema-informativo-sicurezza.com
+sicurezza-obbligatoria.com
