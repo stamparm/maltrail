@@ -276,3 +276,8 @@ westflies.com/api/api.php
 /send/m10a10-1.php
 /send/azu.php
 /send/was.php
+
+# Reference: https://twitter.com/JayTHL/status/1129865519417499651
+# Reference: https://pastebin.com/raw/mU7abvT9
+
+/attiinnddeexx.php
