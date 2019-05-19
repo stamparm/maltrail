@@ -1,6 +1,10 @@
 # Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
+# User reported
+
+profreehost.com
+
 # Reference: http://malwaredomains.lehigh.edu/files/freewebhosts.txt
 
 0-catch.com
