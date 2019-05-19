@@ -1801,3 +1801,99 @@ stuns.org
 # Reference: https://www.cloudns.net/dynamic-dns/
 
 dns-cloud.net
+
+# Reference: https://www.virustotal.com/gui/domain/2dons.com/relations
+
+2dons.com
+
+# Reference: https://www.virustotal.com/gui/domain/hs.vc/relations
+
+hs.vc
+
+# Reference: https://www.virustotal.com/gui/domain/freesa.org/details
+
+freesa.org
+
+# Reference: https://www.virustotal.com/gui/domain/allisons.org/relations
+
+allisons.org
+
+# Reference: https://www.virustotal.com/gui/domain/inflict.us/relations
+
+inflict.us
+
+# Reference: https://www.virustotal.com/gui/domain/uk.ms/relations
+
+uk.ms
+
+# Reference: https://www.virustotal.com/gui/domain/computersforpeace.net/relations
+
+computersforpeace.net
+
+# Reference: https://www.virustotal.com/gui/domain/byte4byte.com/details
+
+byte4byte.com
+
+# Reference: https://www.virustotal.com/gui/domain/ohbah.com/relations
+
+ohbah.com
+
+# Reference: https://www.virustotal.com/gui/domain/24-7.ro/relations
+
+24-7.ro
+
+# Reference: https://www.virustotal.com/gui/domain/vr.lt/relations
+
+vr.lt
+
+# Reference: https://www.virustotal.com/gui/domain/suka.se/relations
+
+suka.se
+
+# Reference: https://www.virustotal.com/gui/domain/h4ck.me/relations
+
+h4ck.me
+
+# Reference: https://www.virustotal.com/gui/domain/root.sx/relations
+
+root.sx
+
+# Reference: https://www.virustotal.com/gui/domain/3dxtras.com/details
+
+3dxtras.com
+
+# Reference: https://www.virustotal.com/gui/domain/now.im/relations
+
+now.im
+
+# Reference: https://www.virustotal.com/gui/domain/ax.lt/relations
+
+ax.lt
+
+# Reference: https://www.virustotal.com/gui/domain/biz.tm/relations
+
+biz.tm
+
+# Reference: https://www.virustotal.com/gui/domain/info.tm/details
+
+info.tm
+
+# Reference: https://www.virustotal.com/gui/domain/photo-frame.com/relations
+
+photo-frame.com
+
+# Reference: https://www.virustotal.com/gui/domain/javafaq.nu/relations
+
+javafaq.nu
+
+# Reference: https://www.virustotal.com/gui/domain/xpresit.net/relations
+
+xpresit.net
+
+# Reference: https://www.virustotal.com/gui/domain/hackquest.com/relations
+
+hackquest.com
+
+# Reference: https://www.virustotal.com/gui/domain/ruok.org/details
+
+ruok.org
