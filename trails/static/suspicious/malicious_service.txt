@@ -52,3 +52,7 @@ jokerootqsrkifko.onion
 # Reference: https://twitter.com/0xffff0800/status/1129215041432096773
 
 cve-2019-0708.com
+
+# Reference: https://twitter.com/benkow_/status/1130410721865535490
+
+jg4rli4xoagvvmw47fr2bnnfu7t2epj6owrgyoee7daoh4gxvbt3bhyd.onion
