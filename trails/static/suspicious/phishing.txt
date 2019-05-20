@@ -7119,3 +7119,7 @@ dipartimento-anagrafe-posteit.com
 nuova-sicurezzaweb-obbligatoria.com
 sistema-informativo-sicurezza.com
 sicurezza-obbligatoria.com
+
+# Reference: https://twitter.com/illegalFawn/status/1130443269496803328
+
+servizi-online-bnl.com
