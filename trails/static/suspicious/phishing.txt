@@ -7123,3 +7123,9 @@ sicurezza-obbligatoria.com
 # Reference: https://twitter.com/illegalFawn/status/1130443269496803328
 
 servizi-online-bnl.com
+
+# Reference: https://twitter.com/illegalFawn/status/1130447617081729027
+
+aggiorndat2019.com
+aggiorndat2019.shop
+posteweb.cloud
