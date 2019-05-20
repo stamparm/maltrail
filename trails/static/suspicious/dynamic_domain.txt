@@ -1897,3 +1897,7 @@ hackquest.com
 # Reference: https://www.virustotal.com/gui/domain/ruok.org/details
 
 ruok.org
+
+# Reference: https://www.virustotal.com/gui/domain/k.vu/relations
+
+k.vu
