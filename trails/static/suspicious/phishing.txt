@@ -7161,3 +7161,7 @@ office365products.blob.core.windows.net
 # Reference: https://twitter.com/malwrhunterteam/status/1130820742474600448
 
 office365message.azurewebsites.net
+
+# Reference: https://twitter.com/PhishingAi/status/1130840915113721862
+
+check9392login.pro
