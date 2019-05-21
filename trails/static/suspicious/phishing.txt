@@ -7143,3 +7143,7 @@ xenctoy.gq
 # Reference: https://twitter.com/malwrhunterteam/status/1130815718998593536
 
 owarezulofflogs.hopto.org
+
+# Reference: https://twitter.com/IpNigh/status/1130807159946657792
+
+pfinance.ag-suisse.com
