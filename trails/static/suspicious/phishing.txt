@@ -7139,3 +7139,7 @@ gruppounicredit.cloud
 techsupport4.azurewebsites.net
 foloble.tk
 xenctoy.gq
+
+# Reference: https://twitter.com/malwrhunterteam/status/1130815718998593536
+
+owarezulofflogs.hopto.org
