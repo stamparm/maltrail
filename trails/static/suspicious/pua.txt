@@ -1861,3 +1861,9 @@ anyplace-gateway.info
 # Reference: https://app.any.run/tasks/8d827ab9-2ce5-4730-8652-b07328fa7814
 
 lifopp-sacoho.com
+
+
+# Reference: https://www.reverse.it/sample/c314fcf73fbd90c06867864834c7f62e29d2a217bde9b4bdc9b004e6b55d4697?environmentId=100
+# Reference: https://www.virustotal.com/#/file/c314fcf73fbd90c06867864834c7f62e29d2a217bde9b4bdc9b004e6b55d4697/detection
+
+wintoflashsuggestor.net
