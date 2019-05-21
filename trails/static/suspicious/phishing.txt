@@ -7165,3 +7165,7 @@ office365message.azurewebsites.net
 # Reference: https://twitter.com/PhishingAi/status/1130840915113721862
 
 check9392login.pro
+
+# Reference: https://twitter.com/MalWebHunter/status/1130857721278881792
+
+paypal-verify-secure.net
