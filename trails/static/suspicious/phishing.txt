@@ -7157,3 +7157,7 @@ filessji37y3tyghjsjsghkjss.com
 
 offices365product.azurewebsites.net
 office365products.blob.core.windows.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1130820742474600448
+
+office365message.azurewebsites.net
