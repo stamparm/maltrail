@@ -541,7 +541,7 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                         query = query.lower()
 
-                        if not query or '.' not in query or not all(_ in VALID_DNS_CHARS for _ in query) or any(_ in query for _ in (".intranet.",)) or any(query.endswith(_) for _ in IGNORE_DNS_QUERY_SUFFIXES):
+                        if not query or '.' not in query or not all(_ in VALID_DNS_CHARS for _ in query) or any(_ in query for _ in (".intranet.",)) or query.split('.')[-1] in IGNORE_DNS_QUERY_SUFFIXES:
                             return
 
                         parts = query.split('.')

@@ -24,7 +24,7 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.13.12"
+VERSION = "0.13.13"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -75,7 +75,7 @@ HIGH_PRIORITY_REFERENCES = ("bambenekconsulting.com", "github.com/stamparm/black
 CONSONANTS = "bcdfghjklmnpqrstvwxyz"
 BAD_TRAIL_PREFIXES = ("127.", "192.168.", "localhost")
 LOCALHOST_IP = { 4: "127.0.0.1", 6: "::1" }
-IGNORE_DNS_QUERY_SUFFIXES = (".arpa", ".local", ".guest")
+IGNORE_DNS_QUERY_SUFFIXES = set(("arpa", "local", "guest", "intranet", "int"))
 VALID_DNS_CHARS = string.letters + string.digits + '-' + '.'  # Reference: http://stackoverflow.com/a/3523068
 SUSPICIOUS_CONTENT_TYPES = ("application/x-sh", "application/x-shellscript", "application/hta", "text/x-sh", "text/x-shellscript")
 SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".exe", ".hta", ".ps1", ".scr"))
