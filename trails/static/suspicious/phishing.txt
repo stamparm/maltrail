@@ -7182,3 +7182,16 @@ ripristina-lban.org
 # Reference: https://twitter.com/JayTHL/status/1131199926959050752
 
 microsofjqg1ap0pfjjr1z6u.z13.web.core.windows.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131439903173206016
+
+gokiuy11.azurewebsites.net
+gokiuy12.azurewebsites.net
+gokiuy13.azurewebsites.net
+gokiuy14.azurewebsites.net
+gokiuy15.azurewebsites.net
+gokiuy16.azurewebsites.net
+gokiuy17.azurewebsites.net
+gokiuy18.azurewebsites.net
+gokiuy19.azurewebsites.net
+gokiuy20.azurewebsites.net
