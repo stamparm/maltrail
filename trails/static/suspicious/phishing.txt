@@ -7374,3 +7374,7 @@ idlogn-trademenz.azurewebsites.net
 # Reference: https://twitter.com/malwrhunterteam/status/1131596974514462730
 
 www-trademe2019-co-nz.azurewebsites.net
+
+# Reference: https://twitter.com/ActorExpose/status/1131300105947164672
+
+microsoft29.000webhostapp.com
