@@ -7230,3 +7230,16 @@ aggiornainfo.info
 aggiornamentoaccaunt2019.info
 aggiorna-servizi-operazione2019.com
 comunicazione-verifica-aggiornamento.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131446563652472832
+
+web-secrvice.azurewebsites.net
+web-secrvice-1.azurewebsites.net
+web-secrvice-2.azurewebsites.net
+web-secrvice-3.azurewebsites.net
+web-secrvice-4.azurewebsites.net
+web-secrvice-5.azurewebsites.net
+web-secrvice-7.azurewebsites.net
+web-secrvice-8.azurewebsites.net
+web-secrvice-9.azurewebsites.net
+web-secrvice-10.azurewebsites.net
