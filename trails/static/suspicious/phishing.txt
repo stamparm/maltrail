@@ -7366,3 +7366,7 @@ airbus-nda.azurewebsites.net
 # Reference: https://twitter.com/malwrhunterteam/status/1129423580901662721
 
 amaz00n.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131534255828492288
+
+idlogn-trademenz.azurewebsites.net
