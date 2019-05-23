@@ -67,3 +67,7 @@
 # Reference: https://twitter.com/sudosev/status/1126552059334070272
 
 /Invoke-Mimikatz.ps1
+
+# Reference: https://twitter.com/James_inthe_box/status/1131556358732443650
+
+/out-821986920.ps1
