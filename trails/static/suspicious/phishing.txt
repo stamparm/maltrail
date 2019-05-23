@@ -7169,3 +7169,12 @@ check9392login.pro
 # Reference: https://twitter.com/MalWebHunter/status/1130857721278881792
 
 paypal-verify-secure.net
+
+# Reference: https://twitter.com/illegalFawn/status/1131504290978304000
+
+attiva-la-sicurezzaweb.com
+avviso-aggiornamento-servizi2019.com
+postedatiinfo.info
+posteitaliane.one
+posteitaliane.xyz
+ripristina-lban.org
