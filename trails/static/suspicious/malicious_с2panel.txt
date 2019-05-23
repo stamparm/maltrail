@@ -449,3 +449,7 @@ http://13.58.74.46/Mpanel_V1.0.1
 # Reference: https://twitter.com/x42x5a/status/1130421342782857217
 
 ethclicks.live/lo/
+
+# Reference: https://twitter.com/ViriBack/status/1131000954613108737
+
+54.37.141.202/panel/
