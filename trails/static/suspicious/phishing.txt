@@ -7213,3 +7213,11 @@ tokiu-servr12.azurewebsites.net
 tokiu-servr13.azurewebsites.net
 tokiu-servr14.azurewebsites.net
 tokiu-servr15.azurewebsites.net
+
+# Reference: https://twitter.com/illegalFawn/status/1131504756709613568
+
+httpsposteinfo.info
+infodocumentodatiposte.info
+posteaggiornamentodati.info
+posteid-utenza-2019.net
+posteinfoaggiornadati.info
