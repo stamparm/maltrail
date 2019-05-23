@@ -7243,3 +7243,16 @@ web-secrvice-7.azurewebsites.net
 web-secrvice-8.azurewebsites.net
 web-secrvice-9.azurewebsites.net
 web-secrvice-10.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131447944178274305
+
+jokl21.azurewebsites.net
+jokl22.azurewebsites.net
+jokl23.azurewebsites.net
+jokl24.azurewebsites.net
+jokl25.azurewebsites.net
+jokl26.azurewebsites.net
+jokl27.azurewebsites.net
+jokl28.azurewebsites.net
+jokl29.azurewebsites.net
+jokl20.azurewebsites.net
