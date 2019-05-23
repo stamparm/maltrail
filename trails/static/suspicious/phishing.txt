@@ -7256,3 +7256,16 @@ jokl27.azurewebsites.net
 jokl28.azurewebsites.net
 jokl29.azurewebsites.net
 jokl20.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131438550124253184
+
+serverdatabasefdgg-96error.azurewebsites.net
+2serverdatabasefdgg-96error.azurewebsites.net
+3serverdatabasefdgg-96error.azurewebsites.net
+4serverdatabasefdgg-96error.azurewebsites.net
+5serverdatabasefdgg-96error.azurewebsites.net
+6serverdatabasefdgg-96error.azurewebsites.net
+7serverdatabasefdgg-96error.azurewebsites.net
+8serverdatabasefdgg-96error.azurewebsites.net
+9serverdatabasefdgg-96error.azurewebsites.net
+10serverdatabasefdgg-96error.azurewebsites.net
