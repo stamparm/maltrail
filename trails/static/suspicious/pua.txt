@@ -1867,3 +1867,8 @@ lifopp-sacoho.com
 # Reference: https://www.virustotal.com/#/file/c314fcf73fbd90c06867864834c7f62e29d2a217bde9b4bdc9b004e6b55d4697/detection
 
 wintoflashsuggestor.net
+
+# Reference: https://twitter.com/raby_mr/status/1131448142665097217
+# Reference: https://app.any.run/tasks/bdbca682-3f93-44ea-af57-e0174a660bcf/
+
+getgosoft.com
