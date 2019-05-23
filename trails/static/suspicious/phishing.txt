@@ -7269,3 +7269,7 @@ serverdatabasefdgg-96error.azurewebsites.net
 8serverdatabasefdgg-96error.azurewebsites.net
 9serverdatabasefdgg-96error.azurewebsites.net
 10serverdatabasefdgg-96error.azurewebsites.net
+
+# Reference: https://twitter.com/JayTHL/status/1131431835442065408
+
+zimail.azurewebsites.net
