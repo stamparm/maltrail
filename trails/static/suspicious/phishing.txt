@@ -7386,3 +7386,7 @@ mozay-1.com
 # Reference: https://twitter.com/IpNigh/status/1131244699136724993
 
 ebril-85.000webhostapp.com
+
+# Reference: https://twitter.com/IpNigh/status/1131395286457344002
+
+rogers.finance
