@@ -7382,3 +7382,7 @@ microsoft29.000webhostapp.com
 # Reference: https://twitter.com/IpNigh/status/1131516329968713728
 
 mozay-1.com
+
+# Reference: https://twitter.com/IpNigh/status/1131244699136724993
+
+ebril-85.000webhostapp.com
