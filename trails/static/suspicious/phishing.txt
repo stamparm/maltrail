@@ -7178,3 +7178,7 @@ postedatiinfo.info
 posteitaliane.one
 posteitaliane.xyz
 ripristina-lban.org
+
+# Reference: https://twitter.com/JayTHL/status/1131199926959050752
+
+microsofjqg1ap0pfjjr1z6u.z13.web.core.windows.net
