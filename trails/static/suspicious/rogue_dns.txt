@@ -52,3 +52,9 @@ ns2.lcjcomputing.com
 
 1.171.160.155:53
 1.171.175.119:53
+
+# Reference: https://twitter.com/david_jursa/status/1131487385034870784
+# Reference: https://pastebin.com/s98awS0E
+
+176.123.7.80:53
+31.204.153.34:53
