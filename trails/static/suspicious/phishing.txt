@@ -7354,3 +7354,7 @@ wuty.duckdns.org
 xcvfr.duckdns.org
 ygrg.duckdns.org
 zorhatrading.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131286985220526082
+
+apple-idrecheck.serveftp.com
