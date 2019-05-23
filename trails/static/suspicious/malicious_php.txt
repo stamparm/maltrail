@@ -281,3 +281,8 @@ westflies.com/api/api.php
 # Reference: https://pastebin.com/raw/mU7abvT9
 
 /attiinnddeexx.php
+
+# Reference: https://twitter.com/JayTHL/status/1131329627954319361
+# Reference: https://pastebin.com/raw/g8bhsb4G
+
+/6i5aiewuz0xprm8htmrrhhz9.php
