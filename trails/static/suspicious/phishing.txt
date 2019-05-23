@@ -7195,3 +7195,21 @@ gokiuy17.azurewebsites.net
 gokiuy18.azurewebsites.net
 gokiuy19.azurewebsites.net
 gokiuy20.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131441175779577857
+
+tokiu-servr.azurewebsites.net
+tokiu-servr2.azurewebsites.net
+tokiu-servr3.azurewebsites.net
+tokiu-servr4.azurewebsites.net
+tokiu-servr5.azurewebsites.net
+tokiu-servr6.azurewebsites.net
+tokiu-servr7.azurewebsites.net
+tokiu-servr8.azurewebsites.net
+tokiu-servr9.azurewebsites.net
+tokiu-servr10.azurewebsites.net
+tokiu-servr11.azurewebsites.net
+tokiu-servr12.azurewebsites.net
+tokiu-servr13.azurewebsites.net
+tokiu-servr14.azurewebsites.net
+tokiu-servr15.azurewebsites.net
