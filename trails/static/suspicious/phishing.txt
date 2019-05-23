@@ -7378,3 +7378,7 @@ www-trademe2019-co-nz.azurewebsites.net
 # Reference: https://twitter.com/ActorExpose/status/1131300105947164672
 
 microsoft29.000webhostapp.com
+
+# Reference: https://twitter.com/IpNigh/status/1131516329968713728
+
+mozay-1.com
