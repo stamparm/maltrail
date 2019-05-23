@@ -7362,3 +7362,7 @@ apple-idrecheck.serveftp.com
 # Reference: https://twitter.com/malwrhunterteam/status/1131540032387461120
 
 airbus-nda.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1129423580901662721
+
+amaz00n.azurewebsites.net
