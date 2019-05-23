@@ -71,3 +71,8 @@
 # Reference: https://twitter.com/James_inthe_box/status/1131556358732443650
 
 /out-821986920.ps1
+
+# Reference: https://www.virustotal.com/gui/domain/checkerrors.ug/relations
+
+payload.ps1
+payload2.ps1
