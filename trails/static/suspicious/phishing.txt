@@ -7169,3 +7169,107 @@ check9392login.pro
 # Reference: https://twitter.com/MalWebHunter/status/1130857721278881792
 
 paypal-verify-secure.net
+
+# Reference: https://twitter.com/illegalFawn/status/1131504290978304000
+
+attiva-la-sicurezzaweb.com
+avviso-aggiornamento-servizi2019.com
+postedatiinfo.info
+posteitaliane.one
+posteitaliane.xyz
+ripristina-lban.org
+
+# Reference: https://twitter.com/JayTHL/status/1131199926959050752
+
+microsofjqg1ap0pfjjr1z6u.z13.web.core.windows.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131439903173206016
+
+gokiuy11.azurewebsites.net
+gokiuy12.azurewebsites.net
+gokiuy13.azurewebsites.net
+gokiuy14.azurewebsites.net
+gokiuy15.azurewebsites.net
+gokiuy16.azurewebsites.net
+gokiuy17.azurewebsites.net
+gokiuy18.azurewebsites.net
+gokiuy19.azurewebsites.net
+gokiuy20.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131441175779577857
+
+tokiu-servr.azurewebsites.net
+tokiu-servr2.azurewebsites.net
+tokiu-servr3.azurewebsites.net
+tokiu-servr4.azurewebsites.net
+tokiu-servr5.azurewebsites.net
+tokiu-servr6.azurewebsites.net
+tokiu-servr7.azurewebsites.net
+tokiu-servr8.azurewebsites.net
+tokiu-servr9.azurewebsites.net
+tokiu-servr10.azurewebsites.net
+tokiu-servr11.azurewebsites.net
+tokiu-servr12.azurewebsites.net
+tokiu-servr13.azurewebsites.net
+tokiu-servr14.azurewebsites.net
+tokiu-servr15.azurewebsites.net
+
+# Reference: https://twitter.com/illegalFawn/status/1131504756709613568
+
+httpsposteinfo.info
+infodocumentodatiposte.info
+posteaggiornamentodati.info
+posteid-utenza-2019.net
+posteinfoaggiornadati.info
+
+# Reference: https://twitter.com/illegalFawn/status/1131504654553100289
+
+aderisci-posteid.info
+aggiordati-2019.info
+aggiornainfo.info
+aggiornamentoaccaunt2019.info
+aggiorna-servizi-operazione2019.com
+comunicazione-verifica-aggiornamento.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131446563652472832
+
+web-secrvice.azurewebsites.net
+web-secrvice-1.azurewebsites.net
+web-secrvice-2.azurewebsites.net
+web-secrvice-3.azurewebsites.net
+web-secrvice-4.azurewebsites.net
+web-secrvice-5.azurewebsites.net
+web-secrvice-7.azurewebsites.net
+web-secrvice-8.azurewebsites.net
+web-secrvice-9.azurewebsites.net
+web-secrvice-10.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131447944178274305
+
+jokl21.azurewebsites.net
+jokl22.azurewebsites.net
+jokl23.azurewebsites.net
+jokl24.azurewebsites.net
+jokl25.azurewebsites.net
+jokl26.azurewebsites.net
+jokl27.azurewebsites.net
+jokl28.azurewebsites.net
+jokl29.azurewebsites.net
+jokl20.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131438550124253184
+
+serverdatabasefdgg-96error.azurewebsites.net
+2serverdatabasefdgg-96error.azurewebsites.net
+3serverdatabasefdgg-96error.azurewebsites.net
+4serverdatabasefdgg-96error.azurewebsites.net
+5serverdatabasefdgg-96error.azurewebsites.net
+6serverdatabasefdgg-96error.azurewebsites.net
+7serverdatabasefdgg-96error.azurewebsites.net
+8serverdatabasefdgg-96error.azurewebsites.net
+9serverdatabasefdgg-96error.azurewebsites.net
+10serverdatabasefdgg-96error.azurewebsites.net
+
+# Reference: https://twitter.com/JayTHL/status/1131431835442065408
+
+zimail.azurewebsites.net
