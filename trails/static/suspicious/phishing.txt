@@ -7524,3 +7524,8 @@ portaltosecurelive98-alert.azurewebsites.net
 serever-server01.azurewebsites.net
 serever-server02.azurewebsites.net
 serever-server03.azurewebsites.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131808523015335938
+
+thisoneisofficialatest.azurewebsites.net
+weneedtomakeitsecure.azurewebsites.net
