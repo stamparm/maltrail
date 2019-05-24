@@ -290,3 +290,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/IpNigh/status/1131425432543408129
 
 /index91484101498.php
+
+# Reference: https://twitter.com/VirITeXplorer/status/1131816142199250944
+
+/pagiy75.php
