@@ -7557,3 +7557,23 @@ registroanagrafesicurezza.com
 wert-234azdrt.freedynamicdns.net
 verifaca-poste2019.servemp3.com
 postalemobilespaitalianess.otzo.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131990543708434433
+
+wab-server.azurewebsites.net
+wab-server01.azurewebsites.net
+wab-server02.azurewebsites.net
+wab-server03.azurewebsites.net
+wab-server04.azurewebsites.net
+wab-server05.azurewebsites.net
+wab-server06.azurewebsites.net
+wab-server07.azurewebsites.net
+wab-server08.azurewebsites.net
+wab-server09.azurewebsites.net
+wab-server10.azurewebsites.net
+wab-server11.azurewebsites.net
+wab-server12.azurewebsites.net
+wab-server13.azurewebsites.net
+wab-server14.azurewebsites.net
+wab-server15.azurewebsites.net
+wab-server16.azurewebsites.net
