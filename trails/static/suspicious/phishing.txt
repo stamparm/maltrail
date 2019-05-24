@@ -7517,3 +7517,10 @@ businesswork.ddns.net
 # Reference: https://twitter.com/IpNigh/status/1131652239800590337
 
 capitalone.com-login-identity-protection.forma2.ge
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131804829234487296
+
+portaltosecurelive98-alert.azurewebsites.net
+serever-server01.azurewebsites.net
+serever-server02.azurewebsites.net
+serever-server03.azurewebsites.net
