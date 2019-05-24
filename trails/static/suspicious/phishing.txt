@@ -7539,3 +7539,7 @@ secure.apple.com.id-respond-cs.info
 aruba-webmail.com
 webmail-aruba.site
 webmail-aruba.host
+
+# Reference: https://twitter.com/PhishStats/status/1131941638346072066
+
+giveaway-tesla.me
