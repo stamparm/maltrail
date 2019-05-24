@@ -123,3 +123,9 @@ r.twotouchauthentication.online
 
 zarabotaibitok.ru
 61.128.111.164:3335
+
+# Reference: https://twitter.com/malwrhunterteam/status/1131878872889339904
+
+coinbase.com
+localbitcoins.com
+xmlgold.eu
