@@ -7529,3 +7529,7 @@ serever-server03.azurewebsites.net
 
 thisoneisofficialatest.azurewebsites.net
 weneedtomakeitsecure.azurewebsites.net
+
+# Reference: https://twitter.com/ffforward/status/1131839547132796928
+
+secure.apple.com.id-respond-cs.info
