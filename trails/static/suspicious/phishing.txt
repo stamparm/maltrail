@@ -7533,3 +7533,9 @@ weneedtomakeitsecure.azurewebsites.net
 # Reference: https://twitter.com/ffforward/status/1131839547132796928
 
 secure.apple.com.id-respond-cs.info
+
+# Reference: https://twitter.com/illegalFawn/status/1131909898378334208
+
+aruba-webmail.com
+webmail-aruba.site
+webmail-aruba.host
