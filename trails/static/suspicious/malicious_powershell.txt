@@ -74,5 +74,5 @@
 
 # Reference: https://www.virustotal.com/gui/domain/checkerrors.ug/relations
 
-payload.ps1
-payload2.ps1
+/payload.ps1
+/payload2.ps1
