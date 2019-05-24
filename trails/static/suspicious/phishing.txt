@@ -7543,3 +7543,11 @@ webmail-aruba.host
 # Reference: https://twitter.com/PhishStats/status/1131941638346072066
 
 giveaway-tesla.me
+
+# Reference: https://twitter.com/illegalFawn/status/1131915767522484224
+
+aggiorna-ora-privacy-2019.com
+sicurezzaposte.online
+dip-anagrafica-pitaliane.com
+servizi-operazioni-comunicato2019.com
+registroanagrafesicurezza.com
