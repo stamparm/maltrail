@@ -7541,8 +7541,10 @@ webmail-aruba.site
 webmail-aruba.host
 
 # Reference: https://twitter.com/PhishStats/status/1131941638346072066
+# Reference: https://twitter.com/PhishStats/status/1132076032645849089
 
 giveaway-tesla.me
+giveaway-tesla.store
 
 # Reference: https://twitter.com/illegalFawn/status/1131915767522484224
 
