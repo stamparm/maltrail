@@ -7804,3 +7804,7 @@ capital1bank.us
 # Reference: https://twitter.com/PhishStats/status/1132438354547617792
 
 ausmigrate.net.au
+
+# Reference: https://twitter.com/malwrhunterteam/status/1132351283891965955
+
+redirect1-2203f.firebaseapp.com
