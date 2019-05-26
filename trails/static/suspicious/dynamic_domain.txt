@@ -1901,3 +1901,8 @@ ruok.org
 # Reference: https://www.virustotal.com/gui/domain/k.vu/relations
 
 k.vu
+
+# Reference: https://twitter.com/ScumBots/status/1132417823760896000
+# Reference: https://www.virustotal.com/gui/domain/wicp.vip/relations
+
+wicp.vip
