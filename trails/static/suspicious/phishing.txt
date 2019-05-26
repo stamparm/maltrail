@@ -7816,3 +7816,7 @@ ilogix.cl
 # Reference: https://twitter.com/aa419/status/1132364307763802112
 
 firstcommercialbk.ca
+
+# Reference: https://twitter.com/reecdeep/status/1132594295029096449
+
+supercasanardi.it
