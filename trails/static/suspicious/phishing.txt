@@ -7792,3 +7792,7 @@ xn--loin-blockchain-uec.com
 xn--m-onlinetrafikcezasdemeleri-7yc42o.com
 xn--metrobnrkonline-sjb.com
 yahoo-supportnumber.com
+
+# Reference: https://twitter.com/PhishStats/status/1132483301246218241
+
+gofresh.com.pk
