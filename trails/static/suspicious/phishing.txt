@@ -7808,3 +7808,7 @@ ausmigrate.net.au
 # Reference: https://twitter.com/malwrhunterteam/status/1132351283891965955
 
 redirect1-2203f.firebaseapp.com
+
+# Reference: https://twitter.com/PhishStats/status/1132528790540832768
+
+ilogix.cl
