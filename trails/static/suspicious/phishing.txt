@@ -7835,3 +7835,19 @@ kirastorm-v52.ml
 sandstorm-v23.ga
 sandstorm-v23.ml
 rockstar-v15.ml
+
+# Reference: https://citizenlab.ca/2019/05/burned-after-reading-endless-mayflys-ephemeral-disinformation-campaign/
+
+belfercenter.net
+bloomberq.com
+xn--theguardia-dq2e.com
+theguardiaṇ.com
+xn--huffngtonpost-69b.com
+huffıngtonpost.com
+indepnedent.co
+xn--emaraalyoum-1b9e.com
+xn--telocal-xt3c.com
+xn--alnaaregypt-cm8e.com
+xn--c-wpma.com
+iuvm.org
+iuvmpress.com
