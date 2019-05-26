@@ -7800,3 +7800,7 @@ gofresh.com.pk
 # Reference: https://twitter.com/WhiteHatScum/status/1132451189034029056
 
 capital1bank.us
+
+# Reference: https://twitter.com/PhishStats/status/1132438354547617792
+
+ausmigrate.net.au
