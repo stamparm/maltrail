@@ -7812,3 +7812,7 @@ redirect1-2203f.firebaseapp.com
 # Reference: https://twitter.com/PhishStats/status/1132528790540832768
 
 ilogix.cl
+
+# Reference: https://twitter.com/aa419/status/1132364307763802112
+
+firstcommercialbk.ca
