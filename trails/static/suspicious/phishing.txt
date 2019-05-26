@@ -7828,3 +7828,10 @@ mufg-jp.ltd
 # Reference: https://twitter.com/PhishStats/status/1132709687172968454
 
 pushnotifynew-851106600371156.douglassstevens.com
+
+# Reference: https://twitter.com/ActorExpose/status/1132398686309367810
+
+kirastorm-v52.ml
+sandstorm-v23.ga
+sandstorm-v23.ml
+rockstar-v15.ml
