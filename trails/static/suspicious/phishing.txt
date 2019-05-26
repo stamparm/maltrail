@@ -7796,3 +7796,7 @@ yahoo-supportnumber.com
 # Reference: https://twitter.com/PhishStats/status/1132483301246218241
 
 gofresh.com.pk
+
+# Reference: https://twitter.com/WhiteHatScum/status/1132451189034029056
+
+capital1bank.us
