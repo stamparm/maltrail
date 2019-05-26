@@ -7824,3 +7824,7 @@ supercasanardi.it
 # Reference: https://twitter.com/PhishStats/status/1132664566452768769
 
 mufg-jp.ltd
+
+# Reference: https://twitter.com/PhishStats/status/1132709687172968454
+
+pushnotifynew-851106600371156.douglassstevens.com
