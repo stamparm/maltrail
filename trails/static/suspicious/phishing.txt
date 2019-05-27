@@ -7869,3 +7869,9 @@ maand-overzicht.net
 teb-bireysel-onlinesubesi-tr.com
 cepte-teb-bireyselsubesi.com
 bireysel-teb-bankasi-tr.com
+
+# Reference: https://twitter.com/ns_alarms/status/1132915684479053824
+
+internetsubesihediyeleri.com
+internetsubesi10gb.com
+deniz10gbhediye.com
