@@ -658,3 +658,7 @@ Owari
 # Reference: https://www.hybrid-analysis.com/sample/442fe9bb6820ba79ca48429df8e5a01e991302be2a0d45a35c99c5d006a1d64a
 
 FA\.G\.4\.5
+
+# Reference: https://twitter.com/jorgemieres/status/1133052016568274950
+
+Mozilla/4.08 (Charon; Inferno)
