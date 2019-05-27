@@ -7875,3 +7875,7 @@ bireysel-teb-bankasi-tr.com
 internetsubesihediyeleri.com
 internetsubesi10gb.com
 deniz10gbhediye.com
+
+# Reference: https://twitter.com/PhishStats/status/1132981808776339457
+
+hardwoods4u.co.uk
