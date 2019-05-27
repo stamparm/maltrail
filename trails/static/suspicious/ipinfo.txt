@@ -223,3 +223,9 @@ ip.42.pl
 
 freegeoip.app
 ip.sb
+
+# Reference: https://twitter.com/x42x5a/status/1132943885448163328
+# Reference: https://app.any.run/tasks/d268365b-1a68-48ff-a541-6fb147357de8/
+# Reference: https://www.virustotal.com/gui/domain/ipapi.co/relations
+
+ipapi.co
