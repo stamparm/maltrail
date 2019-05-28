@@ -1909,5 +1909,34 @@ wicp.vip
 
 # Reference: https://twitter.com/ScumBots/status/1133387967135928320
 # Reference: https://www.virustotal.com/gui/domain/nowddns.com/relations
+# Reference: https://now-dns.com/?p=home
 
+001www.com
+16-b.it
+32-b.it
+64-b.it
+crafting.xyz
+ddnslive.com
+dnsdyn.net
+dnsking.ch
+dnsup.net
+dynip.org
+dynserv.org
+forumz.info
+freeddns.uk
+freeddns.us
+hicam.net
+myiphost.com
+mypi.co
+n4t.co
+now-dns.net
+now-dns.org
+now-dns.top
 nowddns.com
+ntdll.top
+ownip.net
+soundcast.me
+tcp4.me
+vpndns.net
+wifizone.org
+x443.pw
