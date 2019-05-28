@@ -7911,3 +7911,26 @@ cloudcontent.info
 
 service-conditions.com
 support-conditions.net
+
+# Reference: https://twitter.com/PhishingAi/status/1133376801831436289
+# Reference: https://pastebin.com/QxRcr0xN
+
+outlooksserv.com
+office365policy.com
+outlooksservices365.com
+outlookserv365.com
+outlookserv.com
+directorydocsign.com
+outlooksys365.com
+outlookserv365i.net
+premac-security.com
+outlooks-serv365.info
+outlookserv365ai.com
+outlooks-serv365.com
+outlookserv365i.com
+outlooks-serv365.net
+gcb-finance.com
+cancellation-paypal.us-com.xfnvbgnbnifupgrfkyeb.com
+cancellation-paypal.us-com.xfnvbgnbnifupgrfkyeb.com
+cancellation-paypal.us-com.sxugzxirgiypjxnczusu.com
+cancellation-paypal.us-com.wpxqvrvkuswuelndaogk.com
