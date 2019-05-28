@@ -7934,3 +7934,7 @@ cancellation-paypal.us-com.xfnvbgnbnifupgrfkyeb.com
 cancellation-paypal.us-com.xfnvbgnbnifupgrfkyeb.com
 cancellation-paypal.us-com.sxugzxirgiypjxnczusu.com
 cancellation-paypal.us-com.wpxqvrvkuswuelndaogk.com
+
+# Reference: https://twitter.com/JayTHL/status/1133440213047488519
+
+oni.gov.ge
