@@ -97,3 +97,7 @@
 # Reference: https://twitter.com/James_inthe_box/status/1129452679250321408
 
 /out-1081291084.hta
+
+# Reference: https://twitter.com/HONKONE_K/status/1133205335877885952
+
+/h.hta
