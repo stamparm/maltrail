@@ -1906,3 +1906,8 @@ k.vu
 # Reference: https://www.virustotal.com/gui/domain/wicp.vip/relations
 
 wicp.vip
+
+# Reference: https://twitter.com/ScumBots/status/1133387967135928320
+# Reference: https://www.virustotal.com/gui/domain/nowddns.com/relations
+
+nowddns.com
