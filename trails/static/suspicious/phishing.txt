@@ -7938,3 +7938,7 @@ cancellation-paypal.us-com.wpxqvrvkuswuelndaogk.com
 # Reference: https://twitter.com/JayTHL/status/1133440213047488519
 
 oni.gov.ge
+
+# Reference: https://twitter.com/soccia555/status/1133435220814966784
+
+pcbever.be
