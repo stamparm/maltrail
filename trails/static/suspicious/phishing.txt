@@ -7906,3 +7906,8 @@ paypalsecureresetloginpage.elifelfmarley.com
 # Reference: https://twitter.com/Cyberfishio/status/1133337236399906816
 
 cloudcontent.info
+
+# Reference: https://twitter.com/malwrhunterteam/status/1133353839065731074
+
+service-conditions.com
+support-conditions.net
