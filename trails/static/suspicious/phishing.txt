@@ -7902,3 +7902,7 @@ bt-dr.top
 # Reference: https://twitter.com/IpNigh/status/1133327987082964993
 
 paypalsecureresetloginpage.elifelfmarley.com
+
+# Reference: https://twitter.com/Cyberfishio/status/1133337236399906816
+
+cloudcontent.info
