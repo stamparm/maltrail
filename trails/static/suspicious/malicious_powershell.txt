@@ -76,3 +76,10 @@
 
 /payload.ps1
 /payload2.ps1
+
+# Reference: https://twitter.com/HONKONE_K/status/1133205335877885952
+
+/coki.ps1
+/gc.ps1
+/java1.ps1
+/ky.ps1
