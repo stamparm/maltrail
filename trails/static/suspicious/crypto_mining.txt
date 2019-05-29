@@ -123,3 +123,12 @@ r.twotouchauthentication.online
 
 zarabotaibitok.ru
 61.128.111.164:3335
+
+# Reference: https://twitter.com/raby_mr/status/1133347073154097153
+# Reference: https://app.any.run/tasks/7e23f973-5f69-4ef0-af26-427e975e308d/
+# Reference: https://www.virustotal.com/gui/file/272e25e3aa9d792281a282c2f6cd40d59c5b8fe432ae93bb5015899ceb173dd1/behavior/Dr.Web%20vxCube
+# Reference: https://www.virustotal.com/gui/ip-address/94.130.64.225/relations
+# Reference: https://www.virustotal.com/gui/ip-address/46.4.119.208/relations
+
+46.4.119.208:45700
+94.130.64.225:45700
