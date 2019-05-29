@@ -83,3 +83,7 @@
 /gc.ps1
 /java1.ps1
 /ky.ps1
+
+# Reference: https://www.welivesecurity.com/2019/05/29/turla-powershell-usage/
+
+/msctx.ps1
