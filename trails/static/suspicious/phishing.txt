@@ -8025,3 +8025,7 @@ appleid.info
 # Reference: https://twitter.com/Jouliok/status/1133399049481195520
 
 www-secure-login-need-now-update-your-account.ckc.net.nz
+
+# Reference: https://twitter.com/dave_daves/status/1133378883280154627
+
+opencarem.com
