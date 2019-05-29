@@ -8070,3 +8070,7 @@ techsupport9.azurewebsites.net
 amazonk01.com
 amazonk02.com
 amazonk03.com
+
+# Reference: https://twitter.com/dvk01uk/status/1133824528021381120
+
+dhl-express-package.ml
