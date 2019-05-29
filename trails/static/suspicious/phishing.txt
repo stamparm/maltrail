@@ -8051,3 +8051,7 @@ networkwatcch.z13.web.core.windows.net
 # Reference: https://twitter.com/Jouliok/status/1133654577625096193
 
 australia-gov-au.online
+
+# Reference: https://twitter.com/dave_daves/status/1133727292709056512
+
+brased.org
