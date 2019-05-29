@@ -8021,3 +8021,7 @@ otpbank.hu
 # Reference: https://twitter.com/ANeilan/status/1133536820095082496
 
 appleid.info
+
+# Reference: https://twitter.com/Jouliok/status/1133399049481195520
+
+www-secure-login-need-now-update-your-account.ckc.net.nz
