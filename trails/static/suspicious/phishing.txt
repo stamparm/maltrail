@@ -8017,3 +8017,7 @@ stuck-service-id68767.nowddns.com
 
 oneals.ml
 otpbank.hu
+
+# Reference: https://twitter.com/ANeilan/status/1133536820095082496
+
+appleid.info
