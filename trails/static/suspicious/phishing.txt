@@ -8012,3 +8012,8 @@ securepage-paypalserv.nowddns.com
 servaccount-confirm.nowddns.com
 service-data-confirm.nowddns.com
 stuck-service-id68767.nowddns.com
+
+# Reference: https://twitter.com/smica83/status/1133707635059044356
+
+oneals.ml
+otpbank.hu
