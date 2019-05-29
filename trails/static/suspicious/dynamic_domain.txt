@@ -1940,3 +1940,8 @@ tcp4.me
 vpndns.net
 wifizone.org
 x443.pw
+
+# Reference: https://twitter.com/jorgemieres/status/1131327928854351872
+# Reference: https://www.virustotal.com/gui/domain/dnsabr.com/relations
+
+dnsabr.com
