@@ -1873,3 +1873,9 @@ wintoflashsuggestor.net
 
 getgosoft.com
 static.215.3.202.116.clients.your-server.de
+
+# Reference: https://twitter.com/MalwarePatrol/status/1132329992384331781
+# Reference: https://twitter.com/MalwarePatrol/status/1132148797566590977
+
+bannerpt.casino.com
+banner3.casino.com
