@@ -8059,3 +8059,8 @@ brased.org
 # Reference: https://twitter.com/JayTHL/status/1133771392984453120
 
 oakbrookfinance-fileshare.azurewebsites.net
+
+# Reference: https://twitter.com/JayTHL/status/1133777088048189442
+
+puspey.online
+techsupport9.azurewebsites.net
