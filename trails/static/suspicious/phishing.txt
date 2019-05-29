@@ -8042,3 +8042,8 @@ lhacahakukok.com
 
 aplaque.com
 dapexcargo.com
+
+# Reference: https://twitter.com/JayTHL/status/1133734979446497283
+
+moxxesd.azurewebsites.net
+networkwatcch.z13.web.core.windows.net
