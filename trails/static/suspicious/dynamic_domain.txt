@@ -1940,3 +1940,7 @@ tcp4.me
 vpndns.net
 wifizone.org
 x443.pw
+
+# Reference: https://www.virustotal.com/gui/domain/fairuse.org/details
+
+fairuse.org
