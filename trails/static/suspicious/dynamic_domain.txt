@@ -1951,3 +1951,7 @@ dnsabr.com
 # Reference: https://www.virustotal.com/gui/domain/yahoodns.net/relations
 
 yahoodns.net
+
+# Reference: https://www.virustotal.com/gui/domain/fairuse.org/details
+
+fairuse.org
