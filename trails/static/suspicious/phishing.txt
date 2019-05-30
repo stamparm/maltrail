@@ -8074,3 +8074,7 @@ amazonk03.com
 # Reference: https://twitter.com/dvk01uk/status/1133824528021381120
 
 dhl-express-package.ml
+
+# Reference: https://twitter.com/PhishStats/status/1133978937183408129
+
+wells-fargobankonline.com
