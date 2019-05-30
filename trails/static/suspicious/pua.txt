@@ -1879,3 +1879,7 @@ static.215.3.202.116.clients.your-server.de
 
 bannerpt.casino.com
 banner3.casino.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1133960734587662336
+
+brestschool7.iatp.by
