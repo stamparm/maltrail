@@ -8082,3 +8082,11 @@ wells-fargobankonline.com
 # Reference: https://twitter.com/malwrhunterteam/status/1133995086923124736
 
 onionmail.azurewebsites.net
+
+# Reference: https://www.bleepingcomputer.com/news/security/android-users-being-spammed-using-fake-missed-call-alerts/
+
+click4riches.info
+consumertestconnect.com
+foundmoneyguide.com
+getitfree-samples.com
+yousweeps.com
