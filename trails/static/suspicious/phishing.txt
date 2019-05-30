@@ -8124,3 +8124,7 @@ ssl-confirmation-membershipdetails.dns-report.com
 
 acessohiper.mobi
 habilitar-hiper.online
+
+# Reference: https://twitter.com/illegalFawn/status/1134164898487984129
+
+xn--soeti-smc.com
