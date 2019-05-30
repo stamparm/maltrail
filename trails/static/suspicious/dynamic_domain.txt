@@ -1941,17 +1941,6 @@ vpndns.net
 wifizone.org
 x443.pw
 
-# Reference: https://twitter.com/jorgemieres/status/1131327928854351872
-# Reference: https://www.virustotal.com/gui/domain/dnsabr.com/relations
-
-dnsabr.com
-
-# Reference: https://twitter.com/P3pperP0tts/status/1133897358402564096
-# Reference: https://app.any.run/tasks/6306d7be-e338-4838-a863-9cd58c880c07/
-# Reference: https://www.virustotal.com/gui/domain/yahoodns.net/relations
-
-yahoodns.net
-
 # Reference: https://www.virustotal.com/gui/domain/fairuse.org/details
 
 fairuse.org
