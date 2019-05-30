@@ -8119,3 +8119,8 @@ notificacion-de-pagos.dns-report.com
 notificacion-pago.dns-report.com
 notificacion-pagos.dns-report.com
 ssl-confirmation-membershipdetails.dns-report.com
+
+# Reference: https://twitter.com/emilio_simoni/status/1134150586776113154
+
+acessohiper.mobi
+habilitar-hiper.online
