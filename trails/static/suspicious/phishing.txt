@@ -8104,3 +8104,19 @@ mobilweb-qnbfinans.com
 finans-2019kampanyasi.com
 finans-5haziranozel.com
 basvuru-garanti-giris.com
+
+# Reference: https://www.virustotal.com/gui/domain/dns-report.com/relations
+
+dns-report.com
+apps-purchaseupdate-verification.dns-report.com
+google.com.dns-report.com
+informacion-pago.dns-report.com
+login-verificationsection-appsidconnect.dns-report.com
+microsoftpro.dns-report.com
+microsoftservice.dns-report.com
+microsoftupdate.dns-report.com
+notificacion-de-pago.dns-report.com
+notificacion-de-pagos.dns-report.com
+notificacion-pago.dns-report.com
+notificacion-pagos.dns-report.com
+ssl-confirmation-membershipdetails.dns-report.com
