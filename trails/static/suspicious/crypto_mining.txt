@@ -132,3 +132,10 @@ zarabotaibitok.ru
 
 46.4.119.208:45700
 94.130.64.225:45700
+
+# Reference: https://github.com/guardicore/labs_campaigns/blob/master/Nansh0u/mining_pools_domains.md
+
+lokiturtle.herominers.com
+trtl.cnpool.cc
+turtle.miner.rocks
+trtl.pool.mine2gether.com
