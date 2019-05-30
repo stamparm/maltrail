@@ -8128,3 +8128,7 @@ habilitar-hiper.online
 # Reference: https://twitter.com/illegalFawn/status/1134164898487984129
 
 xn--soeti-smc.com
+
+# Reference: https://twitter.com/smica83/status/1134164308542332937
+
+paymentsjournal.com
