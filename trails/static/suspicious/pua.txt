@@ -1883,3 +1883,7 @@ banner3.casino.com
 # Reference: https://twitter.com/MalwarePatrol/status/1133960734587662336
 
 brestschool7.iatp.by
+
+# Reference: https://twitter.com/Mesiagh/status/1134186444799430656
+
+securybrowse.com
