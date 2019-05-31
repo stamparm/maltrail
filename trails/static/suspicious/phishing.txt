@@ -8181,3 +8181,7 @@ profapk.bel31.ru
 # Reference: https://twitter.com/packet_Wire/status/1134521462419800065
 
 schooleaneasteio.com
+
+# Reference: https://twitter.com/IpNigh/status/1134521797532102657
+
+official-mail.com
