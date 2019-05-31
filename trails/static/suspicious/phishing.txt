@@ -8144,3 +8144,8 @@ radiohabbriolpainel.cu.ma
 # Reference: https://twitter.com/PhishStats/status/1134340956633911297
 
 recover-locked.serveirc.com
+
+# Reference: https://twitter.com/smica83/status/1134382932573990913
+
+sfmobserver.cf
+sfmobserver.ml
