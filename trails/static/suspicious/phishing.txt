@@ -8153,3 +8153,7 @@ sfmobserver.ml
 # Reference: https://twitter.com/IpNigh/status/1134264443519602688
 
 lingeriesed.com
+
+# Reference: https://twitter.com/IpNigh/status/1134370470273441793
+
+applelogn.servecounterstrike.com
