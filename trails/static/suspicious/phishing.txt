@@ -8177,3 +8177,7 @@ idapple.com.idcheck.site
 # Reference: https://twitter.com/PhishStats/status/1134477010150002690
 
 profapk.bel31.ru
+
+# Reference: https://twitter.com/packet_Wire/status/1134521462419800065
+
+schooleaneasteio.com
