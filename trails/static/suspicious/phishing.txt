@@ -8161,3 +8161,7 @@ applelogn.servecounterstrike.com
 # Reference: https://twitter.com/ffforward/status/1134411531788140546
 
 hamptonroadsonline.mobi
+
+# Reference: https://twitter.com/IpNigh/status/1134400739630100480
+
+enterprise-mobilitysuite-2016.com
