@@ -8129,10 +8129,6 @@ habilitar-hiper.online
 
 xn--soeti-smc.com
 
-# Reference: https://twitter.com/smica83/status/1134164308542332937
-
-paymentsjournal.com
-
 # Reference: https://twitter.com/Mesiagh/status/1134186444799430656
 
 emea-bankofamerica.com
