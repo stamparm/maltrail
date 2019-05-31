@@ -8119,3 +8119,45 @@ notificacion-de-pagos.dns-report.com
 notificacion-pago.dns-report.com
 notificacion-pagos.dns-report.com
 ssl-confirmation-membershipdetails.dns-report.com
+
+# Reference: https://twitter.com/emilio_simoni/status/1134150586776113154
+
+acessohiper.mobi
+habilitar-hiper.online
+
+# Reference: https://twitter.com/illegalFawn/status/1134164898487984129
+
+xn--soeti-smc.com
+
+# Reference: https://twitter.com/Mesiagh/status/1134186444799430656
+
+emea-bankofamerica.com
+
+# Reference: https://twitter.com/PhishStats/status/1134295587560538113
+
+radiohabbriolpainel.cu.ma
+
+# Reference: https://twitter.com/PhishStats/status/1134340956633911297
+
+recover-locked.serveirc.com
+
+# Reference: https://twitter.com/smica83/status/1134382932573990913
+
+sfmobserver.cf
+sfmobserver.ml
+
+# Reference: https://twitter.com/IpNigh/status/1134264443519602688
+
+lingeriesed.com
+
+# Reference: https://twitter.com/IpNigh/status/1134370470273441793
+
+applelogn.servecounterstrike.com
+
+# Reference: https://twitter.com/ffforward/status/1134411531788140546
+
+hamptonroadsonline.mobi
+
+# Reference: https://twitter.com/IpNigh/status/1134400739630100480
+
+enterprise-mobilitysuite-2016.com
