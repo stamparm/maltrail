@@ -8140,3 +8140,7 @@ emea-bankofamerica.com
 # Reference: https://twitter.com/PhishStats/status/1134295587560538113
 
 radiohabbriolpainel.cu.ma
+
+# Reference: https://twitter.com/PhishStats/status/1134340956633911297
+
+recover-locked.serveirc.com
