@@ -8149,3 +8149,7 @@ recover-locked.serveirc.com
 
 sfmobserver.cf
 sfmobserver.ml
+
+# Reference: https://twitter.com/IpNigh/status/1134264443519602688
+
+lingeriesed.com
