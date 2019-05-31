@@ -8157,3 +8157,7 @@ lingeriesed.com
 # Reference: https://twitter.com/IpNigh/status/1134370470273441793
 
 applelogn.servecounterstrike.com
+
+# Reference: https://twitter.com/ffforward/status/1134411531788140546
+
+hamptonroadsonline.mobi
