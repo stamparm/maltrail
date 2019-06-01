@@ -8218,3 +8218,7 @@ newstysmareter.ml
 # Reference: https://twitter.com/PhishStats/status/1134839595928051712
 
 bestchanhge.org.ru
+
+# Reference: https://twitter.com/PhishStats/status/1134884664185933824
+
+jpmohchaasess.7m.pl
