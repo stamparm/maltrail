@@ -8214,3 +8214,7 @@ drive.google.com-online-service-registration.secured-link-processed.soccasabranc
 # Reference: https://twitter.com/IpNigh/status/1134717978434527232
 
 newstysmareter.ml
+
+# Reference: https://twitter.com/PhishStats/status/1134839595928051712
+
+bestchanhge.org.ru
