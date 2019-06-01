@@ -8226,3 +8226,7 @@ jpmohchaasess.7m.pl
 # Reference: https://twitter.com/PhishStats/status/1134930456699387904
 
 mukeshb.cu.ma
+
+# Reference: https://twitter.com/ANeilan/status/1134907261283950593
+
+support-appleid.apple.com.agoexpirede.com
