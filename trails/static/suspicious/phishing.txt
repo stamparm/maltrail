@@ -8206,3 +8206,7 @@ auto-ease.co.uk
 # Reference: https://twitter.com/PhishStats/status/1134794122714341376
 
 zonmiedia.com
+
+# Reference: https://twitter.com/Jouliok/status/1134728500026519552
+
+drive.google.com-online-service-registration.secured-link-processed.soccasabranca.com.br
