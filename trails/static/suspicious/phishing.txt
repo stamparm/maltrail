@@ -8189,3 +8189,8 @@ official-mail.com
 # Reference: https://twitter.com/IpNigh/status/1134325081881141248
 
 conferenciel.com
+
+# Reference: https://twitter.com/ADsecu/status/1134627036880941057
+
+altajstore.com
+shraidar.net
