@@ -1891,3 +1891,7 @@ securybrowse.com
 # Reference: https://twitter.com/MalwarePatrol/status/1134504318059601920
 
 banner.dafapunter.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1134866707791667201
+
+dynamicdownloads.tweakbit.com
