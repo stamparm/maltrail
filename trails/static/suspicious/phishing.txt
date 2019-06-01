@@ -8210,3 +8210,7 @@ zonmiedia.com
 # Reference: https://twitter.com/Jouliok/status/1134728500026519552
 
 drive.google.com-online-service-registration.secured-link-processed.soccasabranca.com.br
+
+# Reference: https://twitter.com/IpNigh/status/1134717978434527232
+
+newstysmareter.ml
