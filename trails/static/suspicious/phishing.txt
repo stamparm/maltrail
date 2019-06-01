@@ -8198,3 +8198,7 @@ shraidar.net
 # Reference: https://twitter.com/PhishStats/status/1134748336802717696
 
 mondodimilla-nets.com
+
+# Reference: https://twitter.com/IpNigh/status/1134645885177143296
+
+auto-ease.co.uk
