@@ -8202,3 +8202,7 @@ mondodimilla-nets.com
 # Reference: https://twitter.com/IpNigh/status/1134645885177143296
 
 auto-ease.co.uk
+
+# Reference: https://twitter.com/PhishStats/status/1134794122714341376
+
+zonmiedia.com
