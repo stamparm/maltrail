@@ -1887,3 +1887,11 @@ brestschool7.iatp.by
 # Reference: https://twitter.com/Mesiagh/status/1134186444799430656
 
 securybrowse.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1134504318059601920
+
+banner.dafapunter.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1134866707791667201
+
+dynamicdownloads.tweakbit.com
