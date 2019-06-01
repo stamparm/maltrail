@@ -8194,3 +8194,7 @@ conferenciel.com
 
 altajstore.com
 shraidar.net
+
+# Reference: https://twitter.com/PhishStats/status/1134748336802717696
+
+mondodimilla-nets.com
