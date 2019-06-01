@@ -5054,3 +5054,11 @@ njegidi888.xyz
 # Reference: https://www.virustotal.com/gui/domain/microsoftmse.com/relations
 
 microsoftmse.com
+
+# Reference: https://www.virustotal.com/gui/domain/swtest.ru/relations
+
+temp.swtest.ru
+
+# Reference: https://www.virustotal.com/gui/domain/jhfree.net/relations
+
+jhfree.net
