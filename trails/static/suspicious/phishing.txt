@@ -8302,3 +8302,7 @@ xn--e1arb1a1f07c.com
 # Reference: https://twitter.com/PhishFindR/status/1135113160770428928
 
 dml-2016.org
+
+# Reference: https://twitter.com/dario_kow/status/1135098442571755520
+
+kuriernowak.info
