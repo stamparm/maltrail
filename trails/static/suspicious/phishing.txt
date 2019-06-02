@@ -8432,3 +8432,7 @@ refund-hmrc.uk-codeb6159368de39251d7a-login.id-107sbtd9cbhsbtd5d80a13c0db1f54675
 # Reference: https://twitter.com/PhishFindR/status/1135189875576188930
 
 kosmetologbel.ru
+
+# Reference: https://twitter.com/PhishFindR/status/1135239711700770818
+
+clickbuck.xyz
