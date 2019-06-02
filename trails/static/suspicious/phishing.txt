@@ -8386,3 +8386,7 @@ refund-hmrc.uk-codeb6159368de39251d7a-login.id-107sbtd9cbhsbtd5d80a13c0db1f54675
 refund-hmrc.uk-codeb6159368de39251d7a-login.id-107sbtd9cbhsbtd5d80a13c0db1f546757jnq9j5754675773739596.riptributes.com
 refund-hmrc.uk-codeb6159368de39251d7a-login.id-107sbtd9cbhsbtd5d80a13c0db1f546757jnq9j5754675778695202.riptributes.com
 refund-hmrc.uk-codeb6159368de39251d7a-login.id-107sbtd9cbhsbtd5d80a13c0db1f546757jnq9j5754675797225324.riptributes.com
+
+# Reference: https://twitter.com/PhishFindR/status/1135189875576188930
+
+kosmetologbel.ru
