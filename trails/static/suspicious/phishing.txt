@@ -8298,3 +8298,7 @@ xn--trkiyeisbankasi-zvb.com
 xn--zraaat-p9a.com
 xn--80aei1bao68cgc.com
 xn--e1arb1a1f07c.com
+
+# Reference: https://twitter.com/PhishFindR/status/1135113160770428928
+
+dml-2016.org
