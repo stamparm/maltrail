@@ -1895,3 +1895,7 @@ banner.dafapunter.com
 # Reference: https://twitter.com/MalwarePatrol/status/1134866707791667201
 
 dynamicdownloads.tweakbit.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1135229093732134913
+
+banner.it.casino.com
