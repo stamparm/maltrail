@@ -8318,3 +8318,7 @@ ia-ibaraki.me
 # Reference: https://twitter.com/PhishFindR/status/1135103844575252480
 
 plantsfood.icu
+
+# Reference: https://twitter.com/PhishFindR/status/1135103283222200320
+
+slickgeneral.cf
