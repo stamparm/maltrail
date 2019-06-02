@@ -8457,3 +8457,7 @@ merrillynchbankonline.com
 # Reference: https://twitter.com/urlscanio/status/1135276806620270597
 
 ssltrue-ibank.secure-suncorp.au.com-accounts.com.jdvdscard.com
+
+# Reference: https://twitter.com/PhishStats/status/1135291996250214404
+
+sumit.giggadaproducts.com
