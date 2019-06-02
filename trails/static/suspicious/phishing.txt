@@ -8326,3 +8326,7 @@ slickgeneral.cf
 # Reference: https://twitter.com/PhishFindR/status/1135112704425943040
 
 moviebex.cu.ma
+
+# Reference: https://twitter.com/PhishStats/status/1135020552253558785
+
+tacklestrailsandtimbers.com
