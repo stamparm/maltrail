@@ -8322,3 +8322,7 @@ plantsfood.icu
 # Reference: https://twitter.com/PhishFindR/status/1135103283222200320
 
 slickgeneral.cf
+
+# Reference: https://twitter.com/PhishFindR/status/1135112704425943040
+
+moviebex.cu.ma
