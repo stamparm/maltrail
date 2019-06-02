@@ -8453,3 +8453,7 @@ secure01c.lchase.com.request.token.zh3q.online
 # Reference: https://twitter.com/urlscanio/status/1135274183695491075
 
 merrillynchbankonline.com
+
+# Reference: https://twitter.com/urlscanio/status/1135276806620270597
+
+ssltrue-ibank.secure-suncorp.au.com-accounts.com.jdvdscard.com
