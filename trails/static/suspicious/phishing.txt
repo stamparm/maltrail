@@ -8330,3 +8330,7 @@ moviebex.cu.ma
 # Reference: https://twitter.com/PhishStats/status/1135020552253558785
 
 tacklestrailsandtimbers.com
+
+# Reference: https://twitter.com/PhishStats/status/1134975093745078272
+
+bankofamericaxq4.webcindario.com
