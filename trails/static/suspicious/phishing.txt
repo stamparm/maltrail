@@ -8310,3 +8310,7 @@ kuriernowak.info
 # Reference: https://twitter.com/PhishFindR/status/1135100794791956480
 
 ycitydeals.com
+
+# Reference: https://twitter.com/PhishFindR/status/1135100136613437440
+
+ia-ibaraki.me
