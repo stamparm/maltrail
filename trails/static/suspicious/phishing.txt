@@ -8338,3 +8338,7 @@ bankofamericaxq4.webcindario.com
 # Reference: https://twitter.com/PhishStats/status/1135156232002650114
 
 byochange.org
+
+# Reference: https://twitter.com/PhishFindR/status/1135190256205144065
+
+spiiow.pro
