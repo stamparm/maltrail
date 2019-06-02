@@ -8436,3 +8436,7 @@ kosmetologbel.ru
 # Reference: https://twitter.com/PhishFindR/status/1135239711700770818
 
 clickbuck.xyz
+
+# Reference: https://twitter.com/PhishFindR/status/1135240505191800835
+
+verif-aaccount.serveirc.com
