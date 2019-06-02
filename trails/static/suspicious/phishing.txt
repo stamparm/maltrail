@@ -8444,3 +8444,8 @@ verif-aaccount.serveirc.com
 # Reference: https://twitter.com/PhishStats/status/1135246614812143618
 
 savaliyagems.cu.ma
+
+# Reference: https://twitter.com/urlscanio/status/1135272559887429632
+
+secure01c.lchase.com.request.token.p64f.online
+secure01c.lchase.com.request.token.zh3q.online
