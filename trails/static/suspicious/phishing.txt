@@ -8347,3 +8347,7 @@ spiiow.pro
 
 bitdefėnder.biz
 xn--bitdefnder-wmb.biz
+
+# Reference: https://twitter.com/PhishStats/status/1135201753782280192
+
+bunybb.myraidbox.de
