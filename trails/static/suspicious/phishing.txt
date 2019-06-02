@@ -8306,3 +8306,7 @@ dml-2016.org
 # Reference: https://twitter.com/dario_kow/status/1135098442571755520
 
 kuriernowak.info
+
+# Reference: https://twitter.com/PhishFindR/status/1135100794791956480
+
+ycitydeals.com
