@@ -8485,3 +8485,7 @@ appleid.apple.com.page-signin.top
 # Reference: https://twitter.com/ANeilan/status/1134903719898832896
 
 appleid.apple.com.mailcompensetting.org
+
+# Reference: https://twitter.com/PhishStats/status/1135473323008253952
+
+jppost-mo.com
