@@ -294,3 +294,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/VirITeXplorer/status/1131816142199250944
 
 /pagiy75.php
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1135453581144969216
+
+/v21in603.php
