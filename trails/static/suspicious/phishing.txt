@@ -8497,3 +8497,7 @@ intesa-sistem.net
 # Reference: https://twitter.com/illegalFawn/status/1135486191632035840
 
 intesasanpoalo.online
+
+# Reference: https://twitter.com/PhishStats/status/1135518525920088064
+
+vaportwist.co.uk
