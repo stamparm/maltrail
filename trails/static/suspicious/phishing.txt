@@ -8473,3 +8473,7 @@ appleid.id.baperanmolo.com
 # Reference: https://twitter.com/PhishStats/status/1135428424753979393
 
 habicentr39.ru
+
+# Reference: https://twitter.com/IpNigh/status/1135008405666619392
+
+vadaszinfo.hu
