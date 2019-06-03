@@ -8477,3 +8477,7 @@ habicentr39.ru
 # Reference: https://twitter.com/IpNigh/status/1135008405666619392
 
 vadaszinfo.hu
+
+# Reference: https://twitter.com/ANeilan/status/1134905169236451329
+
+appleid.apple.com.page-signin.top
