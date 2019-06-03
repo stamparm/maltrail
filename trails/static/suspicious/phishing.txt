@@ -8554,3 +8554,7 @@ robertsplus.hr
 # Reference: https://twitter.com/packet_Wire/status/1135615782078038016
 
 global.americanexpress.capitolcomputer.com.au
+
+# Reference: https://twitter.com/malwrhunterteam/status/1135621325639299077
+
+summary-security.ddns.net
