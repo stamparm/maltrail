@@ -101,3 +101,8 @@
 # Reference: https://twitter.com/HONKONE_K/status/1133205335877885952
 
 /h.hta
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/blacksquid-slithers-into-servers-and-drives-with-8-notorious-exploits-to-drop-xmrig-miner/
+# Reference: https://otx.alienvault.com/pulse/5cf53cdb5089737750fab25d
+
+/Black.hta
