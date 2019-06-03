@@ -8461,3 +8461,7 @@ ssltrue-ibank.secure-suncorp.au.com-accounts.com.jdvdscard.com
 # Reference: https://twitter.com/PhishStats/status/1135291996250214404
 
 sumit.giggadaproducts.com
+
+# Reference: https://twitter.com/PhishStats/status/1135338734537334785
+
+tacklestrailsandtimbers.com
