@@ -8465,3 +8465,7 @@ sumit.giggadaproducts.com
 # Reference: https://twitter.com/PhishStats/status/1135338734537334785
 
 tacklestrailsandtimbers.com
+
+# Reference: https://twitter.com/ANeilan/status/1135312245980897280
+
+appleid.id.baperanmolo.com
