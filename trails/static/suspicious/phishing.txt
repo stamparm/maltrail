@@ -8550,3 +8550,7 @@ wàllet-trezor.com
 # Reference: https://twitter.com/smica83/status/1135578820390653953
 
 robertsplus.hr
+
+# Reference: https://twitter.com/packet_Wire/status/1135615782078038016
+
+global.americanexpress.capitolcomputer.com.au
