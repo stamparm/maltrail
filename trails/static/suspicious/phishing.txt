@@ -8481,3 +8481,7 @@ vadaszinfo.hu
 # Reference: https://twitter.com/ANeilan/status/1134905169236451329
 
 appleid.apple.com.page-signin.top
+
+# Reference: https://twitter.com/ANeilan/status/1134903719898832896
+
+appleid.apple.com.mailcompensetting.org
