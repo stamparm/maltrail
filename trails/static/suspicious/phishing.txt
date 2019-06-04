@@ -38,7 +38,6 @@ http://145.249.105.19/
 
 # Reference: https://twitter.com/PhishingAi/status/1031613997445832704
 
-atlasunited.cu.ma
 setupoffice365.us
 
 # Reference: https://twitter.com/PhishingAi/status/1030556963619266560
@@ -8573,3 +8572,8 @@ amazon.com-verifysignin-infoacc.primaryfisherman.com
 # Reference: https://twitter.com/PhishStats/status/1135655026603560965
 
 atlasunited.cu.ma
+
+# Reference: https://twitter.com/illegalFawn/status/1135822200982974464
+
+aggiornamentodatabase.com
+inizia-sicurezza-web.com
