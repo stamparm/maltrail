@@ -467,3 +467,8 @@ u19982p14982.web0119.zxcs.nl/Emmanuel/
 # Reference: https://www.virustotal.com/gui/file/e1d01f22ab0a9c71415cf0c511348d82ddc075e5f70f6fcee1526d8691faff2d/detection
 
 l3nd20dl.cn/NGeFybqfquWi95G2/login.php
+
+
+# Reference: https://twitter.com/sugimu_sec/status/1135818200455626752
+
+markeettit.club/auth/login
