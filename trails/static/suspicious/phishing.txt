@@ -8621,3 +8621,7 @@ check-your-account.taber-abraser.com
 # Reference: https://twitter.com/IpNigh/status/1135789368164212736
 
 barocheck.kr
+
+# Reference: https://twitter.com/IpNigh/status/1135709082692796421
+
+abnewyork.com
