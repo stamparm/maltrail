@@ -8629,3 +8629,7 @@ abnewyork.com
 # Reference: https://twitter.com/IpNigh/status/1135677289553944582
 
 jumbodatanetworks.com
+
+# Reference: https://twitter.com/PhishFindR/status/1135931523096555522
+
+f4cboook-lognla-facbook-es-scslqcjhar.filesusr.com
