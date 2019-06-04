@@ -1944,3 +1944,7 @@ x443.pw
 # Reference: https://www.virustotal.com/gui/domain/fairuse.org/details
 
 fairuse.org
+
+# Reference: https://www.virustotal.com/gui/domain/ddns.epac.to/details
+
+ddns.epac.to
