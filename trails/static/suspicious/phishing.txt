@@ -8633,3 +8633,9 @@ jumbodatanetworks.com
 # Reference: https://twitter.com/PhishFindR/status/1135931523096555522
 
 f4cboook-lognla-facbook-es-scslqcjhar.filesusr.com
+
+# Reference: https://twitter.com/illegalFawn/status/1135932452327833600
+
+no-replycoinbase.com
+coinbàse.com
+xn--coinbse-dwa.com
