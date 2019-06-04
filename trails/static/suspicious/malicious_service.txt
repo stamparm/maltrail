@@ -60,3 +60,7 @@ jg4rli4xoagvvmw47fr2bnnfu7t2epj6owrgyoee7daoh4gxvbt3bhyd.onion
 # Reference: https://twitter.com/MalwarePatrol/status/1133598348953423873
 
 irc-files.org
+
+# Reference: https://twitter.com/JayTHL/status/1135974220566093824
+
+remote.new-haven.k12.ct.us
