@@ -8600,3 +8600,7 @@ trézor-official.org
 aməzon.com
 ɒmɑzon.com
 əməzon.com
+
+# Reference: https://twitter.com/PhishStats/status/1135882025116884998
+
+grupoaltazor.com
