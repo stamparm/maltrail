@@ -139,3 +139,16 @@ lokiturtle.herominers.com
 trtl.cnpool.cc
 turtle.miner.rocks
 trtl.pool.mine2gether.com
+
+# Reference: https://twitter.com/liuya0904/status/1135901420958281729
+
+noobxmr.com
+minexmr.cn
+moriaxmr.com
+viaxmr.com
+xmr-us.suprnova.cc
+xmr.bohemianpool.com
+xmr-usa.dwarfpool.com
+miners.pro
+thyrsi.com
+zer0day.ru
