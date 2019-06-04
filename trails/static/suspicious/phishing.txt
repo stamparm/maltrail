@@ -8569,3 +8569,7 @@ mycrypto-wallet.info
 amazon.cum-verify-accountinformation.primaryfisherman.net
 amazon.com-apsignin-verifyinfo.primaryfisherman.net
 amazon.com-verifysignin-infoacc.primaryfisherman.com
+
+# Reference: https://twitter.com/PhishStats/status/1135655026603560965
+
+atlasunited.cu.ma
