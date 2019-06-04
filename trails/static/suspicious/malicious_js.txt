@@ -402,3 +402,9 @@ modest4ever.com/assets/newbalance.js
 # Reference: https://twitter.com/KorbenD_Intel/status/1133469852579106816
 
 /thecry.js
+
+# Reference: https://www.fortinet.com/blog/threat-research/payment-card-details-stolen-magecart.html
+# Reference: https://www.virustotal.com/gui/ip-address/178.33.231.184/relations
+
+/sanasafinaz.js
+/turtlecase.js
