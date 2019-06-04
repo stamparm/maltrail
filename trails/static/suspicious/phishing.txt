@@ -8562,3 +8562,9 @@ summary-security.ddns.net
 # Reference: https://twitter.com/PhishStats/status/1135790153488842753
 
 mycrypto-wallet.info
+
+# Reference: https://twitter.com/malwrhunterteam/status/1135807935265873920
+
+amazon.cum-verify-accountinformation.primaryfisherman.net
+amazon.com-apsignin-verifyinfo.primaryfisherman.net
+amazon.com-verifysignin-infoacc.primaryfisherman.com
