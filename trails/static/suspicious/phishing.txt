@@ -8655,3 +8655,7 @@ help-desk.cabanova.com
 # Reference: https://twitter.com/PhishStats/status/1136017005499310082
 
 uaedialer.com
+
+# Reference: https://twitter.com/IpNigh/status/1136002087911874560
+
+seruceinfolong.net
