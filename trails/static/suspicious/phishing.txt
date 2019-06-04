@@ -8639,3 +8639,7 @@ f4cboook-lognla-facbook-es-scslqcjhar.filesusr.com
 no-replycoinbase.com
 coinbàse.com
 xn--coinbse-dwa.com
+
+# Reference: https://twitter.com/PhishStats/status/1135971648828518401
+
+dhakaignite.com
