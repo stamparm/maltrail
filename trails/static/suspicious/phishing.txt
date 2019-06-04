@@ -8625,3 +8625,7 @@ barocheck.kr
 # Reference: https://twitter.com/IpNigh/status/1135709082692796421
 
 abnewyork.com
+
+# Reference: https://twitter.com/IpNigh/status/1135677289553944582
+
+jumbodatanetworks.com
