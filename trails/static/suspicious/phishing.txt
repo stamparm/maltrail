@@ -8604,3 +8604,8 @@ aməzon.com
 # Reference: https://twitter.com/PhishStats/status/1135882025116884998
 
 grupoaltazor.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1135900266514006018
+
+amazon-management.servehttp.com
+myamazonsecureid987.servehttp.com
