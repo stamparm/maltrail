@@ -8643,3 +8643,7 @@ xn--coinbse-dwa.com
 # Reference: https://twitter.com/PhishStats/status/1135971648828518401
 
 dhakaignite.com
+
+# Reference: https://twitter.com/packet_Wire/status/1135981532949221376
+
+smilecarecentre.co.uk
