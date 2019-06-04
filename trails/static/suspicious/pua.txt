@@ -1899,3 +1899,7 @@ dynamicdownloads.tweakbit.com
 # Reference: https://twitter.com/MalwarePatrol/status/1135229093732134913
 
 banner.it.casino.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1135953868939026432
+
+chat.ygosu.com
