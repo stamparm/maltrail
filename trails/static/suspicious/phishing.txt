@@ -8558,3 +8558,7 @@ global.americanexpress.capitolcomputer.com.au
 # Reference: https://twitter.com/malwrhunterteam/status/1135621325639299077
 
 summary-security.ddns.net
+
+# Reference: https://twitter.com/PhishStats/status/1135790153488842753
+
+mycrypto-wallet.info
