@@ -411,13 +411,11 @@ modest4ever.com/assets/newbalance.js
 /brain-payment.js
 /darussalam.js
 /dotsport.js
-/expresso.js
 /hepler.js
 /iloveskininc.js
 /kimon.js
 /klarna.js
 /mycigara.js
-/opentag.js
 /relightdepot.js
 /sanasafinaz.js
 /stutterheim.js
