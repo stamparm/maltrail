@@ -38,6 +38,7 @@ http://145.249.105.19/
 
 # Reference: https://twitter.com/PhishingAi/status/1031613997445832704
 
+atlasunited.cu.ma
 setupoffice365.us
 
 # Reference: https://twitter.com/PhishingAi/status/1030556963619266560
@@ -8444,3 +8445,131 @@ verif-aaccount.serveirc.com
 # Reference: https://twitter.com/PhishStats/status/1135246614812143618
 
 savaliyagems.cu.ma
+
+# Reference: https://twitter.com/urlscanio/status/1135272559887429632
+
+secure01c.lchase.com.request.token.p64f.online
+secure01c.lchase.com.request.token.zh3q.online
+
+# Reference: https://twitter.com/urlscanio/status/1135274183695491075
+
+merrillynchbankonline.com
+
+# Reference: https://twitter.com/urlscanio/status/1135276806620270597
+
+ssltrue-ibank.secure-suncorp.au.com-accounts.com.jdvdscard.com
+
+# Reference: https://twitter.com/PhishStats/status/1135291996250214404
+
+sumit.giggadaproducts.com
+
+# Reference: https://twitter.com/PhishStats/status/1135338734537334785
+
+tacklestrailsandtimbers.com
+
+# Reference: https://twitter.com/ANeilan/status/1135312245980897280
+
+appleid.id.baperanmolo.com
+
+# Reference: https://twitter.com/PhishStats/status/1135428424753979393
+
+habicentr39.ru
+
+# Reference: https://twitter.com/IpNigh/status/1135008405666619392
+
+vadaszinfo.hu
+
+# Reference: https://twitter.com/ANeilan/status/1134905169236451329
+
+appleid.apple.com.page-signin.top
+
+# Reference: https://twitter.com/ANeilan/status/1134903719898832896
+
+appleid.apple.com.mailcompensetting.org
+
+# Reference: https://twitter.com/PhishStats/status/1135473323008253952
+
+jppost-mo.com
+
+# Reference: https://twitter.com/illegalFawn/status/1135477639286874112
+
+intesa-sistem.net
+
+# Reference: https://twitter.com/illegalFawn/status/1135486191632035840
+
+intesasanpoalo.online
+
+# Reference: https://twitter.com/PhishStats/status/1135518525920088064
+
+vaportwist.co.uk
+
+# Reference: https://twitter.com/illegalFawn/status/1135533641113722880
+# Reference: https://ghostbin.com/paste/3prhv/raw
+
+trezerstore.com
+třezor.com
+trezor.live
+trezor-buy.com
+trezor-io.com
+trezor--io.com
+trezor-io.net
+trezor-io.org
+trezor-net.com
+trezor-official.cc
+trezor-official.ltd
+trezor-online.cc
+trezor-online.info
+trezor-online.la
+trezor-online.link
+trezor-online.org
+trezor-online.tech
+trezors.co
+trezor-shop.center
+trezor-shop.co
+trezor--shop.com
+trezorshops.com
+trezor-shops.com
+trezor-site.com
+trezor-store.biz
+trezor-store.cc
+trezor-stores.com
+trezor-stores.site
+trezor-wallet.cc
+trézor-wallet.com
+trėzor-wallet.com
+trězor-wallet.com
+trézor-wallets.com
+trezor-wallets.eu
+trezor-web.com
+trezor-web.online
+trezor-web.org
+wallet-trézor.com
+wallet-trėzor.com
+wállet-trezor.com
+wàllet-trezor.com
+
+# Reference: https://twitter.com/smica83/status/1135578820390653953
+
+robertsplus.hr
+
+# Reference: https://twitter.com/packet_Wire/status/1135615782078038016
+
+global.americanexpress.capitolcomputer.com.au
+
+# Reference: https://twitter.com/malwrhunterteam/status/1135621325639299077
+
+summary-security.ddns.net
+
+# Reference: https://twitter.com/PhishStats/status/1135790153488842753
+
+mycrypto-wallet.info
+
+# Reference: https://twitter.com/malwrhunterteam/status/1135807935265873920
+
+amazon.cum-verify-accountinformation.primaryfisherman.net
+amazon.com-apsignin-verifyinfo.primaryfisherman.net
+amazon.com-verifysignin-infoacc.primaryfisherman.com
+
+# Reference: https://twitter.com/PhishStats/status/1135655026603560965
+
+atlasunited.cu.ma
