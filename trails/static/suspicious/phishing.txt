@@ -8609,3 +8609,7 @@ grupoaltazor.com
 
 amazon-management.servehttp.com
 myamazonsecureid987.servehttp.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1135900932326219776
+
+purchase-storess.serveirc.com
