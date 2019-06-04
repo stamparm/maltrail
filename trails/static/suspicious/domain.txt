@@ -5066,3 +5066,7 @@ jhfree.net
 # Reference: # Reference: https://speakerdeck.com/ashley920/into-the-fog-the-return-of-icefog-apt?slide=35
 
 dnsedc.com
+
+# Reference: # Reference: https://speakerdeck.com/ashley920/into-the-fog-the-return-of-icefog-apt?slide=35
+
+dellnewsup.net
