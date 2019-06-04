@@ -8651,3 +8651,7 @@ smilecarecentre.co.uk
 # Reference: https://twitter.com/dms1899/status/1135955948030308352
 
 help-desk.cabanova.com
+
+# Reference: https://twitter.com/PhishStats/status/1136017005499310082
+
+uaedialer.com
