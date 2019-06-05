@@ -8686,3 +8686,11 @@ inizializza-sicurezza.com
 posteaggiornainfo.com
 service-ptauthentication.com 
 verifica-account.com
+
+# Reference: https://twitter.com/illegalFawn/status/1136202362278883328
+
+vk-login.space
+vkcom-support-hh.top
+vkcom-support-ikl.top
+vkcom-support-it.top
+vkcom-support-lcom.top
