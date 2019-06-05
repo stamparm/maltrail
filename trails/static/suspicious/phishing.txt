@@ -8730,3 +8730,7 @@ applydata.online
 # Reference: https://twitter.com/malwrhunterteam/status/1136281859112022016
 
 chinabusinesspage1.servehttp.com
+
+# Reference: https://twitter.com/n0p1shing/status/1136309641548316677
+
+gaylenhayes.top
