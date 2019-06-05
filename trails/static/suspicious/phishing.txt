@@ -8663,3 +8663,7 @@ seruceinfolong.net
 # Reference: https://twitter.com/ActorExpose/status/1136177288528183297
 
 kasdfw.com
+
+# Reference: https://twitter.com/PhishFindR/status/1136157696162484224
+
+lookservicenana8.com
