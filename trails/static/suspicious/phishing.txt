@@ -8674,3 +8674,8 @@ confermazione-dati.com
 dati-conferma-2019.net
 postedati.com
 sicurezzaweb-dati.net
+
+# Reference: https://twitter.com/illegalFawn/status/1136197619741528064
+
+intesasampolo.com
+sanpaolointesa-bank.com
