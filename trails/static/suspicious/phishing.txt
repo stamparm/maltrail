@@ -8714,3 +8714,7 @@ appleiId.apple.com-sign.xyz
 # Reference: https://twitter.com/emilio_simoni/status/1136026252446486532
 
 icloud-appleld.com
+
+# Reference: https://twitter.com/IpNigh/status/1136167409751138304
+
+poaihjflasdasf.com
