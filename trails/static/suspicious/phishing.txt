@@ -8600,3 +8600,97 @@ trézor-official.org
 aməzon.com
 ɒmɑzon.com
 əməzon.com
+
+# Reference: https://twitter.com/PhishStats/status/1135882025116884998
+
+grupoaltazor.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1135900266514006018
+
+amazon-management.servehttp.com
+myamazonsecureid987.servehttp.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1135900932326219776
+
+purchase-storess.serveirc.com
+
+# Reference: https://twitter.com/packet_Wire/status/1135910972206567424
+
+check-your-account.taber-abraser.com
+
+# Reference: https://twitter.com/IpNigh/status/1135789368164212736
+
+barocheck.kr
+
+# Reference: https://twitter.com/IpNigh/status/1135709082692796421
+
+abnewyork.com
+
+# Reference: https://twitter.com/IpNigh/status/1135677289553944582
+
+jumbodatanetworks.com
+
+# Reference: https://twitter.com/PhishFindR/status/1135931523096555522
+
+f4cboook-lognla-facbook-es-scslqcjhar.filesusr.com
+
+# Reference: https://twitter.com/illegalFawn/status/1135932452327833600
+
+no-replycoinbase.com
+coinbàse.com
+xn--coinbse-dwa.com
+
+# Reference: https://twitter.com/PhishStats/status/1135971648828518401
+
+dhakaignite.com
+
+# Reference: https://twitter.com/packet_Wire/status/1135981532949221376
+
+smilecarecentre.co.uk
+
+# Reference: https://twitter.com/dms1899/status/1135955948030308352
+
+help-desk.cabanova.com
+
+# Reference: https://twitter.com/PhishStats/status/1136017005499310082
+
+uaedialer.com
+
+# Reference: https://twitter.com/IpNigh/status/1136002087911874560
+
+seruceinfolong.net
+
+# Reference: https://twitter.com/ActorExpose/status/1136177288528183297
+
+kasdfw.com
+
+# Reference: https://twitter.com/PhishFindR/status/1136157696162484224
+
+lookservicenana8.com
+
+# Reference: https://twitter.com/illegalFawn/status/1136197948746940416
+
+confermazione-dati.com
+dati-conferma-2019.net
+postedati.com
+sicurezzaweb-dati.net
+
+# Reference: https://twitter.com/illegalFawn/status/1136197619741528064
+
+intesasampolo.com
+sanpaolointesa-bank.com
+
+# Reference: https://twitter.com/illegalFawn/status/1136197215175794688
+
+inizializza-sicurezza.com
+posteaggiornainfo.com
+service-ptauthentication.com 
+verifica-account.com
+
+# Reference: https://twitter.com/illegalFawn/status/1136202362278883328
+
+vk-login.space
+vkcom-support-hh.top
+vkcom-support-ikl.top
+vkcom-support-it.top
+vkcom-support-lcom.top
