@@ -8679,3 +8679,10 @@ sicurezzaweb-dati.net
 
 intesasampolo.com
 sanpaolointesa-bank.com
+
+# Reference: https://twitter.com/illegalFawn/status/1136197215175794688
+
+inizializza-sicurezza.com
+posteaggiornainfo.com
+service-ptauthentication.com 
+verifica-account.com
