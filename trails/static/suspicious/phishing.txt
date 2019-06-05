@@ -8706,3 +8706,7 @@ emazon.azurewebsites.net
 # Reference: https://twitter.com/IpNigh/status/1136136557822382080
 
 ctdsf.org.tw
+
+# Reference: https://twitter.com/ANeilan/status/1135667590049751040
+
+appleiId.apple.com-sign.xyz
