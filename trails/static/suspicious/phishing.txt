@@ -8702,3 +8702,7 @@ fbi-gov.biz
 # Reference: https://twitter.com/IpNigh/status/1136114279298555910
 
 emazon.azurewebsites.net
+
+# Reference: https://twitter.com/IpNigh/status/1136136557822382080
+
+ctdsf.org.tw
