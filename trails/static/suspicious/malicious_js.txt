@@ -424,9 +424,6 @@ modest4ever.com/assets/newbalance.js
 
 # Reference: https://twitter.com/eComscan/status/1136181192796061697
 
-/aqua.js
 /baypre.js
 /cashionrods.js
 /dans.js
-/decor.js
-/forever.js
