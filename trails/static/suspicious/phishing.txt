@@ -8698,3 +8698,7 @@ vkcom-support-lcom.top
 # Reference: https://twitter.com/illegalFawn/status/1136225223966121986
 
 fbi-gov.biz
+
+# Reference: https://twitter.com/IpNigh/status/1136114279298555910
+
+emazon.azurewebsites.net
