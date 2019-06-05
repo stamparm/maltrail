@@ -8659,3 +8659,7 @@ uaedialer.com
 # Reference: https://twitter.com/IpNigh/status/1136002087911874560
 
 seruceinfolong.net
+
+# Reference: https://twitter.com/ActorExpose/status/1136177288528183297
+
+kasdfw.com
