@@ -8726,3 +8726,7 @@ etrikesbikes.com
 # Reference: https://twitter.com/malwrhunterteam/status/1136280138247802880
 
 applydata.online
+
+# Reference: https://twitter.com/malwrhunterteam/status/1136281859112022016
+
+chinabusinesspage1.servehttp.com
