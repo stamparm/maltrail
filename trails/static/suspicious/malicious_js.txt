@@ -421,3 +421,9 @@ modest4ever.com/assets/newbalance.js
 /stutterheim.js
 /turtlecase.js
 /whinkel.js
+
+# Reference: https://twitter.com/eComscan/status/1136181192796061697
+
+/baypre.js
+/cashionrods.js
+/dans.js
