@@ -8710,3 +8710,7 @@ ctdsf.org.tw
 # Reference: https://twitter.com/ANeilan/status/1135667590049751040
 
 appleiId.apple.com-sign.xyz
+
+# Reference: https://twitter.com/emilio_simoni/status/1136026252446486532
+
+icloud-appleld.com
