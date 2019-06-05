@@ -8667,3 +8667,10 @@ kasdfw.com
 # Reference: https://twitter.com/PhishFindR/status/1136157696162484224
 
 lookservicenana8.com
+
+# Reference: https://twitter.com/illegalFawn/status/1136197948746940416
+
+confermazione-dati.com
+dati-conferma-2019.net
+postedati.com
+sicurezzaweb-dati.net
