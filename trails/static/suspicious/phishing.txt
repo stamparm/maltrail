@@ -8778,3 +8778,7 @@ localbītcoins.net
 # Reference: https://twitter.com/PhishStats/status/1136605660337061889
 
 bestrike.com.ua
+
+# Reference: https://twitter.com/HSAFTeam/status/1136516803998433280
+
+gomiles.vn
