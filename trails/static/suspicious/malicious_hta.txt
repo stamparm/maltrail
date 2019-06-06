@@ -106,3 +106,7 @@
 # Reference: https://otx.alienvault.com/pulse/5cf53cdb5089737750fab25d
 
 /Black.hta
+
+# Reference: https://twitter.com/James_inthe_box/status/1136631137571237888
+
+/2VXzzTcNjTvas8r9.hta
