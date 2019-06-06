@@ -152,3 +152,7 @@ xmr-usa.dwarfpool.com
 miners.pro
 thyrsi.com
 zer0day.ru
+
+# Reference: https://app.any.run/tasks/6faf55b6-9675-4c23-acf6-e165e1938e43/
+
+crypto-widget.live
