@@ -8750,3 +8750,9 @@ dangie.ga
 # Reference: https://twitter.com/PhishStats/status/1136515140596195328
 
 sayanorapastanesi.com
+
+# Reference: https://twitter.com/illegalFawn/status/1136583976389357570
+
+inserimentodatiposte.com
+posteaggiornadati.com
+posteservices.com
