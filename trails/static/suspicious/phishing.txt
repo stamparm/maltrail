@@ -8774,3 +8774,7 @@ webknet.space
 # Reference: https://twitter.com/illegalFawn/status/1136213852117458945
 
 localbītcoins.net
+
+# Reference: https://twitter.com/PhishStats/status/1136605660337061889
+
+bestrike.com.ua
