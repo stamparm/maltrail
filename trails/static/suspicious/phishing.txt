@@ -8738,3 +8738,7 @@ gaylenhayes.top
 # Reference: https://twitter.com/dave_daves/status/1136309441752686594
 
 support-account-verification-now.com
+
+# Reference: https://twitter.com/jorgemieres/status/1136354513592307712
+
+bancanet-empresarial.best
