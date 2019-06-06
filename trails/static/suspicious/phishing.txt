@@ -8812,3 +8812,7 @@ ppl-center-required-action-19481.000webhostapp.com
 # Reference: https://twitter.com/IpNigh/status/1136700279825588224
 
 update-your-acc.btcpitbullrescue.org
+
+# Reference: https://twitter.com/packet_Wire/status/1136734738293624834
+
+dafda3143afcz.frb.io
