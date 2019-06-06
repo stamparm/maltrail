@@ -8756,3 +8756,13 @@ sayanorapastanesi.com
 inserimentodatiposte.com
 posteaggiornadati.com
 posteservices.com
+
+# Reference: https://twitter.com/kyleehmke/status/1136333242032959488
+
+office365-osf.am
+office365-osi.am
+osfam.events
+osfam.team
+office365.irf.services
+office365-democracyendowment.eu
+sharepoint-democracyendowment.eu
