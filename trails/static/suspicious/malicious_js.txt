@@ -427,3 +427,7 @@ modest4ever.com/assets/newbalance.js
 /baypre.js
 /cashionrods.js
 /dans.js
+
+# Reference: https://twitter.com/Racco42/status/1136621446053150720
+
+/0001.js
