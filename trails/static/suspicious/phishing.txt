@@ -8746,3 +8746,7 @@ bancanet-empresarial.best
 # Reference: https://twitter.com/smica83/status/1136503410801463296
 
 dangie.ga
+
+# Reference: https://twitter.com/PhishStats/status/1136515140596195328
+
+sayanorapastanesi.com
