@@ -8844,3 +8844,7 @@ hiltonsse.org
 # Reference: https://twitter.com/ActorExpose/status/1137002622735568897
 
 xakalaka.com
+
+# Reference: https://twitter.com/packet_Wire/status/1137019106559967232
+
+dcnews.co.in
