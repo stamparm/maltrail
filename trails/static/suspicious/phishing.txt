@@ -8852,3 +8852,7 @@ dcnews.co.in
 # Reference: https://twitter.com/PhishStats/status/1137062348806656002
 
 28057.com
+
+# Reference: https://twitter.com/JayTHL/status/1137069587332308992
+
+fd9523b31ff93b5c.com
