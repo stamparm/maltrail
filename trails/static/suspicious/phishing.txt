@@ -8828,3 +8828,8 @@ coolofdoodles.com
 # Reference: https://twitter.com/PhishStats/status/1136968079701925888
 
 mattress-hub.com.hk
+
+# Reference: https://twitter.com/illegalFawn/status/1137000213984550912
+
+ziraatbankasî.com
+zîraatbankasî.com
