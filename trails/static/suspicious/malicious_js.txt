@@ -435,3 +435,8 @@ modest4ever.com/assets/newbalance.js
 # Reference: https://twitter.com/rootsrv1/status/1136763516285702146
 
 jqueryextd.at
+
+# Reference: https://twitter.com/jeromesegura/status/1137087208630833152
+
+jquers.com
+jqueres.com
