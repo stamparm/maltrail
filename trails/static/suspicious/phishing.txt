@@ -8858,3 +8858,7 @@ dcnews.co.in
 # Reference: https://twitter.com/PhishStats/status/1137062348806656002
 
 28057.com
+
+# Reference: https://twitter.com/ActorExpose/status/1137055919953600512
+
+edywijaya.com
