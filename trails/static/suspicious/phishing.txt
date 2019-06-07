@@ -8504,6 +8504,7 @@ vaportwist.co.uk
 
 # Reference: https://twitter.com/illegalFawn/status/1135533641113722880
 # Reference: https://ghostbin.com/paste/3prhv/raw
+# Reference: https://twitter.com/illegalFawn/status/1137000609947824129
 
 trezerstore.com
 třezor.com
@@ -8545,7 +8546,9 @@ trezor-web.org
 wallet-trézor.com
 wallet-trėzor.com
 wállet-trezor.com
-wàllet-trezor.com
+wàllet-trezor.comtrėzor-shop.net
+trėzor-shop.com
+trėzor-shop.org
 
 # Reference: https://twitter.com/smica83/status/1135578820390653953
 
