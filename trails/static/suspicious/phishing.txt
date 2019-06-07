@@ -8848,3 +8848,7 @@ xakalaka.com
 # Reference: https://twitter.com/packet_Wire/status/1137019106559967232
 
 dcnews.co.in
+
+# Reference: https://twitter.com/PhishStats/status/1137062348806656002
+
+28057.com
