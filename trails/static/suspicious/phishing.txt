@@ -8824,3 +8824,7 @@ knightsbridgechauffeurs.co.uk
 # Reference: https://twitter.com/PhishStats/status/1136832405745127426
 
 coolofdoodles.com
+
+# Reference: https://twitter.com/PhishStats/status/1136968079701925888
+
+mattress-hub.com.hk
