@@ -8871,3 +8871,13 @@ gmail.com12772.key-protector-case14752.support
 # Reference: https://twitter.com/PhishStats/status/1137151023234060289
 
 earthkeeper.co.in
+
+# Reference: https://twitter.com/dario_kow/status/1137079057957494784
+
+szybki-przelew.net
+szybki-przelew.pw
+szybki-przelew.org
+szybkiprzelew.org
+szybkiprzelew.info
+szybkiprzelew.pro
+szybkiprzelew.pw
