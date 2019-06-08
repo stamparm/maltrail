@@ -221,3 +221,7 @@ uj3wazyk5u4hnvtk.onion
 
 # Darknet Live
 darknet7rl4epe24.onion
+
+# Reference: https://twitter.com/hackermaderas/status/1137366310025871360
+
+darknetleaks.ru
