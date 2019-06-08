@@ -8909,3 +8909,14 @@ hispla.com
 # Reference: https://twitter.com/IpNigh/status/1137058846705422342
 
 account-verification-paypal.ternser.com
+
+# Reference: https://twitter.com/slayersecurity/status/1137419969887637504
+
+returns-hm-rc.com
+reclaims-tax.com
+re-claim-tax.com
+re-claim-taxes.com
+claim-outstanding.com
+claim-overdue.com
+claims-returns.com
+standing-claims.com
