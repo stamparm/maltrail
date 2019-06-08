@@ -8885,3 +8885,7 @@ szybkiprzelew.pw
 # Reference: https://twitter.com/PhishStats/status/1137240609490636800
 
 ghastudio.com
+
+# Reference: https://twitter.com/PhishStats/status/1137285499163426816
+
+patakadriver.com
