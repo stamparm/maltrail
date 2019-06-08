@@ -8881,3 +8881,7 @@ szybkiprzelew.org
 szybkiprzelew.info
 szybkiprzelew.pro
 szybkiprzelew.pw
+
+# Reference: https://twitter.com/PhishStats/status/1137195842350256128
+
+bestrike.com.ua
