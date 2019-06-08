@@ -8924,3 +8924,7 @@ standing-claims.com
 # Reference: https://twitter.com/IpNigh/status/1137136642777669633
 
 pert-analysis.cf
+
+# Reference: https://twitter.com/PhishStats/status/1137421202929147904
+
+yplanning.net
