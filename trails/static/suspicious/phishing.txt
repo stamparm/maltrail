@@ -8881,3 +8881,7 @@ szybkiprzelew.org
 szybkiprzelew.info
 szybkiprzelew.pro
 szybkiprzelew.pw
+
+# Reference: https://twitter.com/PhishStats/status/1137240609490636800
+
+ghastudio.com
