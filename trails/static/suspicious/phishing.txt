@@ -8920,3 +8920,7 @@ claim-outstanding.com
 claim-overdue.com
 claims-returns.com
 standing-claims.com
+
+# Reference: https://twitter.com/IpNigh/status/1137136642777669633
+
+pert-analysis.cf
