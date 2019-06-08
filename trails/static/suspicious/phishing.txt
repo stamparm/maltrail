@@ -8905,3 +8905,7 @@ drusy.gq
 # Reference: https://twitter.com/ActorExpose/status/1137301098732109825
 
 hispla.com
+
+# Reference: https://twitter.com/IpNigh/status/1137058846705422342
+
+account-verification-paypal.ternser.com
