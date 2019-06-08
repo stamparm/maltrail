@@ -152,3 +152,12 @@ xmr-usa.dwarfpool.com
 miners.pro
 thyrsi.com
 zer0day.ru
+
+# Blockchain.info
+blockchainbdgpzk.onion
+
+# CoinPayments
+coinpaymtstgtibr.onion
+
+# Xmr.to
+xmrto2bturnore26.onion
