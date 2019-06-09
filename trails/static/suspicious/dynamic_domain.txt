@@ -1957,3 +1957,8 @@ isgre.at
 # Reference: https://www.virustotal.com/gui/domain/site90.net/details
 
 site90.net
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comule.com/details
+
+comule.com
