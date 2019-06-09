@@ -8962,3 +8962,7 @@ loadastreeetkhalifa.you2.pl
 # Reference: https://twitter.com/PhishStats/status/1137602220529201152
 
 hacheyou.com
+
+# Reference: https://twitter.com/PhishStats/status/1137647455544258560
+
+hennit.ml
