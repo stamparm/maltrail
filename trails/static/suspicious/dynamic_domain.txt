@@ -5432,3 +5432,8 @@ zux.com
 zvor.ru
 zxdev.org
 zziesworld.com
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comeze.com/relations
+
+comeze.com
