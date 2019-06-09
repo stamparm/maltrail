@@ -1982,3 +1982,8 @@ net63.net
 # Reference: https://www.virustotal.com/gui/domain/comxa.com/relations
 
 comxa.com
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comyr.com/relations
+
+comyr.com
