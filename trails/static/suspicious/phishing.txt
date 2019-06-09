@@ -8954,3 +8954,7 @@ www-activationkaspersky.com
 # Reference: https://twitter.com/PhishStats/status/1137511936382443520
 
 east38.com
+
+# Reference: https://twitter.com/PhishStats/status/1137466508093919234
+
+loadastreeetkhalifa.you2.pl
