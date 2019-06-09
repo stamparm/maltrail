@@ -8958,3 +8958,7 @@ east38.com
 # Reference: https://twitter.com/PhishStats/status/1137466508093919234
 
 loadastreeetkhalifa.you2.pl
+
+# Reference: https://twitter.com/PhishStats/status/1137602220529201152
+
+hacheyou.com
