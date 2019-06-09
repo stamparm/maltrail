@@ -1954,11 +1954,16 @@ ddns.epac.to
 isgre.at
 
 # Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
-# Reference: https://www.virustotal.com/gui/domain/site90.net/details
+# Reference: https://www.virustotal.com/gui/domain/site90.net/relations
 
 site90.net
 
 # Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
-# Reference: https://www.virustotal.com/gui/domain/comule.com/details
+# Reference: https://www.virustotal.com/gui/domain/comule.com/relations
 
 comule.com
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/net84.net/relations
+
+net84.net
