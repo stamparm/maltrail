@@ -8946,3 +8946,7 @@ kaspersky-support-number.com
 usakasperskycomkisdownload.com
 usakasperskygeeksquad.com
 www-activationkaspersky.com
+
+# Reference: https://twitter.com/PhishStats/status/1137557433088446464
+
+2dehands-verificatie.website
