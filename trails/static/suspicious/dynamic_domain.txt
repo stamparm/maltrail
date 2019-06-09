@@ -1977,3 +1977,8 @@ comoj.com
 # Reference: https://www.virustotal.com/gui/domain/net63.net/relations
 
 net63.net
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comxa.com/relations
+
+comxa.com
