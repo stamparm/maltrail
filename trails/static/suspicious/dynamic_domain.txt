@@ -1952,3 +1952,8 @@ ddns.epac.to
 # Reference: https://www.virustotal.com/gui/domain/isgre.at/details
 
 isgre.at
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/site90.net/details
+
+site90.net
