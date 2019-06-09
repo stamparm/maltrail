@@ -8974,3 +8974,7 @@ vriemoinrem.000webhostapp.com
 # Reference: https://twitter.com/PhishStats/status/1137692800168976384
 
 throwbacksaturdaysng.com
+
+# Reference: https://twitter.com/WhiteHatScum/status/1137481366445142017
+
+syrahost.com
