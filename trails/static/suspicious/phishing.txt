@@ -8970,3 +8970,7 @@ hennit.ml
 # Reference: https://twitter.com/ActorExpose/status/1137293339680751616
 
 vriemoinrem.000webhostapp.com
+
+# Reference: https://twitter.com/PhishStats/status/1137692800168976384
+
+throwbacksaturdaysng.com
