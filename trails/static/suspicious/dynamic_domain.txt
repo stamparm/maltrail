@@ -1987,3 +1987,8 @@ comxa.com
 # Reference: https://www.virustotal.com/gui/domain/comyr.com/relations
 
 comyr.com
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/netii.net/relations
+
+netii.net
