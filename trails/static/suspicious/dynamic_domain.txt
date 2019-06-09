@@ -5437,3 +5437,8 @@ zziesworld.com
 # Reference: https://www.virustotal.com/gui/domain/comeze.com/relations
 
 comeze.com
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comuv.com/relations
+
+comuv.com
