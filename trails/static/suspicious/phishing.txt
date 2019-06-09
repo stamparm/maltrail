@@ -8928,3 +8928,21 @@ pert-analysis.cf
 # Reference: https://twitter.com/PhishStats/status/1137421202929147904
 
 yplanning.net
+
+# Reference: https://twitter.com/illegalFawn/status/1137328590733885441
+
+install-kaspersky.com
+installkasperskyactivationcode.com
+installkasperskywithoutcd.com
+installmykaspersky.com
+kaspersky-activate.com
+kasperskyactivation.org
+kasperskyanti-virus.com
+kasperskyhelp.org
+kasperskyhelpline.com
+kasperskysupport.live
+kasperskysupport.tech
+kaspersky-support-number.com
+usakasperskycomkisdownload.com
+usakasperskygeeksquad.com
+www-activationkaspersky.com
