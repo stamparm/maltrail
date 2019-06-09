@@ -1948,3 +1948,7 @@ fairuse.org
 # Reference: https://www.virustotal.com/gui/domain/ddns.epac.to/details
 
 ddns.epac.to
+
+# Reference: https://www.virustotal.com/gui/domain/isgre.at/details
+
+isgre.at
