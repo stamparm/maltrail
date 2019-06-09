@@ -1967,3 +1967,8 @@ comule.com
 # Reference: https://www.virustotal.com/gui/domain/net84.net/relations
 
 net84.net
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comoj.com/relations
+
+comoj.com
