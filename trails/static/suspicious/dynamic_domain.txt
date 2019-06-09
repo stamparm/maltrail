@@ -5442,3 +5442,8 @@ comeze.com
 # Reference: https://www.virustotal.com/gui/domain/comuv.com/relations
 
 comuv.com
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comli.com/relations
+
+comli.com
