@@ -114,3 +114,7 @@
 # Reference: https://twitter.com/ViriBack/status/1136712921461997570
 
 /sample.hta
+
+# Reference: https://www.malware-traffic-analysis.net/2017/12/22/index.html
+
+/beta.hta
