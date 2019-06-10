@@ -9216,3 +9216,7 @@ us-armysayangh-beamkingdom.com
 # Reference: https://twitter.com/malwrhunterteam/status/1138119822976389122
 
 inpatientdrugrehabtx.com
+
+# Reference: https://twitter.com/PhishStats/status/1138100715501641732
+
+operationkhanyisa.co.za
