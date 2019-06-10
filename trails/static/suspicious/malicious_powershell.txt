@@ -91,3 +91,9 @@
 # Reference: https://twitter.com/reecdeep/status/1136581953770205185
 
 /5WD3emSKcJoLcaDjAUCFj7.ps1
+
+# Reference: https://twitter.com/p5yb34m/status/1138143258498949122
+
+/PayAdvice.ps1
+/remit.ps1
+/remittance.ps1
