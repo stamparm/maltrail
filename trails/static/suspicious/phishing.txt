@@ -9004,3 +9004,7 @@ aaronmckenziefraser.com
 # Reference: https://twitter.com/ANeilan/status/1137908631406616580
 
 appleid-warning.com
+
+# Reference: https://twitter.com/IpNigh/status/1137924542360358912
+
+crtne.onl
