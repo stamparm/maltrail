@@ -9224,3 +9224,10 @@ operationkhanyisa.co.za
 # Reference: https://twitter.com/PhishStats/status/1138146440402952192
 
 colombia.homerobotik.com
+
+# Reference: https://twitter.com/JCyberSec_/status/1138030325613940736
+
+apple.com.itunes-info.services
+apple.com.manage-profile.services
+manage-profile.services
+nab.com.au.restore-banking.services
