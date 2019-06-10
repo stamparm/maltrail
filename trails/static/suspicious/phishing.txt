@@ -9000,3 +9000,7 @@ wadialmadeena.com
 # Reference: https://twitter.com/dave_daves/status/1138022536913047552
 
 aaronmckenziefraser.com
+
+# Reference: https://twitter.com/ANeilan/status/1137908631406616580
+
+appleid-warning.com
