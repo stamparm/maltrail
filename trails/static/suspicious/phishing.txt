@@ -8992,3 +8992,7 @@ riquerejoin.icu
 # Reference: https://twitter.com/PhishStats/status/1137965084565807104
 
 trattoriaerbario.kylos.pl
+
+# Reference: https://twitter.com/PhishStats/status/1138010197006442496
+
+wadialmadeena.com
