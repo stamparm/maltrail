@@ -9008,3 +9008,23 @@ appleid-warning.com
 # Reference: https://twitter.com/IpNigh/status/1137924542360358912
 
 crtne.onl
+
+# Reference: https://github.com/mitchellkrogza/Phishing.Database/blob/master/phishing-domains-NEW-last-hour.txt
+
+account-is-locked.com
+aymaran-gallons.000webhostapp.com
+besstwatch.ru
+claim.returns-hm-rc.com
+demo.atrate.in
+durbanville-property.co.za
+funfactorybd.com
+funksha1.blob.core.windows.net
+gov.uk.claim-tax-refund.loguk.xyz
+hspny.sharefile.com
+jubile.cl
+malermeister-az.de
+melhores-epocas-comprar-promocoes-do-ano.com
+paypal.com-update-account.information-pay.donsson.com
+smsm1.azurewebsites.net
+st-amu-cz.my-free.website
+verify-info.secure529.com
