@@ -9220,3 +9220,7 @@ inpatientdrugrehabtx.com
 # Reference: https://twitter.com/PhishStats/status/1138100715501641732
 
 operationkhanyisa.co.za
+
+# Reference: https://twitter.com/PhishStats/status/1138146440402952192
+
+colombia.homerobotik.com
