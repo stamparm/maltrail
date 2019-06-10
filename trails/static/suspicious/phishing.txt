@@ -9231,3 +9231,7 @@ apple.com.itunes-info.services
 apple.com.manage-profile.services
 manage-profile.services
 nab.com.au.restore-banking.services
+
+# Reference: https://twitter.com/PhishStats/status/1138192041010237441
+
+c7de80e471794bd19fe291e551154cc4.testurl.ws
