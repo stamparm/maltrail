@@ -9200,3 +9200,7 @@ wildcard.fatiyev.com
 w-mcafee.com
 xn--bhdlen-fxa.com
 yaktsant.org
+
+# Reference: https://twitter.com/PhishStats/status/1138055477911334912
+
+travellinggolfer.com.au
