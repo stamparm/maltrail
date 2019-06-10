@@ -9204,3 +9204,7 @@ yaktsant.org
 # Reference: https://twitter.com/PhishStats/status/1138055477911334912
 
 travellinggolfer.com.au
+
+# Reference: https://twitter.com/malwrhunterteam/status/1138063451241287680
+
+office365moneymaker.hopto.org
