@@ -1907,3 +1907,7 @@ chat.ygosu.com
 # Reference: https://twitter.com/MalwarePatrol/status/1136859839236153344
 
 t1.daumcdn.net
+
+# Reference: https://twitter.com/MalwarePatrol/status/1137584613935763457
+
+url.tudown.com
