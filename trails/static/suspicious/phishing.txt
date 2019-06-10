@@ -8996,3 +8996,7 @@ trattoriaerbario.kylos.pl
 # Reference: https://twitter.com/PhishStats/status/1138010197006442496
 
 wadialmadeena.com
+
+# Reference: https://twitter.com/dave_daves/status/1138022536913047552
+
+aaronmckenziefraser.com
