@@ -8982,3 +8982,9 @@ syrahost.com
 # Reference: https://twitter.com/PhishStats/status/1137783856994627584
 
 culturedstonecreations.ca
+
+# Reference: https://twitter.com/dvk01uk/status/1137942428277719041
+
+appteslerapp.com
+rencontrere.icu
+riquerejoin.icu
