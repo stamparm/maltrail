@@ -9259,3 +9259,7 @@ intotheyellowwood.fun
 # Reference: https://twitter.com/ANeilan/status/1137912202093092864
 
 iforgot.support.account.isupportappleid.com
+
+# Reference: https://twitter.com/IpNigh/status/1138513677349531649
+
+myearthjourney.com
