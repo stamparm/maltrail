@@ -9247,3 +9247,7 @@ excelsecuredocument.z19.web.core.windows.net
 # Reference: https://twitter.com/PhishStats/status/1138463640900837377
 
 fotostix.at
+
+# Reference: https://twitter.com/malwrhunterteam/status/1138423052470034435
+
+samak.in
