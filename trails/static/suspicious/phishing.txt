@@ -9263,3 +9263,7 @@ iforgot.support.account.isupportappleid.com
 # Reference: https://twitter.com/IpNigh/status/1138513677349531649
 
 myearthjourney.com
+
+# Reference: https://twitter.com/packet_Wire/status/1138524106499002370
+
+osezjesus.com
