@@ -9255,3 +9255,7 @@ samak.in
 # Reference: https://twitter.com/ActorExpose/status/1138498175977869312
 
 intotheyellowwood.fun
+
+# Reference: https://twitter.com/ANeilan/status/1137912202093092864
+
+iforgot.support.account.isupportappleid.com
