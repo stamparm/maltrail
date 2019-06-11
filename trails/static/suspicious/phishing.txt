@@ -9235,3 +9235,7 @@ nab.com.au.restore-banking.services
 # Reference: https://twitter.com/PhishStats/status/1138192041010237441
 
 c7de80e471794bd19fe291e551154cc4.testurl.ws
+
+# Reference: https://twitter.com/Cyberfishio/status/1138397880488812544
+
+login-inbox.yaaho.co
