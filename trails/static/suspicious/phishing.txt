@@ -9239,3 +9239,7 @@ c7de80e471794bd19fe291e551154cc4.testurl.ws
 # Reference: https://twitter.com/Cyberfishio/status/1138397880488812544
 
 login-inbox.yaaho.co
+
+# Reference: https://twitter.com/malwrhunterteam/status/1138415406543249408
+
+excelsecuredocument.z19.web.core.windows.net
