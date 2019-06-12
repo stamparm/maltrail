@@ -9320,3 +9320,7 @@ updatemail339.cf
 # Reference: https://twitter.com/dario_kow/status/1138792357074284546
 
 kurierjas.info
+
+# Reference: https://twitter.com/smica83/status/1138812739789492224
+
+outlook.fotistopk.com
