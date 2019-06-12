@@ -9324,3 +9324,7 @@ kurierjas.info
 # Reference: https://twitter.com/smica83/status/1138812739789492224
 
 outlook.fotistopk.com
+
+# Reference: https://twitter.com/PhishStats/status/1138871056012369920
+
+inoconcept.com
