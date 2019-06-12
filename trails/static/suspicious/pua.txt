@@ -1911,3 +1911,7 @@ t1.daumcdn.net
 # Reference: https://twitter.com/MalwarePatrol/status/1137584613935763457
 
 url.tudown.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1138671778505666560
+
+123juzi.net
