@@ -9231,3 +9231,43 @@ apple.com.itunes-info.services
 apple.com.manage-profile.services
 manage-profile.services
 nab.com.au.restore-banking.services
+
+# Reference: https://twitter.com/PhishStats/status/1138192041010237441
+
+c7de80e471794bd19fe291e551154cc4.testurl.ws
+
+# Reference: https://twitter.com/Cyberfishio/status/1138397880488812544
+
+login-inbox.yaaho.co
+
+# Reference: https://twitter.com/malwrhunterteam/status/1138415406543249408
+
+excelsecuredocument.z19.web.core.windows.net
+
+# Reference: https://twitter.com/PhishStats/status/1138463640900837377
+
+fotostix.at
+
+# Reference: https://twitter.com/malwrhunterteam/status/1138423052470034435
+
+samak.in
+
+# Reference: https://twitter.com/ActorExpose/status/1138498175977869312
+
+intotheyellowwood.fun
+
+# Reference: https://twitter.com/ANeilan/status/1137912202093092864
+
+iforgot.support.account.isupportappleid.com
+
+# Reference: https://twitter.com/IpNigh/status/1138513677349531649
+
+myearthjourney.com
+
+# Reference: https://twitter.com/packet_Wire/status/1138524106499002370
+
+osezjesus.com
+
+# Reference: https://twitter.com/PhishStats/status/1138689755439403008
+
+bowlszw.co.zw
