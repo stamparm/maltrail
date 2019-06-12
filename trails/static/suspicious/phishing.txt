@@ -9292,3 +9292,7 @@ paypal-verification-process.com
 # Reference: https://twitter.com/IpNigh/status/1138565825370238985
 
 paulaseta.com
+
+# Reference: https://twitter.com/PhishStats/status/1138780549420658688
+
+gilsonvieira.com.br
