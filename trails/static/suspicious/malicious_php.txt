@@ -314,3 +314,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/packet_Wire/status/1137019106559967232
 
 /hhhhh.php
+
+# Reference: https://twitter.com/IpNigh/status/1138206277992161281
+
+/o365ms.php
