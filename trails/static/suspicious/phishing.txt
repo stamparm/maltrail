@@ -9308,3 +9308,7 @@ roskomnadzorr.gotdns.ch
 # Reference: https://twitter.com/ps66uk/status/1138792829222866944
 
 mablewera.com
+
+# Reference: https://twitter.com/IpNigh/status/1138778954574258176
+
+keeva.com.ph
