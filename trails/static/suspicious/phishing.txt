@@ -9328,3 +9328,7 @@ outlook.fotistopk.com
 # Reference: https://twitter.com/PhishStats/status/1138871056012369920
 
 inoconcept.com
+
+# Reference: https://twitter.com/IpNigh/status/1138824460075749376
+
+vipinvestments.com.pt
