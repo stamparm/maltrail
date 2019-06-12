@@ -9276,3 +9276,11 @@ bowlszw.co.zw
 
 account-recovery-support-rakuten.com
 redirect-support-rakuten.com
+
+# Reference: https://twitter.com/illegalFawn/status/1138737938748137472
+
+amazon-968574.com
+aol-728404.com
+magento-updates001.com
+magento-verification-process.com
+paypal-verification-process.com
