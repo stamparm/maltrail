@@ -9316,3 +9316,7 @@ keeva.com.ph
 # Reference: https://twitter.com/yvesago/status/1138718112839327744
 
 updatemail339.cf
+
+# Reference: https://twitter.com/dario_kow/status/1138792357074284546
+
+kurierjas.info
