@@ -9304,3 +9304,7 @@ mailxc.gq
 # Reference: https://twitter.com/malwrhunterteam/status/1138792872386400256
 
 roskomnadzorr.gotdns.ch
+
+# Reference: https://twitter.com/ps66uk/status/1138792829222866944
+
+mablewera.com
