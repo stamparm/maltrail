@@ -9300,3 +9300,7 @@ gilsonvieira.com.br
 # Reference: https://twitter.com/PhishFindR/status/1138782728411897856
 
 mailxc.gq
+
+# Reference: https://twitter.com/malwrhunterteam/status/1138792872386400256
+
+roskomnadzorr.gotdns.ch
