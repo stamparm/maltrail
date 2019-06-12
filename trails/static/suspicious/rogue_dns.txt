@@ -58,3 +58,13 @@ ns2.lcjcomputing.com
 
 176.123.7.80:53
 31.204.153.34:53
+
+# Reference: https://myonlinesecurity.co.uk/it-looks-like-another-dns-compromise-hack-happening/
+
+ns1.firstdnshoster.com
+ns2.firstdnshoster.com
+188.225.25.33:53
+104.193.252.156:53
+185.209.160.70:53
+190.2.147.146:53
+31.148.219.110:53
