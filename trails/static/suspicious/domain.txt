@@ -4559,3 +4559,7 @@ ven.bz
 venez.fr
 za.net
 za.pl
+
+# Reference: https://www.virustotal.com/gui/domain/tl-ip.net/details
+
+tl-ip.net
