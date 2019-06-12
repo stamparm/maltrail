@@ -9288,3 +9288,7 @@ paypal-verification-process.com
 # Reference: https://twitter.com/PhishStats/status/1138734895302356993
 
 9880mal728.info
+
+# Reference: https://twitter.com/IpNigh/status/1138565825370238985
+
+paulaseta.com
