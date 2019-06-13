@@ -9555,3 +9555,8 @@ helenetzicap.com
 
 appleid.cloudcontent.info
 icloud.cloudcontent.info
+
+# Reference: https://twitter.com/dave_daves/status/1139072058741198849
+
+appleid.secure1.support.apple.com.truthmgamusicalart.com
+server-mkato-aligamyway681833.codeanyapp.com
