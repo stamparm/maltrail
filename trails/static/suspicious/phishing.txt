@@ -9542,3 +9542,7 @@ ton-official.org
 tsla-info.tech
 tslaplanet.tech
 yousaku.gift
+
+# Reference: https://twitter.com/IpNigh/status/1138895419528941569
+
+tradeskinnow.com
