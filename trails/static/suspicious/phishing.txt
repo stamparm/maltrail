@@ -9601,3 +9601,7 @@ passportcompanyassociates.com
 # Reference: https://twitter.com/dave_daves/status/1139186744564355073
 
 igc.co.ao
+
+# Reference: https://twitter.com/PhishFindR/status/1139238625802104832
+
+unlock-your-account.info
