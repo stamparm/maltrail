@@ -9605,3 +9605,7 @@ igc.co.ao
 # Reference: https://twitter.com/PhishFindR/status/1139238625802104832
 
 unlock-your-account.info
+
+# Reference: https://twitter.com/PhishFindR/status/1139228743036211201
+
+domahaza.xyz
