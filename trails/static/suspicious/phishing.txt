@@ -9609,3 +9609,7 @@ unlock-your-account.info
 # Reference: https://twitter.com/PhishFindR/status/1139228743036211201
 
 domahaza.xyz
+
+# Reference: https://twitter.com/PhishFindR/status/1139228104646451206
+
+secure.apple.com.accenture.co.tz
