@@ -9568,3 +9568,28 @@ login.yahoo.com.1worldindy.com
 # Reference: https://twitter.com/PhishingAi/status/1139151455527481345
 
 www-sso-godady.com
+
+# Reference: https://twitter.com/PhishingAi/status/1139152925031260166
+# Reference: https://www.virustotal.com/gui/ip-address/185.174.103.188/relations
+
+login-rnicrosoft.live
+owa-autho.live
+owa-rnicrosoft.live
+rnicrosotfonlrne.online
+rnicrosotfonlrne.xyz
+sso-godacldy.club
+sso-godacldy.live
+sso-godacldy.xyz
+sso-secuiesevrer.club
+sso-secuiesevrer.xyz
+v30283.dh.net.ua
+weblogin-rnicrosoft.live
+webowa-autho.live
+webowa-rnicrosoft.live
+webrnicrosotfonlrne.online
+webrnicrosotfonlrne.xyz
+websso-godacldy.club
+websso-godacldy.live
+websso-godacldy.xyz
+websso-secuiesevrer.club
+websso-secuiesevrer.xyz
