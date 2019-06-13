@@ -9550,3 +9550,8 @@ tradeskinnow.com
 # Reference: https://twitter.com/PhishStats/status/1139097775457611776
 
 helenetzicap.com
+
+# Reference: https://twitter.com/JCyberSec_/status/1139120246705577985
+
+appleid.cloudcontent.info
+icloud.cloudcontent.info
