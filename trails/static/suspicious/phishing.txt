@@ -9564,3 +9564,7 @@ server-mkato-aligamyway681833.codeanyapp.com
 # Reference: https://twitter.com/PhishStats/status/1139143971953893377
 
 login.yahoo.com.1worldindy.com
+
+# Reference: https://twitter.com/PhishingAi/status/1139151455527481345
+
+www-sso-godady.com
