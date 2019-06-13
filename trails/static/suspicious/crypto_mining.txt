@@ -152,3 +152,7 @@ xmr-usa.dwarfpool.com
 miners.pro
 thyrsi.com
 zer0day.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1138999824613687298
+
+185.181.165.20:8087
