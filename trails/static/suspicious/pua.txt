@@ -1919,3 +1919,7 @@ url.tudown.com
 # Reference: https://twitter.com/MalwarePatrol/status/1139034163795939328
 
 alsaei.com
+
+# Reference: https://twitter.com/LukasStefanko/status/1139064061809893376
+
+freegifts.top
