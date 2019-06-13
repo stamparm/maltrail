@@ -9593,3 +9593,7 @@ websso-godacldy.live
 websso-godacldy.xyz
 websso-secuiesevrer.club
 websso-secuiesevrer.xyz
+
+# Reference: https://twitter.com/PhishFindR/status/1139157220892053504
+
+passportcompanyassociates.com
