@@ -1915,3 +1915,7 @@ url.tudown.com
 # Reference: https://twitter.com/MalwarePatrol/status/1138671778505666560
 
 123juzi.net
+
+# Reference: https://twitter.com/MalwarePatrol/status/1139034163795939328
+
+alsaei.com
