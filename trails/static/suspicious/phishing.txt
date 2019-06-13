@@ -9560,3 +9560,7 @@ icloud.cloudcontent.info
 
 appleid.secure1.support.apple.com.truthmgamusicalart.com
 server-mkato-aligamyway681833.codeanyapp.com
+
+# Reference: https://twitter.com/PhishStats/status/1139143971953893377
+
+login.yahoo.com.1worldindy.com
