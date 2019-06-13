@@ -9546,3 +9546,7 @@ yousaku.gift
 # Reference: https://twitter.com/IpNigh/status/1138895419528941569
 
 tradeskinnow.com
+
+# Reference: https://twitter.com/PhishStats/status/1139097775457611776
+
+helenetzicap.com
