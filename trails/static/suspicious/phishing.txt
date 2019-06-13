@@ -9597,3 +9597,7 @@ websso-secuiesevrer.xyz
 # Reference: https://twitter.com/PhishFindR/status/1139157220892053504
 
 passportcompanyassociates.com
+
+# Reference: https://twitter.com/dave_daves/status/1139186744564355073
+
+igc.co.ao
