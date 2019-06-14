@@ -9625,3 +9625,7 @@ mail.glowiecyberstar.thats.im
 # Reference: https://twitter.com/IpNigh/status/1139323679966470144
 
 masmediatv.mx
+
+# Reference: https://twitter.com/dave_daves/status/1139525522680160257
+
+cloudapps247.com
