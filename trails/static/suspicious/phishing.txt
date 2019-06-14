@@ -9629,3 +9629,7 @@ masmediatv.mx
 # Reference: https://twitter.com/dave_daves/status/1139525522680160257
 
 cloudapps247.com
+
+# Reference: https://twitter.com/FewAtoms/status/1139608798119768065
+
+hdaseis.cf
