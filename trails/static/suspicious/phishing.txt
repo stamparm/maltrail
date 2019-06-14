@@ -9621,3 +9621,7 @@ login.live.com.settings.access-dashboard.com
 # Reference: https://twitter.com/PhishStats/status/1139505829919580162
 
 mail.glowiecyberstar.thats.im
+
+# Reference: https://twitter.com/IpNigh/status/1139323679966470144
+
+masmediatv.mx
