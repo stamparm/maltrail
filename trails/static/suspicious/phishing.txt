@@ -9613,3 +9613,7 @@ domahaza.xyz
 # Reference: https://twitter.com/PhishFindR/status/1139228104646451206
 
 secure.apple.com.accenture.co.tz
+
+# Reference: https://twitter.com/dave_daves/status/1139451995541114880
+
+login.live.com.settings.access-dashboard.com
