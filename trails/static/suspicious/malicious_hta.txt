@@ -118,3 +118,7 @@
 # Reference: https://www.malware-traffic-analysis.net/2017/12/22/index.html
 
 /beta.hta
+
+# Reference: https://twitter.com/James_inthe_box/status/1139536021572317185
+
+/out-1445440753.hta
