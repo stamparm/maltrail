@@ -9617,3 +9617,7 @@ secure.apple.com.accenture.co.tz
 # Reference: https://twitter.com/dave_daves/status/1139451995541114880
 
 login.live.com.settings.access-dashboard.com
+
+# Reference: https://twitter.com/PhishStats/status/1139505829919580162
+
+mail.glowiecyberstar.thats.im
