@@ -9712,3 +9712,7 @@ abnrecyclepunt.kantoorbericht.dkfns.eu
 # Reference: https://twitter.com/PhishStats/status/1139912517747191809
 
 bizcloudz.net
+
+# Reference: https://twitter.com/smica83/status/1139934929272356865
+
+suzuki-ngoisao.com
