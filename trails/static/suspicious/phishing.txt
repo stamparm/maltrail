@@ -9633,3 +9633,7 @@ cloudapps247.com
 # Reference: https://twitter.com/FewAtoms/status/1139608798119768065
 
 hdaseis.cf
+
+# Reference: https://twitter.com/PhishStats/status/1139641354735300613
+
+tudip.fr
