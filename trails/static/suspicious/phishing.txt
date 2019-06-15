@@ -9708,3 +9708,7 @@ naturecalls.mycustomerconnect.com
 # Reference: https://twitter.com/PhishStats/status/1139867501418995713
 
 abnrecyclepunt.kantoorbericht.dkfns.eu
+
+# Reference: https://twitter.com/PhishStats/status/1139912517747191809
+
+bizcloudz.net
