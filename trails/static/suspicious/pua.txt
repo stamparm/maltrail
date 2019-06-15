@@ -1923,3 +1923,8 @@ alsaei.com
 # Reference: https://twitter.com/LukasStefanko/status/1139064061809893376
 
 freegifts.top
+
+# Reference: https://blog.talosintelligence.com/2019/06/threat-roundup-0607-0614.html (# PUA.Win.Adware.Qjwmonkey-6992589-0)
+
+x.93ne.com
+cdn.zry97.com
