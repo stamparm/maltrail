@@ -9716,3 +9716,7 @@ bizcloudz.net
 # Reference: https://twitter.com/smica83/status/1139934929272356865
 
 suzuki-ngoisao.com
+
+# Reference: https://twitter.com/PhishStats/status/1139958190223892480
+
+marketingplatform.ca
