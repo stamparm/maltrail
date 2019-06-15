@@ -154,5 +154,11 @@ thyrsi.com
 zer0day.ru
 
 # Reference: https://twitter.com/malware_traffic/status/1138999824613687298
+# Reference: https://twitter.com/VK_Intel/status/1139926661162512384
+# Reference: https://github.com/k-vitali/Malware-Misc-RE/blob/master/2019-06-14-tofsee-spambot-modules.notes.vk.txt
 
 185.181.165.20:8087
+
+# Reference: https://twitter.com/Artilllerie/status/1115258738368294913
+
+185.212.129.80:8087
