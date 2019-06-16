@@ -444,3 +444,7 @@ jqueres.com
 # Reference: https://twitter.com/luc4m/status/1138430833533104128
 
 /tkeezwbzpl.js
+
+# Reference: https://twitter.com/Racco42/status/1139461501113311232
+
+/urgente.js
