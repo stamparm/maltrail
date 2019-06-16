@@ -100,16 +100,6 @@
 
 # Reference: https://twitter.com/HONKONE_K/status/1139364022296272896
 
-/0.ps1
-/1.ps1
-/2.ps1
-/3.ps1
-/4.ps1
-/5.ps1
-/6.ps1
-/7.ps1
-/8.ps1
-/9.ps1
 /done1.ps1
 /done2.ps1
 /putty.ps1
