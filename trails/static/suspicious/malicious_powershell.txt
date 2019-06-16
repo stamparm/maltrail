@@ -97,3 +97,14 @@
 /PayAdvice.ps1
 /remit.ps1
 /remittance.ps1
+
+# Reference: https://twitter.com/HONKONE_K/status/1139364022296272896
+
+/done1.ps1
+/done2.ps1
+/putty.ps1
+/x10.ps1
+/x11.ps1
+/x12.ps1
+/xvid1.ps1
+/xvid2.ps1
