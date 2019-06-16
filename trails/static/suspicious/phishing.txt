@@ -9740,3 +9740,36 @@ blarelingeianmo.co.kr
 # Reference: https://twitter.com/rpsanch/status/1140102180260720640
 
 carrefour.fr.fsweeps.com
+
+# Reference: https://twitter.com/spammailinfo/status/1140222788021583872
+
+cr-mufg-co-jp.mobi
+cr-mufgcard-net.club
+cr-mufgcard-net.info
+cr-mufgcard-net.press
+cr-mufgcard-net.top
+cr-mufgcard-net.xyz
+cr-mufgcard.com
+mufg-ne.com
+mufg-net.club
+mufg-net.com
+mufg-net.info
+mufg-net.online
+mufg-net.press
+mufg-net.space
+mufg-net.top
+mufg-net.xyz
+mufg-ufj.com
+mufgcard-co.com
+mufgcard-into.com
+mufgcard-jp.com
+mufgcard-ne.com
+mufgcard-net.club
+mufgcard-net.com
+mufgcard-net.info
+mufgcard-net.press
+mufgcard-net.pro
+mufgcard-net.top
+mufgcard-net.xyz
+mufgcard-online.com
+mufgcard-ufj.com
