@@ -9724,3 +9724,7 @@ marketingplatform.ca
 # Reference: https://twitter.com/IpNigh/status/1139971275160522760
 
 impendent-hubs.000webhostapp.com
+
+# Reference: https://twitter.com/PhishStats/status/1140184587794092032
+
+mufgcard-online-jp.pro
