@@ -9728,3 +9728,7 @@ impendent-hubs.000webhostapp.com
 # Reference: https://twitter.com/PhishStats/status/1140184587794092032
 
 mufgcard-online-jp.pro
+
+# Reference: https://twitter.com/IpNigh/status/1140034240010231809
+
+instituteqk.com
