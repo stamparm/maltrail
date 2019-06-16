@@ -9773,3 +9773,9 @@ mufgcard-net.top
 mufgcard-net.xyz
 mufgcard-online.com
 mufgcard-ufj.com
+
+# Reference: https://twitter.com/rpsanch/status/1140030379585351680
+
+grandcentralatkennedy.com
+spidermonkeytattoos.com
+vfinitylife.com
