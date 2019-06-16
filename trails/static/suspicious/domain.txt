@@ -4563,3 +4563,11 @@ za.pl
 # Reference: https://www.virustotal.com/gui/domain/tl-ip.net/details
 
 tl-ip.net
+
+# Reference: https://www.virustotal.com/gui/domain/gnway.com/relations
+
+gnway.com
+
+# Reference: https://www.virustotal.com/gui/domain/gnway.net/relations
+
+gnway.net
