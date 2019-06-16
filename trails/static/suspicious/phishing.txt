@@ -9736,3 +9736,7 @@ instituteqk.com
 # Reference: https://twitter.com/PhishStats/status/1140229757273067521
 
 blarelingeianmo.co.kr
+
+# Reference: https://twitter.com/rpsanch/status/1140102180260720640
+
+carrefour.fr.fsweeps.com
