@@ -9848,3 +9848,7 @@ univ-lorraine-fr.5v.pl
 # Reference: https://twitter.com/PhishStats/status/1140456095204487170
 
 mobilerefund-gouv.dep.ca.kiandastore.com
+
+# Reference: https://twitter.com/PhishStats/status/1140411571941904385
+
+africanmangusafaris.com
