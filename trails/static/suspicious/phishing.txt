@@ -9791,3 +9791,52 @@ espoing.gq
 # Reference: https://twitter.com/sniko_/status/1140341925905620993
 
 applleid.com-index-managers-verifyed-notifications-accounts.info
+
+# Reference: https://twitter.com/rpsanch/status/1140452653438242816
+# Reference: https://pastebin.com/vsnnKx47
+
+acceso-avance-en-linea-seguro-cl.gq
+activacion-avances-web-segura.cf
+activacion-avances-web-segura.gq
+avances-promo-en-linea-seguros-cl.cf
+avances-promo-en-linea-seguros-cl.gq
+avances-seguros-en-bchile-web.gq
+consulta-avances-bchile-edwards-web.cf
+consulta-avances-bchile-edwards-web.gq
+consulta-de-avances-seguros.gq
+consulta-web-avances-cl.cf
+credito-de-avances-web-personas.cf
+credito-de-avances-web-personas.gq
+edwards-credito-consumo-cl.gq
+informacion-avances-web.cf
+ingreso-balance-cupo-online.gq
+ingreso-consultas-web-avances.cf
+ingreso-credito-seguro-web-cl.cf
+ingreso-personas-credito-web.cf
+ingreso-personas-credito-web.gq
+ingreso-seguro-avances-web.cf
+ingreso-seguro-avances-web.gq
+ingreso-web-cupo-credito-consumo-cl.cf
+ingreso-web-cupo-credito-consumo-cl.gq
+login-avances-bchile-reporte-web.cf
+login-avances-bchile-reporte-web.gq
+personas-avances-seguro-web-cl.cf
+personas-avances-seguro-web-cl.gq
+personas-balance-web-cl.gq
+portal-avances-bchile-wen-segura-cl.gq
+portal-edwards-avances-en-linea-cl.cf
+portal-edwards-avances-en-linea-cl.gq
+portal-ingreso-de-avances-cl.cf
+registro-de-avances-online.gq
+servicios-de-avance-cupo-online.cf
+servicios-de-avance-cupo-online.gq
+soporte-avances-en-linea-seguros-cl.cf
+soporte-avances-en-linea-seguros-cl.gq
+validacion-avance-en-linea-cl.cf
+web-avances-consultas.gq
+web-bchile-avances-rapido-seguro-cl.cf
+web-bchile-avances-rapido-seguro-cl.gq
+web-consulta-de-avances-cl.cf
+web-consulta-de-avances-cl.gq
+web-consultas-personas.gq
+web-edwards-avances-seguro-cl.gq
