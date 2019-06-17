@@ -9840,3 +9840,7 @@ web-consulta-de-avances-cl.cf
 web-consulta-de-avances-cl.gq
 web-consultas-personas.gq
 web-edwards-avances-seguro-cl.gq
+
+# Reference: https://twitter.com/yvesago/status/1140159572965040128
+
+univ-lorraine-fr.5v.pl
