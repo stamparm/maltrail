@@ -9856,3 +9856,7 @@ africanmangusafaris.com
 # Reference: https://twitter.com/PhishStats/status/1140592471744942082
 
 statute-result.000webhostapp.com
+
+# Reference: https://twitter.com/PhishStats/status/1140683427664056320
+
+vai-evo.co.uk
