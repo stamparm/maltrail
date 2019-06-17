@@ -9844,3 +9844,7 @@ web-edwards-avances-seguro-cl.gq
 # Reference: https://twitter.com/yvesago/status/1140159572965040128
 
 univ-lorraine-fr.5v.pl
+
+# Reference: https://twitter.com/PhishStats/status/1140456095204487170
+
+mobilerefund-gouv.dep.ca.kiandastore.com
