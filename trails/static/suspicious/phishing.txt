@@ -9852,3 +9852,7 @@ mobilerefund-gouv.dep.ca.kiandastore.com
 # Reference: https://twitter.com/PhishStats/status/1140411571941904385
 
 africanmangusafaris.com
+
+# Reference: https://twitter.com/PhishStats/status/1140592471744942082
+
+statute-result.000webhostapp.com
