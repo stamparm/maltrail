@@ -423,3 +423,8 @@ webege.com
 webnika.info
 website-home.ws
 website.or
+
+# Reference: https://twitter.com/ScumBots/status/1140724407687684096
+# Reference: https://www.virustotal.com/gui/domain/heliohost.org/details
+
+heliohost.org
