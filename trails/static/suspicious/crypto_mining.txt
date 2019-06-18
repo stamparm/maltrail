@@ -162,3 +162,9 @@ zer0day.ru
 # Reference: https://twitter.com/Artilllerie/status/1115258738368294913
 
 185.212.129.80:8087
+
+# Reference: https://otx.alienvault.com/pulse/5d0773672ba7e7853c4ad5cf
+
+185.161.70.34:3333
+202.144.193.184:3333
+205.185.122.99:3333
