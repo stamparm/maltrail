@@ -318,3 +318,11 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/IpNigh/status/1138206277992161281
 
 /o365ms.php
+
+# Reference: https://twitter.com/cyberanalyzer/status/1140571010518978560
+
+/main.jspsid.php
+
+# Reference: https://twitter.com/IpNigh/status/1141059894021361666
+
+/chaseind.php
