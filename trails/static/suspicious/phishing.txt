@@ -9895,3 +9895,7 @@ sage-uk.org
 # Reference: https://twitter.com/IpNigh/status/1140639961416392710
 
 checked-safe.com
+
+# Reference: https://twitter.com/IpNigh/status/1140873983602155520
+
+apple.varifidogioex.com
