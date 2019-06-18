@@ -9864,3 +9864,7 @@ vai-evo.co.uk
 # Reference: https://twitter.com/PhishStats/status/1140864100857262080
 
 bankofamericax13.webcindario.com
+
+# Reference: https://twitter.com/PhishStats/status/1140909483708887040
+
+budzislaw.parafia.net.pl
