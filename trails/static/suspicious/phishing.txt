@@ -9899,3 +9899,7 @@ checked-safe.com
 # Reference: https://twitter.com/IpNigh/status/1140873983602155520
 
 apple.varifidogioex.com
+
+# Reference: https://twitter.com/JayTHL/status/1141048854877528064
+
+cancel-order.apple.appstore-game.com
