@@ -448,3 +448,8 @@ jqueres.com
 # Reference: https://twitter.com/Racco42/status/1139461501113311232
 
 /urgente.js
+
+# Reference: https://twitter.com/marcelmalware/status/1140723183584272386
+# Reference: https://www.virustotal.com/gui/domain/jquery.su/relations
+
+jquery.su
