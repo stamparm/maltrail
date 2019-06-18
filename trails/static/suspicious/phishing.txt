@@ -9868,3 +9868,7 @@ bankofamericax13.webcindario.com
 # Reference: https://twitter.com/PhishStats/status/1140909483708887040
 
 budzislaw.parafia.net.pl
+
+# Reference: https://twitter.com/ANeilan/status/1140772428819419136
+
+secure01.appleld.com.worldinfo.fmzeituni.or.tz
