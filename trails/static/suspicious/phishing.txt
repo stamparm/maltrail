@@ -9872,3 +9872,22 @@ budzislaw.parafia.net.pl
 # Reference: https://twitter.com/ANeilan/status/1140772428819419136
 
 secure01.appleld.com.worldinfo.fmzeituni.or.tz
+
+# Reference: https://twitter.com/DomainTools/status/1139274337125466112
+# Reference: https://www.virustotal.com/gui/ip-address/46.105.101.84/relations
+
+atogovau.org
+cascabanker.com
+drobboxbusiness.org
+googledrivesharefile.org
+inbound-efax-au.org
+inbound-efax.org
+intuit-notification.org
+laminarcapital.org
+ns382934.ip-46-105-101.eu
+post-xero.org
+praemiumau.com
+qbointuit.org
+quickbooks-yourpayroll.org
+reckonaustralia.org
+sage-uk.org
