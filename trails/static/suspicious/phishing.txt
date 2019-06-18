@@ -9903,3 +9903,12 @@ apple.varifidogioex.com
 # Reference: https://twitter.com/JayTHL/status/1141048854877528064
 
 cancel-order.apple.appstore-game.com
+
+# Reference: https://twitter.com/JayTHL/status/1141050508637024256
+
+appstore-game.com
+joininfodz.freedynamicdns.net
+redrecetiosnot.hopto.org
+secure04chase.serveirc.com
+secure05chase.serveirc.com
+timebebes.3utilities.com
