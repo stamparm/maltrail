@@ -9860,3 +9860,7 @@ statute-result.000webhostapp.com
 # Reference: https://twitter.com/PhishStats/status/1140683427664056320
 
 vai-evo.co.uk
+
+# Reference: https://twitter.com/PhishStats/status/1140864100857262080
+
+bankofamericax13.webcindario.com
