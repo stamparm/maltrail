@@ -9891,3 +9891,7 @@ qbointuit.org
 quickbooks-yourpayroll.org
 reckonaustralia.org
 sage-uk.org
+
+# Reference: https://twitter.com/IpNigh/status/1140639961416392710
+
+checked-safe.com
