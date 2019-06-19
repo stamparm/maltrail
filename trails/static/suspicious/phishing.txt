@@ -9912,3 +9912,7 @@ redrecetiosnot.hopto.org
 secure04chase.serveirc.com
 secure05chase.serveirc.com
 timebebes.3utilities.com
+
+# Reference: https://twitter.com/PhishStats/status/1141226939514019842
+
+giveaway-us.com
