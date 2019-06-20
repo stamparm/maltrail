@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.alyac.co.kr/2347
+
+/ChromSrch.egg
+/GoogleRsv.egg
+/HncCheck.egg
+/IEService.egg
