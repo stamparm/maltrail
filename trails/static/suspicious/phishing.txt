@@ -9951,3 +9951,7 @@ accesso-banca-bnl.net
 bnl-loginsecure.com
 bnl-group-hellobank.com
 hellobank-bnl-login.com
+
+# Reference: https://twitter.com/illegalFawn/status/1141998111566553089
+
+accessosicurointesa.cloud
