@@ -9978,3 +9978,7 @@ gooğle.com
 xn--gmal-secure-qcb.com
 xn--goole-m1a.com
 xn--ool-mra06nca.com
+
+# Reference: https://twitter.com/yvesago/status/1142004606991556608
+
+darty.com.remboursement-fax.site
