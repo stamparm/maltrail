@@ -225,3 +225,7 @@ darknet7rl4epe24.onion
 # Reference: https://twitter.com/hackermaderas/status/1137366310025871360
 
 darknetleaks.ru
+
+# Reference: https://www.virustotal.com/gui/file/5bb883d81954d10446a71fc8965f399c731bfccdfccdad738c12f1025b7b2a96/detection
+
+officeapplications.net
