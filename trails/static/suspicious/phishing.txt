@@ -9940,3 +9940,7 @@ pluscodeerrrropp.sytes.net
 # Reference: https://twitter.com/dvk01uk/status/1141624453073395713
 
 intra.3etechinn.com
+
+# Reference: https://twitter.com/PhishFindR/status/1141993442223906817
+
+webe94b1832ecc70.servehttp.com
