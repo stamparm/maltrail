@@ -9986,3 +9986,7 @@ darty.com.remboursement-fax.site
 # Reference: https://twitter.com/JayTHL/status/1142093552106840065
 
 validmailsign.z35.web.core.windows.net
+
+# Reference: https://twitter.com/IpNigh/status/1142100809993338880
+
+netflix.login.account-web-service.com
