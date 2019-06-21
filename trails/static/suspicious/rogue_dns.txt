@@ -68,3 +68,9 @@ ns2.firstdnshoster.com
 185.209.160.70:53
 190.2.147.146:53
 31.148.219.110:53
+
+# Reference: https://habr.com/ru/company/bizone/blog/456804/ (Russian)
+
+188.165.200.156:53
+217.12.210.54:53
+91.217.137.37:53
