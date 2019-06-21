@@ -9944,3 +9944,10 @@ intra.3etechinn.com
 # Reference: https://twitter.com/PhishFindR/status/1141993442223906817
 
 webe94b1832ecc70.servehttp.com
+
+# Reference: https://twitter.com/illegalFawn/status/1141994535662313473
+
+accesso-banca-bnl.net
+bnl-loginsecure.com
+bnl-group-hellobank.com
+hellobank-bnl-login.com
