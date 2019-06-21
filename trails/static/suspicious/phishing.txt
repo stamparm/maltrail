@@ -9982,3 +9982,7 @@ xn--ool-mra06nca.com
 # Reference: https://twitter.com/yvesago/status/1142004606991556608
 
 darty.com.remboursement-fax.site
+
+# Reference: https://twitter.com/JayTHL/status/1142093552106840065
+
+validmailsign.z35.web.core.windows.net
