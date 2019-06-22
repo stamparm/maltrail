@@ -9990,3 +9990,7 @@ validmailsign.z35.web.core.windows.net
 # Reference: https://twitter.com/IpNigh/status/1142100809993338880
 
 netflix.login.account-web-service.com
+
+# Reference: https://twitter.com/executemalware/status/1142203592188858368
+
+pnkdiamond.co.za
