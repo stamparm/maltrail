@@ -10006,3 +10006,7 @@ cappecasbh.com.br
 # Reference: https://twitter.com/IpNigh/status/1142422242321686531
 
 gamefast6.apexmc1.co
+
+# Reference: https://twitter.com/PhishStats/status/1142496846365044738
+
+b-event.be
