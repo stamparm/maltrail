@@ -9994,3 +9994,7 @@ netflix.login.account-web-service.com
 # Reference: https://twitter.com/executemalware/status/1142203592188858368
 
 pnkdiamond.co.za
+
+# Reference: https://twitter.com/IpNigh/status/1142267855876055040
+
+soportetecnicoho.webcindario.com
