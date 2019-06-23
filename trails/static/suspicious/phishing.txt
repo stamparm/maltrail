@@ -10026,3 +10026,7 @@ dropboxhost101.us
 # Reference: https://twitter.com/IpNigh/status/1142692282015080450
 
 am23-mzin3e-ashjgdas.com
+
+# Reference: https://twitter.com/IpNigh/status/1142796634801262592
+
+paypal.aisgwb.org
