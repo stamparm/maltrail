@@ -666,3 +666,7 @@ Mozilla/4.08 (Charon; Inferno)
 # Reference: https://blog.malwarebytes.com/threat-analysis/2019/05/hidden-bee-lets-go-down-the-rabbit-hole/
 
 MinGate
+
+# Reference: https://twitter.com/bad_packets/status/1142325648888696837
+
+Liquor
