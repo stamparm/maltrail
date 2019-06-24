@@ -9912,3 +9912,199 @@ redrecetiosnot.hopto.org
 secure04chase.serveirc.com
 secure05chase.serveirc.com
 timebebes.3utilities.com
+
+# Reference: https://twitter.com/PhishStats/status/1141226939514019842
+
+giveaway-us.com
+
+# Reference: https://twitter.com/nullcookies/status/1141144897174560768
+
+plankstoere.xyz
+
+# Reference: https://twitter.com/smica83/status/1141239817218527232
+
+microsofdi3o152rpnnt2zr8.z11.web.core.windows.net
+
+# Reference: https://twitter.com/dave_daves/status/1141337413517754368
+
+rivercityescaperooms.com
+
+# Reference: https://twitter.com/reecdeep/status/1141336530151202817
+
+viplavoro.com
+
+# Reference: https://twitter.com/xiatianguo/status/1141377853759426565
+
+pluscodeerrrropp.sytes.net
+
+# Reference: https://twitter.com/dvk01uk/status/1141624453073395713
+
+intra.3etechinn.com
+
+# Reference: https://twitter.com/PhishFindR/status/1141993442223906817
+
+webe94b1832ecc70.servehttp.com
+
+# Reference: https://twitter.com/illegalFawn/status/1141994535662313473
+
+accesso-banca-bnl.net
+bnl-loginsecure.com
+bnl-group-hellobank.com
+hellobank-bnl-login.com
+
+# Reference: https://twitter.com/illegalFawn/status/1141998111566553089
+
+accessosicurointesa.cloud
+
+# Reference: https://twitter.com/illegalFawn/status/1141998305066520576
+
+eunicredit.com
+servizio-unicredit.com
+unicreditbanking-login.com
+unicredt-logon.com
+unicreditbank.online
+unicreditbanking-login.com
+
+# Reference: https://twitter.com/IpNigh/status/1142025869965299712
+
+unbura.com
+
+# Reference: https://twitter.com/illegalFawn/status/1142042464800378882
+# Reference: https://pastebin.com/raw/Jfp9Wkcz
+
+gmaíl-secure.com
+gooğle.com
+ɡooɡlė.com
+xn--gmal-secure-qcb.com
+xn--goole-m1a.com
+xn--ool-mra06nca.com
+
+# Reference: https://twitter.com/yvesago/status/1142004606991556608
+
+darty.com.remboursement-fax.site
+
+# Reference: https://twitter.com/JayTHL/status/1142093552106840065
+
+validmailsign.z35.web.core.windows.net
+
+# Reference: https://twitter.com/IpNigh/status/1142100809993338880
+
+netflix.login.account-web-service.com
+
+# Reference: https://twitter.com/executemalware/status/1142203592188858368
+
+pnkdiamond.co.za
+
+# Reference: https://twitter.com/IpNigh/status/1142267855876055040
+
+soportetecnicoho.webcindario.com
+
+# Reference: https://twitter.com/IpNigh/status/1142327628155817984
+
+cappecasbh.com.br
+
+# Reference: https://twitter.com/IpNigh/status/1142422242321686531
+
+gamefast6.apexmc1.co
+
+# Reference: https://twitter.com/PhishStats/status/1142496846365044738
+
+b-event.be
+
+# Reference: https://twitter.com/PhishStats/status/1142540589415751682
+
+inhouseworld.com
+
+# Reference: https://twitter.com/illegalFawn/status/1142721312193953792
+
+rimborstim.com
+
+# Reference: https://twitter.com/Jouliok/status/1142714535947751424
+
+dropboxhost101.us
+
+# Reference: https://twitter.com/IpNigh/status/1142692282015080450
+
+am23-mzin3e-ashjgdas.com
+
+# Reference: https://twitter.com/IpNigh/status/1142796634801262592
+
+paypal.aisgwb.org
+
+# Reference: https://twitter.com/illegalFawn/status/1142714309312679937
+# Reference: https://pastebin.com/raw/S7PrFa0h
+
+airbņb.com
+amazonñ.com
+amùazon.com
+āpplè-service.com
+āpplè-service-support.com
+āpplè-support.com
+bạnkia.com
+bittréx-online.com
+ǝpple.com
+gcọgle.com
+instàgram.com
+instāgram.com
+ınstagramsupport.com
+international-bittrȇx.com
+internâtionȧl-bittrex.com
+internạtional-bittrẹx.com
+kraḳen.com
+localìbitcoins.com
+login-ppl-securité.com
+microsoftonlįne.com
+mrgreęn.com
+ñamazon.com
+ovḣ.com
+päŕibu.com
+pcsmạstercard.com
+roḷex.com
+rọlex.com
+ɾolex.com
+santandeŗ.com
+trězor.com
+youțube.com
+xn--airbb-c8a.com
+xn--amazon-1wa.com
+xn--amazon-jya.com
+xn--ppl-service-09a53a.com
+xn--ppl-service-support-syb53c.com
+xn--ppl-support-09a53a.com
+xn--bnkia-j11b.com
+xn--bittrx-online-fhb.com
+xn--pple-4ob.com
+xn--gcgle-381b.com
+xn--instgram-2ya.com
+xn--instgram-k7a.com
+xn--nstagramsupport-6kc.com
+xn--international-bittrx-fzg.com
+xn--interntionl-bittrex-gvb349d.com
+xn--interntional-bittrx-v69jgr.com
+xn--kraen-qi1b.com
+xn--localbitcoins-mib.com
+xn--login-ppl-securit-rtb.com
+xn--microsoftonlne-mfc.com
+xn--mrgren-04a.com
+xn--amazon-vwa.com
+xn--ov-nus.com
+xn--pibu-loa29d.com
+xn--pcsmstercard-735f.com
+xn--roex-1b5a.com
+xn--rlex-gx5a.com
+xn--olex-4cc.com
+xn--santande-sub.com
+xn--trzor-w0a.com
+xn--youube-kmc.com
+
+# Reference: https://twitter.com/IpNigh/status/1142886176975675395
+
+ghhfgiu.com
+
+# Reference: https://twitter.com/IpNigh/status/1142906249023016965
+
+con-pa-resources.cateem83.com
+
+# Reference: https://twitter.com/smica83/status/1143047403714600960
+
+carran.ml/direktnet.raiffeisen.hu
