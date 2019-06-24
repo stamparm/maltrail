@@ -10124,3 +10124,7 @@ secured.com.awi-o.online
 # Reference: https://twitter.com/malwrhunterteam/status/1143165348621037573
 
 secureadminwork.com
+
+# Reference: https://twitter.com/Ankit7Agrawal/status/1143184951627714561
+
+http://157.230.65.193
