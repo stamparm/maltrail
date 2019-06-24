@@ -10116,3 +10116,7 @@ lizane.ml/otpbank.hu
 # Reference: https://twitter.com/ffforward/status/1143100705303158784
 
 secured.com.awi-o.online
+
+# Reference: https://twitter.com/IpNigh/status/1143152757874077697
+
+2support-verification-nab.com
