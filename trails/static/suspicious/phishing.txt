@@ -10112,3 +10112,7 @@ carran.ml/direktnet.raiffeisen.hu
 # Reference: https://twitter.com/smica83/status/1143072827270209537
 
 lizane.ml/otpbank.hu
+
+# Reference: https://twitter.com/ffforward/status/1143100705303158784
+
+secured.com.awi-o.online
