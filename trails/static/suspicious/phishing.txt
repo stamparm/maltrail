@@ -10667,3 +10667,7 @@ egrn-24online.icu
 egrn-24-online.icu
 egrn-rosrestr.icu
 iegrn.icu
+
+# Reference: https://twitter.com/IpNigh/status/1143444986131881984
+
+service-paypal.id-france-fr.info
