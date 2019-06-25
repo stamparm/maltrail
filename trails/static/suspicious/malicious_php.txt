@@ -334,3 +334,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/ffforward/status/1143100705303158784
 
 /klla.php
+
+# Reference: https://myonlinesecurity.co.uk/more-agenttesla-keylogger-and-nanocore-rat-in-one-bundle/
+
+/mhtexp.php
