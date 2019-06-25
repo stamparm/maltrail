@@ -8486,10 +8486,6 @@ appleid.apple.com.page-signin.top
 
 appleid.apple.com.mailcompensetting.org
 
-# Reference: https://twitter.com/PhishStats/status/1135473323008253952
-
-jppost-mo.com
-
 # Reference: https://twitter.com/illegalFawn/status/1135477639286874112
 
 intesa-sistem.net
