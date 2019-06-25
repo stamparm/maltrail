@@ -2515,3 +2515,7 @@ comli.com
 # Reference: https://www.virustotal.com/gui/domain/comuf.com/relations
 
 comuf.com
+
+# Reference: https://www.virustotal.com/gui/domain/dnsabr.com/relations
+
+dnsabr.com
