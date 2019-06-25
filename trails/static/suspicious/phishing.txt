@@ -10675,3 +10675,7 @@ service-paypal.id-france-fr.info
 # Reference: https://twitter.com/reecdeep/status/1143513138484129792
 
 936067368506253email-account.azurewebsites.net
+
+# Reference: https://twitter.com/IpNigh/status/1143342072235266048
+
+cctv-auckland.com
