@@ -127,3 +127,7 @@
 # Reference: https://app.any.run/tasks/44ceb7c7-518e-4bb1-8a00-de2d887b32c3/
 
 /iyk1.hta
+
+# Reference: https://myonlinesecurity.co.uk/more-agenttesla-keylogger-and-nanocore-rat-in-one-bundle/
+
+/mhtexp.hta
