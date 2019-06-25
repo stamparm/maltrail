@@ -10652,3 +10652,18 @@ verify-apple.info
 
 dgfhhhhy.azurewebsites.net
 officedelist.z13.web.core.windows.net
+
+# Reference: https://twitter.com/illegalFawn/status/1143561747955105794
+
+allegrnonline.icu
+allegrn-online.icu
+all-egrnonline.icu
+all-egrn-online.icu
+egrn24.icu
+egrn-24.icu
+egrn24online.icu
+egrn24-online.icu
+egrn-24online.icu
+egrn-24-online.icu
+egrn-rosrestr.icu
+iegrn.icu
