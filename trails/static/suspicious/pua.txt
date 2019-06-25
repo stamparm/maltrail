@@ -1928,3 +1928,7 @@ freegifts.top
 
 x.93ne.com
 cdn.zry97.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1143382823002345472
+
+software.goop.co.il
