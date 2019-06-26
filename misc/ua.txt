@@ -670,3 +670,7 @@ MinGate
 # Reference: https://twitter.com/bad_packets/status/1142325648888696837
 
 Liquor
+
+# Reference: https://twitter.com/ViriBack/status/1120370547974709248
+
+GRequests
