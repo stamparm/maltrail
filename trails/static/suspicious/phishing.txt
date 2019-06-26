@@ -10733,3 +10733,17 @@ ssl.ultraplatnosci.com
 ssl.ultraplatnosci.info
 ssl.ultraplatnosci.net
 ssl.ultraplatnosci.pro
+
+# Reference: https://twitter.com/dario_kow/status/1143813246383792128
+# Reference: https://www.virustotal.com/gui/ip-address/49.51.83.40/relations
+
+accounts-skrill.com
+brg-hli8734892789.com
+e-suche24.com
+h9208498-i73287989.com
+kurierekspres.info
+kurierstas.info
+magaloro.com
+meine-konto-db.com
+securebank-santander.com
+slk-cy78943274787382.com
