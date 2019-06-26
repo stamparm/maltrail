@@ -10683,3 +10683,7 @@ cctv-auckland.com
 # Reference: https://twitter.com/__motojiro__/status/1143738778906791936
 
 amaznoeom.com
+
+# Reference: https://twitter.com/dvk01uk/status/1143742428106633216
+
+maill.xyz
