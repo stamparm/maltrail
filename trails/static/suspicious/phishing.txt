@@ -10691,3 +10691,7 @@ maill.xyz
 # Reference: https://twitter.com/MaelSecurity/status/1143788043989585920
 
 secu-mail.user.o.load.m3876102.myauth-verify.com
+
+# Reference: https://twitter.com/illegalFawn/status/1143815805202776064
+
+bitmarţ.com
