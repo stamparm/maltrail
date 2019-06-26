@@ -10718,3 +10718,7 @@ criptural-hins32cs.bounceme.net
 # Reference: https://twitter.com/reecdeep/status/1143908478072885249
 
 digital-banking.it-mps.it
+
+# Reference: https://twitter.com/InvertedLina/status/1143904774238195715
+
+3480.azureedge.net
