@@ -10687,3 +10687,7 @@ amaznoeom.com
 # Reference: https://twitter.com/dvk01uk/status/1143742428106633216
 
 maill.xyz
+
+# Reference: https://twitter.com/MaelSecurity/status/1143788043989585920
+
+secu-mail.user.o.load.m3876102.myauth-verify.com
