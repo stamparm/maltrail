@@ -326,3 +326,19 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/IpNigh/status/1141059894021361666
 
 /chaseind.php
+
+# Reference: https://twitter.com/IpNigh/status/1142886176975675395
+
+/l9ymhf8w6w11sjeay07wrkng.php
+
+# Reference: https://twitter.com/ffforward/status/1143100705303158784
+
+/klla.php
+
+# Reference: https://myonlinesecurity.co.uk/more-agenttesla-keylogger-and-nanocore-rat-in-one-bundle/
+
+/mhtexp.php
+
+# Reference: https://twitter.com/killamjr/status/1113876111543492608
+
+/newauto2.php
