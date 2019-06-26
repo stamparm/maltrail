@@ -168,3 +168,11 @@ zer0day.ru
 185.161.70.34:3333
 202.144.193.184:3333
 205.185.122.99:3333
+
+# Reference: https://www.welivesecurity.com/2019/06/20/loudminer-mining-cracked-vst-software/ (# Mining hosts)
+
+system-update.info
+system-check.services
+185.193.126.114:443
+185.193.126.114:8080
+82.221.139.161:8080
