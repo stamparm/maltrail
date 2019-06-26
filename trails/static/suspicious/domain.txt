@@ -4571,3 +4571,7 @@ gnway.com
 # Reference: https://www.virustotal.com/gui/domain/gnway.net/relations
 
 gnway.net
+
+# Reference: https://www.virustotal.com/gui/domain/wookhost.me/relations
+
+wookhost.me
