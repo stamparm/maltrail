@@ -342,3 +342,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/killamjr/status/1113876111543492608
 
 /newauto2.php
+
+# Reference: https://twitter.com/IpNigh/status/1143687948619124737
+
+/index91484101498.php
