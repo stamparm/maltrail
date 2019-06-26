@@ -122,3 +122,12 @@
 # Reference: https://twitter.com/James_inthe_box/status/1139536021572317185
 
 /out-1445440753.hta
+
+# Reference: https://www.virustotal.com/gui/file/d5f18e907465fd5bd659df74e51377052337fc515f17f1e915551f3cc05823dc/community
+# Reference: https://app.any.run/tasks/44ceb7c7-518e-4bb1-8a00-de2d887b32c3/
+
+/iyk1.hta
+
+# Reference: https://myonlinesecurity.co.uk/more-agenttesla-keylogger-and-nanocore-rat-in-one-bundle/
+
+/mhtexp.hta
