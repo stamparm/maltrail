@@ -10679,3 +10679,7 @@ service-paypal.id-france-fr.info
 # Reference: https://twitter.com/IpNigh/status/1143342072235266048
 
 cctv-auckland.com
+
+# Reference: https://twitter.com/__motojiro__/status/1143738778906791936
+
+amaznoeom.com
