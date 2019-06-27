@@ -2519,3 +2519,9 @@ comuf.com
 # Reference: https://www.virustotal.com/gui/domain/dnsabr.com/relations
 
 dnsabr.com
+
+# Reference: https://go.recordedfuture.com/hubfs/reports/cta-2019-0626.pdf
+# Reference: https://otx.alienvault.com/pulse/5d13cf4759eec0125b9d8ffa
+# Reference: https://www.virustotal.com/gui/domain/hopto.com/relations
+
+hopto.com
