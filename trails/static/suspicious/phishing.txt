@@ -10821,3 +10821,10 @@ xn--twtter-41c.com
 # Reference: https://twitter.com/sshell_/status/1144097630948958209
 
 library.nyu.edu.ezplog.in
+
+# Reference: https://twitter.com/ANeilan/status/1144231861570428928
+
+icloud.com.support-appleid.us
+icloud.support-appleid.us
+itunes.com.support-appleid.us
+support-appleid.us
