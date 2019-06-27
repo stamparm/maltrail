@@ -10755,3 +10755,7 @@ winbitss.com
 # Reference: https://twitter.com/IpNigh/status/1143702062129172480
 
 vsdinteriors.com
+
+# Reference: https://twitter.com/illegalFawn/status/1144156550438805510
+
+timtelecom-il.com
