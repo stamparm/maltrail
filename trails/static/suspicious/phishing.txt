@@ -10916,3 +10916,7 @@ koibhidoma.com
 # Reference: https://twitter.com/IpNigh/status/1144638175551397888
 
 service-paypal.id-france-fr.info
+
+# Reference: https://twitter.com/IpNigh/status/1144564785108983808
+
+hometek.pk
