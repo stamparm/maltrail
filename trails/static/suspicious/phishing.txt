@@ -10855,3 +10855,7 @@ todayverify.online
 voipsip.online
 worldverify.online
 wormery.online
+
+# Reference: https://twitter.com/IpNigh/status/1144592691101089799
+
+bankofamericax44.webcindario.com
