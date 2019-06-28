@@ -10912,3 +10912,7 @@ wamanbouvioser.com
 djbravochampionchamion.com
 hercaimiran.folivb.com
 koibhidoma.com
+
+# Reference: https://twitter.com/IpNigh/status/1144638175551397888
+
+service-paypal.id-france-fr.info
