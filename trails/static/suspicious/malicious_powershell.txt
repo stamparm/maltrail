@@ -112,3 +112,8 @@
 # Reference: https://twitter.com/h4ckak/status/1144173749056315392
 
 /shell.ps1
+
+# Reference: https://twitter.com/FewAtoms/status/1144636921437655041
+
+/GetPass.ps1
+/payload.ps1
