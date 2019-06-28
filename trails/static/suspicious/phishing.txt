@@ -10828,3 +10828,19 @@ icloud.com.support-appleid.us
 icloud.support-appleid.us
 itunes.com.support-appleid.us
 support-appleid.us
+
+# Reference: https://twitter.com/illegalFawn/status/1144529493492666373
+# Reference: https://pastebin.com/raw/FKqF2r5E
+
+ģooglę.com
+ɢooɢlɵ.com
+goðgle.com
+goȯglɵ.com
+googlɐ.com
+goooglɵ.com
+xn--oogl-8va9c.com
+xn--ool-dubc9i.com
+xn--gogle-jta.com
+xn--gogl-w0b63b.com
+xn--googl-yjc.com
+xn--gooogl-n4c.com
