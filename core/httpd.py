@@ -222,6 +222,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         else:
                             del SESSIONS[session]
 
+            if retval is None and not config.USERS:
+                retval = AttribDict({"username": "?"})
+
             return retval
 
         def delete_session(self):
