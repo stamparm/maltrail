@@ -108,3 +108,7 @@
 /x12.ps1
 /xvid1.ps1
 /xvid2.ps1
+
+# Reference: https://twitter.com/h4ckak/status/1144173749056315392
+
+/shell.ps1
