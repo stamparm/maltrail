@@ -10920,3 +10920,8 @@ service-paypal.id-france-fr.info
 # Reference: https://twitter.com/IpNigh/status/1144564785108983808
 
 hometek.pk
+
+# Reference: https://twitter.com/JayTHL/status/1144680329879465986
+
+fdfdfed.azurewebsites.net
+officeweb93003.z13.web.core.windows.net
