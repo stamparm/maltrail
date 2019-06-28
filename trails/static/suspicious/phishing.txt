@@ -10844,3 +10844,14 @@ xn--gogle-jta.com
 xn--gogl-w0b63b.com
 xn--googl-yjc.com
 xn--gooogl-n4c.com
+
+# Reference: https://twitter.com/ffforward/status/1144553400975187968
+
+arbrolatry.online
+mainverify.online
+nowtoday.online
+someverify.online
+todayverify.online
+voipsip.online
+worldverify.online
+wormery.online
