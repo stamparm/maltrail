@@ -4580,3 +4580,7 @@ wookhost.me
 # Reference: https://www.virustotal.com/gui/domain/tricheastuce.fr/relations
 
 tricheastuce.fr
+
+# Reference: https://www.virustotal.com/gui/domain/freedns.su/relations
+
+freedns.su
