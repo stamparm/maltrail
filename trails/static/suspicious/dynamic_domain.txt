@@ -2525,3 +2525,7 @@ dnsabr.com
 # Reference: https://www.virustotal.com/gui/domain/hopto.com/relations
 
 hopto.com
+
+# Reference: https://www.virustotal.com/gui/domain/fishdns.com/relations
+
+fishdns.com
