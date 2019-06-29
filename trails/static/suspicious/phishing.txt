@@ -13503,3 +13503,7 @@ houzzspec.co.nz
 # Reference: https://twitter.com/IpNigh/status/1145000941181165570
 
 realfaxx.com
+
+# Reference: https://twitter.com/ninoseki/status/1144940656642711559
+
+dadaeha.com
