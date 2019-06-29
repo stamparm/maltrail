@@ -4612,3 +4612,7 @@ fav.al
 # Reference: https://www.virustotal.com/gui/domain/checkingsite.site/relations
 
 checkingsite.site
+
+# Reference: https://www.virustotal.com/gui/domain/essey.site/relations
+
+essey.site
