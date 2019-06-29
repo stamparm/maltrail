@@ -4604,3 +4604,7 @@ dankdns.xyz
 # Reference: https://www.virustotal.com/gui/domain/securedns.site/relations
 
 securedns.site
+
+# Reference: https://www.virustotal.com/gui/domain/fav.al/relations
+
+fav.al
