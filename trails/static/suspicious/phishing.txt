@@ -13511,3 +13511,11 @@ dadaeha.com
 # Reference: https://twitter.com/PhishStats/status/1145032014137044997
 
 dronalyse.com
+
+# Reference: https://research.checkpoint.com/ea-games-vulnerability/
+
+accounts.ea.com
+answers.ea.com
+eaplayinvite.ea.com
+help.ea.com
+signin.ea.com
