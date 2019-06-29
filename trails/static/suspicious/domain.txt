@@ -4584,3 +4584,7 @@ tricheastuce.fr
 # Reference: https://www.virustotal.com/gui/domain/freedns.su/relations
 
 freedns.su
+
+# Reference: https://www.virustotal.com/gui/domain/fagdns.su/relations
+
+fagdns.su
