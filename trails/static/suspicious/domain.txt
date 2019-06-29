@@ -4588,3 +4588,7 @@ freedns.su
 # Reference: https://www.virustotal.com/gui/domain/fagdns.su/relations
 
 fagdns.su
+
+# Reference: https://www.virustotal.com/gui/domain/tinydns.xyz/details
+
+tinydns.xyz
