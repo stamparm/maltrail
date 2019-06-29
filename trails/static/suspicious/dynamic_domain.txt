@@ -2533,3 +2533,7 @@ fishdns.com
 # Reference: https://www.virustotal.com/gui/domain/ra4wvpn.com/relations
 
 ra4wvpn.com
+
+# Reference: https://www.virustotal.com/gui/domain/dynamicdns.science/relations
+
+dynamicdns.science
