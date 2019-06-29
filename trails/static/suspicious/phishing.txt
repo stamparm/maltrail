@@ -13527,3 +13527,7 @@ airpromo.club
 # Reference: https://twitter.com/PhishStats/status/1145077090355679234
 
 secure-payment-gateway.000webhostapp.com
+
+# Reference: https://twitter.com/IpNigh/status/1145033880883400704
+
+mkbulut.com
