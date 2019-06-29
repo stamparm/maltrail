@@ -13487,3 +13487,7 @@ paypal-update.mushor.com
 # Reference: https://twitter.com/IpNigh/status/1144864360105414658
 
 http://34.233.36.103
+
+# Reference: https://twitter.com/PhishStats/status/1144986743600549888
+
+newpharmacies.org
