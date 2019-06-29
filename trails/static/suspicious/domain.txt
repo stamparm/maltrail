@@ -4592,3 +4592,7 @@ fagdns.su
 # Reference: https://www.virustotal.com/gui/domain/tinydns.xyz/details
 
 tinydns.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/dynapoint.pw/relations
+
+dynapoint.pw
