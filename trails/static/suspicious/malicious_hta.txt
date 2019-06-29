@@ -131,3 +131,8 @@
 # Reference: https://myonlinesecurity.co.uk/more-agenttesla-keylogger-and-nanocore-rat-in-one-bundle/
 
 /mhtexp.hta
+
+# Reference: https://twitter.com/dineshdina04/status/1008621004896198657
+# Reference: https://app.any.run/tasks/a8c1f660-71ae-4ab1-a217-11256fd6a158/
+
+/wm.hta
