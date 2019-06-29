@@ -4596,3 +4596,7 @@ tinydns.xyz
 # Reference: https://www.virustotal.com/gui/domain/dynapoint.pw/relations
 
 dynapoint.pw
+
+# Reference: https://www.virustotal.com/gui/domain/dankdns.xyz/relations
+
+dankdns.xyz
