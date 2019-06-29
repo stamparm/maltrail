@@ -13499,3 +13499,7 @@ http://167.99.94.60
 # Reference: https://twitter.com/IpNigh/status/1144817158612037632
 
 houzzspec.co.nz
+
+# Reference: https://twitter.com/IpNigh/status/1145000941181165570
+
+realfaxx.com
