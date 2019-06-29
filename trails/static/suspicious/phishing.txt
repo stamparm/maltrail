@@ -13491,3 +13491,7 @@ http://34.233.36.103
 # Reference: https://twitter.com/PhishStats/status/1144986743600549888
 
 newpharmacies.org
+
+# Reference: https://twitter.com/IpNigh/status/1144986418277769218
+
+http://167.99.94.60
