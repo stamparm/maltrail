@@ -4608,3 +4608,7 @@ securedns.site
 # Reference: https://www.virustotal.com/gui/domain/fav.al/relations
 
 fav.al
+
+# Reference: https://www.virustotal.com/gui/domain/checkingsite.site/relations
+
+checkingsite.site
