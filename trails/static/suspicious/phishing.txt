@@ -13544,3 +13544,8 @@ apple.varifidogioie.com
 
 gdr02-redirect-support-rakuten.com
 resetting-defend-account-support-rakuten.com
+
+# Reference: https://twitter.com/NaomiSuzuki_/status/1140535835588091904
+
+gdr03-redirect-support-rakuten.com
+defend-resetting-account-support-rakuten.com
