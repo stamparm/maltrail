@@ -4580,3 +4580,39 @@ wookhost.me
 # Reference: https://www.virustotal.com/gui/domain/tricheastuce.fr/relations
 
 tricheastuce.fr
+
+# Reference: https://www.virustotal.com/gui/domain/freedns.su/relations
+
+freedns.su
+
+# Reference: https://www.virustotal.com/gui/domain/fagdns.su/relations
+
+fagdns.su
+
+# Reference: https://www.virustotal.com/gui/domain/tinydns.xyz/details
+
+tinydns.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/dynapoint.pw/relations
+
+dynapoint.pw
+
+# Reference: https://www.virustotal.com/gui/domain/dankdns.xyz/relations
+
+dankdns.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/securedns.site/relations
+
+securedns.site
+
+# Reference: https://www.virustotal.com/gui/domain/fav.al/relations
+
+fav.al
+
+# Reference: https://www.virustotal.com/gui/domain/checkingsite.site/relations
+
+checkingsite.site
+
+# Reference: https://www.virustotal.com/gui/domain/essey.site/relations
+
+essey.site
