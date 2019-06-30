@@ -13535,3 +13535,7 @@ mkbulut.com
 # Reference: https://twitter.com/PhishStats/status/1145122422707884033
 
 secure-onedriveaccessauth.cf
+
+# Reference: https://twitter.com/NaomiSuzuki_/status/1143471193443278848
+
+apple.varifidogioie.com
