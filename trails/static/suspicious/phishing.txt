@@ -13553,3 +13553,7 @@ defend-resetting-account-support-rakuten.com
 # Reference: https://twitter.com/PhishStats/status/1145258099709743105
 
 amuracapitalmanagement.com
+
+# Reference: https://twitter.com/PhishStats/status/1145304042379366401
+
+canimpotqc.com
