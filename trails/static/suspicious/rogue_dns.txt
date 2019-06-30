@@ -74,3 +74,8 @@ ns2.firstdnshoster.com
 188.165.200.156:53
 217.12.210.54:53
 91.217.137.37:53
+
+# Reference: https://twitter.com/ninoseki/status/1144557737516232705
+
+118.30.28.38:53
+118.30.28.39:53
