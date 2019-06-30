@@ -13557,3 +13557,7 @@ amuracapitalmanagement.com
 # Reference: https://twitter.com/PhishStats/status/1145304042379366401
 
 canimpotqc.com
+
+# Reference: https://twitter.com/satontonton/status/1145326987935830019
+
+apple-my-id-com.stackstaging.com
