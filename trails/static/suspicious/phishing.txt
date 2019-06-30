@@ -13539,3 +13539,8 @@ secure-onedriveaccessauth.cf
 # Reference: https://twitter.com/NaomiSuzuki_/status/1143471193443278848
 
 apple.varifidogioie.com
+
+# Reference: https://twitter.com/NaomiSuzuki_/status/1141305110254903296
+
+gdr02-redirect-support-rakuten.com
+resetting-defend-account-support-rakuten.com
