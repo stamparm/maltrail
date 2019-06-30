@@ -13531,3 +13531,7 @@ secure-payment-gateway.000webhostapp.com
 # Reference: https://twitter.com/IpNigh/status/1145033880883400704
 
 mkbulut.com
+
+# Reference: https://twitter.com/PhishStats/status/1145122422707884033
+
+secure-onedriveaccessauth.cf
