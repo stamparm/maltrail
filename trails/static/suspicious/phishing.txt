@@ -13549,3 +13549,7 @@ resetting-defend-account-support-rakuten.com
 
 gdr03-redirect-support-rakuten.com
 defend-resetting-account-support-rakuten.com
+
+# Reference: https://twitter.com/PhishStats/status/1145258099709743105
+
+amuracapitalmanagement.com
