@@ -13641,3 +13641,7 @@ spteem96.com
 spteem97.com
 spteem98.com
 spteem99.com
+
+# Reference: https://twitter.com/PhishStats/status/1145575220213948417
+
+enjoyoutdoorgear.com
