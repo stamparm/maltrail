@@ -13661,3 +13661,7 @@ a2plvcpnl228707.prod.iad2.secureserver.net
 # Reference: https://twitter.com/malwrhunterteam/status/1145755736141631488
 
 manage-myappleld.com
+
+# Reference: https://twitter.com/romonlyht/status/1145594427911467008
+
+amazonid-contacts.com
