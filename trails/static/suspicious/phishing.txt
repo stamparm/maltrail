@@ -13565,3 +13565,7 @@ apple-my-id-com.stackstaging.com
 # Reference: https://twitter.com/smica83/status/1145414299185295360
 
 lifereview.ga
+
+# Reference: https://twitter.com/rpsanch/status/1145467000854056960
+
+global-service.online
