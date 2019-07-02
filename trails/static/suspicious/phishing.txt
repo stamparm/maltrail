@@ -13665,3 +13665,7 @@ manage-myappleld.com
 # Reference: https://twitter.com/romonlyht/status/1145594427911467008
 
 amazonid-contacts.com
+
+# Reference: https://twitter.com/PhishStats/status/1145892323689148417
+
+greenbroxo.com
