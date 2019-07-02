@@ -1932,3 +1932,7 @@ cdn.zry97.com
 # Reference: https://twitter.com/MalwarePatrol/status/1143382823002345472
 
 software.goop.co.il
+
+# Reference: https://twitter.com/MalwarePatrol/status/1146100756493328384
+
+fastsoft.onlinedown.net
