@@ -1,0 +1,9 @@
+
+# Maltrail Version: aa.bb.cc
+# Release Date: yyyy-mm-dd
+# Release Name: Some name
+#
+# Legend:
+# [+] Functionality was added
+# [-] Functionality was deleted
+# [!] Functionality was changed
