@@ -1,5 +1,7 @@
 window.onerror = function(errorMsg, url, lineNumber) {
-    alert(errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
+    if (typeof errorMsg !== "undefined")
+        alert(errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
+
     try {
         $("body").loader("hide");
         document.title = "Maltrail";
