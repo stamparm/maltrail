@@ -13550,6 +13550,10 @@ resetting-defend-account-support-rakuten.com
 gdr03-redirect-support-rakuten.com
 defend-resetting-account-support-rakuten.com
 
+# Reference: https://twitter.com/NaomiSuzuki_/status/1145641402874777600
+
+resetting-defend-accounts-support-rakuten.com
+
 # Reference: https://twitter.com/PhishStats/status/1145258099709743105
 
 amuracapitalmanagement.com
@@ -13561,3 +13565,111 @@ canimpotqc.com
 # Reference: https://twitter.com/satontonton/status/1145326987935830019
 
 apple-my-id-com.stackstaging.com
+
+# Reference: https://twitter.com/smica83/status/1145414299185295360
+
+lifereview.ga
+
+# Reference: https://twitter.com/rpsanch/status/1145467000854056960
+
+global-service.online
+
+# Reference: https://twitter.com/JayTHL/status/1145549186689130502
+
+spteem31.com
+spteem32.com
+spteem33.com
+spteem34.com
+spteem35.com
+spteem36.com
+spteem37.com
+spteem38.com
+spteem39.com
+spteem40.com
+spteem41.com
+spteem42.com
+spteem43.com
+spteem44.com
+spteem45.com
+spteem46.com
+spteem47.com
+spteem48.com
+spteem49.com
+spteem50.com
+spteem51.com
+spteem52.com
+spteem53.com
+spteem54.com
+spteem55.com
+spteem56.com
+spteem57.com
+spteem58.com
+spteem59.com
+spteem60.com
+spteem61.com
+spteem62.com
+spteem63.com
+spteem64.com
+spteem65.com
+spteem66.com
+spteem67.com
+spteem68.com
+spteem69.com
+spteem70.com
+spteem71.com
+spteem72.com
+spteem73.com
+spteem74.com
+spteem75.com
+spteem76.com
+spteem77.com
+spteem78.com
+spteem79.com
+spteem80.com
+spteem81.com
+spteem82.com
+spteem83.com
+spteem84.com
+spteem85.com
+spteem86.com
+spteem87.com
+spteem88.com
+spteem89.com
+spteem90.com
+spteem91.com
+spteem92.com
+spteem93.com
+spteem94.com
+spteem95.com
+spteem96.com
+spteem97.com
+spteem98.com
+spteem99.com
+
+# Reference: https://twitter.com/PhishStats/status/1145575220213948417
+
+enjoyoutdoorgear.com
+
+# Reference: https://twitter.com/IpNigh/status/1145649573773418497
+
+crocohost211.co.nz
+
+# Reference: https://twitter.com/smica83/status/1145674419790127104
+
+a2plvcpnl228707.prod.iad2.secureserver.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1145755736141631488
+
+manage-myappleld.com
+
+# Reference: https://twitter.com/romonlyht/status/1145594427911467008
+
+amazonid-contacts.com
+
+# Reference: https://twitter.com/PhishStats/status/1145892323689148417
+
+greenbroxo.com
+
+# Reference: https://twitter.com/PhishStats/status/1145938080098111488
+
+invoiconlin466.com
