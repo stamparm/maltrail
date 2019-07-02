@@ -79,7 +79,6 @@ from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
 from core.settings import SUSPICIOUS_PROXY_PROBE_PRE_CONDITION
 from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
-from core.settings import TRAILS_FILE
 from core.settings import VALID_DNS_CHARS
 from core.settings import VERSION
 from core.settings import WEB_SHELLS
@@ -745,9 +744,9 @@ def init():
 
     check_memory()
 
-    msg = "[i] using '%s' for trail storage" % TRAILS_FILE
-    if os.path.isfile(TRAILS_FILE):
-        mtime = time.gmtime(os.path.getmtime(TRAILS_FILE))
+    msg = "[i] using '%s' for trail storage" % config.TRAILS_FILE
+    if os.path.isfile(config.TRAILS_FILE):
+        mtime = time.gmtime(os.path.getmtime(config.TRAILS_FILE))
         msg += " (last modification: '%s')" % time.strftime(HTTP_TIME_FORMAT, mtime)
 
     print(msg)

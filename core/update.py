@@ -39,7 +39,6 @@ from core.settings import IPCAT_CSV_FILE
 from core.settings import IPCAT_SQLITE_FILE
 from core.settings import IPCAT_URL
 from core.settings import ROOT_DIR
-from core.settings import TRAILS_FILE
 from core.settings import USERS_DIR
 
 # patch for self-signed certificates (e.g. CUSTOM_TRAILS_URL)
@@ -85,7 +84,7 @@ def update_trails(force=False, offline=False):
         if not content or content.count(',') < 2:
             print "[x] unable to retrieve data from '%s'" % config.UPDATE_SERVER
         else:
-            with _fopen(TRAILS_FILE, "w+b") as f:
+            with _fopen(config.TRAILS_FILE, "w+b") as f:
                 f.write(content)
             trails = load_trails()
 
@@ -100,7 +99,7 @@ def update_trails(force=False, offline=False):
                 for filename in filenames:
                     trail_files.add(os.path.abspath(os.path.join(dirpath, filename)))
 
-        if not trails and (force or not os.path.isfile(TRAILS_FILE) or (time.time() - os.stat(TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(TRAILS_FILE).st_size == 0 or any(os.stat(_).st_mtime > os.stat(TRAILS_FILE).st_mtime for _ in trail_files)):
+        if not trails and (force or not os.path.isfile(config.TRAILS_FILE) or (time.time() - os.stat(config.TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(config.TRAILS_FILE).st_size == 0 or any(os.stat(_).st_mtime > os.stat(config.TRAILS_FILE).st_mtime for _ in trail_files)):
             if not config.no_updates:
                 print "[i] updating trails (this might take a while)..."
             else:
@@ -289,19 +288,19 @@ def update_trails(force=False, offline=False):
 
             try:
                 if trails:
-                    with _fopen(TRAILS_FILE, "w+b") as f:
+                    with _fopen(config.TRAILS_FILE, "w+b") as f:
                         writer = csv.writer(f, delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
                         for trail in trails:
                             writer.writerow((trail, trails[trail][0], trails[trail][1]))
 
                     success = True
             except Exception, ex:
-                print "[x] something went wrong during trails file write '%s' ('%s')" % (TRAILS_FILE, ex)
+                print "[x] something went wrong during trails file write '%s' ('%s')" % (config.TRAILS_FILE, ex)
 
             print "[i] update finished%s" % (40 * " ")
 
             if success:
-                print "[i] trails stored to '%s'" % TRAILS_FILE
+                print "[i] trails stored to '%s'" % config.TRAILS_FILE
 
     return trails
 
@@ -360,7 +359,7 @@ def main():
     else:
         if "-r" in sys.argv:
             results = []
-            with _fopen(TRAILS_FILE) as f:
+            with _fopen(config.TRAILS_FILE) as f:
                 for line in f:
                     if line and line[0].isdigit():
                         items = line.split(',', 2)

@@ -24,14 +24,14 @@ config = AttribDict()
 trails = TrailsDict()
 
 NAME = "Maltrail"
-VERSION = "0.13.18"
+VERSION = "0.13.19"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
 TIMEOUT = 30
 FRESH_IPCAT_DELTA_DAYS = 10
 USERS_DIR = os.path.join(os.path.expanduser("~"), ".%s" % NAME.lower())
-TRAILS_FILE = os.path.join(USERS_DIR, "trails.csv")
+DEFAULT_TRAILS_FILE = os.path.join(USERS_DIR, "trails.csv")
 IPCAT_CSV_FILE = os.path.join(USERS_DIR, "ipcat.csv")
 IPCAT_SQLITE_FILE = os.path.join(USERS_DIR, "ipcat.sqlite")
 IPCAT_URL = "https://raw.githubusercontent.com/client9/ipcat/master/datacenters.csv"
@@ -350,6 +350,11 @@ def read_config(config_file):
         PROXIES.update({"http": config.PROXY_ADDRESS, "https": config.PROXY_ADDRESS})
         opener = urllib2.build_opener(urllib2.ProxyHandler(PROXIES))
         urllib2.install_opener(opener)
+
+    if not config.TRAILS_FILE:
+        config.TRAILS_FILE = os.path.join(USERS_DIR, "trails.csv")
+    else:
+        config.TRAILS_FILE = os.path.abspath(os.path.expanduser(config.TRAILS_FILE))
 
 def read_whitelist():
     WHITELIST.clear()
