@@ -670,3 +670,7 @@ MinGate
 # Reference: https://twitter.com/bad_packets/status/1142325648888696837
 
 Liquor
+
+# Reference: https://twitter.com/malware_traffic/status/1146086054207873024
+
+dpost
