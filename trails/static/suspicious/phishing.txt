@@ -13669,3 +13669,7 @@ amazonid-contacts.com
 # Reference: https://twitter.com/PhishStats/status/1145892323689148417
 
 greenbroxo.com
+
+# Reference: https://twitter.com/PhishStats/status/1145938080098111488
+
+invoiconlin466.com
