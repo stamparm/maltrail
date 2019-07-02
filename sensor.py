@@ -276,14 +276,14 @@ def _process_packet(packet, sec, usec, ip_offset):
                     _last_logged_syn = _last_syn
                     if _ != _last_logged_syn:
                         trail = dst_ip if dst_ip in trails else "%s:%s" % (dst_ip, dst_port)
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.ADDR, trail, trails[trail][0], trails[trail][1]), packet)
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.IPORT, trail, trails[trail][0], trails[trail][1]), packet)
 
                 elif (src_ip in trails or "%s:%s" % (src_ip, src_port) in trails) and dst_ip != localhost_ip:
                     _ = _last_logged_syn
                     _last_logged_syn = _last_syn
                     if _ != _last_logged_syn:
                         trail = src_ip if src_ip in trails else "%s:%s" % (src_ip, src_port)
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.ADDR, trail, trails[trail][0], trails[trail][1]), packet)
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.IPORT, trail, trails[trail][0], trails[trail][1]), packet)
 
                 if config.USE_HEURISTICS:
                     if dst_ip != localhost_ip:
@@ -580,7 +580,10 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                             # Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
                             if type_ not in (12, 28) and class_ == 1:  # Type not in (PTR, AAAA), Class IN
-                                if dst_ip in trails:
+                                if "%s:%s" % (dst_ip, dst_port) in trails:
+                                    trail = "%s:%s" % (dst_ip, dst_port)
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IPORT, "%s (%s)" % (dst_ip, query), trails[trail][0], trails[trail][1]), packet)
+                                elif dst_ip in trails:
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, "%s (%s)" % (dst_ip, query), trails[dst_ip][0], trails[dst_ip][1]), packet)
                                 elif src_ip in trails:
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet)
