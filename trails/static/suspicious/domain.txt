@@ -4632,3 +4632,7 @@ s.co
 # Reference: https://www.virustotal.com/gui/domain/dramacenter.xyz/relations
 
 dramacenter.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/shadowrouting.xyz/relations
+
+shadowrouting.xyz
