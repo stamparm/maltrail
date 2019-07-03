@@ -13720,3 +13720,7 @@ delve.office.tpkstl.com
 msftauth.tpkstl.com
 lw.skype.tpkstl.com
 tpkstl.com
+
+# Reference: https://twitter.com/PhishStats/status/1146164527144329224
+
+nancyeg.com
