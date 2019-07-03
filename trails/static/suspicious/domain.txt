@@ -4624,3 +4624,7 @@ icodework.com
 # Reference: https://www.virustotal.com/gui/domain/dnainternet.fi/relations
 
 dnainternet.fi
+
+# Reference: https://www.virustotal.com/gui/domain/s.co/relations
+
+s.co
