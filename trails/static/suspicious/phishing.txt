@@ -13741,3 +13741,7 @@ amazonid-contacts.com
 # Reference: https://twitter.com/PhishStats/status/1146300200740368385
 
 sonusagold.com
+
+# Reference: https://twitter.com/smica83/status/1146311099249299456
+
+akatesty.online
