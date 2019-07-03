@@ -13745,3 +13745,7 @@ sonusagold.com
 # Reference: https://twitter.com/smica83/status/1146311099249299456
 
 akatesty.online
+
+# Reference: https://twitter.com/romonlyht/status/1146165007094169601
+
+asmozons.com
