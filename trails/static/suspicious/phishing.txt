@@ -13733,3 +13733,7 @@ paypal.payment-safe.com
 
 visapayment.com.instantwithdraw.dexa-energy.co.id
 navyfederal.org.secure-cgi-instructionform.navyfederal.dexa-energy.co.id
+
+# Reference: https://twitter.com/romonlyht/status/1146169452691517441
+
+amazonid-contacts.com
