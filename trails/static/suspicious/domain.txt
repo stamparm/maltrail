@@ -4644,3 +4644,7 @@ csgoblock.com
 # Reference: https://www.virustotal.com/gui/domain/humboldtkush.tk/relations
 
 humboldtkush.tk
+
+# Reference: https://www.virustotal.com/gui/domain/hacked.sx/relations
+
+hacked.sx
