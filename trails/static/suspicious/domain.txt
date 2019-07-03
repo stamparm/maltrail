@@ -4620,3 +4620,7 @@ essey.site
 # Reference: https://www.virustotal.com/gui/domain/icodework.com/relations
 
 icodework.com
+
+# Reference: https://www.virustotal.com/gui/domain/dnainternet.fi/relations
+
+dnainternet.fi
