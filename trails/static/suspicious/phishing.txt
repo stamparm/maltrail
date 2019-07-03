@@ -13724,3 +13724,7 @@ tpkstl.com
 # Reference: https://twitter.com/PhishStats/status/1146164527144329224
 
 nancyeg.com
+
+# Reference: https://twitter.com/packet_Wire/status/1146163010882428930
+
+paypal.payment-safe.com
