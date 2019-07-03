@@ -4648,3 +4648,7 @@ humboldtkush.tk
 # Reference: https://www.virustotal.com/gui/domain/hacked.sx/relations
 
 hacked.sx
+
+# Reference: https://www.virustotal.com/gui/domain/remotecamviewdnspublic.online/relations
+
+remotecamviewdnspublic.online
