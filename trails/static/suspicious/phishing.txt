@@ -13749,3 +13749,7 @@ akatesty.online
 # Reference: https://twitter.com/harugasumi/status/1146407748604579840
 
 defend-accounts-recovery-support-amazon.com
+
+# Reference: https://twitter.com/The_d0c_T0R/status/1146434613876838401
+
+aidsheath.org
