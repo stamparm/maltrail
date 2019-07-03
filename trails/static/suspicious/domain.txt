@@ -4628,3 +4628,7 @@ dnainternet.fi
 # Reference: https://www.virustotal.com/gui/domain/s.co/relations
 
 s.co
+
+# Reference: https://www.virustotal.com/gui/domain/dramacenter.xyz/relations
+
+dramacenter.xyz
