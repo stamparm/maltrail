@@ -13840,3 +13840,13 @@ analyst.ga
 # Reference: https://twitter.com/IpNigh/status/1146481026417528832
 
 hamd-info.ga
+
+# Reference: https://twitter.com/ANeilan/status/1146147279130247168
+
+apple.com-simid.cn
+apple.com.chnxos.cn
+apple.com.eowj.cn
+apple.com.lynta.cn
+appleid.ir4h.cn
+appleid.oh7t.cn
+appleid.senuora.cn
