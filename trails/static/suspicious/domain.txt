@@ -4640,3 +4640,7 @@ shadowrouting.xyz
 # Reference: https://www.virustotal.com/gui/domain/csgoblock.com/relations
 
 csgoblock.com
+
+# Reference: https://www.virustotal.com/gui/domain/dankdns.xyz/relations
+
+dankdns.xyz
