@@ -13673,3 +13673,75 @@ greenbroxo.com
 # Reference: https://twitter.com/PhishStats/status/1145938080098111488
 
 invoiconlin466.com
+
+# Reference: https://twitter.com/illegalFawn/status/1146060473130864641
+
+þornhub.com
+xn--ornhub-hza.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1146037743224545282
+
+login-secure.limited.nextsteps-verifications.com
+
+# Reference: https://twitter.com/kyleehmke/status/1144683885684563968
+# Reference: https://otx.alienvault.com/pulse/5d1a7372b1a28587d7455b04
+
+azuremicrosofts.com
+msoutlookoffice.com
+res.office365.tpkstl.com
+olsvc.tpkstl.com
+skype.tpkstl.com
+officehome.msocdn.tpkstl.com
+scorecardresearch.tpkstl.com
+adnxs.tpkstl.com
+outlook.tpkstl.com
+office.tpkstl.com
+taboola.tpkstl.com
+officeapps.live.tpkstl.com
+odwebp.svc.tpkstl.com
+microsoftonline.tpkstl.com
+gateway.messenger.live.tpkstl.com
+registar.skype.tpkstl.com
+office365.tpkstl.com
+odwebp.svc.ms.tpkstl.com
+msauth.tpkstl.com
+trouter.skype.tpkstl.com
+msocdn.tpkstl.com
+pipe.aria.microsoft.tpkstl.com
+edge.skype.tpkstl.com
+asm.skype.tpkstl.com
+g.doubleclick.tpkstl.com
+bing.tpkstl.com
+msftauth.net.tpkstl.com
+live.tpkstl.com
+cdn.skype.tpkstl.com
+akamaihd.tpkstl.com
+delve.office.tpkstl.com
+msftauth.tpkstl.com
+lw.skype.tpkstl.com
+tpkstl.com
+
+# Reference: https://twitter.com/PhishStats/status/1146164527144329224
+
+nancyeg.com
+
+# Reference: https://twitter.com/packet_Wire/status/1146163010882428930
+
+paypal.payment-safe.com
+
+# Reference: https://twitter.com/packet_Wire/status/1146162266280222722
+
+visapayment.com.instantwithdraw.dexa-energy.co.id
+navyfederal.org.secure-cgi-instructionform.navyfederal.dexa-energy.co.id
+
+# Reference: https://twitter.com/romonlyht/status/1146169452691517441
+
+amazonid-contacts.com
+
+# Reference: https://twitter.com/PhishStats/status/1146300200740368385
+
+sonusagold.com
+
+# Reference: https://twitter.com/smica83/status/1146311099249299456
+
+akatesty.online
