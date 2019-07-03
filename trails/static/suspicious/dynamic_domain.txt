@@ -2537,3 +2537,7 @@ ra4wvpn.com
 # Reference: https://www.virustotal.com/gui/domain/dynamicdns.science/relations
 
 dynamicdns.science
+
+# Reference: https://www.virustotal.com/gui/domain/spdns.eu/relations
+
+spdns.eu
