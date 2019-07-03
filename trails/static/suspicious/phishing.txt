@@ -13812,3 +13812,19 @@ xn--mirosoft-18a.com
 xn--mirosoft-lbb.com
 xn--pypal-sra.com
 xn--paxfll-lya.com
+
+# Reference: https://twitter.com/dario_kow/status/1146362149503164417
+
+migiemm.xyz
+dhl.ppay24.com
+adaskurier.com
+secure.mpay24.me
+dotpay.pl-erofon.me
+kurierinpost.info
+kingakurier.info
+kuriertomcio.info
+magdakurier.info
+eksprespaki.eu
+najlepszedostawy4you.eu 
+dhl.express-polska.eu
+szybkafurgonetka.eu
