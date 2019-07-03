@@ -13850,3 +13850,7 @@ apple.com.lynta.cn
 appleid.ir4h.cn
 appleid.oh7t.cn
 appleid.senuora.cn
+
+# Reference: https://twitter.com/IpNigh/status/1146505247545790465
+
+ealerts.bankofamerica.com.steelphase.com.au
