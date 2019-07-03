@@ -13737,3 +13737,7 @@ navyfederal.org.secure-cgi-instructionform.navyfederal.dexa-energy.co.id
 # Reference: https://twitter.com/romonlyht/status/1146169452691517441
 
 amazonid-contacts.com
+
+# Reference: https://twitter.com/PhishStats/status/1146300200740368385
+
+sonusagold.com
