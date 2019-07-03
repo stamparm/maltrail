@@ -4641,6 +4641,6 @@ shadowrouting.xyz
 
 csgoblock.com
 
-# Reference: https://www.virustotal.com/gui/domain/dankdns.xyz/relations
+# Reference: https://www.virustotal.com/gui/domain/humboldtkush.tk/relations
 
-dankdns.xyz
+humboldtkush.tk
