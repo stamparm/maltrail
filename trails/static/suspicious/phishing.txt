@@ -13728,3 +13728,8 @@ nancyeg.com
 # Reference: https://twitter.com/packet_Wire/status/1146163010882428930
 
 paypal.payment-safe.com
+
+# Reference: https://twitter.com/packet_Wire/status/1146162266280222722
+
+visapayment.com.instantwithdraw.dexa-energy.co.id
+navyfederal.org.secure-cgi-instructionform.navyfederal.dexa-energy.co.id
