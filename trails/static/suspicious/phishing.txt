@@ -13836,3 +13836,7 @@ szybkafurgonetka.eu
 # Reference: https://twitter.com/PhishStats/status/1146481704250564608
 
 analyst.ga
+
+# Reference: https://twitter.com/IpNigh/status/1146481026417528832
+
+hamd-info.ga
