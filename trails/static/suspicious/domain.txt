@@ -4636,3 +4636,7 @@ dramacenter.xyz
 # Reference: https://www.virustotal.com/gui/domain/shadowrouting.xyz/relations
 
 shadowrouting.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/csgoblock.com/relations
+
+csgoblock.com
