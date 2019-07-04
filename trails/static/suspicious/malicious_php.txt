@@ -350,3 +350,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/ViriBack/status/1145135557548367872
 
 /index234index.php
+
+# Reference: https://twitter.com/smica83/status/1146648528846041089
+
+/7gvbp7pbrrdp2j8o5y4iqfva.php
