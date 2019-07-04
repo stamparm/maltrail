@@ -13870,3 +13870,7 @@ cotusmamam.tk
 # Reference: https://twitter.com/PhishStats/status/1146662653760327680
 
 detentionrivercc.com.au
+
+# Reference: https://twitter.com/malwrhunterteam/status/1146843344401764352
+
+gitlab-kianty.3utilities.com
