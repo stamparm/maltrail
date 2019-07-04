@@ -2553,3 +2553,15 @@ my-router.de
 # Reference: https://www.virustotal.com/gui/domain/my-gateway.de/relations
 
 my-gateway.de
+
+# Reference: https://www.virustotal.com/gui/domain/dnshome.de/relations
+
+dnshome.de
+
+# Reference: https://www.virustotal.com/gui/domain/aidyn.net/relations
+
+aidyn.net
+
+# Reference: https://www.virustotal.com/gui/domain/feste-ip.net/relations
+
+feste-ip.net
