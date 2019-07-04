@@ -480,7 +480,3 @@ justritepharmacy.com/mad/FTP/panel/admin.php
 # Reference: https://twitter.com/P3pperP0tts/status/1146398222904152066
 
 http://92.63.192.127/panel/admin.php
-
-# Generic trails
-
-/panel/admin.php
