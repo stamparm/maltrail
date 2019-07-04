@@ -13858,3 +13858,7 @@ ealerts.bankofamerica.com.steelphase.com.au
 # Reference: https://twitter.com/smica83/status/1146648528846041089
 
 1toit2suite.net
+
+# Reference: https://twitter.com/PhishStats/status/1146617239656960000
+
+alsaudtours.com
