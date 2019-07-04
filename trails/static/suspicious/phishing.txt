@@ -13862,3 +13862,7 @@ ealerts.bankofamerica.com.steelphase.com.au
 # Reference: https://twitter.com/PhishStats/status/1146617239656960000
 
 alsaudtours.com
+
+# Reference: https://twitter.com/smica83/status/1146675366540566528
+
+cotusmamam.tk
