@@ -20,11 +20,8 @@ from core.addr import make_mask
 from core.attribdict import AttribDict
 from core.trailsdict import TrailsDict
 
-config = AttribDict()
-trails = TrailsDict()
-
 NAME = "Maltrail"
-VERSION = "0.13.22"
+VERSION = "0.13.23"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -136,6 +133,9 @@ try:
     CPU_CORES = multiprocessing.cpu_count()
 except ImportError:
     CPU_CORES = 1
+
+config = AttribDict({"TRAILS_FILE": DEFAULT_TRAILS_FILE})
+trails = TrailsDict()
 
 def _get_total_physmem():
     retval = None
@@ -352,7 +352,7 @@ def read_config(config_file):
         urllib2.install_opener(opener)
 
     if not config.TRAILS_FILE:
-        config.TRAILS_FILE = os.path.join(USERS_DIR, "trails.csv")
+        config.TRAILS_FILE = DEFAULT_TRAILS_FILE
     else:
         config.TRAILS_FILE = os.path.abspath(os.path.expanduser(config.TRAILS_FILE))
 

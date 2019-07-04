@@ -137,7 +137,9 @@ def update_trails(force=False, offline=False):
 
                 for name, function in inspect.getmembers(module, inspect.isfunction):
                     if name == "fetch":
-                        print(" [o] '%s'%s" % (module.__url__, " " * 20 if len(module.__url__) < 20 else ""))
+                        url = module.__url__  # Note: to prevent "SyntaxError: can not delete variable 'module' referenced in nested scope"
+
+                        print(" [o] '%s'%s" % (url, " " * 20 if len(url) < 20 else ""))
                         sys.stdout.write("[?] progress: %d/%d (%d%%)\r" % (i, len(filenames), i * 100 / len(filenames)))
                         sys.stdout.flush()
 
@@ -155,8 +157,8 @@ def update_trails(force=False, offline=False):
                                     duplicates[item[0]].add(item[1][1])
                                 if not (item[0] in trails and (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) or trails[item[0]][1] in HIGH_PRIORITY_REFERENCES)) or (item[1][1] in HIGH_PRIORITY_REFERENCES and "history" not in item[1][0]) or any(_ in item[1][0] for _ in HIGH_PRIORITY_INFO_KEYWORDS):
                                     trails[item[0]] = item[1]
-                            if not results and "abuse.ch" not in module.__url__:
-                                print "[x] something went wrong during remote data retrieval ('%s')" % module.__url__
+                            if not results and not any(_ in url for _ in ("abuse.ch", "cobaltstrike")):
+                                print "[x] something went wrong during remote data retrieval ('%s')" % url
                         except Exception, ex:
                             print "[x] something went wrong during processing of feed file '%s' ('%s')" % (filename, ex)
 
