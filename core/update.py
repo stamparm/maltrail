@@ -251,7 +251,7 @@ def update_trails(force=False, offline=False):
                     key = key[len("www."):]
                     if key:
                         trails[key] = _
-                if '?' in key:
+                if '?' in key and not key.startswith('/'):
                     _ = trails[key]
                     del trails[key]
                     key = key.split('?')[0]

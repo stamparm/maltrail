@@ -419,6 +419,9 @@ def _process_packet(packet, sec, usec, ip_offset):
                         if '?' in path:
                             checks.append(path.split('?')[0].rstrip('/'))
 
+                            if '=' in path:
+                                checks.append(path[:path.index('=') + 1])
+
                         _ = os.path.splitext(checks[-1])
                         if _[1]:
                             checks.append(_[0])
