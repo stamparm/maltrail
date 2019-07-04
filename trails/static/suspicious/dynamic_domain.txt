@@ -2541,3 +2541,15 @@ dynamicdns.science
 # Reference: https://www.virustotal.com/gui/domain/spdns.eu/relations
 
 spdns.eu
+
+# Reference: https://www.virustotal.com/gui/domain/spdns.de/relations
+
+spdns.de
+
+# Reference: https://www.virustotal.com/gui/domain/my-router.de/relations
+
+my-router.de
+
+# Reference: https://www.virustotal.com/gui/domain/my-gateway.de/relations
+
+my-gateway.de
