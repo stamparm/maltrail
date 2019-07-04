@@ -13854,3 +13854,7 @@ appleid.senuora.cn
 # Reference: https://twitter.com/IpNigh/status/1146505247545790465
 
 ealerts.bankofamerica.com.steelphase.com.au
+
+# Reference: https://twitter.com/smica83/status/1146648528846041089
+
+1toit2suite.net
