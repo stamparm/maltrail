@@ -150,3 +150,11 @@
 /oonhci.hta
 /otvpoi.hta
 /phtjae.hta
+
+# Reference: https://twitter.com/FewAtoms/status/1146804894785056768
+
+/out-182876786.hta
+
+# Reference: https://twitter.com/James_inthe_box/status/1146896227000209408
+
+/BitMaster.hta
