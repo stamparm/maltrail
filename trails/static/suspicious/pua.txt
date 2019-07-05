@@ -1936,3 +1936,7 @@ software.goop.co.il
 # Reference: https://twitter.com/MalwarePatrol/status/1146100756493328384
 
 fastsoft.onlinedown.net
+
+# Reference: https://twitter.com/MalwarePatrol/status/1147006698441334785
+
+tool1.91danji.com
