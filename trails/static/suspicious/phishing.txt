@@ -13941,3 +13941,7 @@ mufgcard-net.top
 mufgcard-net.info
 mufgcard-net.com
 mufgcard-jp.com
+
+# Reference: https://twitter.com/NaomiSuzuki_/status/1139177049778606082
+
+cert-account-recovery-supports-amazon.com
