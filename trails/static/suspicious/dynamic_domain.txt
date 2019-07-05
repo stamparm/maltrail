@@ -2554,10 +2554,6 @@ my-router.de
 
 my-gateway.de
 
-# Reference: https://www.virustotal.com/gui/domain/dnshome.de/relations
-
-dnshome.de
-
 # Reference: https://www.virustotal.com/gui/domain/aidyn.net/relations
 
 aidyn.net
@@ -2565,3 +2561,15 @@ aidyn.net
 # Reference: https://www.virustotal.com/gui/domain/feste-ip.net/relations
 
 feste-ip.net
+dynamisches-dns.de
+
+# Reference: https://www.virustotal.com/gui/domain/dnshome.de/relations
+# Reference: https://www.dnshome.de/index.php
+
+dyndns.icu
+dnshome.icu
+resolve.bar
+srvdns.de
+ddnssec.de
+dyndnssec.de
+dnshome.de
