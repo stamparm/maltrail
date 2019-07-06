@@ -13945,3 +13945,16 @@ mufgcard-jp.com
 # Reference: https://twitter.com/NaomiSuzuki_/status/1139177049778606082
 
 cert-account-recovery-supports-amazon.com
+
+# Reference: https://twitter.com/KesaGataMe0/status/1147060218250948608
+
+mingtuteng.com
+zongdeme.com
+
+# Reference: https://twitter.com/romonlyht/status/1147285507874775040
+
+meimeiteng.com
+
+# Reference: https://twitter.com/PhishStats/status/1147341937160019968
+
+ba-transfer.uk
