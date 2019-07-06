@@ -13966,3 +13966,7 @@ invalidaccess.xyz
 # Reference: https://twitter.com/IpNigh/status/1147477817413816320
 
 paypl-center.000webhostapp.com
+
+# Reference: https://twitter.com/IpNigh/status/1147352409326444544
+
+xn--80aah4awafljf.xn--p1ai
