@@ -549,6 +549,10 @@ OSIRIS
 
 Rift
 
+# Reference: https://twitter.com/nmatte90/status/1102263049203998722
+
+NotRift
+
 # Reference: https://twitter.com/bad_packets/status/1111777543869194240
 
 HaxerMen
