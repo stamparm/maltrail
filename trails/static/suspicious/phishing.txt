@@ -13978,3 +13978,7 @@ xn--pxful-xqa.com
 # Reference: https://twitter.com/PhishStats/status/1147523142858006528
 
 sicherheit-daten.top
+
+# Reference: https://twitter.com/IpNigh/status/1147259089686343681
+
+accountsecurity.xyz
