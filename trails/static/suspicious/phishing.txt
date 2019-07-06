@@ -13962,3 +13962,7 @@ ba-transfer.uk
 # Reference: https://twitter.com/PhishStats/status/1147477860262842370
 
 invalidaccess.xyz
+
+# Reference: https://twitter.com/IpNigh/status/1147477817413816320
+
+paypl-center.000webhostapp.com
