@@ -484,3 +484,7 @@ http://92.63.192.127/panel/admin.php
 # Misc.
 
 github.com/nyx0/Alina/blob/master/Panel/admin.php
+
+# Reference: https://twitter.com/webtobesocial/status/778654938276720642
+
+/ReallyOk/FuckYouMother/panel/
