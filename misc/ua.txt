@@ -688,3 +688,8 @@ ltx71
 # Reference: https://eromang.zataz.com/2010/05/25/suc016-user-agent-toata-dragostea-mea-pentru-diavola-scanner/
 
 Toata dragostea mea pentru diavola
+
+# Reference: https://twitter.com/eromang/status/14702343100
+# Reference: https://eromang.zataz.com/2010/04/23/suc004-phpmyadmin-user-agent-revolt-scanner/
+
+revolt
