@@ -13958,3 +13958,7 @@ meimeiteng.com
 # Reference: https://twitter.com/PhishStats/status/1147341937160019968
 
 ba-transfer.uk
+
+# Reference: https://twitter.com/PhishStats/status/1147477860262842370
+
+invalidaccess.xyz
