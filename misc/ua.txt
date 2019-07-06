@@ -683,3 +683,8 @@ dpost
 # Reference: http://ltx71.com/
 
 ltx71
+
+# Reference: https://twitter.com/eromang/status/14713546159
+# Reference: https://eromang.zataz.com/2010/05/25/suc016-user-agent-toata-dragostea-mea-pentru-diavola-scanner/
+
+Toata dragostea mea pentru diavola
