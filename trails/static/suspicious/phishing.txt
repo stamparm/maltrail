@@ -13982,3 +13982,7 @@ sicherheit-daten.top
 # Reference: https://twitter.com/IpNigh/status/1147259089686343681
 
 accountsecurity.xyz
+
+# Reference: https://twitter.com/PhishStats/status/1147568592797491200
+
+uberasvuo.cf
