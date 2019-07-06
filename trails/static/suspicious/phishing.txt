@@ -13986,3 +13986,7 @@ accountsecurity.xyz
 # Reference: https://twitter.com/PhishStats/status/1147568592797491200
 
 uberasvuo.cf
+
+# Reference: https://twitter.com/PhishStats/status/1147613894707503105
+
+gratefullyglutenfree.cruxlinesites.com
