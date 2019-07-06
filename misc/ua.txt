@@ -674,3 +674,8 @@ Liquor
 # Reference: https://twitter.com/malware_traffic/status/1146086054207873024
 
 dpost
+
+# Reference: https://twitter.com/gamesover/status/552140159442235394
+# Reference: http://ltx71.com/
+
+ltx71
