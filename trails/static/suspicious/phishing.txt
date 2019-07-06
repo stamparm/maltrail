@@ -13974,3 +13974,7 @@ xn--80aah4awafljf.xn--p1ai
 # Reference: https://twitter.com/IpNigh/status/1147492955650973701
 
 xn--pxful-xqa.com
+
+# Reference: https://twitter.com/PhishStats/status/1147523142858006528
+
+sicherheit-daten.top
