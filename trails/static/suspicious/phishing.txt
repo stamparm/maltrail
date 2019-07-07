@@ -14006,3 +14006,7 @@ amazonncoonnzjpnannznamazonajp.com
 # Reference: https://twitter.com/PhishStats/status/1147794818573246466
 
 netfilxmobile.com
+
+# Reference: https://twitter.com/harugasumi/status/1142247022239469569
+
+wodeaini.com
