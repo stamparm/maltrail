@@ -13990,3 +13990,7 @@ uberasvuo.cf
 # Reference: https://twitter.com/PhishStats/status/1147613894707503105
 
 gratefullyglutenfree.cruxlinesites.com
+
+# Reference: https://twitter.com/IpNigh/status/1147662437874917376
+
+paytripnickel.000webhostapp.com
