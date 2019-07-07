@@ -14002,3 +14002,7 @@ pingweihao.com
 # Reference: https://twitter.com/romonlyht/status/1147663533087158272
 
 amazonncoonnzjpnannznamazonajp.com
+
+# Reference: https://twitter.com/PhishStats/status/1147794818573246466
+
+netfilxmobile.com
