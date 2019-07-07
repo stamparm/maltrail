@@ -14143,3 +14143,10 @@ mingbini.com
 # Reference: https://twitter.com/IpNigh/status/1147809345201201152
 
 downloadontheapple.live
+
+# Reference: https://twitter.com/yumy222/status/1147753081762750464
+# Reference: https://www.virustotal.com/gui/ip-address/107.179.40.165/relations
+
+epos-z.com
+mydocomo-ic.com
+mydocomo-iy.com
