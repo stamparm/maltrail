@@ -14018,3 +14018,7 @@ diudiuje.com
 # Reference: https://twitter.com/PhishStats/status/1147749439563542528
 
 amctelecom.cl
+
+# Reference: https://twitter.com/PhishStats/status/1147704654169542658
+
+fpftllc.com
