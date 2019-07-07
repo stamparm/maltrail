@@ -13998,3 +13998,7 @@ paytripnickel.000webhostapp.com
 # Reference: https://twitter.com/romonlyht/status/1147640078472101888
 
 pingweihao.com
+
+# Reference: https://twitter.com/romonlyht/status/1147663533087158272
+
+amazonncoonnzjpnannznamazonajp.com
