@@ -14166,3 +14166,7 @@ araxam.com
 # Reference: https://twitter.com/PhishStats/status/1147885318701539328
 
 annemclellan.com
+
+# Reference: https://twitter.com/IpNigh/status/1147678227034517504
+
+optionaleviro.000webhostapp.com
