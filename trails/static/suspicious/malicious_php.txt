@@ -359,3 +359,7 @@ westflies.com/api/api.php
 
 /AffdrDrr.php
 /lickmyass.php
+
+# Reference: https://twitter.com/IpNigh/status/1147295303931977733
+
+/ubwa0opty4jnoerxyj8dtjra.php
