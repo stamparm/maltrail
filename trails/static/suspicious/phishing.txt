@@ -14158,3 +14158,7 @@ mydocomo-iy.com
 # Reference: https://twitter.com/PhishStats/status/1147840004959457280
 
 princeeride.com
+
+# Reference: https://twitter.com/IpNigh/status/1147834010707681280
+
+araxam.com
