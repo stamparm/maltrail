@@ -14139,3 +14139,7 @@ survey-customer-satisfaction-id.wpho.org
 # Reference: https://twitter.com/NaomiSuzuki_/status/1141519916090064896
 
 mingbini.com
+
+# Reference: https://twitter.com/IpNigh/status/1147809345201201152
+
+downloadontheapple.live
