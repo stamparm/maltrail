@@ -14146,7 +14146,15 @@ downloadontheapple.live
 
 # Reference: https://twitter.com/yumy222/status/1147753081762750464
 # Reference: https://www.virustotal.com/gui/ip-address/107.179.40.165/relations
+# Reference: https://twitter.com/NaomiSuzuki_/status/1147844385448456197
 
+epos-k.com
+epos-l.com
+epos-s.com
 epos-z.com
 mydocomo-ic.com
 mydocomo-iy.com
+
+# Reference: https://twitter.com/PhishStats/status/1147840004959457280
+
+princeeride.com
