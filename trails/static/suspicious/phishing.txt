@@ -14215,3 +14215,7 @@ nekidraturner.info
 # Reference: https://twitter.com/PhishStats/status/1148248034142240768
 
 vo.voun.me
+
+# Reference: https://twitter.com/PhishStats/status/1148294418610446337
+
+zulumulo.flywheelsites.com
