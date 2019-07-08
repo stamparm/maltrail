@@ -14174,3 +14174,7 @@ optionaleviro.000webhostapp.com
 # Reference: https://twitter.com/dave_daves/status/1147974856060940290
 
 secure01c.lchase.com.request.token.t52y.online
+
+# Reference: https://twitter.com/romonlyht/status/1148014314961326080
+
+maoyela.com
