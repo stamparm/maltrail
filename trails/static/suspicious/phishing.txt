@@ -14194,3 +14194,7 @@ tisccali.godaddysites.com
 # Reference: https://twitter.com/x0rz/status/921089440671588352
 
 blockchaib.info
+
+# Reference: https://twitter.com/romonlyht/status/1148183151748890624
+
+amazonccjp.com
