@@ -549,6 +549,10 @@ OSIRIS
 
 Rift
 
+# Reference: https://twitter.com/nmatte90/status/1102263049203998722
+
+NotRift
+
 # Reference: https://twitter.com/bad_packets/status/1111777543869194240
 
 HaxerMen
@@ -674,3 +678,32 @@ Liquor
 # Reference: https://twitter.com/malware_traffic/status/1146086054207873024
 
 dpost
+
+# Reference: https://twitter.com/gamesover/status/552140159442235394
+# Reference: http://ltx71.com/
+
+ltx71
+
+# Reference: https://twitter.com/eromang/status/14713546159
+# Reference: https://eromang.zataz.com/2010/05/25/suc016-user-agent-toata-dragostea-mea-pentru-diavola-scanner/
+
+Toata dragostea mea pentru diavola
+
+# Reference: https://twitter.com/eromang/status/14702343100
+# Reference: https://eromang.zataz.com/2010/04/23/suc004-phpmyadmin-user-agent-revolt-scanner/
+
+revolt
+
+# Reference: https://thehackernews.com/2017/08/android-ddos-botnet.html (# WireX)
+
+jigpuzbcomkenhvladtwysqfxr
+yudjmikcvzoqwsbflghtxpanre
+mckvhaflwzbderiysoguxnqtpj
+deogjvtynmcxzwfsbahirukqpl
+fdmjczoeyarnuqkbgtlivsxhwp
+yczfxlrenuqtwmavhojpigkdsb
+dnlseufokcgvmajqzpbtrwyxih
+
+# Reference: https://twitter.com/21doob/status/476434364516282369
+
+hello
