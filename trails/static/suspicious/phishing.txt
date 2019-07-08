@@ -14186,3 +14186,7 @@ account-update.amazon.co.jp.xmaoscestbonc.net
 # Reference: https://twitter.com/romonlyht/status/1148073140477550592
 
 amazonao.com
+
+# Reference: https://twitter.com/reecdeep/status/1148137335072219136
+
+tisccali.godaddysites.com
