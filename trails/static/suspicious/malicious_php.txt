@@ -363,3 +363,11 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/IpNigh/status/1147295303931977733
 
 /ubwa0opty4jnoerxyj8dtjra.php
+
+# Reference: https://twitter.com/ps66uk/status/1148183374818873344
+
+/rocket.php
+/publickprivate.php
+/smartobject.php
+/74_8_839.php
+/fontandcolor.php
