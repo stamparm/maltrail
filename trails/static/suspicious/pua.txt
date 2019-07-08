@@ -1940,3 +1940,7 @@ fastsoft.onlinedown.net
 # Reference: https://twitter.com/MalwarePatrol/status/1147006698441334785
 
 tool1.91danji.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1147550303501324288
+
+irc-files.org
