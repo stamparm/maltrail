@@ -14219,3 +14219,7 @@ vo.voun.me
 # Reference: https://twitter.com/PhishStats/status/1148294418610446337
 
 zulumulo.flywheelsites.com
+
+# Reference: https://twitter.com/packet_Wire/status/1148304031481323521
+
+sparksfirehousedeli.com
