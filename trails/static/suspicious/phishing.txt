@@ -14047,11 +14047,13 @@ jp-bank.japanpost.jp
 # Reference: https://twitter.com/NaomiSuzuki_/status/1145223238487703553
 # Reference: https://twitter.com/NaomiSuzuki_/status/1143038291731607553
 # Reference: https://twitter.com/NaomiSuzuki_/status/1142649933851316230
+# Reference: https://twitter.com/NaomiSuzuki_/status/1148479704850026496
 
 apple.varifidogioqc.com
 apple.varifidogioqw.com
 apple.varifidogioin.com
 apple.varifidogioecn.com
+apple.varifidogiouw.com
 
 # Reference: https://twitter.com/NaomiSuzuki_/status/1145349129263931393
 # Reference: https://twitter.com/NaomiSuzuki_/status/1142432143399768066
@@ -14198,3 +14200,44 @@ blockchaib.info
 # Reference: https://twitter.com/romonlyht/status/1148183151748890624
 
 amazonccjp.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1148240020198891521
+
+bokepasli211.mymom.info
+
+# Reference: https://twitter.com/packet_Wire/status/1148229271871217664
+
+chaseonline.chase.com.techbico.vn
+
+# Reference: https://twitter.com/HeavyMetalAdmin/status/1148223059440099328
+
+agarwaltutorials.com
+nekidraturner.info
+
+# Reference: https://twitter.com/PhishStats/status/1148248034142240768
+
+vo.voun.me
+
+# Reference: https://twitter.com/PhishStats/status/1148294418610446337
+
+zulumulo.flywheelsites.com
+
+# Reference: https://twitter.com/satontonton/status/1148253340930719744
+
+amatzons.com
+
+# Reference: https://twitter.com/PhishStats/status/1148340155566235649
+
+wayaah.com
+
+# Reference: https://twitter.com/nullcookies/status/1148381139591225344
+
+titwallet.online
+
+# Reference: https://twitter.com/PhishStats/status/1148475001743581188
+
+tesofficelognw.xyz
+
+# Reference: https://twitter.com/IpNigh/status/1148410714173743106
+
+dsafasdasd.000webhostapp.com
