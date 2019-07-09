@@ -11083,3 +11083,7 @@ sign-in.account.authorizeds-secures.com
 # Reference: https://twitter.com/romonlyht/status/1148399076653711360
 
 amazxs.com
+
+# Reference: https://twitter.com/dave_daves/status/1148580419232837634
+
+appleid.apple.com.veinfossil.com
