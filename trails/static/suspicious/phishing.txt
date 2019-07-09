@@ -11091,3 +11091,7 @@ appleid.apple.com.veinfossil.com
 # Reference: https://twitter.com/IpNigh/status/1148624220445925376
 
 paypalloginly.serveirc.com
+
+# Reference: https://twitter.com/IpNigh/status/1148599396247977985
+
+sichere-umgebung.icu
