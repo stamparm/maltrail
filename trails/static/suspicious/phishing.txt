@@ -14241,3 +14241,7 @@ tesofficelognw.xyz
 # Reference: https://twitter.com/IpNigh/status/1148410714173743106
 
 dsafasdasd.000webhostapp.com
+
+# Reference: https://twitter.com/JayTHL/status/1121872865106833409
+
+\bservice-confirm-v[0-9]+\.(ml|tk|cf|ga|gq)
