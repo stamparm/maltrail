@@ -11662,3 +11662,7 @@ dsafasdasd.000webhostapp.com
 # Reference: https://twitter.com/IpNigh/status/1148534816666804224
 
 clayish-hatchets.000webhostapp.com
+
+# Reference: https://twitter.com/PhishStats/status/1148565241288155136
+
+mysoftbank-wx.com
