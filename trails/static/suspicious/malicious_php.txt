@@ -378,3 +378,7 @@ westflies.com/api/api.php
 # Reference: https://otx.alienvault.com/pulse/5d24562845fe64e37ffc46a7
 
 /js/left.php
+
+# Reference: https://twitter.com/IpNigh/status/1148676390759391234
+
+/31npodfikdtpkgq6difyox4s.php
