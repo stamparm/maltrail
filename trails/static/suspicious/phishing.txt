@@ -11670,3 +11670,7 @@ mysoftbank-wx.com
 # Reference: https://twitter.com/reecdeep/status/1148554705162973184
 
 jfrhhdj.wixsite.com
+
+# Reference: https://twitter.com/ANeilan/status/1148542830203277312
+
+appleid.account-confirm.dafwerga.com
