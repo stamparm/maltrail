@@ -10949,10 +10949,6 @@ mkbulut.com
 
 secure-onedriveaccessauth.cf
 
-# Reference: https://twitter.com/NaomiSuzuki_/status/1143471193443278848
-
-apple.varifidogioie.com
-
 # Reference: https://twitter.com/NaomiSuzuki_/status/1141305110254903296
 
 gdr02-redirect-support-rakuten.com
@@ -11461,12 +11457,9 @@ jp-bank.japanpost.jp
 # Reference: https://twitter.com/NaomiSuzuki_/status/1143038291731607553
 # Reference: https://twitter.com/NaomiSuzuki_/status/1142649933851316230
 # Reference: https://twitter.com/NaomiSuzuki_/status/1148479704850026496
+# Reference: https://twitter.com/NaomiSuzuki_/status/1143471193443278848
 
-apple.varifidogioqc.com
-apple.varifidogioqw.com
-apple.varifidogioin.com
-apple.varifidogioecn.com
-apple.varifidogiouw.com
+\bapple\.varifidogio[a-z]{2,}\.com
 
 # Reference: https://twitter.com/NaomiSuzuki_/status/1145349129263931393
 # Reference: https://twitter.com/NaomiSuzuki_/status/1142432143399768066
