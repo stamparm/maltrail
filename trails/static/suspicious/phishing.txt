@@ -11075,3 +11075,7 @@ jfrhhdj.wixsite.com
 # Reference: https://twitter.com/ANeilan/status/1148542830203277312
 
 appleid.account-confirm.dafwerga.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1148593688198733829
+
+sign-in.account.authorizeds-secures.com
