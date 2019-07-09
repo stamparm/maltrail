@@ -11666,3 +11666,7 @@ clayish-hatchets.000webhostapp.com
 # Reference: https://twitter.com/PhishStats/status/1148565241288155136
 
 mysoftbank-wx.com
+
+# Reference: https://twitter.com/reecdeep/status/1148554705162973184
+
+jfrhhdj.wixsite.com
