@@ -10952,3 +10952,7 @@ erotime.eu
 # Reference: https://twitter.com/malwrhunterteam/status/1148595893882564613
 
 sign-in.account-service.customers.casinoskis.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1148650711300882432
+
+habit.besimvatan.com.tr/bankofamerica.com.login.axx/
