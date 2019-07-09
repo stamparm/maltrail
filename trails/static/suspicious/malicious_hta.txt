@@ -164,3 +164,7 @@
 /am_cy_167.hta
 /comm.hta
 /emp.hta
+
+# Reference: https://twitter.com/YouMayBeHacked/status/1148625116101844992
+
+/bi.hta
