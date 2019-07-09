@@ -11079,3 +11079,7 @@ appleid.account-confirm.dafwerga.com
 # Reference: https://twitter.com/malwrhunterteam/status/1148593688198733829
 
 sign-in.account.authorizeds-secures.com
+
+# Reference: https://twitter.com/romonlyht/status/1148399076653711360
+
+amazxs.com
