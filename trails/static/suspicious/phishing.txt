@@ -10889,7 +10889,7 @@ zooklondike.ru
 \bonline\.verify\.paypal\.[a-z0-9]+\.[a-z0-9]+\.top
 \bpaypal\.online\.secure\.tranzaction\.[a-z0-9]+\.top
 \bverify\.account\.paypal\.[a-z0-9]+\.top
-\bsecure\.tranzaction\.[a-z0-9]+\.
+\bsecure\.tranzaction\.[a-z0-9]+\.top
 \bhmrc\.secure\.refund\.[a-z0-9]+\.[a-z0-9]+\.top
 \bverify\.paypal\.[a-z0-9]+\.[a-z0-9]+\.top
 
