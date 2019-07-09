@@ -14227,3 +14227,7 @@ amatzons.com
 # Reference: https://twitter.com/PhishStats/status/1148340155566235649
 
 wayaah.com
+
+# Reference: https://twitter.com/nullcookies/status/1148381139591225344
+
+titwallet.online
