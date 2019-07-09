@@ -369,3 +369,7 @@ westflies.com/api/api.php
 /publickprivate.php
 /74_8_839.php
 /fontandcolor.php
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1148562854808891392
+
+/ddss0h9lipd6diuh5jan2w0t.php
