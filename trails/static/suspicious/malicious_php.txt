@@ -373,3 +373,8 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/JAMESWT_MHT/status/1148562854808891392
 
 /ddss0h9lipd6diuh5jan2w0t.php
+
+# Reference: https://twitter.com/navSi16/status/1148192534654439426
+# Reference: https://otx.alienvault.com/pulse/5d24562845fe64e37ffc46a7
+
+/js/left.php
