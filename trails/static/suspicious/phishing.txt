@@ -14237,3 +14237,7 @@ titwallet.online
 # Reference: https://twitter.com/PhishStats/status/1148475001743581188
 
 tesofficelognw.xyz
+
+# Reference: https://twitter.com/IpNigh/status/1148410714173743106
+
+dsafasdasd.000webhostapp.com
