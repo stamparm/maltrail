@@ -14047,11 +14047,13 @@ jp-bank.japanpost.jp
 # Reference: https://twitter.com/NaomiSuzuki_/status/1145223238487703553
 # Reference: https://twitter.com/NaomiSuzuki_/status/1143038291731607553
 # Reference: https://twitter.com/NaomiSuzuki_/status/1142649933851316230
+# Reference: https://twitter.com/NaomiSuzuki_/status/1148479704850026496
 
 apple.varifidogioqc.com
 apple.varifidogioqw.com
 apple.varifidogioin.com
 apple.varifidogioecn.com
+apple.varifidogiouw.com
 
 # Reference: https://twitter.com/NaomiSuzuki_/status/1145349129263931393
 # Reference: https://twitter.com/NaomiSuzuki_/status/1142432143399768066
