@@ -11087,3 +11087,7 @@ amazxs.com
 # Reference: https://twitter.com/dave_daves/status/1148580419232837634
 
 appleid.apple.com.veinfossil.com
+
+# Reference: https://twitter.com/IpNigh/status/1148624220445925376
+
+paypalloginly.serveirc.com
