@@ -457,3 +457,7 @@ jquery.su
 # Reference: https://myonlinesecurity.co.uk/more-agenttesla-keylogger-and-nanocore-rat-in-one-bundle/
 
 /mhtexp.js
+
+# Reference: https://twitter.com/david_jursa/status/1148199946618732544
+
+/add5.js
