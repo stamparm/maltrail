@@ -11095,3 +11095,7 @@ paypalloginly.serveirc.com
 # Reference: https://twitter.com/IpNigh/status/1148599396247977985
 
 sichere-umgebung.icu
+
+# Reference: https://twitter.com/PhishStats/status/1148610891560181762
+
+erotime.eu
