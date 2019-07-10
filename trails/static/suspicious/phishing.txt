@@ -5753,42 +5753,10 @@ hostingredirectdetails.azurewebsites.net
 
 # Reference: https://twitter.com/PhishingAi/status/1129430706411589633
 # Reference: https://pastebin.com/caKMyesH
+# Reference: https://twitter.com/mentalCIANE/status/1148857589658034176
+# Reference: https://www.virustotal.com/gui/ip-address/66.79.174.113/relations
 
-mydocomo-src.com
-mydocomo-cfg.com
-mydocomo-sub.com
-mydocomo-inc.com
-mydocomo-inm.com
-mydocomo-ifo.com
-mydocomo-ine.com
-mydocomo-inl.com
-mydocomo-inj.com
-mydocomo-inq.com
-mydocomo-inw.com
-mydocomo-inr.com
-mydocomo-imq.com
-mydocomo-imv.com
-mydocomo-imn.com
-mydocomo-imx.com
-mydocomo-inu.com
-mydocomo-pub.com
-mydocomo-pur.com
-mydocomo-pui.com
-mydocomo-puz.com
-mydocomo-puy.com
-mydocomo-pre.com
-mydocomo-pep.com
-mydocomo-pnd.com
-mydocomo-run.com
-mydocomo-ren.com
-mydocomo-ltd.com
-mydocomo-lta.com
-mydocomo-le.com
-mydocomo-ltc.com
-mydocomo-lty.com
-mydocomo-ltv.com
-mydocomo-ltu.com
-mydocomo-ltt.com
+^\bmydocomo[a-z-]+\.com$
 
 # Reference: https://twitter.com/malwrhunterteam/status/1129469947388813312
 
@@ -10960,13 +10928,6 @@ habit.besimvatan.com.tr/bankofamerica.com.login.axx/
 # Reference: https://twitter.com/romonlyht/status/1148844456386256897
 
 resetting-protection-accounts-support-appleid-apple.com
-
-# Reference: https://twitter.com/mentalCIANE/status/1148857589658034176
-# Reference: https://www.virustotal.com/gui/ip-address/66.79.174.113/relations
-
-mydocomoj.com
-mydocomop.com
-mydocomox.com
 
 # Reference: https://twitter.com/PhishStats/status/1148882657759113216
 
