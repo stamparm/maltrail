@@ -10977,3 +10977,7 @@ edu.pixel-web.ro
 restore-access.appleaccount.reservedsys.cloudns.asia
 secureaccess-amazonrestore.accessgrx.cloudns.asia
 supports.appleid-accountcutomerservice.ocenvialiotores.com
+
+# Reference: https://twitter.com/dave_daves/status/1148870062243291137
+
+thoseen.ga
