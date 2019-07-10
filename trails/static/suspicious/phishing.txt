@@ -10950,3 +10950,7 @@ paypal.de-516941252de85511d7a-update.security.trackid.piwikb9c1867dd7ba9c57.ea5a
 # Reference: https://twitter.com/romonlyht/status/1148753290177290241
 
 amazon2.hentaiwonderland.com
+
+# Reference: https://twitter.com/ANeilan/status/1148903325674475520
+
+authmanage-securemyappleid.serveuser.com
