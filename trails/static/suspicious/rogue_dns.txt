@@ -31,12 +31,16 @@
 1.53.252.215:53
 
 # Reference: https://blog.talosintelligence.com/2019/04/seaturtle.html
+# Reference: https://blog.talosintelligence.com/2019/07/sea-turtle-keeps-on-swimming.html
 
+45.32.100.62:53
 95.179.150.101:53
 ns1.intersecdns.com
 ns2.intersecdns.com
 ns1.lcjcomputing.com
 ns2.lcjcomputing.com
+ns1.rootdnservers.com
+ns2.rootdnservers.com
 
 # Reference: https://blog.talosintelligence.com/2018/11/dnspionage-campaign-targets-middle-east.html (DNS Hijack Domains)
 
