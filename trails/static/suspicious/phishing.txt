@@ -10958,3 +10958,7 @@ authmanage-securemyappleid.serveuser.com
 # Reference: https://twitter.com/ANeilan/status/1148902131191222272
 
 icloud.com.localizar.us
+
+# Reference: https://twitter.com/IpNigh/status/1148801867939491840
+
+paypalidneened.serveirc.com
