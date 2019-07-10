@@ -10956,3 +10956,7 @@ sign-in.account-service.customers.casinoskis.com
 # Reference: https://twitter.com/MalwarePatrol/status/1148650711300882432
 
 habit.besimvatan.com.tr/bankofamerica.com.login.axx/
+
+# Reference: https://twitter.com/romonlyht/status/1148844456386256897
+
+resetting-protection-accounts-support-appleid-apple.com
