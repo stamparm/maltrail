@@ -10985,3 +10985,7 @@ thoseen.ga
 # Reference: https://twitter.com/IpNigh/status/1148708872561004547
 
 paypal.de-516941252de85511d7a-update.security.trackid.piwikb9c1867dd7ba9c57.ea5a443c9e24508b1635e06b8cdc4d7c.cheryl-tay.com
+
+# Reference: https://twitter.com/romonlyht/status/1148753290177290241
+
+amazon2.hentaiwonderland.com
