@@ -2792,3 +2792,14 @@
 185.173.35.253
 185.173.35.254
 185.173.35.255
+
+# Reference: https://twitter.com/bad_packets/status/1148762019186610176
+
+176.58.124.134 # tequilaboomboom.club
+
+# Reference: https://twitter.com/bad_packets/status/1148796825379336194
+
+185.232.64.20
+185.232.64.21
+185.232.64.22
+185.232.64.23
