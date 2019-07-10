@@ -10971,3 +10971,9 @@ mydocomox.com
 # Reference: https://twitter.com/PhishStats/status/1148882657759113216
 
 edu.pixel-web.ro
+
+# Reference: https://urlscan.io/ip/64.42.179.249
+
+restore-access.appleaccount.reservedsys.cloudns.asia
+secureaccess-amazonrestore.accessgrx.cloudns.asia
+supports.appleid-accountcutomerservice.ocenvialiotores.com
