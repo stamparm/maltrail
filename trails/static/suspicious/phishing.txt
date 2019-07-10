@@ -10967,3 +10967,7 @@ resetting-protection-accounts-support-appleid-apple.com
 mydocomoj.com
 mydocomop.com
 mydocomox.com
+
+# Reference: https://twitter.com/PhishStats/status/1148882657759113216
+
+edu.pixel-web.ro
