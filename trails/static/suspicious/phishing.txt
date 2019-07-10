@@ -10954,3 +10954,7 @@ amazon2.hentaiwonderland.com
 # Reference: https://twitter.com/ANeilan/status/1148903325674475520
 
 authmanage-securemyappleid.serveuser.com
+
+# Reference: https://twitter.com/ANeilan/status/1148902131191222272
+
+icloud.com.localizar.us
