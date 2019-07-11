@@ -461,3 +461,7 @@ jquery.su
 # Reference: https://twitter.com/david_jursa/status/1148199946618732544
 
 /add5.js
+
+# Reference: https://twitter.com/JayTHL/status/1149055957256802307
+
+click.clickanalytics208.com
