@@ -168,3 +168,7 @@
 # Reference: https://twitter.com/YouMayBeHacked/status/1148625116101844992
 
 /bi.hta
+
+# Reference: https://twitter.com/James_inthe_box/status/1149026394472472576
+
+/kkknng.hta
