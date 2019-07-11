@@ -10994,3 +10994,26 @@ goȯgle.com
 # Reference: https://twitter.com/IpNigh/status/1149249536222740480
 
 poselpled.tk
+
+# Reference: https://www.virustotal.com/gui/ip-address/204.93.216.151/relations
+
+apple-care.us
+com-appleserver.info
+com-apps.live
+com-locations-log.in
+device-locations.info
+device-sign.info
+i-notify.in
+iclouds-sign.in
+iclouds-support.com
+id-info.live
+infomap-apple.com
+locations-log.in
+locations-sign.in
+login-sign.in
+maps-verify.info
+review-device.info
+review-signs.in
+verify-signs.in
+whatnexthost.com
+wotraseminar.com
