@@ -10990,3 +10990,8 @@ k58designs.com
 # Reference: https://twitter.com/PhishStats/status/1149108402771111937
 
 mitausa.com
+
+# Reference: https://twitter.com/romonlyht/status/1149063158495006720
+
+amazon-acc-setting.info
+amazon-acc-setting.xyz
