@@ -10999,3 +10999,7 @@ amazon-acc-setting.xyz
 # Reference: https://twitter.com/IpNigh/status/1149078021732753410
 
 cones.duckdns.org
+
+# Reference: https://twitter.com/IpNigh/status/1149107179267526658
+
+saltpepper.ga
