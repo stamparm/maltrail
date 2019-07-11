@@ -10978,3 +10978,7 @@ maikeki.com
 # Reference: https://twitter.com/sagar_ruta/status/1149032213486297088
 
 argenta-spaarbanking.be
+
+# Reference: https://twitter.com/s_metanka/status/1149270796776411136
+
+http://92.63.192.236
