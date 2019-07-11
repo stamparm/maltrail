@@ -471,3 +471,7 @@ click.clickanalytics208.com
 
 /js/decor.js
 /js/lib/ccard.js
+
+# Reference: https://twitter.com/killamjr/status/1149301815529398272
+
+google.ssl.lnfo.cc
