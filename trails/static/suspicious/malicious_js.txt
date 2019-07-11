@@ -465,3 +465,9 @@ jquery.su
 # Reference: https://twitter.com/JayTHL/status/1149055957256802307
 
 click.clickanalytics208.com
+
+# Reference: https://thehackernews.com/2019/07/magecart-amazon-s3-hacking.html
+# Reference: https://www.zscaler.com/blogs/research/magecart-activity-and-campaign-enhancements
+
+/js/decor.js
+/js/lib/ccard.js
