@@ -11003,3 +11003,7 @@ cones.duckdns.org
 # Reference: https://twitter.com/IpNigh/status/1149107179267526658
 
 saltpepper.ga
+
+# Reference: https://www.virustotal.com/gui/ip-address/107.179.40.196/relations
+
+apple-defense.com
