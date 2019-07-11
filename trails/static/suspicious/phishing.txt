@@ -5600,60 +5600,7 @@ xn--23ndme-cxc.com
 # Reference: https://twitter.com/PhishingAi/status/1129368891275194369
 # Reference: https://pastebin.com/SheCXZfb
 
-com-cgi-bin-at76nt24b6l-www-desjardins.top
-com-cgi-bin-bv65up48u0.top
-com-cgi-bin-cd04xr96o2.top
-com-cgi-bin-ce82xb20q7.top
-com-cgi-bin-ch00ys12w7.top
-com-cgi-bin-ck67me74d7n-www-desjardins.top
-com-cgi-bin-di80od03n3.top
-com-cgi-bin-dm73io49a0.top
-com-cgi-bin-eq46fa92q4.top
-com-cgi-bin-ev49wi95o1x-www-desjardins.top
-com-cgi-bin-fb95dx83p6.top
-com-cgi-bin-fc47hh57c5.top
-com-cgi-bin-fj26hx08m1.top
-com-cgi-bin-gm22bd19v8.top
-com-cgi-bin-gm46ny49h7.top
-com-cgi-bin-is26jj93l1.top
-com-cgi-bin-iv25jn20g6.top
-com-cgi-bin-iv37yp33g6.top
-com-cgi-bin-jd60ta37h6y-www-desjardins.top
-com-cgi-bin-jk22fj44d6.top
-com-cgi-bin-jq75yb10i2.top
-com-cgi-bin-js03af42v4.top
-com-cgi-bin-ke04qs56y6.top
-com-cgi-bin-kh95cy04z5v-www-desjardins.top
-com-cgi-bin-km86du12a1.top
-com-cgi-bin-la16wh11f4.top
-com-cgi-bin-lo05wk98a6t-www-desjardins.top
-com-cgi-bin-mj00ql66b9i-www-desjardins.top
-com-cgi-bin-mm94lc41w2.top
-com-cgi-bin-ng22ru31p7.top
-com-cgi-bin-oj06tx34w1x-www-desjardins.top
-com-cgi-bin-on15ko78r7.top
-com-cgi-bin-qi00ob26r0.top
-com-cgi-bin-rc34wo05b7.top
-com-cgi-bin-rk39an51d9.top
-com-cgi-bin-rl63nw15r5.top
-com-cgi-bin-sk27zr04c0.top
-com-cgi-bin-sl41bm51c4.top
-com-cgi-bin-ti46ai31f1s-www-desjardins.top
-com-cgi-bin-tj54wf14m7.top
-com-cgi-bin-uv77ew17e1.top
-com-cgi-bin-ux62dw01b6.top
-com-cgi-bin-vl65ik72w6.top
-com-cgi-bin-vt48fa02s3w-www-desjardins.top
-com-cgi-bin-wc67lf96g0m-www-desjardins.top
-com-cgi-bin-wj60gg55b6.top
-com-cgi-bin-ww94jv72o1.top
-com-cgi-bin-ye00bl59j6.top
-com-cgi-bin-ye41rp04m3.top
-com-cgi-bin-yg93ip43m1.top
-com-cgi-bin-yo21id04f1.top
-com-cgi-bin-za94mb81d7g-www-desjardins.top
-com-cgi-bin-zg46uv51s0.top
-com-cgi-bin-zj25gi08l3.top
+^\bcom\-cgi\-bin\-[a-z0-9-]+\.top$
 
 # Reference: https://twitter.com/IpNigh/status/1129356821225984001
 
@@ -5753,42 +5700,6 @@ hostingredirectdetails.azurewebsites.net
 
 # Reference: https://twitter.com/PhishingAi/status/1129430706411589633
 # Reference: https://pastebin.com/caKMyesH
-
-mydocomo-src.com
-mydocomo-cfg.com
-mydocomo-sub.com
-mydocomo-inc.com
-mydocomo-inm.com
-mydocomo-ifo.com
-mydocomo-ine.com
-mydocomo-inl.com
-mydocomo-inj.com
-mydocomo-inq.com
-mydocomo-inw.com
-mydocomo-inr.com
-mydocomo-imq.com
-mydocomo-imv.com
-mydocomo-imn.com
-mydocomo-imx.com
-mydocomo-inu.com
-mydocomo-pub.com
-mydocomo-pur.com
-mydocomo-pui.com
-mydocomo-puz.com
-mydocomo-puy.com
-mydocomo-pre.com
-mydocomo-pep.com
-mydocomo-pnd.com
-mydocomo-run.com
-mydocomo-ren.com
-mydocomo-ltd.com
-mydocomo-lta.com
-mydocomo-le.com
-mydocomo-ltc.com
-mydocomo-lty.com
-mydocomo-ltv.com
-mydocomo-ltu.com
-mydocomo-ltt.com
 
 # Reference: https://twitter.com/malwrhunterteam/status/1129469947388813312
 
@@ -10960,3 +10871,106 @@ habit.besimvatan.com.tr/bankofamerica.com.login.axx/
 # Reference: https://twitter.com/romonlyht/status/1148844456386256897
 
 resetting-protection-accounts-support-appleid-apple.com
+
+# Reference: https://twitter.com/PhishStats/status/1148882657759113216
+
+edu.pixel-web.ro
+
+# Reference: https://urlscan.io/ip/64.42.179.249
+
+restore-access.appleaccount.reservedsys.cloudns.asia
+secureaccess-amazonrestore.accessgrx.cloudns.asia
+supports.appleid-accountcutomerservice.ocenvialiotores.com
+
+# Reference: https://twitter.com/dave_daves/status/1148870062243291137
+
+thoseen.ga
+
+# Reference: https://twitter.com/IpNigh/status/1148708872561004547
+
+paypal.de-516941252de85511d7a-update.security.trackid.piwikb9c1867dd7ba9c57.ea5a443c9e24508b1635e06b8cdc4d7c.cheryl-tay.com
+
+# Reference: https://twitter.com/romonlyht/status/1148753290177290241
+
+amazon2.hentaiwonderland.com
+
+# Reference: https://twitter.com/ANeilan/status/1148903325674475520
+
+authmanage-securemyappleid.serveuser.com
+
+# Reference: https://twitter.com/ANeilan/status/1148902131191222272
+
+icloud.com.localizar.us
+
+# Reference: https://twitter.com/IpNigh/status/1148801867939491840
+
+paypalidneened.serveirc.com
+
+# Reference: https://twitter.com/IpNigh/status/1148880939499569152
+
+lmdwdwwer-online.com
+
+# Reference: https://twitter.com/IpNigh/status/1148925939679731712
+
+justyholmeshealth.com
+
+# Reference: https://twitter.com/IpNigh/status/1148913735668572160
+
+usacoolboa.webcindario.com
+
+# Reference: https://twitter.com/IpNigh/status/1148778848017928192
+
+nationnaloutbof.000webhostapp.com
+
+# Reference: https://twitter.com/IpNigh/status/1148957034894770177
+
+onlinealertprotectors.ml
+
+# Reference: https://twitter.com/MalwarePatrol/status/1149140065001644032
+
+metkor.com.tr
+
+# Reference: https://twitter.com/MalwarePatrol/status/1149137622452899840
+
+k58designs.com
+
+# Reference: https://twitter.com/PhishStats/status/1149108402771111937
+
+mitausa.com
+
+# Reference: https://twitter.com/romonlyht/status/1149063158495006720
+
+amazon-acc-setting.info
+amazon-acc-setting.xyz
+
+# Reference: https://twitter.com/IpNigh/status/1149078021732753410
+
+cones.duckdns.org
+
+# Reference: https://twitter.com/IpNigh/status/1149107179267526658
+
+saltpepper.ga
+
+# Reference: https://www.virustotal.com/gui/ip-address/107.179.40.196/relations
+
+apple-defense.com
+
+# Reference: https://twitter.com/PhishStats/status/1149245343407792128
+
+fakesemoiin23.com
+
+# Reference: https://twitter.com/abel1ma/status/1149211719421456384
+
+resetting-defend-accounts-support-amazon.com
+
+# Reference: https://twitter.com/romonlyht/status/1149136674993033216
+
+amazzsww.hentaiwonderland.com
+
+# Reference: https://twitter.com/romonlyht/status/1149206646431735808
+
+amnazonjq.com
+
+# Reference: https://twitter.com/harugasumi/status/1149158368465936384
+
+maikeki.com
