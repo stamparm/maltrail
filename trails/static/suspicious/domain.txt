@@ -4652,3 +4652,7 @@ hacked.sx
 # Reference: https://www.virustotal.com/gui/domain/remotecamviewdnspublic.online/relations
 
 remotecamviewdnspublic.online
+
+# Reference: https://www.virustotal.com/gui/domain/mygoodsday.org/relations
+
+mygoodsday.org
