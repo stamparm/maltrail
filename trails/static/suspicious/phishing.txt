@@ -10982,3 +10982,7 @@ onlinealertprotectors.ml
 # Reference: https://twitter.com/MalwarePatrol/status/1149140065001644032
 
 metkor.com.tr
+
+# Reference: https://twitter.com/MalwarePatrol/status/1149137622452899840
+
+k58designs.com
