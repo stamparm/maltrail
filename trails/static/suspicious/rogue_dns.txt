@@ -100,3 +100,12 @@ ns4.jsc0nten1maker.com
 54.227.204.233:53
 54.86.13.40:53
 54.91.150.236:53
+
+# Reference: https://twitter.com/MetallicaMVP/status/1148919883255750656
+# Reference: https://forums.malwarebytes.com/topic/249242-removal-instructions-for-extenbro/
+
+45.86.180.227:53
+77.234.40.79:53
+116.203.6.218:53
+185.130.104.222:53
+185.162.93.213:53
