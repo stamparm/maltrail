@@ -10995,3 +10995,7 @@ mitausa.com
 
 amazon-acc-setting.info
 amazon-acc-setting.xyz
+
+# Reference: https://twitter.com/IpNigh/status/1149078021732753410
+
+cones.duckdns.org
