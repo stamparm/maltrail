@@ -11029,3 +11029,7 @@ wbhssa.hentaiwonderland.com
 # Reference: https://twitter.com/PhishStats/status/1149380855443464192
 
 au-e.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1149364722761895936
+
+chatjoinwhatsapp.wikaba.com
