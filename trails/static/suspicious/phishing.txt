@@ -5753,10 +5753,6 @@ hostingredirectdetails.azurewebsites.net
 
 # Reference: https://twitter.com/PhishingAi/status/1129430706411589633
 # Reference: https://pastebin.com/caKMyesH
-# Reference: https://twitter.com/mentalCIANE/status/1148857589658034176
-# Reference: https://www.virustotal.com/gui/ip-address/66.79.174.113/relations
-
-^\bmydocomo[a-z-]+\.com$
 
 # Reference: https://twitter.com/malwrhunterteam/status/1129469947388813312
 
