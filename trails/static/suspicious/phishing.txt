@@ -11011,3 +11011,7 @@ apple-defense.com
 # Reference: https://twitter.com/PhishStats/status/1149245343407792128
 
 fakesemoiin23.com
+
+# Reference: https://twitter.com/abel1ma/status/1149211719421456384
+
+resetting-defend-accounts-support-amazon.com
