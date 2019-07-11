@@ -10986,3 +10986,7 @@ metkor.com.tr
 # Reference: https://twitter.com/MalwarePatrol/status/1149137622452899840
 
 k58designs.com
+
+# Reference: https://twitter.com/PhishStats/status/1149108402771111937
+
+mitausa.com
