@@ -11021,3 +11021,7 @@ wotraseminar.com
 # Reference: https://twitter.com/PhishStats/status/1149334958814707713
 
 hindikavikssoni.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1149355666630414336
+
+wbhssa.hentaiwonderland.com
