@@ -11007,3 +11007,7 @@ saltpepper.ga
 # Reference: https://www.virustotal.com/gui/ip-address/107.179.40.196/relations
 
 apple-defense.com
+
+# Reference: https://twitter.com/PhishStats/status/1149245343407792128
+
+fakesemoiin23.com
