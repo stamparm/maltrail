@@ -11033,3 +11033,7 @@ au-e.com
 # Reference: https://twitter.com/MalwarePatrol/status/1149364722761895936
 
 chatjoinwhatsapp.wikaba.com
+
+# Reference: https://twitter.com/PhishStats/status/1149516472525266950
+
+gccs.za.org
