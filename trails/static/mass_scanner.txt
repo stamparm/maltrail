@@ -2795,7 +2795,7 @@
 
 # Reference: https://twitter.com/bad_packets/status/1148762019186610176
 
-176.58.124.134 # tequilaboomboom.club
+176.58.124.134  # tequilaboomboom.club
 
 # Reference: https://twitter.com/bad_packets/status/1148796825379336194
 
@@ -2806,4 +2806,4 @@
 
 # Reference: https://twitter.com/bad_packets/status/1149527678002688001
 
-198.108.66.240 #censys
+198.108.66.240  # censys
