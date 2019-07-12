@@ -10999,3 +10999,7 @@ bobpaparazzo.ga
 # Reference: https://twitter.com/PhishStats/status/1149651796555517953
 
 http://67.205.187.76
+
+# Reference: https://twitter.com/PasswordCoach/status/1146869747730059265
+
+account-validate.com.x2349.online
