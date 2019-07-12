@@ -213,3 +213,8 @@ ns2.whatnexthost.com
 93.115.31.242:53
 93.115.31.243:53
 93.115.31.244:53
+
+# Reference: https://www.heise.de/security/meldung/Grossangriff-auf-Router-DNS-Einstellungen-manipuliert-2132674.html (German)
+
+5.45.75.11:53
+5.45.75.36:53
