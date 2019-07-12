@@ -11073,3 +11073,7 @@ abepps.org.br
 # Reference: https://twitter.com/MalwarePatrol/status/1149775358545268736
 
 webmaillweb.000webhostapp.com
+
+# Reference: https://twitter.com/PhishStats/status/1149788386867253248
+
+cigarmarket.com.do
