@@ -11061,3 +11061,7 @@ xraystarted.com
 # Reference: https://www.virustotal.com/gui/ip-address/137.59.18.171/relations
 
 ^apple\.varifidogio[a-z]{2,3}\.com$
+
+# Reference: https://twitter.com/PhishStats/status/1149697667087458305
+
+abepps.org.br
