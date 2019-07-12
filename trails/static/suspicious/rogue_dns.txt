@@ -122,3 +122,7 @@ ns2.whatnexthost.com
 
 82.163.142.137:53
 82.163.143.135:53
+
+# Reference: https://www.platinbilisim.com.tr/TR/Medya/Duyurular/dikkat-ghost-dns-261 (Turkish)
+
+139.60.162.188:53
