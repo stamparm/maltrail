@@ -109,3 +109,11 @@ ns4.jsc0nten1maker.com
 116.203.6.218:53
 185.130.104.222:53
 185.162.93.213:53
+
+# Reference: https://www.virustotal.com/gui/ip-address/204.93.216.151/relations (# See phishing domains related to this IP in respective trail)
+# Reference: https://www.virustotal.com/gui/domain/ns1.whatnexthost.com/details
+# Reference: https://www.virustotal.com/gui/domain/ns2.whatnexthost.com/details
+
+ns1.whatnexthost.com
+ns2.whatnexthost.com
+204.93.216.151:53
