@@ -117,3 +117,7 @@
 
 /GetPass.ps1
 /payload.ps1
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1149574068435218432
+
+/pps.ps1
