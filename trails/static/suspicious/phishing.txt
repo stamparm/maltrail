@@ -11041,3 +11041,7 @@ gccs.za.org
 # Reference: https://twitter.com/PhishStats/status/1149561289837932544
 
 thevoolfa.kr
+
+# Reference: https://twitter.com/PhishStats/status/1149606782714576897
+
+bobpaparazzo.ga
