@@ -2249,8 +2249,8 @@ linkupbd.com
 # Reference: https://twitter.com/PhishingAi/status/1119762409273511936
 # Reference: https://pastebin.com/et1AF0Nm
 
-\bservice\-verify\-[a-z0-9]+\.(ml|tk|cf|ga|gq)
-\bservice\-verify[a-z0-9]+\.(ml|tk|cf|ga|gq)
+^service\-verify\-[a-z0-9]+\.(ml|tk|cf|ga|gq)$
+^service\-verify[a-z0-9]+\.(ml|tk|cf|ga|gq)$
 
 # Reference: https://twitter.com/ANeilan/status/1119783912098738176
 
@@ -3859,7 +3859,7 @@ engine-jump-ama-zon.com
 
 # Reference: https://twitter.com/Spam404Online/status/1125637315999731713
 
-\bsafety\-review\-section\-[0-9]+\.(ml|tk|cf|ga|gq)
+^safety\-review\-section\-[0-9]+\.(ml|tk|cf|ga|gq)$
 
 # Reference: https://twitter.com/malwrhunterteam/status/1125740377070288898
 
@@ -5600,7 +5600,7 @@ xn--23ndme-cxc.com
 # Reference: https://twitter.com/PhishingAi/status/1129368891275194369
 # Reference: https://pastebin.com/SheCXZfb
 
-^\bcom\-cgi\-bin\-[a-z0-9-]+\.top$
+^com\-cgi\-bin\-[a-z0-9-]+\.top$
 
 # Reference: https://twitter.com/IpNigh/status/1129356821225984001
 
@@ -5887,7 +5887,7 @@ denvercandobetter.org
 # Reference: https://twitter.com/JayTHL/status/1129953180148797440
 # Reference: https://pastebin.com/raw/fU48Gqqw
 
-\baccount\-service\-v[0-9]{2,4}\.(ml|tk|cf|ga|gq)
+^account\-service\-v[0-9]{2,4}\.(ml|tk|cf|ga|gq)$
 
 # Reference: https://twitter.com/illegalFawn/status/1130024654448537600
 
@@ -9135,7 +9135,7 @@ pg13movies.gq
 pg13movies.ml
 playviqoerb.co.uk
 playviqoerb.uk
-\bpoteem[0-9]{1,}\.com\b
+^poteem[0-9]{1,}\.com$
 prceauja.ml
 psa-qo-rwb.co.uk
 psa-qo-rwb.uk
@@ -9194,54 +9194,6 @@ spencersse.com
 spencersse.info
 spencersse.org
 sprnighouston.com
-spteem101.com
-spteem102.com
-spteem103.com
-spteem104.com
-spteem106.com
-spteem107.com
-spteem108.com
-spteem109.com
-spteem110.com
-spteem111.com
-spteem112.com
-spteem113.com
-spteem114.com
-spteem115.com
-spteem116.com
-spteem117.com
-spteem118.com
-spteem119.com
-spteem120.com
-spteem121.com
-spteem122.com
-spteem123.com
-spteem124.com
-spteem125.com
-spteem126.com
-spteem127.com
-spteem128.com
-spteem129.com
-spteem130.com
-spteem131.com
-spteem132.com
-spteem133.com
-spteem134.com
-spteem135.com
-spteem136.com
-spteem137.com
-spteem138.com
-spteem139.com
-spteem140.com
-spteem141.com
-spteem142.com
-spteem143.com
-spteem144.com
-spteem146.com
-spteem147.com
-spteem148.com
-spteem149.com
-spteem150.com
 ssl.host2go.net
 sso.securesevrer-net.cannonaseta.org
 stevemells.biz
@@ -9802,8 +9754,6 @@ heianocs.com
 hellenic-network.com
 high-school-musical-cast-imdb.qlmnaof.cc
 hiosnungs.com
-hmrc.secure.refuhmrc.secure.refuhmr
-hmrc.secure.refuhmrc.secure.refuhmrc.secure.refuhmfund.kb2hk.1snbff.top
 homeparty-konzept.com
 hot-cashback.com
 hotelbutler.tv
@@ -10127,14 +10077,14 @@ zhoycauw.jopa788.com
 zhxyobvcen.com
 zigseo.com
 zooklondike.ru
-\bonline\.paypal\.tranzaction\.[a-z0-9]+\.[a-z0-9]+\.top
-\bonline\.ver(i|u)fy\.account\.paypal+\.[a-z0-9]+\.top
-\bonline\.verify\.paypal\.[a-z0-9]+\.[a-z0-9]+\.top
-\bpaypal\.online\.secure\.tranzaction\.[a-z0-9]+\.top
-\bverify\.account\.paypal\.[a-z0-9]+\.top
-\bsecure\.tranzaction\.[a-z0-9]+\.top
-\bhmrc\.secure\.refund\.[a-z0-9]+\.[a-z0-9]+\.top
-\bverify\.paypal\.[a-z0-9]+\.[a-z0-9]+\.top
+^online\.paypal\.tranzaction\.[a-z0-9]+\.[a-z0-9]+\.top$
+^online\.ver(i|u)fy\.account\.paypal+\.[a-z0-9]+\.top$
+^online\.verify\.paypal\.[a-z0-9]+\.[a-z0-9]+\.top$
+^paypal\.online\.secure\.tranzaction\.[a-z0-9]+\.top$
+^verify\.account\.paypal\.[a-z0-9]+\.top$
+^secure\.tranzaction\.[a-z0-9]+\.top$
+^hmrc\.secure\.refund\.[a-z0-9]+\.[a-z0-9]+\.top$
+^verify\.paypal\.[a-z0-9]+\.[a-z0-9]+\.top$
 
 # Reference: https://twitter.com/IpNigh/status/1144728720810369025
 
@@ -10228,7 +10178,7 @@ global-service.online
 
 # Reference: https://twitter.com/JayTHL/status/1145549186689130502
 
-\bspteem[0-9]{2}\.com\b
+^spteem[0-9]{2,3}\.com$
 
 # Reference: https://twitter.com/PhishStats/status/1145575220213948417
 
@@ -10634,7 +10584,7 @@ jp-bank.japanpost.jp
 # Reference: https://twitter.com/NaomiSuzuki_/status/1148479704850026496
 # Reference: https://twitter.com/NaomiSuzuki_/status/1143471193443278848
 
-\bapple\.varifidogio[a-z]{2,}\.com
+^apple\.varifidogio[a-z]{2,}\.com$
 
 # Reference: https://twitter.com/NaomiSuzuki_/status/1145349129263931393
 # Reference: https://twitter.com/NaomiSuzuki_/status/1142432143399768066
@@ -10818,7 +10768,7 @@ dsafasdasd.000webhostapp.com
 
 # Reference: https://twitter.com/JayTHL/status/1121872865106833409
 
-\bservice\-confirm\-v[0-9]+\.(ml|tk|cf|ga|gq)
+^service\-confirm\-v[0-9]+\.(ml|tk|cf|ga|gq)$
 
 # Reference: https://twitter.com/IpNigh/status/1148534816666804224
 
@@ -11045,3 +10995,7 @@ thevoolfa.kr
 # Reference: https://twitter.com/PhishStats/status/1149606782714576897
 
 bobpaparazzo.ga
+
+# Reference: https://twitter.com/PhishStats/status/1149651796555517953
+
+http://67.205.187.76
