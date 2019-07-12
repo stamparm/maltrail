@@ -1944,3 +1944,7 @@ tool1.91danji.com
 # Reference: https://twitter.com/MalwarePatrol/status/1147550303501324288
 
 irc-files.org
+
+# Reference: https://twitter.com/MalwarePatrol/status/1149543416478306304
+
+premium.roxypalace.com
