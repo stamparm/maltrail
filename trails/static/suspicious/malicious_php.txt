@@ -382,3 +382,11 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/IpNigh/status/1148676390759391234
 
 /31npodfikdtpkgq6difyox4s.php
+
+# Reference: https://twitter.com/IpNigh/status/1149168247683633153
+
+/3mm9etr00x4b2ml4b0fhdv7f.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1149383199904210944
+
+/a1ev2wehp69sw2tjkua8wc39.php
