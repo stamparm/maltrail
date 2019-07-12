@@ -6672,7 +6672,6 @@ thisismadeofficialnow11.azurewebsites.net
 
 # Reference: https://twitter.com/ozuma5119/status/1133215741996544000
 
-apple.varifidogione.com
 bt-dr.top
 
 # Reference: https://twitter.com/IpNigh/status/1133327987082964993
@@ -7784,7 +7783,6 @@ amazonrepp.com
 amyslaughterlaw.com
 andrewklenk.com
 app-1513007890.000webhostapp.com
-apple.varifidogioens.com
 apps-policy-recovery-acct-check.ga
 arshome.jp
 aviso87502-com.umbler.net
@@ -8637,10 +8635,6 @@ sage-uk.org
 # Reference: https://twitter.com/IpNigh/status/1140639961416392710
 
 checked-safe.com
-
-# Reference: https://twitter.com/IpNigh/status/1140873983602155520
-
-apple.varifidogioex.com
 
 # Reference: https://twitter.com/JayTHL/status/1141048854877528064
 
@@ -11061,3 +11055,9 @@ varats.com
 vbale.com
 x-radiation.com
 xraystarted.com
+
+# Reference: https://twitter.com/IpNigh/status/1140873983602155520
+# Reference: # Reference: https://github.com/mitchellkrogza/Phishing.Database/blob/master/phishing-domains-NEW-today.txt
+# Reference: https://www.virustotal.com/gui/ip-address/137.59.18.171/relations
+
+^apple\.varifidogio[a-z]{2,3}\.com$
