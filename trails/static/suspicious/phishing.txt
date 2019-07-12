@@ -11037,3 +11037,7 @@ chatjoinwhatsapp.wikaba.com
 # Reference: https://twitter.com/PhishStats/status/1149516472525266950
 
 gccs.za.org
+
+# Reference: https://twitter.com/PhishStats/status/1149561289837932544
+
+thevoolfa.kr
