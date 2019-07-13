@@ -186,3 +186,7 @@
 # Reference: https://ti.360.net/uploads/2018/09/20/6f8ad451646c9eda1f75c5d31f39f668.pdf (Chinese)
 
 /zxcvb.hta
+
+# Reference: https://twitter.com/_CPResearch_/status/1102943725750239237
+
+/RawabiJob.hta
