@@ -4656,3 +4656,7 @@ remotecamviewdnspublic.online
 # Reference: https://www.virustotal.com/gui/domain/mygoodsday.org/relations
 
 mygoodsday.org
+
+# Reference: https://www.virustotal.com/gui/domain/serveo.net/relations
+
+serveo.net
