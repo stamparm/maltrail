@@ -4660,3 +4660,9 @@ mygoodsday.org
 # Reference: https://www.virustotal.com/gui/domain/serveo.net/relations
 
 serveo.net
+
+# Reference: https://twitter.com/stvemillertime/status/1142604668322889729
+# Reference: https://www.virustotal.com/gui/ip-address/45.76.66.188/relations
+
+ejwft.co
+ggiso.co
