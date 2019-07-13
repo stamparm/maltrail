@@ -11101,3 +11101,7 @@ kingsport3.com
 4rt8hy748748sfgrt.pro
 5gn484b8df748g7d87g87.pro
 5hrt8h4fg848h48df74gd.pro
+
+# Reference: https://twitter.com/PhishStats/status/1150014262988935168
+
+criswilliamson.com
