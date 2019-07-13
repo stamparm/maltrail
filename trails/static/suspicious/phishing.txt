@@ -11077,3 +11077,7 @@ webmaillweb.000webhostapp.com
 # Reference: https://twitter.com/PhishStats/status/1149788386867253248
 
 cigarmarket.com.do
+
+# Reference: https://twitter.com/PhishStats/status/1149923721810984962
+
+pkspskov.ru
