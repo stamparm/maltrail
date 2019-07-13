@@ -218,3 +218,9 @@ ns2.whatnexthost.com
 
 5.45.75.11:53
 5.45.75.36:53
+
+# Reference: https://www.virustotal.com/gui/ip-address/139.59.80.101/relations (# phishing domains are in phishing.txt trail)
+# Reference: https://www.virustotal.com/gui/domain/ns1.fakesemoiin23.com/relations
+# Reference: https://www.virustotal.com/gui/domain/ns2.fakesemoiin23.com/relations
+
+139.59.80.101:53
