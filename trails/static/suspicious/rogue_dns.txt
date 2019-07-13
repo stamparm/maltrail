@@ -232,3 +232,9 @@ ns2.fakesemoiin23.com
 ns1.upgrinfo.com
 ns2.upgrinfo.com
 58.158.177.102:53
+
+# Reference: https://www.virustotal.com/gui/ip-address/162.220.8.212/relations
+
+ns1.sagema.biz
+ns2.sagema.biz
+162.220.8.212:53
