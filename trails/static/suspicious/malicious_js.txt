@@ -475,3 +475,8 @@ click.clickanalytics208.com
 # Reference: https://twitter.com/killamjr/status/1149301815529398272
 
 google.ssl.lnfo.cc
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/home-routers-under-attack-malvertising-windows-android-devices
+
+/zaqedcvfr.js
+/zaqwsxcde.js
