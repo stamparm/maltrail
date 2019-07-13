@@ -11000,38 +11000,38 @@ account-validate.com.x2349.online
 
 # Reference: https://www.virustotal.com/gui/ip-address/142.4.21.187/relations
 
-^adarekekimu\-pastiadalah\-verification\-apps[0-9]{5}.jp$
-^aku\-bener\-binggung\-tod\-lah[0-9]{4}\.jp$
-^confirm\-lockwebs\-app\-verification[0-9]{4}\.jp$
-^confirm\-verification\-weblockpapps[0-9]{4}\.com$
-^confrimsn[0-9]{5}\-l0gindates\-newver1fs\.com$
-^itu\-nah\-coba\-diverify[0-4]{4}\.jp$
-^jangangalau\-[a-z]{3,4}\.com$
-^kenapa\-bisa\-begini\-abang\-apps[0-4]{4}\.jp$
-^kuylah\-pasti\-adarejekinya\-verification[0-4]{4}\.jp$
-^loginacces\-mailsinformation\-numbercs[0-4]{5}\.com$
-^myaccounts\-goto\-confrims\-update[0-9]{1}\.com$
-^pasti\-adarejekilah\-kuy\-verification[0-9]{4}\.jp$
-^pusing\-pala\-lakasmati\-verifi[0-9]{4}\.jp$
-^security\-alret\-acc\-apps\-secure\-verification[0-9]{4}\.jp$
-^supp0rts\-new1og1nfromslocat1on5\-statenumber[0-9]{6}\.com$
-^verification\-app\-confirm\-webslock[0-9]{4}\.jp$
-^verification\-app\-confirms\-secure\-webs[0-9]{4}\.jp$
-^verification\-isi\-dong\-bang\-apps[0-9]{4}\.jp$
-^web4pps\-upd4tesp4yments\-dead1ines[0-9]{6}\.com$
-^webapp\-secure\-verification\-security[0-9]{4}\.jp$
-^webapps\-confirms\-verifycition\-cure[0-9]{4}\.jp$
-^webapps\-verifdates\-infonumber[0-9]{5}\.com$
-^webappslocations\-timenotallow\-loginandconfrim[0-9]{5}\.com$
-^webcases\-fromlogisinfropmations\-mailsnumberxs[0-9]{5}\.us$
-^weblocation[0-9]{2}\-notaccesconfrimse\-p4ymenystdeadlines\.com$
-^webloginsnots\-accesfromlocations\-statecod[0-9]{5}\.com$
-^webmails\-appnumber\-dateupdates[0-9]{5}\.com$
-^webnotifsfrom\-mailsinformations\-case[0-9]{6}\.com$
-^webslock\-verification\-app\-confirm\-sure[0-9]{4}\.jp$
-^webslock\-verification\-confirm\-app[0-9]{4}\.jp$
-^webslock\-verificatyion\-confrims\-secure[0-9]{4}\.jp$
-^websupp0rts\-fromsmailsnotis\-case[0-9]{7}\.com$
+adarekekimu\-pastiadalah\-verification\-apps[0-9]{5}.jp$
+aku\-bener\-binggung\-tod\-lah[0-9]{4}\.jp$
+confirm\-lockwebs\-app\-verification[0-9]{4}\.jp$
+confirm\-verification\-weblockpapps[0-9]{4}\.com$
+confrimsn[0-9]{5}\-l0gindates\-newver1fs\.com$
+itu\-nah\-coba\-diverify[0-4]{4}\.jp$
+jangangalau\-[a-z]{3,4}\.com$
+kenapa\-bisa\-begini\-abang\-apps[0-4]{4}\.jp$
+kuylah\-pasti\-adarejekinya\-verification[0-4]{4}\.jp$
+loginacces\-mailsinformation\-numbercs[0-4]{5}\.com$
+myaccounts\-goto\-confrims\-update[0-9]{1}\.com$
+pasti\-adarejekilah\-kuy\-verification[0-9]{4}\.jp$
+pusing\-pala\-lakasmati\-verifi[0-9]{4}\.jp$
+security\-alret\-acc\-apps\-secure\-verification[0-9]{4}\.jp$
+supp0rts\-new1og1nfromslocat1on5\-statenumber[0-9]{6}\.com$
+verification\-app\-confirm\-webslock[0-9]{4}\.jp$
+verification\-app\-confirms\-secure\-webs[0-9]{4}\.jp$
+verification\-isi\-dong\-bang\-apps[0-9]{4}\.jp$
+web4pps\-upd4tesp4yments\-dead1ines[0-9]{6}\.com$
+webapp\-secure\-verification\-security[0-9]{4}\.jp$
+webapps\-confirms\-verifycition\-cure[0-9]{4}\.jp$
+webapps\-verifdates\-infonumber[0-9]{5}\.com$
+webappslocations\-timenotallow\-loginandconfrim[0-9]{5}\.com$
+webcases\-fromlogisinfropmations\-mailsnumberxs[0-9]{5}\.us$
+weblocation[0-9]{2}\-notaccesconfrimse\-p4ymenystdeadlines\.com$
+webloginsnots\-accesfromlocations\-statecod[0-9]{5}\.com$
+webmails\-appnumber\-dateupdates[0-9]{5}\.com$
+webnotifsfrom\-mailsinformations\-case[0-9]{6}\.com$
+webslock\-verification\-app\-confirm\-sure[0-9]{4}\.jp$
+webslock\-verification\-confirm\-app[0-9]{4}\.jp$
+webslock\-verificatyion\-confrims\-secure[0-9]{4}\.jp$
+websupp0rts\-fromsmailsnotis\-case[0-9]{7}\.com$
 142-4-21-187.unifiedlayer.com
 acquaintancechildish.com
 anda-perlu-mengingisi-ini-sayang.jp
@@ -11092,3 +11092,16 @@ ti0273.eu
 # Reference: https://twitter.com/PhishStats/status/1149968982780387329
 
 kingsport3.com
+
+# Reference: https://twitter.com/IronNetTR/status/1149660802003062784
+
+1gfd74bv5sdf54g54fg5.pro
+2dfgdfgsrtghfghrw.pro
+3dfgdfgggfdgdfg.pro
+4rt8hy748748sfgrt.pro
+5gn484b8df748g7d87g87.pro
+5hrt8h4fg848h48df74gd.pro
+
+# Reference: https://twitter.com/PhishStats/status/1150014262988935168
+
+criswilliamson.com
