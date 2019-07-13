@@ -11105,3 +11105,7 @@ kingsport3.com
 # Reference: https://twitter.com/PhishStats/status/1150014262988935168
 
 criswilliamson.com
+
+# Reference: https://twitter.com/yvesago/status/1149717635812265985
+
+univ-lorraine-update.5v.pl
