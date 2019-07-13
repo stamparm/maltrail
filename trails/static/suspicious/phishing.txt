@@ -11081,3 +11081,7 @@ cigarmarket.com.do
 # Reference: https://twitter.com/PhishStats/status/1149923721810984962
 
 pkspskov.ru
+
+# Reference: https://twitter.com/JayTHL/status/1149913206497980416
+
+^fakesemoiin[0-9]{1,2}\.com$
