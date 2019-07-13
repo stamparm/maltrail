@@ -4666,3 +4666,7 @@ serveo.net
 
 ejwft.co
 ggiso.co
+
+# Reference: https://www.virustotal.com/gui/domain/upgrinfo.com/relations
+
+upgrinfo.com
