@@ -11083,5 +11083,8 @@ cigarmarket.com.do
 pkspskov.ru
 
 # Reference: https://twitter.com/JayTHL/status/1149913206497980416
+# Reference: https://www.virustotal.com/gui/ip-address/139.59.80.101/relations
 
-^fakesemoiin[0-9]{1,2}\.com$
+fakesemoiin[0-9]{1,2}\.com$
+id605.eu
+ti0273.eu
