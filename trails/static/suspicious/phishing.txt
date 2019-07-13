@@ -11088,3 +11088,7 @@ pkspskov.ru
 fakesemoiin[0-9]{1,2}\.com$
 id605.eu
 ti0273.eu
+
+# Reference: https://twitter.com/PhishStats/status/1149968982780387329
+
+kingsport3.com
