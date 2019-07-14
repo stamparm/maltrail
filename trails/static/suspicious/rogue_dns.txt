@@ -246,3 +246,9 @@ ns2.sagema.biz
 ns1.i-tunes-ld.com
 ns2.i-tunes-ld.com
 167.114.28.162:53
+
+# Reference: https://twitter.com/P3pperP0tts/status/1150405598816677888
+
+5.132.191.104:53
+92.163.33.248:53
+206.189.120.248:53
