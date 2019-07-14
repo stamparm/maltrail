@@ -20699,3 +20699,7 @@ websoporteapple-online.com
 # Reference: https://twitter.com/PhishStats/status/1150331444797026305
 
 hmzadargya.com
+
+# Reference: https://twitter.com/ANeilan/status/1150380156927787008
+
+icloud.com.apple-id.solutions
