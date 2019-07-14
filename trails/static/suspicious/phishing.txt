@@ -20695,3 +20695,7 @@ webicloud.sign-data.com
 webitunes.data-istore.com
 webitunes.sign-data.com
 websoporteapple-online.com
+
+# Reference: https://twitter.com/PhishStats/status/1150331444797026305
+
+hmzadargya.com
