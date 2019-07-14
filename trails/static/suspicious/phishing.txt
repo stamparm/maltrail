@@ -20657,3 +20657,26 @@ zuzupress.com
 zvizvi.xyz
 zyb.solarpanelsinup.com
 zyngapokerceme.com
+
+# Reference: https://twitter.com/ANeilan/status/1150246352053575680
+# Reference: https://www.virustotal.com/gui/ip-address/167.114.28.162/relations
+
+apple.com-mms.top
+apple.sign-data.com
+i-tunes-ld.com
+icloud-com.sign-data.com
+icloud.data-istore.com
+icloud.sign-data.com
+itunes.data-istore.com
+itunes.sign-data.com
+server.i-tunes-ld.com
+serverhosting.streamingslp.com
+soporteapple-online.com
+webapple.sign-data.com
+webi-tunes-ld.com
+webicloud-com.sign-data.com
+webicloud.data-istore.com
+webicloud.sign-data.com
+webitunes.data-istore.com
+webitunes.sign-data.com
+websoporteapple-online.com
