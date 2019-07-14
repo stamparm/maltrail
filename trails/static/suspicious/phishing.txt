@@ -20703,3 +20703,7 @@ hmzadargya.com
 # Reference: https://twitter.com/ANeilan/status/1150380156927787008
 
 icloud.com.apple-id.solutions
+
+# Reference: https://twitter.com/PhishStats/status/1150376653320806400
+
+5egurancaapp.net
