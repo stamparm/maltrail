@@ -190,3 +190,7 @@
 # Reference: https://twitter.com/_CPResearch_/status/1102943725750239237
 
 /RawabiJob.hta
+
+# Reference: https://twitter.com/killamjr/status/1150218238573404160
+
+/SystemUpdater.hta
