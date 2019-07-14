@@ -20711,3 +20711,7 @@ icloud.com.apple-id.solutions
 # Reference: https://twitter.com/PhishStats/status/1150422477396414467
 
 salsitadance.com
+
+# Reference: https://twitter.com/PhishStats/status/1150467646841901056
+
+ret0ur9857.com
