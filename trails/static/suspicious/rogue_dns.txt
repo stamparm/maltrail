@@ -238,3 +238,10 @@ ns2.upgrinfo.com
 ns1.sagema.biz
 ns2.sagema.biz
 162.220.8.212:53
+
+# Reference: https://twitter.com/ANeilan/status/1150246352053575680
+# Reference: https://www.virustotal.com/gui/ip-address/167.114.28.162/relations
+
+ns1.i-tunes-ld.com
+ns2.i-tunes-ld.com
+167.114.28.162:53
