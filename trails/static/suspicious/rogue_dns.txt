@@ -2,7 +2,18 @@
 # See the file 'LICENSE' for copying permission
 
 # Reference: https://securelist.com/roaming-mantis-part-iv/90332/
+# Reference: https://twitter.com/ninoseki/status/1106842790351106048
+# Reference: https://twitter.com/ninoseki/status/1150379897820332032
+# Reference: https://twitter.com/ninoseki/status/1127109264877600768
 
+1.53.252.164:53
+1.53.252.215:53
+1.171.160.155:53
+1.171.175.119:53
+118.30.28.38:53
+118.30.28.39:53
+171.244.3.110:53
+171.244.3.111:53
 171.244.33.114:53
 171.244.33.116:53
 
@@ -25,11 +36,6 @@
 195.128.124.150:53
 195.128.124.181:53
 
-# Reference: https://twitter.com/ninoseki/status/1106842790351106048
-
-1.53.252.164:53
-1.53.252.215:53
-
 # Reference: https://blog.talosintelligence.com/2019/04/seaturtle.html
 # Reference: https://blog.talosintelligence.com/2019/07/sea-turtle-keeps-on-swimming.html
 
@@ -51,11 +57,6 @@ ns2.rootdnservers.com
 23.94.149.242:53
 172.245.14.114:53
 198.46.131.130:53
-
-# Reference: https://twitter.com/ninoseki/status/1127109264877600768
-
-1.171.160.155:53
-1.171.175.119:53
 
 # Reference: https://twitter.com/david_jursa/status/1131487385034870784
 # Reference: https://pastebin.com/s98awS0E
@@ -223,4 +224,34 @@ ns2.whatnexthost.com
 # Reference: https://www.virustotal.com/gui/domain/ns1.fakesemoiin23.com/relations
 # Reference: https://www.virustotal.com/gui/domain/ns2.fakesemoiin23.com/relations
 
+ns1.fakesemoiin23.com
+ns2.fakesemoiin23.com
 139.59.80.101:53
+
+# Reference: https://www.virustotal.com/gui/domain/upgrinfo.com/relations
+
+ns1.upgrinfo.com
+ns2.upgrinfo.com
+58.158.177.102:53
+
+# Reference: https://www.virustotal.com/gui/ip-address/162.220.8.212/relations
+
+ns1.sagema.biz
+ns2.sagema.biz
+162.220.8.212:53
+
+# Reference: https://twitter.com/ANeilan/status/1150246352053575680
+# Reference: https://www.virustotal.com/gui/ip-address/167.114.28.162/relations
+
+ns1.i-tunes-ld.com
+ns2.i-tunes-ld.com
+167.114.28.162:53
+
+# Reference: https://twitter.com/P3pperP0tts/status/1150405598816677888
+# Reference: https://twitter.com/P3pperP0tts/status/1150419408197693442
+
+5.132.191.104:53
+92.163.33.248:53
+206.189.120.248:53
+ns1.vic.au.dns.opennic.glue
+ns2.vic.au.dns.opennic.glue
