@@ -10583,12 +10583,14 @@ jp-bank.japanpost.jp
 # Reference: https://twitter.com/NaomiSuzuki_/status/1145349129263931393
 # Reference: https://twitter.com/NaomiSuzuki_/status/1142432143399768066
 # Reference: https://twitter.com/NaomiSuzuki_/status/1141565589531455488
+# Reference: https://twitter.com/NaomiSuzuki_/status/1150847727661547520
 
 smbc-cardsp.jp
 smbccard.net
 smbc-carb.com
 smbc-card.com
 smbc-caeb.com
+smbc-scards.com
 
 # Reference: https://twitter.com/harugasumi/status/1145182622638718981
 
