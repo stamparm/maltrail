@@ -489,6 +489,8 @@ google.ssl.lnfo.cc
 /random2.js
 /sonar.js
 akibanoticias.com
+rotumal.com
+cdn.t.co/sm.js
 cdn.popcash.net/pop.js
 widgets.outbrain.com/outbrain.js
 google-analytics.com/ga.js
