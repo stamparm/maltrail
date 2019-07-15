@@ -20813,3 +20813,7 @@ kennewickinjurylaw.com
 # Reference: https://www.virustotal.com/gui/ip-address/137.175.79.26/relations (# 2018-07-26)
 
 tiantu3.com
+
+# Reference: https://twitter.com/Rzqu_/status/1150768345962225666
+
+beruilshop.club
