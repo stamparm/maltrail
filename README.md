@@ -185,6 +185,15 @@ cat /var/log/maltrail/$(date +"%Y-%m-%d").log
 
 ![Test](https://i.imgur.com/NYJg6Kl.png)
 
+Also, to test the capturing of DNS traffic you can try the following:
+
+```
+nslookup morphed.ru
+cat /var/log/maltrail/$(date +"%Y-%m-%d").log
+```
+
+![Test2](https://i.imgur.com/62oafEe.png)
+
 To stop **Sensor** and **Server** instances (if running in background) execute the following:
 
 ```
