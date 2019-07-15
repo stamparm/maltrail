@@ -130,3 +130,9 @@
 
 /qwerty.ps1
 /qwertyj1.ps1
+
+# Reference: https://twitter.com/James_inthe_box/status/1059087094612602881
+
+/posh80.ps1
+/posh443.ps1
+/samref448.ps1
