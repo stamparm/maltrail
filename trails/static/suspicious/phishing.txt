@@ -20725,3 +20725,7 @@ coinbase.urlessmovingsgroup.co.uk
 # Reference: https://twitter.com/PhishStats/status/1150648552621785089
 
 cigarmarket.com.do
+
+# Reference: https://twitter.com/x42x5a/status/1150688601933590528
+
+blmkuthit6t46xsazaseu4fx.z13.web.core.windows.net
