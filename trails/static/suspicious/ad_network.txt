@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://decoded.avast.io/threatintel/router-exploit-kits-an-overview-of-routercsrf-attacks-and-dns-hijacking-in-brazil/
+
+bodelen.com
+dolohen.com
+popcash.net
+rotumal.com
