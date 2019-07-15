@@ -20789,3 +20789,7 @@ amazon-billingsregistraprime.com
 # Reference: https://twitter.com/ANeilan/status/1150739124904714241
 
 icloud.findmy-mapa.com
+
+# Reference: https://twitter.com/IpNigh/status/1150572125603934208
+
+newpharmacies.org
