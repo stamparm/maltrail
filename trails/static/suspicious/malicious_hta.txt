@@ -194,3 +194,10 @@
 # Reference: https://twitter.com/killamjr/status/1150218238573404160
 
 /SystemUpdater.hta
+
+# Reference: https://www.freebuf.com/articles/network/196788.html (Chinese)
+
+/file.hta
+/fin.hta
+/final.hta
+/zoxr4yr5KV.hta
