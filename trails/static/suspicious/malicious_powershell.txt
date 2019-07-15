@@ -125,3 +125,8 @@
 # Reference: https://twitter.com/James_inthe_box/status/1150418960464039936
 
 /ppx.ps1
+
+# Reference: https://twitter.com/ViriBack/status/1150758731371749377
+
+/qwerty.ps1
+/qwertyj1.ps1
