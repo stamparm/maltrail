@@ -254,3 +254,7 @@ ns2.i-tunes-ld.com
 206.189.120.248:53
 ns1.vic.au.dns.opennic.glue
 ns2.vic.au.dns.opennic.glue
+
+# Reference: https://decoded.avast.io/threatintel/router-exploit-kits-an-overview-of-routercsrf-attacks-and-dns-hijacking-in-brazil/
+
+188.214.132.44:53
