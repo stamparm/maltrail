@@ -496,3 +496,7 @@ cdn.popcash.net/pop.js
 widgets.outbrain.com/outbrain.js
 google-analytics.com/ga.js
 cdn.taboola.com/TaboolaCookieSyncScript.js
+
+# Reference: https://twitter.com/James_inthe_box/status/1150794193494630401
+
+/sharing_buttons.js
