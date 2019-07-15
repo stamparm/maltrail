@@ -402,3 +402,7 @@ westflies.com/api/api.php
 /trfvbnhy.php
 /uythuycr.php
 /yhnbgtrfv.php
+
+# Reference: https://twitter.com/IpNigh/status/1150572125603934208
+
+/info_secure_account.php
