@@ -20721,3 +20721,7 @@ ret0ur9857.com
 coinbase.tuno-ines.co.uk
 coinbase.avehtieor.co.uk
 coinbase.urlessmovingsgroup.co.uk
+
+# Reference: https://twitter.com/PhishStats/status/1150648552621785089
+
+cigarmarket.com.do
