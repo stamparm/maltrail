@@ -20910,3 +20910,7 @@ siawallet.io
 # Reference: https://twitter.com/PhishStats/status/1151101543430664192
 
 casino-crown.com.au
+
+# Reference: https://twitter.com/IpNigh/status/1150920246905188354
+
+ppinternationalnet.000webhostapp.com
