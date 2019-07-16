@@ -347,10 +347,6 @@ westflies.com/api/api.php
 
 /index91484101498.php
 
-# Reference: https://twitter.com/ViriBack/status/1145135557548367872
-
-/index234index.php
-
 # Reference: https://twitter.com/smica83/status/1146648528846041089
 
 /7gvbp7pbrrdp2j8o5y4iqfva.php
@@ -402,3 +398,7 @@ westflies.com/api/api.php
 /trfvbnhy.php
 /uythuycr.php
 /yhnbgtrfv.php
+
+# Reference: https://twitter.com/IpNigh/status/1150572125603934208
+
+/info_secure_account.php
