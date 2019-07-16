@@ -485,9 +485,6 @@ google.ssl.lnfo.cc
 
 /alfuncsync.js
 /fingerprint_db.js
-/random.js
-/random2.js
-/sonar.js
 akibanoticias.com
 rotumal.com
 tharbadir.com
