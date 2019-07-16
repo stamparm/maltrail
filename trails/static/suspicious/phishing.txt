@@ -20846,3 +20846,7 @@ official-giveaway.info
 # Reference: https://twitter.com/harugasumi/status/1151005124715667456
 
 amaezonopvivng.com
+
+# Reference: https://twitter.com/PhishStats/status/1151056129662816256
+
+cloudduou.com
