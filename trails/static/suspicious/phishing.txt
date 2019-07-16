@@ -20935,3 +20935,7 @@ line-accountq.com
 # Reference: https://twitter.com/IpNigh/status/1150864893752598530
 
 osundu.000webhostapp.com
+
+# Reference: https://twitter.com/PhishStats/status/1151146722283917312
+
+billyroyle.top
