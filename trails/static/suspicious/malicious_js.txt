@@ -480,3 +480,20 @@ google.ssl.lnfo.cc
 
 /zaqedcvfr.js
 /zaqwsxcde.js
+
+# Reference: https://decoded.avast.io/threatintel/router-exploit-kits-an-overview-of-routercsrf-attacks-and-dns-hijacking-in-brazil/
+
+/alfuncsync.js
+/fingerprint_db.js
+akibanoticias.com
+rotumal.com
+tharbadir.com
+cdn.t.co/sm.js
+cdn.popcash.net/pop.js
+widgets.outbrain.com/outbrain.js
+google-analytics.com/ga.js
+cdn.taboola.com/TaboolaCookieSyncScript.js
+
+# Reference: https://twitter.com/James_inthe_box/status/1150794193494630401
+
+/sharing_buttons.js
