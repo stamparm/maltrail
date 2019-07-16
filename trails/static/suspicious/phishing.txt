@@ -10583,12 +10583,21 @@ jp-bank.japanpost.jp
 # Reference: https://twitter.com/NaomiSuzuki_/status/1145349129263931393
 # Reference: https://twitter.com/NaomiSuzuki_/status/1142432143399768066
 # Reference: https://twitter.com/NaomiSuzuki_/status/1141565589531455488
+# Reference: https://twitter.com/NaomiSuzuki_/status/1150847727661547520
+# Reference: https://twitter.com/NaomiSuzuki_/status/1151045761557291009
 
+fw2x.jp
 smbc-cardsp.jp
 smbccard.net
 smbc-carb.com
 smbc-card.com
 smbc-caeb.com
+smbc-scards.com
+smbc-jp.top
+smcb.co.za
+smbc-co.jp
+smbcco.jp
+smoco.jp
 
 # Reference: https://twitter.com/harugasumi/status/1145182622638718981
 
@@ -20725,3 +20734,111 @@ coinbase.urlessmovingsgroup.co.uk
 # Reference: https://twitter.com/PhishStats/status/1150648552621785089
 
 cigarmarket.com.do
+
+# Reference: https://twitter.com/x42x5a/status/1150688601933590528
+
+blmkuthit6t46xsazaseu4fx.z13.web.core.windows.net
+
+# Reference: https://decoded.avast.io/threatintel/router-exploit-kits-an-overview-of-routercsrf-attacks-and-dns-hijacking-in-brazil/
+# Reference: https://www.virustotal.com/gui/ip-address/188.214.132.44/relations
+
+aboilhamalcairdnarks.pw
+abomahamelcairnnarre.pw
+abordhanapcajonnasal.pw
+agarscaumanobelhelms.pw
+blackhawkexports.pw
+conveyrelease.pw
+diabeticpreventions.com
+distinent.com
+earthedpaganly.pw
+earthenpageant.pw
+earthlypageboy.pw
+earwigspaginae.pw
+earwormpaginal.pw
+encinarecite.pw
+encorereckon.pw
+entourageinsurance.com
+eventchaps.com
+eventcrazies.com
+eventdudes.com
+eventholics.com
+eventyeah.com
+greyhawkinternational.com
+hotdataviz.com
+initialcompany.com
+invictussales.pw
+kapeew.pw
+kingslandcommunications.pw
+lakesidelead.pw
+lastian.pw
+maxnox.pw
+mozzinox.pw
+newdawnbrokerage.com
+nobbycaulshellyagape.pw
+nobelcaumahelmsagars.pw
+noblecausehelotagasp.pw
+onestopplatform.com
+polaradvisory.pw
+polarstarcompany.pw
+produceconvey.pw
+prospectcorporation.pw
+releaseprocreate.pw
+releasetransmit.pw
+soverwhelm.com
+spotlightlaboratory.com
+stillwaterdirect.pw
+stretchyboard.com
+transmitrelease.pw
+westcoastlead.com
+
+# Reference: https://twitter.com/ninoseki/status/1150741430811234307
+
+amazon-billingsregistraprime.com
+
+# Reference: https://twitter.com/ANeilan/status/1150739124904714241
+
+icloud.findmy-mapa.com
+
+# Reference: https://twitter.com/IpNigh/status/1150572125603934208
+
+newpharmacies.org
+
+# Reference: https://twitter.com/reecdeep/status/1150736283909742595
+
+wertyutrweqertyu.wixsite.com
+
+# Reference: https://twitter.com/reecdeep/status/1150743774693404672
+
+agendaplusllc.ga
+
+# Reference: https://twitter.com/smica83/status/1150755757740175361
+
+lekom-tubular.com
+
+# Reference: https://twitter.com/smica83/status/1150763017291874304
+
+kennewickinjurylaw.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/137.175.79.26/relations (# 2018-07-26)
+
+tiantu3.com
+
+# Reference: https://twitter.com/Rzqu_/status/1150768345962225666
+
+beruilshop.club
+
+# Reference: https://twitter.com/IpNigh/status/1150693158730326022
+
+pymegrow.com
+
+# Reference: https://twitter.com/IpNigh/status/1150818750100332545
+
+wudustore.com
+
+# Reference: https://twitter.com/IpNigh/status/1150904877129916419
+
+vicogiganti.top
+
+# Reference: https://twitter.com/PhishStats/status/1151010805569282053
+
+official-giveaway.info
