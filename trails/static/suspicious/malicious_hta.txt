@@ -201,3 +201,7 @@
 /fin.hta
 /final.hta
 /zoxr4yr5KV.hta
+
+# Reference: https://twitter.com/James_inthe_box/status/1059087094612602881
+
+/SamRefJobsVacancies.hta
