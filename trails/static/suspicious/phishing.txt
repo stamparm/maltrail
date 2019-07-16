@@ -20918,3 +20918,7 @@ ppinternationalnet.000webhostapp.com
 # Reference: https://twitter.com/IpNigh/status/1150835104035614721
 
 user-limited-ppl.com
+
+# Reference: https://twitter.com/romonlyht/status/1150898091366555648
+
+ewdaline.com
