@@ -20850,3 +20850,7 @@ amaezonopvivng.com
 # Reference: https://twitter.com/PhishStats/status/1151056129662816256
 
 cloudduou.com
+
+# Reference: https://twitter.com/IpNigh/status/1150889601415942146
+
+boelineservi.webcindario.com
