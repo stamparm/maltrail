@@ -20866,3 +20866,7 @@ sxgb6.tumblr.com
 # Reference: https://twitter.com/ANeilan/status/1151078847833661440
 
 unlock-account.appleid.bgstajglaah.com
+
+# Reference: https://twitter.com/IpNigh/status/1151064828628426752
+
+myetherwallet.com.online-transactions.xyz
