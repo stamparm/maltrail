@@ -20842,3 +20842,7 @@ vicogiganti.top
 # Reference: https://twitter.com/PhishStats/status/1151010805569282053
 
 official-giveaway.info
+
+# Reference: https://twitter.com/harugasumi/status/1151005124715667456
+
+amaezonopvivng.com
