@@ -20870,3 +20870,27 @@ unlock-account.appleid.bgstajglaah.com
 # Reference: https://twitter.com/IpNigh/status/1151064828628426752
 
 myetherwallet.com.online-transactions.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/23.234.51.185/relations
+
+112231.com
+3220.cc
+3220b.cc
+3220c.cc
+3220f.cc
+3220g.cc
+3220i.cc
+3220z.cc
+3923.cc
+3923a.cc
+3923b.cc
+3923c.cc
+3923d.cc
+3923e.cc
+3923f.cc
+3923g.cc
+3923i.cc
+3923k.cc
+3923m.cc
+3923o.cc
+3923r.cc
