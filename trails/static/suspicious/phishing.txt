@@ -31376,3 +31376,8 @@ micro-xchange.atspace.co.uk
 # Reference: https://twitter.com/DarkDotFail/status/1151283411597910016
 
 darkfail.com
+
+# Reference: https://www.bleepingcomputer.com/news/security/new-spam-campaign-controlled-by-attackers-via-dns-txt-records/
+
+euxjouernui.icu
+ourmazdcompany.net
