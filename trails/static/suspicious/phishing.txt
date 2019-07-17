@@ -31364,3 +31364,7 @@ tosdline.com
 # Reference: https://twitter.com/PhishStats/status/1151418584020766720
 
 grandortho.lemonit.work
+
+# Reference: https://twitter.com/dave_daves/status/1151466095016067075
+
+halifaxtrust.online
