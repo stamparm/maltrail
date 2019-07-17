@@ -31356,3 +31356,7 @@ hartolnk.net
 # Reference: https://twitter.com/IpNigh/status/1151236380644634625
 
 chase-login.vivelumen.cl
+
+# Reference: https://twitter.com/romonlyht/status/1151355547699953671
+
+tosdline.com
