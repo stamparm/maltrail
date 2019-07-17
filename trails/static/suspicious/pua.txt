@@ -1948,3 +1948,7 @@ irc-files.org
 # Reference: https://twitter.com/MalwarePatrol/status/1149543416478306304
 
 premium.roxypalace.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1151355352832716803
+
+getfreevideo.world
