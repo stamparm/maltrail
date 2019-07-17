@@ -362,3 +362,8 @@ ns4.whatsappannunci.com
 ns5.whatsappannunci.com
 ns9.corposs.com
 185.28.193.195:53
+
+# Reference: https://www.bleepingcomputer.com/news/security/new-spam-campaign-controlled-by-attackers-via-dns-txt-records/
+
+ns1.firstdnshoster.com
+104.193.252.177:53
