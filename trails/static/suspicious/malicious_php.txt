@@ -402,3 +402,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/IpNigh/status/1150572125603934208
 
 /info_secure_account.php
+
+# Reference: https://twitter.com/YouMayBeHacked/status/1151197704090988544
+
+/dna_excel.php
