@@ -31352,3 +31352,7 @@ dastxgshs09.com
 bobcat.crontzi.org
 e-iposta.com
 hartolnk.net
+
+# Reference: https://twitter.com/IpNigh/status/1151236380644634625
+
+chase-login.vivelumen.cl
