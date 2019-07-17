@@ -31360,3 +31360,7 @@ chase-login.vivelumen.cl
 # Reference: https://twitter.com/romonlyht/status/1151355547699953671
 
 tosdline.com
+
+# Reference: https://twitter.com/PhishStats/status/1151418584020766720
+
+grandortho.lemonit.work
