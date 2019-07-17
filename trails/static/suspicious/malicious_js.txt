@@ -497,3 +497,9 @@ cdn.taboola.com/TaboolaCookieSyncScript.js
 # Reference: https://twitter.com/James_inthe_box/status/1150794193494630401
 
 /sharing_buttons.js
+
+# Reference: https://twitter.com/adrian__luca/status/1151393084380459009
+# Reference: https://app.any.run/tasks/61147c70-2def-4d72-aa32-4b1e45da1180/
+
+/k55qtf704vukk11a8r24riuuoc.js
+/pe0gecpi4ins56vi9kfrnh7kbs.js
