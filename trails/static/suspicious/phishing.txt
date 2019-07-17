@@ -31372,3 +31372,7 @@ halifaxtrust.online
 # Reference: https://twitter.com/yvesago/status/1151464898565672961
 
 micro-xchange.atspace.co.uk
+
+# Reference: https://twitter.com/DarkDotFail/status/1151283411597910016
+
+darkfail.com
