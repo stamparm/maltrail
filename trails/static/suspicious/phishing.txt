@@ -31398,3 +31398,7 @@ ilovezee247.com
 # Reference: https://www.virustotal.com/gui/file/f92e258df82192f9b206ed320f6bca20ff99950ea0c77c08f51eb83f49824c68/detection
 
 http://190.14.38.8/api/setting/get_setting.php
+
+# Reference: https://twitter.com/0xValkyrie/status/1151671625663864838
+
+commercialandresidentialwindowtint.com
