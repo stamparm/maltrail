@@ -31436,3 +31436,7 @@ resetting-protection-accounts-support-rakuten.com
 # Reference: https://twitter.com/romonlyht/status/1151605239541161985
 
 amaezoniospving.com
+
+# Reference: https://twitter.com/PhishStats/status/1151962180193071109
+
+ismaldives.com
