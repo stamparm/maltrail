@@ -31418,3 +31418,7 @@ aggiorna-canone.net
 # Reference: https://twitter.com/PhishStats/status/1151735383878721536
 
 narkegolv.se
+
+# Reference: https://twitter.com/romonlyht/status/1151604650732216320
+
+amazon-id-safety-center-signin-openid-pape-max-auth-age-openid.wsoftbank.info
