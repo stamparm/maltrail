@@ -31406,3 +31406,7 @@ commercialandresidentialwindowtint.com
 # Reference: https://twitter.com/PhishStats/status/1151690514351218689
 
 boaconstrictormorphsx.com
+
+# Reference: https://twitter.com/PhishStats/status/1151645146448105472
+
+intuitor.azurewebsites.net
