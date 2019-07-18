@@ -31410,3 +31410,7 @@ boaconstrictormorphsx.com
 # Reference: https://twitter.com/PhishStats/status/1151645146448105472
 
 intuitor.azurewebsites.net
+
+# Reference: https://twitter.com/D3LabIT/status/1151491692467576832
+
+aggiorna-canone.net
