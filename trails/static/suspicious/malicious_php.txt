@@ -406,3 +406,9 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/YouMayBeHacked/status/1151197704090988544
 
 /dna_excel.php
+
+# Reference: https://twitter.com/adrian__luca/status/1151393084380459009
+# Reference: https://app.any.run/tasks/61147c70-2def-4d72-aa32-4b1e45da1180/
+
+/8yZ7YDpM2Cu3lqbB7WFJV19PE9mb1f8c.php
+/XKIOEEEEE.KDJDD.php
