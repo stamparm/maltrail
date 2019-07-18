@@ -65,10 +65,7 @@ def fetch():
                 if '://' in line:
                     line = re.search(r"://(.*)", line).group(1)
                     if '/' not in line:
-                        if re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", line):
-                            line = "%s:80" % line
-                        else:
-                            line = "%s/" % line
+                        line = "%s/" % line
                 if '/' in line:
                     if line.count('/') > 1:
                         line = line.rstrip('/')
