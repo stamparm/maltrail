@@ -31421,4 +31421,4 @@ narkegolv.se
 
 # Reference: https://twitter.com/romonlyht/status/1151604650732216320
 
-amazon-id-safety-center-signin-openid-pape-max-auth-age-openid.wsoftbank.info
+wsoftbank.info
