@@ -31421,3 +31421,10 @@ narkegolv.se
 # Reference: https://twitter.com/romonlyht/status/1151604650732216320
 
 wsoftbank.info
+
+# Reference: https://twitter.com/ANeilan/status/1151802915398520833
+
+authserviceasiapp.com
+appleid\-appleupdatesec\.[-a-z0-9]+\.com$
+apple\.com\.internet\-solutions\.(center|co)$
+paymentz-detail.page
