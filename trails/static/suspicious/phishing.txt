@@ -31414,3 +31414,7 @@ intuitor.azurewebsites.net
 # Reference: https://twitter.com/D3LabIT/status/1151491692467576832
 
 aggiorna-canone.net
+
+# Reference: https://twitter.com/PhishStats/status/1151735383878721536
+
+narkegolv.se
