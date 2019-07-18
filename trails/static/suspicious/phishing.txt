@@ -31432,3 +31432,7 @@ paymentz-detail.page
 # Reference: https://twitter.com/romonlyht/status/1151771535260045313
 
 resetting-protection-accounts-support-rakuten.com
+
+# Reference: https://twitter.com/romonlyht/status/1151605239541161985
+
+amaezoniospving.com
