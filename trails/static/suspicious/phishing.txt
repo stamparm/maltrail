@@ -31465,3 +31465,7 @@ paymentsslc-netflix.com
 # Reference: https://twitter.com/executemalware/status/1152210932862529537
 
 http://198.199.76.149
+
+# Reference: https://twitter.com/yvesago/status/1152220895525691392
+
+cnrs-innovasion.weebly.com
