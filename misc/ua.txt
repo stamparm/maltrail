@@ -715,3 +715,7 @@ UniqUAF
 # Reference: https://www.flashpoint-intel.com/blog/newly-discovered-malware-framework-cashing-in-on-ad-fraud/
 
 Installer/23
+
+# Reference: https://twitter.com/James_inthe_box/status/1152234123844415489
+
+binary_getter/1.0
