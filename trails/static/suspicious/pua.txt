@@ -1952,3 +1952,7 @@ premium.roxypalace.com
 # Reference: https://twitter.com/MalwarePatrol/status/1151355352832716803
 
 getfreevideo.world
+
+# Reference: https://twitter.com/MalwarePatrol/status/1152080131550138368
+
+dl.xetapp.us
