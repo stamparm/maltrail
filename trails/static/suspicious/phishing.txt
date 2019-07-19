@@ -31477,3 +31477,7 @@ yoolmota.com
 # Reference: https://twitter.com/MalwarePatrol/status/1152300866529087488
 
 paaypal.esy.es
+
+# Reference: https://twitter.com/executemalware/status/1152209542782050304
+
+marten4.metaldns.com
