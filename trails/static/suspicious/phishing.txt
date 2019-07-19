@@ -31469,3 +31469,7 @@ http://198.199.76.149
 # Reference: https://twitter.com/yvesago/status/1152220895525691392
 
 cnrs-innovasion.weebly.com
+
+# Reference: https://twitter.com/PhishStats/status/1152279208128856064
+
+yoolmota.com
