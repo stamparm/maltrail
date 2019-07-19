@@ -4670,3 +4670,7 @@ ggiso.co
 # Reference: https://www.virustotal.com/gui/domain/upgrinfo.com/relations
 
 upgrinfo.com
+
+# Reference: https://www.virustotal.com/gui/domain/metaldns.com/relations
+
+metaldns.com
