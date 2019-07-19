@@ -31461,3 +31461,7 @@ wowsupermarket.net
 # Reference: https://twitter.com/executemalware/status/1152205731795484673
 
 paymentsslc-netflix.com
+
+# Reference: https://twitter.com/executemalware/status/1152210932862529537
+
+http://198.199.76.149
