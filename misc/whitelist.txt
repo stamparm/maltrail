@@ -839,6 +839,8 @@ playx.fun
 knjige.club
 etcd.socket
 philaorch.org
+mozilla.org
+discord.gg
 
 # NS of afraid.org
 
