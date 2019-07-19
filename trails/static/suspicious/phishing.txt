@@ -31453,3 +31453,7 @@ etransfer1-mobigateway5-refund1.com
 # Reference: https://twitter.com/ANeilan/status/1152163685466607616
 
 itunes-manage.services
+
+# Reference: https://twitter.com/PhishStats/status/1152188254281699328
+
+wowsupermarket.net
