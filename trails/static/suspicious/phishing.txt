@@ -31426,8 +31426,9 @@ wsoftbank.info
 
 authserviceasiapp.com
 appleid\-appleupdatesec\.[-a-z0-9]+\.com$
-apple\.com\.internet\-solutions\.(center|co)$
 paymentz-detail.page
+apple.com.internet-solutions.center
+apple.com.internet-solutions.co
 
 # Reference: https://twitter.com/romonlyht/status/1151771535260045313
 
