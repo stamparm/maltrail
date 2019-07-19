@@ -31421,3 +31421,27 @@ narkegolv.se
 # Reference: https://twitter.com/romonlyht/status/1151604650732216320
 
 wsoftbank.info
+
+# Reference: https://twitter.com/ANeilan/status/1151802915398520833
+
+authserviceasiapp.com
+appleid\-appleupdatesec\.[-a-z0-9]+\.com$
+paymentz-detail.page
+apple.com.internet-solutions.center
+apple.com.internet-solutions.co
+
+# Reference: https://twitter.com/romonlyht/status/1151771535260045313
+
+resetting-protection-accounts-support-rakuten.com
+
+# Reference: https://twitter.com/romonlyht/status/1151605239541161985
+
+amaezoniospving.com
+
+# Reference: https://twitter.com/PhishStats/status/1151962180193071109
+
+ismaldives.com
+
+# Reference: https://twitter.com/reecdeep/status/1151949297669365765
+
+securelogin.bp.poste.it.freessl256.best
