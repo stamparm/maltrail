@@ -31473,3 +31473,7 @@ cnrs-innovasion.weebly.com
 # Reference: https://twitter.com/PhishStats/status/1152279208128856064
 
 yoolmota.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1152300866529087488
+
+paaypal.esy.es
