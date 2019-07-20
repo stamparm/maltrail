@@ -31505,3 +31505,7 @@ nrssm.in
 # Reference: https://twitter.com/PhishStats/status/1152505476808134656
 
 creditfido.com
+
+# Reference: https://twitter.com/romonlyht/status/1152428318492205056
+
+yhdfline.com
