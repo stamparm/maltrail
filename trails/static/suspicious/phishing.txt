@@ -31517,3 +31517,7 @@ kennewickinjurylaw.com
 # Reference: https://twitter.com/PhishStats/status/1152550760804171781
 
 id-crd.com
+
+# Reference: https://twitter.com/PhishStats/status/1152596001934516224
+
+icteducationbd.com
