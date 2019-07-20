@@ -31489,3 +31489,7 @@ MyJCB-jp.top
 # Reference: https://twitter.com/PhishStats/status/1152369838016348160
 
 militybj2n6k7a5j.net
+
+# Reference: https://twitter.com/PhishStats/status/1152324576774434816
+
+redlandslabour.org.uk
