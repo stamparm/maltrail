@@ -31521,3 +31521,7 @@ id-crd.com
 # Reference: https://twitter.com/PhishStats/status/1152596001934516224
 
 icteducationbd.com
+
+# Reference: https://twitter.com/PhishStats/status/1152642000967090177
+
+clubentrepriseshm.org
