@@ -31485,3 +31485,7 @@ marten4.metaldns.com
 # Reference: https://twitter.com/satontonton/status/1152403888760209408
 
 MyJCB-jp.top
+
+# Reference: https://twitter.com/PhishStats/status/1152369838016348160
+
+militybj2n6k7a5j.net
