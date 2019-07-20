@@ -31483,8 +31483,12 @@ paaypal.esy.es
 marten4.metaldns.com
 
 # Reference: https://twitter.com/satontonton/status/1152403888760209408
+# Reference: https://twitter.com/NaomiSuzuki_/status/1152453536891822082
+# Reference: https://twitter.com/NaomiSuzuki_/status/1021347078213996549
 
 MyJCB-jp.top
+jcb-co-jp.top
+myjcbcard.com
 
 # Reference: https://twitter.com/PhishStats/status/1152369838016348160
 
