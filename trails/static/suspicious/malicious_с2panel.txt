@@ -484,3 +484,7 @@ http://92.63.192.127/panel/admin.php
 # Reference: https://twitter.com/webtobesocial/status/778654938276720642
 
 /ReallyOk/FuckYouMother/panel/
+
+# Reference: https://twitter.com/P3pperP0tts/status/1152538885974634496
+
+/34-wp-mailing.php
