@@ -31501,3 +31501,7 @@ redlandslabour.org.uk
 # Reference: https://twitter.com/PhishStats/status/1152460806975606784
 
 nrssm.in
+
+# Reference: https://twitter.com/PhishStats/status/1152505476808134656
+
+creditfido.com
