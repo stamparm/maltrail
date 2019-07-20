@@ -31481,3 +31481,7 @@ paaypal.esy.es
 # Reference: https://twitter.com/executemalware/status/1152209542782050304
 
 marten4.metaldns.com
+
+# Reference: https://twitter.com/satontonton/status/1152403888760209408
+
+MyJCB-jp.top
