@@ -31513,3 +31513,7 @@ yhdfline.com
 # Reference: https://twitter.com/smica83/status/1152533044529717248
 
 kennewickinjurylaw.com
+
+# Reference: https://twitter.com/PhishStats/status/1152550760804171781
+
+id-crd.com
