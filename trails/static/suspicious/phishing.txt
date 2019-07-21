@@ -31529,3 +31529,7 @@ clubentrepriseshm.org
 # Reference: https://twitter.com/dvk01uk/status/1152819645881208832
 
 mahabba.com.my
+
+# Reference: https://twitter.com/PhishStats/status/1152825026116235265
+
+5egurancaapp.net
