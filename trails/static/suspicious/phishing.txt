@@ -31533,3 +31533,7 @@ mahabba.com.my
 # Reference: https://twitter.com/PhishStats/status/1152825026116235265
 
 5egurancaapp.net
+
+# Reference: https://twitter.com/PhishStats/status/1152868573553078272
+
+magyarvizslaklub.hu
