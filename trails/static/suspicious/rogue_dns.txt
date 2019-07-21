@@ -32,9 +32,13 @@
 
 # Reference: https://twitter.com/bad_packets/status/1114236807367905280
 # Reference: https://www.ixiacom.com/company/blog/paypal-netflix-gmail-and-uber-users-among-targets-new-wave-dns-hijacking-attacks
+# Reference: https://securityboulevard.com/2019/04/paypal-netflix-gmail-and-uber-users-among-targets-in-new-wave-of-dns-hijacking-attacks/
 
+195.128.124.131:53
 195.128.124.150:53
 195.128.124.181:53
+195.128.126.165:53
+35.228.220.70:53
 
 # Reference: https://blog.talosintelligence.com/2019/04/seaturtle.html
 # Reference: https://blog.talosintelligence.com/2019/07/sea-turtle-keeps-on-swimming.html
