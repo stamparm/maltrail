@@ -31486,11 +31486,13 @@ marten4.metaldns.com
 # Reference: https://twitter.com/NaomiSuzuki_/status/1152453536891822082
 # Reference: https://twitter.com/NaomiSuzuki_/status/1021347078213996549
 # Reference: https://twitter.com/NaomiSuzuki_/status/1152878431580745729
+# Reference: https://twitter.com/NaomiSuzuki_/status/1152971673806635008
 
 MyJCB-jp.top
 jcb-co-jp.top
 myjcbcard.com
 jcb-co-jp.xyz
+myjcb-jp.top
 
 # Reference: https://twitter.com/PhishStats/status/1152369838016348160
 
