@@ -31445,3 +31445,99 @@ ismaldives.com
 # Reference: https://twitter.com/reecdeep/status/1151949297669365765
 
 securelogin.bp.poste.it.freessl256.best
+
+# Reference: https://twitter.com/PhishStats/status/1152143511707426817
+
+etransfer1-mobigateway5-refund1.com
+
+# Reference: https://twitter.com/ANeilan/status/1152163685466607616
+
+itunes-manage.services
+
+# Reference: https://twitter.com/PhishStats/status/1152188254281699328
+
+wowsupermarket.net
+
+# Reference: https://twitter.com/executemalware/status/1152205731795484673
+
+paymentsslc-netflix.com
+
+# Reference: https://twitter.com/executemalware/status/1152210932862529537
+
+http://198.199.76.149
+
+# Reference: https://twitter.com/yvesago/status/1152220895525691392
+
+cnrs-innovasion.weebly.com
+
+# Reference: https://twitter.com/PhishStats/status/1152279208128856064
+
+yoolmota.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1152300866529087488
+
+paaypal.esy.es
+
+# Reference: https://twitter.com/executemalware/status/1152209542782050304
+
+marten4.metaldns.com
+
+# Reference: https://twitter.com/satontonton/status/1152403888760209408
+# Reference: https://twitter.com/NaomiSuzuki_/status/1152453536891822082
+# Reference: https://twitter.com/NaomiSuzuki_/status/1021347078213996549
+# Reference: https://twitter.com/NaomiSuzuki_/status/1152878431580745729
+# Reference: https://twitter.com/NaomiSuzuki_/status/1152971673806635008
+
+MyJCB-jp.top
+jcb-co-jp.top
+myjcbcard.com
+jcb-co-jp.xyz
+myjcb-jp.top
+
+# Reference: https://twitter.com/PhishStats/status/1152369838016348160
+
+militybj2n6k7a5j.net
+
+# Reference: https://twitter.com/PhishStats/status/1152324576774434816
+
+redlandslabour.org.uk
+
+# Reference: https://twitter.com/PhishStats/status/1152460806975606784
+
+nrssm.in
+
+# Reference: https://twitter.com/PhishStats/status/1152505476808134656
+
+creditfido.com
+
+# Reference: https://twitter.com/romonlyht/status/1152428318492205056
+
+yhdfline.com
+
+# Reference: https://twitter.com/smica83/status/1152533044529717248
+
+kennewickinjurylaw.com
+
+# Reference: https://twitter.com/PhishStats/status/1152550760804171781
+
+id-crd.com
+
+# Reference: https://twitter.com/PhishStats/status/1152596001934516224
+
+icteducationbd.com
+
+# Reference: https://twitter.com/PhishStats/status/1152642000967090177
+
+clubentrepriseshm.org
+
+# Reference: https://twitter.com/dvk01uk/status/1152819645881208832
+
+mahabba.com.my
+
+# Reference: https://twitter.com/PhishStats/status/1152825026116235265
+
+5egurancaapp.net
+
+# Reference: https://twitter.com/PhishStats/status/1152868573553078272
+
+magyarvizslaklub.hu
