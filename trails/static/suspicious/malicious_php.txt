@@ -416,3 +416,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/YouMayBeHacked/status/1152234246083424256
 
 /myriad-pro-installerr.php
+
+# Reference: https://twitter.com/IpNigh/status/1152929163797512194
+
+/h1nnbwfsediifgz2yv3w09xs.php
