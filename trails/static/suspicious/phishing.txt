@@ -31941,3 +31941,7 @@ finanzportal-login-app.com
 # Reference: https://twitter.com/IpNigh/status/1153199330976829440
 
 perceptional-engine.000webhostapp.com
+
+# Reference: https://twitter.com/PhishStats/status/1153276227802816513
+
+gambrouta.info
