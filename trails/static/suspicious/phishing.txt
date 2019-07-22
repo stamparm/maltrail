@@ -31921,3 +31921,7 @@ antivirus-online.club
 # Reference: https://twitter.com/IpNigh/status/1153259056720764928
 
 carlbalita.com
+
+# Reference: https://twitter.com/IpNigh/status/1153228366553767937
+
+durbarlogistics.com
