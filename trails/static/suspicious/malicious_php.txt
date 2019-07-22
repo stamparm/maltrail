@@ -420,3 +420,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/IpNigh/status/1152929163797512194
 
 /h1nnbwfsediifgz2yv3w09xs.php
+
+# Reference: https://twitter.com/IpNigh/status/1153149383589933056
+
+/l7mg85smredbpehm3gnp2g1n.php
