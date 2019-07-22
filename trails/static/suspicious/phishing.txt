@@ -31546,3 +31546,7 @@ magyarvizslaklub.hu
 
 wathsapro.com
 watogles.info
+
+# Reference: https://twitter.com/PhishingAi/status/1153304347494629376
+
+giffgaff-services.support
