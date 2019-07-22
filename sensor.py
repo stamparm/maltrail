@@ -156,22 +156,20 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
         if getattr(trails, "_regex", None):
             match = re.search(trails._regex, query)
             if match:
-                group = match.groupdict().keys()[0]
-                for candidate in trails._regex.split("(?P<"):
-                    if candidate.startswith("%s>" % group):
-                        candidate = candidate.split('>', 1)[-1][:-1]
-                        if candidate in trails:
-                            result = True
-                            trail = match.group(0)
+                group, trail = [_ for _ in match.groupdict().items() if _[1] is not None][0]
+                candidate = trails._regex.split("(?P<")[int(group[1:]) + 1]
+                candidate = candidate.split('>', 1)[-1].rstrip('|')[:-1]
+                if candidate in trails:
+                    result = True
+                    trail = match.group(0)
 
-                            prefix, suffix = query[:match.start()], query[match.end():]
-                            if prefix:
-                                trail = "(%s)%s" % (prefix, trail)
-                            if suffix:
-                                trail = "%s(%s)" % (trail, suffix)
+                    prefix, suffix = query[:match.start()], query[match.end():]
+                    if prefix:
+                        trail = "(%s)%s" % (prefix, trail)
+                    if suffix:
+                        trail = "%s(%s)" % (trail, suffix)
 
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[candidate][0], trails[candidate][1]), packet)
-                        break
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[candidate][0], trails[candidate][1]), packet)
 
         if ".onion." in query:
             trail = re.sub(r"(\.onion)(\..*)", r"\1(\2)", query)
