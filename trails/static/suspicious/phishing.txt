@@ -31541,3 +31541,8 @@ mahabba.com.my
 # Reference: https://twitter.com/PhishStats/status/1152868573553078272
 
 magyarvizslaklub.hu
+
+# Reference: https://twitter.com/dave_daves/status/1153201895722422272
+
+wathsapro.com
+watogles.info
