@@ -31917,3 +31917,7 @@ timises.com
 # Reference: https://twitter.com/PhishingAi/status/1153297054061326337
 
 antivirus-online.club
+
+# Reference: https://twitter.com/IpNigh/status/1153259056720764928
+
+carlbalita.com
