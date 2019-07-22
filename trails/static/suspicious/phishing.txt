@@ -31550,3 +31550,7 @@ watogles.info
 # Reference: https://twitter.com/PhishingAi/status/1153304347494629376
 
 giffgaff-services.support
+
+# Reference: https://twitter.com/IpNigh/status/1153321516861468672
+
+cunninghamvineyards.com
