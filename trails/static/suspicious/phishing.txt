@@ -31548,8 +31548,10 @@ wathsapro.com
 watogles.info
 
 # Reference: https://twitter.com/PhishingAi/status/1153304347494629376
+# Reference: https://twitter.com/IpNigh/status/1153306670040268800
 
 giffgaff-services.support
+gifgaf-review.site
 
 # Reference: https://twitter.com/IpNigh/status/1153321516861468672
 
