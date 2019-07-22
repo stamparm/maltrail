@@ -31913,3 +31913,7 @@ zeuwohua.com
 # Reference: https://twitter.com/PhishStats/status/1153321102556504065
 
 timises.com
+
+# Reference: https://twitter.com/PhishingAi/status/1153297054061326337
+
+antivirus-online.club
