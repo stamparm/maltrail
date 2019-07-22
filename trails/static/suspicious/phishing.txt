@@ -31933,3 +31933,7 @@ kupondefteri.com
 # Reference: https://twitter.com/NaomiSuzuki_/status/1153287556932354048
 
 resetting-defend-accounts-protection-support-rakuten.com
+
+# Reference: https://twitter.com/IpNigh/status/1153274994136403968
+
+finanzportal-login-app.com
