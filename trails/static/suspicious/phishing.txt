@@ -31909,3 +31909,7 @@ yoguzy.com
 yoiwpu.com
 zeufdee.com
 zeuwohua.com
+
+# Reference: https://twitter.com/PhishStats/status/1153321102556504065
+
+timises.com
