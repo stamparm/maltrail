@@ -32003,3 +32003,7 @@ promo-tesla.club
 # Reference: https://twitter.com/MalwarePatrol/status/1153700430020521988
 
 azur-residence.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1153719674909143040
+
+problem-account.support
