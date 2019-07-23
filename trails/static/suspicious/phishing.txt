@@ -31975,3 +31975,7 @@ carpentryankerites.com
 # Reference: https://twitter.com/IpNigh/status/1153479056102477824
 
 logins-en.xyz
+
+# Reference: https://twitter.com/PhishStats/status/1153593175707201536
+
+zolfanow.co.kr
