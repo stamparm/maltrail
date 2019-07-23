@@ -32023,3 +32023,7 @@ u8h73gygy4b.at.ua
 # Reference: https://twitter.com/JCyberSec_/status/1153717610737000448
 
 br-iforgot.com
+
+# Reference: https://twitter.com/IpNigh/status/1153502954567208963
+
+unri.or.id
