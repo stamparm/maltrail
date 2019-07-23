@@ -1,3 +1,4 @@
+#! coding=utf8
 #!/usr/bin/env python2
 
 """
@@ -89,6 +90,18 @@ from core.settings import WHITELIST_HTTP_REQUEST_PATHS
 from core.settings import WHITELIST_UA_KEYWORDS
 from core.update import update_ipcat
 from core.update import update_trails
+
+import torch
+import pandas as pd
+import cccheck.read_data
+import warnings
+import time
+import cccheck.cal_smilar
+from sklearn.externals import joblib
+import cccheck.match
+import tldextract
+import tqdm
+import cccheck.match
 
 _buffer = None
 _caps = []
@@ -347,6 +360,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                         method, path, _ = line.split(' ')
 
                 if method and path:
+                    # method and PATH
                     post_data = None
                     host = dst_ip
                     first_index = tcp_data.find("\r\nHost:")
@@ -357,13 +371,16 @@ def _process_packet(packet, sec, usec, ip_offset):
                         last_index = tcp_data.find("\r\n", first_index)
                         if last_index >= 0:
                             host = tcp_data[first_index:last_index]
-                            host = host.strip().lower()
+                            host = host.strip().lower()    #..............
                             if host.endswith(":80"):
                                 host = host[:-3]
                             if host and host[0].isalpha() and dst_ip in trails:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, "%s (%s)" % (dst_ip, host.split(':')[0]), trails[dst_ip][0], trails[dst_ip][1]), packet)
                             elif config.CHECK_HOST_DOMAINS:
                                 _check_domain(host, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, packet)
+
+                            # if config.USE_CCCHECK:
+                                # test(host, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, packet)
                     elif config.USE_HEURISTICS and config.CHECK_MISSING_HOST:
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, "%s%s" % (host, path), "missing host header (suspicious)", "(heuristic)"), packet)
 
@@ -716,6 +733,244 @@ def _process_packet(packet, sec, usec, ip_offset):
     except Exception:
         if config.SHOW_DEBUG:
             traceback.print_exc()
+
+def get_host(x):
+    val = tldextract.extract(x)
+    return val.domain + '.' + val.suffix
+
+def in_ip(x):
+    if x < 0:
+        return 1
+    return 0
+
+def not_in_ip(x, y):
+    if x <= 0.12:
+        return 1
+    elif (x > 0.12) & (y == 1):
+        return 1
+    else:
+        return 0
+
+
+def isFloat(string):
+    return re.compile(r'^[-+]?[0-9]+\.[0-9]+$').match(string)
+
+
+def isHex(string):
+    return re.compile(r'^[0-9a-fA-F]+$').match(string)
+
+
+def replace(string, split2_char):
+    # 由split2_char是否为空，决定是否有第二次截取字符串
+    # 类似 /ss/sss/ssss   只截/
+    if split2_char == '':
+        str1 = ''
+        str2 = string
+        # 类似 /ss=2/ss=3  先截/，再截=
+    else:
+        str_list = string.split(split2_char)
+        if len(str_list) == 1:
+            return string  # 无法二次截取，直接return
+
+        str1 = str_list[0] + split2_char  # 截取的前部分
+        str2 = str_list[1]  # 截取的后部分
+
+    if str2.isdigit():  # 纯数字
+        return str1 + 'int;' + str(len(str2))
+    elif str2.isalpha():  # 纯字母
+        return str1 + 'str;' + str(len(str2))
+    elif isFloat(str2):  # 浮点型  如：2.1254
+        return str1 + "float;" + str(len(str2))
+    elif isHex(str2):  # 16进制  如：46ed4ac85e
+        return str1 + "hex;" + str(len(str2))
+    elif str2.isalnum():  # 所有都是数字或字母
+        return str1 + "alnum;" + str(len(str2))
+    return string  # 其他
+
+
+def replace_2(string, split2_char):
+    # 由split2_char是否为空，决定是否有第二次截取字符串
+    # 类似 /ss/sss/ssss   只截/
+    if split2_char == '':
+        str1 = ''
+        str2 = string
+        # 类似 /ss=2/ss=3  先截/，再截=
+    else:
+        str_list = string.split(split2_char)
+        if len(str_list) == 1:
+            return string  # 无法二次截取，直接return
+
+        str1 = str_list[0] + split2_char  # 截取的前部分
+        str2 = str_list[1]  # 截取的后部分
+
+    if str2.isdigit():  # 纯数字
+        return '$' * (len(str2))
+    elif str2.isalpha():  # 纯字母
+        return '*' * (len(str2))
+    # elif isFloat(str2):                             #浮点型  如：2.1254
+    #     return str1+"float;"+str(len(str2))
+    elif isHex(str2):  # 16进制  如：46ed4ac85e
+        return '@' * (len(str2))
+    # elif str2.isalnum():                            #所有都是数字或字母
+    #     return str1+"alnum;"+str(len(str2))
+    return string  # 其他
+
+
+def handle(list, type, split_char='', split2_char=''):
+    # print(list)
+    for index in range(len(list)):
+        # print(str(index),value)
+        if str(list[index]) == 'nan':  # 假如为空，修改为0或''，并结束
+            # print(str(index))
+            if type == 'path':
+                list[index] = ''  # 假如为path，修改为''
+            else:
+                list[index] = 0  # 假如为其他类型，修改为0
+        else:
+            if split_char == '':
+                list[index] = replace(list[index], split2_char)  # 假如split_char为空，不需要截取，直接replace处理
+                continue
+            new_values = ''
+            values = list[index].split(split_char)  # 假如split_char不为空，第一次截取。如'/ss/586/dsa'，split_char='/'
+            for value in values:
+                if value != '':
+                    if type == 'path':
+                        new_values = new_values + replace_2(value, split2_char)  # path是另一种处理方式
+                    else:
+                        new_values = new_values + replace(value, split2_char)  # 逐个replace处理，传入split2_char，可能有二次处理
+                new_values += split_char
+            list[index] = new_values[0:-1]  # 因为多次拼接，去除最后一个多余的字符
+    # print(list)
+
+
+def handle_2(list, type):
+    total_num = 0
+    total_length = 0
+    for index, value in enumerate(list):
+        if str(value) != 'nan':
+            list[index] = type + ';' + str(len(str(value)))
+            total_num += 1
+            total_length += len(str(value))
+
+    average = total_length // total_num
+    print(type + ';' + str(average))
+
+    for index, value in enumerate(list):
+        if str(value) == 'nan':
+            list[index] = type + ';' + str(average)
+
+    return list
+
+
+def generalization(readFile, wirteFile):
+    df = pd.read_csv(readFile, sep='\a')  # 读取csv
+
+    pd.options.mode.chained_assignment = None  # default='warn',允许直接在df改动
+
+    # 保存泛化前的host+其他头部的数据
+    df['original_accept_language'] = df['accept_language']
+    df['original_accept_encoding'] = df['accept_encoding']
+    df['original_host'] = df['host']
+
+    handle(df['path'], 'path', '/', '')  # 处理中间路径
+    handle(df['query_parameter'], 'query_parameter', '&', '=')  # 处理请求参数
+    # handle(df['user_agent'],'user_agent')                     #处理user-agent
+    # handle(df['accept_language'],'accept_language')           #处理accept_language
+    # handle(df['host'])                                        #处理其他的？？
+    handle_2(df['accept_language'], 'accept_language')
+    handle_2(df['accept_encoding'], 'accept_encoding')
+    handle_2(df['host'], 'host')
+
+    df.to_csv(wirteFile, sep='\a', index=False)  # 写入csv
+    print("Succeed to generalize !")
+
+
+def test(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, packet=None):
+    #
+    # net = torch.load('model/LSTM_model.pkl')
+    net = torch.load('model/LSTM_model.pkl', map_location='cpu')
+    # gs = joblib.load('model/gs.m')
+    gs = joblib.load('model/gs2.m')
+
+
+    # result = cccheck.read_data.read('data/data.csv')
+    # ip_dst,ip.len,method,full_uri,host,path,query_parameter,user_agent,cookie,accept_language,accept_encoding,original_accept_language,original_accept_encoding,original_host,y,label,ip_24
+    result = pd.DataFrame({'ip_dst': [dst_ip], 'full_uri': [2], 'host':[],'path':[],'query_parameter':[],'user_agent':[],'cookie':[],'accept_language':[],'accept_encoding':[],'original_accept_language':[],'original_accept_encoding':[],'original_host':[],'y':[],'label':[],'ip_24':[]},index=[0])
+    print(result)
+    result = cccheck.cal_smilar.group_feature(result, 'user_agent')
+    result = cccheck.cal_smilar.group_feature(result, 'host')
+    result = cccheck.cal_smilar.group_feature(result, 'accept_language')
+    result = cccheck.cal_smilar.group_feature(result, 'accept_encoding')
+    result = cccheck.cal_smilar.group_feature(result, 'ip_dst')
+    CPT = pd.read_csv('model/CPT.csv', sep='\a')
+    valid = pd.read_csv('data/valid.csv')
+    train = pd.read_csv('data/test.csv')
+    safe_host = pd.read_csv('data/host.csv', names=['host'])
+
+    result['original_host'] = result['original_host'].apply(lambda x: get_host(x))
+
+    test_ip_1 = valid['ip_24'].unique()
+    test_ip_2 = [ip for ip in result['ip_24'].unique() if ip not in test_ip_1]
+
+    result = result[result['ip_24'].isin(test_ip_2)]
+    result = result[(result['y'] == 'safe')|(result['y'] == 'malicious')]
+
+    ans_host = result['original_host'].unique()
+    safe_host = list(safe_host['host'].values)
+    same_host = list(set(safe_host) & set(ans_host))
+    result = result[~result['original_host'].isin(same_host)]
+    print(len(result[result['y'] == 'malicious']))
+
+    dis = []
+    lens = len(result)
+    with tqdm.tqdm(range(lens), 'calculate dis') as t:
+        for i in t:
+            #     print(test_df.iloc[i,:])
+            cpt, tmp = cccheck.match.get_dis(pd.DataFrame(result.iloc[i, :]).T, CPT, gs)
+            dis.append(tmp)
+    result['dis'] = dis
+
+    # LSTM predict not in model
+    now_time = time.time()
+    seq_length = 200
+    pre = []
+    for s in result['original_host']:
+        val = tldextract.extract(s)
+        strs = val.domain
+        pre.append(net.predict(strs, seq_length))
+    result['label'] = pre
+    print("LSTM spent time {} s".format(time.time() - now_time))
+
+    result['pre'] = result.apply(lambda x: not_in_ip(x['dis'], x['label']), axis=1)
+
+    x = 0.12
+    print(len(result[(result['y'] == 'safe') | (result['y'] == 'malicious')]))
+    print("safe dis > " + str(x) + " :" + str(len(result[(result['y'] == 'safe') & (result['dis'] > x)])))
+    print("safe dis > " + str(x) + " label=1:" + str(
+        len(result[(result['y'] == 'safe') & (result['dis'] > x) & (result['label'] == 1)])))
+    print("safe dis <= " + str(x) + " :" + str(len(result[(result['y'] == 'safe') & (result['dis'] <= x)])))
+    print("safe dis <= " + str(x) + " label=1:" + str(
+        len(result[(result['y'] == 'safe') & (result['dis'] <= x) & (result['label'] == 1)])))
+    print("malicious dis > " + str(x) + " :" + str(len(result[(result['y'] == 'malicious') & (result['dis'] > x)])))
+    print("malicious dis > " + str(x) + " label=1:" + str(
+        len(result[(result['y'] == 'malicious') & (result['dis'] > x) & (result['label'] == 1)])))
+    print("malicious dis <= " + str(x) + " :" + str(len(result[(result['y'] == 'malicious') & (result['dis'] <= x)])))
+    print("malicious dis <= " + str(x) + " label=1:" + str(
+        len(result[(result['y'] == 'malicious') & (result['dis'] <= x) & (result['label'] == 1)])))
+
+    # cal score
+    # TP = len(result[(result['pre'] == 1) & (result['y'] == 'malicious')])
+    # FN = len(result[(result['pre'] == 0) & (result['y'] == 'malicious')])
+    # FP = len(result[(result['pre'] == 1) & (result['y'] == 'safe')])
+    # TN = len(result[(result['pre'] == 0) & (result['y'] == 'safe')])
+    # P = TP / (TP + FP)
+    # R = TP / (TP + FN)
+    # F1 = 2 * TP / (2 * TP + FP + FN)
+    # auc = (TP + TN) / (TP + FN + FP + TN)
+    # print("pre = {} recall = {} F1_Score = {} zunque = {}".format(P, R, F1, auc))
+    # print(TP, FN, FP, TN)
+
+    return result['pre']
 
 def init():
     """
