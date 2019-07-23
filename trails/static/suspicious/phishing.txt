@@ -31963,3 +31963,7 @@ ceo-aruba.com
 # Reference: https://twitter.com/PhishStats/status/1153547629344821249
 
 304nottinghamway.com
+
+# Reference: https://twitter.com/PhishStats/status/1153502381184835584
+
+sheikhulbandi.com
