@@ -5,6 +5,7 @@
 # Reference: https://twitter.com/ninoseki/status/1106842790351106048
 # Reference: https://twitter.com/ninoseki/status/1150379897820332032
 # Reference: https://twitter.com/ninoseki/status/1127109264877600768
+# Reference: https://drive.google.com/file/d/12TaMKqqjkr_r3iq3LbPcGc6LKv2k1Hmw/view
 
 1.53.252.164:53
 1.53.252.215:53
@@ -12,10 +13,14 @@
 1.171.175.119:53
 118.30.28.38:53
 118.30.28.39:53
+118.168.200.231:53
+128.14.6.12:53
+128.14.6.13:53
 171.244.3.110:53
 171.244.3.111:53
 171.244.33.114:53
 171.244.33.116:53
+220.136.110.179:53
 
 # Reference: https://twitter.com/bad_packets/status/1112087547050520577
 
