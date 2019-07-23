@@ -31987,3 +31987,7 @@ mamejing.com
 # Reference: https://twitter.com/harugasumi/status/1153554348904816642
 
 uivood.com
+
+# Reference: https://twitter.com/PhishStats/status/1153683536899117056
+
+dwaar.org
