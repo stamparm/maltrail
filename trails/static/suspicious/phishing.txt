@@ -31967,3 +31967,7 @@ ceo-aruba.com
 # Reference: https://twitter.com/PhishStats/status/1153502381184835584
 
 sheikhulbandi.com
+
+# Reference: https://twitter.com/IpNigh/status/1153383988171595779
+
+carpentryankerites.com
