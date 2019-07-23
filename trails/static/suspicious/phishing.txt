@@ -32007,3 +32007,7 @@ azur-residence.com
 # Reference: https://twitter.com/malwrhunterteam/status/1153719674909143040
 
 problem-account.support
+
+# Reference: https://twitter.com/IpNigh/status/1153634157781762048
+
+dalbraut.top
