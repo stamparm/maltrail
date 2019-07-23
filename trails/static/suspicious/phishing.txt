@@ -32027,3 +32027,7 @@ br-iforgot.com
 # Reference: https://twitter.com/IpNigh/status/1153502954567208963
 
 unri.or.id
+
+# Reference: https://twitter.com/satontonton/status/1153308764377878530
+
+amiazon.me
