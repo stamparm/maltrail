@@ -31979,3 +31979,7 @@ logins-en.xyz
 # Reference: https://twitter.com/PhishStats/status/1153593175707201536
 
 zolfanow.co.kr
+
+# Reference: https://twitter.com/harugasumi/status/1153498712913530882
+
+mamejing.com
