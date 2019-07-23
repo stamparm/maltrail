@@ -31999,3 +31999,7 @@ amazxo.com
 # Reference: https://twitter.com/MalwarePatrol/status/1153700788058959873
 
 promo-tesla.club
+
+# Reference: https://twitter.com/MalwarePatrol/status/1153700430020521988
+
+azur-residence.com
