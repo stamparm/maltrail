@@ -32043,3 +32043,7 @@ voicenote3-secondary.z23.web.core.windows.net
 # Reference: https://twitter.com/PhishStats/status/1154046059280310273
 
 ingresoxtremo.com
+
+# Reference: https://twitter.com/PhishStats/status/1154091369058766848
+
+seosite98.ir
