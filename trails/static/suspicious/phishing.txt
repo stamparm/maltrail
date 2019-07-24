@@ -32039,3 +32039,7 @@ panahilix.000webhostapp.com
 # Reference: https://twitter.com/dvk01uk/status/1153897636795179008
 
 voicenote3-secondary.z23.web.core.windows.net
+
+# Reference: https://twitter.com/PhishStats/status/1154046059280310273
+
+ingresoxtremo.com
