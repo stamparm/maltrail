@@ -488,3 +488,7 @@ http://92.63.192.127/panel/admin.php
 # Reference: https://twitter.com/P3pperP0tts/status/1152538885974634496
 
 /34-wp-mailing.php
+
+# Reference: https://twitter.com/MisterCh0c/status/1154056708806848515
+
+g.icab.pk
