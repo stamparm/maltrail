@@ -719,3 +719,7 @@ Installer/23
 # Reference: https://twitter.com/James_inthe_box/status/1152234123844415489
 
 binary\_getter/1.0
+
+# Reference: https://twitter.com/James_inthe_box/status/1153450058722865152
+
+KJW0rm
