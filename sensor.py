@@ -757,8 +757,18 @@ def init():
             _ = load_trails()
             trails.update(_)
 
-            if hasattr(_, "_regex"):
-                trails._regex = _._regex
+        trails._regex = ""
+        for trail in trails:
+            if re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, re.I):
+                try:
+                    re.compile(trail)
+                except:
+                    pass
+                else:
+                    if re.escape(trail) != trail:
+                        trails._regex += "|(?P<g%s>%s)" % (trails._regex.count("(?P<g"), trail)
+
+        trails._regex = trails._regex.strip('|')
 
         thread = threading.Timer(config.UPDATE_PERIOD, update_timer)
         thread.daemon = True

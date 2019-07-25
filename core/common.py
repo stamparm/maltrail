@@ -227,7 +227,6 @@ def load_trails(quiet=False):
         print "[i] loading trails..."
 
     retval = TrailsDict()
-    retval._regex = ""
 
     if os.path.isfile(config.TRAILS_FILE):
         try:
@@ -239,19 +238,8 @@ def load_trails(quiet=False):
                         if not check_whitelisted(trail):
                             retval[trail] = (info, reference)
 
-                        if re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, re.I):
-                            try:
-                                re.compile(trail)
-                            except:
-                                pass
-                            else:
-                                if re.escape(trail) != trail:
-                                    retval._regex += "|(?P<g%s>%s)" % (retval._regex.count("(?P<g"), trail)
-
         except Exception, ex:
             exit("[!] something went wrong during trails file read '%s' ('%s')" % (config.TRAILS_FILE, ex))
-        finally:
-            retval._regex = retval._regex.strip('|')
 
     if not quiet:
         _ = len(retval)
