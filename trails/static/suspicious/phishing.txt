@@ -32079,3 +32079,7 @@ appleid.apple.com.patiencecontempt.com
 # Reference: https://twitter.com/James_inthe_box/status/1154089361970876417
 
 adda.bg
+
+# Reference: https://twitter.com/PhishStats/status/1154363029640876032
+
+outlookweb3server.creatorlink.net
