@@ -2577,3 +2577,7 @@ dnshome.de
 # Reference: https://www.virustotal.com/gui/domain/freemyip.com/relations
 
 freemyip.com
+
+# Reference: https://www.virustotal.com/gui/domain/dynamic-m.com/relations
+
+dynamic-m.com
