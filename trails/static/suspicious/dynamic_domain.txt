@@ -2585,3 +2585,7 @@ dynamic-m.com
 # Reference: https://www.virustotal.com/gui/domain/mynetgear.com/relations
 
 mynetgear.com
+
+# Reference: https://www.virustotal.com/gui/domain/asuscomm.com/relations
+
+asuscomm.com
