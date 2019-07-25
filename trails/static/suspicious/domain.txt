@@ -4674,3 +4674,7 @@ upgrinfo.com
 # Reference: https://www.virustotal.com/gui/domain/metaldns.com/relations
 
 metaldns.com
+
+# Reference: https://www.virustotal.com/gui/domain/bcn-pool.us/relations
+
+bcn-pool.us
