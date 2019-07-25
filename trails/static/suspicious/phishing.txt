@@ -32047,3 +32047,7 @@ ingresoxtremo.com
 # Reference: https://twitter.com/PhishStats/status/1154091369058766848
 
 seosite98.ir
+
+# Reference: https://twitter.com/MaelSecurity/status/1154150928037101576
+
+admin.booking.com.caseid-116594.support
