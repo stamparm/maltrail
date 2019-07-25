@@ -32059,3 +32059,7 @@ u43338203n.ha003.t.justns.ru
 # Reference: https://twitter.com/ninoseki/status/1154275550367633408
 
 amazoncom-japan-security.com
+
+# Reference: https://twitter.com/PhishStats/status/1154227449636556800
+
+bill.new.woodfloorsbyace.com
