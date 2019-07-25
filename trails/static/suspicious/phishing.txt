@@ -32055,3 +32055,7 @@ admin.booking.com.caseid-116594.support
 # Reference: https://twitter.com/PhishStats/status/1154317740813049857
 
 u43338203n.ha003.t.justns.ru
+
+# Reference: https://twitter.com/ninoseki/status/1154275550367633408
+
+amazoncom-japan-security.com
