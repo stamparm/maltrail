@@ -32087,3 +32087,7 @@ outlookweb3server.creatorlink.net
 # Reference: https://twitter.com/PhishStats/status/1154454088370855936
 
 plateau.co.in
+
+# Reference: https://twitter.com/PhishStats/status/1154408347648630785
+
+demo.djhost.info
