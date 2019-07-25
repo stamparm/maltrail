@@ -4678,3 +4678,7 @@ metaldns.com
 # Reference: https://www.virustotal.com/gui/domain/bcn-pool.us/relations
 
 bcn-pool.us
+
+# Reference: https://www.virustotal.com/gui/domain/killwaf.com/relations
+
+killwaf.com
