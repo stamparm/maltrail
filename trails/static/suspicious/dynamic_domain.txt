@@ -2573,3 +2573,7 @@ srvdns.de
 ddnssec.de
 dyndnssec.de
 dnshome.de
+
+# Reference: https://www.virustotal.com/gui/domain/freemyip.com/relations
+
+freemyip.com
