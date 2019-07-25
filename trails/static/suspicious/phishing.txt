@@ -32083,3 +32083,7 @@ adda.bg
 # Reference: https://twitter.com/PhishStats/status/1154363029640876032
 
 outlookweb3server.creatorlink.net
+
+# Reference: https://twitter.com/PhishStats/status/1154454088370855936
+
+plateau.co.in
