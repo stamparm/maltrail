@@ -32091,3 +32091,7 @@ plateau.co.in
 # Reference: https://twitter.com/PhishStats/status/1154408347648630785
 
 demo.djhost.info
+
+# Reference: https://twitter.com/NaomiSuzuki_/status/1154434106517671936
+
+smbcoco.jp
