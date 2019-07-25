@@ -32063,3 +32063,10 @@ amazoncom-japan-security.com
 # Reference: https://twitter.com/PhishStats/status/1154227449636556800
 
 bill.new.woodfloorsbyace.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1154110636982321153
+
+appleid.socialdespise.com
+appleid.apple.socialdespise.com
+appleid.com.patiencecontempt.com
+appleid.apple.com.patiencecontempt.com
