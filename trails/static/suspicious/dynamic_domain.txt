@@ -2593,3 +2593,7 @@ asuscomm.com
 # Reference: https://www.virustotal.com/gui/domain/urown.cloud/relations
 
 urown.cloud
+
+# Reference: https://www.virustotal.com/gui/domain/nerdpol.ovh/relations
+
+nerdpol.ovh
