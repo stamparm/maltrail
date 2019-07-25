@@ -10578,7 +10578,7 @@ jp-bank.japanpost.jp
 # Reference: https://twitter.com/NaomiSuzuki_/status/1148479704850026496
 # Reference: https://twitter.com/NaomiSuzuki_/status/1143471193443278848
 
-^apple\.varifidogio[a-z]{2,}\.com$
+^apple\.varifidogio[a-z]{2,}\.com
 
 # Reference: https://twitter.com/NaomiSuzuki_/status/1145349129263931393
 # Reference: https://twitter.com/NaomiSuzuki_/status/1142432143399768066
@@ -10586,6 +10586,7 @@ jp-bank.japanpost.jp
 # Reference: https://twitter.com/NaomiSuzuki_/status/1150847727661547520
 # Reference: https://twitter.com/NaomiSuzuki_/status/1151045761557291009
 # Reference: https://twitter.com/521_maika/status/1077019453957668866
+# Reference: https://twitter.com/NaomiSuzuki_/status/1154257560343470080
 
 fw2x.jp
 smbc-cardsp.jp
@@ -10603,6 +10604,8 @@ smoco.jp
 smbc-co-jp.pl
 smbc-co.pl
 smbc-cojp.it
+smbcoco.jp
+smbcej.org
 
 # Reference: https://twitter.com/harugasumi/status/1145182622638718981
 
