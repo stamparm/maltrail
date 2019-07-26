@@ -21,7 +21,7 @@ from core.attribdict import AttribDict
 from core.trailsdict import TrailsDict
 
 NAME = "Maltrail"
-VERSION = "0.13.48"
+VERSION = "0.13.49"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
