@@ -32135,3 +32135,7 @@ mufg-jp.global
 # Reference: https://twitter.com/IpNigh/status/1154786301528477697
 
 heartnsolesantarosa.com
+
+# Reference: https://twitter.com/IpNigh/status/1154830004666150917
+
+confirmeperfecti.com
