@@ -32099,3 +32099,7 @@ smbcoco.jp
 # Reference: https://twitter.com/IpNigh/status/1154242573445341186
 
 center34445.000webhostapp.com
+
+# Reference: https://twitter.com/nullcookies/status/1154496539932286976
+
+jscjc.duckdns.org
