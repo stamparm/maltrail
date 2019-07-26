@@ -32147,3 +32147,7 @@ mantto-offshore.org
 # Reference: https://twitter.com/IpNigh/status/1154854244341735424
 
 verification-informations.fr
+
+# Reference: https://twitter.com/PhishStats/status/1154861995897905152
+
+mystcu.online
