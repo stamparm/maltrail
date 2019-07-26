@@ -428,3 +428,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/MalwarePatrol/status/1153699284497440771
 
 /bxo2fxmx9ub9kg1ghf3xc9va.php
+
+# Reference: https://twitter.com/IpNigh/status/1154707735524630528
+
+/ah1who7vrexwov9pe3g57va9.php
