@@ -727,3 +727,7 @@ KJW0rm
 # Reference: https://twitter.com/ViriBack/status/1154377089077993474
 
 Finder/28
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/brushaloader-still-sweeping-victims-one-year-later
+
+sENB2a36p61HSKES
