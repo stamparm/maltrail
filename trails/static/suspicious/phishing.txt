@@ -32118,3 +32118,7 @@ jacarandacc.com.au
 facebooĸ.com
 facebóók.com
 messenger-facebook.com
+
+# Reference: https://twitter.com/dave_daves/status/1154763686726307840
+
+updateyouraccount-apple.com
