@@ -32131,3 +32131,7 @@ mufg-co-jp.work
 mufg-japan.org
 mufg-co-jp.kim
 mufg-jp.global
+
+# Reference: https://twitter.com/IpNigh/status/1154786301528477697
+
+heartnsolesantarosa.com
