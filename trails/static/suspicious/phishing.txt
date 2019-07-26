@@ -32103,3 +32103,7 @@ center34445.000webhostapp.com
 # Reference: https://twitter.com/nullcookies/status/1154496539932286976
 
 jscjc.duckdns.org
+
+# Reference: https://twitter.com/PhishStats/status/1154589476158615552
+
+hindikavikssoni.com
