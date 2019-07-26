@@ -32122,3 +32122,12 @@ messenger-facebook.com
 # Reference: https://twitter.com/dave_daves/status/1154763686726307840
 
 updateyouraccount-apple.com
+
+# Reference: https://twitter.com/spammailinfo/status/1154464238535995392
+
+mufg-inc.com
+mufg-co-jp.red
+mufg-co-jp.work
+mufg-japan.org
+mufg-co-jp.kim
+mufg-jp.global
