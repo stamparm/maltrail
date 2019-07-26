@@ -4682,3 +4682,7 @@ bcn-pool.us
 # Reference: https://www.virustotal.com/gui/domain/killwaf.com/relations
 
 killwaf.com
+
+# Reference: https://www.virustotal.com/gui/domain/vzglagtime.net/relations
+
+vzglagtime.net
