@@ -10578,7 +10578,7 @@ jp-bank.japanpost.jp
 # Reference: https://twitter.com/NaomiSuzuki_/status/1148479704850026496
 # Reference: https://twitter.com/NaomiSuzuki_/status/1143471193443278848
 
-^apple\.varifidogio[a-z]{2,}\.com$
+^apple\.varifidogio[a-z]{2,}\.com
 
 # Reference: https://twitter.com/NaomiSuzuki_/status/1145349129263931393
 # Reference: https://twitter.com/NaomiSuzuki_/status/1142432143399768066
@@ -10586,6 +10586,7 @@ jp-bank.japanpost.jp
 # Reference: https://twitter.com/NaomiSuzuki_/status/1150847727661547520
 # Reference: https://twitter.com/NaomiSuzuki_/status/1151045761557291009
 # Reference: https://twitter.com/521_maika/status/1077019453957668866
+# Reference: https://twitter.com/NaomiSuzuki_/status/1154257560343470080
 
 fw2x.jp
 smbc-cardsp.jp
@@ -10603,6 +10604,8 @@ smoco.jp
 smbc-co-jp.pl
 smbc-co.pl
 smbc-cojp.it
+smbcoco.jp
+smbcej.org
 
 # Reference: https://twitter.com/harugasumi/status/1145182622638718981
 
@@ -31488,6 +31491,7 @@ marten4.metaldns.com
 # Reference: https://twitter.com/NaomiSuzuki_/status/1152878431580745729
 # Reference: https://twitter.com/NaomiSuzuki_/status/1152971673806635008
 # Reference: https://twitter.com/abel1ma/status/1153066408734908416
+# Reference: https://twitter.com/NaomiSuzuki_/status/1153193629168439296
 
 MyJCB-jp.top
 jcb-co-jp.top
@@ -31495,6 +31499,7 @@ myjcbcard.com
 jcb-co-jp.xyz
 myjcb-jp.top
 myjcb-jp.ltd
+myjcb-jp.xyz
 
 # Reference: https://twitter.com/PhishStats/status/1152369838016348160
 
@@ -32047,3 +32052,73 @@ ingresoxtremo.com
 # Reference: https://twitter.com/PhishStats/status/1154091369058766848
 
 seosite98.ir
+
+# Reference: https://twitter.com/MaelSecurity/status/1154150928037101576
+
+admin.booking.com.caseid-116594.support
+
+# Reference: https://twitter.com/PhishStats/status/1154317740813049857
+
+u43338203n.ha003.t.justns.ru
+
+# Reference: https://twitter.com/ninoseki/status/1154275550367633408
+
+amazoncom-japan-security.com
+
+# Reference: https://twitter.com/PhishStats/status/1154227449636556800
+
+bill.new.woodfloorsbyace.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1154110636982321153
+
+appleid.socialdespise.com
+appleid.apple.socialdespise.com
+appleid.com.patiencecontempt.com
+appleid.apple.com.patiencecontempt.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1154089361970876417
+
+adda.bg
+
+# Reference: https://twitter.com/PhishStats/status/1154363029640876032
+
+outlookweb3server.creatorlink.net
+
+# Reference: https://twitter.com/PhishStats/status/1154454088370855936
+
+plateau.co.in
+
+# Reference: https://twitter.com/PhishStats/status/1154408347648630785
+
+demo.djhost.info
+
+# Reference: https://twitter.com/NaomiSuzuki_/status/1154434106517671936
+
+smbcoco.jp
+
+# Reference: https://twitter.com/IpNigh/status/1154242573445341186
+
+center34445.000webhostapp.com
+
+# Reference: https://twitter.com/nullcookies/status/1154496539932286976
+
+jscjc.duckdns.org
+
+# Reference: https://twitter.com/PhishStats/status/1154589476158615552
+
+hindikavikssoni.com
+
+# Reference: https://twitter.com/PhishStats/status/1154634639518117892
+
+jacarandacc.com.au
+
+# Reference: https://twitter.com/illegalFawn/status/1154688803468120064
+# Reference: https://twitter.com/illegalFawn/status/1154753472392323072
+
+facebooĸ.com
+facebóók.com
+messenger-facebook.com
+
+# Reference: https://twitter.com/dave_daves/status/1154763686726307840
+
+updateyouraccount-apple.com
