@@ -32107,3 +32107,7 @@ jscjc.duckdns.org
 # Reference: https://twitter.com/PhishStats/status/1154589476158615552
 
 hindikavikssoni.com
+
+# Reference: https://twitter.com/PhishStats/status/1154634639518117892
+
+jacarandacc.com.au
