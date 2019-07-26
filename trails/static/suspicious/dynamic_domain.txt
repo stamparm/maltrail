@@ -2573,3 +2573,27 @@ srvdns.de
 ddnssec.de
 dyndnssec.de
 dnshome.de
+
+# Reference: https://www.virustotal.com/gui/domain/freemyip.com/relations
+
+freemyip.com
+
+# Reference: https://www.virustotal.com/gui/domain/dynamic-m.com/relations
+
+dynamic-m.com
+
+# Reference: https://www.virustotal.com/gui/domain/mynetgear.com/relations
+
+mynetgear.com
+
+# Reference: https://www.virustotal.com/gui/domain/asuscomm.com/relations
+
+asuscomm.com
+
+# Reference: https://www.virustotal.com/gui/domain/urown.cloud/relations
+
+urown.cloud
+
+# Reference: https://www.virustotal.com/gui/domain/nerdpol.ovh/relations
+
+nerdpol.ovh
