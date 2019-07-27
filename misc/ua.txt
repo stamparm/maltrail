@@ -755,3 +755,7 @@ l33boLAMER
 # Reference: https://twitter.com/sixdub/status/992001190950031361
 
 WinHTTP loader/1.0
+
+# Reference: https://twitter.com/stvemillertime/status/985150675527974912
+
+CertUtil URL Agent
