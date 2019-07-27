@@ -32167,3 +32167,7 @@ rcktmmetro.org.np
 # Reference: https://twitter.com/IpNigh/status/1154936115549343744
 
 swaceapsce.com
+
+# Reference: https://twitter.com/PhishStats/status/1154951906135093250
+
+alphagympark.com
