@@ -796,3 +796,7 @@ system-update
 test\_hInternet
 installer-agent
 sleep 300000
+
+# Reference: https://twitter.com/ericasadun/status/12333713924816896
+
+MediaControl
