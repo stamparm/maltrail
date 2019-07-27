@@ -32159,3 +32159,7 @@ notice\-wells\-access\-locked[0-9]+\.tk
 # Reference: https://twitter.com/romonlyht/status/1154897149521354752
 
 amazeonojp.com
+
+# Reference: https://twitter.com/PhishStats/status/1154906860341911552
+
+rcktmmetro.org.np
