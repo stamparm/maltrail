@@ -32175,3 +32175,7 @@ alphagympark.com
 # Reference: https://twitter.com/NaomiSuzuki_/status/1154562369978171392
 
 mufgi.jp
+
+# Reference: https://twitter.com/MalwarePatrol/status/1154997116638519296
+
+doc100.azurewebsites.net
