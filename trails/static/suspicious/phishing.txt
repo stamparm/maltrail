@@ -32218,3 +32218,7 @@ protonmail.team
 prtn.app
 prtn.xyz
 secure-protonmail.com
+
+# Reference: https://twitter.com/IpNigh/status/1154923307105431554
+
+serwer1930286.home.pl
