@@ -780,3 +780,7 @@ Gluten Free Crawler/1.0
 # Reference: https://twitter.com/abuse_ch/status/700252982731018241
 
 givmafile
+
+# Reference: https://twitter.com/nimolix/status/562532331357892608
+
+parsijoo-bot
