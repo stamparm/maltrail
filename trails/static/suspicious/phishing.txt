@@ -32183,3 +32183,7 @@ doc100.azurewebsites.net
 # Reference: https://twitter.com/PhishStats/status/1154996869656956928
 
 zoic-selection.000webhostapp.com
+
+# Reference: https://twitter.com/PhishStats/status/1155042368497864704
+
+wireles01.online
