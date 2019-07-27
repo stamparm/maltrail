@@ -32151,3 +32151,7 @@ verification-informations.fr
 # Reference: https://twitter.com/PhishStats/status/1154861995897905152
 
 mystcu.online
+
+# Reference: https://twitter.com/bad_packets/status/1154909534671892480
+
+notice\-wells\-access\-locked[0-9]+\.tk
