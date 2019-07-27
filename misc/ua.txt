@@ -747,3 +747,7 @@ Mozilla/5.2 (i686-w64-mingw32)
 # Reference: https://twitter.com/ItsReallyNick/status/1033413803470467072
 
 NMS\.19
+
+# Reference: https://twitter.com/PhishingAi/status/994210210389557250
+
+l33boLAMER
