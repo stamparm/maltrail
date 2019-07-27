@@ -759,3 +759,7 @@ WinHTTP loader/1.0
 # Reference: https://twitter.com/stvemillertime/status/985150675527974912
 
 CertUtil URL Agent
+
+# Reference: https://twitter.com/malwareforme/status/918503641887096832
+
+OtherUser
