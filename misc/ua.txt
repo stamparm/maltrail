@@ -784,3 +784,7 @@ givmafile
 # Reference: https://twitter.com/nimolix/status/562532331357892608
 
 parsijoo-bot
+
+# Reference: https://twitter.com/bortzmeyer/status/545492437628891136
+
+Kim Jong-un Evil Browser
