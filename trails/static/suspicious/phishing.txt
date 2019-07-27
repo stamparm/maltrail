@@ -32155,3 +32155,7 @@ mystcu.online
 # Reference: https://twitter.com/bad_packets/status/1154909534671892480
 
 notice\-wells\-access\-locked[0-9]+\.tk
+
+# Reference: https://twitter.com/romonlyht/status/1154897149521354752
+
+amazeonojp.com
