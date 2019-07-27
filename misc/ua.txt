@@ -788,3 +788,11 @@ parsijoo-bot
 # Reference: https://twitter.com/bortzmeyer/status/545492437628891136
 
 Kim Jong-un Evil Browser
+
+# Reference: http://www.behindthefirewalls.com/2013/11/the-importance-of-user-agent-in-botnets.html
+
+underworld
+system-update
+test\_hInternet
+installer-agent
+sleep 300000
