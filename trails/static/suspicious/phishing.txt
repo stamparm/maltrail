@@ -32171,3 +32171,7 @@ swaceapsce.com
 # Reference: https://twitter.com/PhishStats/status/1154951906135093250
 
 alphagympark.com
+
+# Reference: https://twitter.com/NaomiSuzuki_/status/1154562369978171392
+
+mufgi.jp
