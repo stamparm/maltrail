@@ -743,3 +743,7 @@ Mozilla/5.2 (i686-w64-mingw32)
 # Reference: https://twitter.com/DissectMalware/status/1069507395448184833
 
 4M2yC5u1stom4U1se3r
+
+# Reference: https://twitter.com/ItsReallyNick/status/1033413803470467072
+
+NMS\.19
