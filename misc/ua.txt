@@ -739,3 +739,7 @@ Mozilla/5.3 (i686-iamsatan-mingw32)
 # Reference: https://twitter.com/reesespcres/status/1144703633377964033
 
 Mozilla/5.2 (i686-w64-mingw32)
+
+# Reference: https://twitter.com/DissectMalware/status/1069507395448184833
+
+4M2yC5u1stom4U1se3r
