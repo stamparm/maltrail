@@ -32204,3 +32204,17 @@ spdf-sjs.com
 # Reference: https://twitter.com/MalwarePatrol/status/1155087706537504768
 
 xxeroticvideos.com
+
+# Reference: https://threatconnect.com/blog/building-out-protonmail-spoofed-infrastructure/
+
+mailprotonmail.ch
+mailprotonmail.com
+protonmail.direct
+protonmail.gmbh
+protonmail.sh
+protonmail.support
+protonmail.systems
+protonmail.team
+prtn.app
+prtn.xyz
+secure-protonmail.com
