@@ -32179,3 +32179,7 @@ mufgi.jp
 # Reference: https://twitter.com/MalwarePatrol/status/1154997116638519296
 
 doc100.azurewebsites.net
+
+# Reference: https://twitter.com/PhishStats/status/1154996869656956928
+
+zoic-selection.000webhostapp.com
