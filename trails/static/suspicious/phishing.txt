@@ -32196,3 +32196,7 @@ whatsapp-grub18.gq
 # Reference: https://twitter.com/IpNigh/status/1154876400106647553
 
 ameli-remboursement.fr
+
+# Reference: https://twitter.com/romonlyht/status/1154938098330955776
+
+spdf-sjs.com
