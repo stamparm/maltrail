@@ -32226,3 +32226,7 @@ serwer1930286.home.pl
 # Reference: https://www.virustotal.com/gui/domain/hewlettpackerd.org/relations
 
 hewlettpackerd.org
+
+# Reference: https://twitter.com/PhishStats/status/1155178288740032513
+
+conneccit.com
