@@ -32187,3 +32187,8 @@ zoic-selection.000webhostapp.com
 # Reference: https://twitter.com/PhishStats/status/1155042368497864704
 
 wireles01.online
+
+# Reference: https://twitter.com/ANeilan/status/1155065961315258368
+
+whatsapp-grub18.tk
+whatsapp-grub18.gq
