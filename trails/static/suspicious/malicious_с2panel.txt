@@ -492,3 +492,7 @@ http://92.63.192.127/panel/admin.php
 # Reference: https://twitter.com/MisterCh0c/status/1154056708806848515
 
 g.icab.pk
+
+# Reference: https://twitter.com/ViriBack/status/1155093166841892864
+
+/panels_encoded/login.php
