@@ -731,3 +731,7 @@ Finder/28
 # Reference: https://www.proofpoint.com/us/threat-insight/post/brushaloader-still-sweeping-victims-one-year-later
 
 sENB2a36p61HSKES
+
+# Reference: https://twitter.com/stvemillertime/status/1151148881729789954
+
+Mozilla/5.3 (i686-iamsatan-mingw32)
