@@ -763,3 +763,8 @@ CertUtil URL Agent
 # Reference: https://twitter.com/malwareforme/status/918503641887096832
 
 OtherUser
+
+# Reference: https://twitter.com/JohnLaTwC/status/912301412993794049
+# Reference: https://www.virustotal.com/gui/file/050cdd4e6195e5be16d883b83350c1baa4c7a614814f9ff85ff6c65bfa6fefe9/detection
+
+Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone 7.5; Trident/5.0; IEMobile/9.0)
