@@ -209,3 +209,7 @@
 # Reference: https://twitter.com/James_inthe_box/status/1151156619733921792
 
 /8741161.hta
+
+# Reference: https://twitter.com/alex_lanstein/status/988851524406099968
+
+/LPOKGGTEFFGFJ.hta
