@@ -735,3 +735,7 @@ sENB2a36p61HSKES
 # Reference: https://twitter.com/stvemillertime/status/1151148881729789954
 
 Mozilla/5.3 (i686-iamsatan-mingw32)
+
+# Reference: https://twitter.com/reesespcres/status/1144703633377964033
+
+Mozilla/5.2 (i686-w64-mingw32)
