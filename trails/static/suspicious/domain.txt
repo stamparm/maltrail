@@ -4698,3 +4698,7 @@ strust.club
 # Reference: https://www.virustotal.com/gui/domain/foxdos.cc/details
 
 foxdos.cc
+
+# Reference: https://www.virustotal.com/gui/domain/5sfox.com/relations
+
+5sfox.com
