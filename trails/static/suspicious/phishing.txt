@@ -32366,3 +32366,7 @@ triangletire.com
 # Reference: https://twitter.com/IpNigh/status/1155479418955010050
 
 notermalol.com
+
+# Reference: https://twitter.com/PhishStats/status/1155540618086690816
+
+sayhg-att-net.000webhostapp.com
