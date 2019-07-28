@@ -32362,3 +32362,7 @@ l34kc0de.today
 # Reference: https://twitter.com/PhishStats/status/1155495240071024643
 
 triangletire.com
+
+# Reference: https://twitter.com/IpNigh/status/1155479418955010050
+
+notermalol.com
