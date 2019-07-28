@@ -32338,3 +32338,7 @@ wordpress1990922.home.pl
 # Reference: https://twitter.com/PhishStats/status/1155359470597394432
 
 careshelter.org
+
+# Reference: https://twitter.com/romonlyht/status/1155401405449949184
+
+softbank.info
