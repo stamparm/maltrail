@@ -32350,3 +32350,7 @@ amazuc.com
 # Reference: https://twitter.com/PhishStats/status/1155404682816307201
 
 aicarealty.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1155450090104020994
+
+thevideosvirales.com
