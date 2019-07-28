@@ -440,3 +440,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/dvk01uk/status/1155068156471382023
 
 /c6e905de8a762015cd177be60cd6bd67.php
+
+# Reference: https://twitter.com/IpNigh/status/1155282939623727104
+
+/k7xscuhn9fkiwczwud5t2kqq.php
