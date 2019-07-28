@@ -32334,3 +32334,7 @@ prepagatapos5333.com
 # Reference: https://twitter.com/PhishStats/status/1155223888130924544
 
 wordpress1990922.home.pl
+
+# Reference: https://twitter.com/PhishStats/status/1155359470597394432
+
+careshelter.org
