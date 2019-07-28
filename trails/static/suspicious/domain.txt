@@ -4694,3 +4694,7 @@ lnfo.cc
 # Reference: https://www.virustotal.com/gui/domain/strust.club/relations
 
 strust.club
+
+# Reference: https://www.virustotal.com/gui/domain/foxdos.cc/details
+
+foxdos.cc
