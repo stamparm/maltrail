@@ -32346,3 +32346,7 @@ softbank.info
 # Reference: https://twitter.com/romonlyht/status/1155401719959838720
 
 amazuc.com
+
+# Reference: https://twitter.com/PhishStats/status/1155404682816307201
+
+aicarealty.com
