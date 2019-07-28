@@ -2601,3 +2601,7 @@ nerdpol.ovh
 # Reference: https://www.virustotal.com/gui/domain/registrar-servers.com/relations
 
 registrar-servers.com
+
+# Reference: https://www.virustotal.com/gui/domain/meibu.net/relations
+
+meibu.net
