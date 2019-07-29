@@ -32374,3 +32374,7 @@ sayhg-att-net.000webhostapp.com
 # Reference: https://twitter.com/PhishStats/status/1155585812937039872
 
 f4cboook-la-lognla-facbook-es-pkqxdriesc.filesusr.com
+
+# Reference: https://twitter.com/PhishStats/status/1155677026952601603
+
+zagoumantionres.com
