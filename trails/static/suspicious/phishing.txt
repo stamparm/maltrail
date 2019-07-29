@@ -32662,3 +32662,7 @@ ymcaoc.org.losaer.tk
 yuituu.com
 zenithdelcom.com
 zfpen-secure.com
+
+# Reference: https://twitter.com/IpNigh/status/1155713827071307776
+
+norpley-clients-loading-please-waiit.000webhostapp.com
