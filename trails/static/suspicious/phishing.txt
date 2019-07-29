@@ -32394,3 +32394,7 @@ icloud.ifuid.cn
 # Reference: https://twitter.com/reecdeep/status/1155727292238303232
 
 sellercentral.amazon.it.champtai.com
+
+# Reference: https://twitter.com/IpNigh/status/1155690819933921282
+
+mariusza.top
