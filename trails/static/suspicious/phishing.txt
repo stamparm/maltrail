@@ -32666,3 +32666,7 @@ zfpen-secure.com
 # Reference: https://twitter.com/IpNigh/status/1155713827071307776
 
 norpley-clients-loading-please-waiit.000webhostapp.com
+
+# Reference: https://twitter.com/harugasumi/status/1155816774903799809
+
+warnning-accounts-recovery-supports-amazon.com
