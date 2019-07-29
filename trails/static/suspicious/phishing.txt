@@ -32398,3 +32398,7 @@ sellercentral.amazon.it.champtai.com
 # Reference: https://twitter.com/IpNigh/status/1155690819933921282
 
 mariusza.top
+
+# Reference: https://twitter.com/IpNigh/status/1155698633209188352
+
+furecozz.ga
