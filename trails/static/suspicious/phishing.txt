@@ -32386,3 +32386,7 @@ wdfg-sd.com
 # Reference: https://twitter.com/NaomiSuzuki_/status/1155728102514802688
 
 meeiso.com
+
+# Reference: https://twitter.com/PhishStats/status/1155721511086501888
+
+icloud.ifuid.cn
