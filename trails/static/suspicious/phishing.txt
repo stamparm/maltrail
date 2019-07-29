@@ -32410,3 +32410,7 @@ kadubeureum-serang.desa.id
 # Reference: https://twitter.com/IpNigh/status/1155774998268846081
 
 microsoft504.000webhostapp.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1155812479274033152
+
+web2515.web02.bero-webspace.de
