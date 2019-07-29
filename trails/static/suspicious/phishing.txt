@@ -32390,3 +32390,7 @@ meeiso.com
 # Reference: https://twitter.com/PhishStats/status/1155721511086501888
 
 icloud.ifuid.cn
+
+# Reference: https://twitter.com/reecdeep/status/1155727292238303232
+
+sellercentral.amazon.it.champtai.com
