@@ -32414,3 +32414,7 @@ microsoft504.000webhostapp.com
 # Reference: https://twitter.com/MalwarePatrol/status/1155812479274033152
 
 web2515.web02.bero-webspace.de
+
+# Reference: https://twitter.com/PhishStats/status/1155767677522198529
+
+smart-vision-eg.com
