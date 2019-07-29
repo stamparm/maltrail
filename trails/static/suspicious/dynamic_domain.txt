@@ -687,6 +687,7 @@ comexe.net
 # Reference: http://www.pubyun.com/products/dyndns/
 
 f3322.net
+f3322.org
 3322.org
 8866.org
 9966.org
