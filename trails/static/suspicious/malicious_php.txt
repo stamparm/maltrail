@@ -452,3 +452,10 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/IpNigh/status/1156083556747268096
 
 /outer_pag.php
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/07/exploit-kits-summer-2019-review/
+# Reference: https://otx.alienvault.com/pulse/5d40766ecabf3f345b3811db
+
+/1Hqmyt597XO0ZNj9tXit7HZOMroEJu8c.php
+/chihuahua-posting.php
+/XKIOEEEEE.KDJDD.php
