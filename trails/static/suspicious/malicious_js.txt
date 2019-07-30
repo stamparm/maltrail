@@ -503,3 +503,9 @@ cdn.taboola.com/TaboolaCookieSyncScript.js
 
 /k55qtf704vukk11a8r24riuuoc.js
 /pe0gecpi4ins56vi9kfrnh7kbs.js
+
+# Reference: https://blog.sucuri.net/2019/07/fake-google-domains-used-in-evasive-magento-skimmer.html
+# Reference: https://otx.alienvault.com/pulse/5d3f2283df812ea7458e98f8
+
+/3f5cf4657d5d9.js
+/5d32125dab5ee.js
