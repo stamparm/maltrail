@@ -2597,3 +2597,7 @@ urown.cloud
 # Reference: https://www.virustotal.com/gui/domain/nerdpol.ovh/relations
 
 nerdpol.ovh
+
+# Reference: https://www.virustotal.com/gui/domain/meibu.net/relations
+
+meibu.net
