@@ -544,3 +544,10 @@ ns4.gatherreceive.net
 95.211.158.149:53
 95.211.158.150:53
 95.211.158.151:53
+
+# Reference: https://twitter.com/MASERGY/status/816720894424940544
+# Reference: https://searchsecurity.techtarget.com/news/450410127/Switcher-Android-Trojan-targets-routers-with-rogue-DNS-servers
+
+101.200.147.153:53
+112.33.13.11:53
+120.76.249.59:53
