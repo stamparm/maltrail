@@ -32670,3 +32670,7 @@ norpley-clients-loading-please-waiit.000webhostapp.com
 # Reference: https://twitter.com/harugasumi/status/1155816774903799809
 
 warnning-accounts-recovery-supports-amazon.com
+
+# Reference: https://twitter.com/ANeilan/status/1155994690551894016
+
+cuenta-actividad-appleid.jeketewan.com
