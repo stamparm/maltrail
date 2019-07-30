@@ -32674,3 +32674,7 @@ warnning-accounts-recovery-supports-amazon.com
 # Reference: https://twitter.com/ANeilan/status/1155994690551894016
 
 cuenta-actividad-appleid.jeketewan.com
+
+# Refereence: https://twitter.com/IpNigh/status/1155947772631109632
+
+login-microsoftonline-com-oauth-adcfbb759597384794827274627481.netlify.com
