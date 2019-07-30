@@ -9,8 +9,8 @@ class _(type):
    def __getattr__(self, attr):
      return attr
 
-class TRAIL(object):
-   __metaclass__ = _
+class TRAIL(object,metaclass=_):
+    pass
 
 class BLOCK_MARKER:
     NOP = chr(0x00)

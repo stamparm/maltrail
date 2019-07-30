@@ -32,9 +32,13 @@
 
 # Reference: https://twitter.com/bad_packets/status/1114236807367905280
 # Reference: https://www.ixiacom.com/company/blog/paypal-netflix-gmail-and-uber-users-among-targets-new-wave-dns-hijacking-attacks
+# Reference: https://securityboulevard.com/2019/04/paypal-netflix-gmail-and-uber-users-among-targets-in-new-wave-of-dns-hijacking-attacks/
 
+195.128.124.131:53
 195.128.124.150:53
 195.128.124.181:53
+195.128.126.165:53
+35.228.220.70:53
 
 # Reference: https://blog.talosintelligence.com/2019/04/seaturtle.html
 # Reference: https://blog.talosintelligence.com/2019/07/sea-turtle-keeps-on-swimming.html
@@ -364,3 +368,13 @@ ns4.whatsappannunci.com
 ns5.whatsappannunci.com
 ns9.corposs.com
 185.28.193.195:53
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1151931732725293060
+# Reference: https://www.virustotal.com/gui/domain/gatherreceive.net/details
+# Reference: https://www.virustotal.com/gui/ip-address/63.251.106.22/relations
+
+ns1.gatherreceive.net
+ns2.gatherreceive.net
+ns3.gatherreceive.net
+ns4.gatherreceive.net
+63.251.106.22:53

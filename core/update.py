@@ -1,3 +1,4 @@
+#! coding=utf-8
 #!/usr/bin/env python2
 
 """
@@ -9,12 +10,13 @@ import csv
 import glob
 import inspect
 import os
+import platform
 import re
 import sqlite3
 import subprocess
 import sys
 import time
-import urllib2
+import urllib.request as urllib
 
 sys.dont_write_bytecode = True
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))  # to enable calling from current directory too
@@ -49,11 +51,11 @@ except (ImportError, AttributeError):
     pass
 
 def _chown(filepath):
-    if not subprocess.mswindows and os.path.exists(filepath):
+    if not platform.system() == 'Windows' and os.path.exists(filepath):
         try:
             os.chown(filepath, int(os.environ.get("SUDO_UID", -1)), int(os.environ.get("SUDO_GID", -1)))
-        except Exception, ex:
-            print "[!] chown problem with '%s' ('%s')" % (filepath, ex)
+        except Exception as ex:
+            print ("[!] chown problem with '%s' ('%s')" % (filepath, ex))
 
 def _fopen(filepath, mode="rb"):
     retval = open(filepath, mode)
@@ -72,38 +74,41 @@ def update_trails(force=False, offline=False):
 
     try:
         if not os.path.isdir(USERS_DIR):
-            os.makedirs(USERS_DIR, 0755)
-    except Exception, ex:
+            os.makedirs(USERS_DIR, 0o755)
+    except Exception as ex:
         exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
 
     _chown(USERS_DIR)
 
+    # 从服务器直接获取
     if config.UPDATE_SERVER:
-        print "[i] retrieving trails from provided 'UPDATE_SERVER' server..."
+        print ("[i] retrieving trails from provided 'UPDATE_SERVER' server...")
         content = retrieve_content(config.UPDATE_SERVER)
         if not content or content.count(',') < 2:
-            print "[x] unable to retrieve data from '%s'" % config.UPDATE_SERVER
+            print ("[x] unable to retrieve data from '%s'" % config.UPDATE_SERVER)
         else:
             with _fopen(config.TRAILS_FILE, "w+b") as f:
                 f.write(content)
             trails = load_trails()
 
+    # 本地下载
     else:
-        trail_files = set()
+        trail_files = set()    #要得到的文件
+        # 从路径中的得到默认的
         for dirpath, dirnames, filenames in os.walk(os.path.abspath(os.path.join(ROOT_DIR, "trails"))) :
             for filename in filenames:
                 trail_files.add(os.path.abspath(os.path.join(dirpath, filename)))
-
+        # 用户自定义的
         if config.CUSTOM_TRAILS_DIR:
             for dirpath, dirnames, filenames in os.walk(os.path.abspath(os.path.join(ROOT_DIR, os.path.expanduser(config.CUSTOM_TRAILS_DIR)))) :
                 for filename in filenames:
                     trail_files.add(os.path.abspath(os.path.join(dirpath, filename)))
-
+        # 判断是否要更新获取,进入if则是开始获取
         if not trails and (force or not os.path.isfile(config.TRAILS_FILE) or (time.time() - os.stat(config.TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(config.TRAILS_FILE).st_size == 0 or any(os.stat(_).st_mtime > os.stat(config.TRAILS_FILE).st_mtime for _ in trail_files)):
             if not config.no_updates:
-                print "[i] updating trails (this might take a while)..."
+                print ("[i] updating trails (this might take a while)...")
             else:
-                print "[i] checking trails..."
+                print ("[i] checking trails...")
 
             if not offline and (force or config.USE_FEED_UPDATES):
                 _ = os.path.abspath(os.path.join(ROOT_DIR, "trails", "feeds"))
@@ -126,13 +131,13 @@ def update_trails(force=False, offline=False):
             if config.DISABLED_FEEDS:
                 filenames = [filename for filename in filenames if os.path.splitext(os.path.split(filename)[-1])[0] not in re.split(r"[^\w]+", config.DISABLED_FEEDS)]
 
-            for i in xrange(len(filenames)):
+            for i in range(len(filenames)):
                 filename = filenames[i]
 
                 try:
                     module = __import__(os.path.basename(filename).split(".py")[0])
-                except (ImportError, SyntaxError), ex:
-                    print "[x] something went wrong during import of feed file '%s' ('%s')" % (filename, ex)
+                except ((ImportError, SyntaxError), ex):
+                    print ("[x] something went wrong during import of feed file '%s' ('%s')" % (filename, ex))
                     continue
 
                 for name, function in inspect.getmembers(module, inspect.isfunction):
@@ -158,9 +163,9 @@ def update_trails(force=False, offline=False):
                                 if not (item[0] in trails and (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) or trails[item[0]][1] in HIGH_PRIORITY_REFERENCES)) or (item[1][1] in HIGH_PRIORITY_REFERENCES and "history" not in item[1][0]) or any(_ in item[1][0] for _ in HIGH_PRIORITY_INFO_KEYWORDS):
                                     trails[item[0]] = item[1]
                             if not results and not any(_ in url for _ in ("abuse.ch", "cobaltstrike")):
-                                print "[x] something went wrong during remote data retrieval ('%s')" % url
-                        except Exception, ex:
-                            print "[x] something went wrong during processing of feed file '%s' ('%s')" % (filename, ex)
+                                print ("[x] something went wrong during remote data retrieval ('%s')" % url)
+                        except Exception as ex:
+                            print ("[x] something went wrong during processing of feed file '%s' ('%s')" % (filename, ex))
 
                 try:
                     sys.modules.pop(module.__name__)
@@ -180,7 +185,7 @@ def update_trails(force=False, offline=False):
                     content = retrieve_content(url)
 
                     if not content:
-                        print "[x] unable to retrieve data (or empty response) from '%s'" % url
+                        print ("[x] unable to retrieve data (or empty response) from '%s'") % url
                     else:
                         __info__ = "blacklisted"
                         __reference__ = "(remote custom)"  # urlparse.urlsplit(url).netloc
@@ -218,7 +223,9 @@ def update_trails(force=False, offline=False):
                                     address += 1
 
             # basic cleanup
-            for key in trails.keys():
+            # list1=list(trails.keys())
+            # dict1=dict(trails.keys())
+            for key in list(trails.keys()):
                 if key not in trails:
                     continue
                 if config.DISABLED_TRAILS_INFO_REGEX:
@@ -227,13 +234,14 @@ def update_trails(force=False, offline=False):
                         continue
 
                 try:
-                    _key = key.decode("utf8").encode("idna")
+                    _key = key.encode("idna")
                     if _key != key:  # for domains with non-ASCII letters (e.g. phishing)
                         trails[_key] = trails[key]
                         del trails[key]
                         key = _key
-                except:
-                    pass
+                except Exception as ex:
+                    print(ex)
+                    pass             #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
                 if not key or re.search(r"\A(?i)\.?[a-z]+\Z", key) and not any(_ in trails[key][1] for _ in ("custom", "static")):
                     del trails[key]
@@ -275,20 +283,21 @@ def update_trails(force=False, offline=False):
 
             read_whitelist()
 
-            for key in trails.keys():
+            for key in list(trails.keys()):
                 if check_whitelisted(key) or any(key.startswith(_) for _ in BAD_TRAIL_PREFIXES):
                     del trails[key]
                 elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key) and (bogon_ip(key) or cdn_ip(key)):
                     del trails[key]
-                else:
-                    try:
-                        key.decode("utf8")
-                        trails[key][0].decode("utf8")
-                        trails[key][1].decode("utf8")
-                    except UnicodeDecodeError:
-                        del trails[key]
+                # else:
+                #     try:
+                #         key.decode("utf8")
+                #         trails[key][0].decode("utf8")
+                #         trails[key][1].decode("utf8")
+                #     except UnicodeDecodeError:
+                #         del trails[key]
 
             try:
+                # 将规则从内存写入文件
                 if trails:
                     with _fopen(config.TRAILS_FILE, "w+b") as f:
                         writer = csv.writer(f, delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
@@ -296,33 +305,33 @@ def update_trails(force=False, offline=False):
                             writer.writerow((trail, trails[trail][0], trails[trail][1]))
 
                     success = True
-            except Exception, ex:
-                print "[x] something went wrong during trails file write '%s' ('%s')" % (config.TRAILS_FILE, ex)
+            except Exception as ex:
+                print ("[x] something went wrong during trails file write '%s' ('%s')" % (config.TRAILS_FILE, ex))
 
-            print "[i] update finished%s" % (40 * " ")
+            print ("[i] update finished%s"  % (40 * " "))
 
             if success:
-                print "[i] trails stored to '%s'" % config.TRAILS_FILE
+                print ("[i] trails stored to '%s'") % config.TRAILS_FILE
 
     return trails
 
 def update_ipcat(force=False):
     try:
         if not os.path.isdir(USERS_DIR):
-            os.makedirs(USERS_DIR, 0755)
-    except Exception, ex:
+            os.makedirs(USERS_DIR, 0o755)
+    except Exception as ex:
         exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
 
     _chown(USERS_DIR)
 
     if force or not os.path.isfile(IPCAT_CSV_FILE) or not os.path.isfile(IPCAT_SQLITE_FILE) or (time.time() - os.stat(IPCAT_CSV_FILE).st_mtime) >= FRESH_IPCAT_DELTA_DAYS * 24 * 3600 or os.stat(IPCAT_SQLITE_FILE).st_size == 0:
-        print "[i] updating ipcat database..."
+        print ("[i] updating ipcat database...")
 
         try:
             with file(IPCAT_CSV_FILE, "w+b") as f:
-                f.write(urllib2.urlopen(IPCAT_URL).read())
-        except Exception, ex:
-            print "[x] something went wrong during retrieval of '%s' ('%s')" % (IPCAT_URL, ex)
+                f.write(urllib.urlopen(IPCAT_URL).read())
+        except Exception as ex:
+            print ("[x] something went wrong during retrieval of '%s' ('%s')") % (IPCAT_URL, ex)
 
         else:
             try:
@@ -343,8 +352,8 @@ def update_ipcat(force=False):
                     cur.execute("COMMIT")
                     cur.close()
                     con.commit()
-            except Exception, ex:
-                print "[x] something went wrong during ipcat database update ('%s')" % ex
+            except Exception as ex:
+                print ("[x] something went wrong during ipcat database update ('%s')") % ex
 
     _chown(IPCAT_CSV_FILE)
     _chown(IPCAT_SQLITE_FILE)
@@ -357,7 +366,7 @@ def main():
         update_trails(force=True)
         update_ipcat()
     except KeyboardInterrupt:
-        print "\r[x] Ctrl-C pressed"
+        print ("\r[x] Ctrl-C pressed")
     else:
         if "-r" in sys.argv:
             results = []

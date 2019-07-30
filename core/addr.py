@@ -7,15 +7,21 @@ See the file 'LICENSE' for copying permission
 
 import re
 
+from PIL.features import codecs
+from numpy import long
+
 def addr_to_int(value):
     _ = value.split('.')
     return (long(_[0]) << 24) + (long(_[1]) << 16) + (long(_[2]) << 8) + long(_[3])
 
+
 def int_to_addr(value):
     return '.'.join(str(value >> n & 0xff) for n in (24, 16, 8, 0))
 
+
 def make_mask(bits):
     return 0xffffffff ^ (1 << 32 - bits) - 1
+
 
 def compress_ipv6(address):
     zeros = re.findall("(?:0000:)+", address)
@@ -26,7 +32,17 @@ def compress_ipv6(address):
             address = "::1"
     return address
 
+
 # Note: socket.inet_ntop not available everywhere (Reference: https://docs.python.org/2/library/socket.html#socket.inet_ntop)
 def inet_ntoa6(packed_ip):
-    _ = packed_ip.encode("hex")
-    return compress_ipv6(':'.join(_[i:i + 4] for i in xrange(0, len(_), 4)))
+    try:
+        if type(packed_ip) == bytes:
+            packed_ip = packed_ip.decode("utf-8", "ignore")
+        if type(packed_ip) == dict:
+            print("!!!!!!!!!!!!!!~~dict~~packed_ip~~ipv6~~", packed_ip)
+        _ = codecs.encode(packed_ip, "hex")
+        return compress_ipv6(':'.join(_[i:i + 4] for i in range(0, len(_), 4)))
+
+    except Exception:
+        print(type(packed_ip), packed_ip)
+

@@ -9,7 +9,7 @@ import gzip
 import os
 import re
 import tempfile
-import urllib2
+import urllib.request as urllib
 
 from core.settings import NAME
 from core.settings import TIMEOUT
@@ -22,8 +22,8 @@ def _open():
     retval = None
 
     try:
-        req = urllib2.Request(__url__, None, {"User-agent": NAME, "Accept-encoding": "gzip"})
-        resp = urllib2.urlopen(req, timeout=TIMEOUT)
+        req = urllib.Request(__url__, None, {"User-agent": NAME, "Accept-encoding": "gzip"})
+        resp = urllib.urlopen(req, timeout=TIMEOUT)
         handle, filename = tempfile.mkstemp()
 
         bsize = 1024 * 1024

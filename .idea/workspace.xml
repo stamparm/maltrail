@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ebeac914-6fb9-449e-a5d4-8580f50efe28" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cccheck/Sentiment_RNN_Solution.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cccheck/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cccheck/cal_smilar.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cccheck/first_clustering.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cccheck/generalization.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cccheck/match.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cccheck/read_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cccheck/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/alexa_100k.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/data1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/data_path.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/host.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/labels.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/result.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/result1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/reviews.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/safe_host.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/top-1m.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/valid.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/CPT.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/LSTM_model.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/gs.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/addr.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/addr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/httpd.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/httpd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/parallel.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/parallel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/update.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/update.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/versioncheck.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/versioncheck.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maltrail.conf" beforeDir="false" afterPath="$PROJECT_DIR$/maltrail.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/ua.txt" beforeDir="false" afterPath="$PROJECT_DIR$/misc/ua.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sensor.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/feeds/bambenekconsultingdga.py" beforeDir="false" afterPath="$PROJECT_DIR$/trails/feeds/bambenekconsultingdga.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/android_fakeapp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/android_fakeapp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/android_roamingmantis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/android_roamingmantis.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/apt_lazarus.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/apt_lazarus.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/apt_unclassified.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/apt_unclassified.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/azorult.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/azorult.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/brushaloader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/brushaloader.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/chanitor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/chanitor.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/elf_coinminer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/elf_coinminer.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/elf_mirai.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/elf_mirai.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/generic.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/generic.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/gh0strat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/gh0strat.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/gootkit.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/gootkit.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/guildma.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/guildma.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/lokibot.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/lokibot.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/magentocore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/magentocore.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/nanocore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/nanocore.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/nitol.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/nitol.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/nymaim.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/nymaim.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/ponystealer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/ponystealer.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/ramnit.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/ramnit.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/revengerat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/revengerat.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/ta505.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/ta505.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/trickbot.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/trickbot.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/ursnif.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/ursnif.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/virut.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/virut.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/malware/xtrat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/malware/xtrat.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/suspicious/domain.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/suspicious/domain.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/suspicious/malicious_php.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/suspicious/malicious_php.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/suspicious/malicious_proxy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/suspicious/malicious_proxy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/suspicious/malicious_с2panel.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/suspicious/malicious_с2panel.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/suspicious/phishing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/suspicious/phishing.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/suspicious/pua.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/suspicious/pua.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trails/static/suspicious/rogue_dns.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trails/static/suspicious/rogue_dns.txt" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/maltrail$common.coverage" NAME="common Coverage Results" MODIFIED="1564200360787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
+    <SUITE FILE_PATH="coverage/maltrail$sensor.coverage" NAME="sensor Coverage Results" MODIFIED="1564435782633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/maltrail$pytest_in_test_py.coverage" NAME="pytest in test.py Coverage Results" MODIFIED="1564433694559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cccheck" />
+    <SUITE FILE_PATH="coverage/maltrail$server.coverage" NAME="server Coverage Results" MODIFIED="1564197847901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/maltrail$pytest_in_test_py__1_.coverage" NAME="pytest in test.py (1) Coverage Results" MODIFIED="1564433802945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/maltrail$pytest_for_test_test.coverage" NAME="pytest for test.test Coverage Results" MODIFIED="1564312044147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cccheck" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1184523991">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="conf" value="3" />
+          <entry key="csv" value="2" />
+          <entry key="m" value="2" />
+          <entry key="py" value="54" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Logstash" value="3" />
+          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="Python" value="54" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="conf" value="45" />
+          <entry key="py" value="2537" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Logstash" value="45" />
+          <entry key="Python" value="2537" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="maltrail" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sensor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="530" column="32" lean-forward="true" selection-start-line="530" selection-start-column="32" selection-end-line="530" selection-end-column="32" />
+              <folding>
+                <element signature="e#163#227#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cccheck/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="100" column="12" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="12" />
+              <folding>
+                <element signature="e#16#25#0" expanded="true" />
+                <element signature="e#4969#8571#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cccheck/Sentiment_RNN_Solution.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="53" column="34" lean-forward="true" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+              <folding>
+                <element signature="e#23#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maltrail.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-788">
+              <caret line="74" column="63" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cccheck/generalization.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1214">
+              <caret line="222" selection-start-line="222" selection-end-line="222" />
+              <folding>
+                <element signature="e#34#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cccheck/read_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="638">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="e#16#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///home/mrl/.local/lib/python3.5/site-packages/pandas/core/frame.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56738">
+              <caret line="2669" selection-start-line="2669" selection-end-line="2669" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///home/mrl/.local/lib/python3.5/site-packages/pandas/core/indexes/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="43406">
+              <caret line="2036" selection-start-line="2036" selection-end-line="2036" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///home/mrl/.local/lib/python3.5/site-packages/pandas/core/common.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8668">
+              <caret line="409" selection-start-line="409" selection-end-line="409" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>lightgbm</find>
+      <find>ord</find>
+      <find>log_event</find>
+      <find>print</find>
+      <find>checknum</find>
+      <find>print(</find>
+      <find>at least</find>
+      <find>count</find>
+      <find>event</find>
+      <find>cao</find>
+      <find>r icmp or (tcp and (tcp[tcpflags] == tcp-syn or por</find>
+      <find>test</find>
+      <find>result</find>
+      <find>lo</find>
+      <find>any</find>
+      <find>inet_ntoa6</find>
+      <find>_process_packet</find>
+      <find>USE_HEURISTICS</find>
+      <find>packet_handler</find>
+      <find>nan</find>
+      <find>Sentiment_RNN_Solution</find>
+      <find>cccheck</find>
+      <find>emptys</find>
+      <find>ccch</find>
+      <find>query</find>
+      <find>post_data</find>
+      <find>not_in_ip</find>
+      <find>net</find>
+      <find>strs</find>
+      <find>vocab_to_int</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>#!/usr/bin/env python2</replace>
+      <replace>.decode(&quot;utf-8&quot;,&quot;ignore&quot;)</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/core</dir>
+      <dir>$PROJECT_DIR$/cccheck</dir>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/trails/feeds/zeustrackerip.py" />
+        <option value="$PROJECT_DIR$/core/common.py" />
+        <option value="$PROJECT_DIR$/core/update.py" />
+        <option value="$PROJECT_DIR$/cccheck/Sentiment_RNN_Solution.py" />
+        <option value="$PROJECT_DIR$/core/enums.py" />
+        <option value="$PROJECT_DIR$/core/log.py" />
+        <option value="$PROJECT_DIR$/cccheck/first_clustering.py" />
+        <option value="$PROJECT_DIR$/cccheck/match.py" />
+        <option value="$PROJECT_DIR$/cccheck/read_data.py" />
+        <option value="$PROJECT_DIR$/cccheck/cal_smilar.py" />
+        <option value="$PROJECT_DIR$/core/addr.py" />
+        <option value="$PROJECT_DIR$/cccheck/generalization.py" />
+        <option value="$PROJECT_DIR$/maltrail.conf" />
+        <option value="$PROJECT_DIR$/cccheck/test.py" />
+        <option value="$PROJECT_DIR$/sensor.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="482" />
+    <option name="y" value="176" />
+    <option name="width" value="1249" />
+    <option name="height" value="799" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="maltrail" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maltrail" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="maltrail" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maltrail" type="462c0819:PsiDirectoryNode" />
+              <item name="cccheck" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../code/maltrail" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/cccheck/model" />
+      <recent name="$PROJECT_DIR$/cccheck" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/cccheck" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.sensor">
+    <configuration name="common" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="maltrail" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/core" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/core/common.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sensor" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="maltrail" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sensor.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test.test" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="maltrail" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cccheck" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.test&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test.py (1)" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="maltrail" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="maltrail" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cccheck" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/cccheck/test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.sensor" />
+      <item itemvalue="Python.common" />
+      <item itemvalue="Python tests.pytest for test.test" />
+      <item itemvalue="Python tests.pytest in test.py" />
+      <item itemvalue="Python tests.pytest in test.py (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.sensor" />
+        <item itemvalue="Python tests.pytest in test.py (1)" />
+        <item itemvalue="Python tests.pytest in test.py" />
+        <item itemvalue="Python tests.pytest for test.test" />
+        <item itemvalue="Python.common" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ebeac914-6fb9-449e-a5d4-8580f50efe28" name="Default Changelist" comment="" />
+      <created>1564069004502</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1564069004502</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="pytest_in_test_py - 2019.07.28 at 21h 40m 09s.xml">
+      <configuration name="pytest in test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_py - 2019.07.28 at 21h 44m 58s.xml">
+      <configuration name="pytest in test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_py - 2019.07.28 at 21h 45m 01s.xml">
+      <configuration name="pytest in test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_py - 2019.07.28 at 21h 49m 32s.xml">
+      <configuration name="pytest in test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_py - 2019.07.28 at 21h 54m 13s.xml">
+      <configuration name="pytest in test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_py - 2019.07.28 at 22h 02m 05s.xml">
+      <configuration name="pytest in test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_py - 2019.07.28 at 22h 03m 51s.xml">
+      <configuration name="pytest in test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_py - 2019.07.30 at 04h 54m 56s.xml">
+      <configuration name="pytest in test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_py_(1) - 2019.07.30 at 04h 56m 24s.xml">
+      <configuration name="pytest in test.py (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_py_(1) - 2019.07.30 at 05h 02m 54s.xml">
+      <configuration name="pytest in test.py (1)" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="482" y="176" width="1249" height="799" extended-state="1" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49854228" visible="true" weight="0.24438903" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.50145775" side_tool="true" weight="0.23607647" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3294979" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41527197" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.42026827" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.2458159" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32934132" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.49751243" weight="0.49252906" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" x="0" y="0" width="413" height="884" id="Documentation" order="5" sideWeight="0.50248754" side_tool="true" weight="0.32917705" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/core/update.py</url>
+          <line>228</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/core/common.py</url>
+          <line>55</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/core/update.py</url>
+          <line>237</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/core/update.py</url>
+          <line>226</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/core/update.py</url>
+          <line>301</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/core/update.py</url>
+          <line>302</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/core/update.py</url>
+          <line>303</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/sensor.py</url>
+          <line>1058</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/sensor.py</url>
+          <line>531</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/sensor.py</url>
+          <line>509</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>df</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/trails/feeds/zeustrackerip.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trails/custom/dprk.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trails/custom/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trails/static/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.5/ssl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13794">
+          <caret line="645" column="51" selection-start-line="645" selection-start-column="51" selection-end-line="645" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trails/feeds/360chinad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-1247971764/mmap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="152" column="37" selection-start-line="152" selection-start-column="31" selection-end-line="152" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-1247971764/pcapy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/update.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1210">
+          <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+          <folding>
+            <element signature="e#2045#14042#0" />
+            <element signature="e#14079#15948#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/trailsdict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cccheck/data/data.csv" />
+    <entry file="file://$PROJECT_DIR$/core/enums.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding>
+            <marker date="1564228255335" expanded="true" signature="260:271" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4356">
+          <caret line="213" column="16" selection-start-line="213" selection-start-column="16" selection-end-line="213" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-1247971764/posix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28578">
+          <caret line="1299" column="4" selection-start-line="1299" selection-start-column="4" selection-end-line="1299" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2230">
+          <caret line="195" column="44" selection-start-line="195" selection-start-column="44" selection-end-line="195" selection-end-column="44" />
+          <folding>
+            <element signature="e#163#172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.5/dist-packages/scapy/arch/pcapdnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="239" column="26" selection-start-line="239" selection-start-column="26" selection-end-line="239" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.5/dist-packages/scapy/modules/winpcapy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="437" column="24" selection-start-line="437" selection-start-column="24" selection-end-line="437" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cccheck/model/CPT.csv" />
+    <entry file="file://$PROJECT_DIR$/cccheck/match.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#16#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cccheck/first_clustering.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cccheck/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cccheck/cal_smilar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/attribdict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.5/dist-packages/torch/serialization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="381" selection-start-line="381" selection-end-line="381" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#163#173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="811" selection-start-line="811" selection-end-line="811" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/gs.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/addr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///home/mrl/.local/lib/python3.5/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56738">
+          <caret line="2669" selection-start-line="2669" selection-end-line="2669" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///home/mrl/.local/lib/python3.5/site-packages/pandas/core/indexes/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43406">
+          <caret line="2036" selection-start-line="2036" selection-end-line="2036" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///home/mrl/.local/lib/python3.5/site-packages/pandas/core/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8668">
+          <caret line="409" selection-start-line="409" selection-end-line="409" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maltrail.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-788">
+          <caret line="74" column="63" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cccheck/generalization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1214">
+          <caret line="222" selection-start-line="222" selection-end-line="222" />
+          <folding>
+            <element signature="e#34#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2712">
+          <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cccheck/read_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#16#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cccheck/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="100" column="12" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="12" />
+          <folding>
+            <element signature="e#16#25#0" expanded="true" />
+            <element signature="e#4969#8571#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cccheck/Sentiment_RNN_Solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="53" column="34" lean-forward="true" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+          <folding>
+            <element signature="e#23#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="530" column="32" lean-forward="true" selection-start-line="530" selection-start-column="32" selection-end-line="530" selection-end-column="32" />
+          <folding>
+            <element signature="e#163#227#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

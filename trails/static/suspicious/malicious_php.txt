@@ -412,3 +412,15 @@ westflies.com/api/api.php
 
 /8yZ7YDpM2Cu3lqbB7WFJV19PE9mb1f8c.php
 /XKIOEEEEE.KDJDD.php
+
+# Reference: https://twitter.com/YouMayBeHacked/status/1152234246083424256
+
+/myriad-pro-installerr.php
+
+# Reference: https://twitter.com/IpNigh/status/1152929163797512194
+
+/h1nnbwfsediifgz2yv3w09xs.php
+
+# Reference: https://twitter.com/IpNigh/status/1153149383589933056
+
+/l7mg85smredbpehm3gnp2g1n.php

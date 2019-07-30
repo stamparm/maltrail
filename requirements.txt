@@ -1,1 +1,11 @@
 pcapy
+torch
+pandas
+sklearn
+tldextract
+tqdm
+python-Levenshtein
+autopep8
+lightgbm
+joblib
+first_clustering

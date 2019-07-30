@@ -1956,3 +1956,9 @@ getfreevideo.world
 # Reference: https://twitter.com/MalwarePatrol/status/1152080131550138368
 
 dl.xetapp.us
+
+# Reference: https://twitter.com/Paladin3161/status/1151809951762964480
+# Reference: https://www.virustotal.com/gui/file/aacadf7b3bfc2ac8a9a342e5372c77218efa9c67602c3a15441094170a5f52d4/detection
+
+dl.ludashi.com
+dlres-a.iyims.com

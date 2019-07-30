@@ -4,11 +4,11 @@
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
-
-import BaseHTTPServer
-import cStringIO
+import codecs
+import http.server as BaseHTTPServer
+from io import StringIO
 import datetime
-import httplib
+import http.client as httplib
 import glob
 import gzip
 import hashlib
@@ -18,13 +18,15 @@ import mimetypes
 import os
 import re
 import socket
-import SocketServer
+import socketserver as SocketServer
 import subprocess
 import threading
 import time
 import traceback
-import urllib
-import urlparse
+import urllib.request as urllib
+import urllib.parse as urlparse
+import platform
+
 
 from core.addr import addr_to_int
 from core.addr import int_to_addr
@@ -136,7 +138,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     path = "%s.html" % path
 
                 if any((config.IP_ALIASES,)) and self.path.split('?')[0] == "/js/main.js":
-                    content = open(path, "rb").read()
+                    content = open(path, "rb").read().decode('utf-8')    #!!!!!
                     content = re.sub(r"\bvar IP_ALIASES =.+", "var IP_ALIASES = {%s};" % ", ".join('"%s": "%s"' % (_.split(':', 1)[0].strip(), _.split(':', 1)[-1].strip()) for _ in config.IP_ALIASES), content)
                     self.send_response(httplib.OK)
                 elif ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and (extension not in DISABLED_CONTENT_EXTENSIONS or os.path.split(path)[-1] in CONTENT_EXTENSIONS_EXCLUSIONS):
@@ -151,7 +153,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             skip = True
 
                     if not skip:
-                        content = open(path, "rb").read()
+                        content = open(path, "rb").read().decode("utf-8","ignore")    #!!!!!
                         last_modified = time.strftime(HTTP_TIME_FORMAT, mtime)
                         self.send_response(httplib.OK)
                         self.send_header(HTTP_HEADER.CONNECTION, "close")
@@ -178,15 +180,15 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     if _:
                         content = self._format(content, **{ name: _() })
 
-                if "gzip" in self.headers.getheader(HTTP_HEADER.ACCEPT_ENCODING, ""):
+                if "gzip" in self.headers.get(HTTP_HEADER.ACCEPT_ENCODING, ""):
                     self.send_header(HTTP_HEADER.CONTENT_ENCODING, "gzip")
-                    _ = cStringIO.StringIO()
+                    _ = io.BytesIO()
                     compress = gzip.GzipFile("", "w+b", 9, _)
                     compress._stream = _
-                    compress.write(content)
+                    compress.write(content.encode("utf-8"))
                     compress.flush()
                     compress.close()
-                    content = compress._stream.getvalue()
+                    content = compress._stream.getvalue()            #.decode("utf-8","ignore")
 
                 self.send_header(HTTP_HEADER.CONTENT_LENGTH, str(len(content)))
 
@@ -199,9 +201,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.wfile.close()
 
         def do_POST(self):
-            length = self.headers.getheader(HTTP_HEADER.CONTENT_LENGTH)
-            data = self.rfile.read(int(length))
-            data = urllib.unquote_plus(data)
+            length = self.headers.get(HTTP_HEADER.CONTENT_LENGTH)
+            data = self.rfile.read(int(length)).decode("utf-8","ignore")
+            data = urlparse.unquote_plus(data)
             self.data = data
             self.do_GET()
 
@@ -275,7 +277,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         username, stored_hash, uid, netfilter = entry.split(':')
                         if username == params.get("username"):
                             try:
-                                if params.get("hash") == hashlib.sha256(stored_hash.strip() + params.get("nonce")).hexdigest():
+                                if params.get("hash") == hashlib.sha256((stored_hash.strip() + params.get("nonce")).encode("utf-8")).hexdigest():
                                     valid = True
                                     break
                             except:
@@ -283,7 +285,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                     traceback.print_exc()
 
             if valid:
-                session_id = os.urandom(SESSION_ID_LENGTH).encode("hex")
+                session_id =codecs.encode(os.urandom(SESSION_ID_LENGTH), 'hex_codec')
                 expiration = time.time() + 3600 * SESSION_EXPIRATION_HOURS
 
                 self.send_response(httplib.OK)
@@ -337,7 +339,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
             content = "Login %s" % ("success" if valid else "failed")
 
-            if not subprocess.mswindows:
+            if not platform.system() == 'Windows':
                 try:
                     subprocess.check_output("logger -p auth.info -t \"%s[%d]\" \"%s password for %s from %s port %s\"" % (NAME.lower(), os.getpid(), "Accepted" if valid else "Failed", params.get("username"), self.client_address[0], self.client_address[1]), stderr=subprocess.STDOUT, shell=True)
                 except Exception:
@@ -423,7 +425,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         range_handle = open(event_log_path, "rb")
                         log_exists = True
                 except ValueError:
-                    print "[!] invalid date format in request"
+                    print ("[!] invalid date format in request")
                     log_exists = False
             else:
                 logs_data = ""
@@ -431,7 +433,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 try:
                     start_date = datetime.datetime.strptime(date_interval[0], "%Y-%m-%d").date()
                     end_date = datetime.datetime.strptime(date_interval[1], "%Y-%m-%d").date()
-                    for i in xrange(int((end_date - start_date).days) + 1):
+                    for i in range(int((end_date - start_date).days) + 1):
                         date = start_date + datetime.timedelta(i)
                         event_log_path = os.path.join(config.LOG_DIR, "%s.log" % date.strftime("%Y-%m-%d"))
                         if os.path.exists(event_log_path):
@@ -442,7 +444,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     range_handle = io.BytesIO(logs_data)
                     log_exists = True
                 except ValueError:
-                    print "[!] invalid date format in request"
+                    print ("[!] invalid date format in request")
                     log_exists = False
 
             if log_exists:
@@ -473,7 +475,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             self.send_header(HTTP_HEADER.CONNECTION, "close")
                             self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
 
-                            buffer, addresses, netmasks, regex = cStringIO.StringIO(), set(), [], ""
+                            buffer, addresses, netmasks, regex = StringIO(), set(), [], ""
                             for netfilter in session.netfilters:
                                 if not netfilter:
                                     continue
@@ -484,7 +486,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 elif '\.' in netfilter:
                                     regex = r"\b(%s)\b" % netfilter
                                 else:
-                                    print "[!] invalid network filter '%s'" % netfilter
+                                    print ("[!] invalid network filter '%s'" % netfilter)
                                     return
 
                             for line in session.range_handle:
@@ -639,9 +641,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         else:
             raise
 
-    print "[i] starting HTTP%s server at 'http%s://%s:%d/'" % ('S' if pem else "", 's' if pem else "", server.server_address[0], server.server_address[1])
+    print ("[i] starting HTTP%s server at 'http%s://%s:%d/'" % ('S' if pem else "", 's' if pem else "", server.server_address[0], server.server_address[1]))
 
-    print "[o] running..."
+    print ("[o] running...")
 
     if join:
         server.serve_forever()

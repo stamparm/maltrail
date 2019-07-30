@@ -10,9 +10,14 @@ import gzip
 import os
 import re
 import sqlite3
-import StringIO
+import platform
+
+
+from io import StringIO
+import io
 import subprocess
-import urllib2
+
+import urllib.request as urllib
 import zipfile
 import zlib
 
@@ -39,18 +44,24 @@ def retrieve_content(url, data=None, headers=None):
     """
 
     try:
-        req = urllib2.Request("".join(url[i].replace(' ', "%20") if i > url.find('?') else url[i] for i in xrange(len(url))), data, headers or {"User-agent": NAME, "Accept-encoding": "gzip, deflate"})
-        resp = urllib2.urlopen(req, timeout=TIMEOUT)
+        req = urllib.Request("".join(url[i].replace(' ', "%20") if i > url.find('?') else url[i] for i in range(len(url))), data, headers or {"User-agent": NAME, "Accept-encoding": "gzip, deflate"})
+        resp = urllib.urlopen(req, timeout=TIMEOUT)
         retval = resp.read()
+
         encoding = resp.headers.get("Content-Encoding")
 
         if encoding:
             if encoding.lower() == "deflate":
-                data = StringIO.StringIO(zlib.decompress(retval, -15))
+                print("StingIO here may be wrong !!!!! ")
+                data = StringIO(zlib.decompress(retval, -15))
             elif encoding.lower() == "gzip":
-                data = gzip.GzipFile("", "rb", 9, StringIO.StringIO(retval))
-            retval = data.read()
-    except Exception, ex:
+                # data = gzip.GzipFile("", "rb", 9, StringIO(retval))
+                data = gzip.GzipFile("", "rb", 9, io.BytesIO(retval))
+            # retval = data.read()
+            retval = data.read().decode("utf-8","ignore")
+        else:
+            retval = retval.decode("utf-8","ignore")
+    except Exception as ex:
         retval = ex.read() if hasattr(ex, "read") else getattr(ex, "msg", str())
 
         if url.startswith("https://") and "handshake failure" in retval:
@@ -144,7 +155,7 @@ def check_sudo():
 
     check = None
 
-    if not subprocess.mswindows:
+    if not platform.system() == 'Windows':
         if getattr(os, "geteuid"):
             check = os.geteuid() == 0
     else:
@@ -198,7 +209,7 @@ def get_regex(items):
             else:
                 return re.escape(current.keys()[0])
         else:
-            return ("(?:%s)" if len(current) > 1 else "%s") % ('|'.join("%s%s" % (re.escape(_), process(current[_])) for _ in sorted(current))).replace('|'.join(str(_) for _ in xrange(10)), r"\d")
+            return ("(?:%s)" if len(current) > 1 else "%s") % ('|'.join("%s%s" % (re.escape(_), process(current[_])) for _ in sorted(current))).replace('|'.join(str(_) for _ in range(10)), r"\d")
 
     regex = process(head).replace(r"(?:|\d)", r"\d?")
 
@@ -224,14 +235,14 @@ def check_whitelisted(trail):
 
 def load_trails(quiet=False):
     if not quiet:
-        print "[i] loading trails..."
+        print ("[i] loading trails...")
 
     retval = TrailsDict()
     retval._regex = ""
 
     if os.path.isfile(config.TRAILS_FILE):
         try:
-            with open(config.TRAILS_FILE, "rb") as f:
+            with open(config.TRAILS_FILE, "r") as f:
                 reader = csv.reader(f, delimiter=',', quotechar='\"')
                 for row in reader:
                     if row and len(row) == 3:
@@ -248,7 +259,7 @@ def load_trails(quiet=False):
                                 if re.escape(trail) != trail:
                                     retval._regex += "|(?P<g%s>%s)" % (retval._regex.count("(?P<g"), trail)
 
-        except Exception, ex:
+        except Exception as ex:
             exit("[!] something went wrong during trails file read '%s' ('%s')" % (config.TRAILS_FILE, ex))
         finally:
             retval._regex = retval._regex.strip('|')
@@ -259,6 +270,6 @@ def load_trails(quiet=False):
             _ = '{0:,}'.format(_)
         except:
             pass
-        print "[i] %s trails loaded" % _
+        print ("[i] %s trails loaded" % _)
 
     return retval

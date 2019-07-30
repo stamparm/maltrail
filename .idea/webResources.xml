@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebResourcesPaths">
+    <contentEntries>
+      <entry url="file://$PROJECT_DIR$">
+        <entryData>
+          <resourceRoots>
+            <path value="file://$PROJECT_DIR$/cccheck/model" />
+            <path value="file://$PROJECT_DIR$/cccheck/data" />
+            <path value="file://$PROJECT_DIR$/model" />
+            <path value="file://$PROJECT_DIR$/data" />
+          </resourceRoots>
+        </entryData>
+      </entry>
+    </contentEntries>
+  </component>
+</project>

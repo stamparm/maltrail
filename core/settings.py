@@ -6,14 +6,16 @@ See the file 'LICENSE' for copying permission
 """
 
 import os
+import platform
 import re
 import socket
 import stat
 import string
 import subprocess
 import sys
-import urllib
-import urllib2
+import urllib.request as urllib
+import urllib.parse
+
 
 from core.addr import addr_to_int
 from core.addr import make_mask
@@ -21,7 +23,7 @@ from core.attribdict import AttribDict
 from core.trailsdict import TrailsDict
 
 NAME = "Maltrail"
-VERSION = "0.13.45"
+VERSION = "0.13.46"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -57,7 +59,7 @@ PING_RESPONSE = "pong"
 MAX_NOFILE = 65000
 CAPTURE_TIMEOUT = 100  # ms
 CONFIG_FILE = os.path.join(ROOT_DIR, "maltrail.conf")
-SYSTEM_LOG_DIR = "/var/log" if not subprocess.mswindows else "C:\\Windows\\Logs"
+SYSTEM_LOG_DIR = "/var/log" if not platform.system() == 'Windows' else "C:\\Windows\\Logs"
 DEFAULT_EVENT_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IROTH
 DEFAULT_ERROR_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IWGRP | stat.S_IROTH | stat.S_IWOTH
 HOSTNAME = socket.gethostname()
@@ -73,7 +75,7 @@ CONSONANTS = "bcdfghjklmnpqrstvwxyz"
 BAD_TRAIL_PREFIXES = ("127.", "192.168.", "localhost")
 LOCALHOST_IP = { 4: "127.0.0.1", 6: "::1" }
 IGNORE_DNS_QUERY_SUFFIXES = set(("arpa", "local", "guest", "intranet", "int"))
-VALID_DNS_CHARS = string.letters + string.digits + '-' + '.'  # Reference: http://stackoverflow.com/a/3523068
+VALID_DNS_CHARS = string.ascii_letters + string.digits + '-' + '.'  # Reference: http://stackoverflow.com/a/3523068
 SUSPICIOUS_CONTENT_TYPES = ("application/vnd.ms-htmlhelp", "application/x-bsh", "application/x-chm", "application/x-sh", "application/x-shellscript", "application/hta", "text/x-scriptlet", "text/x-sh", "text/x-shellscript")
 SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".chm", ".egg", ".exe", ".hta", ".hwp", ".pac", ".ps1", ".scr", ".sct"))
 WHITELIST_DIRECT_DOWNLOAD_KEYWORDS = ("cgi", "/scripts/", "/_vti_bin/", "/bin/", "/pub/softpaq/", "/bios/", "/pc-axis/")
@@ -89,7 +91,7 @@ SUSPICIOUS_HTTP_REQUEST_REGEXES = (
     ("potential remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|wget http|sh /tmp/|cmd\.exe|/bin/bash|2>&1|\b(cat|ls) /|chmod [0-7]{3,4}\b|nc -l -p \d+|>\s*/dev/null|-d (allow_url_include|safe_mode|auto_prepend_file)"),
     ("potential directory traversal", r"(\.{2,}[/\\]+){3,}|/etc/(passwd|shadow|issue|hostname)|[/\\](boot|system|win)\.ini|[/\\]system32\b|%SYSTEMROOT%"),
     ("potential web scan", r"(acunetix|injected_by)_wvs_|SomeCustomInjectedHeader|some_inexistent_file_with_long_name|testasp\.vulnweb\.com/t/fit\.txt|www\.acunetix\.tst|\.bxss\.me|thishouldnotexistandhopefullyitwillnot|OWASP%\d+ZAP|chr\(122\)\.chr\(97\)\.chr\(112\)|Vega-Inject|VEGA123|vega\.invalid|PUT-putfile|w00tw00t|muieblackcat"),
-    ("potential dns changer", r"\b(staticPriDns|staticSecDns|pppoePriDns|pppoeSecDns|wan_dns1|wan_dns2|dnsPrimary|dnsSecondary|dnsDynamic|dnsRefresh)=")
+    ("potential dns changer", r"\b(staticPriDns|staticSecDns|pppoePriDns|pppoeSecDns|wan_dns1|wan_dns2|dnsPrimary|dnsSecondary|dnsDynamic|dnsRefresh|DNS_FST|DNS_SND|dhcpPriDns|dhcpSecDns)=")
 )
 SUSPICIOUS_HTTP_PATH_REGEXES = (
     ("non-existent page", r"defaultwebpage\.cgi"),
@@ -97,7 +99,7 @@ SUSPICIOUS_HTTP_PATH_REGEXES = (
 )
 SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION = ("?", "..", ".ht", "=", " ", "'")
 SUSPICIOUS_PROXY_PROBE_PRE_CONDITION = ("probe", "proxy", "echo", "check")
-SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, urllib.quote(_)) for _ in "( )\r\n")
+SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, urllib.parse.quote(_)) for _ in "( )\r\n")
 SUSPICIOUS_UA_REGEX = ""
 OBSOLETE_UA_REGEX = r"(?i)windows NT [3-5]\.\d+|windows (3\.\d+|95|98|xp)|MSIE [1-6]\.\d+|Navigator/|Safari/[1-4]|Opera/[1-3]|Firefox/1?[0-9]\."
 WEB_SHELLS = set()
@@ -142,7 +144,7 @@ def _get_total_physmem():
     retval = None
 
     try:
-        if subprocess.mswindows:
+        if platform.system() == 'Windows':
             import ctypes
 
             kernel32 = ctypes.windll.kernel32
@@ -209,7 +211,7 @@ def _get_total_physmem():
     return retval
 
 def check_memory():
-    print "[?] at least %dMB of free memory required" % (CHECK_MEMORY_SIZE / 1024 / 1024)
+    print ("[?] at least %dMB of free memory required" % (CHECK_MEMORY_SIZE / 1024 / 1024))
     try:
         _ = '0' * CHECK_MEMORY_SIZE
     except MemoryError:
@@ -221,13 +223,14 @@ def read_config(config_file):
     if not os.path.isfile(config_file):
         exit("[!] missing configuration file '%s'" % config_file)
     else:
-        print "[i] using configuration file '%s'" % config_file
+        print ("[i] using configuration file '%s'" % config_file)
 
     config.clear()
 
     try:
         array = None
-        content = open(config_file, "rb").read()
+        # content = open(config_file,'rb').read()
+        content = open(config_file).read()
 
         for line in content.split("\n"):
             line = line.strip('\r')
@@ -325,8 +328,8 @@ def read_config(config_file):
     if not str(config.HTTP_PORT or "").isdigit():
         exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % config.HTTP_PORT)
 
-    if config.PROCESS_COUNT and subprocess.mswindows:
-        print "[x] multiprocessing is currently not supported on Windows OS"
+    if config.PROCESS_COUNT and platform.system() == 'Windows':
+        print ("[x] multiprocessing is currently not supported on Windows OS")
         config.PROCESS_COUNT = 1
 
     if config.CAPTURE_BUFFER:
@@ -349,8 +352,8 @@ def read_config(config_file):
 
     if config.PROXY_ADDRESS:
         PROXIES.update({"http": config.PROXY_ADDRESS, "https": config.PROXY_ADDRESS})
-        opener = urllib2.build_opener(urllib2.ProxyHandler(PROXIES))
-        urllib2.install_opener(opener)
+        opener = urllib.build_opener(urllib.ProxyHandler(PROXIES))
+        urllib.install_opener(opener)
 
     if not config.TRAILS_FILE:
         config.TRAILS_FILE = DEFAULT_TRAILS_FILE

@@ -50,7 +50,7 @@ def main():
         try:
             import OpenSSL
         except ImportError:
-            if subprocess.mswindows:
+            if platform.system() == 'Windows':
                 exit("[!] please install 'pyopenssl' (e.g. 'pip install pyopenssl')")
             else:
                 msg, _ = "[!] please install 'pyopenssl'", platform.linux_distribution()[0].lower()
@@ -109,7 +109,7 @@ if __name__ == "__main__":
     except SystemExit as ex:
         show_final = False
 
-        if isinstance(getattr(ex, "message"), basestring):
+        if isinstance(getattr(ex, "message"), str):
             print(ex)
             os._exit(1)
     except Exception:
