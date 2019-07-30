@@ -448,3 +448,7 @@ westflies.com/api/api.php
 # Reference: https://www.virustotal.com/gui/ip-address/173.231.184.61/relations
 
 /mars/remote.php
+
+# Reference: https://twitter.com/IpNigh/status/1156083556747268096
+
+/outer_pag.php
