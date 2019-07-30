@@ -4682,3 +4682,23 @@ bcn-pool.us
 # Reference: https://www.virustotal.com/gui/domain/killwaf.com/relations
 
 killwaf.com
+
+# Reference: https://www.virustotal.com/gui/domain/vzglagtime.net/relations
+
+vzglagtime.net
+
+# Reference: https://blog.sucuri.net/2019/07/fake-google-domains-used-in-evasive-magento-skimmer.html
+
+lnfo.cc
+
+# Reference: https://www.virustotal.com/gui/domain/strust.club/relations
+
+strust.club
+
+# Reference: https://www.virustotal.com/gui/domain/foxdos.cc/details
+
+foxdos.cc
+
+# Reference: https://www.virustotal.com/gui/domain/5sfox.com/relations
+
+5sfox.com
