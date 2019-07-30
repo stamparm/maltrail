@@ -731,3 +731,72 @@ Finder/28
 # Reference: https://www.proofpoint.com/us/threat-insight/post/brushaloader-still-sweeping-victims-one-year-later
 
 sENB2a36p61HSKES
+
+# Reference: https://twitter.com/stvemillertime/status/1151148881729789954
+
+Mozilla/5.3 (i686-iamsatan-mingw32)
+
+# Reference: https://twitter.com/reesespcres/status/1144703633377964033
+
+Mozilla/5.2 (i686-w64-mingw32)
+
+# Reference: https://twitter.com/DissectMalware/status/1069507395448184833
+
+4M2yC5u1stom4U1se3r
+
+# Reference: https://twitter.com/ItsReallyNick/status/1033413803470467072
+
+NMS\.19
+
+# Reference: https://twitter.com/PhishingAi/status/994210210389557250
+
+l33boLAMER
+
+# Reference: https://twitter.com/sixdub/status/992001190950031361
+
+WinHTTP loader/1.0
+
+# Reference: https://twitter.com/stvemillertime/status/985150675527974912
+
+CertUtil URL Agent
+
+# Reference: https://twitter.com/malwareforme/status/918503641887096832
+
+OtherUser
+
+# Reference: https://twitter.com/JohnLaTwC/status/912301412993794049
+# Reference: https://www.virustotal.com/gui/file/050cdd4e6195e5be16d883b83350c1baa4c7a614814f9ff85ff6c65bfa6fefe9/detection
+
+Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone 7.5; Trident/5.0; IEMobile/9.0)
+
+# Reference: https://twitter.com/stdaux/status/861217811015680001
+
+Mozilla/5.0 (ENIAC; the Electronic Numerical Integrator and Computer)
+
+# Reference: https://twitter.com/xme/status/753325697830182912
+
+Gluten Free Crawler/1.0
+
+# Reference: https://twitter.com/abuse_ch/status/700252982731018241
+
+givmafile
+
+# Reference: https://twitter.com/nimolix/status/562532331357892608
+
+parsijoo-bot
+
+# Reference: https://twitter.com/bortzmeyer/status/545492437628891136
+
+Kim Jong-un Evil Browser
+
+# Reference: http://www.behindthefirewalls.com/2013/11/the-importance-of-user-agent-in-botnets.html
+
+underworld
+system-update
+test\_hInternet
+installer-agent
+sleep 300000
+
+# Reference: https://twitter.com/ericasadun/status/12333713924816896
+
+MediaControl
