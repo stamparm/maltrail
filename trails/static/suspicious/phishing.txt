@@ -32782,3 +32782,20 @@ xn--yeherllet-4g6dkqwlmk.com
 xn--yeherwalle-to2eusia.com
 xn--yehewalle-4g6d4inii.com
 xn--yethrallet-umb5270gg0a.com
+
+# Reference: https://docs.google.com/document/d/1oYX3uN6KxIX_StzTH0s0yFNNoHDnV8VgmVqU5WoeErc (# 2018-03-26: “    SilentLibrarian” indicators (Iranian threat actor Mabna Institute))
+
+cavc.tk
+cvre.tk
+lib2.ml
+libi.ga
+libna.ml
+libru.gq
+libt.cf
+mncr.tk
+nsae.ml
+reactivation.in
+saea.ga
+seae.tk
+ulibr.cf
+ulibr.ga
