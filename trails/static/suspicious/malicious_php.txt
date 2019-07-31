@@ -463,3 +463,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/IpNigh/status/1156311805154725888
 
 /info_secure_account.php
+
+# Reference: https://twitter.com/IpNigh/status/1156600041274040320
+
+/u6ke0yj0s6btjdh22yrr62tj.php
