@@ -32799,3 +32799,7 @@ saea.ga
 seae.tk
 ulibr.cf
 ulibr.ga
+
+# Reference: https://twitter.com/PhishStats/status/1156446331482886144
+
+anamezing.com
