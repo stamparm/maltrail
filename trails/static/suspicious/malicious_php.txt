@@ -459,3 +459,7 @@ westflies.com/api/api.php
 /1Hqmyt597XO0ZNj9tXit7HZOMroEJu8c.php
 /chihuahua-posting.php
 /XKIOEEEEE.KDJDD.php
+
+# Reference: https://twitter.com/IpNigh/status/1156311805154725888
+
+/info_secure_account.php
