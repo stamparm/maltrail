@@ -513,7 +513,6 @@ cdn.taboola.com/TaboolaCookieSyncScript.js
 # Reference: https://blog.malwarebytes.com/threat-analysis/2019/07/exploit-kits-summer-2019-review/
 # Reference: https://otx.alienvault.com/pulse/5d40766ecabf3f345b3811db
 
-/encrypt.min.js
 /e1cuqrhmik66gu7pr90qk9v3p8.js
 /ftp22vfljscml2370rsritui9g.js
 /tinyjs.min.js
