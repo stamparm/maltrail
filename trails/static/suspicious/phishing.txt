@@ -32823,3 +32823,7 @@ defend-accounts-recovery-supports-amazon.com
 # Reference: https://twitter.com/PhishStats/status/1156629147801837569
 
 miuo-v006.ml
+
+# Reference: https://twitter.com/PhishingAi/status/1156616454004805632
+
+edevlet-aidatlari-agustos.com
