@@ -32831,3 +32831,9 @@ edevlet-aidatlari-agustos.com
 # Reference: https://twitter.com/PhishStats/status/1156854048571711490
 
 grizzlies-skies.000webhostapp.com
+
+# Reference: https://twitter.com/ANeilan/status/1156876923437342721
+
+app-search.in
+login-info.net
+map-location.top
