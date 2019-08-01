@@ -32827,3 +32827,7 @@ miuo-v006.ml
 # Reference: https://twitter.com/PhishingAi/status/1156616454004805632
 
 edevlet-aidatlari-agustos.com
+
+# Reference: https://twitter.com/PhishStats/status/1156854048571711490
+
+grizzlies-skies.000webhostapp.com
