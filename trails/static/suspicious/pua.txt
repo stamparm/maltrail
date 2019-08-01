@@ -1976,3 +1976,7 @@ rrsavings.com
 skype-soft.com
 trtromg.com
 update-srv.info
+
+# Reference: https://threatpost.com/malvertising-ad-blockers-mac-malware/146861/
+
+dailyads.org
