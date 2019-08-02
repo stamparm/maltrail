@@ -33766,3 +33766,8 @@ nicman19dwfwenicman19.blob.core.windows.net
 # Reference: https://twitter.com/romonlyht/status/1157159684417044482
 
 hentaiwonderland.com
+
+# Reference: https://twitter.com/ps66uk/status/1157212910499893248
+
+harrison18wdharrison18.blob.core.windows.net
+mahrosa18.azurewebsites.net
