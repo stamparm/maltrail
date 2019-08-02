@@ -32862,3 +32862,7 @@ kvng5dwwq5.blob.core.windows.net
 # Reference: https://twitter.com/ninoseki/status/1157079690315591680
 
 16shop.online
+
+# Reference: https://twitter.com/dave_daves/status/1157039639376596992
+
+b492f02f0f.com
