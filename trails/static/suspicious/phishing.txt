@@ -33739,3 +33739,7 @@ verify\-accountsapple[a-z0-9-_.]{0,}
 webapps\-email\-amazon[a-z0-9-_.]{0,}
 webapps\-secure\-support\-id[a-z0-9-_.]{0,}
 webapps\.appleid\.login[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/smica83/status/1157228828298797056
+
+whanau.icu
