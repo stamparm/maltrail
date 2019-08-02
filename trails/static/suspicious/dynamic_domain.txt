@@ -2608,6 +2608,7 @@ meibu.net
 dynv6.net
 
 # Reference: http://www.dynaccess.de
+# Reference: https://www.virustotal.com/gui/domain/dynaccess.de/relations
 
 dynaccess.de
 dynv4.net
