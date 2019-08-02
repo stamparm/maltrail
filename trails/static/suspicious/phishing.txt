@@ -33792,3 +33792,7 @@ paypal.com.798273.ml
 # Reference: https://twitter.com/MalwarePatrol/status/1157262032393113600
 
 thevideosvirales.com
+
+# Reference: https://twitter.com/PhishStats/status/1157352805360967687
+
+root4.localhost.run
