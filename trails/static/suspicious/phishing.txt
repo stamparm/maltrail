@@ -33775,3 +33775,7 @@ mahrosa18.azurewebsites.net
 # Reference: https://twitter.com/PhishStats/status/1157263623653380097
 
 myellthevwaallet.com
+
+# Reference: https://twitter.com/IpNigh/status/1157020451979313154
+
+facebook-login-confirmation-support-center-page-security.weebly.com
