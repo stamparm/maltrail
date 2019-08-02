@@ -33779,3 +33779,8 @@ myellthevwaallet.com
 # Reference: https://twitter.com/IpNigh/status/1157020451979313154
 
 facebook-login-confirmation-support-center-page-security.weebly.com
+
+# Reference: https://twitter.com/IpNigh/status/1156989746159206406
+
+paypal.com.798273.ml
+798273.ml
