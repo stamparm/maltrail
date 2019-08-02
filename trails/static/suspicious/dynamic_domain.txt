@@ -2602,3 +2602,7 @@ nerdpol.ovh
 # Reference: https://www.virustotal.com/gui/domain/meibu.net/relations
 
 meibu.net
+
+# Reference: https://www.virustotal.com/gui/domain/dynv6.net/relations
+
+dynv6.net
