@@ -33743,3 +33743,8 @@ webapps\.appleid\.login[a-z0-9-_.]{0,}
 # Reference: https://twitter.com/smica83/status/1157228828298797056
 
 whanau.icu
+
+# Reference: https://twitter.com/illegalFawn/status/1157209773626052608
+
+service\-account\-verification[a-z0-9-_.]{0,}\.com
+websignin\-apple[a-z0-9-_.]{0,}\.com
