@@ -2566,6 +2566,8 @@ dynamisches-dns.de
 
 # Reference: https://www.virustotal.com/gui/domain/dnshome.de/relations
 # Reference: https://www.dnshome.de/index.php
+# Reference: http://www.dynaccess.de
+# Reference: https://www.virustotal.com/gui/domain/dynaccess.de/relations
 
 dyndns.icu
 dnshome.icu
@@ -2574,6 +2576,7 @@ srvdns.de
 ddnssec.de
 dyndnssec.de
 dnshome.de
+dynv4.net
 
 # Reference: https://www.virustotal.com/gui/domain/freemyip.com/relations
 
@@ -2606,9 +2609,3 @@ meibu.net
 # Reference: https://www.virustotal.com/gui/domain/dynv6.net/relations
 
 dynv6.net
-
-# Reference: http://www.dynaccess.de
-# Reference: https://www.virustotal.com/gui/domain/dynaccess.de/relations
-
-dynaccess.de
-dynv4.net
