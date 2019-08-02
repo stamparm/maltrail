@@ -33679,6 +33679,7 @@ com-verif-signin[a-z0-9-_.]{0,}
 help\-apple\-security\-center[a-z0-9-_.]{0,}
 iforgot\.support\.account\.service\.[a-z0-9-_.]{0,}\.com
 informacion\-cuenta\-appleid[a-z0-9-_.]{0,}\.com
+information[a-z0-9]{0,}\-accounts\-support\-app[a-z0-9]{0,}\.com
 logln\-bllling\-verification[a-z0-9-_.]{0,}
 logln\-verification[a-z0-9-_.]{0,}
 manage\-appleid[a-z0-9-_.]{0,}
