@@ -33748,3 +33748,8 @@ whanau.icu
 
 service\-account\-verification[a-z0-9-_.]{0,}\.com
 websignin\-apple[a-z0-9-_.]{0,}\.com
+
+# Reference: https://twitter.com/ps66uk/status/1157208290675347456
+
+evfvrfbestofbest17.blob.core.windows.net
+mahrosa17.azurewebsites.net
