@@ -33757,3 +33757,8 @@ mahrosa17.azurewebsites.net
 # Reference: https://twitter.com/PhishStats/status/1157216417860784128
 
 000o4n8.wcomhost.com
+
+# Reference: https://twitter.com/ps66uk/status/1157217595692605440
+
+mahrosa19.azurewebsites.net
+nicman19dwfwenicman19.blob.core.windows.net
