@@ -33801,3 +33801,7 @@ root5.localhost.run
 # Reference: https://twitter.com/packet_Wire/status/1157354149866024960
 
 addagroup.com.co
+
+# Reference: https://twitter.com/IronNetTR/status/1157386600973836288
+
+banditt.club
