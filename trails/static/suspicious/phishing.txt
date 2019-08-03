@@ -33805,3 +33805,7 @@ addagroup.com.co
 # Reference: https://twitter.com/IronNetTR/status/1157386600973836288
 
 banditt.club
+
+# Reference: https://twitter.com/IpNigh/status/1157425083243290624
+
+paypalsertiferleyes.serveirc.com
