@@ -33814,3 +33814,7 @@ paypalsertiferleyes.serveirc.com
 # Reference: https://twitter.com/romonlyht/status/1157432736807702528
 
 apple\-storesinfo[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/romonlyht/status/1157559984172883968
+
+mufg-co-jp.red
