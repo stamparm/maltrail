@@ -33536,7 +33536,7 @@ already-have-account.cloud
 already-have-account.com
 appclaim-servicez.com
 apprudehan.com
-apps-signin-appleidverifications.com
+apps-signin-apple[a-z0-9]{0,}\.com
 appsrecentlypurcahse-id.com
 bukan-kutakcinta.com
 case-appkersdu.com
