@@ -33810,3 +33810,7 @@ banditt.club
 # Reference: https://twitter.com/IpNigh/status/1157425083243290624
 
 paypalsertiferleyes.serveirc.com
+
+# Reference: https://twitter.com/romonlyht/status/1157432736807702528
+
+apple\-storesinfo[a-z0-9-_.]{0,}
