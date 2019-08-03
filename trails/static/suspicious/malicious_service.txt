@@ -229,3 +229,7 @@ darknetleaks.ru
 # Reference: https://www.virustotal.com/gui/file/5bb883d81954d10446a71fc8965f399c731bfccdfccdad738c12f1025b7b2a96/detection
 
 officeapplications.net
+
+# Reference: https://blog.team-cymru.com/2019/07/25/unmasking-ave_maria/
+
+warzone.io
