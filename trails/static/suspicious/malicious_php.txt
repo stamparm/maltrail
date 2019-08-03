@@ -463,3 +463,23 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/IpNigh/status/1156311805154725888
 
 /info_secure_account.php
+
+# Reference: https://twitter.com/IpNigh/status/1156600041274040320
+
+/u6ke0yj0s6btjdh22yrr62tj.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1156627854572081152
+
+/c3jccysjfbj8u3u9atw9vkff.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1157493998577225728
+
+/13rqsblgaqu1z4h04w7ql2kh.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1157594231407632384
+
+/i9eyybpavhc50wb8lcc7yle9.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1157669728544088064
+
+/a9di3q2br7kzvl1gl5rjh9pr.php
