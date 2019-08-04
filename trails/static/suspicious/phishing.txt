@@ -33916,3 +33916,7 @@ ppl\-centre\-required\-action[a-z0-9-_.]{0,}
 ppl\-center\-required\-action[a-z0-9-_.]{0,}
 warn[a-z0-9-_.]{0,}ing[a-z0-9-_.]{0,}account[a-z0-9-_.]{0,}recovery[a-z0-9-_.]{0,}
 xrp-giveaway.club
+
+# Reference: https://twitter.com/PhishStats/status/1157375125702029317
+
+paypalsertiferleys[a-z0-9-_.]{0,}
