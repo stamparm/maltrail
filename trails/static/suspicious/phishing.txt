@@ -33665,6 +33665,7 @@ appleid\-apps[a-z0-9-_.]{0,}
 appleid\-obigarado[a-z0-9-_.]{0,}
 appleid\-official[a-z0-9-_.]{0,}
 appleid\-soutien[a-z0-9-_.]{0,}
+appleid\-store[a-z0-9-_.]{0,}
 appleid\.apple\.[a-z0-9-_.]{0,}\.com
 appleid\.apple\.com\-verif\-signin[a-z0-9-_.]{0,}
 appleid\.apple\.com\.[a-z0-9-_.]{0,}\.com
@@ -33826,3 +33827,142 @@ microsoft\-com[a-z0-9-_.]{0,}\.com
 # Reference: https://twitter.com/IpNigh/status/1157624543655149568
 
 mobilityaction.co
+
+# Reference: https://twitter.com/abel1ma/status/1140386706647945216
+
+http://185.186.78.71
+
+# Reference: https://twitter.com/romonlyht/status/1157781041081278465
+
+http://77.243.183.157
+
+# Reference: https://twitter.com/MalwarePatrol/status/1157805616473268224
+
+myetherwałłęt.com
+xn--myetherwat-mnb50ca.com
+
+# Reference: https://twitter.com/PhishStats/status/1157805486714105856
+
+sec0edrop\-solvy[0-9]{0,}\.com
+
+# Reference: https://twitter.com/PhishStats/status/1157760100678995968
+
+buromotor.top
+
+# Reference: https://twitter.com/MalwarePatrol/status/1157745232613662720
+
+tesla-gift.club
+
+# Reference: https://twitter.com/satontonton/status/1129378818924326913
+
+mufg--co--jp.xyz
+
+# Reference: https://twitter.com/ninoseki/status/1157906792464044037
+
+account[a-z0-9-_.]{0,}privat[a-z0-9-_.]{0,}
+amazoncom\-[a-z0-9-_.]{0,}\-security\-account\-verification[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/illegalFawn/status/1157919154235727872
+
+poliziapostale.org
+
+# Reference: https://twitter.com/PhishStats/status/1157918950182858752
+
+get3tesla.top
+
+# Reference: https://twitter.com/PhishStats/status/1157963870499196928
+
+libe.ga
+myaccount\.library\.ualberta[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishStats/status/1157873278712799237
+
+user\-id[a-z0-9-_.]{0,}\.[a-z0-9-_.]{0,}
+/amaz0n/
+
+# Reference: https://twitter.com/PhishStats/status/1157829846304788488
+
+invoid.online
+snrgaz.cn
+
+# Reference: https://twitter.com/PhishStats/status/1157738027164344320
+
+allwatch-online.ru
+my\-acccccccc\-[a-z0-9-_.]{0,}
+online\-kundeservice[a-z0-9-_.]{0,}
+confi{0,}rm[a-z0-9-_.]{0,}your[a-z0-9-_.]{0,}account[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishStats/status/1157782767670910977
+
+appleid\.com\.redirect[a-z0-9-_.]{0,}
+com\-paymentlodaing[a-z0-9-_.]{0,}
+limited\-verification[a-z0-9-_.]{0,}
+rest-infservice.tk
+/facebook_login/
+
+# Reference: https://twitter.com/PhishStats/status/1157601407123492864
+
+365changqe.pp.ru
+
+# Reference: https://twitter.com/PhishStats/status/1157556263141740544
+
+accyflor.mx
+ihijri.icu
+personasl.site
+
+# Reference: https://twitter.com/PhishStats/status/1157420395961769984
+
+ppl\-centre\-required\-action[a-z0-9-_.]{0,}
+ppl\-center\-required\-action[a-z0-9-_.]{0,}
+warn[a-z0-9-_.]{0,}ing[a-z0-9-_.]{0,}account[a-z0-9-_.]{0,}recovery[a-z0-9-_.]{0,}
+xrp-giveaway.club
+
+# Reference: https://twitter.com/PhishStats/status/1157375125702029317
+
+paypalsertiferleyes[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishStats/status/1157330185378762757
+
+servicespk-support.xyz
+
+# Reference: https://twitter.com/PhishStats/status/1157286899679158273
+
+securels-chase.com
+
+# Reference: https://twitter.com/PhishStats/status/1157239041470926849
+
+[a-z0-9-_.]{0,}payipal[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishStats/status/1157193704815386624
+
+appstore-mapid.com
+[a-z0-9-_.]{0,}banc[a-z0-9-_.]{0,}privat[a-z0-9-_.]{0,}login[a-z0-9-_.]{0,}
+[a-z0-9-_.]{0,}bank[a-z0-9-_.]{0,}privat[a-z0-9-_.]{0,}login[a-z0-9-_.]{0,}
+livosophy.biz
+0bmen\-money[a-z0-9-_.]{0,}
+veri-user-ssl.icu
+
+# Reference: https://twitter.com/PhishStats/status/1157148483876339712
+
+/webapps_paypal/
+/webapps-paypal/
+
+# Reference: https://twitter.com/PhishStats/status/1158077087523250176
+
+jjj.snprobbx.pbz.r.de.a2ip.ru
+
+# Reference: https://twitter.com/IpNigh/status/1158090122874761223
+
+f70713fw.beget.tech
+
+# Reference: https://twitter.com/NaomiSuzuki_/status/1156970467606986752
+
+msonllne.xyz
+
+# Reference: https://twitter.com/NaomiSuzuki_/status/1156835549220487168
+
+smbcvco.jp
+
+# Reference: https://twitter.com/NaomiSuzuki_/status/1156482860963860480
+
+smbcsod.pw
