@@ -33665,6 +33665,7 @@ appleid\-apps[a-z0-9-_.]{0,}
 appleid\-obigarado[a-z0-9-_.]{0,}
 appleid\-official[a-z0-9-_.]{0,}
 appleid\-soutien[a-z0-9-_.]{0,}
+appleid\-store[a-z0-9-_.]{0,}
 appleid\.apple\.[a-z0-9-_.]{0,}\.com
 appleid\.apple\.com\-verif\-signin[a-z0-9-_.]{0,}
 appleid\.apple\.com\.[a-z0-9-_.]{0,}\.com
@@ -33855,3 +33856,11 @@ tesla-gift.club
 # Reference: https://twitter.com/satontonton/status/1129378818924326913
 
 mufg--co--jp.xyz
+
+# Reference: https://twitter.com/ninoseki/status/1157906792464044037
+
+accountsprivatetldd.com
+amazoncom-japan-security-account-verification.com
+appleid-store.apple.jp.accountsprivatetldd.com
+secured-sign-in.amazoncom-japan-security-account-verification.com
+amazoncom\-[a-z0-9-_.]{0,}\-security\-account\-verification[a-z0-9-_.]{0,}
