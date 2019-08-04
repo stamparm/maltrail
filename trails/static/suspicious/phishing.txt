@@ -33895,7 +33895,7 @@ confi{0,}rm[a-z0-9-_.]{0,}your[a-z0-9-_.]{0,}account[a-z0-9-_.]{0,}
 # Reference: https://twitter.com/PhishStats/status/1157782767670910977
 
 appleid\.com\.redirect[a-z0-9-_.]{0,}
-com-paymentlodaing[a-z0-9-_.]{0,}
-limited-verification[a-z0-9-_.]{0,}
+com\-paymentlodaing[a-z0-9-_.]{0,}
+limited\-verification[a-z0-9-_.]{0,}
 rest-infservice.tk
 /facebook_login/
