@@ -33839,3 +33839,7 @@ http://77.243.183.157
 
 myetherwałłęt.com
 xn--myetherwat-mnb50ca.com
+
+# Reference: https://twitter.com/PhishStats/status/1157805486714105856
+
+sec0edrop\-solvy[0-9]{0,}\.com
