@@ -33946,3 +33946,7 @@ veri-user-ssl.icu
 
 /webapps_paypal/
 /webapps-paypal/
+
+# Reference: https://twitter.com/PhishStats/status/1158077087523250176
+
+jjj.snprobbx.pbz.r.de.a2ip.ru
