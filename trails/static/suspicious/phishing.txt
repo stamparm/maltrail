@@ -33919,4 +33919,4 @@ xrp-giveaway.club
 
 # Reference: https://twitter.com/PhishStats/status/1157375125702029317
 
-paypalsertiferleys[a-z0-9-_.]{0,}
+paypalsertiferleyes[a-z0-9-_.]{0,}
