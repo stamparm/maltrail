@@ -33847,3 +33847,7 @@ sec0edrop\-solvy[0-9]{0,}\.com
 # Reference: https://twitter.com/PhishStats/status/1157760100678995968
 
 buromotor.top
+
+# Reference: https://twitter.com/MalwarePatrol/status/1157745232613662720
+
+tesla-gift.club
