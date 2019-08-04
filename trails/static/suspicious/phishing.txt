@@ -33843,3 +33843,7 @@ xn--myetherwat-mnb50ca.com
 # Reference: https://twitter.com/PhishStats/status/1157805486714105856
 
 sec0edrop\-solvy[0-9]{0,}\.com
+
+# Reference: https://twitter.com/PhishStats/status/1157760100678995968
+
+buromotor.top
