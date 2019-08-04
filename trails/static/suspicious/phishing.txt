@@ -33950,3 +33950,7 @@ veri-user-ssl.icu
 # Reference: https://twitter.com/PhishStats/status/1158077087523250176
 
 jjj.snprobbx.pbz.r.de.a2ip.ru
+
+# Reference: https://twitter.com/IpNigh/status/1158090122874761223
+
+f70713fw.beget.tech
