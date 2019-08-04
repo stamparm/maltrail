@@ -33920,3 +33920,24 @@ xrp-giveaway.club
 # Reference: https://twitter.com/PhishStats/status/1157375125702029317
 
 paypalsertiferleyes[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishStats/status/1157330185378762757
+
+servicespk-support.xyz
+
+# Reference: https://twitter.com/PhishStats/status/1157286899679158273
+
+securels-chase.com
+
+# Reference: https://twitter.com/PhishStats/status/1157239041470926849
+
+[a-z0-9-_.]{0,}payipal[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishStats/status/1157193704815386624
+
+appstore-mapid.com
+[a-z0-9-_.]{0,}banc[a-z0-9-_.]{0,}privat[a-z0-9-_.]{0,}login[a-z0-9-_.]{0,}
+[a-z0-9-_.]{0,}bank[a-z0-9-_.]{0,}privat[a-z0-9-_.]{0,}login[a-z0-9-_.]{0,}
+livosophy.biz
+0bmen\-money[a-z0-9-_.]{0,}
+veri-user-ssl.icu
