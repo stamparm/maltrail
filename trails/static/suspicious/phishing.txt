@@ -33899,3 +33899,7 @@ com\-paymentlodaing[a-z0-9-_.]{0,}
 limited\-verification[a-z0-9-_.]{0,}
 rest-infservice.tk
 /facebook_login/
+
+# Reference: https://twitter.com/PhishStats/status/1157601407123492864
+
+365changqe.pp.ru
