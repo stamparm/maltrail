@@ -33859,8 +33859,5 @@ mufg--co--jp.xyz
 
 # Reference: https://twitter.com/ninoseki/status/1157906792464044037
 
-accountsprivatetldd.com
-amazoncom-japan-security-account-verification.com
-appleid-store.apple.jp.accountsprivatetldd.com
-secured-sign-in.amazoncom-japan-security-account-verification.com
+account[a-z0-9-_.]{0,}privat[a-z0-9-_.]{0,}
 amazoncom\-[a-z0-9-_.]{0,}\-security\-account\-verification[a-z0-9-_.]{0,}
