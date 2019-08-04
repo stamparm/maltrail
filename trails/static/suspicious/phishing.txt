@@ -33941,3 +33941,8 @@ appstore-mapid.com
 livosophy.biz
 0bmen\-money[a-z0-9-_.]{0,}
 veri-user-ssl.icu
+
+# Reference: https://twitter.com/PhishStats/status/1157148483876339712
+
+/webapps_paypal/
+/webapps-paypal/
