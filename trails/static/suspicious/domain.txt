@@ -4702,3 +4702,12 @@ foxdos.cc
 # Reference: https://www.virustotal.com/gui/domain/5sfox.com/relations
 
 5sfox.com
+
+# Reference: https://www.virustotal.com/gui/domain/dkys.org/details
+# Reference: https://www.virustotal.com/gui/domain/dnspod.net/relations
+# Reference: https://www.virustotal.com/gui/domain/ffdns.net/relations
+# Reference: https://twitter.com/ScumBots/status/1157498082902335490
+
+dkys.org
+dnspod.net
+ffdns.net
