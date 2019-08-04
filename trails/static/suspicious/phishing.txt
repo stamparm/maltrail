@@ -33865,3 +33865,7 @@ amazoncom\-[a-z0-9-_.]{0,}\-security\-account\-verification[a-z0-9-_.]{0,}
 # Reference: https://twitter.com/illegalFawn/status/1157919154235727872
 
 poliziapostale.org
+
+# Reference: https://twitter.com/PhishStats/status/1157918950182858752
+
+get3tesla.top
