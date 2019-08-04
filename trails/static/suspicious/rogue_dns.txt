@@ -551,3 +551,7 @@ ns4.gatherreceive.net
 101.200.147.153:53
 112.33.13.11:53
 120.76.249.59:53
+
+# Reference: https://twitter.com/ninoseki/status/1157110166086569985
+
+185.205.210.23:53
