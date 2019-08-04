@@ -33869,3 +33869,33 @@ poliziapostale.org
 # Reference: https://twitter.com/PhishStats/status/1157918950182858752
 
 get3tesla.top
+
+# Reference: https://twitter.com/PhishStats/status/1157963870499196928
+
+libe.ga
+myaccount\.library\.ualberta[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishStats/status/1157873278712799237
+
+user\-id[a-z0-9-_.]{0,}\.[a-z0-9-_.]{0,}
+/amaz0n/
+
+# Reference: https://twitter.com/PhishStats/status/1157829846304788488
+
+invoid.online
+snrgaz.cn
+
+# Reference: https://twitter.com/PhishStats/status/1157738027164344320
+
+allwatch-online.ru
+my\-acccccccc\-[a-z0-9-_.]{0,}
+online\-kundeservice[a-z0-9-_.]{0,}
+confi{0,}rm[a-z0-9-_.]{0,}your[a-z0-9-_.]{0,}account[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishStats/status/1157782767670910977
+
+appleid\.com\.redirect[a-z0-9-_.]{0,}
+com-paymentlodaing[a-z0-9-_.]{0,}
+limited-verification[a-z0-9-_.]{0,}
+rest-infservice.tk
+/facebook_login/
