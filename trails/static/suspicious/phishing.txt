@@ -33851,3 +33851,7 @@ buromotor.top
 # Reference: https://twitter.com/MalwarePatrol/status/1157745232613662720
 
 tesla-gift.club
+
+# Reference: https://twitter.com/satontonton/status/1129378818924326913
+
+mufg--co--jp.xyz
