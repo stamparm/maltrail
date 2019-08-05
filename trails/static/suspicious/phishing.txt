@@ -33995,3 +33995,7 @@ szamlazz.ml
 
 apple.com.br3.support
 br3.support
+
+# Reference: https://twitter.com/PhishFindR/status/1158305383053762560
+
+carta[a-z0-9-_.]{0,}\.icu
