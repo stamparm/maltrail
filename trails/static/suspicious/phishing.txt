@@ -34024,4 +34024,10 @@ resetting-accounts-recovery-supports-amazon.com
 
 aw-pay.com
 databasehlfx.online
-login-bankofamerica[a-z0-9-_.]{0,}
+login\-bankofamerica[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishFindR/status/1158350982583083008
+
+katalogi-seo.net
+paypal\-credit[a-z0-9-_.]{0,}
+server\-location\-fmi\-appleid[a-z0-9-_.]{0,}
