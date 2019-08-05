@@ -34220,3 +34220,13 @@ fakturo[a-z0-9-_.]{0,}\.(gq|ml|tk)
 # Reference: https://twitter.com/SecSome/status/1158423601541988352
 
 pubgmobilehnewversino.top
+
+# Reference: https://twitter.com/PhishFindR/status/1158426720564928518
+
+16mb.com
+contact-web-article.gq
+galak-all.cf
+juraganmatosayuik.ml
+macabs.in
+[a-z0-9-_.]{0,}privasy\-setting[a-z0-9-_.]{0,}
+[a-z0-9-_.]{0,}webservlet\-servlet[a-z0-9-_.]{0,}
