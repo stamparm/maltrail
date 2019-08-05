@@ -33966,3 +33966,7 @@ smbcvco.jp
 # Reference: https://twitter.com/NaomiSuzuki_/status/1156482860963860480
 
 smbcsod.pw
+
+# Reference: https://twitter.com/IpNigh/status/1158136645939539969
+
+neetllfx.tk
