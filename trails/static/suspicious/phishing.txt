@@ -34019,3 +34019,9 @@ hoko9.cn
 # Reference: https://twitter.com/abel1ma/status/1158358031718944768
 
 resetting-accounts-recovery-supports-amazon.com
+
+# Reference: https://twitter.com/PhishFindR/status/1158351317045088256
+
+aw-pay.com
+databasehlfx.online
+login-bankofamerica[a-z0-9-_.]{0,}
