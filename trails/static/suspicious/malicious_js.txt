@@ -524,3 +524,7 @@ cdn.taboola.com/TaboolaCookieSyncScript.js
 # Reference: https://twitter.com/ScumBots/status/1157875582765535232
 
 http://156.236.102.78
+
+# Reference: https://twitter.com/securitydoggo/status/1158370884899495936
+
+/2019-National-Intelligence-Coordinating-Agency-Survey-Questionnaire.js
