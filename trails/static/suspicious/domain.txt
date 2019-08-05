@@ -4704,5 +4704,7 @@ foxdos.cc
 5sfox.com
 
 # Reference: https://twitter.com/bad_packets/status/1158447574077960192
+# Reference: https://www.virustotal.com/gui/ip-address/45.88.201.252/relations
 
+8chan.co
 8ch.net
