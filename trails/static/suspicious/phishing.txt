@@ -34230,3 +34230,16 @@ juraganmatosayuik.ml
 macabs.in
 [a-z0-9-_.]{0,}privasy\-setting[a-z0-9-_.]{0,}
 [a-z0-9-_.]{0,}webservlet\-servlet[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/satontonton/status/1158383961866825728
+
+acam-azobn.jp
+amazonaonocjp.com
+[a-z0-9-_.]{0,}softbank\.info
+account\-update\.amazon[a-z0-9-_.]{0,}
+account\-update\-amazon[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishFindR/status/1158441393901264896
+
+easy-changer.online
+openchange.online
