@@ -33982,3 +33982,7 @@ master-instructors.000webhostapp.com
 # Reference: https://twitter.com/IpNigh/status/1158152810904600576
 
 monday[a-z0-9-_.]{0,}\.000webhostapp\.com
+
+# Reference: https://twitter.com/harugasumi/status/1158211982471811072
+
+comevn.com
