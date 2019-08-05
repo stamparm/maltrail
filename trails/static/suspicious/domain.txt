@@ -4702,3 +4702,7 @@ foxdos.cc
 # Reference: https://www.virustotal.com/gui/domain/5sfox.com/relations
 
 5sfox.com
+
+# Reference: https://twitter.com/bad_packets/status/1158447574077960192
+
+8ch.net
