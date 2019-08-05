@@ -34212,3 +34212,7 @@ ytc9ytc9ytc9.blob.core.windows.net
 088invoice.online
 1nvoice.online
 [a-z0-9-_.]{0,}login[a-z0-9-_.]{0,}account[a-z0-9-_.]{0,}information[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/MaelSecurity/status/1158428279700897793
+
+fakturo[a-z0-9-_.]{0,}\.(gq|ml|tk)
