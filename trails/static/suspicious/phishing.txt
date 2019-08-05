@@ -34243,3 +34243,11 @@ account\-update\-amazon[a-z0-9-_.]{0,}
 
 easy-changer.online
 openchange.online
+
+# Reference: https://twitter.com/PhishFindR/status/1158441727902007301
+
+bimingenium.com
+hoprea.ro
+ooziest-push.000webhostapp.com
+payegwhtasapplive.com
+pemblockiran-akun99.webnode.com
