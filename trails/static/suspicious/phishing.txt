@@ -33999,3 +33999,11 @@ br3.support
 # Reference: https://twitter.com/PhishFindR/status/1158305383053762560
 
 carta[a-z0-9-_.]{0,}\.icu
+
+# Reference: https://twitter.com/PhishFindR/status/1158305716572250114
+
+bernini2013.org
+jameskjollydds.com
+khangoniansfm.com
+threeid-payment[a-z0-9-_.]{0,}\.com
+novobanco-pt.com
