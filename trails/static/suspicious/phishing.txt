@@ -33974,3 +33974,7 @@ neetllfx.tk
 # Reference: https://twitter.com/PhishStats/status/1158235745527705600
 
 gayanaroz.ru
+
+# Reference: https://twitter.com/IpNigh/status/1158167115209334787
+
+master-instructors.000webhostapp.com
