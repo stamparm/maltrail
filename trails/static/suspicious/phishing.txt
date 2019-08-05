@@ -33970,3 +33970,7 @@ smbcsod.pw
 # Reference: https://twitter.com/IpNigh/status/1158136645939539969
 
 neetllfx.tk
+
+# Reference: https://twitter.com/PhishStats/status/1158235745527705600
+
+gayanaroz.ru
