@@ -34015,3 +34015,7 @@ tutanota.org
 # Reference: https://twitter.com/tomoaxe/status/1158304684169465856
 
 hoko9.cn
+
+# Reference: https://twitter.com/abel1ma/status/1158358031718944768
+
+resetting-accounts-recovery-supports-amazon.com
