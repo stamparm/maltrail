@@ -33978,3 +33978,7 @@ gayanaroz.ru
 # Reference: https://twitter.com/IpNigh/status/1158167115209334787
 
 master-instructors.000webhostapp.com
+
+# Reference: https://twitter.com/IpNigh/status/1158152810904600576
+
+monday[a-z0-9-_.]{0,}\.000webhostapp\.com
