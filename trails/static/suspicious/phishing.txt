@@ -34206,3 +34206,9 @@ wwdwqworker5.blob.core.windows.net
 yomi10yomi10.blob.core.windows.net
 young9qwdqw99.blob.core.windows.net
 ytc9ytc9ytc9.blob.core.windows.net
+
+# Reference: https://twitter.com/PhishFindR/status/1158366168652099585
+
+088invoice.online
+1nvoice.online
+[a-z0-9-_.]{0,}login[a-z0-9-_.]{0,}account[a-z0-9-_.]{0,}information[a-z0-9-_.]{0,}
