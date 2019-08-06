@@ -34300,3 +34300,11 @@ humiane009.business
 
 binance[a-z0-9-_.]{0,}update[a-z0-9-_.]{0,}
 [a-z0-9-_.]{0,}kreditkart[a-z0-9-_.]{0,}[a-z0-9-_.]{0,}\.com
+
+# Reference: https://twitter.com/dave_daves/status/1158686067102539776
+
+web[a-z0-9-_.]{0,}verify[a-z0-9-_.]{0,}secur[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/malwaremustd1e/status/1158720088222003200
+
+outlooksupporto.com
