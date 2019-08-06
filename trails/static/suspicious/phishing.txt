@@ -34312,3 +34312,7 @@ outlooksupporto.com
 # Reference: https://twitter.com/romonlyht/status/1158650475643670528
 
 account\-update[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/romonlyht/status/1158500374170357760
+
+[a-z0-9-_.]{0,}amazxm[a-z0-9-_.]{0,}
