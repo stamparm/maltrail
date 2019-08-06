@@ -34273,3 +34273,4 @@ security[a-z0-9-_.]{0,}panel[a-z0-9-_.]{0,}paypal[a-z0-9-_.]{0,}
 # Reference: https://twitter.com/ninoseki/status/1158536013074980865
 
 xn--ccks5nkb8068afysn7bba.com
+本日本国軍隊.com
