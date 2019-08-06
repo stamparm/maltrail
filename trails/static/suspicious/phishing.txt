@@ -34342,3 +34342,54 @@ id[a-z0-9-_.]{0,}billing[a-z0-9-_.]{0,}secur[a-z0-9-_.]{0,}
 # Reference: https://twitter.com/PhishFindR/status/1158743491381465093
 
 staffsmith.xyz
+
+# Reference: https://twitter.com/PhishingAi/status/1158769283263946752
+# Reference: https://pastebin.com/hWpSvs3a
+
+amz-new.store
+bills-schedule-virgin.online
+dept723.com
+eeloginid.com
+halifax-verify.online
+hmgovt-refundform.online
+limited291.com
+limited33.com
+limited336.com
+limited337.com
+limited338.com
+limited339.com
+limited340.com
+limited341.com
+limited56.com
+limited72.com
+limited81.com
+limited902.com
+limited921.com
+mylogin-three.online
+paypal-secure-uk-form.com
+paypal-user-auth.com
+paypal-user-verify.com
+paypal-verification-uk.online
+paypal-verify-secure.com
+ppl-auth.net
+ppl-user-limited.com
+ppl-user-limited.net
+rebate-form-ref66.com
+ref321.com
+ref341.com
+ref343.com
+retailshop.live
+secure59.com
+threelogin-bill.com
+uk-refund-form63.com
+uk-refund-ref42.com
+uk-security.net
+user-verify-paypai.com
+virgin-bills-schedule.online
+paypal\-secur[a-z0-9-_.]{0,}
+paypal\-use[a-z0-9-_.]{0,}
+paypal\-verif[a-z0-9-_.]{0,}
+ppl\-secur[a-z0-9-_.]{0,}
+ppl\-use[a-z0-9-_.]{0,}
+ppl\-verif[a-z0-9-_.]{0,}
+secure[0-9]{1,}\.com
