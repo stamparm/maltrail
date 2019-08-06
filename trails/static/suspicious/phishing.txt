@@ -34290,3 +34290,8 @@ mypage.web.att.us.support.update.timecard.helpline.seepseep.com
 # Reference: https://twitter.com/ANeilan/status/1158686784810881025
 
 apple[a-z0-9-_.]{0,}rec0ver[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/ANeilan/status/1158688170403176448
+
+appleid[a-z0-9-_.]{0,}auth[a-z0-9-_.]{0,}serv[a-z0-9-_.]{0,}
+humiane009.business
