@@ -528,3 +528,7 @@ http://156.236.102.78
 # Reference: https://twitter.com/securitydoggo/status/1158370884899495936
 
 /2019-National-Intelligence-Coordinating-Agency-Survey-Questionnaire.js
+
+# Reference: https://twitter.com/killamjr/status/1158837662729551873
+
+/isotope.js
