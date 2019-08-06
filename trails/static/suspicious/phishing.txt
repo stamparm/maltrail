@@ -34393,3 +34393,13 @@ ppl\-secur[a-z0-9-_.]{0,}
 ppl\-use[a-z0-9-_.]{0,}
 ppl\-verif[a-z0-9-_.]{0,}
 secure[0-9]{1,}\.com
+
+# Reference: https://twitter.com/JayTHL/status/1158775740814561282
+
+hnacvsferw.com
+hnacvsferwonline.com
+hnacvsferwshop.com
+hnacvsferwweb.com
+jndcgrthe.com
+mastercorh.com
+mastercorl.com
