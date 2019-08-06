@@ -34274,3 +34274,7 @@ security[a-z0-9-_.]{0,}panel[a-z0-9-_.]{0,}paypal[a-z0-9-_.]{0,}
 
 xn--ccks5nkb8068afysn7bba.com
 本日本国軍隊.com
+
+# Reference: https://twitter.com/tomoaxe/status/1158635055524171776
+
+j182w8.com
