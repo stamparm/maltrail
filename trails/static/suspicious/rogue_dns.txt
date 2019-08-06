@@ -555,3 +555,18 @@ ns4.gatherreceive.net
 # Reference: https://twitter.com/ninoseki/status/1157110166086569985
 
 185.205.210.23:53
+
+# Reference: https://twitter.com/PhishingAi/status/1158769283263946752
+# Reference: https://www.virustotal.com/gui/domain/ns1.villeflux.com/relations
+# Reference: https://www.virustotal.com/gui/domain/ns2.villeflux.com/details
+# Reference: https://www.virustotal.com/gui/domain/dns1.villeflux.com/details
+# Reference: https://www.virustotal.com/gui/domain/dns2.villeflux.com/details
+
+111.90.150.148:53
+111.90.150.47:53
+ns1.villeflux.com
+ns2.villeflux.com
+dns1.villeflux.com
+dns2.villeflux.com
+ns1.villeflux.com
+ns2.villeflux.com
