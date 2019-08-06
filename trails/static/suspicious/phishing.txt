@@ -34338,3 +34338,7 @@ medium\-talk[0-9]{0,}\.(tk|gq|ga|ml|cf|icu|top)
 
 [a-z0-9]{1,}\-myidlogin[a-z0-9-_.]{0,}
 id[a-z0-9-_.]{0,}billing[a-z0-9-_.]{0,}secur[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishFindR/status/1158743491381465093
+
+staffsmith.xyz
