@@ -34251,3 +34251,7 @@ hoprea.ro
 ooziest-push.000webhostapp.com
 payegwhtasapplive.com
 pemblockiran-akun99.webnode.com
+
+# Reference: https://twitter.com/dave_daves/status/1158686067102539776
+
+web[a-z0-9-_.]{0,}verify[a-z0-9-_.]{0,}secur[a-z0-9-_.]{0,}
