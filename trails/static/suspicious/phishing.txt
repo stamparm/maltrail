@@ -34308,3 +34308,7 @@ web[a-z0-9-_.]{0,}verify[a-z0-9-_.]{0,}secur[a-z0-9-_.]{0,}
 # Reference: https://twitter.com/malwaremustd1e/status/1158720088222003200
 
 outlooksupporto.com
+
+# Reference: https://twitter.com/romonlyht/status/1158650475643670528
+
+account\-update[a-z0-9-_.]{0,}
