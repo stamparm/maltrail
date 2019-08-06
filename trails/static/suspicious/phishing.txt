@@ -34286,3 +34286,7 @@ onlineclickhelpdesk.com
 # Reference: https://twitter.com/dave_daves/status/1158654601056440320
 
 mypage.web.att.us.support.update.timecard.helpline.seepseep.com
+
+# Reference: https://twitter.com/ANeilan/status/1158686784810881025
+
+apple[a-z0-9-_.]{0,}rec0ver[a-z0-9-_.]{0,}
