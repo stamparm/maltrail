@@ -34299,4 +34299,4 @@ humiane009.business
 # Reference: https://twitter.com/PhishStats/status/1158689175429931009
 
 binance[a-z0-9-_.]{0,}update[a-z0-9-_.]{0,}
-[a-z0-9-_.]{0,}kreditkart[a-z0-9-_.]{0,}
+[a-z0-9-_.]{0,}kreditkart[a-z0-9-_.]{0,}[a-z0-9-_.]{0,}\.com
