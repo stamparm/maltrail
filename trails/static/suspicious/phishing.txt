@@ -34255,3 +34255,8 @@ pemblockiran-akun99.webnode.com
 # Reference: https://twitter.com/MalwarePatrol/status/1158470002082746371
 
 tesla-gift.club
+
+# Reference: https://twitter.com/PhishFindR/status/1158607313646837760
+
+paypal\-webport[a-z0-9-_.]{0,}
+vazouvideo[a-z0-9-_.]{0,}
