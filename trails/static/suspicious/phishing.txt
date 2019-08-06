@@ -34319,13 +34319,13 @@ account\-update[a-z0-9-_.]{0,}
 
 # Reference: https://twitter.com/PhishFindR/status/1158728523621838849
 
-accountservice[a-z0-9-_.]{0,}\.(tk,gq,ga,ml,cf,info,net,icu,top)
-adobe\.com\.[a-z0-9-_.]{0,}\.(tk,gq,ga,ml,cf,info,net,icu,top)
+accountservice[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|info|net|icu|top)
+adobe\.com\.[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|info|net|icu|top)
 app-index-secure-app.com
 customer\-onlinesupport[a-z0-9-_.]{0,}
 doinvoices.info
 info\-[a-z0-9]{2,3}\.com
 [a-z0-9-_.]{0,}auth\.web\.app
-[a-z0-9-_.]{0,}classic\-personal\.(tk,gq,ga,ml,cf,info,net,icu,top)
-[a-z0-9-_.]{0,}ebay[a-z0-9-_.]{0,}\.(tk,gq,ga,ml,cf,info,net,icu,top)
+[a-z0-9-_.]{0,}classic\-personal\.(tk|gq|ga|ml|cf|info|net|icu|top)
+[a-z0-9-_.]{0,}ebay[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|info|net|icu|top)
 [a-z0-9-_.]{0,}recoveery[a-z0-9-_.]{0,}
