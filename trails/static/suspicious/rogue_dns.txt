@@ -568,8 +568,6 @@ ns1.villeflux.com
 ns2.villeflux.com
 dns1.villeflux.com
 dns2.villeflux.com
-ns1.villeflux.com
-ns2.villeflux.com
 
 # Reference: https://security.stackexchange.com/questions/181328/did-i-just-get-dns-hijacked
 # Reference: https://www.virustotal.com/gui/ip-address/185.183.96.174/details
