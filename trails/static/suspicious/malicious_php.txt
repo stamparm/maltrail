@@ -491,3 +491,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/PhishStats/status/1158280905892519936
 
 /o365ms.php
+
+# Reference: https://twitter.com/IpNigh/status/1159063350103420928
+
+/mwnsmre6in7pv7abig7tzfyu.php
