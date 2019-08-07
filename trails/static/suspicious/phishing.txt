@@ -34433,3 +34433,7 @@ sevenbank[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|info|net|icu|top|xyz)
 # Reference: https://twitter.com/harugasumi/status/1159021597413392384
 
 resetting-accounts-recovery-supports-appleid-apple.com
+
+# Reference: https://twitter.com/cyberanalyzer/status/1159015026356817921
+
+d[0-9]{1,}\.icu
