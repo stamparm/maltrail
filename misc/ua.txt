@@ -809,3 +809,7 @@ ApacheBench
 # Reference: https://twitter.com/bad_packets/status/1157819242500149248
 
 Ankit
+
+# Reference: https://www.virustotal.com/gui/file/15af5bbf3c8d5e5db41fd7c3d722e8b247b40f2da747d5c334f7fd80b715a649/detection
+
+Microsoft-CryptoAPI/6.1
