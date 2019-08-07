@@ -34408,3 +34408,8 @@ mastercorl.com
 
 notifica-areaclienti.it
 terno.biz
+
+# Reference: https://twitter.com/PhishStats/status/1158960654738493441
+
+paypal\.id\.secur[a-z0-9-_.]{0,}
+paypal\-id\-secur[a-z0-9-_.]{0,}
