@@ -34447,3 +34447,7 @@ amazen[a-z0-9]{0,}\.com
 
 access[a-z0-9-_.]{0,}paypal[a-z0-9-_.]{0,}server[a-z0-9-_.]{0,}
 access[a-z0-9-_.]{0,}server[a-z0-9-_.]{0,}paypal[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/IpNigh/status/1159035122399756289
+
+app\-index\-secure\-app[a-z0-9-_.]{0,}
