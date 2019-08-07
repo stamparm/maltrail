@@ -34420,3 +34420,7 @@ secure\-login[a-z0-9-_.]{0,}
 # Reference: https://twitter.com/PhishFindR/status/1158939383803891712
 
 ebank[0-9]{0,}\.com
+
+# Reference: https://twitter.com/romonlyht/status/1158971993682669569
+
+j182w8.com
