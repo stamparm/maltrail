@@ -810,6 +810,7 @@ ApacheBench
 
 Ankit
 
+# Reference: https://twitter.com/pancak3lullz/status/1159138997723193344
 # Reference: https://www.virustotal.com/gui/file/15af5bbf3c8d5e5db41fd7c3d722e8b247b40f2da747d5c334f7fd80b715a649/detection
 
 Microsoft-CryptoAPI/6.1
