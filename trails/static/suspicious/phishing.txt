@@ -34411,7 +34411,12 @@ terno.biz
 
 # Reference: https://twitter.com/PhishStats/status/1158960654738493441
 
+idmsa\.apple.com[a-z0-9-_.]{0,}
 paypal\.id\.secur[a-z0-9-_.]{0,}
 paypal\-id\-secur[a-z0-9-_.]{0,}
-secure\-log\-in\.[a-z0-9-_.]{0,}
-secure\-login\.[a-z0-9-_.]{0,}
+secure\-log\-in[a-z0-9-_.]{0,}
+secure\-login[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishFindR/status/1158939383803891712
+
+ebank[0-9]{0,}\.com
