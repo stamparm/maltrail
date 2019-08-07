@@ -34319,15 +34319,15 @@ account\-update[a-z0-9-_.]{0,}
 
 # Reference: https://twitter.com/PhishFindR/status/1158728523621838849
 
-accountservice[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|info|net|icu|top)
-adobe\.com\.[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|info|net|icu|top)
+accountservice[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|info|net|icu|top|xyz)
+adobe\.com\.[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|info|net|icu|top|xyz)
 app-index-secure-app.com
 customer\-onlinesupport[a-z0-9-_.]{0,}
 doinvoices.info
 info\-[a-z0-9]{2,3}\.com
 [a-z0-9-_.]{0,}auth\.web\.app
-[a-z0-9-_.]{0,}classic\-personal\.(tk|gq|ga|ml|cf|info|net|icu|top)
-[a-z0-9-_.]{0,}ebay[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|info|net|icu|top)
+[a-z0-9-_.]{0,}classic\-personal\.(tk|gq|ga|ml|cf|info|net|icu|top|xyz)
+[a-z0-9-_.]{0,}ebay[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|info|net|icu|top|xyz)
 [a-z0-9-_.]{0,}recoveery[a-z0-9-_.]{0,}
 
 # Reference: https://twitter.com/IpNigh/status/1158712134659977219
@@ -34424,3 +34424,8 @@ ebank[0-9]{0,}\.com
 # Reference: https://twitter.com/romonlyht/status/1158971993682669569
 
 j182w8.com
+
+# Reference: https://twitter.com/PhishFindR/status/1158999810327928833
+
+amazon\-information\-account[a-z0-9-_.]{0,}
+sevenbank[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|info|net|icu|top|xyz)
