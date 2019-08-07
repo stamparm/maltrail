@@ -34413,3 +34413,5 @@ terno.biz
 
 paypal\.id\.secur[a-z0-9-_.]{0,}
 paypal\-id\-secur[a-z0-9-_.]{0,}
+secure\-log\-in\.[a-z0-9-_.]{0,}
+secure\-login\.[a-z0-9-_.]{0,}
