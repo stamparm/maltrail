@@ -34429,3 +34429,7 @@ j182w8.com
 
 amazon\-information\-account[a-z0-9-_.]{0,}
 sevenbank[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|info|net|icu|top|xyz)
+
+# Reference: https://twitter.com/harugasumi/status/1159021597413392384
+
+resetting-accounts-recovery-supports-appleid-apple.com
