@@ -34451,3 +34451,15 @@ access[a-z0-9-_.]{0,}server[a-z0-9-_.]{0,}paypal[a-z0-9-_.]{0,}
 # Reference: https://twitter.com/IpNigh/status/1159035122399756289
 
 app\-index\-secure\-app[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishingAi/status/1159192654967496704
+# Reference: https://www.virustotal.com/gui/ip-address/66.42.58.67/relations
+
+appsos.online
+youttube.cloud
+youttube.info
+youttube.mobi
+youtubei.site
+youtubei.xyz
+[a-z0-9-_.]{0,}youttube[a-z0-9-_.]{0,}
+[a-z0-9-_.]{0,}youtubei[a-z0-9-_.]{0,}
