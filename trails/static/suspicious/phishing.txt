@@ -34463,3 +34463,11 @@ youtubei.site
 youtubei.xyz
 [a-z0-9-_.]{0,}youttube[a-z0-9-_.]{0,}
 [a-z0-9-_.]{0,}youtubei[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishStats/status/1159187338846769153
+
+aplicativobb.me
+pay\-service\-inc[a-z0-9-_.]{0,}
+social-media-specialists.com
+twatch.ml
+2dehands\-controleer[a-z0-9-_.]{0,}
