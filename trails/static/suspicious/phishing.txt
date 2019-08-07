@@ -34446,3 +34446,4 @@ amazen[a-z0-9]{0,}\.com
 # Reference: https://twitter.com/PhishFindR/status/1159059887504203776
 
 access[a-z0-9-_.]{0,}paypal[a-z0-9-_.]{0,}server[a-z0-9-_.]{0,}
+access[a-z0-9-_.]{0,}server[a-z0-9-_.]{0,}paypal[a-z0-9-_.]{0,}
