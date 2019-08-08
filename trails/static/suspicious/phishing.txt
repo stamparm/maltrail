@@ -34405,8 +34405,9 @@ mastercorh.com
 mastercorl.com
 
 # Reference: https://twitter.com/PhishFindR/status/1158819153953939461
+# Reference: https://twitter.com/PhishStats/status/1159504165674147841
 
-notifica-areaclienti.it
+notifica[0-9]{0,}\-areaclienti\.it
 terno.biz
 
 # Reference: https://twitter.com/PhishStats/status/1158960654738493441
