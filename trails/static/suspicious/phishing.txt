@@ -34471,3 +34471,9 @@ pay\-service\-inc[a-z0-9-_.]{0,}
 social-media-specialists.com
 twatch.ml
 2dehands\-controleer[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/ninoseki/status/1159260076042928128
+
+amazon\-information\-account[a-z0-9-_.]{0,}
+amazon\-service[a-z0-9-_.]{0,}
+unlocked\-[0-9]{1,}\.me
