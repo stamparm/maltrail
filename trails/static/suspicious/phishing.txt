@@ -35090,3 +35090,7 @@ magallu-oferta.com
 # Reference: https://twitter.com/MalwarePatrol/status/1159557169567739906
 
 vinelasevilla.com
+
+# Reference: https://twitter.com/PhishStats/status/1159549311472082944
+
+accept-bill.net
