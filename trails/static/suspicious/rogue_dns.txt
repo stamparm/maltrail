@@ -585,3 +585,9 @@ dns2.villeflux.com
 # Reference: https://www.virustotal.com/gui/ip-address/185.183.96.174/details
 
 185.183.96.174:53
+
+# Reference: https://twitter.com/PhishingAi/status/1159309706222956544
+
+192.210.142.146:53
+ns1.colloc-rotcross.com
+ns2.colloc-rotcross.com
