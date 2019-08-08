@@ -927,3 +927,7 @@ forum-u-232.servebeer.com
 # Note: Android's Battery Doctor (FP on abuse.ch)
 
 cfg.cml.ksmobile.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/208.91.112.53/details (# DNS address of Fortinet)
+
+208.91.112.53
