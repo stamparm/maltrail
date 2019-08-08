@@ -34495,3 +34495,8 @@ strategicsiteselection-info.com
 # Reference: https://twitter.com/romonlyht/status/1159315226086404099
 
 1572qz.com
+
+# Reference: https://twitter.com/PhishFindR/status/1159362299901202432
+
+bankofamerica\-com\-login[a-z0-9-_.]{0,}
+[a-z0-9-_.]{0,}login\-verify\-id[a-z0-9-_.]{0,}
