@@ -35069,3 +35069,7 @@ zeetel.co.uk
 zettemed.com
 zsebbolt.com
 zweigdienstleistungen.info
+
+# Reference: https://www.fortinet.com/blog/threat-research/chinese-targeted-trojan-analysis.html (# Phishing URL)
+
+hnwfj.com
