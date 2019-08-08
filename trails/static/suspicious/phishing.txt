@@ -34477,3 +34477,17 @@ twatch.ml
 amazon\-information\-account[a-z0-9-_.]{0,}
 amazon\-service[a-z0-9-_.]{0,}
 unlocked\-[0-9]{1,}\.me
+
+# Reference: https://twitter.com/PhishingAi/status/1159309706222956544
+# Reference: https://pastebin.com/ARHEzmX0
+
+blackbrushenergy-files.com
+blackbrushenergy-info.com
+colloc-rotcross.com
+metalworksperth-files.com
+metalworksperth-info.com
+metalworksperth-shared.com
+novoresources-info.com
+novoresources-shared.com
+strategicsiteselection-files.com
+strategicsiteselection-info.com
