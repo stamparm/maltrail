@@ -35073,3 +35073,7 @@ zweigdienstleistungen.info
 # Reference: https://www.fortinet.com/blog/threat-research/chinese-targeted-trojan-analysis.html (# Phishing URL)
 
 hnwfj.com
+
+# Reference: https://twitter.com/420spiritz/status/1159458026199441409
+
+support[a-z0-9-_.]{0,}verif[a-z0-9-_.]{0,}pay[a-z0-9-_.]{0,}amazon[a-z0-9-_.]{0,}\.com
