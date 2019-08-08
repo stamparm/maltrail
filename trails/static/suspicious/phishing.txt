@@ -35082,3 +35082,7 @@ support[a-z0-9-_.]{0,}verif[a-z0-9-_.]{0,}pay[a-z0-9-_.]{0,}amazon[a-z0-9-_.]{0,
 
 account\-authorisation[a-z0-9-_.]{0,}
 secur[a-z0-9-_.]{0,}sign[a-z0-9-_.]{0,}in\.[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishFindR/status/1159574354314899467
+
+magallu-oferta.com
