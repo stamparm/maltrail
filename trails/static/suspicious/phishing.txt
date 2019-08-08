@@ -34505,3 +34505,7 @@ bankofamerica\-com\-login[a-z0-9-_.]{0,}
 
 dostawaw24h.xyz
 windows-ppe.net
+
+# Reference: https://www.virustotal.com/gui/domain/hentaiwonderland.com/relations
+
+hentaiwonderland.com
