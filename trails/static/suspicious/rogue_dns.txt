@@ -7,11 +7,15 @@
 # Reference: https://twitter.com/ninoseki/status/1127109264877600768
 # Reference: https://drive.google.com/file/d/12TaMKqqjkr_r3iq3LbPcGc6LKv2k1Hmw/view
 # Reference: https://twitter.com/ninoseki/status/1156038231172894721
+# Reference: https://twitter.com/ZeroCERT/status/1118840257334525952
+# Reference: https://www.facebook.com/zerocert/posts/1143176292521769 (Korean)
 
 1.53.252.164:53
 1.53.252.215:53
 1.171.160.155:53
+1.171.166.13:53
 1.171.175.119:53
+1.171.46.86:53
 118.30.28.38:53
 118.30.28.39:53
 118.168.200.231:53
@@ -118,8 +122,20 @@ ns2.whatnexthost.com
 82.163.143.135:53
 
 # Reference: https://www.platinbilisim.com.tr/TR/Medya/Duyurular/dikkat-ghost-dns-261 (Turkish)
+# Reference: https://blog.netlab.360.com/70-different-types-of-home-routers-all-together-100000-are-being-hijacked-by-ghostdns-en/
 
 139.60.162.188:53
+139.60.162.201:53
+144.22.104.185:53
+173.82.168.104:53
+18.223.2.98:53
+185.70.186.4:53
+192.99.187.193:53
+198.27.121.241:53
+200.196.240.104:53
+200.196.240.120:53
+35.185.9.164:53
+80.211.37.41:53
 
 # Reference: https://www.proofpoint.com/us/threat-insight/post/home-routers-under-attack-malvertising-windows-android-devices
 
@@ -555,3 +571,27 @@ ns4.gatherreceive.net
 # Reference: https://twitter.com/ninoseki/status/1157110166086569985
 
 185.205.210.23:53
+
+# Reference: https://twitter.com/PhishingAi/status/1158769283263946752
+# Reference: https://www.virustotal.com/gui/domain/ns1.villeflux.com/relations
+# Reference: https://www.virustotal.com/gui/domain/ns2.villeflux.com/details
+# Reference: https://www.virustotal.com/gui/domain/dns1.villeflux.com/details
+# Reference: https://www.virustotal.com/gui/domain/dns2.villeflux.com/details
+
+111.90.150.148:53
+111.90.150.47:53
+ns1.villeflux.com
+ns2.villeflux.com
+dns1.villeflux.com
+dns2.villeflux.com
+
+# Reference: https://security.stackexchange.com/questions/181328/did-i-just-get-dns-hijacked
+# Reference: https://www.virustotal.com/gui/ip-address/185.183.96.174/details
+
+185.183.96.174:53
+
+# Reference: https://twitter.com/PhishingAi/status/1159309706222956544
+
+192.210.142.146:53
+ns1.colloc-rotcross.com
+ns2.colloc-rotcross.com
