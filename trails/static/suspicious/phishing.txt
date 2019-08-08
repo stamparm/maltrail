@@ -34609,3 +34609,8 @@ vgaa.hentaiwonderland.com
 vgsaaf.hentaiwonderland.com
 wbhssa.hentaiwonderland.com
 wfccc.hentaiwonderland.com
+
+# Reference: https://twitter.com/MaelSecurity/status/1159426645725523968
+
+sesions-relogin-account-login.ml
+sessions-relogin-account-login.ml
