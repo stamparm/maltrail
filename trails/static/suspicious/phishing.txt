@@ -35077,3 +35077,8 @@ hnwfj.com
 # Reference: https://twitter.com/420spiritz/status/1159458026199441409
 
 support[a-z0-9-_.]{0,}verif[a-z0-9-_.]{0,}pay[a-z0-9-_.]{0,}amazon[a-z0-9-_.]{0,}\.com
+
+# Reference: https://twitter.com/PhishFindR/status/1159574687736893440
+
+account\-authorisation[a-z0-9-_.]{0,}
+secur[a-z0-9-_.]{0,}sign[a-z0-9-_.]{0,}in\.[a-z0-9-_.]{0,}
