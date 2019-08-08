@@ -528,3 +528,16 @@ http://156.236.102.78
 # Reference: https://twitter.com/securitydoggo/status/1158370884899495936
 
 /2019-National-Intelligence-Coordinating-Agency-Survey-Questionnaire.js
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2018/04/fakeupdates-campaign-leverages-multiple-website-platforms/
+
+boobahbabies.com
+eventsbysteph.com
+query.network
+connect.clevelandskin.net
+connect.clevelandskin.org
+track.amishbrand.com
+track.positiverefreshment.org
+link.easycounter210.com
+click.clickanalytics208.com
+/s_code.js?cid=
