@@ -34500,3 +34500,8 @@ strategicsiteselection-info.com
 
 bankofamerica\-com\-login[a-z0-9-_.]{0,}
 [a-z0-9-_.]{0,}login\-verify\-id[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishFindR/status/1159377024785498112
+
+dostawaw24h.xyz
+windows-ppe.net
