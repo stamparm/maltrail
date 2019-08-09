@@ -37151,3 +37151,7 @@ zirconiabracelets.xyz
 ziz4.com
 zonaverdearquitectos.com.co
 zwwebuy.com
+
+# Reference: https://twitter.com/PhishStats/status/1159753027089240064
+
+000o2ba.wcomhost.com
