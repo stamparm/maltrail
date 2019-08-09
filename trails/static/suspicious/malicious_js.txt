@@ -541,3 +541,9 @@ track.positiverefreshment.org
 link.easycounter210.com
 click.clickanalytics208.com
 /s_code.js?cid=
+
+# Reference: https://twitter.com/James_inthe_box/status/1159917575301582848
+
+/eventPage.js
+/JFd0mx.js
+/rKPcLW.js
