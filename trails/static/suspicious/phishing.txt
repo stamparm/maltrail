@@ -35906,7 +35906,6 @@ gratispdflibro.site
 graywolfresources.com
 greaterstuff1.com
 greatmamas.com
-green.universaldocumentation.com
 greeneandpleasante.com
 greengeekscoupon.com
 greenhousepcc.com
@@ -37185,3 +37184,4 @@ account-spotifyupdt.com
 # Reference: https://twitter.com/PhishFindR/status/1159815531148525569
 
 [a-z0-9-_.]{0,}amazonlimited[a-z0-9-_.]{0,}
+[a-z0-9-_.]{0,}secur[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|info|net|icu|top|xyz)
