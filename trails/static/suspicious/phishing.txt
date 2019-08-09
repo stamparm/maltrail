@@ -37177,3 +37177,7 @@ perusbo.com
 # Reference: https://twitter.com/satontonton/status/1159472889323614208
 
 account\-update\.amazon[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/PhishFindR/status/1159815197642678272
+
+account-spotifyupdt.com
