@@ -35131,3 +35131,7 @@ vɑrldesk.com
 # Reference: https://twitter.com/PhishStats/status/1159617374351437824
 
 clap-style.com
+
+# Reference: https://twitter.com/ninoseki/status/1159615543021731840
+
+apple[a-z0-9-_.]{1,}\.com
