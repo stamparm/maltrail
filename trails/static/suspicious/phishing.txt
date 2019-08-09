@@ -37181,3 +37181,7 @@ account\-update\.amazon[a-z0-9-_.]{0,}
 # Reference: https://twitter.com/PhishFindR/status/1159815197642678272
 
 account-spotifyupdt.com
+
+# Reference: https://twitter.com/PhishFindR/status/1159815531148525569
+
+[a-z0-9-_.]{0,}amazonlimited[a-z0-9-_.]{0,}
