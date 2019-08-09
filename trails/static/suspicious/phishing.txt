@@ -37153,5 +37153,6 @@ zonaverdearquitectos.com.co
 zwwebuy.com
 
 # Reference: https://twitter.com/PhishStats/status/1159753027089240064
+# Reference: https://www.virustotal.com/gui/domain/wcomhost.com/relations
 
-000o2ba.wcomhost.com
+wcomhost.com
