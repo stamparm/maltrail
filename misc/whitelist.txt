@@ -931,3 +931,7 @@ cfg.cml.ksmobile.com
 # Reference: https://www.virustotal.com/gui/ip-address/208.91.112.53/details (# DNS address of Fortinet)
 
 208.91.112.53
+
+# AppleID resource
+
+appleid.apple.com
