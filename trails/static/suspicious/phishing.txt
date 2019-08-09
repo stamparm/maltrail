@@ -37156,3 +37156,8 @@ zwwebuy.com
 # Reference: https://www.virustotal.com/gui/domain/wcomhost.com/relations
 
 wcomhost.com
+
+# Reference: https://twitter.com/PhishFindR/status/1159769778707456001
+
+[a-z]{0,}softbank\.info
+[a-z0-9-_.]{0,}recovery\-appleid\-apple\.com
