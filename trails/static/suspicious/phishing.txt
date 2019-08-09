@@ -37161,3 +37161,7 @@ wcomhost.com
 
 [a-z]{0,}softbank\.info
 [a-z0-9-_.]{0,}recovery\-appleid\-apple\.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1159768569619668994
+
+virtakp.xyz
