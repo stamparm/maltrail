@@ -37165,3 +37165,7 @@ wcomhost.com
 # Reference: https://twitter.com/MalwarePatrol/status/1159768569619668994
 
 virtakp.xyz
+
+# Reference: https://twitter.com/PhishStats/status/1159798521232527360
+
+concv.eu
