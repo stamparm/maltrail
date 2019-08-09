@@ -35127,3 +35127,7 @@ vɑridesk.com
 vɑrldeꜱk.com
 vɑrldeƽk.com
 vɑrldesk.com
+
+# Reference: https://twitter.com/PhishStats/status/1159617374351437824
+
+clap-style.com
