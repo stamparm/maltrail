@@ -37169,3 +37169,7 @@ virtakp.xyz
 # Reference: https://twitter.com/PhishStats/status/1159798521232527360
 
 concv.eu
+
+# Reference: https://twitter.com/harugasumi/status/1159661141989023744
+
+perusbo.com
