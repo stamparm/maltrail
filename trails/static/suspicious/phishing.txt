@@ -37185,3 +37185,4 @@ account-spotifyupdt.com
 
 [a-z0-9-_.]{0,}amazonlimited[a-z0-9-_.]{0,}
 [a-z0-9-_.]{0,}secur[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|icu|top|xyz)
+ebaytay[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|icu|top|xyz)
