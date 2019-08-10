@@ -35260,3 +35260,7 @@ information\-center\-review\.(tk|gq|ga|ml|cf|icu|top|xyz)
 securewebsession.com
 securewebseason[0-9]{0,}ac{1,}esso\.com
 /PayPal2017Undetected
+
+# Reference: https://twitter.com/n0p1shing/status/1159944056845283328
+
+giffgaff-helpconnect.co.uk
