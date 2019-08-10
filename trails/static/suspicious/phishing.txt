@@ -35196,3 +35196,7 @@ jtpipe.com
 liubeiauto.com
 njbuxiugang.com
 zisha315.com
+
+# Reference: https://twitter.com/PhishStats/status/1160047558355574785
+
+com-ibn.icu
