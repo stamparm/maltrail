@@ -35222,3 +35222,10 @@ jcb-co-jp.art
 myetheuwallet.org
 ttkama.com
 wuyao.cn
+
+# Reference: https://twitter.com/PhishFindR/status/1160117217763233792
+
+24exchange.one
+accountverification\.(tk|gq|ga|ml|cf|icu|top|xyz|net|info)
+liba.gq
+support-findus.com
