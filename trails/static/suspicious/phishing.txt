@@ -35211,3 +35211,7 @@ support-lcloud-report.info
 
 paypal\-account\-secur[a-z0-9-_.]{0,}
 paypal\-account\-verif[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/romonlyht/status/1159981089529556993
+
+jcb-co-jp.art
