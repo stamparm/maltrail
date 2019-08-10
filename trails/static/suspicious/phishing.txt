@@ -35233,7 +35233,7 @@ support-findus.com
 # Reference: https://twitter.com/PhishStats/status/1160138622642872321
 
 1eeee.info
-a2b9.top
+a2b9\.(tk|gq|ga|ml|cf|icu|top|xyz|net|info)
 mdl3drop.net
 pound-dhl.com
 rewardevent.site
@@ -35241,3 +35241,13 @@ rewardevent.site
 # Reference: https://twitter.com/romonlyht/status/1159989513722064896
 
 saddavz.com
+
+# Reference: https://twitter.com/PhishFindR/status/1160132356063289344
+
+a2slgnin\.(tk|gq|ga|ml|cf|icu|top|xyz|net|info)
+boegrir.com
+case[0-9]{1,}\.com
+com\-[a-z0-9]{1,}\.(tk|gq|ga|ml|cf|icu|top|xyz|net|info|com)
+get-binance.net
+poyon.live
+laseks.eu
