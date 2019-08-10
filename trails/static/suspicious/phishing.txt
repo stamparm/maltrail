@@ -35229,3 +35229,10 @@ wuyao.cn
 accountverification\.(tk|gq|ga|ml|cf|icu|top|xyz|net|info)
 liba.gq
 support-findus.com
+
+# Reference: https://twitter.com/PhishStats/status/1160138622642872321
+
+a2b9.top
+mdl3drop.net
+pound-dhl.com
+rewardevent.site
