@@ -35175,3 +35175,7 @@ ebaytay[a-z0-9-_.]{0,}\.(tk|gq|ga|ml|cf|icu|top|xyz)
 # Reference: https://twitter.com/PhishStats/status/1159957246287200256
 
 paypal\-login\-confirm\-account\-locked\.[a-z0-9-_.]{0,}
+
+# Reference: https://twitter.com/papa_anniekey/status/1159849441098027008
+
+delivery-team-web.online
