@@ -35215,3 +35215,8 @@ paypal\-account\-verif[a-z0-9-_.]{0,}
 # Reference: https://twitter.com/romonlyht/status/1159981089529556993
 
 jcb-co-jp.art
+
+# Reference: https://twitter.com/catnap707/status/1160051663622692865
+
+myetheuwallet.org
+wuyao.cn
