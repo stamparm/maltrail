@@ -35217,6 +35217,8 @@ paypal\-account\-verif[a-z0-9-_.]{0,}
 jcb-co-jp.art
 
 # Reference: https://twitter.com/catnap707/status/1160051663622692865
+# Reference: https://twitter.com/romonlyht/status/1159978823246471168
 
 myetheuwallet.org
+ttkama.com
 wuyao.cn
