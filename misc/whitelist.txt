@@ -932,6 +932,42 @@ cfg.cml.ksmobile.com
 
 208.91.112.53
 
-# AppleID resource
+# Apple resources
 
-appleid.apple.com
+^apple\.com$
+^appleid\.apple\.com$
+^www\.apple\.com$
+
+# Ebay resources
+
+^ebay\.com$
+^csr\.ebay\.com$
+^my\.ebay\.com$
+^reg\.ebay\.com$
+^oscnext\.ebay\.com$
+^www\.ebay\.com$
+
+# Facebook resources
+
+^facebook\.com$
+^www\.facebook\.com$
+
+# PayPal resources
+
+^www\.paypal\.com$
+
+# Microsoft resources
+
+^microsoft\.com$
+^office\.com$
+^skype\.com$
+^go\.microsoft\.com$
+^login\.live\.com$
+^office\.live\.com$
+^outlook\.live\.com$
+^products\.office\.com$
+^support\.microsoft\.com$
+^www\.microsoft\.com$
+^www\.office\.com$
+^web\.skype\.com$
+^www\.skype\.com$
