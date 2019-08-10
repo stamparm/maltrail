@@ -595,3 +595,7 @@ dns2.villeflux.com
 192.210.142.146:53
 ns1.colloc-rotcross.com
 ns2.colloc-rotcross.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/852540935653208064
+
+46.105.86.80:53
