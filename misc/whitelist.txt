@@ -961,6 +961,7 @@ cfg.cml.ksmobile.com
 ^microsoft\.com$
 ^office\.com$
 ^skype\.com$
+^xbox\.com$
 ^go\.microsoft\.com$
 ^login\.live\.com$
 ^office\.live\.com$
@@ -971,3 +972,4 @@ cfg.cml.ksmobile.com
 ^www\.office\.com$
 ^web\.skype\.com$
 ^www\.skype\.com$
+^www\.xbox\.com$
