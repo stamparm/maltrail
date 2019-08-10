@@ -841,6 +841,9 @@ etcd.socket
 philaorch.org
 mozilla.org
 discord.gg
+ebay.com
+xbox.com
+uservoice.com
 0.0.0.0
 255.255.255.255
 
