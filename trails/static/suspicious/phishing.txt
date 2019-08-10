@@ -35202,3 +35202,12 @@ zisha315.com
 com-ibn.icu
 eva-clovr.uk
 winner-capital.com
+
+# Reference: https://twitter.com/PhishFindR/status/1160086994954936320
+
+support-lcloud-report.info
+
+# Reference: https://twitter.com/PhishFindR/status/1160086661868531712
+
+paypal\-account\-secur[a-z0-9-_.]{0,}
+paypal\-account\-verif[a-z0-9-_.]{0,}
