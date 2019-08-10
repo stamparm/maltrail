@@ -35179,3 +35179,7 @@ paypal\-login\-confirm\-account\-locked\.[a-z0-9-_.]{0,}
 # Reference: https://twitter.com/papa_anniekey/status/1159849441098027008
 
 delivery-team-web.online
+
+# Reference: https://twitter.com/romonlyht/status/1159983917903912960
+
+amsazonstroefixyoki.com
