@@ -1980,3 +1980,27 @@ update-srv.info
 # Reference: https://threatpost.com/malvertising-ad-blockers-mac-malware/146861/
 
 dailyads.org
+
+# Reference: https://www.virustotal.com/gui/ip-address/138.201.38.188/relations
+
+apps-windows.com
+besplatnyeprogrammy.ru
+downserv.ru
+freeversion.ru
+freeversions.ru
+installpack.download
+installpack.net
+installpack.ru
+mirprogramm.ru
+moiprogrammy.net
+servtodown.ru
+sftcdn.ru
+sftpps.ru
+sftwr.ru
+soft-apps.ru
+softcdn.ru
+softfiles.ru
+softhome.ru
+softmen.ru
+softobase.com
+tvoiprogrammy.ru
