@@ -4708,3 +4708,7 @@ foxdos.cc
 
 8chan.co
 8ch.net
+
+# Reference: https://twitter.com/ScumBots/status/1160853968681144321
+
+gws.kr
