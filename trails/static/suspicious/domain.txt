@@ -4717,3 +4717,7 @@ gws.kr
 # Reference: https://www.virustotal.com/gui/domain/dynamic-ip.hinet.net/relations
 
 dynamic-ip.hinet.net
+
+# Reference: https://www.virustotal.com/gui/domain/myihor.ru/relations
+
+myihor.ru
