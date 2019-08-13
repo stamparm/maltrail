@@ -626,3 +626,7 @@ ns2.colloc-rotcross.com
 
 144.217.223.218:53
 35.247.250.124:53
+
+# Reference: https://twitter.com/ninoseki/status/1047697757731864576
+
+18.191.81.137:53
