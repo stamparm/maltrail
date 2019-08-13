@@ -610,3 +610,7 @@ ns2.colloc-rotcross.com
 
 172.245.211.58:53
 23.94.66.186:53
+
+# Reference: https://twitter.com/MichaelMburu_/status/1119243257203048448
+
+172.27.197.232:53
