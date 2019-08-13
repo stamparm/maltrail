@@ -641,3 +641,7 @@ ns2.colloc-rotcross.com
 # Reference: https://twitter.com/ricmarks/status/966733953406291968
 
 18.219.162.248:53
+
+# Reference: https://twitter.com/leppie/status/661234162758721536
+
+23.91.114.130:53
