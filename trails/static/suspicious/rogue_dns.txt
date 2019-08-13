@@ -635,3 +635,7 @@ ns2.colloc-rotcross.com
 # Reference: https://www.bitdefender.com/box/blog/iot-news/800000-draytek-routers-risk-dns-hijacking-attack-update-firmware/
 
 38.134.121.95:53
+
+# Reference: https://twitter.com/ricmarks/status/966733953406291968
+
+18.219.162.248:53
