@@ -649,3 +649,7 @@ ns2.colloc-rotcross.com
 # Reference: https://twitter.com/abek42/status/642610851095158784
 
 5.152.219.51:53
+
+# Reference: https://twitter.com/teksquisite/status/473233221862182912
+
+184.107.180.178:53
