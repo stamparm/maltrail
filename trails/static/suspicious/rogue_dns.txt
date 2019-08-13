@@ -614,3 +614,8 @@ ns2.colloc-rotcross.com
 # Reference: https://twitter.com/MichaelMburu_/status/1119243257203048448
 
 172.27.197.232:53
+
+# Reference: https://twitter.com/ninoseki/status/1104181886824243200
+
+65.181.123.142:53
+65.181.123.143:53
