@@ -603,3 +603,7 @@ ns2.colloc-rotcross.com
 # Reference: https://twitter.com/ninoseki/status/1161151559100588032
 
 158.69.94.9:53
+
+# Reference: https://github.com/reaperb0t/GhostDNS/blob/master/Remote_DNS_Changing_Exploits_not_GHOSTDNS_specific/37214.txt
+
+133.71.33.7:53
