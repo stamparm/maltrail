@@ -2609,3 +2609,7 @@ meibu.net
 # Reference: https://www.virustotal.com/gui/domain/dynv6.net/relations
 
 dynv6.net
+
+# Reference: https://www.virustotal.com/gui/domain/orderbox-dns.com/details
+
+orderbox-dns.com
