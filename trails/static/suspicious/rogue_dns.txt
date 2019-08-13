@@ -605,3 +605,8 @@ ns2.colloc-rotcross.com
 # Reference: https://twitter.com/ninoseki/status/1128573489667907586
 
 162.241.224.56:53
+
+# Reference: https://twitter.com/david_jursa/status/1119573958095974400
+
+172.245.211.58:53
+23.94.66.186:53
