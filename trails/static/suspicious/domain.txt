@@ -4713,11 +4713,6 @@ foxdos.cc
 
 gws.kr
 
-# Reference: https://twitter.com/ninoseki/status/1160887569258692609
-# Reference: https://www.virustotal.com/gui/domain/dynamic-ip.hinet.net/relations
-
-dynamic-ip.hinet.net
-
 # Reference: https://www.virustotal.com/gui/domain/myihor.ru/relations
 
 myihor.ru
