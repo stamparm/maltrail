@@ -89,7 +89,7 @@ SUSPICIOUS_HTTP_REQUEST_REGEXES = (
     ("potential remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|wget http|sh /tmp/|cmd\.exe|/bin/bash|2>&1|\b(cat|ls) /|chmod [0-7]{3,4}\b|nc -l -p \d+|>\s*/dev/null|-d (allow_url_include|safe_mode|auto_prepend_file)"),
     ("potential directory traversal", r"(\.{2,}[/\\]+){3,}|/etc/(passwd|shadow|issue|hostname)|[/\\](boot|system|win)\.ini|[/\\]system32\b|%SYSTEMROOT%"),
     ("potential web scan", r"(acunetix|injected_by)_wvs_|SomeCustomInjectedHeader|some_inexistent_file_with_long_name|testasp\.vulnweb\.com/t/fit\.txt|www\.acunetix\.tst|\.bxss\.me|thishouldnotexistandhopefullyitwillnot|OWASP%\d+ZAP|chr\(122\)\.chr\(97\)\.chr\(112\)|Vega-Inject|VEGA123|vega\.invalid|PUT-putfile|w00tw00t|muieblackcat"),
-    ("potential dns changer", r"\b(staticPriDns|staticSecDns|pppoePriDns|pppoeSecDns|wan_dns1|wan_dns2|dnsPrimary|dnsSecondary|dnsDynamic|dnsRefresh|DNS_FST|DNS_SND|dhcpPriDns|dhcpSecDns|dnsserver|dnsserver1|dnsserver2)=")
+    ("potential dns changer", r"\b(staticPriDns|staticSecDns|pppoePriDns|pppoeSecDns|wan_dns1|wan_dns2|dnsPrimary|dnsSecondary|dnsDynamic|dnsRefresh|DNS_FST|DNS_SND|dhcpPriDns|dhcpSecDns|dnsserver|dnsserver1|dnsserver2|dns_server_ip_1|dns_server_ip_2|dns_server_ip_3|dns_server_ip_4|dns1|dns2|dns3|dns4|dns1_1|dns1_2|dns1_3|dns1_4|dns2_1|dns2_2|dns2_3|dns2_4|wan_dns_x|wan_dns1_x|wan_dns2_x|wan_dns3_x|wan_dns4_x|dns_status|p_DNS|a_DNS|uiViewDns1Mark|uiViewDns2Mark|uiViewDNSRelay|is_router_as_dns)=")
 )
 SUSPICIOUS_HTTP_PATH_REGEXES = (
     ("non-existent page", r"defaultwebpage\.cgi"),
