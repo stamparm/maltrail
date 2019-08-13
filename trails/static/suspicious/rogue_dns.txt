@@ -657,3 +657,12 @@ ns2.colloc-rotcross.com
 # Reference: https://twitter.com/nikcub/status/347579443994312704
 
 204.11.56.17:53
+
+# Reference: https://twitter.com/moukahal/status/194886840447279104
+
+213.109.79.255:53
+64.28.191.255:53
+67.210.15.255:53
+77.67.83.255:53
+85.255.127.255:53
+93.188.167.255:53
