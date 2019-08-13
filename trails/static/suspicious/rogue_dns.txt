@@ -653,3 +653,7 @@ ns2.colloc-rotcross.com
 # Reference: https://twitter.com/teksquisite/status/473233221862182912
 
 184.107.180.178:53
+
+# Reference: https://twitter.com/nikcub/status/347579443994312704
+
+204.11.56.17:53
