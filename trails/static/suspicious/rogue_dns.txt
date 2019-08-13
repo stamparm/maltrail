@@ -399,16 +399,6 @@ ns3.gatherreceive.net
 ns4.gatherreceive.net
 63.251.106.22:53
 
-# Reference: https://www.virustotal.com/gui/ip-address/184.73.137.229/relations
-# Reference: https://www.virustotal.com/gui/ip-address/34.229.84.179/relations
-# Reference: https://www.virustotal.com/gui/ip-address/34.230.76.81/relations
-# Reference: https://www.virustotal.com/gui/ip-address/54.227.204.233/relations
-
-184.73.137.229:53
-34.229.84.179:53
-34.230.76.81:53
-54.227.204.233:53
-
 # Reference: https://www.welivesecurity.com/2016/06/02/crouching-tiger-hidden-dns/
 
 199.203.131.145:53
