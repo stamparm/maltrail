@@ -123,6 +123,7 @@ ns2.whatnexthost.com
 
 # Reference: https://www.platinbilisim.com.tr/TR/Medya/Duyurular/dikkat-ghost-dns-261 (Turkish)
 # Reference: https://blog.netlab.360.com/70-different-types-of-home-routers-all-together-100000-are-being-hijacked-by-ghostdns-en/
+# Reference: https://twitter.com/ninoseki/status/1055224900829491200
 
 139.60.162.188:53
 139.60.162.201:53
@@ -130,6 +131,7 @@ ns2.whatnexthost.com
 173.82.168.104:53
 18.223.2.98:53
 185.70.186.4:53
+185.70.186.7:53
 192.99.187.193:53
 198.27.121.241:53
 200.196.240.104:53
