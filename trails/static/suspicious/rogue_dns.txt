@@ -123,6 +123,7 @@ ns2.whatnexthost.com
 
 # Reference: https://www.platinbilisim.com.tr/TR/Medya/Duyurular/dikkat-ghost-dns-261 (Turkish)
 # Reference: https://blog.netlab.360.com/70-different-types-of-home-routers-all-together-100000-are-being-hijacked-by-ghostdns-en/
+# Reference: https://twitter.com/ninoseki/status/1055224900829491200
 
 139.60.162.188:53
 139.60.162.201:53
@@ -130,6 +131,7 @@ ns2.whatnexthost.com
 173.82.168.104:53
 18.223.2.98:53
 185.70.186.4:53
+185.70.186.7:53
 192.99.187.193:53
 198.27.121.241:53
 200.196.240.104:53
@@ -405,6 +407,8 @@ ns4.gatherreceive.net
 199.203.131.150:53
 199.203.131.151:53
 199.203.131.152:53
+208.67.220.123:53
+208.67.222.123:53
 82.163.142.2:53
 82.163.142.3:53
 82.163.142.4:53
@@ -601,3 +605,64 @@ ns2.colloc-rotcross.com
 # Reference: https://github.com/reaperb0t/GhostDNS/blob/master/Remote_DNS_Changing_Exploits_not_GHOSTDNS_specific/42197.sh
 
 133.7.133.7:53
+
+# Reference: https://twitter.com/ninoseki/status/1128573489667907586
+
+162.241.224.56:53
+
+# Reference: https://twitter.com/david_jursa/status/1119573958095974400
+
+172.245.211.58:53
+23.94.66.186:53
+
+# Reference: https://twitter.com/MichaelMburu_/status/1119243257203048448
+
+172.27.197.232:53
+
+# Reference: https://twitter.com/ninoseki/status/1104181886824243200
+
+65.181.123.142:53
+65.181.123.143:53
+
+# Reference: https://twitter.com/ninoseki/status/1073152249969336320
+
+144.217.223.218:53
+35.247.250.124:53
+
+# Reference: https://twitter.com/ninoseki/status/1047697757731864576
+
+18.191.81.137:53
+
+# Reference: https://twitter.com/strayanmegaman/status/1001580761684717568
+# Reference: https://www.bitdefender.com/box/blog/iot-news/800000-draytek-routers-risk-dns-hijacking-attack-update-firmware/
+
+38.134.121.95:53
+
+# Reference: https://twitter.com/ricmarks/status/966733953406291968
+
+18.219.162.248:53
+
+# Reference: https://twitter.com/leppie/status/661234162758721536
+
+23.91.114.130:53
+
+# Reference: https://twitter.com/abek42/status/642610851095158784
+
+5.152.219.51:53
+
+# Reference: https://twitter.com/teksquisite/status/473233221862182912
+
+184.107.180.178:53
+
+# Reference: https://twitter.com/nikcub/status/347579443994312704
+
+204.11.56.17:53
+
+# Reference: https://twitter.com/moukahal/status/194886840447279104
+
+213.109.79.255:53
+64.28.191.255:53
+67.210.15.255:53
+77.67.83.255:53
+85.255.127.255:53
+93.188.167.255:53
