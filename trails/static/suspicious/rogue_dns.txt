@@ -23445,3 +23445,7 @@ ns2.colloc-rotcross.com
 93.188.167.253:53
 93.188.167.254:53
 93.188.167.255:53
+
+# Reference: https://twitter.com/bugsbane/status/74691655663497216
+
+188.229.88.7:53
