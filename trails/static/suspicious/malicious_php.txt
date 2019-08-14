@@ -505,3 +505,7 @@ westflies.com/api/api.php
 
 /assets/images/accesson.php
 /assets/images/customizer.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1161731505065988102
+
+/acabx352of60k6h87abrrjg6.php
