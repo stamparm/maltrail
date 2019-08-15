@@ -25505,3 +25505,13 @@ ns2.colloc-rotcross.com
 # Reference: https://security.stackexchange.com/questions/104480/investigating-a-possible-rogue-dns-server-maybe-dnschanger
 
 93.158.212.36:53
+
+# Reference: https://blog.scrt.ch/2017/07/10/numerous-swiss-domain-names-temporarily-hijacked/
+# Reference: https://www.virustotal.com/gui/domain/ns1.dnshost.ga/relations
+# Reference: https://www.virustotal.com/gui/domain/ns2.dnshost.ga/relations
+
+46.183.219.205:53
+46.183.219.206:53
+46.183.219.227:53
+ns1.dnshost.ga
+ns2.dnshost.ga
