@@ -2004,3 +2004,8 @@ softhome.ru
 softmen.ru
 softobase.com
 tvoiprogrammy.ru
+
+# Reference: https://twitter.com/peterkruse/status/1161918179985244160
+
+anymediaconverter.com
+searcreetch.com
