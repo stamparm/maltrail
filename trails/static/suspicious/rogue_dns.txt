@@ -660,6 +660,7 @@ ns2.colloc-rotcross.com
 
 # Reference: https://twitter.com/airbagsandtree/status/185259406282330112
 # Reference: https://blog.paloaltonetworks.com/2012/02/dnschanger-rogue-dns-servers-taken-down/
+# Reference: https://www.fbi.gov/DNS-changer-malware.pdf
 
 213.109.64.0:53
 213.109.64.1:53
