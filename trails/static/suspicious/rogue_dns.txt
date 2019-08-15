@@ -25500,3 +25500,7 @@ ns2.colloc-rotcross.com
 216.255.179.253:53
 216.255.179.254:53
 216.255.179.255:53
+
+# Reference: https://security.stackexchange.com/questions/104480/investigating-a-possible-rogue-dns-server-maybe-dnschanger
+
+93.158.212.36:53
