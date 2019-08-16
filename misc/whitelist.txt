@@ -809,6 +809,8 @@ frog.wix.com
 1.0.0.1
 1.1.1.1
 9.9.9.9
+208.67.220.123
+208.67.222.123
 opendsp.com
 pool.ntp.org
 tru.am
