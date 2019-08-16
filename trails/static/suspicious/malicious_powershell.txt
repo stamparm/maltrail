@@ -140,3 +140,21 @@
 # Reference: https://twitter.com/James_inthe_box/status/1154398293524271104
 
 /out-1624020870.ps1
+
+# Reference: https://twitter.com/James_inthe_box/status/1148692646942015488
+# Reference: https://twitter.com/DynamicAnalysis/status/1162208563982241793
+
+/ACHPaymentAdvice.ps1
+/AMEXACHCREDITREF080819.ps1
+/AMEXPMTREF.ps1
+/CHASEACHPMT.ps1
+/PMTREFCHS191508.ps1
+/PaymentAdvice.ps1
+/PaymentCopy.ps1
+/PaymentDetails0348.ps1
+/PaymentRef.ps1
+/Remittance.ps1
+/RemittanceAdvice.ps1
+/RemittanceDetails.ps1
+/SupplierRemittanceDetails.ps1
+/WFACHPMT.ps1
