@@ -940,3 +940,8 @@ cfg.cml.ksmobile.com
 # AppleID resource
 
 appleid.apple.com
+
+# Reference: https://github.com/stamparm/maltrail/commit/37f7a4be0da57a5639549388db567948cd7cbba4
+# Reference: https://twitter.com/ItsReallyNick/status/928155800123658241
+
+fbsbx.com
