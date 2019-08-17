@@ -229,3 +229,8 @@ ip.sb
 # Reference: https://www.virustotal.com/gui/domain/ipapi.co/relations
 
 ipapi.co
+
+# Reference: https://twitter.com/James_inthe_box/status/1162451395439558656
+# Reference: https://app.any.run/tasks/d2e3503a-8b53-4012-8ee3-ee45cb680f67/
+
+sfml-dev.org/ip-provider.php
