@@ -514,3 +514,7 @@ westflies.com/api/api.php
 # Reference: https://app.any.run/tasks/6812075f-1785-494f-9624-eda8b19943c3/
 
 /add_bot.php
+
+# Reference: https://twitter.com/ANeilan/status/1162803350511017985
+
+/setoransnsv.php
