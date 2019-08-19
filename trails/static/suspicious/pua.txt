@@ -2009,3 +2009,11 @@ tvoiprogrammy.ru
 
 anymediaconverter.com
 searcreetch.com
+
+# Reference: https://blog.malwarebytes.com/pups/2019/08/qxsearch-hijacker-fakes-failed-installs/
+
+bigsrch.xyz
+chissk.icu
+qxsearch.com
+wajm.icu
+xv11.xyz
