@@ -546,3 +546,7 @@ click.clickanalytics208.com
 
 /JFd0mx.js
 /rKPcLW.js
+
+# Reference: https://twitter.com/VK_Intel/status/1162434460731813893
+
+cloudflara.org
