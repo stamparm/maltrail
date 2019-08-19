@@ -518,3 +518,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/ANeilan/status/1162803350511017985
 
 /setoransnsv.php
+
+# Reference: https://twitter.com/smica83/status/1163222123923615745
+
+/transaction_find.php
