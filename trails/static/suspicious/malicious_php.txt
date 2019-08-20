@@ -522,3 +522,7 @@ westflies.com/api/api.php
 # Reference: https://twitter.com/smica83/status/1163222123923615745
 
 /transaction_find.php
+
+# Reference: https://unit42.paloaltonetworks.com/newly-registered-domains-malicious-abuse-by-bad-actors/
+
+/addbot?hwid=
