@@ -1815,43 +1815,6 @@ myservicessapps.com/firebase/offer55.php
 myservicessapps.com/firebase/offer6.php
 myservicessapps.com/firebase/win_new_cl.php
 
-# Reference: https://www.bleepingcomputer.com/virus-removal/remove-autoconfigurl-browser-hijacker
-
-fastaccessweb.com/wpad.dat
-get-access.me/wpad.dat
-mail.no-stop.net/wpad.dat
-non-block.com/wpad.dat
-non-block.net/wpad.dat
-nonblock.net/wpad.dat
-nonblocks.com/wpad.dat
-none-stop.net/wpad.dat
-no-stop.net/wpad.dat
-notblocked.net/wpad.dat
-no-blocked.com/wpad.dat
-nonblock.net/wpad.dat
-none-stop.net/wpad.dat
-noneblock.com/wpad.dat
-nostopped.net/wpad.dat
-stoppblock.biz/wpad.dat
-stoppblock.com/wpad.dat
-stoppblock.me/wpad.dat
-stoppblock.org/wpad.dat
-un-blocking.com/wpad.dat
-un-blocking.info/wpad.dat
-un-blocking.net/wpad.dat
-un-stop.com/wpad.dat
-un-stop.net/wpad.dat
-un-stop.org/wpad.dat
-unblockservice.com/wpad.dat
-unstop.me/wpad.dat
-unstopp.me/wpad.dat
-unstops.biz/wpad.dat
-unstops.net/wpad.dat
-unstopweb.com/wpad.dat
-unstopweb.net/wpad.dat
-unstopweb.org/wpad.dat
-webunstop.org/wpad.dat
-
 # Reference: https://twitter.com/James_inthe_box/status/1125543661259771904
 
 anyplace-control.com
