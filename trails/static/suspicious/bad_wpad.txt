@@ -38,3 +38,40 @@ wpad.zone
 # Reference: https://twitter.com/smii_mondher/status/1163567422365995009
 
 http://95.168.185.183/wpad.dat
+
+# Reference: https://www.bleepingcomputer.com/virus-removal/remove-autoconfigurl-browser-hijacker
+
+fastaccessweb.com/wpad.dat
+get-access.me/wpad.dat
+mail.no-stop.net/wpad.dat
+non-block.com/wpad.dat
+non-block.net/wpad.dat
+nonblock.net/wpad.dat
+nonblocks.com/wpad.dat
+none-stop.net/wpad.dat
+no-stop.net/wpad.dat
+notblocked.net/wpad.dat
+no-blocked.com/wpad.dat
+nonblock.net/wpad.dat
+none-stop.net/wpad.dat
+noneblock.com/wpad.dat
+nostopped.net/wpad.dat
+stoppblock.biz/wpad.dat
+stoppblock.com/wpad.dat
+stoppblock.me/wpad.dat
+stoppblock.org/wpad.dat
+un-blocking.com/wpad.dat
+un-blocking.info/wpad.dat
+un-blocking.net/wpad.dat
+un-stop.com/wpad.dat
+un-stop.net/wpad.dat
+un-stop.org/wpad.dat
+unblockservice.com/wpad.dat
+unstop.me/wpad.dat
+unstopp.me/wpad.dat
+unstops.biz/wpad.dat
+unstops.net/wpad.dat
+unstopweb.com/wpad.dat
+unstopweb.net/wpad.dat
+unstopweb.org/wpad.dat
+webunstop.org/wpad.dat
