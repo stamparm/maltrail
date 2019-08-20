@@ -812,4 +812,4 @@ Ankit
 
 # Reference: https://twitter.com/James_inthe_box/status/1163565834343632897
 
-License
+\ALicense\Z
