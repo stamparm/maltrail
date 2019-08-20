@@ -34,3 +34,7 @@ wpad.vip
 wpad.ws
 wpad.xxx
 wpad.zone
+
+# Reference: https://twitter.com/smii_mondher/status/1163567422365995009
+
+http://95.168.185.183/wpad.dat
