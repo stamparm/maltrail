@@ -550,3 +550,9 @@ click.clickanalytics208.com
 # Reference: https://twitter.com/VK_Intel/status/1162434460731813893
 
 cloudflara.org
+
+
+# Reference: https://www.fireeye.com/blog/threat-research/2019/08/game-over-detecting-and-stopping-an-apt41-operation.html
+# Reference: https://www.virustotal.com/gui/ip-address/67.229.97.229/relations
+
+/pass_sqzr.jsp
