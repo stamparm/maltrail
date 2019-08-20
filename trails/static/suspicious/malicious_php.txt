@@ -526,3 +526,9 @@ westflies.com/api/api.php
 # Reference: https://unit42.paloaltonetworks.com/newly-registered-domains-malicious-abuse-by-bad-actors/
 
 /addbot?hwid=
+
+# Reference: https://malwarebreakdown.com/2017/07/24/the-seamless-campaign-drops-ramnit-follow-up-malware-azorult-stealer-smoke-loader-etc/
+
+tqbeu.redirectvoluum.com
+tqbeu.voluumtrk.com
+/ads_priv.php
