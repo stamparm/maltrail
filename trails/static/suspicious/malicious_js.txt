@@ -556,3 +556,8 @@ cloudflara.org
 # Reference: https://www.virustotal.com/gui/ip-address/67.229.97.229/relations
 
 /pass_sqzr.jsp
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1164140106095177731
+# Reference: https://app.any.run/tasks/0c5278c0-d505-4873-b612-9318dbbc2733/
+
+/ajwngsj.js
