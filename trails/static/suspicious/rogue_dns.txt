@@ -682,3 +682,8 @@ ns2.colloc-rotcross.com
 46.183.219.227:53
 ns1.dnshost.ga
 ns2.dnshost.ga
+
+# Reference: https://twitter.com/ninoseki/status/1164163472445173760
+
+38.91.106.137:53
+54.226.200.196:53
