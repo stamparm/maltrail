@@ -158,3 +158,9 @@
 /RemittanceDetails.ps1
 /SupplierRemittanceDetails.ps1
 /WFACHPMT.ps1
+
+
+# Reference: https://www.fireeye.com/blog/threat-research/2019/08/game-over-detecting-and-stopping-an-apt41-operation.html
+# Reference: https://www.virustotal.com/gui/ip-address/67.229.97.229/relations
+
+/d2.ps1
