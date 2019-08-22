@@ -686,7 +686,6 @@ ns2.dnshost.ga
 # Reference: https://twitter.com/ninoseki/status/1164163472445173760
 
 38.91.106.137:53
-54.226.200.196:53
 
 # Reference: https://twitter.com/david_jursa/status/1134355920639660037
 
