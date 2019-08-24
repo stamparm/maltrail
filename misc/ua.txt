@@ -843,3 +843,36 @@ Cristmas Mystery
 # Reference: https://github.com/Neo23x0/sigma/blob/master/rules/proxy/proxy_ua_apt.yml
 
 O/9.27 (W; U; Z)
+
+# Reference: https://github.com/Neo23x0/sigma/blob/master/rules/proxy/proxy_ua_hacktool.yml
+
+arachni
+BFAC
+brutus
+cgichk
+core-project
+crimscanner
+domino hunter
+dotdotpwn
+FHScan Core
+floodgate
+get-minimal
+gootkit auto-rooter scanner
+grendel-scan
+inspath
+internet ninja
+jaascois
+\bmetis\b
+morfeus fucking scanner
+Mozilla/5.0 (Windows; U; Windows NT 5.1; pt-PT; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)
+n-stealth
+pmafind
+ruler
+security scan
+springenwerk
+teh forest lobster
+uil2pn
+\bvega\b
+voideye
+webshag
+webvulnscan
