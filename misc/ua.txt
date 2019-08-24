@@ -835,3 +835,7 @@ SJZJ
 # Reference: https://twitter.com/x0rz/status/748858850896470016
 
 Cristmas Mystery
+
+# Reference: https://github.com/Neo23x0/sigma/blob/master/rules/proxy/proxy_ua_apt.yml
+
+O/9.27 (W; U; Z)
