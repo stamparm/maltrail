@@ -827,10 +827,14 @@ Mozilla/6.1 (compatible; MSIE 9.0; Windows NT 5.3; Trident/5.0)
 928776C4AD04B453186FF486335CB3D2
 
 # Reference: https://twitter.com/cyb3rops/status/883717898228736003
+# Reference: https://github.com/Neo23x0/sigma/blob/master/rules/proxy/proxy_ua_malware.yml
 
+backdoorbot
 CholTBAgent
 HttpBrowser/1.0
+IczelionDownLoad
 SJZJ
+Mozilla/5.0 WinInet
 
 # Reference: https://twitter.com/x0rz/status/748858850896470016
 
