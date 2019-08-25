@@ -2613,3 +2613,7 @@ dynv6.net
 # Reference: https://www.virustotal.com/gui/domain/mein-vigor.de/relations
 
 mein-vigor.de
+
+# Reference: https://www.virustotal.com/gui/domain/dd-dns.de/relations
+
+dd-dns.de
