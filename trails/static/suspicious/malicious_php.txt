@@ -538,3 +538,7 @@ tqbeu.voluumtrk.com
 # Reference: https://twitter.com/IpNigh/status/1164328397314699265
 
 /9cfryg81syzg9u27cxh19tax.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1164917499281989632
+
+/8k1bkkn094xdivviaab8hs19.php
