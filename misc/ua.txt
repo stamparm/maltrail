@@ -813,3 +813,66 @@ Ankit
 # Reference: https://twitter.com/James_inthe_box/status/1163565834343632897
 
 \ALicense\Z
+
+# Reference: https://twitter.com/nmatte90/status/1163141154445176833
+
+Testingus
+
+# Reference: https://gist.github.com/Neo23x0/00bc2b883c530f7a12b055549e9076ff
+
+Mozilla/6.1 (compatible; MSIE 9.0; Windows NT 5.3; Trident/5.0)
+
+# Reference: https://twitter.com/ViriBack/status/991782471149801472
+
+928776C4AD04B453186FF486335CB3D2
+
+# Reference: https://twitter.com/cyb3rops/status/883717898228736003
+# Reference: https://github.com/Neo23x0/sigma/blob/master/rules/proxy/proxy_ua_malware.yml
+
+backdoorbot
+CholTBAgent
+HttpBrowser/1.0
+IczelionDownLoad
+SJZJ
+Mozilla/5.0 WinInet
+
+# Reference: https://twitter.com/x0rz/status/748858850896470016
+
+Cristmas Mystery
+
+# Reference: https://github.com/Neo23x0/sigma/blob/master/rules/proxy/proxy_ua_apt.yml
+
+O/9.27 (W; U; Z)
+
+# Reference: https://github.com/Neo23x0/sigma/blob/master/rules/proxy/proxy_ua_hacktool.yml
+
+arachni
+BFAC
+brutus
+cgichk
+core-project
+crimscanner
+domino hunter
+dotdotpwn
+FHScan Core
+floodgate
+get-minimal
+gootkit auto-rooter scanner
+grendel-scan
+inspath
+internet ninja
+jaascois
+\bmetis\b
+morfeus fucking scanner
+Mozilla/5.0 (Windows; U; Windows NT 5.1; pt-PT; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)
+n-stealth
+pmafind
+ruler
+security scan
+springenwerk
+teh forest lobster
+uil2pn
+\bvega\b
+voideye
+webshag
+webvulnscan
