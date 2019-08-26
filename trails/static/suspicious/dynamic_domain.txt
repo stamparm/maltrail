@@ -2609,3 +2609,115 @@ meibu.net
 # Reference: https://www.virustotal.com/gui/domain/dynv6.net/relations
 
 dynv6.net
+
+# Reference: https://www.virustotal.com/gui/domain/mein-vigor.de/relations
+
+mein-vigor.de
+
+# Reference: https://www.virustotal.com/gui/domain/my-vigor.de/relations
+
+my-vigor.de
+
+# Reference: https://www.virustotal.com/gui/domain/dd-dns.de/relations
+
+dd-dns.de
+
+# Reference: https://www.virustotal.com/gui/domain/dray-dns.de/relations
+
+dray-dns.de
+
+# Reference: https://www.virustotal.com/gui/domain/draydns.de/relations
+
+draydns.de
+
+# Reference: https://www.virustotal.com/gui/domain/dyn-vpn.de/relations
+
+dyn-vpn.de
+
+# Reference: https://www.virustotal.com/gui/domain/dynvpn.de/relations
+
+dynvpn.de
+
+# Reference: https://www.virustotal.com/gui/domain/my-wan.de/relations
+
+my-wan.de
+
+# Reference: https://www.virustotal.com/gui/domain/syno-ds.de/relations
+
+syno-ds.de
+
+# Reference: https://www.virustotal.com/gui/domain/synology-diskstation.de/relations
+
+synology-diskstation.de
+
+# Reference: https://www.virustotal.com/gui/domain/synology-ds.de/relations
+
+synology-ds.de
+
+# Reference: https://www.virustotal.com/gui/domain/dsmynas.com/relations
+
+dsmynas.com
+
+# Reference: https://www.virustotal.com/gui/domain/dsmynas.net/relations
+
+dsmynas.net
+
+# Reference: https://www.virustotal.com/gui/domain/dsmynas.org/relations
+
+dsmynas.org
+
+# Reference: https://www.virustotal.com/gui/domain/familyds.com/relations
+
+familyds.com
+
+# Reference: https://www.virustotal.com/gui/domain/familyds.net/relations
+
+familyds.net
+
+# Reference: https://www.virustotal.com/gui/domain/familyds.org/relations
+
+familyds.org
+
+# Reference: https://www.virustotal.com/gui/domain/i234.me/relations
+
+i234.me
+
+# Reference: https://www.virustotal.com/gui/domain/myds.me/relations
+
+myds.me
+
+# Reference: https://www.virustotal.com/gui/domain/synology.me/relations
+
+synology.me
+
+# Reference: https://www.virustotal.com/gui/domain/vpnplus.to/relations
+
+vpnplus.to
+
+# Reference: https://www.virustotal.com/gui/domain/diskstation.me/relations
+
+diskstation.me
+
+# Reference: https://www.virustotal.com/gui/domain/dscloud.biz/relations
+
+dscloud.biz
+
+# Reference: https://www.virustotal.com/gui/domain/dscloud.me/relations
+
+dscloud.me
+
+# Reference: https://www.virustotal.com/gui/domain/dscloud.mobi/details
+
+dscloud.mobi
+
+# Reference: https://www.virustotal.com/gui/domain/diskstation.eu/relations
+
+diskstation.eu
+
+# Reference: https://www.virustotal.com/gui/domain/diskstation.org/relations
+
+diskstation.org
+
+# Reference: https://www.virustotal.com/gui/domain/quickconnect.to/relations
+
+quickconnect.to
