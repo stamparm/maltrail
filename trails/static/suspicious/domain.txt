@@ -4720,3 +4720,7 @@ myihor.ru
 # Reference: https://www.virustotal.com/gui/domain/orderbox-dns.com/details
 
 orderbox-dns.com
+
+# Reference: https://www.virustotal.com/gui/domain/securezdns.pw/relations
+
+securezdns.pw
