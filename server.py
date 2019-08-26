@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
@@ -79,7 +79,7 @@ def main():
             print("[x] going to continue without online update")
             _ = update_trails(offline=True)
         else:
-            _ = update_trails(server=config.UPDATE_SERVER)
+            _ = update_trails()
             update_ipcat()
 
         thread = threading.Timer(config.UPDATE_PERIOD, update_timer)
@@ -106,7 +106,7 @@ if __name__ == "__main__":
 
     try:
         main()
-    except SystemExit, ex:
+    except SystemExit as ex:
         show_final = False
 
         if isinstance(getattr(ex, "message"), basestring):

@@ -68,7 +68,7 @@ hellominer.com
 
 # Reference: https://www.virustotal.com/#/file/179c5390ba2023402283104fd85d6394033976bc2f21e45d32e7557cafaa7d41/detection
 
-www.sparechange.io
+sparechange.io
 
 # Reference: https://blog.talosintelligence.com/2018/08/rocke-champion-of-monero-miners.html
 
@@ -99,3 +99,88 @@ koto-pool.work
 
 134.209.104.20:51640
 minerxmr.ru
+
+# Reference: https://twitter.com/bad_packets/status/1100625553822867456
+
+119.23.222.239:26590
+
+# Reference: https://twitter.com/James_inthe_box/status/1115591879586795521
+
+47.97.119.5:19988
+
+# Reference: https://twitter.com/infosec_dude/status/1117450131417313280
+# Reference: https://www.virustotal.com/gui/ip-address/45.43.27.214/relations
+# Reference: https://twitter.com/James_inthe_box/status/1117881448151666688
+
+45.43.27.214:17555
+r.twotouchauthentication.online
+
+# Reference: https://twitter.com/luc4m/status/1123126706943008768
+
+139.224.15.175:26591
+
+# Reference: https://www.gdatasoftware.com/blog/2019/05/31695-strange-bits-smuggling-malware-github
+
+zarabotaibitok.ru
+61.128.111.164:3335
+
+# Reference: https://twitter.com/raby_mr/status/1133347073154097153
+# Reference: https://app.any.run/tasks/7e23f973-5f69-4ef0-af26-427e975e308d/
+# Reference: https://www.virustotal.com/gui/file/272e25e3aa9d792281a282c2f6cd40d59c5b8fe432ae93bb5015899ceb173dd1/behavior/Dr.Web%20vxCube
+# Reference: https://www.virustotal.com/gui/ip-address/94.130.64.225/relations
+# Reference: https://www.virustotal.com/gui/ip-address/46.4.119.208/relations
+
+46.4.119.208:45700
+94.130.64.225:45700
+
+# Reference: https://github.com/guardicore/labs_campaigns/blob/master/Nansh0u/mining_pools_domains.md
+
+lokiturtle.herominers.com
+trtl.cnpool.cc
+turtle.miner.rocks
+trtl.pool.mine2gether.com
+
+# Reference: https://twitter.com/liuya0904/status/1135901420958281729
+
+noobxmr.com
+minexmr.cn
+moriaxmr.com
+viaxmr.com
+xmr-us.suprnova.cc
+xmr.bohemianpool.com
+xmr-usa.dwarfpool.com
+miners.pro
+thyrsi.com
+zer0day.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1138999824613687298
+# Reference: https://twitter.com/VK_Intel/status/1139926661162512384
+# Reference: https://github.com/k-vitali/Malware-Misc-RE/blob/master/2019-06-14-tofsee-spambot-modules.notes.vk.txt
+
+185.181.165.20:8087
+
+# Reference: https://twitter.com/Artilllerie/status/1115258738368294913
+
+185.212.129.80:8087
+
+# Reference: https://otx.alienvault.com/pulse/5d0773672ba7e7853c4ad5cf
+
+185.161.70.34:3333
+202.144.193.184:3333
+205.185.122.99:3333
+
+# Reference: https://www.welivesecurity.com/2019/06/20/loudminer-mining-cracked-vst-software/ (# Mining hosts)
+
+system-update.info
+system-check.services
+185.193.126.114:443
+185.193.126.114:8080
+82.221.139.161:8080
+
+# Reference: https://twitter.com/28bit/status/1159906315642253312
+
+121.42.151.137:28850
+
+# Reference: https://twitter.com/James_inthe_box/status/1165005466419658753
+
+3.120.209.58:8080

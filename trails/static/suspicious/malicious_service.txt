@@ -1,0 +1,243 @@
+# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/PhysicalDrive0/status/1109871662890127360
+
+lofi.stream
+
+# Reference: https://twitter.com/suyog41/status/1117463616243023879
+
+atilla.vip
+
+# Reference: https://twitter.com/PhishingAi/status/1117780609688952832
+
+hvnc.info
+
+# Reference: https://twitter.com/ydklijnsma/status/1098282324867731456
+
+rusmarkethgwhfbn.onion
+
+# Reference: https://twitter.com/morganezar/status/1119325315858407424
+
+inpivxbflrqrpzxe.onion
+
+# Reference: https://twitter.com/x0rz/status/978608169529245696
+
+revcode.eu
+
+# Reference: https://resources.infosecinstitute.com/malware-dark-web/
+
+rhe4faeuhjs4ldc5.onion
+money2mxtcfcauot.onion
+rsprjqyxhf25l3qd.onion
+facez25qzcuvu2t3.onion
+3m2pyft7fyzjqymu.onion
+pwoah7foox4q2juo.onion
+x7bwsmcore5fmx56.onion
+3vrrj7zpi27idyli.onion
+5nr3y5i5tenl6a3w.onion
+
+# Reference: https://twitter.com/John_Fokker/status/1124025426626658306
+
+wallstyizjhkrvmj.onion
+
+# Reference: https://twitter.com/rommeljoven17/status/975944681472245760
+
+xttkrsrjsoczm3ah.onion
+
+# Reference: https://twitter.com/BleepinComputer/status/1126555054436225025
+
+jokerootqsrkifko.onion
+
+# Reference: https://twitter.com/0xffff0800/status/1129215041432096773
+
+cve-2019-0708.com
+
+# Reference: https://twitter.com/benkow_/status/1130410721865535490
+
+jg4rli4xoagvvmw47fr2bnnfu7t2epj6owrgyoee7daoh4gxvbt3bhyd.onion
+
+# Reference: https://twitter.com/MalwarePatrol/status/1133598348953423873
+
+irc-files.org
+
+# Reference: https://twitter.com/JayTHL/status/1135974220566093824
+
+remote.new-haven.k12.ct.us
+
+# Reference: https://securelist.com/a-predatory-tale/89779/
+
+vlmi.biz
+
+# Reference: https://otx.alienvault.com/indicator/domain/lolzteam.net
+
+lolzteam.net
+
+# Reference: https://www.hybrid-analysis.com/sample/fd3c007e62be86abbbf41c8d286bd550224f37223a2f34f05244ce99b0c249f6
+
+hack-faq.ru
+
+# Reference: https://www.reverse.it/sample/6454ff03f5934f4a48d627aa9e3d19026ff56f242da9158eea25b1ed04174f18
+
+ifud.ws
+
+# Reference: https://www.afp.gov.au/news-media/media-releases/sydney-man-charged-selling-personal-details-customers-online-joint
+
+wickedgen.com
+
+# Generic trails
+
+bhf.io
+blackbiz.club
+darkweb.su
+darkwebs.ws
+xaker.name
+
+# Reference: https://twitter.com/ankit_anubhav/status/1112761206081835009
+
+sxpreme.eu
+
+# Reference: https://securelist.com/digital-doppelgangers/90378/
+
+tenebris.cc
+
+# Reference: https://twitter.com/campuscodi/status/1137304259735822336 (# dark.fail information)
+
+# Dread
+dreadditevelidot.onion
+
+ # Masterlist
+22222222222qerho.onion
+masterlistwtfzgt.onion
+
+# The Hub Forum
+thehub7xbw4dc5r2.onion
+
+# Empire Market
+l3g26qsi75ucqz7t.onion
+yxlpkl4ndnkynuh7.onion
+2egx5wsptre4h2no.onion
+6bltby7z4iklyrcz.onion
+inpmi47uh2i4hjyq.onion
+33vrqchlpg3t7h2j.onion
+j3tj7dkxycyge6gm.onion
+mtatmewtwvzww6ll.onion
+empiremktxgjovhm.onion
+
+# The Majestic Garden
+2oywvwmtzdelmiei.onion
+kznam6basvxxdcpf.onion
+p6afzcaghpulzr5r.onion
+talismanrestz7mr.onion
+nzlbyrcvvqtrkxiu.onion
+ir5aduqnh3xxuzb4.onion
+
+# Tochka Market
+tochka3evlj3sxdv.onion
+pointgg344ghbo2s.onion
+
+# Nightmare Market
+oyqfhp3h5yo3kvse.onion 
+knfhklmozzc7hslv.onion
+nfqhjfggilqxrb7t.onion
+cpzj52bfygtfzxs7.onion
+65bsun62vsydcndp.onion
+pgn2eqbwbebwdhev.onion
+nightmareocykhgs.onion
+sye74pzse4nvzaho.onion
+tny4avpz5w7gkonz.onion
+2rkqcy5bowfklwjc.onion
+cbqozb75kjiwqhcn.onion
+36ovvt3xinc7m7ct.onion
+ykmwa3kkyvgzyipo.onion
+4afncp4ix2oo43r4.onion
+sh4eul2h2g3d2mtu.onion
+4iyuyc6vachjawhg.onion
+agpa7pmeokjyjoae.onion
+
+# Nightmare Market Forum
+uiou5sidva7ylu4x.onion
+
+# Libertas
+libertyimuhzl2kz.onion
+uuihlwzw2zhmk7m4.onion
+n6ageq7q4b6s6fc4.onion
+ksglfpf7cocilwxn.onion
+27zz76h6izsbnbv7.onion
+shuiorugvzx44sjk.onion
+cy6iycsf3lcba55h.onion
+by6zrgpfz734altp.onion
+2pbromreoza4i3fc.onion
+x6zxswyovcvl2bvc.onion
+
+# Berlusconi Market
+3m2pyft7fyzjqymu.onion
+55j6kjwki4vjtmzp.onion
+hky3mzk3jtmd4zt4.onion
+sojkbd6i7jgtmkpiqe2lse6zahtbjj2orvqo4qtuny6nxtdiol3u52yd.onion
+43b5ngwlbgeftp7pedkatxbd5sidvtbhc2frfko4jdnuwrk24ctovsid.onion
+q3by2ticiadtplnwf27dmiplwo7agugq3to44ymd76tibkkuxvocuyid.onion
+
+# Berlusconi Market Forum
+lokwbo54utdfvr4r.onion
+
+# Cryptonia Market
+cryptofpr4ysjeez.onion
+cryptonie332smug.onion
+5mdo5rafeixeeokcvoiqeiup7z2cstqjjy5u6h5atwnjpnfuvlubycid.onion
+pahy67rnsvilwmnw6tbuvwcgj3demsl6ylnegvfrenjcu7733c6igdid.onion
+bntee6mf5w2okbpxdxheq7bk36yfmwithltxubliyvum6wlrrxzn72id.onion
+
+# Hydra
+hydraruzxpnew4af.onion
+
+# Dream Alt Market
+dreama72ki5iqtt7.onion
+dreamamzigom6grj.onion
+dhssd6e6w6iu3f7jvtzaylriznguqo2vvbd4krpwpy6w47vtyrxjpiad.onion
+
+# Genesis Market
+x5ylylnoftkolawu.onion
+3rmybxbtkb5txmqv.onion
+iurnxnnbn75fonho.onion
+otq5ba7lrjifnsbh.onion
+32zvohcmpepdgg6l.onion
+
+# Cannazon Market
+cannazon4gbjluus.onion
+
+# Apollon Market
+apollionih4ocqyd.onion
+
+# Darknet Avengers Forum
+avengersdutyk3xf.onion
+
+# DeepDotWeb
+deepdot35wvmeyd5.onion
+
+# The Pirate Bay
+suprbayoubiexnmp.onion
+uj3wazyk5u4hnvtk.onion
+
+# Darknet Live
+darknet7rl4epe24.onion
+
+# Reference: https://twitter.com/hackermaderas/status/1137366310025871360
+
+darknetleaks.ru
+
+# Reference: https://www.virustotal.com/gui/file/5bb883d81954d10446a71fc8965f399c731bfccdfccdad738c12f1025b7b2a96/detection
+
+officeapplications.net
+
+# Reference: https://blog.team-cymru.com/2019/07/25/unmasking-ave_maria/
+
+warzone.io
+
+# Reference: https://twitter.com/david_jursa/status/1148607348610609152
+# Reference: https://pastebin.com/8BU6qfYB
+
+clearmatechecker.site
+d3s687mnstf2nl.cloudfront.net
+infoxxtechxx.gq
+stockmatejappzee.site

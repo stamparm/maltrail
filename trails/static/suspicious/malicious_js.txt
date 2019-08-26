@@ -41,11 +41,8 @@ play.soodatmish.com/app.js
 /r/6jHa5
 /r/Lx4er
 
-# Reference: https://twitter.com/bad_packets/status/1042627971368939521
-
-/lib/coinhive.min.js
-
 # Reference: https://www.virustotal.com/#/domain/coinhive.com
+# Reference: https://twitter.com/bad_packets/status/1042627971368939521
 
 /lib/captcha.min.js
 /lib/ch2.min.js
@@ -336,3 +333,231 @@ greatwebstat.com
 blockchainanalyticscdn.com
 5b0c4f7f0587346ad14b9e59704c1d9a.top
 925e40815f619e622ef71abc6923167f.top
+
+# Reference: https://www.group-ib.com/media/js-sniffer/
+
+gmo.li
+
+# Reference: https://twitter.com/VK_Intel/status/1104109897531224065
+
+host.moresecurity.kz/host/info
+
+# Reference: https://docs.google.com/document/d/1oYX3uN6KxIX_StzTH0s0yFNNoHDnV8VgmVqU5WoeErc (2018-06-12 Charming Kitten waterhole)
+
+178.32.48.50:8443/node.js
+
+# Reference: https://blog.attacker.net/a-new-wave-of-the-simpleoneline-malware
+
+simpleoneline.online
+
+# Reference: https://twitter.com/p5yb34m/status/1111707577685991424
+
+givemejs.cc/jquery_ui.js
+
+# Reference: https://twitter.com/natmchugh/status/1118851237351497734
+
+so.youneverfind.com/statistics.js
+
+# Reference: https://twitter.com/bad_packets/status/976677742862200832
+
+/5992203285ab3219.3.n.2.1.l60.js
+
+# Reference: https://twitter.com/jeromesegura/status/1121811483195633670
+# Reference: https://blog.malwarebytes.com/cybercrime/2019/04/github-hosted-magecart-skimmer-used-against-hundreds-of-e-commerce-sites/
+
+/mage/master/mage.js
+
+# Reference: https://securelist.com/muddywaters-arsenal/90659/
+
+dzoz.us/js/js.js
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/tech-support-scam-employs-new-trick-by-using-iframe-to-freeze-browsers/
+# Reference: https://otx.alienvault.com/pulse/5cc71ac7631c3a2f3c67ba7f
+
+/assests/eng_edge_new.html
+
+# Reference: https://twitter.com/gwillem/status/1127617495911804935
+# Reference: https://twitter.com/CERTA_intNsec/status/1127849427572527104
+
+assets.pcrl.co/js/jstracker.min.js
+
+# Reference: https://twitter.com/gwillem/status/1127619061725241349
+
+code.cloudcms.com/alpaca/1.5.17/bootstrap/alpaca.min.css
+
+# Reference: https://twitter.com/gwillem/status/1127890329175244800
+
+d20iczrsxk7wft.cloudfront.net/botwverified/badge.js
+
+# Reference: https://twitter.com/_mmeltzer/status/1128311225228648449
+
+cdn.ryviu.com/js/reviews.js
+ww1-filecloud.com
+
+# Reference: https://twitter.com/jeromesegura/status/1133160126561394688
+# Reference: https://blog.malwarebytes.com/cybercrime/2019/05/skimmer-acts-as-payment-service-provider-via-rogue-iframe/
+
+modest4ever.com/assets/newbalance.js
+
+# Reference: https://twitter.com/KorbenD_Intel/status/1133469852579106816
+
+/thecry.js
+
+# Reference: https://www.fortinet.com/blog/threat-research/payment-card-details-stolen-magecart.html
+# Reference: https://www.virustotal.com/gui/ip-address/178.33.231.184/relations
+
+/ausliebezumduft.js
+/bigmusicshop.js
+/brain-payment.js
+/darussalam.js
+/dotsport.js
+/hepler.js
+/iloveskininc.js
+/kimon.js
+/klarna.js
+/mycigara.js
+/relightdepot.js
+/sanasafinaz.js
+/stutterheim.js
+/turtlecase.js
+/whinkel.js
+
+# Reference: https://twitter.com/eComscan/status/1136181192796061697
+
+/baypre.js
+/cashionrods.js
+/dans.js
+
+# Reference: https://twitter.com/Racco42/status/1136621446053150720
+
+/0001.js
+
+# Reference: https://twitter.com/rootsrv1/status/1136763516285702146
+
+jqueryextd.at
+
+# Reference: https://twitter.com/jeromesegura/status/1137087208630833152
+
+jquers.com
+jqueres.com
+
+# Reference: https://twitter.com/luc4m/status/1138430833533104128
+
+/tkeezwbzpl.js
+
+# Reference: https://twitter.com/Racco42/status/1139461501113311232
+
+/urgente.js
+
+# Reference: https://twitter.com/marcelmalware/status/1140723183584272386
+# Reference: https://www.virustotal.com/gui/domain/jquery.su/relations
+
+jquery.su
+
+# Reference: https://myonlinesecurity.co.uk/more-agenttesla-keylogger-and-nanocore-rat-in-one-bundle/
+
+/mhtexp.js
+
+# Reference: https://twitter.com/david_jursa/status/1148199946618732544
+
+/add5.js
+
+# Reference: https://twitter.com/JayTHL/status/1149055957256802307
+
+click.clickanalytics208.com
+
+# Reference: https://thehackernews.com/2019/07/magecart-amazon-s3-hacking.html
+# Reference: https://www.zscaler.com/blogs/research/magecart-activity-and-campaign-enhancements
+
+/js/decor.js
+/js/lib/ccard.js
+
+# Reference: https://twitter.com/killamjr/status/1149301815529398272
+
+google.ssl.lnfo.cc
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/home-routers-under-attack-malvertising-windows-android-devices
+
+/zaqedcvfr.js
+/zaqwsxcde.js
+
+# Reference: https://decoded.avast.io/threatintel/router-exploit-kits-an-overview-of-routercsrf-attacks-and-dns-hijacking-in-brazil/
+
+/alfuncsync.js
+/fingerprint_db.js
+akibanoticias.com
+rotumal.com
+tharbadir.com
+cdn.t.co/sm.js
+cdn.popcash.net/pop.js
+widgets.outbrain.com/outbrain.js
+google-analytics.com/ga.js
+cdn.taboola.com/TaboolaCookieSyncScript.js
+
+# Reference: https://twitter.com/James_inthe_box/status/1150794193494630401
+
+/sharing_buttons.js
+
+# Reference: https://twitter.com/adrian__luca/status/1151393084380459009
+# Reference: https://app.any.run/tasks/61147c70-2def-4d72-aa32-4b1e45da1180/
+
+/k55qtf704vukk11a8r24riuuoc.js
+/pe0gecpi4ins56vi9kfrnh7kbs.js
+
+# Reference: https://blog.sucuri.net/2019/07/fake-google-domains-used-in-evasive-magento-skimmer.html
+# Reference: https://otx.alienvault.com/pulse/5d3f2283df812ea7458e98f8
+
+/3f5cf4657d5d9.js
+/5d32125dab5ee.js
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/07/exploit-kits-summer-2019-review/
+# Reference: https://otx.alienvault.com/pulse/5d40766ecabf3f345b3811db
+
+/e1cuqrhmik66gu7pr90qk9v3p8.js
+/ftp22vfljscml2370rsritui9g.js
+/tinyjs.min.js
+
+# Reference: https://twitter.com/smica83/status/1156485272617570304
+
+/factura.js
+
+# Reference: https://twitter.com/ScumBots/status/1157875582765535232
+
+http://156.236.102.78
+
+# Reference: https://twitter.com/securitydoggo/status/1158370884899495936
+
+/2019-National-Intelligence-Coordinating-Agency-Survey-Questionnaire.js
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2018/04/fakeupdates-campaign-leverages-multiple-website-platforms/
+
+boobahbabies.com
+eventsbysteph.com
+query.network
+connect.clevelandskin.net
+connect.clevelandskin.org
+track.amishbrand.com
+track.positiverefreshment.org
+link.easycounter210.com
+click.clickanalytics208.com
+/s_code.js?cid=
+
+# Reference: https://twitter.com/James_inthe_box/status/1159917575301582848
+
+/JFd0mx.js
+/rKPcLW.js
+
+# Reference: https://twitter.com/VK_Intel/status/1162434460731813893
+
+cloudflara.org
+
+
+# Reference: https://www.fireeye.com/blog/threat-research/2019/08/game-over-detecting-and-stopping-an-apt41-operation.html
+# Reference: https://www.virustotal.com/gui/ip-address/67.229.97.229/relations
+
+/pass_sqzr.jsp
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1164140106095177731
+# Reference: https://app.any.run/tasks/0c5278c0-d505-4873-b612-9318dbbc2733/
+
+/ajwngsj.js

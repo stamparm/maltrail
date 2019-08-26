@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
@@ -18,7 +18,6 @@ from core.settings import LOAD_TRAILS_RETRY_SLEEP_TIME
 from core.settings import REGULAR_SENSOR_SLEEP_TIME
 from core.settings import SHORT_SENSOR_SLEEP_TIME
 from core.settings import trails
-from core.settings import TRAILS_FILE
 
 def read_block(buffer, i):
     offset = i * BLOCK_LENGTH % config.CAPTURE_BUFFER
@@ -59,7 +58,7 @@ def worker(buffer, n, offset, mod, process_packet):
     """
 
     def update_timer():
-        if (time.time() - os.stat(TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD:
+        if (time.time() - os.stat(config.TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD:
             _ = None
             while True:
                 _ = load_trails(True)

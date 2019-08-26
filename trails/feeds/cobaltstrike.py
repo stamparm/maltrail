@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
@@ -24,7 +24,7 @@ def fetch():
             if not line or line.startswith('#') or not all(_ in line for _ in ('.', ',')):
                 continue
             parts = line.split(',')
-            if (datetime.datetime.now() - datetime.datetime.strptime(parts[-1], "%Y-%M-%d")).days < 60:
+            if (datetime.datetime.now() - datetime.datetime.strptime(parts[-1], "%Y-%M-%d")).days < 120:
                 retval["%s:%s" % (parts[0], parts[1])] = (__info__, __reference__)
 
     return retval

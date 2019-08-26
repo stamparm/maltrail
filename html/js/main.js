@@ -217,11 +217,16 @@ function checkAuthentication() {
             }
             else if ((response.status === 200) && (typeof response.responseText !== "undefined") && (response.responseText.length > 0)) {
                 _USER = response.responseText;
-                $("#login_link").html("Log Out (" + _USER + ")");
-                $("#login_link").off("click");
-                $("#login_link").click(function() {
-                    window.location.href = "logout";
-                });
+                if (_USER !== '?') {
+                    $("#login_link").html("Log Out (" + _USER + ")");
+                    $("#login_link").off("click");
+                    $("#login_link").click(function() {
+                        window.location.href = "logout";
+                    });
+                }
+                else {
+                    $("#login_link").html("");
+                }
             }
             else if (window.location.origin.startsWith('http')) {
                 _USER = "";

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
@@ -55,7 +55,7 @@ def fetch():
                 if not line:
                     break
                 match = re.search(r"\A([^,\s]+),Domain used by ([^ ]+)", line)
-                if match:
+                if match and '.' in match.group(1):
                     retval[match.group(1)] = ("%s dga (malware)" % match.group(2).lower(), __reference__)
         except:
             pass

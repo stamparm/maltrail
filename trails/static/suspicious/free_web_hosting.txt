@@ -1,6 +1,10 @@
 # Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
+# User reported
+
+profreehost.com
+
 # Reference: http://malwaredomains.lehigh.edu/files/freewebhosts.txt
 
 0-catch.com
@@ -419,3 +423,8 @@ webege.com
 webnika.info
 website-home.ws
 website.or
+
+# Reference: https://twitter.com/ScumBots/status/1140724407687684096
+# Reference: https://www.virustotal.com/gui/domain/heliohost.org/details
+
+heliohost.org

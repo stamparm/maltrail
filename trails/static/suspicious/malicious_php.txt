@@ -29,14 +29,6 @@
 
 /loomistech/gate.php
 
-# Reference: https://twitter.com/James_inthe_box/status/1044957343568388097
-# Reference: https://pastebin.com/st49wnwB
-# Reference: https://pastebin.com/bPV4gVVL
-
-/4/forum.php
-/d2/forum.php
-/mlu/forum.php
-
 # Reference: https://twitter.com/nullcookies/status/1019569151503986689
 
 /bc0de.php
@@ -76,3 +68,477 @@
 # Reference: https://twitter.com/ViriBack/status/1094261293693972480
 
 ibrandworld.com/jsl.php
+
+# Reference: https://twitter.com/IpNigh/status/1107567316148150274
+
+/universalmail-notifications/updates.php
+
+# Reference: https://twitter.com/Racco42/status/1102488453990830080
+
+/masquare.php
+
+# Reference: https://twitter.com/Racco42/status/1098218160111734789
+
+nitdesenders.tianat.cat/tmp/signup.php
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1103983033307271168
+
+/photo/123.php
+/Sep2018/gsm.php
+
+# Reference: https://twitter.com/benkow_/status/1085483319347867649
+
+ /public/hydra.php
+
+# Reference: https://twitter.com/anyrun_app/status/1060858198599577601
+
+/ghuae/huadh.php
+
+# Reference: https://twitter.com/pollo290987/status/1108755025604591622
+
+/loro_4.php
+
+# Reference: https://www.welivesecurity.com/2018/11/06/supply-chain-attack-cryptocurrency-exchange-gate-io/
+
+statconuter.com/c.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1109832439700971520
+# Reference: https://app.any.run/tasks/f435d89d-30a5-465b-8a8d-b7a042665e0e
+
+/loadbase1.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1111630255763189761
+
+/D2017HL/u.php
+
+# Reference: https://twitter.com/IpNigh/status/1111919996266049536
+
+/ahzhnobu48jgm1rksb2zl3sc.php
+
+# Reference: https://twitter.com/IpNigh/status/1111904352053198848
+
+/challengevdl.php
+
+# Reference: https://twitter.com/IpNigh/status/1111872373446377472
+
+/overviewshn.php
+
+# Reference: https://twitter.com/executemalware/status/1112337168138149888
+
+/phpmailer/Pmxyz.php
+
+# Reference: https://twitter.com/albertzsigovits/status/1113096573284728839
+
+/asfdh4/auth.php
+
+# Reference: https://twitter.com/IpNigh/status/1113287915612798976
+
+/49rrf856hqofcuq6mkdntfdp.php
+
+# Reference: https://otx.alienvault.com/pulse/5ca5e12bcf299875864044a6
+# Reference: https://www.securityartwork.es/2019/04/02/militaryfinancingmaldoc/
+# Reference: https://blog.trendmicro.co.jp/archives/19054
+
+/7773/index.php
+/9125/gate.php 
+
+# Reference: https://www.bromium.com/mapping-malware-distribution-network/
+# Reference: https://otx.alienvault.com/pulse/5ca7142dd898276082584a58
+
+/olala/get.php
+
+# Reference: https://twitter.com/IpNigh/status/1114334454930190336
+
+/hcu9e676hqzffjez47ec6ggd.php
+
+# Reference: https://twitter.com/ViriBack/status/1114610878056402945
+
+/class-walker-page-up.php
+
+# Reference: http://marketplace.1c-bitrix.ru/blog/remove-virus-miner-from-the-site-to-1cbitrix/ (RU-lang)
+# Generic detection for compromised Bitrix CMS
+
+/bitrix/tools/check_files.php
+/bitrix/gadgets/bitrix/weather/lang/ru/exec/include.php
+
+# Reference: https://twitter.com/VK_Intel/status/1080919080616439808
+
+/spr_updates.php
+
+# Reference: https://twitter.com/packet_Wire/status/1118528816509591552
+
+/rz7g271ct2iv65rmhwwq42bu.php
+
+# Reference: https://twitter.com/0_1_0_1_0_0_0_0/status/1122804929452814337
+
+/2abjk95b4kwbdpnfdn7uewhr.php
+
+# Reference: https://twitter.com/pancak3lullz/status/1123233975252787200
+
+/ya63omxqknnm4ar8vb8evwje.php
+
+# Reference: https://twitter.com/GelosSnake/status/1123540164268183552
+
+/mnbv/handler.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1099365566928760834
+
+/rwrw66/1111z.php
+/rwrw66/2222z.php
+
+# Reference: https://twitter.com/JCyberSec_/status/1124290346668777505
+
+/g4f9sokfo2ecegn2twq4u3t7.php
+
+# Reference: https://app.any.run/tasks/3068b154-d6f2-4483-ae72-60fbd5f3467f
+
+/cmd.php?hwid=
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1126020627075403776
+
+/pabury473675.php
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1126109441651245057
+
+/v2i.php?need=
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126821015567384582
+
+authconfig.imrris.com/validate.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126830402834968576
+
+authconfig.motonsoft.com/validate.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126834434504822789
+
+oneonlinetrue.com/cgi-bin/handler.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126835745640067074
+
+razire.com/root/handler.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126837652571992065
+
+ptlonghigroup.us/01001/pain.php
+ptlonghigroup.us/01001/pain2.php
+/01001/pain.php
+/01001/pain2.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126844312053067776
+
+/spemmg.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126848369190686721
+
+oneonlinetrue.com/Cacha/handler.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126850750708109315
+
+creacionesdelsac.com/Cacha/handler.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126855753791356928
+
+poa-oreo.co.uk/racks/space/p.php
+
+# Reference: https://twitter.com/malware_traffic/status/810966197881671680
+# Reference: http://malware-traffic-analysis.net/2016/12/19/index.html
+
+/drb31.php
+/d8/ul.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1127945201841049600
+
+namecakes.com/epl/ajax.php
+
+# Reference: https://twitter.com/WifiRumHam/status/1127971696126783488
+
+westflies.com/api/api.php
+
+# Reference: https://twitter.com/JayTHL/status/1128173436889653248
+
+/send/ab-apr29-1.php
+/send/ab-apr29-2.php
+/send/cj-apr27-1.php
+/send/cj-apr29-1.php
+/send/cj-apr29-2.php
+/send/cj-may4-1.php
+/send/m24m24-1.php
+/send/m24m24-2.php
+/send/m24m24-3.php
+/send/m24m24-4.php
+/send/f13m13-1.php
+/send/f13m13-2.php
+/send/f13m13-3.php
+/send/f13m13-4.php
+/send/f13m13-5.php
+/send/a10j10-1.php
+/send/m10a10-1.php
+/send/azu.php
+/send/was.php
+
+# Reference: https://twitter.com/JayTHL/status/1129865519417499651
+# Reference: https://pastebin.com/raw/mU7abvT9
+
+/attiinnddeexx.php
+
+# Reference: https://twitter.com/JayTHL/status/1131329627954319361
+# Reference: https://pastebin.com/raw/g8bhsb4G
+
+/6i5aiewuz0xprm8htmrrhhz9.php
+
+# Reference: https://twitter.com/IpNigh/status/1131425432543408129
+
+/index91484101498.php
+
+# Reference: https://twitter.com/VirITeXplorer/status/1131816142199250944
+
+/pagiy75.php
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1135453581144969216
+
+/v21in603.php
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1135815803880820742
+
+/pagighg66.php
+
+# Reference: https://twitter.com/IpNigh/status/1136167409751138304
+
+/plwnkfd8gcn5x317by4goj7c.php
+
+# Reference: https://twitter.com/IpNigh/status/1136480809861419010
+
+/vq5sinmcamguedpoak8epeh3.php
+
+# Reference: https://twitter.com/packet_Wire/status/1137019106559967232
+
+/hhhhh.php
+
+# Reference: https://twitter.com/IpNigh/status/1138206277992161281
+
+/o365ms.php
+
+# Reference: https://twitter.com/cyberanalyzer/status/1140571010518978560
+
+/main.jspsid.php
+
+# Reference: https://twitter.com/IpNigh/status/1141059894021361666
+
+/chaseind.php
+
+# Reference: https://twitter.com/IpNigh/status/1142886176975675395
+
+/l9ymhf8w6w11sjeay07wrkng.php
+
+# Reference: https://twitter.com/ffforward/status/1143100705303158784
+
+/klla.php
+
+# Reference: https://myonlinesecurity.co.uk/more-agenttesla-keylogger-and-nanocore-rat-in-one-bundle/
+
+/mhtexp.php
+
+# Reference: https://twitter.com/killamjr/status/1113876111543492608
+
+/newauto2.php
+
+# Reference: https://twitter.com/IpNigh/status/1143687948619124737
+
+/index91484101498.php
+
+# Reference: https://twitter.com/smica83/status/1146648528846041089
+
+/7gvbp7pbrrdp2j8o5y4iqfva.php
+
+# Reference: https://twitter.com/ps66uk/status/1147193022830059521
+
+/AffdrDrr.php
+/lickmyass.php
+
+# Reference: https://twitter.com/IpNigh/status/1147295303931977733
+
+/ubwa0opty4jnoerxyj8dtjra.php
+
+# Reference: https://twitter.com/ps66uk/status/1148183374818873344
+
+/publickprivate.php
+/74_8_839.php
+/fontandcolor.php
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1148562854808891392
+
+/ddss0h9lipd6diuh5jan2w0t.php
+
+# Reference: https://twitter.com/navSi16/status/1148192534654439426
+# Reference: https://otx.alienvault.com/pulse/5d24562845fe64e37ffc46a7
+
+/js/left.php
+
+# Reference: https://twitter.com/IpNigh/status/1148676390759391234
+
+/31npodfikdtpkgq6difyox4s.php
+
+# Reference: https://twitter.com/IpNigh/status/1149168247683633153
+
+/3mm9etr00x4b2ml4b0fhdv7f.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1149383199904210944
+
+/a1ev2wehp69sw2tjkua8wc39.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1149769820709314561
+
+/c9mq35lqup5b25sljr2qomce.php
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/home-routers-under-attack-malvertising-windows-android-devices
+
+/fredcvbgt.php
+/swqazxcde.php
+/trfvbnhy.php
+/uythuycr.php
+/yhnbgtrfv.php
+
+# Reference: https://twitter.com/IpNigh/status/1150572125603934208
+
+/info_secure_account.php
+
+# Reference: https://twitter.com/YouMayBeHacked/status/1151197704090988544
+
+/dna_excel.php
+
+# Reference: https://twitter.com/adrian__luca/status/1151393084380459009
+# Reference: https://app.any.run/tasks/61147c70-2def-4d72-aa32-4b1e45da1180/
+
+/8yZ7YDpM2Cu3lqbB7WFJV19PE9mb1f8c.php
+/XKIOEEEEE.KDJDD.php
+
+# Reference: https://twitter.com/YouMayBeHacked/status/1152234246083424256
+
+/myriad-pro-installerr.php
+
+# Reference: https://twitter.com/IpNigh/status/1152929163797512194
+
+/h1nnbwfsediifgz2yv3w09xs.php
+
+# Reference: https://twitter.com/IpNigh/status/1153149383589933056
+
+/l7mg85smredbpehm3gnp2g1n.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1153699284497440771
+
+/bxo2fxmx9ub9kg1ghf3xc9va.php
+
+# Reference: https://twitter.com/IpNigh/status/1154707735524630528
+
+/ah1who7vrexwov9pe3g57va9.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1154815918461128705
+
+/tw0207s24zsj7ukq21d7l0iw.php
+
+# Reference: https://twitter.com/dvk01uk/status/1155068156471382023
+
+/c6e905de8a762015cd177be60cd6bd67.php
+
+# Reference: https://twitter.com/IpNigh/status/1155282939623727104
+
+/k7xscuhn9fkiwczwud5t2kqq.php
+
+# Reference: https://www.virustotal.com/gui/ip-address/173.231.184.61/relations
+
+/mars/remote.php
+
+# Reference: https://twitter.com/IpNigh/status/1156083556747268096
+
+/outer_pag.php
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/07/exploit-kits-summer-2019-review/
+# Reference: https://otx.alienvault.com/pulse/5d40766ecabf3f345b3811db
+
+/1Hqmyt597XO0ZNj9tXit7HZOMroEJu8c.php
+/chihuahua-posting.php
+/XKIOEEEEE.KDJDD.php
+
+# Reference: https://twitter.com/IpNigh/status/1156311805154725888
+
+/info_secure_account.php
+
+# Reference: https://twitter.com/IpNigh/status/1156600041274040320
+
+/u6ke0yj0s6btjdh22yrr62tj.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1156627854572081152
+
+/c3jccysjfbj8u3u9atw9vkff.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1157493998577225728
+
+/13rqsblgaqu1z4h04w7ql2kh.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1157594231407632384
+
+/i9eyybpavhc50wb8lcc7yle9.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1157669728544088064
+
+/a9di3q2br7kzvl1gl5rjh9pr.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1158243497587204096
+
+/2i729w0bw448s72mzt9c1pc0.php
+
+# Reference: https://twitter.com/PhishStats/status/1158280905892519936
+
+/o365ms.php
+
+# Reference: https://twitter.com/IpNigh/status/1159063350103420928
+
+/mwnsmre6in7pv7abig7tzfyu.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1159617579469742082
+
+/835pnjmr1w4p5ypvgcymfkkx.php
+
+# Reference: https://forums.modx.com/thread/102644/evo-1-2-1-hacked-again-and-again
+# Generic trails for compromised MODX CMS-es
+
+/assets/images/accesson.php
+/assets/images/customizer.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1161731505065988102
+
+/acabx352of60k6h87abrrjg6.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1162068269387276289
+# Reference: https://app.any.run/tasks/6812075f-1785-494f-9624-eda8b19943c3/
+
+/add_bot.php
+
+# Reference: https://twitter.com/ANeilan/status/1162803350511017985
+
+/setoransnsv.php
+
+# Reference: https://twitter.com/smica83/status/1163222123923615745
+
+/transaction_find.php
+
+# Reference: https://unit42.paloaltonetworks.com/newly-registered-domains-malicious-abuse-by-bad-actors/
+
+/addbot?hwid=
+
+# Reference: https://malwarebreakdown.com/2017/07/24/the-seamless-campaign-drops-ramnit-follow-up-malware-azorult-stealer-smoke-loader-etc/
+
+syndication.exdynsrv.com
+tqbeu.redirectvoluum.com
+tqbeu.voluumtrk.com
+/ads_priv.php
+/splash-zones-split.php
+
+# Reference: https://twitter.com/IpNigh/status/1164328397314699265
+
+/9cfryg81syzg9u27cxh19tax.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1164917499281989632
+
+/8k1bkkn094xdivviaab8hs19.php

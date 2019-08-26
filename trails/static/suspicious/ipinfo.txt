@@ -207,3 +207,25 @@ youip.net
 your-ip-address.com
 your-ip-fast.com
 yourip.us
+
+# Reference: https://twitter.com/James_inthe_box/status/1114150925218639872
+
+curlmyip.net
+
+# Reference: https://www.symantec.com/blogs/threat-intelligence/beapy-cryptojacking-worm-china
+# Reference: https://content.connect.symantec.com/sites/default/files/2019-04/Beapy_IOCs.txt
+
+jsonip.com
+ip.42.pl
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1121755894511960064
+# Reference: https://app.any.run/tasks/c18ca904-42a7-4cda-89ca-8960f38ff406
+
+freegeoip.app
+ip.sb
+
+# Reference: https://twitter.com/x42x5a/status/1132943885448163328
+# Reference: https://app.any.run/tasks/d268365b-1a68-48ff-a541-6fb147357de8/
+# Reference: https://www.virustotal.com/gui/domain/ipapi.co/relations
+
+ipapi.co

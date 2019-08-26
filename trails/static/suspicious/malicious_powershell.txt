@@ -1,0 +1,166 @@
+# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/slayersecurity/status/1115635967875014656
+
+/out-292242810.ps1
+/out-1584466740.ps1
+
+# Reference: https://twitter.com/slayersecurity/status/1115902366686031878
+
+/spid.ps1
+
+# Reference: https://twitter.com/x42x5a/status/1116272110912065536
+
+/out-113489727.ps1
+/out-734087850.ps1
+/out-1137236610.ps1
+
+# Reference: https://raw.githubusercontent.com/blackorbird/APT_REPORT/master/kimsuky/Smoke%20Screen.pdf
+
+/keylogger.ps1
+/keylogger1.ps1
+
+# Reference: https://twitter.com/malwrhunterteam/status/1118768633377955840
+
+/bs.ps1
+/indiapro.ps1
+
+# Reference: https://krebsonsecurity.com/wp-content/uploads/2019/04/wiproiocs.txt
+
+/abc.ps1
+/sc.ps1
+
+# Reference: https://securelist.com/muddywaters-arsenal/90659/
+
+/km.ps1
+
+# Reference: https://norfolkinfosec.com/osint-reporting-on-dprk-and-ta505-overlap/
+
+/ICAS.ps1
+
+# Reference: https://twitter.com/VK_Intel/status/1093001266974916608
+
+/dnipu.ps1
+
+# Reference: https://twitter.com/blackorbird/status/1125308108773871617
+
+/ipconfig.ps1
+
+# Reference: https://otx.alienvault.com/pulse/5cd154f0905e39830df5e5f5
+
+/ms17-010.ps1
+
+# Reference: https://www.welivesecurity.com/wp-content/uploads/2019/05/ESET-LightNeuron.pdf
+
+/msinp.ps1
+
+# Reference: https://twitter.com/DissectMalware/status/1126384963497205762
+
+/bros.ps1
+/out-1215218964.ps1
+/out-1717054512.ps1
+/out-1552287668.ps1
+/papa.ps1
+/youngest.ps1
+
+# Reference: https://twitter.com/sudosev/status/1126552059334070272
+
+/Invoke-Mimikatz.ps1
+
+# Reference: https://twitter.com/James_inthe_box/status/1131556358732443650
+
+/out-821986920.ps1
+
+# Reference: https://www.virustotal.com/gui/domain/checkerrors.ug/relations
+
+/payload.ps1
+/payload2.ps1
+
+# Reference: https://twitter.com/HONKONE_K/status/1133205335877885952
+
+/coki.ps1
+/gc.ps1
+/java1.ps1
+/ky.ps1
+
+# Reference: https://www.welivesecurity.com/2019/05/29/turla-powershell-usage/
+
+/msctx.ps1
+
+# Reference: https://twitter.com/reecdeep/status/1136581953770205185
+
+/5WD3emSKcJoLcaDjAUCFj7.ps1
+
+# Reference: https://twitter.com/p5yb34m/status/1138143258498949122
+
+/PayAdvice.ps1
+/remit.ps1
+/remittance.ps1
+
+# Reference: https://twitter.com/HONKONE_K/status/1139364022296272896
+
+/done1.ps1
+/done2.ps1
+/putty.ps1
+/x10.ps1
+/x11.ps1
+/x12.ps1
+/xvid1.ps1
+/xvid2.ps1
+
+# Reference: https://twitter.com/h4ckak/status/1144173749056315392
+
+/shell.ps1
+
+# Reference: https://twitter.com/FewAtoms/status/1144636921437655041
+
+/GetPass.ps1
+/payload.ps1
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1149574068435218432
+
+/pps.ps1
+
+# Reference: https://twitter.com/James_inthe_box/status/1150418960464039936
+
+/ppx.ps1
+
+# Reference: https://twitter.com/ViriBack/status/1150758731371749377
+
+/qwerty.ps1
+/qwertyj1.ps1
+
+# Reference: https://twitter.com/James_inthe_box/status/1059087094612602881
+
+/posh80.ps1
+/posh443.ps1
+/samref448.ps1
+
+# Reference: https://twitter.com/James_inthe_box/status/1154398293524271104
+
+/out-1624020870.ps1
+
+# Reference: https://twitter.com/James_inthe_box/status/1148692646942015488
+# Reference: https://twitter.com/DynamicAnalysis/status/1162208563982241793
+
+/ACHPaymentAdvice.ps1
+/AMEXACHCREDITREF080819.ps1
+/AMEXPMTREF.ps1
+/CHASEACHPMT.ps1
+/PMTREFCHS191508.ps1
+/PaymentAdvice.ps1
+/PaymentCopy.ps1
+/PaymentDetails0348.ps1
+/PaymentRef.ps1
+/Remittance.ps1
+/RemittanceAdvice.ps1
+/RemittanceDetails.ps1
+/SupplierRemittanceDetails.ps1
+/WFACHPMT.ps1
+
+
+# Reference: https://www.fireeye.com/blog/threat-research/2019/08/game-over-detecting-and-stopping-an-apt41-operation.html
+# Reference: https://www.virustotal.com/gui/ip-address/67.229.97.229/relations
+
+/d2.ps1

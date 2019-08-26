@@ -687,6 +687,7 @@ comexe.net
 # Reference: http://www.pubyun.com/products/dyndns/
 
 f3322.net
+f3322.org
 3322.org
 8866.org
 9966.org
@@ -1395,3 +1396,1216 @@ ddns.com.br
 winconnection.net
 minhaempresa.tv
 minhacasa.tv
+
+# Reference: https://twitter.com/ScumBots/status/1108054788804145153
+
+portmap.host
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1109090811801673730
+
+warzonedns.com
+
+# Reference: https://twitter.com/ScumBots/status/1109455265085251584
+
+o-r.kr
+
+# Reference: https://twitter.com/ScumBots/status/1040311939073826816
+
+hldns.ru
+
+# Reference: https://twitter.com/pollo290987/status/963073970542129152
+# Reference: https://www.virustotal.com/gui/domain/punkdns.top/details
+
+punkdns.top
+
+# Reference: https://blog.talosintelligence.com/2018/08/picking-apart-remcos.html
+
+airdns.org
+pdns.cz
+
+# Reference: https://twitter.com/James_inthe_box/status/1125086520229056512
+# Reference: https://www.virustotal.com/gui/domain/tpddns.cn/relations
+
+tpddns.cn
+
+# Reference: https://www.ptsecurity.com/ru-ru/research/analytics/operation-taskmasters-2019/ (Russian)
+# Reference: https://www.virustotal.com/gui/domain/strangled.net/details
+
+strangled.net
+
+# Reference: https://www.virustotal.com/gui/domain/russkoeumea.com/details
+
+russkoeumea.com
+
+# Reference: https://www.virustotal.com/gui/domain/remoteaccess.me/details
+
+remoteaccess.me
+
+# Reference: https://www.virustotal.com/gui/domain/coalnet.ru/details
+
+coalnet.ru
+
+# Reference: https://www.virustotal.com/gui/domain/privatedns.org/details
+
+privatedns.org
+
+# Reference: https://www.virustotal.com/gui/domain/dynet.com/details
+
+dynet.com
+
+# Reference: https://twitter.com/ScumBots/status/1127937045719146496
+# Reference: https://www.virustotal.com/gui/domain/us.to/relations
+
+us.to
+
+# Reference: https://www.virustotal.com/gui/domain/dearabba.org/relations
+
+dearabba.org
+
+# Reference: https://www.virustotal.com/gui/domain/bagus.org/details
+
+bagus.org
+
+# Reference: https://www.virustotal.com/gui/domain/awiki.org/details
+
+awiki.org
+
+# Reference: https://www.virustotal.com/gui/domain/host2go.net/details
+
+host2go.net
+
+# Reference: https://www.virustotal.com/gui/domain/possessed.us/details
+
+possessed.us
+
+# Reference: https://www.virustotal.com/gui/domain/hiddencorner.org/details
+
+hiddencorner.org
+
+# Reference: https://www.virustotal.com/gui/domain/h0stname.net/details
+
+h0stname.net
+
+# Reference: https://www.virustotal.com/gui/domain/n-e-t.name/details
+
+n-e-t.name
+
+# Reference: https://www.virustotal.com/gui/domain/servernux.com/details
+
+servernux.com
+
+# Reference: https://www.virustotal.com/gui/domain/mysaol.com/details
+
+mysaol.com
+
+# Reference: https://www.virustotal.com/gui/domain/d-n-s.org.uk/details
+
+d-n-s.org.uk
+
+# Reference: https://www.virustotal.com/gui/domain/blizzie.net/details
+
+blizzie.net
+
+# Reference: https://www.virustotal.com/gui/domain/yngling.com/details
+
+yngling.com
+
+# Reference: https://www.virustotal.com/gui/domain/dyn.ch/details
+
+dyn.ch
+
+# Reference: https://www.virustotal.com/gui/domain/h-o-s-t.name/details
+
+h-o-s-t.name
+
+# Reference: https://www.virustotal.com/gui/domain/d-n-s.name/details
+
+d-n-s.name
+
+# Reference: https://www.virustotal.com/gui/domain/r-o-o-t.net/details
+
+r-o-o-t.net
+
+# Reference: https://www.virustotal.com/gui/domain/psybnc.org/details
+
+psybnc.org
+
+# Reference: https://www.virustotal.com/gui/domain/punked.us/details
+
+punked.us
+
+# Reference: https://www.virustotal.com/gui/domain/mooo.info/details
+
+mooo.info
+
+# Reference: https://www.virustotal.com/gui/domain/port0.org/details
+
+port0.org
+
+# Reference: https://www.virustotal.com/gui/domain/farted.net/details
+
+farted.net
+
+# Reference: https://www.virustotal.com/gui/domain/fr.to/details
+
+fr.to
+
+# Reference: https://www.virustotal.com/gui/domain/minecraftr.us/details
+
+minecraftr.us
+
+# Reference: https://www.virustotal.com/gui/domain/spacetechnology.net/details
+
+spacetechnology.net
+
+# Reference: https://www.virustotal.com/gui/domain/minecraftnoob.com/details
+
+minecraftnoob.com
+
+# Reference: https://www.virustotal.com/gui/domain/shop.tm/details
+
+shop.tm
+
+# Reference: https://www.virustotal.com/gui/domain/home.kg/details
+
+home.kg
+
+# Reference: https://www.virustotal.com/gui/domain/ro.lt/details
+
+ro.lt
+
+# Reference: https://www.virustotal.com/gui/domain/allowed.org/details
+
+allowed.org
+
+# Reference: https://www.virustotal.com/gui/domain/jumpingcrab.com/details
+
+jumpingcrab.com
+
+# Reference: https://www.virustotal.com/gui/domain/uk.to/details
+
+uk.to
+
+# Reference: https://www.virustotal.com/gui/domain/drunkensailor.org/details
+
+drunkensailor.org
+
+# Reference: https://www.virustotal.com/gui/domain/routemehome.com/details
+
+routemehome.com
+
+# Reference: https://www.virustotal.com/gui/domain/abuser.eu/details
+
+abuser.eu
+
+# Reference: https://www.virustotal.com/gui/domain/homelinuxserver.org/relations
+
+homelinuxserver.org
+
+# Reference: https://www.virustotal.com/gui/domain/madhacker.biz/details
+
+madhacker.biz
+
+# Reference: https://www.virustotal.com/gui/domain/zanity.net/details
+
+zanity.net
+
+# Reference: https://www.virustotal.com/gui/domain/404.mn/details
+
+404.mn
+
+# Reference: https://www.virustotal.com/gui/domain/mm.my/details
+
+mm.my
+
+# Reference: https://www.virustotal.com/gui/domain/120v.ac/details
+
+120v.ac
+
+# Reference: https://www.virustotal.com/gui/domain/epicgamer.org/details
+
+epicgamer.org
+
+# Reference: https://www.virustotal.com/gui/domain/soon.it/details
+
+soon.it
+
+# Reference: https://www.virustotal.com/gui/domain/verymad.net/details
+
+verymad.net
+
+# Reference: https://www.virustotal.com/gui/domain/csproject.org/details
+
+csproject.org
+
+# Reference: https://www.virustotal.com/gui/domain/serverpit.com/relations
+
+serverpit.com
+
+# Reference: https://www.virustotal.com/gui/domain/evils.in/details
+
+evils.in
+
+# Reference: https://www.virustotal.com/gui/domain/bigbox.info/details
+
+bigbox.info
+
+# Reference: https://www.virustotal.com/gui/domain/happyforever.com/details
+
+happyforever.com
+
+# Reference: https://www.virustotal.com/gui/domain/1337.cx/details
+
+1337.cx
+
+# Reference: https://www.virustotal.com/gui/domain/nx.tc/details
+
+nx.tc
+
+# Reference: https://www.virustotal.com/gui/domain/69.mu/details
+
+69.mu
+
+# Reference: https://www.virustotal.com/gui/domain/t28.net/details
+
+t28.net
+
+# Reference: https://www.virustotal.com/gui/domain/info.gf/details
+
+info.gf
+
+# Reference: https://www.virustotal.com/gui/domain/kalbas.com.vn/details
+
+kalbas.com.vn
+
+# Reference: https://www.virustotal.com/gui/domain/qc.to/details
+
+qc.to
+
+# Reference: https://www.virustotal.com/gui/domain/mine.bz/details
+
+mine.bz
+
+# Reference: https://www.virustotal.com/gui/domain/bot.nu/relations
+
+bot.nu
+
+# Reference: https://www.virustotal.com/gui/domain/undo.it/details
+
+undo.it
+
+# Reference: https://www.virustotal.com/gui/domain/my.to/details
+
+my.to
+
+# Reference: https://www.virustotal.com/gui/domain/ftp.sh/details
+
+ftp.sh
+
+# Reference: https://www.virustotal.com/gui/domain/yao.cl/details
+
+yao.cl
+
+# Reference: https://www.virustotal.com/gui/domain/twilightparadox.com/details
+
+twilightparadox.com
+
+# Reference: https://www.virustotal.com/gui/domain/raspberryip.com/relations
+
+raspberryip.com
+
+# Reference: https://www.virustotal.com/gui/domain/silksky.com/details
+
+silksky.com
+
+# Reference: https://www.virustotal.com/gui/domain/nard.ca/details
+
+nard.ca
+
+# Reference: https://www.virustotal.com/gui/domain/mindhackers.org/details
+
+mindhackers.org
+
+# Reference: https://www.virustotal.com/gui/domain/iiiii.info/details
+
+iiiii.info
+
+# Reference: https://www.virustotal.com/gui/domain/iminecraft.se/details
+
+iminecraft.se
+
+# Reference: https://www.virustotal.com/gui/domain/star.is/details
+
+star.is
+
+# Reference: https://www.virustotal.com/gui/domain/good-newz.org/details
+
+good-newz.org
+
+# Reference: https://www.virustotal.com/gui/domain/ghostnation.org/details
+
+ghostnation.org
+
+# Reference: https://www.virustotal.com/gui/domain/bloom.us/details
+
+bloom.us
+
+# Reference: https://www.virustotal.com/gui/domain/k22.su/details
+
+k22.su
+
+# Reference: https://www.virustotal.com/gui/domain/richlorenz.com/details
+
+richlorenz.com
+
+# Reference: https://www.virustotal.com/gui/domain/2fine.de/details
+
+2fine.de
+
+# Reference: https://www.virustotal.com/gui/domain/4twenty.us/details
+
+4twenty.us
+
+# Reference: https://www.virustotal.com/gui/domain/hmail.us/details
+
+hmail.us
+
+# Reference: https://www.virustotal.com/gui/domain/xxxxx.tw/details
+
+xxxxx.tw
+
+# Reference: https://www.virustotal.com/gui/domain/ezxdev.org/details
+
+ezxdev.org
+
+# Reference: https://www.virustotal.com/gui/domain/ufodns.com/relations
+
+ufodns.com
+
+# Reference: https://www.virustotal.com/gui/domain/dyn.mk/relations
+
+dyn.mk
+
+# Reference: https://www.virustotal.com/gui/domain/e-m-a-i-l.org/details
+
+e-m-a-i-l.org
+
+# Reference: https://www.virustotal.com/gui/domain/dark-byte.net/details
+
+dark-byte.net
+
+# Reference: https://www.virustotal.com/gui/domain/stuns.org/details
+
+stuns.org
+
+# Reference: https://www.virustotal.com/gui/domain/dns-cloud.net/relations
+# Reference: https://www.cloudns.net/dynamic-dns/
+
+dns-cloud.net
+
+# Reference: https://www.virustotal.com/gui/domain/2dons.com/relations
+
+2dons.com
+
+# Reference: https://www.virustotal.com/gui/domain/hs.vc/relations
+
+hs.vc
+
+# Reference: https://www.virustotal.com/gui/domain/freesa.org/details
+
+freesa.org
+
+# Reference: https://www.virustotal.com/gui/domain/allisons.org/relations
+
+allisons.org
+
+# Reference: https://www.virustotal.com/gui/domain/inflict.us/relations
+
+inflict.us
+
+# Reference: https://www.virustotal.com/gui/domain/uk.ms/relations
+
+uk.ms
+
+# Reference: https://www.virustotal.com/gui/domain/computersforpeace.net/relations
+
+computersforpeace.net
+
+# Reference: https://www.virustotal.com/gui/domain/byte4byte.com/details
+
+byte4byte.com
+
+# Reference: https://www.virustotal.com/gui/domain/ohbah.com/relations
+
+ohbah.com
+
+# Reference: https://www.virustotal.com/gui/domain/24-7.ro/relations
+
+24-7.ro
+
+# Reference: https://www.virustotal.com/gui/domain/vr.lt/relations
+
+vr.lt
+
+# Reference: https://www.virustotal.com/gui/domain/suka.se/relations
+
+suka.se
+
+# Reference: https://www.virustotal.com/gui/domain/h4ck.me/relations
+
+h4ck.me
+
+# Reference: https://www.virustotal.com/gui/domain/root.sx/relations
+
+root.sx
+
+# Reference: https://www.virustotal.com/gui/domain/3dxtras.com/details
+
+3dxtras.com
+
+# Reference: https://www.virustotal.com/gui/domain/now.im/relations
+
+now.im
+
+# Reference: https://www.virustotal.com/gui/domain/ax.lt/relations
+
+ax.lt
+
+# Reference: https://www.virustotal.com/gui/domain/biz.tm/relations
+
+biz.tm
+
+# Reference: https://www.virustotal.com/gui/domain/info.tm/details
+
+info.tm
+
+# Reference: https://www.virustotal.com/gui/domain/photo-frame.com/relations
+
+photo-frame.com
+
+# Reference: https://www.virustotal.com/gui/domain/javafaq.nu/relations
+
+javafaq.nu
+
+# Reference: https://www.virustotal.com/gui/domain/xpresit.net/relations
+
+xpresit.net
+
+# Reference: https://www.virustotal.com/gui/domain/hackquest.com/relations
+
+hackquest.com
+
+# Reference: https://www.virustotal.com/gui/domain/ruok.org/details
+
+ruok.org
+
+# Reference: https://www.virustotal.com/gui/domain/k.vu/relations
+
+k.vu
+
+# Reference: https://twitter.com/ScumBots/status/1132417823760896000
+# Reference: https://www.virustotal.com/gui/domain/wicp.vip/relations
+
+wicp.vip
+
+# Reference: https://twitter.com/ScumBots/status/1133387967135928320
+# Reference: https://www.virustotal.com/gui/domain/nowddns.com/relations
+# Reference: https://now-dns.com/?p=home
+
+001www.com
+16-b.it
+32-b.it
+64-b.it
+crafting.xyz
+ddnslive.com
+dnsdyn.net
+dnsking.ch
+dnsup.net
+dynip.org
+dynserv.org
+forumz.info
+freeddns.uk
+freeddns.us
+hicam.net
+myiphost.com
+mypi.co
+n4t.co
+now-dns.net
+now-dns.org
+now-dns.top
+nowddns.com
+ntdll.top
+ownip.net
+soundcast.me
+tcp4.me
+vpndns.net
+wifizone.org
+x443.pw
+
+# Reference: https://www.virustotal.com/gui/domain/fairuse.org/details
+
+fairuse.org
+
+# Reference: https://www.virustotal.com/gui/domain/ddns.epac.to/details
+
+ddns.epac.to
+
+# Reference: https://www.virustotal.com/gui/domain/isgre.at/details
+
+isgre.at
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/site90.net/relations
+
+site90.net
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comule.com/relations
+
+comule.com
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/net84.net/relations
+
+net84.net
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comoj.com/relations
+
+comoj.com
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/net63.net/relations
+
+net63.net
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comxa.com/relations
+
+comxa.com
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comyr.com/relations
+
+comyr.com
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/netii.net/relations
+
+netii.net
+
+# Reference: https://freedns.afraid.org/domain/registry/
+
+mooo.com
+chickenkiller.com
+us.to
+strangled.net
+ignorelist.com
+uk.to
+crabdance.com
+info.tm
+homenet.org
+jumpingcrab.com
+twilightparadox.com
+biz.tm
+continent.kz
+ax.lt
+privatedns.org
+hacked.jp
+ez.lv
+ftp.sh
+bep.co.id
+kalbas.com.vn
+undo.it
+3dxtras.com
+dynet.com
+bot.nu
+qc.to
+pwnz.org
+now.im
+allowed.org
+mine.bz
+info.gf
+shop.tm
+home.kg
+ro.lt
+t28.net
+linuxd.org
+dalnet.ca
+gw.lt
+69.mu
+whynotad.com
+spacetechnology.net
+nx.tc
+god.jp
+k.vu
+sat-dv.ru
+55.lt
+neon.org
+freesa.org
+leet.la
+happyforever.com
+bigbox.info
+keren.la
+port0.org
+csproject.org
+evils.in
+iz.rs
+minecraftnoob.com
+farted.net
+themafia.info
+vr.lt
+verymad.net
+root.sx
+mooo.info
+punked.us
+cc.st
+thcgirls.com
+byte4byte.com
+minecraftnation.net
+cr.rs
+yao.cl
+linuxx.org
+r-o-o-t.net
+madhacker.biz
+framed.net
+h-o-s-t.name
+suka.se
+psybnc.org
+d-n-s.name
+serverpit.com
+soon.it
+icfar.com
+iiiii.info
+ohbah.com
+1337.cx
+wtf.im
+brb.dj
+kir22.ru
+404.mn
+vietnam.ro
+abuser.eu
+javafaq.nu
+24-7.ro
+h4ck.me
+photo-frame.com
+antongorbunov.com
+hackquest.com
+minecraftr.us
+agropeople.ru
+120v.ac
+crackedsidewalks.com
+dearabba.org
+zanity.net
+coalnet.ru
+irc.so
+zvezdaringa.ru
+dyx.com
+google-it.info
+oo.fi
+bagus.org
+stfu-kthx.net
+pntl.tl
+bestforever.com
+efnet.at
+us.nu
+tobban.com
+maxfiles.org
+star.is
+rinaldus.ru
+uileon.edu.mx
+forss.to
+holylandshop.ru
+drunkensailor.org
+silksky.com
+xpresit.net
+psp-moscow.com
+asu.su
+fr.to
+webalizer.org
+my.to
+dmz.se
+2age.ru
+epicgamer.org
+bad.mn
+joiavip.com.br
+hackedbox.net
+nard.ca
+eye.rs
+mhm1932.ru
+keep.se
+hishill.org
+violates.us
+hpc.tw
+stes.fi
+iminecraft.se
+tbst.edu.au
+fuckcentral.com
+syntheticzero.com
+zonet.us
+mindhackers.org
+project.li
+starkom.ru
+amurt.org.uk
+mm.my
+malam.or.id
+mir-vam.ru
+medicost.org
+quannhacvang.com
+igliss.com
+3n.cc
+air-bagan.org
+asenov.ru
+hairypiano.com
+mysaol.com
+44.lt
+ccs.pl
+cpia.org.ar
+fatdiary.org
+good.one.pl
+ip.lc
+verdefaith.org
+acaro.org
+n-e-t.name
+remote.mx
+funkar.nu
+possessed.us
+vkagent.ru
+mikata.ru
+alexleow-kimmy.com
+php-dev.net
+sales-people.ru
+germansky.org
+alfalcons.com
+shellcode.eu
+hiddencorner.org
+wins.com.br
+game-fort.ru
+all.my
+bobcentury.com
+richlorenz.com
+routemehome.com
+suplacard.com
+oganilirkab.go.id
+computersforpeace.net
+luxurypeople.ru
+play.ai
+4040.idv.tw
+nerd.at
+winkel.com.ar
+satanic.ro
+zsh.jp
+baltijalv.lv
+i-t.me
+bacek.com
+dhm.ro
+orenznakomstva.ru
+awiki.org
+manchzhury.ru
+homelinuxserver.org
+prelux.ru
+fcsillamae.ee
+worldstopbrands.com
+fairuse.org
+allisons.org
+aspserver.net
+host2go.net
+eca-jca.edu.au
+tetuku.com
+oneindonesia.co.id
+openoffcampus.com
+bnpt.go.id
+hs.vc
+getce.com
+inedelya.ru
+sdp-mos.ru
+erke.biz.tr
+remoteaccess.me
+joe.dj
+secularpineapple.com
+surfnet.ca
+erki.net
+tacowolf.com
+d-n-s.org.uk
+id.web.id
+pentagon.ru
+sne.jp
+playfv.com
+privat-server.net
+ddos.im
+delovoimir.kz
+beck.sx
+h0stname.net
+ipv6.la
+ask2ask.com
+kinnetix.com
+nav.co.id
+webs.vc
+krash.net
+wiki.gd
+sextube.ro
+stalker.fi
+topdanang.com
+pln.or.id
+dmtr.ru
+netlord.de
+qq.my
+stocktester.ru
+braintec.ch
+ruok.org
+tnebldc.org
+americajhon.com.pe
+kyrgyzstan.kg
+myudm.ru
+thebackupbox.biz
+kopi.co.id
+tzafrir.org.il
+yngling.com
+med-edu.ru
+theblaneys.net
+4twenty.us
+barkpark.com
+kck-saratov.ru
+teamspeak.bz
+construjosa.com
+good-newz.org
+blizzie.net
+savage.nu
+tvlinux.com
+za.ru
+philipkingsleyshop.ru
+divakeramika.com
+ezxdev.org
+raspberryip.com
+musterihizmetleri.com
+brikers.com
+stemline.com
+tr3.blog.br
+0x.no
+lovethosetrains.com
+nevalain.ru
+publi.ch
+tv-l.ru
+windmillstravel.com
+servernux.com
+womenclothingtoday.com
+arabiccenter.ru
+trumgame.net
+2fine.de
+mcro.org
+stan.cn
+feared.eu
+gossipcraze.com
+vix.ro
+xxxxx.tw
+indonet.org
+liasantis.blog.br
+rapphim.org
+violates.me
+3rcp.com
+5.ai
+cspro.biz
+make.com.ar
+lookitupongoogle.com
+mrunix.net
+optimas.co.id
+rootns.com
+ig42.org
+netmask.ca
+smelly.cc
+fedmik.ru
+cw03.ru
+vivat-consult.ru
+cloudwatch.net
+trolls.lv
+aintno.info
+freebsd.md
+icello.in
+day.com.br
+evilgiggle.com
+infinity-online.co.id
+yoogle.info
+905tech.com
+alexis-club.ru
+hitremixes.com
+swsc.org.np
+elitter.net
+innograph.co.id
+procare.co.id
+x-torrents.nu
+darknigger.com
+eva.hk
+plnntt.co.id
+anonymous.lv
+derdelus.ro
+grpn.ru
+laos-airlines.com
+technopagans.com
+crctvn.org
+e.co.za
+kein.hk
+nhachot.info
+polissya.eu
+vil.xyz
+russkoeumea.com
+yourspecialtee.com
+rsn.ca
+b33r.us
+caturelang.co.id
+hijaxdesigns.com
+puzzled.ru
+gurcanozturk.com
+niifhm.ru
+iro86.ru
+abmc-group.com
+quantum-labs.co.id
+soccon.net
+interneg.net.br
+saleykt.ru
+entermypicks.com
+everton.com
+ghostnation.org
+naru.to
+agila.com.br
+hmail.us
+iceblaze.com
+thegmc.com
+vesti-ua.net
+diipl.com
+nedvighimost-sochi.ru
+ritzilaw.com
+scottlewisonline.com
+auswidecolleges.edu.au
+ukstokes.com
+mazdarx7.com
+myxop.com
+nukenin.com
+opensrc.mx
+patelmortgage.com
+digitalgroupe.com
+iu4ever.org
+notici.as
+asianfreshproduce.com
+k22.su
+sumibi.org
+kwan.ac
+nrp.com.np
+sibkon.ru
+tragazorras.com
+beerprojects.com
+eaglepoint.us
+livetolearn.org
+ixx.io
+nevskayaratusha.ru
+ccc.org.mx
+go-2014.tk
+gtk.cl
+labo.ch
+nlpd.net.au
+airlinemeals.net
+cc.net.br
+cut.vn
+shen.cl
+l5.ca
+mcsoft.org
+morganisageek.org
+vysotsky-ekb.ru
+custom-gaming.net
+lanas.cl
+priamaakcia.sk
+lolk.org
+weblista.pt
+ac2.ac
+base-v.ch
+ilkor.com
+random.fi
+accessaidsnetwork.com
+e-m-a-i-l.org
+spiegs.com
+americanelectricalservices.net
+cdvi.ro
+jesus.si
+jundy.org
+rukodelka.ru
+zee.ac
+cotemig.edu.br
+darksair.org
+novgaz-rzn.ru
+solfa.org
+enemyterritory.org
+kosh.la
+largerhope.org
+linuxblog.ro
+promedalliance.com
+rcrcc.ca
+sweetriders.com
+kiani.com
+kpu-sungaipenuhkota.go.id
+vatty.hu
+vggtramites.gov.ar
+bloom.us
+fivepals.com
+menpera.go.id
+sandmeiers.ch
+ccmissoula.com
+cnr.com.pk
+ircr.info
+kompaniet.nu
+radsan.com.tr
+reason.org.nz
+rltk.org
+u-med.ru
+vankin.de
+with.mirkforce.de
+darkworlds.org
+hext.eu
+mybrewbuddies.com
+sannon-stamm.com
+scriptkiddie.eu
+techniice.ro
+donkeyhot.net
+pedie.info
+ugo.si
+warmkessel.com
+wikihotels.ru
+zyix.com
+abusers.eu
+heunkarm.com
+iseoz.com
+servercide.com
+thejordaans.com
+ultimate-fight.net
+wtf-no.com
+xisla.com.br
+ivc.cc
+kaleebso.com
+microsoft-office.com
+wikshop.com
+distrocuyo1.com.ar
+pee.vc
+thebackupbox.com
+winnity.ro
+africatravelling.net
+eolicatalinay.cl
+hashcube.com
+justus.co.id
+mylogisoft.com
+o-pravoved.ru
+8ui.org
+bil-nasalab.com
+endlessmovie.com
+goofyspeak.com
+kamin220v.ru
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comeze.com/relations
+
+comeze.com
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comuv.com/relations
+
+comuv.com
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comli.com/relations
+
+comli.com
+
+# Reference: https://blogs.cisco.com/security/dynamic-detection-of-malicious-ddns
+# Reference: https://www.virustotal.com/gui/domain/comuf.com/relations
+
+comuf.com
+
+# Reference: https://www.virustotal.com/gui/domain/dnsabr.com/relations
+
+dnsabr.com
+
+# Reference: https://go.recordedfuture.com/hubfs/reports/cta-2019-0626.pdf
+# Reference: https://otx.alienvault.com/pulse/5d13cf4759eec0125b9d8ffa
+# Reference: https://www.virustotal.com/gui/domain/hopto.com/relations
+
+hopto.com
+
+# Reference: https://www.virustotal.com/gui/domain/fishdns.com/relations
+
+fishdns.com
+
+# Reference: https://www.virustotal.com/gui/domain/ra4wvpn.com/relations
+
+ra4wvpn.com
+
+# Reference: https://www.virustotal.com/gui/domain/dynamicdns.science/relations
+
+dynamicdns.science
+
+# Reference: https://www.virustotal.com/gui/domain/spdns.eu/relations
+
+spdns.eu
+
+# Reference: https://www.virustotal.com/gui/domain/spdns.de/relations
+
+spdns.de
+
+# Reference: https://www.virustotal.com/gui/domain/my-router.de/relations
+
+my-router.de
+
+# Reference: https://www.virustotal.com/gui/domain/my-gateway.de/relations
+
+my-gateway.de
+
+# Reference: https://www.virustotal.com/gui/domain/aidyn.net/relations
+
+aidyn.net
+
+# Reference: https://www.virustotal.com/gui/domain/feste-ip.net/relations
+
+feste-ip.net
+dynamisches-dns.de
+
+# Reference: https://www.virustotal.com/gui/domain/dnshome.de/relations
+# Reference: https://www.dnshome.de/index.php
+# Reference: http://www.dynaccess.de
+# Reference: https://www.virustotal.com/gui/domain/dynaccess.de/relations
+
+dyndns.icu
+dnshome.icu
+resolve.bar
+srvdns.de
+ddnssec.de
+dyndnssec.de
+dnshome.de
+dynv4.net
+
+# Reference: https://www.virustotal.com/gui/domain/freemyip.com/relations
+
+freemyip.com
+
+# Reference: https://www.virustotal.com/gui/domain/dynamic-m.com/relations
+
+dynamic-m.com
+
+# Reference: https://www.virustotal.com/gui/domain/mynetgear.com/relations
+
+mynetgear.com
+
+# Reference: https://www.virustotal.com/gui/domain/asuscomm.com/relations
+
+asuscomm.com
+
+# Reference: https://www.virustotal.com/gui/domain/urown.cloud/relations
+
+urown.cloud
+
+# Reference: https://www.virustotal.com/gui/domain/nerdpol.ovh/relations
+
+nerdpol.ovh
+
+# Reference: https://www.virustotal.com/gui/domain/meibu.net/relations
+
+meibu.net
+
+# Reference: https://www.virustotal.com/gui/domain/dynv6.net/relations
+
+dynv6.net

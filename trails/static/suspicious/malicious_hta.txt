@@ -1,0 +1,223 @@
+# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/angel11VR/status/1115343202167533568
+# Reference: https://pastebin.com/0bX17LaY
+
+/out-761452637.hta
+
+# Reference: https://github.com/blackorbird/APT_REPORT/blob/master/kimsuky/aptnote0403
+
+/moonx.hta
+/first.hta
+
+# Reference: https://twitter.com/neonprimetime/status/1116740246790602753
+
+/wormhta.hta
+
+# Reference: https://twitter.com/InQuest/status/1116772541312401408
+
+/ec470000/file.hta
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1118088254224515072
+
+/out-1618282703.hta
+
+# Reference: https://twitter.com/blackorbird/status/1118334122592591872
+# Reference: https://raw.githubusercontent.com/blackorbird/APT_REPORT/master/kimsuky/Smoke%20Screen.pdf
+# Reference: https://blog.alyac.co.kr/2299 (Korean)
+# Reference: https://blog.alyac.co.kr/2243 (Korean)
+
+/Ahfzo0.hta
+/Ersrr0.hta
+/first.hta
+/fmaov0.hta
+/fwvuj0.hta
+/Htqgf0.hta
+/Msgxo.hta
+/Msgxo0.hta
+/Mylqn0.hta
+/Pkjjy.hta
+/Qfnaq.hta
+/Qfnaq0.hta
+/Qzqrn0.hta
+/second.hta
+/szgfj0.hta
+/Vkggy0.hta
+/xtgnb0.hta
+/Yluhi0.hta
+
+# Reference: https://blog.talosintelligence.com/2019/04/threat-source-april-18-new-attacks.html
+
+/we.hta
+
+# Reference: https://twitter.com/pancak3lullz/status/1113084930475638784
+
+/9Y4wOJot.hta
+
+# Reference: https://unit42.paloaltonetworks.com/new-babyshark-malware-targets-u-s-national-security-think-tanks/
+
+/Vkggy0.hta
+/Usoro.hta
+
+# Reference: https://unit42.paloaltonetworks.com/babyshark-malware-part-two-attacks-continue-using-kimjongrat-and-pcrat/
+
+/Mzfmj.hta
+
+# Reference: https://otx.alienvault.com/pulse/5cc85460920fb55c466d6e8d
+
+/Second.hta
+/temp.hta
+
+# Reference: https://twitter.com/DissectMalware/status/1126384963497205762
+
+/ihenketata2019.hta
+/out-802561251.hta
+/out-2069830595.hta
+/out-427331541.hta
+/out-270833413.hta
+/out-746027731.hta
+/out-890192022.hta
+/out-1389213074.hta
+/out-325515559.hta
+/out-413662816.hta
+/out-961903221.hta
+/out-1719427273.hta
+/out-167611131.hta
+/out-642154941.hta
+/out-1033585073.hta
+/out-1181438660.hta
+/out-43874915.hta
+/out-288511419.hta
+/out-1053850352.hta
+/out-1841585389.hta
+/task2.hta
+/tk.hta
+
+# Reference: https://twitter.com/James_inthe_box/status/1129452679250321408
+
+/out-1081291084.hta
+
+# Reference: https://twitter.com/HONKONE_K/status/1133205335877885952
+
+/h.hta
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/blacksquid-slithers-into-servers-and-drives-with-8-notorious-exploits-to-drop-xmrig-miner/
+# Reference: https://otx.alienvault.com/pulse/5cf53cdb5089737750fab25d
+
+/Black.hta
+
+# Reference: https://twitter.com/James_inthe_box/status/1136631137571237888
+
+/2VXzzTcNjTvas8r9.hta
+
+# Reference: https://twitter.com/ViriBack/status/1136712921461997570
+
+/sample.hta
+
+# Reference: https://www.malware-traffic-analysis.net/2017/12/22/index.html
+
+/beta.hta
+
+# Reference: https://twitter.com/James_inthe_box/status/1139536021572317185
+
+/out-1445440753.hta
+
+# Reference: https://www.virustotal.com/gui/file/d5f18e907465fd5bd659df74e51377052337fc515f17f1e915551f3cc05823dc/community
+# Reference: https://app.any.run/tasks/44ceb7c7-518e-4bb1-8a00-de2d887b32c3/
+
+/iyk1.hta
+
+# Reference: https://myonlinesecurity.co.uk/more-agenttesla-keylogger-and-nanocore-rat-in-one-bundle/
+
+/mhtexp.hta
+
+# Reference: https://twitter.com/dineshdina04/status/1008621004896198657
+# Reference: https://app.any.run/tasks/a8c1f660-71ae-4ab1-a217-11256fd6a158/
+
+/wm.hta
+
+# Reference: https://twitter.com/ViriBack/status/970443789234929664
+
+/bb.hta
+
+# Reference: https://twitter.com/teamcymru/status/920135790600114176
+
+/bqowsj.hta
+/fsfsyt.hta
+/kekcgt.hta
+/nrjhyr.hta
+/oonhci.hta
+/otvpoi.hta
+/phtjae.hta
+
+# Reference: https://twitter.com/FewAtoms/status/1146804894785056768
+
+/out-182876786.hta
+
+# Reference: https://twitter.com/James_inthe_box/status/1146896227000209408
+
+/BitMaster.hta
+
+# Reference: https://twitter.com/Timele9527/status/1147750939576586244
+
+/am_cy_167.hta
+/comm.hta
+/emp.hta
+
+# Reference: https://twitter.com/YouMayBeHacked/status/1148625116101844992
+
+/bi.hta
+
+# Reference: https://twitter.com/James_inthe_box/status/1149026394472472576
+
+/kkknng.hta
+
+# Reference: https://twitter.com/James_inthe_box/status/1149412096418840576
+
+/hit.hta
+
+# Reference: # Reference: https://twitter.com/KorbenD_Intel/status/1146463851526938625
+
+/9000.hta
+
+# Reference: https://twitter.com/RedDrip7/status/1118009381679878144
+# Reference: https://www.virustotal.com/gui/file/b101035ae8b25263cf7101fbc63df71682cf0963d59b28e28da6e83b35003452/detection
+# Reference: https://ti.360.net/uploads/2018/09/20/6f8ad451646c9eda1f75c5d31f39f668.pdf (Chinese)
+
+/zxcvb.hta
+
+# Reference: https://twitter.com/_CPResearch_/status/1102943725750239237
+
+/RawabiJob.hta
+
+# Reference: https://twitter.com/killamjr/status/1150218238573404160
+
+/SystemUpdater.hta
+
+# Reference: https://www.freebuf.com/articles/network/196788.html (Chinese)
+
+/file.hta
+/fin.hta
+/final.hta
+/zoxr4yr5KV.hta
+
+# Reference: https://twitter.com/James_inthe_box/status/1059087094612602881
+
+/SamRefJobsVacancies.hta
+
+# Reference: https://twitter.com/James_inthe_box/status/1151156619733921792
+
+/8741161.hta
+
+# Reference: https://twitter.com/alex_lanstein/status/988851524406099968
+
+/LPOKGGTEFFGFJ.hta
+
+# Reference: https://twitter.com/FewAtoms/status/1159473273870196736
+
+/out-1379808530.hta
+
+# Reference: https://twitter.com/reecdeep/status/1159833486817034241
+
+/elnino.hta

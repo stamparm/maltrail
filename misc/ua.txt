@@ -519,6 +519,7 @@ zeroup
 \Azz_
 
 # Reference: https://blog.sucuri.net/2015/12/remote-command-execution-vulnerability-in-joomla.html
+
 JDatabaseDriverMysqli
 
 # Reference: https://twitter.com/Racco42/status/1053336574753148928
@@ -530,3 +531,348 @@ JDatabaseDriverMysqli
 # Reference: https://pastebin.com/raw/Zc7h4vkN
 
 zgrab
+
+# Reference: https://twitter.com/bad_packets/status/1104313051166068737
+
+python-requests
+
+# Reference: https://twitter.com/bad_packets/status/1083657979788816384
+
+Hello, World
+Gemini
+
+# Reference: https://twitter.com/bad_packets/status/1083896276641472514
+
+OSIRIS
+
+# Reference: https://twitter.com/bad_packets/status/1078192846048452608
+
+Rift
+
+# Reference: https://twitter.com/nmatte90/status/1102263049203998722
+
+NotRift
+
+# Reference: https://twitter.com/bad_packets/status/1111777543869194240
+
+HaxerMen
+
+# Reference: https://twitter.com/ankit_anubhav/status/1069562868918566914
+
+jexboss
+
+# Reference: https://twitter.com/bad_packets/status/1095565095361368064
+
+Hacks
+
+# Reference: https://twitter.com/bad_packets/status/1096201963497111553
+
+Go-http-client
+
+# Reference: https://twitter.com/bad_packets/status/1088707628442644480
+
+Ronin
+
+# Reference: https://twitter.com/bad_packets/status/1088711085375479809
+
+Oof
+
+# Reference: https://perchsecurity.com/perch-news/threat-report-sunday-february-3rd-2019/
+
+Cayosin
+Cock
+
+# Reference: # Reference: https://unit42.paloaltonetworks.com/mirai-compiled-for-new-processor-surfaces/
+
+Blade/2.0
+Hello-World
+Hito
+
+# Reference: https://securitywithoutborders.org/blog/2019/03/29/exodus.html
+
+it\.promofferte
+
+# Reference: https://twitter.com/SettiDavide89/status/1116682737455382528
+
+ransomware
+
+# Reference: https://research.checkpoint.com/the-muddy-waters-of-apt-attacks/
+
+Mozilla/4.0 (compatible; Clever Internet Suite)
+
+# Reference: https://twitter.com/James_inthe_box/status/1119932303088578561
+
+QXQ_35
+
+# Reference: https://blog.talosintelligence.com/2018/02/targeted-attacks-in-middle-east.html
+
+iq\.46
+
+# Reference: https://twitter.com/360Netlab/status/974374944711815168
+
+Geth
+
+# Reference: https://www.netskope.com/blog/malicious-google-sites
+
+otlook
+
+# Reference: https://twitter.com/0xrb/status/1121820943972593665
+
+Nakuma
+
+# Reference: https://twitter.com/0x13fdb33f/status/1122544651628576768
+# Reference: https://www.kernelmode.info/forum/viewtopic.php?p=32871
+# Reference: https://otx.alienvault.com/pulse/5cc6ca1e69cc6cfee80974a7
+
+Miner
+Unzip
+
+# Reference: https://twitter.com/0xrb/status/1122728648996298752
+
+Cakle
+
+# Reference: https://twitter.com/0xrb/status/1123149312689491973
+
+NoPublicity
+
+# Reference: https://twitter.com/James_inthe_box/status/1079757827030142976
+
+NetSupport Manager
+
+# Reference: https://bomccss.hatenablog.jp/entry/2019/04/30/235933 (Japanese)
+
+Google Chrome
+
+# Reference: https://fumik0.com/2019/05/03/lets-nuke-megumin-trojan/
+
+Megumin
+
+# Reference: https://twitter.com/bad_packets/status/1124922288862666753
+
+Snickers-Avtech
+
+# Reference: https://twitter.com/rommeljoven17/status/1052865294081781760
+
+thricer
+
+# Reference: https://twitter.com/rommeljoven17/status/1037982220005195776
+
+Owari
+
+# Reference: https://www.hybrid-analysis.com/sample/442fe9bb6820ba79ca48429df8e5a01e991302be2a0d45a35c99c5d006a1d64a
+
+FA\.G\.4\.5
+
+# Reference: https://twitter.com/jorgemieres/status/1133052016568274950
+
+Mozilla/4.08 (Charon; Inferno)
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/05/hidden-bee-lets-go-down-the-rabbit-hole/
+
+MinGate
+
+# Reference: https://twitter.com/bad_packets/status/1142325648888696837
+
+Liquor
+
+# Reference: https://twitter.com/malware_traffic/status/1146086054207873024
+
+dpost
+
+# Reference: https://twitter.com/gamesover/status/552140159442235394
+# Reference: http://ltx71.com/
+
+ltx71
+
+# Reference: https://twitter.com/eromang/status/14713546159
+# Reference: https://eromang.zataz.com/2010/05/25/suc016-user-agent-toata-dragostea-mea-pentru-diavola-scanner/
+
+Toata dragostea mea pentru diavola
+
+# Reference: https://twitter.com/eromang/status/14702343100
+# Reference: https://eromang.zataz.com/2010/04/23/suc004-phpmyadmin-user-agent-revolt-scanner/
+
+revolt
+
+# Reference: https://thehackernews.com/2017/08/android-ddos-botnet.html (# WireX)
+
+jigpuzbcomkenhvladtwysqfxr
+yudjmikcvzoqwsbflghtxpanre
+mckvhaflwzbderiysoguxnqtpj
+deogjvtynmcxzwfsbahirukqpl
+fdmjczoeyarnuqkbgtlivsxhwp
+yczfxlrenuqtwmavhojpigkdsb
+dnlseufokcgvmajqzpbtrwyxih
+
+# Reference: https://twitter.com/21doob/status/476434364516282369
+
+hello
+
+# Reference: https://twitter.com/James_inthe_box/status/1151583038087655424
+
+UniqUAF
+
+# Reference: https://www.flashpoint-intel.com/blog/newly-discovered-malware-framework-cashing-in-on-ad-fraud/
+
+Installer/23
+
+# Reference: https://twitter.com/James_inthe_box/status/1152234123844415489
+
+binary\_getter/1.0
+
+# Reference: https://twitter.com/James_inthe_box/status/1153450058722865152
+
+KJW0rm
+
+# Reference: https://twitter.com/ViriBack/status/1154377089077993474
+
+Finder/28
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/brushaloader-still-sweeping-victims-one-year-later
+
+sENB2a36p61HSKES
+
+# Reference: https://twitter.com/stvemillertime/status/1151148881729789954
+
+Mozilla/5.3 (i686-iamsatan-mingw32)
+
+# Reference: https://twitter.com/reesespcres/status/1144703633377964033
+
+Mozilla/5.2 (i686-w64-mingw32)
+
+# Reference: https://twitter.com/DissectMalware/status/1069507395448184833
+
+4M2yC5u1stom4U1se3r
+
+# Reference: https://twitter.com/ItsReallyNick/status/1033413803470467072
+
+NMS\.19
+
+# Reference: https://twitter.com/PhishingAi/status/994210210389557250
+
+l33boLAMER
+
+# Reference: https://twitter.com/sixdub/status/992001190950031361
+
+WinHTTP loader/1.0
+
+# Reference: https://twitter.com/stvemillertime/status/985150675527974912
+
+CertUtil URL Agent
+
+# Reference: https://twitter.com/malwareforme/status/918503641887096832
+
+OtherUser
+
+# Reference: https://twitter.com/JohnLaTwC/status/912301412993794049
+# Reference: https://www.virustotal.com/gui/file/050cdd4e6195e5be16d883b83350c1baa4c7a614814f9ff85ff6c65bfa6fefe9/detection
+
+Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone 7.5; Trident/5.0; IEMobile/9.0)
+
+# Reference: https://twitter.com/stdaux/status/861217811015680001
+
+Mozilla/5.0 (ENIAC; the Electronic Numerical Integrator and Computer)
+
+# Reference: https://twitter.com/xme/status/753325697830182912
+
+Gluten Free Crawler/1.0
+
+# Reference: https://twitter.com/abuse_ch/status/700252982731018241
+
+givmafile
+
+# Reference: https://twitter.com/nimolix/status/562532331357892608
+
+parsijoo-bot
+
+# Reference: https://twitter.com/bortzmeyer/status/545492437628891136
+
+Kim Jong-un Evil Browser
+
+# Reference: http://www.behindthefirewalls.com/2013/11/the-importance-of-user-agent-in-botnets.html
+
+underworld
+system-update
+test\_hInternet
+installer-agent
+sleep 300000
+
+# Reference: https://twitter.com/ericasadun/status/12333713924816896
+
+MediaControl
+
+# Reference: https://twitter.com/VK_Intel/status/1156983051974533120
+# Reference: https://www.virustotal.com/gui/file/b77a0939dc6720e349f36e368a4f222295baf3d7fdd1ef851c19fa163ade1cc5/detection
+
+ApacheBench
+
+# Reference: https://twitter.com/bad_packets/status/1157819242500149248
+
+Ankit
+
+# Reference: https://twitter.com/James_inthe_box/status/1163565834343632897
+
+\ALicense\Z
+
+# Reference: https://twitter.com/nmatte90/status/1163141154445176833
+
+Testingus
+
+# Reference: https://gist.github.com/Neo23x0/00bc2b883c530f7a12b055549e9076ff
+
+Mozilla/6.1 (compatible; MSIE 9.0; Windows NT 5.3; Trident/5.0)
+
+# Reference: https://twitter.com/ViriBack/status/991782471149801472
+
+928776C4AD04B453186FF486335CB3D2
+
+# Reference: https://twitter.com/cyb3rops/status/883717898228736003
+# Reference: https://github.com/Neo23x0/sigma/blob/master/rules/proxy/proxy_ua_malware.yml
+
+backdoorbot
+CholTBAgent
+HttpBrowser/1.0
+IczelionDownLoad
+SJZJ
+Mozilla/5.0 WinInet
+
+# Reference: https://twitter.com/x0rz/status/748858850896470016
+
+Cristmas Mystery
+
+# Reference: https://github.com/Neo23x0/sigma/blob/master/rules/proxy/proxy_ua_apt.yml
+
+O/9.27 (W; U; Z)
+
+# Reference: https://github.com/Neo23x0/sigma/blob/master/rules/proxy/proxy_ua_hacktool.yml
+
+arachni
+BFAC
+brutus
+cgichk
+core-project
+crimscanner
+domino hunter
+dotdotpwn
+FHScan Core
+floodgate
+get-minimal
+gootkit auto-rooter scanner
+grendel-scan
+inspath
+internet ninja
+jaascois
+\bmetis\b
+morfeus fucking scanner
+Mozilla/5.0 (Windows; U; Windows NT 5.1; pt-PT; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)
+n-stealth
+pmafind
+ruler
+security scan
+springenwerk
+teh forest lobster
+uil2pn
+\bvega\b
+voideye
+webshag
+webvulnscan
