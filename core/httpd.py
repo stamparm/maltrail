@@ -157,9 +157,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         self.send_header(HTTP_HEADER.CONNECTION, "close")
                         self.send_header(HTTP_HEADER.CONTENT_TYPE, mimetypes.guess_type(path)[0] or "application/octet-stream")
                         self.send_header(HTTP_HEADER.LAST_MODIFIED, last_modified)
-                        self.send_header(HTTP_HEADER.CONTENT_SECURITY_POLICY, "default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; " +
-                                                                              "script-src 'self' 'unsafe-eval' https://stat.ripe.net; connect-src 'self'; form-action 'self'; " +
-                                                                              "font-src 'self'; frame-src *; worker-src 'self'; block-all-mixed-content;")
+
+                        # For CSP policy directives see: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/
+                        self.send_header(HTTP_HEADER.CONTENT_SECURITY_POLICY, "default-src 'self'; style-src 'self' 'unsafe-inline'; " +
+                                                                              "script-src 'self' 'unsafe-eval' https://stat.ripe.net; " +
+                                                                              "frame-src *; object-src 'none'; block-all-mixed-content;")
                         if extension not in (".htm", ".html"):
                             self.send_header(HTTP_HEADER.EXPIRES, "Sun, 17-Jan-2038 19:14:07 GMT")        # Reference: http://blog.httpwatch.com/2007/12/10/two-simple-rules-for-http-caching/
                             self.send_header(HTTP_HEADER.CACHE_CONTROL, "max-age=3600, must-revalidate")  # Reference: http://stackoverflow.com/a/5084555
