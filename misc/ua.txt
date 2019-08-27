@@ -876,3 +876,7 @@ uil2pn
 voideye
 webshag
 webvulnscan
+
+# Reference: https://www.secureworks.com/blog/lyceum-takes-center-stage-in-middle-east-campaign
+
+Mozilla/5.0 (Windows NT 10.0; &)
