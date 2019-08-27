@@ -694,3 +694,7 @@ ns2.dnshost.ga
 # Reference: https://twitter.com/david_jursa/status/1166314807634604035
 
 23.227.192.58:53
+
+# Reference: https://twitter.com/david_jursa/status/1156517825122570240
+
+23.94.245.170:53
