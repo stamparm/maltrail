@@ -164,3 +164,8 @@
 # Reference: https://www.virustotal.com/gui/ip-address/67.229.97.229/relations
 
 /d2.ps1
+
+# Reference: https://blog.talosintelligence.com/2019/08/china-chopper-still-active-9-years-later.html
+# Reference: https://otx.alienvault.com/pulse/5d655ebc59a1b06f8c097c1f
+
+/6HqJB0SPQqbFbHJD/init.ps1
