@@ -532,8 +532,6 @@ westflies.com/api/api.php
 syndication.exdynsrv.com
 tqbeu.redirectvoluum.com
 tqbeu.voluumtrk.com
-/ads_priv.php
-/splash-zones-split.php
 
 # Reference: https://twitter.com/IpNigh/status/1164328397314699265
 
