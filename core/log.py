@@ -6,6 +6,7 @@ See the file 'LICENSE' for copying permission
 """
 
 import os
+import re
 import signal
 import socket
 import SocketServer
@@ -86,6 +87,7 @@ def safe_value(value):
     retval = str(value or '-')
     if any(_ in retval for _ in (' ', '"')):
         retval = "\"%s\"" % retval.replace('"', '""')
+    retval = re.sub(r"[\x0a\x0d]", " ", retval)
     return retval
 
 def flush_condensed_events():
