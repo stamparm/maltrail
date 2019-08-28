@@ -544,3 +544,7 @@ tqbeu.voluumtrk.com
 # Reference: https://twitter.com/JAMESWT_MHT/status/1165926508084563968
 
 /107741af5648cf.php
+
+# Reference: https://twitter.com/luc4m/status/1166558549742411777
+
+/wnzwyq3o8jvv4fbjsc42sfvl.php
