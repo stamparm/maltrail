@@ -880,3 +880,7 @@ webvulnscan
 # Reference: https://www.secureworks.com/blog/lyceum-takes-center-stage-in-middle-east-campaign
 
 Mozilla/5.0 (Windows NT 10.0; &)
+
+# Reference: https://twitter.com/luc4m/status/1166765980489584640
+
+WSHRAT
