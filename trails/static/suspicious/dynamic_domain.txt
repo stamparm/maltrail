@@ -2721,3 +2721,11 @@ diskstation.org
 # Reference: https://www.virustotal.com/gui/domain/quickconnect.to/relations
 
 quickconnect.to
+
+# Reference: https://dyndnss.net/eng/
+
+dyndnss.net
+
+# Reference: https://www.virustotal.com/gui/domain/nsupdate.info/relations
+
+nsupdate.info
