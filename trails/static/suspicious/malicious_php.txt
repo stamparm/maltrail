@@ -548,3 +548,8 @@ tqbeu.voluumtrk.com
 # Reference: https://twitter.com/luc4m/status/1166558549742411777
 
 /wnzwyq3o8jvv4fbjsc42sfvl.php
+
+# Reference: https://twitter.com/malware_traffic/status/1166838031556517888
+# Reference: https://app.any.run/tasks/2141fadd-0379-404f-b8e1-917035910c4b/
+
+/loader/gate.php
