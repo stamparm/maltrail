@@ -561,3 +561,16 @@ cloudflara.org
 # Reference: https://app.any.run/tasks/0c5278c0-d505-4873-b612-9318dbbc2733/
 
 /ajwngsj.js
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1167096432236650497
+
+/0f.js
+/1f.js
+/2f.js
+/3f.js
+/4f.js
+/5f.js
+/6f.js
+/7f.js
+/8f.js
+/9f.js
