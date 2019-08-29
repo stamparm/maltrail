@@ -496,3 +496,7 @@ g.icab.pk
 # Reference: https://twitter.com/ViriBack/status/1155093166841892864
 
 /panels_encoded/login.php
+
+# Reference: https://twitter.com/tkanalyst/status/1166855006596681730
+
+/loader/login.php
