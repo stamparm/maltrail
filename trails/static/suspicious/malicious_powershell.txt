@@ -169,3 +169,8 @@
 # Reference: https://otx.alienvault.com/pulse/5d655ebc59a1b06f8c097c1f
 
 /6HqJB0SPQqbFbHJD/init.ps1
+
+# Reference: https://twitter.com/ItsReallyNick/status/1166889941844074496
+
+/abc.ps1
+/sc.ps1
