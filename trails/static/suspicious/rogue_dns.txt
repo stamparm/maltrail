@@ -703,3 +703,7 @@ ns2.dnshost.ga
 
 23.92.222.100:53
 23.92.222.243:53
+
+# Reference: https://twitter.com/david_jursa/status/1106154345878507520
+
+198.12.64.210:53
