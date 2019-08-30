@@ -884,3 +884,8 @@ Mozilla/5.0 (Windows NT 10.0; &)
 # Reference: https://twitter.com/luc4m/status/1166765980489584640
 
 WSHRAT
+
+# Reference: https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/08/01075510/TV_RMS_IoC_eng.pdf
+
+Mozilla/4.0 (compatible; RMS)
+Mozilla/4.0 (compatible; MSIE 6.0; DynGate)
