@@ -574,3 +574,9 @@ cloudflara.org
 /7f.js
 /8f.js
 /9f.js
+
+# Reference: https://twitter.com/StopMalvertisin/status/1167121250847580162
+
+/msg_frr_w3.js
+/myjs28_frr_c1.js
+/myjs28_frr_s37.js
