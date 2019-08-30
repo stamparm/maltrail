@@ -580,3 +580,7 @@ cloudflara.org
 /msg_frr_w3.js
 /myjs28_frr_c1.js
 /myjs28_frr_s37.js
+
+# Reference: https://blog.talosintelligence.com/2019/08/rat-ratatouille-revrat-orcus.html
+
+/r2.js
