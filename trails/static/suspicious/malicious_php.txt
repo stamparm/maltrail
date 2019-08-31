@@ -553,3 +553,7 @@ tqbeu.voluumtrk.com
 # Reference: https://app.any.run/tasks/2141fadd-0379-404f-b8e1-917035910c4b/
 
 /loader/gate.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1167816610805161984
+
+/s5a03tkf4q9d9nb73da3nhsi.php
