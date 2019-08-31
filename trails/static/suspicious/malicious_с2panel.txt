@@ -500,3 +500,7 @@ g.icab.pk
 # Reference: https://twitter.com/tkanalyst/status/1166855006596681730
 
 /loader/login.php
+
+# Reference: https://twitter.com/P3pperP0tts/status/1167890224644362241
+
+http://45.12.212.225
