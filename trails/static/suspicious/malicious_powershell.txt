@@ -174,3 +174,9 @@
 
 /abc.ps1
 /sc.ps1
+
+# Reference: https://twitter.com/killamjr/status/1167453693194752000
+
+/paymentinfo.ps1
+/PaymentDts.ps1
+/SecureTransDts.ps1
