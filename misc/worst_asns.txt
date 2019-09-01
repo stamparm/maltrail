@@ -5839,3 +5839,7 @@
 87.248.192.0/19,limelight
 95.140.224.0/20,limelight
 
+# Misc.
+
+# AS36352 (ColoCrossing)
+107.172.0.0/16,colocrossing
