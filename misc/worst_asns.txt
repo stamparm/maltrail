@@ -5839,8 +5839,7 @@
 87.248.192.0/19,limelight
 95.140.224.0/20,limelight
 
-# Reference: https://twitter.com/nullcookies/status/1167504131382231041
-# Reference: https://www.virustotal.com/gui/ip-address/107.172.13.124/details
+# Misc.
 
 # AS36352 (ColoCrossing)
 107.172.0.0/16,colocrossing
