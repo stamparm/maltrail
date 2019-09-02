@@ -221,3 +221,7 @@
 # Reference: https://twitter.com/reecdeep/status/1159833486817034241
 
 /elnino.hta
+
+# Reference: https://twitter.com/w3ndige/status/1168437823193669632
+
+/2055970.hta
