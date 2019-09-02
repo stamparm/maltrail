@@ -893,3 +893,215 @@ Mozilla/4.0 (compatible; MSIE 6.0; DynGate)
 # Reference: https://twitter.com/chybeta/status/1167617571287289856
 
 webmin
+
+# Reference: http://rules.emergingthreats.net/open/snort-2.9.0/rules/emerging-user_agents.rules
+
+\{[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}\}
+=Mozilla
+\A123\Z
+\AApp
+\ACompatible\Z
+\Acv\_v\Z
+\ADigital\Z
+\AESET Installer\Z
+\Ahhh\Z
+\Ahttps\Z
+\AHTTPGET\Z
+\Ai am ddos\Z
+\AIm Luo\Z
+\AINet\Z
+\AIST\Z
+\Akav\Z
+\Amin\Z
+\AMs\Z
+\AMy Agent\Z
+\AMy\_App\Z
+\AMz\Z
+\AOur\_Agent\Z
+\AQQ\Z
+\ATestAgent\Z
+\AVersion
+\AWindows XP\Z
+\AWindows 7\Z
+\AWindows 8\Z
+\AWindows 10\Z
+\AXML\Z
+\Axr\Z
+\AZilla\Z
+\Azwt\Z
+Accessing
+AdiseExplorer
+adlib
+adsntD
+aguarovex
+Aldi Bot
+alertup
+angel
+antispyprogram
+AnyDesk
+aria2
+Atomic\_Email\_Hunter
+acHTTP component
+auHTTP component
+AutoUpgrader component
+AV1
+AVP2006IE
+Avzhan
+BigFoot
+Brontok
+Download App
+DownloadNetFile
+DownloadMR
+DriveCleaner
+Caesar
+CFS Agent
+CFS_DOWNLOAD
+checkonline
+chek
+ChilkatUpload
+Citrix
+ClickAdsByIE
+curl53
+CustomExchangeBrowser
+Damien
+Downloader1.2
+ekeoil
+ElectroSun
+ErrCode
+ExampleDL
+FileNolja
+Firef0x
+Firefox\.\.\.
+FOCA
+Forthgoner
+GeneralDownloadApplication
+GetUrlSize
+Google page
+google/dance
+hacker
+Hentai
+HttpClient\b
+HTTP\_Connect\_
+HTTP Downloader
+HttpDownload
+\bHTTPTEST
+JEDI-VCL
+Joseray
+IAMDDOS
+iamx
+IE6 on Windows XP
+ieagent
+ieguideupdate
+IEhook
+IE/1.0
+IEMGR
+InHold
+Inet_read
+inetinst
+InfoBot
+Internet HTTP
+ISearchTech
+Ismazo
+ISMYIE
+keypack
+KIARA
+KKTone
+kpangupdate
+Kvadrlson
+lessie
+libsfml-network
+Loands
+LockXLS
+Machaon
+MadeBy
+MacShield
+MediaLabsSiteInstaller
+miip
+Microsoft WinRM
+M0zilla
+Mozil1a
+Mozilla-web
+Mozilla 1.02.45 biz
+Mozilla 6.0
+Mozilla/1.0 (compatible; MSIE 8.0
+Mozilla/4.0 (SPGK)
+Mozilla/4.0 (compatible; MSIE 6.0)
+Mozilla/4.0 (compatible MSIE 7.0 na .NET CLR 2.0.50727 .NET CLR 3.0.4506.2152 .NET CLR 3.5.30729)
+Mozilla/4.0 (compatible; MSIE 5.0; Windows NT 2.1; SV3)
+Mozilla/4.7
+Mozilla/5.0 (compatible, Viper 4.0)
+Mozilla/5.0 (Windows NT 6.1; wget 3.0; rv:5.0)
+Mozzila
+MS Internet Explorer
+ms\_ie
+MtGoxBackOffice
+muhstik
+MyAgent
+MYURL
+N0PE
+NateFinder
+nethelper
+Nimo Software HTTP
+node-XMLHttpRequest
+NSIS_DOWNLOAD
+NULL
+okcpmgr
+onedru
+Opera/10.60 Presto/2.2.30
+Opera/8.81
+Opera/8.89
+Opera/9.10
+Opera/9.28
+PcPcUpdater
+Poker
+Poller
+PrivacyInfoUpdate
+Quick Macros
+ReadFileURL
+RBRs
+RFRudokop
+RLMultySocket
+runPatch
+runUpdater
+SAIv
+sample
+ScrapeBox
+sections
+SERVER2
+Session
+Shaolin
+sickness29a
+SimpleClient
+Skunkx
+Snatch-System
+Solar
+SomeTimes
+SRRemove
+STORMDDOS
+SUiCiDE
+svchost
+TBNotifier
+Tsunami
+Ucheck
+Ufasoft
+up2dash
+updater\_agent
+Varlok
+\bVB Http
+VERTEXNET
+WebForm
+WebUpdate
+Win32
+WINDOWS\_LOADS
+WindSoft
+WinProxy
+WINS\_HTTP\_SEND
+WINTERNET
+WT-User-Agent
+xSock
+XXXPornToolbar
+Yakuza
+Yandesk
+YourUserAgent
+Yowai
+YTDDOS
