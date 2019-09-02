@@ -241,3 +241,7 @@ clearmatechecker.site
 d3s687mnstf2nl.cloudfront.net
 infoxxtechxx.gq
 stockmatejappzee.site
+
+# Reference: https://twitter.com/benkow_/status/1168598376977448960
+
+http://5.188.60.32
