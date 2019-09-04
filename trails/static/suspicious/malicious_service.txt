@@ -249,3 +249,8 @@ http://5.188.60.32
 # Reference: https://twitter.com/dave_daves/status/1169259923420659713
 
 http://157.245.71.111
+
+# Reference: https://twitter.com/adulau/status/1169300878345588742
+
+libc.so
+libc6.so
