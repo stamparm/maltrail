@@ -557,3 +557,7 @@ tqbeu.voluumtrk.com
 # Reference: https://twitter.com/MalwarePatrol/status/1167816610805161984
 
 /s5a03tkf4q9d9nb73da3nhsi.php
+
+# Reference: https://twitter.com/killamjr/status/1168904634498502656
+
+/43333.php
