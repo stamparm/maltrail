@@ -561,3 +561,7 @@ tqbeu.voluumtrk.com
 # Reference: https://twitter.com/killamjr/status/1168904634498502656
 
 /43333.php
+
+# Reference: https://twitter.com/IpNigh/status/1169988952096432129
+
+/d8fo713p7xcqwe3gmej9ahtl.php
