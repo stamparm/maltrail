@@ -940,7 +940,11 @@ def monitor():
         global _count
 
         ip_offset = None
-        dlt_offset = DLT_OFFSETS[datalink]
+	try:
+            dlt_offset = DLT_OFFSETS[datalink]
+        except KeyError:
+	    log_error("Received unexpected datalink (%d)" % datalink)
+	    return
 
         try:
             if datalink == pcapy.DLT_RAW:
