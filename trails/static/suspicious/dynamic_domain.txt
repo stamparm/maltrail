@@ -2729,3 +2729,7 @@ dyndnss.net
 # Reference: https://www.virustotal.com/gui/domain/nsupdate.info/relations
 
 nsupdate.info
+
+# Reference: https://www.virustotal.com/gui/domain/anondns.net/relations
+
+anondns.net
