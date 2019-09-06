@@ -4730,3 +4730,8 @@ securezdns.pw
 # Reference: https://www.virustotal.com/gui/domain/abcdserver.com/relations
 
 abcdserver.com
+
+# Reference: https://twitter.com/KorbenD_Intel/status/1169996681259245569
+# Reference: https://www.virustotal.com/gui/domain/daniel2you.com/relations
+
+daniel2you.com
