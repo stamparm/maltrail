@@ -1105,3 +1105,7 @@ Yandesk
 YourUserAgent
 Yowai
 YTDDOS
+
+# Reference: https://twitter.com/UrBogan/status/1170583647742656514
+
+DEMONS
