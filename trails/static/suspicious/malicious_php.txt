@@ -565,3 +565,9 @@ tqbeu.voluumtrk.com
 # Reference: https://twitter.com/IpNigh/status/1169988952096432129
 
 /d8fo713p7xcqwe3gmej9ahtl.php
+
+# Reference: https://twitter.com/tkanalyst/status/1170688633172443139
+
+/c0nf1g.php
+/conf1g.php
+/c0nfig.php
