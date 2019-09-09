@@ -229,3 +229,8 @@ ip.sb
 # Reference: https://www.virustotal.com/gui/domain/ipapi.co/relations
 
 ipapi.co
+
+
+# Reference: https://app.any.run/tasks/2f344183-0809-448e-bedc-3080631fa2c9/ (Note: direct IP usage for whatismyipaddress.com)
+
+66.171.248.178
