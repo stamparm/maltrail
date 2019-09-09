@@ -584,3 +584,9 @@ cloudflara.org
 # Reference: https://blog.talosintelligence.com/2019/08/rat-ratatouille-revrat-orcus.html
 
 /r2.js
+
+# Reference: https://twitter.com/killamjr/status/1171122456528150528
+
+tut-64.com
+yourservice.live
+0wnpr0m0.com
