@@ -225,3 +225,7 @@
 # Reference: https://twitter.com/w3ndige/status/1168437823193669632
 
 /2055970.hta
+
+# Reference: https://twitter.com/Zerophage1337/status/1007645365133246464
+
+/dwie.hta
