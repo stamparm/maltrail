@@ -4730,3 +4730,18 @@ securezdns.pw
 # Reference: https://www.virustotal.com/gui/domain/abcdserver.com/relations
 
 abcdserver.com
+
+# Reference: https://twitter.com/KorbenD_Intel/status/1169996681259245569
+# Reference: https://www.virustotal.com/gui/domain/daniel2you.com/relations
+
+daniel2you.com
+
+# Reference: https://twitter.com/io_sono_io_IT/status/1170623641911906306
+# Reference: https://www.virustotal.com/gui/ip-address/104.151.46.71/relations
+
+.ac.cn
+cgzolm.cn
+chaao.cc
+fxgdb.cn
+rengpu.cc
+sengba.cc
