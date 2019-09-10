@@ -990,7 +990,7 @@ def monitor():
             while True:
                 success = False
                 try:
-                    (header, packet) = _cap.next
+                    (header, packet) = _cap.next()
                     if header is not None:
                         success = True
                         packet_handler(datalink, header, packet)
