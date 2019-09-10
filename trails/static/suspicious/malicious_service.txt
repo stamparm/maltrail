@@ -254,3 +254,11 @@ http://157.245.71.111
 
 libc.so
 libc6.so
+
+# Reference: https://twitter.com/killamjr/status/1171122456528150528
+
+repairgreatlyquickfile.icu
+
+# Reference: https://twitter.com/Jan0fficial/status/1171157538970230786
+
+stressthem.to
