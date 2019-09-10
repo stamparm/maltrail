@@ -28,6 +28,7 @@ from core.attribdict import AttribDict
 from core.common import get_regex
 from core.common import ipcat_lookup
 from core.common import worst_asns
+from core.compat import xrange
 from core.enums import HTTP_HEADER
 from core.settings import config
 from core.settings import CONTENT_EXTENSIONS_EXCLUSIONS

@@ -27,6 +27,7 @@ from core.common import cdn_ip
 from core.common import check_whitelisted
 from core.common import load_trails
 from core.common import retrieve_content
+from core.compat import xrange
 from core.settings import config
 from core.settings import read_config
 from core.settings import read_whitelist
@@ -142,7 +143,7 @@ def update_trails(force=False, offline=False):
                         url = module.__url__  # Note: to prevent "SyntaxError: can not delete variable 'module' referenced in nested scope"
 
                         print(" [o] '%s'%s" % (url, " " * 20 if len(url) < 20 else ""))
-                        sys.stdout.write("[?] progress: %d/%d (%d%%)\r" % (i, len(filenames), i * 100 / len(filenames)))
+                        sys.stdout.write("[?] progress: %d/%d (%d%%)\r" % (i, len(filenames), i * 100 // len(filenames)))
                         sys.stdout.flush()
 
                         if config.DISABLED_TRAILS_INFO_REGEX and re.search(config.DISABLED_TRAILS_INFO_REGEX, getattr(module, "__info__", "")):

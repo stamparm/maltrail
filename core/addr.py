@@ -7,6 +7,8 @@ See the file 'LICENSE' for copying permission
 
 import re
 
+from core.compat import xrange
+
 def addr_to_int(value):
     _ = value.split('.')
     return (int(_[0]) << 24) + (int(_[1]) << 16) + (int(_[2]) << 8) + int(_[3])
@@ -28,5 +30,5 @@ def compress_ipv6(address):
 
 # Note: socket.inet_ntop not available everywhere (Reference: https://docs.python.org/2/library/socket.html#socket.inet_ntop)
 def inet_ntoa6(packed_ip):
-    _ = packed_ip.encode("hex")
+    _ = packed_ip.hex() if hasattr(packed_ip, "hex") else packed_ip.encode("hex")
     return compress_ipv6(':'.join(_[i:i + 4] for i in xrange(0, len(_), 4)))

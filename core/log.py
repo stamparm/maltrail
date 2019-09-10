@@ -17,6 +17,7 @@ import traceback
 
 from core.common import check_whitelisted
 from core.common import check_sudo
+from core.compat import xrange
 from core.enums import TRAIL
 from core.settings import CEF_FORMAT
 from core.settings import config
@@ -149,7 +150,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
 
                         return
 
-                current_bucket = sec / config.PROCESS_COUNT
+                current_bucket = sec // config.PROCESS_COUNT
                 if getattr(_thread_data, "log_bucket", None) != current_bucket:  # log throttling
                     _thread_data.log_bucket = current_bucket
                     _thread_data.log_trails = set()

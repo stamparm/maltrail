@@ -22,7 +22,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.13.81"
+VERSION = "0.13.82"
 PLATFORM = os.name
 PYVERSION = sys.version.split()[0]
 IS_WIN = PLATFORM == "nt"
@@ -214,7 +214,7 @@ def _get_total_physmem():
     return retval
 
 def check_memory():
-    print("[?] at least %dMB of free memory required" % (CHECK_MEMORY_SIZE / 1024 / 1024))
+    print("[?] at least %dMB of free memory required" % (CHECK_MEMORY_SIZE // (1024 * 1024)))
     try:
         _ = '0' * CHECK_MEMORY_SIZE
     except MemoryError:
@@ -344,13 +344,13 @@ def read_config(config_file):
             physmem = _get_total_physmem()
 
             if physmem:
-                config.CAPTURE_BUFFER = physmem * int(re.search(r"(\d+)%", config.CAPTURE_BUFFER).group(1)) / 100
+                config.CAPTURE_BUFFER = physmem * int(re.search(r"(\d+)%", config.CAPTURE_BUFFER).group(1)) // 100
             else:
                 exit("[!] unable to determine total physical memory. Please use absolute value for 'CAPTURE_BUFFER'")
         else:
             exit("[!] invalid configuration value for 'CAPTURE_BUFFER' ('%s')" % config.CAPTURE_BUFFER)
 
-        config.CAPTURE_BUFFER = config.CAPTURE_BUFFER / BLOCK_LENGTH * BLOCK_LENGTH
+        config.CAPTURE_BUFFER = config.CAPTURE_BUFFER // (BLOCK_LENGTH * BLOCK_LENGTH)
 
     if config.PROXY_ADDRESS:
         PROXIES.update({"http": config.PROXY_ADDRESS, "https": config.PROXY_ADDRESS})

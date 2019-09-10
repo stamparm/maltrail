@@ -35,6 +35,7 @@ from core.common import check_connection
 from core.common import check_sudo
 from core.common import check_whitelisted
 from core.common import load_trails
+from core.compat import xrange
 from core.enums import BLOCK_MARKER
 from core.enums import PROTO
 from core.enums import TRAIL
@@ -79,6 +80,7 @@ from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
 from core.settings import SUSPICIOUS_PROXY_PROBE_PRE_CONDITION
 from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
+from core.settings import UNICODE_ENCODING
 from core.settings import VALID_DNS_CHARS
 from core.settings import VERSION
 from core.settings import WEB_SHELLS
@@ -89,6 +91,7 @@ from core.settings import WHITELIST_HTTP_REQUEST_PATHS
 from core.settings import WHITELIST_UA_KEYWORDS
 from core.update import update_ipcat
 from core.update import update_trails
+from thirdparty import six
 from thirdparty.six.moves import urllib as _urllib
 
 _buffer = None
@@ -252,7 +255,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                 _connect_src_details.clear()
 
         ip_data = packet[ip_offset:]
-        ip_version = ord(ip_data[0]) >> 4
+        ip_version = ord(ip_data[0:1]) >> 4
         localhost_ip = LOCALHOST_IP[ip_version]
 
         if ip_version == 0x04:  # IPv4
@@ -553,11 +556,11 @@ def _process_packet(packet, sec, usec, ip_offset):
                         query = ""
 
                         while len(dns_data) > offset:
-                            length = ord(dns_data[offset])
+                            length = ord(dns_data[offset:offset + 1])
                             if not length:
                                 query = query[:-1]
                                 break
-                            query += dns_data[offset + 1:offset + length + 1] + '.'
+                            query += dns_data[offset + 1:offset + length + 1].decode(UNICODE_ENCODING) + '.'
                             offset += length + 1
 
                         query = query.lower()
@@ -643,8 +646,8 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                                         if not (len(parts) > 4 and all(_.isdigit() and int(_) < 256 for _ in parts[:4])):  # generic check for DNSBL IP lookups
                                             for _ in filter(None, (query, "*.%s" % '.'.join(parts[-2:]) if query.count('.') > 1 else None)):
-                                                if _ not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[_][0] != sec / 3600:
-                                                    NO_SUCH_NAME_COUNTERS[_] = [sec / 3600, 1, set()]
+                                                if _ not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[_][0] != sec // 3600:
+                                                    NO_SUCH_NAME_COUNTERS[_] = [sec // 3600, 1, set()]
                                                 else:
                                                     NO_SUCH_NAME_COUNTERS[_][1] += 1
                                                     NO_SUCH_NAME_COUNTERS[_][2].add(query)
@@ -698,10 +701,10 @@ def _process_packet(packet, sec, usec, ip_offset):
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
-                if ord(ip_data[iph_length]) != 0x08:  # Non-echo request
+                if ord(ip_data[iph_length:iph_length + 1]) != 0x08:  # Non-echo request
                     return
             elif protocol == socket.IPPROTO_ICMPV6:
-                if ord(ip_data[iph_length]) != 0x80:  # Non-echo request
+                if ord(ip_data[iph_length:iph_length + 1]) != 0x80:  # Non-echo request
                     return
 
             if dst_ip in trails:
@@ -913,8 +916,8 @@ def _init_multiprocessing():
         try:
             _buffer = mmap.mmap(-1, config.CAPTURE_BUFFER)  # http://www.alexonlinux.com/direct-io-in-python
 
-            _ = "\x00" * MMAP_ZFILL_CHUNK_LENGTH
-            for i in xrange(config.CAPTURE_BUFFER / MMAP_ZFILL_CHUNK_LENGTH):
+            _ = b"\x00" * MMAP_ZFILL_CHUNK_LENGTH
+            for i in xrange(config.CAPTURE_BUFFER // MMAP_ZFILL_CHUNK_LENGTH):
                 _buffer.write(_)
             _buffer.seek(0)
         except KeyboardInterrupt:
@@ -952,13 +955,13 @@ def monitor():
                 ip_offset = dlt_offset
 
             elif datalink == pcapy.DLT_PPP:
-                if packet[2:4] in ("\x00\x21", "\x00\x57"):  # (IPv4, IPv6)
+                if packet[2:4] in (b"\x00\x21", b"\x00\x57"):  # (IPv4, IPv6)
                     ip_offset = dlt_offset
 
             elif dlt_offset >= 2:
-                if packet[dlt_offset - 2:dlt_offset] == "\x81\x00":  # VLAN
+                if packet[dlt_offset - 2:dlt_offset] == b"\x81\x00":  # VLAN
                     dlt_offset += 4
-                if packet[dlt_offset - 2:dlt_offset] in ("\x08\x00", "\x86\xdd"):  # (IPv4, IPv6)
+                if packet[dlt_offset - 2:dlt_offset] in (b"\x08\x00", b"\x86\xdd"):  # (IPv4, IPv6)
                     ip_offset = dlt_offset
 
         except IndexError:
@@ -1029,7 +1032,7 @@ def monitor():
         if _multiprocessing:
             try:
                 for _ in xrange(config.PROCESS_COUNT - 1):
-                    write_block(_buffer, _n.value, "", BLOCK_MARKER.END)
+                    write_block(_buffer, _n.value, b"", BLOCK_MARKER.END)
                     _n.value = _n.value + 1
                 while _multiprocessing.active_children():
                     time.sleep(REGULAR_SENSOR_SLEEP_TIME)
@@ -1061,7 +1064,7 @@ def main():
     read_config(options.config_file)
 
     for option in dir(options):
-        if isinstance(getattr(options, option), (basestring, bool)) and not option.startswith('_'):
+        if isinstance(getattr(options, option), (six.string_types, bool)) and not option.startswith('_'):
             config[option] = getattr(options, option)
 
     if options.debug:
@@ -1096,7 +1099,7 @@ if __name__ == "__main__":
     except SystemExit as ex:
         show_final = False
 
-        if isinstance(getattr(ex, "message"), basestring):
+        if isinstance(getattr(ex, "message"), six.string_types):
             print(ex)
             os._exit(1)
     except IOError:

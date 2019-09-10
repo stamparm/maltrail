@@ -18,6 +18,7 @@ import zlib
 
 from core.addr import addr_to_int
 from core.addr import int_to_addr
+from core.compat import xrange
 from core.settings import config
 from core.settings import BOGON_RANGES
 from core.settings import CHECK_CONNECTION_URL
@@ -232,7 +233,7 @@ def load_trails(quiet=False):
 
     if os.path.isfile(config.TRAILS_FILE):
         try:
-            with open(config.TRAILS_FILE, "rb") as f:
+            with open(config.TRAILS_FILE, "r") as f:
                 reader = csv.reader(f, delimiter=',', quotechar='\"')
                 for row in reader:
                     if row and len(row) == 3:

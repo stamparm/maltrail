@@ -110,7 +110,7 @@ if __name__ == "__main__":
     except SystemExit as ex:
         show_final = False
 
-        if isinstance(getattr(ex, "message"), basestring):
+        if isinstance(getattr(ex, "message"), six.string_types):
             print(ex)
             os._exit(1)
     except Exception:
