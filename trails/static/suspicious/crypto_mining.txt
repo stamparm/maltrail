@@ -184,3 +184,7 @@ system-check.services
 # Reference: https://twitter.com/James_inthe_box/status/1165005466419658753
 
 3.120.209.58:8080
+
+# Reference: https://habr.com/ru/company/pt/blog/466877/ (Russian)
+
+154.16.67.133:80
