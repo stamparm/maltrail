@@ -88,7 +88,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             import OpenSSL  # python-openssl
 
             ThreadingServer.__init__(self, server_address, HandlerClass)
-            ctx = OpenSSL.SSL.Context(OpenSSL.SSL.TLSv1_METHOD)
+            ctx = OpenSSL.SSL.Context(OpenSSL.SSL.TLSv1_2_METHOD)
             ctx.use_privatekey_file(pem)
             ctx.use_certificate_file(pem)
             self.socket = OpenSSL.SSL.Connection(ctx, socket.socket(self.address_family, self.socket_type))
