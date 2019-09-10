@@ -21,7 +21,7 @@ def compress_ipv6(address):
     zeros = re.findall("(?:0000:)+", address)
     if zeros:
         address = address.replace(sorted(zeros, key=lambda _: len(_))[-1], ":", 1)
-        address = re.sub(r"(\A|:)0+(\w)", "\g<1>\g<2>", address)
+        address = re.sub(r"(\A|:)0+(\w)", r"\g<1>\g<2>", address)
         if address == ":1":
             address = "::1"
     return address

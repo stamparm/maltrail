@@ -495,7 +495,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                                 break
                                         _result_cache[unquoted_post_data] = found or ""
                                     if found:
-                                        trail = "%s(%s \(%s %s\))" % (host, path, method, post_data.strip())
+                                        trail = "%s(%s \\(%s %s\\))" % (host, path, method, post_data.strip())
                                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "%s (suspicious)" % found, "(heuristic)"), packet)
                                         return
 
