@@ -6,6 +6,7 @@ See the file 'LICENSE' for copying permission
 """
 from __future__ import print_function
 
+import codecs
 import csv
 import glob
 import inspect
@@ -41,7 +42,9 @@ from core.settings import IPCAT_SQLITE_FILE
 from core.settings import IPCAT_URL
 from core.settings import IS_WIN
 from core.settings import ROOT_DIR
+from core.settings import UNICODE_ENCODING
 from core.settings import USERS_DIR
+from thirdparty import six
 from thirdparty.six.moves import urllib as _urllib
 
 # patch for self-signed certificates (e.g. CUSTOM_TRAILS_URL)
@@ -58,8 +61,8 @@ def _chown(filepath):
         except Exception as ex:
             print("[!] chown problem with '%s' ('%s')" % (filepath, ex))
 
-def _fopen(filepath, mode="rb"):
-    retval = open(filepath, mode)
+def _fopen(filepath, mode="rb", opener=open):
+    retval = opener(filepath, mode)
     if "w+" in mode:
         _chown(filepath)
     return retval
@@ -87,7 +90,7 @@ def update_trails(force=False, offline=False):
         if not content or content.count(',') < 2:
             print("[x] unable to retrieve data from '%s'" % config.UPDATE_SERVER)
         else:
-            with _fopen(config.TRAILS_FILE, "w+b") as f:
+            with _fopen(config.TRAILS_FILE, "w+b" if six.PY2 else "w+", open if six.PY2 else codecs.open) as f:
                 f.write(content)
             trails = load_trails()
 
@@ -232,6 +235,8 @@ def update_trails(force=False, offline=False):
                 try:
                     _key = key.decode(UNICODE_ENCODING) if isinstance(key, bytes) else key
                     _key = _key.encode("idna")
+                    if six.PY3:
+                        _key = _key.decode(UNICODE_ENCODING)
                     if _key != key:  # for domains with non-ASCII letters (e.g. phishing)
                         trails[_key] = trails[key]
                         del trails[key]
@@ -294,10 +299,11 @@ def update_trails(force=False, offline=False):
 
             try:
                 if trails:
-                    with _fopen(config.TRAILS_FILE, "w+b") as f:
+                    with _fopen(config.TRAILS_FILE, "w+b" if six.PY2 else "w+", open if six.PY2 else codecs.open) as f:
                         writer = csv.writer(f, delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
                         for trail in trails:
-                            writer.writerow((trail, trails[trail][0], trails[trail][1]))
+                            row = (trail, trails[trail][0], trails[trail][1])
+                            writer.writerow(row)
 
                     success = True
             except Exception as ex:
@@ -365,7 +371,7 @@ def main():
     else:
         if "-r" in sys.argv:
             results = []
-            with _fopen(config.TRAILS_FILE) as f:
+            with _fopen(config.TRAILS_FILE, "rb" if six.PY2 else 'r', open if six.PY2 else codecs.open) as f:
                 for line in f:
                     if line and line[0].isdigit():
                         items = line.split(',', 2)

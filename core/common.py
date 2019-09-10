@@ -33,6 +33,7 @@ from core.settings import WHITELIST
 from core.settings import WHITELIST_RANGES
 from core.settings import WORST_ASNS
 from core.trailsdict import TrailsDict
+from thirdparty import six
 from thirdparty.six.moves import urllib as _urllib
 
 _ipcat_cache = {}
@@ -60,7 +61,12 @@ def retrieve_content(url, data=None, headers=None):
         if url.startswith("https://") and "handshake failure" in retval:
             return retrieve_content(url.replace("https://", "http://"), data, headers)
 
-    return (retval or b"").decode(UNICODE_ENCODING, errors="replace")
+    retval = retval or b""
+
+    if six.PY3:
+        retval = retval.decode(UNICODE_ENCODING, errors="replace")
+
+    return retval
 
 def ipcat_lookup(address):
     if not address:

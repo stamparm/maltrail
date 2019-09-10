@@ -13,6 +13,7 @@ import tempfile
 from core.settings import NAME
 from core.settings import TIMEOUT
 from core.settings import UNICODE_ENCODING
+from thirdparty import six
 from thirdparty.six.moves import urllib as _urllib
 
 __url__ = "https://osint.bambenekconsulting.com/feeds/dga-feed.txt"
@@ -52,9 +53,14 @@ def fetch():
     if handle:
         try:
             while True:
-                line = handle.readline().decode(UNICODE_ENCODING)
+                line = handle.readline()
+
                 if not line:
                     break
+
+                if six.PY3:
+                    line = line.decode(UNICODE_ENCODING)
+
                 match = re.search(r"\A([^,\s]+),Domain used by ([^ ]+)", line)
                 if match and '.' in match.group(1):
                     retval[match.group(1)] = ("%s dga (malware)" % match.group(2).lower(), __reference__)
