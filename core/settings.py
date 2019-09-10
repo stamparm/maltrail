@@ -22,7 +22,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.13.82"
+VERSION = "0.13.83"
 PLATFORM = os.name
 PYVERSION = sys.version.split()[0]
 IS_WIN = PLATFORM == "nt"
@@ -350,7 +350,7 @@ def read_config(config_file):
         else:
             exit("[!] invalid configuration value for 'CAPTURE_BUFFER' ('%s')" % config.CAPTURE_BUFFER)
 
-        config.CAPTURE_BUFFER = config.CAPTURE_BUFFER // (BLOCK_LENGTH * BLOCK_LENGTH)
+        config.CAPTURE_BUFFER = config.CAPTURE_BUFFER // BLOCK_LENGTH * BLOCK_LENGTH
 
     if config.PROXY_ADDRESS:
         PROXIES.update({"http": config.PROXY_ADDRESS, "https": config.PROXY_ADDRESS})

@@ -164,7 +164,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                 event = "%s %s %s\n" % (safe_value(localtime), safe_value(config.SENSOR_NAME), " ".join(safe_value(_) for _ in event_tuple[2:]))
                 if not config.DISABLE_LOCAL_LOG_STORAGE:
                     handle = get_event_log_handle(sec)
-                    os.write(handle, event)
+                    os.write(handle, event.encode(UNICODE_ENCODING))
 
                 if config.LOG_SERVER:
                     if config.LOG_SERVER.count(':') > 1:
@@ -180,14 +180,14 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                         _address = (remote_host, int(remote_port))
 
                     s = socket.socket(socket.AF_INET if len(_address) == 2 else socket.AF_INET6, socket.SOCK_DGRAM)
-                    s.sendto("%s %s" % (sec, event), _address)
+                    s.sendto(("%s %s" % (sec, event)).encode(UNICODE_ENCODING), _address)
 
                 if config.SYSLOG_SERVER:
                     extension = "src=%s spt=%s dst=%s dpt=%s trail=%s ref=%s" % (src_ip, src_port, dst_ip, dst_port, trail, reference)
                     _ = CEF_FORMAT.format(syslog_time=time.strftime("%b %d %H:%M:%S", time.localtime(int(sec))), host=HOSTNAME, device_vendor=NAME, device_product="sensor", device_version=VERSION, signature_id=time.strftime("%Y-%m-%d", time.localtime(os.path.getctime(config.TRAILS_FILE))), name=info, severity=0, extension=extension)
                     remote_host, remote_port = config.SYSLOG_SERVER.split(':')
                     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                    s.sendto(_, (remote_host, int(remote_port)))
+                    s.sendto(_.encode(UNICODE_ENCODING), (remote_host, int(remote_port)))
 
                 if config.DISABLE_LOCAL_LOG_STORAGE and not any(config.LOG_SERVER, config.SYSLOG_SERVER) or config.console:
                     sys.stderr.write(event)

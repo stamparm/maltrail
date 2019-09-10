@@ -570,7 +570,7 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                         parts = query.split('.')
 
-                        if ord(dns_data[2]) & 0xfe == 0x00:  # standard query (both recursive and non-recursive)
+                        if ord(dns_data[2:3]) & 0xfe == 0x00:  # standard query (both recursive and non-recursive)
                             type_, class_ = struct.unpack("!HH", dns_data[offset + 1:offset + 5])
 
                             if len(parts) > 2:
@@ -615,12 +615,12 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, packet)
 
                         elif config.USE_HEURISTICS:
-                            if ord(dns_data[2]) & 0x80:  # standard response
-                                if ord(dns_data[3]) == 0x80:  # recursion available, no error
+                            if ord(dns_data[2:3]) & 0x80:  # standard response
+                                if ord(dns_data[3:4]) == 0x80:  # recursion available, no error
                                     _ = offset + 5
                                     try:
                                         while _ < len(dns_data):
-                                            if ord(dns_data[_]) & 0xc0 != 0 and dns_data[_ + 2] == "\00" and dns_data[_ + 3] == "\x01":  # Type A
+                                            if ord(dns_data[_:_ + 1]) & 0xc0 != 0 and dns_data[_ + 2] == "\00" and dns_data[_ + 3] == "\x01":  # Type A
                                                 break
                                             else:
                                                 _ += 12 + struct.unpack("!H", dns_data[_ + 10: _ + 12])[0]
@@ -639,7 +639,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     except IndexError:
                                         pass
 
-                                elif ord(dns_data[3]) == 0x83:  # recursion available, no such name
+                                elif ord(dns_data[3:4]) == 0x83:  # recursion available, no such name
                                     if '.'.join(parts[-2:]) not in _dns_exhausted_domains and not _check_domain_whitelisted(query) and not _check_domain_member(query, trails):
                                         if parts[-1].isdigit():
                                             return

@@ -7,12 +7,15 @@ See the file 'LICENSE' for copying permission
 
 import sys
 
+from thirdparty import six
+
 class _(type):
    def __getattr__(self, attr):
      return attr
 
+@six.add_metaclass(_)
 class TRAIL(object):
-   __metaclass__ = _
+    pass
 
 if sys.version_info >= (3, 0):
     class BLOCK_MARKER:
