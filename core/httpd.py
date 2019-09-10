@@ -20,7 +20,6 @@ import subprocess
 import threading
 import time
 import traceback
-import urllib
 
 from core.addr import addr_to_int
 from core.addr import int_to_addr
@@ -48,6 +47,7 @@ from core.settings import SESSION_EXPIRATION_HOURS
 from core.settings import SESSION_ID_LENGTH
 from core.settings import SESSIONS
 from core.settings import UNAUTHORIZED_SLEEP_TIME
+from core.settings import UNICODE_ENCODING
 from core.settings import VERSION
 from thirdparty import six
 from thirdparty.six.moves import BaseHTTPServer as _BaseHTTPServer
@@ -173,16 +173,19 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 else:
                     self.send_response(_http_client.NOT_FOUND)
                     self.send_header(HTTP_HEADER.CONNECTION, "close")
-                    content = '<!DOCTYPE html><html lang="en"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL %s was not found on this server.</p></body></html>' % self.path.split('?')[0]
+                    content = b'<!DOCTYPE html><html lang="en"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL %s was not found on this server.</p></body></html>' % self.path.split('?')[0]
 
             if content is not None:
-                for match in re.finditer(r"<\!(\w+)\!>", content):
+                if isinstance(content, six.text_type):
+                    content = content.encode(UNICODE_ENCODING)
+
+                for match in re.finditer(b"<\!(\w+)\!>", content):
                     name = match.group(1)
                     _ = getattr(self, "_%s" % name.lower(), None)
                     if _:
                         content = self._format(content, **{ name: _() })
 
-                if "gzip" in self.headers.getheader(HTTP_HEADER.ACCEPT_ENCODING, ""):
+                if "gzip" in self.headers.get(HTTP_HEADER.ACCEPT_ENCODING):
                     self.send_header(HTTP_HEADER.CONTENT_ENCODING, "gzip")
                     _ = six.BytesIO()
                     compress = gzip.GzipFile("", "w+b", 9, _)
@@ -200,12 +203,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 self.wfile.write(content)
 
             self.wfile.flush()
-            self.wfile.close()
 
         def do_POST(self):
-            length = self.headers.getheader(HTTP_HEADER.CONTENT_LENGTH)
-            data = self.rfile.read(int(length))
-            data = urllib.unquote_plus(data)
+            length = self.headers.get(HTTP_HEADER.CONTENT_LENGTH)
+            data = self.rfile.read(int(length)).decode(UNICODE_ENCODING)
+            data = _urllib.parse.unquote_plus(data)
             self.data = data
             self.do_GET()
 
@@ -279,7 +281,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         username, stored_hash, uid, netfilter = entry.split(':')
                         if username == params.get("username"):
                             try:
-                                if params.get("hash") == hashlib.sha256(stored_hash.strip() + params.get("nonce")).hexdigest():
+                                if params.get("hash") == hashlib.sha256((stored_hash.strip() + params.get("nonce")).encode(UNICODE_ENCODING)).hexdigest():
                                     valid = True
                                     break
                             except:
@@ -287,7 +289,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                     traceback.print_exc()
 
             if valid:
-                session_id = os.urandom(SESSION_ID_LENGTH).encode("hex")
+                _ = os.urandom(SESSION_ID_LENGTH)
+                session_id = _.hex() if hasattr(_, "hex") else _.encode("hex")
                 expiration = time.time() + 3600 * SESSION_EXPIRATION_HOURS
 
                 self.send_response(_http_client.OK)
@@ -601,10 +604,10 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         with open(filepath, "rb") as f:
                             content = f.read(io.DEFAULT_BUFFER_SIZE)
                             if size >= io.DEFAULT_BUFFER_SIZE:
-                                total = 1.0 * content.count('\n') * size / io.DEFAULT_BUFFER_SIZE
+                                total = 1.0 * content.count(b'\n') * size / io.DEFAULT_BUFFER_SIZE
                                 counts[timestamp] = int(round(total / 100) * 100)
                             else:
-                                counts[timestamp] = content.count('\n')
+                                counts[timestamp] = content.count(b'\n')
 
             return json.dumps(counts)
 
