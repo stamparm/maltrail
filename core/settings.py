@@ -22,9 +22,8 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.13.84"
+VERSION = "0.13.85"
 PLATFORM = os.name
-PYVERSION = sys.version.split()[0]
 IS_WIN = PLATFORM == "nt"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"

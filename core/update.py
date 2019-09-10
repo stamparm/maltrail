@@ -221,7 +221,7 @@ def update_trails(force=False, offline=False):
                                     address += 1
 
             # basic cleanup
-            for key in trails.keys():
+            for key in list(trails.keys()):
                 if key not in trails:
                     continue
                 if config.DISABLED_TRAILS_INFO_REGEX:
@@ -230,7 +230,8 @@ def update_trails(force=False, offline=False):
                         continue
 
                 try:
-                    _key = key.decode("utf8").encode("idna")
+                    _key = key.decode(UNICODE_ENCODING) if isinstance(key, bytes) else key
+                    _key = _key.encode("idna")
                     if _key != key:  # for domains with non-ASCII letters (e.g. phishing)
                         trails[_key] = trails[key]
                         del trails[key]
@@ -278,17 +279,17 @@ def update_trails(force=False, offline=False):
 
             read_whitelist()
 
-            for key in trails.keys():
+            for key in list(trails.keys()):
                 if check_whitelisted(key) or any(key.startswith(_) for _ in BAD_TRAIL_PREFIXES):
                     del trails[key]
                 elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key) and (bogon_ip(key) or cdn_ip(key)):
                     del trails[key]
                 else:
                     try:
-                        key.decode("utf8")
-                        trails[key][0].decode("utf8")
-                        trails[key][1].decode("utf8")
-                    except UnicodeDecodeError:
+                        key.decode("utf8") if hasattr(key, "decode") else key.encode("utf8")
+                        trails[key][0].decode("utf8") if hasattr(trails[key][0], "decode") else trails[key][0].encode("utf8")
+                        trails[key][1].decode("utf8") if hasattr(trails[key][1], "decode") else trails[key][1].encode("utf8")
+                    except UnicodeError:
                         del trails[key]
 
             try:

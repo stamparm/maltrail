@@ -9,10 +9,10 @@ import gzip
 import os
 import re
 import tempfile
-import urllib2
 
 from core.settings import NAME
 from core.settings import TIMEOUT
+from thirdparty.six.moves import urllib as _urllib
 
 __url__ = "https://osint.bambenekconsulting.com/feeds/dga-feed.txt"
 __check__ = "Domain used by"
@@ -22,8 +22,8 @@ def _open():
     retval = None
 
     try:
-        req = urllib2.Request(__url__, None, {"User-agent": NAME, "Accept-encoding": "gzip"})
-        resp = urllib2.urlopen(req, timeout=TIMEOUT)
+        req = _urllib.request.Request(__url__, None, {"User-agent": NAME, "Accept-encoding": "gzip"})
+        resp = _urllib.request.urlopen(req, timeout=TIMEOUT)
         handle, filename = tempfile.mkstemp()
 
         bsize = 1024 * 1024

@@ -28,6 +28,7 @@ from core.settings import IPCAT_SQLITE_FILE
 from core.settings import IS_WIN
 from core.settings import STATIC_IPCAT_LOOKUPS
 from core.settings import TIMEOUT
+from core.settings import UNICODE_ENCODING
 from core.settings import WHITELIST
 from core.settings import WHITELIST_RANGES
 from core.settings import WORST_ASNS
@@ -59,7 +60,7 @@ def retrieve_content(url, data=None, headers=None):
         if url.startswith("https://") and "handshake failure" in retval:
             return retrieve_content(url.replace("https://", "http://"), data, headers)
 
-    return retval or ""
+    return (retval or b"").decode(UNICODE_ENCODING, errors="replace")
 
 def ipcat_lookup(address):
     if not address:
