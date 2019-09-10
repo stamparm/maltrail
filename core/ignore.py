@@ -4,6 +4,7 @@
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
+from __future__ import print_function
 
 # simple ignore rule mechanism configured by file 'misc/ignore_event.txt' and/or user defined `USER_IGNORELIST`
 

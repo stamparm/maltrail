@@ -72,7 +72,7 @@ def worker(buffer, n, offset, mod, process_packet):
 
     update_timer()
 
-    count = 0L
+    count = 0
     while True:
         try:
             if (count % mod) == offset:

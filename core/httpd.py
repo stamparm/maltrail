@@ -4,6 +4,7 @@
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
+from __future__ import print_function
 
 import BaseHTTPServer
 import cStringIO
@@ -425,7 +426,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         range_handle = open(event_log_path, "rb")
                         log_exists = True
                 except ValueError:
-                    print "[!] invalid date format in request"
+                    print("[!] invalid date format in request")
                     log_exists = False
             else:
                 logs_data = ""
@@ -444,7 +445,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     range_handle = io.BytesIO(logs_data)
                     log_exists = True
                 except ValueError:
-                    print "[!] invalid date format in request"
+                    print("[!] invalid date format in request")
                     log_exists = False
 
             if log_exists:
@@ -486,7 +487,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 elif '\.' in netfilter:
                                     regex = r"\b(%s)\b" % netfilter
                                 else:
-                                    print "[!] invalid network filter '%s'" % netfilter
+                                    print("[!] invalid network filter '%s'" % netfilter)
                                     return
 
                             for line in session.range_handle:
@@ -641,9 +642,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         else:
             raise
 
-    print "[i] starting HTTP%s server at 'http%s://%s:%d/'" % ('S' if pem else "", 's' if pem else "", server.server_address[0], server.server_address[1])
+    print("[i] starting HTTP%s server at 'http%s://%s:%d/'" % ('S' if pem else "", 's' if pem else "", server.server_address[0], server.server_address[1]))
 
-    print "[o] running..."
+    print("[o] running...")
 
     if join:
         server.serve_forever()

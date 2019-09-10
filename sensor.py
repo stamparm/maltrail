@@ -827,7 +827,7 @@ def init():
                     if name == "plugin" and not set(inspect.getargspec(function).args) & set(("event_tuple', 'packet")):
                         found = True
                         config.plugin_functions.append(function)
-                        function.func_name = module.__name__
+                        function.__name__ = module.__name__
 
                 if not found:
                     exit("[!] missing function 'plugin(event_tuple, packet)' in plugin script '%s'" % filename)
@@ -990,7 +990,7 @@ def monitor():
             while True:
                 success = False
                 try:
-                    (header, packet) = _cap.next()
+                    (header, packet) = _cap.next
                     if header is not None:
                         success = True
                         packet_handler(datalink, header, packet)

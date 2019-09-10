@@ -4,6 +4,7 @@
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
+from __future__ import print_function
 
 import os
 import re
@@ -39,7 +40,7 @@ def create_log_directory():
     if not os.path.isdir(config.LOG_DIR):
         if not config.DISABLE_CHECK_SUDO and check_sudo() is False:
             exit("[!] please rerun with sudo/Administrator privileges")
-        os.makedirs(config.LOG_DIR, 0755)
+        os.makedirs(config.LOG_DIR, 0o755)
     print("[i] using '%s' for log storage" % config.LOG_DIR)
 
 def get_event_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY, reuse=True):
@@ -237,7 +238,7 @@ def start_logd(address=None, port=None, join=False):
 
     server = ThreadingUDPServer(_address, UDPHandler)
 
-    print "[i] running UDP server at '%s:%d'" % (server.server_address[0], server.server_address[1])
+    print("[i] running UDP server at '%s:%d'" % (server.server_address[0], server.server_address[1]))
 
     if join:
         server.serve_forever()
