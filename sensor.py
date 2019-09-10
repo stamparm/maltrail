@@ -28,7 +28,6 @@ import threading
 import time
 import traceback
 import urllib
-import urlparse
 
 from core.addr import inet_ntoa6
 from core.attribdict import AttribDict
@@ -57,6 +56,7 @@ from core.settings import DNS_EXHAUSTION_THRESHOLD
 from core.settings import HTTP_TIME_FORMAT
 from core.settings import IGNORE_DNS_QUERY_SUFFIXES
 from core.settings import IPPROTO_LUT
+from core.settings import IS_WIN
 from core.settings import LOCALHOST_IP
 from core.settings import MMAP_ZFILL_CHUNK_LENGTH
 from core.settings import MAX_RESULT_CACHE_ENTRIES
@@ -89,6 +89,7 @@ from core.settings import WHITELIST_HTTP_REQUEST_PATHS
 from core.settings import WHITELIST_UA_KEYWORDS
 from core.update import update_ipcat
 from core.update import update_trails
+from thirdparty.six.moves import urllib as _urllib
 
 _buffer = None
 _caps = []
@@ -114,7 +115,7 @@ _dns_exhausted_domains = set()
 try:
     import pcapy
 except ImportError:
-    if subprocess.mswindows:
+    if IS_WIN:
         exit("[!] please install 'WinPcap' (e.g. 'http://www.winpcap.org/install/') and Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy')")
     else:
         msg, _ = "[!] please install 'Pcapy'", platform.linux_distribution()[0].lower()
@@ -500,7 +501,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                         return
 
                             if '.' in path:
-                                _ = urlparse.urlparse("http://%s" % url)  # dummy scheme
+                                _ = _urllib.parse.urlparse("http://%s" % url)  # dummy scheme
                                 path = path.lower()
                                 filename = _.path.split('/')[-1]
                                 name, extension = os.path.splitext(filename)
@@ -839,7 +840,7 @@ def init():
         interfaces = set(_.strip() for _ in config.MONITOR_INTERFACE.split(','))
 
         if (config.MONITOR_INTERFACE or "").lower() == "any":
-            if subprocess.mswindows or "any" not in pcapy.findalldevs():
+            if IS_WIN or "any" not in pcapy.findalldevs():
                 print("[x] virtual interface 'any' missing. Replacing it with all interface names")
                 interfaces = pcapy.findalldevs()
             else:
@@ -878,7 +879,7 @@ def init():
     if _multiprocessing:
         _init_multiprocessing()
 
-    if not subprocess.mswindows and not config.DISABLE_CPU_AFFINITY:
+    if not IS_WIN and not config.DISABLE_CPU_AFFINITY:
         try:
             try:
                 mod = int(subprocess.check_output("grep -c ^processor /proc/cpuinfo", stderr=subprocess.STDOUT, shell=True).strip())

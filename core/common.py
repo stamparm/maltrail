@@ -8,12 +8,11 @@ from __future__ import print_function
 
 import csv
 import gzip
+import io
 import os
 import re
 import sqlite3
-import StringIO
 import subprocess
-import urllib2
 import zipfile
 import zlib
 
@@ -25,12 +24,14 @@ from core.settings import CHECK_CONNECTION_URL
 from core.settings import CDN_RANGES
 from core.settings import NAME
 from core.settings import IPCAT_SQLITE_FILE
+from core.settings import IS_WIN
 from core.settings import STATIC_IPCAT_LOOKUPS
 from core.settings import TIMEOUT
 from core.settings import WHITELIST
 from core.settings import WHITELIST_RANGES
 from core.settings import WORST_ASNS
 from core.trailsdict import TrailsDict
+from thirdparty.six.moves import urllib as _urllib
 
 _ipcat_cache = {}
 
@@ -40,16 +41,16 @@ def retrieve_content(url, data=None, headers=None):
     """
 
     try:
-        req = urllib2.Request("".join(url[i].replace(' ', "%20") if i > url.find('?') else url[i] for i in xrange(len(url))), data, headers or {"User-agent": NAME, "Accept-encoding": "gzip, deflate"})
-        resp = urllib2.urlopen(req, timeout=TIMEOUT)
+        req = _urllib.request.Request("".join(url[i].replace(' ', "%20") if i > url.find('?') else url[i] for i in xrange(len(url))), data, headers or {"User-agent": NAME, "Accept-encoding": "gzip, deflate"})
+        resp = _urllib.request.urlopen(req, timeout=TIMEOUT)
         retval = resp.read()
         encoding = resp.headers.get("Content-Encoding")
 
         if encoding:
             if encoding.lower() == "deflate":
-                data = StringIO.StringIO(zlib.decompress(retval, -15))
+                data = io.BytesIO(zlib.decompress(retval, -15))
             elif encoding.lower() == "gzip":
-                data = gzip.GzipFile("", "rb", 9, StringIO.StringIO(retval))
+                data = gzip.GzipFile("", "rb", 9, io.BytesIO(retval))
             retval = data.read()
     except Exception as ex:
         retval = ex.read() if hasattr(ex, "read") else getattr(ex, "msg", str())
@@ -145,7 +146,7 @@ def check_sudo():
 
     check = None
 
-    if not subprocess.mswindows:
+    if not IS_WIN:
         if getattr(os, "geteuid"):
             check = os.geteuid() == 0
     else:

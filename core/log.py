@@ -10,7 +10,6 @@ import os
 import re
 import signal
 import socket
-import SocketServer
 import sys
 import threading
 import time
@@ -28,8 +27,10 @@ from core.settings import DEFAULT_EVENT_LOG_PERMISSIONS
 from core.settings import HOSTNAME
 from core.settings import NAME
 from core.settings import TIME_FORMAT
+from core.settings import UNICODE_ENCODING
 from core.settings import VERSION
 from core.ignore import ignore_event
+from thirdparty.six.moves import socketserver as _socketserver
 
 _condensed_events = {}
 _condensing_thread = None
@@ -76,7 +77,7 @@ def get_event_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY, reus
 
 def get_error_log_handle(flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
     if not hasattr(_thread_data, "error_log_handle"):
-        _ = os.path.join(config.LOG_DIR, "error.log")
+        _ = os.path.join(config.get("LOG_DIR") or os.curdir, "error.log")
         if not os.path.exists(_):
             open(_, "w+").close()
             os.chmod(_, DEFAULT_ERROR_LOG_PERMISSIONS)
@@ -201,16 +202,16 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
 def log_error(msg):
     try:
         handle = get_error_log_handle()
-        os.write(handle, "%s %s\n" % (time.strftime(TIME_FORMAT, time.localtime()), msg))
+        os.write(handle, ("%s %s\n" % (time.strftime(TIME_FORMAT, time.localtime()), msg)).encode(UNICODE_ENCODING))
     except (OSError, IOError):
         if config.SHOW_DEBUG:
             traceback.print_exc()
 
 def start_logd(address=None, port=None, join=False):
-    class ThreadingUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
+    class ThreadingUDPServer(_socketserver.ThreadingMixIn, _socketserver.UDPServer):
         pass
 
-    class UDPHandler(SocketServer.BaseRequestHandler):
+    class UDPHandler(_socketserver.BaseRequestHandler):
         def handle(self):
             try:
                 data, _ = self.request
@@ -226,7 +227,7 @@ def start_logd(address=None, port=None, join=False):
     if ':' in (address or ""):
         address = address.strip("[]")
 
-        SocketServer.UDPServer.address_family = socket.AF_INET6
+        _socketserver.UDPServer.address_family = socket.AF_INET6
 
         # Reference: https://github.com/squeaky-pl/zenchmarks/blob/master/vendor/twisted/internet/tcp.py
         _AI_NUMERICSERV = getattr(socket, "AI_NUMERICSERV", 0)

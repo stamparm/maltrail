@@ -31,6 +31,7 @@ from core.settings import config
 from core.settings import read_config
 from core.settings import CHECK_CONNECTION_MAX_RETRIES
 from core.settings import CONFIG_FILE
+from core.settings import IS_WIN
 from core.settings import NAME
 from core.settings import VERSION
 from core.update import update_ipcat
@@ -50,7 +51,7 @@ def main():
         try:
             import OpenSSL
         except ImportError:
-            if subprocess.mswindows:
+            if IS_WIN:
                 exit("[!] please install 'pyopenssl' (e.g. 'pip install pyopenssl')")
             else:
                 msg, _ = "[!] please install 'pyopenssl'", platform.linux_distribution()[0].lower()

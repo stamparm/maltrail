@@ -14,19 +14,23 @@ import string
 import subprocess
 import sys
 import urllib
-import urllib2
 
 from core.addr import addr_to_int
 from core.addr import make_mask
 from core.attribdict import AttribDict
 from core.trailsdict import TrailsDict
+from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.13.79"
+VERSION = "0.13.80"
+PLATFORM = os.name
+PYVERSION = sys.version.split()[0]
+IS_WIN = PLATFORM == "nt"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
 TIMEOUT = 30
+UNICODE_ENCODING = "utf8"
 FRESH_IPCAT_DELTA_DAYS = 10
 USERS_DIR = os.path.join(os.path.expanduser("~"), ".%s" % NAME.lower())
 DEFAULT_TRAILS_FILE = os.path.join(USERS_DIR, "trails.csv")
@@ -58,7 +62,7 @@ PING_RESPONSE = "pong"
 MAX_NOFILE = 65000
 CAPTURE_TIMEOUT = 100  # ms
 CONFIG_FILE = os.path.join(ROOT_DIR, "maltrail.conf")
-SYSTEM_LOG_DIR = "/var/log" if not subprocess.mswindows else "C:\\Windows\\Logs"
+SYSTEM_LOG_DIR = "/var/log" if not IS_WIN else "C:\\Windows\\Logs"
 DEFAULT_EVENT_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IROTH
 DEFAULT_ERROR_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IWGRP | stat.S_IROTH | stat.S_IWOTH
 HOSTNAME = socket.gethostname()
@@ -74,7 +78,7 @@ CONSONANTS = "bcdfghjklmnpqrstvwxyz"
 BAD_TRAIL_PREFIXES = ("127.", "192.168.", "localhost")
 LOCALHOST_IP = { 4: "127.0.0.1", 6: "::1" }
 IGNORE_DNS_QUERY_SUFFIXES = set(("arpa", "local", "guest", "intranet", "int"))
-VALID_DNS_CHARS = string.letters + string.digits + '-' + '.'  # Reference: http://stackoverflow.com/a/3523068
+VALID_DNS_CHARS = string.ascii_letters + string.digits + '-' + '.'  # Reference: http://stackoverflow.com/a/3523068
 SUSPICIOUS_CONTENT_TYPES = ("application/vnd.ms-htmlhelp", "application/x-bsh", "application/x-chm", "application/x-sh", "application/x-shellscript", "application/hta", "text/x-scriptlet", "text/x-sh", "text/x-shellscript")
 SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".chm", ".egg", ".exe", ".hta", ".hwp", ".pac", ".ps1", ".scr", ".sct"))
 WHITELIST_DIRECT_DOWNLOAD_KEYWORDS = ("cgi", "/scripts/", "/_vti_bin/", "/bin/", "/pub/softpaq/", "/bios/", "/pc-axis/")
@@ -98,7 +102,7 @@ SUSPICIOUS_HTTP_PATH_REGEXES = (
 )
 SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION = ("?", "..", ".ht", "=", " ", "'")
 SUSPICIOUS_PROXY_PROBE_PRE_CONDITION = ("probe", "proxy", "echo", "check")
-SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, urllib.quote(_)) for _ in "( )\r\n")
+SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, _urllib.parse.quote(_)) for _ in "( )\r\n")
 SUSPICIOUS_UA_REGEX = ""
 OBSOLETE_UA_REGEX = r"(?i)windows NT [3-5]\.\d+|windows (3\.\d+|95|98|xp)|MSIE [1-6]\.\d+|Navigator/|Safari/[1-4]|Opera/[1-3]|Firefox/1?[0-9]\."
 WEB_SHELLS = set()
@@ -143,7 +147,7 @@ def _get_total_physmem():
     retval = None
 
     try:
-        if subprocess.mswindows:
+        if IS_WIN:
             import ctypes
 
             kernel32 = ctypes.windll.kernel32
@@ -228,7 +232,7 @@ def read_config(config_file):
 
     try:
         array = None
-        content = open(config_file, "rb").read()
+        content = open(config_file, "r").read()
 
         for line in content.split("\n"):
             line = line.strip('\r')
@@ -326,7 +330,7 @@ def read_config(config_file):
     if not str(config.HTTP_PORT or "").isdigit():
         exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % config.HTTP_PORT)
 
-    if config.PROCESS_COUNT and subprocess.mswindows:
+    if config.PROCESS_COUNT and IS_WIN:
         print("[x] multiprocessing is currently not supported on Windows OS")
         config.PROCESS_COUNT = 1
 
@@ -350,13 +354,16 @@ def read_config(config_file):
 
     if config.PROXY_ADDRESS:
         PROXIES.update({"http": config.PROXY_ADDRESS, "https": config.PROXY_ADDRESS})
-        opener = urllib2.build_opener(urllib2.ProxyHandler(PROXIES))
-        urllib2.install_opener(opener)
+        opener = _urllib.request.build_opener(_urllib.request.ProxyHandler(PROXIES))
+        _urllib.request.install_opener(opener)
 
     if not config.TRAILS_FILE:
         config.TRAILS_FILE = DEFAULT_TRAILS_FILE
     else:
         config.TRAILS_FILE = os.path.abspath(os.path.expanduser(config.TRAILS_FILE))
+
+    if int(os.environ.get("MALTRAIL_DREI", 0)) > 0:
+        config.SHOW_DEBUG = True
 
 def read_whitelist():
     WHITELIST.clear()

@@ -15,7 +15,6 @@ import sqlite3
 import subprocess
 import sys
 import time
-import urllib2
 
 sys.dont_write_bytecode = True
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))  # to enable calling from current directory too
@@ -39,8 +38,10 @@ from core.settings import HIGH_PRIORITY_REFERENCES
 from core.settings import IPCAT_CSV_FILE
 from core.settings import IPCAT_SQLITE_FILE
 from core.settings import IPCAT_URL
+from core.settings import IS_WIN
 from core.settings import ROOT_DIR
 from core.settings import USERS_DIR
+from thirdparty.six.moves import urllib as _urllib
 
 # patch for self-signed certificates (e.g. CUSTOM_TRAILS_URL)
 try:
@@ -50,7 +51,7 @@ except (ImportError, AttributeError):
     pass
 
 def _chown(filepath):
-    if not subprocess.mswindows and os.path.exists(filepath):
+    if not IS_WIN and os.path.exists(filepath):
         try:
             os.chown(filepath, int(os.environ.get("SUDO_UID", -1)), int(os.environ.get("SUDO_GID", -1)))
         except Exception as ex:
@@ -321,7 +322,7 @@ def update_ipcat(force=False):
 
         try:
             with file(IPCAT_CSV_FILE, "w+b") as f:
-                f.write(urllib2.urlopen(IPCAT_URL).read())
+                f.write(_urllib.request.urlopen(IPCAT_URL).read())
         except Exception as ex:
             print("[x] something went wrong during retrieval of '%s' ('%s')" % (IPCAT_URL, ex))
 

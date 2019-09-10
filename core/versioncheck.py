@@ -5,9 +5,10 @@ Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrai
 See the file 'LICENSE' for copying permission
 """
 
+import os
 import sys
 
 PYVERSION = sys.version.split()[0]
 
-if PYVERSION >= "3" or PYVERSION < "2.6":
+if (PYVERSION >= "3" or PYVERSION < "2.6") and not int(os.environ.get("MALTRAIL_DREI", 0)):
     exit("[CRITICAL] incompatible Python version detected ('%s'). For successfully running Maltrail you'll have to use version 2.6 or 2.7 (visit 'http://www.python.org/download/')" % PYVERSION)
