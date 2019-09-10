@@ -2733,3 +2733,22 @@ nsupdate.info
 # Reference: https://www.virustotal.com/gui/domain/anondns.net/relations
 
 anondns.net
+
+# Reference: https://xtgem.com/register
+
+xtgem.com
+wap.sh
+hexat.com
+madpath.com
+wapath.com
+wapgem.com
+wapdale.com
+jw.lt
+mw.lt
+yn.lt
+wapsite.me
+uiwap.com
+waphall.com
+mobie.in
+mywibes.com
+wapamp.com
