@@ -827,7 +827,7 @@ def init():
                     if name == "plugin" and not set(inspect.getargspec(function).args) & set(("event_tuple', 'packet")):
                         found = True
                         config.plugin_functions.append(function)
-                        function.func_name = module.__name__
+                        function.__name__ = module.__name__
 
                 if not found:
                     exit("[!] missing function 'plugin(event_tuple, packet)' in plugin script '%s'" % filename)

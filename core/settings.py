@@ -4,6 +4,7 @@
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
+from __future__ import print_function
 
 import os
 import re
@@ -209,7 +210,7 @@ def _get_total_physmem():
     return retval
 
 def check_memory():
-    print "[?] at least %dMB of free memory required" % (CHECK_MEMORY_SIZE / 1024 / 1024)
+    print("[?] at least %dMB of free memory required" % (CHECK_MEMORY_SIZE / 1024 / 1024))
     try:
         _ = '0' * CHECK_MEMORY_SIZE
     except MemoryError:
@@ -221,7 +222,7 @@ def read_config(config_file):
     if not os.path.isfile(config_file):
         exit("[!] missing configuration file '%s'" % config_file)
     else:
-        print "[i] using configuration file '%s'" % config_file
+        print("[i] using configuration file '%s'" % config_file)
 
     config.clear()
 
@@ -326,7 +327,7 @@ def read_config(config_file):
         exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % config.HTTP_PORT)
 
     if config.PROCESS_COUNT and subprocess.mswindows:
-        print "[x] multiprocessing is currently not supported on Windows OS"
+        print("[x] multiprocessing is currently not supported on Windows OS")
         config.PROCESS_COUNT = 1
 
     if config.CAPTURE_BUFFER:

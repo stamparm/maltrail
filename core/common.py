@@ -4,6 +4,7 @@
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
+from __future__ import print_function
 
 import csv
 import gzip
@@ -50,7 +51,7 @@ def retrieve_content(url, data=None, headers=None):
             elif encoding.lower() == "gzip":
                 data = gzip.GzipFile("", "rb", 9, StringIO.StringIO(retval))
             retval = data.read()
-    except Exception, ex:
+    except Exception as ex:
         retval = ex.read() if hasattr(ex, "read") else getattr(ex, "msg", str())
 
         if url.startswith("https://") and "handshake failure" in retval:
@@ -224,7 +225,7 @@ def check_whitelisted(trail):
 
 def load_trails(quiet=False):
     if not quiet:
-        print "[i] loading trails..."
+        print("[i] loading trails...")
 
     retval = TrailsDict()
 
@@ -238,7 +239,7 @@ def load_trails(quiet=False):
                         if not check_whitelisted(trail):
                             retval[trail] = (info, reference)
 
-        except Exception, ex:
+        except Exception as ex:
             exit("[!] something went wrong during trails file read '%s' ('%s')" % (config.TRAILS_FILE, ex))
 
     if not quiet:
@@ -247,6 +248,6 @@ def load_trails(quiet=False):
             _ = '{0:,}'.format(_)
         except:
             pass
-        print "[i] %s trails loaded" % _
+        print("[i] %s trails loaded" % _)
 
     return retval
