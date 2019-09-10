@@ -2021,3 +2021,12 @@ thelimitlessmind.asia
 urbansquares.com
 weightloss4tmz.com
 welcometomydiabeticlife.com
+
+
+# Reference: https://www.microsoft.com/security/blog/2017/06/22/understanding-the-true-size-of-fireball/?source=mmpc
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Win32%2FGhokswa
+# Reference: https://www.virustotal.com/gui/domain/xa.firefox1.com/relations
+# Reference: https://malaysia.norton.com/online-threats/trojan.fireball-2017-060502-2214-99-writeup.html
+
+dmv9o2kt858uv.cloudfront.net
+firefox1.com
