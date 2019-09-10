@@ -12,6 +12,7 @@ import tempfile
 
 from core.settings import NAME
 from core.settings import TIMEOUT
+from core.settings import UNICODE_ENCODING
 from thirdparty.six.moves import urllib as _urllib
 
 __url__ = "https://osint.bambenekconsulting.com/feeds/dga-feed.txt"
@@ -51,7 +52,7 @@ def fetch():
     if handle:
         try:
             while True:
-                line = handle.readline()
+                line = handle.readline().decode(UNICODE_ENCODING)
                 if not line:
                     break
                 match = re.search(r"\A([^,\s]+),Domain used by ([^ ]+)", line)
