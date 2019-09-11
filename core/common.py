@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
@@ -12,7 +12,6 @@ import io
 import os
 import re
 import sqlite3
-import subprocess
 import zipfile
 import zlib
 
@@ -258,5 +257,34 @@ def load_trails(quiet=False):
         except:
             pass
         print("[i] %s trails loaded" % _)
+
+    return retval
+
+def get_text(value):
+    retval = value
+
+    if six.PY2:
+        try:
+            retval = str(retval)
+        except:
+            pass
+    else:
+        if isinstance(value, six.binary_type):
+            retval = value.decode(UNICODE_ENCODING, errors="replace")
+
+    return retval
+
+def get_ex_message(ex):
+    retval = None
+
+    if getattr(ex, "message", None):
+        retval = ex.message
+    elif getattr(ex, "msg", None):
+        retval = ex.msg
+    elif getattr(ex, "args", None):
+        for candidate in ex.args[::-1]:
+            if isinstance(candidate, six.string_types):
+                retval = candidate
+                break
 
     return retval

@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
@@ -27,13 +27,14 @@ import sys
 import threading
 import time
 import traceback
-import urllib
 
 from core.addr import inet_ntoa6
 from core.attribdict import AttribDict
 from core.common import check_connection
 from core.common import check_sudo
 from core.common import check_whitelisted
+from core.common import get_ex_message
+from core.common import get_text
 from core.common import load_trails
 from core.compat import xrange
 from core.enums import BLOCK_MARKER
@@ -80,7 +81,6 @@ from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
 from core.settings import SUSPICIOUS_PROXY_PROBE_PRE_CONDITION
 from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
-from core.settings import UNICODE_ENCODING
 from core.settings import VALID_DNS_CHARS
 from core.settings import VERSION
 from core.settings import WEB_SHELLS
@@ -121,11 +121,14 @@ except ImportError:
     if IS_WIN:
         exit("[!] please install 'WinPcap' (e.g. 'http://www.winpcap.org/install/') and Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy')")
     else:
-        msg, _ = "[!] please install 'Pcapy'", platform.linux_distribution()[0].lower()
-        for distro, install in {("fedora", "centos"): "sudo yum install pcapy", ("debian", "ubuntu"): "sudo apt-get install python-pcapy"}.items():
-            if _ in distro:
-                msg += " (e.g. '%s')" % install
-                break
+        msg = "[!] please install 'Pcapy'"
+
+        for distros, install in {("fedora", "centos"): "sudo yum install pcapy", ("debian", "ubuntu"): "sudo apt-get install python-pcapy"}.items():
+            for distro in distros:
+                if distro in (platform.uname()[3] or "").lower():
+                    msg += " (e.g. '%s')" % install
+                    break
+
         exit(msg)
 
 def _check_domain_member(query, domains):
@@ -318,7 +321,7 @@ def _process_packet(packet, sec, usec, ip_offset):
             else:
                 tcph_length = doff_reserved >> 4
                 h_size = iph_length + (tcph_length << 2)
-                tcp_data = ip_data[h_size:]
+                tcp_data = get_text(ip_data[h_size:])
 
                 if tcp_data.startswith("HTTP/"):
                     if any(_ in tcp_data[:tcp_data.find("\r\n\r\n")] for _ in ("X-Sinkhole:", "X-Malware-Sinkhole:", "Server: You got served", "Server: Apache 1.0/SinkSoft", "sinkdns.org")) or "\r\n\r\nsinkhole" in tcp_data:
@@ -413,7 +416,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             last_index = tcp_data.find("\r\n", first_index)
                             if last_index >= 0:
                                 user_agent = tcp_data[first_index:last_index]
-                                user_agent = urllib.unquote(user_agent).strip()
+                                user_agent = _urllib.parse.unquote(user_agent).strip()
 
                         if user_agent:
                             result = _result_cache.get(user_agent)
@@ -468,8 +471,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                             return
 
                         if config.USE_HEURISTICS:
-                            unquoted_path = urllib.unquote(path)
-                            unquoted_post_data = urllib.unquote(post_data or "")
+                            unquoted_path = _urllib.parse.unquote(path)
+                            unquoted_post_data = _urllib.parse.unquote(post_data or "")
                             for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
                                 replacement = SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS[char]
                                 path = path.replace(char, replacement)
@@ -560,7 +563,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             if not length:
                                 query = query[:-1]
                                 break
-                            query += dns_data[offset + 1:offset + length + 1].decode(UNICODE_ENCODING) + '.'
+                            query += get_text(dns_data[offset + 1:offset + length + 1]) + '.'
                             offset += length + 1
 
                         query = query.lower()
@@ -763,14 +766,17 @@ def init():
 
         _regex = ""
         for trail in trails:
-            if re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, re.I):
-                try:
-                    re.compile(trail)
-                except:
-                    pass
-                else:
-                    if re.escape(trail) != trail:
-                        _regex += "|(?P<g%s>%s)" % (_regex.count("(?P<g"), trail)
+            if "static" in trails[trail][1]:
+                if re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, re.I):
+                    try:
+                        re.compile(trail)
+                    except:
+                        pass
+                    else:
+                        if re.escape(trail) != trail:
+                            index = _regex.count("(?P<g")
+                            if index < 100:  # Reference: https://stackoverflow.com/questions/478458/python-regular-expressions-with-more-than-100-groups
+                                _regex += "|(?P<g%s>%s)" % (index, trail)
 
         trails._regex = _regex.strip('|')
 
@@ -1099,8 +1105,8 @@ if __name__ == "__main__":
     except SystemExit as ex:
         show_final = False
 
-        if isinstance(getattr(ex, "message"), six.string_types):
-            print(ex)
+        if isinstance(get_ex_message(ex), six.string_types):
+            print(get_ex_message(ex))
             os._exit(1)
     except IOError:
         show_final = False

@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
@@ -180,7 +180,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 if isinstance(content, six.text_type):
                     content = content.encode(UNICODE_ENCODING)
 
-                for match in re.finditer(b"<\!(\w+)\!>", content):
+                for match in re.finditer(b"<\\!(\\w+)\\!>", content):
                     name = match.group(1)
                     _ = getattr(self, "_%s" % name.lower(), None)
                     if _:

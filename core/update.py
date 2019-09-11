@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
@@ -13,7 +13,6 @@ import inspect
 import os
 import re
 import sqlite3
-import subprocess
 import sys
 import time
 
@@ -223,6 +222,8 @@ def update_trails(force=False, offline=False):
                                     trails[int_to_addr(address)] = (__info__, __reference__)
                                     address += 1
 
+            print("[i] post-processing trails (this might take a while)...")
+
             # basic cleanup
             for key in list(trails.keys()):
                 if key not in trails:
@@ -329,7 +330,7 @@ def update_ipcat(force=False):
         print("[i] updating ipcat database...")
 
         try:
-            with file(IPCAT_CSV_FILE, "w+b") as f:
+            with open(IPCAT_CSV_FILE, "w+b") as f:
                 f.write(_urllib.request.urlopen(IPCAT_URL).read())
         except Exception as ex:
             print("[x] something went wrong during retrieval of '%s' ('%s')" % (IPCAT_URL, ex))
