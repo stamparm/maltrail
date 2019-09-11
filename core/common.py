@@ -260,3 +260,17 @@ def load_trails(quiet=False):
         print("[i] %s trails loaded" % _)
 
     return retval
+
+def get_text(value):
+    retval = value
+
+    if isinstance(value, six.binary_type):
+        retval = value.decode(UNICODE_ENCODING, errors="replace")
+
+    if six.PY2:
+        try:
+            retval = str(retval)
+        except:
+            pass
+
+    return retval

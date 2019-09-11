@@ -34,6 +34,7 @@ from core.attribdict import AttribDict
 from core.common import check_connection
 from core.common import check_sudo
 from core.common import check_whitelisted
+from core.common import get_text
 from core.common import load_trails
 from core.compat import xrange
 from core.enums import BLOCK_MARKER
@@ -318,7 +319,7 @@ def _process_packet(packet, sec, usec, ip_offset):
             else:
                 tcph_length = doff_reserved >> 4
                 h_size = iph_length + (tcph_length << 2)
-                tcp_data = ip_data[h_size:]
+                tcp_data = get_text(ip_data[h_size:])
 
                 if tcp_data.startswith("HTTP/"):
                     if any(_ in tcp_data[:tcp_data.find("\r\n\r\n")] for _ in ("X-Sinkhole:", "X-Malware-Sinkhole:", "Server: You got served", "Server: Apache 1.0/SinkSoft", "sinkdns.org")) or "\r\n\r\nsinkhole" in tcp_data:
