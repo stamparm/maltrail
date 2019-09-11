@@ -4753,3 +4753,8 @@ unicef-cummunity.com
 # Reference: https://www.virustotal.com/gui/domain/mtcc.me/relations
 
 mtcc.me
+
+# Reference: https://www.fortinet.com/blog/threat-research/zegost-campaign-targets-internal-interests.html
+# Reference: https://www.virustotal.com/gui/domain/heikc.com/relations
+
+heikc.com
