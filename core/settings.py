@@ -13,7 +13,6 @@ import stat
 import string
 import subprocess
 import sys
-import urllib
 
 from core.addr import addr_to_int
 from core.addr import make_mask
@@ -22,7 +21,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.13.91"
+VERSION = "0.13.92"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)

@@ -12,7 +12,6 @@ import io
 import os
 import re
 import sqlite3
-import subprocess
 import zipfile
 import zlib
 

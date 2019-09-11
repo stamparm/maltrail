@@ -16,7 +16,6 @@ import core.versioncheck
 import optparse
 import os
 import platform
-import subprocess
 import threading
 import time
 import traceback
@@ -36,6 +35,7 @@ from core.settings import NAME
 from core.settings import VERSION
 from core.update import update_ipcat
 from core.update import update_trails
+from thirdparty import six
 
 def main():
 
@@ -49,7 +49,7 @@ def main():
 
     if config.USE_SSL:
         try:
-            import OpenSSL
+            __import__("OpenSSL")
         except ImportError:
             if IS_WIN:
                 exit("[!] please install 'pyopenssl' (e.g. 'pip install pyopenssl')")
