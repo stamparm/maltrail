@@ -766,14 +766,17 @@ def init():
 
         _regex = ""
         for trail in trails:
-            if re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, re.I):
-                try:
-                    re.compile(trail)
-                except:
-                    pass
-                else:
-                    if re.escape(trail) != trail:
-                        _regex += "|(?P<g%s>%s)" % (_regex.count("(?P<g"), trail)
+            if "static" in trails[trail][1]:
+                if re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, re.I):
+                    try:
+                        re.compile(trail)
+                    except:
+                        pass
+                    else:
+                        if re.escape(trail) != trail:
+                            index = _regex.count("(?P<g")
+                            if index < 100:  # Reference: https://stackoverflow.com/questions/478458/python-regular-expressions-with-more-than-100-groups
+                                _regex += "|(?P<g%s>%s)" % (index, trail)
 
         trails._regex = _regex.strip('|')
 
