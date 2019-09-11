@@ -1109,3 +1109,7 @@ YTDDOS
 # Reference: https://twitter.com/UrBogan/status/1170583647742656514
 
 DEMONS
+
+# Reference: https://twitter.com/tkanalyst/status/1171572121648033792
+
+Mozilla/4.0 (compatible; MSIE6.0b; Windows NT 5.1)
