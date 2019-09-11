@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
@@ -27,7 +27,6 @@ import sys
 import threading
 import time
 import traceback
-import urllib
 
 from core.addr import inet_ntoa6
 from core.attribdict import AttribDict
@@ -81,7 +80,6 @@ from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
 from core.settings import SUSPICIOUS_PROXY_PROBE_PRE_CONDITION
 from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
-from core.settings import UNICODE_ENCODING
 from core.settings import VALID_DNS_CHARS
 from core.settings import VERSION
 from core.settings import WEB_SHELLS
@@ -414,7 +412,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             last_index = tcp_data.find("\r\n", first_index)
                             if last_index >= 0:
                                 user_agent = tcp_data[first_index:last_index]
-                                user_agent = urllib.unquote(user_agent).strip()
+                                user_agent = _urllib.parse.unquote(user_agent).strip()
 
                         if user_agent:
                             result = _result_cache.get(user_agent)
@@ -469,8 +467,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                             return
 
                         if config.USE_HEURISTICS:
-                            unquoted_path = urllib.unquote(path)
-                            unquoted_post_data = urllib.unquote(post_data or "")
+                            unquoted_path = _urllib.parse.unquote(path)
+                            unquoted_post_data = _urllib.parse.unquote(post_data or "")
                             for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
                                 replacement = SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS[char]
                                 path = path.replace(char, replacement)
@@ -561,7 +559,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             if not length:
                                 query = query[:-1]
                                 break
-                            query += dns_data[offset + 1:offset + length + 1].decode(UNICODE_ENCODING) + '.'
+                            query += get_text(dns_data[offset + 1:offset + length + 1]) + '.'
                             offset += length + 1
 
                         query = query.lower()

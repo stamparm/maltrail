@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
@@ -264,13 +264,13 @@ def load_trails(quiet=False):
 def get_text(value):
     retval = value
 
-    if isinstance(value, six.binary_type):
-        retval = value.decode(UNICODE_ENCODING, errors="replace")
-
     if six.PY2:
         try:
             retval = str(retval)
         except:
             pass
+    else:
+        if isinstance(value, six.binary_type):
+            retval = value.decode(UNICODE_ENCODING, errors="replace")
 
     return retval
