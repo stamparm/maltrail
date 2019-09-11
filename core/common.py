@@ -55,7 +55,7 @@ def retrieve_content(url, data=None, headers=None):
                 data = gzip.GzipFile("", "rb", 9, io.BytesIO(retval))
             retval = data.read()
     except Exception as ex:
-        retval = ex.read() if hasattr(ex, "read") else getattr(ex, "msg", str())
+        retval = ex.read() if hasattr(ex, "read") else (get_ex_message(ex) or "")
 
         if url.startswith("https://") and "handshake failure" in retval:
             return retrieve_content(url.replace("https://", "http://"), data, headers)

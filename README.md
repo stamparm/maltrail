@@ -520,3 +520,4 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * John Kristoff (@jtkdpu)
 * Michael M&uuml;nz (@mimugmail)
 * David Brush
+* @Godwottery
