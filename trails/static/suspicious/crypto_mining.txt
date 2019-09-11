@@ -188,3 +188,9 @@ system-check.services
 # Reference: https://habr.com/ru/company/pt/blog/466877/ (Russian)
 
 154.16.67.133:80
+
+# Reference: https://twitter.com/Paladin3161/status/1171766464560238593
+# Reference: https://pastebin.com/YWXQFF3Q
+
+http://185.141.25.35
+solarray.club
