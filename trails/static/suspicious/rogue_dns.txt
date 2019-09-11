@@ -707,3 +707,9 @@ ns2.dnshost.ga
 # Reference: https://twitter.com/david_jursa/status/1106154345878507520
 
 198.12.64.210:53
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2007-011811-1222-99&tabid=2
+# Reference: https://www.virustotal.com/en/file/46a45be62c49ca51c4ae2e45727c6578e6872c3a9bc7ac7ccb9f83d96464e93a/analysis/
+
+85.255.115.21:53
+85.255.112.91:53
