@@ -223,6 +223,8 @@ def update_trails(force=False, offline=False):
                                     trails[int_to_addr(address)] = (__info__, __reference__)
                                     address += 1
 
+            print("[i] post-processing trails (this might take a while)...")
+
             # basic cleanup
             for key in list(trails.keys()):
                 if key not in trails:
