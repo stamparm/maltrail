@@ -330,7 +330,7 @@ def update_ipcat(force=False):
         print("[i] updating ipcat database...")
 
         try:
-            with file(IPCAT_CSV_FILE, "w+b") as f:
+            with open(IPCAT_CSV_FILE, "w+b") as f:
                 f.write(_urllib.request.urlopen(IPCAT_URL).read())
         except Exception as ex:
             print("[x] something went wrong during retrieval of '%s' ('%s')" % (IPCAT_URL, ex))
