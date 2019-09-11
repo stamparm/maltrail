@@ -273,3 +273,18 @@ def get_text(value):
             retval = value.decode(UNICODE_ENCODING, errors="replace")
 
     return retval
+
+def get_ex_message(ex):
+    retval = None
+
+    if getattr(ex, "message", None):
+        retval = ex.message
+    elif getattr(ex, "msg", None):
+        retval = ex.msg
+    elif getattr(ex, "args", None):
+        for candidate in ex.args[::-1]:
+            if isinstance(candidate, six.string_types):
+                retval = candidate
+                break
+
+    return retval

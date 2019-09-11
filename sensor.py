@@ -33,6 +33,7 @@ from core.attribdict import AttribDict
 from core.common import check_connection
 from core.common import check_sudo
 from core.common import check_whitelisted
+from core.common import get_ex_message
 from core.common import get_text
 from core.common import load_trails
 from core.compat import xrange
@@ -120,11 +121,14 @@ except ImportError:
     if IS_WIN:
         exit("[!] please install 'WinPcap' (e.g. 'http://www.winpcap.org/install/') and Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy')")
     else:
-        msg, _ = "[!] please install 'Pcapy'", platform.linux_distribution()[0].lower()
-        for distro, install in {("fedora", "centos"): "sudo yum install pcapy", ("debian", "ubuntu"): "sudo apt-get install python-pcapy"}.items():
-            if _ in distro:
-                msg += " (e.g. '%s')" % install
-                break
+        msg = "[!] please install 'Pcapy'"
+
+        for distros, install in {("fedora", "centos"): "sudo yum install pcapy", ("debian", "ubuntu"): "sudo apt-get install python-pcapy"}.items():
+            for distro in distros:
+                if distro in (platform.uname()[3] or "").lower():
+                    msg += " (e.g. '%s')" % install
+                    break
+
         exit(msg)
 
 def _check_domain_member(query, domains):
@@ -1098,8 +1102,8 @@ if __name__ == "__main__":
     except SystemExit as ex:
         show_final = False
 
-        if isinstance(getattr(ex, "message"), six.string_types):
-            print(ex)
+        if isinstance(get_ex_message(ex), six.string_types):
+            print(get_ex_message(ex))
             os._exit(1)
     except IOError:
         show_final = False

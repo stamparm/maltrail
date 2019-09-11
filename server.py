@@ -22,6 +22,7 @@ import traceback
 
 from core.common import check_connection
 from core.common import check_sudo
+from core.common import get_ex_message
 from core.httpd import start_httpd
 from core.log import create_log_directory
 from core.log import log_error
@@ -38,7 +39,6 @@ from core.update import update_trails
 from thirdparty import six
 
 def main():
-
     print("%s (server) #v%s\n" % (NAME, VERSION))
 
     parser = optparse.OptionParser(version=VERSION)
@@ -54,11 +54,14 @@ def main():
             if IS_WIN:
                 exit("[!] please install 'pyopenssl' (e.g. 'pip install pyopenssl')")
             else:
-                msg, _ = "[!] please install 'pyopenssl'", platform.linux_distribution()[0].lower()
-                for distro, install in {("fedora", "centos"): "sudo yum install pyOpenSSL", ("debian", "ubuntu"): "sudo apt-get install python-openssl"}.items():
-                    if _ in distro:
-                        msg += " (e.g. '%s')" % install
-                        break
+                msg = "[!] please install 'pyopenssl'"
+
+                for distros, install in {("fedora", "centos"): "sudo yum install pyOpenSSL", ("debian", "ubuntu"): "sudo apt-get install python-openssl"}.items():
+                    for distro in distros:
+                        if distro in (platform.uname()[3] or "").lower():
+                            msg += " (e.g. '%s')" % install
+                            break
+
                 exit(msg)
 
         if not config.SSL_PEM or not os.path.isfile(config.SSL_PEM):
@@ -110,8 +113,8 @@ if __name__ == "__main__":
     except SystemExit as ex:
         show_final = False
 
-        if isinstance(getattr(ex, "message"), six.string_types):
-            print(ex)
+        if isinstance(get_ex_message(ex), six.string_types):
+            print(get_ex_message(ex))
             os._exit(1)
     except Exception:
         msg = "\r[!] unhandled exception occurred ('%s')" % sys.exc_info()[1]
