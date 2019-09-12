@@ -1113,3 +1113,7 @@ DEMONS
 # Reference: https://twitter.com/tkanalyst/status/1171572121648033792
 
 Mozilla/4.0 (compatible; MSIE6.0b; Windows NT 5.1)
+
+# Reference: https://twitter.com/david_jursa/status/1172180368633597952
+
+N0sK0Y1OK1130Sav
