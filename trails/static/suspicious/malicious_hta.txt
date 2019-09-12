@@ -229,3 +229,12 @@
 # Reference: https://twitter.com/Zerophage1337/status/1007645365133246464
 
 /dwie.hta
+
+# Reference: https://otx.alienvault.com/pulse/5d7a4780d9dfe5be7ab9296e
+
+/Lfvbu0.hta
+/Msgxo0.hta
+/Qbjoo0.hta
+/Rjboi0.hta
+/Rnlnb0.hta
+/Vamva0.hta
