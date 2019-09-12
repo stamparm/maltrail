@@ -184,3 +184,7 @@
 # Reference: https://twitter.com/FewAtoms/status/1171076098244919297
 
 /out-1934240370.ps1
+
+# Reference: https://twitter.com/killamjr/status/1171849775911772165
+
+/remittance.ps1
