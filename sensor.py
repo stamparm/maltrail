@@ -978,7 +978,7 @@ def monitor():
 
         try:
             if six.PY3:  # https://github.com/helpsystems/pcapy/issues/37#issuecomment-530795813
-                sec, usec = [int(_) for _ in str(time.time()).split('.')]
+                sec, usec = [int(_) for _ in ("%.6f" % time.time()).split('.')]
             else:
                 sec, usec = header.getts()
             if _multiprocessing:
