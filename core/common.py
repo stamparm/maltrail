@@ -186,7 +186,7 @@ def get_regex(items):
                 items = []
                 previous = None
                 start = None
-                for _ in sorted(current) + [unichr(65535)]:
+                for _ in sorted(current) + [six.unichr(65535)]:
                     if previous is not None:
                         if ord(_) == ord(previous) + 1:
                             pass
