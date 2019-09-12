@@ -997,22 +997,29 @@ def monitor():
             global _done_count
 
             datalink = _cap.datalink()
-            while True:
-                success = False
-                try:
-                    (header, packet) = _cap.next()
-                    if header is not None:
-                        success = True
-                        packet_handler(datalink, header, packet)
-                    elif config.pcap_file:
-                        with _done_lock:
-                            _done_count += 1
-                        break
-                except (pcapy.PcapError, socket.timeout):
-                    pass
 
-                if not success:
-                    time.sleep(REGULAR_SENSOR_SLEEP_TIME)
+            if six.PY3:  # https://github.com/helpsystems/pcapy/issues/37#issuecomment-530795813
+                def _loop_handler(header, packet):
+                    packet_handler(datalink, header, packet)
+
+                _cap.loop(-1, _loop_handler)
+            else:
+                while True:
+                    success = False
+                    try:
+                        (header, packet) = _cap.next()
+                        if header is not None:
+                            success = True
+                            packet_handler(datalink, header, packet)
+                        elif config.pcap_file:
+                            with _done_lock:
+                                _done_count += 1
+                            break
+                    except (pcapy.PcapError, socket.timeout):
+                        pass
+
+                    if not success:
+                        time.sleep(REGULAR_SENSOR_SLEEP_TIME)
 
         if len(_caps) > 1:
             if _multiprocessing:

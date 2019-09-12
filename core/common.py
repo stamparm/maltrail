@@ -62,7 +62,7 @@ def retrieve_content(url, data=None, headers=None):
 
     retval = retval or b""
 
-    if six.PY3:
+    if six.PY3 and isinstance(retval, bytes):
         retval = retval.decode(UNICODE_ENCODING, errors="replace")
 
     return retval
