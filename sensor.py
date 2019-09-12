@@ -977,7 +977,10 @@ def monitor():
             return
 
         try:
-            sec, usec = header.getts()
+            if six.PY3:  # https://github.com/helpsystems/pcapy/issues/37#issuecomment-530795813
+                sec, usec = [int(_) for _ in str(time.time()).split('.')]
+            else:
+                sec, usec = header.getts()
             if _multiprocessing:
                 if _locks.count:
                     _locks.count.acquire()
