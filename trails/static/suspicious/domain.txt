@@ -4758,3 +4758,7 @@ mtcc.me
 # Reference: https://www.virustotal.com/gui/domain/heikc.com/relations
 
 heikc.com
+
+# Reference: https://twitter.com/nullcookies/status/1172225447427489792
+
+ifast.live
