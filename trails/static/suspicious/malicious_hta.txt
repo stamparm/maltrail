@@ -242,3 +242,7 @@
 # Reference: https://twitter.com/rpsanch/status/1172548993177522176
 
 /ManTechJobs.hta
+
+# Reference: https://twitter.com/i/status/1172612874708996096
+
+/Tickets.hta
