@@ -4770,3 +4770,7 @@ sdns.se
 # Reference: https://www.virustotal.com/gui/domain/nullroute.pw/relations
 
 nullroute.pw
+
+# Reference: https://www.virustotal.com/gui/domain/siliconrouting.pw/relations 
+
+siliconrouting.pw
