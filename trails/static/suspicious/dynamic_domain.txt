@@ -2752,3 +2752,7 @@ waphall.com
 mobie.in
 mywibes.com
 wapamp.com
+
+# Reference: https://www.virustotal.com/gui/domain/dvr-ddns.com/relations
+
+dvr-ddns.com
