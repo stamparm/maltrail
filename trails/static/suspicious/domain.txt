@@ -4766,3 +4766,7 @@ ifast.live
 # Reference: https://www.virustotal.com/gui/domain/sdns.se/relations
 
 sdns.se
+
+# Reference: https://www.virustotal.com/gui/domain/nullroute.pw/relations
+
+nullroute.pw
