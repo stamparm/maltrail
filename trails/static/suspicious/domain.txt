@@ -4774,3 +4774,7 @@ nullroute.pw
 # Reference: https://www.virustotal.com/gui/domain/siliconrouting.pw/relations 
 
 siliconrouting.pw
+
+# Reference: https://www.virustotal.com/gui/domain/baepaws.ru/relations
+
+baepaws.ru
