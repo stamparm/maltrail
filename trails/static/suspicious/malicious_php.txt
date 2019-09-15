@@ -576,3 +576,7 @@ tqbeu.voluumtrk.com
 
 /configurationssss.php
 /oficialmuieingaoaza.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1172452149625643008
+
+/j1x28e4tr691s8cen0eeu43d.php
