@@ -4762,3 +4762,19 @@ heikc.com
 # Reference: https://twitter.com/nullcookies/status/1172225447427489792
 
 ifast.live
+
+# Reference: https://www.virustotal.com/gui/domain/sdns.se/relations
+
+sdns.se
+
+# Reference: https://www.virustotal.com/gui/domain/nullroute.pw/relations
+
+nullroute.pw
+
+# Reference: https://www.virustotal.com/gui/domain/siliconrouting.pw/relations 
+
+siliconrouting.pw
+
+# Reference: https://www.virustotal.com/gui/domain/baepaws.ru/relations
+
+baepaws.ru
