@@ -4778,3 +4778,7 @@ siliconrouting.pw
 # Reference: https://www.virustotal.com/gui/domain/baepaws.ru/relations
 
 baepaws.ru
+
+# Reference: https://www.virustotal.com/gui/domain/ultimate-discounter.com/relations
+
+ultimate-discounter.com
