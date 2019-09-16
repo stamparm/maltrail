@@ -580,3 +580,11 @@ tqbeu.voluumtrk.com
 # Reference: https://twitter.com/MalwarePatrol/status/1172452149625643008
 
 /j1x28e4tr691s8cen0eeu43d.php
+
+# Reference: https://twitter.com/Cyberfishio/status/1173202856654057472
+
+/rvqjseptt66izwsmtj5rwj6k.php
+
+# Reference: https://github.com/eset/malware-ioc/tree/master/stantinko (# The Safe Surfing injected script)
+
+safesurfing.me
