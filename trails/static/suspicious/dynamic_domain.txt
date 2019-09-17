@@ -2764,3 +2764,7 @@ dynapoint.pw
 # Reference: https://www.virustotal.com/gui/domain/mylenovoemc.com/relations
 
 mylenovoemc.com
+
+# Reference: https://www.virustotal.com/gui/domain/read-books.org/relations
+
+read-books.org
