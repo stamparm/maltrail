@@ -2768,3 +2768,7 @@ mylenovoemc.com
 # Reference: https://www.virustotal.com/gui/domain/read-books.org/relations
 
 read-books.org
+
+# Reference: https://www.virustotal.com/gui/domain/hackermind.info/relations
+
+hackermind.info
