@@ -4782,3 +4782,7 @@ baepaws.ru
 # Reference: https://www.virustotal.com/gui/domain/ultimate-discounter.com/relations
 
 ultimate-discounter.com
+
+# Reference: https://www.virustotal.com/gui/domain/qarallax.com/relations
+
+qarallax.com
