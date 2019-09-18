@@ -588,3 +588,7 @@ tqbeu.voluumtrk.com
 # Reference: https://github.com/eset/malware-ioc/tree/master/stantinko (# The Safe Surfing injected script)
 
 safesurfing.me
+
+# Reference: https://twitter.com/IpNigh/status/1173924979462823938
+
+/101454858.php
