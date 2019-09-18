@@ -21,7 +21,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.13.113"
+VERSION = "0.13.114"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)

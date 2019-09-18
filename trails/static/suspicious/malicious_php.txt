@@ -592,3 +592,7 @@ safesurfing.me
 # Reference: https://twitter.com/IpNigh/status/1173924979462823938
 
 /101454858.php
+
+# Generic
+
+/gate.php
