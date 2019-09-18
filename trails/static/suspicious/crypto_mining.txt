@@ -194,3 +194,8 @@ system-check.services
 
 http://185.141.25.35
 solarray.club
+
+# Reference: https://twitter.com/pancak3lullz/status/1174012227130679297
+
+65.154.226.109:14100
+70.42.131.189:14100
