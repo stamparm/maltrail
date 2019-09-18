@@ -262,3 +262,7 @@ repairgreatlyquickfile.icu
 # Reference: https://twitter.com/Jan0fficial/status/1171157538970230786
 
 stressthem.to
+
+# Reference: https://unit42.paloaltonetworks.com/the-legend-of-adwind-a-commodity-rat-saga-in-eight-parts/
+
+indetectables.net
