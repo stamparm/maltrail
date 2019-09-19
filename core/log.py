@@ -6,6 +6,7 @@ See the file 'LICENSE' for copying permission
 """
 from __future__ import print_function
 
+import datetime
 import os
 import re
 import signal
@@ -216,7 +217,16 @@ def start_logd(address=None, port=None, join=False):
         def handle(self):
             try:
                 data, _ = self.request
-                sec, event = data.split(b' ', 1)
+
+                if data[0:1].isdigit():     # Note: regular format with timestamp in front
+                    sec, event = data.split(b' ', 1)
+                else:                       # Note: naive format without timestamp in front
+                    sec = datetime.datetime.strptime(data[1:data.find(b'.')].decode(UNICODE_ENCODING), TIME_FORMAT).timestamp()
+                    event = data
+
+                if not event.endswith(b'\n'):
+                    event = b"%s\n" % event
+
                 handle = get_event_log_handle(int(sec), reuse=False)
                 os.write(handle, event)
                 os.close(handle)
