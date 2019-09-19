@@ -216,7 +216,7 @@ def start_logd(address=None, port=None, join=False):
         def handle(self):
             try:
                 data, _ = self.request
-                sec, event = data.split(" ", 1)
+                sec, event = data.split(b' ', 1)
                 handle = get_event_log_handle(int(sec), reuse=False)
                 os.write(handle, event)
                 os.close(handle)
