@@ -713,3 +713,11 @@ ns2.dnshost.ga
 
 85.255.115.21:53
 85.255.112.91:53
+
+# Reference: https://twitter.com/James_inthe_box/status/1174729932045316096
+# Reference: https://app.any.run/tasks/ee87ff7a-65df-4842-929e-2bc281e263eb/
+# Reference: https://www.virustotal.com/gui/ip-address/37.59.52.229/relations
+
+37.59.52.229:53
+ns1.podniks.com
+ns2.podniks.com
