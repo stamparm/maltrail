@@ -1056,9 +1056,9 @@ def monitor():
                 pass
 
 def main():
-    print("%s (sensor) #v%s\n" % (NAME, VERSION))
-
     for i in xrange(1, len(sys.argv)):
+        if sys.argv[i] == "-q":
+            sys.stdout = open(os.devnull, 'w')
         if sys.argv[i] == "-i":
             for j in xrange(i + 2, len(sys.argv)):
                 value = sys.argv[j]
@@ -1068,11 +1068,14 @@ def main():
                 else:
                     break
 
+    print("%s (sensor) #v%s\n" % (NAME, VERSION))
+
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
     parser.add_option("-i", dest="pcap_file", help="open pcap file for offline analysis")
     parser.add_option("-p", dest="plugins", help="plugin(s) to be used per event")
-    parser.add_option("--console", dest="console", action="store_true", help="print events to console (too)")
+    parser.add_option("-q", dest="quiet", action="store_true", help="turn off regular output")
+    parser.add_option("--console", dest="console", action="store_true", help="print events to console (Note: switch '-q' might be useful)")
     parser.add_option("--no-updates", dest="no_updates", action="store_true", help="disable (online) trail updates")
     parser.add_option("--debug", dest="debug", action="store_true", help=optparse.SUPPRESS_HELP)
     options, _ = parser.parse_args()
