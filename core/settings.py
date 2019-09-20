@@ -21,7 +21,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.13.123"
+VERSION = "0.13.124"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
@@ -326,7 +326,10 @@ def read_config(config_file):
         exit("[!] usage of configuration value 'UDP_PORT' requires also usage of 'UDP_ADDRESS'")
 
     if not str(config.HTTP_PORT or "").isdigit():
-        exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % config.HTTP_PORT)
+        exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % ("" if config.HTTP_PORT is None else config.HTTP_PORT))
+
+    if not str(config.UPDATE_PERIOD or "").isdigit():
+        exit("[!] invalid configuration value for 'UPDATE_PERIOD' ('%s')" % ("" if config.UPDATE_PERIOD is None else config.UPDATE_PERIOD))
 
     if config.PROCESS_COUNT and IS_WIN:
         print("[x] multiprocessing is currently not supported on Windows OS")
