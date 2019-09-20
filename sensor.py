@@ -964,6 +964,10 @@ def monitor():
                 if packet[2:4] in (b"\x00\x21", b"\x00\x57"):  # (IPv4, IPv6)
                     ip_offset = dlt_offset
 
+            elif datalink == pcapy.DLT_NULL:
+                if packet[0:4] in (b"\x02\x00\x00\x00", b"\x23\x00\x00\x00"):  # (IPv4, IPv6)
+                    ip_offset = dlt_offset
+
             elif dlt_offset >= 2:
                 if packet[dlt_offset - 2:dlt_offset] == b"\x81\x00":  # VLAN
                     dlt_offset += 4
