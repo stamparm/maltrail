@@ -188,3 +188,7 @@
 # Reference: https://twitter.com/killamjr/status/1171849775911772165
 
 /remittance.ps1
+
+# Reference: https://www.bleepingcomputer.com/news/security/new-tortoiseshell-group-hacks-11-it-providers-to-reach-their-customers/
+
+/get-logon-history.ps1
