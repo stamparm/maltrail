@@ -601,6 +601,10 @@ safesurfing.me
 
 /101454858.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1175502232978100231
+
+/6b2vru1bujseuosd0gjvndag27524e5d5582cfb0ee5b91de81c038c5.php
+
 # Generic
 
 /gate.php
