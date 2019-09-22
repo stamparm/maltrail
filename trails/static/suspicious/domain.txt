@@ -4786,3 +4786,14 @@ ultimate-discounter.com
 # Reference: https://www.virustotal.com/gui/domain/qarallax.com/relations
 
 qarallax.com
+
+# Reference: # Reference: https://meltx0r.github.io/tech/2019/09/19/emissary-panda-apt.html
+# Reference: https://www.virustotal.com/gui/domain/dellrescue.com/relations
+# Reference: https://www.virustotal.com/gui/domain/redhatupdater.com/relations
+
+dellrescue.com
+redhatupdater.com
+
+# Reference: https://twitter.com/KesaGataMe0/status/1175753787857784834
+
+.cards
