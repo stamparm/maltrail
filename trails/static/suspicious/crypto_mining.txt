@@ -199,3 +199,8 @@ solarray.club
 
 65.154.226.109:14100
 70.42.131.189:14100
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/fileless-cryptocurrency-miner-ghostminer-weaponizes-wmi-objects-kills-other-cryptocurrency-mining-payloads/
+
+pool.usa-138.com
+xmr.usa-138.com
