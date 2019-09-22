@@ -4800,5 +4800,7 @@ redhatupdater.com
 
 # Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/fileless-cryptocurrency-miner-ghostminer-weaponizes-wmi-objects-kills-other-cryptocurrency-mining-payloads/
 # Reference: https://www.virustotal.com/gui/domain/heroherohero.in/relations
+# Reference: https://www.virustotal.com/gui/domain/ctosus.ru/relations
 
+ctosus.ru
 heroherohero.in
