@@ -1136,3 +1136,10 @@ Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.0; Trident/5.0; BOIE9;ENUSMSNIP)
 # Reference: https://twitter.com/tkanalyst/status/1175417561527115778
 
 ACwDTLiV
+
+# Reference: https://www.virustotal.com/gui/file/0d2ee9ade24163613772fdda201af985d852ab506e3d3e7f07fb3fa8b0853560/detection
+# Reference: https://citizenlab.ca/2019/09/poison-carp-tibetan-groups-targeted-with-1-click-mobile-exploits/
+# Reference: https://github.com/citizenlab/malware-indicators/blob/master/201909_MissingLink/iocs.csv
+# Reference: https://twitter.com/craiu/status/1176437943369703424
+
+hots scot
