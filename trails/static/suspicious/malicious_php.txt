@@ -609,6 +609,11 @@ safesurfing.me
 
 /bp5ayjj97kidyn89d9pw6jwq27524e5d5582cfb0ee5b91de81c038c5.php
 
+# Reference: https://twitter.com/JAMESWT_MHT/status/1177109960309858304
+# Reference: https://app.any.run/tasks/947e97aa-fb67-4856-bcc7-297b4d14c9cd/
+
+/stoc_post.php
+
 # Generic
 
 /gate.php
