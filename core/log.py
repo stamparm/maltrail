@@ -190,7 +190,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
                     s.sendto(_.encode(UNICODE_ENCODING), (remote_host, int(remote_port)))
 
-                if ( config.DISABLE_LOCAL_LOG_STORAGE and not any(config.LOG_SERVER, config.SYSLOG_SERVER) ) or config.console:
+                if (config.DISABLE_LOCAL_LOG_STORAGE and not any(config.LOG_SERVER, config.SYSLOG_SERVER)) or config.console:
                     sys.stderr.write(event)
                     sys.stderr.flush()
 
