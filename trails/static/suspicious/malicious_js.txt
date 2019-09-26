@@ -594,3 +594,19 @@ yourservice.live
 # Reference: https://twitter.com/shotgunner101/status/1174324923499765760
 
 /5d7c50e85111d.js
+
+# Reference: https://www.ibm.com/downloads/cas/O3W1LZAZ
+
+/advnads20.js
+/hm.js
+/test1ccf.js
+/test1try.js
+/test2.js
+/test2try.js
+/test3.js
+/test3ccf.js
+/test3try.js
+/test4.js
+/test4ccf.js
+/test4try.js
+/tongji.js
