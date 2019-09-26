@@ -246,3 +246,8 @@
 # Reference: https://twitter.com/i/status/1172612874708996096
 
 /Tickets.hta
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1177115401400016901
+
+/Duxuu.hta
+/Duxuu0.hta
