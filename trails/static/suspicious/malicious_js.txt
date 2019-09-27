@@ -606,3 +606,16 @@ yourservice.live
 /test4ccf.js
 /test4try.js
 /tongji.js
+
+# Reference: https://www.microsoft.com/security/blog/2019/09/26/bring-your-own-lolbin-multi-stage-fileless-nodersok-campaign-delivers-rare-node-js-based-malware/
+
+/01sall.js
+/02sall.js
+/03sall.js
+/04sall.js
+/05sall.js
+/06sall.js
+/07sall.js
+/08sall.js
+/09sall.js
+/1566444384.js
