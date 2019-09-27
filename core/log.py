@@ -221,7 +221,8 @@ def start_logd(address=None, port=None, join=False):
                 if data[0:1].isdigit():     # Note: regular format with timestamp in front
                     sec, event = data.split(b' ', 1)
                 else:                       # Note: naive format without timestamp in front
-                    sec = datetime.datetime.strptime(data[1:data.find(b'.')].decode(UNICODE_ENCODING), TIME_FORMAT).timestamp()
+                    event_date = datetime.datetime.strptime(data[1:data.find(b'.')].decode(UNICODE_ENCODING), TIME_FORMAT)
+                    sec = int(time.mktime(event_date.timetuple()))
                     event = data
 
                 if not event.endswith(b'\n'):
