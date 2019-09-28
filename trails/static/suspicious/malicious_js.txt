@@ -627,3 +627,7 @@ yourservice.live
 # Reference: https://twitter.com/killamjr/status/1178030065486974976
 
 allyouwant.online
+
+# Reference: https://twitter.com/killamjr/status/1178019676653146112
+
+/js/google.analytics.min.js
