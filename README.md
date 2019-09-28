@@ -30,6 +30,7 @@
 - [License](#license)
 - [Developers](#developers)
 - [Thank you](#thank-you)
+- [Maltrail integrations](#maltrail-integrations)
 
 ## Introduction
 
@@ -521,3 +522,8 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * Michael M&uuml;nz (@mimugmail)
 * David Brush
 * @Godwottery
+
+## Maltrail integrations
+
+* FreeBSD Port and [OPNSense Gateway Plugin](https://github.com/mimugmail/plugins/tree/master/security/maltrail)
+* [D4 Project](https://www.d4-project.org/2019/09/25/maltrail-integration.html)
