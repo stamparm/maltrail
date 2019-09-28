@@ -626,6 +626,10 @@ safesurfing.me
 
 /stoc_post.php
 
+# Reference: https://twitter.com/demonslay335/status/1000222227546148871
+
+/pwd/write.php?info=
+
 # Generic
 
 /gate.php
