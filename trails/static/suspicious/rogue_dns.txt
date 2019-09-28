@@ -713,3 +713,20 @@ ns2.dnshost.ga
 
 85.255.115.21:53
 85.255.112.91:53
+
+# Reference: https://unit42.paloaltonetworks.com/xhunt-campaign-attacks-on-kuwait-shipping-and-transportation-organizations/ (Table 3, all related to dns. and ns. records)
+
+185.15.247.140:53
+213.202.217.4:53
+217.79.183.50:53
+217.79.183.53:53
+217.79.183.58:53
+217.79.185.65:53
+217.79.185.75:53
+217.79.185.90:53
+74.91.19.113:53
+82.102.14.222:53
+82.102.14.226:53
+82.102.14.227:53
+91.132.139.183:53
+91.132.139.254:53
