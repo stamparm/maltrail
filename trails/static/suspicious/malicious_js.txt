@@ -619,3 +619,7 @@ yourservice.live
 /08sall.js
 /09sall.js
 /1566444384.js
+
+# Reference: https://twitter.com/killamjr/status/1178023078334304256
+
+/js/dnn.js
