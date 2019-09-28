@@ -1143,3 +1143,8 @@ ACwDTLiV
 # Reference: https://twitter.com/craiu/status/1176437943369703424
 
 hots scot
+
+# Reference: https://github.com/pan-unit42/iocs/blob/master/mirai/ECHOBOT_6thAug2019.md
+# Reference: https://www.exploit-db.com/exploits/29789
+
+joxypoxy
