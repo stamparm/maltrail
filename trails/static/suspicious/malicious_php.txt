@@ -630,6 +630,10 @@ safesurfing.me
 
 /pwd/write.php?info=
 
+# Reference: https://twitter.com/bartblaze/status/980877270565957633
+
+/wp-images/log.php?info=
+
 # Generic
 
 /gate.php
