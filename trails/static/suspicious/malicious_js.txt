@@ -623,3 +623,7 @@ yourservice.live
 # Reference: https://twitter.com/killamjr/status/1178023078334304256
 
 /js/dnn.js
+
+# Reference: https://twitter.com/killamjr/status/1178030065486974976
+
+allyouwant.online
