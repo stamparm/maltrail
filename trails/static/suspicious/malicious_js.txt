@@ -619,3 +619,15 @@ yourservice.live
 /08sall.js
 /09sall.js
 /1566444384.js
+
+# Reference: https://twitter.com/killamjr/status/1178023078334304256
+
+/js/dnn.js
+
+# Reference: https://twitter.com/killamjr/status/1178030065486974976
+
+allyouwant.online
+
+# Reference: https://twitter.com/killamjr/status/1178019676653146112
+
+/js/google.analytics.min.js
