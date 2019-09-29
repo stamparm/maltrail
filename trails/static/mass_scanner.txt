@@ -2862,3 +2862,7 @@
 # Reference: https://twitter.com/bad_packets/status/1149527678002688001
 
 198.108.66.240  # censys
+
+# Reference: https://twitter.com/bad_packets/status/1178208013389189121
+
+185.216.140.180 # NYU Osiris Laboratory
