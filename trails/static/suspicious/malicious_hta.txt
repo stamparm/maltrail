@@ -255,3 +255,7 @@
 # Reference: https://www.microsoft.com/security/blog/2019/09/26/bring-your-own-lolbin-multi-stage-fileless-nodersok-campaign-delivers-rare-node-js-based-malware/
 
 /Player1566444384.hta
+
+# Reference: https://twitter.com/h4ckak/status/1144173749056315392
+
+/startup.hta
