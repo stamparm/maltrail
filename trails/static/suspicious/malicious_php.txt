@@ -613,6 +613,10 @@ safesurfing.me
 
 /3u0j30ly39gt9f4677hal1dj27524e5d5582cfb0ee5b91de81c038c5.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1178325835771711488
+
+/kbhtz3rscf9vqr0l6gk40uxi27524e5d5582cfb0ee5b91de81c038c5.php
+
 # Reference: https://twitter.com/smica83/status/1177552932004401152
 
 /ilqzck5hf6ypq465yzbhmvn7.php
