@@ -7,7 +7,7 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "https://feodotracker.abuse.ch/blocklist/?download=ipblocklist"
+__url__ = "https://feodotracker.abuse.ch/downloads/ipblocklist_recommended.txt"
 __check__ = "Feodo"
 __info__ = "feodo (malware)"
 __reference__ = "abuse.ch"
