@@ -638,6 +638,10 @@ safesurfing.me
 
 /wp-images/log.php?info=
 
+# Reference: https://twitter.com/blackorbird/status/1178491520518770688
+
+/patch/chkupdate.php
+
 # Generic
 
 /gate.php
