@@ -646,6 +646,15 @@ safesurfing.me
 
 /patch/chkupdate.php
 
+# Reference: https://www.fortinet.com/blog/threat-research/free-rugby-world-cup-streaming-foul-play.html
+# Reference: https://otx.alienvault.com/pulse/5d93710f59fc94e047c15637
+
+/tuname.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1179262006068748290
+
+/fgyt6678/login.php
+
 # Generic
 
 /gate.php
