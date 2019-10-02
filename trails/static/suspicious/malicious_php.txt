@@ -651,6 +651,10 @@ safesurfing.me
 
 /tuname.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1179262006068748290
+
+/fgyt6678/login.php
+
 # Generic
 
 /gate.php
