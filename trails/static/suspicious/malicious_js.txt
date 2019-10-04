@@ -631,3 +631,7 @@ allyouwant.online
 # Reference: https://twitter.com/killamjr/status/1178019676653146112
 
 /js/google.analytics.min.js
+
+# Reference: https://www.virustotal.com/gui/ip-address/162.222.213.20/relations
+
+/ikandej.js
