@@ -638,4 +638,6 @@ allyouwant.online
 
 # Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2010/2010-01-14-more-details-on-operation-aurora/more-details-on-operation-aurora.csv
 
+ce2.gcion.net
+rgj.com
 /GDSRScripts.js
