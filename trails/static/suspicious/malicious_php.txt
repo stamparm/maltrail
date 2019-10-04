@@ -655,6 +655,10 @@ safesurfing.me
 
 /fgyt6678/login.php
 
+# Reference: https://twitter.com/PhishFindR/status/1180032797156761600
+
+/0147-wadho.php
+
 # Generic
 
 /gate.php
