@@ -659,6 +659,12 @@ safesurfing.me
 
 /0147-wadho.php
 
+# Reference: https://twitter.com/PhishFindR/status/1179987498128363520
+
+/log1n.php
+/ma53sk2.php
+/sendrzlt.php
+
 # Generic
 
 /gate.php
