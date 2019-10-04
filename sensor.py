@@ -307,7 +307,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                     _last_logged_syn = _last_syn
                     if _ != _last_logged_syn:
                         trail = src_ip if src_ip in trails else "%s:%s" % (src_ip, src_port)
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.IPORT, trail, trails[trail][0], trails[trail][1]), packet)
+                        if not any(_ in trails[trail][0] for _ in ("malware",)):
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.IPORT, trail, trails[trail][0], trails[trail][1]), packet)
 
                 if config.USE_HEURISTICS:
                     if dst_ip != localhost_ip:
