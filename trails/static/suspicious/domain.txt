@@ -4804,3 +4804,8 @@ redhatupdater.com
 
 ctosus.ru
 heroherohero.in
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2012/2012-09-20-ngrbot-spreads-via-chat/ngrbot-spreads-via-chat.csv
+# Reference: https://www.virustotal.com/gui/domain/zaberno.com/relations
+
+zaberno.com
