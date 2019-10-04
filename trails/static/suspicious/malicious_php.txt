@@ -673,6 +673,10 @@ safesurfing.me
 
 /bankpas_aanvragen.php
 
+# Reference: https://twitter.com/420spiritz/status/1179903273995767808
+
+/hijaiyh-panel.php
+
 # Generic
 
 /gate.php
