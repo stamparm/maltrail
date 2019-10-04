@@ -665,6 +665,10 @@ safesurfing.me
 /ma53sk2.php
 /sendrzlt.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1180062277162156032
+
+/k9ou2mlnk5rl6kbr0z68vz9x27524e5d5582cfb0ee5b91de81c038c5.php
+
 # Generic
 
 /gate.php
