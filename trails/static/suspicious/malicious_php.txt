@@ -12,11 +12,6 @@
 /signOnV2Screen.php
 /Up-dating.php
 
-# Reference: https://twitter.com/JAMESWT_MHT/status/1045564495723188225
-
-/1/gate.php
-/1/screenshot_gate.php
-
 # Reference: https://twitter.com/malwrhunterteam/status/1045622528541151232
 
 /hows_yourfever.php
@@ -680,3 +675,4 @@ safesurfing.me
 # Generic
 
 /gate.php
+/screenshot_gate.php
