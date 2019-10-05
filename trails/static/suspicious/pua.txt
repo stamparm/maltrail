@@ -2047,3 +2047,7 @@ pocxc.com
 uyvsa.com
 bxvdc.com
 adofd.com
+
+https://github.com/advanced-threat-research/IOCs/blob/master/2014/2014-12-16-installcube-how-russian-programmers-turn-adware-into-cash/installcube-how-russian-programmers-turn-adware-into-cash.csv
+
+cubinapi.com
