@@ -712,6 +712,10 @@ safesurfing.me
 
 /ondetverifier.php
 
+# Reference: https://twitter.com/PhishFindR/status/1179715711465377793
+
+/zweryfikowany.php
+
 # Generic
 
 /gate.php
