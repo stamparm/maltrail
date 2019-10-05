@@ -4818,3 +4818,7 @@ craigslist.com
 craigslist.org
 youutbe.com
 youtupe.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2015/2015-05-08-brazilian-banking-malware-hides-in-sql-database/brazilian-banking-malware-hides-in-sql-database.csv
+
+whservidor.com
