@@ -230,7 +230,15 @@ ip.sb
 
 ipapi.co
 
-
 # Reference: https://app.any.run/tasks/2f344183-0809-448e-bedc-3080631fa2c9/ (Note: direct IP usage for whatismyipaddress.com)
 
 66.171.248.178
+
+# Reference: https://twitter.com/fbgwls245/status/1180291089074282496
+# Reference: https://app.any.run/tasks/f279fdb8-614e-4074-92c4-ddf01afbf86f/
+
+api.db-ip.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-03-28-mcafee-labs-unlocks-lechiffre-ransomware/mcafee-labs-unlocks-lechiffre-ransomware.csv
+
+api.sypexgeo.net
