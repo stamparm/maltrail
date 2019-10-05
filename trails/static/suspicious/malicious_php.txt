@@ -702,6 +702,12 @@ safesurfing.me
 
 /8rsiu3gu5vbwkznr6znv6kf3.php
 
+# Reference: https://twitter.com/PhishFindR/status/1180334788575662081
+
+/kox3k6ev4at2i4cyyn2tztcs.php
+/ys26r01vhg6r8279hiqd5auc.php
+/z7nnaf3qmjeh11pt174clb89.php
+
 # Generic
 
 /gate.php
