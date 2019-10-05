@@ -11,3 +11,7 @@
 # Reference: https://twitter.com/James_inthe_box/status/1153385401278771201
 
 5.253.86.183:80
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2017/2017-06-16-mcafee-discovers-pinkslipbot-exploiting-infected-machines-as-control-servers-releases-free-tool-to-detect-disable-trojan/mcafee-discovers-pinkslipbot-exploiting-infected-machines-as-control-servers-releases-free-tool-to-detect-disable-trojan.csv
+
+/gwsup
