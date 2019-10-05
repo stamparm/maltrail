@@ -2772,3 +2772,7 @@ read-books.org
 # Reference: https://www.virustotal.com/gui/domain/hackermind.info/relations
 
 hackermind.info
+
+# Reference: https://www.virustotal.com/gui/domain/zzzz.io/relations
+
+zzzz.io
