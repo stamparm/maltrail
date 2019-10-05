@@ -4804,3 +4804,27 @@ redhatupdater.com
 
 ctosus.ru
 heroherohero.in
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2012/2012-09-20-ngrbot-spreads-via-chat/ngrbot-spreads-via-chat.csv
+# Reference: https://www.virustotal.com/gui/domain/zaberno.com/relations
+
+zaberno.com
+
+# Reference: https://randed.com/typosquatting-attacks/?lang=en
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-01-14-typosquatting-attacks-alive-well-unfortunately/typosquatting-attacks-alive-well-unfortunately.csv
+
+criagslist.com
+craigslist.com
+craigslist.org
+youutbe.com
+youtupe.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2015/2015-05-08-brazilian-banking-malware-hides-in-sql-database/brazilian-banking-malware-hides-in-sql-database.csv
+
+whservidor.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2018/2018-03-02-mcafee-uncovers-operation-honeybee-malicious-document-campaign-targeting-humanitarian-aid-groups/mcafee-uncovers-operation-honeybee-malicious-document-campaign-targeting-humanitarian-aid-groups.csv
+
+byethost11.com
+byethost3.com
+byethost31.com
