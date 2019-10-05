@@ -12,11 +12,6 @@
 /signOnV2Screen.php
 /Up-dating.php
 
-# Reference: https://twitter.com/JAMESWT_MHT/status/1045564495723188225
-
-/1/gate.php
-/1/screenshot_gate.php
-
 # Reference: https://twitter.com/malwrhunterteam/status/1045622528541151232
 
 /hows_yourfever.php
@@ -673,6 +668,19 @@ safesurfing.me
 
 /bankpas_aanvragen.php
 
+# Reference: https://twitter.com/420spiritz/status/1179903273995767808
+
+/hijaiyh-panel.php
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2017/2017-07-07-leakerlocker-mobile-ransomware-acts-without-encryption/leakerlocker-mobile-ransomware-acts-without-encryption.csv
+
+/click.php?cnv_id=
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2017/2017-10-24-badrabbit-ransomware-burrows-russia-ukraine/badrabbit-ransomware-burrows-russia-ukraine.csv
+
+/flash_install.php
+
 # Generic
 
 /gate.php
+/screenshot_gate.php
