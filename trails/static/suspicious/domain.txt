@@ -4809,3 +4809,12 @@ heroherohero.in
 # Reference: https://www.virustotal.com/gui/domain/zaberno.com/relations
 
 zaberno.com
+
+# Reference: https://randed.com/typosquatting-attacks/?lang=en
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-01-14-typosquatting-attacks-alive-well-unfortunately/typosquatting-attacks-alive-well-unfortunately.csv
+
+criagslist.com
+craigslist.com
+craigslist.org
+youutbe.com
+youtupe.com
