@@ -2056,4 +2056,7 @@ cubinapi.com
 
 -space.org
 castplatform.com
-castplatform.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-08-10-bing-vc-hijacks-browser-using-legitimate-applications/bing-vc-hijacks-browser-using-legitimate-applications.csv
+
+fixbrowserredirect.net
