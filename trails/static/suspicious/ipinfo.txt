@@ -238,3 +238,7 @@ ipapi.co
 # Reference: https://app.any.run/tasks/f279fdb8-614e-4074-92c4-ddf01afbf86f/
 
 api.db-ip.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-03-28-mcafee-labs-unlocks-lechiffre-ransomware/mcafee-labs-unlocks-lechiffre-ransomware.csv
+
+api.sypexgeo.net
