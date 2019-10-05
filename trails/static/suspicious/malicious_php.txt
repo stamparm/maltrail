@@ -674,7 +674,7 @@ safesurfing.me
 
 # Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2017/2017-07-07-leakerlocker-mobile-ransomware-acts-without-encryption/leakerlocker-mobile-ransomware-acts-without-encryption.csv
 
-/click.php?cnv_id
+/click.php?cnv_id=
 
 # Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2017/2017-10-24-badrabbit-ransomware-burrows-russia-ukraine/badrabbit-ransomware-burrows-russia-ukraine.csv
 
