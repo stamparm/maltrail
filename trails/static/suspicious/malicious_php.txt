@@ -676,6 +676,10 @@ safesurfing.me
 
 /click.php?cnv_id
 
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2017/2017-10-24-badrabbit-ransomware-burrows-russia-ukraine/badrabbit-ransomware-burrows-russia-ukraine.csv
+
+/flash_install.php
+
 # Generic
 
 /gate.php
