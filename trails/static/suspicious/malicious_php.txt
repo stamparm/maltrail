@@ -680,6 +680,28 @@ safesurfing.me
 
 /flash_install.php
 
+# Reference: https://twitter.com/PhishFindR/status/1180470680204259328
+
+/wapG2app.php
+
+# Reference: https://twitter.com/PhishFindR/status/1180455576616280066
+
+/send_billing.php
+
+# Reference: https://twitter.com/PhishFindR/status/1180395189652873217
+
+/firstlog.php
+
+# Reference: https://twitter.com/PhishFindR/status/1180289486074331138
+
+/billing.php?ip=
+/complete.php?ip=
+/payment.php?ip=
+
+# Reference: https://twitter.com/PhishFindR/status/1180274387527884805
+
+/8rsiu3gu5vbwkznr6znv6kf3.php
+
 # Generic
 
 /gate.php
