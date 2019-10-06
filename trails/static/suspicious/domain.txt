@@ -4834,3 +4834,8 @@ byethost31.com
 # Reference: https://www.virustotal.com/gui/domain/tym-internationals.com/relations
 
 tym-internationals.com
+
+# Reference: https://twitter.com/luc4m/status/1073257560625569792
+# Reference: https://www.virustotal.com/gui/domain/unknowncrypter.com/relations
+
+unknowncrypter.com
