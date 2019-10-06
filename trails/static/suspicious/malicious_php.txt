@@ -716,6 +716,10 @@ safesurfing.me
 
 /zweryfikowany.php
 
+# Reference: https://twitter.com/PhishFindR/status/1180757572023934977
+
+/capatcha.php
+
 # Generic
 
 /gate.php
