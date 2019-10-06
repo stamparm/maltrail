@@ -720,6 +720,10 @@ safesurfing.me
 
 /capatcha.php
 
+# Reference: https://twitter.com/YttriumSec/status/1180101251855343616
+
+/wuwu11.php
+
 # Generic
 
 /canadiane-compte.php
