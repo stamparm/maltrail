@@ -259,3 +259,13 @@
 # Reference: https://twitter.com/h4ckak/status/1144173749056315392
 
 /startup.hta
+
+# Reference: https://twitter.com/FewAtoms/status/1180819300476755969
+
+/MS.hta
+/MSHTAPayload.hta
+/out-1302410780.hta
+/out-2091529197.hta
+/out-792744321.hta
+/out-932457051.hta
+/ppro.hta
