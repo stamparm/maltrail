@@ -722,5 +722,6 @@ safesurfing.me
 
 # Generic
 
+/canadiane-compte.php
 /gate.php
 /screenshot_gate.php
