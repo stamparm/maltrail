@@ -4843,3 +4843,7 @@ tym-internationals.com
 # Reference: https://www.virustotal.com/gui/domain/unknowncrypter.com/relations
 
 unknowncrypter.com
+
+# Reference: https://www.virustotal.com/gui/domain/zzjzpt.com/relations
+
+zzjzpt.com
