@@ -4824,8 +4824,30 @@ youtupe.com
 whservidor.com
 
 # Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2018/2018-03-02-mcafee-uncovers-operation-honeybee-malicious-document-campaign-targeting-humanitarian-aid-groups/mcafee-uncovers-operation-honeybee-malicious-document-campaign-targeting-humanitarian-aid-groups.csv
+https://blog.trendmicro.com/trendlabs-security-intelligence/syscon-backdoor-uses-ftp-as-a-cc-channel/
+# Reference: https://www.virustotal.com/gui/domain/byethost12.com/details
 
 byethost11.com
+byethost12.com
 byethost17.com
 byethost3.com
 byethost31.com
+byethost[0-9]+\.com
+
+# Reference: https://twitter.com/Racco42/status/1017007079813451778
+# Reference: https://www.virustotal.com/gui/domain/tym-internationals.com/relations
+
+tym-internationals.com
+
+# Reference: https://twitter.com/luc4m/status/1073257560625569792
+# Reference: https://www.virustotal.com/gui/domain/unknowncrypter.com/relations
+
+unknowncrypter.com
+
+# Reference: https://www.virustotal.com/gui/domain/zzjzpt.com/relations
+
+zzjzpt.com
+
+# Reference: https://www.virustotal.com/gui/domain/xyzledlight.com/relations
+
+xyzledlight.com
