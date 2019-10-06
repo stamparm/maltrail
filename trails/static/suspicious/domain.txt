@@ -4829,3 +4829,8 @@ byethost11.com
 byethost17.com
 byethost3.com
 byethost31.com
+
+# Reference: https://twitter.com/Racco42/status/1017007079813451778
+# Reference: https://www.virustotal.com/gui/domain/tym-internationals.com/relations
+
+tym-internationals.com
