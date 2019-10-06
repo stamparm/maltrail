@@ -4847,3 +4847,7 @@ unknowncrypter.com
 # Reference: https://www.virustotal.com/gui/domain/zzjzpt.com/relations
 
 zzjzpt.com
+
+# Reference: https://www.virustotal.com/gui/domain/xyzledlight.com/relations
+
+xyzledlight.com
