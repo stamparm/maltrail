@@ -680,7 +680,52 @@ safesurfing.me
 
 /flash_install.php
 
+# Reference: https://twitter.com/PhishFindR/status/1180470680204259328
+
+/wapG2app.php
+
+# Reference: https://twitter.com/PhishFindR/status/1180455576616280066
+
+/send_billing.php
+
+# Reference: https://twitter.com/PhishFindR/status/1180395189652873217
+
+/firstlog.php
+
+# Reference: https://twitter.com/PhishFindR/status/1180289486074331138
+
+/billing.php?ip=
+/complete.php?ip=
+/payment.php?ip=
+
+# Reference: https://twitter.com/PhishFindR/status/1180274387527884805
+
+/8rsiu3gu5vbwkznr6znv6kf3.php
+
+# Reference: https://twitter.com/PhishFindR/status/1180334788575662081
+
+/kox3k6ev4at2i4cyyn2tztcs.php
+/ys26r01vhg6r8279hiqd5auc.php
+/z7nnaf3qmjeh11pt174clb89.php
+
+# Reference: https://twitter.com/PhishFindR/status/1179745909783109632
+
+/ondetverifier.php
+
+# Reference: https://twitter.com/PhishFindR/status/1179715711465377793
+
+/zweryfikowany.php
+
+# Reference: https://twitter.com/PhishFindR/status/1180757572023934977
+
+/capatcha.php
+
+# Reference: https://twitter.com/YttriumSec/status/1180101251855343616
+
+/wuwu11.php
+
 # Generic
 
+/canadiane-compte.php
 /gate.php
 /screenshot_gate.php
