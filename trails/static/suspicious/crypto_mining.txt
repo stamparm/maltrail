@@ -204,3 +204,8 @@ solarray.club
 
 pool.usa-138.com
 xmr.usa-138.com
+
+# Reference: https://twitter.com/0xFrost/status/1181153730382716928
+
+s04.hostcontent.live
+hostingcloud.racing
