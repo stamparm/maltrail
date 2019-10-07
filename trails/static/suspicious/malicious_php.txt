@@ -728,6 +728,10 @@ safesurfing.me
 
 /directe-demande-compte.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1181224949215834114
+
+/s2sdjgls74n39hucqyuddblu27524e5d5582cfb0ee5b91de81c038c5.php
+
 # Generic
 
 /canadiane-compte.php
