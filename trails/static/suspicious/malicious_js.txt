@@ -642,4 +642,6 @@ allyouwant.online
 
 # Reference: https://twitter.com/0xFrost/status/1181153730382716928
 
+s04.hostcontent.live
+hostingcloud.racing
 /Iit5.js
