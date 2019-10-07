@@ -192,3 +192,7 @@
 # Reference: https://www.bleepingcomputer.com/news/security/new-tortoiseshell-group-hacks-11-it-providers-to-reach-their-customers/
 
 /get-logon-history.ps1
+
+# Reference: https://twitter.com/VirITeXplorer/status/1181128795337773057
+
+/run.ps1
