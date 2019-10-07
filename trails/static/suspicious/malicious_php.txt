@@ -724,6 +724,10 @@ safesurfing.me
 
 /wuwu11.php
 
+# Reference: https://twitter.com/IpNigh/status/1180896155108020224
+
+/directe-demande-compte.php
+
 # Generic
 
 /canadiane-compte.php
