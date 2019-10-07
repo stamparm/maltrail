@@ -176,6 +176,8 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
                     if suffix:
                         trail = "%s(%s)" % (trail, suffix)
 
+                    trail = trail.replace(".)", ").")
+
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[candidate][0], trails[candidate][1]), packet)
 
         if ".onion." in query:
