@@ -1148,3 +1148,7 @@ hots scot
 # Reference: https://www.exploit-db.com/exploits/29789
 
 joxypoxy
+
+# Reference: https://twitter.com/VirITeXplorer/status/1181466268110643200
+
+\blex\b
