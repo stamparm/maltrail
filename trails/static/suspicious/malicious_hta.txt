@@ -269,3 +269,8 @@
 /out-792744321.hta
 /out-932457051.hta
 /ppro.hta
+
+# Reference: https://www.anomali.com/blog/china-based-apt-mustang-panda-targets-minority-groups-public-and-private-sector-organizations
+# Reference: https://otx.alienvault.com/pulse/5d9c72d7e2efa3b5aa799b41
+
+/Mau2.hta
