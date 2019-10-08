@@ -736,6 +736,10 @@ safesurfing.me
 
 /kksahc.php
 
+# Reference: https://twitter.com/PhishFindR/status/1181557852407812096
+
+/fullz.php
+
 # Generic
 
 /canadiane-compte.php
