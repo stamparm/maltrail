@@ -712,6 +712,10 @@ safesurfing.me
 
 /uim4vz14u9o4un7m819o3a7azt.php
 
+# Reference: https://twitter.com/PhishFindR/status/1181572952598499334
+
+/3wd1abbmevsxjvq8702v8vwy.php
+
 # Reference: https://twitter.com/PhishFindR/status/1179745909783109632
 
 /ondetverifier.php
