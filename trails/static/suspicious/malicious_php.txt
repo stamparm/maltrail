@@ -728,6 +728,18 @@ safesurfing.me
 
 /directe-demande-compte.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1181224949215834114
+
+/s2sdjgls74n39hucqyuddblu27524e5d5582cfb0ee5b91de81c038c5.php
+
+# Reference: https://www.virustotal.com/gui/ip-address/54.39.233.175/relations
+
+/kksahc.php
+
+# Reference: https://twitter.com/PhishFindR/status/1181557852407812096
+
+/fullz.php
+
 # Generic
 
 /canadiane-compte.php
