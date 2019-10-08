@@ -4851,3 +4851,7 @@ zzjzpt.com
 # Reference: https://www.virustotal.com/gui/domain/xyzledlight.com/relations
 
 xyzledlight.com
+
+# Reference: https://www.virustotal.com/gui/domain/olk4.com/relations
+
+olk4.com
