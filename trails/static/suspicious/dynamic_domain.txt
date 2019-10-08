@@ -2555,6 +2555,15 @@ my-router.de
 
 my-gateway.de
 
+# Reference: https://gist.github.com/neu5ron/8dd695d4cb26b6dcd997#gistcomment-2141306 (# spdyn.de domains)
+
+firewall-gateway.com
+firewall-gateway.de
+firewall-gateway.net
+my-firewall.org
+myfirewall.org
+spdns.org
+
 # Reference: https://www.virustotal.com/gui/domain/aidyn.net/relations
 
 aidyn.net
