@@ -749,3 +749,8 @@ widgets.wowzio.net
 yourmsrp.com
 yys1982.com
 zirve100.com
+
+# Reference: https://twitter.com/david_jursa/status/1181925512798773249
+# Reference: https://app.any.run/tasks/14d9b5a2-d8d3-41f4-9557-f21aec01fa32/
+
+/xGpmLMHiaqCy-agu1ud6fHqKiTo.js
