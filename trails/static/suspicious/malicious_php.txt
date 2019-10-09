@@ -708,6 +708,14 @@ safesurfing.me
 /ys26r01vhg6r8279hiqd5auc.php
 /z7nnaf3qmjeh11pt174clb89.php
 
+# Reference: https://twitter.com/IpNigh/status/1181466510172315648
+
+/uim4vz14u9o4un7m819o3a7azt.php
+
+# Reference: https://twitter.com/PhishFindR/status/1181572952598499334
+
+/3wd1abbmevsxjvq8702v8vwy.php
+
 # Reference: https://twitter.com/PhishFindR/status/1179745909783109632
 
 /ondetverifier.php
