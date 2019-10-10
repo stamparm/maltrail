@@ -748,6 +748,10 @@ safesurfing.me
 
 /fullz.php
 
+# Reference: https://twitter.com/JCyberSec_/status/1182281930823258114
+
+/indexbabo.php
+
 # Generic
 
 /canadiane-compte.php
