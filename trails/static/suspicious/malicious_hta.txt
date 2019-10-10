@@ -274,3 +274,8 @@
 # Reference: https://otx.alienvault.com/pulse/5d9c72d7e2efa3b5aa799b41
 
 /Mau2.hta
+
+# Reference: https://twitter.com/cyber__sloth/status/1181957000927727616
+
+/out-1369462999.hta
+/out-834610808.hta
