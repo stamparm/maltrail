@@ -752,6 +752,10 @@ safesurfing.me
 
 /indexbabo.php
 
+# Reference: https://twitter.com/JCyberSec_/status/1182284439679881216
+
+/index50G.php
+
 # Generic
 
 /canadiane-compte.php
