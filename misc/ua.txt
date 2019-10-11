@@ -1164,3 +1164,7 @@ HardCore
 # Reference: https://github.com/silence-is-best/c2db#milkyboy
 
 Adzq41ceq52e353512hSfj
+
+# Reference: https://github.com/silence-is-best/c2db#ostap
+
+Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)
