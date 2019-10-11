@@ -4859,3 +4859,8 @@ olk4.com
 # Reference: https://www.virustotal.com/gui/domain/member-authorize.com/relations
 
 member-authorize.com
+
+# Reference: https://twitter.com/albertzsigovits/status/1182657546550730752
+# Reference: https://github.com/silence-is-best/c2db/blob/master/README.md#krugbot
+
+.wtf
