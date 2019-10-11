@@ -1152,3 +1152,7 @@ joxypoxy
 # Reference: https://twitter.com/VirITeXplorer/status/1181466268110643200
 
 \blex\b
+
+# Reference: https://github.com/silence-is-best/c2db#darkrat
+
+\bagent\b
