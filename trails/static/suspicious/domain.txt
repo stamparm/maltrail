@@ -4855,3 +4855,7 @@ xyzledlight.com
 # Reference: https://www.virustotal.com/gui/domain/olk4.com/relations
 
 olk4.com
+
+# Reference: https://www.virustotal.com/gui/domain/member-authorize.com/relations
+
+member-authorize.com
