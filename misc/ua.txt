@@ -1156,3 +1156,7 @@ joxypoxy
 # Reference: https://github.com/silence-is-best/c2db#darkrat
 
 \bagent\b
+
+# Reference: https://github.com/silence-is-best/c2db#isrstealer
+
+HardCore
