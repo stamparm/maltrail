@@ -756,6 +756,10 @@ safesurfing.me
 
 /index50G.php
 
+# Reference: https://twitter.com/malware_traffic/status/1182407518611529728
+
+/sthadd.php
+
 # Generic
 
 /canadiane-compte.php
