@@ -4864,3 +4864,7 @@ member-authorize.com
 # Reference: https://github.com/silence-is-best/c2db/blob/master/README.md#krugbot
 
 .wtf
+
+# Reference: https://www.virustotal.com/gui/domain/justns.ru/relations
+
+justns.ru
