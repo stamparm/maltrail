@@ -1160,3 +1160,7 @@ joxypoxy
 # Reference: https://github.com/silence-is-best/c2db#isrstealer
 
 HardCore
+
+# Reference: https://github.com/silence-is-best/c2db#milkyboy
+
+Adzq41ceq52e353512hSfj
