@@ -764,6 +764,11 @@ safesurfing.me
 
 /Invoicely.php
 
+# Reference: https://twitter.com/malware_traffic/status/1182456890095259652
+
+/2hd3.php
+/hyyfydd35.php
+
 # Generic
 
 /canadiane-compte.php
