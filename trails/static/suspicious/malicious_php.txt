@@ -760,6 +760,10 @@ safesurfing.me
 
 /sthadd.php
 
+# Reference: https://twitter.com/cocaman/status/1182339090420830208
+
+/Invoicely.php
+
 # Generic
 
 /canadiane-compte.php
