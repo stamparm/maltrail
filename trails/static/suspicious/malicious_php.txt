@@ -773,6 +773,10 @@ safesurfing.me
 
 /2s2jgyug9537ov3guofwa2da27524e5d5582cfb0ee5b91de81c038c5.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1182885899702591488
+
+/pev5x30ugjedndsjt86lqkb527524e5d5582cfb0ee5b91de81c038c5.php
+
 # Generic
 
 /canadiane-compte.php
