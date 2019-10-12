@@ -380,6 +380,7 @@ zapto.org
 zenergycounsel.us
 
 # Reference: http://www.changeip.com/services/free-dynamic-dns/
+# Reference: https://gist.githubusercontent.com/neu5ron/8dd695d4cb26b6dcd997/raw/e1b1ed6fd0b0810b07c168fee028b668254ad486/dynamic-dns.txt (# changeip.com)
 
 1dumb.com
 25u.com
@@ -391,6 +392,9 @@ zenergycounsel.us
 acmetoy.com
 almostmy.com
 americanunfinished.com
+authorizedddns.net
+authorizedddns.org
+authorizedddns.us
 authorizeddns.net
 authorizeddns.org
 authorizeddns.us
@@ -409,20 +413,20 @@ ddns.ms
 ddns.name
 ddns.us
 dhcp.biz
+dns-dns.com
+dns-stuff.com
 dns04.com
 dns05.com
 dns1.us
 dns2.us
-dns-dns.com
 dnset.com
 dnsrd.com
-dns-stuff.com
 dsmtp.com
 dumb1.com
+dynamic-dns.net
 dynamicdns.biz
 dynamicdns.co.uk
 dynamicdns.me.uk
-dynamic-dns.net
 dynamicdns.org.uk
 dyndns.pro
 dynssl.com
@@ -438,6 +442,7 @@ freewww.biz
 freewww.info
 ftp1.biz
 ftpserver.biz
+gettrails.com
 gettrials.com
 got-game.org
 gr8domain.biz
@@ -514,6 +519,7 @@ serveuser.com
 serveusers.com
 sexidude.com
 sexxxy.biz
+sexxy.biz
 sixth.biz
 squirly.info
 ssl443.org
@@ -532,6 +538,7 @@ xxxy.biz
 xxxy.info
 ygto.com
 youdontcare.com
+youndontcare.com
 yourtrap.com
 zyns.com
 zzux.com
