@@ -4868,3 +4868,45 @@ member-authorize.com
 # Reference: https://www.virustotal.com/gui/domain/justns.ru/relations
 
 justns.ru
+
+# Root domains from changeup.txt trail
+
+chopbell.com
+chopbell.net
+couchness.com
+datetoday1.com
+datetoday1.net
+datetoday1.org
+datetoday2.com
+datetoday2.net
+datetoday2.org
+datetoday3.com
+datetoday3.net
+datetoday3.org
+helpchecks.com
+helpchecks.net
+helpupdated.net
+helpupdated.org
+helpupdatek.at
+helpupdatek.eu
+helpupdatek.tw
+helpupdater.net
+helpupdates.com
+helpupdates.net
+mediashares.org
+player1253.com
+player1532.com
+player[0-9]{1,}\.com
+suroot.com
+thepicturehut.net
+timedate1.com
+timedate1.net
+timedate1.org
+timedate2.com
+timedate2.net
+timedate2.org
+timedate3.com
+timedate3.net
+timedate3.org
+videoall.net
+videoall.org
