@@ -781,6 +781,10 @@ safesurfing.me
 
 /lastdesj.php
 
+# Reference: https://twitter.com/PhishFindR/status/1182947001622843392
+
+/OrgSurveyMonkeyincorrect.php
+
 # Generic
 
 /canadiane-compte.php
