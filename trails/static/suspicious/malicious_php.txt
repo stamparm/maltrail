@@ -777,6 +777,10 @@ safesurfing.me
 
 /pev5x30ugjedndsjt86lqkb527524e5d5582cfb0ee5b91de81c038c5.php
 
+# Reference: https://twitter.com/PhishFindR/status/1182826217206091777
+
+/lastdesj.php
+
 # Generic
 
 /canadiane-compte.php
