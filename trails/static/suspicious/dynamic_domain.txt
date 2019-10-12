@@ -980,18 +980,20 @@ comexe.cn
 comexe.net
 
 # Reference: http://www.pubyun.com/products/dyndns/
+# Reference: https://gist.githubusercontent.com/neu5ron/8dd695d4cb26b6dcd997/raw/e1b1ed6fd0b0810b07c168fee028b668254ad486/dynamic-dns.txt (# pubyun.com)
 
-f3322.net
-f3322.org
-3322.org
-8866.org
-9966.org
-8800.org
 2288.org
+3322.org
 6600.org
 7766.org
-webok.net
+8800.org
+8866.org
+9966.org
 eatuo.com
+f3322.net
+f3322.org
+webok.net
+x3322.org
 
 # passive dns of 8.23.224.108 (no-ip)
 
