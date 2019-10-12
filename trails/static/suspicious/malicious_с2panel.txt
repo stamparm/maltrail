@@ -508,3 +508,11 @@ http://45.12.212.225
 # Reference: https://twitter.com/illegalFawn/status/1177557065742594048
 
 illegalfawn.com/panel.php
+
+# Reference: https://twitter.com/ViriBack/status/1183030287485329410
+
+/panel/auth.php
+/panel/login.php
+/panel2/admin.php
+/panel2/auth.php
+/panel2/login.php
