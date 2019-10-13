@@ -4909,3 +4909,7 @@ timedate3.net
 timedate3.org
 videoall.net
 videoall.org
+
+# Reference: https://www.virustotal.com/gui/domain/lq4444.com/relations
+
+lq4444.com
