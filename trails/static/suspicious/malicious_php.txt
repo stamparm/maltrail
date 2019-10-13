@@ -789,6 +789,10 @@ safesurfing.me
 
 /redirectlog.php
 
+# Reference: https://twitter.com/ecarlesi/status/1183416858948636672
+
+/outherename.php
+
 # Generic
 
 /canadiane-compte.php
