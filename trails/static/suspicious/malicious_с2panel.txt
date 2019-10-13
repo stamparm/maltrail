@@ -519,3 +519,7 @@ illegalfawn.com/panel.php
 /Panel17/admin.php
 /Panel17/auth.php
 /Panel17/login.php
+
+# Reference: https://app.any.run/tasks/6812075f-1785-494f-9624-eda8b19943c3/
+
+/adminpanel/add_bot.php
