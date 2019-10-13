@@ -785,6 +785,10 @@ safesurfing.me
 
 /OrgSurveyMonkeyincorrect.php
 
+# Reference: https://twitter.com/PhishFindR/status/1183294298017673216
+
+/redirectlog.php
+
 # Generic
 
 /canadiane-compte.php
