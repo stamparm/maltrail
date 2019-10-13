@@ -981,6 +981,9 @@ comexe.net
 
 # Reference: http://www.pubyun.com/products/dyndns/
 # Reference: https://gist.githubusercontent.com/neu5ron/8dd695d4cb26b6dcd997/raw/e1b1ed6fd0b0810b07c168fee028b668254ad486/dynamic-dns.txt (# pubyun.com)
+# Reference: https://www.virustotal.com/gui/domain/juyide.com/details
+# Reference: https://www.virustotal.com/gui/domain/juyide.net/details
+# Reference: https://www.virustotal.com/gui/domain/juyide.org/details
 
 2288.org
 3322.org
@@ -992,6 +995,9 @@ comexe.net
 eatuo.com
 f3322.net
 f3322.org
+juyide.com
+juyide.net
+juyide.org
 webok.net
 x3322.org
 
