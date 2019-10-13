@@ -789,4 +789,5 @@ safesurfing.me
 
 /canadiane-compte.php
 /gate.php
+/gate.get
 /screenshot_gate.php
