@@ -516,3 +516,6 @@ illegalfawn.com/panel.php
 /panel2/admin.php
 /panel2/auth.php
 /panel2/login.php
+/Panel17/admin.php
+/Panel17/auth.php
+/Panel17/login.php
