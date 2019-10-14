@@ -162,7 +162,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         self.send_header(HTTP_HEADER.LAST_MODIFIED, last_modified)
 
                         # For CSP policy directives see: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/
-                        self.send_header(HTTP_HEADER.CONTENT_SECURITY_POLICY, "default-src 'self'; style-src 'self' 'unsafe-inline'; " +
+                        self.send_header(HTTP_HEADER.CONTENT_SECURITY_POLICY, "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src *; " +
                                                                               "script-src 'self' 'unsafe-eval' https://stat.ripe.net; " +
                                                                               "frame-src *; object-src 'none'; block-all-mixed-content;")
                         if extension not in (".htm", ".html"):
@@ -263,6 +263,14 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
         def _version(self):
             return VERSION
+
+        def _logo(self):
+            if config.HEADER_LOGO:
+                retval = config.HEADER_LOGO
+            else:
+                retval = '<img src="images/mlogo.png" style="width: 25px">altrail'
+
+            return retval
 
         def _format(self, content, **params):
             if content:
