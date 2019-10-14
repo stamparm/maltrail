@@ -4956,6 +4956,18 @@ zhuceyun.com
 zhuceyun.net
 zhuceyun.org
 
+# Reference: https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Winnti.pdf
+# Reference: https://otx.alienvault.com/pulse/5da4528788ac7149ce4894b7
+
+7release.com
+ahnlabinc.com
+dyn-dns.co
+dyn-dns.com
+
+# Reference: https://www.virustotal.com/gui/domain/wm01.to/relations
+
+wm01.to
+
 # Reference: https://www.virustotal.com/gui/domain/googlex.me/relations
 
 googlex.me
