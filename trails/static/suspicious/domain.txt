@@ -4959,3 +4959,7 @@ zhuceyun.org
 # Reference: https://www.virustotal.com/gui/domain/googlex.me/relations
 
 googlex.me
+
+# Reference: https://www.virustotal.com/gui/domain/wm01.to/relations
+
+wm01.to
