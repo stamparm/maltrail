@@ -5,10 +5,12 @@ Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrai
 See the file 'LICENSE' for copying permission
 """
 
+import re
+
 from core.common import retrieve_content
 
-__url__ = "https://sslbl.abuse.ch/blacklist/sslipblacklist.csv"
-__check__ = "abuse.ch SSL IPBL "
+__url__ = "https://sslbl.abuse.ch/blacklist/sslipblacklist.rules"
+__check__ = "abuse.ch SSLBL"
 __reference__ = "abuse.ch"
 
 def fetch():
@@ -20,6 +22,8 @@ def fetch():
             line = line.strip()
             if not line or line.startswith('#') or '.' not in line:
                 continue
-            retval[line.split(',')[0]] = ("%s (malware)" % line.split(',')[2].lower().split()[0], __reference__)
+            match = re.search(r"any -> \[([\d.]+)\] (\d+) .+likely ([^)]+) C&C", line)
+            if match:
+                retval["%s:%s" % (match.group(1), match.group(2))] = ("%s (malware)" % match.group(3).lower(), __reference__)
 
     return retval
