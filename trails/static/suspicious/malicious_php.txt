@@ -801,6 +801,10 @@ safesurfing.me
 
 /jizz2.php
 
+# Reference: https://twitter.com/PhishFindR/status/1183762397649080321
+
+/ob_anmelden.php
+
 # Generic
 
 /canadiane-compte.php
