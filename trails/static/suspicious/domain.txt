@@ -4963,3 +4963,7 @@ zhuceyun.org
 ahnlabinc.com
 dyn-dns.co
 dyn-dns.com
+
+# Reference: https://www.virustotal.com/gui/domain/wm01.to/relations
+
+wm01.to
