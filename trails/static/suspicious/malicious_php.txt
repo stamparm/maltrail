@@ -793,6 +793,10 @@ safesurfing.me
 
 /outherename.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1183610672527171584
+
+/hfgf5jrvfx6odl7xi6bbndz5.php
+
 # Generic
 
 /canadiane-compte.php
