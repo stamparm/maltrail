@@ -279,3 +279,7 @@
 
 /out-1369462999.hta
 /out-834610808.hta
+
+# Reference: https://twitter.com/w3ndige/status/1168437823193669632
+
+/2055970.hta
