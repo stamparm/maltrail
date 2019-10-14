@@ -4955,3 +4955,7 @@ yangchequ.com
 zhuceyun.com
 zhuceyun.net
 zhuceyun.org
+
+# Reference: https://www.virustotal.com/gui/domain/googlex.me/relations
+
+googlex.me
