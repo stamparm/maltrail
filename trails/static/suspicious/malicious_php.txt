@@ -760,8 +760,46 @@ safesurfing.me
 
 /sthadd.php
 
+# Reference: https://twitter.com/cocaman/status/1182339090420830208
+
+/Invoicely.php
+
+# Reference: https://twitter.com/malware_traffic/status/1182456890095259652
+
+/2hd3.php
+/hyyfydd35.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1182749989480685568
+
+/2s2jgyug9537ov3guofwa2da27524e5d5582cfb0ee5b91de81c038c5.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1182885899702591488
+
+/pev5x30ugjedndsjt86lqkb527524e5d5582cfb0ee5b91de81c038c5.php
+
+# Reference: https://twitter.com/PhishFindR/status/1182826217206091777
+
+/lastdesj.php
+
+# Reference: https://twitter.com/PhishFindR/status/1182947001622843392
+
+/OrgSurveyMonkeyincorrect.php
+
+# Reference: https://twitter.com/PhishFindR/status/1183294298017673216
+
+/redirectlog.php
+
+# Reference: https://twitter.com/ecarlesi/status/1183416858948636672
+
+/outherename.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1183610672527171584
+
+/hfgf5jrvfx6odl7xi6bbndz5.php
+
 # Generic
 
 /canadiane-compte.php
 /gate.php
+/gate.get
 /screenshot_gate.php
