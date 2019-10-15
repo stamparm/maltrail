@@ -904,6 +904,7 @@ sdad.guru
 markedup.com
 yottaa.net
 advertserv.net
+ixhash.net
 
 # Google crawlers
 
