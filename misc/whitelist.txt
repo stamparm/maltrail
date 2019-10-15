@@ -914,6 +914,15 @@ ixhash.net
 
 216.58.192.0/19
 
+# Microsoft
+
+204.79.196.0/23
+204.79.195.0/24
+
+# crl.comodoca.com, crl.comodoca4.com, crl.sectigo.com, crl.trust-provider.com, crl.usertrust.com, ocsp.comodoca.com, ocsp.comodoca4.com, ocsp.intel.com, ocsp.netsolssl.com, ocsp.sectigo.com, ocsp.securecore-ca.com, ocsp.ssl.com, ocsp.trust-provider.com, ocsp.usertrust.com
+
+151.139.128.14
+
 # Teamviewer
 
 37.252.227.51
