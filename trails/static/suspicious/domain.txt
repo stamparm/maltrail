@@ -4971,3 +4971,8 @@ wm01.to
 # Reference: https://www.virustotal.com/gui/domain/googlex.me/relations
 
 googlex.me
+
+# Reference: https://twitter.com/kyleehmke/status/1184120287199223808
+# Reference: https://www.virustotal.com/gui/domain/jmttrading.org/relations
+
+jmttrading.org
