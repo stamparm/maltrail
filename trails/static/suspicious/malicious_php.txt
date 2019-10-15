@@ -805,6 +805,10 @@ safesurfing.me
 
 /ob_anmelden.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1184199568021508096
+
+/61tgu20b80ylafuzev5cfx9427524e5d5582cfb0ee5b91de81c038c5.php
+
 # Generic
 
 /canadiane-compte.php
