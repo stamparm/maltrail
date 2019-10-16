@@ -2212,3 +2212,20 @@ zinza.jp.tn
 zxad.ma.tn
 zxcsv.jp.tn
 zzzaa.jp.tn
+
+# Reference: https://help.dropbox.com/accounts-billing/security/official-domains
+
+db.tt
+dropbox.com
+dropboxapi.com
+dropboxbusiness.com
+dropboxcaptcha.com
+dropboxforums.com
+dropboxforum.com
+dropboxinsiders.com
+dropboxmail.com
+dropboxpartners.com
+dropboxstatic.com
+getdropbox.com
+dropboxbusiness.com
+dropbox-dns.com
