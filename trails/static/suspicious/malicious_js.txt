@@ -759,3 +759,7 @@ zirve100.com
 
 /p8anm0bn388i8bg6sqcv0smlto.js
 /uqff1t6racoanqj092dg2q5bg8.js
+
+# Reference: https://twitter.com/MBThreatIntel/status/1184531791102857216
+
+/umbro.js
