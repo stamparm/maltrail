@@ -763,3 +763,7 @@ zirve100.com
 # Reference: https://twitter.com/MBThreatIntel/status/1184531791102857216
 
 /umbro.js
+
+# Reference: https://twitter.com/tkanalyst/status/1184840339070148609
+
+/5j76hga6tnpo7levlgmhrosuhs.js
