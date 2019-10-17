@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/tkanalyst/status/1184825216033099777
+
+
+/36F7F9785FA1E9ECF615762B6FACBC2D.moe
+/4AE2B5C048F2913E704D68753B9212A1.moe
