@@ -2229,3 +2229,7 @@ dropboxstatic.com
 getdropbox.com
 dropboxbusiness.com
 dropbox-dns.com
+
+# Virut DGA 2019-10-16
+
+arcgis.com
