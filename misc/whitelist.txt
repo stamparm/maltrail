@@ -59,6 +59,7 @@ drweb.com
 drweb.fr
 drweb.ru
 drweb.ua
+dynamics.com
 e5.sk
 edgecastcdn.net
 edgekey.net
@@ -68,6 +69,7 @@ eset.com
 eset.ua
 esetnod32.ru
 example.com
+ext-twitch.tv
 f-secure.com
 fap.to
 fastly.net
@@ -94,9 +96,11 @@ googlevideo.com
 gstatic.com
 h-cdn.com
 herokuapp.com
+hitwh.edu.cn
 hotmail.com
 ibm.com
 igsonar.com
+imageshack.host
 infernotions.com
 internationalmonetaryfund.org
 ipv6test.com
@@ -126,6 +130,7 @@ nowvideo.sx
 nsatc.net
 officeshoes.ws
 opendns.com
+oraclecloud.com
 outlook.com
 pandasecurity.com
 postimg.cc
@@ -910,6 +915,9 @@ thebrighttag.com
 outbrain.com
 acidityfoamy.com
 strongexplain.com
+activehosted.com
+sensic.net
+zinphyra.com
 
 # Google crawlers
 
