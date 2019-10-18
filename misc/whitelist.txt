@@ -907,6 +907,9 @@ advertserv.net
 ixhash.net
 spotxchange.com
 thebrighttag.com
+outbrain.com
+acidityfoamy.com
+strongexplain.com
 
 # Google crawlers
 
@@ -2235,3 +2238,81 @@ dropbox-dns.com
 # Virut DGA 2019-10-16
 
 arcgis.com
+
+# Reference: https://forum.adguard.com/index.php?threads/resolved-ad-sponsor-domains.30310/
+
+arthydate.com
+arthygeo.info
+abtr4all.com
+abtrcker.com
+adsb4track.com
+adsbtrack.com
+arthydate.com
+etryi.pro
+go-bang-pussy.com
+gorillatrk.com
+localgirlsearch.com
+mobilust.com
+mobitubegirl.com
+sexznakimstwa.online
+track4ref.com
+trackthis1337.com
+
+# Reference: https://forum.adguard.com/index.php?threads/resolved-ad-sponsor-domains-2.30311/
+
+1ccbt.com
+acidityfoamy.com
+amadagasca.com
+babyboomboomads.com
+broomboxmain.com
+cashinme.com
+challengedeprave.com
+comegarage.com
+completeexecutor.com
+curriculture.com
+decademical.com
+downloadgot.com
+evenexcite.com
+fairnessels.com
+fencemiracle.com
+forexplmdb.com
+g1341551423.com
+g2247755016.com
+g3369554495.com
+g344530742.com
+helpclause.com
+injuredcandy.com
+intangibleconcordant.com
+jackettrain.com
+lyoniaancony.com
+mediadisclose.com
+mixturehopeful.com
+mobdisc.net
+mobdisc.org
+mutualvehemence.com
+naganoadigei.com
+nererut.com
+noblemagnition.com
+ortonch.com
+outlookabsorb.com
+pndelfast.com
+producebreed.com
+pushmenews.com
+pushmobilenews.com
+renaissanto.com
+retiremely.com
+ridingintractable.com
+safelyawake.com
+septembership.com
+smashseek.com
+strainemergency.com
+strawdense.com
+stringroadway.com
+strongexplain.com
+tailorcave.com
+textreason.com
+theirsvendor.com
+uncyane.com
+windowmentaria.com
+wynsys.club
+zinidge.com
