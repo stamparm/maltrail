@@ -906,6 +906,7 @@ yottaa.net
 advertserv.net
 ixhash.net
 spotxchange.com
+thebrighttag.com
 
 # Google crawlers
 

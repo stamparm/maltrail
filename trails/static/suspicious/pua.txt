@@ -1137,10 +1137,6 @@ lip.healthcakes.men
 z11.cnzz.com
 z4.cnzz.com
 
-# Reference: https://howtoremove.guide/s-thebrighttag-com-malware-remove/
-
-thebrighttag.com
-
 # Reference: http://it-help.info/how-to/hijackers/2963-how-to-remove-epicunitscan-info-easily
 # Reference: https://www.symantec.com/security-center/writeup/2015-080623-5927-99#technicaldescription
 
