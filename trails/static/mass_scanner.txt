@@ -2865,4 +2865,12 @@
 
 # Reference: https://twitter.com/bad_packets/status/1178208013389189121
 
-185.216.140.180 # NYU Osiris Laboratory
+185.216.140.180  # NYU Osiris Laboratory
+
+# Reference: http://outspoken.ca/
+
+172.105.231.199  # outspoken.ca
+
+# Reference: http://phenome.ca/
+
+172.105.23.36  # phenome.ca
