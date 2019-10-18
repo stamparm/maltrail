@@ -905,6 +905,7 @@ markedup.com
 yottaa.net
 advertserv.net
 ixhash.net
+spotxchange.com
 
 # Google crawlers
 

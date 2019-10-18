@@ -551,12 +551,6 @@ masternard.info
 masteroid.info
 masteroids.info
 
-# Reference: http://www.freefixer.com/b/remove-sync-search-spotxchange-com-from-firefox-chrome-and-internet-explorer/
-# Reference: https://www.urlquery.net/report.php?id=1456783674925
-
-spotxchange.com
-eclampsialemontree.net
-
 # Reference: http://www.fixingvirus.com/how-can-i-remove-htxpm-tonginjs-info-completely/
 tonginjs.info
 
