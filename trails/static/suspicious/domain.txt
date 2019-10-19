@@ -4976,3 +4976,9 @@ googlex.me
 # Reference: https://www.virustotal.com/gui/domain/jmttrading.org/relations
 
 jmttrading.org
+
+# Reference: https://www.fireeye.com/blog/threat-research/2014/09/darwins-favorite-apt-group-2.html
+# Reference: https://github.com/fireeye/iocs/tree/master/APT12
+# Reference: https://www.virustotal.com/gui/domain/csmcpr.com/relations
+
+csmcpr.com
