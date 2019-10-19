@@ -783,3 +783,7 @@ zirve100.com
 # Reference: https://www.virustotal.com/gui/file/1ba5509373ed47e261ae5cd6e79147e710f0cd177ab1afaf95ed172caefb3035/detection
 
 /modernizr.js
+
+# Reference: https://twitter.com/AffableKraut/status/1159677725994622976
+
+jquery.in.ua
