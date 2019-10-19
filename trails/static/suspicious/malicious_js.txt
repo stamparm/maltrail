@@ -771,3 +771,7 @@ zirve100.com
 # Reference: https://twitter.com/killamjr/status/1184849581529616390
 
 /js/varien/mail.js
+
+# Reference: https://twitter.com/killamjr/status/1185376383180136448
+
+/media/si.js
