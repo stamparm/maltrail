@@ -821,6 +821,14 @@ safesurfing.me
 
 /EasyWeb%20Login1.php
 
+# Reference: https://www.virustotal.com/gui/file/8890413aaf104d61f7736558350252d63e55e370449ebcec8812f5a1637ed12e/detection
+
+/nsy6z9ybvhrts5nm6inzf2ld.php
+
+# Reference: https://www.virustotal.com/gui/file/d10c51034be9e3e5338e378900ca5eabff72eb3b02ef34a3e37146a656b62821/detection
+
+/box3Drenewal.php
+
 # Generic
 
 /canadiane-compte.php
