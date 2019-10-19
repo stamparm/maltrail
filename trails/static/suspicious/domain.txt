@@ -4982,3 +4982,9 @@ jmttrading.org
 # Reference: https://www.virustotal.com/gui/domain/csmcpr.com/relations
 
 csmcpr.com
+
+# Reference: https://www.fireeye.com/blog/threat-research/2015/05/hiding_in_plain_sigh.html
+# Reference: https://github.com/fireeye/iocs/blob/master/APT17/7b9e87c5-b619-4a13-b862-0145614d359a.ioc
+# Reference: https://www.virustotal.com/gui/domain/wordraference.com/relations
+
+wordraference.com
