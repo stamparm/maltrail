@@ -779,3 +779,7 @@ zirve100.com
 # Reference: https://twitter.com/GroupIB_GIB/status/1185230751769468928
 
 /js/mirasvit/
+
+# Reference: https://www.virustotal.com/gui/file/1ba5509373ed47e261ae5cd6e79147e710f0cd177ab1afaf95ed172caefb3035/detection
+
+/modernizr.js
