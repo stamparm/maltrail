@@ -829,6 +829,10 @@ safesurfing.me
 
 /box3Drenewal.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1185784986303188992
+
+/5u0ytv3c71064zvzsdonbhhi.php
+
 # Generic
 
 /canadiane-compte.php
