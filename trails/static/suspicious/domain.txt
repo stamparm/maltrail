@@ -4988,3 +4988,9 @@ csmcpr.com
 # Reference: https://www.virustotal.com/gui/domain/wordraference.com/relations
 
 wordraference.com
+
+# Reference: https://www.virustotal.com/gui/domain/kuai-go.com/relations
+# Reference: https://www.virustotal.com/gui/domain/zhzy999.net/relations
+
+kuai-go.com
+zhzy999.net
