@@ -833,6 +833,10 @@ safesurfing.me
 
 /5u0ytv3c71064zvzsdonbhhi.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1186380237090766848
+
+/7ojr9y8dx5ywd6cnc33nc2ro.php
+
 # Generic
 
 /canadiane-compte.php
