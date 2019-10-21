@@ -287,3 +287,8 @@
 # Reference: https://twitter.com/tkanalyst/status/1184825216033099777
 
 /SYUWSL1.hta
+
+# Reference: https://mp.weixin.qq.com/s/ujeIeb_BWoLWu420imwAOQ
+# Reference: https://otx.alienvault.com/pulse/5dad976536418494e8540014
+
+/hta1.hta
