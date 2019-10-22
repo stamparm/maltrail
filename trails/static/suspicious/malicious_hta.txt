@@ -292,3 +292,7 @@
 # Reference: https://otx.alienvault.com/pulse/5dad976536418494e8540014
 
 /hta1.hta
+
+# Reference: https://twitter.com/wwp96/status/1186622658751938560
+
+/out-1029000015.hta
