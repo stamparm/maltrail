@@ -486,7 +486,6 @@ google.ssl.lnfo.cc
 /alfuncsync.js
 /fingerprint_db.js
 akibanoticias.com
-rotumal.com
 tharbadir.com
 cdn.t.co/sm.js
 cdn.popcash.net/pop.js
