@@ -837,6 +837,12 @@ safesurfing.me
 
 /7ojr9y8dx5ywd6cnc33nc2ro.php
 
+# Reference: https://twitter.com/PhishFindR/status/1186570877485420544
+
+/iqov6j5ohz02kv3x1w5sbrvl.php
+/okbppq6lqo7ld2y9a31343oi.php
+/x2khxmw4n64wzm1g9rhi0j3f.php
+
 # Generic
 
 /canadiane-compte.php
