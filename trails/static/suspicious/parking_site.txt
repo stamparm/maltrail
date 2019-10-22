@@ -43,11 +43,17 @@
 
 47.91.170.222
 
+# Panamaserver
+200.63.47.3
+
 # parkingcrew.net (misc.)
 
 74.206.232.234
 67.55.121.97
 bustbuy.com
+
+# openprovider / registrar.eu
+185.87.187.198
 
 # value-domain.com (misc.)
 
