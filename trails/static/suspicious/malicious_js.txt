@@ -788,3 +788,7 @@ jquery.in.ua
 22js.org
 lib0.org
 wp11.org
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/10/the-forgotten-domain:-exploring-a-link-between-magecart-group-5-and-the-carbanak-apt/
+
+info-stat.ws
