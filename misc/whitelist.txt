@@ -860,6 +860,7 @@ xbox.com
 uservoice.com
 gitcdn.xyz
 pushpad.xyz
+163.com
 0.0.0.0
 255.255.255.255
 
@@ -2328,3 +2329,7 @@ uncyane.com
 windowmentaria.com
 wynsys.club
 zinidge.com
+
+# Reference: https://ec.europa.eu/energy/sites/ener/files/documents/tech_report_croatia_2013_en.pdf
+
+cucews.dyndns.org
