@@ -1172,3 +1172,7 @@ Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)
 # Reference: https://twitter.com/zom3y3/status/1182869169164783616
 
 ApiTool
+
+# Reference: https://twitter.com/CRCKio/status/982216650798710792
+
+Botnet by Danij
