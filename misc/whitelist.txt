@@ -188,6 +188,7 @@ zillyaoem.com
 
 # triggering potential DNS exhaustion
 
+barracuda.com
 barracudabrts.com
 dynamic-ip.hinet.net
 kasserver.com
@@ -857,6 +858,8 @@ discord.gg
 ebay.com
 xbox.com
 uservoice.com
+gitcdn.xyz
+pushpad.xyz
 0.0.0.0
 255.255.255.255
 
@@ -918,6 +921,7 @@ strongexplain.com
 activehosted.com
 sensic.net
 zinphyra.com
+adscale.de
 
 # Google crawlers
 
