@@ -4994,3 +4994,8 @@ wordraference.com
 
 kuai-go.com
 zhzy999.net
+
+https://blog.trendmicro.com/trendlabs-security-intelligence/plugx-rat-with-time-bomb-abuses-dropbox-for-command-and-control-settings/
+
+firefox-sync.com
+heritageblog.org
