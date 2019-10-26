@@ -5003,3 +5003,7 @@ heritageblog.org
 # Reference: https://www.virustotal.com/gui/domain/dgvpn.com/relations
 
 dgvpn.com
+
+# Reference: https://www.virustotal.com/gui/domain/blogoveg.org/relations
+
+blogoveg.org
