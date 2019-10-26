@@ -4999,3 +4999,7 @@ https://blog.trendmicro.com/trendlabs-security-intelligence/plugx-rat-with-time-
 
 firefox-sync.com
 heritageblog.org
+
+# Reference: https://www.virustotal.com/gui/domain/dgvpn.com/relations
+
+dgvpn.com
