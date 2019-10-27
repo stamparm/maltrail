@@ -1180,3 +1180,7 @@ Botnet by Danij
 # Reference: https://www.proofpoint.com/us/threat-insight/post/APT-targets-russia-belarus-zerot-plugx
 
 Tzcdrnt
+
+# Reference: https://www.dodgethissecurity.com/2019/02/28/reverse-engineering-an-unknown-rat-lets-call-it-skidrat-1-0/
+
+Mozilla/5.0 (Windows NT 6,2; WOW64; rv:19.0) Gecko/201001o1 Firef0x/19,0
