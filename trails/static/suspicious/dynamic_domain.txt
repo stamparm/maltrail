@@ -3088,3 +3088,7 @@ hackermind.info
 # Reference: https://www.virustotal.com/gui/domain/zzzz.io/relations
 
 zzzz.io
+
+# Reference: https://www.virustotal.com/gui/domain/all4syrian.com/details
+
+all4syrian.com
