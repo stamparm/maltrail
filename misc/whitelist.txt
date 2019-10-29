@@ -416,6 +416,15 @@ geocities.ws
 pdf-archive.com
 discordapp.com
 cl.ly
+cubeupload.com
+
+# found as false positive on cybercrime-tracker.net
+
+defensacentral.com
+
+# found as false positive on bambenekconsulting.com
+
+parkingcrew.net
 
 # found as false positive on abuse.ch
 
