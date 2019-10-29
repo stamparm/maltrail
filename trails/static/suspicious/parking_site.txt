@@ -63,7 +63,9 @@ bustbuy.com
 
 209.200.154.54
 
-# universalfwding.com (misc.)
+# Reference: https://www.virustotal.com/en/ip-address/208.91.197.46/information/
+# Reference: https://www.virustotal.com/en/domain/universalfwding.com/information/
+# universalfwding.com
 
 199.191.50.184
 208.91.196.152
@@ -72,14 +74,22 @@ bustbuy.com
 199.191.50.163
 208.91.197.132
 209.99.64.18
+208.91.196.4
 208.91.196.105
 208.91.196.11
 208.91.196.20
 208.91.196.43
+208.91.196.46
 208.91.197.104
 208.91.197.13
 208.91.197.160
 208.91.197.27
+208.91.197.46
+208.91.197.91
+209.99.40.220
+209.99.40.222
+209.99.40.223
+209.99.40.226
 
 # XtraOrbit.com
 195.154.81.54
@@ -4404,14 +4414,6 @@ bustbuy.com
 
 8.5.1.47
 
-# Reference: https://myip.ms/info/whois/209.99.40.222
-
-209.99.40.222
-
-# Reference: https://myip.ms/info/whois/209.99.40.223
-
-209.99.40.223
-
 # Reference: https://myip.ms/info/whois/50.63.202.104
 
 50.63.202.104
@@ -4487,10 +4489,6 @@ bustbuy.com
 
 103.51.144.81
 
-# Reference: https://myip.ms/info/whois/208.91.196.4
-
-208.91.196.4
-
 # Misc
 
 54.82.156.19
@@ -4520,15 +4518,6 @@ bustbuy.com
 103.224.182.249
 103.224.182.251
 103.224.182.253
-
-# Reference: https://www.virustotal.com/en/ip-address/208.91.197.46/information/
-# Reference: https://www.virustotal.com/en/domain/universalfwding.com/information/
-# universalfwding.com
-
-208.91.197.46
-208.91.196.4
-208.91.197.91
-209.99.40.220
 
 # HugeDomains.com
 
