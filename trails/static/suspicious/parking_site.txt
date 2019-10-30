@@ -1185,6 +1185,10 @@ bustbuy.com
 199.59.243.253
 199.59.243.254
 
+# voodoo.com
+
+192.64.147.224
+
 # Reference: https://www.threatcrowd.org/domain.php?domain=hotkeysparking.com
 
 8.5.1.33
