@@ -5007,3 +5007,7 @@ dgvpn.com
 # Reference: https://www.virustotal.com/gui/domain/blogoveg.org/relations
 
 blogoveg.org
+
+# Reference: https://www.virustotal.com/gui/domain/g1ee.com/relations
+
+g1ee.com
