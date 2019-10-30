@@ -792,3 +792,7 @@ wp11.org
 # Reference: https://blog.malwarebytes.com/threat-analysis/2019/10/the-forgotten-domain:-exploring-a-link-between-magecart-group-5-and-the-carbanak-apt/
 
 info-stat.ws
+
+# Reference: https://cyberweek.ae/materials/D4%20TRACK%202%20-%20APT%20Attacks%20On%20Crypto%20Exchange%20Employees%20-%20Heungsoo%20Kang.pdf
+
+analyticsfit.com
