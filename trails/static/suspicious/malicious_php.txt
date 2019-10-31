@@ -848,7 +848,9 @@ safesurfing.me
 /4ajm5od1mrxwz53ixra4iixa.php
 
 # Reference: https://wordpress.org/support/topic/website-hacked-index-php-totally-changed/
+# Reference: https://www.virustotal.com/gui/domain/bingstyle.com/relations
 
+bingstyle.com
 saleforyou.org
 
 # Generic
