@@ -5026,3 +5026,7 @@ eluma101.com
 # Reference: https://www.virustotal.com/gui/file/ff0fb3dbc9170b42ca07bcbcca2c90dbe7e28eed7a6f8861cc91fcef691726d7/detection
 
 climatechangeawareness.uk
+
+# Reference: https://www.virustotal.com/gui/domain/virus.eu/relations
+
+virus.eu
