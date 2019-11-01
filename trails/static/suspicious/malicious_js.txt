@@ -805,3 +805,7 @@ analyticsfit.com
 # Reference: https://www.virustotal.com/gui/domain/humsoolt.net/relations
 
 humsoolt.net
+
+# Reference: https://www.virustotal.com/gui/domain/drvoip.com/relations
+
+drvoip.com
