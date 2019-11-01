@@ -5011,3 +5011,13 @@ blogoveg.org
 # Reference: https://www.virustotal.com/gui/domain/g1ee.com/relations
 
 g1ee.com
+
+# Reference: https://www.virustotal.com/gui/domain/easydns.com/relations
+# Reference: https://www.virustotal.com/gui/domain/easydns.net/relations
+# Reference: https://www.virustotal.com/gui/domain/easydns.org/relations
+# Reference: https://www.virustotal.com/gui/domain/eluma101.com/relations
+
+easydns.com
+easydns.net
+easydns.org
+eluma101.com
