@@ -1184,3 +1184,7 @@ Tzcdrnt
 # Reference: https://www.dodgethissecurity.com/2019/02/28/reverse-engineering-an-unknown-rat-lets-call-it-skidrat-1-0/
 
 Mozilla/5.0 (Windows NT 6,2; WOW64; rv:19.0) Gecko/201001o1 Firef0x/19,0
+
+# Reference: https://twitter.com/pmelson/status/1190419506620981248
+
+Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; yie9)
