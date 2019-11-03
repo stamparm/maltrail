@@ -1166,6 +1166,7 @@ HardCore
 Adzq41ceq52e353512hSfj
 
 # Reference: https://github.com/silence-is-best/c2db#ostap
+# Reference: https://blog.malwarebytes.com/threat-analysis/2017/03/diamond-fox-p1/
 
 Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)
 
