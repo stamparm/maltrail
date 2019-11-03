@@ -204,3 +204,10 @@ solarray.club
 
 pool.usa-138.com
 xmr.usa-138.com
+
+# Reference: https://twitter.com/MalwareTechBlog/status/1190730471321112577
+# Reference: https://otx.alienvault.com/pulse/5dbdf437299aea7cd396cd26
+# Reference: https://www.virustotal.com/gui/file/8a87a1261603af4d976faa57e49ebdd8fd8317e9dd13bd36ff2599d1031f53ce/detection
+# Reference: https://www.virustotal.com/gui/file/037dbddeda76d7a1be68a2b3098feabfbf5400a53e2606f5a0e445deb2e42959/detection
+
+5.100.251.106:52057
