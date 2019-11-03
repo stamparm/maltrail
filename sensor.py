@@ -160,7 +160,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
     if not _check_domain_whitelisted(query) and all(_ in VALID_DNS_CHARS for _ in query):
         parts = query.split('.')
 
-        if getattr(trails, "_regex", None):
+        if trails._regex:
             match = re.search(trails._regex, query)
             if match:
                 group, trail = [_ for _ in match.groupdict().items() if _[1] is not None][0]

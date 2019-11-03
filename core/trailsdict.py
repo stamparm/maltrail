@@ -10,6 +10,7 @@ import re
 class TrailsDict(dict):
     def __init__(self):
         self._trails = {}
+        self._regex = ""
         self._infos = []
         self._reverse_infos = {}
         self._references = []
@@ -26,6 +27,7 @@ class TrailsDict(dict):
 
     def clear(self):
         self._trails.clear()
+        self._regex = ""
         self._infos = []
         self._references = []
 
@@ -43,9 +45,10 @@ class TrailsDict(dict):
     def get(self, key, default=None):
         if key in self._trails:
             _ = self._trails[key].split(',')
-            return (self._infos[int(_[0])], self._references[int(_[1])])
-        else:
-            return default
+            if len(_) == 2:
+                return (self._infos[int(_[0])], self._references[int(_[1])])
+
+        return default
 
     def update(self, value):
         if isinstance(value, TrailsDict):
@@ -75,9 +78,10 @@ class TrailsDict(dict):
     def __getitem__(self, key):
         if key in self._trails:
             _ = self._trails[key].split(',')
-            return (self._infos[int(_[0])], self._references[int(_[1])])
-        else:
-            raise KeyError(key)
+            if len(_) == 2:
+                return (self._infos[int(_[0])], self._references[int(_[1])])
+
+        raise KeyError(key)
 
     def __setitem__(self, key, value):
         if isinstance(value, (tuple, list)):
