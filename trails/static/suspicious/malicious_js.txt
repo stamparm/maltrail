@@ -796,3 +796,12 @@ info-stat.ws
 # Reference: https://cyberweek.ae/materials/D4%20TRACK%202%20-%20APT%20Attacks%20On%20Crypto%20Exchange%20Employees%20-%20Heungsoo%20Kang.pdf
 
 analyticsfit.com
+
+# Reference: https://twitter.com/EKFiddle/status/1187034052227784704
+
+/lsdioss612ns.js
+
+# Reference: https://twitter.com/unmaskparasites/status/1181651764921155584
+# Reference: https://www.virustotal.com/gui/domain/humsoolt.net/relations
+
+humsoolt.net
