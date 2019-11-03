@@ -5,10 +5,6 @@
 
 lofi.stream
 
-# Reference: https://twitter.com/suyog41/status/1117463616243023879
-
-atilla.vip
-
 # Reference: https://twitter.com/PhishingAi/status/1117780609688952832
 
 hvnc.info
