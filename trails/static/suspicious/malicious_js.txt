@@ -805,3 +805,12 @@ analyticsfit.com
 # Reference: https://www.virustotal.com/gui/domain/humsoolt.net/relations
 
 humsoolt.net
+
+# Reference: https://twitter.com/tkanalyst/status/1190975614766833664
+
+/bootstrap.minfc4a.js
+/ghost-sdk.minfc4a.js
+/highlight.packfc4a.js
+/jflickrfeed.minfc4a.js
+/jquery.fitvidsfc4a.js
+/mainfc4a.js
