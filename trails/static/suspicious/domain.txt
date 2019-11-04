@@ -5034,3 +5034,7 @@ virus.eu
 # Reference: https://www.virustotal.com/gui/domain/markdutchinc.com/relations
 
 markdutchinc.com
+
+# Reference: https://twitter.com/ScumBots/status/1191172548119142400
+
+.lol
