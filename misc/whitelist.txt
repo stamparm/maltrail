@@ -871,6 +871,11 @@ uservoice.com
 gitcdn.xyz
 pushpad.xyz
 163.com
+printfleet.com
+medtronic.com
+fina.hr
+ina.hr
+in2.hr
 0.0.0.0
 255.255.255.255
 
