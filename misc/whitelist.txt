@@ -933,6 +933,7 @@ activehosted.com
 sensic.net
 zinphyra.com
 adscale.de
+pacloudflare.com
 
 # Google crawlers
 
