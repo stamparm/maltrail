@@ -26,10 +26,7 @@ class TrailsDict(dict):
         return key in self._trails
 
     def clear(self):
-        self._trails.clear()
-        self._regex = ""
-        self._infos = []
-        self._references = []
+        self.__init__()
 
     def keys(self):
         return self._trails.keys()
