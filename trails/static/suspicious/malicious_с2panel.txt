@@ -208,10 +208,6 @@ jurasik.serveminecraft.net
 
 kyrkymalol.000webhostapp.com/admin/
 
-# Reference: https://twitter.com/ViriBack/status/1111440848787402752
-
-evih.scamfreeweb.com/Webpanel/
-
 # Reference: https://twitter.com/albertzsigovits/status/1113096573284728839
 
 powellpablooo.myjino.ru/auth.php
@@ -530,4 +526,7 @@ illegalfawn.com/panel.php
 
 # Generic
 
+/panel123/auth.php
+/panel123/login.php
+/pnl/login.php
 /webpanel/login.php
