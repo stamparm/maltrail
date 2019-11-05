@@ -5042,3 +5042,13 @@ markdutchinc.com
 # Reference: https://www.virustotal.com/gui/domain/atwebpages.com/relations
 
 atwebpages.com
+
+# Reference: https://www.virustotal.com/gui/domain/ziraat-helpdesk.com/relations
+# Reference: https://www.virustotal.com/gui/domainagrillcs.com/relations
+# Reference: https://www.virustotal.com/gui/domain/haoldd.com/relations
+# Reference: https://www.virustotal.com/gui/domain/justinstalledpanel.com/relations
+
+agrillcs.com
+haoldd.com
+justinstalledpanel.com
+ziraat-helpdesk.com
