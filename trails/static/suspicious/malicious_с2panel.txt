@@ -527,3 +527,7 @@ illegalfawn.com/panel.php
 # Reference: https://twitter.com/pancak3lullz/status/1022845906041929728
 
 /newsite/panelnew/
+
+# Generic
+
+/webpanel/login.php
