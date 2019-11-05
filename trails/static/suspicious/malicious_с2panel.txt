@@ -530,4 +530,5 @@ illegalfawn.com/panel.php
 
 # Generic
 
+/pnl/login.php
 /webpanel/login.php
