@@ -876,6 +876,7 @@ medtronic.com
 fina.hr
 ina.hr
 in2.hr
+tor-proxy-readme.tcp4.me
 0.0.0.0
 255.255.255.255
 
@@ -2349,3 +2350,7 @@ zinidge.com
 # Reference: https://ec.europa.eu/energy/sites/ener/files/documents/tech_report_croatia_2013_en.pdf
 
 cucews.dyndns.org
+
+# Reference: http://www.dynip.com/docs/DynIPClientV4.2UserGuide.pdf
+
+discovery.dynip.com
