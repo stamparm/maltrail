@@ -93761,3 +93761,11 @@ hackermind.info
 # Reference: https://www.virustotal.com/gui/domain/zzzz.io/relations
 
 zzzz.io
+
+# Reference: https://con-ip.com/
+
+con-ip.com
+
+# Reference: https://ddnss.de/
+
+ddnss.de
