@@ -814,3 +814,9 @@ humsoolt.net
 /jflickrfeed.minfc4a.js
 /jquery.fitvidsfc4a.js
 /mainfc4a.js
+
+# Reference: https://wordpress.org/support/topic/malware-infected-file-wordpress-core-wp-includes-wp-tmp-php/
+# Reference: https://twitter.com/unmaskparasites/status/1181651764921155584
+
+/afu.php?zoneid=
+/apu.php?zoneid=
