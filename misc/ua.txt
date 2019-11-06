@@ -1189,3 +1189,7 @@ Mozilla/5.0 (Windows NT 6,2; WOW64; rv:19.0) Gecko/201001o1 Firef0x/19,0
 # Reference: https://twitter.com/pmelson/status/1190419506620981248
 
 Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; yie9)
+
+# Reference: https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/buran-ransomware-the-evolution-of-vegalocker/
+
+BURAN
