@@ -244,3 +244,8 @@ api.db-ip.com
 # Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-03-28-mcafee-labs-unlocks-lechiffre-ransomware/mcafee-labs-unlocks-lechiffre-ransomware.csv
 
 api.sypexgeo.net
+
+# Reference: https://www.hybrid-analysis.com/string-search/results/dadfd0d8b49c6852e76468b76d381248d8db9f18250b303ead54986bca8dd98f
+# Note: used by many different malware strains (ipinfo service used exclusively by malware)
+
+codeluxsoftware.com
