@@ -256,3 +256,7 @@ aspcmd.asp
 kacak.asp
 newaspcmd.asp
 pouya.asp
+
+# Reference: https://twitter.com/killamjr/status/1191923979549921280
+
+cxxz.php
