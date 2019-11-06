@@ -87,6 +87,7 @@ ip.webmasterhome.cn
 ip-who-is.com
 j.maxmind.com
 l2.io
+localizaip.com.br
 meip.eu
 meuip.net.br
 mon-ip.com
