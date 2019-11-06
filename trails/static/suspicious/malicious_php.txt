@@ -853,6 +853,10 @@ safesurfing.me
 bingstyle.com
 saleforyou.org
 
+# Reference: https://twitter.com/pancak3lullz/status/1192132907277733889
+
+/DbegcjODZNhoeY10.php
+
 # Generic
 
 /canadiane-compte.php
