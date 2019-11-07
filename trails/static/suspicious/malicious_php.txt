@@ -564,7 +564,6 @@ tqbeu.voluumtrk.com
 # Reference: https://twitter.com/tkanalyst/status/1170688633172443139
 
 /c0nf1g.php
-/conf1g.php
 /c0nfig.php
 
 # Reference: https://twitter.com/ViriBack/status/1170728460781871105
@@ -727,10 +726,6 @@ safesurfing.me
 # Reference: https://twitter.com/PhishFindR/status/1180757572023934977
 
 /capatcha.php
-
-# Reference: https://twitter.com/YttriumSec/status/1180101251855343616
-
-/wuwu11.php
 
 # Reference: https://twitter.com/IpNigh/status/1180896155108020224
 
