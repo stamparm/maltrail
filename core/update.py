@@ -286,9 +286,10 @@ def update_trails(force=False, offline=False):
             read_whitelist()
 
             for key in list(trails.keys()):
+                match = re.search(r"\A(\d+\.\d+\.\d+\.\d+)\b", key)
                 if check_whitelisted(key) or any(key.startswith(_) for _ in BAD_TRAIL_PREFIXES):
                     del trails[key]
-                elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key) and (bogon_ip(key) or cdn_ip(key)):
+                elif match and (bogon_ip(match.group(1)) or cdn_ip(match.group(1))) and not any(_ in trails[key][0] for _ in ("parking", "sinkhole")):
                     del trails[key]
                 else:
                     try:
