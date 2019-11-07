@@ -5048,3 +5048,7 @@ agrillcs.com
 haoldd.com
 justinstalledpanel.com
 ziraat-helpdesk.com
+
+# Reference: https://www.virustotal.com/gui/domain/webcindario.com/relations
+
+webcindario.com
