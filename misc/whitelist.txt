@@ -414,6 +414,8 @@ hupt.hr
 # found as false positive on cybercrime-tracker.net
 
 geocities.ws
+crotour.com
+condomchoice.co.uk
 
 # found as false positive on urlvir.com
 
