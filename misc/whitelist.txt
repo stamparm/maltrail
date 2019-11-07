@@ -286,6 +286,10 @@ yahoodns.net
 yandex.net
 zdnet.com
 
+# push notifications provider
+
+os.tc
+
 # have script tags in ad links
 
 emediate.dk
@@ -426,6 +430,10 @@ defensacentral.com
 # found as false positive on bambenekconsulting.com
 
 parkingcrew.net
+
+# triggering parked site events
+
+svijet7.com
 
 # found as false positive on abuse.ch
 
@@ -876,6 +884,7 @@ medtronic.com
 fina.hr
 ina.hr
 in2.hr
+.rh
 tor-proxy-readme.tcp4.me
 0.0.0.0
 255.255.255.255
