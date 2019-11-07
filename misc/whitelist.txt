@@ -434,6 +434,7 @@ parkingcrew.net
 # triggering parked site events
 
 svijet7.com
+artbetting.de
 
 # found as false positive on abuse.ch
 
@@ -885,6 +886,7 @@ fina.hr
 ina.hr
 in2.hr
 .rh
+pacer.cc
 tor-proxy-readme.tcp4.me
 0.0.0.0
 255.255.255.255
