@@ -263,6 +263,40 @@ stressthem.to
 
 indetectables.net
 
+# Reference: https://blog.talosintelligence.com/2017/08/chinese-online-ddos-platforms.html
+
+123ddos.net
+711ddos.cn
+794ddos.cn
+830ddos.top
+87ddos.cc
+91moyu.top
+941ddos.club
+aaajb.top
+bbddos.com
+caihongtangddos.cn
+ccddos.ml
+ddos.blue
+ddos.cx
+ddos.qv5.pw
+dk.ps88.org
+etddos.cn
+hackdd.cn
+hkddos.cn
+jtddos.me
+lnddos.cn
+minddos.club
+ppddos.club
+shashenddos.club
+tc4.pw
+tdddos.com
+the-dos.com
+this-ddos.cn
+tmddos.top
+wm-ddos.win
+xcbzy.club
+zfxcb.top
+
 # Generic
 
 crimemarket.net
