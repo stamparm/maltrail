@@ -819,3 +819,7 @@ humsoolt.net
 
 /afu.php?zoneid=
 /apu.php?zoneid=
+
+# Reference: https://www.virustotal.com/gui/ip-address/104.151.24.95/relations
+
+/index_files/matc.js
