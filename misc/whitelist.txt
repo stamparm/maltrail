@@ -30,6 +30,7 @@ angsrvr.com
 anycastb.com
 anti-virus.by
 azure.com
+b4b.hr
 baidu.com
 bdnsrt.org
 benkow.cc
@@ -41,12 +42,14 @@ cdxall.com
 cdxgoog.com
 cdxultra.com
 cedexis-radar.net
+cezih.hr
 chip.de
 clickbank.net
 clipconverter.cc
 cloudapp.net
 cloudfront.net
 colocrossing.com
+comping.hr
 coppersurfer.tk
 councilforeuropeanstudies.org
 cyfral.net.ua
@@ -78,6 +81,7 @@ fortiddns.com
 fslcdn.net
 footprintdns.com
 footprintpredict.com
+garmin.com
 gexperiments1.com
 gexperiments2.com
 gexperiments3.com
@@ -99,6 +103,9 @@ herokuapp.com
 hitwh.edu.cn
 hotmail.com
 ibm.com
+ibm.hr
+ibmuc.com
+ibmmodules.com
 igsonar.com
 imageshack.host
 infernotions.com
@@ -111,12 +118,14 @@ kaspersky.de
 kaspersky.fr
 kaspersky.ru
 kaspersky.ua
+king-ict.corp
 kvt.su
 kvt.tools
 kvt-shop.ru
 laola1.tv
 linux.org.ru
 live.com
+lotus.com
 lswcdn.net
 mail-abuse.com
 mailchimp.com
@@ -125,6 +134,7 @@ mailshell.net
 mcafee.com
 microsoft.com
 msv1.invalid
+multicom.hr
 netdna-cdn.com
 nowvideo.sx
 nsatc.net
@@ -137,6 +147,7 @@ postimg.cc
 proofpoint.com
 protext.su
 pubnub.com
+qualtrics.com
 rackcdn.com
 rarbg.to
 rncdn1.com
@@ -148,7 +159,9 @@ rncdn6.com
 rncdn7.com
 rncdn8.com
 rncdn.com
+s81c.com
 senderbase.org
+sferakon.org
 siemens.net
 siteforce.com
 sophosxl.com
@@ -909,6 +922,7 @@ nf5.no-ip.com
 
 adbrn.com
 adsco.re
+adshostnet.com
 mucocutaneousmyrmecophaga.com
 scorecardresearch.com
 dsp.io

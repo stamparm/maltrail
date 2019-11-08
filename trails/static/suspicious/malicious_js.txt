@@ -470,7 +470,6 @@ click.clickanalytics208.com
 # Reference: https://www.zscaler.com/blogs/research/magecart-activity-and-campaign-enhancements
 
 /js/decor.js
-/js/lib/ccard.js
 
 # Reference: https://twitter.com/killamjr/status/1149301815529398272
 
