@@ -524,6 +524,12 @@ illegalfawn.com/panel.php
 
 /newsite/panelnew/
 
+# Reference: https://twitter.com/darienhuss/status/1192736459167588353 (# Cyber Agent)
+# Reference: https://www.virustotal.com/gui/file/04d70bb249206a006f83db39bbe49ff6e520ea329e5fbb9c758d426b1c8dec30/detection
+# Reference: http://benkow.cc/wp_prezo.pdf
+
+/android_panel/
+
 # Generic
 
 /panel123/auth.php
