@@ -856,6 +856,12 @@ saleforyou.org
 
 /yolo/admin/settings.php
 
+# Reference: https://wordpress.org/support/topic/malware-infected-file-wordpress-core-wp-includes-wp-tmp-php/
+# Reference: https://twitter.com/unmaskparasites/status/1181651764921155584
+
+/afu.php?zoneid=
+/apu.php?zoneid=
+
 # Generic
 
 /canadiane-compte.php
