@@ -852,6 +852,10 @@ saleforyou.org
 
 /DbegcjODZNhoeY10.php
 
+# Reference: https://blog.talosintelligence.com/2017/08/chinese-online-ddos-platforms.html
+
+/yolo/admin/settings.php
+
 # Generic
 
 /canadiane-compte.php
