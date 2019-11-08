@@ -296,3 +296,10 @@
 # Reference: https://twitter.com/wwp96/status/1186622658751938560
 
 /out-1029000015.hta
+
+# Generic
+
+/myrrem.hta
+/out-1334992907.hta
+/out-1347051899.hta
+/out-849945592.hta
