@@ -813,3 +813,9 @@ humsoolt.net
 
 /wp-includes/js/admin-bar.min.js
 /wp-includes/js/wp-util.min.js
+
+# Reference: https://wordpress.org/support/topic/malware-infected-file-wordpress-core-wp-includes-wp-tmp-php/
+# Reference: https://twitter.com/unmaskparasites/status/1181651764921155584
+
+/afu.php?zoneid=
+/apu.php?zoneid=
