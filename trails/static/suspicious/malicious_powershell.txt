@@ -200,3 +200,7 @@
 # Reference: https://twitter.com/JAMESWT_MHT/status/1192451935225438209
 
 /asdg.ps1
+
+# Reference: https://twitter.com/0xFrost/status/1111247631223791617
+
+/Standoff8900.ps1
