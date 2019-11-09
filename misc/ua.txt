@@ -1193,3 +1193,7 @@ Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; yie9)
 # Reference: https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/buran-ransomware-the-evolution-of-vegalocker/
 
 BURAN
+
+# Reference: https://github.com/dragosinc/CRASHOVERRIDE/blob/master/CRASHOVERRIDE%20IOC%202016-06-12.csv
+
+Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.1)
