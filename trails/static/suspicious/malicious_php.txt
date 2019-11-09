@@ -856,6 +856,10 @@ saleforyou.org
 
 /b5t67uhgo6mofy2cy6plw5ao.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1193259233325830144
+
+/a8f393621f61442943b4f24c.php
+
 # Reference: https://blog.talosintelligence.com/2017/08/chinese-online-ddos-platforms.html
 
 /yolo/admin/settings.php
