@@ -1197,3 +1197,7 @@ BURAN
 # Reference: https://github.com/dragosinc/CRASHOVERRIDE/blob/master/CRASHOVERRIDE%20IOC%202016-06-12.csv
 
 Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.1)
+
+# Reference: https://community.rsa.com/community/products/netwitness/blog/2018/01/12/malspam-delivers-njrat-1-11-2018
+
+USRUE-VNC
