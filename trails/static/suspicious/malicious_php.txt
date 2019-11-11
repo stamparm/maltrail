@@ -864,6 +864,10 @@ saleforyou.org
 
 /yolo/admin/settings.php
 
+# Reference: https://twitter.com/James_inthe_box/status/1193965109552406528
+
+/c7afb5603b20fe.php
+
 # Generic
 
 /canadiane-compte.php
