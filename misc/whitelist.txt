@@ -241,6 +241,7 @@ filehippo.com
 foxitsoftware.com
 fraps.com
 garr.it
+gigabyte.com
 gimp.org
 googleapis.com
 google.com
@@ -967,6 +968,7 @@ sensic.net
 zinphyra.com
 adscale.de
 pacloudflare.com
+mybestdc.com
 
 # Google crawlers
 
