@@ -901,6 +901,8 @@ medtronic.com
 fina.hr
 ina.hr
 in2.hr
+pbz.hr
+.rba
 .rh
 pacer.cc
 tor-proxy-readme.tcp4.me
