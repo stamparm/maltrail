@@ -204,3 +204,8 @@
 # Reference: https://twitter.com/0xFrost/status/1111247631223791617
 
 /Standoff8900.ps1
+
+# Reference: https://github.com/StrangerealIntel/CyberThreatIntel/blob/master/North%20Korea/APT/Lazarus/23-10-19/analysis.md
+
+/snphhuatvsbkw.ps1
+/sopiiubuvsclwukz.ps1
