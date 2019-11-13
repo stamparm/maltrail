@@ -1187,3 +1187,7 @@ USRUE-VNC
 # Reference: # Reference: https://twitter.com/James_inthe_box/status/1194592723736485889
 
 Aldi Bot
+
+# Reference: https://twitter.com/bad_packets/status/1194697097229950976
+
+Hello, poo
