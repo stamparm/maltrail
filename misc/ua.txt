@@ -527,15 +527,6 @@ JDatabaseDriverMysqli
 
 4RR0B4R 4 X0T4 D4 TU4 M4E
 
-# Reference: https://twitter.com/bad_packets/status/1104618320882393088
-# Reference: https://pastebin.com/raw/Zc7h4vkN
-
-zgrab
-
-# Reference: https://twitter.com/bad_packets/status/1104313051166068737
-
-python-requests
-
 # Reference: https://twitter.com/bad_packets/status/1083657979788816384
 
 Hello, World
@@ -1150,11 +1141,11 @@ joxypoxy
 
 # Reference: https://twitter.com/VirITeXplorer/status/1181466268110643200
 
-\blex\b
+\Alex\Z
 
 # Reference: https://github.com/silence-is-best/c2db#darkrat
 
-\bagent\b
+\Aagent\Z
 
 # Reference: https://github.com/silence-is-best/c2db#isrstealer
 
@@ -1183,19 +1174,11 @@ Tzcdrnt
 
 # Reference: https://www.dodgethissecurity.com/2019/02/28/reverse-engineering-an-unknown-rat-lets-call-it-skidrat-1-0/
 
-Mozilla/5.0 (Windows NT 6,2; WOW64; rv:19.0) Gecko/201001o1 Firef0x/19,0
-
-# Reference: https://twitter.com/pmelson/status/1190419506620981248
-
-Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; yie9)
+Firef0x
 
 # Reference: https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/buran-ransomware-the-evolution-of-vegalocker/
 
 BURAN
-
-# Reference: https://github.com/dragosinc/CRASHOVERRIDE/blob/master/CRASHOVERRIDE%20IOC%202016-06-12.csv
-
-Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.1)
 
 # Reference: https://community.rsa.com/community/products/netwitness/blog/2018/01/12/malspam-delivers-njrat-1-11-2018
 
