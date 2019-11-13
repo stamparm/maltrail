@@ -527,15 +527,6 @@ JDatabaseDriverMysqli
 
 4RR0B4R 4 X0T4 D4 TU4 M4E
 
-# Reference: https://twitter.com/bad_packets/status/1104618320882393088
-# Reference: https://pastebin.com/raw/Zc7h4vkN
-
-zgrab
-
-# Reference: https://twitter.com/bad_packets/status/1104313051166068737
-
-python-requests
-
 # Reference: https://twitter.com/bad_packets/status/1083657979788816384
 
 Hello, World
@@ -882,8 +873,10 @@ webvulnscan
 Mozilla/5.0 (Windows NT 10.0; &)
 
 # Reference: https://twitter.com/luc4m/status/1166765980489584640
+# Reference: https://twitter.com/Littl3field/status/1174624023709454336
 
 WSHRAT
+USER-PC
 
 # Reference: https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/08/01075510/TV_RMS_IoC_eng.pdf
 
@@ -893,3 +886,304 @@ Mozilla/4.0 (compatible; MSIE 6.0; DynGate)
 # Reference: https://twitter.com/chybeta/status/1167617571287289856
 
 webmin
+
+# Reference: http://rules.emergingthreats.net/open/snort-2.9.0/rules/emerging-user_agents.rules
+
+\{[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}\}
+=Mozilla
+\A123\Z
+\AApp
+\ACompatible\Z
+\Acv\_v\Z
+\ADigital\Z
+\AESET Installer\Z
+\Ahhh\Z
+\Ahttps\Z
+\AHTTPGET\Z
+\Ai am ddos\Z
+\AIm Luo\Z
+\AINet\Z
+\AIST\Z
+\Akav\Z
+\Amin\Z
+\AMs\Z
+\AMy Agent\Z
+\AMy\_App\Z
+\AMz\Z
+\AOur\_Agent\Z
+\AQQ\Z
+\ATestAgent\Z
+\AVersion
+\AWindows XP\Z
+\AWindows 7\Z
+\AWindows 8\Z
+\AWindows 10\Z
+\AXML\Z
+\Axr\Z
+\AZilla\Z
+\Azwt\Z
+Accessing
+AdiseExplorer
+adlib
+adsntD
+aguarovex
+Aldi Bot
+alertup
+angel
+antispyprogram
+AnyDesk
+aria2
+Atomic\_Email\_Hunter
+acHTTP component
+auHTTP component
+AutoUpgrader component
+AV1
+AVP2006IE
+Avzhan
+BigFoot
+Brontok
+Download App
+DownloadNetFile
+DownloadMR
+DriveCleaner
+Caesar
+CFS Agent
+CFS_DOWNLOAD
+checkonline
+chek
+ChilkatUpload
+Citrix
+ClickAdsByIE
+curl53
+CustomExchangeBrowser
+Damien
+Downloader1.2
+ekeoil
+ElectroSun
+ErrCode
+ExampleDL
+FileNolja
+Firef0x
+Firefox\.\.\.
+FOCA
+Forthgoner
+GeneralDownloadApplication
+GetUrlSize
+Google page
+google/dance
+hacker
+Hentai
+HTTP\_Connect\_
+HTTP Downloader
+HttpDownload
+\bHTTPTEST
+JEDI-VCL
+Joseray
+IAMDDOS
+iamx
+IE6 on Windows XP
+ieagent
+ieguideupdate
+IEhook
+IE/1.0
+IEMGR
+InHold
+Inet_read
+inetinst
+InfoBot
+Internet HTTP
+ISearchTech
+Ismazo
+ISMYIE
+keypack
+KIARA
+KKTone
+kpangupdate
+Kvadrlson
+lessie
+libsfml-network
+Loands
+LockXLS
+Machaon
+MadeBy
+MacShield
+MediaLabsSiteInstaller
+miip
+Microsoft WinRM
+M0zilla
+Mozil1a
+Mozilla-web
+Mozilla 1.02.45 biz
+Mozilla 6.0
+Mozilla/1.0 (compatible; MSIE 8.0
+Mozilla/4.0 (SPGK)
+Mozilla/4.0 (compatible; MSIE 6.0)
+Mozilla/4.0 (compatible MSIE 7.0 na .NET CLR 2.0.50727 .NET CLR 3.0.4506.2152 .NET CLR 3.5.30729)
+Mozilla/4.0 (compatible; MSIE 5.0; Windows NT 2.1; SV3)
+Mozilla/4.7
+Mozilla/5.0 (compatible, Viper 4.0)
+Mozilla/5.0 (Windows NT 6.1; wget 3.0; rv:5.0)
+Mozzila
+MS Internet Explorer
+ms\_ie
+MtGoxBackOffice
+muhstik
+MyAgent
+MYURL
+N0PE
+NateFinder
+nethelper
+Nimo Software HTTP
+node-XMLHttpRequest
+NSIS_DOWNLOAD
+NULL
+okcpmgr
+onedru
+Opera/10.60 Presto/2.2.30
+Opera/8.81
+Opera/8.89
+Opera/9.10
+Opera/9.28
+PcPcUpdater
+Poker
+Poller
+PrivacyInfoUpdate
+Quick Macros
+ReadFileURL
+RBRs
+RFRudokop
+RLMultySocket
+runPatch
+runUpdater
+SAIv
+sample
+ScrapeBox
+sections
+SERVER2
+Session
+Shaolin
+sickness29a
+SimpleClient
+Skunkx
+Snatch-System
+Solar
+SomeTimes
+SRRemove
+STORMDDOS
+SUiCiDE
+svchost
+TBNotifier
+Tsunami
+Ucheck
+Ufasoft
+up2dash
+updater\_agent
+Varlok
+\bVB Http
+VERTEXNET
+WebForm
+WebUpdate
+Win32
+WINDOWS\_LOADS
+WindSoft
+WinProxy
+WINS\_HTTP\_SEND
+WINTERNET
+WT-User-Agent
+xSock
+XXXPornToolbar
+Yakuza
+Yandesk
+YourUserAgent
+Yowai
+YTDDOS
+
+# Reference: https://twitter.com/UrBogan/status/1170583647742656514
+
+DEMONS
+
+# Reference: https://twitter.com/tkanalyst/status/1171572121648033792
+
+Mozilla/4.0 (compatible; MSIE6.0b; Windows NT 5.1)
+
+# Reference: https://twitter.com/david_jursa/status/1172180368633597952
+
+N0sK0Y1OK1130Sav
+Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E)
+
+# Reference: https://cofense.com/seeing-resurgence-demonic-astaroth-wmic-trojan/
+
+Mozilla/4.0 (compatible; HRD Utilities by I4FYV)
+
+# Reference: https://blogs.jpcert.or.jp/en/2019/09/tscookie-loader.html
+
+Mozilla/4.0 (compatible; MSIE 8.0; Win32)
+
+# Reference: https://twitter.com/blackorbird/status/1174894127378358272
+
+Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.0; Trident/5.0; BOIE9;ENUSMSNIP)
+
+# Reference: https://twitter.com/tkanalyst/status/1175417561527115778
+
+ACwDTLiV
+
+# Reference: https://www.virustotal.com/gui/file/0d2ee9ade24163613772fdda201af985d852ab506e3d3e7f07fb3fa8b0853560/detection
+# Reference: https://citizenlab.ca/2019/09/poison-carp-tibetan-groups-targeted-with-1-click-mobile-exploits/
+# Reference: https://github.com/citizenlab/malware-indicators/blob/master/201909_MissingLink/iocs.csv
+# Reference: https://twitter.com/craiu/status/1176437943369703424
+
+hots scot
+
+# Reference: https://github.com/pan-unit42/iocs/blob/master/mirai/ECHOBOT_6thAug2019.md
+# Reference: https://www.exploit-db.com/exploits/29789
+
+joxypoxy
+
+# Reference: https://twitter.com/VirITeXplorer/status/1181466268110643200
+
+\Alex\Z
+
+# Reference: https://github.com/silence-is-best/c2db#darkrat
+
+\Aagent\Z
+
+# Reference: https://github.com/silence-is-best/c2db#isrstealer
+
+HardCore
+
+# Reference: https://github.com/silence-is-best/c2db#milkyboy
+
+Adzq41ceq52e353512hSfj
+
+# Reference: https://github.com/silence-is-best/c2db#ostap
+# Reference: https://blog.malwarebytes.com/threat-analysis/2017/03/diamond-fox-p1/
+
+Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)
+
+# Reference: https://twitter.com/zom3y3/status/1182869169164783616
+
+ApiTool
+
+# Reference: https://twitter.com/CRCKio/status/982216650798710792
+
+Botnet by Danij
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/APT-targets-russia-belarus-zerot-plugx
+
+Tzcdrnt
+
+# Reference: https://www.dodgethissecurity.com/2019/02/28/reverse-engineering-an-unknown-rat-lets-call-it-skidrat-1-0/
+
+Firef0x
+
+# Reference: https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/buran-ransomware-the-evolution-of-vegalocker/
+
+BURAN
+
+# Reference: https://community.rsa.com/community/products/netwitness/blog/2018/01/12/malspam-delivers-njrat-1-11-2018
+
+USRUE-VNC
+
+# Reference: # Reference: https://twitter.com/James_inthe_box/status/1194592723736485889
+
+Aldi Bot
