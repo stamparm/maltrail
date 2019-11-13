@@ -982,7 +982,6 @@ Google page
 google/dance
 hacker
 Hentai
-HttpClient\b
 HTTP\_Connect\_
 HTTP Downloader
 HttpDownload
