@@ -2963,3 +2963,8 @@ spottt.com
 badfriend.org
 showmyhomes.com
 thenme.net
+
+# Reference: https://www.virustotal.com/gui/domain/keenetic.pro/relations
+# Reference: https://keenetic.pro/
+
+keenetic.pro
