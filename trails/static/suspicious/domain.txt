@@ -5,6 +5,12 @@
 .su
 .tt
 .ws
+.xyz
+.pw
+.tk
+.cf
+.gq
+.icu
 
 # Reference: http://www.freenom.com/en/index.html
 
@@ -51,20 +57,6 @@
 
 .i2p
 
-# Reference: https://blog.malwarebytes.org/online-security/2014/09/malicious-activity-observed-in-new-top-level-domains/
-
-.pictures
-.consulting
-.xyz
-.club
-.solutions
-.domains
-.company
-.photos
-.directory
-.enterprises
-.guru
-
 # Reference: https://ntldstats.com/fraud
 
 .link
@@ -91,19 +83,6 @@ cnc-cs.com
 # Reference: https://en.wikipedia.org/wiki/.gu
 
 .gu
-
-# Reference: https://lifars.com/2015/09/the-internets-most-malicious-domains/
-
-.zip
-.review
-.country
-.kim
-.cricket
-.science
-.work
-.party
-.gq
-.link
 
 # Reference: http://changelog.ca/log/2000/04/07/free-third-level-domain-name-roundup
 
