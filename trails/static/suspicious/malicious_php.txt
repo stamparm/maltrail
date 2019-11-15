@@ -868,6 +868,10 @@ saleforyou.org
 
 /c7afb5603b20fe.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1195358076574085121
+
+/ftzxrdyd4bzn34urui0wjjf2.php
+
 # Generic
 
 /canadiane-compte.php
