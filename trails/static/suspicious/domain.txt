@@ -46,11 +46,6 @@
 .de.lv
 .biz.ly
 
-# Reference: http://readwrite.com/2010/10/27/the_worlds_most_dangerous_domains
-
-.cm
-.am
-
 # Reference: https://thetinhat.com/tutorials/darknets/i2p.html
 # (note: just for lost (non-SOCKS) I2P domain lookups)
 
@@ -1120,23 +1115,6 @@ zx9.de
 
 co.cc
 co.be
-
-# Reference: http://www.networkworld.com/article/3091754/security/the-new-internet-domains-are-a-wasteland.html
-
-.xyz
-.domain
-.website
-.review
-.club
-.date
-.racing
-.download
-.top
-.gdn
-.bid
-.museum
-.mobi
-.stream
 
 # Reference: https://blog.talosintelligence.com/2018/08/threat-roundup-0803-0810.html
 
