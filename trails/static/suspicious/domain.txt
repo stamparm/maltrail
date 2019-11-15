@@ -57,12 +57,6 @@
 
 .i2p
 
-# Reference: https://ntldstats.com/fraud
-
-.link
-.click
-.work
-
 # Reference: https://uni.me/
 
 uni.me
@@ -4753,8 +4747,6 @@ zaberno.com
 # Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-01-14-typosquatting-attacks-alive-well-unfortunately/typosquatting-attacks-alive-well-unfortunately.csv
 
 criagslist.com
-craigslist.com
-craigslist.org
 youutbe.com
 youtupe.com
 
