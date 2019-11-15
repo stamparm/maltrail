@@ -1119,7 +1119,6 @@ aa.am
 ae.am
 aelita.fr
 air.ai
-altervista.org
 aq.pl
 ass0.fr
 assexyas.com
@@ -1198,7 +1197,6 @@ de.tf
 dhis.org
 dk.tc
 dns0755.net
-dy.fi
 dynamicdomain.net
 dzw.tv
 edu.tc
@@ -4661,10 +4659,6 @@ gws.kr
 # Reference: https://www.virustotal.com/gui/domain/myihor.ru/relations
 
 myihor.ru
-
-# Reference: https://www.virustotal.com/gui/domain/orderbox-dns.com/details
-
-orderbox-dns.com
 
 # Reference: https://www.virustotal.com/gui/domain/securezdns.pw/relations
 

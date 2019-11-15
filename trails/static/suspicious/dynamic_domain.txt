@@ -2968,3 +2968,7 @@ thenme.net
 # Reference: https://keenetic.pro/
 
 keenetic.pro
+
+# Reference: https://www.dy.fi/
+
+dy.fi
