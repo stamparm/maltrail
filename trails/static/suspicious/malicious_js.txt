@@ -818,3 +818,7 @@ humsoolt.net
 # Reference: https://www.virustotal.com/gui/ip-address/104.151.24.95/relations
 
 /index_files/matc.js
+
+# Reference: https://twitter.com/xuy1202/status/1195701523797303296
+
+adsnet.work
