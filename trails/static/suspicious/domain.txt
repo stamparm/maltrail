@@ -4999,3 +4999,7 @@ piytrwd.com
 # Reference: https://www.virustotal.com/gui/domain/5b6b7b.ru/relations
 
 5b6b7b.ru
+
+# Reference: https://www.virustotal.com/gui/domain/ruisgood.ru/relations
+
+ruisgood.ru
