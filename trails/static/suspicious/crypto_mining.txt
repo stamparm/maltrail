@@ -211,3 +211,8 @@ xmr.usa-138.com
 # Reference: https://www.virustotal.com/gui/file/037dbddeda76d7a1be68a2b3098feabfbf5400a53e2606f5a0e445deb2e42959/detection
 
 5.100.251.106:52057
+
+# Reference: https://blog.netlab.360.com/mykings-the-botnet-behind-multiple-active-spreading-botnets/
+
+myxmr.pw
+xmr.5b6b7b.ru
