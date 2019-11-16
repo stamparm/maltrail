@@ -4995,3 +4995,7 @@ ziraat-helpdesk.com
 # Reference: https://app.any.run/tasks/90e9809c-d3c5-4e93-b364-6ec4911c2e3e/
 
 piytrwd.com
+
+# Reference: https://www.virustotal.com/gui/domain/5b6b7b.ru/relations
+
+5b6b7b.ru
