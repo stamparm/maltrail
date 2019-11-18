@@ -1442,10 +1442,6 @@ zik.dj
 
 .fun
 
-# Reference: https://twitter.com/58_158_177_102/status/1087514326607355904
-
-.accountant
-
 # Reference: https://twitter.com/malwaremustd1e/status/1122003608927494145
 
 .ooo
@@ -4446,7 +4442,6 @@ zziesworld.com
 000webhost.com
 80port.net
 3322.net
-altervista.org
 azote.org
 bee.pl
 biz.nf
@@ -4472,7 +4467,6 @@ dhis.org
 dnserver.com
 dot.tk
 dy.fi
-eu.org
 europnic.com
 freeavailabledomains.com
 gv.vg
@@ -4749,10 +4743,6 @@ zaberno.com
 criagslist.com
 youutbe.com
 youtupe.com
-
-# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2015/2015-05-08-brazilian-banking-malware-hides-in-sql-database/brazilian-banking-malware-hides-in-sql-database.csv
-
-whservidor.com
 
 # Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2018/2018-03-02-mcafee-uncovers-operation-honeybee-malicious-document-campaign-targeting-humanitarian-aid-groups/mcafee-uncovers-operation-honeybee-malicious-document-campaign-targeting-humanitarian-aid-groups.csv
 https://blog.trendmicro.com/trendlabs-security-intelligence/syscon-backdoor-uses-ftp-as-a-cc-channel/
