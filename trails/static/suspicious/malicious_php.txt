@@ -872,6 +872,10 @@ saleforyou.org
 
 /ftzxrdyd4bzn34urui0wjjf2.php
 
+# Reference: https://twitter.com/chybeta/status/1196250816476139520
+
+/wp-content/plugins/super-socialat/super_socialat.php
+
 # Generic
 
 /canadiane-compte.php
