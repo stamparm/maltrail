@@ -297,6 +297,10 @@
 
 /out-1029000015.hta
 
+# Reference: https://twitter.com/tkanalyst/status/1196033182694379527
+
+/flusupdxx64.hta
+
 # Generic
 
 /myrrem.hta
