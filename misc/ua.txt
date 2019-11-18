@@ -1195,3 +1195,7 @@ Hello, poo
 # Reference: https://habr.com/ru/company/pt/blog/475328/ (Russian)
 
 Windows-Update-Agent
+
+# Reference: https://threatvector.cylance.com/en_us/home/poking-the-bear-three-year-campaign-targets-russian-critical-infrastructure.html
+
+DMFR
