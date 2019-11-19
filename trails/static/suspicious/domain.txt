@@ -4817,7 +4817,6 @@ helpupdates.net
 mediashares.org
 player1253.com
 player1532.com
-player[0-9]{1,}\.com
 thepicturehut.net
 timedate1.com
 timedate1.net
