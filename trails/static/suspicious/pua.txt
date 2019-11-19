@@ -765,10 +765,6 @@ clkdown.info
 
 khit.cn
 
-# Reference: https://www.threatcrowd.org/domain.php?domain=apnanalytics.com
-
-apnanalytics.com
-
 # Reference: https://superuser.com/questions/642002/is-driverpack-solution-trustworthy
 # Reference: https://sitecheck.sucuri.net/results/update.drp.su
 
