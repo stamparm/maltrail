@@ -902,9 +902,15 @@ fina.hr
 ina.hr
 in2.hr
 pbz.hr
+ht.hr
 .rba
 .rh
+nirvana.easydns.net
+tor-exit-node-x1.mooo.com
+super59.ddns.net
 pacer.cc
+rvpn-api.ws
+nic.xyz
 tor-proxy-readme.tcp4.me
 0.0.0.0
 255.255.255.255
@@ -971,6 +977,9 @@ zinphyra.com
 adscale.de
 pacloudflare.com
 mybestdc.com
+ads.cc
+laus.cc
+ankiety.ml
 
 # Google crawlers
 
