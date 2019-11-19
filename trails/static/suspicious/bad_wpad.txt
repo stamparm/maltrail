@@ -75,3 +75,8 @@ unstopweb.com
 unstopweb.net
 unstopweb.org
 webunstop.org
+
+# Reference: https://www.wpadblock.com/
+# Reference: https://www.virustotal.com/gui/ip-address/144.76.184.43/relations
+
+144.76.184.43
