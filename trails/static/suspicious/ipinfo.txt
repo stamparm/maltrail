@@ -30,6 +30,7 @@ findmyipaddress.com
 findmyip.org
 formyip.com
 freegeoip.net
+geodatatool.com
 geoip.co.uk
 geoiptool.com
 geoip.vmn.net
