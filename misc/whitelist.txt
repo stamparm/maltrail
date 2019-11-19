@@ -912,6 +912,12 @@ pacer.cc
 rvpn-api.ws
 nic.xyz
 tor-proxy-readme.tcp4.me
+filmativa.ws
+fmovies.wtf
+epizode.ws
+adult-movies.cc
+.centar
+.corp
 0.0.0.0
 255.255.255.255
 
@@ -981,6 +987,12 @@ ads.cc
 laus.cc
 ankiety.ml
 apnanalytics.com
+dartsearch.net
+ift.tt
+alephd.com
+jumptap.com
+advrcsr.xyz
+list-manage.com
 
 # Google crawlers
 
