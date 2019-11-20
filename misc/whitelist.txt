@@ -916,6 +916,9 @@ filmativa.ws
 fmovies.wtf
 epizode.ws
 adult-movies.cc
+verticals.wix.com
+www.wix.com
+96.wix.com
 .centar
 .corp
 0.0.0.0
@@ -993,6 +996,7 @@ alephd.com
 jumptap.com
 advrcsr.xyz
 list-manage.com
+oath.cloud
 
 # Google crawlers
 

@@ -1131,12 +1131,6 @@ lip.healthcakes.men
 z11.cnzz.com
 z4.cnzz.com
 
-# Reference: http://it-help.info/how-to/hijackers/2963-how-to-remove-epicunitscan-info-easily
-# Reference: https://www.symantec.com/security-center/writeup/2015-080623-5927-99#technicaldescription
-
-epicunitscan.info
-mynamedomain.koko
-
 # Reference: https://www.virustotal.com/#/file/2098df714d8b57bbe7e57ce922146e5f8f41aa8d842e2cc10adbb23eccb8ed21/behavior
 # Reference: https://www.threatcrowd.org/ip.php?ip=95.211.95.250
 
