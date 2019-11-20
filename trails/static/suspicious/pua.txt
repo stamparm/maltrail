@@ -331,7 +331,6 @@ safesearch.net
 interyield.jmp9.com
 interyield.td563.com
 filebulldog.com
-imgfarm.com
 arcadefrontier.com
 
 # Reference: http://www.rescuemybrowser.com/fwdservice-com-virus-removal

@@ -921,6 +921,12 @@ www.wix.com
 96.wix.com
 .centar
 .corp
+gca.sh
+genotypeinczgrxr.onion
+imgtube.net
+imgchili.net
+sport7.ws
+stream2watch.ws
 0.0.0.0
 255.255.255.255
 
@@ -997,6 +1003,7 @@ jumptap.com
 advrcsr.xyz
 list-manage.com
 oath.cloud
+imgfarm.com
 
 # Google crawlers
 
