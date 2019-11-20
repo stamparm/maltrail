@@ -677,17 +677,10 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                                                         break
 
-                                            if len(parts) > 2:
-                                                part = parts[0] if parts[0] != "www" else parts[1]
-                                                trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
-                                            elif len(parts) == 2:
+                                            if len(parts) == 2 and parts[0] and '-' not in parts[0]:
                                                 part = parts[0]
                                                 trail = "(%s).%s" % (parts[0], parts[1])
-                                            else:
-                                                part = query
-                                                trail = query
 
-                                            if part and '-' not in part:
                                                 result = _result_cache.get(part)
 
                                                 if result is None:
