@@ -876,6 +876,14 @@ saleforyou.org
 
 /wp-content/plugins/super-socialat/super_socialat.php
 
+# Reference: https://twitter.com/PhishFindR/status/1197533121052323840
+
+/rbcgi3m01.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1197577070500401152
+
+/ftsp2fflm.php
+
 # Generic
 
 /canadiane-compte.php
