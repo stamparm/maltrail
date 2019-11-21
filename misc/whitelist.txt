@@ -927,6 +927,7 @@ imgtube.net
 imgchili.net
 sport7.ws
 stream2watch.ws
+imgdew.pw
 0.0.0.0
 255.255.255.255
 
@@ -1004,6 +1005,8 @@ advrcsr.xyz
 list-manage.com
 oath.cloud
 imgfarm.com
+qadservice.com
+airliquide.com
 
 # Google crawlers
 

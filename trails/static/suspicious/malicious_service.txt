@@ -300,3 +300,4 @@ zfxcb.top
 # Generic
 
 crimemarket.net
+uploadvirus.com

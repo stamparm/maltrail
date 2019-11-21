@@ -1,6 +1,8 @@
 # Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
+# Reference: https://www.trendmicro.co.uk/media/misc/wp-badwpad.pdf
+
 # Reference: https://twitter.com/malwaremustd1e/status/1125303785004212224
 # Reference: https://blog.redteam.pl/2019/05/badwpad-dns-suffix-wpad-wpadblocking-com.html
 # Reference: https://blog.redteam.pl/2019/05/badwpad-and-wpad-pl-wpadblocking-com.html
