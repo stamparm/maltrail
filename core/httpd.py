@@ -180,7 +180,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     content = content.encode(UNICODE_ENCODING)
 
                 for match in re.finditer(b"<\\!(\\w+)\\!>", content):
-                    name = match.group(1)
+                    name = match.group(1).decode(UNICODE_ENCODING)
                     _ = getattr(self, "_%s" % name.lower(), None)
                     if _:
                         content = self._format(content, **{ name: _() })
@@ -199,10 +199,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             self.end_headers()
 
-            if content:
-                self.wfile.write(content)
+            try:
+                if content:
+                    self.wfile.write(content)
 
-            self.wfile.flush()
+                self.wfile.flush()
+            except:
+                pass
 
         def do_POST(self):
             length = self.headers.get(HTTP_HEADER.CONTENT_LENGTH)
@@ -274,7 +277,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         def _format(self, content, **params):
             if content:
                 for key, value in params.items():
-                    content = content.replace("<!%s!>" % key, value)
+                    content = content.replace(b"<!%s!>" % key.encode(UNICODE_ENCODING), value.encode(UNICODE_ENCODING))
 
             return content
 
