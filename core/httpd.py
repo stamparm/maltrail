@@ -505,6 +505,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             for line in session.range_handle:
                                 display = False
                                 ip = None
+                                line = line.decode(UNICODE_ENCODING, "ignore")
 
                                 if regex:
                                     match = re.search(regex, line)

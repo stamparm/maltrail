@@ -205,7 +205,7 @@ def get_regex(items):
 
                 return ("[%s]" % "".join(items)) if len(items) > 1 or '-' in items[0] else "".join(items)
             else:
-                return re.escape(current.keys()[0])
+                return re.escape(list(current.keys())[0])
         else:
             return ("(?:%s)" if len(current) > 1 else "%s") % ('|'.join("%s%s" % (re.escape(_), process(current[_])) for _ in sorted(current))).replace('|'.join(str(_) for _ in xrange(10)), r"\d")
 
