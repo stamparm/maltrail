@@ -880,6 +880,10 @@ saleforyou.org
 
 /rbcgi3m01.php
 
+# Reference: https://twitter.com/James_inthe_box/status/1197577070500401152
+
+/ftsp2fflm.php
+
 # Generic
 
 /canadiane-compte.php
