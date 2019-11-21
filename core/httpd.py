@@ -102,8 +102,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             try:
                 request.shutdown()
             except:
-                if config.SHOW_DEBUG:
-                    traceback.print_exc()
+                pass
 
     class ReqHandler(_BaseHTTPServer.BaseHTTPRequestHandler):
         def do_GET(self):
