@@ -876,6 +876,10 @@ saleforyou.org
 
 /wp-content/plugins/super-socialat/super_socialat.php
 
+# Reference: https://twitter.com/PhishFindR/status/1197533121052323840
+
+/rbcgi3m01.php
+
 # Generic
 
 /canadiane-compte.php
