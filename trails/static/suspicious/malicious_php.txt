@@ -884,6 +884,10 @@ saleforyou.org
 
 /ftsp2fflm.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1197607895656992769
+
+/h7mcpj41d18meamdw8t6gwcb.php
+
 # Generic
 
 /canadiane-compte.php
