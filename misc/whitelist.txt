@@ -1073,6 +1073,10 @@ appleid.apple.com
 fbsbx.com
 
 # Sh.ty (mail) spammers introducing noise
+
+remedypub.ga
+victoryms.fun
+
 # Reference: https://419scam.org/419-by-domain.htm  # Note: only .tn as most seen as noise
 
 bmwpromoxx.kr.tn
