@@ -826,6 +826,8 @@ sophosxl.net
 
 # Generic
 
+bswireless.ddns.net
+elektrokem.dyndns.org
 animiranifilmovi.com
 bing.com
 cardsgames.club
