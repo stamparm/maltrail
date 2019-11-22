@@ -22,6 +22,7 @@ akamaihd.net
 akamai.net
 akamaitechnologies.com
 alibaba.com
+aligfwaf.com
 amazon.com
 amazonaws.com
 amazonses.com
@@ -929,6 +930,9 @@ sport7.ws
 stream2watch.ws
 imgdew.pw
 www.freebookspot.es
+popin.cc
+nigembassyrabat.org
+super59.ddns.net
 0.0.0.0
 255.255.255.255
 
