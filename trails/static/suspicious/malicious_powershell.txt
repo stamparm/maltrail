@@ -209,3 +209,7 @@
 
 /snphhuatvsbkw.ps1
 /sopiiubuvsclwukz.ps1
+
+# Reference: https://twitter.com/FewAtoms/status/1198574338036969474
+
+/ShellCode.ps1
