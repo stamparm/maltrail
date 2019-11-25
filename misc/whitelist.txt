@@ -935,6 +935,11 @@ www.freebookspot.es
 popin.cc
 nigembassyrabat.org
 super59.ddns.net
+2000me.dd-dns.de
+kinoteka.biz
+parkingcrew.net
+username.wix.com
+gledaj-online.com
 0.0.0.0
 255.255.255.255
 
@@ -1076,6 +1081,7 @@ fbsbx.com
 
 remedypub.ga
 victoryms.fun
+roysong666.vicp.cc
 
 # Reference: https://419scam.org/419-by-domain.htm  # Note: only .tn as most seen as noise
 
