@@ -301,6 +301,11 @@
 
 /flusupdxx64.hta
 
+# Reference: https://twitter.com/FewAtoms/status/1198574338036969474
+
+/azo.hta
+/PO98989211.hta
+
 # Generic
 
 /myrrem.hta
