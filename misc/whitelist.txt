@@ -944,6 +944,7 @@ kinoteka.biz
 fut.mine.nu
 global.quickconnect.to
 dec.quickconnect.to
+gestyy.com
 0.0.0.0
 255.255.255.255
 
@@ -1024,6 +1025,7 @@ imgfarm.com
 qadservice.com
 airliquide.com
 lupus-bra.com
+rotumal.com
 
 # Google crawlers
 
