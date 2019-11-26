@@ -2770,6 +2770,11 @@ function initVisual() {
     if (!found) {
         $('#events_sparkline').sparkline([], options);
     }
+    else {
+        options.lineColor = "rgba(255, 255, 255, 0.25)";
+        options.lineWidth = 1;
+        $('#events_sparkline').sparkline([0, 0], options);
+    }
 
     sum = 0;
     $("[id$=_count]").each(function() {
