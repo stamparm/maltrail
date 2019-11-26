@@ -535,6 +535,7 @@ sorbs.net
 spamcannibal.org
 spamcop.net
 spameatingmonkey.net
+spamfilter.cc
 spamgrouper.com
 spamhaus.org
 spamrats.com
@@ -945,6 +946,9 @@ fut.mine.nu
 global.quickconnect.to
 dec.quickconnect.to
 gestyy.com
+livetv.sx
+members.tripod.com
+cdn.000webhost.com
 0.0.0.0
 255.255.255.255
 
@@ -1026,6 +1030,8 @@ qadservice.com
 airliquide.com
 lupus-bra.com
 rotumal.com
+red-gate.com
+clicksor.com
 
 # Google crawlers
 
