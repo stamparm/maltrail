@@ -816,7 +816,9 @@ humsoolt.net
 /apu.php?zoneid=
 
 # Reference: https://www.virustotal.com/gui/ip-address/104.151.24.95/relations
+# Reference: https://www.virustotal.com/gui/ip-address/128.14.150.144/relations
 
+/index_files/analytics.js
 /index_files/matc.js
 
 # Reference: https://twitter.com/xuy1202/status/1195701523797303296
