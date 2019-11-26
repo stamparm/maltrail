@@ -896,5 +896,6 @@ saleforyou.org
 
 /canadiane-compte.php
 /gate.php
+/gate1.php
 /gate.get
 /screenshot_gate.php
