@@ -951,7 +951,7 @@ def monitor():
         try:
             dlt_offset = DLT_OFFSETS[datalink]
         except KeyError:
-            log_error("Received unexpected datalink (%d)" % datalink)
+            log_error("Received unexpected datalink (%d)" % datalink, single=True)
             return
 
         try:

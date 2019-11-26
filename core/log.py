@@ -37,6 +37,7 @@ from thirdparty.six.moves import socketserver as _socketserver
 _condensed_events = {}
 _condensing_thread = None
 _condensing_lock = threading.Lock()
+_single_messages = set()
 _thread_data = threading.local()
 
 def create_log_directory():
@@ -201,7 +202,13 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
         if config.SHOW_DEBUG:
             traceback.print_exc()
 
-def log_error(msg):
+def log_error(msg, single=False):
+    if single:
+        if msg in _single_messages:
+            return
+        else:
+            _single_messages.add(msg)
+
     try:
         handle = get_error_log_handle()
         os.write(handle, ("%s %s\n" % (time.strftime(TIME_FORMAT, time.localtime()), msg)).encode(UNICODE_ENCODING))
