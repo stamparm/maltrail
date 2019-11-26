@@ -892,6 +892,10 @@ saleforyou.org
 
 /dickygg.php
 
+# Reference: https://twitter.com/JayTHL/status/1199362012368789504
+
+/slamduncker.php
+
 # Generic
 
 /canadiane-compte.php
