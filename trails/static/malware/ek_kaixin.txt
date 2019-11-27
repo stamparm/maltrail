@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/adrian__luca/status/1199660603796787200
+# Reference: https://www.virustotal.com/gui/ip-address/154.197.27.79/relations
+
+154.197.27.79:8080
+cannhax.com
+haihaoip.com
+invenipp.com
+invenr2.com
+sz1004.com
+xy6664.com
+yahoipp.com
