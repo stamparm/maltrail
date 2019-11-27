@@ -216,3 +216,7 @@ xmr.usa-138.com
 
 myxmr.pw
 xmr.5b6b7b.ru
+
+# Reference: https://www.virustotal.com/gui/file/f99833ef4d4bcb6cf9abcaee6edd3d1ba5b5825af4fd3f609654d343b137a8af/detection
+
+91.121.140.167:3333
