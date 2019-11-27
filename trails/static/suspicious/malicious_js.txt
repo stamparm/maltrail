@@ -836,3 +836,7 @@ askus.mobi
 cheofaabridri.gq
 forumdownloadforall.mobi
 mykeitonly.info
+
+# Reference: https://twitter.com/xuy1202/status/1199595200949059584
+
+/js/jquery/advListRotator.js
