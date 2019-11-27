@@ -264,7 +264,6 @@ moxilla
 moziea
 mozila
 \Amozilla ( [\d.]+)?\Z
-\Amozilla/3\.0 \(compatible; indy library\)\Z
 mozilla/4\.0 \(compatible; ics\)
 mozillar
 mozzila
@@ -390,7 +389,6 @@ smart-rtp
 smileware
 snatch-system
 snoopstick
-snoopy
 sogouexplorerminisetup
 sogouime
 something
@@ -553,10 +551,6 @@ jexboss
 # Reference: https://twitter.com/bad_packets/status/1095565095361368064
 
 Hacks
-
-# Reference: https://twitter.com/bad_packets/status/1096201963497111553
-
-Go-http-client
 
 # Reference: https://twitter.com/bad_packets/status/1088707628442644480
 
@@ -856,7 +850,6 @@ morfeus fucking scanner
 Mozilla/5.0 (Windows; U; Windows NT 5.1; pt-PT; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)
 n-stealth
 pmafind
-ruler
 security scan
 springenwerk
 teh forest lobster
@@ -886,7 +879,6 @@ webmin
 
 # Reference: http://rules.emergingthreats.net/open/snort-2.9.0/rules/emerging-user_agents.rules
 
-\{[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}\}
 =Mozilla
 \A123\Z
 \ACompatible\Z
@@ -948,7 +940,6 @@ CFS_DOWNLOAD
 checkonline
 chek
 ChilkatUpload
-Citrix
 ClickAdsByIE
 curl53
 CustomExchangeBrowser
@@ -1146,10 +1137,6 @@ HardCore
 # Reference: https://github.com/silence-is-best/c2db#milkyboy
 
 Adzq41ceq52e353512hSfj
-
-# Reference: https://twitter.com/zom3y3/status/1182869169164783616
-
-ApiTool
 
 # Reference: https://twitter.com/CRCKio/status/982216650798710792
 
