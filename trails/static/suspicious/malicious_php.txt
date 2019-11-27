@@ -896,6 +896,10 @@ saleforyou.org
 
 /slamduncker.php
 
+# Reference: https://twitter.com/0xCARNAGE/status/1199700157127892992
+
+/8fdbb8f102faff.php
+
 # Generic
 
 /canadiane-compte.php
