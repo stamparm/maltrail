@@ -1054,7 +1054,6 @@ SAIv
 sample
 ScrapeBox
 sections
-SERVER2
 Session
 Shaolin
 sickness29a
@@ -1066,7 +1065,6 @@ SomeTimes
 SRRemove
 STORMDDOS
 SUiCiDE
-svchost
 TBNotifier
 Tsunami
 Ucheck
