@@ -477,7 +477,6 @@ wep search
 whcc
 \Awhitehat
 widgitoolbar
-\Awin32
 winbutler
 windoss
 \Awindows 5.1 \(2600\)
@@ -491,7 +490,6 @@ wininetget/
 wintouch
 wizpop
 \Awnames
-wordpress
 worked
 wpscan
 wt_get_comm
@@ -892,7 +890,6 @@ webmin
 \{[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}\}
 =Mozilla
 \A123\Z
-\AApp
 \ACompatible\Z
 \Acv\_v\Z
 \ADigital\Z
@@ -1083,7 +1080,6 @@ Varlok
 VERTEXNET
 WebForm
 WebUpdate
-Win32
 WINDOWS\_LOADS
 WindSoft
 WinProxy
@@ -1191,10 +1187,6 @@ Aldi Bot
 # Reference: https://twitter.com/bad_packets/status/1194697097229950976
 
 Hello, poo
-
-# Reference: https://habr.com/ru/company/pt/blog/475328/ (Russian)
-
-Windows-Update-Agent
 
 # Reference: https://threatvector.cylance.com/en_us/home/poking-the-bear-three-year-campaign-targets-russian-critical-infrastructure.html
 
