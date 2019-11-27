@@ -530,6 +530,10 @@ illegalfawn.com/panel.php
 
 /android_panel/
 
+# Reference: https://twitter.com/0xCARNAGE/status/1199700157127892992
+
+/webpanel/inc/
+
 # Generic
 
 /panel123/auth.php
