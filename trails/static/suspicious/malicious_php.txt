@@ -900,6 +900,10 @@ saleforyou.org
 
 /8fdbb8f102faff.php
 
+# Reference: https://www.virustotal.com/gui/ip-address/54.202.202.94/relations
+
+/9609e559db7a36.php
+
 # Generic
 
 /canadiane-compte.php
