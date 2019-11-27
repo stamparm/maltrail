@@ -21,7 +21,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.16.125"
+VERSION = "0.16.126"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
@@ -435,12 +435,17 @@ def read_ua():
         with open(_, "r") as f:
             for line in f:
                 line = line.strip()
-                if " (compatible" in line:
-                    line = re.escape(line)
                 if not line or line.startswith('#'):
                     continue
+                elif " (compatible" in line:
+                    line = re.escape(line)
                 else:
-                    items.append(line)
+                    try:
+                        re.compile(line)
+                    except:
+                        line = re.escape(line)
+
+                items.append(line)
 
     if items:
         SUSPICIOUS_UA_REGEX = "(?i)%s" % '|'.join(items)
