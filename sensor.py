@@ -55,6 +55,7 @@ from core.settings import CONSONANTS
 from core.settings import DAILY_SECS
 from core.settings import DLT_OFFSETS
 from core.settings import DNS_EXHAUSTION_THRESHOLD
+from core.settings import GENERIC_SINKHOLE_REGEX
 from core.settings import HTTP_TIME_FORMAT
 from core.settings import IGNORE_DNS_QUERY_SUFFIXES
 from core.settings import IPPROTO_LUT
@@ -328,14 +329,16 @@ def _process_packet(packet, sec, usec, ip_offset):
                 tcp_data = get_text(ip_data[h_size:])
 
                 if tcp_data.startswith("HTTP/"):
-                    if any(_ in tcp_data[:tcp_data.find("\r\n\r\n")] for _ in ("X-Sinkhole:", "X-Malware-Sinkhole:", "Server: You got served", "Server: Apache 1.0/SinkSoft", "sinkdns.org")) or "\r\n\r\nsinkhole" in tcp_data:
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, "sinkhole response (malware)", "(heuristic)"), packet)
+                    match = re.search(GENERIC_SINKHOLE_REGEX, tcp_data[:2000])
+                    if match:
+                        trail = match.group(0)
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "sinkhole response (malware)", "(heuristic)"), packet)
                     else:
                         index = tcp_data.find("<title>")
                         if index >= 0:
                             title = tcp_data[index + len("<title>"):tcp_data.find("</title>", index)]
                             if all(_ in title.lower() for _ in ("this domain", "has been seized")):
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, title, "seized domain (suspicious)", "(heuristic)"), packet)
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, title, "seized domain (suspicious)", "(heuristic)"), packet)
 
                     content_type = None
                     first_index = tcp_data.find("\r\nContent-Type:")
