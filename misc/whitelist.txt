@@ -949,6 +949,22 @@ gestyy.com
 livetv.sx
 members.tripod.com
 cdn.000webhost.com
+bypassed.ooo
+a.ns.tk
+b.ns.tk
+c.ns.tk
+a.ns.ga
+d.ns.ga
+adis.ws
+joins.com
+adop.cc
+culturalvistas.org
+cdn.000webhost.com
+files.000webhost.com
+hr.000webhost.com
+rest.000webhost.com
+kuntv.pw
+road.cc
 0.0.0.0
 255.255.255.255
 
