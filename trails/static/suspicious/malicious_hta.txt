@@ -306,6 +306,10 @@
 /azo.hta
 /PO98989211.hta
 
+# Reference: https://twitter.com/cyber__sloth/status/1200005508641558528
+
+/out-1246717249.hta
+
 # Generic
 
 /myrrem.hta
