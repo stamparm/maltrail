@@ -1021,7 +1021,6 @@ nethelper
 Nimo Software HTTP
 node-XMLHttpRequest
 NSIS_DOWNLOAD
-NULL
 okcpmgr
 onedru
 Opera/10.60 Presto/2.2.30
