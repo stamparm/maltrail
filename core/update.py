@@ -123,8 +123,8 @@ def update_trails(force=False, offline=False):
             if _ not in sys.path:
                 sys.path.append(_)
 
-            filenames += [os.path.join(_, "static")]
             filenames += [os.path.join(_, "custom")]
+            filenames += [os.path.join(_, "static")]    # Note: higher priority than previous one because of dummy user trails (FE)
 
             filenames = [_ for _ in filenames if "__init__.py" not in _]
 
@@ -249,7 +249,7 @@ def update_trails(force=False, offline=False):
                     del trails[key]
                     continue
                 if re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key):
-                    if any(_ in trails[key][0] for _ in ("parking site", "sinkhole")) and key in duplicates:
+                    if any(_ in trails[key][0] for _ in ("parking site", "sinkhole")) and key in duplicates:    # Note: delete (e.g.) junk custom trails if static trail is a sinkhole
                         del duplicates[key]
                     if trails[key][0] == "malware":
                         trails[key] = ("potential malware site", trails[key][1])
