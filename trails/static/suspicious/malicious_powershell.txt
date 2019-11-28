@@ -213,3 +213,7 @@
 # Reference: https://twitter.com/FewAtoms/status/1198574338036969474
 
 /ShellCode.ps1
+
+# Reference: https://app.any.run/tasks/717442d5-db0b-46b5-a0e9-5c3578471edd/
+
+/meow.ps1
