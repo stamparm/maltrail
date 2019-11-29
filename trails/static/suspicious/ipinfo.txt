@@ -284,3 +284,7 @@ whatsmyip.ie
 # Reference: https://web.archive.org/web/20190305000303/http://2019.ip138.com/ic.asp
 
 2019.ip138.com
+
+# Reference: https://www.virustotal.com/gui/file/66f15d02e1f4757719f48e0df25b23be59e28e75dc60d14c3e72849d7dd8bbcb/detection
+
+ipstack.com
