@@ -2475,3 +2475,7 @@ cucews.dyndns.org
 # Reference: http://www.dynip.com/docs/DynIPClientV4.2UserGuide.pdf
 
 discovery.dynip.com
+
+# Reference: https://app.any.run/tasks/bfce10dc-720e-44f6-aa70-60e6037802cc/
+
+is.gd
