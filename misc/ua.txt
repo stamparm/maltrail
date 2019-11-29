@@ -1167,3 +1167,7 @@ Hello, poo
 # Reference: https://threatvector.cylance.com/en_us/home/poking-the-bear-three-year-campaign-targets-russian-critical-infrastructure.html
 
 DMFR
+
+# Reference: https://twitter.com/cyber__sloth/status/1200366623615594497
+
+51c778909b52d45286a175a24e8daf42cb6dbe43eb
