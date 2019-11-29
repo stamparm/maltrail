@@ -2037,3 +2037,7 @@ castplatform.com
 # Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-08-10-bing-vc-hijacks-browser-using-legitimate-applications/bing-vc-hijacks-browser-using-legitimate-applications.csv
 
 fixbrowserredirect.net
+
+# Reference: https://www.virustotal.com/gui/file/be4bbb433bca473c960bc696b1dfb10202f827abab3a19a7fed37ed18d7ed814/behavior/VirusTotal%20Jujubox
+
+update.clientstaticserv.com
