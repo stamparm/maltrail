@@ -975,6 +975,15 @@ advertising.com
 unpkg.com
 onesignal.com
 zohocorp.com
+ironport.com
+checkpoint.com
+fortiguard.net
+eset.com
+fireeye.com
+windows.net
+jsdelivr.net
+twilio.com
+wixapps.net
 
 # NS of afraid.org
 
