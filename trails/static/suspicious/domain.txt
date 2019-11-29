@@ -1997,7 +1997,6 @@ bc.edu.mx
 bccompany.biz
 beng.biz
 biggs.com
-bit.org
 bitbox.com
 biz.hk
 bmc-group.com
@@ -4895,10 +4894,6 @@ dyn-dns.com
 # Reference: https://www.virustotal.com/gui/domain/wm01.to/relations
 
 wm01.to
-
-# Reference: https://www.virustotal.com/gui/domain/googlex.me/relations
-
-googlex.me
 
 # Reference: https://twitter.com/kyleehmke/status/1184120287199223808
 # Reference: https://www.virustotal.com/gui/domain/jmttrading.org/relations
