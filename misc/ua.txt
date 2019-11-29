@@ -185,7 +185,6 @@ httperf
 httpfiledown
 httpgetdata
 httping
-\Ahttps\b
 httrack
 huai_huai
 hydra
@@ -1042,7 +1041,6 @@ SAIv
 sample
 ScrapeBox
 sections
-Session
 Shaolin
 sickness29a
 SimpleClient
@@ -1063,7 +1061,6 @@ Varlok
 \bVB Http
 VERTEXNET
 WebForm
-WebUpdate
 WINDOWS\_LOADS
 WindSoft
 WinProxy
