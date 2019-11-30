@@ -297,6 +297,11 @@ wm-ddos.win
 xcbzy.club
 zfxcb.top
 
+# Reference: https://twitter.com/KaiDamon/status/1200801964570886145
+# Reference: https://pastebin.com/dNNJHjCi
+
+gezginbilgisayar.com
+
 # Generic
 
 crimemarket.net
