@@ -840,3 +840,7 @@ mykeitonly.info
 # Reference: https://twitter.com/xuy1202/status/1199595200949059584
 
 /js/jquery/advListRotator.js
+
+# Reference: https://twitter.com/nullcookies/status/1200576466150477824
+
+/js/faker_secrets.js
