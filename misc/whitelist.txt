@@ -955,6 +955,7 @@ bypassed.ooo
 a.ns.tk
 b.ns.tk
 c.ns.tk
+d.ns.tk
 a.ns.ga
 d.ns.ga
 adis.ws
@@ -984,6 +985,8 @@ windows.net
 jsdelivr.net
 twilio.com
 wixapps.net
+necan.gov.np
+jsdelivr.com
 
 # NS of afraid.org
 
