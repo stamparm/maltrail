@@ -310,6 +310,10 @@
 
 /out-1246717249.hta
 
+# Reference: https://app.any.run/tasks/c382b09f-03f7-4680-86c5-28316c5cc5e3/
+
+/microsoft.hta
+
 # Generic
 
 /myrrem.hta
