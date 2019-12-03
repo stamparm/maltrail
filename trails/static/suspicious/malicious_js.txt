@@ -844,3 +844,27 @@ mykeitonly.info
 # Reference: https://twitter.com/nullcookies/status/1200576466150477824
 
 /js/faker_secrets.js
+
+# Reference: https://twitter.com/xuy1202/status/1201778263271436289
+
+cdn.buycongestion.com
+top.worldtraffic.com
+
+# Reference: https://twitter.com/gwillem/status/1201647716352380929
+
+sequracdn.net
+live.sequracdn.net
+/modrrnize.js
+
+# Reference: https://twitter.com/JCyberSec_/status/1201850074822778880
+
+/5c3a398f10058.js
+
+# Reference: https://twitter.com/JCyberSec_/status/1201850062994903045
+
+/jquery_noconflict.js
+
+# Reference: https://www.getastra.com/blog/911/how-magecart-attackers-are-continuing-to-affect-e-commerce-platforms/
+
+/js/everlast.js
+/js/mage.js
