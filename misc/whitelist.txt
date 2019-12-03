@@ -2491,3 +2491,8 @@ discovery.dynip.com
 # Reference: https://app.any.run/tasks/bfce10dc-720e-44f6-aa70-60e6037802cc/
 
 is.gd
+
+# Reference: https://twitter.com/JCyberSec_/status/1201850082775224323
+# Reference: https://twitter.com/JCyberSec_/status/1201850090153005056
+
+images-amazon.com
