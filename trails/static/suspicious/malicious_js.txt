@@ -855,3 +855,7 @@ top.worldtraffic.com
 sequracdn.net
 live.sequracdn.net
 /modrrnize.js
+
+# Reference: https://twitter.com/JCyberSec_/status/1201850074822778880
+
+/5c3a398f10058.js
