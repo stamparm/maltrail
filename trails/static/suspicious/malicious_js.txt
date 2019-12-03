@@ -850,7 +850,7 @@ mykeitonly.info
 cdn.buycongestion.com
 top.worldtraffic.com
 
-# Reference: 
+# Reference: https://twitter.com/gwillem/status/1201647716352380929
 
 sequracdn.net
 live.sequracdn.net
