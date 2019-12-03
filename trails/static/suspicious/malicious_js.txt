@@ -859,3 +859,7 @@ live.sequracdn.net
 # Reference: https://twitter.com/JCyberSec_/status/1201850074822778880
 
 /5c3a398f10058.js
+
+# Reference: https://twitter.com/JCyberSec_/status/1201850062994903045
+
+/jquery_noconflict.js
