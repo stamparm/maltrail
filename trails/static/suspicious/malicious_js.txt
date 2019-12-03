@@ -863,3 +863,8 @@ live.sequracdn.net
 # Reference: https://twitter.com/JCyberSec_/status/1201850062994903045
 
 /jquery_noconflict.js
+
+# Reference: https://www.getastra.com/blog/911/how-magecart-attackers-are-continuing-to-affect-e-commerce-platforms/
+
+/js/everlast.js
+/js/mage.js
