@@ -904,6 +904,12 @@ saleforyou.org
 
 /9609e559db7a36.php
 
+# Reference: https://www.virustotal.com/gui/ip-address/194.187.249.103/relations
+
+/005bba64d2ca70ebc8510b6e34775a76/7shgj1hwpp80tlf4s8yqcb4r.php
+/c1b78905edc5b75102af719e2ec4f13b/jd7j9mmyypufdw808gtr8wfu.php
+/de5c180fd02bb1ebd8e9fc10ab04da56/56rgwr3ymoyb5pmftfxp18b4.php
+
 # Generic
 
 /canadiane-compte.php
