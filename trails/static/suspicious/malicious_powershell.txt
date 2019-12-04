@@ -217,3 +217,7 @@
 # Reference: https://app.any.run/tasks/717442d5-db0b-46b5-a0e9-5c3578471edd/
 
 /meow.ps1
+
+# Reference: https://twitter.com/cyber__sloth/status/1202274774342406144
+
+/out-2028772214.ps1
