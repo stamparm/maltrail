@@ -314,6 +314,10 @@
 
 /microsoft.hta
 
+# Reference: https://twitter.com/wwp96/status/1202267925559808000
+
+/2206907.hta
+
 # Generic
 
 /myrrem.hta
