@@ -739,3 +739,11 @@ ns2.dnshost.ga
 82.102.14.227:53
 91.132.139.183:53
 91.132.139.254:53
+
+# Reference: https://twitter.com/ninoseki/status/1202216201700757504
+
+185.243.114.216:53
+
+# Reference: https://twitter.com/david_jursa/status/1172522037254008833
+
+77.95.229.240:53
