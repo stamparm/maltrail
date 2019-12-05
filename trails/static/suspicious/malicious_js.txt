@@ -873,3 +873,7 @@ live.sequracdn.net
 
 /authorizenet-getway.js
 /braintree-getway.js
+
+# Reference: https://twitter.com/gwillem/status/1202602117510451200
+
+2chat.top
