@@ -747,3 +747,8 @@ ns2.dnshost.ga
 # Reference: https://twitter.com/david_jursa/status/1172522037254008833
 
 77.95.229.240:53
+
+# Reference: https://decoded.avast.io/simonamusilova/ghostdns-exploit-kit-strikes-back/
+
+192.3.207.10:53
+198.46.234.210:53
