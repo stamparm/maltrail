@@ -873,3 +873,11 @@ live.sequracdn.net
 
 /authorizenet-getway.js
 /braintree-getway.js
+
+# Reference: https://twitter.com/gwillem/status/1202602117510451200
+
+2chat.top
+
+# Reference: https://twitter.com/JCyberSec_/status/1202903192192901120
+
+/js/AuthorizenetMagento.js
