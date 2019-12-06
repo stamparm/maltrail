@@ -870,9 +870,18 @@ live.sequracdn.net
 /js/mage.js
 
 # Reference: https://twitter.com/JCyberSec_/status/1202575691365191680
+# Reference: https://www.virustotal.com/gui/domain/marketplace-magento.com/relations
+# Reference: https://www.virustotal.com/gui/ip-address/181.214.86.150/relations
+# Reference: https://www.virustotal.com/gui/domain/phplib.net/relations
 
+/authoriz-getway.js
 /authorizenet-getway.js
+/BancesellaGetway.js
+/bancasella-getway.js
 /braintree-getway.js
+/direct-getway.js
+/gestpaypro-getway.js
+/PaymentGetway.js
 
 # Reference: https://twitter.com/gwillem/status/1202602117510451200
 
