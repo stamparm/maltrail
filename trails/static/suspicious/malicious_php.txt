@@ -914,6 +914,11 @@ saleforyou.org
 
 /YrgGyhkU6V8R0i3s.php
 
+# Reference: https://twitter.com/stoicbird/status/422824507192008705
+
+/c/feed.php
+/c/form.php
+
 # Generic
 
 /canadiane-compte.php
