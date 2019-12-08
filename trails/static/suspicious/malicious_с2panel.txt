@@ -536,7 +536,11 @@ illegalfawn.com/panel.php
 
 # Generic
 
+/logz/auth.php
+/logz/login.php
 /panel123/auth.php
 /panel123/login.php
+/pnl/auth.php
 /pnl/login.php
+/webpanel/auth.php
 /webpanel/login.php
