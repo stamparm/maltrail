@@ -2048,3 +2048,7 @@ update.clientstaticserv.com
 shuc-pc.ksord.com
 dw-online.ksosoft.com
 haiwai-ic.ksosoft.com
+
+# Reference: https://twitter.com/securiteoff/status/740562516699447296 (# LoadMoney)
+
+bpeouxcwqhenm.lasersteam178.ru
