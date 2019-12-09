@@ -990,6 +990,8 @@ twilio.com
 wixapps.net
 necan.gov.np
 jsdelivr.com
+bitbucket.org
+github.com
 
 # NS of afraid.org
 
