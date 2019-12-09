@@ -890,3 +890,7 @@ live.sequracdn.net
 # Reference: https://twitter.com/JCyberSec_/status/1202903192192901120
 
 /js/AuthorizenetMagento.js
+
+# Reference: https://www.fortinet.com/blog/threat-research/inter-skimmer-for-all.html
+
+/vmartgo.js
