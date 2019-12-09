@@ -4,3 +4,8 @@
 # Reference: https://www.welivesecurity.com/2019/10/24/tracking-down-developer-android-adware/ (# AdDisplay)
 
 35.198.197.119:8080
+
+# Reference: https://twitter.com/sh1shk0va/status/1204022927596937217
+
+fbgg.xyz
+bmm.fbgg.xyz
