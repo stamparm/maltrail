@@ -828,6 +828,9 @@ sophosxl.net
 # Generic
 
 bswireless.ddns.net
+diogen.duckdns.org
+mifux.duckdns.org
+psiloveyou.xyz
 elektrokem.dyndns.org
 animiranifilmovi.com
 bing.com
