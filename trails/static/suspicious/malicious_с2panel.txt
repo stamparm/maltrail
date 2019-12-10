@@ -538,6 +538,7 @@ illegalfawn.com/panel.php
 
 /logz/auth.php
 /logz/login.php
+/panel3_info/index.php
 /panel123/auth.php
 /panel123/login.php
 /pnl/auth.php
