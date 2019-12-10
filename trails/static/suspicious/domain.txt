@@ -1089,10 +1089,6 @@ zx9.de
 co.cc
 co.be
 
-# Reference: https://blog.talosintelligence.com/2018/08/threat-roundup-0803-0810.html
-
-.men
-
 # Reference: http://trojanedbinaries.com/security/dynamicdns/<dir>/
 
 0rg.fr
@@ -1437,10 +1433,6 @@ ze.tc
 zeg.cc
 zicp.net
 zik.dj
-
-# Reference: https://twitter.com/ps66uk/status/1037866649435729921
-
-.fun
 
 # Reference: https://twitter.com/malwaremustd1e/status/1122003608927494145
 
