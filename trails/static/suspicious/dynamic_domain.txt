@@ -2972,3 +2972,7 @@ keenetic.pro
 # Reference: https://www.dy.fi/
 
 dy.fi
+
+# Reference: https://www.virustotal.com/gui/domain/tplinkdns.com/relations
+
+tplinkdns.com
