@@ -2529,3 +2529,11 @@ is.gd
 # Reference: https://twitter.com/JCyberSec_/status/1201850090153005056
 
 images-amazon.com
+
+# WPS Office
+
+ksosoft.com
+ksord.com
+dahuap2p.com
+wps.com
+wps.cn

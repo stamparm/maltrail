@@ -2042,13 +2042,6 @@ fixbrowserredirect.net
 
 update.clientstaticserv.com
 
-# Reference: https://www.virustotal.com/gui/file/cf239230f48177dca2f10ec2ea6bfd8a9c29e97264822279648eda6f80504591/detection
-# Reference: https://www.virustotal.com/gui/file/07ba5069c1ed14679c4463d039b342142424a8ac1c5eba26cf345b8f01aca8ad/behavior/VirusTotal%20Jujubox
-
-shuc-pc.ksord.com
-dw-online.ksosoft.com
-haiwai-ic.ksosoft.com
-
 # Reference: https://twitter.com/securiteoff/status/740562516699447296 (# LoadMoney)
 
 bpeouxcwqhenm.lasersteam178.ru
