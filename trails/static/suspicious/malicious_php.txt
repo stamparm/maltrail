@@ -919,6 +919,10 @@ saleforyou.org
 /c/feed.php
 /c/form.php
 
+# Reference: https://twitter.com/IpNigh/status/1204464565800583169
+
+/home3e6e.php
+
 # Generic
 
 /canadiane-compte.php
