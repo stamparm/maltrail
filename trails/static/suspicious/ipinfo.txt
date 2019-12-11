@@ -289,3 +289,8 @@ whatsmyip.ie
 # Reference: https://www.virustotal.com/gui/file/66f15d02e1f4757719f48e0df25b23be59e28e75dc60d14c3e72849d7dd8bbcb/detection
 
 ipstack.com
+
+# Reference: https://twitter.com/JohnLaTwC/status/1204589592390688768
+# Reference: https://www.virustotal.com/gui/domain/get.geojs.io/relations
+
+get.geojs.io
