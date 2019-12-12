@@ -894,3 +894,14 @@ live.sequracdn.net
 # Reference: https://www.fortinet.com/blog/threat-research/inter-skimmer-for-all.html
 
 /vmartgo.js
+
+# Reference: https://twitter.com/xuy1202/status/1204778227517935616
+
+/2RuLm5ldHdvcmsx.js
+/9nRYFAGehAFJJ7u.js
+/klei53Wl6dT2bSF6S.js
+
+# Reference: https://twitter.com/ninoseki/status/1204971169658523649
+# Reference: https://www.virustotal.com/gui/ip-address/1.171.162.250/relations
+
+/user_info_uploader
