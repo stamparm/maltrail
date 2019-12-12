@@ -2537,3 +2537,7 @@ ksord.com
 dahuap2p.com
 wps.com
 wps.cn
+
+# Reference: https://www.virustotal.com/gui/domain/security-research.dyndns.org/relations
+
+security-research.dyndns.org
