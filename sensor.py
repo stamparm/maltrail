@@ -81,15 +81,15 @@ from core.settings import SUSPICIOUS_HTTP_REQUEST_REGEXES
 from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
 from core.settings import SUSPICIOUS_PROXY_PROBE_PRE_CONDITION
 from core.settings import SUSPICIOUS_UA_REGEX
+from core.settings import VALID_DNS_NAME_REGEX
 from core.settings import trails
-from core.settings import VALID_DNS_CHARS
 from core.settings import VERSION
 from core.settings import WEB_SHELLS
 from core.settings import WHITELIST
 from core.settings import WHITELIST_DIRECT_DOWNLOAD_KEYWORDS
 from core.settings import WHITELIST_LONG_DOMAIN_NAME_KEYWORDS
 from core.settings import WHITELIST_HTTP_REQUEST_PATHS
-from core.settings import WHITELIST_UA_KEYWORDS
+from core.settings import WHITELIST_UA_REGEX
 from core.update import update_ipcat
 from core.update import update_trails
 from thirdparty import six
@@ -158,7 +158,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
         return
 
     result = False
-    if not _check_domain_whitelisted(query) and all(_ in VALID_DNS_CHARS for _ in query):
+    if re.search(VALID_DNS_NAME_REGEX, query) is not None and not _check_domain_whitelisted(query):
         parts = query.split('.')
 
         if trails._regex:
@@ -428,7 +428,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                         if user_agent:
                             result = _result_cache.get(user_agent)
                             if result is None:
-                                if not any(_ in user_agent for _ in WHITELIST_UA_KEYWORDS):
+                                if re.search(WHITELIST_UA_REGEX, user_agent, re.I) is None:
                                     match = re.search(SUSPICIOUS_UA_REGEX, user_agent)
                                     if match:
                                         def _(value):
@@ -575,7 +575,7 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                         query = query.lower()
 
-                        if not query or '.' not in query or not all(_ in VALID_DNS_CHARS for _ in query) or any(_ in query for _ in (".intranet.",)) or query.split('.')[-1] in IGNORE_DNS_QUERY_SUFFIXES:
+                        if not query or re.search(VALID_DNS_NAME_REGEX, query) is None or any(_ in query for _ in (".intranet.",)) or query.split('.')[-1] in IGNORE_DNS_QUERY_SUFFIXES:
                             return
 
                         parts = query.split('.')
