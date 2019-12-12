@@ -923,6 +923,10 @@ saleforyou.org
 
 /home3e6e.php
 
+# Reference: https://app.any.run/tasks/18af3b1c-d5b4-4727-a06e-8c2aa9d2daac/
+
+/info1.php?id=
+
 # Generic
 
 /canadiane-compte.php
