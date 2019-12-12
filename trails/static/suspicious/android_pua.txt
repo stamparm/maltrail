@@ -9,3 +9,7 @@
 
 fbgg.xyz
 bmm.fbgg.xyz
+
+# Reference: https://securelist.com/mobile-subscriptions/91211/
+
+okyesmobi.com
