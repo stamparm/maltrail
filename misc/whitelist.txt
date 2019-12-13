@@ -315,6 +315,10 @@ pinterest.com
 tinypic.com
 s3.amazonaws.com
 
+# appeared on malwaremustdie.org
+
+rea.co.ke
+
 # appeared on malwaredomains.com
 
 atw.hu
