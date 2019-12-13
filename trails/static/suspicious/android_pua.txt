@@ -13,3 +13,7 @@ bmm.fbgg.xyz
 # Reference: https://securelist.com/mobile-subscriptions/91211/
 
 okyesmobi.com
+
+# Reference: https://twitter.com/sh1shk0va/status/1205511108582354944
+
+data.djmixer2018.com
