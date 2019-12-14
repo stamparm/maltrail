@@ -4995,3 +4995,7 @@ djmixer2018.com
 # Reference: https://www.virustotal.com/gui/domain/newrelic.com/relations
 
 newrelic.com
+
+# Reference: https://www.virustotal.com/gui/domain/speedfastmaking.com/relations
+
+speedfastmaking.com
