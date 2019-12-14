@@ -4999,3 +4999,7 @@ newrelic.com
 # Reference: https://www.virustotal.com/gui/domain/speedfastmaking.com/relations
 
 speedfastmaking.com
+
+# Reference: https://www.virustotal.com/gui/domain/banquealtantique.net/relations
+
+banquealtantique.net
