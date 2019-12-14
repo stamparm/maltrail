@@ -2976,3 +2976,7 @@ dy.fi
 # Reference: https://www.virustotal.com/gui/domain/tplinkdns.com/relations
 
 tplinkdns.com
+
+# Reference: https://www.virustotal.com/gui/domain/iptime.org/details
+
+iptime.org
