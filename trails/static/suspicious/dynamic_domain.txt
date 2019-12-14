@@ -2980,3 +2980,7 @@ tplinkdns.com
 # Reference: https://www.virustotal.com/gui/domain/iptime.org/details
 
 iptime.org
+
+# Reference: https://www.virustotal.com/gui/domain/awsmppl.com/relations
+
+awsmppl.com
