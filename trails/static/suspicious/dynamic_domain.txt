@@ -2988,3 +2988,7 @@ awsmppl.com
 # Reference: https://www.virustotal.com/gui/domain/zz.am/relations
 
 zz.am
+
+# Reference: https://www.virustotal.com/gui/domain/ze.am/relations
+
+ze.am
