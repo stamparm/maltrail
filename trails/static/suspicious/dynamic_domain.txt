@@ -2984,3 +2984,7 @@ iptime.org
 # Reference: https://www.virustotal.com/gui/domain/awsmppl.com/relations
 
 awsmppl.com
+
+# Reference: https://www.virustotal.com/gui/domain/zz.am/relations
+
+zz.am
