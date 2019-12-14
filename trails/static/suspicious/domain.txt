@@ -5003,3 +5003,7 @@ speedfastmaking.com
 # Reference: https://www.virustotal.com/gui/domain/banquealtantique.net/relations
 
 banquealtantique.net
+
+# Reference: https://www.virustotal.com/gui/domain/hitlers.best/relations
+
+hitlers.best
