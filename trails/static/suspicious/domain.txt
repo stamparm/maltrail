@@ -5015,3 +5015,7 @@ n-e.kr
 # Reference: https://www.virustotal.com/gui/domain/cfxcheats.com/relations
 
 cfxcheats.com
+
+# Reference: https://www.virustotal.com/gui/domain/xcheats.cf/relations
+
+xcheats.cf
