@@ -5011,3 +5011,7 @@ hitlers.best
 # Reference: https://www.virustotal.com/gui/domain/n-e.kr/relations
 
 n-e.kr
+
+# Reference: https://www.virustotal.com/gui/domain/cfxcheats.com/relations
+
+cfxcheats.com
