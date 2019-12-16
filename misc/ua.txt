@@ -1167,3 +1167,7 @@ DMFR
 # Reference: https://twitter.com/cyber__sloth/status/1200366623615594497
 
 51c778909b52d45286a175a24e8daf42cb6dbe43eb
+
+# Reference: https://twitter.com/pollo290987/status/1112921683592187904
+
+Mozilla 6\.0
