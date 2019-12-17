@@ -909,3 +909,8 @@ live.sequracdn.net
 # Reference: https://twitter.com/JCyberSec_/status/1206919450802438144
 
 /5c21f3dbf01e0.js
+
+# Reference: https://twitter.com/JCyberSec_/status/1206919471597850624
+
+/5c12fffeea71e.js
+/5c3a398f10058.js
