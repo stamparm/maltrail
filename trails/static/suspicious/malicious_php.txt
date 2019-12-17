@@ -923,6 +923,13 @@ saleforyou.org
 
 /home3e6e.php
 
+# Reference: https://twitter.com/PhishFindR/status/1207015599890747397
+
+/processar_1.php
+/processar_1-1.php
+/processar_2.php
+/processar_2-2.php
+
 # Generic
 
 /canadiane-compte.php
