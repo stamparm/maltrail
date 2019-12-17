@@ -905,3 +905,14 @@ live.sequracdn.net
 # Reference: https://www.virustotal.com/gui/ip-address/1.171.162.250/relations
 
 /user_info_uploader
+
+# Reference: https://twitter.com/JCyberSec_/status/1206919450802438144
+# Reference: https://twitter.com/JCyberSec_/status/1206919471597850624
+
+/5c117b7b019cb.js
+/5c12fffeea71e.js
+/5c21f3dbf01e0.js
+/5c3a398f10058.js
+/5c13086d94587.js
+/5d94c29e12536.js
+/5d2c953326774.js
