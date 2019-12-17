@@ -229,3 +229,7 @@
 # Reference: https://www.virustotal.com/gui/domain/worldwidetechsecurity.com/relations
 
 /securetransmission.ps1
+
+# Reference: https://twitter.com/DynamicAnalysis/status/1205555781095108608
+
+/payment_advice.ps1
