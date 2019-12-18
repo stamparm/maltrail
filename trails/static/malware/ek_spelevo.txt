@@ -1095,3 +1095,8 @@ yank.animaisdream.info
 yiff.gigolocreate.info
 zana.chinakasey.info
 zuzana.awesomeursula.info
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/12/spelevo-exploit-kit-debuts-new-social-engineering-trick/
+# Reference: https://otx.alienvault.com/pulse/5dfa53d70548c87d95834028
+
+lookatmyvideo.com
