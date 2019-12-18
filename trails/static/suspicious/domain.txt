@@ -4991,11 +4991,6 @@ updatesrvers.org
 
 djmixer2018.com
 
-# Reference: https://www.virustotal.com/gui/file/f7edd692ac35829762b96a55223940e8993e4dc1b854be285efe4b50e8be0b8d/detection
-# Reference: https://www.virustotal.com/gui/domain/newrelic.com/relations
-
-newrelic.com
-
 # Reference: https://www.virustotal.com/gui/domain/speedfastmaking.com/relations
 
 speedfastmaking.com
