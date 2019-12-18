@@ -580,7 +580,7 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                         parts = query.split('.')
 
-                        if ord(dns_data[2:3]) & 0xfe == 0x00:  # standard query (both recursive and non-recursive)
+                        if ord(dns_data[2:3]) & 0xfa == 0x00:  # standard query (both recursive and non-recursive)
                             type_, class_ = struct.unpack("!HH", dns_data[offset + 1:offset + 5])
 
                             if len(parts) > 2:
