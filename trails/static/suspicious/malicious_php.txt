@@ -934,6 +934,13 @@ saleforyou.org
 
 zctrack.com
 
+# Reference: https://twitter.com/malware_traffic/status/1207395436065112064
+
+/rogerpoitras7.php
+/wco3520.php
+/wtomnelson.php
+/wyckoff1012.php
+
 # Generic
 
 /canadiane-compte.php
