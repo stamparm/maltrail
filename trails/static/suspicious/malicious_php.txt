@@ -930,6 +930,10 @@ saleforyou.org
 /processar_2.php
 /processar_2-2.php
 
+# Reference: https://twitter.com/unmaskparasites/status/1207356669052801024
+
+zctrack.com
+
 # Generic
 
 /canadiane-compte.php
