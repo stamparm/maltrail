@@ -7,7 +7,7 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "https://isc.sans.edu/feeds/suspiciousdomains_Low.txt"
+__url__ = "https://isc.sans.edu/feeds/suspiciousdomains_High.txt"
 __check__ = "DShield.org"
 __info__ = "domain (suspicious)"
 __reference__ = "dshield.org"

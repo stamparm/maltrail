@@ -315,6 +315,47 @@ pinterest.com
 tinypic.com
 s3.amazonaws.com
 
+# appeared on dshield.org
+
+microsoftonline.com
+rlcdn.com
+quantserve.com
+krxd.net
+taobao.com
+contextweb.com
+addthisedge.com
+optimizely.com
+segment.io
+criteo.com
+crwdcntrl.net
+adobedtm.com
+paypal.com
+qq.com
+exelator.com
+avocet.io
+tapad.com
+crazyegg.com
+ytimg.com
+pubmatic.com
+dailymail.co.uk
+chartbeat.com
+twimg.com
+amung.us
+jwpcdn.com
+a-ads.com
+go-mpulse.net
+youtu.be
+mandrillapp.com
+staticimgfarm.com
+adsafeprotected.com
+onclickads.net
+mochiads.com
+sharethis.com
+bankofamerica.com
+usbank.com
+media.net
+wp.com
+
 # appeared on malwaremustdie.org
 
 rea.co.ke
