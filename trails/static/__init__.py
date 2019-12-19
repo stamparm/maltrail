@@ -18,7 +18,7 @@ def fetch():
     retval = {}
 
     directories = [os.path.dirname(__file__)] + glob.glob(os.path.join(os.path.dirname(__file__), "*"))
-    directories = sorted(directories, key=lambda _: -1 if "suspicious" in _ else int("custom" in _))
+    directories = sorted(directories, key=lambda _: -1 if any(__ in _ for __ in ("suspicious", "malicious")) else int("custom" in _))
 
     for directory in directories:
         if not os.path.isdir(directory):
