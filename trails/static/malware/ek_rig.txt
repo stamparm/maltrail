@@ -39,7 +39,6 @@ atztds17.world
 
 http://188.225.84.132
 atztds25.world
-\b(atztds|mtxtds)[0-9]{1,3}\.world
 
 # Reference: https://twitter.com/BroadAnalysis/status/804164835650965504
 # Reference: https://broadanalysis.com/2016/11/30/rig-exploit-kit-via-the-eitest-delivers-cryptfile2-ransomware/
@@ -96,3 +95,12 @@ stonefiesta.info
 
 bestwalletapiandroid.world
 lucretius-ada.com
+
+# Reference: https://twitter.com/david_jursa/status/1207613694621999104
+
+lendsblog.com
+atztds702cv.xyz
+
+# Generic trails
+
+\b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
