@@ -934,6 +934,10 @@ saleforyou.org
 
 zctrack.com
 
+# Reference: https://twitter.com/PhishFindR/status/1207755477565751296
+
+/fcc-authenticazione.php
+
 # Generic
 
 /canadiane-compte.php
