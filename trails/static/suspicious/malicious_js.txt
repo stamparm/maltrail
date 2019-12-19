@@ -804,11 +804,6 @@ humsoolt.net
 /jquery.fitvidsfc4a.js
 /mainfc4a.js
 
-# Reference: https://blog.sucuri.net/2019/11/skimmers-for-both-magento-and-wordpress.html (# Credit Card Skimmer Injected in WordPress Core)
-
-/wp-includes/js/admin-bar.min.js
-/wp-includes/js/wp-util.min.js
-
 # Reference: https://wordpress.org/support/topic/malware-infected-file-wordpress-core-wp-includes-wp-tmp-php/
 # Reference: https://twitter.com/unmaskparasites/status/1181651764921155584
 
