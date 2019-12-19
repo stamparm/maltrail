@@ -2661,3 +2661,7 @@ VPS.hsmiths.com
 wsw6tua3xl24gsmi264zaep6seppjyrkyucpsmuxnjzyt3f3j6swshad.onion
 xray587.startdedicated.de
 yuio.top
+
+# False positive on android_roamingmantis detection regex
+
+nn-mod.top
