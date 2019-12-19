@@ -911,3 +911,7 @@ live.sequracdn.net
 /5c13086d94587.js
 /5d94c29e12536.js
 /5d2c953326774.js
+
+# Reference: https://twitter.com/killamjr/status/1207685407229526023
+
+sgamno.com
