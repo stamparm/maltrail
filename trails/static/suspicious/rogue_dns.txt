@@ -752,3 +752,7 @@ ns2.dnshost.ga
 
 192.3.207.10:53
 198.46.234.210:53
+
+# Reference: https://twitter.com/ninoseki/status/1207634830927679488
+
+107.155.152.15:53
