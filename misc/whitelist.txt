@@ -2662,6 +2662,7 @@ wsw6tua3xl24gsmi264zaep6seppjyrkyucpsmuxnjzyt3f3j6swshad.onion
 xray587.startdedicated.de
 yuio.top
 
-# False positive on android_roamingmantis detection regex
+# Exceptions for android_roamingmantis detection regex
 
+hf-hd.top
 nn-mod.top
