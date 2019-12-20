@@ -5014,3 +5014,7 @@ cfxcheats.com
 # Reference: https://www.virustotal.com/gui/domain/xcheats.cf/relations
 
 xcheats.cf
+
+# Reference: https://twitter.com/kyleehmke/status/1207779048086286336
+
+minjust-gov-ua.com
