@@ -930,6 +930,14 @@ saleforyou.org
 /processar_2.php
 /processar_2-2.php
 
+# Reference: https://twitter.com/unmaskparasites/status/1207356669052801024
+
+zctrack.com
+
+# Reference: https://twitter.com/PhishFindR/status/1207755477565751296
+
+/fcc-authenticazione.php
+
 # Generic
 
 /canadiane-compte.php
