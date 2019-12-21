@@ -938,6 +938,10 @@ zctrack.com
 
 /fcc-authenticazione.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1208404034346004487
+
+/t4t3bcw368wwno9zlciqr244.php
+
 # Generic
 
 /canadiane-compte.php
