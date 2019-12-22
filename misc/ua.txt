@@ -1171,3 +1171,45 @@ DMFR
 # Reference: https://twitter.com/pollo290987/status/1112921683592187904
 
 Mozilla 6\.0
+
+# Reference: https://twitter.com/bad_packets/status/1208656547271675905
+# Reference: https://twitter.com/bad_packets/status/1208656547271675905/photo/2
+
+ouija_a.rc
+ouija_a.rm
+ouija_a.rm4
+ouija_a.rm4l
+ouija_a.rm4t
+ouija_a.rm4tl
+ouijaa.rm4tll
+ouija_a.rmv4l
+ouija_a.rm5
+ouija_a.rm5n
+ouija_a.rm6
+ouija_a.rm64
+ouija_a.rm7
+ouija_d.bg
+ouija_e.xploit
+ouija_i.486
+ouija_i.586
+ouija_i.686
+ouija_m.68k
+ouija_m.ips
+ouija_m.ips64
+ouija_m.psl
+ouija_m.ipsel
+ouija_p.pc
+ouija_p.pc2
+ouija_p.pc440
+ouija_p.owerppc
+ouija_r.oot
+ouija_r.oot32
+ouija_s.h4
+ouija_s.sh4
+ouija_s.pc
+ouija_s.parc
+ouija_x.32
+ouija_x.64
+ouija_x.86
+ouija_x.86_32
+ouija_x.86_64 
