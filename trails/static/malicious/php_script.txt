@@ -938,10 +938,18 @@ zctrack.com
 
 /fcc-authenticazione.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1208404034346004487
+
+/t4t3bcw368wwno9zlciqr244.php
+
 # Generic
 
+/7328-dating-verification-card.php
 /canadiane-compte.php
+/dating-verification-card.php
 /gate.php
 /gate1.php
 /gate.get
+/online-dating-verification-card.php
 /screenshot_gate.php
+/verification-card.php
