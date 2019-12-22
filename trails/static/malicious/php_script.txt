@@ -944,8 +944,12 @@ zctrack.com
 
 # Generic
 
+/7328-dating-verification-card.php
 /canadiane-compte.php
+/dating-verification-card.php
 /gate.php
 /gate1.php
 /gate.get
+/online-dating-verification-card.php
 /screenshot_gate.php
+/verification-card.php
