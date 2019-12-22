@@ -17,3 +17,7 @@ okyesmobi.com
 # Reference: https://twitter.com/sh1shk0va/status/1205511108582354944
 
 data.djmixer2018.com
+
+# Reference: https://www.virustotal.com/gui/file/9442af04b50af35a768984fc66c9302d4f840cc3183e0fd55c1e2dda4fab28ce/detection
+
+216.144.236.34:80
