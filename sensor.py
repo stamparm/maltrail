@@ -857,7 +857,7 @@ def init():
                 print("[?] in case of any problems with packet capture on virtual interface 'any', please put all monitoring interfaces to promiscuous mode manually (e.g. 'sudo ifconfig eth0 promisc')")
 
         for interface in interfaces:
-            if interface.lower() != "any" and interface not in pcapy.findalldevs():
+            if interface.lower() != "any" and re.sub(r"(?i)\Anetmap:", "", interface) not in pcapy.findalldevs():
                 hint = "[?] available interfaces: '%s'" % ",".join(pcapy.findalldevs())
                 exit("[!] interface '%s' not found\n%s" % (interface, hint))
 
