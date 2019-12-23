@@ -85,7 +85,7 @@ def worker(buffer, n, offset, mod, process_packet):
                 if content is None:
                     break
 
-                if len(content) < 12:
+                elif len(content) < 12:
                     continue
 
                 sec, usec, ip_offset = struct.unpack("=III", content[:12])

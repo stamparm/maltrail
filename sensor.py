@@ -986,17 +986,21 @@ def monitor():
                 sec, usec = [int(_) for _ in ("%.6f" % time.time()).split('.')]
             else:
                 sec, usec = header.getts()
+
             if _multiprocessing:
+                block = struct.pack("=III", sec, usec, ip_offset) + packet
+
                 if _locks.count:
                     _locks.count.acquire()
 
-                write_block(_buffer, _count, struct.pack("=III", sec, usec, ip_offset) + packet)
+                write_block(_buffer, _count, block)
                 _n.value = _count = _count + 1
 
                 if _locks.count:
                     _locks.count.release()
             else:
                 _process_packet(packet, sec, usec, ip_offset)
+
         except socket.timeout:
             pass
 
