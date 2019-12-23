@@ -171,3 +171,7 @@ bitcoinmaker.site
 # Reference: https://twitter.com/tkanalyst/status/1204442400023646208
 
 fergienotyours.com
+
+# Reference: https://twitter.com/nao_sec/status/1209090544711815169
+
+giftny2020.com
