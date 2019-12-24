@@ -946,6 +946,10 @@ zctrack.com
 
 /1djx9hic7893s4ibzf3dtnjf.php
 
+# Reference: https://twitter.com/nao_sec/status/1209090544711815169
+
+/jppropellerads.php
+
 # Generic
 
 /7328-dating-verification-card.php
