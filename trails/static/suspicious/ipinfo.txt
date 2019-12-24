@@ -12,6 +12,7 @@ bahoot.com
 bearsmyip.com
 checkip.amazonaws.com
 checkip.dns.he.net
+checkip.dyn.com
 checkip.dyndns.com
 checkip.dyndns.it
 checkip.dyndns.org
