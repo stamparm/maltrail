@@ -1213,3 +1213,8 @@ ouija_x.64
 ouija_x.86
 ouija_x.86_32
 ouija_x.86_64 
+
+# Reference: https://exchange.xforce.ibmcloud.com/collection/Kryptik-FusionCore-ICLoader-Malware-Campaign-via-AWS-IP-e2fa5296f88a0c4ad37e4f4652c221db
+
+Christmas Mystery
+Install Capital
