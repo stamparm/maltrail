@@ -2051,5 +2051,10 @@ bpeouxcwqhenm.lasersteam178.ru
 lulusoft.com
 static.86.102.69.159.clients.your-server.de
 webcompanion.com
-/request/autok?user=
-/request/conditions?user=
+
+# Reference: https://app.any.run/tasks/053837ea-0070-473d-93d7-a6953d7e973d/
+# Reference: https://www.virustotal.com/gui/domain/ocrtoword.com/relations
+
+appuniverseapplication.com
+ocrtoword.com
+securestudies.com
