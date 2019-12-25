@@ -2050,8 +2050,6 @@ bpeouxcwqhenm.lasersteam178.ru
 # Reference: https://any.run/report/ee5f807ada03b89e19c2e222d260c613f7961cc8ccf879638f1dc1ad44d10968/8b24b983-95cd-46aa-8629-7c94d5012cb2
 
 lulusoft.com
-static.17.249.201.195.clients.your-server.de
-static.86.102.69.159.clients.your-server.de
 webcompanion.com
 /request/autok?user=
 /request/conditions?user=
