@@ -2045,3 +2045,11 @@ update.clientstaticserv.com
 # Reference: https://twitter.com/securiteoff/status/740562516699447296 (# LoadMoney)
 
 bpeouxcwqhenm.lasersteam178.ru
+
+# Reference: https://app.any.run/tasks/8f28abcc-cbaf-4f47-bbfa-b00f515a1a4f/ (# ICELoader)
+
+lulusoft.com
+static.86.102.69.159.clients.your-server.de
+webcompanion.com
+/request/autok?user=
+/request/conditions?user=
