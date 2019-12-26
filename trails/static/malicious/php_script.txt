@@ -954,6 +954,10 @@ zctrack.com
 
 /xbwzo420wz1r6frvy127b3zl.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1210215974600945667
+
+/sf2u6eovopsz6qqcv0unjld1.php
+
 # Generic
 
 /7328-dating-verification-card.php
