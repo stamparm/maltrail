@@ -895,3 +895,7 @@ slade-sell-shop.com
 # Reference: https://twitter.com/killamjr/status/1209165822939279365
 
 opencartmodules.biz
+
+# Reference: https://twitter.com/AffableKraut/status/1210298773248696320
+
+googletag-manager.com
