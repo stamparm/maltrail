@@ -265,9 +265,3 @@ minemonero.gq
 alimabi.cn
 pooldd.com
 monero.riefly.id
-
-# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/almost-hollow-and-innocent-monero-miner-remains-undetected-via-process-hollowing/
-# Reference: https://otx.alienvault.com/pulse/5dfb48ce26805ea87822c168
-
-37.187.154.37:4466
-39.99.146.107:47905
