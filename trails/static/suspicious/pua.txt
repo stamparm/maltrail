@@ -2045,3 +2045,20 @@ update.clientstaticserv.com
 # Reference: https://twitter.com/securiteoff/status/740562516699447296 (# LoadMoney)
 
 bpeouxcwqhenm.lasersteam178.ru
+
+# Reference: https://app.any.run/tasks/8f28abcc-cbaf-4f47-bbfa-b00f515a1a4f/ (# ICELoader)
+# Reference: https://any.run/report/ee5f807ada03b89e19c2e222d260c613f7961cc8ccf879638f1dc1ad44d10968/8b24b983-95cd-46aa-8629-7c94d5012cb2
+
+lulusoft.com
+webcompanion.com
+/request/autok?user=
+/request/conditions?user=
+/request/offers?user=
+/request/report?user=
+
+# Reference: https://app.any.run/tasks/053837ea-0070-473d-93d7-a6953d7e973d/
+# Reference: https://www.virustotal.com/gui/domain/ocrtoword.com/relations
+
+appuniverseapplication.com
+ocrtoword.com
+securestudies.com
