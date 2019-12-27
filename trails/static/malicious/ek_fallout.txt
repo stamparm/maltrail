@@ -175,3 +175,7 @@ fergienotyours.com
 # Reference: https://twitter.com/nao_sec/status/1209090544711815169
 
 giftny2020.com
+
+# Reference: https://twitter.com/nao_sec/status/1210531652184657920
+
+outlast2019.com
