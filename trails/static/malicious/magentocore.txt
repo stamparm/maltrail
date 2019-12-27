@@ -895,3 +895,14 @@ slade-sell-shop.com
 # Reference: https://twitter.com/killamjr/status/1209165822939279365
 
 opencartmodules.biz
+
+# Reference: https://twitter.com/AffableKraut/status/1210298773248696320
+# Reference: https://www.virustotal.com/gui/ip-address/124.156.35.204/relations
+
+http://124.156.35.204
+googieapls.com
+google-catalog.com
+googletag-manager.com
+gstatlcs.com
+jquery-js.link
+xn--gstatc-7va.com
