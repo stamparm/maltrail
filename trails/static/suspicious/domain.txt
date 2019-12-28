@@ -5018,3 +5018,8 @@ xcheats.cf
 # Reference: https://twitter.com/kyleehmke/status/1207779048086286336
 
 minjust-gov-ua.com
+
+# Reference: https://www.virustotal.com/gui/file/fe71e3e8bfafa746c699b0936dadd819f9e93ec7d425e613ceb8e259f69dc968/detection
+# Reference: https://www.virustotal.com/gui/domain/herokussl.com/relations
+
+herokussl.com
