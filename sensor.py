@@ -478,6 +478,9 @@ def _process_packet(packet, sec, usec, ip_offset):
                             return
 
                         if config.USE_HEURISTICS:
+                            match = re.search(r"\bX-Forwarded-For:\s*([0-9.]+)", packet, re.I)
+                            if match:
+                                src_ip = "%s,%s" % (src_ip, match.group(1))
                             unquoted_path = _urllib.parse.unquote(path)
                             unquoted_post_data = _urllib.parse.unquote(post_data or "")
                             for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
