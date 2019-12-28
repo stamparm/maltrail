@@ -41,3 +41,7 @@ wwwsafefinderformac.com
 # Reference: https://twitter.com/tkanalyst/status/1184840339070148609
 
 lookupdns.club
+
+# Reference: https://twitter.com/tkanalyst/status/1210663918953123841
+
+104.37.175.94:443
