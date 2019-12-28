@@ -915,3 +915,7 @@ live.sequracdn.net
 # Reference: https://twitter.com/killamjr/status/1207685407229526023
 
 sgamno.com
+
+# Reference: https://twitter.com/tkanalyst/status/1210663918953123841
+
+/3pik20j30ri0f17q37u2s4mkms.js
