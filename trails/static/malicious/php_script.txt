@@ -966,6 +966,10 @@ zctrack.com
 
 /qtt30bxz0x2n86r2ivlcdqkt.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1211076635736379393
+
+/kz3zscegcucigqia01ifzale.php
+
 # Generic
 
 /7328-dating-verification-card.php
