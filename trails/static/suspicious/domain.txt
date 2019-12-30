@@ -5018,3 +5018,7 @@ xcheats.cf
 # Reference: https://twitter.com/kyleehmke/status/1207779048086286336
 
 minjust-gov-ua.com
+
+# Reference: https://www.virustotal.com/gui/domain/monk249.date/details
+
+monk249.date
