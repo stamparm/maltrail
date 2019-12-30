@@ -5022,3 +5022,8 @@ minjust-gov-ua.com
 # Reference: https://www.virustotal.com/gui/domain/monk249.date/details
 
 monk249.date
+
+# Reference: https://app.any.run/tasks/76423975-6bd1-48f0-9758-89ceb126bf48/
+# Reference: https://www.virustotal.com/gui/domain/hospedagemdesites.ws/relations
+
+hospedagemdesites.ws
