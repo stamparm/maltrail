@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/_re_fox/status/1212070711206064131
+# Reference: https://app.any.run/tasks/238534d5-af31-4e02-a905-5fd2b9ddf729/
+# Reference: https://www.virustotal.com/gui/file/8b11db3a20f447b31cfc6a6af626c037b8f77ed0f96f7210f9d58a21f83e6eda/detection
+
+173.212.224.110:4140
