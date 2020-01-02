@@ -1218,3 +1218,7 @@ ouija_x.86_64
 
 Christmas Mystery
 Install Capital
+
+# Reference: http://plok1.blogspot.com/2018/02/a-new-spreader-with-mimikatz.html
+
+WinHTTP loader/1.0
