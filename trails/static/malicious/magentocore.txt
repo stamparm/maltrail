@@ -944,3 +944,8 @@ tawktalk.com
 
 googlc-analytics.net
 googlo-analytics.com
+
+# Reference: https://twitter.com/AffableKraut/status/1212927165454520321
+
+googlc-analytics.com
+googlctagmanager.cm
