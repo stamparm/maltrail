@@ -940,5 +940,7 @@ zoopim.online
 tawktalk.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1212889315572760577
+# Reference: https://www.virustotal.com/gui/ip-address/5.188.9.61/relations
 
+googlc-analytics.net
 googlo-analytics.com
