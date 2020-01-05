@@ -1222,3 +1222,12 @@ Install Capital
 # Reference: http://plok1.blogspot.com/2018/02/a-new-spreader-with-mimikatz.html
 
 WinHTTP loader/1.0
+
+# Reference: https://devcentral.f5.com/s/articles/is-xmaker-the-new-trickloader-24372
+# Reference: https://twitter.com/VK_Intel/status/1213253987492864000/photo/2
+
+BotLoader
+KEFIR
+TrickLoader
+WinLoader
+Xmaker
