@@ -5027,3 +5027,7 @@ monk249.date
 # Reference: https://www.virustotal.com/gui/domain/hospedagemdesites.ws/relations
 
 hospedagemdesites.ws
+
+# Reference: https://www.virustotal.com/gui/file/6a6826cbe38a06a2b381c208519c4891ccb95c49958c2173cd2eef3db62329eb/detection
+
+spamcannibal.xyz
