@@ -949,3 +949,7 @@ googlo-analytics.com
 
 googlc-analytics.com
 googlctagmanager.cm
+
+# Reference: https://twitter.com/xuy1202/status/1214051382178660352
+
+newmagento.com
