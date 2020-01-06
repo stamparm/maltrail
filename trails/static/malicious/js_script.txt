@@ -919,3 +919,7 @@ sgamno.com
 # Reference: https://twitter.com/tkanalyst/status/1210663918953123841
 
 /3pik20j30ri0f17q37u2s4mkms.js
+
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1213878934514864128
+
+site-great.xyz
