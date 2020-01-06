@@ -925,5 +925,9 @@ sgamno.com
 site-great.xyz
 
 # Reference: https://twitter.com/JayTHL/status/1214207517590511616
+# Reference: https://twitter.com/JayTHL/status/1214240539563966465
 
-/galindo.js
+static.srcspot.com
+/libs/carlos.js
+/libs/darrel.js
+/libs/galindo.js
