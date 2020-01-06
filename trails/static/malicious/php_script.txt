@@ -978,6 +978,10 @@ zctrack.com
 
 /vola4ob2hwwrak36r8ytzcf2.php
 
+# Reference: https://twitter.com/JCyberSec_/status/1214130157356822528
+
+/7xctzza3vnuc6kx62lseaqsn.php
+
 # Generic
 
 /7328-dating-verification-card.php
