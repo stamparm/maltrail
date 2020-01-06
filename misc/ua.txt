@@ -1231,3 +1231,7 @@ KEFIR
 TrickLoader
 WinLoader
 Xmaker
+
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1213878934514864128
+
+undefined
