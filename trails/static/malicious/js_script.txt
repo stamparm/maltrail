@@ -923,3 +923,7 @@ sgamno.com
 # Reference: https://twitter.com/c3rb3ru5d3d53c/status/1213878934514864128
 
 site-great.xyz
+
+# Reference: https://twitter.com/JayTHL/status/1214207517590511616
+
+/galindo.js
