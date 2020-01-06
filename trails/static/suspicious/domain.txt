@@ -1443,11 +1443,6 @@ zik.dj
 .loan
 .ltd
 
-# Reference: https://twitter.com/James_inthe_box/status/1125086520229056512
-# Reference: https://www.virustotal.com/gui/domain/iok.la/relations
-
-iok.la
-
 # Reference: https://www.ptsecurity.com/ru-ru/research/analytics/operation-taskmasters-2019/ (Russian)
 
 5wya.com
