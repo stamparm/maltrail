@@ -124,6 +124,7 @@ $(document).ready(function() {
     initCalHeatmap();
     initDialogs();
 
+    Papa.SCRIPT_PATH = "/js/papaparse.min.js"
     Papa.RemoteChunkSize = CHUNK_SIZE; // 10 MB (per one chunk request)
 
     Chart.defaults.global.tooltipFontFamily = DEFAULT_FONT_FAMILY;
