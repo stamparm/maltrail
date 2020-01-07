@@ -1443,11 +1443,6 @@ zik.dj
 .loan
 .ltd
 
-# Reference: https://twitter.com/James_inthe_box/status/1125086520229056512
-# Reference: https://www.virustotal.com/gui/domain/iok.la/relations
-
-iok.la
-
 # Reference: https://www.ptsecurity.com/ru-ru/research/analytics/operation-taskmasters-2019/ (Russian)
 
 5wya.com
@@ -5027,3 +5022,7 @@ monk249.date
 # Reference: https://www.virustotal.com/gui/domain/hospedagemdesites.ws/relations
 
 hospedagemdesites.ws
+
+# Reference: https://www.virustotal.com/gui/file/6a6826cbe38a06a2b381c208519c4891ccb95c49958c2173cd2eef3db62329eb/detection
+
+spamcannibal.xyz
