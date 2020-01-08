@@ -933,3 +933,8 @@ static.srcspot.com
 /libs/carlos.js
 /libs/darrel.js
 /libs/galindo.js
+
+# Reference: https://twitter.com/aglongo/status/1214575812646752259
+
+/js/b76dadb06c3582b7f598111d60f2f944.js
+/js/ee497bb12cf272d333449cd79582c289.js
