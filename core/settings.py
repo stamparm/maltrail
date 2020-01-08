@@ -21,7 +21,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.16.200"
+VERSION = "0.16.201"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 IS_SENSOR = sys.argv[0].startswith("sensor")
