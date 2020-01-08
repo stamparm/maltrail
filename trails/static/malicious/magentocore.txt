@@ -953,3 +953,8 @@ googlctagmanager.cm
 # Reference: https://twitter.com/xuy1202/status/1214051382178660352
 
 newmagento.com
+
+# Reference: https://www.bleepingcomputer.com/news/security/magecart-attackers-steal-card-info-from-focus-camera-shoppers/
+# Reference: https://www.virustotal.com/gui/domain/zdsassets.com/details
+
+zdsassets.com
