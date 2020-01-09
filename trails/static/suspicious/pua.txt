@@ -2062,3 +2062,9 @@ webcompanion.com
 appuniverseapplication.com
 ocrtoword.com
 securestudies.com
+
+# Reference: https://www.securityhome.eu/malware/malware.php?mal_id=19882282935775d0c2205563.12724842
+
+staticpm.com
+updaterss.com
+dpliveupdate.com

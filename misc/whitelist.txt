@@ -178,6 +178,7 @@ takprosto.cc
 tawk.to
 testanalytics.net
 testflightapp.com
+torrent.eu.org
 trendmicro.com
 tumblr.com
 twitter.com
@@ -1065,6 +1066,14 @@ yaroslavl.su
 adult.xyz
 best-journal.xyz
 ytmp3.cc
+balancers.42.wix.com
+ding.wix.com
+progallery.wix.com
+apps.wix.com
+ecom.wix.com
+social-blog.wix.com
+dc11.wix.com
+sslstatic.wix.com
 
 # NS of afraid.org
 
@@ -1146,6 +1155,7 @@ lupus-bra.com
 rotumal.com
 red-gate.com
 clicksor.com
+as2pawnib8ib.com
 
 # Google crawlers
 
