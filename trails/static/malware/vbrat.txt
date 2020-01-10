@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: geravib, vbrat
+
+# Reference: https://twitter.com/pmelson/status/1215331171149676544
+# Reference: https://www.virustotal.com/gui/file/39d09c8782e83c7f01c221c12e870df060cd302276769e3b7debe503030cc54c/detection
+
+159.65.15.187:5150
