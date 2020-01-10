@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/smartphone-shopaholic/95544/
+# Reference: https://otx.alienvault.com/pulse/5e1748d7514ca3295b048048
+
+adsnative123.com
