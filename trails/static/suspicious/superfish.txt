@@ -4,7 +4,6 @@
 # Reference: http://blog.dynamoo.com/2015/02/some-superfish-domains-and-ip-addresse.html
 
 venn.me
-best-deals-products.com
 superfish.com
 pin2buy.net
 pintobuy.net

@@ -752,12 +752,6 @@ zirve100.com
 
 /5j76hga6tnpo7levlgmhrosuhs.js
 
-# Reference: https://twitter.com/killamjr/status/1184849581529616390
-# Reference: https://twitter.com/unmaskparasites/status/1214266385003495424
-
-/js/varien/js.js
-/js/varien/mail.js
-
 # Reference: https://twitter.com/killamjr/status/1185376383180136448
 
 /media/si.js

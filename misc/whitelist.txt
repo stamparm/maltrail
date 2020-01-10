@@ -498,6 +498,7 @@ parkingcrew.net
 
 svijet7.com
 artbetting.de
+budi.in
 
 # found as false positive on abuse.ch
 
@@ -1074,6 +1075,8 @@ ecom.wix.com
 social-blog.wix.com
 dc11.wix.com
 sslstatic.wix.com
+stores-counters.wix.com
+wwworigin.wix.com
 
 # NS of afraid.org
 
