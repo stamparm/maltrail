@@ -958,3 +958,7 @@ newmagento.com
 # Reference: https://www.virustotal.com/gui/domain/zdsassets.com/details
 
 zdsassets.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1215693928764063744
+
+vamberlo.com
