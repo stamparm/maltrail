@@ -302,6 +302,41 @@ zfxcb.top
 
 gezginbilgisayar.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1215403530040692736
+# Refrence: https://gist.github.com/MBThreatIntel/8ea3b84c6e9732711b9801828ad05bbc
+
+cookwhiletravelling.com
+cookwithhealthyideas.com
+cookwithnewideas.com
+creativetravelfoodstories.com
+expertvagabonds.com
+farawayfoodfun.com
+foodandtraveldesires.com
+foodfavoritetraveller.com
+foodietravellerguide.com
+happybellytravels.com
+holidaysleisure.com
+mytravelandfoodstories.com
+offbeatfoodtravel.com
+spicemixtravel.com
+spiceofhome.com
+tasteofholiday.com
+theleadingtowners.com
+thenomadictravel.com
+thesolotravellerworld.com
+thesoulfultraveller.com
+thewanderingfoodie.com
+toprecipeideas.com
+toptipsrecipes.com
+toptravelfoodideas.com
+toptravelfoodknowledge.com
+toursforfood.com
+travelfoodknowledge.com
+travelforfoodfun.com
+travelsandfoodstories.com
+travtripfoodie.com
+yummyrecipeideas.com
+
 # Generic
 
 crimemarket.net
