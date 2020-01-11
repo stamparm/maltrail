@@ -958,3 +958,37 @@ newmagento.com
 # Reference: https://www.virustotal.com/gui/domain/zdsassets.com/details
 
 zdsassets.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1215693928764063744
+
+vamberlo.com
+
+# Reference: https://www.rapidspike.com/blog/multiple-hacking-groups-attempt-to-skim-credit-cards-from-perricone-md/
+# Reference: https://twitter.com/BreachMessenger/status/1057394505266151425
+# Reference: https://www.virustotal.com/gui/ip-address/124.156.210.169/relations
+
+a4c.cloud
+ajaxstatic.com
+apipack.host
+authorizeplus.com
+autojspack.com
+cdndeskpro.com
+cdnpack.net
+cdnpack.site
+dusk.net.in
+faceapiget.com
+fbpixelget.com
+gstaticapi.com
+jspack.pro
+kegland.top
+lightgetjs.com
+listrakjs.com
+olarkcdn.com
+perriconemd.me.uk
+priceapigate.com
+rackapijs.com
+section.ws
+sectionget.com
+sectionio.com
+topapigate.com
+worx.top
