@@ -990,6 +990,10 @@ zctrack.com
 
 /PostaEstaPorra.php
 
+# Reference: https://twitter.com/dubstard/status/1215705048824655873
+
+/secure-bankofamerica-personal-information-update.php
+
 # Generic
 
 /7328-dating-verification-card.php
