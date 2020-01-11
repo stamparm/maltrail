@@ -962,3 +962,19 @@ zdsassets.com
 # Reference: https://twitter.com/MBThreatIntel/status/1215693928764063744
 
 vamberlo.com
+
+# Reference: https://www.rapidspike.com/blog/multiple-hacking-groups-attempt-to-skim-credit-cards-from-perricone-md/
+# Reference: https://twitter.com/BreachMessenger/status/1057394505266151425
+
+ajaxstatic.com
+autojspack.com
+cdndeskpro.com
+fbpixelget.com
+gstaticapi.com
+js-react.com
+jspack.pro
+kegland.top
+lightgetjs.com
+perriconemd.me.uk
+rackapijs.com
+section.ws
