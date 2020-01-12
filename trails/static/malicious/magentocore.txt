@@ -992,3 +992,7 @@ sectionget.com
 sectionio.com
 topapigate.com
 worx.top
+
+# Reference: https://www.riskiq.com/blog/labs/magecart-mypillow-amerisleep/
+
+wskonnekt.com
