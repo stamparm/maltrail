@@ -56,3 +56,8 @@ mariko-apt.site
 # Reference: https://twitter.com/nao_sec/status/1201128853055213571
 
 sasa-ofus.space
+
+# Reference: https://twitter.com/nao_sec/status/1216385095277219841
+# Reference: https://app.any.run/tasks/8844703d-676b-415f-bf9c-83e7f507336a/
+
+365bakery-tokyo24.site
