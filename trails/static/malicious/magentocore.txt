@@ -996,3 +996,7 @@ worx.top
 # Reference: https://twitter.com/JCyberSec_/status/1216676671983624193
 
 js-react.com
+
+# Reference: https://twitter.com/jeromesegura/status/1064924824336654336
+
+bootstrap-js.com
