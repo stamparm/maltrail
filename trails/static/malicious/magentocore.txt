@@ -992,3 +992,7 @@ sectionget.com
 sectionio.com
 topapigate.com
 worx.top
+
+# Reference: https://twitter.com/JCyberSec_/status/1216676671983624193
+
+js-react.com
