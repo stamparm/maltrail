@@ -265,10 +265,10 @@ def _process_packet(packet, sec, usec, ip_offset):
 
         if ip_version == 0x04:  # IPv4
             ip_header = struct.unpack("!BBHHHBBH4s4s", ip_data[:20])
-            iph_length = (ip_header[0] & 0xf) << 2
             fragment_offset = ip_header[4] & 0x1fff
             if fragment_offset != 0:
                 return
+            iph_length = (ip_header[0] & 0xf) << 2
             protocol = ip_header[6]
             src_ip = socket.inet_ntoa(ip_header[8])
             dst_ip = socket.inet_ntoa(ip_header[9])
@@ -351,11 +351,13 @@ def _process_packet(packet, sec, usec, ip_offset):
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, content_type, "content type (suspicious)", "(heuristic)"), packet)
 
                 method, path = None, None
-                index = tcp_data.find("\r\n")
-                if index >= 0:
-                    line = tcp_data[:index]
-                    if line.count(' ') == 2 and " HTTP/" in line:
-                        method, path, _ = line.split(' ')
+
+                if " HTTP/" in tcp_data:
+                    index = tcp_data.find("\r\n")
+                    if index >= 0:
+                        line = tcp_data[:index]
+                        if line.count(' ') == 2 and " HTTP/" in line:
+                            method, path, _ = line.split(' ')
 
                 if method and path:
                     post_data = None
