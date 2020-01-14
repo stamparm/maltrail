@@ -13,6 +13,7 @@ sys.dont_write_bytecode = True
 
 import core.versioncheck
 
+import cProfile
 import inspect
 import math
 import mmap
@@ -889,7 +890,7 @@ def init():
             except:
                 pass
 
-    if _multiprocessing:
+    if _multiprocessing and not config.profile:
         _init_multiprocessing()
 
     if not IS_WIN and not config.DISABLE_CPU_AFFINITY:
@@ -1090,6 +1091,7 @@ def main():
     parser.add_option("--console", dest="console", action="store_true", help="print events to console (Note: switch '-q' might be useful)")
     parser.add_option("--no-updates", dest="no_updates", action="store_true", help="disable (online) trail updates")
     parser.add_option("--debug", dest="debug", action="store_true", help=optparse.SUPPRESS_HELP)
+    parser.add_option("--profile", dest="profile", help=optparse.SUPPRESS_HELP)
     options, _ = parser.parse_args()
 
     read_config(options.config_file)
@@ -1118,7 +1120,11 @@ def main():
 
     try:
         init()
-        monitor()
+        if config.profile:
+            open(config.profile, "w+b").write("")
+            cProfile.run("monitor()", config.profile)
+        else:
+            monitor()
     except KeyboardInterrupt:
         print("\r[x] stopping (Ctrl-C pressed)")
 
