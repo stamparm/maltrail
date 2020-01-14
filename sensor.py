@@ -38,6 +38,7 @@ from core.common import get_ex_message
 from core.common import get_text
 from core.common import load_trails
 from core.compat import xrange
+from core.datatype import LRUDict
 from core.enums import BLOCK_MARKER
 from core.enums import PROTO
 from core.enums import TRAIL
@@ -105,7 +106,7 @@ _count = 0
 _locks = AttribDict()
 _multiprocessing = None
 _n = None
-_result_cache = {}
+_result_cache = LRUDict(MAX_RESULT_CACHE_ENTRIES)
 _last_syn = None
 _last_logged_syn = None
 _last_udp = None
@@ -237,9 +238,6 @@ def _process_packet(packet, sec, usec, ip_offset):
     global _subdomains_sec
 
     try:
-        if len(_result_cache) > MAX_RESULT_CACHE_ENTRIES:
-            _result_cache.clear()
-
         if config.USE_HEURISTICS:
             if _locks.connect_sec:
                 _locks.connect_sec.acquire()
