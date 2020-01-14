@@ -737,7 +737,7 @@ def init():
     try:
         import multiprocessing
 
-        if config.PROCESS_COUNT > 1:
+        if config.PROCESS_COUNT > 1 and not config.profile:
             _multiprocessing = multiprocessing
     except (ImportError, OSError, NotImplementedError):
         pass
@@ -890,7 +890,7 @@ def init():
             except:
                 pass
 
-    if _multiprocessing and not config.profile:
+    if _multiprocessing:
         _init_multiprocessing()
 
     if not IS_WIN and not config.DISABLE_CPU_AFFINITY:
