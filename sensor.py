@@ -1037,16 +1037,20 @@ def monitor():
                     if not success:
                         time.sleep(REGULAR_SENSOR_SLEEP_TIME)
 
-        if len(_caps) > 1:
-            if _multiprocessing:
-                _locks.count = threading.Lock()
-            _locks.connect_sec = threading.Lock()
+        if config.profile and len(_caps) == 1:
+            print("[=] will store profiling results to '%s'..." % config.profile)
+            _(_caps[0])
+        else:
+            if len(_caps) > 1:
+                if _multiprocessing:
+                    _locks.count = threading.Lock()
+                _locks.connect_sec = threading.Lock()
 
-        for _cap in _caps:
-            threading.Thread(target=_, args=(_cap,)).start()
+            for _cap in _caps:
+                threading.Thread(target=_, args=(_cap,)).start()
 
-        while _caps and not _done_count == (config.pcap_file or "").count(',') + 1:
-            time.sleep(1)
+            while _caps and not _done_count == (config.pcap_file or "").count(',') + 1:
+                time.sleep(1)
 
         print("[i] all capturing interfaces closed")
     except SystemError as ex:
