@@ -40,6 +40,7 @@ from core.common import load_trails
 from core.compat import xrange
 from core.datatype import LRUDict
 from core.enums import BLOCK_MARKER
+from core.enums import CACHE_TYPE
 from core.enums import PROTO
 from core.enums import TRAIL
 from core.log import create_log_directory
@@ -145,7 +146,13 @@ def _check_domain_member(query, domains):
     return False
 
 def _check_domain_whitelisted(query):
-    return _check_domain_member(re.split(r"(?i)[^A-Z0-9._-]", query or "")[0], WHITELIST)
+    result = _result_cache.get((CACHE_TYPE.DOMAIN_WHITELISTED, query))
+
+    if result is None:
+        result = _check_domain_member(re.split(r"(?i)[^A-Z0-9._-]", query or "")[0], WHITELIST)
+        _result_cache[(CACHE_TYPE.DOMAIN_WHITELISTED, query)] = result
+
+    return result
 
 def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, packet=None):
     if query:
@@ -156,7 +163,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
     if query.replace('.', "").isdigit():  # IP address
         return
 
-    if _result_cache.get(query) == False:
+    if _result_cache.get((CACHE_TYPE.DOMAIN, query)) == False:
         return
 
     result = False
@@ -222,7 +229,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, "long domain (suspicious)", "(heuristic)"), packet)
 
     if result == False:
-        _result_cache[query] = False
+        _result_cache[(CACHE_TYPE.DOMAIN, query)] = False
 
 def _process_packet(packet, sec, usec, ip_offset):
     """
@@ -427,7 +434,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 user_agent = _urllib.parse.unquote(user_agent).strip()
 
                         if user_agent:
-                            result = _result_cache.get(user_agent)
+                            result = _result_cache.get((CACHE_TYPE.USER_AGENT, user_agent))
                             if result is None:
                                 if re.search(WHITELIST_UA_REGEX, user_agent, re.I) is None:
                                     match = re.search(SUSPICIOUS_UA_REGEX, user_agent)
@@ -438,11 +445,11 @@ def _process_packet(packet, sec, usec, ip_offset):
                                         parts = user_agent.split(match.group(0), 1)
 
                                         if len(parts) > 1 and parts[0] and parts[-1]:
-                                            result = _result_cache[user_agent] = "%s (%s)" % (_(match.group(0)), _(user_agent))
+                                            result = _result_cache[(CACHE_TYPE.USER_AGENT, user_agent)] = "%s (%s)" % (_(match.group(0)), _(user_agent))
                                         else:
-                                            result = _result_cache[user_agent] = _(match.group(0)).join(("(%s)" if part else "%s") % _(part) for part in parts)
+                                            result = _result_cache[(CACHE_TYPE.USER_AGENT, user_agent)] = _(match.group(0)).join(("(%s)" if part else "%s") % _(part) for part in parts)
                                 if not result:
-                                    _result_cache[user_agent] = False
+                                    _result_cache[(CACHE_TYPE.USER_AGENT, user_agent)] = False
 
                             if result:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, result, "user agent (suspicious)", "(heuristic)"), packet)
@@ -492,26 +499,26 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                             if not any(_ in unquoted_path.lower() for _ in WHITELIST_HTTP_REQUEST_PATHS):
                                 if any(_ in unquoted_path for _ in SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION):
-                                    found = _result_cache.get(unquoted_path)
+                                    found = _result_cache.get((CACHE_TYPE.PATH, unquoted_path))
                                     if found is None:
                                         for desc, regex in SUSPICIOUS_HTTP_REQUEST_REGEXES:
                                             if re.search(regex, unquoted_path, re.I | re.DOTALL):
                                                 found = desc
                                                 break
-                                        _result_cache[unquoted_path] = found or ""
+                                        _result_cache[(CACHE_TYPE.PATH, unquoted_path)] = found or ""
                                     if found:
                                         trail = "%s(%s)" % (host, path)
                                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "%s (suspicious)" % found, "(heuristic)"), packet)
                                         return
 
                                 if any(_ in unquoted_post_data for _ in SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION):
-                                    found = _result_cache.get(unquoted_post_data)
+                                    found = _result_cache.get((CACHE_TYPE.POST_DATA, unquoted_post_data))
                                     if found is None:
                                         for desc, regex in SUSPICIOUS_HTTP_REQUEST_REGEXES:
                                             if re.search(regex, unquoted_post_data, re.I | re.DOTALL):
                                                 found = desc
                                                 break
-                                        _result_cache[unquoted_post_data] = found or ""
+                                        _result_cache[(CACHE_TYPE.POST_DATA, unquoted_post_data)] = found or ""
                                     if found:
                                         trail = "%s(%s \\(%s %s\\))" % (host, path, method, post_data.strip())
                                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "%s (suspicious)" % found, "(heuristic)"), packet)

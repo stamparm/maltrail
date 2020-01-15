@@ -66,3 +66,10 @@ class HTTP_HEADER:
     USER_AGENT = "User-Agent"
     VIA = "Via"
     X_POWERED_BY = "X-Powered-By"
+
+class CACHE_TYPE:
+    DOMAIN = 0
+    USER_AGENT = 1
+    PATH = 2
+    POST_DATA = 3
+    DOMAIN_WHITELISTED = 4
