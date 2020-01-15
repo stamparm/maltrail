@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1217506047981584384
+# Reference: https://app.any.run/tasks/341f9416-a847-494b-8a14-a0bf3fd1d387/
+
+theyeru.ru
+
+# Generic
+
+/sms-bomb/
+/sms-bomber/
+/sms_bomb/
+/sms_bomber/
+/smsbomb/
+/smsbomber/
+/sms-flood/
+/sms-flooder/
+/sms_flood/
+/sms_flooder/
+/smsflood/
+/smsflooder/
