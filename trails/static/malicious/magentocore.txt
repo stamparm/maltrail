@@ -1004,3 +1004,10 @@ bootstrap-js.com
 # Reference: https://twitter.com/xuy1202/status/1216951727615668224
 
 apis-analytics.com
+
+# Reference: https://www.rapidspike.com/blog/2019-magecart-timeline/
+
+cleor.co
+creditprop.com
+googletagstorage.com
+imagesengines.com
