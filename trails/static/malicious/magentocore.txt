@@ -1011,3 +1011,7 @@ cleor.co
 creditprop.com
 googletagstorage.com
 imagesengines.com
+
+# Reference: https://twitter.com/Jouliok/status/1217400178170368001
+
+gold.platinumus.top
