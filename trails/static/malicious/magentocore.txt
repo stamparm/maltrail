@@ -1015,3 +1015,12 @@ imagesengines.com
 # Reference: https://twitter.com/Jouliok/status/1217400178170368001
 
 gold.platinumus.top
+
+# Reference: https://twitter.com/unmaskparasites/status/1204080970191777795
+
+localserver.host
+
+# Reference: https://twitter.com/unmaskparasites/status/1217452290577195008
+# Reference: https://www.virustotal.com/gui/domain/logistic.tw/relations
+
+logistic.tw
