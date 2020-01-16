@@ -2852,10 +2852,10 @@ function dayEnd(tick_seconds) {
 $(document).keyup(function(e){
     var key = e.which || e.keyCode;
 
-    if ((key === 37) ||  (key === 33)) {        // left OR page_up
+    if (key === 37) {        // left
         $("#details_previous").click();
     }
-    else if ((key === 39) || (key === 34)) {    // right OR page_down
+    else if (key === 39) {    // right
         $("#details_next").click();
     }
 });
