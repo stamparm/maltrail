@@ -322,6 +322,12 @@
 
 /25067710.hta
 
+# Reference: https://mp.weixin.qq.com/s/L3dVwbkfTABtE4ZYtv5r4w
+# Reference: https://otx.alienvault.com/pulse/5e206d8b77de0b2690b9946c
+
+/zaqxswcde.hta
+/zaqxswcderfv.hta
+
 # Generic
 
 /myrrem.hta
