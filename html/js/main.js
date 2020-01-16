@@ -2849,6 +2849,17 @@ function dayEnd(tick_seconds) {
     return Math.floor(value.getTime());
 }
 
+$(document).keyup(function(e){
+    var key = e.which || e.keyCode;
+
+    if ((key === 37) ||  (key === 33)) {        // left OR page_up
+        $("#details_previous").click();
+    }
+    else if ((key === 39) || (key === 34)) {    // right OR page_down
+        $("#details_next").click();
+    }
+});
+
 $(document).ready(function() {
     var from = dayStart(new Date().getTime());
     var to = dayStart(new Date().getTime());
