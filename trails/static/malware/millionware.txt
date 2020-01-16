@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: millionware, million loader, nigga ldr
+
+# Reference: https://twitter.com/malwrhunterteam/status/1217489385354121217
+# Reference: https://twitter.com/VK_Intel/status/1217717927530651648
+# Reference: https://www.virustotal.com/gui/file/853f277367aee53f604cd6bc80b59ddd7d93b2c0e0b8536362121de7c9f14b5f/detection
+
+178.32.201.225:80
+178.32.201.225:6666
