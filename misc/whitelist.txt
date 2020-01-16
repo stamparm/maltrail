@@ -197,6 +197,7 @@ yahoo.com
 yahoodns.net
 yimg.com
 yvimg.kz
+zextras.com
 zillya.com
 zillya.ua
 zillyaoem.com
@@ -530,6 +531,7 @@ bit.nl
 blocklist.de
 blocklist.messaging.microsoft.com
 blogspambl.com
+brightmail.com
 burnt-tech.com
 choon.net
 cyberlogic.net
@@ -1159,6 +1161,7 @@ rotumal.com
 red-gate.com
 clicksor.com
 as2pawnib8ib.com
+srvng.xyz
 
 # Google crawlers
 
