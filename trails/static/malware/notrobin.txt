@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cve-2019-19781
+
+# Reference: https://www.fireeye.com/blog/threat-research/2020/01/vigilante-deploying-mitigation-for-citrix-netscaler-vulnerability-while-maintaining-backdoor.html
+# Reference: https://otx.alienvault.com/pulse/5e21bef05318134424cdf2f4
+
+80.240.31.218:443
+80.240.31.218:80
+95.179.163.186:443
+95.179.163.186:80
+vilarunners.cat
