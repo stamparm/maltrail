@@ -933,3 +933,9 @@ static.srcspot.com
 /js/b76dadb06c3582b7f598111d60f2f944.js
 /js/ee497bb12cf272d333449cd79582c289.js
 /js/34dbc8a61ab0c8e3f7fc444d83b8a3d4.js
+
+# Reference: https://twitter.com/ScumBots/status/1218627885579362304
+# Reference: https://twitter.com/pmelson/status/1218655235205451777
+
+149.248.1.128:443
+149.248.1.128:80
