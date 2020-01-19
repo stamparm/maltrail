@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/albertzsigovits/status/1218166105417699329
+# Reference: https://app.any.run/tasks/1b4650a2-6e0a-4f03-88b6-7f3f2189626c/
+
+a0359074.xsph.ru
+
+# Reference: https://twitter.com/fr3dhk/status/1218242557290958851
+
+a0362255.xsph.ru
+gamefpsbuster.ru
+
+# Reference: https://twitter.com/ViriBack/status/1218329625207738368
+
+http://185.228.232.72
+deathgame.net
+exporhub.pp.ua
+h143466.s22.test-hf.su
