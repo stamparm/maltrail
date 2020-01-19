@@ -1029,3 +1029,7 @@ logistic.tw
 
 cilent-tracking.com
 cloudservice.tw
+
+# Reference: https://twitter.com/felixaime/status/1218135753110302720
+
+silver-statistics.com
