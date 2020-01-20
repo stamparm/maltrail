@@ -101,6 +101,10 @@ lucretius-ada.com
 lendsblog.com
 atztds702cv.xyz
 
+# Reference: https://twitter.com/tkanalyst/status/1219244505640996864
+
+http://199.247.5.69
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
