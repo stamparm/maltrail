@@ -1000,6 +1000,10 @@ zctrack.com
 
 /secure-bankofamerica-personal-information-update.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1219351173024624640
+
+/1yroihdrc99ceanyt77k0h82.php
+
 # Generic
 
 /7328-dating-verification-card.php
