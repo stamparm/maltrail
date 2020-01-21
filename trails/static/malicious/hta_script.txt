@@ -328,6 +328,14 @@
 /zaqxswcde.hta
 /zaqxswcderfv.hta
 
+# Reference: https://otx.alienvault.com/pulse/5e257c8c189e48e8e053e75b
+
+/brzol0.hta
+/dbrcn0.hta
+/tyjui3.hta
+/zjirz.hta
+/zjirz0.hta
+
 # Generic
 
 /myrrem.hta
