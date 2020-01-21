@@ -1079,6 +1079,9 @@ dc11.wix.com
 sslstatic.wix.com
 stores-counters.wix.com
 wwworigin.wix.com
+edu.cn
+edu.sg
+edu.ph
 
 # NS of afraid.org
 
