@@ -939,3 +939,8 @@ static.srcspot.com
 
 149.248.1.128:443
 149.248.1.128:80
+
+# Reference: https://twitter.com/unmaskparasites/status/1219611201891708928
+
+admarketresearch.xyz
+adsformarket.com
