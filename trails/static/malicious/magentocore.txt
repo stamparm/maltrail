@@ -1039,6 +1039,8 @@ silver-statistics.com
 jqueryextplugin.com
 
 # Reference: https://www.riskiq.com/blog/labs/fullz-house/
+# Reference: https://www.virustotal.com/gui/ip-address/124.156.34.157/relations
+# Reference: https://www.virustotal.com/gui/ip-address/47.245.55.198/relations
 # Reference: https://www.virustotal.com/gui/ip-address/80.78.255.222/relations
 
 checkout-sagepay.com
@@ -1048,6 +1050,9 @@ google-query.com
 google-smart.com
 google-taq.com
 jquery-assets.com
+live-sagepay.com
+mastercard-migs.com
+migs-mastercard.com
 pay-u-biz.com
 payment-mastercard.com
 payment-sagepay.com
