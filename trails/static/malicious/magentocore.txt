@@ -1037,3 +1037,21 @@ silver-statistics.com
 # Reference: https://twitter.com/felixaime/status/1219175480303202307
 
 jqueryextplugin.com
+
+# Reference: https://www.riskiq.com/blog/labs/fullz-house/
+# Reference: https://www.virustotal.com/gui/ip-address/80.78.255.222/relations
+
+checkout-sagepay.com
+google-analytics.top
+google-payment.com
+google-query.com
+google-smart.com
+google-taq.com
+jquery-assets.com
+pay-u-biz.com
+payment-mastercard.com
+payment-sagepay.com
+payment-worldpay.com
+payu-biz.com
+sagepay-live.com
+/ga.js?analytic=
