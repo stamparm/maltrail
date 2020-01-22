@@ -237,3 +237,7 @@
 # Reference: https://twitter.com/malware_traffic/status/1216882597789360134
 
 /hcxUr9dg.ps1
+
+# Reference: https://twitter.com/Malwaredev/status/1219914293426212864
+
+/cnotmij.ps1
