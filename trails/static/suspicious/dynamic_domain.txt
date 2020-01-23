@@ -2992,3 +2992,7 @@ zz.am
 # Reference: https://www.virustotal.com/gui/domain/ze.am/relations
 
 ze.am
+
+# Reference: https://www.virustotal.com/gui/domain/rapiddns.ru/relations
+
+rapiddns.ru
