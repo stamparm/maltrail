@@ -1,0 +1,47 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: kaiten, tsunami
+
+# Reference: https://www.virustotal.com/gui/file/ca42237354f76bd8aebb97635887c286cddc8d3b6cca2581fa228acf335b3a8c/detection
+
+111.230.241.23:2407
+46.149.233.35:2407
+
+# Reference: https://www.virustotal.com/gui/file/29f6d8954e676d9260e308a1bc756edb1063cfa72fd6bfedd5f4fb10ba162043/detection
+
+185.61.149.22:2407
+
+# Reference: https://www.virustotal.com/gui/file/c474957d40c9ed89392bdde1b787455ab31a9df891a4c74fab2bf98b39f2c846/detection
+
+145.239.93.125:9090
+46.149.233.35:9090
+
+# Reference: https://www.virustotal.com/gui/file/1a4e0aa435da8d3c79e7dbd80b0eefe4e555cce41fab475f7f7859a293f86c0b/detection
+
+147.135.210.184:9090
+216.58.203.46:9090
+
+# Reference: https://www.virustotal.com/gui/file/4284f64189359326e4bbbeb329aee11e0db96824d5fae1de96a95ad4949ffedf/detection
+
+153.92.210.165:2407
+
+# Reference: https://www.virustotal.com/gui/file/903ebfde5701b26c60656ee466fee31633448c37188d18318db9d2c7bfded076/detection
+
+51.68.124.148:2407
+
+# Reference: https://www.virustotal.com/gui/file/eb2433bf487a405b631464430f9ba5f02d95f7d63a59dd288a3db9d2d0611373/detection
+
+176.58.123.223:2407
+
+# Reference: https://www.virustotal.com/gui/file/13bcf15acbf45759342cd62e2e112dd0c46acf9a14af7784dda17f5ee6fc749b/detection
+
+107.191.110.201:2407
+
+# Reference: https://www.virustotal.com/gui/file/283a67dd7536db0e316282d437c2917c336d97045ce867df2d326e588f5922c0/detection
+
+176.10.127.126:2407
+
+# Reference: https://www.virustotal.com/gui/file/8dcdccf9fcb42c1f6c191ced0347711297c88efc51518ea1ab29bbda001661a4/detection
+
+68.66.253.100:2407
