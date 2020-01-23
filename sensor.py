@@ -11,6 +11,11 @@ import sys
 
 sys.dont_write_bytecode = True
 
+import os
+base = os.path.dirname(__file__)
+thirdparty = os.path.join(base, 'thirdparty')
+sys.path.append(thirdparty)
+
 import core.versioncheck
 
 import cProfile

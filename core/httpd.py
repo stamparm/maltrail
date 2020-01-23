@@ -50,11 +50,11 @@ from core.settings import SESSIONS
 from core.settings import UNAUTHORIZED_SLEEP_TIME
 from core.settings import UNICODE_ENCODING
 from core.settings import VERSION
-from thirdparty import six
-from thirdparty.six.moves import BaseHTTPServer as _BaseHTTPServer
-from thirdparty.six.moves import http_client as _http_client
-from thirdparty.six.moves import socketserver as _socketserver
-from thirdparty.six.moves import urllib as _urllib
+import six
+from six.moves import BaseHTTPServer as _BaseHTTPServer
+from six.moves import http_client as _http_client
+from six.moves import socketserver as _socketserver
+from six.moves import urllib as _urllib
 
 try:
     # Reference: https://bugs.python.org/issue7980

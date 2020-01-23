@@ -10,7 +10,7 @@ import os
 import re
 
 from core.settings import UNICODE_ENCODING
-from thirdparty import six
+import six
 
 __url__ = "(static)"
 

@@ -32,7 +32,7 @@ from core.settings import TIME_FORMAT
 from core.settings import UNICODE_ENCODING
 from core.settings import VERSION
 from core.ignore import ignore_event
-from thirdparty.six.moves import socketserver as _socketserver
+from six.moves import socketserver as _socketserver
 
 _condensed_events = {}
 _condensing_thread = None

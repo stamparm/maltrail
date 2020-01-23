@@ -18,7 +18,7 @@ from core.addr import addr_to_int
 from core.addr import make_mask
 from core.attribdict import AttribDict
 from core.trailsdict import TrailsDict
-from thirdparty.six.moves import urllib as _urllib
+from six.moves import urllib as _urllib
 
 NAME = "Maltrail"
 VERSION = "0.16.232"

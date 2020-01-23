@@ -43,8 +43,8 @@ from core.settings import IS_WIN
 from core.settings import ROOT_DIR
 from core.settings import UNICODE_ENCODING
 from core.settings import USERS_DIR
-from thirdparty import six
-from thirdparty.six.moves import urllib as _urllib
+import six
+from six.moves import urllib as _urllib
 
 # patch for self-signed certificates (e.g. CUSTOM_TRAILS_URL)
 try:
