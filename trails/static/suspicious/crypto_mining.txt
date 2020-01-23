@@ -265,3 +265,10 @@ minemonero.gq
 alimabi.cn
 pooldd.com
 monero.riefly.id
+
+# Reference: https://blog.talosintelligence.com/2020/01/vivin-cryptomining-campaigns.html
+# Reference: https://otx.alienvault.com/pulse/5e29b7189d749995b2d4ea71
+# Reference: https://www.virustotal.com/gui/file/6bc118693d6e69081e5f39fdab20a613d7536d3199c029562c192c5dbc9d1d1c/detection
+
+37.59.43.136:4444
+37.59.54.205:4444
