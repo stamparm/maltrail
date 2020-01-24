@@ -1060,3 +1060,7 @@ payment-worldpay.com
 payu-biz.com
 sagepay-live.com
 /ga.js?analytic=
+
+# Reference: https://twitter.com/matr0cks/status/1220418827751763969
+
+jqueryextplugin.com

@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: congrim
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan:Win32/Congrim.gen!A
+
+software.trickip.net
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Barys-C/detailed-analysis.aspx
+
+supermecado.3utilities.com
+toma.ai
+
+# Reference: https://www.virustotal.com/gui/file/5a90f511d5fdf5c1ead0954cdce33db6f07b20319422d7c37dd76cc158fedb49/behavior/VirusTotal%20Cuckoofork
+
+cherlist.com
+raballin.com
+traquart.com
+krespyst.com
+manquess.com
+bardabol.com
+cheresto.com
+manistor.com
+klardiro.com
+trastres.com

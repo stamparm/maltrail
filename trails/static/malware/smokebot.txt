@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2017/11/07165021/Appendix_Mokes-SmokeBot_analysis.pdf
+
+xvidmovies.in
+freecodecs.in
+
+# Reference: https://www.exposedbotnets.com/2012/10/cheatmodernwarfarecom-multiple-http.html
+
+smk.cheatmodernwarfare.com

@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/e759a618b0464154e976fb2d807f32374778c9e8e0b3f50e6a3d83c7a5955d6a/detection
+# Reference: https://www.virustotal.com/gui/file/0621a7418448a8d6164c6abf2d7f83118b715f37f1f2220bc5a89dcf3e9bfd33/detection
+# Reference: https://www.virustotal.com/gui/file/6f9191f93689bbed1692711ecca35b0e6d3c6f1bdf16e497af97b2325258290c/detection
+# Reference: https://www.virustotal.com/gui/file/793b4b163c525fe045a97080a487741b858f620095808b5ee3d9b7490049f081/detection
+# Reference: https://www.virustotal.com/gui/file/df3d0463595c5c3264838d47a02c35c886d5738c61b362d84baaf862cc4a6487/detection
+
+cullyunbox.com
+buncesteek.com
+prissunrow.net
