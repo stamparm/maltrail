@@ -944,3 +944,8 @@ static.srcspot.com
 
 admarketresearch.xyz
 adsformarket.com
+
+# Reference: https://twitter.com/matr0cks/status/1220418827751763969
+
+/jqueryprivatesecurity.js
+/onloadsecurityvalidate.js
