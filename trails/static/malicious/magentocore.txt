@@ -1035,6 +1035,7 @@ cloudservice.tw
 silver-statistics.com
 
 # Reference: https://twitter.com/felixaime/status/1219175480303202307
+# Reference: https://twitter.com/matr0cks/status/1220418827751763969
 
 jqueryextplugin.com
 
@@ -1064,7 +1065,3 @@ sagepay-live.com
 # Reference: https://www.bleepingcomputer.com/news/security/euro-cup-and-olympics-ticket-reseller-hit-by-magecart/
 
 opendoorcdn.com
-
-# Reference: https://twitter.com/matr0cks/status/1220418827751763969
-
-jqueryextplugin.com
