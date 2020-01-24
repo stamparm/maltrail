@@ -9,3 +9,7 @@ priv.inteleksys.com
 
 4w6ylniamu6x7e3a.onion
 5frjkvw2w3wv6dnv.onion
+
+# Reference: https://twitter.com/tkanalyst/status/1220706451439570945
+
+view.inteleksys.com
