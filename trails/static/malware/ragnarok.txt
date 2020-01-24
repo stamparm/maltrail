@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fireeye.com/blog/threat-research/2020/01/nice-try-501-ransomware-not-implemented.html
+# Reference: https://otx.alienvault.com/pulse/5e2b310ef095d7f63ff1dc68
+
+198.44.227.126:81
+45.120.53.214:1234
+45.120.53.214:80
