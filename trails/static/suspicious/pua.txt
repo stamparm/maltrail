@@ -2068,3 +2068,7 @@ securestudies.com
 staticpm.com
 updaterss.com
 dpliveupdate.com
+
+# Reference: https://www.virustotal.com/gui/domain/i.installportal.com/relations
+
+installportal.com
