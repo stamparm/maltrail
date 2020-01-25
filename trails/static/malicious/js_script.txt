@@ -949,3 +949,7 @@ adsformarket.com
 
 /jqueryprivatesecurity.js
 /onloadsecurityvalidate.js
+
+# Reference: https://www.virustotal.com/gui/domain/js.users.51.la/relations
+
+js.users.51.la
