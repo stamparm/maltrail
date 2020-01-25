@@ -2996,3 +2996,7 @@ ze.am
 # Reference: https://www.virustotal.com/gui/domain/rapiddns.ru/relations
 
 rapiddns.ru
+
+# Reference: https://www.virustotal.com/gui/domain/dnsfor.me/relations
+
+dnsfor.me
