@@ -1065,3 +1065,8 @@ sagepay-live.com
 # Reference: https://www.bleepingcomputer.com/news/security/euro-cup-and-olympics-ticket-reseller-hit-by-magecart/
 
 opendoorcdn.com
+
+# Reference: https://twitter.com/jknsCo/status/1221031002564370432
+
+hotjar.us
+jquery.us
