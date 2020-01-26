@@ -304,7 +304,3 @@ get.geojs.io
 
 getmyip.win
 ident.me
-
-# Reference: https://www.virustotal.com/gui/ip-address/88.99.66.31/relations
-
-yip.su
