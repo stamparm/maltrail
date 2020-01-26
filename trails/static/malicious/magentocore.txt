@@ -1070,3 +1070,7 @@ opendoorcdn.com
 
 hotjar.us
 jquery.us
+
+# Reference: https://twitter.com/AffableKraut/status/1220829096197939202
+
+doubleclick.ws
