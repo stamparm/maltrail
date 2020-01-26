@@ -455,10 +455,6 @@ ethclicks.live/lo/
 u19982p14982.web0119.zxcs.nl/Alhaji/
 u19982p14982.web0119.zxcs.nl/Emmanuel/
 
-# Reference: https://twitter.com/ViriBack/status/1133339769776349185
-
-80.233.134.242/login/
-
 # Reference: https://twitter.com/jorgemieres/status/1133742922363473920
 # Reference: https://www.virustotal.com/gui/file/e1d01f22ab0a9c71415cf0c511348d82ddc075e5f70f6fcee1526d8691faff2d/detection
 
