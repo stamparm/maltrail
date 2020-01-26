@@ -3000,3 +3000,7 @@ rapiddns.ru
 # Reference: https://www.virustotal.com/gui/domain/dnsfor.me/relations
 
 dnsfor.me
+
+# Reference: https://www.virustotal.com/gui/domain/jflddns.com.br/relations
+
+jflddns.com.br
