@@ -299,3 +299,8 @@ get.geojs.io
 # Reference: https://www.virustotal.com/gui/ip-address/89.39.105.12/relations
 
 89.39.105.12/ip.shtml
+
+# Reference: https://www.virustotal.com/gui/ip-address/176.58.123.25/relations
+
+getmyip.win
+ident.me
