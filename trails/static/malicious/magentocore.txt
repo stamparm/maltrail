@@ -1035,6 +1035,7 @@ cloudservice.tw
 silver-statistics.com
 
 # Reference: https://twitter.com/felixaime/status/1219175480303202307
+# Reference: https://twitter.com/matr0cks/status/1220418827751763969
 
 jqueryextplugin.com
 
@@ -1065,6 +1066,11 @@ sagepay-live.com
 
 opendoorcdn.com
 
-# Reference: https://twitter.com/matr0cks/status/1220418827751763969
+# Reference: https://twitter.com/jknsCo/status/1221031002564370432
 
-jqueryextplugin.com
+hotjar.us
+jquery.us
+
+# Reference: https://twitter.com/AffableKraut/status/1220829096197939202
+
+doubleclick.ws
