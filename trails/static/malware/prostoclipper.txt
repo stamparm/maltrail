@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/Sapphirex00/status/1221854670173417473
+# Reference: https://app.any.run/tasks/f89e77b7-05c3-49f1-a967-25ee59cfdf93/
+# Reference: https://www.virustotal.com/gui/ip-address/194.67.197.197/relations
+
+194.67.197.197:65233
+cryptopayeer.fun
+dogemoon.info
+
+# Reference: https://app.any.run/tasks/2387cfae-0f28-4bb7-944a-20d480cb492c/
+
+instapoller.info
