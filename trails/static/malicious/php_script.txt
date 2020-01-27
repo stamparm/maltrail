@@ -1030,6 +1030,10 @@ zctrack.com
 /downloadcdnus46745341.php
 /downloadcdnus46745343.php
 
+# Reference: https://twitter.com/IntezerLabs/status/1221789726702800897
+
+/ddos.php
+
 # Generic
 
 /7328-dating-verification-card.php
