@@ -1034,6 +1034,10 @@ zctrack.com
 
 /ddos.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1222099275607351296
+
+/2gv5x6lg8sugbhjmtg7ezufe.php
+
 # Generic
 
 /7328-dating-verification-card.php
