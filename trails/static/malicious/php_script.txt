@@ -1038,9 +1038,40 @@ zctrack.com
 
 /2gv5x6lg8sugbhjmtg7ezufe.php
 
+# Reference: https://www.virustotal.com/gui/domain/web.riderit.com/relations
 # Reference: https://app.any.run/tasks/193b764b-c408-4226-9a66-8400d1b1f4f9/
 
+/0251e9e6dd2b6761318cf74b9c7cfbcc.php
+/21a44295fbc5e240b8897759c8d4ecbd.php
+/2eff7f856c921b9679658fc1076ad8df.php
+/3192bf6e779334e01ff1f354b369e992.php
+/3a6966fd4933d209199b9bf401c56325.php
+/42f5aabbcbba40b021ac48b5d03424eb.php
+/4a122e1be14c64455d732d6809397908.php
+/4c76a53c02e96376537dd399c26d42e6.php
+/4ebcbf3ba7ccb02dfb195c7d5ca7787d.php
+/597684641290261a2d9b5e4f3c31448f.php
+/5a2eec141864de49a45bb29ac52dbe6b.php
+/5fa33fb8aff4f22b08f6371b434982ae.php
+/7b86de71fe96e99fdb691ef6232bf67d.php
+/824e747ac0a4b302b94c5c8811aecffc.php
+/921f92a5d1a046bfb48a3c9ea2e85893.php
+/93b9f5a0890ae2b6cfbfd44ab5f5698f.php
+/9e9ec25815b236f8481bf58f872f9499.php
+/a647cd724dccdc618bde9486f9048c1d.php
+/a8d7ca744ce9804d9684ead43bcc3f12.php
+/c516cd9f3d02c0a9657652b835170278.php
+/c6e905de8a762015cd177be60cd6bd67.php
 /c899b67fe5f3939e234fa5e427fda4eb.php
+/dd45006971f6dc8fe2abe8ea9904a2fe.php
+/dd7e6cce27c6cc2b70d705559c9a158b.php
+/de33e172deb9cd1a01cc95a3198b5ff2.php
+/dedfa9292432a75b835f7e73b6f3b84f.php
+/e649d1894bdae5a5d60226290297fdf3.php
+/e6f482cc5f9dd0a1d18cb925499c1e6b.php
+/ea0645ba64ff256edb90e1c12a0a4cdb.php
+/ef0390ca68e9e2a0e3851e0cf6b22353.php
+/f7d2dd7b5bdd9919634388790cc9c4fa.php
 
 # Generic
 
