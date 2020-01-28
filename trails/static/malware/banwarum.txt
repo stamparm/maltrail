@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Worm:Win32/Banwarum.C@mm
+
+7stick.biz
+olania.net
+olania.com
+7stick.info
+brancholania.net
+brancholania.biz
+frachetto.com
+frachetto.info
+5dime.net
+monti2.com
