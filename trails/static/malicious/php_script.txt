@@ -1073,6 +1073,11 @@ zctrack.com
 /ef0390ca68e9e2a0e3851e0cf6b22353.php
 /f7d2dd7b5bdd9919634388790cc9c4fa.php
 
+# Reference: https://twitter.com/unmaskparasites/status/1222242298404179970
+
+/backdoor.php
+/inject.php
+
 # Generic
 
 /7328-dating-verification-card.php
