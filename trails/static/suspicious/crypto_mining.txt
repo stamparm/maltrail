@@ -272,3 +272,8 @@ monero.riefly.id
 
 37.59.43.136:4444
 37.59.54.205:4444
+
+# Reference: https://app.any.run/tasks/d6c87295-24a2-48eb-aef0-d3d5ac4ad2ae/
+# Reference: https://mining.bittube.app/
+
+mining.bittubeapp.com
