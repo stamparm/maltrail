@@ -1045,6 +1045,7 @@ zctrack.com
 /dating-verification-card.php
 /gate.php
 /gate1.php
+/gate2.php
 /gate.get
 /online-dating-verification-card.php
 /screenshot_gate.php
