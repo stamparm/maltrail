@@ -277,3 +277,23 @@ monero.riefly.id
 # Reference: https://mining.bittube.app/
 
 mining.bittubeapp.com
+
+# Reference: https://www.virustotal.com/gui/file/5eda21ea41febbdc5b69840894cb37cba8206f2865dc07e2cb85c29db5240d04/detection
+# Reference: https://www.virustotal.com/gui/ip-address/163.172.204.213/relations
+# Reference: https://www.virustotal.com/gui/ip-address/163.172.204.219/relations
+
+163.172.204.213:3333
+163.172.204.219:3333
+163.172.207.198:3333
+163.172.207.71:3333
+crypto-pool.info
+monero-master.crypto-pool.fr
+pool.4i7i.com
+xmr.ip28.net
+xmr.simka.pw
+xmrpool.me
+xmr.crypto-pool.info
+xmrf.520fjh.org
+xmrf.fjhan.club
+xmr.somec.cc
+pool.somec.cc
