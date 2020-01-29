@@ -957,3 +957,8 @@ js.users.51.la
 # Reference: https://twitter.com/unmaskparasites/status/1206662128213594117
 
 whoisloookup.com
+
+# Reference: https://twitter.com/benkow_/status/1222457832810991616
+# Reference: https://www.virustotal.com/gui/domain/bamblbee.store/relations
+
+bamblbee.store
