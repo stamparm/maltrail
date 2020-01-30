@@ -962,3 +962,10 @@ whoisloookup.com
 # Reference: https://www.virustotal.com/gui/domain/bamblbee.store/relations
 
 bamblbee.store
+
+# Reference: https://twitter.com/pjcampbe11/status/1222556092242317315
+# Reference: https://www.helpnetsecurity.com/2019/09/24/cve-2019-1367/
+# Reference: https://otx.alienvault.com/pulse/5e32f827509fbbbeb2d3ee2a
+
+202.122.128.28:80
+largeurlcache.com
