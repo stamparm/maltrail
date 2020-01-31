@@ -1243,3 +1243,7 @@ B4ckdoor
 # Reference: https://intezer.com/blog-new-iranian-campaign-tailored-to-us-companies-uses-updated-toolset/
 
 IEMoblie
+
+# Reference: https://twitter.com/reecdeep/status/1218098821143703552
+
+KSKJJGJ
