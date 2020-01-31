@@ -1090,7 +1090,7 @@ zctrack.com
 
 /ZuluDaka1.php
 /ZuluDaka2.php
-/ZuuDaka3.php
+/ZuluDaka3.php
 /ZuluDaka4.php
 /ZuluDaka5.php
 /ZuluDaka6.php
