@@ -1086,6 +1086,17 @@ zctrack.com
 
 /api/X.php
 
+# Reference: https://twitter.com/ninoseki/status/1223376549287620610
+
+/ZuluDaka1.php
+/ZuluDaka2.php
+/ZuuDaka3.php
+/ZuluDaka4.php
+/ZuluDaka5.php
+/ZuluDaka6.php
+/ZuluDaka7.php
+/ZuluDaka8.php
+
 # Generic
 
 /7328-dating-verification-card.php
