@@ -47,6 +47,8 @@ lookupdns.club
 104.37.175.94:443
 
 # Reference: https://twitter.com/david_jursa/status/1223740643912093696
+# Reference: https://app.any.run/tasks/f6e34b80-b1eb-4941-8ca6-7332ac0b07dd/
 
+167.88.61.165:1108
 coolsite.best
 hotsite.best
