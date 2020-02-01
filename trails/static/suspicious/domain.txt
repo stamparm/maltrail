@@ -5027,3 +5027,7 @@ spamcannibal.xyz
 # Reference: https://www.virustotal.com/gui/domain/gydns.eu/relations
 
 gydns.eu
+
+# Reference: https://www.virustotal.com/gui/domain/emstats.su/relations
+
+emstats.su
