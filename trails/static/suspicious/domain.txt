@@ -5031,3 +5031,7 @@ gydns.eu
 # Reference: https://www.virustotal.com/gui/domain/emstats.su/relations
 
 emstats.su
+
+# Reference: https://www.virustotal.com/gui/domain/n6dns.eu/relations
+
+n6dns.eu
