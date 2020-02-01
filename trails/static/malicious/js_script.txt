@@ -969,3 +969,8 @@ bamblbee.store
 
 202.122.128.28:80
 largeurlcache.com
+
+# Reference: https://twitter.com/david_jursa/status/1223740643912093696
+
+/fc1i4iicca17n7p0h8mrsb0jfs.js
+/lhglbfj4if5d1hisd2iuha1670.js
