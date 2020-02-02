@@ -1255,6 +1255,6 @@ MR\_ROBOT
 # Reference: https://twitter.com/VessOnSecurity/status/1224051153232715783
 
 dark\_NeXus\_Qbot
-minerworld
+minerword
 MSIE5.01
 Qbot
