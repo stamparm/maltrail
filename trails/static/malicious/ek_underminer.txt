@@ -45,3 +45,9 @@ lookupdns.club
 # Reference: https://twitter.com/tkanalyst/status/1210663918953123841
 
 104.37.175.94:443
+
+# Reference: https://twitter.com/david_jursa/status/1223740643912093696
+# Reference: https://app.any.run/tasks/f6e34b80-b1eb-4941-8ca6-7332ac0b07dd/
+
+coolsite.best
+hotsite.best
