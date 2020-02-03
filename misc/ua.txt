@@ -1258,3 +1258,12 @@ dark\_NeXus\_Qbot
 minerword
 MSIE5.01
 Qbot
+
+# Misc
+
+information_schema
+sysdatabases
+sysusers
+SELECT[^\n]*FROM[^\n]*WHERE
+\b(pg_)sleep\(
+\bUNION\s+(ALL\s+)?SELECT\b
