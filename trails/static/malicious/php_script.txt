@@ -1109,11 +1109,15 @@ zctrack.com
 
 /7328-dating-verification-card.php
 /canadiane-compte.php
+/ccgate.php
 /dating-verification-card.php
+/evreigate.php
 /gate.php
 /gate1.php
 /gate2.php
 /gate.get
 /online-dating-verification-card.php
+/ravufgate.php
 /screenshot_gate.php
+/tgate.php
 /verification-card.php
