@@ -1101,6 +1101,10 @@ zctrack.com
 /ZuluDaka7.php
 /ZuluDaka8.php
 
+# Reference: https://twitter.com/IpNigh/status/1224406954564517889
+
+/captura01Controller.php
+
 # Generic
 
 /7328-dating-verification-card.php
