@@ -1082,6 +1082,10 @@ zctrack.com
 
 /5h5qibac2xyhjtvuig3gaabo.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1224424598650966018
+
+/8gtd3b4wfigyiks4byoj5jyd.php
+
 # Reference: https://app.any.run/tasks/9683cba3-6fcd-4264-91f1-575da5329677/
 
 /api/X.php
@@ -1097,15 +1101,23 @@ zctrack.com
 /ZuluDaka7.php
 /ZuluDaka8.php
 
+# Reference: https://twitter.com/IpNigh/status/1224406954564517889
+
+/captura01Controller.php
+
 # Generic
 
 /7328-dating-verification-card.php
 /canadiane-compte.php
+/ccgate.php
 /dating-verification-card.php
+/evreigate.php
 /gate.php
 /gate1.php
 /gate2.php
 /gate.get
 /online-dating-verification-card.php
+/ravufgate.php
 /screenshot_gate.php
+/tgate.php
 /verification-card.php
