@@ -245,3 +245,7 @@
 # Reference: https://twitter.com/Racco42/status/1221707041615630336
 
 /swift.ps1
+
+# Reference: https://www.virustotal.com/gui/ip-address/104.168.248.36/relations
+
+/out-1513314073.ps1
