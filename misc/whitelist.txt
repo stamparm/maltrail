@@ -877,6 +877,7 @@ sophosxl.net
 # Generic
 
 bswireless.ddns.net
+boxcdn.net
 diogen.duckdns.org
 mifux.duckdns.org
 psiloveyou.xyz
@@ -1082,6 +1083,8 @@ wwworigin.wix.com
 edu.cn
 edu.sg
 edu.ph
+ibb.co
+imgbb.com
 
 # NS of afraid.org
 
@@ -1165,6 +1168,7 @@ red-gate.com
 clicksor.com
 as2pawnib8ib.com
 srvng.xyz
+rbi.cloud
 
 # Google crawlers
 
