@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/reegun21/status/1224600875777159169
+# Reference: http://www.hexed.in/2020/02/ta555-campaign-feb-2020.html
+
+194.36.188.132:443
