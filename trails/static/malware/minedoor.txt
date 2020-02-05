@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: minebridge, minedoor
+
+# Reference: https://www.fireeye.com/blog/threat-research/2020/01/stomp-2-dis-brilliance-in-the-visual-basics.html
+# Reference: https://otx.alienvault.com/pulse/5e3aecc518b07fb2e5fe5dcf
+
+123faster.top
+agent4career.com
+badiconreg.com
+bestrecruitments.com
+compilator333.top
+conversia91.top
+creatorz123.top
+fatoftheland.top
+marendoger.com
+neurogon.com
+pt-cpaaccountant.com
+rogervecpa.com
+seigortan.com
+tiparcano.com
