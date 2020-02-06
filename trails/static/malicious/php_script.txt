@@ -1086,11 +1086,15 @@ zctrack.com
 
 /8gtd3b4wfigyiks4byoj5jyd.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1225285279050870784
+
 # Reference: https://app.any.run/tasks/9683cba3-6fcd-4264-91f1-575da5329677/
 
 /api/X.php
 
 # Reference: https://twitter.com/ninoseki/status/1223376549287620610
+
+/0cpc8mjcq211xolw8ma10v2j.php
 
 /ZuluDaka1.php
 /ZuluDaka2.php
