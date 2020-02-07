@@ -1085,6 +1085,7 @@ edu.sg
 edu.ph
 ibb.co
 imgbb.com
+uvnc.com
 
 # NS of afraid.org
 

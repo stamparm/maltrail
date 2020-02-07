@@ -345,3 +345,7 @@ uploadvirus.com
 # Reference: https://twitter.com/VK_Intel/status/1219643288753528832
 
 cardplanet.cc
+
+# Reference: https://www.virustotal.com/gui/domain/hotaction.online/relations
+
+hotaction.online
