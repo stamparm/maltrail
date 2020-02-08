@@ -756,3 +756,31 @@ ns2.dnshost.ga
 # Reference: https://twitter.com/ninoseki/status/1207634830927679488
 
 107.155.152.15:53
+
+# Reference: https://www.domaintools.com/resources/blog/finding-additional-indicators-with-passive-dns-within-domaintools-iris
+# Reference: https://otx.alienvault.com/pulse/5e3d2b649a5e2e8c862e769f
+
+142.53.169.189:53
+167.99.40.72:53
+185.205.210.23:53
+198.211.125.184:53
+45.56.92.19:53
+82.102.14.218:53
+82.196.11.127:53
+89.163.206.26:53
+dns.cloudipnameserver.com
+dns.cloudnameservice.com
+dns.interland.com
+dnsnode.netnod.se
+ns1.cloudnamedns.com
+ns1.frobbit.se
+ns1.mmfasi.com
+ns2.cloudnamedns.com
+ns2.mmfasi.com
+ns3.mmfasi.com
+ns30.ucg.ae
+ns31.ucg.ae
+ns4.mmfasi.com
+resolve.cloudipnameserver.com
+resolve.cloudnameservice.com
+resolve.interland.com
