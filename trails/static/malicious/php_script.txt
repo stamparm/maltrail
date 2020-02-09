@@ -1123,6 +1123,10 @@ zctrack.com
 /b3a443d2dcbd9f.php
 /d380803e561db4.php
 
+# Reference: https://www.virustotal.com/gui/domain/ipblasta.com/relations
+
+/860cce76152de2.php
+
 # Generic
 
 /7328-dating-verification-card.php
