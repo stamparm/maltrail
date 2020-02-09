@@ -1085,3 +1085,10 @@ givemejs.cc
 jquerycdn.su
 storefrontcdn.com
 toplevelstatic.com
+
+# Reference: https://twitter.com/felixaime/status/1226292060547878913
+
+cdnanalyze.com
+cdnapis.org
+cdnchecker.org
+cdnoptimize.com
