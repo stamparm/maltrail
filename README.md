@@ -528,3 +528,4 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * [FreeBSD Port](https://www.freshports.org/security/maltrail)
 * [OPNSense Gateway Plugin](https://github.com/opnsense/plugins/pull/1241)
 * [D4 Project](https://www.d4-project.org/2019/09/25/maltrail-integration.html)
+* [Jigsaw Security EMM Solution](https://www.jigsawsecurityenterprise.com/single-post/2017/10/30/Elasticsearch-MISP-and-Maltrail-Integration)
