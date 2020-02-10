@@ -1074,3 +1074,21 @@ jquery.us
 # Reference: https://twitter.com/AffableKraut/status/1220829096197939202
 
 doubleclick.ws
+
+# Reference: https://www.riskiq.com/blog/labs/magecart-group-12-olympics/
+# Reference: https://otx.alienvault.com/pulse/5e3d8f9c9c559a74b0c82a71
+
+cdn-content.cc
+content-delivery.cc
+deliveryjs.cc
+givemejs.cc
+jquerycdn.su
+storefrontcdn.com
+toplevelstatic.com
+
+# Reference: https://twitter.com/felixaime/status/1226292060547878913
+
+cdnanalyze.com
+cdnapis.org
+cdnchecker.org
+cdnoptimize.com
