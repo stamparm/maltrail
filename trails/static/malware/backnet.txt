@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/thor_scanner/status/1058345481401708545
+# Reference: https://app.any.run/tasks/22fb85f9-d182-4e8e-9160-75b3c3edd62c/
+
+89.144.25.16:80
+officehomems.com
+
+# Reference: https://www.virustotal.com/gui/file/fc5145c6be7fa3752ad08e0a618a06c6b40c1cd6719fcbe52c9b0ef9fcfb7c35/detection
+
+89.144.25.16:5655
+
+# Generic
+
+/backnet/

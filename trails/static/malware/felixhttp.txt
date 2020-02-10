@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/domain/xpto.ga/relations
+# Reference: http://cybercrime-tracker.net/index.php?s=0&m=40&search=FelixHTTP
+
+xpto.ga
