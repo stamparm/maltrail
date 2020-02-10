@@ -1086,7 +1086,13 @@ zctrack.com
 
 /8gtd3b4wfigyiks4byoj5jyd.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1226236539216257024
+
+/6x39zirn3k4gr0njt1fotypx.php
+
 # Reference: https://twitter.com/MalwarePatrol/status/1225285279050870784
+
+/0cpc8mjcq211xolw8ma10v2j.php
 
 # Reference: https://app.any.run/tasks/9683cba3-6fcd-4264-91f1-575da5329677/
 
@@ -1108,6 +1114,18 @@ zctrack.com
 # Reference: https://twitter.com/IpNigh/status/1224406954564517889
 
 /captura01Controller.php
+
+# Reference: https://www.virustotal.com/gui/file/f92ffc14ebc9ea2be74f7a6f73fa2055e345a42428171cee6491e6903816dce3/detection
+
+/0ec71210595a57.php
+/5d54ff24322827.php
+/a92079a4564cf9.php
+/b3a443d2dcbd9f.php
+/d380803e561db4.php
+
+# Reference: https://www.virustotal.com/gui/domain/ipblasta.com/relations
+
+/860cce76152de2.php
 
 # Generic
 

@@ -1259,6 +1259,10 @@ minerword
 MSIE5.01
 Qbot
 
+# Reference: https://twitter.com/FaLconIntel/status/1226012099240873984
+
+Naruto Uzumake
+
 # Misc
 
 information_schema
