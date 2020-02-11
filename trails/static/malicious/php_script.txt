@@ -1094,6 +1094,10 @@ zctrack.com
 
 /0cpc8mjcq211xolw8ma10v2j.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1226885813667074049
+
+/pn4nfl0niuptkem28h804gz5.php
+
 # Reference: https://app.any.run/tasks/9683cba3-6fcd-4264-91f1-575da5329677/
 
 /api/X.php
