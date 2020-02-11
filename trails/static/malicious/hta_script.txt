@@ -336,6 +336,10 @@
 /zjirz.hta
 /zjirz0.hta
 
+# Reference: https://twitter.com/JayTHL/status/1227122437885698049
+
+/youuth.hta
+
 # Generic
 
 /myrrem.hta
