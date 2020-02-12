@@ -472,6 +472,8 @@ nk-slaven-belupo.hr
 fongyeh.com.tw
 ee.ncu.edu.tw
 hupt.hr
+heartjohn.com
+cima.hr
 
 # found as false positive on cybercrime-tracker.net
 
@@ -1086,6 +1088,7 @@ edu.ph
 ibb.co
 imgbb.com
 uvnc.com
+glotorrents.pw
 
 # NS of afraid.org
 
