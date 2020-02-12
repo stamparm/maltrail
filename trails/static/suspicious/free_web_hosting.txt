@@ -429,3 +429,7 @@ website.or
 # Reference: https://www.virustotal.com/gui/domain/heliohost.org/details
 
 heliohost.org
+
+# Reference: https://github.com/stamparm/maltrail/pull/6726#issuecomment-585150689
+
+6te.net
