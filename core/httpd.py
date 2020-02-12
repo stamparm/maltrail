@@ -41,7 +41,6 @@ from core.settings import IS_WIN
 from core.settings import MAX_NOFILE
 from core.settings import NAME
 from core.settings import PING_RESPONSE
-from core.settings import SERVER_HEADER
 from core.settings import SESSION_COOKIE_NAME
 from core.settings import SESSION_COOKIE_FLAG_SAMESITE
 from core.settings import SESSION_EXPIRATION_HOURS
@@ -246,7 +245,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         del SESSIONS[session]
 
         def version_string(self):
-            return SERVER_HEADER
+            return "%s/%s" % (NAME, self._version())
 
         def end_headers(self):
             if not hasattr(self, "_headers_ended"):
@@ -264,7 +263,22 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     traceback.print_exc()
 
         def _version(self):
-            return VERSION
+            version = VERSION
+
+            try:
+                for line in open(os.path.join(os.path.dirname(__file__), "settings.py"), 'r'):
+                    match = re.search(r'VERSION = "([^"]*)', line)
+                    if match:
+                        version = match.group(1)
+                        break
+            except:
+                pass
+
+            return version
+
+        def _statics(self):
+            latest = max(glob.glob(os.path.join(os.path.dirname(__file__), "..", "trails", "static", "malware", "*.txt")), key=os.path.getmtime)
+            return "/%s" % datetime.datetime.fromtimestamp(os.path.getmtime(latest)).strftime(DATE_FORMAT)
 
         def _logo(self):
             if config.HEADER_LOGO:
