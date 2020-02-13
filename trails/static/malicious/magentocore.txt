@@ -1092,3 +1092,7 @@ cdnanalyze.com
 cdnapis.org
 cdnchecker.org
 cdnoptimize.com
+
+# Reference: https://twitter.com/gwillem/status/1227936380380119041
+
+http.ps
