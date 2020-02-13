@@ -2077,3 +2077,7 @@ installportal.com
 # Reference: https://www.virustotal.com/gui/file/1a671f3dab3fc3a7dc7f5858b4d841e23295e69bed22027ed074d4875053caf0/detection
 
 finalocean.info
+
+# Reference: https://www.virustotal.com/gui/domain/qihuweb.com/relations
+
+qihuweb.com
