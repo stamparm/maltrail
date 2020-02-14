@@ -1092,3 +1092,7 @@ cdnanalyze.com
 cdnapis.org
 cdnchecker.org
 cdnoptimize.com
+
+# Reference: https://twitter.com/felixaime/status/1228343232649662464
+
+amirtechet.com
