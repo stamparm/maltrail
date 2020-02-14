@@ -1105,3 +1105,7 @@ supermanager.space
 # Reference: https://twitter.com/felixaime/status/1228342963744444416
 
 googletegmanager.com
+
+# Reference: https://twitter.com/d09r_/status/1228214041878749184
+
+wappallyzer.com
