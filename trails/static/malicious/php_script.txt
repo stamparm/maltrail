@@ -1110,6 +1110,10 @@ zctrack.com
 
 /lg50lqqckgrorhfbk7z0nt07.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1228410873984831489
+
+/2qs8brx2ayrqu6954pwroacc.php
+
 /ZuluDaka1.php
 /ZuluDaka2.php
 /ZuluDaka3.php
