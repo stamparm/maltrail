@@ -1100,3 +1100,8 @@ http.ps
 # Reference: https://twitter.com/felixaime/status/1228343232649662464
 
 amirtechet.com
+supermanager.space
+
+# Reference: https://twitter.com/felixaime/status/1228342963744444416
+
+googletegmanager.com
