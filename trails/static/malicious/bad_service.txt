@@ -353,5 +353,4 @@ hotaction.online
 # Reference: https://twitter.com/ps66uk/status/1228268374649659392
 # Reference: https://app.any.run/tasks/9be4f8eb-e828-4ca5-ba76-6f8db7f1627a/
 
-107.189.7.176:80
 crypters.info
