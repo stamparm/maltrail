@@ -1096,3 +1096,7 @@ cdnoptimize.com
 # Reference: https://twitter.com/gwillem/status/1227936380380119041
 
 http.ps
+
+# Reference: https://twitter.com/felixaime/status/1228343232649662464
+
+amirtechet.com
