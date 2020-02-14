@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ffforward/status/1228332737939021825
+# Reference: https://app.any.run/tasks/339da571-1c54-405f-b292-2c7401dff86d/
+
+olinet.e-kei.pl
+redfinance.pl
+
+# Generic
+
+/forum.php?fhgsmckvaxsiif=
