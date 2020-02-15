@@ -51,3 +51,8 @@ lookupdns.club
 
 coolsite.best
 hotsite.best
+
+# Reference: https://twitter.com/adrian__luca/status/1228696452970487811
+# Reference: https://www.virustotal.com/gui/domain/shorico.club/relations
+
+shorico.club
