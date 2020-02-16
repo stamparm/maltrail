@@ -20,3 +20,7 @@ cs9.wac.phicdn.net
 # Reference: https://www.virustotal.com/gui/domain/e6987.a.akamaiedge.net/relations
 
 e6987.a.akamaiedge.net
+
+# Reference: https://www.virustotal.com/gui/domain/e673.dsce9.akamaiedge.net/relations
+
+e673.dsce9.akamaiedge.net
