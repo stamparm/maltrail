@@ -12,3 +12,7 @@ init-p01st.push.apple.com
 # Reference: https://www.virustotal.com/gui/domain/e6987.e9.akamaiedge.net/relations
 
 e6987.e9.akamaiedge.net
+
+# Reference: https://www.virustotal.com/gui/domain/cs9.wac.phicdn.net/relations
+
+cs9.wac.phicdn.net
