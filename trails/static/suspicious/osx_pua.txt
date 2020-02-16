@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/domain/gspe1-ssl.ls.apple.com/relations
+
+gspe1-ssl.ls.apple.com
+
+# Reference: https://www.virustotal.com/gui/domain/init-p01st.push.apple.com/relations
+
+init-p01st.push.apple.com
