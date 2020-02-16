@@ -2081,3 +2081,7 @@ finalocean.info
 # Reference: https://www.virustotal.com/gui/domain/qihuweb.com/relations
 
 qihuweb.com
+
+# Reference: https://www.virustotal.com/gui/domain/gspe1-ssl.ls.apple.com/relations
+
+gspe1-ssl.ls.apple.com
