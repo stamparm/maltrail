@@ -32,8 +32,8 @@ from core.settings import WHITELIST
 from core.settings import WHITELIST_RANGES
 from core.settings import WORST_ASNS
 from core.trailsdict import TrailsDict
-from thirdparty import six
-from thirdparty.six.moves import urllib as _urllib
+import six
+from six.moves import urllib as _urllib
 
 _ipcat_cache = {}
 

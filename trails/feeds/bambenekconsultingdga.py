@@ -13,8 +13,8 @@ import tempfile
 from core.settings import NAME
 from core.settings import TIMEOUT
 from core.settings import UNICODE_ENCODING
-from thirdparty import six
-from thirdparty.six.moves import urllib as _urllib
+import six
+from six.moves import urllib as _urllib
 
 __url__ = "https://osint.bambenekconsulting.com/feeds/dga-feed.txt"
 __check__ = "Domain used by"

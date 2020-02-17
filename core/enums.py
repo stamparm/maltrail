@@ -7,7 +7,7 @@ See the file 'LICENSE' for copying permission
 
 import sys
 
-from thirdparty import six
+import six
 
 class _(type):
    def __getattr__(self, attr):

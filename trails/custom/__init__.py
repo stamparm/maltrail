@@ -12,7 +12,7 @@ import re
 from core.settings import config
 from core.settings import ROOT_DIR
 from core.settings import UNICODE_ENCODING
-from thirdparty import six
+import six
 
 __url__ = "(custom)"
 __reference__ = "(custom)"
