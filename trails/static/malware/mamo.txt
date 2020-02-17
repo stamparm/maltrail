@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: mamo434376
+
+# Reference: https://github.com/StrangerealIntel/malware-notes/blob/master/Ransomware/Mamo434376.md
+
+zaammmama.tk
