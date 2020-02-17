@@ -974,3 +974,7 @@ largeurlcache.com
 
 /fc1i4iicca17n7p0h8mrsb0jfs.js
 /lhglbfj4if5d1hisd2iuha1670.js
+
+# Reference: https://twitter.com/FaLconIntel/status/1229004752312078336
+
+/veugi45pre97c4koiurgjg0ar0.js
