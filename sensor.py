@@ -125,13 +125,7 @@ except ImportError:
     if IS_WIN:
         exit("[!] please install 'WinPcap' (e.g. 'http://www.winpcap.org/install/') and Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy')")
     else:
-        msg = "[!] please install 'Pcapy'"
-
-        for distros, install in {("fedora", "centos"): "sudo yum install pcapy", ("debian", "ubuntu"): "sudo apt-get install python-pcapy"}.items():
-            for distro in distros:
-                if distro in (platform.uname()[3] or "").lower():
-                    msg += " (e.g. '%s')" % install
-                    break
+        msg = "[!] please install 'Pcapy' (e.g. 'sudo pip%s install pcapy')" % ('3' if six.PY3 else '2')
 
         exit(msg)
 
