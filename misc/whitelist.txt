@@ -1089,6 +1089,7 @@ ibb.co
 imgbb.com
 uvnc.com
 glotorrents.pw
+mandiant.com
 
 # NS of afraid.org
 
