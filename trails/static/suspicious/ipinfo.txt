@@ -304,3 +304,11 @@ get.geojs.io
 
 getmyip.win
 ident.me
+
+# Reference: https://www.virustotal.com/gui/file/84de767f4e5bb60b19a734dd60590bebad76c5e7622ee05f3f745edfd7730ae3/detection
+
+apps.game.qq.com/comm-htdocs/ip/get_ip.php
+
+# Reference: https://github.com/StrangerealIntel/malware-notes/blob/master/Ransomware/Ouroboros.md
+
+sfml-dev.org/ip-provider.php
