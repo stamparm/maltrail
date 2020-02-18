@@ -1240,6 +1240,10 @@ undefined
 
 B4ckdoor
 
+# Reference: https://twitter.com/bad_packets/status/1229607800273113088
+
+B4ckdoor-owned-you
+
 # Reference: https://intezer.com/blog-new-iranian-campaign-tailored-to-us-companies-uses-updated-toolset/
 
 IEMoblie
