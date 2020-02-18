@@ -474,6 +474,7 @@ ee.ncu.edu.tw
 hupt.hr
 heartjohn.com
 cima.hr
+cm-lagoa.pt
 
 # found as false positive on cybercrime-tracker.net
 
@@ -496,6 +497,7 @@ defensacentral.com
 # found as false positive on bambenekconsulting.com
 
 parkingcrew.net
+caseking.net
 
 # triggering parked site events
 
