@@ -1161,6 +1161,11 @@ zctrack.com
 /usexosell.php
 /usflexexosell.php
 
+# Reference: https://securityaffairs.co/wordpress/98124/cyber-crime/uncovering-new-magecart-implant.html
+
+/ar906.php
+/ar2497.php
+
 # Generic
 
 /7328-dating-verification-card.php
