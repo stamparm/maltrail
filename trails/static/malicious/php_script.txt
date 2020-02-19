@@ -1166,6 +1166,28 @@ zctrack.com
 /ar906.php
 /ar2497.php
 
+# Reference: https://blog.prevailion.com/2020/02/phps-labyrinth-weaponized-wordpress.html
+# Reference: https://otx.alienvault.com/pulse/5e4d6c5790faacd62f7afed6
+
+brilns.com
+crilns.com
+devata.icu
+dolodos.top
+frilns.com
+kdsidsiadsakfsas.com
+medsource.top
+oajdasnndkdahm.com
+pervas.top
+piastas.gdn
+piasuna.gdn
+semasa.icu
+tdreg.icu
+tdreg.top
+tretas.top
+trilns.com
+vosmas.icu
+vtoras.top
+
 # Generic
 
 /7328-dating-verification-card.php
