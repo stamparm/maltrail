@@ -288,3 +288,6 @@ def get_ex_message(ex):
                 break
 
     return retval
+
+def is_local(address):
+    return re.search(r"\A(127|10|172\.[13][0-9]|192\.168)\.", address or "") is not None
