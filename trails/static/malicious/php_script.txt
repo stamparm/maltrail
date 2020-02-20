@@ -1151,10 +1151,42 @@ zctrack.com
 
 /095ac16cdd62d1.php
 
+# Reference: https://www.virustotal.com/gui/ip-address/89.208.229.55/relations
+
+/acbf8e37fb139b.php
+/ca4341dad4fe26.php
+
 # Reference: https://twitter.com/tkanalyst/status/1229794466816389120
 
 /usexosell.php
 /usflexexosell.php
+
+# Reference: https://securityaffairs.co/wordpress/98124/cyber-crime/uncovering-new-magecart-implant.html
+
+/ar906.php
+/ar2497.php
+
+# Reference: https://blog.prevailion.com/2020/02/phps-labyrinth-weaponized-wordpress.html
+# Reference: https://otx.alienvault.com/pulse/5e4d6c5790faacd62f7afed6
+
+brilns.com
+crilns.com
+devata.icu
+dolodos.top
+frilns.com
+kdsidsiadsakfsas.com
+medsource.top
+oajdasnndkdahm.com
+pervas.top
+piastas.gdn
+piasuna.gdn
+semasa.icu
+tdreg.icu
+tdreg.top
+tretas.top
+trilns.com
+vosmas.icu
+vtoras.top
 
 # Generic
 
