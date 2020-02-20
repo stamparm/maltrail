@@ -508,6 +508,7 @@ budi.in
 # found as false positive on abuse.ch
 
 citibank.com
+naver.com
 
 # found as false positive in otx.alienvault.com
 
