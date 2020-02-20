@@ -3004,3 +3004,14 @@ dnsfor.me
 # Reference: https://www.virustotal.com/gui/domain/jflddns.com.br/relations
 
 jflddns.com.br
+
+# Reference: https://easydns.com/dns/dyndns/
+# Reference: https://www.virustotal.com/gui/domain/easydns.com/relations
+# Reference: https://www.virustotal.com/gui/domain/easydns.net/relations
+# Reference: https://www.virustotal.com/gui/domain/easydns.org/relations
+# Reference: https://www.virustotal.com/gui/domain/eluma101.com/relations
+
+easydns.com
+easydns.net
+easydns.org
+eluma101.com
