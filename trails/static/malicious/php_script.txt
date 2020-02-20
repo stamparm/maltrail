@@ -1156,6 +1156,10 @@ zctrack.com
 /acbf8e37fb139b.php
 /ca4341dad4fe26.php
 
+# Reference: https://twitter.com/pancak3lullz/status/1230522568026673153
+
+/85b4aa12e220f7.php
+
 # Reference: https://twitter.com/tkanalyst/status/1229794466816389120
 
 /usexosell.php
