@@ -107,6 +107,10 @@ http://199.247.5.69
 fatykarying.xyz
 fiestalume.info
 
+# Reference: https://twitter.com/FaLconIntel/status/1230488503290449920
+
+tldrbox.top
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
