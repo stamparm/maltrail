@@ -5025,3 +5025,7 @@ emstats.su
 # Reference: https://www.virustotal.com/gui/domain/n6dns.eu/relations
 
 n6dns.eu
+
+# Reference: https://twitter.com/D3LabIT/status/1230756245511917570
+
+zekelliott.com
