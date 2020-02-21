@@ -475,6 +475,7 @@ hupt.hr
 heartjohn.com
 cima.hr
 cm-lagoa.pt
+databridgemarketresearch.com
 
 # found as false positive on cybercrime-tracker.net
 
