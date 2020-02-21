@@ -1109,3 +1109,7 @@ googletegmanager.com
 # Reference: https://twitter.com/d09r_/status/1228214041878749184
 
 wappallyzer.com
+
+# Reference: https://twitter.com/dubstard/status/1230895567947149314
+
+jquery-cycle.com
