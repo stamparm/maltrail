@@ -1211,4 +1211,5 @@ vtoras.top
 /ravufgate.php
 /screenshot_gate.php
 /tgate.php
+/uadmin/adm.php
 /verification-card.php
