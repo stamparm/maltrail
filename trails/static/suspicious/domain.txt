@@ -5029,3 +5029,7 @@ n6dns.eu
 # Reference: https://twitter.com/D3LabIT/status/1230756245511917570
 
 zekelliott.com
+
+# Reference: https://www.virustotal.com/gui/domain/ubibancaa.fun/relations
+
+ubibancaa.fun
