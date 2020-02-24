@@ -7,6 +7,7 @@ localhost
 lan
 local
 localdomain
+corp
 
 # triggering suspicious (sub)domain names
 
@@ -140,6 +141,7 @@ netdna-cdn.com
 nowvideo.sx
 nsatc.net
 officeshoes.ws
+onmicrosoft.com
 opendns.com
 oraclecloud.com
 outlook.com
@@ -190,6 +192,7 @@ verisign.com
 verisign.net
 weborama.fr
 weebly.com
+windows.com
 windows.net
 wordpress.com
 wsusoffline.net
