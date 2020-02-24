@@ -1118,6 +1118,10 @@ zctrack.com
 
 /5r9z334kjramxzfizndwlq98.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1231370355291414529
+
+/67u7is2tdmnp9bj0pr4511f8.php
+
 /ZuluDaka1.php
 /ZuluDaka2.php
 /ZuluDaka3.php

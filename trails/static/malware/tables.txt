@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://tracker.viriback.com/dump.php (# 2020-02-23, Tables)
+
+canadasecurecheck.info
+securitysystemswap.com

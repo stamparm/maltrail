@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://tracker.viriback.com
+# Reference: https://www.virustotal.com/gui/domain/hostas8.ml/relations
+
+hostas8.ml
+
+# Generic
+
+/click.php?cnv_id=

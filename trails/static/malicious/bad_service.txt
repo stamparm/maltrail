@@ -354,3 +354,8 @@ hotaction.online
 # Reference: https://app.any.run/tasks/9be4f8eb-e828-4ca5-ba76-6f8db7f1627a/
 
 crypters.info
+
+# Reference: https://twitter.com/prsecurity_/status/1231809464270901249
+
+http://199.192.17.158
+sprut.pw
