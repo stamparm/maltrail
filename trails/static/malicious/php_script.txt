@@ -993,6 +993,7 @@ zctrack.com
 # Reference: https://app.any.run/tasks/3d00b564-5584-41bf-bbc9-177f53315c96/
 # Reference: https://www.virustotal.com/gui/ip-address/18.219.52.4/relations
 
+/PediuPraPostarPostou.php
 /PostaEstaPorra.php
 /VaiPostaProPai.php
 
