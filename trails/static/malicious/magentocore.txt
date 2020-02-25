@@ -1542,3 +1542,8 @@ zs.mk
 # Reference: https://twitter.com/xuy1202/status/1232162075285147648
 
 ns-scripts.com
+
+# Reference: https://twitter.com/gwillem/status/1232246887367028737
+# Reference: https://www.virustotal.com/gui/domain/cloudmgrtracker.com/detection
+
+cloudmgrtracker.com
