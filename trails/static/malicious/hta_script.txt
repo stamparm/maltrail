@@ -340,6 +340,11 @@
 
 /youuth.hta
 
+# Reference: https://twitter.com/FewAtoms/status/1231994766398717954
+
+/out-337443407.hta
+/out-510267147.hta
+
 # Generic
 
 /myrrem.hta
