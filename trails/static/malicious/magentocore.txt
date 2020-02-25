@@ -1547,3 +1547,7 @@ ns-scripts.com
 # Reference: https://www.virustotal.com/gui/domain/cloudmgrtracker.com/detection
 
 cloudmgrtracker.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1232404872999231488
+
+pluginmagento.net
