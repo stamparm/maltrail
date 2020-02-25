@@ -67,7 +67,7 @@ table.dataTable .highlighted { background-color: #abb9d3 !important }
     width: initial;
     display: inline-block;
 }
-.hidden { display: none }
+.hidden, .searchable { display: none }
 /*.section { font-size: 120%; font-weight: bold; margin-top: 10px; margin-bottom: 10px; visibility: hidden }*/
 div.DTTT_container { margin-left: 5px; margin-top: 2px }
 .shadow-border {
