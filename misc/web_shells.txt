@@ -260,3 +260,9 @@ pouya.asp
 # Reference: https://twitter.com/killamjr/status/1191923979549921280
 
 cxxz.php
+
+# Reference: https://twitter.com/ANeilan/status/1232283590114840576
+# Reference: https://pastebin.com/8LL4Hg9e
+# Reference: https://pastebin.com/trRiwBKQ
+
+sh.php
