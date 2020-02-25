@@ -1538,3 +1538,7 @@ youpayme.info
 zendesk-chart.com
 zonejs.com
 zs.mk
+
+# Reference: https://twitter.com/xuy1202/status/1232162075285147648
+
+ns-scripts.com
