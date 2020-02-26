@@ -1551,3 +1551,7 @@ cloudmgrtracker.com
 # Reference: https://twitter.com/MBThreatIntel/status/1232404872999231488
 
 pluginmagento.net
+
+# Reference: https://twitter.com/xuy1202/status/1232581248083582976
+
+data-safeguard.com
