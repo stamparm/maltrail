@@ -59,5 +59,6 @@ FULLPATH=${SCRIPTPATH%/*}/$README
 if [ -f $FULLPATH ]
 then
     sed -i "s/malware_families\-[0-9]*/malware_families\-`ls -1 ${SCRIPTPATH%/*}/../trails/static/malware/*.txt | grep -v sinkhole | wc -l`/g" $FULLPATH
+    sed -i "s/sinkholes-[0-9]*/sinkholes\-`cat ${SCRIPTPATH%/*}/../trails/static/malware/sinkhole_*.txt | grep -Eo '^[0-9.]+' | wc -l`/g" $FULLPATH
     git add $FULLPATH
 fi;
