@@ -1097,6 +1097,18 @@ imgbb.com
 uvnc.com
 glotorrents.pw
 mandiant.com
+pgz505.servehttp.com
+prszg.ddns.net
+dynupdate.noip.com
+davor.dyndns-server.com
+hardjura.selfip.info
+japa88.ddns.net
+notar-jakic.dyndns.biz
+pozega.dyndns.org
+prszg.dyndns.org
+kastela.dyndns.info
+members.dyndns.org
+bolnica-vt.no-ip.org
 
 # NS of afraid.org
 
@@ -1245,6 +1257,7 @@ fbsbx.com
 remedypub.ga
 victoryms.fun
 roysong666.vicp.cc
+biblemission.jkub.com
 
 # Reference: https://419scam.org/419-by-domain.htm  # Note: only .tn as most seen as noise
 
