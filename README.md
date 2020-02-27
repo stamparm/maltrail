@@ -616,6 +616,10 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * Miroslav Stampar ([@stamparm](https://github.com/stamparm))
 * Mikhail Kasimov ([@MikhailKasimov](https://github.com/MikhailKasimov))
 
+## Presentations
+
+* 47th TF-CSIRT Meeting, Prague (Czech Republic), 2016 ([slides](https://www.terena.org/activities/tf-csirt/meeting47/M.Stampar-Maltrail.pdf))
+
 ## Thank you
 
 * Thomas Kristner
