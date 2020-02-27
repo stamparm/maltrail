@@ -1109,6 +1109,8 @@ prszg.dyndns.org
 kastela.dyndns.info
 members.dyndns.org
 bolnica-vt.no-ip.org
+ncore.cc
+news-host.pw
 
 # NS of afraid.org
 
@@ -1194,6 +1196,8 @@ as2pawnib8ib.com
 srvng.xyz
 rbi.cloud
 comm100.com
+adcolony.xyz
+newss.pw
 
 # Google crawlers
 
