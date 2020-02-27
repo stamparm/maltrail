@@ -29,6 +29,7 @@
 - [Best practice(s)](#best-practices)
 - [License](#license)
 - [Developers](#developers)
+- [Presentations](#presentations)
 - [Thank you](#thank-you)
 - [Third-party integrations](#third-party-integrations)
 
