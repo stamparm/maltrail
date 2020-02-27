@@ -789,3 +789,10 @@ ns4.mmfasi.com
 resolve.cloudipnameserver.com
 resolve.cloudnameservice.com
 resolve.interland.com
+
+# Reference: https://twitter.com/reecdeep/status/1232938016466927616
+
+193.183.98.66:53
+195.10.195.195:53
+51.15.98.97:53
+94.247.43.254:53
