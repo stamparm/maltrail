@@ -111,6 +111,10 @@ fiestalume.info
 
 tldrbox.top
 
+# Reference: https://twitter.com/david_jursa/status/1232996830520193024
+
+infopicked.com
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
