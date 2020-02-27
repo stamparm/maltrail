@@ -1562,3 +1562,22 @@ data-safeguard.com
 cdn-mediafiles.org
 cdn-sources.org
 d68344fb.ngrok.io
+
+# Reference: https://sansec.io/labs/2020/02/25/longest-skimming-operation-yet/
+
+aleopeople.info
+bizlawyer.org
+contentequare.com
+cquotinent.com
+jackhemmingway.com
+joyjewell.com
+installerr.pw
+installerr.site
+pizdasniff.site
+qitcdn.net
+securedcdn.net
+thefei.com
+vk-a6t5h7f3k.site
+/5d507d3e6fdc7.js
+/5d55d10058c9d.js
+/5d570bebe00ed.js
