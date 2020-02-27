@@ -1555,3 +1555,10 @@ pluginmagento.net
 # Reference: https://twitter.com/xuy1202/status/1232581248083582976
 
 data-safeguard.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1232726202281889793
+# Reference: https://blog.malwarebytes.com/threat-analysis/2020/02/fraudsters-cloak-credit-card-skimmer-with-fake-content-delivery-network-ngrok-server/
+
+cdn-mediafiles.org
+cdn-sources.org
+d68344fb.ngrok.io
