@@ -1112,6 +1112,8 @@ members.dyndns.org
 bolnica-vt.no-ip.org
 ncore.cc
 news-host.pw
+mozilla.com
+office365.com
 
 # NS of afraid.org
 
