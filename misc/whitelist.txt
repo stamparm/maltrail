@@ -479,6 +479,7 @@ heartjohn.com
 cima.hr
 cm-lagoa.pt
 databridgemarketresearch.com
+iutoic-dhaka.edu
 
 # found as false positive on cybercrime-tracker.net
 
