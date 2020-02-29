@@ -1305,6 +1305,10 @@ tunacan-812.ga
 tunacan-812.ml
 tunacan-812.tk
 
+# Reference: https://www.virustotal.com/gui/domain/cureprm.com/relations
+
+/IlOysTgNjFrGtHtEAwVo/index.php
+
 # Generic
 
 /7328-dating-verification-card.php
