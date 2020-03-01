@@ -91,10 +91,6 @@ domsrv.host/panel/gate.php
 
 sstorm1k.000webhostapp.com/panel/gate.php
 
-# Reference: https://exchange.xforce.ibmcloud.com/url/pony.lovekhao.com/panel/gate.php
-
-pony.lovekhao.com/panel/gate.php
-
 # Reference: https://twitter.com/avman1995/status/1054260755183353858
 
 medipedics.com/ponygrace/Panel/gate.php
@@ -454,17 +450,13 @@ l3nd20dl.cn/NGeFybqfquWi95G2/login.php
 
 markeettit.club/auth/login
 
-# Reference: https://twitter.com/ViriBack/status/1139867921247854592
-
-justritepharmacy.com/mad/FTP/panel/admin.php
-
 # Reference: https://twitter.com/P3pperP0tts/status/1146398222904152066
 
 http://92.63.192.127/panel/admin.php
 
 # Reference: https://twitter.com/webtobesocial/status/778654938276720642
 
-/ReallyOk/FuckYouMother/panel/
+/FuckYouMother/panel/
 
 # Reference: https://twitter.com/P3pperP0tts/status/1152538885974634496
 
