@@ -87,10 +87,6 @@ domsrv.host/panel/gate.php
 
 sstorm1k.000webhostapp.com/panel/gate.php
 
-# Reference: https://twitter.com/avman1995/status/1054260755183353858
-
-medipedics.com/ponygrace/Panel/gate.php
-
 # Reference: https://twitter.com/0bfusCat/status/1054363637274603520
 
 ali55551.co.kr/guwop/General/
@@ -144,10 +140,6 @@ slowidyter.us/locash7/lokiuyto/admin.php
 # Reference: https://twitter.com/ViriBack/status/1094261293693972480
 
 aquavictus.hr/ap/Panel/index.php
-
-# Reference: https://securelist.com/a-predatory-tale/89779/
-
-predatortop.xyz/login/
 
 # Reference: https://research.checkpoint.com/simbad-a-rogue-adware-campaign-on-google-play/
 
@@ -285,11 +277,6 @@ foxpanel734923vbb2.tk
 
 hijaiyh.net
 
-# Reference: https://twitter.com/pancak3lullz/status/1119334013246873600
-
-/pony/panel/admin.php
-/pony/panel/gate.php
-
 # Reference: https://twitter.com/JayTHL/status/1119686304202207232
 
 /NetSky/login.php
@@ -315,55 +302,6 @@ untorsnot.in/voice/gate.php
 # Reference: https://twitter.com/JAMESWT_MHT/status/1123206109421027329
 
 wadameee.club/auth/login
-
-# Reference: https://misterch0c.blogspot.com/2019/04/threat-fox-stealer.html
-
-a0287829.xsph.ru/login
-androsha.ga/login
-anticap.ml/login
-ark-steal-free.tk/login
-battlecash.ru/login
-blackspace.site/login
-bigbosslike.tk/login
-bloodborn.xyz/login
-bugtrackerjorkey.tk/login
-coderxz.site/login
-dexire.tk/login
-djimbosfan.tk/login
-docheat.site/login
-exchangepe.cf/login
-f0289264.xsph.ru/login
-foxpanel734923vbb2.tk/login
-gilork.ga/login
-govoting.site/login
-hjon1k21.tk/login
-hooksixteenth.tk/login
-jon1k2002.tk/login
-kuzya001.tk/login
-lexonlex31q.tk/login
-lobsterkiller.tk/login
-lucasik.tk/login
-mrgrom.gq/login
-oldfuck.tk/login
-orangemail.tk/login
-paketa.gq/login
-panelys.tk/login
-phust-adminpanel.ga/login
-poolground.tk/login
-reaper.tk/login
-rondylog1337.ga/login
-sashajeweler.tk/login
-schoolmosreg.tk/login
-squarez.icu/login
-squarez16.site/login
-stiller.tk/login
-test1331.tk/login
-webenginer.tk/login
-wnukz.site/login
-wsq22.ml/login
-yadaynksta.ga/login
-younglybae.tk/login
-z1xrk.cf/login
 
 # Reference: https://twitter.com/drok3r/status/1124018831444385794
 
@@ -421,7 +359,7 @@ yaebalnah.tk/login
 
 # Reference: https://twitter.com/dave_daves/status/1129401061696036864
 
-http://13.58.74.46/Mpanel_V1.0.1
+/Mpanel_V1.0.1
 
 # Reference: https://twitter.com/x42x5a/status/1130421342782857217
 
@@ -440,7 +378,6 @@ u19982p14982.web0119.zxcs.nl/Emmanuel/
 # Reference: https://www.virustotal.com/gui/file/e1d01f22ab0a9c71415cf0c511348d82ddc075e5f70f6fcee1526d8691faff2d/detection
 
 l3nd20dl.cn/NGeFybqfquWi95G2/login.php
-
 
 # Reference: https://twitter.com/sugimu_sec/status/1135818200455626752
 
