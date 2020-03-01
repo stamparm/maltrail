@@ -51,11 +51,6 @@
 /yedi/admin.php
 /yedi/gate.php
 
-# Reference: https://app.cymon.io/search/url/http%3A%2F%2Ffishhd.cn%2Fhmph%2Fpanelnew%2Fgate.php
-
-ark.treassurebank.org/Panel/admin.php
-fishhd.cn/hmph/panelnew/gate.php
-
 # Reference: https://twitter.com/ScumBots/status/1053281715404374016
 
 /jackposprivate12/loading.php
@@ -66,10 +61,6 @@ fishhd.cn/hmph/panelnew/gate.php
 
 farmaboti.es/oil/panel/panelnew/admin.php
 farmaboti.es/oil/panel/panelnew/gate.php
-
-# Reference: https://twitter.com/hexlax/status/1053780496579248130
-
-k3x.xyz
 
 # Reference: https://exchange.xforce.ibmcloud.com/url/sergossss18.myjino.ru/panel/gate.php
 
