@@ -51,10 +51,6 @@
 /yedi/admin.php
 /yedi/gate.php
 
-# Reference: https://twitter.com/ViriBack/status/1050543003935416321
-
-paklabourercare-gov.ml/darkcoders/login
-
 # Reference: https://app.cymon.io/search/url/http%3A%2F%2Ffishhd.cn%2Fhmph%2Fpanelnew%2Fgate.php
 
 ark.treassurebank.org/Panel/admin.php
