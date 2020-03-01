@@ -360,11 +360,6 @@ ethclicks.live/lo/
 
 54.37.141.202/panel/
 
-# Reference: https://twitter.com/ViriBack/status/1132037443421638657
-
-u19982p14982.web0119.zxcs.nl/Alhaji/
-u19982p14982.web0119.zxcs.nl/Emmanuel/
-
 # Reference: https://twitter.com/jorgemieres/status/1133742922363473920
 # Reference: https://www.virustotal.com/gui/file/e1d01f22ab0a9c71415cf0c511348d82ddc075e5f70f6fcee1526d8691faff2d/detection
 
