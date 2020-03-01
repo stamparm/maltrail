@@ -1119,6 +1119,14 @@ zctrack.com
 
 /5r9z334kjramxzfizndwlq98.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1233484287393046533
+
+/ioor2y6d10o6knz0pj1tweua.php
+
+# Reference: https://twitter.com/IpNigh/status/1233182231964856320
+
+/s7d5b2g45htrj028xo0y00gu.php
+
 # Reference: https://twitter.com/MalwarePatrol/status/1231370355291414529
 
 /67u7is2tdmnp9bj0pr4511f8.php
@@ -1296,6 +1304,18 @@ suit-812.ml
 tunacan-812.ga
 tunacan-812.ml
 tunacan-812.tk
+
+# Reference: https://www.virustotal.com/gui/domain/cureprm.com/relations
+
+/IlOysTgNjFrGtHtEAwVo/index.php
+
+# Reference: https://twitter.com/IpNigh/status/1233838562241589253
+
+/akjajkajdjhdjh395984988487f87f87f87ddjdjdjhjhdjdj49858.php
+
+# Reference: https://www.virustotal.com/gui/domain/suportedigital30hr.ddns.net/relations
+
+/home3e6e.php
 
 # Generic
 
