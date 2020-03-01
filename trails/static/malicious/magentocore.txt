@@ -1585,3 +1585,7 @@ vk-a6t5h7f3k.site
 # Reference: https://twitter.com/felixaime/status/1234111603831910400
 
 webscriptly.com
+
+# Reference: https://twitter.com/felixaime/status/1224257587555770368
+
+jquerytxtplugin.com
