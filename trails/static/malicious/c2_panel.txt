@@ -161,10 +161,6 @@ predatortop.xyz/login/
 
 addroider.com/users/login/
 
-# Reference: https://twitter.com/James_inthe_box/status/1103617969962213377
-
-/pony/gate.php
-
 # Reference: https://twitter.com/James_inthe_box/status/1102945901025226752
 
 /panelnew/gate.php
