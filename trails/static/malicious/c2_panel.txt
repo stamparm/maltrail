@@ -51,232 +51,45 @@
 /yedi/admin.php
 /yedi/gate.php
 
-# Reference: https://twitter.com/ScumBots/status/1053281715404374016
-
-/jackposprivate12/loading.php
-/load/jckpos/Panel/loading.php
-
-# Reference: https://twitter.com/pancak3lullz/status/1054800229654945792
-# Reference: https://twitter.com/Racco42/status/1051847768657014784
-
-farmaboti.es/oil/panel/panelnew/admin.php
-farmaboti.es/oil/panel/panelnew/gate.php
-
-# Reference: https://exchange.xforce.ibmcloud.com/url/sergossss18.myjino.ru/panel/gate.php
-
-sergossss18.myjino.ru/panel/gate.php
-
-# Reference: https://www.virustotal.com/en/url/7305c8bafde11f5f2faf83deaa867508e4be02a9275fb6b5285894c40535d9b3/analysis/
-
-perfectnobody.xyz/Panel/gate.php
-
-# Reference: https://exchange.xforce.ibmcloud.com/url/domsrv.host/panel/gate.php
-
-domsrv.host/panel/gate.php
-
-# Reference: https://exchange.xforce.ibmcloud.com/url/sstorm1k.000webhostapp.com/panel/gate.php
-
-sstorm1k.000webhostapp.com/panel/gate.php
-
-# Reference: https://twitter.com/0bfusCat/status/1054363637274603520
-
-ali55551.co.kr/guwop/General/
-
-# Reference: https://www.proofpoint.com/us/threat-insight/post/sload-and-ramnit-pairing-sustained-campaigns-against-uk-and-italy
-
-cflfuppn.cn/sload/
-ellapod.eu/sload/
-xityeksmwi.eu/sload/
-
-# Reference: https://twitter.com/benkow_/status/1055005039733944320
-
-filipmoris.ru.com/spt/auth.php
-
-# Reference: https://twitter.com/James_inthe_box/status/1069928327861854208
-
-cm-lagoa.pt/panel/gate.php
-
-# Reference: https://pastebin.com/PTkLE0se
-
-bingobongo.space/io213b5obo/admin.php
-finik18topw.cc/login.php
-gafigaf.in/panel632541/admin.php
-jelouslaodnn.org/bnAgxoxMGuqZidGE/login.php
-
-# Reference: https://twitter.com/ViriBack/status/1069980631805894656
-
-bot.jefferyworks.cf
-
-# Reference: https://pastebin.com/p0vBRBTE
-
-betabot.pw/login.php
-mandahp.ie/jjc/PHP/
-riyanshoppingbags.com/skins/betpla/PHP/
-rollscar.pk/auth
-
-masariqroup.com/cynthia/admin.php
-masariqroup.com/kabo/admin.php
-masariqroup.com/kabospy/admin.php
-masariqroup.com/small/admin.php
-masariqroup.com/starmoney/panel/admin.php
-sensimatino.us/brothershar/lokituoyr/admin.php
-slimpityio3.us/slamiptiop/admin.php
-slowidyter.us/derty/eer678y/admin.php
-slowidyter.us/locash7/lokiuyto/admin.php
-
 # Generic trail, based on https://pastebin.com/p0vBRBTE
-
-/panelnew/admin.php
-
-# Reference: https://twitter.com/ViriBack/status/1094261293693972480
-
-aquavictus.hr/ap/Panel/index.php
-
-# Reference: https://research.checkpoint.com/simbad-a-rogue-adware-campaign-on-google-play/
-
-addroider.com/users/login/
-
 # Reference: https://twitter.com/James_inthe_box/status/1102945901025226752
 
+/panelnew/admin.php
 /panelnew/gate.php
 
 # Reference: https://twitter.com/VK_Intel/status/1018656000948260864
 
 /panel/client.php
 
-# Reference: https://twitter.com/x42x5a/status/1107674030897799168
-
-http://45.67.14.206/login.php
-
 # Reference: https://twitter.com/dvk01uk/status/1092685964743503872
 
 /pamss/gate.php
-
-# Reference: https://twitter.com/PRODAFT/status/1105581121595719681
-
-http://89.105.205.103/auth.php
 
 # Reference: https://twitter.com/benkow_/status/1088009157733683200
 
 /zs/chi/cp.php
 
-# Reference: https://twitter.com/ViriBack/status/1080826513266749451
-
-jurasik.serveminecraft.net
-
 # Reference: https://twitter.com/casual_malware/status/1107441450415992832
 
 /WebPanel/api.php
 
-# Reference: https://blog.fox-it.com/2019/03/27/psixbot-the-evolution-of-a-modular-net-bot/
-
-kyrkymalol.000webhostapp.com/admin/
-
-# Reference: https://twitter.com/albertzsigovits/status/1113096573284728839
-
-powellpablooo.myjino.ru/auth.php
-fnsss77.ru/auth.php
-darbl.icu/asfdh4/auth.php
-
 # Reference: https://twitter.com/benkow_/status/1090564148184924160
 
 /p4234anel/admin.php
-
-# Reference: https://twitter.com/stecar792/status/1034858782990512128
-
-wasabbybomba.space/auth/login
 
 # Reference: https://twitter.com/malwrhunterteam/status/1114160025021423616
 
 /panel/admin.php
 /panel/gate.php
 
-# Reference: https://twitter.com/ViriBack/status/1114319312838385664
-# Reference: https://pastebin.com/bE6zUM90
-
-http://157.230.126.238/auth.php
-http://185.139.70.14/auth.php
-http://185.212.129.138/auth.php
-http://185.212.129.235/auth.php
-http://185.212.130.74/auth.php
-http://185.212.131.59/auth.php
-http://185.232.52.38/auth.php
-http://185.232.52.39/auth.php
-http://185.232.52.40/auth.php
-http://185.232.52.41/auth.php
-http://185.232.52.42/auth.php
-http://185.48.56.212/auth.php
-http://188.120.245.150/auth.php
-http://188.166.12.64/auth.php
-http://198.71.80.217/auth.php
-http://199.204.251.111/auth.php
-http://51.254.167.180/auth.php
-http://5.188.60.115/auth.php
-http://5.188.60.24/auth.php
-http://5.188.60.30/auth.php
-http://5.188.60.7/auth.php
-http://77.83.174.46/auth.php
-http://89.105.205.103/auth.php
-http://91.243.83.31/auth.php
-http://92.63.197.173/auth.php
-http://95.81.0.22/auth.php
-
-# Reference: https://twitter.com/x42x5a/status/1114468129327984640
-
-westeast.world/auth/login/
-
-# Reference: https://twitter.com/malwrhunterteam/status/1114510622610403328
-
-litehttp.altervista.org/Panel/page.php
-
-# Reference: https://twitter.com/nullcookies/status/1115006946216747008
-
-lolkek.club/login
-
-# Reference: https://twitter.com/malwrhunterteam/status/1115289020421025792
-
-bestpage1.com/blockchain2018/
-
-# Reference: https://twitter.com/x42x5a/status/1115572987816742912
-
-se1ec.com/login
-
-# Reference: https://otx.alienvault.com/pulse/5cacb6c0bd266902183e424b
-
-gepparlan.myjino.ru/auth.php
-j941521.myjino.ru/auth.php
-
 # Reference: https://twitter.com/makflwana/status/1115953092090941440
 
 /ba2/admin.php
-
-# Reference: https://twitter.com/PRODAFT/status/1115153591134752768
-
-ethereums.network
-
-# Reference: https://twitter.com/K_N1kolenko/status/1098500517272137728
-
-cba.demdex.uk.com
-
-# Reference: https://twitter.com/malwrhunterteam/status/1117770064114126849
-
-ark-steal-free.tk
-duperu.ru
-foxpanel734923vbb2.tk
-
-# Reference: https://twitter.com/dave_daves/status/1119185135646195712
-
-hijaiyh.net
 
 # Reference: https://twitter.com/JayTHL/status/1119686304202207232
 
 /NetSky/login.php
 /auth/NetCloud/login.php
-
-# Reference: https://twitter.com/ViriBack/status/1120311322917388288
-
-ashleywalkerfuns.com/2hYbb4x/login.php
-dsuda2.com/upload/login.php
 
 # Reference: https://research.checkpoint.com/finteam-trojanized-teamviewer-against-government-targets/
 
@@ -286,92 +99,9 @@ dsuda2.com/upload/login.php
 
 /megumin/panel/
 
-# Reference: https://twitter.com/hexlax/status/988881472403763200
-
-untorsnot.in/voice/gate.php
-
-# Reference: https://twitter.com/JAMESWT_MHT/status/1123206109421027329
-
-wadameee.club/auth/login
-
-# Reference: https://twitter.com/drok3r/status/1124018831444385794
-
-http://185.79.156.23/dnd/panel/admin.php
-http://185.79.156.23/s0t/panel/admin.php
-http://185.79.156.23/jg/6/panel/admin.php
-http://185.79.156.23/q1df0/panel/admin.php
-http://185.79.156.23/306/panel/admin.php
-http://185.79.156.23/bvb/panel/admin.php
-
-# Reference: https://twitter.com/drok3r/status/1124017680439181313
-
-cc01213.tmweb.ru/panel/admin.php
-
-# Reference: https://twitter.com/JayTHL/status/1124325778685087745
-
-simbatekhomes.com
-
-# Reference: https://twitter.com/MisterCh0c/status/1125731030567198720
-
-fristaylooo.ml/login
-
-# Reference: https://twitter.com/RickyLafleur1/status/1054730525653508096
-
-mx.neperepahano.top/login.php
-
-# Reference: https://twitter.com/de_aviation/status/1125099666218078218
-
-mozilla.theworkpc.com
-
-# Reference: https://twitter.com/ViriBack/status/1126984754090467328
-
-r1jy.tk/auth.php
-
-# Reference: https://twitter.com/ViriBack/status/1126992620310470656
-# Reference: https://app.any.run/tasks/5ec68ba7-0f10-45ac-a0ec-8bb7a84021d1
-
-iujoaqstqiywertgpu.club/login.php
-
-# Reference: https://twitter.com/James_inthe_box/status/1126933667429797888
-
-http://194.67.223.90/auth.php
-
-# Reference: https://twitter.com/The_d0c_T0R/status/1127233691451891712
-
-88.184.237.14:8888/login
-
-# Reference: https://twitter.com/ViriBack/status/1127406253888688128
-
-yaebalnah.tk/login
-
-# Reference: https://twitter.com/ViriBack/status/1128828811796242433
-
-187.ip-54-36-162.eu/login
-
 # Reference: https://twitter.com/dave_daves/status/1129401061696036864
 
 /Mpanel_V1.0.1
-
-# Reference: https://twitter.com/x42x5a/status/1130421342782857217
-
-ethclicks.live/lo/
-
-# Reference: https://twitter.com/ViriBack/status/1131000954613108737
-
-54.37.141.202/panel/
-
-# Reference: https://twitter.com/jorgemieres/status/1133742922363473920
-# Reference: https://www.virustotal.com/gui/file/e1d01f22ab0a9c71415cf0c511348d82ddc075e5f70f6fcee1526d8691faff2d/detection
-
-l3nd20dl.cn/NGeFybqfquWi95G2/login.php
-
-# Reference: https://twitter.com/sugimu_sec/status/1135818200455626752
-
-markeettit.club/auth/login
-
-# Reference: https://twitter.com/P3pperP0tts/status/1146398222904152066
-
-http://92.63.192.127/panel/admin.php
 
 # Reference: https://twitter.com/webtobesocial/status/778654938276720642
 
@@ -381,10 +111,6 @@ http://92.63.192.127/panel/admin.php
 
 /34-wp-mailing.php
 
-# Reference: https://twitter.com/MisterCh0c/status/1154056708806848515
-
-g.icab.pk
-
 # Reference: https://twitter.com/ViriBack/status/1155093166841892864
 
 /panels_encoded/login.php
@@ -392,14 +118,6 @@ g.icab.pk
 # Reference: https://twitter.com/tkanalyst/status/1166855006596681730
 
 /loader/login.php
-
-# Reference: https://twitter.com/P3pperP0tts/status/1167890224644362241
-
-http://45.12.212.225
-
-# Reference: https://twitter.com/illegalFawn/status/1177557065742594048
-
-illegalfawn.com/panel.php
 
 # Reference: https://twitter.com/ViriBack/status/1183030287485329410
 
@@ -411,10 +129,6 @@ illegalfawn.com/panel.php
 /Panel17/admin.php
 /Panel17/auth.php
 /Panel17/login.php
-
-# Reference: https://app.any.run/tasks/6812075f-1785-494f-9624-eda8b19943c3/
-
-/adminpanel/add_bot.php
 
 # Reference: https://twitter.com/pancak3lullz/status/1022845906041929728
 
@@ -434,9 +148,14 @@ illegalfawn.com/panel.php
 
 /logz/auth.php
 /logz/login.php
+/panel/gate.php
+/Panel/index.php
+/Panel/page.php
+/panel2/gate.php
 /panel3_info/index.php
 /panel123/auth.php
 /panel123/login.php
+/panel632541/admin.php
 /pnl/auth.php
 /pnl/login.php
 /webpanel/auth.php
