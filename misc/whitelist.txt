@@ -1115,6 +1115,12 @@ news-host.pw
 mozilla.com
 office365.com
 
+# long-domain names (e.g. 03020749dotbjdot89dot249dot108dot53q1w2e3rty)
+
+waseda.jp
+u-paris.fr
+london.ac.uk
+
 # NS of afraid.org
 
 evergreen.v6.afraid.org
