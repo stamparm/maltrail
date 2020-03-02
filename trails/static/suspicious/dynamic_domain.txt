@@ -2490,10 +2490,6 @@ i234.me
 
 myds.me
 
-# Reference: https://www.virustotal.com/gui/domain/synology.me/relations
-
-synology.me
-
 # Reference: https://www.virustotal.com/gui/domain/vpnplus.to/relations
 
 vpnplus.to
