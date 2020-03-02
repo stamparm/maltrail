@@ -1592,4 +1592,4 @@ jquerytxtplugin.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1234536106953146369
 
-hxxp://163.172.136.230
+http://163.172.136.230
