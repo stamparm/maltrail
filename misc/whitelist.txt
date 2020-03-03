@@ -1114,6 +1114,7 @@ ncore.cc
 news-host.pw
 mozilla.com
 office365.com
+.goog
 
 # long-domain names (e.g. 03020749dotbjdot89dot249dot108dot53q1w2e3rty)
 
