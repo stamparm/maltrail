@@ -2741,3 +2741,7 @@ jhasdjahsdjasfkdaskdfasbot.niggacumyafacenet.xyz
 # Reference: https://twitter.com/0xBanana/status/1234141822345191425
 
 rpi.bnon.xyz
+
+# Palo Alto Networks Demo
+
+panwdemo.duckdns.org
