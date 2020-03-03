@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/reddrip7/status/1233779793537056768
+# Reference: https://mp.weixin.qq.com/s/UlTX4M8SzwhjI74tFKg_YA
+# Reference: https://otx.alienvault.com/pulse/5e5d704d5f2e6994e9fcb8b3
+
+ludo.ezyro.com
+cdn.dosya.web.tr
+samsung.apps.linkpc.net
