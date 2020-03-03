@@ -1593,3 +1593,7 @@ jquerytxtplugin.com
 # Reference: https://twitter.com/unmaskparasites/status/1234536106953146369
 
 http://163.172.136.230
+
+# Reference: https://twitter.com/unmaskparasites/status/1234917686242619393
+
+autocapital.pw
