@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blogs.quickheal.com/pdf-files-embedded-docm-files-now-deliver-jaff-ransomware/
+# Reference: https://exchange.xforce.ibmcloud.com/collection/23c3278e5ee29bc5a439636d34321357
+
+5hdnnd74fffrottd.com
+babil117.com
+boaevents.com
+byydei74fg43ff4f.net
+easysupport.us
+edluke.com
+fkksjobnn43.org
+julian-g.ro
+phinamco.com
+rktazuzi7hbln7sy.onion
+takanashi.jp
+techno-kar.ru
+tiskr.com
+trans-atm.com
+vscard.net
+wipersdirect.com
+http://tending.info/f87346b
+http://trialinsider.com/f87346b
+
+# Generic
+
+/f87346b
