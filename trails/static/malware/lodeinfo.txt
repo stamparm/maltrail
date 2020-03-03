@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blogs.jpcert.or.jp/en/2020/02/malware-lodeinfo-targeting-japan.html
+# Reference: https://otx.alienvault.com/pulse/5e5d72a634cc90d8e450455d
+# Reference: https://app.any.run/tasks/4a2718d4-f4bd-4f97-80a8-9a40af880530/
+
+http://162.244.32.148
+http://193.228.52.57
+http://45.67.231.169
