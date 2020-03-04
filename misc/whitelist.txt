@@ -84,6 +84,7 @@ fslcdn.net
 footprintdns.com
 footprintpredict.com
 garmin.com
+gcontent.eu
 gexperiments1.com
 gexperiments2.com
 gexperiments3.com
@@ -1115,6 +1116,9 @@ news-host.pw
 mozilla.com
 office365.com
 .goog
+members.webs.com
+mp3viper.me
+emp3world.so
 
 # long-domain names (e.g. 03020749dotbjdot89dot249dot108dot53q1w2e3rty)
 
