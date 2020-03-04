@@ -1119,6 +1119,8 @@ office365.com
 members.webs.com
 mp3viper.me
 emp3world.so
+btorrent.xyz
+justproxy.io
 
 # long-domain names (e.g. 03020749dotbjdot89dot249dot108dot53q1w2e3rty)
 
@@ -1212,6 +1214,10 @@ rbi.cloud
 comm100.com
 adcolony.xyz
 newss.pw
+dll-host.cf
+ms-dev.cf
+network-host.cf
+service-host.cf
 
 # Google crawlers
 
