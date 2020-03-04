@@ -1593,3 +1593,11 @@ jquerytxtplugin.com
 # Reference: https://twitter.com/unmaskparasites/status/1234536106953146369
 
 http://163.172.136.230
+
+# Reference: https://twitter.com/unmaskparasites/status/1234917686242619393
+# Reference: https://www.virustotal.com/gui/ip-address/83.166.248.67/relations
+
+autocapital.pw
+http.ps
+xxx-club.pw
+y5.ms
