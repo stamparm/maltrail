@@ -1601,3 +1601,8 @@ autocapital.pw
 http.ps
 xxx-club.pw
 y5.ms
+
+# Reference: https://twitter.com/felixaime/status/1235131517908570113
+
+reportgns.com
+sucuritester.com
