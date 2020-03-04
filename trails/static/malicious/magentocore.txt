@@ -1603,8 +1603,12 @@ xxx-club.pw
 y5.ms
 
 # Reference: https://twitter.com/felixaime/status/1235131517908570113
+# Reference: https://www.virustotal.com/gui/ip-address/185.181.164.216/relations
 # Reference: https://www.virustotal.com/gui/ip-address/47.56.114.152/relations
+# Reference: https://www.virustotal.com/gui/domain/wp-includ.com/relations
+# Reference: https://twitter.com/500mk500/status/1235330678700548098
 
 ldfidfa.pw
 reportgns.com
 sucuritester.com
+wp-includ.com
