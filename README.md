@@ -639,3 +639,4 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * [D4 Project](https://www.d4-project.org/2019/09/25/maltrail-integration.html)
 * [GScan](https://github.com/grayddq/GScan)
 * [BlackArch Linux](https://github.com/BlackArch/blackarch/blob/master/packages/maltrail/PKGBUILD)
+* [MalwareWorld](https://www.malwareworld.com/)
