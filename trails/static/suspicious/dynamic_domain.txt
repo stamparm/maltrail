@@ -2518,10 +2518,6 @@ diskstation.eu
 
 diskstation.org
 
-# Reference: https://www.virustotal.com/gui/domain/quickconnect.to/relations
-
-quickconnect.to
-
 # Reference: https://dyndnss.net/eng/
 
 dyndnss.net
