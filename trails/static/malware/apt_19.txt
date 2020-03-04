@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: codoso, c0d0so0, codoso team, sunshop group
+
+# Reference: https://www.fireeye.com/blog/threat-research/2017/06/phished-at-the-request-of-counsel.html (Network Based Indicators (NBI))
+
+http://104.236.77.169
+http://138.68.45.9
+http://162.243.143.145
+autodiscover.2bunny.com
+lyncdiscover.2bunny.com
+tk-in-f156.2bunny.com
+sfo02s01-in-f2.cloudsend.net
+
+# Reference: https://unit42.paloaltonetworks.com/new-attacks-linked-to-c0d0s0-group/
+# Reference: https://www.domaintools.com/resources/blog/domaintools-101-the-art-of-tracking-threat-actors
+
+microsoft-cache.com
+supermanbox.org
+jbossas.org
