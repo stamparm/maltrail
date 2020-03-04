@@ -1664,9 +1664,16 @@ function initDetails() {
                         $.ajax("https://stat.ripe.net/data/geoloc/data.json?resource=" + ip, { dataType:"jsonp", ip: ip, html: html, cell: cell })
                         .done(function(json) {
                             var span_ip = $("<span title=''/>").html(this.html + " ");
+                            var country = null;
 
-                            if ((typeof json.data.locations !== "undefined") && (json.data.locations.length > 0) && (json.data.locations[0].country !== "ANO")) {
-                                IP_COUNTRY[this.ip] = json.data.locations[0].country.toLowerCase().split('-')[0];
+                            try {
+                                country = json.data.located_resources[0].locations[0].country.toLowerCase().split('-')[0];
+                            }
+                            catch(err) {
+                            }
+
+                            if ((country !== null) && (country !== "ano")) {
+                                IP_COUNTRY[this.ip] = country;
                                 img = '<img src="images/blank.gif" class="flag flag-' + IP_COUNTRY[this.ip] + '" title="' + IP_COUNTRY[this.ip].toUpperCase() + '">';
                             }
                             else {
