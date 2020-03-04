@@ -2732,6 +2732,7 @@ hf-hd.top
 nn-mod.top
 reseau-js.com
 coloros.com
+sagawa-exp.co.jp
 
 # Exceptions for abuse.ch (dirty patch for addresses used by outside scanners introducing noise being recognized as 'malware')
 
