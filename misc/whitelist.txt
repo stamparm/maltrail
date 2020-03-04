@@ -370,6 +370,7 @@ rea.co.ke
 
 atw.hu
 gandi.net
+tz-tribunj.hr
 
 # appeared on malwaredomainlist.com
 
