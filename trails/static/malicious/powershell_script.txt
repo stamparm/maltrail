@@ -253,3 +253,10 @@
 # Reference: https://twitter.com/DynamicAnalysis/status/1231999794035535875
 
 /po.ps1
+
+# Reference: https://pastebin.com/uveiJed9
+
+/dhl%20invoice.ps1
+/dhlinvoice.ps1
+/dhl_invoice.ps1
+/sec.ps1
