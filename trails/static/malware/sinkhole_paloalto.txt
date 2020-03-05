@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000ClGECA0
+# Reference: https://www.virustotal.com/gui/ip-address/72.5.65.111/relations
+
+72.5.65.111
