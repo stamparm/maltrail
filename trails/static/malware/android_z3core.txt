@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://amtrckr.info/json/name/z3core
+
+lexsmilefux.link
+vulcan-star.com
+delivery-club.net

@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://amtrckr.info/json/name/xbot007
+
+evattown.net
+esaphapss.net
+aeedfpoom.com
+acobbesy.net
+eloutthiss.net
