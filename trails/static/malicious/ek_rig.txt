@@ -115,6 +115,11 @@ tldrbox.top
 
 infopicked.com
 
+# Reference: https://twitter.com/FaLconIntel/status/1235580218842083329
+
+fiestagg.info
+morethanyouneed.xyz
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
