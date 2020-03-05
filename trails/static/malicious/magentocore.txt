@@ -1604,7 +1604,6 @@ y5.ms
 # Reference: https://www.virustotal.com/gui/domain/wp-includ.com/relations
 # Reference: https://twitter.com/500mk500/status/1235330678700548098
 
-ldfidfa.pw
 reportgns.com
 sucuritester.com
 wp-includ.com
