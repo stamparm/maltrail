@@ -888,6 +888,14 @@ sophosxl.net
 
 # Generic
 
+adns1.easydns.com
+adns2.easydns.com
+litocam.myftp.org
+krapanj.dyndns.info
+dynamic.tstt.net.tt
+aviation-is.better-than.tv
+bravohr.dynu.net
+oyvine.dyndns.org
 croportal.net
 elektrokrk.com
 pohrani.com
@@ -1307,6 +1315,7 @@ victoryms.fun
 roysong666.vicp.cc
 biblemission.jkub.com
 sun.itsaol.com
+abx.publicvm.com
 
 # Reference: https://419scam.org/419-by-domain.htm  # Note: only .tn as most seen as noise
 
@@ -2776,3 +2785,14 @@ jhasdjahsdjasfkdaskdfasbot.niggacumyafacenet.xyz
 # Reference: https://twitter.com/0xBanana/status/1234141822345191425
 
 rpi.bnon.xyz
+
+# Reference: https://kb.easydns.com/knowledge/transferring-a-domain-to-easydns/
+
+rush.easydns.com
+nirvana.easydns.net
+motorhead.easydns.org
+dns1.easydns.com
+dns2.easydns.net
+dns3.easydns.ca
+dns3.easydns.org
+dns4.easydns.info

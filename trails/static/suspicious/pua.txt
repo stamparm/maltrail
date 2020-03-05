@@ -2089,3 +2089,7 @@ appsflyer.tk
 # Reference: http://tracker.viriback.com/dump.php (# 2020-02-29, CrownAdsPro)
 
 1410.165-227-83-163.site
+
+# Reference: https://www.virustotal.com/gui/file/f5690282a935eb4a3f1c09d07abbe1c07f4da5f2ae776d4bb903f9bd1927e558/behavior/VirusTotal%20Cuckoofork
+
+fsl.sytes.net
