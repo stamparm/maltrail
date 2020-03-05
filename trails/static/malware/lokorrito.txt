@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1235535155936350208
+# Reference: https://twitter.com/JAMESWT_MHT/status/1235540674826719237
+# Reference: https://app.any.run/tasks/e2058943-46e8-4439-a865-6875c72d213d/
+# Reference: https://app.any.run/tasks/c090e8ce-bb5f-4f34-bc5b-e1b7e0b5b505/
+
+185.234.217.154:53
+get.analytics.sh
+g0ph1jg.analytics.sh
+
+# Generic
+
+/doidera.php
