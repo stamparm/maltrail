@@ -253,3 +253,20 @@
 # Reference: https://twitter.com/DynamicAnalysis/status/1231999794035535875
 
 /po.ps1
+
+# Reference: https://pastebin.com/uveiJed9
+# Reference: https://www.virustotal.com/gui/domain/gm-adv.com/relations
+
+/dhl%20invoice.ps1
+/dhlinvoice.ps1
+/dhl_invoice.ps1
+/order.ps1
+/quotation.ps1
+/remit.ps1
+/sec.ps1
+
+# Reference: https://twitter.com/c_APT_ure/status/1235231442906603520/photo/1
+# Reference: https://www.virustotal.com/gui/domain/umeed.app/relations
+
+/hk.ps1
+/quote.ps1
