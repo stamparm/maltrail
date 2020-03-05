@@ -442,7 +442,7 @@ updatesodui
 \Aus\Z
 \Auser agent
 user_check
-vaccine
+\Avaccine
 vaccinekiller
 \Avb wininet
 vbtagedit
@@ -1053,7 +1053,7 @@ STORMDDOS
 SUiCiDE
 TBNotifier
 Tsunami
-Ucheck
+\AUcheck
 Ufasoft
 up2dash
 updater\_agent
