@@ -888,6 +888,12 @@ sophosxl.net
 
 # Generic
 
+croportal.net
+elektrokrk.com
+pohrani.com
+ns-08.webnode.com
+ns-09.webnode.com
+swisscom.com
 tecajevi.freeservers.com
 mail.webnode.com
 mail1.webnode.com
@@ -1154,6 +1160,7 @@ nf5.no-ip.com
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
+online-metrix.net
 adbrn.com
 adsco.re
 adshostnet.com
