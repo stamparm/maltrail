@@ -2800,3 +2800,7 @@ dns2.easydns.net
 dns3.easydns.ca
 dns3.easydns.org
 dns4.easydns.info
+
+# Reference: https://twitter.com/xyz/status/1235984620237123584
+
+gen.xyz
