@@ -189,6 +189,10 @@ statconuter.com/c.php
 
 /cmd.php?hwid=
 
+# Reference: https://twitter.com/wwp96/status/1221866487637520384
+
+/task.php?hwid=
+
 # Reference: https://twitter.com/JAMESWT_MHT/status/1126020627075403776
 
 /pabury473675.php
