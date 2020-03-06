@@ -1607,3 +1607,8 @@ y5.ms
 reportgns.com
 sucuritester.com
 wp-includ.com
+
+# Reference: https://web.misker.me/blog/malware/2020/03/04/Raindrop-PoppedShop.html
+# Reference: https://www.virustotal.com/gui/domain/googletagmanagrapis.com/detection
+
+googletagmanagrapis.com
