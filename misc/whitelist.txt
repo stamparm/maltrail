@@ -376,6 +376,7 @@ tz-tribunj.hr
 
 hausnet.ru
 triangleservicesltd.com
+outlinearray.com
 
 # Reference: https://answers.microsoft.com/en-us/msoffice/forum/msoffice_outlook-mso_winother-mso_o365b/sync-euexebid/a2f18771-d49a-44dc-8c2a-0dac6a8eb0b2
 
@@ -482,6 +483,8 @@ cima.hr
 cm-lagoa.pt
 databridgemarketresearch.com
 iutoic-dhaka.edu
+africanspicesafaris.com
+sample.com
 
 # found as false positive on cybercrime-tracker.net
 
@@ -888,6 +891,7 @@ sophosxl.net
 
 # Generic
 
+admin.ch
 adns1.easydns.com
 adns2.easydns.com
 litocam.myftp.org
