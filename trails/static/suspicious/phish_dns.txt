@@ -11,3 +11,195 @@ ns1.utdipx.com
 ns9.utdipx.com
 ns1.wadding.space
 ns2.wadding.space
+
+# Reference: https://www.virustotal.com/gui/ip-address/204.93.216.151/relations (# See phishing domains related to this IP in respective trail)
+# Reference: https://www.virustotal.com/gui/domain/ns1.whatnexthost.com/details
+# Reference: https://www.virustotal.com/gui/domain/ns2.whatnexthost.com/details
+
+ns1.whatnexthost.com
+ns2.whatnexthost.com
+204.93.216.151:53
+
+# Reference: https://www.virustotal.com/gui/ip-address/139.59.80.101/relations (# phishing domains are in phishing.txt trail)
+# Reference: https://www.virustotal.com/gui/domain/ns1.fakesemoiin23.com/relations
+# Reference: https://www.virustotal.com/gui/domain/ns2.fakesemoiin23.com/relations
+
+ns1.fakesemoiin23.com
+ns2.fakesemoiin23.com
+139.59.80.101:53
+
+# Reference: https://www.virustotal.com/gui/domain/upgrinfo.com/relations
+
+ns1.upgrinfo.com
+ns2.upgrinfo.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/162.220.8.212/relations
+
+ns1.sagema.biz
+ns2.sagema.biz
+162.220.8.212:53
+
+# Reference: https://twitter.com/ANeilan/status/1150246352053575680
+# Reference: https://www.virustotal.com/gui/ip-address/167.114.28.162/relations
+
+ns1.i-tunes-ld.com
+ns2.i-tunes-ld.com
+167.114.28.162:53
+
+# Reference: https://twitter.com/P3pperP0tts/status/1150405598816677888
+# Reference: https://twitter.com/P3pperP0tts/status/1150419408197693442
+
+5.132.191.104:53
+92.163.33.248:53
+206.189.120.248:53
+ns1.vic.au.dns.opennic.glue
+ns2.vic.au.dns.opennic.glue
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.28.193.195/relations (# dns addresses only)
+
+dns1.reserve-dns-test.biz
+dns2.reserve-dns-test.biz
+dns45.reserve-dns-test.biz
+dns46.reserve-dns-test.biz
+ns1.bestuserweb.com
+ns1.capcdn.com
+ns1.celebritiesfotos.com
+ns1.cialis-sale.com
+ns1.cialisonline-bestrxstore.com
+ns1.dedichnrtye.com
+ns1.delns.com
+ns1.edinaustralia.com
+ns1.everesthost.net
+ns1.familyhoteshop.com
+ns1.generic-cialisrxstore.com
+ns1.givebodyweb.com
+ns1.handtoolguide.com
+ns1.hookupjustforfck.com
+ns1.hotcasinosonline.net
+ns1.hotcasinosuk.com
+ns1.ivemed.com
+ns1.kashns.com
+ns1.magichotcompany.com
+ns1.medsexpress24.com
+ns1.memphisrocktour.com
+ns1.mostfallweb.com
+ns1.newmansurfing.com
+ns1.newmedicalsale.com
+ns1.nsrehost.com
+ns1.office-courier.com
+ns1.onlyuserweb.com
+ns1.otherintoweb.com
+ns1.outmoneyweb.com
+ns1.parkingdnsonline.com
+ns1.potentialpharmacy.com
+ns1.potutenresept.com
+ns1.quickneasypay.com
+ns1.rewrite-jobs.com
+ns1.seo-konzultant.com
+ns1.shemazu.com
+ns1.sildenafilsverige.com
+ns1.skinny-video.com
+ns1.startnowtrade.com
+ns1.tiyoomedia.com
+ns1.trythissale.com
+ns1.tube-anal.com
+ns1.twitterdemographics.com
+ns1.userfallweb.com
+ns1.viagra-femenino.com
+ns1.viagraonline-4rxonlinestore.com
+ns1.vipills.net
+ns1.workhotweb.com
+ns1.xxxsextub.com
+ns10.corposs.com
+ns1google.com
+ns2.bestuserweb.com
+ns2.capcdn.com
+ns2.celebritiesfotos.com
+ns2.cialis-sale.com
+ns2.cialisonline-bestrxstore.com
+ns2.delns.com
+ns2.edinaustralia.com
+ns2.everesthost.net
+ns2.familyhoteshop.com
+ns2.givebodyweb.com
+ns2.homerxdeal.com
+ns2.hookupjustforfck.com
+ns2.hotcasinosuk.com
+ns2.ivemed.com
+ns2.magichotcompany.com
+ns2.medsexpress24.com
+ns2.memphisrocktour.com
+ns2.mostfallweb.com
+ns2.newmansurfing.com
+ns2.newmedicalsale.com
+ns2.office-courier.com
+ns2.onlyuserweb.com
+ns2.otherintoweb.com
+ns2.outmoneyweb.com
+ns2.parkingdnsonline.com
+ns2.potutenresept.com
+ns2.rewrite-jobs.com
+ns2.seo-konzultant.com
+ns2.shemazu.com
+ns2.skinny-video.com
+ns2.startnowtrade.com
+ns2.subreg.net
+ns2.tiyoomedia.com
+ns2.trythissale.com
+ns2.tube-anal.com
+ns2.twitterdemographics.com
+ns2.userfallweb.com
+ns2.viagra-femenino.com
+ns2.viagraonline-4rxonlinestore.com
+ns2.viagraonline-rxpharmacybest.com
+ns2.vipills.net
+ns2.workhotweb.com
+ns2.xxxsextub.com
+ns3.everesthost.net
+ns3.freecelebfilms.com
+ns3.hotcasinosonline.net
+ns3.hotcasinosuk.com
+ns3.medsexpress24.com
+ns3.pokiesnzonline.com
+ns3.potentialpharmacy.com
+ns3.seo-konzultant.com
+ns3.startnowtrade.com
+ns3.trythissale.com
+ns4.freecelebfilms.com
+ns4.hotcasinosonline.net
+ns4.hotcasinosuk.com
+ns4.startnowtrade.com
+ns4.trythissale.com
+ns4.whatsappannunci.com
+ns5.whatsappannunci.com
+ns9.corposs.com
+185.28.193.195:53
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1151931732725293060
+# Reference: https://www.virustotal.com/gui/domain/gatherreceive.net/details
+# Reference: https://www.virustotal.com/gui/ip-address/63.251.106.22/relations
+
+ns1.gatherreceive.net
+ns2.gatherreceive.net
+ns3.gatherreceive.net
+ns4.gatherreceive.net
+63.251.106.22:53
+
+# Reference: https://twitter.com/PhishingAi/status/1158769283263946752
+# Reference: https://www.virustotal.com/gui/domain/ns1.villeflux.com/relations
+# Reference: https://www.virustotal.com/gui/domain/ns2.villeflux.com/details
+# Reference: https://www.virustotal.com/gui/domain/dns1.villeflux.com/details
+# Reference: https://www.virustotal.com/gui/domain/dns2.villeflux.com/details
+
+111.90.150.148:53
+111.90.150.47:53
+ns1.villeflux.com
+ns2.villeflux.com
+dns1.villeflux.com
+dns2.villeflux.com
+
+# Reference: https://twitter.com/PhishingAi/status/1159309706222956544
+
+192.210.142.146:53
+ns1.colloc-rotcross.com
+ns2.colloc-rotcross.com
