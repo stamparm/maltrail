@@ -2781,11 +2781,6 @@ reseau-js.com
 coloros.com
 sagawa-exp.co.jp
 
-# Exceptions for abuse.ch (dirty patch for addresses used by outside scanners introducing noise being recognized as 'malware')
-
-scan.casualaffinity.net
-jhasdjahsdjasfkdaskdfasbot.niggacumyafacenet.xyz
-
 # Reference: https://twitter.com/0xBanana/status/1234141822345191425
 
 rpi.bnon.xyz
