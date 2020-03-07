@@ -1612,3 +1612,7 @@ wp-includ.com
 # Reference: https://www.virustotal.com/gui/domain/googletagmanagrapis.com/detection
 
 googletagmanagrapis.com
+
+# Reference: https://twitter.com/felixaime/status/1236201312842326016
+
+savemoneyoffice.com/js/varien/print.js
