@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/2020/03/threat-roundup-0228-0306.html
+# Reference: https://www.virustotal.com/gui/domain/ns2.utdipx.com/relations
+
+174.122.22.90:53
+184.106.219.99:53
+50.22.169.26:53
+ns1.utdipx.com
+ns9.utdipx.com
+ns1.wadding.space
+ns2.wadding.space
