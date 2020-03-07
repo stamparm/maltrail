@@ -1616,3 +1616,8 @@ googletagmanagrapis.com
 # Reference: https://twitter.com/felixaime/status/1236201312842326016
 
 savemoneyoffice.com/js/varien/print.js
+
+# Reference: https://twitter.com/felixaime/status/1236321303902269441
+
+imprintcenter.com/js/embed.min.js
+imprintcenter.com/js/flash/
