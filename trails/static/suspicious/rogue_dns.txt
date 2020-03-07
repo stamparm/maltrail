@@ -596,3 +596,10 @@ ns4.mmfasi.com
 resolve.cloudipnameserver.com
 resolve.cloudnameservice.com
 resolve.interland.com
+
+# Reference: https://twitter.com/ninoseki/status/1236440221194969089
+
+118.30.28.40:53
+118.30.28.41:53
+125.212.235.132:53
+125.212.235.133:53
