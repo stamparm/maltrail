@@ -605,3 +605,7 @@ resolve.interland.com
 125.212.235.131:53
 125.212.235.132:53
 125.212.235.133:53
+
+# Reference: https://twitter.com/NoceraInformat1/status/1222976385494519810
+
+89.207.131.21:53
