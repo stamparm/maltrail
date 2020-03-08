@@ -1333,6 +1333,10 @@ tunacan-812.tk
 
 /kraus6.php
 
+# Reference: https://www.virustotal.com/gui/ip-address/37.72.171.98/relations
+
+/package-delivery/snd_conti-data.php
+
 # Generic
 
 /7328-dating-verification-card.php
