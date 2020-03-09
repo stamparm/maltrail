@@ -1632,3 +1632,7 @@ jquerylol.ru
 
 neuro-programmer.de/e.php
 neuro-programmer.de/test.php
+
+# Reference: https://twitter.com/fletchsec/status/1175180643514355713
+
+kursy.atas.pl/templates/system/html/data/red.php
