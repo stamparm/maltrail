@@ -2810,3 +2810,7 @@ gen.xyz
 # Reference: https://github.com/stamparm/maltrail/pull/7271#issuecomment-596401544
 
 namebright.com
+
+# Reference: https://b-ok.cc/  # "Part of Z-Library project. The world's largest ebook library."
+
+b-ok.cc
