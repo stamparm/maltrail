@@ -1271,6 +1271,15 @@ Naruto Uzumake
 
 BO1IE8
 
+# Reference: https://twitter.com/bad_packets/status/1236005753800048641
+
+xtc
+xtc bot
+
+# Reference: https://twitter.com/bad_packets/status/1233226684196773888
+
+botnet
+
 # Misc
 
 information_schema
