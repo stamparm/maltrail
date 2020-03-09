@@ -2804,3 +2804,7 @@ dns4.easydns.info
 # Reference: https://twitter.com/xyz/status/1235984620237123584
 
 gen.xyz
+
+# Reference: https://github.com/stamparm/maltrail/pull/7271#issuecomment-596401544
+
+namebright.com
