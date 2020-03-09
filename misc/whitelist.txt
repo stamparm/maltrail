@@ -2805,6 +2805,6 @@ dns4.easydns.info
 
 gen.xyz
 
-https://github.com/stamparm/maltrail/pull/7271#issuecomment-596401544
+# Reference: https://github.com/stamparm/maltrail/pull/7271#issuecomment-596401544
 
 namebright.com
