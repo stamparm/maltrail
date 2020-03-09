@@ -5033,3 +5033,7 @@ zekelliott.com
 # Reference: https://www.virustotal.com/gui/domain/ubibancaa.fun/relations
 
 ubibancaa.fun
+
+# Reference: https://www.virustotal.com/gui/domain/xfuckdate.com/relations
+
+xfuckdate.com
