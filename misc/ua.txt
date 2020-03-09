@@ -862,9 +862,11 @@ Mozilla/5.0 (Windows NT 10.0; &)
 
 # Reference: https://twitter.com/luc4m/status/1166765980489584640
 # Reference: https://twitter.com/Littl3field/status/1174624023709454336
+# Reference: https://twitter.com/Bl4ng3l/status/1236946300463190017
 
-WSHRAT
+ADMIN-PC
 USER-PC
+WSHRAT
 
 # Reference: https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/08/01075510/TV_RMS_IoC_eng.pdf
 
