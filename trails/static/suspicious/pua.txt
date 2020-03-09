@@ -2100,3 +2100,7 @@ qbitka.com
 chromlum.org
 firefox1.com
 brobgser.com
+
+# Reference: https://app.any.run/tasks/939750d4-9ec4-4abc-b13d-0152de016a56/
+
+wisecleaner.net
