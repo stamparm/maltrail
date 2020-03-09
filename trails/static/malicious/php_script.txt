@@ -1339,7 +1339,7 @@ tunacan-812.tk
 
 # Reference: https://twitter.com/JayTHL/status/1237092893950726144
 
-/cgcjp.php
+/cmgtkz/cgcjp.php
 
 # Generic
 
