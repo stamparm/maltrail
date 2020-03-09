@@ -11,8 +11,6 @@ import sys
 
 sys.dont_write_bytecode = True
 
-import core.versioncheck
-
 import cProfile
 import inspect
 import math
@@ -24,7 +22,6 @@ import re
 import socket
 import subprocess
 import struct
-import sys
 import threading
 import time
 import traceback
