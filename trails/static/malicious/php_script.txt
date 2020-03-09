@@ -1325,6 +1325,14 @@ tunacan-812.tk
 
 /z2xtc6md0ucgi8pmwb86hezq.php
 
+# Reference: # Reference: https://twitter.com/James_inthe_box/status/1236318055203889158
+
+/kraus6.php
+
+# Reference: https://www.virustotal.com/gui/ip-address/37.72.171.98/relations
+
+/package-delivery/snd_conti-data.php
+
 # Generic
 
 /7328-dating-verification-card.php
