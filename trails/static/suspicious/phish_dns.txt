@@ -49,7 +49,6 @@ ns2.i-tunes-ld.com
 # Reference: https://twitter.com/P3pperP0tts/status/1150405598816677888
 # Reference: https://twitter.com/P3pperP0tts/status/1150419408197693442
 
-5.132.191.104:53
 92.163.33.248:53
 206.189.120.248:53
 ns1.vic.au.dns.opennic.glue
