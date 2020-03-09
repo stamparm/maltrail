@@ -1337,6 +1337,10 @@ tunacan-812.tk
 
 /yzsautlv.php
 
+# Reference: https://twitter.com/JayTHL/status/1237092893950726144
+
+/cgcjp.php
+
 # Generic
 
 /7328-dating-verification-card.php
