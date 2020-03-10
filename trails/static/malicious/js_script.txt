@@ -990,3 +990,7 @@ adsmeneger.club
 # Reference: https://twitter.com/felixaime/status/1236196571928236037
 
 scriptcdn.info
+
+# Reference: https://twitter.com/unmaskparasites/status/1235190676838633477
+
+collectfasttracks.com
