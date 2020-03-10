@@ -918,7 +918,6 @@ Aldi Bot
 alertup
 angel
 antispyprogram
-AnyDesk
 aria2
 Atomic\_Email\_Hunter
 acHTTP component
