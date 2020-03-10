@@ -233,6 +233,7 @@ anti-virus.by
 bitdefender.com
 bleepingcomputer.com
 cnet.com
+comodo.com
 cwfservice.net
 dell.com
 devbuilds.kaspersky-labs.com
@@ -891,6 +892,10 @@ sophosxl.net
 
 # Generic
 
+multilanguage.xyz
+accorhotels.ws
+pixhost.icu
+sharepoint.com
 sk1.selfip.org
 promotools.cc
 admin.ch
@@ -1174,6 +1179,8 @@ nf5.no-ip.com
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
+trackidea.xyz
+marketingcloudapis.com
 online-metrix.net
 adbrn.com
 adsco.re
