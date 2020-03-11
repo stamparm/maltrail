@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/ip-address/217.182.174.92/relations
+
+217.182.174.92:80
+
+# Reference: https://www.virustotal.com/gui/domain/myfbi.su/relations
+
+myfbi.su
+
+# Reference: https://www.virustotal.com/gui/file/0e47ada23442644247fe3e44ac66286eb258e3b98e85ebc6f8f58d39e9256a83/behavior/VirusTotal%20Droidy
+
+hotsexygirlshd.bid
+ip-identification.com
+
+# Reference: https://www.virustotal.com/gui/file/62aaff01aef5b67637676d79e8ec40294b15d6887d9bce01b11c6ba687419302/behavior/VirusTotal%20Droidy
+
+blackspace.top
+
+# Reference: https://www.virustotal.com/gui/domain/localgeoip.com/relations
+
+localgeoip.com
+
+# Reference: https://www.virustotal.com/gui/domain/statisticslocalip.com/relations
+
+statisticslocalip.com
+
+# Generic
+
+/tops/new_t.php
+/testo/detect.php

@@ -233,6 +233,7 @@ anti-virus.by
 bitdefender.com
 bleepingcomputer.com
 cnet.com
+comodo.com
 cwfservice.net
 dell.com
 devbuilds.kaspersky-labs.com
@@ -891,6 +892,12 @@ sophosxl.net
 
 # Generic
 
+multilanguage.xyz
+accorhotels.ws
+pixhost.icu
+sharepoint.com
+sk1.selfip.org
+promotools.cc
 admin.ch
 adns1.easydns.com
 adns2.easydns.com
@@ -1172,6 +1179,8 @@ nf5.no-ip.com
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
+trackidea.xyz
+marketingcloudapis.com
 online-metrix.net
 adbrn.com
 adsco.re
@@ -2804,3 +2813,11 @@ dns4.easydns.info
 # Reference: https://twitter.com/xyz/status/1235984620237123584
 
 gen.xyz
+
+# Reference: https://github.com/stamparm/maltrail/pull/7271#issuecomment-596401544
+
+namebright.com
+
+# Reference: https://b-ok.cc/  # "Part of Z-Library project. The world's largest ebook library."
+
+b-ok.cc

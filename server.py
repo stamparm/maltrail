@@ -11,8 +11,6 @@ import sys
 
 sys.dont_write_bytecode = True
 
-import core.versioncheck
-
 import optparse
 import os
 import platform

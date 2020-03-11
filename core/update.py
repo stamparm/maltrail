@@ -43,6 +43,7 @@ from core.settings import IS_WIN
 from core.settings import ROOT_DIR
 from core.settings import UNICODE_ENCODING
 from core.settings import USERS_DIR
+from core.trailsdict import TrailsDict
 from thirdparty import six
 from thirdparty.six.moves import urllib as _urllib
 
@@ -72,7 +73,7 @@ def update_trails(force=False, offline=False):
     """
 
     success = False
-    trails = {}
+    trails = TrailsDict()
     duplicates = {}
 
     try:

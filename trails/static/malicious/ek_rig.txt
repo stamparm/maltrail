@@ -111,10 +111,6 @@ fiestalume.info
 
 tldrbox.top
 
-# Reference: https://twitter.com/david_jursa/status/1232996830520193024
-
-infopicked.com
-
 # Reference: https://twitter.com/FaLconIntel/status/1235580218842083329
 
 fiestagg.info

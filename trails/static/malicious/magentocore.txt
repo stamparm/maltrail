@@ -1626,3 +1626,18 @@ imprintcenter.com/js/flash/
 # Reference: https://blog.malwarebytes.com/cybercrime/2019/04/github-hosted-magecart-skimmer-used-against-hundreds-of-e-commerce-sites/
 
 jquerylol.ru
+
+# Reference: https://twitter.com/rootprivilege/status/1233065094965125120
+# Reference: https://pastebin.com/4seW3Aya
+
+neuro-programmer.de/e.php
+neuro-programmer.de/test.php
+
+# Reference: https://twitter.com/fletchsec/status/1175180643514355713
+
+kursy.atas.pl/templates/system/html/data/red.php
+
+# Reference: https://www.virustotal.com/gui/ip-address/181.214.86.150/relations
+
+get-js.com
+marketplace-magento.net
