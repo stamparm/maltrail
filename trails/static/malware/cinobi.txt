@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://documents.trendmicro.com/assets/pdf/Tech%20Brief_Operation%20Overtrap%20Targets%20Japanese%20Online%20Banking%20Users.pdf
+# Reference: https://otx.alienvault.com/pulse/5e68f7e638d16c09fa844701
+
+bank-japanposst.jp
+bank-japanpost.com
+bank-japanpostjp.com
+bank-japanpostpo.jp
+japanp0st.jp
+jp-bamk.jp
+jp-bank-japanossts.jp
+safetb-amazon.jp
+safety-amazon.jp
+security-amazon.jp
+ts3cardd.com
