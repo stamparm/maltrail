@@ -184,7 +184,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     if _:
                         content = self._format(content, **{ name: _() })
 
-                if "gzip" in self.headers.get(HTTP_HEADER.ACCEPT_ENCODING):
+                if "gzip" in self.headers.get(HTTP_HEADER.ACCEPT_ENCODING, ""):
                     self.send_header(HTTP_HEADER.CONTENT_ENCODING, "gzip")
                     _ = six.BytesIO()
                     compress = gzip.GzipFile("", "w+b", 9, _)
