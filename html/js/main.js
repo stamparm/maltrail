@@ -32,6 +32,7 @@ var PIE_FONT_SIZE = 10;
 var MAX_SOURCES_ITEMS = 40;
 var FLOOD_TRAIL_THRESHOLD = 50;
 var LONG_TRAIL_THRESHOLD = 40;
+var MAX_CONDENSED_ITEMS = 100;
 var OTHER_COLOR = "#999";
 var THREAT_INFIX = "~>";
 var FLOOD_THREAT_PREFIX = "...";
@@ -646,9 +647,12 @@ function init(url, from, to) {
 
                             if (condensed) {
                                 var parts = original.split(',');
-                                for (var k = 0; k < parts.length; k++) {
+                                for (var k = 0; k < Math.min(parts.length, MAX_CONDENSED_ITEMS); k++) {
                                     _[column][parts[k]] = true;
                                 }
+
+                                if (parts.length > MAX_CONDENSED_ITEMS)
+                                    _[column]["..."] = true;
                             }
                             else
                                 _[column][original] = true;
@@ -661,8 +665,12 @@ function init(url, from, to) {
                                     _[column][parts[k]] = true;
                                 }
                             }
-                            else
-                                _[column][data[column]] = true;
+                            else {
+                                if (Object.keys(_[column]).length < MAX_CONDENSED_ITEMS)
+                                    _[column][data[column]] = true;
+                                else
+                                    _[column]["..."] = true;
+                            }
                         }
                     }
                 }
