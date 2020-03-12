@@ -576,7 +576,8 @@ function init(url, from, to) {
             }
 
             for (var i = 0; i < results.data.length; i++) {
-                var data = results.data[i], threat_text, threat_data, match, _;
+                var threat_text, threat_data, match, _;
+                var data = results.data[i]
 
                 if (data.length !== LOG_COLUMNS_SIZE)
                     continue;
@@ -597,7 +598,6 @@ function init(url, from, to) {
                 var dga = info.indexOf(DGA_THREAT_INFIX) > -1;
                 var dns_exhaustion = info.indexOf(DNS_EXHAUSTION_THREAT_INFIX) > -1;
                 var heuristic = reference.indexOf(HEURISTIC_THREAT_INFIX) > -1;
-                var reduced = time.replace(/:(\d{2})\.\d+/, "");
 
                 if (dns_exhaustion)
                     threat_text = info + THREAT_INFIX + _;
@@ -613,10 +613,17 @@ function init(url, from, to) {
                 _TOTAL_EVENTS += 1;
 
                 if (!(threat_text in _THREATS))
-                    threat_data = _THREATS[threat_text] = [1, [reduced], time, time, data];  // count, times, minTime, maxTime, (threat)data
+                    threat_data = _THREATS[threat_text] = [1, [time], time, time, data];  // count, times, minTime, maxTime, (threat)data
                 else {
+                    match = time.match(/ (\d+:\d+)/);
+
                     threat_data = _THREATS[threat_text];
                     threat_data[0] += 1;
+
+                    if (match !== null)
+                        reduced = time.match(/ (\d+:\d+)/)[1];
+                    else
+                        reduced = time;
 
                     if (reduced != last(threat_data[1]))
                         threat_data[1].push(reduced);
