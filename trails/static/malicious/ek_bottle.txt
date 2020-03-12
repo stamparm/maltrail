@@ -13,3 +13,12 @@ priv.inteleksys.com
 # Reference: https://twitter.com/tkanalyst/status/1220706451439570945
 
 view.inteleksys.com
+
+# Reference: https://documents.trendmicro.com/assets/pdf/Tech%20Brief_Operation%20Overtrap%20Targets%20Japanese%20Online%20Banking%20Users.pdf
+# Reference: https://otx.alienvault.com/pulse/5e68f7e638d16c09fa844701
+
+byte.inteleksys.com
+cionx.inteleksys.com
+sales.inteleksys.com
+shop.inteleksys.com
+xizr.inteleksys.com
