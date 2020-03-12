@@ -661,8 +661,12 @@ function init(url, from, to) {
                         if (typeof data[column] === "string") {
                             if (condensed) {
                                 var parts = data[column].split(',');
+
                                 for (var k = 0; k < parts.length; k++) {
-                                    _[column][parts[k]] = true;
+                                    if (Object.keys(_[column]).length >= MAX_CONDENSED_ITEMS)
+                                        _[column]["..."] = true;
+                                    else
+                                        _[column][parts[k]] = true;
                                 }
                             }
                             else {
