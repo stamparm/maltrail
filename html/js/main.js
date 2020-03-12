@@ -342,6 +342,17 @@ function isLocalAddress(ip) {
         return false;
 }
 
+// Reference: https://www.w3resource.com/javascript-exercises/javascript-array-exercise-4.php
+var last = function(array, n) {
+    if (array == null)
+        return void 0;
+
+    if (n == null)
+        return array[array.length - 1];
+
+    return array.slice(Math.max(array.length - n, 0));
+};
+
 var entityMap = {
     "&": "&amp;",
     "<": "&lt;",
@@ -586,6 +597,7 @@ function init(url, from, to) {
                 var dga = info.indexOf(DGA_THREAT_INFIX) > -1;
                 var dns_exhaustion = info.indexOf(DNS_EXHAUSTION_THREAT_INFIX) > -1;
                 var heuristic = reference.indexOf(HEURISTIC_THREAT_INFIX) > -1;
+                var reduced = time.replace(/:(\d{2})\.\d+/, "");
 
                 if (dns_exhaustion)
                     threat_text = info + THREAT_INFIX + _;
@@ -601,11 +613,13 @@ function init(url, from, to) {
                 _TOTAL_EVENTS += 1;
 
                 if (!(threat_text in _THREATS))
-                    threat_data = _THREATS[threat_text] = [1, [time], time, time, data];  // count, times, minTime, maxTime, (threat)data
+                    threat_data = _THREATS[threat_text] = [1, [reduced], time, time, data];  // count, times, minTime, maxTime, (threat)data
                 else {
                     threat_data = _THREATS[threat_text];
                     threat_data[0] += 1;
-                    threat_data[1].push(time);
+
+                    if (reduced != last(threat_data[1]))
+                        threat_data[1].push(reduced);
 
                     if (time < threat_data[2])
                         threat_data[2] = time;
