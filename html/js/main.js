@@ -1670,6 +1670,11 @@ function initDetails() {
                                 country = json.data.located_resources[0].locations[0].country.toLowerCase().split('-')[0];
                             }
                             catch(err) {
+                                try {
+                                    country = json.data.located_resources[0].location.toLowerCase().split('-')[0];
+                                }
+                                catch(err) {
+                                }
                             }
 
                             if ((country !== null) && (country !== "ano")) {
