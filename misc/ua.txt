@@ -1281,6 +1281,10 @@ xtc bot
 
 botnet
 
+# Reference: https://twitter.com/bad_packets/status/1229464913296293888
+
+Research Only
+
 # Misc
 
 information_schema
