@@ -1643,6 +1643,8 @@ get-js.com
 marketplace-magento.net
 
 # Reference: https://twitter.com/d09r_/status/1238302755032166400
+# Reference: https://www.virustotal.com/gui/ip-address/178.33.71.232/relations
+# Reference: https://www.virustotal.com/gui/domain/theresevit.com/relations
 
 jsvault.net
 linkedtop.com
