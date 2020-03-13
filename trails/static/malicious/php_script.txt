@@ -1333,6 +1333,10 @@ tunacan-812.tk
 
 /package-delivery/snd_conti-data.php
 
+# Reference: https://twitter.com/VK_Intel/status/983729623367270401
+
+/vitamindisapproval.php
+
 # Generic
 
 /7328-dating-verification-card.php
