@@ -1679,3 +1679,7 @@ vaccss.com
 # Reference: https://twitter.com/AffableKraut/status/1169458426344333312
 
 htjar.com
+
+# Reference: https://twitter.com/AffableKraut/status/1166223620886208513
+
+shellsn.ru
