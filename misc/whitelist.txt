@@ -1179,6 +1179,7 @@ nf5.no-ip.com
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
+yldbt.com
 trackidea.xyz
 marketingcloudapis.com
 online-metrix.net
