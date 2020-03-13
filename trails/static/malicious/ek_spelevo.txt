@@ -1100,3 +1100,7 @@ zuzana.awesomeursula.info
 # Reference: https://otx.alienvault.com/pulse/5dfa53d70548c87d95834028
 
 lookatmyvideo.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1238481791767310338
+
+dexters.onlineappstop.site
