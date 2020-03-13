@@ -1675,3 +1675,7 @@ strchckr.com
 tfalseacc.com
 tryuseracc.com
 vaccss.com
+
+# Reference: https://twitter.com/AffableKraut/status/1169458426344333312
+
+htjar.com
