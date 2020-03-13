@@ -2874,3 +2874,7 @@
 # Reference: http://phenome.ca/
 
 172.105.23.36  # phenome.ca
+
+# Reference: http://ltx71.com/
+
+35.239.58.193  # ltx71
