@@ -1691,3 +1691,7 @@ jquery.in.ua
 # Reference: https://twitter.com/AffableKraut/status/1133599840544468992
 
 jqueryes.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1238537326956933121
+
+cookiepro.cloud
