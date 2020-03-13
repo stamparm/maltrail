@@ -1683,3 +1683,7 @@ htjar.com
 # Reference: https://twitter.com/AffableKraut/status/1166223620886208513
 
 shellsn.ru
+
+# Reference: https://twitter.com/AffableKraut/status/1159677725994622976
+
+jquery.in.ua
