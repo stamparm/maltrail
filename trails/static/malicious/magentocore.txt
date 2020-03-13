@@ -1648,3 +1648,10 @@ marketplace-magento.net
 
 jsvault.net
 linkedtop.com
+
+# Reference: https://twitter.com/ydklijnsma/status/1232727444962107392
+
+google-anallytic.com
+google--analytics.com
+google-analyitics.com
+google-anolytics.com
