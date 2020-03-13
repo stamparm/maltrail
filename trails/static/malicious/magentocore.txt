@@ -1655,3 +1655,11 @@ google-anallytic.com
 google--analytics.com
 google-analyitics.com
 google-anolytics.com
+
+# Reference: https://twitter.com/AffableKraut/status/1207664349634011137
+
+bizrateservices.com
+j-queries.com
+teamsystems.info
+towbarchat.com
+twinkhelp.com
