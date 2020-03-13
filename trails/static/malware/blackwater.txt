@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1238514675190575108
+# Reference: https://twitter.com/VK_Intel/status/1238533832070045697
+# Reference: https://www.virustotal.com/gui/file/bbc75560752ea882e6eff152427cb00cc1b2daa50351cfef7b10c6dfeea75e34/detection
+
+lively-dream-c871.m7.workers.dev
+odd-mud-233e.gtech.workers.dev
+throbbing-leaf-e96d.gtech.workers.dev
