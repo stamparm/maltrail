@@ -1641,3 +1641,8 @@ kursy.atas.pl/templates/system/html/data/red.php
 
 get-js.com
 marketplace-magento.net
+
+# Reference: https://twitter.com/d09r_/status/1238302755032166400
+
+jsvault.net
+linkedtop.com
