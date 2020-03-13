@@ -1663,3 +1663,7 @@ j-queries.com
 teamsystems.info
 towbarchat.com
 twinkhelp.com
+
+# Reference: https://twitter.com/AffableKraut/status/1169489081568497664
+
+gmagea.com
