@@ -1337,6 +1337,10 @@ tunacan-812.tk
 
 /vitamindisapproval.php
 
+# Reference: https://twitter.com/James_inthe_box/status/1238606200154886144
+
+/upload10.php
+
 # Generic
 
 /7328-dating-verification-card.php
