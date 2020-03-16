@@ -219,6 +219,12 @@ korben4u.com
 
 clubaina.site
 
+# Reference: https://twitter.com/FaLconIntel/status/1239554635666358273
+
+codedexchange.com
+gilbert4u.london
+surdised.site
+
 # Generic
 
 /NlGkb4ivk.php
