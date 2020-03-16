@@ -1285,6 +1285,11 @@ botnet
 
 Research Only
 
+# Reference: https://twitter.com/James_inthe_box/status/1238606200154886144
+# Reference: https://twitter.com/James_inthe_box/status/1238836301555585025
+
+HTTPTool
+
 # Misc
 
 information_schema
