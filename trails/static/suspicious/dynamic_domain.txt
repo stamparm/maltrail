@@ -3011,3 +3011,9 @@ eluma101.com
 # Reference: https://www.virustotal.com/gui/domain/ddns.ne/relations
 
 ddns.ne
+
+# Reference: https://entrydns.net/
+# Reference: https://www.virustotal.com/gui/domain/entrydns.org/relations
+
+entrydns.net
+entrydns.org
