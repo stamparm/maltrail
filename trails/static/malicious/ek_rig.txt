@@ -116,6 +116,10 @@ tldrbox.top
 fiestagg.info
 morethanyouneed.xyz
 
+# Reference: https://app.any.run/tasks/828e1e86-c4ee-4251-a20d-6aacc6b4b9cf/
+
+http://82.146.46.180
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
