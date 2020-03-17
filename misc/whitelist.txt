@@ -486,6 +486,7 @@ databridgemarketresearch.com
 iutoic-dhaka.edu
 africanspicesafaris.com
 sample.com
+saol.com
 
 # found as false positive on cybercrime-tracker.net
 
@@ -515,6 +516,9 @@ caseking.net
 svijet7.com
 artbetting.de
 budi.in
+svgroup.net
+neodrive.co
+gofaka.com
 
 # found as false positive on abuse.ch
 
@@ -892,6 +896,7 @@ sophosxl.net
 
 # Generic
 
+vsnl.net.in
 multilanguage.xyz
 accorhotels.ws
 pixhost.icu
@@ -1330,6 +1335,7 @@ roysong666.vicp.cc
 biblemission.jkub.com
 sun.itsaol.com
 abx.publicvm.com
+loginrecovery.org
 
 # Reference: https://419scam.org/419-by-domain.htm  # Note: only .tn as most seen as noise
 
