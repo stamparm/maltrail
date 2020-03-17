@@ -26,3 +26,7 @@ data.djmixer2018.com
 # Reference: https://www.virustotal.com/gui/domain/freevideo.publicvm.com/relations
 
 freevideo.publicvm.com
+
+# Reference: https://www.virustotal.com/gui/file/af197de4ef661e2c0f416b64d2681afe77d9236c9d0cab447d89daadeb9e281c/detection
+
+admob.linkpc.net
