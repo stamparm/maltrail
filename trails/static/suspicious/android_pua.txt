@@ -21,3 +21,8 @@ data.djmixer2018.com
 # Reference: https://www.virustotal.com/gui/file/9442af04b50af35a768984fc66c9302d4f840cc3183e0fd55c1e2dda4fab28ce/detection
 
 216.144.236.34:80
+
+# Reference: https://www.virustotal.com/gui/file/f02de53011911ce236fd4aa12356da4a47e0632cedd48bd150d2b99ed79890c8/detection
+# Reference: https://www.virustotal.com/gui/domain/freevideo.publicvm.com/relations
+
+freevideo.publicvm.com
