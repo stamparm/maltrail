@@ -345,6 +345,16 @@
 /out-337443407.hta
 /out-510267147.hta
 
+# Reference: https://twitter.com/casual_malware/status/1239760321021128706
+
+/out-44955964.hta
+/out-1376540361.hta
+/out-1897288366.hta
+
+# Reference: https://twitter.com/FewAtoms/status/1239938872341139456
+
+/out-8815323.hta
+
 # Generic
 
 /myrrem.hta
