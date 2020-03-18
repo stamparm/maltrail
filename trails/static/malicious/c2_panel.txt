@@ -144,6 +144,11 @@
 
 /webpanel/inc/
 
+# Reference: https://twitter.com/malwrhunterteam/status/1240215543480750082
+# Reference: https://www.virustotal.com/gui/file/f3b0aa7d9664258c9e1783289c4fc56e05b23e3eb9a3557f55733806564deb73/detection
+
+/IRemotePanel
+
 # Generic
 
 /logz/auth.php
