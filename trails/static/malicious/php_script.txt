@@ -1354,6 +1354,7 @@ tunacan-812.tk
 /evreigate.php
 /gate.php
 /gate1.php
+/gate16.php
 /gate2.php
 /gate.get
 /online-dating-verification-card.php
