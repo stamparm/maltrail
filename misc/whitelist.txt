@@ -2828,3 +2828,11 @@ namebright.com
 # Reference: https://b-ok.cc/  # "Part of Z-Library project. The world's largest ebook library."
 
 b-ok.cc
+
+# Reference: https://www.virustotal.com/gui/file/b7e3795dfe43361b5b1bcfcc5f5f440261b9f79f8953fe94b6e87e8fc3c19a63/behavior/Dr.Web%20vxCube
+# Note: AutoPico/KMSPico/AutoKMS
+
+110.noip.me
+skms.ddns.net
+3rss.vicp.net
+kms.digiboy.ir
