@@ -642,7 +642,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                         _ = dns_data[_ + 12:_ + 16]
                                         if _:
                                             answer = socket.inet_ntoa(_)
-                                            if answer in trails:
+                                            if answer in trails and not _check_domain_whitelisted(query):
                                                 _ = trails[answer]
                                                 if "sinkhole" in _[0]:
                                                     trail = "(%s).%s" % ('.'.join(parts[:-1]), '.'.join(parts[-1:]))
