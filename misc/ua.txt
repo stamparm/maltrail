@@ -1304,6 +1304,10 @@ HTTPTool
 
 msie 44
 
+# Reference: https://github.com/silence-is-best/c2db#filecoderstop
+
+\AMicrosoft Internet Explorer\Z
+
 # Misc
 
 information_schema
