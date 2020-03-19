@@ -896,6 +896,7 @@ sophosxl.net
 
 # Generic
 
+bluecoat.com
 beautifultokio.ddns.net
 cigla.dyndns-work.com
 tracker.kicks-ass.net

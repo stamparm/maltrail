@@ -2112,3 +2112,10 @@ elastisearch.com
 securedsearch.xyz
 bettersearch.co
 searchdimension.com
+
+# Reference: https://www.virustotal.com/gui/file/1ffe8993ba53ddbfcf3994270b51432db5b9bf4e9e625daed42ed016e75cee20/behavior/Tencent%20HABO
+
+getyoutubedownloader.com
+rp.ytdcdn.com
+os.ytdcdn.com
+os2.ytdcdn.com
