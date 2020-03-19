@@ -1310,6 +1310,10 @@ msie 44
 
 \AMicrosoft Internet Explorer\Z
 
+# Reference: https://github.com/silence-is-best/c2db#revcode-rat
+
+WebMonitor Client
+
 # Misc
 
 information_schema
