@@ -1290,6 +1290,10 @@ Research Only
 
 HTTPTool
 
+# Reference: https://github.com/silence-is-best/c2db#unknowns
+
+94af05617f4e0479d766f422f611ad5c
+
 # Misc
 
 information_schema
