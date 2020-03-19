@@ -896,6 +896,9 @@ sophosxl.net
 
 # Generic
 
+beautifultokio.ddns.net
+cigla.dyndns-work.com
+tracker.kicks-ass.net
 vsnl.net.in
 multilanguage.xyz
 accorhotels.ws
