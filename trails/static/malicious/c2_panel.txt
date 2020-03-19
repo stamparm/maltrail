@@ -144,6 +144,10 @@
 
 /webpanel/inc/
 
+# Reference: https://github.com/silence-is-best/c2db#agenttesla
+
+/zin/WebPanel/
+
 # Generic
 
 /logz/auth.php
@@ -159,4 +163,5 @@
 /pnl/auth.php
 /pnl/login.php
 /webpanel/auth.php
+/webpanel/api.php
 /webpanel/login.php
