@@ -1300,6 +1300,10 @@ HTTPTool
 
 94af05617f4e0479d766f422f611ad5c
 
+# Reference: https://github.com/silence-is-best/c2db#expiro
+
+msie 44
+
 # Misc
 
 information_schema
