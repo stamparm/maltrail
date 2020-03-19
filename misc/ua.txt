@@ -1272,6 +1272,12 @@ Naruto Uzumake
 
 BO1IE8
 
+# Reference: https://github.com/silence-is-best/c2db#cobaltstrike
+
+BOIE9
+ENXA
+NP06
+
 # Reference: https://twitter.com/bad_packets/status/1236005753800048641
 
 xtc
