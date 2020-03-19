@@ -616,7 +616,9 @@ Cakle
 NoPublicity
 
 # Reference: https://twitter.com/James_inthe_box/status/1079757827030142976
+# Reference: https://github.com/silence-is-best/c2db#netsupport-rat
 
+NetSupport Gateway
 NetSupport Manager
 
 # Reference: https://bomccss.hatenablog.jp/entry/2019/04/30/235933 (Japanese)
