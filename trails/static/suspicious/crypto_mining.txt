@@ -333,3 +333,16 @@ pool.somec.cc
 
 149.210.234.234:3333
 litecoinpool.org
+
+# Reference: https://github.com/Monero-Monitor/monero-monitor/blob/master/data/html/options.html
+
+monero.crypto-pool.fr
+monerohash.com
+moneropool.com
+drill.moneroworld.com
+cryptmonero.com
+xmr.prohash.net
+xmr.alimabi.cn
+xmrpool.eu
+supportxmr.com
+minexmr.com
