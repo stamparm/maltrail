@@ -355,6 +355,13 @@
 
 /out-8815323.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1240996072425652224
+
+/out-1429065212.hta
+/out-1770163823.hta
+/out-1890736898.hta
+/out-531451995.hta
+
 # Generic
 
 /myrrem.hta
