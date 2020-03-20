@@ -358,3 +358,16 @@ xmr.alimabi.cn
 xmrpool.eu
 supportxmr.com
 minexmr.com
+
+# Reference: https://www.virustotal.com/gui/file/eaef82223eeb8cf404a1d46613d36b9e582304b215201b5e557db578dd73e04e/behavior/Dr.Web%20vxCube
+
+37.59.43.131:5555
+37.59.43.136:5555
+91.121.2.76:5555
+37.59.45.174:5555
+176.9.2.144:5555
+78.46.91.134:5555
+78.46.89.102:5555
+37.187.154.79:5555
+37.59.54.205:5555
+37.59.55.60:5555
