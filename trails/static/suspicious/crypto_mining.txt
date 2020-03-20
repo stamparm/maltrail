@@ -334,6 +334,18 @@ pool.somec.cc
 149.210.234.234:3333
 litecoinpool.org
 
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1240732487195688962
+
+covid19crypto.com
+
+# Reference: https://blog.360totalsecurity.com/en/crazycoin-the-master-of-double-mining-double-white-utilization-and-resource-utilization/
+
+47.101.30.124:13531
+47.108.119.77:6000
+f2pool.com
+hns.f2pool.com
+xmr.f2pool.com
+
 # Reference: https://github.com/Monero-Monitor/monero-monitor/blob/master/data/html/options.html
 
 monero.crypto-pool.fr
