@@ -1345,6 +1345,11 @@ tunacan-812.tk
 
 /8WFhndlp4soxNOGim5D2J0cYC9EBLtVyrU6R7ePuwjkMAqagKTv1.php
 
+# Reference: https://www.virustotal.com/gui/domain/tokai-lm.jp/relations
+
+/344sx.php
+/98989776.php
+
 # Generic
 
 /7328-dating-verification-card.php
