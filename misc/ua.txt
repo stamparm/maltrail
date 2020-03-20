@@ -616,7 +616,9 @@ Cakle
 NoPublicity
 
 # Reference: https://twitter.com/James_inthe_box/status/1079757827030142976
+# Reference: https://github.com/silence-is-best/c2db#netsupport-rat
 
+NetSupport Gateway
 NetSupport Manager
 
 # Reference: https://bomccss.hatenablog.jp/entry/2019/04/30/235933 (Japanese)
@@ -1272,6 +1274,12 @@ Naruto Uzumake
 
 BO1IE8
 
+# Reference: https://github.com/silence-is-best/c2db#cobaltstrike
+
+BOIE9
+ENXA
+NP06
+
 # Reference: https://twitter.com/bad_packets/status/1236005753800048641
 
 xtc
@@ -1289,6 +1297,22 @@ Research Only
 # Reference: https://twitter.com/James_inthe_box/status/1238836301555585025
 
 HTTPTool
+
+# Reference: https://github.com/silence-is-best/c2db#unknowns
+
+94af05617f4e0479d766f422f611ad5c
+
+# Reference: https://github.com/silence-is-best/c2db#expiro
+
+msie 44
+
+# Reference: https://github.com/silence-is-best/c2db#filecoderstop
+
+\AMicrosoft Internet Explorer\Z
+
+# Reference: https://github.com/silence-is-best/c2db#revcode-rat
+
+WebMonitor Client
 
 # Misc
 
