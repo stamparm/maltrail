@@ -345,3 +345,16 @@ covid19crypto.com
 f2pool.com
 hns.f2pool.com
 xmr.f2pool.com
+
+# Reference: https://github.com/Monero-Monitor/monero-monitor/blob/master/data/html/options.html
+
+monero.crypto-pool.fr
+monerohash.com
+moneropool.com
+drill.moneroworld.com
+cryptmonero.com
+xmr.prohash.net
+xmr.alimabi.cn
+xmrpool.eu
+supportxmr.com
+minexmr.com
