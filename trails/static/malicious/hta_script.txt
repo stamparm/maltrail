@@ -366,6 +366,10 @@
 
 /cfhkjkk.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1241318536280227844
+
+/sol.hta
+
 # Generic
 
 /myrrem.hta
