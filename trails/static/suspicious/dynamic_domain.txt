@@ -3017,3 +3017,7 @@ ddns.ne
 
 entrydns.net
 entrydns.org
+
+# Reference: https://www.virustotal.com/gui/domain/ooguy.com/relations
+
+ooguy.com
