@@ -1358,6 +1358,11 @@ tunacan-812.tk
 
 /us1jdskjdshfkjehr.php
 
+# Reference: https://www.virustotal.com/gui/domain/ultraspeed.info/relations
+
+/momomoomomom.php
+/usksdjqjwjoweidjcslkm.php
+
 # Generic
 
 /7328-dating-verification-card.php
