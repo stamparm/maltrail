@@ -1354,6 +1354,10 @@ tunacan-812.tk
 
 /eweerew.php
 
+# Reference: https://www.virustotal.com/gui/file/d920f89a4d8ae2f2cc597779c57e515c0f9451a66ecdaeef35169f6d0a43a35d/detection
+
+/us1jdskjdshfkjehr.php
+
 # Generic
 
 /7328-dating-verification-card.php
