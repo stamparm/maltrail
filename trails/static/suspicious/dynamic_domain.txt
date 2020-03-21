@@ -3020,4 +3020,5 @@ entrydns.org
 
 # Reference: https://www.virustotal.com/gui/domain/ooguy.com/relations
 
+dynu.com
 ooguy.com
