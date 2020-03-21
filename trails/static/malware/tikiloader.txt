@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: TikiLoader, TikiSpawn
+
+# Reference: https://twitter.com/malwrhunterteam/status/1241318536280227844
+
+moocraft.org
