@@ -1314,6 +1314,10 @@ msie 44
 
 WebMonitor Client
 
+# Reference: https://blog.prevailion.com/2020/03/the-curious-case-of-criminal-curriculum.html
+
+Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.1)
+
 # Misc
 
 information_schema
