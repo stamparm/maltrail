@@ -362,6 +362,10 @@
 /out-1890736898.hta
 /out-531451995.hta
 
+# Reference: https://twitter.com/Rmy_Reserve/status/1241301496571953152
+
+/cfhkjkk.hta
+
 # Generic
 
 /myrrem.hta
