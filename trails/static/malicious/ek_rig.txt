@@ -120,6 +120,11 @@ morethanyouneed.xyz
 
 http://82.146.46.180
 
+# Reference: https://twitter.com/FaLconIntel/status/1241568444551741441
+# Reference: https://app.any.run/tasks/e074bc0d-7edf-4e58-86ad-f7e3dd8df714/
+
+http://176.57.220.16
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
