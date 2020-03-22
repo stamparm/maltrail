@@ -1787,3 +1787,7 @@ zoplm.com
 # Reference: https://twitter.com/felixaime/status/1241765974929530884
 
 googletagmanage.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1241837000564428800
+
+sucurl.net
