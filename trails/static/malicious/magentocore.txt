@@ -1783,3 +1783,7 @@ walletgear.org
 webanalyzer.net
 zapaljs.com
 zoplm.com
+
+# Reference: https://twitter.com/felixaime/status/1241765974929530884
+
+googletagmanage.com
