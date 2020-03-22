@@ -366,6 +366,12 @@
 
 /cfhkjkk.hta
 
+# Reference: https://twitter.com/FewAtoms/status/1241813291460067329
+
+/out-756898907.hta
+/out-1019569980.hta
+/out-1388663052.hta
+
 # Reference: https://twitter.com/malwrhunterteam/status/1241318536280227844
 
 /sol.hta
