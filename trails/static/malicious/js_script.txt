@@ -994,3 +994,8 @@ scriptcdn.info
 # Reference: https://twitter.com/unmaskparasites/status/1235190676838633477
 
 collectfasttracks.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1241068775157510144
+# Reference: https://publicwww.com/websites/%22scriptalicious.info%22/
+
+scriptalicious.info
