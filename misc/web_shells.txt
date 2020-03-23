@@ -266,3 +266,8 @@ cxxz.php
 # Reference: https://pastebin.com/trRiwBKQ
 
 sh.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1241318536280227844
+
+shellcode.php
+shellcode.txt
