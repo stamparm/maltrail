@@ -362,6 +362,20 @@
 /out-1890736898.hta
 /out-531451995.hta
 
+# Reference: https://twitter.com/Rmy_Reserve/status/1241301496571953152
+
+/cfhkjkk.hta
+
+# Reference: https://twitter.com/FewAtoms/status/1241813291460067329
+
+/out-756898907.hta
+/out-1019569980.hta
+/out-1388663052.hta
+
+# Reference: https://twitter.com/malwrhunterteam/status/1241318536280227844
+
+/sol.hta
+
 # Generic
 
 /myrrem.hta
