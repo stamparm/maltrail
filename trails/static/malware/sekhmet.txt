@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/fbgwls245/status/1241179394405621760
+# Reference: https://app.any.run/tasks/a0df4f38-267a-465a-88e0-cc7fdbd17c91/
+
+http://185.82.126.81
+http://185.82.126.82
+http://185.82.126.83
+http://185.82.126.84
+http://185.82.126.85
+http://185.82.126.86
+http://185.82.126.87
+http://185.82.126.88
+http://185.82.126.89
+
+# Reference: https://twitter.com/demonslay335/status/1241215364048064513
+
+sekhmet.top
