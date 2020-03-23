@@ -896,6 +896,13 @@ sophosxl.net
 
 # Generic
 
+fe.core.pw
+gns1.core.pw
+gns2.core.pw
+mail4.itu.ch
+mail5.itu.ch
+mail8.itu.ch
+mail9.itu.ch
 l850.home
 bluecoat.com
 beautifultokio.ddns.net
