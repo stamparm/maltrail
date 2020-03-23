@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: mirage, miragefox
+
+# Reference: https://github.com/silence-is-best/c2db#miragefox
+# Reference: https://totalhash.cymru.com/analysis/?a40094b03f5ae4f4a4e7937277eda6c307b89bbf
+# Reference: https://totalhash.cymru.com/analysis/?fce5594e0deaa89bb3af93348d75b4b392f07dc9
+
+/result%3Fhl%3Den%26meta%3Dghumeaylnlfdxfircvscxggbwkfnqdu

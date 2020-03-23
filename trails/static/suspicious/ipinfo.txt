@@ -312,3 +312,7 @@ apps.game.qq.com/comm-htdocs/ip/get_ip.php
 # Reference: https://github.com/StrangerealIntel/malware-notes/blob/master/Ransomware/Ouroboros.md
 
 sfml-dev.org/ip-provider.php
+
+# Reference: https://www.virustotal.com/gui/file/e60b0b0e57ca395709aeae6016e39f4114c84272e32cf040f5d972372f212f08/detection
+
+sypexgeo.net

@@ -224,6 +224,10 @@ clubaina.site
 gilbert4u.london
 surdised.site
 
+# Reference: https://twitter.com/FaLconIntel/status/1241391431802994689
+
+tufgaming.blue
+
 # Generic
 
 /NlGkb4ivk.php
