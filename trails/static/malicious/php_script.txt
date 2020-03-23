@@ -1345,6 +1345,28 @@ tunacan-812.tk
 
 /8WFhndlp4soxNOGim5D2J0cYC9EBLtVyrU6R7ePuwjkMAqagKTv1.php
 
+# Reference: https://www.virustotal.com/gui/domain/tokai-lm.jp/relations
+
+/344sx.php
+/98989776.php
+
+# Reference: https://twitter.com/Rmy_Reserve/status/1241301496571953152
+
+/eweerew.php
+
+# Reference: https://www.virustotal.com/gui/file/d920f89a4d8ae2f2cc597779c57e515c0f9451a66ecdaeef35169f6d0a43a35d/detection
+
+/us1jdskjdshfkjehr.php
+
+# Reference: https://www.virustotal.com/gui/domain/ultraspeed.info/relations
+
+/momomoomomom.php
+/usksdjqjwjoweidjcslkm.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1241592719576829952
+
+/9epq78sao4h2v1jpywaj2tai.php
+
 # Generic
 
 /7328-dating-verification-card.php
