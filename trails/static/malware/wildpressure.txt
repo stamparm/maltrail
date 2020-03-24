@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/wildpressure-targets-industrial-in-the-middle-east/96360/
+# Reference: https://otx.alienvault.com/pulse/5e79e5da7843eb1da1390739
+
+http://37.59.87.172/page/view.php
+http://80.255.3.86/page/view.php
+upiserversys1212.com
