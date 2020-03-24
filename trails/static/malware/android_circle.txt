@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://news.drweb.com/show/?i=13740&lng=en
+# Reference: https://github.com/DoctorWebLtd/malware-iocs/blob/master/Android.Circle/README.adoc
+# Reference: https://www.virustotal.com/gui/ip-address/95.215.205.228/relations
+
+circle.brickdroid.ru
+circle.callerdroid.ru
+circle.cleandroid.ru
+circle.droidcandy.ru
+circle.droidp.ru
+circle.fallballdroid.ru
+circle.hardwalldroid.ru
+circle.wall2droid.ru
+circle.wall3droid.ru
+circle.walldroid.ru
