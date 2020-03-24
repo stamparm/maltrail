@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/IntezerLabs/status/1238090332639842304
+# Reference: https://www.virustotal.com/gui/domain/jave.xyz/relations
+# Reference: https://blog.netlab.360.com/icnanker-trojan-downloader-shc-en/
+# Reference: https://otx.alienvault.com/pulse/5e79157e4d241e9426a031f5
+
+8uc1.jave.xyz
+8uc2.ubtv.xyz
+8uch.jave.xyz
+jav.jave.xyz
+sys.jave.xyz
+ubt.ubtv.xyz
+wk1.jave.xyz
+xz.jave.xyz
