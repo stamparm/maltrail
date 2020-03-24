@@ -896,6 +896,8 @@ sophosxl.net
 
 # Generic
 
+rufus.ie
+sci-hub.tw
 fe.core.pw
 gns1.core.pw
 gns2.core.pw
