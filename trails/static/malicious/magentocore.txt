@@ -1795,3 +1795,9 @@ sucurl.net
 # Reference: https://www.virustotal.com/gui/domain/sucuri.pro/relations
 
 sucuri.pro
+
+# Reference: https://twitter.com/MBThreatIntel/status/1242538048044150784
+# Reference: https://www.virustotal.com/gui/domain/allegrolearnings.com/relations
+
+allegrolearnings.com/blogs/media/embed.min.js
+allegrolearnings.com/blogs/media/common.js
