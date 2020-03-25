@@ -1371,6 +1371,10 @@ tunacan-812.tk
 
 /53dd0276af1963ba832464402a418d85.php
 
+# Reference: https://isc.sans.edu/diary/25944
+
+/lndex.php
+
 # Generic
 
 /7328-dating-verification-card.php
