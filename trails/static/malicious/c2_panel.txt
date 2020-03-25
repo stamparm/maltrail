@@ -148,6 +148,10 @@
 
 /zin/WebPanel/
 
+# Reference: https://twitter.com/gorimpthon/status/1242842075202109440
+
+/webpanel1/
+
 # Generic
 
 /logz/auth.php
@@ -165,3 +169,6 @@
 /webpanel/auth.php
 /webpanel/api.php
 /webpanel/login.php
+/webpanel1/auth.php
+/webpanel1/api.php
+/webpanel1/login.php
