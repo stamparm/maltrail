@@ -376,6 +376,10 @@
 
 /sol.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1242812814668038151
+
+/out-1068156992.hta
+
 # Generic
 
 /myrrem.hta
