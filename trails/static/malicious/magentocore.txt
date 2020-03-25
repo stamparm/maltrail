@@ -1801,3 +1801,7 @@ sucuri.pro
 
 allegrolearnings.com/blogs/media/embed.min.js
 allegrolearnings.com/blogs/media/common.js
+
+# Reference: https://www.virustotal.com/gui/ip-address/161.117.236.58/relations
+
+jquerrycdn.xyz
