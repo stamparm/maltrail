@@ -1198,6 +1198,7 @@ nf5.no-ip.com
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
+51.la
 tradeaccess.ltd
 yldbt.com
 trackidea.xyz
