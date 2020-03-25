@@ -609,3 +609,8 @@ resolve.interland.com
 # Reference: https://twitter.com/NoceraInformat1/status/1222976385494519810
 
 89.207.131.21:53
+
+# Reference: https://www.bleepingcomputer.com/news/security/hackers-hijack-routers-dns-to-spread-malicious-covid-19-apps/
+
+109.234.35.230:53
+94.103.82.249:53
