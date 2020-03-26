@@ -609,10 +609,11 @@ def _process_packet(packet, sec, usec, ip_offset):
                                         else:
                                             if (sec - (_last_dns_exhaustion or 0)) > 60:
                                                 trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
-                                                if re.search(r"bl\b", trail) is None:  # generic check for DNSBLs (Note: alternative is to check whitelist)
-                                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "potential dns exhaustion (suspicious)", "(heuristic)"), packet)
-                                                    _dns_exhausted_domains.add(domain)
-                                                    _last_dns_exhaustion = sec
+                                                if re.search(r"bl\b", trail) is None:                                               # generic check for DNSBLs
+                                                    if not any(_ in subdomains for _ in ("wpad", "autodiscover", "_ldap._tcp")):    # generic check for local DNS resolvers
+                                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "potential dns exhaustion (suspicious)", "(heuristic)"), packet)
+                                                        _dns_exhausted_domains.add(domain)
+                                                        _last_dns_exhaustion = sec
 
                                             return
 

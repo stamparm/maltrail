@@ -215,6 +215,7 @@ kasserver.com
 sl-reverse.com
 t-com.hr
 tedata.net
+vkcache.com
 
 # to ignore in direct .exe downloads
 
@@ -896,6 +897,8 @@ sophosxl.net
 
 # Generic
 
+putvjernika.com
+tracker.empire-js.us
 rufus.ie
 sci-hub.tw
 fe.core.pw
