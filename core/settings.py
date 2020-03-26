@@ -10,7 +10,6 @@ import os
 import re
 import socket
 import stat
-import string
 import subprocess
 import sys
 
@@ -21,7 +20,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.18.74"
+VERSION = "0.18.75"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 IS_SENSOR = sys.argv[0].startswith("sensor")
@@ -111,6 +110,7 @@ CDN_RANGES = {}
 WHITELIST_HTTP_REQUEST_PATHS = ("fql", "yql", "ads", "../images/", "../themes/", "../design/", "../scripts/", "../assets/", "../core/", "../js/", "/gwx/")
 WHITELIST_UA_REGEX = r"AntiVir\-NGUpd|TMSPS|AVGSETUP|SDDS|Sophos|Symantec|internal dummy connection|Microsoft\-CryptoAPI"
 WHITELIST_LONG_DOMAIN_NAME_KEYWORDS = ("blogspot",)
+LOCAL_SUBDOMAIN_LOOKUPS = ("wpad", "autodiscover", "_ldap._tcp")
 SESSIONS = {}
 NO_SUCH_NAME_COUNTERS = {}  # this won't be (expensive) shared in multiprocessing run (hence, the threshold will effectively be n-times higher)
 SESSION_ID_LENGTH = 16

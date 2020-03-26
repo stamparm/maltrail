@@ -62,6 +62,7 @@ from core.settings import IGNORE_DNS_QUERY_SUFFIXES
 from core.settings import IPPROTO_LUT
 from core.settings import IS_WIN
 from core.settings import LOCALHOST_IP
+from core.settings import LOCAL_SUBDOMAIN_LOOKUPS
 from core.settings import MMAP_ZFILL_CHUNK_LENGTH
 from core.settings import MAX_RESULT_CACHE_ENTRIES
 from core.settings import NAME
@@ -610,7 +611,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                             if (sec - (_last_dns_exhaustion or 0)) > 60:
                                                 trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
                                                 if re.search(r"bl\b", trail) is None:                                               # generic check for DNSBLs
-                                                    if not any(_ in subdomains for _ in ("wpad", "autodiscover", "_ldap._tcp")):    # generic check for local DNS resolvers
+                                                    if not any(_ in subdomains for _ in LOCAL_SUBDOMAIN_LOOKUPS):                   # generic check for local DNS resolutions
                                                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "potential dns exhaustion (suspicious)", "(heuristic)"), packet)
                                                         _dns_exhausted_domains.add(domain)
                                                         _last_dns_exhaustion = sec
@@ -670,7 +671,9 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                                                         if NO_SUCH_NAME_COUNTERS[_][1] > NO_SUCH_NAME_PER_HOUR_THRESHOLD:
                                                             if _.startswith("*."):
-                                                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, "%s%s" % ("(%s)" % ','.join(item.replace(_[1:], "") for item in NO_SUCH_NAME_COUNTERS[_][2]), _[1:]), "excessive no such domain (suspicious)", "(heuristic)"), packet)
+                                                                trail = "%s%s" % ("(%s)" % ','.join(item.replace(_[1:], "") for item in NO_SUCH_NAME_COUNTERS[_][2]), _[1:])
+                                                                if not any(subdomain in trail for subdomain in LOCAL_SUBDOMAIN_LOOKUPS):  # generic check for local DNS resolutions
+                                                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "excessive no such domain (suspicious)", "(heuristic)"), packet)
                                                                 for item in NO_SUCH_NAME_COUNTERS[_][2]:
                                                                     try:
                                                                         del NO_SUCH_NAME_COUNTERS[item]

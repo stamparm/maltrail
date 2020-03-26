@@ -488,6 +488,7 @@ iutoic-dhaka.edu
 africanspicesafaris.com
 sample.com
 saol.com
+putvjernika.com
 
 # found as false positive on cybercrime-tracker.net
 
@@ -897,7 +898,6 @@ sophosxl.net
 
 # Generic
 
-putvjernika.com
 tracker.empire-js.us
 rufus.ie
 sci-hub.tw
