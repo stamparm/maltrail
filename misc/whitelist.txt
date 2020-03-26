@@ -215,6 +215,7 @@ kasserver.com
 sl-reverse.com
 t-com.hr
 tedata.net
+vkcache.com
 
 # to ignore in direct .exe downloads
 
@@ -487,6 +488,7 @@ iutoic-dhaka.edu
 africanspicesafaris.com
 sample.com
 saol.com
+putvjernika.com
 
 # found as false positive on cybercrime-tracker.net
 
@@ -896,6 +898,7 @@ sophosxl.net
 
 # Generic
 
+tracker.empire-js.us
 rufus.ie
 sci-hub.tw
 fe.core.pw
