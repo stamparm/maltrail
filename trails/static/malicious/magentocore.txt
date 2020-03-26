@@ -1811,3 +1811,7 @@ jquerrycdn.xyz
 # Reference: https://blog.malwarebytes.com/hacking-2/2020/03/criminals-hack-tupperware-website-with-credit-card-skimmer/
 
 deskofhelp.com
+
+# Reference: https://twitter.com/felixaime/status/1243083359212969984
+
+gocgle-analytics.com
