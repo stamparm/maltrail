@@ -489,6 +489,8 @@ africanspicesafaris.com
 sample.com
 saol.com
 putvjernika.com
+affordableunixhost.net
+steroidportal.com
 
 # found as false positive on cybercrime-tracker.net
 
@@ -1201,6 +1203,7 @@ nf5.no-ip.com
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
+lunrac.com
 51.la
 tradeaccess.ltd
 yldbt.com
