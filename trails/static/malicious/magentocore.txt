@@ -1805,3 +1805,13 @@ allegrolearnings.com/blogs/media/common.js
 # Reference: https://www.virustotal.com/gui/ip-address/161.117.236.58/relations
 
 jquerrycdn.xyz
+
+# Reference: https://twitter.com/securityaffairs/status/1242873730235277313
+# Reference: https://securityaffairs.co/wordpress/100449/hacking/tupperware-site-hacked.html
+# Reference: https://blog.malwarebytes.com/hacking-2/2020/03/criminals-hack-tupperware-website-with-credit-card-skimmer/
+
+deskofhelp.com
+
+# Reference: https://twitter.com/felixaime/status/1243083359212969984
+
+gocgle-analytics.com
