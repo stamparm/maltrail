@@ -1,0 +1,6 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=TrojanDownloader:Win32/Latot.A&ThreatID=-2147260762
+
+aru1004.org

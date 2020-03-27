@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/domain/get.flow-56.xyz/relations
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=hacktool:win32/kapahyku.a&ThreatID=2147707350
+# Reference: https://www.virustotal.com/gui/file/8ddce957bcdbf4feb07281059b926686a0f8c5d76bd68b6a894455e9e9766165/behavior/SNDBOX
+
+get.flow-56.xyz
+flee-33.xyz

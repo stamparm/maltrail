@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.bleepingcomputer.com/virus-removal/remove-extenbro-dns-changing-trojan
+# Reference: https://blog.malwarebytes.com/trojans/2019/07/extenbro-a-new-dns-changer-trojan-protecting-adware/
+
+45.86.180.227:53
+185.162.93.213:53
+116.203.6.218:53
+185.130.104.222:53

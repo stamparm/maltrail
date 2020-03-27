@@ -1,0 +1,41 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Backdoor:Win32/Farfli.I
+
+w.qq-uc.cn
+baoge.9966.org
+mmd178.cn
+oiuyt.net
+
+# Reference: https://www.virustotal.com/gui/file/4a9c646136c527e9669fcada5319678c77bd98218f77d8cce79c04ff475d3194/behavior/Tencent%20HABO
+
+cccd02.codns.com
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Backdoor:Win32/Farfli.AV&threatId=-2147286376
+
+hackxiaoben.3322.org
+
+# Reference: https://www.virustotal.com/gui/file/5418c6786bc04eb939a9febc8cfa0411f463fbf2a957189b2dc46ba3d5885652/behavior/VirusTotal%20Cuckoofork
+
+4263604.meibu.net
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Backdoor:Win32/Farfli.DA&threatId=-2147261103
+
+binbinkam.cn
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=TrojanDownloader:Win32/Farfli.K!bit&threatId=-2147249070
+
+cdn_server_word9500.xxus.us
+
+# Reference: https://www.virustotal.com/gui/file/24ecf8d68c313a9cff7c801eb8108b61f9bd5a6bfcb17434f71ab74d3d6b444a/behavior/VirusTotal%20Cuckoofork
+
+a2.qwsazx.com
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=TrojanDownloader:Win32/Farfli.C&threatId=-2147258877
+
+b1a23.meibu.net
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=TrojanDownloader:Win32/Farfli.E&threatId=-2147258594
+
+m1.yea.im
