@@ -380,6 +380,11 @@
 
 /out-1068156992.hta
 
+# Reference: https://twitter.com/FewAtoms/status/1243579932590161930
+
+/out-571924757.hta
+/out-756898907.hta
+
 # Generic
 
 /myrrem.hta
