@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.zscaler.com/blogs/research/lethic-botnet-returns-uses-realtek-identifier
+
+izuhjsn.com
+xkihjhx.com
+173.236.56.218:8706
+67.159.45.104:2904
+
+# Reference: https://www.f-secure.com/v-descs/trojan_w32_lethic.shtml
+
+93.190.139.161:7700
+
+# Reference: https://twitter.com/drole/status/205913588588756992
+
+184.154.211.34:7395
+69.175.118.210:7395
+173.236.31.226:36562

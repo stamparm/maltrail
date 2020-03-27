@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.bleepingcomputer.com/news/security/cryptomix-variant-named-cryptoshield-1-0-ransomware-distributed-by-exploit-kits/
+
+http://45.76.81.110/test_site_scripts/moduls/get_info.php
+
+# Reference: https://www.virustotal.com/gui/file/4206a7d3088501d3d8a7fe024926fb073ac010a743de00c1a834f9995815e779/behavior/Dr.Web%20vxCube
+
+http://45.63.115.214/images/gif_png/gif.php
