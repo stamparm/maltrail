@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.coresecurity.com/sites/default/private-files/publications/2017/03/Damballa_Report_IMDDOS.pdf
+
+dns.ddos.im
+win2003ddos.3322.org
+woshindi.3322.org
+pk518.3322.org
+huanjue6369029.3322.org
+qq603535.3322.org
+qq188588.3322.org
+hjff.3322.org
+198600.3322.org
+ankankan.3322.org
+yinn.3322.org

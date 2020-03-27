@@ -125,6 +125,11 @@ http://82.146.46.180
 
 http://176.57.220.16
 
+# Reference: https://isc.sans.edu/forums/diary/CryptoShield+Ransomware+from+Rig+EK/22047/Hancitor/Pony
+
+need.southpadreforsale.com
+star.southpadrefishingguide.com
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
