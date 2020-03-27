@@ -1321,6 +1321,11 @@ Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.1)
 
 vkTSNOQeMcMuTaPWpQtJYbp
 
+# Reference: http://contagiodump.blogspot.com/2012/04/osxflashbackk-sample-mac-os-malware.html (User-Agent info)
+# Reference: https://www.intego.com/mac-security-blog/flashback-botnet-is-adrift/ (Version table)
+
+sv:\d; id:[a-z0-9]{8}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{12}
+
 # Misc
 
 information_schema
