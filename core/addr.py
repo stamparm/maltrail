@@ -32,3 +32,34 @@ def compress_ipv6(address):
 def inet_ntoa6(packed_ip):
     _ = packed_ip.hex() if hasattr(packed_ip, "hex") else packed_ip.encode("hex")
     return compress_ipv6(':'.join(_[i:i + 4] for i in xrange(0, len(_), 4)))
+
+def expand_range(value):
+    retval = []
+    value = value.strip()
+
+    match = re.match(r"(\d+\.\d+\.\d+\.\d+)/(\d+)", value)
+    if match:
+        prefix, mask = match.groups()
+        mask = int(mask)
+        assert(mask <= 32)
+
+        start_int = addr_to_int(prefix) & make_mask(mask)
+        end_int = start_int | ((1 << 32 - mask) - 1)
+        if 0 <= end_int - start_int <= 65536:
+            address = start_int
+            while start_int <= address <= end_int:
+                retval.append(int_to_addr(address))
+                address += 1
+
+    elif '-' in value:
+        start, end = value.split('-')
+        start_int, end_int = addr_to_int(start), addr_to_int(end)
+        current = start_int
+        while start_int <= current <= end_int:
+            retval.append(int_to_addr(current))
+            current += 1
+
+    else:
+        retval.append(value)
+
+    return retval

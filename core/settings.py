@@ -14,13 +14,14 @@ import subprocess
 import sys
 
 from core.addr import addr_to_int
+from core.addr import expand_range
 from core.addr import make_mask
 from core.attribdict import AttribDict
 from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.18.82"
+VERSION = "0.18.83"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 IS_SENSOR = sys.argv[0].startswith("sensor")
@@ -250,7 +251,13 @@ def read_config(config_file):
                 continue
 
             if array and line.startswith(' '):
-                config[array].append(line.strip())
+                line = line.strip()
+                if array == "IP_ALIASES" and any(_ in line.split(':')[0] for _ in ('/', '-')):
+                    for addr in expand_range(line.split(':')[0]):
+                        config[array].append("%s:%s" % (addr, line.split(':', 1)[-1]))
+                else:
+                    config[array].append(line)
+
                 continue
             else:
                 array = None
