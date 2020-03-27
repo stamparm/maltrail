@@ -1326,6 +1326,10 @@ vkTSNOQeMcMuTaPWpQtJYbp
 
 sv:\d; id:[a-z0-9]{8}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{12}
 
+# Reference: https://blog.reversinglabs.com/blog/unpacking-kwampirs-rat
+
+ItIsMe
+
 # Misc
 
 information_schema
