@@ -152,6 +152,12 @@
 
 /webpanel1/
 
+# Reference: https://www.virustotal.com/gui/file/e394e53e53cd9047d6cff184ac333ef7698a34b777ae3aac82c2c669ef661dfe/detection
+
+/webpanel/getcommands.php
+/webpanel/getsettings.php
+/webpanel/report.php
+
 # Generic
 
 /logz/auth.php
