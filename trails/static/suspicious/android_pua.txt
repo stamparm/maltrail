@@ -36,3 +36,13 @@ admob.linkpc.net
 
 easyphonetrack.com
 /spy_phone/test_connection.php
+
+# Reference: https://www.virustotal.com/gui/file/e1288cb54727e673ffbd90ef4fcda2079d9f8a3d7b22b54b4e4726864462987c/detection
+# Reference: https://www.virustotal.com/gui/file/47ea88989bc1b1e90ea66d535c8c412994dd6eddaee82a4b69d3cd0922d7b219/detection
+# Reference: https://www.virustotal.com/gui/file/4bd5d41f9008f2e83a4b20f1104b726d43396eda52466ac3a066f90e432fa509/detection
+
+[a-z]{1}\.appjiagu\.com
+/ad-service/ad/mark
+/jiagu/mark/msg
+/jiagu/msgs
+/jiagu/t/infos
