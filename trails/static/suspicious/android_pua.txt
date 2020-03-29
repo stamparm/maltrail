@@ -44,5 +44,6 @@ easyphonetrack.com
 [a-z]{1}\.appjiagu\.com
 /ad-service/ad/mark
 /jiagu/mark/msg
+/jiagu/mark/upgrade
 /jiagu/msgs
 /jiagu/t/infos
