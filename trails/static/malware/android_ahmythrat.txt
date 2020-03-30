@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2019/08/22/first-spyware-android-ahmyth-google-play/
+
+radiobalouch.com
+/Debugging/process/process/resolving/system/ReadAllTracks.php
+
+# Reference: https://twitter.com/LukasStefanko/status/1244584890361839616
+
+193.161.193.99:27229
