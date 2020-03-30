@@ -509,7 +509,7 @@ By using filter `ipinfo` all potentially infected computers in our organization'
 
 #### Suspicious direct file downloads
 
-Maltrail tracks all suspicious direct file download attempts (e.g. `.apk`, `.chm`, `.egg`, `.exe`, `.hta`, `.hwp`, `.ps1`, `.scr` and `.sct` file extensions). This can trigger lots of false positives, but eventually could help in reconstruction of the chain of infection (Note: legitimate service providers, like Google, usually use encrypted HTTPS to perform this kind of downloads):
+Maltrail tracks all suspicious direct file download attempts (e.g. `.apk`, `.chm`, `.dll`, `.egg`, `.exe`, `.hta`, `.hwp`, `.ps1`, `.scr` and `.sct` file extensions). This can trigger lots of false positives, but eventually could help in reconstruction of the chain of infection (Note: legitimate service providers, like Google, usually use encrypted HTTPS to perform this kind of downloads):
 
 ![Direct .exe download](https://i.imgur.com/jr5BS1h.png)
 
