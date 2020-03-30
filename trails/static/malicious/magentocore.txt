@@ -1815,3 +1815,7 @@ deskofhelp.com
 # Reference: https://twitter.com/felixaime/status/1243083359212969984
 
 gocgle-analytics.com
+
+# Reference: https://twitter.com/felixaime/status/1243561946982625284
+
+oldworldaccents.net/js/embed.min.js
