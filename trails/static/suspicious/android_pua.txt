@@ -30,3 +30,20 @@ freevideo.publicvm.com
 # Reference: https://www.virustotal.com/gui/file/af197de4ef661e2c0f416b64d2681afe77d9236c9d0cab447d89daadeb9e281c/detection
 
 admob.linkpc.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1243800098053767168
+# Reference: https://www.virustotal.com/gui/file/0b336a74a85635956783e20b2546df1629b82777eacac25c42de6232aff46623/detection
+
+easyphonetrack.com
+/spy_phone/test_connection.php
+
+# Reference: https://www.virustotal.com/gui/file/e1288cb54727e673ffbd90ef4fcda2079d9f8a3d7b22b54b4e4726864462987c/detection
+# Reference: https://www.virustotal.com/gui/file/47ea88989bc1b1e90ea66d535c8c412994dd6eddaee82a4b69d3cd0922d7b219/detection
+# Reference: https://www.virustotal.com/gui/file/4bd5d41f9008f2e83a4b20f1104b726d43396eda52466ac3a066f90e432fa509/detection
+
+[a-z]{1}\.appjiagu\.com
+/ad-service/ad/mark
+/jiagu/mark/msg
+/jiagu/mark/upgrade
+/jiagu/msgs
+/jiagu/t/infos
