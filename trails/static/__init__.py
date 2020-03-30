@@ -81,6 +81,8 @@ def fetch():
                     elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", line):
                         retval[line] = (__info__, __reference__)
                     else:
+                        if line in retval and __info__ != retval[line][0]:
+                            print line, __info__, retval[line][0]
                         retval[line.strip('.')] = (__info__, __reference__)
 
     return retval
