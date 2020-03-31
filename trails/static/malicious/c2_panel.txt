@@ -160,6 +160,11 @@
 
 # Generic
 
+/admin_123/auth.php
+/admin_123/index.php
+/admin_123/gate.php
+/admin_123/login.php
+/admin_123/page.php
 /logz/auth.php
 /logz/login.php
 /panel/gate.php
