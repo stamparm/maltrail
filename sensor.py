@@ -301,7 +301,9 @@ def _process_packet(packet, sec, usec, ip_offset):
                     _ = _last_logged_syn
                     _last_logged_syn = _last_syn
                     if _ != _last_logged_syn:
-                        trail = dst_ip if dst_ip in trails else "%s:%s" % (dst_ip, dst_port)
+                        trail = "%s:%s" % (dst_ip, dst_port)
+                        if trail not in trails:
+                            trail = dst_ip
                         if not any(_ in trails[trail][0] for _ in ("attacker",)) and not ("parking site" in trails[trail][0] and dst_port not in (80, 443)):
                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.IPORT, trail, trails[trail][0], trails[trail][1]), packet)
 
@@ -309,7 +311,9 @@ def _process_packet(packet, sec, usec, ip_offset):
                     _ = _last_logged_syn
                     _last_logged_syn = _last_syn
                     if _ != _last_logged_syn:
-                        trail = src_ip if src_ip in trails else "%s:%s" % (src_ip, src_port)
+                        trail = "%s:%s" % (src_ip, src_port)
+                        if trail not in trails:
+                            trail = src_ip
                         if not any(_ in trails[trail][0] for _ in ("malware",)):
                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.IPORT, trail, trails[trail][0], trails[trail][1]), packet)
 
