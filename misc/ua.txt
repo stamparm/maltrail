@@ -1330,6 +1330,10 @@ sv:\d; id:[a-z0-9]{8}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{12}
 
 ItIsMe
 
+# Reference: https://twitter.com/bad_packets/status/1245028326705512449
+
+Welcome
+
 # Misc
 
 information_schema
