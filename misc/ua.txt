@@ -1336,6 +1336,11 @@ ItIsMe
 
 Welcome
 
+# Reference: # Reference: https://twitter.com/James_inthe_box/status/1245427754977263617
+# Reference: https://doc.emergingthreats.net/bin/view/Main/2025241
+
+Embarcadero URI Client/1.0
+
 # Misc
 
 information_schema
