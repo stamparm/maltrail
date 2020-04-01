@@ -254,6 +254,11 @@ api.sypexgeo.net
 
 codeluxsoftware.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/89.39.105.12/relations
+# Note: used by many different malware strains (ipinfo service used exclusively by malware)
+
+http://89.39.105.12/ip.shtml
+
 # Reference: https://github.com/MISP/misp-warninglists/blob/master/lists/whats-my-ip/list.json
 
 checkip-waw.dyndns.com
