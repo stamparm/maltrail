@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/GrujaRS/status/1245461942040506379
+# Reference: https://www.virustotal.com/gui/file/87a5e61b8ec6ecd53b16ebdc09a9bc8fd4b38dc57605d8851a2dc42b2a0cbe8d/detection
+
+dey574i76jyfd75itvu6r875.altervista.org
+kugiutftyi67fhjoiu9897ty.altervista.org
+fi7t67rfug8i6657476fo8yy.altervista.org
+vctrrte5htfee65yfrtweyu7.altervista.org
