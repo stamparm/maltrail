@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Mal~Tobor-A/detailed-analysis.aspx
+# Reference: https://www.virustotal.com/gui/file/f98c41195bd8248ebb0e7ed91ba2c1e89e9fc7ac62343749f367e358af8684ad/behavior/VirusTotal%20Jujubox
+
+fishcontv.freetcp.com
+536543.fateback.com
+ftp06.freetcp.com
+6536562.fateback.com
+ftp05.freetcp.com

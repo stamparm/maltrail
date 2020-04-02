@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=TrojanDropper%3AWin32%2FWoozlist.A
+# Reference: https://totalhash.cymru.com/analysis/?a4991d929b1da26bb806df18a63ac4163eff767e
+# Reference: https://www.virustotal.com/gui/file/14c7d05e10d3208946193f7812745e11e40b2b7b0f50913bfb374bc6715a9027/behavior/VirusTotal%20Cuckoofork
+# Reference: https://www.virustotal.com/gui/file/9984777295636486b823fb1a441eb3bad74c58fbc295c135d411e367df3a1587/behavior/QiAnXin%20RedDrip
+
+ptk.fhdlq.com
+pTK.fhdlq.com
+b.fhdlq.com
+c.fhdlq.com
+a.fhdlq.com
+47.75.69.19:1536
+47.75.69.19:256
