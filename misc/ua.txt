@@ -1280,9 +1280,11 @@ Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; BOIE9;ENXA)
 Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; NP06)
 
 # Reference: https://twitter.com/bad_packets/status/1236005753800048641
+# Reference: https://twitter.com/bad_packets/status/1245408005358628864
 
 xtc
 xtc bot
+xtc botnet
 
 # Reference: https://twitter.com/bad_packets/status/1233226684196773888
 
@@ -1333,6 +1335,11 @@ ItIsMe
 # Reference: https://twitter.com/bad_packets/status/1245028326705512449
 
 Welcome
+
+# Reference: # Reference: https://twitter.com/James_inthe_box/status/1245427754977263617
+# Reference: https://doc.emergingthreats.net/bin/view/Main/2025241
+
+Embarcadero URI Client/1.0
 
 # Misc
 
