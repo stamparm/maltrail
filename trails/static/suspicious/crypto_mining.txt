@@ -371,3 +371,10 @@ minexmr.com
 37.187.154.79:5555
 37.59.54.205:5555
 37.59.55.60:5555
+
+# Reference: https://s.tencent.com/research/report/948.html (Paragraph 6)
+# Reference: https://otx.alienvault.com/pulse/5e863edb03f9ddbc8bc15b60
+
+103.195.4.139:443
+178.128.108.158:443
+68.183.182.120:443
