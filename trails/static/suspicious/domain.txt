@@ -4958,14 +4958,6 @@ ziraat-helpdesk.com
 
 piytrwd.com
 
-# Reference: https://www.virustotal.com/gui/domain/5b6b7b.ru/relations
-
-5b6b7b.ru
-
-# Reference: https://www.virustotal.com/gui/domain/ruisgood.ru/relations
-
-ruisgood.ru
-
 # Reference: https://silascutler.blogspot.com/2019/11/fresh-plugx-october-2019.html
 # Reference: https://otx.alienvault.com/pulse/5dd2b17f1b7dcef51f0ed38d
 
