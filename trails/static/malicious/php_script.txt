@@ -1375,6 +1375,10 @@ tunacan-812.tk
 
 /b7eb90271b3f54.php
 
+# Reference: https://twitter.com/DynamicAnalysis/status/1245437394473582593
+
+/wp-cryn.php
+
 # Generic
 
 /7328-dating-verification-card.php
