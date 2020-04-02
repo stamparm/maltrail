@@ -228,6 +228,11 @@ surdised.site
 
 tufgaming.blue
 
+# Reference: https://twitter.com/AvastThreatLabs/status/1245675017075113985
+
+corvir.london
+covid19onlineinfo.com
+
 # Generic
 
 /NlGkb4ivk.php
