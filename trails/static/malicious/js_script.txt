@@ -999,3 +999,8 @@ collectfasttracks.com
 # Reference: https://publicwww.com/websites/%22scriptalicious.info%22/
 
 scriptalicious.info
+
+# Reference: https://twitter.com/blackorbird/status/1245597745403969544
+
+/t0uch/tou64.js
+/t0uch/tou86.js
