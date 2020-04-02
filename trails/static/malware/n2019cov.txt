@@ -1,0 +1,8 @@
+  
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://otx.alienvault.com/pulse/5e84a19b9029abd6ac44049f
+
+2019-ncov-2020.com.preview.services
+n2019cov.000webhostapp.com
