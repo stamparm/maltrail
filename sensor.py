@@ -561,7 +561,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                     _ = _last_logged_udp
                     _last_logged_udp = _last_udp
                     if _ != _last_logged_udp:
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, trail, trails[trail][0], trails[trail][1]), packet)
+                        if not any(_ in trails[trail][0] for _ in ("malware",)):
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, trail, trails[trail][0], trails[trail][1]), packet)
 
             else:
                 dns_data = ip_data[iph_length + 8:]
