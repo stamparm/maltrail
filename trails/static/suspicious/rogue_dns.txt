@@ -1,48 +1,6 @@
 # Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
-# Reference: https://securelist.com/roaming-mantis-part-iv/90332/
-# Reference: https://twitter.com/ninoseki/status/1106842790351106048
-# Reference: https://twitter.com/ninoseki/status/1150379897820332032
-# Reference: https://twitter.com/ninoseki/status/1127109264877600768
-# Reference: https://drive.google.com/file/d/12TaMKqqjkr_r3iq3LbPcGc6LKv2k1Hmw/view
-# Reference: https://twitter.com/ninoseki/status/1156038231172894721
-# Reference: https://twitter.com/ZeroCERT/status/1118840257334525952
-# Reference: https://www.facebook.com/zerocert/posts/1143176292521769 (Korean)
-# Reference: https://twitter.com/ninoseki/status/1230280519771774976
-
-1.53.252.164:53
-1.53.252.215:53
-1.53.252.213:53
-1.53.252.214:53
-1.171.160.155:53
-1.171.166.13:53
-1.171.175.119:53
-1.171.46.86:53
-118.30.28.38:53
-118.30.28.39:53
-118.168.200.231:53
-125.212.235.130:53
-125.212.235.131:53
-128.14.6.12:53
-128.14.6.13:53
-171.244.3.110:53
-171.244.3.111:53
-171.244.33.114:53
-171.244.33.116:53
-220.136.110.179:53
-42.112.35.45:53
-42.112.35.46:53
-42.112.35.47:53
-42.112.35.48:53
-42.112.35.49:53
-42.112.35.50:53
-42.112.35.51:53
-42.112.35.52:53
-42.112.35.53:53
-42.112.35.54:53
-42.112.35.55:53
-
 # Reference: https://twitter.com/bad_packets/status/1079251375987425280
 
 66.70.173.48:53
@@ -108,11 +66,6 @@ ns2.firstdnshoster.com
 217.12.210.54:53
 91.217.137.37:53
 
-# Reference: https://twitter.com/ninoseki/status/1144557737516232705
-
-118.30.28.38:53
-118.30.28.39:53
-
 # Reference: https://twitter.com/MetallicaMVP/status/1148919883255750656
 # Reference: https://forums.malwarebytes.com/topic/249242-removal-instructions-for-extenbro/
 
@@ -129,15 +82,12 @@ ns2.firstdnshoster.com
 
 # Reference: https://www.platinbilisim.com.tr/TR/Medya/Duyurular/dikkat-ghost-dns-261 (Turkish)
 # Reference: https://blog.netlab.360.com/70-different-types-of-home-routers-all-together-100000-are-being-hijacked-by-ghostdns-en/
-# Reference: https://twitter.com/ninoseki/status/1055224900829491200
 
 139.60.162.188:53
 139.60.162.201:53
 144.22.104.185:53
 173.82.168.104:53
 18.223.2.98:53
-185.70.186.4:53
-185.70.186.7:53
 192.99.187.193:53
 198.27.121.241:53
 200.196.240.104:53
@@ -414,10 +364,6 @@ ns2.firstdnshoster.com
 
 46.105.86.80:53
 
-# Reference: https://twitter.com/ninoseki/status/1161151559100588032
-
-158.69.94.9:53
-
 # Reference: https://github.com/reaperb0t/GhostDNS/blob/master/Remote_DNS_Changing_Exploits_not_GHOSTDNS_specific/37214.txt
 
 133.71.33.7:53
@@ -425,10 +371,6 @@ ns2.firstdnshoster.com
 # Reference: https://github.com/reaperb0t/GhostDNS/blob/master/Remote_DNS_Changing_Exploits_not_GHOSTDNS_specific/42197.sh
 
 133.7.133.7:53
-
-# Reference: https://twitter.com/ninoseki/status/1128573489667907586
-
-162.241.224.56:53
 
 # Reference: https://twitter.com/david_jursa/status/1119573958095974400
 
@@ -443,15 +385,6 @@ ns2.firstdnshoster.com
 
 65.181.123.142:53
 65.181.123.143:53
-
-# Reference: https://twitter.com/ninoseki/status/1073152249969336320
-
-144.217.223.218:53
-35.247.250.124:53
-
-# Reference: https://twitter.com/ninoseki/status/1047697757731864576
-
-18.191.81.137:53
 
 # Reference: https://twitter.com/strayanmegaman/status/1001580761684717568
 # Reference: https://www.bitdefender.com/box/blog/iot-news/800000-draytek-routers-risk-dns-hijacking-attack-update-firmware/
@@ -553,10 +486,6 @@ ns2.dnshost.ga
 91.132.139.183:53
 91.132.139.254:53
 
-# Reference: https://twitter.com/ninoseki/status/1202216201700757504
-
-185.243.114.216:53
-
 # Reference: https://twitter.com/david_jursa/status/1172522037254008833
 
 77.95.229.240:53
@@ -596,15 +525,6 @@ ns4.mmfasi.com
 resolve.cloudipnameserver.com
 resolve.cloudnameservice.com
 resolve.interland.com
-
-# Reference: https://twitter.com/ninoseki/status/1236440221194969089
-
-118.30.28.40:53
-118.30.28.41:53
-125.212.235.130:53
-125.212.235.131:53
-125.212.235.132:53
-125.212.235.133:53
 
 # Reference: https://twitter.com/NoceraInformat1/status/1222976385494519810
 
