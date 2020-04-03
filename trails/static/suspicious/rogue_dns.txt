@@ -1,47 +1,6 @@
 # Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
-# Reference: https://securelist.com/roaming-mantis-part-iv/90332/
-# Reference: https://twitter.com/ninoseki/status/1106842790351106048
-# Reference: https://twitter.com/ninoseki/status/1150379897820332032
-# Reference: https://twitter.com/ninoseki/status/1127109264877600768
-# Reference: https://drive.google.com/file/d/12TaMKqqjkr_r3iq3LbPcGc6LKv2k1Hmw/view
-# Reference: https://twitter.com/ninoseki/status/1156038231172894721
-# Reference: https://twitter.com/ZeroCERT/status/1118840257334525952
-# Reference: https://www.facebook.com/zerocert/posts/1143176292521769 (Korean)
-# Reference: https://twitter.com/ninoseki/status/1230280519771774976
-
-1.53.252.164:53
-1.53.252.215:53
-1.53.252.213:53
-1.53.252.214:53
-1.171.160.155:53
-1.171.166.13:53
-1.171.175.119:53
-1.171.46.86:53
-118.30.28.38:53
-118.30.28.39:53
-118.168.200.231:53
-125.212.235.130:53
-125.212.235.131:53
-128.14.6.12:53
-128.14.6.13:53
-171.244.3.110:53
-171.244.3.111:53
-171.244.33.114:53
-171.244.33.116:53
-220.136.110.179:53
-42.112.35.45:53
-42.112.35.46:53
-42.112.35.47:53
-42.112.35.48:53
-42.112.35.49:53
-42.112.35.50:53
-42.112.35.51:53
-42.112.35.52:53
-42.112.35.53:53
-42.112.35.54:53
-42.112.35.55:53
 
 # Reference: https://twitter.com/bad_packets/status/1079251375987425280
 
@@ -107,11 +66,6 @@ ns2.firstdnshoster.com
 188.165.200.156:53
 217.12.210.54:53
 91.217.137.37:53
-
-# Reference: https://twitter.com/ninoseki/status/1144557737516232705
-
-118.30.28.38:53
-118.30.28.39:53
 
 # Reference: https://twitter.com/MetallicaMVP/status/1148919883255750656
 # Reference: https://forums.malwarebytes.com/topic/249242-removal-instructions-for-extenbro/
@@ -401,10 +355,6 @@ ns2.firstdnshoster.com
 112.33.13.11:53
 120.76.249.59:53
 
-# Reference: https://twitter.com/ninoseki/status/1157110166086569985
-
-185.205.210.23:53
-
 # Reference: https://security.stackexchange.com/questions/181328/did-i-just-get-dns-hijacked
 # Reference: https://www.virustotal.com/gui/ip-address/185.183.96.174/details
 
@@ -426,10 +376,6 @@ ns2.firstdnshoster.com
 
 133.7.133.7:53
 
-# Reference: https://twitter.com/ninoseki/status/1128573489667907586
-
-162.241.224.56:53
-
 # Reference: https://twitter.com/david_jursa/status/1119573958095974400
 
 172.245.211.58:53
@@ -438,20 +384,6 @@ ns2.firstdnshoster.com
 # Reference: https://twitter.com/MichaelMburu_/status/1119243257203048448
 
 172.27.197.232:53
-
-# Reference: https://twitter.com/ninoseki/status/1104181886824243200
-
-65.181.123.142:53
-65.181.123.143:53
-
-# Reference: https://twitter.com/ninoseki/status/1073152249969336320
-
-144.217.223.218:53
-35.247.250.124:53
-
-# Reference: https://twitter.com/ninoseki/status/1047697757731864576
-
-18.191.81.137:53
 
 # Reference: https://twitter.com/strayanmegaman/status/1001580761684717568
 # Reference: https://www.bitdefender.com/box/blog/iot-news/800000-draytek-routers-risk-dns-hijacking-attack-update-firmware/
@@ -505,10 +437,6 @@ ns2.firstdnshoster.com
 ns1.dnshost.ga
 ns2.dnshost.ga
 
-# Reference: https://twitter.com/ninoseki/status/1164163472445173760
-
-38.91.106.137:53
-
 # Reference: https://twitter.com/david_jursa/status/1134355920639660037
 
 80.82.77.166:53
@@ -553,10 +481,6 @@ ns2.dnshost.ga
 91.132.139.183:53
 91.132.139.254:53
 
-# Reference: https://twitter.com/ninoseki/status/1202216201700757504
-
-185.243.114.216:53
-
 # Reference: https://twitter.com/david_jursa/status/1172522037254008833
 
 77.95.229.240:53
@@ -597,15 +521,6 @@ resolve.cloudipnameserver.com
 resolve.cloudnameservice.com
 resolve.interland.com
 
-# Reference: https://twitter.com/ninoseki/status/1236440221194969089
-
-118.30.28.40:53
-118.30.28.41:53
-125.212.235.130:53
-125.212.235.131:53
-125.212.235.132:53
-125.212.235.133:53
-
 # Reference: https://twitter.com/NoceraInformat1/status/1222976385494519810
 
 89.207.131.21:53
@@ -614,12 +529,3 @@ resolve.interland.com
 
 109.234.35.230:53
 94.103.82.249:53
-
-# Reference: https://twitter.com/ninoseki/status/1246006041965281281
-
-185.232.65.172:53
-185.232.65.173:53
-185.232.65.174:53
-185.232.65.175:53
-185.232.65.176:53
-185.232.65.177:53
