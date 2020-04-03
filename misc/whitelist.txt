@@ -900,6 +900,7 @@ sophosxl.net
 
 # Generic
 
+seagull.ddns.net
 tracker.empire-js.us
 rufus.ie
 sci-hub.tw
