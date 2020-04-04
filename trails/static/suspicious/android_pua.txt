@@ -47,3 +47,7 @@ easyphonetrack.com
 /jiagu/mark/upgrade
 /jiagu/msgs
 /jiagu/t/infos
+
+# Reference: https://www.virustotal.com/gui/domain/okyesmobi.com/relations
+
+okyesmobi.com
