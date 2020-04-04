@@ -1819,3 +1819,7 @@ gocgle-analytics.com
 # Reference: https://twitter.com/felixaime/status/1243561946982625284
 
 oldworldaccents.net/js/embed.min.js
+
+# Reference: https://www.virustotal.com/gui/domain/google-analytics.gq/relations
+
+google-analytics.gq
