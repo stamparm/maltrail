@@ -55,3 +55,4 @@ tor4pay.com
 pay4tor.com
 torsona.com
 onion.pet
+darknet.to
