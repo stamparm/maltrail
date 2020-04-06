@@ -321,3 +321,7 @@ sfml-dev.org/ip-provider.php
 # Reference: https://www.virustotal.com/gui/file/e60b0b0e57ca395709aeae6016e39f4114c84272e32cf040f5d972372f212f08/detection
 
 sypexgeo.net
+
+# Reference: https://www.virustotal.com/gui/file/d6cda4b65efa7136a6c269f681196aa63935c93d959dbb9bdf338ba6ed69b5d6/detection
+
+ip-adress.com
