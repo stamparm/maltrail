@@ -40,10 +40,33 @@ easyphonetrack.com
 # Reference: https://www.virustotal.com/gui/file/e1288cb54727e673ffbd90ef4fcda2079d9f8a3d7b22b54b4e4726864462987c/detection
 # Reference: https://www.virustotal.com/gui/file/47ea88989bc1b1e90ea66d535c8c412994dd6eddaee82a4b69d3cd0922d7b219/detection
 # Reference: https://www.virustotal.com/gui/file/4bd5d41f9008f2e83a4b20f1104b726d43396eda52466ac3a066f90e432fa509/detection
+# Reference: https://www.virustotal.com/gui/ip-address/103.230.236.33/relations
+# Reference: https://www.virustotal.com/gui/file/adee9a56c951603db3f529c60c9b3f33bb3ebb36de0e14357b68bbfc1cb73dca/detection
 
+103.230.236.33:7002
+103.230.236.33:7003
+108.177.126.188:5228
+115.231.99.251:5224
+117.121.49.79:7001
+118.89.97.82:8000
+121.46.20.44:7006
+121.46.30.54:7000
+124.160.158.19:5224
+153.37.235.46:5287
+183.131.1.79:5224
+183.232.25.180:7000
+183.232.25.185:7002
+203.205.146.122:14000
+210.14.153.100:7001
+43.247.88.117:7009
+47.99.133.113:8726
 [a-z]{1}\.appjiagu\.com
 /ad-service/ad/mark
 /jiagu/mark/msg
 /jiagu/mark/upgrade
 /jiagu/msgs
 /jiagu/t/infos
+
+# Reference: https://www.virustotal.com/gui/domain/okyesmobi.com/relations
+
+okyesmobi.com
