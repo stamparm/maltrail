@@ -190,6 +190,13 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
                 result = True
                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[_][0], trails[_][1]), packet)
 
+        elif query.endswith(".ip-adress.com"):  # Reference: https://www.virustotal.com/gui/domain/ip-adress.com/relations
+            _ = '.'.join(parts[:-2])
+            trail = "%s(.ip-adress.com)" % _
+            if _ in trails:
+                result = True
+                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[_][0], trails[_][1]), packet)
+
         if not result:
             for i in xrange(0, len(parts)):
                 domain = '.'.join(parts[i:])
