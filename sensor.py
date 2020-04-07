@@ -107,6 +107,7 @@ _locks = AttribDict()
 _multiprocessing = None
 _n = None
 _result_cache = LRUDict(MAX_RESULT_CACHE_ENTRIES)
+_local_cache = {}
 _last_syn = None
 _last_logged_syn = None
 _last_udp = None
@@ -401,17 +402,22 @@ def _process_packet(packet, sec, usec, ip_offset):
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "potential proxy probe (suspicious)", "(heuristic)"), packet)
                         return
                     elif "://" in path:
-                        url = path.split("://", 1)[1]
+                        key = "code execution"
+                        if key not in _local_cache:
+                            _local_cache[key] = next(_[1] for _ in SUSPICIOUS_HTTP_REQUEST_REGEXES if "code execution" in _[0])
 
-                        if '/' not in url:
-                            url = "%s/" % url
+                        if re.search(_local_cache[key], path, re.I) is None:    # NOTE: to prevent malware domain FPs in case of outside scanners
+                            url = path.split("://", 1)[1]
 
-                        host, path = url.split('/', 1)
-                        if host.endswith(":80"):
-                            host = host[:-3]
-                        path = "/%s" % path
-                        proxy_domain = host.split(':')[0]
-                        _check_domain(proxy_domain, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, packet)
+                            if '/' not in url:
+                                url = "%s/" % url
+
+                            host, path = url.split('/', 1)
+                            if host.endswith(":80"):
+                                host = host[:-3]
+                            path = "/%s" % path
+                            proxy_domain = host.split(':')[0]
+                            _check_domain(proxy_domain, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, packet)
                     elif method == "CONNECT":
                         if '/' in path:
                             host, path = path.split('/', 1)
