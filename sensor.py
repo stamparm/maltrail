@@ -402,11 +402,13 @@ def _process_packet(packet, sec, usec, ip_offset):
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "potential proxy probe (suspicious)", "(heuristic)"), packet)
                         return
                     elif "://" in path:
+                        unquoted_path = _urllib.parse.unquote(path)
+
                         key = "code execution"
                         if key not in _local_cache:
                             _local_cache[key] = next(_[1] for _ in SUSPICIOUS_HTTP_REQUEST_REGEXES if "code execution" in _[0])
 
-                        if re.search(_local_cache[key], path, re.I) is None:    # NOTE: to prevent malware domain FPs in case of outside scanners
+                        if re.search(_local_cache[key], unquoted_path, re.I) is None:    # NOTE: to prevent malware domain FPs in case of outside scanners
                             url = path.split("://", 1)[1]
 
                             if '/' not in url:
@@ -496,7 +498,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             return
 
                         if config.USE_HEURISTICS:
-                            match = re.search(r"\bX-Forwarded-For:\s*([0-9.]+)", packet, re.I)
+                            match = re.search(r"\bX-Forwarded-For:\s*([0-9.]+)".encode(), packet, re.I)
                             if match:
                                 src_ip = "%s,%s" % (src_ip, match.group(1))
                             unquoted_path = _urllib.parse.unquote(path)
