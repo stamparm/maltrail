@@ -1835,3 +1835,7 @@ google-analytc.com
 
 intljs.rmtag.net
 pollyfill.com
+
+# Reference: https://twitter.com/d09r_/status/1242845745218228224
+
+deskofhelp.com
