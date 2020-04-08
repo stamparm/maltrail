@@ -1004,3 +1004,7 @@ scriptalicious.info
 
 /t0uch/tou64.js
 /t0uch/tou86.js
+
+# Reference: https://twitter.com/d09r_/status/1245306272175419392
+
+/o93jak2nm1k2.js
