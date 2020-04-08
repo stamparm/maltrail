@@ -158,6 +158,11 @@
 /webpanel/getsettings.php
 /webpanel/report.php
 
+# Reference: https://www.virustotal.com/gui/domain/rdssh.xyz/relations
+# Reference: https://twitter.com/500mk500/status/1247815865816489985
+
+rdssh.xyz
+
 # Generic
 
 /admin_123/auth.php
