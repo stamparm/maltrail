@@ -1376,7 +1376,9 @@ tunacan-812.tk
 /b7eb90271b3f54.php
 
 # Reference: https://twitter.com/DynamicAnalysis/status/1245437394473582593
+# Reference: https://twitter.com/DynamicAnalysis/status/1247570159939747846
 
+/wp-crun.php
 /wp-cryn.php
 
 # Reference: https://www.virustotal.com/gui/domain/webcindario0.dvrdns.org/relations
@@ -1387,6 +1389,10 @@ tunacan-812.tk
 
 /g0t6q3hsierdb43h9rp0gpcf.php
 /jog06tlwitnzupwsz7m429hdb8fefdb9c8e9aba0f526dc8176725f94.php
+
+# Reference: https://www.virustotal.com/gui/url/d7a8b43a2ef3439fa640b10dce6da642996535efe01d2c71321748fd803e6e46/detection
+
+/l91opka52wljumjc5spkbhnc.php
 
 # Generic
 
