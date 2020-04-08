@@ -1831,5 +1831,7 @@ google-analytc.com
 # Reference: https://twitter.com/unmaskparasites/status/1247886037881196547
 # Reference: https://blog.sucuri.net/2020/01/web-swiper-in-image-title.html
 # Reference: https://www.virustotal.com/gui/domain/intljs.rmtag.net/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.202.161.89/relations
 
 intljs.rmtag.net
+pollyfill.com
