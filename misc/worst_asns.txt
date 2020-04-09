@@ -5843,3 +5843,9 @@
 
 # AS36352 (ColoCrossing)
 107.172.0.0/16,colocrossing
+
+# Reference: https://twitter.com/malwrhunterteam/status/1248226241527844865
+# Reference: https://www.virustotal.com/gui/ip-address/213.176.32.0/details
+
+# AS22769
+213.176.32.0/19,ddosing network
