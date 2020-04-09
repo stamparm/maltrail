@@ -1806,6 +1806,7 @@ allegrolearnings.com/blogs/media/common.js
 
 jquerrycdn.xyz
 
+# Reference: https://twitter.com/d09r_/status/1242845745218228224
 # Reference: https://twitter.com/securityaffairs/status/1242873730235277313
 # Reference: https://securityaffairs.co/wordpress/100449/hacking/tupperware-site-hacked.html
 # Reference: https://blog.malwarebytes.com/hacking-2/2020/03/criminals-hack-tupperware-website-with-credit-card-skimmer/
@@ -1827,3 +1828,124 @@ google-analytics.gq
 # ReferencE: https://twitter.com/felixaime/status/1247414542759575552
 
 google-analytc.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1247886037881196547
+# Reference: https://blog.sucuri.net/2020/01/web-swiper-in-image-title.html
+# Reference: https://www.virustotal.com/gui/domain/intljs.rmtag.net/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.202.161.89/relations
+
+intljs.rmtag.net
+pollyfill.com
+
+# Reference: https://twitter.com/d09r_/status/1247951999305302016
+
+googheusercontent.com
+googlatagmanager.com
+googlausercontent.com
+google5sercontent.com
+googleafalytics.com
+googleanadytics.com
+googleanahytics.com
+googleanal9tics.com
+googleanalxtics.com
+googleanaly4ics.com
+googleanalydics.com
+googleanalypics.com
+googleanalytacs.com
+googleanalytias.com
+googleanalytibs.com
+googleanalyticc.com
+googleanalyticr.com
+googleanalyticw.com
+googleanalytigs.com
+googleanalytiks.com
+googleanalytkcs.com
+googleanalytmcs.com
+googleanalytycs.com
+googleanalyuics.com
+googleanalyvics.com
+googleanamytics.com
+googleananytics.com
+googleanclytics.com
+googleanelytics.com
+googleanilytics.com
+googleanqlytics.com
+googleaoalytics.com
+googlecnalytics.com
+googledagmanager.com
+googleenalytics.com
+googleesercontent.com
+googleinalytics.com
+googlepagmanager.com
+googleqnalytics.com
+googleqsercontent.com
+googletacmanager.com
+googletaemanager.com
+googletag-anager.com
+googletageanager.com
+googletagianager.com
+googletaglanager.com
+googletagmafager.com
+googletagmajager.com
+googletagmalager.com
+googletagmanacer.com
+googletagmanaeer.com
+googletagmanafer.com
+googletagmanagar.com
+googletagmanagdr.com
+googletagmanage2.com
+googletagmanageapi.com
+googletagmanageb.com
+googletagmanagep.com
+googletagmanages.com
+googletagmanagev.com
+googletagmanagez.com
+googletagmanaggr.com
+googletagmanagmr.com
+googletagmanagris.com
+googletagmanagrs.com
+googletagmanagrsapi.com
+googletagmanagur.com
+googletagmanaoer.com
+googletagmanawer.com
+googletagmancger.com
+googletagmaneger.com
+googletagmaniger.com
+googletagmanqger.com
+googletagmaoager.com
+googletagmcnager.com
+googletagminager.com
+googletagmqnager.com
+googletagoanager.com
+googletaomanager.com
+googletawmanager.com
+googletcgmanager.com
+googletigmanager.com
+googletqgmanager.com
+googletsercontent.com
+googleu3ercontent.com
+googleuagmanager.com
+googleucercontent.com
+googleuqercontent.com
+googleurercontent.com
+googleusarcontent.com
+googleusdrcontent.com
+googleuse2content.com
+googleusebcontent.com
+googleusepcontent.com
+googleuseraontent.com
+googleuserbontent.com
+googleusercgntent.com
+googleuserckntent.com
+googleusercmntent.com
+googleusercnntent.com
+googleusercoftent.com
+googleusercojtent.com
+googleusercoltent.com
+googlganalytics.com
+googluanalytics.com
+googmeanalytics.com
+
+# Reference: https://twitter.com/felixaime/status/1248154035053637632
+
+google-analytcsapi.com
