@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: 1ms0rry, N0f1l3 stealer
+
+# Reference: https://twitter.com/3xp0rtblog/status/1248191564138131459
+# Reference: https://app.any.run/tasks/546fda66-c28b-4c79-b128-06dfa421f5e0/
+
+almazscss.website
