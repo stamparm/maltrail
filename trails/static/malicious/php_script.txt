@@ -1397,6 +1397,15 @@ tunacan-812.tk
 
 /l91opka52wljumjc5spkbhnc.php
 
+# Reference: https://twitter.com/James_inthe_box/status/1248669623848853504
+
+/cachetfmbUXkGerOtP.php
+/_cachetfmbUXkGerOtP.php
+
+# Refefrence: https://www.virustotal.com/gui/ip-address/141.8.194.74/relations
+
+/9ldfcvv539grtjr1krbwrbsf.php
+
 # Generic
 
 /7328-dating-verification-card.php
