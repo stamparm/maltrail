@@ -382,3 +382,7 @@ minexmr.com
 # Reference: https://www.virustotal.com/gui/file/906790b2d626cd2f2d13329fbe87c90a1c1fa1713e1ba5c5c8b642d872a9e3cf/detection
 
 140.82.57.249:50899
+
+# Reference: https://www.virustotal.com/gui/file/cc424b8697f3ed55435511670c51c901aadae994ec6f7d0492fa9326fed11e7f/detection
+
+140.82.57.249:50900
