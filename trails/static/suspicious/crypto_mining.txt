@@ -378,3 +378,7 @@ minexmr.com
 103.195.4.139:443
 178.128.108.158:443
 68.183.182.120:443
+
+# Reference: https://www.virustotal.com/gui/file/906790b2d626cd2f2d13329fbe87c90a1c1fa1713e1ba5c5c8b642d872a9e3cf/detection
+
+140.82.57.249:50899
