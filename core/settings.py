@@ -21,7 +21,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.19.28"
+VERSION = "0.19.29"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 IS_SENSOR = sys.argv[0].startswith("sensor")
@@ -89,7 +89,7 @@ SUSPICIOUS_HTTP_REQUEST_REGEXES = (
     ("potential xxe injection", r"\[<!ENTITY"),
     ("potential data leakage", r"im[es]i=\d{15}|(mac|sid)=([0-9a-f]{2}:){5}[0-9a-f]{2}|sim=\d{20}|([a-z0-9_.+-]+@[a-z0-9-.]+\.[a-z]+\b.{0,100}){4}"),
     ("config file access", r"\.ht(access|passwd)|\bwp-config\.php"),
-    ("potential remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|shell_exec|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|wget http|curl -O|sh /tmp/|cmd\.exe|/bin/bash|2>&1|\b(cat|ls) /|chmod [0-7]{3,4}\b|chmod +x\b|nc -l -p \d+|>\s*/dev/null|-d (allow_url_include|safe_mode|auto_prepend_file|\$\{IFS\})"),
+    ("potential remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|shell_exec|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|wget http|curl -O|sh /tmp/|cmd\.exe|/bin/(ba)?sh\b|2>&1|\b(cat|ls) /|chmod [0-7]{3,4}\b|chmod +x\b|nc -l -p \d+|>\s*/dev/null|-d (allow_url_include|safe_mode|auto_prepend_file)|\$\{IFS\}"),
     ("potential directory traversal", r"(\.{2,}[/\\]+){3,}|/etc/(passwd|shadow|issue|hostname)|[/\\](boot|system|win)\.ini|[/\\]system32\b|%SYSTEMROOT%"),
     ("potential web scan", r"(acunetix|injected_by)_wvs_|SomeCustomInjectedHeader|some_inexistent_file_with_long_name|testasp\.vulnweb\.com/t/fit\.txt|www\.acunetix\.tst|\.bxss\.me|thishouldnotexistandhopefullyitwillnot|OWASP%\d+ZAP|chr\(122\)\.chr\(97\)\.chr\(112\)|Vega-Inject|VEGA123|vega\.invalid|PUT-putfile|w00tw00t|muieblackcat"),
     ("potential dns changer", r"\b(staticPriDns|staticSecDns|staticThiDns|PriDnsv6|SecDnsv6|ThiDnsv6|staticPriDnsv6|staticSecDnsv6|staticThiDnsv6|pppoePriDns|pppoeSecDns|wan_dns1|wan_dns2|dnsPrimary|dnsSecondary|dnsDynamic|dnsRefresh|DNS_FST|DNS_SND|dhcpPriDns|dhcpSecDns|dnsserver|dnsserver1|dnsserver2|dns_server_ip_1|dns_server_ip_2|dns_server_ip_3|dns_server_ip_4|dns1|dns2|dns3|dns4|dns1_1|dns1_2|dns1_3|dns1_4|dns2_1|dns2_2|dns2_3|dns2_4|wan_dns_x|wan_dns1_x|wan_dns2_x|wan_dns3_x|wan_dns4_x|dns_status|p_DNS|a_DNS|uiViewDns1Mark|uiViewDns2Mark|uiViewDNSRelay|is_router_as_dns|Enable_DNSFollowing|domainserverip|DSEN|DNSEN|dnsmode|dns%5Bserver1%5D|dns%5Bserver2%5D)=")
