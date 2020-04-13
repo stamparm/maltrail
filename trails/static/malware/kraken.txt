@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://app.any.run/tasks/dd6af334-5c0e-49b7-9f5c-870432ee957b/
+# Reference: https://app.any.run/tasks/5c667e87-2abc-40ee-b29b-5b3547c671fa/
+
+http://blasze.tk/CN18R3
