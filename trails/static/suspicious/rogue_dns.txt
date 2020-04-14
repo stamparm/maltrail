@@ -534,3 +534,7 @@ resolve.interland.com
 
 109.234.35.230:53
 94.103.82.249:53
+
+# Reference: https://twitter.com/ninoseki/status/1250014776014454784
+
+167.114.178.206:53
