@@ -373,6 +373,7 @@ rea.co.ke
 atw.hu
 gandi.net
 tz-tribunj.hr
+josip-stadler.org
 
 # appeared on malwaredomainlist.com
 
@@ -491,6 +492,7 @@ saol.com
 putvjernika.com
 affordableunixhost.net
 steroidportal.com
+medicosdelmundo.org
 
 # found as false positive on cybercrime-tracker.net
 
@@ -2841,6 +2843,7 @@ coloros.com
 sagawa-exp.co.jp
 au-e.com
 big-post.com
+voyance-au-top.com
 
 # Exceptions for abuse.ch (dirty patch for addresses used by outside scanners introducing noise being recognized as 'malware')
 
