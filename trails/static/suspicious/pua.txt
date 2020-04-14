@@ -2119,3 +2119,9 @@ getyoutubedownloader.com
 rp.ytdcdn.com
 os.ytdcdn.com
 os2.ytdcdn.com
+
+# Reference: https://www.virustotal.com/gui/domain/pcfixertools.net/detection
+
+pcfixertools.biz
+pcfixertools.info
+pcfixertools.net
