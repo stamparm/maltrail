@@ -1008,3 +1008,8 @@ scriptalicious.info
 # Reference: https://twitter.com/d09r_/status/1245306272175419392
 
 /o93jak2nm1k2.js
+
+# Reference: https://twitter.com/unmaskparasites/status/1250469460617637891
+# Reference: https://www.virustotal.com/gui/domain/stivenfernando.com/relations
+
+stivenfernando.com
