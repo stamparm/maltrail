@@ -1345,10 +1345,6 @@ Embarcadero URI Client/1.0
 
 rubotUpdater
 
-# Reference: https://twitter.com/albertzsigovits/status/1248187831509495808
-
-\AWindows-Update-Agent\Z
-
 # Reference: https://twitter.com/gibbersen/status/1250448582844518400
 
 SanAntonio
