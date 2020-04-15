@@ -271,3 +271,8 @@ sh.php
 
 shellcode.php
 shellcode.txt
+
+# Reference: https://securelist.com/energetic-bear-crouching-yeti/85345/
+
+code29.php
+proxy87.php
