@@ -2125,3 +2125,10 @@ os2.ytdcdn.com
 pcfixertools.biz
 pcfixertools.info
 pcfixertools.net
+
+# Reference: https://www.virustotal.com/gui/domain/thegetbooks.tk/relations
+# Reference: https://www.virustotal.com/gui/file/02a3bd5c67c6c168df1226ba471f1a057e3ecdd408502aecb08902dbaeb1f516/detection
+# Reference: https://www.virustotal.com/gui/file/45ed1baee046475f88f037702ceb1d7cec1a099f39b9248bbe4bf23622683afe/detection
+
+express-book.net
+thegetbooks.tk
