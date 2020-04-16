@@ -130,6 +130,10 @@ http://176.57.220.16
 need.southpadreforsale.com
 star.southpadrefishingguide.com
 
+# Reference: https://twitter.com/david_jursa/status/1250716073437073409
+
+likeaboss.club
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
