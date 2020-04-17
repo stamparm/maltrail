@@ -1406,6 +1406,14 @@ tunacan-812.tk
 
 /9ldfcvv539grtjr1krbwrbsf.php
 
+# Reference: https://twitter.com/elgofo/status/1251051263757815808
+
+/ys9kbpsz873wam1qijuofe9e.php
+
+# Reference: https://blog.talosintelligence.com/2020/04/poetrat-covid-19-lures.html
+
+/azGovaz.php
+
 # Generic
 
 /7328-dating-verification-card.php
