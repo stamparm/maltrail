@@ -9,7 +9,7 @@
 
 144.217.191.145:53
 
-# Reference: # Reference: https://twitter.com/bad_packets/status/1112087547050520577
+# Reference: https://twitter.com/bad_packets/status/1112087547050520577
 # Reference: https://twitter.com/bad_packets/status/1114236807367905280
 # Reference: https://www.ixiacom.com/company/blog/paypal-netflix-gmail-and-uber-users-among-targets-new-wave-dns-hijacking-attacks
 # Reference: https://securityboulevard.com/2019/04/paypal-netflix-gmail-and-uber-users-among-targets-in-new-wave-of-dns-hijacking-attacks/

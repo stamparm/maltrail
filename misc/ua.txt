@@ -562,7 +562,7 @@ Oof
 Cayosin
 Cock
 
-# Reference: # Reference: https://unit42.paloaltonetworks.com/mirai-compiled-for-new-processor-surfaces/
+# Reference: https://unit42.paloaltonetworks.com/mirai-compiled-for-new-processor-surfaces/
 
 Blade/2.0
 Hello-World
@@ -1155,7 +1155,7 @@ BURAN
 
 USRUE-VNC
 
-# Reference: # Reference: https://twitter.com/James_inthe_box/status/1194592723736485889
+# Reference: https://twitter.com/James_inthe_box/status/1194592723736485889
 
 Aldi Bot
 
@@ -1336,7 +1336,7 @@ ItIsMe
 
 Welcome
 
-# Reference: # Reference: https://twitter.com/James_inthe_box/status/1245427754977263617
+# Reference: https://twitter.com/James_inthe_box/status/1245427754977263617
 # Reference: https://doc.emergingthreats.net/bin/view/Main/2025241
 
 Embarcadero URI Client/1.0

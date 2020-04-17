@@ -4701,7 +4701,7 @@ ultimate-discounter.com
 
 qarallax.com
 
-# Reference: # Reference: https://meltx0r.github.io/tech/2019/09/19/emissary-panda-apt.html
+# Reference: https://meltx0r.github.io/tech/2019/09/19/emissary-panda-apt.html
 # Reference: https://www.virustotal.com/gui/domain/dellrescue.com/relations
 # Reference: https://www.virustotal.com/gui/domain/redhatupdater.com/relations
 
