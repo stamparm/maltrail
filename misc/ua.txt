@@ -1349,6 +1349,12 @@ rubotUpdater
 
 SanAntonio
 
+# Reference: https://twitter.com/OttoScav/status/1250899211819900933
+# Reference: https://twitter.com/James_inthe_box/status/1250907772494864384
+
+sdvntyer
+\Auser_agent\Z
+
 # Misc
 
 information_schema
