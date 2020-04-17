@@ -700,7 +700,7 @@ Installer/23
 
 # Reference: https://twitter.com/James_inthe_box/status/1152234123844415489
 
-binary\_getter/1.0
+binary_getter/1.0
 
 # Reference: https://twitter.com/James_inthe_box/status/1153450058722865152
 
@@ -775,7 +775,7 @@ Kim Jong-un Evil Browser
 
 underworld
 system-update
-test\_hInternet
+test_hInternet
 installer-agent
 sleep 300000
 
@@ -883,7 +883,7 @@ webmin
 =Mozilla
 \A123\Z
 \ACompatible\Z
-\Acv\_v\Z
+\Acv_v\Z
 \ADigital\Z
 \AESET Installer\Z
 \Ahhh\Z
@@ -897,9 +897,9 @@ webmin
 \Amin\Z
 \AMs\Z
 \AMy Agent\Z
-\AMy\_App\Z
+\AMy_App\Z
 \AMz\Z
-\AOur\_Agent\Z
+\AOur_Agent\Z
 \AQQ\Z
 \ATestAgent\Z
 \AVersion
@@ -921,7 +921,7 @@ alertup
 angel
 antispyprogram
 aria2
-Atomic\_Email\_Hunter
+Atomic_Email_Hunter
 acHTTP component
 auHTTP component
 AutoUpgrader component
@@ -960,7 +960,7 @@ Google page
 google/dance
 hacker
 Hentai
-HTTP\_Connect\_
+HTTP_Connect_
 HTTP Downloader
 HttpDownload
 \bHTTPTEST
@@ -1011,7 +1011,7 @@ Mozilla/5.0 (compatible, Viper 4.0)
 Mozilla/5.0 (Windows NT 6.1; wget 3.0; rv:5.0)
 Mozzila
 MS Internet Explorer
-ms\_ie
+ms_ie
 MtGoxBackOffice
 muhstik
 MyAgent
@@ -1059,15 +1059,15 @@ Tsunami
 \AUcheck
 Ufasoft
 up2dash
-updater\_agent
+updater_agent
 Varlok
 \bVB Http
 VERTEXNET
 WebForm
-WINDOWS\_LOADS
+WINDOWS_LOADS
 WindSoft
 WinProxy
-WINS\_HTTP\_SEND
+WINS_HTTP_SEND
 WINTERNET
 WT-User-Agent
 xSock
@@ -1257,11 +1257,11 @@ KSKJJGJ
 
 # Reference: https://twitter.com/c3rb3ru5d3d53c/status/1223790397744390146
 
-MR\_ROBOT
+MR_ROBOT
 
 # Reference: https://twitter.com/VessOnSecurity/status/1224051153232715783
 
-dark\_NeXus\_Qbot
+dark_NeXus_Qbot
 minerword
 MSIE5.01
 Qbot
