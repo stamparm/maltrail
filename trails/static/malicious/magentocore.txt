@@ -1949,3 +1949,8 @@ googmeanalytics.com
 # Reference: https://twitter.com/felixaime/status/1248154035053637632
 
 google-analytcsapi.com
+
+# Reference: https://www.perimeterx.com/resources/blog/2020/new-stealth-magecart-attack-bypasses-payment-services-using-iframes/
+
+braintreegateway24.com
+braintreegateway24.tech
