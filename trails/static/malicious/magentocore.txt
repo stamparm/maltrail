@@ -1954,3 +1954,7 @@ google-analytcsapi.com
 
 braintreegateway24.com
 braintreegateway24.tech
+
+# Reference: https://twitter.com/felixaime/status/1250807334676414465
+
+tag-css.icu
