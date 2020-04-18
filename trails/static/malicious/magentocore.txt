@@ -1951,9 +1951,11 @@ googmeanalytics.com
 google-analytcsapi.com
 
 # Reference: https://www.perimeterx.com/resources/blog/2020/new-stealth-magecart-attack-bypasses-payment-services-using-iframes/
+# Reference: https://www.virustotal.com/gui/ip-address/83.166.250.66/relations
 
 braintreegateway24.com
 braintreegateway24.tech
+braintreegateway.services
 
 # Reference: https://twitter.com/felixaime/status/1250807334676414465
 
