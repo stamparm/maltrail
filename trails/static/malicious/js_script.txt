@@ -1013,3 +1013,11 @@ scriptalicious.info
 # Reference: https://www.virustotal.com/gui/domain/stivenfernando.com/relations
 
 stivenfernando.com
+
+# Reference: https://twitter.com/fahadsoror/status/1251638383245475840
+
+underthebreach.com/breach-protection
+
+# Reference: https://www.kitploit.com/2020/04/flux-keylogger-modern-javascript.html
+
+/42963187845881.js
