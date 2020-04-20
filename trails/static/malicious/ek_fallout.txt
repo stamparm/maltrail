@@ -233,6 +233,11 @@ tufgaming.blue
 corvir.london
 covid19onlineinfo.com
 
+# Reference: https://twitter.com/d09r_/status/1251212820747698176
+
+carloswint.com
+bestmorris.com
+
 # Generic
 
 /NlGkb4ivk.php
