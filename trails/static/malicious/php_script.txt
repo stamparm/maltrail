@@ -1418,6 +1418,10 @@ tunacan-812.tk
 
 /azGovaz.php
 
+# Reference: https://twitter.com/IpNigh/status/1252124774177943555
+
+/11644210b.php
+
 # Generic
 
 /7328-dating-verification-card.php
