@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/domain/qqqelkdjfldfjk.org/relations
+# Reference: https://www.virustotal.com/gui/domain/qqqkdfdlkjdlfj.org/relations
+
+qqqelkdjfldfjk.org
+qqqkdfdlkjdlfj.org
