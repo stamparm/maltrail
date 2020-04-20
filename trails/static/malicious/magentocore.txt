@@ -1960,3 +1960,16 @@ braintreegateway.services
 # Reference: https://twitter.com/felixaime/status/1250807334676414465
 
 tag-css.icu
+
+# Reference: https://twitter.com/MBThreatIntel/status/1252265931088080896
+
+vetality.site
+
+# Reference: https://twitter.com/MBThreatIntel/status/1252285343555960833
+
+ducatigrenoble.com/skin/frontend/ves_brave/default/css/bootstrap.php
+
+# Reference: https://twitter.com/MBThreatIntel/status/1252338975265546242
+
+clipbutton.com.br/catalog/discount.php
+tivents.de/media/wysiwyg/paypal4.gif
