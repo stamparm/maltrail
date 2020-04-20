@@ -1355,6 +1355,11 @@ SanAntonio
 sdvntyer
 \Auser_agent\Z
 
+# Reference: https://blog.netlab.360.com/multiple-fiber-routers-are-being-compromised-by-botnets-using-0-day-en/
+
+polaris
+polaris botnet
+
 # Misc
 
 information_schema
