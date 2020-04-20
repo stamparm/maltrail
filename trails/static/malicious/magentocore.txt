@@ -1960,3 +1960,7 @@ braintreegateway.services
 # Reference: https://twitter.com/felixaime/status/1250807334676414465
 
 tag-css.icu
+
+# Reference: https://twitter.com/MBThreatIntel/status/1252265931088080896
+
+vetality.site
