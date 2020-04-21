@@ -367,7 +367,7 @@ def main():
         read_config(sys.argv[sys.argv.index("-c") + 1])
 
     try:
-        update_trails(force=True)
+        update_trails(force=True, offline="--offline" in sys.argv)
         update_ipcat()
     except KeyboardInterrupt:
         print("\r[x] Ctrl-C pressed")
