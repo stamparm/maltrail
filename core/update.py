@@ -246,7 +246,7 @@ def update_trails(force=False, offline=False):
                 except:
                     pass
 
-                if not key or re.search(r"\A(?i)\.?[a-z]+\Z", key) and not any(_ in trails[key][1] for _ in ("custom", "static")):
+                if not key or re.search(r"(?i)\A\.?[a-z]+\Z", key) and not any(_ in trails[key][1] for _ in ("custom", "static")):
                     del trails[key]
                     continue
                 if re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key):
@@ -367,8 +367,10 @@ def main():
         read_config(sys.argv[sys.argv.index("-c") + 1])
 
     try:
-        update_trails(force=True, offline="--offline" in sys.argv)
-        update_ipcat()
+        offline = "--offline" in sys.argv
+        update_trails(force=True, offline=offline)
+        if not offline:
+            update_ipcat()
     except KeyboardInterrupt:
         print("\r[x] Ctrl-C pressed")
     else:
@@ -396,6 +398,11 @@ def main():
             for result in results:
                 sys.stderr.write("%s\t%s\n" % (result[0], result[1]))
                 sys.stderr.flush()
+
+        if "--console" in sys.argv:
+            with _fopen(config.TRAILS_FILE, "rb" if six.PY2 else 'r', open if six.PY2 else codecs.open) as f:
+                for line in f:
+                    sys.stdout.write(line)
 
 if __name__ == "__main__":
     main()
