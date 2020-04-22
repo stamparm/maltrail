@@ -1973,3 +1973,7 @@ ducatigrenoble.com/skin/frontend/ves_brave/default/css/bootstrap.php
 
 clipbutton.com.br/catalog/discount.php
 tivents.de/media/wysiwyg/paypal4.gif
+
+# Reference: https://twitter.com/felixaime/status/1253039202465468419
+
+securityipa.club
