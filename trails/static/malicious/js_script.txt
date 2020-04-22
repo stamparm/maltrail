@@ -1021,3 +1021,9 @@ underthebreach.com/breach-protection
 # Reference: https://www.kitploit.com/2020/04/flux-keylogger-modern-javascript.html
 
 /42963187845881.js
+
+# Reference: https://unit42.paloaltonetworks.com/how-cybercriminals-prey-on-the-covid-19-pandemic/
+
+coronamasksupply.com
+coronavirusinrealtime.com
+coronashirts.store
