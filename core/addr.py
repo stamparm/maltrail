@@ -63,3 +63,11 @@ def expand_range(value):
         retval.append(value)
 
     return retval
+
+def addr_port(addr, port):
+    if ':' in addr and '.' not in addr:
+        retval = "[%s]:%s" % (addr.strip("[]"), port)
+    else:
+        retval = "%s:%s" % (addr, port)
+
+    return retval

@@ -27,6 +27,7 @@ import time
 import traceback
 
 from core.addr import inet_ntoa6
+from core.addr import addr_port
 from core.attribdict import AttribDict
 from core.common import check_connection
 from core.common import check_sudo
@@ -305,21 +306,21 @@ def _process_packet(packet, sec, usec, ip_offset):
                 if _ == _last_syn:  # skip bursts
                     return
 
-                if dst_ip in trails or "%s:%s" % (dst_ip, dst_port) in trails:
+                if dst_ip in trails or addr_port(dst_ip, dst_port) in trails:
                     _ = _last_logged_syn
                     _last_logged_syn = _last_syn
                     if _ != _last_logged_syn:
-                        trail = "%s:%s" % (dst_ip, dst_port)
+                        trail = addr_port(dst_ip, dst_port)
                         if trail not in trails:
                             trail = dst_ip
                         if not any(_ in trails[trail][0] for _ in ("attacker",)) and not ("parking site" in trails[trail][0] and dst_port not in (80, 443)):
                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.IPORT, trail, trails[trail][0], trails[trail][1]), packet)
 
-                elif (src_ip in trails or "%s:%s" % (src_ip, src_port) in trails) and dst_ip != localhost_ip:
+                elif (src_ip in trails or addr_port(src_ip, src_port) in trails) and dst_ip != localhost_ip:
                     _ = _last_logged_syn
                     _last_logged_syn = _last_syn
                     if _ != _last_logged_syn:
-                        trail = "%s:%s" % (src_ip, src_port)
+                        trail = addr_port(src_ip, src_port)
                         if trail not in trails:
                             trail = src_ip
                         if not any(_ in trails[trail][0] for _ in ("malware",)):
@@ -640,8 +641,8 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                             # Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
                             if type_ not in (12, 28) and class_ == 1:  # Type not in (PTR, AAAA), Class IN
-                                if "%s:%s" % (dst_ip, dst_port) in trails:
-                                    trail = "%s:%s" % (dst_ip, dst_port)
+                                if addr_port(dst_ip, dst_port) in trails:
+                                    trail = addr_port(dst_ip, dst_port)
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IPORT, "%s (%s)" % (dst_ip, query), trails[trail][0], trails[trail][1]), packet)
                                 elif dst_ip in trails:
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, "%s (%s)" % (dst_ip, query), trails[dst_ip][0], trails[dst_ip][1]), packet)
