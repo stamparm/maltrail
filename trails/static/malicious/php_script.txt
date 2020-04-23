@@ -1199,18 +1199,33 @@ vosmas.icu
 vtoras.top
 
 # Reference: https://twitter.com/ANeilan/status/1232283590114840576
+# Reference: https://twitter.com/JayTHL/status/1253459585731563522
 # Reference: https://pastebin.com/8LL4Hg9e
 # Reference: https://pastebin.com/trRiwBKQ
+# Reference: https://paste.ee/r/v9aRR/0
 
+bankss-71.cf
+bankss-71.ga
+bankss-71.gq
+bankss-71.ml
+bankss-71.tk
+bantoom-71.ga
+bantoom-71.gq
 blessed-812.ga
 blessed-812.gq
 blessed-812.ml
 blessed-812.tk
+braums-74.cf
+braums-74.ga
+braums-74.gq
+braums-74.ml
+braums-74.tk
 bucks-812.cf
 bucks-812.ga
 bucks-812.gq
 bucks-812.ml
 bucks-812.tk
+cahult-71.cf
 canjerry-812.gq
 canjerry-812.ml
 canjerry-812.tk
@@ -1244,12 +1259,22 @@ grrrls-812.ga
 grrrls-812.gq
 grrrls-812.ml
 grrrls-812.tk
+haloest-71.tk
+karthus-71.cf
+karthus-71.ga
+karthus-71.gq
+karthus-71.ml
+karthus-71.tk
 knife-812.cf
 knife-812.ga
 knife-812.gq
 lighter-812.ga
 lighter-812.gq
 lighter-812.ml
+neekos-74.cf
+neekos-74.ga
+neekos-74.gq
+neekos-74.ml
 noirs-812.cf
 noirs-812.ga
 noirs-812.gq
@@ -1259,6 +1284,10 @@ nukes-812.ga
 nukes-812.gq
 nukes-812.ml
 nukes-812.tk
+outlak-71.cf
+outlak-71.ga
+outlak-71.gq
+outlak-71.ml
 pain-812.cf
 pain-812.ga
 pain-812.tk
@@ -1281,6 +1310,16 @@ senses-812.tk
 shift-812.cf
 shift-812.gq
 shift-812.ml
+soliare-71.cf
+soliare-71.ga
+soliare-71.gq
+soliare-71.ml
+soliare-71.tk
+soutma-71.cf
+soutma-71.ga
+soutma-71.gq
+soutma-71.ml
+soutma-71.tk
 starsbucks-812.cf
 starsbucks-812.ga
 starsbucks-812.gq
@@ -1290,6 +1329,15 @@ suit-812.cf
 suit-812.ga
 suit-812.gq
 suit-812.ml
+tanta-71.cf
+tanta-71.ml
+tanta-71.tk
+tratot-71.tk
+trosl-71.cf
+trosl-71.ga
+trosl-71.gq
+trosl-71.ml
+trosl-71.tk
 tunacan-812.ga
 tunacan-812.ml
 tunacan-812.tk
