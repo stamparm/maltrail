@@ -43,6 +43,7 @@ from core.enums import CACHE_TYPE
 from core.enums import PROTO
 from core.enums import TRAIL
 from core.log import create_log_directory
+from core.log import flush_condensed_events
 from core.log import get_error_log_handle
 from core.log import log_error
 from core.log import log_event
@@ -69,7 +70,9 @@ from core.settings import MAX_RESULT_CACHE_ENTRIES
 from core.settings import NAME
 from core.settings import NO_SUCH_NAME_COUNTERS
 from core.settings import NO_SUCH_NAME_PER_HOUR_THRESHOLD
+from core.settings import INFECTION_SCANNING_THRESHOLD
 from core.settings import PORT_SCANNING_THRESHOLD
+from core.settings import POTENTIAL_INFECTION_PORTS
 from core.settings import read_config
 from core.settings import REGULAR_SENSOR_SLEEP_TIME
 from core.settings import SNAP_LEN
@@ -259,11 +262,19 @@ def _process_packet(packet, sec, usec, ip_offset):
 
             if sec > connect_sec:
                 for key in _connect_src_dst:
-                    if len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
-                        _src_ip, _dst_ip = key.split('~')
+                    _src_ip, _dst = key.split('~')
+                    if not _dst.isdigit() and len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
                         if not check_whitelisted(_src_ip):
+                            _dst_ip = _dst
                             for _ in _connect_src_details[key]:
                                 log_event((sec, usec, _src_ip, _[2], _dst_ip, _[3], PROTO.TCP, TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"), packet)
+                    elif len(_connect_src_dst[key]) > INFECTION_SCANNING_THRESHOLD:
+                        _dst_port = _dst
+                        _dst_ip = [_[-1] for _ in _connect_src_details[key]]
+                        _src_port = [_[-2] for _ in _connect_src_details[key]]
+
+                        if len(_dst_ip) == len(set(_dst_ip)):
+                            log_event((sec, usec, _src_ip, _src_port[0], _dst_ip[0], _dst_port, PROTO.TCP, TRAIL.PORT, _dst_port, "potential infection", "(heuristic)"), packet)
 
                 _connect_src_dst.clear()
                 _connect_src_details.clear()
@@ -335,6 +346,13 @@ def _process_packet(packet, sec, usec, ip_offset):
                         _connect_src_dst[key].add(dst_port)
                         _connect_src_details[key].add((sec, usec, src_port, dst_port))
 
+                        if dst_port in POTENTIAL_INFECTION_PORTS:
+                            key = "%s~%s" % (src_ip, dst_port)
+                            if key not in _connect_src_dst:
+                                _connect_src_dst[key] = set()
+                                _connect_src_details[key] = set()
+                            _connect_src_dst[key].add(dst_ip)
+                            _connect_src_details[key].add((sec, usec, src_port, dst_ip))
             else:
                 tcph_length = doff_reserved >> 4
                 h_size = iph_length + (tcph_length << 2)
@@ -1087,6 +1105,7 @@ def monitor():
         print("\r[x] stopping (Ctrl-C pressed)")
     finally:
         print("\r[i] please wait...")
+
         if _multiprocessing:
             try:
                 for _ in xrange(config.PROCESS_COUNT - 1):
@@ -1096,6 +1115,9 @@ def monitor():
                     time.sleep(REGULAR_SENSOR_SLEEP_TIME)
             except KeyboardInterrupt:
                 pass
+
+        if config.pcap_file:
+            flush_condensed_events(True)
 
 def main():
     for i in xrange(1, len(sys.argv)):

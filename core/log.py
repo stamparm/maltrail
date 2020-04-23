@@ -95,9 +95,10 @@ def safe_value(value):
     retval = re.sub(r"[\x0a\x0d]", " ", retval)
     return retval
 
-def flush_condensed_events():
+def flush_condensed_events(single=False):
     while True:
-        time.sleep(CONDENSED_EVENTS_FLUSH_PERIOD)
+        if not single:
+            time.sleep(CONDENSED_EVENTS_FLUSH_PERIOD)
 
         with _condensing_lock:
             for key in _condensed_events:
@@ -124,6 +125,9 @@ def flush_condensed_events():
                 log_event(condensed_event, skip_condensing=True)
 
             _condensed_events.clear()
+
+        if single:
+            break
 
 def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False):
     global _condensing_thread
