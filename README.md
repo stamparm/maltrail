@@ -263,8 +263,20 @@ Note: **Server** component can be skipped altogether, and just use the standalon
 
 The following set of commands should get your Maltrail **Sensor** up and running (out of the box with default settings and monitoring interface "any"):
 
+- For **Debian/Ubuntu**
+
 ```
 sudo apt-get install git python-pcapy
+git clone https://github.com/stamparm/maltrail.git
+cd maltrail
+sudo python sensor.py
+```
+
+- For **SUSE/openSUSE**
+
+```
+sudo zypper install gcc gcc-c++ libpcap-devel python2-pip python-devel python3-devel
+sudo pip2 install pcapy
 git clone https://github.com/stamparm/maltrail.git
 cd maltrail
 sudo python sensor.py
