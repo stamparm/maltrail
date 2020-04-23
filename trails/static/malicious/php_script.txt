@@ -1176,11 +1176,6 @@ zctrack.com
 /usexosell.php
 /usflexexosell.php
 
-# Reference: https://securityaffairs.co/wordpress/98124/cyber-crime/uncovering-new-magecart-implant.html
-
-/ar906.php
-/ar2497.php
-
 # Reference: https://blog.prevailion.com/2020/02/phps-labyrinth-weaponized-wordpress.html
 # Reference: https://otx.alienvault.com/pulse/5e4d6c5790faacd62f7afed6
 
