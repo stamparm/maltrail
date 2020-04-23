@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/sucurisecurity/status/1253049392564584448
+# Reference: https://blog.sucuri.net/2020/04/pinnaclecart-server-side-skimmers-and-backdoors.html
+
+/content/engine/payment/payment_virtual_3D.php
+/content/engine/engine_restore.php
+/content/engine/payment/datacash/fwrite.php
+/content/compiled/fwrite.php
+/content/engine/payment/payment_authorizenet_aim_3_1.php
+/content/engine/engine_config.php
