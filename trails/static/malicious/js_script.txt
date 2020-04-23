@@ -11,12 +11,6 @@ examhome.net
 mp3menu.org
 uustoughtonma.org
 
-# Generic detection for compromised Bitrix CMS
-
-/lib/crypta.js
-/bitrix/js/main/core/core_loader.js
-/bitrix/js/main/core/core_tasker.js
-
 # Reference: https://twitter.com/bad_packets/status/1038967603048243200
 # Reference: https://www.virustotal.com/#/file/d527ea936ab99a2e3a25cf8786c66c0e07fc509b9465d48dd26065f034795f19/relations
 
