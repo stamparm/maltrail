@@ -1973,3 +1973,12 @@ ducatigrenoble.com/skin/frontend/ves_brave/default/css/bootstrap.php
 
 clipbutton.com.br/catalog/discount.php
 tivents.de/media/wysiwyg/paypal4.gif
+
+# Reference: https://twitter.com/felixaime/status/1253039202465468419
+
+securityipa.club
+
+# Reference: https://unit42.paloaltonetworks.com/how-cybercriminals-prey-on-the-covid-19-pandemic/ (# Skimmer)
+# Reference: https://www.virustotal.com/gui/domain/sunrisepromos.com/relations
+
+sunrisepromos.com/js/lib/ccard.js
