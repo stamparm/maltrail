@@ -1360,6 +1360,10 @@ sdvntyer
 polaris
 polaris botnet
 
+# Reference: https://twitter.com/malwrhunterteam/status/1253381112791007233
+
+Lemon-Duck
+
 # Misc
 
 information_schema
