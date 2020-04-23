@@ -1364,6 +1364,11 @@ polaris botnet
 
 Lemon-Duck
 
+# Reference: https://twitter.com/3XS0/status/1253426730217291778
+
+Mozilla/4.0 (compatible; MSIE 6.0; Win32)
+Mozilla/5.00 (compatible; MSIE 6.0; Win32)
+
 # Misc
 
 information_schema
