@@ -274,7 +274,13 @@ def _process_packet(packet, sec, usec, ip_offset):
                         _src_port = [_[-2] for _ in _connect_src_details[key]]
 
                         if len(_dst_ip) == len(set(_dst_ip)):
-                            log_event((sec, usec, _src_ip, _src_port[0], _dst_ip[0], _dst_port, PROTO.TCP, TRAIL.PORT, _dst_port, "potential infection", "(heuristic)"), packet)
+                            _sources = set(_.split('~')[0] for _ in _connect_src_dst.keys())
+                            _candidates = [re.sub(r"\d+\.\d+\Z", "", _) for _ in _sources]
+                            _ = sorted(((_candidates.count(_), _) for _ in set(_candidates)), reverse=True)
+                            _local_prefix = _[0][1]
+
+                            if _src_ip.startswith(_local_prefix):
+                                log_event((sec, usec, _src_ip, _src_port[0], _dst_ip[0], _dst_port, PROTO.TCP, TRAIL.PORT, _dst_port, "potential infection", "(heuristic)"), packet)
 
                 _connect_src_dst.clear()
                 _connect_src_details.clear()
