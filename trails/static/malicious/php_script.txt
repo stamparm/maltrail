@@ -489,12 +489,6 @@ westflies.com/api/api.php
 
 /835pnjmr1w4p5ypvgcymfkkx.php
 
-# Reference: https://forums.modx.com/thread/102644/evo-1-2-1-hacked-again-and-again
-# Generic trails for compromised MODX CMS-es
-
-/assets/images/accesson.php
-/assets/images/customizer.php
-
 # Reference: https://twitter.com/MalwarePatrol/status/1161731505065988102
 
 /acabx352of60k6h87abrrjg6.php
