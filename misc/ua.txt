@@ -1370,6 +1370,10 @@ Lemon-Duck
 Mozilla/4.0 (compatible; MSIE 6.0; Win32)
 Mozilla/5.00
 
+# Reference: https://twitter.com/James_inthe_box/status/1253870561366650880
+
+CLCTR
+
 # Misc
 
 information_schema
