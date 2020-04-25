@@ -134,6 +134,10 @@ star.southpadrefishingguide.com
 
 likeaboss.club
 
+# Reference: https://twitter.com/nao_sec/status/1254025079635075073
+
+http://188.225.27.75
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
