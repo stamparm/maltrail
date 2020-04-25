@@ -3021,3 +3021,8 @@ entrydns.org
 # Reference: https://www.virustotal.com/gui/domain/noip.pl/relations
 
 noip.pl
+
+# Reference: https://github.com/stamparm/maltrail/pull/8397/commits/16cec7bfe5a2edb3af98b76011f1993dbb6c9414
+# Reference: https://www.virustotal.com/gui/domain/myqnapcloud.com/relations
+
+myqnapcloud.com
