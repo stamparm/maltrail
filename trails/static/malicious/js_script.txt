@@ -1021,3 +1021,7 @@ underthebreach.com/breach-protection
 coronamasksupply.com
 coronavirusinrealtime.com
 coronashirts.store
+
+# Reference: https://sansec.io/labs/2018/08/30/magentocore.net_skimmer_most_aggressive_to_date/
+
+/19303817.js
