@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://forums.modx.com/thread/102644/evo-1-2-1-hacked-again-and-again
+# Generic trails for compromised MODX CMS-es
+
+/assets/images/accesson.php
+/assets/images/customizer.php
