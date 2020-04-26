@@ -1360,6 +1360,20 @@ sdvntyer
 polaris
 polaris botnet
 
+# Reference: https://twitter.com/malwrhunterteam/status/1253381112791007233
+
+Lemon-Duck
+
+# Reference: https://twitter.com/3XS0/status/1253426730217291778
+# Reference: https://twitter.com/CyberCrimeWHQ/status/1253731037705838592
+
+Mozilla/4.0 (compatible; MSIE 6.0; Win32)
+Mozilla/5.00
+
+# Reference: https://twitter.com/James_inthe_box/status/1253870561366650880
+
+CLCTR
+
 # Misc
 
 information_schema
