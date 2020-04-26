@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1253989620997664768
+# Reference: https://app.any.run/tasks/ef972b4c-b3c4-454b-a59f-95456b895a2c/
+
+195.20.51.68:80
+bomz.ml
