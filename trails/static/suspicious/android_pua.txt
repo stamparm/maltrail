@@ -70,3 +70,16 @@ easyphonetrack.com
 # Reference: https://www.virustotal.com/gui/domain/okyesmobi.com/relations
 
 okyesmobi.com
+
+# Reference: https://twitter.com/ReBensk/status/1253577450732175361
+# Reference: https://www.virustotal.com/gui/file/5a713ab48f267ee3d0aff6e9391b8fad90b46d35a1ffe805714084f1db819fa9/detection
+
+corona389.com
+covid389.com
+indo389.com
+nomor389.com
+rmhggk.com
+sgp389.com
+togel389.com
+togel389.net
+togel389.xyz
