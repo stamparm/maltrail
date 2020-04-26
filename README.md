@@ -275,7 +275,7 @@ sudo python sensor.py
 - For **SUSE/openSUSE**
 
 ```
-sudo zypper install gcc gcc-c++ git libpcap-devel python2-pip python-devel python3-devel
+sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip
 sudo pip2 install pcapy
 git clone https://github.com/stamparm/maltrail.git
 cd maltrail
