@@ -2884,3 +2884,7 @@ b-ok.cc
 skms.ddns.net
 3rss.vicp.net
 kms.digiboy.ir
+
+# Reference: https://www.virustotal.com/gui/domain/eventory.cc/relations
+
+eventory.cc
