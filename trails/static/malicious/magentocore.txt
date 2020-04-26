@@ -1982,3 +1982,22 @@ securityipa.club
 # Reference: https://www.virustotal.com/gui/domain/sunrisepromos.com/relations
 
 sunrisepromos.com/js/lib/ccard.js
+
+# Reference: https://securityaffairs.co/wordpress/98124/cyber-crime/uncovering-new-magecart-implant.html
+# Reference: https://marcoramilli.com/2020/02/19/uncovering-new-magecart-implant-attacking-ecommerce/
+# Reference: https://labs.sucuri.net/web-skimmer-with-a-domain-name-generator-follow-up/
+
+ql201000.pw
+ql201041.pw
+ql201243.pw
+ql201456.pw
+ql201463.pw
+ql201721.pw
+ql202141.pw
+ql202412.pw
+ql202657.pw
+ql202989.pw
+q(l|r)[0-9]{6}\.pw
+/js/ar/ar906.php
+/js/ar/ar2497.php
+/js/ar/ar7938.php
