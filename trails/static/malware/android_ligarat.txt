@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: sdwipe
+
+# Reference: https://twitter.com/malwrhunterteam/status/1254854672940064768
+# Reference: https://www.virustotal.com/gui/file/920b7f50ebbffb414c3e08c8895adbb1d5382973379a6d0788c6db2a753b73e5/detection
+# Reference: https://www.virustotal.com/gui/file/1cf3919b82cfd06119d94be3ec2691ea2dcf967ee16fb93e7a03bc7578328216/detection
+
+ratliga.ir
+ratliga.org
+
+# Generic
+
+/DevilAPI/GetURL.php
+/DevilAPI/SaveLogCrash.php
