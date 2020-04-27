@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://news.sophos.com/en-us/2020/04/26/asnarok/
+# Reference: https://otx.alienvault.com/pulse/5ea6fc710b1e517cd25a7302
+
+filedownloaderserver.com
+filedownloaderservers.com
+filedownloaderserverx.com
+ragnarokfromasgard.com
+sophosenterprisecenter.com
+sophosfirewallupdate.com
+sophosproductupdate.com
+sophostraining.org
+sophoswarehouse.com
+updatefileservercross.com
