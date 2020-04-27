@@ -1025,3 +1025,7 @@ coronashirts.store
 # Reference: https://sansec.io/labs/2018/08/30/magentocore.net_skimmer_most_aggressive_to_date/
 
 /19303817.js
+
+# Reference: https://twitter.com/unmaskparasites/status/1254766052296122368
+
+stat.trackstatisticsss.com
