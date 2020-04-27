@@ -1459,6 +1459,10 @@ tunacan-812.tk
 /upload/get-functions.php?UID=
 /upload/message.php?UID=
 
+# Reference: https://twitter.com/MalwarePatrol/status/1254714230265319426
+
+/uphdird3igc2q2jhsgm9cez0.php
+
 # Generic
 
 /7328-dating-verification-card.php
