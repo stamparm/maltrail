@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/4ddc1325ac72ceaca843b017b7b68ef54b9c63757fb72c38738b076353e0ee25/detection
+
+205.251.145.29:1740
+295.yao.cl
+
+# Reference: https://www.virustotal.com/gui/file/d4b69105a02386a4c1f11d9b14f75f9a115bcfe54548cffcc271cb3f7630fc78/detection
+
+94.177.251.146:1740
+androreo_test_speed.strangled.net
