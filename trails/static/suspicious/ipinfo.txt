@@ -321,3 +321,8 @@ sfml-dev.org/ip-provider.php
 # Reference: https://www.virustotal.com/gui/file/e60b0b0e57ca395709aeae6016e39f4114c84272e32cf040f5d972372f212f08/detection
 
 sypexgeo.net
+
+# Reference: https://www.virustotal.com/gui/file/563d57c9f893a11d09e40edfd9e028bb3603ea7843b725521af03ef965f8970b/behavior/Tencent%20HABO
+
+geoip-db.com
+geolocation-db.com
