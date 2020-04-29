@@ -83,3 +83,8 @@ sgp389.com
 togel389.com
 togel389.net
 togel389.xyz
+
+# Reference: https://documents.trendmicro.com/assets/Appendix_AdwareCampaignIdentifiedFrom182GameandCameraAppsonGooglePlayandThird-PartyStoresLike9Apps.pdf
+# Reference: https://www.virustotal.com/gui/domain/atc.anncute.com/relations
+
+atc.anncute.com
