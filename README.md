@@ -30,6 +30,7 @@
 - [License](#license)
 - [Developers](#developers)
 - [Presentations](#presentations)
+- [Blacklist](#blacklist)
 - [Thank you](#thank-you)
 - [Third-party integrations](#third-party-integrations)
 
@@ -632,6 +633,10 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 ## Presentations
 
 * 47th TF-CSIRT Meeting, Prague (Czech Republic), 2016 ([slides](https://www.terena.org/activities/tf-csirt/meeting47/M.Stampar-Maltrail.pdf))
+
+## Blacklist
+
+* Maltrail's daily updated blacklist of malware-related domains can be found [here](https://raw.githubusercontent.com/stamparm/aux/master/maltrail-malware-domains.txt). It is based on trails found at [trails/static/malware](trails/static/malware) and it is intended for DNS blocking purposes.
 
 ## Thank you
 
