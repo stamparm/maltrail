@@ -167,6 +167,10 @@ rdssh.xyz
 
 /inc/server/gate.php
 
+# Reference: https://twitter.com/bad_packets/status/1255983398775975937
+
+http://213.128.93.199
+
 # Generic
 
 /admin_123/auth.php
