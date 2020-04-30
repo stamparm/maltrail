@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: clearsteal, mumbailoader
+
+# Reference: https://twitter.com/_re_fox/status/1255555463128715264
+# Reference: https://app.any.run/tasks/e5df9b8d-72a9-4532-8aaf-7e03e5ef4005/
+# Reference: https://www.virustotal.com/gui/file/84d9b74b7002de7f49bb7624ea63bf815497c51701bb3ec9124a0ec702178ef0/detection
+
+164.68.101.194:4679
+
+# Reference: https://www.virustotal.com/gui/file/e3825a91ea1387e4247f7960afb62320a438d453df955a3ec25f590843782f38/detection
+
+164.68.101.194:3315
+
+# Reference: https://www.virustotal.com/gui/file/114b6330741d974e1c97e42cff843247e7261b222ac716ea972fe59a7dfd09a1/detection
+
+164.68.101.194:4672
