@@ -1463,6 +1463,22 @@ tunacan-812.tk
 
 /uphdird3igc2q2jhsgm9cez0.php
 
+# Reference: https://twitter.com/IpNigh/status/1255422445047119872
+
+/6ogyock6bqt55br29xz41y4ozt.php
+
+# Reference: https://twitter.com/IpNigh/status/1255370965510479872
+
+/c9t4x6ypwut14ouvps6kszaf.php
+
+# Reference: https://twitter.com/dewan202/status/1255582744110862345
+# Reference: https://www.virustotal.com/gui/file/7edacdf35900e722b798dbc891159cf1ede9f6d671a86b0f01f9ef802202aa73/detection
+# Reference: https://www.virustotal.com/gui/ip-address/185.77.129.152/relations
+# Reference: https://www.virustotal.com/gui/ip-address/93.115.38.132/relations
+
+/jRizyPxmRnO.php
+/mskzrpufe.php
+
 # Generic
 
 /7328-dating-verification-card.php
