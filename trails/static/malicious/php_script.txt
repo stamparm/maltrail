@@ -1479,6 +1479,10 @@ tunacan-812.tk
 /jRizyPxmRnO.php
 /mskzrpufe.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1255801447318532096
+
+/0lnzqew8fz6gzds536vlirop27524e5d5582cfb0ee5b91de81c038c5.php
+
 # Generic
 
 /7328-dating-verification-card.php
