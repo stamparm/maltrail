@@ -636,7 +636,7 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 
 ## Blacklist
 
-* Maltrail's daily updated blacklist of malware-related domains can be found [here](https://raw.githubusercontent.com/stamparm/aux/master/maltrail-malware-domains.txt). It is based on trails found at [trails/static/malware](trails/static/malware) and it is intended for DNS blocking purposes.
+* Maltrail's daily updated blacklist of malware-related domains can be found [here](https://raw.githubusercontent.com/stamparm/aux/master/maltrail-malware-domains.txt). It is based on trails found at [trails/static/malware](trails/static/malware) and can be used for DNS traffic blocking purposes.
 
 ## Thank you
 
