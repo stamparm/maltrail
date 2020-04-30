@@ -280,3 +280,7 @@ proxy87.php
 # Reference: https://paste.ee/r/v9aRR/0
 
 shell.php
+
+# Reference: https://twitter.com/jstrosch/status/1255898007377231873
+
+cxz.php
