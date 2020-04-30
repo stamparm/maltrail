@@ -163,6 +163,10 @@
 
 rdssh.xyz
 
+# Reference: # Reference: https://twitter.com/malwrhunterteam/status/1255907032944775171
+
+/inc/server/gate.php
+
 # Generic
 
 /admin_123/auth.php
