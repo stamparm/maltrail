@@ -274,3 +274,7 @@
 # Reference: https://twitter.com/KorbenD_Intel/status/1238102354320166912
 
 /Miao.ps1
+
+# Reference: https://www.virustotal.com/gui/domain/crypterfile.com/relations
+
+/crypt.ps1
