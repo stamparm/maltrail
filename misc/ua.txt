@@ -1374,6 +1374,10 @@ Mozilla/5.00
 
 CLCTR
 
+# Reference: https://thedfirreport.com/2020/04/30/tricky-pyxie/
+
+MSIE 2.1
+
 # Misc
 
 information_schema
