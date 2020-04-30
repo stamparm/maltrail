@@ -1492,6 +1492,10 @@ tunacan-812.tk
 
 /trackattachment.php
 
+# Reference: https://twitter.com/malwarefr0gg0z/status/1255573957844983808
+
+/ThreatProvider/bot.php
+
 # Generic
 
 /7328-dating-verification-card.php
