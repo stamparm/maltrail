@@ -586,7 +586,9 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**,
 
 ## Best practice(s)
 
-1. Install Maltrail (preferably on Debian/Ubuntu Linux OS):
+1. Install Maltrail:
+
+- On **Debian/Ubuntu** Linux OS
 
     ```
     sudo apt-get install git python-pcapy
@@ -595,6 +597,17 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**,
     sudo mv /tmp/maltrail /opt
     sudo chown -R $USER:$USER /opt/maltrail
     ```
+    
+- On **SUSE/openSUSE** Linux OS
+
+   ```
+   sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip
+   sudo pip2 install pcapy
+   cd /tmp
+   git clone https://github.com/stamparm/maltrail.git
+   sudo mv /tmp/maltrail /opt
+   sudo chown -R $USER:$USER /opt/maltrail
+   ```
 
 2. Set working environment:
 
