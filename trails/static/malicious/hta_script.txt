@@ -389,6 +389,10 @@
 
 /new%201.hta
 
+# Reference: https://pastebin.com/uwPeU4CL
+
+/Cqsl.hta
+
 # Generic
 
 /myrrem.hta
