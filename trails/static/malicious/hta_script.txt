@@ -385,6 +385,14 @@
 /out-571924757.hta
 /out-756898907.hta
 
+# Refecerence: https://twitter.com/bit_dam/status/1256311982992633862
+
+/new%201.hta
+
+# Reference: https://pastebin.com/uwPeU4CL
+
+/Cqsl.hta
+
 # Generic
 
 /myrrem.hta
