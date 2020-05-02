@@ -2253,3 +2253,7 @@ updates.utyuytjn.com
 
 piytrwd.com
 cdn.piytrwd.com
+
+# Reference: https://www.virustotal.com/gui/domain/thebestoffersintheweb.com/relations
+
+thebestoffersintheweb.com
