@@ -2217,3 +2217,7 @@ dnodjoiz0vcnz.cloudfront.net
 
 publicnewsetup.com
 pc.publicnewsetup.com
+
+# Reference: https://www.virustotal.com/gui/domain/diskfixer.net/relations
+
+diskfixer.net
