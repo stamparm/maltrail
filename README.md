@@ -665,7 +665,7 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 ## Third-party integrations
 
 * [FreeBSD Port](https://www.freshports.org/security/maltrail)
-* [OPNSense Gateway Plugin](https://github.com/opnsense/plugins/pull/1241)
+* [OPNSense Gateway Plugin](https://github.com/opnsense/plugins/pull/1257)
 * [D4 Project](https://www.d4-project.org/2019/09/25/maltrail-integration.html)
 * [GScan](https://github.com/grayddq/GScan)
 * [BlackArch Linux](https://github.com/BlackArch/blackarch/blob/master/packages/maltrail/PKGBUILD)
