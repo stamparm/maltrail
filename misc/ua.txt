@@ -1374,6 +1374,14 @@ Mozilla/5.00
 
 CLCTR
 
+# Reference: https://thedfirreport.com/2020/04/30/tricky-pyxie/
+
+MSIE 2.1
+
+# Reference: https://twitter.com/bad_packets/status/1244873453858983936
+
+iLLSec-Avtech
+
 # Misc
 
 information_schema
