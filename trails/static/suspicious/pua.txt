@@ -2212,3 +2212,8 @@ d3s1tkg9f4254q.cloudfront.net
 d3tq9gtc0bxu1s.cloudfront.net
 dlrabaly59cp3.cloudfront.net
 dnodjoiz0vcnz.cloudfront.net
+
+# Reference: https://www.virustotal.com/gui/domain/pc.publicnewsetup.com/relations
+
+publicnewsetup.com
+pc.publicnewsetup.com
