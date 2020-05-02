@@ -2241,3 +2241,7 @@ mainbook.xyz
 # Reference: https://www.virustotal.com/gui/domain/dreamtrips.cheap/relations
 
 dreamtrips.cheap
+
+# Reference: https://www.virustotal.com/gui/domain/madmax.utyuytjn.com/relations
+
+madmax.utyuytjn.com
