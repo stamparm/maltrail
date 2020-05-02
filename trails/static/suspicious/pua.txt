@@ -2248,3 +2248,8 @@ utyuytjn.com
 madmax.utyuytjn.com
 stats.utyuytjn.com
 updates.utyuytjn.com
+
+# Reference: https://www.virustotal.com/gui/domain/cdn.piytrwd.com/relations
+
+piytrwd.com
+cdn.piytrwd.com
