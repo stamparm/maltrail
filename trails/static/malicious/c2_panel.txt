@@ -163,6 +163,19 @@
 
 rdssh.xyz
 
+# Reference: # Reference: https://twitter.com/malwrhunterteam/status/1255907032944775171
+
+/inc/server/gate.php
+
+# Reference: https://twitter.com/bad_packets/status/1255983398775975937
+
+http://213.128.93.199
+
+# Reference: # Reference: https://www.virustotal.com/gui/domain/rabok.io/relations
+
+/webpanel/abj/
+/webpanel/coach/
+
 # Generic
 
 /admin_123/auth.php
