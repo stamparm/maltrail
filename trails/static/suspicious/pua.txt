@@ -2212,3 +2212,54 @@ d3s1tkg9f4254q.cloudfront.net
 d3tq9gtc0bxu1s.cloudfront.net
 dlrabaly59cp3.cloudfront.net
 dnodjoiz0vcnz.cloudfront.net
+
+# Reference: https://www.virustotal.com/gui/domain/pc.publicnewsetup.com/relations
+
+publicnewsetup.com
+pc.publicnewsetup.com
+
+# Reference: https://www.virustotal.com/gui/domain/diskfixer.net/relations
+
+diskfixer.net
+
+# Reference: https://www.virustotal.com/gui/domain/hfuie32.2ihsfa.com/relations
+
+hfuie32.2ihsfa.com
+
+# Reference: https://www.virustotal.com/gui/domain/back.visitorpower.website/relations
+
+back.visitorpower.website
+
+# Reference: https://www.virustotal.com/gui/domain/toupdate15.com/relations
+
+toupdate15.com
+
+# Reference: https://www.virustotal.com/gui/domain/mainbook.xyz/relations
+
+mainbook.fun
+mainbook.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/dreamtrips.cheap/relations
+
+dreamtrips.cheap
+
+# Reference: https://www.virustotal.com/gui/domain/madmax.utyuytjn.com/relations
+
+utyuytjn.com
+madmax.utyuytjn.com
+stats.utyuytjn.com
+updates.utyuytjn.com
+
+# Reference: https://www.virustotal.com/gui/domain/cdn.piytrwd.com/relations
+
+piytrwd.com
+cdn.piytrwd.com
+
+# Reference: https://www.virustotal.com/gui/domain/thebestoffersintheweb.com/relations
+
+thebestoffersintheweb.com
+
+# Reference: https://www.virustotal.com/gui/domain/search.tube-bar.com/relations
+
+tube-bar.com
+search.tube-bar.com
