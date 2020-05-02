@@ -1035,3 +1035,7 @@ stat.trackstatisticsss.com
 # Reference: https://www.virustotal.com/gui/domain/crisgrey.com/relations
 
 crisgrey.com
+
+# Reference: https://www.virustotal.com/gui/domain/cdn-js.net/detection
+
+cdn-js.net
