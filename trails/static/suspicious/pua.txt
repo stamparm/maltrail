@@ -2244,4 +2244,6 @@ dreamtrips.cheap
 
 # Reference: https://www.virustotal.com/gui/domain/madmax.utyuytjn.com/relations
 
+utyuytjn.com
 madmax.utyuytjn.com
+updates.utyuytjn.com
