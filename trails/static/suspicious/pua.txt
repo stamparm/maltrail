@@ -2236,6 +2236,7 @@ toupdate15.com
 
 # Reference: https://www.virustotal.com/gui/domain/mainbook.xyz/relations
 
+mainbook.fun
 mainbook.xyz
 
 # Reference: https://www.virustotal.com/gui/domain/dreamtrips.cheap/relations
