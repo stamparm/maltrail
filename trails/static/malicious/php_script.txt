@@ -1500,6 +1500,10 @@ tunacan-812.tk
 
 /logiinnnnn.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1256888609074024448
+
+/cjp06ozeq4j00p66uek5qokp27524e5d5582cfb0ee5b91de81c038c5.php
+
 # Generic
 
 /7328-dating-verification-card.php
