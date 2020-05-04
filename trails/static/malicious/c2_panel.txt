@@ -176,6 +176,11 @@ http://213.128.93.199
 /webpanel/abj/
 /webpanel/coach/
 
+# Reference: https://twitter.com/W3B_B3ND3R/status/1237694235748577280
+# Reference: https://www.virustotal.com/gui/ip-address/27.254.33.56/relations
+
+/admin_panel/inj/
+
 # Generic
 
 /admin_123/auth.php
