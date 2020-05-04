@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: fobus, podec
+
+# Reference: https://fortiguard.com/encyclopedia/virus/7588808
+# Reference: https://www.virustotal.com/gui/file/351839700bc0b393cf3887196c0472360ebd9f1a9343b31e6b4968fabe057b6b/detection
+
+fapecalijobutaka.biz
+gykarizukuxomefo.biz
+jafivipu.biz
+kugoheba.biz
+obiparujudyritow.biz
+xupiheham.biz
+ymokymakyfe.biz
