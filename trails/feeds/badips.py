@@ -8,6 +8,7 @@ See the file 'LICENSE' for copying permission
 from core.common import retrieve_content
 
 __url__ = "https://www.badips.com/get/list/any/2?age=7d"
+__backup__ = "https://iplists.firehol.org/files/bi_cms_2_30d.ipset"
 __check__ = ".1"
 __info__ = "known attacker"
 __reference__ = "badips.com"
@@ -15,6 +16,9 @@ __reference__ = "badips.com"
 def fetch():
     retval = {}
     content = retrieve_content(__url__)
+
+    if __check__ not in content:
+        content = retrieve_content(__backup__)
 
     if __check__ in content:
         for line in content.split('\n'):
