@@ -1509,6 +1509,11 @@ tunacan-812.tk
 /9o0.php
 /firstga990.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1257660701428142080
+
+/4ij6qw.php
+/FC5pz8.php
+
 # Generic
 
 /7328-dating-verification-card.php
