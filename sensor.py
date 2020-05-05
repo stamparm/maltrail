@@ -492,12 +492,17 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, result, "user agent (suspicious)", "(heuristic)"), packet)
 
                     if not _check_domain_whitelisted(host):
+                        unquoted_path = _urllib.parse.unquote(path)
+                        unquoted_post_data = _urllib.parse.unquote(post_data or "")
+
                         checks = [path.rstrip('/')]
                         if '?' in path:
                             checks.append(path.split('?')[0].rstrip('/'))
 
                             if '=' in path:
                                 checks.append(path[:path.index('=') + 1])
+                        elif post_data:
+                            checks.append("%s?%s" % (path, unquoted_post_data.lower()))
 
                         _ = os.path.splitext(checks[-1])
                         if _[1]:
@@ -511,10 +516,15 @@ def _process_packet(packet, sec, usec, ip_offset):
                             for _ in ("", host):
                                 check = "%s%s" % (_, check)
                                 if check in trails:
-                                    parts = url.split(check)
-                                    other = ("(%s)" % _ if _ else _ for _ in parts)
-                                    trail = check.join(other)
-                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, trails[check][0], trails[check][1]))
+                                    if '?' not in path and '?' in check and post_data:
+                                        trail = "%s(%s \\(%s %s\\))" % (host, path, method, post_data.strip())
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, trails[check][0], trails[check][1]))
+                                    else:
+                                        parts = url.split(check)
+                                        other = ("(%s)" % _ if _ else _ for _ in parts)
+                                        trail = check.join(other)
+                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, trails[check][0], trails[check][1]))
+
                                     return
 
                         if "%s/" % host in trails:
@@ -526,8 +536,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             match = re.search(r"\bX-Forwarded-For:\s*([0-9.]+)".encode(), packet, re.I)
                             if match:
                                 src_ip = "%s,%s" % (src_ip, match.group(1))
-                            unquoted_path = _urllib.parse.unquote(path)
-                            unquoted_post_data = _urllib.parse.unquote(post_data or "")
+
                             for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
                                 replacement = SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS[char]
                                 path = path.replace(char, replacement)
