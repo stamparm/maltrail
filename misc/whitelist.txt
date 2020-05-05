@@ -2888,3 +2888,7 @@ kms.digiboy.ir
 # Reference: https://www.virustotal.com/gui/domain/eventory.cc/relations
 
 eventory.cc
+
+# Reference: https://pastecode.xyz/
+
+pastecode.xyz
