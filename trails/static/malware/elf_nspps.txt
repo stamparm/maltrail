@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://ironnet.com/blog/malware-analysis-nspps-a-go-rat-backdoor/
+# Reference: https://otx.alienvault.com/pulse/5eb03a70525b626c9c48ed93
+
+http://188.120.254.224
+http://46.229.215.164
+http://62.113.112.127
+kindora85.fvds.ru
+vds-cg30906.timeweb.ru
+host-62-113-112-127.hosted-by-vdsina.ru
