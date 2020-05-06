@@ -2009,6 +2009,8 @@ gooogletagmanager.online
 
 # Reference: https://twitter.com/Bank_Security/status/1258130762685186048
 # Reference: https://blog.malwarebytes.com/threat-analysis/2020/05/credit-card-skimmer-masquerades-as-favicon/
+# Reference: https://www.virustotal.com/gui/ip-address/83.166.242.105/relations
 
 myicons.net/d/favicon.png
 psas.pw
+y5.ms
