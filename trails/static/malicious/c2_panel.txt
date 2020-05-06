@@ -181,6 +181,10 @@ http://213.128.93.199
 
 /admin_panel/inj/
 
+# Reference: https://twitter.com/James_inthe_box/status/1258099799066243072
+
+/js/webpanel/
+
 # Generic
 
 /admin_123/auth.php
