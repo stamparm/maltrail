@@ -433,3 +433,7 @@ heliohost.org
 # Reference: https://github.com/stamparm/maltrail/pull/6726#issuecomment-585150689
 
 6te.net
+
+# Reference: https://tiiny.host/
+
+tiiny.host
