@@ -1516,6 +1516,10 @@ tunacan-812.tk
 /fnojg.php
 /jikPcQ.php
 
+# Reference: https://twitter.com/IpNigh/status/1257797957686112257
+
+/rbcgi3m01.php
+
 # Generic
 
 /7328-dating-verification-card.php
