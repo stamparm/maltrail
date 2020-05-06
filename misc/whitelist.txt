@@ -2893,3 +2893,7 @@ eventory.cc
 # Reference: https://pastecode.xyz/
 
 pastecode.xyz
+
+# Reference: https://exchange.xforce.ibmcloud.com (# Otherwise MT will mstakely trigger on links like https://exchange.xforce.ibmcloud.com/url/hfgfr56745fg.com/admin/gate.php)
+
+exchange.xforce.ibmcloud.com
