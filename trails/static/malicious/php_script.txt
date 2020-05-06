@@ -1520,6 +1520,10 @@ tunacan-812.tk
 
 /rbcgi3m01.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1258051238924517376
+
+/c65f9sbx5g0nhf74mxfbtort.php
+
 # Generic
 
 /7328-dating-verification-card.php
