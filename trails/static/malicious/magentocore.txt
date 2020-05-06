@@ -2002,3 +2002,7 @@ q(l|r)[0-9]{5,6}\.pw
 /js/ar/ar906.php
 /js/ar/ar2497.php
 /js/ar/ar7938.php
+
+# Reference: https://blog.sucuri.net/2020/04/web-skimmer-with-a-domain-name-generator.html
+
+gooogletagmanager.online
