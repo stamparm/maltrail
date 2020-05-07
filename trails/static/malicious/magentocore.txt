@@ -1986,6 +1986,7 @@ sunrisepromos.com/js/lib/ccard.js
 # Reference: https://securityaffairs.co/wordpress/98124/cyber-crime/uncovering-new-magecart-implant.html
 # Reference: https://marcoramilli.com/2020/02/19/uncovering-new-magecart-implant-attacking-ecommerce/
 # Reference: https://labs.sucuri.net/web-skimmer-with-a-domain-name-generator-follow-up/
+# Reference: https://twitter.com/AffableKraut/status/1257937430709186560
 
 ql201000.pw
 ql201041.pw
@@ -1997,7 +1998,18 @@ ql202141.pw
 ql202412.pw
 ql202657.pw
 ql202989.pw
-q(l|r)[0-9]{6}\.pw
+q(l|r)[0-9]{5,6}\.pw
 /js/ar/ar906.php
 /js/ar/ar2497.php
 /js/ar/ar7938.php
+
+# Reference: https://blog.sucuri.net/2020/04/web-skimmer-with-a-domain-name-generator.html
+
+gooogletagmanager.online
+
+# Reference: https://twitter.com/Bank_Security/status/1258130762685186048
+# Reference: https://blog.malwarebytes.com/threat-analysis/2020/05/credit-card-skimmer-masquerades-as-favicon/
+# Reference: https://www.virustotal.com/gui/ip-address/83.166.242.105/relations
+
+myicons.net/d/favicon.png
+psas.pw
