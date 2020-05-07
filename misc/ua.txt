@@ -1382,6 +1382,11 @@ MSIE 2.1
 
 iLLSec-Avtech
 
+# Reference: https://github.com/stamparm/maltrail/pull/8708
+# Reference: https://app.any.run/tasks/fd024fe5-4196-49dc-bf96-ba11418136db/
+
+\AUser-Agent User-Agent\Z
+
 # Misc
 
 information_schema
