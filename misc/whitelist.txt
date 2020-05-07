@@ -2902,8 +2902,9 @@ eventory.cc
 
 pastecode.xyz
 
-# Reference: https://exchange.xforce.ibmcloud.com (# Otherwise MT will mstakely trigger on links like https://exchange.xforce.ibmcloud.com/url/hfgfr56745fg.com/admin/gate.php)
+# Reference: https://exchange.xforce.ibmcloud.com (# Otherwise MT will mistakely trigger on links like https://exchange.xforce.ibmcloud.com/url/hfgfr56745fg.com/admin/gate.php)
 
+ibmcloud.com
 exchange.xforce.ibmcloud.com
 
 # Reference: https://github.com/stamparm/maltrail/pull/8701/commits/9ecad095a48f774e32f4069113f195a7bf883662
