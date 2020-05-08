@@ -1282,7 +1282,11 @@ Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; NP06
 # Reference: https://twitter.com/bad_packets/status/1236005753800048641
 # Reference: https://twitter.com/bad_packets/status/1245408005358628864
 # Reference: https://blog.radware.com/security/botnets/2020/05/whos-viktor-tracking-down-the-xtc-polaris-botnets/
+# Reference: https://blog.netlab.360.com/multiple-fiber-routers-are-being-compromised-by-botnets-using-0-day-en/
 
+polaris
+polaris botnet
+vbrxmr
 xtc
 xtcbot
 xtc bot
@@ -1356,11 +1360,6 @@ SanAntonio
 
 sdvntyer
 \Auser_agent\Z
-
-# Reference: https://blog.netlab.360.com/multiple-fiber-routers-are-being-compromised-by-botnets-using-0-day-en/
-
-polaris
-polaris botnet
 
 # Reference: https://twitter.com/malwrhunterteam/status/1253381112791007233
 
