@@ -1524,6 +1524,10 @@ tunacan-812.tk
 
 /c65f9sbx5g0nhf74mxfbtort.php
 
+# Reference: https://twitter.com/James_inthe_box/status/1258763270690713600
+
+/0x5xmta6bazciio7llfg0l9e.php
+
 # Generic
 
 /7328-dating-verification-card.php
