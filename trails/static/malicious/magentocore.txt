@@ -2017,3 +2017,7 @@ psas.pw
 # Reference: https://twitter.com/felixaime/status/1258800483524804608
 
 jquerycdn.at
+
+# Reference: https://twitter.com/felixaime/status/1258834331163922432
+
+jquerye.at
