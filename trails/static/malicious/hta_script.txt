@@ -393,6 +393,10 @@
 
 /Cqsl.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1258844055682912259
+
+/out-2010667608.hta
+
 # Generic
 
 /myrrem.hta
