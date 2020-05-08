@@ -2013,3 +2013,7 @@ gooogletagmanager.online
 
 myicons.net/d/favicon.png
 psas.pw
+
+# Reference: https://twitter.com/felixaime/status/1258800483524804608
+
+jquerycdn.at
