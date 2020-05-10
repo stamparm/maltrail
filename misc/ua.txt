@@ -1388,6 +1388,10 @@ iLLSec-Avtech
 
 \AUser-Agent User-Agent\Z
 
+# Reference: https://twitter.com/bad_packets/status/1259613095518801920
+
+\AMTM\Z
+
 # Misc
 
 information_schema
