@@ -1539,6 +1539,7 @@ tunacan-812.tk
 # Reference: https://twitter.com/PhishFindR/status/1259381536396369920
 
 /confirmnewboa/login.php
+/Fullz/Thanks.php
 
 # Generic
 
