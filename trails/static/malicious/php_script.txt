@@ -1541,6 +1541,10 @@ tunacan-812.tk
 /confirmnewboa/login.php
 /Fullz/Thanks.php
 
+# Reference: https://app.any.run/tasks/17b516fd-2351-4330-8cee-90caac222963/
+
+/xuraca.php
+
 # Generic
 
 /7328-dating-verification-card.php
