@@ -1539,11 +1539,23 @@ tunacan-812.tk
 # Reference: https://twitter.com/PhishFindR/status/1259381536396369920
 
 /confirmnewboa/login.php
-/Fullz/Thanks.php
 
 # Reference: https://app.any.run/tasks/17b516fd-2351-4330-8cee-90caac222963/
 
 /xuraca.php
+
+# Reference: https://www.virustotal.com/gui/domain/vanillabean.bounceme.net/relations
+
+/chase.com/fullz/billing.php
+/chase.com/fullz/home.php
+/chase.com/fullz/homepage.php
+/chase.com/fullz/index.php
+/chase.com/fullz/index2.php
+/chase.com/fullz/index3.php
+/chase.com/fullz/login.php
+/chase.com/fullz/main.php
+/chase.com/fullz/thanks.php
+/chase.com/fullz/verify.php
 
 # Generic
 
