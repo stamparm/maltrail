@@ -1532,6 +1532,10 @@ tunacan-812.tk
 
 /server/das/dastoor.php
 
+# Reference: https://twitter.com/PhishFindR/status/1259381536396369920
+
+/rbcgi3m01.php
+
 # Generic
 
 /7328-dating-verification-card.php
