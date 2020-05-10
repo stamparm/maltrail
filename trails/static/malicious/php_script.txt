@@ -1536,6 +1536,10 @@ tunacan-812.tk
 
 /rbcgi3m01.php
 
+# Reference: https://twitter.com/PhishFindR/status/1259381536396369920
+
+/confirmnewboa/login.php
+
 # Generic
 
 /7328-dating-verification-card.php
