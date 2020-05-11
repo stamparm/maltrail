@@ -62,7 +62,7 @@ def fetch():
                     line = line.decode(UNICODE_ENCODING)
 
                 match = re.search(r"\A([^,\s]+),Domain used by ([^ ]+)", line)
-                if match and '.' in match.group(1):
+                if match and '.' in match.group(1) and not any(_ in match.group(2).lower() for _ in ("qsnatch",)):
                     retval[match.group(1)] = ("%s dga (malware)" % match.group(2).lower(), __reference__)
         except:
             pass
