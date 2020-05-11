@@ -1557,6 +1557,10 @@ tunacan-812.tk
 /chase.com/fullz/thanks.php
 /chase.com/fullz/verify.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1259636683781308416
+
+/ncceg0dxw8nx6tnf0kdf1r9e.php
+
 # Generic
 
 /7328-dating-verification-card.php
