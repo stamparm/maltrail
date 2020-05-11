@@ -903,6 +903,7 @@ sophosxl.net
 
 # Generic
 
+chogoon.com
 seagull.ddns.net
 tracker.empire-js.us
 rufus.ie
