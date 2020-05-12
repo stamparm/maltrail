@@ -194,6 +194,7 @@ http://213.128.93.199
 /admin_123/page.php
 /logz/auth.php
 /logz/login.php
+/Panel/callback.php
 /panel/gate.php
 /Panel/index.php
 /Panel/page.php
