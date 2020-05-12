@@ -749,10 +749,6 @@ zirve100.com
 
 /js/mirasvit/
 
-# Reference: https://twitter.com/AffableKraut/status/1159677725994622976
-
-jquery.in.ua
-
 # Reference: https://twitter.com/Placebo52510486/status/1141619924512792583
 
 12js.org
