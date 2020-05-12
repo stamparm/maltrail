@@ -1561,6 +1561,22 @@ tunacan-812.tk
 
 /ncceg0dxw8nx6tnf0kdf1r9e.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1259999082849976320
+
+/6dp6zted83lurftrrxh1b2m5.php
+
+# Reference: https://www.virustotal.com/gui/ip-address/46.21.147.111/relations
+
+/11dniosilnj5b6y6ktrrlfhr.php
+/4h925v7vfpulgdhjobci09bk.php
+/dda0nwei0akmgjrbhdg7henb.php
+/fiyycp4s6ye310a8r6q2zdie.php
+/mr7xuen7osh0gjkeuam56bgw.php
+/p8g7uxk09yytz1on4g8brq7p.php
+/upnqi0usn8ej565w8msy1ui3.php
+/vkdw36ry81rtlyq5yq49p5d1.php
+/zjcya375wuoz6m9jk7mfim6s.php
+
 # Generic
 
 /7328-dating-verification-card.php
