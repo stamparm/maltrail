@@ -229,6 +229,7 @@ def update_trails(force=False, offline=False):
             for key in list(trails.keys()):
                 if key not in trails:
                     continue
+
                 if config.DISABLED_TRAILS_INFO_REGEX:
                     if re.search(config.DISABLED_TRAILS_INFO_REGEX, trails[key][0]):
                         del trails[key]
@@ -249,35 +250,48 @@ def update_trails(force=False, offline=False):
                 if not key or re.search(r"(?i)\A\.?[a-z]+\Z", key) and not any(_ in trails[key][1] for _ in ("custom", "static")):
                     del trails[key]
                     continue
+
                 if re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key):
                     if any(_ in trails[key][0] for _ in ("parking site", "sinkhole")) and key in duplicates:    # Note: delete (e.g.) junk custom trails if static trail is a sinkhole
                         del duplicates[key]
+
                     if trails[key][0] == "malware":
                         trails[key] = ("potential malware site", trails[key][1])
+
+                    if config.get("IP_MINIMUM_FEEDS", 3) > 1:
+                        if key not in duplicates or (len(duplicates[key]) < config.get("IP_MINIMUM_FEEDS", 3) and not any('(' in _ for _ in duplicates[key])):
+                            del trails[key]
+                            continue
+
                 if trails[key][0] == "ransomware":
                     trails[key] = ("ransomware (malware)", trails[key][1])
+
                 if key.startswith("www.") and '/' not in key:
                     _ = trails[key]
                     del trails[key]
                     key = key[len("www."):]
                     if key:
                         trails[key] = _
+
                 if '?' in key and not key.startswith('/'):
                     _ = trails[key]
                     del trails[key]
                     key = key.split('?')[0]
                     if key:
                         trails[key] = _
+
                 if '//' in key:
                     _ = trails[key]
                     del trails[key]
                     key = key.replace('//', '/')
                     trails[key] = _
+
                 if key != key.lower():
                     _ = trails[key]
                     del trails[key]
                     key = key.lower()
                     trails[key] = _
+
                 if key in duplicates:
                     _ = trails[key]
                     others = sorted(duplicates[key] - set((_[1],)))
