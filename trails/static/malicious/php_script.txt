@@ -1565,6 +1565,11 @@ tunacan-812.tk
 
 /6dp6zted83lurftrrxh1b2m5.php
 
+# Reference: https://www.virustotal.com/gui/ip-address/46.21.147.111/relations
+
+/11dniosilnj5b6y6ktrrlfhr.php
+/mr7xuen7osh0gjkeuam56bgw.php
+
 # Generic
 
 /7328-dating-verification-card.php
