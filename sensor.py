@@ -78,6 +78,7 @@ from core.settings import REGULAR_SENSOR_SLEEP_TIME
 from core.settings import SNAP_LEN
 from core.settings import SUSPICIOUS_CONTENT_TYPES
 from core.settings import SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS
+from core.settings import SUSPICIOUS_DIRECT_IP_URL_REGEX
 from core.settings import SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD
 from core.settings import SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD
 from core.settings import SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
@@ -412,6 +413,10 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 host = host[:-3]
                             if host and host[0].isalpha() and dst_ip in trails:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, "%s (%s)" % (dst_ip, host.split(':')[0]), trails[dst_ip][0], trails[dst_ip][1]), packet)
+                            elif re.search(r"\A\d+\.[0-9.]+\Z", host or "") and re.search(SUSPICIOUS_DIRECT_IP_URL_REGEX, "%s%s" % (host, path)):
+                                trail = "(%s)%s" % (host, path)
+                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "potential malicious download (suspicious)", "(heuristic)"), packet)
+                                return
                             elif config.CHECK_HOST_DOMAINS:
                                 _check_domain(host, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, packet)
                     elif config.USE_HEURISTICS and config.CHECK_MISSING_HOST:
