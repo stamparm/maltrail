@@ -2023,3 +2023,7 @@ jquerycdn.at
 # Reference: https://twitter.com/felixaime/status/1258834331163922432
 
 jquerye.at
+
+# Reference: https://twitter.com/unmaskparasites/status/1260542044747059200
+
+digestcolect.com
