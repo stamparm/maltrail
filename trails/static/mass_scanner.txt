@@ -2879,3 +2879,7 @@
 
 35.239.58.193  # ltx71
 35.202.2.1     # ltx71
+
+# Reference: https://twitter.com/malwaremustd1e/status/1260582039503417344
+
+194.180.224.150
