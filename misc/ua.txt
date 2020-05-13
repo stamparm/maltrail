@@ -1392,6 +1392,10 @@ iLLSec-Avtech
 
 \AMTM\Z
 
+# Reference: https://twitter.com/AdAstra247/status/1260258893361487873
+
+StellaStella
+
 # Misc
 
 information_schema
