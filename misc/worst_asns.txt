@@ -5849,3 +5849,8 @@
 
 # AS22769
 213.176.32.0/19,ddosing network
+
+# AS35278 (Sprinthost.ru LLC)
+141.8.192.0/21,sprinthost
+176.119.147.0/24,sprinthost
+185.185.68.0/22,sprinthost
