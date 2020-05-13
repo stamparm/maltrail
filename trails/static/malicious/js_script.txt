@@ -383,11 +383,6 @@ d20iczrsxk7wft.cloudfront.net/botwverified/badge.js
 cdn.ryviu.com/js/reviews.js
 ww1-filecloud.com
 
-# Reference: https://twitter.com/jeromesegura/status/1133160126561394688
-# Reference: https://blog.malwarebytes.com/cybercrime/2019/05/skimmer-acts-as-payment-service-provider-via-rogue-iframe/
-
-modest4ever.com/assets/newbalance.js
-
 # Reference: https://twitter.com/KorbenD_Intel/status/1133469852579106816
 
 /thecry.js
@@ -753,10 +748,6 @@ zirve100.com
 # Reference: https://twitter.com/GroupIB_GIB/status/1185230751769468928
 
 /js/mirasvit/
-
-# Reference: https://twitter.com/AffableKraut/status/1159677725994622976
-
-jquery.in.ua
 
 # Reference: https://twitter.com/Placebo52510486/status/1141619924512792583
 
