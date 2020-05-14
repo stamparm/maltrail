@@ -2023,3 +2023,14 @@ jquerycdn.at
 # Reference: https://twitter.com/felixaime/status/1258834331163922432
 
 jquerye.at
+
+# Reference: https://twitter.com/felixaime/status/1260822992180973572
+
+cdnjustuno.icu
+manag.icu
+targetad.icu
+
+# Reference: https://twitter.com/felixaime/status/1260827294723170304
+
+tags-app.icu
+tags-bootstrap.icu
