@@ -1035,3 +1035,9 @@ crisgrey.com
 # Reference: https://www.virustotal.com/gui/domain/cdn-js.net/detection
 
 cdn-js.net
+
+# Reference: https://twitter.com/unmaskparasites/status/1260542044747059200
+
+digestcolect.com
+css.digestcolect.com
+js.digestcolect.com
