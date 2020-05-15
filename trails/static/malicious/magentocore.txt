@@ -2034,3 +2034,8 @@ targetad.icu
 
 tags-app.icu
 tags-bootstrap.icu
+
+# Reference: https://twitter.com/AffableKraut/status/1261157021027622912
+# Reference: https://gist.github.com/krautface/c2f2d6d0c4516afc47efcbe17e561e0c
+
+google-analytics.com/prubdfvh
