@@ -88,3 +88,7 @@ togel389.xyz
 # Reference: https://www.virustotal.com/gui/domain/atc.anncute.com/relations
 
 atc.anncute.com
+
+# Reference: https://twitter.com/ReBensk/status/1263078801866539009
+
+cerberusapp.com
