@@ -80,21 +80,6 @@ ns2.firstdnshoster.com
 82.163.142.137:53
 82.163.143.135:53
 
-# Reference: https://www.platinbilisim.com.tr/TR/Medya/Duyurular/dikkat-ghost-dns-261 (Turkish)
-# Reference: https://blog.netlab.360.com/70-different-types-of-home-routers-all-together-100000-are-being-hijacked-by-ghostdns-en/
-
-139.60.162.188:53
-139.60.162.201:53
-144.22.104.185:53
-173.82.168.104:53
-18.223.2.98:53
-192.99.187.193:53
-198.27.121.241:53
-200.196.240.104:53
-200.196.240.120:53
-35.185.9.164:53
-80.211.37.41:53
-
 # Reference: https://www.proofpoint.com/us/threat-insight/post/home-routers-under-attack-malvertising-windows-android-devices
 
 217.12.218.114:53
@@ -364,14 +349,6 @@ ns2.firstdnshoster.com
 
 46.105.86.80:53
 
-# Reference: https://github.com/reaperb0t/GhostDNS/blob/master/Remote_DNS_Changing_Exploits_not_GHOSTDNS_specific/37214.txt
-
-133.71.33.7:53
-
-# Reference: https://github.com/reaperb0t/GhostDNS/blob/master/Remote_DNS_Changing_Exploits_not_GHOSTDNS_specific/42197.sh
-
-133.7.133.7:53
-
 # Reference: https://twitter.com/david_jursa/status/1119573958095974400
 
 172.245.211.58:53
@@ -495,10 +472,6 @@ ns2.dnshost.ga
 192.3.207.10:53
 198.46.234.210:53
 
-# Reference: https://twitter.com/ninoseki/status/1207634830927679488
-
-107.155.152.15:53
-
 # Reference: https://www.domaintools.com/resources/blog/finding-additional-indicators-with-passive-dns-within-domaintools-iris
 # Reference: https://otx.alienvault.com/pulse/5e3d2b649a5e2e8c862e769f
 
@@ -534,7 +507,3 @@ resolve.interland.com
 
 109.234.35.230:53
 94.103.82.249:53
-
-# Reference: https://twitter.com/ninoseki/status/1250014776014454784
-
-167.114.178.206:53
