@@ -75,11 +75,6 @@ ns2.firstdnshoster.com
 185.130.104.222:53
 185.162.93.213:53
 
-# Reference: https://www.scmagazineuk.com/new-mac-malware-mami-hijacks-dns-connections/article/1473476
-
-82.163.142.137:53
-82.163.143.135:53
-
 # Reference: https://www.proofpoint.com/us/threat-insight/post/home-routers-under-attack-malvertising-windows-android-devices
 
 217.12.218.114:53
