@@ -2045,3 +2045,7 @@ priangan.com/wp-content/languages/blogid/
 # Reference: https://www.virustotal.com/gui/domain/googletagmanagr.com/detection
 
 googletagmanagr.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1262893385448210434
+
+magentorates.com
