@@ -259,7 +259,7 @@ def update_trails(force=False, offline=False):
                         trails[key] = ("potential malware site", trails[key][1])
 
                     if config.get("IP_MINIMUM_FEEDS", 3) > 1:
-                        if key not in duplicates or (len(duplicates[key]) < config.get("IP_MINIMUM_FEEDS", 3) and not any('(' in _ for _ in duplicates[key])):
+                        if (key not in duplicates or len(duplicates[key]) < config.get("IP_MINIMUM_FEEDS", 3)) and re.search(r"\b(custom|static)\b", trails[key][1]) is None:
                             del trails[key]
                             continue
 
