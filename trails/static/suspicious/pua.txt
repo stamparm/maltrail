@@ -2267,3 +2267,7 @@ search.tube-bar.com
 # Reference: https://app.any.run/tasks/769e4025-809e-46f7-b7f6-e12f153192ce/
 
 rp.downloadagentcdn.com
+
+# Reference: https://www.virustotal.com/gui/domain/youtube4kdowloader.club/detection
+
+youtube4kdowloader.club
