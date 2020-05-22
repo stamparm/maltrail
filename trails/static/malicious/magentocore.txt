@@ -2063,5 +2063,7 @@ shopssl.xyz
 idtransfer.icu
 
 # Reference: https://twitter.com/MBThreatIntel/status/1263876741094727680
+# Reference: https://www.virustotal.com/gui/ip-address/23.106.215.85/relations
 
+cdncontentserver.com
 onlineimageservices.com
