@@ -2061,3 +2061,7 @@ hostssl.uno
 hostssl.xyz
 shopssl.xyz
 idtransfer.icu
+
+# Reference: https://twitter.com/MBThreatIntel/status/1263876741094727680
+
+onlineimageservices.com
