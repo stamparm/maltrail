@@ -2052,8 +2052,11 @@ magentorates.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1263850035382378497
 # Reference: https://twitter.com/500mk500/status/1263861204327505928
+# Reference: https://twitter.com/d09r_/status/1263864711847620609
+# Reference: https://www.virustotal.com/gui/ip-address/5.188.62.173/relations
 # Reference: https://www.virustotal.com/gui/ip-address/176.123.6.37/relations
 
+padmin.xyz
 hostssl.uno
 hostssl.xyz
 shopssl.xyz
