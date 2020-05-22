@@ -1041,3 +1041,7 @@ cdn-js.net
 digestcolect.com
 css.digestcolect.com
 js.digestcolect.com
+
+# Reference: https://twitter.com/felixaime/status/1263818626114740224
+
+scriptstatistic.com
