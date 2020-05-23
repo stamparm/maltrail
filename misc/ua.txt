@@ -1396,6 +1396,10 @@ iLLSec-Avtech
 
 StellaStella
 
+# Reference: https://twitter.com/bad_packets/status/1264290514406240257
+
+M/1.0
+
 # Misc
 
 information_schema
