@@ -1593,6 +1593,10 @@ tunacan-812.tk
 
 /dtsf394vt015wph23m7vxw4m.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1264287322192871436
+
+/xwlb5u9cbldxslwlfcxsp58k.php
+
 # Generic
 
 /7328-dating-verification-card.php
