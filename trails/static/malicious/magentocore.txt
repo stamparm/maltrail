@@ -2067,3 +2067,10 @@ idtransfer.icu
 
 cdncontentserver.com
 onlineimageservices.com
+
+# Reference: https://www.reflectiz.com/the-gocgle-web-skimming-campaign/
+
+gocgle-analytics.cm
+gocgle-analytics.net
+gocgletagmanager.cm
+gocgletagmanager.com
