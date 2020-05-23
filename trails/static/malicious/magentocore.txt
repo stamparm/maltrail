@@ -2077,7 +2077,6 @@ gocgletagmanager.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/194.180.224.112/relations
 
-analytic.is
 authcrize.net
 gcogle-analytics.com
 gocgle-analytics.net
