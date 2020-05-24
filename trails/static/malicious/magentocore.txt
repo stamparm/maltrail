@@ -1827,7 +1827,7 @@ oldworldaccents.net/js/embed.min.js
 
 google-analytics.gq
 
-# ReferencE: https://twitter.com/felixaime/status/1247414542759575552
+# Reference: https://twitter.com/felixaime/status/1247414542759575552
 
 google-analytc.com
 
