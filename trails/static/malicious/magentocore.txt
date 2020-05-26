@@ -2094,3 +2094,7 @@ cdndoubleclick.net
 
 cdn-contentstore.com
 cdn-sources.com
+
+# Reference: https://twitter.com/AffableKraut/status/1265349583925841922
+
+ads-fbstatistic.com
