@@ -1827,7 +1827,7 @@ oldworldaccents.net/js/embed.min.js
 
 google-analytics.gq
 
-# ReferencE: https://twitter.com/felixaime/status/1247414542759575552
+# Reference: https://twitter.com/felixaime/status/1247414542759575552
 
 google-analytc.com
 
@@ -2049,3 +2049,48 @@ googletagmanagr.com
 # Reference: https://twitter.com/MBThreatIntel/status/1262893385448210434
 
 magentorates.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1263850035382378497
+# Reference: https://twitter.com/500mk500/status/1263861204327505928
+# Reference: https://twitter.com/d09r_/status/1263864711847620609
+# Reference: https://www.virustotal.com/gui/ip-address/5.188.62.173/relations
+# Reference: https://www.virustotal.com/gui/ip-address/176.123.6.37/relations
+
+padmin.xyz
+hostssl.uno
+hostssl.xyz
+shopssl.xyz
+idtransfer.icu
+
+# Reference: https://twitter.com/MBThreatIntel/status/1263876741094727680
+# Reference: https://www.virustotal.com/gui/ip-address/23.106.215.85/relations
+
+cdncontentserver.com
+onlineimageservices.com
+
+# Reference: https://www.reflectiz.com/the-gocgle-web-skimming-campaign/
+
+gocgle-analytics.cm
+gocgle-analytics.net
+gocgletagmanager.cm
+gocgletagmanager.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/194.180.224.112/relations
+
+authcrize.net
+gcogle-analytics.com
+gocgle-analytics.net
+gooqle-analytics.com
+gooqle-analytics.net
+secure-authorize.net
+wanalytic.is
+
+# Reference: https://twitter.com/felixaime/status/1264124350883602432
+# Reference: https://www.virustotal.com/gui/ip-address/161.35.202.72/relations
+
+cdndoubleclick.net
+
+# Reference: https://twitter.com/felixaime/status/1264567401380753409
+
+cdn-contentstore.com
+cdn-sources.com
