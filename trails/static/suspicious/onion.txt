@@ -17,6 +17,13 @@ tor2web.org
 tor2web.ru
 tor-gateways.de
 
+# Reference: https://twitter.com/JiaYu_521/status/1263389123554848768
+
+tor2web.su
+tor2web.io
+tor2web.to
+tor2web.in
+
 # Reference: http://www.emergingthreats.net/products/etpro-ruleset/daily-ruleset-update-summary/daily-ruleset-update-summary-2015/03/11
 # Reference: http://www.emergingthreats.net/products/etpro-ruleset/daily-ruleset-update-summary/daily-ruleset-update-summary-2015/03/18
 
