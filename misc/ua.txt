@@ -1398,7 +1398,7 @@ StellaStella
 
 # Reference: https://twitter.com/bad_packets/status/1264290514406240257
 
-M/1.0
+\AM/1.0
 
 # Misc
 
