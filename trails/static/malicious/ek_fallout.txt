@@ -241,7 +241,3 @@ bestmorris.com
 # Reference: https://twitter.com/nao_sec/status/1253902651172851712
 
 goouthere.london
-
-# Generic
-
-/NlGkb4ivk.php
