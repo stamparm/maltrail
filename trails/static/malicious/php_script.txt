@@ -1581,6 +1581,26 @@ tunacan-812.tk
 
 /ykhao930gaptbm11s0duni86.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1264060822327832576
+
+/2a79hohpsm1vxuo1d0xuqoer.php
+
+# Reference: https://www.virustotal.com/gui/file/3d3351726f3b5cd848ad58cabcc33c9dcd1c601cc1664f197f10b8b1adf7038b/detection
+
+/qwegweherjhntrj.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1264211826616786947
+
+/dtsf394vt015wph23m7vxw4m.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1264287322192871436
+
+/xwlb5u9cbldxslwlfcxsp58k.php
+
+# Reference: https://twitter.com/em1rerdogan/status/1264692980633436166
+
+/xx1.php?user=
+
 # Generic
 
 /7328-dating-verification-card.php
