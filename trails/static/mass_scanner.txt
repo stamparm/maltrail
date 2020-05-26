@@ -2879,3 +2879,9 @@
 
 35.239.58.193  # ltx71
 35.202.2.1     # ltx71
+
+# Reference: https://twitter.com/campuscodi/status/1263486708110278658
+# Reference: https://www.cert.ssi.gouv.fr/scans/
+
+185.50.66.1    # ANSSI
+92.154.95.236  # ANSSI
