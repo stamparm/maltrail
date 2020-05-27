@@ -1601,6 +1601,10 @@ tunacan-812.tk
 
 /xx1.php?user=
 
+# Reference: https://twitter.com/romonlyht/status/1265444577319645184
+
+/5ecdb4896b9f0.php
+
 # Generic
 
 /7328-dating-verification-card.php
