@@ -2094,3 +2094,7 @@ cdndoubleclick.net
 
 cdn-contentstore.com
 cdn-sources.com
+
+# Reference: https://twitter.com/felixaime/status/1265175178532831237
+
+livechatcdn.com
