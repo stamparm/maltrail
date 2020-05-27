@@ -100,7 +100,7 @@ SUSPICIOUS_HTTP_PATH_REGEXES = (
     ("potential web scan", r"inexistent_file_name\.inexistent|test-for-some-inexistent-file|long_inexistent_path|some-inexistent-website\.acu")
 )
 SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION = ("?", "..", ".ht", "=", " ", "'")
-SUSPICIOUS_DIRECT_IP_URL_REGEX = r"\A[\w./-]*/[\w.]*\b(arm|m68k|mips|mpsl|powerpc|ppc|x86|x32|x64|i586|i686|sparc|sh\b|yarn|zte)"
+SUSPICIOUS_DIRECT_IP_URL_REGEX = r"\A[\w./-]*/[\w.]*\b(arm|m68k|mips|mpsl|powerpc|ppc|pupmips|x86|x32|x64|i586|i686|sparc|sh\b|yarn|zte)"
 SUSPICIOUS_PROXY_PROBE_PRE_CONDITION = ("probe", "proxy", "echo", "check")
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, _urllib.parse.quote(_)) for _ in "( )\r\n")
 SUSPICIOUS_UA_REGEX = ""
