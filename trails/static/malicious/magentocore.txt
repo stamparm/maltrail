@@ -2098,3 +2098,7 @@ cdn-sources.com
 # Reference: https://twitter.com/AffableKraut/status/1265349583925841922
 
 ads-fbstatistic.com
+
+# Reference: https://twitter.com/felixaime/status/1265175178532831237
+
+livechatcdn.com
