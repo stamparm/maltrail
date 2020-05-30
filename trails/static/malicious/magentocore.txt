@@ -2107,3 +2107,7 @@ livechatcdn.com
 
 cloudfrontapi.com
 cloudfrontapi.net
+
+# Reference: https://twitter.com/MBThreatIntel/status/1266397492658098176
+
+s3.amazonaws.com/content.zipboss.com/code/zipboss.dev.js
