@@ -2119,3 +2119,8 @@ apibazaarvoice.com
 # Reference: https://twitter.com/benkow_/status/1267034595758833667
 
 http://89.82.251.136/counter/index.php
+
+# Reference: https://twitter.com/felixaime/status/1267095794571792384
+
+http://45.197.141.250/analytics.php
+happykid.in/image/catalog/d_blog_module/review/jjs.js
