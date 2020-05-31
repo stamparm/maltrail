@@ -1400,6 +1400,10 @@ StellaStella
 
 \AM/1.0
 
+# Reference: https://yoroi.company/research/himera-and-absent-loader-leverage-covid19-themes/
+
+Absent
+
 # Misc
 
 information_schema
