@@ -96,3 +96,9 @@ cerberusapp.com
 # Reference: https://twitter.com/ReBensk/status/1264966323005726721
 
 dx20.siweidaoxiang.com
+
+# Reference: https://securelist.com/in-app-advertising-in-android/97065/
+# Reference: https://otx.alienvault.com/pulse/5ed008e401d1cb8a6361b42e
+
+ti.domainforlite.com
+uu.domainforlite.com
