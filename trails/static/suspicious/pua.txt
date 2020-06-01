@@ -2271,3 +2271,7 @@ rp.downloadagentcdn.com
 # Reference: https://www.virustotal.com/gui/domain/youtube4kdowloader.club/detection
 
 youtube4kdowloader.club
+
+# Reference: https://www.virustotal.com/gui/domain/freekzvideo.cloud/relations
+
+freekzvideo.cloud
