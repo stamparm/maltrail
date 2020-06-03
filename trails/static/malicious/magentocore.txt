@@ -2132,3 +2132,7 @@ platinumus.top
 # Reference: https://twitter.com/MBThreatIntel/status/1267874481113989121
 
 googleapifs.space
+
+# Reference: https://twitter.com/felixaime/status/1267729483987062786
+
+ssecurapi.club
