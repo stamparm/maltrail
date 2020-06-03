@@ -2922,3 +2922,7 @@ nvpn.so
 # Note: rupor.info is legit news site, which was compromised in 2009 due to MDL database. On 2020-06-03 rupor.info is clean.
 
 rupor.info
+
+# Reference: https://www.virustotal.com/gui/domain/rusvesna.su/detection
+
+rusvesna.su
