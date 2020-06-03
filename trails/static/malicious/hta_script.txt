@@ -397,6 +397,12 @@
 
 /out-2010667608.hta
 
+# Reference: https://blog.alyac.co.kr/3033 (Korean)
+# Reference: https://otx.alienvault.com/pulse/5ed7c80f673c40df00c52fa6
+
+/pre.hta
+/suf.hta
+
 # Generic
 
 /myrrem.hta
