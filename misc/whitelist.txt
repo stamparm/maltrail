@@ -2926,3 +2926,8 @@ rupor.info
 # Reference: https://www.virustotal.com/gui/domain/rusvesna.su/detection
 
 rusvesna.su
+
+# Reference: https://www.virustotal.com/gui/domain/tilda.cc/relations
+
+tilda.cc
+tilda.wc
