@@ -2917,3 +2917,8 @@ exchange.xforce.ibmcloud.com
 # Reference: https://www.virustotal.com/gui/domain/nvpn.so/relations
 
 nvpn.so
+
+# Reference: https://www.malwaredomainlist.com/mdl2.php?inactive=&sort=Date&search=&colsearch=All&ascordesc=DESC&quantity=100&page=22
+# Note: rupor.info is legit news site, which was compromised in 2009 due to MDL database. On 2020-06-03 rupor.info is clean.
+
+rupor.info
