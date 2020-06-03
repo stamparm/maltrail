@@ -2128,3 +2128,7 @@ happykid.in/image/catalog/d_blog_module/review/jjs.js
 # Reference: https://twitter.com/eclipsepicards/status/1268240487233867778
 
 platinumus.top
+
+# Reference: https://twitter.com/MBThreatIntel/status/1267874481113989121
+
+googleapifs.space
