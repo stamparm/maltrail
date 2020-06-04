@@ -2935,3 +2935,7 @@ tilda.wc
 # Reference: https://www.virustotal.com/gui/domain/gogol-mogol.su/relations
 
 gogol-mogol.su
+
+# Reference: https://www.virustotal.com/gui/domain/lissyara.su/detection
+
+lissyara.su
