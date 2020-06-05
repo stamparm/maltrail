@@ -2144,3 +2144,7 @@ jquerylib.at
 # Reference: https://twitter.com/MBThreatIntel/status/1268982125543387136
 
 cdnn-aws.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1269005294325108738
+
+hits-cache.com
