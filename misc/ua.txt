@@ -1404,6 +1404,11 @@ StellaStella
 
 Absent
 
+# Reference: https://twitter.com/JAMESWT_MHT/status/1268837262516727809
+# Reference: https://app.any.run/tasks/fbce704e-e748-4898-b36a-0cab2ecd5105/
+
+WindowsNT
+
 # Misc
 
 information_schema
