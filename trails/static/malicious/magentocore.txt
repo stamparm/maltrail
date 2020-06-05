@@ -2148,3 +2148,9 @@ cdnn-aws.com
 # Reference: https://twitter.com/unmaskparasites/status/1269005294325108738
 
 hits-cache.com
+
+# Reference: https://blog.sucuri.net/2020/06/evasion-tactics-in-hybrid-credit-card-skimmers.html
+# Reference: https://www.virustotal.com/gui/ip-address/185.110.132.220/relations
+
+http://185.110.132.220
+jshost.org
