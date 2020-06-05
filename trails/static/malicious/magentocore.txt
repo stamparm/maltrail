@@ -2140,3 +2140,7 @@ ssecurapi.club
 # Reference: https://twitter.com/MBThreatIntel/status/1268340229347270657
 
 jquerylib.at
+
+# Reference: https://twitter.com/MBThreatIntel/status/1268982125543387136
+
+cdnn-aws.com
