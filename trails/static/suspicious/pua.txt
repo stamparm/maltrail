@@ -2281,3 +2281,7 @@ freekzvideo.cloud
 
 atbc0003.top
 mediadownloader25.tk
+
+# Reference: https://www.virustotal.com/gui/file/6248a41a5e4230433e2a0e33f26dbed558e9bc21b51302124ee931921da3e657/detection
+
+hostas5.ml
