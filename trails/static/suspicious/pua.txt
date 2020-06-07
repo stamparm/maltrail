@@ -2275,3 +2275,13 @@ youtube4kdowloader.club
 # Reference: https://www.virustotal.com/gui/domain/freekzvideo.cloud/relations
 
 freekzvideo.cloud
+
+# Reference: https://www.virustotal.com/gui/file/7e5065352271d66bd2a28613971b45c0fb9f7bcfb499b1aebecc49167ec9d7a2/detection
+# Reference: https://www.virustotal.com/gui/file/2509244e823a1f6308438b44e9bb6fa808fec72a9a48d5f730dfbf6c3aca5d85/detection
+
+atbc0003.top
+mediadownloader25.tk
+
+# Reference: https://www.virustotal.com/gui/file/6248a41a5e4230433e2a0e33f26dbed558e9bc21b51302124ee931921da3e657/detection
+
+hostas5.ml
