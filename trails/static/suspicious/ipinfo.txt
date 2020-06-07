@@ -326,3 +326,7 @@ sypexgeo.net
 
 geoip-db.com
 geolocation-db.com
+
+# Reference: https://www.virustotal.com/gui/domain/ipcode.pw/details
+
+ipcode.pw
