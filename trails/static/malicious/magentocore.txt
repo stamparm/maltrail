@@ -2175,3 +2175,7 @@ http://5.45.82.166
 http://5.45.82.189
 http://5.45.83.202
 http://5.45.83.223
+
+# Reference: https://twitter.com/unmaskparasites/status/1270064808864419841
+
+jsassets.net
