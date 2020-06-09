@@ -56,3 +56,7 @@ hotsite.best
 # Reference: https://www.virustotal.com/gui/domain/shorico.club/relations
 
 shorico.club
+
+# Reference: https://twitter.com/nao_sec/status/1270205452387663872
+
+2020recommend.club
