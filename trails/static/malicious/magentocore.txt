@@ -2183,3 +2183,7 @@ jsassets.net
 # Reference: https://twitter.com/MBThreatIntel/status/1270150196333142016
 
 locol.site
+
+# Reference: https://twitter.com/JWilsonSecurity/status/1270087185795026944
+
+t.obet.us/gagal/log.php
