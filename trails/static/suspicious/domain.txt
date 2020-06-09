@@ -4604,10 +4604,6 @@ killwaf.com
 
 vzglagtime.net
 
-# Reference: https://blog.sucuri.net/2019/07/fake-google-domains-used-in-evasive-magento-skimmer.html
-
-lnfo.cc
-
 # Reference: https://www.virustotal.com/gui/domain/strust.club/relations
 
 strust.club
