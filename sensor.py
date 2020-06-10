@@ -509,9 +509,9 @@ def _process_packet(packet, sec, usec, ip_offset):
                         elif post_data:
                             checks.append("%s?%s" % (path, unquoted_post_data.lower()))
 
-                        _ = os.path.splitext(checks[-1])
-                        if _[1]:
-                            checks.append(_[0])
+                        #_ = os.path.splitext(checks[-1])       # causing FPs in cases like elf_mirai - /juno if legit /juno.php is accessed
+                        #if _[1]:
+                            #checks.append(_[0])
 
                         if checks[-1].count('/') > 1:
                             checks.append(checks[-1][:checks[-1].rfind('/')])
