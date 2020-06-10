@@ -24,6 +24,6 @@ def fetch():
                 continue
             match = re.search(r"any -> \[([\d.]+)\] (\d+) .+likely ([^)]+) C&C", line)
             if match:
-                retval["%s:%s" % (match.group(1), match.group(2))] = ("%s (malware)" % match.group(3).lower(), __reference__)
+                retval["%s:%s" % (match.group(1), match.group(2))] = ("%s (malware)" % (match.group(3).lower() if match.group(3).lower() != "malware" else "generic"), __reference__)
 
     return retval
