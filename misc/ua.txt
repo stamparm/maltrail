@@ -1413,6 +1413,10 @@ Absent
 
 WindowsNT
 
+# Reference: https://twitter.com/catnap707/status/1266991396189175811
+
+UptimeRobot
+
 # Misc
 
 information_schema
