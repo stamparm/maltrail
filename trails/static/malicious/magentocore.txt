@@ -2195,3 +2195,11 @@ t.obet.us/gagal/log.php
 chatajax.com
 jqueryalert.com
 jqueryapiscript.com
+
+# Reference: https://twitter.com/felixaime/status/1271061780849209344
+
+cdnxmljquerybucket.com
+tagmanagercdn.com
+tagmanagerxmlraw.com
+xmljqueryscoring.com
+xmlrawdataresponse.com
