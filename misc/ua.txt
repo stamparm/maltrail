@@ -1247,6 +1247,10 @@ B4ckdoor
 
 B4ckdoor-owned-you
 
+# Reference: https://twitter.com/bad_packets/status/1271153910841925633
+
+Sa0as-owned-you
+
 # Reference: https://intezer.com/blog-new-iranian-campaign-tailored-to-us-companies-uses-updated-toolset/
 
 IEMoblie
