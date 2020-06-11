@@ -2197,8 +2197,10 @@ jqueryalert.com
 jqueryapiscript.com
 
 # Reference: https://twitter.com/felixaime/status/1271061780849209344
+# Reference: https://www.virustotal.com/gui/ip-address/193.32.161.74/relations
 
 cdnxmljquerybucket.com
+jqueryapichecker.com
 tagmanagercdn.com
 tagmanagerxmlraw.com
 xmljqueryscoring.com
