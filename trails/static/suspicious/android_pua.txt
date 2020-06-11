@@ -102,3 +102,7 @@ dx20.siweidaoxiang.com
 
 ti.domainforlite.com
 uu.domainforlite.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1271078722364485635
+
+viptrack.pro
