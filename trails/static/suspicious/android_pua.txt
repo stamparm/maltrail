@@ -106,3 +106,7 @@ uu.domainforlite.com
 # Reference: https://twitter.com/malwrhunterteam/status/1271078722364485635
 
 viptrack.pro
+
+# Reference: https://twitter.com/malwrhunterteam/status/1267493474359742465
+
+cocospy.com
