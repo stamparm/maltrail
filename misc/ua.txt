@@ -1271,7 +1271,9 @@ MSIE5.01
 Qbot
 
 # Reference: https://twitter.com/FaLconIntel/status/1226012099240873984
+# Reference: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/nemty-ransomware-learning-by-doing/
 
+\AChrome\Z
 Naruto Uzumake
 
 # Reference: https://twitter.com/malwrhunterteam/status/1234549328108236800
