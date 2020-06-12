@@ -1056,3 +1056,38 @@ solo8.biz
 vinuser6.biz
 w1sercher.biz
 wwserch41.biz
+
+# Reference: https://twitter.com/CERT_Polska_en/status/1270623116931317760
+# Reference: https://pastebin.com/raw/Ap38Fr7e
+# Reference: https://pastebin.com/raw/YyYs8Her
+
+/myjs28_frr_b7.js
+/myjs28_frr_c1.js
+/myjs28_frr_j2.js
+/myjs28_frr_n01.js
+/myjs28_frr_n02.js
+/myjs28_frr_s17.js
+/myjs28_frr_s20.js
+/myjs28_frr_s21.js
+/myjs28_frr_s22.js
+/myjs28_frr_s23.js
+/myjs28_frr_s29.js
+/myjs28_frr_s30.js
+/myjs28_frr_s31.js
+/myjs28_frr_s33.js
+/myjs28_frr_s35.js
+/myjs28_frr_s36.js
+/myjs28_frr_s37.js
+/myjs28_frr_s38.js
+/myjs28_frr_s39.js
+/myjs28_frr_s4.js
+/myjs28_frr_s45.js
+/myjs28_frr_s47.js
+/myjs28_frr_s48.js
+/myjs28_frr_s49.js
+/myjs28_frr_s50.js
+/myjs28_frr_s51.js
+/myjs28_frr_s52.js
+/myjs28_frr_s55.js
+/myjs28_frr_s7.js
+/myjs28_frr_w1.js
