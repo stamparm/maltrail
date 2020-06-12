@@ -1421,6 +1421,11 @@ WindowsNT
 
 UptimeRobot
 
+# Reference: http://www.devttys0.com/2013/10/reverse-engineering-a-d-link-backdoor/
+# Reference: https://twitter.com/netresec/status/389449084064391168
+
+xmlset_roodkcableoj28840ybtide
+
 # Misc
 
 information_schema
