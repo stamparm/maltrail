@@ -5854,3 +5854,24 @@
 141.8.192.0/21,sprinthost
 176.119.147.0/24,sprinthost
 185.185.68.0/22,sprinthost
+
+# Reference: https://twitter.com/urlscanio/status/1271542666304552962
+# Reference: https://twitter.com/search?q=AS393960%20&src=typed_query&f=live
+# Reference: https://db-ip.com/as393960-host4geeks-llc
+# AS393960 (Host4Geeks LLC)
+
+103.83.193.0/24,host4geeks
+139.60.232.0/22,host4geeks
+139.60.236.0/22,host4geeks
+172.93.120.0/24,host4geeks
+172.93.121.0/24,host4geeks	 
+172.93.123.0/24,host4geeks
+185.177.228.0/24,host4geeks
+185.177.230.0/24,host4geeks
+185.221.216.0/24,host4geeks
+185.221.217.0/24,host4geeks
+185.221.218.0/24,host4geeks
+185.221.219.0/24,host4geeks
+66.85.44.0/24,host4geeks
+66.85.46.0/24,host4geeks
+66.85.47.0/24,host4geeks
