@@ -237,6 +237,19 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
     if result == False:
         _result_cache[(CACHE_TYPE.DOMAIN, query)] = False
 
+def _get_local_prefix():
+    _sources = set(_.split('~')[0] for _ in _connect_src_dst.keys())
+    _candidates = [re.sub(r"\d+\.\d+\Z", "", _) for _ in _sources]
+    _ = sorted(((_candidates.count(_), _) for _ in set(_candidates)), reverse=True)
+    result = _[0][1] if _ else ""
+
+    if result:
+        _result_cache[(CACHE_TYPE.LOCAL_PREFIX, "")] = result
+    else:
+        result = _result_cache.get((CACHE_TYPE.LOCAL_PREFIX, ""))
+
+    return result or '_'
+
 def _process_packet(packet, sec, usec, ip_offset):
     """
     Processes single (raw) IP layer data
@@ -275,12 +288,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                         _src_port = [_[-2] for _ in _connect_src_details[key]]
 
                         if len(_dst_ip) == len(set(_dst_ip)):
-                            _sources = set(_.split('~')[0] for _ in _connect_src_dst.keys())
-                            _candidates = [re.sub(r"\d+\.\d+\Z", "", _) for _ in _sources]
-                            _ = sorted(((_candidates.count(_), _) for _ in set(_candidates)), reverse=True)
-                            _local_prefix = _[0][1]
-
-                            if _src_ip.startswith(_local_prefix):
+                            if _src_ip.startswith(_get_local_prefix()):
                                 log_event((sec, usec, _src_ip, _src_port[0], _dst_ip[0], _dst_port, PROTO.TCP, TRAIL.PORT, _dst_port, "potential infection", "(heuristic)"), packet)
 
                 _connect_src_dst.clear()
@@ -414,9 +422,10 @@ def _process_packet(packet, sec, usec, ip_offset):
                             if host and host[0].isalpha() and dst_ip in trails:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, "%s (%s)" % (dst_ip, host.split(':')[0]), trails[dst_ip][0], trails[dst_ip][1]), packet)
                             elif re.search(r"\A\d+\.[0-9.]+\Z", host or "") and re.search(SUSPICIOUS_DIRECT_IP_URL_REGEX, "%s%s" % (host, path)):
-                                trail = "(%s)%s" % (host, path)
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "potential iot-malware download (suspicious)", "(heuristic)"), packet)
-                                return
+                                if not _dst_ip.startswith(_get_local_prefix()):
+                                    trail = "(%s)%s" % (host, path)
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "potential iot-malware download (suspicious)", "(heuristic)"), packet)
+                                    return
                             elif config.CHECK_HOST_DOMAINS:
                                 _check_domain(host, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, packet)
                     elif config.USE_HEURISTICS and config.CHECK_MISSING_HOST:
