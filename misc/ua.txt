@@ -1437,6 +1437,10 @@ DAMER
 
 chroot-apach0day
 
+# Reference: https://twitter.com/VisualBasist/status/683229778841714688
+
+apache 0day
+
 # Misc
 
 information_schema
