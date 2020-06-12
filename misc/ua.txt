@@ -1247,6 +1247,10 @@ B4ckdoor
 
 B4ckdoor-owned-you
 
+# Reference: https://twitter.com/bad_packets/status/1271153910841925633
+
+Sa0as-owned-you
+
 # Reference: https://intezer.com/blog-new-iranian-campaign-tailored-to-us-companies-uses-updated-toolset/
 
 IEMoblie
@@ -1412,6 +1416,24 @@ Absent
 # Reference: https://app.any.run/tasks/fbce704e-e748-4898-b36a-0cab2ecd5105/
 
 WindowsNT
+
+# Reference: https://twitter.com/catnap707/status/1266991396189175811
+
+UptimeRobot
+
+# Reference: http://www.devttys0.com/2013/10/reverse-engineering-a-d-link-backdoor/
+# Reference: https://twitter.com/netresec/status/389449084064391168
+
+xmlset_roodkcableoj28840ybtide
+
+# Reference: https://twitter.com/DissectMalware/status/999895926113161216
+
+DAMER
+
+# Reference: https://twitter.com/incerayahoo/status/494160021907714049
+# Reference: https://isc.sans.edu/forums/diary/Interesting+HTTP+User+Agent+chrootapach0day/18453
+
+chroot-apach0day
 
 # Misc
 
