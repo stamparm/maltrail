@@ -1426,6 +1426,10 @@ UptimeRobot
 
 xmlset_roodkcableoj28840ybtide
 
+# Reference: https://twitter.com/DissectMalware/status/999895926113161216
+
+DAMER
+
 # Misc
 
 information_schema
