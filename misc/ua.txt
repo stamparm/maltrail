@@ -1442,7 +1442,9 @@ chroot-apach0day
 apache 0day
 
 # Reference: https://twitter.com/bad_packets/status/1271504982483726336
+# Reference: https://community.greenbone.net/t/is-greenbone-hacking-me/1134
 
+GBN-VT
 OpenVAS-VT
 
 # Misc
