@@ -1430,6 +1430,11 @@ xmlset_roodkcableoj28840ybtide
 
 DAMER
 
+# Reference: https://twitter.com/incerayahoo/status/494160021907714049
+# Reference: https://isc.sans.edu/forums/diary/Interesting+HTTP+User+Agent+chrootapach0day/18453
+
+chroot-apach0day
+
 # Misc
 
 information_schema
