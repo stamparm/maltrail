@@ -1441,6 +1441,10 @@ chroot-apach0day
 
 apache 0day
 
+# Reference: https://twitter.com/bad_packets/status/1271504982483726336
+
+OpenVAS-VT
+
 # Misc
 
 information_schema
