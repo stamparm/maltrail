@@ -2187,3 +2187,21 @@ locol.site
 # Reference: https://twitter.com/JWilsonSecurity/status/1270087185795026944
 
 t.obet.us/gagal/log.php
+
+# Reference: https://twitter.com/MBThreatIntel/status/1270861231776137218
+# Reference: https://twitter.com/500mk500/status/1270945615812460544
+# Reference: https://www.virustotal.com/gui/ip-address/176.121.14.189/relations
+
+chatajax.com
+jqueryalert.com
+jqueryapiscript.com
+
+# Reference: https://twitter.com/felixaime/status/1271061780849209344
+# Reference: https://www.virustotal.com/gui/ip-address/193.32.161.74/relations
+
+cdnxmljquerybucket.com
+jqueryapichecker.com
+tagmanagercdn.com
+tagmanagerxmlraw.com
+xmljqueryscoring.com
+xmlrawdataresponse.com
