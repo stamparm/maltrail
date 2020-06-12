@@ -1447,6 +1447,10 @@ apache 0day
 GBN-VT
 OpenVAS-VT
 
+# Reference: https://twitter.com/MoFoQ/status/1159718433979658241
+
+new UI sucks
+
 # Misc
 
 information_schema
