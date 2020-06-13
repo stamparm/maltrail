@@ -1467,6 +1467,10 @@ vjw0rm
 
 APEP/3.0
 
+# Reference: https://twitter.com/Sec_S_Owl/status/1028317470786957312
+
+LMAO/2.0
+
 # Misc
 
 information_schema
