@@ -1451,6 +1451,10 @@ OpenVAS-VT
 
 Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.1)
 
+# Reference: https://twitter.com/nakam32jp/status/767239263431692288
+
+Steeler/3.5
+
 # Reference: https://twitter.com/DidoGrigorov/status/1239281596630470656
 
 COVID-19
