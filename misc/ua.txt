@@ -1484,6 +1484,10 @@ LMAO/2.0
 
 \Aneko\Z
 
+# Reference: https://twitter.com/jnazario/status/1033439734994006016
+
+Shinka
+
 # Misc
 
 information_schema
