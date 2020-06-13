@@ -1447,6 +1447,10 @@ apache 0day
 GBN-VT
 OpenVAS-VT
 
+# Reference: https://twitter.com/cyb3rops/status/874563855703298048
+
+Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.1)
+
 # Misc
 
 information_schema
