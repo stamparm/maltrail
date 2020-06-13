@@ -2939,3 +2939,8 @@ gogol-mogol.su
 # Reference: https://www.virustotal.com/gui/domain/lissyara.su/detection
 
 lissyara.su
+
+# Reference: https://www.virustotal.com/gui/ip-address/172.253.120.188/relations
+# Note: Google IP, is often met in connections of malicious Android apps. E.g.: 172.253.120.188:5228
+
+172.253.120.188
