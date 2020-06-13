@@ -1479,6 +1479,11 @@ LMAO/2.0
 
 \ASefa\Z
 
+# Reference: https://sec-owl.hatenablog.com/entry/2018/10/26/165347
+# Reference: https://twitter.com/Sec_S_Owl/status/1055730146446008320
+
+\Aneko\Z
+
 # Misc
 
 information_schema
