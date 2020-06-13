@@ -1475,6 +1475,10 @@ LMAO/2.0
 
 \ADark\Z
 
+# Reference: https://twitter.com/Sec_S_Owl/status/1082282757902880768
+
+\ASefa\Z
+
 # Misc
 
 information_schema
