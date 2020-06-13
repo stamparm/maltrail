@@ -1471,6 +1471,10 @@ APEP/3.0
 
 LMAO/2.0
 
+# Reference: https://twitter.com/cactus_pots/status/1059962225589403649
+
+\ADark\Z
+
 # Misc
 
 information_schema
