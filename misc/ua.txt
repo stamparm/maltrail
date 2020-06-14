@@ -1493,7 +1493,7 @@ Shinka
 # Reference: https://twitter.com/siedlmarpl/status/971593279224537088
 # Reference: https://www.hybrid-analysis.com/sample/fa48cd1fd8aab4a43e9ff1f7985c549040389036a03f9117f675d8737e1b34b5?environmentId=100
 # Reference: https://www.virustotal.com/gui/file/fa48cd1fd8aab4a43e9ff1f7985c549040389036a03f9117f675d8737e1b34b5/detection
-# Reference: https://github.com/stamparm/maltrail/pull/9339/commits/4518fd9b78c42f28a9c03d77114f00a250227573
+# Reference:https://github.com/stamparm/maltrail/pull/9352/commits/0bdfab0724928c96203dad0bb7f1b845531a433f
 
 lahsdgs23523lsknvlsdegoet
 
