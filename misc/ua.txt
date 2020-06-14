@@ -1503,6 +1503,10 @@ lahsdgs23523lsknvlsdegoet
 
 Mozilla/4.0 (compatible)
 
+# Reference: https://twitter.com/Setzso/status/635056128259321858
+
+BOT/0.1
+
 # Misc
 
 information_schema
