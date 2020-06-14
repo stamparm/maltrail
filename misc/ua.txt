@@ -1427,7 +1427,9 @@ UptimeRobot
 
 # Reference: http://www.devttys0.com/2013/10/reverse-engineering-a-d-link-backdoor/
 # Reference: https://twitter.com/netresec/status/389449084064391168
+# Reference: https://twitter.com/avandeursen/status/393279075873075200
 
+roodkcableoj28840ybtide
 xmlset_roodkcableoj28840ybtide
 
 # Reference: https://twitter.com/DissectMalware/status/999895926113161216
