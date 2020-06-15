@@ -110,3 +110,7 @@ viptrack.pro
 # Reference: https://twitter.com/malwrhunterteam/status/1267493474359742465
 
 cocospy.com
+
+# Reference: https://www.virustotal.com/gui/file/075b63d6402f73369885719b88eea0ee09782f5c6c973a7687498bfd797c5b59/detection
+
+appsgeyser.com
