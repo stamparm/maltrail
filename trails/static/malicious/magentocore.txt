@@ -2205,3 +2205,8 @@ tagmanagercdn.com
 tagmanagerxmlraw.com
 xmljqueryscoring.com
 xmlrawdataresponse.com
+
+# Reference: https://twitter.com/ESETresearch/status/1272408821072384000
+# Reference: https://www.virustotal.com/gui/domain/listrakbi.org/relations
+
+listrakbi.org
