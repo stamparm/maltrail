@@ -1091,3 +1091,8 @@ wwserch41.biz
 /myjs28_frr_s55.js
 /myjs28_frr_s7.js
 /myjs28_frr_w1.js
+
+# Reference: https://twitter.com/ScumBots/status/1271482475546660864
+
+141.255.154.194:1666
+fivemmods222.ddns.net
