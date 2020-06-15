@@ -2885,3 +2885,7 @@
 
 185.50.66.1    # ANSSI
 92.154.95.236  # ANSSI
+
+# Reference: https://community.greenbone.net/t/is-greenbone-hacking-me/1134
+
+212.95.124.190    # Greenbone
