@@ -2211,3 +2211,7 @@ xmlrawdataresponse.com
 # Reference: https://www.virustotal.com/gui/ip-address/82.146.51.230/relations
 
 listrakbi.org
+
+# Reference: https://securityaffairs.co/wordpress/104776/hacking/claires-magecart-attack.html
+
+claires-assets.com
