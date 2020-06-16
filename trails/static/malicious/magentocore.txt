@@ -2215,3 +2215,9 @@ listrakbi.org
 # Reference: https://securityaffairs.co/wordpress/104776/hacking/claires-magecart-attack.html
 
 claires-assets.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1272679759126777857
+
+jquerystats.com
+salesstatistic.com
+scriptstatistic.com
