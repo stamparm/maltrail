@@ -2216,7 +2216,9 @@ listrakbi.org
 
 claires-assets.com
 
+# Reference: https://twitter.com/felixaime/status/1263818626114740224
 # Reference: https://twitter.com/MBThreatIntel/status/1272679759126777857
+# Reference: https://www.virustotal.com/gui/ip-address/185.217.92.149/relations
 
 jquerystats.com
 salesstatistic.com
