@@ -1642,6 +1642,10 @@ tunacan-812.tk
 
 /omuscreativos.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1273347106015674368
+
+/em7fic0xazghxn8pg88lf9p1.php
+
 # Generic
 
 /7328-dating-verification-card.php
