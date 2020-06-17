@@ -278,3 +278,7 @@
 # Reference: https://www.virustotal.com/gui/domain/crypterfile.com/relations
 
 /crypt.ps1
+
+# Reference: https://twitter.com/reecdeep/status/1272464515544776704
+
+/Sheet.ps1
