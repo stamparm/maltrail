@@ -1503,6 +1503,12 @@ lahsdgs23523lsknvlsdegoet
 
 BOT/0.1
 
+# Reference: https://research.checkpoint.com/2019/speakup-a-new-undetected-backdoor-linux-trojan/
+
+E9BC3BD76216AFA560BFB5ACAF5731A3
+Mobile/7B405
+Mobile/BADDA
+
 # Misc
 
 information_schema
