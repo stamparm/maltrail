@@ -2217,3 +2217,7 @@ claires-assets.com
 jquerystats.com
 salesstatistic.com
 scriptstatistic.com
+
+# Reference: https://twitter.com/benkow_/status/1273214642458853376
+
+reddotarms.com/js/infortis/jquery/jquery-1.7.2.min.js
