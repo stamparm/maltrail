@@ -1513,6 +1513,11 @@ Mobile/BADDA
 
 4w160yBObknYBP
 
+# Reference: https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/eagle-eye-is-back-apt30/
+# Reference: https://twitter.com/Vishnyak0v/status/1273976038113017856
+
+nvidafix
+
 # Misc
 
 information_schema
