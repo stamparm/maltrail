@@ -1509,6 +1509,11 @@ E9BC3BD76216AFA560BFB5ACAF5731A3
 Mobile/7B405
 Mobile/BADDA
 
+# Reference: https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/eagle-eye-is-back-apt30/
+# Reference: https://twitter.com/Vishnyak0v/status/1273976038113017856
+
+nvidafix
+
 # Misc
 
 information_schema
