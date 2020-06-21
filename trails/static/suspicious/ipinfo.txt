@@ -330,3 +330,7 @@ geolocation-db.com
 # Reference: https://www.virustotal.com/gui/domain/ipcode.pw/details
 
 ipcode.pw
+
+# Reference: https://www.virustotal.com/gui/file/db990dd20ae4390a2965b9de6839cda8a52fb0214fb5d90cbc2da9ccf0977dcd/detection
+
+api.rest7.com/v1/my_ip.php
