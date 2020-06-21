@@ -2238,3 +2238,9 @@ magento-api.host
 cloud-fronts.host
 magentolink.host
 jqueryjs.host
+
+# Reference: https://twitter.com/MBThreatIntel/status/1273733879526903808
+# Reference: https://www.virustotal.com/gui/ip-address/185.92.148.128/relations
+
+cddn.site
+lebs.site
