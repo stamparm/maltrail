@@ -1096,3 +1096,7 @@ fivemmods222.ddns.net
 # Reference: https://twitter.com/xuy1202/status/1272842659183255553
 
 hellokity.in
+
+# Reference: https://twitter.com/ScumBots/status/1274497302628098048
+
+91.153.0.57:1556
