@@ -186,9 +186,19 @@ http://213.128.93.199
 /js/webpanel/
 
 # Reference: https://twitter.com/JAMESWT_MHT/status/1270997007180730368
+# Reference: https://twitter.com/James_inthe_box/status/1273983069435789316
 # Reference: https://app.any.run/tasks/4dede486-355d-4e84-874c-d9318532db23/
 
+/webpanel/0/inc/
+/webpanel/1/inc/
+/webpanel/2/inc/
 /webpanel/3/inc/
+/webpanel/4/inc/
+/webpanel/5/inc/
+/webpanel/6/inc/
+/webpanel/7/inc/
+/webpanel/8/inc/
+/webpanel/9/inc/
 
 # Generic
 
