@@ -3021,3 +3021,8 @@ entrydns.org
 # Reference: https://www.virustotal.com/gui/domain/noip.pl/relations
 
 noip.pl
+
+# Reference: https://www.virustotal.com/gui/file/0a64a9cc08d4d0d1993b4974b2900f1be193d5273a6a2605c2dc69b1fcb31b21/behavior/VirusTotal%20Jujubox
+# Reference: https://www.virustotal.com/gui/domain/dyn.telefonica.de/relations
+
+dyn.telefonica.de
