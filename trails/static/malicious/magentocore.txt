@@ -2244,3 +2244,13 @@ jqueryjs.host
 
 cddn.site
 lebs.site
+
+# Reference: https://securelist.com/web-skimming-with-google-analytics/97414/
+
+google-anatytics.com
+google-analytics-js.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/84.38.182.177/relations
+
+mstracking.link
+paypalapiobjects.com
