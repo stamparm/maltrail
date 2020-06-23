@@ -2254,3 +2254,7 @@ google-analytics-js.com
 
 mstracking.link
 paypalapiobjects.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.101.50.50/relations
+
+googleapimanager.com
