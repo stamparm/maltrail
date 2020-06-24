@@ -2177,8 +2177,10 @@ http://5.45.83.202
 http://5.45.83.223
 
 # Reference: https://twitter.com/unmaskparasites/status/1270064808864419841
+# Reference: https://www.virustotal.com/gui/ip-address/54.38.49.244/relations
 
 jsassets.net
+payprocessor.net
 
 # Reference: https://twitter.com/MBThreatIntel/status/1270150196333142016
 
