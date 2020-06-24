@@ -1663,6 +1663,10 @@ tunacan-812.tk
 
 /tds.php?omz=
 
+# Reference: http://benkow.cc/export.php
+
+/admin---------.php
+
 # Generic
 
 /7328-dating-verification-card.php
