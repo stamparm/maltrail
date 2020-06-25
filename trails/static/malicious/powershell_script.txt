@@ -282,3 +282,11 @@
 # Reference: https://twitter.com/reecdeep/status/1272464515544776704
 
 /Sheet.ps1
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1275338252531249152
+
+/crimea.ps1
+
+# Reference: https://twitter.com/DeadlyLynn/status/1275998401524424704
+
+/leess1982.ps1
