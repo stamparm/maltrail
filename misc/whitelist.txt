@@ -2859,6 +2859,7 @@ sagawa-exp.co.jp
 au-e.com
 big-post.com
 voyance-au-top.com
+cat-cnc.com
 
 # Exceptions for abuse.ch (dirty patch for addresses used by outside scanners introducing noise being recognized as 'malware')
 
