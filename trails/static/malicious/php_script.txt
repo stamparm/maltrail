@@ -1658,6 +1658,15 @@ tunacan-812.tk
 
 /ppos8.php
 
+# Reference: https://twitter.com/abuse_ch/status/1275526243404972034
+# Reference: https://bazaar.abuse.ch/sample/921138bc2b28d01a51e6673c6e61ba3237592d08875180e0b3749d8e47fdfd6d/
+
+/tds.php?omz=
+
+# Reference: http://benkow.cc/export.php
+
+/admin---------.php
+
 # Generic
 
 /7328-dating-verification-card.php
