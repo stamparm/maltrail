@@ -382,3 +382,7 @@ minexmr.com
 # Reference: https://www.virustotal.com/gui/file/455224893e266c7f5781bdc2e0c1cbb1a4f3c71c8a63ba7c690cd3067949ed5c/detection
 
 178.63.48.196:5555
+
+# Reference: https://blacklist.cyberthreatcoalition.org/vetted/url.txt
+
+minerpool.pw
