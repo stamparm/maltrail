@@ -357,6 +357,18 @@ Subsection `USERS` contains user's configuration settings. Each user entry consi
 
 Option `UDP_ADDRESS` contains the server's log collecting listening address (Note: use `0.0.0.0` to listen on all interfaces), while option `UDP_PORT` contains listening port value. If turned on, when used in combination with option `LOG_SERVER`, it can be used for distinct (multiple) **Sensor** <-> **Server** architecture.
 
+Option `FAIL2BAN_REGEX` contains the regular expression (e.g. `attacker|reputation|potential[^"]*(web scan|directory traversal|injection|remote code)`) to be used in `/fail2ban` web calls for extraction of attacker source IPs. This allows the usage of IP blocking mechanisms (e.g. `fail2ban`, `iptables` or `ipset`) by periodic pulling of blacklisted IP addresses from remote machine. Example usage would be the following script (e.g. run as a `root` cronjob on a minute basis):
+
+```
+#!/bin/bash
+ipset -q flush maltrail
+ipset -q create maltrail hash:net
+for ip in $(curl http://127.0.0.1:8338/fail2ban 2>/dev/null); do ipset add maltrail $ip; done
+iptables -I INPUT -m set --match-set maltrail src -j DROP
+```
+
+
+
 Same as for **Sensor**, when running the **Server** (e.g. `python server.py`) for the first time and/or after a longer period of non-running, if option `USE_SERVER_UPDATE_TRAILS` is set to `true`, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). Its basic function is to store the log entries inside the logging directory (i.e. option `LOG_DIR` inside the `maltrail.conf` file's section `[All]`) and provide the web reporting interface for presenting those same entries to the end-user (Note: there is no need install the 3rd party web server packages like Apache):
 
 ![Server run](https://i.imgur.com/GHdGPw7.png)
