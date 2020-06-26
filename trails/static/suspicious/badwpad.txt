@@ -82,3 +82,7 @@ webunstop.org
 # Reference: https://www.virustotal.com/gui/ip-address/144.76.184.43/relations
 
 144.76.184.43
+
+# Reference: https://www.virustotal.com/gui/ip-address/110.110.110.1/relations
+
+http://110.110.110.1/wpad.dat
