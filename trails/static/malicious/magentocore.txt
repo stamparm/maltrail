@@ -2260,3 +2260,29 @@ paypalapiobjects.com
 # Reference: https://www.virustotal.com/gui/ip-address/5.101.50.50/relations
 
 googleapimanager.com
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2020/06/web-skimmer-hides-within-exif-metadata-exfiltrates-credit-cards-via-image-files/
+
+ads-fbstatistic.com
+apilivechat.com
+bestcdnforbusiness.com
+bizrateservices.com
+cddn.site
+cxizi.net
+j-queries.com
+jquery-analitycs.com
+jqueryanalise.xyz
+koinweb.site
+lebs.site
+magentorates.com
+pixasbay.com
+sonol.site
+teamsystems.info
+towbarchat.com
+undecoveria.com
+webtrans.site
+wosus.site
+xciy.net
+xoet.site
+yxxi.net
+yzxi.net
