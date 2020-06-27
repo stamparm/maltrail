@@ -1337,8 +1337,10 @@ tunacan-812.ml
 tunacan-812.tk
 
 # Reference: https://www.virustotal.com/gui/domain/cureprm.com/relations
+# Reference: https://blacklist.cyberthreatcoalition.org/vetted/url.txt
 
 /IlOysTgNjFrGtHtEAwVo/index.php
+/IlOysTgNjFrGtHtEAwVo/indexx.php
 
 # Reference: https://twitter.com/IpNigh/status/1233838562241589253
 
