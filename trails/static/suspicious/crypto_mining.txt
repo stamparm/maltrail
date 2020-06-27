@@ -386,3 +386,7 @@ minexmr.com
 # Reference: https://blacklist.cyberthreatcoalition.org/vetted/url.txt
 
 minerpool.pw
+
+# Reference: https://blacklist.cyberthreatcoalition.org/vetted/url.txt
+
+/xmrig/
