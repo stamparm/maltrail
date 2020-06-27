@@ -1671,6 +1671,7 @@ tunacan-812.tk
 
 # Reference: https://blacklist.cyberthreatcoalition.org/vetted/url.txt
 
+/desjardinsin.php
 /nerr34.php
 
 # Generic
