@@ -1669,6 +1669,10 @@ tunacan-812.tk
 
 /admin---------.php
 
+# Reference: https://blacklist.cyberthreatcoalition.org/vetted/url.txt
+
+/nerr34.php
+
 # Generic
 
 /7328-dating-verification-card.php
