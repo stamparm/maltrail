@@ -403,6 +403,10 @@
 /pre.hta
 /suf.hta
 
+# Reference: https://urlhaus.abuse.ch/downloads/text_recent/
+
+/Hmoye0.hta
+
 # Generic
 
 /myrrem.hta
