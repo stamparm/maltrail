@@ -5028,3 +5028,11 @@ xfuckdate.com
 # Reference: https://www.virustotal.com/gui/domain/xsph.ru/relations
 
 xsph.ru
+
+# Reference: https://blacklist.cyberthreatcoalition.org/vetted/url.txt
+
+pphost.net
+
+# Reference: https://www.virustotal.com/gui/domain/wcomhost.com/detection
+
+wcomhost.com
