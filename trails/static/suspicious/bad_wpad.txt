@@ -82,3 +82,10 @@ webunstop.org
 # Reference: https://www.virustotal.com/gui/ip-address/144.76.184.43/relations
 
 144.76.184.43
+
+# Reference: https://github.com/stamparm/maltrail/blob/master/trails/static/malware/goldenspy.txt
+# Reference: https://trustwave.azureedge.net/media/16908/the-golden-tax-department-and-emergence-of-goldenspy-malware.pdf
+# Reference: https://twitter.com/Bank_Security/status/1276492568449122305
+# Reference: https://www.virustotal.com/gui/ip-address/110.110.110.1/relations
+
+http://110.110.110.1/wpad.dat
