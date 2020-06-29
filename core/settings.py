@@ -79,7 +79,7 @@ POTENTIAL_INFECTION_PORTS = (445, 1433)
 IGNORE_DNS_QUERY_SUFFIXES = set(("arpa", "local", "guest", "intranet", "int", "corp", "home", "lan", "intra", "intran", "workgroup", "localdomain"))
 VALID_DNS_NAME_REGEX = r"\A[a-zA-Z0-9.-]*\.[a-zA-Z0-9-]+\Z"  # Reference: http://stackoverflow.com/a/3523068
 SUSPICIOUS_CONTENT_TYPES = ("application/vnd.ms-htmlhelp", "application/x-bsh", "application/x-chm", "application/x-sh", "application/x-shellscript", "application/hta", "text/x-scriptlet", "text/x-sh", "text/x-shellscript")
-SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".chm", ".dll", ".egg", ".exe", ".hta", ".hwp", ".pac", ".ps1", ".scr", ".sct", ".xpi"))
+SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".bin", ".chm", ".dll", ".egg", ".exe", ".hta", ".hwp", ".pac", ".ps1", ".scr", ".sct", ".xpi"))
 WHITELIST_DIRECT_DOWNLOAD_KEYWORDS = ("cgi", "/scripts/", "/_vti_bin/", "/bin/", "/pub/softpaq/", "/bios/", "/pc-axis/")
 SUSPICIOUS_HTTP_REQUEST_REGEXES = (
     ("potential sql injection", r"information_schema|sysdatabases|sysusers|floor\(rand\(|ORDER BY \d+|\bUNION\s+(ALL\s+)?SELECT\b|\b(UPDATEXML|EXTRACTVALUE)\(|\bCASE[^\w]+WHEN.*THEN\b|\bWAITFOR[^\w]+DELAY\b|\bCONVERT\(|VARCHAR\(|\bCOUNT\(\*\)|\b(pg_)?sleep\(|\bSELECT\b.*\bFROM\b.*\b(WHERE|GROUP|ORDER)\b|\bSELECT \w+ FROM \w+|\b(AND|OR|SELECT)\b.*/\*.*\*/|/\*.*\*/.*\b(AND|OR|SELECT)\b|\b(AND|OR)[^\w]+\d+['\") ]?[=><]['\"( ]?\d+|ODBC;DRIVER|\bINTO\s+(OUT|DUMP)FILE"),
@@ -100,7 +100,7 @@ SUSPICIOUS_HTTP_PATH_REGEXES = (
     ("potential web scan", r"inexistent_file_name\.inexistent|test-for-some-inexistent-file|long_inexistent_path|some-inexistent-website\.acu")
 )
 SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION = ("?", "..", ".ht", "=", " ", "'")
-SUSPICIOUS_DIRECT_IP_URL_REGEX = r"\A[\w./-]*/[\w.]*\b(arm|m68k|mips|mpsl|powerpc|ppc|x86|x32|x64|i586|i686|sparc|sh\b|yarn|zte)\Z"
+SUSPICIOUS_DIRECT_IP_URL_REGEX = r"\A[\w./-]*/[\w.]*\b(aarch|arm|m68k|mips|mpsl|m1psel|powerpc|powerppc|ppc|x86|x32|x64|i586|i686|sparc|sh\b|wtf|yarn|zte)\Z"
 SUSPICIOUS_PROXY_PROBE_PRE_CONDITION = ("probe", "proxy", "echo", "check")
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, _urllib.parse.quote(_)) for _ in "( )\r\n")
 SUSPICIOUS_UA_REGEX = ""
