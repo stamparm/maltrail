@@ -1337,8 +1337,10 @@ tunacan-812.ml
 tunacan-812.tk
 
 # Reference: https://www.virustotal.com/gui/domain/cureprm.com/relations
+# Reference: https://blacklist.cyberthreatcoalition.org/vetted/url.txt
 
 /IlOysTgNjFrGtHtEAwVo/index.php
+/IlOysTgNjFrGtHtEAwVo/indexx.php
 
 # Reference: https://twitter.com/IpNigh/status/1233838562241589253
 
@@ -1666,6 +1668,12 @@ tunacan-812.tk
 # Reference: http://benkow.cc/export.php
 
 /admin---------.php
+
+# Reference: https://blacklist.cyberthreatcoalition.org/vetted/url.txt
+
+/desjardinsin.php
+/nerr34.php
+/ondetverifier.php
 
 # Generic
 
