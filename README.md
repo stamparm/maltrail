@@ -1,6 +1,6 @@
 ![Maltrail](https://i.imgur.com/3xjInOD.png)
 
-[![Python 2.6|2.7|3.x](https://img.shields.io/badge/python-2.6|2.7|3.x-yellow.svg)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-red.svg)](https://github.com/stamparm/maltrail#license) [![Malware families](https://img.shields.io/badge/malware_families-1210-orange.svg)](https://github.com/stamparm/maltrail/tree/master/trails/static/malware) [![Malware sinkholes](https://img.shields.io/badge/malware_sinkholes-1331-green.svg)](https://github.com/stamparm/maltrail/tree/master/trails/static/malware) [![Twitter](https://img.shields.io/badge/twitter-@maltrail-blue.svg)](https://twitter.com/maltrail)
+[![Python 2.6|2.7|3.x](https://img.shields.io/badge/python-2.6|2.7|3.x-yellow.svg)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-red.svg)](https://github.com/stamparm/maltrail#license) [![Malware families](https://img.shields.io/badge/malware_families-1212-orange.svg)](https://github.com/stamparm/maltrail/tree/master/trails/static/malware) [![Malware sinkholes](https://img.shields.io/badge/malware_sinkholes-1331-green.svg)](https://github.com/stamparm/maltrail/tree/master/trails/static/malware) [![Twitter](https://img.shields.io/badge/twitter-@maltrail-blue.svg)](https://twitter.com/maltrail)
 
 ## Content
 
@@ -534,7 +534,7 @@ By using filter `ipinfo` all potentially infected computers in our organization'
 
 #### Suspicious direct file downloads
 
-Maltrail tracks all suspicious direct file download attempts (e.g. `.apk`, `.chm`, `.dll`, `.egg`, `.exe`, `.hta`, `.hwp`, `.ps1`, `.scr`, `.sct` and `.xpi` file extensions). This can trigger lots of false positives, but eventually could help in reconstruction of the chain of infection (Note: legitimate service providers, like Google, usually use encrypted HTTPS to perform this kind of downloads):
+Maltrail tracks all suspicious direct file download attempts (e.g. `.apk`, `.bin`, .`chm`, `.dll`, `.egg`, `.exe`, `.hta`, `.hwp`, `.ps1`, `.scr`, `.sct` and `.xpi` file extensions). This can trigger lots of false positives, but eventually could help in reconstruction of the chain of infection (Note: legitimate service providers, like Google, usually use encrypted HTTPS to perform this kind of downloads):
 
 ![Direct .exe download](https://i.imgur.com/jr5BS1h.png)
 
