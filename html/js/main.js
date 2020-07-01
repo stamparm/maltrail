@@ -1779,7 +1779,7 @@ function initDetails() {
                     var query = cell[0].innerHTML.replace(/<span class="ipcat.+span>/g, "").replace(/<[^>]+>/g, "").replace(/[()]/g, "").split('/')[0];
                     $(".searchtip").remove();
                     $("body").append(
-                        $('<div class="ui-tooltip searchtip"><div><img src="images/newtab.png" style="cursor: pointer" onclick="searchTipToTab(\'' + query + '\')" title="open in new tab"><img src="images/close.png" style="cursor: pointer; width: 16px; height: 16px" onclick="$(\'.searchtip\').remove()" title="close"></div><iframe src="' + SEARCH_TIP_URL.replace("${query}", query) + '"></iframe><div>')
+                        $('<div class="ui-tooltip searchtip"><div><img src="images/newtab.png" style="cursor: pointer" title="open in new tab"><img src="images/close.png" style="cursor: pointer; width: 16px; height: 16px" title="close"></div><iframe src="' + SEARCH_TIP_URL.replace("${query}", query) + '"></iframe><div>')
                         .css('position', 'absolute')
                         .show()
                         .position({ my: "right+10 top-200", of: event })
@@ -1787,6 +1787,8 @@ function initDetails() {
                             $(".searchtip").remove();
                         })
                     );
+                    $(".searchtip img[title='open in new tab']").on("click", function() { searchTipToTab(query); });
+                    $(".searchtip img[title='close']").on("click", function() { $(".searchtip").remove(); });
                 }
             }, 2000, $(this), event);
 
