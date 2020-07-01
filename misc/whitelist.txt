@@ -217,7 +217,7 @@ t-com.hr
 tedata.net
 vkcache.com
 
-# to ignore in direct .exe downloads
+# to ignore in direct .exe/.bin downloads
 
 360safe.com
 7-zip.org
@@ -255,11 +255,14 @@ gimp.org
 googleapis.com
 google.com
 googlesyndication.com
+gpsonextra.net
 gvt1.com
+here.com
 hitmanpro.com
 hp.com
 htc.com
 intel.com
+izatcloud.net
 justbasic.com
 kmplayer.com
 lenovo.com
