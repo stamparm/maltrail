@@ -1100,3 +1100,13 @@ hellokity.in
 # Reference: https://twitter.com/ScumBots/status/1274497302628098048
 
 91.153.0.57:1556
+
+# Reference: https://twitter.com/felixaime/status/1278600095538262017 (# WPScriptInjection)
+# Reference: https://twitter.com/felixaime/status/1278602674401955846
+# Reference: https://www.virustotal.com/gui/ip-address/185.244.172.39/relations
+
+lobbydesires.com
+tlcweb.ml
+wpctrl.ga
+wpctrl.gq
+wpctrl.ml
