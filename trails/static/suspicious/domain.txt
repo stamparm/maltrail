@@ -5036,3 +5036,7 @@ pphost.net
 # Reference: https://www.virustotal.com/gui/domain/wcomhost.com/detection
 
 wcomhost.com
+
+# Reference: https://twitter.com/midnight_comms/status/1278330576525602816
+
+.cyou
