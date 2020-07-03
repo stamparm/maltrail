@@ -906,6 +906,8 @@ sophosxl.net
 
 # Generic
 
+radiocp.from-dc.com
+shadowshq.yi.org
 chogoon.com
 seagull.ddns.net
 tracker.empire-js.us
