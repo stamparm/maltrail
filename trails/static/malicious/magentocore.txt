@@ -2297,3 +2297,7 @@ xciy.net
 xoet.site
 yxxi.net
 yzxi.net
+
+# Reference: https://twitter.com/MBThreatIntel/status/1279651033883439105
+
+kttape.com/pub/static/frontend/Plumtree/kttapeb2b/en_US/mage/mail.js
