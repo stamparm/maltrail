@@ -2301,3 +2301,7 @@ yzxi.net
 # Reference: https://twitter.com/MBThreatIntel/status/1279651033883439105
 
 kttape.com/pub/static/frontend/Plumtree/kttapeb2b/en_US/mage/mail.js
+
+# Reference: https://twitter.com/MBThreatIntel/status/1279523525192081408
+
+cloud-flares.host
