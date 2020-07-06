@@ -138,6 +138,10 @@ likeaboss.club
 
 http://188.225.27.75
 
+# Reference: https://twitter.com/david_jursa/status/1278665984124039171
+
+meetingzoom.us
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
