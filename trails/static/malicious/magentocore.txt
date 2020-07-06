@@ -2305,3 +2305,7 @@ kttape.com/pub/static/frontend/Plumtree/kttapeb2b/en_US/mage/mail.js
 # Reference: https://twitter.com/MBThreatIntel/status/1279523525192081408
 
 cloud-flares.host
+
+# Reference: https://twitter.com/wwp96/status/1279551267698888704
+
+jquerycloud.host
