@@ -2191,12 +2191,23 @@ locol.site
 t.obet.us/gagal/log.php
 
 # Reference: https://twitter.com/MBThreatIntel/status/1270861231776137218
+# Reference: https://twitter.com/MBThreatIntel/status/1279128778543783936
 # Reference: https://twitter.com/500mk500/status/1270945615812460544
 # Reference: https://www.virustotal.com/gui/ip-address/176.121.14.189/relations
 
+bootstrapmag.com
 chatajax.com
+google-adware.com
+jquery-apl.com
 jqueryalert.com
 jqueryapiscript.com
+magento-info.com
+magento-stores.com
+magento-updater.com
+security-magento.com
+securityscr.com
+w3schooli.com
+wordpress-scripts.com
 
 # Reference: https://twitter.com/felixaime/status/1271061780849209344
 # Reference: https://www.virustotal.com/gui/ip-address/193.32.161.74/relations
@@ -2286,3 +2297,15 @@ xciy.net
 xoet.site
 yxxi.net
 yzxi.net
+
+# Reference: https://twitter.com/MBThreatIntel/status/1279651033883439105
+
+kttape.com/pub/static/frontend/Plumtree/kttapeb2b/en_US/mage/mail.js
+
+# Reference: https://twitter.com/MBThreatIntel/status/1279523525192081408
+
+cloud-flares.host
+
+# Reference: https://twitter.com/wwp96/status/1279551267698888704
+
+jquerycloud.host
