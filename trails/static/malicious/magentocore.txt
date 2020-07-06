@@ -2312,6 +2312,7 @@ jquerycloud.host
 
 # Reference: https://blog.malwarebytes.com/threat-analysis/2020/07/credit-card-skimmer-targets-asp-net-sites/
 # Reference: https://twitter.com/MBThreatIntel/status/1280180299112919041
+# Reference: https://www.virustotal.com/gui/ip-address/31.220.60.108/relations
 
 cdn-xhr.com
 hivnd.net
