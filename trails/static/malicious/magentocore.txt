@@ -2321,3 +2321,7 @@ idpcdn-cloud.com
 joblly.com
 rackxhr.com
 thxrq.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1280569151833223168
+
+cdn-google-analytics.com
