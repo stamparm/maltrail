@@ -1103,8 +1103,11 @@ hellokity.in
 
 # Reference: https://twitter.com/felixaime/status/1278600095538262017 (# WPScriptInjection)
 # Reference: https://twitter.com/felixaime/status/1278602674401955846
+# Reference: https://twitter.com/unmaskparasites/status/1280581176747601920
 # Reference: https://www.virustotal.com/gui/ip-address/185.244.172.39/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.9.148.49/relations
 
+letsmakeparty3.ga
 lobbydesires.com
 tlcweb.ml
 wpctrl.ga
