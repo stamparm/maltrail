@@ -2285,3 +2285,7 @@ mediadownloader25.tk
 # Reference: https://www.virustotal.com/gui/file/6248a41a5e4230433e2a0e33f26dbed558e9bc21b51302124ee931921da3e657/detection
 
 hostas5.ml
+
+# Reference: https://www.virustotal.com/gui/file/c507fa7630f7a24b9f2b1dca969a15b253d73b81b520fedc6de0df2116f2fa0f/detection
+
+159.89.214.31:1081
