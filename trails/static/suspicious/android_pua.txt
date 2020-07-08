@@ -118,3 +118,13 @@ appsgeyser.com
 # Reference: https://www.virustotal.com/gui/domain/mobileslocator.info/relations
 
 mobileslocator.info
+
+# Reference: https://twitter.com/malwrhunterteam/status/1280939994622955520
+# Reference: https://twitter.com/midnight_comms/status/1280942919390769152
+
+andmon.ru
+anmon.ru
+android-monitor.ru
+android-monitor1.ru
+android-police.ru
+droimon20.ru
