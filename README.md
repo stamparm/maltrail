@@ -679,8 +679,8 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * [FreeBSD Port](https://www.freshports.org/security/maltrail)
 * [OPNSense Gateway Plugin](https://github.com/opnsense/plugins/pull/1257)
 * [D4 Project](https://www.d4-project.org/2019/09/25/maltrail-integration.html)
-* [GScan](https://github.com/grayddq/GScan)
 * [BlackArch Linux](https://github.com/BlackArch/blackarch/blob/master/packages/maltrail/PKGBUILD)
+* [GScan](https://github.com/grayddq/GScan) <sup>1</sup>
 * [MalwareWorld](https://www.malwareworld.com/) <sup>1</sup>
 * [oisd | domain blocklist](https://oisd.nl/?p=inc) <sup>1</sup>
 * [NextDNS](https://github.com/nextdns/metadata/blob/e0c9c7e908f5d10823b517ad230df214a7251b13/security/threat-intelligence-feeds.json) <sup>1</sup>
