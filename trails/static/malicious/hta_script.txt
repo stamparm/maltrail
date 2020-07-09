@@ -407,6 +407,10 @@
 
 /Hmoye0.hta
 
+# Reference: https://twitter.com/KorbenD_Intel/status/1281290067382685696
+
+/convert.hta
+
 # Generic
 
 /myrrem.hta
