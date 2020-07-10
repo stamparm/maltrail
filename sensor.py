@@ -491,7 +491,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     match = re.search(SUSPICIOUS_UA_REGEX, user_agent)
                                     if match:
                                         def _(value):
-                                            return value.replace('(', "\\(").replace(')', "\\)")
+                                            return value.rstrip('\\').replace('(', "\\(").replace(')', "\\)")
 
                                         parts = user_agent.split(match.group(0), 1)
 

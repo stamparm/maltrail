@@ -1507,6 +1507,10 @@ nvidafix
 \AiniM\Z
 \AarepO\Z
 
+# Reference: https://www.fortinet.com/blog/threat-research/vipersoftx-new-javascript-threat
+
+viperSoftx
+
 # Misc
 
 information_schema

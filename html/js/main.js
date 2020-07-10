@@ -1277,7 +1277,7 @@ function initDetails() {
                         var title = "";
                         var left = false;
 
-                        if (data.indexOf('(') > -1) {
+                        if ((data.indexOf('(') > -1) && (data.indexOf(')') > -1)) {
                             var parts = data.split(DATA_PARTS_DELIMITER);
                             for (var i = 0; i < parts.length; i++) {
                                 var index = parts[i].indexOf('(');
