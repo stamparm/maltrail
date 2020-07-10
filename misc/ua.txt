@@ -1499,6 +1499,14 @@ Mobile/BADDA
 
 nvidafix
 
+# Reference: https://business.xunison.com/analysis-of-samorat/
+# Reference: https://github.com/stamparm/maltrail/pull/9762
+
+\AnoisreV\Z
+\AotserP\Z
+\AiniM\Z
+\AarepO\Z
+
 # Misc
 
 information_schema
