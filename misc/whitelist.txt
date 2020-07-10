@@ -216,6 +216,8 @@ sl-reverse.com
 t-com.hr
 tedata.net
 vkcache.com
+habeas.com
+bondedsender.org
 
 # to ignore in direct .exe/.bin downloads
 
@@ -906,6 +908,7 @@ sophosxl.net
 
 # Generic
 
+ericsson.se
 radiocp.from-dc.com
 shadowshq.yi.org
 chogoon.com
