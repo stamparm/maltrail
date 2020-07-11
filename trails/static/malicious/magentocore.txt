@@ -1651,6 +1651,7 @@ marketplace-magento.net
 
 jsvault.net
 linkedtop.com
+scriptopia.net
 
 # Reference: https://twitter.com/ydklijnsma/status/1232727444962107392
 
