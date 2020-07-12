@@ -1653,10 +1653,6 @@ myq-see.com
 
 thddns.net
 
-# Reference: https://twitter.com/ScumBots/status/1105050120855449600
-
-kro.kr
-
 # Reference: https://twitter.com/ScumBots/status/1056727832037150727
 
 portmap.io
@@ -1665,9 +1661,16 @@ portmap.io
 
 ze.am
 
+# Reference: https://twitter.com/ScumBots/status/1105050120855449600
 # Reference: https://twitter.com/ScumBots/status/1105461451580420096
+# Reference: https://www.virustotal.com/gui/domain/n-e.kr/relations
+# Reference: https://xn--220b31d95hq8o.xn--3e0b707e/
 
+kro.kr
+o-r.kr
+n-e.kr
 p-e.kr
+r-e.kr
 
 # Reference: https://info.publicintelligence.net/FBI-BlackshadesDomains.xls
 
