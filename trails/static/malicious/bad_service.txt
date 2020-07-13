@@ -359,3 +359,7 @@ crypters.info
 
 http://199.192.17.158
 sprut.pw
+
+# Reference: https://twitter.com/3xp0rtblog/status/1282765407066230785
+
+xss.is
