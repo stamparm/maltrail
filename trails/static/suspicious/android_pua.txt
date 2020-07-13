@@ -122,6 +122,7 @@ mobileslocator.info
 # Reference: https://twitter.com/malwrhunterteam/status/1280939994622955520
 # Reference: https://twitter.com/midnight_comms/status/1280942919390769152
 # Reference: https://twitter.com/midnight_comms/status/1280943751985352705
+# Reference: https://twitter.com/malwrhunterteam/status/1281587594825019395
 
 andmon.ru
 anmon.ru
@@ -130,3 +131,4 @@ android-monitor.ru
 android-monitor1.ru
 android-police.ru
 droimon20.ru
+monitor-android.ru
