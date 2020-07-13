@@ -2289,3 +2289,12 @@ hostas5.ml
 # Reference: https://www.virustotal.com/gui/file/c507fa7630f7a24b9f2b1dca969a15b253d73b81b520fedc6de0df2116f2fa0f/detection
 
 159.89.214.31:1081
+
+# Reference: https://twitter.com/Lokesh42651261/status/1281601993816117250
+
+getgoodvideo.com
+memishooee.pw
+
+# Reference: https://twitter.com/ebotpoloskun/status/1281659298850975747
+
+sys-optimize.com
