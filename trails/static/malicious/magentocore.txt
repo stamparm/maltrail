@@ -2420,3 +2420,7 @@ uthorizecdn.com
 verywellfitnesse.com
 walletgear.org
 weblibscdn.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1283084460519456771
+
+cdnlistrakbi.com
