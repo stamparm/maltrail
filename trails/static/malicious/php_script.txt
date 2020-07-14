@@ -1679,6 +1679,12 @@ tunacan-812.tk
 
 /ecnxg8w7d5suuciz4w1jv057.php
 
+# Reference: https://www.virusradar.com/en/Win32_TrojanClicker.Clidak.A/description
+# Reference: https://www.virustotal.com/gui/file/980ef75a800eba45c7cb64b4c1bcc61a3b0cdf92854c24dbf1ea0f3fe4cad944/detection
+# Reference: https://www.virustotal.com/gui/ip-address/65.254.51.42/relations
+
+/~pete19c/r.php
+
 # Generic
 
 /7328-dating-verification-card.php
