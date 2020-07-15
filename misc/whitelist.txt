@@ -908,6 +908,7 @@ sophosxl.net
 
 # Generic
 
+lexico.com
 ericsson.se
 radiocp.from-dc.com
 shadowshq.yi.org
