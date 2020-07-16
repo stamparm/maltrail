@@ -142,6 +142,12 @@ http://188.225.27.75
 
 meetingzoom.us
 
+# Reference: https://any.run/report/7e447d08da535d1ee4aff7f9b69b0a461c0a7c549c3a2444fc6486687badce45/4e32f20f-1228-4b2d-ae8d-4d472e586d87
+# Reference: https://www.acronis.com/en-us/blog/posts/meet-buran-new-delphi-ransomware-delivered-rig-exploit-kit
+
+makemoneyeasy.live
+http://82.146.63.94
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
