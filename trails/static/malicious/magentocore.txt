@@ -2239,7 +2239,7 @@ reddotarms.com/js/infortis/jquery/jquery-1.7.2.min.js
 
 # Reference: https://twitter.com/benkow_/status/1273219665582579713
 
-visaandpassportagency. com/js/prototype/prototype.js
+visaandpassportagency.com/js/prototype/prototype.js
 
 # Reference: https://twitter.com/felixaime/status/1273221200886587392
 
