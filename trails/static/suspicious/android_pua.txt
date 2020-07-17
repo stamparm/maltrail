@@ -132,3 +132,7 @@ android-monitor1.ru
 android-police.ru
 droimon20.ru
 monitor-android.ru
+
+# Reference: https://www.virustotal.com/gui/domain/co1linesu.ru/relations
+
+co1linesu.ru
