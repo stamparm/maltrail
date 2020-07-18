@@ -1,0 +1,31 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://pastebin.com/SgZamRit
+
+http://185.11.167.190/~supporttelstra/login.php
+aksc.free.fr/blog/mailler.php
+cernykocour.com/colorbox/leafmailer.php
+eatnear.com/mailer.php
+envpicohome.com
+eudurica.sk/doc/leafmailer.php
+francehayon.fr/photos/alexusMailer-v1.7.2.php
+francehayon.fr/photos/mailer.php
+giftchris.com/sssx/
+gpaxseg.com.br/mail-conf.php
+io7617121.gq/4leafmailer2.8.php
+jlcrea.fr/en_conf.php
+mail.hotelgrandpapua.com/leaf.php
+moyiinvestments.com/cnns.php
+rainbowisp.info/dot/js/leafmailer2.8.php
+sech.cl/wp-includes/rand/leafmailer.php
+sech.cl/wp-includes/rand/xmailer.php
+shopprice.com.au/Images/mailer.php
+smtpforall.neocities.org
+surmatete.com/img/p/9/5/
+workingnurse.com/images/articles/mailer.php
+wyecottage.com
+
+# Reference: https://pastebin.com/Hc73BzJT
+
+legacyofindonesia.com/leafmail.php
