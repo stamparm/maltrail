@@ -218,6 +218,8 @@ tedata.net
 vkcache.com
 habeas.com
 bondedsender.org
+support-intelligence.net
+webex.com
 
 # to ignore in direct .exe/.bin downloads
 
