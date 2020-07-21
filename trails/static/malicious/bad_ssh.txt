@@ -14,3 +14,8 @@ ssh.22ssh.com
 
 59.46.53.214:22
 ssh.361com.com
+
+# Reference: https://www.virustotal.com/gui/file/7456e451f3c209fda2c5dd276acbb84e6c6055c48c28773396c87355c027ec4f/detection
+
+124.207.174.197:22
+ssh.4i7i.com
