@@ -7,4 +7,10 @@
 # Reference: https://www.virustotal.com/gui/domain/ssh.22ssh.com/relations
 # Reference: https://www.virustotal.com/gui/file/5fb20cca77d85fedf3653f24c8109d985c946955ad50ffd18bff9e33d64bc5ef/detection
 
+117.25.145.178:22
 ssh.22ssh.com
+
+# Reference: https://www.virustotal.com/gui/file/26084ab8e995c4614ed9b787290b937a64a8f57b7377b638d96128e14b4137f8/detection
+
+59.46.53.214:22
+ssh.361com.com
