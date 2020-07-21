@@ -89,3 +89,7 @@ webunstop.org
 # Reference: https://www.virustotal.com/gui/ip-address/110.110.110.1/relations
 
 http://110.110.110.1/wpad.dat
+
+# Reference: https://www.virustotal.com/gui/file/5d05b5938fc802c4e22f5b85cbf5b332297cc63800f2eb0fb4e667035587a6af/detection
+
+http://110.110.110.0/wpad.dat
