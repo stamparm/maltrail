@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note: Malicious SSH services\proxies
+
+# Reference: https://twitter.com/Lokesh42651261/status/1285513089706635264
+# Reference: https://www.virustotal.com/gui/domain/ssh.22ssh.com/relations
+# Reference: https://www.virustotal.com/gui/file/5fb20cca77d85fedf3653f24c8109d985c946955ad50ffd18bff9e33d64bc5ef/detection
+
+ssh.22ssh.com
