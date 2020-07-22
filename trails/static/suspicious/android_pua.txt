@@ -136,3 +136,8 @@ monitor-android.ru
 # Reference: https://www.virustotal.com/gui/domain/co1linesu.ru/relations
 
 co1linesu.ru
+
+# Reference: https://twitter.com/malwrhunterteam/status/1285976285777473537
+# Reference: https://www.virustotal.com/gui/file/d1be492e47d62d6254871179c1d93752dbbcdc7b95470ace2870876068d9ea0e/detection
+
+spy-datacenter.com
