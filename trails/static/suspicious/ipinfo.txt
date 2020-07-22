@@ -160,6 +160,7 @@ myip.uconn.edu
 myip.v6shell.org
 myip.zone
 mylocation.org
+my-ip.club
 nagano-19599.herokussl.com      # Note: CNAME of api.ipify.org
 qualmeuip.com.br
 readip.info
