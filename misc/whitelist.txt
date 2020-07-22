@@ -2954,3 +2954,7 @@ gogol-mogol.su
 # Reference: https://www.virustotal.com/gui/domain/lissyara.su/detection
 
 lissyara.su
+
+# Reference: https://www.virustotal.com/gui/domain/warhead.su/relations
+
+warhead.su
