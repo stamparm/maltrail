@@ -1700,6 +1700,10 @@ tunacan-812.tk
 /gateinfo
 /gatedrives
 
+# Reference: https://www.virustotal.com/gui/file/d72133df3fee1d91fcab0adb532459b6c0044e7f8b4ca542fa3f6ae470b42be1/detection
+
+/5c2eab368ebd00202fc7b56bb4a46f1ee67acd8e.php
+
 # Generic
 
 /7328-dating-verification-card.php
