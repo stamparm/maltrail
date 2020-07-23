@@ -1705,6 +1705,7 @@ tunacan-812.tk
 /gate16.php
 /gate2.php
 /gate.get
+/gatw.php
 /online-dating-verification-card.php
 /ravufgate.php
 /screenshot_gate.php
