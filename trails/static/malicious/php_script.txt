@@ -1694,9 +1694,11 @@ tunacan-812.tk
 /KFm63QEU7ArF.php
 
 # Reference: https://twitter.com/3xp0rtblog/status/1286191924462915584
+# Reference: https://app.any.run/tasks/de469303-2e77-4a1e-9a8b-ed56c35bf1d0/
 # Reference: https://www.virustotal.com/gui/file/f86e27e58356c554269b93713ea53b797d92359f0abb25bf70fe2de278278f7f/detection
 
 /gateinfo
+/gatedrives
 
 # Generic
 
