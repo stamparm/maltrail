@@ -148,6 +148,10 @@ meetingzoom.us
 makemoneyeasy.live
 http://82.146.63.94
 
+# Reference: https://twitter.com/jeromesegura/status/1286087207829176320
+
+http://142.93.161.173
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
