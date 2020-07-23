@@ -1013,21 +1013,6 @@ digestcolect.com
 css.digestcolect.com
 js.digestcolect.com
 
-# Reference: https://www.virustotal.com/gui/ip-address/51.15.20.78/relations
-
-go1news.biz
-lodder.info
-lodders.club
-news98.biz
-newtext.club
-noorotin.biz
-report3.biz
-retoore.biz
-solo8.biz
-vinuser6.biz
-w1sercher.biz
-wwserch41.biz
-
 # Reference: https://twitter.com/CERT_Polska_en/status/1270623116931317760
 # Reference: https://pastebin.com/raw/Ap38Fr7e
 # Reference: https://pastebin.com/raw/YyYs8Her
