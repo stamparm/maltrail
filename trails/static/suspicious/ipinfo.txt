@@ -336,3 +336,7 @@ ipcode.pw
 # Reference: https://www.virustotal.com/gui/file/db990dd20ae4390a2965b9de6839cda8a52fb0214fb5d90cbc2da9ccf0977dcd/detection
 
 api.rest7.com/v1/my_ip.php
+
+# Reference: https://www.virustotal.com/gui/file/b9cf5db42a5cc90339cd90d7a39ff5caae4a54decd174ddf097e148428909394/detection
+
+v4.ipv6-test.com/api/myip.php
