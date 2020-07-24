@@ -3028,3 +3028,7 @@ noip.pl
 # Reference: https://www.virustotal.com/gui/domain/jomodns.com/relations
 
 jomodns.com
+
+# Reference: https://www.virustotal.com/gui/domain/misdns.org/relations
+
+misdns.org
