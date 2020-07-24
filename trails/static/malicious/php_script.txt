@@ -1720,6 +1720,10 @@ tunacan-812.tk
 
 /156b2b990971b28b12393cd82884a7d3.php
 
+# Reference: https://www.virustotal.com/gui/file/0130797c1baa9ac6709693d7e357cd37cf4bfb48fe9bfaede723674bec4cde85/detection
+
+/84a7d5fcbbe9a0cdcf1357c70cf326bed852c7ee.php
+
 # Generic
 
 /7328-dating-verification-card.php
