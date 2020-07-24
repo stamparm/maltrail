@@ -268,7 +268,7 @@ The following set of commands should get your Maltrail **Sensor** up and running
 
 ```
 sudo apt-get install git python-pcapy
-git clone https://github.com/stamparm/maltrail.git
+git clone --depth 1 https://github.com/stamparm/maltrail.git
 cd maltrail
 sudo python sensor.py
 ```
@@ -278,7 +278,7 @@ sudo python sensor.py
 ```
 sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip
 sudo pip2 install pcapy
-git clone https://github.com/stamparm/maltrail.git
+git clone --depth 1 https://github.com/stamparm/maltrail.git
 cd maltrail
 sudo python sensor.py
 ```
@@ -288,7 +288,7 @@ sudo python sensor.py
 To start the (optional) **Server** on same machine, open a new terminal and execute the following:
 
 ```
-[[ -d maltrail ]] || git clone https://github.com/stamparm/maltrail.git
+[[ -d maltrail ]] || git clone --depth 1 https://github.com/stamparm/maltrail.git
 cd maltrail
 python server.py
 ```
@@ -605,7 +605,7 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**,
     ```
     sudo apt-get install git python-pcapy
     cd /tmp
-    git clone https://github.com/stamparm/maltrail.git
+    git clone --depth 1 https://github.com/stamparm/maltrail.git
     sudo mv /tmp/maltrail /opt
     sudo chown -R $USER:$USER /opt/maltrail
     ```
@@ -616,7 +616,7 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**,
    sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip
    sudo pip2 install pcapy
    cd /tmp
-   git clone https://github.com/stamparm/maltrail.git
+   git clone --depth 1 https://github.com/stamparm/maltrail.git
    sudo mv /tmp/maltrail /opt
    sudo chown -R $USER:$USER /opt/maltrail
    ```
