@@ -152,6 +152,11 @@ http://82.146.63.94
 
 http://142.93.161.173
 
+# Reference: https://twitter.com/nao_sec/status/1286896740822478848
+
+http://185.200.241.78
+slolimoso.space
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
