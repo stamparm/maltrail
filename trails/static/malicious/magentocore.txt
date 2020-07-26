@@ -2438,3 +2438,8 @@ google-conf.com
 google-sert.com
 /app/design/frontend/Magento/luma/media/mage.png
 /pub/media/downloadable/mage.png
+
+# Reference: https://twitter.com/felixaime/status/1287408636164284419
+
+cdn-filestorm.com
+cloud-sources.com
