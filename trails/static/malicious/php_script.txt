@@ -1693,6 +1693,38 @@ tunacan-812.tk
 
 /KFm63QEU7ArF.php
 
+# Reference: https://www.virustotal.com/gui/file/d72133df3fee1d91fcab0adb532459b6c0044e7f8b4ca542fa3f6ae470b42be1/detection
+
+/5c2eab368ebd00202fc7b56bb4a46f1ee67acd8e.php
+
+# Reference: https://www.virustotal.com/gui/file/dacce09fd5829213606cef3f45d5bc43d4522183e54422eb4a5c7a404c69a6c2/detection
+
+/bdeefbc5c36a0b584fa7c5330e493a7d22b741af.php
+
+# Reference: https://www.virustotal.com/gui/file/44f3eb01406921d5605933abce49e5fe04cfe6a73f3fcb7380dc99765043ea2a/detection
+
+/1dc5e926948fd82a85e7c085e0bf0c6db31969f3.php
+
+# Reference: https://www.virustotal.com/gui/file/4bf6ec0d9ab95d7d7d4e1e7453a83ed731c9188fbe6d007834025f00791cdcb9/detection
+
+/64d631e36c839e2964fcdc671f84e96bc9dcd7ca.php
+
+# Reference: https://www.virustotal.com/gui/file/9fabd7b98f8972850549231d2ac2762ec1cad3ef8fdf3cb994d14c9c3ad17ba5/detection
+
+/156b2b990971b28b12393cd82884a7d3.php
+
+# Reference: https://www.virustotal.com/gui/file/0130797c1baa9ac6709693d7e357cd37cf4bfb48fe9bfaede723674bec4cde85/detection
+
+/84a7d5fcbbe9a0cdcf1357c70cf326bed852c7ee.php
+
+# Reference: https://www.virustotal.com/gui/file/41dcb2cb400c656826db00e368c5ddc4d254d69d5d9ab0cd6a63fd68bba2fb5f/detection
+
+/901212b6cc3a718fd6012ed1ff31c04663ffeb8b.php
+
+# Reference: https://www.virustotal.com/gui/file/b9024622a0e5c982db8b533e6c3a736d65d5c02bf01b4ff15d3fd770f4632443/detection
+
+/86872acabed89173a9b729bb81eca3ab802559ca.php
+
 # Generic
 
 /7328-dating-verification-card.php
@@ -1706,6 +1738,7 @@ tunacan-812.tk
 /gate2.php
 /gate.get
 /gatw.php
+/gate.phpgate.php
 /online-dating-verification-card.php
 /ravufgate.php
 /screenshot_gate.php
