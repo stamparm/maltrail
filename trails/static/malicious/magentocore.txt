@@ -2424,3 +2424,22 @@ weblibscdn.com
 # Reference: https://twitter.com/unmaskparasites/status/1283084460519456771
 
 cdnlistrakbi.com
+
+# Reference: https://blog.sucuri.net/2020/07/skimmers-in-images-github-repos.html
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.19.101/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.77.10/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.99.41/relations
+
+analytics-core.com
+analytics-ssl.com
+fontsgoogle-apis.com
+fontsgoogleapis.com
+google-conf.com
+google-sert.com
+/app/design/frontend/Magento/luma/media/mage.png
+/pub/media/downloadable/mage.png
+
+# Reference: https://twitter.com/felixaime/status/1287408636164284419
+
+cdn-filestorm.com
+cloud-sources.com
