@@ -1073,3 +1073,8 @@ tlcweb.ml
 wpctrl.ga
 wpctrl.gq
 wpctrl.ml
+
+# Reference: https://www.virustotal.com/gui/file/5dff08bb4cbd0d6963bc7973dfacebbbbcc1da7fa59136b3d62c57e040a1e7c2/detection
+
+193.161.193.99:61574
+hackthisishack-61574.portmap.host
