@@ -4,3 +4,7 @@
 # Reference: https://twitter.com/nao_sec/status/1269422460362870784
 
 shophandbag.store
+
+# Reference: https://twitter.com/nao_sec/status/1287755458153869312
+
+http://136.224.101.95
