@@ -11,3 +11,7 @@ c99php.com
 localroot.net
 shells.altervista.org
 podathon.org/shell/
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/ensiko-a-webshell-with-ransomware-capabilities/
+
+/webshell/shell.php
