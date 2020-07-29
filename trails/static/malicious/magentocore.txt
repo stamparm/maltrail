@@ -2443,3 +2443,9 @@ google-sert.com
 
 cdn-filestorm.com
 cloud-sources.com
+
+# Reference: https://twitter.com/500mk500/status/1288482532774891521
+# Reference: https://www.virustotal.com/gui/ip-address/8.211.36.239/relations
+# Reference: https://www.virustotal.com/gui/domain/rooplancdn.com/detection
+
+rooplancdn.com
