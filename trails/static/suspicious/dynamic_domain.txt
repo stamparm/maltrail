@@ -2102,6 +2102,9 @@ stuns.org
 # Reference: https://www.virustotal.com/gui/domain/dns-cloud.net/relations
 # Reference: https://www.cloudns.net/dynamic-dns/
 
+cloudns.eu
+cloudns.info
+cloudns.org
 dns-cloud.net
 
 # Reference: https://www.virustotal.com/gui/domain/2dons.com/relations
