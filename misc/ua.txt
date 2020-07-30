@@ -1507,6 +1507,13 @@ nvidafix
 
 viperSoftx
 
+# Reference: https://twitter.com/James_inthe_box/status/1288889075831672833
+# Reference: https://twitter.com/James_inthe_box/status/1288933468357840896
+# Reference: https://gist.github.com/silence-is-best/c79e30feebe197d999a9da0aef80db29
+# Reference: https://github.com/stamparm/maltrail/pull/10138
+
+\ASoftware License Checker\Z
+
 # Misc
 
 information_schema
