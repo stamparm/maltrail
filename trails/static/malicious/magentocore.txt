@@ -2453,3 +2453,8 @@ rooplancdn.com
 # Reference: https://twitter.com/felixaime/status/1288604510802325509
 
 shopify-sales.com
+
+# Reference: https://twitter.com/felixaime/status/1288601153400446976
+
+blog-mage.com
+path-magento.com
