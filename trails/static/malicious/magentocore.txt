@@ -2458,3 +2458,8 @@ shopify-sales.com
 
 blog-mage.com
 path-magento.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1288922935240077313
+
+http://31.214.157.134/in.php
+/setup/performance-toolkit/files/search_terms.php
