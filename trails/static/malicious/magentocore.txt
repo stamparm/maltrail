@@ -2449,3 +2449,7 @@ cloud-sources.com
 # Reference: https://www.virustotal.com/gui/domain/rooplancdn.com/detection
 
 rooplancdn.com
+
+# Reference: https://twitter.com/felixaime/status/1288604510802325509
+
+shopify-sales.com
