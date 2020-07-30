@@ -2455,9 +2455,19 @@ rooplancdn.com
 shopify-sales.com
 
 # Reference: https://twitter.com/felixaime/status/1288601153400446976
+# Reference: https://www.virustotal.com/gui/ip-address/47.88.14.111/relations
 
+adw-gooqle.com
 blog-mage.com
+clickstrackings.com
+googie-seo.com
+google-ssm.com
+google-ahatytics.com
+jqueryupdate.com
+jquery-magento.com
 path-magento.com
+script-magento.com
+up-tracking.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1288922935240077313
 
