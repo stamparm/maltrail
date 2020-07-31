@@ -2443,3 +2443,33 @@ google-sert.com
 
 cdn-filestorm.com
 cloud-sources.com
+
+# Reference: https://twitter.com/500mk500/status/1288482532774891521
+# Reference: https://www.virustotal.com/gui/ip-address/8.211.36.239/relations
+# Reference: https://www.virustotal.com/gui/domain/rooplancdn.com/detection
+
+rooplancdn.com
+
+# Reference: https://twitter.com/felixaime/status/1288604510802325509
+
+shopify-sales.com
+
+# Reference: https://twitter.com/felixaime/status/1288601153400446976
+# Reference: https://www.virustotal.com/gui/ip-address/47.88.14.111/relations
+
+adw-gooqle.com
+blog-mage.com
+clickstrackings.com
+googie-seo.com
+google-ssm.com
+google-ahatytics.com
+jqueryupdate.com
+jquery-magento.com
+path-magento.com
+script-magento.com
+up-tracking.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1288922935240077313
+
+http://31.214.157.134/in.php
+/setup/performance-toolkit/files/search_terms.php
