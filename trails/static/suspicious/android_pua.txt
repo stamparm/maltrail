@@ -145,3 +145,7 @@ spy-datacenter.com
 # Reference: https://twitter.com/malwrhunterteam/status/1287795588659060742
 
 neatspy.vip
+
+# Reference: https://twitter.com/malwrhunterteam/status/1288876216741756930
+
+trackier.vip
