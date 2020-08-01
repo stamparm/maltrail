@@ -149,3 +149,7 @@ neatspy.vip
 # Reference: https://twitter.com/malwrhunterteam/status/1288876216741756930
 
 trackier.vip
+
+# Reference: https://www.virustotal.com/gui/domain/ad-sdk.com/relations
+
+ad-sdk.com
