@@ -1073,3 +1073,7 @@ tlcweb.ml
 wpctrl.ga
 wpctrl.gq
 wpctrl.ml
+
+# Reference: https://twitter.com/unmaskparasites/status/1289272342837895171
+
+developerstatss.ga
