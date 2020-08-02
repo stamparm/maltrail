@@ -200,6 +200,12 @@ http://213.128.93.199
 /webpanel/8/inc/
 /webpanel/9/inc/
 
+# Reference: https://pastebin.com/XdZhSj7j
+
+/covid_tmp/login.php
+/covid/login.php
+/covid2/login.php
+
 # Generic
 
 /admin_123/auth.php
