@@ -2298,3 +2298,7 @@ memishooee.pw
 # Reference: https://twitter.com/ebotpoloskun/status/1281659298850975747
 
 sys-optimize.com
+
+# Reference: https://www.virustotal.com/gui/file/fa06ba9b45a5babc68f6ffc5de448ec908a28fc2a59ea977b13c687c5265dcea/detection
+
+multinstaller.com
