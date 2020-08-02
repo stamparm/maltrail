@@ -157,6 +157,10 @@ http://142.93.161.173
 http://185.200.241.78
 slolimoso.space
 
+# Reference: https://twitter.com/MBThreatIntel/status/1289275954896936960
+
+http://185.119.58.181
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
