@@ -387,3 +387,7 @@ minexmr.com
 
 minerpool.pw
 /xmrig/
+
+# Reference: https://www.virustotal.com/gui/file/a38216166e363d752f37bdf0419d2e2694279beab8df66d40f56c679563e7a4f/detection
+
+pool.hashvault.pro
