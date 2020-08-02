@@ -200,6 +200,18 @@ http://213.128.93.199
 /webpanel/8/inc/
 /webpanel/9/inc/
 
+# Reference: https://pastebin.com/XdZhSj7j
+
+/covid_tmp/login.php
+/covid/login.php
+/covid2/login.php
+
+# Reference: https://twitter.com/0bfusCat/status/1250825370854711301
+
+/covid_tmp/gate.php
+/covid/gate.php
+/covid2/gate.php
+
 # Generic
 
 /admin_123/auth.php
