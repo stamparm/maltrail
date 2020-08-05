@@ -2318,3 +2318,7 @@ ngnbinfo.com
 o-browser.ru
 technologieberri.com
 trumpmoney.world
+
+# Reference: https://www.virustotal.com/gui/file/65a3cf860cd4202c15508db6d8b8bcb7352671fdd49d50b0504817bb78099331/detection
+
+adasf.pw
