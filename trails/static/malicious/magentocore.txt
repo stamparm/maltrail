@@ -2480,3 +2480,13 @@ http://31.214.157.134/in.php
 # Reference: https://gist.github.com/krautface/b65cb1e717038f000d4d9dfd860830ea
 
 cdn-adsense.com
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2020/08/inter-skimming-kit-used-in-homoglyph-attacks/
+# Reference: https://otx.alienvault.com/pulse/5f2c453b5b063dda49dd855f
+# Reference: https://www.virustotal.com/gui/ip-address/51.83.209.11/relations
+
+cigarpaqe.com
+fleldsupply.com
+pushcrew.pw
+winqsupply.com
+zoplm.com
