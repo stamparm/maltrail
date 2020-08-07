@@ -2303,6 +2303,10 @@ sys-optimize.com
 
 multinstaller.com
 
+# Reference: https://twitter.com/malware_traffic/status/1291123970138345474
+
+ec2-35-166-136-23.us-west-2.compute.amazonaws.com
+
 # Reference: https://www.virustotal.com/gui/file/22527477a0a4edbea690de10ef82d201f379502661178c19f9d6ae7628c6552a/detection
 # Reference: https://www.virustotal.com/gui/file/10cca6904c98f6ce94e9a21c0490fc5e507985a0d363baab3a31856f02653dde/detection
 # Reference: https://www.virustotal.com/gui/file/1cee6c397376c0f8363085d86cbd82cbe635ace6ba4bfb2a732a8e2c657a2fe2/detection
