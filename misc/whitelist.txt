@@ -2965,3 +2965,7 @@ lissyara.su
 # Reference: https://www.virustotal.com/gui/domain/warhead.su/relations
 
 warhead.su
+
+# Reference: https://www.virustotal.com/gui/domain/routers.wtf/detection
+
+routers.wtf
