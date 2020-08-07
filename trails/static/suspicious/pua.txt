@@ -2302,3 +2302,25 @@ sys-optimize.com
 # Reference: https://www.virustotal.com/gui/file/fa06ba9b45a5babc68f6ffc5de448ec908a28fc2a59ea977b13c687c5265dcea/detection
 
 multinstaller.com
+
+# Reference: https://www.virustotal.com/gui/file/22527477a0a4edbea690de10ef82d201f379502661178c19f9d6ae7628c6552a/detection
+# Reference: https://www.virustotal.com/gui/file/10cca6904c98f6ce94e9a21c0490fc5e507985a0d363baab3a31856f02653dde/detection
+# Reference: https://www.virustotal.com/gui/file/1cee6c397376c0f8363085d86cbd82cbe635ace6ba4bfb2a732a8e2c657a2fe2/detection
+# Reference: https://www.virustotal.com/gui/file/04873ec6fa6d05edc4557ce7b14115dce3325d2d551812035fed8c1e574af802/detection
+# Reference: https://www.virustotal.com/gui/file/ad3edea038dcb17af1e16e997e58d589eceef3b0a0e8e25d2c3907e4abcb506f/detection
+
+adcash.cf
+ayurew.pw
+filedistrserver.pw
+hostas.ml
+hostpp.gq
+hostpp2.tk
+lighteningplayer.com
+ngnbinfo.com
+o-browser.ru
+technologieberri.com
+trumpmoney.world
+
+# Reference: https://www.virustotal.com/gui/file/65a3cf860cd4202c15508db6d8b8bcb7352671fdd49d50b0504817bb78099331/detection
+
+adasf.pw
