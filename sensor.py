@@ -1086,7 +1086,7 @@ def monitor():
 
             datalink = _cap.datalink()
 
-            if six.PY3:  # https://github.com/helpsystems/pcapy/issues/37#issuecomment-530795813
+            if six.PY3 and not config.pcap_file:  # https://github.com/helpsystems/pcapy/issues/37#issuecomment-530795813
                 def _loop_handler(header, packet):
                     packet_handler(datalink, header, packet)
 

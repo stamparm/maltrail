@@ -19,6 +19,8 @@ from core.settings import REGULAR_SENSOR_SLEEP_TIME
 from core.settings import SHORT_SENSOR_SLEEP_TIME
 from core.settings import trails
 
+_timer = None
+
 def read_block(buffer, i):
     offset = i * BLOCK_LENGTH % config.CAPTURE_BUFFER
 
@@ -58,6 +60,8 @@ def worker(buffer, n, offset, mod, process_packet):
     """
 
     def update_timer():
+        global _timer
+
         if (time.time() - os.stat(config.TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD:
             _ = None
             while True:
@@ -68,7 +72,9 @@ def worker(buffer, n, offset, mod, process_packet):
                     break
                 else:
                     time.sleep(LOAD_TRAILS_RETRY_SLEEP_TIME)
-        threading.Timer(config.UPDATE_PERIOD, update_timer).start()
+
+        _timer = threading.Timer(config.UPDATE_PERIOD, update_timer)
+        _timer.start()
 
     update_timer()
 
@@ -96,3 +102,6 @@ def worker(buffer, n, offset, mod, process_packet):
 
         except KeyboardInterrupt:
             break
+
+    if _timer:
+        _timer.cancel()
