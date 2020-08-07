@@ -2432,9 +2432,13 @@ cdnlistrakbi.com
 
 analytics-core.com
 analytics-ssl.com
+fonts-googlemaps.com
+fonts-gstatic.com
 fontsgoogle-apis.com
 fontsgoogleapis.com
 google-conf.com
+google-console.com
+google-core.com
 google-sert.com
 /app/design/frontend/Magento/luma/media/mage.png
 /pub/media/downloadable/mage.png
