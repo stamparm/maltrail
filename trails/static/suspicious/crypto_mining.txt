@@ -391,3 +391,7 @@ minerpool.pw
 # Reference: https://www.virustotal.com/gui/file/a38216166e363d752f37bdf0419d2e2694279beab8df66d40f56c679563e7a4f/detection
 
 pool.hashvault.pro
+
+# Reference: https://www.virustotal.com/gui/file/5b719ea5f7706353d84b62c05e70c8126fadb2845af268a0d333cc316f7629ef/detection
+
+fullnode.coinkite.com
