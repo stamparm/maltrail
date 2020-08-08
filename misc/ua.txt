@@ -1518,6 +1518,10 @@ viperSoftx
 
 <script src=[^\>]*>
 
+# Reference: https://twitter.com/bad_packets/status/1292193947574362114
+
+Powerjacobb1
+
 # Misc
 
 information_schema
