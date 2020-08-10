@@ -255,3 +255,7 @@ gulpnotsvn.store
 hilltop4u.host
 real-chat.xyz
 tokyoainaclub.space
+
+# Reference: https://unit42.paloaltonetworks.com/unit42-new-wine-old-bottle-new-azorult-variant-found-findmyname-campaign-using-fallout-exploit-kit/
+
+findmyname.pw

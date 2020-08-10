@@ -1514,6 +1514,14 @@ viperSoftx
 
 \ASoftware License Checker\Z
 
+# Reference: https://twitter.com/Bc10ver/status/1291733556838965248
+
+<script src=[^\>]*>
+
+# Reference: https://twitter.com/bad_packets/status/1292193947574362114
+
+Powerjacobb1
+
 # Misc
 
 information_schema
