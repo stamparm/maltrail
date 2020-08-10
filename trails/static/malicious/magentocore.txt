@@ -2494,3 +2494,7 @@ fleldsupply.com
 pushcrew.pw
 winqsupply.com
 zoplm.com
+
+# Reference: https://twitter.com/felixaime/status/1292567951762231299
+
+cdncom.site
