@@ -300,6 +300,6 @@
 /pikachu6165556.ps1
 /pikachu_7777.ps1
 
-# Reference: https://twitter.com/VK_Intel/status/1292940919092719616
+# Reference: https://twitter.com/ANeilan/status/1292939552085233664
 
 /Update-KB4524147.ps1
