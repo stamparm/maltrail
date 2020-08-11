@@ -1516,7 +1516,7 @@ viperSoftx
 
 # Reference: https://twitter.com/Bc10ver/status/1291733556838965248
 
-<script src=[^\>]*>
+<(iframe|script) src=[^\>]*>
 
 # Reference: https://twitter.com/bad_packets/status/1292193947574362114
 
