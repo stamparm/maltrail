@@ -1082,3 +1082,7 @@ developerstatss.ga
 # Reference: https://blog.sucuri.net/2020/07/reverse-string-woocommerce-wordpress-credit-card-swiper.html
 
 localhostnametable.com
+
+# Reference: https://unit42.paloaltonetworks.com/script-based-malware/
+
+assurancetemporaireenligne.com/c.js
