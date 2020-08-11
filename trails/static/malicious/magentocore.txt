@@ -2498,3 +2498,8 @@ zoplm.com
 # Reference: https://twitter.com/felixaime/status/1292567951762231299
 
 cdncom.site
+
+# Reference: https://twitter.com/AffableKraut/status/1293104085835689984
+# Reference: https://www.virustotal.com/gui/domain/googapi.com/detection
+
+googapi.com
