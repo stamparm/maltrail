@@ -299,3 +299,7 @@
 /pikachu616_5556.ps1
 /pikachu6165556.ps1
 /pikachu_7777.ps1
+
+# Reference: https://twitter.com/ANeilan/status/1292939552085233664
+
+/Update-KB4524147.ps1
