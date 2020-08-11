@@ -916,6 +916,7 @@ sophosxl.net
 
 # Generic
 
+app-measurement.com
 radio101.hr
 lexico.com
 ericsson.se
