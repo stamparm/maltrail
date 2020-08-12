@@ -1522,6 +1522,10 @@ viperSoftx
 
 Powerjacobb1
 
+# Reference: https://twitter.com/bad_packets/status/1293402050277986304
+
+fasthttp
+
 # Misc
 
 information_schema
