@@ -1760,6 +1760,10 @@ tunacan-812.tk
 /womanclub.xyz.php
 /womanstyle.xyz.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1293927664651317248
+
+/buhib3i0r6dss6ar46e115s8.php
+
 # Generic
 
 /7328-dating-verification-card.php
