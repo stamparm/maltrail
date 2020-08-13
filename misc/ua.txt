@@ -1522,6 +1522,19 @@ viperSoftx
 
 Powerjacobb1
 
+# Reference: https://twitter.com/bad_packets/status/1293402050277986304
+
+fasthttp
+
+# Reference: https://twitter.com/reecdeep/status/1293601730618437632
+# Reference: https://app.any.run/tasks/ef5bd545-7404-440e-a86a-f00e2e89bc42/
+
+klmems
+
+# Reference: https://twitter.com/ViriBack/status/1293672393563676675
+
+F02DAB86BCA47979D007EB507D3D1F1E
+
 # Misc
 
 information_schema
