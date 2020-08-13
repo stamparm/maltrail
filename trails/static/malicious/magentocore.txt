@@ -2460,17 +2460,30 @@ shopify-sales.com
 
 # Reference: https://twitter.com/felixaime/status/1288601153400446976
 # Reference: https://www.virustotal.com/gui/ip-address/47.88.14.111/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.101.50.134/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.84.18/relations
 
 adw-gooqle.com
 blog-mage.com
+cioubfiare.com
+claristokp.top
 clickstrackings.com
+cloubfiare.com
+cloudfliare.com
 googie-seo.com
-google-ssm.com
 google-ahatytics.com
-jqueryupdate.com
+google-anatytics.com
+google-ssm.com
+gooqieapis.com
+jquery-doc.com
 jquery-magento.com
+jqueryupdate.com
+magenlo.com
+marketing-yahoo.com
+optimized-js.com
 path-magento.com
 script-magento.com
+tag-managers.com
 up-tracking.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1288922935240077313
