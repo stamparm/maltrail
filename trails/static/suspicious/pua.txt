@@ -2332,3 +2332,9 @@ adasf.pw
 # Reference: https://www.virustotal.com/gui/file/0231fea50ab5ea4e6d28f75b3d459b8995d1e960ec3acbef2525ffd1ef25d2bd/detection
 
 astra2yedek.xyz
+
+# Reference: https://www.virustotal.com/gui/file/b4d7152c04dac5636ed49806ef24f407008e8c0b35beacb25b5a3030d3b5f2dc/detection
+
+68.10.46.234:63274
+install-apps.com
+/gcache.php?get=
