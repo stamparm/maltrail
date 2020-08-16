@@ -5042,7 +5042,7 @@ wcomhost.com
 
 kingx.info
 
-# Reference: https://www.virustotal.com/gui/domain/kingx.ml/relations
+# Reference: https://www.virustotal.com/gui/domain/kingspy.ml/relations
 # Reference: https://www.virustotal.com/gui/file/01f513ae8de5bb41180a25f095a1bb432f122a808950cd317bbc3b9c6b6cb48e/detection
 
-kingx.ml
+kingspy.ml
