@@ -2343,3 +2343,8 @@ install-apps.com
 
 http://213.152.46.35
 gnutella-cache.no-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/757475e379dcdcb988f99c49071f89d442e42185671bfd8099e58abce96aa118/detection
+
+techdudez.com
+vernweb.homeip.net
