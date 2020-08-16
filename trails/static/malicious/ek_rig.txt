@@ -161,6 +161,10 @@ slolimoso.space
 
 http://185.119.58.181
 
+# Reference: https://twitter.com/nao_sec/status/1294871134001799168
+
+http://185.119.56.54
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
