@@ -2338,3 +2338,8 @@ astra2yedek.xyz
 68.10.46.234:63274
 install-apps.com
 /gcache.php?get=
+
+# Reference: https://www.virustotal.com/gui/file/e9a81285534c5a8903f43d2372ea805a2229fc02cda52f73acf7c9bbf1f647d4/detection
+
+http://213.152.46.35
+gnutella-cache.no-ip.com
