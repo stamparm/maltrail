@@ -2970,3 +2970,7 @@ warhead.su
 # Reference: https://www.virustotal.com/gui/domain/routers.wtf/detection
 
 routers.wtf
+
+# Reference: https://www.virustotal.com/gui/domain/teenslang.su/detection
+
+teenslang.su

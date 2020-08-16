@@ -2328,3 +2328,31 @@ trumpmoney.world
 # Reference: https://www.virustotal.com/gui/file/65a3cf860cd4202c15508db6d8b8bcb7352671fdd49d50b0504817bb78099331/detection
 
 adasf.pw
+
+# Reference: https://www.virustotal.com/gui/file/0231fea50ab5ea4e6d28f75b3d459b8995d1e960ec3acbef2525ffd1ef25d2bd/detection
+
+astra2yedek.xyz
+
+# Reference: https://www.virustotal.com/gui/file/b4d7152c04dac5636ed49806ef24f407008e8c0b35beacb25b5a3030d3b5f2dc/detection
+
+68.10.46.234:63274
+install-apps.com
+/gcache.php?get=
+
+# Reference: https://www.virustotal.com/gui/file/e9a81285534c5a8903f43d2372ea805a2229fc02cda52f73acf7c9bbf1f647d4/detection
+
+http://213.152.46.35
+gnutella-cache.no-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/757475e379dcdcb988f99c49071f89d442e42185671bfd8099e58abce96aa118/detection
+
+techdudez.com
+vernweb.homeip.net
+
+# Reference: https://www.virustotal.com/gui/file/a7c2e176ffe6e436474710b251feb0cf3130abff45cd9db35610fb9564250ba1/detection
+
+bazooka1.servehttp.com
+
+# Reference: https://www.virustotal.com/gui/domain/rainwater.dyndns.org/relations
+
+rainwater.dyndns.org
