@@ -142,6 +142,10 @@ co1linesu.ru
 
 spy-datacenter.com
 
+# Reference: https://twitter.com/malwrhunterteam/status/1294266667078430722
+
+mintrack.vip
+
 # Reference: https://twitter.com/malwrhunterteam/status/1287795588659060742
 
 neatspy.vip
