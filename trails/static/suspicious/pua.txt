@@ -2348,3 +2348,7 @@ gnutella-cache.no-ip.com
 
 techdudez.com
 vernweb.homeip.net
+
+# Reference: https://www.virustotal.com/gui/file/a7c2e176ffe6e436474710b251feb0cf3130abff45cd9db35610fb9564250ba1/detection
+
+bazooka1.servehttp.com
