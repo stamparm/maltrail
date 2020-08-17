@@ -5036,3 +5036,13 @@ wcomhost.com
 # Reference: https://twitter.com/midnight_comms/status/1278330576525602816
 
 .cyou
+
+# Reference: https://www.virustotal.com/gui/domain/kingx.info/relations
+# Reference: https://www.virustotal.com/gui/file/3f2c17bfa5c453a9fe4a8ab56c9d9ce24020e7489204f506d92668986b965826/detection
+
+kingx.info
+
+# Reference: https://www.virustotal.com/gui/domain/kingspy.ml/relations
+# Reference: https://www.virustotal.com/gui/file/01f513ae8de5bb41180a25f095a1bb432f122a808950cd317bbc3b9c6b6cb48e/detection
+
+kingspy.ml
