@@ -2356,3 +2356,7 @@ bazooka1.servehttp.com
 # Reference: https://www.virustotal.com/gui/domain/rainwater.dyndns.org/relations
 
 rainwater.dyndns.org
+
+# Reference: https://www.virustotal.com/gui/domain/gridcoin.ddns.net/relations
+
+gridcoin.ddns.net
