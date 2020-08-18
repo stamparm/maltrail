@@ -2531,3 +2531,16 @@ topcc.biz
 topcc.pw
 topcc.store
 topcc.su
+
+# Reference: https://twitter.com/unmaskparasites/status/1295816804133199878
+# Reference: https://twitter.com/AffableKraut/status/1295817245017493507
+
+amastybootstrap.host
+amastybootstrap.online
+amastybootstrap.store
+bootstrapcd.online
+bootstrapcss.host
+bootstrapcss.online
+cdnbootstrap.host
+cdnbootstrap.store
+dbbootstrap.online
