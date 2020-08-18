@@ -2516,3 +2516,8 @@ cdncom.site
 # Reference: https://www.virustotal.com/gui/domain/googapi.com/detection
 
 googapi.com
+
+# Reference: https://twitter.com/felixaime/status/1295796245588512768
+
+payprocessor.net
+safeprocessor.com
