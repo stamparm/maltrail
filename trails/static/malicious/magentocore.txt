@@ -2520,4 +2520,14 @@ googapi.com
 # Reference: https://twitter.com/felixaime/status/1295796245588512768
 
 payprocessor.net
-safeprocessor.com
+
+# Reference: https://twitter.com/felixaime/status/1295800211416190976
+# Reference: https://www.virustotal.com/gui/ip-address/188.209.49.71/relations
+
+clipboardplugin.com
+devtoolsforweb.com
+variousscripts.com
+topcc.biz
+topcc.pw
+topcc.store
+topcc.su
