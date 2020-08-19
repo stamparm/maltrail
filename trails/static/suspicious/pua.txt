@@ -2392,3 +2392,7 @@ netgoldcold.ru
 # Reference: https://www.virustotal.com/gui/file/8e0aa3908d88a4f7ba87b2d79528fde38dd35de60add227c64aa2cd4df87f8a7/detection
 
 protubemarket.ru
+
+# Reference: https://www.virustotal.com/gui/file/ca545d08e3e0e84306d593b776e716bd3ef8d6bb88d52c567aab1f17f16e4b66/detection
+
+jj8o12.ru
