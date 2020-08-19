@@ -2360,3 +2360,7 @@ rainwater.dyndns.org
 # Reference: https://www.virustotal.com/gui/domain/gridcoin.ddns.net/relations
 
 gridcoin.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/c37610626f34ae52d04777a188012cf2212b0cebd6920af46b72808234e223bd/detection
+
+fb38099g.bget.ru
