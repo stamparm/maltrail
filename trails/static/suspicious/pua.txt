@@ -2380,3 +2380,7 @@ tlcgame.000webhostapp.com
 # Reference: https://www.virustotal.com/gui/file/15bfc9228e363adc4defd04e5b7de623e5cfa4dc3fe17ce3af8aafbb40891054/detection
 
 kapulainen.ru
+
+# Reference: https://www.virustotal.com/gui/file/6c08d13df99935ff66413bc7d7bd29105b6e1fe94956ec31ebcc5fe154eaf6e4/detection
+
+magazin-molk.ru
