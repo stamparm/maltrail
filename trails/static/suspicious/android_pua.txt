@@ -157,3 +157,7 @@ trackier.vip
 # Reference: https://www.virustotal.com/gui/domain/ad-sdk.com/relations
 
 ad-sdk.com
+
+# Reference: https://www.virustotal.com/gui/file/15605ced1dad556841c2b03dae16485dc6b5458b3483e05377300a1ab242b03e/detection
+
+appsonee.ru
