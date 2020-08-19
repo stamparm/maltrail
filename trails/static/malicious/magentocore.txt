@@ -2538,6 +2538,7 @@ topcc.su
 amastybootstrap.host
 amastybootstrap.online
 amastybootstrap.store
+bootstrapcd.host
 bootstrapcd.online
 bootstrapcss.host
 bootstrapcss.online
