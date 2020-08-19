@@ -2400,3 +2400,7 @@ jj8o12.ru
 # Reference: https://www.virustotal.com/gui/file/f477e8a1a465b8c4c985b44abf48d35f049d7d45ccee732f70c0a3ac57675f2c/detection
 
 midget-interrupt.ru
+
+# Reference: https://www.virustotal.com/gui/file/57bba4e3ea155ff39b21b094bd032df4850c3d4858a263fb2e2053fa011f88c0/detection
+
+friendly-whether.ru
