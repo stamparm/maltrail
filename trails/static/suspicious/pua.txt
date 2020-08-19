@@ -2376,3 +2376,7 @@ lekkit.hopto.org
 # Reference: https://www.virustotal.com/gui/file/d5416dd14fa8c3f7ce2d74b911ce58d1cbea20a134df0c70d2629c7eb17d2b83/detection
 
 tlcgame.000webhostapp.com
+
+# Reference: https://www.virustotal.com/gui/file/15bfc9228e363adc4defd04e5b7de623e5cfa4dc3fe17ce3af8aafbb40891054/detection
+
+kapulainen.ru
