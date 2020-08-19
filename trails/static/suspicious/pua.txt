@@ -2364,3 +2364,15 @@ gridcoin.ddns.net
 # Reference: https://www.virustotal.com/gui/file/c37610626f34ae52d04777a188012cf2212b0cebd6920af46b72808234e223bd/detection
 
 fb38099g.bget.ru
+
+# Reference: https://www.virustotal.com/gui/domain/lekkit.hopto.org/relations
+# Reference: https://www.virustotal.com/gui/file/345499b5161a6d57b633cad88d83e321b82776d84ceea8661901ae4f115dd0b5/detection
+# Reference: https://www.virustotal.com/gui/file/aa0e351ada009aef1453a2aa3a761d7a5a10165dfaa4bc71bd0a70a866ad790e/detection
+
+46.219.3.46:6121
+80.229.219.2:6121
+lekkit.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/d5416dd14fa8c3f7ce2d74b911ce58d1cbea20a134df0c70d2629c7eb17d2b83/detection
+
+tlcgame.000webhostapp.com
