@@ -2404,3 +2404,7 @@ midget-interrupt.ru
 # Reference: https://www.virustotal.com/gui/file/57bba4e3ea155ff39b21b094bd032df4850c3d4858a263fb2e2053fa011f88c0/detection
 
 friendly-whether.ru
+
+# Reference: https://www.virustotal.com/gui/file/cf647d208d28e1cea6ec5b656c8b78cec1b210296620d7b51dd9ba39de80f93b/detection
+
+far-seems-so.ru
