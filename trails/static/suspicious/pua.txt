@@ -2384,3 +2384,8 @@ kapulainen.ru
 # Reference: https://www.virustotal.com/gui/file/6c08d13df99935ff66413bc7d7bd29105b6e1fe94956ec31ebcc5fe154eaf6e4/detection
 
 magazin-molk.ru
+
+# Reference: https://www.virustotal.com/gui/file/3debbdd17414b4d5669b16d14c2ef1640b336a2391669b054f46f195bd0db235/detection
+
+netgoldcold.ru
+/get_xml?stb=
