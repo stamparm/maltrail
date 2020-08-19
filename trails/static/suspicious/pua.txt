@@ -2396,3 +2396,7 @@ protubemarket.ru
 # Reference: https://www.virustotal.com/gui/file/ca545d08e3e0e84306d593b776e716bd3ef8d6bb88d52c567aab1f17f16e4b66/detection
 
 jj8o12.ru
+
+# Reference: https://www.virustotal.com/gui/file/f477e8a1a465b8c4c985b44abf48d35f049d7d45ccee732f70c0a3ac57675f2c/detection
+
+midget-interrupt.ru
