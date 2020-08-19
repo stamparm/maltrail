@@ -212,6 +212,10 @@ http://213.128.93.199
 /covid/gate.php
 /covid2/gate.php
 
+# Reference: https://twitter.com/ViriBack/status/1295874240298786818
+
+/admin_panel_x/
+
 # Generic
 
 /admin_123/auth.php
