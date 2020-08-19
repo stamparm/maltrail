@@ -2516,3 +2516,32 @@ cdncom.site
 # Reference: https://www.virustotal.com/gui/domain/googapi.com/detection
 
 googapi.com
+
+# Reference: https://twitter.com/felixaime/status/1295796245588512768
+
+payprocessor.net
+
+# Reference: https://twitter.com/felixaime/status/1295800211416190976
+# Reference: https://www.virustotal.com/gui/ip-address/188.209.49.71/relations
+
+clipboardplugin.com
+devtoolsforweb.com
+variousscripts.com
+topcc.biz
+topcc.pw
+topcc.store
+topcc.su
+
+# Reference: https://twitter.com/unmaskparasites/status/1295816804133199878
+# Reference: https://twitter.com/AffableKraut/status/1295817245017493507
+
+amastybootstrap.host
+amastybootstrap.online
+amastybootstrap.store
+bootstrapcd.host
+bootstrapcd.online
+bootstrapcss.host
+bootstrapcss.online
+cdnbootstrap.host
+cdnbootstrap.store
+dbbootstrap.online
