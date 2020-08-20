@@ -2408,3 +2408,7 @@ friendly-whether.ru
 # Reference: https://www.virustotal.com/gui/file/cf647d208d28e1cea6ec5b656c8b78cec1b210296620d7b51dd9ba39de80f93b/detection
 
 far-seems-so.ru
+
+# Reference: https://www.virustotal.com/gui/file/1fd371c42965c9b78b2a045aab6c00e6ce72848926acec529b1f19f03e12815f/detection
+
+h-url.ru
