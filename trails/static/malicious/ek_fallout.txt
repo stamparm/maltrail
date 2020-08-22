@@ -263,3 +263,8 @@ findmyname.pw
 # Reference: https://twitter.com/nao_sec/status/1294871288947802112
 
 freeshake.site
+
+# Reference: https://twitter.com/FaLconIntel/status/1296948367172358144
+
+shopdisney.space
+tld4u.online
