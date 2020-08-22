@@ -2554,3 +2554,7 @@ dbbootstrap.online
 
 cdn-jquerystatic.ddns.net
 static-jquery.sytes.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/91.211.247.69/relations
+
+cvv2.name
