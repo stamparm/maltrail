@@ -391,3 +391,14 @@ minerpool.pw
 # Reference: https://www.virustotal.com/gui/file/a38216166e363d752f37bdf0419d2e2694279beab8df66d40f56c679563e7a4f/detection
 
 pool.hashvault.pro
+
+# Reference: https://www.virustotal.com/gui/file/f47aa2f661eec457e659d0c0867902e4ed851993f8b884e03c22e27403f4876c/detection
+# Reference: https://www.virustotal.com/gui/domain/hex7e4.ru/relations
+
+185.212.128.180:8080
+45.61.136.51:3333
+45.61.136.51:8080
+d1pool.ddns.net
+d5pool.us
+xmr.hex7e4.ru
+xxx.hex7e4.ru
