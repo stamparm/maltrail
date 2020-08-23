@@ -2412,3 +2412,24 @@ far-seems-so.ru
 # Reference: https://www.virustotal.com/gui/file/1fd371c42965c9b78b2a045aab6c00e6ce72848926acec529b1f19f03e12815f/detection
 
 h-url.ru
+
+# Reference: https://www.virustotal.com/gui/file/9e6691f721894587aee06708ea5ef7a20f9d498d113b5a7a8ef2b5bd86a30330/detection
+# Reference: https://www.virustotal.com/gui/file/cdfb901be160865b5f630fd2fee3d1b6d8be8a99baf38508ba5a86f343eaca76/detection
+# Reference: https://www.virustotal.com/gui/file/b83345ca1cd3d915323898b9a965f4950ea3ac8796ea853f1a8f0ea7ddfab600/detection
+# Reference: https://www.virustotal.com/gui/file/de0ce3fbc63b86b4b0aecf14b4f6ff5ceb9b49e44055d52282b67940eaec22c8/detection
+# Note: LeopardRemote
+
+170.231.122.20:50519
+170.231.122.20:50524
+170.231.122.20:50539
+170.231.122.20:50591
+170.231.122.20:58738
+170.231.122.20:58753
+170.231.122.20:5992
+170.231.122.20:5993
+170.231.122.20:8081
+67.15.100.252:8081 
+67.228.235.91:8081
+69.171.224.85:8081
+88.191.253.157:8081
+tecnox.serveftp.com
