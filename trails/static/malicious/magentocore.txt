@@ -2465,10 +2465,12 @@ shopify-sales.com
 
 adw-gooqle.com
 blog-mage.com
+cheeseceke.com
 cioubfiare.com
 claristokp.top
 clickstrackings.com
 cloubfiare.com
+cloudflaea.com
 cloudfliare.com
 googie-seo.com
 google-ahatytics.com
@@ -2479,10 +2481,12 @@ jquery-doc.com
 jquery-magento.com
 jqueryupdate.com
 magenlo.com
+magento-update.com
 marketing-yahoo.com
 optimized-js.com
 path-magento.com
 script-magento.com
+sucuil.net
 tag-managers.com
 up-tracking.com
 
@@ -2545,3 +2549,12 @@ bootstrapcss.online
 cdnbootstrap.host
 cdnbootstrap.store
 dbbootstrap.online
+
+# Reference: https://www.virustotal.com/gui/ip-address/103.73.67.169/relations
+
+cdn-jquerystatic.ddns.net
+static-jquery.sytes.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/91.211.247.69/relations
+
+cvv2.name
