@@ -2433,3 +2433,7 @@ h-url.ru
 69.171.224.85:8081
 88.191.253.157:8081
 tecnox.serveftp.com
+
+# Reference: https://www.virustotal.com/gui/file/2c2f8822781e4c0bf3aacf5a56bf48e69f2082b8d2a70b443ea6596f09712736/detection
+
+dlsft.com
