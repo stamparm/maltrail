@@ -1543,6 +1543,10 @@ SiteBar
 
 WinWord64
 
+# Reference: https://twitter.com/malwrhunterteam/status/1096363455769202688
+
+Trololo
+
 # Misc
 
 information_schema
