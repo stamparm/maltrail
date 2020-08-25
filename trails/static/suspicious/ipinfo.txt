@@ -340,3 +340,7 @@ api.rest7.com/v1/my_ip.php
 # Reference: https://www.virustotal.com/gui/file/b9cf5db42a5cc90339cd90d7a39ff5caae4a54decd174ddf097e148428909394/detection
 
 v4.ipv6-test.com/api/myip.php
+
+# Reference: https://www.virustotal.com/gui/file/8471b945edaa37d2cfeda1a7c367cf3f273e8dee7353e6cb309a74d33b6a87b7/detection
+
+myip.ipip.net
