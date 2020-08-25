@@ -1090,3 +1090,8 @@ assurancetemporaireenligne.com/c.js
 # Reference: https://twitter.com/unmaskparasites/status/1293570769545580545
 
 donatelloflowfirstly.ga
+
+# Reference: https://twitter.com/yazilimci_adam/status/1297785340581883904 (Turkish)
+
+176.235.38.79:8080
+bilgilendirme.turkcell.com.tr
