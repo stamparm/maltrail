@@ -166,3 +166,9 @@ appsonee.ru
 
 p2r.eu
 rofon.pl
+
+# Reference: https://www.virustotal.com/gui/file/79e6f6f4f3b97f63bcafb96ad48b240a347d4686cf26d45769b0ed42c72ba8c8/detection
+
+24la.top
+9iqcc.com
+fgwz.la
