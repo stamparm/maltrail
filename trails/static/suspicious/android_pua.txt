@@ -172,3 +172,7 @@ rofon.pl
 24la.top
 9iqcc.com
 fgwz.la
+
+# Reference: https://www.virustotal.com/gui/file/10249c439bcc5aa3188740b6ce9340b4b5fd5d9046b330519894ae2b65228c18/detection
+
+downloadandroidappapkmobile.net
