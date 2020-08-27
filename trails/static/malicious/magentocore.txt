@@ -2565,3 +2565,7 @@ acloudsapi.com
 securebnp-server.com
 securebnp1-update.com
 secureing-update.com
+
+# Reference: https://twitter.com/JCyberSec_/status/1298929497354448901
+
+gaminpit.com
