@@ -506,3 +506,8 @@ resolve.interland.com
 # Reference: https://twitter.com/bad_packets/status/1264290514406240257
 
 111.90.159.53:53
+
+# Reference: https://twitter.com/bad_packets/status/1295782392649535488
+
+149.56.152.185:53
+192.95.42.19:53
