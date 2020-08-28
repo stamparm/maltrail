@@ -5046,3 +5046,9 @@ kingx.info
 # Reference: https://www.virustotal.com/gui/file/01f513ae8de5bb41180a25f095a1bb432f122a808950cd317bbc3b9c6b6cb48e/detection
 
 kingspy.ml
+
+# Reference: https://twitter.com/ScumBots/status/1299191823106215937
+# Reference: https://www.virustotal.com/gui/file/189a21b97949a56e32797c3ce37db2624551190073e61194d98736e843e6977f/detection
+
+sitestill.fun
+sitestill.space
