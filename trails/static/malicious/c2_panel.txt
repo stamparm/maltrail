@@ -216,6 +216,10 @@ http://213.128.93.199
 
 /admin_panel_x/
 
+# Reference: https://twitter.com/ViriBack/status/1299807425457983488
+
+kitesgcc.com/stater/login.php
+
 # Generic
 
 /admin_123/auth.php
