@@ -1095,3 +1095,7 @@ donatelloflowfirstly.ga
 
 176.235.38.79:8080
 bilgilendirme.turkcell.com.tr
+
+# Reference: https://www.virustotal.com/gui/domain/party-nwvqdtumtz.now.sh/relations
+
+party-nwvqdtumtz.now.sh
