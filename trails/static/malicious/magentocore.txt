@@ -2569,3 +2569,13 @@ secureing-update.com
 # Reference: https://twitter.com/JCyberSec_/status/1298929497354448901
 
 gaminpit.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1299380573966802944
+# Reference: https://www.virustotal.com/gui/ip-address/108.62.12.46/detection
+
+content-analytics-server.com
+
+# Reference: https://twitter.com/felixaime/status/1300335046029606912
+
+lighting-spot.com/pub/media/js/jscol.min.js
+lighting-spot.com/pub/media/js/lighting.js
