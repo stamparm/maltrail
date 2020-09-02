@@ -2462,9 +2462,11 @@ shopify-sales.com
 # Reference: https://www.virustotal.com/gui/ip-address/47.88.14.111/relations
 # Reference: https://www.virustotal.com/gui/ip-address/5.101.50.134/relations
 # Reference: https://www.virustotal.com/gui/ip-address/8.208.84.18/relations
+# Reference: https://twitter.com/felixaime/status/1301090258671542272
 
 adw-gooqle.com
 blog-mage.com
+cailpercovers.com
 cheeseceke.com
 cioubfiare.com
 claristokp.top
