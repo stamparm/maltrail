@@ -1547,6 +1547,10 @@ WinWord64
 
 Trololo
 
+# Reference: https://twitter.com/DidierStevens/status/1301647745632043009
+
+MpCommunication
+
 # Misc
 
 information_schema
