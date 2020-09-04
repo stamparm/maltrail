@@ -1784,6 +1784,10 @@ tunacan-812.tk
 
 /6lmwtif3htomluuo6wt3lrp2.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1301975584252334080
+
+/7n9zahad80idagj19vqtpurq.php
+
 # Reference: https://twitter.com/jstrosch/status/1301718677419700224
 
 /djqnonxwrv.php
