@@ -2611,6 +2611,12 @@ ax.lt
 my.to
 ftp.sh
 inc.gs
+bum.ms
+cf.gs
+jpe.gs
+na.tl
+sux.ms
+uni.cx
 mil.nf
 now.im
 undo.it
