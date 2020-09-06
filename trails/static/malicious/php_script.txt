@@ -182,6 +182,7 @@ statconuter.com/c.php
 # Reference: https://app.any.run/tasks/3068b154-d6f2-4483-ae72-60fbd5f3467f
 
 /cmd.php?hwid=
+/cmd.php?timeout=
 
 # Reference: https://twitter.com/JAMESWT_MHT/status/1126020627075403776
 
