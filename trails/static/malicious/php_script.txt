@@ -180,8 +180,12 @@ statconuter.com/c.php
 /g4f9sokfo2ecegn2twq4u3t7.php
 
 # Reference: https://app.any.run/tasks/3068b154-d6f2-4483-ae72-60fbd5f3467f
+# Reference: https://www.virustotal.com/gui/file/0cbf6190e0a381a0ec20a2b54156f06615453bb80ae2e1256242cb8af96b065d/detection
+# Reference: https://www.virustotal.com/gui/file/cd5eeddb8eb8074b97583b653cbcf627da475debbb3070284fd6c6446f9eec97/detection
 
 /cmd.php?hwid=
+/cmd.php1?hwid=
+/cmd.php?timeout=
 
 # Reference: https://twitter.com/JAMESWT_MHT/status/1126020627075403776
 
@@ -1783,6 +1787,21 @@ tunacan-812.tk
 # Reference: https://twitter.com/MalwarePatrol/status/1301613194415427584
 
 /6lmwtif3htomluuo6wt3lrp2.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1301975584252334080
+
+/7n9zahad80idagj19vqtpurq.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1302337970284965889
+
+/p8omduqtiw8wojo4kimlp7p8.php
+
+# Reference: https://twitter.com/jstrosch/status/1301718677419700224
+
+/djqnonxwrv.php
+/ezkwdjrwog.php
+/smhcbhcdrm.php
+/tjzyawxylv.php
 
 # Generic
 
