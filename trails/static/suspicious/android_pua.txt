@@ -180,3 +180,9 @@ downloadandroidappapkmobile.net
 # Reference: https://www.virustotal.com/gui/ip-address/140.205.143.143/relations
 
 http://140.205.143.143
+
+# Reference: https://twitter.com/bl4ckh0l3z/status/1301888619423162369
+# Reference: https://twitter.com/bl4ckh0l3z/status/1301889393641259012
+# Reference: https://www.virustotal.com/gui/file/090a9f47705fe00b60a7659ce926462943be2608e616359410fa0a3306646da4/detection
+
+d1wp6m56sqw74a.cloudfront.net
