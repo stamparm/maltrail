@@ -186,3 +186,7 @@ http://140.205.143.143
 # Reference: https://www.virustotal.com/gui/file/090a9f47705fe00b60a7659ce926462943be2608e616359410fa0a3306646da4/detection
 
 d1wp6m56sqw74a.cloudfront.net
+
+# Reference: https://www.virustotal.com/gui/file/7022a2c3651de24a5462e4f1449e4e1d0f9590bdaf502777d68203235b08885d/detection
+
+fb7961un.bget.ru
