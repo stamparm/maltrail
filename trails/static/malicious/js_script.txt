@@ -1075,15 +1075,14 @@ wpctrl.gq
 wpctrl.ml
 
 # Reference: https://twitter.com/unmaskparasites/status/1289272342837895171
-
-developerstatss.ga
-
 # Reference: https://twitter.com/unmaskparasites/status/1303792031693778947
+# Reference: https://twitter.com/unmaskparasites/status/1303792922140254215
+# Reference: https://twitter.com/unmaskparasites/status/1293570769545580545
+# Reference: https://www.virustotal.com/gui/ip-address/45.9.148.126/relations
 
 declarebusinessgroup.ga
-
-# Reference: https://twitter.com/unmaskparasites/status/1303792922140254215
-
+developerstatss.ga
+donatelloflowfirstly.ga
 lowerbeforwarden.ml
 trendopportunityfollow.ga
 
@@ -1095,10 +1094,6 @@ localhostnametable.com
 # Reference: https://unit42.paloaltonetworks.com/script-based-malware/
 
 assurancetemporaireenligne.com/c.js
-
-# Reference: https://twitter.com/unmaskparasites/status/1293570769545580545
-
-donatelloflowfirstly.ga
 
 # Reference: https://twitter.com/yazilimci_adam/status/1297785340581883904 (Turkish)
 
