@@ -1548,6 +1548,7 @@ WinWord64
 Trololo
 
 # Reference: https://twitter.com/DidierStevens/status/1301647745632043009
+# Reference: https://blog.didierstevens.com/2020/09/09/quickpost-downloading-files-with-windows-defender-user-agent-string/
 
 MpCommunication
 
