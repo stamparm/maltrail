@@ -1082,6 +1082,11 @@ developerstatss.ga
 
 declarebusinessgroup.ga
 
+# Reference: https://twitter.com/unmaskparasites/status/1303792922140254215
+
+lowerbeforwarden.ml
+trendopportunityfollow.ga
+
 # Reference: https://twitter.com/unmaskparasites/status/1291406328129298434
 # Reference: https://blog.sucuri.net/2020/07/reverse-string-woocommerce-wordpress-credit-card-swiper.html
 
