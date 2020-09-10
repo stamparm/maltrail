@@ -2588,3 +2588,9 @@ content-analytics-server.com
 
 lighting-spot.com/pub/media/js/jscol.min.js
 lighting-spot.com/pub/media/js/lighting.js
+
+# Reference: https://twitter.com/sansecio/status/1304043546970927104
+# Reference: https://www.virustotal.com/gui/ip-address/80.78.254.128/relations
+
+sansec.biz
+csp.sansec.biz
