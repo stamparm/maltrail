@@ -1502,11 +1502,6 @@ tunacan-812.tk
 
 /cjp06ozeq4j00p66uek5qokp27524e5d5582cfb0ee5b91de81c038c5.php
 
-# Reference: https://app.any.run/tasks/6a77f6f2-50fb-4a3e-ad20-e0bdd2ba7031/
-
-/9o0.php
-/firstga990.php
-
 # Reference: https://twitter.com/malwrhunterteam/status/1257660701428142080
 
 /4ij6qw.php
@@ -1795,6 +1790,10 @@ tunacan-812.tk
 # Reference: https://twitter.com/MalwarePatrol/status/1302337970284965889
 
 /p8omduqtiw8wojo4kimlp7p8.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1303787522485563392
+
+/4fnsez9i81l6mb42m2aw25jp.php
 
 # Reference: https://twitter.com/jstrosch/status/1301718677419700224
 
