@@ -165,6 +165,10 @@ http://185.119.58.181
 
 http://185.119.56.54
 
+# Reference: https://blog.malwarebytes.com/social-engineering/2020/09/malvertising-campaigns-come-back-in-full-swing/
+
+http://91.210.171.116
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
