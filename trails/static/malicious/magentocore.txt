@@ -2596,6 +2596,8 @@ sansec.biz
 csp.sansec.biz
 
 # Reference: https://twitter.com/sansecio/status/1305041618744086528
+# Reference: https://twitter.com/sansecio/status/1305461119314690048
 # Reference: https://www.virustotal.com/gui/ip-address/83.166.245.32/relations
 
+imags.pw
 mcdnn.net
