@@ -1552,6 +1552,10 @@ Trololo
 
 MpCommunication
 
+# Reference: http://blog.nsfocus.net/darkhotel-3-0908/
+
+\Auser\Z
+
 # Misc
 
 information_schema
