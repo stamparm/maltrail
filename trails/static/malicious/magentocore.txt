@@ -2613,7 +2613,9 @@ csp.sansec.biz
 # Reference: https://www.virustotal.com/gui/ip-address/83.166.244.152/relations
 # Reference: https://www.virustotal.com/gui/ip-address/83.166.244.76/relations
 # Reference: https://www.virustotal.com/gui/ip-address/83.166.245.32/relations
+# Reference: https://www.virustotal.com/gui/ip-address/83.166.245.93/relations
 
+ajaxcloudflare.com
 imags.pw
 mcdnn.me
 mcdnn.net
