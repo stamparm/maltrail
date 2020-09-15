@@ -25,6 +25,7 @@ import struct
 import threading
 import time
 import traceback
+import warnings
 
 from core.addr import inet_ntoa6
 from core.addr import addr_port
@@ -101,6 +102,8 @@ from core.update import update_ipcat
 from core.update import update_trails
 from thirdparty import six
 from thirdparty.six.moves import urllib as _urllib
+
+warnings.filterwarnings(action="ignore", category=DeprecationWarning)       # NOTE: https://github.com/helpsystems/pcapy/pull/67/files
 
 _buffer = None
 _caps = []
