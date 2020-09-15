@@ -1998,6 +1998,7 @@ sunrisepromos.com/js/lib/ccard.js
 # Reference: https://marcoramilli.com/2020/02/19/uncovering-new-magecart-implant-attacking-ecommerce/
 # Reference: https://labs.sucuri.net/web-skimmer-with-a-domain-name-generator-follow-up/
 # Reference: https://twitter.com/AffableKraut/status/1257937430709186560
+# Reference: https://www.virustotal.com/gui/ip-address/83.166.244.76/relations
 
 ql201000.pw
 ql201041.pw
@@ -2009,6 +2010,16 @@ ql202141.pw
 ql202412.pw
 ql202657.pw
 ql202989.pw
+qr201010.pw
+qr201089.pw
+qr201161.pw
+qr201346.pw
+qr201854.pw
+qr202004.pw
+qr202284.pw
+qr202754.pw
+qr202844.pw
+qr202960.pw
 q(l|r)[0-9]{5,6}\.pw
 /js/ar/ar906.php
 /js/ar/ar2497.php
@@ -2022,7 +2033,7 @@ gooogletagmanager.online
 # Reference: https://blog.malwarebytes.com/threat-analysis/2020/05/credit-card-skimmer-masquerades-as-favicon/
 # Reference: https://www.virustotal.com/gui/ip-address/83.166.242.105/relations
 
-myicons.net/d/favicon.png
+myicons.net
 psas.pw
 
 # Reference: https://twitter.com/felixaime/status/1258800483524804608
@@ -2596,6 +2607,19 @@ sansec.biz
 csp.sansec.biz
 
 # Reference: https://twitter.com/sansecio/status/1305041618744086528
+# Reference: https://twitter.com/sansecio/status/1305461119314690048
+# Reference: https://sansec.io/research/largest-magento-hack-to-date
+# Reference: https://otx.alienvault.com/pulse/5f5f9a8ba62718db52b64700
+# Reference: https://www.virustotal.com/gui/ip-address/83.166.244.152/relations
+# Reference: https://www.virustotal.com/gui/ip-address/83.166.244.76/relations
 # Reference: https://www.virustotal.com/gui/ip-address/83.166.245.32/relations
+# Reference: https://www.virustotal.com/gui/ip-address/83.166.245.93/relations
 
+ajaxcloudflare.com
+imags.pw
+mcdnn.me
 mcdnn.net
+myicons.net
+data-id-click.ru
+divamoda-tds.ru
+justwe-track.ru
