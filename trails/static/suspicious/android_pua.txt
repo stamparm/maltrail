@@ -195,3 +195,7 @@ fb7961un.bget.ru
 
 gostat.3g.cn
 goupdate.3g.cn
+
+# Reference: https://twitter.com/malwrhunterteam/status/1305919390110625803
+
+fix5.info
