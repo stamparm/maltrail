@@ -437,3 +437,11 @@ heliohost.org
 # Reference: https://tiiny.host/
 
 tiiny.host
+
+# Reference: https://www.virustotal.com/gui/domain/ftp.totallyanonymous.com/relations
+
+ftp.totallyanonymous.com
+
+# Reference: https://www.scumware.org/report/drivehq.com
+
+drivehq.com
