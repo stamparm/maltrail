@@ -220,6 +220,7 @@ habeas.com
 bondedsender.org
 support-intelligence.net
 webex.com
+skole.hr
 
 # to ignore in direct .exe/.bin downloads
 
