@@ -2623,3 +2623,7 @@ myicons.net
 data-id-click.ru
 divamoda-tds.ru
 justwe-track.ru
+
+# Reference: https://twitter.com/sansecio/status/1306190540963282946
+
+facelook.no/en_US/pixel.js
