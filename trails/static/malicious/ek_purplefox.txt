@@ -63,3 +63,8 @@ hartley-botanic.xyz
 fixdevice.site
 shibuya109.xyz
 vkfaces.site
+
+# Reference: https://github.com/MBThreatIntel/ExploitKits/blob/master/PurpleFox-2020-09-17.txt
+
+dl.gblga.workers.dev
+noisy-base-38da.fb68b.workers.dev
