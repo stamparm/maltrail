@@ -5846,9 +5846,11 @@
 
 # Reference: https://twitter.com/malwrhunterteam/status/1248226241527844865
 # Reference: https://www.virustotal.com/gui/ip-address/213.176.32.0/details
+# Reference: https://www.virustotal.com/gui/ip-address/62.60.135.22/detection
 
 # AS22769
 213.176.32.0/19,ddosing network
+62.60.128.0/21,ddosing network
 
 # AS35278 (Sprinthost.ru LLC)
 141.8.192.0/21,sprinthost
