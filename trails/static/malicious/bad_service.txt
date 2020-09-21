@@ -363,3 +363,8 @@ sprut.pw
 # Reference: https://twitter.com/3xp0rtblog/status/1282765407066230785
 
 xss.is
+
+# Reference: https://app.any.run/tasks/51d9c835-850d-4632-83d9-f9f7dfb43699/
+# Reference: http://xmr-services.com/
+
+xmr-services.com
