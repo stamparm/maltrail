@@ -2627,3 +2627,7 @@ justwe-track.ru
 # Reference: https://twitter.com/sansecio/status/1306190540963282946
 
 facelook.no/en_US/pixel.js
+
+# Reference: https://twitter.com/unmaskparasites/status/1308419144048668672
+
+http://94.158.244.55
