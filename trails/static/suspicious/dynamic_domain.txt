@@ -3047,3 +3047,8 @@ misdns.org
 # Reference: https://www.virustotal.com/gui/domain/home-webserver.de/relations
 
 home-webserver.de
+
+# Reference: https://www.virustotal.com/gui/file/849d5cb874304ad34c83c0e773b3317d62244aaa72eeb855e6a6d90a56927de6/detection
+# Reference: https://www.virustotal.com/gui/domain/3bbddns.com/relations
+
+3bbddns.com
