@@ -1551,6 +1551,10 @@ Trololo
 
 \Auser\Z
 
+# Reference: https://twitter.com/_re_fox/status/1306971519822725121
+
+Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40
+
 # Misc
 
 information_schema
