@@ -518,6 +518,12 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                             if '=' in path:
                                 checks.append(path[:path.index('=') + 1])
+
+                            _ = re.sub(r"(\w+=)[^&=]+", r"\g<1>", path)
+                            if _ not in checks:
+                                checks.append(_)
+                                if _.count('/') > 1:
+                                    checks.append("/%s" % _.split('/')[-1])
                         elif post_data:
                             checks.append("%s?%s" % (path, unquoted_post_data.lower()))
 
