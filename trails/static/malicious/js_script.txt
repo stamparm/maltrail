@@ -1103,3 +1103,7 @@ bilgilendirme.turkcell.com.tr
 # Reference: https://www.virustotal.com/gui/domain/party-nwvqdtumtz.now.sh/relations
 
 party-nwvqdtumtz.now.sh
+
+# Reference: https://twitter.com/unmaskparasites/status/1308145960682426368
+
+celolum.com
