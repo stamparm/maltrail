@@ -1555,6 +1555,11 @@ Trololo
 
 Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40
 
+# Reference: https://twitter.com/StopMalvertisin/status/1310611311194038273
+# Reference: https://pastebin.com/LkcFW9y7
+
+crackim
+
 # Misc
 
 information_schema
