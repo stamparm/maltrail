@@ -2635,3 +2635,33 @@ http://94.158.244.55
 # Reference: https://twitter.com/MBThreatIntel/status/1310703704396279808
 
 static-trustpilot.com
+
+# Reference: https://twitter.com/felixaime/status/1310835184917458944
+
+ancdn.site
+ancdnto.site
+cacdn.site
+cdna.site
+cdnc.space
+cdncom.site
+cdnd.site
+cdne.space
+cdnf.site
+cdng.site
+cdnh.site
+cdni.site
+cdnj.site
+cdnm.site
+cdno.site
+cdnp.site
+cdnq.site
+cdnr.space
+cdnv.site
+cdnz.site
+cdnz.space
+gtacdn.site
+gtag.site
+gtage.site
+gtamanag.site
+usacdn.site
+uscdn.site
