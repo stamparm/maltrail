@@ -5052,3 +5052,9 @@ kingspy.ml
 
 sitestill.fun
 sitestill.space
+
+# Reference: https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/palmerworm-blacktech-espionage-apt
+# Reference: https://otx.alienvault.com/pulse/5f737e47bff198ee39b34aa8
+# Reference: https://www.virustotal.com/gui/domain/hpcloudnews.com/relations
+
+hpcloudnews.com
