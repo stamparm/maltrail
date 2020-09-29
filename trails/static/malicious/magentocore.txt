@@ -2631,3 +2631,7 @@ facelook.no/en_US/pixel.js
 # Reference: https://twitter.com/unmaskparasites/status/1308419144048668672
 
 http://94.158.244.55
+
+# Reference: https://twitter.com/MBThreatIntel/status/1310703704396279808
+
+static-trustpilot.com
