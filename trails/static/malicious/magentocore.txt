@@ -2680,3 +2680,21 @@ jquerycss.website
 # Reference: https://www.virustotal.com/gui/domain/ride4speed.com/relations
 
 ride4speed.com
+
+# Reference: https://twitter.com/AffableKraut/status/1311330609546104832
+
+googleanalytics.monster
+googleanalytics.buzz
+google-analytics.monster
+google-analytics.buzz
+googletagmanager.cyou
+google-analytics.icu
+google-analytics.club
+googletagmanager.top
+google-analytics.cyou
+googleanalytics.top
+googleanalytics.cyou
+statanalytic.cyou
+googleshopanalytic.icu
+gstatic.cyou
+gstatic.club
