@@ -1108,3 +1108,7 @@ dexters.onlineappstop.site
 # Reference: https://twitter.com/MBThreatIntel/status/1268612726701453312
 
 extrashop.monster
+
+# Reference: https://twitter.com/MBThreatIntel/status/1308487877584539648
+
+anya.large-market.monster
