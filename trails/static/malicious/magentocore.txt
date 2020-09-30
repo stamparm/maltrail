@@ -2665,3 +2665,11 @@ gtage.site
 gtamanag.site
 usacdn.site
 uscdn.site
+
+# Reference: https://twitter.com/felixaime/status/1310840704801951744
+
+jquerycss.online
+jquerycss.space
+jquerycss.store
+jquerycss.tech
+jquerycss.website
