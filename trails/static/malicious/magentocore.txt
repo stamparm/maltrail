@@ -2673,3 +2673,8 @@ jquerycss.space
 jquerycss.store
 jquerycss.tech
 jquerycss.website
+
+# Reference: https://twitter.com/JWilsonSecurity/status/1311140720498147334
+# Reference: https://www.virustotal.com/gui/domain/ride4speed.com/relations
+
+ride4speed.com
