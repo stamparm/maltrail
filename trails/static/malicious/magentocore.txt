@@ -2637,6 +2637,7 @@ http://94.158.244.55
 static-trustpilot.com
 
 # Reference: https://twitter.com/felixaime/status/1310835184917458944
+# Reference: https://www.virustotal.com/gui/ip-address/161.117.237.217/relations
 
 ancdn.site
 ancdnto.site
@@ -2663,6 +2664,7 @@ gtacdn.site
 gtag.site
 gtage.site
 gtamanag.site
+gtcdn.site
 usacdn.site
 uscdn.site
 
