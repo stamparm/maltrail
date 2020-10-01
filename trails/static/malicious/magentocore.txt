@@ -2723,3 +2723,7 @@ sumome.net
 swiftypecdn.org
 uniquegetapi.com
 findericons.com/favicon.ico
+
+# Reference: https://unit42.paloaltonetworks.com/malicious-coinminers-web-skimmer/
+
+metahtmlhead.com
