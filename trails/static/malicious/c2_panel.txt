@@ -230,6 +230,7 @@ kitesgcc.com/stater/login.php
 /administrator/he1p/
 /botpanel/
 /bot/Panel/
+/cgi%20bin/Panel/
 /jujubiadmin/
 /logz/auth.php
 /logz/login.php
