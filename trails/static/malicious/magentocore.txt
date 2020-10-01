@@ -2641,6 +2641,7 @@ static-trustpilot.com
 
 ancdn.site
 ancdnto.site
+arcdn.site
 cacdn.site
 cdna.site
 cdnc.space
@@ -2665,6 +2666,8 @@ gtag.site
 gtage.site
 gtamanag.site
 gtcdn.site
+gtgcdn.site
+gtmcdn.site
 usacdn.site
 uscdn.site
 
