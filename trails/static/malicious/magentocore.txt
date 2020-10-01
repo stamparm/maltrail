@@ -2637,6 +2637,7 @@ http://94.158.244.55
 static-trustpilot.com
 
 # Reference: https://twitter.com/felixaime/status/1310835184917458944
+# Reference: https://www.virustotal.com/gui/ip-address/161.117.237.217/relations
 
 ancdn.site
 ancdnto.site
@@ -2663,6 +2664,7 @@ gtacdn.site
 gtag.site
 gtage.site
 gtamanag.site
+gtcdn.site
 usacdn.site
 uscdn.site
 
@@ -2673,3 +2675,48 @@ jquerycss.space
 jquerycss.store
 jquerycss.tech
 jquerycss.website
+
+# Reference: https://twitter.com/JWilsonSecurity/status/1311140720498147334
+# Reference: https://www.virustotal.com/gui/domain/ride4speed.com/relations
+
+ride4speed.com
+
+# Reference: https://twitter.com/AffableKraut/status/1311330609546104832
+
+googleanalytics.monster
+googleanalytics.buzz
+google-analytics.monster
+google-analytics.buzz
+googletagmanager.cyou
+google-analytics.icu
+google-analytics.club
+googletagmanager.top
+google-analytics.cyou
+googleanalytics.top
+googleanalytics.cyou
+statanalytic.cyou
+googleshopanalytic.icu
+gstatic.cyou
+gstatic.club
+
+# Reference: https://twitter.com/MBThreatIntel/status/1311423125582540802
+
+adsojs.com
+cdndeskpro.com
+cdnprog.com
+faceapiget.com
+facecdnget.com
+fbpixelget.com
+gstaticapi.com
+keywestcdn.com
+klaviyo.host
+lightgetjs.com
+listrakjs.com
+mediabtracker.com
+meidiaplus.com
+section.ws
+sectionget.com
+sumome.net
+swiftypecdn.org
+uniquegetapi.com
+findericons.com/favicon.ico
