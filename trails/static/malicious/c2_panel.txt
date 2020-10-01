@@ -227,6 +227,9 @@ kitesgcc.com/stater/login.php
 /admin_123/gate.php
 /admin_123/login.php
 /admin_123/page.php
+/botpanel/
+/bot/Panel/
+/jujubiadmin/
 /logz/auth.php
 /logz/login.php
 /Panel/callback.php
@@ -240,6 +243,8 @@ kitesgcc.com/stater/login.php
 /panel632541/admin.php
 /pnl/auth.php
 /pnl/login.php
+/PowerPanel/
+/slim/panel/
 /webpanel/auth.php
 /webpanel/api.php
 /webpanel/login.php
