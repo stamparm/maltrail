@@ -229,7 +229,6 @@ kitesgcc.com/stater/login.php
 /admin_123/page.php
 /botpanel/
 /bot/Panel/
-/DF%20Panel/
 /jujubiadmin/
 /logz/auth.php
 /logz/login.php
