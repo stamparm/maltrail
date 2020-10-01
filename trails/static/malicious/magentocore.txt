@@ -2727,3 +2727,8 @@ findericons.com/favicon.ico
 # Reference: https://unit42.paloaltonetworks.com/malicious-coinminers-web-skimmer/
 
 metahtmlhead.com
+
+# Reference: https://twitter.com/rootprivilege/status/1311731116345237509
+# Reference: https://www.virustotal.com/gui/ip-address/5.135.247.140/relations
+
+underscorefw.com
