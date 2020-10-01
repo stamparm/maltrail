@@ -231,6 +231,7 @@ kitesgcc.com/stater/login.php
 /botpanel/
 /bot/Panel/
 /cgi%20bin/Panel/
+/FuckYouMother/panel/
 /jujubiadmin/
 /logz/auth.php
 /logz/login.php
