@@ -227,8 +227,11 @@ kitesgcc.com/stater/login.php
 /admin_123/gate.php
 /admin_123/login.php
 /admin_123/page.php
+/administrator/he1p/
 /botpanel/
 /bot/Panel/
+/cgi%20bin/Panel/
+/FuckYouMother/panel/
 /jujubiadmin/
 /logz/auth.php
 /logz/login.php
