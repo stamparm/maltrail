@@ -2698,3 +2698,25 @@ statanalytic.cyou
 googleshopanalytic.icu
 gstatic.cyou
 gstatic.club
+
+# Reference: https://twitter.com/MBThreatIntel/status/1311423125582540802
+
+adsojs.com
+cdndeskpro.com
+cdnprog.com
+faceapiget.com
+facecdnget.com
+fbpixelget.com
+gstaticapi.com
+keywestcdn.com
+klaviyo.host
+lightgetjs.com
+listrakjs.com
+mediabtracker.com
+meidiaplus.com
+section.ws
+sectionget.com
+sumome.net
+swiftypecdn.org
+uniquegetapi.com
+findericons.com/favicon.ico
