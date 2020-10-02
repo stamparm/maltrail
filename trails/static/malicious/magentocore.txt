@@ -2641,6 +2641,7 @@ static-trustpilot.com
 
 ancdn.site
 ancdnto.site
+arcdn.site
 cacdn.site
 cdna.site
 cdnc.space
@@ -2665,6 +2666,8 @@ gtag.site
 gtage.site
 gtamanag.site
 gtcdn.site
+gtgcdn.site
+gtmcdn.site
 usacdn.site
 uscdn.site
 
@@ -2720,3 +2723,12 @@ sumome.net
 swiftypecdn.org
 uniquegetapi.com
 findericons.com/favicon.ico
+
+# Reference: https://unit42.paloaltonetworks.com/malicious-coinminers-web-skimmer/
+
+metahtmlhead.com
+
+# Reference: https://twitter.com/rootprivilege/status/1311731116345237509
+# Reference: https://www.virustotal.com/gui/ip-address/5.135.247.140/relations
+
+underscorefw.com
