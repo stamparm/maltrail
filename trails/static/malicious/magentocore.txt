@@ -2661,6 +2661,7 @@ cdnr.space
 cdnv.site
 cdnz.site
 cdnz.space
+frcdn.site
 gtacdn.site
 gtag.site
 gtage.site
