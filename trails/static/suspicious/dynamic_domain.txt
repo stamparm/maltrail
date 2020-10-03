@@ -3056,6 +3056,10 @@ home-webserver.de
 
 3bbddns.com
 
+# Reference: https://www.virustotal.com/gui/domain/myonlineportal.net/relations
+
+myonlineportal.net
+
 # Reference: https://www.virustotal.com/gui/domain/my-homeip.com/relations
 
 my-homeip.com
