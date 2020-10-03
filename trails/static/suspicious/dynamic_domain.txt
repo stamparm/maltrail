@@ -3060,6 +3060,10 @@ home-webserver.de
 
 my-homeip.com
 
+# Reference: https://www.virustotal.com/gui/domain/my-homeip.net/relations
+
+my-homeip.net
+
 # Reference: https://www.virustotal.com/gui/domain/system-ns.org/relations
 
 system-ns.org
