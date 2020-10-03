@@ -3075,3 +3075,7 @@ my-homeip.net
 # Reference: https://www.virustotal.com/gui/domain/system-ns.org/relations
 
 system-ns.org
+
+# Reference: https://www.virustotal.com/gui/domain/system-ns.net/relations
+
+system-ns.net
