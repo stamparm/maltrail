@@ -3059,7 +3059,3 @@ home-webserver.de
 # Reference: https://www.virustotal.com/gui/domain/my-homeip.com/relations
 
 my-homeip.com
-
-# Reference: https://www.virustotal.com/gui/domain/onedumb.com/relations
-
-onedumb.com
