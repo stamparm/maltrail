@@ -2740,5 +2740,28 @@ fontsgoogle-api.com
 googleapis-fonts.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1313137479512276995
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.79.49/relations
+# Reference: https://www.virustotal.com/gui/ip-address/47.245.128.231/relations
 
+admin-autorization.com
+bing-analytics.com
+cdn-jquery.com
+connect-facebook.com
+google-assistant.com
+google-money.com
+google-payment.com
+google-sale.com
+google-standard.com
+google-tasks.com
+google-worldpay.com
+jquery-migrate.com
+live-sagepayment.com
+paypal-assist.com
 paypal-debit.com
+paypalapiobjects.com
+sagepay-world.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/47.245.128.230/relations
+
+cdnanalyticss.top
+promakerboi.top
