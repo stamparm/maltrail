@@ -2661,6 +2661,7 @@ cdnr.space
 cdnv.site
 cdnz.site
 cdnz.space
+frcdn.site
 gtacdn.site
 gtag.site
 gtage.site
@@ -2732,3 +2733,8 @@ metahtmlhead.com
 # Reference: https://www.virustotal.com/gui/ip-address/5.135.247.140/relations
 
 underscorefw.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.90.81/relations
+
+fontsgoogle-api.com
+googleapis-fonts.com
