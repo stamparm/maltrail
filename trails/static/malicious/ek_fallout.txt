@@ -273,3 +273,7 @@ tld4u.online
 
 colorado4u.club
 corbenbaby.press
+
+# Reference: https://twitter.com/MBThreatIntel/status/1312169449785495554
+
+geraldinio.host
