@@ -2738,3 +2738,7 @@ underscorefw.com
 
 fontsgoogle-api.com
 googleapis-fonts.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1313137479512276995
+
+paypal-debit.com
