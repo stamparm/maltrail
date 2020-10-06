@@ -2451,3 +2451,8 @@ zxpwd.net
 
 bepy.mercice.ru
 download123.igg.biz
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=PUA:Win32/ProtectionLive
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/adware-and-puas/Malware%20Protection%20Live/detailed-analysis.aspx
+
+malwareprotectionlive.com
