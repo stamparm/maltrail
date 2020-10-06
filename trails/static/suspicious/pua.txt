@@ -2446,3 +2446,8 @@ opensubcdn.com
 
 gamelauncherzx.000webhostapp.com
 zxpwd.net
+
+# Reference: https://www.virustotal.com/gui/file/3bd83025885889f9bc9667122229381baa0755fb4263498436665198a0c4e2ba/detection
+
+bepy.mercice.ru
+download123.igg.biz
