@@ -2738,3 +2738,73 @@ underscorefw.com
 
 fontsgoogle-api.com
 googleapis-fonts.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1313137479512276995
+# Reference: https://www.virustotal.com/gui/ip-address/188.68.220.49/relations
+# Reference: https://www.virustotal.com/gui/ip-address/31.184.253.166/relations
+# Reference: https://www.virustotal.com/gui/ip-address/47.245.128.231/relations
+# Reference: https://www.virustotal.com/gui/ip-address/47.89.184.107/relations
+# Reference: https://www.virustotal.com/gui/ip-address/47.254.84.162/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.53.125.202/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.14.9/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.20.61/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.27.102/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.72.188/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.79.49/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.65.45/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.210.68.59/relations
+# Reference: https://www.virustotal.com/gui/ip-address/79.143.29.164/relations
+# Reference: https://www.virustotal.com/gui/ip-address/80.249.144.26/relations
+# Reference: https://www.virustotal.com/gui/ip-address/80.249.145.190/relations
+# Reference: https://www.virustotal.com/gui/ip-address/80.249.147.241/relations
+# Reference: https://www.virustotal.com/gui/ip-address/80.249.148.133/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.148.30.191/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.148.31.102/relations
+# Reference: https://www.virustotal.com/gui/ip-address/84.38.180.233/relations
+# Reference: https://www.virustotal.com/gui/ip-address/84.38.180.84/relations
+# Reference: https://www.virustotal.com/gui/ip-address/84.38.183.160/relations
+
+admin-autorization.com
+bing-analytics.com
+bootstrap-java.com
+cdn-jquery.com
+checkout-sagepay.com
+connect-facebook.com
+google-analytics.top
+google-anylysis.com
+google-apic.com
+google-assistant.com
+google-checkout.com
+google-connect.com
+google-modile.com
+google-money.com
+google-payment.com
+google-query.com
+google-sale.com
+google-smart.com
+google-standard.com
+google-taq.com
+google-tasks.com
+google-worldpay.com
+jquery-assets.com
+jquery-assist.com
+jquery-insert.com
+jquery-migrate.com
+live-sagepayment.com
+pay-sagepay.com
+pay-u-biz.com
+payment-sagepay.com
+payment-worldpay.com
+paypal-assist.com
+paypal-debit.com
+paypal-vendor.com
+paypal-worldpay.com
+paypalapiobjects.com
+payu-biz.com
+sagepay-live.com
+sagepay-world.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/47.245.128.230/relations
+
+cdnanalyticss.top
+promakerboi.top
