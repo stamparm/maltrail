@@ -2808,3 +2808,7 @@ sagepay-world.com
 
 cdnanalyticss.top
 promakerboi.top
+
+# Reference: https://twitter.com/AffableKraut/status/1313600312045907973
+
+shopifyst.com
