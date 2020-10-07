@@ -2456,3 +2456,9 @@ download123.igg.biz
 # Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/adware-and-puas/Malware%20Protection%20Live/detailed-analysis.aspx
 
 malwareprotectionlive.com
+
+# Reference: https://twitter.com/krabsonsecurity/status/1313539398407872514
+# Reference: https://app.any.run/tasks/7087ef7b-fb26-4559-bc77-ad5d5cdff01b/
+# Reference: https://www.virustotal.com/gui/file/d29380831b7a5b62c0d56e0d2a7a196863ff1c3199434172ee199a36cb929312/detection
+
+silkysmoothtechnologies.com
