@@ -2825,3 +2825,9 @@ statanalytic.site
 
 facebookapimanager.com
 tags-manager.com
+
+# Reference: https://blog.malwarebytes.com/malwarebytes-news/2020/10/credit-card-skimmer-targets-virtual-conference-platform/
+# Reference: https://www.virustotal.com/gui/ip-address/198.187.31.243/relations
+# Reference: https://twitter.com/MBThreatIntel/status/1314298615204995072
+
+playbacknows.com
