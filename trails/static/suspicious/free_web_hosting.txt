@@ -445,3 +445,8 @@ ftp.totallyanonymous.com
 # Reference: https://www.scumware.org/report/drivehq.com
 
 drivehq.com
+
+# Reference: https://www.virustotal.com/gui/domain/great-site.net/relations
+# Reference: https://github.com/stamparm/maltrail/pull/11408#issuecomment-705399951
+
+great-site.net
