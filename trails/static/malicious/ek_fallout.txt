@@ -281,3 +281,7 @@ geraldinio.host
 # Reference: https://twitter.com/FaLconIntel/status/1313151494183477248
 
 mononopu.xyz
+
+# Reference: https://twitter.com/nao_sec/status/1314196221762838529
+
+helloheaven.host
