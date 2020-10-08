@@ -2817,5 +2817,6 @@ shopifyst.com
 # Reference: https://www.virustotal.com/gui/ip-address/176.123.3.85/relations
 
 googleanalytics.icu
+idssl.site
 shopstatanalytics.store
 statanalytic.site
