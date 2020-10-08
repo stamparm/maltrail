@@ -2820,3 +2820,8 @@ googleanalytics.icu
 idssl.site
 shopstatanalytics.store
 statanalytic.site
+
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.102.232/relations
+
+facebookapimanager.com
+tags-manager.com
