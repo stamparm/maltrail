@@ -2812,3 +2812,10 @@ promakerboi.top
 # Reference: https://twitter.com/AffableKraut/status/1313600312045907973
 
 shopifyst.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1313913253035159553
+# Reference: https://www.virustotal.com/gui/ip-address/176.123.3.85/relations
+
+googleanalytics.icu
+shopstatanalytics.store
+statanalytic.site
