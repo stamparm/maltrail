@@ -1883,6 +1883,10 @@ tunacan-812.tk
 /zpsxxla.php
 /zxlbw.php
 
+# Reference: https://twitter.com/KorbenD_Intel/status/1314251628959076353
+
+/orMkdppaG1PQ0WgF.php
+
 # Generic
 
 /7328-dating-verification-card.php
