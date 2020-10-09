@@ -2831,3 +2831,8 @@ tags-manager.com
 # Reference: https://twitter.com/MBThreatIntel/status/1314298615204995072
 
 playbacknows.com
+
+# Reference: https://twitter.com/jeromesegura/status/1137087208630833152
+
+jquers.com
+jqueres.com
