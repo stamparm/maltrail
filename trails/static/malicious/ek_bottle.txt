@@ -30,3 +30,7 @@ conforyou.ml
 # Reference: https://twitter.com/nao_sec/status/1294854699879825408
 
 cyoumer.tk
+
+# Reference: https://twitter.com/nao_sec/status/1314195117662564352
+
+sortsoft.tk
