@@ -1560,6 +1560,11 @@ Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40
 
 crackim
 
+# Reference: https://prod-blog.avira.com/new-mirai-variant-exploits-unauthenticated-remote-code-execution-in-the-web-interface-of-tea-latex-1-0
+# Reference: https://github.com/stamparm/maltrail/pull/11463/commits/62e5f05b2680b4c30e479cfc11ffc9f0d3594459
+
+Jarry-requests
+
 # Misc
 
 information_schema
