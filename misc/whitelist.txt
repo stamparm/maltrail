@@ -2977,3 +2977,7 @@ routers.wtf
 # Reference: https://www.virustotal.com/gui/domain/teenslang.su/detection
 
 teenslang.su
+
+# Reference: https://www.virustotal.com/gui/domain/jouin.xyz/relations
+
+jouin.xyz
