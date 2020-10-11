@@ -1565,6 +1565,11 @@ crackim
 
 Jarry-requests
 
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1315382704045727746
+# Reference: https://app.any.run/tasks/351011f3-b4c1-4d9c-ac5e-f5c2cc29ef60/
+
+SecureLine.Security.ESS.Update
+
 # Misc
 
 information_schema
