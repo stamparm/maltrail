@@ -284,3 +284,7 @@ shell.php
 # Reference: https://twitter.com/jstrosch/status/1255898007377231873
 
 cxz.php
+
+# Reference: https://twitter.com/Marco_Ramilli/status/1315327238255116288
+
+shell202007281.php
