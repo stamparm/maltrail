@@ -68,3 +68,8 @@ vkfaces.site
 
 dl.gblga.workers.dev
 noisy-base-38da.fb68b.workers.dev
+
+# Reference: https://twitter.com/MBThreatIntel/status/1314321011626504193
+
+grgtechnologies.online
+rawcdn.githack.cyou
