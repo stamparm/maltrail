@@ -391,15 +391,6 @@ ww1-filecloud.com
 
 /0001.js
 
-# Reference: https://twitter.com/rootsrv1/status/1136763516285702146
-
-jqueryextd.at
-
-# Reference: https://twitter.com/jeromesegura/status/1137087208630833152
-
-jquers.com
-jqueres.com
-
 # Reference: https://twitter.com/luc4m/status/1138430833533104128
 
 /tkeezwbzpl.js
