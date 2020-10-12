@@ -1883,6 +1883,22 @@ tunacan-812.tk
 /zpsxxla.php
 /zxlbw.php
 
+# Reference: https://twitter.com/KorbenD_Intel/status/1314251628959076353
+
+/orMkdppaG1PQ0WgF.php
+
+# Reference: https://twitter.com/JCyberSec_/status/1314208821368115202
+
+/ixdxctmg5umaskdjtbnapfly.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1315383937389277184
+
+/v0k7mrdjuncsoof64kayjzal.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1315519829948891136
+
+/fhx2mavv4mmh750l4gv8kf9a.php
+
 # Generic
 
 /7328-dating-verification-card.php
