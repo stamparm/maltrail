@@ -1570,6 +1570,10 @@ Jarry-requests
 
 SecureLine.Security.ESS.Update
 
+# Reference: https://www.malware-traffic-analysis.net/2020/10/12/index.html
+
+PPPPPX
+
 # Misc
 
 information_schema
