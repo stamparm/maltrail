@@ -576,9 +576,12 @@ allyouwant.online
 /GDSRScripts.js
 
 # Reference: https://twitter.com/0xFrost/status/1181153730382716928
+# Reference: https://twitter.com/James_inthe_box/status/1316079441034919936
 
 s04.hostcontent.live
+hostingcloud.cloud
 hostingcloud.racing
+/ab20.js
 /Iit5.js
 
 # Reference: https://otx.alienvault.com/pulse/5d9cadcab8eefffbac23367a
