@@ -406,3 +406,13 @@ d1pool.ddns.net
 d5pool.us
 xmr.hex7e4.ru
 xxx.hex7e4.ru
+
+# Reference: https://www.virustotal.com/gui/file/f0fa9f69e15c349511fc1d2928507a69aefa908726d5c3aa5cd7e3ae83b412c5/detection
+
+107.175.127.22:6661
+emercoin.com
+emercoin.net
+emergate.net
+seed.emercoin.com
+seed.emercoin.net
+seed.emergate.net
