@@ -2840,3 +2840,9 @@ playbacknows.com
 
 jquers.com
 jqueres.com
+
+# Reference: https://twitter.com/Jacob_Pimental/status/1316173250850942977
+# Reference: https://twitter.com/Jacob_Pimental/status/1316174498073399296
+
+luhnvalidator.com
+stairany.com
