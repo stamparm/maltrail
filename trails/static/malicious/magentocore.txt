@@ -2644,11 +2644,13 @@ ancdnto.site
 arcdn.site
 cacdn.site
 cdna.site
+cdna.space
 cdnc.space
 cdncom.site
 cdnd.site
 cdne.space
 cdnf.site
+cdnf.space
 cdng.site
 cdnh.site
 cdni.site
@@ -2659,6 +2661,8 @@ cdnp.site
 cdnq.site
 cdnr.space
 cdnv.site
+cdnv.space
+cdnx.space
 cdnz.site
 cdnz.space
 frcdn.site
