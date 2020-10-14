@@ -2638,6 +2638,7 @@ static-trustpilot.com
 
 # Reference: https://twitter.com/felixaime/status/1310835184917458944
 # Reference: https://www.virustotal.com/gui/ip-address/161.117.237.217/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.14.12.199/relations
 
 ancdn.site
 ancdnto.site
@@ -2648,6 +2649,7 @@ cdna.space
 cdnc.space
 cdncom.site
 cdnd.site
+cdnd.space
 cdne.space
 cdnf.site
 cdnf.space
@@ -2661,8 +2663,10 @@ cdnp.site
 cdnq.site
 cdnq.space
 cdnr.space
+cdns.space
 cdnv.site
 cdnv.space
+cdnw.space
 cdnx.space
 cdnz.site
 cdnz.space
