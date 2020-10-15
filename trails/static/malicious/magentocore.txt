@@ -1849,7 +1849,13 @@ intljs.rmtag.net
 pollyfill.com
 
 # Reference: https://twitter.com/d09r_/status/1247951999305302016
+# Reference: https://www.virustotal.com/gui/ip-address/34.227.50.166/relations
 
+adn-apple.com
+cdl-apple.com
+cdn-a0ple.com
+cdn-ap0le.com
+cdn-appde.com
 googheusercontent.com
 googlatagmanager.com
 googlausercontent.com
@@ -1953,8 +1959,31 @@ googleusercnntent.com
 googleusercoftent.com
 googleusercojtent.com
 googleusercoltent.com
+googleusercon4ent.com
+googleusercondent.com
+googleuserconpent.com
+googleusercontant.com
+googleusercontdnt.com
+googleuserconteft.com
+googleusercontejt.com
+googleusercontelt.com
+googleuserconten4.com
+googleusercontend.com
+googleusercontenp.com
+googleusercontenu.com
+googleusercontenv.com
+googleuserconteot.com
+googleusercontgnt.com
+googleusercontmnt.com
+googleusercontunt.com
+googleuserconuent.com
+googleusescontent.com
+googleusgrcontent.com
+googleusmrcontent.com
+googlevagmanager.com
 googlganalytics.com
 googluanalytics.com
+googlutagmanager.com
 googmeanalytics.com
 
 # Reference: https://twitter.com/felixaime/status/1248154035053637632
