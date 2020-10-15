@@ -303,3 +303,7 @@
 # Reference: https://twitter.com/ANeilan/status/1292939552085233664
 
 /Update-KB4524147.ps1
+
+# Reference: https://www.virustotal.com/gui/file/724ce0d8ca978f9bb9004c2252fb51b44f96c87721d68582ec67268cbd8f13a5/detection
+
+/jupyter.ps1
