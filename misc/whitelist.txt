@@ -3103,3 +3103,8 @@ jouin.xyz
 66.18.1.46
 147.135.113.37
 147.135.115.88
+
+# Reference: https://github.com/stamparm/maltrail/commit/e42ad7615194a1db37ff470928b73ae9d8233d22
+# Note: Regular site (for pentesting)
+
+webhook.site
