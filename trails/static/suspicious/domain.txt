@@ -5058,3 +5058,8 @@ sitestill.space
 # Reference: https://www.virustotal.com/gui/domain/hpcloudnews.com/relations
 
 hpcloudnews.com
+
+# Reference: https://twitter.com/Marco_Ramilli/status/1317562830066012160
+# Reference: https://www.virustotal.com/gui/domain/fastestcdn.net/relations
+
+fastestcdn.net
