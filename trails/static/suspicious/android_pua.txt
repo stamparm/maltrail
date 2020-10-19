@@ -199,3 +199,8 @@ goupdate.3g.cn
 # Reference: https://twitter.com/malwrhunterteam/status/1305919390110625803
 
 fix5.info
+
+# Reference: https://twitter.com/bl4ckh0l3z/status/1318143667333484549
+# Reference: https://www.virustotal.com/gui/file/a72f4b1b7555fd6b2c07211ff04618f9dc474640bc641b76753a98b4f08c849d/detection
+
+all-tracker.appspot.com
