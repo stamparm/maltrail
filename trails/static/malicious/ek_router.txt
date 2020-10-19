@@ -1,8 +1,38 @@
 # Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
+# Reference: https://twitter.com/david_jursa/status/1131487385034870784
+# Reference: https://www.virustotal.com/gui/ip-address/139.45.197.8/relations
+# Reference: https://www.virustotal.com/gui/ip-address/139.45.197.9/relations
 # Reference: https://otx.alienvault.com/pulse/5ce68d4336316432e2a36c43
 
+alspearowa.com
+ammankeyan.com
+ascraftan.com
+azoaltou.com
+bedrapiona.com
+beludicolor.com
+bestaryua.com
+bodelen.com
+buylnk.com
+byfoongusor.com
+cobalten.com
+dolohen.com
+eikegolehem.com
+geedoovu.net
+graizoah.com
+inabsolor.com
+inpagepush.com
+itnuzleafan.com
+itpatratr.com
+ittorchicer.com
+kerumal.com
+lauhoosh.net
+louchees.net
+lowtyroguer.com
+netpatas.com
+onstunkyr.com
+upgulpinon.com
 apps8kjdjglkdfg.herokuapp.com
 dns0101.herokuapp.com
 
