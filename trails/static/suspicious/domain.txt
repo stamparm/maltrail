@@ -5063,3 +5063,7 @@ hpcloudnews.com
 # Reference: https://www.virustotal.com/gui/domain/fastestcdn.net/relations
 
 fastestcdn.net
+
+# Reference: https://webhook.site/
+
+webhook.site
