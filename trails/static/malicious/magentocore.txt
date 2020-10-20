@@ -2965,7 +2965,9 @@ static-trustpilot.com
 ancdn.site
 ancdnto.site
 arcdn.site
+bcdn.space
 cacdn.site
+ccdn.space
 cdna.site
 cdna.space
 cdnc.space
@@ -2992,7 +2994,10 @@ cdnw.space
 cdnx.space
 cdnz.site
 cdnz.space
+dcdn.space
+fcdn.space
 frcdn.site
+gcdn.space
 gtacdn.site
 gtag.site
 gtage.site
@@ -3000,8 +3005,18 @@ gtamanag.site
 gtcdn.site
 gtgcdn.site
 gtmcdn.site
+hcdn.space
+icdn.space
+jcdn.space
+kcdn.space
+ocdn.space
+qcdn.space
+tcdn.space
 usacdn.site
 uscdn.site
+wcdn.space
+xcdn.space
+zcdn.space
 
 # Reference: https://twitter.com/felixaime/status/1310840704801951744
 
