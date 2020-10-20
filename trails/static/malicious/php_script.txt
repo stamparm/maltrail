@@ -1915,6 +1915,12 @@ tunacan-812.tk
 
 /7gtsw9a6qg5dqxkeibh8u8vf.php
 
+# Reference: https://cujo.com/dns-hijacking-attacks-on-home-routers-in-brazil/
+# Reference: https://twitter.com/david_jursa/status/1318209187667714048
+
+/mbl/2/ads.php
+/mbl/2/change.php
+
 # Generic
 
 /7328-dating-verification-card.php
