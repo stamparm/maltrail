@@ -73,3 +73,9 @@ noisy-base-38da.fb68b.workers.dev
 
 grgtechnologies.online
 rawcdn.githack.cyou
+
+# Reference: https://labs.sentinelone.com/purple-fox-ek-new-cves-steganography-and-virtualization-added-to-attack-flow/
+# Reference: https://otx.alienvault.com/pulse/5f8ded9e549841cde6dc0c8c
+
+dl.fmhsi.workers.dev
+dl.gblga.workers.dev
