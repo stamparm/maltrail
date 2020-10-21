@@ -1921,6 +1921,10 @@ tunacan-812.tk
 /mbl/2/ads.php
 /mbl/2/change.php
 
+# Reference: https://twitter.com/ffforward/status/1318868941821890569
+
+/948493733774474746484738.php
+
 # Generic
 
 /7328-dating-verification-card.php
