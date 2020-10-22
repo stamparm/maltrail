@@ -3010,6 +3010,7 @@ hcdn.space
 icdn.space
 jcdn.space
 kcdn.space
+ncdn.space
 ocdn.space
 qcdn.space
 tcdn.space
@@ -3163,6 +3164,10 @@ shopifyst.com
 # Reference: https://twitter.com/unmaskparasites/status/1313913253035159553
 # Reference: https://www.virustotal.com/gui/ip-address/176.123.3.85/relations
 
+ay64.club
+by222.site
+cyan24.club
+dynrdns.site
 googleanalytics.icu
 idssl.site
 shopstatanalytics.store
