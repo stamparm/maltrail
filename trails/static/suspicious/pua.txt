@@ -2466,3 +2466,43 @@ silkysmoothtechnologies.com
 # Reference: https://www.virustotal.com/gui/file/edf2ca24702f42481d63d6795f03140b990033b8feefb7ce54a9e05c04c5910b/detection
 
 mixerlabs.pw
+
+# Reference: https://www.virustotal.com/gui/file/bccda4cb9ddeaf6a6940a0f9242acbbdeace1144a5ae6ace53fa3742036d6daf/detection
+
+116.202.96.103:35601
+122.163.90.56:35601
+122.170.148.201:35601
+125.127.38.228:35601
+149.28.236.40:35601
+149.28.61.241:35601
+157.33.221.218:35601
+185.82.203.241:35601
+95.179.202.146:35601
+
+# Reference: https://www.virustotal.com/gui/file/c8e34c3709e2b3c3c4274e3aacda7926f5d66ef360abb5fd8d0ab7af82663758/detection
+# Reference: https://www.virustotal.com/gui/file/5020097c0bec419f9a6cf72a704f543cbfe483e23583e65624b24a6ea89ff142/detection
+# Reference: https://www.virustotal.com/gui/file/19d8f243bff1a1147ccee0919517ddf084beb2b4e18ade5e7c6fa48f1ef7d53a/detection
+# Reference: https://www.virustotal.com/gui/file/1b224352d3f9f52b82754d9b5e33c79a7af19b45964ada5819a89e1048bd5b4f/detection
+# Reference: https://www.virustotal.com/gui/file/daa1dc5767b9b7ea9cf17027da52dd0f2f1037a9529fa163e901ecf5e2e16c8a/detection
+# Reference: https://www.virustotal.com/gui/file/d3d8e04ca7b2f955115ec00f4288c5fb5f1f1cf53a513641924cbe70a0046688/detection
+
+http://91.198.22.70
+185.117.73.213:22346
+185.82.203.178:22346
+185.82.203.241:22346
+185.45.193.21:26874
+185.45.193.24:26874
+185.82.203.241:26874
+185.82.203.178:42123
+185.82.203.241:42123
+178.162.197.90:55554
+185.117.73.213:55554
+185.82.203.178:55554
+185.82.203.241:55554
+80.64.131.131:55554
+89.185.100.230:55554
+555544111.ddns.net
+dns-seed.ddns.net
+dnsseed111.ddns.net
+p-x.ddns.net
+stratumtest.ddns.net
