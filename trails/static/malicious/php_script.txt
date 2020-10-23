@@ -1929,6 +1929,10 @@ tunacan-812.tk
 
 /z08xniim0s5gnpxf2v0gu6hy.php
 
+# Reference: https://www.virustotal.com/gui/file/cf1927ab098bdaace7eabc39ae410f39e47433a993ef602eb59dee5923bef042/detection
+
+/uniq_traff.php
+
 # Generic
 
 /7328-dating-verification-card.php
