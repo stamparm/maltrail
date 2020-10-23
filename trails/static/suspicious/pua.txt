@@ -2462,3 +2462,7 @@ malwareprotectionlive.com
 # Reference: https://www.virustotal.com/gui/file/d29380831b7a5b62c0d56e0d2a7a196863ff1c3199434172ee199a36cb929312/detection
 
 silkysmoothtechnologies.com
+
+# Reference: https://www.virustotal.com/gui/file/edf2ca24702f42481d63d6795f03140b990033b8feefb7ce54a9e05c04c5910b/detection
+
+mixerlabs.pw
