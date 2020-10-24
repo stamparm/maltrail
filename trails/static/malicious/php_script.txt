@@ -1933,6 +1933,12 @@ tunacan-812.tk
 
 /uniq_traff.php
 
+# Reference: https://ideone.com/CYMY4
+
+/110786663424.php
+/facebookinvisibledetector.php
+/installht7.php
+
 # Generic
 
 /7328-dating-verification-card.php
