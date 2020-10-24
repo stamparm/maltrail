@@ -1114,3 +1114,8 @@ magichottrade.su
 # Reference: https://cujo.com/dns-hijacking-attacks-on-home-routers-in-brazil/
 
 googleads.store
+
+# Reference: https://ideone.com/CYMY4
+
+/eqq.all.js
+/ggmainv3d0718.js
