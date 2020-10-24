@@ -3082,3 +3082,7 @@ system-ns.org
 # Reference: https://www.virustotal.com/gui/domain/system-ns.net/relations
 
 system-ns.net
+
+# Reference: https://www.virustotal.com/gui/domain/ydns.eu/relations
+
+ydns.eu
