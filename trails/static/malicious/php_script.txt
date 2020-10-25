@@ -1925,6 +1925,25 @@ tunacan-812.tk
 
 /948493733774474746484738.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1319657089267126274
+
+/z08xniim0s5gnpxf2v0gu6hy.php
+
+# Reference: https://www.virustotal.com/gui/file/cf1927ab098bdaace7eabc39ae410f39e47433a993ef602eb59dee5923bef042/detection
+
+/uniq_traff.php
+
+# Reference: https://ideone.com/CYMY4
+
+/110786663424.php
+/facebookinvisibledetector.php
+/installht7.php
+
+# Reference: https://twitter.com/malwaretracekr/status/1320367958485430275
+
+/wowadto/job/wov-vellssz.php
+/wov-vellssz.php
+
 # Generic
 
 /7328-dating-verification-card.php
