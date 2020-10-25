@@ -220,6 +220,10 @@ http://213.128.93.199
 
 kitesgcc.com/stater/login.php
 
+# Reference: https://www.virustotal.com/gui/file/e6adf77159291010642dd230f3b63af20a9779ba68617b9e093ce1f4eccd8edd/detection
+
+/rat/login.php
+
 # Generic
 
 /admin_123/auth.php
