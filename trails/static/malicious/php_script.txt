@@ -1939,6 +1939,11 @@ tunacan-812.tk
 /facebookinvisibledetector.php
 /installht7.php
 
+# Reference: https://twitter.com/malwaretracekr/status/1320367958485430275
+
+/wowadto/job/wov-vellssz.php
+/wov-vellssz.php
+
 # Generic
 
 /7328-dating-verification-card.php
