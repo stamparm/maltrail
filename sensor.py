@@ -120,12 +120,14 @@ _last_syn = None
 _last_logged_syn = None
 _last_udp = None
 _last_logged_udp = None
-_last_dns_exhaustion = None
 _done_count = 0
 _done_lock = threading.Lock()
 _subdomains = {}
 _subdomains_sec = None
 _dns_exhausted_domains = set()
+
+class _set(set):
+    pass
 
 try:
     import pcapy
@@ -263,7 +265,6 @@ def _process_packet(packet, sec, usec, ip_offset):
     global _last_logged_syn
     global _last_udp
     global _last_logged_udp
-    global _last_dns_exhaustion
     global _subdomains_sec
 
     try:
@@ -679,19 +680,21 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     subdomains = _subdomains.get(domain)
 
                                     if not subdomains:
-                                        subdomains = _subdomains[domain] = set()
+                                        subdomains = _subdomains[domain] = _set()
+                                        subdomains._start = sec
 
                                     if not re.search(r"\A\d+\-\d+\-\d+\-\d+\Z", parts[0]):
-                                        if len(subdomains) < DNS_EXHAUSTION_THRESHOLD:
+                                        if sec - subdomains._start > 60:
+                                            subdomains._start = sec
+                                            subdomains.clear()
+                                        elif len(subdomains) < DNS_EXHAUSTION_THRESHOLD:
                                             subdomains.add('.'.join(parts[:-2]))
                                         else:
-                                            if (sec - (_last_dns_exhaustion or 0)) > 60:
-                                                trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
-                                                if re.search(r"bl\b", trail) is None:                                               # generic check for DNSBLs
-                                                    if not any(_ in subdomains for _ in LOCAL_SUBDOMAIN_LOOKUPS):                   # generic check for local DNS resolutions
-                                                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "potential dns exhaustion (suspicious)", "(heuristic)"), packet)
-                                                        _dns_exhausted_domains.add(domain)
-                                                        _last_dns_exhaustion = sec
+                                            trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
+                                            if re.search(r"bl\b", trail) is None:                                               # generic check for DNSBLs
+                                                if not any(_ in subdomains for _ in LOCAL_SUBDOMAIN_LOOKUPS):                   # generic check for local DNS resolutions
+                                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "potential dns exhaustion (suspicious)", "(heuristic)"), packet)
+                                                    _dns_exhausted_domains.add(domain)
 
                                             return
 
