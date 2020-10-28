@@ -1115,6 +1115,10 @@ magichottrade.su
 
 securefastdeal.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1321506413995159552
+
+goodherbwebmart.com
+
 # Reference: https://cujo.com/dns-hijacking-attacks-on-home-routers-in-brazil/
 
 googleads.store
