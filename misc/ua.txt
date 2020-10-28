@@ -1574,6 +1574,11 @@ SecureLine.Security.ESS.Update
 
 PPPPPX
 
+# Reference: https://www.fireeye.com/blog/threat-research/2017/06/phished-at-the-request-of-counsel.html
+
+FunWebProducts
+IE0006_ver1
+
 # Misc
 
 information_schema
