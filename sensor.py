@@ -1004,6 +1004,7 @@ def _init_multiprocessing():
     """
 
     global _buffer
+    global _multiprocessing
     global _n
 
     if _multiprocessing:
@@ -1020,13 +1021,18 @@ def _init_multiprocessing():
         except:
             exit("[!] unable to allocate network capture buffer. Please adjust value of 'CAPTURE_BUFFER'")
 
-        print("[i] creating %d more processes (out of total %d)" % (config.PROCESS_COUNT - 1, config.PROCESS_COUNT))
         _n = _multiprocessing.Value('L', lock=False)
 
-        for i in xrange(config.PROCESS_COUNT - 1):
-            process = _multiprocessing.Process(target=worker, name=str(i), args=(_buffer, _n, i, config.PROCESS_COUNT - 1, _process_packet))
-            process.daemon = True
-            process.start()
+        try:
+            for i in xrange(config.PROCESS_COUNT - 1):
+                process = _multiprocessing.Process(target=worker, name=str(i), args=(_buffer, _n, i, config.PROCESS_COUNT - 1, _process_packet))
+                process.daemon = True
+                process.start()
+        except TypeError:   # Note: https://github.com/stamparm/maltrail/issues/11823
+            _buffer = None
+            _multiprocessing = None
+        else:
+            print("[i] created %d more processes (out of total %d)" % (config.PROCESS_COUNT - 1, config.PROCESS_COUNT))
 
 def monitor():
     """
