@@ -21,7 +21,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.25.45"
+VERSION = "0.25.46"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 IS_SENSOR = sys.argv[0].startswith("sensor")
@@ -79,7 +79,7 @@ POTENTIAL_INFECTION_PORTS = (135, 445, 1433, 3389)
 IGNORE_DNS_QUERY_SUFFIXES = set(("arpa", "local", "guest", "intranet", "int", "corp", "home", "lan", "intra", "intran", "workgroup", "localdomain"))
 VALID_DNS_NAME_REGEX = r"\A[a-zA-Z0-9.-]*\.[a-zA-Z0-9-]+\Z"  # Reference: http://stackoverflow.com/a/3523068
 SUSPICIOUS_CONTENT_TYPES = ("application/vnd.ms-htmlhelp", "application/x-bsh", "application/x-chm", "application/x-sh", "application/x-shellscript", "application/hta", "text/x-scriptlet", "text/x-sh", "text/x-shellscript")
-SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".bin", ".class", ".chm", ".dll", ".egg", ".exe", ".hta", ".hwp", ".pac", ".ps1", ".scr", ".sct", ".xpi"))
+SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".bin", ".class", ".chm", ".dll", ".egg", ".exe", ".hta", ".hwp", ".ps1", ".scr", ".sct", ".xpi"))
 WHITELIST_DIRECT_DOWNLOAD_KEYWORDS = ("cgi", "/scripts/", "/_vti_bin/", "/bin/", "/pub/softpaq/", "/bios/", "/pc-axis/")
 SUSPICIOUS_HTTP_REQUEST_REGEXES = (
     ("potential sql injection", r"information_schema|sysdatabases|sysusers|floor\(rand\(|ORDER BY \d+|\bUNION\s+(ALL\s+)?SELECT\b|\b(UPDATEXML|EXTRACTVALUE)\(|\bCASE[^\w]+WHEN.*THEN\b|\bWAITFOR[^\w]+DELAY\b|\bCONVERT\(|VARCHAR\(|\bCOUNT\(\*\)|\b(pg_)?sleep\(|\bSELECT\b.*\bFROM\b.*\b(WHERE|GROUP|ORDER)\b|\bSELECT \w+ FROM \w+|\b(AND|OR|SELECT)\b.*/\*.*\*/|/\*.*\*/.*\b(AND|OR|SELECT)\b|\b(AND|OR)[^\w]+\d+['\") ]?[=><]['\"( ]?\d+|ODBC;DRIVER|\bINTO\s+(OUT|DUMP)FILE"),

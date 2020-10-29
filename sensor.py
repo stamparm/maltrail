@@ -576,7 +576,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                                 found = desc
                                                 break
                                         _result_cache[(CACHE_TYPE.PATH, unquoted_path)] = found or ""
-                                    if found:
+                                    if found and not ("data leakage" in found and is_local(dst_ip)):
                                         trail = "%s(%s)" % (host, path)
                                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "%s (suspicious)" % found, "(heuristic)"), packet)
                                         return

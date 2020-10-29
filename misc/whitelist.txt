@@ -2962,6 +2962,7 @@ cat-nip.com
 post-punk.com
 cat-uxo.com
 u-cdn.top
+mk-yw.top
 
 # Exceptions for abuse.ch (dirty patch for addresses used by outside scanners introducing noise being recognized as 'malware')
 
