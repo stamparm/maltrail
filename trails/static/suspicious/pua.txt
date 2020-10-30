@@ -2508,5 +2508,7 @@ p-x.ddns.net
 stratumtest.ddns.net
 
 # Reference: https://www.virustotal.com/gui/file/1cd758ddde58d45aa48668e35bef479d6ba2bee17e7973aa1329038b4fa15b0e/detection
+# Reference: https://www.virustotal.com/gui/file/a47bb2cbc41f25f5072dda8470acb169e274b3b232ba926926af132844a30c84/detection
 
 31.44.184.131:50004
+31.44.184.131:50006
