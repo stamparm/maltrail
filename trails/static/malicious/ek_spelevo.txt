@@ -1112,3 +1112,7 @@ extrashop.monster
 # Reference: https://twitter.com/MBThreatIntel/status/1308487877584539648
 
 anya.large-market.monster
+
+# Reference: https://twitter.com/MBThreatIntel/status/1321963911365586944
+
+haruno.pavupeaso.guru
