@@ -2506,3 +2506,7 @@ dns-seed.ddns.net
 dnsseed111.ddns.net
 p-x.ddns.net
 stratumtest.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/1cd758ddde58d45aa48668e35bef479d6ba2bee17e7973aa1329038b4fa15b0e/detection
+
+31.44.184.131:50004
