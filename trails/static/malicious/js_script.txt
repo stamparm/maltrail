@@ -1107,10 +1107,6 @@ celolum.com
 
 vahjgkjhfkjdhkjdfhjdfj26a.s3-accelerate.amazonaws.com
 
-# Reference: https://twitter.com/unmaskparasites/status/1311670839276974081
-
-magichottrade.su
-
 # Reference: https://cujo.com/dns-hijacking-attacks-on-home-routers-in-brazil/
 
 googleads.store
