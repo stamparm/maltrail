@@ -2519,6 +2519,7 @@ stratumtest.ddns.net
 # Reference: https://www.virustotal.com/gui/file/91c33abbf3149e8389d76d560061aaca556dcad5136fcfe1c2f9b839d3e49f48/detection
 # Reference: https://www.virustotal.com/gui/file/ed5abdb1c68270c4f4a1eea59d8462f33ba6cd3f7ec27867e727b8d19e5bae2f/detection
 # Reference: https://www.virustotal.com/gui/file/d1ca6c73a297ab7b3b74c5ea17067f317f5f2913ed2c13f5b68ab4ca52d75922/detection
+# Reference: https://www.virustotal.com/gui/file/e741cf28d72e4a558b865925db838df24889d545019ada7267a49218a04ad5cc/detection
 
 31.44.184.131:50002
 31.44.184.131:50004
@@ -2532,3 +2533,4 @@ stratumtest.ddns.net
 31.44.184.131:50022
 31.44.184.131:50024
 31.44.184.131:50026
+31.44.184.131:50028
