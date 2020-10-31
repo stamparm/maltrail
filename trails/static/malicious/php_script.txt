@@ -1952,6 +1952,12 @@ tunacan-812.tk
 /wowadto/job/wov-vellssz.php
 /wov-vellssz.php
 
+# Reference: https://twitter.com/jstrosch/status/1321681398139363333
+
+/A7Ks0s6.php
+/BAoLS9C.php
+/Yv1pteWscript.php
+
 # Generic
 
 /7328-dating-verification-card.php
