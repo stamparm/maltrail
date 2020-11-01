@@ -34,3 +34,7 @@ cyoumer.tk
 # Reference: https://twitter.com/nao_sec/status/1314195117662564352
 
 sortsoft.tk
+
+# Reference: https://twitter.com/nao_sec/status/1322885953640308736
+
+softbring.tk
