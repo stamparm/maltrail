@@ -169,6 +169,76 @@ http://185.119.56.54
 
 http://91.210.171.116
 
+# Reference: https://blog.malwarebytes.com/threat-analysis/2016/10/trick-bot-dyrezas-successor/
+# Reference: https://www.virustotal.com/gui/ip-address/162.219.29.77/relations
+
+afanasitrita.top
+azsmistnswezdezake.top
+best4ygottna4er.top
+bestbulikimygottna4er.top
+bestgreenpop4d.top
+bestlipopomulit32seder.top
+bestrkapolik23kalil.top
+bestwezdes2pope.top
+brastikorana.top
+britorikanosa.top
+bulikimygottna4er.top
+buyoasde1ingdse.top
+buyolodes2ingdse.top
+buyoloyogo12dse.top
+doberabokaseno.top
+elrapisokarino.top
+fashionswezdes2pope.top
+granbotakami.top
+herazari.top
+hihuravila.top
+jimantutago.top
+jonsolato.top
+jotutikaruma.top
+kalinpolik23kalil.top
+lipopomulit32seder.top
+losvaretakona.top
+mabestrdayobline2t.top
+masterdayobline2t.top
+mertitakotara.top
+mikalanovane.top
+milorapasata.top
+miropidevata.top
+mistnswezdezake.top
+mmsdrestrdayobline2t.top
+newdeuyogo12dse.top
+odnorkapolik23kalil.top
+opaopomulit32seder.top
+pirasokureta.top
+pirosumona.top
+pitakumata.top
+polikbestgreenpop4d.top
+popnswezdezake.top
+popsasesaesa1sa.top
+popssavestpalika2sed.top
+popstereet32sdre.top
+pritastromana.top
+pritoparivata.top
+rewitakinama.top
+rotukojuto.top
+sanegreenpop4d.top
+sanijokorujama.top
+tederosavito.top
+theasesaada2sae.top
+theasesabebesa2sae.top
+thesaaseazsw21sa.top
+thesaasesaesa1sa.top
+thesabebesa2sae.top
+tinasokapikada.top
+tritakataga.top
+tritoralikasa.top
+trutosakato.top
+vestkazatpalika2sed.top
+vestpalika2sed.top
+vestvavestpalika2sed.top
+vulkane7xoprit.top
+wezdes2pope.top
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
