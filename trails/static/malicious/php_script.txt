@@ -1929,6 +1929,14 @@ tunacan-812.tk
 
 /z08xniim0s5gnpxf2v0gu6hy.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1322269303891263489
+
+/u0mie8r79j3degt9tspqremw.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1322556193076846592
+
+/oprl3w53zz6gdprwsc4sl1ms.php
+
 # Reference: https://www.virustotal.com/gui/file/cf1927ab098bdaace7eabc39ae410f39e47433a993ef602eb59dee5923bef042/detection
 
 /uniq_traff.php
@@ -1943,6 +1951,12 @@ tunacan-812.tk
 
 /wowadto/job/wov-vellssz.php
 /wov-vellssz.php
+
+# Reference: https://twitter.com/jstrosch/status/1321681398139363333
+
+/A7Ks0s6.php
+/BAoLS9C.php
+/Yv1pteWscript.php
 
 # Generic
 
