@@ -3196,3 +3196,7 @@ jqueres.com
 dataprocessor.net
 luhnvalidator.com
 stairany.com
+
+# Reference: https://blog.sucuri.net/2020/11/css-js-steganography-in-fake-flash-player-update-malware.html
+
+polobear.shop
