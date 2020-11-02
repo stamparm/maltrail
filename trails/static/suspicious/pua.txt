@@ -2506,3 +2506,31 @@ dns-seed.ddns.net
 dnsseed111.ddns.net
 p-x.ddns.net
 stratumtest.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/1cd758ddde58d45aa48668e35bef479d6ba2bee17e7973aa1329038b4fa15b0e/detection
+# Reference: https://www.virustotal.com/gui/file/a47bb2cbc41f25f5072dda8470acb169e274b3b232ba926926af132844a30c84/detection
+# Reference: https://www.virustotal.com/gui/file/eb5b9e04efc873885372ffa2468b9b5fbfe01b600b614e583c3dd7e12f5bad7f/detection
+# Reference: https://www.virustotal.com/gui/file/a210dee30e3fc0faf89d515915f8470facad466aa69d894988e48dfdecdfe3b8/detection
+# Reference: https://www.virustotal.com/gui/file/5b091d1046936aead1dbf05a8c1fa430d97ca08d0c6b059bca2f5ffae4f16c57/detection
+# Reference: https://www.virustotal.com/gui/file/c20b22b8b721d59f727f50499f2a4f1d910dd382ce8372e4a9149b33f2ccdc82/detection
+# Reference: https://www.virustotal.com/gui/file/6b67af76c8664bc7ad930e22f045d7b0f48061eb9bcddaf93f6ade1521512898/detection
+# Reference: https://www.virustotal.com/gui/file/58997332a250135cfe7a519a042a4dc684ba78169728b51189a41932b89bbd20/detection
+# Reference: https://www.virustotal.com/gui/file/4669c76cf3a17fc56b9158bfea226f08600319b280bbbd30a0a331f6b9cbb040/detection
+# Reference: https://www.virustotal.com/gui/file/91c33abbf3149e8389d76d560061aaca556dcad5136fcfe1c2f9b839d3e49f48/detection
+# Reference: https://www.virustotal.com/gui/file/ed5abdb1c68270c4f4a1eea59d8462f33ba6cd3f7ec27867e727b8d19e5bae2f/detection
+# Reference: https://www.virustotal.com/gui/file/d1ca6c73a297ab7b3b74c5ea17067f317f5f2913ed2c13f5b68ab4ca52d75922/detection
+# Reference: https://www.virustotal.com/gui/file/e741cf28d72e4a558b865925db838df24889d545019ada7267a49218a04ad5cc/detection
+
+31.44.184.131:50002
+31.44.184.131:50004
+31.44.184.131:50006
+31.44.184.131:50008
+31.44.184.131:50010
+31.44.184.131:50012
+31.44.184.131:50014
+31.44.184.131:50016
+31.44.184.131:50020
+31.44.184.131:50022
+31.44.184.131:50024
+31.44.184.131:50026
+31.44.184.131:50028
