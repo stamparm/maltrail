@@ -3201,6 +3201,8 @@ stairany.com
 
 polobear.shop
 
+# Reference: https://twitter.com/marcelmalware/status/1140723183584272386
+# Reference: https://www.virustotal.com/gui/domain/jquery.su/relations
 # Reference: https://www.virustotal.com/gui/ip-address/8.208.97.167/relations
 
 cloudflare.su
