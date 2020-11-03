@@ -3229,3 +3229,9 @@ magentostore.org
 mycloudflare.net
 procloudflare.com
 procloudflare.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.54.167.88/relations
+
+alipayservice.top
+alipaysecurity.top
+unionpayinternational.services
