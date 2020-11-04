@@ -3200,3 +3200,40 @@ stairany.com
 # Reference: https://blog.sucuri.net/2020/11/css-js-steganography-in-fake-flash-player-update-malware.html
 
 polobear.shop
+
+# Reference: https://twitter.com/marcelmalware/status/1140723183584272386
+# Reference: https://www.virustotal.com/gui/domain/jquery.su/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.97.167/relations
+
+cloudflare.su
+cloudflareplus.com
+cloudflareplus.net
+cloudflarepro.info
+cloudflarepro.name
+cloudflareshop.com
+googleexpert.name
+googleinfo.name
+googlemaster.info
+googlemaster.name
+googleplus.name
+googletag.info
+googletag.name
+jquery.su
+jquery24.com
+jqueryexpert.com
+jqueryinfo.com
+jsstroy.com
+magentoinfo.name
+magentoinfo.org
+magentoportal.com
+magentostore.org
+mycloudflare.net
+paypai.xyz
+procloudflare.com
+procloudflare.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.54.167.88/relations
+
+alipayservice.top
+alipaysecurity.top
+unionpayinternational.services
