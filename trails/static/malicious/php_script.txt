@@ -1937,6 +1937,10 @@ tunacan-812.tk
 
 /oprl3w53zz6gdprwsc4sl1ms.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1323643357948715013
+
+/6k555a3cpy5e2p4wlfy03b9a.php
+
 # Reference: https://www.virustotal.com/gui/file/cf1927ab098bdaace7eabc39ae410f39e47433a993ef602eb59dee5923bef042/detection
 
 /uniq_traff.php
