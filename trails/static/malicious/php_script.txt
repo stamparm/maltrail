@@ -1967,6 +1967,7 @@ tunacan-812.tk
 
 /salem123.php
 /salem123aas.php
+/admin/config.php?password%5B0%5D=Inje3t0r3-Seraj
 
 # Generic
 
