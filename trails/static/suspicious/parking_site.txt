@@ -128,7 +128,7 @@ bustbuy.com
 
 54.227.195.116
 52.5.230.6
-3.234.181.234
+# 3.234.181.234         # NOTE: *.vkcache.com
 
 # namesilo.com (misc.)
 
