@@ -1962,6 +1962,10 @@ tunacan-812.tk
 /BAoLS9C.php
 /Yv1pteWscript.php
 
+# Reference: https://www.virustotal.com/gui/file/f1060a686155fbbe7274073c557c24648cdf30a3f3ef2cbb184ccfc41d99fd3b/detection
+
+/salem123aas.php
+
 # Generic
 
 /7328-dating-verification-card.php
