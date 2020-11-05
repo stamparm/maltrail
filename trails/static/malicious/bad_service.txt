@@ -368,3 +368,7 @@ xss.is
 # Reference: http://xmr-services.com/
 
 xmr-services.com
+
+# Reference: https://twitter.com/BleepinComputer/status/1324032476860342273
+
+av-checking.xyz
