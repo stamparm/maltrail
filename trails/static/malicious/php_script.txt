@@ -1962,6 +1962,13 @@ tunacan-812.tk
 /BAoLS9C.php
 /Yv1pteWscript.php
 
+# Reference: https://www.virustotal.com/gui/file/f1060a686155fbbe7274073c557c24648cdf30a3f3ef2cbb184ccfc41d99fd3b/detection
+# Reference: https://research.checkpoint.com/2020/inj3ctor3-operation-leveraging-asterisk-servers-for-monetization/
+
+/salem123.php
+/salem123aas.php
+/admin/config.php?password%5B0%5D=Inje3t0r3-Seraj
+
 # Generic
 
 /7328-dating-verification-card.php
