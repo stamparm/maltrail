@@ -416,3 +416,8 @@ emergate.net
 seed.emercoin.com
 seed.emercoin.net
 seed.emergate.net
+
+# Reference: https://twitter.com/r3dbU7z/status/1323120001604341760
+
+13.77.155.141:5000
+xmr.bepooh.com
