@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/pancak3lullz/status/1296105004185640960
+# Reference: https://twitter.com/pancak3lullz/status/1324718225062612993
+
+foxsmtp.com
