@@ -2534,3 +2534,9 @@ stratumtest.ddns.net
 31.44.184.131:50024
 31.44.184.131:50026
 31.44.184.131:50028
+
+# Reference: https://www.virustotal.com/gui/file/9986d552ddece42c51746b5036129af2a3895067d4efd7192d98753484a4f703/detection
+
+drivsnfosproduits.info
+dynainfo.info
+pubjeuxinfos.info
