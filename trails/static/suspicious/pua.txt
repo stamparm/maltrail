@@ -2540,3 +2540,7 @@ stratumtest.ddns.net
 drivsnfosproduits.info
 dynainfo.info
 pubjeuxinfos.info
+
+# Reference: https://www.virustotal.com/gui/file/997ccb8eeae59f2bbf61b9109f9529ab5878c476a9af8900e8b7893981473618/detection
+
+passportinfo.info
