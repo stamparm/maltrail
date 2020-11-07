@@ -204,3 +204,7 @@ fix5.info
 # Reference: https://www.virustotal.com/gui/file/a72f4b1b7555fd6b2c07211ff04618f9dc474640bc641b76753a98b4f08c849d/detection
 
 all-tracker.appspot.com
+
+# Reference: https://www.virustotal.com/gui/file/20cf193b0834f8f8d96123b3632bc399ae7d6926bb08ddeef7890b1a3f1e3555/detection
+
+ez4q2.cn
