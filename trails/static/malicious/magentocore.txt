@@ -3092,6 +3092,7 @@ googleapis-fonts.com
 # Reference: https://www.virustotal.com/gui/ip-address/31.184.253.166/relations
 # Reference: https://www.virustotal.com/gui/ip-address/47.245.128.231/relations
 # Reference: https://www.virustotal.com/gui/ip-address/47.89.184.107/relations
+# Reference: https://www.virustotal.com/gui/ip-address/47.254.170.245/relations
 # Reference: https://www.virustotal.com/gui/ip-address/47.254.84.162/relations
 # Reference: https://www.virustotal.com/gui/ip-address/5.53.125.202/relations
 # Reference: https://www.virustotal.com/gui/ip-address/8.208.14.9/relations
@@ -3114,6 +3115,7 @@ googleapis-fonts.com
 
 admin-autorization.com
 bing-analytics.com
+bing-insert.com
 bootstrap-java.com
 cdn-jquery.com
 checkout-sagepay.com
@@ -3151,6 +3153,8 @@ paypalapiobjects.com
 payu-biz.com
 sagepay-live.com
 sagepay-world.com
+yahoo-manager.com
+yahoo-tasks.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/47.245.128.230/relations
 
