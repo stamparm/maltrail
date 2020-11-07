@@ -3259,3 +3259,12 @@ riskified.site
 shipstation.space
 signifyd.site
 tiros.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/47.91.76.198/relations
+
+google-site-verification.com
+googlecloud-verification.com
+googletags-manager.com
+jquerydll.com
+script-analytic.com
+script-analytics.com
