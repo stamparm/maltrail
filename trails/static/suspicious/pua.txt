@@ -2548,3 +2548,7 @@ passportinfo.info
 # Reference: https://www.virustotal.com/gui/file/997e52086407ef7b0269bb0db644b63398bb47a3b95a7690b156fd6c519efe56/detection
 
 promotionalmaterial.info
+
+# Reference: https://www.virustotal.com/gui/file/99d700ab312b817c4445167d6a2839290408b219382ea4e9a73bcb715b002513/detection
+
+vault8166.ddns.net
