@@ -239,6 +239,10 @@ vestvavestpalika2sed.top
 vulkane7xoprit.top
 wezdes2pope.top
 
+# Reference: https://twitter.com/EKFiddle/status/1324488758217994241
+
+http://185.150.117.129
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
