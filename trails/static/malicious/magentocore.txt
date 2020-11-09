@@ -3092,6 +3092,7 @@ googleapis-fonts.com
 # Reference: https://www.virustotal.com/gui/ip-address/31.184.253.166/relations
 # Reference: https://www.virustotal.com/gui/ip-address/47.245.128.231/relations
 # Reference: https://www.virustotal.com/gui/ip-address/47.89.184.107/relations
+# Reference: https://www.virustotal.com/gui/ip-address/47.254.170.245/relations
 # Reference: https://www.virustotal.com/gui/ip-address/47.254.84.162/relations
 # Reference: https://www.virustotal.com/gui/ip-address/5.53.125.202/relations
 # Reference: https://www.virustotal.com/gui/ip-address/8.208.14.9/relations
@@ -3114,6 +3115,7 @@ googleapis-fonts.com
 
 admin-autorization.com
 bing-analytics.com
+bing-insert.com
 bootstrap-java.com
 cdn-jquery.com
 checkout-sagepay.com
@@ -3151,6 +3153,8 @@ paypalapiobjects.com
 payu-biz.com
 sagepay-live.com
 sagepay-world.com
+yahoo-manager.com
+yahoo-tasks.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/47.245.128.230/relations
 
@@ -3205,12 +3209,15 @@ polobear.shop
 # Reference: https://www.virustotal.com/gui/domain/jquery.su/relations
 # Reference: https://www.virustotal.com/gui/ip-address/8.208.97.167/relations
 
+certicodeplus.cn
 cloudflare.su
 cloudflareplus.com
 cloudflareplus.net
 cloudflarepro.info
 cloudflarepro.name
 cloudflareshop.com
+coomperative.com
+glohtoris.top
 googleexpert.name
 googleinfo.name
 googlemaster.info
@@ -3237,3 +3244,31 @@ procloudflare.net
 alipayservice.top
 alipaysecurity.top
 unionpayinternational.services
+
+# Reference: https://twitter.com/AffableKraut/status/1325157786032992258
+# Reference: https://twitter.com/AffableKraut/status/1325157787291168775
+
+aws-amazon.site
+freshdesk.space
+gaming-spirit.xyz
+gaminpit.com
+googletagmanager.site
+gooogletagsmanage.com
+karovi.best
+kckaa.com
+kxotic.me
+newoldtime.site
+newoldtime.space
+riskified.site
+shipstation.space
+signifyd.site
+tiros.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/47.91.76.198/relations
+
+google-site-verification.com
+googlecloud-verification.com
+googletags-manager.com
+jquerydll.com
+script-analytic.com
+script-analytics.com
