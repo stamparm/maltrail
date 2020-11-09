@@ -307,3 +307,7 @@
 # Reference: https://www.virustotal.com/gui/file/724ce0d8ca978f9bb9004c2252fb51b44f96c87721d68582ec67268cbd8f13a5/detection
 
 /jupyter.ps1
+
+# Reference: https://www.virustotal.com/gui/file/d4d438925fb775a4a599abd3054b036a95f12b4dc9f29d4d1506a985b2c23934/detection
+
+/B1P244.ps1
