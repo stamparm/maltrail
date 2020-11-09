@@ -1945,6 +1945,10 @@ tunacan-812.tk
 
 /6k555a3cpy5e2p4wlfy03b9a.php
 
+# Reference: https://twitter.com/JCyberSec_/status/1325847530354184192
+
+/7ihwqy7vhvly2nxe89hzgjo5.php
+
 # Reference: https://www.virustotal.com/gui/file/cf1927ab098bdaace7eabc39ae410f39e47433a993ef602eb59dee5923bef042/detection
 
 /uniq_traff.php
