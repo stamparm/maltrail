@@ -2534,3 +2534,21 @@ stratumtest.ddns.net
 31.44.184.131:50024
 31.44.184.131:50026
 31.44.184.131:50028
+
+# Reference: https://www.virustotal.com/gui/file/9986d552ddece42c51746b5036129af2a3895067d4efd7192d98753484a4f703/detection
+
+drivsnfosproduits.info
+dynainfo.info
+pubjeuxinfos.info
+
+# Reference: https://www.virustotal.com/gui/file/997ccb8eeae59f2bbf61b9109f9529ab5878c476a9af8900e8b7893981473618/detection
+
+passportinfo.info
+
+# Reference: https://www.virustotal.com/gui/file/997e52086407ef7b0269bb0db644b63398bb47a3b95a7690b156fd6c519efe56/detection
+
+promotionalmaterial.info
+
+# Reference: https://www.virustotal.com/gui/file/99d700ab312b817c4445167d6a2839290408b219382ea4e9a73bcb715b002513/detection
+
+vault8166.ddns.net
