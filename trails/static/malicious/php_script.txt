@@ -1795,6 +1795,10 @@ tunacan-812.tk
 
 /4fnsez9i81l6mb42m2aw25jp.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1325666690638680064
+
+/ovj2lwziaeel3l2k5xuyzvbr.php
+
 # Reference: https://twitter.com/jstrosch/status/1301718677419700224
 
 /djqnonxwrv.php
@@ -1968,6 +1972,10 @@ tunacan-812.tk
 /salem123.php
 /salem123aas.php
 /admin/config.php?password%5B0%5D=Inje3t0r3-Seraj
+
+# Reference: https://twitter.com/abel1ma/status/1324477543001415680
+
+/f.php#～
 
 # Generic
 
