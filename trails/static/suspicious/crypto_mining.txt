@@ -421,3 +421,9 @@ seed.emergate.net
 
 13.77.155.141:5000
 xmr.bepooh.com
+
+# Reference: https://www.virustotal.com/gui/file/f1f8d8e09da07736059c4388bfdf35318d3e34726c5d362c5f986e5ed8d6a0d4/detection
+
+51.81.245.40:5555
+us-west.minexmr.com
+webservicepag.webhop.net
