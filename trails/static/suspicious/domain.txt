@@ -5067,3 +5067,7 @@ fastestcdn.net
 # Reference: https://webhook.site/
 
 webhook.site
+
+# Reference: https://www.virustotal.com/gui/domain/skt-one.com/relations
+
+skt-one.com
