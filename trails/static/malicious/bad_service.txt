@@ -372,3 +372,7 @@ xmr-services.com
 # Reference: https://twitter.com/BleepinComputer/status/1324032476860342273
 
 av-checking.xyz
+
+# Reference: https://twitter.com/malwrhunterteam/status/1326104612961726464
+
+miccrosoft.site
