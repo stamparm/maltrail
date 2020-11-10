@@ -3272,3 +3272,9 @@ googletags-manager.com
 jquerydll.com
 script-analytic.com
 script-analytics.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.76.69/relations
+
+apibaseajax.com
+reactjsget.com
+statsaps.com
