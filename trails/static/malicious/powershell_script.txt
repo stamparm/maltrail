@@ -311,3 +311,7 @@
 # Reference: https://www.virustotal.com/gui/file/d4d438925fb775a4a599abd3054b036a95f12b4dc9f29d4d1506a985b2c23934/detection
 
 /B1P244.ps1
+
+# Reference: https://twitter.com/InQuest/status/1326258921833684992
+
+/e3c43e9531f8b75fe88abc724bb2cace.ps1
