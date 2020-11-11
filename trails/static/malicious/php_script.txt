@@ -1981,6 +1981,10 @@ tunacan-812.tk
 
 /f.php#～
 
+# Reference: https://www.virustotal.com/gui/file/33a7196538a17da13cc67b31162c14d0f3f473816b98f75f01709eda2b1464a7/detection
+
+/power.php?getserver=
+
 # Generic
 
 /7328-dating-verification-card.php
