@@ -3278,3 +3278,8 @@ script-analytics.com
 apibaseajax.com
 reactjsget.com
 statsaps.com
+
+# Reference: https://twitter.com/EKFiddle/status/1326245935559692289
+# Reference: https://www.virustotal.com/gui/ip-address/162.241.201.20/relations
+
+artichgroup.com
