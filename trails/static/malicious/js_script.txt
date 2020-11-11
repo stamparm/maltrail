@@ -1115,3 +1115,7 @@ googleads.store
 # Reference: https://www.virustotal.com/gui/ip-address/162.241.201.20/relations
 
 /5fa7ae834efee.js
+
+# Reference: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/operation-north-star-behind-the-scenes/
+
+/include/static/template-letter.asp
