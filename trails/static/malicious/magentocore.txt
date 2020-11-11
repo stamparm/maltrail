@@ -3283,3 +3283,10 @@ statsaps.com
 # Reference: https://www.virustotal.com/gui/ip-address/162.241.201.20/relations
 
 artichgroup.com
+
+# Reference: https://twitter.com/rootprivilege/status/1326231381169512450
+# Reference: https://www.virustotal.com/gui/ip-address/194.59.40.37/relations
+
+jquerylib-min.com
+jquerylib-min.net
+onlinecdn-js.com
