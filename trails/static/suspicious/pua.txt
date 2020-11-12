@@ -2552,3 +2552,8 @@ promotionalmaterial.info
 # Reference: https://www.virustotal.com/gui/file/99d700ab312b817c4445167d6a2839290408b219382ea4e9a73bcb715b002513/detection
 
 vault8166.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/cd80fcedd8640c9716a1f5f958820b68ec334db0567195e7049a9d2d9638edcc/detection
+# Reference: https://www.virustotal.com/gui/file/f282a81d2132d6b55ac136f0b5e2b25c9381e0644d4365ab3fa94ac2cefbd207/detection
+
+cooctdlfast.com
