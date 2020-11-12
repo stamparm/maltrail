@@ -5071,3 +5071,9 @@ webhook.site
 # Reference: https://www.virustotal.com/gui/domain/skt-one.com/relations
 
 skt-one.com
+
+# Reference: https://www.virustotal.com/gui/file/1d8da51c622b387d932f2efe082cc501ca1ea26ea5dc708e513cb45f403b00f0/detection
+
+badedsho.space
+cleans.online
+glowtrow.online
