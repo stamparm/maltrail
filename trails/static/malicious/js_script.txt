@@ -1116,6 +1116,10 @@ googleads.store
 
 /5fa7ae834efee.js
 
+# Reference: https://twitter.com/david_jursa/status/1326648367049486337
+
+/u5nrroma8jlrdredqooe4bl18o.js
+
 # Reference: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/operation-north-star-behind-the-scenes/
 
 /include/static/template-letter.asp
