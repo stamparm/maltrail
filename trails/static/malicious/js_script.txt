@@ -1110,3 +1110,16 @@ googleads.store
 
 /eqq.all.js
 /ggmainv3d0718.js
+
+# Reference: https://twitter.com/EKFiddle/status/1326245935559692289
+# Reference: https://www.virustotal.com/gui/ip-address/162.241.201.20/relations
+
+/5fa7ae834efee.js
+
+# Reference: https://twitter.com/david_jursa/status/1326648367049486337
+
+/u5nrroma8jlrdredqooe4bl18o.js
+
+# Reference: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/operation-north-star-behind-the-scenes/
+
+/include/static/template-letter.asp
