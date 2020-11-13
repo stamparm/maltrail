@@ -443,3 +443,7 @@ webservicepag.webhop.net
 donate.ssl.xmrig.com
 donate.v2.xmrig.com
 randomx.xmrig.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1326915356028493826
+
+131.153.76.130:3333
