@@ -5081,3 +5081,7 @@ glowtrow.online
 # Reference: https://www.virustotal.com/gui/domain/pe.hu/relations
 
 pe.hu
+
+# Reference: https://www.virustotal.com/gui/domain/net579.com/relations
+
+net579.com
