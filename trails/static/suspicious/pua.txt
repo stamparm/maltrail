@@ -2557,3 +2557,8 @@ vault8166.ddns.net
 # Reference: https://www.virustotal.com/gui/file/f282a81d2132d6b55ac136f0b5e2b25c9381e0644d4365ab3fa94ac2cefbd207/detection
 
 cooctdlfast.com
+
+# Reference: https://www.virustotal.com/gui/domain/themarketingadscenter.com/relations
+# Reference: https://www.virustotal.com/gui/file/13c3bb8e213e007e97fb1fb062d038d36033e2a621403a72333c34001a9abe18/detection
+
+themarketingadscenter.com
