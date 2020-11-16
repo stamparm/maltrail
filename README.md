@@ -684,5 +684,6 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * [MalwareWorld](https://www.malwareworld.com/) <sup>1</sup>
 * [oisd | domain blocklist](https://oisd.nl/?p=inc) <sup>1</sup>
 * [NextDNS](https://github.com/nextdns/metadata/blob/e0c9c7e908f5d10823b517ad230df214a7251b13/security/threat-intelligence-feeds.json) <sup>1</sup>
+* [NoTracking](https://github.com/notracking/hosts-blocklists/blob/master/SOURCES.md) <sup>1</sup>
 
  <sup>1</sup> Using (only) trails
