@@ -315,3 +315,18 @@
 # Reference: https://twitter.com/InQuest/status/1326258921833684992
 
 /e3c43e9531f8b75fe88abc724bb2cace.ps1
+
+# Reference: https://twitter.com/wwp96/status/1328082526582214658
+
+/in3.ps1
+/in6.ps1
+/info3.ps1
+/info6.ps1
+/ma3.ps1
+/ma6.ps1
+/mate3.ps1
+/mate6.ps1
+/ze3.ps1
+/ze6.ps1
+/zero3.ps1
+/zero6.ps1
