@@ -3321,3 +3321,9 @@ xnprnfzn.pw
 # Reference: https://hybrid-analysis.com/sample/309d6cd27991b14cffe004ffbf3844dec6e050e2ed1604558627fa3077599032
 
 gtagmanagers.com
+
+# Reference: https://securityaffairs.co/wordpress/111009/cyber-crime/sucuri-software-skimmer.html
+
+terminal4.veeblehosting.com/~sucurrin/i/gate.php
+/~sucurrin/
+/sucurrin/
