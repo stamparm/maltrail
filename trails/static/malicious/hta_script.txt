@@ -411,6 +411,10 @@
 
 /convert.hta
 
+# Reference: https://twitter.com/wwp96/status/1328087453392130052
+
+/windows.hta
+
 # Generic
 
 /myrrem.hta
