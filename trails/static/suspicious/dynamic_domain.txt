@@ -2535,6 +2535,10 @@ diskstation.org
 
 dyndnss.net
 
+# Reference: https://www.virustotal.com/gui/domain/dnsupdate.info/relations
+
+dnsupdate.info
+
 # Reference: https://www.virustotal.com/gui/domain/nsupdate.info/relations
 
 nsupdate.info
