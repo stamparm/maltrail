@@ -3313,3 +3313,11 @@ search-components.pw
 sexrura.pw
 tattoopad.pw
 xnprnfzn.pw
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.236.232.88/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.44.45.58/relations
+# Reference: https://otx.alienvault.com/indicator/domain/gtagmanagers.com
+# Reference: https://urlscan.io/result/fcd59e67-62ae-4d44-904a-51208ed82f3e
+# Reference: https://hybrid-analysis.com/sample/309d6cd27991b14cffe004ffbf3844dec6e050e2ed1604558627fa3077599032
+
+gtagmanagers.com
