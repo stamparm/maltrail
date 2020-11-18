@@ -3099,3 +3099,8 @@ ydns.eu
 # Reference: https://www.virustotal.com/gui/file/4cbec25c7a773ae8ddbbe65ab97209638d7006c1cf29b97bb76798eac5394ffe/detection
 
 qiniudns.com
+
+# Reference: https://app.any.run/tasks/5d51ce75-0740-4235-b508-47971cf23fa1/
+# Reference: https://www.virustotal.com/gui/domain/shacknet.us/relations
+
+shacknet.us
