@@ -1076,6 +1076,11 @@ donatelloflowfirstly.ga
 lowerbeforwarden.ml
 trendopportunityfollow.ga
 
+# Reference: https://twitter.com/unmaskparasites/status/1329490824875282432
+# Reference: https://www.virustotal.com/gui/ip-address/217.144.106.108/relations
+
+lovegreenpencils.ga
+
 # Reference: https://twitter.com/unmaskparasites/status/1291406328129298434
 # Reference: https://blog.sucuri.net/2020/07/reverse-string-woocommerce-wordpress-credit-card-swiper.html
 
