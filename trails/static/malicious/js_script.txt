@@ -1123,3 +1123,10 @@ googleads.store
 # Reference: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/operation-north-star-behind-the-scenes/
 
 /include/static/template-letter.asp
+
+# Reference: https://twitter.com/Circuitous__/status/1329218754979434496
+# Reference: https://www.virustotal.com/gui/file/3b9af7c880f01b0a4773fbc06867276b3121f3ad588dbcf73eb1552e9c0bd108/detection
+
+messaging-security.comano.us
+secure-messaging.comano.us
+comano.us
