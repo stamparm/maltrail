@@ -1991,6 +1991,8 @@ tunacan-812.tk
 
 # Reference: https://gist.github.com/silence-is-best/bb68598afd9713235d9b11eeaf79ff52
 
+/0cec3a12c251a5.php
+/9c5fbf42bfe4ed.php
 /e07ad886e055fb.php
 
 # Generic
