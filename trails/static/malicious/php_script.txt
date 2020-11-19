@@ -2024,6 +2024,10 @@ tunacan-812.tk
 /yleyzabdli.php
 /ymnsyebskq.php
 
+# Reference: https://twitter.com/ShadowChasing1/status/1329247256122322944
+
+/getCommand?guid=
+
 # Generic
 
 /7328-dating-verification-card.php
