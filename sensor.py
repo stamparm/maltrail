@@ -92,7 +92,6 @@ from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import VALID_DNS_NAME_REGEX
 from core.settings import trails
 from core.settings import VERSION
-from core.settings import WEB_SHELLS
 from core.settings import WHITELIST
 from core.settings import WHITELIST_DIRECT_DOWNLOAD_KEYWORDS
 from core.settings import WHITELIST_LONG_DOMAIN_NAME_KEYWORDS
@@ -602,8 +601,6 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 trail = "%s(%s)" % (host, path)
                                 if extension in SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS and not is_local(dst_ip) and not any(_ in path for _ in WHITELIST_DIRECT_DOWNLOAD_KEYWORDS) and '=' not in _.query and len(name) < 10:
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "direct %s download (suspicious)" % extension, "(heuristic)"), packet)
-                                elif filename in WEB_SHELLS:
-                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.URL, trail, "potential web shell (suspicious)", "(heuristic)"), packet)
                                 else:
                                     for desc, regex in SUSPICIOUS_HTTP_PATH_REGEXES:
                                         if re.search(regex, filename, re.I):
