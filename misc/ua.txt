@@ -1579,6 +1579,10 @@ PPPPPX
 FunWebProducts
 IE0006_ver1
 
+# Reference: https://us-cert.cisa.gov/ncas/analysis-reports/AR18-352A
+
+Mozilla/5.0 (Windows NT 6.3; rv:48.0) Gecko/20100101 Firefox/48.0
+
 # Misc
 
 information_schema
