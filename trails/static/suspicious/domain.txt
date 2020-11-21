@@ -5085,3 +5085,8 @@ pe.hu
 # Reference: https://www.virustotal.com/gui/domain/net579.com/relations
 
 net579.com
+
+# Reference: https://www.crowdstrike.com/blog/farewell-to-kelihos-and-zombie-spider/
+# Reference: https://www.virustotal.com/gui/domain/zfjvyfhw.ru/relations
+
+zfjvyfhw.ru
