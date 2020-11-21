@@ -3114,3 +3114,8 @@ jouin.xyz
 # Reference: https://www.virustotal.com/gui/domain/esentry.xyz/relations
 
 esentry.xyz
+
+# Reference: https://www.crowdstrike.com/blog/farewell-to-kelihos-and-zombie-spider/
+# Reference: https://www.virustotal.com/gui/domain/utbs.ws/relations
+
+utbs.ws
