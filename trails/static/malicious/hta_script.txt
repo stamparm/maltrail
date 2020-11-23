@@ -415,6 +415,10 @@
 
 /windows.hta
 
+# Reference: https://twitter.com/fr0s7_/status/1330828461196382215
+
+/evil.hta
+
 # Generic
 
 /myrrem.hta
