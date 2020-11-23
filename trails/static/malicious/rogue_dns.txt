@@ -502,3 +502,8 @@ resolve.interland.com
 
 109.234.35.230:53
 94.103.82.249:53
+
+# Reference: https://twitter.com/bad_packets/status/1330346587126632451
+
+158.69.37.88:53
+192.95.59.130:53
