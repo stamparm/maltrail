@@ -458,3 +458,7 @@ randomx.xmrig.com
 37.214.86.162:28734
 89.183.110.221:28734
 93.81.162.103:28734
+
+# Reference: https://twitter.com/r3dbU7z/status/1330843370244214784
+
+bizxmr.cc
