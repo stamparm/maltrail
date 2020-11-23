@@ -3109,3 +3109,13 @@ jouin.xyz
 66.18.1.46
 147.135.113.37
 147.135.115.88
+
+# Reference: https://twitter.com/malwrhunterteam/status/1329746585891315713/photo/2
+# Reference: https://www.virustotal.com/gui/domain/esentry.xyz/relations
+
+esentry.xyz
+
+# Reference: https://www.crowdstrike.com/blog/farewell-to-kelihos-and-zombie-spider/
+# Reference: https://www.virustotal.com/gui/domain/utbs.ws/relations
+
+utbs.ws
