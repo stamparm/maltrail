@@ -2031,6 +2031,7 @@ tunacan-812.tk
 # Reference: https://blog.malwarebytes.com/threat-analysis/2020/11/malsmoke-operators-abandon-exploit-kits-in-favor-of-social-engineering-scheme/
 
 /caflexactive.php
+/post.php?file=download
 
 # Generic
 
