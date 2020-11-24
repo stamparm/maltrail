@@ -1653,10 +1653,6 @@ myq-see.com
 
 thddns.net
 
-# Reference: https://twitter.com/ScumBots/status/1056727832037150727
-
-portmap.io
-
 # Reference: https://twitter.com/ScumBots/status/1105446350496432128
 
 ze.am
@@ -1703,10 +1699,6 @@ ddns.com.br
 winconnection.net
 minhaempresa.tv
 minhacasa.tv
-
-# Reference: https://twitter.com/ScumBots/status/1108054788804145153
-
-portmap.host
 
 # Reference: https://twitter.com/JAMESWT_MHT/status/1109090811801673730
 
