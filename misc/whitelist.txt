@@ -917,6 +917,15 @@ sophosxl.net
 
 # Generic
 
+petarkigabit.dyndns.org
+111osz7giux5phu7uz4yc3fe247fxn8hys17mge8.ddns.net
+remote1.easydns.com
+remote2.easydns.com
+mzmwireless.ddns.net
+nf420d.ddns.net
+tinovator.duckdns.org
+zsis.hopto.org
+thd8000.duckdns.org
 norefs.com
 app-measurement.com
 radio101.hr
