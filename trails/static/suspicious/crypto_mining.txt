@@ -462,3 +462,9 @@ randomx.xmrig.com
 # Reference: https://twitter.com/r3dbU7z/status/1330843370244214784
 
 bizxmr.cc
+
+# Reference: https://www.virustotal.com/gui/file/f2519c4978dd4339e0b625b875343bb4ae03c504268da799c4ec694802770585/detection
+
+198.50.152.135:6233
+198.50.168.213:6233
+mine.zpool.ca
