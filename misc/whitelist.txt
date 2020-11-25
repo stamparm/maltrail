@@ -917,6 +917,9 @@ sophosxl.net
 
 # Generic
 
+area.51.linkpc.net
+apcats.ddns.net
+partizan-cctv.com
 petarkigabit.dyndns.org
 111osz7giux5phu7uz4yc3fe247fxn8hys17mge8.ddns.net
 remote1.easydns.com
