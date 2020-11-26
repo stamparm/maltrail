@@ -3327,3 +3327,7 @@ gtagmanagers.com
 terminal4.veeblehosting.com/~sucurrin/i/gate.php
 /~sucurrin/
 /sucurrin/
+
+# Reference: https://twitter.com/rootprivilege/status/1331766420317773826
+
+zago-store.vn/pub/health_check.php
