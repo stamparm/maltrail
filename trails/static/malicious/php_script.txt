@@ -2033,6 +2033,10 @@ tunacan-812.tk
 /caflexactive.php
 /post.php?file=download
 
+# Reference: https://twitter.com/malwrhunterteam/status/1331888599231565825
+
+/o365server.php
+
 # Generic
 
 /7328-dating-verification-card.php
