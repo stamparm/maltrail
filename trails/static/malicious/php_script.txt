@@ -2037,6 +2037,10 @@ tunacan-812.tk
 
 /o365server.php
 
+# Reference: https://twitter.com/linecon0/status/1268862151214710787
+
+/112254.php
+
 # Generic
 
 /7328-dating-verification-card.php
