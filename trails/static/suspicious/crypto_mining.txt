@@ -486,4 +486,6 @@ mine.zpool.ca
 
 # Reference: https://www.virustotal.com/gui/file/a037c15659d91a7555fbd0ec17978c26f7974ea66909c8732629c4a1ec961f14/detection
 
+209.141.35.17:8080
+66.70.218.40:8080
 xmr.givemexyz.in
