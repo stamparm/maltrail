@@ -927,7 +927,6 @@ remote2.easydns.com
 mzmwireless.ddns.net
 nf420d.ddns.net
 tinovator.duckdns.org
-zsis.hopto.org
 thd8000.duckdns.org
 norefs.com
 app-measurement.com
