@@ -483,3 +483,7 @@ bizxmr.cc
 149.56.122.79:6234
 192.99.203.53:6234
 mine.zpool.ca
+
+# Reference: https://www.virustotal.com/gui/file/a037c15659d91a7555fbd0ec17978c26f7974ea66909c8732629c4a1ec961f14/detection
+
+xmr.givemexyz.in
