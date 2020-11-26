@@ -5090,3 +5090,7 @@ net579.com
 # Reference: https://www.virustotal.com/gui/domain/zfjvyfhw.ru/relations
 
 zfjvyfhw.ru
+
+# Reference: https://www.virustotal.com/gui/domain/vvwvv.tk/detection
+
+vvwvv.tk
