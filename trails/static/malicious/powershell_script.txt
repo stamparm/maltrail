@@ -330,3 +330,7 @@
 /ze6.ps1
 /zero3.ps1
 /zero6.ps1
+
+# Reference: https://www.virustotal.com/gui/domain/xmr.givemexyz.in/relations
+
+/kkwx.ps1
