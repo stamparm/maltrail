@@ -2046,6 +2046,10 @@ tunacan-812.tk
 /blvcksn0vv.php
 /xxx.php?user=
 
+# Reference: https://www.virustotal.com/gui/file/b858e24eac464afd49d6bf782557f946b03e5e97431a1987b09b0203b5636c97/detection
+
+/Conumer1PirloS2S.php
+
 # Generic
 
 /7328-dating-verification-card.php
