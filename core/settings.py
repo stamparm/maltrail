@@ -21,7 +21,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.26.31"
+VERSION = "0.26.32"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 IS_SENSOR = sys.argv[0].startswith("sensor")
@@ -314,13 +314,13 @@ def read_config(config_file):
             exit("[!] missing 'USER_WHITELIST' file '%s'" % config.USER_WHITELIST)
         else:
             read_whitelist()
-            
+
     if config.USER_IGNORELIST:
         if not os.path.isfile(config.USER_IGNORELIST):
             exit("[!] missing 'USER_IGNORELIST' file '%s'" % config.USER_IGNORELIST)
         else:
             read_ignorelist()
-            
+
     config.PROCESS_COUNT = int(config.PROCESS_COUNT or CPU_CORES)
 
     if config.USE_MULTIPROCESSING:
@@ -410,7 +410,7 @@ def read_whitelist():
                         WHITELIST.add(line)
                 else:
                     WHITELIST.add(line)
-                    
+
 # add rules to ignore event list from passed file
 def add_ignorelist(filepath):
     if filepath and os.path.isfile(filepath):
@@ -423,16 +423,16 @@ def add_ignorelist(filepath):
                 elif line.count(';') == 3:
                     src_ip, src_port, dst_ip, dst_port = line.split(';')
                     IGNORE_EVENTS.add((src_ip, src_port, dst_ip, dst_port))
-                                           
+
 def read_ignorelist():
     IGNORE_EVENTS.clear()
-    
+
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "ignore_events.txt"))
     add_ignorelist(_)
-                        
+
     if config.USER_IGNORELIST and os.path.isfile(config.USER_IGNORELIST):
         add_ignorelist(config.USER_IGNORELIST)
-    
+
 def read_ua():
     global SUSPICIOUS_UA_REGEX
 
