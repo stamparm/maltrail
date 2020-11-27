@@ -385,7 +385,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                         index = tcp_data.find("<title>")
                         if index >= 0:
                             title = tcp_data[index + len("<title>"):tcp_data.find("</title>", index)]
-                            if all(_ in title.lower() for _ in ("this domain", "has been seized")):
+                            if re.search(r"domain name has been seized by|Domain Seized|Domain Seizure", title):
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, title, "seized domain (suspicious)", "(heuristic)"), packet)
 
                     content_type = None
@@ -513,6 +513,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                         unquoted_post_data = _urllib.parse.unquote(post_data or "")
 
                         checks = [path.rstrip('/')]
+
                         if '?' in path:
                             checks.append(path.split('?')[0].rstrip('/'))
 
@@ -526,10 +527,6 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     checks.append("/%s" % _.split('/')[-1])
                         elif post_data:
                             checks.append("%s?%s" % (path, unquoted_post_data.lower()))
-
-                        #_ = os.path.splitext(checks[-1])       # causing FPs in cases like elf_mirai - /juno if legit /juno.php is accessed
-                        #if _[1]:
-                            #checks.append(_[0])
 
                         if checks[-1].count('/') > 1:
                             checks.append(checks[-1][:checks[-1].rfind('/')])
@@ -856,7 +853,7 @@ def init():
                 if re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, re.I):
                     try:
                         re.compile(trail)
-                    except:
+                    except re.error:
                         pass
                     else:
                         if re.escape(trail) != trail:
