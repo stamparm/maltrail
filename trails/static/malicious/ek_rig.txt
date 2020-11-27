@@ -243,6 +243,10 @@ wezdes2pope.top
 
 http://185.150.117.129
 
+# Reference: https://twitter.com/nao_sec/status/1332097156434391040
+
+http://95.216.179.33
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
