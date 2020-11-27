@@ -163,9 +163,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         self.send_header(HTTP_HEADER.LAST_MODIFIED, last_modified)
 
                         # For CSP policy directives see: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/
-                        self.send_header(HTTP_HEADER.CONTENT_SECURITY_POLICY, "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src * blob:; " +
-                                                                              "script-src 'self' 'unsafe-eval' https://stat.ripe.net; " +
-                                                                              "frame-src *; object-src 'none'; block-all-mixed-content;")
+                        self.send_header(HTTP_HEADER.CONTENT_SECURITY_POLICY, "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src * blob:; script-src 'self' 'unsafe-eval' https://stat.ripe.net; frame-src *; object-src 'none'; block-all-mixed-content;")
+
                         if extension not in (".htm", ".html"):
                             self.send_header(HTTP_HEADER.EXPIRES, "Sun, 17-Jan-2038 19:14:07 GMT")        # Reference: http://blog.httpwatch.com/2007/12/10/two-simple-rules-for-http-caching/
                             self.send_header(HTTP_HEADER.CACHE_CONTROL, "max-age=3600, must-revalidate")  # Reference: http://stackoverflow.com/a/5084555
@@ -185,7 +184,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     name = match.group(1).decode(UNICODE_ENCODING)
                     _ = getattr(self, "_%s" % name.lower(), None)
                     if _:
-                        content = self._format(content, **{ name: _() })
+                        content = self._format(content, **{name: _()})
 
                 if "gzip" in self.headers.get(HTTP_HEADER.ACCEPT_ENCODING, ""):
                     self.send_header(HTTP_HEADER.CONTENT_ENCODING, "gzip")

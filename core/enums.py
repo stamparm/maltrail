@@ -10,8 +10,8 @@ import sys
 from thirdparty import six
 
 class _(type):
-   def __getattr__(self, attr):
-     return attr
+    def __getattr__(self, attr):
+        return attr
 
 @six.add_metaclass(_)
 class TRAIL(object):

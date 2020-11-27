@@ -96,12 +96,12 @@ def update_trails(force=False, offline=False):
 
     else:
         trail_files = set()
-        for dirpath, dirnames, filenames in os.walk(os.path.abspath(os.path.join(ROOT_DIR, "trails"))) :
+        for dirpath, dirnames, filenames in os.walk(os.path.abspath(os.path.join(ROOT_DIR, "trails"))):
             for filename in filenames:
                 trail_files.add(os.path.abspath(os.path.join(dirpath, filename)))
 
         if config.CUSTOM_TRAILS_DIR:
-            for dirpath, dirnames, filenames in os.walk(os.path.abspath(os.path.join(ROOT_DIR, os.path.expanduser(config.CUSTOM_TRAILS_DIR)))) :
+            for dirpath, dirnames, filenames in os.walk(os.path.abspath(os.path.join(ROOT_DIR, os.path.expanduser(config.CUSTOM_TRAILS_DIR)))):
                 for filename in filenames:
                     trail_files.add(os.path.abspath(os.path.join(dirpath, filename)))
 
@@ -182,7 +182,7 @@ def update_trails(force=False, offline=False):
                     if not url:
                         continue
 
-                    url = ("http://%s" % url) if not "//" in url else url
+                    url = ("http://%s" % url) if "//" not in url else url
                     content = retrieve_content(url)
 
                     if not content:
