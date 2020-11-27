@@ -166,7 +166,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
     if query.replace('.', "").isdigit():  # IP address
         return
 
-    if _result_cache.get((CACHE_TYPE.DOMAIN, query)) == False:
+    if _result_cache.get((CACHE_TYPE.DOMAIN, query)) is False:
         return
 
     result = False
@@ -238,7 +238,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
 
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[candidate][0], trails[candidate][1]), packet)
 
-    if result == False:
+    if result is False:
         _result_cache[(CACHE_TYPE.DOMAIN, query)] = False
 
 def _get_local_prefix():
@@ -321,7 +321,7 @@ def _process_packet(packet, sec, usec, ip_offset):
             return
 
         if protocol == socket.IPPROTO_TCP:  # TCP
-            src_port, dst_port, _, _, doff_reserved, flags = struct.unpack("!HHLLBB", ip_data[iph_length:iph_length+14])
+            src_port, dst_port, _, _, doff_reserved, flags = struct.unpack("!HHLLBB", ip_data[iph_length:iph_length + 14])
 
             if flags != 2 and config.plugin_functions:
                 if dst_ip in trails:
