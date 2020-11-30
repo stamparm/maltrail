@@ -2043,6 +2043,11 @@ tunacan-812.tk
 
 /Conumer1PirloS2S.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1309044455018725381
+# Reference: https://twitter.com/MaelSecurity/status/1333312479129202688
+
+/PayPal_Desktop.php
+
 # Generic
 
 /7328-dating-verification-card.php
