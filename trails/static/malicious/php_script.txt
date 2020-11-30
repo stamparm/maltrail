@@ -2048,6 +2048,11 @@ tunacan-812.tk
 
 /PayPal_Desktop.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1333499691674329093
+
+/avgaxrtjzt.php
+/vnrlvvxwej.php
+
 # Generic
 
 /7328-dating-verification-card.php
