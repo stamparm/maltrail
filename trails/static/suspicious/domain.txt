@@ -5094,3 +5094,7 @@ zfjvyfhw.ru
 # Reference: https://www.virustotal.com/gui/domain/vvwvv.tk/detection
 
 vvwvv.tk
+
+# Reference: https://www.virustotal.com/gui/domain/tbfull.com/relations
+
+tbfull.com
