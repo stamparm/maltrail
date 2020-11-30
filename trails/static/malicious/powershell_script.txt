@@ -334,3 +334,7 @@
 # Reference: https://www.virustotal.com/gui/domain/xmr.givemexyz.in/relations
 
 /kkwx.ps1
+
+# Reference: https://twitter.com/jorgemieres/status/1333417189005799424
+
+/powershell.ps1
