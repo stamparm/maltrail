@@ -915,6 +915,15 @@ resl.emailreg.org
 ips.whitelisted.org
 sophosxl.net
 
+# FPs by minesweeper
+
+binance.com
+gemius.pl
+coinbase.com
+exdynsrv.com
+vkcdnservice.com
+thepiratebay.org
+
 # Generic
 
 area.51.linkpc.net
