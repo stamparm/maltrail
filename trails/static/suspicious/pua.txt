@@ -2562,3 +2562,7 @@ cooctdlfast.com
 # Reference: https://www.virustotal.com/gui/file/13c3bb8e213e007e97fb1fb062d038d36033e2a621403a72333c34001a9abe18/detection
 
 themarketingadscenter.com
+
+# Reference: https://www.virustotal.com/gui/file/d7708009dab68d023994b50e5ac57008ca0ad92f1cc77740a3355b2e290db364/detection
+
+bestxserver.com
