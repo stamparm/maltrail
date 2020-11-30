@@ -1383,15 +1383,6 @@ tunacan-812.tk
 
 /eweerew.php
 
-# Reference: https://www.virustotal.com/gui/file/d920f89a4d8ae2f2cc597779c57e515c0f9451a66ecdaeef35169f6d0a43a35d/detection
-
-/us1jdskjdshfkjehr.php
-
-# Reference: https://www.virustotal.com/gui/domain/ultraspeed.info/relations
-
-/momomoomomom.php
-/usksdjqjwjoweidjcslkm.php
-
 # Reference: https://twitter.com/MalwarePatrol/status/1241592719576829952
 
 /9epq78sao4h2v1jpywaj2tai.php
@@ -1407,11 +1398,13 @@ tunacan-812.tk
 # Reference: https://twitter.com/DynamicAnalysis/status/1245437394473582593
 # Reference: https://twitter.com/DynamicAnalysis/status/1247570159939747846
 # Reference: https://twitter.com/DynamicAnalysis/status/1247916030183247872
+# Reference: https://twitter.com/malware_traffic/status/1332410802641514496
 
 /in2d2d.php
 /wp-cran.php
 /wp-crun.php
 /wp-cryn.php
+/wp-punch.php
 
 # Reference: https://www.virustotal.com/gui/domain/webcindario0.dvrdns.org/relations
 
@@ -2045,6 +2038,15 @@ tunacan-812.tk
 
 /blvcksn0vv.php
 /xxx.php?user=
+
+# Reference: https://www.virustotal.com/gui/file/b858e24eac464afd49d6bf782557f946b03e5e97431a1987b09b0203b5636c97/detection
+
+/Conumer1PirloS2S.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1309044455018725381
+# Reference: https://twitter.com/MaelSecurity/status/1333312479129202688
+
+/PayPal_Desktop.php
 
 # Generic
 
