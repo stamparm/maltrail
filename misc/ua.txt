@@ -1583,6 +1583,10 @@ IE0006_ver1
 
 Mozilla/5.0 (Windows NT 6.3; rv:48.0) Gecko/20100101 Firefox/48.0
 
+# Reference: https://otx.alienvault.com/indicator/file/d4d20470dd63b7365d586012afe09bcb2617264f9ba05e991c85b24838fcef81
+
+SE2.XMetaSr
+
 # Misc
 
 information_schema
