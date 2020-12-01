@@ -915,7 +915,7 @@ resl.emailreg.org
 ips.whitelisted.org
 sophosxl.net
 
-# FPs by minesweeper
+# Generic
 
 binance.com
 gemius.pl
@@ -923,9 +923,6 @@ coinbase.com
 exdynsrv.com
 vkcdnservice.com
 thepiratebay.org
-
-# Generic
-
 area.51.linkpc.net
 apcats.ddns.net
 partizan-cctv.com
