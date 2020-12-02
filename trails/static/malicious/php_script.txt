@@ -2061,6 +2061,10 @@ tunacan-812.tk
 
 /logsgate.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1334228104995352578
+
+/8suu7672mgcg1ws7n4222vpj.php
+
 # Generic
 
 /7328-dating-verification-card.php
