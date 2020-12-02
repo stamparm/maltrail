@@ -212,3 +212,8 @@ all-tracker.appspot.com
 c.sayhi.360.cn
 ebjvu.cn
 ez4q2.cn
+
+# Reference: https://www.virustotal.com/gui/file/065a303228aedaa959590458411e3903320fc43b580ef59dbda6b010d29eead1/behavior/VirusTotal%20Droidy
+
+android.bugly.qq.com
+config.saffffedk.com
