@@ -419,6 +419,10 @@
 
 /evil.hta
 
+# Reference: https://twitter.com/jstrosch/status/1333935819380416512
+
+/invoice.hta
+
 # Generic
 
 /myrrem.hta
