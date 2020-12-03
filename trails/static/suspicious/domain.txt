@@ -5098,3 +5098,8 @@ vvwvv.tk
 # Reference: https://www.virustotal.com/gui/domain/tbfull.com/relations
 
 tbfull.com
+
+# Reference: https://twitter.com/ScumBots/status/1334328329793638401
+# Reference: https://github.com/stamparm/maltrail/pull/12730/commits/e1c1fb9564ae22bd93cba76188d923768301ac64
+
+majnetgroup.net
