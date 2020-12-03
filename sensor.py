@@ -173,14 +173,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
     if re.search(VALID_DNS_NAME_REGEX, query) is not None and not _check_domain_whitelisted(query):
         parts = query.split('.')
 
-        if ".onion." in query:
-            trail = re.sub(r"(\.onion)(\..*)", r"\1(\2)", query)
-            _ = trail.split('(')[0]
-            if _ in trails:
-                result = True
-                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[_][0], trails[_][1]), packet)
-
-        elif query.endswith(".ip-adress.com"):  # Reference: https://www.virustotal.com/gui/domain/ip-adress.com/relations
+        if query.endswith(".ip-adress.com"):  # Reference: https://www.virustotal.com/gui/domain/ip-adress.com/relations
             _ = '.'.join(parts[:-2])
             trail = "%s(.ip-adress.com)" % _
             if _ in trails:
@@ -237,6 +230,13 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
                     trail = trail.replace(".)", ").")
 
                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[candidate][0], trails[candidate][1]), packet)
+
+        if not result and ".onion." in query:
+            trail = re.sub(r"(\.onion)(\..*)", r"\1(\2)", query)
+            _ = trail.split('(')[0]
+            if _ in trails:
+                result = True
+                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[_][0], trails[_][1]), packet)
 
     if result is False:
         _result_cache[(CACHE_TYPE.DOMAIN, query)] = False
