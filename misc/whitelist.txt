@@ -261,6 +261,7 @@ googleapis.com
 google.com
 googlesyndication.com
 gpsonextra.net
+grandstream.com
 gvt1.com
 here.com
 hitmanpro.com
@@ -269,7 +270,9 @@ htc.com
 intel.com
 izatcloud.net
 justbasic.com
+jutarnji.hr
 kmplayer.com
+layers.isu.pub
 lenovo.com
 lexmark.com
 logitech.com
@@ -308,6 +311,7 @@ toshiba.com
 tucows.com
 vba.com.by
 videolan.org
+wgt.com
 windowsupdate.com
 win-rar.com
 winzip.com
