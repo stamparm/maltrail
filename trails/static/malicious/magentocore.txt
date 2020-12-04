@@ -3341,3 +3341,14 @@ googletage.com
 indesiter.com
 tag-metrix.com
 tawktalk.com
+
+# Reference: https://twitter.com/AffableKraut/status/1334745410750046208
+
+abcanalytics.net
+adsymptotic.net
+artestfut.com
+artfut.net
+iofrontcloud.com
+outbrains.net
+upsellit.io
+zdassets.net
