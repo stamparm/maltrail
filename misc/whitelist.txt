@@ -1417,8 +1417,11 @@ forum-u-232.servebeer.com
 
 cfg.cml.ksmobile.com
 
+# Reference: https://docs.fortinet.com/vm/xen/fortigate/6.2/xen-cookbook/6.2.0/615472/configuring-port-1
+# Reference: https://www.virustotal.com/gui/ip-address/208.91.112.52/details (# DNS address of Fortinet)
 # Reference: https://www.virustotal.com/gui/ip-address/208.91.112.53/details (# DNS address of Fortinet)
 
+208.91.112.52
 208.91.112.53
 
 # AppleID resource
@@ -3137,3 +3140,7 @@ esentry.xyz
 # Reference: https://www.virustotal.com/gui/domain/utbs.ws/relations
 
 utbs.ws
+
+# Reference: https://securelist.com/what-did-deathstalker-hide-between-two-ferns/99616/
+
+1drv.ws
