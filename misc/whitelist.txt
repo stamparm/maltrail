@@ -3140,3 +3140,7 @@ esentry.xyz
 # Reference: https://www.virustotal.com/gui/domain/utbs.ws/relations
 
 utbs.ws
+
+# Reference: https://securelist.com/what-did-deathstalker-hide-between-two-ferns/99616/
+
+1drv.ws
