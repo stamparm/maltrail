@@ -3354,7 +3354,10 @@ upsellit.io
 zdassets.net
 
 # Reference: https://twitter.com/EKFiddle/status/1334908783894491138
+# Reference: https://twitter.com/rootprivilege/status/1335018000227868672
 # Reference: https://sansec.io/research/svg-malware
 
 budoshop.si/checkout/%7B%7BMEDIA_URL%7D%7Dstyles.css
 budoshop.si/pub/health_check.php
+myfisherstore.com/checkout/%7B%7BMEDIA_URL%7D%7Dstyles.css
+myfisherstore.com/pub/health_check.php
