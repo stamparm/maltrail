@@ -3361,3 +3361,10 @@ budoshop.si/checkout/%7B%7BMEDIA_URL%7D%7Dstyles.css
 budoshop.si/pub/health_check.php
 myfisherstore.com/checkout/%7B%7BMEDIA_URL%7D%7Dstyles.css
 myfisherstore.com/pub/health_check.php
+
+# Reference: https://twitter.com/AffableKraut/status/1335501765031174145
+
+jquerycdn.net
+jquerycss.xyz
+jquerysapi.com
+js-jquery.com
