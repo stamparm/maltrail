@@ -3363,8 +3363,10 @@ myfisherstore.com/checkout/%7B%7BMEDIA_URL%7D%7Dstyles.css
 myfisherstore.com/pub/health_check.php
 
 # Reference: https://twitter.com/AffableKraut/status/1335501765031174145
+# Reference: https://www.virustotal.com/gui/ip-address/51.89.179.232/relations
 
 jquerycdn.net
 jquerycss.xyz
 jquerysapi.com
 js-jquery.com
+jslibcdn.net
