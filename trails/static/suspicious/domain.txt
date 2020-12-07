@@ -5103,3 +5103,8 @@ tbfull.com
 # Reference: https://github.com/stamparm/maltrail/pull/12730/commits/e1c1fb9564ae22bd93cba76188d923768301ac64
 
 majnetgroup.net
+
+# Reference: https://twitter.com/lazyactivist192/status/1168582672752566279
+# Reference: https://www.virustotal.com/gui/domain/yototoo.com/relations
+
+yototoo.com
