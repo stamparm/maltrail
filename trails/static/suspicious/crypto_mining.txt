@@ -489,3 +489,7 @@ mine.zpool.ca
 209.141.35.17:8080
 66.70.218.40:8080
 xmr.givemexyz.in
+
+# Reference: https://www.virustotal.com/gui/ip-address/3.120.98.217/relations
+
+3.120.98.217:8080
