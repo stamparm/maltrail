@@ -18,3 +18,7 @@ yahoipp.com
 bamyatv.com
 ggmovi.com
 sznamu.com
+
+# Reference: https://twitter.com/MalwareCantFly/status/938403073902473217
+
+korearac.com
