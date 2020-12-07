@@ -338,3 +338,7 @@
 # Reference: https://twitter.com/jorgemieres/status/1333417189005799424
 
 /powershell.ps1
+
+# Reference: https://twitter.com/wwp96/status/1331067128150102016
+
+/file.ps1
