@@ -3096,3 +3096,7 @@ qiniudns.com
 # Reference: https://www.virustotal.com/gui/domain/shacknet.us/relations
 
 shacknet.us
+
+# Reference: https://www.virustotal.com/gui/domain/kvrddns.com/relations
+
+kvrddns.com
