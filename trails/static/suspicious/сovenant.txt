@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/cobbr/Covenant
+# Reference: https://twitter.com/1ZRR4H/status/1333606625551192064
+
+45.83.176.85:7443
+
+# Generic
+
+/covenantuser/
+/covenantuser/login
