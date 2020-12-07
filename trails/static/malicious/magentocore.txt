@@ -3381,7 +3381,6 @@ magento-security.co.za
 marketplace-magento.co.za
 marketplacemagento.co.za
 node-js.co.za
-node-js.co.za
 payment-js.co.za
 security-js.co.za
 web-js.co.za
