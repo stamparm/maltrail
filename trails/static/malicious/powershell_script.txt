@@ -342,3 +342,7 @@
 # Reference: https://twitter.com/wwp96/status/1331067128150102016
 
 /file.ps1
+
+# Reference: https://twitter.com/InQuest/status/1335991964525858817
+
+/xpn.ps1
