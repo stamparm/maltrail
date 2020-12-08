@@ -3384,3 +3384,11 @@ node-js.co.za
 payment-js.co.za
 security-js.co.za
 web-js.co.za
+
+# Reference: https://twitter.com/sansecio/status/1336319799501078529
+
+cdn-jquery.co.za
+cdn-js.co.za
+g00gle.org.za
+g00gle.web.za
+google-script.org.za
