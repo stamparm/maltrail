@@ -3403,3 +3403,7 @@ google-script.web.za
 google-scripts.co.za
 google-scripts.org.za
 google-scripts.web.za
+
+# Reference: https://www.virustotal.com/gui/ip-address/169.239.182.46/relations
+
+google-statistic.com
