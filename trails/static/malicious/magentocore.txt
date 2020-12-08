@@ -3392,3 +3392,4 @@ cdn-js.co.za
 g00gle.org.za
 g00gle.web.za
 google-script.org.za
+google-scripts.co.za
