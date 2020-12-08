@@ -3390,6 +3390,7 @@ web-js.co.za
 cdn-jquery.co.za
 cdn-js.co.za
 js-google.co.za
+g00gle.africa
 g00gle.org.za
 g00gle.web.za
 google-script.org.za
