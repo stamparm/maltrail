@@ -3432,5 +3432,9 @@ opera.org.za
 yah00.co.za
 
 # Reference: https://www.virustotal.com/gui/ip-address/169.239.182.46/relations
+# Reference: https://twitter.com/AffableKraut/status/1336352752478334977
 
 google-statistic.com
+google-statistic.net
+yahoo-statistic.com
+yahoo-statistic.net
