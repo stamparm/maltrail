@@ -3371,7 +3371,7 @@ jquerysapi.com
 js-jquery.com
 jslibcdn.net
 
-# Reference: https://www.group-ib.com/blog/fakesecurity_raccoon
+# Reference: https://www.group-ib.com/blog/fakesecurity_raccoon (# FakeSecurity)
 
 cloud-js.co.za
 host-js.co.za
@@ -3385,7 +3385,7 @@ payment-js.co.za
 security-js.co.za
 web-js.co.za
 
-# Reference: https://twitter.com/sansecio/status/1336319799501078529
+# Reference: https://twitter.com/sansecio/status/1336319799501078529 (# FakeSecurity)
 
 cdn-jquery.co.za
 cdn-js.co.za
