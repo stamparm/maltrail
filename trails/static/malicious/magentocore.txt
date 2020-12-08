@@ -3438,3 +3438,8 @@ google-statistic.com
 google-statistic.net
 yahoo-statistic.com
 yahoo-statistic.net
+
+# Reference: https://twitter.com/500mk500/status/1336333922213404673
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.99.195/relations
+
+comepropay54.net
