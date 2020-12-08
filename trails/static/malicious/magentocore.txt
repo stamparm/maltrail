@@ -3387,6 +3387,7 @@ web-js.co.za
 
 # Reference: https://twitter.com/sansecio/status/1336319799501078529 (# FakeSecurity)
 
+bing-statistic.co.za
 cdn-jquery.co.za
 cdn-js.co.za
 js-google.co.za
