@@ -28,6 +28,7 @@
 - [Requirements](#requirements)
 - [Best practice(s)](#best-practices)
 - [License](#license)
+- [Sponsors](#sponsors)
 - [Developers](#developers)
 - [Presentations](#presentations)
 - [Blacklist](#blacklist)
@@ -649,6 +650,10 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**,
 ## License
 
 This software is provided under a MIT License. See the accompanying [LICENSE](https://github.com/stamparm/maltrail/blob/master/LICENSE) file for more information.
+
+## Sponsors
+
+* [Sansec](https://sansec.io/)
 
 ## Developers
 
