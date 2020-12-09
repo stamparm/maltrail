@@ -3157,8 +3157,10 @@ yahoo-manager.com
 yahoo-tasks.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/47.245.128.230/relations
+# Reference: https://www.virustotal.com/gui/ip-address/84.38.181.56/relations
 
 cdnanalyticss.top
+google-picaso.com
 promakerboi.top
 
 # Reference: https://twitter.com/AffableKraut/status/1313600312045907973
@@ -3443,3 +3445,17 @@ yahoo-statistic.net
 # Reference: https://www.virustotal.com/gui/ip-address/8.208.99.195/relations
 
 comepropay54.net
+
+# Reference: https://twitter.com/sansecio/status/1336614850047381506
+# Reference: https://www.virustotal.com/gui/ip-address/89.108.90.123/relations
+
+cloud-iq.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/89.108.90.125/relations
+
+brandcdn.net
+
+# Reference: https://twitter.com/kyleehmke/status/1336694242685702147
+
+google-register.com
+webspagestat.com
