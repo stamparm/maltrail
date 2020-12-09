@@ -3448,3 +3448,7 @@ comepropay54.net
 # Reference: https://www.virustotal.com/gui/ip-address/89.108.90.123/relations
 
 cloud-iq.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/89.108.90.125/relations
+
+brandcdn.net
