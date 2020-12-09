@@ -3157,8 +3157,10 @@ yahoo-manager.com
 yahoo-tasks.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/47.245.128.230/relations
+# Reference: https://www.virustotal.com/gui/ip-address/84.38.181.56/relations
 
 cdnanalyticss.top
+google-picaso.com
 promakerboi.top
 
 # Reference: https://twitter.com/AffableKraut/status/1313600312045907973
