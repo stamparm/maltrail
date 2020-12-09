@@ -3371,7 +3371,7 @@ jquerysapi.com
 js-jquery.com
 jslibcdn.net
 
-# Reference: https://www.group-ib.com/blog/fakesecurity_raccoon
+# Reference: https://www.group-ib.com/blog/fakesecurity_raccoon (# FakeSecurity)
 
 cloud-js.co.za
 host-js.co.za
@@ -3384,3 +3384,62 @@ node-js.co.za
 payment-js.co.za
 security-js.co.za
 web-js.co.za
+
+# Reference: https://twitter.com/sansecio/status/1336319799501078529 (# FakeSecurity)
+# Reference: https://twitter.com/AffableKraut/status/1336342947613306881
+
+bing-statistic.co.za
+bing-statistic.org.za
+bing-statistic.web.za
+cdn-jquery.co.za
+cdn-js.co.za
+chrome.co.za
+chrome.org.za
+chrome.web.za
+font-google.co.za
+g00gle.africa
+g00gle.co.za
+g00gle.org.za
+g00gle.web.za
+godaddy.co.za
+godaddy.org.za
+google-script.co.za
+google-script.org.za
+google-script.web.za
+google-scripts.co.za
+google-scripts.org.za
+google-scripts.web.za
+javascript.co.za
+javascript.org.za
+javascript.web.za
+js-google.co.za
+magent0.co.za
+magent0.org.za
+magent0.web.za
+magento-connect.co.za
+magento-connect.org.za
+magento-connect.web.za
+magento-content.co.za
+magento-content.org.za
+magento-content.web.za
+microsoft.org.za
+microsoft.web.za
+mozilla.co.za
+mozilla.org.za
+mozilla.web.za
+opera.co.za
+opera.org.za
+yah00.co.za
+
+# Reference: https://www.virustotal.com/gui/ip-address/169.239.182.46/relations
+# Reference: https://twitter.com/AffableKraut/status/1336352752478334977
+
+google-statistic.com
+google-statistic.net
+yahoo-statistic.com
+yahoo-statistic.net
+
+# Reference: https://twitter.com/500mk500/status/1336333922213404673
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.99.195/relations
+
+comepropay54.net
