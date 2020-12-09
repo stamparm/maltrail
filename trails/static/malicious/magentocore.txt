@@ -3452,3 +3452,8 @@ cloud-iq.net
 # Reference: https://www.virustotal.com/gui/ip-address/89.108.90.125/relations
 
 brandcdn.net
+
+# Reference: https://twitter.com/kyleehmke/status/1336694242685702147
+
+google-register.com
+webspagestat.com
