@@ -3443,3 +3443,8 @@ yahoo-statistic.net
 # Reference: https://www.virustotal.com/gui/ip-address/8.208.99.195/relations
 
 comepropay54.net
+
+# Reference: https://twitter.com/sansecio/status/1336614850047381506
+# Reference: https://www.virustotal.com/gui/ip-address/89.108.90.123/relations
+
+cloud-iq.net
