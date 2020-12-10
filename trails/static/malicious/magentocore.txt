@@ -3394,17 +3394,24 @@ bing-statistic.co.za
 bing-statistic.org.za
 bing-statistic.web.za
 cdn-jquery.co.za
+cdn-jquery.org.za
+cdn-jquery.web.za
 cdn-js.co.za
+cdn-js.org.za
+cdn-js.web.za
 chrome.co.za
 chrome.org.za
 chrome.web.za
 font-google.co.za
+font-google.org.za
+font-google.web.za
 g00gle.africa
 g00gle.co.za
 g00gle.org.za
 g00gle.web.za
 godaddy.co.za
 godaddy.org.za
+godaddy.web.za
 google-script.co.za
 google-script.org.za
 google-script.web.za
@@ -3415,6 +3422,8 @@ javascript.co.za
 javascript.org.za
 javascript.web.za
 js-google.co.za
+js-google.org.za
+js-google.web.za
 magent0.co.za
 magent0.org.za
 magent0.web.za
@@ -3424,6 +3433,7 @@ magento-connect.web.za
 magento-content.co.za
 magento-content.org.za
 magento-content.web.za
+microsoft.co.za
 microsoft.org.za
 microsoft.web.za
 mozilla.co.za
@@ -3431,7 +3441,10 @@ mozilla.org.za
 mozilla.web.za
 opera.co.za
 opera.org.za
+opera.web.za
 yah00.co.za
+yah00.org.za
+yah00.web.za
 
 # Reference: https://www.virustotal.com/gui/ip-address/169.239.182.46/relations
 # Reference: https://twitter.com/AffableKraut/status/1336352752478334977
