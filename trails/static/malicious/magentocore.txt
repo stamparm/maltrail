@@ -3476,3 +3476,57 @@ brandcdn.net
 
 google-register.com
 webspagestat.com
+
+# Reference: https://twitter.com/AffableKraut/status/1337485794940956675
+# Reference: https://twitter.com/AffableKraut/status/1337491084960739329
+# Reference: https://twitter.com/500mk500/status/1337499684370255872
+# Reference: https://pastebin.com/Xf4iGu9q
+
+adrequest.xyz
+agrorek.site
+apiiiiii.com
+appraisalqpm.com
+artifacia.store
+bigdomain.in
+businesslocationfinder.org
+cloudfront.pro
+comebizframe.com
+evamedia.top
+evanalitic.com
+g-content.bid
+golecode.com
+gooaglesyndication.com
+google-stupidix.com
+googleadservicees.com
+googleais.com
+googlecodelibs.com
+googlesyndicatiofn.com
+googlesyndiction.com
+googletagmanag-er.com
+googlgr.com
+googlnalytics.com
+gytmoogletagmanager.com
+hs-script.com
+html5update.com
+javascriptcdn.stream
+jquerry.online
+jquerytutorialjs.com
+jss-mautic.com
+koobecaf.info
+mediapays.info
+ml-api.pw
+nearsightedraccoon.com
+polygons.cloud
+professionalcdn.com
+raku10shop.net
+realtracking.ninja
+removeclickfunnels.com
+rotate4ads.com
+seetestnow.com
+sitespy.in
+sublytics-5d6fcf0a813fd.com
+thesqt.online
+trackedlink.biz
+visitorhunter.com
+weathers.pw
+xhtmls.cc
