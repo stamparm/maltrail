@@ -3530,3 +3530,8 @@ trackedlink.biz
 visitorhunter.com
 weathers.pw
 xhtmls.cc
+
+# Reference: https://twitter.com/jfslowik/status/1337465833602203648
+
+centosupdatecdn.com
+jqery.net
