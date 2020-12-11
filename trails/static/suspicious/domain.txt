@@ -5108,3 +5108,7 @@ majnetgroup.net
 # Reference: https://www.virustotal.com/gui/domain/yototoo.com/relations
 
 yototoo.com
+
+# Misc
+
+.monster
