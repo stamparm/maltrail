@@ -423,6 +423,10 @@
 
 /invoice.hta
 
+# Reference: https://twitter.com/wwp96/status/1337520882034544641
+
+/OpenToView.hta
+
 # Generic
 
 /myrrem.hta
