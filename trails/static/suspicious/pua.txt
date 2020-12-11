@@ -2568,3 +2568,7 @@ themarketingadscenter.com
 # Reference: https://www.virustotal.com/gui/file/d7708009dab68d023994b50e5ac57008ca0ad92f1cc77740a3355b2e290db364/detection
 
 bestxserver.com
+
+# Reference: https://www.virustotal.com/gui/file/479abcf388f7ed891a9d9f7bffb047d280c96d7c4e61605db5461e5e12d6bb13/detection
+
+breathy.spatula.ru
