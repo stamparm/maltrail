@@ -3544,6 +3544,10 @@ google-ecommerce.com
 google-science.com
 google-trusts.com
 
+# Reference: https://www.virustotal.com/gui/domain/google-analysis.com/detection
+
+google-analysis.com
+
 # Generic
 
 /p/ga.php?analytic=
