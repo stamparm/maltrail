@@ -3535,3 +3535,11 @@ xhtmls.cc
 
 centosupdatecdn.com
 jqery.net
+
+# Reference: https://twitter.com/AffableKraut/status/1337682688233398273
+
+googie-analytisc.com
+google-analytisc.com
+google-ecommerce.com
+google-science.com
+google-trusts.com
