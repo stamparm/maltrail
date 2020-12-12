@@ -3543,3 +3543,7 @@ google-analytisc.com
 google-ecommerce.com
 google-science.com
 google-trusts.com
+
+# Generic
+
+/p/ga.php?analytic=
