@@ -3550,4 +3550,7 @@ google-analysis.com
 
 # Generic
 
+/cdn/ga.php?analytic=
+/js/ga.php?analytic=
 /p/ga.php?analytic=
+/ga.php?analytic=
