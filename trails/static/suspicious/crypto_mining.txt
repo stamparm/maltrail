@@ -493,3 +493,7 @@ xmr.givemexyz.in
 # Reference: https://www.virustotal.com/gui/ip-address/3.120.98.217/relations
 
 3.120.98.217:8080
+
+# Reference: https://www.virustotal.com/gui/file/49a326ef65fb6a7f8e778fb2104aa2708e38601348ddbc04e8cbd9117af0458a/detection
+
+172.65.200.133:3380
