@@ -702,8 +702,10 @@ binary_getter/1.0
 KJW0rm
 
 # Reference: https://twitter.com/ViriBack/status/1154377089077993474
+# Reference: https://www.microsoft.com/security/blog/2020/12/10/widespread-malware-campaign-seeks-to-silently-inject-ads-into-search-results-affects-multiple-browsers/
 
 Finder/28
+Finder/36
 
 # Reference: https://www.proofpoint.com/us/threat-insight/post/brushaloader-still-sweeping-victims-one-year-later
 
