@@ -2093,6 +2093,10 @@ tunacan-812.tk
 
 /2520721a19a52c.php
 
+# Reference: https://twitter.com/ffforward/status/1338190571249291264
+
+/usd73h1szzz.php
+
 # Generic
 
 /7328-dating-verification-card.php
