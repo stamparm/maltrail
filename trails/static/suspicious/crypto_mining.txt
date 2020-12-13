@@ -513,3 +513,7 @@ xmr.givemexyz.in
 
 172.65.195.177:3341
 172.65.200.133:3341
+
+# Reference: https://www.virustotal.com/gui/file/fd1d919e012353386a9d20af761109eaaa3099eec0bebec107b3bf000348f3fe/detection
+
+172.65.200.133:3375
