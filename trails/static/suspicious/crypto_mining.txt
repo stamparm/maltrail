@@ -517,3 +517,7 @@ xmr.givemexyz.in
 # Reference: https://www.virustotal.com/gui/file/fd1d919e012353386a9d20af761109eaaa3099eec0bebec107b3bf000348f3fe/detection
 
 172.65.200.133:3375
+
+# Reference: https://www.virustotal.com/gui/file/1d1d2b6edf51a4262795b2d99f4bf21f2c71b68d2001f74a6d1b24b077a890f0/detection
+
+172.65.200.133:3334
