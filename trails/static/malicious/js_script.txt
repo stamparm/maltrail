@@ -1135,3 +1135,7 @@ googleads.store
 messaging-security.comano.us
 secure-messaging.comano.us
 comano.us
+
+# Reference: https://www.microsoft.com/security/blog/2020/12/10/widespread-malware-campaign-seeks-to-silently-inject-ads-into-search-results-affects-multiple-browsers/
+
+/inject.js
