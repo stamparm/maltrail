@@ -394,7 +394,7 @@ def main():
                 for line in f:
                     if line and line[0].isdigit():
                         items = line.split(',', 2)
-                        if re.search(r"\A[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\Z", items[0]):
+                        if re.search(r"\A[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\Z", items[0]) and not items[0].endswith(".0"):
                             ip = items[0]
                             reputation = 1
                             lists = items[-1]
