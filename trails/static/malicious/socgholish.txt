@@ -1,0 +1,60 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/wastedlocker-ransomware-us
+# Reference: https://research.nccgroup.com/2020/06/23/wastedlocker-a-new-ransomware-variant-developed-by-the-evil-corp-group/
+# Reference: https://otx.alienvault.com/pulse/5ef67e89cde1d0c1b00dd02c
+
+adsmarketart.com
+advancedanalysis.be
+advertstv.com
+advokat-hodonin.info
+amazingdonutco.com
+bettyware.xyz
+celebratering.xyz
+cofeedback.com
+consultane.com
+devicelease.xyz
+fakeframes.xyz
+feedbackgive.com
+flablenitev.site
+gadgetops.xyz
+guiapocos.xyz
+hotphonecall.xyz
+justbesarnia.xyz
+kordelservers.xyz
+lendojekam.xyz
+lgrarcosbann.club
+lpequdeliren.fun
+ludwoodgroup.xyz
+msoftwares.info
+mwebsoft.com
+net-giftshop.info
+paiolets.com
+penaz.info
+respondcritique.xyz
+rostraffic.com
+szn.services
+traffichi.com
+transvil2.xyz
+triomigratio.xyz
+tritravlife.xyz
+typiconsult.com
+uplandcaraudio.xyz
+utenti.info
+utenti.live
+veisllc.xyz
+websitelistbuilder.com
+websitesbuilder.info
+wineguroo.xyz
+woofwoofacademy.xyz
+backup.awarfaregaming.com
+click.clickanalytics208.com
+connect.clevelandskin.com
+connect.clevelandskin.net
+connect.clevelandskin.org
+cushion.aiimss.com
+dns.proactiveads.be
+link.easycounter210.com
+rocket2.new10k.com
+track.positiverefreshment.org
