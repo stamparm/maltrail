@@ -921,6 +921,7 @@ sophosxl.net
 
 # Generic
 
+hamachi.cc
 binance.com
 gemius.pl
 coinbase.com
