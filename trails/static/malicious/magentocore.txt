@@ -3548,6 +3548,11 @@ google-trusts.com
 
 google-analysis.com
 
+# Reference: https://www.virustotal.com/gui/file/85b74ceae400d70ab81aa8e0f1412689196e9eead3fc3dbe33df26af7fac33c9/detection
+
+hostreselling.com
+jquerysmartstack.com
+
 # Generic
 
 /cdn/ga.php?analytic=
