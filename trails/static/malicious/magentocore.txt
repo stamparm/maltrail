@@ -3560,6 +3560,12 @@ jquerysmartstack.com
 jquerycloud.com
 /js/dovesfarm.js
 
+# Reference: https://twitter.com/VK_Intel/status/1162434460731813893
+# Reference: https://www.zscaler.com/blogs/security-research/magecart-hits-again-leveraging-compromised-sites-and-newly-registered-domains
+
+cloudflara.org
+googletagmanager-service.com
+
 # Generic
 
 /cdn/ga.php?analytic=
