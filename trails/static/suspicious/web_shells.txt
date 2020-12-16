@@ -304,3 +304,8 @@ podathon.org/shell/
 # Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/ensiko-a-webshell-with-ransomware-capabilities/
 
 /webshell/shell.php
+
+# Reference: https://twitter.com/jstrosch/status/1338891751285788672
+
+/aboz.php
+/ass.php
