@@ -3554,9 +3554,11 @@ hostreselling.com
 jquerysmartstack.com
 
 # Reference: https://community.riskiq.com/article/14924d61
+# Reference: https://urlscan.io/search/#jquerycloud.com
 # Reference: https://www.virustotal.com/gui/ip-address/8.211.0.55/relations
 
 jquerycloud.com
+/js/dovesfarm.js
 
 # Generic
 
