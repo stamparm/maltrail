@@ -5109,6 +5109,10 @@ majnetgroup.net
 
 yototoo.com
 
+# Reference: https://www.virustotal.com/gui/domain/hastebin.com/relations
+
+hastebin.com
+
 # Misc
 
 .monster
