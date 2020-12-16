@@ -3553,6 +3553,11 @@ google-analysis.com
 hostreselling.com
 jquerysmartstack.com
 
+# Reference: https://community.riskiq.com/article/14924d61
+# Reference: https://www.virustotal.com/gui/ip-address/8.211.0.55/relations
+
+jquerycloud.com
+
 # Generic
 
 /cdn/ga.php?analytic=
