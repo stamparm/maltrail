@@ -427,6 +427,10 @@
 
 /OpenToView.hta
 
+# Reference: https://twitter.com/nao_sec/status/1339483904189685760
+
+/r.hta
+
 # Generic
 
 /myrrem.hta
