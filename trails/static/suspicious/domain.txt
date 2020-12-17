@@ -5109,18 +5109,6 @@ majnetgroup.net
 
 yototoo.com
 
-# Reference: https://www.virustotal.com/gui/domain/hastebin.com/relations
-
-hastebin.com
-
-# Reference: https://www.virustotal.com/gui/domain/thyrsi.com/relations
-
-thyrsi.com
-
-# Reference: https://twitter.com/James_inthe_box/status/1050762064665309185
-
-my.mixtape.moe
-
 # Misc
 
 .monster
