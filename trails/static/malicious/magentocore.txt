@@ -3553,9 +3553,39 @@ google-analysis.com
 hostreselling.com
 jquerysmartstack.com
 
+# Reference: https://community.riskiq.com/article/14924d61
+# Reference: https://urlscan.io/search/#jquerycloud.com
+# Reference: https://www.virustotal.com/gui/ip-address/8.211.0.55/relations
+
+jquerycloud.com
+/js/dovesfarm.js
+
+# Reference: https://twitter.com/VK_Intel/status/1162434460731813893
+# Reference: https://www.zscaler.com/blogs/security-research/magecart-hits-again-leveraging-compromised-sites-and-newly-registered-domains
+
+cloudflara.org
+googletagmanager-service.com
+
 # Generic
 
 /cdn/ga.php?analytic=
 /js/ga.php?analytic=
 /p/ga.php?analytic=
 /ga.php?analytic=
+/5d1cbc8c073d4.js
+/5d4cdc4cdf344.js
+/baypressservices/baypr.js
+/check_cvv2_number_script.js
+/images/js/googleapi.js
+/javascript/checkcheckout.js
+/js/afterpay/checkout/idev_onestep.js
+/js/check_analystic.js
+/js/extjs/fix-defer-after.js
+/js/footer-link.js
+/js/mage/cookies.js
+/js/mage/google.js
+/js/scriptaculous/print.js
+/my/vmart.js
+/qcore.js
+/rimzoneonline/code.js
+/silver/acor.js
