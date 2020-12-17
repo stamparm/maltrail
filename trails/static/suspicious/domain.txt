@@ -5113,6 +5113,10 @@ yototoo.com
 
 hastebin.com
 
+# Reference: https://www.virustotal.com/gui/domain/thyrsi.com/relations
+
+thyrsi.com
+
 # Misc
 
 .monster

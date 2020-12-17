@@ -150,7 +150,6 @@ xmr-us.suprnova.cc
 xmr.bohemianpool.com
 xmr-usa.dwarfpool.com
 miners.pro
-thyrsi.com
 zer0day.ru
 
 # Reference: https://twitter.com/malware_traffic/status/1138999824613687298
