@@ -1,6 +1,0 @@
-# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
-# See the file 'LICENSE' for copying permission
-
-# Reference: https://app.any.run/tasks/26522454-b349-42db-9cbe-230b37a3c836/
-
-/exploit.swf
