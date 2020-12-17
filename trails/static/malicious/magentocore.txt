@@ -3566,6 +3566,7 @@ jquerycloud.com
 cloudflara.org
 googletagmanager-service.com
 
+# Reference: https://twitter.com/500mk500/status/1339707412316626945
 # Reference: https://www.virustotal.com/gui/ip-address/185.154.13.210/relations
 # Reference: https://www.virustotal.com/gui/ip-address/194.58.112.174/relations
 # Reference: https://www.virustotal.com/gui/ip-address/47.254.129.13/relations
