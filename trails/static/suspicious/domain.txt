@@ -5117,6 +5117,10 @@ hastebin.com
 
 thyrsi.com
 
+# Reference: https://twitter.com/James_inthe_box/status/1050762064665309185
+
+my.mixtape.moe
+
 # Misc
 
 .monster

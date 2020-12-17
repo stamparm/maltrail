@@ -3149,3 +3149,7 @@ utbs.ws
 # Reference: https://securelist.com/what-did-deathstalker-hide-between-two-ferns/99616/
 
 1drv.ws
+
+# Reference: https://gameanalytics.com/product-updates/reduce-costs-https-api-aws/
+
+ss2.us
