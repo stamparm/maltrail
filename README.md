@@ -44,18 +44,18 @@
 The following (black)lists (i.e. feeds) are being utilized:
 
 ```
-360chinad, 360conficker, 360cryptolocker, 360gameover, 360locky, 360necurs, 
-360tofsee, 360virut, abuseipdb, alienvault, atmos, badips, 
-bambenekconsultingc2dns, bambenekconsultingdga, bitcoinnodes, blackbook, 
-blocklist, botscout, bruteforceblocker, ciarmy, cobaltstrike, cruzit, 
-cybercrimetracker, dataplane, dshielddns, dshieldip, emergingthreatsbot, 
-emergingthreatscip, emergingthreatsdns, feodotrackerip, greensnow, loki, 
-malc0de, malwaredomainlistdns, malwaredomains, maxmind, minerchk, myip, 
-openphish, palevotracker, policeman, pony, proxylists, proxyrss, proxyspy, 
-ransomwaretrackerdns, ransomwaretrackerip, ransomwaretrackerurl, riproxies, 
-rutgers, sblam, socksproxy, sslbl, sslproxies, talosintelligence, torproject, 
-trickbot, turris, urlhaus, urlvir, vxvault, zeustrackermonitor, zeustrackerurl,
-etc.
+360bigviktor, 360chinad, 360conficker, 360cryptolocker, 360gameover, 
+360locky, 360necurs, 360suppobox, 360tofsee, 360virut, abuseipdb, alienvault, 
+atmos, badips, bitcoinnodes, blackbook, blocklist, botscout, 
+bruteforceblocker, ciarmy, cobaltstrike, cruzit, cybercrimetracker, 
+dataplane, dshieldip, emergingthreatsbot, emergingthreatscip, 
+emergingthreatsdns, feodotrackerip, gpfcomics, greensnow, kriskinteldns, 
+kriskintelip, malc0de, malwaredomainlistdns, malwaredomains, maxmind, 
+minerchk, myip, openphish, palevotracker, policeman, pony, proxylists, 
+proxyrss, proxyspy, ransomwaretrackerdns, ransomwaretrackerip, 
+ransomwaretrackerurl, riproxies, rutgers, sblam, socksproxy, sslbl, 
+sslproxies, talosintelligence, torproject, trickbot, turris, urlhaus, 
+viriback, vxvault, zeustrackermonitor, zeustrackerurl, etc.
 ```
 
 As of static entries, the trails for the following malicious entities (e.g. malware C&Cs or sinkholes) have been manually included (from various AV reports and personal research):
