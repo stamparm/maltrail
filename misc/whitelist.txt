@@ -921,6 +921,8 @@ sophosxl.net
 
 # Generic
 
+oath.cloud
+koprivnica.biz
 hamachi.cc
 binance.com
 gemius.pl
