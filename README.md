@@ -416,9 +416,9 @@ Clicking on one such icon will open a new dialog containing all stored items (No
 
 ![Ctrl-C dialog](https://i.imgur.com/9pgMpiR.png)
 
-When hovering mouse pointer over the threat's trail for couple of seconds it will result in a frame consisted of results using the trail as a search term performed against [DuckDuckGo](https://duckduckgo.com/) search engine. In lots of cases, this provides basic information about the threat itself, eliminating the need for user to do the manual search for it. In upper right corner of the opened frame window there are two extra buttons. By clicking the first one (i.e. ![New tab icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/newtab.png)), the resulting frame will be opened inside the new browser's tab (or window), while by clicking the second one (i.e. ![Close icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/close.png)) will immediately close the frame (Note: the same action is achieved by moving the mouse pointer outside the frame borders):
+When hovering mouse pointer over the threat's trail for couple of seconds it will result in a frame consisted of results using the trail as a search term performed against [Search Encrypt](https://www.searchencrypt.com/) search engine. In lots of cases, this provides basic information about the threat itself, eliminating the need for user to do the manual search for it. In upper right corner of the opened frame window there are two extra buttons. By clicking the first one (i.e. ![New tab icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/newtab.png)), the resulting frame will be opened inside the new browser's tab (or window), while by clicking the second one (i.e. ![Close icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/close.png)) will immediately close the frame (Note: the same action is achieved by moving the mouse pointer outside the frame borders):
 
-![On mouse over trail](https://i.imgur.com/ppoMHub.png)
+![On mouse over trail](https://i.imgur.com/ZxnHn1N.png)
 
 For each threat there is a column `tag` that can be filled with arbitrary "tags" to closely describe all threats sharing the same trail. Also, it is a great way to describe threats individually, so all threats sharing the same tag (e.g. `yahoo`) could be grouped out later:
 
@@ -440,9 +440,9 @@ Here is a reverse DNS and WHOIS lookup of the "attacker"'s address:
 
 ![Shodan 1](https://i.imgur.com/LQ6Vu00.png)
 
-When hovering mouse pointer over the `trail` column's content (IP address), you'll be presented with the search results from [DuckDuckGo](https://duckduckgo.com/) where you'll be able to find more information about the "attacker" (i.e. Shodan):
+When hovering mouse pointer over the `trail` column's content (IP address), you'll be presented with the search results from [Search Encrypt](https://www.searchencrypt.com/) where you'll be able to find more information about the "attacker":
 
-![Shodan 2](https://i.imgur.com/sv7ONzk.png)
+![Shodan 2](https://i.imgur.com/vIzB8bA.png)
 
 In the `dst_ip` column, if you have a large organization, you'll be presented with large list of scanned IP addresses:
 ![Shodan 3](https://i.imgur.com/EhAtXs7.png)
@@ -581,7 +581,7 @@ Like in all other security solutions, Maltrail is prone to "[false positives](ht
 
 ![Google false positive 1](https://i.imgur.com/HFvCNNK.png)
 
-By hovering mouse over the trail, frame with results from [DuckDuckGo](https://duckduckgo.com/) search show that this is a regular Google's server:
+By hovering mouse over the trail, frame with results from [Search Encrypt](https://www.searchencrypt.com/) search show that this is a regular Google's server:
 
 ![Google false positive 2](https://i.imgur.com/4cS9NJB.png)
 
