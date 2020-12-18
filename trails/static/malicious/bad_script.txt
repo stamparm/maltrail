@@ -3986,6 +3986,13 @@ tunacan-812.tk
 
 /xpn.ps1
 
+# Reference: https://twitter.com/JCyberSec_/status/1339868346540552194
+
+/aaa/fullz/post.php
+/aaa/office/post.php
+/aaa/post.php
+/fullz/post.php
+
 # Generic
 
 /js/altmanluggage.js
