@@ -3588,6 +3588,15 @@ gstaticz.space
 
 printcss.host
 
+# Reference: https://twitter.com/sansecio/status/1339914201662443520
+# Reference: https://www.virustotal.com/gui/ip-address/162.241.222.203/relations
+
+hsbc-secures.com
+hsbcaccts.com
+hsbcsecuressl.com
+nmdatast.com
+ushsbcsecure.com
+
 # Generic
 
 /cdn/ga.php?analytic=
