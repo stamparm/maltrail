@@ -3566,6 +3566,28 @@ jquerycloud.com
 cloudflara.org
 googletagmanager-service.com
 
+# Reference: https://twitter.com/500mk500/status/1339707412316626945
+# Reference: https://www.virustotal.com/gui/ip-address/185.154.13.210/relations
+# Reference: https://www.virustotal.com/gui/ip-address/194.58.112.174/relations
+# Reference: https://www.virustotal.com/gui/ip-address/47.254.129.13/relations
+
+gstatica.space
+gstaticc.space
+gstaticd.space
+gstatice.space
+gstaticf.space
+gstaticq.space
+gstaticr.space
+gstatics.space
+gstaticv.space
+gstaticw.space
+gstaticx.space
+gstaticz.space
+
+# Reference: https://twitter.com/rootprivilege/status/1339751739604365312
+
+printcss.host
+
 # Generic
 
 /cdn/ga.php?analytic=
