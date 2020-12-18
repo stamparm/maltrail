@@ -3597,6 +3597,11 @@ hsbcsecuressl.com
 nmdatast.com
 ushsbcsecure.com
 
+# Reference: https://twitter.com/AffableKraut/status/1340035274450079744
+# Reference: https://twitter.com/500mk500/status/1340048171779633153
+
+paymaster-ssl.ru
+
 # Generic
 
 /cdn/ga.php?analytic=
