@@ -3584,6 +3584,10 @@ gstaticw.space
 gstaticx.space
 gstaticz.space
 
+# Reference: https://twitter.com/rootprivilege/status/1339751739604365312
+
+printcss.host
+
 # Generic
 
 /cdn/ga.php?analytic=
