@@ -581,9 +581,9 @@ Like in all other security solutions, Maltrail is prone to "[false positives](ht
 
 ![Google false positive 1](https://i.imgur.com/HFvCNNK.png)
 
-By hovering mouse over the trail, frame with results from [Search Encrypt](https://www.searchencrypt.com/) search show that this is a regular Google's server:
+By hovering mouse over the trail, frame with results from [Search Encrypt](https://www.searchencrypt.com/) search show that this is (most probably) a regular Google's server:
 
-![Google false positive 2](https://i.imgur.com/4cS9NJB.png)
+![Google false positive 2](https://i.imgur.com/i3oydv6.png)
 
 As another example, access to regular `.work` domains (popular TLD for malicious purposes) resulted with the following threat:
 
