@@ -3548,7 +3548,10 @@ google-trusts.com
 
 google-analysis.com
 
+# Reference: https://www.virustotal.com/gui/file/2602da2aafea7a632d69654269c923d33d23bb72176bee9b5cd2e602bd3c93c3/detection
+# Reference: https://www.virustotal.com/gui/file/4321b96d5ee4f89baeca39d24a7808190129b1115d1236297e191c4706444090/detection
 # Reference: https://www.virustotal.com/gui/file/85b74ceae400d70ab81aa8e0f1412689196e9eead3fc3dbe33df26af7fac33c9/detection
+# Reference: https://www.virustotal.com/gui/file/89ad715d0c924625fb4af392353e07c97b4e6a23fd65ef845690900e5d3dbb1d/detection
 
 hostreselling.com
 jquerysmartstack.com
