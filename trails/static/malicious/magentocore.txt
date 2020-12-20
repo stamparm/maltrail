@@ -3548,6 +3548,7 @@ google-trusts.com
 
 google-analysis.com
 
+# Reference: https://twitter.com/gwillem/status/1339895713405280265
 # Reference: https://www.virustotal.com/gui/file/2602da2aafea7a632d69654269c923d33d23bb72176bee9b5cd2e602bd3c93c3/detection
 # Reference: https://www.virustotal.com/gui/file/4321b96d5ee4f89baeca39d24a7808190129b1115d1236297e191c4706444090/detection
 # Reference: https://www.virustotal.com/gui/file/85b74ceae400d70ab81aa8e0f1412689196e9eead3fc3dbe33df26af7fac33c9/detection
