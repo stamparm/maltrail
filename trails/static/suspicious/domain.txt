@@ -5114,6 +5114,7 @@ yototoo.com
 # Reference: https://github.com/stamparm/maltrail/pull/13134/commits/068b5bcc0ef928ff3aa9c174235a2e938b480f4e
 
 dynam1c.net
+dynam1c.run
 
 # Misc
 
