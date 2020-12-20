@@ -5109,6 +5109,12 @@ majnetgroup.net
 
 yototoo.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/90.187.111.149/detection
+# Reference: https://www.virustotal.com/gui/domain/dynam1c.net/relations
+# Reference: https://github.com/stamparm/maltrail/pull/13134/commits/068b5bcc0ef928ff3aa9c174235a2e938b480f4e
+
+dynam1c.net
+
 # Misc
 
 .monster
