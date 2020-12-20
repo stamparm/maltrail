@@ -263,6 +263,9 @@ def update_trails(force=False, offline=False):
                             del trails[key]
                             continue
 
+                    if any(int(_) > 255 for _ in key.split('.')):
+                        del trails[key]
+
                 if trails[key][0] == "ransomware":
                     trails[key] = ("ransomware (malware)", trails[key][1])
 
