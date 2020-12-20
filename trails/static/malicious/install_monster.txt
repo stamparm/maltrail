@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/b8ef3f4ec30a27d13e2c866e505122a835ec5c29ddb49b241a9bf811346239d3/detection
+
+denweryankee.top
+ecosystem.unvocal.ru
