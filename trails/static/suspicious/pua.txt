@@ -2572,3 +2572,8 @@ bestxserver.com
 # Reference: https://www.virustotal.com/gui/file/479abcf388f7ed891a9d9f7bffb047d280c96d7c4e61605db5461e5e12d6bb13/detection
 
 breathy.spatula.ru
+
+# Reference: https://www.virustotal.com/gui/file/b8ef3f4ec30a27d13e2c866e505122a835ec5c29ddb49b241a9bf811346239d3/detection
+
+denweryankee.top
+ecosystem.unvocal.ru
