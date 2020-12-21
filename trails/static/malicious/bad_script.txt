@@ -3993,6 +3993,10 @@ tunacan-812.tk
 /aaa/post.php
 /fullz/post.php
 
+# Reference: https://www.virustotal.com/gui/file/e30d400146e380b77b094a9ac761bf84620325f7759a3c3f06201197f4225cb9/detection
+
+/0921a86ec36dc8.php
+
 # Generic
 
 /js/altmanluggage.js
