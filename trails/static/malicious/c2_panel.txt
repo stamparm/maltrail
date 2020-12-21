@@ -257,8 +257,13 @@ http://82.146.41.245
 /Panel/page.php
 /panel2/gate.php
 /panel3_info/index.php
+/panel123/admin.php
+/panel123/api.php
 /panel123/auth.php
+/panel123/gate.php
+/panel123/index.php
 /panel123/login.php
+/panel123/page.php
 /panel632541/admin.php
 /pnl/auth.php
 /pnl/login.php
