@@ -566,6 +566,10 @@ xmrigcc.graef.in
 
 61.147.103.140:20570
 
+# Reference: https://www.virustotal.com/gui/file/b7be211bbc842b461f8b729c3b6105c855df563e7b11e4fc51aaf9cafe250526/detection
+
+185.154.13.213:3333
+
 # Misc (incidents)
 
 213.252.245.67:450
