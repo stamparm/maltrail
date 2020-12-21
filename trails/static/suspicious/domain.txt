@@ -5116,6 +5116,10 @@ yototoo.com
 dynam1c.net
 dynam1c.run
 
+# Reference: https://twitter.com/kyleehmke/status/1341107219673341954
+
+securitysystemnews.com
+
 # Misc
 
 .monster
