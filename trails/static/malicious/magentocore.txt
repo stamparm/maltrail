@@ -3548,7 +3548,11 @@ google-trusts.com
 
 google-analysis.com
 
+# Reference: https://twitter.com/gwillem/status/1339895713405280265
+# Reference: https://www.virustotal.com/gui/file/2602da2aafea7a632d69654269c923d33d23bb72176bee9b5cd2e602bd3c93c3/detection
+# Reference: https://www.virustotal.com/gui/file/4321b96d5ee4f89baeca39d24a7808190129b1115d1236297e191c4706444090/detection
 # Reference: https://www.virustotal.com/gui/file/85b74ceae400d70ab81aa8e0f1412689196e9eead3fc3dbe33df26af7fac33c9/detection
+# Reference: https://www.virustotal.com/gui/file/89ad715d0c924625fb4af392353e07c97b4e6a23fd65ef845690900e5d3dbb1d/detection
 
 hostreselling.com
 jquerysmartstack.com
@@ -3587,6 +3591,20 @@ gstaticz.space
 # Reference: https://twitter.com/rootprivilege/status/1339751739604365312
 
 printcss.host
+
+# Reference: https://twitter.com/sansecio/status/1339914201662443520
+# Reference: https://www.virustotal.com/gui/ip-address/162.241.222.203/relations
+
+hsbc-secures.com
+hsbcaccts.com
+hsbcsecuressl.com
+nmdatast.com
+ushsbcsecure.com
+
+# Reference: https://twitter.com/AffableKraut/status/1340035274450079744
+# Reference: https://twitter.com/500mk500/status/1340048171779633153
+
+paymaster-ssl.ru
 
 # Generic
 
