@@ -3155,3 +3155,8 @@ utbs.ws
 # Reference: https://gameanalytics.com/product-updates/reduce-costs-https-api-aws/
 
 ss2.us
+
+# Reference: https://itinfinity.ru/servisy/minercheck/ (Russian)
+# Note: Whitelisting for itinfinity.ru Bitrixcore (https://github.com/stamparm/maltrail/blob/master/trails/static/malicious/bitrixcore.txt) attacks scanner service
+
+itinfinity.ru
