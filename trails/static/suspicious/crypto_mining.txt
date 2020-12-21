@@ -534,6 +534,33 @@ xmr.givemexyz.in
 172.65.229.122:3353
 172.65.255.250:3353
 
+# Reference: https://twitter.com/IntezerLabs/status/1341010531902050305
+# Reference: https://www.virustotal.com/gui/ip-address/80.211.206.105/relations
+# Reference: https://www.virustotal.com/gui/file/1ce687b9d97bc0932bc3bc107a6b5c9363bb5a6f1c2391a59f1664dfa68a2228/detection
+# Reference: https://www.virustotal.com/gui/file/b0c8667eba81af1069e310055acea49e4f08fed8a071cb33da64a3d1e154d75d/detection
+# Reference: https://www.virustotal.com/gui/file/402ce23a6b8c718d31a203eb27d1ac97dc614499b542ab630afcb5ac629d934a/detection
+# Reference: https://www.virustotal.com/gui/file/603585df24d799e13d80145f071b2fbc3d81493d098a0df5e474ef4405b61fe4/detection
+# Reference: https://www.virustotal.com/gui/file/3373bdf62d72c6f8ab62797aeda4f2b993f0d950964c3b5f9b8f96774abc25a6/detection
+# Reference: https://www.virustotal.com/gui/file/037f28da0a7e825a21176c27123c9333bca46d37a8faf378c31766b82c653bbb/detection
+# Reference: https://www.virustotal.com/gui/file/64db532ccfa34e01e697e68d5ee6d7360c9641440c38d2fd7850687837b24039/detection
+# Reference: https://www.virustotal.com/gui/file/ee1024af67999dad6fc7a202f200526f70d54afbdf39f53121b020510fb103b8/detection
+# Reference: https://www.virustotal.com/gui/file/b0adb691cf67bbe881c5b1946eb31f99fdddacef06078b94b8fe56a611bbe897/detection
+# Reference: https://www.virustotal.com/gui/domain/donate.graef.in/relations
+
+15.236.100.141:10001
+15.236.100.141:10128
+18.180.72.219:10001
+18.180.72.219:10128
+3.125.10.23:10001
+3.125.10.23:10032
+3.125.10.23:10128
+34.252.195.254:10032
+34.252.195.254:10128
+80.211.206.105:5555
+donate.graef.in
+donate2.graef.in
+xmrigcc.graef.in
+
 # Misc (incidents)
 
 213.252.245.67:450
