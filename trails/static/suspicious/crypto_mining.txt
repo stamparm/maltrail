@@ -561,6 +561,11 @@ donate.graef.in
 donate2.graef.in
 xmrigcc.graef.in
 
+# Reference: https://www.virustotal.com/gui/ip-address/61.147.103.140/relations
+# Reference: https://www.virustotal.com/gui/file/e52afc60918b6ba83cff5362344b4d712e9fa29b639ee70e25c1c650bf93360d/detection
+
+61.147.103.140:20570
+
 # Misc (incidents)
 
 213.252.245.67:450
