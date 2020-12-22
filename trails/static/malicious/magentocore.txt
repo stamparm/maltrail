@@ -3607,8 +3607,11 @@ ushsbcsecure.com
 paymaster-ssl.ru
 
 # Reference: https://twitter.com/makflwana/status/1341239469836357633
+# Reference: https://www.virustotal.com/gui/ip-address/176.123.7.116/relations
 
 googlessl.icu
+idtransfer.icu
+idtransfer.me
 
 # Generic
 
