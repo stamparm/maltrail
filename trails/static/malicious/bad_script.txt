@@ -4005,6 +4005,10 @@ tunacan-812.tk
 
 /zc1/wpasp3.asp
 
+# Reference: https://twitter.com/MalwarePatrol/status/1341324864867749889
+
+/69pkoqft8pem61075l0fbdu7.php
+
 # Generic
 
 /js/altmanluggage.js
