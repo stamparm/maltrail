@@ -960,6 +960,9 @@ def init():
     if config.SYSLOG_SERVER and not len(config.SYSLOG_SERVER.split(':')) == 2:
         exit("[!] invalid configuration value for 'SYSLOG_SERVER' ('%s')" % config.SYSLOG_SERVER)
 
+    if config.LOGSTASH_SERVER and not len(config.LOGSTASH_SERVER.split(':')) == 2:
+        exit("[!] invalid configuration value for 'LOGSTASH_SERVER' ('%s')" % config.LOGSTASH_SERVER)
+
     if config.CAPTURE_FILTER:
         print("[i] setting capture filter '%s'" % config.CAPTURE_FILTER)
         for _cap in _caps:
