@@ -3606,6 +3606,10 @@ ushsbcsecure.com
 
 paymaster-ssl.ru
 
+# Reference: https://twitter.com/makflwana/status/1341239469836357633
+
+googlessl.icu
+
 # Generic
 
 /cdn/ga.php?analytic=
