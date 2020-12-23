@@ -921,6 +921,8 @@ sophosxl.net
 
 # Generic
 
+mkomarac.duckdns.org
+dh5ym.hopto.org
 oath.cloud
 koprivnica.biz
 hamachi.cc
