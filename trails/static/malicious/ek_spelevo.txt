@@ -1116,3 +1116,7 @@ anya.large-market.monster
 # Reference: https://twitter.com/MBThreatIntel/status/1321963911365586944
 
 haruno.pavupeaso.guru
+
+# Reference: https://twitter.com/nao_sec/status/1341736552389459968
+
+tag.volyvaydq.email
