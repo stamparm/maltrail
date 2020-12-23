@@ -1776,7 +1776,7 @@ function initDetails() {
             clearTimeout(SEARCH_TIP_TIMER);
             SEARCH_TIP_TIMER = setTimeout(function(cell, event) {
                 if ((event.buttons === 0) && ($(".ui-tooltip").length === 0)) {
-                    var query = cell[0].innerHTML.replace(/<span class="ipcat.+span>/g, "").replace(/<[^>]+>/g, "").replace(/[()]/g, "").split('/')[0];
+                    var query = cell[0].innerHTML.replace(/<span class="ipcat.+span>/g, "").replace(/<[^>]+>/g, "").replace(/[\d.]+ \(([^)]+)\)/, "$1").replace(/[()]/g, "").replace(/^www\./g, "").replace(/:\d+$/, "").replace(/^([^\/]*\.[^\/]*)\/.+/, "$1").trim();
                     $(".searchtip").remove();
                     $("body").append(
                         $('<div class="ui-tooltip searchtip"><div><img src="images/newtab.png" style="cursor: pointer" title="open in new tab"><img src="images/close.png" style="cursor: pointer; width: 16px; height: 16px" title="close"></div><iframe src="' + SEARCH_TIP_URL.replace("${query}", query) + '"></iframe><div>')
