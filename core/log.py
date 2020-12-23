@@ -7,6 +7,7 @@ See the file 'LICENSE' for copying permission
 from __future__ import print_function
 
 import datetime
+import json
 import os
 import re
 import signal
@@ -32,6 +33,7 @@ from core.settings import TIME_FORMAT
 from core.settings import UNICODE_ENCODING
 from core.settings import VERSION
 from core.ignore import ignore_event
+from thirdparty.odict import OrderedDict
 from thirdparty.six.moves import socketserver as _socketserver
 
 _condensed_events = {}
@@ -194,6 +196,12 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                     remote_host, remote_port = config.SYSLOG_SERVER.split(':')
                     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
                     s.sendto(_.encode(UNICODE_ENCODING), (remote_host, int(remote_port)))
+
+                if config.LOGSTASH_SERVER:
+                    _ = OrderedDict((("timestamp", sec), ("src_ip", src_ip), ("src_port", src_port), ("dst_ip", dst_ip), ("dst_port", dst_port), ("proto", proto), ("type", trail_type), ("trail", trail), ("info", info), ("reference", reference)))
+                    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                    remote_host, remote_port = config.LOGSTASH_SERVER.split(':')
+                    s.sendto(json.dumps(_).encode(UNICODE_ENCODING), (remote_host, int(remote_port)))
 
                 if (config.DISABLE_LOCAL_LOG_STORAGE and not any((config.LOG_SERVER, config.SYSLOG_SERVER))) or config.console:
                     sys.stderr.write(event)

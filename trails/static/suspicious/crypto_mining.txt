@@ -570,6 +570,10 @@ xmrigcc.graef.in
 
 185.154.13.213:3333
 
+# Reference: https://twitter.com/r3dbU7z/status/1341352776459272195
+
+54.188.223.206:10128
+
 # Misc (incidents)
 
 213.252.245.67:450
