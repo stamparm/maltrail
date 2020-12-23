@@ -1118,5 +1118,7 @@ anya.large-market.monster
 haruno.pavupeaso.guru
 
 # Reference: https://twitter.com/nao_sec/status/1341736552389459968
+# Reference: https://app.any.run/tasks/a3fcca06-1f18-4b2b-a12b-66e2254dacb8/
 
+base.bavywoums.email
 tag.volyvaydq.email
