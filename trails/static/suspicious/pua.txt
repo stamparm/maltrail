@@ -2582,3 +2582,10 @@ ecosystem.unvocal.ru
 # Reference: https://app.any.run/tasks/f99ea14e-1bfc-4ec9-8982-71c739e90b59/
 
 vepodenohopp.com
+
+# Reference: https://www.virustotal.com/gui/file/0e0a32e9fb5df0af609a1bfde940b79c9d8293318db9c289e7258b3bfd6f3189/detection
+
+conicono.com
+softpan.com
+sofstan.com
+softstan.com
