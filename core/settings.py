@@ -21,10 +21,10 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.27.59"
+VERSION = "0.27.60"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
-IS_SENSOR = sys.argv[0].startswith("sensor")
+IS_SENSOR = "sensor" in sys.argv[0]
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
 TIMEOUT = 30
