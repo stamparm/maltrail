@@ -3613,6 +3613,31 @@ googlessl.icu
 idtransfer.icu
 idtransfer.me
 
+# Reference: https://www.group-ib.com/blog/ultrarank
+
+45.141.84.239:1443
+googletagsmanager.co
+googletagsmanager.info
+s-panel.su
+
+# Reference: https://sansec.io/research/skimmer-dynamic-exfiltration-shopify-bigcommerce
+
+zg9tywlubmftzw5ldza.com
+zg9tywlubmftzw5ldze.com
+zg9tywlubmftzw5ldze0.com
+zg9tywlubmftzw5ldze1.com
+zg9tywlubmftzw5ldzew.com
+zg9tywlubmftzw5ldzex.com
+zg9tywlubmftzw5ldzey.com
+zg9tywlubmftzw5ldzez.com
+zg9tywlubmftzw5ldzg.com
+zg9tywlubmftzw5ldzi.com
+zg9tywlubmftzw5ldzk.com
+zg9tywlubmftzw5ldzm.com
+zg9tywlubmftzw5ldzq.com
+zg9tywlubmftzw5ldzu.com
+zg9tywlubmftzw5ldzy.com
+
 # Generic
 
 /cdn/ga.php?analytic=
