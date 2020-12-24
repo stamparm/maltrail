@@ -190,18 +190,29 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                     s = socket.socket(socket.AF_INET if len(_address) == 2 else socket.AF_INET6, socket.SOCK_DGRAM)
                     s.sendto(("%s %s" % (sec, event)).encode(UNICODE_ENCODING), _address)
 
-                if config.SYSLOG_SERVER:
-                    extension = "src=%s spt=%s dst=%s dpt=%s trail=%s ref=%s" % (src_ip, src_port, dst_ip, dst_port, trail, reference)
-                    _ = CEF_FORMAT.format(syslog_time=time.strftime("%b %d %H:%M:%S", time.localtime(int(sec))), host=HOSTNAME, device_vendor=NAME, device_product="sensor", device_version=VERSION, signature_id=time.strftime("%Y-%m-%d", time.localtime(os.path.getctime(config.TRAILS_FILE))), name=info, severity=0, extension=extension)
-                    remote_host, remote_port = config.SYSLOG_SERVER.split(':')
-                    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                    s.sendto(_.encode(UNICODE_ENCODING), (remote_host, int(remote_port)))
+                if config.SYSLOG_SERVER or config.LOGSTASH_SERVER:
+                    severity = "medium"
 
-                if config.LOGSTASH_SERVER:
-                    _ = OrderedDict((("timestamp", sec), ("src_ip", src_ip), ("src_port", src_port), ("dst_ip", dst_ip), ("dst_port", dst_port), ("proto", proto), ("type", trail_type), ("trail", trail), ("info", info), ("reference", reference)))
-                    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                    remote_host, remote_port = config.LOGSTASH_SERVER.split(':')
-                    s.sendto(json.dumps(_).encode(UNICODE_ENCODING), (remote_host, int(remote_port)))
+                    if config.REMOTE_SEVERITY_REGEX:
+                        match = re.search(config.REMOTE_SEVERITY_REGEX, info)
+                        if match:
+                            for _ in ("low", "medium", "high"):
+                                if match.group(_):
+                                    severity = _
+                                    break
+
+                    if config.SYSLOG_SERVER:
+                        extension = "src=%s spt=%s dst=%s dpt=%s trail=%s ref=%s" % (src_ip, src_port, dst_ip, dst_port, trail, reference)
+                        _ = CEF_FORMAT.format(syslog_time=time.strftime("%b %d %H:%M:%S", time.localtime(int(sec))), host=HOSTNAME, device_vendor=NAME, device_product="sensor", device_version=VERSION, signature_id=time.strftime("%Y-%m-%d", time.localtime(os.path.getctime(config.TRAILS_FILE))), name=info, severity={"low": 0, "medium": 1, "high": 2}.get(severity), extension=extension)
+                        remote_host, remote_port = config.SYSLOG_SERVER.split(':')
+                        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                        s.sendto(_.encode(UNICODE_ENCODING), (remote_host, int(remote_port)))
+
+                    if config.LOGSTASH_SERVER:
+                        _ = OrderedDict((("timestamp", sec), ("sensor", HOSTNAME), ("severity", severity), ("src_ip", src_ip), ("src_port", src_port), ("dst_ip", dst_ip), ("dst_port", dst_port), ("proto", proto), ("type", trail_type), ("trail", trail), ("info", info), ("reference", reference)))
+                        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                        remote_host, remote_port = config.LOGSTASH_SERVER.split(':')
+                        s.sendto(json.dumps(_).encode(UNICODE_ENCODING), (remote_host, int(remote_port)))
 
                 if (config.DISABLE_LOCAL_LOG_STORAGE and not any((config.LOG_SERVER, config.SYSLOG_SERVER))) or config.console:
                     sys.stderr.write(event)

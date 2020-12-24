@@ -963,6 +963,12 @@ def init():
     if config.LOGSTASH_SERVER and not len(config.LOGSTASH_SERVER.split(':')) == 2:
         exit("[!] invalid configuration value for 'LOGSTASH_SERVER' ('%s')" % config.LOGSTASH_SERVER)
 
+    if config.REMOTE_SEVERITY_REGEX:
+        try:
+            re.compile(config.REMOTE_SEVERITY_REGEX)
+        except re.error:
+            exit("[!] invalid configuration value for 'REMOTE_SEVERITY_REGEX' ('%s')" % config.REMOTE_SEVERITY_REGEX)
+
     if config.CAPTURE_FILTER:
         print("[i] setting capture filter '%s'" % config.CAPTURE_FILTER)
         for _cap in _caps:

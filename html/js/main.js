@@ -824,7 +824,7 @@ function init(url, from, to) {
                         severity = SEVERITY.HIGH;
                     else if (data[LOG_COLUMNS.INFO].contains("malware distribution"))
                         severity = SEVERITY.MEDIUM;
-                    else if (data[LOG_COLUMNS.INFO].contains( "mass scanner"))
+                    else if (data[LOG_COLUMNS.INFO].contains("mass scanner"))
                         severity = SEVERITY.LOW;
                     else {
                         for (var keyword in INFO_SEVERITY_KEYWORDS)
