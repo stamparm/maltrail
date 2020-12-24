@@ -217,3 +217,7 @@ ez4q2.cn
 
 android.bugly.qq.com
 config.saffffedk.com
+
+# Reference: https://www.virustotal.com/gui/domain/tansacethatron.info/relations
+
+tansacethatron.info
