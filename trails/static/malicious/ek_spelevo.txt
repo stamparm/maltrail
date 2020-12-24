@@ -1116,3 +1116,23 @@ anya.large-market.monster
 # Reference: https://twitter.com/MBThreatIntel/status/1321963911365586944
 
 haruno.pavupeaso.guru
+
+# Reference: https://twitter.com/nao_sec/status/1341736552389459968
+# Reference: https://app.any.run/tasks/a3fcca06-1f18-4b2b-a12b-66e2254dacb8/
+
+base.bavywoums.email
+tag.volyvaydq.email
+bestapptop.online
+fsexooqpuxou.buzz
+gteriotcacyi.buzz
+hjumyixkajei.buzz
+hlavoawjicyo.buzz
+hotdeals.cloud
+meetonline.pro
+onlineappbest.work
+svyziyxjikae.buzz
+synth.website
+theleads.xyz
+vexillologist.site
+waistcoat.xyz
+xvynyangilie.buzz
