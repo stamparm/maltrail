@@ -4009,6 +4009,10 @@ tunacan-812.tk
 
 /69pkoqft8pem61075l0fbdu7.php
 
+# Reference: https://twitter.com/MBThreatIntel/status/1341894084315607042
+
+/uoppg.swf
+
 # Generic
 
 /js/altmanluggage.js
