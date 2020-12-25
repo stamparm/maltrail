@@ -3614,6 +3614,7 @@ idtransfer.icu
 idtransfer.me
 
 # Reference: https://www.group-ib.com/blog/ultrarank
+# Reference: https://otx.alienvault.com/pulse/5fe4cb300b0a9b6655a11de1
 
 45.141.84.239:1443
 googletagsmanager.co
