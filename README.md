@@ -198,11 +198,11 @@ Options `SYSLOG_SERVER` and/or `LOGSTASH_SERVER` can be used to send sensor even
 
 Example of event data being sent over UDP is as follows:
 
-- For `SYSLOG_SERVER` option (Note: `LogSeverity` values are 0 (for low), 1 (for medium) and 2 (for high)):
+- For option `SYSLOG_SERVER` (Note: `LogSeverity` values are 0 (for low), 1 (for medium) and 2 (for high)):
 
 ```Dec 24 15:05:55 beast CEF:0|Maltrail|sensor|0.27.68|2020-12-24|andromeda (malware)|2|src=192.168.5.137 spt=60453 dst=8.8.8.8 dpt=53 trail=morphed.ru ref=(static)```
 
-- For `LOGSTASH_SERVER` option:
+- For option `LOGSTASH_SERVER`:
 
 ```{"timestamp": 1608818692, "sensor": "beast", "severity": "high", "src_ip": "192.168.5.137", "src_port": 48949, "dst_ip": "8.8.8.8", "dst_port": 53, "proto": "UDP", "type": "DNS", "trail": "morphed.ru", "info": "andromeda (malware)", "reference": "(static)"}```
 
