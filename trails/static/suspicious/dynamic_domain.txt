@@ -3100,3 +3100,8 @@ shacknet.us
 # Reference: https://www.virustotal.com/gui/domain/kvrddns.com/relations
 
 kvrddns.com
+
+# Reference: http://provision-isr-dns.com/
+# Reference: https://www.virustotal.com/gui/domain/provision-isr-dns.com/relations
+
+provision-isr-dns.com
