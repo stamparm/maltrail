@@ -1409,7 +1409,7 @@ function initDetails() {
                             retval += getTagHtml(tag);
                         }
                     }
-                    retval += "<input class='tag-input' type='text' onkeyup='tagInputKeyUp(event)' onblur='tagInputKeyUp(event)'>";
+                    retval += "<input class='tag-input' type='text'>";
                     return retval;
                 },
                 targets: DATATABLES_COLUMNS.TAGS
@@ -1541,6 +1541,12 @@ function initDetails() {
         fnDrawCallback: function(oSettings) {
             clearTimeout(DRAW_SPARKLINES_TIMER);
             $(".sparkline:contains(',')").sparkline('html', { type: 'bar', barWidth: 2, barColor: SPARKLINE_COLOR, disableInteraction: false, tooltipClassname: "sparkline-tooltip" }); //, chartRangeMin: 0, chartRangeMax: _MAX_SPARKLINE_PER_HOUR });
+
+            $(".tag-input").keyup(function(event) {
+                tagInputKeyUp(event);
+            }).blur(function(event) {
+                tagInputKeyUp(event);
+            });
 
             try {
                 var sparklines = $(".sparkline");
