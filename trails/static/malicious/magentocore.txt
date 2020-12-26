@@ -3639,6 +3639,11 @@ zg9tywlubmftzw5ldzq.com
 zg9tywlubmftzw5ldzu.com
 zg9tywlubmftzw5ldzy.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/47.90.242.121/relations
+# Reference: https://www.virustotal.com/gui/ip-address/47.91.28.226/relations
+
+trustcdnjs.com
+
 # Generic
 
 /cdn/ga.php?analytic=
