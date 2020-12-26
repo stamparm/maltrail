@@ -3639,6 +3639,35 @@ zg9tywlubmftzw5ldzq.com
 zg9tywlubmftzw5ldzu.com
 zg9tywlubmftzw5ldzy.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/47.90.242.121/relations
+# Reference: https://www.virustotal.com/gui/ip-address/47.91.28.226/relations
+
+trustcdnjs.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/161.117.89.16/relations
+# Reference: https://urlscan.io/result/2cbc4a8f-eff1-4ed2-8fcf-09514c612e19/
+# Reference: https://unit42.paloaltonetworks.com/anatomy-of-formjacking-attacks/
+# Reference: https://urlscan.io/domain/myxintad.com
+
+jsglobal.top
+myxintad.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.89.255/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.108.15/relations
+
+connecstaff.com
+pubmatgic.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.108.15/relations
+
+awskit.com
+awsprog.com
+keywestapi.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.24.53/relations
+
+pixeltrack.top
+
 # Generic
 
 /cdn/ga.php?analytic=
