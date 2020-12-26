@@ -3644,6 +3644,11 @@ zg9tywlubmftzw5ldzy.com
 
 trustcdnjs.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/161.117.89.16/relations
+
+jsglobal.top
+myxintad.com
+
 # Generic
 
 /cdn/ga.php?analytic=
