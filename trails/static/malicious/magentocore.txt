@@ -3652,6 +3652,12 @@ trustcdnjs.com
 jsglobal.top
 myxintad.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.89.255/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.108.15/relations
+
+connecstaff.com
+pubmatgic.com
+
 # Generic
 
 /cdn/ga.php?analytic=
