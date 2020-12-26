@@ -3658,6 +3658,12 @@ myxintad.com
 connecstaff.com
 pubmatgic.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.108.15/relations
+
+awskit.com
+awsprog.com
+keywestapi.com
+
 # Generic
 
 /cdn/ga.php?analytic=
