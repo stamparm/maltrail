@@ -3645,6 +3645,8 @@ zg9tywlubmftzw5ldzy.com
 trustcdnjs.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/161.117.89.16/relations
+# Reference: https://urlscan.io/result/2cbc4a8f-eff1-4ed2-8fcf-09514c612e19/
+# Reference: https://urlscan.io/domain/myxintad.com
 
 jsglobal.top
 myxintad.com
