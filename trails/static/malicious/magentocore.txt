@@ -3664,6 +3664,10 @@ awskit.com
 awsprog.com
 keywestapi.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.24.53/relations
+
+pixeltrack.top
+
 # Generic
 
 /cdn/ga.php?analytic=
