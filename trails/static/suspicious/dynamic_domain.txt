@@ -677,8 +677,8 @@ for-more.biz
 for-our.info
 for-some.biz
 for-the.biz
-forgot.her
-forgot.his
+forgot.her.name
+forgot.his.name
 from-ak.com
 from-al.com
 from-ar.com
@@ -737,7 +737,7 @@ game-host.org
 game-server.cc
 getmyip.com
 gets-it.net
-go.dyndns
+go.dyndns.org
 gotdns.com
 gotdns.org
 groks-the.info
@@ -746,7 +746,7 @@ ham-radio-op.net
 here-for-more.info
 hobby-site.com
 hobby-site.org
-home.dyndns
+home.dyndns.org
 homedns.org
 homeftp.net
 homeftp.org
@@ -850,6 +850,7 @@ leitungsen.de
 likes-pie.com
 likescandy.com
 merseine.com
+merseine.nu
 merseine.org
 mine.nu
 misconfused.org
@@ -881,6 +882,7 @@ serveftp.net
 serveftp.org
 servegame.org
 shacknet.biz
+shacknet.nu
 shacknet.us
 simple-url.com
 space-to-rent.com
