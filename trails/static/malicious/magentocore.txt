@@ -2641,7 +2641,9 @@ yxxi.net
 yzxi.net
 
 # Reference: https://twitter.com/MBThreatIntel/status/1279651033883439105
+# Reference: https://www.virustotal.com/gui/domain/arclyte.com/detection
 
+arclyte.com
 kttape.com/pub/static/frontend/Plumtree/kttapeb2b/en_US/mage/mail.js
 
 # Reference: https://twitter.com/MBThreatIntel/status/1279523525192081408
