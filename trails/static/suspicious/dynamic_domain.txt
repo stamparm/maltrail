@@ -612,7 +612,7 @@ dns4e.com
 dns4e.net
 dns4e.org
 
-# Reference: http://dyn.com/remote-access/domain-names/
+# Reference: https://help.dyn.com/list-of-dyn-dns-pro-remote-access-domain-names/
 
 at-band-camp.net
 barrel-of-knowledge.info
@@ -677,8 +677,8 @@ for-more.biz
 for-our.info
 for-some.biz
 for-the.biz
-forgot.her.name
-forgot.his.name
+forgot.her
+forgot.his
 from-ak.com
 from-al.com
 from-ar.com
@@ -737,7 +737,7 @@ game-host.org
 game-server.cc
 getmyip.com
 gets-it.net
-go.dyndns.org
+go.dyndns
 gotdns.com
 gotdns.org
 groks-the.info
@@ -746,7 +746,7 @@ ham-radio-op.net
 here-for-more.info
 hobby-site.com
 hobby-site.org
-home.dyndns.org
+home.dyndns
 homedns.org
 homeftp.net
 homeftp.org
@@ -849,7 +849,8 @@ lebtimnetz.de
 leitungsen.de
 likes-pie.com
 likescandy.com
-merseine.nu
+merseine.com
+merseine.org
 mine.nu
 misconfused.org
 mypets.ws
@@ -860,6 +861,7 @@ on-the-web.tv
 podzone.net
 podzone.org
 readmyblog.org
+remotecam.nu
 saves-the-whales.com
 scrapper-site.net
 scrapping.cc
@@ -878,7 +880,8 @@ servebbs.org
 serveftp.net
 serveftp.org
 servegame.org
-shacknet.nu
+shacknet.biz
+shacknet.us
 simple-url.com
 space-to-rent.com
 stuff-4-sale.org
