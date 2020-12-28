@@ -142,8 +142,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 if any((config.IP_ALIASES,)) and self.path.split('?')[0] == "/js/main.js":
                     content = open(path, "rb").read()
                     content = re.sub(r"\bvar IP_ALIASES =.+", "var IP_ALIASES = {%s};" % ", ".join('"%s": "%s"' % (_.split(':', 1)[0].strip(), _.split(':', 1)[-1].strip()) for _ in config.IP_ALIASES), content)
-                    self.send_response(_http_client.OK)
-                elif ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and (extension not in DISABLED_CONTENT_EXTENSIONS or os.path.split(path)[-1] in CONTENT_EXTENSIONS_EXCLUSIONS):
+
+                if ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and (extension not in DISABLED_CONTENT_EXTENSIONS or os.path.split(path)[-1] in CONTENT_EXTENSIONS_EXCLUSIONS):
                     mtime = time.gmtime(os.path.getmtime(path))
                     if_modified_since = self.headers.get(HTTP_HEADER.IF_MODIFIED_SINCE)
 
@@ -155,7 +155,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             skip = True
 
                     if not skip:
-                        content = open(path, "rb").read()
+                        content = content or open(path, "rb").read()
                         last_modified = time.strftime(HTTP_TIME_FORMAT, mtime)
                         self.send_response(_http_client.OK)
                         self.send_header(HTTP_HEADER.CONNECTION, "close")
