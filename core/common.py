@@ -57,7 +57,7 @@ def retrieve_content(url, data=None, headers=None):
     except Exception as ex:
         retval = ex.read() if hasattr(ex, "read") else (get_ex_message(ex) or "")
 
-        if url.startswith("https://") and b"handshake failure" in retval:
+        if url.startswith("https://") and isinstance(retval, str) and "handshake failure" in retval:
             return retrieve_content(url.replace("https://", "http://"), data, headers)
 
     retval = retval or b""
@@ -286,6 +286,9 @@ def get_ex_message(ex):
             if isinstance(candidate, six.string_types):
                 retval = candidate
                 break
+
+    if retval is None:
+        retval = str(ex)
 
     return retval
 
