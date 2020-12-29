@@ -3700,3 +3700,4 @@ amazon-server15-cdn.com
 /qcore.js
 /rimzoneonline/code.js
 /silver/acor.js
+/googletag-manager?connect=
