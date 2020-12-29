@@ -3678,6 +3678,10 @@ amazon-server15-cdn.com
 
 jerrysmusic.com/js/varien/validation.js
 
+# Reference: https://twitter.com/marcelmalware/status/1277615543013519362
+
+gtows.com/wp-content/js/var.js
+
 # Generic
 
 /cdn/ga.php?analytic=
@@ -3702,6 +3706,8 @@ jerrysmusic.com/js/varien/validation.js
 /my/vmart.js
 /103754_tag.js
 /qcore.js
+/plugins/republicadealberdi.js
+/republicadealberdi.js
 /rimzoneonline/code.js
 /silver/acor.js
 /googletag-manager?connect=
