@@ -3692,6 +3692,7 @@ gtows.com/wp-content/js/var.js
 /5d4cdc4cdf344.js
 /baypressservices/baypr.js
 /check_cvv2_number_script.js
+/code/zipboss.dev.js
 /gtm-connect/wp-share.min.js
 /images/js/googleapi.js
 /javascript/checkcheckout.js
@@ -3711,3 +3712,4 @@ gtows.com/wp-content/js/var.js
 /rimzoneonline/code.js
 /silver/acor.js
 /googletag-manager?connect=
+/zipboss.dev.js
