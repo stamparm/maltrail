@@ -3707,6 +3707,7 @@ gtows.com/wp-content/js/var.js
 /js/varien/js.js.pagespeed.jm.aFn_GvyNS2.js
 /my/vmart.js
 /103754_tag.js
+/markberg.dk.js
 /qcore.js
 /plugins/republicadealberdi.js
 /republicadealberdi.js
