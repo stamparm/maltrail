@@ -3674,6 +3674,10 @@ pixeltrack.top
 amazon-server12-cdn.com
 amazon-server15-cdn.com
 
+# Reference: https://twitter.com/felixaime/status/1343958003905671173
+
+jerrysmusic.com/js/varien/validation.js
+
 # Generic
 
 /cdn/ga.php?analytic=
