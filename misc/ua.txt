@@ -1597,6 +1597,10 @@ SE2.XMetaSr
 
 FindMyiPhone/500
 
+# Reference: https://twitter.com/bad_packets/status/1344362769022214144
+
+\AMy User-Agent\Z
+
 # Misc
 
 information_schema
