@@ -3164,3 +3164,7 @@ ss2.us
 # Note: Whitelisting for itinfinity.ru Bitrixcore (https://github.com/stamparm/maltrail/blob/master/trails/static/malicious/bitrixcore.txt) attacks scanner service
 
 itinfinity.ru
+
+# Reference: https://www.virustotal.com/gui/domain/zerkalo.cc/relations
+
+zerkalo.cc
