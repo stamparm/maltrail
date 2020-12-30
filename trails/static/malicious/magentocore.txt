@@ -3682,6 +3682,10 @@ jerrysmusic.com/js/varien/validation.js
 
 gtows.com/wp-content/js/var.js
 
+# Reference: https://twitter.com/sinnadabueno/status/1344078328278482946
+
+userway-api.com
+
 # Generic
 
 /cdn/ga.php?analytic=
