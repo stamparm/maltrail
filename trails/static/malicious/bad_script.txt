@@ -4016,6 +4016,7 @@ tunacan-812.tk
 # Reference: https://blog.sucuri.net/2020/05/wordpress-malware-collects-sensitive-woocommerce-data.html
 
 /5ea331c1744115ea331c17441f.php
+/5eba1a04b47c4.php
 /5eba1a04b47c41.php
 
 # Generic
