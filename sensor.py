@@ -509,6 +509,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.UA, result, "user agent (suspicious)", "(heuristic)"), packet)
 
                     if not _check_domain_whitelisted(host):
+                        path = path.replace("//", '/')
+
                         unquoted_path = _urllib.parse.unquote(path)
                         unquoted_post_data = _urllib.parse.unquote(post_data or "")
 
