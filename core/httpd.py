@@ -677,8 +677,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         with open(filepath, "rb") as f:
                             content = f.read(io.DEFAULT_BUFFER_SIZE)
                             if size >= io.DEFAULT_BUFFER_SIZE:
-                                total = 1.0 * content.count(b'\n') * size / io.DEFAULT_BUFFER_SIZE
-                                counts[timestamp] = int(round(total / 100) * 100)
+                                total = 1.0 * (1 + content.count(b'\n')) * size / io.DEFAULT_BUFFER_SIZE
+                                counts[timestamp] = int(round(total / 100.0) * 100)
                             else:
                                 counts[timestamp] = content.count(b'\n')
 
