@@ -4019,6 +4019,10 @@ tunacan-812.tk
 /5eba1a04b47c4.php
 /5eba1a04b47c41.php
 
+# Reference: https://twitter.com/r3dbU7z/status/1344547651564539904
+
+/mine.ps1
+
 # Generic
 
 /js/altmanluggage.js
