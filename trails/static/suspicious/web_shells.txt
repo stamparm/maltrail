@@ -288,6 +288,13 @@
 
 /shell202007281.php
 
+# Reference: https://twitter.com/ecarlesi/status/1344217410052579328
+
+/ARS.shell.php
+/C99.shell.php
+/R57.shell.php
+/WSO2.shell.php
+
 # Misc.
 
 rst.void.ru
