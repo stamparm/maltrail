@@ -3686,6 +3686,11 @@ gtows.com/wp-content/js/var.js
 
 userway-api.com
 
+# Reference: https://blog.sucuri.net/2015/04/impacts-of-a-hack-on-a-magento-ecommerce-website.html
+
+java-e-shop.com
+soulmagic.biz.fozzyhost.com
+
 # Generic
 
 /cdn/ga.php?analytic=
