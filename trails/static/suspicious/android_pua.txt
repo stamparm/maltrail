@@ -231,3 +231,7 @@ tansacethatron.info
 # Reference: https://www.virustotal.com/gui/file/c9b20fae8c56cea06085412724334084794a3acc7d4d00a7ed86fd078412956e/detection
 
 g3app.com
+
+# Reference: https://www.virustotal.com/gui/domain/app.wapx.cn/relations
+
+app.wapx.cn
