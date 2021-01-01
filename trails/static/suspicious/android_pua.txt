@@ -227,3 +227,7 @@ tansacethatron.info
 14.215.171.169:9009
 /gamesdk/advert.jsp
 /gamesdk/doroot.jsp
+
+# Reference: https://www.virustotal.com/gui/file/c9b20fae8c56cea06085412724334084794a3acc7d4d00a7ed86fd078412956e/detection
+
+g3app.com
