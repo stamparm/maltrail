@@ -93,3 +93,7 @@ http://110.110.110.1/wpad.dat
 # Reference: https://www.virustotal.com/gui/file/5d05b5938fc802c4e22f5b85cbf5b332297cc63800f2eb0fb4e667035587a6af/detection
 
 http://110.110.110.0/wpad.dat
+
+# Reference: https://www.virustotal.com/gui/file/295fbc396883109078e23b8e8f8b6cca423d8a0d9839ac4e6e6c54f0ea6104e3/detection
+
+http://110.110.110.2/wpad.dat
