@@ -28,6 +28,7 @@ from core.settings import IS_WIN
 from core.settings import STATIC_IPCAT_LOOKUPS
 from core.settings import TIMEOUT
 from core.settings import UNICODE_ENCODING
+from core.settings import VERSION
 from core.settings import WHITELIST
 from core.settings import WHITELIST_RANGES
 from core.settings import WORST_ASNS
@@ -43,7 +44,7 @@ def retrieve_content(url, data=None, headers=None):
     """
 
     try:
-        req = _urllib.request.Request("".join(url[i].replace(' ', "%20") if i > url.find('?') else url[i] for i in xrange(len(url))), data, headers or {"User-agent": NAME, "Accept-encoding": "gzip, deflate"})
+        req = _urllib.request.Request("".join(url[i].replace(' ', "%20") if i > url.find('?') else url[i] for i in xrange(len(url))), data, headers or {"User-agent": "%s/%s" % (NAME, VERSION), "Accept-encoding": "gzip, deflate"})
         resp = _urllib.request.urlopen(req, timeout=TIMEOUT)
         retval = resp.read()
         encoding = resp.headers.get("Content-Encoding")
