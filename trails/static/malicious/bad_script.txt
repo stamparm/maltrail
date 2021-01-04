@@ -4023,6 +4023,10 @@ tunacan-812.tk
 
 /mine.ps1
 
+# Reference: https://twitter.com/neonprimetime/status/1346176402148765705
+
+/picture_library/goon.js
+
 # Generic
 
 /js/altmanluggage.js
