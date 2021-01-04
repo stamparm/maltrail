@@ -3110,3 +3110,7 @@ kvrddns.com
 # Reference: https://www.virustotal.com/gui/domain/provision-isr-dns.com/relations
 
 provision-isr-dns.com
+
+# Reference: https://www.virustotal.com/gui/domain/myqnapcloud.com/relations
+
+myqnapcloud.com
