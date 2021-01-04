@@ -4027,6 +4027,11 @@ tunacan-812.tk
 
 /picture_library/goon.js
 
+# Reference: https://twitter.com/malwrhunterteam/status/1346038126263865345
+# Reference: https://www.virustotal.com/gui/file/9d09788543b16ee59c469199cb0ef78891d8c66981169f0a6720fda8d4eeff9a/detection
+
+/rat/contact/uploader.php
+
 # Generic
 
 /js/altmanluggage.js
