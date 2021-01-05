@@ -606,6 +606,7 @@ xmrigcc.graef.in
 # Reference: https://s.tencent.com/research/report/1213.html
 # Reference: https://www.virustotal.com/gui/domain/mine.c3pool.com/relations
 
+91.121.140.167:443
 101.32.73.178:15555
 116.203.61.78:15555
 119.28.4.91:15555
@@ -620,3 +621,7 @@ xmrigcc.graef.in
 52.195.14.54:15555
 54.180.146.246:15555
 mine.c3pool.com
+
+# Reference: https://www.virustotal.com/gui/file/68d9579fe9d947b15ed590ef5379ead4a16be340391927c8694f30fee9d3c796/detection
+
+outlookcalendar.accesscam.org
