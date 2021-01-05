@@ -5120,6 +5120,10 @@ dynam1c.run
 
 securitysystemnews.com
 
+# Reference: https://www.virustotal.com/gui/domain/fulba.com/relations
+
+fulba.com
+
 # Misc
 
 .monster
