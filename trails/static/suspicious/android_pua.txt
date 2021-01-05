@@ -235,3 +235,10 @@ g3app.com
 # Reference: https://www.virustotal.com/gui/domain/app.wapx.cn/relations
 
 app.wapx.cn
+
+# Reference: https://twitter.com/bl4ckh0l3z/status/1345425686488612865
+# Reference: https://www.virustotal.com/gui/domain/mobikwik.com/detection
+# Reference: https://www.virustotal.com/gui/file/54233ca488ce498956cd6dbbb3d5d6492ebb1fc6477b14b34b53b16a04b1d7c4/detection
+
+jio.com
+rapi.mobikwik.com
