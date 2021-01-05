@@ -251,6 +251,10 @@ http://95.216.179.33
 
 http://45.14.50.50
 
+# Reference: https://twitter.com/malware_traffic/status/1346307776583262209
+
+http://188.227.84.241
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
