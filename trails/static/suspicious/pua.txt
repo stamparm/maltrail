@@ -2589,3 +2589,8 @@ conicono.com
 softpan.com
 sofstan.com
 softstan.com
+
+# Reference: https://www.virustotal.com/gui/file/4185e7399f1668550ee42c4125b3ee0b85daa854e3e7f39c9b971c516f3252ad/detection
+
+voa-update.windowsnas.co.kr
+/adlistener/adpatchconf.php
