@@ -621,7 +621,3 @@ xmrigcc.graef.in
 52.195.14.54:15555
 54.180.146.246:15555
 mine.c3pool.com
-
-# Reference: https://www.virustotal.com/gui/file/68d9579fe9d947b15ed590ef5379ead4a16be340391927c8694f30fee9d3c796/detection
-
-outlookcalendar.accesscam.org
