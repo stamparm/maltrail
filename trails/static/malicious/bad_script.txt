@@ -4032,6 +4032,10 @@ tunacan-812.tk
 
 /rat/contact/uploader.php
 
+# Reference: https://www.virustotal.com/gui/file/bef03e00e79bdced1eccb00458216f34c8e47274b08f044ac0186882ffadd0bc/detection
+
+/mack/post.php?type=
+
 # Generic
 
 /js/altmanluggage.js
