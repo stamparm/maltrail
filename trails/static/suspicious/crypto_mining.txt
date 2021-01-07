@@ -638,3 +638,7 @@ mine.c3pool.com
 
 coin-pool.com
 give-us-ltc.com
+
+# Reference: https://www.virustotal.com/gui/file/c1d66b09938e5177a9406a8935f717cba888b06bc5ff74797e32c7b793d6a935/detection
+
+give-us-btc.pw
