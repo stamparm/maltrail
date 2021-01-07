@@ -921,6 +921,7 @@ sophosxl.net
 
 # Generic
 
+thomsonreuters.com
 dnspod.com
 dynupdate.noip.com
 mkomarac.duckdns.org
