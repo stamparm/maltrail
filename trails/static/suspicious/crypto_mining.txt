@@ -621,3 +621,11 @@ xmrigcc.graef.in
 52.195.14.54:15555
 54.180.146.246:15555
 mine.c3pool.com
+
+# Reference: https://staging.nsfocusglobal.com/wp-content/uploads/2018/10/NuggetPhantom-Analysis-Report-V4.1.pdf
+
+154.48.241.199:15912
+98.126.1.26:15912
+98.126.1.27:15917
+98.126.80.90:15912
+98.126.80.91:15912
