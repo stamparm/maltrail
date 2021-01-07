@@ -629,3 +629,7 @@ mine.c3pool.com
 98.126.1.27:15917
 98.126.80.90:15912
 98.126.80.91:15912
+
+# Reference: https://www.virustotal.com/gui/file/942411f2fa054ec621023c6b9b4ad3b92372697da43eb38d2b661f80e19e6deb/behavior
+
+/panel/mining/CPUMiner.files
