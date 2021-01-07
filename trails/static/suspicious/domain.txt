@@ -5132,6 +5132,10 @@ hc0.me
 
 besaba.com
 
+# Reference: https://www.virustotal.com/gui/domain/cloudns.pw/relations
+
+cloudns.pw
+
 # Misc
 
 .monster
