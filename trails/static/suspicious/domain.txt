@@ -5128,6 +5128,10 @@ fulba.com
 
 hc0.me
 
+# Reference: https://www.virustotal.com/gui/domain/besaba.com/relations
+
+besaba.com
+
 # Misc
 
 .monster
