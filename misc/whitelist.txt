@@ -3169,3 +3169,10 @@ itinfinity.ru
 # Reference: https://www.virustotal.com/gui/domain/zerkalo.cc/relations
 
 zerkalo.cc
+
+# Reference: https://github.com/nextdns/metadata/issues/508
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60
+
+netguard.me
+netguard.pw
+netguard.re
