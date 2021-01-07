@@ -5124,6 +5124,18 @@ securitysystemnews.com
 
 fulba.com
 
+# Reference: https://www.virustotal.com/gui/domain/hc0.me/relations
+
+hc0.me
+
+# Reference: https://www.virustotal.com/gui/domain/besaba.com/relations
+
+besaba.com
+
+# Reference: https://www.virustotal.com/gui/domain/cloudns.pw/relations
+
+cloudns.pw
+
 # Misc
 
 .monster
