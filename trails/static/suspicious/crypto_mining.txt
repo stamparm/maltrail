@@ -633,3 +633,8 @@ mine.c3pool.com
 # Reference: https://www.virustotal.com/gui/file/942411f2fa054ec621023c6b9b4ad3b92372697da43eb38d2b661f80e19e6deb/behavior
 
 /panel/mining/CPUMiner.files
+
+# Reference: https://www.virustotal.com/gui/file/0ac003e6d8091544f7b055d7295ded55de94576729ab13925cde17eb2dd4ceab/detection
+
+coin-pool.com
+give-us-ltc.com
