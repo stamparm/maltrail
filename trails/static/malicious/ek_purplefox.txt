@@ -83,3 +83,8 @@ dl.gblga.workers.dev
 # Reference: https://twitter.com/MBThreatIntel/status/1341894084315607042
 
 steep-boat-06f5.qqztw.workers.dev
+
+# Reference: https://twitter.com/malware_traffic/status/1347001824319074304
+
+mythinkenergy.club
+nationalbiminitops.shop
