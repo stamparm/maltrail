@@ -5124,6 +5124,10 @@ securitysystemnews.com
 
 fulba.com
 
+# Reference: https://www.virustotal.com/gui/domain/hc0.me/relations
+
+hc0.me
+
 # Misc
 
 .monster
