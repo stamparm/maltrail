@@ -3691,6 +3691,21 @@ userway-api.com
 java-e-shop.com
 soulmagic.biz.fozzyhost.com
 
+# Reference: https://twitter.com/malwareinfosec/status/1347590799249219584
+# Reference: https://www.virustotal.com/gui/ip-address/102.130.115.168/relations
+
+cdn-cloud.co.za
+cdn-jquery.biz
+cdn-jquery.net
+cdn-jquery.net.za
+cdn-jquery.org
+cdn-jquery.web.za
+cdn-jquery.org.za
+cdn-stat.co.za
+cdn-stat.org.za
+cdn-stat.web.za
+cdn-update.co.za
+
 # Generic
 
 /cdn/ga.php?analytic=
@@ -3700,6 +3715,7 @@ soulmagic.biz.fozzyhost.com
 /5d1cbc8c073d4.js
 /5d4cdc4cdf344.js
 /5e7fa6489b31a.js
+/dsc-statistic.js
 /adsbygoogle/
 /adsbygoogle/ads.js
 /baypressservices/
@@ -3716,6 +3732,7 @@ soulmagic.biz.fozzyhost.com
 /js/mage/cookies.js
 /js/mage/google.js
 /js/scriptaculous/print.js
+/js/dsc-statistic.js
 /js/varien/js.js.pagespeed.jm.aFn_GvyNS2.js
 /my/vmart.js
 /103754_tag.js
