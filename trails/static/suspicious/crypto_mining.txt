@@ -20,6 +20,8 @@
 54.37.7.208:7777
 94.23.251.22:7777
 minergate.com
+pool.minergate.com
+xmr.pool.minergate.com
 miningpoolhub.com
 minexmr.com
 pool.minexmr.com
@@ -32,6 +34,10 @@ nanopool.org
 ethereumpool.co
 suprnova.cc
 siamining.com
+
+# Reference: https://www.virustotal.com/gui/file/7738ad1029f1709ec86c8ba24e04b3f71edf671b64681b884ccd70725a1674a5/detection
+
+94.130.143.162:45700
 
 # Reference: https://www.multipool.us/
 
