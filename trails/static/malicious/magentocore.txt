@@ -3706,6 +3706,10 @@ cdn-stat.org.za
 cdn-stat.web.za
 cdn-update.co.za
 
+# Reference: https://twitter.com/malwareinfosec/status/1347598539589709824
+
+veterinaryconcepts.com/errors/enx.php?data=
+
 # Generic
 
 /cdn/ga.php?analytic=
