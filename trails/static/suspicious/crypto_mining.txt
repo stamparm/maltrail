@@ -2,7 +2,23 @@
 # See the file 'LICENSE' for copying permission
 
 # Reference: https://hackforums.net/printthread.php?tid=5655422
+# Reference: https://twitter.com/r3dbU7z/status/1347527548977242116
+# Reference: https://www.virustotal.com/gui/file/6cd557cb2582ab5cf8d0e77131479ab91c00bfdf9c775c170809d5265bf0477a/detection
 
+107.191.47.239:3333
+176.31.105.53:3333
+45.32.233.191:3333
+51.144.104.161:3333
+51.144.119.120:3333
+54.37.7.208:3333
+94.23.251.22:3333
+107.191.47.239:7777
+176.31.105.53:7777
+45.32.233.191:7777
+51.144.104.161:7777
+51.144.119.120:7777
+54.37.7.208:7777
+94.23.251.22:7777
 minergate.com
 miningpoolhub.com
 minexmr.com
