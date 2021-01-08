@@ -1254,6 +1254,8 @@ justproxy.io
 histats.com
 systemcontrolvpn.ddns.net
 xplanet.dyndns.org
+perfekta.dynalias.org
+zulcselce.dyndns.org
 
 # long-domain names (e.g. 03020749dotbjdot89dot249dot108dot53q1w2e3rty)
 
