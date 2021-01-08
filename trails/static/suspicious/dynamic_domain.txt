@@ -905,7 +905,6 @@ autoipset.com
 dahuaddns.com
 ez-dns.com
 dyndns.com
-gamespress.com
 easydns4u.com
 dynip.com
 dyndns.dk
@@ -3087,15 +3086,6 @@ system-ns.net
 # Reference: https://www.virustotal.com/gui/domain/ydns.eu/relations
 
 ydns.eu
-
-# Reference: https://www.virustotal.com/gui/domain/qiniudns.com/relations
-# Reference: https://www.virustotal.com/gui/file/fe94ffe8485662d7556499e4c3fd8d0a2384cebe45958ccf57d49d2730f238b9/detection
-# Reference: https://www.virustotal.com/gui/file/62205a6b33fa758e0b9780b69bb4f8cac18b12525f83daee912832a97d1eb58d/detection
-# Reference: https://www.virustotal.com/gui/file/8dd15f9bbba4431f084a8fe22213c22f403171aa0053d89342ae8623e21e8639/detection
-# Reference: https://www.virustotal.com/gui/file/ab4601ac99c5e561246f5de7846dd94bc3fa74111a0e03ab38a960e9890d8d2f/detection
-# Reference: https://www.virustotal.com/gui/file/4cbec25c7a773ae8ddbbe65ab97209638d7006c1cf29b97bb76798eac5394ffe/detection
-
-qiniudns.com
 
 # Reference: https://app.any.run/tasks/5d51ce75-0740-4235-b508-47971cf23fa1/
 # Reference: https://www.virustotal.com/gui/domain/shacknet.us/relations
