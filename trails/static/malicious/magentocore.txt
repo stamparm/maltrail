@@ -3710,9 +3710,16 @@ cdn-update.co.za
 
 veterinaryconcepts.com/errors/enx.php?data=
 
+# Reference: https://twitter.com/500mk500/status/1347687209844027392
+# Reference: https://urlscan.io/result/0a34d7a1-aef8-45d3-b71a-71d68d66530b/
 # Reference: https://www.virustotal.com/gui/ip-address/193.38.54.81/relations
 
+cloudchimp.online
+cloudchimp.tech
+mail-chimp.site
+mailchimp.press
 printcss.site
+tagmanager.tech
 
 # Generic
 
