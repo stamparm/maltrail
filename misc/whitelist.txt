@@ -3178,3 +3178,7 @@ zerkalo.cc
 netguard.me
 netguard.pw
 netguard.re
+
+# Reference: http://ipnoise.undo.it/blacklist.txt
+
+ipnoise.undo.it
