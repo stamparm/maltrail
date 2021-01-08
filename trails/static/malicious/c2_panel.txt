@@ -240,6 +240,11 @@ http://82.146.41.245
 
 irmihan.ir
 
+# Reference: https://www.virustotal.com/gui/file/cd7820a08e7c82332ad4af643dd5fd76ddf7477792bea55f371969297655a7a9/detection
+# Reference: https://www.virustotal.com/gui/file/594941be0746d39a1acea9bbce3709c0f02d734afff52e5d68a62186c2022e7b/detection
+
+/tCustom/cpanel/
+
 # Generic
 
 /admin_123/auth.php
