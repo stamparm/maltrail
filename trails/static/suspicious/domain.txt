@@ -5136,6 +5136,11 @@ besaba.com
 
 cloudns.pw
 
+# Reference: https://www.virustotal.com/gui/domain/fbb0oy.net/relations
+# Reference: https://github.com/stamparm/maltrail/pull/13602/commits/1400d423e3e9ca1f16f0ab045c500c80e5927cc4
+
+fbb0oy.net
+
 # Misc
 
 .monster
