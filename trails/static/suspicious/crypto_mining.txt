@@ -643,3 +643,7 @@ xmrigcc.graef.in
 52.195.14.54:15555
 54.180.146.246:15555
 mine.c3pool.com
+
+# Reference: https://www.virustotal.com/gui/domain/winxmr.club/relations
+
+winxmr.club
