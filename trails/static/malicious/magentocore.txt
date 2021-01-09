@@ -3732,6 +3732,13 @@ tagmanager.site
 tagmanager.store
 tagmanager.tech
 
+# Reference: https://twitter.com/AffableKraut/status/1260829836198711296
+
+analitic.club
+felers.club
+tags-analitic.icu
+tags-css.icu
+
 # Generic
 
 /cdn/ga.php?analytic=
