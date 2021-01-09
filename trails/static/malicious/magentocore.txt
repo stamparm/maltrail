@@ -3721,6 +3721,7 @@ mail-chimp.site
 mailchimp.press
 printcss.site
 tagmanager.online
+tagmanager.site
 tagmanager.tech
 
 # Generic
