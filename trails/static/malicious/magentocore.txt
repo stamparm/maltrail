@@ -2308,7 +2308,10 @@ clipbutton.com.br/catalog/discount.php
 tivents.de/media/wysiwyg/paypal4.gif
 
 # Reference: https://twitter.com/felixaime/status/1253039202465468419
+# Reference: https://www.virustotal.com/gui/ip-address/193.38.54.55/relations
+# Reference: https://www.virustotal.com/gui/ip-address/193.38.54.62/detection
 
+secrityipa.club
 securityipa.club
 
 # Reference: https://unit42.paloaltonetworks.com/how-cybercriminals-prey-on-the-covid-19-pandemic/ (# Skimmer)
