@@ -3739,6 +3739,13 @@ felers.club
 tags-analitic.icu
 tags-css.icu
 
+# Reference: https://twitter.com/AffableKraut/status/1348165316589846532
+
+fbevents.host
+fbevents.site
+fbevents.store
+fbevents.tech
+
 # Generic
 
 /cdn/ga.php?analytic=
