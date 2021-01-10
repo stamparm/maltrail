@@ -647,3 +647,9 @@ mine.c3pool.com
 # Reference: https://www.virustotal.com/gui/domain/winxmr.club/relations
 
 winxmr.club
+
+# Reference: https://twitter.com/r3dbU7z/status/1348015427541151745
+# Reference: https://www.virustotal.com/gui/file/f7a8d3fb89711f208f281c267ed8dd647cda207ecb514d37892b56a0ddafbe9a/relations
+
+monerogb.com
+monerorx.com
