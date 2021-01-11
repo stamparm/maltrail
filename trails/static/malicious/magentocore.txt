@@ -2308,7 +2308,10 @@ clipbutton.com.br/catalog/discount.php
 tivents.de/media/wysiwyg/paypal4.gif
 
 # Reference: https://twitter.com/felixaime/status/1253039202465468419
+# Reference: https://www.virustotal.com/gui/ip-address/193.38.54.55/relations
+# Reference: https://www.virustotal.com/gui/ip-address/193.38.54.62/detection
 
+secrityipa.club
 securityipa.club
 
 # Reference: https://unit42.paloaltonetworks.com/how-cybercriminals-prey-on-the-covid-19-pandemic/ (# Skimmer)
@@ -3691,6 +3694,63 @@ userway-api.com
 java-e-shop.com
 soulmagic.biz.fozzyhost.com
 
+# Reference: https://twitter.com/malwareinfosec/status/1347590799249219584
+# Reference: https://www.virustotal.com/gui/ip-address/102.130.115.168/relations
+
+cdn-cloud.co.za
+cdn-jquery.biz
+cdn-jquery.net
+cdn-jquery.net.za
+cdn-jquery.org
+cdn-jquery.web.za
+cdn-jquery.org.za
+cdn-stat.co.za
+cdn-stat.org.za
+cdn-stat.web.za
+cdn-update.co.za
+
+# Reference: https://twitter.com/malwareinfosec/status/1347598539589709824
+
+veterinaryconcepts.com/errors/enx.php?data=
+
+# Reference: https://twitter.com/500mk500/status/1347687209844027392
+# Reference: https://urlscan.io/result/0a34d7a1-aef8-45d3-b71a-71d68d66530b/
+# Reference: https://urlscan.io/result/838576c6-7d97-4821-86cd-6d463d21782b/
+# Reference: https://www.virustotal.com/gui/ip-address/193.38.54.81/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.140.146.4/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.140.146.5/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.140.146.6/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.140.146.7/relations
+
+cloudchimp.online
+cloudchimp.tech
+mail-chimp.site
+mailchimp.press
+printcss.site
+tagmanager.online
+tagmanager.site
+tagmanager.store
+tagmanager.tech
+
+# Reference: https://twitter.com/AffableKraut/status/1260829836198711296
+
+analitic.club
+felers.club
+tags-analitic.icu
+tags-css.icu
+
+# Reference: https://twitter.com/AffableKraut/status/1348165316589846532
+
+fbevents.host
+fbevents.site
+fbevents.store
+fbevents.tech
+
+# Reference: https://twitter.com/AffableKraut/status/1348525412415107072
+# Reference: https://www.virustotal.com/gui/ip-address/45.155.38.3/relations
+
+cdn-google-cloudflare.com
+
 # Generic
 
 /cdn/ga.php?analytic=
@@ -3700,6 +3760,7 @@ soulmagic.biz.fozzyhost.com
 /5d1cbc8c073d4.js
 /5d4cdc4cdf344.js
 /5e7fa6489b31a.js
+/dsc-statistic.js
 /adsbygoogle/
 /adsbygoogle/ads.js
 /baypressservices/
@@ -3716,6 +3777,7 @@ soulmagic.biz.fozzyhost.com
 /js/mage/cookies.js
 /js/mage/google.js
 /js/scriptaculous/print.js
+/js/dsc-statistic.js
 /js/varien/js.js.pagespeed.jm.aFn_GvyNS2.js
 /my/vmart.js
 /103754_tag.js
