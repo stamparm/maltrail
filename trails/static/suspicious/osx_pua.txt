@@ -19,3 +19,8 @@ shoppinizermac.com
 surfbuyermac.com
 surfmatemac.com
 weknow.ac
+
+# Reference: https://www.virustotal.com/gui/file/e418b411d25d52522b6d596533d5b7dd55a39e95b08c3d3685c8748d77e7a733/detection
+
+storeyourstreams.xyz
+bghui.storeyourstreams.xyz
