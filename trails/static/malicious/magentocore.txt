@@ -3746,6 +3746,11 @@ fbevents.site
 fbevents.store
 fbevents.tech
 
+# Reference: https://twitter.com/AffableKraut/status/1348525412415107072
+# Reference: https://www.virustotal.com/gui/ip-address/45.155.38.3/relations
+
+cdn-google-cloudflare.com
+
 # Generic
 
 /cdn/ga.php?analytic=
