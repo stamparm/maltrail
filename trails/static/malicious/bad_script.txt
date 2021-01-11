@@ -4036,6 +4036,10 @@ tunacan-812.tk
 
 /mack/post.php?type=
 
+# Reference: https://www.virustotal.com/gui/file/8bbd83f12f7804f61406c18fe7d6636a339bb165e641297d1f6cf9233adb5060/behavior/C2AE
+
+/p2p_v4/psp.php
+
 # Generic
 
 /js/altmanluggage.js
