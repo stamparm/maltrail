@@ -3751,6 +3751,32 @@ fbevents.tech
 
 cdn-google-cloudflare.com
 
+# Reference: https://twitter.com/AffableKraut/status/1348684891718901762
+# Reference: https://www.virustotal.com/gui/ip-address/102.130.114.139/relations
+# Reference: https://www.virustotal.com/gui/ip-address/102.130.114.153/relations
+# Reference: https://www.virustotal.com/gui/ip-address/102.130.114.147/relations
+
+asp-cloud.org.za
+google-document.co.za
+google-js.co.za
+google-js.org.za
+google-js.web.za
+google-network.co.za
+google-statistic.co.za
+google-statistic.org.za
+google-statistic.web.za
+jquery.africa
+jquery.org.za
+lib-cloud.org.za
+lib-cloud.web.za
+mage.org.za
+mage.web.za
+magento.web.za
+node-js.org.za
+node-js.web.za
+nodejs.org.za
+yahoo-statistic.web.za
+
 # Generic
 
 /cdn/ga.php?analytic=
