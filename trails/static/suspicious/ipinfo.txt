@@ -345,3 +345,7 @@ v4.ipv6-test.com/api/myip.php
 # Reference: https://www.virustotal.com/gui/file/8471b945edaa37d2cfeda1a7c367cf3f273e8dee7353e6cb309a74d33b6a87b7/detection
 
 myip.ipip.net
+
+# Reference: https://www.virustotal.com/gui/domain/eth0.me/relations
+
+eth0.me
