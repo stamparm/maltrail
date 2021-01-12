@@ -653,3 +653,7 @@ winxmr.club
 
 monerogb.com
 monerorx.com
+
+# Reference: https://www.virustotal.com/gui/file/fd18bea214ae854e69e6775f6cdebb6bd6d378dee7854924cf3ae3bfb5173b94/detection
+
+139.99.120.50:7777
