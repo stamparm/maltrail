@@ -921,6 +921,8 @@ sophosxl.net
 
 # Generic
 
+report-uri.io
+comodoca.com
 geo1.easydns.com
 geo2.easydns.net
 geo3.easydns.org
