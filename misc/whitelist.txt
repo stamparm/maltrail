@@ -921,6 +921,16 @@ sophosxl.net
 
 # Generic
 
+geo1.easydns.com
+geo2.easydns.net
+geo3.easydns.org
+geo4.easydns.info
+google.pn
+google.com.onion
+upscore.com
+huaweicloud.com
+tbcache.com
+bittrex.com
 mundo3.zapto.org
 thomsonreuters.com
 dnspod.com
