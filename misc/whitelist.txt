@@ -3182,3 +3182,7 @@ netguard.re
 # Reference: http://ipnoise.undo.it/blacklist.txt
 
 ipnoise.undo.it
+
+# Reference: https://github.com/stamparm/maltrail/issues/13674
+
+wordbot.xyz
