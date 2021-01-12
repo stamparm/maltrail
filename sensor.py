@@ -1186,6 +1186,9 @@ def main():
 
     print("%s (sensor) #v%s\n" % (NAME, VERSION))
 
+    if "--version" in sys.argv:
+        raise SystemExit
+
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
     parser.add_option("-i", dest="pcap_file", help="open pcap file for offline analysis")
@@ -1239,7 +1242,7 @@ if __name__ == "__main__":
     except SystemExit as ex:
         show_final = False
 
-        if isinstance(get_ex_message(ex), six.string_types):
+        if isinstance(get_ex_message(ex), six.string_types) and get_ex_message(ex).strip('0'):
             print(get_ex_message(ex))
             os._exit(1)
     except IOError:
