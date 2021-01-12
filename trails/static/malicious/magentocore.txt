@@ -3763,6 +3763,7 @@ google-js.org.za
 google-js.web.za
 google-network.co.za
 google-statistic.co.za
+google-statistic.org
 google-statistic.org.za
 google-statistic.web.za
 jquery.africa
@@ -3775,6 +3776,7 @@ magento.web.za
 node-js.org.za
 node-js.web.za
 nodejs.org.za
+yahoo-statistic.org.za
 yahoo-statistic.web.za
 
 # Generic
