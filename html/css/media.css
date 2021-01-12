@@ -9,7 +9,7 @@
     }
 }
 @media screen and (max-width: 460px) {
-    #details_length, #documentation_link, #issues_link, .link-splitter {
+    #details_length, #documentation_link, #collaboration_link, #issues_link, .link-splitter {
         display: none !important;
     }
 }
