@@ -129,7 +129,7 @@ The following set of commands should get your Maltrail **Sensor** up and running
 
 - For **Ubuntu/Debian**
 
-```
+```sh
 sudo apt-get install git python-pcapy
 git clone --depth 1 https://github.com/stamparm/maltrail.git
 cd maltrail
@@ -138,7 +138,7 @@ sudo python sensor.py
 
 - For **SUSE/openSUSE**
 
-```
+```sh
 sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip
 sudo pip2 install pcapy
 git clone --depth 1 https://github.com/stamparm/maltrail.git
@@ -150,7 +150,7 @@ sudo python sensor.py
 
 To start the (optional) **Server** on same machine, open a new terminal and execute the following:
 
-```
+```sh
 [[ -d maltrail ]] || git clone --depth 1 https://github.com/stamparm/maltrail.git
 cd maltrail
 python server.py
@@ -160,7 +160,7 @@ python server.py
 
 To test that everything is up and running execute the following:
 
-```
+```sh
 ping -c 1 136.161.101.53
 cat /var/log/maltrail/$(date +"%Y-%m-%d").log
 ```
@@ -169,7 +169,7 @@ cat /var/log/maltrail/$(date +"%Y-%m-%d").log
 
 Also, to test the capturing of DNS traffic you can try the following:
 
-```
+```sh
 nslookup morphed.ru
 cat /var/log/maltrail/$(date +"%Y-%m-%d").log
 ```
@@ -178,7 +178,7 @@ cat /var/log/maltrail/$(date +"%Y-%m-%d").log
 
 To stop **Sensor** and **Server** instances (if running in background) execute the following:
 
-```
+```sh
 sudo pkill -f sensor.py
 pkill -f server.py
 ```
@@ -235,7 +235,7 @@ Option `UDP_ADDRESS` contains the server's log collecting listening address (Not
 
 Option `FAIL2BAN_REGEX` contains the regular expression (e.g. `attacker|reputation|potential[^"]*(web scan|directory traversal|injection|remote code)|spammer|mass scanner`) to be used in `/fail2ban` web calls for extraction of today's attacker source IPs. This allows the usage of IP blocking mechanisms (e.g. `fail2ban`, `iptables` or `ipset`) by periodic pulling of blacklisted IP addresses from remote location. Example usage would be the following script (e.g. run as a `root` cronjob on a minute basis):
 
-```
+```sh
 #!/bin/bash
 ipset -q flush maltrail
 ipset -q create maltrail hash:net
@@ -478,7 +478,7 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**,
 
 - On **Ubuntu/Debian**
 
-    ```
+    ```sh
     sudo apt-get install git python-pcapy
     cd /tmp
     git clone --depth 1 https://github.com/stamparm/maltrail.git
@@ -488,7 +488,7 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**,
     
 - On **SUSE/openSUSE**
 
-   ```
+   ```sh
    sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip
    sudo pip2 install pcapy
    cd /tmp
@@ -499,7 +499,7 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**,
 
 2. Set working environment:
 
-    ```
+    ```sh
     sudo mkdir -p /var/log/maltrail
     sudo mkdir -p /etc/maltrail
     sudo cp /opt/maltrail/maltrail.conf /etc/maltrail

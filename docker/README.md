@@ -1,6 +1,7 @@
 ## Ubuntu/Debian
 
 ```sh
+    #!/bin/bash
     export MALTRAIL_LOCAL=$(realpath ~/.local/share/maltrail)
     mkdir -p $MALTRAIL_LOCAL
     cd $MALTRAIL_LOCAL
