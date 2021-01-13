@@ -256,3 +256,9 @@ sp1.zzwy168.com
 # Reference: https://www.virustotal.com/gui/domain/yz.wixsd.com/relations
 
 yz.wixsd.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1349329349380550656
+# Reference: https://www.virustotal.com/gui/file/d0f36b9a19cee045c79af58d58b24dcab3850dfd21d1079920ac6f1e8554666e/detection
+
+avatasia.com
+/AVATRADE_APP.apk
