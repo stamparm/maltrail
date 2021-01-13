@@ -146,9 +146,7 @@ cd maltrail
 sudo python sensor.py
 ```
 
-- For **Docker**
-
-Instructions can be found [here](docker).
+- For **Docker** environment instructions can be found [here](docker).
 
 ![Sensor](https://i.imgur.com/E9tt2ek.png)
 
