@@ -4044,6 +4044,10 @@ tunacan-812.tk
 
 premcloa.shop
 
+# Reference: https://twitter.com/felixaime/status/1349261822591954946
+
+cdncontentdelivery.com
+
 # Generic
 
 /js/altmanluggage.js
