@@ -146,6 +146,10 @@ cd maltrail
 sudo python sensor.py
 ```
 
+- For **Docker**
+
+Instructions can be found [here](docker).
+
 ![Sensor](https://i.imgur.com/E9tt2ek.png)
 
 To start the (optional) **Server** on same machine, open a new terminal and execute the following:
