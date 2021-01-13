@@ -4040,6 +4040,10 @@ tunacan-812.tk
 
 /p2p_v4/psp.php
 
+# Reference: https://twitter.com/unmaskparasites/status/1349202063100502016
+
+premcloa.shop
+
 # Generic
 
 /js/altmanluggage.js
