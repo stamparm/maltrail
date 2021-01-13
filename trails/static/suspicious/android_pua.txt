@@ -252,3 +252,7 @@ iface.zzwy168.com
 line.zzwy168.com
 sp.zzwy168.com
 sp1.zzwy168.com
+
+# Reference: https://www.virustotal.com/gui/domain/yz.wixsd.com/relations
+
+yz.wixsd.com
