@@ -562,3 +562,15 @@ input[type=search] {
     background-color: white;
     padding-right: 16px;
 }
+
+/* Reference: https://github.com/twbs/bootstrap/issues/16201#issuecomment-498358474 */
+@supports (-moz-appearance:none) {
+    #details_length select
+    {
+        -moz-appearance:none !important;
+        background: transparent url('data:image/gif;base64,R0lGODlhBgAGAKEDAFVVVX9/f9TU1CgmNyH5BAEKAAMALAAAAAAGAAYAAAIODA4hCDKWxlhNvmCnGwUAOw==') right center no-repeat !important;
+        background-position: calc(100% - 5px) center !important;
+        line-height: inherit;
+        padding-right: 15px;
+    }
+}
