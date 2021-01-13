@@ -127,7 +127,7 @@ Fully functional demo pages with real-life threats collected for a single day ca
 
 The following set of commands should get your Maltrail **Sensor** up and running (out of the box with default settings and monitoring interface "any"):
 
-- For **Debian/Ubuntu**
+- For **Ubuntu/Debian**
 
 ```
 sudo apt-get install git python-pcapy
@@ -476,7 +476,7 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**,
 
 1. Install Maltrail:
 
-- On **Debian/Ubuntu** Linux OS
+- On **Ubuntu/Debian**
 
     ```
     sudo apt-get install git python-pcapy
@@ -486,7 +486,7 @@ To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**,
     sudo chown -R $USER:$USER /opt/maltrail
     ```
     
-- On **SUSE/openSUSE** Linux OS
+- On **SUSE/openSUSE**
 
    ```
    sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip

@@ -1,4 +1,4 @@
-# Ubuntu
+## Ubuntu/Debian
 
 ```sh
     export MALTRAIL_LOCAL=$(realpath ~/.local/share/maltrail)
