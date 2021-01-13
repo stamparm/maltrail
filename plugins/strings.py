@@ -16,6 +16,6 @@ def plugin(event_tuple, packet=None):
     if packet:
         localtime = time.strftime(TIME_FORMAT, time.localtime(int(sec)))
         output = "\n[%s] %s:%s -> %s:%s:\n" % (localtime, src_ip, src_port, dst_ip, dst_port)
-        output += "%s\n" % "\n".join(re.findall(r"[ -~]{4,}", packet))
+        output += "\n".join(_.decode() for _ in re.findall(b"[ -~]{4,}", packet))
         sys.stderr.write(output)
         sys.stderr.flush()

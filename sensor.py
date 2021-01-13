@@ -913,7 +913,7 @@ def init():
                     sys.path.insert(0, dirname)
 
                 try:
-                    module = __import__(filename[:-3].encode(sys.getfilesystemencoding()))
+                    module = __import__(filename[:-3])
                 except (ImportError, SyntaxError) as msg:
                     exit("[!] unable to import plugin script '%s' (%s)" % (filename, msg))
 
