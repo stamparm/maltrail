@@ -845,7 +845,7 @@ function init(url, from, to) {
                     alertify.log("Showing demo data");
 
                     document.title = "Maltrail (demo)";
-                    $("#period_label").html("(demo data)");
+                    $("#period_label").html("(demo)");
                 }
                 else {
                     if (_DATASET.length > 0)
