@@ -21,7 +21,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.28.37"
+VERSION = "0.28.38"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 IS_SENSOR = "sensor" in sys.argv[0]
@@ -505,6 +505,15 @@ def read_bogon_ranges():
                     prefix, mask = line.split('/')
                     BOGON_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
 
+def check_deprecated():
+    if "--no-updates" in sys.argv:
+        print("[!] switch '--no-updates' was renamed to '--offline'")
+        sys.argv = [(_ if _ != "--no-updates" else "--offline") for _ in sys.argv]
+
+    if "-i" in sys.argv:
+        print("[x] option '-i' was renamed to '-r'")
+        sys.argv = [(_ if _ != "-i" else "-r") for _ in sys.argv]
+
 if __name__ != "__main__":
     read_whitelist()
     read_ignorelist()
@@ -512,3 +521,4 @@ if __name__ != "__main__":
     read_worst_asn()
     read_cdn_ranges()
     read_bogon_ranges()
+    check_deprecated()

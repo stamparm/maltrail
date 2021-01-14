@@ -97,7 +97,7 @@ def main():
 
     if config.UDP_ADDRESS and config.UDP_PORT:
         if config.UDP_PORT <= 1024 and not config.DISABLE_CHECK_SUDO and check_sudo() is False:
-            exit("[!] please run '%s' with sudo/Administrator privileges when using 'UDP_ADDRESS' configuration value" % __file__)
+            exit("[!] please run '%s' with root privileges when using 'UDP_ADDRESS' configuration value" % __file__)
 
         create_log_directory()
         start_logd(address=config.UDP_ADDRESS, port=config.UDP_PORT, join=False)

@@ -149,7 +149,7 @@ def bogon_ip(address):
 
 def check_sudo():
     """
-    Checks for sudo/Administrator privileges
+    Checks for root privileges
     """
 
     check = None

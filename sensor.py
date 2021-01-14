@@ -824,7 +824,7 @@ def init():
 
     def update_timer():
         retries = 0
-        if not config.no_updates:
+        if not config.offline:
             while retries < CHECK_CONNECTION_MAX_RETRIES and not check_connection():
                 sys.stdout.write("[!] can't update because of lack of Internet connection (waiting..." if not retries else '.')
                 sys.stdout.flush()
@@ -834,7 +834,7 @@ def init():
             if retries:
                 print(")")
 
-        if config.no_updates or retries == CHECK_CONNECTION_MAX_RETRIES:
+        if config.offline or retries == CHECK_CONNECTION_MAX_RETRIES:
             if retries == CHECK_CONNECTION_MAX_RETRIES:
                 print("[x] going to continue without online update")
             _ = update_trails(offline=True)
@@ -884,7 +884,7 @@ def init():
     update_timer()
 
     if not config.DISABLE_CHECK_SUDO and check_sudo() is False:
-        exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
+        exit("[!] please run '%s' with root privileges" % __file__)
 
     if config.plugins:
         config.plugin_functions = []
@@ -1191,11 +1191,11 @@ def main():
 
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
-    parser.add_option("-i", dest="pcap_file", help="open pcap file for offline analysis")
+    parser.add_option("-r", dest="pcap_file", help="pcap file for offline analysis")
     parser.add_option("-p", dest="plugins", help="plugin(s) to be used per event")
-    parser.add_option("-q", dest="quiet", action="store_true", help="turn off regular output")
-    parser.add_option("--console", dest="console", action="store_true", help="print events to console (Note: switch '-q' might be useful)")
-    parser.add_option("--no-updates", dest="no_updates", action="store_true", help="disable (online) trail updates")
+    parser.add_option("-q", "--quiet", dest="quiet", action="store_true", help="turn off regular output")
+    parser.add_option("--console", dest="console", action="store_true", help="print events to console")
+    parser.add_option("--offline", dest="offline", action="store_true", help="disable (online) trail updates")
     parser.add_option("--debug", dest="debug", action="store_true", help=optparse.SUPPRESS_HELP)
     parser.add_option("--profile", dest="profile", help=optparse.SUPPRESS_HELP)
     options, _ = parser.parse_args()
@@ -1222,7 +1222,7 @@ def main():
             print("[i] using pcap file(s) '%s'" % options.pcap_file)
 
     if not config.DISABLE_CHECK_SUDO and not check_sudo():
-        exit("[!] please run '%s' with sudo/Administrator privileges" % __file__)
+        exit("[!] please run '%s' with root privileges" % __file__)
 
     try:
         init()

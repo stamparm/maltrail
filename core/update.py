@@ -106,7 +106,7 @@ def update_trails(force=False, offline=False):
                     trail_files.add(os.path.abspath(os.path.join(dirpath, filename)))
 
         if not trails and (force or not os.path.isfile(config.TRAILS_FILE) or (time.time() - os.stat(config.TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD or os.stat(config.TRAILS_FILE).st_size == 0 or any(os.stat(_).st_mtime > os.stat(config.TRAILS_FILE).st_mtime for _ in trail_files)):
-            if not config.no_updates:
+            if not config.offline:
                 print("[i] updating trails (this might take a while)...")
             else:
                 print("[i] checking trails...")
