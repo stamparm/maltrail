@@ -3194,8 +3194,10 @@ netguard.pw
 netguard.re
 
 # Reference: http://ipnoise.undo.it/blacklist.txt
+# Reference: http://ipnoise.now.im/blacklist.txt
 
 ipnoise.undo.it
+ipnoise.now.im
 
 # Reference: https://github.com/stamparm/maltrail/issues/13674
 
