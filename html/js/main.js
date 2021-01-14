@@ -25,6 +25,7 @@ var IP_COUNTRY = {};
 var CHECK_IP = {};
 var TRAIL_TYPES = {};
 
+var CONTEXT_MENU_ROW = null;
 var SPARKLINE_WIDTH = 130;
 var CHART_WIDTH = screen.width - 200;
 var CHART_HEIGHT = screen.height - 340;
@@ -33,6 +34,7 @@ var MAX_SOURCES_ITEMS = 40;
 var FLOOD_TRAIL_THRESHOLD = 50;
 var LONG_TRAIL_THRESHOLD = 40;
 var MAX_CONDENSED_ITEMS = 100;
+var HIDDEN_THREAT_COUNT = 0;
 var OTHER_COLOR = "#999";
 var THREAT_INFIX = "~>";
 var FLOOD_THREAT_PREFIX = "...";
@@ -53,6 +55,7 @@ var PORT_NAMES = { 1: "tcpmux", 2: "nbp", 4: "echo", 6: "zip", 7: "echo", 9: "di
 var SEARCH_TIP_TIMER = 0;
 var DRAW_SPARKLINES_TIMER = 0;
 var PAPAPARSE_COMPLETE_TIMER = 0;
+var REPORT_URL = "http://23.254.203.53/report.php"  // NOTE: Right click / Report false positive
 var SEARCH_TIP_URL = "https://www.searchencrypt.com/search/?q=%22${query}%22";        // Reference: https://kinsta.com/blog/alternative-search-engines/
 //var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
 //var SEARCH_TIP_URL = "https://www.google.com/cse?cx=011750002002865445766%3Ay5klxdomj78&ie=UTF-8&q=${query}";
@@ -72,6 +75,7 @@ var CHART_TOOLTIP_FORMAT = "<%= datasetLabel %>: <%= value %>";
 var INFO_SEVERITY_KEYWORDS = { "malware": SEVERITY.HIGH, "adversary": SEVERITY.HIGH, "ransomware": SEVERITY.HIGH, "reputation": SEVERITY.LOW, "attacker": SEVERITY.LOW, "spammer": SEVERITY.LOW, "compromised": SEVERITY.LOW, "crawler": SEVERITY.LOW, "scanning": SEVERITY.LOW }
 var STORAGE_KEY_ACTIVE_STATUS_BUTTON = "STORAGE_KEY_ACTIVE_STATUS_BUTTON";
 var STORAGE_KEY_EDIT_ALIASES = "STORAGE_KEY_EDIT_ALIASES";
+var STORAGE_KEY_HIDDEN_THREATS = "STORAGE_KEY_HIDDEN_THREATS";
 var COMMA_ENCODE_TRAIL_TYPES = { UA: true, URL: true};
 var TOOLTIP_FOLDING_REGEX = /([^\s]{60})/g;
 var REPLACE_SINGLE_CLOUD_WITH_BRACES = false;
@@ -144,6 +148,38 @@ $(document).ready(function() {
     $("#graph_close").css("left", CHART_WIDTH / 2 - 11)
 
     init(location.origin + "/events?date=" + formatDate(new Date()), new Date());
+
+    // Reference: https://stackoverflow.com/a/20471268
+    $(document).bind("mousedown", function (e) {
+        if (!$(e.target).parents(".custom-menu").length > 0) {
+            $(".custom-menu").hide(100);
+        }
+    });
+
+    $(".custom-menu li").click(function() {
+        var table = $('#details').dataTable();
+        var hidden_threats = $.jStorage.get(STORAGE_KEY_HIDDEN_THREATS, {});
+        var threat = $(CONTEXT_MENU_ROW).find("td:first").text();
+
+        switch ($(this).attr("data-action")) {
+            case "hide_threat":
+                hidden_threats[threat] = true;
+                HIDDEN_THREAT_COUNT += 1;
+                $.jStorage.set(STORAGE_KEY_HIDDEN_THREATS, hidden_threats);
+                table.api().row(CONTEXT_MENU_ROW).remove().draw();
+                break;
+            case "report_false_positive":
+                $.ajax({
+                    type: "POST",
+                    url: REPORT_URL,
+                    data: $(CONTEXT_MENU_ROW).find("td").map(function() { return $(this).text(); }).get().join('|'),
+                    success: function(result) { alertify.success("Threat successfully reported to developers"); }
+                })
+                break;
+        }
+
+        $(".custom-menu").hide(100);
+    });
 });
 
 function initDialogs() {
@@ -710,6 +746,8 @@ function init(url, from, to) {
         complete: function() {
             clearTimeout(PAPAPARSE_COMPLETE_TIMER);
             PAPAPARSE_COMPLETE_TIMER = setTimeout(function() {
+                var hidden_threats = $.jStorage.get(STORAGE_KEY_HIDDEN_THREATS, {});
+
                 // threat sensor first_time last_time count src_ip src_port dst_ip dst_port proto type trail info reference tags
                 for (var threat_text in _THREATS) {
                     var threatUID = getThreatUID(threat_text);
@@ -725,6 +763,11 @@ function init(url, from, to) {
 
                     var stored_locally = $.jStorage.get(threatUID);
                     var tagData = "";
+
+                    if (threatUID in hidden_threats) {
+                        HIDDEN_THREAT_COUNT += 1;
+                        continue;
+                    }
 
                     if (stored_locally !== null)
                         tagData = stored_locally.tagData;
@@ -864,6 +907,9 @@ function init(url, from, to) {
 
                     $("#period_label").html("<b>" + period + "</b> (" + _ + ")");
                 }
+
+                if (HIDDEN_THREAT_COUNT > 0)
+                    alertify.log(HIDDEN_THREAT_COUNT + " threats are hidden in details table");
 
                 try {
                     initDetails();
@@ -1061,32 +1107,34 @@ function _ipCompareValues(a, b) {
 }
 
 function copyEllipsisToClipboard(event) {
-    var target = $(event.target);
-    var text = target.parent().title;
-    var html = target.parent().html();
-    var left = html.search(/^<[^>]*ellipsis/) !== -1;
-    var common = html.replace(/<span class="(ipcat|hidden)">[^<]+<\/span>/g, "").replace(/<[^>]+>/g, "");
-    if (!text) {
-        var tooltip = $(".ui-tooltip");
-        if (tooltip.length > 0) {
-            text = tooltip.text();
+    if (event.button === 0) {  // left mouse button
+        var target = $(event.target);
+        var text = target.parent().title;
+        var html = target.parent().html();
+        var left = html.search(/^<[^>]*ellipsis/) !== -1;
+        var common = html.replace(/<span class="(ipcat|hidden)">[^<]+<\/span>/g, "").replace(/<[^>]+>/g, "");
+        if (!text) {
+            var tooltip = $(".ui-tooltip");
+            if (tooltip.length > 0) {
+                text = tooltip.text();
 
-            if (common) {
-                var _ = text.split(DATA_PARTS_DELIMITER);
-                for (var i = 0; i < _.length; i++) {
-                    if (left)
-                        _[i] += common;
-                    else {
-                        if (!common.endsWith(' '))
-                            _[i] = common + _[i];
+                if (common) {
+                    var _ = text.split(DATA_PARTS_DELIMITER);
+                    for (var i = 0; i < _.length; i++) {
+                        if (left)
+                            _[i] += common;
+                        else {
+                            if (!common.endsWith(' '))
+                                _[i] = common + _[i];
+                        }
                     }
+                    text = _.join(DATA_PARTS_DELIMITER);
                 }
-                text = _.join(DATA_PARTS_DELIMITER);
             }
+            tooltip.remove();
         }
-        tooltip.remove();
+        window.prompt("Copy details to clipboard (press Ctrl+C)", text);
     }
-    window.prompt("Copy details to clipboard (press Ctrl+C)", text);
 }
 
 function copyEventsToClipboard(event) {
@@ -1126,6 +1174,7 @@ function appendFilter(filter, event, istag) {
         $(".searchtip").remove();
         clearTimeout(SEARCH_TIP_TIMER);
         $(".ui-tooltip").remove();
+        $(".custom-menu").hide();
         $('#details_filter label input').get(0).scrollLeft = $('#details_filter label input').get(0).scrollWidth;
         //$('#details_filter label input').get(0).focus();
     }
@@ -1532,6 +1581,7 @@ function initDetails() {
         },
         fnDrawCallback: function(oSettings) {
             $(".ui-tooltip").remove();
+            $(".custom-menu").hide();
             clearTimeout(DRAW_SPARKLINES_TIMER);
             $(".sparkline:contains(',')").sparkline('html', { type: 'bar', barWidth: 2, barColor: SPARKLINE_COLOR, disableInteraction: false, tooltipClassname: "sparkline-tooltip" }); //, chartRangeMin: 0, chartRangeMax: _MAX_SPARKLINE_PER_HOUR });
 
@@ -1857,8 +1907,20 @@ function initDetails() {
     details.on("mouseup", ".ellipsis", copyEllipsisToClipboard);
 
     details.off("contextmenu");  // clear previous
-    details.on("contextmenu", "td", function (){
-        return false;
+    details.on("contextmenu", "td", function (event) {
+        event.preventDefault();
+
+        $(".ui-tooltip").remove();
+        CONTEXT_MENU_ROW = $(event.target).closest("tr");
+
+        // Show contextmenu
+        $(".custom-menu").finish().toggle(100).
+
+        // In the right position (the mouse)
+        css({
+            top: event.pageY + "px",
+            left: event.pageX + "px"
+        });
     });
 }
 
