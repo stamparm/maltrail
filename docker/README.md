@@ -12,5 +12,5 @@
     for dev in $(ifconfig | grep mtu | grep -Eo '^\w+'); do ifconfig $dev promisc; done
     mkdir -p /var/log/maltrail/
     docker build -t maltrail . && \
-    docker run -d --name maltrail-docker --net host --privileged -v /var/log/maltrail/:/var/log/maltrail/ -v $MALTRAIL_LOCAL/maltrail.conf:/opt/maltrail/maltrail.conf maltrail
+    docker run -d --name maltrail-docker --privileged -p 8337:8337 -p 8338:8338 -v /var/log/maltrail/:/var/log/maltrail/ maltrail
 ```
