@@ -76,6 +76,7 @@ var COMMA_ENCODE_TRAIL_TYPES = { UA: true, URL: true};
 var TOOLTIP_FOLDING_REGEX = /([^\s]{60})/g;
 var REPLACE_SINGLE_CLOUD_WITH_BRACES = false;
 var IP_ALIASES = {};
+var DEMO = false;
 
 $("body").loader("show");
 $("#graph_close").on("click", graphClose);
@@ -123,8 +124,12 @@ $(document).ready(function() {
     if (!window.location.origin)
         window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
 
-    initCalHeatmap();
-    initDialogs();
+    DEMO = !window.location.origin.startsWith('http') || (window.location.origin == "https://maltraildemo.github.io");
+
+    if (!DEMO) {
+        initCalHeatmap();
+        initDialogs();
+    }
 
     Papa.SCRIPT_PATH = "/js/papaparse.min.js"
     Papa.RemoteChunkSize = CHUNK_SIZE; // 10 MB (per one chunk request)
@@ -454,7 +459,6 @@ function resetView() {
 
 function init(url, from, to) {
     var csv = "";
-    var demo = false;
 
     document.title = "Maltrail (loading...)";
     $("body").loader("show");
@@ -480,22 +484,10 @@ function init(url, from, to) {
     for (var severity in SEVERITY)
         _SEVERITY_COUNT[SEVERITY[severity]] = 0;
 
-    if (!(window.location.origin.startsWith('http')) || (window.location.origin == "https://maltraildemo.github.io")) {
-        demo = true;
-
+    if (DEMO) {
         $(".bottom").html($(".bottom").html().replace(/ \(.+\)/, ""));
 
-        try {
-            // Reference: http://stackoverflow.com/a/7083594
-            $.ajaxSetup({ async: false });
-            $.getScript("js/demo.js");
-            $.ajaxSetup({ async: true });
-
-            csv = getDemoCSV();
-        }
-        catch(err) {
-            alert("Please use Firefox to be able to show demo data");
-        }
+        csv = getDemoCSV();
 
         $("#login_link").toggleClass("hidden", true);
         $("#login_splitter").toggleClass("hidden", true);
@@ -518,11 +510,11 @@ function init(url, from, to) {
         });
     }
 
-    Papa.parse(demo ? csv : url, {
-        download: !demo,
+    Papa.parse(DEMO ? csv : url, {
+        download: !DEMO,
         delimiter: ' ',
         //newline: '\n',
-        worker: !demo,
+        worker: !DEMO,
         skipEmptyLines: true,
         chunk: function(results) {
             var title = document.title.replace(/\s?\.\s?/g, '.');
@@ -841,7 +833,7 @@ function init(url, from, to) {
                     _DATASET.push(row);
                 }
 
-                if (demo) {
+                if (DEMO) {
                     alertify.log("Showing demo data");
 
                     document.title = "Maltrail (demo)";
@@ -1637,7 +1629,7 @@ function initDetails() {
                 var img = "";
                 var ip = match[0];
 
-                if (!isLocalAddress(ip)) {
+                if (!DEMO && !isLocalAddress(ip)) {
                     if (!(ip in CHECK_IP)) {
                         CHECK_IP[ip] = null;
                         $.ajax("/check_ip?address=" + ip, { dataType: "jsonp", ip: ip, cell: cell })
