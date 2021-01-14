@@ -1531,6 +1531,7 @@ function initDetails() {
             oData.start = 0;
         },
         fnDrawCallback: function(oSettings) {
+            $(".ui-tooltip").remove();
             clearTimeout(DRAW_SPARKLINES_TIMER);
             $(".sparkline:contains(',')").sparkline('html', { type: 'bar', barWidth: 2, barColor: SPARKLINE_COLOR, disableInteraction: false, tooltipClassname: "sparkline-tooltip" }); //, chartRangeMin: 0, chartRangeMax: _MAX_SPARKLINE_PER_HOUR });
 
