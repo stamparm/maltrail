@@ -3104,3 +3104,7 @@ provision-isr-dns.com
 # Reference: https://freedns.io/
 
 freedns.io
+
+# Reference: https://www.virustotal.com/gui/domain/dns.navy/relations
+
+dns.navy
