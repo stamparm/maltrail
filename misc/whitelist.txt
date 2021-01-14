@@ -921,6 +921,7 @@ sophosxl.net
 
 # Generic
 
+tribalfusion.com
 topdns.com
 report-uri.io
 comodoca.com
