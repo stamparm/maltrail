@@ -2419,9 +2419,16 @@ nerdpol.ovh
 
 meibu.net
 
+# Reference: https://dynv6.com/
 # Reference: https://www.virustotal.com/gui/domain/dynv6.net/relations
+# Reference: https://www.virustotal.com/gui/domain/dns.navy/relations
 
 dynv6.net
+dns.army
+dns.navy
+v6.army
+v6.navy
+v6.rocks
 
 # Reference: https://www.virustotal.com/gui/domain/mein-vigor.de/relations
 
@@ -3104,7 +3111,3 @@ provision-isr-dns.com
 # Reference: https://freedns.io/
 
 freedns.io
-
-# Reference: https://www.virustotal.com/gui/domain/dns.navy/relations
-
-dns.navy
