@@ -3782,6 +3782,11 @@ nodejs.org.za
 yahoo-statistic.org.za
 yahoo-statistic.web.za
 
+# Reference: https://community.riskiq.com/article/5bea32aa
+
+statexplore.com
+jquery-dll.net
+
 # Generic
 
 /cdn/ga.php?analytic=
