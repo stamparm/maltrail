@@ -1605,6 +1605,10 @@ FindMyiPhone/500
 
 WordPress/2.7
 
+# Reference: https://twitter.com/markjfine/status/1179744712900542470
+
+\AHi\Z
+
 # Misc
 
 information_schema
