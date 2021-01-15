@@ -1601,6 +1601,19 @@ FindMyiPhone/500
 
 \AMy User-Agent\Z
 
+# Reference: https://twitter.com/ches/status/2641938463
+
+WordPress/2.7
+
+# Reference: https://twitter.com/markjfine/status/1179744712900542470
+
+\AHi\Z
+
+# Reference: https://twitter.com/R1CH_TL/status/760501776424525824
+# Reference: https://security.stackexchange.com/questions/134741/unknown-bot-using-firefox-40-1-user-agent
+
+Firefox/40.1
+
 # Misc
 
 information_schema
