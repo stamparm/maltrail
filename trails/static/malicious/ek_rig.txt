@@ -255,6 +255,11 @@ http://45.14.50.50
 
 http://188.227.84.241
 
+# Reference: https://twitter.com/MalwarePatrol/status/1350111033260695555
+
+http://188.227.106.164
+anklexit.online
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
