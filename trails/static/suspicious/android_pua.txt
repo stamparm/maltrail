@@ -257,8 +257,15 @@ sp1.zzwy168.com
 
 yz.wixsd.com
 
-# Reference: https://twitter.com/malwrhunterteam/status/1349329349380550656
-# Reference: https://www.virustotal.com/gui/file/d0f36b9a19cee045c79af58d58b24dcab3850dfd21d1079920ac6f1e8554666e/detection
+# Reference: https://www.virustotal.com/gui/file/30ef7844bc89a00470dd98c52ec356db62533315d458d98bb858e1fa89885245/detection
+# Reference: https://www.virustotal.com/gui/ip-address/119.29.29.29/relations
+# Reference: https://www.virustotal.com/gui/domain/plugin-check.egret.com/relations
 
-avatasia.com
-/AVATRADE_APP.apk
+http://119.29.29.29
+110.43.33.145:8080
+plugin-check.egret.com
+
+# Reference: https://www.virustotal.com/gui/file/1c8abde1aef379f903b780d6160e3d57d8bb6821e07888d272a509d84e42b7de/detection
+
+182.92.235.109:1234
+47.75.37.155:1234
