@@ -498,3 +498,7 @@ resolve.interland.com
 
 109.234.35.230:53
 94.103.82.249:53
+
+# Reference: https://twitter.com/david_jursa/status/1130430875093618688
+
+158.255.7.150:53
