@@ -263,6 +263,11 @@ yz.wixsd.com
 avatasia.com
 /AVATRADE_APP.apk
 
+# Reference: https://www.virustotal.com/gui/domain/umengs.sanxikou.cc/relations
+
+umengs.sanxikou.cc
+/ROCKFORT_APP.apk
+
 # Reference: https://www.virustotal.com/gui/file/30ef7844bc89a00470dd98c52ec356db62533315d458d98bb858e1fa89885245/detection
 # Reference: https://www.virustotal.com/gui/ip-address/119.29.29.29/relations
 # Reference: https://www.virustotal.com/gui/domain/plugin-check.egret.com/relations
