@@ -270,3 +270,8 @@ avatasia.com
 http://119.29.29.29
 110.43.33.145:8080
 plugin-check.egret.com
+
+# Reference: https://www.virustotal.com/gui/file/1c8abde1aef379f903b780d6160e3d57d8bb6821e07888d272a509d84e42b7de/detection
+
+182.92.235.109:1234
+47.75.37.155:1234
