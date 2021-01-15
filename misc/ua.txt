@@ -1601,6 +1601,10 @@ FindMyiPhone/500
 
 \AMy User-Agent\Z
 
+# Reference: https://twitter.com/ches/status/2641938463
+
+WordPress/2.7
+
 # Misc
 
 information_schema
