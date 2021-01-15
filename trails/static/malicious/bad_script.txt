@@ -4052,6 +4052,10 @@ premcloa.shop
 
 cdncontentdelivery.com
 
+# Reference: https://twitter.com/MalwarePatrol/status/1350022176049680386
+
+/tliomxaltla03oxusghg2pn4.php
+
 # Generic
 
 /js/altmanluggage.js
