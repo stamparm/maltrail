@@ -2605,3 +2605,8 @@ tw001plz.myidcddns.com
 tw002plz.myidcddns.com
 tw003plz.myidcddns.com
 tw004plz.myidcddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/d1js21szq85hyn.cloudfront.net/relations
+# Reference: https://www.virustotal.com/gui/file/47062916c6850c693865f62b871c0d2b60a905fe150ccad360b212492b0afacc/detection
+
+d1js21szq85hyn.cloudfront.net
