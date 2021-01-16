@@ -5158,3 +5158,7 @@ idv0h0h.qiniudns.com
 # Reference: https://www.virustotal.com/gui/domain/myidcddns.com/detection
 
 myidcddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/no-ip.bz/relations
+
+no-ip.bz
