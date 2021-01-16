@@ -4109,6 +4109,7 @@ cdncontentdelivery.com
 /dating-verification-card.php
 /evreigate.php
 /gate.php
+/gate01.php
 /gate1.php
 /gate16.php
 /gate2.php
