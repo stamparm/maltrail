@@ -269,3 +269,7 @@ plugin-check.egret.com
 
 182.92.235.109:1234
 47.75.37.155:1234
+
+# Reference: https://www.virustotal.com/gui/domain/shrturl.site/relations
+
+shrturl.site
