@@ -5162,3 +5162,10 @@ myidcddns.com
 # Reference: https://www.virustotal.com/gui/domain/no-ip.bz/relations
 
 no-ip.bz
+
+# Reference: https://s3.amazonaws.com/snort-org/www/rules/community/community-rules.tar.gz
+# Reference: https://snort-org-site.s3.amazonaws.com/production/release_files/files/000/012/156/original/snort3-community-rules.tar.gz
+# Reference: https://github.com/stamparm/maltrail/pull/13809/files
+# Reference: https://www.virustotal.com/gui/domain/lucas.digitaldesk.biz/relations
+
+digitaldesk.biz
