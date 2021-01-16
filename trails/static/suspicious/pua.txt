@@ -2594,3 +2594,19 @@ softstan.com
 
 voa-update.windowsnas.co.kr
 /adlistener/adpatchconf.php
+
+# Reference: https://www.virustotal.com/gui/file/fd4d92484fbde6ee372fa1faef562e9faaf4fed4d3d8dd4398feb02d46e23520/detection
+
+1.163.108.170:28081
+36.226.254.253:28081
+36.231.108.97:28081
+36.231.111.26:28081
+tw001plz.myidcddns.com
+tw002plz.myidcddns.com
+tw003plz.myidcddns.com
+tw004plz.myidcddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/d1js21szq85hyn.cloudfront.net/relations
+# Reference: https://www.virustotal.com/gui/file/47062916c6850c693865f62b871c0d2b60a905fe150ccad360b212492b0afacc/detection
+
+d1js21szq85hyn.cloudfront.net
