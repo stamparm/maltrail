@@ -4056,6 +4056,10 @@ cdncontentdelivery.com
 
 /tliomxaltla03oxusghg2pn4.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1350233568841183240
+
+/orglsgr4a00bcchevqhnaryg.php
+
 # Generic
 
 /js/altmanluggage.js
@@ -4105,6 +4109,7 @@ cdncontentdelivery.com
 /dating-verification-card.php
 /evreigate.php
 /gate.php
+/gate01.php
 /gate1.php
 /gate16.php
 /gate2.php
