@@ -2610,3 +2610,9 @@ tw004plz.myidcddns.com
 # Reference: https://www.virustotal.com/gui/file/47062916c6850c693865f62b871c0d2b60a905fe150ccad360b212492b0afacc/detection
 
 d1js21szq85hyn.cloudfront.net
+
+# Reference: https://twitter.com/malekal_morte/status/1155430255005327360
+# Reference: https://www.virustotal.com/gui/file/a132e237454b0f2997562a1cee228b9a0bd371912ed53308426f642d80a13ec3/detection
+
+45.114.8.167:53
+92.246.76.123:53
