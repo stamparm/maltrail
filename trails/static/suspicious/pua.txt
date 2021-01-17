@@ -2616,3 +2616,7 @@ d1js21szq85hyn.cloudfront.net
 
 45.114.8.167:53
 92.246.76.123:53
+
+# Reference: https://www.virustotal.com/gui/file/428886f0f31d1612bc1e99d7b1419b0af71b9e06b02192fef69958c3e61d5a68/detection
+
+lucid.pw
