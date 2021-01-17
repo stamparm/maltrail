@@ -31,6 +31,7 @@
 - [License](#license)
 - [Sponsors](#sponsors)
 - [Developers](#developers)
+- [Articles and HowTo's](#articles-and-howtos)
 - [Presentations](#presentations)
 - [Blacklist](#blacklist)
 - [Thank you](#thank-you)
@@ -536,6 +537,10 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 
 * Miroslav Stampar ([@stamparm](https://github.com/stamparm))
 * Mikhail Kasimov ([@MikhailKasimov](https://github.com/MikhailKasimov))
+
+## Articles and HowTo's
+
+* Secure your Debian server with Maltrail and Fail2ban ([read](https://blog.leopoldjacquot.com/secure-your-debian-server-with-maltrail-and-fail2ban/))
 
 ## Presentations
 
