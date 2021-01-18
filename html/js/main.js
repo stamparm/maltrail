@@ -137,7 +137,7 @@ $(document).ready(function() {
 
     if (window.location.search) {
         var refresh = window.location.search.match(/refresh=(\d+)/);
-        if (refresh !== null) {
+        if ((refresh !== null) && (parseInt(refresh[1]) > 0)) {
             setTimeout(function(){
                 window.location.reload(1);
             }, 1000 * parseInt(refresh[1]));
