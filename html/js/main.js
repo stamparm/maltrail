@@ -135,15 +135,6 @@ $(document).ready(function() {
         initDialogs();
     }
 
-    if (window.location.search) {
-        var refresh = window.location.search.match(/refresh=(\d+)/);
-        if ((refresh !== null) && (parseInt(refresh[1]) > 0)) {
-            setTimeout(function(){
-                window.location.reload(1);
-            }, 1000 * parseInt(refresh[1]));
-        }
-    }
-
     Papa.SCRIPT_PATH = "/js/papaparse.min.js"
     Papa.RemoteChunkSize = CHUNK_SIZE; // 10 MB (per one chunk request)
 
@@ -279,6 +270,15 @@ function checkAuthentication() {
                 }
                 else {
                     $("#login_link").html("");
+                }
+
+                if (window.location.search) {
+                    var refresh = window.location.search.match(/refresh=(\d+)/);
+                    if ((refresh !== null) && (parseInt(refresh[1]) > 0)) {
+                        setTimeout(function(){
+                            window.location.reload(1);
+                        }, 1000 * parseInt(refresh[1]));
+                    }
                 }
             }
             else if (window.location.origin.startsWith('http')) {
