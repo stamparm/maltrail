@@ -5169,3 +5169,9 @@ no-ip.bz
 # Reference: https://www.virustotal.com/gui/domain/lucas.digitaldesk.biz/relations
 
 digitaldesk.biz
+
+# Reference: https://github.com/stamparm/maltrail/pull/13838/files
+# Reference: https://github.com/stamparm/maltrail/pull/13839/files
+# Reference: https://www.virustotal.com/gui/domain/soxx.us/relations
+
+soxx.us
