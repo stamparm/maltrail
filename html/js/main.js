@@ -135,6 +135,15 @@ $(document).ready(function() {
         initDialogs();
     }
 
+    if (window.location.search) {
+        var refresh = window.location.search.match(/refresh=(\d+)/);
+        if (refresh !== null) {
+            setTimeout(function(){
+                window.location.reload(1);
+            }, 1000 * parseInt(refresh[1]));
+        }
+    }
+
     Papa.SCRIPT_PATH = "/js/papaparse.min.js"
     Papa.RemoteChunkSize = CHUNK_SIZE; // 10 MB (per one chunk request)
 
