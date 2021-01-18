@@ -921,6 +921,7 @@ sophosxl.net
 
 # Generic
 
+holobit.homelinux.com
 tribalfusion.com
 topdns.com
 report-uri.io
