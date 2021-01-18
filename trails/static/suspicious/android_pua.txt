@@ -269,3 +269,11 @@ plugin-check.egret.com
 
 182.92.235.109:1234
 47.75.37.155:1234
+
+# Reference: https://www.virustotal.com/gui/domain/shrturl.site/relations
+
+shrturl.site
+
+# Reference: https://www.virustotal.com/gui/file/4a17ecb2a2d03a28708943eb01c151d09a991a98a308b640367d8068553fe2dc/detection
+
+picknstake.com
