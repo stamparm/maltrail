@@ -25,5 +25,5 @@
 
 [+] Implementing support for LOGSTASH_SERVER (Logs in JSON format)
 [+] Implementing REMOTE_SEVERITY_REGEX (Issue #13251)
-[=] Sensor is enabled to get starter without server (Issue #6020)
+[=] Sensor is able to get started without server (Issue #6020)
 [=] Multiple updates and optimizations for regular static bases and whitelist
