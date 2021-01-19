@@ -3787,6 +3787,88 @@ yahoo-statistic.web.za
 statexplore.com
 jquery-dll.net
 
+# Reference: https://twitter.com/AffableKraut/status/1351390506484445184
+# Reference: https://twitter.com/AffableKraut/status/1351390507759529984
+# Reference: https://twitter.com/AffableKraut/status/1351390508719943680
+# Reference: https://gist.github.com/krautface/3957a1f6d21cb201fefb8327ecb3dfdd
+# Reference: https://gist.github.com/krautface/8e4706bc1142f5d14c3fb15a8a17a7ed
+# Reference: https://gist.github.com/krautface/e80d3dbf7cbc49a6449ba3355b6af327
+
+0fx.club
+114oo.icu
+189027.icu
+1xbe.icu
+221u7.cyou
+2now.cyou
+3dworks.club
+5x5x5.cyou
+64bitss.club
+7digits.us
+8words.xyz
+9gag.uno
+a42.buzz
+abspl.xyz
+ax128.icu
+b17.monster
+badger.uno
+bx333.cyou
+c982.link
+commv.club
+cx1md.cyou
+d883.click
+dx26cmd.icu
+e141.icu
+ext22.icu
+eyes2u.site
+f1racing.icu
+f8822.buzz
+fx555.cyou
+fykes.club
+g8super.monster
+g98.monster
+gx717.icu
+gym365.site
+hihihi.cyou
+hx24.cyou
+hyper1.club
+intr0.cyou
+ix85.cyou
+iyork.club
+johndoe.icu
+jx22.icu
+jyjy.site
+klingon.monster
+kx482.icu
+kyat.club
+lazyfox.icu
+lx05.cyou
+lynx1.site
+monk.monster
+mx11.shop
+mythis.store
+n0ne.cyou
+nx44.fun
+nyvip.store
+oppen.icu
+ox95.top
+pens.monster
+px22.xyz
+pyrex.site
+quicky.cyou
+reddys.icu
+streetrac.icu
+sub0.monster
+tanks.cyou
+uoycc.cyou
+user42.xyz
+vacuum5.club
+vdr.monster
+wyomng.icu
+xfilesx.club
+yoyoyo.cyou
+zerr.club
+zetas.club
+
 # Generic
 
 /cdn/ga.php?analytic=
