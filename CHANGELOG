@@ -8,7 +8,7 @@
 [+] Added functionality
 [-] Deleted functionality
 [!] Bug fixing
-[=] Minor update
+[=] Minor update or changed functionality
 
 #################################################################
 
@@ -25,4 +25,5 @@
 
 [+] Implementing support for LOGSTASH_SERVER (Logs in JSON format)
 [+] Implementing REMOTE_SEVERITY_REGEX (Issue #13251)
+[=] Sensor is enabled to get starter without server (Issue #6020)
 [=] Multiple updates and optimizations for regular static bases and whitelist
