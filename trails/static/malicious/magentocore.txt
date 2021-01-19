@@ -3735,6 +3735,11 @@ tagmanager.site
 tagmanager.store
 tagmanager.tech
 
+# Reference: https://twitter.com/felixaime/status/1351456431086698498
+
+styl.host
+styl.press
+
 # Reference: https://twitter.com/AffableKraut/status/1260829836198711296
 
 analitic.club
