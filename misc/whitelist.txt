@@ -921,6 +921,14 @@ sophosxl.net
 
 # Generic
 
+pentacloud.dyndns.org
+pentasoft.dyndns.org
+inagldv.ath.cx
+inavrhm.ath.cx
+inaiinz.ath.cx
+inapavk.ath.cx
+inarmet.ath.cx
+inakrsc.ath.cx
 holobit.homelinux.com
 tribalfusion.com
 topdns.com
