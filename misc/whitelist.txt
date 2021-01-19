@@ -634,6 +634,7 @@ spameatingmonkey.net
 spamfilter.cc
 spamgrouper.com
 spamhaus.org
+spamhaus.net
 spamrats.com
 surbl.org
 surriel.com
@@ -923,6 +924,8 @@ sophosxl.net
 
 # Generic
 
+snapchat.com
+opera.com
 pentacloud.dyndns.org
 pentasoft.dyndns.org
 inagldv.ath.cx
@@ -1303,6 +1306,7 @@ nf5.no-ip.com
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
+bxczchdxynw.com
 lunrac.com
 51.la
 tradeaccess.ltd
