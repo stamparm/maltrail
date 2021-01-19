@@ -1,8 +1,6 @@
 # Copyright (c) 2014-2021 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
-# Note: not to be confused with Cloud TDS services such as malicious/blacktds.txt
-
 # Reference: https://www.trendmicro.es/media/misc/malware-distribution-tools-research-paper-en.pdf
 # Reference: http://cybercrime-tracker.net/index.php?search=sutra
 # Reference: https://www.virustotal.com/gui/file/c67b167fbefa1ac049f552706b018c71afe792d1afe0ab4f4d3ea8fc51180461/behavior/VirusTotal%20Droidy
