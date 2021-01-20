@@ -37,7 +37,6 @@ from core.common import get_ex_message
 from core.common import get_text
 from core.common import is_local
 from core.common import load_trails
-from core.common import print_msg
 from core.compat import xrange
 from core.datatype import LRUDict
 from core.enums import BLOCK_MARKER
@@ -833,11 +832,11 @@ def init():
                 retries += 1
 
             if retries:
-                print_msg(")")
+                print(")")
 
         if config.offline or retries == CHECK_CONNECTION_MAX_RETRIES:
             if retries == CHECK_CONNECTION_MAX_RETRIES:
-                print_msg("[x] going to continue without online update")
+                print("[x] going to continue without online update")
             _ = update_trails(offline=True)
         else:
             _ = update_trails()
@@ -880,7 +879,7 @@ def init():
         mtime = time.gmtime(os.path.getmtime(config.TRAILS_FILE))
         msg += " (last modification: '%s')" % time.strftime(HTTP_TIME_FORMAT, mtime)
 
-    print_msg(msg)
+    print(msg)
 
     update_timer()
 
@@ -936,17 +935,17 @@ def init():
 
         if (config.MONITOR_INTERFACE or "").lower() == "any":
             if IS_WIN or "any" not in pcapy.findalldevs():
-                print_msg("[x] virtual interface 'any' missing. Replacing it with all interface names")
+                print("[x] virtual interface 'any' missing. Replacing it with all interface names")
                 interfaces = pcapy.findalldevs()
             else:
-                print_msg("[?] in case of any problems with packet capture on virtual interface 'any', please put all monitoring interfaces to promiscuous mode manually (e.g. 'sudo ifconfig eth0 promisc')")
+                print("[?] in case of any problems with packet capture on virtual interface 'any', please put all monitoring interfaces to promiscuous mode manually (e.g. 'sudo ifconfig eth0 promisc')")
 
         for interface in interfaces:
             if interface.lower() != "any" and re.sub(r"(?i)\Anetmap:", "", interface) not in pcapy.findalldevs():
                 hint = "[?] available interfaces: '%s'" % ",".join(pcapy.findalldevs())
                 exit("[!] interface '%s' not found\n%s" % (interface, hint))
 
-            print_msg("[i] opening interface '%s'" % interface)
+            print("[i] opening interface '%s'" % interface)
             try:
                 _caps.append(pcapy.open_live(interface, SNAP_LEN, True, CAPTURE_TIMEOUT))
             except (socket.error, pcapy.PcapError):
@@ -973,7 +972,7 @@ def init():
             exit("[!] invalid configuration value for 'REMOTE_SEVERITY_REGEX' ('%s')" % config.REMOTE_SEVERITY_REGEX)
 
     if config.CAPTURE_FILTER:
-        print_msg("[i] setting capture filter '%s'" % config.CAPTURE_FILTER)
+        print("[i] setting capture filter '%s'" % config.CAPTURE_FILTER)
         for _cap in _caps:
             try:
                 _cap.setfilter(config.CAPTURE_FILTER)
@@ -1000,7 +999,7 @@ def init():
                     if _ in distro:
                         msg += " (e.g. '%s')" % install
                         break
-                print_msg(msg)
+                print(msg)
         except:
             pass
 
@@ -1014,7 +1013,7 @@ def _init_multiprocessing():
     global _n
 
     if _multiprocessing:
-        print_msg("[i] preparing capture buffer...")
+        print("[i] preparing capture buffer...")
         try:
             _buffer = mmap.mmap(-1, config.CAPTURE_BUFFER)  # http://www.alexonlinux.com/direct-io-in-python
 
@@ -1038,14 +1037,14 @@ def _init_multiprocessing():
             _buffer = None
             _multiprocessing = None
         else:
-            print_msg("[i] created %d more processes (out of total %d)" % (config.PROCESS_COUNT - 1, config.PROCESS_COUNT))
+            print("[i] created %d more processes (out of total %d)" % (config.PROCESS_COUNT - 1, config.PROCESS_COUNT))
 
 def monitor():
     """
     Sniffs/monitors given capturing interface
     """
 
-    print_msg("[o] running...")
+    print("[o] running...")
 
     def packet_handler(datalink, header, packet):
         global _count
@@ -1134,7 +1133,7 @@ def monitor():
                         time.sleep(REGULAR_SENSOR_SLEEP_TIME)
 
         if config.profile and len(_caps) == 1:
-            print_msg("[=] will store profiling results to '%s'..." % config.profile)
+            print("[=] will store profiling results to '%s'..." % config.profile)
             _(_caps[0])
         else:
             if len(_caps) > 1:
@@ -1148,16 +1147,16 @@ def monitor():
             while _caps and not _done_count == (config.pcap_file or "").count(',') + 1:
                 time.sleep(1)
 
-        print_msg("[i] all capturing interfaces closed")
+        print("[i] all capturing interfaces closed")
     except SystemError as ex:
         if "error return without" in str(ex):
-            print_msg("\r[x] stopping (Ctrl-C pressed)")
+            print("\r[x] stopping (Ctrl-C pressed)")
         else:
             raise
     except KeyboardInterrupt:
-        print_msg("\r[x] stopping (Ctrl-C pressed)")
+        print("\r[x] stopping (Ctrl-C pressed)")
     finally:
-        print_msg("\r[i] please wait...")
+        print("\r[i] please wait...")
 
         if _multiprocessing:
             try:
@@ -1185,7 +1184,7 @@ def main():
                 else:
                     break
 
-    print_msg("%s (sensor) #v%s\n" % (NAME, VERSION))
+    print("%s (sensor) #v%s\n" % (NAME, VERSION))
 
     if "--version" in sys.argv:
         raise SystemExit
@@ -1214,13 +1213,13 @@ def main():
 
     if options.pcap_file:
         if options.pcap_file == '-':
-            print_msg("[i] using STDIN")
+            print("[i] using STDIN")
         else:
             for _ in options.pcap_file.split(','):
                 if not os.path.isfile(_):
                     exit("[!] missing pcap file '%s'" % _)
 
-            print_msg("[i] using pcap file(s) '%s'" % options.pcap_file)
+            print("[i] using pcap file(s) '%s'" % options.pcap_file)
 
     if not config.DISABLE_CHECK_SUDO and not check_sudo():
         exit("[!] please run '%s' with root privileges" % __file__)
@@ -1233,7 +1232,7 @@ def main():
         else:
             monitor()
     except KeyboardInterrupt:
-        print_msg("\r[x] stopping (Ctrl-C pressed)")
+        print("\r[x] stopping (Ctrl-C pressed)")
 
 if __name__ == "__main__":
     show_final = True
@@ -1244,7 +1243,7 @@ if __name__ == "__main__":
         show_final = False
 
         if isinstance(get_ex_message(ex), six.string_types) and get_ex_message(ex).strip('0'):
-            print_msg(get_ex_message(ex))
+            print(get_ex_message(ex))
             os._exit(1)
     except IOError:
         show_final = False
@@ -1254,9 +1253,9 @@ if __name__ == "__main__":
         msg += "\n[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc()
         log_error("\n\n%s" % msg.replace("\r", ""))
 
-        print_msg(msg)
+        print(msg)
     finally:
         if show_final:
-            print_msg("[i] finished")
+            print("[i] finished")
 
         os._exit(0)

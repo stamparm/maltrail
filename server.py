@@ -21,7 +21,6 @@ import traceback
 from core.common import check_connection
 from core.common import check_sudo
 from core.common import get_ex_message
-from core.common import print_msg
 from core.httpd import start_httpd
 from core.log import create_log_directory
 from core.log import log_error
@@ -38,7 +37,7 @@ from core.update import update_trails
 from thirdparty import six
 
 def main():
-    print_msg("%s (server) #v%s\n" % (NAME, VERSION))
+    print("%s (server) #v%s\n" % (NAME, VERSION))
 
     if "--version" in sys.argv:
         raise SystemExit
@@ -83,10 +82,10 @@ def main():
             retries += 1
 
         if retries:
-            print_msg(")")
+            print(")")
 
         if retries == CHECK_CONNECTION_MAX_RETRIES:
-            print_msg("[x] going to continue without online update")
+            print("[x] going to continue without online update")
             _ = update_trails(offline=True)
         else:
             _ = update_trails()
@@ -109,7 +108,7 @@ def main():
 
         start_httpd(address=config.HTTP_ADDRESS, port=config.HTTP_PORT, pem=config.SSL_PEM if config.USE_SSL else None, join=True)
     except KeyboardInterrupt:
-        print_msg("\r[x] stopping (Ctrl-C pressed)")
+        print("\r[x] stopping (Ctrl-C pressed)")
 
 if __name__ == "__main__":
     show_final = True
@@ -120,16 +119,16 @@ if __name__ == "__main__":
         show_final = False
 
         if isinstance(get_ex_message(ex), six.string_types) and get_ex_message(ex).strip('0'):
-            print_msg(get_ex_message(ex))
+            print(get_ex_message(ex))
             os._exit(1)
     except Exception:
         msg = "\r[!] unhandled exception occurred ('%s')" % sys.exc_info()[1]
         msg += "\n[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc()
         log_error("\n\n%s" % msg.replace("\r", ""))
 
-        print_msg(msg)
+        print(msg)
     finally:
         if show_final:
-            print_msg("[i] finished")
+            print("[i] finished")
 
         os._exit(0)

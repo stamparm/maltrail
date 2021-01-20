@@ -234,7 +234,7 @@ def check_whitelisted(trail):
 
 def load_trails(quiet=False):
     if not quiet:
-        print_msg("[i] loading trails...")
+        print("[i] loading trails...")
 
     retval = TrailsDict()
 
@@ -257,7 +257,7 @@ def load_trails(quiet=False):
             _ = '{0:,}'.format(_)
         except:
             pass
-        print_msg("[i] %s trails loaded" % _)
+        print("[i] %s trails loaded" % _)
 
     return retval
 
@@ -296,5 +296,5 @@ def get_ex_message(ex):
 def is_local(address):
     return re.search(r"\A(127|10|172\.[13][0-9]|192\.168)\.", address or "") is not None
 
-def print_msg(msg):
+def print(msg):
     print(msg)

@@ -27,7 +27,7 @@ class ColorizedStream:
             text = re.sub(r"(.*Usage: )(.+)", r"\g<1>%s\g<2>%s" % (COLOR.BOLD_WHITE, COLOR.RESET), text)
 
         for match in re.finditer(r"[^\w]'([^']+)'", text):  # single-quoted
-            text = re.sub("'%s'" % match.group(1), r"'%s%s%s'" % (COLOR.LIGHT_GRAY, match.group(1), COLOR.RESET), text)
+            text = text.replace("'%s'" % match.group(1), r"'%s%s%s'" % (COLOR.LIGHT_GRAY, match.group(1), COLOR.RESET))
 
         self._original.write("%s" % text)
 
