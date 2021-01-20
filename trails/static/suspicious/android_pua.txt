@@ -277,3 +277,7 @@ shrturl.site
 # Reference: https://www.virustotal.com/gui/file/4a17ecb2a2d03a28708943eb01c151d09a991a98a308b640367d8068553fe2dc/detection
 
 picknstake.com
+
+# Reference: https://www.virustotal.com/gui/domain/veryfastapk.com/relations
+
+veryfastapk.com
