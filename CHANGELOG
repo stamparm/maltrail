@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2021 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+#################################################################
+#                 Maltrail Changelog File                       #
+#################################################################
+
+[+] Added functionality
+[-] Deleted functionality
+[!] Bug fixing
+[=] Minor update or changed functionality
+
+#################################################################
+
+- Version 0.28 -> 0.29 (Upcoming release)
+
+[+] Two new UI features (hide threat and report false positive options)
+[+] Auto-refresh for Maltrail web-page (/?refresh=N, where N in seconds. Issue #624)
+[+] Maltrail demo pages are released: maltraildemo.github.io
+[=] Multiple updates and optimizations for regular static bases and whitelist
+[=] Potential DNS changer heur is improved
+
+
+- Version 0.27 -> 0.28 (01 Jan 2021)
+
+[+] Implementing support for LOGSTASH_SERVER (Logs in JSON format)
+[+] Implementing REMOTE_SEVERITY_REGEX (Issue #13251)
+[=] Sensor is able to get started without server (Issue #6020)
+[=] Multiple updates and optimizations for regular static bases and whitelist
