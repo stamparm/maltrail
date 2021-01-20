@@ -3736,7 +3736,9 @@ tagmanager.store
 tagmanager.tech
 
 # Reference: https://twitter.com/felixaime/status/1351456431086698498
+# Reference: https://twitter.com/malwareinfosec/status/1351584550099435526
 
+styl.click
 styl.host
 styl.press
 
@@ -3884,6 +3886,7 @@ zetas.club
 /5d4cdc4cdf344.js
 /5e7fa6489b31a.js
 /dsc-statistic.js
+/subscriptioninsider.com.js
 /adsbygoogle/
 /adsbygoogle/ads.js
 /baypressservices/
