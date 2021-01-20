@@ -1615,6 +1615,7 @@ WordPress/2.7
 Firefox/40.1
 
 # Reference: https://twitter.com/VK_Intel/status/1351973639026077696
+# Reference: https://github.com/stamparm/maltrail/pull/13895/commits/fc78650570f70af9b394c6c8f994be5d0558b22f
 
 ASUS2JS
 
