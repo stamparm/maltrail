@@ -1614,6 +1614,10 @@ WordPress/2.7
 
 Firefox/40.1
 
+# Reference: https://twitter.com/VK_Intel/status/1351973639026077696
+
+ASUS2JS
+
 # Misc
 
 information_schema
