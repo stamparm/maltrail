@@ -110,6 +110,25 @@ class COLOR:
     BOLD_BLACK = "\033[30;1m"
     RED = "\033[31m"
 
+class BACKGROUND:
+    BLUE = "\033[44m"
+    LIGHT_GRAY = "\033[47m"
+    YELLOW = "\033[43m"
+    DARK_GRAY = "\033[100m"
+    LIGHT_RED = "\033[101m"
+    CYAN = "\033[46m"
+    MAGENTA = "\033[45m"
+    LIGHT_MAGENTA = "\033[105m"
+    LIGHT_GREEN = "\033[102m"
+    RESET = "\033[0m"
+    LIGHT_YELLOW = "\033[103m"
+    LIGHT_BLUE = "\033[104m"
+    LIGHT_CYAN = "\033[106m"
+    BLACK = "\033[40m"
+    GREEN = "\033[42m"
+    WHITE = "\033[107m"
+    RED = "\033[41m"
+
 class SEVERITY:
     NONE = "none"
     LOW = "low"
