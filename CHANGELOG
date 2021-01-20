@@ -19,6 +19,7 @@
 [+] Maltrail demo pages are released: maltraildemo.github.io
 [=] Multiple updates and optimizations for regular static bases and whitelist
 [=] Potential DNS changer heur is improved
+[+] Implemented colorized console output
 
 
 - Version 0.27 -> 0.28 (01 Jan 2021)

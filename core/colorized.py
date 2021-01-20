@@ -4,8 +4,8 @@ import os
 import re
 import sys
 
-from enums import COLOR
-from enums import SEVERITY
+from core.enums import COLOR
+from core.enums import SEVERITY
 
 IS_TTY = hasattr(sys.stdout, "fileno") and os.isatty(sys.stdout.fileno())
 
@@ -21,7 +21,7 @@ class ColorizedStream:
             text = text.replace(match.group(0), "%s[%s%s%s]" % (match.group(1), self._log_colors[match.group(2)], match.group(2), COLOR.RESET), 1)
 
         if "Maltrail (" in text:
-            text = re.sub(r"\((\w+)\)", "(%s\g<1>%s)" % (COLOR.BOLD_LIGHT_GREEN, COLOR.RESET), text)
+            text = re.sub(r"\((sensor|server)\)", lambda match: "(%s%s%s)" % ({"sensor": COLOR.BOLD_LIGHT_GREEN, "server": COLOR.BOLD_LIGHT_MAGENTA}[match.group(1)], match.group(1), COLOR.RESET), text)
 
         if "Usage: " in text:
             text = re.sub(r"(.*Usage: )(.+)", r"\g<1>%s\g<2>%s" % (COLOR.BOLD_WHITE, COLOR.RESET), text)
