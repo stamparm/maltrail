@@ -18,11 +18,12 @@ from core.addr import addr_to_int
 from core.addr import expand_range
 from core.addr import make_mask
 from core.attribdict import AttribDict
+from core.colorized import init_output
 from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.28.61"
+VERSION = "0.28.62"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 IS_SENSOR = "sensor" in sys.argv[0]
@@ -517,6 +518,7 @@ def check_deprecated():
         sys.argv = [(_ if _ != "-i" else "-r") for _ in sys.argv]
 
 if __name__ != "__main__":
+    init_output()
     read_whitelist()
     read_ignorelist()
     read_ua()
