@@ -22,11 +22,11 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.28.59"
+VERSION = "0.28.60"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 IS_SENSOR = "sensor" in sys.argv[0]
-USER_AGENT = "%s/%s (%s/py%s/x%d)" % (NAME, VERSION, sys.platform, sys.version.split(' ')[0], struct.calcsize('P') * 8)
+USER_AGENT = "%s/%s (%s/py%s/x%d)" % (NAME, VERSION, re.sub(r"\d$", "", sys.platform), sys.version.split(' ')[0], struct.calcsize('P') * 8)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
 TIMEOUT = 30
