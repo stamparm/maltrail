@@ -4069,9 +4069,11 @@ cdncontentdelivery.com
 /Invoke-Mimikatz.ps1
 /powercat.ps1
 /shell.hta
+/shell.ps1
 /shell.vba
 /shell.vbs
 /shellcode.hta
+/shellcode.ps1
 /shellcode.vba
 /shellcode.vbs
 
