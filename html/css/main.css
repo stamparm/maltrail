@@ -497,7 +497,7 @@ rect.highlight {
 }
 #chart_area {
     background-color: #fcfcfc;
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 .noselect {
     -webkit-touch-callout: none;
