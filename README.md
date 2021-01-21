@@ -7,6 +7,7 @@
 - [Introduction](#introduction)
 - [Architecture](#architecture)
 - [Demo pages](#demo-pages)
+- [Requirements](#requirements)
 - [Quick start](#quick-start)
 - [Administrator's guide](#administrators-guide)
  - [Sensor](#sensor)
@@ -26,7 +27,6 @@
  - [DNS resource exhaustion](#dns-resource-exhaustion)
  - [Data leakage](#data-leakage)
  - [False positives](#false-positives)
-- [Requirements](#requirements)
 - [Best practice(s)](#best-practices)
 - [License](#license)
 - [Sponsors](#sponsors)
@@ -122,6 +122,10 @@ Note: **Server** component can be skipped altogether, and just use the standalon
 ## Demo pages
 
 Fully functional demo pages with real-life threats collected for a single day can be found [here](https://maltraildemo.github.io/).
+
+## Requirements
+
+To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**, **2.7** or **3.x** is required on \*nix/BSD system, together with installed package [pcapy](https://www.coresecurity.com/corelabs-research/open-source-tools/pcapy) (e.g. `sudo apt-get install python-pcapy`). **Sensor** component requires at least 1GB of RAM to run in single-process mode or more if run in multiprocessing mode, depending on the value used for option `CAPTURE_BUFFER`. Additionally, **Sensor** component (in general case) requires administrative/root privileges.
 
 ## Quick start
 
@@ -469,10 +473,6 @@ As another example, access to regular `.work` domains (popular TLD for malicious
 Nevertheless, administrator(s) should invest some extra time and check (with other means) whether the "suspicious" means malicious or not, as in the following example:
 
 ![Suspicious .ws](https://i.imgur.com/bOLmXUE.png)
-
-## Requirements
-
-To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**, **2.7** or **3.x** is required on \*nix/BSD system, together with installed package [pcapy](https://www.coresecurity.com/corelabs-research/open-source-tools/pcapy) (e.g. `sudo apt-get install python-pcapy`). **Sensor** component requires at least 1GB of RAM to run in single-process mode or more if run in multiprocessing mode, depending on the value used for option `CAPTURE_BUFFER`. Additionally, **Sensor** component (in general case) requires administrative/root privileges.
 
 ## Best practice(s)
 
