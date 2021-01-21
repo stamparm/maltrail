@@ -3737,10 +3737,19 @@ tagmanager.tech
 
 # Reference: https://twitter.com/felixaime/status/1351456431086698498
 # Reference: https://twitter.com/malwareinfosec/status/1351584550099435526
+# Reference: https://twitter.com/p0x53/status/1352188052433633280
+# Reference: https://www.virustotal.com/gui/ip-address/109.199.125.72/relations
+# Reference: https://www.virustotal.com/gui/ip-address/80.92.206.12/detection
 
 styl.click
 styl.host
 styl.press
+analyst.uno
+magento.uno
+publish.uno
+servers.uno
+sql.uno
+vms.uno
 
 # Reference: https://twitter.com/AffableKraut/status/1260829836198711296
 
