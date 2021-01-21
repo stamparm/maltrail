@@ -1,15 +1,21 @@
-@media screen and (max-width: 900px) {
-    #status_container {
+@media screen and (max-width: 680px) {
+    #status_container, #documentation_link, #collaboration_link, #issues_link, .link-splitter, .DTTT_container {
         display: none !important;
     }
 }
-@media screen and (max-width: 650px) {
-    .DTTT_container, #details_info {
+
+@media screen and (max-width: 600px) {
+    #details_info {
         display: none !important;
     }
 }
+
 @media screen and (max-width: 460px) {
-    #details_length, #documentation_link, #collaboration_link, #issues_link, .link-splitter {
+    #details_paginate, #details_filter, #details_filter label {
+        text-align: center;
+        float: unset;
+    }
+    #details_length {
         display: none !important;
     }
 }

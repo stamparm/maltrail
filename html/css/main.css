@@ -100,9 +100,11 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     color: #fff;
     display: block;
     text-align: center;
-    border-radius: 11px;
-    margin: 5px;
-    width: 150px;
+    border-radius: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 5px;
+    width: 125px;
     display: inline-block;
     line-height: 20px;
     cursor: pointer;
@@ -556,6 +558,9 @@ rect.highlight {
     color: #efefef;
     padding: 0 10px;
     width: 40%;
+}
+#details_wrapper {
+    margin-top: 10px;
 }
 input[type=search] {
     background: url("../images/search.png") no-repeat scroll 98% 50%;
