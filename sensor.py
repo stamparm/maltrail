@@ -51,7 +51,6 @@ from core.log import log_error
 from core.log import log_event
 from core.parallel import worker
 from core.parallel import write_block
-from core.settings import check_memory
 from core.settings import config
 from core.settings import CAPTURE_TIMEOUT
 from core.settings import CHECK_CONNECTION_MAX_RETRIES
@@ -872,8 +871,6 @@ def init():
 
     create_log_directory()
     get_error_log_handle()
-
-    check_memory()
 
     msg = "[i] using '%s' for trail storage" % config.TRAILS_FILE
     if os.path.isfile(config.TRAILS_FILE):

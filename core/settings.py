@@ -23,7 +23,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.28.73"
+VERSION = "0.28.74"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 IS_SENSOR = "sensor" in sys.argv[0]
@@ -53,7 +53,6 @@ REGULAR_SENSOR_SLEEP_TIME = 0.001
 LOAD_TRAILS_RETRY_SLEEP_TIME = 60
 UNAUTHORIZED_SLEEP_TIME = 5
 NO_SUCH_NAME_PER_HOUR_THRESHOLD = 20
-CHECK_MEMORY_SIZE = 384 * 1024 * 1024
 NO_BLOCK = -1
 END_BLOCK = -2
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -219,13 +218,6 @@ def _get_total_physmem():
             pass
 
     return retval
-
-def check_memory():
-    print("[?] at least %dMB of free memory required" % (CHECK_MEMORY_SIZE // (1024 * 1024)))
-    try:
-        _ = '0' * CHECK_MEMORY_SIZE
-    except MemoryError:
-        exit("[!] not enough memory")
 
 def read_config(config_file):
     global config
