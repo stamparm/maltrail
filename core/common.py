@@ -25,6 +25,7 @@ from core.settings import CHECK_CONNECTION_URL
 from core.settings import CDN_RANGES
 from core.settings import IPCAT_SQLITE_FILE
 from core.settings import IS_WIN
+from core.settings import MAX_HELP_OPTION_LENGTH
 from core.settings import STATIC_IPCAT_LOOKUPS
 from core.settings import TIMEOUT
 from core.settings import UNICODE_ENCODING
@@ -295,3 +296,24 @@ def get_ex_message(ex):
 
 def is_local(address):
     return re.search(r"\A(127|10|172\.[13][0-9]|192\.168)\.", address or "") is not None
+
+def patch_parser(parser):
+    # Dirty hack to display longer options without breaking into two lines
+    if hasattr(parser, "formatter"):
+        def _(self, *args):
+            retval = parser.formatter._format_option_strings(*args)
+            if len(retval) > MAX_HELP_OPTION_LENGTH:
+                retval = ("%%.%ds.." % (MAX_HELP_OPTION_LENGTH - parser.formatter.indent_increment)) % retval
+            return retval.capitalize()
+
+        parser.formatter._format_option_strings = parser.formatter.format_option_strings
+        parser.formatter.format_option_strings = type(parser.formatter.format_option_strings)(_, parser)
+    else:
+        def _format_action_invocation(self, action):
+            retval = self.__format_action_invocation(action)
+            if len(retval) > MAX_HELP_OPTION_LENGTH:
+                retval = ("%%.%ds.." % (MAX_HELP_OPTION_LENGTH - self._indent_increment)) % retval
+            return retval.capitalize()
+
+        parser.formatter_class.__format_action_invocation = parser.formatter_class._format_action_invocation
+        parser.formatter_class._format_action_invocation = _format_action_invocation

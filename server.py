@@ -21,6 +21,7 @@ import traceback
 from core.common import check_connection
 from core.common import check_sudo
 from core.common import get_ex_message
+from core.common import patch_parser
 from core.httpd import start_httpd
 from core.log import create_log_directory
 from core.log import log_error
@@ -45,6 +46,9 @@ def main():
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
     parser.add_option("--debug", dest="debug", action="store_true", help=optparse.SUPPRESS_HELP)
+
+    patch_parser(parser)
+
     options, _ = parser.parse_args()
 
     read_config(options.config_file)

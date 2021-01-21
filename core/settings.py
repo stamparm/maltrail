@@ -23,7 +23,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.28.67"
+VERSION = "0.28.68"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 IS_SENSOR = "sensor" in sys.argv[0]
@@ -62,6 +62,7 @@ DISPOSED_NONCES = set()
 PING_RESPONSE = "pong"
 MAX_NOFILE = 65000
 CAPTURE_TIMEOUT = 100  # ms
+MAX_HELP_OPTION_LENGTH = 18
 CONFIG_FILE = os.path.join(ROOT_DIR, "maltrail.conf")
 SYSTEM_LOG_DIR = "/var/log" if not IS_WIN else "C:\\Windows\\Logs"
 DEFAULT_EVENT_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IROTH

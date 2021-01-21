@@ -37,6 +37,7 @@ from core.common import get_ex_message
 from core.common import get_text
 from core.common import is_local
 from core.common import load_trails
+from core.common import patch_parser
 from core.compat import xrange
 from core.datatype import LRUDict
 from core.enums import BLOCK_MARKER
@@ -1198,6 +1199,9 @@ def main():
     parser.add_option("--offline", dest="offline", action="store_true", help="disable (online) trail updates")
     parser.add_option("--debug", dest="debug", action="store_true", help=optparse.SUPPRESS_HELP)
     parser.add_option("--profile", dest="profile", help=optparse.SUPPRESS_HELP)
+
+    patch_parser(parser)
+
     options, _ = parser.parse_args()
 
     read_config(options.config_file)
