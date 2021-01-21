@@ -6,6 +6,12 @@
 
 45.83.176.85:7443
 
+# Reference: https://twitter.com/bryceabdo/status/1352017243547250689
+# Reference: https://www.virustotal.com/gui/file/1faee2229324a40a4d36e7bf0bcd2ceebe40915878d406efa4dd82b0ec1ee965/detection
+# Reference: https://www.virustotal.com/gui/file/d776cdeb7432a2dafdc8d9f1255c278f8ae12051b8538e2a285f6255042f0a5d/detection
+
+http://46.101.251.25
+
 # Generic
 
 /covenantuser/
