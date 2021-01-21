@@ -149,7 +149,7 @@ div.DTTT_container { margin-left: 5px; margin-top: 2px }
     padding-right: 5px;
     cursor: pointer;
 }
-.header-a:hover, #logo:hover, .status-button:hover * {
+.header-a:hover, #logo:hover, .label-type:hover, .severity:hover, .status-button:hover * {
     color: #ffffff;
     text-decoration: none;
     -webkit-transition: 20ms linear 0s;
