@@ -121,7 +121,7 @@ Note: **Server** component can be skipped altogether, and just use the standalon
 
 ## Demo pages
 
-Fully functional demo pages with real-life threats collected for a single day can be found [here](https://maltraildemo.github.io/).
+Fully functional demo pages with collected real-life threats can be found [here](https://maltraildemo.github.io/).
 
 ## Requirements
 
