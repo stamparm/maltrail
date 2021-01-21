@@ -21,6 +21,8 @@
 [=] Potential DNS changer heur is improved
 [+] Implemented colorized console output
 [=] Minor style revamp and improved look and feel on mobile phones
+[-] Memory check is removed
+
 
 
 - Version 0.27 -> 0.28 (01 Jan 2021)
