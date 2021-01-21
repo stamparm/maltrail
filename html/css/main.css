@@ -50,7 +50,7 @@ table.dataTable .highlighted { background-color: #abb9d3 !important }
     text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25), -1px 1px 0 rgba(0, 0, 0, 0.25), 1px 1px 0 rgba(0, 0, 0, 0.25), 1px -1px 0 rgba(0, 0, 0, 0.25);
     color: white;
 }
-.black-label-text {
+.black-label-text, .ui-dialog-title {
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.25), -1px 1px 0 rgba(255, 255, 255, 0.25), 1px 1px 0 rgba(255, 255, 255, 0.25), 1px -1px 0 rgba(255, 255, 255, 0.25);
     color: black;
 }
@@ -70,6 +70,9 @@ table.dataTable .highlighted { background-color: #abb9d3 !important }
 .hidden, .searchable { display: none }
 /*.section { font-size: 120%; font-weight: bold; margin-top: 10px; margin-bottom: 10px; visibility: hidden }*/
 div.DTTT_container { margin-left: 5px; margin-top: 2px }
+.DTTT_button {
+    background: #fff !important;
+}
 .shadow-border {
     border: 1px solid #d3d3d3;
     border-radius: 4px;
@@ -300,12 +303,12 @@ rect.highlight {
 }
 .ui-widget-content {
     border: 1px solid #aaaaaa;
-    background: #ffffff url("../images/thirdparty/ui-bg_flat_75_ffffff_40x100.png") 50% 50% repeat-x;
+    background: #ffffff 50% 50% repeat-x;
     color: #222222;
 }
 .ui-widget-header {
     border: 1px solid #aaaaaa;
-    background: #cccccc url("../images/thirdparty/ui-bg_highlight-soft_75_cccccc_1x100.png") 50% 50% repeat-x;
+    background: #ccc 50% 50% repeat-x;
     color: #222222;
     font-weight: bold;
 }
@@ -313,7 +316,7 @@ rect.highlight {
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
     border: 1px solid #d3d3d3;
-    background: #e6e6e6 url("../images/thirdparty/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x;
+    background: #e6e6e6 50% 50% repeat-x;
     font-weight: normal;
     color: #555555;
 }
@@ -324,7 +327,7 @@ rect.highlight {
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
     border: 1px solid #999999;
-    background: #dadada url("../images/thirdparty/ui-bg_glass_75_dadada_1x400.png") 50% 50% repeat-x;
+    background: #dadada 50% 50% repeat-x;
     font-weight: normal;
     color: #212121;
 }
@@ -332,7 +335,7 @@ rect.highlight {
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
     border: 1px solid #aaaaaa;
-    background: #ffffff url("../images/thirdparty/ui-bg_glass_65_ffffff_1x400.png") 50% 50% repeat-x;
+    background: #ffffff 50% 50% repeat-x;
     font-weight: normal;
     color: #212121;
 }
@@ -340,14 +343,14 @@ rect.highlight {
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
     border: 1px solid #fcefa1;
-    background: #fbf9ee url("../images/thirdparty/ui-bg_glass_55_fbf9ee_1x400.png") 50% 50% repeat-x;
+    background: #fbf9ee 50% 50% repeat-x;
     color: #363636;
 }
 .ui-state-error,
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
     border: 1px solid #cd0a0a;
-    background: #fef1ec url("../images/thirdparty/ui-bg_glass_95_fef1ec_1x400.png") 50% 50% repeat-x;
+    background: #fef1ec 50% 50% repeat-x;
     color: #cd0a0a;
 }
 .ui-icon,
@@ -375,14 +378,14 @@ rect.highlight {
     background-image: url("../images/thirdparty/ui-icons_cd0a0a_256x240.png");
 }
 .ui-widget-overlay {
-    background: #aaaaaa url("../images/thirdparty/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
+    background: #aaaaaa 50% 50% repeat-x;
     opacity: .3;
     filter: Alpha(Opacity=30); /* support: IE8 */
 }
 .ui-widget-shadow {
     margin: -8px 0 0 -8px;
     padding: 8px;
-    background: #aaaaaa url("../images/thirdparty/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
+    background: #aaaaaa 50% 50% repeat-x;
     opacity: .3;
     filter: Alpha(Opacity=30); /* support: IE8 */
     border-radius: 8px;
