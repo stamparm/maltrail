@@ -45,10 +45,15 @@ torpovider.org
 way2tor.com
 torgateway.org
 tor-explorer.org
+2kjb7.net
+2kjb8.net
 2kjb9.net
 2kjb10.net
-42k0b13.net
 42kjb11.net
+42kdb12.net
+42k0b13.net
+42k2b14.net
+79fhdm16.com
 
 # (note: just for (non-SOCKS) ONION domain lookups)
 
