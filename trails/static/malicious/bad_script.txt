@@ -4060,6 +4060,23 @@ cdncontentdelivery.com
 
 /orglsgr4a00bcchevqhnaryg.php
 
+# Reference: https://twitter.com/r3dbU7z/status/1351651516806033415
+
+/1.ps1
+/AA.ps1
+/BB.ps1
+/Invoke-CustomKatz.ps1
+/Invoke-Mimikatz.ps1
+/powercat.ps1
+/shell.hta
+/shell.ps1
+/shell.vba
+/shell.vbs
+/shellcode.hta
+/shellcode.ps1
+/shellcode.vba
+/shellcode.vbs
+
 # Generic
 
 /js/altmanluggage.js
