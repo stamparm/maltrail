@@ -276,7 +276,7 @@ function checkAuthentication() {
                     var refresh = window.location.search.match(/refresh=(\d+)/);
                     if ((refresh !== null) && (parseInt(refresh[1]) > 0)) {
                         setTimeout(function(){
-                            window.location.reload(1);
+                            window.location.reload(true);
                         }, 1000 * parseInt(refresh[1]));
                     }
                 }
@@ -1534,6 +1534,7 @@ function initDetails() {
                                         Done: function() {
                                             $(this).dialog("close");
                                             $('#dialog-aliases').remove();
+                                            window.location.reload(false);
                                         }
                                     },
                                     open: function(event, ui) {
