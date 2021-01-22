@@ -285,3 +285,7 @@ veryfastapk.com
 # Reference: https://www.virustotal.com/gui/domain/mob-stats.com/relations
 
 mob-stats.com
+
+# Reference: https://www.virustotal.com/gui/domain/mobile-tds.com/detection
+
+mobile-tds.com
