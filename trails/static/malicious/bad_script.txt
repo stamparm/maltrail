@@ -4077,6 +4077,10 @@ cdncontentdelivery.com
 /shellcode.vba
 /shellcode.vbs
 
+# Reference: https://twitter.com/FewAtoms/status/1352324221964320768
+
+/aX51N8ewqGs.php
+
 # Generic
 
 /js/altmanluggage.js
