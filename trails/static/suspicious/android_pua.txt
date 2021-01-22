@@ -289,3 +289,7 @@ mob-stats.com
 # Reference: https://www.virustotal.com/gui/domain/mobile-tds.com/detection
 
 mobile-tds.com
+
+# Reference: https://www.virustotal.com/gui/domain/flupak.ru/relations
+
+flupak.ru
