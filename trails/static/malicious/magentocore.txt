@@ -3886,9 +3886,11 @@ zerr.club
 zetas.club
 
 # Reference: https://twitter.com/rootprivilege/status/1352625063212666880
+# Reference: https://twitter.com/unmaskparasites/status/1352743873714348033
 # Reference: https://lukeleal.com/research/posts/magento2-skimmer-testserver-php/
 
 bardven.com/testServer.php
+pedlitz.com/testServer.php
 
 # Reference: https://twitter.com/AffableKraut/status/1352693061336371200
 # Reference: https://www.virustotal.com/gui/ip-address/169.239.183.80/relations
