@@ -281,3 +281,15 @@ picknstake.com
 # Reference: https://www.virustotal.com/gui/domain/veryfastapk.com/relations
 
 veryfastapk.com
+
+# Reference: https://www.virustotal.com/gui/domain/mob-stats.com/relations
+
+mob-stats.com
+
+# Reference: https://www.virustotal.com/gui/domain/mobile-tds.com/detection
+
+mobile-tds.com
+
+# Reference: https://www.virustotal.com/gui/domain/flupak.ru/relations
+
+flupak.ru
