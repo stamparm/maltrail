@@ -134,7 +134,7 @@ The following set of commands should get your Maltrail **Sensor** up and running
 - For **Ubuntu/Debian**
 
 ```sh
-sudo apt-get install git python-pcapy
+sudo apt-get install git python-pcapy procps
 git clone --depth 1 https://github.com/stamparm/maltrail.git
 cd maltrail
 sudo python sensor.py
@@ -143,7 +143,7 @@ sudo python sensor.py
 - For **SUSE/openSUSE**
 
 ```sh
-sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip
+sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip procps
 sudo pip2 install pcapy
 git clone --depth 1 https://github.com/stamparm/maltrail.git
 cd maltrail
@@ -481,7 +481,7 @@ Nevertheless, administrator(s) should invest some extra time and check (with oth
 - On **Ubuntu/Debian**
 
     ```sh
-    sudo apt-get install git python-pcapy
+    sudo apt-get install git python-pcapy procps
     cd /tmp
     git clone --depth 1 https://github.com/stamparm/maltrail.git
     sudo mv /tmp/maltrail /opt
@@ -491,7 +491,7 @@ Nevertheless, administrator(s) should invest some extra time and check (with oth
 - On **SUSE/openSUSE**
 
    ```sh
-   sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip
+   sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip procps
    sudo pip2 install pcapy
    cd /tmp
    git clone --depth 1 https://github.com/stamparm/maltrail.git
