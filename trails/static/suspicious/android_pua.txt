@@ -281,3 +281,7 @@ picknstake.com
 # Reference: https://www.virustotal.com/gui/domain/veryfastapk.com/relations
 
 veryfastapk.com
+
+# Reference: https://www.virustotal.com/gui/domain/mob-stats.com/relations
+
+mob-stats.com
