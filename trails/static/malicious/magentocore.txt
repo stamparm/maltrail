@@ -3885,6 +3885,11 @@ yoyoyo.cyou
 zerr.club
 zetas.club
 
+# Reference: https://twitter.com/rootprivilege/status/1352625063212666880
+# Reference: https://lukeleal.com/research/posts/magento2-skimmer-testserver-php/
+
+bardven.com/testServer.php
+
 # Generic
 
 /cdn/ga.php?analytic=
