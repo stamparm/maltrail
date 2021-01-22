@@ -3885,6 +3885,27 @@ yoyoyo.cyou
 zerr.club
 zetas.club
 
+# Reference: https://twitter.com/rootprivilege/status/1352625063212666880
+# Reference: https://lukeleal.com/research/posts/magento2-skimmer-testserver-php/
+
+bardven.com/testServer.php
+
+# Reference: https://twitter.com/AffableKraut/status/1352693061336371200
+# Reference: https://www.virustotal.com/gui/ip-address/169.239.183.80/relations
+
+ajax-plugin.org
+cdn-ajax.co.uk
+cdn-cloudflare.biz
+cdn-js.co.uk
+cdn-magento.com
+cdn-plugins.org
+cdn-rackspace.com
+cloud-plugins.org
+js-widget.com
+plugin-ajax.com
+widget-ajax.co.uk
+widget-js.co.uk
+
 # Generic
 
 /cdn/ga.php?analytic=
