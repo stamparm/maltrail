@@ -297,3 +297,15 @@ flupak.ru
 # Reference: https://www.virustotal.com/gui/domain/applog.uc.cn/relations
 
 applog.uc.cn
+
+# Reference: https://www.virustotal.com/gui/file/2a574107b01743db1a9e32a1d1ffa70f5cecb42fe396a19773b380d8c0da4f74/detection
+
+114.55.93.104:9004
+139.129.132.111:8001
+
+# Reference: https://www.virustotal.com/gui/file/71de1ec3ff93e0d95c86c81ce89be1aa1fb58d6d7b936ddfc30ea2ccfa265858/detection
+# Reference: https://www.virustotal.com/gui/file/d5873242111d9a3e821dc50f221460221636bd0500500074f2b66a488f514ee5/detection
+
+115.159.131.193:10001
+115.159.131.193:10002
+115.159.131.193:10201
