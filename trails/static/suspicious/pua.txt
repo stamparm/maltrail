@@ -2626,3 +2626,8 @@ lucid.pw
 destorage.info
 /installmate/php/get_cfg.php
 /installmate/php/track_installer_products.php
+
+# Reference: https://www.virustotal.com/gui/file/ed7605a922982e18877fd8c0624880b836ebc1ab190634a07a3cd7c397e856d0/detection
+
+23.113.62.37:5050
+bopper.myftp.biz
