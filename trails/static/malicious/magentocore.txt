@@ -3930,6 +3930,7 @@ widget-js.co.uk
 /javascript/checkcheckout.js
 /js/afterpay/checkout/idev_onestep.js
 /js/check_analystic.js
+/js/customize-gtag.min.js
 /js/extjs/fix-defer-after.js
 /js/footer-link.js
 /js/mage/cookies.js
