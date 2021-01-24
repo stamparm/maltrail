@@ -2620,3 +2620,9 @@ d1js21szq85hyn.cloudfront.net
 # Reference: https://www.virustotal.com/gui/file/428886f0f31d1612bc1e99d7b1419b0af71b9e06b02192fef69958c3e61d5a68/detection
 
 lucid.pw
+
+# Reference: https://www.virustotal.com/gui/file/089e160f41209c682e1f19a0f09aa42ec57c0fde96c5015a1d1654885a4958bc/detection
+
+destorage.info
+/installmate/php/get_cfg.php
+/installmate/php/track_installer_products.php
