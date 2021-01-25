@@ -487,6 +487,7 @@ victronenergy.com
 
 # old compromised sites on cybercrime-tracker.net
 
+istrayachting.hr
 alnassar.com.sa
 mspp.gouv.ht
 gripa.hr
