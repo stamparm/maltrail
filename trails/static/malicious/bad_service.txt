@@ -388,3 +388,7 @@ thyrsi.com
 # Reference: https://twitter.com/James_inthe_box/status/1050762064665309185
 
 my.mixtape.moe
+
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.84.18/relations
+
+fraud-world.top
