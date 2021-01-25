@@ -25,6 +25,7 @@ class ColorizedStream:
 
         if "Maltrail (" in text:
             text = re.sub(r"\((sensor|server)\)", lambda match: "(%s%s%s)" % ({"sensor": COLOR.BOLD_LIGHT_GREEN, "server": COLOR.BOLD_LIGHT_MAGENTA}[match.group(1)], match.group(1), COLOR.RESET), text)
+            text = re.sub(r"https?://[\w.:/?=]+", lambda match: "%s%s%s%s" % (COLOR.BLUE, COLOR.UNDERLINE, match.group(0), COLOR.RESET), text)
 
         if "Usage: " in text:
             text = re.sub(r"(.*Usage: )(.+)", r"\g<1>%s\g<2>%s" % (COLOR.BOLD_WHITE, COLOR.RESET), text)

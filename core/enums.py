@@ -109,6 +109,7 @@ class COLOR:
     WHITE = "\033[97m"
     BOLD_BLACK = "\033[30;1m"
     RED = "\033[31m"
+    UNDERLINE = "\033[4m"
 
 class BACKGROUND:
     BLUE = "\033[44m"

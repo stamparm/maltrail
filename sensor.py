@@ -60,6 +60,7 @@ from core.settings import DAILY_SECS
 from core.settings import DLT_OFFSETS
 from core.settings import DNS_EXHAUSTION_THRESHOLD
 from core.settings import GENERIC_SINKHOLE_REGEX
+from core.settings import HOMEPAGE
 from core.settings import HTTP_TIME_FORMAT
 from core.settings import IGNORE_DNS_QUERY_SUFFIXES
 from core.settings import IPPROTO_LUT
@@ -1182,7 +1183,7 @@ def main():
                 else:
                     break
 
-    print("%s (sensor) #v%s\n" % (NAME, VERSION))
+    print("%s (sensor) #v%s {%s}\n" % (NAME, VERSION, HOMEPAGE))
 
     if "--version" in sys.argv:
         raise SystemExit

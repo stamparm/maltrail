@@ -30,6 +30,7 @@ from core.settings import config
 from core.settings import read_config
 from core.settings import CHECK_CONNECTION_MAX_RETRIES
 from core.settings import CONFIG_FILE
+from core.settings import HOMEPAGE
 from core.settings import IS_WIN
 from core.settings import NAME
 from core.settings import VERSION
@@ -38,7 +39,7 @@ from core.update import update_trails
 from thirdparty import six
 
 def main():
-    print("%s (server) #v%s\n" % (NAME, VERSION))
+    print("%s (server) #v%s {%s}\n" % (NAME, VERSION, HOMEPAGE))
 
     if "--version" in sys.argv:
         raise SystemExit
