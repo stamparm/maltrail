@@ -2626,3 +2626,8 @@ lucid.pw
 destorage.info
 /installmate/php/get_cfg.php
 /installmate/php/track_installer_products.php
+
+# Reference: https://www.virustotal.com/gui/file/dee17cdfa8d6f6d535aa55ff6674f372a1e50ce661c9bf89fc5ff7d5526bcf97/detection
+# Reference: https://www.virustotal.com/gui/domain/integrator.mediabarservices.ru/relations
+
+mediabarservices.ru
