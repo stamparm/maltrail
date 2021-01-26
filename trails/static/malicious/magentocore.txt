@@ -3081,6 +3081,7 @@ findericons.com/favicon.ico
 metahtmlhead.com
 
 # Reference: https://twitter.com/rootprivilege/status/1311731116345237509
+# Reference: https://blog.sucuri.net/2021/01/magento-php-injection-loads-javascript-skimmer.html
 # Reference: https://www.virustotal.com/gui/ip-address/5.135.247.140/relations
 
 underscorefw.com
