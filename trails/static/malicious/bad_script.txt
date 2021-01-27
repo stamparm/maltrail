@@ -4093,6 +4093,12 @@ cdncontentdelivery.com
 
 /rh1swa.php
 
+# Reference: https://www.fireeye.com/blog/threat-research/2021/01/phishing-campaign-woff-obfuscation-telegram-communications.html
+# Reference: https://otx.alienvault.com/pulse/6011bf6e6167f335ba6e7bbb/
+
+/11644210b.php
+/F004f19441/sms1.php
+
 # Generic
 
 /js/altmanluggage.js
