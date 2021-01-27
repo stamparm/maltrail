@@ -4089,6 +4089,10 @@ cdncontentdelivery.com
 
 /9d051d446f2aa6.php
 
+# Reference: https://twitter.com/ps66uk/status/1354382482230149122
+
+/rh1swa.php
+
 # Generic
 
 /js/altmanluggage.js
