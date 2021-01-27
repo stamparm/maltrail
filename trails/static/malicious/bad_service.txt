@@ -392,3 +392,7 @@ my.mixtape.moe
 # Reference: https://www.virustotal.com/gui/ip-address/8.208.84.18/relations
 
 fraud-world.top
+
+# Reference: https://www.virustotal.com/gui/domain/telete.in/relations
+
+telete.in
