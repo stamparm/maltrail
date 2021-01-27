@@ -3909,6 +3909,11 @@ plugin-ajax.com
 widget-ajax.co.uk
 widget-js.co.uk
 
+# Reference: https://twitter.com/malwrhunterteam/status/1354431227802095619
+# Reference: https://www.virustotal.com/gui/ip-address/34.85.13.9/relations
+
+jquery-scdn.com
+
 # Generic
 
 /cdn/ga.php?analytic=
