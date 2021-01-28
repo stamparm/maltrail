@@ -4089,6 +4089,16 @@ cdncontentdelivery.com
 
 /9d051d446f2aa6.php
 
+# Reference: https://twitter.com/ps66uk/status/1354382482230149122
+
+/rh1swa.php
+
+# Reference: https://www.fireeye.com/blog/threat-research/2021/01/phishing-campaign-woff-obfuscation-telegram-communications.html
+# Reference: https://otx.alienvault.com/pulse/6011bf6e6167f335ba6e7bbb/
+
+/11644210b.php
+/F004f19441/sms1.php
+
 # Generic
 
 /js/altmanluggage.js
