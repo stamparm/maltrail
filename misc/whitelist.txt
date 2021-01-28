@@ -925,6 +925,7 @@ sophosxl.net
 
 # Generic
 
+bootcss.com
 snapchat.com
 opera.com
 pentacloud.dyndns.org
