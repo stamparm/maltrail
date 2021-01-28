@@ -3914,6 +3914,16 @@ widget-js.co.uk
 
 jquery-scdn.com
 
+# Reference: https://twitter.com/jeromesegura/status/1354598447022653442
+# Reference: https://www.virustotal.com/gui/ip-address/188.227.57.93/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.119.130/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.72.238/relations
+
+google-analuting.com
+google-conversion.com
+google-gateway.com
+google-note.com
+
 # Generic
 
 /cdn/ga.php?analytic=
