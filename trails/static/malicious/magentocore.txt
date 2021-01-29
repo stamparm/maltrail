@@ -3924,6 +3924,23 @@ google-conversion.com
 google-gateway.com
 google-note.com
 
+# Reference: https://twitter.com/AffableKraut/status/1355263804872024072
+# Reference: https://twitter.com/AffableKraut/status/1355263805899595783
+
+aws-amazon.site
+extrn.ru
+freshdesk.space
+google-analytics.su
+kckaa.com 
+newoldtime.site
+newoldtime.space
+riskified.site
+shipstation.space
+signifyd.site
+strat-o-matic.org
+tolinkjpattr.com
+tywyvern.com
+
 # Generic
 
 /cdn/ga.php?analytic=
