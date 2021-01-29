@@ -4099,6 +4099,10 @@ cdncontentdelivery.com
 /11644210b.php
 /F004f19441/sms1.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1355168209360605184
+
+/donkeydick.php
+
 # Generic
 
 /js/altmanluggage.js
