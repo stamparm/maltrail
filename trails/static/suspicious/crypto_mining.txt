@@ -657,3 +657,8 @@ monerorx.com
 # Reference: https://www.virustotal.com/gui/file/fd18bea214ae854e69e6775f6cdebb6bd6d378dee7854924cf3ae3bfb5173b94/detection
 
 139.99.120.50:7777
+
+# Reference: https://www.virustotal.com/gui/file/405a51b74c7c4e26ae112189e5ef071d6279b5fece6e2af08985306fdd28e223/detection
+
+49.12.80.38:45560
+49.12.80.40:45560
