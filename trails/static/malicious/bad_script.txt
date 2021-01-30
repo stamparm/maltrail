@@ -4089,6 +4089,13 @@ cdncontentdelivery.com
 
 /9d051d446f2aa6.php
 
+# Reference: https://twitter.com/James_inthe_box/status/1313832984303157250
+# Reference: https://app.any.run/tasks/5ddfb57a-bc6b-42bb-a042-f906e5a2cabb/
+# Reference: https://www.virustotal.com/gui/file/bc7900c1440c578c0dc0de73889755bbbf9e43026d8beafe83dbdc5d76dd6a62/detection
+
+/337aea9edeb1f9.php
+/bc4514100d55a6.php
+
 # Reference: https://twitter.com/ps66uk/status/1354382482230149122
 
 /rh1swa.php
@@ -4098,6 +4105,10 @@ cdncontentdelivery.com
 
 /11644210b.php
 /F004f19441/sms1.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1355168209360605184
+
+/donkeydick.php
 
 # Generic
 
