@@ -13,7 +13,7 @@ IS_TTY = hasattr(sys.stdout, "fileno") and os.isatty(sys.stdout.fileno())
 class ColorizedStream:
     def __init__(self, original):
         self._original = original
-        self._log_colors = {'i': COLOR.LIGHT_BLUE, '!': COLOR.LIGHT_YELLOW, 'x': COLOR.BOLD_LIGHT_RED, '?': COLOR.LIGHT_YELLOW, 'o': COLOR.BOLD_WHITE, '+': COLOR.BOLD_LIGHT_GREEN}
+        self._log_colors = {'i': COLOR.LIGHT_BLUE, '!': COLOR.LIGHT_YELLOW, '*': COLOR.LIGHT_CYAN, 'x': COLOR.BOLD_LIGHT_RED, '?': COLOR.LIGHT_YELLOW, 'o': COLOR.BOLD_WHITE, '+': COLOR.BOLD_LIGHT_GREEN}
         self._severity_colors = {SEVERITY.LOW: COLOR.BOLD_LIGHT_CYAN, SEVERITY.MEDIUM: COLOR.BOLD_LIGHT_YELLOW, SEVERITY.HIGH: COLOR.BOLD_LIGHT_RED}
         self._type_colors = {"DNS": BACKGROUND.BLUE, "UA": BACKGROUND.MAGENTA, "IP": BACKGROUND.RED, "URL": BACKGROUND.YELLOW, "HTTP": BACKGROUND.GREEN, "IPORT": BACKGROUND.RED}
         self._info_colors = {"malware": COLOR.LIGHT_RED, "suspicious": COLOR.LIGHT_YELLOW, "malicious": COLOR.YELLOW}

@@ -116,24 +116,26 @@ def main():
         print("\r[x] stopping (Ctrl-C pressed)")
 
 if __name__ == "__main__":
-    show_final = True
+    code = 0
 
     try:
         main()
     except SystemExit as ex:
-        show_final = False
-
         if isinstance(get_ex_message(ex), six.string_types) and get_ex_message(ex).strip('0'):
             print(get_ex_message(ex))
-            os._exit(1)
+            code = 1
+    except IOError:
+        log_error("\n\n[!] session abruptly terminated\n[?] (hint: \"https://stackoverflow.com/a/20997655\")")
+        code = 1
     except Exception:
         msg = "\r[!] unhandled exception occurred ('%s')" % sys.exc_info()[1]
         msg += "\n[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc()
         log_error("\n\n%s" % msg.replace("\r", ""))
 
         print(msg)
+        code = 1
     finally:
-        if show_final:
-            print("[i] finished")
+        if "--version" not in sys.argv:
+            print("\n[*] ending @ %s" % time.strftime("%X /%Y-%m-%d/"))
 
-        os._exit(0)
+        os._exit(code)
