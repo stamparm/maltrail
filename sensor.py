@@ -1043,7 +1043,7 @@ def monitor():
     Sniffs/monitors given capturing interface
     """
 
-    print("[o] running...")
+    print("[^] running...")
 
     def packet_handler(datalink, header, packet):
         global _count
