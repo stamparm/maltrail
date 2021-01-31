@@ -52,6 +52,8 @@ def main():
 
     options, _ = parser.parse_args()
 
+    print("[*] starting @ %s\n" % time.strftime("%X /%Y-%m-%d/"))
+
     read_config(options.config_file)
 
     if options.debug:
