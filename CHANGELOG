@@ -12,7 +12,11 @@
 
 #################################################################
 
-- Version 0.28 -> 0.29 (Upcoming release)
+- Version 0.29 -> 0.30 (Upcoming release)
+
+
+
+- Version 0.28 -> 0.29 (01 Feb 2021)
 
 [+] Two new UI features (hide threat and report false positive options)
 [+] Auto-refresh for Maltrail web-page (/?refresh=N, where N in seconds. Issue #624)
