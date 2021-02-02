@@ -3941,6 +3941,15 @@ strat-o-matic.org
 tolinkjpattr.com
 tywyvern.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1356378296292806657
+# Reference: https://twitter.com/AffableKraut/status/1356412371334529024
+
+advertising-cdn.com
+africa-best-dating.com
+google-adwert.com
+google-adwersting.com
+new-adversting.com
+
 # Generic
 
 /cdn/ga.php?analytic=
