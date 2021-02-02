@@ -925,6 +925,7 @@ sophosxl.net
 
 # Generic
 
+btzoo.eu
 bootcss.com
 snapchat.com
 opera.com
