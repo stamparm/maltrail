@@ -1136,3 +1136,7 @@ theleads.xyz
 vexillologist.site
 waistcoat.xyz
 xvynyangilie.buzz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1357062536563101696
+
+education.bokipeobm.email
