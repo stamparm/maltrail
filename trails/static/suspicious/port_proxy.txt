@@ -9,3 +9,7 @@ bi-tree.ru
 ngrok.io
 portmap.host
 portmap.io
+
+# Reference: https://my-homeip.de/portmapper/what_is_this
+
+portmapper.myonlineportal.net
