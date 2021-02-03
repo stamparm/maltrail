@@ -245,6 +245,10 @@ irmihan.ir
 
 /tCustom/cpanel/
 
+# Reference: https://twitter.com/malwrhunterteam/status/1356889417030500353
+
+datamicrotransfer.com
+
 # Generic
 
 /admin_123/auth.php
