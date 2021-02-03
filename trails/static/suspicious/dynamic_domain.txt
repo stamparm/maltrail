@@ -3074,6 +3074,10 @@ myonlineportal.net
 
 my-homeip.com
 
+# Reference: https://www.virustotal.com/gui/domain/my-homeip.de/relations
+
+my-homeip.de
+
 # Reference: https://www.virustotal.com/gui/domain/my-homeip.net/relations
 
 my-homeip.net
