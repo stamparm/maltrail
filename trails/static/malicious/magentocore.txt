@@ -3923,6 +3923,7 @@ google-analuting.com
 google-conversion.com
 google-gateway.com
 google-note.com
+google-squery.com
 
 # Reference: https://twitter.com/AffableKraut/status/1355263804872024072
 # Reference: https://twitter.com/AffableKraut/status/1355263805899595783
