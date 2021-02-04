@@ -1678,6 +1678,11 @@ n-e.kr
 p-e.kr
 r-e.kr
 
+# Reference: https://www.virustotal.com/gui/file/076992c7bd55066dcf8f6119529a00021085e2051d936c7aed7fd56e205076c9/detection
+# Reference: https://www.virustotal.com/gui/domain/0pe.kr/relations
+
+0pe.kr
+
 # Reference: https://info.publicintelligence.net/FBI-BlackshadesDomains.xls
 
 chickenkiller.com
