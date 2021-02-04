@@ -349,3 +349,7 @@ myip.ipip.net
 # Reference: https://www.virustotal.com/gui/domain/eth0.me/relations
 
 eth0.me
+
+# Reference: https://www.virustotal.com/gui/domain/ip.urls.is/relations
+
+ip.urls.is
