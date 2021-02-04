@@ -3923,6 +3923,8 @@ google-analuting.com
 google-conversion.com
 google-gateway.com
 google-note.com
+google-squery.com
+paypal-moneypay.com
 
 # Reference: https://twitter.com/AffableKraut/status/1355263804872024072
 # Reference: https://twitter.com/AffableKraut/status/1355263805899595783
@@ -3951,6 +3953,7 @@ google-adwersting.com
 new-adversting.com
 
 # Reference: https://twitter.com/jeromesegura/status/1356654794098626560
+# Reference: https://twitter.com/MBThreatIntel/status/1357028912677613568
 # Reference: https://blog.malwarebytes.com/cybercrime/2021/02/credit-card-skimmer-piggybacks-on-magento-1-hacking-spree/
 
 costway.top
@@ -3959,6 +3962,8 @@ hdanalyse.com
 hdenvironement.com
 hdpopulation.com
 securityxx.top
+/costway.js
+/mcostway.js
 
 # Generic
 
