@@ -1629,6 +1629,10 @@ GOOGLE-INDEXING
 
 \Acso\Z
 
+# Reference: https://twitter.com/James_inthe_box/status/1357425344735707136
+
+\AWin\Z
+
 # Misc
 
 information_schema
