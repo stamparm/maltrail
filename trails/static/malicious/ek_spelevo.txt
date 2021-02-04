@@ -1140,3 +1140,7 @@ xvynyangilie.buzz
 # Reference: https://twitter.com/MBThreatIntel/status/1357062536563101696
 
 education.bokipeobm.email
+
+# Reference: https://twitter.com/malware_traffic/status/1357144573676580871
+
+jewel.biqejiekj.email
