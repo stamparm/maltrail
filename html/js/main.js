@@ -9,7 +9,7 @@ var _THREATS = {};
 var _SOURCES = {};
 var _TOP_SOURCES = [];
 var _SOURCE_EVENTS = {};
-var _SEVERITY_COUNT = {}
+var _SEVERITY_COUNT = {};
 var _TRAILS = {};
 var _FLOOD_TRAILS = {};
 var _HOURS = {};
@@ -109,19 +109,19 @@ $(document).ready(function() {
     $("#noscript").remove();
     // assign buttons
     $("#btnDrawThreats").on("click", function() {
-        drawInfo('Threats');
+        drawInfo("Threats");
     });
     $("#btnDrawEvents").on("click", function() {
-        drawInfo('Events');
+        drawInfo("Events");
     });
     $("#btnDrawSeverity").on("click", function() {
-        drawInfo('Severity');
+        drawInfo("Severity");
     });
     $("#btnDrawSources").on("click", function() {
-        drawInfo('Sources');
+        drawInfo("Sources");
     });
     $("#btnDrawTrails").on("click", function() {
-        drawInfo('Trails');
+        drawInfo("Trails");
     });
 
     // Reference: http://tosbourn.com/a-fix-for-window-location-origin-in-internet-explorer/
@@ -157,7 +157,7 @@ $(document).ready(function() {
     });
 
     $(".custom-menu li").click(function() {
-        var table = $('#details').dataTable();
+        var table = $("#details").dataTable();
         var hidden_threats = $.jStorage.get(STORAGE_KEY_HIDDEN_THREATS, {});
         var threat = $(CONTEXT_MENU_ROW).find("td:first").text();
 
@@ -303,7 +303,7 @@ function toggleHeatmap() {
 }
 
 function graphClose() {
-    $('#chart_area').empty();
+    $("#chart_area").empty();
     resetStatusButtons();
 }
 
@@ -488,7 +488,7 @@ function getThreatUID(threat) {  // e.g. 192.168.0.1~>shv4.no-ip.biz
 }
 
 function resetView() {
-    var table = $('#details').dataTable();
+    var table = $("#details").dataTable();
 
     $("body").loader("show");
 
@@ -899,9 +899,9 @@ function init(url, from, to) {
 
                     var period = "";
 
-                    if (typeof from !== 'undefined') {
+                    if (typeof from !== "undefined") {
                         period += formatDate(from);
-                        if (typeof to !== 'undefined')
+                        if (typeof to !== "undefined")
                             period += "_" + formatDate(to);
                     }
 
@@ -1011,7 +1011,7 @@ function tagInputKeyUp(event, forcedelete) {
                 _DELETE_DELETE_PRESS = true;
                 return;
             }
-            table = $('#details').dataTable();
+            table = $("#details").dataTable();
             position = table.fnGetPosition(event.target.parentNode);
             tagData = table.fnGetData(event.target.parentNode);
 
@@ -1033,7 +1033,7 @@ function tagInputKeyUp(event, forcedelete) {
     }
     else if ((typeof event.keyCode === "undefined") || (event.keyCode === 13)) {  // blur or Enter
         if (newTag.length > 0) {
-            table = $('#details').dataTable();
+            table = $("#details").dataTable();
             newTag = newTag.replace(/[^a-zA-Z0-9_]/g, "");
             position = table.fnGetPosition(event.target.parentNode);
             tagData = table.fnGetData(event.target.parentNode);
@@ -1154,7 +1154,7 @@ function copyEventsToClipboard(event) {
 
 function appendFilter(filter, event, istag) {
     try {
-        var table = $('#details').dataTable();
+        var table = $("#details").dataTable();
         var currentFilter = table.api().search();
 
         // Reference: http://stackoverflow.com/a/3076685
@@ -1193,7 +1193,7 @@ function appendFilter(filter, event, istag) {
 
 // DataTables part
 function initDetails() {
-    var details = $('#details').dataTable( {
+    var details = $("#details").dataTable( {
         bDestroy: true,
         bAutoWidth: false,
         bStateSave: true,
@@ -1485,7 +1485,7 @@ function initDetails() {
                     sExtends: "text",
                     sButtonText: "Clear",
                     fnClick: function (nButton, oConfig, oFlash) {
-                        var table = $('#details').dataTable();
+                        var table = $("#details").dataTable();
                         var settings = table.fnSettings();
                         table.fnFilter("");
 //                         if ((settings._iDisplayLength > 0) && (settings._iDisplayLength < 30))
@@ -1864,7 +1864,7 @@ function initDetails() {
 
     details.off("dblclick");  // clear previous
     details.on("dblclick", "td", function (){
-        var table = $('#details').dataTable();
+        var table = $("#details").dataTable();
         var filter = "";
 
         if ($(this).find(".info-input").length > 0)
@@ -2010,7 +2010,7 @@ jQuery.extend(jQuery.fn.dataTableExt.oSort, {
         if ( $.trim(a) !== '' ) {
             // extract timestamp from "<div title='yyyy-mm-dd hh:mm:ss.ususus'><span class='time-day'>dd<sup>th</sup></span> hh:mm:ss</div>"
             var frTimestamp = $.trim(a).split("'")[1];
-            
+
             var frDatea = frTimestamp.split(' ');
             var frTimea = frDatea[1].split('.')[0].split(':');
             var frUseca = frDatea[1].split('.')[1];
@@ -2265,7 +2265,7 @@ function drawInfo(type) {
 
             if (activePoints.length > 0) {
                 var filter = '" ' + activePoints[0].label.replace(/[^0-9]/g, "") + ':"';
-                var table = $('#details').dataTable();
+                var table = $("#details").dataTable();
 
                 table.fnFilter(filter);
                 scrollTo("#details");
@@ -2378,7 +2378,7 @@ function drawInfo(type) {
                     var filter = a.data.label.replace(/\(([A-Z]+)\)/g, "$1");
 
                     if (!filter.startsWith("Other")) {
-                        var table = $('#details').dataTable();
+                        var table = $("#details").dataTable();
 
                         table.fnFilter(filter);
                         scrollTo("#details");
@@ -2431,7 +2431,7 @@ function drawInfo(type) {
                 var filter = activeBars[0].label;
 
                 if (filter.toLowerCase() != "other") {
-                    var table = $('#details').dataTable();
+                    var table = $("#details").dataTable();
 
                     table.fnFilter(filter);
                     scrollTo("#details");
@@ -2525,7 +2525,7 @@ function drawInfo(type) {
             "callbacks": {
                 onClickSegment: function(a) {
                     var filter = a.data.label;
-                    var table = $('#details').dataTable();
+                    var table = $("#details").dataTable();
 
                     table.fnFilter(filter);
                     scrollTo("#details");
@@ -2635,7 +2635,7 @@ function drawInfo(type) {
                     var filter = a.data.label.substr(0, 8);
 
                     if (!filter.startsWith("Other")) {
-                        var table = $('#details').dataTable();
+                        var table = $("#details").dataTable();
 
                         table.fnFilter(filter);
                         scrollTo("#details");
@@ -2688,7 +2688,7 @@ function initVisual() {
 
     var options = { type: 'pie', sliceColors: sliceColors, minSpotColor: "", maxSpotColor: "", spotColor: "", highlightSpotColor: "", highlightLineColor: "", tooltipClassname: "", width: '30', height: '30', offset: -90, disableInteraction: true };
 
-    $('#severity_sparkline').sparkline(data, options);
+    $("#severity_sparkline").sparkline(data, options);
 
 
     // Trails sparkline
@@ -2722,7 +2722,7 @@ function initVisual() {
 
     total["Trails"] = _TRAILS_SORTED.length;
 
-    $('#trails_sparkline').sparkline(data, options);
+    $("#trails_sparkline").sparkline(data, options);
 
     // Threats sparkline
     var _ = {};
@@ -2766,7 +2766,7 @@ function initVisual() {
     }
 
     total["Threats"] = _THREATS_SORTED.length;
-    $('#threats_sparkline').sparkline(data, options);
+    $("#threats_sparkline").sparkline(data, options);
 
     // Events sparklines
     for (var hour in _HOURS) {
