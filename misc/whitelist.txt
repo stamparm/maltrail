@@ -487,6 +487,8 @@ victronenergy.com
 
 # old compromised sites on cybercrime-tracker.net
 
+powiat-lancut.com.pl
+megaplast.co.rs
 istrayachting.hr
 alnassar.com.sa
 mspp.gouv.ht
