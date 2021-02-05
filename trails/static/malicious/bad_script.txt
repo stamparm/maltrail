@@ -4115,6 +4115,10 @@ cdncontentdelivery.com
 
 /9bc55352dda4bb.php
 
+# Reference: https://twitter.com/r3dbU7z/status/1357647150008717312
+
+/Bill_inv002198.js
+
 # Generic
 
 /js/altmanluggage.js
