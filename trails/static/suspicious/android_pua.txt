@@ -313,3 +313,7 @@ applog.uc.cn
 # Reference: https://www.virustotal.com/gui/domain/uiltyfores.fun/relations
 
 uiltyfores.fun
+
+# Reference: https://www.virustotal.com/gui/domain/exp.host/relations
+
+exp.host
