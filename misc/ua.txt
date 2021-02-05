@@ -1618,6 +1618,10 @@ Firefox/40.1
 
 ASUS2JS
 
+# Reference: https://twitter.com/VK_Intel/status/1357795388057677827
+
+MASAJS
+
 # Reference: https://twitter.com/0xrb/status/1352101798467670016
 # Reference: https://twitter.com/bad_packets/status/1352068028028997632
 # Reference: https://github.com/stamparm/maltrail/pull/13995/
