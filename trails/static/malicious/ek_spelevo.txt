@@ -1144,3 +1144,7 @@ education.bokipeobm.email
 # Reference: https://twitter.com/malware_traffic/status/1357144573676580871
 
 jewel.biqejiekj.email
+
+# Reference: https://twitter.com/malware_traffic/status/1357838284181942273
+
+werewolf.bokipeobm.email
