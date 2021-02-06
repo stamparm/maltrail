@@ -4119,6 +4119,10 @@ cdncontentdelivery.com
 
 /Bill_inv002198.js
 
+# Reference: https://twitter.com/MalwarePatrol/status/1358070205633724418
+
+/567jcn03tc9zp0iay52xijs9.php
+
 # Generic
 
 /js/altmanluggage.js
