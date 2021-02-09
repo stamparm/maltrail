@@ -4161,6 +4161,15 @@ cdncontentdelivery.com
 /wp08/wp-includes/po.php
 /wp09/wp-includes/po.php
 
+# Reference: https://twitter.com/JCyberSec_/status/1359115107213664259
+
+/0453000.php
+/009808989.php
+/324455.php
+/8897.php
+/09908.js
+/434.js
+
 # Generic
 
 /js/altmanluggage.js
