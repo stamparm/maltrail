@@ -4123,6 +4123,32 @@ cdncontentdelivery.com
 
 /567jcn03tc9zp0iay52xijs9.php
 
+# Reference: https://twitter.com/bad_packets/status/1358910664060723202
+
+/xms.ps1
+
+# Reference: https://twitter.com/r3dbU7z/status/1358998466735833088
+
+/keylogger.py
+/packetsniffer.py
+/portscanner.py
+/ransom.py
+/spreader.py
+/a11.py
+/adl.py
+/fJ5.py
+/g9o.py
+/hMQ.py
+/hms.py
+/i31.py
+/j06.py
+/jc0.py
+/k4D.py
+/rJz.py
+/ufb.py
+/y3m.py
+/zpj.py
+
 # Reference: https://www.virustotal.com/gui/file/4ad6418af82212c7719ed7a12a23597dfaf6f5606c3bd3bc4e513820aa13ea63/detection
 
 /wp01/wp-includes/po.php
