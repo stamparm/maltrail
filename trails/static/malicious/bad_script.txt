@@ -4127,6 +4127,28 @@ cdncontentdelivery.com
 
 /xms.ps1
 
+# Reference: https://twitter.com/r3dbU7z/status/1358998466735833088
+
+/keylogger.py
+/packetsniffer.py
+/portscanner.py
+/ransom.py
+/spreader.py
+/a11.py
+/adl.py
+/fJ5.py
+/g9o.py
+/hMQ.py
+/hms.py
+/i31.py
+/j06.py
+/jc0.py
+/k4D.py
+/rJz.py
+/ufb.py
+/y3m.py
+/zpj.py
+
 # Generic
 
 /js/altmanluggage.js
