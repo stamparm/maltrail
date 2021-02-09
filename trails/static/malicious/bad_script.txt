@@ -4123,6 +4123,10 @@ cdncontentdelivery.com
 
 /567jcn03tc9zp0iay52xijs9.php
 
+# Reference: https://twitter.com/bad_packets/status/1358910664060723202
+
+/xms.ps1
+
 # Generic
 
 /js/altmanluggage.js
