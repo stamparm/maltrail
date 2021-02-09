@@ -4149,6 +4149,18 @@ cdncontentdelivery.com
 /y3m.py
 /zpj.py
 
+# Reference: https://www.virustotal.com/gui/file/4ad6418af82212c7719ed7a12a23597dfaf6f5606c3bd3bc4e513820aa13ea63/detection
+
+/wp01/wp-includes/po.php
+/wp02/wp-includes/po.php
+/wp03/wp-includes/po.php
+/wp04/wp-includes/po.php
+/wp05/wp-includes/po.php
+/wp06/wp-includes/po.php
+/wp07/wp-includes/po.php
+/wp08/wp-includes/po.php
+/wp09/wp-includes/po.php
+
 # Generic
 
 /js/altmanluggage.js
