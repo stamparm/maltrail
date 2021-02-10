@@ -3954,6 +3954,7 @@ new-adversting.com
 
 # Reference: https://twitter.com/jeromesegura/status/1356654794098626560
 # Reference: https://twitter.com/MBThreatIntel/status/1357028912677613568
+# Reference: https://www.virustotal.com/gui/ip-address/144.202.119.63/relations
 # Reference: https://www.virustotal.com/gui/ip-address/45.77.125.110/relations
 # Reference: https://blog.malwarebytes.com/cybercrime/2021/02/credit-card-skimmer-piggybacks-on-magento-1-hacking-spree/
 
@@ -3964,9 +3965,14 @@ crazyvaps.info
 hdanalyse.com
 hdenvironement.com
 hdpopulation.com
+motoxpricambi.top
 securityxx.top
 /costway.js
 /mcostway.js
+
+# Reference: https://twitter.com/virelli/status/1359465087204024325
+
+beyondhealth.com/media/js/a1def6c62256906029767cb784323ab3.js
 
 # Generic
 
@@ -3988,6 +3994,7 @@ securityxx.top
 /gtm-connect/wp-share.min.js
 /images/js/googleapi.js
 /javascript/checkcheckout.js
+/js/a1def6c62256906029767cb784323ab3.js
 /js/afterpay/checkout/idev_onestep.js
 /js/check_analystic.js
 /js/customize-gtag.min.js
@@ -4000,6 +4007,7 @@ securityxx.top
 /js/varien/js.js.pagespeed.jm.aFn_GvyNS2.js
 /my/vmart.js
 /103754_tag.js
+/a1def6c62256906029767cb784323ab3.js
 /markberg.dk.js
 /qcore.js
 /plugins/republicadealberdi.js
