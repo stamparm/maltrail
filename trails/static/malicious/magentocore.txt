@@ -3954,6 +3954,7 @@ new-adversting.com
 
 # Reference: https://twitter.com/jeromesegura/status/1356654794098626560
 # Reference: https://twitter.com/MBThreatIntel/status/1357028912677613568
+# Reference: https://www.virustotal.com/gui/ip-address/144.202.119.63/relations
 # Reference: https://www.virustotal.com/gui/ip-address/45.77.125.110/relations
 # Reference: https://blog.malwarebytes.com/cybercrime/2021/02/credit-card-skimmer-piggybacks-on-magento-1-hacking-spree/
 
@@ -3964,6 +3965,7 @@ crazyvaps.info
 hdanalyse.com
 hdenvironement.com
 hdpopulation.com
+motoxpricambi.top
 securityxx.top
 /costway.js
 /mcostway.js
