@@ -3968,6 +3968,10 @@ securityxx.top
 /costway.js
 /mcostway.js
 
+# Reference: https://twitter.com/virelli/status/1359465087204024325
+
+beyondhealth.com/media/js/a1def6c62256906029767cb784323ab3.js
+
 # Generic
 
 /cdn/ga.php?analytic=
@@ -3988,6 +3992,7 @@ securityxx.top
 /gtm-connect/wp-share.min.js
 /images/js/googleapi.js
 /javascript/checkcheckout.js
+/js/a1def6c62256906029767cb784323ab3.js
 /js/afterpay/checkout/idev_onestep.js
 /js/check_analystic.js
 /js/customize-gtag.min.js
@@ -4000,6 +4005,7 @@ securityxx.top
 /js/varien/js.js.pagespeed.jm.aFn_GvyNS2.js
 /my/vmart.js
 /103754_tag.js
+/a1def6c62256906029767cb784323ab3.js
 /markberg.dk.js
 /qcore.js
 /plugins/republicadealberdi.js
