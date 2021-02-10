@@ -4170,6 +4170,10 @@ cdncontentdelivery.com
 /09908.js
 /434.js
 
+# Reference: https://twitter.com/JCyberSec_/status/1359439467447222272
+
+/3063qmv20ngebpacbqy4q9vlro.php
+
 # Generic
 
 /js/altmanluggage.js
