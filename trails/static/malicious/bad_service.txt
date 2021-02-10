@@ -396,3 +396,8 @@ fraud-world.top
 # Reference: https://www.virustotal.com/gui/domain/telete.in/relations
 
 telete.in
+
+# Reference: https://github.com/stamparm/maltrail/issues/14480
+
+malwat.ch/malware
+malwat.ch/msedge.html
