@@ -316,3 +316,8 @@ podathon.org/shell/
 
 /aboz.php
 /ass.php
+
+# Reference: https://twitter.com/jstrosch/status/1359745151263010816
+
+/cnx.php
+/assets/plugins/bootstrap/js/by.txt
