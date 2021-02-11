@@ -4174,6 +4174,10 @@ cdncontentdelivery.com
 
 /3063qmv20ngebpacbqy4q9vlro.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1359731149719887873
+
+/9p3qzns4rk57fvxw9xuwb4df.php
+
 # Generic
 
 /js/altmanluggage.js
