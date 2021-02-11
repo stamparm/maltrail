@@ -322,3 +322,8 @@ exp.host
 
 139.59.72.138:8080
 chatk.goldenbirdcoin.com
+
+# Reference: https://www.virustotal.com/gui/file/b0b90abff8a2eb5ba7c6d2c346fabc0f8f6a0034b6189a87f723e11fcd554511/detection
+
+162.243.164.124:8080
+chatj.goldenbirdcoin.com
