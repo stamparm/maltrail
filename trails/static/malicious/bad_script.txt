@@ -4178,6 +4178,15 @@ cdncontentdelivery.com
 
 /9p3qzns4rk57fvxw9xuwb4df.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1359806647871434752
+
+/t958p8ba8votwhkwdd8v9wa5.php
+
+# Reference: https://twitter.com/unmaskparasites/status/1359639196911104001
+# Reference: https://www.virustotal.com/gui/domain/51la.adcef.com/detection
+
+51la.adcef.com
+
 # Generic
 
 /js/altmanluggage.js
