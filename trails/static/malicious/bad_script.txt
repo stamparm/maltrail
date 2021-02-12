@@ -4187,6 +4187,10 @@ cdncontentdelivery.com
 
 51la.adcef.com
 
+# Reference: https://twitter.com/JCyberSec_/status/1360159197002883073
+
+/w_client_id_4d5aac59-3e25-4e7d-9331-78bf74b323ec_redirect_u.php
+
 # Generic
 
 /js/altmanluggage.js
