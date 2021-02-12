@@ -3979,6 +3979,25 @@ beyondhealth.com/media/js/a1def6c62256906029767cb784323ab3.js
 
 gtmtagmanager.com
 
+# Reference: https://twitter.com/AffableKraut/status/1360319951182180355
+
+adfast.tech
+getquantum.space
+heatmap-customer-tracking.com
+intellibs.net
+ipmarketing.biz
+jquery-library-code.ru
+jsdeliddvr.net
+media-rotator.net
+mktracking.com
+popstat.net
+push.report
+rotationmessage.net
+salesbeeapi.com
+statgecko.com
+statisticsfree.com
+weathermap.biz
+
 # Generic
 
 /cdn/ga.php?analytic=
