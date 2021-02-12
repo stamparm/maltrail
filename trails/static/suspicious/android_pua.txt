@@ -317,3 +317,13 @@ uiltyfores.fun
 # Reference: https://www.virustotal.com/gui/domain/exp.host/relations
 
 exp.host
+
+# Reference: https://www.virustotal.com/gui/file/311b661a411433ae27efe4d9cec87a5699d70fc54ed4d897113947a394c3fecd/detection
+
+139.59.72.138:8080
+chatk.goldenbirdcoin.com
+
+# Reference: https://www.virustotal.com/gui/file/b0b90abff8a2eb5ba7c6d2c346fabc0f8f6a0034b6189a87f723e11fcd554511/detection
+
+162.243.164.124:8080
+chatj.goldenbirdcoin.com
