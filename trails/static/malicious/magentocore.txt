@@ -3974,6 +3974,11 @@ securityxx.top
 
 beyondhealth.com/media/js/a1def6c62256906029767cb784323ab3.js
 
+# Reference: https://twitter.com/kyleehmke/status/1360189186578513920
+# Reference: https://www.virustotal.com/gui/ip-address/45.155.37.122/relations
+
+gtmtagmanager.com
+
 # Generic
 
 /cdn/ga.php?analytic=
