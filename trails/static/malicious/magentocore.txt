@@ -3998,6 +3998,10 @@ statgecko.com
 statisticsfree.com
 weathermap.biz
 
+# Reference: https://twitter.com/AffableKraut/status/1360343813454245893
+
+pixelm.tech
+
 # Generic
 
 /cdn/ga.php?analytic=
