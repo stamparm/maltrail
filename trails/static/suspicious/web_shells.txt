@@ -325,3 +325,7 @@ podathon.org/shell/
 # Reference: https://www.virustotal.com/gui/file/acaf8bc99d2af3aa01f9a37a0662e98b05d182787a00978243628c24938fb2ec/detection
 
 /BkLd6Pa7.php
+
+# Reference: https://www.virustotal.com/gui/file/6dfa980937f5776358b5485e8a4e92d333779020974312851826420d2feffa45/detection
+
+/HkPwijGf.php
