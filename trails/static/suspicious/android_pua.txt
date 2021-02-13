@@ -327,3 +327,8 @@ chatk.goldenbirdcoin.com
 
 162.243.164.124:8080
 chatj.goldenbirdcoin.com
+
+# Reference: https://www.virustotal.com/gui/file/dc1a889aca76abdb76134ceaee0ca567845f1eef186b1ccdeb436b083f47c021/detection
+
+attresswhethe.fun
+professonsd.top
