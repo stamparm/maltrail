@@ -3095,6 +3095,10 @@ system-ns.org
 
 system-ns.net
 
+# Reference: https://www.virustotal.com/gui/domain/system-ns.pro/relations
+
+system-ns.pro
+
 # Reference: https://www.virustotal.com/gui/domain/ydns.eu/relations
 
 ydns.eu
