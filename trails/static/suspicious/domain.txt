@@ -5179,3 +5179,7 @@ digitaldesk.biz
 # Reference: https://www.virustotal.com/gui/domain/soxx.us/relations
 
 soxx.us
+
+# Reference: https://www.virustotal.com/gui/domain/punkdns.pw/relations
+
+punkdns.pw
