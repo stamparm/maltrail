@@ -4190,6 +4190,10 @@ cdncontentdelivery.com
 
 /tpgcteic2wyk8j12lg0rg3tq.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1360682417678397443
+
+/4w49ylbq2uay3r9ho9d0m1jx.php
+
 # Reference: https://twitter.com/unmaskparasites/status/1359639196911104001
 # Reference: https://www.virustotal.com/gui/domain/51la.adcef.com/detection
 
