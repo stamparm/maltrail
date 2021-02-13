@@ -5183,3 +5183,7 @@ soxx.us
 # Reference: https://www.virustotal.com/gui/domain/punkdns.pw/relations
 
 punkdns.pw
+
+# Reference: https://www.virustotal.com/gui/domain/pdns.stream/relations
+
+pdns.stream
