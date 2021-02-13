@@ -4727,7 +4727,7 @@ youutbe.com
 youtupe.com
 
 # Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2018/2018-03-02-mcafee-uncovers-operation-honeybee-malicious-document-campaign-targeting-humanitarian-aid-groups/mcafee-uncovers-operation-honeybee-malicious-document-campaign-targeting-humanitarian-aid-groups.csv
-https://blog.trendmicro.com/trendlabs-security-intelligence/syscon-backdoor-uses-ftp-as-a-cc-channel/
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/syscon-backdoor-uses-ftp-as-a-cc-channel/
 # Reference: https://www.virustotal.com/gui/domain/byethost12.com/details
 
 byethost11.com
@@ -4901,7 +4901,7 @@ wordraference.com
 kuai-go.com
 zhzy999.net
 
-https://blog.trendmicro.com/trendlabs-security-intelligence/plugx-rat-with-time-bomb-abuses-dropbox-for-command-and-control-settings/
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/plugx-rat-with-time-bomb-abuses-dropbox-for-command-and-control-settings/
 
 firefox-sync.com
 heritageblog.org
