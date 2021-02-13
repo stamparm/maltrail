@@ -245,6 +245,11 @@ irmihan.ir
 
 /tCustom/cpanel/
 
+# Reference: https://www.virustotal.com/gui/file/052bd14bbab4e77bd52086a405b30e8bfa210e6820549cb69217333e32184a28/detection
+# Reference: https://github.com/stamparm/maltrail/pull/14532/commits/02c159f496f7d40b1f1ecdb0af46a917a5d6b60d
+
+/ajax/panel.htm
+
 # Generic
 
 /admin_123/auth.php
