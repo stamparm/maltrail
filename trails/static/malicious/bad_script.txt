@@ -4186,6 +4186,10 @@ cdncontentdelivery.com
 
 /7rzkoe5rrcfaniubcme1sxh6.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1360380429371641860
+
+/tpgcteic2wyk8j12lg0rg3tq.php
+
 # Reference: https://twitter.com/unmaskparasites/status/1359639196911104001
 # Reference: https://www.virustotal.com/gui/domain/51la.adcef.com/detection
 
@@ -4257,3 +4261,4 @@ cdncontentdelivery.com
 /tgate.php
 /uadmin/adm.php
 /verification-card.php
+/1drvme/
