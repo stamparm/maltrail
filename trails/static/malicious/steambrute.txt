@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2021 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/af96c50fe1c3f0318b89768c4a026a4a6eeb13450dbccfa501d7c2c3c471834f/detection
+# Reference: https://otx.alienvault.com/indicator/file/fbaeff3f3802172d1bf6ac6203eeb66093c5995b7b586d9dc3938c5827077431/
+
+a0015919.xsph.ru
+
+# Reference: https://app.any.run/tasks/308113b1-d748-4174-8c3f-490166c36b1b/
+
+http://91.221.36.33
+
+# Generic
+
+/auth/SteamBrute.txt
+/auth/SteamBruteAuth2.php
