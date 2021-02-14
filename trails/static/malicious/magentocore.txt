@@ -4002,6 +4002,15 @@ weathermap.biz
 
 pixelm.tech
 
+# Reference: https://twitter.com/500mk500/status/1361061870061424653
+# Reference: https://www.virustotal.com/gui/ip-address/89.38.97.71/relations
+# Reference: https://www.virustotal.com/gui/ip-address/91.200.85.137/relations
+
+blondescript.info
+blondescript.net
+blondescript.org
+coollandpage.ru
+
 # Generic
 
 /cdn/ga.php?analytic=
