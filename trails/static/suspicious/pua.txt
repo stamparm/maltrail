@@ -2637,3 +2637,8 @@ mediabarservices.ru
 
 http://54.204.28.26
 browserguardian-a.akamaihd.net
+
+# Reference: https://www.virustotal.com/gui/file/da3207277994f0f06f3a073922e522bf6589596d84565b4ed1b05183fd68bc35/detection
+
+aristocrat.aines.ru
+longstanding.mohurs.ru
