@@ -926,6 +926,7 @@ sophosxl.net
 
 # Generic
 
+zope.com
 paul.is-a-geek.org
 btzoo.eu
 bootcss.com
