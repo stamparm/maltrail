@@ -2653,3 +2653,7 @@ a0015919.xsph.ru
 http://91.221.36.33
 /auth/SteamBrute.txt
 /auth/SteamBruteAuth2.php
+
+# Reference: https://www.virustotal.com/gui/file/d27f0cb98afe012fe2a8a7d0e18d5df8512805a280adea6739fccb703869fded/detection
+
+tracker.cnsystem.cc
