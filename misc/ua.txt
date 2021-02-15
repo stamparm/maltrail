@@ -1636,6 +1636,10 @@ GOOGLE-INDEXING
 
 \AWin\Z
 
+# Reference: https://twitter.com/xuy1202/status/1361341253535686656
+
+KrebsOnSecurity
+
 # Misc
 
 information_schema
