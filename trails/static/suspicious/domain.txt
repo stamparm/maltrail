@@ -5188,7 +5188,12 @@ punkdns.pw
 
 pdns.stream
 
-# Reference: https://www.virustotal.com/gui/domain/e2.luyouxia.net/relations
+# Reference: https://www.virustotal.com/gui/domain/luyouxia.net/relations
 # Reference: https://otx.alienvault.com/pulse/602d067f158130a55ce6be6b
 
+b1.luyouxia.net
+e1.luyouxia.net
 e2.luyouxia.net
+u1.luyouxia.net
+u1-entry.luyouxia.net
+w3.luyouxia.net
