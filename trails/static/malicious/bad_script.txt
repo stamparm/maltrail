@@ -4203,6 +4203,10 @@ cdncontentdelivery.com
 
 /w_client_id_4d5aac59-3e25-4e7d-9331-78bf74b323ec_redirect_u.php
 
+# Reference: https://twitter.com/unmaskparasites/status/1361814973983322114
+
+statclick.net
+
 # Generic
 
 /js/altmanluggage.js
