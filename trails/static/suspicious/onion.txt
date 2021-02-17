@@ -66,5 +66,9 @@ door2tor.org
 tor4pay.com
 pay4tor.com
 torsona.com
+onion.am
+onion.casa
 onion.pet
+onion.ws
 darknet.to
+tor2www.com
