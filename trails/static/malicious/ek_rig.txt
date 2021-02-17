@@ -262,7 +262,11 @@ anklexit.online
 
 # Reference: https://twitter.com/malware_traffic/status/1358878265923014656
 
-188.227.57.214
+http://188.227.57.214
+
+# Reference: https://twitter.com/MBThreatIntel/status/1361824286499950601
+
+http://188.225.75.54
 
 # Generic trails
 
