@@ -137,7 +137,7 @@ if __name__ == "__main__":
         print(msg)
         code = 1
     finally:
-        if "--version" not in sys.argv:
+        if not any(_ in sys.argv for _ in ("--version", "-h", "--help")):
             print("\n[*] ending @ %s" % time.strftime("%X /%Y-%m-%d/"))
 
         os._exit(code)
