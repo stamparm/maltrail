@@ -4207,6 +4207,12 @@ cdncontentdelivery.com
 
 statclick.net
 
+# Reference: https://twitter.com/MBThreatIntel/status/1361815657440894976
+
+namfortrust.xyz
+win-admin.xyz
+win-admin-center365.xyz
+
 # Generic
 
 /js/altmanluggage.js
