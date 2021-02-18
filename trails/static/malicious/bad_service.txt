@@ -401,3 +401,7 @@ telete.in
 
 malwat.ch/malware
 malwat.ch/msedge.html
+
+# Reference: https://www.virustotal.com/gui/domain/pastex.pro/detection
+
+pastex.pro
