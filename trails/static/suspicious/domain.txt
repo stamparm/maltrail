@@ -5187,3 +5187,7 @@ punkdns.pw
 # Reference: https://www.virustotal.com/gui/domain/pdns.stream/relations
 
 pdns.stream
+
+# Reference: https://app.any.run/tasks/4482068b-a357-49f0-851f-4e951651c938/
+
+imdomainrouter.com
