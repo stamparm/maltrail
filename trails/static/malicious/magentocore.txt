@@ -4011,6 +4011,18 @@ blondescript.net
 blondescript.org
 coollandpage.ru
 
+# Reference: https://www.virustotal.com/gui/ip-address/89.38.97.71/relations
+# Reference: https://urlscan.io/result/533860b5-b101-483a-8716-d8bd19c57679/
+
+clickandunder.com
+gdprmysites.co
+javaskript.pw
+
+# Reference: https://twitter.com/benkow_/status/1222457832810991616
+# Reference: https://www.virustotal.com/gui/domain/bamblbee.store/relations
+
+bamblbee.store
+
 # Generic
 
 /cdn/ga.php?analytic=
