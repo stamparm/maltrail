@@ -250,6 +250,10 @@ irmihan.ir
 
 /ajax/panel.htm
 
+# Reference: https://www.virustotal.com/gui/ip-address/89.38.97.71/relations
+
+crmbelgin.com
+
 # Generic
 
 /admin_123/auth.php
