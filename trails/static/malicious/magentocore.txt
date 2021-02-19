@@ -3999,7 +3999,11 @@ statisticsfree.com
 weathermap.biz
 
 # Reference: https://twitter.com/AffableKraut/status/1360343813454245893
+# Reference: https://sansec.io/research/google-apps-script
+# Reference: https://www.virustotal.com/gui/ip-address/91.194.11.205/relations
 
+analit.tech
+hotjar.host
 pixelm.tech
 
 # Reference: https://twitter.com/500mk500/status/1361061870061424653
