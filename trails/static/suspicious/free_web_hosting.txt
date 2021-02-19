@@ -453,3 +453,7 @@ great-site.net
 # Reference: https://www.virustotal.com/gui/domain/22web.org/relations
 
 22web.org
+
+# Reference: https://www.virustotal.com/gui/domain/onlinewebshop.net/relations
+
+onlinewebshop.net
