@@ -254,6 +254,14 @@ irmihan.ir
 
 crmbelgin.com
 
+# Reference: https://twitter.com/reecdeep/status/1362774727736111104
+
+http://172.105.70.225
+
+# Reference: https://twitter.com/D3LabIT/status/1362778009103699975
+
+mobileokey-in.com
+
 # Generic
 
 /admin_123/auth.php
