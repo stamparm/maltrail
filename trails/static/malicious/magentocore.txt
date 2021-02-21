@@ -4031,6 +4031,11 @@ bamblbee.store
 
 google-tag.com
 
+# Reference: https://urlscan.io/result/256f6bae-84f0-488e-9e15-47ae15760cc6/
+# Reference: https://www.virustotal.com/gui/ip-address/45.145.64.143/relations
+
+fbanalytic.org
+
 # Generic
 
 /cdn/ga.php?analytic=
