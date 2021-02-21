@@ -332,3 +332,11 @@ chatj.goldenbirdcoin.com
 
 attresswhethe.fun
 professonsd.top
+
+# Reference: https://www.virustotal.com/gui/domain/adsdklead.com/relations
+
+adsdklead.com
+
+# Reference: https://www.virustotal.com/gui/file/ded96f94ab45bdb1e1a7380372bde2d76f81a91113aebe50ee45ec955cca3d16/detection
+
+ftpstudio8apps.hopto.org
