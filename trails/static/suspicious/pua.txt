@@ -2657,3 +2657,7 @@ http://91.221.36.33
 # Reference: https://www.virustotal.com/gui/file/d27f0cb98afe012fe2a8a7d0e18d5df8512805a280adea6739fccb703869fded/detection
 
 tracker.cnsystem.cc
+
+# Reference: https://www.virustotal.com/gui/domain/benjaminstrahs.com/relations
+
+benjaminstrahs.com
