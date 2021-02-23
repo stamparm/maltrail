@@ -262,6 +262,11 @@ http://172.105.70.225
 
 mobileokey-in.com
 
+# Reference: https://twitter.com/wwp96/status/1364290090839797763
+# Reference: https://app.any.run/tasks/d7d282b9-d6c9-4633-9172-569f44582a84/
+
+/Pnl/tasks.php
+
 # Generic
 
 /admin_123/auth.php
