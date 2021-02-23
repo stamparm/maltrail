@@ -1,6 +1,8 @@
 # Copyright (c) 2014-2021 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
+# Aliases: browlock
+
 # Reference: https://blog.malwarebytes.com/cybercrime/2021/02/malvertising-campaign-on-top-adult-brands-exposes-users-to-tech-support-scams/
 # Reference: https://github.com/MBThreatIntel/TSS/blob/master/adult_malvertising.txt
 
@@ -298,6 +300,10 @@ terminalrope.site
 toasterbroom.site
 triostagunite.site
 tubbingduo.site
+
+# Reference: https://twitter.com/MBThreatIntel/status/1364020295946801153
+
+4080err044.club
 
 # Generic
 
