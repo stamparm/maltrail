@@ -1267,6 +1267,7 @@ mandiant.com
 pgz505.servehttp.com
 prszg.ddns.net
 dynupdate.noip.com
+dynupdate.no-ip.com
 davor.dyndns-server.com
 hardjura.selfip.info
 japa88.ddns.net
