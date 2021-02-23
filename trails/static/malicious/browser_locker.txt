@@ -312,6 +312,11 @@ bsetmefit.xyz
 dsetmefit.xyz
 setmefit.xyz
 
+# Reference: https://twitter.com/MBThreatIntel/status/1364032208801988609
+
+http://206.189.71.102
+malegenix.online
+
 # Generic
 
 /0CHfdfdfdfddfd99900MM/
