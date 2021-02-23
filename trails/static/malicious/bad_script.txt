@@ -4216,6 +4216,10 @@ win-admin-center365.xyz
 /PdDOnR.hta
 /testper.hta
 
+# Reference: https://twitter.com/JCyberSec_/status/1364196643453734913
+
+/woyptizlcq76mjcyjbb955pk.php
+
 # Generic
 
 /js/altmanluggage.js
