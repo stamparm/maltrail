@@ -317,6 +317,10 @@ setmefit.xyz
 http://206.189.71.102
 malegenix.online
 
+# Reference: https://twitter.com/MBThreatIntel/status/1364281663010738176
+
+aolsupports.com
+
 # Generic
 
 /0CHfdfdfdfddfd99900MM/
