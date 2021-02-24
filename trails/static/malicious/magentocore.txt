@@ -4042,6 +4042,13 @@ googlecdn-api.com
 jquery-in.com
 mastercvv.in
 
+# Reference: https://www.virustotal.com/gui/ip-address/34.65.43.209/relations
+
+evolutagain.ru
+huntes.ru
+manualseos.ru
+seocmson.ru
+
 # Generic
 
 /cdn/ga.php?analytic=
