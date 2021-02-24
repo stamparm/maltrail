@@ -4036,6 +4036,10 @@ google-tag.com
 
 fbanalytic.org
 
+# Reference: https://twitter.com/unmaskparasites/status/1364675090256785411
+
+elume.org
+
 # Reference: https://twitter.com/unmaskparasites/status/1364652993971245060
 
 googlecdn-api.com
