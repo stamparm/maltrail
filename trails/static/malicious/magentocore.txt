@@ -4036,6 +4036,12 @@ google-tag.com
 
 fbanalytic.org
 
+# Reference: https://twitter.com/unmaskparasites/status/1364652993971245060
+
+googlecdn-api.com
+jquery-in.com
+mastercvv.in
+
 # Generic
 
 /cdn/ga.php?analytic=
