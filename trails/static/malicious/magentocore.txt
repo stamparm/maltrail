@@ -4021,6 +4021,7 @@ coollandpage.ru
 clickandunder.com
 gdprmysites.co
 javaskript.pw
+json-jquery.icu
 
 # Reference: https://twitter.com/benkow_/status/1222457832810991616
 # Reference: https://www.virustotal.com/gui/domain/bamblbee.store/relations
