@@ -2661,3 +2661,8 @@ tracker.cnsystem.cc
 # Reference: https://www.virustotal.com/gui/domain/benjaminstrahs.com/relations
 
 benjaminstrahs.com
+
+# Reference: https://www.virustotal.com/gui/domain/gengxin.th520.com/relations
+# Reference: https://www.virustotal.com/gui/file/e21347486736a38ba48f625969d88f44b8f128c358a7285e7d8dccb3a61a3b84/detection
+
+gengxin.th520.com
