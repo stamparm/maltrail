@@ -2666,3 +2666,12 @@ benjaminstrahs.com
 # Reference: https://www.virustotal.com/gui/file/e21347486736a38ba48f625969d88f44b8f128c358a7285e7d8dccb3a61a3b84/detection
 
 gengxin.th520.com
+
+# Reference: https://bad-bytes.blogspot.com/2011/08/little-analysis-on-that-zugo-toolbar.html
+
+tbupdate.zugo.com
+
+# Reference: https://www.virustotal.com/gui/file/467be337fdab67f355fae05c24b370205498b324854464a39b88d0afd794c2dd/behavior
+
+data.oppoos.com
+data.icecentury.com
