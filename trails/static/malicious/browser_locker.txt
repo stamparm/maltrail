@@ -387,3 +387,7 @@ aolsupports.com
 /WinhelpxcodeCHRMXxxwinHelpSecurity0nlineCH007/
 /WinhelpxcodeMicroErr0rDateNowCH005/
 /xCh1001010x0190/
+
+# Reference: https://twitter.com/MBThreatIntel/status/1364683446224785409
+
+newerrorforwindows405.club
