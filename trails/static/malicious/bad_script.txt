@@ -4283,6 +4283,7 @@ win-admin-center365.xyz
 /gate16.php
 /gate2.php
 /gate.get
+/gating.php
 /gatw.php
 /gate.phpgate.php
 /online-dating-verification-card.php
