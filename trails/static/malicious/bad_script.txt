@@ -4220,6 +4220,10 @@ win-admin-center365.xyz
 
 /woyptizlcq76mjcyjbb955pk.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1364804580085743616
+
+/si1bidg6p7xw30yfhl5lm5zg.php
+
 # Generic
 
 /js/altmanluggage.js
