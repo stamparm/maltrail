@@ -5205,3 +5205,7 @@ imdomainrouter.com
 # Reference: https://www.virustotal.com/gui/domain/msns.cn/relations
 
 msns.cn
+
+# Reference: https://www.virustotal.com/gui/domain/yolox.net/relations
+
+yolox.net
