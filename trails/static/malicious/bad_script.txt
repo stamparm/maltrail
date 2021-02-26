@@ -4224,6 +4224,10 @@ win-admin-center365.xyz
 
 /si1bidg6p7xw30yfhl5lm5zg.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1365166968635015172
+
+/0xrvo9o1pq295qxp887b5ch0.php
+
 # Reference: https://twitter.com/wwp96/status/1364811015112826883
 
 /13233-878.js
