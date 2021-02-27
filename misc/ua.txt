@@ -1618,6 +1618,11 @@ Firefox/40.1
 
 ASUS2JS
 
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1365438427735457799
+# Reference: https://www.virustotal.com/gui/file/9f84130cc5240f4df5afc674fde40012dd9ff141a28dfd171fbd0db9747dbc39/detection
+
+\AESES\Z
+
 # Reference: https://twitter.com/VK_Intel/status/1357795388057677827
 
 MASAJS
