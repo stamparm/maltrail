@@ -349,3 +349,7 @@ android.revmob.com
 
 zy.bql66.xyz
 /User/666666/0/jc/
+
+# Reference: https://www.virustotal.com/gui/file/da174f79c250c28ff9d6ce02511e6b7baa3ee0e13bd905c8ed8c37553c66bcd2/detection
+
+8.210.88.13:8080
