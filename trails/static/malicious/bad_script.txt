@@ -4237,6 +4237,10 @@ win-admin-center365.xyz
 /13233-878.js
 /545665656.js
 
+# Reference: https://twitter.com/malwrhunterteam/status/1365613904487976963
+
+/fcm/mc/tapp.php
+
 # Generic
 
 /js/altmanluggage.js
