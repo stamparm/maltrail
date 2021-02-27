@@ -356,4 +356,7 @@ zy.bql66.xyz
 
 # Reference: https://www.virustotal.com/gui/file/88a8a8e837d67b334e6631dec233395489e82c00ef216145583841abf37637fd/detection
 
+prodlift.info
+prodlift.net
+prodliftnet.info
 techpoint.mobi
