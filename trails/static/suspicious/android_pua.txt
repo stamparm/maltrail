@@ -353,3 +353,7 @@ zy.bql66.xyz
 # Reference: https://www.virustotal.com/gui/file/da174f79c250c28ff9d6ce02511e6b7baa3ee0e13bd905c8ed8c37553c66bcd2/detection
 
 8.210.88.13:8080
+
+# Reference: https://www.virustotal.com/gui/file/88a8a8e837d67b334e6631dec233395489e82c00ef216145583841abf37637fd/detection
+
+techpoint.mobi
