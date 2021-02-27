@@ -656,3 +656,7 @@ monerorx.com
 
 49.12.80.38:45560
 49.12.80.40:45560
+
+# Reference: https://www.virustotal.com/gui/file/167370f764174dce40f79a111ad8441df37c0af80eba4ba2e7a3b4d72e6e42e7/detection
+
+51.254.84.37:4444
