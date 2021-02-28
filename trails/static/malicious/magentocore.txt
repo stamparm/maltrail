@@ -4044,10 +4044,13 @@ fbanalytic.org
 elume.org
 
 # Reference: https://twitter.com/unmaskparasites/status/1364652993971245060
+# Reference: https://www.virustotal.com/gui/ip-address/45.142.213.172/relations
 
 googlecdn-api.com
 jquery-in.com
+jquery-ini.com
 mastercvv.in
+sert-googlefonts.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/34.65.43.209/relations
 
