@@ -4232,6 +4232,10 @@ win-admin-center365.xyz
 
 /8532ykw0jtkewkdoitoyfgnr.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1365891744173326336
+
+/qgx8xrabmj1ijzk6qy5sen9n.php
+
 # Reference: https://twitter.com/wwp96/status/1364811015112826883
 
 /13233-878.js
