@@ -4059,6 +4059,10 @@ huntes.ru
 manualseos.ru
 seocmson.ru
 
+# Reference: https://gist.github.com/krautface/b97dfcb3e07d74ebc2eab7f1051923d2
+
+bulder.online
+
 # Generic
 
 /cdn/ga.php?analytic=
