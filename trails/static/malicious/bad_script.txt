@@ -4228,10 +4228,22 @@ win-admin-center365.xyz
 
 /0xrvo9o1pq295qxp887b5ch0.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1365317962580844546
+
+/8532ykw0jtkewkdoitoyfgnr.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1365891744173326336
+
+/qgx8xrabmj1ijzk6qy5sen9n.php
+
 # Reference: https://twitter.com/wwp96/status/1364811015112826883
 
 /13233-878.js
 /545665656.js
+
+# Reference: https://twitter.com/malwrhunterteam/status/1365613904487976963
+
+/fcm/mc/tapp.php
 
 # Generic
 
