@@ -1645,6 +1645,10 @@ GOOGLE-INDEXING
 
 KrebsOnSecurity
 
+# Reference: https://chrisdietri.ch/post/virut-resurrects/
+
+\AAdInstall\Z
+
 # Misc
 
 information_schema
