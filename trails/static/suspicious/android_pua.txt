@@ -344,3 +344,19 @@ ftpstudio8apps.hopto.org
 # Reference: https://www.virustotal.com/gui/domain/android.revmob.com/relations
 
 android.revmob.com
+
+# Reference: https://www.virustotal.com/gui/file/3669988a6eb8e3985b9aa59e9fedaa22b3c9416977d8f34ee86bf774661de714/detection
+
+zy.bql66.xyz
+/User/666666/0/jc/
+
+# Reference: https://www.virustotal.com/gui/file/da174f79c250c28ff9d6ce02511e6b7baa3ee0e13bd905c8ed8c37553c66bcd2/detection
+
+8.210.88.13:8080
+
+# Reference: https://www.virustotal.com/gui/file/88a8a8e837d67b334e6631dec233395489e82c00ef216145583841abf37637fd/detection
+
+prodlift.info
+prodlift.net
+prodliftnet.info
+techpoint.mobi
