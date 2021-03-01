@@ -4245,6 +4245,11 @@ win-admin-center365.xyz
 
 /fcm/mc/tapp.php
 
+# Reference: https://twitter.com/wato_dn/status/1366259334955499524
+# Reference: https://tria.ge/210301-7z5cpr6z82/behavioral1
+
+/643307c3d81193.php
+
 # Generic
 
 /js/altmanluggage.js
