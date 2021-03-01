@@ -4254,6 +4254,10 @@ win-admin-center365.xyz
 
 /000000.php
 
+# Reference: https://twitter.com/wwp96/status/1366485090340077572
+
+/HGFGHGFH.php
+
 # Generic
 
 /js/altmanluggage.js
