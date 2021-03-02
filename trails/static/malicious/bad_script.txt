@@ -4250,6 +4250,14 @@ win-admin-center365.xyz
 
 /643307c3d81193.php
 
+# Reference: https://www.virustotal.com/gui/file/528c696de7b59c6dd12beda7b650a25c5b0d3b55884bcf0b37380b639b5065d6/detection
+
+/000000.php
+
+# Reference: https://twitter.com/wwp96/status/1366485090340077572
+
+/HGFGHGFH.php
+
 # Generic
 
 /js/altmanluggage.js
