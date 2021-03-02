@@ -4055,6 +4055,10 @@ cdncontentdelivery.com
 
 /orglsgr4a00bcchevqhnaryg.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1366767513355321350
+
+/zfbe56fluk0eim07iptk4pge.php
+
 # Reference: https://twitter.com/r3dbU7z/status/1351651516806033415
 
 /1.ps1
