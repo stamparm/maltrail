@@ -3595,6 +3595,10 @@ tunacan-812.tk
 
 /ebtrj24mbq57ev5at3iupvjv.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1367054402947866626
+
+/143ipc5dm5nnvyu0737okk35ra.php
+
 # Reference: https://twitter.com/neonprimetime/status/1335995482632581121
 
 /merrybe/post.php
@@ -4055,6 +4059,10 @@ cdncontentdelivery.com
 
 /orglsgr4a00bcchevqhnaryg.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1366767513355321350
+
+/zfbe56fluk0eim07iptk4pge.php
+
 # Reference: https://twitter.com/r3dbU7z/status/1351651516806033415
 
 /1.ps1
@@ -4257,6 +4265,17 @@ win-admin-center365.xyz
 # Reference: https://twitter.com/wwp96/status/1366485090340077572
 
 /HGFGHGFH.php
+
+# Reference: https://twitter.com/r3dbU7z/status/1366886386985545728
+
+/flood.bat
+/flood.hta
+/flood.js
+/flood.php
+/flood.ps1
+/flood.py
+/flood.sh
+/pyddos.py
 
 # Generic
 
