@@ -4262,6 +4262,17 @@ win-admin-center365.xyz
 
 /HGFGHGFH.php
 
+# Reference: https://twitter.com/r3dbU7z/status/1366886386985545728
+
+/flood.bat
+/flood.hta
+/flood.js
+/flood.php
+/flood.ps1
+/flood.py
+/flood.sh
+/pyddos.py
+
 # Generic
 
 /js/altmanluggage.js
