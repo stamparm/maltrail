@@ -360,3 +360,18 @@ prodlift.info
 prodlift.net
 prodliftnet.info
 techpoint.mobi
+
+# Reference: https://www.virustotal.com/gui/file/aa301b6e04ab2d5d134dfd92b22fe865fbb47423c2e5ab49b7b63cd61273ce86/detection
+
+danez.free.fr
+danez02600.ddnsking.com
+
+# Reference: https://www.virustotal.com/gui/file/649b0e3c4286391144c1d4247fdf38d7b7f5be0d6edfc046cb72d39164561c8a/detection
+
+enhanced.myftp.biz
+minhawebtv.online
+
+# Reference: https://www.virustotal.com/gui/file/8b3a18dabdf432db0147ee49d89f3b316903f4a87f2e6080e1da551912cbae0a/detection
+
+blackplay.ddns.net
+blackplay.space
