@@ -391,3 +391,7 @@ aolsupports.com
 # Reference: https://twitter.com/MBThreatIntel/status/1364683446224785409
 
 newerrorforwindows405.club
+
+# Reference: https://twitter.com/MBThreatIntel/status/1366800862069202946
+
+stadnewstoday.xyz
