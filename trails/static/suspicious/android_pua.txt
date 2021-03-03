@@ -360,3 +360,8 @@ prodlift.info
 prodlift.net
 prodliftnet.info
 techpoint.mobi
+
+# Reference: https://www.virustotal.com/gui/file/aa301b6e04ab2d5d134dfd92b22fe865fbb47423c2e5ab49b7b63cd61273ce86/detection
+
+danez.free.fr
+danez02600.ddnsking.com
