@@ -914,3 +914,9 @@
 # HR-MAXKO-20190710
 
 45.95.168.0/22,maxko
+
+# PONYNET
+# Reference: https://www.virustotal.com/gui/ip-address/209.141.34.111/relations
+# Reference: https://radar.qrator.net/as53667
+
+209.141.32.0/19,ponynet
