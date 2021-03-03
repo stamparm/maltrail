@@ -3595,6 +3595,10 @@ tunacan-812.tk
 
 /ebtrj24mbq57ev5at3iupvjv.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1367054402947866626
+
+/143ipc5dm5nnvyu0737okk35ra.php
+
 # Reference: https://twitter.com/neonprimetime/status/1335995482632581121
 
 /merrybe/post.php
