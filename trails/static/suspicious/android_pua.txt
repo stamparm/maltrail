@@ -370,3 +370,8 @@ danez02600.ddnsking.com
 
 enhanced.myftp.biz
 minhawebtv.online
+
+# Reference: https://www.virustotal.com/gui/file/8b3a18dabdf432db0147ee49d89f3b316903f4a87f2e6080e1da551912cbae0a/detection
+
+blackplay.ddns.net
+blackplay.space
