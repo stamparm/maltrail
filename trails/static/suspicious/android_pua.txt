@@ -365,3 +365,8 @@ techpoint.mobi
 
 danez.free.fr
 danez02600.ddnsking.com
+
+# Reference: https://www.virustotal.com/gui/file/649b0e3c4286391144c1d4247fdf38d7b7f5be0d6edfc046cb72d39164561c8a/detection
+
+enhanced.myftp.biz
+minhawebtv.online
