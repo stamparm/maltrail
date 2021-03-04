@@ -4277,6 +4277,16 @@ win-admin-center365.xyz
 /flood.sh
 /pyddos.py
 
+# Reference: https://twitter.com/InQuest/status/1367241459225747464
+
+/obfuscated.bat
+/obfuscated.hta
+/obfuscated.js
+/obfuscated.php
+/obfuscated.ps1
+/obfuscated.py
+/obfuscated.sh
+
 # Generic
 
 /js/altmanluggage.js
