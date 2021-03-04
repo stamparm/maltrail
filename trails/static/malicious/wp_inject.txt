@@ -6,3 +6,7 @@
 # Reference: https://twitter.com/unmaskparasites/status/1355301566933213185
 
 subl.net
+
+# Reference: https://twitter.com/unmaskparasites/status/1367183133938831361
+
+checklist.directory
