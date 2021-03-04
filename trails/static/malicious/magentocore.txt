@@ -4064,7 +4064,11 @@ seocmson.ru
 bulder.online
 
 # Reference: https://twitter.com/sansecio/status/1367404202461450244
+# Reference: https://urlscan.io/result/293c311f-900b-4662-9b5d-c1d0b11cead7/
+# Reference: https://www.virustotal.com/gui/ip-address/195.123.217.18/relations
 
+facedook.host
+predator.host
 pathc.space
 
 # Generic
