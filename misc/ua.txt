@@ -1649,6 +1649,11 @@ KrebsOnSecurity
 
 \AAdInstall\Z
 
+# Reference: https://twitter.com/xuy1202/status/1367422550322475008
+
+curl_cve_2017_11610
+wget_cve_2017_11610
+
 # Misc
 
 information_schema
