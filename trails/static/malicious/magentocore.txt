@@ -4063,6 +4063,10 @@ seocmson.ru
 
 bulder.online
 
+# Reference: https://twitter.com/sansecio/status/1367404202461450244
+
+pathc.space
+
 # Generic
 
 /cdn/ga.php?analytic=
