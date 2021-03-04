@@ -1057,7 +1057,12 @@ function tagInputKeyUp(event, forcedelete) {
 
         data[DATATABLES_COLUMNS.TAGS] = tagData;
 
-        row.invalidate();
+        try {                           // dirty patch for #14900 (reproducible on Chromium - blur being thrown after the Enter has been processed)
+            row.invalidate();
+        }
+        catch(err) {
+        }
+
         api.draw(false);
     }
 }
