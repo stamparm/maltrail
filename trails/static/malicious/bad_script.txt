@@ -4287,6 +4287,10 @@ win-admin-center365.xyz
 /obfuscated.py
 /obfuscated.sh
 
+# Reference: https://twitter.com/JCyberSec_/status/1367752994700296195
+
+/file_soffice365/index.php
+
 # Generic
 
 /js/altmanluggage.js
