@@ -4291,6 +4291,10 @@ win-admin-center365.xyz
 
 /file_soffice365/index.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1368141566251053056
+
+/6iaxro1pbufjlk6eshn7v7iira.php
+
 # Generic
 
 /js/altmanluggage.js
