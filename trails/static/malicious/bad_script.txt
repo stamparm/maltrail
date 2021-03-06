@@ -4299,6 +4299,10 @@ win-admin-center365.xyz
 
 /flex.php?hwid=
 
+# Reference: https://www.virustotal.com/gui/file/13345f418c210dee561872a5e21dc53b9f5a752110aca661647ac444ac4fa2cf/detection
+
+/bot.php?connect
+
 # Generic
 
 /js/altmanluggage.js
