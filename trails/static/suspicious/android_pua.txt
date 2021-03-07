@@ -375,3 +375,8 @@ minhawebtv.online
 
 blackplay.ddns.net
 blackplay.space
+
+# Reference: https://www.virustotal.com/gui/file/368aef4f2fc2a3131f014236a959047fe5abc1967918e57e6c786828c1184513/detection
+
+leadboltapps.net
+leadboltmobile.net
