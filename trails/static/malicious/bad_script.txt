@@ -4287,6 +4287,26 @@ win-admin-center365.xyz
 /obfuscated.py
 /obfuscated.sh
 
+# Reference: https://twitter.com/JCyberSec_/status/1367752994700296195
+
+/file_soffice365/index.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1368141566251053056
+
+/6iaxro1pbufjlk6eshn7v7iira.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1368503956532588545
+
+/q4nts35hclwu08ydsp63kei7ra.php
+
+# Reference: https://www.virustotal.com/gui/file/68529af30403ffc66192445c3d2cace2f72df0ccbaefa9b5a25935ce8b42d4ae/detection
+
+/flex.php?hwid=
+
+# Reference: https://www.virustotal.com/gui/file/13345f418c210dee561872a5e21dc53b9f5a752110aca661647ac444ac4fa2cf/detection
+
+/bot.php?connect
+
 # Generic
 
 /js/altmanluggage.js
