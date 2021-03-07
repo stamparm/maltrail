@@ -405,3 +405,7 @@ malwat.ch/msedge.html
 # Reference: https://www.virustotal.com/gui/domain/pastex.pro/detection
 
 pastex.pro
+
+# Reference: https://twitter.com/3xp0rtblog/status/1367894468045717509
+
+lolz.guru
