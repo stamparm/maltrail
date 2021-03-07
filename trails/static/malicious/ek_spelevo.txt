@@ -1148,3 +1148,7 @@ jewel.biqejiekj.email
 # Reference: https://twitter.com/malware_traffic/status/1357838284181942273
 
 werewolf.bokipeobm.email
+
+# Reference: https://twitter.com/nao_sec/status/1368566980345688068
+
+boondocks.dadcomicfrog.email
