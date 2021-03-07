@@ -4077,7 +4077,6 @@ googletagmanaaer.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/5.34.179.116/relations
 
-connect-cdn-png.com
 google-jquery.eu
 
 # Generic
