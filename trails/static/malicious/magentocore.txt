@@ -3301,6 +3301,7 @@ jquerylib-min.net
 onlinecdn-js.com
 
 # Reference: https://www.riskiq.com/resources/research/magecart-ant-and-cockroach-skimmer/
+# Reference: https://urlscan.io/search/#google-statik.pw
 # Reference: https://www.virustotal.com/gui/ip-address/217.12.204.185/relations
 
 2binary-education.pw
@@ -3311,6 +3312,7 @@ bgznnfzn.pw
 checkip.biz
 consoler.in
 gnwnprnf.pw
+google-statik.pw
 niywqcnp.pw
 pornodrive.pw
 pornostyle.pw
@@ -4081,10 +4083,6 @@ googletagmanaaer.com
 # Reference: https://www.virustotal.com/gui/ip-address/5.34.179.116/relations
 
 google-jquery.eu
-
-# Reference: https://urlscan.io/search/#google-statik.pw
-
-google-statik.pw
 
 # Generic
 
