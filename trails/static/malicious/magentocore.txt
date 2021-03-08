@@ -3301,6 +3301,8 @@ jquerylib-min.net
 onlinecdn-js.com
 
 # Reference: https://www.riskiq.com/resources/research/magecart-ant-and-cockroach-skimmer/
+# Reference: https://urlscan.io/search/#google-statik.pw
+# Reference: https://www.virustotal.com/gui/ip-address/217.12.204.185/relations
 
 2binary-education.pw
 ads2.adverline.com/retargetproduit/partntertag/103754_tag.js
@@ -3310,7 +3312,9 @@ bgznnfzn.pw
 checkip.biz
 consoler.in
 gnwnprnf.pw
+google-statik.pw
 niywqcnp.pw
+pornodrive.pw
 pornostyle.pw
 portal-a.pw
 portal-b.pw
@@ -3318,6 +3322,7 @@ portal-c.pw
 portal-d.pw
 portal-e.pw
 portal-f.pw
+recaptcha-in.pw
 search-components.pw
 sexrura.pw
 tattoopad.pw
@@ -4071,6 +4076,14 @@ facedook.host
 predator.host
 pathc.space
 
+# Reference: https://urlscan.io/result/6dea6218-8a34-4f48-931e-93fa1677faf6/
+
+googletagmanaaer.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.34.179.116/relations
+
+google-jquery.eu
+
 # Generic
 
 /cdn/ga.php?analytic=
@@ -4102,6 +4115,7 @@ pathc.space
 /js/scriptaculous/print.js
 /js/dsc-statistic.js
 /js/varien/js.js.pagespeed.jm.aFn_GvyNS2.js
+/mainer/myscr109881.js
 /my/vmart.js
 /103754_tag.js
 /a1def6c62256906029767cb784323ab3.js
