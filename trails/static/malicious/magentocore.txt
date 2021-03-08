@@ -4084,6 +4084,14 @@ googletagmanaaer.com
 
 google-jquery.eu
 
+# Reference: https://twitter.com/TeamDreier/status/1368955262900592640
+
+googiemanager.com
+googlemanagerads.com
+googlemgr.net
+gooqleads.net
+gooqlescript.com
+
 # Generic
 
 /cdn/ga.php?analytic=
