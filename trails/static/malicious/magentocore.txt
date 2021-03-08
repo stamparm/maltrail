@@ -4079,6 +4079,10 @@ googletagmanaaer.com
 
 google-jquery.eu
 
+# Reference: https://urlscan.io/search/#google-statik.pw
+
+google-statik.pw
+
 # Generic
 
 /cdn/ga.php?analytic=
@@ -4110,6 +4114,7 @@ google-jquery.eu
 /js/scriptaculous/print.js
 /js/dsc-statistic.js
 /js/varien/js.js.pagespeed.jm.aFn_GvyNS2.js
+/mainer/myscr109881.js
 /my/vmart.js
 /103754_tag.js
 /a1def6c62256906029767cb784323ab3.js
