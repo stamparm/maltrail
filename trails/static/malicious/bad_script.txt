@@ -4311,6 +4311,12 @@ win-admin-center365.xyz
 
 /bot.php?connect
 
+# Reference: https://twitter.com/r3dbU7z/status/1368893677658124290
+
+/fsag4.ps1
+/Get-Content.ps1
+/ready.ps1
+
 # Generic
 
 /js/altmanluggage.js
