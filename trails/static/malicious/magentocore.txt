@@ -3301,6 +3301,7 @@ jquerylib-min.net
 onlinecdn-js.com
 
 # Reference: https://www.riskiq.com/resources/research/magecart-ant-and-cockroach-skimmer/
+# Reference: https://www.virustotal.com/gui/ip-address/217.12.204.185/relations
 
 2binary-education.pw
 ads2.adverline.com/retargetproduit/partntertag/103754_tag.js
@@ -3311,6 +3312,7 @@ checkip.biz
 consoler.in
 gnwnprnf.pw
 niywqcnp.pw
+pornodrive.pw
 pornostyle.pw
 portal-a.pw
 portal-b.pw
@@ -3318,6 +3320,7 @@ portal-c.pw
 portal-d.pw
 portal-e.pw
 portal-f.pw
+recaptcha-in.pw
 search-components.pw
 sexrura.pw
 tattoopad.pw
