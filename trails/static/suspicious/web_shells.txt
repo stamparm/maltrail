@@ -329,3 +329,15 @@ podathon.org/shell/
 # Reference: https://www.virustotal.com/gui/file/6dfa980937f5776358b5485e8a4e92d333779020974312851826420d2feffa45/detection
 
 /HkPwijGf.php
+
+# Reference: https://www.microsoft.com/security/blog/2021/03/02/hafnium-targeting-exchange-servers/
+
+/errorEE.aspx
+/errorEEE.aspx
+/errorEW.aspx
+/errorFF.aspx
+/aspnet_www.aspx
+/aspnet_client.aspx
+/xx.aspx
+/shell.aspx
+/aspnet_iisstart.aspx
