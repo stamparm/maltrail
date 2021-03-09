@@ -400,3 +400,8 @@ newerrorforwindows405.club
 # Reference: https://twitter.com/MBThreatIntel/status/1366800862069202946
 
 stadnewstoday.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1369335081383325697
+
+alertvirus.tech
+tiodmw.com
