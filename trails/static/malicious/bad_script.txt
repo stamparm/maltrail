@@ -4303,6 +4303,10 @@ win-admin-center365.xyz
 
 /wd0ykjlrqq22j17unubmfg4wra.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1369304228347469834
+
+/wdvgzd6z53atzv80c044h5xr.php
+
 # Reference: https://www.virustotal.com/gui/file/68529af30403ffc66192445c3d2cace2f72df0ccbaefa9b5a25935ce8b42d4ae/detection
 
 /flex.php?hwid=
