@@ -1156,3 +1156,8 @@ boondocks.dadcomicfrog.email
 # Reference: https://twitter.com/nao_sec/status/1364726542954209288
 
 twi.rofesaumz.email
+
+# Reference: https://twitter.com/malware_traffic/status/1369052011728171009
+# Reference: https://malware-traffic-analysis.net/2021/03/08/index.html
+
+batam.brofunnefrog.email
