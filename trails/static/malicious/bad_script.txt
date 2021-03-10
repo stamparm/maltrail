@@ -4321,6 +4321,16 @@ win-admin-center365.xyz
 /Get-Content.ps1
 /ready.ps1
 
+# Reference: https://twitter.com/jstrosch/status/1369460970720989189
+
+/dxlgwwfmze.html
+/mnfvchznvz.html
+/bxvsogzyre.php
+/hzjuwplrcp.php
+/mfvsgjyraa.php
+/srzrbowcso.php
+/yallews.php
+
 # Generic
 
 /js/altmanluggage.js
