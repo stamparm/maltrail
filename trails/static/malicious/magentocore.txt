@@ -4103,6 +4103,11 @@ google-worlds.com
 paypal-merchant.com
 paypal-merchants.com
 
+# Reference: https://twitter.com/jfslowik/status/1369745187480559617
+
+analytics-cdn.net
+analytics-ssl.net
+
 # Generic
 
 /cdn/ga.php?analytic=
