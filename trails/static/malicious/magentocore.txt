@@ -4100,6 +4100,8 @@ gooqlescript.com
 google-codes.com
 google-thumbs.com
 google-worlds.com
+paypal-merchant.com
+paypal-merchants.com
 
 # Generic
 
