@@ -664,3 +664,8 @@ monerorx.com
 # Reference: https://www.virustotal.com/gui/file/85b8e1e0746f3e62bf8d8d6473526b55b7c198cde13dd471469afd531f9e69e6/detection
 
 49.12.80.40:45700
+
+# Reference: https://twitter.com/CUJOAI/status/1369653043281723400
+# Reference: https://cujo.com/iot-malware-journals-prometei-linux/
+
+5.189.171.187:3333
