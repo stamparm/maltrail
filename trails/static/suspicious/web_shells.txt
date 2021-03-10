@@ -341,3 +341,7 @@ podathon.org/shell/
 /xx.aspx
 /shell.aspx
 /aspnet_iisstart.aspx
+
+# Reference: https://www.praetorian.com/blog/reproducing-proxylogon-exploit/
+
+/ysfwduaohcma.aspx
