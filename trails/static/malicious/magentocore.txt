@@ -4084,6 +4084,25 @@ googletagmanaaer.com
 
 google-jquery.eu
 
+# Reference: https://twitter.com/TeamDreier/status/1368955262900592640
+# Reference: https://www.virustotal.com/gui/ip-address/185.238.171.228/relations
+# Reference: https://www.virustotal.com/gui/ip-address/35.228.62.27/relations
+
+cloubfiare.net
+googiemanager.com
+googlemanagerads.com
+googlemgr.net
+gooqleads.net
+gooqlescript.com
+
+# Reference: https://twitter.com/TeamDreier/status/1369617099023388672
+
+google-codes.com
+google-thumbs.com
+google-worlds.com
+paypal-merchant.com
+paypal-merchants.com
+
 # Generic
 
 /cdn/ga.php?analytic=
