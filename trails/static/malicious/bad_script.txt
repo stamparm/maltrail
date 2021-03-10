@@ -4307,6 +4307,11 @@ win-admin-center365.xyz
 
 /wdvgzd6z53atzv80c044h5xr.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1369666615541956609
+
+/2guxysk0ia47bxh2jzqx931k.php
+/Weusour123!/
+
 # Reference: https://www.virustotal.com/gui/file/68529af30403ffc66192445c3d2cace2f72df0ccbaefa9b5a25935ce8b42d4ae/detection
 
 /flex.php?hwid=
