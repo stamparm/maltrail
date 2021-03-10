@@ -4095,6 +4095,12 @@ googlemgr.net
 gooqleads.net
 gooqlescript.com
 
+# Reference: https://twitter.com/TeamDreier/status/1369617099023388672
+
+google-codes.com
+google-thumbs.com
+google-worlds.com
+
 # Generic
 
 /cdn/ga.php?analytic=
