@@ -2675,3 +2675,7 @@ tbupdate.zugo.com
 
 data.oppoos.com
 data.icecentury.com
+
+# Reference: https://www.virustotal.com/gui/file/96701ee98517a4131272c84c7fc305ba4e3805e44aa763473daa65899e76c17b/detection
+
+toolsfreeprivacy.online
