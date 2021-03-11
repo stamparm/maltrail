@@ -4336,6 +4336,10 @@ win-admin-center365.xyz
 /srzrbowcso.php
 /yallews.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1369953508238168065
+
+/ffekwwfqyb06k804u1phgkcjra.php
+
 # Generic
 
 /js/altmanluggage.js
