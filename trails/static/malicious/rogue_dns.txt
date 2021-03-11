@@ -507,3 +507,12 @@ resolve.interland.com
 
 142.44.146.45:53
 54.39.167.237:53
+
+# Reference: https://securelist.com/ad-blocker-with-miner-included/101105/
+# Reference: https://otx.alienvault.com/pulse/604a40993962cb029d4ee31a
+
+142.4.214.15:53
+176.31.103.74:53
+185.192.111.210:53
+185.201.47.42:53
+37.59.58.122:53
