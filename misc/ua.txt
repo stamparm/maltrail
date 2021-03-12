@@ -1654,6 +1654,10 @@ KrebsOnSecurity
 curl_cve_2017_11610
 wget_cve_2017_11610
 
+# Reference: https://www.fortinet.com/blog/threat-research/netbounce-threat-actor-tries-bold-approach-to-evade-detection
+
+Netbounce
+
 # Misc
 
 information_schema
