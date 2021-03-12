@@ -4115,6 +4115,10 @@ content-analytics-server.com
 pagemonitor-server.com
 templatesurvey.com
 
+# Reference: https://twitter.com/rootprivilege/status/1370394651509678080
+
+templatesurvey.com
+
 # Generic
 
 /cdn/ga.php?analytic=
