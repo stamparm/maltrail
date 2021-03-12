@@ -353,3 +353,7 @@ eth0.me
 # Reference: https://www.virustotal.com/gui/domain/ip.urls.is/relations
 
 ip.urls.is
+
+# Reference: https://www.virustotal.com/gui/file/07dc515aadbd1a62cc510b9e2eea6297ba626119648419f9fe8f410a50e2779b/behavior
+
+7fw.de/ipraw.php
