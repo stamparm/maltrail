@@ -58,3 +58,13 @@ dns.proactiveads.be
 link.easycounter210.com
 rocket2.new10k.com
 track.positiverefreshment.org
+
+# Reference: https://www.menlosecurity.com/blog/increase-in-attack-socgholish
+# Reference: https://twitter.com/BushidoToken/status/1370429928160759812
+
+news.pocketstay.com
+
+# Generic
+
+/Chrome.Update.88fe59.js
+/Opera.Update.426482.js
