@@ -4109,6 +4109,12 @@ paypal-merchants.com
 analytics-cdn.net
 analytics-ssl.net
 
+# Reference: https://twitter.com/unmaskparasites/status/1370151988285992960
+
+content-analytics-server.com
+pagemonitor-server.com
+templatesurvey.com
+
 # Generic
 
 /cdn/ga.php?analytic=
