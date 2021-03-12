@@ -4110,13 +4110,10 @@ analytics-cdn.net
 analytics-ssl.net
 
 # Reference: https://twitter.com/unmaskparasites/status/1370151988285992960
+# Reference: https://twitter.com/rootprivilege/status/1370394651509678080
 
 content-analytics-server.com
 pagemonitor-server.com
-templatesurvey.com
-
-# Reference: https://twitter.com/rootprivilege/status/1370394651509678080
-
 templatesurvey.com
 
 # Generic
