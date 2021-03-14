@@ -4340,6 +4340,16 @@ win-admin-center365.xyz
 
 /ffekwwfqyb06k804u1phgkcjra.php
 
+# Reference: https://twitter.com/r3dbU7z/status/1370839780678848514
+
+/l.cmd
+/lol.cmd
+/lol_china.cmd
+/lol.ps1
+/lol2.ps1
+/lol3.ps1
+/w.cmd
+
 # Generic
 
 /js/altmanluggage.js
