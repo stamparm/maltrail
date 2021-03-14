@@ -368,3 +368,10 @@ podathon.org/shell/
 
 /supp0rt.aspx
 /uHSPTWMG.aspx
+
+# Reference: https://us-cert.cisa.gov/ncas/analysis-reports/ar21-072g
+
+/0q1iS7mn.aspx
+/8aUco9ZK.aspx
+/McYhCzdb.aspx
+/ogu7zFil.aspx
