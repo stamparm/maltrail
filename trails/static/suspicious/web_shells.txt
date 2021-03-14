@@ -354,3 +354,8 @@ podathon.org/shell/
 
 /F48zhi6U.aspx
 /Fc1b3WDP.aspx
+
+# Reference: https://us-cert.cisa.gov/ncas/analysis-reports/ar21-072d
+
+/2XJHwN19.aspx
+/UwSPMsFi.aspx
