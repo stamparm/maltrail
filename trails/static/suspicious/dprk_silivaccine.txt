@@ -6,3 +6,7 @@
 # Reference: https://research.checkpoint.com/silivaccine-a-look-inside-north-koreas-anti-virus/
 
 office360s.ignorelist.com
+
+# Generic
+
+/silivaccineetc/
