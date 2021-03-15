@@ -4118,6 +4118,15 @@ content-analytics-server.com
 pagemonitor-server.com
 templatesurvey.com
 
+# Reference: https://www.group-ib.com/blog/e1rb
+
+cdn-gstat.com
+cdn-host.org
+google-analitics.org
+jquery-live.com
+jquery-on.com
+telrshop.com
+
 # Generic
 
 /cdn/ga.php?analytic=
