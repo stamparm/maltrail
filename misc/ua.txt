@@ -1654,6 +1654,19 @@ KrebsOnSecurity
 curl_cve_2017_11610
 wget_cve_2017_11610
 
+# Reference: https://www.fortinet.com/blog/threat-research/netbounce-threat-actor-tries-bold-approach-to-evade-detection
+
+Netbounce
+
+# Reference: https://twitter.com/r3dbU7z/status/1370422272746479629
+
+HelloBadPacketZ
+
+# Reference: https://github.com/stamparm/maltrail/blob/master/trails/static/suspicious/dprk_silivaccine.txt
+# Reference: https://research.checkpoint.com/2018/silivaccine-a-look-inside-north-koreas-anti-virus/
+
+SVUpdate
+
 # Misc
 
 information_schema
