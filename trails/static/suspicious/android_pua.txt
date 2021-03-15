@@ -380,3 +380,14 @@ blackplay.space
 
 leadboltapps.net
 leadboltmobile.net
+
+# Reference: https://www.virustotal.com/gui/file/96a3abe08b0c0c88d7a23af94fb5c2fd29b88b575604c986be8d13e10369b640/detection
+# Reference: https://www.virustotal.com/gui/file/0d457b8bb5741ca4b34d08dadcd44db273a0175d5d630217a8c466ba1bf80a52/detection
+# Reference: https://www.virustotal.com/gui/file/1b21355476eb07f8ab5bb79afeea3703a84b8b1d59cc1f18f4c6c92b46b6ec1a/detection
+# Reference: https://www.virustotal.com/gui/file/fa2539665db15e0d6cb519c253aec57f097c66d97f8bd6b62e83f72cbf0e390c/detection
+
+103.219.29.34:8081
+223.202.132.66:1883
+23.234.27.209:8181
+23.234.27.218:8081
+23.234.27.218:8181
