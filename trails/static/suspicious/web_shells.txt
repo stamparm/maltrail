@@ -345,3 +345,33 @@ podathon.org/shell/
 # Reference: https://www.praetorian.com/blog/reproducing-proxylogon-exploit/
 
 /ysfwduaohcma.aspx
+
+# Reference: https://us-cert.cisa.gov/ncas/analysis-reports/ar21-072a
+
+/zXkZu6bn.aspx
+
+# Reference: https://us-cert.cisa.gov/ncas/analysis-reports/ar21-072c
+
+/F48zhi6U.aspx
+/Fc1b3WDP.aspx
+
+# Reference: https://us-cert.cisa.gov/ncas/analysis-reports/ar21-072d
+
+/2XJHwN19.aspx
+/UwSPMsFi.aspx
+
+# Reference: https://us-cert.cisa.gov/ncas/analysis-reports/ar21-072e
+
+/E3MsTjP8.aspx
+
+# Reference: https://us-cert.cisa.gov/ncas/analysis-reports/ar21-072f
+
+/supp0rt.aspx
+/uHSPTWMG.aspx
+
+# Reference: https://us-cert.cisa.gov/ncas/analysis-reports/ar21-072g
+
+/0q1iS7mn.aspx
+/8aUco9ZK.aspx
+/McYhCzdb.aspx
+/ogu7zFil.aspx
