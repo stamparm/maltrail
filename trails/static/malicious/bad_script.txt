@@ -4350,6 +4350,10 @@ win-admin-center365.xyz
 /lol3.ps1
 /w.cmd
 
+# Reference: https://twitter.com/Dr_N0b0dyh/status/1367802254800084993
+
+/7bdbdeb3137bf5.php
+
 # Generic
 
 /js/altmanluggage.js
