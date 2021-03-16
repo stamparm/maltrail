@@ -4072,11 +4072,13 @@ bulder.online
 # Reference: https://twitter.com/unmaskparasites/status/1370579966069383168
 # Reference: https://urlscan.io/result/293c311f-900b-4662-9b5d-c1d0b11cead7/
 # Reference: https://www.virustotal.com/gui/ip-address/195.123.217.18/relations
+# Reference: https://www.virustotal.com/gui/ip-address/83.166.246.34/relations
 
 facedook.host
 predator.host
 pathc.space
 redorn.space
+zeborn.pw
 
 # Reference: https://urlscan.io/result/6dea6218-8a34-4f48-931e-93fa1677faf6/
 
