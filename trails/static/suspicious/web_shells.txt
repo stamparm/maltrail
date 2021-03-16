@@ -375,3 +375,8 @@ podathon.org/shell/
 /8aUco9ZK.aspx
 /McYhCzdb.aspx
 /ogu7zFil.aspx
+
+# Reference: https://twitter.com/Bank_Security/status/1371712892907753473
+# Reference: https://pastebin.com/aBxJEt2W
+
+/Webshell.aspx
