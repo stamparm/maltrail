@@ -4359,6 +4359,10 @@ win-admin-center365.xyz
 /8900077.php
 /9099x.php
 
+# Reference: https://www.virustotal.com/gui/domain/ahmedadel.work/relations
+
+ahmedadel.work
+
 # Generic
 
 /js/altmanluggage.js
