@@ -5221,3 +5221,8 @@ tl-ip.com
 # Reference: https://www.virustotal.com/gui/domain/m4a1.pro/relations
 
 m4a1.pro
+
+# Reference: https://twitter.com/nao_sec/status/1371767839573430279
+# Reference: https://app.any.run/tasks/0716611b-c63e-49b5-91d0-afea5ce01970/
+
+.email
