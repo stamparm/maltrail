@@ -4129,6 +4129,10 @@ jquery-live.com
 jquery-on.com
 telrshop.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1371877118909378568
+
+adextech.com/tr/echo/advisor.min.js
+
 # Generic
 
 /cdn/ga.php?analytic=
