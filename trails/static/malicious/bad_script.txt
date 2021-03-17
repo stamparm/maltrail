@@ -4354,6 +4354,15 @@ win-admin-center365.xyz
 
 /7bdbdeb3137bf5.php
 
+# Reference: https://twitter.com/peterkruse/status/1371753665355202564
+
+/8900077.php
+/9099x.php
+
+# Reference: https://www.virustotal.com/gui/domain/ahmedadel.work/relations
+
+ahmedadel.work
+
 # Generic
 
 /js/altmanluggage.js
