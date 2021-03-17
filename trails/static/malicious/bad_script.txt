@@ -4367,6 +4367,10 @@ win-admin-center365.xyz
 
 ahmedadel.work
 
+# Reference: https://www.virustotal.com/gui/file/6919611d3b398a6b8aad6ee43f8f0166dbbe866cd9f1d4a25eb5d7e1c5771eda/detection
+
+/A2336411-46c8-4f83-96b6-294966496d652.js
+
 # Generic
 
 /js/altmanluggage.js
