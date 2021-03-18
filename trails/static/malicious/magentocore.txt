@@ -3127,6 +3127,7 @@ connect-facebook.com
 google-analytics.top
 google-anylysis.com
 google-apic.com
+google-assignments.com
 google-assistant.com
 google-checkout.com
 google-connect.com
