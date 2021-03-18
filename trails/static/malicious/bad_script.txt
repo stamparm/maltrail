@@ -4376,6 +4376,10 @@ ahmedadel.work
 /81hcea474dhj7feqt9iyqz51.php
 /xh3rllhzt8cqxhc0lcb7mbye.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1372414725028511744
+
+/2wkzljmkp4bbxqubflol9iuk.php
+
 # Generic
 
 /js/altmanluggage.js
