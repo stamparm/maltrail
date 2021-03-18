@@ -2683,3 +2683,9 @@ toolsfreeprivacy.online
 # Reference: https://www.virustotal.com/gui/file/5ffff381d6867c986dfa88dca3f8d68c161b63ecef377a6e8ceca1a8a56bb5c6/detection
 
 immortality.space
+
+# Reference: https://www.virustotal.com/gui/file/8e3f5b8a80b9d89962d813fdfafafb88f7e378ea54e8e3a0e3fb562b81c1d36a/detection
+# Reference: https://www.virustotal.com/gui/file/976bfbb13605185f1f60974944696cd6671fcf09ba70bee02ee633bc230f98ca/detection
+
+14.207.115.160:81
+rhz.ddns.net
