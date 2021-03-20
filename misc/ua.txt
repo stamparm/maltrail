@@ -1667,6 +1667,10 @@ HelloBadPacketZ
 
 SVUpdate
 
+# Reference: https://twitter.com/parseword/status/1373107943588171783
+
+LanaiBotmarch
+
 # Misc
 
 information_schema
