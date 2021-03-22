@@ -2470,9 +2470,11 @@ apibazaarvoice.com
 http://89.82.251.136/counter/index.php
 
 # Reference: https://twitter.com/felixaime/status/1267095794571792384
+# Reference: https://twitter.com/dimitribest/status/1372632649496420364
 
 http://45.197.141.250/analytics.php
 happykid.in/image/catalog/d_blog_module/review/jjs.js
+tienda.flex.cl/media/sello-ecommerce.js
 
 # Reference: https://twitter.com/eclipsepicards/status/1268240487233867778
 
@@ -4179,3 +4181,4 @@ adextech.com/tr/echo/advisor.min.js
 /googletag-manager?connect=
 /gstatic-hander.js
 /zipboss.dev.js
+/sello-ecommerce.js
