@@ -4384,6 +4384,23 @@ ahmedadel.work
 
 /jl8rikblhsw1sw0778yzk36o.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1373290496559300613
+
+/mk806y617xypn6d4z2j3x5t3.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1373365992164839426
+
+/ikd1234je4cfvh3tb9vf4yp1.php
+/obv12000/cmn4/
+
+# Reference: https://twitter.com/MalwarePatrol/status/1373501887346044933
+
+/x32j8krv3d7zj6mgddry36l5.php
+
+# Reference: https://github.com/blackorbird/APT_REPORT/blob/master/SunBurst/SilverFish_Solarwinds.pdf
+
+/Invoke-SocksProxy.psm1
+
 # Generic
 
 /js/altmanluggage.js
