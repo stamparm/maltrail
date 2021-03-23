@@ -267,6 +267,11 @@ mobileokey-in.com
 
 /Pnl/tasks.php
 
+# Reference: https://twitter.com/wwp96/status/1374085642309804039
+# Reference: https://app.any.run/tasks/8f3c8422-e6ea-4738-9e47-c1e7b910e91d/
+
+/niggab-x/panel/
+
 # Generic
 
 /admin_123/auth.php
