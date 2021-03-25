@@ -4141,6 +4141,10 @@ adextech.com/tr/echo/advisor.min.js
 
 ssl-authorization.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1374806612611723264
+
+wedelf.com/wip/reverse.min.js
+
 # Generic
 
 /cdn/ga.php?analytic=
