@@ -4147,9 +4147,12 @@ wedelf.com/wip/reverse.min.js
 
 # Reference: https://twitter.com/unmaskparasites/status/1374812123562319872
 # Reference: https://www.virustotal.com/gui/ip-address/176.121.14.143/relations
+# Reference: https://www.virustotal.com/gui/ip-address/194.87.144.10/relations
 
+agilityscripts.com
 amazonawscdn.com
 cdnforplugins.com
+devlibscdn.com
 mirasvit.net
 secure4d.net
 seoagregator.com
