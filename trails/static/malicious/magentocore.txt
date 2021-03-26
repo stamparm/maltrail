@@ -4161,6 +4161,10 @@ spotforassets.com
 v2-zopim.com
 webadstracker.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1375516616243474438
+
+un5.ffox.site
+
 # Generic
 
 /assets/lfg.js
