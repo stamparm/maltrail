@@ -4406,6 +4406,10 @@ ahmedadel.work
 /fucku.php
 /fuckyou.php
 
+# Reference: https://blog.netlab.360.com/microsoft-exchange-vulnerability-cve-2021-26855-scan-analysis-3/
+
+/mini-reverse.ps1
+
 # Generic
 
 /js/altmanluggage.js
