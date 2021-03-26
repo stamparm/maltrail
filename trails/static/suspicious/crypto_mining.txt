@@ -669,3 +669,7 @@ monerorx.com
 # Reference: https://cujo.com/iot-malware-journals-prometei-linux/
 
 5.189.171.187:3333
+
+# Reference: https://blog.netlab.360.com/microsoft-exchange-vulnerability-cve-2021-26855-scan-analysis-3/
+
+159.65.206.137:3333
