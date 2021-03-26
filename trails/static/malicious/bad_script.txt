@@ -4410,6 +4410,10 @@ ahmedadel.work
 
 /mini-reverse.ps1
 
+# Reference: https://twitter.com/z0ul_/status/1375469461713600512
+
+d27qdop2sa027t.cloudfront.net
+
 # Generic
 
 /js/altmanluggage.js
