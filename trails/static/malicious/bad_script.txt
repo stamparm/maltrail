@@ -4462,6 +4462,7 @@ d27qdop2sa027t.cloudfront.net
 /ccgate.php
 /dating-verification-card.php
 /evreigate.php
+/fcc-authenticazione.php
 /gate.php
 /gate01.php
 /gate1.php
