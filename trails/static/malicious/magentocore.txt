@@ -4165,6 +4165,18 @@ webadstracker.com
 
 un5.ffox.site
 
+# Reference: https://twitter.com/TeamDreier/status/1375149879664709638
+# Reference: https://www.virustotal.com/gui/ip-address/35.228.228.1/relations
+
+bing-visitors.com
+googieads.com
+googieupdate.com
+google-site-verification.net
+googleadservlces.com
+googlegtm.com
+jquerylast.com
+yahoo-tracker.com
+
 # Generic
 
 /assets/lfg.js
