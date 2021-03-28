@@ -4410,6 +4410,10 @@ ahmedadel.work
 
 /mini-reverse.ps1
 
+# Reference: https://twitter.com/z0ul_/status/1375469461713600512
+
+d27qdop2sa027t.cloudfront.net
+
 # Generic
 
 /js/altmanluggage.js
@@ -4458,6 +4462,7 @@ ahmedadel.work
 /ccgate.php
 /dating-verification-card.php
 /evreigate.php
+/fcc-authenticazione.php
 /gate.php
 /gate01.php
 /gate1.php
