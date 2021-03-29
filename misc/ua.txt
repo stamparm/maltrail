@@ -1675,6 +1675,7 @@ LanaiBotmarch
 # Reference: https://twitter.com/t0nk42/status/1376469333317021696
 # Reference: https://news-web.php.net/php.internals/113838
 
+zerodium
 zerodiumsystem
 
 # Misc
