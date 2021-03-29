@@ -2619,6 +2619,7 @@ paypalapiobjects.com
 
 googleapimanager.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1376665239647756289
 # Reference: https://blog.malwarebytes.com/threat-analysis/2020/06/web-skimmer-hides-within-exif-metadata-exfiltrates-credit-cards-via-image-files/
 
 ads-fbstatistic.com
@@ -2627,6 +2628,7 @@ bestcdnforbusiness.com
 bizrateservices.com
 cddn.site
 cxizi.net
+favicon.click
 j-queries.com
 jquery-analitycs.com
 jqueryanalise.xyz
