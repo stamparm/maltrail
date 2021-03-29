@@ -4179,6 +4179,13 @@ googlegtm.com
 jquerylast.com
 yahoo-tracker.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1376662429229142022
+# Reference: https://www.virustotal.com/gui/ip-address/194.61.25.77/relations
+
+jqueri-web.at
+jqueridev.at
+jqueriweb.at
+
 # Generic
 
 /assets/lfg.js
