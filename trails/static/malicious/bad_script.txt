@@ -4414,6 +4414,10 @@ ahmedadel.work
 
 d27qdop2sa027t.cloudfront.net
 
+# Reference: https://twitter.com/MalwarePatrol/status/1376400990728032256
+
+/dwc8a33vh2eaqefp2nfbs511.php
+
 # Generic
 
 /js/altmanluggage.js
