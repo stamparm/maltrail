@@ -1405,3 +1405,10 @@ brodrollylion.email
 brofunnyfrog.email
 djur.brofunnyfrog.email
 pakistan.brodrollylion.email
+
+# Reference: https://twitter.com/nao_sec/status/1376851107914285062
+# Reference: https://app.any.run/tasks/4a974ca6-3ba4-4287-9408-b0abe086bfdd/
+
+denazaos.surf
+leadtoponline.email
+senha.leadtoponline.email
