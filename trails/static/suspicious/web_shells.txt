@@ -845,3 +845,9 @@ podathon.org/shell/
 # Reference: https://twitter.com/xuy1202/status/1374694429911523333
 
 /c99.txt
+
+# Reference: https://krebsonsecurity.com/2021/03/no-i-did-not-hack-your-ms-exchange-server/
+# Reference: https://otx.alienvault.com/pulse/6061ebaf97943b790e97e899
+# Reference: https://www.virustotal.com/gui/file/5f7d898ade3162bfb0c8d3006c42e934ff81fab3b4ad3b51c13441fd63e438cb/detection
+
+/owa/auth/babydraco.aspx
