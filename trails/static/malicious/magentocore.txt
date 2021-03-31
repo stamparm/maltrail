@@ -4186,6 +4186,10 @@ jqueri-web.at
 jqueridev.at
 jqueriweb.at
 
+# Reference: https://twitter.com/unmaskparasites/status/1377383696009895939
+
+brewtees.com/jquery/
+
 # Generic
 
 /assets/lfg.js
