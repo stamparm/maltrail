@@ -29,6 +29,11 @@ http://198.211.96.96
 http://45.77.248.89
 http://52.247.27.44
 
+# Reference: https://twitter.com/TheDFIRReport/status/1377232960676577280
+
+http://143.110.228.146
+http://185.203.117.6
+
 # Generic
 
 /covenantuser/
