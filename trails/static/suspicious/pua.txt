@@ -2689,3 +2689,7 @@ immortality.space
 
 14.207.115.160:81
 rhz.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/53db78784d6d04449e8a91ea1032bf6fadeb7dbd84b6549f984cc0fd2c131feb/detection
+
+a0416695.xsph.ru
