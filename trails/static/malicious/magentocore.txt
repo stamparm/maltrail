@@ -4190,6 +4190,16 @@ jqueriweb.at
 
 brewtees.com/jquery/
 
+# Reference: https://twitter.com/unmaskparasites/status/1378065215565168641
+# Reference: https://twitter.com/unmaskparasites/status/1378065738422874114
+# Reference: https://www.virustotal.com/gui/ip-address/198.27.64.84/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.69.32/relations
+
+googletagsmanagers.com
+fonts-analytics.com
+fontsgstatic.com
+googlefonts-dns.com
+
 # Generic
 
 /assets/lfg.js
