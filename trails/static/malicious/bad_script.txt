@@ -4418,6 +4418,12 @@ d27qdop2sa027t.cloudfront.net
 
 /dwc8a33vh2eaqefp2nfbs511.php
 
+# Reference: https://twitter.com/Circuitous__/status/1377767299709550593
+# Reference: https://pastebin.com/9U57CHZn
+
+/gfdbvgfgggh.php
+/ijkbfumnbvc.php
+
 # Generic
 
 /js/altmanluggage.js
