@@ -391,3 +391,7 @@ leadboltmobile.net
 23.234.27.209:8181
 23.234.27.218:8081
 23.234.27.218:8181
+
+# Reference: https://www.virustotal.com/gui/file/ca4c7a514509d84ed4c4ab3ef6c06454339799900256b6953ef4cd42ec3c2f9f/detection
+
+leadboltads.net
