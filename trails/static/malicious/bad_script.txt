@@ -4424,6 +4424,10 @@ d27qdop2sa027t.cloudfront.net
 /gfdbvgfgggh.php
 /ijkbfumnbvc.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1378439421599580165
+
+/h7090pcjq8q2xzx3ci1aq4ad.php
+
 # Generic
 
 /js/altmanluggage.js
