@@ -4205,6 +4205,13 @@ googlefonts-dns.com
 jquery-dns.com
 jquery-ssl.com
 
+# Reference: https://urlscan.io/result/e76a66c0-403e-4099-a673-ecb322b99f7e/
+# Reference: https://urlscan.io/result/14b99a92-2ec2-4327-a0f1-a0249e4513be/
+# Reference: https://www.virustotal.com/gui/ip-address/203.91.116.53/relations
+
+cdnjsapis.com
+jquery-analytics.com
+
 # Generic
 
 /assets/lfg.js
