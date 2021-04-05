@@ -4216,6 +4216,12 @@ jquery-analytics.com
 
 jquery-google.com
 
+# Reference: https://twitter.com/rootprivilege/status/1379096986897408001
+# Reference: https://lukeleal.com/research/posts/magento2-payprocess-obj_31337-skimmer/
+
+payprocess.org
+processpayment.cc
+
 # Generic
 
 /assets/lfg.js
