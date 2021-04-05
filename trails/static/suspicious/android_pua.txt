@@ -377,7 +377,9 @@ blackplay.ddns.net
 blackplay.space
 
 # Reference: https://www.virustotal.com/gui/file/368aef4f2fc2a3131f014236a959047fe5abc1967918e57e6c786828c1184513/detection
+# Reference: https://www.virustotal.com/gui/file/ca4c7a514509d84ed4c4ab3ef6c06454339799900256b6953ef4cd42ec3c2f9f/detection
 
+leadboltads.net
 leadboltapps.net
 leadboltmobile.net
 
