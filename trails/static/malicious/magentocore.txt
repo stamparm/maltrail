@@ -4212,6 +4212,10 @@ jquery-ssl.com
 cdnjsapis.com
 jquery-analytics.com
 
+# Reference: https://urlscan.io/result/a38d860f-b1a2-432c-a8ff-a4132c0f8293/
+
+jquery-google.com
+
 # Generic
 
 /assets/lfg.js
