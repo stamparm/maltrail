@@ -4428,6 +4428,11 @@ d27qdop2sa027t.cloudfront.net
 
 /h7090pcjq8q2xzx3ci1aq4ad.php
 
+# Reference: https://www.group-ib.com/blog/rats_nigeria
+
+/ava.hta
+/oyii.hta
+
 # Generic
 
 /js/altmanluggage.js
