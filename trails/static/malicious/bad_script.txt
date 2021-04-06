@@ -4438,6 +4438,10 @@ d27qdop2sa027t.cloudfront.net
 
 /e1bdf31053a154.php
 
+# Reference: https://twitter.com/InQuest/status/1379458364887986176
+
+/8P3V78L4u.php
+
 # Generic
 
 /js/altmanluggage.js
