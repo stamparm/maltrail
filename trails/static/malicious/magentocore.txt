@@ -4222,6 +4222,13 @@ jquery-google.com
 payprocess.org
 processpayment.cc
 
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.78.46/relations
+
+cdn-alipearlhair.com
+livechatlnc.com
+paypalobjacts.com
+tagmanaqer.com
+
 # Generic
 
 /assets/lfg.js
