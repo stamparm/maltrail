@@ -673,3 +673,10 @@ monerorx.com
 # Reference: https://blog.netlab.360.com/microsoft-exchange-vulnerability-cve-2021-26855-scan-analysis-3/
 
 159.65.206.137:3333
+
+# Reference: https://twitter.com/KorbenD_Intel/status/1379537565498363906
+# Reference: https://twitter.com/James_inthe_box/status/1379538678356185088
+# Reference: https://github.com/stamparm/maltrail/pull/15811
+# Reference: https://www.virustotal.com/gui/file/a7c8b4c917102a5578a504f9badea75602544d765dd0dacf31420e44cc7b7d4b/detection
+
+205.147.109.89:9000
