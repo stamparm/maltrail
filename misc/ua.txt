@@ -1678,6 +1678,10 @@ LanaiBotmarch
 zerodium
 zerodiumsystem
 
+# Reference: https://unit42.paloaltonetworks.com/attackers-conducting-cryptojacking-u-s-education-organizations/
+
+\AWHR\Z
+
 # Misc
 
 information_schema
