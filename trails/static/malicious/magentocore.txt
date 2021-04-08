@@ -4284,6 +4284,13 @@ xpaymentes.com
 fontsgoogles.com
 googlefonts-map.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/192.187.120.45/detection
+# Reference: https://www.virustotal.com/gui/ip-address/35.197.229.31/relations
+# Reference: https://urlscan.io/result/14d969b1-dc3e-4803-8b8a-9a3356f44a79/
+
+googl-mail.com
+googl-service.com
+
 # Generic
 
 /assets/lfg.js
