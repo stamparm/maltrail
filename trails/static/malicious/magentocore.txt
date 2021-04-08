@@ -4234,6 +4234,7 @@ tagmanaqer.com
 # Reference: https://twitter.com/AffableKraut/status/1380022987626328065
 # Reference: https://www.virustotal.com/gui/ip-address/176.9.51.172/relations
 
+aramorganstake.com
 cdnnetworking.com
 cdnnetwrk.com
 csscdnnett.com
@@ -4243,8 +4244,16 @@ gegelanallitics.com
 google-analytics.org
 googleanalyse.website
 googlecashstat.com
+healcodes.com
 huggy.tech
+joopsjeemz.com
+liquidibi.com
+manutdfuns.com
 remincss.com
+sellait.com
+sixmofreegate.com
+snowdronedge.com
+xpaymentes.com
 
 # Generic
 
