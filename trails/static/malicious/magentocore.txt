@@ -4279,6 +4279,11 @@ vivapayments.net
 vnmnet.net
 xpaymentes.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.78.196/relations
+
+fontsgoogles.com
+googlefonts-map.com
+
 # Generic
 
 /assets/lfg.js
