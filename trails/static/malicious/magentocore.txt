@@ -4253,6 +4253,30 @@ remincss.com
 sellait.com
 sixmofreegate.com
 snowdronedge.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/144.76.57.177/relations
+
+aldyen.com
+braitnreegateway.com
+cobrosya.net
+cullqi.com
+cyberesources.com
+e-posnets.com
+epayou.net
+eurocommerces.net
+filows.com
+khipus.net
+mercadopagos.net
+mindbodyonlines.com
+oppwwa.com
+paypluge.com
+paypulatam.com
+redysys.net
+sinetesis.com
+stripies.com
+transbanks.net
+vivapayments.net
+vnmnet.net
 xpaymentes.com
 
 # Generic
