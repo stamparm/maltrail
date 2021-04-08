@@ -4229,6 +4229,18 @@ livechatlnc.com
 paypalobjacts.com
 tagmanaqer.com
 
+# Reference: https://twitter.com/AffableKraut/status/1380022960627593216
+# Reference: https://twitter.com/AffableKraut/status/1380022963160895490
+# Reference: https://twitter.com/AffableKraut/status/1380022987626328065
+
+cdnnetwrk.com
+fonts.services
+gegelanallitics.com
+google-analytics.org
+googleanalyse.website
+googlecashstat.com
+huggy.tech
+
 # Generic
 
 /assets/lfg.js
