@@ -680,3 +680,9 @@ monerorx.com
 # Reference: https://www.virustotal.com/gui/file/a7c8b4c917102a5578a504f9badea75602544d765dd0dacf31420e44cc7b7d4b/detection
 
 205.147.109.89:9000
+
+# Reference: https://unit42.paloaltonetworks.com/attackers-conducting-cryptojacking-u-s-education-organizations/
+
+135.181.62.60:4555
+135.181.62.60:6238
+miningrigrentals.com
