@@ -4232,14 +4232,19 @@ tagmanaqer.com
 # Reference: https://twitter.com/AffableKraut/status/1380022960627593216
 # Reference: https://twitter.com/AffableKraut/status/1380022963160895490
 # Reference: https://twitter.com/AffableKraut/status/1380022987626328065
+# Reference: https://www.virustotal.com/gui/ip-address/176.9.51.172/relations
 
+cdnnetworking.com
 cdnnetwrk.com
+csscdnnett.com
+fivemofreegate.com
 fonts.services
 gegelanallitics.com
 google-analytics.org
 googleanalyse.website
 googlecashstat.com
 huggy.tech
+remincss.com
 
 # Generic
 
