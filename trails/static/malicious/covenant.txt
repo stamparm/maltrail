@@ -34,6 +34,45 @@ http://52.247.27.44
 http://143.110.228.146
 http://185.203.117.6
 
+# Reference: https://twitter.com/TheDFIRReport/status/1379388421014122502
+# Reference: https://beta.shodan.io/host/138.68.62.253
+
+http://138.68.62.253
+138.68.62.253:22
+138.68.62.253:443
+138.68.62.253:7443
+138.68.62.253:8000
+
+# Reference: https://twitter.com/TheDFIRReport/status/1379388421014122502
+# Reference: https://beta.shodan.io/host/155.138.227.139
+
+155.138.227.139:443
+155.138.227.139:4443
+155.138.227.139:5000
+155.138.227.139:5432
+155.138.227.139:8080
+
+# Reference: https://twitter.com/TheDFIRReport/status/1379388421014122502
+# Reference: https://beta.shodan.io/host/173.232.146.167
+
+http://173.232.146.167
+173.232.146.167:22
+173.232.146.167:7443
+
+# Reference: https://twitter.com/TheDFIRReport/status/1379388421014122502
+# Reference: https://beta.shodan.io/host/185.186.244.84
+
+http://185.186.244.84
+185.186.244.84:22
+185.186.244.84:7443
+
+# Reference: https://twitter.com/TheDFIRReport/status/1379388421014122502
+# Reference: https://beta.shodan.io/host/185.206.144.192
+
+http://185.206.144.192
+185.206.144.192:22
+185.206.144.192:7443
+
 # Generic
 
 /covenantuser/
