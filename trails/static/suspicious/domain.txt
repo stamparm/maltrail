@@ -5221,3 +5221,7 @@ tl-ip.com
 # Reference: https://www.virustotal.com/gui/domain/m4a1.pro/relations
 
 m4a1.pro
+
+# Reference: https://www.virustotal.com/gui/domain/sakurafrp.com/relations
+
+sakurafrp.com
