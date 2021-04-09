@@ -4433,6 +4433,23 @@ d27qdop2sa027t.cloudfront.net
 /ava.hta
 /oyii.hta
 
+# Reference: https://twitter.com/ps66uk/status/1379408490960130048
+# Reference: https://app.any.run/tasks/6abf3b2c-9e92-4f76-81d5-06898cfb3f3e/
+
+/e1bdf31053a154.php
+
+# Reference: https://twitter.com/InQuest/status/1379458364887986176
+
+/8P3V78L4u.php
+
+# Reference: https://twitter.com/ps66uk/status/1379467933932519436
+
+/33b44fe4fae0b0.php
+
+# Reference: https://tria.ge/210407-akdmy3ldv6
+
+/3dbea0f5d87dcc.php
+
 # Generic
 
 /js/altmanluggage.js
