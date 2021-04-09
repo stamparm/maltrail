@@ -419,3 +419,7 @@ letsnewsblog.xyz
 # Reference: https://twitter.com/MBThreatIntel/status/1377360136604315648
 
 loversromance.us
+
+# Reference: https://www.virustotal.com/gui/ip-address/68.65.120.237/relations
+
+yogaaa589.xyz
