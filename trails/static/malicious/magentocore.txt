@@ -4222,6 +4222,75 @@ jquery-google.com
 payprocess.org
 processpayment.cc
 
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.78.46/relations
+
+cdn-alipearlhair.com
+livechatlnc.com
+paypalobjacts.com
+tagmanaqer.com
+
+# Reference: https://twitter.com/AffableKraut/status/1380022960627593216
+# Reference: https://twitter.com/AffableKraut/status/1380022963160895490
+# Reference: https://twitter.com/AffableKraut/status/1380022987626328065
+# Reference: https://www.virustotal.com/gui/ip-address/176.9.51.172/relations
+
+aramorganstake.com
+cdnnetworking.com
+cdnnetwrk.com
+csscdnnett.com
+fivemofreegate.com
+fonts.services
+gegelanallitics.com
+google-analytics.org
+googleanalyse.website
+googlecashstat.com
+healcodes.com
+huggy.tech
+joopsjeemz.com
+liquidibi.com
+manutdfuns.com
+remincss.com
+sellait.com
+sixmofreegate.com
+snowdronedge.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/144.76.57.177/relations
+
+aldyen.com
+braitnreegateway.com
+cobrosya.net
+cullqi.com
+cyberesources.com
+e-posnets.com
+epayou.net
+eurocommerces.net
+filows.com
+khipus.net
+mercadopagos.net
+mindbodyonlines.com
+oppwwa.com
+paypluge.com
+paypulatam.com
+redysys.net
+sinetesis.com
+stripies.com
+transbanks.net
+vivapayments.net
+vnmnet.net
+xpaymentes.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.78.196/relations
+
+fontsgoogles.com
+googlefonts-map.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/192.187.120.45/detection
+# Reference: https://www.virustotal.com/gui/ip-address/35.197.229.31/relations
+# Reference: https://urlscan.io/result/14d969b1-dc3e-4803-8b8a-9a3356f44a79/
+
+googl-mail.com
+googl-service.com
+
 # Generic
 
 /assets/lfg.js
