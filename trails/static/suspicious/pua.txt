@@ -2697,3 +2697,7 @@ a0416695.xsph.ru
 # Reference: https://www.virustotal.com/gui/domain/flv-player.us/relations
 
 flv-player.us
+
+# Reference: https://www.virustotal.com/gui/file/4658e73f798ac94a601478b71bb90701c51cadc946df4eb31a59c0161fbcaadb/detection
+
+500miles.club
