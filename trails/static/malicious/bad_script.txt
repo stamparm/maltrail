@@ -4461,6 +4461,10 @@ d27qdop2sa027t.cloudfront.net
 /payload8.ps1
 /payload9.ps1
 
+# Reference: https://twitter.com/MalwarePatrol/status/1381987802938769409
+
+/3cuxoaskux3q0bywimjkyvez.php
+
 # Generic
 
 /js/altmanluggage.js
