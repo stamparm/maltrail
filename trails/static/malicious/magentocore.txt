@@ -4196,7 +4196,9 @@ brewtees.com/jquery/
 # Reference: https://www.virustotal.com/gui/ip-address/47.91.78.128/relations
 # Reference: https://www.virustotal.com/gui/ip-address/8.209.69.32/relations
 # Reference: https://www.virustotal.com/gui/ip-address/8.208.96.5/relations
+# Reference: https://www.virustotal.com/gui/ip-address/80.211.41.122/relations
 
+googletagmanagers.com
 googletagsmanagers.com
 fonts-analytics.com
 fontsgstatic.com
@@ -4204,6 +4206,8 @@ googlefonts-api.com
 googlefonts-dns.com
 jquery-dns.com
 jquery-ssl.com
+page2adgooglesyndication.com
+stackpathbootstrapcdn.com
 
 # Reference: https://urlscan.io/result/e76a66c0-403e-4099-a673-ecb322b99f7e/
 # Reference: https://urlscan.io/result/14b99a92-2ec2-4327-a0f1-a0249e4513be/
@@ -4280,7 +4284,9 @@ vnmnet.net
 xpaymentes.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/8.208.78.196/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.92.202/relations
 
+amazon-sert.com
 fontsgoogles.com
 googlefonts-map.com
 
