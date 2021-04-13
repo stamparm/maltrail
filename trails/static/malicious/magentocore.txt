@@ -4198,6 +4198,7 @@ brewtees.com/jquery/
 # Reference: https://www.virustotal.com/gui/ip-address/8.208.96.5/relations
 # Reference: https://www.virustotal.com/gui/ip-address/80.211.41.122/relations
 
+googletagmanagers.com
 googletagsmanagers.com
 fonts-analytics.com
 fontsgstatic.com
