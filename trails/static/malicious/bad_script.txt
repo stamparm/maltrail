@@ -4465,6 +4465,11 @@ d27qdop2sa027t.cloudfront.net
 
 /3cuxoaskux3q0bywimjkyvez.php
 
+# Reference: https://twitter.com/r3dbU7z/status/1382237585586724867
+
+/theone.ps1
+/theoneFUD2.ps1
+
 # Generic
 
 /js/altmanluggage.js
