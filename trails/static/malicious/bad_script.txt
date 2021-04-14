@@ -4450,6 +4450,21 @@ d27qdop2sa027t.cloudfront.net
 
 /3dbea0f5d87dcc.php
 
+# Reference: https://twitter.com/r3dbU7z/status/1381517028817825795
+# Reference: https://www.virustotal.com/gui/url/026ec2ee22c5b8a04806a13701238e971565cd80d9ca10a0be85c80f4222fa9e/details
+
+/payload3.ps1
+/payload4.ps1
+/payload5.ps1
+/payload6.ps1
+/payload7.ps1
+/payload8.ps1
+/payload9.ps1
+
+# Reference: https://twitter.com/MalwarePatrol/status/1381987802938769409
+
+/3cuxoaskux3q0bywimjkyvez.php
+
 # Generic
 
 /js/altmanluggage.js
