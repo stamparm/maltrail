@@ -1627,6 +1627,10 @@ ASUS2JS
 
 MASAJS
 
+# Reference: https://www.virustotal.com/gui/file/092fed4da898c2cd0398f75620a430dd4188823384bf8409bef947b2c6aeaf27/detection
+
+\AENGB\Z
+
 # Reference: https://twitter.com/0xrb/status/1352101798467670016
 # Reference: https://twitter.com/bad_packets/status/1352068028028997632
 # Reference: https://github.com/stamparm/maltrail/pull/13995/
