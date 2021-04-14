@@ -4475,6 +4475,10 @@ d27qdop2sa027t.cloudfront.net
 
 /887d2c240852a4.php
 
+# Reference: https://www.virustotal.com/gui/ip-address/96.45.180.73/relations
+
+/beacon.ps1
+
 # Generic
 
 /js/altmanluggage.js
