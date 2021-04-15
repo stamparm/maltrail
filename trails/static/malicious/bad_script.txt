@@ -4465,6 +4465,24 @@ d27qdop2sa027t.cloudfront.net
 
 /3cuxoaskux3q0bywimjkyvez.php
 
+# Reference: https://twitter.com/r3dbU7z/status/1382237585586724867
+
+/theone.ps1
+/theoneFUD2.ps1
+
+# Reference: https://twitter.com/58_158_177_102/status/1382254845659291650
+# Reference: https://tria.ge/210414-aqahkvar82/behavioral2
+
+/887d2c240852a4.php
+
+# Reference: https://www.virustotal.com/gui/ip-address/96.45.180.73/relations
+
+/beacon.ps1
+
+# Reference: https://twitter.com/wato_dn/status/1382553067170635779
+
+/YKgOy11r.php
+
 # Generic
 
 /js/altmanluggage.js
