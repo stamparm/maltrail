@@ -4479,6 +4479,10 @@ d27qdop2sa027t.cloudfront.net
 
 /beacon.ps1
 
+# Reference: https://twitter.com/wato_dn/status/1382553067170635779
+
+/YKgOy11r.php
+
 # Generic
 
 /js/altmanluggage.js
