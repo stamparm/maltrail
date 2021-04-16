@@ -2705,3 +2705,7 @@ flv-player.us
 # Reference: https://www.virustotal.com/gui/domain/gjaosihe.nmvhpedn.com/relations
 
 gjaosihe.nmvhpedn.com
+
+# Reference: https://www.virustotal.com/gui/file/509ff691db7623522a62a64474c0f718b7885cbbd2d12c0c07d04d2ef021dec3/detection
+
+optimizepro.biz
