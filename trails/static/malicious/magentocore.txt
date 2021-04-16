@@ -4297,6 +4297,11 @@ googlefonts-map.com
 googl-mail.com
 googl-service.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/98.129.19.208/relations
+
+script-manager.com
+scriptmgr.com
+
 # Generic
 
 /assets/lfg.js
