@@ -5225,3 +5225,7 @@ m4a1.pro
 # Reference: https://www.virustotal.com/gui/domain/sakurafrp.com/relations
 
 sakurafrp.com
+
+# Reference: https://www.virustotal.com/gui/domain/pktriot.net/relations
+
+pktriot.net
