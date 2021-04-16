@@ -4302,6 +4302,10 @@ googl-service.com
 script-manager.com
 scriptmgr.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/96.126.108.31/relations
+
+scriptdispense.com
+
 # Generic
 
 /assets/lfg.js
