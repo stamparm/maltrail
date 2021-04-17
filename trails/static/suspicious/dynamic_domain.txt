@@ -3133,3 +3133,7 @@ garenanow.com
 # Reference: https://www.virustotal.com/gui/domain/ddns-only.xyz/relations
 
 ddns-only.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/gnway.cc/relations
+
+gnway.cc
