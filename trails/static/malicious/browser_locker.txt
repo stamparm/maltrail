@@ -440,3 +440,7 @@ tkkmobileinternetssnstop.ml
 tkkmobileinternetssnstopopen.gq
 mvd.pp.ru
 mvd.net.ru
+
+# Reference: https://twitter.com/MBThreatIntel/status/1383220418081792000
+
+jpfftapr.fun
