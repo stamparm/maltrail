@@ -1686,6 +1686,14 @@ zerodiumsystem
 
 \AWHR\Z
 
+# Reference: https://twitter.com/ShadowChasing1/status/1383413812187914252
+# Reference: https://twitter.com/James_inthe_box/status/1383416423775543307
+# Reference: https://www.virustotal.com/gui/ip-address/195.133.52.247/relations
+# Reference: https://www.virustotal.com/gui/file/936b70e0babe7708eda22055db6021aed965083d5bc18aad36bedca993d1442a/detection
+# Reference: https://github.com/stamparm/maltrail/pull/15981/commits/294e1ba8c2f565239e5e54c8bd1c9a10c6731314
+
+involuntary
+
 # Misc
 
 information_schema
