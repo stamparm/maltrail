@@ -4311,6 +4311,10 @@ scriptdispense.com
 
 googlemanagerapi.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/149.28.245.206/relations
+
+api-hotjar.com
+
 # Generic
 
 /assets/lfg.js
