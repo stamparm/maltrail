@@ -4306,6 +4306,11 @@ scriptmgr.com
 
 scriptdispense.com
 
+# Reference: https://twitter.com/TeamDreier/status/1383696994380648448
+# Reference: https://www.virustotal.com/gui/ip-address/95.217.250.26/relations
+
+googlemanagerapi.com
+
 # Generic
 
 /assets/lfg.js
