@@ -4356,6 +4356,11 @@ webanalitics.site
 webanalylic.site
 webanalyst.site
 
+# Reference: https://twitter.com/TeamDreier/status/1384089703599595526
+# Reference: https://www.virustotal.com/gui/ip-address/34.125.75.72/relations
+
+analytics-gtm.com
+
 # Generic
 
 /assets/lfg.js
