@@ -4315,6 +4315,47 @@ googlemanagerapi.com
 
 api-hotjar.com
 
+# Reference: https://twitter.com/AffableKraut/status/1383964524110245888
+
+analistnet.site
+analiticnet.site
+analiticsnet.site
+analiticweb.site
+analylicweb.site
+analystclick.site
+analysttraffic.site
+analystview.site
+analystweb.site
+analyticlick.site
+analyticmanager.site
+analyticview.site
+clickanalyst.site
+clickanalytic.site
+foundanalyst.site
+foundanalytic.site
+managertraffic.site
+netanalist.site
+netanalitic.site
+netanalitics.site
+nettraffic.site
+siteanalist.site
+siteanalitic.site
+siteanalitics.site
+siteanalyst.site
+siteanalytic.site
+sitetraffic.site
+trafficanalyst.site
+trafficanalytics.site
+trafficcloud.site
+trafficweb.site
+unpkgtraffic.site
+viewanalyst.site
+viewanalytic.site
+webanalitic.site
+webanalitics.site
+webanalylic.site
+webanalyst.site
+
 # Generic
 
 /assets/lfg.js
