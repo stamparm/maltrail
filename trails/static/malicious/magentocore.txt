@@ -4297,6 +4297,65 @@ googlefonts-map.com
 googl-mail.com
 googl-service.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/98.129.19.208/relations
+
+script-manager.com
+scriptmgr.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/96.126.108.31/relations
+
+scriptdispense.com
+
+# Reference: https://twitter.com/TeamDreier/status/1383696994380648448
+# Reference: https://www.virustotal.com/gui/ip-address/95.217.250.26/relations
+
+googlemanagerapi.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/149.28.245.206/relations
+
+api-hotjar.com
+
+# Reference: https://twitter.com/AffableKraut/status/1383964524110245888
+
+analistnet.site
+analiticnet.site
+analiticsnet.site
+analiticweb.site
+analylicweb.site
+analystclick.site
+analysttraffic.site
+analystview.site
+analystweb.site
+analyticlick.site
+analyticmanager.site
+analyticview.site
+clickanalyst.site
+clickanalytic.site
+foundanalyst.site
+foundanalytic.site
+managertraffic.site
+netanalist.site
+netanalitic.site
+netanalitics.site
+nettraffic.site
+siteanalist.site
+siteanalitic.site
+siteanalitics.site
+siteanalyst.site
+siteanalytic.site
+sitetraffic.site
+trafficanalyst.site
+trafficanalytics.site
+trafficcloud.site
+trafficweb.site
+unpkgtraffic.site
+viewanalyst.site
+viewanalytic.site
+webanalitic.site
+webanalitics.site
+webanalylic.site
+webanalyst.site
+
 # Generic
 
 /assets/lfg.js
