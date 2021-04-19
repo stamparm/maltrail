@@ -393,3 +393,8 @@ leadboltmobile.net
 23.234.27.209:8181
 23.234.27.218:8081
 23.234.27.218:8181
+
+# Reference: https://twitter.com/malwrhunterteam/status/1384027287134167041
+# Reference: https://www.virustotal.com/gui/file/fdac05660885c0875e6f807fb9e6a11afb6bde14e2cd5fd24f603c28b2cc3c1a/detection
+
+tchsrvce.com
