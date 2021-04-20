@@ -4356,6 +4356,40 @@ webanalitics.site
 webanalylic.site
 webanalyst.site
 
+# Reference: https://twitter.com/TeamDreier/status/1384089703599595526
+# Reference: https://www.virustotal.com/gui/ip-address/34.125.75.72/relations
+
+ajaxtracker.com
+analytics-gtm.com
+cdn-cgi.net
+doubiecliick.net
+jquery-ui.net
+
+# Reference: https://twitter.com/rootprivilege/status/1384357710603292676
+
+cdn-frontend.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/103.232.215.140/relations
+
+jcsscpt.com
+jcsscpt.net
+sscyulept.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/104.219.248.46/relations
+
+legacy-scripts.com
+
+# Reference: https://twitter.com/AffableKraut/status/1384553513842352130
+
+conf-localhost.com
+facebooknetworks.com
+secure-conf.com
+
+# Reference: https://twitter.com/AffableKraut/status/1384546205921943552
+# Reference: https://urlscan.io/search/#filename:%22google.analytics.b.js%22
+
+/google.analytics.b.js
+
 # Generic
 
 /assets/lfg.js
