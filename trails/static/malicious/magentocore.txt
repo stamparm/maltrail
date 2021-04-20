@@ -4368,6 +4368,12 @@ jquery-ui.net
 
 cdn-frontend.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/103.232.215.140/relations
+
+jcsscpt.com
+jcsscpt.net
+sscyulept.com
+
 # Generic
 
 /assets/lfg.js
