@@ -4374,6 +4374,10 @@ jcsscpt.com
 jcsscpt.net
 sscyulept.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/104.219.248.46/relations
+
+legacy-scripts.com
+
 # Generic
 
 /assets/lfg.js
