@@ -4378,6 +4378,12 @@ sscyulept.com
 
 legacy-scripts.com
 
+# Reference: https://twitter.com/AffableKraut/status/1384553513842352130
+
+conf-localhost.com
+facebooknetworks.com
+secure-conf.com
+
 # Generic
 
 /assets/lfg.js
