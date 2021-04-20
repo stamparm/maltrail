@@ -4361,6 +4361,10 @@ webanalyst.site
 
 analytics-gtm.com
 
+# Reference: https://twitter.com/rootprivilege/status/1384357710603292676
+
+cdn-frontend.com
+
 # Generic
 
 /assets/lfg.js
