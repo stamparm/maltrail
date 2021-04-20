@@ -4384,6 +4384,11 @@ conf-localhost.com
 facebooknetworks.com
 secure-conf.com
 
+# Reference: https://twitter.com/AffableKraut/status/1384546205921943552
+# Reference: https://urlscan.io/search/#filename:%22google.analytics.b.js%22
+
+/google.analytics.b.js
+
 # Generic
 
 /assets/lfg.js
