@@ -4359,7 +4359,10 @@ webanalyst.site
 # Reference: https://twitter.com/TeamDreier/status/1384089703599595526
 # Reference: https://www.virustotal.com/gui/ip-address/34.125.75.72/relations
 
+ajaxtracker.com
 analytics-gtm.com
+doubiecliick.net
+jquery-ui.net
 
 # Reference: https://twitter.com/rootprivilege/status/1384357710603292676
 
