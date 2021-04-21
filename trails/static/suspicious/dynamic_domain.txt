@@ -3250,3 +3250,7 @@ samtechdns.com
 # Reference: https://www.virustotal.com/gui/domain/wboxddns.com/relations
 
 wboxddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/vitekivpddns.com/relations
+
+vitekivpddns.com
