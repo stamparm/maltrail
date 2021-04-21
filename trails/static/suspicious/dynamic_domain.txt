@@ -3210,3 +3210,7 @@ venusmountain.com
 # Reference: https://www.virustotal.com/gui/domain/avandns.com/detection
 
 avandns.com
+
+# Reference: https://www.virustotal.com/gui/domain/godrejeyetrace.com/relations
+
+godrejeyetrace.com
