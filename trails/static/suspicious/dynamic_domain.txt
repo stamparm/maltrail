@@ -3137,3 +3137,7 @@ ddns-only.xyz
 # Reference: https://www.virustotal.com/gui/domain/gnway.cc/relations
 
 gnway.cc
+
+# Reference: https://www.virustotal.com/gui/domain/dynddns.us/relations
+
+dynddns.us
