@@ -3182,3 +3182,7 @@ techproddns.com
 # Reference: https://www.virustotal.com/gui/domain/dynamic-dns.us/detection
 
 dynamic-dns.us
+
+# Reference: https://www.virustotal.com/gui/domain/dynddns.us/detection
+
+dynddns.us
