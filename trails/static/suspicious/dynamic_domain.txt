@@ -3162,3 +3162,7 @@ sieraddns.com
 # Reference: https://www.virustotal.com/gui/domain/telviewddns.com/detection
 
 telviewddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/secuitytronixddns.com/relations
+
+secuitytronixddns.com
