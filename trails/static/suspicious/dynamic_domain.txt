@@ -3166,3 +3166,7 @@ telviewddns.com
 # Reference: https://www.virustotal.com/gui/domain/secuitytronixddns.com/relations
 
 secuitytronixddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/ddnsusa.com/detection
+
+ddnsusa.com
