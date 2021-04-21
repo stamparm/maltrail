@@ -3230,3 +3230,7 @@ inoxdvr.com
 # Reference: https://www.virustotal.com/gui/domain/mymeriva.com/relations
 
 mymeriva.com
+
+# Reference: https://www.virustotal.com/gui/domain/myclarevision.com/relations
+
+myclarevision.com
