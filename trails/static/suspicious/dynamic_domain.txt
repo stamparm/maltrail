@@ -3194,3 +3194,7 @@ myfreeip.me
 # Reference: https://www.virustotal.com/gui/domain/contosso.com/relations
 
 contosso.com
+
+# Reference: https://www.virustotal.com/gui/domain/avrsecurity.info/relations
+
+avrsecurity.info
