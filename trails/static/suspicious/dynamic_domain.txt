@@ -3145,3 +3145,8 @@ dynddns.us
 # Reference: https://www.virustotal.com/gui/domain/dyndnsservices.com/relations
 
 dyndnsservices.com
+
+# Reference: https://dynamic.domains/dynamic-dns/about/default.aspx
+# Reference: https://www.virustotal.com/gui/domain/dynamic.domains/relations
+
+dynamic.domains
