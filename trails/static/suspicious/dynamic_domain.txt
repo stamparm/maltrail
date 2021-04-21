@@ -3178,3 +3178,7 @@ elineddns.com
 # Reference: https://www.virustotal.com/gui/domain/techproddns.com/relations
 
 techproddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/dynamic-dns.us/detection
+
+dynamic-dns.us
