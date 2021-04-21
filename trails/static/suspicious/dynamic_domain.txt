@@ -3262,3 +3262,7 @@ vitekivpddns.com
 # Reference: https://www.virustotal.com/gui/domain/sunellddns.com/detection
 
 sunellddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/wificam.org/relations
+
+wificam.org
