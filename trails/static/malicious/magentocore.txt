@@ -4392,6 +4392,7 @@ secure-conf.com
 
 # Reference: https://twitter.com/TeamDreier/status/1384818143156129792
 
+coupon-popup.net
 dns-servers-update.net
 
 # Generic
