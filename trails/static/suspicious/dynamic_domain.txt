@@ -3246,3 +3246,7 @@ liquorisquicker.net
 # Reference: https://samtechdns.com/reg.aspx
 
 samtechdns.com
+
+# Reference: https://www.virustotal.com/gui/domain/wboxddns.com/relations
+
+wboxddns.com
