@@ -3218,3 +3218,7 @@ godrejeyetrace.com
 # Reference: https://www.virustotal.com/gui/domain/4khdcamera.com/relations
 
 4khdcamera.com
+
+# Reference: https://www.virustotal.com/gui/domain/myrevolite.com/relations
+
+myrevolite.com
