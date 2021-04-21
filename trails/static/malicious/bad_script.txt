@@ -4491,6 +4491,11 @@ d27qdop2sa027t.cloudfront.net
 
 /3gvjdn0xhl3qk3191douym8b.php
 
+# Reference: https://twitter.com/reecdeep/status/1384844628478898181
+# Reference: https://app.any.run/tasks/d5ae94e7-f656-455c-a039-9ebf7f8ac9e5/
+
+/50b35103666b5c.php
+
 # Generic
 
 /js/altmanluggage.js
