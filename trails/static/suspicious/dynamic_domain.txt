@@ -3150,3 +3150,7 @@ dyndnsservices.com
 # Reference: https://www.virustotal.com/gui/domain/dynamic.domains/relations
 
 dynamic.domains
+
+# Reference: https://www.virustotal.com/gui/domain/upcam-ddns.de/detection
+
+upcam-ddns.de
