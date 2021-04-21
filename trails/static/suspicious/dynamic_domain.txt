@@ -3191,6 +3191,10 @@ dynddns.us
 
 myfreeip.me
 
+# Reference: https://www.virustotal.com/gui/domain/myfreeip.info/relations
+
+myfreeip.info
+
 # Reference: https://www.virustotal.com/gui/domain/contosso.com/relations
 
 contosso.com
