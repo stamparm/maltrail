@@ -3266,3 +3266,7 @@ sunellddns.com
 # Reference: https://www.virustotal.com/gui/domain/wificam.org/relations
 
 wificam.org
+
+# Reference: https://www.virustotal.com/gui/domain/edvrddns.com/relations
+
+edvrddns.com
