@@ -3186,3 +3186,7 @@ dynamic-dns.us
 # Reference: https://www.virustotal.com/gui/domain/dynddns.us/detection
 
 dynddns.us
+
+# Reference: https://www.virustotal.com/gui/domain/myfreeip.me/detection
+
+myfreeip.me
