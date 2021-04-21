@@ -3226,3 +3226,7 @@ myrevolite.com
 # Reference: https://www.virustotal.com/gui/domain/inoxdvr.com/relations
 
 inoxdvr.com
+
+# Reference: https://www.virustotal.com/gui/domain/mymeriva.com/relations
+
+mymeriva.com
