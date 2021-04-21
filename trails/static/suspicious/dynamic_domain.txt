@@ -3242,3 +3242,7 @@ imahillbilly.com
 # Reference: https://www.virustotal.com/gui/domain/liquorisquicker.net/relations
 
 liquorisquicker.net
+
+# Reference: https://samtechdns.com/reg.aspx
+
+samtechdns.com
