@@ -3254,3 +3254,7 @@ wboxddns.com
 # Reference: https://www.virustotal.com/gui/domain/vitekivpddns.com/relations
 
 vitekivpddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/sunellddns.com/detection
+
+sunellddns.com
