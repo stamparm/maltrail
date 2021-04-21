@@ -1694,6 +1694,10 @@ zerodiumsystem
 
 involuntary
 
+# Reference: https://twitter.com/xuy1202/status/1384910582780989444
+
+Moozilla
+
 # Misc
 
 information_schema
