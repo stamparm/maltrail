@@ -3174,3 +3174,7 @@ ddnsusa.com
 # Reference: https://www.virustotal.com/gui/domain/elineddns.com/relations
 
 elineddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/techproddns.com/relations
+
+techproddns.com
