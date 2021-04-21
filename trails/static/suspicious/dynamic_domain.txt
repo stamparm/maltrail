@@ -3206,3 +3206,7 @@ avrsecurity.info
 # Reference: https://www.virustotal.com/gui/domain/venusmountain.com/relations
 
 venusmountain.com
+
+# Reference: https://www.virustotal.com/gui/domain/avandns.com/detection
+
+avandns.com
