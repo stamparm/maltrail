@@ -3198,3 +3198,7 @@ contosso.com
 # Reference: https://www.virustotal.com/gui/domain/avrsecurity.info/relations
 
 avrsecurity.info
+
+# Reference: https://www.virustotal.com/gui/domain/416nvr.com/relations
+
+416nvr.com
