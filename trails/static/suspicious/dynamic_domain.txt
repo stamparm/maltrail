@@ -3238,3 +3238,7 @@ myclarevision.com
 # Reference: https://www.virustotal.com/gui/domain/imahillbilly.com/relations
 
 imahillbilly.com
+
+# Reference: https://www.virustotal.com/gui/domain/liquorisquicker.net/relations
+
+liquorisquicker.net
