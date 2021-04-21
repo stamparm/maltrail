@@ -3154,3 +3154,7 @@ dynamic.domains
 # Reference: https://www.virustotal.com/gui/domain/upcam-ddns.de/detection
 
 upcam-ddns.de
+
+# Reference: https://www.virustotal.com/gui/domain/sieraddns.com/detection
+
+sieraddns.com
