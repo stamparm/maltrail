@@ -398,3 +398,7 @@ leadboltmobile.net
 # Reference: https://www.virustotal.com/gui/file/fdac05660885c0875e6f807fb9e6a11afb6bde14e2cd5fd24f603c28b2cc3c1a/detection
 
 tchsrvce.com
+
+# Reference: https://www.virustotal.com/gui/domain/stephenpjones.com/relations
+
+stephenpjones.com
