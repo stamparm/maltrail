@@ -4400,6 +4400,11 @@ dns-servers-update.net
 
 ssl-center.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.148.120.226/relations
+
+js-cdn.host
+js-cdn.online
+
 # Generic
 
 /assets/lfg.js
