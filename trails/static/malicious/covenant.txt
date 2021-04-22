@@ -101,6 +101,23 @@ http://47.243.14.171
 47.243.14.171:443
 47.243.14.171:7443
 
+# Reference: https://twitter.com/TheDFIRReport/status/1384853172175392772
+# Reference: https://beta.shodan.io/host/172.105.65.243
+
+http://172.105.65.243
+172.105.65.243:22
+172.105.65.243:7443
+
+# Reference: https://twitter.com/TheDFIRReport/status/1384853172175392772
+# Reference: https://beta.shodan.io/host/45.147.228.146
+
+45.147.228.146:7443
+
+# Reference: https://twitter.com/TheDFIRReport/status/1384853172175392772
+# Reference: https://beta.shodan.io/host/51.210.110.104
+
+51.210.110.104:7443
+
 # Generic
 
 /covenantuser/
