@@ -4390,6 +4390,16 @@ secure-conf.com
 
 /google.analytics.b.js
 
+# Reference: https://twitter.com/TeamDreier/status/1384818143156129792
+
+coupon-popup.net
+dns-servers-update.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.86.98/detection
+# Reference: https://urlscan.io/result/420f0ac5-d7b4-4417-9985-ce325c4feeb4/
+
+ssl-center.com
+
 # Generic
 
 /assets/lfg.js
