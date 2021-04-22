@@ -4437,6 +4437,15 @@ trackr.website
 vnlyse.com
 yanalyics.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/96.126.117.191/relations
+
+cdn-aws.com
+clicktracking321.com
+google-analytics-premium.com
+fonts-community.com
+fonts-directory.com
+leadcap-js.com
+
 # Generic
 
 /assets/lfg.js
