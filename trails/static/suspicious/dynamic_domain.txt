@@ -3137,3 +3137,136 @@ ddns-only.xyz
 # Reference: https://www.virustotal.com/gui/domain/gnway.cc/relations
 
 gnway.cc
+
+# Reference: https://www.virustotal.com/gui/domain/dynddns.us/relations
+
+dynddns.us
+
+# Reference: https://www.virustotal.com/gui/domain/dyndnsservices.com/relations
+
+dyndnsservices.com
+
+# Reference: https://dynamic.domains/dynamic-dns/about/default.aspx
+# Reference: https://www.virustotal.com/gui/domain/dynamic.domains/relations
+
+dynamic.domains
+
+# Reference: https://www.virustotal.com/gui/domain/upcam-ddns.de/detection
+
+upcam-ddns.de
+
+# Reference: https://www.virustotal.com/gui/domain/sieraddns.com/detection
+
+sieraddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/telviewddns.com/detection
+
+telviewddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/secuitytronixddns.com/relations
+
+secuitytronixddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/ddnsusa.com/detection
+
+ddnsusa.com
+
+# Reference: https://www.virustotal.com/gui/domain/elineddns.com/relations
+
+elineddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/techproddns.com/relations
+
+techproddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/dynamic-dns.us/detection
+
+dynamic-dns.us
+
+# Reference: https://www.virustotal.com/gui/domain/dynddns.us/detection
+
+dynddns.us
+
+# Reference: https://www.virustotal.com/gui/domain/myfreeip.me/detection
+
+myfreeip.me
+
+# Reference: https://www.virustotal.com/gui/domain/myfreeip.info/relations
+
+myfreeip.info
+
+# Reference: https://www.virustotal.com/gui/domain/contosso.com/relations
+
+contosso.com
+
+# Reference: https://www.virustotal.com/gui/domain/avrsecurity.info/relations
+
+avrsecurity.info
+
+# Reference: https://www.virustotal.com/gui/domain/416nvr.com/relations
+
+416nvr.com
+
+# Reference: https://www.virustotal.com/gui/domain/venusmountain.com/relations
+
+venusmountain.com
+
+# Reference: https://www.virustotal.com/gui/domain/avandns.com/detection
+
+avandns.com
+
+# Reference: https://www.virustotal.com/gui/domain/godrejeyetrace.com/relations
+
+godrejeyetrace.com
+
+# Reference: https://www.virustotal.com/gui/domain/4khdcamera.com/relations
+
+4khdcamera.com
+
+# Reference: https://www.virustotal.com/gui/domain/myrevolite.com/relations
+
+myrevolite.com
+
+# Reference: https://www.virustotal.com/gui/domain/inoxdvr.com/relations
+
+inoxdvr.com
+
+# Reference: https://www.virustotal.com/gui/domain/mymeriva.com/relations
+
+mymeriva.com
+
+# Reference: https://www.virustotal.com/gui/domain/myclarevision.com/relations
+
+myclarevision.com
+
+# Reference: https://www.virustotal.com/gui/domain/imahillbilly.com/relations
+
+imahillbilly.com
+
+# Reference: https://www.virustotal.com/gui/domain/liquorisquicker.net/relations
+
+liquorisquicker.net
+
+# Reference: https://samtechdns.com/reg.aspx
+
+samtechdns.com
+
+# Reference: https://www.virustotal.com/gui/domain/wboxddns.com/relations
+
+wboxddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/vitekivpddns.com/relations
+
+vitekivpddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/sunellddns.com/detection
+
+sunellddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/wificam.org/relations
+
+wificam.org
+
+# Reference: https://www.virustotal.com/gui/domain/edvrddns.com/relations
+
+edvrddns.com
