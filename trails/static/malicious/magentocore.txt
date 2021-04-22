@@ -4407,6 +4407,36 @@ js-cdn.host
 js-cdn.online
 js-cdn.site
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.33.20.246/relations
+
+1001-font.com
+alexa-tracking.com
+ali-clicks.com
+analytics-website-services.com
+analytix.host
+cdn-hosted.com
+cdn-js-query.com
+code-scripts.com
+count-stats.com
+data-analytics.club
+dr-cdn.com
+glatrac.com
+goolgeapis.com
+jquery-custom-plugin.com
+js-cdn.com
+jscriptlibrary.org
+kissmetrics-analytics.com
+quikianalytics.site
+securemy-js.com
+staticjs-webui-library.com
+tagblock-analytics.com
+toolscript-js.com
+tracfb.com
+track-link.site
+trackr.website
+vnlyse.com
+yanalyics.com
+
 # Generic
 
 /assets/lfg.js
