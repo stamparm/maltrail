@@ -3270,3 +3270,7 @@ wificam.org
 # Reference: https://www.virustotal.com/gui/domain/edvrddns.com/relations
 
 edvrddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/googletestadminwin.com/relations
+
+googletestadminwin.com
