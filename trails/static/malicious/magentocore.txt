@@ -4405,6 +4405,7 @@ ssl-center.com
 # Reference: https://www.virustotal.com/gui/ip-address/45.61.139.93/relations
 # Reference: https://www.virustotal.com/gui/ip-address/61.164.109.218/relations
 # Reference: https://www.virustotal.com/gui/ip-address/67.205.167.220/relations
+# Reference: https://www.virustotal.com/gui/ip-address/44.227.238.106/relations
 
 js-cdn.club
 js-cdn.host
@@ -4412,6 +4413,7 @@ js-cdn.net
 js-cdn.online
 js-cdn.org
 js-cdn.site
+js-cdn.xyz
 
 # Reference: https://www.virustotal.com/gui/ip-address/45.33.20.246/relations
 
