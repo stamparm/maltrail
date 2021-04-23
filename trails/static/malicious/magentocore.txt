@@ -4460,6 +4460,10 @@ leadcap-js.com
 
 jquery-cdn.pw
 
+# Reference: https://www.virustotal.com/gui/ip-address/141.8.226.58/relations
+
+ddcdn.pw
+
 # Generic
 
 /assets/lfg.js
