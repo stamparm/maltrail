@@ -4406,12 +4406,14 @@ ssl-center.com
 # Reference: https://www.virustotal.com/gui/ip-address/61.164.109.218/relations
 # Reference: https://www.virustotal.com/gui/ip-address/67.205.167.220/relations
 # Reference: https://www.virustotal.com/gui/ip-address/44.227.238.106/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.53.168.6/relations
 
 js-cdn.club
 js-cdn.host
 js-cdn.net
 js-cdn.online
 js-cdn.org
+js-cdn.pw
 js-cdn.site
 js-cdn.xyz
 
@@ -4453,6 +4455,10 @@ google-analytics-premium.com
 fonts-community.com
 fonts-directory.com
 leadcap-js.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.53.168.6/relations
+
+jquery-cdn.pw
 
 # Generic
 
