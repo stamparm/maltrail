@@ -4400,6 +4400,7 @@ dns-servers-update.net
 
 ssl-center.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/135.181.34.206/relations
 # Reference: https://www.virustotal.com/gui/ip-address/45.148.120.226/relations
 # Reference: https://www.virustotal.com/gui/ip-address/45.61.139.93/relations
 # Reference: https://www.virustotal.com/gui/ip-address/61.164.109.218/relations
@@ -4409,6 +4410,7 @@ js-cdn.club
 js-cdn.host
 js-cdn.net
 js-cdn.online
+js-cdn.org
 js-cdn.site
 
 # Reference: https://www.virustotal.com/gui/ip-address/45.33.20.246/relations
