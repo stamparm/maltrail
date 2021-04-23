@@ -4409,9 +4409,11 @@ ssl-center.com
 # Reference: https://www.virustotal.com/gui/ip-address/185.53.168.6/relations
 # Reference: https://www.virustotal.com/gui/ip-address/178.63.30.117/relations
 # Reference: https://www.virustotal.com/gui/ip-address/27.124.42.69/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.248.102.2/relations
 
 js-cdn.club
 js-cdn.host
+js-cdn.info
 js-cdn.net
 js-cdn.online
 js-cdn.org
