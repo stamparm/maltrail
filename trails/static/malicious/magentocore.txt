@@ -4400,6 +4400,52 @@ dns-servers-update.net
 
 ssl-center.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.148.120.226/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.61.139.93/relations
+
+js-cdn.host
+js-cdn.online
+js-cdn.site
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.33.20.246/relations
+
+1001-font.com
+alexa-tracking.com
+ali-clicks.com
+analytics-website-services.com
+analytix.host
+cdn-hosted.com
+cdn-js-query.com
+code-scripts.com
+count-stats.com
+data-analytics.club
+dr-cdn.com
+glatrac.com
+goolgeapis.com
+jquery-custom-plugin.com
+js-cdn.com
+jscriptlibrary.org
+kissmetrics-analytics.com
+quikianalytics.site
+securemy-js.com
+staticjs-webui-library.com
+tagblock-analytics.com
+toolscript-js.com
+tracfb.com
+track-link.site
+trackr.website
+vnlyse.com
+yanalyics.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/96.126.117.191/relations
+
+cdn-aws.com
+clicktracking321.com
+google-analytics-premium.com
+fonts-community.com
+fonts-directory.com
+leadcap-js.com
+
 # Generic
 
 /assets/lfg.js
