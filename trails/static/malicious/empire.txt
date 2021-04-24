@@ -4,3 +4,11 @@
 # Reference: https://twitter.com/TheDFIRReport/status/1377568926197035010
 
 blackandwhitetshorts.net
+
+# Reference: https://twitter.com/TheDFIRReport/status/1385567840732946436
+# Reference: https://beta.shodan.io/host/154.202.59.229
+
+http://154.202.59.229
+154.202.59.229:10443
+154.202.59.229:22
+154.202.59.229:443
