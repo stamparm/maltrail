@@ -741,3 +741,9 @@ miningrigrentals.com
 95.26.150.131:58080
 pool.armornetwork.org
 pool2.armornetwork.org
+
+# Reference: https://blog.talosintelligence.com/2021/04/threat-roundup-0416-0423.html (# Win.Trojan.CoinMiner-9852807-1)
+# Reference: https://www.virustotal.com/gui/domain/herominers.com/relations
+
+168.119.11.231:10451
+herominers.com
