@@ -747,3 +747,10 @@ pool2.armornetwork.org
 
 168.119.11.231:10451
 herominers.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1385904261435887616
+
+miner.rocks
+minerrocks.com
+masari.miner.rocks
+sumokoin.minerrocks.com
