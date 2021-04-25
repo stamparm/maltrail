@@ -4513,6 +4513,10 @@ cloud-js.link
 js-cloud.xyz
 scripteleven.ru
 
+# Reference: https://www.virustotal.com/gui/ip-address/202.222.31.77/detection
+
+js-cloud.net
+
 # Generic
 
 /assets/lfg.js
