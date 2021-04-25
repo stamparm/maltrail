@@ -4463,6 +4463,7 @@ fonts-directory.com
 leadcap-js.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/106.187.48.151/relations
+# Reference: https://www.virustotal.com/gui/ip-address/148.72.213.55/relations
 # Reference: https://www.virustotal.com/gui/ip-address/162.243.186.224/relations
 # Reference: https://www.virustotal.com/gui/ip-address/185.12.12.191/relations
 # Reference: https://www.virustotal.com/gui/ip-address/185.53.168.6/relations
@@ -4473,6 +4474,13 @@ jquery-cdn.net
 jquery-cdn.org
 jquery-cdn.pw
 jquery-cdn.ru
+jquery-cdn.tk
+
+# Reference: https://www.virustotal.com/gui/ip-address/148.72.213.55/relations
+
+jquerys.ga
+jquerys.ml
+jquerys.tk
 
 # Reference: https://www.virustotal.com/gui/ip-address/141.8.226.58/relations
 
