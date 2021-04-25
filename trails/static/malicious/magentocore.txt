@@ -4400,12 +4400,28 @@ dns-servers-update.net
 
 ssl-center.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/135.181.34.206/relations
 # Reference: https://www.virustotal.com/gui/ip-address/45.148.120.226/relations
 # Reference: https://www.virustotal.com/gui/ip-address/45.61.139.93/relations
+# Reference: https://www.virustotal.com/gui/ip-address/61.164.109.218/relations
+# Reference: https://www.virustotal.com/gui/ip-address/67.205.167.220/relations
+# Reference: https://www.virustotal.com/gui/ip-address/44.227.238.106/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.53.168.6/relations
+# Reference: https://www.virustotal.com/gui/ip-address/178.63.30.117/relations
+# Reference: https://www.virustotal.com/gui/ip-address/27.124.42.69/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.248.102.2/relations
 
+js-cdn.club
 js-cdn.host
+js-cdn.info
+js-cdn.net
 js-cdn.online
+js-cdn.org
+js-cdn.pw
+js-cdn.ru
 js-cdn.site
+js-cdn.top
+js-cdn.xyz
 
 # Reference: https://www.virustotal.com/gui/ip-address/45.33.20.246/relations
 
@@ -4445,6 +4461,61 @@ google-analytics-premium.com
 fonts-community.com
 fonts-directory.com
 leadcap-js.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/106.187.48.151/relations
+# Reference: https://www.virustotal.com/gui/ip-address/148.72.213.55/relations
+# Reference: https://www.virustotal.com/gui/ip-address/162.243.186.224/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.12.12.191/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.53.168.6/relations
+# Reference: https://www.virustotal.com/gui/ip-address/217.12.202.82/relations
+# Reference: https://www.virustotal.com/gui/ip-address/83.220.168.154/relations
+
+jquery-cdn.info
+jquery-cdn.me
+jquery-cdn.net
+jquery-cdn.org
+jquery-cdn.pw
+jquery-cdn.ru
+jquery-cdn.tk
+
+# Reference: https://www.virustotal.com/gui/ip-address/148.72.213.55/relations
+
+jquerys.ga
+jquerys.ml
+jquerys.tk
+
+# Reference: https://www.virustotal.com/gui/ip-address/104.28.1.107/relations
+# Reference: https://www.virustotal.com/gui/ip-address/172.67.128.115/relations
+# Reference: https://www.virustotal.com/gui/ip-address/178.208.80.82/relations
+# Reference: https://www.virustotal.com/gui/ip-address/198.54.116.84/relations
+# Reference: https://www.virustotal.com/gui/ip-address/63.141.229.19/relations
+# Reference: https://www.virustotal.com/gui/ip-address/93.174.93.164/relations
+
+jquerys.info
+jquerys.net
+jquerys.org
+jquerys.ru
+jquerys.site
+jquerys.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/141.8.226.58/relations
+
+ddcdn.pw
+
+# Reference: https://www.virustotal.com/gui/ip-address/178.63.30.117/relations
+
+ml-js.com
+peretrax-js.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/217.12.202.82/relations
+
+cloud-js.link
+js-cloud.xyz
+scripteleven.ru
+
+# Reference: https://www.virustotal.com/gui/ip-address/202.222.31.77/detection
+
+js-cloud.net
 
 # Generic
 
