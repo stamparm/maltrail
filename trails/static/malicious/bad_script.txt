@@ -4500,6 +4500,13 @@ d27qdop2sa027t.cloudfront.net
 
 /50b35103666b5c.php
 
+# Reference: https://twitter.com/ShadowChasing1/status/1382869518830039041
+# Reference: https://twitter.com/ShadowChasing1/status/1382869522965667840
+# Reference: https://www.virustotal.com/gui/file/813c8b8b43be5a928a5cd841bea08d7d5453ab8a1196e3c81abd7a144027247b/detection
+# Reference: https://www.virustotal.com/gui/file/a140a4e60c699dcf110678fca8cfd259660d21c428256898a65f9d3f196b8c13/detection
+
+/Rumpwltop.php
+
 # Reference: https://twitter.com/wwp96/status/1385599004294135815
 # Reference: https://app.any.run/tasks/3612bf52-bf05-4b8a-bf1f-14314a89f50c/
 
