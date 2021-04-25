@@ -2713,3 +2713,8 @@ optimizepro.biz
 optimizepro.info
 optimizepro.org
 optimizerpro.co
+
+# Reference: https://www.virustotal.com/gui/domain/w.nanweng.cn/relations
+# Reference: https://www.virustotal.com/gui/file/40e61157113d86e9e8180ac17c2318c3c8215657a998656db471324d497614d3/detection
+
+w.nanweng.cn

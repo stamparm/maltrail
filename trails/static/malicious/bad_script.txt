@@ -4491,10 +4491,71 @@ d27qdop2sa027t.cloudfront.net
 
 /3gvjdn0xhl3qk3191douym8b.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1386185463262846983
+
+/i5whs7vo7eacn7is5xqqr8n5.php
+
 # Reference: https://twitter.com/reecdeep/status/1384844628478898181
 # Reference: https://app.any.run/tasks/d5ae94e7-f656-455c-a039-9ebf7f8ac9e5/
 
 /50b35103666b5c.php
+
+# Reference: https://twitter.com/ShadowChasing1/status/1382869518830039041
+# Reference: https://twitter.com/ShadowChasing1/status/1382869522965667840
+# Reference: https://www.virustotal.com/gui/file/813c8b8b43be5a928a5cd841bea08d7d5453ab8a1196e3c81abd7a144027247b/detection
+# Reference: https://www.virustotal.com/gui/file/a140a4e60c699dcf110678fca8cfd259660d21c428256898a65f9d3f196b8c13/detection
+
+/Rumpwltop.php
+
+# Reference: https://twitter.com/wwp96/status/1385599004294135815
+# Reference: https://app.any.run/tasks/3612bf52-bf05-4b8a-bf1f-14314a89f50c/
+
+/0Vw3HoA.php
+/9v0PVEF.php
+/BfwhQsS.php
+/CR7sTdk.php
+/EmbtJ0Q.php
+/GErg6Juscript.php
+/HXg53mR.php
+/I6pAfnc.php
+/Ju8BXdy.php
+/N0yq3xz.php
+/NbnGdvUscript.php
+/azrcmnltdt.php
+/byeSlhE.php
+/cHCTjbL.php
+/cankviuhag.php
+/cycqodnata.php
+/egodokcnyi.php
+/ekdolrisek.php
+/fO9RzJC.php
+/faghrgwmpd.php
+/fjwmmcyqux.php
+/g3wC826.php
+/gVfmOdN.php
+/hSqWuOr.php
+/haagjweayl.php
+/iQ39jUH.php
+/ixliwszrfm.php
+/kexiusxkht.php
+/l5rwiO0script.php
+/legzkktzsb.php
+/mxQsPYL.php
+/o045Yn9.php
+/oE6k32I.php
+/qpjmMGoscript.php
+/s9dOK5.php
+/tvwtmbzxgz.php
+/twiprlcpkv.php
+/u6MnC9x.php
+/v7S6F3rscript.php
+/vtkblqpdhs.php
+/vwltssqysa.php
+/wIb0VuG.php
+/xxtbmlngdy.php
+/ydlST42.php
+/zJarPL3script.php
+/zbbupptyol.php
 
 # Generic
 

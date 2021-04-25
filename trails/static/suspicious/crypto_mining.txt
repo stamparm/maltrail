@@ -741,3 +741,27 @@ miningrigrentals.com
 95.26.150.131:58080
 pool.armornetwork.org
 pool2.armornetwork.org
+
+# Reference: https://blog.talosintelligence.com/2021/04/threat-roundup-0416-0423.html (# Win.Trojan.CoinMiner-9852807-1)
+# Reference: https://www.virustotal.com/gui/domain/herominers.com/relations
+
+168.119.11.231:10451
+herominers.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1385904261435887616
+
+miner.rocks
+minerrocks.com
+masari.miner.rocks
+sumokoin.minerrocks.com
+
+# Reference: https://www.trendmicro.com/en_us/research/21/d/tor-based-botnet-malware-targets-linux-systems-abuses-cloud-management-tools.html (# Monero pools chapter)
+
+119.205.235.58:443
+119.205.235.58:8080
+136.243.90.99:443
+136.243.90.99:8080
+153.127.216.132:8080
+94.176.237.229:443
+94.176.237.229:80
+94.176.237.229:8080
