@@ -5116,14 +5116,6 @@ yototoo.com
 dynam1c.net
 dynam1c.run
 
-# Reference: https://twitter.com/kyleehmke/status/1341107219673341954
-# Reference: https://twitter.com/kyleehmke/status/1351617582340694025
-
-apexwebtech.com
-appsprovider.com
-globesoftwares.com
-securitysystemnews.com
-
 # Reference: https://www.virustotal.com/gui/domain/fulba.com/relations
 
 fulba.com

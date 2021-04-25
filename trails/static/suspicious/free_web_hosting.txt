@@ -457,3 +457,7 @@ great-site.net
 # Reference: https://www.virustotal.com/gui/domain/onlinewebshop.net/relations
 
 onlinewebshop.net
+
+# Reference: https://www.virustotal.com/gui/domain/medianewsonline.com/detection
+
+medianewsonline.com

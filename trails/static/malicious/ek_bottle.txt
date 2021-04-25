@@ -38,3 +38,7 @@ sortsoft.tk
 # Reference: https://twitter.com/nao_sec/status/1322885953640308736
 
 softbring.tk
+
+# Reference: https://twitter.com/nao_sec/status/1384065957585248266
+
+optsoft.tk
