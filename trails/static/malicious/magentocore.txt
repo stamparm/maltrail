@@ -4482,6 +4482,20 @@ jquerys.ga
 jquerys.ml
 jquerys.tk
 
+# Reference: https://www.virustotal.com/gui/ip-address/104.28.1.107/relations
+# Reference: https://www.virustotal.com/gui/ip-address/172.67.128.115/relations
+# Reference: https://www.virustotal.com/gui/ip-address/178.208.80.82/relations
+# Reference: https://www.virustotal.com/gui/ip-address/198.54.116.84/relations
+# Reference: https://www.virustotal.com/gui/ip-address/63.141.229.19/relations
+# Reference: https://www.virustotal.com/gui/ip-address/93.174.93.164/relations
+
+jquerys.info
+jquerys.net
+jquerys.org
+jquerys.ru
+jquerys.site
+jquerys.xyz
+
 # Reference: https://www.virustotal.com/gui/ip-address/141.8.226.58/relations
 
 ddcdn.pw
