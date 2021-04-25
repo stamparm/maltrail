@@ -4467,9 +4467,11 @@ leadcap-js.com
 # Reference: https://www.virustotal.com/gui/ip-address/162.243.186.224/relations
 # Reference: https://www.virustotal.com/gui/ip-address/185.12.12.191/relations
 # Reference: https://www.virustotal.com/gui/ip-address/185.53.168.6/relations
+# Reference: https://www.virustotal.com/gui/ip-address/217.12.202.82/relations
 # Reference: https://www.virustotal.com/gui/ip-address/83.220.168.154/relations
 
 jquery-cdn.info
+jquery-cdn.me
 jquery-cdn.net
 jquery-cdn.org
 jquery-cdn.pw
@@ -4504,6 +4506,12 @@ ddcdn.pw
 
 ml-js.com
 peretrax-js.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/217.12.202.82/relations
+
+cloud-js.link
+js-cloud.xyz
+scripteleven.ru
 
 # Generic
 
