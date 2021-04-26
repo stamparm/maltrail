@@ -2718,3 +2718,12 @@ optimizerpro.co
 # Reference: https://www.virustotal.com/gui/file/40e61157113d86e9e8180ac17c2318c3c8215657a998656db471324d497614d3/detection
 
 w.nanweng.cn
+
+# Reference: https://www.virustotal.com/gui/file/f0cfc1874776e43ea4c43e858a3642309486fd2fa1321f3c2f6d6a287ff0d4d3/detection
+# Reference: https://www.virustotal.com/gui/file/e0de3202387192ec9c076e547b912f54b29eca479a80af3e12fd52e63848a5dd/detection
+
+homestarzipset.net
+groupmodel.biz
+moodmodel.biz
+parentmodel.biz
+ringmynorth.biz
