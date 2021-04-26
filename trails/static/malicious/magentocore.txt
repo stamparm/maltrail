@@ -4519,6 +4519,10 @@ scripteleven.ru
 
 js-cloud.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.91.175.226/relations
+
+bootstrap-cdn.com
+
 # Generic
 
 /assets/lfg.js
