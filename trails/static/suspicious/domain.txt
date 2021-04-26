@@ -5221,3 +5221,12 @@ sakurafrp.com
 # Reference: https://www.virustotal.com/gui/domain/pktriot.net/relations
 
 pktriot.net
+
+# Reference: https://www.virustotal.com/gui/domain/googletestadminwin.com/relations
+
+googletestadminwin.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/67.215.4.123/relations
+# Reference: https://www.virustotal.com/gui/domain/tecktalk.org/relations
+
+tecktalk.org
