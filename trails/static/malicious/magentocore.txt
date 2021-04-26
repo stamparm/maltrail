@@ -3117,6 +3117,7 @@ googleapis-fonts.com
 # Reference: https://www.virustotal.com/gui/ip-address/80.249.148.133/relations
 # Reference: https://www.virustotal.com/gui/ip-address/82.148.30.191/relations
 # Reference: https://www.virustotal.com/gui/ip-address/82.148.31.102/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.148.31.214/relations
 # Reference: https://www.virustotal.com/gui/ip-address/84.38.180.233/relations
 # Reference: https://www.virustotal.com/gui/ip-address/84.38.180.84/relations
 # Reference: https://www.virustotal.com/gui/ip-address/84.38.183.160/relations
@@ -3140,6 +3141,7 @@ google-money.com
 google-payment.com
 google-query.com
 google-sale.com
+google-sanek.com
 google-smart.com
 google-standard.com
 google-taq.com
