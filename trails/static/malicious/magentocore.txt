@@ -4523,6 +4523,10 @@ js-cloud.net
 
 bootstrap-cdn.com
 
+# Reference: https://www.virustotal.com/gui/domain/cdn-magento.com/detection
+
+cdn-magento.com
+
 # Generic
 
 /assets/lfg.js
