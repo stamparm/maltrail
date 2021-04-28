@@ -4571,6 +4571,12 @@ sieglowfingoachap.ga
 /cgc-badge-v2/load.min.js
 /cgc-badge-v2/
 
+# Reference: https://github.com/hardenedlinux/hardenedlinux-zeek-script/blob/master/scripts/frameworks/intel/OSINT/CYBERCRiME-03-03-19.txt
+
+/Cm1WxCm/index.php
+/Cx1WxC1cC/index.php
+/ssllxxssll/bp/index.php
+
 # Generic
 
 /js/altmanluggage.js
