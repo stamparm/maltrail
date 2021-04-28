@@ -556,7 +556,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             return
 
                         if config.USE_HEURISTICS:
-                            match = re.search(r"\bX-Forwarded-For:\s*([0-9.]+)".encode(), packet, re.I)
+                            match = re.search(r"\b(CF-Connecting-IP|True-Client-IP|X-Forwarded-For):\s*([0-9.]+)".encode(), packet, re.I)
                             if match:
                                 src_ip = "%s,%s" % (src_ip, match.group(1))
 
