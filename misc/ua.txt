@@ -1702,6 +1702,7 @@ Moozilla
 
 4M5yC6u4stom5U8se3r
 MyCustomUser
+\d?M\d?y\d?C\d?u\d?s\d?t\d?o\d?m\d?U\d?s\d?e\d?r\d?
 
 # Misc
 
