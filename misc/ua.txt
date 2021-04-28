@@ -1698,6 +1698,11 @@ involuntary
 
 Moozilla
 
+# Reference: https://www.welivesecurity.com/2020/08/13/mekotio-these-arent-the-security-updates-youre-looking-for/
+
+4M5yC6u4stom5U8se3r
+MyCustomUser
+
 # Misc
 
 information_schema
