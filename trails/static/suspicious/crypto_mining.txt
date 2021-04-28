@@ -765,3 +765,22 @@ sumokoin.minerrocks.com
 94.176.237.229:443
 94.176.237.229:80
 94.176.237.229:8080
+
+# Reference: https://blog.netlab.360.com/wei-xie-kuai-xun-z0miner-zheng-zai-li-yong-elasticsearch-he-jenkins-lou-dong-da-si-chuan-bo/
+# Reference: https://www.virustotal.com/gui/domain/xmr-eu2.nanopool.org/relations
+
+149.202.42.174:14444
+151.80.144.188:14444
+198.251.88.21:14444
+213.32.74.157:14444
+5.196.26.96:14444
+51.15.55.100:14444
+51.15.55.162:14444
+51.15.67.17:14444
+51.255.34.118:14444
+51.255.34.79:14444
+51.255.34.80:14444
+79.137.82.70:14444
+92.222.10.59:14444
+92.222.180.118:14444
+xmr-eu2.nanopool.org
