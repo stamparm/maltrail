@@ -300,6 +300,9 @@ mobileokey-in.com
 /panel123/index.php
 /panel123/login.php
 /panel123/page.php
+/panel2/cp.php
+/panel3/file.php
+/panel3/gate.php
 /panel632541/admin.php
 /pnl/auth.php
 /pnl/login.php
