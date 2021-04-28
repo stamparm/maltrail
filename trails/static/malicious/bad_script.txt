@@ -4561,6 +4561,16 @@ d27qdop2sa027t.cloudfront.net
 /zJarPL3script.php
 /zbbupptyol.php
 
+# Reference: https://twitter.com/unmaskparasites/status/1387205583665647618
+
+monster.newaff.monster
+s3.amazonaws.com/cgc-badge-v2/common.js
+s3.amazonaws.com/cgc-badge-v2/load.min.js
+sieglowfingoachap.ga
+/cgc-badge-v2/common.js
+/cgc-badge-v2/load.min.js
+/cgc-badge-v2/
+
 # Generic
 
 /js/altmanluggage.js
