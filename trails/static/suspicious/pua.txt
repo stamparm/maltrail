@@ -2735,3 +2735,7 @@ dynainfo.info
 electronicdatabases.info
 passportinfo.info
 promotionalmaterial.info
+
+# Reference: https://www.virustotal.com/gui/domain/default.minefilter.com/relations
+
+default.minefilter.com
