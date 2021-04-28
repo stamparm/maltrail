@@ -90,15 +90,25 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
     class SSLThreadingServer(ThreadingServer):
         def __init__(self, server_address, pem, HandlerClass):
-            import OpenSSL  # python-openssl
+            if six.PY2:
+                import OpenSSL  # python-openssl
 
-            ThreadingServer.__init__(self, server_address, HandlerClass)
-            ctx = OpenSSL.SSL.Context(OpenSSL.SSL.TLSv1_2_METHOD)
-            ctx.use_privatekey_file(pem)
-            ctx.use_certificate_file(pem)
-            self.socket = OpenSSL.SSL.Connection(ctx, socket.socket(self.address_family, self.socket_type))
-            self.server_bind()
-            self.server_activate()
+                ThreadingServer.__init__(self, server_address, HandlerClass)
+                ctx = OpenSSL.SSL.Context(OpenSSL.SSL.TLSv1_2_METHOD)
+                ctx.use_privatekey_file(pem)
+                ctx.use_certificate_file(pem)
+                self.socket = OpenSSL.SSL.Connection(ctx, socket.socket(self.address_family, self.socket_type))
+                self.server_bind()
+                self.server_activate()
+            else:
+                import ssl
+
+                ThreadingServer.__init__(self, server_address, ReqHandler)
+                ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+                ctx.load_cert_chain(pem, pem)
+                self.socket = ctx.wrap_socket(socket.socket(self.address_family, self.socket_type), server_side=True)
+                self.server_bind()
+                self.server_activate()
 
         def shutdown_request(self, request):
             try:
