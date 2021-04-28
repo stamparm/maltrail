@@ -287,6 +287,17 @@ mobileokey-in.com
 /jujubiadmin/
 /logz/auth.php
 /logz/login.php
+/Panel/panel/admin.php
+/Panel1/panel/admin.php
+/Panel2/panel/admin.php
+/Panel3/panel/admin.php
+/Panel4/panel/admin.php
+/Panel5/panel/admin.php
+/Panel6/panel/admin.php
+/Panel7/panel/admin.php
+/Panel8/panel/admin.php
+/Panel9/panel/admin.php
+/Panel10/panel/admin.php
 /Panel/callback.php
 /panel/gate.php
 /Panel/index.php
@@ -300,6 +311,9 @@ mobileokey-in.com
 /panel123/index.php
 /panel123/login.php
 /panel123/page.php
+/panel2/cp.php
+/panel3/file.php
+/panel3/gate.php
 /panel632541/admin.php
 /pnl/auth.php
 /pnl/login.php

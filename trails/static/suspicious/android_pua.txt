@@ -402,3 +402,7 @@ tchsrvce.com
 # Reference: https://www.virustotal.com/gui/domain/stephenpjones.com/relations
 
 stephenpjones.com
+
+# Reference: https://www.virustotal.com/gui/domain/stat.appioapp.com/relations
+
+stat.appioapp.com

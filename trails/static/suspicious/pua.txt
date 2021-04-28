@@ -2727,3 +2727,15 @@ groupmodel.biz
 moodmodel.biz
 parentmodel.biz
 ringmynorth.biz
+
+# Reference: https://www.virustotal.com/gui/file/956d2c62112e5d31e9b51c7ecefe07f307c4067f8e499dfdf2fbb86838f53e43/detection
+
+drivinfosproduits.info
+dynainfo.info
+electronicdatabases.info
+passportinfo.info
+promotionalmaterial.info
+
+# Reference: https://www.virustotal.com/gui/domain/default.minefilter.com/relations
+
+default.minefilter.com

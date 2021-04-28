@@ -2429,6 +2429,8 @@ gocgletagmanager.com
 authcrize.net
 gcogle-analytics.com
 gocgle-analytics.net
+googlo-analytics.com
+googlo-analytics.net
 gooqle-analytics.com
 gooqle-analytics.net
 secure-authorize.net

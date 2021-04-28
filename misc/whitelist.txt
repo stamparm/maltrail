@@ -3226,3 +3226,7 @@ ipnoise.now.im
 # Reference: https://github.com/stamparm/maltrail/issues/13674
 
 wordbot.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/siem.su/relations
+
+siem.su

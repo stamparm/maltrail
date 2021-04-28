@@ -5230,3 +5230,7 @@ googletestadminwin.com
 # Reference: https://www.virustotal.com/gui/domain/tecktalk.org/relations
 
 tecktalk.org
+
+# Reference: https://www.virustotal.com/gui/domain/mscode.ml/detection
+
+mscode.ml
