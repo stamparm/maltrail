@@ -4529,6 +4529,10 @@ bootstrap-cdn.com
 
 cdn-magento.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/167.99.163.243/relations
+
+ssl-google.com
+
 # Generic
 
 /assets/lfg.js
