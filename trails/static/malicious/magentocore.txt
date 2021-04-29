@@ -4533,6 +4533,10 @@ cdn-magento.com
 
 ssl-google.com
 
+# Reference: https://www.virustotal.com/gui/domain/ssl-facebook.com/relations
+
+ssl-facebook.com
+
 # Generic
 
 /assets/lfg.js
