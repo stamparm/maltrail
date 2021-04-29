@@ -4537,6 +4537,10 @@ ssl-google.com
 
 ssl-facebook.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/50.63.51.92/relations
+
+ssl-cloud.com
+
 # Generic
 
 /assets/lfg.js
