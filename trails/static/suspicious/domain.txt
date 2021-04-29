@@ -5238,3 +5238,7 @@ mscode.ml
 # Reference: https://www.virustotal.com/gui/domain/ddnsnet.ga/relations
 
 ddnsnet.ga
+
+# Reference: https://www.virustotal.com/gui/domain/myserverhosts.com/relations
+
+myserverhosts.com
