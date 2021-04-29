@@ -4533,7 +4533,7 @@ cdn-magento.com
 
 ssl-google.com
 
-# Reference: https://www.virustotal.com/gui/domain/ssl-facebook.com/relations
+# Reference: https://www.virustotal.com/gui/ip-address/34.102.136.180/relations
 
 ssl-facebook.com
 
