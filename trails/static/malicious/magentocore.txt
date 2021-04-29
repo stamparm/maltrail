@@ -4535,6 +4535,7 @@ ssl-google.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/34.102.136.180/relations
 
+googlefi.info
 ssl-facebook.com
 tatteredscript.com
 
