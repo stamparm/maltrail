@@ -4585,6 +4585,10 @@ sieglowfingoachap.ga
 
 /6034003x100.js
 
+# Reference: https://twitter.com/ShadowChasing1/status/1387602989033017346
+
+/HBankers_Latest.hta
+
 # Generic
 
 /js/altmanluggage.js
