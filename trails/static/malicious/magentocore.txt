@@ -4545,6 +4545,10 @@ ssl-cloud.com
 
 ssl-analytics.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/192.64.119.207/detection
+
+ssl-aws.com
+
 # Generic
 
 /assets/lfg.js
