@@ -4541,6 +4541,10 @@ ssl-facebook.com
 
 ssl-cloud.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.141.25.37/relations
+
+ssl-analytics.com
+
 # Generic
 
 /assets/lfg.js
