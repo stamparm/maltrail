@@ -298,6 +298,7 @@ mobileokey-in.com
 /Panel8/panel/admin.php
 /Panel9/panel/admin.php
 /Panel10/panel/admin.php
+/Panel/bot.php
 /Panel/callback.php
 /panel/gate.php
 /Panel/index.php
