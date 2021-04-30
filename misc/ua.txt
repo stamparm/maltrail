@@ -1704,6 +1704,19 @@ Moozilla
 MyCustomUser
 \d?M\d?y\d?C\d?u\d?s\d?t\d?o\d?m\d?U\d?s\d?e\d?r\d?
 
+# Reference: https://www.lacework.com/sysrv-hello-expands-infrastructure/
+
+cve_2017_11610
+cve_2017_12149
+cve_2017_5638
+cve_2017_9841
+cve_2019_0193
+cve_2019_11581
+cve_2019_3396
+cve_2019_7238
+cve_2020_14882
+cve_2021_3129
+
 # Misc
 
 information_schema
