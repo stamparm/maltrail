@@ -4551,6 +4551,14 @@ ssl-analytics.com
 
 ssl-aws.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/37.120.206.98/relations
+# Reference: https://www.virustotal.com/gui/ip-address/91.245.255.10/relations
+
+fontawesome.dev
+g-metrics.me
+jquerys.me
+ooolll.me
+
 # Generic
 
 /assets/lfg.js
