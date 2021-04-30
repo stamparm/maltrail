@@ -770,6 +770,7 @@ sumokoin.minerrocks.com
 # Reference: https://www.virustotal.com/gui/domain/xmr-eu2.nanopool.org/relations
 # Reference: https://www.virustotal.com/gui/file/506d0ed05c5334cf4461380123eab85e46398220ed82386745f3d8ef3339adf9/detection
 # Reference: https://www.virustotal.com/gui/file/01453d9e9836474f22700a97b77c3e5a2c418a3474877d62467fe65ac2cf766e/detection
+# Reference: https://www.virustotal.com/gui/file/2e5c3f033990ce39eb6c50160a60256accd2d54550a071394d21a88cc089a134/detection
 
 149.202.42.174:14444
 151.80.144.188:14444
@@ -779,6 +780,7 @@ sumokoin.minerrocks.com
 5.196.26.96:14444
 51.15.55.100:14444
 51.15.55.162:14444
+51.15.58.224:14444
 51.15.67.17:14444
 51.15.69.136:14444
 51.255.34.118:14444
