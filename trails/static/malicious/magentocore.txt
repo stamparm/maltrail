@@ -4559,6 +4559,10 @@ g-metrics.me
 jquerys.me
 ooolll.me
 
+# Reference: https://www.virustotal.com/gui/ip-address/64.70.19.203/relations
+
+jquerys.ws
+
 # Generic
 
 /assets/lfg.js
