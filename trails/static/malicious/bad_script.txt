@@ -4589,6 +4589,11 @@ sieglowfingoachap.ga
 
 /HBankers_Latest.hta
 
+# Reference: https://www.virustotal.com/gui/file/a8d4bfcf4a966ac593f31cf8fe82b8f133034066859acb8bb54fc19577b35d14/detection
+# Reference: https://github.com/stamparm/maltrail/pull/16278/commits/59ae491e0c6aa664c82ac0c3be8129ee7756ba4f
+
+/avBypass.php
+
 # Generic
 
 /js/altmanluggage.js
