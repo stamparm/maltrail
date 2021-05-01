@@ -4499,6 +4499,10 @@ d27qdop2sa027t.cloudfront.net
 
 /0s2jblrpnt7n31k24jz81u56.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1387635013471117312
+
+/v6pywfv5ldc5l39j8lpva5o0.php
+
 # Reference: https://twitter.com/reecdeep/status/1384844628478898181
 # Reference: https://app.any.run/tasks/d5ae94e7-f656-455c-a039-9ebf7f8ac9e5/
 
@@ -4576,6 +4580,19 @@ sieglowfingoachap.ga
 /Cm1WxCm/index.php
 /Cx1WxC1cC/index.php
 /ssllxxssll/bp/index.php
+
+# Reference: https://twitter.com/xuy1202/status/1387414908199866369
+
+/6034003x100.js
+
+# Reference: https://twitter.com/ShadowChasing1/status/1387602989033017346
+
+/HBankers_Latest.hta
+
+# Reference: https://www.virustotal.com/gui/file/a8d4bfcf4a966ac593f31cf8fe82b8f133034066859acb8bb54fc19577b35d14/detection
+# Reference: https://github.com/stamparm/maltrail/pull/16278/commits/59ae491e0c6aa664c82ac0c3be8129ee7756ba4f
+
+/avBypass.php
 
 # Generic
 
