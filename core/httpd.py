@@ -91,10 +91,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
     class SSLThreadingServer(ThreadingServer):
         def __init__(self, server_address, pem, HandlerClass):
             if six.PY2:
-                import OpenSSL  # python-openssl
+                import OpenSSL  # pyopenssl
 
                 ThreadingServer.__init__(self, server_address, HandlerClass)
-                ctx = OpenSSL.SSL.Context(OpenSSL.SSL.TLSv1_2_METHOD)
+                for method in ("TLSv1_2_METHOD", "TLSv1_1_METHOD", "TLSv1_METHOD", "TLS_METHOD", "SSLv23_METHOD", "SSLv2_METHOD"):
+                    if hasattr(OpenSSL.SSL, method):
+                        ctx = OpenSSL.SSL.Context(getattr(OpenSSL.SSL, method))
+                        break
                 ctx.use_privatekey_file(pem)
                 ctx.use_certificate_file(pem)
                 self.socket = OpenSSL.SSL.Connection(ctx, socket.socket(self.address_family, self.socket_type))

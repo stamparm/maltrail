@@ -59,7 +59,7 @@ def main():
     if options.debug:
         config.SHOW_DEBUG = True
 
-    if config.USE_SSL:
+    if six.PY2 and config.USE_SSL:
         try:
             __import__("OpenSSL")
         except ImportError:
