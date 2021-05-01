@@ -4529,6 +4529,40 @@ bootstrap-cdn.com
 
 cdn-magento.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/167.99.163.243/relations
+
+ssl-google.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/34.102.136.180/relations
+
+googlefi.info
+ssl-facebook.com
+tatteredscript.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/50.63.51.92/relations
+
+ssl-cloud.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.141.25.37/relations
+
+ssl-analytics.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/192.64.119.207/detection
+
+ssl-aws.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/37.120.206.98/relations
+# Reference: https://www.virustotal.com/gui/ip-address/91.245.255.10/relations
+
+fontawesome.dev
+g-metrics.me
+jquerys.me
+ooolll.me
+
+# Reference: https://www.virustotal.com/gui/ip-address/64.70.19.203/relations
+
+jquerys.ws
+
 # Generic
 
 /assets/lfg.js
