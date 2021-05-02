@@ -321,6 +321,7 @@ mobileokey-in.com
 /Panel/Web-Panel/
 /PowerPanel/
 /slim/panel/
+/Web%20Panel/upload/
 /webpanel/auth.php
 /webpanel/api.php
 /webpanel/login.php
