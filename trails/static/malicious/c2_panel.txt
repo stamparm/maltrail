@@ -283,6 +283,7 @@ mobileokey-in.com
 /botpanel/
 /bot/Panel/
 /cgi%20bin/Panel/
+/Formgrab%20Access%20Panel/
 /FuckYouMother/panel/
 /jujubiadmin/
 /logz/auth.php
