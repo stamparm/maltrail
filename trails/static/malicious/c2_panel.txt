@@ -281,6 +281,7 @@ mobileokey-in.com
 /admin_123/page.php
 /administrator/he1p/
 /bhadmin.php
+/bhadminb.php
 /botpanel/
 /bot/Panel/
 /C24_Panel/
