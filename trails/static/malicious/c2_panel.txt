@@ -280,6 +280,7 @@ mobileokey-in.com
 /admin_123/login.php
 /admin_123/page.php
 /administrator/he1p/
+/bhadmin.php
 /botpanel/
 /bot/Panel/
 /cgi%20bin/Panel/
