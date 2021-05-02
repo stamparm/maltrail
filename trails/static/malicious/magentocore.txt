@@ -4563,6 +4563,10 @@ ooolll.me
 
 jquerys.ws
 
+# Reference: https://www.virustotal.com/gui/ip-address/95.216.161.60/detection
+
+ssl-cloud.me
+
 # Generic
 
 /assets/lfg.js
