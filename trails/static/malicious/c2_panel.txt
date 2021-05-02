@@ -289,6 +289,7 @@ mobileokey-in.com
 /jujubiadmin/
 /logz/auth.php
 /logz/login.php
+/nd081112/panel.php
 /Panel/panel/admin.php
 /Panel1/panel/admin.php
 /Panel2/panel/admin.php
