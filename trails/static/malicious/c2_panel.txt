@@ -309,6 +309,12 @@ mobileokey-in.com
 /logz/auth.php
 /logz/login.php
 /nd081112/panel.php
+/panel/?admin
+/panel/?auth
+/panel/?callbak
+/panel/?gate
+/panel/?index
+/panel/?login
 /Panel/panel/admin.php
 /Panel1/panel/admin.php
 /Panel2/panel/admin.php
