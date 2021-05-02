@@ -319,6 +319,7 @@ mobileokey-in.com
 /panel632541/admin.php
 /pnl/auth.php
 /pnl/login.php
+/_panelpriv/
 /Panel/Web-Panel/
 /PowerPanel/
 /slim/panel/
