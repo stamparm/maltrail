@@ -282,6 +282,14 @@ mobileokey-in.com
 /administrator/he1p/
 /bhadmin.php
 /bhadminb.php
+/botnet/admin.php
+/botnet/api.php
+/botnet/auth.php
+/botnet/gate.php
+/botnet/index.php
+/botnet/login.php
+/botnet/page.php
+/botnet/panel.php
 /botpanel/
 /bot/Panel/
 /C24_Panel/
