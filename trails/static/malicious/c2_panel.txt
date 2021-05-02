@@ -283,6 +283,7 @@ mobileokey-in.com
 /bhadmin.php
 /botpanel/
 /bot/Panel/
+/C24_Panel/
 /cgi%20bin/Panel/
 /Formgrab%20Access%20Panel/
 /FuckYouMother/panel/
