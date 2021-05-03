@@ -2739,3 +2739,15 @@ promotionalmaterial.info
 # Reference: https://www.virustotal.com/gui/domain/default.minefilter.com/relations
 
 default.minefilter.com
+
+# Reference: https://www.virustotal.com/gui/file/978e78b794216973d296980fbbb8de127207413f886d1d9f3de92bcf0f1c0423/detection
+
+badolina.com
+grbit.link
+ijnewhb.com
+stuffpicks.com
+madmax.stuffpicks.com
+stats.stuffpicks.com
+stats.ijnewhb.com
+static.badolina.com
+static.grbit.link
