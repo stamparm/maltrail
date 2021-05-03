@@ -4594,6 +4594,13 @@ sieglowfingoachap.ga
 
 /avBypass.php
 
+# Reference: https://github.com/hardenedlinux/hardenedlinux-zeek-script/blob/master/scripts/frameworks/intel/OSINT/CYBERCRiME-03-03-19.txt
+
+/bmfoaqdzhuclgqgreudq9.php
+/dump_grabber.php
+/hf3yh4687df.php
+/staaaaaats.php
+
 # Generic
 
 /js/altmanluggage.js
