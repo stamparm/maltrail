@@ -4567,6 +4567,10 @@ jquerys.ws
 
 ssl-cloud.me
 
+# Reference: https://twitter.com/josh_larsen/status/1388892152680288262
+
+evilcdn.com
+
 # Generic
 
 /assets/lfg.js
