@@ -5242,3 +5242,7 @@ ddnsnet.ga
 # Reference: https://www.virustotal.com/gui/domain/myserverhosts.com/relations
 
 myserverhosts.com
+
+# Reference: https://www.virustotal.com/gui/domain/vv.si/relations
+
+.vv.si
