@@ -4601,6 +4601,11 @@ sieglowfingoachap.ga
 /hf3yh4687df.php
 /staaaaaats.php
 
+# Reference: https://www.virustotal.com/gui/file/a49f23aac652d63d1529338a12b3ba424d0b4eab637af8ffa7d9e557fb441a37/detection
+
+/mfbjhth8g4sfmssfgeq/dkhd94kz.php
+/dkhd94kz.php
+
 # Generic
 
 /js/altmanluggage.js
