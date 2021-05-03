@@ -4611,6 +4611,36 @@ sieglowfingoachap.ga
 xn--80ak6aa92e.com
 g1thubassets.com
 
+# Reference: https://twitter.com/James_inthe_box/status/1389238006398164997
+
+/0CdHOfB6.php
+/0YLkHHgkr5e5GkS.php
+/AQlZNLOYLB.php
+/Cyry48Yoz8z6.php
+/FF006npc0jeMf6.php
+/GHT1XGSWJ.php
+/KdKg0tl6lF5F3Fa.php
+/OoIF23ZyfjmfI8.php
+/Q8i4tw3Hw2oWo6V.php
+/Rg8lDv4cJXWWaz.php
+/S0kpWspb.php
+/XKBRBS0vQa.php
+/acDQfS5Xw7.php
+/bhM6o0If.php
+/goD5dPTcC.php
+/i2zz9YbX54.php
+/i5an1VBykIH.php
+/mQ8HReIBcDnSG.php
+/o5ATDDB7Ib8FbHT.php
+/qtJJKheJ4uX1p.php
+/r4brQXPL3tc6OZ.php
+/rQn6mD3r.php
+/t0vy3Ks7CM8QR.php
+/x7eS3Bkgfiv7sN.php
+/xOykYWEbDK4zqD.php
+/xZ7MnwtJIAkN5hy.php
+/zDz0PTXDToNLA.php
+
 # Generic
 
 /js/altmanluggage.js
