@@ -272,6 +272,12 @@ mobileokey-in.com
 
 /niggab-x/panel/
 
+# Reference: https://github.com/hardenedlinux/hardenedlinux-zeek-script/blob/master/scripts/frameworks/intel/OSINT/CYBERCRiME-03-03-19.txt
+# Reference: https://www.virustotal.com/gui/file/a49f23aac652d63d1529338a12b3ba424d0b4eab637af8ffa7d9e557fb441a37/detection
+
+/KJdjhUhf84Nfhewfndg/admin.php
+/mfbjhth8g4sfmssfgeq/admin.php
+
 # Generic
 
 /admin_123/auth.php
