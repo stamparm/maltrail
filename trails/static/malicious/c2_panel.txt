@@ -357,6 +357,12 @@ mobileokey-in.com
 /panelphp/index.php
 /panelphp/login.php
 /paneltwotwo/
+/panl/admin.php
+/panl/auth.php
+/panl/callback.php
+/panl/gate.php
+/panl/index.php
+/panl/login.php
 /pnl/auth.php
 /pnl/login.php
 /_panelpriv/
