@@ -1627,6 +1627,10 @@ ASUS2JS
 
 MASAJS
 
+# Reference: https://twitter.com/seguridadyredes/status/1389477355228389385
+
+MAGWJS
+
 # Reference: https://www.virustotal.com/gui/file/092fed4da898c2cd0398f75620a430dd4188823384bf8409bef947b2c6aeaf27/detection
 
 \AENGB\Z
