@@ -4735,6 +4735,10 @@ yttompthree.com
 
 /0b03976abf4fd3.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1389522450145218561
+
+/6widk071or85ab5fx3n9i0kdra.php
+
 # Generic
 
 /js/altmanluggage.js
