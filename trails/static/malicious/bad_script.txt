@@ -4739,6 +4739,10 @@ yttompthree.com
 
 /6widk071or85ab5fx3n9i0kdra.php
 
+# Reference: https://unit42.paloaltonetworks.com/proactive-detector/
+
+/ghose123354/next.php
+
 # Generic
 
 /js/altmanluggage.js
