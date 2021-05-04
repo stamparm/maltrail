@@ -4571,6 +4571,17 @@ ssl-cloud.me
 
 evilcdn.com
 
+# Reference: https://twitter.com/virusbtn/status/1387795316682940421
+# Reference: https://www.trendmicro.com/en_us/research/21/d/water-pamola-attacked-online-shops-via-malicious-orders.html
+# Reference: https://documents.trendmicro.com/assets/Appendix_Water-Pamola-Attacked-Online-Shops-Via-Malicious-Orders.pdf
+
+77i.co
+auth1html.site
+basic-authentication.live
+cloudlstorage.com
+googleoapis.com
+xf6.site
+
 # Generic
 
 /assets/lfg.js
