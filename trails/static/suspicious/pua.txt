@@ -2763,3 +2763,8 @@ hobbytoypark.com
 jemstutoring.com
 krk13pearland.com
 theav9.xyz
+
+# Reference: https://www.virustotal.com/gui/file/6ed0baeb39fcd8d4ae9e5b578588b18985c4c9fe2cdd188918daa01b5f2e45cb/detection
+
+categic.com
+cathogen.com
