@@ -415,3 +415,8 @@ m.96u.com
 
 admarvel.link
 cdn.admarvel.link
+
+# Reference: https://www.virustotal.com/gui/file/764ccf8e1a0b9296e779d305c4cbd670956796a25822775e0bd3558bc82de1f0/detection
+
+appodeal.link
+ad.appodeal.link
