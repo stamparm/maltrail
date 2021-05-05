@@ -2751,3 +2751,15 @@ stats.stuffpicks.com
 stats.ijnewhb.com
 static.badolina.com
 static.grbit.link
+
+# Reference: https://unit42.paloaltonetworks.com/proactive-detector/
+
+69av19.xyz
+99s13.xyz
+cc222.com
+fs10.xyz
+hfcclixb.xyz
+hobbytoypark.com
+jemstutoring.com
+krk13pearland.com
+theav9.xyz
