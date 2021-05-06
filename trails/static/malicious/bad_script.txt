@@ -4503,6 +4503,10 @@ d27qdop2sa027t.cloudfront.net
 
 /v6pywfv5ldc5l39j8lpva5o0.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1390171728584839175
+
+/gc5dxi0jayumpytlwniae4g1.php
+
 # Reference: https://twitter.com/reecdeep/status/1384844628478898181
 # Reference: https://app.any.run/tasks/d5ae94e7-f656-455c-a039-9ebf7f8ac9e5/
 
@@ -4620,6 +4624,7 @@ g1thubassets.com
 /FF006npc0jeMf6.php
 /GHT1XGSWJ.php
 /KdKg0tl6lF5F3Fa.php
+/KR4c0Bk3vlQpI.php
 /OoIF23ZyfjmfI8.php
 /Q8i4tw3Hw2oWo6V.php
 /Rg8lDv4cJXWWaz.php
@@ -4742,6 +4747,11 @@ yttompthree.com
 # Reference: https://unit42.paloaltonetworks.com/proactive-detector/
 
 /ghose123354/next.php
+
+# Reference: https://twitter.com/ESETresearch/status/1390263927859208193
+# Reference: https://twitter.com/ESETresearch/status/1390263930833063938
+
+/LOADER_AQUI.php
 
 # Generic
 
