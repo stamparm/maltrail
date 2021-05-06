@@ -791,3 +791,8 @@ sumokoin.minerrocks.com
 92.222.180.118:14444
 xmr-eu1.nanopool.org
 xmr-eu2.nanopool.org
+
+# Reference: https://www.virustotal.com/gui/file/d958cecf2197999b603b38cc136be8374fd108047be8c8d080b659c46d693cdf/behavior/C2AE
+
+172.94.88.173:5501
+49.12.80.40:45700
