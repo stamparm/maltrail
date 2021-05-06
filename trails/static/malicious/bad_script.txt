@@ -4503,6 +4503,10 @@ d27qdop2sa027t.cloudfront.net
 
 /v6pywfv5ldc5l39j8lpva5o0.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1390171728584839175
+
+/gc5dxi0jayumpytlwniae4g1.php
+
 # Reference: https://twitter.com/reecdeep/status/1384844628478898181
 # Reference: https://app.any.run/tasks/d5ae94e7-f656-455c-a039-9ebf7f8ac9e5/
 
