@@ -420,3 +420,7 @@ cdn.admarvel.link
 
 appodeal.link
 ad.appodeal.link
+
+# Reference: https://www.virustotal.com/gui/domain/yingshi.ml/relations
+
+yingshi.ml
