@@ -410,3 +410,17 @@ stat.appioapp.com
 # Reference: https://www.virustotal.com/gui/domain/m.96u.com/relations
 
 m.96u.com
+
+# Reference: https://www.virustotal.com/gui/file/8d54bbb91ea8f86d5de6de0644af7ac0c18ebef49bfa285a8a80c57e1a958c78/detection
+
+admarvel.link
+cdn.admarvel.link
+
+# Reference: https://www.virustotal.com/gui/file/764ccf8e1a0b9296e779d305c4cbd670956796a25822775e0bd3558bc82de1f0/detection
+
+appodeal.link
+ad.appodeal.link
+
+# Reference: https://www.virustotal.com/gui/domain/yingshi.ml/relations
+
+yingshi.ml
