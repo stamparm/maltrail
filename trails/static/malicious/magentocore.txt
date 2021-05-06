@@ -4582,6 +4582,10 @@ cloudlstorage.com
 googleoapis.com
 xf6.site
 
+# Reference: https://twitter.com/unmaskparasites/status/1390027415615795200
+
+renokonnect.com/stats/js/jcrop/jcrop.min.js
+
 # Generic
 
 /assets/lfg.js
