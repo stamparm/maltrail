@@ -143,6 +143,19 @@ http://35.211.206.132
 35.211.206.132:443
 35.211.206.132:7443
 
+# Reference: https://twitter.com/TheDFIRReport/status/1389595672635183109
+# Reference: https://beta.shodan.io/host/185.186.244.84
+
+http://185.186.244.84
+185.186.244.84:22
+185.186.244.84:7443
+
+# Reference: https://twitter.com/TheDFIRReport/status/1389595672635183109
+# Reference: https://beta.shodan.io/host/185.206.144.192
+
+http://185.206.144.192
+185.206.144.192:22
+
 # Generic
 
 /covenantuser/
