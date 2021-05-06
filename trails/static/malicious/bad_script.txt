@@ -4748,6 +4748,11 @@ yttompthree.com
 
 /ghose123354/next.php
 
+# Reference: https://twitter.com/ESETresearch/status/1390263927859208193
+# Reference: https://twitter.com/ESETresearch/status/1390263930833063938
+
+/LOADER_AQUI.php
+
 # Generic
 
 /js/altmanluggage.js
