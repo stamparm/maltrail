@@ -156,6 +156,14 @@ http://185.186.244.84
 http://185.206.144.192
 185.206.144.192:22
 
+# Reference: https://twitter.com/TheDFIRReport/status/1390652638513926144
+# Reference: https://beta.shodan.io/host/195.161.62.228
+
+http://195.161.62.228
+195.161.62.228:22
+195.161.62.228:7443
+195.161.62.228:8834
+
 # Generic
 
 /covenantuser/
