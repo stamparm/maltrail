@@ -4755,6 +4755,11 @@ yttompthree.com
 
 /LOADER_AQUI.php
 
+# Reference: https://twitter.com/James_inthe_box/status/1390672589102534668
+# Reference: https://twitter.com/James_inthe_box/status/1390679565685563396
+
+/qxEJ4XFyEF.php
+
 # Generic
 
 /js/altmanluggage.js
