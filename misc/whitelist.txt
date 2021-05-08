@@ -3233,3 +3233,7 @@ wordbot.xyz
 # Reference: https://www.virustotal.com/gui/domain/siem.su/relations
 
 siem.su
+
+# Reference: https://www.virustotal.com/gui/domain/iptools.su/relations
+
+iptools.su
