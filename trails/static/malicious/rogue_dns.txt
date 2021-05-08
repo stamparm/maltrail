@@ -516,3 +516,9 @@ resolve.interland.com
 185.192.111.210:53
 185.201.47.42:53
 37.59.58.122:53
+
+# Reference: https://twitter.com/david_jursa/status/1391001390642761729
+# Reference: https://github.com/stamparm/maltrail/pull/16502
+
+54.39.11.209:53
+92.205.27.135:53
