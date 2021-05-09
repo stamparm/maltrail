@@ -4586,6 +4586,13 @@ xf6.site
 
 renokonnect.com/stats/js/jcrop/jcrop.min.js
 
+# Reference: https://www.circleid.com/posts/20210506-deep-dive-into-known-magecart-iocs-connected-internet-properties/
+
+fastmycdn.com
+statistik.site
+webinformer.biz
+zigzapframe.biz
+
 # Generic
 
 /assets/lfg.js
