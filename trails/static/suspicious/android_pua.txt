@@ -424,3 +424,7 @@ ad.appodeal.link
 # Reference: https://www.virustotal.com/gui/domain/yingshi.ml/relations
 
 yingshi.ml
+
+# Reference: https://www.virustotal.com/gui/domain/glom.mobi/detection
+
+glom.mobi
