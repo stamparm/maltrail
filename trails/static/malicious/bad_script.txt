@@ -4764,6 +4764,10 @@ yttompthree.com
 
 /za3ma_za3ma.php
 
+# Reference: https://www.virustotal.com/gui/file/1be388f74d98754a616ec3265cf9dc7cf94383759fc0ed88eeff1267ad4efa16/detection
+
+/zxcvb.ps1
+
 # Generic
 
 /js/altmanluggage.js
