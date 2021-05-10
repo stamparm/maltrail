@@ -2224,10 +2224,6 @@ pc.publicnewsetup.com
 
 diskfixer.net
 
-# Reference: https://www.virustotal.com/gui/domain/hfuie32.2ihsfa.com/relations
-
-hfuie32.2ihsfa.com
-
 # Reference: https://www.virustotal.com/gui/domain/back.visitorpower.website/relations
 
 back.visitorpower.website
