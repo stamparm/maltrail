@@ -4586,6 +4586,18 @@ xf6.site
 
 renokonnect.com/stats/js/jcrop/jcrop.min.js
 
+# Reference: https://www.circleid.com/posts/20210506-deep-dive-into-known-magecart-iocs-connected-internet-properties/
+
+fastmycdn.com
+statistik.site
+webinformer.biz
+zigzapframe.biz
+
+# Reference: https://www.virustotal.com/gui/ip-address/34.95.57.185/detection
+# Reference: https://www.virustotal.com/gui/ip-address/35.203.186.155/relations
+
+purechal.com
+
 # Generic
 
 /assets/lfg.js
