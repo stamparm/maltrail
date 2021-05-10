@@ -4616,6 +4616,7 @@ xn--80ak6aa92e.com
 g1thubassets.com
 
 # Reference: https://twitter.com/James_inthe_box/status/1389238006398164997
+# Reference: https://twitter.com/James_inthe_box/status/1390361000155639812
 
 /0CdHOfB6.php
 /0YLkHHgkr5e5GkS.php
@@ -4641,6 +4642,7 @@ g1thubassets.com
 /r4brQXPL3tc6OZ.php
 /rQn6mD3r.php
 /t0vy3Ks7CM8QR.php
+/uSryOO1m8EGzN.php
 /x7eS3Bkgfiv7sN.php
 /xOykYWEbDK4zqD.php
 /xZ7MnwtJIAkN5hy.php
@@ -4752,6 +4754,19 @@ yttompthree.com
 # Reference: https://twitter.com/ESETresearch/status/1390263930833063938
 
 /LOADER_AQUI.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1390672589102534668
+# Reference: https://twitter.com/James_inthe_box/status/1390679565685563396
+
+/qxEJ4XFyEF.php
+
+# Reference: https://www.virustotal.com/gui/file/14e7fdec6624ba60bfee6bf686060db46ad0052075664935fe69be63fb3ab467/detection
+
+/za3ma_za3ma.php
+
+# Reference: https://www.virustotal.com/gui/file/1be388f74d98754a616ec3265cf9dc7cf94383759fc0ed88eeff1267ad4efa16/detection
+
+/zxcvb.ps1
 
 # Generic
 
