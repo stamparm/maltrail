@@ -12,7 +12,16 @@
 
 #################################################################
 
-- Version 0.31 -> 0.32 (Upcoming release)
+- Version 0.32 -> 0.33 (Upcoming release)
+
+
+
+- Version 0.31 -> 0.32 (10 May 2021)
+
+[!] Fixed PR_END_OF_FILE_ERROR bug, when using HTTPS for Maltrail's server (Issue #16217)
+[!] Fixed bug with TLSv1_2_METHOD (Issue #16250)
+[+] Added displaying real IP behind Cloudflare's one (Issue #20)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
@@ -24,7 +33,7 @@
 
 - Version 0.29 -> 0.30 (01 Mar 2021)
 
-[=] Multiple updates and optimizations for regular static bases and whitelist
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
@@ -33,7 +42,7 @@
 [+] Two new UI features (hide threat and report false positive options)
 [+] Auto-refresh for Maltrail web-page (/?refresh=N, where N in seconds. Issue #624)
 [+] Maltrail demo pages are released: maltraildemo.github.io
-[=] Multiple updates and optimizations for regular static bases and whitelist
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 [=] Potential DNS changer heur is improved
 [+] Implemented colorized console output
 [=] Minor style revamp and improved look and feel on mobile phones
@@ -48,4 +57,4 @@
 [+] Implementing support for LOGSTASH_SERVER (Logs in JSON format)
 [+] Implementing REMOTE_SEVERITY_REGEX (Issue #13251)
 [=] Sensor is able to get started without server (Issue #6020)
-[=] Multiple updates and optimizations for regular static bases and whitelist
+[=] Multiple updates and optimizations for regular static trails and the whitelist
