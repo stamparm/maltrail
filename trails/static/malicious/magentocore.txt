@@ -2473,8 +2473,10 @@ http://89.82.251.136/counter/index.php
 
 # Reference: https://twitter.com/felixaime/status/1267095794571792384
 # Reference: https://twitter.com/dimitribest/status/1372632649496420364
+# Reference: https://twitter.com/rootprivilege/status/1392119803997941762
+# Reference: https://lukeleal.com/research/posts/lolzilla-php-js-skimmer/
 
-http://45.197.141.250/analytics.php
+http://45.197.141.250
 happykid.in/image/catalog/d_blog_module/review/jjs.js
 tienda.flex.cl/media/sello-ecommerce.js
 
