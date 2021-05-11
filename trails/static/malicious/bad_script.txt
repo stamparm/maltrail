@@ -4777,6 +4777,29 @@ yttompthree.com
 
 /hu345bhuufd73fsdy8w4.php
 
+# Reference: https://twitter.com/Circuitous__/status/1392136823963590659
+# Reference: https://www.virustotal.com/gui/file/f075b72d185a2ed404361268d3c4e3ed6d8aef0ebbcf179c5b3384bd2c012791/detection
+# Reference: https://www.virustotal.com/gui/file/95f36b06a9ef5bdf1301634ff67e49d51643e747c9be8ade616e26328c10ca02/detection
+
+/1WiStiiT.php
+/3RKTmgwCIosO1Q.php
+/5QvWk6qm.php
+/7q0Vreh38laGy9.php
+/Agk5yxu6D3SEW.php
+/EHEtRsJyIPR6o75.php
+/HShRYdMy.php
+/ITmEihJkT.php
+/MGggfHzY0QH0Cp3.php
+/OMqNCOuk.php
+/SFMm6Qoe.php
+/VsMQ4PexH.php
+/Z1Oeq1XQhEC.php
+/ZkIMh91mDLu9z7.php
+/e1KqWCgL.php
+/njNvuZ7MIDRL.php
+/paEAehZhSWNmH.php
+/vUYhCCeCNKQoEk.php
+
 # Generic
 
 /js/altmanluggage.js
