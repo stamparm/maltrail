@@ -627,8 +627,10 @@ hilosennogada.com
 securecdn.eu
 
 # Reference: https://twitter.com/unmaskparasites/status/1196934377063800832
+# Reference: https://lukeleal.com/research/posts/lolzilla-php-js-skimmer/
 
 http://103.139.113.34
+/osr-3.0.php
 
 # Reference: https://www.helpnetsecurity.com/2019/11/19/macys-online-store-compromised/
 # Reference: https://otx.alienvault.com/pulse/5dd513439df4d4400824b738
