@@ -2479,6 +2479,7 @@ http://89.82.251.136/counter/index.php
 # Reference: https://lukeleal.com/research/posts/lolzilla-php-js-skimmer/
 
 http://45.197.141.250
+45.197.141.250:443
 happykid.in/image/catalog/d_blog_module/review/jjs.js
 tienda.flex.cl/media/sello-ecommerce.js
 
