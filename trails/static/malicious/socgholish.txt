@@ -64,6 +64,10 @@ track.positiverefreshment.org
 
 news.pocketstay.com
 
+# Reference: https://twitter.com/tosscoinwitcher/status/1379505361787359233
+
+5e7936bb.news.pocketstay.com
+
 # Generic
 
 /Chrome.Update.88fe59.js
