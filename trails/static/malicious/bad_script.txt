@@ -4773,6 +4773,10 @@ yttompthree.com
 /siteanalyze_6015663.js
 /js/siteanalyze_6015663.js
 
+# Reference: https://lukeleal.com/research/posts/lolzilla-php-js-skimmer/
+
+/hu345bhuufd73fsdy8w4.php
+
 # Generic
 
 /js/altmanluggage.js
