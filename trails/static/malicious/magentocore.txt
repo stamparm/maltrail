@@ -627,8 +627,10 @@ hilosennogada.com
 securecdn.eu
 
 # Reference: https://twitter.com/unmaskparasites/status/1196934377063800832
+# Reference: https://lukeleal.com/research/posts/lolzilla-php-js-skimmer/
 
 http://103.139.113.34
+/osr-3.0.php
 
 # Reference: https://www.helpnetsecurity.com/2019/11/19/macys-online-store-compromised/
 # Reference: https://otx.alienvault.com/pulse/5dd513439df4d4400824b738
@@ -2473,8 +2475,11 @@ http://89.82.251.136/counter/index.php
 
 # Reference: https://twitter.com/felixaime/status/1267095794571792384
 # Reference: https://twitter.com/dimitribest/status/1372632649496420364
+# Reference: https://twitter.com/rootprivilege/status/1392119803997941762
+# Reference: https://lukeleal.com/research/posts/lolzilla-php-js-skimmer/
 
-http://45.197.141.250/analytics.php
+http://45.197.141.250
+45.197.141.250:443
 happykid.in/image/catalog/d_blog_module/review/jjs.js
 tienda.flex.cl/media/sello-ecommerce.js
 
