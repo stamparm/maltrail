@@ -4768,6 +4768,11 @@ yttompthree.com
 
 /zxcvb.ps1
 
+# Reference: https://twitter.com/JCyberSec_/status/1392113003512963074
+
+/siteanalyze_6015663.js
+/js/siteanalyze_6015663.js
+
 # Generic
 
 /js/altmanluggage.js
