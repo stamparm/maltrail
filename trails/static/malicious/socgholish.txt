@@ -68,6 +68,11 @@ news.pocketstay.com
 
 5e7936bb.news.pocketstay.com
 
+# Reference: https://twitter.com/Wanna_VanTa/status/1392537130396700681
+# Reference: https://www.virustotal.com/gui/ip-address/81.4.122.193/relations
+
+login.wwpcrisis.com
+
 # Generic
 
 /Chrome.Update.88fe59.js
