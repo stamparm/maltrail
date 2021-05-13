@@ -428,3 +428,17 @@ yingshi.ml
 # Reference: https://www.virustotal.com/gui/domain/glom.mobi/detection
 
 glom.mobi
+
+# Reference: https://www.virustotal.com/gui/file/a30961526fee6e09fd5d9b5a478fd2557971c5fea33134bb27c53c98cec0dff3/detection
+
+yourpornapp.com
+
+# Reference: https://www.virustotal.com/gui/file/774ff792b70d646053c4312ad015365e81c185764fe099892f0359cb545db676/detection
+
+222.126.246.252:8080
+shenzhen.us
+
+# Reference: https://www.virustotal.com/gui/file/3bb0dba9195fdd6d9447c43e37f553dce06ea4bad8e04c31a4b5667aec9038f9/detection
+
+218.200.227.123:90
+/wapServer/checksmsinitreturn
