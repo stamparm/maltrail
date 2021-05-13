@@ -4603,6 +4603,10 @@ zigzapframe.biz
 
 purechal.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1392887777902030853
+
+houseofdesigners.in
+
 # Generic
 
 /assets/lfg.js
