@@ -441,3 +441,4 @@ shenzhen.us
 # Reference: https://www.virustotal.com/gui/file/3bb0dba9195fdd6d9447c43e37f553dce06ea4bad8e04c31a4b5667aec9038f9/detection
 
 218.200.227.123:90
+/wapServer/checksmsinitreturn
