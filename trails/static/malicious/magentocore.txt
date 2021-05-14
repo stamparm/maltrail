@@ -4603,6 +4603,17 @@ zigzapframe.biz
 
 purechal.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1392887777902030853
+
+houseofdesigners.in
+
+# Reference: https://blog.malwarebytes.com/cybercrime/2021/05/newly-observed-php-based-skimmer-shows-ongoing-magecart-group-12-activity/
+
+kermo.pw
+thesun.pw
+zolo.pw
+/m1_2021_force
+
 # Generic
 
 /assets/lfg.js
