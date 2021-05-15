@@ -5251,6 +5251,10 @@ myserverhosts.com
 
 renatoborbolla.work
 
+# Reference: https://www.virustotal.com/gui/domain/playit.gg/relations
+
+playit.gg
+
 # Reference: https://www.virustotal.com/gui/domain/auto.playit.gg/relations
 
 auto.playit.gg
