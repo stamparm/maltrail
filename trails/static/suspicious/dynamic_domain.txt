@@ -3270,3 +3270,8 @@ wificam.org
 # Reference: https://www.virustotal.com/gui/domain/edvrddns.com/relations
 
 edvrddns.com
+
+# Reference: https://github.com/pboehm/ddns
+# Reference: https://ddns.pboehm.de/
+
+.d.pboehm.de
