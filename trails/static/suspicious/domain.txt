@@ -5250,3 +5250,7 @@ myserverhosts.com
 # Reference: https://www.virustotal.com/gui/domain/renatoborbolla.work/detection
 
 renatoborbolla.work
+
+# Reference: https://www.virustotal.com/gui/domain/auto.playit.gg/relations
+
+auto.playit.gg
