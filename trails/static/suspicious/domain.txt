@@ -5246,3 +5246,7 @@ myserverhosts.com
 # Reference: https://www.virustotal.com/gui/domain/vv.si/relations
 
 .vv.si
+
+# Reference: https://www.virustotal.com/gui/domain/renatoborbolla.work/detection
+
+renatoborbolla.work
