@@ -5258,3 +5258,7 @@ playit.gg
 # Reference: https://www.virustotal.com/gui/domain/auto.playit.gg/relations
 
 auto.playit.gg
+
+# Reference: https://www.virustotal.com/gui/domain/preview-domain.com/relations
+
+preview-domain.com
