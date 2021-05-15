@@ -5262,3 +5262,7 @@ auto.playit.gg
 # Reference: https://www.virustotal.com/gui/domain/preview-domain.com/relations
 
 preview-domain.com
+
+# Reference: https://www.virustotal.com/gui/domain/hostingerapp.com/relations
+
+hostingerapp.com
