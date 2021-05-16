@@ -5246,3 +5246,31 @@ myserverhosts.com
 # Reference: https://www.virustotal.com/gui/domain/vv.si/relations
 
 .vv.si
+
+# Reference: https://www.virustotal.com/gui/domain/renatoborbolla.work/detection
+
+renatoborbolla.work
+
+# Reference: https://www.virustotal.com/gui/domain/playit.gg/relations
+
+playit.gg
+
+# Reference: https://www.virustotal.com/gui/domain/auto.playit.gg/relations
+
+auto.playit.gg
+
+# Reference: https://www.virustotal.com/gui/domain/preview-domain.com/relations
+
+preview-domain.com
+
+# Reference: https://www.virustotal.com/gui/domain/hostingerapp.com/relations
+
+hostingerapp.com
+
+# Reference: https://www.virustotal.com/gui/domain/realydomain.info/relations
+
+realydomain.info
+
+# Reference: https://www.virustotal.com/gui/domain/pphosted.com/relations
+
+pphosted.com
