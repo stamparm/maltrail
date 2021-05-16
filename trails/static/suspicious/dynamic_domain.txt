@@ -3274,4 +3274,4 @@ edvrddns.com
 # Reference: https://github.com/pboehm/ddns
 # Reference: https://ddns.pboehm.de/
 
-.d.pboehm.de
+d.pboehm.de
