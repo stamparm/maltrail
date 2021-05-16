@@ -800,3 +800,7 @@ xmr-eu2.nanopool.org
 # Reference: https://www.virustotal.com/gui/file/51929c3ab26fb6ad702929f577ff118dbe2b7f37d054740cc5697a278b01d125/detection
 
 pool-phx.supportxmr.com
+
+# Reference: https://www.virustotal.com/gui/file/ac8e067af887fbd8067943930b3224cdcaf4365de4b44532c248694f54a8bffb/detection
+
+37.187.95.110:3333
