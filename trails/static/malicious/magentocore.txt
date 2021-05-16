@@ -4605,7 +4605,7 @@ purechal.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1392887777902030853
 
-houseofdesigners.in
+houseofdesigners.in/scure.php
 
 # Reference: https://blog.malwarebytes.com/cybercrime/2021/05/newly-observed-php-based-skimmer-shows-ongoing-magecart-group-12-activity/
 
