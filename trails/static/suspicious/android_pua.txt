@@ -442,3 +442,8 @@ shenzhen.us
 
 218.200.227.123:90
 /wapServer/checksmsinitreturn
+
+# Reference: https://www.virustotal.com/gui/file/7e652c183cba8cad55f47bf5489c92cd50d4e3158f424010246af6ce6889197f/detection
+# Reference: https://www.virustotal.com/gui/file/a817a38d6f4b98b2ba5afffcc01fa05af1857a61e9b1e2a56703d53dbb1f1f2e/detection
+
+http://176.122.170.110
