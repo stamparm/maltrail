@@ -4804,6 +4804,10 @@ yttompthree.com
 
 /OneDrive_adrut0x/encrypted.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1394384488092901379
+
+/1vhwk2eubzz6huxmknyw6jcm.php
+
 # Generic
 
 /js/altmanluggage.js
