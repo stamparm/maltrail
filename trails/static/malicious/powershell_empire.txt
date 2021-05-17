@@ -29,3 +29,9 @@ http://185.117.75.168
 
 45.138.172.44:22
 45.138.172.44:443
+
+# Reference: https://twitter.com/TheDFIRReport/status/1394257640851640323
+# Reference: https://beta.shodan.io/host/35.208.127.102
+
+http://35.208.127.102
+35.208.127.102:8080
