@@ -1721,6 +1721,10 @@ cve_2019_7238
 cve_2020_14882
 cve_2021_3129
 
+# Reference: https://securelist.com/bizarro-banking-trojan-expands-its-attacks-to-europe/102258/
+
+Mozilla/4.0 (compatible;MSIE 6.0; Windows NT 5.0
+
 # Misc
 
 information_schema
