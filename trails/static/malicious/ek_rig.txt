@@ -272,6 +272,17 @@ http://188.225.75.54
 
 myallexit.xyz
 
+# Reference: https://www.bitdefender.com/files/News/CaseStudies/study/397/Bitdefender-PR-Whitepaper-RIG-creat5362-en-EN.pdf
+
+allindelivery.net
+clickadusweep.vip
+testclicktds.xyz
+testtrack.xyz
+zeroexit.xyz
+enter.testclicktds.xyz
+traffic.allindelivery.net
+zero.testtrack.xyz
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
