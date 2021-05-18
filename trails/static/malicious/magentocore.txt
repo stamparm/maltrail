@@ -4614,6 +4614,16 @@ thesun.pw
 zolo.pw
 /m1_2021_force
 
+# Reference: https://twitter.com/unmaskparasites/status/1394762869233786880
+
+bingfindapi.com
+bulder.online
+foundstyle.online
+fountm.online
+gstatcs.com
+jqwereid.online
+webfaset.com
+
 # Generic
 
 /assets/lfg.js
