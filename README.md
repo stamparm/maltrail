@@ -125,7 +125,7 @@ Fully functional demo pages with collected real-life threats can be found [here]
 
 ## Requirements
 
-To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**, **2.7** or **3.x** is required on \*nix/BSD system, together with installed package [pcapy](https://www.coresecurity.com/corelabs-research/open-source-tools/pcapy) (e.g. `sudo apt-get install python-pcapy`). **Sensor** component requires at least 1GB of RAM to run in single-process mode or more if run in multiprocessing mode, depending on the value used for option `CAPTURE_BUFFER`. Additionally, **Sensor** component (in general case) requires administrative/root privileges. **Server** component does not have any special requirements.
+To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**, **2.7** or **3.x** is required on \*nix/BSD system, together with installed package [pcapy-ng](https://pypi.org/project/pcapy-ng/). **Sensor** component requires at least 1GB of RAM to run in single-process mode or more if run in multiprocessing mode, depending on the value used for option `CAPTURE_BUFFER`. Additionally, **Sensor** component (in general case) requires administrative/root privileges. **Server** component does not have any special requirements.
 
 ## Quick start
 
@@ -134,17 +134,18 @@ The following set of commands should get your Maltrail **Sensor** up and running
 - For **Ubuntu/Debian**
 
 ```sh
-sudo apt-get install git python-pcapy procps schedtool
+sudo apt-get install git python3 python3-dev python3-pip python-is-python3 libpcap-dev build-essential procps schedtool
+sudo pip3 install pcapy-ng
 git clone --depth 1 https://github.com/stamparm/maltrail.git
 cd maltrail
-sudo python sensor.py
+sudo python3 sensor.py
 ```
 
 - For **SUSE/openSUSE**
 
 ```sh
 sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip procps schedtool
-sudo pip2 install pcapy
+sudo pip2 install pcapy-ng
 git clone --depth 1 https://github.com/stamparm/maltrail.git
 cd maltrail
 sudo python sensor.py
@@ -481,7 +482,8 @@ Nevertheless, administrator(s) should invest some extra time and check (with oth
 - On **Ubuntu/Debian**
 
     ```sh
-    sudo apt-get install git python-pcapy procps schedtool
+    sudo apt-get install git python3 python3-dev python3-pip python-is-python3 libpcap-dev build-essential procps schedtool
+    sudo pip3 install pcapy-ng
     cd /tmp
     git clone --depth 1 https://github.com/stamparm/maltrail.git
     sudo mv /tmp/maltrail /opt
@@ -492,7 +494,7 @@ Nevertheless, administrator(s) should invest some extra time and check (with oth
 
    ```sh
    sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip procps schedtool
-   sudo pip2 install pcapy
+   sudo pip2 install pcapy-ng
    cd /tmp
    git clone --depth 1 https://github.com/stamparm/maltrail.git
    sudo mv /tmp/maltrail /opt
