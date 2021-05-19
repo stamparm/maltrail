@@ -5274,3 +5274,7 @@ realydomain.info
 # Reference: https://www.virustotal.com/gui/domain/pphosted.com/relations
 
 pphosted.com
+
+# Reference: https://www.virustotal.com/gui/domain/pktriot.net/relations
+
+pktriot.net
