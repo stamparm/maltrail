@@ -23,7 +23,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.32.8"
+VERSION = "0.32.9"
 HOMEPAGE = "https://maltrail.github.io"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
@@ -125,8 +125,9 @@ IPPROTO_LUT = dict(((getattr(socket, _), _.replace("IPPROTO_", "")) for _ in dir
 DEFLATE_COMPRESS_LEVEL = 9
 PORT_SCANNING_THRESHOLD = 10
 INFECTION_SCANNING_THRESHOLD = 32
-MAX_RESULT_CACHE_ENTRIES = 10000
+MAX_CACHE_ENTRIES = 1000
 MMAP_ZFILL_CHUNK_LENGTH = 1024 * 1024
+HOURLY_SECS = 1 * 60 * 60
 DAILY_SECS = 24 * 60 * 60
 DNS_EXHAUSTION_THRESHOLD = 1000
 SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD = 24

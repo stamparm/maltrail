@@ -56,19 +56,19 @@ from core.settings import CAPTURE_TIMEOUT
 from core.settings import CHECK_CONNECTION_MAX_RETRIES
 from core.settings import CONFIG_FILE
 from core.settings import CONSONANTS
-from core.settings import DAILY_SECS
 from core.settings import DLT_OFFSETS
 from core.settings import DNS_EXHAUSTION_THRESHOLD
 from core.settings import GENERIC_SINKHOLE_REGEX
 from core.settings import HOMEPAGE
+from core.settings import HOURLY_SECS
 from core.settings import HTTP_TIME_FORMAT
 from core.settings import IGNORE_DNS_QUERY_SUFFIXES
 from core.settings import IPPROTO_LUT
 from core.settings import IS_WIN
 from core.settings import LOCALHOST_IP
 from core.settings import LOCAL_SUBDOMAIN_LOOKUPS
+from core.settings import MAX_CACHE_ENTRIES
 from core.settings import MMAP_ZFILL_CHUNK_LENGTH
-from core.settings import MAX_RESULT_CACHE_ENTRIES
 from core.settings import NAME
 from core.settings import NO_SUCH_NAME_COUNTERS
 from core.settings import NO_SUCH_NAME_PER_HOUR_THRESHOLD
@@ -114,8 +114,8 @@ _count = 0
 _locks = AttribDict()
 _multiprocessing = None
 _n = None
-_result_cache = LRUDict(MAX_RESULT_CACHE_ENTRIES)
-_local_cache = {}
+_result_cache = LRUDict(MAX_CACHE_ENTRIES)
+_local_cache = LRUDict(MAX_CACHE_ENTRIES)
 _last_syn = None
 _last_logged_syn = None
 _last_udp = None
@@ -669,7 +669,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     domain = '.'.join(parts[-2:])
 
                                 if not _check_domain_whitelisted(domain):  # e.g. <hash>.hashserver.cs.trendmicro.com
-                                    if (sec - (_subdomains_sec or 0)) > DAILY_SECS:
+                                    if (sec - (_subdomains_sec or 0)) > HOURLY_SECS:
                                         _subdomains.clear()
                                         _dns_exhausted_domains.clear()
                                         _subdomains_sec = sec
