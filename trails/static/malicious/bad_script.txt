@@ -4821,6 +4821,10 @@ yttompthree.com
 
 /rhtzf7qb3rsr8xgyrue6ypno.php
 
+# Reference: https://malware.love/malware_analysis/reverse_engineering/2021/05/19/unknown-python-stealer.html
+
+/6846546874968946.php
+
 # Generic
 
 /js/altmanluggage.js
