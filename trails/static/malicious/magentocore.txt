@@ -4624,6 +4624,10 @@ gstatcs.com
 jqwereid.online
 webfaset.com
 
+# Reference: https://twitter.com/sansecio/status/1395765199169261570
+
+sanseclabs.com
+
 # Generic
 
 /assets/lfg.js
