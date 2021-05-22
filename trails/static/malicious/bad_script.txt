@@ -4825,6 +4825,10 @@ yttompthree.com
 
 /6846546874968946.php
 
+# Reference: https://www.virustotal.com/gui/ip-address/8.141.54.214/relations
+
+/AVpayload.ps1
+
 # Generic
 
 /js/altmanluggage.js
