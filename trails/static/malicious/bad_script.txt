@@ -4829,6 +4829,13 @@ yttompthree.com
 
 /AVpayload.ps1
 
+# Reference: https://twitter.com/xuy1202/status/1396059012794224643
+
+/EvilObject.class
+/EvilObject.cmd
+/EvilObject.hta
+/EvilObject.ps1
+
 # Generic
 
 /js/altmanluggage.js
