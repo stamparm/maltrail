@@ -4628,6 +4628,10 @@ webfaset.com
 
 sanseclabs.com
 
+# Reference: https://twitter.com/sansecio/status/1395770562769788929
+
+pay.mollie.nl/checkout/v3/css/global.css
+
 # Generic
 
 /assets/lfg.js
