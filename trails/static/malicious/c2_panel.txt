@@ -289,6 +289,10 @@ trackpressure.website
 vmi212260.contaboserver.net
 vscode.workingfeedback.cloud
 
+# Reference: http://tracker.viriback.com/dump.php
+
+/~zadmin/
+
 # Generic
 
 /admin_123/auth.php
