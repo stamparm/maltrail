@@ -42,3 +42,7 @@ softbring.tk
 # Reference: https://twitter.com/nao_sec/status/1384065957585248266
 
 optsoft.tk
+
+# Reference: https://twitter.com/nao_sec/status/1395666365474766854
+
+ystyle.tk
