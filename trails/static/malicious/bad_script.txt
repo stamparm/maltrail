@@ -4825,6 +4825,17 @@ yttompthree.com
 
 /6846546874968946.php
 
+# Reference: https://www.virustotal.com/gui/ip-address/8.141.54.214/relations
+
+/AVpayload.ps1
+
+# Reference: https://twitter.com/xuy1202/status/1396059012794224643
+
+/EvilObject.class
+/EvilObject.cmd
+/EvilObject.hta
+/EvilObject.ps1
+
 # Generic
 
 /js/altmanluggage.js
