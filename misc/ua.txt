@@ -1725,6 +1725,13 @@ cve_2021_3129
 
 Mozilla/4.0 (compatible;MSIE 6.0; Windows NT 5.0
 
+# Reference: https://twitter.com/ConfiantIntel/status/1393215825931288580
+# Reference: https://twitter.com/ConfiantIntel/status/1393215865831796742
+# Reference: https://otx.alienvault.com/pulse/60abf2db6d36f0bf7b63dd7b
+# Reference: https://github.com/stamparm/maltrail/pull/16829
+
+1081239ms736
+
 # Misc
 
 information_schema
