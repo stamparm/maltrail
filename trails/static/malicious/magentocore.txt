@@ -4632,6 +4632,10 @@ sanseclabs.com
 
 pay.mollie.nl/checkout/v3/css/global.css
 
+# Reference: https://twitter.com/unmaskparasites/status/1397030574749982722
+
+celolum.com
+
 # Generic
 
 /assets/lfg.js
