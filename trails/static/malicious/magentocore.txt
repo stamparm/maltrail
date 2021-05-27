@@ -4639,7 +4639,6 @@ celolum.com
 # Reference: https://www.riskiq.com/blog/external-threat-management/mobile-inter/
 # Reference: https://otx.alienvault.com/pulse/60afd2d5ce95a296d0f9323e
 
-fontsgoogle-apis.com
 google-analyticss.com
 google-downloader.com
 google-pick.com
