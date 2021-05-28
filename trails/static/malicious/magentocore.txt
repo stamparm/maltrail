@@ -4646,6 +4646,10 @@ google-sens.com
 google-turn.com
 gooqle.ru.oitx.xyz
 
+# Reference: https://twitter.com/MBThreatIntel/status/1398037002923110400
+
+gstaticsfonts.com
+
 # Generic
 
 /assets/lfg.js
