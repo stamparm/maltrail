@@ -4655,6 +4655,28 @@ gstaticsfonts.com
 fonts-gstatics.com
 googles-analytic.com
 
+# Reference: https://twitter.com/AffableKraut/status/1398148316886491143
+
+analistnetwork.site
+analistnetwork.space
+analitic-site.site
+analitic-site.space
+analiticsblock.site
+analiticsblock.space
+analiticsite.site
+analiticsite.space
+analiticssite.space
+blockanalist.space
+nettinganalist.site
+nettinganalist.space
+networkanalist.site
+networkanalist.space
+site-analitic.site
+site-analitic.space
+site-analitics.site
+siteanalitic.space
+siteanalitics.space
+
 # Generic
 
 /assets/lfg.js
