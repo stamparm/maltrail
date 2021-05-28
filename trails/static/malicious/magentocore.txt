@@ -4676,7 +4676,10 @@ networkanalist.space
 site-analitic.site
 site-analitic.space
 site-analitics.site
+site-analitics.space
+siteanalitic.site
 siteanalitic.space
+siteanalitics.site
 siteanalitics.space
 
 # Generic
