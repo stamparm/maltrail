@@ -4650,6 +4650,11 @@ gooqle.ru.oitx.xyz
 
 gstaticsfonts.com
 
+# Reference: https://twitter.com/AffableKraut/status/1398056214492291074
+
+fonts-gstatics.com
+googles-analytic.com
+
 # Generic
 
 /assets/lfg.js
