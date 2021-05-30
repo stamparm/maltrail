@@ -4682,6 +4682,10 @@ siteanalitic.space
 siteanalitics.site
 siteanalitics.space
 
+# Reference: https://www.virustotal.com/gui/ip-address/47.91.77.83/relations
+
+google-opinion.com
+
 # Generic
 
 /assets/lfg.js
