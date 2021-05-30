@@ -4636,6 +4636,56 @@ pay.mollie.nl/checkout/v3/css/global.css
 
 celolum.com
 
+# Reference: https://www.riskiq.com/blog/external-threat-management/mobile-inter/
+# Reference: https://otx.alienvault.com/pulse/60afd2d5ce95a296d0f9323e
+
+google-analyticss.com
+google-downloader.com
+google-pick.com
+google-sens.com
+google-turn.com
+gooqle.ru.oitx.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1398037002923110400
+
+gstaticsfonts.com
+
+# Reference: https://twitter.com/AffableKraut/status/1398056214492291074
+
+fonts-gstatics.com
+googles-analytic.com
+
+# Reference: https://twitter.com/AffableKraut/status/1398148316886491143
+
+analistnetwork.site
+analistnetwork.space
+analitic-site.site
+analitic-site.space
+analiticsblock.site
+analiticsblock.space
+analiticsite.site
+analiticsite.space
+analiticssite.site
+analiticssite.space
+blockanalist.site
+blockanalist.space
+nettinganalist.site
+nettinganalist.space
+networkanalist.site
+networkanalist.space
+site-analitic.site
+site-analitic.space
+site-analitics.site
+site-analitics.space
+siteanalitic.site
+siteanalitic.space
+siteanalitics.site
+siteanalitics.space
+
+# Reference: https://www.virustotal.com/gui/ip-address/47.91.77.83/relations
+
+google-opinion.com
+
 # Generic
 
 /assets/lfg.js
