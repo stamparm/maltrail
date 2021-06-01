@@ -926,6 +926,7 @@ sophosxl.net
 
 # Generic
 
+lencr.org
 tttttt.me
 yoursite.com
 worldofwarcraft.com
