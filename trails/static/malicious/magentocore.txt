@@ -2438,6 +2438,11 @@ gooqle-analytics.net
 secure-authorize.net
 wanalytic.is
 
+# Reference: https://twitter.com/kyleehmke/status/1399680399756906502
+# Reference: https://www.virustotal.com/gui/ip-address/87.120.254.4/relations
+
+gooqle-login.com
+
 # Reference: https://twitter.com/felixaime/status/1264124350883602432
 # Reference: https://www.virustotal.com/gui/ip-address/161.35.202.72/relations
 
@@ -4685,6 +4690,13 @@ siteanalitics.space
 # Reference: https://www.virustotal.com/gui/ip-address/47.91.77.83/relations
 
 google-opinion.com
+
+# Reference: https://twitter.com/AffableKraut/status/1399786791931101192
+
+googie-analytics.online
+googie-analitycs.site
+googie-analytics.website
+googletagsmanager.website
 
 # Generic
 
