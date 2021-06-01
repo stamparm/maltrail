@@ -357,3 +357,8 @@ ip.urls.is
 # Reference: https://www.virustotal.com/gui/file/07dc515aadbd1a62cc510b9e2eea6297ba626119648419f9fe8f410a50e2779b/behavior
 
 7fw.de/ipraw.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1397230910341320715
+# Reference: https://app.any.run/tasks/6f591989-545b-4101-b7c1-69a0f1f6465d/
+
+api.mylnikov.org
