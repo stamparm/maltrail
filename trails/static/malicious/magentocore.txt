@@ -4691,6 +4691,13 @@ siteanalitics.space
 
 google-opinion.com
 
+# Reference: https://twitter.com/AffableKraut/status/1399786791931101192
+
+googie-analytics.online
+googie-analitycs.site
+googie-analytics.website
+googletagsmanager.website
+
 # Generic
 
 /assets/lfg.js
