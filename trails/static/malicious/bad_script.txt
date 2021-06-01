@@ -4825,6 +4825,10 @@ yttompthree.com
 
 /6846546874968946.php
 
+# Reference: https://twitter.com/JAMESWT_MHT/status/1399689971401900036
+
+/d3808c7188cb55.php
+
 # Reference: https://www.virustotal.com/gui/ip-address/8.141.54.214/relations
 
 /AVpayload.ps1
