@@ -447,3 +447,11 @@ shenzhen.us
 # Reference: https://www.virustotal.com/gui/file/a817a38d6f4b98b2ba5afffcc01fa05af1857a61e9b1e2a56703d53dbb1f1f2e/detection
 
 http://176.122.170.110
+
+# Reference: https://www.virustotal.com/gui/file/a29a85ac1fa6d3fe0584c7af52559d9c8bef2006097863ceb451c64f1af3652a/detection
+
+167.114.207.224:8383
+176.31.240.87:8005
+176.31.240.87:8025
+176.31.240.87:8035
+89.45.10.155:7777
