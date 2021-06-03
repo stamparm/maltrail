@@ -4698,6 +4698,10 @@ googie-analitycs.site
 googie-analytics.website
 googletagsmanager.website
 
+# Reference: https://twitter.com/TracerSpiff/status/1399840920057659404
+
+googie.host
+
 # Generic
 
 /assets/lfg.js
