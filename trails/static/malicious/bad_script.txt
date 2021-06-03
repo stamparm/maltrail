@@ -4840,6 +4840,11 @@ yttompthree.com
 /EvilObject.hta
 /EvilObject.ps1
 
+# Reference: https://thedfirreport.com/2021/06/03/weblogic-rce-leads-to-xmrig/
+# Reference: https://otx.alienvault.com/pulse/60b8a178a6e813e88be3181b
+
+/ldr.ps1
+
 # Generic
 
 /js/altmanluggage.js
