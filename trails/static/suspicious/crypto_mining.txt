@@ -804,3 +804,8 @@ pool-phx.supportxmr.com
 # Reference: https://www.virustotal.com/gui/file/ac8e067af887fbd8067943930b3224cdcaf4365de4b44532c248694f54a8bffb/detection
 
 37.187.95.110:3333
+
+# Reference: https://blog.talosintelligence.com/2021/06/necro-python-bot-adds-new-tricks.html
+
+unmineable.com
+rx.unmineable.com
