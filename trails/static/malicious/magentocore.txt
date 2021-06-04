@@ -4702,6 +4702,11 @@ googletagsmanager.website
 
 googie.host
 
+# Reference: https://twitter.com/rootprivilege/status/1400850998063632389
+# Reference: https://lukeleal.com/research/posts/analiticsweb-skimmer/
+
+analiticsweb.site
+
 # Generic
 
 /assets/lfg.js
