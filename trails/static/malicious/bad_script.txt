@@ -4845,6 +4845,11 @@ yttompthree.com
 
 /ldr.ps1
 
+# Reference: https://otx.alienvault.com/indicator/file/f49dc180e970ce41abe518e00e76012885d21ce201a3fdb30c4cc274b47c3bec
+# Reference: https://www.virustotal.com/gui/file/79bbdb8009278ba629dae626b86f4447a81333ef9535e2a9341d5728571e4ae1/detection
+
+/addInstallImpression.php?key=
+
 # Generic
 
 /js/altmanluggage.js
