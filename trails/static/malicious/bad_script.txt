@@ -4850,6 +4850,10 @@ yttompthree.com
 
 /addInstallImpression.php?key=
 
+# Reference: https://www.virustotal.com/gui/file/e61627d4179e36ec097c97cc14b83dbb8de8f5a206d72044fbee5ab8323a133f/detection
+
+/dontrun.ps1
+
 # Generic
 
 /js/altmanluggage.js
