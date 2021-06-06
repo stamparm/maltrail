@@ -809,3 +809,7 @@ pool-phx.supportxmr.com
 
 unmineable.com
 rx.unmineable.com
+
+# Reference: https://www.virustotal.com/gui/file/fb8799ce1371689377771fb2368cf307693fca3fec98cd9e1629790055e696d0/detection
+
+37.187.95.110:5555
