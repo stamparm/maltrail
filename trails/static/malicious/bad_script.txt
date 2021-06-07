@@ -4845,6 +4845,23 @@ yttompthree.com
 
 /ldr.ps1
 
+# Reference: https://otx.alienvault.com/indicator/file/f49dc180e970ce41abe518e00e76012885d21ce201a3fdb30c4cc274b47c3bec
+# Reference: https://www.virustotal.com/gui/file/79bbdb8009278ba629dae626b86f4447a81333ef9535e2a9341d5728571e4ae1/detection
+
+/addInstallImpression.php?key=
+
+# Reference: https://www.virustotal.com/gui/file/e61627d4179e36ec097c97cc14b83dbb8de8f5a206d72044fbee5ab8323a133f/detection
+
+/dontrun.ps1
+
+# Reference: https://twitter.com/MalwarePatrol/status/1401405755174105088
+
+/ndbsia13n1bps81zxf5qegzm.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1401481253023633412
+
+/sut4xvvkcxivtmuocw2ppvbj.php
+
 # Generic
 
 /js/altmanluggage.js
