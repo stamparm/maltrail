@@ -5281,7 +5281,7 @@ pktriot.net
 
 # Reference: https://twitter.com/kyleehmke/status/1383742871329591296
 # Reference: https://github.com/stamparm/maltrail/pull/17070
-# Reference: # Reference: https://www.virustotal.com/gui/file/08261ed40e21140eb438f16af0233217c701d9b022dce0a45b6e3e1ee2467739/detection
+# Reference: https://www.virustotal.com/gui/file/08261ed40e21140eb438f16af0233217c701d9b022dce0a45b6e3e1ee2467739/detection
 
 defenderlive.com
 dnsstatus.org
