@@ -85,3 +85,10 @@ driverfortnigtly.ga
 
 digitalclimatestrike.net
 assets.digitalclimatestrike.net
+
+# Reference: https://www.wordfence.com/blog/2021/06/critical-0-day-in-fancy-product-designer-under-active-attack/
+# Reference: https://otx.alienvault.com/pulse/60be1d277d109b2b37060c4c
+
+http://46.53.253.152
+http://69.12.71.82
+http://92.53.124.123
