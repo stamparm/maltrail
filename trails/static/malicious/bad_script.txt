@@ -4866,6 +4866,12 @@ yttompthree.com
 
 /qwqdanchun.sct
 
+# Reference: https://www.wordfence.com/blog/2021/06/critical-0-day-in-fancy-product-designer-under-active-attack/
+# Reference: https://otx.alienvault.com/pulse/60be1d277d109b2b37060c4c
+
+/4fa00001c720b30002987d983e62d5e1.jpg
+/4fa00001c720b30102987d980e62d5e4.php
+
 # Generic
 
 /js/altmanluggage.js
