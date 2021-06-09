@@ -4872,6 +4872,16 @@ yttompthree.com
 /4fa00001c720b30002987d983e62d5e1.jpg
 /4fa00001c720b30102987d980e62d5e4.php
 
+# Reference: https://blogs.jpcert.or.jp/en/2021/06/php_malware.html
+# Reference: https://otx.alienvault.com/pulse/60be0d9402505f73cefc4c6d
+
+http://144.76.47.168
+http://178.63.30.186
+http://178.63.30.30
+http://5.9.146.0
+http://5.9.235.245
+http://5.9.34.13
+
 # Generic
 
 /js/altmanluggage.js
