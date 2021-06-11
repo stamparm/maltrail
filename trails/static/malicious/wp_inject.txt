@@ -12,14 +12,49 @@ subl.net
 checklist.directory
 
 # Reference: https://twitter.com/unmaskparasites/status/1369733061680586755
+# Reference: https://twitter.com/unmaskparasites/status/1402047210343174146
 
 blameworthy.buzz
+xn--80a1alg.xn--p1ai
+xn--80a3afwhsk.xn--p1ai
+xn--80adoej5a8h.xn--p1ai
+xn--80ady8a.xn--p1ai
+xn--80adzf.xn--p1ai
+xn--80ae5bng4au.xn--p1ai
+xn--80ahxth.xn--p1ai
+xn--80aj6ah1a.xn--p1ai
+xn--80amqk.xn--p1ai
+xn--80azck0a.xn--p1ai
 xn--90a7a4a.xn--p1ai
 xn--90a8cf.xn--p1ai
+xn--90achpp5d0c.xn--p1ai
+xn--90aixnm.xn--p1ai
+xn--b1axdhie3a.xn--p1ai
+xn--b1ayb4b.xn--p1ai
+xn--c1ab3awv.xn--p1ai
+xn--c1ae0ahg.xn--p1ai
+xn--c1aeyy.xn--p1ai
+xn--c1alehkf5a3d.xn--p1ai
 xn--d1ad5e.xn--p1ai
+xn--e1adtoj.xn--p1ai
+xn--e1annge.xn--p1ai
+xn--g1a1aom.xn--p1ai
+xn--g1a2abr.xn--p1ai
+xn--g1aehqp.xn--p1ai
+xn--g1aey4a.xn--p1ai
+xn--g1asqf.xn--p1ai
 xn--h1at3a.xn--p1ai
+xn--i1abh6c.xn--p1ai
+xn--i1aefi6c.xn--p1ai
+xn--i1an6ab.xn--p1ai
+xn--i1avf9a.xn--p1ai
 xn--i1avu.xn--p1ai
+xn--j1alm4a.xn--p1ai
+xn--k1akc5b.xn--p1ai
 xn--k1aty.xn--p1ai
+xn--o1aofd.xn--p1ai
+xn--p1aldhp.xn--p1ai
+xn--q1admt.xn--p1ai
 xn--s1afb.xn--p1ai
 
 # Reference: https://twitter.com/unmaskparasites/status/1370579966069383168
@@ -45,3 +80,15 @@ travelinskydream.ga
 # Reference: https://twitter.com/unmaskparasites/status/1394487078952398848
 
 driverfortnigtly.ga
+
+# Reference: https://twitter.com/unmaskparasites/status/1402346388617236481
+
+digitalclimatestrike.net
+assets.digitalclimatestrike.net
+
+# Reference: https://www.wordfence.com/blog/2021/06/critical-0-day-in-fancy-product-designer-under-active-attack/
+# Reference: https://otx.alienvault.com/pulse/60be1d277d109b2b37060c4c
+
+http://46.53.253.152
+http://69.12.71.82
+http://92.53.124.123

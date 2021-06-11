@@ -135,7 +135,7 @@ except ImportError:
     if IS_WIN:
         exit("[!] please install 'WinPcap' (e.g. 'http://www.winpcap.org/install/') and Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy')")
     else:
-        msg = "[!] please install 'Pcapy' (e.g. 'sudo pip%s install pcapy')" % ('3' if six.PY3 else '2')
+        msg = "[!] please install 'Pcapy' (e.g. 'sudo pip%s install pcapy-ng')" % ('3' if six.PY3 else '2')
 
         exit(msg)
 
@@ -1108,28 +1108,33 @@ def monitor():
 
             datalink = _cap.datalink()
 
-            if six.PY3 and not config.pcap_file:  # https://github.com/helpsystems/pcapy/issues/37#issuecomment-530795813
-                def _loop_handler(header, packet):
-                    packet_handler(datalink, header, packet)
 
-                _cap.loop(-1, _loop_handler)
-            else:
-                while True:
-                    success = False
-                    try:
-                        (header, packet) = _cap.next()
-                        if header is not None:
-                            success = True
-                            packet_handler(datalink, header, packet)
-                        elif config.pcap_file:
-                            with _done_lock:
-                                _done_count += 1
-                            break
-                    except (pcapy.PcapError, socket.timeout):
-                        pass
+#
+# NOTE: currently an issue with pcapy-png and loop()
+#
+#            if six.PY3 and not config.pcap_file:  # https://github.com/helpsystems/pcapy/issues/37#issuecomment-530795813
+#                def _loop_handler(header, packet):
+#                    packet_handler(datalink, header, packet)
+#
+#                _cap.loop(-1, _loop_handler)
+#            else:
 
-                    if not success:
-                        time.sleep(REGULAR_SENSOR_SLEEP_TIME)
+            while True:
+                success = False
+                try:
+                    (header, packet) = _cap.next()
+                    if header is not None:
+                        success = True
+                        packet_handler(datalink, header, packet)
+                    elif config.pcap_file:
+                        with _done_lock:
+                            _done_count += 1
+                        break
+                except (pcapy.PcapError, socket.timeout):
+                    pass
+
+                if not success:
+                    time.sleep(REGULAR_SENSOR_SLEEP_TIME)
 
         if config.profile and len(_caps) == 1:
             print("[=] will store profiling results to '%s'..." % config.profile)
