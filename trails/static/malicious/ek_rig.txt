@@ -284,8 +284,10 @@ traffic.allindelivery.net
 zero.testtrack.xyz
 
 # Reference: https://twitter.com/nao_sec/status/1403322564580020227
+# Reference: https://twitter.com/david_jursa/status/1403319802161213440
 # Reference: https://app.any.run/tasks/f00d7529-d2b7-4ad8-86ea-3d3bd256d8c3/
 
+http://188.227.107.144
 exitmagall.xyz
 
 # Generic trails
