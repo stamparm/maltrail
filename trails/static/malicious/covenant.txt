@@ -171,6 +171,14 @@ http://195.123.247.143
 195.123.247.143:7443
 195.123.247.143:8834
 
+# Reference: https://twitter.com/TheDFIRReport/status/1403321117692108800
+# Reference: https://beta.shodan.io/host/52.175.148.20
+
+52.175.148.20:22
+52.175.148.20:3000
+52.175.148.20:443
+52.175.148.20:7443
+
 # Generic
 
 /covenantuser/
