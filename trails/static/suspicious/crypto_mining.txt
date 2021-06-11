@@ -819,3 +819,7 @@ rx.unmineable.com
 91.121.140.167:5555
 94.23.23.52:5555
 94.23.247.226:5555
+
+# Reference: https://twitter.com/unmaskparasites/status/1402346388617236481
+
+cryptominded.com
