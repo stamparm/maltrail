@@ -4882,6 +4882,10 @@ http://5.9.146.0
 http://5.9.235.245
 http://5.9.34.13
 
+# Reference: https://twitter.com/MalwarePatrol/status/1403293192464879618
+
+/e1kkuv16c0txdc1c00cxpo6j.php
+
 # Generic
 
 /js/altmanluggage.js
