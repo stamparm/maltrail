@@ -4886,6 +4886,11 @@ http://5.9.34.13
 
 /e1kkuv16c0txdc1c00cxpo6j.php
 
+# Reference: https://twitter.com/r3dbU7z/status/1403399105142009864	
+
+/AV-K.cmd
+/AV-K.ps1
+
 # Generic
 
 /js/altmanluggage.js
