@@ -4891,6 +4891,10 @@ http://5.9.34.13
 /AV-K.cmd
 /AV-K.ps1
 
+# Reference: https://twitter.com/MalwarePatrol/status/1403580083999281152
+
+/OneDrive_adrut0x/encrypted.php
+
 # Generic
 
 /js/altmanluggage.js
