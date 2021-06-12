@@ -833,5 +833,7 @@ xmr.yiluzhuanqian.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/49.12.80.38/relations
 # Reference: https://www.virustotal.com/gui/file/4e5899b580a267ee13b74d2a45210cf40ccf5d87aa4d382495f77f786082ee3a/detection
+# Reference: https://www.virustotal.com/gui/file/330fdb64d04d6df3f122ee0a98b83d82b9acd764194a257aad54b94dc274aa29/detection
 
 49.12.80.38:45700
+49.12.80.39:45700
