@@ -830,3 +830,8 @@ cryptominded.com
 tpool.yiluzhuanqian.com
 xcn1.yiluzhuanqian.com
 xmr.yiluzhuanqian.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/49.12.80.38/relations
+# Reference: https://www.virustotal.com/gui/file/4e5899b580a267ee13b74d2a45210cf40ccf5d87aa4d382495f77f786082ee3a/detection
+
+49.12.80.38:45700
