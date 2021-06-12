@@ -823,3 +823,10 @@ rx.unmineable.com
 # Reference: https://twitter.com/unmaskparasites/status/1402346388617236481
 
 cryptominded.com
+
+# Reference: https://blog.talosintelligence.com/2021/06/threat-roundup-0604-0611.html (# Win.Dropper.CoinMiner-9868311-1)
+# Reference: https://www.virustotal.com/gui/domain/yiluzhuanqian.com/relations
+
+tpool.yiluzhuanqian.com
+xcn1.yiluzhuanqian.com
+xmr.yiluzhuanqian.com
