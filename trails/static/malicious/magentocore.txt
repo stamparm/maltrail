@@ -4707,6 +4707,10 @@ googie.host
 
 analiticsweb.site
 
+# Reference: https://www.virustotal.com/gui/ip-address/47.74.9.12/relations
+
+skin-jquery.com
+
 # Generic
 
 /assets/lfg.js
