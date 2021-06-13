@@ -4895,6 +4895,10 @@ http://5.9.34.13
 
 /OneDrive_adrut0x/encrypted.php
 
+# Reference: https://www.virustotal.com/gui/file/4c6240772603eff2d1c58bb948a8eb5afa24619d5ea2c715e8d80839a432e8c6/detection
+
+/300.ps1
+
 # Generic
 
 /js/altmanluggage.js
