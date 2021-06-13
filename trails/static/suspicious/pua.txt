@@ -2764,3 +2764,9 @@ theav9.xyz
 
 categic.com
 cathogen.com
+
+# Reference: https://www.virustotal.com/gui/file/49b8b7d8ca1bdd82866a963a61dec3706a4949c0d515af531555c37f44ceba68/detection
+
+96.31.223.107:8041
+linux.ddnsgeek.com
+linux.medtrio.com
