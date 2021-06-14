@@ -926,6 +926,7 @@ sophosxl.net
 
 # Generic
 
+huorong.cn
 lencr.org
 tttttt.me
 yoursite.com
