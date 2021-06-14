@@ -409,3 +409,7 @@ pastex.pro
 # Reference: https://twitter.com/3xp0rtblog/status/1367894468045717509
 
 lolz.guru
+
+# Reference: https://twitter.com/p0x53/status/1404487057783746565
+
+toqn23mc.com
