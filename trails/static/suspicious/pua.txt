@@ -2770,3 +2770,7 @@ cathogen.com
 96.31.223.107:8041
 linux.ddnsgeek.com
 linux.medtrio.com
+
+# Reference: https://www.virustotal.com/gui/domain/pug88000nf.pubmatic.com/relations
+
+pug88000nf.pubmatic.com
