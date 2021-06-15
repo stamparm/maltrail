@@ -4711,6 +4711,11 @@ analiticsweb.site
 
 skin-jquery.com
 
+# Reference: https://twitter.com/rootprivilege/status/1404595455065870336
+# Reference: https://lukeleal.com/research/posts/hotjar-dot-info-skimmer/
+
+hotjar.info
+
 # Generic
 
 /assets/lfg.js
