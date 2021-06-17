@@ -1151,7 +1151,8 @@ def monitor():
             while _caps and not _done_count == (config.pcap_file or "").count(',') + 1:
                 time.sleep(1)
 
-        print("[i] all capturing interfaces closed")
+        if not config.pcap_file:
+            print("[i] all capturing interfaces closed")
     except SystemError as ex:
         if "error return without" in str(ex):
             print("\r[x] stopping (Ctrl-C pressed)")
@@ -1160,7 +1161,7 @@ def monitor():
     except KeyboardInterrupt:
         print("\r[x] stopping (Ctrl-C pressed)")
     finally:
-        print("\r[i] please wait...")
+        print("\r[i] cleaning up...")
 
         if _multiprocessing:
             try:
