@@ -187,6 +187,11 @@ http://206.189.0.12
 206.189.0.12:443
 206.189.0.12:7443
 
+# Reference: https://twitter.com/TheDFIRReport/status/1405151926640168964
+# Reference: https://beta.shodan.io/host/51.79.160.130
+
+51.79.160.130:7443
+
 # Generic
 
 /covenantuser/
