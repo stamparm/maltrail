@@ -4908,6 +4908,10 @@ http://5.9.34.13
 
 /y5eukec7amu2npvdxbclwdsz.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1405894315474313224
+
+/ceshi.ps1
+
 # Generic
 
 /js/altmanluggage.js
