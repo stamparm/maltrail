@@ -3276,3 +3276,7 @@ edvrddns.com
 # Reference: https://ddns.pboehm.de/
 
 d.pboehm.de
+
+# Reference: https://dvrlists.com/
+
+dvrlists.com
