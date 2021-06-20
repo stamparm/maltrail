@@ -4720,6 +4720,10 @@ hotjar.info
 
 javasrtscript.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/146.0.72.96/relations
+
+cloudappcdn.com
+
 # Generic
 
 /assets/lfg.js
