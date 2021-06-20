@@ -4974,6 +4974,7 @@ http://5.9.34.13
 /ravufgate.php
 /screenshot_gate.php
 /tgate.php
+/testgate.php
 /uadmin/adm.php
 /verification-card.php
 /1drvme/
