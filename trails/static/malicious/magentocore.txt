@@ -4716,6 +4716,10 @@ skin-jquery.com
 
 hotjar.info
 
+# Reference: https://www.virustotal.com/gui/ip-address/146.0.72.86/relations
+
+javasrtscript.com
+
 # Generic
 
 /assets/lfg.js
