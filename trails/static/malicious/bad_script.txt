@@ -4912,6 +4912,10 @@ http://5.9.34.13
 
 /ceshi.ps1
 
+# Reference: https://twitter.com/JAMESWT_MHT/status/1406867629982294020
+
+/qc2kwkwacmyu4hmxdqj51797.php
+
 # Generic
 
 /js/altmanluggage.js
