@@ -5285,3 +5285,8 @@ pktriot.net
 
 defenderlive.com
 dnsstatus.org
+
+# Reference: https://www.virustotal.com/gui/domain/8df.us/relations
+# Reference: https://github.com/stamparm/maltrail/pull/17293
+
+8df.us
