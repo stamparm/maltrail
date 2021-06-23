@@ -837,3 +837,12 @@ xmr.yiluzhuanqian.com
 
 49.12.80.38:45700
 49.12.80.39:45700
+
+# Reference: https://www.virustotal.com/gui/ip-address/178.32.120.127/relations
+# Reference: https://www.virustotal.com/gui/file/44faa82f7ab6fe3a40a57480504d2f7caf1d20b66656f02840e5ed83a6ad27b3/detection
+
+178.32.120.127:4444
+googleminer.com
+fr.minexmr.com
+pool.minexmr.uk
+xmr.748pz.net
