@@ -455,3 +455,11 @@ http://176.122.170.110
 176.31.240.87:8025
 176.31.240.87:8035
 89.45.10.155:7777
+
+# Reference: https://www.virustotal.com/gui/file/c60cb1ddf2946dc80d0964823c860955ebe32774043a37ebeec62d0ab4e6e3e7/detection
+
+47.91.170.222:4346
+
+# Reference: https://www.virustotal.com/gui/ip-address/182.254.116.117/relations
+
+http://182.254.116.117
