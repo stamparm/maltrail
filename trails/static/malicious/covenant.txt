@@ -179,6 +179,11 @@ http://195.123.247.143
 52.175.148.20:443
 52.175.148.20:7443
 
+# Reference: https://twitter.com/TheDFIRReport/status/1407322479664762890
+
+162.55.184.250:7443
+54.185.125.101:7443
+
 # Reference: https://twitter.com/TheDFIRReport/status/1405151926640168964
 # Reference: https://beta.shodan.io/host/206.189.0.12
 
