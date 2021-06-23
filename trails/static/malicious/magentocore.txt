@@ -4724,6 +4724,17 @@ javasrtscript.com
 
 cloudappcdn.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1407433077048057856
+
+addjs.co
+addsc.co
+jss.lt
+jsz.lt
+ujl.me
+ujq.me
+vdf.me
+vdf.xyz
+
 # Generic
 
 /assets/lfg.js
