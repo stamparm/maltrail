@@ -4899,6 +4899,23 @@ http://5.9.34.13
 
 /300.ps1
 
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/new-ta402-molerats-malware-targets-governments-middle-east
+# Reference: https://otx.alienvault.com/pulse/60cb37bf5fe8246bb2556969
+
+/CVDWwr42525.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1406116795052867584
+
+/y5eukec7amu2npvdxbclwdsz.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1405894315474313224
+
+/ceshi.ps1
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1406867629982294020
+
+/qc2kwkwacmyu4hmxdqj51797.php
+
 # Generic
 
 /js/altmanluggage.js
@@ -4961,6 +4978,7 @@ http://5.9.34.13
 /ravufgate.php
 /screenshot_gate.php
 /tgate.php
+/testgate.php
 /uadmin/adm.php
 /verification-card.php
 /1drvme/
