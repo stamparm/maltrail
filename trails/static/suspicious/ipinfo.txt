@@ -362,3 +362,8 @@ ip.urls.is
 # Reference: https://app.any.run/tasks/6f591989-545b-4101-b7c1-69a0f1f6465d/
 
 api.mylnikov.org
+
+# Reference: https://www.virustotal.com/gui/file/460ae61f9b410506f5f5b0308107cad53cd3871087340541e3693b717c58843f/detection
+
+checkip.us-east-1.prod.check-ip.aws.a2z.com
+checkip.check-ip.aws.a2z.com
