@@ -4735,6 +4735,10 @@ ujq.me
 vdf.me
 vdf.xyz
 
+# Reference: https://www.virustotal.com/gui/ip-address/64.190.62.111/relations
+
+magento.host
+
 # Generic
 
 /assets/lfg.js
