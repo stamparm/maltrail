@@ -4916,6 +4916,10 @@ http://5.9.34.13
 
 /qc2kwkwacmyu4hmxdqj51797.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1408215627312082950
+
+/cne82jyx15erri76gbffh16z.php
+
 # Generic
 
 /js/altmanluggage.js
