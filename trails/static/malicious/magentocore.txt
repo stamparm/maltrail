@@ -4751,6 +4751,11 @@ static-zdassets.com
 tatic-hotjar.com
 widget-freshworks.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1408561524235374602
+
+renokonnect.com/stats/js/jcrop/jcrop.min.js
+sgtrek.com/jquery/jQuery.viewer.js
+
 # Generic
 
 /assets/lfg.js
