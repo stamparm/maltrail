@@ -4920,6 +4920,10 @@ http://5.9.34.13
 
 /cne82jyx15erri76gbffh16z.php
 
+# Reference: https://www.virustotal.com/gui/file/f5380da161d45e09115bf0eb392b979db161ec710294352e5cf10d78469aa5a9/detection
+
+/track/bot.php
+
 # Generic
 
 /js/altmanluggage.js
