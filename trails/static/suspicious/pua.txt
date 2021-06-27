@@ -2774,3 +2774,7 @@ linux.medtrio.com
 # Reference: https://www.virustotal.com/gui/domain/pug88000nf.pubmatic.com/relations
 
 pug88000nf.pubmatic.com
+
+# Reference: https://www.virustotal.com/gui/file/3ce3450a031904764855554e0c5d3e58379d1875f7267399059023bf4c4afeb6/detection
+
+sybadee.info
