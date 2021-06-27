@@ -4739,6 +4739,23 @@ vdf.xyz
 
 magento.host
 
+# Reference: https://twitter.com/AffableKraut/status/1408512205289660429
+
+cdn-doubleclick.net
+chimpstatic-cdn.com
+cloudflare-cdnjs.com
+cloudflare-ssl.com
+fontgoogleapis.com
+static-doubleclick.com
+static-zdassets.com
+tatic-hotjar.com
+widget-freshworks.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1408561524235374602
+
+renokonnect.com/stats/js/jcrop/jcrop.min.js
+sgtrek.com/jquery/jQuery.viewer.js
+
 # Generic
 
 /assets/lfg.js
