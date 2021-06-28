@@ -2802,3 +2802,7 @@ mavrlaldhnkp.floattenmidget.ru
 # Reference: https://www.virustotal.com/gui/file/a109566c51b9c1406e692705ae44bc6c6a7759fd15f914c4a5e0dff8e6a4569e/detection
 
 vncqsjxpzswbzm.floattenmidget.ru
+
+# Reference: https://www.virustotal.com/gui/file/63df37f9d2e2b01e6206b738823ec17e7fa57fe2e49c2e783d704264b7a7b295/detection
+
+ztwonlevsofi.floattenmidget.ru
