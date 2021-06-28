@@ -2794,3 +2794,7 @@ nowitfix.ru
 # Reference: https://www.virustotal.com/gui/file/491a3949c03fa21d71104b94e91b6031ace0661d2f4ad635ad817a84a2caf47c/detection
 
 itnow-fix.ru
+
+# Reference: https://www.virustotal.com/gui/file/63df37f9d2e2b01e6206b738823ec17e7fa57fe2e49c2e783d704264b7a7b295/detection
+
+mavrlaldhnkp.floattenmidget.ru
