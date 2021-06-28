@@ -4776,6 +4776,11 @@ perfecttux.site
 perfecttux.website
 postguard.website
 
+# Reference: https://twitter.com/rootprivilege/status/1409575929165193226
+# Reference: https://www.virustotal.com/gui/ip-address/89.108.116.218/relations
+
+toolser.pw
+
 # Generic
 
 /assets/lfg.js
