@@ -2806,3 +2806,7 @@ vncqsjxpzswbzm.floattenmidget.ru
 # Reference: https://www.virustotal.com/gui/file/63df37f9d2e2b01e6206b738823ec17e7fa57fe2e49c2e783d704264b7a7b295/detection
 
 ztwonlevsofi.floattenmidget.ru
+
+# Reference: https://www.virustotal.com/gui/file/74862ff17b9a4c1700d98fc5aa09fc7d1f823b77f86e74c8bf20549bef820bf4/detection
+
+akaevyudcijm.floattenmidget.ru
