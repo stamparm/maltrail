@@ -4767,6 +4767,14 @@ googie.website
 googleapis.website
 jquery.fun
 tidio.fun
+bebedepotplus.site
+bebedepotplus.website
+dirsalonfurniture.site
+dogdug.website
+gorillawhips.site
+perfecttux.site
+perfecttux.website
+postguard.website
 
 # Generic
 
