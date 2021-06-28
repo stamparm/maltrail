@@ -2778,3 +2778,11 @@ pug88000nf.pubmatic.com
 # Reference: https://www.virustotal.com/gui/file/3ce3450a031904764855554e0c5d3e58379d1875f7267399059023bf4c4afeb6/detection
 
 sybadee.info
+
+# Reference: https://www.virustotal.com/gui/file/603a124aee5107db3d39af26554d76830f07b228e47c89c7fdd2fad6aeb45f95/detection
+
+patchserver.no-ip.info
+ranonlineshop.no-ip.info
+/3dran/patch/FixSuit1000.thor
+/3dran/patch/2FixSuit1000.thor
+/3dran/patch/fixEVO1.thor
