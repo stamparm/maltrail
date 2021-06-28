@@ -2786,3 +2786,11 @@ ranonlineshop.no-ip.info
 /3dran/patch/FixSuit1000.thor
 /3dran/patch/2FixSuit1000.thor
 /3dran/patch/fixEVO1.thor
+
+# Reference: https://www.virustotal.com/gui/file/0887dffd0d1e0e8ed84a5e587bae0caa32f380a7384790b1caeffdcf711d1aa6/detection
+
+nowitfix.ru
+
+# Reference: https://www.virustotal.com/gui/file/491a3949c03fa21d71104b94e91b6031ace0661d2f4ad635ad817a84a2caf47c/detection
+
+itnow-fix.ru
