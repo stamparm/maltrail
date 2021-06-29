@@ -4756,6 +4756,40 @@ widget-freshworks.com
 renokonnect.com/stats/js/jcrop/jcrop.min.js
 sgtrek.com/jquery/jQuery.viewer.js
 
+# Reference: https://blog.malwarebytes.com/cybercrime/2021/06/lil-skimmer-the-magecart-impersonator/
+# Reference: https://www.virustotal.com/gui/ip-address/87.236.16.107/relations
+
+cdnattn.site
+cloudfiare.site
+facebookmanagers.pw
+googletagmanager.space
+googie.website
+googleapis.website
+jquery.fun
+tidio.fun
+bebedepotplus.site
+bebedepotplus.website
+dirsalonfurniture.site
+dogdug.website
+gorillawhips.site
+perfecttux.site
+perfecttux.website
+postguard.website
+
+# Reference: https://twitter.com/rootprivilege/status/1409575929165193226
+# Reference: https://www.virustotal.com/gui/ip-address/89.108.116.218/relations
+
+toolser.pw
+
+# Reference: https://www.virustotal.com/gui/ip-address/194.58.112.174/relations
+
+googleapis.site
+
+# Reference: https://www.virustotal.com/gui/ip-address/163.172.117.25/relations
+
+googleapis.me
+googlfonts.com
+
 # Generic
 
 /assets/lfg.js
