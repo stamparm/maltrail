@@ -293,12 +293,6 @@ vscode.workingfeedback.cloud
 
 /~zadmin/
 
-# Reference: https://twitter.com/KorbenD_Intel/status/1406007597027708933
-# Reference: https://www.virustotal.com/gui/file/3560fce6eb996380b8daf223fe10d55086b9582593c6e2f62511cc5995f18005/detection
-# Reference: https://www.virustotal.com/gui/file/8043d6c07fbd1e122c91eedf782c6ed7a539ab089a0eab48a50b2ab71127fa51/detection
-
-20.86.10.75:7443
-
 # Generic
 
 /admin_123/auth.php
