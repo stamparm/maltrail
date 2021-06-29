@@ -4788,6 +4788,7 @@ googleapis.site
 # Reference: https://www.virustotal.com/gui/ip-address/163.172.117.25/relations
 
 googleapis.me
+googlfonts.com
 
 # Generic
 
