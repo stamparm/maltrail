@@ -5290,3 +5290,7 @@ dnsstatus.org
 # Reference: https://github.com/stamparm/maltrail/pull/17293
 
 8df.us
+
+# Reference: https://www.virustotal.com/gui/domain/floattenmidget.ru/relations
+
+floattenmidget.ru
