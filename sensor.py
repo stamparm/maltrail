@@ -93,6 +93,7 @@ from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import VALID_DNS_NAME_REGEX
 from core.settings import trails
 from core.settings import VERSION
+from core.settings import WEB_SCANNING_THRESHOLD
 from core.settings import WHITELIST
 from core.settings import WHITELIST_DIRECT_DOWNLOAD_KEYWORDS
 from core.settings import WHITELIST_LONG_DOMAIN_NAME_KEYWORDS
@@ -110,6 +111,8 @@ _caps = []
 _connect_sec = 0
 _connect_src_dst = {}
 _connect_src_details = {}
+_path_src_dst = {}
+_path_src_dst_details = {}
 _count = 0
 _locks = AttribDict()
 _multiprocessing = None
@@ -298,6 +301,15 @@ def _process_packet(packet, sec, usec, ip_offset):
                 _connect_src_dst.clear()
                 _connect_src_details.clear()
 
+                for key in _path_src_dst:
+                    if len(_path_src_dst[key]) > WEB_SCANNING_THRESHOLD:
+                        _src_ip, _dst_ip = key.split('~')
+                        _sec, _usec, _src_port, _dst_port, _path = _path_src_dst_details[key].pop()
+                        log_event((_sec, _usec, _src_ip, _src_port, _dst_ip, _dst_port, PROTO.TCP, TRAIL.PATH, "*", "potential web scanning", "(heuristic)"), packet)
+
+                _path_src_dst.clear()
+                _path_src_dst_details.clear()
+
         ip_data = packet[ip_offset:]
         ip_version = ord(ip_data[0:1]) >> 4
         localhost_ip = LOCALHOST_IP[ip_version]
@@ -426,7 +438,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             if host and host[0].isalpha() and dst_ip in trails:
                                 log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, "%s (%s)" % (dst_ip, host.split(':')[0]), trails[dst_ip][0], trails[dst_ip][1]), packet)
                             elif re.search(r"\A\d+\.[0-9.]+\Z", host or "") and re.search(SUSPICIOUS_DIRECT_IP_URL_REGEX, "%s%s" % (host, path)):
-                                if not _dst_ip.startswith(_get_local_prefix()):
+                                if not dst_ip.startswith(_get_local_prefix()):
                                     trail = "(%s)%s" % (host, path)
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "potential iot-malware download (suspicious)", "(heuristic)"), packet)
                                     return
@@ -439,7 +451,20 @@ def _process_packet(packet, sec, usec, ip_offset):
                     if index >= 0:
                         post_data = tcp_data[index + 4:]
 
-                    if config.USE_HEURISTICS and dst_port == 80 and path.startswith("http://") and any(_ in path for _ in SUSPICIOUS_PROXY_PROBE_PRE_CONDITION) and not _check_domain_whitelisted(path.split('/')[2]):
+                    url = None
+                    if config.USE_HEURISTICS and path.startswith('/'):
+                        _path = path.split('/')[1]
+
+                        key = "%s~%s" % (src_ip, dst_ip)
+                        if key not in _path_src_dst:
+                            _path_src_dst[key] = set()
+                        _path_src_dst[key].add(_path)
+
+                        if key not in _path_src_dst_details:
+                            _path_src_dst_details[key] = set()
+                        _path_src_dst_details[key].add((sec, usec, src_port, dst_port, path))
+
+                    elif config.USE_HEURISTICS and dst_port == 80 and path.startswith("http://") and any(_ in path for _ in SUSPICIOUS_PROXY_PROBE_PRE_CONDITION) and not _check_domain_whitelisted(path.split('/')[2]):
                         trail = re.sub(r"(http://[^/]+/)(.+)", r"\g<1>(\g<2>)", path)
                         trail = re.sub(r"(http://)([^/(]+)", lambda match: "%s%s" % (match.group(1), match.group(2).split(':')[0].rstrip('.')), trail)
                         log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, trail, "potential proxy probe (suspicious)", "(heuristic)"), packet)
@@ -474,7 +499,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                         url = "%s%s" % (host, path)
                         proxy_domain = host.split(':')[0]
                         _check_domain(proxy_domain, sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, packet)
-                    else:
+
+                    if url is None:
                         url = "%s%s" % (host, path)
 
                     if config.USE_HEURISTICS:
