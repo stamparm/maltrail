@@ -4790,10 +4790,6 @@ googleapis.site
 googleapis.me
 googlfonts.com
 
-# Reference: https://www.virustotal.com/gui/ip-address/212.8.240.67/relations
-
-googleapis.su
-
 # Reference: https://www.virustotal.com/gui/ip-address/194.58.123.10/relations
 
 googleapis.tk
