@@ -4790,6 +4790,10 @@ googleapis.site
 googleapis.me
 googlfonts.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/212.8.240.67/relations
+
+googleapis.su
+
 # Generic
 
 /assets/lfg.js
