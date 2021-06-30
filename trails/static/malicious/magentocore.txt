@@ -4794,6 +4794,10 @@ googlfonts.com
 
 googleapis.su
 
+# Reference: https://www.virustotal.com/gui/ip-address/194.58.123.10/relations
+
+googleapis.tk
+
 # Generic
 
 /assets/lfg.js
