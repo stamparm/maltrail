@@ -4798,6 +4798,12 @@ googleapis.su
 
 googleapis.tk
 
+# Reference: https://www.virustotal.com/gui/ip-address/31.187.64.40/relations
+
+analytics-scripts.ml
+font4u.ga
+googleapis.ml
+
 # Generic
 
 /assets/lfg.js
