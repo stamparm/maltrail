@@ -4808,6 +4808,10 @@ googleapis.ml
 
 googleapis.ga
 
+# Reference: https://www.virustotal.com/gui/ip-address/193.37.212.63/relations
+
+googleapis.gq
+
 # Generic
 
 /assets/lfg.js
