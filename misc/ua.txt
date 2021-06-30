@@ -1740,6 +1740,11 @@ Mozilla/5.0 Gecko/41.0 Firefox/41.0
 
 Edg/83.0.478.64
 
+# Reference: https://twitter.com/James_inthe_box/status/1410352295670255619
+# Reference: https://www.virustotal.com/gui/file/fee6b3937d208b95c17dc253ba951f3c7c5a332af98f4e0117ee5bbd47e38843/detection
+
+charris4ever
+
 # Misc
 
 information_schema
