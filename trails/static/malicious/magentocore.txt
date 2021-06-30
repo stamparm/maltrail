@@ -4804,6 +4804,10 @@ analytics-scripts.ml
 font4u.ga
 googleapis.ml
 
+# Reference: https://www.virustotal.com/gui/ip-address/104.27.185.122/detection
+
+googleapis.ga
+
 # Generic
 
 /assets/lfg.js
