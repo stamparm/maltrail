@@ -4812,6 +4812,10 @@ googleapis.gq
 
 sites-analytic.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/195.123.222.43/relations
+
+hotjar-analytics.com
+
 # Generic
 
 /assets/lfg.js
