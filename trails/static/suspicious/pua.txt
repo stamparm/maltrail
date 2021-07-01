@@ -2810,3 +2810,9 @@ ztwonlevsofi.floattenmidget.ru
 # Reference: https://www.virustotal.com/gui/file/74862ff17b9a4c1700d98fc5aa09fc7d1f823b77f86e74c8bf20549bef820bf4/detection
 
 akaevyudcijm.floattenmidget.ru
+
+# Reference: https://www.virustotal.com/gui/file/431c755cb88d1d767e4d55349eaf3a2a8cb54e3bf44638f07b4408f414b81fbf/detection
+
+adssyscom.com
+monttr.info
+mtxapi1.com
