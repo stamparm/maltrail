@@ -4932,6 +4932,20 @@ http://5.9.34.13
 
 /indxkic2b4aqygzuoqfnibjtphewu23b8ebjkf5um6n0qn6pq97sfdtwjokt2cu3tm3gj8inpebw2gf46u64.php
 
+# Reference: https://twitter.com/banxen/status/1375292245906087937
+# Reference: https://www.zscaler.com/blogs/security-research/low-volume-multi-stage-attack-leveraging-azureedge-and-shopify-cdns
+
+officechairatwork.com/wp-content/plugins/yith-woocommerce-order-tracking/assets/js/ywot.js
+global.asazure.windows.net
+atlant18.azureedge.net
+compos17.azureedge.net
+compos20.azureedge.net
+doc-web1.azureedge.net
+metrica2.azureedge.net
+string.azureedge.net
+theme.azureedge.net
+web-google.azureedge.net
+
 # Generic
 
 /js/altmanluggage.js
