@@ -4946,6 +4946,10 @@ string.azureedge.net
 theme.azureedge.net
 web-google.azureedge.net
 
+# Reference: https://twitter.com/KesaGataMe0/status/1410874602021023745
+
+/smbcupdatebill.php
+
 # Generic
 
 /js/altmanluggage.js
