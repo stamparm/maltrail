@@ -4814,6 +4814,7 @@ sites-analytic.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/195.123.222.43/relations
 
+hot-jar.com
 hotjar-analytics.com
 
 # Generic
