@@ -4954,6 +4954,10 @@ web-google.azureedge.net
 
 /HR13I5MD0ASC5J.php
 
+# Reference: https://www.virustotal.com/gui/domain/7naturalessences.com/relations
+
+7naturalessences.com
+
 # Generic
 
 /js/altmanluggage.js
