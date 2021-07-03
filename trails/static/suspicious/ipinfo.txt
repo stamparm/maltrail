@@ -367,3 +367,7 @@ api.mylnikov.org
 
 checkip.us-east-1.prod.check-ip.aws.a2z.com
 checkip.check-ip.aws.a2z.com
+
+# Reference: https://www.virustotal.com/gui/domain/iplis.ru/relations
+
+iplis.ru
