@@ -4817,6 +4817,12 @@ sites-analytic.com
 hot-jar.com
 hotjar-analytics.com
 
+# Reference: https://twitter.com/AffableKraut/status/1411229363685806082
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.68.13/relations
+
+apayments.top
+stripe-auth-api.com
+
 # Generic
 
 /assets/lfg.js
