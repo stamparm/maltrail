@@ -4047,10 +4047,6 @@ tunacan-812.tk
 
 premcloa.shop
 
-# Reference: https://twitter.com/felixaime/status/1349261822591954946
-
-cdncontentdelivery.com
-
 # Reference: https://twitter.com/MalwarePatrol/status/1350022176049680386
 
 /tliomxaltla03oxusghg2pn4.php
@@ -4923,6 +4919,40 @@ http://5.9.34.13
 # Reference: https://www.virustotal.com/gui/file/f5380da161d45e09115bf0eb392b979db161ec710294352e5cf10d78469aa5a9/detection
 
 /track/bot.php
+
+# Reference: https://twitter.com/rootprivilege/status/1410430545373323264
+
+/UVPd5nFADk90KioqvL82.php
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1410592639968104459
+
+/indxkic2b4aqygzuoqfnibjtphewu23b8ebjkf5um6n0qn6pq97sfdtwjokt2cu3tm3gj8inpebw2gf46u64.php
+
+# Reference: https://twitter.com/banxen/status/1375292245906087937
+# Reference: https://www.zscaler.com/blogs/security-research/low-volume-multi-stage-attack-leveraging-azureedge-and-shopify-cdns
+
+officechairatwork.com/wp-content/plugins/yith-woocommerce-order-tracking/assets/js/ywot.js
+global.asazure.windows.net
+atlant18.azureedge.net
+compos17.azureedge.net
+compos20.azureedge.net
+doc-web1.azureedge.net
+metrica2.azureedge.net
+string.azureedge.net
+theme.azureedge.net
+web-google.azureedge.net
+
+# Reference: https://twitter.com/KesaGataMe0/status/1410874602021023745
+
+/smbcupdatebill.php
+
+# Reference: https://twitter.com/1ZRR4H/status/1408252818272751621
+
+/HR13I5MD0ASC5J.php
+
+# Reference: https://www.virustotal.com/gui/domain/7naturalessences.com/relations
+
+7naturalessences.com
 
 # Generic
 
