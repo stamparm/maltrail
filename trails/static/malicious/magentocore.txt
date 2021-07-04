@@ -4790,6 +4790,50 @@ googleapis.site
 googleapis.me
 googlfonts.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/194.58.123.10/relations
+
+googleapis.tk
+
+# Reference: https://www.virustotal.com/gui/ip-address/31.187.64.40/relations
+
+analytics-scripts.ml
+font4u.ga
+googleapis.ml
+
+# Reference: https://www.virustotal.com/gui/ip-address/104.27.185.122/detection
+
+googleapis.ga
+
+# Reference: https://www.virustotal.com/gui/ip-address/193.37.212.63/relations
+
+googleapis.gq
+
+# Reference: https://www.virustotal.com/gui/ip-address/209.126.103.139/relations
+
+sites-analytic.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.123.222.43/relations
+
+hot-jar.com
+hotjar-analytics.com
+
+# Reference: https://twitter.com/AffableKraut/status/1411229363685806082
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.68.13/relations
+
+apayments.top
+stripe-auth-api.com
+
+# Reference: https://twitter.com/felixaime/status/1349261822591954946
+# Reference: https://twitter.com/500mk500/status/1411680465086525440
+# Reference: https://www.virustotal.com/gui/ip-address/147.135.1.203/relations
+
+cdngateways.com
+cdncontentdelivery.com
+query.network
+jqueny.com
+securecontentssl.com
+site-counter.com
+
 # Generic
 
 /assets/lfg.js
