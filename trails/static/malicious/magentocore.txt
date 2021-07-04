@@ -4823,6 +4823,16 @@ hotjar-analytics.com
 apayments.top
 stripe-auth-api.com
 
+# Reference: https://twitter.com/felixaime/status/1349261822591954946
+# Reference: https://twitter.com/500mk500/status/1411680465086525440
+# Reference: https://www.virustotal.com/gui/ip-address/147.135.1.203/relations
+
+cdngateways.com
+cdncontentdelivery.com
+query.network
+jqueny.com
+securecontentssl.com
+
 # Generic
 
 /assets/lfg.js
