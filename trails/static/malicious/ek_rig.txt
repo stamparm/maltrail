@@ -290,6 +290,10 @@ zero.testtrack.xyz
 http://188.227.107.144
 exitmagall.xyz
 
+# Reference: https://twitter.com/malware_traffic/status/1412128664721014785
+
+http://188.227.84.67
+magicpeoplenew.xyz
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
