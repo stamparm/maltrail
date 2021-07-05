@@ -4834,6 +4834,27 @@ jqueny.com
 securecontentssl.com
 site-counter.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/165.232.142.149/relations
+
+caphyon-analytics.com
+cdnze.com
+hatenaclick.site
+jquery.im
+jquerycdn.top
+jquerynetwork.best
+jsdeliavr.net
+webfontcdn.com
+webs-metric.com
+zscript1.com
+ztrack1.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.26.99.122/relations
+
+zclick.biz
+zclick.pro
+zscript.site
+ztrack.site
+
 # Generic
 
 /assets/lfg.js
