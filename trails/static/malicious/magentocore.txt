@@ -4850,8 +4850,6 @@ ztrack1.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/185.26.99.122/relations
 
-zclick.biz
-zclick.pro
 zscript.site
 ztrack.site
 
