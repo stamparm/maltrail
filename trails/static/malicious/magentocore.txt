@@ -4839,6 +4839,7 @@ site-counter.com
 adsclick.click
 caphyon-analytics.com
 cdnze.com
+cosmjs.com
 fix-fonts.com
 fontapis.com
 hatenaclick.site
