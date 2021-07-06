@@ -4954,6 +4954,10 @@ web-google.azureedge.net
 
 7naturalessences.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/165.232.142.149/relations
+
+scriptcc.cc
+
 # Generic
 
 /js/altmanluggage.js
