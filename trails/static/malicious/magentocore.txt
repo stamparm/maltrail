@@ -4840,6 +4840,7 @@ site-counter.com
 adsclick.click
 apps-analytics.net
 awesomelytics.com
+bootstrapmin.website
 caphyon-analytics.com
 cdnze.com
 cookiebot.org
