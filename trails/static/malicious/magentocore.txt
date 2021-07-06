@@ -4836,6 +4836,7 @@ site-counter.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/165.232.142.149/relations
 
+adsclick.click
 caphyon-analytics.com
 cdnze.com
 fontapis.com
