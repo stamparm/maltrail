@@ -4840,6 +4840,7 @@ adsclick.click
 apps-analytics.net
 caphyon-analytics.com
 cdnze.com
+cookiebot.org
 cosmjs.com
 facehttpsk.net
 fix-fonts.com
