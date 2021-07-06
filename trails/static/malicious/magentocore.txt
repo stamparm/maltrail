@@ -4835,6 +4835,7 @@ securecontentssl.com
 site-counter.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/165.232.142.149/relations
+# Reference: https://www.virustotal.com/gui/ip-address/206.81.5.96/relations
 
 adsclick.click
 apps-analytics.net
@@ -4854,6 +4855,7 @@ jsdeliavr.net
 mage-seooptimization.com
 measurablemetrics.co
 mecontentassent.website
+owlcdn.com
 proclaim-api.net
 tagsrv.com
 webfontcdn.com
