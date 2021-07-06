@@ -4838,6 +4838,7 @@ site-counter.com
 
 caphyon-analytics.com
 cdnze.com
+fontapis.com
 hatenaclick.site
 jquery.im
 jquerycdn.top
