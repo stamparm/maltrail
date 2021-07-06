@@ -4834,6 +4834,45 @@ jqueny.com
 securecontentssl.com
 site-counter.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/165.232.142.149/relations
+# Reference: https://www.virustotal.com/gui/ip-address/206.81.5.96/relations
+
+adsclick.click
+apps-analytics.net
+awesomelytics.com
+bootstrapmin.website
+caphyon-analytics.com
+cdnze.com
+cookiebot.org
+cosmjs.com
+evolvemediametrics.com
+facehttpsk.net
+fix-fonts.com
+fontapis.com
+hatenaclick.site
+informesanaliticos.com
+jquery.im
+jquerycdn.top
+jquerynetwork.best
+jsdeliavr.net
+mage-seooptimization.com
+measurablemetrics.co
+mecontentassent.website
+mob-api.net
+owlcdn.com
+proclaim-api.net
+tagsrv.com
+webfontcdn.com
+webs-meter.com
+webs-metric.com
+zscript1.com
+ztrack1.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.26.99.122/relations
+
+zscript.site
+ztrack.site
+
 # Generic
 
 /assets/lfg.js
