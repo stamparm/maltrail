@@ -330,6 +330,8 @@ vscode.workingfeedback.cloud
 /logz/auth.php
 /logz/login.php
 /nd081112/panel.php
+/Server_Panel/private/
+/Server_Panel/public/
 /panel/?admin
 /panel/?auth
 /panel/?callbak
