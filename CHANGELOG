@@ -12,7 +12,27 @@
 
 #################################################################
 
-- Version 0.32 -> 0.33 (Upcoming release)
+
+- Version 0.35 -> 0.36 (Upcoming release)
+
+
+
+- Version 0.34 -> 0.35 (04 Jul 2021)
+
+[+] Added the prototype of heur for potential web scanning attempts
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.33 -> 0.34 (10 Jun 2021)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.32 -> 0.33 (10 Jun 2021)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
