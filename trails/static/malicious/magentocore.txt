@@ -4842,6 +4842,7 @@ apps-analytics.net
 awesomelytics.com
 bootstrapmin.website
 caphyon-analytics.com
+cdnstreamfree.com
 cdnze.com
 cookiebot.org
 cosmjs.com
@@ -4861,6 +4862,7 @@ mecontentassent.website
 mob-api.net
 owlcdn.com
 proclaim-api.net
+sites-mark.com
 tagsrv.com
 webfontcdn.com
 webs-meter.com
