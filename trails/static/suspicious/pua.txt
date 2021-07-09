@@ -2820,3 +2820,4 @@ mtxapi1.com
 # Reference: https://www.virustotal.com/gui/file/0743f2ccfd94143ac06690b2d6e49ca786a91ce7b2b666ac56ee5e36613fb155/detection
 
 requested404.com
+superstationcity.com
