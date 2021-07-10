@@ -4884,6 +4884,17 @@ ztrack.site
 
 sslapis.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1412932692077731841
+
+banheirasdoka.com.br/skin/frontend/rwd/default/lib/b.js
+banheirasdoka.com.br/skin/frontend/rwd/default/lib/route.php
+design2mall.com/js/mage/translate.min.js
+design2mall.com/skin/frontend/rwd/default/js/lib/route.php
+tallerheels.com/skin/frontend/rwd/default/lib/route.php
+/skin/frontend/rwd/default/lib/b.js
+/skin/frontend/rwd/default/lib/route.php
+/skin/frontend/rwd/default/js/lib/route.php
+
 # Generic
 
 /assets/lfg.js
