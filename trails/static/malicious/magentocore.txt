@@ -4875,6 +4875,11 @@ ztrack1.com
 zscript.site
 ztrack.site
 
+# Reference: https://twitter.com/unmaskparasites/status/1413251798345736197
+# Reference: https://twitter.com/Ledtech3/status/1413256014569345036
+
+sslapis.com
+
 # Generic
 
 /assets/lfg.js
