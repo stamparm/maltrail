@@ -4958,6 +4958,10 @@ web-google.azureedge.net
 
 scriptcc.cc
 
+# Reference: https://www.virustotal.com/gui/file/895c3e47bf41c07189e079b9f6136dd49e44eac681e646ab40bca216418420e8/detection
+
+/4j17tSRM9X14SsdW.js
+
 # Generic
 
 /js/altmanluggage.js

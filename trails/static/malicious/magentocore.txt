@@ -4836,12 +4836,15 @@ site-counter.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/165.232.142.149/relations
 # Reference: https://www.virustotal.com/gui/ip-address/206.81.5.96/relations
+# Reference: https://www.virustotal.com/gui/ip-address/37.1.204.37/relations
 
 adsclick.click
 apps-analytics.net
 awesomelytics.com
 bootstrapmin.website
 caphyon-analytics.com
+cdnstreamfree.com
+cdnstreamlive.com
 cdnze.com
 cookiebot.org
 cosmjs.com
@@ -4859,8 +4862,11 @@ mage-seooptimization.com
 measurablemetrics.co
 mecontentassent.website
 mob-api.net
+owlanalytics.io
 owlcdn.com
+potokcdn.com
 proclaim-api.net
+sites-mark.com
 tagsrv.com
 webfontcdn.com
 webs-meter.com
@@ -4872,6 +4878,22 @@ ztrack1.com
 
 zscript.site
 ztrack.site
+
+# Reference: https://twitter.com/unmaskparasites/status/1413251798345736197
+# Reference: https://twitter.com/Ledtech3/status/1413256014569345036
+
+sslapis.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1412932692077731841
+
+banheirasdoka.com.br/skin/frontend/rwd/default/lib/b.js
+banheirasdoka.com.br/skin/frontend/rwd/default/lib/route.php
+design2mall.com/js/mage/translate.min.js
+design2mall.com/skin/frontend/rwd/default/js/lib/route.php
+tallerheels.com/skin/frontend/rwd/default/lib/route.php
+/skin/frontend/rwd/default/lib/b.js
+/skin/frontend/rwd/default/lib/route.php
+/skin/frontend/rwd/default/js/lib/route.php
 
 # Generic
 
