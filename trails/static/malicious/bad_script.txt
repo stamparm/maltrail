@@ -4962,6 +4962,10 @@ scriptcc.cc
 
 /4j17tSRM9X14SsdW.js
 
+# Reference: https://twitter.com/KesaGataMe0/status/1414197200909869056
+
+/wctx1D1DFxFDg.do.php
+
 # Generic
 
 /js/altmanluggage.js
