@@ -4895,6 +4895,10 @@ tallerheels.com/skin/frontend/rwd/default/lib/route.php
 /skin/frontend/rwd/default/lib/route.php
 /skin/frontend/rwd/default/js/lib/route.php
 
+# Reference: https://twitter.com/AffableKraut/status/1414459135052111878
+
+jquery-library.net
+
 # Generic
 
 /assets/lfg.js
