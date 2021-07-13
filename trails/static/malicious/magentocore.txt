@@ -4903,6 +4903,10 @@ tallerheels.com/skin/frontend/rwd/default/lib/route.php
 
 jquery-library.net
 
+# Reference: https://twitter.com/unmaskparasites/status/1414732273543356419
+
+wooanalytics.biz
+
 # Generic
 
 /assets/lfg.js
