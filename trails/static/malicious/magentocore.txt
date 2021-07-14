@@ -4900,7 +4900,10 @@ tallerheels.com/skin/frontend/rwd/default/lib/route.php
 /skin/frontend/rwd/default/js/lib/route.php
 
 # Reference: https://twitter.com/AffableKraut/status/1414459135052111878
+# Reference: https://www.virustotal.com/gui/ip-address/37.46.130.142/relations
 
+cdn-library.net
+cdn-library.su
 jquery-library.net
 
 # Reference: https://twitter.com/unmaskparasites/status/1414732273543356419
