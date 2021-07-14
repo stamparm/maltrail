@@ -4759,22 +4759,26 @@ sgtrek.com/jquery/jQuery.viewer.js
 # Reference: https://blog.malwarebytes.com/cybercrime/2021/06/lil-skimmer-the-magecart-impersonator/
 # Reference: https://www.virustotal.com/gui/ip-address/87.236.16.107/relations
 
-cdnattn.site
-cloudfiare.site
-facebookmanagers.pw
-googletagmanager.space
-googie.website
-googleapis.website
-jquery.fun
-tidio.fun
 bebedepotplus.site
 bebedepotplus.website
+cdnattn.site
+cloudfiare.site
 dirsalonfurniture.site
 dogdug.website
+facebookmanagers.pw
+ganan-script.site
+googie.website
+googleapis.website
+googletagmanager.space
 gorillawhips.site
+jquery.fun
 perfecttux.site
 perfecttux.website
 postguard.website
+tidio.fun
+win-activar.site
+win-script.website
+win-scripto.site
 
 # Reference: https://twitter.com/rootprivilege/status/1409575929165193226
 # Reference: https://www.virustotal.com/gui/ip-address/89.108.116.218/relations
@@ -4894,6 +4898,17 @@ tallerheels.com/skin/frontend/rwd/default/lib/route.php
 /skin/frontend/rwd/default/lib/b.js
 /skin/frontend/rwd/default/lib/route.php
 /skin/frontend/rwd/default/js/lib/route.php
+
+# Reference: https://twitter.com/AffableKraut/status/1414459135052111878
+# Reference: https://www.virustotal.com/gui/ip-address/37.46.130.142/relations
+
+cdn-library.net
+cdn-library.su
+jquery-library.net
+
+# Reference: https://twitter.com/unmaskparasites/status/1414732273543356419
+
+wooanalytics.biz
 
 # Generic
 
