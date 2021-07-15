@@ -4765,6 +4765,7 @@ cdnattn.site
 cloudfiare.site
 dirsalonfurniture.site
 dogdug.website
+estrategia-script.site
 facebookmanagers.pw
 ganan-script.site
 googie.website
@@ -4909,6 +4910,14 @@ jquery-library.net
 # Reference: https://twitter.com/unmaskparasites/status/1414732273543356419
 
 wooanalytics.biz
+
+# Reference: https://twitter.com/AffableKraut/status/1415734360213528581
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.64.30/relations
+
+google-create.com
+google-gate.com
+google-merchants.com
+google-sagepay.com
 
 # Generic
 
