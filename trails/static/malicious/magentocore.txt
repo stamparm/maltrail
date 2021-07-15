@@ -4911,6 +4911,14 @@ jquery-library.net
 
 wooanalytics.biz
 
+# Reference: https://twitter.com/AffableKraut/status/1415734360213528581
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.64.30/relations
+
+google-create.com
+google-gate.com
+google-merchants.com
+google-sagepay.com
+
 # Generic
 
 /assets/lfg.js
