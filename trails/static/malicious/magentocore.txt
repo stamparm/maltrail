@@ -4922,6 +4922,13 @@ google-gate.com
 google-merchants.com
 google-sagepay.com
 
+# Reference: https://twitter.com/p0x53/status/1415976988100096000
+
+cdncontainer.com
+hottrackcdn.com
+shoppersbaycdn.com
+webscriptcdn.com
+
 # Generic
 
 /assets/lfg.js
