@@ -13,3 +13,7 @@ portmap.io
 # Reference: https://my-homeip.de/portmapper/what_is_this
 
 portmapper.myonlineportal.net
+
+# Reference: https://www.virustotal.com/gui/domain/natfrp.cloud/relations
+
+natfrp.cloud
