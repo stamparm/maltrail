@@ -4929,6 +4929,10 @@ hottrackcdn.com
 shoppersbaycdn.com
 webscriptcdn.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1416169274641510400
+
+pagegine.site
+
 # Generic
 
 /assets/lfg.js
