@@ -4971,6 +4971,10 @@ scriptcc.cc
 
 /f462c05ed33f1c.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1416988433919221763
+
+/gnjfurbcfcrvv4myxk0t1gb7.php
+
 # Generic
 
 /js/altmanluggage.js
