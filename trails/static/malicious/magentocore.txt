@@ -4993,9 +4993,16 @@ web-analitics.space
 webanalitics.space
 
 # Reference: https://twitter.com/tiketiketikeke/status/1417072955675144194
+# Reference: https://twitter.com/AffableKraut/status/1417141954186465285
 # Reference: https://www.virustotal.com/gui/ip-address/159.69.209.43
 
+goolgestats.com
+gstaticnets.com
+mtdnsstatic.com
+mtndnsstatec.com
+mtndnsstatecs.com
 mtndnsstatic.com
+ntndnsstatic.com
 
 # Generic
 
