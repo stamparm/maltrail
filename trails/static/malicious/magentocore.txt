@@ -4992,6 +4992,11 @@ reteanalitics.site
 web-analitics.space
 webanalitics.space
 
+# Reference: https://twitter.com/tiketiketikeke/status/1417072955675144194
+# Reference: https://www.virustotal.com/gui/ip-address/159.69.209.43
+
+mtndnsstatic.com
+
 # Generic
 
 /assets/lfg.js
