@@ -4933,6 +4933,29 @@ webscriptcdn.com
 
 pagegine.site
 
+# Reference: https://twitter.com/AffableKraut/status/1416854101246291969
+# Reference: https://www.virustotal.com/gui/ip-address/195.54.160.61/relations
+
+cdn-plugin.co.uk
+cdn-plugin.us
+cdnplugin-info.cloud
+data-cdn.site
+data-log.site
+data-update.site
+formstats.us
+google-info.us
+google-stats.work
+nice-cdn.site
+plugin-app.cloud
+plugin-app.org
+pro-cdn-data.site
+pro-cdn2.site
+ticket-stat.site
+trafficstats.business
+trafficstats.co
+trafficstats.company
+trafficstats.us
+
 # Generic
 
 /assets/lfg.js
