@@ -4956,6 +4956,42 @@ trafficstats.co
 trafficstats.company
 trafficstats.us
 
+# Reference: https://twitter.com/AffableKraut/status/1416865169326673925
+
+adminbox.site
+adminpan.site
+analist-net.site
+analist-net.space
+analist-rete.space
+analistpanel.site
+analistrete.site
+analiticpanel.site
+analiticpanel.space
+analitics-panel.site
+analitics-site.site
+analitics-site.space
+analitics-web.space
+analiticspanel.site
+analiticspanel.space
+analiticsweb.space
+blockanalitics.site
+cloudjs.site
+fastloader.site
+ipcounter.site
+net-analist.site
+net-analist.space
+net-analitic.space
+onlinecount.site
+panel-analitic.site
+panel-analitic.space
+panelanalist.site
+panelanalist.space
+panelanalitics.site
+panelanalitics.space
+reteanalitics.site
+web-analitics.space
+webanalitics.space
+
 # Generic
 
 /assets/lfg.js
