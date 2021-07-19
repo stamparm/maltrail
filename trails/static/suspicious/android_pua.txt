@@ -480,3 +480,7 @@ http://114.55.98.58
 http://119.29.29.29
 http://121.36.11.191
 http://123.56.234.77
+
+# Reference: https://www.virustotal.com/gui/file/c5b4f5944f20be85e602b08d276b62fdab496eb6e0569196727dfb2e412c31ff/detection
+
+39.108.42.112:8080
