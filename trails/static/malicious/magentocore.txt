@@ -4929,6 +4929,87 @@ hottrackcdn.com
 shoppersbaycdn.com
 webscriptcdn.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1416169274641510400
+
+pagegine.site
+
+# Reference: https://twitter.com/AffableKraut/status/1416854101246291969
+# Reference: https://www.virustotal.com/gui/ip-address/195.54.160.61/relations
+
+cdn-plugin.co.uk
+cdn-plugin.us
+cdnplugin-info.cloud
+data-cdn.site
+data-log.site
+data-update.site
+formstats.us
+google-info.us
+google-stats.work
+nice-cdn.site
+plugin-app.cloud
+plugin-app.org
+pro-cdn-data.site
+pro-cdn2.site
+ticket-stat.site
+trafficstats.business
+trafficstats.co
+trafficstats.company
+trafficstats.us
+
+# Reference: https://twitter.com/AffableKraut/status/1416865169326673925
+
+adminbox.site
+adminpan.site
+analist-net.site
+analist-net.space
+analist-rete.space
+analistpanel.site
+analistrete.site
+analiticpanel.site
+analiticpanel.space
+analitics-panel.site
+analitics-site.site
+analitics-site.space
+analitics-web.space
+analiticspanel.site
+analiticspanel.space
+analiticsweb.space
+blockanalitics.site
+cloudjs.site
+fastloader.site
+ipcounter.site
+net-analist.site
+net-analist.space
+net-analitic.space
+onlinecount.site
+panel-analitic.site
+panel-analitic.space
+panelanalist.site
+panelanalist.space
+panelanalitics.site
+panelanalitics.space
+reteanalitics.site
+web-analitics.space
+webanalitics.space
+
+# Reference: https://twitter.com/tiketiketikeke/status/1417072955675144194
+# Reference: https://twitter.com/AffableKraut/status/1417141954186465285
+# Reference: https://www.virustotal.com/gui/ip-address/159.69.209.43
+
+goolgestats.com
+gstaticnets.com
+mtdnsstatic.com
+mtndnsstatec.com
+mtndnsstatecs.com
+mtndnsstatic.com
+ntndnsstatic.com
+
+# Reference: https://twitter.com/felixaime/status/1417134452103335936
+# Reference: https://www.virustotal.com/gui/ip-address/69.175.91.242/relations
+
+google-drivers.com
+googledrivers.com
+
 # Generic
 
 /assets/lfg.js
