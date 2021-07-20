@@ -5004,6 +5004,12 @@ mtndnsstatecs.com
 mtndnsstatic.com
 ntndnsstatic.com
 
+# Reference: https://twitter.com/felixaime/status/1417134452103335936
+# Reference: https://www.virustotal.com/gui/ip-address/69.175.91.242/relations
+
+google-drivers.com
+googledrivers.com
+
 # Generic
 
 /assets/lfg.js
