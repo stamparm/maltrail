@@ -1006,6 +1006,7 @@ cdn.owlcdn.com
 cfs.u-ad.info
 chat-client-js.firehoseapp.com
 cleantds.in
+clk-analytics.com
 code.jguery.org
 con1.sometimesfree.biz
 connect.f1call.com
@@ -4965,6 +4966,15 @@ scriptcc.cc
 # Reference: https://twitter.com/KesaGataMe0/status/1414197200909869056
 
 /wctx1D1DFxFDg.do.php
+
+# Reference: https://twitter.com/pollo290987/status/1415214033767182336
+# Reference: https://www.virustotal.com/gui/file/fd7e560247eb18e1a27cfd3c46f10c06bcae05562df4b2862ec53caa76e80422/detection
+
+/f462c05ed33f1c.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1416988433919221763
+
+/gnjfurbcfcrvv4myxk0t1gb7.php
 
 # Generic
 
