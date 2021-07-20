@@ -473,3 +473,14 @@ http://180.150.191.127
 # Reference: https://www.virustotal.com/gui/file/96b6ad9f1fb48787063fe2399e6e3d7e609365fc346d60fd2a4dc31413e7ef19/detection
 
 180.150.189.181:88
+
+# Reference: https://www.virustotal.com/gui/file/5cc8abd9f2bca50981b59fedc942198f5ce0b32412f99c760c50b6eccc61ef9d/detection
+
+http://114.55.98.58
+http://119.29.29.29
+http://121.36.11.191
+http://123.56.234.77
+
+# Reference: https://www.virustotal.com/gui/file/c5b4f5944f20be85e602b08d276b62fdab496eb6e0569196727dfb2e412c31ff/detection
+
+39.108.42.112:8080
