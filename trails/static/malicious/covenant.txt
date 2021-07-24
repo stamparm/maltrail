@@ -213,6 +213,13 @@ http://149.28.131.88
 149.28.131.88:443
 149.28.131.88:8000
 
+# Reference: https://twitter.com/TheDFIRReport/status/1417499549397135363
+# Reference: https://beta.shodan.io/host/52.14.0.168
+
+52.14.0.168:22
+52.14.0.168:443
+52.14.0.168:7443
+
 # Generic
 
 /covenantuser/
