@@ -4976,6 +4976,11 @@ scriptcc.cc
 
 /gnjfurbcfcrvv4myxk0t1gb7.php
 
+# Reference: https://twitter.com/KorbenD_Intel/status/1418673471496892421
+
+/a.ps1
+/meterpreter-64.ps1
+
 # Generic
 
 /js/altmanluggage.js
