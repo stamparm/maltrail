@@ -4981,6 +4981,10 @@ scriptcc.cc
 /a.ps1
 /meterpreter-64.ps1
 
+# Reference: https://twitter.com/FewAtoms/status/1417886430467170305
+
+/YJHLZX.py
+
 # Generic
 
 /js/altmanluggage.js
