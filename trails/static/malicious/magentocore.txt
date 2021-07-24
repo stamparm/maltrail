@@ -5010,6 +5010,10 @@ ntndnsstatic.com
 google-drivers.com
 googledrivers.com
 
+# Reference: https://twitter.com/felixaime/status/1418119972858044422
+
+hotjar.net
+
 # Generic
 
 /assets/lfg.js
