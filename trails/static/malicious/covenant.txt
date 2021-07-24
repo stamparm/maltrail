@@ -220,6 +220,12 @@ http://149.28.131.88
 52.14.0.168:443
 52.14.0.168:7443
 
+# Reference: https://twitter.com/TheDFIRReport/status/1417499549397135363
+# Reference: https://beta.shodan.io/host/52.151.57.51
+
+52.151.57.51:7443
+52.151.57.51:8080
+
 # Generic
 
 /covenantuser/
