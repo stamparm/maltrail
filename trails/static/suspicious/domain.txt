@@ -5298,3 +5298,7 @@ floattenmidget.ru
 # Reference: https://www.virustotal.com/gui/domain/sexyhosting.biz/relations
 
 sexyhosting.biz
+
+# Reference: https://www.virustotal.com/gui/domain/funkar.nu/relations
+
+funkar.nu
