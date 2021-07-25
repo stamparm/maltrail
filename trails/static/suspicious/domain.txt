@@ -5366,3 +5366,7 @@ rltk.us
 # Reference: https://www.virustotal.com/gui/domain/carys.org/relations
 
 carys.org
+
+# Reference: https://www.virustotal.com/gui/domain/isihia-exi.ro/relations
+
+isihia-exi.ro
