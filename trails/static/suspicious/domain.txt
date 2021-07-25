@@ -5390,3 +5390,7 @@ tnebldc.org
 # Reference: https://www.virustotal.com/gui/domain/getce.com/relations
 
 getce.com
+
+# Reference: https://www.virustotal.com/gui/domain/goofyspeak.com/relations
+
+goofyspeak.com
