@@ -5331,6 +5331,6 @@ trailsendfarms.com
 
 devi1.net
 
-# Reference: https://www.virustotal.com/gui/domain/kaleebso.com/relations
+# Reference: https://www.virustotal.com/gui/domain/framed.net/relations
 
-kaleebso.com
+framed.net
