@@ -5322,3 +5322,7 @@ etherbyte.com
 # Reference: https://www.virustotal.com/gui/domain/jlengineering.se/relations
 
 jlengineering.se
+
+# Reference: https://www.virustotal.com/gui/domain/trailsendfarms.com/relations
+
+trailsendfarms.com
