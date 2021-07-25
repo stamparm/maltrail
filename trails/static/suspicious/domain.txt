@@ -5359,10 +5359,6 @@ dianyglas.com
 
 negeriau.net
 
-# Reference: https://www.virustotal.com/gui/domain/rltk.us/relations
-
-rltk.us
-
 # Reference: https://www.virustotal.com/gui/domain/carys.org/relations
 
 carys.org
