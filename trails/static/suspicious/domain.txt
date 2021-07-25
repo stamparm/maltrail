@@ -5306,3 +5306,7 @@ funkar.nu
 # Reference: https://www.virustotal.com/gui/domain/dara-dal.net/relations
 
 dara-dal.net
+
+# Reference: https://www.virustotal.com/gui/domain/americanelectricalservices.net/relations
+
+americanelectricalservices.net
