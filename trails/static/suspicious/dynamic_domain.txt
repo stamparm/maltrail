@@ -3364,3 +3364,7 @@ smirt.ch
 # Reference: https://www.virustotal.com/gui/domain/contem.bz/relations
 
 contem.bz
+
+# Reference: https://www.virustotal.com/gui/domain/wtf-no.com/relations
+
+wtf-no.com
