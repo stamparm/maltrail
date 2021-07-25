@@ -5394,3 +5394,7 @@ getce.com
 # Reference: https://www.virustotal.com/gui/domain/goofyspeak.com/relations
 
 goofyspeak.com
+
+# Reference: https://www.virustotal.com/gui/domain/surlenet.be/relations
+
+surlenet.be
