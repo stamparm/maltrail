@@ -3296,3 +3296,7 @@ kaleebso.com
 # Reference: https://www.virustotal.com/gui/domain/gigaportal.pl/relations
 
 gigaportal.pl
+
+# Reference: https://www.virustotal.com/gui/domain/base-v.ch/relations
+
+base-v.ch
