@@ -3755,6 +3755,7 @@ cloudchimp.tech
 mail-chimp.site
 mailchimp.press
 printcss.site
+supportpay.club
 tagmanager.online
 tagmanager.site
 tagmanager.store
@@ -5009,6 +5010,10 @@ ntndnsstatic.com
 
 google-drivers.com
 googledrivers.com
+
+# Reference: https://twitter.com/felixaime/status/1418119972858044422
+
+hotjar.net
 
 # Generic
 
