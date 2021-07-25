@@ -5338,3 +5338,7 @@ framed.net
 # Reference: https://www.virustotal.com/gui/domain/fatesperfection.com/relations
 
 fatesperfection.com
+
+# Reference: https://www.virustotal.com/gui/domain/thegmc.com/relations
+
+thegmc.com
