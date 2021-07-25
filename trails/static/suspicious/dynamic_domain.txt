@@ -3360,3 +3360,7 @@ igliss.com
 # Reference: https://www.virustotal.com/gui/domain/smirt.ch/relations
 
 smirt.ch
+
+# Reference: https://www.virustotal.com/gui/domain/contem.bz/relations
+
+contem.bz
