@@ -5302,3 +5302,7 @@ sexyhosting.biz
 # Reference: https://www.virustotal.com/gui/domain/funkar.nu/relations
 
 funkar.nu
+
+# Reference: https://www.virustotal.com/gui/domain/dara-dal.net/relations
+
+dara-dal.net
