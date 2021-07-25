@@ -3348,3 +3348,7 @@ rltk.us
 # Reference: https://www.virustotal.com/gui/domain/fernando-botero-sculpture.com/relations
 
 fernando-botero-sculpture.com
+
+# Reference: https://www.virustotal.com/gui/domain/grupompr.com/relations
+
+grupompr.com
