@@ -3288,3 +3288,11 @@ dvrlists.com
 # Reference: https://www.virustotal.com/gui/domain/fuckcentral.com/relations
 
 fuckcentral.com
+
+# Reference: https://www.virustotal.com/gui/domain/kaleebso.com/relations
+
+kaleebso.com
+
+# Reference: https://www.virustotal.com/gui/domain/gigaportal.pl/relations
+
+gigaportal.pl
