@@ -5342,3 +5342,7 @@ fatesperfection.com
 # Reference: https://www.virustotal.com/gui/domain/thegmc.com/relations
 
 thegmc.com
+
+# Reference: https://www.virustotal.com/gui/domain/parinternet.biz/relations
+
+parinternet.biz
