@@ -3316,3 +3316,7 @@ profinet.ro
 # Reference: https://www.virustotal.com/gui/domain/fintech-llc.com/relations
 
 fintech-llc.com
+
+# Reference: https://www.virustotal.com/gui/domain/embeddedsw.org/relations
+
+embeddedsw.org
