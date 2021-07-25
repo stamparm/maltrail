@@ -3368,3 +3368,7 @@ contem.bz
 # Reference: https://www.virustotal.com/gui/domain/wtf-no.com/relations
 
 wtf-no.com
+
+# Reference: https://www.virustotal.com/gui/domain/endlessconference.com/relations
+
+endlessconference.com
