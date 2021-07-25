@@ -3356,3 +3356,7 @@ grupompr.com
 # Reference: https://www.virustotal.com/gui/domain/igliss.com/relations
 
 igliss.com
+
+# Reference: https://www.virustotal.com/gui/domain/smirt.ch/relations
+
+smirt.ch
