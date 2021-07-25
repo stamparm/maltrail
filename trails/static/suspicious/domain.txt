@@ -5318,3 +5318,7 @@ americanelectricalservices.net
 # Reference: https://www.virustotal.com/gui/domain/etherbyte.com/relations
 
 etherbyte.com
+
+# Reference: https://www.virustotal.com/gui/domain/jlengineering.se/relations
+
+jlengineering.se
