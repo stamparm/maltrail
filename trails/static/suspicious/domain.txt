@@ -5310,3 +5310,7 @@ dara-dal.net
 # Reference: https://www.virustotal.com/gui/domain/americanelectricalservices.net/relations
 
 americanelectricalservices.net
+
+# Reference: https://www.virustotal.com/gui/domain/905tech.com/relations
+
+905tech.com
