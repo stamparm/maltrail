@@ -5386,3 +5386,7 @@ kevinbradley.org
 # Reference: https://www.virustotal.com/gui/domain/cybscripts.com/relations
 
 cybscripts.com
+
+# Reference: https://www.virustotal.com/gui/domain/tnebldc.org/relations
+
+tnebldc.org
