@@ -3332,3 +3332,7 @@ paulkelly.org
 # Reference: https://www.virustotal.com/gui/domain/rockingwranchinc.com/relations
 
 rockingwranchinc.com
+
+# Reference: https://www.virustotal.com/gui/domain/vaughngass.com/relations
+
+vaughngass.com
