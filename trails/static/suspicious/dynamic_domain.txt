@@ -3328,3 +3328,7 @@ dnmcoffman.com
 # Reference: https://www.virustotal.com/gui/domain/paulkelly.org/relations
 
 paulkelly.org
+
+# Reference: https://www.virustotal.com/gui/domain/rockingwranchinc.com/relations
+
+rockingwranchinc.com
