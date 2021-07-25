@@ -3320,3 +3320,7 @@ fintech-llc.com
 # Reference: https://www.virustotal.com/gui/domain/embeddedsw.org/relations
 
 embeddedsw.org
+
+# Reference: https://www.virustotal.com/gui/domain/dnmcoffman.com/relations
+
+dnmcoffman.com
