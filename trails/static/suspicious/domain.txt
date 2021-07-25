@@ -5334,3 +5334,7 @@ devi1.net
 # Reference: https://www.virustotal.com/gui/domain/framed.net/relations
 
 framed.net
+
+# Reference: https://www.virustotal.com/gui/domain/fatesperfection.com/relations
+
+fatesperfection.com
