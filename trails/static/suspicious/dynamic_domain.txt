@@ -3312,3 +3312,7 @@ death-by-monkeys.com
 # Reference: https://www.virustotal.com/gui/domain/profinet.ro/relations
 
 profinet.ro
+
+# Reference: https://www.virustotal.com/gui/domain/fintech-llc.com/relations
+
+fintech-llc.com
