@@ -3308,3 +3308,7 @@ candacechao.com
 # Reference: https://www.virustotal.com/gui/domain/death-by-monkeys.com/relations
 
 death-by-monkeys.com
+
+# Reference: https://www.virustotal.com/gui/domain/profinet.ro/relations
+
+profinet.ro
