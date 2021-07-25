@@ -5350,3 +5350,7 @@ parinternet.biz
 # Reference: https://www.virustotal.com/gui/domain/fulltimevillain.net/relations
 
 fulltimevillain.net
+
+# Reference: https://www.virustotal.com/gui/domain/dianyglas.com/relations
+
+dianyglas.com
