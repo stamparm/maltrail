@@ -4985,6 +4985,10 @@ scriptcc.cc
 
 /YJHLZX.py
 
+# Reference: https://ioc.finsin.cl/Output_FINSIN_URL
+
+/zagda4cquzoj.php
+
 # Generic
 
 /js/altmanluggage.js
