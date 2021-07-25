@@ -5326,3 +5326,7 @@ jlengineering.se
 # Reference: https://www.virustotal.com/gui/domain/trailsendfarms.com/relations
 
 trailsendfarms.com
+
+# Reference: https://www.virustotal.com/gui/domain/devi1.net/relations
+
+devi1.net
