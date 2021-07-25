@@ -5382,3 +5382,7 @@ consortiummedia.com
 # Reference: https://www.virustotal.com/gui/domain/kevinbradley.org/relations
 
 kevinbradley.org
+
+# Reference: https://www.virustotal.com/gui/domain/cybscripts.com/relations
+
+cybscripts.com
