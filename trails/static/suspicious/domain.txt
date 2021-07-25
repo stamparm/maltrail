@@ -5354,3 +5354,7 @@ fulltimevillain.net
 # Reference: https://www.virustotal.com/gui/domain/dianyglas.com/relations
 
 dianyglas.com
+
+# Reference: https://www.virustotal.com/gui/domain/negeriau.net/relations
+
+negeriau.net
