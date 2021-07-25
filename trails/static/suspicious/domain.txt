@@ -5386,3 +5386,7 @@ cybscripts.com
 # Reference: https://www.virustotal.com/gui/domain/tnebldc.org/relations
 
 tnebldc.org
+
+# Reference: https://www.virustotal.com/gui/domain/getce.com/relations
+
+getce.com
