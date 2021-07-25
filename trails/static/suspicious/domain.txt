@@ -5398,3 +5398,7 @@ goofyspeak.com
 # Reference: https://www.virustotal.com/gui/domain/surlenet.be/relations
 
 surlenet.be
+
+# Reference: https://www.virustotal.com/gui/domain/techgoodness.org/relations
+
+techgoodness.org
