@@ -5314,3 +5314,7 @@ americanelectricalservices.net
 # Reference: https://www.virustotal.com/gui/domain/905tech.com/relations
 
 905tech.com
+
+# Reference: https://www.virustotal.com/gui/domain/etherbyte.com/relations
+
+etherbyte.com
