@@ -5294,3 +5294,7 @@ dnsstatus.org
 # Reference: https://www.virustotal.com/gui/domain/floattenmidget.ru/relations
 
 floattenmidget.ru
+
+# Reference: https://www.virustotal.com/gui/domain/sexyhosting.biz/relations
+
+sexyhosting.biz
