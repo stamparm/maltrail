@@ -484,3 +484,11 @@ http://123.56.234.77
 # Reference: https://www.virustotal.com/gui/file/c5b4f5944f20be85e602b08d276b62fdab496eb6e0569196727dfb2e412c31ff/detection
 
 39.108.42.112:8080
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.113.120.215/relations
+
+http://45.113.120.215
+
+# Reference: https://www.virustotal.com/gui/ip-address/210.56.53.18
+
+http://210.56.53.18

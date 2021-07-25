@@ -1749,6 +1749,10 @@ charris4ever
 
 XAssTYou
 
+# Reference: https://securityscorecard.com/blog/new-evidence-supports-assessment-that-darkside-likely-responsible-for-colonial-pipeline-ransomware-attack-others-targeted
+
+MDDCJS
+
 # Misc
 
 information_schema

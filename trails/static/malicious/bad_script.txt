@@ -4976,6 +4976,24 @@ scriptcc.cc
 
 /gnjfurbcfcrvv4myxk0t1gb7.php
 
+# Reference: https://twitter.com/KorbenD_Intel/status/1418673471496892421
+
+/a.ps1
+/meterpreter-64.ps1
+
+# Reference: https://twitter.com/FewAtoms/status/1417886430467170305
+
+/YJHLZX.py
+
+# Reference: https://ioc.finsin.cl/Output_FINSIN_URL
+
+/zagda4cquzoj.php
+
+# Reference: https://isc.sans.edu/forums/diary/Simple+Powershell+Ransomware+Creating+a+7Z+Archive+of+your+Files/27286/
+# Reference: https://www.virustotal.com/gui/file/aff84c3e2f40b6cf3724447252c770ade426cfea0458b172db38e9753ce4fba4/detection
+
+/10d2c.ps1
+
 # Generic
 
 /js/altmanluggage.js

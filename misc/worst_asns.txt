@@ -910,6 +910,7 @@
 104.250.125.0/24,colocrossing
 104.250.126.0/24,colocrossing
 107.152.157.0/24,colocrossing
+107.172.96.0/21,colocrossing
 
 # HR-MAXKO-20190710
 
