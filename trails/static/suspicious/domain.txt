@@ -5358,3 +5358,7 @@ dianyglas.com
 # Reference: https://www.virustotal.com/gui/domain/negeriau.net/relations
 
 negeriau.net
+
+# Reference: https://www.virustotal.com/gui/domain/rltk.us/relations
+
+rltk.us
