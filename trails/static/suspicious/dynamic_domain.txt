@@ -3300,3 +3300,7 @@ gigaportal.pl
 # Reference: https://www.virustotal.com/gui/domain/base-v.ch/relations
 
 base-v.ch
+
+# Reference: https://www.virustotal.com/gui/domain/candacechao.com/relations
+
+candacechao.com
