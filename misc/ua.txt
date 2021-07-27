@@ -1753,6 +1753,11 @@ XAssTYou
 
 MDDCJS
 
+# Reference: https://twitter.com/fr0s7_/status/1419687060450029570
+# Reference: https://pastebin.com/K6YmwUxZ
+
+qToolbarButton
+
 # Misc
 
 information_schema
