@@ -4994,6 +4994,10 @@ scriptcc.cc
 
 /10d2c.ps1
 
+# Reference: https://twitter.com/p0x53/status/1419974528998932485
+
+/.well-known/login.php?ss=
+
 # Generic
 
 /js/altmanluggage.js
