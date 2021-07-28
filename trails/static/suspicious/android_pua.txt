@@ -496,3 +496,7 @@ http://210.56.53.18
 # Reference: https://www.virustotal.com/gui/file/522151d56d7339e0b8ee52ca4ef5f59dc94c330f653393c257f60bae5c2978fd/detection
 
 dior-aroma.ru
+
+# Reference: https://www.virustotal.com/gui/domain/bestphoneapps.mobi/relations
+
+bestphoneapps.mobi
