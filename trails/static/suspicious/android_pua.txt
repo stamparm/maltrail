@@ -492,3 +492,19 @@ http://45.113.120.215
 # Reference: https://www.virustotal.com/gui/ip-address/210.56.53.18
 
 http://210.56.53.18
+
+# Reference: https://www.virustotal.com/gui/file/522151d56d7339e0b8ee52ca4ef5f59dc94c330f653393c257f60bae5c2978fd/detection
+
+dior-aroma.ru
+
+# Reference: https://www.virustotal.com/gui/domain/bestphoneapps.mobi/relations
+
+bestphoneapps.mobi
+
+# Reference: https://www.virustotal.com/gui/file/138201f122c00ef31d7737a1964550cefd55c25e1e13f3e23efa755cba72879d/detection
+
+kinoleyka.com
+
+# Reference: https://www.virustotal.com/gui/file/d399c16d002a21eb38dee0aee7c5621071bca9bbfa6bbd0bc943aceab82f5e6f/detection
+
+adjust.live
