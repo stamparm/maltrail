@@ -2829,3 +2829,7 @@ superstationcity.com
 charcdn.com
 dl.charcdn.com
 ms.charcdn.com
+
+# Reference: https://www.virustotal.com/gui/file/d09d3ff42064b090594c5559f1e9891d9940540977ecf1282795a142d01ca3e2/detection
+
+q663753j.beget.tech
