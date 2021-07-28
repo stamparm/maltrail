@@ -492,3 +492,7 @@ http://45.113.120.215
 # Reference: https://www.virustotal.com/gui/ip-address/210.56.53.18
 
 http://210.56.53.18
+
+# Reference: https://www.virustotal.com/gui/file/522151d56d7339e0b8ee52ca4ef5f59dc94c330f653393c257f60bae5c2978fd/detection
+
+dior-aroma.ru
