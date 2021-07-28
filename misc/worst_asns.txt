@@ -921,3 +921,8 @@
 # Reference: https://radar.qrator.net/as53667
 
 209.141.32.0/19,ponynet
+
+# AS4766 Korea Telecom
+# Reference: https://twitter.com/KesaGataMe0/status/1420327846447177730
+
+14.49.32.0/19,koreatelecom
