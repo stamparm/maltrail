@@ -73,6 +73,12 @@ news.pocketstay.com
 
 login.wwpcrisis.com
 
+# Reference: https://twitter.com/malware_traffic/status/1420490383881129990
+# Reference: https://www.virustotal.com/gui/ip-address/141.255.161.180/relations
+
+certification.mountainaireautoglass.com
+public.clickstat360.com
+
 # Generic
 
 /Chrome.Update.88fe59.js
