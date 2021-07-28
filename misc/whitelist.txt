@@ -926,6 +926,7 @@ sophosxl.net
 
 # Generic
 
+cloudflare-dns.com
 transmissionbt.com
 btloader.com
 huorong.cn
