@@ -5015,6 +5015,19 @@ googledrivers.com
 
 hotjar.net
 
+# Reference: https://twitter.com/AffableKraut/status/1420424683758002178
+# Reference: https://twitter.com/AffableKraut/status/1420424686366756870
+
+api-facebook.net
+api-localhost.com
+cdn-bootstrapcdn.com
+conect-facebook.net
+core-static.com
+ssl-doubleclick.net
+tr-snapchat.com
+uc-widget-freshworks.com
+webstatistisc.org
+
 # Generic
 
 /assets/lfg.js
