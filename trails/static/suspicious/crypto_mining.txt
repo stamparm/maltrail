@@ -846,3 +846,7 @@ googleminer.com
 fr.minexmr.com
 pool.minexmr.uk
 xmr.748pz.net
+
+# Reference: https://www.virustotal.com/gui/file/474553ee2993630e0431d2017b8412f9aa2a660594efc00db0058ff44ba86fa9/detection
+
+192.110.160.114:5555
