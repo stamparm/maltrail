@@ -5028,6 +5028,10 @@ tr-snapchat.com
 uc-widget-freshworks.com
 webstatistisc.org
 
+# Reference: https://twitter.com/p0x53/status/1420758015884488711
+
+roi-traffic.icu
+
 # Generic
 
 /assets/lfg.js
