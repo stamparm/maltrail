@@ -5406,3 +5406,8 @@ techgoodness.org
 # Reference: https://www.virustotal.com/gui/domain/theabernathyhome.com/relations
 
 theabernathyhome.com
+
+# Reference: https://twitter.com/InQuest/status/1420688618616655873
+# Reference: https://www.virustotal.com/gui/file/40b332416564800ad5c8bf97cd0d99fac5dfa0cc94eef5f8fa66cb5063a2922d/detection
+
+g0v.org.cn
