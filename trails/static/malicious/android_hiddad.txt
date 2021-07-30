@@ -121,3 +121,7 @@ bigboi.app
 # Reference: https://www.virustotal.com/gui/domain/jetselect.xyz/relations
 
 jetselect.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/fordomws.net/relations
+
+fordomws.net
