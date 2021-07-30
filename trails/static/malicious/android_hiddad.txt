@@ -125,3 +125,7 @@ jetselect.xyz
 # Reference: https://www.virustotal.com/gui/domain/fordomws.net/relations
 
 fordomws.net
+
+# Reference: https://www.virustotal.com/gui/domain/ssp.swe.xyz/detection
+
+ssp.swe.xyz
