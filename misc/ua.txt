@@ -1758,6 +1758,12 @@ MDDCJS
 
 qToolbarButton
 
+# Reference: https://github.com/stamparm/maltrail/pull/17935/commits/4558ed77b356a8131d683acfd4b3b4400321d1e0
+# Reference: https://twitter.com/JAMESWT_MHT/status/1420744986329452555
+# Reference: https://twitter.com/James_inthe_box/status/1420788997316497412
+
+runscope/0.1
+
 # Misc
 
 information_schema
