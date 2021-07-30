@@ -5002,6 +5002,15 @@ scriptcc.cc
 
 hittail.com
 
+# Reference: https://twitter.com/MalwarePatrol/status/1421153124610416645
+# Reference: https://www.virustotal.com/gui/file/659c06cce3b9bb0c13ee83d68aa16bdcfce3ffbf9f91fcfb996f6f097b01a756/detection
+
+c.d.cg
+
+# Reference: https://www.virustotal.com/gui/file/8f4bbc0dca7842761a9025508b0ce988ebb6a37c35117dcf41d82c898a49427a/detection
+
+g.d.cg
+
 # Generic
 
 /js/altmanluggage.js
