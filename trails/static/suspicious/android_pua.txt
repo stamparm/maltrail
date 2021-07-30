@@ -512,3 +512,8 @@ adjust.live
 # Reference: https://www.virustotal.com/gui/file/e36e2e5c93ad88e7d658c7b4d1b571bd01992b0c9d20105d901266dbe51b3978/detection
 
 pk-app.pk051.com
+
+# Reference: https://www.virustotal.com/gui/file/45f12e0c6d7ed0241fee85ee9ef5f6b166cedaa6b0a6b11c8131a0220650360a/detection
+
+app-auth.pk1353.com
+pk-appv2.pk051.com
