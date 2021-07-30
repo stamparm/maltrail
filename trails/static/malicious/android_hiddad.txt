@@ -129,3 +129,7 @@ fordomws.net
 # Reference: https://www.virustotal.com/gui/domain/ssp.swe.xyz/detection
 
 ssp.swe.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/one.cryptonomiconf.com/relations
+
+one.cryptonomiconf.com
