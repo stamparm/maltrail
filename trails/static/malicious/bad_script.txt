@@ -5011,6 +5011,10 @@ c.d.cg
 
 g.d.cg
 
+# Reference: https://www.virustotal.com/gui/file/071231d29a8548be8cb0a8f48a4b23d12e08139fd8dba842781912a11dc7c5f6/detection
+
+/pb_fnc/id27315002.php
+
 # Generic
 
 /js/altmanluggage.js
