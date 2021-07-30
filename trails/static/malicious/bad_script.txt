@@ -4998,6 +4998,10 @@ scriptcc.cc
 
 /.well-known/login.php?ss=
 
+# Reference: https://twitter.com/unmaskparasites/status/1420896604526026753
+
+hittail.com
+
 # Generic
 
 /js/altmanluggage.js
