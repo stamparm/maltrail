@@ -117,3 +117,7 @@ pi.mobengine.xyz
 # Reference: https://www.virustotal.com/gui/file/153b51fbb2274106d21ce30e187cb5299c4a568480e5b1d7e9a5ee6589daa8b2/detection
 
 bigboi.app
+
+# Reference: https://www.virustotal.com/gui/domain/jetselect.xyz/relations
+
+jetselect.xyz
