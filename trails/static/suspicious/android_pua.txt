@@ -508,3 +508,7 @@ kinoleyka.com
 # Reference: https://www.virustotal.com/gui/file/d399c16d002a21eb38dee0aee7c5621071bca9bbfa6bbd0bc943aceab82f5e6f/detection
 
 adjust.live
+
+# Reference: https://www.virustotal.com/gui/file/e36e2e5c93ad88e7d658c7b4d1b571bd01992b0c9d20105d901266dbe51b3978/detection
+
+pk-app.pk051.com
