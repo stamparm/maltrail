@@ -5411,3 +5411,7 @@ theabernathyhome.com
 # Reference: https://www.virustotal.com/gui/file/40b332416564800ad5c8bf97cd0d99fac5dfa0cc94eef5f8fa66cb5063a2922d/detection
 
 g0v.org.cn
+
+# Reference: https://www.virustotal.com/gui/file/494c030c509e97e8c5a1e0e1def038d99965baf075d947bffdec135692f813fc/behavior/C2AE
+
+x10.bz
