@@ -521,3 +521,8 @@ pk-appv2.pk051.com
 # Reference: https://www.virustotal.com/gui/ip-address/192.241.161.163
 
 http://192.241.161.163
+
+# Reference: https://www.virustotal.com/gui/file/8f4bbc0dca7842761a9025508b0ce988ebb6a37c35117dcf41d82c898a49427a/detection
+
+2017p666.com
+p666pay.com
