@@ -4946,6 +4946,7 @@ web-google.azureedge.net
 # Reference: https://twitter.com/KesaGataMe0/status/1410874602021023745
 
 /smbcupdatebill.php
+/smbc/smbcupdatebill.php
 
 # Reference: https://twitter.com/1ZRR4H/status/1408252818272751621
 
