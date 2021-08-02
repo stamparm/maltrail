@@ -2838,3 +2838,11 @@ q663753j.beget.tech
 # Reference: https://www.virustotal.com/gui/file/a94d56067aa15f28f66a139eecc90e49b008bfa1f0faf7d65721ecfb68a6a6a2/detection
 
 cayzt.snyzt.org
+
+# Reference: https://www.virustotal.com/gui/file/1cd33422e321683501ac60a0ba384e542bb2e06af3964f79e08fd67797cda809/detection
+
+cicipip.com
+dinfo.3dpchip.com
+rp.cicipip.com
+os.cicipip.com
+os2.cicipip.com
