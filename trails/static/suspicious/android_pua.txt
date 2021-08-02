@@ -530,3 +530,7 @@ p666pay.com
 # Reference: https://www.virustotal.com/gui/domain/padmob.com/relations
 
 padmob.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/139.180.139.83/relations
+
+http://139.180.139.83
