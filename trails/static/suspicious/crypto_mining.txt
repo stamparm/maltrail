@@ -855,3 +855,9 @@ xmr.748pz.net
 
 2miners.com
 xmr.2miners.com
+
+# Reference: https://www.virustotal.com/gui/file/b96d67decf51cd2e2c96fd254d4b3cd7f5e3b181fe7d3c3f192aa39bba99df06/detection
+
+157.90.156.89:6004
+bmpool.org
+mine.bmpool.org
