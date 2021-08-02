@@ -2833,3 +2833,8 @@ ms.charcdn.com
 # Reference: https://www.virustotal.com/gui/file/d09d3ff42064b090594c5559f1e9891d9940540977ecf1282795a142d01ca3e2/detection
 
 q663753j.beget.tech
+
+# Reference: https://otx.alienvault.com/pulse/6107ba1b5d5f408dfc26a73b
+# Reference: https://www.virustotal.com/gui/file/a94d56067aa15f28f66a139eecc90e49b008bfa1f0faf7d65721ecfb68a6a6a2/detection
+
+cayzt.snyzt.org
