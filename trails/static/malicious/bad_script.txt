@@ -5016,8 +5016,12 @@ g.d.cg
 
 /pb_fnc/id27315002.php
 
+# Reference: https://twitter.com/tosscoinwitcher/status/1422262670879727616
 # Reference: https://twitter.com/James_inthe_box/status/1422284259344060418
 
+45.139.236.76:14402
+conferencesystems.online
+donstop.conferencesystems.online
 /4MVmSStHhq.js
 
 # Generic
