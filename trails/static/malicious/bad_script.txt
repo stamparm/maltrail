@@ -4946,6 +4946,7 @@ web-google.azureedge.net
 # Reference: https://twitter.com/KesaGataMe0/status/1410874602021023745
 
 /smbcupdatebill.php
+/smbc/smbcupdatebill.php
 
 # Reference: https://twitter.com/1ZRR4H/status/1408252818272751621
 
@@ -5001,6 +5002,19 @@ scriptcc.cc
 # Reference: https://twitter.com/unmaskparasites/status/1420896604526026753
 
 hittail.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1421153124610416645
+# Reference: https://www.virustotal.com/gui/file/659c06cce3b9bb0c13ee83d68aa16bdcfce3ffbf9f91fcfb996f6f097b01a756/detection
+
+c.d.cg
+
+# Reference: https://www.virustotal.com/gui/file/8f4bbc0dca7842761a9025508b0ce988ebb6a37c35117dcf41d82c898a49427a/detection
+
+g.d.cg
+
+# Reference: https://www.virustotal.com/gui/file/071231d29a8548be8cb0a8f48a4b23d12e08139fd8dba842781912a11dc7c5f6/detection
+
+/pb_fnc/id27315002.php
 
 # Generic
 
