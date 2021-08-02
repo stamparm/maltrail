@@ -926,6 +926,7 @@ sophosxl.net
 
 # Generic
 
+winjit.com
 cloudflare-dns.com
 transmissionbt.com
 btloader.com
