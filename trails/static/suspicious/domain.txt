@@ -5415,3 +5415,8 @@ g0v.org.cn
 # Reference: https://www.virustotal.com/gui/file/494c030c509e97e8c5a1e0e1def038d99965baf075d947bffdec135692f813fc/behavior/C2AE
 
 x10.bz
+
+# Reference: https://otx.alienvault.com/pulse/6107ba1b5d5f408dfc26a73b
+# Reference: https://www.virustotal.com/gui/file/a94d56067aa15f28f66a139eecc90e49b008bfa1f0faf7d65721ecfb68a6a6a2/detection
+
+snyzt.org
