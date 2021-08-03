@@ -5035,7 +5035,6 @@ roi-traffic.icu
 # Reference: https://www.virustotal.com/gui/ip-address/179.43.160.43/relations
 
 js-jquery.org
-traffic-market.com
 
 # Generic
 
