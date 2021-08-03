@@ -413,3 +413,7 @@ lolz.guru
 # Reference: https://twitter.com/p0x53/status/1404487057783746565
 
 toqn23mc.com
+
+# Reference: https://twitter.com/rootprivilege/status/1422185413842595850
+
+restore-metamask.com
