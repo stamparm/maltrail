@@ -861,3 +861,8 @@ xmr.2miners.com
 157.90.156.89:6004
 bmpool.org
 mine.bmpool.org
+
+# Reference: https://www.virustotal.com/gui/file/78b362eaa3777e2c0a789071c72cc9fdcb541d47912b6c455b3fb4e7eb221f60/detection
+
+kronecoin.org
+seed.kronecoin.org
