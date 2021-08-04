@@ -2846,3 +2846,7 @@ dinfo.3dpchip.com
 rp.cicipip.com
 os.cicipip.com
 os2.cicipip.com
+
+# Reference: https://www.virustotal.com/gui/file/88d67d2fc69192ccfb078858902e90a427eef8556e733cf081c9771de0fa088b/detection
+
+cu25760.tmweb.ru
