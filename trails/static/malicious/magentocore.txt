@@ -5032,6 +5032,43 @@ webstatistisc.org
 
 roi-traffic.icu
 
+# Reference: https://www.virustotal.com/gui/ip-address/179.43.160.43/relations
+
+js-jquery.org
+
+# Reference: https://twitter.com/unmaskparasites/status/1422681441146605570
+# Reference: https://www.virustotal.com/gui/ip-address/185.246.130.169/relations
+
+adwords-track.com
+adwords-track.top
+clickinks-api.com
+drhorveys.com
+drnarveys.com
+font-staticx.com
+fontsctatic.com
+fontsctaticx.com
+fontstatics.com
+fontstaticx.com
+frontstatics.com
+g-staticx.com
+gctatic.com
+gctatics.com
+google-tagmanager.com
+googlestaticx.com
+googlestatix.com
+googletagmahager.com
+googletagnamager.com
+gstaticx.com
+gstaticxs.com
+scaraabresearch.com
+staticzd-assets.com
+
+# Reference: https://twitter.com/AffableKraut/status/1422819706394882051
+# Reference: https://www.virustotal.com/gui/ip-address/193.105.134.147/relations
+
+ga-track.com
+hs-scrlpts.com
+
 # Generic
 
 /assets/lfg.js
