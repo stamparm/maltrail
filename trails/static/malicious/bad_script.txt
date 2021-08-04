@@ -5025,6 +5025,10 @@ g.d.cg
 
 /forvt.ps1
 
+# Reference: https://twitter.com/KesaGataMe0/status/1422746848993812480
+
+/aibgsjsw1001.asp
+
 # Generic
 
 /js/altmanluggage.js
