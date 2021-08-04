@@ -5036,6 +5036,33 @@ roi-traffic.icu
 
 js-jquery.org
 
+# Reference: https://twitter.com/unmaskparasites/status/1422681441146605570
+# Reference: https://www.virustotal.com/gui/ip-address/185.246.130.169/relations
+
+adwords-track.com
+adwords-track.top
+clickinks-api.com
+drhorveys.com
+drnarveys.com
+font-staticx.com
+fontsctatic.com
+fontsctaticx.com
+fontstatics.com
+fontstaticx.com
+frontstatics.com
+g-staticx.com
+gctatic.com
+gctatics.com
+google-tagmanager.com
+googlestaticx.com
+googlestatix.com
+googletagmahager.com
+googletagnamager.com
+gstaticx.com
+gstaticxs.com
+scaraabresearch.com
+staticzd-assets.com
+
 # Generic
 
 /assets/lfg.js
