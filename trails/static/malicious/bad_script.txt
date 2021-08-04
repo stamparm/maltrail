@@ -5021,6 +5021,14 @@ g.d.cg
 
 /4MVmSStHhq.js
 
+# Reference: https://twitter.com/malwrhunterteam/status/1422266865871622152
+
+/forvt.ps1
+
+# Reference: https://twitter.com/KesaGataMe0/status/1422746848993812480
+
+/aibgsjsw1001.asp
+
 # Generic
 
 /js/altmanluggage.js
