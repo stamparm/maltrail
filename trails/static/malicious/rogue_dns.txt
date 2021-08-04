@@ -522,3 +522,8 @@ resolve.interland.com
 
 54.39.11.209:53
 92.205.27.135:53
+
+# Reference: https://twitter.com/James_inthe_box/status/1423006982487769088
+# Reference: https://gist.github.com/silence-is-best/c2c2bb4bc4e11d6e45b4aa8ebeafaf97
+
+45.138.72.52:53
