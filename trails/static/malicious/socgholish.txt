@@ -80,6 +80,11 @@ certification.mountainaireautoglass.com
 public.clickstat360.com
 fe1eaf89.office.drpease.com
 
+# Reference: https://blog.group-ib.com/prometheus-tds
+
+4107e577.payment.refinedwebs.com
+e186aeb2.news.pocketstay.com
+
 # Generic
 
 /Chrome.Update.88fe59.js
