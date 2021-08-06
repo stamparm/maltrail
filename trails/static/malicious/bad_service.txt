@@ -421,3 +421,4 @@ restore-metamask.com
 # Reference: https://blog.group-ib.com/prometheus-tds
 
 huvpn.com
+windscribe.s3.us-east-2.amazonaws.com
