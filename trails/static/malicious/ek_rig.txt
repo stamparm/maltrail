@@ -294,6 +294,11 @@ exitmagall.xyz
 
 http://188.227.84.67
 magicpeoplenew.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1423060348400070661
+
+http://45.138.24.172
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
