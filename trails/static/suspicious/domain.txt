@@ -5420,3 +5420,8 @@ x10.bz
 # Reference: https://www.virustotal.com/gui/file/a94d56067aa15f28f66a139eecc90e49b008bfa1f0faf7d65721ecfb68a6a6a2/detection
 
 snyzt.org
+
+# Reference: https://twitter.com/reecdeep/status/1423207669570146305
+# Reference: https://app.any.run/tasks/297fd3b0-42eb-4e2d-92e0-2e774f5306e2/
+
+.bazar
