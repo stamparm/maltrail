@@ -5029,6 +5029,11 @@ g.d.cg
 
 /aibgsjsw1001.asp
 
+# Reference: https://twitter.com/James_inthe_box/status/1423311821658681347
+
+/A3CQN1Sa9HXw2.php
+/KhfI5axi.php
+
 # Generic
 
 /js/altmanluggage.js
