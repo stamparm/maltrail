@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2021 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.group-ib.com/prometheus-tds
+
+http://185.186.142.32
+http://188.130.138.22
+http://188.130.138.236
+http://188.130.138.61
+http://188.130.138.63
