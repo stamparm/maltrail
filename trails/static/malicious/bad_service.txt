@@ -417,3 +417,7 @@ toqn23mc.com
 # Reference: https://twitter.com/rootprivilege/status/1422185413842595850
 
 restore-metamask.com
+
+# Reference: https://blog.group-ib.com/prometheus-tds
+
+huvpn.com
