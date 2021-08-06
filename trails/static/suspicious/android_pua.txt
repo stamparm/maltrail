@@ -538,3 +538,7 @@ http://139.180.139.83
 # Reference: https://www.virustotal.com/gui/domain/api.adsnative123.com/relations
 
 api.adsnative123.com
+
+# Reference: https://www.virustotal.com/gui/file/8149bceeb215725bb8815e068c622f0e22782fdd1f3d0b8a46204d79ba754fb2/detection
+
+nude-moon.xyz
