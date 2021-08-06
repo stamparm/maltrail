@@ -5069,6 +5069,10 @@ staticzd-assets.com
 ga-track.com
 hs-scrlpts.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/217.8.117.66/relations
+
+jqueryui.at
+
 # Generic
 
 /assets/lfg.js
