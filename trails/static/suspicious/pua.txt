@@ -2850,3 +2850,8 @@ os2.cicipip.com
 # Reference: https://www.virustotal.com/gui/file/88d67d2fc69192ccfb078858902e90a427eef8556e733cf081c9771de0fa088b/detection
 
 cu25760.tmweb.ru
+
+# Reference: https://www.jayceooi.com/download-%E8%BF%85%E9%9B%B7-xunlei-thunder-5-english-language-pack/
+# Reference: https://www.virustotal.com/gui/ip-address/47.97.179.170/relations
+
+47.97.179.170:18996
