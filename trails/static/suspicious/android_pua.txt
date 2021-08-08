@@ -542,3 +542,7 @@ api.adsnative123.com
 # Reference: https://www.virustotal.com/gui/file/8149bceeb215725bb8815e068c622f0e22782fdd1f3d0b8a46204d79ba754fb2/detection
 
 nude-moon.xyz
+
+# Reference: https://www.virustotal.com/gui/file/f22a264900622f9cc78772597e3014206cde3c18fda9cc44d3d7dde1db848117/detection
+
+video-sadik.ru
