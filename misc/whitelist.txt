@@ -926,6 +926,7 @@ sophosxl.net
 
 # Generic
 
+msauth.net
 playncs.com
 winjit.com
 cloudflare-dns.com
