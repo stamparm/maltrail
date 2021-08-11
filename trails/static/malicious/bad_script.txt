@@ -5034,6 +5034,15 @@ g.d.cg
 /A3CQN1Sa9HXw2.php
 /KhfI5axi.php
 
+# Reference: https://www.virustotal.com/gui/file/5aa49c79925f27538f09602c9e4e70d94055a7fffa2afc4c0519096038998e7a/detection
+
+/1q0h3u8j3b8l.php
+/2e0y3p5g8w8w.php
+/4j2x5r4c5l9n.php
+/5v1e6t0a3y7r.php
+/5v6v0p2a2k9a.php
+/8y0j6a9u2t3v.php
+
 # Generic
 
 /js/altmanluggage.js
