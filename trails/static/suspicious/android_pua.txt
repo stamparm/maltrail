@@ -546,3 +546,7 @@ nude-moon.xyz
 # Reference: https://www.virustotal.com/gui/file/f22a264900622f9cc78772597e3014206cde3c18fda9cc44d3d7dde1db848117/detection
 
 video-sadik.ru
+
+# Reference: https://www.virustotal.com/gui/file/7e60e769b8a13b96603e889cde37a9b63319d80895c9c5e1d968afe29fce9cdc/detection
+
+http://203.107.1.65
