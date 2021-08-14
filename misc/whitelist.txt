@@ -3245,3 +3245,9 @@ siem.su
 # Reference: https://www.virustotal.com/gui/domain/iptools.su/relations
 
 iptools.su
+
+# Reference: https://twitter.com/alberto__segura/status/1426152674303561728
+
+alidns.com
+dns.google
+dns.alidns.com
