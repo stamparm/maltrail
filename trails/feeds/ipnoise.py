@@ -8,7 +8,7 @@ See the file 'LICENSE' for copying permission
 from core.common import retrieve_content
 
 __url__ = "http://ipnoise.now.im/blacklist.txt"
-__check__ = ", ipnoise"
+__check__ = "ipnoise"
 __info__ = "known attacker"
 __reference__ = "ipnoise.now.im"
 
