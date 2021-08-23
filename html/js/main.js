@@ -56,7 +56,8 @@ var SEARCH_TIP_TIMER = 0;
 var DRAW_SPARKLINES_TIMER = 0;
 var PAPAPARSE_COMPLETE_TIMER = 0;
 var REPORT_URL = "http://23.254.203.53/report.php"  // NOTE: Right click / Report false positive
-var SEARCH_TIP_URL = "https://www.searchencrypt.com/search/?q=%22${query}%22";        // Reference: https://kinsta.com/blog/alternative-search-engines/
+var SEARCH_TIP_URL = "https://searx.nixnet.services/search?q=${query}"
+//var SEARCH_TIP_URL = "https://www.searchencrypt.com/search/?q=%22${query}%22";        // Reference: https://kinsta.com/blog/alternative-search-engines/
 //var SEARCH_TIP_URL = "https://duckduckgo.com/?q=${query}";
 //var SEARCH_TIP_URL = "https://www.google.com/cse?cx=011750002002865445766%3Ay5klxdomj78&ie=UTF-8&q=${query}";
 var DAY_SUFFIXES = { 1: "st", 2: "nd", 3: "rd" };
