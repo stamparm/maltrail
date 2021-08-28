@@ -5073,6 +5073,10 @@ hs-scrlpts.com
 
 jqueryui.at
 
+# Reference: https://www.perimeterx.com/tech-blog/2021/evolution-of-a-magecart-attack-leveraging-recaptcha-tech-domain/
+
+recaptcha.tech
+
 # Generic
 
 /assets/lfg.js
