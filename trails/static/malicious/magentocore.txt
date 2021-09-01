@@ -5675,6 +5675,17 @@ jqueryui.at
 
 recaptcha.tech
 
+# Reference: https://twitter.com/MBThreatIntel/status/1433104999152697344
+
+cloud-app.shop
+trafficapps.business
+trafficapps.org
+trafficapps.quest
+trafficapps.us
+wp-extension.cloud
+wp-extension.work
+xenapp.blog
+
 # Generic
 
 /assets/lfg.js
