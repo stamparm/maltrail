@@ -5512,6 +5512,8 @@ wooanalytics.biz
 
 # Reference: https://twitter.com/AffableKraut/status/1415734360213528581
 # Reference: https://twitter.com/AffableKraut/status/1415742977083908104
+# Reference: https://twitter.com/MBThreatIntel/status/1432859477271711749
+# Reference: https://www.virustotal.com/gui/ip-address/47.254.184.114/relations
 # Reference: https://www.virustotal.com/gui/ip-address/8.209.64.30/relations
 
 google-activate.com
@@ -5520,6 +5522,10 @@ google-create.com
 google-gate.com
 google-merchants.com
 google-sagepay.com
+jquery-migrates.com
+merchant-analytics.com
+paypal-analitics.com
+paypal-pays.com
 
 # Reference: https://twitter.com/p0x53/status/1415976988100096000
 
