@@ -3251,3 +3251,7 @@ iptools.su
 alidns.com
 dns.google
 dns.alidns.com
+
+# Reference: https://www.virustotal.com/gui/domain/robotdreams.cc/relations
+
+robotdreams.cc
