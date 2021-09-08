@@ -23,7 +23,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.37.1"
+VERSION = "0.37.3"
 HOMEPAGE = "https://maltrail.github.io"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
