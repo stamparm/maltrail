@@ -5729,6 +5729,25 @@ netcdn-cdn.com
 netanalitics.space
 soogletagmanager.com
 
+# Reference: https://blog.malwarebytes.com/threat-intelligence/2021/09/the-many-tentacles-of-magecart-group-8/
+
+adaptivestyles.com
+carders.best
+csjquery.com
+faviconx.com
+fonts-googleapi.com
+fontsgoooglestatic.com
+googleatagmanager.com
+googlestag.com
+googletagmamager.com
+googletagmanagen.com
+googletaqmanager.com
+googletaqmanaqer.com
+jquery-statistika.info
+panelsaveok.com
+v2zopim.com
+validcvv.ru
+
 # Generic
 
 /assets/lfg.js
