@@ -5692,6 +5692,10 @@ wp-extension.cloud
 wp-extension.work
 xenapp.blog
 
+# Reference: https://twitter.com/p0x53/status/1438147940103581699
+
+googletagmanager.info
+
 # Generic
 
 /assets/lfg.js
