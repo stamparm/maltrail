@@ -5696,6 +5696,39 @@ xenapp.blog
 
 googletagmanager.info
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.198.56.73/relations
+
+adwalte.info
+cdjs.online
+cdn3.info
+cdncloud.space
+cloudapi.online
+cookies.coffee
+domclick.network
+go111111ogleapis.com
+golesyndication.com
+google-anailyticss.com
+googleapis.net
+googecode.com
+googleftagmanager.com
+googletagmanager.xyz
+googletagmanagerdservices.com
+googlesyndicatio.com
+googlesyndiation.com
+googlesyndicatiofn.com
+googlesyndicatsion.com
+googletongji.com
+gooogletagmanager.com
+gotitlogle-analytics.com
+gugle.cf
+javscript.pw
+jquery-uim.download
+jsunifile.bid
+my-seo.top
+netcdn-cdn.com
+netanalitics.space
+soogletagmanager.com
+
 # Generic
 
 /assets/lfg.js
