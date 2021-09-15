@@ -3284,3 +3284,7 @@ dvrlists.com
 # Reference: https://www.virustotal.com/gui/domain/1qw.us/relations
 
 1qw.us
+
+# Reference: https://www.virustotal.com/gui/domain/dedyn.io/relations
+
+dedyn.io
