@@ -5750,6 +5750,10 @@ validbins.su
 validcvv.ru
 validshop.sx
 
+# Reference: https://www.virustotal.com/gui/ip-address/72.52.179.174/relations
+
+google-anayltics.com
+
 # Reference: https://twitter.com/unmaskparasites/status/1438262156298911744
 
 intexys.fr/js/mirasvit/mira.js
