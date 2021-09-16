@@ -5750,6 +5750,12 @@ validbins.su
 validcvv.ru
 validshop.sx
 
+# Reference: https://twitter.com/unmaskparasites/status/1438262156298911744
+
+intexys.fr/js/mirasvit/mira.js
+intexys.fr/js/tbt/trl.js
+intexys.fr/js/tiny_mce/tiny_mce_popup.php
+
 # Generic
 
 /assets/lfg.js
