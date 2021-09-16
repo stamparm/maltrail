@@ -1753,6 +1753,10 @@ XAssTYou
 
 MDDCJS
 
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1438489585907113987
+
+ENUSMSE
+
 # Reference: https://twitter.com/fr0s7_/status/1419687060450029570
 # Reference: https://pastebin.com/K6YmwUxZ
 
@@ -1763,6 +1767,10 @@ qToolbarButton
 # Reference: https://twitter.com/James_inthe_box/status/1420788997316497412
 
 runscope/0.1
+
+# Reference: https://twitter.com/sudosev/status/1438350516648652803
+
+Microsoft Office Word 2014
 
 # Misc
 
