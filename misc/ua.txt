@@ -1764,6 +1764,10 @@ qToolbarButton
 
 runscope/0.1
 
+# Reference: https://twitter.com/sudosev/status/1438350516648652803
+
+Microsoft Office Word 2014
+
 # Misc
 
 information_schema
