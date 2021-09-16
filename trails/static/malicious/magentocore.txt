@@ -5692,6 +5692,74 @@ wp-extension.cloud
 wp-extension.work
 xenapp.blog
 
+# Reference: https://twitter.com/p0x53/status/1438147940103581699
+
+googletagmanager.info
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.198.56.73/relations
+
+adwalte.info
+cdjs.online
+cdn3.info
+cdncloud.space
+cloudapi.online
+cookies.coffee
+domclick.network
+go111111ogleapis.com
+golesyndication.com
+google-anailyticss.com
+googleapis.net
+googecode.com
+googleftagmanager.com
+googletagmanager.xyz
+googletagmanagerdservices.com
+googlesyndicatio.com
+googlesyndiation.com
+googlesyndicatiofn.com
+googlesyndicatsion.com
+googletongji.com
+gooogletagmanager.com
+gotitlogle-analytics.com
+gugle.cf
+javscript.pw
+jquery-uim.download
+jsunifile.bid
+my-seo.top
+netcdn-cdn.com
+netanalitics.space
+soogletagmanager.com
+
+# Reference: https://blog.malwarebytes.com/threat-intelligence/2021/09/the-many-tentacles-of-magecart-group-8/
+
+adaptivestyles.com
+carders.best
+csjquery.com
+faviconx.com
+fonts-googleapi.com
+fontsgoooglestatic.com
+googleatagmanager.com
+googlestag.com
+googletagmamager.com
+googletagmanagen.com
+googletaqmanager.com
+googletaqmanaqer.com
+jquery-statistika.info
+panelsaveok.com
+v2zopim.com
+validbins.su
+validcvv.ru
+validshop.sx
+
+# Reference: https://www.virustotal.com/gui/ip-address/72.52.179.174/relations
+
+google-anayltics.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1438262156298911744
+
+intexys.fr/js/mirasvit/mira.js
+intexys.fr/js/tbt/trl.js
+intexys.fr/js/tiny_mce/tiny_mce_popup.php
+
 # Generic
 
 /assets/lfg.js
