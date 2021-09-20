@@ -5047,6 +5047,10 @@ g.d.cg
 
 /fxhnyv5h9wvjs4i0z86wggq5.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1438958197839122440
+
+/3lonx05ciwldr69pge5jbb6u.php
+
 # Generic
 
 /js/altmanluggage.js
