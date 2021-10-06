@@ -5760,6 +5760,13 @@ intexys.fr/js/mirasvit/mira.js
 intexys.fr/js/tbt/trl.js
 intexys.fr/js/tiny_mce/tiny_mce_popup.php
 
+# Reference: https://twitter.com/unmaskparasites/status/1445488898365214733
+# Reference: https://www.virustotal.com/gui/ip-address/85.192.56.45/relations
+
+authnetcim.net
+authorlze.net
+re-captha.com
+
 # Generic
 
 /assets/lfg.js
