@@ -5051,6 +5051,11 @@ g.d.cg
 
 /3lonx05ciwldr69pge5jbb6u.php
 
+# Reference: https://twitter.com/James_inthe_box/status/1445508345117380618
+# Reference: https://app.any.run/tasks/056603f9-a869-476c-8581-554abc31a464/
+
+/549c03609890dee87e18.php
+
 # Generic
 
 /js/altmanluggage.js
