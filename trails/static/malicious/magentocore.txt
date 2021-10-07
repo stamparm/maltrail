@@ -5773,6 +5773,7 @@ strlpe.net
 # Reference: https://twitter.com/sansecio/status/1445748280118317073
 # Reference: https://www.virustotal.com/gui/ip-address/185.251.90.109/relations
 # Reference: https://www.virustotal.com/gui/ip-address/217.12.204.185/relations
+# Reference: https://www.virustotal.com/gui/ip-address/46.173.214.113/relations
 # Reference: https://www.virustotal.com/gui/ip-address/46.173.214.126/relations
 
 apiscaptcha.com
@@ -5781,6 +5782,7 @@ chimpstatics.com
 chimpstatics.xyz
 clearfix.xyz
 express-pay-online.com
+gtagstatic.com
 payp-express.com
 re-captha.com
 recaptcha-analytics.com
