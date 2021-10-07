@@ -4683,6 +4683,7 @@ xpaymentes.com
 # Reference: https://www.virustotal.com/gui/ip-address/8.208.92.202/relations
 
 amazon-sert.com
+analyticsfonts.com
 fontsgoogles.com
 googlefonts-map.com
 
@@ -5762,10 +5763,47 @@ intexys.fr/js/tiny_mce/tiny_mce_popup.php
 
 # Reference: https://twitter.com/unmaskparasites/status/1445488898365214733
 # Reference: https://www.virustotal.com/gui/ip-address/85.192.56.45/relations
+# Reference: https://www.virustotal.com/gui/ip-address/46.173.214.126/relations
 
+adslstickerfi.world
 authnetcim.net
 authorlze.net
+bralntree.com
+strlpe.net
+
+# Reference: https://twitter.com/sansecio/status/1445748280118317073
+# Reference: https://www.virustotal.com/gui/ip-address/185.251.90.109/relations
+# Reference: https://www.virustotal.com/gui/ip-address/217.12.204.185/relations
+# Reference: https://www.virustotal.com/gui/ip-address/46.173.214.113/relations
+# Reference: https://www.virustotal.com/gui/ip-address/46.173.214.126/relations
+
+apiscaptcha.com
+batbings.com
+chimpstatics.com
+chimpstatics.xyz
+clearfix.xyz
+express-pay-online.com
+gtagstatic.com
+payp-express.com
 re-captha.com
+recaptcha-analytics.com
+recaptcha-in.pw
+recaptcha.tech
+recaptha.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/176.113.81.124/relations
+
+log-inmember.com
+loginclient.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.22.149.186/relations
+
+googietagmanager.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/194.87.253.36/relations
+
+jquerydll.net
+googlensmanager.com
 
 # Generic
 
