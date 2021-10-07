@@ -4683,6 +4683,7 @@ xpaymentes.com
 # Reference: https://www.virustotal.com/gui/ip-address/8.208.92.202/relations
 
 amazon-sert.com
+analyticsfonts.com
 fontsgoogles.com
 googlefonts-map.com
 
