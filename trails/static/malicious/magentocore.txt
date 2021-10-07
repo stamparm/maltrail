@@ -5790,6 +5790,11 @@ recaptcha-in.pw
 recaptcha.tech
 recaptha.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/176.113.81.124/relations
+
+log-inmember.com
+loginclient.net
+
 # Generic
 
 /assets/lfg.js
