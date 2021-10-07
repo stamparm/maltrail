@@ -5799,6 +5799,11 @@ loginclient.net
 
 googietagmanager.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/194.87.253.36/relations
+
+jquerydll.net
+googlensmanager.com
+
 # Generic
 
 /assets/lfg.js
