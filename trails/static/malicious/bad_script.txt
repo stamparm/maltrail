@@ -5060,6 +5060,10 @@ g.d.cg
 
 /b81b83efe1608c.php
 
+# Reference: https://twitter.com/MBThreatIntel/status/1440472066822602759
+
+https-center.net
+
 # Generic
 
 /js/altmanluggage.js
