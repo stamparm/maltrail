@@ -5795,6 +5795,10 @@ recaptha.com
 log-inmember.com
 loginclient.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/195.22.149.186/relations
+
+googietagmanager.com
+
 # Generic
 
 /assets/lfg.js
