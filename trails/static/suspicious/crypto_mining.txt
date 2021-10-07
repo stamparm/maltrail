@@ -871,3 +871,7 @@ seed.kronecoin.org
 # Reference: https://app.any.run/tasks/43cb89b5-8bba-4623-ac27-4e31f9ddb36b/
 
 178.63.100.197:3333
+
+# Reference: https://www.virustotal.com/gui/file/46b35d7ba219ea10bc5b957ae7aabce4cbfe2903ea4744ca751a6167396601d2/detection
+
+217.182.169.148:14433
