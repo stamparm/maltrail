@@ -1125,6 +1125,7 @@ pridecdn.com
 quicdn.com
 
 # Reference: https://raw.githubusercontent.com/gwillem/magento-malware-scanner/master/rules/burner-domains.txt
+# Reference: https://www.virustotal.com/gui/ip-address/185.202.103.37/relations
 
 abuse-js.link
 account-mage.su
@@ -1408,6 +1409,7 @@ onlineclouds.cloud
 onlinereserchstatistics.online
 onlineshopsecurity.com
 onlinestatus.site
+onlinestatus.stream
 optimizly.info
 order-security.com
 orealjs.com
