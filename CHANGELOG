@@ -13,10 +13,23 @@
 #################################################################
 
 
-- Version 0.36 -> 0.37 (Upcoming release)
+- Version 0.38 -> 0.39 (Upcoming release)
+
+[=] "potential directory traversal" heuristic is extended
 
 
 
+
+- Version 0.37 -> 0.38 (03 Oct 2021)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.36 -> 0.37 (02 Sep 2021)
+
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
