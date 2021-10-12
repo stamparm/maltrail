@@ -5807,6 +5807,11 @@ googietagmanager.com
 jquerydll.net
 googlensmanager.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/46.8.158.191/relations
+
+easy-wb1auth.com
+easy1-webca.net
+
 # Generic
 
 /assets/lfg.js
