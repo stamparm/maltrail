@@ -5812,6 +5812,14 @@ googlensmanager.com
 easy-wb1auth.com
 easy1-webca.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/46.172.91.28/relations
+
+js-inst.su
+js-sistem.su
+js-star.su
+save-js.su
+star-js.su
+
 # Generic
 
 /assets/lfg.js
