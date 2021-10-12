@@ -561,3 +561,7 @@ adskkkkk.com
 64.137.255.24:8080
 imobuy.com
 /imobuy_2/track/device?bi=
+
+# Reference: https://www.virustotal.com/gui/domain/3g518.com/relations
+
+3g518.com
