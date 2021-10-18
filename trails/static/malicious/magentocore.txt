@@ -5820,6 +5820,10 @@ js-star.su
 save-js.su
 star-js.su
 
+# Reference: https://twitter.com/AffableKraut/status/1450109837543628805
+
+dyadonline.monster
+
 # Generic
 
 /assets/lfg.js
