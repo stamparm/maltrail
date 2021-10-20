@@ -7172,3 +7172,25 @@ doones.pw
 
 dryfish.club
 ourcode.online
+
+# Reference: https://twitter.com/AvastThreatLabs/status/1450476708939767815
+
+http://46.105.113.12
+http://51.255.66.149
+binage.info
+binoon.info
+buycur.info
+curbin.info
+fakbin.info
+onbin.info
+onbina.info
+ostbin.info
+pakbin.info
+rombin.info
+
+# Reference: https://twitter.com/david_jursa/status/1450479753669095432
+
+0redirc.com
+rtpdn14.com
+torrentwiz31.me
+clk.rtpdn14.com
