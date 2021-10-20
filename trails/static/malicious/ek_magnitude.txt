@@ -7187,3 +7187,10 @@ onbina.info
 ostbin.info
 pakbin.info
 rombin.info
+
+# Reference: https://twitter.com/david_jursa/status/1450479753669095432
+
+0redirc.com
+rtpdn14.com
+torrentwiz31.me
+clk.rtpdn14.com
