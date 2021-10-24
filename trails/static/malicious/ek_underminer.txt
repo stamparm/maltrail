@@ -64,3 +64,10 @@ shorico.club
 # Reference: https://twitter.com/david_jursa/status/1326648367049486337
 
 http://213.159.203.207
+
+# Reference: https://twitter.com/MBThreatIntel/status/1451614044176076801
+
+http://169.197.142.162
+169.197.142.162:4433
+jsonpost.xyz
+web.jsonpost.xyz
