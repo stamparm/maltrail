@@ -5824,6 +5824,13 @@ star-js.su
 
 dyadonline.monster
 
+# Reference: https://twitter.com/MBThreatIntel/status/1452690744544665601
+# Reference: https://www.virustotal.com/gui/ip-address/185.204.3.48/detection
+
+jquerylibs.net
+magento-plugin.com
+trustdomains.net
+
 # Generic
 
 /assets/lfg.js
