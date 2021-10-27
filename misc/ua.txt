@@ -1776,6 +1776,12 @@ Microsoft Office Word 2014
 
 REBOL
 
+# Reference: https://twitter.com/netresec/status/1272787764765958145
+# Reference: https://twitter.com/netresec/status/1272789544245637121
+# Reference: https://app.any.run/tasks/d348af9e-1334-499a-b85f-66decc37e728/
+
+PologiyKolokol
+
 # Misc
 
 information_schema
