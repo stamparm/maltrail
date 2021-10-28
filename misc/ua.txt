@@ -1786,6 +1786,10 @@ PologiyKolokol
 
 AhrefsBot
 
+# Reference: https://twitter.com/SurfWatchLabs/status/424888711890075648
+
+HackSurfer
+
 # Misc
 
 information_schema
