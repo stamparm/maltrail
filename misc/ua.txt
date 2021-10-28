@@ -1790,6 +1790,10 @@ AhrefsBot
 
 HackSurfer
 
+# Reference: https://twitter.com/perishable/status/1371172173
+
+heritrix
+
 # Misc
 
 information_schema
