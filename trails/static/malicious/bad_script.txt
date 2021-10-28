@@ -5076,6 +5076,11 @@ https-center.net
 
 /317dd0e0d501b3697287.php
 
+# Reference: https://twitter.com/benkow_/status/1453639490094907392
+# Reference: https://www.virustotal.com/gui/file/33c1ee4c99e89fc0d2255cfbc2e0084147bb915bb2c90dfa72748e5b0a9fb787/detection
+
+signorcredito.it
+
 # Generic
 
 /js/altmanluggage.js
