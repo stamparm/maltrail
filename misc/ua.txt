@@ -1782,6 +1782,18 @@ REBOL
 
 PologiyKolokol
 
+# Reference: https://twitter.com/jolros/status/367719602895089664
+
+AhrefsBot
+
+# Reference: https://twitter.com/SurfWatchLabs/status/424888711890075648
+
+HackSurfer
+
+# Reference: https://twitter.com/perishable/status/1371172173
+
+heritrix
+
 # Misc
 
 information_schema
