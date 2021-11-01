@@ -5831,6 +5831,11 @@ jquerylibs.net
 magento-plugin.com
 trustdomains.net
 
+# Reference: https://twitter.com/AffableKraut/status/1451622631715835904
+# Reference: https://www.virustotal.com/gui/ip-address/89.108.109.237/relations
+
+sentry-cdn.io
+
 # Generic
 
 /assets/lfg.js
