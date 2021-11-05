@@ -5836,6 +5836,66 @@ trustdomains.net
 
 sentry-cdn.io
 
+# Reference: https://blog.malwarebytes.com/threat-intelligence/2021/11/credit-card-skimmer-evades-virtual-machines/
+
+abtasty.net
+adsrvr.biz
+alligaturetrack.com
+artesfut.com
+brands-watch.com
+clickcease.biz
+climpstatic.com
+cloud-chart.net
+cookieslaw.org
+crisconnect.net
+dc-storm.org
+demo-metrics.net
+digital-speed.net
+getambassador.net
+hal-data.org
+iofrontcloud.com
+librarysetr.com
+libsconnect.net
+listrakbi.biz
+mantisadnetwork.org
+marklibs.com
+megalixe.org
+murdoog.org
+opendwin.com
+rawgit.net
+rolfinder.com
+sleefnote.com
+speed-metrics.com
+tevidon.com
+troadster.com
+webflows.net
+api.abtasty.net
+apis.murdoog.org
+app.iofrontcloud.com
+app.rolfinder.com
+cdn.cookieslaw.org
+cdn.getambassador.net
+cdn.megalixe.org
+con.digital-speed.net
+css.tevidon.com
+dev.crisconnect.net
+graph.cloud-chart.net
+js.artesfut.com
+js.demo-metrics.net
+js.librarysetr.com
+js.rawgit.net
+js.speed-metrics.com
+m.brands-watch.com
+nypi.dc-storm.org
+st.adsrvr.biz
+stage.libsconnect.net
+stage.sleefnote.com
+static.mantisadnetwork.org
+static.opendwin.com
+stst.climpstatic.com
+tag.listrakbi.biz
+web.webflows.net
+
 # Generic
 
 /assets/lfg.js
