@@ -1794,6 +1794,10 @@ HackSurfer
 
 heritrix
 
+# Reference: https://twitter.com/techgu/status/1440832097137008642
+
+PaintByNumber
+
 # Misc
 
 information_schema
