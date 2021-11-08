@@ -5089,6 +5089,11 @@ signorcredito.it
 
 /9fa099d0b6dea5.php
 
+# Reference: https://twitter.com/James_inthe_box/status/1457709661801496581
+# Reference: https://app.any.run/tasks/0032c1f8-af31-43ba-bb4f-caf15023d05a/
+
+/9d0476a1a62a896eb293.php
+
 # Generic
 
 /js/altmanluggage.js
