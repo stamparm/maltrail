@@ -1802,6 +1802,10 @@ PaintByNumber
 
 Uirusu
 
+# Reference: https://twitter.com/pix/status/1152601420589387776
+
+EICAR-STANDARD-ANTIVIRUS-TEST-FILE
+
 # Misc
 
 information_schema
