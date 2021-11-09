@@ -1798,6 +1798,10 @@ heritrix
 
 PaintByNumber
 
+# Reference: https://twitter.com/WenruiDonovanWu/status/1399899233352753153
+
+Uirusu
+
 # Misc
 
 information_schema
