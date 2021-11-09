@@ -1736,6 +1736,10 @@ Mozilla/4.0 (compatible;MSIE 6.0; Windows NT 5.0
 
 Mozilla/5.0 Gecko/41.0 Firefox/41.0
 
+# Reference: https://twitter.com/malware_traffic/status/1218361088045174784
+
+Edg/79.0.309.68
+
 # Reference: https://www.macnica.net/pdf/mpressioncss_ta_report_2020_5.pdf
 
 Edg/83.0.478.64
