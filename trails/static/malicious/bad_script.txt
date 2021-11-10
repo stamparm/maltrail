@@ -5103,6 +5103,10 @@ signorcredito.it
 limb-330718.appspot.com
 /limb-330718.appspot.com/
 
+# Reference: https://twitter.com/pr0xylife/status/1458425006883590146
+
+/karolTubeKarol.hta
+
 # Generic
 
 /js/altmanluggage.js
