@@ -5896,6 +5896,14 @@ stst.climpstatic.com
 tag.listrakbi.biz
 web.webflows.net
 
+# Reference: https://twitter.com/MBThreatIntel/status/1457804685327224833
+
+static1.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1458185084201148416
+
+bludigital.cyou
+
 # Generic
 
 /assets/lfg.js
