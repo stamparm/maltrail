@@ -875,3 +875,7 @@ seed.kronecoin.org
 # Reference: https://www.virustotal.com/gui/file/46b35d7ba219ea10bc5b957ae7aabce4cbfe2903ea4744ca751a6167396601d2/detection
 
 217.182.169.148:14433
+
+# Reference: https://www.virustotal.com/gui/file/8283431468392c588fe58acf4f8fae3d6340ab8f670eb98e74712c60fc469c72/detection
+
+51.255.34.118:14433
