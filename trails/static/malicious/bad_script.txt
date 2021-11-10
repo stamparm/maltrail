@@ -5098,6 +5098,11 @@ signorcredito.it
 
 /ac2d3e49ed481ffff187.php
 
+# Reference: https://twitter.com/sansecio/status/1458454276875948041
+
+limb-330718.appspot.com
+/limb-330718.appspot.com/
+
 # Generic
 
 /js/altmanluggage.js
@@ -5137,6 +5142,7 @@ signorcredito.it
 /js/ussi.js
 /js/vladofootwear.js
 /js/wallerbmx.js
+/o/g-analytic.js
 /myrrem.hta
 /out-1334992907.hta
 /out-1347051899.hta
@@ -5147,6 +5153,7 @@ signorcredito.it
 /dating-verification-card.php
 /evreigate.php
 /fcc-authenticazione.php
+/g-analytic.js
 /gate.php
 /gate01.php
 /gate1.php
