@@ -5904,6 +5904,10 @@ static1.xyz
 
 bludigital.cyou
 
+# Reference: https://twitter.com/unmaskparasites/status/1457896674374815750
+
+firchtech.xyz
+
 # Generic
 
 /assets/lfg.js
@@ -5940,6 +5944,7 @@ bludigital.cyou
 /my/vmart.js
 /103754_tag.js
 /a1def6c62256906029767cb784323ab3.js
+/authorze.js
 /markberg.dk.js
 /qcore.js
 /plugins/republicadealberdi.js
