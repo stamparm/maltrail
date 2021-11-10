@@ -5900,6 +5900,10 @@ web.webflows.net
 
 static1.xyz
 
+# Reference: https://twitter.com/MBThreatIntel/status/1458185084201148416
+
+bludigital.cyou
+
 # Generic
 
 /assets/lfg.js
