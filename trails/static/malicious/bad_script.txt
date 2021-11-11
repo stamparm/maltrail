@@ -5107,6 +5107,11 @@ limb-330718.appspot.com
 
 /karolTubeKarol.hta
 
+# Reference: https://twitter.com/unmaskparasites/status/1458899921596149785
+
+ptfish.top
+tasks.ptfish.top
+
 # Generic
 
 /js/altmanluggage.js
