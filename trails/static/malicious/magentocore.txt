@@ -5908,6 +5908,10 @@ bludigital.cyou
 
 firchtech.xyz
 
+# Reference: https://twitter.com/unmaskparasites/status/1458905989130829832
+
+webcachespace.net
+
 # Generic
 
 /assets/lfg.js
@@ -5944,6 +5948,7 @@ firchtech.xyz
 /my/vmart.js
 /103754_tag.js
 /a1def6c62256906029767cb784323ab3.js
+/ac-analytics.js
 /authorze.js
 /markberg.dk.js
 /qcore.js
