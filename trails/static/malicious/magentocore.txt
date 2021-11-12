@@ -5639,9 +5639,12 @@ webstatistisc.org
 
 roi-traffic.icu
 
+# Reference: https://www.virustotal.com/gui/ip-address/139.59.66.9/relations
 # Reference: https://www.virustotal.com/gui/ip-address/179.43.160.43/relations
 
+corejquery.com
 js-jquery.org
+sjquery.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1422681441146605570
 # Reference: https://www.virustotal.com/gui/ip-address/185.246.130.169/relations
