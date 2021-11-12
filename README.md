@@ -532,7 +532,7 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 
 ## Sponsors
 
-* [Sansec](https://sansec.io/)
+* ???
 
 ## Developers
 
