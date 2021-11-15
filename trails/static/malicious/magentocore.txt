@@ -5915,6 +5915,12 @@ firchtech.xyz
 
 webcachespace.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.65.75/relations
+
+analythics.com
+cdn-manager.com
+cdn-manager.xyz
+
 # Generic
 
 /assets/lfg.js
