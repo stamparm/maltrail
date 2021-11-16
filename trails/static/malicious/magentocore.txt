@@ -5925,6 +5925,11 @@ cdn-manager.me
 cdn-manager.xyz
 spotifylatepayment.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1460424711825887236
+# Reference: https://www.virustotal.com/gui/ip-address/91.132.139.192/relations
+
+googletrackevent.com
+
 # Generic
 
 /assets/lfg.js
