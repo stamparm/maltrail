@@ -1814,6 +1814,10 @@ EICAR-STANDARD-ANTIVIRUS-TEST-FILE
 
 Netlab360
 
+# Reference: https://isc.sans.edu/diary/28044
+
+WindowsPowerShell
+
 # Misc
 
 information_schema
