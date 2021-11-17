@@ -2863,3 +2863,7 @@ kophack.ru
 # Reference; https://www.virustotal.com/gui/file/e2d752905327a343b039e661da0709522d3d49e51e1897dc26916f06eb839110/detection
 
 a1625116.hostink.ru
+
+# Reference: https://www.virustotal.com/gui/file/d58daec45d8e0740bc632fd99b18df06bff95125cc7ab68196a1b7270e1acdfa/detection
+
+o1233239.beget.tech
