@@ -2855,3 +2855,32 @@ cu25760.tmweb.ru
 # Reference: https://www.virustotal.com/gui/ip-address/47.97.179.170/relations
 
 47.97.179.170:18996
+
+# Reference: https://www.virustotal.com/gui/domain/kophack.ru/relations
+
+kophack.ru
+
+# Reference; https://www.virustotal.com/gui/file/e2d752905327a343b039e661da0709522d3d49e51e1897dc26916f06eb839110/detection
+
+a1625116.hostink.ru
+
+# Reference: https://www.virustotal.com/gui/file/d58daec45d8e0740bc632fd99b18df06bff95125cc7ab68196a1b7270e1acdfa/detection
+
+o1233239.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/0fc777df6a399966c974b059d9e35fc2de39e89f07c8893e6d7ace8bd79581ae/detection
+
+digimatic.biz
+torrentex.ru
+download.torrentex.ru
+
+# Reference: https://www.virustotal.com/gui/file/352e7dc677ba56843e45de312a17df3bbbb7a6c23a1852138d7dcb78b4ee788c/detection
+
+kovkaph5.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/2b42d446979171648bd5b8829896a663f725e0d32bd9dee9330f4c54b1c8d846/detection
+
+actical.ru
+othere.ru
+esly.othere.ru
+waic.actical.ru
