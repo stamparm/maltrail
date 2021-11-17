@@ -2877,3 +2877,10 @@ download.torrentex.ru
 # Reference: https://www.virustotal.com/gui/file/352e7dc677ba56843e45de312a17df3bbbb7a6c23a1852138d7dcb78b4ee788c/detection
 
 kovkaph5.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/2b42d446979171648bd5b8829896a663f725e0d32bd9dee9330f4c54b1c8d846/detection
+
+actical.ru
+othere.ru
+esly.othere.ru
+waic.actical.ru
