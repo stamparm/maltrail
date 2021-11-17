@@ -2859,3 +2859,7 @@ cu25760.tmweb.ru
 # Reference: https://www.virustotal.com/gui/domain/kophack.ru/relations
 
 kophack.ru
+
+# Reference; https://www.virustotal.com/gui/file/e2d752905327a343b039e661da0709522d3d49e51e1897dc26916f06eb839110/detection
+
+a1625116.hostink.ru
