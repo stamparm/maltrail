@@ -5930,6 +5930,11 @@ spotifylatepayment.com
 
 googletrackevent.com
 
+# Reference: https://decoded.avast.io/threatresearch/avast-q321-threat-report/
+# Reference: https://www.virustotal.com/gui/ip-address/193.203.203.240/relations
+
+ganalitics.com
+
 # Generic
 
 /assets/lfg.js
