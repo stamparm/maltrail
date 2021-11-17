@@ -2855,3 +2855,7 @@ cu25760.tmweb.ru
 # Reference: https://www.virustotal.com/gui/ip-address/47.97.179.170/relations
 
 47.97.179.170:18996
+
+# Reference: https://www.virustotal.com/gui/domain/kophack.ru/relations
+
+kophack.ru
