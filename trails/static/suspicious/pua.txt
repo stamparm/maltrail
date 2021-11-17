@@ -2873,3 +2873,7 @@ o1233239.beget.tech
 digimatic.biz
 torrentex.ru
 download.torrentex.ru
+
+# Reference: https://www.virustotal.com/gui/file/352e7dc677ba56843e45de312a17df3bbbb7a6c23a1852138d7dcb78b4ee788c/detection
+
+kovkaph5.beget.tech
