@@ -2867,3 +2867,9 @@ a1625116.hostink.ru
 # Reference: https://www.virustotal.com/gui/file/d58daec45d8e0740bc632fd99b18df06bff95125cc7ab68196a1b7270e1acdfa/detection
 
 o1233239.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/0fc777df6a399966c974b059d9e35fc2de39e89f07c8893e6d7ace8bd79581ae/detection
+
+digimatic.biz
+torrentex.ru
+download.torrentex.ru
