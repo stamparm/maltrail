@@ -5917,6 +5917,11 @@ firchtech.xyz
 
 webcachespace.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.146.166.186/relations
+
+webcachespace.com
+webprohoster.com
+
 # Reference: https://www.virustotal.com/gui/ip-address/8.209.65.75/relations
 # Reference: https://www.virustotal.com/gui/ip-address/8.211.6.123/relations
 
