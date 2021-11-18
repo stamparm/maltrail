@@ -5950,6 +5950,15 @@ ganalitics.site
 
 corpanalytics.info
 
+# Reference: https://twitter.com/unmaskparasites/status/1435749969105874947
+# Reference: https://www.virustotal.com/gui/ip-address/174.138.117.217/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.55.224.107/relations
+
+cgtag.com
+cgtags.com
+curenciesapp.com
+tags.ws
+
 # Generic
 
 /assets/lfg.js
