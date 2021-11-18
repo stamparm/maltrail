@@ -5946,6 +5946,10 @@ ganalitics.com
 
 ganalitics.site
 
+# Reference: https://twitter.com/unmaskparasites/status/1448408373863403520
+
+corpanalytics.info
+
 # Generic
 
 /assets/lfg.js
