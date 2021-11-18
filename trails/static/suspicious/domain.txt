@@ -5425,3 +5425,7 @@ snyzt.org
 # Reference: https://app.any.run/tasks/297fd3b0-42eb-4e2d-92e0-2e774f5306e2/
 
 .bazar
+
+# Reference: https://www.virustotal.com/gui/domain/ttwstatic.com/detection
+
+ttwstatic.com
