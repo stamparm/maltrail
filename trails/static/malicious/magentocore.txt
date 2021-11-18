@@ -5937,6 +5937,10 @@ googletrackevent.com
 
 ganalitics.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/80.211.182.208/relations
+
+ganalitics.site
+
 # Generic
 
 /assets/lfg.js
