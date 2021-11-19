@@ -5112,6 +5112,10 @@ limb-330718.appspot.com
 ptfish.top
 tasks.ptfish.top
 
+# Reference: https://twitter.com/MalwarePatrol/status/1461788634865098757
+
+/y2t0oh31ji9xxankxfps6x6w.php
+
 # Generic
 
 /js/altmanluggage.js
