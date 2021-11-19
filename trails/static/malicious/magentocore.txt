@@ -5959,6 +5959,13 @@ cgtags.com
 curenciesapp.com
 tags.ws
 
+# Reference: https://sansec.io/research/ecommerce-malware-linux-avp
+# Reference: https://www.virustotal.com/gui/file/2d422affb9727b71b0e1610568bea8643892d99bdaed99269a10e7554c88437b/detection
+
+http://103.233.11.28
+103.233.11.28:443
+/jQuery_StXlFiisxCDN.php
+
 # Generic
 
 /assets/lfg.js
