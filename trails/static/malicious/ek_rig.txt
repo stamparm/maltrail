@@ -299,6 +299,10 @@ magicpeoplenew.xyz
 
 http://45.138.24.172
 
+# Reference: https://twitter.com/MBThreatIntel/status/1461509514855784449
+
+http://31.44.3.35
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
