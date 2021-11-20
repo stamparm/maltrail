@@ -5116,6 +5116,10 @@ tasks.ptfish.top
 
 /y2t0oh31ji9xxankxfps6x6w.php
 
+# Reference: https://blog.cyble.com/2021/11/11/gravity-rat-malware-returns-as-a-chat-application/
+
+/61c10953.php
+
 # Generic
 
 /js/altmanluggage.js
