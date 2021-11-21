@@ -5966,6 +5966,10 @@ http://103.233.11.28
 103.233.11.28:443
 /jQuery_StXlFiisxCDN.php
 
+# Reference: https://twitter.com/felixaime/status/1462512317405536262
+
+inslco.bar
+
 # Generic
 
 /assets/lfg.js
