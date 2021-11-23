@@ -1818,6 +1818,10 @@ Netlab360
 
 WindowsPowerShell
 
+# Reference: https://twitter.com/malwarejar/status/1463082991908003841
+
+Update v1.0
+
 # Misc
 
 information_schema
