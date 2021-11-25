@@ -3301,3 +3301,12 @@ pihpc.net
 pihq.net
 pishell.com
 pishell.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.130.104.183/relations
+
+dray-dns.de
+fdns.uk
+nerdcamp.net
+xddns.de
+ddns.dropknox.com
+dyn.dynster.net
