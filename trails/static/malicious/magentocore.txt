@@ -5974,6 +5974,12 @@ inslco.bar
 
 booctstrap.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.130.104.170/relations
+
+netsecuressl.com
+safenetssl.com
+securesslweb.com
+
 # Generic
 
 /assets/lfg.js
