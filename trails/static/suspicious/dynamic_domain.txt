@@ -3289,3 +3289,15 @@ dvrlists.com
 # Reference: https://www.virustotal.com/gui/domain/dedyn.io/relations
 
 dedyn.io
+
+# Reference: https://legitdns.com/
+
+12bittirade.com
+ipoac.net
+ipoac.org
+pibase.net
+pihpc.com
+pihpc.net
+pihq.net
+pishell.com
+pishell.net
