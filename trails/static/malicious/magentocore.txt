@@ -5970,6 +5970,10 @@ http://103.233.11.28
 
 inslco.bar
 
+# Reference: https://twitter.com/0xbadad/status/1462913839381504007
+
+booctstrap.com
+
 # Generic
 
 /assets/lfg.js
