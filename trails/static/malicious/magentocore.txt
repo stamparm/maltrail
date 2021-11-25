@@ -5978,6 +5978,7 @@ booctstrap.com
 
 netsecuressl.com
 safenetssl.com
+securesslservice.com
 securesslweb.com
 
 # Generic
