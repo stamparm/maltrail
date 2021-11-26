@@ -5977,11 +5977,13 @@ inslco.bar
 booctstrap.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/185.130.104.170/relations
+# Reference: https://www.virustotal.com/gui/ip-address/93.117.137.164/relations
 
 netsecuressl.com
 safenetssl.com
 securesslservice.com
 securesslweb.com
+sslnetsecurity.com
 
 # Generic
 
