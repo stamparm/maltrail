@@ -3310,3 +3310,7 @@ nerdcamp.net
 xddns.de
 ddns.dropknox.com
 dyn.dynster.net
+
+# Reference: https://www.virustotal.com/gui/domain/dnsd.me/relations
+
+dnsd.me
