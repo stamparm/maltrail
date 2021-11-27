@@ -5951,12 +5951,14 @@ ganalitics.site
 corpanalytics.info
 
 # Reference: https://twitter.com/unmaskparasites/status/1435749969105874947
+# Reference: https://twitter.com/unmaskparasites/status/1458241033058222081
 # Reference: https://www.virustotal.com/gui/ip-address/174.138.117.217/relations
 # Reference: https://www.virustotal.com/gui/ip-address/45.55.224.107/relations
 
 cgtag.com
 cgtags.com
 curenciesapp.com
+icosenses.com
 tags.ws
 
 # Reference: https://sansec.io/research/ecommerce-malware-linux-avp
@@ -5969,6 +5971,10 @@ http://103.233.11.28
 # Reference: https://twitter.com/felixaime/status/1462512317405536262
 
 inslco.bar
+
+# Reference: https://twitter.com/0xbadad/status/1462913839381504007
+
+booctstrap.com
 
 # Generic
 
