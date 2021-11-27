@@ -5120,6 +5120,10 @@ tasks.ptfish.top
 
 /61c10953.php
 
+# Reference: https://twitter.com/1ZRR4H/status/1464289306399420419
+
+/e2b649d30646dc.php
+
 # Generic
 
 /js/altmanluggage.js
