@@ -71,3 +71,8 @@ http://169.197.142.162
 169.197.142.162:4433
 jsonpost.xyz
 web.jsonpost.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1464434083639877632
+
+169.197.142.89:14333
+/10aderre3/
