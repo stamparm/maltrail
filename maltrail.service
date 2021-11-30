@@ -3,7 +3,7 @@ Description=Malicious traffic detection system https://github.com/stamparm/maltr
 
 [Service]
 User=root
-WorkingDirectory=/home/roman/Documents/Security/maltrail
+WorkingDirectory=/opt/maltrail
 ExecStart=/usr/bin/python3 sensor.py
 KillMode=mixed
 
