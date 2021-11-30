@@ -2884,3 +2884,8 @@ actical.ru
 othere.ru
 esly.othere.ru
 waic.actical.ru
+
+# Reference: https://www.virustotal.com/gui/domain/forces.wintertorg.ru/relations
+
+wintertorg.ru
+forces.wintertorg.ru

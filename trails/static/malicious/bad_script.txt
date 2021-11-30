@@ -5112,6 +5112,18 @@ limb-330718.appspot.com
 ptfish.top
 tasks.ptfish.top
 
+# Reference: https://twitter.com/MalwarePatrol/status/1461788634865098757
+
+/y2t0oh31ji9xxankxfps6x6w.php
+
+# Reference: https://blog.cyble.com/2021/11/11/gravity-rat-malware-returns-as-a-chat-application/
+
+/61c10953.php
+
+# Reference: https://twitter.com/1ZRR4H/status/1464289306399420419
+
+/e2b649d30646dc.php
+
 # Generic
 
 /js/altmanluggage.js
