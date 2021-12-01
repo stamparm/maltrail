@@ -293,6 +293,10 @@ vscode.workingfeedback.cloud
 
 /~zadmin/
 
+# Reference: https://www.virustotal.com/gui/file/b6ddcf0051137bd6bf010c04e99685dd607d902a3a82b36e256fd9ea6888e3ba/detection
+
+/panel.php?uploadsms=
+
 # Generic
 
 /admin_123/auth.php
