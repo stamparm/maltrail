@@ -1,0 +1,11 @@
+[Unit]
+Description=Malicious traffic detection system https://github.com/stamparm/maltrail
+
+[Service]
+User=root
+WorkingDirectory=/opt/maltrail
+ExecStart=/usr/bin/python3 sensor.py
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target

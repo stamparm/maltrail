@@ -526,6 +526,16 @@ Nevertheless, administrator(s) should invest some extra time and check (with oth
     2 1 * * * /usr/bin/pkill -f maltrail
     ```
 
+4. Enable as systemd service:
+
+    ```sh
+    sudo cp /opt/maltrail/maltrail.service /usr/lib/systemd/system/maltrail.service
+    sudo systemctl daemon-reload && sudo systemctl start maltrail && sudo systemctl enable maltrail
+    systemctl status maltrail.service 
+    
+    ```
+
+
 ## License
 
 This software is provided under a MIT License. See the accompanying [LICENSE](https://github.com/stamparm/maltrail/blob/master/LICENSE) file for more information.
