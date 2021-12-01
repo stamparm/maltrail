@@ -1822,6 +1822,11 @@ WindowsPowerShell
 
 Update v1.0
 
+# Reference: https://threatfabric.com/blogs/deceive-the-heavens-to-cross-the-sea.html
+# Reference: https://threatfabric.com/assets/images/blog/droppers/c2_communication.png
+
+\*user\_agent\*
+
 # Misc
 
 information_schema
