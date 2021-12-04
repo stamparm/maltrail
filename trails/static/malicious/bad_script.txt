@@ -5164,6 +5164,7 @@ tasks.ptfish.top
 /js/vladofootwear.js
 /js/wallerbmx.js
 /o/g-analytic.js
+/rat/rat.php
 /myrrem.hta
 /out-1334992907.hta
 /out-1347051899.hta
