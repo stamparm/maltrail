@@ -299,6 +299,10 @@ vscode.workingfeedback.cloud
 /panel.php?uploadsms=
 /php.php?uploadsms=
 
+# Reference: https://www.virustotal.com/gui/file/23b976c88240a3eda64a7e10f0159776d101bb4ddcabe66f88b5c5b855e50112/detection
+
+/Xpanel/srcc.php
+
 # Generic
 
 /admin_123/auth.php
