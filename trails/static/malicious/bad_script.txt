@@ -5124,6 +5124,11 @@ tasks.ptfish.top
 
 /e2b649d30646dc.php
 
+# Reference: https://twitter.com/vikas891/status/1467394956721475585
+
+/aspnet_client/rncyqsyrpvnwbjqx.aspx
+/rncyqsyrpvnwbjqx.aspx
+
 # Generic
 
 /js/altmanluggage.js
