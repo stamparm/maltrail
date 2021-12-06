@@ -851,3 +851,20 @@ podathon.org/shell/
 # Reference: https://www.virustotal.com/gui/file/5f7d898ade3162bfb0c8d3006c42e934ff81fab3b4ad3b51c13441fd63e438cb/detection
 
 /owa/auth/babydraco.aspx
+
+# Reference: https://twitter.com/sans_isc/status/1467835679187083267
+
+/AK-74.php
+/Ayyildiz_Tim.php
+/CasuS-1.5.php
+/Dive_Shell.php
+/JspWEbshell_1.2.php
+/Loaderz_WEB_Shell.php
+/SnIpEr_SA%20Shell.php
+/c99_PSych0.php
+/dC3_Security.php
+/jspshell.jsp
+/mma.php
+/punk-nopass.php
+/safe0ver.php
+/spyshell.php
