@@ -5124,6 +5124,11 @@ tasks.ptfish.top
 
 /e2b649d30646dc.php
 
+# Reference: https://twitter.com/vikas891/status/1467394956721475585
+
+/aspnet_client/rncyqsyrpvnwbjqx.aspx
+/rncyqsyrpvnwbjqx.aspx
+
 # Generic
 
 /js/altmanluggage.js
@@ -5164,6 +5169,7 @@ tasks.ptfish.top
 /js/vladofootwear.js
 /js/wallerbmx.js
 /o/g-analytic.js
+/rat/rat.php
 /myrrem.hta
 /out-1334992907.hta
 /out-1347051899.hta
