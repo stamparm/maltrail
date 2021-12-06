@@ -274,6 +274,11 @@ http://73.34.80.127
 73.34.80.127:21
 73.34.80.127:7443
 
+# Reference: https://twitter.com/TheDFIRReport/status/1467860126077911043
+
+http://3.98.205.30
+3.98.205.30:443
+
 # Generic
 
 /covenantuser/
