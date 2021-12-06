@@ -1840,6 +1840,10 @@ ipuku
 
 Android Phone
 
+# Reference: https://twitter.com/IBBoard/status/1300716470561902592
+
+Firefox'5.4
+
 # Misc
 
 information_schema
