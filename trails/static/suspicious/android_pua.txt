@@ -569,3 +569,10 @@ imobuy.com
 # Reference: https://www.virustotal.com/gui/file/c31c0e965944d191ee3a664480f757827d40442b98bd4806cfdb4068c1f92db6/detection
 
 mmorpg-top.ru
+
+# Reference: https://twitter.com/midnight_comms/status/1466964511840215041
+# Reference: https://www.virustotal.com/gui/file/3e615893efada291557af470cad0d7d9b3cd03ac6996e927fcf241ecf5db1dc5
+
+linkscheater.xyz
+rocklinks.net
+roxymods.xyz
