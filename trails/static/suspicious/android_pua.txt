@@ -576,3 +576,7 @@ mmorpg-top.ru
 linkscheater.xyz
 rocklinks.net
 roxymods.xyz
+
+# Reference: https://www.virustotal.com/gui/file/8702e388c1a51d27749cf1c1ecee78b6309c3fa3cc2586abf3238c55996ac141/detection
+
+zzwx.ru
