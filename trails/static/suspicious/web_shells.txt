@@ -858,7 +858,7 @@ podathon.org/shell/
 /Ayyildiz_Tim.php
 /CasuS-1.5.php
 /Dive_Shell.php
-/JspWEbshell_1.2.php
+/JspWebshell_1.2.php
 /Loaderz_WEB_Shell.php
 /SnIpEr_SA%20Shell.php
 /c99_PSych0.php
