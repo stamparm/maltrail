@@ -5133,6 +5133,10 @@ tasks.ptfish.top
 
 /Rgbtmt9QxaKJBCW8eD0u.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1468236118537691138
+
+/v7lmxawiuc0n40y9uyw44aiz.php
+
 # Generic
 
 /js/altmanluggage.js
