@@ -1835,6 +1835,15 @@ Update v1.0
 
 ipuku
 
+# Reference: https://twitter.com/unidentified0xc/status/1421037222678118400
+# Reference: https://twitter.com/unidentified0xc/status/1421037861856555012
+
+Android Phone
+
+# Reference: https://twitter.com/IBBoard/status/1300716470561902592
+
+Firefox'5.4
+
 # Misc
 
 information_schema
