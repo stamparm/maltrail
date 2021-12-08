@@ -5129,6 +5129,14 @@ tasks.ptfish.top
 /aspnet_client/rncyqsyrpvnwbjqx.aspx
 /rncyqsyrpvnwbjqx.aspx
 
+# Reference: https://twitter.com/Iamdeadlyz/status/1396337155228585991
+
+/Rgbtmt9QxaKJBCW8eD0u.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1468236118537691138
+
+/v7lmxawiuc0n40y9uyw44aiz.php
+
 # Generic
 
 /js/altmanluggage.js
