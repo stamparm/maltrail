@@ -5980,6 +5980,10 @@ booctstrap.com
 
 convert-server.com
 
+# Reference: https://twitter.com/sansecio/status/1467865884362346500
+
+nekrva6s.beget.tech
+
 # Generic
 
 /assets/lfg.js
