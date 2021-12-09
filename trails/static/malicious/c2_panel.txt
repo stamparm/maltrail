@@ -403,3 +403,7 @@ vscode.workingfeedback.cloud
 /webpanel1/auth.php
 /webpanel1/api.php
 /webpanel1/login.php
+
+# Reference: https://twitter.com/jstrosch/status/1469052651124006919
+
+/painel/
