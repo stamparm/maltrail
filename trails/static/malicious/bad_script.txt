@@ -5137,6 +5137,10 @@ tasks.ptfish.top
 
 /v7lmxawiuc0n40y9uyw44aiz.php
 
+# Reference: https://twitter.com/pr0xylife/status/1468624598774304768
+
+/69bb7ee91c7a92b6dfa1.php
+
 # Generic
 
 /js/altmanluggage.js
