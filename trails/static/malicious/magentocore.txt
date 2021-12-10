@@ -5988,6 +5988,10 @@ nekrva6s.beget.tech
 
 woocheck.tk
 
+# Reference: https://www.virustotal.com/gui/domain/validcc.su/relations
+
+validcc.su
+
 # Generic
 
 /assets/lfg.js
