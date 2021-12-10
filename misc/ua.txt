@@ -1844,6 +1844,12 @@ Android Phone
 
 Firefox'5.4
 
+# Reference: https://twitter.com/1ZRR4H/status/1469333475476094986
+# Reference: https://www.lunasec.io/docs/blog/log4j-zero-day/
+# Reference: https://www.cronup.com/log4shell-nuevo-0-day-y-exploit-rce-en-apache-log4j-cve-2021-44228/
+
+jndi:ldap:
+
 # Misc
 
 information_schema
