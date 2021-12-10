@@ -5141,6 +5141,10 @@ tasks.ptfish.top
 
 /69bb7ee91c7a92b6dfa1.php
 
+# Reference: https://twitter.com/TeamDreier/status/1469272043833245704
+
+/tki01/logpa/send.php
+
 # Generic
 
 /js/altmanluggage.js
