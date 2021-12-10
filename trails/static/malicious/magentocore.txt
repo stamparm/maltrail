@@ -5984,6 +5984,14 @@ convert-server.com
 
 nekrva6s.beget.tech
 
+# Reference: https://community.riskiq.com/article/2efc2782
+
+woocheck.tk
+
+# Reference: https://www.virustotal.com/gui/domain/validcc.su/relations
+
+validcc.su
+
 # Generic
 
 /assets/lfg.js
