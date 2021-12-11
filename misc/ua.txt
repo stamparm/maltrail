@@ -1845,10 +1845,15 @@ Android Phone
 Firefox'5.4
 
 # Reference: https://twitter.com/1ZRR4H/status/1469333475476094986
+# Reference: https://twitter.com/GreyNoiseIO/status/1469430126819618821
+# Reference: https://twitter.com/ANeilan/status/1469434283341320196
 # Reference: https://www.lunasec.io/docs/blog/log4j-zero-day/
 # Reference: https://www.cronup.com/log4shell-nuevo-0-day-y-exploit-rce-en-apache-log4j-cve-2021-44228/
 
+jndi:dns:
+jndi:http:
 jndi:ldap:
+jndi:rmi:
 
 # Misc
 
