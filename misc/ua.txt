@@ -1861,7 +1861,7 @@ jndi:rmi:
 # Reference: https://twitter.com/entropyqueen_/status/1469962035874127872
 
 \${\${::
-\$\{jndi:\$
+\${jndi:\$
 
 # Misc
 
