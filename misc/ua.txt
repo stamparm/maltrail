@@ -1859,9 +1859,14 @@ jndi:rmi:
 
 # Reference: https://twitter.com/entropyqueen_/status/1469961345848299520
 # Reference: https://twitter.com/entropyqueen_/status/1469962035874127872
+# Reference: https://twitter.com/BountyOverflow/status/1470001858873802754
+# Reference: https://twitter.com/ChuenZN/status/1470021908276015105
+# Reference: https://twitter.com/ChuenZN/status/1470021960079798276
+# Reference: https://twitter.com/BillDemirkapi/status/1470055644740923398
+# Reference: https://github.com/tangxiaofeng7/CVE-2021-44228-Apache-Log4j-Rce
+# Reference: https://github.com/Puliczek/CVE-2021-44228-PoC-log4j-bypass-words
 
-\${\${::
-\${jndi:\$
+\${\${::-?\w+}|\${\w?\${\w+:|\${\w+:\w+
 
 # Misc
 
