@@ -5429,3 +5429,7 @@ snyzt.org
 # Reference: https://www.virustotal.com/gui/domain/ttwstatic.com/detection
 
 ttwstatic.com
+
+# Reference: https://www.virustotal.com/gui/domain/rce.ee/relations
+
+rce.ee
