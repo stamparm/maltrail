@@ -1857,6 +1857,12 @@ jndi:ldap:
 jndi:ldaps:
 jndi:rmi:
 
+# Reference: https://twitter.com/entropyqueen_/status/1469961345848299520
+# Reference: https://twitter.com/entropyqueen_/status/1469962035874127872
+
+\${\${::
+\$\{jndi:\$
+
 # Misc
 
 information_schema
