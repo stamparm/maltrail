@@ -1860,8 +1860,9 @@ jndi:rmi:
 # Reference: https://twitter.com/entropyqueen_/status/1469961345848299520
 # Reference: https://twitter.com/entropyqueen_/status/1469962035874127872
 # Reference: https://github.com/tangxiaofeng7/CVE-2021-44228-Apache-Log4j-Rce
+# Reference: https://twitter.com/BountyOverflow/status/1470001858873802754
 
-\${\${::|\${\${\w+:|\${\w+:
+\${\${::-?\w+}|\${\${\w+:|\${\w+:\w+
 
 # Misc
 
