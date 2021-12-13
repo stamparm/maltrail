@@ -1864,10 +1864,11 @@ jndi:rmi:
 # Reference: https://twitter.com/ChuenZN/status/1470021960079798276
 # Reference: https://twitter.com/BillDemirkapi/status/1470055644740923398
 # Reference: https://twitter.com/VessOnSecurity/status/1470373438363734026
+# Reference: https://twitter.com/gwillem/status/1470395476570746885
 # Reference: https://github.com/tangxiaofeng7/CVE-2021-44228-Apache-Log4j-Rce
 # Reference: https://github.com/Puliczek/CVE-2021-44228-PoC-log4j-bypass-words
 
-\$({|%7B)\$({|%7B)(:|%3A)(:|%3A)|\$({|%7B)\$({|%7B)\w+(:|%3A)|\$({|%7B)\w+(:|%3A)
+\$({|%7B)(:|%3A){1,2}-\w+|\$({|%7B)\$({|%7B)(:|%3A){1,2}|\$({|%7B)\$({|%7B)\w+(:|%3A)|\$({|%7B)\w+(:|%3A)
 
 # Misc
 
