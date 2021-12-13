@@ -1866,7 +1866,7 @@ jndi:rmi:
 # Reference: https://github.com/tangxiaofeng7/CVE-2021-44228-Apache-Log4j-Rce
 # Reference: https://github.com/Puliczek/CVE-2021-44228-PoC-log4j-bypass-words
 
-\${\${::-?\w+}|\${\w?\${\w+:|\${\w+:\w+
+\${::-?\w+}|\${\${::-?\w+}|\${\w?\${\w+:|\${\w+:\w+
 
 # Misc
 
