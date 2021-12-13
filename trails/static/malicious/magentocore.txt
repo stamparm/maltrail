@@ -5902,8 +5902,10 @@ tag.listrakbi.biz
 web.webflows.net
 
 # Reference: https://twitter.com/MBThreatIntel/status/1457804685327224833
+# Reference: https://twitter.com/MBThreatIntel/status/1469023858569089031
 
 static1.xyz
+static2.xyz
 
 # Reference: https://twitter.com/MBThreatIntel/status/1458185084201148416
 
