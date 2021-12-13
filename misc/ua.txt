@@ -1848,14 +1848,20 @@ Firefox'5.4
 # Reference: https://twitter.com/GreyNoiseIO/status/1469430126819618821
 # Reference: https://twitter.com/ANeilan/status/1469434283341320196
 # Reference: https://twitter.com/fr0gger_/status/1469638591806685187
+# Reference: https://twitter.com/HaboubiAnis/status/1470415975220756486
 # Reference: https://www.lunasec.io/docs/blog/log4j-zero-day/
 # Reference: https://www.cronup.com/log4shell-nuevo-0-day-y-exploit-rce-en-apache-log4j-cve-2021-44228/
 
+base64:JHtqbmRp
 jndi:dns:
 jndi:http:
 jndi:ldap:
 jndi:ldaps:
 jndi:rmi:
+jndi:nis
+jndi:nds
+jndi:corba
+jndi:iiop
 
 # Reference: https://twitter.com/entropyqueen_/status/1469961345848299520
 # Reference: https://twitter.com/entropyqueen_/status/1469962035874127872
