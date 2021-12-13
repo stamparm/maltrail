@@ -5145,6 +5145,70 @@ tasks.ptfish.top
 
 /tki01/logpa/send.php
 
+# Reference: https://twitter.com/cyber__sloth/status/1470353289866850305
+# Reference: https://pastebin.com/TvEH1ZAg
+
+/14-1dznzz-hc-dar-ikys-g1j9.class
+/14-1e470x-jc-ear-ikdw-h1j9.class
+/19-1jrsa8-ic-dar-jkys-h1j9.class
+/19-1k3pp1-fc-ear-jkoc-d1j9.class
+/19-1k5kr4-cc-ear-jkw2-b1j9.class
+/19-1llckp-f18-gar-jkwv-d1mo.class
+/261523260_570309860735261_6837498676061670623_n.class
+/40848.class
+/5-9sc3k-cc-gar-bkw2-d1j9.class
+/5-a0pr5-hc-gar-bklh-c1j9.class
+/5-azqw4-c1h-idz-bkwv-g1nl.class
+/7wpym.class
+/9y8ah.class
+/a-e3ge9-bc-dar-ckwv-h1j9.class
+/a-eyszl-h1h-fdz-ck8r-d1nl.class
+/a-frllx-h1b-gdf-cl3s-i1my.class
+/a-gl8vi-e1h-hdz-cksp-g1nl.class
+/exectemplatejdk8.class
+/explit.class
+/exploit.class
+/exploit0.class
+/exploit69ogqnsqyz.class
+/exploitjkk87onvoh.class
+/f-my6w7-b1o-idz-dksp-e1nm.class
+/fast_filters$1.class
+/fastuse.class
+/foo.class
+/gradesusingarrayswithsorting.class
+/hl5ul.class
+/hud.class
+/itpidd.class
+/k-rx4nk-c1o-gdz-ekih-j1nm.class
+/l.class
+/laura.class
+/log4j.class
+/logme.class
+/logrce.class
+/lucidphase.class
+/maxusers.class
+/nnd_.class
+/oz7tc.class
+/p-v26fa-ec-car-fkdl-g1j9.class
+/p-vnrla-c1h-ddz-fklh-h1nl.class
+/pwnme.class
+/rwlogbook.class
+/test.class
+/u-10o2l6-e18-bar-gl96-i1mo.class
+/u-12bb0h-h1h-edz-gi9g-f1nl.class
+/u-12mh27-bc-ear-gkw2-h1j9.class
+/u-12t8pw-cc-far-gkw2-i1j9.class
+/u-138yvq-ic-far-gkwv-c1j9.class
+/use.class
+/use2.class
+/wcontent_user.class
+/wmi6p.class
+/wpjgh.class
+/z-19fsc4-e1d-gdp-hk8q-b1mw.class
+/z-1aqd7l-d1h-idz-hlaf-j1nl.class
+/z-1azs15-fc-iar-hklh-d1j9.class
+/zg6wo.class
+
 # Generic
 
 /js/altmanluggage.js
