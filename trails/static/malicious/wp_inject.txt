@@ -99,3 +99,11 @@ assets.digitalclimatestrike.net
 http://46.53.253.152
 http://69.12.71.82
 http://92.53.124.123
+
+# Reference: https://twitter.com/rootprivilege/status/1470821225542742016
+# Reference: https://lukeleal.com/research/posts/trainresistor-cc-mass-injection/
+# Reference: https://www.virustotal.com/gui/ip-address/45.9.150.64/relations
+
+belonnanotservice.ga
+piterreceiver.ga
+trainresistor.cc
