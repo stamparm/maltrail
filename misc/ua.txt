@@ -1875,7 +1875,7 @@ jndi:iiop
 # Reference: https://github.com/Puliczek/CVE-2021-44228-PoC-log4j-bypass-words
 # Reference: https://github.com/SigmaHQ/sigma/blob/master/rules/web/web_cve_2021_44228_log4j_fields.yml
 
-(?i)\$({|%7B)(:|%3A){1,2}-\w+|(?i)\$({|%7B)\$({|%7B)(:|%3A){1,2}|(?i)\$({|%7B)\$({|%7B)\w+(:|%3A)|(?i)\$({|%7B)\w+(:|%3A)|(?i)7Bjndi(:|%3A)?
+(?i)\$({|%7B)(:|%3A){1,2}-\w+|(?i)\$({|%7B)\$({|%7B)(:|%3A){1,2}-?|(?i)\$({|%7B)\$({|%7B)\w+(:|%3A)|(?i)\$({|%7B)\w+(:|%3A)|(?i)7Bjndi(:|%3A)?
 
 # Reference: https://twitter.com/bad_packets/status/1470639403546472449
 
