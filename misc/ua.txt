@@ -1877,6 +1877,10 @@ jndi:iiop
 
 (?i)\$({|%7B)(:|%3A){1,2}-\w+|(?i)\$({|%7B)\$({|%7B)(:|%3A){1,2}|(?i)\$({|%7B)\$({|%7B)\w+(:|%3A)|(?i)\$({|%7B)\w+(:|%3A)|(?i)7Bjndi(:|%3A)?
 
+# Reference: https://twitter.com/bad_packets/status/1470639403546472449
+
+borchuk
+
 # Misc
 
 information_schema
