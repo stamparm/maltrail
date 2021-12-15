@@ -5210,8 +5210,9 @@ tasks.ptfish.top
 /zg6wo.class
 
 # Reference: https://twitter.com/felixaime/status/1471157639077842959
+# Note: Google Chrome marks this domain as being related to phishing, but this seems to be FP.
 
-9d6a-93-183-194-122.ngrok.io
+# 9d6a-93-183-194-122.ngrok.io
 
 # Generic
 
