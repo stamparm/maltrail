@@ -875,3 +875,12 @@ podathon.org/shell/
 /shell2/exec?cmd=
 /shell/cmd.jsp
 /shell2/cmd.jsp
+
+# Reference: https://twitter.com/bad_packets/status/1471375127824588802
+
+/revshell.asp
+/revshell.aspx
+/revshell.jsp
+/revshell.php
+/revshell.py
+/revshell.pyc
