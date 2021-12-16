@@ -1881,6 +1881,10 @@ jndi:iiop
 
 borchuk
 
+# Reference: https://twitter.com/bad_packets/status/1471375127824588802
+
+nimaps
+
 # Misc
 
 information_schema
