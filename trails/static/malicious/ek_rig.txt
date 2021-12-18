@@ -303,6 +303,10 @@ http://45.138.24.172
 
 http://31.44.3.35
 
+# Reference: https://twitter.com/MBThreatIntel/status/1471960582370721793
+
+http://45.138.26.11
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
