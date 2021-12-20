@@ -5907,6 +5907,12 @@ web.webflows.net
 static1.xyz
 static2.xyz
 
+# Reference: https://twitter.com/MBThreatIntel/status/1472995976507916290
+
+bootstrap1.xyz
+bootstrap2.xyz
+/s/us_cdl.js
+
 # Reference: https://twitter.com/MBThreatIntel/status/1458185084201148416
 
 bludigital.cyou
