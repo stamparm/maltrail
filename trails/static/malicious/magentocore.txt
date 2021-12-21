@@ -6196,6 +6196,17 @@ xydripper.cyou
 ypsilon.buzz
 zetas.quest
 
+# Reference: https://geminiadvisory.io/magecart-google-tag-manager/
+
+ganalitis.com
+pixupjqes.tech
+googleadwordstrack.com
+googleadwordswidget.com
+googletagstorage.com
+googletagswidget.com
+googletagwidgets.com
+googletrackevent.com
+
 # Generic
 
 /assets/lfg.js
