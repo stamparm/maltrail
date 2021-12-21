@@ -6207,6 +6207,10 @@ googletagswidget.com
 googletagwidgets.com
 googletrackevent.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/91.242.229.96/relations
+
+gstatsc.com
+
 # Generic
 
 /assets/lfg.js
