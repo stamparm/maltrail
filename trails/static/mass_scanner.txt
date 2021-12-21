@@ -2889,3 +2889,8 @@
 # Reference: https://community.greenbone.net/t/is-greenbone-hacking-me/1134
 
 212.95.124.190    # Greenbone
+
+# Reference: https://twitter.com/Gi7w0rm/status/1473272489467944963
+# Reference: https://twitter.com/1ZRR4H/status/1473277092339097614
+
+167.71.13.196    # leakix.net
