@@ -5165,7 +5165,15 @@ tasks.ptfish.top
 /a-eyszl-h1h-fdz-ck8r-d1nl.class
 /a-frllx-h1b-gdf-cl3s-i1my.class
 /a-gl8vi-e1h-hdz-cksp-g1nl.class
+/ExecTemplateJDK1.class
+/ExecTemplateJDK2.class
+/ExecTemplateJDK3.class
+/ExecTemplateJDK4.class
+/ExecTemplateJDK5.class
+/ExecTemplateJDK6.class
+/ExecTemplateJDK7.class
 /exectemplatejdk8.class
+/ExecTemplateJDK9.class
 /explit.class
 /exploit.class
 /exploit0.class
