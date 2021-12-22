@@ -5222,6 +5222,16 @@ tasks.ptfish.top
 
 # 9d6a-93-183-194-122.ngrok.io
 
+# Reference: https://twitter.com/0xrb/status/1473599097646948352/photo/3
+
+/16false.class
+/18true.class
+/Log4jRCE.class
+
+# Reference: https://twitter.com/douglasmun/status/1473661827707924484
+
+/exploit.java
+
 # Generic
 
 /js/altmanluggage.js
