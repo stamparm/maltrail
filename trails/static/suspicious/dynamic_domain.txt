@@ -3314,3 +3314,26 @@ dyn.dynster.net
 # Reference: https://www.virustotal.com/gui/domain/dnsd.me/relations
 
 dnsd.me
+
+# Reference: https://www.sitelutions.com/info/slredirection
+
+assexyas.com
+athersite.com
+athissite.com
+bestdeals.at
+byinter.net
+findhere.org
+isgre.at
+isthebe.st
+kwikto.com
+lookin.at
+lowestprices.at
+myfw.us
+myredirect.us
+onthenetas.com
+ontheweb.nu
+passas.us
+passinggas.net
+passinggas.net
+rr.nu
+uglyas.com
