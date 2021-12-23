@@ -6211,6 +6211,10 @@ googletrackevent.com
 
 gstatsc.com
 
+# Reference: https://blog.sucuri.net/2021/11/woocommerce-skimmer-spoofs-checkout-page.html
+
+apiujquery.com
+
 # Generic
 
 /assets/lfg.js
