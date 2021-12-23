@@ -1890,6 +1890,12 @@ nimaps
 
 ekausif
 
+# Reference: https://twitter.com/bad_packets/status/1471571875616595968
+
+Firefox/firefox
+Gecko/geckotrail
+geckoversion
+
 # Misc
 
 information_schema
