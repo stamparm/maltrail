@@ -5236,6 +5236,10 @@ tasks.ptfish.top
 
 /reverse.ps1
 
+# Reference: https://twitter.com/ankit_anubhav/status/1471078479596638214
+
+/N0t4n3xplo1t.class
+
 # Generic
 
 /js/altmanluggage.js
