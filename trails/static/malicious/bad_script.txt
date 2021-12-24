@@ -5232,6 +5232,10 @@ tasks.ptfish.top
 
 /exploit.java
 
+# Reference: https://twitter.com/ankit_anubhav/status/1471079526658560003
+
+/reverse.ps1
+
 # Generic
 
 /js/altmanluggage.js
