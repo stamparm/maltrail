@@ -5246,6 +5246,15 @@ tasks.ptfish.top
 
 /Amsi.ps1
 
+# Reference: https://twitter.com/unmaskparasites/status/1452803088482377729
+
+downvebuttrephen.ml
+hauslicsu.tk
+haystonapcom.cf
+misconiseciri.tk
+traffic-redirect.site
+ulwebga.tk
+
 # Generic
 
 /js/altmanluggage.js
