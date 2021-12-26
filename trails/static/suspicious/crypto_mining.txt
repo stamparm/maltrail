@@ -885,3 +885,7 @@ seed.kronecoin.org
 # Reference: https://news.sophos.com/en-us/2021/11/18/new-ransomware-actor-uses-password-protected-archives-to-bypass-encryption-protection/
 
 195.201.124.214:10001
+
+# Reference: https://twitter.com/r3dbU7z/status/1474906645704675329
+
+gulf.moneroocean.stream
