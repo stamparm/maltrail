@@ -5255,6 +5255,10 @@ misconiseciri.tk
 traffic-redirect.site
 ulwebga.tk
 
+# Reference: https://www.virustotal.com/gui/file/ca4632c36974541e4c05642ad0c093566d009b05bffbd6cc9d0fe6e437a2066d/detection
+
+/G7VaYpFEqKptzqWy.js
+
 # Generic
 
 /js/altmanluggage.js
