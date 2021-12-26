@@ -1897,6 +1897,10 @@ Firefox/firefox
 Gecko/geckotrail
 geckoversion
 
+# Reference: https://marcoramilli.com/2021/01/09/c2-traffic-patterns-personal-notes/
+
+\ASLCC2\Z
+
 # Misc
 
 information_schema
