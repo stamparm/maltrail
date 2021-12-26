@@ -5242,6 +5242,10 @@ tasks.ptfish.top
 /ExploitWeWHgyhfpa.class
 /N0t4n3xplo1t.class
 
+# Reference: https://www.virustotal.com/gui/file/9b7fa2646d19e73c50f17acb5ee9a4e856870f5eb621017d73afd5db43ae7628/detection
+
+/Amsi.ps1
+
 # Generic
 
 /js/altmanluggage.js
