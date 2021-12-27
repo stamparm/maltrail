@@ -5259,6 +5259,20 @@ ulwebga.tk
 
 /G7VaYpFEqKptzqWy.js
 
+# Reference: https://twitter.com/r3dbU7z/status/1468119168096612357
+
+/bt2rat13_x32.html
+/bt2rat13_x64.html
+/bt2rat13_x32.ps1
+/bt2rat13_x64.ps1
+/icbt6801_64refl.ps1
+/RawDNS.html
+/RawDNS.ps1
+/RawHTTPx32.html
+/RawHTTPx64.html
+/RawHTTPx32.ps1
+/RawHTTPx64.ps1
+
 # Generic
 
 /js/altmanluggage.js
