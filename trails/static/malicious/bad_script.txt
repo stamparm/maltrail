@@ -5273,6 +5273,10 @@ ulwebga.tk
 /RawHTTPx32.ps1
 /RawHTTPx64.ps1
 
+# Reference: https://twitter.com/pr0xylife/status/1458514764531912704
+
+/nextNextDoor.hta
+
 # Generic
 
 /js/altmanluggage.js
