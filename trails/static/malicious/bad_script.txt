@@ -4448,8 +4448,38 @@ d27qdop2sa027t.cloudfront.net
 /3dbea0f5d87dcc.php
 
 # Reference: https://twitter.com/r3dbU7z/status/1381517028817825795
+# Reference: # Reference: https://twitter.com/r3dbU7z/status/1457338809566343168
 # Reference: https://www.virustotal.com/gui/url/026ec2ee22c5b8a04806a13701238e971565cd80d9ca10a0be85c80f4222fa9e/details
 
+/payload1.apsx
+/payload2.apsx
+/payload3.apsx
+/payload4.apsx
+/payload5.apsx
+/payload6.apsx
+/payload7.apsx
+/payload8.apsx
+/payload9.apsx
+/payload1.hta
+/payload2.hta
+/payload3.hta
+/payload4.hta
+/payload5.hta
+/payload6.hta
+/payload7.hta
+/payload8.hta
+/payload9.hta
+/payload1.php
+/payload2.php
+/payload3.php
+/payload4.php
+/payload5.php
+/payload6.php
+/payload7.php
+/payload8.php
+/payload9.php
+/payload1.ps1
+/payload2.ps1
 /payload3.ps1
 /payload4.ps1
 /payload5.ps1
@@ -4457,6 +4487,15 @@ d27qdop2sa027t.cloudfront.net
 /payload7.ps1
 /payload8.ps1
 /payload9.ps1
+/payload1.py
+/payload2.py
+/payload3.py
+/payload4.py
+/payload5.py
+/payload6.py
+/payload7.py
+/payload8.py
+/payload9.py
 
 # Reference: https://twitter.com/MalwarePatrol/status/1381987802938769409
 
