@@ -1901,6 +1901,10 @@ geckoversion
 
 \ASLCC2\Z
 
+# Reference: https://blog.talosintelligence.com/2021/02/gamaredonactivities.html
+
+OPR/54.0.2952.64
+
 # Misc
 
 information_schema
