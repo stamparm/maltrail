@@ -926,6 +926,8 @@ sophosxl.net
 
 # Generic
 
+qhimg.com
+dingtalk.com
 msauth.net
 playncs.com
 winjit.com
