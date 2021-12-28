@@ -576,3 +576,10 @@ mmorpg-top.ru
 linkscheater.xyz
 rocklinks.net
 roxymods.xyz
+
+# Reference: https://www.virustotal.com/gui/file/c38fbba1c188f925a1b0526a0062273704d6ea69e82f39b1f78f07871cebd9ba/detection
+
+danez.free.fr
+danez.no-ip.biz
+danez02600.ddns.net
+danez02600.ddnsking.com
