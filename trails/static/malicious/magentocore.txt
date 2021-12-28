@@ -6215,6 +6215,10 @@ gstatsc.com
 
 apiujquery.com
 
+# Reference: https://www.virustotal.com/gui/domain/gstatic-cn.com/relations
+
+gstatic-cn.com
+
 # Generic
 
 /assets/lfg.js
