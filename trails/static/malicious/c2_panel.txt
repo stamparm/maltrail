@@ -303,6 +303,11 @@ vscode.workingfeedback.cloud
 
 /Xpanel/srcc.php
 
+# Reference: https://twitter.com/ViriBack/status/1475566467810840580
+# Reference: https://www.virustotal.com/gui/file/d09b04c79e6e8fbffc7075871c7b03f2ef102cd0d0b294d31ea595ff06830bb6/detection
+
+/yaya/login.php
+
 # Generic
 
 /admin_123/auth.php
