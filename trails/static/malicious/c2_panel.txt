@@ -314,6 +314,10 @@ vscode.workingfeedback.cloud
 /bot.php?action=register&username=
 /bot.php?action=submitLogs&hwid=
 
+# Reference: https://www.virustotal.com/gui/file/a18975ecf620ad2c45b10cd7ac0288840482ff7bdf53d1ed516fa29302f0273f/detection
+
+/Rat/panel.php
+
 # Generic
 
 /admin_123/auth.php
