@@ -583,3 +583,7 @@ danez.free.fr
 danez.no-ip.biz
 danez02600.ddns.net
 danez02600.ddnsking.com
+
+# Reference: https://www.virustotal.com/gui/file/35bfe43943134977b9e636e927f6a16b47e0abc24904c484a8864897d594ddd3/detection
+
+androidinja.ir
