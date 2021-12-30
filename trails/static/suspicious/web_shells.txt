@@ -267,9 +267,12 @@
 /sh.php
 
 # Reference: https://twitter.com/malwrhunterteam/status/1241318536280227844
+# Reference: https://www.virustotal.com/gui/file/92b967726cfbdb5f2714025951403c51eadb8951fc13f868f9be4098884ee70b/behavior/C2AE
 
 /shellcode.php
 /shellcode.txt
+/shellcode11.txt
+/shellcode22.txt
 
 # Reference: https://securelist.com/energetic-bear-crouching-yeti/85345/
 
