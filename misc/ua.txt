@@ -1901,6 +1901,10 @@ geckoversion
 
 \ASLCC2\Z
 
+# Reference: https://paper.seebug.org/papers/APT/APT_CyberCriminal_Campagin/2014/2014.07.11.Pitty_Tiger/Pitty_Tiger_Final_Report.pdf
+
+Mozilla/4.0 (compatible;)
+
 # Misc
 
 information_schema
