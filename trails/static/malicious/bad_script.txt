@@ -5421,6 +5421,10 @@ ulwebga.tk
 /fuck_niggers_98.hta
 /fuck_niggers_99.hta
 
+# Reference: https://www.virustotal.com/gui/file/8db3a8a01b91a4d0fcaef624d9e477a6c42fb4976087721e1debbd7bf167bb80/detection
+
+/payload64.ps1
+
 # Generic
 
 /js/altmanluggage.js
