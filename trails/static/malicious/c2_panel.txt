@@ -308,6 +308,12 @@ vscode.workingfeedback.cloud
 
 /yaya/login.php
 
+# Reference: https://www.virustotal.com/gui/file/3a08351b37e4130b4161d54b05b50019b8c383190212fb4c960d9b17d771dbba/detection
+
+/bot.php?action=cmd&hwid=
+/bot.php?action=register&username=
+/bot.php?action=submitLogs&hwid=
+
 # Generic
 
 /admin_123/auth.php
