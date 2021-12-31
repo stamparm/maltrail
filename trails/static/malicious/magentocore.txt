@@ -6223,6 +6223,10 @@ apiujquery.com
 
 dyneff.fr/health_check.php
 
+# Reference: https://twitter.com/unmaskparasites/status/1476741426633265157
+
+cdn-s11.azureedge.net
+
 # Generic
 
 /assets/lfg.js
