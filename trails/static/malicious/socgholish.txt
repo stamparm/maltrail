@@ -90,6 +90,11 @@ e186aeb2.news.pocketstay.com
 80e16d50.xen.hill-family.us
 a962296f.xen.hill-family.us
 
+# Reference: https://twitter.com/MBThreatIntel/status/1466107514030751747
+
+second.pmservicespr.com
+eba80de9.xen.hill-family.us
+
 # Generic
 
 /Chrome.Update.3b1362.js
