@@ -275,9 +275,20 @@ http://73.34.80.127
 73.34.80.127:7443
 
 # Reference: https://twitter.com/TheDFIRReport/status/1467860126077911043
+# Reference: https://beta.shodan.io/host/3.98.205.30
 
 http://3.98.205.30
 3.98.205.30:443
+3.98.205.30:7443
+
+# Reference: https://twitter.com/TheDFIRReport/status/1461733507324162056
+# Reference: https://beta.shodan.io/host/165.227.132.17
+
+http://165.227.132.17
+165.227.132.17:21
+165.227.132.17:443
+165.227.132.17:7443
+165.227.132.17:81
 
 # Generic
 
