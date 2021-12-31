@@ -85,7 +85,13 @@ fe1eaf89.office.drpease.com
 4107e577.payment.refinedwebs.com
 e186aeb2.news.pocketstay.com
 
+# Reference: https://twitter.com/neonprimetime/status/1475841620428062724
+
+80e16d50.xen.hill-family.us
+a962296f.xen.hill-family.us
+
 # Generic
 
+/Chrome.Update.3b1362.js
 /Chrome.Update.88fe59.js
 /Opera.Update.426482.js
