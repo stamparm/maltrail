@@ -13,10 +13,29 @@
 #################################################################
 
 
-- Version 0.38 -> 0.39 (Upcoming release)
+
+- Version 0.41 -> 0.42 (Upcoming release)
+
+
+
+- Version 0.40 -> 0.41 (01 Jan 2022)
+
+[+] "potential remote code execution" heuristic is extended for log4j/log4shell (CVE-2021-44228) vulnerability detection
+[+] "generic_log4shell.txt" and "hacked_log4j.txt" trails were added for log4j/log4shell (CVE-2021-44228) vulnerability static detection
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.39 -> 0.40 (01 Dec 2021)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.38 -> 0.39 (01 Nov 2021)
 
 [=] "potential directory traversal" heuristic is extended
-
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
