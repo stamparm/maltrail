@@ -91,7 +91,10 @@ e186aeb2.news.pocketstay.com
 a962296f.xen.hill-family.us
 
 # Reference: https://twitter.com/MBThreatIntel/status/1466107514030751747
+# Reference: https://www.virustotal.com/gui/ip-address/179.43.169.31/relations
 
+jobs.tracybrey.com
+popcorn.net-zerodesign.com
 second.pmservicespr.com
 eba80de9.xen.hill-family.us
 
