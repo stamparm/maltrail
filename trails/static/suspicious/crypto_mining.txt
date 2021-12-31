@@ -889,3 +889,7 @@ seed.kronecoin.org
 # Reference: https://twitter.com/r3dbU7z/status/1474906645704675329
 
 gulf.moneroocean.stream
+
+# Reference: https://www.virustotal.com/gui/file/74ba09bf7ba6f5ed82bca3935f448e61df2c1cd6ede67ed7234aeb5900aca60e/detection
+
+107.178.104.10:3333
