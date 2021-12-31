@@ -98,6 +98,29 @@ popcorn.net-zerodesign.com
 second.pmservicespr.com
 eba80de9.xen.hill-family.us
 
+# Reference: https://twitter.com/th3_protoCOL/status/1460356964140007424
+# Reference: https://www.virustotal.com/gui/ip-address/87.249.50.201/relations
+# Reference: https://www.virustotal.com/gui/file/89380aa78a9797c1906c1c8c8a646c08155eb3d16b79d8ad502789a59f0f7f9f/detection
+
+upstream.fishslayerjigco.com
+xen.hill-family.us
+
+# Reference: https://www.virustotal.com/gui/file/89380aa78a9797c1906c1c8c8a646c08155eb3d16b79d8ad502789a59f0f7f9f/detection
+
+368757c6.upstream.fishslayerjigco.com
+
+# Reference: https://www.virustotal.com/gui/file/9e663136610eb7a07dafe19a706445c2c0527ef586b7d3fbaa36e54173ac7394/detection
+
+05579f9d.xen.hill-family.us
+
+# Reference: https://www.virustotal.com/gui/file/d1ed30acb9aee0c8ee12c4ce10102ab732b9f304cabf9b3df302654c667e6beb/detection
+
+0e9ff460.xen.hill-family.us
+
+# Reference: https://www.virustotal.com/gui/file/1913554c81ea9fa5004189f067bc8618d628b85ca6dbc8964ec6bf7a4bfc0385/detection
+
+71d665d8.xen.hill-family.us
+
 # Generic
 
 /Chrome.Update.3b1362.js
