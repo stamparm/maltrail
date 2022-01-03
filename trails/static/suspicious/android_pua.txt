@@ -587,3 +587,8 @@ danez02600.ddnsking.com
 # Reference: https://www.virustotal.com/gui/file/35bfe43943134977b9e636e927f6a16b47e0abc24904c484a8864897d594ddd3/detection
 
 androidinja.ir
+
+# Reference: https://www.virustotal.com/gui/file/1f686a691c7b55e9bbd09c09c1e544ab8da468133a000f56a758d8b9bc110a05/detection
+# Reference: https://www.virustotal.com/gui/file/43e2aaf36f2f09ad21974d29dd1e13b4d6bc6c3800a1f7cf84443667e0f1bb94/detection
+
+army2.xyz
