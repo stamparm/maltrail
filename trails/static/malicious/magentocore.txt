@@ -6227,6 +6227,13 @@ dyneff.fr/health_check.php
 
 cdn-s11.azureedge.net
 
+# Reference: https://twitter.com/unmaskparasites/status/1424805950645358593
+# Reference: https://twitter.com/unmaskparasites/status/1424805639214157827
+
+aathitiyapravash.in/image/jquery_v14v.js
+aathitiyapravash.in/image/jQuery_v176.js
+avir.ir/image/favicon.js
+
 # Generic
 
 /assets/lfg.js
