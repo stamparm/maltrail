@@ -5425,6 +5425,19 @@ ulwebga.tk
 
 /payload64.ps1
 
+# Reference: https://www.virustotal.com/gui/file/6da1b35ef3b88a801c9256c45d4eed523a9648b0b63726c8f97d701fb6fa7a22/detection
+
+/code/shellcode.txt
+/code/shellcode1.txt
+/code/shellcode2.txt
+/code/shellcode3.txt
+/code/shellcode4.txt
+/code/shellcode5.txt
+/code/shellcode6.txt
+/code/shellcode7.txt
+/code/shellcode8.txt
+/code/shellcode9.txt
+
 # Generic
 
 /js/altmanluggage.js
