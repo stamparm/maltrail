@@ -133,3 +133,7 @@ ssp.swe.xyz
 # Reference: https://www.virustotal.com/gui/domain/one.cryptonomiconf.com/relations
 
 one.cryptonomiconf.com
+
+# Reference: https://www.virustotal.com/gui/file/409b7432b804ef8a1edf4a973a63fc98f7ecd91d83d56a32cabc15805db3ccf1/detection
+
+victiontuvs.club
