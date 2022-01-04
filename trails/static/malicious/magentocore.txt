@@ -6234,6 +6234,11 @@ aathitiyapravash.in/image/jquery_v14v.js
 aathitiyapravash.in/image/jQuery_v176.js
 avir.ir/image/favicon.js
 
+# Reference: https://twitter.com/brianlinux/status/1478249807558885379
+# Reference: https://www.virustotal.com/gui/ip-address/5.230.28.78/relations
+
+googleadwordstrack.com
+
 # Generic
 
 /assets/lfg.js
