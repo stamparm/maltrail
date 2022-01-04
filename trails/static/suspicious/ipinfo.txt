@@ -367,3 +367,11 @@ api.mylnikov.org
 
 checkip.us-east-1.prod.check-ip.aws.a2z.com
 checkip.check-ip.aws.a2z.com
+
+# Reference: https://app.any.run/tasks/2d9dfe84-d56d-4523-82fb-95943eedff61/
+# Reference: https://seeip.org/
+
+seeip.org
+ip.seeip.org
+ip4.seeip.org
+ip6.seeip.org
