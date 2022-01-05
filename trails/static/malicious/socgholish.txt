@@ -121,6 +121,11 @@ xen.hill-family.us
 
 71d665d8.xen.hill-family.us
 
+# Reference: https://twitter.com/MBThreatIntel/status/1478515956968083456
+
+255e7219.xen.hill-family.us
+second.pmservicespr.com
+
 # Generic
 
 /Chrome.Update.3b1362.js
