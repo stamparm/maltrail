@@ -5438,6 +5438,10 @@ ulwebga.tk
 /code/shellcode8.txt
 /code/shellcode9.txt
 
+# Reference: https://app.any.run/tasks/eaa7e1d3-4df8-4536-bbb2-0168e99d6682/
+
+/4c3aa4cfa29243d5cabb.php
+
 # Generic
 
 /js/altmanluggage.js
