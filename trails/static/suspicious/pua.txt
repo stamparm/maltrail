@@ -2893,3 +2893,7 @@ forces.wintertorg.ru
 # Reference: https://www.virustotal.com/gui/file/ca63c28390f5c00d0a0ecd9e615a40d1c2f0c4f5402c3b5b1874ef50e5c95848/detection
 
 sft-cloud.com
+
+# Reference: https://www.virustotal.com/gui/domain/file-downloadd.ru/relations
+
+file-downloadd.ru
