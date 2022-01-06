@@ -5619,8 +5619,12 @@ google-drivers.com
 googledrivers.com
 
 # Reference: https://twitter.com/felixaime/status/1418119972858044422
+# Reference: https://twitter.com/matthieu_faou/status/1471600401183084550
 
 hotjar.net
+visitortrack.net
+webfx.bz
+webffx.bz
 
 # Reference: https://twitter.com/AffableKraut/status/1420424683758002178
 # Reference: https://twitter.com/AffableKraut/status/1420424686366756870
