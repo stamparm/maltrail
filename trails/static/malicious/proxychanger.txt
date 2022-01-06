@@ -4,3 +4,7 @@
 # Reference: https://twitter.com/abuse_ch/status/1141702499889553409
 
 /520.pac
+
+# Reference: https://www.virustotal.com/gui/file/cd8ebfce412939043e83241b5d40ee14c118852ab1156b2a1764a46108543c2a/detection
+
+heelchoise.xyz
