@@ -3314,3 +3314,7 @@ dyn.dynster.net
 # Reference: https://www.virustotal.com/gui/domain/dnsd.me/relations
 
 dnsd.me
+
+# Reference: https://www.virustotal.com/gui/domain/ddnss.org/relations
+
+ddnss.org
