@@ -6239,6 +6239,10 @@ avir.ir/image/favicon.js
 
 googleadwordstrack.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.142.212.194/relations
+
+fonts-cdn.com
+
 # Generic
 
 /assets/lfg.js
