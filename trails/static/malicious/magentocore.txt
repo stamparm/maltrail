@@ -6243,6 +6243,10 @@ googleadwordstrack.com
 
 fonts-cdn.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/194.156.99.212/relations
+
+fonts-static.com
+
 # Reference: https://www.virustotal.com/gui/ip-address/45.142.212.243/relations
 
 zdassets-static.com
