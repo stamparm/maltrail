@@ -3318,3 +3318,7 @@ dnsd.me
 # Reference: https://www.virustotal.com/gui/domain/ddnss.org/relations
 
 ddnss.org
+
+# Reference: https://www.virustotal.com/gui/domain/myhome-server.de/relations
+
+myhome-server.de
