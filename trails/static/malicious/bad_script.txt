@@ -5442,6 +5442,10 @@ ulwebga.tk
 
 /4c3aa4cfa29243d5cabb.php
 
+# Reference: https://twitter.com/ffforward/status/1479416818829860866
+
+/zpol.ps1
+
 # Generic
 
 /js/altmanluggage.js
