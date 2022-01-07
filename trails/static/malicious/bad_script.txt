@@ -5446,6 +5446,10 @@ ulwebga.tk
 
 /zpol.ps1
 
+# Reference: https://www.virustotal.com/gui/file/c60e4ea99ca2ebf51e8f0a2e4d839f93842eade69fe8615b37e172f973588da7/detection
+
+/a56ed6248446a9.php
+
 # Generic
 
 /js/altmanluggage.js
