@@ -126,6 +126,13 @@ xen.hill-family.us
 255e7219.xen.hill-family.us
 second.pmservicespr.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1440443682369388549
+# Reference: https://www.virustotal.com/gui/ip-address/81.4.122.101/relations
+
+e73fb99b.push.youbyashboutique.com
+push.youbyashboutique.com
+paggy.parmsplace.com
+
 # Generic
 
 /Chrome.Update.3b1362.js
