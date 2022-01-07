@@ -11,6 +11,7 @@ letshack.ddns.net
 
 # Reference: https://twitter.com/1ZRR4H/status/1450913137352392712
 # Reference: https://pastebin.com/ZpsxzLZc
+# Reference: https://www.malware-traffic-analysis.net/2021/10/20/index.html
 # Reference: https://www.proofpoint.com/us/blog/security-briefs/ta551-uses-sliver-red-team-tool-new-activity
 
 http://101.35.159.51
