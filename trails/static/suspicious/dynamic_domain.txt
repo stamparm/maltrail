@@ -3322,3 +3322,7 @@ ddnss.org
 # Reference: https://www.virustotal.com/gui/domain/myhome-server.de/relations
 
 myhome-server.de
+
+# Reference: https://www.virustotal.com/gui/domain/phatbois.biz/relations
+
+phatbois.biz
