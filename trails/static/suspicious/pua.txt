@@ -2897,3 +2897,7 @@ sft-cloud.com
 # Reference: https://www.virustotal.com/gui/domain/file-downloadd.ru/relations
 
 file-downloadd.ru
+
+# Reference: https://www.virustotal.com/gui/file/29fe0d6d05a3e3fa769cc5ee5305cc2c1d4d948ed024d9666832131fd1eadb88/detection
+
+cdn2dload.com
