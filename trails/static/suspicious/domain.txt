@@ -5433,3 +5433,7 @@ ttwstatic.com
 # Reference: https://www.virustotal.com/gui/domain/rce.ee/relations
 
 rce.ee
+
+# Reference: https://www.virustotal.com/gui/domain/f2pool.info/relations
+
+f2pool.info
