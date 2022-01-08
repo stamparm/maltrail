@@ -3257,3 +3257,7 @@ dns.alidns.com
 # Reference: https://www.virustotal.com/gui/domain/robotdreams.cc/relations
 
 robotdreams.cc
+
+# Reference: https://www.virustotal.com/gui/domain/slovar.cc/relations
+
+slovar.cc
