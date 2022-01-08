@@ -107,3 +107,7 @@ http://92.53.124.123
 belonnanotservice.ga
 piterreceiver.ga
 trainresistor.cc
+
+# Reference: https://twitter.com/unmaskparasites/status/1458970080797073413
+
+blngblngs.rocks
