@@ -2904,3 +2904,7 @@ file-downloadd.ru
 167.88.124.131:51568
 cdn2dload.com
 webf.linkpc.net
+
+# Reference: https://www.virustotal.com/gui/file/a6c1c675c605b963425a2e7e96887d042d20b406121dacf6995d3b0ffc3639d2/detection
+
+loadre.ru
