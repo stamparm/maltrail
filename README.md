@@ -580,6 +580,6 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * [NextDNS](https://github.com/nextdns/metadata/blob/e0c9c7e908f5d10823b517ad230df214a7251b13/security/threat-intelligence-feeds.json) <sup>1</sup>
 * [NoTracking](https://github.com/notracking/hosts-blocklists/blob/master/SOURCES.md) <sup>1</sup>
 * [mobileAudit](https://github.com/mpast/mobileAudit/blob/main/README.md) <sup>1</sup>
-* [Mobile-Security-Framework-MobSF] (https://github.com/MobSF/Mobile-Security-Framework-MobSF/commit/12b07370674238fa4281fc7989b34decc2e08876) <sup>1</sup>
+* [Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF/commit/12b07370674238fa4281fc7989b34decc2e08876) <sup>1</sup>
 
  <sup>1</sup> Using (only) trails
