@@ -2908,3 +2908,5 @@ webf.linkpc.net
 # Reference: https://www.virustotal.com/gui/file/a6c1c675c605b963425a2e7e96887d042d20b406121dacf6995d3b0ffc3639d2/detection
 
 loadre.ru
+bitrix316.timeweb.ru
+pisbrat5.tmweb.ru
