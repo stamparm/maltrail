@@ -318,6 +318,10 @@ vscode.workingfeedback.cloud
 
 /Rat/panel.php
 
+# Reference: https://www.virustotal.com/gui/file/b7d67e5f5c814139ddadf9c4868d0122ed2e76908ce1cf77730c995b581e0b56/detection
+
+/bot.php?phone=
+
 # Generic
 
 /admin_123/auth.php
