@@ -5458,6 +5458,10 @@ ulwebga.tk
 
 /3jitiaozhuan.js
 
+# Reference: https://twitter.com/JavierAleP/status/1480964509888299008
+
+/indexhjhyu.php
+
 # Generic
 
 /js/altmanluggage.js
