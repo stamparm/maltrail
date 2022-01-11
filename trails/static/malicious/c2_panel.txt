@@ -322,6 +322,10 @@ vscode.workingfeedback.cloud
 
 /bot.php?phone=
 
+# Reference: https://www.virustotal.com/gui/file/682ac025fdbe76d9be760bae1034222434278a9c55fa1f39ce4b6055864151ac/detection
+
+/Panel4hac
+
 # Generic
 
 /admin_123/auth.php
