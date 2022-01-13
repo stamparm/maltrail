@@ -5527,6 +5527,7 @@ ulwebga.tk
 /gating.php
 /gatw.php
 /gate.phpgate.php
+/ggate.php
 /online-dating-verification-card.php
 /ravufgate.php
 /screenshot_gate.php
