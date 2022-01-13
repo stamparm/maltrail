@@ -5466,6 +5466,13 @@ ulwebga.tk
 
 /wer23457grweg.jsp
 
+# Reference: https://www.virustotal.com/gui/file/2e8aa1230aebf32c537c3aaa17ac9de639889fc3473fbd3f9b44c6c5e05fea8e/detection
+
+/1_4987797867906203838.php
+/1_4987797867906203838.txt
+/1_4987797867906203839.php
+/1_4987797867906203839.txt
+
 # Generic
 
 /js/altmanluggage.js
