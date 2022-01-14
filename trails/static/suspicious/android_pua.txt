@@ -592,3 +592,7 @@ androidinja.ir
 # Reference: https://www.virustotal.com/gui/file/43e2aaf36f2f09ad21974d29dd1e13b4d6bc6c3800a1f7cf84443667e0f1bb94/detection
 
 army2.xyz
+
+# Reference: https://www.virustotal.com/gui/file/9ae20a49f5cabbbf8bc5f00d2e5583dc41ea960abec003b9b5cbc9cfadfd42a3/detection
+
+appspk.tk
