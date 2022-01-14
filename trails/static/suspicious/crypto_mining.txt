@@ -903,3 +903,7 @@ gulf.moneroocean.stream
 213.91.128.133:10060
 35.204.154.155:10060
 fastpool.xyz
+
+# Reference: https://www.virustotal.com/gui/file/9a2232a5f703a077d3707fa6b05d095d8a41e8b53c55451fa9335714152e8412/detection
+
+51.15.55.162:14433
