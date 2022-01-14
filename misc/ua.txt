@@ -1905,6 +1905,10 @@ geckoversion
 
 Mozilla/4.0 (compatible;)
 
+# Reference: https://twitter.com/1ZRR4H/status/1482096909284171779
+
+MALC
+
 # Misc
 
 information_schema
