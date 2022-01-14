@@ -596,3 +596,9 @@ army2.xyz
 # Reference: https://www.virustotal.com/gui/file/9ae20a49f5cabbbf8bc5f00d2e5583dc41ea960abec003b9b5cbc9cfadfd42a3/detection
 
 appspk.tk
+
+# Reference: https://www.virustotal.com/gui/ip-address/39.106.93.192/relations
+# Reference: https://www.virustotal.com/gui/file/26930b446b922b1caa0281f28178ed632bf138e9bd09b88f3a5310912d157235/detection
+# Reference: https://www.virustotal.com/gui/file/b9ae454fa127c13d1f92089f0a5bdf99bb61a5ab81155fa9cda346edf48de4c4/detection
+
+39.106.93.192:4080
