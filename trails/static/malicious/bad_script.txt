@@ -5482,6 +5482,10 @@ ulwebga.tk
 
 /5b95498f031ce7.php
 
+# Reference: https://www.virustotal.com/gui/file/646de057f12a986bb75c1cfc9e7b8d241b3b24a54e50b002e283b33cebd91a87/detection
+
+/e8c05bb5ecd725.php
+
 # Generic
 
 /js/altmanluggage.js
