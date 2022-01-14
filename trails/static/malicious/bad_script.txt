@@ -5473,6 +5473,11 @@ ulwebga.tk
 /1_4987797867906203839.php
 /1_4987797867906203839.txt
 
+# Reference: https://twitter.com/James_inthe_box/status/1481993249615056899
+# Reference: https://app.any.run/tasks/bd261b33-c8aa-462a-8024-7a6d68f3eef5/
+
+/6b2313f5d21340a3.php
+
 # Generic
 
 /js/altmanluggage.js
