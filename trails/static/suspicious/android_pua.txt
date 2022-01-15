@@ -602,3 +602,7 @@ appspk.tk
 # Reference: https://www.virustotal.com/gui/file/b9ae454fa127c13d1f92089f0a5bdf99bb61a5ab81155fa9cda346edf48de4c4/detection
 
 39.106.93.192:4080
+
+# Reference: https://www.virustotal.com/gui/file/be213916731932adbd469c9335b6b11bb4ad6e23adbf1907cbce921fad412da8/detection
+
+pubg.xtiii.cn
