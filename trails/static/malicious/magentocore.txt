@@ -6269,6 +6269,14 @@ sombo.top
 
 cdntraff.info
 
+# Reference: https://www.virustotal.com/gui/domain/jsfeedadsget.com/detection
+
+jsfeedadsget.com
+
+# Reference: https://ti-research.io/ioc_extender/?name=ET_Magecart
+
+sauvage-paysage.com
+
 # Generic
 
 /assets/lfg.js
