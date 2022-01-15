@@ -5486,6 +5486,10 @@ ulwebga.tk
 
 /e8c05bb5ecd725.php
 
+# Reference: https://twitter.com/drb_ra/status/1482116740368814086
+
+/security-details.a52152.js
+
 # Generic
 
 /js/altmanluggage.js
