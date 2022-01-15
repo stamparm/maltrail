@@ -5490,6 +5490,10 @@ ulwebga.tk
 
 /security-details.a52152.js
 
+# Reference: https://www.virustotal.com/gui/domain/s37click.info/relations
+
+s37click.info
+
 # Generic
 
 /js/altmanluggage.js
