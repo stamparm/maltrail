@@ -6264,6 +6264,11 @@ siing-amoueon.top
 sing-amoeuon.top
 sombo.top
 
+# Reference: https://twitter.com/500mk500/status/1482310341711347713
+# Reference: https://urlscan.io/result/11a16239-5de7-412a-af89-5f0e1dd3cc22/
+
+cdntraff.info
+
 # Generic
 
 /assets/lfg.js
