@@ -6277,6 +6277,11 @@ jsfeedadsget.com
 
 sauvage-paysage.com
 
+# Reference: https://ti-research.io/ioc_extender/?name=ET_Magecart
+
+g00glestatic.com
+gaelytics.com
+
 # Generic
 
 /assets/lfg.js
