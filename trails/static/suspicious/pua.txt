@@ -2978,3 +2978,8 @@ vdsteenxxl.com
 9.download-app.net
 10.download-app.net
 anvzoq.pressfishblue.top
+
+# Reference: https://www.virustotal.com/gui/domain/dl.installiq.com/relations
+
+installiq.com
+dl.installiq.com
