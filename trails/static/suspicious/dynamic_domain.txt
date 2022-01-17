@@ -3326,3 +3326,7 @@ myhome-server.de
 # Reference: https://www.virustotal.com/gui/domain/phatbois.biz/relations
 
 phatbois.biz
+
+# Reference: http://softether.net/
+
+softether.net
