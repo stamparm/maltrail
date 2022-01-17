@@ -6295,6 +6295,10 @@ clodoudfront.net
 clusterscloud.com
 cooogle.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/6.9.3.11/relations
+
+cdne.site
+
 # Generic
 
 /assets/lfg.js
