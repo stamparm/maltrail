@@ -2982,6 +2982,7 @@ static-trustpilot.com
 # Reference: https://twitter.com/felixaime/status/1310835184917458944
 # Reference: https://www.virustotal.com/gui/ip-address/161.117.237.217/relations
 # Reference: https://www.virustotal.com/gui/ip-address/45.14.12.199/relations
+# Reference: https://www.virustotal.com/gui/ip-address/6.9.3.11/relations
 
 acdn.space
 ancdn.site
@@ -2992,28 +2993,55 @@ cacdn.site
 ccdn.space
 cdna.site
 cdna.space
+cdnb.site
+cdnb.space
+cdnc.site
 cdnc.space
 cdncom.site
 cdnd.site
 cdnd.space
+cdne.site
 cdne.space
 cdnf.site
 cdnf.space
 cdng.site
+cdng.space
 cdnh.site
+cdnh.space
 cdni.site
+cdni.space
 cdnj.site
+cdnj.space
+cdnk.site
+cdnk.space
+cdnl.site
+cdnl.space
 cdnm.site
+cdnm.space
+cdnn.site
+cdnn.space
 cdno.site
+cdno.space
 cdnp.site
+cdnp.space
 cdnq.site
 cdnq.space
+cdnr.site
 cdnr.space
+cdns.site
 cdns.space
+cdnt.site
+cdnt.space
+cdnu.site
+cdnu.space
 cdnv.site
 cdnv.space
+cdnw.site
 cdnw.space
+cdnx.site
 cdnx.space
+cdny.site
+cdny.space
 cdnz.site
 cdnz.space
 dcdn.space
@@ -3040,6 +3068,12 @@ uscdn.site
 wcdn.space
 xcdn.space
 zcdn.space
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.32.178.26/relations
+
+acache.pw
+adev.pw
+asite.pw
 
 # Reference: https://twitter.com/felixaime/status/1310840704801951744
 
@@ -6294,10 +6328,6 @@ cloud-info.express
 clodoudfront.net
 clusterscloud.com
 cooogle.net
-
-# Reference: https://www.virustotal.com/gui/ip-address/6.9.3.11/relations
-
-cdne.site
 
 # Generic
 
