@@ -5494,6 +5494,10 @@ ulwebga.tk
 
 s37click.info
 
+# Reference: https://twitter.com/malwrhunterteam/status/1483419651740618752
+
+/cww/xxl2.php
+
 # Generic
 
 /js/altmanluggage.js
