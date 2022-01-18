@@ -311,6 +311,10 @@ http://45.138.26.11
 
 http://45.138.24.135
 
+# Reference: https://twitter.com/MBThreatIntel/status/1483235125827571715
+
+http://45.138.27.29
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
