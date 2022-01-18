@@ -326,6 +326,10 @@ vscode.workingfeedback.cloud
 
 /Panel4hac
 
+# Reference: https://twitter.com/midnight_comms/status/1483513891745419270
+
+/Trol/panel.php
+
 # Generic
 
 /admin_123/auth.php
