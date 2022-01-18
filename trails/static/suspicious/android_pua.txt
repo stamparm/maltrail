@@ -606,3 +606,7 @@ appspk.tk
 # Reference: https://www.virustotal.com/gui/file/be213916731932adbd469c9335b6b11bb4ad6e23adbf1907cbce921fad412da8/detection
 
 pubg.xtiii.cn
+
+# Reference: https://www.virustotal.com/gui/domain/glanmoran.com/relations
+
+glanmoran.com
