@@ -5498,6 +5498,10 @@ s37click.info
 
 /cww/xxl2.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1483715095083499520
+
+/pngebanoe.hta
+
 # Generic
 
 /js/altmanluggage.js
