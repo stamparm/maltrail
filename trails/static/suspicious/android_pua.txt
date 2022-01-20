@@ -621,8 +621,12 @@ securemobilepay.mobi
 /wap/appli_android/android_data.pyl
 /wap/appli_android/android_etat.pyl
 /wap/appli_android/android_pub.pyl
-/wap/appli_android/list_video_appli_android.pyl
+/wap/appli_android/android_get_track.pyl
+/wap/appli_android/android_quota_sms.pyl
+/wap/appli_android/android_pub.pyl
 /wap/appli_android/android_set_track_alias.pyl
+/wap/appli_android/conversations_am.pyl
+/wap/appli_android/list_video_appli_android.pyl
 /wap/appli_android/
 /wap/charme_android_catch_youtube_v/
 /appli_android/
