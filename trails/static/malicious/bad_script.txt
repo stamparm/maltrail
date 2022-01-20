@@ -5502,6 +5502,10 @@ s37click.info
 
 /pngebanoe.hta
 
+# Reference: https://threatfox.abuse.ch/ioc/298466/
+
+/1b2f863184d500f8.php
+
 # Generic
 
 /js/altmanluggage.js
