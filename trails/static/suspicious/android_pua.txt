@@ -612,11 +612,18 @@ pubg.xtiii.cn
 glanmoran.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/82.97.9.52/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.97.9.54/relations
+# Reference: https://www.virustotal.com/gui/file/f8295fe047bffdfb37585236a712e57ae7c44fd90284cd79a658318fa41b902f/detection
 
 http://82.97.9.52
+http://82.97.9.54
+securemobilepay.mobi
 /wap/appli_android/android_data.pyl
 /wap/appli_android/android_etat.pyl
 /wap/appli_android/android_pub.pyl
 /wap/appli_android/list_video_appli_android.pyl
+/wap/appli_android/android_set_track_alias.pyl
 /wap/appli_android/
+/wap/charme_android_catch_youtube_v/
 /appli_android/
+/charme_android_catch_youtube_v/
