@@ -610,3 +610,13 @@ pubg.xtiii.cn
 # Reference: https://www.virustotal.com/gui/domain/glanmoran.com/relations
 
 glanmoran.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/82.97.9.52/relations
+
+http://82.97.9.52
+/wap/appli_android/android_data.pyl
+/wap/appli_android/android_etat.pyl
+/wap/appli_android/android_pub.pyl
+/wap/appli_android/list_video_appli_android.pyl
+/wap/appli_android/
+/appli_android/
