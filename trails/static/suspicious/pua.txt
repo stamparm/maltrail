@@ -2983,3 +2983,10 @@ anvzoq.pressfishblue.top
 
 installiq.com
 dl.installiq.com
+
+# Reference: https://twitter.com/SBousseaden/status/1484262297484812291
+# Reference: https://www.virustotal.com/gui/file/62f70676e880a23fd80f05c78c8c8ae3a375f0870181da9e8aaf35d216680d8c/detection
+# Reference: https://www.virustotal.com/gui/file/6f7c75db73622e6cd41bae796e85c802e1f34b870794131f2ecf2d15eb705098/detection
+# Reference: https://www.virustotal.com/gui/file/8643b08ea59d4ff75b1721b173c9ec6d02127349397739e40f2eccd325bd7bfd/detection
+
+zxcfdsa.hopto.org
