@@ -5430,3 +5430,7 @@ rce.ee
 # Reference: https://www.virustotal.com/gui/domain/f2pool.info/relations
 
 f2pool.info
+
+# Reference: https://www.virustotal.com/gui/domain/zadc.ru/relations
+
+zadc.ru
