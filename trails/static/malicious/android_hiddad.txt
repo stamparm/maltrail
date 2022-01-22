@@ -137,3 +137,19 @@ one.cryptonomiconf.com
 # Reference: https://www.virustotal.com/gui/file/409b7432b804ef8a1edf4a973a63fc98f7ecd91d83d56a32cabc15805db3ccf1/detection
 
 victiontuvs.club
+
+# Reference: https://www.virustotal.com/gui/file/ae0a089d52e79328a6246ffb85f47f7233582e87d33a7686e6caf88f36cfc16f/detection
+# Reference: https://www.virustotal.com/gui/file/3e7ed13ce920a966a874951e9d0d388695bc51a9524b23e4b126f6e0c4cbe3ea/detection
+
+112.121.166.10:23001
+139.162.13.178:10084
+148.66.17.4:11080
+216.118.244.210:20081
+216.118.244.210:20082
+47xna1.g7e6.com
+bert.aefrant.com
+hlul6k.r8w0.com
+mnwj0t.g7e6.com
+q1wk14.g7e6.com
+wvzb9b.xjwi5.com
+/Scavenger/ReceivedUpdate
