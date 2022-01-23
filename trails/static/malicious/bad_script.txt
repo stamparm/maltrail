@@ -5506,6 +5506,10 @@ s37click.info
 
 /1b2f863184d500f8.php
 
+# Reference: https://www.virustotal.com/gui/file/6f98f871db9f73d7f7c37e8b2c20413349b7fb78c9aae74e42eba51e824e2c8f/detection
+
+yourjavascript.com
+
 # Generic
 
 /js/altmanluggage.js
