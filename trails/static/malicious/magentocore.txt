@@ -6329,6 +6329,10 @@ clodoudfront.net
 clusterscloud.com
 cooogle.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/179.177.63.84/relations
+
+jquerypure.com
+
 # Generic
 
 /assets/lfg.js
