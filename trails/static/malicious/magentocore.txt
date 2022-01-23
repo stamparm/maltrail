@@ -6335,8 +6335,10 @@ cooogle.net
 
 jquerylab.com
 jquerymedia.com
+jquerypulse.com
 jquerypure.com
 jqueryspace.com
+staticpolars.com
 
 # Generic
 
