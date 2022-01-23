@@ -6330,8 +6330,13 @@ clusterscloud.com
 cooogle.net
 
 # Reference: https://www.virustotal.com/gui/ip-address/179.177.63.84/relations
+# Reference: https://www.virustotal.com/gui/ip-address/47.251.42.9/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.218.22.193/relations
 
+jquerylab.com
+jquerymedia.com
 jquerypure.com
+jqueryspace.com
 
 # Generic
 
