@@ -111,3 +111,8 @@ trainresistor.cc
 # Reference: https://twitter.com/unmaskparasites/status/1458970080797073413
 
 blngblngs.rocks
+
+# Reference: https://jetpack.com/2022/01/18/backdoor-found-in-themes-and-plugins-from-accesspress-themes/
+# Reference: https://www.virustotal.com/gui/domain/wp-theme-connect.com/detection
+
+wp-theme-connect.com
