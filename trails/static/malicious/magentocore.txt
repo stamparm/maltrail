@@ -6340,6 +6340,12 @@ jquerypure.com
 jqueryspace.com
 staticpolars.com
 
+# Reference: https://twitter.com/sansecio/status/1485598267975114762
+# Reference: https://twitter.com/sansecio/status/1485598270554529794
+
+jsallow.com
+reqsolutions.org
+
 # Generic
 
 /assets/lfg.js
