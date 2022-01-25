@@ -926,6 +926,8 @@ sophosxl.net
 
 # Generic
 
+mirrors.aliyun.com
+discordapp.com
 trackingmore.com
 qhimg.com
 dingtalk.com
