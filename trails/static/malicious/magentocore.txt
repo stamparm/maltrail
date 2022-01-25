@@ -6346,6 +6346,15 @@ staticpolars.com
 jsallow.com
 reqsolutions.org
 
+# Reference: https://www.virustotal.com/gui/ip-address/47.88.27.175/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.53.125.150/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.77.82/relations
+
+assets-protect.com
+google-analuzing.com
+google-boom.com
+google-globals.com
+
 # Generic
 
 /assets/lfg.js
