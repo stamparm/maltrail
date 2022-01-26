@@ -5510,6 +5510,13 @@ s37click.info
 
 yourjavascript.com
 
+# Reference: https://twitter.com/500mk500/status/1486434273292865546
+# Reference: https://app.any.run/tasks/e980d3f8-148d-46f2-a135-0f919113dcdc/
+# Reference: https://app.any.run/tasks/b02d6537-afe7-4bbb-99d5-7bf2ba3104a3/
+# Reference: https://mlwr.ee/analysis/2502241/summary
+
+/script/suurl4.php
+
 # Generic
 
 /js/altmanluggage.js
