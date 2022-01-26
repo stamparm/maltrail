@@ -6355,6 +6355,12 @@ google-analuzing.com
 google-boom.com
 google-globals.com
 
+# Reference: https://twitter.com/sansecio/status/1486000220647444491
+# Reference: https://twitter.com/sansecio/status/1486258634409623552
+
+naturalfreshmall.com/image/pixel.js
+naturalfreshmall.com/payment/Payment.php
+
 # Generic
 
 /assets/lfg.js
