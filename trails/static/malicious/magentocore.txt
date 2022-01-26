@@ -6361,6 +6361,16 @@ google-globals.com
 naturalfreshmall.com/image/pixel.js
 naturalfreshmall.com/payment/Payment.php
 
+# Reference: https://twitter.com/rootprivilege/status/1486419929720967168
+# Reference: https://www.virustotal.com/gui/ip-address/212.224.124.86/relations
+# Reference: https://www.virustotal.com/gui/ip-address/54.86.140.52/relations
+# Reference: https://lukeleal.com/research/posts/tracking-pixel-phishing-countermeasure/
+
+content-cdn.com
+images-cdn.info
+nextstatic-cdn.com
+trans-cdn.com
+
 # Generic
 
 /assets/lfg.js
