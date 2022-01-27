@@ -4966,6 +4966,7 @@ ssl-google.com
 
 googlefi.info
 ssl-facebook.com
+paymentssecured.com
 tatteredscript.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/50.63.51.92/relations
