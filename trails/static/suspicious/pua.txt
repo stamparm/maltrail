@@ -2990,3 +2990,7 @@ dl.installiq.com
 # Reference: https://www.virustotal.com/gui/file/8643b08ea59d4ff75b1721b173c9ec6d02127349397739e40f2eccd325bd7bfd/detection
 
 zxcfdsa.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/0001c74fff5cc52cda9e2a0c3722c213dbcb81c670c3b5139dea8c36616b29de/detection
+
+webinternetsecurity.com
