@@ -2994,3 +2994,7 @@ zxcfdsa.hopto.org
 # Reference: https://www.virustotal.com/gui/file/0001c74fff5cc52cda9e2a0c3722c213dbcb81c670c3b5139dea8c36616b29de/detection
 
 webinternetsecurity.com
+
+# Reference: https://www.virustotal.com/gui/file/8350a3a65abbc7a2ecb5c8d997341289370d26d1f6ad65e9bd99f04c806baa89/detection
+
+45.12.32.61:443
