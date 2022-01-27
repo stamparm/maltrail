@@ -330,6 +330,13 @@ vscode.workingfeedback.cloud
 
 /Trol/panel.php
 
+# Reference: https://twitter.com/benkow_/status/1486700404482134021
+# Reference: https://www.virustotal.com/gui/file/aafe3a4b60177935eafabd5453ed701b5dbed32ad735c6fb4dbec2645402a022/detection
+# Reference: https://www.virustotal.com/gui/file/5e18850b6929d4c3613ec166482910ad4aff5d49e3e21f858c613f940044773c/detection
+# Reference: https://www.virustotal.com/gui/file/098eeec339b99a05020195154d8927afb3d16ed530aace7e33515032788ca02e/detection
+
+/panel/status.php
+
 # Generic
 
 /admin_123/auth.php
