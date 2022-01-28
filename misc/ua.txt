@@ -1808,6 +1808,7 @@ Uirusu
 
 # Reference: https://twitter.com/pix/status/1152601420589387776
 
+EICAR
 EICAR-STANDARD-ANTIVIRUS-TEST-FILE
 
 # Reference: https://twitter.com/360Netlab/status/1260567561747550209
@@ -1908,6 +1909,11 @@ Mozilla/4.0 (compatible;)
 # Reference: https://twitter.com/1ZRR4H/status/1482096909284171779
 
 MALC
+
+# Reference: https://youtu.be/pKD9p0EIZEs?t=1305
+
+SEND2
+NOT SEND2
 
 # Misc
 
