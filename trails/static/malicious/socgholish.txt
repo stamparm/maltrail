@@ -137,6 +137,10 @@ paggy.parmsplace.com
 
 bfa73f60.xen.hill-family.us
 
+# Reference: https://twitter.com/SecurityAura/status/1487564086929936388
+
+7a3a7f86.xen.hill-family.us
+
 # Generic
 
 /Chrome.Update.3b1362.js
