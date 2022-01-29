@@ -626,3 +626,10 @@ securemobilepay.mobi
 /wap/charme_android_catch_youtube_v/
 /appli_android/
 /charme_android_catch_youtube_v/
+
+# Reference: https://www.virustotal.com/gui/file/3dcea48a9ab0a15dfbefae40d86a6c4e963406ae327b0f49ac52af7c49d134b0/detection
+
+cq6y.com
+cq6y.pgd8.com
+cq6ydl.qp8u.com
+pjwimg.qp8u.com
