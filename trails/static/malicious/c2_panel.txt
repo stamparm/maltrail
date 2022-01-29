@@ -382,6 +382,13 @@ vscode.workingfeedback.cloud
 /panel/?gate
 /panel/?index
 /panel/?login
+/panel/upload/admin.php
+/panel/upload/auth.php
+/panel/upload/callback.php
+/panel/upload/gate.php
+/panel/upload/index.php
+/panel/upload/login.php
+/panel/upload/panel.php
 /Panel/panel/admin.php
 /Panel1/panel/admin.php
 /Panel2/panel/admin.php
