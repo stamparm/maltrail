@@ -911,4 +911,12 @@ fastpool.xyz
 # Reference: https://www.virustotal.com/gui/file/ca05f83d86c56e4e89c2dcfa637e855df3a8d6d395fe3c84fcd1539fb14ddbee/detection
 
 ppxxmr.com
+huadong1-aeon.ppxxmr.com
+jw-js1.ppxxmr.com
 mine.ppxxmr.com
+mine1.ppxxmr.com
+miner.ppxxmr.com
+pool.ppxxmr.com
+poolchange.ppxxmr.com
+ppxvip1.ppxxmr.com
+xmr.ppxxmr.com
