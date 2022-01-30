@@ -907,3 +907,8 @@ fastpool.xyz
 # Reference: https://www.virustotal.com/gui/file/9a2232a5f703a077d3707fa6b05d095d8a41e8b53c55451fa9335714152e8412/detection
 
 51.15.55.162:14433
+
+# Reference: https://www.virustotal.com/gui/file/ca05f83d86c56e4e89c2dcfa637e855df3a8d6d395fe3c84fcd1539fb14ddbee/detection
+
+ppxxmr.com
+mine.ppxxmr.com
