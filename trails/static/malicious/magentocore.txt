@@ -6372,6 +6372,12 @@ images-cdn.info
 nextstatic-cdn.com
 trans-cdn.com
 
+# Reference: https://twitter.com/AffableKraut/status/1487939215774081026
+# Reference: https://twitter.com/AffableKraut/status/1487939224145993730
+
+chaosfab.com/2020/data1/images/data/ppbtns.html
+fraudlabpros.at
+
 # Generic
 
 /assets/lfg.js
