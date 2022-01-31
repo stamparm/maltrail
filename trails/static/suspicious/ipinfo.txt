@@ -375,3 +375,9 @@ seeip.org
 ip.seeip.org
 ip4.seeip.org
 ip6.seeip.org
+
+# Reference: https://twitter.com/AffableKraut/status/1487939198665601024
+
+my-ip.io
+api.my-ip.io
+api4.my-ip.io
