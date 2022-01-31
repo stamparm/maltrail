@@ -6384,6 +6384,10 @@ fraudlabpros.at
 
 bootstraplaver.online
 
+# Reference: https://twitter.com/MBThreatIntel/status/1488241823378075649
+
+getfrontendlib7.xyz
+
 # Generic
 
 /assets/lfg.js
