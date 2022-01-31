@@ -6378,6 +6378,12 @@ trans-cdn.com
 chaosfab.com/2020/data1/images/data/ppbtns.html
 fraudlabpros.at
 
+# Reference: https://twitter.com/AffableKraut/status/1488240428734365701
+# Reference: https://www.virustotal.com/gui/ip-address/185.234.247.55/relations
+# Reference: https://urlscan.io/result/32d776df-c57e-492f-ac09-0f17f197059e/
+
+bootstraplaver.online
+
 # Generic
 
 /assets/lfg.js
