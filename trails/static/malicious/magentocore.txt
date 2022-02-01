@@ -6291,9 +6291,11 @@ fonts-static.com
 zdassets-static.com
 
 # Reference: https://twitter.com/AffableKraut/status/1479641280040902661
+# Reference: https://twitter.com/AffableKraut/status/1488262668091805697
 # Reference: https://www.virustotal.com/gui/ip-address/176.97.70.103/relations
 # Reference: https://www.virustotal.com/gui/ip-address/5.252.177.247/relations
 
+brilliantclub.website
 interclub.website
 siing-amoueon.top
 sing-amoeuon.top
