@@ -6400,6 +6400,19 @@ http://66.11.117.40
 aqaja.com
 checkouts.best
 
+# Reference: https://twitter.com/AffableKraut/status/1488375539421306882
+
+avalong-analytics.org
+communigate.icu
+earlymorningcigarette.com
+fontawesome.dev
+golt.xyz
+indesiter.com
+jquerymain.com
+recaptcha.cc
+rxtds.com
+yoursafepayments.com
+
 # Generic
 
 /assets/lfg.js
