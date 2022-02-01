@@ -6390,6 +6390,16 @@ bootstraplaver.online
 
 getfrontendlib7.xyz
 
+# Reference: https://twitter.com/AffableKraut/status/1488376093254029313
+
+http://185.4.65.144
+http://37.1.211.211
+http://37.1.217.23
+http://5.45.83.223 
+http://66.11.117.40
+aqaja.com
+checkouts.best
+
 # Generic
 
 /assets/lfg.js
