@@ -6489,6 +6489,10 @@ js.statetsmedias.com
 js.staticcash.com
 js.staticocontents.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1489007692240752641
+
+cdn-cloudmedia.com
+
 # Generic
 
 /assets/lfg.js
