@@ -6493,6 +6493,10 @@ js.staticocontents.com
 
 cdn-cloudmedia.com
 
+# Reference: https://www.virustotal.com/gui/domain/cdn-yahoo.com/relations
+
+cdn-yahoo.com
+
 # Generic
 
 /assets/lfg.js
