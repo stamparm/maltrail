@@ -648,3 +648,11 @@ http://203.107.1.1
 http://203.107.1.65
 /122285/sign_d?host=
 /sign_d?host=
+
+# Reference: https://www.virustotal.com/gui/file/1604890fe1befaf0932ee2725040d559c8f6911c7910d72cf7ced087899f48e9/detection
+
+http://106.11.61.135
+http://106.11.61.137
+http://203.107.1.33
+/amdc/mobileDispatch?appkey=
+/187654/d?host=
