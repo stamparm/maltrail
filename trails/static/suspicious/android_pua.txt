@@ -656,3 +656,7 @@ http://106.11.61.137
 http://203.107.1.33
 /amdc/mobileDispatch?appkey=
 /187654/d?host=
+
+# Reference: https://www.virustotal.com/gui/domain/omnatuor.com/relations
+
+omnatuor.com
