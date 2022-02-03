@@ -641,3 +641,10 @@ drimg.qp8u.com
 pjwdl.qp8u.com
 pjwimg.qp8u.com
 ysimg.qp8u.com
+
+# Reference: https://www.virustotal.com/gui/file/008eab30e8c4adb3eb47103bb6903d98756b8efe4ffd4dfb5ee97e92a1f8c5db/detection
+
+http://203.107.1.1
+http://203.107.1.65
+/122285/sign_d?host=
+/sign_d?host=
