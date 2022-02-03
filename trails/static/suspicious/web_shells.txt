@@ -898,3 +898,9 @@ podathon.org/shell/
 
 /adssp/adsf/index.jsp
 /webapps/adssp/adsf/index.jsp
+
+# Reference: https://decoded.avast.io/janneduchal/analysis-of-attack-against-national-games-of-china-systems/
+
+/runscript.lua
+/remote/miss.php
+/remote/miss1.php
