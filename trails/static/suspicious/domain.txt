@@ -5434,3 +5434,7 @@ f2pool.info
 # Reference: https://www.virustotal.com/gui/domain/zadc.ru/relations
 
 zadc.ru
+
+# Reference: https://www.virustotal.com/gui/domain/2zzz.ru/relations
+
+2zzz.ru
