@@ -5438,3 +5438,7 @@ zadc.ru
 # Reference: https://www.virustotal.com/gui/domain/2zzz.ru/relations
 
 2zzz.ru
+
+# Reference: https://www.virustotal.com/gui/domain/smrtp.ru/relations
+
+smrtp.ru
