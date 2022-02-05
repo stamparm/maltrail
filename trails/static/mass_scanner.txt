@@ -622,6 +622,8 @@
 185.142.236.40  # blue.census.shodan.io
 185.142.236.43  # blue2.census.shodan.io
 71.6.147.254  # tesla.census.shodan.io
+185.165.190.34  # red.census.shodan.io
+185.142.239.16  # red2.census.shodan.io
 
 74.82.47.1  # (unknown)
 74.82.47.2  # scan-09.shadowserver.org
