@@ -2270,111 +2270,50 @@
 64.125.239.254  # riskiq.com
 64.125.239.255  # riskiq.com
 
-137.226.113.0   # researchscan.comsys.rwth-aachen.de
-137.226.113.1   # researchscan.comsys.rwth-aachen.de
-137.226.113.2   # researchscan.comsys.rwth-aachen.de
-137.226.113.3   # researchscan.comsys.rwth-aachen.de
-137.226.113.4   # researchscan.comsys.rwth-aachen.de
-137.226.113.5   # researchscan.comsys.rwth-aachen.de
-137.226.113.6   # researchscan.comsys.rwth-aachen.de
-137.226.113.7   # researchscan.comsys.rwth-aachen.de
-137.226.113.8   # researchscan.comsys.rwth-aachen.de
-137.226.113.9   # researchscan.comsys.rwth-aachen.de
-137.226.113.10  # researchscan.comsys.rwth-aachen.de
-137.226.113.11  # researchscan.comsys.rwth-aachen.de
-137.226.113.12  # researchscan.comsys.rwth-aachen.de
-137.226.113.13  # researchscan.comsys.rwth-aachen.de
-137.226.113.14  # researchscan.comsys.rwth-aachen.de
-137.226.113.15  # researchscan.comsys.rwth-aachen.de
-137.226.113.16  # researchscan.comsys.rwth-aachen.de
-137.226.113.17  # researchscan.comsys.rwth-aachen.de
-137.226.113.18  # researchscan.comsys.rwth-aachen.de
-137.226.113.19  # researchscan.comsys.rwth-aachen.de
-137.226.113.20  # researchscan.comsys.rwth-aachen.de
-137.226.113.21  # researchscan.comsys.rwth-aachen.de
-137.226.113.22  # researchscan.comsys.rwth-aachen.de
-137.226.113.23  # researchscan.comsys.rwth-aachen.de
-137.226.113.24  # researchscan.comsys.rwth-aachen.de
-137.226.113.25  # researchscan.comsys.rwth-aachen.de
-137.226.113.26  # researchscan.comsys.rwth-aachen.de
-137.226.113.27  # researchscan.comsys.rwth-aachen.de
-137.226.113.28  # researchscan.comsys.rwth-aachen.de
-137.226.113.29  # researchscan.comsys.rwth-aachen.de
-137.226.113.30  # researchscan.comsys.rwth-aachen.de
-137.226.113.31  # researchscan.comsys.rwth-aachen.de
-137.226.113.32  # researchscan.comsys.rwth-aachen.de
-137.226.113.33  # researchscan.comsys.rwth-aachen.de
-137.226.113.34  # researchscan.comsys.rwth-aachen.de
-137.226.113.35  # researchscan.comsys.rwth-aachen.de
-137.226.113.36  # researchscan.comsys.rwth-aachen.de
-137.226.113.37  # researchscan.comsys.rwth-aachen.de
-137.226.113.38  # researchscan.comsys.rwth-aachen.de
-137.226.113.39  # researchscan.comsys.rwth-aachen.de
-137.226.113.40  # researchscan.comsys.rwth-aachen.de
-137.226.113.41  # researchscan.comsys.rwth-aachen.de
-137.226.113.42  # researchscan.comsys.rwth-aachen.de
-137.226.113.43  # researchscan.comsys.rwth-aachen.de
-137.226.113.44  # researchscan.comsys.rwth-aachen.de
-137.226.113.45  # researchscan.comsys.rwth-aachen.de
-137.226.113.46  # researchscan.comsys.rwth-aachen.de
-137.226.113.47  # researchscan.comsys.rwth-aachen.de
-137.226.113.48  # researchscan.comsys.rwth-aachen.de
-137.226.113.49  # researchscan.comsys.rwth-aachen.de
-137.226.113.50  # researchscan.comsys.rwth-aachen.de
-137.226.113.51  # researchscan.comsys.rwth-aachen.de
-137.226.113.52  # researchscan.comsys.rwth-aachen.de
-137.226.113.53  # researchscan.comsys.rwth-aachen.de
-137.226.113.54  # researchscan.comsys.rwth-aachen.de
-137.226.113.55  # researchscan.comsys.rwth-aachen.de
-137.226.113.56  # researchscan.comsys.rwth-aachen.de
-137.226.113.57  # researchscan.comsys.rwth-aachen.de
-137.226.113.58  # researchscan.comsys.rwth-aachen.de
-137.226.113.59  # researchscan.comsys.rwth-aachen.de
-137.226.113.60  # researchscan.comsys.rwth-aachen.de
-137.226.113.61  # researchscan.comsys.rwth-aachen.de
-137.226.113.62  # researchscan.comsys.rwth-aachen.de
-137.226.113.63  # researchscan.comsys.rwth-aachen.de
+137.226.113.10  # researchscan3.comsys.rwth-aachen.de
+137.226.113.11  # researchscan4.comsys.rwth-aachen.de
+137.226.113.12  # researchscan5.comsys.rwth-aachen.de
+137.226.113.13  # researchscan6.comsys.rwth-aachen.de
+137.226.113.14  # researchscan7.comsys.rwth-aachen.de
+137.226.113.15  # researchscan8.comsys.rwth-aachen.de
+137.226.113.16  # researchscan9.comsys.rwth-aachen.de
+137.226.113.17  # researchscan10.comsys.rwth-aachen.de
+137.226.113.18  # researchscan11.comsys.rwth-aachen.de
+137.226.113.19  # researchscan12.comsys.rwth-aachen.de
+137.226.113.20  # researchscan13.comsys.rwth-aachen.de
+137.226.113.21  # researchscan14.comsys.rwth-aachen.de
+137.226.113.22  # researchscan15.comsys.rwth-aachen.de
+137.226.113.23  # researchscan16.comsys.rwth-aachen.de
+137.226.113.24  # researchscan17.comsys.rwth-aachen.de
+137.226.113.25  # researchscan18.comsys.rwth-aachen.de
+137.226.113.26  # researchscan19.comsys.rwth-aachen.de
+137.226.113.27  # researchscan20.comsys.rwth-aachen.de
+137.226.113.28  # researchscan21.comsys.rwth-aachen.de
+137.226.113.30  # researchscan22.comsys.rwth-aachen.de
+137.226.113.31  # researchscan23.comsys.rwth-aachen.de
+137.226.113.32  # researchscan24.comsys.rwth-aachen.de
+137.226.113.33  # researchscan25.comsys.rwth-aachen.de
+137.226.113.34  # researchscan26.comsys.rwth-aachen.de
+137.226.113.35  # researchscan27.comsys.rwth-aachen.de
+137.226.113.36  # researchscan28.comsys.rwth-aachen.de
+137.226.113.37  # researchscan29.comsys.rwth-aachen.de
+137.226.113.38  # researchscan30.comsys.rwth-aachen.de
+137.226.113.39  # researchscan31.comsys.rwth-aachen.de
+137.226.113.40  # researchscan32.comsys.rwth-aachen.de
+137.226.113.41  # researchscan33.comsys.rwth-aachen.de
+137.226.113.42  # researchscan34.comsys.rwth-aachen.de
+137.226.113.43  # researchscan35.comsys.rwth-aachen.de
+137.226.113.44  # researchscan36.comsys.rwth-aachen.de
+137.226.113.45  # researchscan37.comsys.rwth-aachen.de
+137.226.113.56  # researchscan48.comsys.rwth-aachen.de
+137.226.113.8  # researchscan1.comsys.rwth-aachen.de
+137.226.113.9  # researchscan2.comsys.rwth-aachen.de
+
 
 98.189.26.18    # scan.sba-research.org
-
-93.113.125.11   # nlpproject.info
+85.13.141.164  # scanning.sba-research.org
 
 104.225.9.70    # 5thcolumn.net
-
-129.250.206.86  # telnetscanproject.org
-
-128.187.82.224  # imaal.byu.edu
-128.187.82.225
-128.187.82.226
-128.187.82.227
-128.187.82.228
-128.187.82.229
-128.187.82.230
-128.187.82.231
-128.187.82.232
-128.187.82.233
-128.187.82.234
-128.187.82.235
-128.187.82.236
-128.187.82.237
-128.187.82.238
-128.187.82.239
-128.187.82.240
-128.187.82.241
-128.187.82.242
-128.187.82.243
-128.187.82.244
-128.187.82.245
-128.187.82.246
-128.187.82.247
-128.187.82.248
-128.187.82.249
-128.187.82.250
-128.187.82.251
-128.187.82.252
-128.187.82.253
-128.187.82.254
-128.187.82.255
 
 # Reference: https://otx.alienvault.com/pulse/59646c87b126746267e5cf22
 # Reference: https://twitter.com/bad_packets/status/1104618320882393088
