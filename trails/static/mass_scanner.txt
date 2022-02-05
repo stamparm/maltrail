@@ -618,6 +618,7 @@
 185.142.236.34  # hat.census.shodan.io
 185.142.236.35  # wine.census.shodan.io
 185.142.236.36  # green.census.shodan.io
+185.142.236.38  # shodan.io
 185.142.236.40  # blue.census.shodan.io
 185.142.236.43  # blue2.census.shodan.io
 71.6.147.254  # tesla.census.shodan.io
