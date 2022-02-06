@@ -1437,6 +1437,7 @@
 185.142.239.16   # red2.census.shodan.io
 185.165.190.17   # purple.census.shodan.io
 185.165.190.34   # red.census.shodan.io.
+185.181.102.18   # turtle.census.shodan.io
 188.138.9.50    # atlantic.census.shodan.io
 195.144.21.56   # red3.census.shodan.io
 198.20.69.74    # census1.shodan.io
@@ -2432,25 +2433,158 @@
 # Reference: https://twitter.com/bad_packets/status/1102675361496616960
 # Reference: https://www.virustotal.com/#/domain/internettl.org
 
-104.152.52.21 # internettl.org
-104.152.52.22
-104.152.52.23
-104.152.52.24
-104.152.52.25
-104.152.52.26
-104.152.52.27
-104.152.52.28
-104.152.52.29
-104.152.52.30
-104.152.52.31
-104.152.52.32
-104.152.52.33
-104.152.52.34
-104.152.52.35
-104.152.52.36
-104.152.52.37
-104.152.52.38
-104.152.52.39
+104.152.52.2    # internettl.org
+104.152.52.3    # internettl.org
+104.152.52.4    # internettl.org
+104.152.52.5    # internettl.org
+104.152.52.6    # internettl.org
+104.152.52.7    # internettl.org
+104.152.52.9    # internettl.org
+104.152.52.10   # internettl.org
+104.152.52.11   # internettl.org
+104.152.52.12   # internettl.org
+104.152.52.13   # internettl.org
+104.152.52.14   # internettl.org
+104.152.52.15   # internettl.org
+104.152.52.16   # internettl.org
+104.152.52.17   # internettl.org
+104.152.52.100  # internettl.org
+104.152.52.101  # internettl.org
+104.152.52.102  # internettl.org
+104.152.52.103  # internettl.org
+104.152.52.104  # internettl.org
+104.152.52.105  # internettl.org
+104.152.52.106  # internettl.org
+104.152.52.107  # internettl.org
+104.152.52.108  # internettl.org
+104.152.52.109  # internettl.org
+104.152.52.110  # internettl.org
+104.152.52.111  # internettl.org
+104.152.52.112  # internettl.org
+104.152.52.113  # internettl.org
+104.152.52.114  # internettl.org
+104.152.52.115  # internettl.org
+104.152.52.116  # internettl.org
+104.152.52.117  # internettl.org
+104.152.52.118  # internettl.org
+104.152.52.119  # internettl.org
+104.152.52.120  # internettl.org
+104.152.52.121  # internettl.org
+104.152.52.122  # internettl.org
+104.152.52.123  # internettl.org
+104.152.52.124  # internettl.org
+104.152.52.125  # internettl.org
+104.152.52.126  # internettl.org
+104.152.52.127  # internettl.org
+104.152.52.128  # internettl.org
+104.152.52.129  # internettl.org
+104.152.52.130  # internettl.org
+104.152.52.131  # internettl.org
+104.152.52.132  # internettl.org
+104.152.52.133  # internettl.org
+104.152.52.134  # internettl.org
+104.152.52.135  # internettl.org
+104.152.52.136  # internettl.org
+104.152.52.137  # internettl.org
+104.152.52.138  # internettl.org
+104.152.52.139  # internettl.org
+104.152.52.140  # internettl.org
+104.152.52.141  # internettl.org
+104.152.52.142  # internettl.org
+104.152.52.143  # internettl.org
+104.152.52.144  # internettl.org
+104.152.52.145  # internettl.org
+104.152.52.146  # internettl.org
+104.152.52.147  # internettl.org
+104.152.52.148  # internettl.org
+104.152.52.149  # internettl.org
+104.152.52.150  # internettl.org
+104.152.52.151  # internettl.org
+104.152.52.152  # internettl.org
+104.152.52.153  # internettl.org
+104.152.52.154  # internettl.org
+104.152.52.155  # internettl.org
+104.152.52.156  # internettl.org
+104.152.52.157  # internettl.org
+104.152.52.158  # internettl.org
+104.152.52.159  # internettl.org
+104.152.52.160  # internettl.org
+104.152.52.161  # internettl.org
+104.152.52.162  # internettl.org
+104.152.52.163  # internettl.org
+104.152.52.164  # internettl.org
+104.152.52.165  # internettl.org
+104.152.52.166  # internettl.org
+104.152.52.167  # internettl.org
+104.152.52.168  # internettl.org
+104.152.52.169  # internettl.org
+104.152.52.170  # internettl.org
+104.152.52.171  # internettl.org
+104.152.52.172  # internettl.org
+104.152.52.173  # internettl.org
+104.152.52.174  # internettl.org
+104.152.52.175  # internettl.org
+104.152.52.176  # internettl.org
+104.152.52.177  # internettl.org
+104.152.52.178  # internettl.org
+104.152.52.179  # internettl.org
+104.152.52.180  # internettl.org
+104.152.52.181  # internettl.org
+104.152.52.182  # internettl.org
+104.152.52.183  # internettl.org
+104.152.52.184  # internettl.org
+104.152.52.185  # internettl.org
+104.152.52.186  # internettl.org
+104.152.52.187  # internettl.org
+104.152.52.188  # internettl.org
+104.152.52.189  # internettl.org
+104.152.52.190  # internettl.org
+104.152.52.191  # internettl.org
+104.152.52.192  # internettl.org
+104.152.52.193  # internettl.org
+104.152.52.194  # internettl.org
+104.152.52.195  # internettl.org
+104.152.52.196  # internettl.org
+104.152.52.197  # internettl.org
+104.152.52.198  # internettl.org
+104.152.52.199  # internettl.org
+104.152.52.21   # internettl.org
+104.152.52.22   # internettl.org
+104.152.52.23   # internettl.org
+104.152.52.24   # internettl.org
+104.152.52.25   # internettl.org
+104.152.52.26   # internettl.org
+104.152.52.27   # internettl.org
+104.152.52.28   # internettl.org
+104.152.52.29   # internettl.org
+104.152.52.30   # internettl.org
+104.152.52.31   # internettl.org
+104.152.52.32   # internettl.org
+104.152.52.33   # internettl.org
+104.152.52.34   # internettl.org
+104.152.52.35   # internettl.org
+104.152.52.36   # internettl.org
+104.152.52.37   # internettl.org
+104.152.52.38   # internettl.org
+104.152.52.39   # internettl.org
+104.152.52.55   # internettl.org
+104.152.52.56   # internettl.org
+104.152.52.57   # internettl.org
+104.152.52.58   # internettl.org
+104.152.52.59   # internettl.org
+104.152.52.60   # internettl.org
+104.152.52.61   # internettl.org
+104.152.52.64   # internettl.org
+104.152.52.65   # internettl.org
+104.152.52.66   # internettl.org
+104.152.52.67   # internettl.org
+104.152.52.69   # internettl.org
+104.152.52.70   # internettl.org
+104.152.52.72   # internettl.org
+104.152.52.73   # internettl.org
+104.152.52.74   # internettl.org
+104.152.52.75   # internettl.org
+192.64.119.254 # census.internettl.org
 
 # Reference: https://twitter.com/bad_packets/status/1082733800780574720
 # Reference: https://www.virustotal.com/gui/domain/binaryedge.io/details
