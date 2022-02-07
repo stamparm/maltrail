@@ -5517,6 +5517,14 @@ yourjavascript.com
 
 /script/suurl4.php
 
+# Reference: https://twitter.com/KyleKrejci/status/1488556020863578117
+
+/62da8f09d02b4de8.php
+
+# Reference: https://twitter.com/MalwarePatrol/status/1490417274691465222
+
+/xx0yhlm432lmvudpdo0949lp.php
+
 # Generic
 
 /js/altmanluggage.js

@@ -6291,9 +6291,11 @@ fonts-static.com
 zdassets-static.com
 
 # Reference: https://twitter.com/AffableKraut/status/1479641280040902661
+# Reference: https://twitter.com/AffableKraut/status/1488262668091805697
 # Reference: https://www.virustotal.com/gui/ip-address/176.97.70.103/relations
 # Reference: https://www.virustotal.com/gui/ip-address/5.252.177.247/relations
 
+brilliantclub.website
 interclub.website
 siing-amoueon.top
 sing-amoeuon.top
@@ -6377,6 +6379,123 @@ trans-cdn.com
 
 chaosfab.com/2020/data1/images/data/ppbtns.html
 fraudlabpros.at
+
+# Reference: https://twitter.com/AffableKraut/status/1488240428734365701
+# Reference: https://www.virustotal.com/gui/ip-address/185.234.247.55/relations
+# Reference: https://urlscan.io/result/32d776df-c57e-492f-ac09-0f17f197059e/
+
+bootstraplaver.online
+
+# Reference: https://twitter.com/MBThreatIntel/status/1488241823378075649
+
+getfrontendlib7.xyz
+
+# Reference: https://twitter.com/AffableKraut/status/1488376093254029313
+
+http://185.4.65.144
+http://37.1.211.211
+http://37.1.217.23
+http://5.45.83.223 
+http://66.11.117.40
+aqaja.com
+checkouts.best
+
+# Reference: https://twitter.com/AffableKraut/status/1488375539421306882
+# Reference: https://www.virustotal.com/gui/ip-address/37.120.234.105/relations
+
+avalong-analytics.org
+communigate.icu
+earlymorningcigarette.com
+fontawesome.dev
+golt.xyz
+indesiter.com
+jquerymain.com
+recaptcha.cc
+rxtds.com
+seoanalitycs.com
+yoursafepayments.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1488954638103547904
+# Reference: https://www.virustotal.com/gui/ip-address/78.47.155.179/relations
+
+analiticash.com
+analiticmanager.com
+analiticsstat.com
+cashgooglestat.com
+cdncashcontent.com
+cdncashcontents.com
+cdncssontents.com
+cdnfastcss.com
+cdngcontents.com
+cdngconts.com
+cdnjsontents.com
+cssdataf.com
+cssimghost.com
+googlestatanal.com
+googlestatanale.com
+imagescdns.com
+imgcssnet.com
+jsdataf.com
+jsdatastat.com
+mediasdnb.com
+mediasdnnet.com
+mediasdnnets.com
+mtdnsstatic.icu
+mtndnsstaticser.com
+mtndnsstaticx.com
+mxdnsstateces.icu
+mxdnsstatecs.icu
+nnetsmedias.com
+ntnpstatica.com
+ntpstatica.com
+ntsndnsstatics.com
+ntxndnsstatics.com
+pagofacily.com
+statetsmedias.com
+staticcash.com
+staticocontents.com
+js.analiticash.com
+js.analiticmanager.com
+js.analiticsstat.com
+js.cashgooglestat.com
+js.cdncashcontent.com
+js.cdncashcontents.com
+js.cdncssontents.com
+js.cdngcontents.com
+js.cdngconts.com
+js.cdnjsontents.com
+js.cssdataf.com
+js.cssimghost.com
+js.googlestatanal.com
+js.googlestatanale.com
+js.imagescdns.com
+js.imgcssnet.com
+js.jsdataf.com
+js.jsdatastat.com
+js.mediasdnb.com
+js.mediasdnnet.com
+js.mediasdnnets.com
+js.mtdnsstatic.icu
+js.mtndnsstaticser.com
+js.mtndnsstaticx.com
+js.mxdnsstateces.icu
+js.mxdnsstatecs.icu
+js.nnetsmedias.com
+js.ntnpstatica.com
+js.ntpstatica.com
+js.ntsndnsstatics.com
+js.ntxndnsstatics.com
+js.statetsmedias.com
+js.staticcash.com
+js.staticocontents.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1489007692240752641
+
+cdn-cloudmedia.com
+
+# Reference: https://www.virustotal.com/gui/domain/cdn-yahoo.com/relations
+
+cdn-yahoo.com
 
 # Generic
 

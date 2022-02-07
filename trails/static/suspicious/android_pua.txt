@@ -641,3 +641,22 @@ drimg.qp8u.com
 pjwdl.qp8u.com
 pjwimg.qp8u.com
 ysimg.qp8u.com
+
+# Reference: https://www.virustotal.com/gui/file/008eab30e8c4adb3eb47103bb6903d98756b8efe4ffd4dfb5ee97e92a1f8c5db/detection
+
+http://203.107.1.1
+http://203.107.1.65
+/122285/sign_d?host=
+/sign_d?host=
+
+# Reference: https://www.virustotal.com/gui/file/1604890fe1befaf0932ee2725040d559c8f6911c7910d72cf7ced087899f48e9/detection
+
+http://106.11.61.135
+http://106.11.61.137
+http://203.107.1.33
+/amdc/mobileDispatch?appkey=
+/187654/d?host=
+
+# Reference: https://www.virustotal.com/gui/domain/omnatuor.com/relations
+
+omnatuor.com

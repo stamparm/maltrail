@@ -892,3 +892,15 @@ podathon.org/shell/
 
 /ReverseShell/
 /Basic/ReverseShell/
+
+# Reference: https://twitter.com/s1ckb017/status/1488467066583760896
+# Reference: https://www.virustotal.com/gui/file/6421f9ad22df037dbf080bb77214ee09bdd59d1a901c7522f4971b9c5c3fa06c/detection
+
+/adssp/adsf/index.jsp
+/webapps/adssp/adsf/index.jsp
+
+# Reference: https://decoded.avast.io/janneduchal/analysis-of-attack-against-national-games-of-china-systems/
+
+/runscript.lua
+/remote/miss.php
+/remote/miss1.php
