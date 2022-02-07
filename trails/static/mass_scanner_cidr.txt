@@ -1,7 +1,8 @@
-#
+# Copyright (c) 2014-2022 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
 # This list is based off mass_scanner.txt with all IPs matched against their nearest /24 network.
 # In some situations this might come in handy since less blockhole routes / firewall rules are necessary.
-#
 
 5.63.151.0/24 # scanners.labs.rapid7.com
 13.249.87.0/24 # 13.249.87.125
