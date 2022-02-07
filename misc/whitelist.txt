@@ -3264,3 +3264,9 @@ robotdreams.cc
 # Reference: https://www.virustotal.com/gui/domain/slovar.cc/relations
 
 slovar.cc
+
+# Reference: https://github.com/stamparm/maltrail/issues/19047#issuecomment-1031777893
+# Reference: https://otx.alienvault.com/indicator/domain/dr49lng3n1n2s.cloudfront.net
+# Reference: https://securitytrails.com/domain/dr49lng3n1n2s.cloudfront.net/dns
+
+dr49lng3n1n2s.cloudfront.net
