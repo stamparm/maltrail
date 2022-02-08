@@ -926,6 +926,7 @@ sophosxl.net
 
 # Generic
 
+bitlaunch.io
 mirrors.aliyun.com
 discordapp.com
 trackingmore.com
@@ -1329,6 +1330,7 @@ nf5.no-ip.com
 
 # Sh.ty ad / tracker networks introducing noise (e.g. long subdomain names)
 
+ir3.xyz
 hyperhost.icu
 bxczchdxynw.com
 lunrac.com
