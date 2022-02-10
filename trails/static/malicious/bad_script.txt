@@ -5529,6 +5529,10 @@ yourjavascript.com
 
 /cfd048dakjocvewyqfcelh9wro.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1491640333435867137
+
+/umbo3brbes95rptt6632zx89.php
+
 # Generic
 
 /js/altmanluggage.js
