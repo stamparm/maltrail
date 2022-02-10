@@ -17,3 +17,9 @@ portmapper.myonlineportal.net
 # Reference: https://www.virustotal.com/gui/domain/natfrp.cloud/relations
 
 natfrp.cloud
+
+# Reference: https://twitter.com/malwrhunterteam/status/1491742434451197958
+# Reference: https://twitter.com/malwrhunterteam/status/1491744530198110213
+
+packetriot.net
+pktriot.net
