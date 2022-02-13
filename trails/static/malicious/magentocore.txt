@@ -6413,6 +6413,7 @@ jquerymain.com
 recaptcha.cc
 rxtds.com
 seoanalitycs.com
+seostat.org
 yoursafepayments.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1488954638103547904
