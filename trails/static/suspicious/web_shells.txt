@@ -904,3 +904,7 @@ podathon.org/shell/
 /runscript.lua
 /remote/miss.php
 /remote/miss1.php
+
+# Reference: https://twitter.com/r3dbU7z/status/1493675446210281479
+
+/shell.jsp
