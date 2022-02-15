@@ -5546,6 +5546,11 @@ yourjavascript.com
 
 /843cdfe7e4a349a1899b.php
 
+# Reference: https://twitter.com/r3dbU7z/status/1493675446210281479
+
+/Evil.class
+/zzz_exploit.py
+
 # Generic
 
 /js/altmanluggage.js
