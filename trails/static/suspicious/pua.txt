@@ -2998,3 +2998,7 @@ webinternetsecurity.com
 # Reference: https://www.virustotal.com/gui/file/8350a3a65abbc7a2ecb5c8d997341289370d26d1f6ad65e9bd99f04c806baa89/detection
 
 45.12.32.61:443
+
+# Reference: https://www.virustotal.com/gui/file/236b912d1fa4009de1e4b24a8160f350d2ca4364cebb5a97f1643a944d882728/detection
+
+ponorogu.live
