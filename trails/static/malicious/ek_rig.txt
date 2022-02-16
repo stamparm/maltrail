@@ -315,6 +315,15 @@ http://45.138.24.135
 
 http://45.138.27.29
 
+# Reference: https://twitter.com/seguridadyredes/status/1493918865209843712
+# Reference: https://systemweakness.com/rig-exploitation-kit-infection-malware-traffic-analysis-70fd1b430fdc
+
+24corp-shop.com
+adultbiz.in
+ciniholland.nl
+trustandprobaterealty.com
+stand.trustandprobaterealty.com
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
