@@ -5551,6 +5551,10 @@ yourjavascript.com
 /Evil.class
 /zzz_exploit.py
 
+# Reference: https://www.virustotal.com/gui/file/285a61210326ff7f555c101bd70e19297a0eae42d1cb60a054c9b3827476920a/detection
+
+/e4c23e6e3fcec2.php
+
 # Generic
 
 /js/altmanluggage.js
