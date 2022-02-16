@@ -5559,6 +5559,20 @@ yourjavascript.com
 
 /42b4d2772d7097b3d81b.php
 
+# Reference: https://www.facebook.com/UACERT/posts/307433441415921 (Ukrainian)
+# Reference: https://www.virustotal.com/gui/file/09da4054f6a5cf6930f73c182cbc33208df771074f6a6c67ec503f4542195f83/detection
+
+87yc.xyz
+f1r.us
+fr7c.us
+i0t.us
+j0r.us
+r0m.us
+rwi2v.eu
+se13.biz
+t7s.us
+v0k.us
+
 # Generic
 
 /js/altmanluggage.js
