@@ -141,6 +141,10 @@ bfa73f60.xen.hill-family.us
 
 7a3a7f86.xen.hill-family.us
 
+# Reference: https://expel.com/blog/incident-report-spotting-socgholish-wordpress-injection/
+
+notify.aproposaussies.com
+
 # Generic
 
 /Chrome.Update.3b1362.js
