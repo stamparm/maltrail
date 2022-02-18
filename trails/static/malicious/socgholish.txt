@@ -145,6 +145,10 @@ bfa73f60.xen.hill-family.us
 
 notify.aproposaussies.com
 
+# Reference: https://twitter.com/cr4shtest/status/1494365444421128203
+
+a5b420bd.host.integrativehealthpartners.com
+
 # Generic
 
 /Chrome.Update.3b1362.js
