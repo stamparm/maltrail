@@ -116,3 +116,7 @@ blngblngs.rocks
 # Reference: https://www.virustotal.com/gui/domain/wp-theme-connect.com/detection
 
 wp-theme-connect.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1494462138298953736
+
+cartoonmines.com
