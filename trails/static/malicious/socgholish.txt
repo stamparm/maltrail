@@ -149,6 +149,14 @@ notify.aproposaussies.com
 
 a5b420bd.host.integrativehealthpartners.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1494453598087835673
+
+staticvisit.net
+20go.staticvisit.net
+43cbb37d.host.integrativehealthpartners.com
+go.staticvisit.net
+rotation.ahrealestatepr.com
+
 # Generic
 
 /Chrome.Update.3b1362.js
