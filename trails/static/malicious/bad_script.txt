@@ -5573,6 +5573,10 @@ se13.biz
 t7s.us
 v0k.us
 
+# Reference: https://twitter.com/MalwarePatrol/status/1495490708853112833
+
+/pdf2022-ikn.php
+
 # Generic
 
 /js/altmanluggage.js
