@@ -1915,6 +1915,10 @@ MALC
 SEND2
 NOT SEND2
 
+# Reference: https://twitter.com/bad_packets/status/1495837949631647744
+
+b3astmode
+
 # Misc
 
 information_schema
