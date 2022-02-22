@@ -527,3 +527,8 @@ resolve.interland.com
 # Reference: https://gist.github.com/silence-is-best/c2c2bb4bc4e11d6e45b4aa8ebeafaf97
 
 45.138.72.52:53
+
+# Reference: https://twitter.com/siimi_m_/status/1496058188570968064
+
+51.161.42.78:53
+54.39.196.31:53
