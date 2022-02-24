@@ -1919,6 +1919,12 @@ NOT SEND2
 
 b3astmode
 
+# Reference: https://twitter.com/malwrhunterteam/status/1496820565306486790
+# Reference: https://twitter.com/ni_fi_70/status/1496819041662558215
+# Reference: https://www.virustotal.com/gui/file/44b42593333387e7ed6ed8ab2ebdbbb198da0342627d31ce707b4f60e85ba63b/detection
+
+dogged9oxen
+
 # Misc
 
 information_schema
