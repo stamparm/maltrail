@@ -660,3 +660,9 @@ http://203.107.1.33
 # Reference: https://www.virustotal.com/gui/domain/omnatuor.com/relations
 
 omnatuor.com
+
+# Reference: https://www.virustotal.com/gui/file/1268cf2664a4771703bd0a72682d21b5200a33aad2b211e999682511af39eab0/detection
+
+http://39.97.9.213
+120.55.66.216:8082
+/shanghaijinshu/
