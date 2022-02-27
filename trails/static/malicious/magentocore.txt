@@ -6498,6 +6498,10 @@ cdn-cloudmedia.com
 
 cdn-yahoo.com
 
+# Reference: https://twitter.com/felixaime/status/1498055426230738944
+
+tagmanagerstatic.com
+
 # Generic
 
 /assets/lfg.js
