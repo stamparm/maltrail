@@ -3330,3 +3330,7 @@ phatbois.biz
 # Reference: http://softether.net/
 
 softether.net
+
+# Reference: https://www.virustotal.com/gui/domain/ezpz.work/relations
+
+ezpz.work
