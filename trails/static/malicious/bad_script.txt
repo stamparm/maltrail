@@ -5592,6 +5592,10 @@ v0k.us
 
 /sdfghj654hgfkc/htaccess.php
 
+# Reference: https://www.virustotal.com/gui/file/fd65e992dfedf627104a5ca05e77dca129184b4e4a91b03079278f60649b29a9/detection
+
+/BADmojo.ps1
+
 # Generic
 
 /js/altmanluggage.js
