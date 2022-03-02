@@ -5588,6 +5588,10 @@ v0k.us
 
 /5n8oaw2so2.js
 
+# Reference: https://twitter.com/TeamDreier/status/1498960798458298373
+
+/sdfghj654hgfkc/htaccess.php
+
 # Generic
 
 /js/altmanluggage.js
