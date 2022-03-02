@@ -157,6 +157,15 @@ staticvisit.net
 go.staticvisit.net
 rotation.ahrealestatepr.com
 
+# Reference: https://twitter.com/bryceabdo/status/1499048636319162371
+# Reference: https://www.virustotal.com/gui/ip-address/91.219.236.192/relations
+
+12cff833.widget.windsorbongvape.com
+1dd355b6.widget.windsorbongvape.com
+48bb0f7a.widget.windsorbongvape.com
+b94c3406.widget.windsorbongvape.com
+widget.windsorbongvape.com
+
 # Generic
 
 /Chrome.Update.3b1362.js
