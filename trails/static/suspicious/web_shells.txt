@@ -910,11 +910,14 @@ podathon.org/shell/
 /shell.jsp
 
 # Reference: https://twitter.com/unmaskparasites/status/1499593717845348354
+# Reference: https://www.virustotal.com/gui/file/b70e6b9745f425902f337d424a8a18f4f050085e12cf282d5089699f6c67b11d/detection
 
 /_@files/php/FoxWSO-full.txt
 /files/olux-shell.txt
+/files/xleet-shell.txt
 /php/FoxEx-shell.txt
 /FoxEx-shell.txt
 /FoxWSO-full.txt
 /olux-shell.txt
+/xleet-shell.txt
 /akhmhcij/
