@@ -908,3 +908,13 @@ podathon.org/shell/
 # Reference: https://twitter.com/r3dbU7z/status/1493675446210281479
 
 /shell.jsp
+
+# Reference: https://twitter.com/unmaskparasites/status/1499593717845348354
+
+/_@files/php/FoxWSO-full.txt
+/files/olux-shell.txt
+/php/FoxEx-shell.txt
+/FoxEx-shell.txt
+/FoxWSO-full.txt
+/olux-shell.txt
+/akhmhcij/
