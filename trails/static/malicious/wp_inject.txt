@@ -120,3 +120,32 @@ wp-theme-connect.com
 # Reference: https://twitter.com/unmaskparasites/status/1494462138298953736
 
 cartoonmines.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1499593717845348354
+# Reference: https://qna.habr.com/q/1058482 (Russian)
+
+anonymousfox.co
+anonymousfox.io
+anonymousfox.mx
+anonymousfox.to
+
+# Reference: https://twitter.com/unmaskparasites/status/1499536320896507906
+
+classicpartnerships.com
+specialadves.com
+storerightdesicion.com
+ads.specialadves.com
+click.specialadves.com
+links.specialadves.com
+refer.specialadves.com
+blame.storerightdesicion.com
+brr.storerightdesicion.com
+chess.storerightdesicion.com
+glove.storerightdesicion.com
+lin.storerightdesicion.com
+line.storerightdesicion.com
+store.storerightdesicion.com
+event.classicpartnerships.com
+events.classicpartnerships.com
+scripts.classicpartnerships.com
+simple.classicpartnerships.com
