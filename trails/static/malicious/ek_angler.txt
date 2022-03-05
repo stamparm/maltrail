@@ -90,3 +90,7 @@ ayh2m57ruxjtwyd5.deballmoneypool.com
 209.133.203.204
 46.30.212.119
 
+# Reference: https://www.cisa.gov/uscert/ncas/alerts/aa22-055a
+# Reference: https://otx.alienvault.com/pulse/621cf48c69b2caf2c2f4bb3e/
+
+http://185.45.192.228
