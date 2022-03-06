@@ -84,3 +84,13 @@ http://85.93.2.78
 64.52.111.48:8080
 85.93.2.78:8080
 ruwejo.com
+
+# Reference: https://twitter.com/Max_Mal_/status/1500447223217278980
+# Reference: https://www.virustotal.com/gui/file/7f0deab21a3773295319e7a0afca1bea792943de0041e22523eb0d61a1c155e2/detection
+# Reference: https://www.virustotal.com/gui/file/d8241e046cb9efcfa7ce733249d580eacff996d8669adbe71019eedafb696a55/detection
+# Reference: https://www.virustotal.com/gui/file/2190a7d8d7eafd4af56b01d9a828ab2dc553a804ccda4c291dce51ce01da81f8/detection
+# Reference: https://www.virustotal.com/gui/file/1f95397c4634f3348f3001a02eab269148f4c08271c2e2461905a4359f7c4761/detection
+# Reference: https://www.virustotal.com/gui/file/08137096b85a3a2611249bb57ba9ace4e8efc9ba28cfddd8557edc3e11e9690c/detection
+
+176.113.115.107:8888
+193.27.228.127:8888
