@@ -6502,6 +6502,10 @@ cdn-yahoo.com
 
 tagmanagerstatic.com
 
+# Reference: https://twitter.com/felixaime/status/1500812201262829568
+
+633786e01e.nxcli.net
+
 # Generic
 
 /assets/lfg.js
