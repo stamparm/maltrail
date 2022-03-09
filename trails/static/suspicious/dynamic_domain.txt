@@ -3334,3 +3334,9 @@ softether.net
 # Reference: https://www.virustotal.com/gui/domain/ezpz.work/relations
 
 ezpz.work
+
+# Reference: https://alviy.com/
+
+4nmn.com
+didns.ru
+dynnamn.ru
