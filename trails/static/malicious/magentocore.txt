@@ -6506,6 +6506,10 @@ tagmanagerstatic.com
 
 633786e01e.nxcli.net
 
+# Reference: https://twitter.com/sansecio/status/1502322526709551104
+
+stylesfound.com
+
 # Generic
 
 /assets/lfg.js
