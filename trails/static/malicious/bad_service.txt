@@ -417,3 +417,7 @@ toqn23mc.com
 # Reference: https://twitter.com/rootprivilege/status/1422185413842595850
 
 restore-metamask.com
+
+# Reference: https://twitter.com/1ZRR4H/status/1502374826010415107
+
+cardersempire.ru
