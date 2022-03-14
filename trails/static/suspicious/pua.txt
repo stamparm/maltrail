@@ -3006,3 +3006,12 @@ ponorogu.live
 # Reference: https://www.virustotal.com/gui/file/05589626bcc897fc77b84ce6ec20da7f629ae95288d45847f16313faad808089/detection
 
 service-domain.xyz
+
+# Reference: https://www.virustotal.com/gui/file/01477f9d3b2f708d29f91132b4d17ee53bfb7eb6b57379745f66246d26610062/detection
+
+testrequest.info
+api.testrequest.info
+api2.testrequest.info
+api3.testrequest.info
+api4.testrequest.info
+api5.testrequest.info
