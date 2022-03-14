@@ -3002,3 +3002,7 @@ webinternetsecurity.com
 # Reference: https://www.virustotal.com/gui/file/236b912d1fa4009de1e4b24a8160f350d2ca4364cebb5a97f1643a944d882728/detection
 
 ponorogu.live
+
+# Reference: https://www.virustotal.com/gui/file/05589626bcc897fc77b84ce6ec20da7f629ae95288d45847f16313faad808089/detection
+
+service-domain.xyz
