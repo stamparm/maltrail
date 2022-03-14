@@ -337,6 +337,14 @@ vscode.workingfeedback.cloud
 
 /panel/status.php
 
+# Reference: https://blog.cyble.com/2022/03/10/aberebot-returns-as-escobar/
+
+/uploadCall.php?botid=
+/uploadInbox.php?botid=
+/uploadKeylogs.php?botid=
+/uploadLog.php?botid=
+/uploadVNC.php?botid=
+
 # Generic
 
 /admin_123/auth.php
