@@ -3015,3 +3015,9 @@ api2.testrequest.info
 api3.testrequest.info
 api4.testrequest.info
 api5.testrequest.info
+
+# Reference: https://twitter.com/benkow_/status/1503342565407526914
+# Reference: https://www.virustotal.com/gui/file/9b89bfe3eaf508cd460eae532abdbb4d73272640265c1c0408da4bd9ddbb142f/detection
+
+http://151.248.116.199
+/remote_packer_data
