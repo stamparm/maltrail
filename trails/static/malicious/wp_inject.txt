@@ -149,3 +149,7 @@ event.classicpartnerships.com
 events.classicpartnerships.com
 scripts.classicpartnerships.com
 simple.classicpartnerships.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1503550611756789760
+
+32868.port0.org
