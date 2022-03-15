@@ -3021,3 +3021,9 @@ api5.testrequest.info
 
 http://151.248.116.199
 /remote_packer_data
+
+# Reference: https://www.virustotal.com/gui/file/67b08b9e275023ccad3f6648a4567cf5fba0d58ab68ecbffaee053950a5cc29b/detection
+
+sotted.ru
+kolos.sotted.ru
+widespread.vincula.ru
