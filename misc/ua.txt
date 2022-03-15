@@ -1925,6 +1925,10 @@ b3astmode
 
 dogged9oxen
 
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-March/030607.html
+
+HTTP-Test-Program
+
 # Misc
 
 information_schema
