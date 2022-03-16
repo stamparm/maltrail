@@ -5442,3 +5442,7 @@ smrtp.ru
 # Reference: https://www.virustotal.com/gui/domain/nmb.bet/relations
 
 nmb.bet
+
+# Reference: https://www.virustotal.com/gui/domain/daj8.me/relations
+
+daj8.me
