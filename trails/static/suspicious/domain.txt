@@ -5446,3 +5446,11 @@ nmb.bet
 # Reference: https://www.virustotal.com/gui/domain/daj8.me/relations
 
 daj8.me
+
+# Reference: https://www.virustotal.com/gui/domain/11i.me/relations
+
+11i.me
+
+# Reference: https://www.virustotal.com/gui/domain/fbi.am/relations
+
+fbi.am
