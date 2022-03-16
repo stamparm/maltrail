@@ -1929,6 +1929,10 @@ dogged9oxen
 
 HTTP-Test-Program
 
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-March/030608.html
+
+Y29va2llcw==
+
 # Misc
 
 information_schema
