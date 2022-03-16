@@ -1933,6 +1933,16 @@ HTTP-Test-Program
 
 Y29va2llcw==
 
+# Reference: https://www.virustotal.com/gui/file/04e2ec026fde21c7bb9541fcae129ff6f2ab99e3fc9c169039ab973c88525f27/detection
+
+MyApp
+
+# Reference: https://twitter.com/James_inthe_box/status/1504194638885711872
+# Reference: https://app.any.run/tasks/30ed2dfa-466c-4f70-822e-7ddd5390d54f/
+# Reference: https://www.virustotal.com/gui/file/15d7342be36d20ce615647fac9c2277f46b6d19aa54f3cf3d99e49d6ce0486d0/detection
+
+Loki/1.0
+
 # Misc
 
 information_schema
