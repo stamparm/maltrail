@@ -153,3 +153,8 @@ simple.classicpartnerships.com
 # Reference: https://twitter.com/unmaskparasites/status/1503550611756789760
 
 32868.port0.org
+
+# Reference: https://www.wordfence.com/blog/2022/03/increase-in-malware-sightings-on-godaddy-managed-hosting/
+
+http://166.62.110.72
+t-fish-ka.ru
