@@ -1943,6 +1943,10 @@ MyApp
 
 Loki/1.0
 
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-March/030610.html
+
+hubot
+
 # Misc
 
 information_schema
