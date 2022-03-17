@@ -1947,6 +1947,10 @@ Loki/1.0
 
 hubot
 
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-February/030596.html
+
+l9explore
+
 # Misc
 
 information_schema
