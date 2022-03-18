@@ -1963,6 +1963,12 @@ UltimateHackerzTeam
 Mozilla/0.xx
 Mozilla/4.0 competible
 
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-January/030557.html
+
+dBrowser
+CallGetResponse
+dBrowser CallGetResponse
+
 # Misc
 
 information_schema
