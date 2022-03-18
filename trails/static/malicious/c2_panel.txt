@@ -432,6 +432,14 @@ vscode.workingfeedback.cloud
 /panelphp/gate.php
 /panelphp/index.php
 /panelphp/login.php
+/PanelSoft/admin.php
+/PanelSoft/api.php
+/PanelSoft/auth.php
+/PanelSoft/gate.php
+/PanelSoft/index.php
+/PanelSoft/login.php
+/PanelSoft/page.php
+/PanelSoft/panel.php
 /paneltwotwo/
 /panl/admin.php
 /panl/auth.php
