@@ -1951,6 +1951,18 @@ hubot
 
 l9explore
 
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-March/030611.html
+
+Alpha Processor
+BOTPA5BG8S
+competible
+phonesuite
+SALLAMAILZILLA
+UltimateHackerzTeam
+\AMicrosoft Internet Updater\Z
+Mozilla/0.xx
+Mozilla/4.0 competible
+
 # Misc
 
 information_schema
