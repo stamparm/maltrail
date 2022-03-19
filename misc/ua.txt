@@ -1969,6 +1969,10 @@ dBrowser
 CallGetResponse
 dBrowser CallGetResponse
 
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-March/030612.html
+
+CobaltStrike
+
 # Misc
 
 information_schema
