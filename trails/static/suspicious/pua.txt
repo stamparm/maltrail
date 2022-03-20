@@ -3031,3 +3031,7 @@ widespread.vincula.ru
 # Reference: https://www.virustotal.com/gui/file/6ba896b28bf3f63e4a733635ea9fea8f7c3cd01d67fa3c0469e7f41d8bb463a2/detection
 
 176.57.217.197:3306
+
+# Reference: https://www.virustotal.com/gui/file/520784c0445e48419956cfe9dbd4b8cc3b223609d0f89b3d8c2edfc522120e98/detection
+
+tunmi13.ddns.net
