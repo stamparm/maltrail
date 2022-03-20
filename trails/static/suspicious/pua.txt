@@ -3027,3 +3027,7 @@ http://151.248.116.199
 sotted.ru
 kolos.sotted.ru
 widespread.vincula.ru
+
+# Reference: https://www.virustotal.com/gui/file/6ba896b28bf3f63e4a733635ea9fea8f7c3cd01d67fa3c0469e7f41d8bb463a2/detection
+
+176.57.217.197:3306
