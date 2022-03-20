@@ -5622,6 +5622,11 @@ v0k.us
 
 /s37dr6df9ubml9nz87reecfl.php
 
+# Reference: https://twitter.com/BushidoToken/status/1505639071443570699
+# Reference: https://otx.alienvault.com/pulse/6237878e4937d1bad108047f/
+
+/aaa.ps1
+
 # Generic
 
 /js/altmanluggage.js
