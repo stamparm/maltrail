@@ -381,3 +381,12 @@ ip6.seeip.org
 my-ip.io
 api.my-ip.io
 api4.my-ip.io
+
+# Reference: https://www.virustotal.com/gui/domain/myip.wtf/relations
+
+myip.wtf
+ipv4.myip.wtf
+json.myip.wtf
+static.myip.wtf
+text.myip.wtf
+xml.myip.wtf
