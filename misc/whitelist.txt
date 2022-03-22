@@ -3272,3 +3272,7 @@ slovar.cc
 # Reference: https://securitytrails.com/domain/dr49lng3n1n2s.cloudfront.net/dns
 
 dr49lng3n1n2s.cloudfront.net
+
+# Reference: https://github.com/stamparm/maltrail/issues/19055
+
+awsstatic.com
