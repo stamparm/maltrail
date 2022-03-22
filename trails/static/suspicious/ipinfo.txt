@@ -50,6 +50,7 @@ ip2location.com
 ip2nation.com
 ip4.me
 ip4.telize.com
+ip6.telize.com
 ip-addr.es
 ip-address.cc
 ipaddresscheck.com
@@ -180,6 +181,7 @@ show-my-ip.de
 showmyip.gr
 showmyipnow.com
 smart-ip.net
+telize.com
 tell-my-ip.com
 tracemyip.com
 tracemyip.org
