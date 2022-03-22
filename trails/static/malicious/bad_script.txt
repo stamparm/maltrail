@@ -5627,6 +5627,10 @@ v0k.us
 
 /aaa.ps1
 
+# Reference: https://twitter.com/MalwarePatrol/status/1506286843154898954
+
+/8t0wkvjov3adezb83hjb45em.php
+
 # Generic
 
 /js/altmanluggage.js
