@@ -49,6 +49,7 @@ ip-1.com
 ip2location.com
 ip2nation.com
 ip4.me
+ip4.telize.com
 ip-addr.es
 ip-address.cc
 ipaddresscheck.com
