@@ -3039,3 +3039,7 @@ tunmi13.ddns.net
 # Reference: https://www.virustotal.com/gui/domain/gamesense.click/relations
 
 gamesense.click
+
+# Reference: https://www.virustotal.com/gui/domain/cometrbx.xyz/relations
+
+cometrbx.xyz
