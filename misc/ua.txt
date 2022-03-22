@@ -1979,6 +1979,10 @@ CobaltStrike
 
 aimxxhwpcc
 
+# Reference: https://twitter.com/malwareforme/status/1428418504823353350
+
+Virus
+
 # Misc
 
 information_schema
