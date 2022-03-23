@@ -122,10 +122,12 @@ wp-theme-connect.com
 cartoonmines.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1499593717845348354
+# Reference: https://twitter.com/unmaskparasites/status/1506671930425823234
 # Reference: https://qna.habr.com/q/1058482 (Russian)
 
 anonymousfox.co
 anonymousfox.io
+anonymousfox.is
 anonymousfox.mx
 anonymousfox.to
 
