@@ -129,6 +129,9 @@ cartoonmines.com
 # Reference: https://www.virustotal.com/gui/ip-address/188.213.5.197/relations
 # Reference: https://www.virustotal.com/gui/ip-address/74.91.31.50/relations
 # Reference: https://www.virustotal.com/gui/domain/firstok.xyz/relations
+# Reference: https://www.virustotal.com/gui/domain/officialservicejp.com/relations
+# Reference: https://www.virustotal.com/gui/domain/runpenguin.online/relations
+# Reference: https://www.virustotal.com/gui/domain/walkdolphin.online/relations
 # Reference: https://qna.habr.com/q/1058482 (Russian)
 
 anonymousfox.co
@@ -142,6 +145,9 @@ firstok.xyz
 hahaha666.xyz
 ok2345678.xyz
 turnedpro.xyz
+officialservicejp.com
+runpenguin.online
+walkdolphin.online
 api.firstguide.xyz
 hello.firstguide.xyz
 hello.hahaha666.xyz
@@ -183,6 +189,58 @@ seo7.turnedpro.xyz
 seo8.turnedpro.xyz
 seo9.turnedpro.xyz
 track.turnedpro.xyz
+seo45.officialservicejp.com
+seo74.officialservicejp.com
+seo802-8.officialservicejp.com
+seo808-4.officialservicejp.com
+seo824-2.officialservicejp.com
+seo825-1.officialservicejp.com
+seo826-1.officialservicejp.com
+seo86.officialservicejp.com
+seob215.officialservicejp.com
+seoc226.officialservicejp.com
+seo104.runpenguin.online
+seo35.runpenguin.online
+seo54.runpenguin.online
+seo602-3.runpenguin.online
+seo801-4.runpenguin.online
+seo801-5.runpenguin.online
+seo802-2.runpenguin.online
+seo802-3.runpenguin.online
+seo804-4.runpenguin.online
+seo806-4.runpenguin.online
+seo808-3.runpenguin.online
+seo809-4.runpenguin.online
+seo810-2.runpenguin.online
+seo810-5.runpenguin.online
+seo811-3.runpenguin.online
+seo812-5.runpenguin.online
+seo815-3.runpenguin.online
+seo815-4.runpenguin.online
+seo817-2.runpenguin.online
+seo818-2.runpenguin.online
+seo819-2.runpenguin.online
+seo819-3.runpenguin.online
+seo820-2.runpenguin.online
+seo821-1.runpenguin.online
+seo821-3.runpenguin.online
+seo822-1.runpenguin.online
+seo824-1.runpenguin.online
+seo824-3.runpenguin.online
+seo84.runpenguin.online
+seoa224.runpenguin.online
+seob244.runpenguin.online
+seob255.runpenguin.online
+seoc215.runpenguin.online
+seoc224.runpenguin.online
+seoc244.runpenguin.online
+seoc245.runpenguin.online
+test.runpenguin.online
+seo25.walkdolphin.online
+seo805-4.walkdolphin.online
+seo819-1.walkdolphin.online
+seo820-1.walkdolphin.online
+seo94.walkdolphin.online
 /seeolkxa/
 
 # Reference: https://twitter.com/unmaskparasites/status/1499536320896507906
