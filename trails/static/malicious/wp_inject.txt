@@ -125,6 +125,7 @@ cartoonmines.com
 # Reference: https://twitter.com/unmaskparasites/status/1506671930425823234
 # Reference: https://twitter.com/unmaskparasites/status/1506728492016185348
 # Reference: https://twitter.com/unmaskparasites/status/1507038308789936150
+# Reference: https://www.virustotal.com/gui/domain/turnedpro.xyz/relations
 # Reference: https://www.virustotal.com/gui/ip-address/188.213.5.197/relations
 # Reference: https://www.virustotal.com/gui/ip-address/74.91.31.50/relations
 # Reference: https://qna.habr.com/q/1058482 (Russian)
@@ -147,6 +148,17 @@ a.turnedpro.xyz
 api.turnedpro.xyz
 hello.turnedpro.xyz
 mn.turnedpro.xyz
+seo1.turnedpro.xyz
+seo10.turnedpro.xyz
+seo2.turnedpro.xyz
+seo3.turnedpro.xyz
+seo4.turnedpro.xyz
+seo5.turnedpro.xyz
+seo6.turnedpro.xyz
+seo7.turnedpro.xyz
+seo8.turnedpro.xyz
+seo9.turnedpro.xyz
+track.turnedpro.xyz
 /seeolkxa/
 
 # Reference: https://twitter.com/unmaskparasites/status/1499536320896507906
