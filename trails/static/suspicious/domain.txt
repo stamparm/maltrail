@@ -5454,3 +5454,7 @@ daj8.me
 # Reference: https://www.virustotal.com/gui/domain/fbi.am/relations
 
 fbi.am
+
+# Reference: https://www.virustotal.com/gui/domain/unaux.com/relations
+
+unaux.com
