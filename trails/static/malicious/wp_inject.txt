@@ -128,6 +128,7 @@ cartoonmines.com
 # Reference: https://www.virustotal.com/gui/domain/turnedpro.xyz/relations
 # Reference: https://www.virustotal.com/gui/ip-address/188.213.5.197/relations
 # Reference: https://www.virustotal.com/gui/ip-address/74.91.31.50/relations
+# Reference: https://www.virustotal.com/gui/domain/firstok.xyz/relations
 # Reference: https://qna.habr.com/q/1058482 (Russian)
 
 anonymousfox.co
@@ -137,6 +138,7 @@ anonymousfox.mx
 anonymousfox.to
 golang666.xyz
 firstguide.xyz
+firstok.xyz
 hahaha666.xyz
 ok2345678.xyz
 turnedpro.xyz
@@ -144,6 +146,28 @@ api.firstguide.xyz
 hello.firstguide.xyz
 hello.hahaha666.xyz
 hello.ok2345678.xyz
+seo23.firstok.xyz
+seo30-1.firstok.xyz
+seo30-2.firstok.xyz
+seo32.firstok.xyz
+seo35-1.firstok.xyz
+seo35-2.firstok.xyz
+seo50-1.firstok.xyz
+seo50-2.firstok.xyz
+seo50-3.firstok.xyz
+seo601-1.firstok.xyz
+seo601-2.firstok.xyz
+seo801-1.firstok.xyz
+seo802-1.firstok.xyz
+seo804-2.firstok.xyz
+seo805-1.firstok.xyz
+seo806-2.firstok.xyz
+seo808-1.firstok.xyz
+seo809-1.firstok.xyz
+seo810-1.firstok.xyz
+seo811-1.firstok.xyz
+seo82.firstok.xyz
+seo92.firstok.xyz
 a.turnedpro.xyz
 api.turnedpro.xyz
 hello.turnedpro.xyz
