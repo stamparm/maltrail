@@ -124,6 +124,8 @@ cartoonmines.com
 # Reference: https://twitter.com/unmaskparasites/status/1499593717845348354
 # Reference: https://twitter.com/unmaskparasites/status/1506671930425823234
 # Reference: https://twitter.com/unmaskparasites/status/1506728492016185348
+# Reference: https://twitter.com/unmaskparasites/status/1507038308789936150
+# Reference: https://www.virustotal.com/gui/ip-address/188.213.5.197/relations
 # Reference: https://qna.habr.com/q/1058482 (Russian)
 
 anonymousfox.co
@@ -132,7 +134,12 @@ anonymousfox.is
 anonymousfox.mx
 anonymousfox.to
 golang666.xyz
+firstguide.xyz
 hahaha666.xyz
+ok2345678.xyz
+hello.firstguide.xyz
+hello.hahaha666.xyz
+hello.ok2345678.xyz
 /seeolkxa/
 
 # Reference: https://twitter.com/unmaskparasites/status/1499536320896507906
