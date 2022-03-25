@@ -4618,3 +4618,9 @@ bustbuy.com
 # Reference: https://www.virustotal.com/gui/ip-address/52.128.23.153/relations
 
 52.128.23.153
+
+# Reference: https://www.virustotal.com/gui/ip-address/3.64.163.50/relations
+# Reference: https://otx.alienvault.com/indicator/ip/3.64.163.50
+# Reference: https://securitytrails.com/list/ip/3.64.163.50
+
+3.64.163.50
