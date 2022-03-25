@@ -4614,3 +4614,24 @@ bustbuy.com
 # SAV
 
 52.15.160.167
+
+# {buy, sell, sell2}.internettraffic.com
+# Reference: https://www.virustotal.com/gui/domain/buy.internettraffic.com/relations
+# Reference: https://www.virustotal.com/gui/domain/sell.internettraffic.com/relations
+# Reference: https://www.virustotal.com/gui/domain/sell2.internettraffic.com/relations
+# Reference: https://otx.alienvault.com/indicator/hostname/buy.internettraffic.com
+# Reference: https://otx.alienvault.com/indicator/hostname/sell.internettraffic.com
+# Reference: https://otx.alienvault.com/indicator/hostname/sell2.internettraffic.com
+# Reference: https://www.virustotal.com/gui/ip-address/54.152.30.238/relations
+# Reference: https://www.virustotal.com/gui/ip-address/52.128.23.153/relations
+# Reference: https://www.virustotal.com/gui/ip-address/52.89.18.51/relations
+# Reference: https://www.virustotal.com/gui/ip-address/34.247.146.68/relations
+# Reference: https://www.virustotal.com/gui/ip-address/18.217.16.210/relations
+# Reference: https://securitytrails.com/domain/buy.internettraffic.com/history/a
+# Reference: https://securitytrails.com/domain/sell2.internettraffic.com/history/a
+
+54.152.30.238
+52.128.23.153
+52.89.18.51
+34.247.146.68
+18.217.16.210
