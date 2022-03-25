@@ -926,6 +926,7 @@ sophosxl.net
 
 # Generic
 
+token.im
 cainiao.com
 qingting.fm
 bbg.az
