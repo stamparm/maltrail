@@ -4803,7 +4803,9 @@ yttompthree.com
 /za3ma_za3ma.php
 
 # Reference: https://www.virustotal.com/gui/file/1be388f74d98754a616ec3265cf9dc7cf94383759fc0ed88eeff1267ad4efa16/detection
+# Reference: https://www.virustotal.com/gui/file/049397828f8ba90b6e4dcb90daa3d9292c5e77454d5fd63b59fa320e179154e2/detection
 
+/zxcv.ps1
 /zxcvb.ps1
 
 # Reference: https://twitter.com/JCyberSec_/status/1392113003512963074
