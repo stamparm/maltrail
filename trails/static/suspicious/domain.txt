@@ -5462,3 +5462,7 @@ unaux.com
 # Reference: https://www.virustotal.com/gui/domain/asselst.com/relations
 
 asselst.com
+
+# Reference: https://www.virustotal.com/gui/domain/ato3.fun/relations
+
+ato3.fun
