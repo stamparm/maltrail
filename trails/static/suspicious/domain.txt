@@ -5466,3 +5466,7 @@ asselst.com
 # Reference: https://www.virustotal.com/gui/domain/ato3.fun/relations
 
 ato3.fun
+
+# Reference: https://www.virustotal.com/gui/domain/icp.cool/relations
+
+icp.cool
