@@ -4636,3 +4636,7 @@ bustbuy.com
 # Reference: https://www.virustotal.com/gui/ip-address/46.8.8.100/relations
 
 46.8.8.100
+
+# Reference: https://www.virustotal.com/gui/ip-address/50.28.32.8/relations
+
+50.28.32.8
