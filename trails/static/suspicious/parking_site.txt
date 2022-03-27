@@ -4640,3 +4640,8 @@ bustbuy.com
 # Reference: https://www.virustotal.com/gui/ip-address/50.28.32.8/relations
 
 50.28.32.8
+
+# Reference: https://otx.alienvault.com/indicator/ip/69.16.230.42
+# Reference: https://www.virustotal.com/gui/ip-address/69.16.230.42/relations
+
+69.16.230.42
