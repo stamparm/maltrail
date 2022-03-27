@@ -1983,6 +1983,11 @@ aimxxhwpcc
 
 Virus
 
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2021-December/030510.html
+
+noandk
+ve3xtest
+
 # Misc
 
 information_schema
