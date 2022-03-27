@@ -1479,6 +1479,7 @@ payor.net
 peanutbox.com
 picp.net
 qicp.net
+qicp.vip
 sunlogin.cn
 sunlogin.net
 ticp.net
