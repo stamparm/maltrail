@@ -1988,6 +1988,12 @@ Virus
 noandk
 ve3xtest
 
+# Reference: https://www.proofpoint.com/es/daily-ruleset-update-summary-2015-01-22
+
+BoBrowser
+LogEvents
+VersionDwl
+
 # Misc
 
 information_schema
