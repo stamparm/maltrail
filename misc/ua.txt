@@ -1996,6 +1996,10 @@ LogEvents
 VersionDwl
 wb v1\.6\.4
 
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2021-November/030487.html
+
+OldAssBrowser
+
 # Misc
 
 information_schema
