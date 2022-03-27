@@ -3246,8 +3246,9 @@ ipnoise.undo.it
 ipnoise.now.im
 
 # Reference: https://github.com/stamparm/maltrail/issues/13674
+# Reference: https://github.com/stamparm/maltrail/pull/19062#issuecomment-1079982016
 
-wordbot.xyz
+# wordbot.xyz
 
 # Reference: https://www.virustotal.com/gui/domain/siem.su/relations
 
