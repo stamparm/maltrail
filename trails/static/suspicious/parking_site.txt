@@ -4650,3 +4650,8 @@ bustbuy.com
 # Reference: https://www.virustotal.com/gui/ip-address/75.2.37.224/relations
 
 75.2.37.224
+
+# Reference: https://otx.alienvault.com/indicator/ip/69.16.231.57
+# Reference: https://www.virustotal.com/gui/ip-address/69.16.231.57/relations
+
+69.16.231.57
