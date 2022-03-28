@@ -2000,6 +2000,10 @@ wb v1\.6\.4
 
 OldAssBrowser
 
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2021-November/030508.html
+
+test-upload
+
 # Misc
 
 information_schema
