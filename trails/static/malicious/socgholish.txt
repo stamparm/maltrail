@@ -166,6 +166,10 @@ rotation.ahrealestatepr.com
 b94c3406.widget.windsorbongvape.com
 widget.windsorbongvape.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1508575992041771013
+
+design.lawrencetravelco.com
+
 # Generic
 
 /Chrome.Update.3b1362.js
