@@ -920,3 +920,7 @@ pool.ppxxmr.com
 poolchange.ppxxmr.com
 ppxvip1.ppxxmr.com
 xmr.ppxxmr.com
+
+# Reference: https://www.virustotal.com/gui/file/a38b8f6948cd6c0f0b275a4fd7ea0df9ac4c5c3afd5800f8cd609aa12f2eebe9/detection
+
+51.89.96.41:2222
