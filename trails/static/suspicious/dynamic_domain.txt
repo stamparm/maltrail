@@ -3341,3 +3341,7 @@ ezpz.work
 4nmn.com
 didns.ru
 dynnamn.ru
+
+# Reference: https://www.virustotal.com/gui/domain/ticp.vip/relations
+
+ticp.vip
