@@ -5641,6 +5641,10 @@ v0k.us
 
 /index.e943403db0.js
 
+# Reference: https://twitter.com/MalwarePatrol/status/1509986222109872137
+
+/71lhsrgw1dqbsq8fnhr7fvw1.php
+
 # Generic
 
 /js/altmanluggage.js
