@@ -153,3 +153,8 @@ mnwj0t.g7e6.com
 q1wk14.g7e6.com
 wvzb9b.xjwi5.com
 /Scavenger/ReceivedUpdate
+
+# Reference: https://www.virustotal.com/gui/file/0067f443fe581dec35b8f828a08eb68301ee86dd51efd72af27cf66fda377132/detection
+
+profitablenessurvey.top
+ssp.swe.xyz
