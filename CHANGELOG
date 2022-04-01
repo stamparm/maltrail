@@ -14,7 +14,14 @@
 
 
 
-- Version 0.43 -> 0.44 (Upcoming release)
+- Version 0.44 -> 0.45 (Upcoming release)
+
+
+
+- Version 0.43 -> 0.44 (01 Apr 2022)
+
+[=] "potential remote code execution" heuristic is improved
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
