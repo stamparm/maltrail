@@ -2004,6 +2004,10 @@ OldAssBrowser
 
 test-upload
 
+# Reference: http://lists.emergingthreats.net/pipermail/emerging-sigs/2022-April/030626.html
+
+mozilla_horizon
+
 # Misc
 
 information_schema
