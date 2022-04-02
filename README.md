@@ -148,7 +148,7 @@ sudo zypper install gcc gcc-c++ git libpcap-devel python3-devel python3-pip proc
 sudo pip3 install pcapy-ng
 git clone --depth 1 https://github.com/stamparm/maltrail.git
 cd maltrail
-sudo python sensor.py
+sudo python3 sensor.py
 ```
 
 - For **Docker** environment instructions can be found [here](docker).
@@ -515,18 +515,18 @@ Nevertheless, administrator(s) should invest some extra time and check (with oth
     * `crontab -e  # autostart server & periodic update`
 
     ```
-    */5 * * * * if [ -n "$(ps -ef | grep -v grep | grep 'server.py')" ]; then : ; else python /opt/maltrail/server.py -c /etc/maltrail/maltrail.conf; fi
+    */5 * * * * if [ -n "$(ps -ef | grep -v grep | grep 'server.py')" ]; then : ; else python3 /opt/maltrail/server.py -c /etc/maltrail/maltrail.conf; fi
     0 1 * * * cd /opt/maltrail && git pull
     ```
 
     * `sudo crontab -e  # autostart sensor & periodic restart`
 
     ```
-    */1 * * * * if [ -n "$(ps -ef | grep -v grep | grep 'sensor.py')" ]; then : ; else python /opt/maltrail/sensor.py -c /etc/maltrail/maltrail.conf; fi
+    */1 * * * * if [ -n "$(ps -ef | grep -v grep | grep 'sensor.py')" ]; then : ; else python3 /opt/maltrail/sensor.py -c /etc/maltrail/maltrail.conf; fi
     2 1 * * * /usr/bin/pkill -f maltrail
     ```
 
-4. Enable as systemd service:
+4. Enable as systemd service (Linux only):
 
     ```sh
     sudo cp /opt/maltrail/maltrail.service /usr/lib/systemd/system/maltrail.service
