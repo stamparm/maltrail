@@ -421,3 +421,8 @@ restore-metamask.com
 # Reference: https://twitter.com/1ZRR4H/status/1502374826010415107
 
 cardersempire.ru
+
+# Reference: https://www.virustotal.com/gui/domain/ratkings.net/relations
+
+ratkings.net
+blog.ratkings.net
