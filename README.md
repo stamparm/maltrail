@@ -144,8 +144,8 @@ sudo python3 sensor.py
 - For **SUSE/openSUSE**
 
 ```sh
-sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip procps schedtool
-sudo pip2 install pcapy-ng
+sudo zypper install gcc gcc-c++ git libpcap-devel python3-devel python3-pip procps schedtool
+sudo pip3 install pcapy-ng
 git clone --depth 1 https://github.com/stamparm/maltrail.git
 cd maltrail
 sudo python sensor.py
@@ -493,8 +493,8 @@ Nevertheless, administrator(s) should invest some extra time and check (with oth
 - On **SUSE/openSUSE**
 
    ```sh
-   sudo zypper install gcc gcc-c++ git libpcap-devel python-devel python2-pip procps schedtool
-   sudo pip2 install pcapy-ng
+   sudo zypper install gcc gcc-c++ git libpcap-devel python3-devel python3-pip procps schedtool
+   sudo pip3 install pcapy-ng
    cd /tmp
    git clone --depth 1 https://github.com/stamparm/maltrail.git
    sudo mv /tmp/maltrail /opt
