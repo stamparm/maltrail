@@ -922,8 +922,10 @@ podathon.org/shell/
 /xleet-shell.txt
 /akhmhcij/
 
+# Reference: https://twitter.com/1ZRR4H/status/1510311007113158668
 # Reference: https://blog.netlab.360.com/what-our-honeypot-sees-just-one-day-after-the-spring4shell-advisory-en/
 
 /member3war.jsp
 /myshell.jsp
+/tomcatspring.jsp
 /tomcatwar.jsp
