@@ -157,4 +157,7 @@ wvzb9b.xjwi5.com
 # Reference: https://www.virustotal.com/gui/file/0067f443fe581dec35b8f828a08eb68301ee86dd51efd72af27cf66fda377132/detection
 
 profitablenessurvey.top
-ssp.swe.xyz
+
+# Reference: https://www.virustotal.com/gui/file/21c70c3775c25affb21550576a400a382f16511aa8a27eaa92f333ab77add1c8/detection
+
+45.118.135.218:10080
