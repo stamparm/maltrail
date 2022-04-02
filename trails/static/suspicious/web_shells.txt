@@ -929,3 +929,4 @@ podathon.org/shell/
 /myshell.jsp
 /tomcatspring.jsp
 /tomcatwar.jsp
+/wpz.jsp
