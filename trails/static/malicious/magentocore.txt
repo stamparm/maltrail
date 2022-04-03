@@ -6249,6 +6249,7 @@ googletrackevent.com
 # Reference: https://www.virustotal.com/gui/ip-address/91.242.229.96/relations
 
 gstatsc.com
+gstatuslink.com
 
 # Reference: https://blog.sucuri.net/2021/11/woocommerce-skimmer-spoofs-checkout-page.html
 
