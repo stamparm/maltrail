@@ -161,3 +161,7 @@ profitablenessurvey.top
 # Reference: https://www.virustotal.com/gui/file/21c70c3775c25affb21550576a400a382f16511aa8a27eaa92f333ab77add1c8/detection
 
 45.118.135.218:10080
+
+# Reference: https://www.virustotal.com/gui/file/da704b8ffbceea10fc2eef5bae017fa631fcf1e03ddbaaaed73f88f7abded021/detection
+
+http://51.38.134.114
