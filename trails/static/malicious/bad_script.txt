@@ -5661,6 +5661,10 @@ v0k.us
 
 /f3ro9qexvh4t5mswaq7h6qpo.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1510922385117130752
+
+/stgbos0c4pdnb0jskes9lv9f.php
+
 # Generic
 
 /js/altmanluggage.js
