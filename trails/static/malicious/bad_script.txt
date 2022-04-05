@@ -5680,6 +5680,21 @@ v0k.us
 /Serverasssy.class
 /Serverasssy.java
 
+# Reference: https://www.virustotal.com/gui/file/6e5bc57767ea314f50262e10884e592ac5e833165d85db41e2033baaa7c5682d/detection
+
+/ASYYServer.txt
+/ASYYServer.ps1
+/ASYYServer.hta
+/ASYYServer.php
+/ASYYServer.class
+/ASYYServer.java
+/ASSYY%20Bypass.txt
+/ASSYY%20Bypass.ps1
+/ASSYY%20Bypass.hta
+/ASSYY%20Bypass.php
+/ASSYY%20Bypass.class
+/ASSYY%20Bypass.java
+
 # Generic
 
 /js/altmanluggage.js
