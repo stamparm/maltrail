@@ -5665,6 +5665,21 @@ v0k.us
 
 /stgbos0c4pdnb0jskes9lv9f.php
 
+# Reference: https://www.virustotal.com/gui/file/921ab11978687f7b8120f0753f7d500d95512316834f71082a028b08c838109a/detection
+
+/bypassassssssssssssy.txt
+/bypassassssssssssssy.ps1
+/bypassassssssssssssy.hta
+/bypassassssssssssssy.php
+/bypassassssssssssssy.class
+/bypassassssssssssssy.java
+/Serverasssy.txt
+/Serverasssy.ps1
+/Serverasssy.hta
+/Serverasssy.php
+/Serverasssy.class
+/Serverasssy.java
+
 # Generic
 
 /js/altmanluggage.js
