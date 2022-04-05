@@ -926,6 +926,7 @@ sophosxl.net
 
 # Generic
 
+alrai.com
 token.im
 cainiao.com
 qingting.fm
