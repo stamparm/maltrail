@@ -930,3 +930,7 @@ podathon.org/shell/
 /tomcatspring.jsp
 /tomcatwar.jsp
 /wpz.jsp
+
+# Reference: https://twitter.com/bad_packets/status/1511796663140052994
+
+/1877team.jsp
