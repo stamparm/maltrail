@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2022 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://decoded.avast.io/janrubin/parrot-tds-takes-over-web-servers-and-threatens-millions/
+# Reference: https://github.com/avast/ioc/blob/master/ParrotTDS/network.txt
+
+2ctmedia.com
+accountablitypartner.com
+altcoinfan.com
+avanzatechnicalsolutions.com
+codigodebarra.co
+codingbit.co.in
+craigconnors.com
+expresswayautopr.com
+fioressence.com
+lilscrambler.com
+markbrey.com
+mattingsolutions.co
+maxxcorp.net
+nuwealthmedia.com
+spillpalletonline.com
+srkpc.com
+statclick.net
+syncadv.com
+walmyrivera.com
+webcachestorage.com
+weightlossihp.com
+wholesalerandy.com
+xomosagency.com
+rotation.ahrealestatepr.com
