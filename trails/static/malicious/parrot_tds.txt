@@ -33,9 +33,20 @@ rotation.ahrealestatepr.com
 # Reference: https://www.malware-traffic-analysis.net/2019/06/28/index.html
 # Reference: https://twitter.com/malware_traffic/status/1144027142696656896
 
-mattingsolutions.co
 ruscacademy.in
 thetechhaus.com
 triplegconsults.com
 ntri.triplegconsults.com
 green.mattingsolutions.co
+
+# Reference: https://twitter.com/Bank_Security/status/1115131039511396352
+# Reference: https://www.malware-traffic-analysis.net/2019/04/05/index.html
+# Reference: https://twitter.com/malware_traffic/status/1113975722773831680
+
+cr-acad.com
+sineadholly.com
+ufro.cl
+med.ufro.cl
+snap.cr-acad.com
+static.spillpalletonline.com
+tops.sineadholly.com
