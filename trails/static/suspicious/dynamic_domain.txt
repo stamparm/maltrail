@@ -3345,3 +3345,7 @@ dynnamn.ru
 # Reference: https://www.virustotal.com/gui/domain/ticp.vip/relations
 
 ticp.vip
+
+# Reference: https://www.virustotal.com/gui/domain/dnslive.net/relations
+
+dnslive.net
