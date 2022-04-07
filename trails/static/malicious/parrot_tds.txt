@@ -3,6 +3,7 @@
 
 # Reference: https://decoded.avast.io/janrubin/parrot-tds-takes-over-web-servers-and-threatens-millions/
 # Reference: https://github.com/avast/ioc/blob/master/ParrotTDS/network.txt
+# Reference: https://twitter.com/unmaskparasites/status/1361814973983322114
 
 2ctmedia.com
 accountablitypartner.com
