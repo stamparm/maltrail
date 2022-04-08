@@ -5696,6 +5696,10 @@ v0k.us
 /ASSYY%20Bypass.class
 /ASSYY%20Bypass.java
 
+# Reference: https://twitter.com/tosscoinwitcher/status/1512294579961171978
+
+/owa/auth/x.js
+
 # Generic
 
 /js/altmanluggage.js
