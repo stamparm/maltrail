@@ -5700,6 +5700,11 @@ v0k.us
 
 /owa/auth/x.js
 
+# Reference: https://www.fortinet.com/blog/threat-research/phishing-campaign-targeting-korean-to-deliver-agent-tesla-new-variant
+# Reference: https://otx.alienvault.com/pulse/61b75c2915050cf6e811fef9
+
+/7dd66d9f8e1cf61ae198.php
+
 # Generic
 
 /js/altmanluggage.js
