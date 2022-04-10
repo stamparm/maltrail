@@ -3349,3 +3349,7 @@ ticp.vip
 # Reference: https://www.virustotal.com/gui/domain/dnslive.net/relations
 
 dnslive.net
+
+# Reference: https://www.virustotal.com/gui/domain/linode.com/relations
+
+linode.com
