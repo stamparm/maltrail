@@ -2008,6 +2008,10 @@ test-upload
 
 mozilla_horizon
 
+# Reference: https://samples.vx-underground.org/APTs/2010/2010.09.06/Paper/MSUpdater%20Trojan.pdf
+
+BKANAHEAFPEM
+
 # Misc
 
 information_schema
