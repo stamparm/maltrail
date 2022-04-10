@@ -2012,6 +2012,10 @@ mozilla_horizon
 
 BKANAHEAFPEM
 
+# Reference: https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2013/04/20082912/C5_APT_SKHack.pdf
+
+Mozilla/4.0·
+
 # Misc
 
 information_schema
