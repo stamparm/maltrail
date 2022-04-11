@@ -5705,6 +5705,10 @@ v0k.us
 
 /7dd66d9f8e1cf61ae198.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1513610098475778056
+
+/moybnndujrplohgq5qmo3282.php
+
 # Generic
 
 /js/altmanluggage.js
