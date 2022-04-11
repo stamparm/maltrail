@@ -125,6 +125,7 @@ cartoonmines.com
 # Reference: https://twitter.com/unmaskparasites/status/1506671930425823234
 # Reference: https://twitter.com/unmaskparasites/status/1506728492016185348
 # Reference: https://twitter.com/unmaskparasites/status/1507038308789936150
+# Reference: https://twitter.com/unmaskparasites/status/1513575167674355712
 # Reference: https://www.virustotal.com/gui/domain/turnedpro.xyz/relations
 # Reference: https://www.virustotal.com/gui/ip-address/188.213.5.197/relations
 # Reference: https://www.virustotal.com/gui/ip-address/74.91.31.50/relations
@@ -145,6 +146,10 @@ golang666.xyz
 firstguide.xyz
 firstok.xyz
 hahaha666.xyz
+hellodolly666.xyz
+hellodolly777.xyz
+hellodolly888.xyz
+hellodolly999.xyz
 ok2345678.xyz
 turnedpro.xyz
 officialservicejp.com
