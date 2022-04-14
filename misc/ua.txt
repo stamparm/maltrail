@@ -2012,6 +2012,10 @@ mozilla_horizon
 
 BKANAHEAFPEM
 
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-April/030634.html
+
+FastInvoice
+
 # Misc
 
 information_schema
