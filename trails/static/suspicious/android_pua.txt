@@ -666,3 +666,13 @@ omnatuor.com
 http://39.97.9.213
 120.55.66.216:8082
 /shanghaijinshu/
+
+# Reference: https://www.virustotal.com/gui/ip-address/147.139.40.148/relations
+# Reference: https://www.virustotal.com/gui/file/29b781ad5c499931d43503aec0363b830ec57bef2fd1a1eab833813fcdcdf88d/detection
+# Reference: https://www.virustotal.com/gui/file/444bcf05a445d12b8585bd26ae74dfcdeaa11dc6785436e674b5364c8a93c626/detection
+
+dreamloan.cc
+admin.dreamloan.cc
+api.dreamloan.cc
+callback.dreamloan.cc
+webpay.dreamloan.cc
