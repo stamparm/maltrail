@@ -30,6 +30,13 @@ wholesalerandy.com
 xomosagency.com
 rotation.ahrealestatepr.com
 
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/d/thwarting-loaders-from-socgholish-to-blisters-lockbit-payload/iocs-thwarting-loaders-socgholish-blister.txt
+# Reference: https://otx.alienvault.com/pulse/62558b29c777552cb77d1347
+
+windsorbongvape.ca
+apps.weightlossihp.com
+platform.windsorbongvape.ca
+
 # Reference: https://twitter.com/malware_traffic/status/1144726582596186120
 # Reference: https://www.malware-traffic-analysis.net/2019/06/28/index.html
 # Reference: https://twitter.com/malware_traffic/status/1144027142696656896
