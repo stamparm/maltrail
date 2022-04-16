@@ -5470,3 +5470,7 @@ ato3.fun
 # Reference: https://www.virustotal.com/gui/domain/icp.cool/relations
 
 icp.cool
+
+# Reference: https://www.virustotal.com/gui/domain/vinam.me/relations
+
+vinam.me
