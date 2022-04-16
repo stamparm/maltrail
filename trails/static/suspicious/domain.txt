@@ -5474,3 +5474,7 @@ icp.cool
 # Reference: https://www.virustotal.com/gui/domain/vinam.me/relations
 
 vinam.me
+
+# Reference: https://www.virustotal.com/gui/domain/xxxx.tk/relations
+
+xxxx.tk
