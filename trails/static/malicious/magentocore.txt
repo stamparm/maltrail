@@ -6511,6 +6511,14 @@ tagmanagerstatic.com
 
 stylesfound.com
 
+# Reference: https://community.riskiq.com/article/a472ec2d
+# Reference: https://www.riskiq.com/blog/external-threat-management/magecart-group8-hosting-patterns/
+# Reference: https://otx.alienvault.com/pulse/6142f70ea663fff6bc350288
+
+impressart.net
+palletforks.net
+webtoolsapp.com
+
 # Generic
 
 /assets/lfg.js
