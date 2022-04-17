@@ -433,3 +433,29 @@ hadeshop.cc
 hadeshop.io
 hadeshop.st
 hadeshop.xyz
+
+# Reference: https://news.sophos.com/en-us/2021/09/01/fake-pirated-software-sites-serve-up-malware-droppers-as-a-service/
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/Troj-DropperAsAService.csv
+# Reference: https://otx.alienvault.com/pulse/61374a4e59aeca8acb8bef82/
+
+crackfury.com
+cracknew.com
+cyberspc.com
+excrack.com
+fullversionsoft.info
+fulproductkey.com
+letcracks.com
+licensecrack.com
+newactivators.com
+pccrackbox.com
+pclicensekeys.com
+pcwarezbox.com
+piratpc.com
+portabledownloads.com
+procrackerz.org
+procrackserial.com
+serialkeygenpro.com
+shrinkearn.com
+up4pc.com
+workingkeys.org
+xproductkey.co
