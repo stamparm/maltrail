@@ -924,3 +924,22 @@ xmr.ppxxmr.com
 # Reference: https://www.virustotal.com/gui/file/a38b8f6948cd6c0f0b275a4fd7ea0df9ac4c5c3afd5800f8cd609aa12f2eebe9/detection
 
 51.89.96.41:2222
+
+# Reference: https://www.virustotal.com/gui/file/2baba54bd1a2012c1fb1d6b56976ad6c6fa18c7eead791a49998179f8b15913c/detection
+
+titcoinpool.com
+titcoins.info
+seed.titcoinpool.com
+seed.titcoins.info
+
+# Reference: https://www.virustotal.com/gui/file/401821cb243a41195dbf60d94bbe02d66c7757cf3255fdca7451f11e150dbb79/detection
+
+joulecoin.org
+seed1.joulecoin.org
+seed2.joulecoin.org
+seed3.joulecoin.org
+seed4.joulecoin.org
+seed5.joulecoin.org
+seed6.joulecoin.org
+seed7.joulecoin.org
+seed8.joulecoin.org
