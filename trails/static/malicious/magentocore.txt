@@ -5649,6 +5649,8 @@ ntndnsstatic.com
 
 # Reference: https://twitter.com/felixaime/status/1417134452103335936
 # Reference: https://www.virustotal.com/gui/ip-address/69.175.91.242/relations
+# Reference: https://imp0rtp3.wordpress.com/2021/08/12/tetris/
+# Reference: https://otx.alienvault.com/pulse/611d0d9877560b71ff3f7e59
 
 google-drivers.com
 googledrivers.com
