@@ -5717,6 +5717,16 @@ v0k.us
 
 /d1mo.ps1
 
+# Reference: https://unit42.paloaltonetworks.com/javascript-based-phishing/
+# Reference: https://otx.alienvault.com/pulse/613f5dc1c1c8aa2b896a009c
+
+coffeeshop.store
+cooking4kor.ru
+selcdn.ru
+uber.space
+555305.selcdn.ru
+appleid.uber.space
+
 # Generic
 
 /js/altmanluggage.js
