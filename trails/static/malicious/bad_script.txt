@@ -5717,6 +5717,12 @@ v0k.us
 
 /d1mo.ps1
 
+# Reference: https://twitter.com/drb_ra/status/1515464361560748035
+
+/init-fwcim.js
+/js/common/init-fwcim.js
+/static/js/common/init-fwcim.js
+
 # Generic
 
 /js/altmanluggage.js
