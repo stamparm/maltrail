@@ -175,6 +175,11 @@ design.lawrencetravelco.com
 fasttracklegal.com
 lines.fasttracklegal.com
 
+# Reference: https://twitter.com/C0ryInTheHous3/status/1516062361488171018
+
+expugements.com
+priority.expugements.com
+
 # Generic
 
 /Chrome.Update.3b1362.js
