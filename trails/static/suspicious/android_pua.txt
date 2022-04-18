@@ -676,3 +676,7 @@ admin.dreamloan.cc
 api.dreamloan.cc
 callback.dreamloan.cc
 webpay.dreamloan.cc
+
+# Reference: https://www.virustotal.com/gui/file/3d037afb97e520b2c3a667ea025860f3fefab52558dc6326ea1ec92102a1b925/detection
+
+socialtools.ir
