@@ -2016,6 +2016,10 @@ BKANAHEAFPEM
 
 FastInvoice
 
+# Reference: http://lists.emergingthreats.net/pipermail/emerging-sigs/2022-April/030637.html
+
+bumblebee
+
 # Misc
 
 information_schema
