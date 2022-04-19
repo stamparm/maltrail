@@ -5727,6 +5727,10 @@ uber.space
 555305.selcdn.ru
 appleid.uber.space
 
+# Reference: https://blog.virustotal.com/2022/04/virustotal-multisandbox-elf-digest.html
+
+/boaform/admin/formLogin?username=
+
 # Generic
 
 /js/altmanluggage.js
