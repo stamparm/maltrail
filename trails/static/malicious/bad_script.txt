@@ -5731,6 +5731,30 @@ appleid.uber.space
 
 /boaform/admin/formLogin?username=
 
+# Reference: https://www.virustotal.com/gui/file/378e01925608bcd74544a5b5536c20a0007eb255e145370df228bb004aa59de2/detection
+# Reference: https://www.virustotal.com/gui/file/f964f108f661de1c15e3cedee074cf1617ce02f85eb7e8613077f9ed95c4b37d/detection
+# Reference: https://www.virustotal.com/gui/file/e81baa5e7bf0fe2ebeb07983e71d05d09698e567d9bcaf17176e631156d01c60/detection
+# Reference: https://www.virustotal.com/gui/file/95eb3d6f61d5082bee11ea47a7c90c0dcdc18af71985276ab56f648dcc549d87/detection
+# Reference: https://www.virustotal.com/gui/file/8c2215d43e7cd77c90a424ca6c81c1b94acf01eaecbb048447e171ebef0c2dfd/detection
+# Reference: https://www.virustotal.com/gui/file/8b437a76538722dc4535cbf3180005eb973caa6e9be13c6d3852fed1789960a0/detection
+# Reference: https://www.virustotal.com/gui/file/80e498268b8be964d5a74ca226218b17cb7a28a8929e70e2d2c3aed768e6308c/detection
+
+/3xp1r3Exp.ps1
+/ABC123.ps1
+/BcDAHlHQmO.ps1
+/DFzM1n9Gai.ps1
+/executer.ps1
+/fPTcKQTX4K.ps1
+/giraExp.ps1
+/miOFUdAw6t.ps1
+/mUOmAi4R5i.ps1
+/rp9R4cgF97.ps1
+/scrupExp.ps1
+/sicariopExp.ps1
+/stage1x32.ps1
+/stage1x64.ps1
+/WZypgeP1da.ps1
+
 # Generic
 
 /js/altmanluggage.js
