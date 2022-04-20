@@ -529,8 +529,8 @@ Nevertheless, administrator(s) should invest some extra time and check (with oth
 4. Enable as systemd services (Linux only):
 
     ```sh
-    sudo cp /opt/maltrail/maltrail-sensor.service /usr/lib/systemd/system/maltrail-sensor.service
-    sudo cp /opt/maltrail/maltrail-server.service /usr/lib/systemd/system/maltrail-server.service
+    sudo cp /opt/maltrail/maltrail-sensor.service /etc/systemd/system/maltrail-sensor.service
+    sudo cp /opt/maltrail/maltrail-server.service /etc/systemd/system/maltrail-server.service
     sudo systemctl daemon-reload
     sudo systemctl start maltrail-server.service
     sudo systemctl start maltrail-sensor.service
