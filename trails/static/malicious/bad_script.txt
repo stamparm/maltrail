@@ -2693,28 +2693,6 @@ zctrack.com
 /usexosell.php
 /usflexexosell.php
 
-# Reference: https://blog.prevailion.com/2020/02/phps-labyrinth-weaponized-wordpress.html
-# Reference: https://otx.alienvault.com/pulse/5e4d6c5790faacd62f7afed6
-
-brilns.com
-crilns.com
-devata.icu
-dolodos.top
-frilns.com
-kdsidsiadsakfsas.com
-medsource.top
-oajdasnndkdahm.com
-pervas.top
-piastas.gdn
-piasuna.gdn
-semasa.icu
-tdreg.icu
-tdreg.top
-tretas.top
-trilns.com
-vosmas.icu
-vtoras.top
-
 # Reference: https://twitter.com/ANeilan/status/1232283590114840576
 # Reference: https://twitter.com/JayTHL/status/1253459585731563522
 # Reference: https://pastebin.com/8LL4Hg9e
