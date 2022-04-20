@@ -332,7 +332,9 @@ t-fish-ka.ru
 # Reference: https://twitter.com/BlackLotusLabs/status/1516415948797976584
 # Reference: https://twitter.com/BlackLotusLabs/status/1516415950396047380
 # Reference: https://blog.prevailion.com/2020/02/phps-labyrinth-weaponized-wordpress.html
+# Reference: https://www.virustotal.com/gui/ip-address/94.156.175.170/relations
 # Reference: https://otx.alienvault.com/pulse/5e4d6c5790faacd62f7afed6
+# Reference: https://www.virustotal.com/gui/file/cb8d693752fdcf84a77c486dfe04c3d53631cce4f97e5cccfc3c3486e5b10ebd/detection
 
 arilns.com
 batots.com
@@ -367,6 +369,7 @@ gatots.com
 gomnd.xyz
 gomndo.com
 gomndo.top
+gomndo.xyz
 grilns.com
 hacocs.com
 harors.com
