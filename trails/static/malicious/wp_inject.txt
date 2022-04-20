@@ -328,14 +328,20 @@ print.legendarytable.com
 http://166.62.110.72
 t-fish-ka.ru
 
+# Reference: https://medium.com/@cirku17/wp-vcd-malware-analysis-7c5dbaad89c3
+# Reference: https://github.com/CirKu17/wp-vcd-malware-sample
 # Reference: https://twitter.com/BlackLotusLabs/status/1516415946587611137
 # Reference: https://twitter.com/BlackLotusLabs/status/1516415948797976584
 # Reference: https://twitter.com/BlackLotusLabs/status/1516415950396047380
 # Reference: https://blog.prevailion.com/2020/02/phps-labyrinth-weaponized-wordpress.html
+# Reference: http://web.archive.org/web/20200920003035/https:/blog.prevailion.com/2020/02/phps-labyrinth-weaponized-wordpress.html
 # Reference: https://www.virustotal.com/gui/ip-address/94.156.175.170/relations
+# Reference: https://otx.alienvault.com/pulse/596e1049fbe8a2174f3af765
 # Reference: https://otx.alienvault.com/pulse/5e4d6c5790faacd62f7afed6
 # Reference: https://www.virustotal.com/gui/file/cb8d693752fdcf84a77c486dfe04c3d53631cce4f97e5cccfc3c3486e5b10ebd/detection
 
+24x7themes.top
+aotson.com
 arilns.com
 batots.com
 benos.cc
@@ -350,9 +356,19 @@ darors.com
 denom.cc
 derna.cc
 devata.icu
+dlword.press
 dolodos.top
 dolsh.pw
 domndo.com
+download-freethemes.download
+downloadfreenulled.download
+downloadfreethemes.cc
+downloadfreethemes.co
+downloadfreethemes.download
+downloadfreethemes.io
+downloadfreethemes.pw
+downloadfreethemes.space
+downloadnulled.pw
 drilns.pw
 eatots.com
 facocs.com
@@ -361,6 +377,9 @@ farors.com
 fatots.com
 fomndo.com
 fonjy.cc
+freedownload.network
+freenulled.top
+freethemes.space
 frilns.com
 gacocs.com
 gapilo.com
@@ -380,7 +399,6 @@ jatots.cc
 jomndo.com
 karors.com
 katots.com
-kdsidsiadsakfsas.com
 krilns.com
 lanons.com
 larors.com
@@ -400,7 +418,9 @@ moxford.cc
 mrilns.com
 narors.com
 natots.pw
-oajdasnndkdahm.com
+null24.icu
+null5.top
+nulledzip.download
 pacocs.com
 panons.com
 parors.com
@@ -415,6 +435,7 @@ plimur.net
 plimus.info
 plimuz.me
 poxford.com
+premiumfreethemes.top
 prilns.com
 qarors.com
 qatots.com
@@ -429,6 +450,9 @@ tanons.com
 tarors.com
 tdreg.icu
 tdreg.top
+themesdad.com
+themesfreedownload.net
+themesfreedownload.top
 tomndo.com
 tretas.top
 trilns.com
@@ -445,6 +469,8 @@ wacocs.com
 warors.com
 watots.com
 womndo.com
+wpfreedownload.press
+wpmania.download
 wrilns.com
 wrilns.pw
 xapilo.com
