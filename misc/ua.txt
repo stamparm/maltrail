@@ -2020,6 +2020,10 @@ FastInvoice
 
 bumblebee
 
+# Reference: http://lists.emergingthreats.net/pipermail/emerging-sigs/2022-April/030638.html
+
+dafom
+
 # Misc
 
 information_schema
