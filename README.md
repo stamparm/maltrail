@@ -526,14 +526,21 @@ Nevertheless, administrator(s) should invest some extra time and check (with oth
     2 1 * * * /usr/bin/pkill -f maltrail
     ```
 
-4. Enable as systemd service (Linux only):
+4. Enable as systemd services (Linux only):
 
     ```sh
-    sudo cp /opt/maltrail/maltrail.service /usr/lib/systemd/system/maltrail.service
-    sudo systemctl daemon-reload && sudo systemctl start maltrail && sudo systemctl enable maltrail
-    systemctl status maltrail.service 
+    sudo cp /opt/maltrail/maltrail-sensor.service /usr/lib/systemd/system/maltrail-sensor.service
+    sudo cp /opt/maltrail/maltrail-server.service /usr/lib/systemd/system/maltrail-server.service
+    sudo systemctl daemon-reload
+    sudo systemctl start maltrail-server.service
+    sudo systemctl start maltrail-sensor.service
+    sudo systemctl enable maltrail-server.service
+    sudo systemctl enable maltrail-sensor.service
+    systemctl status maltrail-server.service && systemctl status maltrail-sensor.service
     
     ```
+    
+  **Note**: ```/maltrail-sensor.service``` can be started as dedicated service without pre-started ```/maltrail-server.service```. This is useful for case, when ```/maltrail-server.service``` is installed and works on another machine in you network environment.
 
 
 ## License
