@@ -180,6 +180,25 @@ lines.fasttracklegal.com
 expugements.com
 priority.expugements.com
 
+# Reference: https://github.com/CronUp/Malware-IOCs/blob/main/2022-04-21_SocGholish-FakeUpdates
+
+2ctmedia.com
+bonneltravel.com
+brannonsmiles.com
+chandlermethodist.org
+codigodebarra.co
+pomdev.com
+vipveinsaz.com
+windsorbongvape.com
+1.widget.windsorbongvape.com
+connect.codigodebarra.co
+doors.vipveinsaz.com
+energy.pomdev.com
+matrix.2ctmedia.com
+missions.chandlermethodist.org
+patients.brannonsmiles.com
+stuff.bonneltravel.com
+
 # Generic
 
 /Chrome.Update.3b1362.js
