@@ -28,7 +28,6 @@ webcachestorage.com
 weightlossihp.com
 wholesalerandy.com
 xomosagency.com
-rotation.ahrealestatepr.com
 
 # Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/d/thwarting-loaders-from-socgholish-to-blisters-lockbit-payload/iocs-thwarting-loaders-socgholish-blister.txt
 # Reference: https://otx.alienvault.com/pulse/62558b29c777552cb77d1347
