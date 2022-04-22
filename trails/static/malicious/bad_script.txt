@@ -5733,6 +5733,10 @@ appleid.uber.space
 /stage1x64.ps1
 /WZypgeP1da.ps1
 
+# Reference: https://twitter.com/AffableKraut/status/1517534880950857733
+
+brigettera.com
+
 # Generic
 
 /js/altmanluggage.js
