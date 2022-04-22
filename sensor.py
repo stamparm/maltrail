@@ -138,7 +138,7 @@ except ImportError:
     if IS_WIN:
         exit("[!] please install 'WinPcap' (e.g. 'http://www.winpcap.org/install/') and Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy')")
     else:
-        msg = "[!] please install 'Pcapy' (e.g. 'sudo pip%s install pcapy-ng')" % ('3' if six.PY3 else '2')
+        msg = "[!] please install 'pcapy or pcapy-ng' (e.g. 'sudo pip%s install pcapy-ng')" % ('3' if six.PY3 else '2')
 
         exit(msg)
 
