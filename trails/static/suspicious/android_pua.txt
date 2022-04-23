@@ -680,3 +680,7 @@ webpay.dreamloan.cc
 # Reference: https://www.virustotal.com/gui/file/3d037afb97e520b2c3a667ea025860f3fefab52558dc6326ea1ec92102a1b925/detection
 
 socialtools.ir
+
+# Reference: https://www.virustotal.com/gui/domain/xpromo-2013.herokuapp.com/relations
+
+xpromo-2013.herokuapp.com
