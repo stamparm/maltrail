@@ -405,9 +405,10 @@ minexmr.com
 178.63.48.196:5555
 
 # Reference: https://blacklist.cyberthreatcoalition.org/vetted/url.txt
+# Reference: http://blog.talosintelligence.com/2022/04/threat-roundup-0415-0422.html (# Win.Trojan.Miner-9944721-0)
 
 minerpool.pw
-/xmrig/
+eu.minerpool.pw
 
 # Reference: https://www.virustotal.com/gui/file/a38216166e363d752f37bdf0419d2e2694279beab8df66d40f56c679563e7a4f/detection
 
