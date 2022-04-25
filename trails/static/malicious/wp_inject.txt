@@ -488,3 +488,8 @@ zomndo.com
 zoxford.com
 zrilns.com
 zrilns.pw
+
+# Reference: https://twitter.com/felixaime/status/1518527498929254401
+
+ocamw.xyz
+cdn.ocamw.xyz
