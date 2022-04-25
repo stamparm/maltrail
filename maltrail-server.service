@@ -1,5 +1,5 @@
 [Unit]
-Description=Maltrail IDS/IPS. Server of malicious traffic detection system
+Description=Maltrail. Server of malicious traffic detection system
 Documentation=https://github.com/stamparm/maltrail#readme
 Documentation=https://github.com/stamparm/maltrail/wiki
 Requires=network.target
