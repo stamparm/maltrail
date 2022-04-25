@@ -3282,3 +3282,7 @@ dr49lng3n1n2s.cloudfront.net
 # Reference: https://github.com/stamparm/maltrail/issues/19055
 
 awsstatic.com
+
+# Reference: https://www.virustotal.com/gui/domain/fastmirror.pp.ua/relations
+
+fastmirror.pp.ua
