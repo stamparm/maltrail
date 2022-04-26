@@ -684,3 +684,9 @@ socialtools.ir
 # Reference: https://www.virustotal.com/gui/domain/xpromo-2013.herokuapp.com/relations
 
 xpromo-2013.herokuapp.com
+
+# Reference: https://www.virustotal.com/gui/file/84a02f8204acf339a0163c197783bbcf866a594ee999193037bd723791c078e2/detection
+
+http://203.119.217.116
+zhuoju.xyz
+apivvv.zhuoju.xyz
