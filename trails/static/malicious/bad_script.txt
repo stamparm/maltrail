@@ -5741,6 +5741,10 @@ brigettera.com
 
 /work_443.bin_m2.ps1
 
+# Reference: https://twitter.com/MalwarePatrol/status/1518894918999097345
+
+/z8s7he941vjp0im3tm2ogovn.php
+
 # Generic
 
 /js/altmanluggage.js
