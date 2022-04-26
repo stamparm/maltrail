@@ -5745,6 +5745,10 @@ brigettera.com
 
 /z8s7he941vjp0im3tm2ogovn.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1518970419444961280
+
+/449lz1bpy0zfswnmnywdzlv1.php
+
 # Generic
 
 /js/altmanluggage.js
