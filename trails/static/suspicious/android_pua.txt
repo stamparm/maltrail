@@ -690,3 +690,7 @@ xpromo-2013.herokuapp.com
 http://203.119.217.116
 zhuoju.xyz
 apivvv.zhuoju.xyz
+
+# Reference: https://www.virustotal.com/gui/file/974d57885feffa366e3a9d3dde0c5dd670b965c4e5c49f967ff920b2940a1859/detection
+
+http://182.254.116.116
