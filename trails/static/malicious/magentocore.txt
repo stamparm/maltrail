@@ -6526,8 +6526,10 @@ palletforks.net
 webtoolsapp.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1519784855730499585
+# Reference: https://www.virustotal.com/gui/ip-address/84.38.180.69/relations
 
 appcloudflare.com
+cdn-trackjs.com
 livehotjars.com
 
 # Generic
