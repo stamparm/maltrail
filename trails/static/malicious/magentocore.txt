@@ -6525,6 +6525,11 @@ impressart.net
 palletforks.net
 webtoolsapp.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1519784855730499585
+
+appcloudflare.com
+livehotjars.com
+
 # Generic
 
 /assets/lfg.js
