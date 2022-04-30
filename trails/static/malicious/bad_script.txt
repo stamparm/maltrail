@@ -5753,6 +5753,11 @@ brigettera.com
 
 /vdbzw6fu3n9e0ytsj4xdtfwj.php
 
+# Reference: https://twitter.com/AltShiftPrtScn/status/1519840040637157378
+
+/xmr.ps1
+/xms.sp1
+
 # Generic
 
 /js/altmanluggage.js
