@@ -14,9 +14,16 @@
 
 
 
-- Version 0.44 -> 0.45 (Upcoming release)
+- Version 0.45 -> 0.46 (Upcoming release)
 
+
+
+- Version 0.44 -> 0.45 (01 May 2022)
+
+[+] systemd-based realization for Maltrail sensor.py, server.py and ipset/iptables ban-list (dedicated repo) have added
+[+] New Wiki pages have added
 [=] "potential remote code execution" heuristic is improved (detection for Java-related RCE stuff)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
