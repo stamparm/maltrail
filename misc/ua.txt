@@ -2024,6 +2024,10 @@ bumblebee
 
 dafom
 
+# Reference: https://twitter.com/drb_ra/status/1520485729243209728
+
+\bTrident 18\.000\b
+
 # Misc
 
 information_schema
