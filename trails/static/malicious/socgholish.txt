@@ -199,8 +199,13 @@ missions.chandlermethodist.org
 patients.brannonsmiles.com
 stuff.bonneltravel.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1521201292005154816
+
+factor.vtaxlaw.com
+
 # Generic
 
+/Chrome.Quick.Update.ver.101.65.65282.js
 /Chrome.Update.3b1362.js
 /Chrome.Update.88fe59.js
 /Opera.Update.426482.js
