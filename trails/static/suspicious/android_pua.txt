@@ -694,3 +694,8 @@ apivvv.zhuoju.xyz
 # Reference: https://www.virustotal.com/gui/file/974d57885feffa366e3a9d3dde0c5dd670b965c4e5c49f967ff920b2940a1859/detection
 
 http://182.254.116.116
+
+# Reference: https://www.virustotal.com/gui/file/417050e482d4f2b6ac50083e6aca06c43bf0bd36309f4715ddcca083f049b237/detection
+
+94.182.98.173:8080
+jayezeh.cloudns.asia
