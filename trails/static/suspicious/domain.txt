@@ -5478,3 +5478,7 @@ vinam.me
 # Reference: https://www.virustotal.com/gui/domain/xxxx.tk/relations
 
 xxxx.tk
+
+# Reference: https://www.virustotal.com/gui/domain/dajuw.com/relations
+
+dajuw.com
