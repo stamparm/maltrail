@@ -6534,6 +6534,12 @@ appcloudflare.com
 cdn-trackjs.com
 livehotjars.com
 
+# Reference: https://twitter.com/EKFiddle/status/1522282636542197762
+# Reference: https://www.virustotal.com/gui/ip-address/194.104.136.113/relations
+
+accsbapp.com
+cloudflaes.com
+
 # Generic
 
 /assets/lfg.js
