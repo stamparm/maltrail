@@ -5758,6 +5758,10 @@ brigettera.com
 /xmr.ps1
 /xms.sp1
 
+# Reference: https://www.virustotal.com/gui/file/5382b04454079d0408abdcb25b1ff85bd4301f5b0c1b2459269bcbab86db8278/detection
+
+dodgyblokes.club
+
 # Generic
 
 /js/altmanluggage.js
