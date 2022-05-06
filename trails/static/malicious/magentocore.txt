@@ -6540,6 +6540,15 @@ livehotjars.com
 accsbapp.com
 cloudflaes.com
 
+# Reference: https://twitter.com/AvastThreatLabs/status/1499347571969511426
+# Reference: https://decoded.avast.io/pavlinakopecka/web-skimming-attacks-using-google-tag-manager/
+# Reference: https://www.virustotal.com/gui/ip-address/77.75.230.130/relations
+
+cloudgstats.com
+cdncscloud.com
+gtagmagr.com
+pixstatics.com
+
 # Generic
 
 /assets/lfg.js
