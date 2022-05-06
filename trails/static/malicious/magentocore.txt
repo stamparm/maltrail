@@ -6552,6 +6552,10 @@ cdncscloud.com
 gtagmagr.com
 pixstatics.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/47.88.218.85/relations
+
+analyzer-js.com
+
 # Generic
 
 /assets/lfg.js
