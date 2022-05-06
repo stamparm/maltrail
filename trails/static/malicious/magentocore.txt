@@ -2801,6 +2801,9 @@ google-conf.com
 google-console.com
 google-core.com
 google-sert.com
+dash.google-console.com
+fonts.fontsgoogleapis.com
+ssl.analytics-core.com
 /app/design/frontend/Magento/luma/media/mage.png
 /pub/media/downloadable/mage.png
 
