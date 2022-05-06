@@ -6553,8 +6553,10 @@ gtagmagr.com
 pixstatics.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/47.88.218.85/relations
+# Reference: https://www.virustotal.com/gui/ip-address/95.213.204.180/relations
 
 analyzer-js.com
+winsuccesstrack.com
 
 # Generic
 
