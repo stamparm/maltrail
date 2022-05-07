@@ -165,3 +165,7 @@ profitablenessurvey.top
 # Reference: https://www.virustotal.com/gui/file/da704b8ffbceea10fc2eef5bae017fa631fcf1e03ddbaaaed73f88f7abded021/detection
 
 http://51.38.134.114
+
+# Reference: https://www.virustotal.com/gui/file/35bfe43943134977b9e636e927f6a16b47e0abc24904c484a8864897d594ddd3/detection
+
+androidinja.ir
