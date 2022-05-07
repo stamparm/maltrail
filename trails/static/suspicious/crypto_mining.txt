@@ -944,3 +944,7 @@ seed5.joulecoin.org
 seed6.joulecoin.org
 seed7.joulecoin.org
 seed8.joulecoin.org
+
+# Reference: https://www.virustotal.com/gui/file/b083cb1533af7dbe81d7dfb0356d3bad35941b4a9f9bd5780d27c495fd5d1b1f/detection
+
+51.81.195.38:4444
