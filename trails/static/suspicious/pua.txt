@@ -3043,3 +3043,16 @@ gamesense.click
 # Reference: https://www.virustotal.com/gui/domain/cometrbx.xyz/relations
 
 cometrbx.xyz
+
+# Reference: https://twitter.com/BushidoToken/status/1522969539805384706
+
+blockanoadblockr.website
+differid.com
+htstfftrck.com
+impressyi.online
+news-easy.org
+notadsnow.com
+reistivelbife.com
+sandhyapi.online
+serviceone.info
+umonions.com
