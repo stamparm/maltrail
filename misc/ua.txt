@@ -2028,6 +2028,10 @@ dafom
 
 \bTrident 18\.000\b
 
+# Reference: https://twitter.com/luc4m/status/1522915551441567744
+
+PureCrypter
+
 # Misc
 
 information_schema
