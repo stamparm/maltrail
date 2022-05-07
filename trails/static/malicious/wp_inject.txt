@@ -127,7 +127,9 @@ cartoonmines.com
 # Reference: https://twitter.com/unmaskparasites/status/1507038308789936150
 # Reference: https://twitter.com/unmaskparasites/status/1513575167674355712
 # Reference: https://www.virustotal.com/gui/domain/turnedpro.xyz/relations
+# Reference: https://www.virustotal.com/gui/ip-address/188.213.5.130/relations
 # Reference: https://www.virustotal.com/gui/ip-address/188.213.5.197/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.134.119.42/relations
 # Reference: https://www.virustotal.com/gui/ip-address/74.91.31.50/relations
 # Reference: https://www.virustotal.com/gui/domain/firstok.xyz/relations
 # Reference: https://www.virustotal.com/gui/domain/officialservicejp.com/relations
@@ -161,6 +163,10 @@ walkdolphin.online
 api.firstguide.xyz
 hello.firstguide.xyz
 hello.hahaha666.xyz
+hello.hellodolly666.xyz
+hello.hellodolly777.xyz
+hello.hellodolly888.xyz
+hello.hellodolly999.xyz
 hello.ok2345678.xyz
 seo23.firstok.xyz
 seo30-1.firstok.xyz
