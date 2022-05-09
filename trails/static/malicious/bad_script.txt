@@ -5762,6 +5762,10 @@ brigettera.com
 
 dodgyblokes.club
 
+# Reference: https://twitter.com/MalwarePatrol/status/1523681457130061824
+
+/1gatqjm9ev8otbfo08zgtuqh.php
+
 # Generic
 
 /js/altmanluggage.js
