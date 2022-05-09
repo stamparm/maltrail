@@ -948,3 +948,12 @@ seed8.joulecoin.org
 # Reference: https://www.virustotal.com/gui/file/b083cb1533af7dbe81d7dfb0356d3bad35941b4a9f9bd5780d27c495fd5d1b1f/detection
 
 51.81.195.38:4444
+
+# Reference: https://twitter.com/1ZRR4H/status/1523758843414847488
+# Reference: https://www.virustotal.com/gui/file/01a1a733afc3a36f53ae87f8667741a0fbd047526ceb929305f36bf39a0dce81/detection
+# Reference: https://www.virustotal.com/gui/file/0036bfd9b0704b28ba7449d182fd1bc6b23eb9b74e5ab886924fdab5a09604dc/detection
+
+18.180.72.219:10128
+moneroocean.stream
+gulf.moneroocean.stream
+jp.moneroocean.stream
