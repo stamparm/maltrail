@@ -6557,6 +6557,13 @@ pixstatics.com
 
 analyzer-js.com
 
+# Reference: https://twitter.com/AffableKraut/status/1523693678551740418
+# Reference: https://twitter.com/EKFiddle/status/1523714436896202752
+# Reference: https://www.virustotal.com/gui/ip-address/206.188.197.50/relations
+
+google-tags.com
+tag-google.com
+
 # Generic
 
 /assets/lfg.js
