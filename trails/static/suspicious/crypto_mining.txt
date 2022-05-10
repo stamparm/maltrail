@@ -957,3 +957,7 @@ seed8.joulecoin.org
 moneroocean.stream
 gulf.moneroocean.stream
 jp.moneroocean.stream
+
+# Reference: https://www.virustotal.com/gui/file/28114eb0261850e8d744be4605b506cd2058ca3acd7c2da7387464f038f4c438/detection
+
+149.202.83.171:8080
