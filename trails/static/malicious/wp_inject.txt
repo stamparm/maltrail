@@ -319,10 +319,19 @@ glove.storerightdesicion.com
 lin.storerightdesicion.com
 line.storerightdesicion.com
 store.storerightdesicion.com
+avasripts.classicpartnerships.com
+comjavasripts.classicpartnerships.com
+comwalk.classicpartnerships.com
 event.classicpartnerships.com
 events.classicpartnerships.com
+javascript.classicpartnerships.com
+javascripts.classicpartnerships.com
+javasripts.classicpartnerships.com
+open.classicpartnerships.com
 scripts.classicpartnerships.com
 simple.classicpartnerships.com
+walk.classicpartnerships.com
+white.classicpartnerships.com
 print.legendarytable.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1503550611756789760
@@ -499,3 +508,13 @@ zrilns.pw
 
 ocamw.xyz
 cdn.ocamw.xyz
+
+# Reference: https://twitter.com/unmaskparasites/status/1524093794961960960
+
+drakefollow.com
+clocal.drakefollow.com
+doggy.drakefollow.com
+links.drakefollow.com
+local.drakefollow.com
+out.drakefollow.com
+poll.drakefollow.com
