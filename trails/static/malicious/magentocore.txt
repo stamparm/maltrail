@@ -6564,6 +6564,11 @@ analyzer-js.com
 google-tags.com
 tag-google.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1523791136988352512
+# Reference: https://www.virustotal.com/gui/ip-address/223.252.173.166/relations
+
+issuspsorry.online
+
 # Generic
 
 /assets/lfg.js
