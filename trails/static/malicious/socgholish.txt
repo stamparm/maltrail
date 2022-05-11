@@ -203,6 +203,11 @@ stuff.bonneltravel.com
 
 factor.vtaxlaw.com
 
+# Reference: https://twitter.com/bigmacjpg/status/1524125086206332932
+
+extra-tegic.com
+java.extra-tegic.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
