@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2022 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ScreenConnect
+# Note: Trail for detection of evil variants of ConnectWise remote-admin connections
+
+# Reference: https://twitter.com/James_inthe_box/status/1524437845179478019
+# Reference: https://app.any.run/tasks/87fdec4e-da52-4e60-83dc-48c75b7b6753/
+# Reference: https://www.virustotal.com/gui/file/67a997f0b822017a9db70b0a5b7b948b62bcbf571783e5f4c02854e3a819d9d7/detection
+
+192.210.219.54:8041
+91158.to
