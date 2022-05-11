@@ -463,3 +463,7 @@ xproductkey.co
 # Reference: https://twitter.com/hyperdefined/status/1515799313917562889
 
 serviceeusps.com
+
+# Reference: https://www.virustotal.com/gui/domain/crystalfiles.ru/detection
+
+crystalfiles.ru
