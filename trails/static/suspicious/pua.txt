@@ -3056,3 +3056,7 @@ reistivelbife.com
 sandhyapi.online
 serviceone.info
 umonions.com
+
+# Reference: https://www.virustotal.com/gui/file/0001fa90535306d93eb691b5d1906c32478396943dde09a4586a19bfb7b0ea57/detection
+
+d1picnfwewmhyp.cloudfront.net
