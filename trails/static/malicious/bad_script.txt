@@ -5770,6 +5770,10 @@ dodgyblokes.club
 
 /c81f0953b36a6b.php
 
+# Reference: https://github.com/CronUp/Malware-IOCs/blob/main/2022-05-10_Mekotio_MTT_CL
+
+/3t1x2oBj19sH33.php
+
 # Generic
 
 /js/altmanluggage.js
