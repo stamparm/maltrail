@@ -5774,6 +5774,10 @@ dodgyblokes.club
 
 /3t1x2oBj19sH33.php
 
+# Reference: https://www.virustotal.com/gui/file/2123f1c10dac02ac6c2fe68531d4ac9f03b9dedf68bbf7988667c7938a1788f1/detection
+
+/8eaf9c2923101a.php
+
 # Generic
 
 /js/altmanluggage.js
