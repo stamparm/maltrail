@@ -302,6 +302,7 @@ seo94.walkdolphin.online
 
 # Reference: https://twitter.com/unmaskparasites/status/1499536320896507906
 # Reference: https://twitter.com/unmaskparasites/status/1511076575537557505
+# Reference: https://twitter.com/unmaskparasites/status/1524843022952804352
 # Reference: https://www.virustotal.com/gui/ip-address/111.90.143.157/relations
 
 classicpartnerships.com
@@ -332,7 +333,14 @@ scripts.classicpartnerships.com
 simple.classicpartnerships.com
 walk.classicpartnerships.com
 white.classicpartnerships.com
+34trick.legendarytable.com
+clip.legendarytable.com
+clipjs.legendarytable.com
+comprint.legendarytable.com
+comtrick.legendarytable.com
+jack.legendarytable.com
 print.legendarytable.com
+trick.legendarytable.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1503550611756789760
 
