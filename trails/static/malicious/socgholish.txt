@@ -208,6 +208,11 @@ factor.vtaxlaw.com
 extra-tegic.com
 java.extra-tegic.com
 
+# Reference: https://twitter.com/bigmacjpg/status/1526197418940932097
+
+agrandatubolsillo.com
+jump.agrandatubolsillo.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
