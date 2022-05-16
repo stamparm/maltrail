@@ -526,3 +526,10 @@ links.drakefollow.com
 local.drakefollow.com
 out.drakefollow.com
 poll.drakefollow.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1526241349049077761
+
+greengoplatform.com
+creative.greengoplatform.com
+column.greengoplatform.com
+links.greengoplatform.com
