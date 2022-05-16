@@ -699,3 +699,13 @@ http://182.254.116.116
 
 94.182.98.173:8080
 jayezeh.cloudns.asia
+
+# Reference: https://www.virustotal.com/gui/domain/shuobofootball.xyz/relations
+# Reference: https://www.virustotal.com/gui/file/019e6911ffda0de05b0ff4427a3758e775e6f2fd50a2fcc55820a6362b28e645/detection
+
+211.99.103.107:88
+45.117.11.35:88
+45.117.11.52:88
+47.243.71.238:88
+shuobofootball.xyz
+pay.shuobofootball.xyz
