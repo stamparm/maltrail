@@ -6569,6 +6569,29 @@ tag-google.com
 
 issuspsorry.online
 
+# Reference: https://twitter.com/EKFiddle/status/1526684723149344768
+# Reference: https://www.virustotal.com/gui/ip-address/198.54.115.32/relations
+
+jamescjonas.top
+socialanalyticweb.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1526659924058460160
+
+pixelgoogle.xyz
+
+# Reference: https://twitter.com/sansecio/status/1526518050865954816
+
+papershoppers.com
+/js/3uPop.js
+
+# Reference: https://twitter.com/sansecio/status/1526490490497032193
+
+sanguinelab.net
+sansec.biz
+sansec.us
+sanseclabs.com
+sanzsec.com
+
 # Generic
 
 /assets/lfg.js
