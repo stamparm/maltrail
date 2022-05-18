@@ -5778,6 +5778,10 @@ dodgyblokes.club
 
 /8eaf9c2923101a.php
 
+# Reference: https://www.virustotal.com/gui/file/e5f471dcd4f5a47f0a53fc389e58c70b9ef81805c503ed6b100950d02ee7f777/detection
+
+/572663248.php
+
 # Generic
 
 /js/altmanluggage.js
