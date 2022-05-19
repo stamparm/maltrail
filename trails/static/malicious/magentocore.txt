@@ -6592,6 +6592,10 @@ sansec.us
 sanseclabs.com
 sanzsec.com
 
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-May/030663.html
+
+authorizen.net
+
 # Generic
 
 /assets/lfg.js
