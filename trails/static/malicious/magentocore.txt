@@ -6593,8 +6593,10 @@ sanseclabs.com
 sanzsec.com
 
 # Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-May/030663.html
+# Reference: https://www.virustotal.com/gui/ip-address/89.36.224.122/relations
 
 authorizen.net
+js.authorizen.net
 
 # Generic
 
