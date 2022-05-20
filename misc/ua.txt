@@ -2032,6 +2032,10 @@ dafom
 
 PureCrypter
 
+# Reference: https://twitter.com/drb_ra/status/1527471839559155717
+
+Mozilla/9.9
+
 # Misc
 
 information_schema
