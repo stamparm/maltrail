@@ -6571,10 +6571,12 @@ issuspsorry.online
 
 # Reference: https://twitter.com/EKFiddle/status/1526684723149344768
 # Reference: https://www.virustotal.com/gui/ip-address/198.54.115.32/relations
+# Reference: https://www.virustotal.com/gui/ip-address/37.19.192.30/relations
 
 jamescjonas.top
 socialanalyticweb.com
 gorlon.in.ua
+napas.biz.ua
 
 # Reference: https://twitter.com/unmaskparasites/status/1526659924058460160
 
