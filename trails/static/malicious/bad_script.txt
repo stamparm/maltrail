@@ -5782,6 +5782,10 @@ dodgyblokes.club
 
 /572663248.php
 
+# Reference: https://twitter.com/MalwarePatrol/status/1527879120893403137
+
+/qw09ua40uo56e8gb2284pgiy.php
+
 # Generic
 
 /js/altmanluggage.js
