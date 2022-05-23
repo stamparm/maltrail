@@ -888,3 +888,7 @@ podathon.org/shell/
 /ufiumnnpua.php
 /ySLKRsrWcbV.php
 /z6MadcuV3UL.php
+
+# Reference: https://unit42.paloaltonetworks.com/cve-2022-22954-vmware-vulnerabilities/
+
+/shell.py
