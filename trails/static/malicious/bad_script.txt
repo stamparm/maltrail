@@ -5786,6 +5786,10 @@ dodgyblokes.club
 
 /qw09ua40uo56e8gb2284pgiy.php
 
+# Reference: https://www.virustotal.com/gui/file/fbf53255c0a5a3c5f0010df3256462b5f3bfd4def9127808d8265ae4c0b0cb09/detection
+
+/testinghtaa.hta
+
 # Generic
 
 /js/altmanluggage.js
