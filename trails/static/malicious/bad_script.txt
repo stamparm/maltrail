@@ -5790,6 +5790,12 @@ dodgyblokes.club
 
 /testinghtaa.hta
 
+# Reference: https://www.virustotal.com/gui/file/4c6a8a2acdc3bc3ab8fe29295981caf1a07ea69a60372df05a2bc74e383bb8dd/detection
+
+/fuckusaterrorists.hta
+/fuckusaterrorists.txt
+/terror.hta
+
 # Generic
 
 /js/altmanluggage.js
