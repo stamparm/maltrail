@@ -5796,6 +5796,10 @@ dodgyblokes.club
 /fuckusaterrorists.txt
 /terror.hta
 
+# Reference: https://twitter.com/ShadowChasing1/status/1528908083476713472
+
+/djavascript.hta
+
 # Generic
 
 /js/altmanluggage.js
