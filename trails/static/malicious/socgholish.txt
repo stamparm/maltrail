@@ -213,6 +213,11 @@ java.extra-tegic.com
 agrandatubolsillo.com
 jump.agrandatubolsillo.com
 
+# Reference: https://twitter.com/bigmacjpg/status/1528860847178936320
+
+academiadecontables.com
+parked.academiadecontables.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
