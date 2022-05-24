@@ -6601,6 +6601,10 @@ sanzsec.com
 authorizen.net
 js.authorizen.net
 
+# Reference: https://twitter.com/sansecio/status/1529146291535634438
+
+arnottindustries.com/js/tiny_mce/plugins/contextmenu/editor_plugin_scr.js
+
 # Generic
 
 /assets/lfg.js
