@@ -331,10 +331,12 @@ javasripts.classicpartnerships.com
 open.classicpartnerships.com
 scripts.classicpartnerships.com
 simple.classicpartnerships.com
+thisisatest.classicpartnerships.com
 walk.classicpartnerships.com
 white.classicpartnerships.com
 34trick.legendarytable.com
 clip.legendarytable.com
+clipj.legendarytable.com
 clipjs.legendarytable.com
 comprint.legendarytable.com
 comtrick.legendarytable.com
