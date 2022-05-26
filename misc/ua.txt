@@ -2036,6 +2036,10 @@ PureCrypter
 
 Mozilla/9.9
 
+# Reference: https://twitter.com/ankit_anubhav/status/1529664691357659136
+
+svc/1.0
+
 # Misc
 
 information_schema
