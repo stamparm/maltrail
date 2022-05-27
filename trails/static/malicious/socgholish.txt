@@ -218,6 +218,13 @@ jump.agrandatubolsillo.com
 academiadecontables.com
 parked.academiadecontables.com
 
+# Reference: https://medium.com/walmartglobaltech/socgholish-campaigns-and-initial-access-kit-4c4283fea8ee
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-May/030669.html
+
+irsbusinessaudit.net
+irsbusinessaudit.tax
+irsgetwell.net
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
