@@ -225,6 +225,11 @@ irsbusinessaudit.net
 irsbusinessaudit.tax
 irsgetwell.net
 
+# Reference: https://twitter.com/bigmacjpg/status/1529921079132704788
+
+newhomessection.com
+schedule.newhomessection.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
