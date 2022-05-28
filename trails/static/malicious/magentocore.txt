@@ -6607,6 +6607,17 @@ js.authorizen.net
 
 arnottindustries.com/js/tiny_mce/plugins/contextmenu/editor_plugin_scr.js
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.150.162.28/relations
+# Reference: https://www.virustotal.com/gui/ip-address/209.250.244.63/relations
+# Reference: https://www.virustotal.com/gui/ip-address/95.179.179.138/relations
+
+brbr.buzz
+jquery-analytics.xyz
+jquery-common.xyz
+jquerystatic.xyz
+staj.xyz
+tokenkit.tk
+
 # Generic
 
 /assets/lfg.js
