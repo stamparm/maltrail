@@ -6521,9 +6521,11 @@ stylesfound.com
 
 # Reference: https://community.riskiq.com/article/a472ec2d
 # Reference: https://www.riskiq.com/blog/external-threat-management/magecart-group8-hosting-patterns/
+# Reference: https://www.virustotal.com/gui/ip-address/190.2.139.23/relations
 # Reference: https://otx.alienvault.com/pulse/6142f70ea663fff6bc350288
 
 impressart.net
+lastdaysonlines.com
 palletforks.net
 webtoolsapp.com
 
