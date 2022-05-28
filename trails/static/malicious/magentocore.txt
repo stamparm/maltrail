@@ -6371,8 +6371,7 @@ google-globals.com
 # Reference: https://twitter.com/sansecio/status/1486000220647444491
 # Reference: https://twitter.com/sansecio/status/1486258634409623552
 
-naturalfreshmall.com/image/pixel.js
-naturalfreshmall.com/payment/Payment.php
+naturalfreshmall.com
 
 # Reference: https://twitter.com/rootprivilege/status/1486419929720967168
 # Reference: https://www.virustotal.com/gui/ip-address/212.224.124.86/relations
@@ -6583,6 +6582,7 @@ napas.biz.ua
 pixelgoogle.xyz
 
 # Reference: https://twitter.com/sansecio/status/1526518050865954816
+# Reference: https://twitter.com/unmaskparasites/status/1530405066590474240
 
 papershoppers.com
 /js/3uPop.js
