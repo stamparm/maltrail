@@ -5804,6 +5804,10 @@ dodgyblokes.club
 
 /B82K3Manl9UWoYN6.js
 
+# Reference: https://www.virustotal.com/gui/file/881d2e40edf5bd4293ad3e4d92f33508122b3ad44bc1333e3d5fc186bb8fd53d/detection
+
+/kXDzAmnYvJzy57mRDdLJiQhlKyi.html
+
 # Generic
 
 /js/altmanluggage.js
