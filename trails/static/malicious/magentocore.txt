@@ -6618,6 +6618,14 @@ jquerystatic.xyz
 staj.xyz
 tokenkit.tk
 
+# Reference: https://www.microsoft.com/security/blog/2022/05/23/beneath-the-surface-uncovering-the-shift-in-web-skimming/
+
+106.15.179.255:443
+dratserv.bar
+sotech.fun
+techlok.bar
+/jQuery_StXlFiisxCDN.php
+
 # Generic
 
 /assets/lfg.js
