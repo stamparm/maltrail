@@ -5800,6 +5800,10 @@ dodgyblokes.club
 
 /djavascript.hta
 
+# Reference: https://www.virustotal.com/gui/file/90de674bea63102925c6d7f948106deb582663b7cb19e0b17d50484da13c01de/detection
+
+/B82K3Manl9UWoYN6.js
+
 # Generic
 
 /js/altmanluggage.js
