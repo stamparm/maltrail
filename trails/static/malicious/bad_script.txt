@@ -5874,6 +5874,7 @@ dodgyblokes.club
 /gatw.php
 /gate.phpgate.php
 /ggate.php
+/gggate.php
 /online-dating-verification-card.php
 /ravufgate.php
 /screenshot_gate.php
