@@ -393,3 +393,7 @@ json.myip.wtf
 static.myip.wtf
 text.myip.wtf
 xml.myip.wtf
+
+# Reference: https://www.virustotal.com/gui/file/04ca768c17970bee6915e676e7e274e577cc8fefb4f072a801f5e3832d87783c/behavior/Zenbox
+
+httpbin.org/ip
