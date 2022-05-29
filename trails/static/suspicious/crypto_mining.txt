@@ -961,3 +961,7 @@ jp.moneroocean.stream
 # Reference: https://www.virustotal.com/gui/file/28114eb0261850e8d744be4605b506cd2058ca3acd7c2da7387464f038f4c438/detection
 
 149.202.83.171:8080
+
+# Reference: https://www.virustotal.com/gui/file/01896d1ca66873aa7b2b26e90eb4ac1b128e3d3d9746ee6a5b4e56cffc30f3cd/detection
+
+51.255.34.80:14433
