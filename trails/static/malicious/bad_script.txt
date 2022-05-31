@@ -5812,6 +5812,10 @@ dodgyblokes.club
 
 /ymao78ixhazwjeulw2vypdeh.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1531619205845590016
+
+/Beznall_crypt.hta
+
 # Generic
 
 /js/altmanluggage.js
