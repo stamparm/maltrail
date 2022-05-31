@@ -5816,6 +5816,10 @@ dodgyblokes.club
 
 /Beznall_crypt.hta
 
+# Reference: https://twitter.com/Computeus7/status/1531657197507297280
+
+/9f3d37faadd0a5.php
+
 # Generic
 
 /js/altmanluggage.js
