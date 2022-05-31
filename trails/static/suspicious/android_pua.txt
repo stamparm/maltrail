@@ -709,3 +709,8 @@ jayezeh.cloudns.asia
 47.243.71.238:88
 shuobofootball.xyz
 pay.shuobofootball.xyz
+
+# Reference: https://www.virustotal.com/gui/file/66f1c53cb7278eb111911e8e003dc28b0cb34dcb2c8143e5bc39aa4c673872ad/detection
+
+77.232.39.253:2050
+glg.333wins.com
