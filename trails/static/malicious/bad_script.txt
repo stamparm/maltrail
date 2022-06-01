@@ -5820,6 +5820,11 @@ dodgyblokes.club
 
 /9f3d37faadd0a5.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1531957313032052736
+# Reference: https://www.virustotal.com/gui/file/df4190f1b39f60c2e898d51cb43fec4f2ff50bd54b83b2ab22f4bf3567bcd558/detection
+
+/Docum.hta
+
 # Generic
 
 /js/altmanluggage.js
