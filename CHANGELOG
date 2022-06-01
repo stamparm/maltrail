@@ -14,7 +14,15 @@
 
 
 
-- Version 0.45 -> 0.46 (Upcoming release)
+- Version 0.46 -> 0.47 (Upcoming release)
+
+
+
+- Version 0.45 -> 0.46 (01 Jun 2022)
+
+[+] New Wiki page is added
+[=] "potential remote code execution" heuristic is improved (CVE-2022-1388)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
