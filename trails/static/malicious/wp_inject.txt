@@ -543,3 +543,10 @@ jj99.life
 # Reference: https://twitter.com/unmaskparasites/status/1531307100709670912
 
 brandonrestaurant.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1532112174411157504
+
+transportgoline.com
+back.transportgoline.com
+front.transportgoline.com
+track.transportgoline.com
