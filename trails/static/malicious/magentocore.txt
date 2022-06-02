@@ -6626,6 +6626,10 @@ sotech.fun
 techlok.bar
 /jQuery_StXlFiisxCDN.php
 
+# Reference: https://twitter.com/sansecio/status/1532361233365598209
+
+cdn.stripe.ngrok.io
+
 # Generic
 
 /assets/lfg.js
