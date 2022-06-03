@@ -6630,6 +6630,10 @@ techlok.bar
 
 cdn.stripe.ngrok.io
 
+# Reference: https://twitter.com/sansecio/status/1532763512887459841
+
+pluginmagento.com
+
 # Generic
 
 /assets/lfg.js
