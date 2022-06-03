@@ -230,6 +230,19 @@ irsgetwell.net
 newhomessection.com
 schedule.newhomessection.com
 
+# Reference: https://blog.sucuri.net/2022/06/analysis-massive-ndsw-ndsx-malware-campaign.html
+
+bumpy.daniyalmedicaltech.com
+contractor.thecaninescholar.com
+craft.cheesedome.com
+mamba.cpncredit.com
+market.bluestonechiropractic.com
+mines.cajonsoul.com
+rotation.craigconnors.com
+sdk.expresswayautopr.com
+staff.beeboykind.com
+trace.mukandratourandtravels.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
