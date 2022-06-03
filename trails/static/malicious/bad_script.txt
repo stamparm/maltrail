@@ -5825,6 +5825,10 @@ dodgyblokes.club
 
 /Docum.hta
 
+# Reference: https://twitter.com/midnight_comms/status/1532708285786116096
+
+/d1office2.php
+
 # Generic
 
 /js/altmanluggage.js
