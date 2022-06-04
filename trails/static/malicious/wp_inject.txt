@@ -550,3 +550,18 @@ transportgoline.com
 back.transportgoline.com
 front.transportgoline.com
 track.transportgoline.com
+
+# Reference: https://blog.sucuri.net/2022/06/analysis-massive-ndsw-ndsx-malware-campaign.html
+
+/wp-content/plugins/wp-dumpme/click.php
+/wp-content/plugins/wp-dumpme/clock.php
+/wp-content/plugins/wp-dumpme/tasty.pot
+/wp-content/plugins/wp-pimple/click.php
+/wp-content/plugins/wp-pimple/clock.php
+/wp-content/plugins/wp-sp/class.php
+/wp-content/plugins/wp-sps/class.php
+/wp-content/plugins/wp-sps/simple.php
+/wp-content/plugins/wp-dumpme/
+/wp-content/plugins/wp-pimple/
+/wp-content/plugins/wp-sp/
+/wp-content/plugins/wp-sps/
