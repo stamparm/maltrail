@@ -16,6 +16,9 @@
 
 - Version 0.46 -> 0.47 (Upcoming release)
 
+[+] "potential ssti injection" heuristic is added (CVE-2022-26134)
+[=]  "Trail-classes" wiki page is updated
+
 
 
 - Version 0.45 -> 0.46 (01 Jun 2022)
