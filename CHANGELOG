@@ -18,7 +18,7 @@
 
 [+] "potential ssti injection" heuristic is added (CVE-2022-26134)
 [=] "Trail-classes" wiki page is updated
-[=] /requirement.txt file is updated (pcapy-ng)
+[=] /requirements.txt file is updated (pcapy-ng)
 
 
 
