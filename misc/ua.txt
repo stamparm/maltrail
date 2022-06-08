@@ -2040,6 +2040,11 @@ Mozilla/9.9
 
 svc/1.0
 
+# Reference: https://twitter.com/James_inthe_box/status/1534587919410683904
+# Reference: https://app.any.run/tasks/631b83d3-0f5d-4766-9b84-c35919fc4db0/
+
+\brecord\b
+
 # Misc
 
 information_schema
