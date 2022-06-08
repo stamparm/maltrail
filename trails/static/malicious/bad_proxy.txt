@@ -15,3 +15,8 @@
 # Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2017/2017-06-16-mcafee-discovers-pinkslipbot-exploiting-infected-machines-as-control-servers-releases-free-tool-to-detect-disable-trojan/mcafee-discovers-pinkslipbot-exploiting-infected-machines-as-control-servers-releases-free-tool-to-detect-disable-trojan.csv
 
 /gwsup
+
+# Reference: https://blog.avast.com/fakecrack-campaign
+# Reference: https://otx.alienvault.com/pulse/62a084ef849cd814d827fb91
+
+104.155.207.188:8183
