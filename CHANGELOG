@@ -17,7 +17,8 @@
 - Version 0.46 -> 0.47 (Upcoming release)
 
 [+] "potential ssti injection" heuristic is added (CVE-2022-26134)
-[=]  "Trail-classes" wiki page is updated
+[=] "Trail-classes" wiki page is updated
+[=] /requirement.txt file is updated (pcapy-ng)
 
 
 
