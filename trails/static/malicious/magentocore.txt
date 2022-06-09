@@ -6634,6 +6634,11 @@ cdn.stripe.ngrok.io
 
 pluginmagento.com
 
+# Reference: https://twitter.com/sansecio/status/1534862125470035970
+# Reference: https://www.virustotal.com/gui/ip-address/185.63.190.184/relations
+
+scanalytic.org
+
 # Generic
 
 /assets/lfg.js
