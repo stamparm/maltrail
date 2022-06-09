@@ -6638,6 +6638,7 @@ pluginmagento.com
 # Reference: https://www.virustotal.com/gui/ip-address/185.63.190.184/relations
 
 scanalytic.org
+cdn.scanalytic.org
 
 # Generic
 
