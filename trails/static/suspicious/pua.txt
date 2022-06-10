@@ -3060,3 +3060,12 @@ umonions.com
 # Reference: https://www.virustotal.com/gui/file/0001fa90535306d93eb691b5d1906c32478396943dde09a4586a19bfb7b0ea57/detection
 
 d1picnfwewmhyp.cloudfront.net
+
+# Reference: https://twitter.com/James_inthe_box/status/1535373385160486912
+# Reference: https://scammer.info/t/amanvpn-trojan/99127
+# Reference: https://app.any.run/tasks/de75f5f9-94a4-421d-940f-99fa1e2bd850/
+# Reference: https://app.any.run/tasks/f80cac1b-b7ac-4dbd-8899-ebd97fa01d50/
+
+43.154.154.166:9166
+10.17ce.holadns.com
+amanvpn.online
