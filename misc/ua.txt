@@ -2045,6 +2045,11 @@ svc/1.0
 
 \brecord\b
 
+# Reference: https://twitter.com/James_inthe_box/status/1535373385160486912
+# Reference: https://app.any.run/tasks/de75f5f9-94a4-421d-940f-99fa1e2bd850/
+
+Lingjiang
+
 # Misc
 
 information_schema
