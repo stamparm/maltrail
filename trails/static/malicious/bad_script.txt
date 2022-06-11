@@ -5829,6 +5829,10 @@ dodgyblokes.club
 
 /d1office2.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1535703306705805313
+
+/wasiq.hta
+
 # Generic
 
 /js/altmanluggage.js
