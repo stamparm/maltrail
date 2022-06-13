@@ -32,7 +32,7 @@
 - [Sponsors](#sponsors)
 - [Developers](#developers)
 - [Presentations](#presentations)
-- [Mass media](#mass-media)
+- [Publications](#publications)
 - [Blacklist](#blacklist)
 - [Thank you](#thank-you)
 - [Third-party integrations](#third-party-integrations)
@@ -561,7 +561,7 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 
 * 47th TF-CSIRT Meeting, Prague (Czech Republic), 2016 ([slides](https://www.terena.org/activities/tf-csirt/meeting47/M.Stampar-Maltrail.pdf))
 
-## Mass Media
+## Publications
 
 * Detect attacks on your network with Maltrail, Linux Magazine, 2022 ([Annotation](https://www.linux-magazine.com/Issues/2022/258/Maltrail))
 
