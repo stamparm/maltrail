@@ -6640,6 +6640,12 @@ pluginmagento.com
 scanalytic.org
 cdn.scanalytic.org
 
+# Reference: https://twitter.com/rootprivilege/status/1536197955728048128
+# Reference: https://lukeleal.com/research/posts/staticounter/
+
+staticounter.net
+js.staticounter.net
+
 # Generic
 
 /assets/lfg.js
