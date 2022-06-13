@@ -5833,6 +5833,10 @@ dodgyblokes.club
 
 /wasiq.hta
 
+# Reference: https://twitter.com/MalwarePatrol/status/1536289539366522880
+
+/one-hot-0t0s.php
+
 # Generic
 
 /js/altmanluggage.js
