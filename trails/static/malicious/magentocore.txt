@@ -6646,6 +6646,10 @@ cdn.scanalytic.org
 staticounter.net
 js.staticounter.net
 
+# Reference: https://twitter.com/unmaskparasites/status/1536454343280340992
+
+biftick.com
+
 # Generic
 
 /assets/lfg.js
