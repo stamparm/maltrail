@@ -243,6 +243,11 @@ sdk.expresswayautopr.com
 staff.beeboykind.com
 trace.mukandratourandtravels.com
 
+# Reference: https://twitter.com/th3_protoCOL/status/1536791876577112065
+
+stradlings.com
+official.stradlings.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
