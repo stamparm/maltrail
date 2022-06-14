@@ -467,3 +467,8 @@ serviceeusps.com
 # Reference: https://www.virustotal.com/gui/domain/crystalfiles.ru/detection
 
 crystalfiles.ru
+
+# Reference: https://twitter.com/peterkruse/status/1536642469630189568
+
+krakenshop.cc
+omerta.cc
