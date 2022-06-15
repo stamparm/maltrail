@@ -3301,3 +3301,9 @@ staging-nginz-https.zinfra.io
 taging-nginz-ssl.zinfra.io
 wire-account-staging.zinfra.io
 wire-teams-staging.zinfra.io
+
+# Reference: https://github.com/stamparm/aux/issues/6
+# Reference: https://github.com/stamparm/maltrail/commit/4f8aa8c6592a11ad64b3b038bf51502ebb8db556
+
+shaparak.ir
+bpm.shaparak.ir
