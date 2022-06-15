@@ -2050,6 +2050,12 @@ svc/1.0
 
 Lingjiang
 
+# Reference: https://news.sophos.com/en-us/2022/06/15/telerik-ui-exploitation-leads-to-cryptominer-cobalt-strike-infections
+# Reference: https://otx.alienvault.com/pulse/62a9f96003d8f53c24d0bf94
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/Troj-Miner-AED.csv
+
+\bNP07; NP07\b
+
 # Misc
 
 information_schema
