@@ -6651,6 +6651,12 @@ js.staticounter.net
 
 biftick.com
 
+# Reference: https://twitter.com/felixaime/status/1536999558823219200
+
+ambrosia-solingen.de/js/prototype/form.js
+ariaperfume.com/js/extjs/ext.js
+textilia.be/flash/accept.js
+
 # Generic
 
 /assets/lfg.js
