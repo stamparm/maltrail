@@ -444,3 +444,7 @@ mvd.net.ru
 # Reference: https://twitter.com/MBThreatIntel/status/1383220418081792000
 
 jpfftapr.fun
+
+# Reference: https://twitter.com/MBThreatIntel/status/1536841267329478657
+
+wheressharon.xyz
