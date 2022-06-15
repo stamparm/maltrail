@@ -5837,6 +5837,11 @@ dodgyblokes.club
 
 /one-hot-0t0s.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1537022403347460096
+# Reference: https://www.virustotal.com/gui/file/a8ce2181ce6e56c147412c600a430fdb7baf68550b6f822b98a1759f52adb72f/detection
+
+/runobject.hta
+
 # Generic
 
 /js/altmanluggage.js
