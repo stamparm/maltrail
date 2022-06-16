@@ -6657,6 +6657,14 @@ ambrosia-solingen.de/js/prototype/form.js
 ariaperfume.com/js/extjs/ext.js
 textilia.be/flash/accept.js
 
+# Reference: https://twitter.com/felixaime/status/1537327680345063425
+# Reference: https://www.virustotal.com/gui/ip-address/172.86.75.152/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.61.137.105/relations
+
+ads-google-analytics-shop.info
+googleadsanalytics.info
+usaayurveda.com/js/prototype/form.js
+
 # Generic
 
 /assets/lfg.js
