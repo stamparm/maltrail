@@ -5842,6 +5842,10 @@ dodgyblokes.club
 
 /runobject.hta
 
+# Reference: https://twitter.com/ps66uk/status/1537370503974903809
+
+/cl/.bot/s.php
+
 # Generic
 
 /js/altmanluggage.js
