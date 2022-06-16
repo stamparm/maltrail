@@ -5846,6 +5846,11 @@ dodgyblokes.club
 
 /cl/.bot/s.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1537412988558245888
+# Reference: https://www.virustotal.com/gui/file/de495346ac81d29707c92181382989cbcc9ecab3feeb7c38eb6fe4364c89cde8/detection
+
+/account.hta
+
 # Generic
 
 /js/altmanluggage.js
