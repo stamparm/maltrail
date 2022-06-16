@@ -248,6 +248,11 @@ trace.mukandratourandtravels.com
 stradlings.com
 official.stradlings.com
 
+# Reference: https://twitter.com/1ZRR4H/status/1537501582727778304
+
+ibgenesis.org
+genesis.ibgenesis.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
