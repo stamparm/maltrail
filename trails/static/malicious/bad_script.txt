@@ -5859,6 +5859,10 @@ dodgyblokes.club
 
 /c53b0420d91d96.php
 
+# Reference: https://twitter.com/StopMalvertisin/status/1537403718236520448
+
+/dllhost.hta
+
 # Generic
 
 /js/altmanluggage.js
