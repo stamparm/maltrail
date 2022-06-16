@@ -472,3 +472,7 @@ crystalfiles.ru
 
 krakenshop.cc
 omerta.cc
+
+# Reference: https://twitter.com/felixaime/status/1537458621726052354
+
+/wp-embed.php
