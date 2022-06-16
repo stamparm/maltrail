@@ -6665,6 +6665,11 @@ ads-google-analytics-shop.info
 googleadsanalytics.info
 usaayurveda.com/js/prototype/form.js
 
+# Reference: https://twitter.com/felixaime/status/1537458621726052354
+
+google-track.com
+cdn.google-track.com
+
 # Generic
 
 /assets/lfg.js
