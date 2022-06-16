@@ -5851,6 +5851,10 @@ dodgyblokes.club
 
 /account.hta
 
+# Reference: https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/
+
+/cve2021-4034.py
+
 # Generic
 
 /js/altmanluggage.js
