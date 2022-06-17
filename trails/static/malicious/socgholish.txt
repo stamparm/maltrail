@@ -246,12 +246,17 @@ trace.mukandratourandtravels.com
 # Reference: https://twitter.com/th3_protoCOL/status/1536791876577112065
 
 stradlings.com
+reviews.stradlings.com
 official.stradlings.com
 
 # Reference: https://twitter.com/1ZRR4H/status/1537501582727778304
 
 ibgenesis.org
 genesis.ibgenesis.org
+
+# Reference: https://twitter.com/atorrrr/status/1537107577418485761
+
+northphxchiro.com
 
 # Generic
 
