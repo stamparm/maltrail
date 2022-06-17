@@ -6670,6 +6670,10 @@ usaayurveda.com/js/prototype/form.js
 google-track.com
 cdn.google-track.com
 
+# Reference: https://twitter.com/rootprivilege/status/1537799222681956352
+
+cdn-fonts.com
+
 # Generic
 
 /assets/lfg.js
