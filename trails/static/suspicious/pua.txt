@@ -3069,3 +3069,9 @@ d1picnfwewmhyp.cloudfront.net
 43.154.154.166:9166
 10.17ce.holadns.com
 amanvpn.online
+
+# Reference: https://www.virustotal.com/gui/ip-address/190.123.44.218/relations
+# Reference: https://www.virustotal.com/gui/file/2fb567bdec66d96231b28d90d8198e7074cce5c77932094a0249ff35dd7e222d/detection
+# Reference: https://www.virustotal.com/gui/file/c18cff12b8a90ac443d9b229a4b5babe27a3867564bbcacb310a9c15f1e1193e/detection
+
+espanex.net
