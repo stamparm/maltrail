@@ -5866,6 +5866,7 @@ dodgyblokes.club
 # Reference: https://twitter.com/malwrhunterteam/status/1538094207478517764
 
 /a1790.hta
+/a1799.hta
 
 # Generic
 
