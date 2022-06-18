@@ -3075,3 +3075,7 @@ amanvpn.online
 # Reference: https://www.virustotal.com/gui/file/c18cff12b8a90ac443d9b229a4b5babe27a3867564bbcacb310a9c15f1e1193e/detection
 
 espanex.net
+
+# Reference: https://www.virustotal.com/gui/file/d63527ca64cd4ee0eab0ced2415529641ebe62f4120b1c853939b39ade515abd/detection
+
+phone-mine-give.gq
