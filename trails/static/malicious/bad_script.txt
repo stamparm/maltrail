@@ -5863,6 +5863,10 @@ dodgyblokes.club
 
 /dllhost.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1538094207478517764
+
+/a1790.hta
+
 # Generic
 
 /js/altmanluggage.js
