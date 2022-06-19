@@ -3079,3 +3079,7 @@ espanex.net
 # Reference: https://www.virustotal.com/gui/file/d63527ca64cd4ee0eab0ced2415529641ebe62f4120b1c853939b39ade515abd/detection
 
 phone-mine-give.gq
+
+# Reference: https://www.virustotal.com/gui/file/0001efb8d8e875cf47a5a95fb0c15bf54b7c710eae1444b9dca30c0db414da96/detection
+
+reqapi.ru
