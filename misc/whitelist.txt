@@ -3307,3 +3307,8 @@ wire-teams-staging.zinfra.io
 
 shaparak.ir
 bpm.shaparak.ir
+
+# Reference: https://github.com/stamparm/maltrail/commit/10c5434d42e6a378832914a9a3221d58ffe937ae
+
+dnsv1.com
+cdn.dnsv1.com
