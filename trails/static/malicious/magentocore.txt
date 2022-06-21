@@ -6804,6 +6804,13 @@ web.livechatsinc.net
 web.speedstester.com
 web.webflows.net
 
+# Reference: https://twitter.com/sansecio/status/1539252937486127104
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.33.190/relations
+
+cdn-fastimages.net
+quickespark.net
+cdn.quickespark.net
+
 # Generic
 
 /assets/lfg.js
