@@ -965,3 +965,7 @@ jp.moneroocean.stream
 # Reference: https://www.virustotal.com/gui/file/01896d1ca66873aa7b2b26e90eb4ac1b128e3d3d9746ee6a5b4e56cffc30f3cd/detection
 
 51.255.34.80:14433
+
+# Reference: https://www.cadosecurity.com/cado-discovers-denonia-the-first-malware-specifically-targeting-lambda/
+
+116.203.4.0:3333
