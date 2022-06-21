@@ -258,6 +258,11 @@ genesis.ibgenesis.org
 
 northphxchiro.com
 
+# Reference: https://twitter.com/bigmacjpg/status/1539000348941201408
+
+jcscateringaz.com
+spool.jcscateringaz.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
