@@ -5877,6 +5877,11 @@ dodgyblokes.club
 
 /forbest.ps1
 
+# Reference: https://twitter.com/malwrhunterteam/status/1539331504081453057
+# Reference: https://www.virustotal.com/gui/file/d5fc8f42b8ec97ce6ae6007b994c855dd2b07e98697d0c2d2990d9b080d044c1/detection
+
+/BAYC_Roadmap_Leaked.hta
+
 # Generic
 
 /js/altmanluggage.js
