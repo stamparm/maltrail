@@ -6811,6 +6811,10 @@ cdn-fastimages.net
 quickespark.net
 cdn.quickespark.net
 
+# Reference: https://twitter.com/felixaime/status/1539539440942686208
+
+apipauy.com
+
 # Generic
 
 /assets/lfg.js
