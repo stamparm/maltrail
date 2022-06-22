@@ -264,9 +264,15 @@ jcscateringaz.com
 spool.jcscateringaz.com
 
 # Reference: https://twitter.com/C0ryInTheHous3/status/1539681817497853952
+# Reference: https://www.virustotal.com/gui/ip-address/176.10.124.180/relations
 
 step.ifsguy.com
+2a2da470.step.ifsguy.com
+374d1389.step.ifsguy.com
+4f8d0e70.step.ifsguy.com
+6ea0e2c3.step.ifsguy.com
 c95a786e.step.ifsguy.com
+e316bac0.step.ifsguy.com
 
 # Generic
 
