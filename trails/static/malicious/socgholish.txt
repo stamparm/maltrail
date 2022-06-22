@@ -263,6 +263,11 @@ northphxchiro.com
 jcscateringaz.com
 spool.jcscateringaz.com
 
+# Reference: https://twitter.com/C0ryInTheHous3/status/1539681817497853952
+
+step.ifsguy.com
+c95a786e.step.ifsguy.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
