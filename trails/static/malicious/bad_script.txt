@@ -5882,6 +5882,10 @@ dodgyblokes.club
 
 /BAYC_Roadmap_Leaked.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1539621033908621314
+
+/shell2.ps1
+
 # Generic
 
 /js/altmanluggage.js
