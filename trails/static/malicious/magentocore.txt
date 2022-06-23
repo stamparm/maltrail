@@ -6815,6 +6815,10 @@ cdn.quickespark.net
 
 apipauy.com
 
+# Reference: https://twitter.com/EKFiddle/status/1540019849581105152
+
+apfeltee.de/js/prototype/form.js
+
 # Generic
 
 /assets/lfg.js
