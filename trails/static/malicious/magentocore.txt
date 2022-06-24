@@ -6830,6 +6830,10 @@ cafeunido.com/pub/errors/default/403.php
 cafeunido.com/pub/media/flag/flag.js
 candlemaking.com/media/email/logo/default/az1.js
 
+# Reference: https://twitter.com/EKFiddle/status/1540377960351293442
+
+contactsform.com
+
 # Generic
 
 /assets/lfg.js
