@@ -6819,6 +6819,10 @@ apipauy.com
 
 apfeltee.de/js/prototype/form.js
 
+# Reference: https://twitter.com/EKFiddle/status/1540094462340108289
+
+hubberstore.com
+
 # Generic
 
 /assets/lfg.js
