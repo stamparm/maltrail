@@ -6823,6 +6823,13 @@ apfeltee.de/js/prototype/form.js
 
 hubberstore.com
 
+# Reference: https://twitter.com/EKFiddle/status/1540070708377559040
+
+ariaperfume.com/errors/default/403.php
+cafeunido.com/pub/errors/default/403.php
+cafeunido.com/pub/media/flag/flag.js
+candlemaking.com/media/email/logo/default/az1.js
+
 # Generic
 
 /assets/lfg.js
