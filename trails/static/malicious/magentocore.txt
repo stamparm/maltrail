@@ -6834,6 +6834,11 @@ candlemaking.com/media/email/logo/default/az1.js
 
 contactsform.com
 
+# Reference: https://twitter.com/sansecio/status/1540742673094438913
+
+cdn-mediacloud.com
+cdn-webhub.com
+
 # Generic
 
 /assets/lfg.js
