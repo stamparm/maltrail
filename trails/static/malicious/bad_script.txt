@@ -5886,6 +5886,10 @@ dodgyblokes.club
 
 /shell2.ps1
 
+# Reference: https://twitter.com/malwrhunterteam/status/1540614846600908800
+
+/lum.hta
+
 # Generic
 
 /js/altmanluggage.js
