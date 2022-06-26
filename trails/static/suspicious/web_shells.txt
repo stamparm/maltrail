@@ -896,3 +896,8 @@ podathon.org/shell/
 # Reference: https://twitter.com/1ZRR4H/status/1532802996362526720
 
 /confluence/testAnt.jsp
+
+# Reference: https://secjoes-reports.s3.eu-central-1.amazonaws.com/Backdoor%2Bvia%2BXFF%2BMysterious%2BThreat%2BActor%2BUnder%2BRadar.pdf
+
+/dc9b66ce0.php
+/tunnel123.php
