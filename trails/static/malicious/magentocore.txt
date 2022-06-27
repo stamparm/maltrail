@@ -6591,12 +6591,14 @@ papershoppers.com
 /js/3uPop.js
 
 # Reference: https://twitter.com/sansecio/status/1526490490497032193
+# Reference: https://twitter.com/sansecio/status/1541345598007193605
 
 sanguinelab.net
 sansec.biz
 sansec.us
 sanseclabs.com
 sanzsec.com
+/gate.php?card_num=
 
 # Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-May/030663.html
 # Reference: https://www.virustotal.com/gui/ip-address/89.36.224.122/relations
@@ -6838,6 +6840,11 @@ contactsform.com
 
 cdn-mediacloud.com
 cdn-webhub.com
+
+# Reference: https://twitter.com/sansecio/status/1541375801387614212
+
+affirmcdn.com
+t.affirmcdn.com
 
 # Generic
 
