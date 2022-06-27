@@ -6846,6 +6846,11 @@ cdn-webhub.com
 affirmcdn.com
 t.affirmcdn.com
 
+# Reference: https://twitter.com/EKFiddle/status/1541447869491601408
+
+bsvholdingsa.com/js/lib/ico.svg
+code2a.com/js/lib/translate.js
+
 # Generic
 
 /assets/lfg.js
