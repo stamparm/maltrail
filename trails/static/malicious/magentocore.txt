@@ -6851,6 +6851,14 @@ t.affirmcdn.com
 bsvholdingsa.com/js/lib/ico.svg
 code2a.com/js/lib/translate.js
 
+# Reference: https://twitter.com/MBThreatIntel/status/1541549810150346752
+
+cloudflareinside.com
+nortonpost.net
+rimpstatic.net
+ping.rimpstatic.net
+tag.nortonpost.net
+
 # Generic
 
 /assets/lfg.js
