@@ -284,6 +284,45 @@ hope.point521.com
 market.bluestonechiropractic.com
 mycontrol.alohaalsomeansgoodbye.com
 
+# Reference: https://twitter.com/bigmacjpg/status/1541775825833701377
+
+app.pgica.org
+00f4910b.app.pgica.org
+0220f52a.app.pgica.org
+084d2671.app.pgica.org
+0a08fe76.app.pgica.org
+108ada69.app.pgica.org
+11e53a7d.app.pgica.org
+16d356f0.app.pgica.org
+1cf74659.app.pgica.org
+1d7757ca.app.pgica.org
+21acf799.app.pgica.org
+21dcdf19.app.pgica.org
+271dbdf0.app.pgica.org
+284f616a.app.pgica.org
+295cef1b.app.pgica.org
+38c385af.app.pgica.org
+4689d20c.app.pgica.org
+539f0a1a.app.pgica.org
+5d322fe2.app.pgica.org
+71d44b01.app.pgica.org
+721ddcba.app.pgica.org
+80269b64.app.pgica.org
+8b64ae28.app.pgica.org
+96af898b.app.pgica.org
+9a5c5bc1.app.pgica.org
+9f08af01.app.pgica.org
+b51d496b.app.pgica.org
+b7e15726.app.pgica.org
+bcf0d5de.app.pgica.org
+cd8403ad.app.pgica.org
+d50f86a6.app.pgica.org
+dd465211.app.pgica.org
+e7ec2c33.app.pgica.org
+ed09a0b9.app.pgica.org
+f4fbd5fe.app.pgica.org
+f5de9db0.app.pgica.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
