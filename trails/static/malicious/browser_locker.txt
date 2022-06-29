@@ -448,3 +448,8 @@ jpfftapr.fun
 # Reference: https://twitter.com/MBThreatIntel/status/1536841267329478657
 
 wheressharon.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1541887163331072000
+
+http://147.182.148.167
+clarkdeals.xyz
