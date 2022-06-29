@@ -6859,6 +6859,11 @@ rimpstatic.net
 ping.rimpstatic.net
 tag.nortonpost.net
 
+# Reference: https://twitter.com/unmaskparasites/status/1542237945779826688
+# Reference: https://www.virustotal.com/gui/ip-address/149.56.118.126/relations
+
+cdntaggoogle.com
+
 # Generic
 
 /assets/lfg.js
