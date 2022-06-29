@@ -20,3 +20,7 @@
 35.244.90.180:7443
 52.13.1.165:7443
 8.130.55.52:7443
+
+# Reference: https://twitter.com/benkow_/status/1542047469860683777
+
+cryptolvl-rsa-check.com
