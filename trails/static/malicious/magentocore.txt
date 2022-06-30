@@ -6870,6 +6870,11 @@ cdntaggoogle.com
 tempeasy.net
 s.tempeasy.net
 
+# Reference: https://twitter.com/felixaime/status/1542531512758837249
+# Reference: https://www.virustotal.com/gui/ip-address/185.215.113.20/relations
+
+apigstatic.com
+
 # Generic
 
 /assets/lfg.js
