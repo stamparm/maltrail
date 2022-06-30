@@ -6864,6 +6864,12 @@ tag.nortonpost.net
 
 cdntaggoogle.com
 
+# Reference: https://twitter.com/sansecio/status/1542508263064932352
+# Reference: https://www.virustotal.com/gui/ip-address/185.63.190.203/relations
+
+tempeasy.net
+s.tempeasy.net
+
 # Generic
 
 /assets/lfg.js
