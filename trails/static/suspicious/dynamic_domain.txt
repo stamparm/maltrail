@@ -3403,3 +3403,7 @@ x1dns.com
 # Reference: https://www.virustotal.com/gui/domain/dynuddns.com/relations
 
 dynuddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/123ddns.com/relations
+
+123ddns.com
