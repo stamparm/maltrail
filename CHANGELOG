@@ -14,11 +14,20 @@
 
 
 
-- Version 0.46 -> 0.47 (Upcoming release)
+- Version 0.47 -> 0.48 (Upcoming release)
+
+
+
+
+
+
+- Version 0.46 -> 0.47 (01 Jul 2022)
 
 [+] "potential ssti injection" heuristic is added (CVE-2022-26134)
+[=] "potential data leak" heuristic is improved
 [=] "Trail-classes" wiki page is updated
 [=] /requirements.txt file is updated (pcapy-ng)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
