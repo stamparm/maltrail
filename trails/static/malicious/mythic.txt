@@ -24,12 +24,3 @@
 # Reference: https://twitter.com/benkow_/status/1542047469860683777
 
 cryptolvl-rsa-check.com
-
-# Reference: https://twitter.com/Glacius_/status/1542109007082561536
-
-139.59.72.48:7443
-147.189.169.143:7443
-159.223.193.246:7443
-203.28.246.137:7443
-34.240.115.152:7443
-43.142.60.207:7443
