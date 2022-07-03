@@ -6875,6 +6875,11 @@ s.tempeasy.net
 
 apigstatic.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.63.190.210/relations
+
+gatestatic.com
+js.gatestatic.com
+
 # Generic
 
 /assets/lfg.js
