@@ -476,3 +476,31 @@ omerta.cc
 # Reference: https://twitter.com/felixaime/status/1537458621726052354
 
 /wp-embed.php
+
+# Reference: https://www.trendmicro.com/en_us/research/22/f/websites-hosting-fake-cracks-spread-updated-copperstealer.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/f/websites-hosting-fake-cracks-spread-updated-copperstealer-malware/IOCs-websites-hosting-fake-cracks-spread-updated-copperstealer.txt
+# Reference: https://documents.trendmicro.com/assets/pdf/appendix-IoCs-websites-hosting-cracks-spread-malware-adware.pdf
+
+alfygame.com
+allcrack.info
+crackkeys4u.com
+cracksarena.com
+cracksversion.com
+cracxpro.com
+dedicatedcloud.info
+download-files.work
+file-download.info
+freecrackdownload.com
+freepcgames51.com
+freepcgames52.com
+hyporzfilez.xyz
+procrackey.com
+serialfull.info
+serialkeysoftware.com
+siteprerender.com
+softfiler.com
+technicalcomputersolution.com
+thecracksetup.com
+thegamesdownload.net
+thepcgaming.com
+ziphost.online
