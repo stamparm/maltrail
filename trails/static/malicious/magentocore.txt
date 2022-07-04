@@ -6932,6 +6932,11 @@ co.jmpduco.jp
 signefyd.com
 js.signefyd.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.254/relations
+
+claritycdn.com
+c.claritycdn.com
+
 # Generic
 
 /assets/lfg.js
