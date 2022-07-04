@@ -6723,6 +6723,7 @@ lpsnmedia.org
 mantisadnetwork.org
 marklibs.com
 moonflare.org
+mosindup.com
 murdoog.org
 newrelc.net
 nomalert.org
@@ -6754,6 +6755,7 @@ accdn.lpsnmedia.org
 amplify.outbrains.net
 apis.murdoog.org
 app.iofrontcloud.com
+app.mosindup.com
 app.nomalert.org
 app.purechat.org
 app.rolfinder.com
