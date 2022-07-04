@@ -6898,6 +6898,11 @@ s.geotac.net
 omniworked.com
 h.omniworked.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.48/relations
+
+contmount.net
+p.contmount.net
+
 # Generic
 
 /assets/lfg.js
