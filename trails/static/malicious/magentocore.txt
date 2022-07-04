@@ -6770,6 +6770,7 @@ cdn.nosto.org
 cdn.pinnaclecart.io
 cdn.speedcurve.org
 cdn.tomafood.org
+cdn.trustedport.org
 common.quatserve.com
 con.digital-speed.net
 content.digital-metric.org
