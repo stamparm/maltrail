@@ -6927,6 +6927,11 @@ s.anyonecdn.net
 jmpduco.jp
 co.jmpduco.jp
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.35/relations
+
+signefyd.com
+js.signefyd.com
+
 # Generic
 
 /assets/lfg.js
