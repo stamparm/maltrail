@@ -6911,6 +6911,11 @@ p.contmount.net
 sentrymap.net
 h.sentrymap.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.55/relations
+
+anyonecdn.net
+s.anyonecdn.net
+
 # Generic
 
 /assets/lfg.js
