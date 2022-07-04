@@ -6892,6 +6892,12 @@ js.knowledgecdn.org
 m.sale-alerts.com
 s.geotac.net
 
+# Reference: https://twitter.com/MBThreatIntel/status/1544019143841574913
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.47/relations
+
+omniworked.com
+h.omniworked.com
+
 # Generic
 
 /assets/lfg.js
