@@ -2056,6 +2056,10 @@ Lingjiang
 
 \bNP07; NP07\b
 
+# Reference: https://twitter.com/siri_urz/status/1543960444708200448
+
+mozzzzzzzzzzz
+
 # Misc
 
 information_schema
