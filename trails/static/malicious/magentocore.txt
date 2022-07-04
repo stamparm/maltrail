@@ -6922,6 +6922,11 @@ h.sentrymap.net
 anyonecdn.net
 s.anyonecdn.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.36/relations
+
+jmpduco.jp
+co.jmpduco.jp
+
 # Generic
 
 /assets/lfg.js
