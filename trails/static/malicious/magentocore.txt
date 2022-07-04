@@ -6880,6 +6880,18 @@ apigstatic.com
 gatestatic.com
 js.gatestatic.com
 
+# Reference: https://twitter.com/EKFiddle/status/1543997043546341376
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.33.176/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.63.190.141/relations
+# Reference: https://www.virustotal.com/gui/ip-address/89.108.109.26/relations
+
+geotac.net
+knowledgecdn.org
+sale-alerts.com
+js.knowledgecdn.org
+m.sale-alerts.com
+s.geotac.net
+
 # Generic
 
 /assets/lfg.js
