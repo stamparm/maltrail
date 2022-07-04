@@ -6808,6 +6808,7 @@ web.dwin-co.jp
 web.livechatsinc.net
 web.speedstester.com
 web.webflows.net
+xn--v1a.lookmind.net
 
 # Reference: https://twitter.com/sansecio/status/1539252937486127104
 # Reference: https://www.virustotal.com/gui/ip-address/185.253.33.190/relations
