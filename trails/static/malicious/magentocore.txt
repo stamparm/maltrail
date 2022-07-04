@@ -6937,6 +6937,11 @@ js.signefyd.com
 claritycdn.com
 c.claritycdn.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.157/relations
+
+transitfex.com
+static.transitfex.com
+
 # Generic
 
 /assets/lfg.js
