@@ -6906,6 +6906,11 @@ h.omniworked.com
 contmount.net
 p.contmount.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.53/relations
+
+sentrymap.net
+h.sentrymap.net
+
 # Generic
 
 /assets/lfg.js
