@@ -7216,6 +7216,11 @@ zyxpert.cyou
 zyypper.cyou
 zyzeolite.cyou
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.33.181/relations
+
+freellock.com
+cdn.freellock.com
+
 # Generic
 
 /assets/lfg.js
