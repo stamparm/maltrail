@@ -5898,6 +5898,12 @@ dodgyblokes.club
 
 /ada185df82b054.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1544050660433399813
+# Reference: https://www.virustotal.com/gui/file/452c3bd1e8cdf19bd89704c81540b995e887ba06e13a9cd12c67977feddfdfba/detection
+
+/pipo.hta
+/zbi.hta
+
 # Generic
 
 /js/altmanluggage.js
