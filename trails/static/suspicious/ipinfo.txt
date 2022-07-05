@@ -401,3 +401,7 @@ httpbin.org/ip
 # Reference: https://blog.talosintelligence.com/2022/06/threat-roundup-0610-0617.html (# Win.Packed.Johnnie-9951653-0)
 
 ipwho.is
+
+# Reference: https://www.virustotal.com/gui/file/c192c4a8647935e35a756e0e9cb71a2b4536f927bee108ec1580e6d31fcca785/behavior/Zenbox
+
+ipwhois.app
