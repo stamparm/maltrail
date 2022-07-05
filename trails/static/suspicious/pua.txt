@@ -3083,3 +3083,8 @@ phone-mine-give.gq
 # Reference: https://www.virustotal.com/gui/file/0001efb8d8e875cf47a5a95fb0c15bf54b7c710eae1444b9dca30c0db414da96/detection
 
 reqapi.ru
+
+# Reference: https://www.virustotal.com/gui/file/43d9be6bd4805a0ac49944630a07fe75b9685740c5f69f145cec22e580699d42/detection
+# Reference: https://www.virustotal.com/gui/file/249d8d9100947ab56140151fa59474e95fdf44e883163068576df2a2cc9405d9/detection
+
+s-f-t.net
