@@ -7221,6 +7221,10 @@ zyzeolite.cyou
 freellock.com
 cdn.freellock.com
 
+# Reference: https://twitter.com/EKFiddle/status/1544348118593941504
+
+jsconfigur.net
+
 # Generic
 
 /assets/lfg.js
