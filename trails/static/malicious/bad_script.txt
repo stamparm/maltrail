@@ -5908,6 +5908,10 @@ dodgyblokes.club
 
 /coba-with-obfy.ps1
 
+# Reference: https://twitter.com/malwrhunterteam/status/1544691386011815936
+
+/111.ps1
+
 # Generic
 
 /js/altmanluggage.js
