@@ -7226,6 +7226,7 @@ cdn.freellock.com
 
 collectingstatistics.net
 javascriptmagneto.net
+jsconfigur.net
 jsconfigur.org
 
 # Generic
