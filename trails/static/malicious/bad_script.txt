@@ -5904,6 +5904,10 @@ dodgyblokes.club
 /pipo.hta
 /zbi.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1544693640563494912
+
+/coba-with-obfy.ps1
+
 # Generic
 
 /js/altmanluggage.js
