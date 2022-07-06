@@ -5912,6 +5912,11 @@ dodgyblokes.club
 
 /111.ps1
 
+# Reference: https://twitter.com/k3dg3/status/1544747167751065601
+# Reference: https://tria.ge/220706-wl7wkshgg2/behavioral1
+
+/5h.hta
+
 # Generic
 
 /js/altmanluggage.js
