@@ -7222,8 +7222,11 @@ freellock.com
 cdn.freellock.com
 
 # Reference: https://twitter.com/EKFiddle/status/1544348118593941504
+# Reference: https://twitter.com/MBThreatIntel/status/1544743417745289216
 
-jsconfigur.net
+collectingstatistics.net
+javascriptmagneto.net
+jsconfigur.org
 
 # Generic
 
