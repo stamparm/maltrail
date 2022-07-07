@@ -327,6 +327,14 @@ f5de9db0.app.pgica.org
 
 hunter.libertylawaz.com
 
+# Reference: https://twitter.com/ex_raritas/status/1545057620142092293
+
+center.blueoctopuspress.com
+
+# Reference: https://twitter.com/C0ryInTheHous3/status/1545111100089421824
+
+gohnson.advanceditsolutionsaz.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
