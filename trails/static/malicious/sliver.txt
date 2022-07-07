@@ -94,3 +94,15 @@ ruwejo.com
 
 176.113.115.107:8888
 193.27.228.127:8888
+
+# Reference: https://www.sentinelone.com/blog/from-the-front-lines-new-macos-covid-malware-masquerades-as-apple-wears-face-of-apt/
+# Reference: https://otx.alienvault.com/pulse/62c6baa44e2fdd526623016c
+# Reference: https://www.virustotal.com/gui/file/d9bba1cfca6b1d20355ce08eda37d6d0bca8cb8141073b699000d05025510dcc/detection
+# Reference: https://www.virustotal.com/gui/file/eb383824d0aae1b561c42f6709ce0d9f1c39ad8d7a743709f1080b8dc5985cfe/detection
+# Reference: https://www.virustotal.com/gui/file/7831806172857a563d7b4789acddc98fc11763aaf3cedf937630b4a9dce31419/detection
+# Reference: https://www.virustotal.com/gui/file/4cc4d170209897ce52093a13e2b5a27405efaeb9be1f8e1aaf93226e3451d110/detection
+# Reference: https://www.virustotal.com/gui/file/29bb22553c16b32057b30c240b30e2f4fe107d9ccfb6b2d0dbece6f41a2419d6/detection
+
+http://46.137.201.254
+46.137.201.254:8001
+46.137.201.254:8888
