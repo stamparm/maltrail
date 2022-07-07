@@ -323,6 +323,10 @@ ed09a0b9.app.pgica.org
 f4fbd5fe.app.pgica.org
 f5de9db0.app.pgica.org
 
+# Reference: https://twitter.com/ex_raritas/status/1544788160688709633
+
+hunter.libertylawaz.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
