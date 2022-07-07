@@ -478,6 +478,10 @@ tracker.usemoney.xyz
 traffic.selfadtracker1.online
 traffic.usemoney.xyz
 
+# Reference: https://twitter.com/MBThreatIntel/status/1545097602235895808
+
+hilwertcrypt.xyz
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
