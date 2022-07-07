@@ -2065,6 +2065,10 @@ mozzzzzzzzzzz
 Frsg_stredf_o21_rutyyyrui_type
 rutyyyrui
 
+# Reference: https://www.trendmicro.com/en_us/research/22/g/brand-new-havanacrypt-ransomware-poses-as-google-software-update.html
+
+Havana/1.0
+
 # Misc
 
 information_schema
