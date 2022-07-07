@@ -7229,6 +7229,15 @@ javascriptmagneto.net
 jsconfigur.net
 jsconfigur.org
 
+# Reference: https://twitter.com/sansecio/status/1545097814945845248
+# Reference: https://www.virustotal.com/gui/ip-address/38.132.99.214/relations
+# Reference: https://www.virustotal.com/gui/ip-address/85.239.55.67/relations
+
+cloudestreem.com
+systemcloud.in
+/api/id/IEKAOIEKAOIEKAO
+/IEKAOIEKAOIEKAO
+
 # Generic
 
 /assets/lfg.js
