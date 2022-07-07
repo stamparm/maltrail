@@ -2060,6 +2060,11 @@ Lingjiang
 
 mozzzzzzzzzzz
 
+# Reference: https://cert.gov.ua/article/619229 (Ukrainian)
+
+Frsg_stredf_o21_rutyyyrui_type
+rutyyyrui
+
 # Misc
 
 information_schema
