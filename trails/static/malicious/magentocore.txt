@@ -7238,6 +7238,11 @@ systemcloud.in
 /api/id/IEKAOIEKAOIEKAO
 /IEKAOIEKAOIEKAO
 
+# Reference: https://twitter.com/sansecio/status/1545159974254362626
+
+html5decode.net
+/redirect-non-site.php?datasend=
+
 # Generic
 
 /assets/lfg.js
