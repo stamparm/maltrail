@@ -5482,3 +5482,7 @@ xxxx.tk
 # Reference: https://www.virustotal.com/gui/domain/dajuw.com/relations
 
 dajuw.com
+
+# Reference: https://twitter.com/Malwar3Ninja/status/1545376308196147200
+
+g0v.cq.cn
