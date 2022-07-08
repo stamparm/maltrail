@@ -2069,6 +2069,10 @@ rutyyyrui
 
 Havana/1.0
 
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-July/030700.html
+
+Mozilla/5.0_
+
 # Misc
 
 information_schema
