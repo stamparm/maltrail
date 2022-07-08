@@ -7243,6 +7243,10 @@ systemcloud.in
 html5decode.net
 /redirect-non-site.php?datasend=
 
+# Reference: https://twitter.com/unmaskparasites/status/1545463671492681731
+
+pingurlx.com
+
 # Generic
 
 /assets/lfg.js
