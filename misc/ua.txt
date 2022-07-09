@@ -2077,6 +2077,10 @@ Mozilla/5.0_
 
 TW96aWxs
 
+# Reference: https://twitter.com/abuse_ch/status/1545677016665673728
+
+Mozilla/777.0
+
 # Misc
 
 information_schema
