@@ -2081,6 +2081,10 @@ TW96aWxs
 
 Mozilla/777.0
 
+# Reference: https://twitter.com/FreyJST/status/1545672965223682049
+
+Mozilla/5.0 Firefox/87.0
+
 # Misc
 
 information_schema
