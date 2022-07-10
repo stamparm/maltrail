@@ -6067,6 +6067,11 @@ wesecure.cloud
 wildcreators.club
 womanslife.info
 
+# Reference: https://twitter.com/harugasumi/status/1546067750044729344
+
+/ic6oXx7P3s/page1.php
+/ic6oXx7P3s/
+
 # Generic
 
 /js/altmanluggage.js
