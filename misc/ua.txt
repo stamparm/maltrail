@@ -2085,6 +2085,10 @@ Mozilla/777.0
 
 Mozilla/5.0 Firefox/87.0
 
+# Reference: https://cert.gov.ua/article/703548 (Ukrainian)
+
+e4ECaCzC
+
 # Misc
 
 information_schema
