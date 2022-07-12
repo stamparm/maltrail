@@ -577,3 +577,18 @@ cofounderspecials.com
 fly.cofounderspecials.com
 js.cofounderspecials.com
 spectre.cofounderspecials.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/101.99.95.147/relations
+
+brend.specialadves.com
+call.greengoplatform.com
+collect.greengoplatform.com
+comcollect.greengoplatform.com
+comtrack.greengoplatform.com
+find.greengoplatform.com
+flash.greengoplatform.com
+front.greengoplatform.com
+ftrack.greengoplatform.com
+lnks.greengoplatform.com
+local.specialadves.com
+track.greengoplatform.com
