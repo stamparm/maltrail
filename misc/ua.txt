@@ -2061,7 +2061,10 @@ Lingjiang
 mozzzzzzzzzzz
 
 # Reference: https://cert.gov.ua/article/619229 (Ukrainian)
+# Reference: https://blog.malwarebytes.com/threat-intelligence/2022/07/cobalt-strikes-again-uac-0056-continues-to-target-ukraine-in-its-latest-campaign/
 
+D-M1-200309AC
+D-M1-MSSP1
 Frsg_stredf_o21_rutyyyrui_type
 rutyyyrui
 
