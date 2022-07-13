@@ -3088,3 +3088,10 @@ reqapi.ru
 # Reference: https://www.virustotal.com/gui/file/249d8d9100947ab56140151fa59474e95fdf44e883163068576df2a2cc9405d9/detection
 
 s-f-t.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/51.158.129.218/relations
+
+mdgt.to
+mediaget.com
+media-get.com
+media-get.ru
