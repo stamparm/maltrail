@@ -350,6 +350,19 @@ stanley.planilla2021.com
 
 cloud.bncfministries.org
 
+# Reference: https://twitter.com/C0ryInTheHous3/status/1547654346162155523
+# Reference: https://www.virustotal.com/gui/ip-address/45.10.43.78/relations
+# Reference: https://www.virustotal.com/gui/domain/deal-institute.com/relations
+
+deal-institute.com
+courses.deal-institute.com
+diamond.speaktomyheart.org
+havana.littlehavanacigarstore.com
+nivea.dreamworkscdc.com
+reserves.deal-institute.com
+volume.stoneoakcapital.net
+west.bykikarose.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
