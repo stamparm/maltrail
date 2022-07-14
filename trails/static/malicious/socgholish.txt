@@ -278,11 +278,14 @@ e316bac0.step.ifsguy.com
 # Referecne: https://twitter.com/C0ryInTheHous3/status/1539976414920704005
 # Reference: https://www.virustotal.com/gui/ip-address/45.10.42.26/relations
 
+cloud.bncfministries.org
 craft.cheesedome.com
 genesis.ibgenesis.org
 hope.point521.com
 market.bluestonechiropractic.com
 mycontrol.alohaalsomeansgoodbye.com
+repair.annetamkin.com
+republic.beboldskincare.com
 
 # Reference: https://twitter.com/bigmacjpg/status/1541775825833701377
 
@@ -342,6 +345,10 @@ hope.point521.com
 portfolio.rainbowgraffixx.com
 puzzle.tricityintranet.com
 stanley.planilla2021.com
+
+# Reference: https://twitter.com/ex_raritas/status/1547335182478233601
+
+cloud.bncfministries.org
 
 # Generic
 
