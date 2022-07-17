@@ -2092,6 +2092,10 @@ Mozilla/5.0 Firefox/87.0
 
 e4ECaCzC
 
+# Reference: https://www.virustotal.com/gui/file/8f5a09f08a9249cba03ab8d1fa7c23d42599e6084995a6ed86e85ad2539244ba/behavior/Zenbox
+
+\bUSERAGENT\b
+
 # Misc
 
 information_schema
