@@ -106,3 +106,11 @@ ruwejo.com
 http://46.137.201.254
 46.137.201.254:8001
 46.137.201.254:8888
+
+# Reference: https://twitter.com/ESETresearch/status/1547943632455364609
+# Referecne: https://twitter.com/ESETresearch/status/1547944027957260292
+# Reference: https://www.virustotal.com/gui/file/1f6af8e1e04288ce01039927d7f693c38af78378718138702edc68cf3fa6979c/detection
+# Reference: https://www.virustotal.com/gui/file/d75d569a20442043eff9946a269ccc2a27c0e4eb33e0f0dbeac48b4ac65400c0/detection
+
+saleforces-it.com
+saleforces.s3-accelerate.amazonaws.com
