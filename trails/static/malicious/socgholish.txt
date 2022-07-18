@@ -373,6 +373,10 @@ performer.stmhonline.com
 smithfirm.agency
 deal.smithfirm.agency
 
+# Reference: https://twitter.com/bigmacjpg/status/1549110513879113730
+
+bundles.trovatogroup.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
