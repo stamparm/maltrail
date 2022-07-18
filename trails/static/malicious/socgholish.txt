@@ -368,6 +368,11 @@ west.bykikarose.com
 call.pgee.org
 performer.stmhonline.com
 
+# Reference: https://twitter.com/bigmacjpg/status/1549111888839163904
+
+smithfirm.agency
+deal.smithfirm.agency
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
