@@ -7542,6 +7542,12 @@ robertostrizzi.com
 rotation-media.net
 skolske-knjige.net
 
+# Reference: https://twitter.com/MBThreatIntel/status/1549086388024254465
+# Reference: https://www.virustotal.com/gui/ip-address/85.239.41.205/relations
+
+online-chat.shop
+online-support.best
+
 # Generic
 
 /assets/lfg.js
