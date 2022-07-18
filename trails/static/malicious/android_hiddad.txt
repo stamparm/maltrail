@@ -169,3 +169,7 @@ http://51.38.134.114
 # Reference: https://www.virustotal.com/gui/file/35bfe43943134977b9e636e927f6a16b47e0abc24904c484a8864897d594ddd3/detection
 
 androidinja.ir
+
+# Reference: https://www.virustotal.com/gui/file/59445d4de24bcdfcd947b55c9a924d3959ba536d76c5bdc763847d6923910e0f/detection
+
+dawumoe1.xyz
