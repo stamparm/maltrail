@@ -363,6 +363,11 @@ reserves.deal-institute.com
 volume.stoneoakcapital.net
 west.bykikarose.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1549094591881613312
+
+call.pgee.org
+performer.stmhonline.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
