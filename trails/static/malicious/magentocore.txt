@@ -7543,10 +7543,19 @@ rotation-media.net
 skolske-knjige.net
 
 # Reference: https://twitter.com/MBThreatIntel/status/1549086388024254465
+# Reference: https://twitter.com/unmaskparasites/status/1549172191572267008
+# Reference: https://www.virustotal.com/gui/ip-address/223.252.173.12/relations
 # Reference: https://www.virustotal.com/gui/ip-address/85.239.41.205/relations
 
+clientswebstat.online
+finteza.online
+funeldata.com
+help-chat.shop
+jstat.shop
+issuspsorry.online
 online-chat.shop
 online-support.best
+visualwebsiteoptimizer.online
 
 # Generic
 
