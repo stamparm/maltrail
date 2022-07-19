@@ -7557,6 +7557,10 @@ online-chat.shop
 online-support.best
 visualwebsiteoptimizer.online
 
+# Reference: https://www.virustotal.com/gui/ip-address/223.252.173.168/relations
+
+googlecom.click
+
 # Generic
 
 /assets/lfg.js
