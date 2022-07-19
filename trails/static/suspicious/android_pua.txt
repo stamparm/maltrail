@@ -719,3 +719,7 @@ cp2s.xyz
 subsworker.bid
 r2001.oss-cn-shanghai.aliyuncs.com
 ry8.oss-cn-shanghai.aliyuncs.com
+
+# Reference: https://www.virustotal.com/gui/domain/omnatuor.com/relations
+
+omnatuor.com
