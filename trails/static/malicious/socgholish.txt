@@ -381,6 +381,10 @@ bundles.trovatogroup.com
 
 diamond.speaktomyheart.org
 
+# Reference: https://twitter.com/mossdinger/status/1549822318826102784
+
+record.usautosaleslv.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
