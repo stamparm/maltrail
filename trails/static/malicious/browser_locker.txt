@@ -453,3 +453,7 @@ wheressharon.xyz
 
 http://147.182.148.167
 clarkdeals.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1549802054230482944
+
+http://146.190.40.12
