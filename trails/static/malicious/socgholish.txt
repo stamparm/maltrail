@@ -377,6 +377,10 @@ deal.smithfirm.agency
 
 bundles.trovatogroup.com
 
+# Reference: https://twitter.com/jtrombley90/status/1549497835455975425
+
+diamond.speaktomyheart.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
