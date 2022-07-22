@@ -385,6 +385,14 @@ diamond.speaktomyheart.org
 
 record.usautosaleslv.com
 
+# Reference: https://twitter.com/C0ryInTheHous3/status/1550186874488102913
+
+cats.johnbeach.us
+cardo.diem-co.com
+query.dec.works
+record.usautosaleslv.com
+training.ren-kathybermejo.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
