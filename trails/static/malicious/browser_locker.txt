@@ -462,3 +462,7 @@ http://146.190.40.12
 
 http://64.225.100.17
 allnewz.site
+
+# Reference: https://twitter.com/MBThreatIntel/status/1550185166600949760
+
+banuisity.cf
