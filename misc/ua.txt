@@ -2096,6 +2096,11 @@ e4ECaCzC
 
 \bUSERAGENT\b
 
+# Reference: https://twitter.com/malwrhunterteam/status/1550403360544759808
+# Reference: https://www.virustotal.com/gui/file/aa2043e2d9adadeb6f330d1be3d159b07a0b9d785cee925eb7a70a5ed049a9f5/detection
+
+QQDownload
+
 # Misc
 
 information_schema
