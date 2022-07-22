@@ -457,3 +457,8 @@ clarkdeals.xyz
 # Reference: https://twitter.com/MBThreatIntel/status/1549802054230482944
 
 http://146.190.40.12
+
+# Reference: https://twitter.com/MBThreatIntel/status/1550506258876116993
+
+http://64.225.100.17
+allnewz.site
