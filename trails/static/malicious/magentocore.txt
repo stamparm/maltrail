@@ -7551,6 +7551,7 @@ skolske-knjige.net
 # Reference: https://www.virustotal.com/gui/ip-address/223.252.173.12/relations
 # Reference: https://www.virustotal.com/gui/ip-address/85.239.41.205/relations
 
+checkmag.shop
 clientswebstat.online
 finteza.online
 funeldata.com
