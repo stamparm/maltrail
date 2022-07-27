@@ -6085,6 +6085,10 @@ megabobox.ru
 sledporn.ru
 sweetassma.ru
 
+# Reference: https://twitter.com/StopMalvertisin/status/1552176809382653952
+
+/xix.js
+
 # Generic
 
 /js/altmanluggage.js
