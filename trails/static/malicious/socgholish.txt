@@ -393,6 +393,14 @@ query.dec.works
 record.usautosaleslv.com
 training.ren-kathybermejo.com
 
+# Reference: https://twitter.com/ex_raritas/status/1552329776337018880
+
+master.ilsrecruitment.com
+
+# Reference: https://twitter.com/C0ryInTheHous3/status/1552330589583429632
+
+mafia.carverdesigngroup.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
