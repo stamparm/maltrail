@@ -592,3 +592,7 @@ ftrack.greengoplatform.com
 lnks.greengoplatform.com
 local.specialadves.com
 track.greengoplatform.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1552334638999228417
+
+apigooglee.com
