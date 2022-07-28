@@ -723,3 +723,7 @@ ry8.oss-cn-shanghai.aliyuncs.com
 # Reference: https://www.virustotal.com/gui/domain/omnatuor.com/relations
 
 omnatuor.com
+
+# Reference: https://www.virustotal.com/gui/file/dd50fd8b3b3ee27144575cf9ac4d15e1177b7b92ac13d6da26992bfacfc84bd9/detection
+
+simplewordbook.45qq.ltd
