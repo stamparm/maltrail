@@ -173,3 +173,8 @@ androidinja.ir
 # Reference: https://www.virustotal.com/gui/file/59445d4de24bcdfcd947b55c9a924d3959ba536d76c5bdc763847d6923910e0f/detection
 
 dawumoe1.xyz
+
+# Reference: https://www.virustotal.com/gui/file/005dda209c71d1b1e6eec556f75b543b796d067cc8e06cb2b6973a3e2e10e9ff/detection
+
+ddeceptsc.top
+willitepartisti.club
