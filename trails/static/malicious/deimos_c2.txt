@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2022 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/MichalKoczwara/status/1551632627387473920
+# Reference: https://github.com/blackorbird/APT_REPORT/blob/master/summary/2022/Russian%20Ransomware%20C2%20Network%20Discovered%20in%20Censys%20Data.pdf
+
+3.133.59.113:8090
+5.101.4.196:8443
+5.101.5.196:8443
+80.211.130.78:8443
