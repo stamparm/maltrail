@@ -6089,6 +6089,10 @@ sweetassma.ru
 
 /xix.js
 
+# Reference: https://www.virustotal.com/gui/file/2c91462fb50fb7d0a394317401f9044db58e652435cd3beb05ae6e0a0184d63a/detection
+
+/this.ps1
+
 # Generic
 
 /js/altmanluggage.js
