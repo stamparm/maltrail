@@ -5486,3 +5486,7 @@ dajuw.com
 # Reference: https://twitter.com/Malwar3Ninja/status/1545376308196147200
 
 g0v.cq.cn
+
+# Reference: https://www.virustotal.com/gui/domain/hackpl.info/relations
+
+hackpl.info
