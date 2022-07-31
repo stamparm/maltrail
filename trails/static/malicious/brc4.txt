@@ -71,3 +71,7 @@
 94.130.130.43:443
 ds.windowsupdate.eu.org
 spectrumofinnovation.org
+
+# Reference: https://twitter.com/MichalKoczwara/status/1553781412133838848
+
+digitalhealthrecord.live
