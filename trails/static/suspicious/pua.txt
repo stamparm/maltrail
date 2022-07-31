@@ -3095,3 +3095,8 @@ mdgt.to
 mediaget.com
 media-get.com
 media-get.ru
+
+# Reference: https://www.virustotal.com/gui/file/989897d53925afc4380277c3ad61f0ae45927383762208c9aade79b3bb6fc661/detection
+
+xsnseed.xyz
+autoseeds.xsnseed.xyz
