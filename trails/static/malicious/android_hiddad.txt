@@ -178,3 +178,18 @@ dawumoe1.xyz
 
 ddeceptsc.top
 willitepartisti.club
+
+# Reference: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/new-hiddenads-malware-that-runs-automatically-and-hides-on-google-play-1m-users-affected/
+# Reference: https://otx.alienvault.com/pulse/62e7ae221a41e3c596dbbca4
+# Reference: https://www.virustotal.com/gui/domain/functionads.com/relations
+
+114.115.210.129:10102
+39.105.225.156:8100
+47.241.213.112:8002
+functionads.com
+android.functionads.com
+androidlog.functionads.com
+app.functionads.com
+cpi.functionads.com
+sdk.functionads.com
+hw.sdk.functionads.com
