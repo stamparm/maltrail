@@ -401,6 +401,26 @@ master.ilsrecruitment.com
 
 mafia.carverdesigngroup.com
 
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2022-08-01%20SocGholish%20IOCs
+# Reference: https://www.virustotal.com/gui/domain/ssl.topgearoutfitters.com/relations
+
+cruize.updogtechnologies.com
+ssl.topgearoutfitters.com
+0bcd.ssl.topgearoutfitters.com
+1059.ssl.topgearoutfitters.com
+3305.ssl.topgearoutfitters.com
+4519.ssl.topgearoutfitters.com
+68b0.ssl.topgearoutfitters.com
+85c4.ssl.topgearoutfitters.com
+c575.ssl.topgearoutfitters.com
+c946.ssl.topgearoutfitters.com
+d307.ssl.topgearoutfitters.com
+d754.ssl.topgearoutfitters.com
+dc6d.ssl.topgearoutfitters.com
+ee32.ssl.topgearoutfitters.com
+f31e.ssl.topgearoutfitters.com
+f44b.ssl.topgearoutfitters.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
