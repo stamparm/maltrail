@@ -478,3 +478,8 @@ kalarahulshet.com
 playcrpm.com
 shopmealy.com
 tevarsingh.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1554196117532712960
+
+goredrect.com
+track.goredrect.com
