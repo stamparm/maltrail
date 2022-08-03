@@ -3100,3 +3100,7 @@ media-get.ru
 
 xsnseed.xyz
 autoseeds.xsnseed.xyz
+
+# Reference: https://www.virustotal.com/gui/file/f72ee83436cb1f82366bfaafb14a4c0cb99826c02166fc0bd21fb6e7eb5190c6/detection
+
+d4w1kp01cnm54.cloudfront.net
