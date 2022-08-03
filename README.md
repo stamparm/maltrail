@@ -564,6 +564,7 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 ## Publications
 
 * Detect attacks on your network with Maltrail, Linux Magazine, 2022 ([Annotation](https://www.linux-magazine.com/Issues/2022/258/Maltrail))
+* 10 Terrific Tools for the Busy Admin, Admin Magazine, 2022 ([Annotation](https://mailchi.mp/admin-magazine/thanks-sysadmins))
 
 ## Blacklist
 
