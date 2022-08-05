@@ -436,6 +436,10 @@ d26f.fallout.flunkypixels.com
 
 d2j09jsarr75l2.cloudfront.net
 
+# Reference: https://twitter.com/C0ryInTheHous3/status/1555596453720072192
+
+docklar.howicanstart.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
