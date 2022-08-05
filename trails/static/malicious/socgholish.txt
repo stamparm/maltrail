@@ -432,6 +432,10 @@ flunkypixels.com
 fallout.flunkypixels.com
 d26f.fallout.flunkypixels.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1554186000112295936
+
+d2j09jsarr75l2.cloudfront.net
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
