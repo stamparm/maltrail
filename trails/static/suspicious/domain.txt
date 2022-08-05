@@ -5494,3 +5494,7 @@ hackpl.info
 # Reference: https://www.virustotal.com/gui/domain/nyashteam.ml/relations
 
 nyashteam.ml
+
+# Reference: https://www.virustotal.com/gui/domain/realproheros.com/relations
+
+realproheros.com
