@@ -426,6 +426,12 @@ f44b.ssl.topgearoutfitters.com
 casting.faeryfox.com
 telegram.godsmightywhispers.com
 
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2022-08-03%20SocGholish%20IOCs
+
+flunkypixels.com
+fallout.flunkypixels.com
+d26f.fallout.flunkypixels.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
