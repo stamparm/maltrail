@@ -486,6 +486,10 @@ hilwertcrypt.xyz
 
 zerwertcrypt.xyz
 
+# Reference: https://twitter.com/MBThreatIntel/status/1555287946940465153
+
+hiendalls.xyz
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
