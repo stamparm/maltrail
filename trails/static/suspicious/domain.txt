@@ -5490,3 +5490,7 @@ g0v.cq.cn
 # Reference: https://www.virustotal.com/gui/domain/hackpl.info/relations
 
 hackpl.info
+
+# Reference: https://www.virustotal.com/gui/domain/nyashteam.ml/relations
+
+nyashteam.ml
