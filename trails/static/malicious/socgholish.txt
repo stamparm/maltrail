@@ -421,6 +421,11 @@ ee32.ssl.topgearoutfitters.com
 f31e.ssl.topgearoutfitters.com
 f44b.ssl.topgearoutfitters.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1555294439181934592
+
+casting.faeryfox.com
+telegram.godsmightywhispers.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
