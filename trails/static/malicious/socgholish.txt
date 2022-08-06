@@ -444,6 +444,10 @@ docklar.howicanstart.com
 
 predator.foxscalesjewelry.com
 
+# Reference: https://twitter.com/C0ryInTheHous3/status/1555596453720072192
+
+docklar.howicanstart.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
