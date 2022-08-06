@@ -440,6 +440,10 @@ d2j09jsarr75l2.cloudfront.net
 
 docklar.howicanstart.com
 
+# Reference: https://twitter.com/TIP_Rider/status/1555754746492878855
+
+predator.foxscalesjewelry.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
