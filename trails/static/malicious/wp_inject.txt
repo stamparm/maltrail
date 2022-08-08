@@ -596,3 +596,12 @@ track.greengoplatform.com
 # Reference: https://twitter.com/unmaskparasites/status/1552334638999228417
 
 apigooglee.com
+
+# Reference: https://twitter.com/tosscoinwitcher/status/1556698096813232129
+# Reference: https://www.abuseipdb.com/check/51.142.175.104
+
+http://20.254.121.118
+http://51.142.175.104
+51.142.175.104:52970
+/a57bze8931.php
+/savepng.php?location=a57bze8931.php
