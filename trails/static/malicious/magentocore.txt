@@ -7584,6 +7584,7 @@ liveclick.shop
 masmag.shop
 stopyfy.com
 webmastersite.shop
+zitye.com
 
 # Generic
 
