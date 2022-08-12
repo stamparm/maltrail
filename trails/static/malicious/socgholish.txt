@@ -448,6 +448,10 @@ predator.foxscalesjewelry.com
 
 docklar.howicanstart.com
 
+# Reference: https://twitter.com/mojoesec/status/1557767047618215936
+
+templates.victoryoverdieting.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
