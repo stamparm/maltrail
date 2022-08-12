@@ -2116,6 +2116,13 @@ lVali
 
 Mozlila
 
+# Reference: https://twitter.com/ViriBack/status/1557836030421630977
+# Reference: https://tria.ge/220811-zp8h3accfr
+
+Lilith
+Lilith-Bot
+Lilith-Bot/3.0
+
 # Misc
 
 information_schema
