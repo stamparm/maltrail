@@ -452,6 +452,11 @@ docklar.howicanstart.com
 
 templates.victoryoverdieting.com
 
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2022-08-10%20SocGholish%20IOCs
+
+telegram.godsmightywhispers.com
+e944.telegram.godsmightywhispers.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
