@@ -2123,6 +2123,10 @@ Lilith
 Lilith-Bot
 Lilith-Bot/3.0
 
+# Reference: https://twitter.com/StopMalvertisin/status/1558446050545139712
+
+\bMASP\b
+
 # Misc
 
 information_schema
