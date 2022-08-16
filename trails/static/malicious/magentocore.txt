@@ -7586,6 +7586,11 @@ stopyfy.com
 webmastersite.shop
 zitye.com
 
+# Reference: https://twitter.com/MalwareInfosec/status/1559281030283939841
+# Reference: https://www.virustotal.com/gui/ip-address/23.106.215.227/relations
+
+webtemplatedelivr.com
+
 # Generic
 
 /assets/lfg.js
