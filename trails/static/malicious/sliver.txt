@@ -114,3 +114,8 @@ http://46.137.201.254
 
 saleforces-it.com
 saleforces.s3-accelerate.amazonaws.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1559639717146251271
+# Reference: https://www.virustotal.com/gui/file/57d005ffd8d8e09f822470dd09982dabd13706580fb78c8398242626b4f97f8a/detection
+
+sj-analytics.com
