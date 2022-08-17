@@ -572,8 +572,14 @@ track.transportgoline.com
 /wp-json/am-member/license
 
 # Reference: https://twitter.com/unmaskparasites/status/1546896319037333504
+# Reference: https://twitter.com/riper81/status/1559567645313142784
+# Reference: https://www.virustotal.com/gui/ip-address/91.211.91.104/relations
 
+bettershitecolumn.com
 cofounderspecials.com
+cdn.bettershitecolumn.com
+scripts.bettershitecolumn.com
+wpz.cofounderspecials.com
 fly.cofounderspecials.com
 js.cofounderspecials.com
 spectre.cofounderspecials.com
