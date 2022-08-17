@@ -6093,6 +6093,10 @@ sweetassma.ru
 
 /this.ps1
 
+# Reference: https://twitter.com/rootprivilege/status/1559238666077081600
+
+/a1b2.php
+
 # Generic
 
 /js/altmanluggage.js
