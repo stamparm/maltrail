@@ -7591,6 +7591,17 @@ zitye.com
 
 webtemplatedelivr.com
 
+# Reference: https://twitter.com/rootprivilege/status/1559238666077081600
+# Reference: https://www.virustotal.com/gui/ip-address/167.235.20.31/relations
+# Reference: https://www.virustotal.com/gui/ip-address/49.12.223.222/relations
+
+101request.com
+99request.com
+drrequest.com
+request101.com
+requestbee.com
+ab.ro.lt
+
 # Generic
 
 /assets/lfg.js
