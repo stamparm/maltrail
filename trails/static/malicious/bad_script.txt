@@ -6097,6 +6097,11 @@ sweetassma.ru
 
 /a1b2.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1559902576757424130
+# Reference: https://www.virustotal.com/gui/file/6634cd044332d28d153519298fd0f68590d966d1c970a80d5a6462fd5a9734ec/detection
+
+/disable-defender.ps1
+
 # Generic
 
 /js/altmanluggage.js
