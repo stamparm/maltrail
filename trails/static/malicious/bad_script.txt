@@ -6102,6 +6102,10 @@ sweetassma.ru
 
 /disable-defender.ps1
 
+# Reference: https://github.com/0xToxin/Malware-IOCs/blob/main/Agent%20Tesla/AgentTesla-%2017082022
+
+/hfhfhgfghfghgf.txt
+
 # Generic
 
 /js/altmanluggage.js
