@@ -7607,7 +7607,13 @@ ab.ro.lt
 # Reference: https://www.virustotal.com/gui/ip-address/82.180.173.187/relations
 
 designestylelab.com
+congolo.pro
 gvenlayer.com
+metahtmlhead.com
+nmdatast.com
+seclib.org
+vamberlo.com
+winsiott.com
 
 # Generic
 
