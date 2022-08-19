@@ -650,6 +650,28 @@ fea8.telegram.godsmightywhispers.com
 fef5.telegram.godsmightywhispers.com
 ff79.telegram.godsmightywhispers.com
 
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2022-08-18%20SocGholish%20IOCs
+
+140f.templates.victoryoverdieting.com
+1f95.telegram.godsmightywhispers.com
+2178.templates.victoryoverdieting.com
+231a.templates.victoryoverdieting.com
+24e3.telegram.godsmightywhispers.com
+506f.telegram.godsmightywhispers.com
+58f0.telegram.godsmightywhispers.com
+674b.telegram.godsmightywhispers.com
+73a2.templates.victoryoverdieting.com
+7fd4.telegram.godsmightywhispers.com
+890c.telegram.godsmightywhispers.com
+8e31.templates.victoryoverdieting.com
+93ce.telegram.godsmightywhispers.com
+9f72.telegram.godsmightywhispers.com
+bbda.telegram.godsmightywhispers.com
+bd6c.telegram.godsmightywhispers.com
+bd7d.telegram.godsmightywhispers.com
+daea.templates.victoryoverdieting.com
+f886.templates.victoryoverdieting.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
