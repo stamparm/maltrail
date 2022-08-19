@@ -7602,6 +7602,13 @@ request101.com
 requestbee.com
 ab.ro.lt
 
+# Reference: https://blog.group-ib.com/switching-side-jobs
+# Reference: https://www.virustotal.com/gui/ip-address/82.180.173.146/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.180.173.187/relations
+
+designestylelab.com
+gvenlayer.com
+
 # Generic
 
 /assets/lfg.js
