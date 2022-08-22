@@ -2127,6 +2127,10 @@ Lilith-Bot/3.0
 
 \bMASP\b
 
+# Reference: https://twitter.com/abuse_ch/status/1561631369096314881
+
+\bHTTP/1.1\b
+
 # Misc
 
 information_schema
