@@ -5498,3 +5498,7 @@ nyashteam.ml
 # Reference: https://www.virustotal.com/gui/domain/realproheros.com/relations
 
 realproheros.com
+
+# Reference: https://www.virustotal.com/gui/domain/onlinesecure365.com/relations
+
+onlinesecure365.com
