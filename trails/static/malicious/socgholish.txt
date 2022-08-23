@@ -672,6 +672,57 @@ bd7d.telegram.godsmightywhispers.com
 daea.templates.victoryoverdieting.com
 f886.templates.victoryoverdieting.com
 
+# Reference: https://twitter.com/mojoesec/status/1561805273651617793
+
+breatheinnew.life
+cloudnoze.com
+activation.thepowerofhiswhisper.com
+restructuring.breatheinnew.life
+029b.activation.thepowerofhiswhisper.com
+04c2.activation.thepowerofhiswhisper.com
+05b3.activation.thepowerofhiswhisper.com
+0d35.activation.thepowerofhiswhisper.com
+10cc.activation.thepowerofhiswhisper.com
+15e3.activation.thepowerofhiswhisper.com
+1a29.activation.thepowerofhiswhisper.com
+20cf.activation.thepowerofhiswhisper.com
+22da.activation.thepowerofhiswhisper.com
+23c2.activation.thepowerofhiswhisper.com
+2e29.activation.thepowerofhiswhisper.com
+39e6.activation.thepowerofhiswhisper.com
+47d7.activation.thepowerofhiswhisper.com
+5bea.activation.thepowerofhiswhisper.com
+622a.activation.thepowerofhiswhisper.com
+66c5.activation.thepowerofhiswhisper.com
+6711.activation.thepowerofhiswhisper.com
+69ad.activation.thepowerofhiswhisper.com
+6b44.activation.thepowerofhiswhisper.com
+7365.activation.thepowerofhiswhisper.com
+75b4.activation.thepowerofhiswhisper.com
+7eba.activation.thepowerofhiswhisper.com
+7fe8.activation.thepowerofhiswhisper.com
+8386.activation.thepowerofhiswhisper.com
+84a3.activation.thepowerofhiswhisper.com
+8739.activation.thepowerofhiswhisper.com
+8769.activation.thepowerofhiswhisper.com
+8814.activation.thepowerofhiswhisper.com
+90b2.activation.thepowerofhiswhisper.com
+9fc0.activation.thepowerofhiswhisper.com
+b436.activation.thepowerofhiswhisper.com
+b539.activation.thepowerofhiswhisper.com
+b864.activation.thepowerofhiswhisper.com
+bd71.activation.thepowerofhiswhisper.com
+bda8.activation.thepowerofhiswhisper.com
+c1e0.activation.thepowerofhiswhisper.com
+c36d.activation.thepowerofhiswhisper.com
+d018.activation.thepowerofhiswhisper.com
+d5f5.activation.thepowerofhiswhisper.com
+d742.activation.thepowerofhiswhisper.com
+dbf1.activation.thepowerofhiswhisper.com
+e827.activation.thepowerofhiswhisper.com
+ee93.activation.thepowerofhiswhisper.com
+f2fd.activation.thepowerofhiswhisper.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
