@@ -723,6 +723,18 @@ e827.activation.thepowerofhiswhisper.com
 ee93.activation.thepowerofhiswhisper.com
 f2fd.activation.thepowerofhiswhisper.com
 
+# Reference: https://twitter.com/bigmacjpg/status/1562194024361910273
+# Reference: https://www.virustotal.com/gui/ip-address/77.91.127.52/relations
+
+activation.thepowerofhiswhisper.com
+state.thegshrevolution.com
+templates.victoryoverdieting.com
+2d58.state.thegshrevolution.com
+3359.state.thegshrevolution.com
+a946.state.thegshrevolution.com
+5128.templates.victoryoverdieting.com
+bd96.activation.thepowerofhiswhisper.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
