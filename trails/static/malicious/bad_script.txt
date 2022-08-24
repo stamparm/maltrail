@@ -6106,6 +6106,10 @@ sweetassma.ru
 
 /hfhfhgfghfghgf.txt
 
+# Reference: https://blog.sucuri.net/2022/08/fake-ddos-pages-on-wordpress-lead-to-drive-by-downloads.html
+
+/fortest/parsez.php
+
 # Generic
 
 /js/altmanluggage.js
