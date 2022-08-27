@@ -7571,6 +7571,7 @@ googlecom.click
 
 # Reference: https://twitter.com/sansecio/status/1554902168108294144
 # Reference: https://www.virustotal.com/gui/ip-address/103.253.43.232/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.54.174.154/relations
 
 clickstat.eu
 cloud-zdassets.com
@@ -7579,9 +7580,11 @@ drubofast.com
 flexchat.shop
 ghtrs.com
 gtpely.com
+hstatbuy.shop
 iocloud.shop
 liveclick.shop
 masmag.shop
+msft-tools.net
 stopyfy.com
 webmastersite.shop
 zitye.com
