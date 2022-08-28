@@ -16,8 +16,8 @@
 
 - Version 0.48 -> 0.49 (Upcoming release)
 
-
-
+[!] Fixed row rendering in UI (Issue #19109)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
