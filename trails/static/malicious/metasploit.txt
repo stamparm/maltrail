@@ -273,3 +273,8 @@
 # Reference: https://twitter.com/drb_ra/status/1563620021150031872
 
 212.33.202.56:443
+
+# Reference: https://twitter.com/1ZRR4H/status/1564547320661819392
+
+212.83.163.95:7777
+51.15.191.226:7777
