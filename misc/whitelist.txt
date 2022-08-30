@@ -3314,3 +3314,8 @@ bpm.shaparak.ir
 
 dnsv1.com
 cdn.dnsv1.com
+
+# Reference: https://github.com/stamparm/maltrail/issues/19110
+
+windowsupdate.com
+download.windowsupdate.com
