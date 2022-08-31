@@ -119,3 +119,8 @@ saleforces.s3-accelerate.amazonaws.com
 # Reference: https://www.virustotal.com/gui/file/57d005ffd8d8e09f822470dd09982dabd13706580fb78c8398242626b4f97f8a/detection
 
 sj-analytics.com
+
+# Reference: https://www.malware-traffic-analysis.net/2022/08/30/index.html
+# Reference: https://twitter.com/malware_traffic/status/1564727055304069130
+
+65.20.115.15:8557
