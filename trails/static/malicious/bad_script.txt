@@ -6110,6 +6110,11 @@ sweetassma.ru
 
 /fortest/parsez.php
 
+# Reference: https://twitter.com/StopMalvertisin/status/1563729037671149568
+# Reference: https://www.virustotal.com/gui/file/ed3ef87baf72ac521db91bbb0dbd78bb47fc4eb092b7941e6802ab1118c6603d/detection
+
+/T729D734B881E4336C393BDB056B167FD.php
+
 # Generic
 
 /js/altmanluggage.js
