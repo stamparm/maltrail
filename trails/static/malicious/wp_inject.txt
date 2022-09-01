@@ -129,6 +129,8 @@ cartoonmines.com
 # Reference: https://www.virustotal.com/gui/domain/turnedpro.xyz/relations
 # Reference: https://www.virustotal.com/gui/ip-address/188.213.5.130/relations
 # Reference: https://www.virustotal.com/gui/ip-address/188.213.5.197/relations
+# Reference: https://www.virustotal.com/gui/ip-address/198.13.55.89/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.77.133.32/relations
 # Reference: https://www.virustotal.com/gui/ip-address/5.134.119.42/relations
 # Reference: https://www.virustotal.com/gui/ip-address/74.91.31.50/relations
 # Reference: https://www.virustotal.com/gui/domain/firstok.xyz/relations
@@ -160,6 +162,7 @@ pinkpigs.online
 runpenguin.online
 tophead.online
 walkdolphin.online
+wtp9999999.xyz
 api.firstguide.xyz
 hello.firstguide.xyz
 hello.hahaha666.xyz
