@@ -3108,3 +3108,9 @@ d4w1kp01cnm54.cloudfront.net
 # Reference: https://www.virustotal.com/gui/file/2d3274df572455cf53f0c6311516fc3c88e81988d46340be04b8918da5760b8a/detection
 
 http://23.106.215.64
+
+# Reference: https://www.virustotal.com/gui/file/c19e58873ff83a81b781c0e406d1c032a77c24e407fb0bfabb43e8c1a5d8a809/detection
+# Reference: https://www.virustotal.com/gui/file/7f239a3a31e98287e020eb2fc5323924f928fba8b762435efbff4da07bbd93c0/detection
+# Reference: https://www.virustotal.com/gui/file/58d751675433fefca907c0c367e257961c67fd1eb02f7ebb96ce5205bf4caa9a/detection
+
+auth.360mon.cn
