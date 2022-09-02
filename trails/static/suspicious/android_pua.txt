@@ -727,3 +727,11 @@ omnatuor.com
 # Reference: https://www.virustotal.com/gui/file/dd50fd8b3b3ee27144575cf9ac4d15e1177b7b92ac13d6da26992bfacfc84bd9/detection
 
 simplewordbook.45qq.ltd
+
+# Reference: https://www.virustotal.com/gui/domain/c-ccccc.cc/relations
+# Reference: https://www.virustotal.com/gui/ip-address/101.133.138.181/relations
+# Reference: https://www.virustotal.com/gui/file/fb9a910e212e23298fbf22104b1693cc99f070b3e40745b338362db9806d5a25/detection
+
+http://101.133.138.181
+101.133.138.181:8777
+c-ccccc.cc
