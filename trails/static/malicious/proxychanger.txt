@@ -8,3 +8,9 @@
 # Reference: https://www.virustotal.com/gui/file/cd8ebfce412939043e83241b5d40ee14c118852ab1156b2a1764a46108543c2a/detection
 
 heelchoise.xyz
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1565690849756909570
+# Reference: https://www.virustotal.com/gui/file/6193304a72e888bddb836d0ad94e3a526ab00c45196cf57994e873997483e506/detection
+
+http://35.236.159.79
+/win.pac0
