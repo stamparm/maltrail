@@ -926,6 +926,7 @@ sophosxl.net
 
 # Generic
 
+cdn.discordapp.com
 mr.un1k0d3r.com
 qingting.fm
 s1.ax1x.com
