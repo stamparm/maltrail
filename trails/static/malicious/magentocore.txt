@@ -6871,6 +6871,7 @@ tag.nortonpost.net
 # Reference: https://www.virustotal.com/gui/ip-address/149.56.118.126/relations
 
 cdntaggoogle.com
+pringleshop.cc
 
 # Reference: https://twitter.com/sansecio/status/1542508263064932352
 # Reference: https://www.virustotal.com/gui/ip-address/185.63.190.203/relations
