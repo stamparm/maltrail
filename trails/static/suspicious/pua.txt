@@ -3114,3 +3114,8 @@ http://23.106.215.64
 # Reference: https://www.virustotal.com/gui/file/58d751675433fefca907c0c367e257961c67fd1eb02f7ebb96ce5205bf4caa9a/detection
 
 auth.360mon.cn
+
+# Reference: https://www.virustotal.com/gui/file/00009a6dc31621199d0d70b05b15fae993bf70e06ffdd9b283615b934d9eed41/detection
+
+blockey.ru
+discriminate.blockey.ru
