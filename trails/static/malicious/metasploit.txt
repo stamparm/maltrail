@@ -310,3 +310,11 @@
 # Reference: https://twitter.com/drb_ra/status/1566019085153882115
 
 39.106.69.225:2222
+
+# Reference: https://twitter.com/drb_ra/status/1566156004332642306
+
+159.138.29.51:8443
+
+# Reference: https://twitter.com/drb_ra/status/1566156084817035265
+
+159.138.29.51:2096
