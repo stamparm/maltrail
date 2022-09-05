@@ -6115,6 +6115,14 @@ sweetassma.ru
 
 /T729D734B881E4336C393BDB056B167FD.php
 
+# Reference: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/malicious-cookie-stuffing-chrome-extensions-with-1-4-million-users/
+
+langhort.com
+amz.langhort.com
+d.langhort.com
+data.langhort.com
+s.langhort.com
+
 # Generic
 
 /js/altmanluggage.js
