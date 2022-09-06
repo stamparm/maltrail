@@ -735,6 +735,11 @@ a946.state.thegshrevolution.com
 5128.templates.victoryoverdieting.com
 bd96.activation.thepowerofhiswhisper.com
 
+# Reference: https://twitter.com/EKFiddle/status/1567196965108350977
+
+thepowerofgodswhisper.com
+roles.thepowerofgodswhisper.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
