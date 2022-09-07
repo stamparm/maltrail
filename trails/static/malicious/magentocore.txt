@@ -7628,6 +7628,15 @@ united81.com
 
 stripefaster.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1567604988750483457
+# Reference: https://www.virustotal.com/gui/ip-address/77.91.74.92/relations
+
+gtmapicss.com
+gtsmapicss.com
+jqstylemin.com
+jqstylemini.com
+sanapicss.com
+
 # Generic
 
 /assets/lfg.js
