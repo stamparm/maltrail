@@ -7624,6 +7624,10 @@ winsiott.com
 
 united81.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1567533004297490437
+
+stripefaster.com
+
 # Generic
 
 /assets/lfg.js
