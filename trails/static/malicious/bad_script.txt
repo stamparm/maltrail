@@ -6123,6 +6123,10 @@ d.langhort.com
 data.langhort.com
 s.langhort.com
 
+# Reference: https://twitter.com/JCyberSec_/status/1567586121839697923
+
+/QWETRT44444.php
+
 # Generic
 
 /js/altmanluggage.js
