@@ -124,3 +124,9 @@ sj-analytics.com
 # Reference: https://twitter.com/malware_traffic/status/1564727055304069130
 
 65.20.115.15:8557
+
+# Reference: https://twitter.com/fr0s7_/status/1567449023992184832
+# Reference: https://www.virustotal.com/gui/file/1142ba812887fb309a6d4e8a6b14205b80eff6d95ac067d6fd807e65b343cf7d/detection
+
+23.82.140.230:8888
+vomonavopo.com
