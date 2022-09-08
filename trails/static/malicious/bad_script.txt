@@ -6127,6 +6127,10 @@ s.langhort.com
 
 /QWETRT44444.php
 
+# Reference: https://twitter.com/drb_ra/status/1567699547756920832 
+
+/update_wapp2.aspx
+
 # Generic
 
 /js/altmanluggage.js
