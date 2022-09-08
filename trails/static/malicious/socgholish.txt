@@ -351,10 +351,12 @@ stanley.planilla2021.com
 cloud.bncfministries.org
 
 # Reference: https://twitter.com/C0ryInTheHous3/status/1547654346162155523
+# Reference: https://twitter.com/MBThreatIntel/status/1567880847667372032
 # Reference: https://www.virustotal.com/gui/ip-address/45.10.43.78/relations
 # Reference: https://www.virustotal.com/gui/domain/deal-institute.com/relations
 
 deal-institute.com
+dreamworkscdc.com
 courses.deal-institute.com
 diamond.speaktomyheart.org
 havana.littlehavanacigarstore.com
@@ -747,7 +749,7 @@ community.wbaperformance.com
 havana.littlehavanacigarstore.com
 puzzle.tricityintranet.com
 secretary.rentamimi.com
-0
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
