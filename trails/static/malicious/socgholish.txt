@@ -740,6 +740,14 @@ bd96.activation.thepowerofhiswhisper.com
 thepowerofgodswhisper.com
 roles.thepowerofgodswhisper.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1567698456235634688
+
+clean.godmessagedme.com
+community.wbaperformance.com
+havana.littlehavanacigarstore.com
+puzzle.tricityintranet.com
+secretary.rentamimi.com
+0
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
