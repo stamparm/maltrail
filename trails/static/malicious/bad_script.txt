@@ -6131,6 +6131,13 @@ s.langhort.com
 
 /update_wapp2.aspx
 
+# Reference: https://www.virustotal.com/gui/file/49ac5872f91182bac543788dfd168eb4e103c11f42b1585879d6999ede367500/detection
+
+/awautng.php
+/upwawsfrg.php
+/zawautng.php
+/stwittc/upwawsfrg.php
+
 # Generic
 
 /js/altmanluggage.js
