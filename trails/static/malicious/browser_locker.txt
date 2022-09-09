@@ -498,3 +498,7 @@ anonymoushookups.blogspot.com
 
 http://142.93.113.230
 newpop.org
+
+# Reference: https://twitter.com/MBThreatIntel/status/1567996965161680896
+
+bunvatink.com
