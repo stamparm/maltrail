@@ -7635,6 +7635,7 @@ gtmapicss.com
 gtsmapicss.com
 jqstylemin.com
 jqstylemini.com
+jqstyleminjs.com
 sanapicss.com
 
 # Generic
