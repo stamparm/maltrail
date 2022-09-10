@@ -351,3 +351,11 @@
 # Reference: https://twitter.com/drb_ra/status/1567966856887123972
 
 2.90.59.15:443
+
+# Reference: https://twitter.com/drb_ra/status/1568329281109106693
+
+34.136.159.101:443
+
+# Reference: https://twitter.com/drb_ra/status/1568329304316211200
+
+39.82.135.54:2096
