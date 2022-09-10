@@ -6138,6 +6138,10 @@ s.langhort.com
 /zawautng.php
 /stwittc/upwawsfrg.php
 
+# Reference: https://twitter.com/drb_ra/status/1568421255627550720
+
+/wpaas/load.php
+
 # Generic
 
 /js/altmanluggage.js
