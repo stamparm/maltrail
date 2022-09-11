@@ -232,3 +232,8 @@ esponsidehe.club
 # Reference: https://www.virustotal.com/gui/file/009586431211485515d4a721fab36625848d9bf495fde045b94f5d4edec59a7f/detection
 
 hummonantil.info
+
+# Reference: https://www.virustotal.com/gui/file/0144dbb55f6a1cc0ffb2b7999c6d6fc4289552bca5ef2f426885ba0a3e7f863a/detection
+
+luckergoldsurvey.top
+a.luckergoldsurvey.top
