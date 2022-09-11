@@ -201,3 +201,7 @@ dollarsurveysuccess.top
 # Reference: https://www.virustotal.com/gui/file/0040c3b8d335eef8fad148f623de46adc80c76c5eac0679eaa08a8176f886c1a/detection
 
 ullmarnold.club
+
+# Reference: https://www.virustotal.com/gui/file/004f8642a094ac175bcce452fae101d717f261a2288e8d8b364eb48de40c1e17/detection
+
+sonalityand.biz
