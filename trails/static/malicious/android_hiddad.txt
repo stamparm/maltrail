@@ -193,3 +193,7 @@ app.functionads.com
 cpi.functionads.com
 sdk.functionads.com
 hw.sdk.functionads.com
+
+# Reference: https://www.virustotal.com/gui/file/001d893d5aaf6079177d4ada320adb9426b7a92866b70190c9441ae144443243/detection
+
+dollarsurveysuccess.top
