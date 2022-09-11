@@ -249,3 +249,7 @@ examplete.club
 # Reference: https://www.virustotal.com/gui/file/043a856280349a2f4b2ac7170abca33298e8355385c18213f7d97e82f931ccc3/detection
 
 lturesinteac.biz
+
+# Reference: https://www.virustotal.com/gui/file/0111ab4c0a64516d70c0cfa8c206627c59251cb7cbaa313d495564ad13a58095/detection
+
+rdonoursestut.info
