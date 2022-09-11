@@ -6142,6 +6142,10 @@ s.langhort.com
 
 /wpaas/load.php
 
+# Reference: https://www.virustotal.com/gui/file/5fbe698c1b9f5d270cb997b7a99ea16295c9a1704676023438130d0574860ea5/detection
+
+javfoo.com
+
 # Generic
 
 /js/altmanluggage.js
