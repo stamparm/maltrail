@@ -205,3 +205,11 @@ ullmarnold.club
 # Reference: https://www.virustotal.com/gui/file/004f8642a094ac175bcce452fae101d717f261a2288e8d8b364eb48de40c1e17/detection
 
 sonalityand.biz
+
+# Reference: https://www.virustotal.com/gui/file/005112775c2c5fd418652ebef23cbec920b89cc602a71694cd1d5081d7f56671/detection
+
+bythatdateil.biz
+luckychance.me
+micmitosas.top
+willitepartisti.club
+winluckychance.com
