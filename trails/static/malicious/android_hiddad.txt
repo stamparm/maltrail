@@ -197,3 +197,7 @@ hw.sdk.functionads.com
 # Reference: https://www.virustotal.com/gui/file/001d893d5aaf6079177d4ada320adb9426b7a92866b70190c9441ae144443243/detection
 
 dollarsurveysuccess.top
+
+# Reference: https://www.virustotal.com/gui/file/0040c3b8d335eef8fad148f623de46adc80c76c5eac0679eaa08a8176f886c1a/detection
+
+ullmarnold.club
