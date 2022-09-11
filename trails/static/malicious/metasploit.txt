@@ -427,3 +427,7 @@
 # Reference: https://twitter.com/drb_ra/status/1568556256813539331
 
 138.197.215.161:443
+
+# Reference: https://twitter.com/drb_ra/status/1568691894410006529
+
+160.20.146.117:443
