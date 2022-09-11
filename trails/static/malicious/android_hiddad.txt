@@ -207,10 +207,16 @@ ullmarnold.club
 sonalityand.biz
 
 # Reference: https://www.virustotal.com/gui/file/005112775c2c5fd418652ebef23cbec920b89cc602a71694cd1d5081d7f56671/detection
+# Reference: https://www.virustotal.com/gui/file/00659d95f44b7d9e1dbef822b7380423875c5ffe032197f02c1301e3b7127865/detection
+# Reference: https://www.virustotal.com/gui/file/006bc1f721a756e59d903f7bff164cee4b0c2dd68e06d8354cea24a390e0a1ff/detection
+# Reference: https://www.virustotal.com/gui/file/0093cc614d7cc19493ba2e571e87e7727717100b89532d312ef4cf34b8645ee1/detection
 
+asedocvj.biz
 bythatdateil.biz
+dclearedwi.online
 luckychance.me
 micmitosas.top
+ormationfr.online
 willitepartisti.club
 winluckychance.com
 
@@ -218,3 +224,11 @@ winluckychance.com
 
 6srvfcm.com
 s.6srvfcm.com
+
+# Reference: https://www.virustotal.com/gui/file/00853f69b859130a84a83db0e613b4f4d37420153ee5cd2edf332bb0d8efc413/detection
+
+esponsidehe.club
+
+# Reference: https://www.virustotal.com/gui/file/009586431211485515d4a721fab36625848d9bf495fde045b94f5d4edec59a7f/detection
+
+hummonantil.info
