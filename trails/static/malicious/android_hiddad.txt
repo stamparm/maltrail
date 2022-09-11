@@ -237,3 +237,7 @@ hummonantil.info
 
 luckergoldsurvey.top
 a.luckergoldsurvey.top
+
+# Reference: https://www.virustotal.com/gui/file/0097f819cb1dff07be155ec9b2c250d998a96187abb8f70b0dc4ec8abcff1eb5/detection
+
+rycertaine.top
