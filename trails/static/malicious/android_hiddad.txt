@@ -213,3 +213,8 @@ luckychance.me
 micmitosas.top
 willitepartisti.club
 winluckychance.com
+
+# Reference: https://www.virustotal.com/gui/file/0054e30cbcfb0918dc1b05c5e988b4789b1efcae3db7329301afa05af49abc34/detection
+
+6srvfcm.com
+s.6srvfcm.com
