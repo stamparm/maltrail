@@ -6146,6 +6146,13 @@ s.langhort.com
 
 javfoo.com
 
+# Reference: https://www.virustotal.com/gui/file/d7b370cd27d4f6448c0ab9b9946d26ec636720e1c87408d13cce198b7776cda9/detection
+
+cuddlethehyena.com
+glenprejudice.com
+javhaj.com
+mc7clurd09pla4nrtat7ion.com
+
 # Generic
 
 /js/altmanluggage.js
