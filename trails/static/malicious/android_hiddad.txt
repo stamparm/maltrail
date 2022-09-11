@@ -241,3 +241,11 @@ a.luckergoldsurvey.top
 # Reference: https://www.virustotal.com/gui/file/0097f819cb1dff07be155ec9b2c250d998a96187abb8f70b0dc4ec8abcff1eb5/detection
 
 rycertaine.top
+
+# Reference: https://www.virustotal.com/gui/file/038ffca16e382f88d0077f6321cfdc7a4014b856ade70b615328fd77d37e69fe/detection
+
+examplete.club
+
+# Reference: https://www.virustotal.com/gui/file/043a856280349a2f4b2ac7170abca33298e8355385c18213f7d97e82f931ccc3/detection
+
+lturesinteac.biz
