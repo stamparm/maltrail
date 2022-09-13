@@ -750,6 +750,14 @@ havana.littlehavanacigarstore.com
 puzzle.tricityintranet.com
 secretary.rentamimi.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1569452267199397888
+# Reference: https://www.virustotal.com/gui/ip-address/84.32.188.27/relations
+
+fluctuations.trendylevels.com
+09b0.fluctuations.trendylevels.com
+4e11.fluctuations.trendylevels.com
+c8d5.fluctuations.trendylevels.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
