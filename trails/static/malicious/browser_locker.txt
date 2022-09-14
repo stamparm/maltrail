@@ -502,3 +502,7 @@ newpop.org
 # Reference: https://twitter.com/MBThreatIntel/status/1567996965161680896
 
 bunvatink.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1569872658359275521
+
+globalnews.cloud
