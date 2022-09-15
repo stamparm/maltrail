@@ -253,3 +253,7 @@ lturesinteac.biz
 # Reference: https://www.virustotal.com/gui/file/0111ab4c0a64516d70c0cfa8c206627c59251cb7cbaa313d495564ad13a58095/detection
 
 rdonoursestut.info
+
+# Reference: https://www.virustotal.com/gui/file/0000fafc390c75122ae2ad8cbbef7a0f95e05d0d7d731dfefb3005ee8a01b41b/detection
+
+qualismyui.club
