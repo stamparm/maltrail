@@ -500,8 +500,10 @@ http://142.93.113.230
 newpop.org
 
 # Reference: https://twitter.com/MBThreatIntel/status/1567996965161680896
+# Reference: https://twitter.com/MBThreatIntel/status/1570510541168472065
 
 bunvatink.com
+gorghtnow.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1569872658359275521
 
