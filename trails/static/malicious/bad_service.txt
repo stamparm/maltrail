@@ -524,3 +524,8 @@ over-spam.space
 smart-bot.me
 bafybeidravcab5p3acvthxtwosm4rfpl4yypwwm52s7sazgxaezfzn5xn4.ipfs.infura-ipfs.io
 ijfcm7bu6ocerxsfq56ka3dtdanunyp4ytwk745b54agtravj2wr2qqd.onion.pet
+
+# Reference: https://twitter.com/WhichbufferArda/status/1571125906856620034
+# Reference: https://www.virustotal.com/gui/domain/greencracks.com/detection
+
+greencracks.com
