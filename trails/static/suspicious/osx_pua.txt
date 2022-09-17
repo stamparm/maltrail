@@ -29,3 +29,11 @@ bghui.storeyourstreams.xyz
 
 simpliftsbefore.info
 ukrgukep.xyz
+
+# Reference: https://www.virustotal.com/gui/file/08c2cbdf7ad005aa8c8ff94295df9a6477d2401307286ed1ed0d80ae5e264981/detection
+
+do6j9veegshb4.cloudfront.net
+
+# Reference: https://www.virustotal.com/gui/file/7cc5aa0de58acc181260ca48d0069e7893570d2fec13bcd989f8907c23a0992a/detection
+
+d1z6i8y4ytpgjk.cloudfront.net
