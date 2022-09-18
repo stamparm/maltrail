@@ -482,3 +482,8 @@
 # Reference: https://twitter.com/drb_ra/status/1568691894410006529
 
 160.20.146.117:443
+
+# Reference: https://twitter.com/WhichbufferArda/status/1571541189798641666
+# Reference: https://www.virustotal.com/gui/file/565d5e1f67309d3864cb01a29a3b043485f05e55858a04cfcef9a1d35988f797/detection
+
+45.79.121.251:1234
