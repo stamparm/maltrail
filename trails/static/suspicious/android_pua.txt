@@ -738,7 +738,17 @@ c-ccccc.cc
 fu44.pw
 
 # Reference: https://www.virustotal.com/gui/file/0000e0ad9eb7ec8238c4f12833e3a88806aa204b89d5f50de67e9a5a38764c64/detection
+# Reference: https://www.virustotal.com/gui/file/000ddcca53633e01d53e1b9dcbbd6ac51afe05ff46e0766cb975baf1add3265f/detection
 
 115.28.52.43:8080
 my.zhxone.com
+pbj.jinchibao.net
 plus.zhxone.com
+v.wifiwin.cn
+
+# Reference: https://www.virustotal.com/gui/file/00140261bdd355c50a7c5483a9a993e305605c03c4280324d587b13ef5af320d/detection
+
+ep.jinchibao.net
+plus.zhxone.com
+sdkjk.idmzone.com
+sdks.zy333.cn
