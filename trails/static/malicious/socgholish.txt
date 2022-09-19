@@ -758,6 +758,12 @@ fluctuations.trendylevels.com
 4e11.fluctuations.trendylevels.com
 c8d5.fluctuations.trendylevels.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1569877691964485632
+
+business.mygshplus.com
+prompt.zonashoppers.academy
+tutorials.girandolashutkindconstruction.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
