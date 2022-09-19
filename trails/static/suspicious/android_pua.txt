@@ -736,3 +736,9 @@ http://101.133.138.181
 101.133.138.181:8777
 c-ccccc.cc
 fu44.pw
+
+# Reference: https://www.virustotal.com/gui/file/0000e0ad9eb7ec8238c4f12833e3a88806aa204b89d5f50de67e9a5a38764c64/detection
+
+115.28.52.43:8080
+my.zhxone.com
+plus.zhxone.com
