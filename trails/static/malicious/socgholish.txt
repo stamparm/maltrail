@@ -764,6 +764,10 @@ business.mygshplus.com
 prompt.zonashoppers.academy
 tutorials.girandolashutkindconstruction.com
 
+# Reference: https://twitter.com/bigmacjpg/status/1570781615445659650
+
+moments.abledity.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
