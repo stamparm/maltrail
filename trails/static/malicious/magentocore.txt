@@ -7639,6 +7639,12 @@ jqstylemini.com
 jqstyleminjs.com
 sanapicss.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1572316461615677440
+# Reference: https://www.virustotal.com/gui/ip-address/192.236.209.185/relations
+# Reference: https://www.virustotal.com/gui/ip-address/51.75.49.254/relations
+
+stats-doubleclick.com
+
 # Generic
 
 /assets/lfg.js
