@@ -405,3 +405,6 @@ ipwho.is
 # Reference: https://www.virustotal.com/gui/file/c192c4a8647935e35a756e0e9cb71a2b4536f927bee108ec1580e6d31fcca785/behavior/Zenbox
 
 ipwhois.app
+
+# Reference: https://www.virustotal.com/gui/file/d608d017b2063a0d01287a7a71e17a5d8db473e229af410886ba82d815b93fad/behavior
+ip.plyz.net
