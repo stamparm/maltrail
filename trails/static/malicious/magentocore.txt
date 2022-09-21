@@ -7645,6 +7645,17 @@ sanapicss.com
 
 stats-doubleclick.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/91.203.192.227/relations
+
+cloudfsnbg.cc
+google-bootstrap.com
+google-clipboard.com
+google-font.com
+google-ltag.com
+google-manager.com
+google-portal.com
+google-server.com
+
 # Generic
 
 /assets/lfg.js
