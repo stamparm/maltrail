@@ -7645,9 +7645,11 @@ sanapicss.com
 
 stats-doubleclick.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/195.22.149.218/relations
 # Reference: https://www.virustotal.com/gui/ip-address/91.203.192.227/relations
 
 cloudfsnbg.cc
+google-application.com
 google-bootstrap.com
 google-clipboard.com
 google-font.com
@@ -7655,6 +7657,7 @@ google-ltag.com
 google-manager.com
 google-portal.com
 google-server.com
+google-work.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1572635560153612288
 # Reference: https://www.virustotal.com/gui/ip-address/94.131.107.62/relations
