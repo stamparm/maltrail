@@ -513,3 +513,39 @@ globalnews.cloud
 
 ecoaudio.cl
 /ARsfy0Er0d00FF0fdb0Er0Rsfy07/
+
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2022/09/microsoft-edges-news-feed-pushes-tech-support-scam
+# Reference: https://otx.alienvault.com/pulse/63244fc3c3191df7eeddff72
+
+a-techsolutions.us
+aksconsulting.us
+antivirusphonenumber.org
+comsecurityessentials.support
+decfurnish.com
+everyavenuetravel.site
+feedsonbudget.com
+financialtrending.com
+foddylearn.com
+furnitureshopone.us
+glamorousfeeds.com
+hardwarecloseout.com
+humaantouch.com
+mainlytrendy.com
+mamsolution.us
+mamsolutions.us
+manbrandsonline.com
+minielectronic.in
+mvpconsultant.us
+netsecurity-essential.com
+newsagent.quest
+newsforward.quest
+polussuo.com
+printertechnicahelp.com
+puppyandcats.online
+quickbooktechnicalsupport.org
+thespeedoflite.com
+tissat.us
+tissatweb.us
+trendingonfeed.com
+viralonspot.com
+weeklylive.info
