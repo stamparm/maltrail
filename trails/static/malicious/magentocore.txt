@@ -7664,6 +7664,10 @@ google-work.com
 
 goojsytle.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1573059941619081221
+
+guyacave.fr/js/tiny_mce/themes/modern/validate.js
+
 # Generic
 
 /assets/lfg.js
