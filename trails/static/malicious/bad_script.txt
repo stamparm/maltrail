@@ -6195,6 +6195,10 @@ javmq.com
 /loadpay.ps1
 /rawpayload.ps1
 
+# Reference: https://twitter.com/jstrosch/status/1572953204400209921
+
+dev.api.cal.ukpbj.codelogic.id
+
 # Generic
 
 /js/altmanluggage.js
