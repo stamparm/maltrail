@@ -549,3 +549,7 @@ tissatweb.us
 trendingonfeed.com
 viralonspot.com
 weeklylive.info
+
+# Reference: https://twitter.com/MBThreatIntel/status/1571892478818783233
+
+globalnews-wired.com
