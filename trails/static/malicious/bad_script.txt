@@ -6190,6 +6190,11 @@ javmq.com
 
 /7a5c36cee88e6b.php
 
+# Reference: https://twitter.com/r3dbU7z/status/1572735985586143236
+
+/loadpay.ps1
+/rawpayload.ps1
+
 # Generic
 
 /js/altmanluggage.js
