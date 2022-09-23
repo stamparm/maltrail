@@ -6185,6 +6185,11 @@ javmac.com
 javole.com
 javmq.com
 
+# Reference: https://unit42.paloaltonetworks.com/originlogger/
+# Reference: https://otx.alienvault.com/pulse/6321cdc9ae733812be9b9331
+
+/7a5c36cee88e6b.php
+
 # Generic
 
 /js/altmanluggage.js
