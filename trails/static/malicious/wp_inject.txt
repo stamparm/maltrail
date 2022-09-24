@@ -620,3 +620,16 @@ http://51.142.175.104
 
 adogeevent.com
 confirmation-process.at
+
+# Reference: https://twitter.com/unmaskparasites/status/1254766052296122368
+# Reference: https://www.virustotal.com/gui/domain/trackstatisticsss.com/relations
+# Reference: https://www.joesandbox.com/analysis/399034/0/html
+# Reference: https://www.wordfence.com/blog/2020/05/nearly-a-million-wp-sites-targeted-in-large-scale-attacks/
+
+adsforbusines.com
+stivenfernando.com
+ps.stivenfernando.com
+ws.stivenfernando.com
+trackstatisticsss.com
+count.trackstatisticsss.com
+stat.trackstatisticsss.com
