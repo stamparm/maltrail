@@ -1370,17 +1370,6 @@ coronashirts.store
 
 /19303817.js
 
-# Reference: https://twitter.com/unmaskparasites/status/1254766052296122368
-# Reference: https://www.virustotal.com/gui/domain/trackstatisticsss.com/relations
-# Reference: https://www.wordfence.com/blog/2020/05/nearly-a-million-wp-sites-targeted-in-large-scale-attacks/
-
-adsforbusines.com
-stivenfernando.com
-ps.stivenfernando.com
-ws.stivenfernando.com
-trackstatisticsss.com
-stat.trackstatisticsss.com
-
 # Reference: https://www.virustotal.com/gui/domain/crisgrey.com/relations
 
 crisgrey.com
