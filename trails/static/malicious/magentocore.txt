@@ -6535,13 +6535,19 @@ palletforks.net
 webtoolsapp.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1519784855730499585
+# Reference: https://www.virustotal.com/gui/ip-address/188.68.222.146/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.101.50.140/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.53.124.42/relations
 # Reference: https://www.virustotal.com/gui/ip-address/80.249.145.91/relations
 # Reference: https://www.virustotal.com/gui/ip-address/84.38.180.69/relations
 
 app-cloudflare.com
 appcloudflare.com
+cdn-optimizely.com
 cdn-trackjs.com
+get-bootstrap.com
 livehotjars.com
+static-affilate.com
 
 # Reference: https://twitter.com/EKFiddle/status/1522282636542197762
 # Reference: https://www.virustotal.com/gui/ip-address/194.104.136.113/relations
