@@ -752,3 +752,16 @@ ep.jinchibao.net
 plus.zhxone.com
 sdkjk.idmzone.com
 sdks.zy333.cn
+
+# Reference: https://www.virustotal.com/gui/file/955f9a5c632aad3d0a1558622ee28167980cfb43fd68518b1953177dff179fb2/detection
+
+106.75.53.182:10002
+120.26.3.124:888
+121.40.109.196:8088
+156.224.96.163:888
+45.39.106.132:888
+47.254.19.2:888
+jkys567.com
+anzhuo.jkys567.com
+ios.jkys567.com
+pro.jkys567.com
