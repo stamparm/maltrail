@@ -6188,6 +6188,10 @@ javmq.com
 
 dev.api.cal.ukpbj.codelogic.id
 
+# Reference: https://twitter.com/jaydinbas/status/1547530236878852096
+
+/cijjus.php
+
 # Generic
 
 /js/altmanluggage.js
