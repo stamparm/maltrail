@@ -407,9 +407,12 @@ alertvirus.tech
 tiodmw.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1371929640697094145
+# Reference: https://twitter.com/MBThreatIntel/status/1574812115369852928
 
 http://142.93.195.227
+http://206.189.194.206
 letsnewsblog.xyz
+hotblackbeautygirls.blogspot.com
 /systemerror-win-chx/
 
 # Reference: https://twitter.com/MBThreatIntel/status/1376952424653451267
