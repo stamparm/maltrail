@@ -553,3 +553,7 @@ weeklylive.info
 # Reference: https://twitter.com/MBThreatIntel/status/1571892478818783233
 
 globalnews-wired.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1574810683161870336
+
+topchefrecipe.com
