@@ -871,6 +871,11 @@ custom.usmuchmedia.com
 
 notes.fumcpittsburg.org
 
+# Reference: https://twitter.com/MBThreatIntel/status/1574509979784314880
+
+2topost.com
+hair.2topost.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
