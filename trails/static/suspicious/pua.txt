@@ -3119,3 +3119,14 @@ auth.360mon.cn
 
 blockey.ru
 discriminate.blockey.ru
+
+# Reference: https://www.virustotal.com/gui/file/84c842e3090e3e21a4aa180b4c4dea16dabf613964a7f926f360db6f9fc92e20/detection
+
+108.61.73.119:8100
+140.228.162.213:9998
+144.76.109.79:9998
+159.253.149.12:8794
+70.87.43.40:8000
+81.173.3.139:8082
+82.147.38.180:8000
+buddyvu.net
