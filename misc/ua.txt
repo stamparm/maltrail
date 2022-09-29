@@ -1744,6 +1744,10 @@ Edg/79.0.309.68
 
 Edg/83.0.478.64
 
+# Reference: https://www.microsoft.com/security/blog/2022/09/29/zinc-weaponizing-open-source-software/
+
+Edg/100.0.1185.39
+
 # Reference: https://twitter.com/James_inthe_box/status/1410352295670255619
 # Reference: https://www.virustotal.com/gui/file/fee6b3937d208b95c17dc253ba951f3c7c5a332af98f4e0117ee5bbd47e38843/detection
 
