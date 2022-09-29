@@ -888,6 +888,15 @@ memorial.4tosocialprofessional.com
 5b9.jobs.registermegod.online
 a979.jobs.registermegod.online
 
+# Reference: https://twitter.com/MBThreatIntel/status/1575241303302209537
+# Reference: https://www.virustotal.com/gui/ip-address/179.43.133.40/relations
+
+mynewtopboyfriend.store
+mystylingmylife.xyz
+accounts.mynewtopboyfriend.store
+basket.stylingtomorrow.com
+fundraising.mystylingmylife.xyz
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
