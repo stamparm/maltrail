@@ -7668,6 +7668,7 @@ google-work.com
 # Reference: https://twitter.com/unmaskparasites/status/1572635560153612288
 # Reference: https://www.virustotal.com/gui/ip-address/94.131.107.62/relations
 
+gjsmini.com
 goojsytle.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1573059941619081221
