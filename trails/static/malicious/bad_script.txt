@@ -6192,6 +6192,10 @@ dev.api.cal.ukpbj.codelogic.id
 
 /cijjus.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1575442588982804480
+
+/BWCL.hta
+
 # Generic
 
 /js/altmanluggage.js

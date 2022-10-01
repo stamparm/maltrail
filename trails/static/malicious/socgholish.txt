@@ -901,6 +901,10 @@ fundraising.mystylingmylife.xyz
 
 actors.jcracing.com
 
+# Reference: https://twitter.com/EKFiddle/status/1575981962330005504
+
+people.zonashoppers.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
