@@ -7670,6 +7670,7 @@ google-work.com
 
 gjsmini.com
 goojsytle.com
+stylecssmini.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1573059941619081221
 
