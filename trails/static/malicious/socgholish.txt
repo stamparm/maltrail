@@ -897,6 +897,10 @@ accounts.mynewtopboyfriend.store
 basket.stylingtomorrow.com
 fundraising.mystylingmylife.xyz
 
+# Reference: https://twitter.com/MBThreatIntel/status/1575959652483100674
+
+actors.jcracing.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
