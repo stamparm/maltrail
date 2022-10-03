@@ -6201,6 +6201,11 @@ dev.api.cal.ukpbj.codelogic.id
 
 /jsJ13j.sct
 
+# Reference: https://twitter.com/r3dbU7z/status/1576920251853582336
+
+/attackstorm.py
+/tlsattackfunc.py
+
 # Generic
 
 /js/altmanluggage.js
