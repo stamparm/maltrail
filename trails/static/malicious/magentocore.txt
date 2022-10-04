@@ -7676,6 +7676,18 @@ stylecssmini.com
 
 guyacave.fr/js/tiny_mce/themes/modern/validate.js
 
+# Reference: https://twitter.com/MBThreatIntel/status/1577039325157822464
+# Reference: https://www.virustotal.com/gui/ip-address/142.11.211.60/relations
+# Reference: https://www.virustotal.com/gui/ip-address/178.20.40.156/relations
+
+assetsclick.com
+assetsfind.com
+assetspower.com
+assetsspace.com
+megaebun.ru
+stripecheck.com
+trustdomains.net
+
 # Generic
 
 /assets/lfg.js
