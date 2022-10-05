@@ -257,3 +257,7 @@ rdonoursestut.info
 # Reference: https://www.virustotal.com/gui/file/0000fafc390c75122ae2ad8cbbef7a0f95e05d0d7d731dfefb3005ee8a01b41b/detection
 
 qualismyui.club
+
+# Reference: https://www.virustotal.com/gui/file/06c198feb7422f0980ad7ccae775ba712cdd35d76fbce6ac3e6234022f63eeb3/detection
+
+placentry.club
