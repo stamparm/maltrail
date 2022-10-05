@@ -566,3 +566,123 @@
 # Reference: https://www.virustotal.com/gui/file/565d5e1f67309d3864cb01a29a3b043485f05e55858a04cfcef9a1d35988f797/detection
 
 45.79.121.251:1234
+
+# Reference: https://twitter.com/drb_ra/status/1569461514691551250
+
+154.177.150.39:443
+
+# Reference: https://twitter.com/drb_ra/status/1570142223060140039
+
+3.144.160.100:443
+
+# Reference: https://twitter.com/drb_ra/status/1570323256019943425
+
+49.232.172.165:9992
+
+# Reference: https://twitter.com/drb_ra/status/1570323318091448320
+
+40.87.53.114:443
+
+# Reference: https://twitter.com/drb_ra/status/1570685731177365506
+
+18.221.67.145:443
+
+# Reference: https://twitter.com/drb_ra/status/1570685918423441409
+
+18.208.191.154:443
+
+# Reference: https://twitter.com/drb_ra/status/1570912261232857089
+
+173.82.206.29:10001
+
+# Reference: https://twitter.com/drb_ra/status/1571228983936565249
+
+http://89.223.68.158
+
+# Reference: https://twitter.com/drb_ra/status/1571229126119329799
+
+23.227.196.237:443
+
+# Reference: https://twitter.com/drb_ra/status/1571772711260528645
+
+140.82.49.92:443
+
+# Reference: https://twitter.com/drb_ra/status/1572316425481785344
+
+http://92.53.120.198
+
+# Reference: https://twitter.com/drb_ra/status/1572542099333025792
+
+104.238.223.3:443
+
+# Reference: https://twitter.com/drb_ra/status/1572542142962176001
+
+103.164.203.234:2083
+
+# Reference: https://twitter.com/drb_ra/status/1573447588774400010
+
+172.93.193.250:443
+
+# Reference: https://twitter.com/drb_ra/status/1573447795943657485
+
+139.144.51.104:443
+
+# Reference: https://twitter.com/drb_ra/status/1574173391678017537
+
+84.175.253.212:8080
+
+# Reference: https://twitter.com/drb_ra/status/1574535248972599314
+
+206.0.92.31:8080
+
+# Reference: https://twitter.com/drb_ra/status/1574535327422861317
+
+142.44.129.107:1337
+
+# Reference: https://twitter.com/drb_ra/status/1574535586727088128
+
+155.94.239.56:8445
+
+# Reference: https://twitter.com/drb_ra/status/1574897978665574427
+
+139.155.251.236:8888
+
+# Reference: https://twitter.com/drb_ra/status/1575259890892800000
+
+3.68.77.64:443
+
+# Reference: https://twitter.com/drb_ra/status/1575577329769754625
+
+99.81.53.111:8080
+
+# Reference: https://twitter.com/drb_ra/status/1575577350783176704
+
+185.198.59.171:8080
+
+# Reference: https://twitter.com/drb_ra/status/1575577429661618177
+
+134.209.24.206:443
+
+# Reference: https://twitter.com/drb_ra/status/1575939760719380481
+
+http://34.100.238.117
+
+# Reference: https://twitter.com/drb_ra/status/1576302834752126978
+
+23.106.160.127:4444
+
+# Reference: https://twitter.com/drb_ra/status/1576302929182691330
+
+23.106.160.127:4445
+
+# Reference: https://twitter.com/drb_ra/status/1577026868573765632
+
+31.170.22.88:4430
+
+# Reference: https://twitter.com/drb_ra/status/1577026881961984008
+
+178.62.212.11:8080
+
+# Reference: https://twitter.com/drb_ra/status/1577439236172775425
+
+47.105.97.37:8080
