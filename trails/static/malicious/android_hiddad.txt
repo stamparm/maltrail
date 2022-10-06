@@ -273,3 +273,7 @@ vecohgmpl.biz
 # Reference: https://www.virustotal.com/gui/file/01ce3dfcb4b231ccfb802f00f6f5a921953f5c69d3eaa9d1d72252bbba3ef7d8/detection
 
 tonasalarys.online
+
+# Reference: https://www.virustotal.com/gui/file/0070f4db8aeb7769ae9b37265790bc4dbb46f25967ba59f6be6b539bc25e1f0f/detection
+
+covercoats.club
