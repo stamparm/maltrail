@@ -277,3 +277,7 @@ tonasalarys.online
 # Reference: https://www.virustotal.com/gui/file/0070f4db8aeb7769ae9b37265790bc4dbb46f25967ba59f6be6b539bc25e1f0f/detection
 
 covercoats.club
+
+# Reference: https://www.virustotal.com/gui/file/03d4768ca5a6407b85ae8bc90400182150b3c2d75dda946cc5efd6a39a3c2fb6/detection
+
+kitwkuouldh.xyz
