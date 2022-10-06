@@ -261,3 +261,15 @@ qualismyui.club
 # Reference: https://www.virustotal.com/gui/file/06c198feb7422f0980ad7ccae775ba712cdd35d76fbce6ac3e6234022f63eeb3/detection
 
 placentry.club
+
+# Reference: https://www.virustotal.com/gui/file/012b7466a01e834c6356d5b49f5d40192465f88cfceb5841dfb0ef63d79d0aca/detection
+
+einteaching.biz
+
+# Reference: https://www.virustotal.com/gui/file/0223df47de4e37f543abb84d77caa9d8a5b015937e617957fa84e100eccac9a8/detection
+
+vecohgmpl.biz
+
+# Reference: https://www.virustotal.com/gui/file/01ce3dfcb4b231ccfb802f00f6f5a921953f5c69d3eaa9d1d72252bbba3ef7d8/detection
+
+tonasalarys.online
