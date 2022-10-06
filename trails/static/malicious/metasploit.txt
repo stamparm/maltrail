@@ -689,5 +689,5 @@ http://34.100.238.117
 
 # Reference: https://twitter.com/MichalKoczwara/status/1577983325330890759
 
-/Eternalblue-Doublepulsar-Metaspoit/
-/Eternalblue-Doublepulsar-Metaspoit.zip
+/Eternalblue-Doublepulsar-Metasploit/
+/Eternalblue-Doublepulsar-Metasploit.zip
