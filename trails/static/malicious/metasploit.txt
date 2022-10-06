@@ -686,3 +686,8 @@ http://34.100.238.117
 # Reference: https://twitter.com/drb_ra/status/1577439236172775425
 
 47.105.97.37:8080
+
+# Reference: https://twitter.com/MichalKoczwara/status/1577983325330890759
+
+/Eternalblue-Doublepulsar-Metaspoit/
+/Eternalblue-Doublepulsar-Metaspoit.zip
