@@ -6206,6 +6206,34 @@ dev.api.cal.ukpbj.codelogic.id
 /attackstorm.py
 /tlsattackfunc.py
 
+# Reference: https://twitter.com/jstrosch/status/1578056013130989568
+
+/adminer-137hi.php
+/adminer-48edw.php
+/adminer-enm5f.php
+/adminer-mlwpc.php
+/akndwegidy.php
+/hbjglueocv.php
+/krhdfjkomr.php
+/kyvgmjykfo.php
+/lozqtcornp.php
+/lrynmamrhl.php
+/mailer-gi3hx.php
+/mailer-px16q.php
+/mdqidzyuiv.php
+/ndtesbiznh.php
+/nxwcgaolxk.php
+/plrczjhrse.php
+/putqwnbkhu.php
+/qlaobdzrbj.php
+/swekjlzbed.php
+/tbtmdckzuz.php
+/tcujelbrbc.php
+/ulfywujokb.php
+/uwehfmweug.php
+/veqhqwwhzr.php
+/vztbipqlpk.php
+
 # Generic
 
 /js/altmanluggage.js
