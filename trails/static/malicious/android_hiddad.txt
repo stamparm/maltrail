@@ -265,3 +265,7 @@ placentry.club
 # Reference: https://www.virustotal.com/gui/file/012b7466a01e834c6356d5b49f5d40192465f88cfceb5841dfb0ef63d79d0aca/detection
 
 einteaching.biz
+
+# Reference: https://www.virustotal.com/gui/file/0223df47de4e37f543abb84d77caa9d8a5b015937e617957fa84e100eccac9a8/detection
+
+vecohgmpl.biz
