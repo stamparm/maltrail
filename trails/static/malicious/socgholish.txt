@@ -905,6 +905,67 @@ actors.jcracing.com
 
 people.zonashoppers.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1578145447969173504
+# Reference: https://www.virustotal.com/gui/ip-address/159.69.101.84/relations
+
+4tosocial.com
+balance.tyvekracebibs.com
+football.4tosocial.com
+internal.blessedfoodshalalmeat.com
+01c2.jobs.registermegod.online
+039b.internal.blessedfoodshalalmeat.com
+0580.jobs.registermegod.online
+0846.jobs.registermegod.online
+09ce.jobs.registermegod.online
+0a52.jobs.registermegod.online
+0feb.jobs.registermegod.online
+2cee.jobs.registermegod.online
+2e9d.jobs.registermegod.online
+3ae0.jobs.registermegod.online
+45b9.jobs.registermegod.online
+51b4.jobs.registermegod.online
+5502.jobs.registermegod.online
+5650.jobs.registermegod.online
+579c.jobs.registermegod.online
+5876.jobs.registermegod.online
+5a3b.jobs.registermegod.online
+5acc.jobs.registermegod.online
+5ae0.jobs.registermegod.online
+6165.internal.blessedfoodshalalmeat.com
+6b09.jobs.registermegod.online
+6fca.jobs.registermegod.online
+74fc.internal.blessedfoodshalalmeat.com
+7802.jobs.registermegod.online
+7a88.jobs.registermegod.online
+9ca7.jobs.registermegod.online
+a67f.internal.blessedfoodshalalmeat.com
+alerdnlxfbd.balance.tyvekracebibs.com
+b076.jobs.registermegod.online
+ba13.jobs.registermegod.online
+c090.jobs.registermegod.online
+cojdmfx.balance.tyvekracebibs.com
+d971.internal.blessedfoodshalalmeat.com
+df35.jobs.registermegod.online
+e095.jobs.registermegod.online
+f37b.jobs.registermegod.online
+fdc0.jobs.registermegod.online
+gnc.balance.tyvekracebibs.com
+ivmwafpgas.balance.tyvekracebibs.com
+krmmfpoesa.balance.tyvekracebibs.com
+mupbap.balance.tyvekracebibs.com
+n.balance.tyvekracebibs.com
+pmtmmwuovln.balance.tyvekracebibs.com
+rbfafmalbyv.balance.tyvekracebibs.com
+ructexyljspfju.balance.tyvekracebibs.com
+sjsvifluhvbwgw.balance.tyvekracebibs.com
+sqotbcdzvrfml.balance.tyvekracebibs.com
+tpousltzamjbio.balance.tyvekracebibs.com
+ummhjsoxcpat.balance.tyvekracebibs.com
+vvuuqjpbzoe.balance.tyvekracebibs.com
+xbdtiykgxuhg.balance.tyvekracebibs.com
+xscbxhbtw.balance.tyvekracebibs.com
+xtwhfnjmgayrj.balance.tyvekracebibs.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
