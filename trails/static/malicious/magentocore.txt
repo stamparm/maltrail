@@ -7688,7 +7688,9 @@ megaebun.ru
 stripecheck.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1578483645568147456
+# Reference: https://twitter.com/EKFiddle/status/1578497647857762304
 
+fleuriste.ca/static/version1664884145/_cache/merged/510ae23a9c13df084a8608806e1bb5be.min.js
 gs27usa.com/translations/tw/mails.php
 
 # Generic
