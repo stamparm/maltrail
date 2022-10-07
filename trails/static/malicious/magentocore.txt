@@ -7686,7 +7686,10 @@ assetspower.com
 assetsspace.com
 megaebun.ru
 stripecheck.com
-trustdomains.net
+
+# Reference: https://twitter.com/MBThreatIntel/status/1578483645568147456
+
+gs27usa.com/translations/tw/mails.php
 
 # Generic
 
