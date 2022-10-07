@@ -2142,6 +2142,10 @@ Lilith-Bot/3.0
 
 FUCKUSA
 
+# Reference: https://twitter.com/reecdeep/status/1578299118761697280
+
+\AWindows Explorer\Z
+
 # Misc
 
 information_schema
