@@ -2439,6 +2439,7 @@ gooqle-analytics.com
 gooqle-analytics.net
 secure-authorize.net
 wanalytic.is
+secure.authcrize.net
 
 # Reference: https://twitter.com/kyleehmke/status/1399680399756906502
 # Reference: https://www.virustotal.com/gui/ip-address/87.120.254.4/relations
