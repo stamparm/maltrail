@@ -2057,8 +2057,11 @@ Lingjiang
 # Reference: https://news.sophos.com/en-us/2022/06/15/telerik-ui-exploitation-leads-to-cryptominer-cobalt-strike-infections
 # Reference: https://otx.alienvault.com/pulse/62a9f96003d8f53c24d0bf94
 # Reference: https://github.com/sophoslabs/IoCs/blob/master/Troj-Miner-AED.csv
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/C2_configs/cobaltstrike.csv
 
+\bMANM; MANM\b
 \bNP07; NP07\b
+\bNP09; NP09\b
 
 # Reference: https://twitter.com/siri_urz/status/1543960444708200448
 # Reference: https://tria.ge/220822-vh3xsaafek/behavioral1
@@ -2145,6 +2148,10 @@ FUCKUSA
 # Reference: https://twitter.com/reecdeep/status/1578299118761697280
 
 \AWindows Explorer\Z
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/C2_configs/cobaltstrike.csv
+
+\bMAAU\b
 
 # Misc
 
