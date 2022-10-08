@@ -691,3 +691,7 @@ http://34.100.238.117
 
 /Eternalblue-Doublepulsar-Metasploit/
 /Eternalblue-Doublepulsar-Metasploit.zip
+
+# Reference: https://twitter.com/drb_ra/status/1578662102306373633
+
+121.78.139.238:8443
