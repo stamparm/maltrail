@@ -6234,6 +6234,10 @@ dev.api.cal.ukpbj.codelogic.id
 /veqhqwwhzr.php
 /vztbipqlpk.php
 
+# Reference: https://twitter.com/1ZRR4H/status/1578993357237649408
+
+/pe64.ps1
+
 # Generic
 
 /js/altmanluggage.js
