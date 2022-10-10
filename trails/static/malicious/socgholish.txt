@@ -966,6 +966,12 @@ xbdtiykgxuhg.balance.tyvekracebibs.com
 xscbxhbtw.balance.tyvekracebibs.com
 xtwhfnjmgayrj.balance.tyvekracebibs.com
 
+# Reference: https://twitter.com/bigmacjpg/status/1579491968035721218
+
+houses.in-vermont.com
+d477.houses.in-vermont.com
+e2c0.houses.in-vermont.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
