@@ -6238,6 +6238,10 @@ dev.api.cal.ukpbj.codelogic.id
 
 /pe64.ps1
 
+# Reference: https://twitter.com/1ZRR4H/status/1579569830751252481
+
+/fucked.php
+
 # Generic
 
 /js/altmanluggage.js
