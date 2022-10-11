@@ -7694,6 +7694,10 @@ stripecheck.com
 fleuriste.ca/static/version1664884145/_cache/merged/510ae23a9c13df084a8608806e1bb5be.min.js
 gs27usa.com/translations/tw/mails.php
 
+# Reference: https://twitter.com/MBThreatIntel/status/1579869056819396609
+
+cdn-mediahub.com
+
 # Generic
 
 /assets/lfg.js
