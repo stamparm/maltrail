@@ -6242,6 +6242,10 @@ dev.api.cal.ukpbj.codelogic.id
 
 /fucked.php
 
+# Reference: https://www.virustotal.com/gui/file/1064aaec1537695abeadeabe1ca73f4d5bee047564cc79e76f944fc77a397760/detection
+
+/yesdrg.ps1
+
 # Generic
 
 /js/altmanluggage.js
