@@ -905,3 +905,9 @@ podathon.org/shell/
 # Reference: https://arcticwolf.com/resources/blog/lorenz-ransomware-chiseling-in/
 
 /wc2_deploy
+
+# Reference: https://m365internals.com/2022/10/07/hunting-in-on-premises-exchange-server-logs/
+
+/aspnet_netclient/4_0_30319/devilzShell.aspx
+/aspnet_netclient/4_0_30319/POWERshell.aspx
+/devilzShell.aspx

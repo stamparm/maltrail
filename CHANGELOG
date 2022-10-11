@@ -14,12 +14,19 @@
 
 
 
-- Version 0.49 -> 0.50 (Upcoming release)
+- Version 0.50 -> 0.51 (Upcoming release)
 
 
 
 
 
+
+- Version 0.49 -> 0.50 (01 Oct 2022)
+
+[=] "potential remote code execution" heurfor CVE-2022-30190 is updated
+[=] "Maltrail detection nuances" wiki-page is updated
+[=] "Trail classes" wiki-page is updated
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 - Version 0.48 -> 0.49 (01 Sep 2022)
 

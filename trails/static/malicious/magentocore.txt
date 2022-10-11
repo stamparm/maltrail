@@ -2439,6 +2439,7 @@ gooqle-analytics.com
 gooqle-analytics.net
 secure-authorize.net
 wanalytic.is
+secure.authcrize.net
 
 # Reference: https://twitter.com/kyleehmke/status/1399680399756906502
 # Reference: https://www.virustotal.com/gui/ip-address/87.120.254.4/relations
@@ -6535,13 +6536,19 @@ palletforks.net
 webtoolsapp.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1519784855730499585
+# Reference: https://www.virustotal.com/gui/ip-address/188.68.222.146/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.101.50.140/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.53.124.42/relations
 # Reference: https://www.virustotal.com/gui/ip-address/80.249.145.91/relations
 # Reference: https://www.virustotal.com/gui/ip-address/84.38.180.69/relations
 
 app-cloudflare.com
 appcloudflare.com
+cdn-optimizely.com
 cdn-trackjs.com
+get-bootstrap.com
 livehotjars.com
+static-affilate.com
 
 # Reference: https://twitter.com/EKFiddle/status/1522282636542197762
 # Reference: https://www.virustotal.com/gui/ip-address/194.104.136.113/relations
@@ -7662,11 +7669,34 @@ google-work.com
 # Reference: https://twitter.com/unmaskparasites/status/1572635560153612288
 # Reference: https://www.virustotal.com/gui/ip-address/94.131.107.62/relations
 
+gjsmini.com
 goojsytle.com
+stylecssmini.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1573059941619081221
 
 guyacave.fr/js/tiny_mce/themes/modern/validate.js
+
+# Reference: https://twitter.com/MBThreatIntel/status/1577039325157822464
+# Reference: https://www.virustotal.com/gui/ip-address/142.11.211.60/relations
+# Reference: https://www.virustotal.com/gui/ip-address/178.20.40.156/relations
+
+assetsclick.com
+assetsfind.com
+assetspower.com
+assetsspace.com
+megaebun.ru
+stripecheck.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1578483645568147456
+# Reference: https://twitter.com/EKFiddle/status/1578497647857762304
+
+fleuriste.ca/static/version1664884145/_cache/merged/510ae23a9c13df084a8608806e1bb5be.min.js
+gs27usa.com/translations/tw/mails.php
+
+# Reference: https://twitter.com/MBThreatIntel/status/1579869056819396609
+
+cdn-mediahub.com
 
 # Generic
 

@@ -617,6 +617,45 @@ http://51.142.175.104
 /savepng.php?location=a57bze8931.php
 
 # Reference: https://blog.sucuri.net/2022/08/fake-ddos-pages-on-wordpress-lead-to-drive-by-downloads.html
+# Reference: https://blog.sucuri.net/2022/09/new-malware-variants-serve-bogus-cloudflare-ddos-captcha.html
+# Reference: https://www.virustotal.com/gui/ip-address/5.42.199.146/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.42.199.148/relations
+# Reference: https://www.virustotal.com/gui/file/7b72c022d506fc09a22d7721f6f50defd00297f52a89f1000b4f50b273d7f8ff/detection
 
 adogeevent.com
+colliderporn.at
+confirmation.at
 confirmation-process.at
+gloogletag.com
+luxury-limousine.com
+skambio-porte.com
+softlab-sport.com
+trailerstrade.com
+yaritsavodka.com
+cheking.confirmation.at
+gov.confirmation.at
+irs.gov.confirmation.at
+madeformade.confirmation.at
+security-browser.colliderporn.at
+verify.confirmation.at
+
+# Reference: https://twitter.com/unmaskparasites/status/1254766052296122368
+# Reference: https://www.virustotal.com/gui/domain/trackstatisticsss.com/relations
+# Reference: https://www.joesandbox.com/analysis/399034/0/html
+# Reference: https://www.wordfence.com/blog/2020/05/nearly-a-million-wp-sites-targeted-in-large-scale-attacks/
+
+adsforbusines.com
+stivenfernando.com
+ps.stivenfernando.com
+ws.stivenfernando.com
+trackstatisticsss.com
+adware.trackstatisticsss.com
+count.trackstatisticsss.com
+fox.trackstatisticsss.com
+ount.trackstatisticsss.com
+stat.trackstatisticsss.com
+trstat.trackstatisticsss.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1577797497581613056
+
+helpotus.com

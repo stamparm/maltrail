@@ -407,9 +407,12 @@ alertvirus.tech
 tiodmw.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1371929640697094145
+# Reference: https://twitter.com/MBThreatIntel/status/1574812115369852928
 
 http://142.93.195.227
+http://206.189.194.206
 letsnewsblog.xyz
+hotblackbeautygirls.blogspot.com
 /systemerror-win-chx/
 
 # Reference: https://twitter.com/MBThreatIntel/status/1376952424653451267
@@ -513,3 +516,47 @@ globalnews.cloud
 
 ecoaudio.cl
 /ARsfy0Er0d00FF0fdb0Er0Rsfy07/
+
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2022/09/microsoft-edges-news-feed-pushes-tech-support-scam
+# Reference: https://otx.alienvault.com/pulse/63244fc3c3191df7eeddff72
+
+a-techsolutions.us
+aksconsulting.us
+antivirusphonenumber.org
+comsecurityessentials.support
+decfurnish.com
+everyavenuetravel.site
+feedsonbudget.com
+financialtrending.com
+foddylearn.com
+furnitureshopone.us
+glamorousfeeds.com
+hardwarecloseout.com
+humaantouch.com
+mainlytrendy.com
+mamsolution.us
+mamsolutions.us
+manbrandsonline.com
+minielectronic.in
+mvpconsultant.us
+netsecurity-essential.com
+newsagent.quest
+newsforward.quest
+polussuo.com
+printertechnicahelp.com
+puppyandcats.online
+quickbooktechnicalsupport.org
+thespeedoflite.com
+tissat.us
+tissatweb.us
+trendingonfeed.com
+viralonspot.com
+weeklylive.info
+
+# Reference: https://twitter.com/MBThreatIntel/status/1571892478818783233
+
+globalnews-wired.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1574810683161870336
+
+topchefrecipe.com

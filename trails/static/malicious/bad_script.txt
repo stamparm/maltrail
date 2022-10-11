@@ -1370,17 +1370,6 @@ coronashirts.store
 
 /19303817.js
 
-# Reference: https://twitter.com/unmaskparasites/status/1254766052296122368
-# Reference: https://www.virustotal.com/gui/domain/trackstatisticsss.com/relations
-# Reference: https://www.wordfence.com/blog/2020/05/nearly-a-million-wp-sites-targeted-in-large-scale-attacks/
-
-adsforbusines.com
-stivenfernando.com
-ps.stivenfernando.com
-ws.stivenfernando.com
-trackstatisticsss.com
-stat.trackstatisticsss.com
-
 # Reference: https://www.virustotal.com/gui/domain/crisgrey.com/relations
 
 crisgrey.com
@@ -6189,6 +6178,73 @@ javmq.com
 # Reference: https://otx.alienvault.com/pulse/6321cdc9ae733812be9b9331
 
 /7a5c36cee88e6b.php
+
+# Reference: https://twitter.com/r3dbU7z/status/1572735985586143236
+
+/loadpay.ps1
+/rawpayload.ps1
+
+# Reference: https://twitter.com/jstrosch/status/1572953204400209921
+
+dev.api.cal.ukpbj.codelogic.id
+
+# Reference: https://twitter.com/jaydinbas/status/1547530236878852096
+
+/cijjus.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1575442588982804480
+
+/BWCL.hta
+
+# Reference: https://securelist.com/defttorero-tactics-techniques-and-procedures/107610/
+# Reference: https://otx.alienvault.com/pulse/633acb17ed56f34d3779a9a4
+
+/jsJ13j.sct
+
+# Reference: https://twitter.com/r3dbU7z/status/1576920251853582336
+
+/attackstorm.py
+/tlsattackfunc.py
+
+# Reference: https://twitter.com/jstrosch/status/1578056013130989568
+
+/adminer-137hi.php
+/adminer-48edw.php
+/adminer-enm5f.php
+/adminer-mlwpc.php
+/akndwegidy.php
+/hbjglueocv.php
+/krhdfjkomr.php
+/kyvgmjykfo.php
+/lozqtcornp.php
+/lrynmamrhl.php
+/mailer-gi3hx.php
+/mailer-px16q.php
+/mdqidzyuiv.php
+/ndtesbiznh.php
+/nxwcgaolxk.php
+/plrczjhrse.php
+/putqwnbkhu.php
+/qlaobdzrbj.php
+/swekjlzbed.php
+/tbtmdckzuz.php
+/tcujelbrbc.php
+/ulfywujokb.php
+/uwehfmweug.php
+/veqhqwwhzr.php
+/vztbipqlpk.php
+
+# Reference: https://twitter.com/1ZRR4H/status/1578993357237649408
+
+/pe64.ps1
+
+# Reference: https://twitter.com/1ZRR4H/status/1579569830751252481
+
+/fucked.php
+
+# Reference: https://www.virustotal.com/gui/file/1064aaec1537695abeadeabe1ca73f4d5bee047564cc79e76f944fc77a397760/detection
+
+/yesdrg.ps1
 
 # Generic
 
