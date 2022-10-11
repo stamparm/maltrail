@@ -972,6 +972,14 @@ houses.in-vermont.com
 d477.houses.in-vermont.com
 e2c0.houses.in-vermont.com
 
+# Reference: https://twitter.com/bigmacjpg/status/1579915319145295872
+# Reference: https://www.virustotal.com/gui/ip-address/185.185.87.19/relations
+
+demand.sageyogatherapies.com
+360c.demand.sageyogatherapies.com
+dbeb.demand.sageyogatherapies.com
+f292.demand.sageyogatherapies.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
