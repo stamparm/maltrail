@@ -3130,3 +3130,7 @@ discriminate.blockey.ru
 81.173.3.139:8082
 82.147.38.180:8000
 buddyvu.net
+
+# Reference: https://www.virustotal.com/gui/file/7eb5ac862db8e4be2d6c51f51acecf6e8edb096b61a4da965a17b1582792d4d4/detection
+
+radicmenu.xyz
