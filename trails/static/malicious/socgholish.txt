@@ -980,6 +980,12 @@ demand.sageyogatherapies.com
 dbeb.demand.sageyogatherapies.com
 f292.demand.sageyogatherapies.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1580283780350504960
+
+allsunstates.com
+jquery0.com
+ecar.allsunstates.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
