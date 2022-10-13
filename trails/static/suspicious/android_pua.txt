@@ -833,3 +833,7 @@ ea63cd772591.org
 ea6da71817dd.org
 eb9eadbe3848.org
 f67354873b85.org
+
+# Reference: https://www.virustotal.com/gui/file/0fc5e6da2a29ab52ab77278af41eda3edee7494c5644532509897f8d2c6ec693/detection
+
+aff.mclick.mobi
