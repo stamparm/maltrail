@@ -7698,6 +7698,11 @@ gs27usa.com/translations/tw/mails.php
 
 cdn-mediahub.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/103.109.101.137/relations
+
+payce-google.com
+payse-google.com
+
 # Generic
 
 /assets/lfg.js
