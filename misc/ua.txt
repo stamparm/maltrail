@@ -2153,6 +2153,10 @@ FUCKUSA
 
 \bMAAU\b
 
+# Reference: https://twitter.com/1ZRR4H/status/1581003413420376067
+
+Report Runner
+
 # Misc
 
 information_schema
