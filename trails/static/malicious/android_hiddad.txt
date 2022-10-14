@@ -281,3 +281,7 @@ covercoats.club
 # Reference: https://www.virustotal.com/gui/file/03d4768ca5a6407b85ae8bc90400182150b3c2d75dda946cc5efd6a39a3c2fb6/detection
 
 kitwkuouldh.xyz
+
+# Reference: https://www.virustotal.com/gui/file/071b251d5652a00b4cff57df8143c457612b31be309663f70ba623eb4fe7d649/detection
+
+estauranc.top
