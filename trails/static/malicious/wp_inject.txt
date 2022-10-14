@@ -657,5 +657,10 @@ stat.trackstatisticsss.com
 trstat.trackstatisticsss.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1577797497581613056
+# Reference: https://www.virustotal.com/gui/file/dc39ec37839473ae1ad0dd7875205876ee84743609d28f2f4f55716c7659557a/detection
 
 helpotus.com
+/old_source/G1exHX0rYyv/
+/wp-admin/EBxbU7MlIhOM/
+/EBxbU7MlIhOM/
+/G1exHX0rYyv/
