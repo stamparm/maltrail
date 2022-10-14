@@ -996,6 +996,12 @@ ca59.offerings.love4lifewellness.com
 cebf.offerings.love4lifewellness.com
 d1a0.offerings.love4lifewellness.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1580971576144822272
+
+engine.discoveryhypnosis.com
+resale.adkelly.com
+resort.reliablecommunityservices.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
