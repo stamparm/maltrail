@@ -560,3 +560,9 @@ globalnews-wired.com
 # Reference: https://twitter.com/MBThreatIntel/status/1574810683161870336
 
 topchefrecipe.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1580688598567120896
+
+expresslifestyles.com
+firstviewfeeds.com
+mostlyfeeds.com
