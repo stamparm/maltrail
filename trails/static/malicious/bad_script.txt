@@ -6246,6 +6246,16 @@ dev.api.cal.ukpbj.codelogic.id
 
 /yesdrg.ps1
 
+# Reference: https://www.virustotal.com/gui/file/00f452bcd981fcca980f2beeaef1d3e43b5ccc4c010ed0410eae5cd86a48c190/detection
+
+/ltys/app.js
+/ltys/dh.js
+/ltys/dh1.js
+/ltys/dl.js
+/ltys/tj3.js
+/ltys/xx1.js
+/ltys/xx2.js
+
 # Generic
 
 /js/altmanluggage.js
