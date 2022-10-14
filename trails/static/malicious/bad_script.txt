@@ -6256,6 +6256,10 @@ dev.api.cal.ukpbj.codelogic.id
 /ltys/xx1.js
 /ltys/xx2.js
 
+# Reference: https://www.virustotal.com/gui/file/3f6d866f09cfabb1aa2a0393d290533ed31705c87b85f77edc3fdd51b90f6e24/detection
+
+/ms1.hta
+
 # Generic
 
 /js/altmanluggage.js
