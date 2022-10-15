@@ -133,6 +133,19 @@ class _set(set):
     pass
 
 try:
+    import __builtin__
+except ImportError:
+    # Python 3
+    import builtins as __builtin__
+
+
+def print(*args, **kwargs):
+    ret = __builtin__.print(*args, **kwargs)
+    sys.stdout.flush()
+    return ret
+
+
+try:
     import pcapy
 except ImportError:
     if IS_WIN:
