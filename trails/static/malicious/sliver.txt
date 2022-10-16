@@ -130,3 +130,7 @@ sj-analytics.com
 
 23.82.140.230:8888
 vomonavopo.com
+
+# Reference: https://twitter.com/MichalKoczwara/status/1580643176188350465
+
+195.211.198.113:31337
