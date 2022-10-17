@@ -6260,6 +6260,10 @@ dev.api.cal.ukpbj.codelogic.id
 
 /ms1.hta
 
+# Reference: https://twitter.com/ViriBack/status/1581732406893346816
+
+/hhbbmn.php
+
 # Generic
 
 /js/altmanluggage.js
