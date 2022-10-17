@@ -1002,6 +1002,10 @@ engine.discoveryhypnosis.com
 resale.adkelly.com
 resort.reliablecommunityservices.com
 
+# Reference: http://lists.emergingthreats.net/pipermail/emerging-sigs/2022-October/030777.html
+
+festival.robingaster.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
