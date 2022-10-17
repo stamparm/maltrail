@@ -3320,3 +3320,11 @@ cdn.dnsv1.com
 
 windowsupdate.com
 download.windowsupdate.com
+
+# Reference: https://github.com/stamparm/maltrail/commit/25c0a9c4f304e880d38b03bae15fa371e29877b9
+
+atlassian.com
+bootcdn.net
+stackpath.com
+automation.atlassian.com
+cdn.bootcdn.net
