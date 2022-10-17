@@ -16,7 +16,7 @@
 
 - Version 0.50 -> 0.51 (Upcoming release)
 
-
+[!] Fixed deadlock of Docker output to stdout (Issue #19121) 
 
 
 
