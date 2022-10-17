@@ -12,3 +12,8 @@
 95.179.246.73:443
 95.179.246.73:50423
 95.179.246.73:8443
+
+# Reference: https://twitter.com/alexey_firsh/status/1582010477902966785
+# Reference: https://twitter.com/alexey_firsh/status/1582033602040430592
+
+45.32.74.229:8443
