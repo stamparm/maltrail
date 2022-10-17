@@ -2157,6 +2157,10 @@ FUCKUSA
 
 Report Runner
 
+# Reference: http://lists.emergingthreats.net/pipermail/emerging-sigs/2022-October/030777.html
+
+\bRT/1.0\b
+
 # Misc
 
 information_schema
