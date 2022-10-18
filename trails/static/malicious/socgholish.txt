@@ -1021,6 +1021,11 @@ c1ypsilanti.org
 festival.robingaster.com
 training.c1ypsilanti.org
 
+# Reference: https://twitter.com/C0ryInTheHous3/status/1582370010659311616
+# Reference: https://www.virustotal.com/gui/ip-address/91.208.197.151/relations
+
+consultant.meredithklemmblog.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
