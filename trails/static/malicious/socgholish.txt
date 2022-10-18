@@ -1026,6 +1026,11 @@ training.c1ypsilanti.org
 
 consultant.meredithklemmblog.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1582439318320447489
+
+family.1ablecommunity.com
+school.cherry-street-portrait-studios.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
