@@ -699,3 +699,7 @@ http://34.100.238.117
 # Reference: https://twitter.com/drb_ra/status/1580655980173410304
 
 52.53.251.150:13443
+
+# Reference: https://twitter.com/drb_ra/status/1582468147298197504
+
+155.94.239.56:8432
