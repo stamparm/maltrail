@@ -289,3 +289,7 @@ estauranc.top
 # Reference: https://www.virustotal.com/gui/file/07a43e3b09c3bda2f6a2aadab6bd69aaba49635d21e90114a4b7858e315380fa/detection
 
 ontknoww.online
+
+# Reference: https://www.virustotal.com/gui/file/05fdfb104e56318ffcd0b2c402b19c29187b5f3c49d15a3c0ff26857d8328706/detection
+
+ingtobepu.online
