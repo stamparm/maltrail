@@ -841,3 +841,7 @@ aff.mclick.mobi
 # Reference: https://www.virustotal.com/gui/file/ef121b020b542c90527aa59f4e30e5a3d68430f9e6d016c088fd308a8f708221/detection
 
 appmaket.giize.com
+
+# Reference: https://www.virustotal.com/gui/domain/sparkskillzs.com/relations
+
+sparkskillzs.com
