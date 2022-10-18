@@ -3328,3 +3328,10 @@ bootcdn.net
 stackpath.com
 automation.atlassian.com
 cdn.bootcdn.net
+
+# Reference: https://www.virustotal.com/gui/domain/msftncsi.com/relations
+
+msftncsi.com
+dns.msftncsi.com
+inbound.msftncsi.com
+ipv6.msftncsi.com
