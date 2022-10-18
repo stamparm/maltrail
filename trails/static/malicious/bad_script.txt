@@ -6264,6 +6264,13 @@ dev.api.cal.ukpbj.codelogic.id
 
 /hhbbmn.php
 
+# Reference: https://twitter.com/InQuest/status/1582114710740008960
+# Reference: https://www.virustotal.com/gui/file/0a656baa4ca55df0c78dcc20151a223089da31e836bb8cd586969e2281cf9fbf/detection
+# Reference: https://www.virustotal.com/gui/file/ab82809dfa85921cbb290df23dbdfaf29d36433c45e351866f202ed261c3a484/detection
+# Reference: https://www.virustotal.com/gui/file/47bbeeb8ce166f7285b8f10188e32f2affc0d5cbe0ec5bb848593a9750b3a560/detection
+
+/get_cmd.php?hdd=
+
 # Generic
 
 /js/altmanluggage.js
