@@ -293,3 +293,7 @@ ontknoww.online
 # Reference: https://www.virustotal.com/gui/file/05fdfb104e56318ffcd0b2c402b19c29187b5f3c49d15a3c0ff26857d8328706/detection
 
 ingtobepu.online
+
+# Reference: https://www.virustotal.com/gui/file/15899c2758f4c11f50608756ef6eac8abd17f41735bc96c6ad0797199d2dcdc1/detection
+
+eattheendo.online
