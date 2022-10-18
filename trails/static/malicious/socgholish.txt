@@ -990,11 +990,23 @@ ecar.allsunstates.com
 
 offerings.love4lifewellness.com
 1303.offerings.love4lifewellness.com
+1e06.offerings.love4lifewellness.com
+213d.offerings.love4lifewellness.com
 3d96.offerings.love4lifewellness.com
+4c0f.offerings.love4lifewellness.com
+4d87.offerings.love4lifewellness.com
+7d2d.offerings.love4lifewellness.com
+7d3a.offerings.love4lifewellness.com
+8a4b.offerings.love4lifewellness.com
+980f.offerings.love4lifewellness.com
 a574.offerings.love4lifewellness.com
 ca59.offerings.love4lifewellness.com
 cebf.offerings.love4lifewellness.com
 d1a0.offerings.love4lifewellness.com
+d3c5.offerings.love4lifewellness.com
+d7d8.offerings.love4lifewellness.com
+dd68.offerings.love4lifewellness.com
+e962.offerings.love4lifewellness.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1580971576144822272
 
@@ -1002,9 +1014,12 @@ engine.discoveryhypnosis.com
 resale.adkelly.com
 resort.reliablecommunityservices.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1582131308763185152
 # Reference: http://lists.emergingthreats.net/pipermail/emerging-sigs/2022-October/030777.html
 
+c1ypsilanti.org
 festival.robingaster.com
+training.c1ypsilanti.org
 
 # Generic
 
