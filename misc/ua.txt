@@ -2161,6 +2161,13 @@ Report Runner
 
 \bRT/1.0\b
 
+# Reference: https://twitter.com/siri_urz/status/1582325545031069697
+# Reference: https://www.virustotal.com/gui/file/2a0047fe9748f2a45196dbf75e4f1a951d249daad380cbc9eab85ff66fb35814/detection
+
+medusa-stealer
+medusa
+stealer
+
 # Misc
 
 information_schema
