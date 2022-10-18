@@ -971,16 +971,21 @@ def init():
     else:
         interfaces = set(_.strip() for _ in config.MONITOR_INTERFACE.split(','))
 
+        try:
+            devices = pcapy.findalldevs()
+        except:
+            devices = []
+
         if (config.MONITOR_INTERFACE or "").lower() == "any":
-            if IS_WIN or "any" not in pcapy.findalldevs():
+            if devices and (IS_WIN or "any" not in devices):
                 print("[x] virtual interface 'any' missing. Replacing it with all interface names")
-                interfaces = pcapy.findalldevs()
+                interfaces = devices
             else:
                 print("[?] in case of any problems with packet capture on virtual interface 'any', please put all monitoring interfaces to promiscuous mode manually (e.g. 'sudo ifconfig eth0 promisc')")
 
         for interface in interfaces:
-            if interface.lower() != "any" and re.sub(r"(?i)\Anetmap:", "", interface) not in pcapy.findalldevs():
-                hint = "[?] available interfaces: '%s'" % ",".join(pcapy.findalldevs())
+            if interface.lower() != "any" and devices and re.sub(r"(?i)\Anetmap:", "", interface) not in devices:
+                hint = "[?] available interfaces: '%s'" % ",".join(devices)
                 exit("[!] interface '%s' not found\n%s" % (interface, hint))
 
             print("[i] opening interface '%s'" % interface)
