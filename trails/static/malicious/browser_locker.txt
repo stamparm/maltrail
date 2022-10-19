@@ -566,3 +566,7 @@ topchefrecipe.com
 expresslifestyles.com
 firstviewfeeds.com
 mostlyfeeds.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1582767527591280642
+
+zerotrf.site
