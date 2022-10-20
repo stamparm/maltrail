@@ -139,3 +139,8 @@ vomonavopo.com
 # Reference: https://www.virustotal.com/gui/file/17df554651962ebb1424a549ddc43f2a7e0e25a571ddfe454393b4f413261296/detection
 
 http://44.201.81.167
+
+# Reference: https://twitter.com/r3dbU7z/status/1582932022859026432
+
+dashboard.ondemand-9839.ske.psydev.eu
+identity.ondemand-9839.ske.psydev.eu
