@@ -6271,6 +6271,10 @@ dev.api.cal.ukpbj.codelogic.id
 
 /get_cmd.php?hdd=
 
+# Reference: https://twitter.com/0xToxin/status/1583157689898573824
+
+/523ecb38582a9c.php
+
 # Generic
 
 /js/altmanluggage.js
