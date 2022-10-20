@@ -1031,6 +1031,11 @@ consultant.meredithklemmblog.com
 family.1ablecommunity.com
 school.cherry-street-portrait-studios.com
 
+# Reference: http://lists.emergingthreats.net/pipermail/emerging-sigs/2022-October/030779.html
+
+jsfconnections.com
+discover.jsfconnections.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
