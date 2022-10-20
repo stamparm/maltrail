@@ -5502,3 +5502,7 @@ realproheros.com
 # Reference: https://www.virustotal.com/gui/domain/onlinesecure365.com/relations
 
 onlinesecure365.com
+
+# Reference: https://www.virustotal.com/gui/domain/wsywddr.com/relations
+
+wsywddr.com
