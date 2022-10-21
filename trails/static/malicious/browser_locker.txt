@@ -570,3 +570,27 @@ mostlyfeeds.com
 # Reference: https://twitter.com/MBThreatIntel/status/1582767527591280642
 
 zerotrf.site
+
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/large-typosquatting-campaign-delivers-tech-support-scams
+
+20ixejutaqucomoso.xyz
+69hajab.20ixejutaqucomoso.xyz
+affiliatecpctracker.online
+amazon.uk.com
+bilqi-omv.com
+duckduckgo.cm
+gmauil.com
+homedept.com
+netload1.com
+poliitco.com
+realto.com
+tq-eu.netload1.com
+tq.netload1.com
+walmarat.com
+weahter.com
+wellsfargo.cm
+xml-eu-v4.netload1.com
+xml-eu.netload1.com
+xml-v4.netload1.com
+xml.netload1.com
+zillwo.com
