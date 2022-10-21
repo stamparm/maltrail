@@ -1036,6 +1036,10 @@ school.cherry-street-portrait-studios.com
 jsfconnections.com
 discover.jsfconnections.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1583210388627542018
+
+furniture.nothingordinarydesign.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
