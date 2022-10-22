@@ -2168,6 +2168,10 @@ medusa-stealer
 medusa
 stealer
 
+# Reference: https://cert.gov.ua/article/2394117 (Ukrainian)
+
+Example/1.0
+
 # Misc
 
 information_schema
