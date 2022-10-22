@@ -2172,6 +2172,10 @@ stealer
 
 Example/1.0
 
+# Reference: https://www.zscaler.com/blogs/security-research/warhawk-new-backdoor-arsenal-sidewinder-apt-group-0
+
+Base/1.0
+
 # Misc
 
 information_schema
