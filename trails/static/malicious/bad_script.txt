@@ -6280,6 +6280,7 @@ dev.api.cal.ukpbj.codelogic.id
 # Reference: https://www.virustotal.com/gui/file/df318d78bb1c951f6134419cdd3d6e3a605e28b73235dbbc46bc871bf12c9e74/detection
 
 http://37.1.209.213
+/NZMcgH
 /xD252Hx3
 /xD252Hx3?host=
 
