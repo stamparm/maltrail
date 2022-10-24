@@ -6275,6 +6275,14 @@ dev.api.cal.ukpbj.codelogic.id
 
 /523ecb38582a9c.php
 
+# Reference: https://twitter.com/unmaskparasites/status/1584592625327575040
+# Reference: https://www.virustotal.com/gui/file/6738f60ad76ff0930858b829574f3eb03aa403bf80695ccf5fea2598d345793d/detection
+# Reference: https://www.virustotal.com/gui/file/df318d78bb1c951f6134419cdd3d6e3a605e28b73235dbbc46bc871bf12c9e74/detection
+
+http://37.1.209.213
+/xD252Hx3
+/xD252Hx3?host=
+
 # Generic
 
 /js/altmanluggage.js
