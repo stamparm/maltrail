@@ -6284,6 +6284,10 @@ http://37.1.209.213
 /xD252Hx3
 /xD252Hx3?host=
 
+# Reference: https://twitter.com/JAMESWT_MHT/status/1584816141960372224
+
+/root.hta
+
 # Generic
 
 /js/altmanluggage.js
