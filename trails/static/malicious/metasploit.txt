@@ -767,3 +767,12 @@ http://34.100.238.117
 # Reference: https://twitter.com/drb_ra/status/1585003374205980674
 
 91.230.110.99:443
+
+# Reference: https://twitter.com/drb_ra/status/1585185124513087488
+# Reference: https://www.virustotal.com/gui/file/6a5b527e4c71a33b166da9bb88ac467bc16733d3294363db032bd869615e4ae5/detection
+
+34.128.121.30:443
+
+# Reference: https://twitter.com/drb_ra/status/1585185212992000001
+
+18.234.131.47:443
