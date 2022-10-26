@@ -594,3 +594,7 @@ xml-eu.netload1.com
 xml-v4.netload1.com
 xml.netload1.com
 zillwo.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1584963701974929408
+
+zerotrf.store
