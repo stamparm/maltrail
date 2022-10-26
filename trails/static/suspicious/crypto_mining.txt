@@ -978,3 +978,18 @@ jp.moneroocean.stream
 
 136.244.80.197:5555
 142.202.242.43:5555
+
+# Reference: https://blog.cyble.com/2022/10/25/dual-malware-infection-targets-cryptocurrency-users/
+# Reference: https://www.virustotal.com/gui/domain/luckpool.net/relations
+
+139.99.123.225:3956
+144.217.253.98:3956
+149.56.27.47:3956
+192.99.68.109:3956
+66.70.189.125:9356
+79.137.70.48:3956
+luckpool.net
+ap.luckpool.net
+eu.luckpool.net
+na.luckpool.net
+node3.luckpool.net
