@@ -1040,6 +1040,10 @@ discover.jsfconnections.com
 
 furniture.nothingordinarydesign.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1585404776732594181
+
+chess.north-atlantic.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
