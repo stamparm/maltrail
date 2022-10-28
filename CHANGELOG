@@ -16,8 +16,12 @@
 
 - Version 0.50 -> 0.51 (Upcoming release)
 
-[!] Fixed deadlock of Docker output to stdout (Issue #19121) 
-
+[+] New Wiki pages are added
+[!] Fixed deadlock of Docker output to stdout (Issue #19121)
+[!] Definition of network interfaces is improved (Issue #19123)
+[!] Fixed syscalls handling (Issue #19125)
+[=] "potential remote code execution" heuristic is improved
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
@@ -62,7 +66,7 @@
 - Version 0.44 -> 0.45 (01 May 2022)
 
 [+] systemd-based realization for Maltrail sensor.py, server.py and ipset/iptables ban-list (dedicated repo) have added
-[+] New Wiki pages have added
+[+] New Wiki pages are added
 [=] "potential remote code execution" heuristic is improved (detection for Java-related RCE stuff)
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
