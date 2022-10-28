@@ -1044,6 +1044,10 @@ furniture.nothingordinarydesign.com
 
 chess.north-atlantic.com
 
+# Reference: https://community.emergingthreats.net/t/daily-ruleset-update-summary-2022-10-27/109
+
+shipwrecks.ggentile.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
