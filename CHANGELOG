@@ -19,6 +19,7 @@
 [+] New Wiki pages are added
 [!] Fixed deadlock of Docker output to stdout (Issue #19121)
 [!] Definition of network interfaces is improved (Issue #19123)
+[!] Fixed regex for /360bigviktor.py feed (Issue #19124)
 [!] Fixed syscalls handling (Issue #19125)
 [=] "potential remote code execution" heuristic is improved
 [=] Multiple updates and optimizations for regular static trails and the whitelist
