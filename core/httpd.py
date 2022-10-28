@@ -17,6 +17,7 @@ import os
 import re
 import socket
 import subprocess
+import sys
 import threading
 import time
 import traceback
@@ -727,11 +728,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             server = ThreadingServer(_address, ReqHandler)
     except Exception as ex:
         if "Address already in use" in str(ex):
-            exit("[!] another instance already running")
+            sys.exit("[!] another instance already running")
         elif "Name or service not known" in str(ex):
-            exit("[!] invalid configuration value for 'HTTP_ADDRESS' ('%s')" % config.HTTP_ADDRESS)
+            sys.exit("[!] invalid configuration value for 'HTTP_ADDRESS' ('%s')" % config.HTTP_ADDRESS)
         elif "Cannot assign requested address" in str(ex):
-            exit("[!] can't use configuration value for 'HTTP_ADDRESS' ('%s')" % config.HTTP_ADDRESS)
+            sys.exit("[!] can't use configuration value for 'HTTP_ADDRESS' ('%s')" % config.HTTP_ADDRESS)
         else:
             raise
 

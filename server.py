@@ -64,7 +64,7 @@ def main():
             __import__("OpenSSL")
         except ImportError:
             if IS_WIN:
-                exit("[!] please install 'pyopenssl' (e.g. 'pip install pyopenssl')")
+                sys.exit("[!] please install 'pyopenssl' (e.g. 'pip install pyopenssl')")
             else:
                 msg = "[!] please install 'pyopenssl'"
 
@@ -74,11 +74,11 @@ def main():
                             msg += " (e.g. '%s')" % install
                             break
 
-                exit(msg)
+                sys.exit(msg)
 
         if not config.SSL_PEM or not os.path.isfile(config.SSL_PEM):
             hint = "openssl req -new -x509 -keyout %s -out %s -days 365 -nodes -subj '/O=%s CA/C=EU'" % (config.SSL_PEM or "server.pem", config.SSL_PEM or "server.pem", NAME)
-            exit("[!] invalid configuration value for 'SSL_PEM' ('%s')\n[?] (hint: \"%s\")" % (config.SSL_PEM, hint))
+            sys.exit("[!] invalid configuration value for 'SSL_PEM' ('%s')\n[?] (hint: \"%s\")" % (config.SSL_PEM, hint))
 
     def update_timer():
         retries = 0
@@ -104,7 +104,7 @@ def main():
 
     if config.UDP_ADDRESS and config.UDP_PORT:
         if config.UDP_PORT <= 1024 and not config.DISABLE_CHECK_SUDO and check_sudo() is False:
-            exit("[!] please run '%s' with root privileges when using 'UDP_ADDRESS' configuration value" % __file__)
+            sys.exit("[!] please run '%s' with root privileges when using 'UDP_ADDRESS' configuration value" % __file__)
 
         create_log_directory()
         start_logd(address=config.UDP_ADDRESS, port=config.UDP_PORT, join=False)

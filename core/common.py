@@ -13,6 +13,7 @@ import io
 import os
 import re
 import sqlite3
+import sys
 import zipfile
 import zlib
 
@@ -250,7 +251,7 @@ def load_trails(quiet=False):
                             retval[trail] = (info, reference)
 
         except Exception as ex:
-            exit("[!] something went wrong during trails file read '%s' ('%s')" % (config.TRAILS_FILE, ex))
+            sys.exit("[!] something went wrong during trails file read '%s' ('%s')" % (config.TRAILS_FILE, ex))
 
     if not quiet:
         _ = len(retval)

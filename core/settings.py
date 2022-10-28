@@ -227,7 +227,7 @@ def read_config(config_file):
     global config
 
     if not os.path.isfile(config_file):
-        exit("[!] missing configuration file '%s'" % config_file)
+        sys.exit("[!] missing configuration file '%s'" % config_file)
     else:
         print("[i] using configuration file '%s'" % config_file)
 
@@ -246,9 +246,9 @@ def read_config(config_file):
             if line.count(' ') == 0:
                 if re.search(r"[^\w]", line):
                     if array == "USERS":
-                        exit("[!] invalid USERS entry '%s'\n[?] (hint: add whitespace at start of line)" % line)
+                        sys.exit("[!] invalid USERS entry '%s'\n[?] (hint: add whitespace at start of line)" % line)
                     else:
-                        exit("[!] invalid configuration (line: '%s')" % line)
+                        sys.exit("[!] invalid configuration (line: '%s')" % line)
                 array = line.upper()
                 config[array] = []
                 continue
@@ -297,13 +297,13 @@ def read_config(config_file):
 
     for option in ("MONITOR_INTERFACE", "CAPTURE_BUFFER", "LOG_DIR"):
         if option not in config:
-            exit("[!] missing mandatory option '%s' in configuration file '%s'" % (option, config_file))
+            sys.exit("[!] missing mandatory option '%s' in configuration file '%s'" % (option, config_file))
 
     for entry in (config.USERS or []):
         if len(entry.split(':')) != 4:
-            exit("[!] invalid USERS entry '%s'" % entry)
+            sys.exit("[!] invalid USERS entry '%s'" % entry)
         if re.search(r"\$\d+\$", entry):
-            exit("[!] invalid USERS entry '%s'\n[?] (hint: please update PBKDF2 hashes to SHA256 in your configuration file)" % entry)
+            sys.exit("[!] invalid USERS entry '%s'\n[?] (hint: please update PBKDF2 hashes to SHA256 in your configuration file)" % entry)
 
     if config.SSL_PEM:
         config.SSL_PEM = config.SSL_PEM.replace('/', os.sep)
@@ -312,13 +312,13 @@ def read_config(config_file):
         if ',' in config.USER_WHITELIST:
             print("[x] configuration value 'USER_WHITELIST' has been changed. Please use it to set location of whitelist file")
         elif not os.path.isfile(config.USER_WHITELIST):
-            exit("[!] missing 'USER_WHITELIST' file '%s'" % config.USER_WHITELIST)
+            sys.exit("[!] missing 'USER_WHITELIST' file '%s'" % config.USER_WHITELIST)
         else:
             read_whitelist()
 
     if config.USER_IGNORELIST:
         if not os.path.isfile(config.USER_IGNORELIST):
-            exit("[!] missing 'USER_IGNORELIST' file '%s'" % config.USER_IGNORELIST)
+            sys.exit("[!] missing 'USER_IGNORELIST' file '%s'" % config.USER_IGNORELIST)
         else:
             read_ignorelist()
 
@@ -331,16 +331,16 @@ def read_config(config_file):
         print("[x] configuration switch 'DISABLE_LOCAL_LOG_STORAGE' turned on and neither option 'LOG_SERVER' nor 'SYSLOG_SERVER' are set. Falling back to console output of event data")
 
     if config.UDP_ADDRESS is not None and config.UDP_PORT is None:
-        exit("[!] usage of configuration value 'UDP_ADDRESS' requires also usage of 'UDP_PORT'")
+        sys.exit("[!] usage of configuration value 'UDP_ADDRESS' requires also usage of 'UDP_PORT'")
 
     if config.UDP_ADDRESS is None and config.UDP_PORT is not None:
-        exit("[!] usage of configuration value 'UDP_PORT' requires also usage of 'UDP_ADDRESS'")
+        sys.exit("[!] usage of configuration value 'UDP_PORT' requires also usage of 'UDP_ADDRESS'")
 
     if not str(config.HTTP_PORT or "").isdigit() and not IS_SENSOR:
-        exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % ("" if config.HTTP_PORT is None else config.HTTP_PORT))
+        sys.exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % ("" if config.HTTP_PORT is None else config.HTTP_PORT))
 
     if not str(config.UPDATE_PERIOD or "").isdigit():
-        exit("[!] invalid configuration value for 'UPDATE_PERIOD' ('%s')" % ("" if config.UPDATE_PERIOD is None else config.UPDATE_PERIOD))
+        sys.exit("[!] invalid configuration value for 'UPDATE_PERIOD' ('%s')" % ("" if config.UPDATE_PERIOD is None else config.UPDATE_PERIOD))
 
     if config.PROCESS_COUNT and IS_WIN:
         print("[x] multiprocessing is currently not supported on Windows OS")
@@ -358,9 +358,9 @@ def read_config(config_file):
             if physmem:
                 config.CAPTURE_BUFFER = physmem * int(re.search(r"(\d+)%", config.CAPTURE_BUFFER).group(1)) // 100
             else:
-                exit("[!] unable to determine total physical memory. Please use absolute value for 'CAPTURE_BUFFER'")
+                sys.exit("[!] unable to determine total physical memory. Please use absolute value for 'CAPTURE_BUFFER'")
         else:
-            exit("[!] invalid configuration value for 'CAPTURE_BUFFER' ('%s')" % config.CAPTURE_BUFFER)
+            sys.exit("[!] invalid configuration value for 'CAPTURE_BUFFER' ('%s')" % config.CAPTURE_BUFFER)
 
         config.CAPTURE_BUFFER = config.CAPTURE_BUFFER // BLOCK_LENGTH * BLOCK_LENGTH
 

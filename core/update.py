@@ -80,7 +80,7 @@ def update_trails(force=False, offline=False):
         if not os.path.isdir(USERS_DIR):
             os.makedirs(USERS_DIR, 0o755)
     except Exception as ex:
-        exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
+        sys.exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
 
     _chown(USERS_DIR)
 
@@ -342,7 +342,7 @@ def update_ipcat(force=False):
         if not os.path.isdir(USERS_DIR):
             os.makedirs(USERS_DIR, 0o755)
     except Exception as ex:
-        exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
+        sys.exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
 
     _chown(USERS_DIR)
 
