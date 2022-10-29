@@ -79,10 +79,12 @@ digitalhealthrecord.live
 # Reference: https://github.com/conexioninversa/MalwareIntel/blob/main/C2_All.csv
 
 http://13.113.188.183
+http://13.114.203.227
 http://159.65.114.157
 http://170.254.185.1
 http://18.176.11.157
 http://18.198.216.248
+http://3.114.23.145
 http://3.127.118.115
 http://35.156.199.19
 http://35.74.220.117
