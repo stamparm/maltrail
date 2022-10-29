@@ -664,3 +664,8 @@ helpotus.com
 /wp-admin/EBxbU7MlIhOM/
 /EBxbU7MlIhOM/
 /G1exHX0rYyv/
+
+# Reference: https://twitter.com/r3dbU7z/status/1586146279167361024
+# Reference: https://blog.sucuri.net/2020/11/alfa-team-shell-v4-1-tesla-a-feature-update-analysis.html
+
+http://87.238.210.44
