@@ -3141,5 +3141,4 @@ fsl.sytes.net
 
 # Reference: https://www.virustotal.com/gui/file/000f9c586e2f54378a2a5256e9eecae35f2a527b4816c94b28e5eaa720766fc6/detection
 
-fdownloads24.net
 gamersguide.top
