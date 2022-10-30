@@ -356,8 +356,21 @@ vscode.workingfeedback.cloud
 /panel/gate.php
 
 # Reference: https://twitter.com/500mk500/status/1586505814839558145
+# Reference: https://twitter.com/neonprimetime/status/1586707604323041282
+# Reference: https://twitter.com/neonprimetime/status/1586707916903616513
+# Reference: https://twitter.com/neonprimetime/status/1586708297260097536
+# Reference: https://twitter.com/neonprimetime/status/1586708568027308036
+# Reference: https://urlscan.io/result/4ff21a2e-8a85-4642-8c7a-febe256cf998/
+# Reference: https://urlscan.io/result/acdf05ff-9f3c-485f-9dae-4feffe29eea0/
 
+amazon-aws-cloud.com
 analiticslist.com
+bwd86.com
+bwd87.com
+hellodolly.pw
+megauploader.xyz
+nederland-server32.email
+solien.cc
 
 # Generic
 
