@@ -355,6 +355,10 @@ vscode.workingfeedback.cloud
 
 /panel/gate.php
 
+# Reference: https://twitter.com/500mk500/status/1586505814839558145
+
+analiticslist.com
+
 # Generic
 
 /admin_123/auth.php
