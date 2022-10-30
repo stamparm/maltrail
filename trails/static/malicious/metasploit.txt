@@ -844,3 +844,7 @@ http://34.100.238.117
 # Reference: https://twitter.com/drb_ra/status/1586451781919412225
 
 45.207.58.238:443
+
+# Reference: https://twitter.com/drb_ra/status/1586814093205323787
+
+176.124.209.44:443
