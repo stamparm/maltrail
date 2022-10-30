@@ -3138,3 +3138,8 @@ radicmenu.xyz
 # Reference: https://www.virustotal.com/gui/file/f5690282a935eb4a3f1c09d07abbe1c07f4da5f2ae776d4bb903f9bd1927e558/detection
 
 fsl.sytes.net
+
+# Reference: https://www.virustotal.com/gui/file/000f9c586e2f54378a2a5256e9eecae35f2a527b4816c94b28e5eaa720766fc6/detection
+
+fdownloads24.net
+gamersguide.top
