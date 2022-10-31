@@ -7703,6 +7703,12 @@ cdn-mediahub.com
 payce-google.com
 payse-google.com
 
+# Reference: https://twitter.com/sansecio/status/1587034728292646913
+# Reference: https://www.virustotal.com/gui/ip-address/176.99.6.185/relations
+
+altersave.org
+js.altersave.org
+
 # Generic
 
 /assets/lfg.js
