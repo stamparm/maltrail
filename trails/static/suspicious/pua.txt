@@ -3142,3 +3142,15 @@ fsl.sytes.net
 # Reference: https://www.virustotal.com/gui/file/000f9c586e2f54378a2a5256e9eecae35f2a527b4816c94b28e5eaa720766fc6/detection
 
 gamersguide.top
+
+# Reference: https://twitter.com/James_inthe_box/status/1587194894128291840
+# Reference: https://app.any.run/tasks/bc1e8ab0-3b1a-4c73-afc6-9d7e79355ce2/
+# Reference: https://www.virustotal.com/gui/file/1c8a957392cb532918eedc1de43a2a6e3532d038a760f63d82fc1a6e998b6a3e/detection
+
+check-data.xyz
+api.check-data.xyz
+api2.check-data.xyz
+api3.check-data.xyz
+api4.check-data.xyz
+api5.check-data.xyz
+/api2/google_api_ifi
