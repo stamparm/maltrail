@@ -6478,3 +6478,8 @@ zygust7.gq
 zygust7.ml
 zygust7.tk
 zygyst.cf
+
+# Reference: https://twitter.com/MBThreatIntel/status/1587165144014290945
+
+glimmerfeeds.com
+lionfish-app-lqj8g.ondigitalocean.app
