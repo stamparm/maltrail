@@ -7709,6 +7709,11 @@ payse-google.com
 altersave.org
 js.altersave.org
 
+# Reference: https://twitter.com/AffableKraut/status/1587457210564726791
+# Reference: https://urlscan.io/result/f14c5092-9bec-4985-91be-a4601d39ddac/
+
+lalalatatata.com
+
 # Generic
 
 /assets/lfg.js
