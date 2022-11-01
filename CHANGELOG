@@ -14,7 +14,19 @@
 
 
 
-- Version 0.50 -> 0.51 (Upcoming release)
+- Version 0.51 -> 0.52 (Upcoming release)
+
+
+
+
+
+
+
+
+
+
+
+- Version 0.50 -> 0.51 (01 Nov 2022)
 
 [+] New Wiki pages are added
 [!] Fixed deadlock of Docker output to stdout (Issue #19121)
