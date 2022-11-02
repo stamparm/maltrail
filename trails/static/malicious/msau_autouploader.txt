@@ -31,6 +31,6 @@ solien.cc
 /msau_jml/DrwContent/Prs.php
 /msau_jml/DrwContent/GetContent.php
 /msau2612/DrwContent/ProcessingMacroses.php
-/msau2612l/DrwContent/ProcessResTemplate.php
+/msau2612/DrwContent/ProcessResTemplate.php
 /msau2612/DrwContent/Prs.php
 /msau2612/DrwContent/GetContent.php
