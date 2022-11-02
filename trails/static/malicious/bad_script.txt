@@ -6288,6 +6288,10 @@ http://37.1.209.213
 
 /root.hta
 
+# Reference: https://www.virustotal.com/gui/file/1b82739880e1851d032b09de787033bd19135c8496124cd505b32afe4212b7b0/detection
+
+/ms7.hta
+
 # Generic
 
 /js/altmanluggage.js
