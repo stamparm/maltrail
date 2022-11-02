@@ -993,3 +993,8 @@ ap.luckpool.net
 eu.luckpool.net
 na.luckpool.net
 node3.luckpool.net
+
+# Reference: https://www.virustotal.com/gui/file/2d620db466a99650f37cd04a77cea75a874b8c6a52752cfc5f4902cfd92c6556/detection
+
+162.19.139.184:12222
+51.89.96.41:12222
