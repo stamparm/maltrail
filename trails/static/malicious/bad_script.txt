@@ -6292,6 +6292,10 @@ http://37.1.209.213
 
 /ms7.hta
 
+# Reference: https://twitter.com/0xToxin/status/1587576617949446148
+
+/0895.hta
+
 # Generic
 
 /js/altmanluggage.js
