@@ -998,3 +998,8 @@ node3.luckpool.net
 
 162.19.139.184:12222
 51.89.96.41:12222
+
+# Reference: https://www.virustotal.com/gui/file/01a7699e29078d8d8823f1ab86462acec79560cd6542b39ce54dc42ba2393577/detection
+
+194.145.227.21:14444
+194.145.227.21:8080
