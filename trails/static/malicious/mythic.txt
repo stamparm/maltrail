@@ -130,3 +130,9 @@ cryptolvl-rsa-check.com
 70.34.223.234:7443
 86.105.252.221:7443
 94.140.115.118:7443
+
+# Reference: https://twitter.com/IronNetTR/status/1588154026297675777
+
+ukreiif.live
+c2.b1o.it
+v56119.php-friends.de
