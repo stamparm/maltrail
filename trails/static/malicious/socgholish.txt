@@ -1048,6 +1048,10 @@ chess.north-atlantic.com
 
 shipwrecks.ggentile.com
 
+# Reference: https://twitter.com/MBThreatIntel/status/1588630860236218368
+
+portraits.studio-94-photography.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
