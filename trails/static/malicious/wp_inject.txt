@@ -669,3 +669,8 @@ helpotus.com
 # Reference: https://blog.sucuri.net/2020/11/alfa-team-shell-v4-1-tesla-a-feature-update-analysis.html
 
 http://87.238.210.44
+
+# Reference: https://twitter.com/unmaskparasites/status/1496246505099108352
+
+effectivecpmgate.com
+trustedcpmrevenue.com
