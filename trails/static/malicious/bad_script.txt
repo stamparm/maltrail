@@ -6304,6 +6304,11 @@ http://37.1.209.213
 
 /tps1.ps1
 
+# Reference: https://twitter.com/drb_ra/status/1590076101337849856
+
+/js/chunk-vendors.413ca6b2.js
+/chunk-vendors.413ca6b2.js
+
 # Generic
 
 /js/altmanluggage.js
