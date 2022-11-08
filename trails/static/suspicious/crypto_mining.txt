@@ -1003,3 +1003,7 @@ node3.luckpool.net
 
 194.145.227.21:14444
 194.145.227.21:8080
+
+# Reference: https://tria.ge/221031-ex7araaba8/behavioral2
+
+213.32.74.157:14433
