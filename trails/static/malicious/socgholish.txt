@@ -1052,6 +1052,39 @@ shipwrecks.ggentile.com
 
 portraits.studio-94-photography.com
 
+# Reference: https://twitter.com/mojoesec/status/1590380057180409856
+# Reference: https://www.virustotal.com/gui/ip-address/195.133.88.19/relations
+
+campaign.tworiversboat.com
+07cf.campaign.tworiversboat.com
+188e.campaign.tworiversboat.com
+2344.campaign.tworiversboat.com
+41be.campaign.tworiversboat.com
+4453.campaign.tworiversboat.com
+4f0a.campaign.tworiversboat.com
+54d9.campaign.tworiversboat.com
+6041.campaign.tworiversboat.com
+60eb.campaign.tworiversboat.com
+6950.campaign.tworiversboat.com
+6980.campaign.tworiversboat.com
+6dfd.campaign.tworiversboat.com
+737d.campaign.tworiversboat.com
+7502.campaign.tworiversboat.com
+7ae3.campaign.tworiversboat.com
+8322.campaign.tworiversboat.com
+848b.campaign.tworiversboat.com
+85fe.campaign.tworiversboat.com
+8b79.campaign.tworiversboat.com
+ab78.campaign.tworiversboat.com
+ac96.campaign.tworiversboat.com
+bc4a.campaign.tworiversboat.com
+ca21.campaign.tworiversboat.com
+cd74.campaign.tworiversboat.com
+e0c7.campaign.tworiversboat.com
+f121.campaign.tworiversboat.com
+f253.campaign.tworiversboat.com
+f622.campaign.tworiversboat.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
