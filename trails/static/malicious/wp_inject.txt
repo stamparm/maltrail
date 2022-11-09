@@ -674,3 +674,7 @@ http://87.238.210.44
 
 effectivecpmgate.com
 trustedcpmrevenue.com
+
+# Reference: https://blog.sucuri.net/2022/11/massive-ois-is-black-hat-redirect-malware-campaign.html
+
+ois.is
