@@ -6309,6 +6309,10 @@ http://37.1.209.213
 /js/chunk-vendors.413ca6b2.js
 /chunk-vendors.413ca6b2.js
 
+# Reference: https://asec.ahnlab.com/en/41450/
+
+/cc.ps1
+
 # Generic
 
 /js/altmanluggage.js
