@@ -7714,6 +7714,10 @@ js.altersave.org
 
 lalalatatata.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/188.114.97.3/relations
+
+jscdnstore.pw
+
 # Generic
 
 /assets/lfg.js
