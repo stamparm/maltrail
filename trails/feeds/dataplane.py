@@ -7,7 +7,7 @@ See the file 'LICENSE' for copying permission
 from core.common import retrieve_content
 
 __url__ = "https://dataplane.org/*.txt"
-__check__ = "DataPlane.org"
+__check__ = "Dataplane.org"
 __info__ = "known attacker"
 __reference__ = "dataplane.org"
 
