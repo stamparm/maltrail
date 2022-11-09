@@ -6313,6 +6313,10 @@ http://37.1.209.213
 
 /cc.ps1
 
+# Reference: https://blog.sucuri.net/2022/11/massive-ois-is-black-hat-redirect-malware-campaign.html
+
+/RVbCGlEjx6H.php
+
 # Generic
 
 /js/altmanluggage.js
