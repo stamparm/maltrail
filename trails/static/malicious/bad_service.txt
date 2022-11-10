@@ -582,3 +582,7 @@ xproductkey.com
 # Reference: https://twitter.com/ankit_anubhav/status/1586794856365535233
 
 wazusoft.com
+
+# Reference: https://lukeleal.com/research/posts/strox-phishing-service-and-how-it-works/
+
+strox.su
