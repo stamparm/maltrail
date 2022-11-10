@@ -1085,6 +1085,11 @@ f121.campaign.tworiversboat.com
 f253.campaign.tworiversboat.com
 f622.campaign.tworiversboat.com
 
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-November/030798.html
+
+coinangel.online
+rate.coinangel.online
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
