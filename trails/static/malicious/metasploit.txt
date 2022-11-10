@@ -923,3 +923,15 @@ http://51.68.138.162
 # Reference: https://twitter.com/drb_ra/status/1589533573811503104
 
 50.207.70.160:4444
+
+# Reference: https://twitter.com/drb_ra/status/1590802214540279808
+
+185.21.191.88:8443
+
+# Reference: https://twitter.com/drb_ra/status/1590802282127364096
+
+217.199.103.213:8080
+
+# Reference: https://twitter.com/drb_ra/status/1590802346187038727
+
+45.134.173.223:1194
