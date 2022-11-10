@@ -129,7 +129,10 @@ cartoonmines.com
 # Reference: https://www.virustotal.com/gui/domain/turnedpro.xyz/relations
 # Reference: https://www.virustotal.com/gui/ip-address/188.213.5.130/relations
 # Reference: https://www.virustotal.com/gui/ip-address/188.213.5.197/relations
+# Reference: https://www.virustotal.com/gui/ip-address/192.187.109.122/relations
+# Reference: https://www.virustotal.com/gui/ip-address/198.204.252.154/relations
 # Reference: https://www.virustotal.com/gui/ip-address/198.13.55.89/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.67.230.136/relations
 # Reference: https://www.virustotal.com/gui/ip-address/45.77.133.32/relations
 # Reference: https://www.virustotal.com/gui/ip-address/5.134.119.42/relations
 # Reference: https://www.virustotal.com/gui/ip-address/74.91.31.50/relations
@@ -141,14 +144,22 @@ cartoonmines.com
 # Reference: https://www.virustotal.com/gui/domain/walkdolphin.online/relations
 # Reference: https://qna.habr.com/q/1058482 (Russian)
 
+alltee.buzz
 anonymousfox.co
 anonymousfox.io
 anonymousfox.is
 anonymousfox.mx
 anonymousfox.to
+bigercari.buzz
+createseo.xyz
+doim.com
 golang666.xyz
+golangtools.live
+ezreal333.icu
 firstguide.xyz
 firstok.xyz
+gloryday.work
+goxmall.com
 hahaha666.xyz
 hellodolly666.xyz
 hellodolly777.xyz
@@ -171,6 +182,21 @@ hello.hellodolly777.xyz
 hello.hellodolly888.xyz
 hello.hellodolly999.xyz
 hello.ok2345678.xyz
+g.doim.com
+mp8.doim.com
+ms.doim.com
+ri.doim.com
+t.createseo.xyz
+t.doim.com
+s.createseo.xyz
+s.golangtools.live
+s63.createseo.xyz
+seo.createseo.xyz
+seo.gloryday.work
+seo1.createseo.xyz
+seo3.createseo.xyz
+seo1.doim.com
+seo2.gloryday.work
 seo23.firstok.xyz
 seo30-1.firstok.xyz
 seo30-2.firstok.xyz
