@@ -150,3 +150,9 @@ identity.ondemand-9839.ske.psydev.eu
 # Reference: https://tria.ge/221111-psjzrsab4z/behavioral1
 
 150.242.219.35:8080
+
+# Reference: https://twitter.com/MichalKoczwara/status/1591185624933060608
+
+143.110.214.130:8080
+18.190.153.173:8080
+65.108.227.57:9999
