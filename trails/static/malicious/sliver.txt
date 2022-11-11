@@ -142,5 +142,11 @@ http://44.201.81.167
 
 # Reference: https://twitter.com/r3dbU7z/status/1582932022859026432
 
+ondemand-9839.ske.psydev.eu
 dashboard.ondemand-9839.ske.psydev.eu
 identity.ondemand-9839.ske.psydev.eu
+
+# Reference: https://twitter.com/MichalKoczwara/status/1591050511125712897
+# Reference: https://tria.ge/221111-psjzrsab4z/behavioral1
+
+150.242.219.35:8080
