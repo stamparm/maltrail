@@ -6317,6 +6317,10 @@ http://37.1.209.213
 
 /RVbCGlEjx6H.php
 
+# Reference: https://www.virustotal.com/gui/file/23941746340e89fb699e4ecec106fbfd40186fc5b483bf72d82d5d5a2706863f/detection
+
+/api/firegate.php
+
 # Generic
 
 /js/altmanluggage.js
