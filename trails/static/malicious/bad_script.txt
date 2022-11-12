@@ -6325,6 +6325,10 @@ http://37.1.209.213
 
 /tYDds36jjPb7.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1591553050753236993
+
+/rublikat.hta
+
 # Generic
 
 /js/altmanluggage.js
