@@ -2180,6 +2180,11 @@ Base/1.0
 
 TakeMyPainBack
 
+# Reference: https://tria.ge/221109-b2yydseebj/behavioral1
+
+ZLoad
+ZLoad-Software
+
 # Misc
 
 information_schema
