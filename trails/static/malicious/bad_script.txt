@@ -6321,6 +6321,10 @@ http://37.1.209.213
 
 /api/firegate.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1591500789540847616
+
+/tYDds36jjPb7.hta
+
 # Generic
 
 /js/altmanluggage.js
