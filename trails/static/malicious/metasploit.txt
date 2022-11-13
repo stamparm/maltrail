@@ -963,3 +963,7 @@ http://51.68.138.162
 # Reference: https://twitter.com/drb_ra/status/1591527340542414848
 
 5.230.71.9:8888
+
+# Reference: https://twitter.com/drb_ra/status/1591707825201631232
+
+2.90.60.55:443
