@@ -2183,6 +2183,7 @@ TakeMyPainBack
 # Reference: https://tria.ge/221109-b2yydseebj/behavioral1
 
 ZLoad
+ZLoad/0.1
 ZLoad-Software
 
 # Misc
