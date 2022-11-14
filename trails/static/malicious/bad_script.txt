@@ -6329,6 +6329,10 @@ http://37.1.209.213
 
 /rublikat.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1592231757461741569
+
+/Receipt_parking.hta
+
 # Generic
 
 /js/altmanluggage.js
