@@ -6333,6 +6333,10 @@ http://37.1.209.213
 
 /Receipt_parking.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1592249538802511873
+
+/AcrobatInstaller.hta
+
 # Generic
 
 /js/altmanluggage.js
