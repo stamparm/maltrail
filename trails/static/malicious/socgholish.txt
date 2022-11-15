@@ -1090,6 +1090,11 @@ f622.campaign.tworiversboat.com
 coinangel.online
 rate.coinangel.online
 
+# Reference: https://blog.sucuri.net/2022/11/new-socgholish-malware-variant-uses-zip-compression-evasive-techniques.html
+
+community.backpacktrader.com
+course.netpickstrading.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
