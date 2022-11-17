@@ -6337,6 +6337,10 @@ http://37.1.209.213
 
 /AcrobatInstaller.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1593019577969303553
+
+/PMQNwqez.hta
+
 # Generic
 
 /js/altmanluggage.js
