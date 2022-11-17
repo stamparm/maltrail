@@ -1095,6 +1095,10 @@ rate.coinangel.online
 community.backpacktrader.com
 course.netpickstrading.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-11-16-v10174/162
+
+factors.djbel.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
