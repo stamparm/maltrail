@@ -461,3 +461,7 @@ onlinewebshop.net
 # Reference: https://www.virustotal.com/gui/domain/medianewsonline.com/detection
 
 medianewsonline.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-11-17-v10175/164
+
+mypressonline.com
