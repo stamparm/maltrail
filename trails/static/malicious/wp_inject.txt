@@ -600,8 +600,15 @@ track.transportgoline.com
 
 bettershitecolumn.com
 cofounderspecials.com
+away.bettershitecolumn.com
+beat.bettershitecolumn.com
+best.bettershitecolumn.com
 cdn.bettershitecolumn.com
+click.bettershitecolumn.com
+load.bettershitecolumn.com
+loft.bettershitecolumn.com
 scripts.bettershitecolumn.com
+space.bettershitecolumn.com
 wpz.cofounderspecials.com
 fly.cofounderspecials.com
 js.cofounderspecials.com
@@ -704,3 +711,16 @@ ois.is
 i-io.io
 i-s.is
 t-o.to
+
+# Reference: https://twitter.com/unmaskparasites/status/1593690935959093248
+# Reference: https://www.virustotal.com/gui/ip-address/89.22.228.250/relations
+
+findtrustclicks.com
+weatherplllatform.com
+go.weatherplllatform.com
+main.weatherplllatform.com
+new.weatherplllatform.com
+news.weatherplllatform.com
+scripts.weatherplllatform.com
+verify.weatherplllatform.com
+record.findtrustclicks.com
