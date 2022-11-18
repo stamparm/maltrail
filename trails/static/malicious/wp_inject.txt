@@ -697,3 +697,7 @@ trustedcpmrevenue.com
 # Reference: https://blog.sucuri.net/2022/11/massive-ois-is-black-hat-redirect-malware-campaign.html
 
 ois.is
+
+# Reference: https://twitter.com/unmaskparasites/status/1593388212797382656
+
+i-io.io
