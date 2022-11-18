@@ -699,5 +699,8 @@ trustedcpmrevenue.com
 ois.is
 
 # Reference: https://twitter.com/unmaskparasites/status/1593388212797382656
+# Reference: https://www.virustotal.com/gui/ip-address/192.236.208.12/relations
 
 i-io.io
+i-s.is
+t-o.to
