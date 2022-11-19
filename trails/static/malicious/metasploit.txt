@@ -1021,3 +1021,7 @@ http://51.68.138.162
 # Reference: https://twitter.com/drb_ra/status/1593158820767092741
 
 185.150.189.202:443
+
+# Reference: https://twitter.com/drb_ra/status/1593701333743374342
+
+72.10.160.162:443
