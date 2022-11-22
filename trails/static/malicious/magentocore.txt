@@ -7722,6 +7722,30 @@ jscdnstore.pw
 
 aspoln.info
 
+# Reference: https://twitter.com/c0d3inj3cT/status/1594974179463499778
+# Reference: https://www.zscaler.com/blogs/security-research/black-friday-scams-4-emerging-skimming-attacks-watch-holiday-season
+
+artmodecssdev.art
+cdn-common.com
+cdn-webcloud.com
+devjs.biz
+html5decode.biz
+html5decode.com
+html5decode.org
+java-cloud.biz
+java-cloud.net
+java-cloud.org
+magento-cloud.biz
+magento-cloud.com
+magento-cloud.net
+magento-cloud.org
+modersecure.com
+mozillajs.biz
+mozillajs.net
+mozillajs.org
+payment-analytics.info
+stirepoint.com
+
 # Generic
 
 /assets/lfg.js
