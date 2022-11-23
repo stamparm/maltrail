@@ -2186,6 +2186,10 @@ ZLoad
 ZLoad/0.1
 ZLoad-Software
 
+# Reference: https://corelight.com/blog/detecting-5-current-apts
+
+Trailer/95.3.1132.33
+
 # Misc
 
 information_schema
