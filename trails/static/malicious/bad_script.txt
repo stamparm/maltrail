@@ -6346,6 +6346,11 @@ http://37.1.209.213
 
 /save_sms0.php?phone=
 
+# Reference: https://corelight.com/blog/detecting-5-current-apts
+
+/bot/cmd.php?botid=
+/bot/gate.php?botid=
+
 # Generic
 
 /js/altmanluggage.js
