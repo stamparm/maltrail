@@ -1099,6 +1099,11 @@ course.netpickstrading.com
 
 factors.djbel.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-11-22-v10179/172
+
+dashboard.skybacherslocker.com
+montage.travelguidediva.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
