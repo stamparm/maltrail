@@ -1104,6 +1104,10 @@ factors.djbel.com
 dashboard.skybacherslocker.com
 montage.travelguidediva.com
 
+# Reference: https://blog.sucuri.net/2022/11/new-wave-of-socgholish-cid27x-injections.html
+
+mini.ptipexcel.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
