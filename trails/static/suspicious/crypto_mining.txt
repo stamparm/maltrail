@@ -1007,3 +1007,7 @@ node3.luckpool.net
 # Reference: https://tria.ge/221031-ex7araaba8/behavioral2
 
 213.32.74.157:14433
+
+# Reference: https://www.virustotal.com/gui/file/1ca00897bd6392c74cb297c24f66ffbe1f4162a64fc44ee7bf7f2fb9c7468795/detection
+
+162.19.139.184:13333
