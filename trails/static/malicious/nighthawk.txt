@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2022 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/nighthawk-and-coming-pentest-tool-likely-gain-threat-actor-notice
+# Reference: https://www.mdsec.co.uk/2022/05/nighthawk-0-2-catch-us-if-you-can/
+# Reference: https://otx.alienvault.com/pulse/637ded425913a7ae19e7113e
+
+sephus.me
