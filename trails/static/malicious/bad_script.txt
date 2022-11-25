@@ -6351,6 +6351,10 @@ http://37.1.209.213
 /bot/cmd.php?botid=
 /bot/gate.php?botid=
 
+# Reference: https://twitter.com/r3dbU7z/status/1596097530697117697
+
+/Azucar.ps1
+
 # Generic
 
 /js/altmanluggage.js
