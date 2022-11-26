@@ -6342,8 +6342,10 @@ http://37.1.209.213
 /PMQNwqez.hta
 
 # Reference: https://twitter.com/malwrhunterteam/status/1593723747491614727
+# Reference: https://twitter.com/midnight_comms/status/1596502593668538371
 # Reference: https://www.virustotal.com/gui/file/e8d7a0436d04e4ce48769481da317755a217a0f9fd08f679a79b4b54f2d45490/detection
 
+/save_sms.php?phone=
 /save_sms0.php?phone=
 
 # Reference: https://corelight.com/blog/detecting-5-current-apts
