@@ -6355,6 +6355,10 @@ http://37.1.209.213
 
 /Azucar.ps1
 
+# Reference: https://twitter.com/malwrhunterteam/status/1596269879824465922
+
+/clineti2022.hta
+
 # Generic
 
 /js/altmanluggage.js
