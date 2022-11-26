@@ -5506,3 +5506,7 @@ onlinesecure365.com
 # Reference: https://www.virustotal.com/gui/domain/wsywddr.com/relations
 
 wsywddr.com
+
+# Reference: https://www.virustotal.com/gui/file/edc96507180679f13a470d605929c73f0dcd9690c374f258806f53753406772b/detection
+
+gte666.com
