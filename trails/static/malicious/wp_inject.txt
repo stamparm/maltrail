@@ -127,6 +127,8 @@ cartoonmines.com
 # Reference: https://twitter.com/unmaskparasites/status/1507038308789936150
 # Reference: https://twitter.com/unmaskparasites/status/1513575167674355712
 # Reference: https://www.virustotal.com/gui/domain/turnedpro.xyz/relations
+# Reference: https://www.virustotal.com/gui/ip-address/107.150.37.202/relations
+# Reference: https://www.virustotal.com/gui/ip-address/142.54.189.218/relations
 # Reference: https://www.virustotal.com/gui/ip-address/188.213.5.130/relations
 # Reference: https://www.virustotal.com/gui/ip-address/188.213.5.197/relations
 # Reference: https://www.virustotal.com/gui/ip-address/192.187.109.122/relations
@@ -152,6 +154,7 @@ anonymousfox.mx
 anonymousfox.to
 bigercari.buzz
 createseo.xyz
+gloryplan.club
 golang666.xyz
 golangtools.live
 ezreal333.icu
@@ -173,6 +176,7 @@ tophead.online
 walkdolphin.online
 wtp9999999.xyz
 api.firstguide.xyz
+b1.gloryday.work
 hello.firstguide.xyz
 hello.hahaha666.xyz
 hello.hellodolly666.xyz
@@ -217,6 +221,10 @@ a.turnedpro.xyz
 api.turnedpro.xyz
 hello.turnedpro.xyz
 mn.turnedpro.xyz
+p1.gloryplan.club
+p2.gloryplan.club
+p3.gloryplan.club
+seo.gloryplan.club
 seo1.turnedpro.xyz
 seo10.turnedpro.xyz
 seo2.turnedpro.xyz
@@ -322,6 +330,10 @@ seo819-1.walkdolphin.online
 seo820-1.walkdolphin.online
 seo94.walkdolphin.online
 /seeolkxa/
+
+# Reference: https://www.virustotal.com/gui/ip-address/192.151.146.162/relations
+
+site.gloryday.work
 
 # Reference: https://twitter.com/unmaskparasites/status/1499536320896507906
 # Reference: https://twitter.com/unmaskparasites/status/1511076575537557505
