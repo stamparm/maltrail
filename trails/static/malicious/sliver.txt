@@ -94,3 +94,65 @@ ruwejo.com
 
 176.113.115.107:8888
 193.27.228.127:8888
+
+# Reference: https://www.sentinelone.com/blog/from-the-front-lines-new-macos-covid-malware-masquerades-as-apple-wears-face-of-apt/
+# Reference: https://otx.alienvault.com/pulse/62c6baa44e2fdd526623016c
+# Reference: https://www.virustotal.com/gui/file/d9bba1cfca6b1d20355ce08eda37d6d0bca8cb8141073b699000d05025510dcc/detection
+# Reference: https://www.virustotal.com/gui/file/eb383824d0aae1b561c42f6709ce0d9f1c39ad8d7a743709f1080b8dc5985cfe/detection
+# Reference: https://www.virustotal.com/gui/file/7831806172857a563d7b4789acddc98fc11763aaf3cedf937630b4a9dce31419/detection
+# Reference: https://www.virustotal.com/gui/file/4cc4d170209897ce52093a13e2b5a27405efaeb9be1f8e1aaf93226e3451d110/detection
+# Reference: https://www.virustotal.com/gui/file/29bb22553c16b32057b30c240b30e2f4fe107d9ccfb6b2d0dbece6f41a2419d6/detection
+
+http://46.137.201.254
+46.137.201.254:8001
+46.137.201.254:8888
+
+# Reference: https://twitter.com/ESETresearch/status/1547943632455364609
+# Referecne: https://twitter.com/ESETresearch/status/1547944027957260292
+# Reference: https://www.virustotal.com/gui/file/1f6af8e1e04288ce01039927d7f693c38af78378718138702edc68cf3fa6979c/detection
+# Reference: https://www.virustotal.com/gui/file/d75d569a20442043eff9946a269ccc2a27c0e4eb33e0f0dbeac48b4ac65400c0/detection
+
+saleforces-it.com
+saleforces.s3-accelerate.amazonaws.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1559639717146251271
+# Reference: https://www.virustotal.com/gui/file/57d005ffd8d8e09f822470dd09982dabd13706580fb78c8398242626b4f97f8a/detection
+
+sj-analytics.com
+
+# Reference: https://www.malware-traffic-analysis.net/2022/08/30/index.html
+# Reference: https://twitter.com/malware_traffic/status/1564727055304069130
+
+65.20.115.15:8557
+
+# Reference: https://twitter.com/fr0s7_/status/1567449023992184832
+# Reference: https://www.virustotal.com/gui/file/1142ba812887fb309a6d4e8a6b14205b80eff6d95ac067d6fd807e65b343cf7d/detection
+
+23.82.140.230:8888
+vomonavopo.com
+
+# Reference: https://twitter.com/MichalKoczwara/status/1580643176188350465
+
+195.211.198.113:31337
+
+# Reference: https://twitter.com/MichalKoczwara/status/1580683916939530240
+# Reference: https://www.virustotal.com/gui/file/17df554651962ebb1424a549ddc43f2a7e0e25a571ddfe454393b4f413261296/detection
+
+http://44.201.81.167
+
+# Reference: https://twitter.com/r3dbU7z/status/1582932022859026432
+
+ondemand-9839.ske.psydev.eu
+dashboard.ondemand-9839.ske.psydev.eu
+identity.ondemand-9839.ske.psydev.eu
+
+# Reference: https://twitter.com/MichalKoczwara/status/1591050511125712897
+# Reference: https://tria.ge/221111-psjzrsab4z/behavioral1
+
+150.242.219.35:8080
+
+# Reference: https://twitter.com/MichalKoczwara/status/1591185624933060608
+
+143.110.214.130:8080
+18.190.153.173:8080
+65.108.227.57:9999

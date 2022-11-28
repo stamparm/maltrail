@@ -345,6 +345,16 @@ vscode.workingfeedback.cloud
 /uploadLog.php?botid=
 /uploadVNC.php?botid=
 
+# Reference: https://twitter.com/midnight_comms/status/1532707067756019713
+
+/b07ggxsk/
+/b07ggxsk/config/items/panelv2
+
+# Reference: https://twitter.com/ViriBack/status/1540328577425612802
+# Reference: https://app.any.run/tasks/b9fee773-bad0-49f5-ae92-eba86d2194d4/
+
+/panel/gate.php
+
 # Generic
 
 /admin_123/auth.php
@@ -390,6 +400,13 @@ vscode.workingfeedback.cloud
 /panel/?gate
 /panel/?index
 /panel/?login
+/panel/admin/admin.php
+/panel/admin/auth.php
+/panel/admin/callback.php
+/panel/admin/gate.php
+/panel/admin/index.php
+/panel/admin/login.php
+/panel/admin/panel.php
 /panel/upload/admin.php
 /panel/upload/auth.php
 /panel/upload/callback.php

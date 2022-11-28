@@ -169,3 +169,131 @@ http://51.38.134.114
 # Reference: https://www.virustotal.com/gui/file/35bfe43943134977b9e636e927f6a16b47e0abc24904c484a8864897d594ddd3/detection
 
 androidinja.ir
+
+# Reference: https://www.virustotal.com/gui/file/59445d4de24bcdfcd947b55c9a924d3959ba536d76c5bdc763847d6923910e0f/detection
+
+dawumoe1.xyz
+
+# Reference: https://www.virustotal.com/gui/file/005dda209c71d1b1e6eec556f75b543b796d067cc8e06cb2b6973a3e2e10e9ff/detection
+
+ddeceptsc.top
+willitepartisti.club
+
+# Reference: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/new-hiddenads-malware-that-runs-automatically-and-hides-on-google-play-1m-users-affected/
+# Reference: https://otx.alienvault.com/pulse/62e7ae221a41e3c596dbbca4
+# Reference: https://www.virustotal.com/gui/domain/functionads.com/relations
+
+114.115.210.129:10102
+39.105.225.156:8100
+47.241.213.112:8002
+functionads.com
+android.functionads.com
+androidlog.functionads.com
+app.functionads.com
+cpi.functionads.com
+sdk.functionads.com
+hw.sdk.functionads.com
+
+# Reference: https://www.virustotal.com/gui/file/001d893d5aaf6079177d4ada320adb9426b7a92866b70190c9441ae144443243/detection
+
+dollarsurveysuccess.top
+
+# Reference: https://www.virustotal.com/gui/file/0040c3b8d335eef8fad148f623de46adc80c76c5eac0679eaa08a8176f886c1a/detection
+
+ullmarnold.club
+
+# Reference: https://www.virustotal.com/gui/file/004f8642a094ac175bcce452fae101d717f261a2288e8d8b364eb48de40c1e17/detection
+
+sonalityand.biz
+
+# Reference: https://www.virustotal.com/gui/file/005112775c2c5fd418652ebef23cbec920b89cc602a71694cd1d5081d7f56671/detection
+# Reference: https://www.virustotal.com/gui/file/00659d95f44b7d9e1dbef822b7380423875c5ffe032197f02c1301e3b7127865/detection
+# Reference: https://www.virustotal.com/gui/file/006bc1f721a756e59d903f7bff164cee4b0c2dd68e06d8354cea24a390e0a1ff/detection
+# Reference: https://www.virustotal.com/gui/file/0093cc614d7cc19493ba2e571e87e7727717100b89532d312ef4cf34b8645ee1/detection
+
+asedocvj.biz
+bythatdateil.biz
+dclearedwi.online
+luckychance.me
+micmitosas.top
+ormationfr.online
+willitepartisti.club
+winluckychance.com
+
+# Reference: https://www.virustotal.com/gui/file/0054e30cbcfb0918dc1b05c5e988b4789b1efcae3db7329301afa05af49abc34/detection
+
+6srvfcm.com
+s.6srvfcm.com
+
+# Reference: https://www.virustotal.com/gui/file/00853f69b859130a84a83db0e613b4f4d37420153ee5cd2edf332bb0d8efc413/detection
+
+esponsidehe.club
+
+# Reference: https://www.virustotal.com/gui/file/009586431211485515d4a721fab36625848d9bf495fde045b94f5d4edec59a7f/detection
+
+hummonantil.info
+
+# Reference: https://www.virustotal.com/gui/file/0144dbb55f6a1cc0ffb2b7999c6d6fc4289552bca5ef2f426885ba0a3e7f863a/detection
+
+luckergoldsurvey.top
+a.luckergoldsurvey.top
+
+# Reference: https://www.virustotal.com/gui/file/0097f819cb1dff07be155ec9b2c250d998a96187abb8f70b0dc4ec8abcff1eb5/detection
+
+rycertaine.top
+
+# Reference: https://www.virustotal.com/gui/file/038ffca16e382f88d0077f6321cfdc7a4014b856ade70b615328fd77d37e69fe/detection
+
+examplete.club
+
+# Reference: https://www.virustotal.com/gui/file/043a856280349a2f4b2ac7170abca33298e8355385c18213f7d97e82f931ccc3/detection
+
+lturesinteac.biz
+
+# Reference: https://www.virustotal.com/gui/file/0111ab4c0a64516d70c0cfa8c206627c59251cb7cbaa313d495564ad13a58095/detection
+
+rdonoursestut.info
+
+# Reference: https://www.virustotal.com/gui/file/0000fafc390c75122ae2ad8cbbef7a0f95e05d0d7d731dfefb3005ee8a01b41b/detection
+
+qualismyui.club
+
+# Reference: https://www.virustotal.com/gui/file/06c198feb7422f0980ad7ccae775ba712cdd35d76fbce6ac3e6234022f63eeb3/detection
+
+placentry.club
+
+# Reference: https://www.virustotal.com/gui/file/012b7466a01e834c6356d5b49f5d40192465f88cfceb5841dfb0ef63d79d0aca/detection
+
+einteaching.biz
+
+# Reference: https://www.virustotal.com/gui/file/0223df47de4e37f543abb84d77caa9d8a5b015937e617957fa84e100eccac9a8/detection
+
+vecohgmpl.biz
+
+# Reference: https://www.virustotal.com/gui/file/01ce3dfcb4b231ccfb802f00f6f5a921953f5c69d3eaa9d1d72252bbba3ef7d8/detection
+
+tonasalarys.online
+
+# Reference: https://www.virustotal.com/gui/file/0070f4db8aeb7769ae9b37265790bc4dbb46f25967ba59f6be6b539bc25e1f0f/detection
+
+covercoats.club
+
+# Reference: https://www.virustotal.com/gui/file/03d4768ca5a6407b85ae8bc90400182150b3c2d75dda946cc5efd6a39a3c2fb6/detection
+
+kitwkuouldh.xyz
+
+# Reference: https://www.virustotal.com/gui/file/071b251d5652a00b4cff57df8143c457612b31be309663f70ba623eb4fe7d649/detection
+
+estauranc.top
+
+# Reference: https://www.virustotal.com/gui/file/07a43e3b09c3bda2f6a2aadab6bd69aaba49635d21e90114a4b7858e315380fa/detection
+
+ontknoww.online
+
+# Reference: https://www.virustotal.com/gui/file/05fdfb104e56318ffcd0b2c402b19c29187b5f3c49d15a3c0ff26857d8328706/detection
+
+ingtobepu.online
+
+# Reference: https://www.virustotal.com/gui/file/15899c2758f4c11f50608756ef6eac8abd17f41735bc96c6ad0797199d2dcdc1/detection
+
+eattheendo.online

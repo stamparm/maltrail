@@ -1370,17 +1370,6 @@ coronashirts.store
 
 /19303817.js
 
-# Reference: https://twitter.com/unmaskparasites/status/1254766052296122368
-# Reference: https://www.virustotal.com/gui/domain/trackstatisticsss.com/relations
-# Reference: https://www.wordfence.com/blog/2020/05/nearly-a-million-wp-sites-targeted-in-large-scale-attacks/
-
-adsforbusines.com
-stivenfernando.com
-ps.stivenfernando.com
-ws.stivenfernando.com
-trackstatisticsss.com
-stat.trackstatisticsss.com
-
 # Reference: https://www.virustotal.com/gui/domain/crisgrey.com/relations
 
 crisgrey.com
@@ -5824,6 +5813,553 @@ dodgyblokes.club
 # Reference: https://www.virustotal.com/gui/file/df4190f1b39f60c2e898d51cb43fec4f2ff50bd54b83b2ab22f4bf3567bcd558/detection
 
 /Docum.hta
+
+# Reference: https://twitter.com/midnight_comms/status/1532708285786116096
+
+/d1office2.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1535703306705805313
+
+/wasiq.hta
+
+# Reference: https://twitter.com/MalwarePatrol/status/1536289539366522880
+
+/one-hot-0t0s.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1537022403347460096
+# Reference: https://www.virustotal.com/gui/file/a8ce2181ce6e56c147412c600a430fdb7baf68550b6f822b98a1759f52adb72f/detection
+
+/runobject.hta
+
+# Reference: https://twitter.com/ps66uk/status/1537370503974903809
+
+/cl/.bot/s.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1537412988558245888
+# Reference: https://www.virustotal.com/gui/file/de495346ac81d29707c92181382989cbcc9ecab3feeb7c38eb6fe4364c89cde8/detection
+
+/account.hta
+
+# Reference: https://www.volexity.com/blog/2022/06/15/driftingcloud-zero-day-sophos-firewall-exploitation-and-an-insidious-breach/
+
+/cve2021-4034.py
+
+# Reference: https://twitter.com/tosscoinwitcher/status/1537499839168032769
+
+/c53b0420d91d96.php
+
+# Reference: https://twitter.com/StopMalvertisin/status/1537403718236520448
+
+/dllhost.hta
+
+# Reference: https://twitter.com/malwrhunterteam/status/1538094207478517764
+
+/a1790.hta
+/a1799.hta
+
+# Reference: https://www.virustotal.com/gui/file/0000f195ca3a1f2f67e34b1773deb311b2006a19e2153f7459e8cc97728ed569/behavior/VirusTotal%20Droidy
+
+/Exploit/ExploitResultReport.aspx
+
+# Reference: https://twitter.com/StopMalvertisin/status/1538766748249636869
+# Reference: https://www.virustotal.com/gui/file/211a1f74eea68ebe7178d90f0df0446a87cdda865145c397b7a32e253086139e/detection
+
+/forbest.ps1
+
+# Reference: https://twitter.com/malwrhunterteam/status/1539331504081453057
+# Reference: https://www.virustotal.com/gui/file/d5fc8f42b8ec97ce6ae6007b994c855dd2b07e98697d0c2d2990d9b080d044c1/detection
+
+/BAYC_Roadmap_Leaked.hta
+
+# Reference: https://twitter.com/malwrhunterteam/status/1539621033908621314
+
+/shell2.ps1
+
+# Reference: https://twitter.com/malwrhunterteam/status/1540614846600908800
+
+/lum.hta
+
+# Reference: https://gist.github.com/silence-is-best/7b71542e9713d9e8c2546090a1358789
+
+/1cd1e844dad621.php
+
+# Reference: https://www.virustotal.com/gui/file/0b1c3985cfe6fd26489cc745f60cf63e6bea52b410c099e3434befa2c6568b19/detection
+
+/ada185df82b054.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1544050660433399813
+# Reference: https://www.virustotal.com/gui/file/452c3bd1e8cdf19bd89704c81540b995e887ba06e13a9cd12c67977feddfdfba/detection
+
+/pipo.hta
+/zbi.hta
+
+# Reference: https://twitter.com/malwrhunterteam/status/1544693640563494912
+
+/coba-with-obfy.ps1
+
+# Reference: https://twitter.com/malwrhunterteam/status/1544691386011815936
+
+/111.ps1
+
+# Reference: https://twitter.com/k3dg3/status/1544747167751065601
+# Reference: https://tria.ge/220706-wl7wkshgg2/behavioral1
+
+/5h.hta
+
+# Reference: https://twitter.com/ecarlesi/status/1545957606195339264
+# Reference:m https://www.virustotal.com/gui/ip-address/65.108.235.212/relations
+
+amandanys.lol
+amartisha.cloud
+amecontrols.info
+armyangel220.cloud
+armyangel220.lol
+artandwork.info
+aspace.info
+autoribirokrasi.me
+bdigital.cloud
+bimbeldigital.club
+chamberscapital.info
+cloudiator.cloud
+cnbmtech.cloud
+coxwatersolutions.lol
+credit24-money.cloud
+crossviewcov.info
+dataagent.biz
+dataindulgence.cloud
+downvote.us
+ds-wizard.cloud
+ednolbmi.cloud
+epayroll.cloud
+esb-platten.info
+fewclicksaway.club
+fidelitybank-fl.info
+foundnewpatrons.cloud
+frigofluides.info
+georgiaexposto.cloud
+goood-day.club
+grobot.cloud
+happiful.club
+helix-dynamicscorporation.company
+heritagesystems.us
+hyperflow.cloud
+i-office.cloud
+idcredit.club
+imaginable.us
+instalink.cloud
+instantpay.cloud
+intellibusiness.biz
+intelligenttraffic.cloud
+jphenephom.lol
+jprutch24.cloud
+jprutch24.lol
+justinemantello.cloud
+kacegame.lol
+keba70.lol
+keshaontiktok.cloud
+knowyourfinances.biz
+legalboard.info
+link123.info
+linkleaders.cloud
+liveal.us
+lool.cloud
+manstatement.biz
+manultd.club
+mascottech.us
+mediastack.cloud
+memberme.cloud
+multistream.cloud
+my-app-i.cloud
+my-online.cloud
+newedigital.cloud
+oscn.cloud
+pays-activate.club
+pays-apology.club
+pays-cinema.club
+pays-cord.club
+pays-day.club
+pays-go.club
+pays-liberty.club
+pays-need.club
+pays-objective.club
+pays-produce.club
+pays-reaction.club
+pays-sentence.club
+pays-shareholder.club
+pays-shell.club
+pays-understanding.club
+pcprime.us
+personaldevelopers.us
+personprotection.biz
+productco.us
+pypl-service.hrpwr.hu
+quantumbridge.cloud
+remotevhost.cloud
+restricted.contact
+ruther.cloud
+selection-elseneeded.club
+serviceai.cloud
+sh.amecontrols.info
+sh.artandwork.info
+sh.aspace.info
+sh.chamberscapital.info
+sh.crossviewcov.info
+sh.dataagent.biz
+sh.downvote.us
+sh.esb-platten.info
+sh.fidelitybank-fl.info
+sh.frigofluides.info
+sh.goood-day.club
+sh.happiful.club
+sh.heritagesystems.us
+sh.idcredit.club
+sh.imaginable.us
+sh.intellibusiness.biz
+sh.knowyourfinances.biz
+sh.legalboard.info
+sh.link123.info
+sh.liveal.us
+sh.manstatement.biz
+sh.manultd.club
+sh.mascottech.us
+sh.memberme.cloud
+sh.pays-liberty.club
+sh.pays-need.club
+sh.pays-produce.club
+sh.pcprime.us
+sh.personaldevelopers.us
+sh.personprotection.biz
+sh.productco.us
+sh.simplewatch.biz
+sh.sissyofhop.cloud
+sh.successvip.biz
+sh.transfert.club
+sh.versionhistory.info
+sh.wildcreators.club
+sh.womanslife.info
+simplewatch.biz
+sissyofhop.cloud
+smarttraffic.cloud
+smartvirtual.cloud
+smiteaddress.art
+successvip.biz
+sundayatumah.xyz
+techn.cloud
+theblogpress.us
+transfert.club
+twilightarmor.cloud
+verificar.cloud
+versionhistory.info
+vipmail.cloud
+wepair.cloud
+wesecure.cloud
+wildcreators.club
+womanslife.info
+
+# Reference: https://twitter.com/harugasumi/status/1546067750044729344
+
+/ic6oXx7P3s/page1.php
+/ic6oXx7P3s/
+
+# Reference: https://unit42.paloaltonetworks.com/digium-phones-web-shell/
+# Reference: https://otx.alienvault.com/pulse/62d55f865acf112119766930
+
+campusteen.ru
+caramelgirl.ru
+cumixface.ru
+cutiebooty.ru
+gentlepus.ru
+lopornix.ru
+megabobox.ru
+sledporn.ru
+sweetassma.ru
+
+# Reference: https://twitter.com/StopMalvertisin/status/1552176809382653952
+
+/xix.js
+
+# Reference: https://www.virustotal.com/gui/file/2c91462fb50fb7d0a394317401f9044db58e652435cd3beb05ae6e0a0184d63a/detection
+
+/this.ps1
+
+# Reference: https://twitter.com/rootprivilege/status/1559238666077081600
+
+/a1b2.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1559902576757424130
+# Reference: https://www.virustotal.com/gui/file/6634cd044332d28d153519298fd0f68590d966d1c970a80d5a6462fd5a9734ec/detection
+
+/disable-defender.ps1
+
+# Reference: https://github.com/0xToxin/Malware-IOCs/blob/main/Agent%20Tesla/AgentTesla-%2017082022
+
+/hfhfhgfghfghgf.txt
+
+# Reference: https://blog.sucuri.net/2022/08/fake-ddos-pages-on-wordpress-lead-to-drive-by-downloads.html
+
+/fortest/parsez.php
+
+# Reference: https://twitter.com/StopMalvertisin/status/1563729037671149568
+# Reference: https://www.virustotal.com/gui/file/ed3ef87baf72ac521db91bbb0dbd78bb47fc4eb092b7941e6802ab1118c6603d/detection
+
+/T729D734B881E4336C393BDB056B167FD.php
+
+# Reference: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/malicious-cookie-stuffing-chrome-extensions-with-1-4-million-users/
+
+langhort.com
+amz.langhort.com
+d.langhort.com
+data.langhort.com
+s.langhort.com
+
+# Reference: https://twitter.com/JCyberSec_/status/1567586121839697923
+
+/QWETRT44444.php
+
+# Reference: https://twitter.com/drb_ra/status/1567699547756920832 
+
+/update_wapp2.aspx
+
+# Reference: https://www.virustotal.com/gui/file/49ac5872f91182bac543788dfd168eb4e103c11f42b1585879d6999ede367500/detection
+
+/awautng.php
+/upwawsfrg.php
+/zawautng.php
+/stwittc/upwawsfrg.php
+
+# Reference: https://twitter.com/drb_ra/status/1568421255627550720
+
+/wpaas/load.php
+
+# Reference: https://www.virustotal.com/gui/file/5fbe698c1b9f5d270cb997b7a99ea16295c9a1704676023438130d0574860ea5/detection
+
+javfoo.com
+
+# Reference: https://www.virustotal.com/gui/file/d7b370cd27d4f6448c0ab9b9946d26ec636720e1c87408d13cce198b7776cda9/detection
+
+cuddlethehyena.com
+glenprejudice.com
+javhaj.com
+mc7clurd09pla4nrtat7ion.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/188.114.96.1/relations
+
+javcoz.com
+javyp.com
+javgad.com
+javnor.com
+javzag.com
+javapo.com
+javfey.com
+javzax.com
+javkay.com
+javwv.com
+javcoq.com
+javqis.com
+javhyp.com
+javwon.com
+javoho.com
+javmew.com
+javpas.com
+javsai.com
+javwuz.com
+javspa.com
+javsuq.com
+javuse.com
+javtal.com
+javjoy.com
+javzin.com
+javhoi.com
+javmac.com
+javole.com
+javmq.com
+
+# Reference: https://unit42.paloaltonetworks.com/originlogger/
+# Reference: https://otx.alienvault.com/pulse/6321cdc9ae733812be9b9331
+
+/7a5c36cee88e6b.php
+
+# Reference: https://twitter.com/r3dbU7z/status/1572735985586143236
+
+/loadpay.ps1
+/rawpayload.ps1
+
+# Reference: https://twitter.com/jstrosch/status/1572953204400209921
+
+dev.api.cal.ukpbj.codelogic.id
+
+# Reference: https://twitter.com/jaydinbas/status/1547530236878852096
+
+/cijjus.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1575442588982804480
+
+/BWCL.hta
+
+# Reference: https://securelist.com/defttorero-tactics-techniques-and-procedures/107610/
+# Reference: https://otx.alienvault.com/pulse/633acb17ed56f34d3779a9a4
+
+/jsJ13j.sct
+
+# Reference: https://twitter.com/r3dbU7z/status/1576920251853582336
+
+/attackstorm.py
+/tlsattackfunc.py
+
+# Reference: https://twitter.com/jstrosch/status/1578056013130989568
+
+/adminer-137hi.php
+/adminer-48edw.php
+/adminer-enm5f.php
+/adminer-mlwpc.php
+/akndwegidy.php
+/hbjglueocv.php
+/krhdfjkomr.php
+/kyvgmjykfo.php
+/lozqtcornp.php
+/lrynmamrhl.php
+/mailer-gi3hx.php
+/mailer-px16q.php
+/mdqidzyuiv.php
+/ndtesbiznh.php
+/nxwcgaolxk.php
+/plrczjhrse.php
+/putqwnbkhu.php
+/qlaobdzrbj.php
+/swekjlzbed.php
+/tbtmdckzuz.php
+/tcujelbrbc.php
+/ulfywujokb.php
+/uwehfmweug.php
+/veqhqwwhzr.php
+/vztbipqlpk.php
+
+# Reference: https://twitter.com/1ZRR4H/status/1578993357237649408
+
+/pe64.ps1
+
+# Reference: https://twitter.com/1ZRR4H/status/1579569830751252481
+
+/fucked.php
+
+# Reference: https://www.virustotal.com/gui/file/1064aaec1537695abeadeabe1ca73f4d5bee047564cc79e76f944fc77a397760/detection
+
+/yesdrg.ps1
+
+# Reference: https://www.virustotal.com/gui/file/00f452bcd981fcca980f2beeaef1d3e43b5ccc4c010ed0410eae5cd86a48c190/detection
+
+/ltys/app.js
+/ltys/dh.js
+/ltys/dh1.js
+/ltys/dl.js
+/ltys/tj3.js
+/ltys/xx1.js
+/ltys/xx2.js
+
+# Reference: https://www.virustotal.com/gui/file/3f6d866f09cfabb1aa2a0393d290533ed31705c87b85f77edc3fdd51b90f6e24/detection
+
+/ms1.hta
+
+# Reference: https://twitter.com/ViriBack/status/1581732406893346816
+
+/hhbbmn.php
+
+# Reference: https://twitter.com/InQuest/status/1582114710740008960
+# Reference: https://www.virustotal.com/gui/file/0a656baa4ca55df0c78dcc20151a223089da31e836bb8cd586969e2281cf9fbf/detection
+# Reference: https://www.virustotal.com/gui/file/ab82809dfa85921cbb290df23dbdfaf29d36433c45e351866f202ed261c3a484/detection
+# Reference: https://www.virustotal.com/gui/file/47bbeeb8ce166f7285b8f10188e32f2affc0d5cbe0ec5bb848593a9750b3a560/detection
+
+/get_cmd.php?hdd=
+
+# Reference: https://twitter.com/0xToxin/status/1583157689898573824
+
+/523ecb38582a9c.php
+
+# Reference: https://twitter.com/unmaskparasites/status/1584592625327575040
+# Reference: https://www.virustotal.com/gui/file/6738f60ad76ff0930858b829574f3eb03aa403bf80695ccf5fea2598d345793d/detection
+# Reference: https://www.virustotal.com/gui/file/df318d78bb1c951f6134419cdd3d6e3a605e28b73235dbbc46bc871bf12c9e74/detection
+
+http://37.1.209.213
+/NZMcgH
+/xD252Hx3
+/xD252Hx3?host=
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1584816141960372224
+
+/root.hta
+
+# Reference: https://www.virustotal.com/gui/file/1b82739880e1851d032b09de787033bd19135c8496124cd505b32afe4212b7b0/detection
+
+/ms7.hta
+
+# Reference: https://twitter.com/0xToxin/status/1587576617949446148
+
+/0895.hta
+
+# Reference: https://twitter.com/malwrhunterteam/status/1587542657332568067
+
+/nonka.hta
+
+# Reference: https://www.malware-traffic-analysis.net/2022/11/07/index.html
+
+/tps1.ps1
+
+# Reference: https://twitter.com/drb_ra/status/1590076101337849856
+
+/js/chunk-vendors.413ca6b2.js
+/chunk-vendors.413ca6b2.js
+
+# Reference: https://asec.ahnlab.com/en/41450/
+
+/cc.ps1
+
+# Reference: https://blog.sucuri.net/2022/11/massive-ois-is-black-hat-redirect-malware-campaign.html
+
+/RVbCGlEjx6H.php
+
+# Reference: https://www.virustotal.com/gui/file/23941746340e89fb699e4ecec106fbfd40186fc5b483bf72d82d5d5a2706863f/detection
+
+/api/firegate.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1591500789540847616
+
+/tYDds36jjPb7.hta
+
+# Reference: https://twitter.com/malwrhunterteam/status/1591553050753236993
+
+/rublikat.hta
+
+# Reference: https://twitter.com/malwrhunterteam/status/1592231757461741569
+
+/Receipt_parking.hta
+
+# Reference: https://twitter.com/malwrhunterteam/status/1592249538802511873
+
+/AcrobatInstaller.hta
+
+# Reference: https://twitter.com/malwrhunterteam/status/1593019577969303553
+
+/PMQNwqez.hta
+
+# Reference: https://twitter.com/malwrhunterteam/status/1593723747491614727
+# Reference: https://twitter.com/midnight_comms/status/1596502593668538371
+# Reference: https://www.virustotal.com/gui/file/e8d7a0436d04e4ce48769481da317755a217a0f9fd08f679a79b4b54f2d45490/detection
+
+/save_sms.php?phone=
+/save_sms0.php?phone=
+
+# Reference: https://corelight.com/blog/detecting-5-current-apts
+
+/bot/cmd.php?botid=
+/bot/gate.php?botid=
+
+# Reference: https://twitter.com/r3dbU7z/status/1596097530697117697
+
+/Azucar.ps1
+
+# Reference: https://twitter.com/malwrhunterteam/status/1596269879824465922
+
+/clineti2022.hta
 
 # Generic
 

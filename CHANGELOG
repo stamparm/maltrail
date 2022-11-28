@@ -14,7 +14,57 @@
 
 
 
-- Version 0.46 -> 0.47 (Upcoming release)
+- Version 0.51 -> 0.52 (Upcoming release)
+
+
+
+
+
+
+
+
+
+
+
+- Version 0.50 -> 0.51 (01 Nov 2022)
+
+[+] New Wiki pages are added
+[!] Fixed deadlock of Docker output to stdout (Issue #19121)
+[!] Definition of network interfaces is improved (Issue #19123)
+[!] Fixed regex for /360bigviktor.py feed (Issue #19124)
+[!] Fixed syscalls handling (Issue #19125)
+[=] "potential remote code execution" heuristic is improved
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.49 -> 0.50 (01 Oct 2022)
+
+[=] "potential remote code execution" heurfor CVE-2022-30190 is updated
+[=] "Maltrail detection nuances" wiki-page is updated
+[=] "Trail classes" wiki-page is updated
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+- Version 0.48 -> 0.49 (01 Sep 2022)
+
+[!] Fixed row rendering in UI (Issue #19109)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.47 -> 0.48 (01 Aug 2022)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.46 -> 0.47 (01 Jul 2022)
+
+[+] "potential ssti injection" heuristic is added (CVE-2022-26134)
+[=] "potential data leak" heuristic is improved
+[=] "Trail-classes" wiki page is updated
+[=] /requirements.txt file is updated (pcapy-ng)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
@@ -29,7 +79,7 @@
 - Version 0.44 -> 0.45 (01 May 2022)
 
 [+] systemd-based realization for Maltrail sensor.py, server.py and ipset/iptables ban-list (dedicated repo) have added
-[+] New Wiki pages have added
+[+] New Wiki pages are added
 [=] "potential remote code execution" heuristic is improved (detection for Java-related RCE stuff)
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 

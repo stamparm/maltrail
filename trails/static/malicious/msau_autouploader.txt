@@ -1,0 +1,36 @@
+# Reference: https://twitter.com/500mk500/status/1586505814839558145
+# Reference: https://twitter.com/neonprimetime/status/1586707604323041282
+# Reference: https://twitter.com/neonprimetime/status/1586707916903616513
+# Reference: https://twitter.com/neonprimetime/status/1586708297260097536
+# Reference: https://twitter.com/neonprimetime/status/1586708568027308036
+# Reference: https://twitter.com/neonprimetime/status/1587667534664318976
+# Reference: https://urlscan.io/result/4ff21a2e-8a85-4642-8c7a-febe256cf998/
+# Reference: https://urlscan.io/result/acdf05ff-9f3c-485f-9dae-4feffe29eea0/
+# Reference: https://neonprimetime.blogspot.com/2022/11/mega-super-autouploader-msau.html
+
+amazon-aws-cloud.com
+analiticslist.com
+bwd86.com
+bwd87.com
+hellodolly.pw
+megauploader.xyz
+nederland-server32.email
+solien.cc
+
+# Generic
+
+/www/html/msau/
+/www/html/msau_jml/
+/www/html/msau2612/
+/msau/DrwContent/ProcessingMacroses.php
+/msau/DrwContent/ProcessResTemplate.php
+/msau/DrwContent/Prs.php
+/msau/DrwContent/GetContent.php
+/msau_jml/DrwContent/ProcessingMacroses.php
+/msau_jml/DrwContent/ProcessResTemplate.php
+/msau_jml/DrwContent/Prs.php
+/msau_jml/DrwContent/GetContent.php
+/msau2612/DrwContent/ProcessingMacroses.php
+/msau2612/DrwContent/ProcessResTemplate.php
+/msau2612/DrwContent/Prs.php
+/msau2612/DrwContent/GetContent.php

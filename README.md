@@ -32,6 +32,7 @@
 - [Sponsors](#sponsors)
 - [Developers](#developers)
 - [Presentations](#presentations)
+- [Publications](#publications)
 - [Blacklist](#blacklist)
 - [Thank you](#thank-you)
 - [Third-party integrations](#third-party-integrations)
@@ -560,9 +561,10 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 
 * 47th TF-CSIRT Meeting, Prague (Czech Republic), 2016 ([slides](https://www.terena.org/activities/tf-csirt/meeting47/M.Stampar-Maltrail.pdf))
 
-## Mass Media/Magazines
+## Publications
 
 * Detect attacks on your network with Maltrail, Linux Magazine, 2022 ([Annotation](https://www.linux-magazine.com/Issues/2022/258/Maltrail))
+* 10 Terrific Tools for the Busy Admin, Admin Magazine, 2022 ([Annotation](https://mailchi.mp/admin-magazine/thanks-sysadmins))
 
 ## Blacklist
 
@@ -592,5 +594,6 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * [NoTracking](https://github.com/notracking/hosts-blocklists/blob/master/SOURCES.md) <sup>1</sup>
 * [mobileAudit](https://github.com/mpast/mobileAudit#environment-variables) <sup>1</sup>
 * [Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF/commit/12b07370674238fa4281fc7989b34decc2e08876) <sup>1</sup>
+* [pfBlockerNG-devel](https://github.com/pfsense/FreeBSD-ports/blob/devel/net/pfSense-pkg-pfBlockerNG-devel/files/usr/local/www/pfblockerng/pfblockerng_feeds.json) <sup>1</sup>
  
 <sup>1</sup> Using (only) trails

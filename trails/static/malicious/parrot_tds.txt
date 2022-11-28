@@ -57,3 +57,8 @@ med.ufro.cl
 snap.cr-acad.com
 static.spillpalletonline.com
 tops.sineadholly.com
+
+# Reference: https://blog.sucuri.net/2022/06/analysis-massive-ndsw-ndsx-malware-campaign.html
+
+go.statclick.net
+visit.statclick.net

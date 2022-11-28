@@ -926,6 +926,11 @@ sophosxl.net
 
 # Generic
 
+szhk.com
+qulishi.com
+cdn.discordapp.com
+mr.un1k0d3r.com
+qingting.fm
 s1.ax1x.com
 postnord.se
 token.im
@@ -3283,3 +3288,52 @@ dr49lng3n1n2s.cloudfront.net
 # Reference: https://github.com/stamparm/maltrail/issues/19055
 
 awsstatic.com
+
+# Reference: https://github.com/stamparm/maltrail/pull/19093
+
+account.qa-demo.wire.link
+assets.qa-demo.wire.link
+nginz-https.qa-demo.wire.link
+nginz-ssl.qa-demo.wire.link
+teams.qa-demo.wire.link
+webapp.qa-demo.wire.link
+account.wire.com
+clientblacklist.wire.com
+prod-nginz-https.wire.com
+prod-nginz-ssl.wire.com
+teams.wire.com
+staging-nginz-https.zinfra.io
+taging-nginz-ssl.zinfra.io
+wire-account-staging.zinfra.io
+wire-teams-staging.zinfra.io
+
+# Reference: https://github.com/stamparm/aux/issues/6
+# Reference: https://github.com/stamparm/maltrail/commit/4f8aa8c6592a11ad64b3b038bf51502ebb8db556
+
+shaparak.ir
+bpm.shaparak.ir
+
+# Reference: https://github.com/stamparm/maltrail/commit/10c5434d42e6a378832914a9a3221d58ffe937ae
+
+dnsv1.com
+cdn.dnsv1.com
+
+# Reference: https://github.com/stamparm/maltrail/issues/19110
+
+windowsupdate.com
+download.windowsupdate.com
+
+# Reference: https://github.com/stamparm/maltrail/commit/25c0a9c4f304e880d38b03bae15fa371e29877b9
+
+atlassian.com
+bootcdn.net
+stackpath.com
+automation.atlassian.com
+cdn.bootcdn.net
+
+# Reference: https://www.virustotal.com/gui/domain/msftncsi.com/relations
+
+msftncsi.com
+dns.msftncsi.com
+inbound.msftncsi.com
+ipv6.msftncsi.com

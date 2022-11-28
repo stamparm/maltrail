@@ -133,14 +133,27 @@ class _set(set):
     pass
 
 try:
+    import __builtin__
+except ImportError:
+    # Python 3
+    import builtins as __builtin__
+
+
+def print(*args, **kwargs):
+    ret = __builtin__.print(*args, **kwargs)
+    sys.stdout.flush()
+    return ret
+
+
+try:
     import pcapy
 except ImportError:
     if IS_WIN:
-        exit("[!] please install 'WinPcap' (e.g. 'http://www.winpcap.org/install/') and Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy')")
+        sys.exit("[!] please install 'WinPcap' (e.g. 'http://www.winpcap.org/install/') and Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy')")
     else:
         msg = "[!] please install 'pcapy or pcapy-ng' (e.g. 'sudo pip%s install pcapy-ng')" % ('3' if six.PY3 else '2')
 
-        exit(msg)
+        sys.exit(msg)
 
 def _check_domain_member(query, domains):
     parts = query.lower().split('.')
@@ -909,7 +922,7 @@ def init():
     update_timer()
 
     if not config.DISABLE_CHECK_SUDO and check_sudo() is False:
-        exit("[!] please run '%s' with root privileges" % __file__)
+        sys.exit("[!] please run '%s' with root privileges" % __file__)
 
     if config.plugins:
         config.plugin_functions = []
@@ -924,15 +937,15 @@ def init():
                     break
 
             if not found:
-                exit("[!] plugin script '%s' not found" % plugin)
+                sys.exit("[!] plugin script '%s' not found" % plugin)
             else:
                 dirname, filename = os.path.split(plugin)
                 dirname = os.path.abspath(dirname)
                 if not os.path.exists(os.path.join(dirname, '__init__.py')):
-                    exit("[!] empty file '__init__.py' required inside directory '%s'" % dirname)
+                    sys.exit("[!] empty file '__init__.py' required inside directory '%s'" % dirname)
 
                 if not filename.endswith(".py"):
-                    exit("[!] plugin script '%s' should have an extension '.py'" % filename)
+                    sys.exit("[!] plugin script '%s' should have an extension '.py'" % filename)
 
                 if dirname not in sys.path:
                     sys.path.insert(0, dirname)
@@ -940,7 +953,7 @@ def init():
                 try:
                     module = __import__(filename[:-3])
                 except (ImportError, SyntaxError) as msg:
-                    exit("[!] unable to import plugin script '%s' (%s)" % (filename, msg))
+                    sys.exit("[!] unable to import plugin script '%s' (%s)" % (filename, msg))
 
                 found = False
                 for name, function in inspect.getmembers(module, inspect.isfunction):
@@ -950,7 +963,7 @@ def init():
                         function.__name__ = module.__name__
 
                 if not found:
-                    exit("[!] missing function 'plugin(event_tuple, packet)' in plugin script '%s'" % filename)
+                    sys.exit("[!] missing function 'plugin(event_tuple, packet)' in plugin script '%s'" % filename)
 
     if config.pcap_file:
         for _ in config.pcap_file.split(','):
@@ -958,43 +971,48 @@ def init():
     else:
         interfaces = set(_.strip() for _ in config.MONITOR_INTERFACE.split(','))
 
+        try:
+            devices = pcapy.findalldevs()
+        except:
+            devices = []
+
         if (config.MONITOR_INTERFACE or "").lower() == "any":
-            if IS_WIN or "any" not in pcapy.findalldevs():
+            if devices and (IS_WIN or "any" not in devices):
                 print("[x] virtual interface 'any' missing. Replacing it with all interface names")
-                interfaces = pcapy.findalldevs()
+                interfaces = devices
             else:
                 print("[?] in case of any problems with packet capture on virtual interface 'any', please put all monitoring interfaces to promiscuous mode manually (e.g. 'sudo ifconfig eth0 promisc')")
 
         for interface in interfaces:
-            if interface.lower() != "any" and re.sub(r"(?i)\Anetmap:", "", interface) not in pcapy.findalldevs():
-                hint = "[?] available interfaces: '%s'" % ",".join(pcapy.findalldevs())
-                exit("[!] interface '%s' not found\n%s" % (interface, hint))
+            if interface.lower() != "any" and devices and re.sub(r"(?i)\Anetmap:", "", interface) not in devices:
+                hint = "[?] available interfaces: '%s'" % ",".join(devices)
+                sys.exit("[!] interface '%s' not found\n%s" % (interface, hint))
 
             print("[i] opening interface '%s'" % interface)
             try:
                 _caps.append(pcapy.open_live(interface, SNAP_LEN, True, CAPTURE_TIMEOUT))
             except (socket.error, pcapy.PcapError):
                 if "permitted" in str(sys.exc_info()[1]):
-                    exit("[!] permission problem occurred ('%s')" % sys.exc_info()[1])
+                    sys.exit("[!] permission problem occurred ('%s')" % sys.exc_info()[1])
                 elif "No such device" in str(sys.exc_info()[1]):
-                    exit("[!] no such device '%s'" % interface)
+                    sys.exit("[!] no such device '%s'" % interface)
                 else:
                     raise
 
     if config.LOG_SERVER and ':' not in config.LOG_SERVER:
-        exit("[!] invalid configuration value for 'LOG_SERVER' ('%s')" % config.LOG_SERVER)
+        sys.exit("[!] invalid configuration value for 'LOG_SERVER' ('%s')" % config.LOG_SERVER)
 
     if config.SYSLOG_SERVER and not len(config.SYSLOG_SERVER.split(':')) == 2:
-        exit("[!] invalid configuration value for 'SYSLOG_SERVER' ('%s')" % config.SYSLOG_SERVER)
+        sys.exit("[!] invalid configuration value for 'SYSLOG_SERVER' ('%s')" % config.SYSLOG_SERVER)
 
     if config.LOGSTASH_SERVER and not len(config.LOGSTASH_SERVER.split(':')) == 2:
-        exit("[!] invalid configuration value for 'LOGSTASH_SERVER' ('%s')" % config.LOGSTASH_SERVER)
+        sys.exit("[!] invalid configuration value for 'LOGSTASH_SERVER' ('%s')" % config.LOGSTASH_SERVER)
 
     if config.REMOTE_SEVERITY_REGEX:
         try:
             re.compile(config.REMOTE_SEVERITY_REGEX)
         except re.error:
-            exit("[!] invalid configuration value for 'REMOTE_SEVERITY_REGEX' ('%s')" % config.REMOTE_SEVERITY_REGEX)
+            sys.exit("[!] invalid configuration value for 'REMOTE_SEVERITY_REGEX' ('%s')" % config.REMOTE_SEVERITY_REGEX)
 
     if config.CAPTURE_FILTER:
         print("[i] setting capture filter '%s'" % config.CAPTURE_FILTER)
@@ -1049,7 +1067,7 @@ def _init_multiprocessing():
         except KeyboardInterrupt:
             raise
         except:
-            exit("[!] unable to allocate network capture buffer. Please adjust value of 'CAPTURE_BUFFER'")
+            sys.exit("[!] unable to allocate network capture buffer. Please adjust value of 'CAPTURE_BUFFER'")
 
         _n = _multiprocessing.Value('L', lock=False)
 
@@ -1253,12 +1271,12 @@ def main():
         else:
             for _ in options.pcap_file.split(','):
                 if not os.path.isfile(_):
-                    exit("[!] missing pcap file '%s'" % _)
+                    sys.exit("[!] missing pcap file '%s'" % _)
 
             print("[i] using pcap file(s) '%s'" % options.pcap_file)
 
     if not config.DISABLE_CHECK_SUDO and not check_sudo():
-        exit("[!] please run '%s' with root privileges" % __file__)
+        sys.exit("[!] please run '%s' with root privileges" % __file__)
 
     try:
         init()

@@ -5482,3 +5482,31 @@ xxxx.tk
 # Reference: https://www.virustotal.com/gui/domain/dajuw.com/relations
 
 dajuw.com
+
+# Reference: https://twitter.com/Malwar3Ninja/status/1545376308196147200
+
+g0v.cq.cn
+
+# Reference: https://www.virustotal.com/gui/domain/hackpl.info/relations
+
+hackpl.info
+
+# Reference: https://www.virustotal.com/gui/domain/nyashteam.ml/relations
+
+nyashteam.ml
+
+# Reference: https://www.virustotal.com/gui/domain/realproheros.com/relations
+
+realproheros.com
+
+# Reference: https://www.virustotal.com/gui/domain/onlinesecure365.com/relations
+
+onlinesecure365.com
+
+# Reference: https://www.virustotal.com/gui/domain/wsywddr.com/relations
+
+wsywddr.com
+
+# Reference: https://www.virustotal.com/gui/file/edc96507180679f13a470d605929c73f0dcd9690c374f258806f53753406772b/detection
+
+gte666.com

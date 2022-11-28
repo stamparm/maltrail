@@ -314,10 +314,6 @@ applog.uc.cn
 
 uiltyfores.fun
 
-# Reference: https://www.virustotal.com/gui/domain/exp.host/relations
-
-exp.host
-
 # Reference: https://www.virustotal.com/gui/file/b0b90abff8a2eb5ba7c6d2c346fabc0f8f6a0034b6189a87f723e11fcd554511/detection
 
 162.243.164.124:8080
@@ -714,3 +710,138 @@ pay.shuobofootball.xyz
 
 77.232.39.253:2050
 glg.333wins.com
+
+# Reference: https://www.virustotal.com/gui/file/055dc1fc2c5452e56e4fae275f6452f4448131a9a54d29cee3f306b5f10070bc/detection
+
+http://101.35.101.89
+http://43.129.220.25
+cp2s.xyz
+subsworker.bid
+r2001.oss-cn-shanghai.aliyuncs.com
+ry8.oss-cn-shanghai.aliyuncs.com
+
+# Reference: https://www.virustotal.com/gui/domain/omnatuor.com/relations
+
+omnatuor.com
+
+# Reference: https://www.virustotal.com/gui/file/dd50fd8b3b3ee27144575cf9ac4d15e1177b7b92ac13d6da26992bfacfc84bd9/detection
+
+simplewordbook.45qq.ltd
+
+# Reference: https://www.virustotal.com/gui/domain/c-ccccc.cc/relations
+# Reference: https://www.virustotal.com/gui/ip-address/101.133.138.181/relations
+# Reference: https://www.virustotal.com/gui/file/fb9a910e212e23298fbf22104b1693cc99f070b3e40745b338362db9806d5a25/detection
+
+http://101.133.138.181
+101.133.138.181:8777
+c-ccccc.cc
+fu44.pw
+
+# Reference: https://www.virustotal.com/gui/file/0000e0ad9eb7ec8238c4f12833e3a88806aa204b89d5f50de67e9a5a38764c64/detection
+# Reference: https://www.virustotal.com/gui/file/000ddcca53633e01d53e1b9dcbbd6ac51afe05ff46e0766cb975baf1add3265f/detection
+
+115.28.52.43:8080
+my.zhxone.com
+pbj.jinchibao.net
+plus.zhxone.com
+v.wifiwin.cn
+
+# Reference: https://www.virustotal.com/gui/file/00140261bdd355c50a7c5483a9a993e305605c03c4280324d587b13ef5af320d/detection
+
+ep.jinchibao.net
+plus.zhxone.com
+sdkjk.idmzone.com
+sdks.zy333.cn
+
+# Reference: https://www.virustotal.com/gui/file/955f9a5c632aad3d0a1558622ee28167980cfb43fd68518b1953177dff179fb2/detection
+
+106.75.53.182:10002
+120.26.3.124:888
+121.40.109.196:8088
+156.224.96.163:888
+45.39.106.132:888
+47.254.19.2:888
+jkys567.com
+anzhuo.jkys567.com
+ios.jkys567.com
+pro.jkys567.com
+
+# Reference: https://www.virustotal.com/gui/file/15bd7f961eb5faf966bf657d8e341ada2da3607cff6f57523e8c9fd1463cb138/detection
+
+0baa5f33.n.funnullv9.com
+guon111.xyz
+uuc.guon111.xyz
+
+# Reference: https://www.virustotal.com/gui/file/0695ee8c60e28a4bef5774621d209019439ce06e335db509f10b86f51c724c68/detection
+
+aoqkl.xyz
+bjmft.xyz
+dnvzc.xyz
+guon111.xyz
+guon222.xyz
+guon333.xyz
+guon444.xyz
+hpdzf.xyz
+nxufa.xyz
+pjuip.xyz
+sihsf.xyz
+swvag.xyz
+xofxn.xyz
+yteqo.xyz
+uuc.aoqkl.xyz
+uuc.bjmft.xyz
+uuc.dnvzc.xyz
+uuc.guon111.xyz
+uuc.guon222.xyz
+uuc.guon333.xyz
+uuc.guon444.xyz
+uuc.hpdzf.xyz
+uuc.nxufa.xyz
+uuc.pjuip.xyz
+uuc.sihsf.xyz
+uuc.swvag.xyz
+uuc.xofxn.xyz
+uuc.yteqo.xyz
+picc-sum.s3.ap-east-1.amazonaws.com
+
+# Reference: https://www.virustotal.com/gui/file/58b81fa7e1b803538f921535c4b72917851970998dbcbeccef451e5bb812fc16/detection
+
+059600590b7a.org
+1d23f364e9b0.org
+227faf4e90c4.org
+59386f21552d.org
+5d20d3d5918f.org
+5d4c3f47cf3c.org
+5ed5ca64994e.org
+60fa2d754f8d.org
+622707d2c943.org
+93c74f9ca77c.org
+973347703a16.org
+aa30a9baac13.org
+bb4aee94ca70.org
+bbabc36c70e4.org
+bd1061637d92.org
+c80519824223.org
+c9a21e401aa5.org
+ceac45abf588.org
+d354d52518ae.org
+d87eee806634.org
+de878e071fb8.org
+e2ad631b2a83.org
+e3cfa68f0b5a.org
+ea63cd772591.org
+ea6da71817dd.org
+eb9eadbe3848.org
+f67354873b85.org
+
+# Reference: https://www.virustotal.com/gui/file/0fc5e6da2a29ab52ab77278af41eda3edee7494c5644532509897f8d2c6ec693/detection
+
+aff.mclick.mobi
+
+# Reference: https://www.virustotal.com/gui/file/ef121b020b542c90527aa59f4e30e5a3d68430f9e6d016c088fd308a8f708221/detection
+
+appmaket.giize.com
+
+# Reference: https://www.virustotal.com/gui/domain/sparkskillzs.com/relations
+
+sparkskillzs.com

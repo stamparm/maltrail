@@ -965,3 +965,49 @@ jp.moneroocean.stream
 # Reference: https://www.virustotal.com/gui/file/01896d1ca66873aa7b2b26e90eb4ac1b128e3d3d9746ee6a5b4e56cffc30f3cd/detection
 
 51.255.34.80:14433
+
+# Reference: https://www.cadosecurity.com/cado-discovers-denonia-the-first-malware-specifically-targeting-lambda/
+
+116.203.4.0:3333
+
+# Reference: https://www.virustotal.com/gui/file/641845e56dc01950225e94331e66a34afd229d16f5c29758b2daf09a2d9b0479/detection
+
+18.180.72.219:20128
+
+# Reference: https://www.virustotal.com/gui/file/0c78984cd2afe869307aca9d8dc9d257f650616b12fa45a2a79a83821f1e7b37/detection
+
+136.244.80.197:5555
+142.202.242.43:5555
+
+# Reference: https://blog.cyble.com/2022/10/25/dual-malware-infection-targets-cryptocurrency-users/
+# Reference: https://www.virustotal.com/gui/domain/luckpool.net/relations
+
+139.99.123.225:3956
+144.217.253.98:3956
+149.56.27.47:3956
+192.99.68.109:3956
+66.70.189.125:9356
+79.137.70.48:3956
+luckpool.net
+ap.luckpool.net
+eu.luckpool.net
+na.luckpool.net
+node3.luckpool.net
+
+# Reference: https://www.virustotal.com/gui/file/2d620db466a99650f37cd04a77cea75a874b8c6a52752cfc5f4902cfd92c6556/detection
+
+162.19.139.184:12222
+51.89.96.41:12222
+
+# Reference: https://www.virustotal.com/gui/file/01a7699e29078d8d8823f1ab86462acec79560cd6542b39ce54dc42ba2393577/detection
+
+194.145.227.21:14444
+194.145.227.21:8080
+
+# Reference: https://tria.ge/221031-ex7araaba8/behavioral2
+
+213.32.74.157:14433
+
+# Reference: https://www.virustotal.com/gui/file/1ca00897bd6392c74cb297c24f66ffbe1f4162a64fc44ee7bf7f2fb9c7468795/detection
+
+162.19.139.184:13333

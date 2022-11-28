@@ -2439,6 +2439,7 @@ gooqle-analytics.com
 gooqle-analytics.net
 secure-authorize.net
 wanalytic.is
+secure.authcrize.net
 
 # Reference: https://twitter.com/kyleehmke/status/1399680399756906502
 # Reference: https://www.virustotal.com/gui/ip-address/87.120.254.4/relations
@@ -3217,6 +3218,7 @@ sagepay-live.com
 sagepay-world.com
 yahoo-manager.com
 yahoo-tasks.com
+cdn.jquery-migrate.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/47.245.128.230/relations
 # Reference: https://www.virustotal.com/gui/ip-address/84.38.181.56/relations
@@ -4615,11 +4617,15 @@ jquerylast.com
 yahoo-tracker.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1376662429229142022
+# Reference: https://twitter.com/rootprivilege/status/1549799944835371008
 # Reference: https://www.virustotal.com/gui/ip-address/194.61.25.77/relations
+# Reference: https://www.virustotal.com/gui/ip-address/77.83.36.33/relations
 
 jqueri-web.at
+jqueri.at
 jqueridev.at
 jqueriweb.at
+jsdelivr.at
 
 # Reference: https://twitter.com/unmaskparasites/status/1377383696009895939
 
@@ -6530,13 +6536,19 @@ palletforks.net
 webtoolsapp.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1519784855730499585
+# Reference: https://www.virustotal.com/gui/ip-address/188.68.222.146/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.101.50.140/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.53.124.42/relations
 # Reference: https://www.virustotal.com/gui/ip-address/80.249.145.91/relations
 # Reference: https://www.virustotal.com/gui/ip-address/84.38.180.69/relations
 
 app-cloudflare.com
 appcloudflare.com
+cdn-optimizely.com
 cdn-trackjs.com
+get-bootstrap.com
 livehotjars.com
+static-affilate.com
 
 # Reference: https://twitter.com/EKFiddle/status/1522282636542197762
 # Reference: https://www.virustotal.com/gui/ip-address/194.104.136.113/relations
@@ -6590,12 +6602,14 @@ papershoppers.com
 /js/3uPop.js
 
 # Reference: https://twitter.com/sansecio/status/1526490490497032193
+# Reference: https://twitter.com/sansecio/status/1541345598007193605
 
 sanguinelab.net
 sansec.biz
 sansec.us
 sanseclabs.com
 sanzsec.com
+/gate.php?card_num=
 
 # Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-May/030663.html
 # Reference: https://www.virustotal.com/gui/ip-address/89.36.224.122/relations
@@ -6629,6 +6643,1108 @@ techlok.bar
 # Reference: https://twitter.com/sansecio/status/1532361233365598209
 
 cdn.stripe.ngrok.io
+
+# Reference: https://twitter.com/sansecio/status/1532763512887459841
+
+pluginmagento.com
+
+# Reference: https://twitter.com/sansecio/status/1534862125470035970
+# Reference: https://www.virustotal.com/gui/ip-address/185.63.190.184/relations
+
+scanalytic.org
+cdn.scanalytic.org
+
+# Reference: https://twitter.com/rootprivilege/status/1536197955728048128
+# Reference: https://lukeleal.com/research/posts/staticounter/
+
+staticounter.net
+js.staticounter.net
+
+# Reference: https://twitter.com/unmaskparasites/status/1536454343280340992
+
+biftick.com
+
+# Reference: https://twitter.com/felixaime/status/1536999558823219200
+
+ambrosia-solingen.de/js/prototype/form.js
+ariaperfume.com/js/extjs/ext.js
+textilia.be/flash/accept.js
+
+# Reference: https://twitter.com/felixaime/status/1537327680345063425
+# Reference: https://www.virustotal.com/gui/ip-address/172.86.75.152/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.61.137.105/relations
+
+ads-google-analytics-shop.info
+googleadsanalytics.info
+usaayurveda.com/js/prototype/form.js
+
+# Reference: https://twitter.com/felixaime/status/1537458621726052354
+
+google-track.com
+cdn.google-track.com
+
+# Reference: https://twitter.com/rootprivilege/status/1537799222681956352
+
+cdn-fonts.com
+
+# Reference: https://blog.malwarebytes.com/threat-intelligence/2022/06/client-side-magecart-attacks-still-around-but-more-covert/
+
+abtasty.net
+accutics.org
+adsrvr.biz
+alexametrics.net
+alligaturetrack.com
+artesfut.com
+base-code.org
+bayforall.biz
+boxsearch.org
+brands-watch.com
+celebrosnlp.org
+clarlity.com
+clickcease.biz
+cloud-chart.net
+cookieslaw.org
+crisconnect.net
+dc-storm.org
+demo-metrics.net
+digital-metric.org
+digital-speed.net
+druapps.org
+dwin-co.jp
+dwin1.org
+etakeawaymax.biz
+feedaty.org
+g-livestatic.com
+getambassador.net
+global-search.net
+hal-data.org
+hs-analytics.org
+imagero.org
+iofrontcloud.com
+jsdelivr.biz
+klarnacdn.org
+librarysetr.com
+libsconnect.net
+listrakbi.io
+listrakbi.org
+livechatsinc.net
+lookmetric.com
+lookmind.net
+lpsnmedia.org
+mantisadnetwork.org
+marklibs.com
+moonflare.org
+mosindup.com
+murdoog.org
+newrelc.net
+nomalert.org
+nosto.org
+opendwin.com
+outbrains.net
+owneriq.org
+pepperjams.org
+pinnaclecart.io
+purechat.org
+quatserve.com
+rawgit.net
+rolfinder.com
+shopvisible.org
+sjsmartcontent.org
+sleefnote.com
+sleeknote.org
+snapengage.io
+speedcurve.org
+speedstester.com
+stat-analytics.org
+tevidon.com
+tomafood.org
+trackedlink.org
+troadster.com
+trustedport.org
+webflows.net
+accdn.lpsnmedia.org
+amplify.outbrains.net
+apis.murdoog.org
+app.iofrontcloud.com
+app.mosindup.com
+app.nomalert.org
+app.purechat.org
+app.rolfinder.com
+cdn.accutics.org
+cdn.alexametrics.net
+cdn.alligaturetrack.com
+cdn.base-code.org
+cdn.boxsearch.org
+cdn.cookieslaw.org
+cdn.getambassador.net
+cdn.hs-analytics.org
+cdn.jsdelivr.biz
+cdn.nosto.org
+cdn.pinnaclecart.io
+cdn.speedcurve.org
+cdn.tomafood.org
+cdn.trustedport.org
+common.quatserve.com
+con.digital-speed.net
+content.digital-metric.org
+css.tevidon.com
+dev.crisconnect.net
+epos.bayforall.biz
+graph.cloud-chart.net
+h.lookmind.net
+img.etakeawaymax.biz
+js.artesfut.com
+js.g-livestatic.com
+js.imagero.org
+js.librarysetr.com
+lp.celebrosnlp.org
+m.brands-watch.com
+m.sleeknote.org
+nypi.dc-storm.org
+px.owneriq.org
+r.klarnacdn.org
+s1.listrakbi.org
+sdk.moonflare.org
+search.global-search.net
+st.adsrvr.biz
+stage.sleefnote.com
+static.clarlity.com
+static.druapps.org
+static.lookmetric.com
+static.mantisadnetwork.org
+static.newrelc.net
+static.opendwin.com
+t.trackedlink.org
+web.dwin-co.jp
+web.livechatsinc.net
+web.speedstester.com
+web.webflows.net
+xn--v1a.lookmind.net
+
+# Reference: https://twitter.com/sansecio/status/1539252937486127104
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.33.190/relations
+
+cdn-fastimages.net
+quickespark.net
+cdn.quickespark.net
+
+# Reference: https://twitter.com/felixaime/status/1539539440942686208
+
+apipauy.com
+
+# Reference: https://twitter.com/EKFiddle/status/1540019849581105152
+
+apfeltee.de/js/prototype/form.js
+
+# Reference: https://twitter.com/EKFiddle/status/1540094462340108289
+
+hubberstore.com
+
+# Reference: https://twitter.com/EKFiddle/status/1540070708377559040
+
+ariaperfume.com/errors/default/403.php
+cafeunido.com/pub/errors/default/403.php
+cafeunido.com/pub/media/flag/flag.js
+candlemaking.com/media/email/logo/default/az1.js
+
+# Reference: https://twitter.com/EKFiddle/status/1540377960351293442
+
+contactsform.com
+
+# Reference: https://twitter.com/sansecio/status/1540742673094438913
+
+cdn-mediacloud.com
+cdn-webhub.com
+
+# Reference: https://twitter.com/sansecio/status/1541375801387614212
+
+affirmcdn.com
+t.affirmcdn.com
+
+# Reference: https://twitter.com/EKFiddle/status/1541447869491601408
+
+bsvholdingsa.com/js/lib/ico.svg
+code2a.com/js/lib/translate.js
+
+# Reference: https://twitter.com/MBThreatIntel/status/1541549810150346752
+
+cloudflareinside.com
+nortonpost.net
+rimpstatic.net
+ping.rimpstatic.net
+tag.nortonpost.net
+
+# Reference: https://twitter.com/unmaskparasites/status/1542237945779826688
+# Reference: https://www.virustotal.com/gui/ip-address/149.56.118.126/relations
+
+cdntaggoogle.com
+pringleshop.cc
+
+# Reference: https://twitter.com/sansecio/status/1542508263064932352
+# Reference: https://www.virustotal.com/gui/ip-address/185.63.190.203/relations
+
+tempeasy.net
+s.tempeasy.net
+
+# Reference: https://twitter.com/felixaime/status/1542531512758837249
+# Reference: https://www.virustotal.com/gui/ip-address/185.215.113.20/relations
+
+apigstatic.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.63.190.210/relations
+
+gatestatic.com
+js.gatestatic.com
+
+# Reference: https://twitter.com/EKFiddle/status/1543997043546341376
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.33.176/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.63.190.141/relations
+# Reference: https://www.virustotal.com/gui/ip-address/89.108.109.26/relations
+
+geotac.net
+knowledgecdn.org
+sale-alerts.com
+js.knowledgecdn.org
+m.sale-alerts.com
+s.geotac.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.45/relations
+
+cenbase.org
+cdn.cenbase.org
+
+# Reference: https://twitter.com/MBThreatIntel/status/1544019143841574913
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.47/relations
+
+omniworked.com
+h.omniworked.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.48/relations
+
+contmount.net
+p.contmount.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.53/relations
+
+sentrymap.net
+h.sentrymap.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.55/relations
+
+anyonecdn.net
+s.anyonecdn.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.36/relations
+
+jmpduco.jp
+co.jmpduco.jp
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.35/relations
+
+signefyd.com
+js.signefyd.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.254/relations
+
+claritycdn.com
+c.claritycdn.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.32.157/relations
+
+transitfex.com
+static.transitfex.com
+
+# Reference: https://twitter.com/EKFiddle/status/1544076272694743040
+# Reference: https://www.virustotal.com/gui/ip-address/141.98.82.244/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.188.62.10/relations
+
+axaro.buzz
+axbit.buzz
+axcat.buzz
+axdiv.buzz
+axelf.buzz
+axfin.buzz
+axgit.buzz
+axhog.buzz
+axist.buzz
+axjmp.buzz
+axkid.buzz
+axlok.buzz
+axmem.buzz
+axnxt.buzz
+axord.buzz
+axpot.buzz
+axqrt.buzz
+axrub.buzz
+axsil.buzz
+axtik.buzz
+axund.buzz
+axvac.buzz
+axwok.buzz
+axxor.buzz
+axyes.buzz
+axzet.buzz
+bxant.buzz
+bxbot.buzz
+bxcit.buzz
+bxdoc.buzz
+bxelf.buzz
+bxfog.buzz
+bxgit.buzz
+bxhit.buzz
+bxirc.buzz
+bxjog.buzz
+bxkop.buzz
+bxled.buzz
+bxmod.buzz
+bxnor.buzz
+bxost.buzz
+bxpic.buzz
+bxqol.buzz
+bxred.buzz
+bxsot.buzz
+bxtik.buzz
+bxuno.buzz
+bxviz.buzz
+bxwok.buzz
+bxxtr.buzz
+bxyes.buzz
+bxzil.buzz
+cxand.buzz
+cxbet.buzz
+cxcip.buzz
+cxdex.buzz
+cxelc.buzz
+cxfat.buzz
+cxgit.buzz
+cxhat.buzz
+cxirc.buzz
+cxjmp.buzz
+cxkid.buzz
+cxlot.buzz
+cxmix.buzz
+cxnix.buzz
+cxopt.buzz
+cxpet.buzz
+cxqip.buzz
+cxred.buzz
+cxsum.buzz
+cxtik.buzz
+cxunk.buzz
+cxvec.buzz
+cxwik.buzz
+cxxor.buzz
+cxyob.buzz
+cxzet.buzz
+dxarc.buzz
+dxbit.buzz
+dxcop.buzz
+dxdel.buzz
+dxext.buzz
+dxfog.buzz
+dxget.buzz
+dxhit.buzz
+dxirc.buzz
+dxjog.buzz
+dxkit.buzz
+dxloc.buzz
+xxkep.buzz
+xxlid.buzz
+xxmod.buzz
+xxnex.buzz
+xxorg.buzz
+xxpos.buzz
+xxqck.buzz
+xxred.buzz
+xxset.buzz
+xxtec.buzz
+xxund.buzz
+xxvec.buzz
+xxwex.buzz
+xxxyz.buzz
+xxyop.buzz
+xxzet.buzz
+zxarc.buzz
+zxbod.buzz
+zxwww.buzz
+zxchk.buzz
+zxdoc.buzz
+zxext.buzz
+zxfog.buzz
+zxgod.buzz
+zxhog.buzz
+zxind.buzz
+zxjep.buzz
+zxkid.buzz
+zxlex.buzz
+zxmid.buzz
+zxnix.buzz
+zxopr.buzz
+zxpro.buzz
+zxqud.buzz
+zxrop.buzz
+zxset.buzz
+zxtok.buzz
+zxund.buzz
+zxvoc.buzz
+zxxer.buzz
+zxymb.buzz
+zxzip.buzz
+ayarro.cyou
+aybrandy.cyou
+aycopper.cyou
+aydigger.cyou
+ayeffort.cyou
+ayformal.cyou
+aygopher.cyou
+ayharmony.cyou
+ayimbue.cyou
+ayjacker.cyou
+aykernel.cyou
+aylizard.cyou
+aymoment.cyou
+aynickel.cyou
+ayobject.cyou
+ayprotect.cyou
+ayquiz.cyou
+ayremote.cyou
+aystraight.cyou
+aytoken.cyou
+ayunion.cyou
+ayversion.cyou
+aywicked.cyou
+ayxenoz.cyou
+ayyield.cyou
+ayzorro.cyou
+byathlone.cyou
+byballoon.cyou
+bycoffee.cyou
+bydriver.cyou
+byelaw.cyou
+byffalo.cyou
+bygdata.cyou
+byhello.cyou
+byindex.cyou
+byjacker.cyou
+bykrafter.cyou
+byladder.cyou
+bymiddle.cyou
+bynothing.cyou
+byoxide.cyou
+byprimary.cyou
+byqueen.cyou
+byrocket.cyou
+bystrict.cyou
+bytropics.cyou
+byuniform.cyou
+byvictory.cyou
+bywerner.cyou
+byxenos.cyou
+byyttrium.cyou
+byzitter.cyou
+cyanide.cyou
+cybinary.cyou
+cyclonez.cyou
+cydrix.cyou
+cyentrance.cyou
+cyfrix.cyou
+cygwin.cyou
+cyhrono.cyou
+cyirrevoke.cyou
+cyjabber.cyou
+cykatering.cyou
+cylunar.cyou
+cymanner.cyou
+cynexus.cyou
+cyonide.cyou
+cyprobe.cyou
+cyquery.cyou
+cyreader.cyou
+cysoccer.cyou
+cytracker.cyou
+cyunique.cyou
+cyviral.cyou
+cywonder.cyou
+cyxinet.cyou
+cyyellow.cyou
+cyzapper.cyou
+dyaroses.cyou
+dybreaker.cyou
+dyction.cyou
+dydactic.cyou
+dyecins.cyou
+dyflector.cyou
+dygger.cyou
+dyhromic.cyou
+dyincludes.cyou
+dyjital.cyou
+dykracker.cyou
+dylorean.cyou
+xyforward.cyou
+xygrabber.cyou
+xyhover.cyou
+xyinterrupt.cyou
+xyjumper.cyou
+xykombo.cyou
+xylesson.cyou
+xymoon.cyou
+xyneedle.cyou
+xyopera.cyou
+xypromo.cyou
+xyquest.cyou
+xyroman.cyou
+xystream.cyou
+xytracker.cyou
+xyunique.cyou
+xyvery.cyou
+xyworld.cyou
+xyxylene.cyou
+xyyclept.cyou
+xyzigzag.cyou
+zyambient.cyou
+zybridge.cyou
+zycross.cyou
+zydrive.cyou
+zyeffort.cyou
+zyfrozen.cyou
+zygophyte.cyou
+zyhandle.cyou
+zyinternal.cyou
+zyjumper.cyou
+zykenia.cyou
+zyluss.cyou
+zymase.cyou
+zynarrow.cyou
+zyomide.cyou
+zypper.cyou
+zyquick.cyou
+zyrock.cyou
+zyslave.cyou
+zytrick.cyou
+zyultimate.cyou
+zyvictory.cyou
+zyworker.cyou
+zyxpert.cyou
+zyypper.cyou
+zyzeolite.cyou
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.253.33.181/relations
+
+freellock.com
+cdn.freellock.com
+
+# Reference: https://twitter.com/EKFiddle/status/1544348118593941504
+# Reference: https://twitter.com/MBThreatIntel/status/1544743417745289216
+
+collectingstatistics.net
+javascriptmagneto.net
+jsconfigur.net
+jsconfigur.org
+
+# Reference: https://twitter.com/sansecio/status/1545097814945845248
+# Reference: https://www.virustotal.com/gui/ip-address/38.132.99.214/relations
+# Reference: https://www.virustotal.com/gui/ip-address/85.239.55.67/relations
+
+cloudestreem.com
+systemcloud.in
+/api/id/IEKAOIEKAOIEKAO
+/IEKAOIEKAOIEKAO
+
+# Reference: https://twitter.com/sansecio/status/1545159974254362626
+
+html5decode.net
+/redirect-non-site.php?datasend=
+
+# Reference: https://twitter.com/unmaskparasites/status/1545463671492681731
+
+pingurlx.com
+
+# Reference: https://github.com/ti-research-io/ti/blob/main/ioc_extender/ET_Magecart.json
+
+01scambiomoda.net
+2015onlineshop.com
+20180426.com
+24sevenprinting.org
+24wp.org
+29wp.org
+2nt6.com
+3-easy.xyz
+360-3d.info
+360popads.com
+360popunderfire.com
+36obuy.org
+38027.info
+3dartevideo.com
+3hourweb.com
+3rfm.com
+actual-textile.com
+artistgossip.info
+asamtechnologies.com
+asapmobilelocksmithsny.com
+assistmail.net
+autocustomcarpets.org
+autodealerjournal.com
+autoricambiteam.com
+bantin113online.com
+besttowerfanreview.com
+blossomdigital.net
+bmoar.com
+borac.org
+borderleads.net
+bournelegacy2012.com
+bournelegacy2012.info
+bovyc.info
+bowobcloud1.com
+boxmovihd.com
+cartix.org
+cartme.org
+casadellaturadio.com
+casamadeleine.info
+casaspremoldadas.net
+case-lagodorta.com
+cashpeels.com
+casino-pokerdom.com
+casitasduquesa.com
+casquebeatsspascherr.com
+cassandragraisford.com
+cat-lovely.com
+causeun.com
+cbtagclouds.com
+cdtk9.com
+celeb2vote.com
+celltheraphy.net
+click-fraud-detection.com
+clicktictac.com
+clipsexteen.com
+clixapper.com
+cloud-info.click
+clunder.net
+cms-skin.com
+cmsucoz.com
+codecomplete4u.com
+codelessay.info
+codingbutler.com
+codnetnewsletter.com
+coffeebrewerdenver.info
+coffeemakercolumbus.info
+coffeeshoprestaurant.info
+consultabotox.com
+consultoriocanino.com
+contextrtb.com
+contribusourcesyndication.com
+controlwebadmin.com
+conversiongold2.com
+conversioninabox.com
+convertizrds.com
+cookiescript.cdn8.info
+cookingequipmentguides.com
+cool-board.info
+cool-cool.info
+cool-fashion.info
+cool-her.info
+cool-herstyle.info
+cool-key.info
+cool-mystyle.info
+cool-top.info
+coolcounters.net
+coordenadas-gps.info
+cople.info
+corissapoley.com
+cosmicvent.net
+cosmosoftsolutions.com
+countybuck.com
+coureleads.com
+cppgf.com
+cracks4free.info
+crackthecode.info
+custom-webdesigns.net
+customgaugepanelsinhampsteadnc.com
+cyber-25.info
+cyberstampedeinc.com
+cykahax.net
+cyklist.info
+cyzyk.info
+d-artchitex.com
+da-redirect.info
+daftar-pokeronline.com
+daoblockscenter.com
+dev-extension.cloud
+dfdffgff.kitewhite.online
+downloadreview.net
+dressforyouka.com
+elunlversal.com
+freeaudiovideodelivery.com
+freechoiceact.net
+freedominvestingsystem.com
+freedownloadreviewed.com
+freeinternetvideopoker.com
+freelancerfree.com
+freepokercostarica.com
+freesearchworld.com
+freewebsitetrafic.com
+freitagautomobile.com
+friendpetsclub.com
+fromtheendzone.com
+fruitybarre.com
+fushigi-yume.com
+gacsapps.com
+gadgea.com
+gadget-solutions.com
+gallerialabronica.com
+galloom.com
+getleadfeeder.com
+grandriverinspection.com
+graycardinals.com
+greetingsfromhb.com
+imzaj.com
+in-management.info
+inard.info
+incinflorida.com
+includejs.net
+indatwa.net
+india-luxury-travel-packages.com
+indobacklinks.com
+indovertiser.com
+inferactive.net
+info-angebote.info
+info-circle-area.com
+info-e-cigarette.com
+infocirclearea.com
+infocus52.com
+infoeduonline.info
+infoguiaguadalajara.com
+infomusculacao.com
+infoserveconsultants.com
+infpoker.com
+ingilteredilokulu.org
+inieshop1.com
+inlscorp.com
+inspirationalquotesandsayings.com
+jogja-handycraft.info
+johngoodmandesign.com
+johnsbogers.com
+jople.info
+joshuahunt.info
+joyeriaenpontevedra.com
+jqwp.org
+jscrpt.info
+kimchisan.com
+kimhuetea.com
+kimiawebsitedesign.com
+kinoskachka.com
+kiralikgunlukdaire.net
+klasfm.info
+klin9.info
+koddostu.net
+kolnossystems.com
+konkhmer8.info
+kvazis.fvds.ru
+mfhfeeds.com
+mgtct02.net
+miamimuseum.info
+microfin.info
+miderea.com
+mybestmediadownloads.com
+myclickmonitor.com
+mycrews.info
+mydearmishima.com
+mydon.org
+myhurtbaby.com
+myluckymarriage.com
+myogisaputra.info
+myprestatheme.com
+myreklama.org
+mysimplename.com
+myskop.com
+myweb-tools.info
+myxomop.net
+n1te1337.com
+n284adserv.com
+n285adserv.com
+nannieroth.info
+navegaengalego.com
+naverle.com
+ndezo.net
+nekretnine365.info
+neley888.info
+neohealthnews.com
+nerds-down.com
+net-city.info
+net-fortune-telling.info
+netrotator.net
+newimagemagazine.info
+newm33arads.com
+newrooseveltinitiave.com
+newrus.net
+newsvidnews.info
+nfsgames.info
+nfwebminer.com
+nguoiay.info
+nguyenthikieuquan.com
+nhacaipoker.com
+niaz22.com
+nikscenes.info
+nimbuzzer-java.com
+nitrostats.com
+njsa-assignments.com
+nntindia.org
+nosleeppress.com
+noticiasnicaragua.info
+notno.info
+notraff.com
+optionsm-stats.com
+optom-iz-kitaya.com
+opvar.com
+oracleinsider.com
+oracyweb.com
+orangewebscape.com
+orc-my.com
+organicvillagenyc.com
+organizingdealers.info
+orthodontistqld.com
+osatjobs.info
+otitez.org
+plugin-connect.cloud
+pokerdestek.com
+polskiandi.com
+pommenoir.com
+popads.info
+porno-hab.com
+pos-in-dubai.com
+potteryandglasscollectiblesx16.info
+ppcindonesia.net
+practicefieldadv.com
+praguemost.info
+pralilipiped.net
+preferredbenefitpartners.com
+premium-software.info
+prentissw.com
+pressing-arcenciel.com
+pricefeel.info
+pricesee.info
+pricesix.info
+prim-vod.com
+printerkaosmurah.com
+prizrakov.net
+puzzlesgamesplusb3.info
+radio-constantine.org
+radiovideoads.com
+ragonese.net
+ralphsells.info
+randompatternsmusic.com
+raymond-mill.org
+rdrbackup.com
+reachingforyourhand.com
+reportersinc.info
+reptibious.com
+reviewerplus.info
+reyfiles.com
+rezekidarisms.com
+rhythm9.com
+ricondamaintenance.com
+ridewithtraiv.com
+ridingmowersendofseason.info
+ripsawdesign.com
+rispostaindia.info
+ristorantedabeni.com
+riverfrontgrumble.com
+rjmungo.com
+rmrefer.com
+robertostrizzi.com
+rotation-media.net
+skolske-knjige.net
+
+# Reference: https://twitter.com/MBThreatIntel/status/1549086388024254465
+# Reference: https://twitter.com/unmaskparasites/status/1549172191572267008
+# Reference: https://www.virustotal.com/gui/ip-address/223.252.173.12/relations
+# Reference: https://www.virustotal.com/gui/ip-address/85.239.41.205/relations
+
+checkmag.shop
+clientswebstat.online
+finteza.online
+funeldata.com
+help-chat.shop
+jstat.shop
+issuspsorry.online
+kgrs.shop
+online-chat.shop
+online-support.best
+paymentpay.shop
+visualwebsiteoptimizer.online
+/api/id/854OIEKAOIEKAOIEKA
+/854OIEKAOIEKAOIEKA
+
+# Reference: https://www.virustotal.com/gui/ip-address/223.252.173.168/relations
+
+googlecom.click
+
+# Reference: https://twitter.com/sansecio/status/1554902168108294144
+# Reference: https://www.virustotal.com/gui/ip-address/103.253.43.232/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.54.174.154/relations
+
+clickstat.eu
+cloud-zdassets.com
+crprtd.com
+drubofast.com
+flexchat.shop
+ghtrs.com
+gtpely.com
+hstatbuy.shop
+iocloud.shop
+liveclick.shop
+masmag.shop
+msft-tools.net
+stopyfy.com
+webmastersite.shop
+zitye.com
+
+# Reference: https://twitter.com/MalwareInfosec/status/1559281030283939841
+# Reference: https://www.virustotal.com/gui/ip-address/23.106.215.227/relations
+
+webtemplatedelivr.com
+
+# Reference: https://twitter.com/rootprivilege/status/1559238666077081600
+# Reference: https://www.virustotal.com/gui/ip-address/167.235.20.31/relations
+# Reference: https://www.virustotal.com/gui/ip-address/49.12.223.222/relations
+
+101request.com
+99request.com
+drrequest.com
+request101.com
+requestbee.com
+ab.ro.lt
+
+# Reference: https://blog.group-ib.com/switching-side-jobs
+# Reference: https://www.virustotal.com/gui/ip-address/82.180.173.146/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.180.173.187/relations
+
+designestylelab.com
+congolo.pro
+gvenlayer.com
+metahtmlhead.com
+nmdatast.com
+seclib.org
+vamberlo.com
+winsiott.com
+
+# Reference: https://twitter.com/rootprivilege/status/1562998526329495553
+# Reference: https://www.virustotal.com/gui/ip-address/85.239.54.210/relations
+
+united81.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1567533004297490437
+
+stripefaster.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1567604988750483457
+# Reference: https://www.virustotal.com/gui/ip-address/77.91.74.92/relations
+
+gtmapicss.com
+gtsmapicss.com
+jqstylemin.com
+jqstylemini.com
+jqstyleminjs.com
+sanapicss.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1572316461615677440
+# Reference: https://www.virustotal.com/gui/ip-address/192.236.209.185/relations
+# Reference: https://www.virustotal.com/gui/ip-address/51.75.49.254/relations
+
+stats-doubleclick.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.22.149.218/relations
+# Reference: https://www.virustotal.com/gui/ip-address/91.203.192.227/relations
+
+cloudfsnbg.cc
+google-application.com
+google-bootstrap.com
+google-clipboard.com
+google-font.com
+google-ltag.com
+google-manager.com
+google-portal.com
+google-server.com
+google-work.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1572635560153612288
+# Reference: https://www.virustotal.com/gui/ip-address/94.131.107.62/relations
+
+gjsmini.com
+goojsytle.com
+stylecssmini.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1573059941619081221
+
+guyacave.fr/js/tiny_mce/themes/modern/validate.js
+
+# Reference: https://twitter.com/MBThreatIntel/status/1577039325157822464
+# Reference: https://www.virustotal.com/gui/ip-address/142.11.211.60/relations
+# Reference: https://www.virustotal.com/gui/ip-address/178.20.40.156/relations
+
+assetsclick.com
+assetsfind.com
+assetspower.com
+assetsspace.com
+megaebun.ru
+stripecheck.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1578483645568147456
+# Reference: https://twitter.com/EKFiddle/status/1578497647857762304
+
+fleuriste.ca/static/version1664884145/_cache/merged/510ae23a9c13df084a8608806e1bb5be.min.js
+gs27usa.com/translations/tw/mails.php
+
+# Reference: https://twitter.com/MBThreatIntel/status/1579869056819396609
+
+cdn-mediahub.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/103.109.101.137/relations
+
+payce-google.com
+payse-google.com
+
+# Reference: https://twitter.com/sansecio/status/1587034728292646913
+# Reference: https://www.virustotal.com/gui/ip-address/176.99.6.185/relations
+
+altersave.org
+js.altersave.org
+
+# Reference: https://twitter.com/AffableKraut/status/1587457210564726791
+# Reference: https://urlscan.io/result/f14c5092-9bec-4985-91be-a4601d39ddac/
+
+lalalatatata.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/188.114.97.3/relations
+
+jscdnstore.pw
+
+# Reference: https://twitter.com/unmaskparasites/status/1593321085323595776
+
+aspoln.info
+
+# Reference: https://twitter.com/c0d3inj3cT/status/1594974179463499778
+# Reference: https://www.zscaler.com/blogs/security-research/black-friday-scams-4-emerging-skimming-attacks-watch-holiday-season
+
+artmodecssdev.art
+cdn-common.com
+cdn-webcloud.com
+devjs.biz
+html5decode.biz
+html5decode.com
+html5decode.org
+java-cloud.biz
+java-cloud.net
+java-cloud.org
+magento-cloud.biz
+magento-cloud.com
+magento-cloud.net
+magento-cloud.org
+modersecure.com
+mozillajs.biz
+mozillajs.net
+mozillajs.org
+payment-analytics.info
+stirepoint.com
 
 # Generic
 

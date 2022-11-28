@@ -467,3 +467,122 @@ serviceeusps.com
 # Reference: https://www.virustotal.com/gui/domain/crystalfiles.ru/detection
 
 crystalfiles.ru
+
+# Reference: https://twitter.com/peterkruse/status/1536642469630189568
+
+krakenshop.cc
+omerta.cc
+
+# Reference: https://twitter.com/felixaime/status/1537458621726052354
+
+/wp-embed.php
+
+# Reference: https://www.trendmicro.com/en_us/research/22/f/websites-hosting-fake-cracks-spread-updated-copperstealer.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/f/websites-hosting-fake-cracks-spread-updated-copperstealer-malware/IOCs-websites-hosting-fake-cracks-spread-updated-copperstealer.txt
+# Reference: https://documents.trendmicro.com/assets/pdf/appendix-IoCs-websites-hosting-cracks-spread-malware-adware.pdf
+
+alfygame.com
+allcrack.info
+crackkeys4u.com
+cracksarena.com
+cracksversion.com
+cracxpro.com
+dedicatedcloud.info
+download-files.work
+file-download.info
+freecrackdownload.com
+freepcgames51.com
+freepcgames52.com
+hyporzfilez.xyz
+procrackey.com
+serialfull.info
+serialkeysoftware.com
+siteprerender.com
+softfiler.com
+technicalcomputersolution.com
+thecracksetup.com
+thegamesdownload.net
+thepcgaming.com
+ziphost.online
+
+
+# Reference: https://twitter.com/idclickthat/status/1551249542783328257
+# Reference: https://tria.ge/220724-ttq7paafbm/behavioral1
+
+cracka2zsoft.com
+kickasscracks.com
+pccrackbox.com
+procrackerz.org
+
+# Reference: https://blog.talosintelligence.com/2022/08/dark-utilities.html
+
+dark-utilities.me
+dark-utilities.pw
+dark-utilities.xyz
+omega-project.cz
+over-spam.space
+smart-bot.me
+bafybeidravcab5p3acvthxtwosm4rfpl4yypwwm52s7sazgxaezfzn5xn4.ipfs.infura-ipfs.io
+ijfcm7bu6ocerxsfq56ka3dtdanunyp4ytwk745b54agtravj2wr2qqd.onion.pet
+
+# Reference: https://twitter.com/WhichbufferArda/status/1571125906856620034
+# Reference: https://www.virustotal.com/gui/domain/greencracks.com/detection
+
+greencracks.com
+
+# Reference: https://github.com/threatlabz/iocs/commit/ec7a0fb82b94631ebadc85e06b5fa6f0defc11e6
+
+activationskey.org
+allcrackhere.info
+allcracks.org
+allpcsoftwares.info
+apps-for-pc.com
+apxsoftwares.com
+aryancrack.com
+bagas3-1.com
+clubfiletyc.com
+condandthi.cfd
+crackedlink.com
+crackedpcs.com
+crackedsofts.info
+crackfullpc.com
+crackfullpro.com
+crackplaced.com
+crackpropc.com
+cracktube.net
+deepprostore.com
+domainxnewma.com
+free-4paid.com
+freepccrack.com
+fullcrack4u.com
+fullcrackedz.com
+getintopc.digital
+getmacos.org
+getwindowsactivator.info
+hotbuckers.com
+idmfullcrack.info
+keygenwin.com
+mycrackfree.com
+officials-kmspico.com
+piratespc.net
+playzipgames.co
+proactivationkey.com
+proapkcrack.com
+procfullcracked.com
+procrackfree.com
+prolicensekeys.com
+reallkeys.com
+saifcrack.com
+serialfull.info
+showcrack.com
+softwaresdaily.com
+steamunlocked.one
+xproductkey.com
+
+# Reference: https://twitter.com/ankit_anubhav/status/1586794856365535233
+
+wazusoft.com
+
+# Reference: https://lukeleal.com/research/posts/strox-phishing-service-and-how-it-works/
+
+strox.su

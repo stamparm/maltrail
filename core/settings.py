@@ -23,7 +23,7 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.46"
+VERSION = "0.51"
 HOMEPAGE = "https://maltrail.github.io"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
@@ -92,9 +92,10 @@ SUSPICIOUS_HTTP_REQUEST_REGEXES = (
     ("potential ldap injection", r"\(\|\(\w+=\*"),
     ("potential xss injection", r"<script.*?>|\balert\(|(alert|confirm|prompt)\((\d+|document\.|response\.write\(|[^\w]*XSS)|on(mouseover|error|focus|transitionend)=[^&;\n]+\("),
     ("potential xxe injection", r"\[<!ENTITY"),
-    ("potential data leakage", r"im[es]i=\d{15}|(mac|sid)=([0-9a-f]{2}:){5}[0-9a-f]{2}|sim=\d{20}|([a-z0-9_.+-]+@[a-z0-9-.]+\.[a-z]+\b.{0,100}){4}|(telnum|telcompany)=[a-zA-Z0-9-]+"),
+    ("potential ssti injection", r"\${[^&]+\}|\$\{\{[^&]+\}\}"),
+    ("potential data leakage", r"im[es]i=\d{15}|iccid=[a-zA-Z0-9]{18,22}|(mac|sid)=([0-9a-f]{2}:){5}[0-9a-f]{2}|sim=\d{20}|([a-z0-9_.+-]+@[a-z0-9-.]+\.[a-z]+\b.{0,100}){4}|(telnum|telcompany)=[a-zA-Z0-9-]+"),
     ("config file access", r"\.ht(access|passwd)|\bwp-config\.php"),
-    ("potential remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|shell_exec|exec_code|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|tftp -|wget http|curl -O|sh /tmp/|touch /tmp/|cmd\.exe|/bin/(ba)?sh\b|2>&1|\b(cat|ls) /|chmod [0-7]{3,4}\b|chmod +x\b|base64 -d|nc -l -p \d+|>\s*/dev/null|-d (allow_url_include|safe_mode|auto_prepend_file)|jndi:(corba|dns|http|iiop|n(d|i)s|ldap[s]?|rmi):?|base64:JHtqbmRp|ipconfig|net (config|view)|nltest|netsh firewall|\$\{IFS\}|getRuntime\(\)\.exec\("),
+    ("potential remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|shell_exec|exec_code|shell:::\{|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|tftp -|wget http|curl -O|sh /tmp/|touch /tmp/|cmd\.exe|/bin/(ba)?sh\b|2>&1|\b(cat|ls) /|chmod [0-7]{3,4}\b|chmod +x\b|base64 -d|nc -l -p \d+|>\s*/dev/null|-d (allow_url_include|safe_mode|auto_prepend_file)|ms-msdt:|mhtml:ftp:|jndi:(corba|dns|http|iiop|n(d|i)s|ldap[s]?|rmi):?|base64:JHtqbmRp|ipconfig|net (config|view)|nltest|netsh firewall|\$\{IFS\}|getRuntime\(\)\.exec\("),
     ("potential directory traversal", r"(\.{2,}[/\\]+){3,}|/etc/(group|passwd|shadow|issue|hostname|hosts|sudoers)|[/\\](boot|system|win)\.ini|[/\\]system32\b|%SYSTEMROOT%"),
     ("potential web scan", r"(acunetix|injected_by)_wvs_|SomeCustomInjectedHeader|some_inexistent_file_with_long_name|testasp\.vulnweb\.com/t/fit\.txt|www\.acunetix\.tst|\.bxss\.me|thishouldnotexistandhopefullyitwillnot|OWASP%\d+ZAP|chr\(122\)\.chr\(97\)\.chr\(112\)|Vega-Inject|VEGA123|vega\.invalid|PUT-putfile|w00tw00t|muieblackcat"),
     ("potential dns changer", r"\b(dhcpPriDns|dhcpSecDns|staticPriDns|staticSecDns|staticThiDns|PriDnsv6|SecDnsv6|ThiDnsv6|staticPriDnsv6|staticSecDnsv6|staticThiDnsv6|dnsipv4|dns2ipv4|dnsipv6|dns2ipv6|pppoePriDns|pppoeSecDns|wan_dns1|wan_dns2|dnsPrimary|dnsSecondary|dnsDynamic|dnsRefresh|DNS_FST|DNS_SND|dhcpPriDns|dhcpSecDns|dnsserver|dnsserver1|dnsserver2|dns_server_ip_1|dns_server_ip_2|dns_server_ip_3|dns_server_ip_4|dns1|dns2|dns3|dns4|dns1_1|dns1_2|dns1_3|dns1_4|dns2_1|dns2_2|dns2_3|dns2_4|wan_dns_x|wan_dns1_x|wan_dns2_x|wan_dns3_x|wan_dns4_x|wan_dnsenable_x|dns_status|p_DNS|a_DNS|uiViewDns1Mark|uiViewDns2Mark|uiViewDNSRelay|is_router_as_dns|Enable_DNSFollowing|domainserverip|DSEN|DNSEN|dnsmode|dns%5Bserver1%5D|dns%5Bserver2%5D)=")
@@ -104,7 +105,7 @@ SUSPICIOUS_HTTP_PATH_REGEXES = (
     ("potential web scan", r"inexistent_file_name\.inexistent|test-for-some-inexistent-file|long_inexistent_path|some-inexistent-website\.acu")
 )
 SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION = ("?", "..", ".ht", "=", " ", "'")
-SUSPICIOUS_DIRECT_IP_URL_REGEX = r"\A[\w./-]*/[\w.]*\b(aarch|arm(\b|v?\d)|arcle-(750d|hs38)|exploit|m68k?\b|m[i1]ps|mpsl|pcc|powerpc|powerppc|pp-?c|root|x86|x32|x64|i\d{1,2}\b|i386|i486|i586|i686|sparc|sh\b|wtf|yarn|zte)\Z"
+SUSPICIOUS_DIRECT_IP_URL_REGEX = r"\A[\w./-]*/[\w.]*\b(aarch|amd64\b|arm(\b|v?\d)|arcle-(750d|hs38)|exploit|m68k?\b|m[i1]ps\w{0,4}\b|mpsl\w?\b|pcc|powerp{1,2}c|pp-?c|riscv\w{0,3}\b|root|s390\w?\b|x86|x32|x64|i\d{1,2}\b|i386|i486|i586|i686|sparc|sh\b|wtf|yarn|zte)\Z"
 SUSPICIOUS_PROXY_PROBE_PRE_CONDITION = ("probe", "proxy", "echo", "check")
 SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, _urllib.parse.quote(_)) for _ in "( )\r\n")
 SUSPICIOUS_UA_REGEX = ""
@@ -226,7 +227,7 @@ def read_config(config_file):
     global config
 
     if not os.path.isfile(config_file):
-        exit("[!] missing configuration file '%s'" % config_file)
+        sys.exit("[!] missing configuration file '%s'" % config_file)
     else:
         print("[i] using configuration file '%s'" % config_file)
 
@@ -245,9 +246,9 @@ def read_config(config_file):
             if line.count(' ') == 0:
                 if re.search(r"[^\w]", line):
                     if array == "USERS":
-                        exit("[!] invalid USERS entry '%s'\n[?] (hint: add whitespace at start of line)" % line)
+                        sys.exit("[!] invalid USERS entry '%s'\n[?] (hint: add whitespace at start of line)" % line)
                     else:
-                        exit("[!] invalid configuration (line: '%s')" % line)
+                        sys.exit("[!] invalid configuration (line: '%s')" % line)
                 array = line.upper()
                 config[array] = []
                 continue
@@ -296,13 +297,13 @@ def read_config(config_file):
 
     for option in ("MONITOR_INTERFACE", "CAPTURE_BUFFER", "LOG_DIR"):
         if option not in config:
-            exit("[!] missing mandatory option '%s' in configuration file '%s'" % (option, config_file))
+            sys.exit("[!] missing mandatory option '%s' in configuration file '%s'" % (option, config_file))
 
     for entry in (config.USERS or []):
         if len(entry.split(':')) != 4:
-            exit("[!] invalid USERS entry '%s'" % entry)
+            sys.exit("[!] invalid USERS entry '%s'" % entry)
         if re.search(r"\$\d+\$", entry):
-            exit("[!] invalid USERS entry '%s'\n[?] (hint: please update PBKDF2 hashes to SHA256 in your configuration file)" % entry)
+            sys.exit("[!] invalid USERS entry '%s'\n[?] (hint: please update PBKDF2 hashes to SHA256 in your configuration file)" % entry)
 
     if config.SSL_PEM:
         config.SSL_PEM = config.SSL_PEM.replace('/', os.sep)
@@ -311,13 +312,13 @@ def read_config(config_file):
         if ',' in config.USER_WHITELIST:
             print("[x] configuration value 'USER_WHITELIST' has been changed. Please use it to set location of whitelist file")
         elif not os.path.isfile(config.USER_WHITELIST):
-            exit("[!] missing 'USER_WHITELIST' file '%s'" % config.USER_WHITELIST)
+            sys.exit("[!] missing 'USER_WHITELIST' file '%s'" % config.USER_WHITELIST)
         else:
             read_whitelist()
 
     if config.USER_IGNORELIST:
         if not os.path.isfile(config.USER_IGNORELIST):
-            exit("[!] missing 'USER_IGNORELIST' file '%s'" % config.USER_IGNORELIST)
+            sys.exit("[!] missing 'USER_IGNORELIST' file '%s'" % config.USER_IGNORELIST)
         else:
             read_ignorelist()
 
@@ -330,16 +331,16 @@ def read_config(config_file):
         print("[x] configuration switch 'DISABLE_LOCAL_LOG_STORAGE' turned on and neither option 'LOG_SERVER' nor 'SYSLOG_SERVER' are set. Falling back to console output of event data")
 
     if config.UDP_ADDRESS is not None and config.UDP_PORT is None:
-        exit("[!] usage of configuration value 'UDP_ADDRESS' requires also usage of 'UDP_PORT'")
+        sys.exit("[!] usage of configuration value 'UDP_ADDRESS' requires also usage of 'UDP_PORT'")
 
     if config.UDP_ADDRESS is None and config.UDP_PORT is not None:
-        exit("[!] usage of configuration value 'UDP_PORT' requires also usage of 'UDP_ADDRESS'")
+        sys.exit("[!] usage of configuration value 'UDP_PORT' requires also usage of 'UDP_ADDRESS'")
 
     if not str(config.HTTP_PORT or "").isdigit() and not IS_SENSOR:
-        exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % ("" if config.HTTP_PORT is None else config.HTTP_PORT))
+        sys.exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % ("" if config.HTTP_PORT is None else config.HTTP_PORT))
 
     if not str(config.UPDATE_PERIOD or "").isdigit():
-        exit("[!] invalid configuration value for 'UPDATE_PERIOD' ('%s')" % ("" if config.UPDATE_PERIOD is None else config.UPDATE_PERIOD))
+        sys.exit("[!] invalid configuration value for 'UPDATE_PERIOD' ('%s')" % ("" if config.UPDATE_PERIOD is None else config.UPDATE_PERIOD))
 
     if config.PROCESS_COUNT and IS_WIN:
         print("[x] multiprocessing is currently not supported on Windows OS")
@@ -357,9 +358,9 @@ def read_config(config_file):
             if physmem:
                 config.CAPTURE_BUFFER = physmem * int(re.search(r"(\d+)%", config.CAPTURE_BUFFER).group(1)) // 100
             else:
-                exit("[!] unable to determine total physical memory. Please use absolute value for 'CAPTURE_BUFFER'")
+                sys.exit("[!] unable to determine total physical memory. Please use absolute value for 'CAPTURE_BUFFER'")
         else:
-            exit("[!] invalid configuration value for 'CAPTURE_BUFFER' ('%s')" % config.CAPTURE_BUFFER)
+            sys.exit("[!] invalid configuration value for 'CAPTURE_BUFFER' ('%s')" % config.CAPTURE_BUFFER)
 
         config.CAPTURE_BUFFER = config.CAPTURE_BUFFER // BLOCK_LENGTH * BLOCK_LENGTH
 

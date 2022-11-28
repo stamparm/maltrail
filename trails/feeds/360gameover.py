@@ -19,7 +19,7 @@ def fetch():
     content = retrieve_content(__url__)
 
     if __check__ in content:
-        for match in re.finditer(r"(?m)^([\w.]+)\s+2\d{3}\-", content):
+        for match in re.finditer(r"(?m)^([\w.-]+)\s+2\d{3}\-", content):
             retval[match.group(1)] = (__info__, __reference__)
 
     return retval

@@ -881,7 +881,7 @@ function init(url, from, to) {
 
                     _SEVERITY_COUNT[severity] += 1;
 
-                    row = [threatUID, data[LOG_COLUMNS.SENSOR], times, severity, minTime, maxTime, sparkline_data.join(","), data[LOG_COLUMNS.SRC_IP], data[LOG_COLUMNS.SRC_PORT], data[LOG_COLUMNS.DST_IP], data[LOG_COLUMNS.DST_PORT], data[LOG_COLUMNS.PROTO], data[LOG_COLUMNS.TYPE], data[LOG_COLUMNS.TRAIL], data[LOG_COLUMNS.INFO], data[LOG_COLUMNS.REFERENCE], tagData];
+                    row = [threatUID, data[LOG_COLUMNS.SENSOR], [count, times], severity, minTime, maxTime, sparkline_data.join(","), data[LOG_COLUMNS.SRC_IP], data[LOG_COLUMNS.SRC_PORT], data[LOG_COLUMNS.DST_IP], data[LOG_COLUMNS.DST_PORT], data[LOG_COLUMNS.PROTO], data[LOG_COLUMNS.TYPE], data[LOG_COLUMNS.TRAIL], data[LOG_COLUMNS.INFO], data[LOG_COLUMNS.REFERENCE], tagData];
 
                     _DATASET.push(row);
                 }
@@ -1393,7 +1393,7 @@ function initDetails() {
             },
             {
                 render: function ( data, type, row ) {
-                    return '<div class="event-data">' + data.length + '</div><span class="hidden">' + data.join(DATA_PARTS_DELIMITER) + '</span>';
+                    return '<div class="event-data">' + data[0] + '</div><span class="hidden">' + data[1].join(DATA_PARTS_DELIMITER) + '</span>';
                 },
                 targets: DATATABLES_COLUMNS.EVENTS
             },

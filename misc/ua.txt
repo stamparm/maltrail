@@ -1744,6 +1744,10 @@ Edg/79.0.309.68
 
 Edg/83.0.478.64
 
+# Reference: https://www.microsoft.com/security/blog/2022/09/29/zinc-weaponizing-open-source-software/
+
+Edg/100.0.1185.39
+
 # Reference: https://twitter.com/James_inthe_box/status/1410352295670255619
 # Reference: https://www.virustotal.com/gui/file/fee6b3937d208b95c17dc253ba951f3c7c5a332af98f4e0117ee5bbd47e38843/detection
 
@@ -2039,6 +2043,152 @@ Mozilla/9.9
 # Reference: https://twitter.com/ankit_anubhav/status/1529664691357659136
 
 svc/1.0
+
+# Reference: https://twitter.com/James_inthe_box/status/1534587919410683904
+# Reference: https://app.any.run/tasks/631b83d3-0f5d-4766-9b84-c35919fc4db0/
+
+\brecord\b
+
+# Reference: https://twitter.com/James_inthe_box/status/1535373385160486912
+# Reference: https://app.any.run/tasks/de75f5f9-94a4-421d-940f-99fa1e2bd850/
+
+Lingjiang
+
+# Reference: https://news.sophos.com/en-us/2022/06/15/telerik-ui-exploitation-leads-to-cryptominer-cobalt-strike-infections
+# Reference: https://otx.alienvault.com/pulse/62a9f96003d8f53c24d0bf94
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/Troj-Miner-AED.csv
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/C2_configs/cobaltstrike.csv
+
+\bMANM; MANM\b
+\bNP07; NP07\b
+\bNP09; NP09\b
+
+# Reference: https://twitter.com/siri_urz/status/1543960444708200448
+# Reference: https://tria.ge/220822-vh3xsaafek/behavioral1
+
+qwrqrwrqwrqwr
+rqwrwqrqwrqw
+mozzzzzzzzzzz
+
+# Reference: https://cert.gov.ua/article/619229 (Ukrainian)
+# Reference: https://blog.malwarebytes.com/threat-intelligence/2022/07/cobalt-strikes-again-uac-0056-continues-to-target-ukraine-in-its-latest-campaign/
+
+D-M1-200309AC
+D-M1-MSSP1
+Frsg_stredf_o21_rutyyyrui_type
+rutyyyrui
+
+# Reference: https://www.trendmicro.com/en_us/research/22/g/brand-new-havanacrypt-ransomware-poses-as-google-software-update.html
+
+Havana/1.0
+
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-July/030700.html
+
+Mozilla/5.0_
+
+# Reference: https://blogs.jpcert.or.jp/en/2022/07/yamabot.html
+
+TW96aWxs
+
+# Reference: https://twitter.com/abuse_ch/status/1545677016665673728
+
+Mozilla/777.0
+
+# Reference: https://twitter.com/FreyJST/status/1545672965223682049
+
+Mozilla/5.0 Firefox/87.0
+
+# Reference: https://cert.gov.ua/article/703548 (Ukrainian)
+
+e4ECaCzC
+
+# Reference: https://www.virustotal.com/gui/file/8f5a09f08a9249cba03ab8d1fa7c23d42599e6084995a6ed86e85ad2539244ba/behavior/Zenbox
+
+\bUSERAGENT\b
+
+# Reference: https://twitter.com/malwrhunterteam/status/1550403360544759808
+# Reference: https://www.virustotal.com/gui/file/aa2043e2d9adadeb6f330d1be3d159b07a0b9d785cee925eb7a70a5ed049a9f5/detection
+
+QQDownload
+
+# Reference: https://github.com/stamparm/maltrail/issues/19105
+
+Momentum
+Hello, Momentum
+
+# Reference: https://twitter.com/ankit_anubhav/status/1553048821407436800
+
+lVali
+
+# Reference: https://twitter.com/tosscoinwitcher/status/1556698096813232129
+# Reference: https://trunc.org/learning/the-mozlila-user-agent-bot
+# Reference: https://www.abuseipdb.com/check/51.142.175.104
+
+Mozlila
+
+# Reference: https://twitter.com/ViriBack/status/1557836030421630977
+# Reference: https://tria.ge/220811-zp8h3accfr
+
+Lilith
+Lilith-Bot
+Lilith-Bot/3.0
+
+# Reference: https://twitter.com/StopMalvertisin/status/1558446050545139712
+
+\bMASP\b
+
+# Reference: https://twitter.com/abuse_ch/status/1561631369096314881
+
+\bHTTP/1.1\b
+
+# Reference: https://twitter.com/TekDefense/status/1577650055057739777
+
+FUCKUSA
+
+# Reference: https://twitter.com/reecdeep/status/1578299118761697280
+
+\AWindows Explorer\Z
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/C2_configs/cobaltstrike.csv
+
+\bMAAU\b
+
+# Reference: https://twitter.com/1ZRR4H/status/1581003413420376067
+
+Report Runner
+
+# Reference: http://lists.emergingthreats.net/pipermail/emerging-sigs/2022-October/030777.html
+
+\bRT/1.0\b
+
+# Reference: https://twitter.com/siri_urz/status/1582325545031069697
+# Reference: https://www.virustotal.com/gui/file/2a0047fe9748f2a45196dbf75e4f1a951d249daad380cbc9eab85ff66fb35814/detection
+
+medusa-stealer
+medusa
+stealer
+
+# Reference: https://cert.gov.ua/article/2394117 (Ukrainian)
+
+Example/1.0
+
+# Reference: https://www.zscaler.com/blogs/security-research/warhawk-new-backdoor-arsenal-sidewinder-apt-group-0
+
+Base/1.0
+
+# Reference: https://twitter.com/crep1x/status/1584256833962749954
+
+TakeMyPainBack
+
+# Reference: https://tria.ge/221109-b2yydseebj/behavioral1
+
+ZLoad
+ZLoad/0.1
+ZLoad-Software
+
+# Reference: https://corelight.com/blog/detecting-5-current-apts
+
+Trailer/95.3.1132.33
 
 # Misc
 

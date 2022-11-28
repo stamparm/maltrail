@@ -3060,3 +3060,97 @@ umonions.com
 # Reference: https://www.virustotal.com/gui/file/0001fa90535306d93eb691b5d1906c32478396943dde09a4586a19bfb7b0ea57/detection
 
 d1picnfwewmhyp.cloudfront.net
+
+# Reference: https://twitter.com/James_inthe_box/status/1535373385160486912
+# Reference: https://scammer.info/t/amanvpn-trojan/99127
+# Reference: https://app.any.run/tasks/de75f5f9-94a4-421d-940f-99fa1e2bd850/
+# Reference: https://app.any.run/tasks/f80cac1b-b7ac-4dbd-8899-ebd97fa01d50/
+
+43.154.154.166:9166
+10.17ce.holadns.com
+amanvpn.online
+
+# Reference: https://www.virustotal.com/gui/ip-address/190.123.44.218/relations
+# Reference: https://www.virustotal.com/gui/file/2fb567bdec66d96231b28d90d8198e7074cce5c77932094a0249ff35dd7e222d/detection
+# Reference: https://www.virustotal.com/gui/file/c18cff12b8a90ac443d9b229a4b5babe27a3867564bbcacb310a9c15f1e1193e/detection
+
+espanex.net
+
+# Reference: https://www.virustotal.com/gui/file/d63527ca64cd4ee0eab0ced2415529641ebe62f4120b1c853939b39ade515abd/detection
+
+phone-mine-give.gq
+
+# Reference: https://www.virustotal.com/gui/file/0001efb8d8e875cf47a5a95fb0c15bf54b7c710eae1444b9dca30c0db414da96/detection
+
+reqapi.ru
+
+# Reference: https://www.virustotal.com/gui/file/43d9be6bd4805a0ac49944630a07fe75b9685740c5f69f145cec22e580699d42/detection
+# Reference: https://www.virustotal.com/gui/file/249d8d9100947ab56140151fa59474e95fdf44e883163068576df2a2cc9405d9/detection
+
+s-f-t.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/51.158.129.218/relations
+
+mdgt.to
+mediaget.com
+media-get.com
+media-get.ru
+
+# Reference: https://www.virustotal.com/gui/file/989897d53925afc4380277c3ad61f0ae45927383762208c9aade79b3bb6fc661/detection
+
+xsnseed.xyz
+autoseeds.xsnseed.xyz
+
+# Reference: https://www.virustotal.com/gui/file/f72ee83436cb1f82366bfaafb14a4c0cb99826c02166fc0bd21fb6e7eb5190c6/detection
+
+d4w1kp01cnm54.cloudfront.net
+
+# Reference: https://www.virustotal.com/gui/file/2d3274df572455cf53f0c6311516fc3c88e81988d46340be04b8918da5760b8a/detection
+
+http://23.106.215.64
+
+# Reference: https://www.virustotal.com/gui/file/c19e58873ff83a81b781c0e406d1c032a77c24e407fb0bfabb43e8c1a5d8a809/detection
+# Reference: https://www.virustotal.com/gui/file/7f239a3a31e98287e020eb2fc5323924f928fba8b762435efbff4da07bbd93c0/detection
+# Reference: https://www.virustotal.com/gui/file/58d751675433fefca907c0c367e257961c67fd1eb02f7ebb96ce5205bf4caa9a/detection
+
+auth.360mon.cn
+
+# Reference: https://www.virustotal.com/gui/file/00009a6dc31621199d0d70b05b15fae993bf70e06ffdd9b283615b934d9eed41/detection
+
+blockey.ru
+discriminate.blockey.ru
+
+# Reference: https://www.virustotal.com/gui/file/84c842e3090e3e21a4aa180b4c4dea16dabf613964a7f926f360db6f9fc92e20/detection
+
+108.61.73.119:8100
+140.228.162.213:9998
+144.76.109.79:9998
+159.253.149.12:8794
+70.87.43.40:8000
+81.173.3.139:8082
+82.147.38.180:8000
+buddyvu.net
+
+# Reference: https://www.virustotal.com/gui/file/7eb5ac862db8e4be2d6c51f51acecf6e8edb096b61a4da965a17b1582792d4d4/detection
+
+radicmenu.xyz
+
+# Reference: https://www.virustotal.com/gui/file/f5690282a935eb4a3f1c09d07abbe1c07f4da5f2ae776d4bb903f9bd1927e558/detection
+
+fsl.sytes.net
+
+# Reference: https://www.virustotal.com/gui/file/000f9c586e2f54378a2a5256e9eecae35f2a527b4816c94b28e5eaa720766fc6/detection
+
+gamersguide.top
+
+# Reference: https://twitter.com/James_inthe_box/status/1587194894128291840
+# Reference: https://app.any.run/tasks/bc1e8ab0-3b1a-4c73-afc6-9d7e79355ce2/
+# Reference: https://www.virustotal.com/gui/file/1c8a957392cb532918eedc1de43a2a6e3532d038a760f63d82fc1a6e998b6a3e/detection
+
+check-data.xyz
+api.check-data.xyz
+api2.check-data.xyz
+api3.check-data.xyz
+api4.check-data.xyz
+api5.check-data.xyz
+/api2/google_api_ifi
