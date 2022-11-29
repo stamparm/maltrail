@@ -8,3 +8,10 @@
 5.101.4.196:8443
 5.101.5.196:8443
 80.211.130.78:8443
+
+# Reference: https://github.com/conexioninversa/MalwareIntel/blob/main/C2_Deimos.txt
+
+165.227.45.251:8443
+217.73.62.166:8443
+34.28.124.78:8443
+34.88.231.68:8443
