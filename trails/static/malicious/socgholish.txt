@@ -1108,6 +1108,14 @@ montage.travelguidediva.com
 
 mini.ptipexcel.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-11-28-v10183/182
+
+mask.covidturf.com
+pastor.cntcog.org
+perspective.cdsignner.com
+progress.cashdigger.com
+wiki.clotheslane.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
