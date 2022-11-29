@@ -77,6 +77,7 @@ spectrumofinnovation.org
 digitalhealthrecord.live
 
 # Reference: https://github.com/conexioninversa/MalwareIntel/blob/main/C2_All.csv
+# Reference: https://github.com/conexioninversa/MalwareIntel/blob/main/C2_BruteRatel.txt
 
 http://13.113.188.183
 http://13.114.203.227
@@ -93,6 +94,7 @@ http://35.74.220.117
 http://35.77.140.201
 http://52.198.179.162
 http://54.178.240.29
+http://54.238.217.34
 http://54.249.104.32
 http://54.249.138.251
 http://54.92.22.199
@@ -129,6 +131,7 @@ http://54.92.4.22
 45.43.2.62:443
 47.242.33.173:443
 54.194.184.233:443
+54.235.16.137:443
 54.93.134.133:443
 64.227.11.231:443
 70.34.214.250:8443
