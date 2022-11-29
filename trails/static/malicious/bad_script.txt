@@ -6361,6 +6361,11 @@ http://37.1.209.213
 
 /clineti2022.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1596217071742128128
+# Reference: https://www.virustotal.com/gui/file/74712e4b42600980566b6dc10df3fb2f63a7daefc3e28abc591d222e3fe0ece0/detection
+
+/gsis.ps1
+
 # Generic
 
 /js/altmanluggage.js
