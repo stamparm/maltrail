@@ -14,15 +14,14 @@
 
 
 
-- Version 0.51 -> 0.52 (Upcoming release)
+- Version 0.52 -> 0.53 (Upcoming release)
 
 
 
+- Version 0.51 -> 0.52 (01 Dec 2022)
 
-
-
-
-
+[=] "potential iot-malware download" heur is improved
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
