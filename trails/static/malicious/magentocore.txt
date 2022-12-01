@@ -7746,6 +7746,11 @@ mozillajs.org
 payment-analytics.info
 stirepoint.com
 
+# Reference: https://twitter.com/SinghSoodeep/status/1598320639961710596
+# Reference: https://www.virustotal.com/gui/ip-address/46.30.40.108/detection
+
+cdn-jsnode-call.com
+
 # Generic
 
 /assets/lfg.js
