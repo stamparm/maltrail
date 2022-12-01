@@ -297,3 +297,7 @@ ingtobepu.online
 # Reference: https://www.virustotal.com/gui/file/15899c2758f4c11f50608756ef6eac8abd17f41735bc96c6ad0797199d2dcdc1/detection
 
 eattheendo.online
+
+# Reference: https://www.virustotal.com/gui/file/075c6b8194ae8ac28c94e8eba249591445a8392616903036a09fcec0f485860e/detection
+
+safestrong.space
