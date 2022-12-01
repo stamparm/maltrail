@@ -298,6 +298,8 @@ ingtobepu.online
 
 eattheendo.online
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.254.198.179/relations
 # Reference: https://www.virustotal.com/gui/file/075c6b8194ae8ac28c94e8eba249591445a8392616903036a09fcec0f485860e/detection
 
+safestarong.lol
 safestrong.space
