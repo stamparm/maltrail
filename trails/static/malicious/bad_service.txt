@@ -586,3 +586,7 @@ wazusoft.com
 # Reference: https://lukeleal.com/research/posts/strox-phishing-service-and-how-it-works/
 
 strox.su
+
+# Reference: https://twitter.com/TheDFIRReport/status/1598069289814495234
+
+godstresser.pro
