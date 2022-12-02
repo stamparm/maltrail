@@ -3154,3 +3154,9 @@ api3.check-data.xyz
 api4.check-data.xyz
 api5.check-data.xyz
 /api2/google_api_ifi
+
+# Reference: https://www.virustotal.com/gui/file/4117b6a6aea958e243a28f51b7506f2b9805d59572fc358160e9a7f832cdbb28/detection
+
+experthostings.ru
+moreinstalls.ru
+dlc.experthostings.ru
