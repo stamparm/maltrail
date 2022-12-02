@@ -7665,6 +7665,7 @@ google-manager.com
 google-portal.com
 google-server.com
 google-work.com
+_mta-sts.cloudfsnbg.cc
 
 # Reference: https://twitter.com/unmaskparasites/status/1572635560153612288
 # Reference: https://www.virustotal.com/gui/ip-address/94.131.107.62/relations
