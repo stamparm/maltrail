@@ -3407,3 +3407,41 @@ dynuddns.com
 # Reference: https://www.virustotal.com/gui/domain/123ddns.com/relations
 
 123ddns.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-11-28-v10183/182
+
+afphila.com
+alam-maritim.com
+alam-maritim.com.my
+alfa145.com
+aussievitamin.com
+autoprin.com
+baselinux.net
+bgg.cl
+churchrez.org
+cityofgreen.com
+cityofgreen.com.my
+cspcorp.com
+ctx.cl
+dcmusic.ca
+dixiesewing.com
+firesidegrillandbar.com
+hedbergandson.com
+iliensale.com
+img.com.ar
+industrialmill.com
+jodymaroni.com
+keystoneuniformcap.com
+lettersandscience.net
+lotusblossomconsulting.com
+motoretta.ca
+norushcharge.com
+oops.wtf
+pakasak.com
+pusilkom.com
+qualitypoolsboulder.com
+staffpro.net
+tibet.org
+tinosmarble.com
+vhfdental.com
+youramys.com
