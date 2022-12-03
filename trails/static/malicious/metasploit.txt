@@ -1117,3 +1117,27 @@ http://51.68.138.162
 # Reference: https://twitter.com/drb_ra/status/1598123234058293249
 
 23.21.80.137:4443
+
+# Reference: https://twitter.com/drb_ra/status/1598843071734714369
+
+94.242.61.116:443
+
+# Reference: https://twitter.com/drb_ra/status/1598843104051724289
+
+107.181.174.28:443
+
+# Reference: https://twitter.com/drb_ra/status/1598843164261224450
+
+5.199.173.237:443
+
+# Reference: https://twitter.com/drb_ra/status/1598843210398191617
+
+3.92.213.225:443
+
+# Reference: https://twitter.com/drb_ra/status/1598843298676117504
+
+154.204.28.190:8443
+
+# Reference: https://twitter.com/drb_ra/status/1598843330145779714
+
+35.78.145.242:443
