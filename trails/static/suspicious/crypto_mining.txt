@@ -1011,3 +1011,7 @@ node3.luckpool.net
 # Reference: https://www.virustotal.com/gui/file/1ca00897bd6392c74cb297c24f66ffbe1f4162a64fc44ee7bf7f2fb9c7468795/detection
 
 162.19.139.184:13333
+
+# Reference: https://www.virustotal.com/gui/file/a7fc1e38349297186b90d7ee6a9a237e8bc4679b6874688cf6b79a7045fd3b47/detection
+
+51.15.69.136:14433
