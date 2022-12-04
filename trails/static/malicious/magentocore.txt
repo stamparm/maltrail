@@ -7752,6 +7752,12 @@ stirepoint.com
 
 cdn-jsnode-call.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/34.171.171.32/relations
+# Reference: https://www.virustotal.com/gui/ip-address/51.91.209.190/relations
+
+jquerystatistik.com
+jqurystatistic.com
+
 # Generic
 
 /assets/lfg.js
