@@ -3407,3 +3407,7 @@ dynuddns.com
 # Reference: https://www.virustotal.com/gui/domain/123ddns.com/relations
 
 123ddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/trueddns.com/relations
+
+trueddns.com
