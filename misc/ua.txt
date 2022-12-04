@@ -2194,6 +2194,10 @@ Trailer/95.3.1132.33
 
 \bMac OS X 10\_15\_\w+\b
 
+# Reference: https://twitter.com/crep1x/status/1599490308357488640
+
+\b20112211\b
+
 # Misc
 
 information_schema
