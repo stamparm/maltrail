@@ -156,3 +156,9 @@ identity.ondemand-9839.ske.psydev.eu
 143.110.214.130:8080
 18.190.153.173:8080
 65.108.227.57:9999
+
+# Reference: https://twitter.com/h2jazi/status/1599882699195711489
+# Reference: https://www.virustotal.com/gui/file/3272bfc6ad54f1162db8c01f0621e295068ac363cb8b5f98b179920c47138de2/detection
+
+23.94.131.51:8888
+kmatv.com
