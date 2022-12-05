@@ -595,5 +595,6 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * [mobileAudit](https://github.com/mpast/mobileAudit#environment-variables) <sup>1</sup>
 * [Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF/commit/12b07370674238fa4281fc7989b34decc2e08876) <sup>1</sup>
 * [pfBlockerNG-devel](https://github.com/pfsense/FreeBSD-ports/blob/devel/net/pfSense-pkg-pfBlockerNG-devel/files/usr/local/www/pfblockerng/pfblockerng_feeds.json) <sup>1</sup>
+* [Sansec eComscan](https://sansec.io/kb/about-ecomscan/ecomscan-license)<sup>1</sup>
  
 <sup>1</sup> Using (only) trails
