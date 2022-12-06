@@ -303,3 +303,7 @@ eattheendo.online
 
 safestarong.lol
 safestrong.space
+
+# Reference: https://www.virustotal.com/gui/file/03a253ba493b87a12e97c235368b89fa358c2e05e1db83e735a82fe71eadf3bc/detection
+
+lariwasdoi.online
