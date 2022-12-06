@@ -1089,6 +1089,29 @@ f622.campaign.tworiversboat.com
 
 coinangel.online
 rate.coinangel.online
+0096.rate.coinangel.online
+0ed7.rate.coinangel.online
+0f71.rate.coinangel.online
+247d.rate.coinangel.online
+3162.rate.coinangel.online
+3f5a.rate.coinangel.online
+4862.rate.coinangel.online
+5a75.rate.coinangel.online
+5c31.rate.coinangel.online
+7507.rate.coinangel.online
+860a.rate.coinangel.online
+881f.rate.coinangel.online
+8941.rate.coinangel.online
+8cff.rate.coinangel.online
+90222.rate.coinangel.online
+9e033.rate.coinangel.online
+bef30.rate.coinangel.online
+c4e85.rate.coinangel.online
+c62f8.rate.coinangel.online
+c827.rate.coinangel.online
+cefd.rate.coinangel.online
+f098.rate.coinangel.online
+fd24.rate.coinangel.online
 
 # Reference: https://blog.sucuri.net/2022/11/new-socgholish-malware-variant-uses-zip-compression-evasive-techniques.html
 
@@ -1221,6 +1244,21 @@ f63d5.diary.lojjh.com
 fe14.discover.jsfconnections.com
 feaf.discover.jsfconnections.com
 test.diary.lojjh.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1600166713257082882
+
+fate.truelance.com
+09283.fate.truelance.com
+1cd4d.fate.truelance.com
+206bc.fate.truelance.com
+3978b.fate.truelance.com
+3cc9d.fate.truelance.com
+73d86.fate.truelance.com
+86248.fate.truelance.com
+a406c.fate.truelance.com
+ad373.fate.truelance.com
+cf0bc.fate.truelance.com
+d824c.fate.truelance.com
 
 # Generic
 
