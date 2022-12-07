@@ -6,3 +6,8 @@
 # Reference: https://otx.alienvault.com/pulse/637ded425913a7ae19e7113e
 
 sephus.me
+
+# Reference: https://twitter.com/1ZRR4H/status/1600569404705619988
+
+clrf.net
+corporate-document-exchange.com
