@@ -732,6 +732,10 @@ isn.is
 
 bitly.email
 
+# Reference: https://twitter.com/unmaskparasites/status/1600578315659927552
+
+cutlinks.pw
+
 # Reference: https://twitter.com/unmaskparasites/status/1593690935959093248
 # Reference: https://www.virustotal.com/gui/ip-address/89.22.228.250/relations
 
