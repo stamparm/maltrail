@@ -724,6 +724,10 @@ i-io.io
 i-s.is
 t-o.to
 
+# Reference: https://twitter.com/unmaskparasites/status/1600270751911014400
+
+isn.is
+
 # Reference: https://twitter.com/unmaskparasites/status/1593690935959093248
 # Reference: https://www.virustotal.com/gui/ip-address/89.22.228.250/relations
 
