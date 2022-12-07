@@ -6372,6 +6372,11 @@ http://37.1.209.213
 /lib32.hta
 /lib64.hta
 
+# Reference: https://twitter.com/h2jazi/status/1600536584398553107
+# Reference: https://www.virustotal.com/gui/file/d1cdab058056e0e4cbf2a08851d493d9f46d1d36e65f7b284d2ecc3558e80660/detection
+
+/dwopen.hta
+
 # Generic
 
 /js/altmanluggage.js
