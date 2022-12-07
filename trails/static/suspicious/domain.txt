@@ -5514,3 +5514,8 @@ gte666.com
 # Reference: https://www.virustotal.com/gui/domain/line.pm/detection
 
 line.pm
+
+# Reference: https://twitter.com/drb_ra/status/1600514743151779842
+# Reference: https://www.virustotal.com/gui/domain/gxhw.work/relations
+
+gxhw.work
