@@ -3337,3 +3337,9 @@ msftncsi.com
 dns.msftncsi.com
 inbound.msftncsi.com
 ipv6.msftncsi.com
+
+# Reference: https://twitter.com/suyog41/status/1595020860121034753
+# Reference: https://twitter.com/lowmal3/status/1600551259328724995
+# Reference: https://www.virustotal.com/gui/file/0d54959cda6c8904d343752c8a0c54749c7f0aa0a8b0dd9e45b70b7acf42e7ef/detection
+
+185.125.188.59:443
