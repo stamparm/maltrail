@@ -6368,6 +6368,7 @@ http://37.1.209.213
 
 # Reference: https://cert-agid.gov.it/wp-content/uploads/2022/12/trojan.json_.txt
 
+/lib.hta
 /lib32.hta
 /lib64.hta
 
