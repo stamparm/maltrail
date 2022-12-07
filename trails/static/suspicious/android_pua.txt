@@ -845,3 +845,9 @@ appmaket.giize.com
 # Reference: https://www.virustotal.com/gui/domain/sparkskillzs.com/relations
 
 sparkskillzs.com
+
+# Reference: https://blog.cyble.com/2022/11/30/fraudulent-digital-lending-andriod-app-steals-users-sensitive-data/
+# Reference: https://otx.alienvault.com/pulse/63888045dddb253caea1e2b0
+
+api.loanbee.tech
+sentry.weza.tech
