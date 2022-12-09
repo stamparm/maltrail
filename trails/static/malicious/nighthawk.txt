@@ -15,3 +15,8 @@ corporate-document-exchange.com
 # Reference: https://twitter.com/Gi7w0rm/status/1600977276417589248
 
 3.229.134.140:443
+
+# Reference: https://twitter.com/MichalKoczwara/status/1601278387141496832
+
+offensive-operations.live
+urbanhealthgoods.com
