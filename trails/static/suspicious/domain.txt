@@ -5519,3 +5519,7 @@ line.pm
 # Reference: https://www.virustotal.com/gui/domain/gxhw.work/relations
 
 gxhw.work
+
+# Reference: https://www.virustotal.com/gui/domain/bby.gg/relations
+
+bby.gg
