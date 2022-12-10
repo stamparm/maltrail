@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2022 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/MichalKoczwara/status/1601324821614194688
+
+165.22.30.136:3000
+165.22.30.136:4000
+165.227.198.201:3000
+165.227.198.201:4000
+20.172.22.144:3000
+20.172.22.144:4000
+23.99.193.156:3000
+23.99.193.156:4000
+46.101.184.179:3000
+46.101.184.179:4000
