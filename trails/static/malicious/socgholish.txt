@@ -1260,6 +1260,11 @@ ad373.fate.truelance.com
 cf0bc.fate.truelance.com
 d824c.fate.truelance.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-12-09-v10192/201
+
+automatic.tworiversboats.com
+logistics.socialtrendsmanagement.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
