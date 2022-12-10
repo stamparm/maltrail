@@ -1194,3 +1194,11 @@ http://51.68.138.162
 # Reference: https://twitter.com/drb_ra/status/1601209201191174144
 
 103.87.8.246:2053
+
+# Reference: https://twitter.com/drb_ra/status/1601364502871777280
+
+151.115.57.153:4444
+
+# Reference: https://twitter.com/drb_ra/status/1601364518797467651
+
+44.198.115.204:443
