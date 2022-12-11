@@ -160,6 +160,7 @@ cryptolvl-rsa-check.com
 86.105.252.221:7443
 94.140.115.118:7443
 moofasa.grayhatfreelancing.com
+mythic-ceramic.braindeadideas.com
 
 # Reference: https://twitter.com/IronNetTR/status/1588154026297675777
 
