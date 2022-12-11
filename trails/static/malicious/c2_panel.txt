@@ -355,6 +355,25 @@ vscode.workingfeedback.cloud
 
 /panel/gate.php
 
+# Reference: https://twitter.com/ViriBack/status/1602050280832524289
+
+/Server_Panel/private/admin.php
+/Server_Panel/public/admin.php
+/Server_Panel/private/api.php
+/Server_Panel/public/api.php
+/Server_Panel/private/auth.php
+/Server_Panel/public/auth.php
+/Server_Panel/private/gate.php
+/Server_Panel/public/gate.php
+/Server_Panel/private/index.php
+/Server_Panel/public/index.php
+/Server_Panel/private/login.php
+/Server_Panel/public/login.php
+/Server_Panel/private/panel.php
+/Server_Panel/public/panel.php
+/Server_Panel/private/
+/Server_Panel/public/
+
 # Generic
 
 /admin_123/auth.php
