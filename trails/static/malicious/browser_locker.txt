@@ -9423,6 +9423,7 @@ yoickspe.click
 
 arbalsafedager.tk
 assistance.pages.dev
+axoneday.xyz
 cepphonand.gq
 compcadisp.ga
 errorlogwiththechecker.xyz
@@ -9501,3 +9502,16 @@ tomorr.click
 tricktm.sbs
 uiere.click
 valpay.sbs
+
+# Reference: https://www.virustotal.com/gui/ip-address/51.158.237.57/relations
+
+caiiles.click
+clerm.click
+coachh.click
+discoo.cyou
+donorr.cfd
+donorr.click
+haits.sbs
+shockk.sbs
+slops.cfd
+unionn.cfd
