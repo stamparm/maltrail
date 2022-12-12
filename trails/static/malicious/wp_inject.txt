@@ -736,6 +736,16 @@ bitly.email
 
 cutlinks.pw
 
+# Reference: https://twitter.com/unmaskparasites/status/1602374685278470144
+
+c-you.cyou
+cutlinks.ca
+cutlinks.ch
+cuturls.net
+gov-cn.cloud
+i-n-fo.info
+qis.is
+
 # Reference: https://twitter.com/unmaskparasites/status/1593690935959093248
 # Reference: https://www.virustotal.com/gui/ip-address/89.22.228.250/relations
 
