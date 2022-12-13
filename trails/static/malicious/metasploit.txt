@@ -1240,3 +1240,7 @@ http://51.68.138.162
 # Reference: https://twitter.com/drb_ra/status/1602466835559071746
 
 http://185.122.204.49
+
+# Reference: https://www.virustotal.com/gui/file/069db9d40615c75a108c614fb9bfe685f551b6361df515894f4d0dbf80550ae6/detection
+
+193.117.208.148:7800
