@@ -6379,6 +6379,18 @@ http://37.1.209.213
 /dwopen.hta
 /dwopen1.hta
 
+# Reference: https://www.virustotal.com/gui/ip-address/18.222.107.105/relations
+# Reference: https://www.virustotal.com/gui/file/474a83ab9e606773f64bce7d639dae8a56f262af53ef0e7ee0d5be2bc6695d88/detection
+
+/RusherBypass.asp
+/RusherBypass.aspx
+/RusherBypass.bat
+/RusherBypass.hta
+/RusherBypass.js
+/RusherBypass.php
+/RusherBypass.ps1
+/RusherBypass.vbs
+
 # Generic
 
 /js/altmanluggage.js
