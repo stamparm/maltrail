@@ -1249,3 +1249,7 @@ http://185.122.204.49
 
 193.117.208.148:5500
 /rlwetshnx1xexd9cg_rndw9ytz83kp
+
+# Reference: https://www.virustotal.com/gui/file/86463351c4f6a657ec1c702debca5a25f52a42775a40e786245ce75bce1d6d7e/detection
+
+http://193.117.208.148
