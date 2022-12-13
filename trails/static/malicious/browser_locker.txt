@@ -7851,6 +7851,7 @@ anbel.live
 anged.live
 angor.live
 anido.live
+anine.live
 anopa.live
 ansim.live
 antel.live
@@ -7918,6 +7919,7 @@ bagudil.bio
 bagydo.online
 baika.live
 bairak.online
+baket.live
 bakub.live
 bakul.live
 bakun.live
@@ -7966,6 +7968,7 @@ bediso.life
 bedom.live
 befan.live
 befir.live
+befom.live
 begil.live
 begit.live
 begon.live
@@ -8000,6 +8003,7 @@ besify.live
 besor.live
 bestir.live
 besuryf.life
+besut.live
 betar.live
 beteg.live
 betido.live
@@ -9125,6 +9129,7 @@ regnal.live
 rehem.live
 rekapu.life
 rekon.live
+relok.live
 remak.live
 reman.live
 remic.live
@@ -9146,6 +9151,7 @@ reway.live
 rewok.live
 reyasko.live
 ridwetto.live
+rifen.live
 rigowh.life
 rimet.live
 rinok.live
@@ -9353,6 +9359,7 @@ zidako.online
 # Reference: https://www.virustotal.com/gui/ip-address/185.254.198.179/relations
 
 cleanhelper.click
+cleansafe.space
 cleansafe.website
 dailyaward.net
 fastcleansafer.quest
@@ -9369,13 +9376,17 @@ protectyourself.name
 protectyourself.space
 safesecurity.fun
 safesecuritymcafee.fun
+safestarong.lol
+safestrong.space
 scanreport.click
 scanreport.help
 securiry.link
 securiry.online
 securiry.tech
 securityprotect.net
+spyblock.website
 stopscan.space
+stopscan.website
 system-notify.art
 totalproect.homes
 totalproect.live
