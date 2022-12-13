@@ -1244,3 +1244,8 @@ http://185.122.204.49
 # Reference: https://www.virustotal.com/gui/file/069db9d40615c75a108c614fb9bfe685f551b6361df515894f4d0dbf80550ae6/detection
 
 193.117.208.148:7800
+
+# Reference: https://www.virustotal.com/gui/file/a0bca0e78f857d3481784101a7c0b1c06572343691fcb8cde8d1c6b540b0cf49/detection
+
+193.117.208.148:5500
+/rlwetshnx1xexd9cg_rndw9ytz83kp
