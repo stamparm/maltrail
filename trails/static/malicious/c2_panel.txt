@@ -374,6 +374,11 @@ vscode.workingfeedback.cloud
 /Server_Panel/private/
 /Server_Panel/public/
 
+# Reference: https://twitter.com/malwrhunterteam/status/1603105037399605250
+# Reference: https://www.virustotal.com/gui/file/76d4de84e32bc7f40a131f51e1fc56213b05391cb3a809330a4296c224f9cc22/detection
+
+/api/?botid=
+
 # Generic
 
 /admin_123/auth.php
