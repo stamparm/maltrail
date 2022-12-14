@@ -140,3 +140,7 @@ http://54.92.4.22
 70.34.214.250:8443
 79.3.12.7:9002
 94.102.49.64:443
+
+# Reference: https://twitter.com/IronNetTR/status/1603042127251877889
+
+systemresync.com
