@@ -737,14 +737,42 @@ bitly.email
 cutlinks.pw
 
 # Reference: https://twitter.com/unmaskparasites/status/1602374685278470144
+# Reference: https://twitter.com/unmaskparasites/status/1603106867794022401
+# Reference: https://www.virustotal.com/gui/ip-address/142.11.214.173/relations
+# Reference: https://www.virustotal.com/gui/ip-address/172.96.189.69/relations
+# Reference: https://www.virustotal.com/gui/ip-address/198.27.80.139/relations
 
+b-i-t-l-y.co
+b-i-t-l-y.net
+bit-ly.mobi
+bitly.team
 c-you.cyou
+cc-z.cz
+co-o.co
 cutlinks.ca
 cutlinks.ch
+cutlinks.org
 cuturls.net
 gov-cn.cloud
 i-n-fo.info
 qis.is
+s-sh.sh
+ufox.info
+w-ws.ws
+webb-i-t-l-y.co
+webb-i-t-l-y.net
+webbit-ly.mobi
+webbitly.email
+webbitly.team
+webcc-z.cz
+webcutlinks.pw
+webgov-cn.cloud
+webufox.info
+b-i-t-l-y.co.b-i-t-l-y.net
+bit-ly.mobi.b-i-t-l-y.net
+bitly.eb-i-t-l-y.net
+bitly.team.b-i-t-l-y.net
+gov-cn.cloud.b-i-t-l-y.net
 
 # Reference: https://twitter.com/unmaskparasites/status/1593690935959093248
 # Reference: https://www.virustotal.com/gui/ip-address/89.22.228.250/relations
