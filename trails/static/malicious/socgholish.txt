@@ -1265,6 +1265,11 @@ d824c.fate.truelance.com
 automatic.tworiversboats.com
 logistics.socialtrendsmanagement.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-12-13-v10195/205
+
+library.covebooks.com
+modernism.designpaw.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
