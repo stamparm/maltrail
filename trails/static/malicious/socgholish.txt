@@ -1270,6 +1270,12 @@ logistics.socialtrendsmanagement.com
 library.covebooks.com
 modernism.designpaw.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-12-15-v10197/208
+
+brooklands.harteverything.com
+deposit.coveprice.com
+fittingroom.gibbsjewelry.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
