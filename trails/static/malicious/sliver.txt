@@ -168,3 +168,10 @@ kmatv.com
 # Reference: https://twitter.com/MichalKoczwara/status/1603014021791227905
 
 103.215.127.5:8000
+
+# Reference: https://twitter.com/MichalKoczwara/status/1603709696405225472
+# Reference: https://www.virustotal.com/gui/file/92876bc30ecc2493710d8e0f714a8d12277a3208139d26bc85e12839129fd4f1/detection
+
+http://13.48.204.226
+13.48.204.226:443
+13.48.204.226:8082
