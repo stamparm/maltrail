@@ -5523,3 +5523,9 @@ gxhw.work
 # Reference: https://www.virustotal.com/gui/domain/bby.gg/relations
 
 bby.gg
+
+# Reference: https://twitter.com/SBousseaden/status/1603825679040028673
+# Reference: https://www.virustotal.com/gui/file/4c364fdb7b16cc0341595dc5861542c1f1c70758df90a10fec41fb701f79a700/detection
+# Reference: https://www.virustotal.com/gui/file/7a491a8df3c38e90c8c7398b53b8772e08d0801629235f4a0713e7ab22245287/detection
+
+stoanews.com
