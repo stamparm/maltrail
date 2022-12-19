@@ -6391,6 +6391,10 @@ http://37.1.209.213
 /RusherBypass.ps1
 /RusherBypass.vbs
 
+# Reference: https://www.virustotal.com/gui/file/16fb8609cbf720e31b7850a02fc3a2951a44efcdaf1b5fb960160e7d15e7d009/detection
+
+/config_20.ps1
+
 # Generic
 
 /js/altmanluggage.js
