@@ -2198,6 +2198,10 @@ Trailer/95.3.1132.33
 
 \b20112211\b
 
+# Reference: https://twitter.com/crep1x/status/1604561875949199373
+
+\b23591\b
+
 # Misc
 
 information_schema
