@@ -6395,6 +6395,11 @@ http://37.1.209.213
 
 /config_20.ps1
 
+# Reference: https://twitter.com/malwrhunterteam/status/1604964169023115264
+# Reference: https://www.virustotal.com/gui/file/b3cb1b5e3d828e25d9802cc536dd89e347bb70528285e1bf1e1acf123fb4659e/detection
+
+/first1.hta
+
 # Generic
 
 /js/altmanluggage.js
