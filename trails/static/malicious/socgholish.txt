@@ -1276,6 +1276,10 @@ brooklands.harteverything.com
 deposit.coveprice.com
 fittingroom.gibbsjewelry.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-12-19-v10199/212
+
+navyseal.bezmail.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
