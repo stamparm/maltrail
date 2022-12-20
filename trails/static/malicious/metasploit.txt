@@ -1284,3 +1284,11 @@ http://193.117.208.148
 # Reference: https://twitter.com/drb_ra/status/1603937863535628289
 
 76.74.127.162:81
+
+# Reference: https://twitter.com/drb_ra/status/1604996140214149120
+
+134.195.91.226:8443
+
+# Reference: https://twitter.com/drb_ra/status/1604996216936452096
+
+140.82.19.3:441
