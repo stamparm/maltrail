@@ -6400,6 +6400,25 @@ http://37.1.209.213
 
 /first1.hta
 
+# Reference: https://flashpoint.io/blog/risepro-stealer-and-pay-per-install-malware-privateloader/
+
+/get_grabber.asp
+/get_grabber.aspx
+/get_grabber.bat
+/get_grabber.hta
+/get_grabber.js
+/get_grabber.php
+/get_grabber.ps1
+/get_grabber.vbs
+/get_grabbers.asp
+/get_grabbers.aspx
+/get_grabbers.bat
+/get_grabbers.hta
+/get_grabbers.js
+/get_grabbers.php
+/get_grabbers.ps1
+/get_grabbers.vbs
+
 # Generic
 
 /js/altmanluggage.js
