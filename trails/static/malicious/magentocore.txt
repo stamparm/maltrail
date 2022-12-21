@@ -8182,6 +8182,10 @@ wl63518921.nothing536.loan
 yq40826.bind853.me
 yv32724828.operator595.city
 
+# Reference: https://www.virustotal.com/gui/ip-address/172.64.80.1/relations
+
+cdnjs.pw
+
 # Generic
 
 /assets/lfg.js
