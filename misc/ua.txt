@@ -2205,7 +2205,10 @@ Trailer/95.3.1132.33
 # Reference: https://unit42.paloaltonetworks.com/trident-ursa/
 
 \bjosephine\b
+\bsnventor\b
 ::\/\.josephine\/
+;;\/\.snventor\/
+(;;|::)\/\.\w+\/
 
 # Misc
 
