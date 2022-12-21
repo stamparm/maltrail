@@ -926,6 +926,8 @@ sophosxl.net
 
 # Generic
 
+asiainfo-sec.com
+blockchain.info
 szhk.com
 qulishi.com
 cdn.discordapp.com
