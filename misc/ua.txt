@@ -1277,7 +1277,7 @@ Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; NP06
 polaris
 polaris botnet
 vbrxmr
-xtc
+\bxtc\b
 xtcbot
 xtc bot
 xtc botnet
