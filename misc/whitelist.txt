@@ -3345,3 +3345,18 @@ ipv6.msftncsi.com
 # Reference: https://www.virustotal.com/gui/file/0d54959cda6c8904d343752c8a0c54749c7f0aa0a8b0dd9e45b70b7acf42e7ef/detection
 
 185.125.188.59:443
+
+# Reference: https://www.virustotal.com/gui/domain/korabli.su/relations
+
+korabli.su
+auth.korabli.su
+blog.korabli.su
+dockyard.korabli.su
+forum-new.korabli.su
+forum.korabli.su
+friends.korabli.su
+phobos-api.korabli.su
+profile.korabli.su
+promo.korabli.su
+stats.korabli.su
+vortex.korabli.su
