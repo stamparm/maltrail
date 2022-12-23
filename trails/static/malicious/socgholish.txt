@@ -1288,6 +1288,15 @@ shrubs.emptyisland.pics
 a02eb.shrubs.emptyisland.pics
 dce42.shrubs.emptyisland.pics
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-12-23-v10204/229
+
+abcbarbecue.xyz
+milonopensky.store
+exclusive.milonopensky.store
+extcourse.zurvio.com
+internship.ojul.com
+perspective.abcbarbecue.xyz
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
