@@ -144,3 +144,7 @@ http://54.92.4.22
 # Reference: https://twitter.com/IronNetTR/status/1603042127251877889
 
 systemresync.com
+
+# Reference: https://twitter.com/MichalKoczwara/status/1606419631601762304
+
+213.227.155.115:1337
