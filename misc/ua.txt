@@ -2211,7 +2211,9 @@ ZeroStresser Botnet
 
 \bjosephine\b
 \bsnventor\b
+\binsufficient\b
 ::\/\.josephine\/
+;;\/\.insufficient\/
 ;;\/\.snventor\/
 (;;|::)\/\.\w+\/
 
