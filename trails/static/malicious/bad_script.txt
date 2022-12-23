@@ -6419,6 +6419,10 @@ http://37.1.209.213
 /get_grabbers.ps1
 /get_grabbers.vbs
 
+# Reference: https://www.virustotal.com/gui/file/c97105d284a7055d6896e5afeb2775c1b1c7fac869fc6aa875c7ea7f46d19800/detection
+
+/lost.ps1
+
 # Generic
 
 /js/altmanluggage.js
