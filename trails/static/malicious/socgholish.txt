@@ -1280,6 +1280,14 @@ fittingroom.gibbsjewelry.com
 
 navyseal.bezmail.com
 
+# Reference: https://twitter.com/bigmacjpg/status/1606124410619953153
+
+shrubs.emptyisland.pics
+7f868.shrubs.emptyisland.pics
+8f5b3.shrubs.emptyisland.pics
+a02eb.shrubs.emptyisland.pics
+dce42.shrubs.emptyisland.pics
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
