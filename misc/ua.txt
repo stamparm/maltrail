@@ -2202,6 +2202,11 @@ Trailer/95.3.1132.33
 
 \b23591\b
 
+# Reference: https://twitter.com/suyog41/status/1600451161848393728
+
+ZeroStresser
+ZeroStresser Botnet
+
 # Reference: https://unit42.paloaltonetworks.com/trident-ursa/
 
 \bjosephine\b
