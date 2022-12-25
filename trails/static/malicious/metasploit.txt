@@ -1308,3 +1308,7 @@ http://193.117.208.148
 # Reference: https://twitter.com/drb_ra/status/1606285959913504770
 
 134.195.91.226:88
+
+# Reference: https://twitter.com/drb_ra/status/1606811919360425984
+
+54.183.159.212:14443
