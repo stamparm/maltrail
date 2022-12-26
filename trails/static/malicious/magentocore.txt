@@ -8201,6 +8201,11 @@ yv32724828.operator595.city
 
 cdnjs.pw
 
+# Reference: https://www.mertsarica.com/magecart-ile-mucadele/
+
+/js/6cb1e31ff2f343a9d576d889bfcbde0e.js
+/6cb1e31ff2f343a9d576d889bfcbde0e.js
+
 # Generic
 
 /assets/lfg.js
