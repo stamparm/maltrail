@@ -8115,6 +8115,14 @@ stirepoint.com
 # Reference: https://www.virustotal.com/gui/ip-address/46.30.40.108/detection
 
 cdn-jsnode-call.com
+cvv-private.online
+cvv-private.space
+cvv24.site
+cvv24.store
+cvvhub.site
+cvvhub.store
+cvvhub.su
+www-cvvhub.ru
 
 # Reference: https://www.virustotal.com/gui/ip-address/34.171.171.32/relations
 # Reference: https://www.virustotal.com/gui/ip-address/51.91.209.190/relations
