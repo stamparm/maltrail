@@ -8115,10 +8115,15 @@ stirepoint.com
 # Reference: https://www.virustotal.com/gui/ip-address/46.30.40.108/detection
 
 cdn-jsnode-call.com
+cvv-news.store
 cvv-private.online
 cvv-private.space
+cvv24.cc
 cvv24.site
 cvv24.store
+cvvamoggrcopaeehscyic6xu3q5lbameo3kv3q3ptpfa5bsq2vrbjsad.onion
+cvvhub.at
+cvvhub.in
 cvvhub.site
 cvvhub.store
 cvvhub.su
