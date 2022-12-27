@@ -3160,3 +3160,9 @@ api5.check-data.xyz
 experthostings.ru
 moreinstalls.ru
 dlc.experthostings.ru
+
+# Reference: https://www.virustotal.com/gui/file/01dc49272964013d343129932871d0f92695f7d05bbbdb6c4415ca5c417c10f8/detection
+
+http://195.20.55.245
+curriculars.ga
+shipment.top
