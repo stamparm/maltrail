@@ -3360,3 +3360,8 @@ profile.korabli.su
 promo.korabli.su
 stats.korabli.su
 vortex.korabli.su
+
+# Reference: https://github.com/stamparm/aux/issues/7
+# Reference: https://github.com/stamparm/maltrail/commit/1aa132c1534beedb357c31bd14f9b9f04cf74860
+
+autism-101.com
