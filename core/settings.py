@@ -93,7 +93,7 @@ SUSPICIOUS_HTTP_REQUEST_REGEXES = (
     ("potential xss injection", r"<script.*?>|\balert\(|(alert|confirm|prompt)\((\d+|document\.|response\.write\(|[^\w]*XSS)|on(mouseover|error|focus|transitionend)=[^&;\n]+\("),
     ("potential xxe injection", r"\[<!ENTITY"),
     ("potential ssti injection", r"\${[^&]+\}|\$\{\{[^&]+\}\}"),
-    ("potential data leakage", r"im[es]i=\d{15}|iccid=[a-zA-Z0-9]{18,22}|(mac|sid)=([0-9a-f]{2}:){5}[0-9a-f]{2}|sim=\d{20}|([a-z0-9_.+-]+@[a-z0-9-.]+\.[a-z]+\b.{0,100}){4}|(telnum|telcompany)=[a-zA-Z0-9-]+"),
+    ("potential data leakage", r"im[es]i=\d{15}|iccid=[a-zA-Z0-9]{18,22}|(mac([aA]ddress)?|sid)=([0-9a-f]{2}:){5}[0-9a-f]{2}|sim=\d{20}|([a-z0-9_.+-]+@[a-z0-9-.]+\.[a-z]+\b.{0,100}){4}|(telnum|telcompany)=[a-zA-Z0-9-]+"),
     ("config file access", r"\.ht(access|passwd)|\bwp-config\.php"),
     ("potential remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|shell_exec|exec_code|shell:::\{|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|tftp -|wget http|curl -O|sh /tmp/|touch /tmp/|cmd\.exe|/bin/(ba)?sh\b|2>&1|\b(cat|ls) /|chmod [0-7]{3,4}\b|chmod +x\b|base64 -d|nc -l -p \d+|>\s*/dev/null|-d (allow_url_include|safe_mode|auto_prepend_file)|ms-msdt:|mhtml:ftp:|jndi:(corba|dns|http|iiop|n(d|i)s|ldap[s]?|rmi):?|base64:JHtqbmRp|ipconfig|net (config|view)|nltest|netsh firewall|\$\{IFS\}|getRuntime\(\)\.exec\("),
     ("potential directory traversal", r"(\.{2,}[/\\]+){3,}|/etc/(group|passwd|shadow|issue|hostname|hosts|sudoers)|[/\\](boot|system|win)\.ini|[/\\]system32\b|%SYSTEMROOT%"),
