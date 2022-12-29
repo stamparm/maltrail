@@ -1345,3 +1345,15 @@ http://193.117.208.148
 # Reference: https://twitter.com/drb_ra/status/1607538734769078272
 
 45.56.114.203:4444
+
+# Reference: https://twitter.com/drb_ra/status/1608464624516567040
+
+185.141.62.123:10443
+
+# Reference: https://twitter.com/drb_ra/status/1608464678144950273
+
+193.117.208.147:7700
+
+# Reference: https://twitter.com/drb_ra/status/1608464728963039233
+
+72.10.160.166:4430
