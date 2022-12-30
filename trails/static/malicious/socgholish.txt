@@ -1283,10 +1283,50 @@ navyseal.bezmail.com
 # Reference: https://twitter.com/bigmacjpg/status/1606124410619953153
 
 shrubs.emptyisland.pics
+09f51.shrubs.emptyisland.pics
+0b854.shrubs.emptyisland.pics
+0c77b.shrubs.emptyisland.pics
+30e92.shrubs.emptyisland.pics
+311a7.shrubs.emptyisland.pics
+3d442.shrubs.emptyisland.pics
+44255.shrubs.emptyisland.pics
+44cb0.shrubs.emptyisland.pics
+4c4f6.shrubs.emptyisland.pics
+55c1e.shrubs.emptyisland.pics
+5ac88.shrubs.emptyisland.pics
+5d36b.shrubs.emptyisland.pics
+70ef8.shrubs.emptyisland.pics
+72fd8.shrubs.emptyisland.pics
 7f868.shrubs.emptyisland.pics
+801e9.shrubs.emptyisland.pics
+82c8c.shrubs.emptyisland.pics
+82e97.shrubs.emptyisland.pics
+849e8.shrubs.emptyisland.pics
+84cbe.shrubs.emptyisland.pics
+88c3a.shrubs.emptyisland.pics
+8e5e6.shrubs.emptyisland.pics
 8f5b3.shrubs.emptyisland.pics
+974d4.shrubs.emptyisland.pics
+9ce8c.shrubs.emptyisland.pics
+a024b.shrubs.emptyisland.pics
 a02eb.shrubs.emptyisland.pics
+a060c.shrubs.emptyisland.pics
+a58cf.shrubs.emptyisland.pics
+ac436.shrubs.emptyisland.pics
+b0ca2.shrubs.emptyisland.pics
+b1498.shrubs.emptyisland.pics
+b63e6.shrubs.emptyisland.pics
+d41ba.shrubs.emptyisland.pics
+da6ae.shrubs.emptyisland.pics
 dce42.shrubs.emptyisland.pics
+e0324.shrubs.emptyisland.pics
+e28c3.shrubs.emptyisland.pics
+e65e4.shrubs.emptyisland.pics
+ea0a5.shrubs.emptyisland.pics
+eb7f3.shrubs.emptyisland.pics
+ec818.shrubs.emptyisland.pics
+f9e1a.shrubs.emptyisland.pics
+fc364.shrubs.emptyisland.pics
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-12-23-v10204/229
 
@@ -1296,6 +1336,11 @@ exclusive.milonopensky.store
 extcourse.zurvio.com
 internship.ojul.com
 perspective.abcbarbecue.xyz
+
+# Reference: https://twitter.com/BroadAnalysis/status/1608846475408334849
+
+digijump.online
+navyseal.digijump.online
 
 # Generic
 
