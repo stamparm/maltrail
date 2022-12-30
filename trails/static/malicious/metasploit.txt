@@ -1357,3 +1357,8 @@ http://193.117.208.148
 # Reference: https://twitter.com/drb_ra/status/1608464728963039233
 
 72.10.160.166:4430
+
+# Reference: https://twitter.com/IronNetTR/status/1608832782410682369
+
+opay-lnc.com
+mail.opay-lnc.com
