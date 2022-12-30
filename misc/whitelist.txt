@@ -3365,3 +3365,7 @@ vortex.korabli.su
 # Reference: https://github.com/stamparm/maltrail/commit/1aa132c1534beedb357c31bd14f9b9f04cf74860
 
 autism-101.com
+
+# Reference: https://www.virustotal.com/gui/domain/keyauth.win/relations
+
+keyauth.win
