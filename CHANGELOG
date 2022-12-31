@@ -14,7 +14,15 @@
 
 
 
-- Version 0.52 -> 0.53 (Upcoming release)
+- Version 0.53 -> 0.54 (Upcoming release)
+
+
+
+- Version 0.52 -> 0.53 (01 Jan 2023)
+
+[-] Defunct 360-netlab feeds were deleted (Issue #19138)
+[=] "potential data leakage" heur is improved
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
