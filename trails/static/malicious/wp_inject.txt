@@ -694,6 +694,51 @@ ount.trackstatisticsss.com
 stat.trackstatisticsss.com
 trstat.trackstatisticsss.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1235190676838633477
+
+collectfasttracks.com
+
+# Reference: https://twitter.com/felixaime/status/1278600095538262017 (# WPScriptInjection)
+# Reference: https://twitter.com/felixaime/status/1278602674401955846
+# Reference: https://twitter.com/unmaskparasites/status/1280581176747601920
+# Reference: https://www.virustotal.com/gui/ip-address/185.244.172.39/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.9.148.49/relations
+
+letsmakeparty3.ga
+lobbydesires.com
+tlcweb.ml
+wpctrl.ga
+wpctrl.gq
+wpctrl.ml
+
+# Reference: https://twitter.com/unmaskparasites/status/1289272342837895171
+# Reference: https://twitter.com/unmaskparasites/status/1303792031693778947
+# Reference: https://twitter.com/unmaskparasites/status/1303792922140254215
+# Reference: https://twitter.com/unmaskparasites/status/1293570769545580545
+# Reference: https://www.virustotal.com/gui/ip-address/45.9.148.126/relations
+
+declarebusinessgroup.ga
+developerstatss.ga
+donatelloflowfirstly.ga
+lowerbeforwarden.ml
+trendopportunityfollow.ga
+
+# Reference: https://twitter.com/unmaskparasites/status/1329490824875282432
+# Reference: https://www.virustotal.com/gui/ip-address/217.144.106.108/relations
+
+lovegreenpencils.ga
+
+# Reference: https://twitter.com/unmaskparasites/status/1291406328129298434
+# Reference: https://blog.sucuri.net/2020/07/reverse-string-woocommerce-wordpress-credit-card-swiper.html
+
+localhostnametable.com
+
+# Reference: https://github.com/DoctorWebLtd/malware-iocs/tree/master/Linux.Backdoor.WordPressExploit.1
+
+deliverygoodstrategies.com
+gabriellalovecats.com
+clon.collectfasttracks.com
+
 # Reference: https://twitter.com/unmaskparasites/status/1577797497581613056
 # Reference: https://www.virustotal.com/gui/file/dc39ec37839473ae1ad0dd7875205876ee84743609d28f2f4f55716c7659557a/detection
 
