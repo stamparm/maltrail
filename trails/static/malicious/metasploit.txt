@@ -1362,3 +1362,7 @@ http://193.117.208.148
 
 opay-lnc.com
 mail.opay-lnc.com
+
+# Reference: https://twitter.com/drb_ra/status/1609346587196624896
+
+198.12.80.144:443
