@@ -1366,3 +1366,7 @@ mail.opay-lnc.com
 # Reference: https://twitter.com/drb_ra/status/1609346587196624896
 
 198.12.80.144:443
+
+# Reference: https://www.virustotal.com/gui/file/c64ac946ea5dea45456cffa7107111c022ffafeb97cd53c1304535ac2496b893/detection
+
+91.92.136.149:15551
