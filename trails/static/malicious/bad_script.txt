@@ -6384,6 +6384,16 @@ http://37.1.209.213
 
 /lost.ps1
 
+# Reference: https://www.securityjoes.com/post/raspberry-robin-detected-itw-targeting-insurance-financial-institutes-in-europe
+
+/click?payload=
+/cmd?payload=
+/get?payload=
+/load?payload=
+/download?payload=
+/set?payload=
+/upload?payload=
+
 # Generic
 
 /js/altmanluggage.js
