@@ -3166,3 +3166,11 @@ dlc.experthostings.ru
 http://195.20.55.245
 curriculars.ga
 shipment.top
+
+# Reference: https://www.securityjoes.com/post/raspberry-robin-detected-itw-targeting-insurance-financial-institutes-in-europe
+# Reference: https://malwaretips.com/blogs/remove-eu-adbison-redirect-com/
+
+adbison-redirect.com
+as.adbison-redirect.com
+eu.adbison-redirect.com
+us.adbison-redirect.com
