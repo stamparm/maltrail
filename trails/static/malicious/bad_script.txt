@@ -6388,6 +6388,7 @@ http://37.1.209.213
 
 /click?payload=
 /cmd?payload=
+/get?payload=
 /load?payload=
 /download?payload=
 /set?payload=
