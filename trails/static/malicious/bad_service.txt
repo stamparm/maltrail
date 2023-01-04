@@ -590,3 +590,7 @@ strox.su
 # Reference: https://twitter.com/TheDFIRReport/status/1598069289814495234
 
 godstresser.pro
+
+# Reference: https://malware.news/t/inside-view-of-brazzzersff-infrastructure/62431
+
+brazzzers.tech
