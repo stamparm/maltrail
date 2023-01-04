@@ -1342,6 +1342,10 @@ perspective.abcbarbecue.xyz
 digijump.online
 navyseal.digijump.online
 
+# Reference: https://twitter.com/RootkitHalo/status/1610647981266698242
+
+taxes.rpacx.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
