@@ -739,6 +739,12 @@ deliverygoodstrategies.com
 gabriellalovecats.com
 clon.collectfasttracks.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-01-03-v10210/246
+# Reference: https://www.virustotal.com/gui/ip-address/188.127.229.63/relations
+
+tommyforgreendream.icu
+transadforward.icu
+
 # Reference: https://twitter.com/unmaskparasites/status/1577797497581613056
 # Reference: https://www.virustotal.com/gui/file/dc39ec37839473ae1ad0dd7875205876ee84743609d28f2f4f55716c7659557a/detection
 
