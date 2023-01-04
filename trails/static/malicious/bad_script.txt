@@ -6386,6 +6386,8 @@ http://37.1.209.213
 
 # Reference: https://www.securityjoes.com/post/raspberry-robin-detected-itw-targeting-insurance-financial-institutes-in-europe
 
+/api?payload=
+/auth?payload=
 /click?payload=
 /cmd?payload=
 /get?payload=
@@ -6393,6 +6395,12 @@ http://37.1.209.213
 /download?payload=
 /set?payload=
 /upload?payload=
+
+# Reference: https://twitter.com/ViriBack/status/1610393842787704835
+# Reference: https://www.virustotal.com/gui/file/05067bb1ebbce3dd4b18f736e18672f77ff8863cce2efd68796618fc92903bdc/detection
+
+/api/inject
+/api/injection
 
 # Generic
 
