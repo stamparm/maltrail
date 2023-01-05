@@ -1277,10 +1277,11 @@ Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; NP06
 polaris
 polaris botnet
 vbrxmr
-\bxtc\b
-xtcbot
-xtc bot
-xtc botnet
+# \bxtc\b
+^[XxTtCc]{3}$
+\bxtcbot\b
+\bxtc bot\b
+\bxtc botnet\b
 
 # Reference: https://twitter.com/bad_packets/status/1233226684196773888
 
