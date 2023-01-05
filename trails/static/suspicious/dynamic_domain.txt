@@ -3411,3 +3411,7 @@ dynuddns.com
 # Reference: https://www.virustotal.com/gui/domain/trueddns.com/relations
 
 trueddns.com
+
+# Reference: https://www.mandiant.com/resources/blog/turla-galaxy-opportunity
+
+cloudns.cl
