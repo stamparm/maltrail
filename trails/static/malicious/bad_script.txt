@@ -6402,6 +6402,18 @@ http://37.1.209.213
 /api/inject
 /api/injection
 
+# Reference: https://twitter.com/malwrhunterteam/status/1611423202957213701
+# Reference: https://www.virustotal.com/gui/file/4c1b02898a8fc99afa72f1616ecdda6bda734a9487fdf0d9725eca3c422a4c23/detection
+
+/bypass.asp
+/bypass.aspx
+/bypass.bat
+/bypass.hta
+/bypass.js
+/bypass.php
+/bypass.ps1
+/bypass.vbs
+
 # Generic
 
 /js/altmanluggage.js
