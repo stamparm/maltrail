@@ -8208,6 +8208,10 @@ cdnjs.pw
 /js/6cb1e31ff2f343a9d576d889bfcbde0e.js
 /6cb1e31ff2f343a9d576d889bfcbde0e.js
 
+# Reference: https://www.virustotal.com/gui/ip-address/162.19.175.7/relations
+
+jquery-mobile.com
+
 # Generic
 
 /assets/lfg.js
