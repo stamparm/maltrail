@@ -181,3 +181,8 @@ mythic-ceramic.braindeadideas.com
 ukreiif.live
 c2.b1o.it
 v56119.php-friends.de
+
+# Reference: https://twitter.com/suyog41/status/1612412391010238466
+# Reference: https://www.virustotal.com/gui/file/185254efe497aed539fe0d95ca40451985b8fa60a54a707760bfe5c53cce56d9/detection
+
+http://70.34.195.186
