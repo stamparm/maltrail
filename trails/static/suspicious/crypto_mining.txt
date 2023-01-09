@@ -1024,3 +1024,19 @@ node3.luckpool.net
 # Reference: https://www.virustotal.com/gui/ip-address/51.254.84.37/relations
 
 mine.lesliejust.is
+
+# Reference: https://www.virustotal.com/gui/ip-address/34.98.99.30/relations
+
+monerpool.org
+cbd.monerpool.org
+cbdv2.monerpool.org
+daili01.monerpool.org
+linux.monerpool.org
+moner.monerpool.org
+moner1min.monerpool.org
+xiazai.monerpool.org
+xiazai1.monerpool.org
+xmr.monerpool.org
+xmr1min.monerpool.org
+xx11m.monerpool.org
+xx11mv2.monerpool.org
