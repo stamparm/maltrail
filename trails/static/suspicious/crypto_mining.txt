@@ -1020,3 +1020,7 @@ node3.luckpool.net
 
 125.253.92.50:5555
 131.153.142.106:5555
+
+# Reference: https://www.virustotal.com/gui/ip-address/51.254.84.37/relations
+
+mine.lesliejust.is
