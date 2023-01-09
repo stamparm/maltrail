@@ -6414,6 +6414,12 @@ http://37.1.209.213
 /bypass.ps1
 /bypass.vbs
 
+# Reference: https://twitter.com/Stalkphish_io/status/1612427080758710272
+
+/agdbaoep.php
+/ajfhgehm.php
+/bas00158787.php
+
 # Generic
 
 /js/altmanluggage.js
