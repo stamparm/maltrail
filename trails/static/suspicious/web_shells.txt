@@ -911,3 +911,7 @@ podathon.org/shell/
 /aspnet_netclient/4_0_30319/devilzShell.aspx
 /aspnet_netclient/4_0_30319/POWERshell.aspx
 /devilzShell.aspx
+
+# Reference: https://www.virustotal.com/gui/file/5d30ce01a19623aaaae84bf3a4cc3ec16811c98f2b6c3a70fcad6e473b0386e6/detection
+
+/v3n0mbig.php
