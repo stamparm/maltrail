@@ -1343,7 +1343,11 @@ digijump.online
 navyseal.digijump.online
 
 # Reference: https://twitter.com/RootkitHalo/status/1610647981266698242
+# Reference: https://twitter.com/BroadAnalysis/status/1613255257789693953
 
+hjgk67kg.xyz
+tradingvein.xyz
+asset.tradingvein.xyz
 taxes.rpacx.com
 
 # Generic
