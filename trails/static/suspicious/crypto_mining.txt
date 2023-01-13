@@ -1045,5 +1045,6 @@ xx11mv2.monerpool.org
 
 142.202.242.45:5555
 nbminer.com
+dl.nbminer.com
 lhr.nbminer.com
 lhr3.nbminer.com
