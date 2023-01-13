@@ -3174,3 +3174,7 @@ adbison-redirect.com
 as.adbison-redirect.com
 eu.adbison-redirect.com
 us.adbison-redirect.com
+
+# Reference: https://www.virustotal.com/gui/file/1a431b46726719f8a3edf7c4379c39ee6db91c922e5863897c9cf4cbab8da647/detection
+
+mixapi.xyz
