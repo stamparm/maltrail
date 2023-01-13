@@ -5529,3 +5529,8 @@ bby.gg
 # Reference: https://www.virustotal.com/gui/file/7a491a8df3c38e90c8c7398b53b8772e08d0801629235f4a0713e7ab22245287/detection
 
 stoanews.com
+
+# Reference: https://twitter.com/drb_ra/status/1613546927571845120
+# Reference: https://www.virustotal.com/gui/domain/danielma.info/relations
+
+danielma.info
