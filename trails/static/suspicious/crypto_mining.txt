@@ -1040,3 +1040,10 @@ xmr.monerpool.org
 xmr1min.monerpool.org
 xx11m.monerpool.org
 xx11mv2.monerpool.org
+
+# Reference: https://www.virustotal.com/gui/file/82d54b01efce5dd7f9cc36e77e9663a545c834a89981e71be1ca1ae1ffc4fc66/detection
+
+142.202.242.45:5555
+nbminer.com
+lhr.nbminer.com
+lhr3.nbminer.com
