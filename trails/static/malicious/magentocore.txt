@@ -8212,6 +8212,10 @@ cdnjs.pw
 
 jquery-mobile.com
 
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/01/crypto-inspired-magecart-skimmer-surfaces-via-digital-crime-haven
+
+2xdepp.com
+
 # Generic
 
 /assets/lfg.js
