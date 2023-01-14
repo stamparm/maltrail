@@ -6420,6 +6420,11 @@ http://37.1.209.213
 /ajfhgehm.php
 /bas00158787.php
 
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/01/crypto-inspired-magecart-skimmer-surfaces-via-digital-crime-haven
+
+elon2xmusk.com
+saylor2xbtc.com
+
 # Generic
 
 /js/altmanluggage.js
