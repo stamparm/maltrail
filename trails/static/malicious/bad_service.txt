@@ -603,3 +603,10 @@ cvv2.name
 cvvshop.lv
 hybra2web.ru
 vault.ug
+
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/01/crypto-inspired-magecart-skimmer-surfaces-via-digital-crime-haven
+
+blackbiz.top
+beta4us.click
+orvx.pw
+robinbanks.su
