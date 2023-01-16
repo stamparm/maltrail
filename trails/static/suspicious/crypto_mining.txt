@@ -1052,3 +1052,7 @@ lhr3.nbminer.com
 # Reference: https://twitter.com/SecureSh3ll/status/1614755430651105281
 
 141.94.96.144:5555
+
+# Reference: https://www.virustotal.com/gui/file/00869be6a840dbdd657bb91cd6afb5c24e512efc17e5d3571640d353a7781bbe/detection
+
+141.95.206.77:8443
