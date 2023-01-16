@@ -789,6 +789,7 @@ cutlinks.pw
 
 # Reference: https://twitter.com/unmaskparasites/status/1602374685278470144
 # Reference: https://twitter.com/unmaskparasites/status/1603106867794022401
+# Reference: https://twitter.com/unmaskparasites/status/1615091657858514944
 # Reference: https://www.virustotal.com/gui/ip-address/142.11.214.173/relations
 # Reference: https://www.virustotal.com/gui/ip-address/172.96.189.69/relations
 # Reference: https://www.virustotal.com/gui/ip-address/198.27.80.139/relations
@@ -808,6 +809,7 @@ gov-cn.cloud
 i-n-fo.info
 qis.is
 s-sh.sh
+tiny-url.mobi
 ufox.info
 w-ws.ws
 webb-i-t-l-y.co
