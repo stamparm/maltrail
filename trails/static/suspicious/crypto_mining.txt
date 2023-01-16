@@ -1048,3 +1048,7 @@ nbminer.com
 dl.nbminer.com
 lhr.nbminer.com
 lhr3.nbminer.com
+
+# Reference: https://twitter.com/SecureSh3ll/status/1614755430651105281
+
+141.94.96.144:5555
