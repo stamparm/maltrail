@@ -850,3 +850,10 @@ sparkskillzs.com
 
 api.loanbee.tech
 sentry.weza.tech
+
+# Reference: https://www.virustotal.com/gui/file/0009dc6ad692ef42a290002a196641503fe3cde841d9217f1521f0a369094426/detection
+
+api.birbira.xyz
+api.oradaph.pw
+api.tridrongo.info
+arb.grattomania.space
