@@ -1350,6 +1350,10 @@ tradingvein.xyz
 asset.tradingvein.xyz
 taxes.rpacx.com
 
+# Reference: https://twitter.com/TrollgeMark/status/1615201164819312641
+
+blender3d.teamironwulf.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
