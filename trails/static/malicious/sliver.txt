@@ -179,3 +179,12 @@ http://13.48.204.226
 # Reference: https://twitter.com/MichalKoczwara/status/1606996714006749186
 
 89.147.111.80:8000
+
+# Reference: https://twitter.com/IronNetTR/status/1615355762598973441
+
+hax0x.win
+missbare.com
+pt-ccs.com
+cs.hax0x.win
+rsgr-login.missbare.com
+us1-bwh.milktea.info
