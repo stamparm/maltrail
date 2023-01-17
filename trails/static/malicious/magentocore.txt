@@ -8216,6 +8216,10 @@ jquery-mobile.com
 
 2xdepp.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.157.160.171/relations
+
+magento-cdn.net
+
 # Generic
 
 /assets/lfg.js
