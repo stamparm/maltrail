@@ -641,6 +641,16 @@ lnks.greengoplatform.com
 local.specialadves.com
 track.greengoplatform.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1615121524536795136
+# Reference: https://www.virustotal.com/gui/ip-address/159.69.234.10/relations
+
+specialblueitems.com
+violetlovelines.com
+cdn.violetlovelines.com
+light.specialblueitems.com
+track.violetlovelines.com
+way.specialblueitems.com
+
 # Reference: https://twitter.com/unmaskparasites/status/1552334638999228417
 
 apigooglee.com
