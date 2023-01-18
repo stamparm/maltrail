@@ -6446,6 +6446,10 @@ wildhottiegirls.com
 
 /nvz0g1.ps1
 
+# Reference: https://www.virustotal.com/gui/file/0034290e7bb88ac02b9161e2f5729c428bf9b8583e379a4edd82ecb046cf5db9/detection
+
+/winmon.ps1
+
 # Generic
 
 /js/altmanluggage.js
