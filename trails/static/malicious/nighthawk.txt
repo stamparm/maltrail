@@ -27,3 +27,11 @@ eagle03group02.optumshadow.org
 secure.mail-nationalmedtrans.com
 secure.health-colony.com
 ww1.login-nammcal.com
+
+# Reference: https://twitter.com/MichalKoczwara/status/1615796586952462346
+
+cs1group2.optumshadow.org
+evildropper.optumshadow.org
+healthsteward.org
+squanchy.optumshadow.org
+support.bison-health.com
