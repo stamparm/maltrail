@@ -1056,3 +1056,7 @@ lhr3.nbminer.com
 # Reference: https://www.virustotal.com/gui/file/00869be6a840dbdd657bb91cd6afb5c24e512efc17e5d3571640d353a7781bbe/detection
 
 141.95.206.77:8443
+
+# Reference: https://www.virustotal.com/gui/file/854edb1e3d27ceddd528cd604883c9f08cea197b9dd92203658b7d0e8ec981c9/detection
+
+51.68.190.80:14433
