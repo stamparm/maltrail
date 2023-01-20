@@ -1478,6 +1478,13 @@ fff3c.asset.tradingvein.xyz
 
 blender3d.teamironwulf.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/84.32.190.152/relations
+
+cockroachracing.site
+betting.cockroachracing.site
+712ed.betting.cockroachracing.site
+ea707.betting.cockroachracing.site
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
