@@ -2209,6 +2209,7 @@ ZeroStresser
 ZeroStresser Botnet
 
 # Reference: https://unit42.paloaltonetworks.com/trident-ursa/
+# Reference: https://twitter.com/WhichbufferArda/status/1616895455182442497
 
 \bjosephine\b
 \bsnventor\b
@@ -2216,7 +2217,7 @@ ZeroStresser Botnet
 ::\/\.josephine\/
 ;;\/\.insufficient\/
 ;;\/\.snventor\/
-(;;|::)\/\.\w+\/
+(;;|::)\/?\.?\w+\/?(;;|::)?
 
 # Misc
 
