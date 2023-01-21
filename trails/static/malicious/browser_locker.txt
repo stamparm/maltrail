@@ -8825,6 +8825,7 @@ fegon.live
 felin.live
 felod.live
 femin.live
+femoms.live
 femons.live
 fenit.live
 fenite.live
@@ -10523,9 +10524,12 @@ syfidop.life
 syrebod.live
 syrite.online
 taber.live
+tadens.live
+tafens.live
 tagun.live
 tahen.online
 tahid.online
+tajems.live
 talar.live
 taluk.live
 tamin.live
