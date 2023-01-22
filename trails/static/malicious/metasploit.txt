@@ -1483,3 +1483,11 @@ mail.opay-lnc.com
 # Reference: https://twitter.com/drb_ra/status/1616784154808418309
 
 149.248.57.123:443
+
+# Reference: https://twitter.com/drb_ra/status/1616956529361539073
+
+5.188.191.12:443
+
+# Reference: https://twitter.com/drb_ra/status/1616956623322234881
+
+45.72.3.133:443
