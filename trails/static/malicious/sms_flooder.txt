@@ -6,6 +6,10 @@
 
 theyeru.ru
 
+# Reference: https://twitter.com/ANeilan/status/1616959844187099138
+
+webpage-citizensonline.zyns.com
+
 # Generic
 
 /sms-bomb/
