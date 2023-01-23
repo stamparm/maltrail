@@ -12,6 +12,7 @@ corp
 # triggering suspicious (sub)domain names
 
 1e100.net
+22pixx.xyz
 2o7.net
 acer-euro.com
 adcash.com
@@ -31,6 +32,7 @@ a-msedge.net
 angsrvr.com
 anycastb.com
 anti-virus.by
+api.ipify.org
 azure.com
 b4b.hr
 baidu.com
@@ -75,6 +77,7 @@ eset.ua
 esetnod32.ru
 example.com
 ext-twitch.tv
+exploit-db.com
 f-secure.com
 fap.to
 fastly.net
@@ -138,6 +141,7 @@ mcafee.com
 microsoft.com
 msv1.invalid
 multicom.hr
+myip.ms
 netdna-cdn.com
 nowvideo.sx
 nsatc.net
