@@ -1352,6 +1352,7 @@ tradingvein.xyz
 asset.tradingvein.xyz
 taxes.rpacx.com
 00c61.asset.tradingvein.xyz
+017c1.asset.tradingvein.xyz
 02878.asset.tradingvein.xyz
 038d1.asset.tradingvein.xyz
 08b67.asset.tradingvein.xyz
@@ -1359,19 +1360,29 @@ taxes.rpacx.com
 0bab.asset.tradingvein.xyz
 0e1b4.asset.tradingvein.xyz
 0e2a8.asset.tradingvein.xyz
+0f1e4.asset.tradingvein.xyz
+0f891.asset.tradingvein.xyz
 10239.asset.tradingvein.xyz
 120e9.asset.tradingvein.xyz
+1430a.asset.tradingvein.xyz
+14f03.asset.tradingvein.xyz
 1609f.asset.tradingvein.xyz
 19168.asset.tradingvein.xyz
 1923c.asset.tradingvein.xyz
+1b351.asset.tradingvein.xyz
 1b3f9.asset.tradingvein.xyz
+1bb9e.asset.tradingvein.xyz
 1bed6.asset.tradingvein.xyz
 1cc73.asset.tradingvein.xyz
 1d652.asset.tradingvein.xyz
+2022c.asset.tradingvein.xyz
 21686.asset.tradingvein.xyz
 21f60.asset.tradingvein.xyz
+22712.asset.tradingvein.xyz
 231a0.asset.tradingvein.xyz
+23cc6.asset.tradingvein.xyz
 2628a.asset.tradingvein.xyz
+2632b.asset.tradingvein.xyz
 28a55.asset.tradingvein.xyz
 299a2.asset.tradingvein.xyz
 2a136.asset.tradingvein.xyz
@@ -1396,9 +1407,13 @@ taxes.rpacx.com
 4d253.asset.tradingvein.xyz
 51402.asset.tradingvein.xyz
 53409.asset.tradingvein.xyz
+53a13.asset.tradingvein.xyz
 55a17.asset.tradingvein.xyz
 569ef.asset.tradingvein.xyz
+56b94.asset.tradingvein.xyz
 57783.asset.tradingvein.xyz
+58c94.asset.tradingvein.xyz
+5997b.asset.tradingvein.xyz
 5b5db.asset.tradingvein.xyz
 5d2d6.asset.tradingvein.xyz
 5f9a4.asset.tradingvein.xyz
@@ -1408,11 +1423,15 @@ taxes.rpacx.com
 63445.asset.tradingvein.xyz
 65008.asset.tradingvein.xyz
 6536b.asset.tradingvein.xyz
+68722.asset.tradingvein.xyz
 698a5.asset.tradingvein.xyz
 6b4f7.asset.tradingvein.xyz
+6b56f.asset.tradingvein.xyz
 6c05f.asset.tradingvein.xyz
 6c921.asset.tradingvein.xyz
+6cb86.asset.tradingvein.xyz
 6e15f.asset.tradingvein.xyz
+702f7.asset.tradingvein.xyz
 70dda.asset.tradingvein.xyz
 72d85.asset.tradingvein.xyz
 73de8.asset.tradingvein.xyz
@@ -1421,46 +1440,59 @@ taxes.rpacx.com
 79985.asset.tradingvein.xyz
 79d52.asset.tradingvein.xyz
 7b9ff.asset.tradingvein.xyz
+7c6ad.asset.tradingvein.xyz
+7dc78.asset.tradingvein.xyz
 7e1df.asset.tradingvein.xyz
 7ebcb.asset.tradingvein.xyz
 832d8.asset.tradingvein.xyz
 8535f.asset.tradingvein.xyz
 85392.asset.tradingvein.xyz
 85dfb.asset.tradingvein.xyz
+88f80.asset.tradingvein.xyz
 8b020.asset.tradingvein.xyz
 92a6f.asset.tradingvein.xyz
 960fe.asset.tradingvein.xyz
 97861.asset.tradingvein.xyz
 98489.asset.tradingvein.xyz
 98f6f.asset.tradingvein.xyz
+9a165.asset.tradingvein.xyz
 9a281.asset.tradingvein.xyz
+9d048.asset.tradingvein.xyz
 9dd7a.asset.tradingvein.xyz
 9f42e.asset.tradingvein.xyz
 a4357.asset.tradingvein.xyz
 a59dd.asset.tradingvein.xyz
 a5fc6.asset.tradingvein.xyz
+a6426.asset.tradingvein.xyz
 a6f0a.asset.tradingvein.xyz
 a79af.asset.tradingvein.xyz
 af4a5.asset.tradingvein.xyz
+b1565.asset.tradingvein.xyz
 b3b7c.asset.tradingvein.xyz
 b90b1.asset.tradingvein.xyz
 be02b.asset.tradingvein.xyz
 c06b8.asset.tradingvein.xyz
 c2409.asset.tradingvein.xyz
+c3a15.asset.tradingvein.xyz
 c4a3a.asset.tradingvein.xyz
 c4a9b.asset.tradingvein.xyz
 c536e.asset.tradingvein.xyz
 c792b.asset.tradingvein.xyz
+c7eb9.asset.tradingvein.xyz
 c9a6e.asset.tradingvein.xyz
 c9f6f.asset.tradingvein.xyz
 ca03b.asset.tradingvein.xyz
+cb330.asset.tradingvein.xyz
+cbd80.asset.tradingvein.xyz
 cd06e.asset.tradingvein.xyz
 cd480.asset.tradingvein.xyz
+cdeae.asset.tradingvein.xyz
 cef0b.asset.tradingvein.xyz
 d05e5.asset.tradingvein.xyz
 d1027.asset.tradingvein.xyz
 d2189.asset.tradingvein.xyz
 d3bac.asset.tradingvein.xyz
+d42e4.asset.tradingvein.xyz
 d8e39.asset.tradingvein.xyz
 db1b7.asset.tradingvein.xyz
 dbcc5.asset.tradingvein.xyz
@@ -1470,7 +1502,9 @@ e0b8e.asset.tradingvein.xyz
 e4d38.asset.tradingvein.xyz
 ec53e.asset.tradingvein.xyz
 f1215.asset.tradingvein.xyz
+f1f3a.asset.tradingvein.xyz
 f63a3.asset.tradingvein.xyz
+fa7a1.asset.tradingvein.xyz
 fce2f.asset.tradingvein.xyz
 fff3c.asset.tradingvein.xyz
 
@@ -1481,9 +1515,13 @@ blender3d.teamironwulf.com
 # Reference: https://www.virustotal.com/gui/ip-address/84.32.190.152/relations
 
 cockroachracing.site
+dentureforfree.online
 betting.cockroachracing.site
+market.dentureforfree.online
 712ed.betting.cockroachracing.site
 ea707.betting.cockroachracing.site
+a5cbe.market.dentureforfree.online
+d1840.market.dentureforfree.online
 
 # Reference: https://twitter.com/bigmacjpg/status/1617535206206103554
 
@@ -1493,6 +1531,17 @@ rendezvous.tophandsome.gay
 98c60.rendezvous.tophandsome.gay
 9c91f.rendezvous.tophandsome.gay
 f47ac.rendezvous.tophandsome.gay
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-01-23-v10226/278
+# Reference: https://www.virustotal.com/gui/ip-address/88.119.169.108/relations
+
+signing.unitynotarypublic.com
+79689.signing.unitynotarypublic.com
+8296f.signing.unitynotarypublic.com
+ac008.signing.unitynotarypublic.com
+b2a44.signing.unitynotarypublic.com
+d4520.signing.unitynotarypublic.com
+fccb4.signing.unitynotarypublic.com
 
 # Generic
 
