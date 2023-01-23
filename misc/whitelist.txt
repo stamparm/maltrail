@@ -32,7 +32,6 @@ a-msedge.net
 angsrvr.com
 anycastb.com
 anti-virus.by
-api.ipify.org
 azure.com
 b4b.hr
 baidu.com
@@ -141,7 +140,6 @@ mcafee.com
 microsoft.com
 msv1.invalid
 multicom.hr
-myip.ms
 netdna-cdn.com
 nowvideo.sx
 nsatc.net
