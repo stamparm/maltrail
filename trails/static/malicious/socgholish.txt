@@ -1485,6 +1485,15 @@ betting.cockroachracing.site
 712ed.betting.cockroachracing.site
 ea707.betting.cockroachracing.site
 
+# Reference: https://twitter.com/bigmacjpg/status/1617535206206103554
+
+tophandsome.gay
+rendezvous.tophandsome.gay
+256a7.rendezvous.tophandsome.gay
+98c60.rendezvous.tophandsome.gay
+9c91f.rendezvous.tophandsome.gay
+f47ac.rendezvous.tophandsome.gay
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
