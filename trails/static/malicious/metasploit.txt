@@ -1499,3 +1499,7 @@ mail.opay-lnc.com
 # Reference: https://twitter.com/drb_ra/status/1617718550520635393
 
 45.90.57.55:443
+
+# Reference: https://twitter.com/_brettfitz/status/1617981850454228992
+
+68.183.177.40:443
