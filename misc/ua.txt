@@ -2219,6 +2219,11 @@ ZeroStresser Botnet
 ;;\/\.snventor\/
 (;;|::)\/?\.?\w+\/?(;;|::)?
 
+# Reference: https://twitter.com/jaydinbas/status/1617853748063383552
+# Reference: https://www.virustotal.com/gui/file/18e4a499e11b3fe1691b627aebb330fcafc656d9b9505178f832697cda5f1eae/detection
+
+Mozilla 105\.01\.05
+
 # Misc
 
 information_schema
