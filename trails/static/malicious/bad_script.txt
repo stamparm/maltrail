@@ -6450,6 +6450,17 @@ wildhottiegirls.com
 
 /winmon.ps1
 
+# Reference: https://twitter.com/1ZRR4H/status/1617696464230285313
+
+/serverhta.asp
+/serverhta.aspx
+/serverhta.bat
+/serverhta.hta
+/serverhta.js
+/serverhta.php
+/serverhta.ps1
+/serverhta.vbs
+
 # Generic
 
 /js/altmanluggage.js
