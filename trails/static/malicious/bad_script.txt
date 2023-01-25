@@ -6465,6 +6465,9 @@ wildhottiegirls.com
 
 /ALdr32.ps1
 /ALdr64.ps1
+/komar.ps1
+/komar1.ps1
+/komar2.ps1
 
 # Generic
 
