@@ -800,28 +800,55 @@ cutlinks.pw
 # Reference: https://twitter.com/unmaskparasites/status/1602374685278470144
 # Reference: https://twitter.com/unmaskparasites/status/1603106867794022401
 # Reference: https://twitter.com/unmaskparasites/status/1615091657858514944
+# Reference: https://twitter.com/unmaskparasites/status/1618041405515132928
 # Reference: https://www.virustotal.com/gui/ip-address/142.11.214.173/relations
 # Reference: https://www.virustotal.com/gui/ip-address/172.96.189.69/relations
 # Reference: https://www.virustotal.com/gui/ip-address/198.27.80.139/relations
+# Reference: https://pastebin.com/raw/ffjAeK2L
 
+012.bond
+5pm.am
+7la.la
 b-i-t-l-y.co
 b-i-t-l-y.net
 bit-ly.mobi
+bitly.gold
+bitly.host
 bitly.team
 c-you.cyou
 cc-z.cz
 co-o.co
+cr-7.cc
+cutlinks.biz
 cutlinks.ca
 cutlinks.ch
+cutlinks.mobi
 cutlinks.org
 cuturls.net
+d-ev.dev
+g-l.gl
+g-y.gy
+gob.co.il
 gov-cn.cloud
+h-air.hair
+i-cu.icu
 i-n-fo.info
+ilc.lc
+isx.sx
+mvc.vc
+obz.bz
+oo-o.co
+oo.coffee
 qis.is
 s-sh.sh
 tiny-url.mobi
 ufox.info
+vms.ms
+vv-vip.vip
+w-me.me
 w-ws.ws
+wac.ac
+wco.pw
 webb-i-t-l-y.co
 webb-i-t-l-y.net
 webbit-ly.mobi
@@ -831,6 +858,7 @@ webcc-z.cz
 webcutlinks.pw
 webgov-cn.cloud
 webufox.info
+wst.st
 b-i-t-l-y.co.b-i-t-l-y.net
 bit-ly.mobi.b-i-t-l-y.net
 bitly.eb-i-t-l-y.net
