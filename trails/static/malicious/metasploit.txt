@@ -1503,3 +1503,10 @@ mail.opay-lnc.com
 # Reference: https://twitter.com/_brettfitz/status/1617981850454228992
 
 68.183.177.40:443
+
+# Reference: https://businessinsights.bitdefender.com/technical-advisory-proxyhell-exploit-chains-in-the-wild
+# Reference: https://www.virustotal.com/gui/file/3564b2aa9a60e4ac5d04005ebca22db77443ac1c7454d67649640a56237d3228/detection
+# Reference: https://www.virustotal.com/gui/file/78b76863897fb691015d1036b8cb2cc33ee1f200a2c5e1774c852a46da8fd684/detection
+
+162.243.150.6:443
+64.190.113.48:443
