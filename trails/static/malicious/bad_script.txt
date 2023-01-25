@@ -6461,6 +6461,11 @@ wildhottiegirls.com
 /serverhta.ps1
 /serverhta.vbs
 
+# Reference: https://businessinsights.bitdefender.com/technical-advisory-proxyhell-exploit-chains-in-the-wild
+
+/ALdr32.ps1
+/ALdr64.ps1
+
 # Generic
 
 /js/altmanluggage.js
