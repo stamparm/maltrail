@@ -207,6 +207,26 @@ zextras.com
 zillya.com
 zillya.ua
 zillyaoem.com
+ben.kerbertools.xyz
+public.publictracker.xyz
+torrentcore.xyz
+tr.fuckbitcoin.xyz
+vibe.sleepyinternetfun.xyz
+zecircle.xyz
+limetorrents.lol
+yahor.ftp.sh
+mail.zasaonsk.ga
+open.free-tracker.ga
+tr.abir.ga
+leefafa.tk
+open.4ever.tk
+li1406-230.members.linode.com
+cutscloud.duckdns.org
+laze.cc
+tracker.lilithraws.cf
+rules2.clearurls.xyz
+torrents-csv.ml
+visitor-badge.laobi.icu
 
 # triggering potential DNS exhaustion
 
