@@ -6469,6 +6469,10 @@ wildhottiegirls.com
 /komar1.ps1
 /komar2.ps1
 
+# Reference: https://www.virustotal.com/gui/file/7766d6f7cb261c2678fa6fb08096ec1a5c7169480cb6f01b583d41f926289ded/detection
+
+/bushiwo.ps1
+
 # Generic
 
 /js/altmanluggage.js
