@@ -6473,6 +6473,10 @@ wildhottiegirls.com
 
 /bushiwo.ps1
 
+# Reference: https://www.virustotal.com/gui/file/87099fe915a8795c491d0617ce20d7d9617747d8dc03a90e0082ca680b147157/detection
+
+/bc.ps1
+
 # Generic
 
 /js/altmanluggage.js
