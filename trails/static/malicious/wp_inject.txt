@@ -1371,3 +1371,15 @@ long.interestmoments.com
 short.interestmoments.com
 similar.similarwebline.com
 template.interestmoments.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1620156750723973121
+
+firstblackphase.com
+dns.firstblackphase.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/194.135.30.40/relations
+
+away.firstblackphase.com
+away.similarwebline.com
+final.similarwebline.com
+first.interestmoments.com
