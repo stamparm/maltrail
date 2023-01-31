@@ -3178,3 +3178,11 @@ us.adbison-redirect.com
 # Reference: https://www.virustotal.com/gui/file/1a431b46726719f8a3edf7c4379c39ee6db91c922e5863897c9cf4cbab8da647/detection
 
 mixapi.xyz
+
+# Reference: https://www.virustotal.com/gui/file/00007792522749122587048cb2187e109e3b22b05925edb8b551657d182ddc67/detection
+
+downlloaddatamy.info
+getapplicationmy.info
+c1.downlloaddatamy.info
+c2.downlloaddatamy.info
+r1.getapplicationmy.info
