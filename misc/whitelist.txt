@@ -227,6 +227,21 @@ tracker.lilithraws.cf
 rules2.clearurls.xyz
 torrents-csv.ml
 visitor-badge.laobi.icu
+free.publictracker.xyz
+run-2.publictracker.xyz
+run.publictracker.xyz
+tracker.publictracker.xyz
+public-tracker.ml
+tracker.imgoingto.icu
+searx.fmac.xyz
+eximage.cyou
+camhub.cc
+0xxx.ws
+lingva.ml
+insecam.org
+justdeleteme.xyz
+cyberpunk.xyz
+book.hacktricks.xyz
 
 # triggering potential DNS exhaustion
 
