@@ -3407,3 +3407,23 @@ autism-101.com
 # Reference: https://www.virustotal.com/gui/domain/keyauth.win/relations
 
 keyauth.win
+
+# Reference: https://twitter.com/lowmal3/status/1621119663995498496
+# Reference: https://www.virustotal.com/gui/domain/emqx.io/relations
+
+emqx.io
+accounts-test.emqx.io
+accounts.emqx.io
+admin.emqx.io
+broker-cn.emqx.io
+broker.emqx.io
+cloud-tools.emqx.io
+cloud.emqx.io
+developer.emqx.io
+docs.emqx.io
+packages.emqx.io
+pass.emqx.io
+repos.emqx.io
+slack-invite.emqx.io
+telemetry.emqx.io
+tools.emqx.io
