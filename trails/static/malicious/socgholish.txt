@@ -1543,6 +1543,16 @@ b2a44.signing.unitynotarypublic.com
 d4520.signing.unitynotarypublic.com
 fccb4.signing.unitynotarypublic.com
 
+# Reference: https://twitter.com/bigmacjpg/status/1622601928285777922
+
+samples.muzikcitysound.com
+10a44.samples.muzikcitysound.com
+189d2.samples.muzikcitysound.com
+7382406.samples.muzikcitysound.com
+82406.samples.muzikcitysound.com
+85638.samples.muzikcitysound.com
+c4f22.samples.muzikcitysound.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
