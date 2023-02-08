@@ -3415,3 +3415,23 @@ trueddns.com
 # Reference: https://www.mandiant.com/resources/blog/turla-galaxy-opportunity
 
 cloudns.cl
+
+# Reference: https://www.virustotal.com/gui/domain/320.io/relations
+
+320.io
+
+# Reference: https://www.virustotal.com/gui/domain/uicp.fun/relations
+
+uicp.fun
+
+# Reference: https://www.virustotal.com/gui/domain/vicp.io/relations
+
+vicp.io
+
+# Reference: https://www.virustotal.com/gui/domain/yicp.fun/relations
+
+yicp.fun
+
+# Reference: https://www.virustotal.com/gui/domain/zicp.fun/relations
+
+zicp.fun
