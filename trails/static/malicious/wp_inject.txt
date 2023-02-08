@@ -1377,6 +1377,21 @@ template.interestmoments.com
 firstblackphase.com
 dns.firstblackphase.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1623407097949077504
+
+dofollowgreenline.com
+sortyellowapples.com
+back.firstblackphase.com
+come.sortyellowapples.com
+get.firstblackphase.com
+get.sortyellowapples.com
+goaway.dofollowgreenline.com
+scripts.dofollowgreenline.com
+shop.similarwebline.com
+step.firstblackphase.com
+store.firstblackphase.com
+track.firstblackphase.com
+
 # Reference: https://www.virustotal.com/gui/ip-address/194.135.30.40/relations
 
 away.firstblackphase.com
