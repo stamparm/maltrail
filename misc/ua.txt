@@ -2224,6 +2224,12 @@ ZeroStresser Botnet
 
 Mozilla 105\.01\.05
 
+# Reference: https://success.trendmicro.com/dcx/s/solution/TP000096995-ThreatDV-Malware-Filter-Package-1441
+
+crazyk
+hello crazyk
+^mois$
+
 # Misc
 
 information_schema
