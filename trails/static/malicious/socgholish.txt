@@ -1553,6 +1553,10 @@ samples.muzikcitysound.com
 85638.samples.muzikcitysound.com
 c4f22.samples.muzikcitysound.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-02-09-v10240/306
+
+shock.creatingaharmoniouslife.net
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
