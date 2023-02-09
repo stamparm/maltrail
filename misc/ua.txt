@@ -2230,6 +2230,10 @@ crazyk
 hello crazyk
 ^mois$
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-02-09-v10240/306
+
+\AEnAgent\Z
+
 # Misc
 
 information_schema
