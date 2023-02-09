@@ -3439,3 +3439,7 @@ zicp.fun
 # Reference: https://www.virustotal.com/gui/domain/vicp.hk/relations
 
 vicp.hk
+
+# Reference: https://www.virustotal.com/gui/domain/com.se/relations
+
+com.se
