@@ -6477,6 +6477,10 @@ wildhottiegirls.com
 
 /bc.ps1
 
+# Reference: https://twitter.com/malwrhunterteam/status/1621128231394107392
+
+/F230002030.hta
+
 # Generic
 
 /js/altmanluggage.js
