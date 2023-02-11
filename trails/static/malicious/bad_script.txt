@@ -6481,6 +6481,10 @@ wildhottiegirls.com
 
 /F230002030.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1624331588560470016
+
+/dirmon32.hta
+
 # Generic
 
 /js/altmanluggage.js
