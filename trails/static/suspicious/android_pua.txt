@@ -857,3 +857,7 @@ api.birbira.xyz
 api.oradaph.pw
 api.tridrongo.info
 arb.grattomania.space
+
+# Reference: https://www.virustotal.com/gui/file/1469559b1fddd9d14abccd01926b69d9b2413823d930f3bc2288c06a0e374943/detection
+
+134.122.135.75:60146
