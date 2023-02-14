@@ -212,6 +212,7 @@ whereisip.net
 whoer.me
 whoer.net
 whoisping.com
+wsgeoip.lavasoft.com
 wtfismyip.com
 xmyip.com
 yougetsignal.com
