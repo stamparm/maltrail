@@ -3186,3 +3186,10 @@ getapplicationmy.info
 c1.downlloaddatamy.info
 c2.downlloaddatamy.info
 r1.getapplicationmy.info
+
+# Reference: https://elfdigest.com/brief/49215ba3fb3e632847843780a063d93942d3282d7cbbb99d72abd0b3993d429b
+# Reference: https://www.virustotal.com/gui/file/49215ba3fb3e632847843780a063d93942d3282d7cbbb99d72abd0b3993d429b/detection
+# Reference: https://www.virustotal.com/gui/file/4aa68a06c07154d01f6b1366a485253f375e084b4ddf00ba96cec0d583182a64/detection
+
+http://208.95.112.1
+succubus.neko.ltd
