@@ -2234,6 +2234,11 @@ hello crazyk
 
 \AEnAgent\Z
 
+# Reference: https://twitter.com/crep1x/status/1620542075082260480
+# Reference: https://twitter.com/crep1x/status/1620544568390459392
+
+dvadcat
+
 # Misc
 
 information_schema
