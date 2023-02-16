@@ -2239,6 +2239,10 @@ hello crazyk
 
 dvadcat
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-02-15-v10244/315
+
+\AMozilla FireFox\Z
+
 # Misc
 
 information_schema
