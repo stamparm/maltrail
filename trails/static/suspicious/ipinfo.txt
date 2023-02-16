@@ -64,6 +64,9 @@ ip.amulex.com
 ip.anysrc.net
 ip-api.com
 ip.cctv.pk
+ip.spacecom.cc
+ip.telecom24.link
+2ip.telecom24.link
 ipchecker.info
 ip-check.info
 ipchicken.com
