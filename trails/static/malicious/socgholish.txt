@@ -1557,6 +1557,39 @@ c4f22.samples.muzikcitysound.com
 
 shock.creatingaharmoniouslife.net
 
+# Reference: https://twitter.com/bigmacjpg/status/1626232889439559680
+
+distributor.techsavvyauto.com
+1cf5b.distributor.techsavvyauto.com
+2a60c.distributor.techsavvyauto.com
+362e5.distributor.techsavvyauto.com
+4ba6a.distributor.techsavvyauto.com
+56707.distributor.techsavvyauto.com
+5a6de.distributor.techsavvyauto.com
+6b82a.distributor.techsavvyauto.com
+6d38a.distributor.techsavvyauto.com
+73178.distributor.techsavvyauto.com
+77ce0.distributor.techsavvyauto.com
+7d29c.distributor.techsavvyauto.com
+87134.distributor.techsavvyauto.com
+8e96c.distributor.techsavvyauto.com
+9129d.distributor.techsavvyauto.com
+99550.distributor.techsavvyauto.com
+9d2de.distributor.techsavvyauto.com
+9f4a6.distributor.techsavvyauto.com
+abf24.distributor.techsavvyauto.com
+ae274.distributor.techsavvyauto.com
+b5014.distributor.techsavvyauto.com
+c0263.distributor.techsavvyauto.com
+cc904.distributor.techsavvyauto.com
+cd758.distributor.techsavvyauto.com
+cf9c4.distributor.techsavvyauto.com
+d2f23.distributor.techsavvyauto.com
+e18fc.distributor.techsavvyauto.com
+ede78.distributor.techsavvyauto.com
+ef85f.distributor.techsavvyauto.com
+vbae32.distributor.techsavvyauto.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
