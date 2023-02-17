@@ -6397,10 +6397,15 @@ http://37.1.209.213
 /upload?payload=
 
 # Reference: https://twitter.com/ViriBack/status/1610393842787704835
+# Reference: https://twitter.com/albertzsigovits/status/1626473710671605760
+# Reference: https://twitter.com/1ZRR4H/status/1626493369877770240
 # Reference: https://www.virustotal.com/gui/file/05067bb1ebbce3dd4b18f736e18672f77ff8863cce2efd68796618fc92903bdc/detection
 
 /api/inject
 /api/injection
+/inject
+/injection
+/injector
 
 # Reference: https://twitter.com/malwrhunterteam/status/1611423202957213701
 # Reference: https://www.virustotal.com/gui/file/4c1b02898a8fc99afa72f1616ecdda6bda734a9487fdf0d9725eca3c422a4c23/detection
