@@ -6563,5 +6563,6 @@ wildhottiegirls.com
 /tgate.php
 /testgate.php
 /uadmin/adm.php
+/uadmin/gate.php
 /verification-card.php
 /1drvme/
