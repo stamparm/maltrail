@@ -188,3 +188,9 @@ pt-ccs.com
 cs.hax0x.win
 rsgr-login.missbare.com
 us1-bwh.milktea.info
+
+# Reference: https://twitter.com/r3dbU7z/status/1627205584108896256
+# Reference: https://www.virustotal.com/gui/file/31e21a23b571fb59b029dbf521ba63302aff87a9de53f16e5e2599060f168805/detection
+
+154.38.161.223:443
+154.38.161.223:8888
