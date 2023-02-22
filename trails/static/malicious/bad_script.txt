@@ -6528,6 +6528,10 @@ wildhottiegirls.com
 
 /legitprogramwink.hta
 
+# Reference: https://www.virustotal.com/gui/file/8460715e815be59a13661d1174d6ff302c138b2b54ada3d4f72fcf78b2ae634d/detection
+
+/uhg.hta
+
 # Generic
 
 /js/altmanluggage.js
