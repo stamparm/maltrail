@@ -3193,3 +3193,7 @@ r1.getapplicationmy.info
 
 http://208.95.112.1
 succubus.neko.ltd
+
+# Reference: https://www.virustotal.com/gui/file/56399f6fa4383d51efc562487f8da78993b40fb2ded2af626db42dc5b956e734/detection
+
+mwcseed.ddns.net
