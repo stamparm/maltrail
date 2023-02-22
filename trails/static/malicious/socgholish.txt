@@ -1590,6 +1590,31 @@ ede78.distributor.techsavvyauto.com
 ef85f.distributor.techsavvyauto.com
 vbae32.distributor.techsavvyauto.com
 
+# Reference: https://twitter.com/bigmacjpg/status/1628447546702983175
+
+calendar.wishmarkets.com
+_.calendar.wishmarkets.com
+152a8.calendar.wishmarkets.com
+1bc71.calendar.wishmarkets.com
+2a0b5.calendar.wishmarkets.com
+3f290.calendar.wishmarkets.com
+63f03.calendar.wishmarkets.com
+63f3c.calendar.wishmarkets.com
+669a6.calendar.wishmarkets.com
+74eae.calendar.wishmarkets.com
+78196.calendar.wishmarkets.com
+82d20.calendar.wishmarkets.com
+8a277.calendar.wishmarkets.com
+948cb.calendar.wishmarkets.com
+98684.calendar.wishmarkets.com
+9a016.calendar.wishmarkets.com
+abb93.calendar.wishmarkets.com
+be394.calendar.wishmarkets.com
+c1a20.calendar.wishmarkets.com
+caf13.calendar.wishmarkets.com
+e4f88.calendar.wishmarkets.com
+fba61.calendar.wishmarkets.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
