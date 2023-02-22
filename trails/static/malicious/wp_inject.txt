@@ -1398,3 +1398,12 @@ away.firstblackphase.com
 away.similarwebline.com
 final.similarwebline.com
 first.interestmoments.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1628475618290700289
+# Reference: https://www.virustotal.com/gui/ip-address/194.135.30.210/relations
+
+statisticline.com
+check.statisticline.com
+for.firstblackphase.com
+pista.violetlovelines.com
+trac.violetlovelines.com
