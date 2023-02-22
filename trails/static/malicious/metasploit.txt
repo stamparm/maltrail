@@ -1595,3 +1595,7 @@ mail.opay-lnc.com
 # Reference: https://www.virustotal.com/gui/file/800984ebc948ae625dde4e27388148a9e05a35200388efa75049810a42acfdd2/detection
 
 18.231.93.153:17328
+
+# Reference: https://twitter.com/drb_ra/status/1628194698861985792
+
+72.10.160.162:4430
