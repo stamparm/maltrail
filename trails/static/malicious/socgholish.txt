@@ -1619,6 +1619,15 @@ fba61.calendar.wishmarkets.com
 
 subscribe.3gbling.com
 
+# Reference: https://twitter.com/bigmacjpg/status/1628792773422841857
+
+decision.alshafipdk.com
+035f2.decision.alshafipdk.com
+0fd9a.decision.alshafipdk.com
+33784.decision.alshafipdk.com
+9b57e.decision.alshafipdk.com
+afa2d.decision.alshafipdk.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
