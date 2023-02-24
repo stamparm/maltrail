@@ -2243,6 +2243,10 @@ dvadcat
 
 \AMozilla FireFox\Z
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-02-24-v10253/329
+
+NimPlant
+
 # Misc
 
 information_schema
