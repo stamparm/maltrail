@@ -1628,6 +1628,10 @@ decision.alshafipdk.com
 9b57e.decision.alshafipdk.com
 afa2d.decision.alshafipdk.com
 
+# Reference: https://twitter.com/AnFam17/status/1628995393143832576
+
+publicccescpolace.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
