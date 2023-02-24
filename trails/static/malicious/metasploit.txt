@@ -1599,3 +1599,7 @@ mail.opay-lnc.com
 # Reference: https://twitter.com/drb_ra/status/1628194698861985792
 
 72.10.160.162:4430
+
+# Reference: https://twitter.com/drb_ra/status/1628554899830063104
+
+31.220.59.122:443
