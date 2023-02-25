@@ -7601,3 +7601,7 @@
 # Reference: https://www.webhostingdiscussion.net/blog/get-w00tw00t-at-isc-sans-http1-1/
 
 /w00tw00t.at.ISC.SANS.DFind:)
+
+# Reference: https://tehtris.com/en/blog/honeypots-activity-of-the-week-51
+
+/w00tw00t.at.blackhats.romanian.anti-sec:)
