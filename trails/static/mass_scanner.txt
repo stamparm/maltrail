@@ -7595,3 +7595,9 @@
 45.83.67.253
 45.83.67.254
 45.83.67.255
+
+# Reference: https://blog.nintechnet.com/how-to-block-w00tw00t-at-isc-sans-dfind-and-other-web-vulnerability-scanners/
+# Reference: https://tehtris.com/en/blog/honeypots-activity-of-the-week-48
+# Reference: https://www.webhostingdiscussion.net/blog/get-w00tw00t-at-isc-sans-http1-1/
+
+/w00tw00t.at.ISC.SANS.DFind:)
