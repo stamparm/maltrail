@@ -1611,3 +1611,7 @@ mail.opay-lnc.com
 # Reference: https://www.virustotal.com/gui/file/5f364e57bf38d57a9982920b6c08381442f66b949b08deb30d0f301ed48ced43/detection
 
 160.20.147.254:443
+
+# Reference: https://twitter.com/drb_ra/status/1629485663270711298
+
+216.127.175.18:8443
