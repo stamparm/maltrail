@@ -194,3 +194,8 @@ us1-bwh.milktea.info
 
 154.38.161.223:443
 154.38.161.223:8888
+
+# Reference: https://asec.ahnlab.com/en/47088/
+# Reference: https://otx.alienvault.com/pulse/63e25c5cbc100230953c2d2e
+
+61.155.8.2:81
