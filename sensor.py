@@ -532,7 +532,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             if result is None:
                                 if re.search(WHITELIST_UA_REGEX, user_agent, re.I) is None:
                                     match = re.search(SUSPICIOUS_UA_REGEX, user_agent)
-                                    if match:
+                                    if match and match.group(0):
                                         def _(value):
                                             return value.rstrip('\\').replace('(', "\\(").replace(')', "\\)")
 
