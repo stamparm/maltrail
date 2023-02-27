@@ -411,4 +411,10 @@ ipwho.is
 ipwhois.app
 
 # Reference: https://www.virustotal.com/gui/file/d608d017b2063a0d01287a7a71e17a5d8db473e229af410886ba82d815b93fad/behavior
+
 ip.plyz.net
+
+# Reference: https://twitter.com/wwp96/status/1630019574816182272
+# Reference: https://app.any.run/tasks/8fb9ad39-57dc-444d-88d8-d71ac942cddc/
+
+whois.pconline.com.cn
