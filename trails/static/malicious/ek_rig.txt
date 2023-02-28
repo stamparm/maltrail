@@ -498,6 +498,10 @@ hgoawa.xyz
 
 http://45.138.27.78
 
+# Reference: https://twitter.com/BroadAnalysis/status/1630680889771323392
+
+http://188.227.58.76
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
