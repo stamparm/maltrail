@@ -396,7 +396,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             if not IS_WIN:
                 try:
-                    subprocess.check_output("logger -p auth.info -t \"%s[%d]\" \"%s password for %s from %s port %s\"" % (NAME.lower(), os.getpid(), "Accepted" if valid else "Failed", params.get("username"), self.client_address[0], self.client_address[1]), stderr=subprocess.STDOUT, shell=True)
+                    subprocess.check_output(["logger", "-p", "auth.info", "-t", "%s[%d]" % (NAME.lower(), os.getpid()), "%s password for %s from %s port %s" % ("Accepted" if valid else "Failed", params.get("username"), self.client_address[0], self.client_address[1])], stderr=subprocess.STDOUT, shell=False)
                 except Exception:
                     if config.SHOW_DEBUG:
                         traceback.print_exc()
