@@ -8220,6 +8220,16 @@ jquery-mobile.com
 
 magento-cdn.net
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-02-28-v10255/336
+
+antohub.shop
+app-stat.com
+jquery-node.com
+nebiltech.shop
+okqtfc1.org
+rithdigit.cyou
+yachtbars.fun
+
 # Generic
 
 /assets/lfg.js
