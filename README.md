@@ -579,6 +579,7 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * Michael M&uuml;nz (@mimugmail)
 * David Brush
 * @Godwottery
+* Chris Wild (@briskets)
 
 ## Third-party integrations
 
