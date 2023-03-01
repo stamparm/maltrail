@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2023 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/chvancooten/status/1629911090774589442
+
+http://178.187.193.213
+http://207.148.117.112
+
+# Reference: https://twitter.com/MichalKoczwara/status/1630998218807865344
+
+http://3.0.147.54
