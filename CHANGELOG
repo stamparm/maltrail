@@ -14,8 +14,17 @@
 
 
 
-- Version 0.54 -> 0.55 (Upcoming release)
+- Version 0.55 -> 0.56 (Upcoming release)
 
+
+
+
+
+- Version 0.54 -> 0.55 (01 Mar 2023)
+
+[!] Fixed vulnerability in http.py (Issue #19146)
+[=] Minor update for _process_packet func in sensor (Issue #19129)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
