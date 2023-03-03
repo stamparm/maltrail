@@ -154,3 +154,9 @@ systemresync.com
 # Reference: https://twitter.com/MichalKoczwara/status/1606419631601762304
 
 213.227.155.115:1337
+
+
+# Reference: https://twitter.com/MichalKoczwara/status/1631683477648072706
+
+/bruteratel-1.2.2-pwn3rzs-cyberarsenal/
+/brtEvilTest.elf
