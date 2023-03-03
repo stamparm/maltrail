@@ -502,6 +502,10 @@ http://45.138.27.78
 
 http://188.227.58.76
 
+# Reference: https://www.malware-traffic-analysis.net/2023/03/02/index.html
+
+http://188.227.106.13
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
