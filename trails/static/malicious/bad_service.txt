@@ -618,3 +618,8 @@ darknet.ug
 # Reference: https://twitter.com/D4RKR4BB1T47/status/1626119618556198912
 
 darkn5g756epq6t6fkqdo3mvkxlvwjtgabsbh3x47yhqg3uguiy5z5yd.onion
+
+# Reference: https://blog.bushidotoken.net/2023/03/tips-for-investigating-cybercrime.html
+
+fudcrypter.io
+btcpay.fudcrypter.io
