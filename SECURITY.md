@@ -13,7 +13,7 @@ If you discover a Maltrail security vulnerability, we'd appreciate a non-public 
 
 The disclosure of discovered security vulnerability will be coordinated with Maltrail team.
 
-Maltrail's [issue tracker](https://github.com/stamparm/maltrail/issues) and [pull request tracker](https://github.com/stamparm/maltrail/pulls) are full public.
+Maltrail's [issues tracker](https://github.com/stamparm/maltrail/issues) and [pull requests tracker](https://github.com/stamparm/maltrail/pulls) are full public.
 
 ## Supported Versions
 
