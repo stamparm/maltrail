@@ -21,3 +21,11 @@ reseed.i2p-projekt.de
 reseed.i2p.vzaws.com
 ieb9oopo.mooo.com
 i2p2.no
+
+# Reference: https://www.sentinelone.com/blog/hunting-for-honkbox-multistage-macos-cryptominer-may-still-be-hiding/
+# Reference: https://otx.alienvault.com/pulse/640134ee9052f4e129521989
+
+i2p.net
+i2pd.xyz
+i2pgit.org
+incognet.io
