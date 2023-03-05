@@ -506,6 +506,19 @@ http://188.227.58.76
 
 http://188.227.106.13
 
+# Reference: https://www.prodaft.com/resource/detail/rig-rig-exploit-kit-depth-analysis
+# Reference: https://otx.alienvault.com/pulse/63ff8d8af1fd0864b3f71f96
+
+http://188.227.106.162
+http://188.227.106.81
+http://188.227.106.83
+http://188.227.57.93
+http://188.227.58.144
+http://188.227.58.152
+http://195.16.88.28
+http://45.138.26.51
+http://45.138.26.89
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
