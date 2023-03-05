@@ -2252,6 +2252,10 @@ NimPlant
 r00ts3c
 r00ts3c-owned-you
 
+# Reference: https://ti.qianxin.com/blog/articles/Andoryu-Botnet-A-New-Botnet-Based-on-Socks-Protocol/
+
+^Abcd$
+
 # Misc
 
 information_schema
