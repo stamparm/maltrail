@@ -1060,3 +1060,14 @@ lhr3.nbminer.com
 # Reference: https://www.virustotal.com/gui/file/854edb1e3d27ceddd528cd604883c9f08cea197b9dd92203658b7d0e8ec981c9/detection
 
 51.68.190.80:14433
+
+# Reference: https://www.cadosecurity.com/redis-miner-leverages-command-line-file-hosting-service/
+# Reference: https://otx.alienvault.com/pulse/64020be7e20c783ba85177f5
+
+herominers.com
+xmrfast.com
+pool.xmrfast.com
+monero.herominers.com
+pool.gntl.co.uk
+ca.monero.herominers.com
+xmr.pool.gntl.co.uk
