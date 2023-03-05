@@ -1638,6 +1638,57 @@ accountability.thefenceanddeckguys.com
 catalog.iroldzyn.com
 oxford.courstify.com
 
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/ta569-socgholish-and-beyond
+# Reference: https://otx.alienvault.com/pulse/63fcc40dc61f21260d830fdb
+
+active.aasm.pro
+amplifier.myjesusloves.me
+auction.wonderwomanquilts.com
+baget.godmessaged.me
+best.theascent-group.com
+canonical.fmunews.com
+casting.austinonline.shop
+chicago.beboldskin.com
+cigars.pawscolours.com
+collapse.tradingiswar.com
+common.dotviolationsremoval.com
+episode.foxscales.com
+expense.brick-house.net
+expert.stmhonline.net
+fork.topgeargroup.shop
+friscomusicgroup.com
+governing.beautynic.com
+group5.corralphacap.com
+hares.lacyberlab.net
+hemi.mamasbakery.net
+hook.adieh.com
+kinematics.starmidwest.com
+loans.mistakenumberone.com
+minion.maxxcorp.net
+montage.travelguidediva.commycontrol.alohaalsomeansgoodbye.com
+myfood.silverspringfoodproject.org
+natural.cpawalmyrivera.com
+office.cdsigner.com
+passphrase.singinganewsong.com
+people.fl2wealth.com
+podcasts.momsgrabcoffee.com
+premiere.4tosocialbeginners.com
+repo.allgoodsnservices.com
+requests.pleaseactivate.me
+rituals.fashionediter.com
+shortsaledamagereports.com
+smiles.cahl4u.org
+sodality.mandmsolicitors.com
+sonic.myr2b.me
+squad.incumetrics.com
+telemetry.usacyberpages.net
+tickets.kairosadvantage.com
+travel.dianatokaji.com
+vacation.thebrightgift.com
+vacation.thebrightgift1.com
+wallpapers.uniquechoice-co.com
+zoom.themyr2bpodcast.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
