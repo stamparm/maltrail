@@ -7605,3 +7605,9 @@
 # Reference: https://tehtris.com/en/blog/honeypots-activity-of-the-week-51
 
 /w00tw00t.at.blackhats.romanian.anti-sec:)
+
+# Reference: https://twitter.com/r3dbU7z/status/1633406502747754498
+
+193.142.146.101
+193.149.176.207
+92.118.39.82
