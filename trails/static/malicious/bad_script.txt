@@ -6545,6 +6545,11 @@ wildhottiegirls.com
 
 /168061e7445d0c.php
 
+# Reference: https://blog.cyble.com/2023/03/09/nexus-the-latest-android-banking-trojan-with-sova-connections/
+
+/downloadinject
+/downloadinject?access=
+
 # Generic
 
 /js/altmanluggage.js
