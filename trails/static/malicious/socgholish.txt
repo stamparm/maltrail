@@ -1689,6 +1689,20 @@ vacation.thebrightgift1.com
 wallpapers.uniquechoice-co.com
 zoom.themyr2bpodcast.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-03-08-v10261/349
+
+tool.pearldentalgroup.ca
+1bd2b.tool.pearldentalgroup.ca
+2bd38.tool.pearldentalgroup.ca
+33d5b.tool.pearldentalgroup.ca
+3419c.tool.pearldentalgroup.ca
+35d15.tool.pearldentalgroup.ca
+4ec4c.tool.pearldentalgroup.ca
+545fd.tool.pearldentalgroup.ca
+5bd21.tool.pearldentalgroup.ca
+a4c86.tool.pearldentalgroup.ca
+ae141.tool.pearldentalgroup.ca
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
