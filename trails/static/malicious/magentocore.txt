@@ -8230,6 +8230,10 @@ okqtfc1.org
 rithdigit.cyou
 yachtbars.fun
 
+# Reference: https://twitter.com/unmaskparasites/status/1633894598908219392
+
+git-authorize.net
+
 # Generic
 
 /assets/lfg.js
