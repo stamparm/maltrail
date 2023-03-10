@@ -6550,6 +6550,18 @@ wildhottiegirls.com
 /downloadinject
 /downloadinject?access=
 
+# Reference: https://www.wiz.io/blog/redirection-roulette
+# Reference: https://otx.alienvault.com/pulse/64089e70cd7ce1921e580bef
+
+51sdk.org
+cdn-linkedin.info
+helpscout.help
+beacon-v2.helpscout.help
+v2.helpscout.help
+jsstat.51sdk.org
+stat.51sdk.org
+tpc.cdn-linkedin.info
+
 # Generic
 
 /js/altmanluggage.js
