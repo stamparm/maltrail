@@ -18,6 +18,11 @@
 
 78.141.195.16:1337
 
+# Reference: https://twitter.com/MichalKoczwara/status/1634155939585482754
+
+143.198.32.165:4000
+167.71.190.181:4000
+
 # Generic
 
 /evilginx-linux-amd64.tar.gz
