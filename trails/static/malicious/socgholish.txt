@@ -1703,6 +1703,12 @@ tool.pearldentalgroup.ca
 a4c86.tool.pearldentalgroup.ca
 ae141.tool.pearldentalgroup.ca
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-03-15-v10268/360
+
+favor.thehouseplantblog.com
+056b3.favor.thehouseplantblog.com
+dfd87.favor.thehouseplantblog.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
