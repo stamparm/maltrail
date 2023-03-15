@@ -6562,6 +6562,13 @@ jsstat.51sdk.org
 stat.51sdk.org
 tpc.cdn-linkedin.info
 
+# Reference: https://twitter.com/HaoZhixiang/status/1635937304970706948
+# Reference: https://www.virustotal.com/gui/ip-address/43.154.91.41/relations
+# Reference: https://www.virustotal.com/gui/file/4c9b6c5c65eff41d99911dffb8f65730e4bf954ff162e9840d3cac7fe1fc9340/detection
+
+/getCarddataData.php
+/api/getCarddataData.php
+
 # Generic
 
 /js/altmanluggage.js
