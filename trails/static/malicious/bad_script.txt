@@ -6569,6 +6569,10 @@ tpc.cdn-linkedin.info
 /getCarddataData.php
 /api/getCarddataData.php
 
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-03-16%20IcedID%20(Bokbot)%20IOCs
+
+/gatef1.php
+
 # Generic
 
 /js/altmanluggage.js
