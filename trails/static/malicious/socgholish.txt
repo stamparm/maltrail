@@ -1709,6 +1709,39 @@ favor.thehouseplantblog.com
 056b3.favor.thehouseplantblog.com
 dfd87.favor.thehouseplantblog.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/94.103.94.237/relations
+
+0c966.favor.thehouseplantblog.com
+0cc55.favor.thehouseplantblog.com
+0e607.favor.thehouseplantblog.com
+0f139.decision.alshafipdk.com
+14894.decision.alshafipdk.com
+14ef7.decision.alshafipdk.com
+1e3f0.decision.alshafipdk.com
+23f3e.decision.alshafipdk.com
+28b76.decision.alshafipdk.com
+319f1.favor.thehouseplantblog.com
+343b2.favor.thehouseplantblog.com
+35362.decision.alshafipdk.com
+4e6d8.decision.alshafipdk.com
+5866c.decision.alshafipdk.com
+5f1b0.decision.alshafipdk.com
+5f1dc.decision.alshafipdk.com
+7be4b.favor.thehouseplantblog.com
+7c511.decision.alshafipdk.com
+8c884.decision.alshafipdk.com
+8f539.favor.thehouseplantblog.com
+91374.favor.thehouseplantblog.com
+9aeed.decision.alshafipdk.com
+a2a65.decision.alshafipdk.com
+a3aca.decision.alshafipdk.com
+ab38d.decision.alshafipdk.com
+asasa.0f139.decision.alshafipdk.com
+c2182.favor.thehouseplantblog.com
+cd530.decision.alshafipdk.com
+fcbbb.decision.alshafipdk.com
+ff0a7.decision.alshafipdk.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
