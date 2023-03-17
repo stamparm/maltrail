@@ -1407,3 +1407,9 @@ check.statisticline.com
 for.firstblackphase.com
 pista.violetlovelines.com
 trac.violetlovelines.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1636765304062881792
+
+wensbol.site
+google-analytics.workers.dev
+static.google-analytics.workers.dev
