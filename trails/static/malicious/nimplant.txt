@@ -9,3 +9,7 @@ http://207.148.117.112
 # Reference: https://twitter.com/MichalKoczwara/status/1630998218807865344
 
 http://3.0.147.54
+
+# Reference: https://twitter.com/MichalKoczwara/status/1637564597719777280
+
+http://192.3.128.185
