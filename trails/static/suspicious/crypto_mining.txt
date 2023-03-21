@@ -1071,3 +1071,15 @@ monero.herominers.com
 pool.gntl.co.uk
 ca.monero.herominers.com
 xmr.pool.gntl.co.uk
+
+# Reference: https://www.crowdstrike.com/blog/crowdstrike-discovers-first-ever-dero-cryptojacking-campaign-targeting-kubernetes/
+# Reference: https://otx.alienvault.com/pulse/6414cd3690659d2c4d446f91
+# Reference: https://www.virustotal.com/gui/file/021a6ac6cac28e6d9527ef0fcbc09d3d225162607a06ae7e6adb76870ded4a4e/detection
+# Reference: https://www.virustotal.com/gui/file/124281b20b6c97ebbc902d5dde5dcb958a2dcc3fd79ba5c0aca0822bac7f0dd5/detection
+
+15.204.9.209:10300
+15.235.184.172:10300
+167.235.7.72:10300
+172.86.75.2:443
+45.61.137.195:58282
+community-pools.mysrv.cloud
