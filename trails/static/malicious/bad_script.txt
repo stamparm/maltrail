@@ -6573,6 +6573,10 @@ tpc.cdn-linkedin.info
 
 /gatef1.php
 
+# Reference: https://www.virustotal.com/gui/file/9dcea75ddd40d0319cb396b4fb95177a205f055768135b527dd6bdd01d0980ec/detection
+
+/qsplyz?mac=
+
 # Generic
 
 /js/altmanluggage.js
