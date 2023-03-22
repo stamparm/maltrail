@@ -418,3 +418,8 @@ ip.plyz.net
 # Reference: https://app.any.run/tasks/8fb9ad39-57dc-444d-88d8-d71ac942cddc/
 
 whois.pconline.com.cn
+
+# Reference: https://www.virustotal.com/gui/ip-address/34.117.59.81/relations
+# Reference: https://www.virustotal.com/gui/file/a4b5d7012c1a971c6c7d95de1b2027153d83527b1a2c62fa0fca7770a76fb99a/detection
+
+http://34.117.59.8
