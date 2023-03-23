@@ -8272,6 +8272,30 @@ swsgswsg.sbs
 thecornerstoreau.sbs
 ultracoolfl.sbs
 
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/03/new-kritec-skimmer
+# Reference: https://otx.alienvault.com/pulse/641c8658102b428a20157ffc
+
+apexit.yachts
+bereelec.quest
+entrydelt.sbs
+flagmob.quest
+flowit.pics
+gemdigit.pics
+klstech.shop
+kritec.pics
+kruktech.shop
+lavutele.yachts
+nevomob.quest
+obfuscator.io
+prijetech.shop
+sanpatech.shop
+shotsmob.sbs
+smestech.shop
+sorotele.yachts
+tochdigital.pics
+vitalmob.pics
+vuroselec.quest
+
 # Generic
 
 /assets/lfg.js
