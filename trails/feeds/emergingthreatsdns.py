@@ -10,7 +10,7 @@ import re
 
 from core.common import retrieve_content
 
-__url__ = "https://rules.emergingthreats.net/open/suricata-5.0/rules/emerging-malware.rules"
+__url__ = "https://rules.emergingthreats.net/open/suricata/rules/emerging-malware.rules"
 __check__ = "Emerging Threats"
 __info__ = "malware"
 __reference__ = "emergingthreats.net"
