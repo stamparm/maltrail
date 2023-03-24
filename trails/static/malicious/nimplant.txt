@@ -13,3 +13,10 @@ http://3.0.147.54
 # Reference: https://twitter.com/MichalKoczwara/status/1637564597719777280
 
 http://192.3.128.185
+
+# Reference: https://twitter.com/MichalKoczwara/status/1639289816381628418
+
+http://91.234.199.4
+89.44.194.102:443
+naqsh-ejahan.com
+list.naqsh-ejahan.com
