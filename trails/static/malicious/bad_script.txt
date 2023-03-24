@@ -6577,6 +6577,11 @@ tpc.cdn-linkedin.info
 
 /qsplyz?mac=
 
+# Reference: https://twitter.com/malwrhunterteam/status/1639320109130063872
+# Reference: https://www.virustotal.com/gui/file/783d6753583a5d4a01fdd93d242e29f76324625d3b1c701a3fac161aa325bfce/detection
+
+/USCORP.hta
+
 # Generic
 
 /js/altmanluggage.js
