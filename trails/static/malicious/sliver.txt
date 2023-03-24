@@ -559,3 +559,10 @@ pezimap.com
 # Reference: https://twitter.com/MichalKoczwara/status/1639289816381628418
 
 91.234.199.4:31337
+
+# Reference: https://twitter.com/MichalKoczwara/status/1639367247830327297
+
+164.92.255.219:8080
+164.92.255.219:8448
+65.108.250.5:8080
+65.108.250.5:8448
