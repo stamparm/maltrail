@@ -1822,3 +1822,7 @@ http://64.226.77.250
 # Reference: https://twitter.com/drb_ra/status/1638727566499680257
 
 112.196.222.239:443
+
+# Reference: https://twitter.com/drb_ra/status/1639447763296591879
+
+162.248.160.141:443
