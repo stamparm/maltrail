@@ -5534,3 +5534,7 @@ stoanews.com
 # Reference: https://www.virustotal.com/gui/domain/danielma.info/relations
 
 danielma.info
+
+# Reference: https://www.virustotal.com/gui/domain/txt.al/relations
+
+txt.al
