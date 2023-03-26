@@ -301,6 +301,8 @@ http://207.148.118.169
 # Reference: https://github.com/conexioninversa/MalwareIntel/blob/main/C2_All.csv
 # Reference: https://github.com/conexioninversa/MalwareIntel/blob/main/C2_Covenant.txt
 
+103.150.190.90:7443
+104.237.142.165:7443
 107.182.129.146:7443
 109.202.192.126:7443
 116.203.252.63:7443
@@ -404,6 +406,7 @@ http://207.148.118.169
 51.159.195.132:7443
 51.89.185.29:7443
 51.89.73.156:7443
+52.200.202.251:7443
 54.166.26.62:7443
 54.178.124.65:7443
 54.37.225.27:7443
