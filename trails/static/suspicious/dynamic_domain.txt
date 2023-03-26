@@ -3443,3 +3443,7 @@ vicp.hk
 # Reference: https://www.virustotal.com/gui/domain/com.se/relations
 
 com.se
+
+# Reference: https://www.virustotal.com/gui/domain/dynip.online/relations
+
+dynip.online
