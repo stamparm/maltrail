@@ -1863,5 +1863,8 @@ http://64.226.77.250
 # Reference: https://www.virustotal.com/gui/file/1aa867bb4fb60de654e5e166c0a0e45c3b131a0131484c6b8888fea501c37b3a/detection
 
 129.151.210.233:4444
-
 129.151.210.233:8000
+
+# Reference: https://twitter.com/sicehice/status/1639090824540749824
+
+45.137.207.151:4444
