@@ -2261,6 +2261,14 @@ r00ts3c-owned-you
 B1D3N
 B1D3N\_RIM\_MY\_ASS
 
+# Reference: https://twitter.com/suyog41/status/1640222240233930754
+
+\b901785252112\b
+
+# Reference: https://twitter.com/suyog41/status/1640224261154455552
+
+^OK$
+
 # Misc
 
 information_schema
