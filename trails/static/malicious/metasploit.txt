@@ -1851,3 +1851,17 @@ http://64.226.77.250
 # Reference: https://twitter.com/drb_ra/status/1640177898802802691
 
 41.89.162.119:8080
+
+# Reference: https://twitter.com/sicehice/status/1640354875283496962
+# Reference: https://www.virustotal.com/gui/file/0fdf66a1fa9977426f0c3dd236fdc21b095fe41160e59ea02b001d99d6ad9270/detection
+
+202.59.10.15:1234
+202.59.10.15:9000
+
+# Reference: https://twitter.com/sicehice/status/1640347857172713473
+# Reference: https://www.virustotal.com/gui/file/b1bd34d84789ab611ce5d1cbfab2a2dff987cdbab94904494637312ec2cd4645/detection
+# Reference: https://www.virustotal.com/gui/file/1aa867bb4fb60de654e5e166c0a0e45c3b131a0131484c6b8888fea501c37b3a/detection
+
+129.151.210.233:4444
+
+129.151.210.233:8000
