@@ -1742,6 +1742,14 @@ cd530.decision.alshafipdk.com
 fcbbb.decision.alshafipdk.com
 ff0a7.decision.alshafipdk.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-03-27-v10278/415
+
+lap.detroitdragway.com
+03271.lap.detroitdragway.com
+17b25.lap.detroitdragway.com
+874d3.lap.detroitdragway.com
+f7145.lap.detroitdragway.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
