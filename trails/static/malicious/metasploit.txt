@@ -1872,3 +1872,7 @@ http://64.226.77.250
 # Reference: https://www.virustotal.com/gui/file/648d7c7eb56b483ef461d1d3692825e6e2755461f0fa41c4364d529c59cb1c68/detection
 
 206.189.80.59:4444
+
+# Reference: https://twitter.com/drb_ra/status/1641137699049414658
+
+154.93.5.167:443
