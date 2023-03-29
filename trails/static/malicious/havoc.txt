@@ -67,3 +67,19 @@
 89.58.33.82:443
 94.102.49.165:443
 99.238.119.93:443
+
+# Reference: https://twitter.com/Gi7w0rm/status/1625645124247076870
+# Reference: https://www.zscaler.com/blogs/security-research/havoc-across-cyberspace
+# Reference: https://www.virustotal.com/gui/file/dba614a3b64db6ab346bf37683a9d13b5013fb4b7def2acdd8a697d26b62e48d/detection
+# Reference: https://www.virustotal.com/gui/file/f577e247a29f74cf5517d47cc4821dc4d087cb96d5456ebb2f6f858dbe828ccd/detection
+# Reference: https://www.virustotal.com/gui/file/ccb6d9742cf9329f2cb8030a25be663d098878ece7ffcfaa483b50856ad3c08e/detection
+# Reference: https://www.virustotal.com/gui/file/c9a395ec3fb69e124c672823333ec165fce21a5773618153bc251cc8b2503dc4/detection
+# Reference: https://www.virustotal.com/gui/file/b19f1eb30638f1f4695fe0741a1ccdb8ce0aa78b6ea343b4799a64ca1f1b1971/detection
+# Reference: https://www.virustotal.com/gui/file/aea22bdf30f2b5ece1f867d4193ddbf48a5e8ebf812d9b7586db4aa54f1abf5d/detection
+
+http://146.190.48.229
+146.190.48.229:2323
+146.190.48.229:3939
+146.190.48.229:6963
+146.190.48.229:7777
+146.190.48.229:9797
