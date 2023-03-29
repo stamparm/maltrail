@@ -8275,24 +8275,39 @@ ultracoolfl.sbs
 # Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/03/new-kritec-skimmer
 # Reference: https://otx.alienvault.com/pulse/641c8658102b428a20157ffc
 
+accotech.quest
 apexit.yachts
 bereelec.quest
+cloud-cdn.org
+cloveselec.quest
+defimob.bar
 entrydelt.sbs
 flagmob.quest
 flowit.pics
 gemdigit.pics
+gretit.yachts
 klstech.shop
+kouelec.cyou
 kritec.pics
 kruktech.shop
 lavutele.yachts
+ledeehub.shop
 nevomob.quest
+nujtec.shop
 obfuscator.io
+oumymob.shop
+paunit.pics
+pracelec.yachts
 prijetech.shop
+regtech.sbs
 sanpatech.shop
+screenmet.sbs
+shokomob.sbs
 shotsmob.sbs
 smestech.shop
 sorotele.yachts
 tochdigital.pics
+ukatec.pics
 vitalmob.pics
 vuroselec.quest
 
