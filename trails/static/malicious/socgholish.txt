@@ -1756,6 +1756,10 @@ examples.propertytax4less.com
 life.judyfay.com
 unit4.majesticpg.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-03-31-v10282/422
+
+agreement.panworldtradersllc.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
