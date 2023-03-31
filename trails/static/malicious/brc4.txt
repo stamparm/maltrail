@@ -163,3 +163,7 @@ systemresync.com
 
 /bruteratel-1.2.2-pwn3rzs-cyberarsenal/
 /brtEvilTest.elf
+
+# Reference: https://twitter.com/TLP_R3D/status/1641897525752758272
+
+207.148.113.47:443
