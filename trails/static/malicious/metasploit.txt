@@ -1880,3 +1880,9 @@ http://64.226.77.250
 # Reference: https://twitter.com/drb_ra/status/1641656673663107072
 
 104.234.11.133:443
+
+# Reference: https://twitter.com/teamcymru_S2/status/1641847932608446484
+# Reference: https://www.virustotal.com/gui/file/154df9b81f054e2b8b49e47c34493be18313c7dd12244384fd6c7e038bf1df84/detection
+
+http://185.81.68.180
+185.81.68.180:443
