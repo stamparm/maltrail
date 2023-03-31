@@ -1750,6 +1750,12 @@ lap.detroitdragway.com
 874d3.lap.detroitdragway.com
 f7145.lap.detroitdragway.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-03-30-v10281/420
+
+examples.propertytax4less.com
+life.judyfay.com
+unit4.majesticpg.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
