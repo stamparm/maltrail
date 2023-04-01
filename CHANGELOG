@@ -14,7 +14,14 @@
 
 
 
-- Version 0.55 -> 0.56 (Upcoming release)
+- Version 0.56 -> 0.57 (Upcoming release)
+
+
+
+
+
+
+- Version 0.55 -> 0.56 (01 Apr 2023)
 
 [=] Minor update for /feeds/emergingthreatsdns.py (Issue #19147)
 [=] Multiple updates and optimizations for regular static trails and the whitelist
