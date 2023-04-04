@@ -6582,6 +6582,11 @@ tpc.cdn-linkedin.info
 
 /USCORP.hta
 
+# Reference: https://twitter.com/suyog41/status/1643241392439808001
+# Reference: https://www.virustotal.com/gui/file/ba2848dd130c26176303690fd5a07e945dfbd20c59f253dc56cc64611409518d/detection
+
+/hack/getcompid.php
+
 # Generic
 
 /js/altmanluggage.js
