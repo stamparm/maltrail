@@ -8311,6 +8311,11 @@ ukatec.pics
 vitalmob.pics
 vuroselec.quest
 
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.130/relations
+
+nespomob.sbs
+cdn.shotsmob.sbs
+
 # Generic
 
 /assets/lfg.js
