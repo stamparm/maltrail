@@ -3433,3 +3433,7 @@ tools.emqx.io
 bite.lv
 cherryservers.com
 worldstream.nl
+
+# Reference: https://github.com/stamparm/maltrail/commit/65629f80a414fccf634ccc55c27d16ae51d5b742
+
+objective-see.org
