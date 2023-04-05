@@ -3437,3 +3437,6 @@ worldstream.nl
 # Reference: https://github.com/stamparm/maltrail/commit/65629f80a414fccf634ccc55c27d16ae51d5b742
 
 objective-see.org
+
+# Reference: https://github.com/stamparm/maltrail/issues/19150
+# Reference: https://github.com/stamparm/maltrail/commit/c0b86fcaf077482e1afe5814fc5f9939b91b40b3
