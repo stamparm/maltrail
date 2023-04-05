@@ -3440,3 +3440,10 @@ objective-see.org
 
 # Reference: https://github.com/stamparm/maltrail/issues/19150
 # Reference: https://github.com/stamparm/maltrail/commit/c0b86fcaf077482e1afe5814fc5f9939b91b40b3
+
+kavach.mail.gov.in
+
+# Reference: https://github.com/stamparm/maltrail/issues/19150
+# Reference: https://github.com/stamparm/maltrail/commit/b7c91d44dfc3a8de0feec44b0273ef051f413c9a
+
+winrarbrasil.com.br
