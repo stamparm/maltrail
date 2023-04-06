@@ -311,3 +311,7 @@ lariwasdoi.online
 # Reference: https://www.virustotal.com/gui/file/9045056806ac529d082133cbea7583f66a12cab464ec48e788840316c14742d8/detection
 
 manteivsetting.ga
+
+# Reference: https://www.virustotal.com/gui/file/035474fdd9a3723cbedddf05a55d1838cfb2ccaa34257bf0959cc75b5a8590fb/detection
+
+rexplosing.fun
