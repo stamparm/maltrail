@@ -1657,3 +1657,9 @@ xfanclub.ru
 yourmsrp.com
 yys1982.com
 zirve100.com
+
+# Reference: https://wordpress.org/support/topic/website-hacked-index-php-totally-changed/
+# Reference: https://www.virustotal.com/gui/domain/bingstyle.com/relations
+
+bingstyle.com
+saleforyou.org
