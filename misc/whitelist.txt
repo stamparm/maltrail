@@ -3447,3 +3447,8 @@ kavach.mail.gov.in
 # Reference: https://github.com/stamparm/maltrail/commit/b7c91d44dfc3a8de0feec44b0273ef051f413c9a
 
 winrarbrasil.com.br
+
+# Reference: https://www.virustotal.com/gui/domain/apps.identrust.com/relations
+
+identrust.com
+apps.identrust.com
