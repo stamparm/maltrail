@@ -442,16 +442,6 @@
 
 /r.hta
 
-# Reference: https://blog.malwarebytes.com/threat-analysis/2018/09/mass-wordpress-compromises-tech-support-scams/
-
-ads.voipnewswire.net/ad.js
-drupalupdates.tk/check.js
-cdn.allyouwant.online/main.js
-ejyoklygase.tk
-examhome.net
-mp3menu.org
-uustoughtonma.org
-
 # Reference: https://twitter.com/bad_packets/status/1038967603048243200
 # Reference: https://www.virustotal.com/#/file/d527ea936ab99a2e3a25cf8786c66c0e07fc509b9465d48dd26065f034795f19/relations
 
