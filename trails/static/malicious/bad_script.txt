@@ -966,111 +966,6 @@ hostingcloud.racing
 /ab20.js
 /Iit5.js
 
-# Reference: https://otx.alienvault.com/pulse/5d9cadcab8eefffbac23367a
-# Reference: https://blog.sucuri.net/2017/05/fake-wordprssapi-stealing-cookies-and-hijacking-sessions.html
-# Reference: https://www.scmagazineuk.com/cookie-monster-malware-steals-cookies-hijacks-wordpress-sessions/article/1474671
-
-1.newor.net
-2.api.viralheadlines.net
-3.newor.net
-a01.u-ad.info
-abtrcking.com
-adrenalinecdn.com
-agrkings.com
-airjss.com
-andrewandjack.com
-api.behavioralmailing.com
-b.nwcdn.xyz
-beatchucknorris.com
-blozoo.net
-bwinpoker24.com
-c.radxcomm.com
-caphyon-analytics.com
-cdn.adpoints.media
-cdn.avrti.xyz
-cdn.echoenabled.com
-cdn.inaudium.com
-cdn.jquery.tools
-cdn.muse-widgets.ru
-cdn.owlcdn.com
-cfs.u-ad.info
-chat-client-js.firehoseapp.com
-cleantds.in
-clk-analytics.com
-code.jguery.org
-con1.sometimesfree.biz
-connect.f1call.com
-d0.histats.12mlbe.com
-da.adsvcs.com
-daljarrock.hurlinesswhitchurch.com
-dcts.pw
-dezaula.com
-dup.baidustatic.pw
-e.e708.net
-earsham.pontypriddcrick.com
-flipdigital.ru
-frompariswithhate.org
-gamescale.vio.rocks
-getsocialbuttons.xyz
-hmailserver.in
-hosted-oswa.org
-i.omeljs.info
-i.rfgdjs.info
-i.selectionlinksjs.info
-i3.putags.com
-ijquery9.com
-infinite-2.tcs3.co.uk
-infinite-3.tcs3.co.uk
-java.sometimesfree.biz
-jquery.im
-js.nster.net
-js.sn00.net
-js.trafficanalytics.online
-js2.sn00.net
-kanpianjs.top
-keit.kristofer.ga
-livestats.us
-log.widgetstat.net
-m.free-codes.org
-m.xfanclub.ru
-mediros.ru
-narnia.tcs3.co.uk
-nstracking.com
-oasagm82wioi.org
-onlinemarketplace.top
-ournet-analytics.com
-parts.kuru2jam.com
-pipardot.com
-rarstats.com
-s.orange81safe.com
-s1.omnitor.ru
-sbdtds.com
-script.affilizr.com
-sdb.dancewithme.biz
-seo101.net
-spartan-ntv.com
-src.dancewithme.biz
-srv1.clk-analytics.com
-st.segpress.io
-st.stadsvc.com
-stablemoney.ru
-stat.botthumb.com
-stat.rolledwil.biz
-static.bh-cdn.com
-tag.imaginaxs.com
-takoashi.net
-themes.affect.lt
-trafficapi.nl
-traffictrade.life
-upgraderservices.cf
-upskirt-jp.net
-w5983.lb.wa-track.com
-webstats.xcellenzy.com
-widgets.wowzio.net
-yourmsrp.com
-yys1982.com
-zirve100.com
-
 # Reference: https://twitter.com/david_jursa/status/1181925512798773249
 # Reference: https://app.any.run/tasks/14d9b5a2-d8d3-41f4-9557-f21aec01fa32/
 
@@ -1106,14 +1001,6 @@ zirve100.com
 22js.org
 lib0.org
 wp11.org
-
-# Reference: https://blog.malwarebytes.com/threat-analysis/2019/10/the-forgotten-domain:-exploring-a-link-between-magecart-group-5-and-the-carbanak-apt/
-
-info-stat.ws
-
-# Reference: https://cyberweek.ae/materials/D4%20TRACK%202%20-%20APT%20Attacks%20On%20Crypto%20Exchange%20Employees%20-%20Heungsoo%20Kang.pdf
-
-analyticsfit.com
 
 # Reference: https://twitter.com/EKFiddle/status/1187034052227784704
 
