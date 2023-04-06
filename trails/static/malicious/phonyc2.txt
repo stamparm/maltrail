@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2023 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/sicehice/status/1643716252639305730
+
+91.235.234.130:443
+91.235.234.130:8000
+
+# Generic
+
+/PhonyC2_v6/
