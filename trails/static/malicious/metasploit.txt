@@ -1946,3 +1946,7 @@ http://91.240.118.252
 # Reference: https://twitter.com/drb_ra/status/1643723854668341248
 
 170.187.139.158:8443
+
+# Reference: https://twitter.com/sicehice/status/1643716252639305730
+
+194.61.121.86:8443
