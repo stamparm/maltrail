@@ -1760,6 +1760,17 @@ unit4.majesticpg.com
 
 agreement.panworldtradersllc.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-04-07-v10287/444
+
+cloudid.teacherhamish.com
+95a25061cfbcd33.cloudid.teacherhamish.com
+dfed.cloudid.teacherhamish.com
+ego.cloudid.teacherhamish.com
+fuwde.cloudid.teacherhamish.com
+smptz.cloudid.teacherhamish.com
+ziti.cloudid.teacherhamish.com
+zydbp.cloudid.teacherhamish.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
