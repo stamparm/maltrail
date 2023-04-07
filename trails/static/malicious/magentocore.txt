@@ -8334,6 +8334,10 @@ info-stat.ws
 
 analyticsfit.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/23.88.97.138/relations
+
+js-jquerylibs.com
+
 # Generic
 
 /assets/lfg.js
