@@ -1083,3 +1083,14 @@ xmr.pool.gntl.co.uk
 172.86.75.2:443
 45.61.137.195:58282
 community-pools.mysrv.cloud
+
+# Reference: https://www.virustotal.com/gui/file/0dba10ee3fede85677e79f64f863e2e05ce8e97a43f3f045b5c567d6e8a7060a/detection
+
+94.130.9.194:45700
+bcn.pool.minergate.com
+bcn.vip.pool.minergate.com
+fcn-xmr.pool.minergate.com
+mro.pool.minergate.com
+xmc.pool.minergate.com
+xmo.pool.minergate.com
+xmr.vip.pool.minergate.com
