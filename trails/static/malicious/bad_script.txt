@@ -6458,6 +6458,10 @@ tpc.cdn-linkedin.info
 
 /hack/getcompid.php
 
+# Reference: https://medium.com/checkmarx-security/who-broke-npm-malicious-packages-flood-leading-to-denial-of-service-77ac707ddbf1
+
+/0ab626f8f67208ad.php
+
 # Generic
 
 /js/altmanluggage.js
