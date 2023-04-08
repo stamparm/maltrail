@@ -3197,3 +3197,9 @@ succubus.neko.ltd
 # Reference: https://www.virustotal.com/gui/file/56399f6fa4383d51efc562487f8da78993b40fb2ded2af626db42dc5b956e734/detection
 
 mwcseed.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/0001f13f45dc8410dd1f975822a8147c61c165128c28ca22571d5ffd896db2ed/detection
+
+level-users.xyz
+linq-goody-best.com
+listsearchfind.xyz
