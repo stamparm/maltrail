@@ -3203,3 +3203,12 @@ mwcseed.ddns.net
 level-users.xyz
 linq-goody-best.com
 listsearchfind.xyz
+
+# Reference: https://www.virustotal.com/gui/file/006d8c5591f1df7515e1ece575242b307f1aa604615cd9b204faef814241484e/detection
+
+check-data.xyz
+api.check-data.xyz
+api2.check-data.xyz
+api3.check-data.xyz
+api4.check-data.xyz
+api5.check-data.xyz
