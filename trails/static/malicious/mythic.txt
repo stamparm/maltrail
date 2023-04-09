@@ -496,3 +496,8 @@ http://70.34.195.186
 92.205.29.124:7443
 92.246.89.172:7443
 93.95.229.168:7443
+
+# Reference: https://twitter.com/MichalKoczwara/status/1645071233468231685
+
+44.213.147.172:7443
+dental-delta.com
