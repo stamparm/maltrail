@@ -388,6 +388,17 @@ vscode.workingfeedback.cloud
 
 http://45.10.219.9
 
+# Reference: https://twitter.com/Gi7w0rm/status/1645502108748353536
+# Reference: https://twitter.com/Gi7w0rm/status/1645502289648525336
+
+http://116.203.199.173
+http://152.89.247.169
+http://168.100.11.94
+http://168.100.8.44
+http://64.52.80.23
+http://78.153.130.61
+http://83.220.171.204
+
 # Generic
 
 /admin_123/auth.php
