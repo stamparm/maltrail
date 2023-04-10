@@ -915,3 +915,10 @@ podathon.org/shell/
 # Reference: https://www.virustotal.com/gui/file/5d30ce01a19623aaaae84bf3a4cc3ec16811c98f2b6c3a70fcad6e473b0386e6/detection
 
 /v3n0mbig.php
+
+# Reference: https://twitter.com/r3dbU7z/status/1645318062806126593
+
+/ani_shell.txt
+/cyb3r-sh3ll.txt
+/fx29_shell.txt
+/phpjackal1.3.txt
