@@ -6466,6 +6466,14 @@ tpc.cdn-linkedin.info
 
 /cee424f0f512fc7e.php
 
+# Reference: https://twitter.com/sicehice/status/1645494638285922322
+
+/chmodPayload.session
+/CVE-2020-9484.sh
+/downloadPayload.session
+/executePayload.session
+/payload.sh
+
 # Generic
 
 /js/altmanluggage.js
