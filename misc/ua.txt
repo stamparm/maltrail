@@ -2277,6 +2277,10 @@ iMightJustPayMySelfForAFeature
 
 AYAYAYAY1337
 
+# Reference: https://twitter.com/sicehice/status/1645818266806353920
+
+^None$
+
 # Misc
 
 information_schema
