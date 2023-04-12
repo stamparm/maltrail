@@ -1771,6 +1771,11 @@ smptz.cloudid.teacherhamish.com
 ziti.cloudid.teacherhamish.com
 zydbp.cloudid.teacherhamish.com
 
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-04-11%20Socgholish%20IOCs
+
+wzkb.cloudid.teacherhamish.com
+zvmh.cloudid.teacherhamish.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
