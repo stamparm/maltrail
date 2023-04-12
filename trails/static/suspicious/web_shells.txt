@@ -922,3 +922,9 @@ podathon.org/shell/
 /cyb3r-sh3ll.txt
 /fx29_shell.txt
 /phpjackal1.3.txt
+
+# Reference: https://twitter.com/sicehice/status/1640160970994753537
+
+/cmdsql.aspx
+/Def0ult.aspx
+/uploadcmd.aspx
