@@ -983,7 +983,6 @@ f292.demand.sageyogatherapies.com
 # Reference: https://twitter.com/MBThreatIntel/status/1580283780350504960
 
 allsunstates.com
-jquery0.com
 ecar.allsunstates.com
 
 # Reference: https://twitter.com/bigmacjpg/status/1580921898556276736
