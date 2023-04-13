@@ -6474,6 +6474,11 @@ tpc.cdn-linkedin.info
 /executePayload.session
 /payload.sh
 
+# Reference: https://twitter.com/malwrhunterteam/status/1646609191568658458
+# Reference: https://www.virustotal.com/gui/file/6fdfb56033dd92edfde1461cab42042d38ce43b8f2cb75872e7435e62ed744ca/detection
+
+/paladin.hta
+
 # Generic
 
 /js/altmanluggage.js
