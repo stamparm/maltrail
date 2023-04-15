@@ -5938,7 +5938,12 @@ sweetassma.ru
 
 # Reference: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/malicious-cookie-stuffing-chrome-extensions-with-1-4-million-users/
 
+autobuyapp.com
+goscreenshotting.com
 langhort.com
+netflixparty1.com
+netflixpartyplus.com
+unscart.in
 amz.langhort.com
 d.langhort.com
 data.langhort.com
