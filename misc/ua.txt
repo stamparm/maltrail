@@ -2281,6 +2281,10 @@ AYAYAYAY1337
 
 ^None$
 
+# Reference: https://tria.ge/230404-2l3vhsae34/behavioral2
+
+SmartLoader
+
 # Misc
 
 information_schema
