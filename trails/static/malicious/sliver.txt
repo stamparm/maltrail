@@ -1235,3 +1235,7 @@ pezimap.com
 
 143.198.68.62:8080
 143.198.68.62:8888
+
+# Reference: https://twitter.com/sicehice/status/1647635123070746624
+
+95.216.192.109:8888
