@@ -315,3 +315,8 @@ manteivsetting.ga
 # Reference: https://www.virustotal.com/gui/file/035474fdd9a3723cbedddf05a55d1838cfb2ccaa34257bf0959cc75b5a8590fb/detection
 
 rexplosing.fun
+
+# Reference: https://www.virustotal.com/gui/file/0049a986edefb64b80638750a793ddabfc7f8a4279237e892a1cd92888de065e/detection
+
+atswe.xyz
+ssp.atswe.xyz
