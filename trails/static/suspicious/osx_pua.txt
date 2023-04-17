@@ -37,3 +37,16 @@ do6j9veegshb4.cloudfront.net
 # Reference: https://www.virustotal.com/gui/file/7cc5aa0de58acc181260ca48d0069e7893570d2fec13bcd989f8907c23a0992a/detection
 
 d1z6i8y4ytpgjk.cloudfront.net
+
+# Reference: https://twitter.com/r3dbU7z/status/1647805038419476481
+# Reference: https://www.virustotal.com/gui/file/ac86512a483e31376c7465c7a6dc42d6c8d8b13e9d4d50c34e7cb982f7af1f0e/detection
+# Reference: https://www.virustotal.com/gui/file/212a8ea6003bbc660593b87d3ffe5ff844729c33407adc691c5932f98309ef5e/detection
+# Reference: https://www.virustotal.com/gui/file/ec4c9269a0259c35ac174ffe8d146b008fe1345c7055107c66b4f97382e509e2/detection
+
+optimizedevice.com
+etbnu.optimizedevice.com
+rgpypgqt.optimizedevice.com
+kaeqxczotdifgni.s3.amazonaws.com
+titrepljkdsuurm.s3.amazonaws.com
+tzpzqqhhphrshua.s3.amazonaws.com
+vrdazgynlt.comsysbuf.com
