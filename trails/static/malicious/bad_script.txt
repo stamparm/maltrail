@@ -6485,6 +6485,10 @@ tpc.cdn-linkedin.info
 /12b5f6433dfa13f2.php
 /paladin.hta
 
+# Reference: https://twitter.com/sicehice/status/1647771330492727296
+
+/disable_defender.ps1
+
 # Generic
 
 /js/altmanluggage.js
