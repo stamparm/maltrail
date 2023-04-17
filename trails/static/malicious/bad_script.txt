@@ -6489,6 +6489,10 @@ tpc.cdn-linkedin.info
 
 /disable_defender.ps1
 
+# Reference: https://www.virustotal.com/gui/file/0ae89ff0f8f57e30516f60a3a73d7bf3c0199b92031c933a8300f3f5663430f1/detection
+
+/a21af7dae5690f15.php
+
 # Generic
 
 /js/altmanluggage.js
