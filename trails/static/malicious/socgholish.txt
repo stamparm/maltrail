@@ -1846,6 +1846,20 @@ zydbp.cloudid.teacherhamish.com
 wzkb.cloudid.teacherhamish.com
 zvmh.cloudid.teacherhamish.com
 
+# Reference: https://twitter.com/threatcat_ch/status/1648208634709516288
+
+reseller.wonderfulworldblog.com
+app.reseller.wonderfulworldblog.com
+eajpx.reseller.wonderfulworldblog.com
+eok.reseller.wonderfulworldblog.com
+grp.reseller.wonderfulworldblog.com
+plwfv.reseller.wonderfulworldblog.com
+pxcg.reseller.wonderfulworldblog.com
+qpivi.reseller.wonderfulworldblog.com
+tji.reseller.wonderfulworldblog.com
+ylz.reseller.wonderfulworldblog.com
+zcnm.reseller.wonderfulworldblog.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
