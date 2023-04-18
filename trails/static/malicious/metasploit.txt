@@ -1982,3 +1982,7 @@ http://91.240.118.252
 # Reference: https://twitter.com/drb_ra/status/1646609019744964608
 
 34.245.44.250:443
+
+# Reference: https://twitter.com/drb_ra/status/1648058493058928649
+
+5.230.71.9:6854
