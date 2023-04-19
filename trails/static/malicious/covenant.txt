@@ -434,6 +434,12 @@ http://207.148.118.169
 linkedllin.ml
 wogetrldvisions.site
 
+# Reference: https://twitter.com/MichalKoczwara/status/1648613293387382786
+
+137.184.72.49:443
+137.184.72.49:7443
+opusmedical.info
+
 # Generic
 
 /covenantuser/
