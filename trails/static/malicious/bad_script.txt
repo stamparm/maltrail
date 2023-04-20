@@ -6508,6 +6508,12 @@ tpc.cdn-linkedin.info
 
 /loadaddr
 
+# Reference: https://twitter.com/unmaskparasites/status/1649161956547497984
+# Reference: https://blog.sucuri.net/2023/04/massive-abuse-of-abandoned-evalphp-wordpress-plugin.html
+
+/3e9c0ca6bbe9.php
+/7299b0773c8d.php
+
 # Generic
 
 /js/altmanluggage.js
