@@ -6501,6 +6501,13 @@ tpc.cdn-linkedin.info
 /loader.php?code_request=
 /payload.php?code_request=
 
+# Reference: https://twitter.com/Gi7w0rm/status/1649005498069401601
+# Reference: https://tria.ge/230420-ml7q5sbc8z/behavioral2
+# Reference: https://tria.ge/230420-mpceeabc9z/behavioral2
+# Reference: https://www.virustotal.com/gui/file/b7d9f37e382bbb34858885e08b72ae41a73e484a9b30f8f0e16bd3f546daa018/detection
+
+/loadaddr
+
 # Generic
 
 /js/altmanluggage.js
