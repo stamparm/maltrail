@@ -1860,6 +1860,15 @@ tji.reseller.wonderfulworldblog.com
 ylz.reseller.wonderfulworldblog.com
 zcnm.reseller.wonderfulworldblog.com
 
+# Reference: https://www.virustotal.com/gui/domain/picture.mercedesbestphoto.store/relations
+
+mercedesbestphoto.store
+picture.mercedesbestphoto.store
+_.picture.mercedesbestphoto.store
+4ef9e.picture.mercedesbestphoto.store
+74ed4.picture.mercedesbestphoto.store
+cba8e.picture.mercedesbestphoto.store
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
