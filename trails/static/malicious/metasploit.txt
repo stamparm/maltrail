@@ -1998,3 +1998,7 @@ http://91.240.118.252
 # Reference: https://twitter.com/drb_ra/status/1649147389658165249
 
 80.78.22.127:443
+
+# Reference: https://twitter.com/drb_ra/status/1649327331431817218
+
+112.196.222.4:443
