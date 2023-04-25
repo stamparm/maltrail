@@ -6520,6 +6520,10 @@ tpc.cdn-linkedin.info
 /valuOwn2.hta
 /UzxxZ.hta
 
+# Reference: https://twitter.com/sicehice/status/1650692593175470080
+
+/inject.sql
+
 # Generic
 
 /js/altmanluggage.js
