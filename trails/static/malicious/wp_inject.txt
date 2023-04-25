@@ -1663,3 +1663,11 @@ zirve100.com
 
 bingstyle.com
 saleforyou.org
+
+# Reference: https://twitter.com/unmaskparasites/status/1650944399969513472
+# Reference: https://www.virustotal.com/gui/ip-address/2.59.222.113/relations
+
+beatylines.com
+descriptionscripts.com
+fire.descriptionscripts.com
+line.beatylines.com
