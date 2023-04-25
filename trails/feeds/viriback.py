@@ -25,8 +25,8 @@ def fetch():
                 continue
             if "://" in line:
                 parts = line.lower().split(',')
-                trail = re.sub("/[^/]+$", "", parts[1])
-                trail = trail.split("://")[-1]
+                trail = parts[1].split("://")[-1].split('?')[0].split('#')[0]
+                trail = re.sub("/[^/]+$", "", trail)
                 trail = re.sub(r"/(web)?panel.*", "", trail)
                 if re.search(r"\A\d[\d.]*\d\Z", trail):
                     trail = "%s/" % trail
