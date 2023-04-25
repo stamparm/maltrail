@@ -6533,6 +6533,10 @@ tpc.cdn-linkedin.info
 
 /tryme.ps1
 
+# Reference: https://twitter.com/malwrhunterteam/status/1650871512847593475
+
+/st.ps1
+
 # Generic
 
 /js/altmanluggage.js
