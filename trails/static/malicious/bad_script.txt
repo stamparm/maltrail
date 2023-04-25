@@ -6524,6 +6524,11 @@ tpc.cdn-linkedin.info
 
 /inject.sql
 
+# Reference: https://twitter.com/sicehice/status/1650682009923072001
+
+/Shhhloader.cna
+/Shhhloader.py
+
 # Generic
 
 /js/altmanluggage.js
