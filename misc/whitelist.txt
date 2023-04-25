@@ -963,6 +963,7 @@ sophosxl.net
 
 # Generic
 
+jobseeker.com
 ahrtv.cn
 asiainfo-sec.com
 blockchain.info
