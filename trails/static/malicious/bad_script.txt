@@ -6529,6 +6529,10 @@ tpc.cdn-linkedin.info
 /Shhhloader.cna
 /Shhhloader.py
 
+# Reference: https://twitter.com/sicehice/status/1650678836399316994
+
+/tryme.ps1
+
 # Generic
 
 /js/altmanluggage.js
