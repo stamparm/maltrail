@@ -6514,6 +6514,12 @@ tpc.cdn-linkedin.info
 /3e9c0ca6bbe9.php
 /7299b0773c8d.php
 
+# Reference: https://twitter.com/sicehice/status/1650703773839286272
+
+/valueOwn2_old.hta
+/valuOwn2.hta
+/UzxxZ.hta
+
 # Generic
 
 /js/altmanluggage.js
