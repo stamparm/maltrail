@@ -6537,6 +6537,10 @@ tpc.cdn-linkedin.info
 
 /st.ps1
 
+# Reference: https://www.virustotal.com/gui/file/0a8616d62d28ed7d8ef580784dee2fc816f8d5200e339e69f925078b288a6d7b/detection
+
+/prob.ps1
+
 # Generic
 
 /js/altmanluggage.js
