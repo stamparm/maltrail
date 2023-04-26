@@ -2007,3 +2007,7 @@ http://91.240.118.252
 # Reference: https://www.virustotal.com/gui/file/b5b8862949638f4dbceb681fc62bf5621743d880a8e3ea227799820f23c8daa9/detection
 
 3.87.171.23:8080
+
+# Reference: https://twitter.com/drb_ra/status/1651320479527911425
+
+188.93.233.182:443
