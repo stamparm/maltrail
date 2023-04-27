@@ -1,0 +1,50 @@
+# Copyright (c) 2014-2023 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note: https://malpedia.caad.fkie.fraunhofer.de/details/py.responder
+
+# Reference: https://twitter.com/drb_ra/status/1651298476020441090
+
+3.253.101.91:5985
+
+# Reference: https://twitter.com/drb_ra/status/1651298513580326925
+# Reference: https://twitter.com/drb_ra/status/1651298518328279062
+
+http://18.220.53.56
+18.220.53.56:443
+
+# Reference: https://twitter.com/drb_ra/status/1651298542915289114
+
+40.118.62.149:445
+
+# Reference: https://twitter.com/drb_ra/status/1651298558916558848
+
+52.9.8.91:445
+
+# Reference: https://twitter.com/drb_ra/status/1651298563408658450
+
+52.9.8.91:443
+
+# Reference: https://twitter.com/drb_ra/status/1651298577828675593
+
+54.74.116.114:5985
+
+# Reference: https://twitter.com/drb_ra/status/1651298622829363228
+# Reference: https://twitter.com/drb_ra/status/1651298628332290056
+# Reference: https://twitter.com/drb_ra/status/1651298634963595264
+
+http://64.227.37.134
+64.227.37.134:443
+64.227.37.134:445
+
+# Reference: https://twitter.com/drb_ra/status/1651298663480557581
+
+http://94.34.157.201
+
+# Reference: https://twitter.com/drb_ra/status/1651298697781682176
+
+146.71.79.148:445
+
+# Reference: https://twitter.com/drb_ra/status/1651298701199933441
+
+146.71.79.148:5985
