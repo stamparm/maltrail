@@ -179,3 +179,7 @@ systemresync.com
 193.149.180.84:443
 31.42.189.61:443
 46.101.107.95:443
+
+# Reference: https://twitter.com/drb_ra/status/1651296543960334336
+
+http://13.114.78.162
