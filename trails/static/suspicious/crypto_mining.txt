@@ -1094,3 +1094,17 @@ mro.pool.minergate.com
 xmc.pool.minergate.com
 xmo.pool.minergate.com
 xmr.vip.pool.minergate.com
+
+# Reference: https://twitter.com/tosscoinwitcher/status/1651679921524334592
+# Reference: https://tria.ge/230427-yqa4hsbf5w/behavioral1
+# Reference: https://www.virustotal.com/gui/ip-address/162.19.139.184/relations
+
+162.19.139.184:2222
+2miners.ru
+grin.2miners.com
+p06.2miners.com
+solo-grin.2miners.com
+solo-grin.2miners.ru
+solo-xmr.2miners.com
+solo-xmr.2miners.ru
+us-grin.2miners.com
