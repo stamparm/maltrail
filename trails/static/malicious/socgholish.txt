@@ -1869,6 +1869,10 @@ _.picture.mercedesbestphoto.store
 74ed4.picture.mercedesbestphoto.store
 cba8e.picture.mercedesbestphoto.store
 
+# Reference: https://twitter.com/threatcat_ch/status/1651567538239676423
+
+trackrecord.wheresbecky.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
