@@ -2011,3 +2011,7 @@ http://91.240.118.252
 # Reference: https://twitter.com/drb_ra/status/1651320479527911425
 
 188.93.233.182:443
+
+# Reference: https://twitter.com/drb_ra/status/1651682530301468672
+
+79.137.34.141:1443
