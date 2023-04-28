@@ -8351,6 +8351,11 @@ shumtech.shop
 stacstocuh.quest
 zapolmob.sbs
 
+# Reference: https://unit42.paloaltonetworks.com/internet-threats-late-2022/
+# Reference: https://www.virustotal.com/gui/file/eaadde9a724180a0318c13a9399ec30bda7a3ec6399ff43b8b7207bf0e74332b/detection
+
+personallydeliver.com
+
 # Generic
 
 /assets/lfg.js
