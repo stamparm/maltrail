@@ -1239,3 +1239,9 @@ pezimap.com
 # Reference: https://twitter.com/sicehice/status/1647635123070746624
 
 95.216.192.109:8888
+
+# Reference: https://twitter.com/drb_ra/status/1652021268164558868
+# Reference: https://twitter.com/drb_ra/status/1652021272073650186
+
+188.166.165.134:31337
+188.166.165.134:8888
