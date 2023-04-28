@@ -8340,6 +8340,17 @@ analyticsfit.com
 
 js-jquerylibs.com
 
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/04/kritec-art
+# Reference: https://otx.alienvault.com/pulse/644ba6b9255f619b29fc7ac3
+
+daichetmob.sbs
+genlytec.us
+interytec.shop
+pyatiticdigt.shop
+shumtech.shop
+stacstocuh.quest
+zapolmob.sbs
+
 # Generic
 
 /assets/lfg.js
