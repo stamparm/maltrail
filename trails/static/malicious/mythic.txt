@@ -509,3 +509,23 @@ dental-delta.com
 # Reference: https://twitter.com/drb_ra/status/1651296694678552576
 
 http://192.3.255.153
+
+# Reference: https://twitter.com/drb_ra/status/1651840154674315266
+
+http://18.221.85.189
+
+# Reference: https://twitter.com/drb_ra/status/1651840181056536576
+
+http://34.205.83.91
+
+# Reference: https://twitter.com/drb_ra/status/1651840255043985408
+
+143.110.176.131:8081
+
+# Reference: https://twitter.com/drb_ra/status/1651840258982526976
+
+143.110.176.131:7443
+
+# Reference: https://twitter.com/drb_ra/status/1651840280402771968
+
+http://159.223.122.189
