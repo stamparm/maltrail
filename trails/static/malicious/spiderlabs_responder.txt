@@ -48,3 +48,51 @@ http://94.34.157.201
 # Reference: https://twitter.com/drb_ra/status/1651298701199933441
 
 146.71.79.148:5985
+
+# Reference: https://twitter.com/drb_ra/status/1651840812278267904
+
+3.140.197.153:445
+
+# Reference: https://twitter.com/drb_ra/status/1651840834348675072
+# Reference: https://twitter.com/drb_ra/status/1651840838241058818
+
+http://18.190.119.137
+18.190.119.137:445
+
+# Reference: https://twitter.com/drb_ra/status/1651840866380644355
+
+34.252.16.250:5986
+
+# Reference: https://twitter.com/drb_ra/status/1651840882411225089
+
+44.202.111.183:443
+
+# Reference: https://twitter.com/drb_ra/status/1651840904779513857
+# Reference: https://twitter.com/drb_ra/status/1651840908181094400
+# Referecne: https://twitter.com/drb_ra/status/1651840911469432833
+
+http://52.143.142.21
+52.143.142.21:443
+52.143.142.21:445
+
+# Reference: https://twitter.com/drb_ra/status/1651840980532834305
+
+92.204.160.126:443
+
+# Reference: https://twitter.com/drb_ra/status/1651841025697038336
+# Reference: https://twitter.com/drb_ra/status/1651841028922408962
+
+http://161.35.122.12
+161.35.122.12:443
+
+# Reference: https://twitter.com/drb_ra/status/1651841045754249217
+
+167.99.191.228:5985
+
+# Reference: https://twitter.com/drb_ra/status/1651841074833285121
+
+http://178.62.3.164
+
+# Reference: https://twitter.com/drb_ra/status/1651841099407794177
+
+216.238.111.216:443
