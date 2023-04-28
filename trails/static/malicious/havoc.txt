@@ -101,3 +101,7 @@ http://146.190.48.229
 # Reference: https://twitter.com/drb_ra/status/1651298448757358608
 
 190.135.186.92:443
+
+# Reference: https://twitter.com/drb_ra/status/1652021857502019622
+
+18.208.213.147:443
