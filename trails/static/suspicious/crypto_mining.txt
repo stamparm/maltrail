@@ -1108,3 +1108,12 @@ solo-grin.2miners.ru
 solo-xmr.2miners.com
 solo-xmr.2miners.ru
 us-grin.2miners.com
+
+# Reference: https://twitter.com/g0njxa/status/1652022542259896335
+# Reference: https://www.virustotal.com/gui/ip-address/51.75.64.249/relations
+
+51.75.64.249:10128
+monerooceans.stream
+de.moneroocean.stream
+fi.moneroocean.stream
+fr.moneroocean.stream
