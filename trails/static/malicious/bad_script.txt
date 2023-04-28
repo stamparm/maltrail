@@ -6545,6 +6545,10 @@ tpc.cdn-linkedin.info
 
 /name.hta
 
+# Reference: https://twitter.com/g0njxa/status/1652034044299714563
+
+/929bd6eec88931b3.php
+
 # Generic
 
 /js/altmanluggage.js
