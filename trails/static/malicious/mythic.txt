@@ -529,3 +529,11 @@ http://34.205.83.91
 # Reference: https://twitter.com/drb_ra/status/1651840280402771968
 
 http://159.223.122.189
+
+# Reference: https://twitter.com/drb_ra/status/1652384292960436227
+
+http://43.156.134.248
+
+# Reference: https://twitter.com/drb_ra/status/1652384375516852228
+
+165.22.106.97:60443
