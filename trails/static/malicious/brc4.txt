@@ -183,3 +183,159 @@ systemresync.com
 # Reference: https://twitter.com/drb_ra/status/1651296543960334336
 
 http://13.114.78.162
+
+# Reference: https://twitter.com/drb_ra/status/1652383717187256320
+
+3.28.39.6:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383732576272386
+
+18.134.141.72:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383745448525824
+
+31.42.189.61:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652383764075495425
+
+51.77.112.254:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383768160657408
+
+51.77.112.254:43698
+
+# Reference: https://twitter.com/drb_ra/status/1652383784233316354
+
+64.226.109.199:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383798468698112
+
+94.198.97.58:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383803514445828
+
+94.198.97.58:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652383820551794694
+
+104.168.117.105:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383825379377152
+
+104.168.117.105:8666
+
+# Reference: https://twitter.com/drb_ra/status/1652383844266303495
+
+104.207.132.71:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383847806386179
+
+104.207.132.71:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652383861391740930
+
+104.234.118.123:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652383875941711874
+
+104.234.239.217:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383879435636737
+
+104.234.239.217:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652383896972013568
+
+107.191.60.134:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383900520312838
+
+107.191.60.134:8444
+
+# Reference: https://twitter.com/drb_ra/status/1652383920237817857
+
+142.93.31.106:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383931138809857
+
+142.93.38.206:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383953343348736
+
+144.91.97.213:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383956866564096
+
+144.91.97.213:9191
+
+# Reference: https://twitter.com/drb_ra/status/1652383960205336586
+
+144.91.97.213:9999
+
+# Reference: https://twitter.com/drb_ra/status/1652383976391073793
+
+154.26.154.154:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652383995835953153
+
+154.202.59.96:5443
+
+# Reference: https://twitter.com/drb_ra/status/1652384000457973763
+
+154.202.59.96:7443
+
+# Reference: https://twitter.com/drb_ra/status/1652384004916510722
+
+154.202.59.96:12306
+
+# Reference: https://twitter.com/drb_ra/status/1652384018661363719
+
+162.216.240.61:4443
+
+# Reference: https://twitter.com/drb_ra/status/1652384022033494017
+
+162.216.240.61:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652384033748156418
+
+164.90.217.130:443
+
+# Reference: https://twitter.com/drb_ra/status/1652384048419930115
+
+185.239.173.42:3003
+
+# Reference: https://twitter.com/drb_ra/status/1652384061858410499
+
+185.239.173.43:3003
+
+# Reference: https://twitter.com/drb_ra/status/1652384073124380674
+
+185.239.173.44:3003
+
+# Reference: https://twitter.com/drb_ra/status/1652384084667117569
+
+188.166.72.93:443
+
+# Reference: https://twitter.com/drb_ra/status/1652384189168197633
+
+193.149.180.84:443
+
+# Reference: https://twitter.com/drb_ra/status/1652384193865818113
+
+193.149.180.84:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652384206914215941
+
+206.81.1.31:443
+
+# Reference: https://twitter.com/drb_ra/status/1652384216275984387
+
+207.148.113.47:443
+
+# Reference: https://twitter.com/drb_ra/status/1652384232935677953
+
+217.76.52.219:443
+
+# Reference: https://twitter.com/drb_ra/status/1652384236198846466
+
+217.76.52.219:9999
