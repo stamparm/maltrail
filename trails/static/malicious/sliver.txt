@@ -1245,3 +1245,9 @@ pezimap.com
 
 188.166.165.134:31337
 188.166.165.134:8888
+
+# Reference: https://twitter.com/drb_ra/status/1652383665794457603
+# Reference: https://twitter.com/drb_ra/status/1652383669246480390
+
+195.80.148.103:31337
+195.80.148.103:8888
