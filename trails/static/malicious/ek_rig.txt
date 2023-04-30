@@ -519,6 +519,13 @@ http://195.16.88.28
 http://45.138.26.51
 http://45.138.26.89
 
+# Reference: https://twitter.com/BroadAnalysis/status/1652320881501167616
+
+http://78.111.88.94
+cryptotdsinc.xyz
+popmag.xyz
+popwertcrypt.xyz
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
