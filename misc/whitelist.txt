@@ -3453,3 +3453,8 @@ winrarbrasil.com.br
 
 identrust.com
 apps.identrust.com
+
+# Reference: https://github.com/stamparm/maltrail/issues/19156
+# Reference: https://www.virustotal.com/gui/domain/nintendo.com/relations
+
+nintendo.com
