@@ -1665,9 +1665,59 @@ bingstyle.com
 saleforyou.org
 
 # Reference: https://twitter.com/unmaskparasites/status/1650944399969513472
+# Reference: https://twitter.com/unmaskparasites/status/1653124417596329985
+# Reference: https://www.virustotal.com/gui/ip-address/194.135.30.210/relations
 # Reference: https://www.virustotal.com/gui/ip-address/2.59.222.113/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.9.148.27/relations
 
 beatylines.com
 descriptionscripts.com
+dofollowgreenline.com
+firstblackphase.com
+sortyellowapples.com
+specialblueitems.com
+statisticline.com
+trackersline.com
+violetlovelines.com
+weatherplllatform.com
+ack.firstblackphase.com
+away.firstblackphase.com
+ay.specialblueitems.com
+back.firstblackphase.com
+block.descriptionscripts.com
+cdn.statisticline.com
+cdn.violetlovelines.com
+check.statisticline.com
+comcdn.statisticline.com
+come.sortyellowapples.com
+comtrack.violetlovelines.com
+cripts.dofollowgreenline.com
+dns.firstblackphase.com
+e.sortyellowapples.com
+far.statisticline.com
 fire.descriptionscripts.com
+for.firstblackphase.com
+for.sortyellowapples.com
+get.firstblackphase.com
+get.sortyellowapples.com
+goaway.dofollowgreenline.com
+light.specialblueitems.com
 line.beatylines.com
+main.weatherplllatform.com
+pista.violetlovelines.com
+rack.violetlovelines.com
+reway.specialblueitems.com
+script.dofollowgreenline.com
+scripts.dofollowgreenline.com
+select.sortyellowapples.com
+shop.similarwebline.com
+stat.descriptionscripts.com
+stats.statisticline.com
+stay.trackersline.com
+step.firstblackphase.com
+stock.statisticline.com
+store.firstblackphase.com
+trac.violetlovelines.com
+track.firstblackphase.com
+track.violetlovelines.com
+way.specialblueitems.com
