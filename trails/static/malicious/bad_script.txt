@@ -6549,6 +6549,10 @@ tpc.cdn-linkedin.info
 
 /929bd6eec88931b3.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1653055096295399425
+
+/MsMpEng.hta
+
 # Generic
 
 /js/altmanluggage.js
