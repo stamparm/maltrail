@@ -14,13 +14,16 @@
 
 
 
-- Version 0.56 -> 0.57 (Upcoming release)
+- Version 0.57 -> 0.58 (Upcoming release)
+
+
+
+- Version 0.56 -> 0.57 (01 May 2023)
 
 [!] Fixed login page GUI issue for mobile devices (Issue #19153)
 [!] Fixed incorrect parsing of ViriBack feed (Issue #19154)
 [=] Added new descriptions in "Specific detections" Wiki chapter
 [=] Multiple updates and optimizations for regular static trails and the whitelist
-
 
 
 
