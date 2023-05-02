@@ -339,3 +339,11 @@ http://13.114.78.162
 # Reference: https://twitter.com/drb_ra/status/1652384236198846466
 
 217.76.52.219:9999
+
+# Reference: https://twitter.com/drb_ra/status/1653108484244660239
+
+18.188.54.77:443
+
+# Reference: https://twitter.com/drb_ra/status/1653108501936234514
+
+http://52.198.193.213
