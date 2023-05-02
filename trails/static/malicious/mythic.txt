@@ -537,3 +537,13 @@ http://43.156.134.248
 # Reference: https://twitter.com/drb_ra/status/1652384375516852228
 
 165.22.106.97:60443
+
+# Reference: https://twitter.com/drb_ra/status/1652746167170596864
+
+http://3.89.175.141
+
+# Reference: https://twitter.com/drb_ra/status/1652746266734911491
+# Reference: https://twitter.com/drb_ra/status/1652746270119800833
+
+http://149.28.133.118
+149.28.133.118:7443
