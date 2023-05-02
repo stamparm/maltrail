@@ -1873,6 +1873,22 @@ cba8e.picture.mercedesbestphoto.store
 
 trackrecord.wheresbecky.com
 
+# Reference: https://twitter.com/mojoesec/status/1653443385200455681
+# Reference: https://www.virustotal.com/gui/ip-address/5.255.119.147/relations
+
+score.symposiumhaiti.com
+azjnb.score.symposiumhaiti.com
+dhbd.score.symposiumhaiti.com
+emvng.score.symposiumhaiti.com
+hgkr.score.symposiumhaiti.com
+jrt.score.symposiumhaiti.com
+len.score.symposiumhaiti.com
+phclj.score.symposiumhaiti.com
+qkud.score.symposiumhaiti.com
+tghrr.score.symposiumhaiti.com
+ucuav.score.symposiumhaiti.com
+vwy.score.symposiumhaiti.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
