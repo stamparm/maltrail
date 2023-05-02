@@ -117,3 +117,31 @@ http://146.190.48.229
 # Reference: https://www.virustotal.com/gui/file/c234a376a6de44dcc5f311937d3d705311599233804db547d7271cee796e86fb/detection
 
 81.161.229.121:8080
+
+# Reference: https://twitter.com/drb_ra/status/1653109032226283543
+
+http://3.105.246.81
+
+# Reference: https://twitter.com/drb_ra/status/1653109056112844804
+
+13.41.55.238:443
+
+# Reference: https://twitter.com/drb_ra/status/1653109091340804106
+
+165.227.106.175:443
+
+# Reference: https://twitter.com/drb_ra/status/1653109102019506177
+
+167.99.194.51:443
+
+# Reference: https://twitter.com/drb_ra/status/1653109118775746580
+
+185.239.225.17:8443
+
+# Reference: https://twitter.com/drb_ra/status/1653109134575689752
+
+http://192.99.223.135
+
+# Reference: https://twitter.com/drb_ra/status/1653109137385873422
+
+205.185.113.85:443
