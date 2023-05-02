@@ -160,3 +160,11 @@ http://167.71.168.208
 # Reference: https://twitter.com/drb_ra/status/1652385107074850817
 
 216.238.111.216:445
+
+# Reference: https://twitter.com/drb_ra/status/1652746729869963264
+
+35.180.238.137:443
+
+# Reference: https://twitter.com/drb_ra/status/1652746813441441795
+
+170.64.168.228:5985
