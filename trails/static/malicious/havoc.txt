@@ -145,3 +145,11 @@ http://192.99.223.135
 # Reference: https://twitter.com/drb_ra/status/1653109137385873422
 
 205.185.113.85:443
+
+# Reference: https://twitter.com/drb_ra/status/1653471476383727616
+
+80.249.147.147:8081
+
+# Reference: https://twitter.com/drb_ra/status/1653471492196188172
+
+157.245.55.19:443
