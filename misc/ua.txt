@@ -2285,6 +2285,10 @@ AYAYAYAY1337
 
 SmartLoader
 
+# Reference: https://twitter.com/t3ft3lb/status/1651951113732771873
+
+^IOS 13\.5$
+
 # Misc
 
 information_schema
