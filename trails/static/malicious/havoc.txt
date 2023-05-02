@@ -153,3 +153,10 @@ http://192.99.223.135
 # Reference: https://twitter.com/drb_ra/status/1653471492196188172
 
 157.245.55.19:443
+
+# Reference: https://twitter.com/MichalKoczwara/status/1652988028011290625
+
+5.252.178.157:443
+85.209.135.74:443
+91.107.130.122:443
+stingray.gay
