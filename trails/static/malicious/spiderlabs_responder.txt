@@ -180,3 +180,19 @@ http://170.64.168.1
 # Reference: https://twitter.com/drb_ra/status/1653109260149030912
 
 170.64.168.1:445
+
+# Reference: https://twitter.com/drb_ra/status/1653471547137376281
+# Reference: https://twitter.com/drb_ra/status/1653471551910494225
+# Reference: https://twitter.com/drb_ra/status/1653471555534372890
+
+http://23.239.17.231
+23.239.17.231:443
+23.239.17.231:445
+
+# Reference: https://twitter.com/drb_ra/status/1653471634945105922
+# Reference: https://twitter.com/drb_ra/status/1653471640838197248
+# Reference: https://twitter.com/drb_ra/status/1653471649356759042
+
+http://170.64.168.228
+170.64.168.228:443
+170.64.168.228:445
