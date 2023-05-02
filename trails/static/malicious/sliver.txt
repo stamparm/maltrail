@@ -1251,3 +1251,11 @@ pezimap.com
 
 195.80.148.103:31337
 195.80.148.103:8888
+
+# Reference: https://twitter.com/StopMalvertisin/status/1653354581022359552
+# Reference: https://www.virustotal.com/gui/file/63d961efa8c959a1f890d584daa07beffba0138e296aa08a5d639ef4b5b33d51/detection
+# Reference: https://www.virustotal.com/gui/file/41f35118af48f96cdbfa7aefa71fe3dffe76c9466e6fc4ba2f9210938ce43439/detection
+
+159.223.53.246:6969
+159.223.53.246:8888
+dns-server.online
