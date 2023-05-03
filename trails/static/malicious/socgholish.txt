@@ -1889,6 +1889,12 @@ tghrr.score.symposiumhaiti.com
 ucuav.score.symposiumhaiti.com
 vwy.score.symposiumhaiti.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-03-v10315/527
+# Reference: https://www.virustotal.com/gui/ip-address/88.210.11.17/relations
+
+blockchain.shannongougenheim.com
+promo.kingdombusinessconnections.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
