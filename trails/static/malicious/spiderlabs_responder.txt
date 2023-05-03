@@ -196,3 +196,19 @@ http://23.239.17.231
 http://170.64.168.228
 170.64.168.228:443
 170.64.168.228:445
+
+# Reference: https://twitter.com/drb_ra/status/1653833931043512321
+
+38.123.247.211:443
+
+# Reference: https://twitter.com/drb_ra/status/1653834001855946768
+
+176.97.73.54:445
+
+# Reference: https://twitter.com/drb_ra/status/1653834015667781632
+
+185.193.125.146:5985
+
+# Reference: https://twitter.com/drb_ra/status/1653834032243679254
+
+http://207.244.237.10
