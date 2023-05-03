@@ -160,3 +160,19 @@ http://192.99.223.135
 85.209.135.74:443
 91.107.130.122:443
 stingray.gay
+
+# Reference: https://twitter.com/drb_ra/status/1653833821219856399
+
+http://13.246.26.24
+
+# Reference: https://twitter.com/drb_ra/status/1653833832926158864
+
+16.171.56.119:8443
+
+# Reference: https://twitter.com/drb_ra/status/1653833844863148053
+
+18.158.68.206:443
+
+# Reference: https://twitter.com/drb_ra/status/1653833854883340289
+
+18.208.213.147:4443
