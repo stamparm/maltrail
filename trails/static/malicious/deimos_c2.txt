@@ -200,3 +200,47 @@ peterkinsadvil.ptr1.ru
 64.254.28.122:443
 81.70.24.179:10000
 92.116.24.76:443
+
+# Reference: https://twitter.com/drb_ra/status/1654014623421460482
+
+3.209.12.178:3060
+
+# Reference: https://twitter.com/drb_ra/status/1654014635584962561
+
+8.218.26.114:443
+
+# Reference: https://twitter.com/drb_ra/status/1654014646955786241
+
+18.162.155.202:443
+
+# Reference: https://twitter.com/drb_ra/status/1654014658234261505
+
+18.162.193.120:443
+
+# Reference: https://twitter.com/drb_ra/status/1654014669428781061
+
+36.95.131.171:9091
+
+# Reference: https://twitter.com/drb_ra/status/1654014681269321730
+
+39.106.36.96:443
+
+# Reference: https://twitter.com/drb_ra/status/1654014693072154628
+
+43.198.73.212:443
+
+# Reference: https://twitter.com/drb_ra/status/1654014704774160387
+
+44.230.201.248:443
+
+# Reference: https://twitter.com/drb_ra/status/1654014718577704960
+
+54.151.143.251:443
+
+# Reference: https://twitter.com/drb_ra/status/1654014749867122688
+
+185.142.98.14:9090
+
+# Reference: https://twitter.com/drb_ra/status/1654014760805888000
+
+202.98.224.214:28090
