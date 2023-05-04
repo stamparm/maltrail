@@ -8356,6 +8356,18 @@ zapolmob.sbs
 
 personallydeliver.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1653895004287537152
+# Reference: https://www.virustotal.com/gui/ip-address/194.4.49.208/relations
+
+codesejquery.com
+codesjquery.com
+gojqswejs.com
+gojqueryajax.com
+gojqwejs.com
+gojqwerjs.com
+jspixjqurey.com
+jspqurey.com
+
 # Generic
 
 /assets/lfg.js
