@@ -557,3 +557,31 @@ http://149.28.133.118
 
 http://64.176.8.42
 64.176.8.42:7443
+
+# Reference: https://twitter.com/drb_ra/status/1654195831883329536
+
+http://3.145.90.243
+
+# Reference: https://twitter.com/drb_ra/status/1654195891312513040
+
+85.10.132.13:443
+
+# Reference: https://twitter.com/drb_ra/status/1654195943061835784
+
+http://158.160.30.214
+
+# Reference: https://twitter.com/drb_ra/status/1654195946488582149
+
+158.160.30.214:7443
+
+# Reference: https://twitter.com/drb_ra/status/1654195961177034774
+
+http://158.160.68.213
+
+# Reference: https://twitter.com/drb_ra/status/1654195984170209293
+
+173.53.60.45:8433
+
+# Reference: https://twitter.com/drb_ra/status/1654196010984275968
+
+http://206.81.6.121
