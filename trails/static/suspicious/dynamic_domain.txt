@@ -3447,3 +3447,7 @@ com.se
 # Reference: https://www.virustotal.com/gui/domain/dynip.online/relations
 
 dynip.online
+
+# Refereence: https://www.virustotal.com/gui/domain/ddns.network/relations
+
+ddns.network
