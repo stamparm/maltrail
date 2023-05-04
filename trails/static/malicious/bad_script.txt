@@ -6553,6 +6553,12 @@ tpc.cdn-linkedin.info
 
 /MsMpEng.hta
 
+# Reference: https://twitter.com/500mk500/status/1653860821020049410
+# Reference: https://www.virustotal.com/gui/file/d236df798c56b2a32ff744f16d93c6a0412b4caaf2ea35b171a3953b19609074/detection
+
+/api/api.php?action=getcmd&id=
+/api/api.php?action=getpe&id=
+
 # Generic
 
 /js/altmanluggage.js
