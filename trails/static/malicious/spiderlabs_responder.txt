@@ -212,3 +212,27 @@ http://170.64.168.228
 # Reference: https://twitter.com/drb_ra/status/1653834032243679254
 
 http://207.244.237.10
+
+# Reference: https://twitter.com/drb_ra/status/1654196528897052682
+# Reference: https://twitter.com/drb_ra/status/1654196532579803136
+
+http://20.225.61.98
+20.225.61.98:443
+
+# Reference: https://twitter.com/drb_ra/status/1654196547473625111
+# Reference: https://twitter.com/drb_ra/status/1654196550963286043
+
+http://35.180.123.217
+35.180.123.217:443
+
+# Reference: https://twitter.com/drb_ra/status/1654196577613893651
+
+54.205.140.17:5985
+
+# Reference: https://twitter.com/drb_ra/status/1654196622543208448
+
+http://120.138.18.160
+
+# Reference: https://twitter.com/drb_ra/status/1654196647419674624
+
+147.182.152.233:445
