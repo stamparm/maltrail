@@ -244,3 +244,11 @@ peterkinsadvil.ptr1.ru
 # Reference: https://twitter.com/drb_ra/status/1654014760805888000
 
 202.98.224.214:28090
+
+# Reference: https://twitter.com/drb_ra/status/1654196028281704472
+
+34.147.114.77:8800
+
+# Reference: https://twitter.com/drb_ra/status/1654196063987814424
+
+153.127.6.127:8800
