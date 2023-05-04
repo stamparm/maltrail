@@ -2191,10 +2191,6 @@ ZLoad-Software
 
 Trailer/95.3.1132.33
 
-# Reference: https://raw.githubusercontent.com/blackorbird/APT_REPORT/master/APT-hunting/hunting-cobaltstrike-beacons-in-the-dark.pdf
-
-\bMac OS X 10\_15\_\w+\b
-
 # Reference: https://twitter.com/crep1x/status/1599490308357488640
 
 \b20112211\b
