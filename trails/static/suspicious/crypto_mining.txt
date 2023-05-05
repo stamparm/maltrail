@@ -1117,3 +1117,7 @@ monerooceans.stream
 de.moneroocean.stream
 fi.moneroocean.stream
 fr.moneroocean.stream
+
+# Reference: https://www.virustotal.com/gui/file/01bcfbb1e16023dd7effae8f8ef8f698a9e1e879a2a4fe6dbab9a34d2728ee7c/detection
+
+pool-nyc.supportxmr.com
