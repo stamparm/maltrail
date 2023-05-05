@@ -1121,3 +1121,12 @@ fr.moneroocean.stream
 # Reference: https://www.virustotal.com/gui/file/01bcfbb1e16023dd7effae8f8ef8f698a9e1e879a2a4fe6dbab9a34d2728ee7c/detection
 
 pool-nyc.supportxmr.com
+
+# Reference: https://twitter.com/SecureSh3ll/status/1654540168194408448
+# Reference: https://www.virustotal.com/gui/file/00636d98edecbcf579795a6def9a6714f9775ad07a07e9685ba283127576c756/detection
+
+104.140.201.42:5555
+139.99.123.196:5555
+141.94.96.195:5555
+37.187.95.110:5555
+91.212.140.167:5555
