@@ -359,3 +359,11 @@ http://18.177.226.88
 # Reference: https://twitter.com/drb_ra/status/1653833314774425654
 
 139.162.242.79:443
+
+# Reference: https://twitter.com/drb_ra/status/1654455366783049728
+
+139.224.234.194:9999
+
+# Reference: https://twitter.com/drb_ra/status/1654455385183461377
+
+157.254.195.201:8443
