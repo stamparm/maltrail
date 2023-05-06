@@ -236,3 +236,31 @@ http://120.138.18.160
 # Reference: https://twitter.com/drb_ra/status/1654196647419674624
 
 147.182.152.233:445
+
+# Reference: https://twitter.com/drb_ra/status/1654458562641383425
+
+http://18.196.231.230
+
+# Reference: https://twitter.com/drb_ra/status/1654458566072315906
+
+18.196.231.230:445
+
+# Reference: https://twitter.com/drb_ra/status/1654458595331670016
+
+20.92.142.158:443
+
+# Reference: https://twitter.com/drb_ra/status/1654458599035338752
+
+20.92.142.158:5985
+
+# Reference: https://twitter.com/drb_ra/status/1654458618182238211
+
+34.204.1.224:445
+
+# Reference: https://twitter.com/drb_ra/status/1654458637870301184
+
+52.22.139.253:445
+
+# Reference: https://twitter.com/drb_ra/status/1654458712583536642
+
+178.128.207.34:5985
