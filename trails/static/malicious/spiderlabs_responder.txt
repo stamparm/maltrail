@@ -264,3 +264,43 @@ http://18.196.231.230
 # Reference: https://twitter.com/drb_ra/status/1654458712583536642
 
 178.128.207.34:5985
+
+# Reference: https://twitter.com/drb_ra/status/1654921084129386496
+
+3.249.18.59:5985
+
+# Reference: https://twitter.com/drb_ra/status/1654921115016343556
+
+20.204.3.168:443
+
+# Reference: https://twitter.com/drb_ra/status/1654921133362143235
+
+38.32.80.165:5985
+
+# Reference: https://twitter.com/drb_ra/status/1654921145018114052
+
+45.56.66.73:445
+
+# Reference: https://twitter.com/drb_ra/status/1654921200399790080
+
+98.117.29.23:443
+
+# Reference: https://twitter.com/drb_ra/status/1654921222365356036
+
+http://138.197.186.95
+
+# Reference: https://twitter.com/drb_ra/status/1654921257089916928
+
+172.96.137.149:445
+
+# Reference: https://twitter.com/drb_ra/status/1654921260424364033
+
+http://172.96.137.149
+
+# Reference: https://twitter.com/drb_ra/status/1654921263805087745
+
+172.96.137.149:5985
+
+# Reference: https://twitter.com/drb_ra/status/1654921292313755648
+
+207.106.237.59:443
