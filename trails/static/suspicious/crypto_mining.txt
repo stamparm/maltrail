@@ -1130,3 +1130,18 @@ pool-nyc.supportxmr.com
 141.94.96.195:5555
 37.187.95.110:5555
 91.212.140.167:5555
+
+# Reference: https://www.virustotal.com/gui/ip-address/213.91.128.133/relations
+# Reference: https://www.virustotal.com/gui/file/00190fcf5317e95bc62eab5b139e619c2ea19b2347c4c789f730ddfe96a3e92c/detection
+
+213.91.128.133:10060
+api.fastpool.xyz
+backup.fastpool.xyz
+ftp.fastpool.xyz
+imap.fastpool.xyz
+mail.fastpool.xyz
+mine.fastpool.xyz
+pop.fastpool.xyz
+smtp.fastpool.xyz
+ssl.fastpool.xyz
+yes.fastpool.xyz
