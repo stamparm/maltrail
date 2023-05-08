@@ -188,3 +188,15 @@ http://13.246.26.24
 # Reference: https://twitter.com/drb_ra/status/1655283458623647746
 
 185.158.94.217:8000
+
+# Reference: https://twitter.com/drb_ra/status/1655645809193410563
+
+3.105.246.81:443
+
+# Reference: https://twitter.com/drb_ra/status/1655645838612258824
+
+51.68.148.55:443
+
+# Reference: https://twitter.com/drb_ra/status/1655645853019693076
+
+70.29.173.138:443
