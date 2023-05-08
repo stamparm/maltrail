@@ -1343,3 +1343,9 @@ dns-server.online
 # Reference: https://twitter.com/drb_ra/status/1654455229679648768
 
 141.164.45.81:31337
+
+# Reference: https://twitter.com/drb_ra/status/1655645096971231266
+# Reference: https://twitter.com/drb_ra/status/1655645100083404801
+
+111.68.7.122:31337
+111.68.7.122:8888
