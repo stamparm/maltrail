@@ -3458,3 +3458,9 @@ apps.identrust.com
 # Reference: https://www.virustotal.com/gui/domain/nintendo.com/relations
 
 nintendo.com
+
+# Reference: https://github.com/stamparm/maltrail/issues/19149#issuecomment-1538605607
+# Reference: https://www.virustotal.com/gui/domain/blackhole.monster/relations
+
+blackhole.monster
+ip.blackhole.monster
