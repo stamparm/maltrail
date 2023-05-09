@@ -312,3 +312,11 @@ http://172.96.137.149
 # Reference: https://twitter.com/drb_ra/status/1655645998218108951
 
 172.96.137.149:443
+
+# Reference: https://twitter.com/drb_ra/status/1656008365846274063
+
+3.65.94.188:443
+
+# Reference: https://twitter.com/drb_ra/status/1656008442824257537
+
+142.93.242.149:5985
