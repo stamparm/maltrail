@@ -200,3 +200,9 @@ http://13.246.26.24
 # Reference: https://twitter.com/drb_ra/status/1655645853019693076
 
 70.29.173.138:443
+
+# Reference: https://twitter.com/MichalKoczwara/status/1655994573280116756
+
+http://51.68.148.55
+http://51.83.182.155
+51.83.182.155:443
