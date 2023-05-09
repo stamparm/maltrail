@@ -8368,6 +8368,19 @@ gojqwerjs.com
 jspixjqurey.com
 jspqurey.com
 
+# Reference: https://sansec.io/research/postponed-exfiltration-evades-detection
+# Reference: https://www.virustotal.com/gui/ip-address/185.142.238.71/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.142.238.77/relations
+# Reference: https://www.virustotal.com/gui/ip-address/198.54.117.242/relations
+
+gogletags.click
+gtag-analytics.com
+pickuptestold.site
+cdn.gogletags.click
+cdn.gtag-analytics.com
+cdn.pickuptestold.site
+gt473829.pickuptestold.site
+
 # Generic
 
 /assets/lfg.js
