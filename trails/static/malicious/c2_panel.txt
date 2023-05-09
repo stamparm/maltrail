@@ -401,8 +401,11 @@ http://83.220.171.204
 
 # Reference: https://twitter.com/luc4m/status/1655886075640913922
 # Reference: https://twitter.com/luc4m/status/1655914813669756928
+# Reference: https://twitter.com/0xToxin/status/1655911913312735234
 
 http://194.180.49.56
+http://95.214.24.99
+http://95.214.27.89
 popso.cyou
 
 # Generic
