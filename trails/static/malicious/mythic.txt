@@ -640,3 +640,15 @@ http://101.34.73.171
 # Reference: https://twitter.com/drb_ra/status/1655282966140968961
 
 http://104.200.20.89
+
+# Reference: https://twitter.com/drb_ra/status/1656007710918287366
+
+http://45.66.216.108
+
+# Reference: https://twitter.com/drb_ra/status/1656007759400259586
+
+http://110.41.168.34
+
+# Reference: https://twitter.com/drb_ra/status/1656007791679610887
+
+149.28.177.78:443
