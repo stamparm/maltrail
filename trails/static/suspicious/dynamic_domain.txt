@@ -3455,3 +3455,7 @@ ddns.network
 # Reference: https://www.virustotal.com/gui/domain/vinaddns.com/relations
 
 vinaddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/cloudns.ph/relations
+
+cloudns.ph
