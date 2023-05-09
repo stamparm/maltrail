@@ -206,3 +206,29 @@ http://13.246.26.24
 http://51.68.148.55
 http://51.83.182.155
 51.83.182.155:443
+
+# Reference: https://twitter.com/drb_ra/status/1656008250775543808
+# Reference: https://twitter.com/drb_ra/status/1656008254307147783
+
+http://3.249.31.242
+3.249.31.242:443
+
+# Reference: https://twitter.com/drb_ra/status/1656008271600263190
+
+13.246.26.24:4444
+
+# Reference: https://twitter.com/drb_ra/status/1656008292634697733
+
+51.83.182.155:443
+
+# Reference: https://twitter.com/drb_ra/status/1656008305427324940
+
+51.255.45.74:443
+
+# Reference: https://twitter.com/drb_ra/status/1656008318282866708
+
+52.19.114.156:443
+
+# Reference: https://twitter.com/drb_ra/status/1656008337362677764
+
+146.59.10.45:443
