@@ -1666,6 +1666,7 @@ saleforyou.org
 
 # Reference: https://twitter.com/unmaskparasites/status/1650944399969513472
 # Reference: https://twitter.com/unmaskparasites/status/1653124417596329985
+# Reference: https://twitter.com/unmaskparasites/status/1656024953249218560
 # Reference: https://www.virustotal.com/gui/ip-address/194.135.30.210/relations
 # Reference: https://www.virustotal.com/gui/ip-address/2.59.222.113/relations
 # Reference: https://www.virustotal.com/gui/ip-address/45.9.148.27/relations
@@ -1714,6 +1715,7 @@ shop.similarwebline.com
 stat.descriptionscripts.com
 stats.statisticline.com
 stay.trackersline.com
+step.descriptionscripts.com
 step.firstblackphase.com
 stock.statisticline.com
 store.firstblackphase.com
