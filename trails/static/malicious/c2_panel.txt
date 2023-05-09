@@ -404,9 +404,52 @@ http://83.220.171.204
 # Reference: https://twitter.com/0xToxin/status/1655911913312735234
 
 http://194.180.49.56
+http://194.180.49.59
+http://194.180.49.70
+http://194.180.49.71
+http://194.180.49.75
+http://194.180.49.78
+http://194.180.49.8
+http://194.180.49.80
+http://195.133.40.215
+http://45.12.253.106
+http://45.12.253.107
+http://45.12.253.11
+http://45.12.253.115
+http://67.43.238.170
+http://67.43.238.171
+http://67.43.238.172
+http://67.43.238.173
+http://67.43.238.174
+http://87.121.221.21
+http://87.121.221.23
+http://87.121.221.26
+http://87.121.221.57
+http://87.121.221.61
+http://87.121.221.62
+http://87.121.221.63
+http://95.214.24.145
+http://95.214.24.93
+http://95.214.24.96
 http://95.214.24.99
+http://95.214.27.33
+http://95.214.27.74
+http://95.214.27.78
+http://95.214.27.8
+http://95.214.27.86
 http://95.214.27.89
+activala-hora.icu
+clicahora.cyou
+compila-il-modulo.icu
+compilar-documeto.cyou
+complete-el-formulario.cyou
+complila-il-modulo.icu
+confirmacion.icu
+entra-para-confirmar.cyou
+formulario-acceso.xyz
 popso.cyou
+rellenar-el-formulario.cyou
+se-adhiere-a-la-nueva-legislacion.cyou
 
 # Generic
 
