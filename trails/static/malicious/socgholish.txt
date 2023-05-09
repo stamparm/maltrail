@@ -1895,6 +1895,10 @@ vwy.score.symposiumhaiti.com
 blockchain.shannongougenheim.com
 promo.kingdombusinessconnections.com
 
+# Reference: https://twitter.com/threatcat_ch/status/1655819677648420864
+
+sync.webappclick.net
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
