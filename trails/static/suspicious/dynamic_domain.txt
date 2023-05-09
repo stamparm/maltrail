@@ -3451,3 +3451,7 @@ dynip.online
 # Refereence: https://www.virustotal.com/gui/domain/ddns.network/relations
 
 ddns.network
+
+# Reference: https://www.virustotal.com/gui/domain/vinaddns.com/relations
+
+vinaddns.com
