@@ -1903,6 +1903,10 @@ sync.webappclick.net
 
 backroom.tauetaepsilon.org
 
+# Reference: https://twitter.com/unmaskparasites/status/1656026559923503104
+
+framework.rankinfiles.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
