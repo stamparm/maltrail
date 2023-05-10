@@ -3459,3 +3459,7 @@ vinaddns.com
 # Reference: https://www.virustotal.com/gui/domain/cloudns.ph/relations
 
 cloudns.ph
+
+# Reference: https://www.virustotal.com/gui/domain/gb.net/relations
+
+gb.net
