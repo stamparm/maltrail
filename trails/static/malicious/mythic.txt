@@ -652,3 +652,19 @@ http://110.41.168.34
 # Reference: https://twitter.com/drb_ra/status/1656007791679610887
 
 149.28.177.78:443
+
+# Reference: https://twitter.com/drb_ra/status/1656370036922019879
+
+35.92.10.91:7443
+
+# Reference: https://twitter.com/drb_ra/status/1656370063409049617
+
+http://54.196.114.16
+
+# Reference: https://twitter.com/drb_ra/status/1656370094497230869
+
+91.107.234.213:7443
+
+# Reference: https://twitter.com/drb_ra/status/1656370151565000704
+
+158.160.68.213:7443
