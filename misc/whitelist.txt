@@ -3464,3 +3464,7 @@ nintendo.com
 
 blackhole.monster
 ip.blackhole.monster
+
+# Reference: https://www.virustotal.com/gui/domain/mastodon.xyz/relations
+
+mastodon.xyz
