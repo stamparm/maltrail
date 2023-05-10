@@ -232,3 +232,15 @@ http://3.249.31.242
 # Reference: https://twitter.com/drb_ra/status/1656008337362677764
 
 146.59.10.45:443
+
+# Reference: https://twitter.com/drb_ra/status/1656370613445881886
+
+51.68.148.48:443
+
+# Reference: https://twitter.com/drb_ra/status/1656370630160183309
+
+54.160.113.74:445
+
+# Reference: https://twitter.com/drb_ra/status/1656370660740853772
+
+198.211.102.42:443
