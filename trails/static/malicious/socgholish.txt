@@ -1874,6 +1874,7 @@ cba8e.picture.mercedesbestphoto.store
 trackrecord.wheresbecky.com
 
 # Reference: https://twitter.com/mojoesec/status/1653443385200455681
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-05-10%20Socgholish%20IOCs
 # Reference: https://www.virustotal.com/gui/ip-address/5.255.119.147/relations
 
 score.symposiumhaiti.com
@@ -1885,6 +1886,7 @@ jrt.score.symposiumhaiti.com
 len.score.symposiumhaiti.com
 phclj.score.symposiumhaiti.com
 qkud.score.symposiumhaiti.com
+rxt.score.symposiumhaiti.com
 tghrr.score.symposiumhaiti.com
 ucuav.score.symposiumhaiti.com
 vwy.score.symposiumhaiti.com
