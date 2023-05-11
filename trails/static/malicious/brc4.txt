@@ -388,3 +388,11 @@ http://54.199.58.143
 # Reference: https://twitter.com/drb_ra/status/1656732437462777866
 
 http://54.150.80.3
+
+# Reference: https://twitter.com/MichalKoczwara/status/1656593586568282114
+# Reference: https://www.virustotal.com/gui/file/11fce5929abdc82579e655e1dad28f06c26d53c177bca46543a3706095083a7a/detection
+
+134.209.48.173:443
+165.227.15.170:443
+176.34.158.147:443
+feedbackform.mooo.com
