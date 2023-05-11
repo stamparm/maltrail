@@ -380,3 +380,11 @@ http://18.177.226.88
 # Reference: https://twitter.com/drb_ra/status/1656007624150663169
 
 http://54.199.58.143
+
+# Reference: https://twitter.com/drb_ra/status/1656732418592604173
+
+16.16.162.142:443
+
+# Reference: https://twitter.com/drb_ra/status/1656732437462777866
+
+http://54.150.80.3
