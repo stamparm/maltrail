@@ -6559,6 +6559,10 @@ tpc.cdn-linkedin.info
 /api/api.php?action=getcmd&id=
 /api/api.php?action=getpe&id=
 
+# Reference: https://twitter.com/pr0xylife/status/1656581454925529088
+
+/droidddxxxPayload.vbs
+
 # Generic
 
 /js/altmanluggage.js
