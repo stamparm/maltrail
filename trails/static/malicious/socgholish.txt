@@ -1909,6 +1909,10 @@ backroom.tauetaepsilon.org
 
 framework.rankinfiles.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-10-v10320/544
+
+prototype.siliconvalleyga.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
