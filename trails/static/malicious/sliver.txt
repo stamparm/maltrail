@@ -1359,3 +1359,15 @@ dns-server.online
 
 162.33.177.203:31337
 162.33.177.203:8888
+
+# Reference: https://twitter.com/drb_ra/status/1656732230742310928
+# Reference: https://twitter.com/drb_ra/status/1656732234647207937
+
+54.152.37.54:31337
+54.152.37.54:8888
+
+# Reference: https://twitter.com/drb_ra/status/1656732336023646209
+# Reference: https://twitter.com/drb_ra/status/1656732339441893401
+
+173.82.58.62:31337
+173.82.58.62:8888
