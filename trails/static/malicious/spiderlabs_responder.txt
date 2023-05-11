@@ -368,3 +368,25 @@ http://86.3.50.68
 # Reference: https://twitter.com/drb_ra/status/1656370857185275946
 
 167.71.252.5:445
+
+# Reference: https://twitter.com/drb_ra/status/1656733301455945728
+
+46.161.52.181:443
+
+# Reference: https://twitter.com/drb_ra/status/1656733318874910720
+
+54.194.154.122:5986
+
+# Reference: https://twitter.com/drb_ra/status/1656733365637087269
+# Reference: https://twitter.com/drb_ra/status/1656733371815297054
+
+http://134.209.175.249
+134.209.175.249:443
+
+# Reference: https://twitter.com/drb_ra/status/1656733371815297054
+
+134.209.175.249:443
+
+# Reference: https://twitter.com/drb_ra/status/1656733400588222464
+
+http://172.104.239.242
