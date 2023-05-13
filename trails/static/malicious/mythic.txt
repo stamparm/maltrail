@@ -676,3 +676,17 @@ http://159.203.1.70
 # Reference: https://twitter.com/drb_ra/status/1657095005691863055
 
 64.176.3.97:443
+
+# Reference: https://twitter.com/drb_ra/status/1657457418375241729
+
+45.66.216.108:7443
+
+# Reference: https://twitter.com/drb_ra/status/1657457492379541507
+# Reference: https://twitter.com/drb_ra/status/1657457495911149569
+
+http://109.248.6.250
+109.248.6.250:8008
+
+# Reference: https://twitter.com/drb_ra/status/1657457582884175874
+
+216.238.77.195:443
