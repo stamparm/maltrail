@@ -2285,6 +2285,11 @@ SmartLoader
 
 ^IOS 13\.5$
 
+# Reference: https://twitter.com/g0njxa/status/1657664539243020290
+
+GunnaWunna
+GunnaWunnaBlueTips
+
 # Misc
 
 information_schema
