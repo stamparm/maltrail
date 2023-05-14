@@ -690,3 +690,19 @@ http://109.248.6.250
 # Reference: https://twitter.com/drb_ra/status/1657457582884175874
 
 216.238.77.195:443
+
+# Reference: https://twitter.com/drb_ra/status/1657819643359182850
+
+13.236.177.3:7443
+
+# Reference: https://twitter.com/drb_ra/status/1657819672455069696
+
+35.89.34.50:7443
+
+# Reference: https://twitter.com/drb_ra/status/1657819722572877827
+
+84.46.241.248:7443
+
+# Reference: https://twitter.com/drb_ra/status/1657819751295471618
+
+111.90.150.101:443
