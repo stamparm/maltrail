@@ -6563,6 +6563,11 @@ tpc.cdn-linkedin.info
 
 /droidddxxxPayload.vbs
 
+# Reference: https://twitter.com/malwrhunterteam/status/1658197993273565187
+# Reference: https://www.virustotal.com/gui/file/ff5d3736cb0f0d09bce42c5d6d6b6c4ac126a378028e4bd5c8ca8d47f3585530/detection
+
+/xboyxVersionxx.txt
+
 # Generic
 
 /js/altmanluggage.js
