@@ -5538,3 +5538,8 @@ danielma.info
 # Reference: https://www.virustotal.com/gui/domain/txt.al/relations
 
 txt.al
+
+# Reference: https://twitter.com/malwrhunterteam/status/1657118333320286249
+# Reference: https://twitter.com/1ZRR4H/status/1657747300339384320
+
+.zip
