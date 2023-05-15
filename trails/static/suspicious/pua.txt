@@ -3212,3 +3212,8 @@ api2.check-data.xyz
 api3.check-data.xyz
 api4.check-data.xyz
 api5.check-data.xyz
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-15-v10323/556
+
+133455789.xyz
+testupdate.info
