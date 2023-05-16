@@ -1913,6 +1913,11 @@ framework.rankinfiles.com
 
 prototype.siliconvalleyga.com
 
+# Reference: https://twitter.com/threatcat_ch/status/1658027896928190467
+
+books.friendsofthefolsomlibrary.org
+scripts.asi.service
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
