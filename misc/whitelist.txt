@@ -3468,3 +3468,8 @@ ip.blackhole.monster
 # Reference: https://www.virustotal.com/gui/domain/mastodon.xyz/relations
 
 mastodon.xyz
+
+# Reference: https://twitter.com/lowmal3/status/1658411969592827904
+
+fwupd.org
+cdn.fwupd.org
