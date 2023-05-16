@@ -1389,3 +1389,7 @@ dns-server.online
 
 120.24.42.20:31337
 120.24.42.20:8888
+
+# Reference: https://twitter.com/josh_penny/status/1655256609461878784
+
+164.132.237.65:10443
