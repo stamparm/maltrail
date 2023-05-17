@@ -1725,6 +1725,7 @@ track.violetlovelines.com
 way.specialblueitems.com
 
 # Reference: https://twitter.com/daniel_sloof/status/1658109542108917761
+# Reference: https://www.virustotal.com/gui/ip-address/194.135.30.210/relations
 # Reference: https://www.virustotal.com/gui/ip-address/2.59.222.113/relations
 # Reference: https://www.virustotal.com/gui/ip-address/2.59.222.122/relations
 
@@ -1732,5 +1733,6 @@ scriptsplatform.com
 away.scriptsplatform.com
 cdn.scriptsplatform.com
 come.scriptsplatform.com
+statistic.scriptsplatform.com
 statistics.scriptsplatform.com
 top.scriptsplatform.com
