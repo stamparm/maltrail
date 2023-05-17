@@ -6568,6 +6568,17 @@ tpc.cdn-linkedin.info
 
 /xboyxVersionxx.txt
 
+# Reference: https://gist.github.com/kirk-sayre-work/1a7ec92ab9018ffac71ee5826de9aba8
+
+/f1.ps1
+/f2.ps1
+/file1.ps1
+/file2.ps1
+/file3.ps1
+/file4.ps1
+/file.ps1
+/upl.ps1
+
 # Generic
 
 /js/altmanluggage.js
