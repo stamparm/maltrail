@@ -1728,11 +1728,13 @@ way.specialblueitems.com
 # Reference: https://www.virustotal.com/gui/ip-address/194.135.30.210/relations
 # Reference: https://www.virustotal.com/gui/ip-address/2.59.222.113/relations
 # Reference: https://www.virustotal.com/gui/ip-address/2.59.222.122/relations
+# Reference: https://app.validin.com/axon?type=dom&limit=100&find=*.scriptsplatform.com
 
 scriptsplatform.com
 away.scriptsplatform.com
 cdn.scriptsplatform.com
 come.scriptsplatform.com
+get.scriptsplatform.com
 statistic.scriptsplatform.com
 statistics.scriptsplatform.com
 top.scriptsplatform.com
