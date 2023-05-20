@@ -6579,6 +6579,10 @@ tpc.cdn-linkedin.info
 /file.ps1
 /upl.ps1
 
+# Reference: https://www.virustotal.com/gui/file/63ddb34c0196ad0597464fcc39667e2410bbfcd51ffb5d52e69081bb342531ca/detection
+
+/drvsa.hta
+
 # Generic
 
 /js/altmanluggage.js
