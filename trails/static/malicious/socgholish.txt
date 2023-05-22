@@ -1918,6 +1918,10 @@ prototype.siliconvalleyga.com
 books.friendsofthefolsomlibrary.org
 scripts.asi.service
 
+# Reference: https://twitter.com/threatcat_ch/status/1660535867365105666
+
+commercial.tedgorka.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
