@@ -1738,3 +1738,10 @@ get.scriptsplatform.com
 statistic.scriptsplatform.com
 statistics.scriptsplatform.com
 top.scriptsplatform.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1660440128207327233
+
+clickandanalytics.com
+cdn.clickandanalytics.com
+click.clickandanalytics.com
+put.clickandanalytics.com
