@@ -6583,6 +6583,13 @@ tpc.cdn-linkedin.info
 
 /drvsa.hta
 
+# Reference: https://twitter.com/suyog41/status/1660893657623347200
+# Reference: https://www.virustotal.com/gui/file/459d3d75db323b230afc26b1f5bf2ea40591eeb7bb3d4927f87f302b71108e24/detection
+# Reference: https://www.virustotal.com/gui/file/42f3651063202a8fd42021a1ffc27bd1b9709779ec10654368ea34d8f047d08b/detection
+
+/glooko-windows.php
+/glooko-windows.php?host=
+
 # Generic
 
 /js/altmanluggage.js
