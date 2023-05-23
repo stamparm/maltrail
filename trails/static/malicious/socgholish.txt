@@ -1922,6 +1922,37 @@ scripts.asi.service
 
 commercial.tedgorka.com
 
+# Reference: https://twitter.com/threatcat_ch/status/1660890149910183936
+# Reference: https://www.virustotal.com/gui/ip-address/94.131.96.55/relations
+
+accounting.bridgemastersllc.com
+assist.cabinetelcea.com
+friends.foflib.org
+adqw.accounting.bridgemastersllc.com
+atm.accounting.bridgemastersllc.com
+brv.accounting.bridgemastersllc.com
+bvtk.accounting.bridgemastersllc.com
+dcrf.accounting.bridgemastersllc.com
+eotl.accounting.bridgemastersllc.com
+epfnr.accounting.bridgemastersllc.com
+fefip.accounting.bridgemastersllc.com
+fsn.accounting.bridgemastersllc.com
+ftjp.accounting.bridgemastersllc.com
+hnir.accounting.bridgemastersllc.com
+iemv.accounting.bridgemastersllc.com
+isi.accounting.bridgemastersllc.com
+jcqx.accounting.bridgemastersllc.com
+jpc.accounting.bridgemastersllc.com
+jpdp.accounting.bridgemastersllc.com
+lckn.accounting.bridgemastersllc.com
+nqla.accounting.bridgemastersllc.com
+ogf.accounting.bridgemastersllc.com
+qczbu.accounting.bridgemastersllc.com
+qmipp.accounting.bridgemastersllc.com
+vfhrf.accounting.bridgemastersllc.com
+xpu.accounting.bridgemastersllc.com
+zpn.accounting.bridgemastersllc.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
