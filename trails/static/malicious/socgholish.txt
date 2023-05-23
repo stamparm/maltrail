@@ -1953,6 +1953,20 @@ vfhrf.accounting.bridgemastersllc.com
 xpu.accounting.bridgemastersllc.com
 zpn.accounting.bridgemastersllc.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-22-v10329/584
+
+assist.cabinetelcea.com
+broadcast.ninemuses.io
+commercial.tedgorka.com
+forum.leewhitman-raymond.com
+friends.foflib.org
+round.macayafoundation.org
+teaching.eduvisuo.com
+trademark.iglesiaelarca.com
+training.defcon1.us
+tube.saltminecomics.com
+vip.dueprocess.us
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
