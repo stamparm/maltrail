@@ -8381,6 +8381,12 @@ cdn.gtag-analytics.com
 cdn.pickuptestold.site
 gt473829.pickuptestold.site
 
+# Reference: https://twitter.com/threatcat_ch/status/1661006743340724224
+# Reference: https://www.virustotal.com/gui/ip-address/91.202.5.222/relations
+
+cdnjstat.com
+webstatlstics.net
+
 # Generic
 
 /assets/lfg.js
