@@ -8382,10 +8382,16 @@ cdn.pickuptestold.site
 gt473829.pickuptestold.site
 
 # Reference: https://twitter.com/threatcat_ch/status/1661006743340724224
+# Reference: https://twitter.com/unmaskparasites/status/1661052684366143489
 # Reference: https://www.virustotal.com/gui/ip-address/91.202.5.222/relations
 
+cdnjsbrt.com
 cdnjstat.com
+marhamteb.com
+miagw1b-1.net
+vk-0y7l5hkf.ru
 webstatlstics.net
+www111.site
 
 # Generic
 
