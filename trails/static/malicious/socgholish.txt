@@ -1967,6 +1967,11 @@ training.defcon1.us
 tube.saltminecomics.com
 vip.dueprocess.us
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-23-v10330/587
+
+booty.midatlanticlaw.org
+internal.metro1properties.us
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
