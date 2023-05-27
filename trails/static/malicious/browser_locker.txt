@@ -18511,3 +18511,11 @@ d38sh3kpp67e5u.cloudfront.net
 # Reference: https://twitter.com/d1savow3d/status/1654243697880358916
 
 itamysb.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/108.167.181.82/relations
+
+clicktoscanfix.xyz
+secureantiscan.xyz
+securescanfix.xyz
+secureantiscan.clicktoscanfix.xyz
+securescanfix.clicktoscanfix.xyz
