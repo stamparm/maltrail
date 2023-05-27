@@ -6590,6 +6590,10 @@ tpc.cdn-linkedin.info
 /glooko-windows.php
 /glooko-windows.php?host=
 
+# Reference: https://twitter.com/g0njxa/status/1662432191249281025
+
+/4107e896e74f964e.php
+
 # Generic
 
 /js/altmanluggage.js
