@@ -1982,6 +1982,10 @@ initiatives.ayitiexpo.com
 product.sammyhallam.com
 sapphire.abogados.services
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-25-v10332/590
+
+strategy.transversalgroup.co
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
