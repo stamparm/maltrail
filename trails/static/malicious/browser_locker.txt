@@ -18503,3 +18503,7 @@ coral-app-3mlxj.ondigitalocean.app
 # Reference: https://twitter.com/d1savow3d/status/1653447306367074321
 
 d38x8glxcttia3.cloudfront.net
+
+# Reference: https://twitter.com/d1savow3d/status/1655608630245306369
+
+d38sh3kpp67e5u.cloudfront.net
