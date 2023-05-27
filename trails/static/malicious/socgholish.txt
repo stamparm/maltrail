@@ -1972,6 +1972,16 @@ vip.dueprocess.us
 booty.midatlanticlaw.org
 internal.metro1properties.us
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-26-v10333/592
+# Reference: https://www.virustotal.com/gui/ip-address/88.119.169.145/relations
+
+archives.finanpress.com
+enterprise.alliantlaw.us
+exclusive.transversalbranding.com
+initiatives.ayitiexpo.com
+product.sammyhallam.com
+sapphire.abogados.services
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
