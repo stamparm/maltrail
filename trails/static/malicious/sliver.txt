@@ -1471,3 +1471,9 @@ dns-server.online
 # Reference: https://twitter.com/josh_penny/status/1655256609461878784
 
 164.132.237.65:10443
+
+# Reference: https://twitter.com/malwrhunterteam/status/1663059228632784896
+# Reference: https://www.virustotal.com/gui/file/f5c78808731edf5c86f9389f52b3cdc21fb41096a64a368cf8265d063a53561e/detection
+# Reference: https://www.virustotal.com/gui/file/aff8d50943660328c2503344b5312b20268cf1188ab6704c7186d0c1b05102e3/detection
+
+service-ocztqds1-1304103560.bj.apigw.tencentcs.com
