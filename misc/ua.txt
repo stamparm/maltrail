@@ -2290,6 +2290,10 @@ SmartLoader
 GunnaWunna
 GunnaWunnaBlueTips
 
+# Reference: https://twitter.com/crep1x/status/1663580276490924032
+
+Zadanie
+
 # Misc
 
 information_schema
