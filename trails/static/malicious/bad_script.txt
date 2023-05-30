@@ -6594,6 +6594,10 @@ tpc.cdn-linkedin.info
 
 /4107e896e74f964e.php
 
+# Reference: https://twitter.com/James_inthe_box/status/1663586640101793793
+
+/5de6a3ffd5d23c.php
+
 # Generic
 
 /js/altmanluggage.js
