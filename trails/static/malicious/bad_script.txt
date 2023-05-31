@@ -6598,6 +6598,12 @@ tpc.cdn-linkedin.info
 
 /5de6a3ffd5d23c.php
 
+# Reference: https://twitter.com/threatintel/status/1663920614887899152
+
+/777.ps1
+/bADtkM9pCNHe.hta
+/tomtom.ps1
+
 # Generic
 
 /js/altmanluggage.js
