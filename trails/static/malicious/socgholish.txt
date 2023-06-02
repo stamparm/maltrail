@@ -1986,6 +1986,10 @@ sapphire.abogados.services
 
 strategy.transversalgroup.co
 
+# Reference: https://twitter.com/threatcat_ch/status/1664643709298769920
+
+failure.mathgeniusa.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
