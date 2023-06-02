@@ -1744,6 +1744,7 @@ top.scriptsplatform.com
 clickandanalytics.com
 cdn.clickandanalytics.com
 click.clickandanalytics.com
+come.clickandanalytics.com
 put.clickandanalytics.com
 
 # Reference: https://blog.sucuri.net/2023/02/bogus-url-shorteners-redirect-thousands-of-hacked-sites-in-adsense-fraud-campaign.html
