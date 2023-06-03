@@ -5543,3 +5543,13 @@ txt.al
 # Reference: https://twitter.com/1ZRR4H/status/1657747300339384320
 
 .zip
+
+# Reference: https://twitter.com/VK_Intel/status/1227234932960964609
+# Reference: https://www.virustotal.com/gui/file/051f15288d162db642ccb694cbd8dafeb71b89614ac711c350f992a7b2a9d7d7/detection
+
+.gettask
+.gettasks
+.gettasksize
+.getupdates
+.reporttask
+.reportupdates
