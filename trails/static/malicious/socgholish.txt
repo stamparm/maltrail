@@ -1990,6 +1990,12 @@ strategy.transversalgroup.co
 
 failure.mathgeniusa.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-31-v10336/602
+
+background.bodyguardchicago.com
+hardware.deltavis.com
+masterclass.teamupnetwork.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
