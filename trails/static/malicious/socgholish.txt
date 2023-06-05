@@ -1996,6 +1996,10 @@ background.bodyguardchicago.com
 hardware.deltavis.com
 masterclass.teamupnetwork.org
 
+# Reference: https://twitter.com/threatcat_ch/status/1665706881489289217
+
+dashboard.smartmetereducationnetwork.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
