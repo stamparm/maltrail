@@ -2000,6 +2000,11 @@ masterclass.teamupnetwork.org
 
 dashboard.smartmetereducationnetwork.com
 
+# Reference: https://twitter.com/threatcat_ch/status/1666706124836405248
+
+roadmap.jufp.com
+trust.resourcehost.net
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
