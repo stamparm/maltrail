@@ -2005,6 +2005,11 @@ dashboard.smartmetereducationnetwork.com
 roadmap.jufp.com
 trust.resourcehost.net
 
+# Reference: https://twitter.com/threatcat_ch/status/1668596702696054785
+# Reference: https://www.virustotal.com/gui/ip-address/47.91.94.97/relations
+
+specific.autonerdmobilerepairs.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
