@@ -3463,3 +3463,8 @@ cloudns.ph
 # Reference: https://www.virustotal.com/gui/domain/gb.net/relations
 
 gb.net
+
+# Reference: https://twitter.com/1ZRR4H/status/1668875113171755008
+
+fortiddns.com
+fortidyndns.com
