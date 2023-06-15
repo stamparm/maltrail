@@ -1747,6 +1747,42 @@ click.clickandanalytics.com
 come.clickandanalytics.com
 put.clickandanalytics.com
 
+# Reference: https://www.virustotal.com/gui/file/eedb020cff479ebcb511376b902825a0e35e5549346462548c0bca8d6ecd7ac3/detection
+
+111.90.148.245:3503
+/LIboibne3ru6sighe6urpcsgo/checkquit
+/LIboibne3ru6sighe6urpcsgo/get
+/LIboibne3ru6sighe6urpcsgo/set
+/LIboibne3ru6sighe6urpcsgo/
+
+# Reference: https://www.virustotal.com/gui/file/21bfc6439c7c750846a8e6a337621f49843dea714e4ce5f9dc72908f09f513c0/detection
+
+111.90.148.245:3319
+
+# Reference: https://www.virustotal.com/gui/file/c3afe8bee1512205bbd01ea486679de547ff61c697f13220c833d3b0f5117e75/detection
+
+111.90.148.245:3411
+
+# Reference: https://www.virustotal.com/gui/file/b0588dd8bba4a3e098176834f98cb9ecfd447614a06e56b34eba144674c66f7d/detection
+
+111.90.148.245:3491
+
+# Reference: https://www.virustotal.com/gui/file/998622fd0e64534704c699b7a91639e036623af28ad6f37b4abe4af0523ada7d/detection
+
+111.90.148.245:3457
+
+# Reference: https://www.virustotal.com/gui/file/66733ed1a4eb310f3f3026170a240d952b7464505ff8bbff394122f16b3bf81b/detection
+
+111.90.148.245:3467
+
+# Reference: https://www.virustotal.com/gui/file/5f9d59f33f5fe45de008c134585f682261f2498ce298fa082d047ed5c5d6638e/detection
+
+111.90.148.245:3431
+
+# Reference: https://www.virustotal.com/gui/file/51233d54c17ee49323bbc50a230a2904d91241e54f1ddd036c3bae1fd47990ff/detection
+
+111.90.148.245:3429
+
 # Reference: https://blog.sucuri.net/2023/02/bogus-url-shorteners-redirect-thousands-of-hacked-sites-in-adsense-fraud-campaign.html
 
 filestack.live
