@@ -865,3 +865,8 @@ arb.grattomania.space
 # Reference: https://www.virustotal.com/gui/file/1469559b1fddd9d14abccd01926b69d9b2413823d930f3bc2288c06a0e374943/detection
 
 134.122.135.75:60146
+
+# Reference: https://www.virustotal.com/gui/file/5f6ff9420855a2c45343f4e5a94bfc8595a83e2ccb15e65bfb9be0daef4ef9ef/detection
+
+http://106.14.171.33
+47.99.219.178:8080
