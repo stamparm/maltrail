@@ -2294,6 +2294,10 @@ GunnaWunnaBlueTips
 
 Zadanie
 
+# Reference: https://twitter.com/g0njxa/status/1670824965438832643
+
+DuckTales
+
 # Misc
 
 information_schema
