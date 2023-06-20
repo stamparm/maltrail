@@ -137,7 +137,7 @@ myip.jacware.com
 myip.knet.ca
 myip.kz
 myip.ma
-myip.ms
+#myip.ms
 myip.mudfish.net
 myip.mx
 myip.mysau.com.au
