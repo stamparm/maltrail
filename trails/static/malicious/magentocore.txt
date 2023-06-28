@@ -8393,6 +8393,10 @@ vk-0y7l5hkf.ru
 webstatlstics.net
 www111.site
 
+# Reference: https://twitter.com/unmaskparasites/status/1673811920263208960
+
+fedgeat.com
+
 # Generic
 
 /assets/lfg.js
