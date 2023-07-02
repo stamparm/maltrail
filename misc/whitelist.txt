@@ -3473,3 +3473,7 @@ mastodon.xyz
 
 fwupd.org
 cdn.fwupd.org
+
+# Reference: https://www.virustotal.com/gui/domain/firaxislive.net/relations
+
+firaxislive.net
