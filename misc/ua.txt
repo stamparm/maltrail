@@ -2298,6 +2298,10 @@ Zadanie
 
 DuckTales
 
+# Reference: https://twitter.com/Jane_0sint/status/1675513957887483905
+
+\Auploader\Z
+
 # Misc
 
 information_schema
