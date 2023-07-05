@@ -6604,6 +6604,11 @@ tpc.cdn-linkedin.info
 /bADtkM9pCNHe.hta
 /tomtom.ps1
 
+# Reference: https://twitter.com/doc_guard/status/1676690812942397440
+
+/host21/74ef424.php
+/74ef424.php
+
 # Generic
 
 /js/altmanluggage.js
