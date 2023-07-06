@@ -3468,3 +3468,7 @@ gb.net
 
 fortiddns.com
 fortidyndns.com
+
+# Reference: https://www.virustotal.com/gui/domain/dynuddns.net/relations
+
+dynuddns.net
