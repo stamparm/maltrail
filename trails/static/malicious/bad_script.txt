@@ -6609,6 +6609,12 @@ tpc.cdn-linkedin.info
 /host21/74ef424.php
 /74ef424.php
 
+# Reference: https://twitter.com/faisalusuf/status/1677288652345573376
+
+/www/xxx/46ff82b.php
+/xxx/46ff82b.php
+/46ff82b.php
+
 # Generic
 
 /js/altmanluggage.js
