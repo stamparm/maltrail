@@ -3477,3 +3477,8 @@ cdn.fwupd.org
 # Reference: https://www.virustotal.com/gui/domain/firaxislive.net/relations
 
 firaxislive.net
+
+# Reference: https://www.virustotal.com/gui/domain/2k.com/relations
+
+2k.com
+my.2k.com
