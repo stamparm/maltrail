@@ -3472,3 +3472,7 @@ fortidyndns.com
 # Reference: https://www.virustotal.com/gui/domain/dynuddns.net/relations
 
 dynuddns.net
+
+# Reference: https://www.virustotal.com/gui/domain/ddnsguru.com/relations
+
+ddnsguru.com
