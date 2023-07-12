@@ -6615,6 +6615,11 @@ tpc.cdn-linkedin.info
 /xxx/46ff82b.php
 /46ff82b.php
 
+# Reference: https://twitter.com/JAMESWT_MHT/status/1679018395046498304
+
+/twentytwentyone/hudiiiwj1.php
+/hudiiiwj1.php
+
 # Generic
 
 /js/altmanluggage.js
