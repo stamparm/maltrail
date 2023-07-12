@@ -6620,6 +6620,10 @@ tpc.cdn-linkedin.info
 /twentytwentyone/hudiiiwj1.php
 /hudiiiwj1.php
 
+# Reference: https://twitter.com/doc_guard/status/1679136232847159298
+
+/kpb.hta
+
 # Generic
 
 /js/altmanluggage.js
