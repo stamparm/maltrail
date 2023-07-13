@@ -8397,6 +8397,11 @@ www111.site
 
 fedgeat.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/188.114.96.4/relations
+
+cloudfarle.com
+cdn.cloudfarle.com
+
 # Generic
 
 /assets/lfg.js
