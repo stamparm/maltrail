@@ -1747,6 +1747,15 @@ click.clickandanalytics.com
 come.clickandanalytics.com
 put.clickandanalytics.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/91.238.104.193/relations
+
+linestoget.com
+away.linestoget.com
+collect.clickandanalytics.com
+lists.clickandanalytics.com
+spot.scriptsplatform.com
+stay.linestoget.com
+
 # Reference: https://www.virustotal.com/gui/file/eedb020cff479ebcb511376b902825a0e35e5549346462548c0bca8d6ecd7ac3/detection
 
 111.90.148.245:3503
