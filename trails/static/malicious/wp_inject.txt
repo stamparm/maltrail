@@ -1748,10 +1748,14 @@ come.clickandanalytics.com
 put.clickandanalytics.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/91.238.104.193/relations
+# Reference: https://www.virustotal.com/gui/ip-address/2.59.222.119/relations
+# Reference: https://www.virustotal.com/gui/ip-address/2.59.222.122/relations
 
 linestoget.com
 away.linestoget.com
 collect.clickandanalytics.com
+get.linestoget.com
+go.linestoget.com
 lists.clickandanalytics.com
 spot.scriptsplatform.com
 stay.linestoget.com
