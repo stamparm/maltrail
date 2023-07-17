@@ -3217,3 +3217,7 @@ api5.check-data.xyz
 
 133455789.xyz
 testupdate.info
+
+# Reference: https://www.virustotal.com/gui/file/472ccfb865c81704562ea95870f60c08ef00bcd2ca1d7f09352398c05be5d05d/detection
+
+64.183.202.102:8443
