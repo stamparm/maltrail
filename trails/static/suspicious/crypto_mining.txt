@@ -1145,3 +1145,7 @@ pop.fastpool.xyz
 smtp.fastpool.xyz
 ssl.fastpool.xyz
 yes.fastpool.xyz
+
+# Reference: https://app.any.run/tasks/1de400ec-41c3-41c4-8266-a4222abf2209/
+
+51.15.54.102:14433
