@@ -2302,6 +2302,10 @@ DuckTales
 
 \Auploader\Z
 
+# Reference: https://www.bleepingcomputer.com/news/security/new-condi-malware-builds-ddos-botnet-out-of-tp-link-ax21-routers/
+
+condi-bbos
+
 # Misc
 
 information_schema
