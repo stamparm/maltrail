@@ -6629,6 +6629,22 @@ tpc.cdn-linkedin.info
 /ileyarudy/ebe51b8.php
 /ebe51b8.php
 
+# Reference: https://twitter.com/Yeti_Sec/status/1681294210492669953
+
+/3DESbypass.ps1
+/AMSIbypassScanInterception32bits.ps1
+/AMSIbypassScanInterception64bits.ps1
+/AmsiWin32APIBypass.ps1
+/AmsiWin32APIBypassALL.ps1
+/AmsiWin32APIBypassALLApplkCLM.ps1
+/CeaserXOrbypass.ps1
+/Invoke-ReflectivePEInjection.ps1
+/amsibypassjs.js
+/bypassDES.ps1
+/bypassRC2.ps1
+/bypassxor.ps1
+/loadmetANDinjecttoexpls.ps1
+
 # Generic
 
 /js/altmanluggage.js
