@@ -6624,6 +6624,11 @@ tpc.cdn-linkedin.info
 
 /kpb.hta
 
+# Reference: https://twitter.com/doc_guard/status/1681281900424441857
+
+/ileyarudy/ebe51b8.php
+/ebe51b8.php
+
 # Generic
 
 /js/altmanluggage.js
