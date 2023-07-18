@@ -928,3 +928,7 @@ podathon.org/shell/
 /cmdsql.aspx
 /Def0ult.aspx
 /uploadcmd.aspx
+
+# Reference: https://twitter.com/Yeti_Sec/status/1681294210492669953
+
+/sharpjsshell.js
