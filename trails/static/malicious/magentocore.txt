@@ -8410,6 +8410,7 @@ cdnreport.net
 chatwareopenalgroup.net
 woocommerce.im
 emv1.byvlsa.com
+emv1.google-site-verification.com
 
 # Generic
 
