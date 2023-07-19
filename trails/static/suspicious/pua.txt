@@ -3221,3 +3221,8 @@ testupdate.info
 # Reference: https://www.virustotal.com/gui/file/472ccfb865c81704562ea95870f60c08ef00bcd2ca1d7f09352398c05be5d05d/detection
 
 64.183.202.102:8443
+
+# Reference: https://www.virustotal.com/gui/file/23adcac29eaa2c0cf99ec66432517e95bba1361aadf96e72283a489cd0eac596/detection
+
+9i7ffdgvffibow7.vrnserver.ru
+zd6ofm54qsu6ici.friendsgrabber.ru
