@@ -8402,6 +8402,15 @@ fedgeat.com
 cloudfarle.com
 cdn.cloudfarle.com
 
+# Reference: https://www.akamai.com/blog/security-research/new-magecart-hides-behind-legit-domains
+# Reference: https://www.virustotal.com/gui/ip-address/194.50.153.45/relations
+
+byvlsa.com
+cdnreport.net
+chatwareopenalgroup.net
+woocommerce.im
+emv1.byvlsa.com
+
 # Generic
 
 /assets/lfg.js
