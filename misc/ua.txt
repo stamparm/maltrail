@@ -2306,6 +2306,10 @@ DuckTales
 
 condi-bbos
 
+# Reference: https://twitter.com/Jane_0sint/status/1682103350073106438
+
+Mozilla/88.0
+
 # Misc
 
 information_schema
