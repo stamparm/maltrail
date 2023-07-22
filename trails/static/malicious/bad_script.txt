@@ -6645,6 +6645,10 @@ tpc.cdn-linkedin.info
 /bypassxor.ps1
 /loadmetANDinjecttoexpls.ps1
 
+# Reference: https://twitter.com/K_N1kolenko/status/1670717372418736128
+
+/okinaloi.hta
+
 # Generic
 
 /js/altmanluggage.js
