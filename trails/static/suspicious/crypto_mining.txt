@@ -1149,3 +1149,7 @@ yes.fastpool.xyz
 # Reference: https://app.any.run/tasks/1de400ec-41c3-41c4-8266-a4222abf2209/
 
 51.15.54.102:14433
+
+# Reference: https://twitter.com/suyog41/status/1683364976398938112
+
+139.162.249.91:3333
