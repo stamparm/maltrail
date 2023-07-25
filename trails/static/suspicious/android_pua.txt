@@ -870,3 +870,8 @@ arb.grattomania.space
 
 http://106.14.171.33
 47.99.219.178:8080
+
+# Reference: https://www.virustotal.com/gui/file/00089643b17136ef3073908b5bcb395d36464b870467e50e910d531eab7a5a37/detection
+
+bigappboi.com
+clickfam.com
