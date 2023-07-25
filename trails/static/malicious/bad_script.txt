@@ -6649,6 +6649,10 @@ tpc.cdn-linkedin.info
 
 /okinaloi.hta
 
+# Reference: https://threatfox.abuse.ch/ioc/1140177/
+
+/def4f4924bdf6e.php
+
 # Generic
 
 /js/altmanluggage.js
