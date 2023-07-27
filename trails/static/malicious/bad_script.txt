@@ -6657,6 +6657,10 @@ tpc.cdn-linkedin.info
 
 /8fcde15698ce9a.php
 
+# Reference: https://www.virustotal.com/gui/file/2750db58bd94b97aa33fb563461c528c54eb3f08f3315b0648291842576e6857/detection
+
+/idbk.hta
+
 # Generic
 
 /js/altmanluggage.js
