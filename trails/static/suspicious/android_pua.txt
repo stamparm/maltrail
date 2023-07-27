@@ -875,3 +875,10 @@ http://106.14.171.33
 
 bigappboi.com
 clickfam.com
+
+# Reference: https://www.virustotal.com/gui/file/00ce5e1675879a4083b42aecc10deab5b64a0fd9b86f567421d6bdc156b860af/detection
+
+danez.free.fr
+danez.no-ip.biz
+danez02600.ddns.net
+danez02600.ddnsking.com
