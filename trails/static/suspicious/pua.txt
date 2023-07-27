@@ -3226,3 +3226,8 @@ testupdate.info
 
 9i7ffdgvffibow7.vrnserver.ru
 zd6ofm54qsu6ici.friendsgrabber.ru
+
+# Reference: https://www.virustotal.com/gui/file/acec4b97c27ed6b3255dc52f7117756376c6e1cf9df22ac866d74d10d790602c/detection
+
+http://154.222.228.133
+154.222.228.134:7000
