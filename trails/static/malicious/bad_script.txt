@@ -6661,6 +6661,11 @@ tpc.cdn-linkedin.info
 
 /idbk.hta
 
+# Reference: https://twitter.com/sicehice/status/1676336562915667971
+
+/cve-2019-19781.py
+/cve-2022-22963.py
+
 # Generic
 
 /js/altmanluggage.js
