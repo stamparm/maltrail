@@ -2200,3 +2200,8 @@ http://91.240.118.252
 # Reference: https://twitter.com/1ZRR4H/status/1662273718251401217
 
 139.99.155.76:50010
+
+# Reference: https://twitter.com/sicehice/status/1681021347181232130
+
+51.38.230.212:8000
+51.38.230.212:8080
