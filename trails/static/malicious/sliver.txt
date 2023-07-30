@@ -1762,3 +1762,8 @@ service-ocztqds1-1304103560.bj.apigw.tencentcs.com
 92.118.39.25:31337
 92.118.39.25:443
 92.118.39.25:53
+
+# Reference: https://twitter.com/sicehice/status/1668834356444446722
+
+174.49.101.134:8888
+xyz.hackersdog.com
