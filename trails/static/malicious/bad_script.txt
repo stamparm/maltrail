@@ -6671,6 +6671,10 @@ tpc.cdn-linkedin.info
 /cve-2018-7600_poc.py
 /cve-2018-7600.py
 
+# Reference: https://twitter.com/sicehice/status/1658227388117839874
+
+/Invoke-AppPathBypass.ps1
+
 # Generic
 
 /js/altmanluggage.js
