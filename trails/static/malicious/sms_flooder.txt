@@ -10,6 +10,10 @@ theyeru.ru
 
 webpage-citizensonline.zyns.com
 
+# Reference: https://www.virustotal.com/gui/file/05b31b80a86fbb8e8588bb88d72b5e2fffeca2a11da5c82afd57bd9fef991328/detection
+
+gghzj.cc
+
 # Generic
 
 /sms-bomb/
