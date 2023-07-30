@@ -5552,3 +5552,7 @@ txt.al
 .getupdates
 .reporttask
 .reportupdates
+
+# Reference: https://twitter.com/sicehice/status/1668834356444446722
+
+hackersdog.com
