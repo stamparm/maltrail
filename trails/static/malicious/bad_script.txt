@@ -6666,6 +6666,11 @@ tpc.cdn-linkedin.info
 /cve-2019-19781.py
 /cve-2022-22963.py
 
+# Reference: https://twitter.com/sicehice/status/1658975084973903873
+
+/cve-2018-7600_poc.py
+/cve-2018-7600.py
+
 # Generic
 
 /js/altmanluggage.js
