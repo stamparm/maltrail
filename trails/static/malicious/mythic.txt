@@ -942,5 +942,10 @@ makethumbmoney.com
 
 http://3.69.214.254
 13.59.29.56:7443
+185.45.195.30:443
 3.69.214.254:7443
 86.48.25.106:7443
+88.119.175.140:443
+aviditycellars.com
+boxofficeseer.com
+thesheenterprise.com
