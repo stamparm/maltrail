@@ -1771,3 +1771,11 @@ xyz.hackersdog.com
 # Reference: https://twitter.com/sicehice/status/1658223115564982273
 
 216.127.175.18:8080
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.sliver/ (# 2023--07-31)
+
+http://172.105.125.49
+172.105.125.49:21
+47.242.51.151:31337
+47.242.51.151:8888
+92.118.39.25:8888
