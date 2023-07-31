@@ -3482,3 +3482,8 @@ firaxislive.net
 
 2k.com
 my.2k.com
+
+# Reference: https://twitter.com/lowmal3/status/1686016618457886722
+# Reference: https://github.com/stamparm/maltrail/commit/fcd02ee7e12c33f7de350d973cfde236b9633e33
+
+askubuntu.com
