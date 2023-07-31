@@ -20256,3 +20256,11 @@ top-promo.click
 totalsite.click
 ultra-av.click
 ultra-av.live
+
+# Reference: https://www.virustotal.com/gui/ip-address/146.190.83.2/relations
+
+fanir.live
+rebims.live
+rebins.live
+recims.live
+recins.live
