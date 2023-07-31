@@ -20449,3 +20449,10 @@ bioxu.live
 dioxu.click
 karbu.live
 rioxu.live
+
+# Reference: https://www.virustotal.com/gui/ip-address/157.230.4.182/relations (# 2023-07-31)
+
+bofest.xyz
+bogest.xyz
+bohest.xyz
+disers.xyz
