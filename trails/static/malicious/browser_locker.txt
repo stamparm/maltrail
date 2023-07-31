@@ -19934,3 +19934,9 @@ webav.co.in
 websvs.co.in
 windesk.co.in
 yellowdfarfs.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/81.200.113.37/relations
+
+gpsurv.site
+gptrc.site
+trkwin.site
