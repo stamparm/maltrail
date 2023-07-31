@@ -6679,6 +6679,10 @@ tpc.cdn-linkedin.info
 
 /f4058d59f18c3d.php
 
+# Reference: https://threatfox.abuse.ch/ioc/1143989/
+
+/6def98ac6de238.php
+
 # Generic
 
 /js/altmanluggage.js
