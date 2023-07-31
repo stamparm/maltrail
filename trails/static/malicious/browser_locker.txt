@@ -20442,3 +20442,10 @@ pioxe.live
 rioxe.live
 samsone.click
 sekure.click
+
+# Reference: https://www.virustotal.com/gui/ip-address/155.138.163.178/detection
+
+bioxu.live
+dioxu.click
+karbu.live
+rioxu.live
