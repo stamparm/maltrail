@@ -20424,3 +20424,21 @@ horpim.xyz
 horsim.xyz
 hortim.xyz
 horwim.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/91.195.240.94/relations
+
+dijers.xyz
+gawepi.live
+jadure.life
+
+# Reference: https://www.virustotal.com/gui/ip-address/134.122.101.206/relations
+
+bioxe.live
+dioxe.click
+direkte.click
+karbe.live
+karbone.click
+pioxe.live
+rioxe.live
+samsone.click
+sekure.click
