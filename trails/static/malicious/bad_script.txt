@@ -6675,6 +6675,10 @@ tpc.cdn-linkedin.info
 
 /Invoke-AppPathBypass.ps1
 
+# Reference: https://threatfox.abuse.ch/ioc/1143987/
+
+/f4058d59f18c3d.php
+
 # Generic
 
 /js/altmanluggage.js
