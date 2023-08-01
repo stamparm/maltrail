@@ -1779,3 +1779,10 @@ http://172.105.125.49
 47.242.51.151:31337
 47.242.51.151:8888
 92.118.39.25:8888
+
+# Reference: https://asec.ahnlab.com/en/55652/
+
+config.v6.army
+panda.sect.kr
+speed.ableoil.net
+status.devq.workers.dev
