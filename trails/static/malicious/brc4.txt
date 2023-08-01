@@ -509,3 +509,10 @@ sentisupport.com
 symantecuptimehost.com
 teenieshopus.com
 wsibc.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-08-01)
+
+165.227.224.30:443
+172.105.71.205:443
+24.199.114.243:443
+54.211.243.10:443
