@@ -1772,7 +1772,7 @@ xyz.hackersdog.com
 
 216.127.175.18:8080
 
-# Reference: https://threatfox.abuse.ch/browse/malware/win.sliver/ (# 2023--07-31)
+# Reference: https://threatfox.abuse.ch/browse/malware/win.sliver/ (# 2023-07-31)
 
 http://172.105.125.49
 172.105.125.49:21
@@ -1786,3 +1786,15 @@ config.v6.army
 panda.sect.kr
 speed.ableoil.net
 status.devq.workers.dev
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.sliver/ (# 2023-08-01)
+
+108.166.206.202:21229
+35.212.172.98:31337
+35.212.172.98:8888
+47.94.113.86:31337
+47.94.113.86:8888
+91.142.73.118:443
+91.142.73.118:50543
+91.202.4.10:443
+91.202.4.10:57302
