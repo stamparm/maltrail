@@ -6678,6 +6678,10 @@ tpc.cdn-linkedin.info
 
 /6def98ac6de238.php
 
+# Reference: https://www.virustotal.com/gui/file/05f3c3043ce59ea4711d0a090e69382370be2a8ad4f2526260c57eafe305e1fc/detection
+
+/IE_NET.hta
+
 # Generic
 
 /js/altmanluggage.js
