@@ -6682,6 +6682,10 @@ tpc.cdn-linkedin.info
 
 /IE_NET.hta
 
+# Reference: https://twitter.com/1ZRR4H/status/1686659981389463552
+
+/067ft5.hta
+
 # Generic
 
 /js/altmanluggage.js
