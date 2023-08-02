@@ -20,3 +20,9 @@ http://91.234.199.4
 89.44.194.102:443
 naqsh-ejahan.com
 list.naqsh-ejahan.com
+
+# Reference: https://twitter.com/jaydinbas/status/1682317473691910145
+# Reference: https://www.virustotal.com/gui/file/e08dad3ba8f06e07fc4b18bac1f27360befb6fd1fd18a5b467ef8ee4f29735af/detection
+# Reference: https://www.virustotal.com/gui/file/4f1d801303e414b824ec750f58bb3c5065f3ab1af5e70f45fcbd43a8ea8fa2e0/detection
+
+runtimebroker-telemetry.com
