@@ -2319,6 +2319,10 @@ Mozilla/88.0
 
 mfo4engo2m
 
+# Reference: https://twitter.com/blackorbird/status/1686560884750196736
+
+Chnome
+
 # Misc
 
 information_schema
