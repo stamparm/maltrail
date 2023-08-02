@@ -8413,6 +8413,15 @@ yoursmartpanel.com
 emv1.byvlsa.com
 emv1.google-site-verification.com
 
+# Reference: https://threatfox.abuse.ch/browse/malware/js.magecart/
+
+lemodigit.online
+macsetech.online
+mopedigit.shop
+olimpsport.org
+ttewe.quest
+yalomob.pics
+
 # Generic
 
 /assets/lfg.js
