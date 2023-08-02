@@ -10,3 +10,9 @@
 
 192.210.219.54:8041
 91158.to
+
+# Reference: https://twitter.com/noexceptcpp/status/1686320165040840704
+# Reference: https://www.virustotal.com/gui/file/9837541f645ef1bb826a418f7d393531b1457ee8097d438aa3d317534297543c/detection
+
+flashplayr.screenconnect.com
+instance-q07bx4-relay.screenconnect.com
