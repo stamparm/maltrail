@@ -619,3 +619,7 @@ http://146.70.145.212
 # Reference: https://twitter.com/TheDFIRReport/status/1686338899314987008
 
 45.92.1.60:5111
+
+# Reference: https://threatfox.abuse.ch/ioc/1146718/
+
+146.70.145.212:443
