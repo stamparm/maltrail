@@ -950,3 +950,7 @@ http://3.69.214.254
 aviditycellars.com
 boxofficeseer.com
 thesheenterprise.com
+
+# Reference: https://threatfox.abuse.ch/ioc/1146556/
+
+154.204.60.177:7443
