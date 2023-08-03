@@ -37,3 +37,8 @@ do6j9veegshb4.cloudfront.net
 # Reference: https://www.virustotal.com/gui/file/7cc5aa0de58acc181260ca48d0069e7893570d2fec13bcd989f8907c23a0992a/detection
 
 d1z6i8y4ytpgjk.cloudfront.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1687013597656780800
+# Reference: https://www.virustotal.com/gui/file/b047d28d0df6ee8b9e4a3c7744df58b77ed2eb1e990604e416ec2410bc34d8f4/detection
+
+3.6.115.182:14904
