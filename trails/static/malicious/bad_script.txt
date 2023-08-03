@@ -6690,6 +6690,10 @@ tpc.cdn-linkedin.info
 
 /akuy4l.hta
 
+# Reference: https://www.virustotal.com/gui/file/cc652a2be3f935f1bf3c40f7033239e09357da22f98b6abcab17bbb34266a02a/detection
+
+/XVXCSASD.hta
+
 # Generic
 
 /js/altmanluggage.js
