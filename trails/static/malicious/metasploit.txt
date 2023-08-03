@@ -2285,3 +2285,10 @@ http://91.240.118.252
 # Reference: https://twitter.com/drb_ra/status/1686657929192099840
 
 116.204.79.57:8888
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.meterpreter/ (# 2023-08-03)
+
+137.175.66.169:1009
+139.155.157.157:443
+5.188.86.146:4334
+74.207.240.21:9289
