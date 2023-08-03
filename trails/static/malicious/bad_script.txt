@@ -6686,6 +6686,10 @@ tpc.cdn-linkedin.info
 
 /067ft5.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1686850055599239169
+
+/akuy4l.hta
+
 # Generic
 
 /js/altmanluggage.js
