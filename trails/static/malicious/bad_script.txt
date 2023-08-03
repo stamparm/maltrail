@@ -6694,6 +6694,11 @@ tpc.cdn-linkedin.info
 
 /XVXCSASD.hta
 
+# Reference: https://twitter.com/doc_guard/status/1686640977430069248
+
+/inj/IE_browser.vbs
+/IE_browser.vbs
+
 # Generic
 
 /js/altmanluggage.js
