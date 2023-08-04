@@ -954,3 +954,8 @@ thesheenterprise.com
 # Reference: https://threatfox.abuse.ch/ioc/1146556/
 
 154.204.60.177:7443
+
+# Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-08-04)
+
+172.105.163.143:7443
+64.176.162.36:7443
