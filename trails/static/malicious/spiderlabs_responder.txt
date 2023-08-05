@@ -1301,3 +1301,11 @@ http://167.99.114.6
 # Reference: https://threatfox.abuse.ch/ioc/1148471/
 
 88.99.87.77:443
+
+# Reference: https://threatfox.abuse.ch/browse/malware/py.responder/ (# 2023-08-05)
+
+13.127.51.101:445
+3.250.81.251:443
+51.138.178.152:445
+54.171.182.212:445
+88.99.87.77:443
