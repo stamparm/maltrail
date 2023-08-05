@@ -1790,6 +1790,7 @@ status.devq.workers.dev
 # Reference: https://threatfox.abuse.ch/browse/malware/win.sliver/ (# 2023-08-01)
 
 108.166.206.202:21229
+170.178.211.195:12555
 35.212.172.98:31337
 35.212.172.98:8888
 47.94.113.86:31337
