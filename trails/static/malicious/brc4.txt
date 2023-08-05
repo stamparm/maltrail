@@ -521,6 +521,7 @@ wsibc.com
 # Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-08-05)
 
 http://52.193.188.236
+140.82.46.164:443
 179.43.144.250:443
 179.43.144.250:8443
 83.97.73.90:443
