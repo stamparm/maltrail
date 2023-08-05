@@ -524,3 +524,9 @@ http://52.193.188.236
 179.43.144.250:443
 179.43.144.250:8443
 83.97.73.90:443
+
+# Reference: https://news.sophos.com/en-us/2023/05/18/the-phantom-menace-brute-ratel-remains-rare-and-targeted/
+# Reference: https://otx.alienvault.com/pulse/648a0804f0c7af02f1fefd6e
+
+prefectrespond.online
+instrumentation-database-fc-lows.trycloudflare.com
