@@ -20,4 +20,4 @@ Maltrail's [issues tracker](https://github.com/stamparm/maltrail/issues) and [pu
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 0.5x  | :white_check_mark: |
+| All versions  | :white_check_mark: |
