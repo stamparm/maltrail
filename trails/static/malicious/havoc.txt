@@ -642,3 +642,7 @@ http://54.211.1.105
 # Reference: https://twitter.com/sicehice/status/1687601960164216833
 
 157.245.47.66:8080
+
+# Reference: https://urlhaus.abuse.ch/url/2640642/
+
+mott54874.b-cdn.net
