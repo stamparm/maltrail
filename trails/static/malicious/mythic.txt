@@ -960,3 +960,7 @@ thesheenterprise.com
 172.105.163.143:7443
 64.176.162.36:7443
 78.141.210.148:7443
+
+# Reference: https://twitter.com/drb_ra/status/1688079122826711040
+
+http://64.176.162.36
