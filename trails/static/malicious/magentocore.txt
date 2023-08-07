@@ -8422,6 +8422,10 @@ olimpsport.org
 ttewe.quest
 yalomob.pics
 
+# Reference: https://www.virustotal.com/gui/ip-address/34.88.77.180/relations
+
+script-hotjar.com
+
 # Generic
 
 /assets/lfg.js
