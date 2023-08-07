@@ -3476,3 +3476,7 @@ dynuddns.net
 # Reference: https://www.virustotal.com/gui/domain/ddnsguru.com/relations
 
 ddnsguru.com
+
+# Reference: https://www.virustotal.com/gui/domain/run.place/relations
+
+run.place
