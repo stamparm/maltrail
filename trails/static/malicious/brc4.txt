@@ -531,3 +531,9 @@ http://52.193.188.236
 
 prefectrespond.online
 instrumentation-database-fc-lows.trycloudflare.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-08-07)
+
+http://18.181.114.13
+139.59.211.172:443
+83.97.73.90:2563
