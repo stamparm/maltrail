@@ -537,3 +537,8 @@ instrumentation-database-fc-lows.trycloudflare.com
 http://18.181.114.13
 139.59.211.172:443
 83.97.73.90:2563
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-08-08)
+
+http://18.181.114.13
+54.171.30.223:443
