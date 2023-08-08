@@ -6699,6 +6699,12 @@ tpc.cdn-linkedin.info
 /inj/IE_browser.vbs
 /IE_browser.vbs
 
+# Reference: https://twitter.com/StopMalvertisin/status/1688816016443547648
+
+/msk.hta
+/zaza.hta
+/zero.hta
+
 # Generic
 
 /js/altmanluggage.js
