@@ -651,3 +651,7 @@ mott54874.b-cdn.net
 
 54.238.83.76:3306
 54.238.83.76:443
+
+# Reference: https://threatfox.abuse.ch/ioc/1149181/
+
+http://85.206.172.192
