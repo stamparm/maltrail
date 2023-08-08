@@ -965,3 +965,11 @@ thesheenterprise.com
 # Reference: https://twitter.com/drb_ra/status/1688079122826711040
 
 http://64.176.162.36
+
+# Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-08-08)
+
+178.128.127.243:7443
+185.215.180.99:7443
+20.163.220.14:7443
+20.25.147.190:7443
+4.228.97.16:7443
