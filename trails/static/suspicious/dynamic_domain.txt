@@ -3480,3 +3480,7 @@ ddnsguru.com
 # Reference: https://www.virustotal.com/gui/domain/run.place/relations
 
 run.place
+
+# Reference: https://www.virustotal.com/gui/domain/itekgroup.com/relations
+
+itekgroup.com
