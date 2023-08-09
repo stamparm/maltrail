@@ -8427,6 +8427,10 @@ yalomob.pics
 script-hotjar.com
 cpanel.script-hotjar.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/107.158.94.87/relations
+
+google-analytics.publicvm.com
+
 # Generic
 
 /assets/lfg.js
