@@ -3487,3 +3487,7 @@ my.2k.com
 # Reference: https://github.com/stamparm/maltrail/commit/fcd02ee7e12c33f7de350d973cfde236b9633e33
 
 askubuntu.com
+
+# Reference: https://github.com/nextdns/metadata/issues/1270
+
+cyberplace.social
