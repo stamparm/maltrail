@@ -882,3 +882,8 @@ danez.free.fr
 danez.no-ip.biz
 danez02600.ddns.net
 danez02600.ddnsking.com
+
+# Reference: https://www.virustotal.com/gui/file/00dbf7146d68e49a910e3ec07eb978748543a6ae74a3b0bd736540e434cd975d/detection
+
+http://122.224.19.80
+http://115.231.216.109
