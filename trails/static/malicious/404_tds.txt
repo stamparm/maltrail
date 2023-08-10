@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2023 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/threatinsight/status/1666403634312105987
+# Reference: https://twitter.com/1ZRR4H/status/1689586968697696256
+
+acnanz.net
+gestionfuniko.com
+peterscustomusb.com
+tintrianalytics.com
+viva2299.com
