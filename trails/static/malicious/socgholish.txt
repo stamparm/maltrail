@@ -2287,6 +2287,11 @@ e743f.stuff.libertydentalcourse.ca
 e86c4.stuff.libertydentalcourse.ca
 f5951.stuff.libertydentalcourse.ca
 
+# Reference: https://threatfox.abuse.ch/ioc/1149408/
+
+timeline.transversallearning.com
+aqkm.timeline.transversallearning.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
