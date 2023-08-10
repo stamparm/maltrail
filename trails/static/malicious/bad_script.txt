@@ -6705,6 +6705,11 @@ tpc.cdn-linkedin.info
 /zaza.hta
 /zero.hta
 
+# Reference: https://twitter.com/ViriBack/status/1689625007532511233
+# Reference: https://tria.ge/230810-p92wxach32/behavioral1
+
+/gate?id=
+
 # Generic
 
 /js/altmanluggage.js
