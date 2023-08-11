@@ -127,3 +127,10 @@ efhehrs.otsrhesa.rest
 enossife.otsrhesa.rest
 khneiro.otsrhesa.rest
 tytmaf.otsrhesa.rest
+
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/08/old-exploit-kits-still-kicking-around-in-2023
+
+oernatel.shop
+otvidluioad.online
+via0.com
+uabeoee.otvidluioad.online
