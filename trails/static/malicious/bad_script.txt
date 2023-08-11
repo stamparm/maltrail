@@ -6724,6 +6724,10 @@ tpc.cdn-linkedin.info
 
 /status.jpg?bypassCache=
 
+# Reference: https://twitter.com/sicehice/status/1689858299837980672
+
+/pshobfs.ps1
+
 # Generic
 
 /js/altmanluggage.js
