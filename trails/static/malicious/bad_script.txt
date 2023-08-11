@@ -6715,6 +6715,10 @@ tpc.cdn-linkedin.info
 /dropper_client.py
 /dropper_server.py
 
+# Reference: https://twitter.com/sicehice/status/1689830829634023424
+
+/CVE-2016-7255.ps1
+
 # Generic
 
 /js/altmanluggage.js
