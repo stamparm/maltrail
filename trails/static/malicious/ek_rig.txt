@@ -526,6 +526,11 @@ cryptotdsinc.xyz
 popmag.xyz
 popwertcrypt.xyz
 
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/08/old-exploit-kits-still-kicking-around-in-2023
+
+http://45.138.27.52
+adsgoandway.xyz
+
 # Generic trails
 
 \b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)
