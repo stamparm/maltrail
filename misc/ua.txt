@@ -2323,6 +2323,10 @@ mfo4engo2m
 
 Chnome
 
+# Reference: https://www.zscaler.com/blogs/security-research/janelarat-repurposed-bx-rat-variant-targeting-latam-fintech
+
+VisaoAPP
+
 # Misc
 
 information_schema
