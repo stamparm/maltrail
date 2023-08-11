@@ -6719,6 +6719,11 @@ tpc.cdn-linkedin.info
 
 /CVE-2016-7255.ps1
 
+# Reference: https://twitter.com/malwrhunterteam/status/1689894749400911873
+# Reference: https://www.virustotal.com/gui/file/dbebb179b1d007eb15349de7a9e0e13f1ab1831b5e4f74afbdbc59e6ce3f439f/detection
+
+/status.jpg?bypassCache=
+
 # Generic
 
 /js/altmanluggage.js
