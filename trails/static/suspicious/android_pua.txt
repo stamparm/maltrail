@@ -887,3 +887,7 @@ danez02600.ddnsking.com
 
 http://122.224.19.80
 http://115.231.216.109
+
+# Reference: https://www.virustotal.com/gui/file/d3d70b020d816a62f06df89517d0ae669e19d90884cfa143cca4b671b4e48ec4/detection
+
+http://100.42.74.199
