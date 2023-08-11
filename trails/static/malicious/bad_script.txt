@@ -6710,6 +6710,11 @@ tpc.cdn-linkedin.info
 
 /gate?id=
 
+# Reference: https://twitter.com/sicehice/status/1689840704879509504
+
+/dropper_client.py
+/dropper_server.py
+
 # Generic
 
 /js/altmanluggage.js
