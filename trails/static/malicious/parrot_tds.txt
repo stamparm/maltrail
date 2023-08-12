@@ -62,3 +62,9 @@ tops.sineadholly.com
 
 go.statclick.net
 visit.statclick.net
+
+# Reference: https://threatfox.abuse.ch/ioc/1149624/
+# Reference: https://www.virustotal.com/gui/ip-address/45.130.201.22/relations
+
+webfiledata.com
+storage.webfiledata.com
