@@ -1080,3 +1080,8 @@
 198.199.92.0/22 # stretchoid.com
 198.199.96.0/20 # stretchoid.com
 45.55.0.0/19 # stretchoid.com
+
+# Reference: https://github.com/stamparm/maltrail/issues/19197
+# Reference: https://github.com/datacenters-network/security/commit/fe8fb8b5a55df1292bbbf71917ec42b5caf9d6ae
+
+94.102.61.0/24 # criminalip.com
