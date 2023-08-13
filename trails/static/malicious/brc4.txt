@@ -550,8 +550,11 @@ http://18.181.114.13
 # Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-08-11)
 
 http://35.74.154.31
+104.168.59.22:443
 146.190.219.130:443
+20.212.219.56:8443
 91.103.253.43:443
+91.103.253.43:43890
 
 # Reference: https://twitter.com/drb_ra/status/1690434731899273216
 
