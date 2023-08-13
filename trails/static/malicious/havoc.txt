@@ -671,3 +671,8 @@ http://176.31.163.140
 20.160.143.1:443
 34.100.240.82:443
 43.153.87.78:443
+
+# Reference: https://www.virustotal.com/gui/file/53e8a1861bed12148803a34ea8bc2b844c4dab73759df6882f77c301f1151dcd/detection
+
+161.97.156.7:43595
+havoc718.ddns.net
