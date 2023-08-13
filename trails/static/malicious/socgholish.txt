@@ -2292,6 +2292,10 @@ f5951.stuff.libertydentalcourse.ca
 timeline.transversallearning.com
 aqkm.timeline.transversallearning.com
 
+# Reference: https://threatfox.abuse.ch/ioc/1149713/
+
+x64.nvize.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
