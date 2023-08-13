@@ -1362,3 +1362,7 @@ http://52.61.243.196
 # Reference: https://twitter.com/drb_ra/status/1690435991578796032
 
 20.204.156.0:443
+
+# Reference: https://twitter.com/drb_ra/status/1690798154235387904
+
+46.137.19.86:445
