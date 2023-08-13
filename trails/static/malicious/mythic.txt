@@ -1003,3 +1003,9 @@ http://64.176.168.231
 146.190.38.149:7443
 167.99.194.103:7443
 188.124.39.62:7443
+
+# Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-08-13)
+
+motorrungoli.com
+rosevalleylimousine.com
+shchiswear.com
