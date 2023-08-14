@@ -6732,6 +6732,11 @@ tpc.cdn-linkedin.info
 
 /wctxNBCW2101.doa.php
 
+# Reference: https://www.virustotal.com/gui/file/4b33a49ae0540f43c8357709841be70541d2cf162755e7649604b13740c5bad9/detection
+
+/gate.php?hwid=
+/keylogs.php?hwid=
+
 # Generic
 
 /js/altmanluggage.js
