@@ -455,6 +455,16 @@ rellenar-el-formulario.cyou
 scrigno.cyou
 se-adhiere-a-la-nueva-legislacion.cyou
 
+# Reference: https://www.virustotal.com/gui/file/4b33a49ae0540f43c8357709841be70541d2cf162755e7649604b13740c5bad9/detection
+
+/webpanel/gate.php?hwid=
+/webpanel/keylogs.php?hwid=
+/webpanel/logs.php?hwid=
+/webpanel/screen.php?hwid=
+/webpanel/task.php?hwid=
+/webpanel/gate.php
+/webpanel/keylogs.php
+
 # Generic
 
 /admin_123/auth.php
