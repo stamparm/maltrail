@@ -6728,6 +6728,10 @@ tpc.cdn-linkedin.info
 
 /pshobfs.ps1
 
+# Reference: https://twitter.com/KesaGataMe0/status/1690913251478110208
+
+/wctxNBCW2101.doa.php
+
 # Generic
 
 /js/altmanluggage.js
