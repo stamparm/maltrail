@@ -562,3 +562,7 @@ http://35.74.154.31
 # Reference: https://twitter.com/drb_ra/status/1690434731899273216
 
 20.212.219.56:8443
+
+# Reference: https://twitter.com/drb_ra/status/1691159436197322752
+
+164.92.145.128:7810
