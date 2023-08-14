@@ -1009,3 +1009,7 @@ http://64.176.168.231
 motorrungoli.com
 rosevalleylimousine.com
 shchiswear.com
+
+# Reference: https://twitter.com/drb_ra/status/1691159572776415232
+
+18.188.7.186:7443
