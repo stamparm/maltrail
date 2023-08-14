@@ -932,3 +932,8 @@ podathon.org/shell/
 # Reference: https://twitter.com/Yeti_Sec/status/1681294210492669953
 
 /sharpjsshell.js
+
+# Reference: https://twitter.com/r3dbU7z/status/1691158370231947266
+
+/cihshell.php
+/marijuana.php
