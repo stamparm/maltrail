@@ -554,6 +554,11 @@ opusmedical.info
 34.125.1.141:7443
 88.119.170.197:7443
 
+# Reference: https://threatfox.abuse.ch/browse/tag/Covenant/ (# 2023-08-14)
+
+107.189.5.211:7443
+144.34.244.222:7443
+
 # Generic
 
 /covenantuser/
