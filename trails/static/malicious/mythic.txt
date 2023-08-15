@@ -1006,6 +1006,8 @@ http://64.176.168.231
 
 # Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-08-13)
 
+18.188.7.186:7443
+65.109.229.239:7443
 motorrungoli.com
 rosevalleylimousine.com
 shchiswear.com
