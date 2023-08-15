@@ -679,3 +679,7 @@ http://176.31.163.140
 
 161.97.156.7:43595
 havoc718.ddns.net
+
+# Reference: https://twitter.com/drb_ra/status/1691523144966610945
+
+3.87.213.122:8080
