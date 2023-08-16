@@ -2327,6 +2327,11 @@ Chnome
 
 VisaoAPP
 
+# Reference: https://twitter.com/g0njxa/status/1691748179996184917
+# Reference: https://app.any.run/tasks/698f65e2-2af2-4969-8d52-f388744af33b/
+
+^Xmlst$
+
 # Misc
 
 information_schema
