@@ -699,3 +699,7 @@ http://52.88.128.181
 # Reference: https://threatfox.abuse.ch/ioc/1150423/
 
 http://34.231.34.198
+
+# Reference: https://threatfox.abuse.ch/ioc/1150556/
+
+64.227.130.114:443
