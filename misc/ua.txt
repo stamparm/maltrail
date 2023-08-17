@@ -2332,6 +2332,11 @@ VisaoAPP
 
 ^Xmlst$
 
+# Reference: https://twitter.com/Jane_0sint/status/1692264873026088986
+# Reference: https://app.any.run/tasks/683afc31-29e0-4803-964b-f11036ff0f20/
+
+\bWindows NT 123\.9\b
+
 # Misc
 
 information_schema
