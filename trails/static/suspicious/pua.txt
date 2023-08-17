@@ -3231,3 +3231,13 @@ zd6ofm54qsu6ici.friendsgrabber.ru
 
 http://154.222.228.133
 154.222.228.134:7000
+
+# Reference: https://www.virustotal.com/gui/file/95502a9d694270e89bc12ca7d1f5830f3613ead2461fea6f4effc611d5b77a0f/detection
+
+downor3.space
+flighyu.space
+freeo9.space
+iifiledownload34.space
+down.flighyu.space
+set.downor3.space
+up.freeo9.space
