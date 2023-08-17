@@ -1015,3 +1015,7 @@ shchiswear.com
 # Reference: https://twitter.com/drb_ra/status/1691159572776415232
 
 18.188.7.186:7443
+
+# Reference: https://threatfox.abuse.ch/ioc/1150419/
+
+3.19.246.184:7443
