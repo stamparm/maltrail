@@ -2296,6 +2296,12 @@ aqkm.timeline.transversallearning.com
 
 x64.nvize.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-08-16-v10395/866/1
+# Reference: https://www.virustotal.com/gui/ip-address/23.146.184.29/relations
+
+workout.oystergardener.net
+derp.workout.oystergardener.net
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
