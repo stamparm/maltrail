@@ -1153,3 +1153,7 @@ yes.fastpool.xyz
 # Reference: https://twitter.com/suyog41/status/1683364976398938112
 
 139.162.249.91:3333
+
+# Reference: https://www.virustotal.com/gui/file/172998995b63bc4a4efc8f6d1d879e00822f6fe338f5bb04360b81e2b4c48473/detection
+
+212.47.253.124:14433
