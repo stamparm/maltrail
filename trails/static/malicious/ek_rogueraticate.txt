@@ -4,3 +4,7 @@
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-08-16-v10395/866/1
 
 analytics-google-x91.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-08-18-v10398/878
+
+cheetahsnv.com
