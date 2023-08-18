@@ -1,7 +1,7 @@
 ---
 name: Questions and Support
 about: General topics. Questions and Support.
-title: [Questions and Support]
+title: "[Questions and Support]"
 labels: ''
 assignees: ''
 
