@@ -703,3 +703,7 @@ http://34.231.34.198
 # Reference: https://threatfox.abuse.ch/ioc/1150556/
 
 64.227.130.114:443
+
+# Reference: https://threatfox.abuse.ch/ioc/1150868/
+
+52.76.227.205:443
