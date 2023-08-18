@@ -423,3 +423,7 @@ whois.pconline.com.cn
 # Reference: https://www.virustotal.com/gui/file/a4b5d7012c1a971c6c7d95de1b2027153d83527b1a2c62fa0fca7770a76fb99a/detection
 
 http://34.117.59.8
+
+# Reference: https://www.virustotal.com/gui/file/911ff4db1232c44205f71456d652a3ebfa2992770ef94c5cc89f9843a235cbcc/detection
+
+whatismyipaddressnow.co
