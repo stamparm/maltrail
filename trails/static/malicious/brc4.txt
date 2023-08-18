@@ -570,3 +570,7 @@ http://35.74.154.31
 # Reference: https://threatfox.abuse.ch/ioc/1150549/
 
 88.218.61.244:8053
+
+# Reference: https://threatfox.abuse.ch/ioc/1150627/
+
+http://54.248.102.18
