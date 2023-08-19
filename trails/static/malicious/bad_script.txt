@@ -6737,6 +6737,10 @@ tpc.cdn-linkedin.info
 /gate.php?hwid=
 /keylogs.php?hwid=
 
+# Reference: https://twitter.com/Joseliyo_Jstnk/status/1692443866841121094
+
+/durare.hta
+
 # Generic
 
 /js/altmanluggage.js
