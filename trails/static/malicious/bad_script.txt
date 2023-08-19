@@ -6741,6 +6741,10 @@ tpc.cdn-linkedin.info
 
 /durare.hta
 
+# Reference: https://www.virustotal.com/gui/file/a70d2999b817814f006a7f3e0bda9a69e8be0d4835e9c03cc3d39aa3e0a510e7/detection
+
+/final_pshnet_revhttps.ps1
+
 # Generic
 
 /js/altmanluggage.js
