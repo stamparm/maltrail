@@ -1031,3 +1031,7 @@ http://44.203.60.76
 # Reference: https://threatfox.abuse.ch/ioc/1150866/
 
 http://70.34.250.166
+
+# Reference: https://www.virustotal.com/gui/file/75ab2570442b10e8f8087c844418bccfd52598952037a3a668d9d42efe500d3f/detection
+
+103.145.13.69:8081
