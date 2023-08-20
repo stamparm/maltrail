@@ -497,6 +497,7 @@ se-adhiere-a-la-nueva-legislacion.cyou
 /botzz/admin.php
 /botzz/api.php
 /botzz/auth.php
+/botzz/blista.php
 /botzz/gate.php
 /botzz/index.php
 /botzz/login.php
