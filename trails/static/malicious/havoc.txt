@@ -711,3 +711,7 @@ http://34.231.34.198
 # Reference: https://threatfox.abuse.ch/ioc/1150887/
 
 http://77.91.68.133
+
+# Reference: https://twitter.com/drb_ra/status/1693334655540363746
+
+38.47.107.170:443
