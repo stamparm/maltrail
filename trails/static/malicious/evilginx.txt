@@ -23,6 +23,12 @@
 143.198.32.165:4000
 167.71.190.181:4000
 
+# Reference: https://www.virustotal.com/gui/ip-address/209.97.137.33/relations
+
+evilginx-test.ddns.net
+okta.evilginx-test.ddns.net
+login.okta.evilginx-test.ddns.net
+
 # Generic
 
 /evilginx-linux-amd64.tar.gz
