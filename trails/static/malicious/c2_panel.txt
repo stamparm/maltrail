@@ -494,6 +494,14 @@ se-adhiere-a-la-nueva-legislacion.cyou
 /botnet/panel.php
 /botpanel/
 /bot/Panel/
+/botzz/admin.php
+/botzz/api.php
+/botzz/auth.php
+/botzz/gate.php
+/botzz/index.php
+/botzz/login.php
+/botzz/page.php
+/botzz/panel.php
 /C24_Panel/
 /cgi%20bin/Panel/
 /Formgrab%20Access%20Panel/
