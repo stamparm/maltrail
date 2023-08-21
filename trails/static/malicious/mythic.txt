@@ -1023,6 +1023,7 @@ shchiswear.com
 # Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-08-17)
 
 http://44.203.60.76
+177.124.72.24:7443
 3.133.152.144:7443
 3.139.80.162:7443
 5.252.176.198:7443
