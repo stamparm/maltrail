@@ -723,3 +723,7 @@ http://77.91.68.133
 # Reference: https://twitter.com/drb_ra/status/1693697132304257088
 
 20.224.91.188:443
+
+# Reference: https://threatfox.abuse.ch/ioc/1151453/
+
+2.59.254.20:443
