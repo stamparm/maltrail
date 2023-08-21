@@ -6749,6 +6749,10 @@ tpc.cdn-linkedin.info
 
 /863jehjf.js
 
+# Reference: https://twitter.com/fr0s7_/status/1693551189260976157
+
+/iscsicpl_bypassUAC
+
 # Generic
 
 /js/altmanluggage.js
