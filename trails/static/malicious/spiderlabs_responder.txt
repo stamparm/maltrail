@@ -1404,6 +1404,7 @@ http://167.71.162.248
 
 # Reference: https://threatfox.abuse.ch/browse/malware/py.responder/ (# 2023-08-18)
 
+http://20.125.105.211
 http://20.171.239.247
 http://87.239.108.174
 167.71.162.248:5986
