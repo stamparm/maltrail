@@ -6745,6 +6745,10 @@ tpc.cdn-linkedin.info
 
 /final_pshnet_revhttps.ps1
 
+# Reference: https://twitter.com/doc_guard/status/1693666858958717236
+
+/863jehjf.js
+
 # Generic
 
 /js/altmanluggage.js
