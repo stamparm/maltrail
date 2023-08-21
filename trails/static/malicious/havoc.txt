@@ -719,3 +719,7 @@ http://77.91.68.133
 # Reference: https://twitter.com/drb_ra/status/1693334699224011263
 
 209.38.225.63:443
+
+# Reference: https://twitter.com/drb_ra/status/1693697132304257088
+
+20.224.91.188:443
