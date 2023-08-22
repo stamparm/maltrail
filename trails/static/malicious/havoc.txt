@@ -717,8 +717,10 @@ http://77.91.68.133
 38.47.107.170:443
 
 # Reference: https://twitter.com/drb_ra/status/1693334699224011263
+# Reference: https://threatfox.abuse.ch/ioc/1151516/
 
 209.38.225.63:443
+209.38.240.41:443
 
 # Reference: https://twitter.com/drb_ra/status/1693697132304257088
 
