@@ -574,3 +574,7 @@ http://35.74.154.31
 # Reference: https://threatfox.abuse.ch/ioc/1150627/
 
 http://54.248.102.18
+
+# Reference: https://twitter.com/drb_ra/status/1694420794208612717
+
+193.149.190.194:443
