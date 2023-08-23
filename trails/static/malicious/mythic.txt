@@ -1042,3 +1042,7 @@ http://70.34.250.166
 # Reference: https://www.virustotal.com/gui/file/75ab2570442b10e8f8087c844418bccfd52598952037a3a668d9d42efe500d3f/detection
 
 103.145.13.69:8081
+
+# Reference: https://twitter.com/drb_ra/status/1694420880502214955
+
+142.93.60.235:7443
