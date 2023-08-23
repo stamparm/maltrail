@@ -8442,6 +8442,11 @@ dwww.script-analytics.com
 ipfs.script-analytics.com
 mail.script-analytics.com
 
+# Reference: https://sansec.io/research/malware-persistence-via-telegram-and-github
+# Reference: https://www.virustotal.com/gui/ip-address/51.161.204.249/relations
+
+kissupme.life
+
 # Generic
 
 /assets/lfg.js
