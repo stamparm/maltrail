@@ -2337,6 +2337,11 @@ VisaoAPP
 
 \bWindows NT 123\.9\b
 
+# Reference: https://twitter.com/petrovic082/status/1694355529118748687
+# Reference: https://www.virustotal.com/gui/file/0e373b59636efdc1bcf2d68b9f873c5ff8979c5e9373d838cd199913e7b78f3e/detection
+
+c010101
+
 # Misc
 
 information_schema
