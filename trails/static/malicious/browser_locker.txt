@@ -21332,3 +21332,12 @@ glow2shine.click
 suiters.shop
 tvfiyshop.live
 wedesign5.cfd
+
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/07/malicious-ad-for-usps-phishes-for-jpmorgan-chase-credentials
+# Reference: https://otx.alienvault.com/pulse/64a715ea971d76ba344ffe4f
+
+forgetrackng.com
+logictrackngs.com
+super-trackings.com
+tracks4me.biz
+web-trackings.com
