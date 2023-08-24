@@ -328,3 +328,8 @@ peterkinsadvil.ptr1.ru
 36.138.134.148:8443
 42.247.11.53:8928
 58.251.128.87:30016
+
+# Reference: https://blog.talosintelligence.com/lazarus-collectionrat/
+# Reference: https://www.virustotal.com/gui/file/05e9fe8e9e693cb073ba82096c291145c953ca3a3f8b3974f9c66d15c1a3a11d/detection
+
+108.61.186.55:443
