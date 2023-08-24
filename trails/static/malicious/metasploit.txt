@@ -2466,3 +2466,12 @@ http://91.240.118.252
 # Reference: https://www.virustotal.com/gui/file/ddf11b5a378baa3e67466aa2da4284f932aeb8fc6c61de379298b1076acd1686/detection
 
 188.68.242.169:2137
+
+# Reference: https://twitter.com/sicehice/status/1694537861012267015
+
+/meterpreter_reverse_tcp.elf
+/meterpreter_reverse_tcp.exe
+/meterpreter_reverse_tcp.hta
+/meterpreter_reverse_tcp.ps1
+/meterpreter_reverse_tcp.py
+/meterpreter_reverse_tcp.raw
