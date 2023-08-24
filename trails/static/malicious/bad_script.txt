@@ -6758,6 +6758,17 @@ tpc.cdn-linkedin.info
 /batdrop.hta
 /batdrop.ps1
 
+# Reference: https://twitter.com/sicehice/status/1694549050584973690
+
+/shell-x64.hta
+/shell_x64.hta
+/shell-x86.hta
+/shell_x86.hta
+/shell-x64.ps1
+/shell_x64.ps1
+/shell-x86.ps1
+/shell_x86.ps1
+
 # Generic
 
 /js/altmanluggage.js
