@@ -891,3 +891,19 @@ http://115.231.216.109
 # Reference: https://www.virustotal.com/gui/file/d3d70b020d816a62f06df89517d0ae669e19d90884cfa143cca4b671b4e48ec4/detection
 
 http://100.42.74.199
+
+# Reference: https://www.virustotal.com/gui/ip-address/47.99.219.178/relations
+# Reference: https://www.virustotal.com/gui/file/001e8517c3114c6b02047fb2fb6888b7c80d7d99fc4810267c745e666d6421a9/detection
+
+47.99.219.178:8081
+
+# Reference: https://www.virustotal.com/gui/ip-address/106.14.119.141/relations
+# Reference: https://www.virustotal.com/gui/file/01c8ed914226d94e3a385912be404a0fd1594b3e8ae95edd70d92ec377752a59/detection
+
+http://211.99.99.236
+http://47.99.219.178
+106.14.119.141:8080
+211.99.99.236:88
+47.99.219.178:233
+/apijson/xiaapi/
+/apijson/xiaapi/xia1.json
