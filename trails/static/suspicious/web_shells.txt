@@ -937,3 +937,7 @@ podathon.org/shell/
 
 /cihshell.php
 /marijuana.php
+
+# Reference: https://twitter.com/sicehice/status/1694546485864435835
+
+/rootshell
