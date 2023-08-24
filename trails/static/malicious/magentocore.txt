@@ -8447,6 +8447,12 @@ mail.script-analytics.com
 
 kissupme.life
 
+# Reference: https://otx.alienvault.com/pulse/64d69f098146e2b80ae306a3
+
+xurum.com
+mail.xurum.com
+mx.xurum.com
+
 # Generic
 
 /assets/lfg.js
