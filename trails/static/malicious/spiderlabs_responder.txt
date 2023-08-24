@@ -1462,3 +1462,13 @@ http://64.225.16.14
 # Reference: https://twitter.com/drb_ra/status/1694421566539313259
 
 94.237.56.83:443
+
+# Reference: https://threatfox.abuse.ch/browse/malware/py.responder/ (# 2023-08-25)
+
+http://159.203.78.46
+http://45.55.68.230
+159.203.78.46:443
+159.203.78.46:445
+18.188.0.172:443
+64.225.79.75:445
+87.239.108.174:5986
