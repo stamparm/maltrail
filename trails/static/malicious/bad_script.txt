@@ -6753,6 +6753,11 @@ tpc.cdn-linkedin.info
 
 /iscsicpl_bypassUAC
 
+# Reference: https://www.virustotal.com/gui/file/a08c36812818618f44782c3677c8b8b8159a1beacbad66adbe232e694d91176e/detection
+
+/batdrop.hta
+/batdrop.ps1
+
 # Generic
 
 /js/altmanluggage.js
