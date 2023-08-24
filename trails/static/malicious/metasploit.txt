@@ -2460,3 +2460,9 @@ http://91.240.118.252
 # Reference: https://twitter.com/drb_ra/status/1694261974253588781
 
 156.243.1.45:443
+
+# Reference: https://twitter.com/sicehice/status/1694549050584973690
+# Reference: https://www.virustotal.com/gui/file/b59247caf530f06d4ac8461b6bbdc2d0eb42a2aa7898eb4207fdf8bb2808cf34/detection
+# Reference: https://www.virustotal.com/gui/file/ddf11b5a378baa3e67466aa2da4284f932aeb8fc6c61de379298b1076acd1686/detection
+
+188.68.242.169:2137
