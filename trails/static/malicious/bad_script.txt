@@ -6768,6 +6768,17 @@ tpc.cdn-linkedin.info
 /shell_x64.ps1
 /shell-x86.ps1
 /shell_x86.ps1
+/shell-x64.py
+/shell_x64.py
+/shell-x86.py
+/shell_x86.py
+
+# Reference: https://twitter.com/sicehice/status/1694546485864435835
+
+/CVE-2021-3156-main.tar
+/exploit_userspec.py
+/exploit_cent7_userspec.py
+/exploit_defaults_mailer.py
 
 # Generic
 
