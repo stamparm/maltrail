@@ -907,3 +907,22 @@ http://47.99.219.178
 47.99.219.178:233
 /apijson/xiaapi/
 /apijson/xiaapi/xia1.json
+
+# Reference: https://www.virustotal.com/gui/file/103c39a0ec5c5c66478b00a42d4cfe614a1b70149e0f0cbfe41a853941d8c442/detection
+# Reference: https://www.virustotal.com/gui/file/103c39a0ec5c5c66478b00a42d4cfe614a1b70149e0f0cbfe41a853941d8c442/detection
+# Reference: https://www.virustotal.com/gui/file/00131493aa8bce1ae1fd233d94caafcb3e4ae928eab654f0ce3d87d22cf2ac08/detection
+
+gcld.xyz
+loveys.xyz
+woaiys.xyz
+yscxb.xyz
+yscxc.xyz
+api.loveys.xyz
+api.yscxb.xyz
+api.yscxc.xyz
+apicdn.woaiys.xyz
+gcpapi.yscxb.xyz
+ysapi.gcld.xyz
+d2yjkgrjody1qc.cloudfront.net
+d2yqd6s4llxprx.cloudfront.net
+d37xvfvxl95pq8.cloudfront.net
