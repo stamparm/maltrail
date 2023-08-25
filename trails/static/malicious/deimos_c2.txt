@@ -333,3 +333,7 @@ peterkinsadvil.ptr1.ru
 # Reference: https://www.virustotal.com/gui/file/05e9fe8e9e693cb073ba82096c291145c953ca3a3f8b3974f9c66d15c1a3a11d/detection
 
 108.61.186.55:443
+
+# Reference: https://twitter.com/drb_ra/status/1694964579338494280
+
+61.121.83.152:9090
