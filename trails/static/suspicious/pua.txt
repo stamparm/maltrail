@@ -3241,3 +3241,10 @@ iifiledownload34.space
 down.flighyu.space
 set.downor3.space
 up.freeo9.space
+
+# Reference: https://www.virustotal.com/gui/file/14789558d88b4d6e20366e8e7aa9a123482ee62b011b3c3eed276eb1aee05895/detection
+
+cribcelery.xyz
+dogquarter.website
+sistersshame.xyz
+bon.cribcelery.xyz
