@@ -335,5 +335,7 @@ peterkinsadvil.ptr1.ru
 108.61.186.55:443
 
 # Reference: https://twitter.com/drb_ra/status/1694964579338494280
+# Reference: https://threatfox.abuse.ch/ioc/1151929/
 
 61.121.83.152:9090
+61.121.83.154:9080
