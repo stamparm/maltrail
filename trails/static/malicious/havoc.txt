@@ -745,3 +745,7 @@ http://47.100.30.74
 # Reference: https://twitter.com/drb_ra/status/1694965057107468557
 
 77.74.208.123:443
+
+# Reference: https://threatfox.abuse.ch/ioc/1152181/
+
+16.171.254.242:443
