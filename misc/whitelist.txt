@@ -3491,3 +3491,8 @@ askubuntu.com
 # Reference: https://github.com/nextdns/metadata/issues/1270
 
 cyberplace.social
+
+# Reference: https://www.virustotal.com/gui/file/a37c80228c9608b43ac517f1be89438dd183a2a4e7a605b963c00ae8d51029fa/behavior
+
+fp2e7a.wpc.2be4.phicdn.net
+fp2e7a.wpc.phicdn.net
