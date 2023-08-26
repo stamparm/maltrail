@@ -2501,3 +2501,7 @@ http://91.240.118.252
 # Reference: https://threatfox.abuse.ch/ioc/1151935/
 
 118.89.133.137:12306
+
+# Reference: https://threatfox.abuse.ch/ioc/1152214/
+
+208.70.76.100:3443
