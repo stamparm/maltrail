@@ -582,3 +582,7 @@ http://54.248.102.18
 # Reference: https://threatfox.abuse.ch/ioc/1152229/
 
 http://54.65.8.67
+
+# Reference: https://twitter.com/drb_ra/status/1695507953745334494
+
+5.188.87.50:8443
