@@ -3329,6 +3329,7 @@ dr49lng3n1n2s.cloudfront.net
 # Reference: https://github.com/stamparm/maltrail/issues/19055
 
 awsstatic.com
+aw0.awsstatic.com
 
 # Reference: https://github.com/stamparm/maltrail/pull/19093
 
