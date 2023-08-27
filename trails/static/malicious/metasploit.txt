@@ -2540,3 +2540,7 @@ http://91.240.118.252
 # Reference: https://threatfox.abuse.ch/ioc/1152214/
 
 208.70.76.100:3443
+
+# Reference: https://threatfox.abuse.ch/ioc/1152429/
+
+18.163.100.82:19443
