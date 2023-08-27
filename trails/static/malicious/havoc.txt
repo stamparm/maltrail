@@ -753,4 +753,6 @@ http://47.100.30.74
 # Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-08-26)
 
 http://100.25.164.220
+100.25.164.220:443
 109.228.61.245:443
+34.100.240.82:40056
