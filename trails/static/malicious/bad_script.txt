@@ -6780,6 +6780,10 @@ tpc.cdn-linkedin.info
 /exploit_cent7_userspec.py
 /exploit_defaults_mailer.py
 
+# Reference: https://www.virustotal.com/gui/file/d217cf59f8b8ed0916c04e38aaa3ad8c7b2667f61e080c17c52b26bb3ce2d370/detection
+
+/referent.hta
+
 # Generic
 
 /js/altmanluggage.js
