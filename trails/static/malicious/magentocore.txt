@@ -8453,6 +8453,11 @@ xurum.com
 mail.xurum.com
 mx.xurum.com
 
+# Reference: https://threatfox.abuse.ch/ioc/1152655/
+
+dispatchweekly.com/wp-admin/admin-ajax.php
+yamtorrecampo.com/wp-includes/card.js
+
 # Generic
 
 /assets/lfg.js
