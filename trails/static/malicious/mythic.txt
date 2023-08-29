@@ -1057,9 +1057,12 @@ http://18.206.251.188
 
 # Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-08-29)
 
+120.53.87.201:37445
 138.124.180.241:443
 185.174.101.53:443
 23.152.0.193:443
+67.207.81.80:7443
+51.250.108.206:7443
 ivermectinorder.com
 personmetal.com
 vectorsandarrows.com
