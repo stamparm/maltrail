@@ -21341,3 +21341,25 @@ logictrackngs.com
 super-trackings.com
 tracks4me.biz
 web-trackings.com
+
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/08/wooflocker2
+
+barustan.com
+beeronas.com
+besoliza.com
+bopiland.com
+defolis.com
+furakelw.com
+gomoyad.com
+gopilofan.com
+lobosixt.com
+malubana.com
+molesanu.com
+sebasong.com
+semilupa.com
+somalics.com
+somawan.com
+vedopixt.com
+vulidoc.com
+xepilondi.com
+zemolist.com
