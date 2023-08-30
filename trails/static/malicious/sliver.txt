@@ -1873,9 +1873,11 @@ http://5.255.120.28
 98.11.237.48:31337
 98.11.237.48:8888
 
-# Reference: https://threatfox.abuse.ch/browse/malware/win.sliver/ (# 2023-08-23)
+# Reference: https://threatfox.abuse.ch/browse/malware/win.sliver/ (# 2023-08-30)
 
 http://92.118.39.25
+119.45.20.55:31337
+119.45.20.55:443
 137.175.12.38:55566
 176.123.1.144:31337
 176.123.1.144:8888
