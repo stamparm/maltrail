@@ -13,3 +13,8 @@ cheetahsnv.com
 
 polyfieldgallery.com
 seosuccesslab.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-08-28-v10404/902
+
+martinreamask.com
+seyishalom.com
