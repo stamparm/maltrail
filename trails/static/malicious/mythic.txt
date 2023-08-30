@@ -1067,3 +1067,15 @@ http://18.206.251.188
 ivermectinorder.com
 personmetal.com
 vectorsandarrows.com
+
+# Reference: https://twitter.com/drb_ra/status/1696957590243016710
+
+68.183.60.125:7443
+
+# Reference: https://twitter.com/drb_ra/status/1696957610556088425
+
+185.117.90.224:7443
+
+# Reference: https://twitter.com/drb_ra/status/1696957641828794600
+
+http://54.164.36.37
