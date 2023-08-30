@@ -1519,3 +1519,29 @@ http://18.189.170.215
 188.93.210.12:445
 76.80.45.197:443
 76.80.45.197:5985
+
+# Reference: https://twitter.com/drb_ra/status/1696958296337285567
+
+188.165.172.200:443
+
+# Reference: https://twitter.com/drb_ra/status/1696958322300047760
+
+54.235.25.159:5985
+
+# Reference: https://twitter.com/drb_ra/status/1696958333591142457
+
+52.232.66.211:5985
+
+# Reference: https://twitter.com/drb_ra/status/1696958359935631804
+# Reference: https://twitter.com/drb_ra/status/1696958363819462863
+
+http://206.189.204.236
+
+# Reference: https://twitter.com/drb_ra/status/1696958393263513775
+
+50.173.136.89:445
+
+# Reference: https://twitter.com/drb_ra/status/1696958416516759956
+
+50.173.136.70:445
+206.189.204.236:443
