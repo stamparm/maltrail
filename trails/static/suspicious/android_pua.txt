@@ -926,3 +926,9 @@ ysapi.gcld.xyz
 d2yjkgrjody1qc.cloudfront.net
 d2yqd6s4llxprx.cloudfront.net
 d37xvfvxl95pq8.cloudfront.net
+
+# Reference: https://twitter.com/sysk1ll3r/status/1697054401733550133
+# Reference: https://tria.ge/230829-cqp2sahd98/behavioral1
+
+thetruthspy.com
+protocol-a946.thetruthspy.com
