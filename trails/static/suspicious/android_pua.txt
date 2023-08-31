@@ -932,3 +932,22 @@ d37xvfvxl95pq8.cloudfront.net
 
 thetruthspy.com
 protocol-a946.thetruthspy.com
+
+# Reference: https://www.virustotal.com/gui/domain/pm.rqlds.cn/relations
+
+rqlds.cn
+ol.rqlds.cn
+pm.rqlds.cn
+qk.rqlds.cn
+wl.rqlds.cn
+ym.rqlds.cn
+
+# Reference: https://www.virustotal.com/gui/domain/ww.ikswr.cn/relations
+
+ikswr.cn
+cc.ikswr.cn
+hh.ikswr.cn
+qq.ikswr.cn
+tt.ikswr.cn
+ww.ikswr.cn
+ww.ikswr.cn
