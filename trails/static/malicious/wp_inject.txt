@@ -1756,6 +1756,7 @@ linestoget.com
 stratosbody.com
 apis.stratosbody.com
 away.linestoget.com
+away.stratosbody.com
 collect.clickandanalytics.com
 get.linestoget.com
 go.linestoget.com
@@ -1764,6 +1765,7 @@ sleep.stratosbody.com
 spot.scriptsplatform.com
 step.linestoget.com
 stay.linestoget.com
+trace.stratosbody.com
 
 # Reference: https://www.virustotal.com/gui/file/eedb020cff479ebcb511376b902825a0e35e5549346462548c0bca8d6ecd7ac3/detection
 
