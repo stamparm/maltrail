@@ -2545,3 +2545,7 @@ http://91.240.118.252
 # Reference: https://threatfox.abuse.ch/ioc/1152429/
 
 18.163.100.82:19443
+
+# Reference: https://twitter.com/drb_ra/status/1697162359666532788
+
+220.119.89.139:8443
