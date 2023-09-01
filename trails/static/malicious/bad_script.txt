@@ -6784,6 +6784,10 @@ tpc.cdn-linkedin.info
 
 /referent.hta
 
+# Reference: https://twitter.com/1ZRR4H/status/1697506554889511164
+
+/CPJLFRfHPCoCEklIgFAjmFaCvhODfPaCcSdPEEfHnGbUMXMelq.php
+
 # Generic
 
 /js/altmanluggage.js
