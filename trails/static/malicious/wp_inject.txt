@@ -1740,11 +1740,13 @@ statistics.scriptsplatform.com
 top.scriptsplatform.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1660440128207327233
+# Reference: https://www.virustotal.com/gui/ip-address/194.135.30.210/relations
 
 clickandanalytics.com
 cdn.clickandanalytics.com
 click.clickandanalytics.com
 come.clickandanalytics.com
+get.clickandanalytics.com
 put.clickandanalytics.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/91.238.104.193/relations
