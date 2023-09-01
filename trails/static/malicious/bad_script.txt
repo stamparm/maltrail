@@ -6788,6 +6788,12 @@ tpc.cdn-linkedin.info
 
 /CPJLFRfHPCoCEklIgFAjmFaCvhODfPaCcSdPEEfHnGbUMXMelq.php
 
+# Reference: https://twitter.com/souiten/status/1697515866148270249
+# Reference: https://www.virustotal.com/gui/file/821b43f3151e568ebf436a05928909968ace706049e09feeec448a3efe9af67c/detection
+
+/rsc/st4rting.hta
+/st4rting.hta
+
 # Generic
 
 /js/altmanluggage.js
