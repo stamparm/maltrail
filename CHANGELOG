@@ -14,9 +14,16 @@
 
 
 
-- Version 0.60 -> 0.61 (Upcoming release)
+- Version 0.61 -> 0.62 (Upcoming release)
+
+
+
+
+
+- Version 0.60 -> 0.61 (01 Sep 2023)
 
 [!] Workaround to have working searx server (Issue #19199)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 - Version 0.59 -> 0.60 (01 Aug 2023)
