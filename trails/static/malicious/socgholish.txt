@@ -2429,6 +2429,10 @@ ywaaj.photo.beyoudcor.com
 
 assay.porchlightcommunity.org
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-01-v10408/915
+
+standard.architech3.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
