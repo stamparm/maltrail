@@ -21,3 +21,8 @@ instance-q07bx4-relay.screenconnect.com
 
 instance-kkr60r-relay.screenconnect.com
 server-nixde3ff2ff-relay.screenconnect.com
+
+# Reference: https://www.virustotal.com/gui/file/ea7d9798c925b0ec1d02108eada571ca7267c172f9bc338faaa0ff8586068fb6/detection
+
+instance-whpfy0-relay.screenconnect.com
+server-nixde3ff2ff-relay.screenconnect.com
