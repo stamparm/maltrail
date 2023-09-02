@@ -1079,3 +1079,10 @@ vectorsandarrows.com
 # Reference: https://twitter.com/drb_ra/status/1696957641828794600
 
 http://54.164.36.37
+
+# Reference:: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-09-02)
+
+http://108.61.163.195
+http://44.203.168.236
+207.148.123.73:58013
+34.238.7.53:7443
