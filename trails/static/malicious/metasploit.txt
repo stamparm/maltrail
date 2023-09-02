@@ -2515,11 +2515,12 @@ http://91.240.118.252
 
 44.208.162.136:4444
 
-# Reference: https://threatfox.abuse.ch/browse/malware/win.meterpreter/ (# 2023-08-30)
+# Reference: https://threatfox.abuse.ch/browse/malware/win.meterpreter/ (# 2023-09-02)
 
 101.43.1.44:843
 162.14.107.218:65003
 185.236.228.215:4444
+198.44.165.190:1560
 43.138.154.3:6443
 45.143.235.32:443
 47.103.106.214:443
