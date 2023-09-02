@@ -16,3 +16,8 @@
 
 flashplayr.screenconnect.com
 instance-q07bx4-relay.screenconnect.com
+
+# Reference: https://www.virustotal.com/gui/file/26bae2cc740154108a81e7b0b1c882db0ded1a7e873dd0174d2ac099ec2f6a4f/detection
+
+instance-kkr60r-relay.screenconnect.com
+server-nixde3ff2ff-relay.screenconnect.com
