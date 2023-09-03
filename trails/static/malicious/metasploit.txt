@@ -1219,6 +1219,7 @@
 96.45.169.98:3790
 96.45.179.141:3790
 98.142.95.254:3790
+1167821-cm54482.tw1.ru
 gossushugi.site
 
 # Reference: https://twitter.com/drb_ra/status/1557095839566364672
