@@ -22,3 +22,8 @@ pwwqkppwqkezqer.site
 # Reference: https://threatfox.abuse.ch/ioc/1153349/
 
 stats-best.site
+
+# Reference: https://threatfox.abuse.ch/browse/tag/ClearFake/
+
+owkdzodqzodqjefjnnejenefe.site
+znqjdnqzdqzfqmfqmkfq.site
