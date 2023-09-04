@@ -6794,6 +6794,16 @@ tpc.cdn-linkedin.info
 /rsc/st4rting.hta
 /st4rting.hta
 
+# Reference: https://twitter.com/ViriBack/status/1698693553168236869
+# Reference: https://www.virustotal.com/gui/file/276cdb84c5db9d081f107c821a4b28e3b7749a0924a8445d0c021de6fbac72a4/detection
+
+/command_bot.php
+/connect_bot.php
+/receive_bot.php
+/command_bot.php?hwid=
+/connect_bot.php?hwid=
+/receive_bot.php?hwid=
+
 # Generic
 
 /js/altmanluggage.js
