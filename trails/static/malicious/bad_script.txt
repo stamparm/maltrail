@@ -6800,6 +6800,9 @@ tpc.cdn-linkedin.info
 /command_bot.php
 /connect_bot.php
 /receive_bot.php
+/command_bot.php?cmd=
+/connect_bot.php?cmd=
+/receive_bot.php?cmd=
 /command_bot.php?hwid=
 /connect_bot.php?hwid=
 /receive_bot.php?hwid=
