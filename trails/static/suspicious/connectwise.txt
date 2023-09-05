@@ -26,3 +26,7 @@ server-nixde3ff2ff-relay.screenconnect.com
 
 instance-whpfy0-relay.screenconnect.com
 server-nixde3ff2ff-relay.screenconnect.com
+
+# Reference: https://twitter.com/0xToxin/status/1698972467555889532
+
+instance-m73xwc-relay.screenconnect.com
