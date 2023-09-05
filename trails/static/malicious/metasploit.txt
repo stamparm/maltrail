@@ -2603,3 +2603,7 @@ http://91.240.118.252
 # Reference: https://twitter.com/drb_ra/status/1697886073311895659
 
 111.90.151.233:3338
+
+# Reference: https://twitter.com/drb_ra/status/1699155436568510794
+
+80.77.25.147:8443
