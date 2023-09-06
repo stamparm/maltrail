@@ -865,6 +865,34 @@ bitly.eb-i-t-l-y.net
 bitly.team.b-i-t-l-y.net
 gov-cn.cloud.b-i-t-l-y.net
 
+# Reference: https://blog.sucuri.net/2023/09/bogus-url-shorteners-go-mobile-only-in-adsense-fraud-campaign.html
+
+a-a.asia
+b-id.bid
+c-h.tech
+c-u.icu
+i-me.link
+m-e.cyou
+o-n.one
+p-c.pics
+r-o.pro
+t-e.site
+u-u.today
+w-a.wang
+w-i.win
+11g11.w-i.win
+akhbarn.c-u.icu
+crhalal.t-e.site
+g16g.t-e.site
+jmo.w-a.wang
+jobsp.a-a.asia
+kora.a-a.asia
+l3b7.w-a.wang
+maxkora.w-a.wang
+toyori.a-a.asia
+wallstfolly.t-e.site
+yutrnd.w-a.wang
+
 # Reference: https://twitter.com/unmaskparasites/status/1593690935959093248
 # Reference: https://www.virustotal.com/gui/ip-address/89.22.228.250/relations
 
