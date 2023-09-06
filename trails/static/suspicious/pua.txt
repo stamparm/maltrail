@@ -3248,3 +3248,7 @@ cribcelery.xyz
 dogquarter.website
 sistersshame.xyz
 bon.cribcelery.xyz
+
+# Reference: https://www.virustotal.com/gui/file/0026549afa73e22912cbed3888cfa7f8e86fc7df8191c1770681a550016301b4/detection
+
+dlld-001.ru
