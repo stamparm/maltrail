@@ -1080,9 +1080,10 @@ vectorsandarrows.com
 
 http://54.164.36.37
 
-# Reference:: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-09-02)
+# Reference:: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-09-06)
 
 http://108.61.163.195
+http://139.84.226.120
 http://44.203.168.236
 http://64.176.224.4
 107.148.0.215:7443
