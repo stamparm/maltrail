@@ -792,3 +792,11 @@ http://164.215.103.173
 # Reference: https://twitter.com/drb_ra/status/1696958171774877936
 
 164.215.103.173:443
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-09-06)
+
+http://46.101.97.100
+167.172.86.3:443
+206.71.148.148:443
+37.120.239.175:443
+46.101.97.100:443
