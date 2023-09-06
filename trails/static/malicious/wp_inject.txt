@@ -1795,6 +1795,7 @@ sleep.stratosbody.com
 spot.scriptsplatform.com
 step.linestoget.com
 stay.linestoget.com
+stay.stratosbody.com
 trace.stratosbody.com
 
 # Reference: https://www.virustotal.com/gui/file/eedb020cff479ebcb511376b902825a0e35e5549346462548c0bca8d6ecd7ac3/detection
