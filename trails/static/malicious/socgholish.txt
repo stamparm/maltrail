@@ -2300,7 +2300,10 @@ x64.nvize.com
 # Reference: https://www.virustotal.com/gui/ip-address/23.146.184.29/relations
 
 workout.oystergardener.net
+aqwc.workout.oystergardener.net
 derp.workout.oystergardener.net
+mnem.workout.oystergardener.net
+xjytw.workout.oystergardener.net
 
 # Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-08-31%20SocGholish%20IOCs
 # Reference: https://www.virustotal.com/gui/domain/photo.beyoudcor.com/relations
