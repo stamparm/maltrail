@@ -2608,6 +2608,18 @@ http://91.240.118.252
 
 80.77.25.147:8443
 
+# Reference: https://www.cisa.gov/news-events/analysis-reports/ar23-250a
+# Reference: https://www.virustotal.com/gui/file/ecaf8f4a427b6278839ae890970a67d515b451afdfb7e10404c928000fa584e8/detection
+
+108.62.118.160:9049
+
+# Reference: https://www.cisa.gov/news-events/analysis-reports/ar23-250a
 # Reference: https://www.virustotal.com/gui/file/79a9136eedbf8288ad7357ddaea3a3cd1a57b7c6f82adffd5a9540e1623bfb63/detection
 
 108.62.118.160:4441
+
+# Reference: https://www.cisa.gov/news-events/analysis-reports/ar23-250a
+# Reference: https://www.virustotal.com/gui/file/334c2d0af191ed96b15095a4a098c400f2c0ce6b9c66d1800f6b74554d59ff4b/detection
+# Reference: https://www.virustotal.com/gui/file/334c2d0af191ed96b15095a4a098c400f2c0ce6b9c66d1800f6b74554d59ff4b/detection
+
+179.60.147.4:58731
