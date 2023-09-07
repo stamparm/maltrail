@@ -27,6 +27,7 @@ stats-best.site
 
 owkdzodqzodqjefjnnejenefe.site
 poqwjoemqzmemzgqegzqzf.online
+vvooowkdqddcqcqcdqggggl.site
 znqjdnqzdqzfqmfqmkfq.site
 
 # Reference: https://www.rapid7.com/blog/post/2023/08/31/fake-update-utilizes-new-idat-loader-to-execute-stealc-and-lumma-infostealers/
