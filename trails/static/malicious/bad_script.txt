@@ -6829,6 +6829,10 @@ tpc.cdn-linkedin.info
 /injection.vbs
 /injection.wsf
 
+# Reference: https://twitter.com/petrovic082/status/1699766482517798930
+
+/hhhhhhhhhhhhhhhh.hta
+
 # Generic
 
 /js/altmanluggage.js
