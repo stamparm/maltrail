@@ -6807,6 +6807,28 @@ tpc.cdn-linkedin.info
 /connect_bot.php?hwid=
 /receive_bot.php?hwid=
 
+# Reference: https://twitter.com/r3dbU7z/status/1699701230300270825
+# Reference: https://www.virustotal.com/gui/file/40c5ba301755ec898d9169a80b016d3cb70a5a0a07dd615d98318c45e01b3ce9/detection
+# Reference: https://www.virustotal.com/gui/file/6c44a15dc88f1ba8501aa5d8a1924050a72a488bf5a77ff965651e0d16ec2450/detection
+
+/inject.asp
+/inject.aspx
+/inject.bat
+/inject.hta
+/inject.ps1
+/inject.py
+/inject.vbs
+/injection.asp
+/injection.aspx
+/injection.bat
+/injection.hta
+/injection.js
+/injection.php
+/injection.ps1
+/injection.py
+/injection.vbs
+/injection.wsf
+
 # Generic
 
 /js/altmanluggage.js
