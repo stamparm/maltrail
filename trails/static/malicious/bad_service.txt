@@ -1344,3 +1344,9 @@ cryptor.biz
 mobile-soft.su
 thelib.ru
 thelibrary.ru
+
+# Reference: https://twitter.com/karol_paciorek/status/1699754749732540699
+# Reference: https://twitter.com/karol_paciorek/status/1700085890947731794
+
+hhmercantile.com
+ransomed.vc
