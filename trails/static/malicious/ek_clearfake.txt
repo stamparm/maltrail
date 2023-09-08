@@ -25,7 +25,10 @@ stats-best.site
 
 # Reference: https://threatfox.abuse.ch/browse/tag/ClearFake/
 
+cdn-new-dwnl.site
+ngvcfrttgyu512vgv.net
 owkdzodqzodqjefjnnejenefe.site
+pklkknj89bygvczvi.com
 poqwjoemqzmemzgqegzqzf.online
 vvooowkdqddcqcqcdqggggl.site
 znqjdnqzdqzfqmfqmkfq.site
