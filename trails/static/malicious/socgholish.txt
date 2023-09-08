@@ -2441,6 +2441,11 @@ standard.architech3.com
 2023.ebeenj.com
 derp.2023.ebeenj.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-07-v10412/926
+# Reference: https://www.virustotal.com/gui/ip-address/5.182.207.83/relations
+
+ghost.blueecho88.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
