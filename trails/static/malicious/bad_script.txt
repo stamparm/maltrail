@@ -6835,6 +6835,7 @@ tpc.cdn-linkedin.info
 
 # Reference: https://threatfox.abuse.ch/browse/malware/win.stealc/
 
+/0156a772a135ba9f.php
 /0243ec92ae2268d1.php
 /09c9de54c6be1727.php
 /0cf6bfa19d78b1fb.php
