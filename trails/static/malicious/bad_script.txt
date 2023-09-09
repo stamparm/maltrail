@@ -6970,6 +6970,10 @@ tpc.cdn-linkedin.info
 /f71b3857ccea70c5.php
 /fd07ec3137071f71.php
 
+# Reference: https://twitter.com/drb_ra/status/1700478808501993895
+
+/bombaimha.php
+
 # Generic
 
 /js/altmanluggage.js
