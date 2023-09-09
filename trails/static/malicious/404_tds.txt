@@ -9,3 +9,16 @@ gestionfuniko.com
 peterscustomusb.com
 tintrianalytics.com
 viva2299.com
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-09-07%20AsyncRAT%20IOCs
+
+capecod-junk.com/qwj/39f/cxbk6k0w4cc
+notebooknut.com/qzc/h3054isqvmf
+marketsheadlines.com/wfhfxtktx
+tacuabol.net/wfhfxtktf
+
+# Generic
+
+/cxbk6k0w4cc
+/h3054isqvmf
+/wfhfxtktf
