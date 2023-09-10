@@ -3492,3 +3492,7 @@ piii.net
 # Reference: https://www.virustotal.com/gui/domain/m-x.cfd/relations
 
 m-x.cfd
+
+# Reference: https://www.virustotal.com/gui/domain/thaieasydns.com/relations
+
+thaieasydns.com
