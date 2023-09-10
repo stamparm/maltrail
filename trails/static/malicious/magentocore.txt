@@ -8458,6 +8458,20 @@ mx.xurum.com
 dispatchweekly.com/wp-admin/admin-ajax.php
 yamtorrecampo.com/wp-includes/card.js
 
+# Reference: https://www.virustotal.com/gui/ip-address/193.106.174.126/relations
+# Reference: https://www.virustotal.com/gui/ip-address/51.250.66.41/relations
+
+cdn-report.com
+fsxtwuuitax.cdnreport.net
+mail.cdnreport.net
+mta-sts.cdn-report.com
+mta-sts.google-site-verification.com
+mvwsggyjwgk.woocomnnerce.com
+thsid.megaebun.ru
+sber.megaebun.ru
+smtp.cdnreport.net
+smtp.woocomnnerce.com
+
 # Generic
 
 /assets/lfg.js
