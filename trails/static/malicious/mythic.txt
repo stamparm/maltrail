@@ -1127,3 +1127,9 @@ http://64.176.224.4
 45.66.248.13:443
 64.176.224.4:7443
 cannabishang.com
+
+# Reference: https://www.shodan.io/host/5.252.176.198
+
+5.252.176.198:7443
+proff-online.xyz
+mi4.proff-online.xyz
