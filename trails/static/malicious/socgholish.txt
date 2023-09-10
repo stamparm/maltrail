@@ -2446,6 +2446,10 @@ derp.2023.ebeenj.com
 
 ghost.blueecho88.com
 
+# Reference: https://threatfox.abuse.ch/ioc/1155842/
+
+creativity.kinchcorp.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
