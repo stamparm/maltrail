@@ -6979,6 +6979,11 @@ tpc.cdn-linkedin.info
 
 /64feb584a86fd-49317.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1700105820644462736
+# Reference: https://www.virustotal.com/gui/file/e11f0b388f00b177ee036de39d352b503408d9b313307848f1cdd4d9b11c6733/detection
+
+/employeehandbook.hta
+
 # Generic
 
 /js/altmanluggage.js
