@@ -2346,6 +2346,11 @@ c010101
 
 GeekingToTheMoon
 
+# Reference: https://twitter.com/Jane_0sint/status/1701604129221890240
+# Reference: https://www.virustotal.com/gui/file/11409951fd87917609f76566a567f768e8f2af92997618dbbf2536dce684b4d1/detection
+
+^Download$
+
 # Misc
 
 information_schema
