@@ -6984,6 +6984,12 @@ tpc.cdn-linkedin.info
 
 /employeehandbook.hta
 
+# Reference: https://www.virustotal.com/gui/file/b9bebbc0c45cbc87124ba497cb7b7f15fbac6e39535869ae006a950ac04ea285/detection
+
+/get-command.php?cmd=
+/get-command.php?hwid=
+/get-command.php?uid=
+
 # Generic
 
 /js/altmanluggage.js
