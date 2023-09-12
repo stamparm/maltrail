@@ -1914,3 +1914,7 @@ http://92.118.39.25
 # Reference: https://www.virustotal.com/gui/file/6c599434bb8bb0c1e15d1b40ca3e667630e19b7ad48b330591e220fee7722bb2/detection
 
 152.89.170.203:5050
+
+# Reference: https://threatfox.abuse.ch/ioc/1163047/
+
+206.188.197.227:38090
