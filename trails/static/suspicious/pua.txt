@@ -3252,3 +3252,9 @@ bon.cribcelery.xyz
 # Reference: https://www.virustotal.com/gui/file/0026549afa73e22912cbed3888cfa7f8e86fc7df8191c1770681a550016301b4/detection
 
 dlld-001.ru
+
+# Reference: https://www.virustotal.com/gui/file/3f844e0caccfb57a8fe3fd897c4513a20c7ad4e26569ac84167ea3a192eb8a2d/detection
+# Reference: https://www.virustotal.com/gui/file/2e41f5618eebd6a2d1a078e522a246bfa3a1ab494cfef6a35f668105711851f9/detection
+
+43.249.193.48:82
+qjmm666.com
