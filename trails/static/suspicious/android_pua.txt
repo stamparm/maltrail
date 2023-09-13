@@ -951,3 +951,7 @@ qq.ikswr.cn
 tt.ikswr.cn
 ww.ikswr.cn
 ww.ikswr.cn
+
+# Reference: https://www.virustotal.com/gui/file/90e124a3f5a0406fec2e5b413c54b4902a12cf0f0594c4f1c7066c9e244a7269/detection
+
+api.zochao.com
