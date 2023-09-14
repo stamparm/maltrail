@@ -1134,7 +1134,7 @@ cannabishang.com
 proff-online.xyz
 mi4.proff-online.xyz
 
-# Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-09-13)
+# Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-09-14)
 
 http://216.238.83.145
 124.222.181.240:7443
@@ -1143,3 +1143,4 @@ http://216.238.83.145
 34.229.89.43:443
 35.88.35.138:7443
 52.3.243.166:7443
+91.207.183.26:7443
