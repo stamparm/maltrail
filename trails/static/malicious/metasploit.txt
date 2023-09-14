@@ -2690,3 +2690,19 @@ http://91.240.118.252
 # Reference: https://www.virustotal.com/gui/file/2400aa66fbe6b70119e207ce5cacee08b8da826f077580c69d6df23e80a6b1d7/detection
 
 45.144.136.14:4444
+
+# Reference: https://twitter.com/drb_ra/status/1702417104970895391
+
+94.131.111.223:8443
+
+# Referemce: https://twitter.com/drb_ra/status/1702417115855139228
+
+35.181.153.101:8443
+
+# Reference: https://twitter.com/drb_ra/status/1702054711786983701
+
+125.135.40.86:8443
+
+# Reference: https://twitter.com/drb_ra/status/1702054702991507686
+
+167.99.216.192:443
