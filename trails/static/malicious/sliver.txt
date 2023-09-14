@@ -1920,3 +1920,14 @@ http://92.118.39.25
 # Reference: https://threatfox.abuse.ch/ioc/1163047/
 
 206.188.197.227:38090
+
+# Reference: https://twitter.com/KorbenD_Intel/status/1702379016877948972
+# Reference: https://www.virustotal.com/gui/file/6f78ea9e8979708d7fd0f449777aa8d2bc334fef17b94b2a03b16e68ae6e3a26/detection
+
+http://5.255.126.139
+5.255.126.139:31337
+5.255.126.139:443
+devicereporter.com
+js.devicereporter.com
+n2.devicereporter.com
+nl.devicereporter.com
