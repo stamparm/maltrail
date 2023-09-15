@@ -7061,6 +7061,7 @@ tpc.cdn-linkedin.info
 /gate.phpgate.php
 /ggate.php
 /gggate.php
+/Invoke-Phant0m.ps1
 /online-dating-verification-card.php
 /ravufgate.php
 /screenshot_gate.php
