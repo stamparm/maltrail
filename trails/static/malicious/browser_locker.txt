@@ -21363,3 +21363,7 @@ vedopixt.com
 vulidoc.com
 xepilondi.com
 zemolist.com
+
+# Reference: https://www.virustotal.com/gui/file/882d95bdbca75ab9d13486e477ab76b3978e14d6fca30c11ec368f7e5fa1d0cb/detection
+
+infoamanewonliag.online
