@@ -6998,6 +6998,10 @@ tpc.cdn-linkedin.info
 /ua18l.ps1
 /wjcgd.ps1
 
+# Reference: https://www.virustotal.com/gui/file/171c707afb64b5ad621864968ce888af80401c2247b5b21a05f45985063d5b88/detection
+
+/184d347f3c08fb.php
+
 # Generic
 
 /js/altmanluggage.js
