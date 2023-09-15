@@ -2450,6 +2450,60 @@ ghost.blueecho88.com
 
 creativity.kinchcorp.com
 
+# Reference: https://www.virustotal.com/gui/domain/excluded.everyadpaysmefirst.com/relations
+
+excluded.everyadpaysmefirst.com
+bfwy.excluded.everyadpaysmefirst.com
+bvsjg.excluded.everyadpaysmefirst.com
+chsgc.excluded.everyadpaysmefirst.com
+cjc.excluded.everyadpaysmefirst.com
+cmuxl.excluded.everyadpaysmefirst.com
+ddrz.excluded.everyadpaysmefirst.com
+elept.excluded.everyadpaysmefirst.com
+fnq.excluded.everyadpaysmefirst.com
+fvhw.excluded.everyadpaysmefirst.com
+fzd.excluded.everyadpaysmefirst.com
+hkt.excluded.everyadpaysmefirst.com
+hnrh.excluded.everyadpaysmefirst.com
+ivgu.excluded.everyadpaysmefirst.com
+jnkt.excluded.everyadpaysmefirst.com
+joux.excluded.everyadpaysmefirst.com
+kaqz.excluded.everyadpaysmefirst.com
+ldty.excluded.everyadpaysmefirst.com
+lhat.excluded.everyadpaysmefirst.com
+mfu.excluded.everyadpaysmefirst.com
+mmz.excluded.everyadpaysmefirst.com
+oaj.excluded.everyadpaysmefirst.com
+olx.excluded.everyadpaysmefirst.com
+owwcm.excluded.everyadpaysmefirst.com
+pvdb.excluded.everyadpaysmefirst.com
+pwn.excluded.everyadpaysmefirst.com
+qee.excluded.everyadpaysmefirst.com
+qgqr.excluded.everyadpaysmefirst.com
+qyvp.excluded.everyadpaysmefirst.com
+reg.excluded.everyadpaysmefirst.com
+rjos.excluded.everyadpaysmefirst.com
+ruop.excluded.everyadpaysmefirst.com
+sguqd.excluded.everyadpaysmefirst.com
+srtrq.excluded.everyadpaysmefirst.com
+syyrb.excluded.everyadpaysmefirst.com
+taaq.excluded.everyadpaysmefirst.com
+tcp.excluded.everyadpaysmefirst.com
+vajm.excluded.everyadpaysmefirst.com
+vdjjv.excluded.everyadpaysmefirst.com
+vgx.excluded.everyadpaysmefirst.com
+vizt.excluded.everyadpaysmefirst.com
+vzno.excluded.everyadpaysmefirst.com
+wivhv.excluded.everyadpaysmefirst.com
+xxyd.excluded.everyadpaysmefirst.com
+yahk.excluded.everyadpaysmefirst.com
+yaqpv.excluded.everyadpaysmefirst.com
+ygloz.excluded.everyadpaysmefirst.com
+ypxju.excluded.everyadpaysmefirst.com
+zagso.excluded.everyadpaysmefirst.com
+zid.excluded.everyadpaysmefirst.com
+zirpl.excluded.everyadpaysmefirst.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
