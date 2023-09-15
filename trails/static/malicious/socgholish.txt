@@ -2577,6 +2577,49 @@ yrzs.timeline.transversallearning.com
 zcj.timeline.transversallearning.com
 zpk.timeline.transversallearning.com
 
+# Reference: https://www.virustotal.com/gui/domain/photo.beyoudcor.com/relations
+
+photo.beyoudcor.com
+alc.photo.beyoudcor.com
+aooe.photo.beyoudcor.com
+awva.photo.beyoudcor.com
+bidba.photo.beyoudcor.com
+bmywc.photo.beyoudcor.com
+bzw.photo.beyoudcor.com
+cooll.photo.beyoudcor.com
+ctg.photo.beyoudcor.com
+dsnc.photo.beyoudcor.com
+edpvt.photo.beyoudcor.com
+ehy.photo.beyoudcor.com
+hxfk.photo.beyoudcor.com
+iks.photo.beyoudcor.com
+jxd.photo.beyoudcor.com
+kiwer.photo.beyoudcor.com
+kkap.photo.beyoudcor.com
+koa.photo.beyoudcor.com
+lrzym.photo.beyoudcor.com
+lzkts.photo.beyoudcor.com
+mgbys.photo.beyoudcor.com
+mhaia.photo.beyoudcor.com
+nbp.photo.beyoudcor.com
+nlrtr.photo.beyoudcor.com
+omrj.photo.beyoudcor.com
+pfkfp.photo.beyoudcor.com
+rgf.photo.beyoudcor.com
+rohyf.photo.beyoudcor.com
+sbica.photo.beyoudcor.com
+scy.photo.beyoudcor.com
+siir.photo.beyoudcor.com
+sqerh.photo.beyoudcor.com
+syvs.photo.beyoudcor.com
+thz.photo.beyoudcor.com
+uivb.photo.beyoudcor.com
+usk.photo.beyoudcor.com
+vihgp.photo.beyoudcor.com
+wsg.photo.beyoudcor.com
+xnng.photo.beyoudcor.com
+ywuj.photo.beyoudcor.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
