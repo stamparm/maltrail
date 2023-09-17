@@ -7004,6 +7004,10 @@ tpc.cdn-linkedin.info
 
 /184d347f3c08fb.php
 
+# Reference: https://twitter.com/drb_ra/status/1703450554175799367
+
+/sigara.aspx
+
 # Generic
 
 /js/altmanluggage.js
