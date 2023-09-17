@@ -604,6 +604,10 @@ opusmedical.info
 
 18.132.243.126:7443
 
+# Reference: https://twitter.com/drb_ra/status/1703480704103862540
+
+45.66.230.165:7443
+
 # Generic
 
 /covenantuser/
