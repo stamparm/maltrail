@@ -21371,3 +21371,8 @@ infoamanewonliag.online
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-14-v10417/947
 
 krafttopia.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1703646167056240727
+
+chatgpt.pages.dev
+hostline.pages.dev
