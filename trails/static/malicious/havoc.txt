@@ -731,11 +731,15 @@ http://77.91.68.133
 2.59.254.20:443
 
 # Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-08-22)
+# Reference: https://search.censys.io/hosts/78.135.73.140
+# Reference: https://www.deepinstinct.com/blog/operation-rusty-flag-a-malicious-campaign-against-azerbaijanian-targets
 
 http://159.203.122.205
 38.47.107.170:8443
 77.91.68.133:443
 78.135.73.140:10443
+78.135.73.140:35667
+78.135.73.140:47878
 94.128.22.194:443
 
 # Reference: https://twitter.com/drb_ra/status/1694421398062506302
