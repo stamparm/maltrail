@@ -1657,12 +1657,14 @@ http://94.102.59.188
 80.90.181.129:5985
 89.117.53.115:445
 
-# Reference: https://threatfox.abuse.ch/browse/malware/py.responder/ (# 2023-09-15)
+# Reference: https://threatfox.abuse.ch/browse/malware/py.responder/ (# 2023-09-18)
 
 http://167.71.130.5
 158.160.16.61:445
 185.33.13.189:445
 188.116.36.102:443
+38.180.74.55:445
+94.237.58.198:5985
 
 # Reference: https://twitter.com/drb_ra/status/1703481789673541666
 # Reference: https://twitter.com/drb_ra/status/1703481812436091242
