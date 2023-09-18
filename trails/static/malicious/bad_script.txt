@@ -7010,6 +7010,10 @@ tpc.cdn-linkedin.info
 
 /sigara.aspx
 
+# Reference: https://threatfox.abuse.ch/ioc/1164467/
+
+/060d00f2.php
+
 # Generic
 
 /js/altmanluggage.js
