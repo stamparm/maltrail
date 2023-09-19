@@ -1162,3 +1162,8 @@ yes.fastpool.xyz
 # Reference: https://tria.ge/230822-2lhjksfg86/behavioral1
 
 141.95.206.77:3333
+
+# Reference: https://www.virustotal.com/gui/file/c49c53f8f905bd007eddbf379a93d5786dbc17c8c80f5be65af18e2e29d99610/detection
+
+144.217.14.139:14433
+xmr-us-east1.nanopool.org
