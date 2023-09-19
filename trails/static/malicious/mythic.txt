@@ -1155,3 +1155,11 @@ http://216.238.83.145
 52.3.243.166:7443
 54.250.176.92:7443
 91.207.183.26:7443
+
+# Reference: https://twitter.com/KorbenD_Intel/status/1704197999398711425
+# Reference: https://www.virustotal.com/gui/ip-address/107.174.68.34/relations
+
+sith.team
+account.sith.team
+login.sith.team
+outlook.sith.team
