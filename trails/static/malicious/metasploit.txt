@@ -2741,3 +2741,8 @@ http://91.240.118.252
 # Reference: https://twitter.com/drb_ra/status/1703685925304230400
 
 103.56.5.44:443
+
+# Reference: https://twitter.com/souiten/status/1704037723320008925
+
+222.255.134.10:443
+222.255.134.10:8080
