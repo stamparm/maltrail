@@ -1164,6 +1164,8 @@ yes.fastpool.xyz
 141.95.206.77:3333
 
 # Reference: https://www.virustotal.com/gui/file/c49c53f8f905bd007eddbf379a93d5786dbc17c8c80f5be65af18e2e29d99610/detection
+# Reference: https://www.virustotal.com/gui/file/d91e47177c34ee4980281d933a9d724111c9e0d657ee04d1c9d156d7c41068df/detection
 
 144.217.14.139:14433
+142.44.242.100:14433
 xmr-us-east1.nanopool.org
