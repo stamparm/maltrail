@@ -557,7 +557,7 @@ opusmedical.info
 34.125.1.141:7443
 88.119.170.197:7443
 
-# Reference: https://threatfox.abuse.ch/browse/tag/Covenant/ (# 2023-08-29)
+# Reference: https://threatfox.abuse.ch/browse/tag/Covenant/ (# 2023-09-19)
 
 107.189.5.211:7443
 144.34.244.222:7443
@@ -570,6 +570,7 @@ opusmedical.info
 3.214.57.4:7443
 3.81.27.148:7443
 51.222.196.70:443
+85.204.116.225:7443
 94.142.138.60:7443
 
 # Reference: https://twitter.com/drb_ra/status/1694420734162948460
