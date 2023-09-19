@@ -7016,6 +7016,10 @@ tpc.cdn-linkedin.info
 
 /060d00f2.php
 
+# Reference: https://twitter.com/taku888infinity/status/1704090624872575183
+
+/ToTP01020101Action.do.php
+
 # Generic
 
 /js/altmanluggage.js
