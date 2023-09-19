@@ -2743,6 +2743,8 @@ http://91.240.118.252
 103.56.5.44:443
 
 # Reference: https://twitter.com/souiten/status/1704037723320008925
+# Reference: https://www.virustotal.com/gui/file/bb7aa82b7d078129c872cb4d2f52c04c8eaa9b0bd2bcf351a6430cd1ed6bf70a/detection
+# Reference: https://www.virustotal.com/gui/file/5ed354ff758f0c126b2b96a864caf57940385cfe51803a32ec5142d530fda9c9/detection
 
 222.255.134.10:443
 222.255.134.10:8080
