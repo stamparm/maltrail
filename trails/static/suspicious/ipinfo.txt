@@ -427,3 +427,7 @@ http://34.117.59.8
 # Reference: https://www.virustotal.com/gui/file/911ff4db1232c44205f71456d652a3ebfa2992770ef94c5cc89f9843a235cbcc/detection
 
 whatismyipaddressnow.co
+
+# Reference: https://www.virustotal.com/gui/domain/myips.cc/detection
+
+myips.cc
