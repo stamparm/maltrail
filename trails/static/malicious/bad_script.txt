@@ -7097,3 +7097,6 @@ tpc.cdn-linkedin.info
 /uadmin/gate.php
 /verification-card.php
 /1drvme/
+/payload/openAttach/
+/payload/openAttache/
+/payload/openAttachment/
