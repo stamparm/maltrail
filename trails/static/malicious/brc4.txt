@@ -593,10 +593,11 @@ http://54.65.8.67
 
 http://13.114.110.144
 
-# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-09-15)
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-09-20)
 
 http://13.113.45.138
 http://18.180.64.43
+http://3.112.185.142
 http://54.238.135.178
 http://54.238.220.242
 212.71.235.150:8444
