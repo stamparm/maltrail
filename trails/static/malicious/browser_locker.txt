@@ -21591,3 +21591,7 @@ krafttopia.net
 
 chatgpt.pages.dev
 hostline.pages.dev
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-20-v10421/970
+
+cpmmasters.com
