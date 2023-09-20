@@ -873,10 +873,12 @@ http://52.194.222.149
 
 5.182.37.3:444
 
-# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-09-18)
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-09-20)
 
 16.171.237.4:443
 175.27.146.212:443
 192.144.211.13:443
 202.162.108.120:443
+45.183.247.131:443
 47.245.42.208:443
+65.21.105.102:443
