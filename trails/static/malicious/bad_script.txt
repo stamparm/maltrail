@@ -7024,6 +7024,13 @@ tpc.cdn-linkedin.info
 
 /1e78c4e419aa01.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1704483766461173984
+# Reference: https://www.virustotal.com/gui/file/3af0a90d9a3cd77aa0353ec59bd8129fb799ee72daa6e61555c6228219385d43/detection
+# Reference: https://www.virustotal.com/gui/file/64e733d51b0e03957003f0b5e424efd1068f331226880e0c212de2c29b2a38d6/detection
+# Reference: https://www.virustotal.com/gui/file/1169c5ba2feae0192d2d8d45ce2fc3456bca1d6633d46b0f219bd62fddcca922/detection
+
+/neverban_zBbnJe.vbs
+
 # Generic
 
 /js/altmanluggage.js
