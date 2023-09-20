@@ -7003,6 +7003,7 @@ tpc.cdn-linkedin.info
 /ni2n.ps1
 /ua18l.ps1
 /wjcgd.ps1
+/xc0ix.ps1
 
 # Reference: https://www.virustotal.com/gui/file/171c707afb64b5ad621864968ce888af80401c2247b5b21a05f45985063d5b88/detection
 
