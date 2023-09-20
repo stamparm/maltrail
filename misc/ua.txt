@@ -2351,6 +2351,10 @@ GeekingToTheMoon
 
 ^Download$
 
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/chinese-malware-appears-earnest-across-cybercrime-threat-landscape
+
+GameInfo
+
 # Misc
 
 information_schema
