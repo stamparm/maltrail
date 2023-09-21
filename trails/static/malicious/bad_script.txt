@@ -7033,6 +7033,10 @@ tpc.cdn-linkedin.info
 
 /neverban_zBbnJe.vbs
 
+# Reference: https://twitter.com/r3dbU7z/status/1704854108455551274
+
+/hund.ps1
+
 # Generic
 
 /js/altmanluggage.js
