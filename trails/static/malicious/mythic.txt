@@ -1168,3 +1168,9 @@ sith.team
 account.sith.team
 login.sith.team
 outlook.sith.team
+
+# Reference: https://twitter.com/r3dbU7z/status/1704854108455551274
+# Reference: https://www.virustotal.com/gui/file/09cf19407cccd9f273ed0d79968309873e135be56962267638104ad274561884/detection
+
+r2.hansesecure.com
+safe2.hansesecure.com
