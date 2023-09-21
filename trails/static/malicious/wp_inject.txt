@@ -1779,17 +1779,25 @@ put.clickandanalytics.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/91.238.104.193/relations
 # Reference: https://www.virustotal.com/gui/ip-address/2.59.222.119/relations
+# Reference: https://www.virustotal.com/gui/ip-address/2.59.222.121/relations
 # Reference: https://www.virustotal.com/gui/ip-address/2.59.222.122/relations
 # Reference: https://www.virustotal.com/gui/ip-address/88.151.192.253/relations
+# Reference: https://www.virustotal.com/gui/ip-address/89.23.103.32/relations
 
 linestoget.com
+specialnewspaper.com
+specialtaskevents.com
 stratosbody.com
 apis.stratosbody.com
 away.linestoget.com
 away.stratosbody.com
+cdn.specialtaskevents.com
 collect.clickandanalytics.com
+fly.stratosbody.com
 get.linestoget.com
 go.linestoget.com
+go.specialnewspaper.com
+goto.stablelightway.com
 lists.clickandanalytics.com
 sleep.stratosbody.com
 spot.scriptsplatform.com
@@ -1797,6 +1805,8 @@ step.linestoget.com
 stay.linestoget.com
 stay.stratosbody.com
 trace.stratosbody.com
+trend.stablelightway.com
+way.trackersline.com
 
 # Reference: https://www.virustotal.com/gui/file/eedb020cff479ebcb511376b902825a0e35e5549346462548c0bca8d6ecd7ac3/detection
 
