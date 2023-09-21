@@ -1946,8 +1946,12 @@ nl.devicereporter.com
 # Reference: https://www.virustotal.com/gui/file/3e14b93fb266bad63fbc1e8c22f95b3ec8830182564ca365c44b38604d7fb79f/detection
 
 http://137.184.96.202
+13.245.183.173:8999
 137.184.96.202:8080
 137.184.96.202:8085
 137.184.96.202:8086
+45.63.7.212:8888
+62.109.24.105:31337
+62.109.24.105:8888
 microsoftapi.net
 diagnostics.microsoftapi.net
