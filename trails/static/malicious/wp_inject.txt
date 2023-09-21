@@ -1809,6 +1809,16 @@ trace.stratosbody.com
 trend.stablelightway.com
 way.trackersline.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1704961690880913816
+# Reference: https://www.virustotal.com/gui/ip-address/88.151.192.254/relations
+# Reference: https://app.validin.com/axon?find=88.151.192.254
+
+getmygateway.com
+collect.getmygateway.com
+gate.getmygateway.com
+space.getmygateway.com
+spot.getmygateway.com
+
 # Reference: https://www.virustotal.com/gui/file/eedb020cff479ebcb511376b902825a0e35e5549346462548c0bca8d6ecd7ac3/detection
 
 111.90.148.245:3503
