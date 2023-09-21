@@ -1943,6 +1943,11 @@ nl.devicereporter.com
 
 # Reference: https://twitter.com/1ZRR4H/status/1704741185011568716
 # Reference: https://www.virustotal.com/gui/file/c1b0acfd36a9caa242e14f8ce50d32a5a19a0fe3158e3a96cf09496982502b38/detection
+# Reference: https://www.virustotal.com/gui/file/3e14b93fb266bad63fbc1e8c22f95b3ec8830182564ca365c44b38604d7fb79f/detection
 
+http://137.184.96.202
+137.184.96.202:8080
+137.184.96.202:8085
+137.184.96.202:8086
 microsoftapi.net
 diagnostics.microsoftapi.net
