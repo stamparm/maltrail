@@ -1940,3 +1940,9 @@ devicereporter.com
 js.devicereporter.com
 n2.devicereporter.com
 nl.devicereporter.com
+
+# Reference: https://twitter.com/1ZRR4H/status/1704741185011568716
+# Reference: https://www.virustotal.com/gui/file/c1b0acfd36a9caa242e14f8ce50d32a5a19a0fe3158e3a96cf09496982502b38/detection
+
+microsoftapi.net
+diagnostics.microsoftapi.net
