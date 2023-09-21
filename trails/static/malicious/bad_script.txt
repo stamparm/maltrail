@@ -7036,6 +7036,14 @@ tpc.cdn-linkedin.info
 # Reference: https://twitter.com/r3dbU7z/status/1704854108455551274
 
 /hund.ps1
+/ottonova-a1.ps1
+/ottonova-a2.ps1
+/ottonova-m1.ps1
+/ottonova-m2.ps1
+/ottonova-a1.shell
+/ottonova-a2.shell
+/ottonova-m1.shell
+/ottonova-m2.shell
 
 # Generic
 
