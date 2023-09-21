@@ -8472,6 +8472,10 @@ sber.megaebun.ru
 smtp.cdnreport.net
 smtp.woocomnnerce.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/31.44.184.200/relations
+
+googleapicert.com
+
 # Generic
 
 /assets/lfg.js
