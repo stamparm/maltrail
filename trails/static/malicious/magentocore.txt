@@ -8476,6 +8476,10 @@ smtp.woocomnnerce.com
 
 googleapicert.com
 
+# Reference: https://twitter.com/Gi7w0rm/status/1705319428802449846
+
+http://155.133.7.22
+
 # Generic
 
 /assets/lfg.js
