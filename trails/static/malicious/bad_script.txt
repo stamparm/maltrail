@@ -7045,6 +7045,10 @@ tpc.cdn-linkedin.info
 /ottonova-m1.shell
 /ottonova-m2.shell
 
+# Reference: https://threatfox.abuse.ch/ioc/1165829/
+
+/b1b0a368.php
+
 # Generic
 
 /js/altmanluggage.js
