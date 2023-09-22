@@ -2610,6 +2610,10 @@ zagso.excluded.everyadpaysmefirst.com
 zid.excluded.everyadpaysmefirst.com
 zirpl.excluded.everyadpaysmefirst.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-18-v10419/957
+
+layout.oystergardens.us
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
