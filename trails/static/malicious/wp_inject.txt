@@ -1819,6 +1819,15 @@ gate.getmygateway.com
 space.getmygateway.com
 spot.getmygateway.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1704952839729267087
+
+decentralappps.com
+cdn.decentralappps.com
+cell.decentralappps.com
+stay.decentralappps.com
+stock.decentralappps.com
+way.decentralappps.com
+
 # Reference: https://www.virustotal.com/gui/file/eedb020cff479ebcb511376b902825a0e35e5549346462548c0bca8d6ecd7ac3/detection
 
 111.90.148.245:3503
