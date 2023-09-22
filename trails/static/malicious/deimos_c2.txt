@@ -347,6 +347,7 @@ peterkinsadvil.ptr1.ru
 61.121.83.153:9080
 61.121.83.154:9080
 88.130.127.16:443
+92.116.88.238:443
 92.116.89.167:443
 
 # Reference: https://threatfox.abuse.ch/browse/malware/win.deimos/ (# 2023-09-20)
@@ -360,6 +361,7 @@ peterkinsadvil.ptr1.ru
 75.2.27.176:443
 8.217.217.243:8082
 80.2.242.3:8206
+81.200.47.66:443
 87.122.219.215:443
 
 # Reference: https://twitter.com/drb_ra/status/1703481261380038670
