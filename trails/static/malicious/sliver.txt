@@ -1955,3 +1955,13 @@ http://137.184.96.202
 62.109.24.105:8888
 microsoftapi.net
 diagnostics.microsoftapi.net
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.sliver/ (# 2023-09-22)
+
+http://43.133.231.48
+114.118.5.136:50051
+114.118.5.136:9443
+118.184.186.182:42937
+185.164.172.245:26668
+185.164.172.245:8888
+43.133.231.48:45887
