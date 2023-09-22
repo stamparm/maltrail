@@ -2610,10 +2610,6 @@ zagso.excluded.everyadpaysmefirst.com
 zid.excluded.everyadpaysmefirst.com
 zirpl.excluded.everyadpaysmefirst.com
 
-# Reference: https://threatfox.abuse.ch/ioc/1164460/
-
-greedyclowns.org
-
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
