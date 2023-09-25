@@ -7053,6 +7053,11 @@ tpc.cdn-linkedin.info
 
 /b1b0a368.php
 
+# Reference: https://www.virustotal.com/gui/file/367233777383f0ab4848784448b9594191c60d4fc4ca9605a6e8b1223c3a23f8/detection
+
+/PWYPwxGyWukmHWTPppdpWPx.hta
+/PWYPwxGyWukmHWTPppdpWPx.ps1
+
 # Generic
 
 /js/altmanluggage.js
