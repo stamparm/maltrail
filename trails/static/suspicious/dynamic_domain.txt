@@ -3496,3 +3496,7 @@ m-x.cfd
 # Reference: https://www.virustotal.com/gui/domain/thaieasydns.com/relations
 
 thaieasydns.com
+
+# Reference: https://www.virustotal.com/gui/domain/treatwellshome.xyz/relations
+
+treatwellshome.xyz
