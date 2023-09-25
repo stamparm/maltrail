@@ -2355,6 +2355,11 @@ GeekingToTheMoon
 
 GameInfo
 
+# Reference: https://twitter.com/anyrun_app/status/1706307410611068987
+
+OnionWClient
+OnionWClient/1.0
+
 # Misc
 
 information_schema
