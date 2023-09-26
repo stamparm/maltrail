@@ -2360,6 +2360,12 @@ GameInfo
 OnionWClient
 OnionWClient/1.0
 
+# Reference: https://twitter.com/suyog41/status/1706563514717081907
+
+SunShineMoonLight
+MoonLight
+SunShine
+
 # Misc
 
 information_schema
