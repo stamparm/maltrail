@@ -7097,6 +7097,7 @@ tpc.cdn-linkedin.info
 # Reference: https://www.virustotal.com/gui/file/843c4407865ab4d809f0e3b8a581bab50a330ad98c926d0f10540f451b6611d5/detection
 
 /qmlbspjn.php
+/wymzorxw.php
 
 # Generic
 
