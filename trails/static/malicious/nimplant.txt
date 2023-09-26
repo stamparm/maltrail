@@ -26,3 +26,9 @@ list.naqsh-ejahan.com
 # Reference: https://www.virustotal.com/gui/file/4f1d801303e414b824ec750f58bb3c5065f3ab1af5e70f45fcbd43a8ea8fa2e0/detection
 
 runtimebroker-telemetry.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.140.214.108/relations
+# Reference: https://www.virustotal.com/gui/file/3bd8d3d9fd594a37cc8cb9838e528ca6d9acd2f6bbe4e95ff51d9f35fdde2e13/detection
+
+195.140.214.108:443
+officemobsync.com
