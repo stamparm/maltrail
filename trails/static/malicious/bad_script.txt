@@ -7099,6 +7099,11 @@ tpc.cdn-linkedin.info
 /qmlbspjn.php
 /wymzorxw.php
 
+# Reference: https://twitter.com/malwrhunterteam/status/1706690313975136529
+
+/bazila.hta
+/soda.hta
+
 # Generic
 
 /js/altmanluggage.js
