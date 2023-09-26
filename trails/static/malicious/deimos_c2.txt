@@ -363,6 +363,7 @@ peterkinsadvil.ptr1.ru
 80.2.242.3:8206
 81.200.47.66:443
 87.122.219.215:443
+97.69.224.172:8080
 
 # Reference: https://twitter.com/drb_ra/status/1703481261380038670
 
