@@ -3562,3 +3562,9 @@ gitlab.com
 github.com
 codeload.github.com
 portalproveedores.com.mx
+
+# Reference: https://www.virustotal.com/gui/domain/amazontrust.com/relations
+
+amazontrust.com
+sca1b.amazontrust.com
+ocsp.sca1b.amazontrust.com
