@@ -2367,6 +2367,10 @@ SunShineMoonLight
 MoonLight
 SunShine
 
+# Reference: https://twitter.com/anyrun_app/status/1706899869921628334
+
+TeslaBrowser/5.5
+
 # Misc
 
 information_schema
