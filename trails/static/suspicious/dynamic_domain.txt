@@ -3500,3 +3500,7 @@ thaieasydns.com
 # Reference: https://www.virustotal.com/gui/domain/treatwellshome.xyz/relations
 
 treatwellshome.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/keenetic.link/relations
+
+keenetic.link
