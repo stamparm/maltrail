@@ -388,6 +388,10 @@ http://198.74.101.209
 85.206.172.151:8888
 93.188.164.249:8888
 
+# Reference: https://threatfox.abuse.ch/ioc/1167858/
+
+47.92.155.81:8990
+
 # Generic
 
 /supershell/login
