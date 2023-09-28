@@ -1821,6 +1821,7 @@ way.trackersline.com
 getmygateway.com
 collect.getmygateway.com
 gate.getmygateway.com
+send.getmygateway.com
 space.getmygateway.com
 spot.getmygateway.com
 
