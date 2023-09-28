@@ -7104,6 +7104,10 @@ tpc.cdn-linkedin.info
 /bazila.hta
 /soda.hta
 
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-09-27%20SocGholish_Lumma%20IOCs
+
+/zwmrqqgqnaww.php
+
 # Generic
 
 /js/altmanluggage.js
