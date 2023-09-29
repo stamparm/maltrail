@@ -371,3 +371,10 @@ peterkinsadvil.ptr1.ru
 # Reference: https://twitter.com/drb_ra/status/1703481261380038670
 
 8.129.77.150:10000
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.deimos/ (# 2023-09-29)
+
+112.29.177.19:10036
+112.29.177.20:10036
+112.29.177.87:10036
+112.29.180.20:10036
