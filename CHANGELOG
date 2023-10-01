@@ -14,8 +14,19 @@
 
 
 
-- Version 0.61 -> 0.62 (Upcoming release)
+- Version 0.62 -> 0.63 (Upcoming release)
 
+
+
+
+
+
+
+
+- Version 0.61 -> 0.62 (01 Oct 2023)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+[=] Updates for mass_scanner and worst_asns trails
 
 
 
