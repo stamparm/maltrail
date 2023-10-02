@@ -3970,3 +3970,7 @@ zwned.tekdefense.com
 # Reference: https://twitter.com/drb_ra/status/1708762427196600731
 
 95.220.124.200:58000
+
+# Reference: https://twitter.com/drb_ra/status/1708762415733624864
+
+172.232.194.252:443
