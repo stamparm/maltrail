@@ -3966,3 +3966,7 @@ y.scred.club
 z5.ematome.com
 zwned.tekdefense.com
 /HTB{g0_G3t_th3_ph1sh3R}
+
+# Reference: https://twitter.com/drb_ra/status/1708762427196600731
+
+95.220.124.200:58000
