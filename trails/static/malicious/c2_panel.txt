@@ -484,6 +484,7 @@ se-adhiere-a-la-nueva-legislacion.cyou
 /bot/adminpanel/login.php
 /bot/adminpanel/page.php
 /bot/adminpanel/panel.php
+/Bot/Panels/Hunter/panel.php
 /botnet/admin.php
 /botnet/api.php
 /botnet/auth.php
@@ -568,6 +569,7 @@ se-adhiere-a-la-nueva-legislacion.cyou
 /panelphp/gate.php
 /panelphp/index.php
 /panelphp/login.php
+/Panels/Hunter/panel.php
 /PanelSoft/admin.php
 /PanelSoft/api.php
 /PanelSoft/auth.php
