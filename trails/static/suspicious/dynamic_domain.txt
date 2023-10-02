@@ -3504,3 +3504,7 @@ treatwellshome.xyz
 # Reference: https://www.virustotal.com/gui/domain/keenetic.link/relations
 
 keenetic.link
+
+# Reference: https://www.virustotal.com/gui/domain/bumbleshrimp.com/relations
+
+bumbleshrimp.com
