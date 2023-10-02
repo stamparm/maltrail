@@ -2371,6 +2371,14 @@ SunShine
 
 ^TeslaBrowser/5.5$
 
+# Reference: https://www.zscaler.com/blogs/security-research/bunnyloader-newest-malware-service
+
+Bunny
+BunnyLoader
+BunnyStealer
+BunnyTasks
+HeartBeat\_Sender
+
 # Misc
 
 information_schema
