@@ -7112,6 +7112,11 @@ tpc.cdn-linkedin.info
 
 /zwmrqqgqnaww.php
 
+# Reference: https://blogs.blackberry.com/en/2023/09/silent-skimmer-online-payment-scraping-campaign-shifts-targets-from-apac-to-nala
+
+/client111.ps1
+/MsMsp.hta
+
 # Generic
 
 /js/altmanluggage.js
