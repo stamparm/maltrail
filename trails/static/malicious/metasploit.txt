@@ -3981,3 +3981,7 @@ zwned.tekdefense.com
 # Reference: https://www.virustotal.com/gui/file/cdfd2ba18e0a7ff6acec4d4dc51beb8c1a98534bd3df99ce3a90d6799fa10ccb/detection
 
 193.117.208.146:4444
+
+# Reference: https://www.virustotal.com/gui/file/4120abb6ff51b4cb0105b4d6ae90ef01cb62ce1f0512e24fdc9703ef9dac3f80/detection
+
+103.163.187.12:49900
