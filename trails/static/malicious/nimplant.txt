@@ -32,3 +32,13 @@ runtimebroker-telemetry.com
 
 195.140.214.108:443
 officemobsync.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/54.91.21.246/community
+
+54.91.21.246:28015
+54.91.21.246:44818
+54.91.21.246:6080
+54.91.21.246:789
+54.91.21.246:82
+54.91.21.246:8200
+54.91.21.246:8500
