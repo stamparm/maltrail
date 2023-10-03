@@ -3982,6 +3982,9 @@ zwned.tekdefense.com
 
 193.117.208.146:4444
 
+# Reference: https://twitter.com/_JohnHammond/status/1708910264261980634
+# Reference: https://twitter.com/Unit42_Intel/status/1709241972001583430
 # Reference: https://www.virustotal.com/gui/file/4120abb6ff51b4cb0105b4d6ae90ef01cb62ce1f0512e24fdc9703ef9dac3f80/detection
 
+103.163.187.12:49828
 103.163.187.12:49900
