@@ -7120,6 +7120,10 @@ tpc.cdn-linkedin.info
 /client111.ps1
 /MsMsp.hta
 
+# Reference: https://threatfox.abuse.ch/ioc/1182839/
+
+/ba4d1581aebc19.php
+
 # Generic
 
 /js/altmanluggage.js
