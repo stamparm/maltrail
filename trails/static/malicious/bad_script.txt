@@ -6870,6 +6870,7 @@ tpc.cdn-linkedin.info
 /32995c13678be6b6.php
 /329b7da7ac4c3538.php
 /33fecaaa07623b61.php
+/367d40b2d35bfd9b.php
 /385785d59336a866.php
 /3886d2276f6914c4.php
 /3887d9245e395091.php
@@ -6957,6 +6958,7 @@ tpc.cdn-linkedin.info
 /a2f524d70db7d1a7.php
 /a431f538ac55c20c.php
 /a68326a8bd26a679.php
+/a6d914969291bf07.php
 /a737400ffa5db996.php
 /a7b9969886761113.php
 /a8ae018f1ad770f9.php
@@ -7009,6 +7011,7 @@ tpc.cdn-linkedin.info
 /eba140b7c5f2f228.php
 /ecd46953920f5bde.php
 /ed477c8cc2206093.php
+/ed9891f07f96bfb8.php
 /eddb6f7ac3df755b.php
 /ee4bbae3ded73edf.php
 /ef05b005854373ec.php
