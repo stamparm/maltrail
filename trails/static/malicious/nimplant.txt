@@ -57,3 +57,8 @@ officemobsync.com
 54.202.196.60:636
 54.202.196.60:8140
 54.202.196.60:9999
+
+# Reference: https://www.virustotal.com/gui/ip-address/34.219.129.191/community
+
+34.219.129.191:10001
+34.219.129.191:50070
