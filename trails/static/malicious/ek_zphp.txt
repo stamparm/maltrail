@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2023 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-04-v10432/1011
+
+amazonascash.com
+christopherchabannes.com
+onlinecasinopinup.xyz
+profille-cex-io.com
+raloco.com
+s127581-statspixel.com
