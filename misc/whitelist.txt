@@ -3590,3 +3590,7 @@ ocsp.sca1b.amazontrust.com
 204.232.175.78
 23.235.33.133
 23.235.37.133
+
+# Reference: https://www.abuseipdb.com/check/17.253.144.10
+
+17.253.144.10
