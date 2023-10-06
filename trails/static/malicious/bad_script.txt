@@ -7124,6 +7124,23 @@ tpc.cdn-linkedin.info
 
 /ba4d1581aebc19.php
 
+# Reference: https://twitter.com/Merlax_/status/1710072519795896676
+
+/4qo7vrpels1ncni3qv7yobfhvfi85.php
+/5cltm1jkqccs.php
+/caminho-ranger-32.php
+/cff4oi2ucz7wrr62xdcj.php
+/d9sywf.php
+/df7tkq4d8s7q6t6i1tl9.php
+/emfkrktnrrblkk66ywunir89e9gjykhecb.php
+/giqw6dm3gefm6vyefnubumdyivb1cdmcw.php
+/ocji6w6o3w4q2q1the33c.php
+/ql154dcqyonogxnryzwx.php
+/qrc9t4ou.php
+/rhtcgk1qfeczrl8ou27e1jvyyntwyv.php
+/t6h86tu79rpec5y8w4qeglp2yp.php
+/y4koyklbzyupogj3q9f.php
+
 # Generic
 
 /js/altmanluggage.js
