@@ -9,3 +9,8 @@ onlinecasinopinup.xyz
 profille-cex-io.com
 raloco.com
 s127581-statspixel.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-05-v10433/1014
+
+fablane.com
+residencialcasabrasileira.com
