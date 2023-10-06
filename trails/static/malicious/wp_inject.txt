@@ -1847,6 +1847,42 @@ net.promsmotion.com
 page.specialnewspaper.com
 show.bridgelinering.com
 
+# Reference: https://blog.sucuri.net/2023/10/balada-injector-targets-unpatched-tagdiv-plugin-newspaper-theme-wordpress-admins.html
+# Reference: https://www.virustotal.com/gui/ip-address/185.39.206.159/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.39.206.160/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.39.206.161/relations
+
+dataofpages.com
+listwithstats.com
+statisticscripts.com
+0cdn.dataofpages.com
+age.listwithstats.com
+assets.statisticscripts.com
+call.dataofpages.com
+cassets.statisticscripts.com
+cdn.dataofpages.com
+cdn.statisticscripts.com
+css.statisticscripts.com
+dn.dataofpages.com
+dn.statisticscripts.com
+first.dataofpages.com
+img.statisticscripts.com
+inassets.statisticscripts.com
+irst.dataofpages.com
+ja.statisticscripts.com
+js.statisticscripts.com
+new.listwithstats.com
+news.listwithstats.com
+one.dataofpages.com
+ost.listwithstats.com
+page.listwithstats.com
+post.listwithstats.com
+riseup.cdn.dataofpages.com
+slash.dataofpages.com
+splash.dataofpages.com
+ssets.statisticscripts.com
+xyz.dataofpages.com
+
 # Reference: https://www.virustotal.com/gui/file/eedb020cff479ebcb511376b902825a0e35e5549346462548c0bca8d6ecd7ac3/detection
 
 111.90.148.245:3503
