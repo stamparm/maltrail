@@ -3999,3 +3999,7 @@ zwned.tekdefense.com
 # Reference: https://twitter.com/drb_ra/status/1709486712429084971
 
 45.129.14.107:4444
+
+# Reference: https://twitter.com/drb_ra/status/1710211462621258040
+
+154.204.28.190:1544
