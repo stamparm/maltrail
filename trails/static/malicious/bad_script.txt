@@ -7141,6 +7141,10 @@ tpc.cdn-linkedin.info
 /t6h86tu79rpec5y8w4qeglp2yp.php
 /y4koyklbzyupogj3q9f.php
 
+# Reference: https://twitter.com/r3dbU7z/status/1710590656597352560
+
+/BadUsb.ps1
+
 # Generic
 
 /js/altmanluggage.js
