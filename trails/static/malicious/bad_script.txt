@@ -7145,6 +7145,17 @@ tpc.cdn-linkedin.info
 
 /BadUsb.ps1
 
+# Reference: https://twitter.com/Gi7w0rm/status/1711030015016505609
+
+/reverseshell.asp
+/reverseshell.aspx
+/reverseshell.bat
+/reverseshell.hta
+/reverseshell.js
+/reverseshell.php
+/reverseshell.ps1
+/reverseshell.vbs
+
 # Generic
 
 /js/altmanluggage.js
