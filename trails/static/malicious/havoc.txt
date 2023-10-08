@@ -947,6 +947,7 @@ http://8.217.13.6
 # Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-10-07)
 
 http://172.105.183.87
+http://172.105.190.170
 111.90.148.125:443
 178.128.111.190:443
 178.128.216.62:443
