@@ -1883,6 +1883,28 @@ splash.dataofpages.com
 ssets.statisticscripts.com
 xyz.dataofpages.com
 
+# Reference: https://threatfox.abuse.ch/browse/tag/balada/
+# Reference: https://www.virustotal.com/gui/ip-address/80.66.79.247/relations
+
+gybritanalytsesystem.com
+playerofsunshine.com
+selectofmychoices.com
+bee.selectofmychoices.com
+best.playerofsunshine.com
+excelent.playerofsunshine.com
+fifth.gybritanalytsesystem.com
+first.gybritanalytsesystem.com
+fourth.gybritanalytsesystem.com
+good.playerofsunshine.com
+great.playerofsunshine.com
+here.selectofmychoices.com
+normal.playerofsunshine.com
+second.gybritanalytsesystem.com
+third.gybritanalytsesystem.com
+try.selectofmychoices.com
+was.selectofmychoices.com
+where.selectofmychoices.com
+
 # Reference: https://www.virustotal.com/gui/file/eedb020cff479ebcb511376b902825a0e35e5549346462548c0bca8d6ecd7ac3/detection
 
 111.90.148.245:3503
