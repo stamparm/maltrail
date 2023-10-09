@@ -941,3 +941,7 @@ podathon.org/shell/
 # Reference: https://twitter.com/sicehice/status/1694546485864435835
 
 /rootshell
+
+# Reference: https://twitter.com/James_inthe_box/status/1711383373246251399
+
+/xt/mmd/shell/
