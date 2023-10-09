@@ -1905,6 +1905,21 @@ try.selectofmychoices.com
 was.selectofmychoices.com
 where.selectofmychoices.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/80.66.79.248/relations
+
+selectchoise.com
+statisticplatform.com
+give.selectchoise.com
+got.selectchoise.com
+north.statisticplatform.com
+west.statisticplatform.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/80.66.79.251/relations
+
+forwardstarlight.com
+follow.forwardstarlight.com
+stay.forwardstarlight.com
+
 # Reference: https://www.virustotal.com/gui/file/eedb020cff479ebcb511376b902825a0e35e5549346462548c0bca8d6ecd7ac3/detection
 
 111.90.148.245:3503
