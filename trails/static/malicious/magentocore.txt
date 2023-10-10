@@ -8480,14 +8480,6 @@ googleapicert.com
 
 http://155.133.7.22
 
-# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-06-v10434/1018
-
-jscloud.live
-cloudjs.live
-jscloud.ink
-jscloud.biz
-jscdn.biz
-
 # Reference: https://www.akamai.com/blog/security-research/magecart-new-technique-404-pages-skimmer
 # Reference: https://www.virustotal.com/gui/ip-address/37.1.220.159/relations
 
