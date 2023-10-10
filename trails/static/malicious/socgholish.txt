@@ -2614,6 +2614,10 @@ zirpl.excluded.everyadpaysmefirst.com
 
 layout.oystergardens.us
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-09-v10435/1022
+
+sommelier.peppertreecanyon.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
