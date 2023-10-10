@@ -14,3 +14,8 @@ s127581-statspixel.com
 
 fablane.com
 residencialcasabrasileira.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-09-v10435/1022
+
+antiqueglossary.com
+configuratorpro.com
