@@ -8488,6 +8488,16 @@ jscloud.ink
 jscloud.biz
 jscdn.biz
 
+# Reference: https://www.akamai.com/blog/security-research/magecart-new-technique-404-pages-skimmer
+# Reference: https://www.virustotal.com/gui/ip-address/37.1.220.159/relations
+
+adsometric.com
+anality-cdn.com
+cngresearch.com
+pmdresearch.com
+secures-tool.com
+tool-cdn.net
+
 # Generic
 
 /assets/lfg.js
