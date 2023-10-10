@@ -19,3 +19,7 @@ residencialcasabrasileira.com
 
 antiqueglossary.com
 configuratorpro.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-10-v10436/1024
+
+eastrenclouds.com
