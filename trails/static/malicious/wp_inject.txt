@@ -1911,7 +1911,9 @@ selectchoise.com
 statisticplatform.com
 give.selectchoise.com
 got.selectchoise.com
+goto.betradingway.com
 north.statisticplatform.com
+startup.betradingway.com
 west.statisticplatform.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.251/relations
