@@ -1751,6 +1751,10 @@ trac.violetlovelines.com
 track.firstblackphase.com
 track.violetlovelines.com
 way.specialblueitems.com
+statisticline.comcdn.statisticline.com
+violetlovelines.comtrack.violetlovelines.com
+cdn.statisticline.comcdn.statisticline.com
+track.violetlovelines.comtrack.violetlovelines.com
 
 # Reference: https://twitter.com/daniel_sloof/status/1658109542108917761
 # Reference: https://www.virustotal.com/gui/ip-address/194.135.30.210/relations
