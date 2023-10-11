@@ -1033,3 +1033,10 @@ webmail.perubahan-tarif-brlmo.com
 wss.payloads.online
 payloads.online
 yinksoft-update.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-10-11)
+
+120.53.93.251:443
+157.245.142.4:443
+54.146.112.196:443
+95.217.219.48:8080
