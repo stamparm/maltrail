@@ -7169,6 +7169,10 @@ tpc.cdn-linkedin.info
 /cdn-js/minlen.php
 /qzwewmrqqgqnaww.php
 
+# Reference: https://twitter.com/r3dbU7z/status/1711882323367457217
+
+/fVvEwlyGLj.wsf
+
 # Generic
 
 /js/altmanluggage.js
