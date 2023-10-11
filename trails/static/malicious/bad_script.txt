@@ -7173,6 +7173,11 @@ tpc.cdn-linkedin.info
 
 /fVvEwlyGLj.wsf
 
+# Reference: https://twitter.com/whichbuffer/status/1712200899869790319
+
+/cisco-CVE-2016-6415.sh
+/CVE-2020-8515.go
+
 # Generic
 
 /js/altmanluggage.js
