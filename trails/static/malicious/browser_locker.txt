@@ -21595,3 +21595,7 @@ hostline.pages.dev
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-20-v10421/970
 
 cpmmasters.com
+
+# Reference: https://threatfox.abuse.ch/ioc/1188153/
+
+chromiumtxt.space
