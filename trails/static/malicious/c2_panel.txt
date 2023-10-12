@@ -527,6 +527,7 @@ se-adhiere-a-la-nueva-legislacion.cyou
 /panel/admin/index.php
 /panel/admin/login.php
 /panel/admin/panel.php
+/panel/server/gate
 /panel/upload/admin.php
 /panel/upload/auth.php
 /panel/upload/callback.php
