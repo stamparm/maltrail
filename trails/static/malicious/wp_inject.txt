@@ -1866,7 +1866,9 @@ assets.statisticscripts.com
 call.dataofpages.com
 cassets.statisticscripts.com
 cdn.dataofpages.com
+cnd.dataofpages.com
 cdn.statisticscripts.com
+compost.listwithstats.com
 css.statisticscripts.com
 dn.dataofpages.com
 dn.statisticscripts.com
@@ -1887,6 +1889,7 @@ slash.dataofpages.com
 splash.dataofpages.com
 ssets.statisticscripts.com
 xyz.dataofpages.com
+calgarytoyshow.compost.listwithstats.com
 
 # Reference: https://threatfox.abuse.ch/browse/tag/balada/
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.247/relations
