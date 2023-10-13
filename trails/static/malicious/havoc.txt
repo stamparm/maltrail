@@ -1046,7 +1046,9 @@ yinksoft-update.com
 http://163.172.234.31
 16.171.65.50:443
 163.172.234.31:443
+164.92.168.80:443
 176.124.215.91:443
 185.225.17.127:4433
+alexis-dasilva.com
 stellantis-service.com
 wapprod.stellantis-service.com
