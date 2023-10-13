@@ -1040,3 +1040,13 @@ yinksoft-update.com
 157.245.142.4:443
 54.146.112.196:443
 95.217.219.48:8080
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-10-13)
+
+http://163.172.234.31
+16.171.65.50:443
+163.172.234.31:443
+176.124.215.91:443
+185.225.17.127:4433
+stellantis-service.com
+wapprod.stellantis-service.com
