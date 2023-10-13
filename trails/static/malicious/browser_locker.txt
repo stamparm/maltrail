@@ -21599,3 +21599,13 @@ cpmmasters.com
 # Reference: https://threatfox.abuse.ch/ioc/1188153/
 
 chromiumtxt.space
+
+# Reference: https://twitter.com/david_jursa/status/1712840230695252255
+
+maidenvalve2.online
+rofesinapidah.online
+tq-eu.maidenvalve2.online
+tq.maidenvalve2.online
+xml-eu-v4.maidenvalve2.online
+xml-v4.maidenvalve2.online
+xml.maidenvalve2.online
