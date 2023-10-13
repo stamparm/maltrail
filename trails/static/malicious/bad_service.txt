@@ -1358,3 +1358,14 @@ ransomed.vc
 http://194.145.208.56
 194.145.208.56:443
 bluemoongiftcard.com
+
+# Reference: https://twitter.com/FalconFeedsio/status/1709863129805623328
+
+http://185.38.142.237
+185.38.142.237:443
+vecna.pw
+disputes-coinbase.com
+customers-coinbase.com
+crescentmoonsoftware.com
+reviewal-coinbase.com
+support.xn--80a6aa2gv8a.com
