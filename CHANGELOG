@@ -16,7 +16,10 @@
 
 - Version 0.62 -> 0.63 (Upcoming release)
 
-
+[=] FAIL2BAN_REGEX and REMOTE_SEVERITY_REGEX options were updated to handle "potential iot-malware download" heur (Issue #19207)
+[=] Abuseipdb feed was updated (Issue #19208)
+[=] "potential remote code execution" heur for CVE-2016-0545 detection is updated (Issue #19210)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
