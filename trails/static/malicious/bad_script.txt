@@ -7179,6 +7179,13 @@ tpc.cdn-linkedin.info
 /cisco-CVE-2016-6415.sh
 /CVE-2020-8515.go
 
+# Reference: https://twitter.com/naumovax/status/1712449056352444730
+# Reference: https://www.virustotal.com/gui/file/ec175a771f670fe5c9f7a1756efa74a693254eaaa7a6c5d46fbd9dddbb34e34c/detection
+# Reference: https://www.virustotal.com/gui/file/be46b47e582414db4fe41ca45f4ad180b46ebb101e682a87808b32f2762f7cde/detection
+# Reference: https://www.virustotal.com/gui/file/ce5d3ec4169ff72ee9f164880f8c916ec93c8e409812b464744b91803eceec2c/detection
+
+/Public/jquery/TM/jquery_tm.js
+
 # Generic
 
 /js/altmanluggage.js
