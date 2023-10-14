@@ -5560,3 +5560,7 @@ hackersdog.com
 # Reference: https://www.virustotal.com/gui/domain/ggm.pw/relations
 
 ggm.pw
+
+# Reference: https://www.virustotal.com/gui/domain/dahhh.cn/relations
+
+dahhh.cn
