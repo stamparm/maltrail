@@ -7185,6 +7185,16 @@ tpc.cdn-linkedin.info
 # Reference: https://www.virustotal.com/gui/file/ce5d3ec4169ff72ee9f164880f8c916ec93c8e409812b464744b91803eceec2c/detection
 
 /Public/jquery/TM/jquery_tm.js
+/Public/jquery/0/jquery.js
+/Public/jquery/1/jquery.js
+/Public/jquery/2/jquery.js
+/Public/jquery/3/jquery.js
+/Public/jquery/4/jquery.js
+/Public/jquery/5/jquery.js
+/Public/jquery/6/jquery.js
+/Public/jquery/7/jquery.js
+/Public/jquery/8/jquery.js
+/Public/jquery/9/jquery.js
 
 # Generic
 
