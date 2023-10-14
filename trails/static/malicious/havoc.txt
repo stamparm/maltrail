@@ -786,6 +786,7 @@ http://47.245.126.218
 43.132.172.77:443
 43.153.193.220:443
 47.245.126.218:443
+51.255.45.74:40016
 78.157.163.36:443
 94.131.112.139:443
 
@@ -1052,5 +1053,7 @@ http://163.172.234.31
 2.102.90.244:4444
 alexis-dasilva.com
 sharepointoneline.com
+stellantis-invite.com
 stellantis-service.com
+idpm.stellantis-invite.com
 wapprod.stellantis-service.com
