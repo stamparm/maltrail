@@ -21600,6 +21600,10 @@ cpmmasters.com
 
 chromiumtxt.space
 
+# Reference: https://threatfox.abuse.ch/ioc/1188713/
+
+chromiumlink.site
+
 # Reference: https://twitter.com/david_jursa/status/1712840230695252255
 
 maidenvalve2.online
