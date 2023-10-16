@@ -3961,3 +3961,8 @@ wwhw.mozilla.org
 www-archive.mozilla.org
 wwww.mozilla.org
 xr.mozilla.org
+
+# Reference: https://github.com/stamparm/aux/issues/9
+
+nshc.net
+redalert.nshc.net
