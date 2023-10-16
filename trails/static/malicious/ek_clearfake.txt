@@ -96,3 +96,14 @@ hwthurmann.de/wp/chromium/
 chromiumengine.space
 isaiahradio.com
 mvpdigital.net
+
+# Reference: https://blog.sekoia.io/clearfake-a-newcomer-to-the-fake-updates-threats-landscape/
+# Reference: https://github.com/SEKOIA-IO/Community/blob/main/IOCs/clearfake/clearfake_iocs_20231016.csv
+
+bookchrono8273.com
+bpjoieohzmhegwegmmuew.online
+brewasigfi1978.workers.dev
+indogervo22tevra.com
+oiqwbuwbwqznjqsdfsfqhf.site
+opmowmokmwczmwecmef.site
+sioaiuhsdguywqgyuhiqw.org
