@@ -21604,6 +21604,10 @@ chromiumtxt.space
 
 chromiumlink.site
 
+# Reference: https://twitter.com/DonPasci/status/1713860495764062600
+
+chromiumbase.site
+
 # Reference: https://twitter.com/david_jursa/status/1712840230695252255
 
 maidenvalve2.online
