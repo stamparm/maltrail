@@ -1057,3 +1057,11 @@ stellantis-invite.com
 stellantis-service.com
 idpm.stellantis-invite.com
 wapprod.stellantis-service.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-10-16)
+
+http://194.180.49.251
+16.171.54.181:8443
+185.165.169.117:443
+air-canadaa.com
+search-online.workers.dev
