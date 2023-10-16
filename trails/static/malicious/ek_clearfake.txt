@@ -77,3 +77,22 @@ wsexdrcftgyy191.com
 zasexdrc13ftvg.com
 /lander/chrome_1695206714/_index.php
 /chrome_1695206714/_index.php
+
+# Reference: https://threatfox.abuse.ch/ioc/1188153/
+
+chromiumtxt.space
+
+# Reference: https://threatfox.abuse.ch/ioc/1188713/
+
+chromiumlink.site
+
+# Reference: https://twitter.com/DonPasci/status/1713860495764062600
+
+chromiumbase.site
+hwthurmann.de/wp/chromium/
+
+# Reference: https://twitter.com/karol_paciorek/status/1713910402302558281
+
+chromiumengine.space
+isaiahradio.com
+mvpdigital.net
