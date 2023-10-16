@@ -7203,6 +7203,10 @@ tpc.cdn-linkedin.info
 /pentest.hta
 /pentest.ps1
 
+# Reference: https://threatfox.abuse.ch/ioc/1189584/
+
+/fa87adc3.php
+
 # Generic
 
 /js/altmanluggage.js
