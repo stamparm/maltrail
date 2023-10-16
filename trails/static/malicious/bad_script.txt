@@ -7198,6 +7198,11 @@ tpc.cdn-linkedin.info
 /Public/jquery/8/jquery.js
 /Public/jquery/9/jquery.js
 
+# Reference: https://twitter.com/Gi7w0rm/status/1713923723718238600
+
+/pentest.hta
+/pentest.ps1
+
 # Generic
 
 /js/altmanluggage.js
