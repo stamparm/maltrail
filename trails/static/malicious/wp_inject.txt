@@ -902,9 +902,10 @@ go.weatherplllatform.com
 main.weatherplllatform.com
 new.weatherplllatform.com
 news.weatherplllatform.com
-scripts.weatherplllatform.com
-verify.weatherplllatform.com
 record.findtrustclicks.com
+scripts.weatherplllatform.com
+step.findtrustclicks.com
+verify.weatherplllatform.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1595142301931941888
 # Reference: https://urlscan.io/domain/watchvideo.pro
