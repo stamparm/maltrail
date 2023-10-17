@@ -2618,6 +2618,10 @@ layout.oystergardens.us
 
 sommelier.peppertreecanyon.com
 
+# Reference: https://twitter.com/DonPasci/status/1714193725872546254
+
+codek.me
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
