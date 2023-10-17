@@ -7221,6 +7221,7 @@ tpc.cdn-linkedin.info
 # Reference: https://twitter.com/malwrhunterteam/status/1714333541201301894
 
 /msfnt.hta
+/msfnt.ps1
 
 # Generic
 
