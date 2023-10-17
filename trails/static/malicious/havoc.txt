@@ -1061,7 +1061,11 @@ wapprod.stellantis-service.com
 # Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-10-16)
 
 http://194.180.49.251
+104.233.140.137:8088
 16.171.54.181:8443
+164.92.168.80:40056
 185.165.169.117:443
+43.135.163.36:443
+89.116.72.113:21024
 air-canadaa.com
 search-online.workers.dev
