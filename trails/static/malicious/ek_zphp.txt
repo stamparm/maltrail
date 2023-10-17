@@ -27,3 +27,8 @@ eastrenclouds.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-11-v10437/1028
 
 gnavigatio.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-16-v10442/1045
+
+arauas.com
+gamefllix.com
