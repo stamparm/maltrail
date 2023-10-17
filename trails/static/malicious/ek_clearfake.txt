@@ -121,3 +121,7 @@ megacarwreckers.com.au
 or-and.com
 sistemajogodobicho.com
 staging.armipour.com
+
+# Reference: https://threatfox.abuse.ch/ioc/1189985/
+
+nbvcdrtyup584wd.com
