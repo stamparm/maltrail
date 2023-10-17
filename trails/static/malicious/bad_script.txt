@@ -7218,6 +7218,10 @@ tpc.cdn-linkedin.info
 /nenenenenenne.ps1
 /nenenenenenne.vbs
 
+# Reference: https://twitter.com/malwrhunterteam/status/1714333541201301894
+
+/msfnt.hta
+
 # Generic
 
 /js/altmanluggage.js
