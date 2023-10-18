@@ -23,3 +23,7 @@ natfrp.cloud
 
 packetriot.net
 pktriot.net
+
+# Reference: https://www.virustotal.com/gui/domain/ngrok-free.app/relations
+
+ngrok-free.app
