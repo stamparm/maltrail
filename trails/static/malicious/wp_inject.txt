@@ -1846,12 +1846,23 @@ way.decentralappps.com
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.253/relations
 
 bridgelinering.com
+lightsteper.com
 promsmotion.com
+get.lightsteper.com
+get.lightsteper.com
 get.promsmotion.com
 go.bridgelinering.com
 net.promsmotion.com
 page.specialnewspaper.com
 show.bridgelinering.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/2.59.222.157/relations
+
+base2.getmygateway.com
+cdn.lightsteper.com
+comgate.getmygateway.com
+get.getmygateway.com
+haishirokuma.comgate.getmygateway.com
 
 # Reference: https://blog.sucuri.net/2023/10/balada-injector-targets-unpatched-tagdiv-plugin-newspaper-theme-wordpress-admins.html
 # Reference: https://www.virustotal.com/gui/ip-address/185.39.206.159/relations
