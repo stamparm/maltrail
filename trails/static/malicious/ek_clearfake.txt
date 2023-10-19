@@ -137,3 +137,9 @@ nazarenoagape.com.br/temp/
 # Reference: https://twitter.com/DonPasci/status/1714925226985750832
 
 lollyjayconcepts.com/wp-content/plugins/chromium/ChromiumEngine.zip
+
+# Reference: https://threatfox.abuse.ch/browse/tag/ClearFake/ (# 2023-10-19)
+
+02w65ijjohr1frm.com
+hello-world-broken-dust-1f1c.brewasigfi1978.workers.dev
+ocmtancmi2c5t.live
