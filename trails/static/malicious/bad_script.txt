@@ -7223,6 +7223,13 @@ tpc.cdn-linkedin.info
 /msfnt.hta
 /msfnt.ps1
 
+# Reference: https://cert-agid.gov.it/wp-content/uploads/2023/10/screenconnect_ultravnc_19-10-2023.json
+
+/js/exploit.hta
+/js/exploit.ps1
+/exploit.hta
+/exploit.ps1
+
 # Generic
 
 /js/altmanluggage.js

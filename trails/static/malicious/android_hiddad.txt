@@ -320,3 +320,9 @@ rexplosing.fun
 
 atswe.xyz
 ssp.atswe.xyz
+
+# Reference: https://unit42.paloaltonetworks.com/hooking-framework-in-sandbox-to-analyze-android-apk/
+
+madhavaapps.science
+/dwarkadhish/alternate148275android.php
+/alternate148275android.php
