@@ -1069,3 +1069,21 @@ http://194.180.49.251
 89.116.72.113:21024
 air-canadaa.com
 search-online.workers.dev
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-10-19)
+
+http://172.233.192.25
+13.53.84.163:443
+130.51.20.136:5900
+137.184.84.90:443
+138.68.174.88:40056
+141.94.69.198:443
+172.233.192.25:443
+195.77.176.178:4444
+45.12.253.39:443
+52.56.179.139:443
+89.147.111.205:4443
+adblockext.ru
+api.microsoft-service.workers.dev
+login.sharepointoneline.com
+microsoft-service.workers.dev
