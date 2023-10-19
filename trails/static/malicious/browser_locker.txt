@@ -21605,3 +21605,7 @@ tq.maidenvalve2.online
 xml-eu-v4.maidenvalve2.online
 xml-v4.maidenvalve2.online
 xml.maidenvalve2.online
+
+# Reference: https://threatfox.abuse.ch/ioc/1190858/
+
+browserengine.online
