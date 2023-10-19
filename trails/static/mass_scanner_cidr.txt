@@ -755,11 +755,13 @@
 198.211.112.0/24 # binaryedge.ninja
 198.211.113.0/24 # binaryedge.ninja
 198.211.96.0/24 # binaryedge.ninja
+198.235.24.0/24 # cortex xpanse
 203.178.148.0/24 # pinger-j1.ant.isi.edu.
 204.42.253.0/24 # openntpproject.org
 204.42.254.0/24 # openresolverproject.org
 204.48.21.0/24 # binaryedge.ninja
 204.48.26.0/24 # binaryedge.ninja
+205.210.31.0/24 # cortex xpanse
 206.189.106.0/24 # binaryedge.ninja
 206.189.115.0/24 # binaryedge.ninja
 206.189.116.0/24 # binaryedge.ninja
