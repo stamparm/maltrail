@@ -1078,12 +1078,16 @@ http://172.233.192.25
 137.184.84.90:443
 138.68.174.88:40056
 141.94.69.198:443
+161.35.25.219:443
 172.233.192.25:443
+185.193.125.140:443
+194.169.175.238:8083
 195.77.176.178:4444
 45.12.253.39:443
 52.56.179.139:443
 89.147.111.205:4443
 adblockext.ru
+securitytest.lat
 api.microsoft-service.workers.dev
 login.sharepointoneline.com
 microsoft-service.workers.dev
