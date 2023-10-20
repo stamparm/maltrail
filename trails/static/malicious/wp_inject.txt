@@ -1911,6 +1911,7 @@ selectofmychoices.com
 bee.selectofmychoices.com
 best.playerofsunshine.com
 come.statisticplatform.com
+debest.playerofsunshine.com
 excelent.playerofsunshine.com
 excellent.playerofsunshine.com
 exelent.playerofsunshine.com
@@ -1931,6 +1932,7 @@ third.gybritanalytsesystem.com
 try.selectofmychoices.com
 was.selectofmychoices.com
 where.selectofmychoices.com
+test20102023.debest.playerofsunshine.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.248/relations
 
