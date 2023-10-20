@@ -3260,12 +3260,14 @@ dlld-001.ru
 qjmm666.com
 
 # Reference: https://twitter.com/ULTRAFRAUD/status/1703462794488598907
+# Reference: https://threatfox.abuse.ch/ioc/1190361/
 # Reference: https://www.virustotal.com/gui/file/90de6b93f296541a5c245597349f2cd569472985cecbc14a1b0ccdb0951f5f13/detection
 # Reference: https://www.virustotal.com/gui/file/219393af90aa19338af5bc2ceb0892e8e6317438cf38508b652ff7a6ad9bbe50/detection
 # Reference: https://www.virustotal.com/gui/file/2ed1f5d437461caad1a296b63561bd9477d96f95f67591ebb914a7f1d6ceece9/detection
 # Reference: https://www.virustotal.com/gui/file/4e55c10e79e88019cc44951789afefd670fadaa18570a9ad3bfac0a495b7278f/detection
 
 2.155.18.40:9000
+77.225.104.91:9000
 46.25.249.37:23768
 46.27.153.138:23768
 47.63.191.10:23768
