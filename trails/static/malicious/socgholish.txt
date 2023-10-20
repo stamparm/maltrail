@@ -2622,6 +2622,17 @@ sommelier.peppertreecanyon.com
 
 codek.me
 
+# Reference: https://www.virustotal.com/gui/ip-address/23.146.184.23/relations
+# Reference: https://www.virustotal.com/gui/file/4b0d33612e84b8eba30c35fbeced44d05a343378dd728e72e2c59e8bb5acced6/detection
+
+result.garrettcountygranfondo.org
+bazj.result.garrettcountygranfondo.org
+kooh.result.garrettcountygranfondo.org
+kqx.result.garrettcountygranfondo.org
+pagz.result.garrettcountygranfondo.org
+wvnqm.result.garrettcountygranfondo.org
+xro.result.garrettcountygranfondo.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
