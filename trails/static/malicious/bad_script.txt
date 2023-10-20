@@ -7230,6 +7230,13 @@ tpc.cdn-linkedin.info
 /exploit.hta
 /exploit.ps1
 
+# Reference: https://twitter.com/malwrhunterteam/status/1715075131175751740
+
+/lass.hta
+/lass.ps1
+/PuttyUac.hta
+/PuttyUac.ps1
+
 # Generic
 
 /js/altmanluggage.js
