@@ -8427,10 +8427,13 @@ olimpsport.org
 ttewe.quest
 yalomob.pics
 
+# Reference: https://www.virustotal.com/gui/ip-address/195.80.51.59/relations
 # Reference: https://www.virustotal.com/gui/ip-address/34.88.77.180/relations
 
 script-hotjar.com
 cpanel.script-hotjar.com
+random.script-hotjar.com
+9dac4f19-6e96-4470-974c-73ca48c6c0cc.random.script-hotjar.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/107.158.94.87/relations
 
