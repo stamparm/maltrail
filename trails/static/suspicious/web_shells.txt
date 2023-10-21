@@ -945,3 +945,8 @@ podathon.org/shell/
 # Reference: https://twitter.com/James_inthe_box/status/1711383373246251399
 
 /xt/mmd/shell/
+
+# Reference: https://twitter.com/r3dbU7z/status/1715570648737615991
+
+/eightsix.shell
+/eightsix.shell_enc
