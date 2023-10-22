@@ -1946,6 +1946,11 @@ north.statisticplatform.com
 startup.betradingway.com
 west.statisticplatform.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/80.66.79.249/relations
+
+beatifulllhistory.com
+special.beatifulllhistory.com
+
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.251/relations
 
 forwardstarlight.com
