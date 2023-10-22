@@ -171,6 +171,7 @@ http://198.74.101.209
 
 # Reference: https://threatfox.abuse.ch/browse/tag/Supershell/
 
+http://142.171.7.195
 1.116.40.36:8888
 1.117.176.254:8888
 101.34.253.220:8888
