@@ -1097,3 +1097,12 @@ securitytest.lat
 api.microsoft-service.workers.dev
 login.sharepointoneline.com
 microsoft-service.workers.dev
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-10-23)
+
+5.255.123.86:443
+5.255.123.86:5000
+alexis-dasilva.pro
+bitwarden-server.payloads.online
+cesig8.online
+vip.cesig8.online
