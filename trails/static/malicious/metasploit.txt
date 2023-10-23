@@ -4142,3 +4142,7 @@ http://174.138.126.39
 # Reference: https://www.virustotal.com/gui/file/9dfd7efa40e2e8911022d8f2cd35192631cc8d39f22488cfb85aa5f769809e4b/detection
 
 48.125.170.13:4444
+
+# Reference: https://twitter.com/drb_ra/status/1716191200942714910
+
+81.17.20.66:16300
