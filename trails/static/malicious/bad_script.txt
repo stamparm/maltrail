@@ -7250,6 +7250,13 @@ tpc.cdn-linkedin.info
 /evil.vbs
 /shell.bat
 
+# Reference: https://twitter.com/malwrhunterteam/status/1716517330602033659
+# Reference: https://www.virustotal.com/gui/file/a42303a1baa0b48a95f6eaf6cfba9cef523492d078692cb2a1ab4889337624a6/detection
+
+/exploit/IntelCpHDCPSvc.hta
+/IntelCpHDCPSvc.hta
+/IntelCpHDCPSvc.ps1
+
 # Generic
 
 /js/altmanluggage.js
