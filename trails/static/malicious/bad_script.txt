@@ -7238,6 +7238,11 @@ tpc.cdn-linkedin.info
 /PuttyUac.hta
 /PuttyUac.ps1
 
+# Reference: https://twitter.com/1ZRR4H/status/1716290332885745949
+
+/crypto.hta
+/crypto.ps1
+
 # Generic
 
 /js/altmanluggage.js
