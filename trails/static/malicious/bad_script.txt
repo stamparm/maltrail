@@ -7243,6 +7243,13 @@ tpc.cdn-linkedin.info
 /crypto.hta
 /crypto.ps1
 
+# Reference: https://twitter.com/karol_paciorek/status/1716395306202358156
+
+/evil.ps1
+/evil.py
+/evil.vbs
+/shell.bat
+
 # Generic
 
 /js/altmanluggage.js
