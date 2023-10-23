@@ -32,3 +32,7 @@ gnavigatio.com
 
 arauas.com
 gamefllix.com
+
+# Reference: https://threatfox.abuse.ch/ioc/1191897/
+
+implacavelvideos.com
