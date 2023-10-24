@@ -143,3 +143,8 @@ lollyjayconcepts.com/wp-content/plugins/chromium/ChromiumEngine.zip
 02w65ijjohr1frm.com
 hello-world-broken-dust-1f1c.brewasigfi1978.workers.dev
 ocmtancmi2c5t.live
+
+# Reference: https://threatfox.abuse.ch/browse/tag/FakeUpdateRU/
+
+cbasechromium.space
+placengine.site
