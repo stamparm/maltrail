@@ -7257,6 +7257,11 @@ tpc.cdn-linkedin.info
 /IntelCpHDCPSvc.hta
 /IntelCpHDCPSvc.ps1
 
+# Reference: https://www.virustotal.com/gui/file/c81f61e669603b59e0b224cf0eb0f86a4d23b9cf050ca484ae87e22b64709a72/detection
+
+/x/sample.hta
+/sample.hta
+
 # Generic
 
 /js/altmanluggage.js
