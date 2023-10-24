@@ -950,3 +950,10 @@ podathon.org/shell/
 
 /eightsix.shell
 /eightsix.shell_enc
+
+# Reference: https://twitter.com/Gi7w0rm/status/1716901758348521850
+
+/b374kpriv.php
+/Nginx1337.php
+/b374kpriv.php.txt
+/Nginx1337.php.txt
