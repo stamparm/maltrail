@@ -36,3 +36,8 @@ gamefllix.com
 # Reference: https://threatfox.abuse.ch/ioc/1191897/
 
 implacavelvideos.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-23-v10446/1060
+
+implacavelvideos.com
+kgscrew.com
