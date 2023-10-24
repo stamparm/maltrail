@@ -1905,13 +1905,17 @@ calgarytoyshow.compost.listwithstats.com
 # Reference: https://threatfox.abuse.ch/browse/tag/balada/
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.247/relations
 
+getsmallcount.com
 gybritanalytsesystem.com
 playerofsunshine.com
 selectofmychoices.com
 bee.selectofmychoices.com
 best.playerofsunshine.com
+call.getsmallcount.com
 come.statisticplatform.com
 debest.playerofsunshine.com
+econd.gybritanalytsesystem.com
+emv1.selectofmychoices.com
 excelent.playerofsunshine.com
 excellent.playerofsunshine.com
 exelent.playerofsunshine.com
@@ -1930,6 +1934,7 @@ prueba.selectofmychoices.com
 root.selectofmychoices.com
 second.gybritanalytsesystem.com
 third.gybritanalytsesystem.com
+trry.selectofmychoices.com
 try.selectofmychoices.com
 was.selectofmychoices.com
 where.selectofmychoices.com
