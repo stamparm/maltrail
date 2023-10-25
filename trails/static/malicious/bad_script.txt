@@ -6284,6 +6284,7 @@ http://37.1.209.213
 /injector
 
 # Reference: https://twitter.com/malwrhunterteam/status/1611423202957213701
+# Reference: https://twitter.com/r3dbU7z/status/1717062792589586859
 # Reference: https://www.virustotal.com/gui/file/4c1b02898a8fc99afa72f1616ecdda6bda734a9487fdf0d9725eca3c422a4c23/detection
 
 /bypass.asp
@@ -6294,6 +6295,14 @@ http://37.1.209.213
 /bypass.php
 /bypass.ps1
 /bypass.vbs
+/bypass2.asp
+/bypass2.aspx
+/bypass2.bat
+/bypass2.hta
+/bypass2.js
+/bypass2.php
+/bypass2.ps1
+/bypass2.vbs
 
 # Reference: https://twitter.com/Stalkphish_io/status/1612427080758710272
 
