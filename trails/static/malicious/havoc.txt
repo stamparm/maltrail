@@ -1109,9 +1109,13 @@ vip.cesig8.online
 
 # Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-10-25)
 
+38.242.132.121:443
+141.105.71.141:443
 194.169.175.238:8080
 50.116.39.137:443
+abaadoffice.net
 msonline-security.com
 prfectr.xyz
 analytics.prfectr.xyz
 staging.prfectr.xyz
+mail.abaadoffice.net
