@@ -19,6 +19,7 @@
 [=] FAIL2BAN_REGEX and REMOTE_SEVERITY_REGEX options were updated to handle "potential iot-malware download" heur (Issue #19207)
 [=] Abuseipdb feed was updated (Issue #19208)
 [=] "potential remote code execution" heur for CVE-2016-0545 detection is updated (Issue #19210)
+[=] "potential remote code execution" heur is updated for MacOS process list tracking in HTTP POST-req (Issue #19214)
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
