@@ -21609,3 +21609,9 @@ xml.maidenvalve2.online
 # Reference: https://threatfox.abuse.ch/ioc/1190858/
 
 browserengine.online
+
+# Referecne: https://twitter.com/malwrhunterteam/status/1717060335679492368
+
+d2mvehzm92szfi.cloudfront.net
+/Win08Ay0Er08d8d77/index.html
+/Win08Ay0Er08d8d77/
