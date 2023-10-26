@@ -21611,7 +21611,10 @@ xml.maidenvalve2.online
 browserengine.online
 
 # Referecne: https://twitter.com/malwrhunterteam/status/1717060335679492368
+# Reference: https://twitter.com/malwrhunterteam/status/1717474745917075852
 
 d2mvehzm92szfi.cloudfront.net
 /Win08Ay0Er08d8d77/index.html
+/Win081ShlJckEr08d07/index.html
 /Win08Ay0Er08d8d77/
+/Win081ShlJckEr08d07/
