@@ -2379,6 +2379,11 @@ BunnyStealer
 BunnyTasks
 HeartBeat\_Sender
 
+# Reference: https://media.defense.gov/2023/May/24/2003229517/-1/-1/0/CSA_Living_off_the_Land.PDF
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-25-v10448/1067
+
+\)[\t]{3}[ ]{4}Gecko
+
 # Misc
 
 information_schema
