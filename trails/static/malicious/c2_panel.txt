@@ -485,6 +485,7 @@ se-adhiere-a-la-nueva-legislacion.cyou
 /bot/adminpanel/page.php
 /bot/adminpanel/panel.php
 /Bot/Panels/Hunter/panel.php
+/Bot/Panels/DarkDemon/panel.php
 /botnet/admin.php
 /botnet/api.php
 /botnet/auth.php
@@ -508,6 +509,8 @@ se-adhiere-a-la-nueva-legislacion.cyou
 /cgi%20bin/Panel/
 /Formgrab%20Access%20Panel/
 /FuckYouMother/panel/
+/DarkDemon/panel.php
+/Hunter/panel.php
 /jujubiadmin/
 /logz/auth.php
 /logz/login.php
@@ -570,7 +573,10 @@ se-adhiere-a-la-nueva-legislacion.cyou
 /panelphp/gate.php
 /panelphp/index.php
 /panelphp/login.php
+/Panel/Hunter/panel.php
+/Panel/DarkDemon/panel.php
 /Panels/Hunter/panel.php
+/Panels/DarkDemon/panel.php
 /PanelSoft/admin.php
 /PanelSoft/api.php
 /PanelSoft/auth.php
