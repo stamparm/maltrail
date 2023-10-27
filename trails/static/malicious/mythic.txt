@@ -1210,6 +1210,7 @@ safe2.hansesecure.com
 # Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-10-11)
 
 104.154.113.5:443
+104.238.187.71:443
 104.45.53.35:443
 104.45.53.36:443
 104.45.53.41:443
@@ -1222,10 +1223,12 @@ safe2.hansesecure.com
 139.59.109.136:443
 149.248.79.89:7443
 159.223.113.15:7443
+167.172.136.176:7443
 172.104.206.233:7443
 177.124.72.24:8091
 179.43.191.198:7443
 179.43.191.199:7443
+188.40.162.125:7443
 193.134.210.75:443
 195.154.166.134:7443
 20.11.212.157:7443
@@ -1243,6 +1246,7 @@ safe2.hansesecure.com
 35.226.49.76:443
 45.152.67.193:443
 51.222.31.152:443
+62.182.84.234:7443
 65.109.103.227:7443
 72.200.119.176:7443
 88.214.25.253:7443
@@ -1251,6 +1255,7 @@ safe2.hansesecure.com
 agorasecurity.it
 bijusdaclara.shop
 crowdstrike.training
+lifeisff.fun
 modabarataonline.shop
 plrdofuturo.online
 semacucar.online
@@ -1258,3 +1263,4 @@ telegramvip.shop
 ads.telegramvip.shop
 do-sfo01.jetserver.net
 m.agorasecurity.it
+v2r-cn2.lifeisff.fun
