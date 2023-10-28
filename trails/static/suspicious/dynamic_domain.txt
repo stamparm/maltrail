@@ -3512,3 +3512,7 @@ bumbleshrimp.com
 # Reference: https://www.virustotal.com/gui/domain/4cloud.click/detection
 
 4cloud.click
+
+# Reference: https://www.virustotal.com/gui/domain/perfect-privacy.com/relations
+
+perfect-privacy.com
