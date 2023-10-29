@@ -1137,3 +1137,15 @@ staging.prfectr.xyz
 mail.abaadoffice.net
 login.msonline-security.com
 wapprod.stellantis-invite.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-10-29)
+
+http://146.70.79.19
+http://83.212.96.62
+139.84.144.181:443
+161.142.78.158:8080
+175.136.232.225:8080
+175.136.232.226:8080
+24.144.90.189:443
+57.128.171.220:443
+buesem2021.com
