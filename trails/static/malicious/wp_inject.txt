@@ -1864,21 +1864,25 @@ get.getmygateway.com
 haishirokuma.comgate.getmygateway.com
 
 # Reference: https://blog.sucuri.net/2023/10/balada-injector-targets-unpatched-tagdiv-plugin-newspaper-theme-wordpress-admins.html
+# Reference: https://www.virustotal.com/gui/ip-address/185.39.206.158/relations
 # Reference: https://www.virustotal.com/gui/ip-address/185.39.206.159/relations
 # Reference: https://www.virustotal.com/gui/ip-address/185.39.206.160/relations
 # Reference: https://www.virustotal.com/gui/ip-address/185.39.206.161/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.39.206.162/relations
 
 dataofpages.com
 listwithstats.com
 statisticscripts.com
 0cdn.dataofpages.com
 age.listwithstats.com
+asset.statisticscripts.com
 assets.statisticscripts.com
 call.dataofpages.com
 cassets.statisticscripts.com
 cdn.dataofpages.com
 cnd.dataofpages.com
 cdn.statisticscripts.com
+compage.listwithstats.com
 compost.listwithstats.com
 css.statisticscripts.com
 dn.dataofpages.com
@@ -1901,6 +1905,8 @@ splash.dataofpages.com
 ssets.statisticscripts.com
 xyz.dataofpages.com
 calgarytoyshow.compost.listwithstats.com
+listwithstats.compage.listwithstats.com
+page.listwithstats.compage.listwithstats.com
 
 # Reference: https://threatfox.abuse.ch/browse/tag/balada/
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.247/relations
