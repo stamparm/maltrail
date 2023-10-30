@@ -2384,6 +2384,10 @@ HeartBeat\_Sender
 
 \)[\t]{3}[ ]{4}Gecko
 
+# Reference: https://twitter.com/naumovax/status/1718956514491130301
+
+4B4DB4B3
+
 # Misc
 
 information_schema
