@@ -2633,6 +2633,10 @@ pagz.result.garrettcountygranfondo.org
 wvnqm.result.garrettcountygranfondo.org
 xro.result.garrettcountygranfondo.org
 
+# Reference: https://threatfox.abuse.ch/ioc/1197239/
+
+webdataspace.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
