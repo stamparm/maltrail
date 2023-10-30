@@ -2388,6 +2388,10 @@ HeartBeat\_Sender
 
 4B4DB4B3
 
+# Reference: https://twitter.com/t3ft3lb/status/1718982477140951312
+
+FireFox 17.13
+
 # Misc
 
 information_schema
