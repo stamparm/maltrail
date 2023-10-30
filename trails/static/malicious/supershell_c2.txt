@@ -523,6 +523,15 @@ http://142.171.7.195
 hhhnee.top
 plus.hhhnee.top
 
+# Reference: https://threatfox.abuse.ch/browse/tag/Supershell/ (# 2023-10-30)
+
+101.43.127.45:8888
+124.70.13.125:8888
+164.155.201.130:8888
+38.147.172.79:8888
+yihuan.cc
+c2.yihuan.cc
+
 # Generic
 
 /supershell/login
