@@ -46,3 +46,7 @@ kgscrew.com
 
 cubicalwave.com
 defeatdiseasewithdata.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-30-v10452/1080
+
+cinaprofilm.com
