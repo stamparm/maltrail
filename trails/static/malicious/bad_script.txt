@@ -7266,6 +7266,7 @@ tpc.cdn-linkedin.info
 # Reference: https://www.virustotal.com/gui/file/a42303a1baa0b48a95f6eaf6cfba9cef523492d078692cb2a1ab4889337624a6/detection
 
 /exploit/IntelCpHDCPSvc.hta
+/exploit/IntelCpHDCPSvc.ps1
 /IntelCpHDCPSvc.hta
 /IntelCpHDCPSvc.ps1
 
@@ -7278,6 +7279,12 @@ tpc.cdn-linkedin.info
 # Reference: https://www.virustotal.com/gui/file/fa6aa00418f7c7e2c8c840f89acee25dac55e0623e7e5e6641880ffa3dd161ec/detection
 
 /upload/bot.php?id=
+
+# Reference: https://twitter.com/malwrhunterteam/status/1719104612714574309
+# Reference: https://www.virustotal.com/gui/file/c2d3fc535e56c109478a742ec44c635c18845dc2e8fd27f13d1fa155588849f6/detection
+
+/more_page.hta
+/more_page.ps1
 
 # Generic
 
