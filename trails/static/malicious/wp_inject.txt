@@ -1971,6 +1971,11 @@ follow.forwardstarlight.com
 from.forwardstarlight.com
 stay.forwardstarlight.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1719152791875420655
+
+cdzanalytics.com
+ga.cdzanalytics.com
+
 # Reference: https://www.virustotal.com/gui/file/eedb020cff479ebcb511376b902825a0e35e5549346462548c0bca8d6ecd7ac3/detection
 
 111.90.148.245:3503
