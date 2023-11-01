@@ -1279,3 +1279,20 @@ ads.telegramvip.shop
 do-sfo01.jetserver.net
 m.agorasecurity.it
 v2r-cn2.lifeisff.fun
+
+# Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-11-01)
+
+angelbusinessteam.com
+bitscoinc.com
+boezgrt.com
+bureaudecreationalienor.com
+danagroupegypt.com
+displaymercials.com
+formulaautoparts.com
+hatchdesignsnh.com
+hom4u.com
+jongchul.democrat
+lucasdoors.com
+pacatman.com
+sms-atc.com
+turanmetal.com
