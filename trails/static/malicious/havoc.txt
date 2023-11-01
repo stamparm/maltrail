@@ -1156,3 +1156,13 @@ http://83.212.96.62
 buesem2021.com
 havoc.riggcorp.com
 idpm.stellantis-service.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-11-01)
+
+208.115.220.176:443
+35.167.204.55:443
+46.8.158.224:443
+heylele.com
+msftonline.org
+testsite.uno
+config-update-ms.francecentral.cloudapp.azure.com
