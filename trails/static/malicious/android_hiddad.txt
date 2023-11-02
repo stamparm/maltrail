@@ -326,3 +326,7 @@ ssp.atswe.xyz
 madhavaapps.science
 /dwarkadhish/alternate148275android.php
 /alternate148275android.php
+
+# Reference: https://www.virustotal.com/gui/file/0bcdbc6a97c4b1b65830f71d234a23fcde7be4afeb75cae0981d3a5eb203dc2b/detection
+
+platerind.club
