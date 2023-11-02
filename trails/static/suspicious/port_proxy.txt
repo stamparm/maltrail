@@ -24,6 +24,10 @@ natfrp.cloud
 packetriot.net
 pktriot.net
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-02-v10456/1090
 # Reference: https://www.virustotal.com/gui/domain/ngrok-free.app/relations
 
+ngrok.app
+ngrok.dev
 ngrok-free.app
+ngrok-free.dev
