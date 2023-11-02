@@ -34,3 +34,7 @@ ngrok.dev
 ngrok.pizza
 ngrok-free.app
 ngrok-free.dev
+
+# Reference: https://app.validin.com/axon?find=54.218.37.147&type=ip
+
+hotspotproxy.tk
