@@ -7286,6 +7286,12 @@ tpc.cdn-linkedin.info
 /more_page.hta
 /more_page.ps1
 
+# Reference: https://twitter.com/doc_guard/status/1720030244516643274
+# Reference: https://www.virustotal.com/gui/file/aee00173af3d3e8630696a72bd942522543734c26b37afeffbee6d2057285a9a/detection
+
+/HTMLIEbrowserSShistory.vbs
+/HTMLIEcentosBrowserHistory.vbs
+
 # Generic
 
 /js/altmanluggage.js
