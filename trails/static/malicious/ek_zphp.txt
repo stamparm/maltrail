@@ -50,3 +50,8 @@ defeatdiseasewithdata.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-30-v10452/1080
 
 cinaprofilm.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-02-v10456/1090
+
+farmexpressmachine.com
+pdfinfinity.com
