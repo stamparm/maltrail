@@ -1166,3 +1166,16 @@ heylele.com
 msftonline.org
 testsite.uno
 config-update-ms.francecentral.cloudapp.azure.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-11-02)
+
+136.243.185.107:8443
+185.193.125.140:41909
+20.220.86.194:443
+20.94.83.139:443
+35.178.199.73:443
+35.226.174.151:443
+64.227.179.34:443
+91.92.255.32:443
+mircofots.online
+apix.mircofots.online
