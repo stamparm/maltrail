@@ -303,7 +303,7 @@ zfxcb.top
 gezginbilgisayar.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1215403530040692736
-# Refrence: https://gist.github.com/MBThreatIntel/8ea3b84c6e9732711b9801828ad05bbc
+# Reference: https://gist.github.com/MBThreatIntel/8ea3b84c6e9732711b9801828ad05bbc
 
 cookwhiletravelling.com
 cookwithhealthyideas.com

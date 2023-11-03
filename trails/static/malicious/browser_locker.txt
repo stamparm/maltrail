@@ -21610,7 +21610,7 @@ xml.maidenvalve2.online
 
 browserengine.online
 
-# Referecne: https://twitter.com/malwrhunterteam/status/1717060335679492368
+# Reference: https://twitter.com/malwrhunterteam/status/1717060335679492368
 # Reference: https://twitter.com/malwrhunterteam/status/1717474745917075852
 # Reference: https://twitter.com/malwrhunterteam/status/1719617032767848748
 
