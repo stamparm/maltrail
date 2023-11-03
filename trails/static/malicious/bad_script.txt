@@ -7292,6 +7292,10 @@ tpc.cdn-linkedin.info
 /HTMLIEbrowserSShistory.vbs
 /HTMLIEcentosBrowserHistory.vbs
 
+# Reference: https://threatfox.abuse.ch/ioc/1198171/
+
+/80c2d1651b23ae.php
+
 # Generic
 
 /js/altmanluggage.js
