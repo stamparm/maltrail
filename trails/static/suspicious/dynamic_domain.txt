@@ -3448,7 +3448,7 @@ com.se
 
 dynip.online
 
-# Refereence: https://www.virustotal.com/gui/domain/ddns.network/relations
+# Reference: https://www.virustotal.com/gui/domain/ddns.network/relations
 
 ddns.network
 
