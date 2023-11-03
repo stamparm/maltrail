@@ -164,6 +164,11 @@ update.chrome-up.com
 updateload.live
 y13xlt1d.xyz
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-03-v10457/1091
+
+koolstoredeluxe.com
+stats-tracked.com
+
 # Generic
 
 /vvmd54/
