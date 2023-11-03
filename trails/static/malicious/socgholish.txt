@@ -275,7 +275,7 @@ c95a786e.step.ifsguy.com
 e316bac0.step.ifsguy.com
 
 # Reference: https://twitter.com/C0ryInTheHous3/status/1539976468876251140
-# Referecne: https://twitter.com/C0ryInTheHous3/status/1539976414920704005
+# Reference: https://twitter.com/C0ryInTheHous3/status/1539976414920704005
 # Reference: https://www.virustotal.com/gui/ip-address/45.10.42.26/relations
 
 cloud.bncfministries.org

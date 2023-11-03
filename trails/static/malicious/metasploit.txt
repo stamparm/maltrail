@@ -2882,7 +2882,7 @@ http://91.240.118.252
 
 94.131.111.223:8443
 
-# Referemce: https://twitter.com/drb_ra/status/1702417115855139228
+# Reference: https://twitter.com/drb_ra/status/1702417115855139228
 
 35.181.153.101:8443
 

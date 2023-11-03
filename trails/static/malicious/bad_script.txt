@@ -396,7 +396,7 @@
 /out-571924757.hta
 /out-756898907.hta
 
-# Refecerence: https://twitter.com/bit_dam/status/1256311982992633862
+# Reference: https://twitter.com/bit_dam/status/1256311982992633862
 
 /new%201.hta
 
@@ -2750,7 +2750,7 @@ tunacan-812.tk
 /cachetfmbUXkGerOtP.php
 /_cachetfmbUXkGerOtP.php
 
-# Refefrence: https://www.virustotal.com/gui/ip-address/141.8.194.74/relations
+# Reference: https://www.virustotal.com/gui/ip-address/141.8.194.74/relations
 
 /9ldfcvv539grtjr1krbwrbsf.php
 

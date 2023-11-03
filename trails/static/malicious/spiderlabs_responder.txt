@@ -69,7 +69,7 @@ http://18.190.119.137
 
 # Reference: https://twitter.com/drb_ra/status/1651840904779513857
 # Reference: https://twitter.com/drb_ra/status/1651840908181094400
-# Referecne: https://twitter.com/drb_ra/status/1651840911469432833
+# Reference: https://twitter.com/drb_ra/status/1651840911469432833
 
 http://52.143.142.21
 52.143.142.21:443
