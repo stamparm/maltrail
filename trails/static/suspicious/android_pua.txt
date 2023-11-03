@@ -246,7 +246,7 @@ rapi.mobikwik.com
 # Reference: https://www.virustotal.com/gui/domain/iface.zzwy168.com/relations
 # Reference: https://www.virustotal.com/gui/domain/line.zzwy168.com/relations
 # Reference: https://www.virustotal.com/gui/domain/sp.zzwy168.com/relations
-# Refereence: https://www.virustotal.com/gui/domain/sp1.zzwy168.com/relations
+# Reference: https://www.virustotal.com/gui/domain/sp1.zzwy168.com/relations
 
 iface.zzwy168.com
 line.zzwy168.com
