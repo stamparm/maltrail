@@ -1298,3 +1298,15 @@ lucasdoors.com
 pacatman.com
 sms-atc.com
 turanmetal.com
+
+# Reference: https://research.nccgroup.com/2023/11/01/popping-blisters-for-research-an-overview-of-past-payloads-and-exploring-recent-developments/
+
+avblokhutten.com
+digtupu.com
+futuretechfarm.com
+licencesolutions.com
+remontisto.com
+szdeas.com
+visioquote.com
+d1hp6ufzqrj3xv.cloudfront.net
+/s/0.7.8/clarity.js
