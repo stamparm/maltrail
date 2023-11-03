@@ -632,6 +632,10 @@ opusmedical.info
 
 157.254.236.111:7443
 
+# Reference: https://threatfox.abuse.ch/ioc/1198226/
+
+34.124.211.197:7443
+
 # Generic
 
 /covenantuser/
