@@ -3520,3 +3520,11 @@ perfect-privacy.com
 # Reference: https://www.virustotal.com/gui/domain/no-ip.me/relations
 
 no-ip.me
+
+# Reference: https://www.virustotal.com/gui/domain/changeip.co.uk/relations
+
+changeip.co.uk
+
+# Reference: https://www.virustotal.com/gui/domain/changeip.me/relations
+
+changeip.me
