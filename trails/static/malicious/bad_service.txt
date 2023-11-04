@@ -1440,6 +1440,10 @@ support.xn--80a6aa2gv8a.com
 
 canawrx.com
 
+# Reference: https://www.virustotal.com/gui/domain/cpd.capital/relations
+
+cpd.capital
+
 # Reference: https://twitter.com/karol_paciorek/status/1717460110627189013
 
 /ECC-DDoS
