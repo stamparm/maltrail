@@ -1436,6 +1436,10 @@ crescentmoonsoftware.com
 reviewal-coinbase.com
 support.xn--80a6aa2gv8a.com
 
+# Reference: https://www.virustotal.com/gui/domain/canawrx.com/relations
+
+canawrx.com
+
 # Reference: https://twitter.com/karol_paciorek/status/1717460110627189013
 
 /ECC-DDoS
