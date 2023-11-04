@@ -3516,3 +3516,7 @@ bumbleshrimp.com
 # Reference: https://www.virustotal.com/gui/domain/perfect-privacy.com/relations
 
 perfect-privacy.com
+
+# Reference: https://www.virustotal.com/gui/domain/no-ip.me/relations
+
+no-ip.me
