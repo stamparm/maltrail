@@ -173,6 +173,10 @@ y13xlt1d.xyz
 koolstoredeluxe.com
 stats-tracked.com
 
+# Reference: https://twitter.com/threatcat_ch/status/1721100855183634653
+
+efmdwkmwk.xyz
+
 # Generic
 
 /vvmd54/
