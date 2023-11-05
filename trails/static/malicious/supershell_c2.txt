@@ -525,6 +525,7 @@ plus.hhhnee.top
 
 # Reference: https://threatfox.abuse.ch/browse/tag/Supershell/ (# 2023-10-30)
 
+1.163.31.7:8888
 101.34.229.123:51111
 101.43.127.45:8888
 103.209.129.193:8888
