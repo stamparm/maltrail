@@ -1951,7 +1951,9 @@ browsermine.comsecond.gybritanalytsesystem.com
 test20102023.debest.playerofsunshine.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.248/relations
+# Reference: https://app.validin.com/axon?find=80.66.79.248/30&type=ip4
 
+bestselllerservice.com
 betradingway.com
 selectchoise.com
 statisticplatform.com
@@ -1960,6 +1962,7 @@ got.selectchoise.com
 goto.betradingway.com
 north.statisticplatform.com
 startup.betradingway.com
+store.bestselllerservice.com
 west.statisticplatform.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.249/relations
