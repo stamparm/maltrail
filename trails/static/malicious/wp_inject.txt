@@ -1919,6 +1919,7 @@ bee.selectofmychoices.com
 best.playerofsunshine.com
 call.getsmallcount.com
 come.statisticplatform.com
+comsecond.gybritanalytsesystem.com
 debest.playerofsunshine.com
 econd.gybritanalytsesystem.com
 emv1.selectofmychoices.com
@@ -1946,6 +1947,7 @@ trry.selectofmychoices.com
 try.selectofmychoices.com
 was.selectofmychoices.com
 where.selectofmychoices.com
+browsermine.comsecond.gybritanalytsesystem.com
 test20102023.debest.playerofsunshine.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.248/relations
