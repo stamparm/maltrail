@@ -7301,6 +7301,10 @@ tpc.cdn-linkedin.info
 
 /open_WinCryptoWallet.ps1
 
+# Reference: https://threatfox.abuse.ch/ioc/1199442/
+
+/61b46e405d2c1c.php
+
 # Generic
 
 /js/altmanluggage.js
