@@ -7297,6 +7297,10 @@ tpc.cdn-linkedin.info
 
 /80c2d1651b23ae.php
 
+# Reference: https://twitter.com/Gi7w0rm/status/1721564409800142986
+
+/open_WinCryptoWallet.ps1
+
 # Generic
 
 /js/altmanluggage.js
