@@ -577,7 +577,7 @@ http://82.223.64.37
 94.131.110.14:9090
 98.252.137.125:443
 
-# Reference: # Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-07-28)
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-07-28)
 
 104.168.237.121:443
 108.177.235.191:443
