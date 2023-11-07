@@ -3802,7 +3802,7 @@ tunacan-812.tk
 
 /25692ea80cd968.php
 
-# Reference: # Reference: https://twitter.com/James_inthe_box/status/1349360887186874371
+# Reference: https://twitter.com/James_inthe_box/status/1349360887186874371
 
 /eea5c8636b504d.php
 
@@ -4245,7 +4245,7 @@ d27qdop2sa027t.cloudfront.net
 /3dbea0f5d87dcc.php
 
 # Reference: https://twitter.com/r3dbU7z/status/1381517028817825795
-# Reference: # Reference: https://twitter.com/r3dbU7z/status/1457338809566343168
+# Reference: https://twitter.com/r3dbU7z/status/1457338809566343168
 # Reference: https://www.virustotal.com/gui/url/026ec2ee22c5b8a04806a13701238e971565cd80d9ca10a0be85c80f4222fa9e/details
 
 /payload1.apsx
@@ -4902,7 +4902,7 @@ g.d.cg
 
 https-center.net
 
-# Reference: # Reference: https://twitter.com/pr0xylife/status/1450047080089759745
+# Reference: https://twitter.com/pr0xylife/status/1450047080089759745
 
 /b04042b22b2b6179257d.php
 
