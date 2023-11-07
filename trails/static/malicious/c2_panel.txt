@@ -163,7 +163,7 @@
 
 rdssh.xyz
 
-# Reference: # Reference: https://twitter.com/malwrhunterteam/status/1255907032944775171
+# Reference: https://twitter.com/malwrhunterteam/status/1255907032944775171
 
 /inc/server/gate.php
 
@@ -171,7 +171,7 @@ rdssh.xyz
 
 http://213.128.93.199
 
-# Reference: # Reference: https://www.virustotal.com/gui/domain/rabok.io/relations
+# Reference: https://www.virustotal.com/gui/domain/rabok.io/relations
 
 /webpanel/abj/
 /webpanel/coach/
