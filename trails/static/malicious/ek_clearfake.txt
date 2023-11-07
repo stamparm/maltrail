@@ -179,6 +179,14 @@ stats-tracked.com
 
 efmdwkmwk.xyz
 
+# Reference: https://threatfox.abuse.ch/browse/tag/ClearFake/ (# 2023-11-07)
+
+d693na2y4mpkhr34.vip
+ov.d693na2y4mpkhr34.vip
+u513fdanj.online
+u513fdanj.site
+u513fdanj.website
+
 # Generic
 
 /vvmd54/
