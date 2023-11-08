@@ -7313,6 +7313,13 @@ tpc.cdn-linkedin.info
 
 /2dd77469.php
 
+# Reference: https://twitter.com/Slvlombardo/status/1722207081699414430
+
+/wp-includes/ww-new-rta01/dtrta.php
+/wp-includes/ww-new-rta01/
+/ww-new-rta01/dtrta.php
+/ww-new-rta01/
+
 # Generic
 
 /js/altmanluggage.js
