@@ -4315,3 +4315,7 @@ http://174.138.126.39
 # Reference: https://www.virustotal.com/gui/ip-address/43.131.45.17/detection
 
 43.131.45.17:8080
+
+# Reference: https://twitter.com/karol_paciorek/status/1722164685980504522
+
+193.176.31.152:81
