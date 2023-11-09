@@ -60,3 +60,7 @@ pdfinfinity.com
 
 addisonlynch.com
 andreeasasser.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-09-v10462/1107
+
+cwgmanagementllc.com
