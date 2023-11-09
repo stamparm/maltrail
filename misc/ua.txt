@@ -2392,6 +2392,11 @@ HeartBeat\_Sender
 
 FireFox 17.13
 
+# Reference: https://www.hybrid-analysis.com/sample/ae3871ce94e7bc492f78f998459bd40cb6af950a5eb09d19b4bd61e0200c49fb/5c24050b7ca3e122510ebe13
+
+Seetrol
+SeetrolClient
+
 # Misc
 
 information_schema
