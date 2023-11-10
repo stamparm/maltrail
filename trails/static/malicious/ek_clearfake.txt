@@ -75,8 +75,12 @@ nmbvcxzasedrt.com
 oiouhvtybh291.com
 wsexdrcftgyy191.com
 zasexdrc13ftvg.com
+/lander/chrome_1695206714/_cf.php
 /lander/chrome_1695206714/_index.php
 /chrome_1695206714/_index.php
+/chrome_1695206714/_cf.php
+/lander/chrome_1695206714/
+/chrome_1695206714/
 
 # Reference: https://threatfox.abuse.ch/ioc/1188153/
 
@@ -183,6 +187,7 @@ efmdwkmwk.xyz
 
 d693na2y4mpkhr34.vip
 jonathanbonnici.com
+longlakeweb.com
 mcguffinboots.com
 ov.d693na2y4mpkhr34.vip
 u513fdanj.online
@@ -191,5 +196,7 @@ u513fdanj.website
 
 # Generic
 
+/a3A7qLVn/
+/fEOV2v/
 /vvmd54/
 /ZgbN19Mx
