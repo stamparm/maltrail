@@ -1209,3 +1209,8 @@ abb-bank.wiki
 bedlinnenoutlet.nl
 daanzeegersdesign.nl
 toroz.nl
+
+# Reference: https://threatfox.abuse.ch/ioc/1201397/
+# Reference: https://www.virustotal.com/gui/file/fa02f2c47b8a22acff47d86da8e5b97f2453aee4606f585b5d979429eb85a0d3/detection
+
+werbeagenturbraunschweig.com
