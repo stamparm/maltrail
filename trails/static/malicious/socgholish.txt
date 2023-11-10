@@ -2639,7 +2639,7 @@ xro.result.garrettcountygranfondo.org
 
 webdataspace.com
 
-# Refereence: https://www.virustotal.com/gui/file/80d2a6a9a5963c3efe42dc071eed5ca42e4140806980d08385dceda6b73b9810/detection
+# Reference: https://www.virustotal.com/gui/file/80d2a6a9a5963c3efe42dc071eed5ca42e4140806980d08385dceda6b73b9810/detection
 
 caching.oysterfloats.com
 mksw.caching.oysterfloats.com
