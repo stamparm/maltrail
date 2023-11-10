@@ -8493,6 +8493,10 @@ pmdresearch.com
 secures-tool.com
 tool-cdn.net
 
+# Reference: https://sansec.io/research/is-your-stores-newsletter-being-used-for-phishing
+
+pub-7f69134e44ab4a03bb5e13c4894ffb4f.r2.dev
+
 # Generic
 
 /assets/lfg.js
