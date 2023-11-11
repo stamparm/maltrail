@@ -3528,3 +3528,20 @@ changeip.co.uk
 # Reference: https://www.virustotal.com/gui/domain/changeip.me/relations
 
 changeip.me
+
+# Reference: https://app.validin.com/axon?find=158.247.7.206&type=ip
+
+faststream.link
+noip.click
+noip.digital
+noip.life
+noip.link
+noip.network
+noip.re
+noip.store
+noip.team
+noip.website
+noip.world
+sharkstream.live
+sitodom.website
+zapto.live
