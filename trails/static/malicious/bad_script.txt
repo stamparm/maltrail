@@ -7329,6 +7329,10 @@ tpc.cdn-linkedin.info
 /stager_persist_rat.hta
 /stager_persist_rat.ps1
 
+# Reference: https://threatfox.abuse.ch/ioc/1201607/
+
+/30055d25.php
+
 # Generic
 
 /js/altmanluggage.js
