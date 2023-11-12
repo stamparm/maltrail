@@ -1307,9 +1307,11 @@ hatchdesignsnh.com
 hom4u.com
 jongchul.democrat
 lucasdoors.com
+naservpn.cf
 pacatman.com
 sms-atc.com
 turanmetal.com
+franc.naservpn.cf
 
 # Reference: https://research.nccgroup.com/2023/11/01/popping-blisters-for-research-an-overview-of-past-payloads-and-exploring-recent-developments/
 
