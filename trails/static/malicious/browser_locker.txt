@@ -21631,3 +21631,8 @@ sea-lion-appmnkjiuuyjhhgytgf-j2o8b.ondigitalocean.app
 # Reference: https://twitter.com/malwrhunterteam/status/1719619667134660655
 
 m13ya72ud343p.azureedge.net
+
+# Reference: https://twitter.com/elhackernet/status/1724018796870930766
+# Reference: https://www.virustotal.com/gui/ip-address/138.68.80.98/relations
+
+fruitsofhealth.shop
