@@ -3970,3 +3970,8 @@ redalert.nshc.net
 # Reference: https://twitter.com/lowmal3/status/1719980601489375489
 
 185.199.108.133
+
+# Reference: https://github.com/netbootxyz/netboot.xyz
+# Reference: https://www.virustotal.com/gui/domain/netboot.xyz/relations
+
+netboot.xyz
