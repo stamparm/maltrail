@@ -2397,6 +2397,10 @@ FireFox 17.13
 Seetrol
 SeetrolClient
 
+# Reference: https://twitter.com/crep1x/status/1724116057047113782
+
+SouthSide
+
 # Misc
 
 information_schema
