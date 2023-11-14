@@ -1182,6 +1182,7 @@ apix.mircofots.online
 
 # Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-11-04)
 
+http://8.208.95.78
 128.140.47.106:443
 154.8.142.178:443
 159.65.168.135:443
@@ -1193,6 +1194,7 @@ apix.mircofots.online
 185.193.125.118:443
 194.169.175.238:443
 194.169.175.238:9443
+20.157.16.178:443
 20.55.94.241:443
 31.220.94.133:443
 34.224.40.221:443
@@ -1217,6 +1219,7 @@ apix.mircofots.online
 abb-bank.wiki
 bedlinnenoutlet.nl
 daanzeegersdesign.nl
+donotopenthis.zip
 toroz.nl
 
 # Reference: https://threatfox.abuse.ch/ioc/1201397/
