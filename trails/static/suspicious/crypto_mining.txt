@@ -1259,3 +1259,7 @@ xmr-us-east1.nanopool.org
 94.23.66.17:5555
 aeon-pool.com
 mine.aeon-pool.com
+
+# Reference: https://www.virustotal.com/gui/file/fbd17e6ef926b07841023bbf7d0c89126e926bc58bba1cb4be9c1e073e1394d4/detection
+
+51.89.217.80:7777
