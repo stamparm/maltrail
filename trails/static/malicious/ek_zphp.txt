@@ -64,3 +64,12 @@ andreeasasser.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-09-v10462/1107
 
 cwgmanagementllc.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-14-v10465/1122
+
+ilokod.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-14-v10465/1122
+# Reference: https://www.virustotal.com/gui/file/95dc40efbe0248508644a24d661f815a83d95616dc78fbfeb389c9f43b36743d/detection
+
+louisianaworkingdogs.com
