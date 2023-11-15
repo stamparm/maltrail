@@ -1263,3 +1263,7 @@ mine.aeon-pool.com
 # Reference: https://www.virustotal.com/gui/file/fbd17e6ef926b07841023bbf7d0c89126e926bc58bba1cb4be9c1e073e1394d4/detection
 
 51.89.217.80:7777
+
+# Reference: https://www.virustotal.com/gui/file/fa90294c2cd7c12d68524c55cc5ed0e3276d0a7bbce8fedec1e0cf679e521298/detection
+
+163.172.154.142:14433
