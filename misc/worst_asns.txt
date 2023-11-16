@@ -2716,6 +2716,9 @@
 
 # AS44477
 # Reference: https://cleantalk.org/ru/blacklists/as44477
+# Reference: https://twitter.com/Cyber0verload/status/1721983109728465200
+# Reference: https://twitter.com/drb_ra/status/1724345521114951760
+# Reference: https://twitter.com/drb_ra/status/1723077438337359957
 
 103.113.68.0/24,stark-industries
 103.113.69.0/24,stark-industries
@@ -4070,6 +4073,9 @@
 
 # AS207713
 # Reference: https://cleantalk.org/ru/blacklists/as207713
+# Reference: https://www.rnbo.gov.ua/files/2023_YEAR/CYBERCENTER/Gamaredon_activity.pdf
+# Reference: https://twitter.com/Cyber0verload/status/1650748278076588033
+# Reference: https://twitter.com/Cyber0verload/status/1715828521245774008
 
 141.98.171.0/24,gir-as
 141.98.233.0/24,gir-as
