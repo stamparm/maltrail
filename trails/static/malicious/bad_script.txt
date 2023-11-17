@@ -7339,6 +7339,14 @@ tpc.cdn-linkedin.info
 
 /jakart/bizposting.php
 
+# Reference: https://twitter.com/doc_guard/status/1725564939878756608
+# Reference: https://www.virustotal.com/gui/file/33d3af4cae982d5f0456f3b13d5dcf90506c0262e2900d4ef32a4e01a59628bc/detection
+# Reference: https://www.virustotal.com/gui/file/92343dd76241c60af94b8ccd1d841539dce75f61baf0c8f7eb655244e7c74f5d/detection
+# Reference: https://www.virustotal.com/gui/file/96c62314d9fe9d18efb86551ac411d17de0e9ecda19654355da9b5e80ef91cf0/detection
+
+/not/notoku.php
+/not/notoku.php?urlcode=
+
 # Generic
 
 /js/altmanluggage.js
