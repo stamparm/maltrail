@@ -1332,3 +1332,8 @@ szdeas.com
 visioquote.com
 d1hp6ufzqrj3xv.cloudfront.net
 /s/0.7.8/clarity.js
+
+# Reference: https://www.virustotal.com/gui/ip-address/64.176.196.183/community
+
+http://64.176.196.183
+64.176.196.183:7443
