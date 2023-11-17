@@ -2642,7 +2642,47 @@ webdataspace.com
 # Reference: https://www.virustotal.com/gui/file/80d2a6a9a5963c3efe42dc071eed5ca42e4140806980d08385dceda6b73b9810/detection
 
 caching.oysterfloats.com
+agaig.caching.oysterfloats.com
+atsl.caching.oysterfloats.com
+cor.caching.oysterfloats.com
+dedb.caching.oysterfloats.com
+ekjk.caching.oysterfloats.com
+evusn.caching.oysterfloats.com
+ezsq.caching.oysterfloats.com
+fkaul.caching.oysterfloats.com
+ggjaw.caching.oysterfloats.com
+ghfs.caching.oysterfloats.com
+gjtw.caching.oysterfloats.com
+gwqkn.caching.oysterfloats.com
+hds.caching.oysterfloats.com
+hja.caching.oysterfloats.com
+iek.caching.oysterfloats.com
+imruf.caching.oysterfloats.com
+jay.caching.oysterfloats.com
+jfv.caching.oysterfloats.com
+klkrv.caching.oysterfloats.com
+korf.caching.oysterfloats.com
+koy.caching.oysterfloats.com
+lld.caching.oysterfloats.com
+lqvc.caching.oysterfloats.com
 mksw.caching.oysterfloats.com
+nknc.caching.oysterfloats.com
+nvu.caching.oysterfloats.com
+ouk.caching.oysterfloats.com
+qdrxu.caching.oysterfloats.com
+qkatp.caching.oysterfloats.com
+rhvy.caching.oysterfloats.com
+slc.caching.oysterfloats.com
+summ.caching.oysterfloats.com
+sym.caching.oysterfloats.com
+tee.caching.oysterfloats.com
+tsqew.caching.oysterfloats.com
+ucbwp.caching.oysterfloats.com
+ujz.caching.oysterfloats.com
+wafh.caching.oysterfloats.com
+wriaq.caching.oysterfloats.com
+wykac.caching.oysterfloats.com
+ykwv.caching.oysterfloats.com
 
 # Generic
 
