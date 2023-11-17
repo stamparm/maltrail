@@ -465,3 +465,7 @@ medianewsonline.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-11-17-v10175/164
 
 mypressonline.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-16-v10467/1126
+
+infinityfreeapp.com
