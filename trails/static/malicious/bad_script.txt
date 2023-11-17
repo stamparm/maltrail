@@ -7333,6 +7333,12 @@ tpc.cdn-linkedin.info
 
 /30055d25.php
 
+# Reference: https://twitter.com/suyog41/status/1725500179829436655
+# Reference: https://www.virustotal.com/gui/ip-address/52.221.191.170/relations
+# Reference: https://www.virustotal.com/gui/file/dd2b2215977ca4822769a16487e4c22b331ac1fb09791cbde6ee98ae72408137/detection
+
+/jakart/bizposting.php
+
 # Generic
 
 /js/altmanluggage.js
