@@ -3545,3 +3545,7 @@ noip.world
 sharkstream.live
 sitodom.website
 zapto.live
+
+# Reference: https://www.virustotal.com/gui/domain/mykeenetic.ru/relations
+
+mykeenetic.ru
