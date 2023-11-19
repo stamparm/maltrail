@@ -1266,3 +1266,8 @@ mine.aeon-pool.com
 # Reference: https://www.virustotal.com/gui/file/fa90294c2cd7c12d68524c55cc5ed0e3276d0a7bbce8fedec1e0cf679e521298/detection
 
 163.172.154.142:14433
+
+# Reference: https://www.virustotal.com/gui/file/022be80de02b7b81cb7221fb7836924b3464d77096c5b3bc2a5aac56dc570d87/detection
+
+64.235.37.55:3333
+soloxmr2min.dyndns.org
