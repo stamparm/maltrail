@@ -448,7 +448,6 @@ xmr.bepooh.com
 
 51.81.245.40:5555
 us-west.minexmr.com
-webservicepag.webhop.net
 
 # Reference: https://thedfirreport.com/2020/11/12/cryptominers-exploiting-weblogic-rce-cve-2020-14882/
 # Reference: https://otx.alienvault.com/pulse/5fad78631749dbff71a31f55
