@@ -405,6 +405,7 @@ peterkinsadvil.ptr1.ru
 
 # Reference: https://threatfox.abuse.ch/browse/malware/win.deimos_c2/
 
+112.3.30.170:10250
 124.156.173.75:8443
 13.245.163.162:8443
 13.248.174.235:443
