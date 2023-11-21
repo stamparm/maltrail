@@ -5565,3 +5565,7 @@ ggm.pw
 # Reference: https://www.virustotal.com/gui/file/ce5d3ec4169ff72ee9f164880f8c916ec93c8e409812b464744b91803eceec2c/detection
 
 dahhh.cn
+
+# Reference: https://www.virustotal.com/gui/domain/stephan.nrw/relations
+
+stephan.nrw
