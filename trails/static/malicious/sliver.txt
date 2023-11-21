@@ -2350,3 +2350,12 @@ http://43.133.231.48
 s.u00.ca
 baakbfe6kaj8.s.u00.ca
 baakbmyvkaba.s.u00.ca
+
+# Reference: https://twitter.com/malwrhunterteam/status/1726968159603917089
+# Reference: https://www.virustotal.com/gui/file/cd636847c8432a8f33edeabae98cd154dfb6619783756e18909e139c6b1d510c/detection
+# Reference: https://www.virustotal.com/gui/file/a32e26a761bf5867c1fbc3e66b0f79df2c279d3c9fea0d4efbba89a7e86e32b3/detection
+# Reference: https://www.virustotal.com/gui/file/8aaa281951bc6f4c8cf9f951835cc188ad6d83aeaadcf3220959b57d39373d4f/detection
+
+onlinenoticeservice.online
+sliver.onlinenoticeservice.online
+sliver4.onlinenoticeservice.online
