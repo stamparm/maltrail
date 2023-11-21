@@ -73,3 +73,8 @@ ilokod.com
 # Reference: https://www.virustotal.com/gui/file/95dc40efbe0248508644a24d661f815a83d95616dc78fbfeb389c9f43b36743d/detection
 
 louisianaworkingdogs.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-20-v10469/1139
+
+forumsecrets.com
+gpksanfrancisco.com
