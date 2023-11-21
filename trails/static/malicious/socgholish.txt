@@ -2684,6 +2684,22 @@ wriaq.caching.oysterfloats.com
 wykac.caching.oysterfloats.com
 ykwv.caching.oysterfloats.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/66.135.17.87/relations
+
+novelty.akibacreative.com
+bdrd.novelty.akibacreative.com
+derp.novelty.akibacreative.com
+hjgs.novelty.akibacreative.com
+kolu.novelty.akibacreative.com
+mdt.novelty.akibacreative.com
+qrr.novelty.akibacreative.com
+vbt.novelty.akibacreative.com
+vtpuv.novelty.akibacreative.com
+war.novelty.akibacreative.com
+wed.novelty.akibacreative.com
+xgw.novelty.akibacreative.com
+zcff.novelty.akibacreative.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
