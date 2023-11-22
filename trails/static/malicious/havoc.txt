@@ -1256,3 +1256,16 @@ toroz.nl
 # Reference: https://www.virustotal.com/gui/file/fa02f2c47b8a22acff47d86da8e5b97f2453aee4606f585b5d979429eb85a0d3/detection
 
 werbeagenturbraunschweig.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-11-22)
+
+172.208.90.130:443
+172.208.97.188:443
+185.254.238.160:443
+blha.tail9ed4d.ts.net
+cloudflare-tls.workers.dev
+ctvnews.eastus.cloudapp.azure.com
+launchpad.pusd.fi
+login.pusd.fi
+mstraffic.cloudflare-tls.workers.dev
+pusd.fi
