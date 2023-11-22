@@ -3668,7 +3668,6 @@
 162.243.152.46 # stretchoid.com
 162.243.152.5 # stretchoid.com
 162.243.152.6 # stretchoid.com
-185.199.109.133 # stretchoid.com
 192.241.192.13 # stretchoid.com
 192.241.192.14 # stretchoid.com
 192.241.192.20 # stretchoid.com
