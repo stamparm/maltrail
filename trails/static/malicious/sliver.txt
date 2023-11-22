@@ -2365,3 +2365,11 @@ baakbmyvkaba.s.u00.ca
 onlinenoticeservice.online
 sliver.onlinenoticeservice.online
 sliver4.onlinenoticeservice.online
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.sliver/ (# 2023-11-22)
+
+147.78.47.241:31337
+172.104.212.245:31337
+18.197.53.191:2376
+3.77.56.253:2376
+85.209.176.146:31337
