@@ -1349,3 +1349,14 @@ http://64.176.196.183
 # Reference: https://www.virustotal.com/gui/ip-address/87.239.108.174/community
 
 87.239.108.174:7443
+
+# Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-11-22)
+
+20.61.184.114:443
+34.67.177.99:443
+34.69.229.157:443
+34.70.168.68:443
+51.124.39.181:443
+74.234.222.210:443
+74.234.222.214:443
+pwndrop.aptiv-hr.com
