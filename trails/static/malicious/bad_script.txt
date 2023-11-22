@@ -7348,6 +7348,11 @@ tpc.cdn-linkedin.info
 /not/notoku.php
 /not/notoku.php?urlcode=
 
+# Reference: https://twitter.com/MaxRogers5/status/1727115516509126824
+
+/F8PtZ87fE8dJWqe.hta
+/QfjzVlfbQT0H.hta
+
 # Generic
 
 /js/altmanluggage.js
