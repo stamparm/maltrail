@@ -2098,3 +2098,14 @@ sweetsbonus.life
 topgame-4adult.life
 yourwin.life
 tracker-cloud.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1727470416388874683
+
+gcdnanalytics.com
+metricaga.com
+metricastats.com
+quickcontentnetwork.com
+cdn.metricastats.com
+fast.quickcontentnetwork.com
+gll.metricaga.com
+syndication.gcdnanalytics.com
