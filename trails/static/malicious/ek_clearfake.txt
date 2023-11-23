@@ -196,6 +196,13 @@ u513fdanj.online
 u513fdanj.site
 u513fdanj.website
 
+# Reference: https://threatfox.abuse.ch/browse/tag/ClearFake/ (# 2023-11-23)
+
+dfjoiners.com
+howmuchtimeuneed.online
+konstanzkom.com
+theoptimistfirst.site
+
 # Generic
 
 /a3A7qLVn/
