@@ -71,6 +71,10 @@ except:
 
 _fail2ban_cache = None
 _fail2ban_key = None
+_outbl_cache = None
+_outbl_key = None
+_inbl_cache = None
+_inbl_key = None
 
 def start_httpd(address=None, port=None, join=False, pem=None):
     """
@@ -491,6 +495,114 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             else:
                 content = "configuration option FAIL2BAN_REGEX not set"
 
+            return content
+
+        def _out_blacklist(self, params):
+            global _outbl_cache
+            global _outbl_key
+
+            self.send_response(_http_client.OK)
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
+
+            content = ""
+            key = int(time.time()) >> 3
+
+            if config.OUT_BLACKLIST:
+                try:
+                    blacklist = []
+                    for bl in config.OUT_BLACKLIST:
+                        rules=[]
+                        for e in bl.split(' and '):
+                            f,n,p = e.strip().split(maxsplit=2)
+                            regexp = [
+                                ['','','','src_ip','src_port','dst_ip','dst_port','protocol','type','trail','filter'].index(f),
+                                (n[0] == '!'),
+                                re.compile(p, re.I)
+                            ]
+                            rules.append(regexp)
+                        blacklist.append(rules)
+                except e:
+                    content = "invalid rule in option OUT_BLACKLIST"
+                else:
+                    if key == _outbl_key:
+                        content = _outbl_cache
+                    else:
+                        result = set()
+                        _ = os.path.join(config.LOG_DIR, "%s.log" % datetime.datetime.now().strftime("%Y-%m-%d"))
+                        if os.path.isfile(_):
+                            for line in open(_, "r"):
+                                line = line.split(maxsplit=10)
+                                failed = False
+                                for bl in blacklist:
+                                    for f,n,r in bl:
+                                        if (r.search(line[f]) is not None) == n :
+                                            failed = True
+                                            break
+                                    if not failed:
+                                        result.add(line[3])
+                                        break
+
+                        content = "\n".join(result)
+
+                        _outbl_cache = content
+                        _outbl_key = key
+            else:
+                content = "configuration option OUT_BLACKLIST not set"
+            return content
+
+        def _in_blacklist(self, params):
+            global _inbl_cache
+            global _inbl_key
+
+            self.send_response(_http_client.OK)
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
+
+            content = ""
+            key = int(time.time()) >> 3
+
+            if config.IN_BLACKLIST:
+                try:
+                    blacklist = []
+                    for bl in config.IN_BLACKLIST:
+                        rules=[]
+                        for e in bl.split(' and '):
+                            f,n,p = e.strip().split(maxsplit=2)
+                            regexp = [
+                                ['','','','src_ip','src_port','dst_ip','dst_port','protocol','type','trail','filter'].index(f),
+                                (n[0] == '!'),
+                                re.compile(p, re.I)
+                            ]
+                            rules.append(regexp)
+                        blacklist.append(rules)
+                except e:
+                    content = "invalid rule in option IN_BLACKLIST"
+                else:
+                    if key == _inbl_key:
+                        content = _inbl_cache
+                    else:
+                        result = set()
+                        _ = os.path.join(config.LOG_DIR, "%s.log" % datetime.datetime.now().strftime("%Y-%m-%d"))
+                        if os.path.isfile(_):
+                            for line in open(_, "r"):
+                                line = line.split(maxsplit=10)
+                                failed = False
+                                for bl in blacklist:
+                                    for f,n,r in bl:
+                                        if (r.search(line[f]) is not None) == n :
+                                            failed = True
+                                            break
+                                    if not failed:
+                                        result.add(line[3])
+                                        break
+
+                        content = "\n".join(result)
+
+                        _inbl_cache = content
+                        _inbl_key = key
+            else:
+                content = "configuration option IN_BLACKLIST not set"
             return content
 
         def _events(self, params):
