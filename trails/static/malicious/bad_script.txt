@@ -7353,6 +7353,11 @@ tpc.cdn-linkedin.info
 /F8PtZ87fE8dJWqe.hta
 /QfjzVlfbQT0H.hta
 
+# Reference: https://twitter.com/1ZRR4H/status/1727498375946289495
+
+/bot1.py
+/mahoa.py
+
 # Generic
 
 /js/altmanluggage.js
