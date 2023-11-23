@@ -1262,6 +1262,8 @@ werbeagenturbraunschweig.com
 172.208.90.130:443
 172.208.97.188:443
 185.254.238.160:443
+209.250.248.246:443
+45.78.58.175:6379
 blha.tail9ed4d.ts.net
 cloudflare-tls.workers.dev
 ctvnews.eastus.cloudapp.azure.com
