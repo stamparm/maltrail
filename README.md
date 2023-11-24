@@ -251,22 +251,25 @@ for ip in $(curl http://127.0.0.1:8338/fail2ban 2>/dev/null | grep -P '^[0-9.]+$
 iptables -I INPUT -m set --match-set maltrail src -j DROP
 ```
 
-Options `OUT_BLACKLIST` and `IN_BLACKLIST` are slightly different than `FAIL2BAN_REGEX`. They allow to build regular expressions to apply on one field. For each rule, the syntax is : `<field> <control> <regexp>` where :
+Option `BLACKLIST` allow to build regular expressions to apply on one field. For each rule, the syntax is : `<field> <control> <regexp>` where :
 * `field` indicates the field to compage, it can be: `src_ip`,`src_port`,`dst_ip`,`dst_port`,`protocol`,`type`,`trail` or `filter`.
 * `control` can be either `~` for *matches* or `!~` for *doesn't match*
 * `regexp` is the regular expression to apply to the field.
-You can chain rules with the `and` keyword. Be informed that the `or` keyword is not supported (just add a  line for that). For example, the following will build an out blacklist for all traffic from another source than `192.168.0.0/16` to destination port `SSH` or matching the filters `scan` or `known attacker`
+Chain another rule with the `and` keyword (the `or` keyword is not supported, just add a line for this).
 
+You can use the keyword `BLACKLIST` alone or add a name : `BLACKLIST_NAME`. In the latter case, the url will be : `/blacklist/name`
+
+For example, the following will build an out blacklist for all traffic from another source than `192.168.0.0/16` to destination port `SSH` or matching the filters `scan` or `known attacker`
 ```
-OUT_BLACKLIST
+BLACKLIST_OUT
     src_ip !~ ^192.168. and dst_port ~ ^22$
     src_ip !~ ^192.168. and filter ~ scan
     src_ip !~ ^192.168. and filter ~ known attacker
 
-IN_BLACKLIST
+BLACKLIST_IN
     src_ip ~ ^192.168. and filter ~ malware
 ```
-The way to build ipset blacklist is the same (see above) excepted that URLs are `/in_blacklist` and `/out_blacklist`. The idea behing in and out blacklist is to prevent attackes comming from *outside* and isolate attacks comming from *inside* (like a machine infected by malwaree).
+The way to build ipset blacklist is the same (see above) excepted that URLs will be `/blacklist/in` and `/blacklist/out` in our example.
 
 Same as for **Sensor**, when running the **Server** (e.g. `python server.py`) for the first time and/or after a longer period of non-running, if option `USE_SERVER_UPDATE_TRAILS` is set to `true`, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). Its basic function is to store the log entries inside the logging directory (i.e. option `LOG_DIR` inside the `maltrail.conf` file's section `[All]`) and provide the web reporting interface for presenting those same entries to the end-user (Note: there is no need install the 3rd party web server packages like Apache):
 
