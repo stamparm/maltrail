@@ -538,8 +538,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         if os.path.isfile(_):
                             for line in open(_, "r"):
                                 line = line.split(maxsplit=10)
-                                failed = False
                                 for bl in blacklist:
+                                    failed = False
                                     for f,n,r in bl:
                                         if (r.search(line[f]) is not None) == n :
                                             failed = True
