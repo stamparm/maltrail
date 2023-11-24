@@ -74,6 +74,7 @@ _fail2ban_key = None
 _blacklist_cache = None
 _blacklist_key = None
 
+
 def start_httpd(address=None, port=None, join=False, pem=None):
     """
     Starts HTTP server
@@ -145,7 +146,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             path = path.strip('/')
             extension = os.path.splitext(path)[-1].lower()
 
-            splitpath = path.split('/', maxsplit=1)
+            splitpath = path.split('/', 1)
             if hasattr(self, "_%s" % splitpath[0]):
                 if len(splitpath) > 1:
                     params["subpath"] = splitpath[1]
@@ -508,27 +509,39 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             bl_name = ""
             if 'subpath' in params:
-                bl_name = f"_{params['subpath'].split('/')[0].upper()}"
+                bl_name = "_%s" % params['subpath'].split('/')[0].upper()
 
             content = ""
             key = int(time.time()) >> 3
 
-            if f"BLACKLIST{bl_name}" in config:
+            if "BLACKLIST%s" % bl_name in config:
                 try:
                     blacklist = []
-                    for bl in config[f"BLACKLIST{bl_name}"]:
-                        rules=[]
+                    for bl in config["BLACKLIST%s" % bl_name]:
+                        rules = []
                         for e in bl.split(' and '):
-                            f,n,p = e.strip().split(maxsplit=2)
+                            f, n, p = e.strip().split(' ', 2)
                             regexp = [
-                                ['','','','src_ip','src_port','dst_ip','dst_port','protocol','type','trail','filter'].index(f),
+                                [
+                                    '',
+                                    '',
+                                    '',
+                                    'src_ip',
+                                    'src_port',
+                                    'dst_ip',
+                                    'dst_port',
+                                    'protocol',
+                                    'type',
+                                    'trail',
+                                    'filter'
+                                ].index(f),
                                 (n[0] == '!'),
                                 re.compile(p, re.I)
                             ]
                             rules.append(regexp)
                         blacklist.append(rules)
                 except e:
-                    content = f"invalid rule in option BLACKLIST{bl_name}"
+                    content = "invalid rule in option BLACKLIST%s" % bl_name
                 else:
                     if key == _blacklist_key:
                         content = _blacklist_cache
@@ -537,11 +550,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         _ = os.path.join(config.LOG_DIR, "%s.log" % datetime.datetime.now().strftime("%Y-%m-%d"))
                         if os.path.isfile(_):
                             for line in open(_, "r"):
-                                line = line.split(maxsplit=10)
+                                line = line.split(' ', 10)
                                 for bl in blacklist:
                                     failed = False
-                                    for f,n,r in bl:
-                                        if (r.search(line[f]) is not None) == n :
+                                    for f, n, r in bl:
+                                        if not (
+                                            (r.search(line[f]) is not None) ^ n
+                                                ):
                                             failed = True
                                             break
                                     if not failed:
@@ -553,7 +568,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         _blacklist_cache = content
                         _blacklist_key = key
             else:
-                content = f"configuration option BLACKLIST{bl_name} not set"
+                content = "configuration option BLACKLIST%s not set" % bl_name
             return content
 
         def _events(self, params):
