@@ -195,7 +195,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 else:
                     self.send_response(_http_client.NOT_FOUND)
                     self.send_header(HTTP_HEADER.CONNECTION, "close")
-                    content = b'<!DOCTYPE html><html lang="en"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL %s was not found on this server.</p></body></html>' % self.path.split('?')[0]
+                    content = '<!DOCTYPE html><html lang="en"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL %s was not found on this server.</p></body></html>' % self.path.split('?')[0]
 
             if content is not None:
                 if isinstance(content, six.text_type):
