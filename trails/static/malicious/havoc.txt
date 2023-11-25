@@ -1271,3 +1271,14 @@ launchpad.pusd.fi
 login.pusd.fi
 mstraffic.cloudflare-tls.workers.dev
 pusd.fi
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-11-25)
+
+104.237.11.5:443
+172.105.66.217:23966
+37.187.176.161:443
+80.78.22.93:443
+85.209.176.146:8088
+88.99.150.167:8443
+sd-50950.dedibox.fr
+vpn-eu.dsikw.com
