@@ -7358,6 +7358,11 @@ tpc.cdn-linkedin.info
 /bot1.py
 /mahoa.py
 
+# Reference: https://twitter.com/malwrhunterteam/status/1728175485853872427
+# Reference: https://www.virustotal.com/gui/file/72829a5407ecd5607613f6351019302ba8c55317f4f3dff1f8280f7c3e7b4897/detection
+
+/a1111647095336d8170db2cb1d9870f9.php
+
 # Generic
 
 /js/altmanluggage.js
