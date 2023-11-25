@@ -1274,6 +1274,7 @@ pusd.fi
 
 # Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-11-25)
 
+http://172.208.97.188
 104.237.11.5:443
 172.105.66.217:23966
 37.187.176.161:443
