@@ -7363,6 +7363,12 @@ tpc.cdn-linkedin.info
 
 /a1111647095336d8170db2cb1d9870f9.php
 
+# Reference: https://www.trendmicro.com/en_us/research/23/k/attack-signals-possible-return-of-genesis-market.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/23/k/attack-signals-possible-return-of-genesis-market/iocs-attack-signals-possible-return-of-genesis-market.txt
+# Reference: https://otx.alienvault.com/pulse/65609160cddfd2987cac2ef3
+
+/obfs3ip2.bs64
+
 # Generic
 
 /js/altmanluggage.js
