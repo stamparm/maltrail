@@ -754,6 +754,10 @@ qdttcm.com
 yihuan.cc
 c2.yihuan.cc
 
+# Reference: https://twitter.com/banthisguy9349/status/1728759908798238789
+
+4brjogos.com
+
 # Generic
 
 /supershell/login
