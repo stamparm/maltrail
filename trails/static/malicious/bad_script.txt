@@ -7369,6 +7369,10 @@ tpc.cdn-linkedin.info
 
 /obfs3ip2.bs64
 
+# Reference: https://twitter.com/1ZRR4H/status/1729196411843985530
+
+/passportscan.hta
+
 # Generic
 
 /js/altmanluggage.js
