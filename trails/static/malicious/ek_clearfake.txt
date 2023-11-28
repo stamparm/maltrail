@@ -210,6 +210,10 @@ excellentpatterns.com
 /hyk7789hgd/_cf.php
 /lander/hyk7789hgd/_cf.php
 
+# Reference: https://twitter.com/threatcat_ch/status/1729430998394216450
+
+alicortech.com
+
 # Generic
 
 /a3A7qLVn/
