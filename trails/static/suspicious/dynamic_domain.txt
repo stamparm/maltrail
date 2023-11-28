@@ -3549,3 +3549,7 @@ zapto.live
 # Reference: https://www.virustotal.com/gui/domain/mykeenetic.ru/relations
 
 mykeenetic.ru
+
+# Reference: https://www.virustotal.com/gui/domain/coolpage.biz/relations
+
+coolpage.biz
