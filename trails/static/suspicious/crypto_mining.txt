@@ -1271,3 +1271,10 @@ mine.aeon-pool.com
 
 64.235.37.55:3333
 soloxmr2min.dyndns.org
+
+# Reference: https://www.fortinet.com/blog/threat-research/gotitan-botnet-exploitation-on-apache-activemq
+# Reference: https://www.virustotal.com/gui/file/316ca1b380e37c0d785eeabf5a1cb5fe184953076761b5ce99ace39992d95d9a/detection
+
+207.38.87.6:3333
+207.38.87.6:8444
+80.211.206.105:8444
