@@ -1278,3 +1278,23 @@ soloxmr2min.dyndns.org
 207.38.87.6:3333
 207.38.87.6:8444
 80.211.206.105:8444
+
+# Reference: https://www.virustotal.com/gui/file/ff0179442402fa306c85ba83a87df2cc46d13012a1e2819e73a6b3586c5c8dc3/detection
+
+51.68.190.80:10300
+
+# Reference: https://www.virustotal.com/gui/file/9745eaca508255646d2039383150952955f49196767a160968fcf83130ad9a90/detection
+
+51.255.34.118:10300
+
+# Reference: https://www.virustotal.com/gui/file/93988c13f8e6dc3cc6d9256992d417057e164785c1ad05f6984fc769af5b597a/detection
+
+51.15.58.224:10300
+
+# Reference: https://www.virustotal.com/gui/file/7be62b138938d130c33f7702cc73167932b2ecd577dd7ce3505842e8bb8def35/detection
+
+212.47.253.124:10300
+
+# Reference: https://www.virustotal.com/gui/file/5901691afd331944b38939588b1ac7480c1ea76ba32c703bb61af1be4c72bb50/detection
+
+51.68.143.81:10300
