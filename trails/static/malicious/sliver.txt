@@ -2388,3 +2388,10 @@ sliver4.onlinenoticeservice.online
 52.7.198.19:8083
 85.209.176.146:31337
 91.113.48.177:2376
+
+# Reference: https://www.fortinet.com/blog/threat-research/gotitan-botnet-exploitation-on-apache-activemq
+# Reference: https://www.virustotal.com/gui/file/bfce7938591dd9fa3e1368d7eb86fc7f11e935349437fc11de4f124bbbc16dee/detection
+
+http://91.92.240.41
+91.92.240.41:443
+91.92.240.41:8080
