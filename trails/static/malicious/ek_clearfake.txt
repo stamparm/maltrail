@@ -204,8 +204,10 @@ konstanzkom.com
 theoptimistfirst.site
 
 # Reference: https://twitter.com/crep1x/status/1727970391417635312
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-27-v10473/1166
 
 excellentpatterns.com
+jagernaut.com
 /hyk7789hgd/
 /hyk7789hgd/_cf.php
 /lander/hyk7789hgd/_cf.php
