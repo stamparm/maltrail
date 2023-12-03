@@ -7332,7 +7332,13 @@ tpc.cdn-linkedin.info
 
 # Reference: https://threatfox.abuse.ch/ioc/1201607/
 
+/06642940.php
 /30055d25.php
+/720420a0.php
+/917abd55.php
+/945f1075.php
+/b1e57687.php
+/e78a6263.php
 
 # Reference: https://twitter.com/suyog41/status/1725500179829436655
 # Reference: https://www.virustotal.com/gui/ip-address/52.221.191.170/relations
