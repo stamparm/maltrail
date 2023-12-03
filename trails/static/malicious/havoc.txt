@@ -1285,3 +1285,7 @@ http://172.208.97.188
 pwshrepo.com
 sd-50950.dedibox.fr
 vpn-eu.dsikw.com
+
+# Reference: https://twitter.com/banthisguy9349/status/1731290942785601583
+
+46.8.158.224:8000
