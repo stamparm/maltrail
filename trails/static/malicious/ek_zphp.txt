@@ -78,3 +78,8 @@ louisianaworkingdogs.com
 
 forumsecrets.com
 gpksanfrancisco.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-28-v10474/1167
+
+informativosatelital.com
+nelubelei.com
