@@ -4446,3 +4446,7 @@ http://174.138.126.39
 # Reference: https://twitter.com/drb_ra/status/1731231117427065258
 
 91.92.241.99:8443
+
+# Reference: https://twitter.com/drb_ra/status/1731412012431823015
+
+146.190.147.145:443
