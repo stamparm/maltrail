@@ -30,3 +30,8 @@ server-nixde3ff2ff-relay.screenconnect.com
 # Reference: https://twitter.com/0xToxin/status/1698972467555889532
 
 instance-m73xwc-relay.screenconnect.com
+
+# Reference: https://www.virustotal.com/gui/file/0477f1ed0866b1e22853fcd12d47318ced4f0406026252e9e0975602c2cd3399/detection
+
+192.3.176.135:443
+192.3.176.135:8041
