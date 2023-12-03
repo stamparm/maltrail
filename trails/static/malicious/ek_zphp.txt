@@ -83,3 +83,7 @@ gpksanfrancisco.com
 
 informativosatelital.com
 nelubelei.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-30-v10476/1172
+
+paradoxmarine.com
