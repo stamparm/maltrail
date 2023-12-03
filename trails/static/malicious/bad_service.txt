@@ -1822,3 +1822,14 @@ cvvhub.ws
 
 cvv.sale
 cvv.zone
+
+# Reference: https://twitter.com/banthisguy9349/status/1729542452518723838
+# Reference: https://www.virustotal.com/gui/ip-address/80.66.64.135/relations
+
+cvv-shop.ru
+freshcvv.ru
+octavian.su
+privatehub.at
+privatehub.top
+t12shopp.su
+track2cvv.su
