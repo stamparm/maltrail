@@ -1395,3 +1395,8 @@ http://64.176.164.107
 5.78.40.129:7443
 archiefilmco.com
 production.knime.youknights.nl
+
+# Reference: https://www.virustotal.com/gui/file/37ffaccba0469d9125dd072241ec7d99652e2e46897f7c6d3db98a19d92b20e6/detection
+# Reference: https://www.virustotal.com/gui/file/5642b834e99ee75d5a43418947a37a988b4226ed4544f6108e51258e078c1663/detection
+
+http://139.59.72.48
