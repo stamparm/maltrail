@@ -422,3 +422,7 @@ peterkinsadvil.ptr1.ru
 128.140.41.99:443
 8.218.170.109:443
 deimosc2.com
+
+# Reference: https://twitter.com/drb_ra/status/1731565672084255198
+
+49.13.57.52:2053
