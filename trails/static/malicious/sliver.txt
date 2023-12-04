@@ -2423,3 +2423,7 @@ http://91.92.240.41
 88.117.27.108:2376
 91.92.246.29:53535
 91.92.246.29:8443
+
+# Reference: https://www.virustotal.com/gui/file/1aecadf489a6dd7a3a6e5dfda9425673a9d04d38a5cb6b0b8f961536c11237ed/detection
+
+94.198.53.143:8888
