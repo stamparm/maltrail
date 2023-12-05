@@ -1338,3 +1338,12 @@ kztime.ddns.net
 lido-fi.dev
 nginx-typhoon.westeurope.cloudapp.azure.com
 wiipo.com.ht-hldrotermica.com.br
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-12-05)
+
+http://141.94.69.198
+http://35.92.41.20
+158.160.84.31:443
+162.216.241.236:443
+43.163.210.218:443
+u1.cc0.ir
