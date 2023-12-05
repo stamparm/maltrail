@@ -1548,7 +1548,6 @@ http://206.189.204.236
 
 # Reference: https://twitter.com/drb_ra/status/1696958416516759956
 
-50.173.136.70:445
 206.189.204.236:443
 
 # Reference: https://threatfox.abuse.ch/browse/malware/py.responder/ (# 2023-09-01)
