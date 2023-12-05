@@ -8071,7 +8071,6 @@
 178.79.181.234 # binaryedge.ninja
 178.79.185.160 # binaryedge.ninja
 178.79.185.221 # binaryedge.ninja
-185.199.109.133 # binaryedge.ninja
 188.166.124.78 # binaryedge.ninja
 188.166.150.184 # binaryedge.ninja
 188.166.154.115 # binaryedge.ninja
