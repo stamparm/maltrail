@@ -87,3 +87,8 @@ nelubelei.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-30-v10476/1172
 
 paradoxmarine.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-12-07-v10481/1190
+
+jokergame1.com
+perfilcovid.com
