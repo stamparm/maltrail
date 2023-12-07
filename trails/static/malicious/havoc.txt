@@ -1342,11 +1342,16 @@ wiipo.com.ht-hldrotermica.com.br
 # Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-12-05)
 
 http://141.94.69.198
+http://207.180.215.36
 http://35.92.41.20
 158.160.84.31:443
+159.89.4.80:443
 162.216.241.236:443
+174.138.7.112:40065
 212.51.144.128:443
+3.110.107.80:443
 43.163.210.218:443
 45.9.62.223:443
 79.124.58.134:443
 u1.cc0.ir
+worker-jolly-unit-e3af.jacobnero11.workers.dev
