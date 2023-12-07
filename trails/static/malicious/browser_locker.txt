@@ -21638,8 +21638,10 @@ m13ya72ud343p.azureedge.net
 fruitsofhealth.shop
 
 # Reference: https://twitter.com/malwrhunterteam/status/1726525829189099969
+# Reference: https://twitter.com/malwrhunterteam/status/1732424582806843423
 
 holycross.azurewebsites.net
+malfunctionerror.azurewebsites.net
 supportlove.azurewebsites.net
 zealous-tree-00ef28f10.4.azurestaticapps.net
 /Win08ShDMeEr0887/index.html
