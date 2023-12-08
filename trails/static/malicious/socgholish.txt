@@ -2700,6 +2700,23 @@ wed.novelty.akibacreative.com
 xgw.novelty.akibacreative.com
 zcff.novelty.akibacreative.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/178.236.247.167/relations
+
+cloudid.coffeeonboard.com
+ado.cloudid.coffeeonboard.com
+buxvt.cloudid.coffeeonboard.com
+dbw.cloudid.coffeeonboard.com
+edvcg.cloudid.coffeeonboard.com
+ftnm.cloudid.coffeeonboard.com
+inhs.cloudid.coffeeonboard.com
+jdzrn.cloudid.coffeeonboard.com
+jtafp.cloudid.coffeeonboard.com
+swtos.cloudid.coffeeonboard.com
+thg.cloudid.coffeeonboard.com
+txbi.cloudid.coffeeonboard.com
+unrld.cloudid.coffeeonboard.com
+vlp.cloudid.coffeeonboard.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
