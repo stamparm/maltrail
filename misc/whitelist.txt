@@ -3976,5 +3976,10 @@ redalert.nshc.net
 
 netboot.xyz
 
+# Reference: https://github.com/stamparm/maltrail/commit/80add532b2148f124ffa76794314d7581ad4097a
+
+sqlite.org
+dynupdate.noip.com
+
 #github ip
 185.199.109.133
