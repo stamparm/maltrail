@@ -1833,3 +1833,22 @@ privatehub.at
 privatehub.top
 t12shopp.su
 track2cvv.su
+
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=95.214.26.23
+
+diamonddumps.cc
+easydeals.cc
+fe-shop.cc
+ferum-shop.cc
+ferumshop.cc
+greatdumps.cc
+joker-stash.cc
+justvalid.cc
+serviciodecorreo.cc
+uniccshops.cc
+webdiamonddumps.cc
+webeasydeals.cc
+webfe-shop.cc
+webferum-shop.cc
+webgreatdumps.cc
+webuniccshops.cc
