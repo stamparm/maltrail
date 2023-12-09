@@ -7400,6 +7400,10 @@ tpc.cdn-linkedin.info
 /jeyhivxb.php
 /lovtqtyl.php
 
+# Reference: https://www.virustotal.com/gui/file/0c3affef7b7928a44cf5050ed0d38724bf182993db63f786eb926007bd135323/detection
+
+/a051212x/16/load.php
+
 # Generic
 
 /js/altmanluggage.js
