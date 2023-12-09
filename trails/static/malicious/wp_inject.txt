@@ -2109,3 +2109,13 @@ cdn.metricastats.com
 fast.quickcontentnetwork.com
 gll.metricaga.com
 syndication.gcdnanalytics.com
+
+# Reference: https://www.wordfence.com/blog/2023/12/psa-fake-cve-2023-45124-phishing-scam-tricks-users-into-installing-backdoor-plugin/
+# Reference: https://otx.alienvault.com/pulse/656f2ee901a8cdd523b08cb8
+# Reference: https://www.virustotal.com/gui/ip-address/193.32.162.240/relations
+
+en-gb-wordpress.org
+secureplatform.org
+securityplugins.org
+wordpress.secureplatform.org
+wordpress.securityplugins.org
