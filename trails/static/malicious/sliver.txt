@@ -2444,3 +2444,10 @@ http://91.92.240.41
 # Reference: https://www.virustotal.com/gui/file/1aecadf489a6dd7a3a6e5dfda9425673a9d04d38a5cb6b0b8f961536c11237ed/detection
 
 94.198.53.143:8888
+
+# Reference: https://twitter.com/malwrhunterteam/status/1734284423774810497
+# Reference: https://www.virustotal.com/gui/file/3bc62b5745626a67b90378b243db0a056810bc2e1b7dcab6ca42eed9ada433a5/detection
+
+35.204.187.119:8080
+hacktics.net
+agent.hacktics.net
