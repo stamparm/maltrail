@@ -2717,6 +2717,17 @@ txbi.cloudid.coffeeonboard.com
 unrld.cloudid.coffeeonboard.com
 vlp.cloudid.coffeeonboard.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/166.1.173.27/relations
+# Reference: https://www.virustotal.com/gui/file/f4fd6bcb39e216fd41239d2772fec9723633ee751bf98f1b5092ed2c468722e2/detection
+# Reference: https://www.virustotal.com/gui/file/962b861f7ff40c9137997aaa0fb7b826a63c4bf2142ba1ce972878007bcdb9c9/detection
+# Reference: https://www.virustotal.com/gui/file/41843deee50290bbaec9fbac1e06315267abab4920ef73c5bf084a974233da8b/detection
+
+settings.oysterfloats.org
+atxk.settings.oysterfloats.org
+dbfyq.settings.oysterfloats.org
+josi.settings.oysterfloats.org
+wau.settings.oysterfloats.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
