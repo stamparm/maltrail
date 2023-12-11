@@ -465,6 +465,14 @@ se-adhiere-a-la-nueva-legislacion.cyou
 /webpanel/gate.php
 /webpanel/keylogs.php
 
+# Reference: https://twitter.com/banthisguy9349/status/1734195831438278993
+
+f0867029.xsph.ru
+
+# Reference: https://twitter.com/banthisguy9349/status/1734195431511392303
+
+f0880739.xsph.ru
+
 # Generic
 
 /admin_123/auth.php
