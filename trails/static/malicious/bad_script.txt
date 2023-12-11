@@ -7405,6 +7405,12 @@ tpc.cdn-linkedin.info
 
 /a051212x/16/load.php
 
+# Reference: https://twitter.com/banthisguy9349/status/1734301694719050200
+
+/coldfusion_rce.py
+/evilrmiservernew.class
+/springboot-jdbc-deserialization-rce.py
+
 # Generic
 
 /js/altmanluggage.js
