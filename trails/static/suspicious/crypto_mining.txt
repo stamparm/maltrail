@@ -1303,3 +1303,8 @@ soloxmr2min.dyndns.org
 
 51.15.193.130:10343
 51.15.58.224:10343
+
+# Reference: https://www.virustotal.com/gui/file/7410bec5806e8ad2b0e3b3d56bb40f276b7e75ec2235ecc2e5e283ba3541733b/detection
+
+163.172.154.142:10343
+51.68.143.81:10343
