@@ -2415,8 +2415,8 @@ MrBidenNeverKnow
 # Reference: https://www.virustotal.com/gui/file/9739730a204d25c60edbbbbcafbc1f7661b3f9ecac98601498dc843cf8b40e41/detection
 # Reference: https://www.virustotal.com/gui/file/ebaf7e53a6dc0b054c6cefde7a664af90d2e71e53bdb87c7cedcd662890943c9/detection
 
-85.215.218.19:45968
-newupdatechek.servehttp.com
+Nothing
+qiQqi
 
 # Misc
 
