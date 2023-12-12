@@ -6396,6 +6396,7 @@ wildhottiegirls.com
 # Reference: https://twitter.com/wwp96/status/1628273497708326912
 # Reference: https://blog.sekoia.io/stealc-a-copycat-of-vidar-and-raccoon-infostealers-gaining-in-popularity-part-1/
 
+/0d8af8f06ba4b880.php
 /273d9c8034a95cb4.php
 /413a030d85acf448.php
 /6842f013779f3d08.php
@@ -6407,6 +6408,7 @@ wildhottiegirls.com
 /bef7fb05c9ef6540.php
 /c1377b94d43eacea.php
 /d8ab11e9f7bc9c13.php
+/f0b7e3704c0051f9.php
 /f9f76ae4bb7811d9.php
 
 # Reference: https://twitter.com/malwrhunterteam/status/1628482090114203649
