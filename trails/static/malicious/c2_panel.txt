@@ -473,6 +473,11 @@ f0867029.xsph.ru
 
 f0880739.xsph.ru
 
+# Reference: https://github.com/Gi7w0rm/MalwareConfigLists/blob/main/Smishing/octopanel.txt
+
+octopanel.xyz
+api.octopanel.xyz
+
 # Generic
 
 /admin_123/auth.php
