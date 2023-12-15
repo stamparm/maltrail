@@ -231,6 +231,10 @@ kronosmagazine.com
 marybskitchen.com
 /feqsdqdsq/_cf.php
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-12-14-v10486/1209
+
+onewayskateboard.com
+
 # Generic
 
 /a3A7qLVn/
