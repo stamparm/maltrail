@@ -2111,11 +2111,18 @@ gll.metricaga.com
 syndication.gcdnanalytics.com
 
 # Reference: https://www.wordfence.com/blog/2023/12/psa-fake-cve-2023-45124-phishing-scam-tricks-users-into-installing-backdoor-plugin/
+# Reference: https://blog.sucuri.net/2023/12/analysis-of-the-fake-wordpress-cve-2023-46182-patch-plugin-phishing-campaign.html
 # Reference: https://otx.alienvault.com/pulse/656f2ee901a8cdd523b08cb8
 # Reference: https://www.virustotal.com/gui/ip-address/193.32.162.240/relations
 
+en-ca-wordpress.org
 en-gb-wordpress.org
+en-us-wordpress.org
 secureplatform.org
 securityplugins.org
 wordpress.secureplatform.org
 wordpress.securityplugins.org
+wpgate.zip
+wpops.zip
+wpsrv.zip
+wpsys.zip
