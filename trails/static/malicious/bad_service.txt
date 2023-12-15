@@ -1853,3 +1853,8 @@ webfe-shop.cc
 webferum-shop.cc
 webgreatdumps.cc
 webuniccshops.cc
+
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=194.87.207.76
+
+doubleprivate.com
+private-cards.top
