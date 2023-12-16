@@ -7413,6 +7413,13 @@ tpc.cdn-linkedin.info
 /evilrmiservernew.class
 /springboot-jdbc-deserialization-rce.py
 
+# Reference: https://twitter.com/JustWantToQ1/status/1735870555373355048
+
+/ak12sd3.ps1
+/ak12sd3.hta
+/ak12sd3.php
+/ak12sd3.py
+
 # Generic
 
 /js/altmanluggage.js
