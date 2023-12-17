@@ -1416,3 +1416,15 @@ http://139.59.72.48
 # Reference: https://www.virustotal.com/gui/ip-address/13.127.166.232/detection
 
 13.127.166.232:7443
+
+# Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-12-17)
+
+136.244.66.89:443
+162.19.175.57:7443
+4.198.144.143:443
+4.227.178.226:7443
+64.176.67.54:7443
+91.92.250.237:7443
+97.151.135.208:7443
+alderwood-staging.creativefolks.dev
+pia.australiasoutheast.cloudapp.azure.com
