@@ -1369,6 +1369,56 @@ http://35.92.41.20
 u1.cc0.ir
 worker-jolly-unit-e3af.jacobnero11.workers.dev
 
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2023-12-17)
+
+http://172.232.123.21
+http://37.221.197.42
+107.174.115.43:8443
+138.68.123.125:40065
+138.68.123.125:443
+142.93.185.248:8080
+16.170.155.141:443
+185.216.68.69:443
+185.216.68.70:443
+193.181.23.43:443
+194.33.191.214:40056
+195.35.25.136:443
+216.146.25.85:443
+35.158.7.214:443
+37.221.197.42:443
+43.138.25.26:443
+51.20.113.6:443
+62.234.202.129:48892
+66.228.60.47:443
+87.121.87.101:444
+92.220.154.91:8443
+aadcdn.nolog.no
+accounts.cdcadvania.no
+accounts.nolog.no
+analytics.nolog.no
+apis.cdcadvania.no
+apis.nolog.no
+cdcadvania.no
+content.cdcadvania.no
+content.nolog.no
+fonts.nolog.no
+login.nolog.no
+login.test.nolog.no
+mail2.nolog.no
+myaccount.cdcadvania.no
+myaccount.nolog.no
+nolog.no
+notifications.nolog.no
+ogs.nolog.no
+play.cdcadvania.no
+play.nolog.no
+ssl.cdcadvania.no
+ssl.nolog.no
+test.nolog.no
+tysers.ltd
+www2.nolog.no
+youtube.nolog.no
+
 # Generic
 
 /Havoc/payload/
