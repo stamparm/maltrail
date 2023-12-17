@@ -3553,3 +3553,7 @@ mykeenetic.ru
 # Reference: https://www.virustotal.com/gui/domain/coolpage.biz/relations
 
 coolpage.biz
+
+# Reference: https://www.virustotal.com/gui/domain/dyn-ip24.de/relations
+
+dyn-ip24.de
