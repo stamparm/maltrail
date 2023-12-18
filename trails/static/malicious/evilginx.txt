@@ -29,6 +29,16 @@ evilginx-test.ddns.net
 okta.evilginx-test.ddns.net
 login.okta.evilginx-test.ddns.net
 
+# Reference: https://twitter.com/banthisguy9349/status/1736660660405039482
+
+13.56.179.221:4000
+143.198.43.83:4000
+178.62.209.220:4000
+54.219.177.74:4000
+67.207.82.103:4000
+foofficel.com
+microssofttonline.nl
+
 # Generic
 
 /evilginx-linux-amd64.tar.gz
