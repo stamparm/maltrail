@@ -625,10 +625,12 @@ fudcrypter.io
 btcpay.fudcrypter.io
 
 # Reference: https://twitter.com/ULTRAFRAUD/status/1657066211279089667
+# Reference: https://twitter.com/banthisguy9349/status/1736757600203448698
 
 http://35.125.123.67
 dreams-stresser.co
 nightmarestresser.net
+powerstresser.live
 unionstresser.app
 webstress.xyz
 
