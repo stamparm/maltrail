@@ -955,3 +955,8 @@ ww.ikswr.cn
 # Reference: https://www.virustotal.com/gui/file/90e124a3f5a0406fec2e5b413c54b4902a12cf0f0594c4f1c7066c9e244a7269/detection
 
 api.zochao.com
+
+# Reference: https://twitter.com/noexceptcpp/status/1736751864836706438
+# Reference: https://www.virustotal.com/gui/file/e7bf41ee71b2bf14498b340e26f5c697cd15f8af8da362c88b1e7abf802b28c6/detection
+
+a-spy.com
