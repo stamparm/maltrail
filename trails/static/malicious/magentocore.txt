@@ -8874,6 +8874,10 @@ cdn.visualartexplorer.com
 cdn.visualartinsights.com
 cdn.visualdatacollector.com
 
+# Reference: https://twitter.com/ViriBack/status/1737215413715361833
+
+http://91.92.250.214
+
 # Generic
 
 /assets/lfg.js
