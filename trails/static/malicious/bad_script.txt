@@ -7421,6 +7421,10 @@ tpc.cdn-linkedin.info
 /ak12sd3.php
 /ak12sd3.py
 
+# Reference: https://twitter.com/1ZRR4H/status/1736870188480434417
+
+/xccc.hta
+
 # Generic
 
 /js/altmanluggage.js
