@@ -25,6 +25,10 @@
 
 34.80.59.191:8183
 
+# Reference: https://twitter.com/sicehice/status/1737327687037825220
+
+104.194.79.234:1081
+199.195.250.133:8000
 # Reference: https://twitter.com/luc4m/status/1639690470807810048
 
 34.80.59.91:8183
