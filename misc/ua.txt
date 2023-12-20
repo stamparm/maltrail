@@ -2418,6 +2418,12 @@ MrBidenNeverKnow
 Nothing
 qiQqi
 
+# Reference: https://twitter.com/doc_guard/status/1737494486295486473
+# Reference: https://app.docguard.io/4bfc29dff0955937190a085c6114d5019555558ed4a79b4fcb75a18ed28a3252/results/dashboard
+# Reference: https://www.virustotal.com/gui/file/4bfc29dff0955937190a085c6114d5019555558ed4a79b4fcb75a18ed28a3252/detection
+
+YaPopalsyaNaTroyan
+
 # Misc
 
 information_schema
