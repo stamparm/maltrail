@@ -71,6 +71,9 @@ except:
 
 _fail2ban_cache = None
 _fail2ban_key = None
+_blacklist_cache = None
+_blacklist_key = None
+
 
 def start_httpd(address=None, port=None, join=False, pem=None):
     """
@@ -143,8 +146,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             path = path.strip('/')
             extension = os.path.splitext(path)[-1].lower()
 
-            if hasattr(self, "_%s" % path):
-                content = getattr(self, "_%s" % path)(params)
+            splitpath = path.split('/', 1)
+            if hasattr(self, "_%s" % splitpath[0]):
+                if len(splitpath) > 1:
+                    params["subpath"] = splitpath[1]
+                content = getattr(self, "_%s" % splitpath[0])(params)
 
             else:
                 path = path.replace('/', os.path.sep)
@@ -191,7 +197,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 else:
                     self.send_response(_http_client.NOT_FOUND)
                     self.send_header(HTTP_HEADER.CONNECTION, "close")
-                    content = b'<!DOCTYPE html><html lang="en"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL %s was not found on this server.</p></body></html>' % self.path.split('?')[0]
+                    content = '<!DOCTYPE html><html lang="en"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL %s was not found on this server.</p></body></html>' % self.path.split('?')[0]
 
             if content is not None:
                 if isinstance(content, six.text_type):
@@ -491,6 +497,78 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             else:
                 content = "configuration option FAIL2BAN_REGEX not set"
 
+            return content
+
+        def _blacklist(self, params):
+            global _blacklist_cache
+            global _blacklist_key
+
+            self.send_response(_http_client.OK)
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
+
+            bl_name = ""
+            if 'subpath' in params:
+                bl_name = "_%s" % params['subpath'].split('/')[0].upper()
+
+            content = ""
+            key = int(time.time()) >> 3
+
+            if "BLACKLIST%s" % bl_name in config:
+                try:
+                    blacklist = []
+                    for bl in config["BLACKLIST%s" % bl_name]:
+                        rules = []
+                        for e in bl.split(' and '):
+                            f, n, p = e.strip().split(' ', 2)
+                            regexp = [
+                                [
+                                    '',
+                                    '',
+                                    '',
+                                    'src_ip',
+                                    'src_port',
+                                    'dst_ip',
+                                    'dst_port',
+                                    'protocol',
+                                    'type',
+                                    'trail',
+                                    'filter'
+                                ].index(f),
+                                (n[0] == '!'),
+                                re.compile(p, re.I)
+                            ]
+                            rules.append(regexp)
+                        blacklist.append(rules)
+                except e:
+                    content = "invalid rule in option BLACKLIST%s" % bl_name
+                else:
+                    if key == _blacklist_key:
+                        content = _blacklist_cache
+                    else:
+                        result = set()
+                        _ = os.path.join(config.LOG_DIR, "%s.log" % datetime.datetime.now().strftime("%Y-%m-%d"))
+                        if os.path.isfile(_):
+                            for line in open(_, "r"):
+                                line = line.split(' ', 10)
+                                for bl in blacklist:
+                                    failed = False
+                                    for f, n, r in bl:
+                                        if not (
+                                            (r.search(line[f]) is not None) ^ n
+                                                ):
+                                            failed = True
+                                            break
+                                    if not failed:
+                                        result.add(line[3])
+                                        break
+
+                        content = "\n".join(result)
+
+                        _blacklist_cache = content
+                        _blacklist_key = key
+            else:
+                content = "configuration option BLACKLIST%s not set" % bl_name
             return content
 
         def _events(self, params):
