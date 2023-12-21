@@ -2424,6 +2424,13 @@ qiQqi
 
 YaPopalsyaNaTroyan
 
+# Reference: https://twitter.com/t3ft3lb/status/1737839842057408918
+# Reference: https://www.virustotal.com/gui/ip-address/179.43.141.70/relations
+# Reference: https://www.virustotal.com/gui/file/4061254c893de6b78810afeec5e231948820e1be6e9579f32d07ef9c51ae42f7/detection
+# Reference: https://www.virustotal.com/gui/file/26a3d4584a8fb5c12182ddb5fc97d9c00527e1de11700fe25e9c2035fedd831a/detection
+
+Microcrop
+
 # Misc
 
 information_schema
