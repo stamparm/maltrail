@@ -8878,6 +8878,11 @@ cdn.visualdatacollector.com
 
 http://91.92.250.214
 
+# Reference: https://blog.sucuri.net/2023/12/magecart-wordpress-plugin-injects-malicious-user-credit-card-skimmer.html
+
+fbplx.com
+lin-cdn.com
+
 # Generic
 
 /assets/lfg.js
