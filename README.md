@@ -251,7 +251,7 @@ for ip in $(curl http://127.0.0.1:8338/fail2ban 2>/dev/null | grep -P '^[0-9.]+$
 iptables -I INPUT -m set --match-set maltrail src -j DROP
 ```
 
-Option `BLACKLIST` allow to build regular expressions to apply on one field. For each rule, the syntax is : `<field> <control> <regexp>` where :
+Option `BLACKLIST` allows to build regular expressions to apply on one field. For each rule, the syntax is : `<field> <control> <regexp>` where :
 * `field` indicates the field to compage, it can be: `src_ip`,`src_port`,`dst_ip`,`dst_port`,`protocol`,`type`,`trail` or `filter`.
 * `control` can be either `~` for *matches* or `!~` for *doesn't match*
 * `regexp` is the regular expression to apply to the field.
