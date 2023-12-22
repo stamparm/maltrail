@@ -2552,3 +2552,8 @@ agent.hacktics.net
 89.147.110.79:443
 91.219.148.228:443
 91.219.148.57:443
+
+# Reference: https://twitter.com/malwrhunterteam/status/1738184310799175994
+# Reference: https://www.virustotal.com/gui/file/4e393f60111b423ad61de04b1d00d231a627562c4a6f96d108fa03d0fb87112c/detection
+
+80.78.26.183:8888
