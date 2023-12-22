@@ -1429,3 +1429,11 @@ http://139.59.72.48
 97.151.135.208:7443
 alderwood-staging.creativefolks.dev
 pia.australiasoutheast.cloudapp.azure.com
+
+# Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-12-22)
+
+137.184.80.125:443
+167.99.182.53:7443
+83.212.98.93:443
+c6-v5.v2red.xyz
+wtf.creativefolks.dev
