@@ -3272,3 +3272,10 @@ qjmm666.com
 46.27.153.138:23768
 47.63.191.10:23768
 serrapirate2121.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/93c56f2a7edf543df3e88ebb557917d87ca53cae6c34da4f2b161d7089b04b38/detection
+
+http://173.249.27.120
+173.249.27.120:45454
+ultimatefakkers.ddns.net
+updates.ultimate-fakkers.co.network
