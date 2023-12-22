@@ -676,3 +676,7 @@ http://54.249.68.233
 54.198.145.43:8080
 8.212.128.240:8443
 91.92.247.69:8443
+
+# Reference: https://www.virustotal.com/gui/file/0d5af47bde7fdbb370d48611fd5800ec9be785aa77e1fca4badd4d2d3647447d/detection
+
+azureclouder.com
