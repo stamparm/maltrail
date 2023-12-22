@@ -7431,10 +7431,14 @@ tpc.cdn-linkedin.info
 
 /Malware/l.php
 
+# Reference: https://twitter.com/1ZRR4H/status/1737237724644655591
 # Reference: https://www.virustotal.com/gui/file/57561423590dd2334269cd4cdf22ffc267f202ff0e954cb49b73a292b4492172/detection
 # Reference: https://www.virustotal.com/gui/file/0081ec4836a7ecf5b428ba410dc9a86d679cb0d6ef8bb52dc7c8721efc3a4b3d/detection
 
+/agent1.ps1
+/agent3.ps1
 /sd2.ps1
+/sd4.ps1
 
 # Reference: https://twitter.com/malwrhunterteam/status/1738254214353064420
 # Reference: https://www.virustotal.com/gui/file/bd871a2ccd6d7c4f89f9f5087e60cfdcc7ab35b670cfda7ddfd6dbbab8c8560c/detection
