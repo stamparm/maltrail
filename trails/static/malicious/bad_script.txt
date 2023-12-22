@@ -7431,6 +7431,11 @@ tpc.cdn-linkedin.info
 
 /Malware/l.php
 
+# Reference: https://www.virustotal.com/gui/file/57561423590dd2334269cd4cdf22ffc267f202ff0e954cb49b73a292b4492172/detection
+# Reference: https://www.virustotal.com/gui/file/0081ec4836a7ecf5b428ba410dc9a86d679cb0d6ef8bb52dc7c8721efc3a4b3d/detection
+
+/sd2.ps1
+
 # Generic
 
 /js/altmanluggage.js
