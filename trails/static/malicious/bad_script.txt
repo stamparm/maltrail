@@ -7436,6 +7436,11 @@ tpc.cdn-linkedin.info
 
 /sd2.ps1
 
+# Reference: https://twitter.com/malwrhunterteam/status/1738254214353064420
+# Reference: https://www.virustotal.com/gui/file/bd871a2ccd6d7c4f89f9f5087e60cfdcc7ab35b670cfda7ddfd6dbbab8c8560c/detection
+
+/algo.hta
+
 # Generic
 
 /js/altmanluggage.js
