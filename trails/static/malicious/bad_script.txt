@@ -7445,6 +7445,10 @@ tpc.cdn-linkedin.info
 
 /algo.hta
 
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-12-22%20AsyncRAT%20IOCs
+
+/eq2c1svfjphtr.php
+
 # Generic
 
 /js/altmanluggage.js
