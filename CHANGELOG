@@ -16,7 +16,7 @@
 
 - Version 0.64 -> 0.65 (Upcoming release)
 
-
+[+] Customisable blacklists via BLACKLIST option in /maltrail.conf file (# Issue #19230)
 
 
 - Version 0.63 -> 0.64 (Upcoming release)
