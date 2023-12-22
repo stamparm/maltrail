@@ -2562,3 +2562,8 @@ agent.hacktics.net
 # Reference: https://twitter.com/SI_FalconTeam/status/1738217925616496923
 
 45.84.1.161:8081
+
+# Reference: https://twitter.com/SI_FalconTeam/status/1738217925616496923
+# Reference: https://www.virustotal.com/gui/file/f5ab886589558a8a265c216f6754d1477c19ca46d8ed4d57a1ee975c590e4aab/detection
+
+45.84.1.161:443
