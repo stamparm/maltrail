@@ -474,7 +474,9 @@ f0867029.xsph.ru
 f0880739.xsph.ru
 
 # Reference: https://github.com/Gi7w0rm/MalwareConfigLists/blob/main/Smishing/octopanel.txt
+# Reference: https://twitter.com/ViriBack/status/1736503258326196314
 
+http://91.92.254.42
 octopanel.xyz
 api.octopanel.xyz
 
