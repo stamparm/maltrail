@@ -3988,3 +3988,6 @@ dynupdate.noip.com
 ns1.example.com
 ns2.example.com
 
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/12/new-metastealer-malvertising-campaigns
+
+accounts.google.com
