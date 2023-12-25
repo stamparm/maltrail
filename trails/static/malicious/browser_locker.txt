@@ -21639,7 +21639,9 @@ fruitsofhealth.shop
 
 # Reference: https://twitter.com/malwrhunterteam/status/1726525829189099969
 # Reference: https://twitter.com/malwrhunterteam/status/1732424582806843423
+# Reference: https://twitter.com/malwrhunterteam/status/1739251934677082602
 
+greatsupport.azurewebsites.net
 holycross.azurewebsites.net
 malfunctionerror.azurewebsites.net
 supportlove.azurewebsites.net
