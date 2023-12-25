@@ -1876,3 +1876,12 @@ crdclub.cc
 buyaccs.cc
 goldcvv.cc
 l33t.cc
+
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=194.113.233.236
+
+cards4money.net
+ccproject.site
+ccproject.top
+cvv4money.org
+maincvv.cc
+maincvv.top
