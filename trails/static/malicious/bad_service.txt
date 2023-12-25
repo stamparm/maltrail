@@ -1860,3 +1860,9 @@ webuniccshops.cc
 
 doubleprivate.com
 private-cards.top
+
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=95.214.26.34
+
+buyacc.cc
+dumpsmania.cc
+fe-shops.cc
