@@ -1870,3 +1870,8 @@ fe-shops.cc
 # Reference: https://app.validin.com/axon?source=DNS&type=ip&find=194.169.175.250
 
 crdclub.cc
+
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=80.66.64.58
+
+goldcvv.cc
+l33t.cc
