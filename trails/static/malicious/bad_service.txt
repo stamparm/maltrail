@@ -1866,3 +1866,7 @@ private-cards.top
 buyacc.cc
 dumpsmania.cc
 fe-shops.cc
+
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=194.169.175.250
+
+crdclub.cc
