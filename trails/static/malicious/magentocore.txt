@@ -5568,15 +5568,19 @@ wooanalytics.biz
 # Reference: https://www.virustotal.com/gui/ip-address/8.209.64.30/relations
 # Reference: https://www.virustotal.com/gui/ip-address/87.251.79.162/relations
 # Reference: https://www.virustotal.com/gui/ip-address/91.219.62.215/relations
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=5.188.89.120
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=80.66.64.230
 
 banca-unicredit.com
 google-activate.com
 google-activated.com
+google-analytlc.com
 google-create.com
 google-gate.com
 google-merchants.com
 google-pays.com
 google-sagepay.com
+google-script.com
 jquery-migrates.com
 merchant-analytics.com
 paypal-analitics.com
