@@ -1868,7 +1868,9 @@ dumpsmania.cc
 fe-shops.cc
 
 # Reference: https://app.validin.com/axon?source=DNS&type=ip&find=194.169.175.250
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=45.143.139.128
 
+club2crd.cc
 crdclub.cc
 
 # Reference: https://app.validin.com/axon?source=DNS&type=ip&find=80.66.64.58
