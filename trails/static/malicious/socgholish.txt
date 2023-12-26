@@ -2731,6 +2731,7 @@ wau.settings.oysterfloats.org
 # Reference: https://threatfox.abuse.ch/ioc/1212175/
 # Reference: https://www.virustotal.com/gui/ip-address/86.110.209.38/relations
 
+cachetransferjs.com
 googlecloudad.com
 googlecloudns.com
 googlecloudstream.com
