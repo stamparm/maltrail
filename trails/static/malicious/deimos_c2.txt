@@ -460,3 +460,7 @@ deimosc2.com
 # Reference: https://twitter.com/drb_ra/status/1731565672084255198
 
 49.13.57.52:2053
+
+# Reference: https://twitter.com/drb_ra/status/1739357017007911253
+
+139.135.61.33:443
