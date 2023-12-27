@@ -1312,3 +1312,7 @@ soloxmr2min.dyndns.org
 # Reference: https://twitter.com/banthisguy9349/status/1735212305946689707
 
 51.68.21.188:4444
+
+# Reference: https://www.virustotal.com/gui/file/53377a9e2179dd1a66a8c4a47d92b270b79df5fdb32157156fab2c7044793708/behavior
+
+miningocean.org
