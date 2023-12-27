@@ -2431,6 +2431,11 @@ YaPopalsyaNaTroyan
 
 Microcrop
 
+# Reference: https://twitter.com/sicehice/status/1731078656473072004
+# Reference: https://twitter.com/sicehice/status/1739779125689364800
+
+t\.me\/DeltaApi
+
 # Misc
 
 information_schema
