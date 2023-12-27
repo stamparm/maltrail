@@ -1315,4 +1315,6 @@ soloxmr2min.dyndns.org
 
 # Reference: https://www.virustotal.com/gui/file/53377a9e2179dd1a66a8c4a47d92b270b79df5fdb32157156fab2c7044793708/behavior
 
+15.204.240.197:5432
+15.204.244.104:5432
 miningocean.org
