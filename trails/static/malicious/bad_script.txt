@@ -7455,6 +7455,11 @@ tpc.cdn-linkedin.info
 
 /eq2c1svfjphtr.php
 
+# Reference: https://twitter.com/V3n0mStrike/status/1740461394250641595
+
+/0312823187.php
+/UD912K0.php
+
 # Generic
 
 /js/altmanluggage.js
