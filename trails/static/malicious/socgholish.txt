@@ -2736,6 +2736,10 @@ googlecloudad.com
 googlecloudns.com
 googlecloudstream.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-12-26-v10493/1234
+
+places.creeksidehuntingpreserve.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
