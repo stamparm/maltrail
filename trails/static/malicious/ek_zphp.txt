@@ -92,3 +92,12 @@ paradoxmarine.com
 
 jokergame1.com
 perfilcovid.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-12-26-v10493/1234
+# Reference: https://www.virustotal.com/gui/file/436e62fb9aacb2e384afd06ee8afbaa83aa152059361089caa7853b508bac212/detection
+
+onlinesavingsjournal.com
+polatliems.com
+proexbit.com
+proximaideia.com
+realestateagentnorfolkvirginia.com
