@@ -101,3 +101,7 @@ polatliems.com
 proexbit.com
 proximaideia.com
 realestateagentnorfolkvirginia.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-12-29-v10496/1248
+
+ratingsentry.com
