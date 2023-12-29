@@ -7460,6 +7460,11 @@ tpc.cdn-linkedin.info
 /0312823187.php
 /UD912K0.php
 
+# Reference: https://twitter.com/noexceptcpp/status/1740347631816122829
+
+/cve-2016-1531.sh
+/exploit1337.py
+
 # Generic
 
 /js/altmanluggage.js
