@@ -6850,7 +6850,9 @@ tpc.cdn-linkedin.info
 
 # Reference: https://threatfox.abuse.ch/browse/malware/win.stealc/
 # Reference: https://github.com/Gi7w0rm/MalwareConfigLists/blob/main/stealc/stealc_c2s_2022_to_2023.txt
+# Reference: https://www.virustotal.com/gui/file/041be18344ea8da345923dd5d2421ad79ed888bca4a9ceebe0aa1030c75e5602/detection
 
+/00b977b5ca6bb253.php
 /0156a772a135ba9f.php
 /0243ec92ae2268d1.php
 /08f7c1a754119dda.php
