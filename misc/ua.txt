@@ -2436,6 +2436,11 @@ Microcrop
 
 t\.me\/DeltaApi
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-12-28-v10495/1245
+
+JWrapper
+JWrapperDownloader
+
 # Misc
 
 information_schema
