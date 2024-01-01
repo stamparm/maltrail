@@ -1843,6 +1843,7 @@ diamonddumps.cc
 easydeals.cc
 fe-shop.cc
 ferum-shop.cc
+ferum.cc
 ferumshop.cc
 greatdumps.cc
 joker-stash.cc
