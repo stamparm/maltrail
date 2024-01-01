@@ -3557,3 +3557,9 @@ coolpage.biz
 # Reference: https://www.virustotal.com/gui/domain/dyn-ip24.de/relations
 
 dyn-ip24.de
+
+# Reference: https://www.virustotal.com/gui/domain/nat123.cc/relations
+
+nat123.cc
+nat123.fun
+nat123.net
