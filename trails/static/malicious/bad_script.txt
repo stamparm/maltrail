@@ -7467,6 +7467,10 @@ tpc.cdn-linkedin.info
 /cve-2016-1531.sh
 /exploit1337.py
 
+# Reference: https://www.virustotal.com/gui/file/e1974c4099cd21cc0b538bdce94f78165930fbfe1f79e7f0fcca3cd276d39bda/detection
+
+/68ce5b29.php
+
 # Generic
 
 /js/altmanluggage.js
