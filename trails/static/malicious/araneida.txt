@@ -100,3 +100,11 @@ nit-optics.com
 smtp.msinfapp.com
 webdisk.msinfapp.com
 webmail.msinfapp.com
+
+# Reference: https://threatfox.abuse.ch/browse/tag/Araneida/ (# 2024-01-01)
+
+157.254.237.94:443
+205.234.181.236:443
+205.234.181.244:443
+23.26.77.14:443
+23.26.77.16:443
