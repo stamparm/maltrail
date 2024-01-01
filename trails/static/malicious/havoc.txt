@@ -1463,6 +1463,21 @@ http://206.237.23.155
 91.92.253.137:443
 crm.salesatelier.at
 
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2024-01-01)
+
+http://109.206.246.130
+http://207.174.28.42
+109.206.246.130:30003
+109.206.246.130:443
+18.216.147.202:443
+5.35.34.36:443
+achiversacademy.shop
+passwordsecurity.cloud
+tracktheway.shop
+lastpass.passwordsecurity.cloud
+v2202304197391224451.megasrv.de
+v2202304199058227026.goodsrv.de
+
 # Generic
 
 /Havoc/payload/
