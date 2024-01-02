@@ -1958,3 +1958,14 @@ track2-shop.com
 ukccshop.online
 validcc-shop.pl
 walmart-cc.pl
+
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=91.203.193.182
+
+2rich4b.online
+cc-dumps-bestvalid-cc.online
+credit-card-dumps-free-2022.online
+crypto-store-cc.online
+free-cc-dumps-2022.online
+fresh-cvv-fullz-store-tilda-cc.online
+goob-shop-cc.online
+m-shop-metro-cc.online
