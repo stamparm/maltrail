@@ -2740,6 +2740,10 @@ googlecloudstream.com
 
 places.creeksidehuntingpreserve.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-02-v10497/1255
+
+ebooks.ferrelljoe.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
