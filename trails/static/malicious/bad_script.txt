@@ -6876,6 +6876,7 @@ tpc.cdn-linkedin.info
 /1ba5bb0d68094a78.php
 /1c80d1b40e06f613.php
 /1d9e38415ea54afa.php
+/1da263bff25c8346.php
 /1e9258f73c297510.php
 /1eee64e8b97cf4c0.php
 /1f1ba0e25ee80277.php
@@ -6924,6 +6925,7 @@ tpc.cdn-linkedin.info
 /518893e599328c52.php
 /5196ba262b6d60e7.php
 /522d6f9280951d7f.php
+/56f47e918c5386bf.php
 /582e11ffc8500b8f.php
 /585a069844ca672e.php
 /59b232f2b6dc5770.php
