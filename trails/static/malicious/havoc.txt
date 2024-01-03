@@ -1478,6 +1478,17 @@ lastpass.passwordsecurity.cloud
 v2202304197391224451.megasrv.de
 v2202304199058227026.goodsrv.de
 
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2024-01-03)
+
+159.223.92.16:443
+172.232.36.73:10443
+35.173.234.124:8443
+74.119.194.110:8888
+85.215.215.94:443
+activelifes.shop
+authenticateoffice.com
+cdn.authenticateoffice.com
+
 # Generic
 
 /Havoc/payload/
