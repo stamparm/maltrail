@@ -492,6 +492,10 @@ http://82.147.85.242
 177.124.72.24:11180
 82.66.185.138:4443
 
+# Reference: https://twitter.com/banthisguy9349/status/1742604060224532556
+
+http://188.64.13.26
+
 # Generic
 
 /admin_123/auth.php
