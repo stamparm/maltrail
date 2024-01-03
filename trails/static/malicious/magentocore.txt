@@ -8888,6 +8888,16 @@ http://91.92.250.214
 fbplx.com
 lin-cdn.com
 
+# Reference: https://threatfox.abuse.ch/browse/tag/Magecart/
+
+http://37.252.1.225
+http://45.153.48.176
+http://5.252.177.247
+37.1.213.121:8080
+37.252.1.225:443
+45.153.48.176:443
+5.45.83.223:443
+
 # Generic
 
 /assets/lfg.js
