@@ -105,3 +105,10 @@ realestateagentnorfolkvirginia.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-12-29-v10496/1248
 
 ratingsentry.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-02-v10497/1255
+
+jennifergalvin.com
+jesusanaya.com
+kineticwing.com
+plannedtomatoes.com
