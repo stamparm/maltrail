@@ -1489,6 +1489,25 @@ activelifes.shop
 authenticateoffice.com
 cdn.authenticateoffice.com
 
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2024-01-05)
+
+http://45.61.187.244
+103.59.94.45:443
+13.235.254.216:443
+146.190.236.181:443
+160.238.36.135:8080
+179.96.164.30:445
+179.96.164.40:445
+188.166.39.71:443
+64.156.192.19:2222
+api.msservice.workers.dev
+helpdesktops.com
+lightfull.shop
+msservice.workers.dev
+v2202002114563109588.megasrv.de
+v2202311142188246753.nicesrv.de
+walbuschgruppe.com
+
 # Generic
 
 /Havoc/payload/
