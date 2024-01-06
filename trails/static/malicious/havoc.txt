@@ -1508,6 +1508,17 @@ v2202002114563109588.megasrv.de
 v2202311142188246753.nicesrv.de
 walbuschgruppe.com
 
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2024-01-06)
+
+http://20.61.52.34
+188.166.39.71:4444
+195.90.223.120:443
+213.136.71.179:443
+cloud.cy-security.de
+ethicalhackersworkshop.com
+login.microsoft.authenticateoffice.com
+microsoft.authenticateoffice.com
+
 # Generic
 
 /Havoc/payload/
