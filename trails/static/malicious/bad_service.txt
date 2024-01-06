@@ -1969,3 +1969,7 @@ free-cc-dumps-2022.online
 fresh-cvv-fullz-store-tilda-cc.online
 goob-shop-cc.online
 m-shop-metro-cc.online
+
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=5.178.2.166
+
+sell-cvv.com
