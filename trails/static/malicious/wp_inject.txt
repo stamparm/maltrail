@@ -2050,6 +2050,17 @@ follow.forwardstarlight.com
 from.forwardstarlight.com
 stay.forwardstarlight.com
 
+# Reference: https://twitter.com/banthisguy9349/status/1744397694443848035
+
+statisticsplatform.com
+done.forwardstarlight.com
+finish.selectchoise.com
+north.statisticsplatform.com
+page.bridgelinering.com
+shop.bridgelinering.com
+start.selectchoise.com
+west.statisticsplatform.com
+
 # Reference: https://twitter.com/unmaskparasites/status/1719152791875420655
 
 cdzanalytics.com
