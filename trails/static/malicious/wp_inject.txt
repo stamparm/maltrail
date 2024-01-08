@@ -1846,11 +1846,62 @@ way.decentralappps.com
 # Reference: https://www.virustotal.com/gui/ip-address/185.177.94.180/relations
 # Reference: https://app.validin.com/axon?source=DNS&type=ip&find=111.90.141.192
 
+allowww.com
+blacklinetosplit.com
+getfailfilm.com
 whitelinetosplit.com
+0.allowww.com
+1.allowww.com
+2.allowww.com
+3.allowww.com
+4.allowww.com
+5.allowww.com
+6.allowww.com
+7.allowww.com
+8.allowww.com
+9.allowww.com
+10.allowww.com
+0.blacklinetosplit.com
+1.blacklinetosplit.com
+2.blacklinetosplit.com
+0.getfailfilm.com
+1.getfailfilm.com
+2.getfailfilm.com
+3.getfailfilm.com
+4.getfailfilm.com
+5.getfailfilm.com
+6.getfailfilm.com
+7.getfailfilm.com
+8.getfailfilm.com
+9.getfailfilm.com
+10.getfailfilm.com
 0.whitelinetosplit.com
 2.whitelinetosplit.com
 from.whitelinetosplit.com
 goto.whitelinetosplit.com
+select.blacklinetosplit.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.177.94.194/relations
+
+gadgetnews.one
+gomajorlink.com
+m-video.shop
+major-video.click
+majoriklink.com
+majorikmedia.com
+majorilink.com
+majorius.com
+majorlink.club
+majorlinker.biz
+majorlinker.com
+majormedialink.com
+majorpush.shop
+majorsmi.com
+majortoplink.com
+n1major.com
+n2major.com
+n3major.com
+notrobot.top
 
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.252/relations
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.253/relations
