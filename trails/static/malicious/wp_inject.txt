@@ -2053,7 +2053,9 @@ stay.forwardstarlight.com
 # Reference: https://twitter.com/banthisguy9349/status/1744397694443848035
 
 statisticsplatform.com
+comwest.statisticsplatform.com
 done.forwardstarlight.com
+east.statisticsplatform.com
 finish.selectchoise.com
 north.statisticsplatform.com
 page.bridgelinering.com
