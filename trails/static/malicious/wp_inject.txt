@@ -1842,6 +1842,16 @@ stay.decentralappps.com
 stock.decentralappps.com
 way.decentralappps.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/111.90.141.192/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.177.94.180/relations
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=111.90.141.192
+
+whitelinetosplit.com
+0.whitelinetosplit.com
+2.whitelinetosplit.com
+from.whitelinetosplit.com
+goto.whitelinetosplit.com
+
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.252/relations
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.253/relations
 
