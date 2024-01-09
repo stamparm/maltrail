@@ -112,3 +112,10 @@ jennifergalvin.com
 jesusanaya.com
 kineticwing.com
 plannedtomatoes.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-08-v10501/1266
+
+arkadyevna.com
+boxtechcompany.com
+choosetotruck.com
+electricnico.com
