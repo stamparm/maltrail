@@ -8898,6 +8898,14 @@ http://5.252.177.247
 45.153.48.176:443
 5.45.83.223:443
 
+# Reference: https://www.virustotal.com/gui/ip-address/80.78.25.165/relations
+
+js-utilities.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/80.78.22.139/relations
+
+liquisync.com
+
 # Generic
 
 /assets/lfg.js
