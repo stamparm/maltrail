@@ -1511,16 +1511,27 @@ walbuschgruppe.com
 # Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2024-01-06)
 
 http://20.61.52.34
+http://34.239.255.86
 139.84.172.20:8443
 139.84.172.248:443
+179.96.164.83:445
+185.196.10.126:8443
 188.166.39.71:4444
 195.90.223.120:443
 213.136.71.179:443
 3.110.101.202:443
+34.203.229.137:443
+34.239.255.86:443
+88.119.171.83:443
+20402177.xyz
 cloud.cy-security.de
+esdm-internal.com
 ethicalhackersworkshop.com
+git.cy-security.de
 login.microsoft.authenticateoffice.com
 microsoft.authenticateoffice.com
+nvidiaapp.cloud
+oxyphyllous.20402177.xyz
 
 # Generic
 
