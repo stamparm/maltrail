@@ -1512,27 +1512,42 @@ walbuschgruppe.com
 
 http://20.61.52.34
 http://34.239.255.86
+http://91.92.251.215
 120.26.241.141:8443
 139.84.172.20:8443
 139.84.172.248:443
+161.35.239.147:443
 179.96.164.83:445
 185.196.10.126:8443
 188.166.39.71:4444
 195.90.223.120:443
+20.107.115.8:443
 213.136.71.179:443
 3.110.101.202:443
 34.203.229.137:443
 34.239.255.86:443
+45.126.125.144:443
+8.219.206.59:443
 88.119.171.83:443
+91.92.251.215:443
+91.92.251.215:8443
 20402177.xyz
 cloud.cy-security.de
+dl.info-163.com
 esdm-internal.com
 ethicalhackersworkshop.com
 git.cy-security.de
+hc.info-163.com
+info-163.com
+kasm.cy-security.de
 login.microsoft.authenticateoffice.com
+lucarne-films.com
+microsoft-webservices.com
 microsoft.authenticateoffice.com
 nvidiaapp.cloud
 oxyphyllous.20402177.xyz
+thesirenmika.xyz
+vpn.cy-security.de
 
 # Generic
 
