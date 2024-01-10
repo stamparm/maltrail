@@ -7481,6 +7481,10 @@ tpc.cdn-linkedin.info
 
 /266ba446.php
 
+# Reference: https://www.virustotal.com/gui/file/29dcf858f36f68827696a9a3ea1b4a821180569ab297d2f73c740b15832302d3/detection
+
+/vj0li6rpzmhtr.php
+
 # Generic
 
 /js/altmanluggage.js
