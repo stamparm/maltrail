@@ -119,3 +119,7 @@ arkadyevna.com
 boxtechcompany.com
 choosetotruck.com
 electricnico.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-10-v10503/1274
+
+lazittarl.com
