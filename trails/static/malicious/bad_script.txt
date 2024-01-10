@@ -7485,6 +7485,33 @@ tpc.cdn-linkedin.info
 
 /vj0li6rpzmhtr.php
 
+# Reference: https://www.virustotal.com/gui/file/ed73c5b9cfcc18b8a58f936dd2cf5009599512654ea159b4ccbc479c208063cb/detection
+
+/b%20kzioe%20f.php
+/zg0p9xfcjshtr.php
+
+# Reference: https://www.virustotal.com/gui/file/dcab1d8358b8402218c1015e4e14820c976f15a8d5a8fa16220383e8e39687da/detection
+
+/6wfu21zpaihtr.php
+/fk0wvgc9tlhtr.php
+
+# Reference: https://www.virustotal.com/gui/file/4e4088a4d66846f55d25539314f58f553e915bb4cc5aa9d29bc3a5693ff5948f/detection
+
+/3fz20plk5shtr.php
+/d%20fziog%20n.php
+
+# Reference: https://www.virustotal.com/gui/file/35ac43ff2e2483ea47f78012970092993ba855bda39563f54e8594e653cad3f9/detection
+# Reference: https://www.virustotal.com/gui/file/1c6ecc97d422cd78a972b71ac22e18bec4b4d58511f9a0ad85ed2de9edcd1c35/detection
+
+/h%20lziof%20k.php
+
+# Reference: https://www.virustotal.com/gui/file/2d56047dc2f18420264cf2d9fa454559a346fba937753aab5865f11e1c82b3b3/detection
+
+/$6i7owtj1sv4h0f8.php
+/6i7owtj1sv4h0f8.php
+/l%20eziof%20h.php
+/no27hufp4ehtr.php
+
 # Generic
 
 /js/altmanluggage.js
