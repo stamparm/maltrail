@@ -4653,3 +4653,7 @@ http://174.138.126.39
 # Reference: https://twitter.com/drb_ra/status/1744630720679621020
 
 84.234.96.37:8080
+
+# Reference: https://twitter.com/drb_ra/status/1745183647836029011
+
+203.212.130.2:713
