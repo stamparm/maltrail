@@ -1517,6 +1517,7 @@ http://91.92.251.215
 139.84.172.20:8443
 139.84.172.248:443
 161.35.239.147:443
+167.99.156.77:443
 179.96.164.83:445
 185.196.10.126:8443
 188.166.39.71:4444
@@ -1527,6 +1528,7 @@ http://91.92.251.215
 34.203.229.137:443
 34.239.255.86:443
 45.126.125.144:443
+47.76.181.76:443
 8.219.206.59:443
 88.119.171.83:443
 91.92.251.215:443
@@ -1544,6 +1546,8 @@ login.microsoft.authenticateoffice.com
 lucarne-films.com
 microsoft-webservices.com
 microsoft.authenticateoffice.com
+nadon.net
+namyonghospital.net
 nvidiaapp.cloud
 oxyphyllous.20402177.xyz
 thesirenmika.xyz
