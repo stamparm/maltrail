@@ -1322,3 +1322,7 @@ miningocean.org
 # Reference: https://www.virustotal.com/gui/file/90e3c44faed310e256c2f66b3a5eaf1919cbf88c6d1e15ec4093d68ff4af3555/detection
 
 54.37.137.114:10300
+
+# Reference: https://www.virustotal.com/gui/file/331a75ab3e14a546fa959374d44e7d2bc41be149a610293fba80bc8381d2f8a0/detection
+
+51.15.193.130:10300
