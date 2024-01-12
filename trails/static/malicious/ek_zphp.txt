@@ -123,3 +123,7 @@ electricnico.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-10-v10503/1274
 
 lazittarl.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-11-v10505/1278
+
+mariateresacalderon.com
