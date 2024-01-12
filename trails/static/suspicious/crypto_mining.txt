@@ -1313,8 +1313,12 @@ soloxmr2min.dyndns.org
 
 51.68.21.188:4444
 
-# Reference: https://www.virustotal.com/gui/file/53377a9e2179dd1a66a8c4a47d92b270b79df5fdb32157156fab2c7044793708/behavior
+# Reference: https://www.virustotal.com/gui/file/53377a9e2179dd1a66a8c4a47d92b270b79df5fdb32157156fab2c7044793708/detection
 
 15.204.240.197:5432
 15.204.244.104:5432
 miningocean.org
+
+# Reference: https://www.virustotal.com/gui/file/90e3c44faed310e256c2f66b3a5eaf1919cbf88c6d1e15ec4093d68ff4af3555/detection
+
+54.37.137.114:10300
