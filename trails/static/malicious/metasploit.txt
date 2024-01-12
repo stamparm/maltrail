@@ -4660,3 +4660,10 @@ http://174.138.126.39
 # Reference: https://twitter.com/drb_ra/status/1745183647836029011
 
 203.212.130.2:713
+
+# Reference: https://twitter.com/sicehice/status/1745669226935767065
+# Reference: https://www.virustotal.com/gui/file/a7d797e6d2899c9e046bc42727a294c69f21a3bbd7aa595a2f41adaa375e06b0/detection
+# Reference: https://www.virustotal.com/gui/file/7ef4522e112babdd772ce3e15c1327477077470977493b005d7d2369fc6b6ee8/detection
+
+http://38.60.220.120
+38.60.220.120:443
