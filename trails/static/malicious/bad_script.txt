@@ -7512,6 +7512,13 @@ tpc.cdn-linkedin.info
 /l%20eziof%20h.php
 /no27hufp4ehtr.php
 
+# Reference: https://twitter.com/sicehice/status/1745669226935767065
+
+/cve-2021-4034-poc
+/cve-2021-4034-poc.py
+/exploit_nss_u16.py
+/CVE-2021-3156/
+
 # Generic
 
 /js/altmanluggage.js
