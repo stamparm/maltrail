@@ -2753,6 +2753,10 @@ retraining.allstardriving.org
 
 event.coachgreb.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/88.119.175.241/relations
+
+surprise.refillpantrysd.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
