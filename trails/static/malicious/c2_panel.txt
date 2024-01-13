@@ -567,6 +567,15 @@ http://101.99.93.13
 
 http://45.134.174.87
 
+# Reference: https://twitter.com/banthisguy9349/status/1743979109523378564
+
+http://62.72.32.30
+http://91.206.178.198
+/login/K8qMNp8As9Kd/eoTmpMOcObe/
+/K8qMNp8As9Kd/eoTmpMOcObe/
+/K8qMNp8As9Kd/
+/eoTmpMOcObe/
+
 # Generic
 
 /admin_123/auth.php
