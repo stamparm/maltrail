@@ -4671,3 +4671,7 @@ http://38.60.220.120
 # Reference: https://twitter.com/drb_ra/status/1746089315552161964
 
 40.76.178.37:443
+
+# Reference: https://twitter.com/drb_ra/status/1746269980855767358
+
+49.51.18.170:443
