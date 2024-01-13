@@ -550,6 +550,15 @@ http://95.156.227.5
 
 viperchecker.com
 
+# Reference: https://twitter.com/banthisguy9349/status/1746133287930638731
+
+http://103.26.10.169
+http://5.230.47.179
+http://85.204.116.155
+http://89.117.109.8
+http://94.156.66.145
+http://94.156.66.147
+
 # Generic
 
 /admin_123/auth.php
