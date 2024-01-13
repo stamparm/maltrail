@@ -559,6 +559,10 @@ http://89.117.109.8
 http://94.156.66.145
 http://94.156.66.147
 
+# Reference: https://twitter.com/banthisguy9349/status/1744265910192414956
+
+http://101.99.93.13
+
 # Generic
 
 /admin_123/auth.php
