@@ -3020,6 +3020,11 @@ webdisk.vantagedataceters.com
 webmail.iclouddrives.com
 webmail.vantagedataceters.com
 
+# Reference: https://www.virustotal.com/gui/file/8ec225818ef1c99943ba6cb83ca8596c84d704c2f6c098dd7ea880c8e1397b14/detection
+# Reference: https://www.virustotal.com/gui/file/c0ce8a249d4b2da533defaf31e6335de828799ba7cf73c8976028fbf1204be94/detection
+
+124.222.5.128:3232
+
 # Generic
 
 /.sliver-client/
