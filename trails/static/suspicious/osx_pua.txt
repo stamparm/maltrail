@@ -42,3 +42,9 @@ d1z6i8y4ytpgjk.cloudfront.net
 # Reference: https://www.virustotal.com/gui/file/b047d28d0df6ee8b9e4a3c7744df58b77ed2eb1e990604e416ec2410bc34d8f4/detection
 
 3.6.115.182:14904
+
+# Reference: https://twitter.com/malwrhunterteam/status/1745964134666010690
+# Reference: https://www.virustotal.com/gui/file/1aa18ebfcd106659f25920b15e4c9735f16e74a4dddf0bc34b39c0f3ef18ad61/detection
+
+36.139.160.250:8000
+36.139.160.250:8889
