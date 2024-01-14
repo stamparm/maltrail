@@ -1326,3 +1326,10 @@ miningocean.org
 # Reference: https://www.virustotal.com/gui/file/331a75ab3e14a546fa959374d44e7d2bc41be149a610293fba80bc8381d2f8a0/detection
 
 51.15.193.130:10300
+
+# Reference: https://www.virustotal.com/gui/ip-address/43.129.205.244/relations
+# Reference: https://www.virustotal.com/gui/file/f4b1900fe8cb3521d9ec85473ecc693eb441ac9d05edbb55b541e7b9450ff3c4/detection
+
+43.129.205.244:5555
+awgoaigartnj-xmr.com
+pool.awgoaigartnj-xmr.com
