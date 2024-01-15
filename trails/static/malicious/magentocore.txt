@@ -8906,6 +8906,12 @@ js-utilities.com
 
 liquisync.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/91.206.178.221/relations
+
+doogle-analytics.online
+doogle-analytics.site
+doogle-analytics.store
+
 # Generic
 
 /assets/lfg.js
