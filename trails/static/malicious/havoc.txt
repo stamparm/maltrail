@@ -1553,6 +1553,26 @@ oxyphyllous.20402177.xyz
 thesirenmika.xyz
 vpn.cy-security.de
 
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2024-01-15)
+
+http://13.235.248.157
+http://193.222.96.163
+107.172.57.92:443
+125.229.208.221:8080
+13.235.248.157:443
+141.94.69.198:8443
+164.92.79.49:443
+172.105.109.228:443
+193.222.96.163:7443
+20.199.89.215:443
+23.94.198.26:443
+47.74.90.4:443
+54.185.217.31:443
+84.32.188.80:65534
+90.46.97.127:4443
+havoc.redethics.online
+redethics.online
+
 # Generic
 
 /Havoc/payload/
