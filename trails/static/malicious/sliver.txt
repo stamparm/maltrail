@@ -3025,6 +3025,15 @@ webmail.vantagedataceters.com
 
 124.222.5.128:3232
 
+# Reference: https://threatfox.abuse.ch/browse/malware/win.sliver/ (# 2024-01-15)
+
+104.193.69.140:31337
+134.175.125.207:8888
+176.31.21.3:2376
+185.125.56.177:2376
+193.3.19.167:8000
+193.3.19.167:8080
+
 # Generic
 
 /.sliver-client/
