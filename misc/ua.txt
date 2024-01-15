@@ -2441,6 +2441,11 @@ t\.me\/DeltaApi
 JWrapper
 JWrapperDownloader
 
+# Reference: https://twitter.com/suyog41/status/1746855106006626600
+# Reference: https://www.virustotal.com/gui/file/0184da37044346dc32c3023b1b0fd98550561324bf89ec2f56af41c248131b3f/detection
+
+Antarctica
+
 # Misc
 
 information_schema
