@@ -8908,6 +8908,10 @@ liquisync.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/91.206.178.221/relations
 
+dexpols.tech
+con-next.tech
+coreallbridges.tech
+octusbridges.tech
 doogle-analytics.online
 doogle-analytics.site
 doogle-analytics.store
@@ -9071,7 +9075,6 @@ cloud.site22.hk.luocheng.site
 cloudfare.tech
 cloudnxd.com
 cm35012446.bus527.cfd
-collect.developerstatss.ga
 compteurgratuit.net
 connect.faceboooooooooooooooooook.net
 console.naomi.chat
