@@ -8912,6 +8912,10 @@ doogle-analytics.online
 doogle-analytics.site
 doogle-analytics.store
 
+# Reference: https://twitter.com/Gi7w0rm/status/1746907826511851668
+
+/dcce10/stat.php
+
 # Generic
 
 /assets/lfg.js
