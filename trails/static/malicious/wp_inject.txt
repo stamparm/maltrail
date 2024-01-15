@@ -2240,3 +2240,12 @@ wpgate.zip
 wpops.zip
 wpsrv.zip
 wpsys.zip
+
+# Reference: https://thehackernews.com/2024/01/balada-injector-infects-over-7100.html
+# Reference: https://www.secureblink.com/cyber-security-news/6-200-word-press-sites-with-popup-builder-plugin-infected-by-new-balada-1
+# Reference: https://www.malcare.com/blog/wp-vcd-php-malware-removal/
+
+/wp-felody/wp-felody.php
+/wp-includes/wp-vcd.php
+/wp-felody.php
+/wp-vcd.php
