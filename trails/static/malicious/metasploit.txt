@@ -4681,3 +4681,12 @@ http://38.60.220.120
 
 137.220.50.227:1234
 137.220.50.227:9999
+
+# Reference: https://twitter.com/sicehice/status/1746721976314368219
+# Reference: https://www.virustotal.com/gui/file/587d0743014a3de65a7a1d55a35bf9668727cd802d355323a396ae6abc57f63f/detection
+# Reference: https://www.virustotal.com/gui/file/4b94270d77479578ce5d88659bc8e76024c8456578392a341971fbe006e01963/detection
+# Reference: https://www.virustotal.com/gui/file/2131e97fd21dcb3fd844f4ed9392f27fd266ad0d2d2f366ac018c65fdf15cc4c/detection
+
+20.197.10.91:9090
+20.197.10.91:9091
+20.197.10.91:9988
