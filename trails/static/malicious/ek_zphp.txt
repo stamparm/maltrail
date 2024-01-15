@@ -127,3 +127,8 @@ lazittarl.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-11-v10505/1278
 
 mariateresacalderon.com
+
+# Reference: https://threatfox.abuse.ch/browse/tag/SmartApeSG/ (# 2024-01-15)
+
+phinetik.com
+scorelineupdate.com
