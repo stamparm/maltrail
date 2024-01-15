@@ -9762,6 +9762,23 @@ zt49818598.war740.engineer
 zv3305370.weekend956.agency
 zx61673924.arch535.industries
 
+# Reference: https://sucuri.net/documentation/CreditCardSkimmingMalwareThreats.pdf
+
+/wp-content/plugins/wpputty/wpputty.php
+/wp-content/plugins/wpzip/wpzip.php
+/wp-content/plugins/wpyii2/wpyii2.php
+/wp-content/plugins/uzolyryl/uzolyryl.php
+/plugins/wpputty/wpputty.php
+/plugins/wpzip/wpzip.php
+/plugins/wpyii2/wpyii2.php
+/plugins/uzolyryl/uzolyryl.php
+/uzolyryl/uzolyryl.php
+/wpputty/wpputty.php
+/wpyii2/wpyii2.php
+/uzolyryl.php
+/wpputty.php
+/wpyii2.php
+
 # Generic
 
 /assets/lfg.js
