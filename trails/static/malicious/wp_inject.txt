@@ -2060,11 +2060,13 @@ topgiftsforusers.com
 trackspecialdomain.com
 workandbestservice.com
 workandgoodservice.com
+domain-service.specialcraftbox.com
 fine.greenfastline.com
 get.specialcraftbox.com
 give.selectchoise.com
 got.selectchoise.com
 goto.betradingway.com
+namesoft.specialcraftbox.com
 north.statisticplatform.com
 rest.greenfastline.com
 service.specialcraftbox.com
