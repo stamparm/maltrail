@@ -46,6 +46,7 @@ microssofttonline.nl
 185.224.139.32:2053
 195.74.86.44:8443
 20.98.48.148:2002
+45.56.92.137:443
 5.42.64.70:2096
 68.219.200.71:4000
 aa.aeromexico.foundation
@@ -72,6 +73,7 @@ cdn.aa.aeromexico.foundation
 clix.usaa.website
 collector.logins.services
 content.customerportalverify.store
+customerportalverify.store
 documentsigningonline.com
 drive.google.secureapp.tools
 employees.carlsberg.site
@@ -91,6 +93,7 @@ login-us.huenumilla.cl
 login.avenueconsulting.co
 login.factset.company
 login.microsoft.fom-dev1.bloemer-net.de
+login.recruiterteams.com
 login.trabede.com
 logs.customerportalverify.store
 m.customerportalverify.store
@@ -114,9 +117,11 @@ outlook.avenueconsulting.co
 outlook.trabede.com
 passwords.dordaa.at
 paxful.usaa.website
+play.customerportalverify.store
 portal.carlsberg.site
 potomac-clickstream.usaa.website
 qantas.aeromexico.foundation
+recruiterteams.com
 secure.duevolostore.com
 secure07c.usaa.website
 sensors.usaa.website
