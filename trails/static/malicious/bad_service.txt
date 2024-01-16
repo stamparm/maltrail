@@ -1980,3 +1980,14 @@ allpayment.cc
 cevverra.ru
 dc-btc.cc
 dumpstash.cc
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.8.228.26/relations
+
+cc-cvv-dumps-free-neverlose-cc-buy-or-die.ru
+fe-shop-cc.pl
+cc-country-store.fe-shop-cc.pl
+cvv-shop-script.fe-shop-cc.pl
+cvv-stores.fe-shop-cc.pl
+dumps-shop-online.fe-shop-cc.pl
+store-cc.fe-shop-cc.pl
+unicc-credit-card.fe-shop-cc.pl
