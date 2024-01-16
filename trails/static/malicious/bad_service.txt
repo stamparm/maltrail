@@ -1973,3 +1973,10 @@ m-shop-metro-cc.online
 # Reference: https://app.validin.com/axon?source=DNS&type=ip&find=5.178.2.166
 
 sell-cvv.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/194.67.71.93/relations
+
+allpayment.cc
+cevverra.ru
+dc-btc.cc
+dumpstash.cc
