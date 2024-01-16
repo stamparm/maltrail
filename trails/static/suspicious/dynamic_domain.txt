@@ -3563,3 +3563,11 @@ dyn-ip24.de
 nat123.cc
 nat123.fun
 nat123.net
+
+# Reference: https://www.virustotal.com/gui/domain/dyndns.uno/relations
+
+dyndns.uno
+
+# Reference: https://www.virustotal.com/gui/domain/noip.sbs/relations
+
+noip.sbs
