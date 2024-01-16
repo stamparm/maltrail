@@ -2757,6 +2757,14 @@ event.coachgreb.com
 
 surprise.refillpantrysd.com
 
+# Reference: https://threatfox.abuse.ch/browse/tag/SocGholish/ (# 2024-01-16)
+
+cachewebspace.com
+dashboard.renovationsruth.com
+debasesingle.life
+ficinity.com
+webcachedata.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
