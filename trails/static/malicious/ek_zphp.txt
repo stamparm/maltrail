@@ -132,3 +132,8 @@ mariateresacalderon.com
 
 phinetik.com
 scorelineupdate.com
+
+# Generic
+
+/cache/ewmrgqnaww.php
+/ewmrgqnaww.php
