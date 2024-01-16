@@ -1566,12 +1566,17 @@ http://193.222.96.163
 193.222.96.163:7443
 20.199.89.215:443
 23.94.198.26:443
+3.208.22.29:443
 47.74.90.4:443
 54.185.217.31:443
 84.32.188.80:65534
 90.46.97.127:4443
+app.berkeleyisyou.com
+berkeleyisyou.com
 havoc.redethics.online
+kesselfoodmarket.com
 redethics.online
+whoami.cy-security.de
 
 # Generic
 
