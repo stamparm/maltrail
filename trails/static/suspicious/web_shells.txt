@@ -957,3 +957,7 @@ podathon.org/shell/
 /Nginx1337.php
 /b374kpriv.php.txt
 /Nginx1337.php.txt
+
+# Reference: https://twitter.com/sicehice/status/1747030318924677353
+
+/FxCodeShell.jsp
