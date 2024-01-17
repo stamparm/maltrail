@@ -4712,3 +4712,7 @@ http://38.60.220.120
 # Reference: https://twitter.com/drb_ra/status/1747538988066341214
 
 156.243.1.63:443
+
+# Reference: https://twitter.com/drb_ra/status/1747539023919305207
+
+95.179.254.237:8443
