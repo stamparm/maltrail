@@ -7526,6 +7526,21 @@ tpc.cdn-linkedin.info
 /exploit_nss_u16.py
 /CVE-2021-3156/
 
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=176.119.157.152
+
+cardingmafia.ru
+cc-hack-site.credit-card-dumps-2022.ru
+feshop-18.credit-card-dumps-2022.ru
+free-cc-fullz-2022.validcc.center
+freshshop-cc.ru
+gagarin-shop-gg24-cc.dns-shop-ru-cc.ru
+legit-sites-to-buy-cc.ru
+mail.cardingmafia.ru
+mail.validcc.center
+ssn-dob-shop.legit-sites-to-buy-cc.ru
+trustedcvvshop2020.ru
+unicc-tor-domain.freshshop-cc.ru
+
 # Generic
 
 /js/altmanluggage.js
