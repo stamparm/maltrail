@@ -2235,6 +2235,12 @@ syndication.gcdnanalytics.com
 
 finish.lineferaline.com
 
+# Reference: https://twitter.com/unmaskparasites/status/1747690203941396671
+
+flyspecialline.com
+cdn.flyspecialline.com
+near.flyspecialline.com
+
 # Reference: https://www.wordfence.com/blog/2023/12/psa-fake-cve-2023-45124-phishing-scam-tricks-users-into-installing-backdoor-plugin/
 # Reference: https://blog.sucuri.net/2023/12/analysis-of-the-fake-wordpress-cve-2023-46182-patch-plugin-phishing-campaign.html
 # Reference: https://otx.alienvault.com/pulse/656f2ee901a8cdd523b08cb8
