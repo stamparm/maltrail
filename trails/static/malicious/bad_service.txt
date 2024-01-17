@@ -2219,3 +2219,10 @@ ssn-dob-shop.legit-sites-to-buy-cc.ru
 trustedcvvshop2020.ru
 unicc-tor-domain.freshshop-cc.ru
 validcc.center
+
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=193.106.174.60
+
+cc-shop.online
+vouched.cc
+cvv-dump-sites.cc-shop.online
+https-d-good-shop-cc-checkout-page.cc-shop.online
