@@ -1333,3 +1333,9 @@ miningocean.org
 43.129.205.244:5555
 awgoaigartnj-xmr.com
 pool.awgoaigartnj-xmr.com
+
+# Reference: https://www.virustotal.com/gui/file/d7f7bfd471f21a91aad6bd2726cc3899440665c6fd6522374e8850bd1ef79a90/detection
+
+167.235.223.40:1123
+zephyr.herominers.com
+de.zephyr.herominers.com
