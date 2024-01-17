@@ -2226,3 +2226,9 @@ cc-shop.online
 vouched.cc
 cvv-dump-sites.cc-shop.online
 https-d-good-shop-cc-checkout-page.cc-shop.online
+
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=45.95.233.49
+
+best-dumps-with-pin-shop-https-n-good-shop-cc.online
+http-k-good-shop-cc.online
+sites-to-buy-cc-n-good-shop-cc.online
