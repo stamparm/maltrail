@@ -5574,7 +5574,3 @@ stephan.nrw
 # Reference: https://www.virustotal.com/gui/ip-address/5.230.54.3/relations
 
 donwloaded.com
-
-# Reference: https://www.virustotal.com/gui/domain/cy-security.de/relations
-
-cy-security.de
