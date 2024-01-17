@@ -4708,3 +4708,7 @@ http://38.60.220.120
 # Reference: https://twitter.com/drb_ra/status/1746995169654665711
 
 172.111.140.76:9999
+
+# Reference: https://twitter.com/drb_ra/status/1747538988066341214
+
+156.243.1.63:443
