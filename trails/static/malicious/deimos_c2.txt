@@ -483,3 +483,7 @@ deimosc2.com
 # Reference: https://twitter.com/drb_ra/status/1744611608628740355
 
 114.83.4.23:15780
+
+# Reference: https://twitter.com/drb_ra/status/1747510912464851036
+
+119.160.88.100:443
