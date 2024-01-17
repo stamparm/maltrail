@@ -1433,6 +1433,7 @@ pia.australiasoutheast.cloudapp.azure.com
 # Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2023-12-22)
 
 http://64.31.63.82
+120.27.131.3:7443
 13.235.248.157:7443
 135.181.39.81:7443
 137.184.185.109:7443
