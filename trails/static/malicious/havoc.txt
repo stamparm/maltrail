@@ -1573,10 +1573,22 @@ http://193.222.96.163
 90.46.97.127:4443
 app.berkeleyisyou.com
 berkeleyisyou.com
+cy-security.de
 havoc.redethics.online
 kesselfoodmarket.com
 redethics.online
 whoami.cy-security.de
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2024-01-17)
+
+http://167.172.80.227
+http://172.172.163.9
+http://52.66.109.117
+138.197.4.123:443
+16.62.217.129:443
+172.172.163.9:443
+20.84.6.140:443
+45.126.127.218:443
 
 # Generic
 
