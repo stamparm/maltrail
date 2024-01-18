@@ -1339,3 +1339,11 @@ pool.awgoaigartnj-xmr.com
 167.235.223.40:1123
 zephyr.herominers.com
 de.zephyr.herominers.com
+
+# Reference: https://www.cadosecurity.com/containerised-clicks-malicious-use-of-9hits-on-vulnerable-docker-hosts/
+
+27.36.192.16:3333
+27.36.202.174:3333
+27.36.210.44:3333
+27.36.211.238:3333
+byw.dscloud.me
