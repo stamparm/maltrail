@@ -3279,3 +3279,11 @@ http://173.249.27.120
 173.249.27.120:45454
 ultimatefakkers.ddns.net
 updates.ultimate-fakkers.co.network
+
+# Reference: https://twitter.com/naumovax/status/1747985922098966617
+# Reference: https://tria.ge/240116-da7gkabfck/behavioral1
+# Reference: https://www.virustotal.com/gui/file/4fc7ad1276074ef0d8b76492fdda4e096985cea9ec395fa13533f80d3ed8d2d6/detection
+# Reference: https://www.virustotal.com/gui/file/b95918223f9ace3d071e44550fd34f34c180b81e28f5e79cc4eba55006c8a6b0/detection
+
+154.91.65.76:7211
+154.91.65.76:7212
