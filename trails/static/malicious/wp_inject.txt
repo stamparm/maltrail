@@ -2244,6 +2244,7 @@ near.flyspecialline.com
 # Reference: https://twitter.com/karol_paciorek/status/1747886529370841512
 
 platformspecial.com
+get.platformspecial.com
 post.platformspecial.com
 
 # Reference: https://www.wordfence.com/blog/2023/12/psa-fake-cve-2023-45124-phishing-scam-tricks-users-into-installing-backdoor-plugin/
