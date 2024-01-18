@@ -4725,3 +4725,10 @@ http://38.60.220.120
 # Reference: https://twitter.com/drb_ra/status/1747720508945088618
 
 23.137.248.191:443
+
+# Reference: https://twitter.com/karol_paciorek/status/1748012080614048182
+# Reference: https://tria.ge/240118-s21weschdk
+# Referecne: https://tria.ge/240118-s25vdadeb9
+
+http://43.205.199.88
+172.31.43.27:5600
