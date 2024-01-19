@@ -3575,3 +3575,7 @@ noip.sbs
 # Reference: https://www.virustotal.com/gui/domain/fluxus.org/relations
 
 fluxus.org
+
+# Reference: https://www.virustotal.com/gui/domain/jerkface.net/relations
+
+jerkface.net
