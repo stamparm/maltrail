@@ -3571,3 +3571,7 @@ dyndns.uno
 # Reference: https://www.virustotal.com/gui/domain/noip.sbs/relations
 
 noip.sbs
+
+# Reference: https://www.virustotal.com/gui/domain/fluxus.org/relations
+
+fluxus.org
