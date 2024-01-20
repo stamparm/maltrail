@@ -3056,6 +3056,11 @@ webmail.vantagedataceters.com
 43.157.27.174:443
 44.220.45.98:443
 
+# Reference: https://www.virustotal.com/gui/file/1e6cccf49511c2c2f632ddc733186999878eee104c2cee4edd03b88538497a86/detection
+
+67.205.154.243:34353
+servicehelper.portmap.io
+
 # Generic
 
 /.sliver-client/
