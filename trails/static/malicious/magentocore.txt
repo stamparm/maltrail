@@ -8691,8 +8691,23 @@ webstatlstics.net
 www111.site
 
 # Reference: https://twitter.com/unmaskparasites/status/1673811920263208960
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=49.12.201.215
 
 fedgeat.com
+fwldewr.com
+giberuz.com
+harilov.com
+hdrequest.com
+htmesed.com
+letoloh.com
+pattepr.com
+requesthd.com
+requesttip.com
+sacarie.com
+tusunal.com
+varcinu.com
+velenzy.com
+velioan.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/188.114.96.4/relations
 
