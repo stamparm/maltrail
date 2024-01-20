@@ -1910,13 +1910,23 @@ bridgelinering.com
 colorschemeas.com
 lightsteper.com
 promsmotion.com
+210net.promsmotion.com
+211.210net.promsmotion.com
+232.211.210net.promsmotion.com
+2fservice.specialcraftbox.com
+46.232.211.210net.promsmotion.com
 call.colorschemeas.com
 et.promsmotion.com
+fecall.colorschemeas.com
+gate.promsmotion.com
+generic.service.specialcraftbox.com
 get.lightsteper.com
 get.promsmotion.com
+getl.promsmotion.com
 go.bridgelinering.com
 net.promsmotion.com
 page.specialnewspaper.com
+s.specialcraftbox.com
 show.bridgelinering.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/2.59.222.157/relations
