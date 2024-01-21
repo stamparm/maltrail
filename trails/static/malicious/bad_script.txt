@@ -7582,6 +7582,7 @@ tpc.cdn-linkedin.info
 /evreigate.php
 /fcc-authenticazione.php
 /g-analytic.js
+/gate_tor.php
 /gate.php
 /gate01.php
 /gate1.php
