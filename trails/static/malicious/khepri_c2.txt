@@ -13,3 +13,15 @@ ultraedit.vip
 download.ultraedit.info
 ultraedit.ultraedit.vip
 update.dcupdate.net
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-19-v10510/1301
+
+finallshell.cc
+finalshell.me
+macnavicat.com
+rdesktopconnect.com
+rdesktophub.com
+securecrt.cc
+securecrt.vip
+vscode.digital
+xmindcn.cc
