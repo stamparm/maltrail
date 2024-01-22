@@ -3061,6 +3061,11 @@ webmail.vantagedataceters.com
 67.205.154.243:34353
 servicehelper.portmap.io
 
+# Reference: https://twitter.com/Cuser07/status/1749333413826568261
+# Reference: https://www.virustotal.com/gui/file/0b81a4bac4b9d6aee27e72d34ed44cde91c07831592167032e767b8f937afa69/detection
+
+128.140.123.244:8056
+
 # Generic
 
 /.sliver-client/
