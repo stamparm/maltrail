@@ -2765,6 +2765,10 @@ debasesingle.life
 ficinity.com
 webcachedata.com
 
+# Reference: https://twitter.com/threatcat_ch/status/1748445377009701022
+
+iredelltx.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
