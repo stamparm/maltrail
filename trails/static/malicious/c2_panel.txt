@@ -707,6 +707,7 @@ http://91.206.178.198
 /pnl/login.php
 /_panelpriv/
 /Panel/Web-Panel/
+/PIRATERIJ/adm.php
 /PowerPanel/
 /slim/panel/
 /Web%20Panel/upload/
