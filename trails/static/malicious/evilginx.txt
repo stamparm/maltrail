@@ -142,6 +142,33 @@ us.azureauth-duo.factset.company
 w1.avenueconsulting.co
 webdisk.avenueconsulting.co
 
+# Reference: https://threatfox.abuse.ch/browse/tag/EvilGinx/ (# 2024-01-23)
+
+http://192.119.110.233
+143.198.64.151:4000
+15.207.223.179:443
+188.166.209.186:4000
+192.119.110.233:5000
+account.deenpel.com
+cpanel.dnl-l.ooguy.com
+cpcalendars.dnl-l.ooguy.com
+cpcontacts.dnl-l.ooguy.com
+dnl-l.ooguy.com
+expedia-realtime.expeida.net
+expedia-rest.expeida.net
+expeida.net
+hwsrv-1125909.hostwindsdns.com
+login.deenpel.com
+mediaim.expeida.net
+oms.expeida.net
+onboarding.expeida.net
+outlook.deenpel.com
+pay.expeida.net
+redirect-r1.pay.expeida.net
+static.pay.expeida.net
+vap.expeida.net
+webmail.dnl-l.ooguy.com
+
 # Generic
 
 /evilginx-linux-amd64.tar.gz
