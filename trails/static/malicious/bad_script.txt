@@ -7530,6 +7530,13 @@ tpc.cdn-linkedin.info
 
 /ddsss.ps1
 
+# Reference: https://threatfox.abuse.ch/browse/malware/win.dcrat/ (# 2024-01-24)
+
+/46636ed2.php
+/937b6157.php
+/c2b6ff67.php
+/e42a6515.php
+
 # Generic
 
 /js/altmanluggage.js
