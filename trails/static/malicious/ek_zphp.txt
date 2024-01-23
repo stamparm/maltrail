@@ -133,6 +133,17 @@ mariateresacalderon.com
 phinetik.com
 scorelineupdate.com
 
+# Reference: https://threatfox.abuse.ch/browse/tag/SmartApeSG/ (# 2024-01-23)
+
+188.127.224.127:443
+188.127.224.145:443
+188.127.224.160:443
+188.127.224.199:443
+188.127.225.84:443
+5.181.156.45:443
+appboltonik.com
+suezey.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
