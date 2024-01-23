@@ -2766,7 +2766,10 @@ ficinity.com
 webcachedata.com
 
 # Reference: https://twitter.com/threatcat_ch/status/1748445377009701022
+# Reference: https://twitter.com/unmaskparasites/status/1749522406459470110
 
+acuiplast.com
+binder-sa.com
 iredelltx.com
 
 # Generic
