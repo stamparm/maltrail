@@ -3079,6 +3079,10 @@ servicehelper.portmap.io
 
 128.140.123.244:8056
 
+# Reference: https://twitter.com/felixaime/status/1749813368414998647
+
+212.113.106.100:8888
+
 # Generic
 
 /.sliver-client/
