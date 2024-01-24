@@ -3287,3 +3287,7 @@ updates.ultimate-fakkers.co.network
 
 154.91.65.76:7211
 154.91.65.76:7212
+
+# Reference: https://www.virustotal.com/gui/file/217013de55939b477e098a11a75f84d76abadd0c0faadab13bb044e6a7a69c3d/detection
+
+212.113.106.102:12600
