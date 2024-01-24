@@ -965,3 +965,9 @@ a-spy.com
 # Reference: https://www.virustotal.com/gui/file/03ef4cd9a4ff1d62d15dbad294def6ad4af2c65bc4471d5a4b86465b5779d75f/detection
 
 apkzzz.com
+
+# Reference: https://www.virustotal.com/gui/file/a2c891067734dbb22fb7fa48327173b07438acfc8077dc56df85128e77ad4645/detection
+
+116.31.174.58:13130
+116.31.174.58:18181
+douch666.tpddns.net
