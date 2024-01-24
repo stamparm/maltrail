@@ -3080,6 +3080,9 @@ servicehelper.portmap.io
 128.140.123.244:8056
 
 # Reference: https://twitter.com/felixaime/status/1749813368414998647
+# Reference: https://www.virustotal.com/gui/file/2f84e530671031c3448b02f4d772eb198dde3aaa5b52336c393a819e0ebc424a/detection
+# Reference: https://www.virustotal.com/gui/file/76e1853b9a4e88cc0521df2815d6ba5d6ea5549c4477f8bdc43b9fc3ede32636/detection
+# Reference: https://www.virustotal.com/gui/file/9126cc827516668e32a1a42d851604bff56c812cd8b188549cb6ac99af53279a/detection
 
 212.113.106.100:8888
 
