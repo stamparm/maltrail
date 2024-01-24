@@ -4742,3 +4742,9 @@ http://38.60.220.120
 
 http://43.205.199.88
 172.31.43.27:5600
+
+# Reference: https://twitter.com/sicehice/status/1749637379168575634
+# Reference: https://www.virustotal.com/gui/file/2a707d3e5466f8027c1fcf7d7ebdf74508cfb0440a1c3072dc929b903117656a/detection
+
+5.159.100.251:6060
+5.159.100.251:8008
