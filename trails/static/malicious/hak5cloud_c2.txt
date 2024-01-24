@@ -951,3 +951,8 @@ http://88.78.149.17
 91.92.252.130:8080
 97.106.1.34:8080
 [2a01:7e01::f03c:91ff:feac:f30f]:8080
+
+# Reference: https://twitter.com/TLP_R3D/status/1750135843744870505
+
+bypassingsecurity.com
+o6tl7ucw4ik5den26omter4k2hllnbzxilp3oscuktvdofeuktb7qqid.onion
