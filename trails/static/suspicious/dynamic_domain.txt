@@ -3579,3 +3579,7 @@ fluxus.org
 # Reference: https://www.virustotal.com/gui/domain/jerkface.net/relations
 
 jerkface.net
+
+# Reference: https://www.virustotal.com/gui/domain/tpddns.net/relations
+
+tpddns.net
