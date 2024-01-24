@@ -2772,6 +2772,22 @@ acuiplast.com
 binder-sa.com
 iredelltx.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/128.254.207.87/relations
+
+colors.usajicgu.com
+buac.colors.usajicgu.com
+cip.colors.usajicgu.com
+diuf.colors.usajicgu.com
+ehxzh.colors.usajicgu.com
+ejv.colors.usajicgu.com
+fzeh.colors.usajicgu.com
+ivh.colors.usajicgu.com
+mfwe.colors.usajicgu.com
+qgh.colors.usajicgu.com
+wlc.colors.usajicgu.com
+wwu.colors.usajicgu.com
+ylcjk.colors.usajicgu.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
