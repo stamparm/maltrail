@@ -12,3 +12,21 @@ logsmetrics.com
 prizes-topwin.life
 webdatatrace.com
 womanflirting.life
+
+# Reference: https://blogs.infoblox.com/cyber-threat-intelligence/cybercrime-central-vextrio-operates-massive-criminal-affiliate-program/
+
+antibotcloud.com
+clicksme.org
+hixastump.com
+megastok.top
+prom-gg.com
+strouchridun.top
+superbowsm.top
+supersbows.us
+tomorrows.top
+d.strouchridun.top
+go.clicksme.org
+tiktok.megastok.top
+tiktok.superbowsm.top
+tiktok.supersbows.us
+tiktok.tomorrows.top
