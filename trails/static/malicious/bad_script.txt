@@ -7588,6 +7588,14 @@ tpc.cdn-linkedin.info
 /7328-dating-verification-card.php
 /canadiane-compte.php
 /ccgate.php
+/CodigoInject.asp
+/CodigoInject.aspx
+/CodigoInject.hta
+/CodigoInject.php
+/CodigoInject.ps1
+/CodigoInject.py
+/CodigoInject.pyc
+/CodigoInject.txt
 /dating-verification-card.php
 /evreigate.php
 /fcc-authenticazione.php
