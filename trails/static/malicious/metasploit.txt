@@ -4750,3 +4750,15 @@ http://43.205.199.88
 
 5.159.100.251:6060
 5.159.100.251:8008
+
+# Reference: https://www.virustotal.com/gui/file/be7b58561bfa34adee8e5f1b58484a807c184515eb22b8c280664592a43dfe96/detection
+# Reference: https://www.virustotal.com/gui/file/b9864bd210b57186be5ee0684fea72950615fd3c4287a29df7696f0121b631b8/detection
+# Reference: https://www.virustotal.com/gui/file/8689e13e51ca0fbbe069fa46231c0f856d6e0eb00ad66c52befd122a08f7621e/detection
+
+134.19.179.171:2111
+185.156.175.35:2111
+213.152.161.219:2111
+213.152.162.94:2111
+213.152.162.99:2111
+46.19.137.116:2111
+analytics.airdns.org
