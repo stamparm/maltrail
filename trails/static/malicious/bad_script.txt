@@ -7596,6 +7596,14 @@ tpc.cdn-linkedin.info
 /CodigoInject.py
 /CodigoInject.pyc
 /CodigoInject.txt
+/DllQueVaiNoClient.txt
+/DllQueVaiNoClient.php
+/DllQueVaiNoClient.ps1
+/DllQueVaiNoClient.hta
+/DllQueVaiNoClient.asp
+/DllQueVaiNoClient.aspx
+/DllQueVaiNoClient.py
+/DllQueVaiNoClient.pyc
 /dating-verification-card.php
 /evreigate.php
 /fcc-authenticazione.php
