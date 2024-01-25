@@ -3092,6 +3092,14 @@ servicehelper.portmap.io
 
 212.113.106.100:8888
 
+# Reference: https://twitter.com/malwrhunterteam/status/1750588277911097471
+# Reference: https://www.virustotal.com/gui/file/c509e955ea3e30d622681afcae9392ec1038de24098d44856d7e88ac930140f3/detection
+
+esethelpdesk.info
+login.esethelpdesk.info
+baakbp07gw.login.esethelpdesk.info
+baakbrynuwka.login.esethelpdesk.info
+
 # Generic
 
 /.sliver-client/
