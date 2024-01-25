@@ -144,6 +144,10 @@ scorelineupdate.com
 appboltonik.com
 suezey.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-24-v10513/1319
+
+climosfevelt.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
