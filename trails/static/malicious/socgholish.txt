@@ -2788,6 +2788,17 @@ wlc.colors.usajicgu.com
 wwu.colors.usajicgu.com
 ylcjk.colors.usajicgu.com
 
+# Reference: https://www.virustotal.com/gui/domain/cachespace.net/relations
+
+cachespace.net
+huangguanshoujidenglubocaihuangguan.cachespace.net
+ing.cachespace.net
+orgping.cachespace.net
+ping.cachespace.net
+pingz.cachespace.net
+pqowieur123.cachespace.net
+www1.cachespace.net
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
