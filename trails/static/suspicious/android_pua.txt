@@ -972,3 +972,9 @@ apkzzz.com
 116.31.174.58:18181
 douch666.tpddns.net
 /cfsfq_apk_cjwt.html
+
+# Reference: https://www.virustotal.com/gui/file/000011499d68e56e2c5853567c88c58ee20d38e5df538c9899959a040d49e97e/detection
+
+116.205.4.157:8890
+lingte.cc
+imgsx.lingte.cc
