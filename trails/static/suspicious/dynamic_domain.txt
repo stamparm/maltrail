@@ -3583,3 +3583,7 @@ jerkface.net
 # Reference: https://www.virustotal.com/gui/domain/tpddns.net/relations
 
 tpddns.net
+
+# Reference: https://www.virustotal.com/gui/domain/darkworlds.org/relations
+
+darkworlds.org
