@@ -7538,7 +7538,9 @@ tpc.cdn-linkedin.info
 /46636ed2.php
 /937b6157.php
 /c2b6ff67.php
+/e3e70db1.php
 /e42a6515.php
+/f50a15cc.php
 
 # Reference: https://twitter.com/noexceptcpp/status/1751572303295504461
 # Reference: https://twitter.com/noexceptcpp/status/1751589805647917376
