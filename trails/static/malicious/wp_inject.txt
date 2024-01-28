@@ -2248,6 +2248,13 @@ fast.quickcontentnetwork.com
 gll.metricaga.com
 syndication.gcdnanalytics.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/87.107.124.35/relations
+
+metrica.ir
+metricastats.ir
+metryeka.ir
+stadata.ir
+
 # Reference: https://www.virustotal.com/gui/ip-address/45.140.146.101/relations
 
 finish.lineferaline.com
