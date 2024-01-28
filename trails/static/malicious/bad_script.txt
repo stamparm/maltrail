@@ -7540,6 +7540,15 @@ tpc.cdn-linkedin.info
 /c2b6ff67.php
 /e42a6515.php
 
+# Reference: https://twitter.com/noexceptcpp/status/1751572303295504461
+# Reference: https://twitter.com/noexceptcpp/status/1751589805647917376
+# Reference: https://www.virustotal.com/gui/ip-address/38.148.199.252/relations
+
+imbolexabc.top
+resmakabc.top
+br.resmakabc.top
+ccc.imbolexabc.top
+
 # Generic
 
 /js/altmanluggage.js
