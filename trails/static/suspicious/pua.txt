@@ -3293,6 +3293,9 @@ updates.ultimate-fakkers.co.network
 212.113.106.102:12600
 
 # Reference: https://www.virustotal.com/gui/file/0e0272d21046552694e6577542d1c1957206a9d6bdcad3eb80a5824dc30cbe23/detection
+# Reference: https://www.virustotal.com/gui/file/e5a29f76897ba68d88a9ef979deeae6bffb52d9355a855897e2002432f041e57/detection
 
+artificiusbrowser.com
+browseruniverse.com
 crxdragonsync.com
 crxdragonupdate.com
