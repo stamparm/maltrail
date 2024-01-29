@@ -2799,6 +2799,15 @@ pingz.cachespace.net
 pqowieur123.cachespace.net
 www1.cachespace.net
 
+# Reference: https://twitter.com/Gi7w0rm/status/1752027448554799159
+# Reference: https://www.virustotal.com/gui/ip-address/178.236.246.25/relations
+# Reference: https://www.virustotal.com/gui/file/3d631200f845cf30b255f801bae4325cbca841014809158f54a66e08e2e0f80e/detection
+
+honors.howamerica.com
+clbh.honors.howamerica.com
+ojjg.honors.howamerica.com
+tnlz.honors.howamerica.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
