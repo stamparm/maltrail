@@ -2808,6 +2808,10 @@ clbh.honors.howamerica.com
 ojjg.honors.howamerica.com
 tnlz.honors.howamerica.com
 
+# Reference: https://twitter.com/Gi7w0rm/status/1751964881702539494
+
+miner.eastestsite.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
