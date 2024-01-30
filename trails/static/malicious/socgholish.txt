@@ -2812,6 +2812,16 @@ tnlz.honors.howamerica.com
 
 miner.eastestsite.com
 
+# Reference: https://twitter.com/Gi7w0rm/status/1752368138224644194
+# Reference: https://www.virustotal.com/gui/ip-address/185.130.47.125/relations
+# Reference: https://www.virustotal.com/gui/ip-address/192.185.36.1/relations
+# Reference: https://www.virustotal.com/gui/file/582d65214a8a5b3abce108bb30ee1283aaebf6ecf490508f3422275fffbe25d0/detection
+
+allstardriving.org
+garretttrails.org
+content.garretttrails.org
+retraining.allstardriving.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
