@@ -7569,6 +7569,7 @@ ccc.imbolexabc.top
 /CVE-2023-36664-Ghostscript-command-injection/
 /CVE-2023-4634/
 /exploit-CVE-2023-23752/
+/woo.py
 
 # Generic
 
