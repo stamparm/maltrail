@@ -7564,6 +7564,12 @@ ccc.imbolexabc.top
 
 /http_bypass
 
+# Reference: https://twitter.com/banthisguy9349/status/1752420692769865775
+
+/CVE-2023-36664-Ghostscript-command-injection/
+/CVE-2023-4634/
+/exploit-CVE-2023-23752/
+
 # Generic
 
 /js/altmanluggage.js
