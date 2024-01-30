@@ -7552,6 +7552,14 @@ resmakabc.top
 br.resmakabc.top
 ccc.imbolexabc.top
 
+# Reference: https://twitter.com/DmitriyMelikov/status/1752270530126741920
+# Reference: https://www.virustotal.com/gui/ip-address/142.93.233.186/relations
+# Reference: https://tria.ge/240130-mfylaafdbj/behavioral2
+# Reference: https://www.virustotal.com/gui/file/5509ec26758c3c0dcf2bf1b0d7d8600da08cdcfb73cd6b90d46f84ea61c71094/detection
+
+/jMnmopzu
+/track/load.js
+
 # Generic
 
 /js/altmanluggage.js
