@@ -5694,6 +5694,7 @@ webffx.bz
 
 # Reference: https://twitter.com/AffableKraut/status/1420424683758002178
 # Reference: https://twitter.com/AffableKraut/status/1420424686366756870
+# Reference: https://www.virustotal.com/gui/ip-address/158.160.129.176/relations
 
 api-facebook.net
 api-localhost.com
@@ -5705,6 +5706,8 @@ ssl-doubleclick.net
 tr-snapchat.com
 uc-widget-freshworks.com
 webstatistisc.org
+proxy.cdn-bootstrapcdn.com
+store.cdn-bootstrapcdn.com
 
 # Reference: https://twitter.com/p0x53/status/1420758015884488711
 
