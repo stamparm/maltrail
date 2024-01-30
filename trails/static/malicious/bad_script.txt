@@ -7571,6 +7571,12 @@ ccc.imbolexabc.top
 /exploit-CVE-2023-23752/
 /woo.py
 
+# Reference: https://www.virustotal.com/gui/file/d76af2991fb3bf24fbf34c55942dd304ee1aff30d27cbe9cbb2b96cd860e120c/detection
+
+/strasb/
+/strasb/scripts/
+/strasb/scripts/myscript_1.js
+
 # Generic
 
 /js/altmanluggage.js
