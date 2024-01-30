@@ -7560,6 +7560,10 @@ ccc.imbolexabc.top
 /jMnmopzu
 /track/load.js
 
+# Reference: https://twitter.com/banthisguy9349/status/1752335418253566314
+
+/http_bypass
+
 # Generic
 
 /js/altmanluggage.js
