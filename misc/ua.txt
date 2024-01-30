@@ -2446,6 +2446,10 @@ JWrapperDownloader
 
 Antarctica
 
+# Reference: https://github.com/eset/malware-ioc/tree/master/grandoreiro#user-agent
+
+h55u4u4u5uii5
+
 # Misc
 
 information_schema
