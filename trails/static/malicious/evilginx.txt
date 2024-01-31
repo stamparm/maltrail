@@ -169,6 +169,10 @@ static.pay.expeida.net
 vap.expeida.net
 webmail.dnl-l.ooguy.com
 
+# Reference: https://twitter.com/MichalKoczwara/status/1752446013359403109
+
+miicrossofftonline.nl
+
 # Generic
 
 /evilginx-linux-amd64.tar.gz
