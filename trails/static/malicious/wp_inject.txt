@@ -2311,5 +2311,9 @@ wpsys.zip
 /wp-vcd.php
 
 # Reference: https://twitter.com/unmaskparasites/status/1752794370435420635
+# Reference: https://www.virustotal.com/gui/file/0b3ce8bad28e3da1377244c102c67f62828d1c7c93b50a78e4c135321a579467/detection
 
+extentaccreditedinsensitive.com
+exemptrequest.com
 highcpmrevenuegate.com
+professionalswebcheck.com
