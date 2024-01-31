@@ -2309,3 +2309,7 @@ wpsys.zip
 /wp-includes/wp-vcd.php
 /wp-felody.php
 /wp-vcd.php
+
+# Reference: https://twitter.com/unmaskparasites/status/1752794370435420635
+
+highcpmrevenuegate.com
