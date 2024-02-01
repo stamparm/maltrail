@@ -1347,3 +1347,7 @@ de.zephyr.herominers.com
 27.36.210.44:3333
 27.36.211.238:3333
 byw.dscloud.me
+
+# Reference: https://www.trendmicro.com/en_us/research/21/l/a-look-into-purple-fox-server-infrastructure.html
+
+108.177.235.90:443
