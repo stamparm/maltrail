@@ -4,6 +4,7 @@
 # Reference: https://hackforums.net/printthread.php?tid=5655422
 # Reference: https://twitter.com/r3dbU7z/status/1347527548977242116
 # Reference: https://www.virustotal.com/gui/file/6cd557cb2582ab5cf8d0e77131479ab91c00bfdf9c775c170809d5265bf0477a/detection
+# Reference: https://www.virustotal.com/gui/file/f77ab04ee56f3cd4845d4a80c5817a7de4f0561d976d87563deab752363a765d/detection
 
 107.191.47.239:3333
 176.31.105.53:3333
@@ -34,6 +35,7 @@ nanopool.org
 ethereumpool.co
 suprnova.cc
 siamining.com
+web.xmrpool.eu
 
 # Reference: https://www.virustotal.com/gui/file/7738ad1029f1709ec86c8ba24e04b3f71edf671b64681b884ccd70725a1674a5/detection
 
