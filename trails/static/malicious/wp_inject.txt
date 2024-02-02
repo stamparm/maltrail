@@ -2099,9 +2099,15 @@ special.beatifulllhistory.com
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.251/relations
 
 forwardstarlight.com
+dominiorest.greenfastline.com
+fine.lineferaline.com
 follow.forwardstarlight.com
 from.forwardstarlight.com
+from.lineferaline.com
+goto.greenfastline.com
+rest.lineferaline.com
 stay.forwardstarlight.com
+step.greenfastline.com
 
 # Reference: https://twitter.com/banthisguy9349/status/1744397694443848035
 
