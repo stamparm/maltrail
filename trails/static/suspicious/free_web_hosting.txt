@@ -159,6 +159,7 @@ zymic.com
 # Reference: http://buildfree.org/quicklinks.html
 
 000webhost.com
+000webhostapp.com
 00freehost.com
 0catch.com
 0hna.com
