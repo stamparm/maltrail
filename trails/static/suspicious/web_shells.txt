@@ -961,3 +961,8 @@ podathon.org/shell/
 # Reference: https://twitter.com/sicehice/status/1747030318924677353
 
 /FxCodeShell.jsp
+
+# Reference: https://twitter.com/1ZRR4H/status/1751656174515098023
+# Reference: https://twitter.com/r3dbU7z/status/1753692024216113625
+
+/php-reverse-shell.php
