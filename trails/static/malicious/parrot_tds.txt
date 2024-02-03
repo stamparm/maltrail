@@ -72,3 +72,7 @@ storage.webfiledata.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-25-v10514/1322
 
 visitclouds.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-30-v10519/1339
+
+followcache.com
