@@ -2323,3 +2323,10 @@ extentaccreditedinsensitive.com
 exemptrequest.com
 highcpmrevenuegate.com
 professionalswebcheck.com
+
+# Reference: https://www.virustotal.com/gui/domain/statisticsong.com/relations
+
+statisticsong.com
+api.statisticsong.com
+panal.statisticsong.com
+panel.statisticsong.com
