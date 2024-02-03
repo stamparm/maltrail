@@ -153,6 +153,11 @@ climosfevelt.com
 gigeconomycase.com
 pngairservices.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-02-01-v10521/1348
+
+cdn3-jquery.info
+telotrace.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
