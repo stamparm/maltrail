@@ -1650,7 +1650,7 @@ http://89.245.139.188
 89.245.139.188:4444
 96.30.193.6:443
 
-# Reference:  https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2024-01-31)
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2024-01-31)
 
 http://34.244.129.215
 http://79.137.226.104
@@ -1667,6 +1667,33 @@ http://91.92.253.160
 98.186.108.222:443
 ekfb.site
 pgad.emkd.ru
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2024-02-04)
+
+http://103.195.6.58
+http://122.114.8.164
+http://192.46.228.106
+http://20.38.38.37
+http://54.199.117.47
+104.238.60.14:443
+124.222.63.23829
+138.197.134.200:8443
+158.160.65.88:443
+164.92.180.123:443
+172.105.62.186:443
+18.188.25.88:443
+192.52.166.9:443
+193.168.141.92:443
+211.24.117.21:443
+45.147.250.155:443
+47.236.237.46:443
+47.76.61.241:443
+91.92.253.138:6075
+91.92.253.160:6075
+ambankgruop.store
+premier-stream.co.uk
+rss-bridge.emkd.ru
+www-12.eekal.com
 
 # Generic
 
