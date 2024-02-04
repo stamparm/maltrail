@@ -3299,3 +3299,7 @@ artificiusbrowser.com
 browseruniverse.com
 crxdragonsync.com
 crxdragonupdate.com
+
+# Reference: https://www.virustotal.com/gui/file/bb5ef9f70483ed7c79e37eca9dd136a514a346943edfe2803e27d1f6b262f05a/detection
+
+support.clz.kr
