@@ -7607,6 +7607,20 @@ ccc.imbolexabc.top
 /1pdf.hta
 /1pdf.ps1
 
+# Reference: https://twitter.com/banthisguy9349/status/1754140240652939341
+
+/clear_bots.php
+/clear_bots_database_info.php
+/clear_dead_bots.php
+/clear_dirty_bots.php
+/clear_offline_bots.php
+/clear_online_bots.php
+/get_bots_by_device.php
+/get_bots_by_status.php
+/get_bots_by_type.php
+/get_bots_countries.php
+/get_bots_database_info.php
+
 # Generic
 
 /js/altmanluggage.js
