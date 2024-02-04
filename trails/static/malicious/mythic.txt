@@ -1565,3 +1565,7 @@ queilani.com
 social.blackhatethicalhacking.com
 ss.vet.sapphire.net
 thissubdomainshouldnotexist.home-vip.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/192.210.140.35/community
+
+192.210.140.35:7443
