@@ -7591,7 +7591,7 @@ ccc.imbolexabc.top
 /api_stresser.bat
 /api_stresser.hta
 /api_stresser.php
-/api_stresser.pp1
+/api_stresser.ps1
 /kill_psw.bat
 /kill_psw.hta
 /kill_psw.php
@@ -7600,6 +7600,12 @@ ccc.imbolexabc.top
 /rdp_flooder.hta
 /rdp_flooder.php
 /rdp_flooder.ps1
+
+# Reference: https://twitter.com/banthisguy9349/status/1754134426391359554
+# Reference: https://www.virustotal.com/gui/file/3650667be007a3733dc935f0978ae5964e6dac65728b31d44e6b4d92c5220042/detection
+
+/1pdf.hta
+/1pdf.ps1
 
 # Generic
 
