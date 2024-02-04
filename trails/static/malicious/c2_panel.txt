@@ -581,6 +581,10 @@ http://91.206.178.198
 /DE-Panel/adm.php
 /DE-Panel2/adm.php
 
+# Reference: https://www.virustotal.com/gui/domain/feja111.de/relations
+
+panel.feja111.de
+
 # Generic
 
 /admin_123/auth.php
