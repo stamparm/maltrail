@@ -7582,6 +7582,25 @@ ccc.imbolexabc.top
 /strasb/scripts/
 /strasb/scripts/myscript_1.js
 
+# Reference: https://twitter.com/banthisguy9349/status/1754099584190538104
+
+/api_flooder.bat
+/api_flooder.hta
+/api_flooder.php
+/api_flooder.ps1
+/api_stresser.bat
+/api_stresser.hta
+/api_stresser.php
+/api_stresser.pp1
+/kill_psw.bat
+/kill_psw.hta
+/kill_psw.php
+/kill_psw.ps1
+/rdp_flooder.bat
+/rdp_flooder.hta
+/rdp_flooder.php
+/rdp_flooder.ps1
+
 # Generic
 
 /js/altmanluggage.js
