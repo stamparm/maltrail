@@ -7630,6 +7630,11 @@ ccc.imbolexabc.top
 /opituvannya.hta
 /opituvannya.ps1
 
+# Reference: https://iamdeadlyz.gitbook.io/malware-research/february-2024/outfoxing-a-malicious-pdf-an-attackers-attempt-to-deliver-a-stealc-infostealer
+
+/officeupdate.hta
+/officeupdate.ps1
+
 # Generic
 
 /js/altmanluggage.js
