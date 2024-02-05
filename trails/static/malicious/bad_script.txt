@@ -7624,6 +7624,12 @@ ccc.imbolexabc.top
 /get_bots_countries.php
 /get_bots_database_info.php
 
+# Reference: https://twitter.com/k3yp0d/status/1754380225792577647
+# Reference: https://www.virustotal.com/gui/file/499528fb822e6cf086e98d9e27067f939ecbf0a3791f701a0a6f9a44ba8864ea/detection
+
+/opituvannya.hta
+/opituvannya.ps1
+
 # Generic
 
 /js/altmanluggage.js
