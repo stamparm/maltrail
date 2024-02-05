@@ -7635,6 +7635,15 @@ ccc.imbolexabc.top
 /officeupdate.hta
 /officeupdate.ps1
 
+# Reference: https://twitter.com/karol_paciorek/status/1754472675655774703
+
+/asdf.hta
+/asdf.ps1
+/qwerty.hta
+/qwertyj1.hta
+/telly.hta
+/telly.ps1
+
 # Generic
 
 /js/altmanluggage.js
