@@ -690,3 +690,7 @@ http://54.250.116.148
 # Reference: https://www.virustotal.com/gui/file/0d5af47bde7fdbb370d48611fd5800ec9be785aa77e1fca4badd4d2d3647447d/detection
 
 azureclouder.com
+
+# Reference: https://twitter.com/drb_ra/status/1754395948233437187
+
+http://35.73.145.106
