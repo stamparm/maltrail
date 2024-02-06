@@ -158,6 +158,11 @@ pngairservices.com
 cdn3-jquery.info
 telotrace.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-02-05-v10524/1357
+
+mysticselect.com
+oemmasters.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
