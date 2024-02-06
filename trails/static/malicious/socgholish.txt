@@ -2822,6 +2822,13 @@ garretttrails.org
 content.garretttrails.org
 retraining.allstardriving.org
 
+# Reference: https://www.virustotal.com/gui/ip-address/88.119.169.207/relations
+
+our.openarmscv.org
+abdc.our.openarmscv.org
+ivr.our.openarmscv.org
+nzq.our.openarmscv.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
