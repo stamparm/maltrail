@@ -7644,6 +7644,13 @@ ccc.imbolexabc.top
 /telly.hta
 /telly.ps1
 
+# Reference: https://twitter.com/Joseliyo_Jstnk/status/1754830872031744020
+# Reference: https://www.virustotal.com/gui/file/3761fb4c5b30d06501fe6688019ace6c899bdfc278049ddd91b96e0efe0d8830/detection
+# Reference: https://www.virustotal.com/gui/file/b9c763ed1cd4cabc6faa0fece7738a941de1d65163d05480c9790217d931c7c8/detection
+
+/60WuOcgFX.hta
+/60WuOcgFX.ps1
+
 # Generic
 
 /js/altmanluggage.js
