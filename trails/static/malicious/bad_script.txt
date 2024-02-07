@@ -3514,7 +3514,11 @@ tunacan-812.tk
 
 # Reference: https://www.virustotal.com/gui/domain/checkerrors.ug/relations
 
+/payload.bat
+/payload.hta
 /payload.ps1
+/payload2.bat
+/payload2.hta
 /payload2.ps1
 
 # Reference: https://twitter.com/HONKONE_K/status/1133205335877885952
