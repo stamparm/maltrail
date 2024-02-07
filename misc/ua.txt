@@ -2450,6 +2450,10 @@ Antarctica
 
 h55u4u4u5uii5
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-02-06-v10525/1358
+
+muzcat
+
 # Misc
 
 information_schema
