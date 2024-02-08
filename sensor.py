@@ -1176,6 +1176,11 @@ def monitor():
                         break
                 except (pcapy.PcapError, socket.timeout):
                     pass
+                except SystemError as ex:
+                    if "PY_SSIZE_T_CLEAN" in str(ex):
+                        sys.exit("[!] seems that you are not using pcapy-ng (https://pypi.org/project/pcapy-ng/)")
+                    else:
+                        raise
 
                 if not success:
                     time.sleep(REGULAR_SENSOR_SLEEP_TIME)
