@@ -16,8 +16,8 @@
 
 - Version 0.66 -> 0.67 (Upcoming release)
 
-
-
+[=] Handling usage of pcapy lib instead of pcapy-ng is improved (Issue #19242)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
