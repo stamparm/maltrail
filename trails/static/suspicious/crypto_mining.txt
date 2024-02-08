@@ -1353,3 +1353,8 @@ byw.dscloud.me
 # Reference: https://www.trendmicro.com/en_us/research/21/l/a-look-into-purple-fox-server-infrastructure.html
 
 108.177.235.90:443
+
+# Reference: https://www.virustotal.com/gui/file/2dd720d7cf395b32456fb2ed6b376321c6b29bdcd1bf349a7455414e9d564a3e/detection
+
+141.94.96.195:3333
+pool-fr.supportxmr.com
