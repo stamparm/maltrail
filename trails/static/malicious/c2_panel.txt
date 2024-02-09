@@ -585,6 +585,15 @@ http://91.206.178.198
 
 panel.feja111.de
 
+# Reference: https://twitter.com/banthisguy9349/status/1755961908350288062
+
+http://104.244.75.151
+http://162.0.239.39
+http://162.254.33.129
+http://209.141.59.15
+http://37.72.168.252
+http://87.236.146.164
+
 # Generic
 
 /admin_123/auth.php
