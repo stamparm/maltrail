@@ -2243,3 +2243,7 @@ unicc-tor-cheap-dumps-cc.online
 # Reference: https://twitter.com/banthisguy9349/status/1755564395449491698
 
 anonvm.wtf
+
+# Reference: https://twitter.com/banthisguy9349/status/1755838447141401064
+
+/BS10534901.php
