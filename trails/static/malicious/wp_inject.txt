@@ -2329,6 +2329,9 @@ professionalswebcheck.com
 
 statisticsong.com
 api.statisticsong.com
+c1.statisticsong.com
+emv1.statisticsong.com
 panal.statisticsong.com
 panel.statisticsong.com
+widget.statisticsong.com
 antimalware.api.statisticsong.com
