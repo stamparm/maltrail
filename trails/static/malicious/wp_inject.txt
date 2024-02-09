@@ -2328,10 +2328,15 @@ professionalswebcheck.com
 # Reference: https://www.virustotal.com/gui/domain/statisticsong.com/relations
 
 statisticsong.com
+ak.statisticsong.com
 api.statisticsong.com
 c1.statisticsong.com
+dr.statisticsong.com
 emv1.statisticsong.com
+find.statisticsong.com
 panal.statisticsong.com
 panel.statisticsong.com
 widget.statisticsong.com
+wiki.statisticsong.com
+zdm.statisticsong.com
 antimalware.api.statisticsong.com
