@@ -2073,6 +2073,7 @@ topgiftsforusers.com
 trackspecialdomain.com
 workandbestservice.com
 workandgoodservice.com
+cget.specialcraftbox.com
 domain-service.specialcraftbox.com
 fine.greenfastline.com
 get.specialcraftbox.com
@@ -2087,6 +2088,7 @@ oaway.betradingway.com
 rest.greenfastline.com
 service.specialcraftbox.com
 soft.specialcraftbox.com
+sofx.specialcraftbox.com
 startup.betradingway.com
 stone.betradingway.com
 store.bestselllerservice.com
