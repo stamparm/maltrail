@@ -612,6 +612,56 @@ stresser.cam
 stresser.digital
 stressers.io
 
+# Reference: https://twitter.com/Gi7w0rm/status/1756645565222273200
+# Reference: https://krebsonsecurity.com/2022/12/six-charged-in-mass-takedown-of-ddos-for-hire-sites/
+
+api-sky.xyz
+astrostress.com
+blackstresser.net
+booter.sx
+booter.vip
+bootyou.net
+brrsecurity.org
+buuter.cc
+cyberstress.us
+defconpro.net
+dragonstresser.com
+dreams-stresser.io
+exotic-booter.com
+freestresser.so
+instant-stresser.com
+ipstress.org
+ipstress.vip
+ipstresser.com
+ipstresser.us
+ipstresser.wtf
+ipstresser.xyz
+kraysec.com
+mcstorm.io
+nightmarestresser.com
+orphicsecurityteam.com
+ovhstresser.com
+quantum-stresser.net
+redstresser.cc
+royalstresser.com
+securityteam.io
+shock-stresser.com
+silentstress.net
+stresser.best
+stresser.gg
+stresser.is
+stresser.one
+stresser.org
+stresser.shop
+stresser.so
+stresser.top
+stresserai.com
+sunstresser.com
+supremesecurityteam.com
+truesecurityservices.io
+vdos-s.co
+zerostresser.com
+
 # Reference: https://twitter.com/banthisguy9349/status/1756635356227649975
 
 http://35.225.165.48
