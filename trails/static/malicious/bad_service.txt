@@ -591,9 +591,26 @@ strox.su
 
 godstresser.pro
 
-# Reference: https://www.virustotal.com/gui/domain/stresse.pro/relations
+# Reference: https://twitter.com/banthisguy9349/status/1756632918103904424
 
+http://185.141.34.33
+http://20.102.101.4
+http://20.97.210.200
+http://80.241.54.162
+cobrac2.xyz
+cyberbooter.su
+fukarstresser.xyz
+mevicstresse.xyz
+radanexpanel.xyz
+sakuracheck.online
+stresse.cat
+stresse.cc
+stresse.it
 stresse.pro
+stresse.re
+stresser.cam
+stresser.digital
+stressers.io
 
 # Reference: https://malware.news/t/inside-view-of-brazzzersff-infrastructure/62431
 
