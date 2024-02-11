@@ -594,6 +594,10 @@ http://209.141.59.15
 http://37.72.168.252
 http://87.236.146.164
 
+# Reference: https://twitter.com/banthisguy9349/status/1756676398683427149
+
+http://95.179.247.93
+
 # Generic
 
 /admin_123/auth.php
