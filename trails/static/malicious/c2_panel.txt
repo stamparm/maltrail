@@ -597,6 +597,7 @@ http://87.236.146.164
 # Reference: https://twitter.com/banthisguy9349/status/1756676398683427149
 
 http://95.179.247.93
+/shahan.txt
 
 # Generic
 
