@@ -7659,6 +7659,10 @@ ccc.imbolexabc.top
 /60WuOcgFX.hta
 /60WuOcgFX.ps1
 
+# Reference: https://twitter.com/banthisguy9349/status/1756606597667709276
+
+/redis-rogue-server.py
+
 # Generic
 
 /js/altmanluggage.js
