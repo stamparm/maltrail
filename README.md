@@ -126,7 +126,13 @@ Fully functional demo pages with collected real-life threats can be found [here]
 
 ## Requirements
 
-To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**, **2.7** or **3.x** is required on \*nix/BSD system, together with installed package [pcapy-ng](https://pypi.org/project/pcapy-ng/). **Sensor** component requires at least 1GB of RAM to run in single-process mode or more if run in multiprocessing mode, depending on the value used for option `CAPTURE_BUFFER`. Additionally, **Sensor** component (in general case) requires administrative/root privileges. **Server** component does not have any special requirements.
+To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**, **2.7** or **3.x** is required on \*nix/BSD system, together with installed package [pcapy-ng](https://pypi.org/project/pcapy-ng/).
+
+**NOTE:** Using of ```pcapy``` lib instead of ```pcapy-ng``` can lead to incorrect work of Maltrail, especially on **Python 3.x** environments. [Examples](https://github.com/stamparm/maltrail/issues?q=label%3Apcapy-ng-related+is%3Aclosed).
+
+- **Sensor** component requires at least 1GB of RAM to run in single-process mode or more if run in multiprocessing mode, depending on the value used for option `CAPTURE_BUFFER`. Additionally, **Sensor** component (in general case) requires administrative/root privileges.
+
+- **Server** component does not have any special requirements.
 
 ## Quick start
 
