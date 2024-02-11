@@ -7342,6 +7342,10 @@ tpc.cdn-linkedin.info
 
 /80c2d1651b23ae.php
 
+# Reference: https://threatfox.abuse.ch/ioc/1232006/
+
+/2c6d40d7cc1ad3.php
+
 # Reference: https://twitter.com/Gi7w0rm/status/1721564409800142986
 
 /open_WinCryptoWallet.ps1
