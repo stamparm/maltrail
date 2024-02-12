@@ -1575,3 +1575,21 @@ thissubdomainshouldnotexist.home-vip.xyz
 # Reference: https://www.virustotal.com/gui/ip-address/192.210.140.35/community
 
 192.210.140.35:7443
+
+# Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2024-02-12)
+
+137.184.43.170:443
+143.198.131.4:7443
+164.92.189.59:443
+172.245.156.157:7443
+185.189.196.191:443
+185.196.9.10:7443
+217.114.43.93:7443
+34.72.157.21:443
+35.202.200.238:443
+46.101.195.151:443
+69.46.36.208:7443
+80.90.179.251:7443
+ansible-tower-pocket-node1.validatorsheaven.network
+kitrknis.com
+snf-893982.vm.okeanos.grnet.gr
