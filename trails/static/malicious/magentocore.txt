@@ -9797,6 +9797,14 @@ zx61673924.arch535.industries
 /wpputty.php
 /wpyii2.php
 
+# Reference: https://www.virustotal.com/gui/ip-address/162.255.119.135/relations
+
+ccscsnff.shop
+
+# Reference: https://www.virustotal.com/gui/ip-address/85.239.41.118/relations
+
+ccscsnff.uk
+
 # Generic
 
 /assets/lfg.js
