@@ -4176,3 +4176,8 @@
 92.118.112.0/24,gir-as
 93.157.106.0/24,gir-as
 95.215.108.0/24,gir-as
+
+# AS216240, MortalSoft
+# Reference: https://ipinfo.io/AS216240
+
+93.123.85.0/24,mortalsoft
