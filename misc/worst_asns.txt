@@ -4201,3 +4201,9 @@
 # Reference: https://ipinfo.io/AS216309
 
 185.172.128.0/24,evilempire-as
+
+# AS400328
+# Reference: https://ipinfo.io/AS400328
+
+204.76.203.0/24,intel-hosting
+62.72.185.0/24,intel-hosting
