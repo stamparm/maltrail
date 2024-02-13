@@ -7680,6 +7680,10 @@ ccc.imbolexabc.top
 /raw_stageless_8000.hta
 /s_8000.hta
 
+# Reference: https://twitter.com/banthisguy9349/status/1755838447141401064
+
+/BS10534901.php
+
 # Generic
 
 /js/altmanluggage.js
