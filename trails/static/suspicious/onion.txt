@@ -59,6 +59,11 @@ tor-explorer.org
 
 .onion
 
+# Reference: https://www.virustotal.com/gui/ip-address/173.212.254.192/relations
+# Reference: https://www.virustotal.com/gui/file/678a67351a8caecb478c9d783bb4dbe666df16c9fca628b2355be0fc6bc348d9/detection
+
+173.212.254.192:31337
+
 # Misc
 
 tor4u.net
