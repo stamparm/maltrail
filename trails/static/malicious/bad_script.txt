@@ -7684,6 +7684,13 @@ ccc.imbolexabc.top
 
 /BS10534901.php
 
+# Reference: https://twitter.com/banthisguy9349/status/1757464973867917424
+# Reference: https://pastebin.com/R6v4TUX1
+
+/ransomeware/crypto.html
+/ransomeware/ransomeware.html
+/ransomeware/
+
 # Generic
 
 /js/altmanluggage.js
