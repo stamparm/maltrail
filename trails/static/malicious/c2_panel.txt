@@ -599,6 +599,17 @@ http://87.236.146.164
 http://95.179.247.93
 /shahan.txt
 
+# Reference: https://twitter.com/banthisguy9349/status/1757464973867917424
+# Reference: https://pastebin.com/R6v4TUX1
+
+http://185.216.70.152
+http://185.216.70.171
+http://185.216.70.188
+http://185.216.70.97
+http://93.123.39.127
+http://93.123.39.56
+http://93.123.39.69
+
 # Generic
 
 /admin_123/auth.php
