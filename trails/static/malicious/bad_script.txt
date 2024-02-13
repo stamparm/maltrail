@@ -7690,6 +7690,7 @@ ccc.imbolexabc.top
 /ransomeware/crypto.html
 /ransomeware/ransomeware.html
 /ransomeware/
+/siilencedantibot!
 
 # Generic
 
