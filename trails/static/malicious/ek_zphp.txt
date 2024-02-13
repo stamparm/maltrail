@@ -163,6 +163,11 @@ telotrace.com
 mysticselect.com
 oemmasters.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-02-12-v10530/1373
+
+casinovipclubs.com
+grantallardserver.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
