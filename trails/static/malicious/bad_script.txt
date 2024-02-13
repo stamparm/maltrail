@@ -7672,6 +7672,14 @@ ccc.imbolexabc.top
 
 /redis-rogue-server.py
 
+# Reference: https://twitter.com/karol_paciorek/status/1757353098035511512
+# Reference: https://tria.ge/240213-mgymnsfe3z/behavioral1
+# Reference: https://tria.ge/240213-mapfesfc71/behavioral1
+
+/lins2.ps1
+/raw_stageless_8000.hta
+/s_8000.hta
+
 # Generic
 
 /js/altmanluggage.js
