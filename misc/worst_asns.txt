@@ -4195,3 +4195,9 @@
 185.216.70.0/24,sircrosar-net
 93.123.39.0/24,sircrosar-net
 94.156.8.0/24,sircrosar-net
+
+# AS216309
+# Reference: https://twitter.com/banthisguy9349/status/1755233320382746889
+# Reference: https://ipinfo.io/AS216309
+
+185.172.128.0/24,evilempire-as
