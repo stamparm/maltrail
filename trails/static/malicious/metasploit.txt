@@ -4813,3 +4813,9 @@ analytics.airdns.org
 # Reference: https://twitter.com/drb_ra/status/1756056127513506259
 
 131.153.22.132:443
+
+# Reference: https://twitter.com/karol_paciorek/status/1757353098035511512
+# Reference: https://tria.ge/240213-mgymnsfe3z/behavioral1
+# Reference: https://tria.ge/240213-mapfesfc71/behavioral1
+
+144.76.219.54:8000
