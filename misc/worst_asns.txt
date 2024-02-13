@@ -4207,3 +4207,23 @@
 
 204.76.203.0/24,intel-hosting
 62.72.185.0/24,intel-hosting
+
+# AS394711
+# Reference: https://ipinfo.io/AS394711
+
+91.92.240.0/24,limenet
+91.92.241.0/24,limenet
+91.92.242.0/24,limenet
+91.92.243.0/24,limenet
+91.92.244.0/24,limenet
+91.92.245.0/24,limenet
+91.92.246.0/24,limenet
+91.92.247.0/24,limenet
+91.92.248.0/24,limenet
+91.92.249.0/24,limenet
+91.92.250.0/24,limenet
+91.92.251.0/24,limenet
+91.92.252.0/24,limenet
+91.92.253.0/24,limenet
+91.92.254.0/24,limenet
+91.92.255.0/24,limenet
