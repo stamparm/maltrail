@@ -1358,3 +1358,7 @@ byw.dscloud.me
 
 141.94.96.195:3333
 pool-fr.supportxmr.com
+
+# Reference: # Reference: https://tria.ge/240212-pz8lpsde6w/behavioral1
+
+xmr-us-west1.nanopool.org
