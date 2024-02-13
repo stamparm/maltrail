@@ -4227,3 +4227,13 @@
 91.92.253.0/24,limenet
 91.92.254.0/24,limenet
 91.92.255.0/24,limenet
+
+# AS49870
+# Reference: https://urlhaus.abuse.ch/asn/49870/
+# Reference: https://ipinfo.io/AS49870
+
+45.81.21.0/24,as49870-bv
+45.81.22.0/23,as49870-bv
+45.95.146.0/24,as49870-bv
+45.95.147.0/24,as49870-bv
+89.190.156.0/24,as49870-bv
