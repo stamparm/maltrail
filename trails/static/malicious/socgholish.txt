@@ -2829,6 +2829,17 @@ abdc.our.openarmscv.org
 ivr.our.openarmscv.org
 nzq.our.openarmscv.org
 
+# Reference: https://www.virustotal.com/gui/ip-address/104.161.32.84/relations
+
+day.50adayplan.com
+big.day.50adayplan.com
+fslq.day.50adayplan.com
+ssi.day.50adayplan.com
+vmalf.day.50adayplan.com
+wy.big.day.50adayplan.com
+yddk.day.50adayplan.com
+yui.day.50adayplan.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
