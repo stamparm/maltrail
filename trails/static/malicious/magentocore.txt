@@ -9826,6 +9826,10 @@ webmail.gtagmanager.net
 
 gtagmanager.org
 
+# Reference: https://www.virustotal.com/gui/ip-address/94.156.71.191/relations
+
+gtagmanager.site
+
 # Generic
 
 /assets/lfg.js
