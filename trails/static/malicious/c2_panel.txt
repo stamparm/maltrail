@@ -745,6 +745,8 @@ http://93.123.39.69
 /PowerPanel/
 /slim/panel/
 /TEPUUR/adm.php
+/uadmin/adm.php
+/uadmin/gate.php
 /Web%20Panel/upload/
 /webpanel/auth.php
 /webpanel/api.php
