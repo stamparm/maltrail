@@ -9822,6 +9822,10 @@ ns2.okqtfc1.org
 webdisk.gtagmanager.net
 webmail.gtagmanager.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.62.56.234/relations
+
+gtagmanager.org
+
 # Generic
 
 /assets/lfg.js
