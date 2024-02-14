@@ -744,6 +744,7 @@ http://93.123.39.69
 /PIRATERIJ/adm.php
 /PowerPanel/
 /slim/panel/
+/TEPUUR/adm.php
 /Web%20Panel/upload/
 /webpanel/auth.php
 /webpanel/api.php
