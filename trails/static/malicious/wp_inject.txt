@@ -1816,6 +1816,7 @@ spot.scriptsplatform.com
 stay.linestoget.com
 stay.stratosbody.com
 step.linestoget.com
+take.specialtaskevents.com
 trace.stratosbody.com
 trend.stablelightway.com
 way.trackersline.com
