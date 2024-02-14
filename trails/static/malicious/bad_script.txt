@@ -7780,8 +7780,6 @@ ccc.imbolexabc.top
 /screenshot_gate.php
 /tgate.php
 /testgate.php
-/uadmin/adm.php
-/uadmin/gate.php
 /verification-card.php
 /1drvme/
 /payload/openAttach/
