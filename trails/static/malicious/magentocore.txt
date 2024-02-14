@@ -9805,6 +9805,23 @@ ccscsnff.shop
 
 ccscsnff.uk
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.134.173.161/relations
+
+bardowarc.com
+gtagmanager.net
+cpanel.gtagmanager.net
+cpcalendars.gtagmanager.net
+cpcontacts.gtagmanager.net
+mail.gtagmanager.net
+ns1.bardowarc.com
+ns1.gtagmanager.net
+ns1.okqtfc1.org
+ns2.bardowarc.com
+ns2.gtagmanager.net
+ns2.okqtfc1.org
+webdisk.gtagmanager.net
+webmail.gtagmanager.net
+
 # Generic
 
 /assets/lfg.js
