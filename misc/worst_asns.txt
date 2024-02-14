@@ -4227,6 +4227,14 @@
 91.92.253.0/24,limenet
 91.92.254.0/24,limenet
 91.92.255.0/24,limenet
+94.156.64.0/24,limenet
+94.156.65.0/24,limenet
+94.156.66.0/24,limenet
+94.156.67.0/24,limenet
+94.156.68.0/24,limenet
+94.156.69.0/24,limenet
+94.156.70.0/24,limenet
+94.156.71.0/24,limenet
 
 # AS49870
 # Reference: https://urlhaus.abuse.ch/asn/49870/
