@@ -9830,6 +9830,10 @@ gtagmanager.org
 
 gtagmanager.site
 
+# Reference: https://www.virustotal.com/gui/domain/carcoverstore.pics/relations
+
+carcoverstore.pics
+
 # Generic
 
 /assets/lfg.js
