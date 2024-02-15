@@ -4205,6 +4205,7 @@
 # AS400328
 # Reference: https://ipinfo.io/AS400328
 
+185.194.176.0/24,intel-hosting
 204.76.203.0/24,intel-hosting
 62.72.185.0/24,intel-hosting
 
