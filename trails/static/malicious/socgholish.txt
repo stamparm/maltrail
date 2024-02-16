@@ -2840,6 +2840,10 @@ wy.big.day.50adayplan.com
 yddk.day.50adayplan.com
 yui.day.50adayplan.com
 
+# Reference: https://twitter.com/threatcat_ch/status/1758514768980451421
+
+absolutecache.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
