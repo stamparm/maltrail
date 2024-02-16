@@ -732,8 +732,14 @@ NMS\.19
 l33boLAMER
 
 # Reference: https://twitter.com/sixdub/status/992001190950031361
+# Reference: http://plok1.blogspot.com/2018/02/a-new-spreader-with-mimikatz.html
 
 WinHTTP loader/1.0
+
+# Reference: https://twitter.com/naumovax/status/1758504367114555766
+# Reference: https://habr.com/ru/companies/pt/articles/793440/ (RU-lang)
+
+WinHTTP Example/1.0
 
 # Reference: https://twitter.com/stvemillertime/status/985150675527974912
 
@@ -1209,10 +1215,6 @@ ouija_x.86_64
 
 Christmas Mystery
 Install Capital
-
-# Reference: http://plok1.blogspot.com/2018/02/a-new-spreader-with-mimikatz.html
-
-WinHTTP loader/1.0
 
 # Reference: https://devcentral.f5.com/s/articles/is-xmaker-the-new-trickloader-24372
 # Reference: https://twitter.com/VK_Intel/status/1213253987492864000/photo/2
