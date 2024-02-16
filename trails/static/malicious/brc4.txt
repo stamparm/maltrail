@@ -694,3 +694,9 @@ azureclouder.com
 # Reference: https://twitter.com/drb_ra/status/1754395948233437187
 
 http://35.73.145.106
+
+# Reference: https://twitter.com/jaydinbas/status/1758492116366377193
+# Reference: https://www.virustotal.com/gui/file/b90a7868c72e76d5a750f9d5a049c8b9ff3dac9c2895a1c238b9ba96c94644fd/detection
+# Reference: https://www.virustotal.com/gui/file/8165798fec8294523f25aedfc6699faad0c5d75f60bc7cefcbb2fa13dbc656e3/detection
+
+vinci-onedrive.azurewebsites.net
