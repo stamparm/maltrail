@@ -4190,8 +4190,10 @@
 
 # AS216289
 # Reference: https://twitter.com/banthisguy9349/status/1757464973867917424
+# Reference: https://twitter.com/banthisguy9349/status/1755498069817188668
 # Reference: https://ipinfo.io/AS216289
 
+147.78.103.0/24,bulletvm
 185.216.70.0/24,sircrosar-net
 93.123.39.0/24,sircrosar-net
 94.156.8.0/24,sircrosar-net
