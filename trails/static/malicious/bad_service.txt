@@ -2329,3 +2329,9 @@ http://93.123.85.184
 # Reference: https://urlscan.io/result/19f6fd82-6ed4-4133-b7fb-b2fe2d6b321a/
 
 ddgstresser.com
+
+# Reference: https://twitter.com/banthisguy9349/status/1758415279850181093
+
+discord-bot.net
+dscrd.ru
+level-bot.ru
