@@ -983,3 +983,7 @@ imgsx.lingte.cc
 
 173.231.184.122:9999
 46.8.8.200:9999
+
+# Reference: https://www.virustotal.com/gui/file/c1ec167e03c783615b4db8970975a0bfec61334c109715b61af7c3871c32119f/detection
+
+aqqq.zxuxogt.cn
