@@ -126,7 +126,7 @@ Fully functional demo pages with collected real-life threats can be found [here]
 
 ## Requirements
 
-To properly run the Maltrail, [Python](http://www.python.org/download/) **2.6**, **2.7** or **3.x** is required on \*nix/BSD system, together with installed package [pcapy-ng](https://pypi.org/project/pcapy-ng/).
+To run the Maltrail properly, [Python](http://www.python.org/download/) **2.6**, **2.7** or **3.x** is required on \*nix/BSD system, together with installed package [pcapy-ng](https://pypi.org/project/pcapy-ng/).
 
 **NOTE:** Using of ```pcapy``` lib instead of ```pcapy-ng``` can lead to incorrect work of Maltrail, especially on **Python 3.x** environments. [Examples](https://github.com/stamparm/maltrail/issues?q=label%3Apcapy-ng-related+is%3Aclosed).
 
