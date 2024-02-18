@@ -1362,3 +1362,9 @@ pool-fr.supportxmr.com
 # Reference: # Reference: https://tria.ge/240212-pz8lpsde6w/behavioral1
 
 xmr-us-west1.nanopool.org
+
+# Reference: https://www.virustotal.com/gui/file/87f6e9f0e2b2251c6e4a1bc94b8f30c1d86e69955067f5cf989e457abfcf67d3/detection
+
+5.161.70.189:19999
+c3pool.org
+auto.c3pool.org
