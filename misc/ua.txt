@@ -2456,6 +2456,10 @@ h55u4u4u5uii5
 
 muzcat
 
+# Reference: https://www.virustotal.com/gui/file/000045dbf06452ca867c7553c40297cfe8f954fe3d7083402d48aaefe5ebd3ec/detection
+
+TixDll
+
 # Misc
 
 information_schema
