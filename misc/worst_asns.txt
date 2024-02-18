@@ -4253,3 +4253,13 @@
 # Reference: https://ipinfo.io/AS50360/
 
 5.181.80.0/24,tamatiya-as
+
+# AS400519
+# Reference: https://ipinfo.io/AS400519
+
+147.185.221.0/24,playit-gg
+209.25.140.0/24,playit-gg
+209.25.141.0/24,playit-gg
+209.25.142.0/24,playit-gg
+209.25.143.0/24,playit-gg
+23.133.216.0/24,playit-gg
