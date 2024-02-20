@@ -592,6 +592,7 @@ strox.su
 godstresser.pro
 
 # Reference: https://twitter.com/banthisguy9349/status/1756632918103904424
+# Reference: https://twitter.com/malwrhunterteam/status/1759884580104888423
 
 http://185.141.34.33
 http://20.102.101.4
@@ -604,6 +605,7 @@ fukarstresser.xyz
 mevicstresse.xyz
 radanexpanel.xyz
 sakuracheck.online
+sovietnet.xyz
 stresse.cat
 stresse.cc
 stresse.it
