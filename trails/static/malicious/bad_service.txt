@@ -605,6 +605,8 @@ cobrac2.xyz
 cyberbooter.su
 fukarstresser.xyz
 mevicstresse.xyz
+mythical-stresser-front-end-duy.pages.dev
+mythical-stresser-front-end-prod.pages.dev
 mythicalstress.com
 mythicalstress.net
 mythicalstress.su
