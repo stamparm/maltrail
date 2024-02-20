@@ -4272,3 +4272,9 @@
 141.98.8.0/24,hostbaltic
 194.169.175.0/24,hostbaltic
 91.224.92.0/24,hostbaltic
+
+# AS200593
+# Reference: https://ipinfo.io/AS200593
+
+91.202.233.0/24,prospero-as
+91.215.85.0/24,prospero-as
