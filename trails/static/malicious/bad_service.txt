@@ -592,7 +592,9 @@ strox.su
 godstresser.pro
 
 # Reference: https://twitter.com/banthisguy9349/status/1756632918103904424
+# Reference: https://twitter.com/banthisguy9349/status/1759937759915954491
 # Reference: https://twitter.com/malwrhunterteam/status/1759884580104888423
+# Reference: https://urlscan.io/search/#filename:%22627-777b4b9ac449e628.js%22
 
 http://185.141.34.33
 http://20.102.101.4
@@ -603,7 +605,12 @@ cobrac2.xyz
 cyberbooter.su
 fukarstresser.xyz
 mevicstresse.xyz
+mythicalstress.com
+mythicalstress.net
+mythicalstress.su
+mythicalstress.xyz
 radanexpanel.xyz
+ragestresser.com
 sakuracheck.online
 sovietnet.xyz
 stresse.cat
@@ -611,6 +618,7 @@ stresse.cc
 stresse.it
 stresse.pro
 stresse.re
+stresse.space
 stresser.cam
 stresser.digital
 stressers.io
