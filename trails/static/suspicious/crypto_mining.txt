@@ -1368,3 +1368,14 @@ xmr-us-west1.nanopool.org
 5.161.70.189:19999
 c3pool.org
 auto.c3pool.org
+
+# Reference: https://www.cadosecurity.com/migo-a-redis-miner-with-novel-system-weakening-techniques/
+# Reference: https://www.virustotal.com/gui/domain/xmr-jp1.nanopool.org/relations
+
+139.162.112.195:14433
+139.162.81.90:14433
+139.99.102.74:14433
+157.240.10.41:14433
+172.105.205.14:14433
+172.105.211.250:14433
+xmr-jp1.nanopool.org
