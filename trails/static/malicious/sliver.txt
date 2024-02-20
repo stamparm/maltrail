@@ -3172,6 +3172,11 @@ login.esethelpdesk.info
 baakbp07gw.login.esethelpdesk.info
 baakbrynuwka.login.esethelpdesk.info
 
+# Reference: https://twitter.com/malwrhunterteam/status/1759613053530681492
+# Reference: https://www.virustotal.com/gui/file/c16aeea890e5e01e7c24789962a3cb5e0f2355c1c7540b36053ff2d68c27a14c/detection
+
+116.62.158.109:3232
+
 # Generic
 
 /.sliver-client/
