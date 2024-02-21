@@ -629,6 +629,56 @@ stressers.io
 
 ddosforhi.re
 
+# Reference: https://twitter.com/banthisguy9349/status/1760315271280001502
+
+blaststress.ru
+blaze-api.cc
+crazystresser.net
+darkvr.io
+ddos.sc
+ddossttresser.com
+demonicstresser.xyz
+digitalstress.net
+dragonstresser.net
+getstress.us
+hatter.cloud
+hexstresser.org
+inverse.best
+inverse.sh
+ipstresser.me
+ipstresser.pro
+ipstresser.sx
+joker.sh
+liquidsec.space
+mao-stress.tech
+metastresser.io
+neostress.net
+panel.ddos.sc
+quickdown.pro
+redstresser.net
+ripstresser.top
+securityhide.net
+silentstress.cc
+starkstresser.net
+stressed.su
+stresser.media
+stresser.st
+stresser.su
+stresser.tech
+stresser.website
+stresser.zone
+stresserhub.org
+stresslab.cc
+susstresser.xyz
+thunderstresser.su
+undisclosed.is
+urgstresser.com
+vacstresser.org
+wrldsecurity.net
+xstress.top
+zdstresser.net
+zeusstress.fun
+
 # Reference: https://twitter.com/Gi7w0rm/status/1756645565222273200
 # Reference: https://krebsonsecurity.com/2022/12/six-charged-in-mass-takedown-of-ddos-for-hire-sites/
 
