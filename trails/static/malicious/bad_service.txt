@@ -625,6 +625,10 @@ stresser.cam
 stresser.digital
 stressers.io
 
+# Reference: https://twitter.com/banthisguy9349/status/1760315124655566897
+
+ddosforhi.re
+
 # Reference: https://twitter.com/Gi7w0rm/status/1756645565222273200
 # Reference: https://krebsonsecurity.com/2022/12/six-charged-in-mass-takedown-of-ddos-for-hire-sites/
 
