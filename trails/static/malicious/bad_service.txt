@@ -678,6 +678,7 @@ wrldsecurity.net
 xstress.top
 zdstresser.net
 zeusstress.fun
+tools.digitalstress.net
 
 # Reference: https://twitter.com/Gi7w0rm/status/1756645565222273200
 # Reference: https://krebsonsecurity.com/2022/12/six-charged-in-mass-takedown-of-ddos-for-hire-sites/
