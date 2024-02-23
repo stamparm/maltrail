@@ -1761,6 +1761,15 @@ reporttest.rubecon.co.za
 staging.recruitis.josefbenjac.cz
 zqpvr01.sandcats.io
 
+# Reference: https://twitter.com/suyog41/status/1760991549687742771
+# Reference: https://www.virustotal.com/gui/file/b8f5012bbc6e16628d3c62486b72ef5e54649ff093d4fa1b73df1961cd820746/detection
+# Reference: https://www.virustotal.com/gui/file/6f12b6087b124b6595929cdb14b31f9cf966a8c35a7483332f979b6df2777eef/detection
+# Reference: https://www.virustotal.com/gui/file/5e31bc7b8d65336df908bc9bcc6237cc40b7ab08570533415de101874792e70d/detection
+# Reference: https://www.virustotal.com/gui/file/24ecad57d387c8d06eb80d1b4769b321fdd0e01a1b0190c7c7ea9e461ad3a659/detection
+
+212.47.244.109:3773
+212.47.244.109:443
+
 # Generic
 
 /Havoc/payload/
