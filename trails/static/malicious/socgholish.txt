@@ -3545,6 +3545,10 @@ wwk.members.openarmscv.com
 zej.members.openarmscv.com
 ztpr.members.openarmscv.com
 
+# Reference: https://twitter.com/threatcat_ch/status/1761392083749781964
+
+stake.libertariancounterpoint.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
