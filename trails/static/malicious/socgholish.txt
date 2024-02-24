@@ -3502,6 +3502,49 @@ zzona.layout.oystergardens.us
 zzot.reseller.wonderfulworldblog.com
 zzpft.result.garrettcountygranfondo.org
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.59.170.106/relations
+
+aphqj.members.openarmscv.com
+bzg.members.openarmscv.com
+ccmk.members.openarmscv.com
+ccsfc.members.openarmscv.com
+ciw.members.openarmscv.com
+ciwb.members.openarmscv.com
+cot.members.openarmscv.com
+dmrg.members.openarmscv.com
+eeiia.members.openarmscv.com
+eezc.members.openarmscv.com
+etto.members.openarmscv.com
+exks.members.openarmscv.com
+fgdb.members.openarmscv.com
+ggiq.members.openarmscv.com
+gzj.members.openarmscv.com
+hjpg.members.openarmscv.com
+hqert.members.openarmscv.com
+jmcoj.members.openarmscv.com
+jwqr.members.openarmscv.com
+ktjd.members.openarmscv.com
+ktuj.members.openarmscv.com
+mjxef.members.openarmscv.com
+mtv.members.openarmscv.com
+mub.members.openarmscv.com
+nqhrw.members.openarmscv.com
+nvcep.members.openarmscv.com
+pbf.members.openarmscv.com
+rlc.members.openarmscv.com
+rpe.members.openarmscv.com
+rrlv.members.openarmscv.com
+ryij.members.openarmscv.com
+skv.members.openarmscv.com
+tfsrl.members.openarmscv.com
+twy.members.openarmscv.com
+uam.members.openarmscv.com
+uinuj.members.openarmscv.com
+vcrv.members.openarmscv.com
+wwk.members.openarmscv.com
+zej.members.openarmscv.com
+ztpr.members.openarmscv.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
