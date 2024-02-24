@@ -2344,3 +2344,21 @@ widget.statisticsong.com
 wiki.statisticsong.com
 zdm.statisticsong.com
 antimalware.api.statisticsong.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1744851979392950312
+
+ca.en-wordpress.org
+db-wordpress.org
+en-us.db-wordpress.org
+en-us.host-wordpress.org
+en-us.web-wordpress.org
+en-wordpress.org
+en.ca-wordpress.org
+en.uk-wordpress.org
+en.us-wordpress.org
+gb.en-wordpress.org
+host-wordpress.org
+uk-wordpress.org
+us-en-wordpress.org
+us.en-wordpress.org
+web-wordpress.org
