@@ -529,3 +529,8 @@ zemteksu.xyz
 zigighol.xyz
 zouphuru.net
 zustaque.net
+
+# Reference: https://www.virustotal.com/gui/file/0001533d0111e6cf3b1e76d5a49e8234379d061314e656f8179b59d32ee9d20d/detection
+
+ssd4000.top
+541c.ssd4000.top
