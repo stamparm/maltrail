@@ -7747,6 +7747,11 @@ rpc.nftfastapi.com
 /cachingjs/turboturbo.js
 /turboturbo.js
 
+# Reference: https://twitter.com/banthisguy9349/status/1762883187699556388
+
+/CVE-2023-4911-main/
+/SpigotRCE-1.0-SNAPSHOT.jar
+
 # Generic
 
 /js/altmanluggage.js
