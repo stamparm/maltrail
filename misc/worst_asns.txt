@@ -4284,3 +4284,11 @@
 # Reference: https://ipinfo.io/AS135901
 
 103.172.79.0/24,maychunho-as-vn
+
+# AS205960
+# Reference: https://ipinfo.io/AS205960
+
+91.204.224.0/24,kidc
+91.204.225.0/24,kidc
+91.204.226.0/24,kidc
+91.204.227.0/24,kidc
