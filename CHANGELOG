@@ -14,12 +14,15 @@
 
 
 
-- Version 0.66 -> 0.67 (Upcoming release)
+- Version 0.67 -> 0.68 (Upcoming release)
+
+
+
+- Version 0.66 -> 0.67 (01 Mar 2024)
 
 [=] Handling usage of pcapy lib instead of pcapy-ng is improved (Issue #19242)
 [=] Fixed /server.py and /sensor.py restart in docker container (Issue #19243)
 [=] Multiple updates and optimizations for regular static trails and the whitelist
-
 
 
 
