@@ -9834,6 +9834,11 @@ gtagmanager.site
 
 carcoverstore.pics
 
+# Reference: https://www.virustotal.com/gui/ip-address/158.247.215.195/relations
+
+ajax-assets.com
+fonts-assets.com
+
 # Generic
 
 /assets/lfg.js
