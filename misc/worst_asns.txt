@@ -4315,3 +4315,8 @@
 80.91.223.0/24,ferdinandzink
 91.212.121.0/24,ferdinandzink
 95.214.27.0/24,ferdinandzink
+
+# AS204428
+# Reference: https://ipinfo.io/AS204428
+
+80.94.95.0/24,ss-net
