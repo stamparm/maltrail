@@ -4292,3 +4292,26 @@
 91.204.225.0/24,kidc
 91.204.226.0/24,kidc
 91.204.227.0/24,kidc
+
+# AS49581
+# Reference: https://urlhaus.abuse.ch/asn/49581/
+
+144.172.73.0/24,ferdinandzink
+146.19.191.0/24,ferdinandzink
+176.97.210.0/24,ferdinandzink
+185.117.3.0/24,ferdinandzink
+185.216.71.0/24,ferdinandzink
+185.91.127.0/24,ferdinandzink
+193.111.248.0/24,ferdinandzink
+193.111.250.0/24,ferdinandzink
+2.58.113.0/24,ferdinandzink
+37.221.92.0/24,ferdinandzink
+37.221.94.0/24,ferdinandzink
+45.13.227.0/24,ferdinandzink
+45.131.108.0/24,ferdinandzink
+45.131.111.0/24,ferdinandzink
+45.142.107.0/24,ferdinandzink
+5.253.246.0/24,ferdinandzink
+80.91.223.0/24,ferdinandzink
+91.212.121.0/24,ferdinandzink
+95.214.27.0/24,ferdinandzink
