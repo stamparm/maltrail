@@ -615,6 +615,10 @@ http://93.123.39.69
 http://45.82.120.100
 45.82.120.100:443
 
+# Reference: https://twitter.com/banthisguy9349/status/1762443510639120677
+
+http://93.123.85.210
+
 # Generic
 
 /admin_123/auth.php
