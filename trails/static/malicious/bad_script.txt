@@ -8331,6 +8331,15 @@ zhisalesm.life
 zjgoodsk.life
 zqbestvs.live
 
+# Reference: https://twitter.com/1ZRR4H/status/1763433453876335093
+
+/c_payload.c
+/c_payload_x64.c
+/java_payload.java
+/java_payload_x64.java
+/python_payload.py
+/python_payload_x64.py
+
 # Generic
 
 /js/altmanluggage.js
