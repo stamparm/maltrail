@@ -3549,6 +3549,26 @@ ztpr.members.openarmscv.com
 
 stake.libertariancounterpoint.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/23.95.182.9/relations
+
+collection.aixpirts.com
+499.collection.aixpirts.com
+aely.collection.aixpirts.com
+consq.collection.aixpirts.com
+dxnm.collection.aixpirts.com
+jca.collection.aixpirts.com
+joq.collection.aixpirts.com
+mue.collection.aixpirts.com
+prhll.collection.aixpirts.com
+pszd.collection.aixpirts.com
+qnak.collection.aixpirts.com
+qqmw.collection.aixpirts.com
+svi.collection.aixpirts.com
+uuw.collection.aixpirts.com
+vupy.collection.aixpirts.com
+xerr.collection.aixpirts.com
+ytjc.collection.aixpirts.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
