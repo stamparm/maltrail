@@ -180,6 +180,13 @@ ezwhatsappp.com
 growcalm.com
 grupodistribuidora.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-02-29-v10543/1423
+
+africanbeatmaker.com
+aiifolrida.com
+amarod.com
+auburnartwalk.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
