@@ -168,6 +168,18 @@ oemmasters.com
 casinovipclubs.com
 grantallardserver.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-02-26-v10540/1411
+
+aljannatquranteach.com
+bbsupplyandsalon.com
+betsmovepiyango47.com
+bigcuda.com
+eduvationgroup.com
+eoskinec.com
+ezwhatsappp.com
+growcalm.com
+grupodistribuidora.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
