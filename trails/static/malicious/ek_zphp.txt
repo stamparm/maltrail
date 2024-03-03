@@ -187,6 +187,10 @@ aiifolrida.com
 amarod.com
 auburnartwalk.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-02-22-v10538/1399
+
+machineryideas.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
