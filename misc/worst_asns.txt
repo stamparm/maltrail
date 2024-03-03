@@ -4320,3 +4320,8 @@
 # Reference: https://ipinfo.io/AS204428
 
 80.94.95.0/24,ss-net
+
+# AS51396
+# Reference: https://ipinfo.io/AS51396
+
+84.54.51.0/24,pfcloud
