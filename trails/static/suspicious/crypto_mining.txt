@@ -1379,3 +1379,8 @@ auto.c3pool.org
 172.105.205.14:14433
 172.105.211.250:14433
 xmr-jp1.nanopool.org
+
+# Reference: https://twitter.com/banthisguy9349/status/1764380866317279422
+
+162.19.241.67:5332
+de-zephyr.miningocean.org
