@@ -1838,6 +1838,10 @@ reneesellers.autos
 smtracking.suparamining.swp23.com
 wapt.dgcs.cloud
 
+# Reference: https://twitter.com/1ZRR4H/status/1764907546324656458
+
+http://24.199.107.91
+
 # Generic
 
 /Havoc/payload/
