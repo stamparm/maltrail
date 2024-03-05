@@ -3569,6 +3569,17 @@ vupy.collection.aixpirts.com
 xerr.collection.aixpirts.com
 ytjc.collection.aixpirts.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/213.252.232.161/relations
+
+aus.mimico-cooperative.org
+apmsr.aus.mimico-cooperative.org
+dojud.aus.mimico-cooperative.org
+ond.aus.mimico-cooperative.org
+oyit.aus.mimico-cooperative.org
+qrk.aus.mimico-cooperative.org
+wshks.aus.mimico-cooperative.org
+zofav.aus.mimico-cooperative.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
