@@ -7385,10 +7385,15 @@ tpc.cdn-linkedin.info
 /e78a6263.php
 
 # Reference: https://twitter.com/suyog41/status/1725500179829436655
+# Reference: https://twitter.com/suyog41/status/1765277622777307566
 # Reference: https://www.virustotal.com/gui/ip-address/52.221.191.170/relations
 # Reference: https://www.virustotal.com/gui/file/dd2b2215977ca4822769a16487e4c22b331ac1fb09791cbde6ee98ae72408137/detection
 
 /jakart/bizposting.php
+/jakart/0305.php
+/jakart/redirect.php?m=
+/singole/shake.php
+/singole/welcome.php
 
 # Reference: https://twitter.com/doc_guard/status/1725564939878756608
 # Reference: https://www.virustotal.com/gui/file/33d3af4cae982d5f0456f3b13d5dcf90506c0262e2900d4ef32a4e01a59628bc/detection
