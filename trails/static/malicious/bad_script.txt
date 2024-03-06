@@ -8345,6 +8345,12 @@ zqbestvs.live
 /python_payload.py
 /python_payload_x64.py
 
+# Reference: https://twitter.com/noexceptcpp/status/1765438678967410998
+# Reference: https://app.any.run/tasks/ccb87bc3-8d0c-4909-ad0b-ce48abc36378/
+
+/svchost_80_1.ps1
+/svchost_80_2.ps1
+
 # Generic
 
 /js/altmanluggage.js
