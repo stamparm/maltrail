@@ -1384,3 +1384,7 @@ xmr-jp1.nanopool.org
 
 162.19.241.67:5332
 de-zephyr.miningocean.org
+
+# Reference: https://www.virustotal.com/gui/file/4821de1d9972b0e89c11d4c5c03406c6daf2a1f4ab951354ff108d7b65151f68/detection
+
+159.203.162.18:3333
