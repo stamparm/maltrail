@@ -4832,3 +4832,11 @@ analytics.airdns.org
 # Reference: https://www.virustotal.com/gui/file/08c1d61ee5d9bc94dc62c952c2471b43e263aae916b5319abc954de125d927ce/detection
 
 23.26.137.225:8556
+
+# Reference: https://twitter.com/drb_ra/status/1765841240921096329
+
+207.191.226.206:81
+
+# Reference: https://twitter.com/drb_ra/status/1765841231597195540
+
+50.31.0.8:8443
