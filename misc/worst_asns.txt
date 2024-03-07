@@ -4331,3 +4331,9 @@
 # Reference: https://ipinfo.io/AS51381
 
 185.215.113.0/24,eliteteam-peering-az1
+
+# AS34534
+# Reference: https://ipinfo.io/AS34534
+# Reference: https://urlhaus.abuse.ch/asn/34534/
+
+37.44.238.0/24,bullionet
