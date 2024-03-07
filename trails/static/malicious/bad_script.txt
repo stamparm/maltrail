@@ -7697,7 +7697,9 @@ ccc.imbolexabc.top
 /ransomeware/
 /siilencedantibot!
 
+# Reference: https://twitter.com/unmaskparasites/status/1765144260729618782
 # Reference: https://blog.sucuri.net/2024/02/web3-crypto-malware-angel-drainer.html
+# Reference: https://blog.sucuri.net/2024/03/from-web3-drainer-to-distributed-wordpress-brute-force-attack.html
 
 4378uehdkf.com
 65a044a0023ca.com
@@ -7713,7 +7715,9 @@ cloudcdnjs.com
 cloudflare-eth.org
 cloudweb3-api.com
 coingecko-priceapi.com
+dynamic-linx.com
 dynamiclinks.cfd
+dynamiclink.lol
 flashbots-builder.com
 getblocks.org
 giftbeyondwealth.com
