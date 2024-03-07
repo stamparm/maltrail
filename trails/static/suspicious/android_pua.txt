@@ -987,3 +987,11 @@ imgsx.lingte.cc
 # Reference: https://www.virustotal.com/gui/file/c1ec167e03c783615b4db8970975a0bfec61334c109715b61af7c3871c32119f/detection
 
 aqqq.zxuxogt.cn
+
+# Reference: https://twitter.com/noexceptcpp/status/1765374236510527898
+# Reference: https://www.virustotal.com/gui/file/2da13b787e9dcea186e5c1d60eabf9f017c380c963e193ef5026f3a46c911dcd/detection
+
+androidapk.biz
+spykontrol.com
+pc.spykontrol.com
+appkontrol.s3.amazonaws.com
