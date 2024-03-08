@@ -9839,6 +9839,10 @@ carcoverstore.pics
 ajax-assets.com
 fonts-assets.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/188.225.10.105/relations
+
+cdn-analytic.net
+
 # Generic
 
 /assets/lfg.js
