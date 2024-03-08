@@ -8355,6 +8355,10 @@ zqbestvs.live
 /svchost_80_1.ps1
 /svchost_80_2.ps1
 
+# Reference: https://www.virustotal.com/gui/domain/cachline.com/relations
+
+cachline.com
+
 # Generic
 
 /js/altmanluggage.js
