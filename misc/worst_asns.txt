@@ -4337,3 +4337,11 @@
 # Reference: https://urlhaus.abuse.ch/asn/34534/
 
 37.44.238.0/24,bullionet
+
+# AS207994
+# Reference: https://ipinfo.io/AS207994
+
+163.5.76.0/24,blockchain-creek
+193.124.205.0/24,blockchain-creek
+5.253.37.0/24,blockchain-creek
+62.72.177.0/24,blockchain-creek
