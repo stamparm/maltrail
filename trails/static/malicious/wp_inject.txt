@@ -2370,3 +2370,22 @@ cloudsonicwave.com
 traveltraffic.cc
 host.cloudsonicwave.com
 ttincoming.traveltraffic.cc
+
+# Reference: https://threatfox.abuse.ch/browse/tag/balada/
+# Reference: https://www.virustotal.com/gui/ip-address/193.163.7.113/relations
+# Reference: https://www.virustotal.com/gui/file/f9138500fc81b33e46ad7a5c16936b5aa570afbbd3662b4725b09465cb087751/detection
+# Reference: https://www.virustotal.com/gui/file/07963e46fd55defa8336e4a53ca6ecd48dc6f0a7b51f8231219bcb217d35af8c/detection
+
+apistatexperience.com
+bestresulttostart.com
+startservicefounds.com
+api.bestresulttostart.com
+api.startservicefounds.com
+dns.startservicefounds.com
+find.bestresulttostart.com
+follow.bestresulttostart.com
+point.bestresulttostart.com
+right.bestresulttostart.com
+scripts.bestresulttostart.com
+start.apistatexperience.com
+tart.apistatexperience.com
