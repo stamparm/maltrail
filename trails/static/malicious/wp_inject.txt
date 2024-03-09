@@ -2362,3 +2362,11 @@ uk-wordpress.org
 us-en-wordpress.org
 us.en-wordpress.org
 web-wordpress.org
+
+# Reference: https://securityonline.info/urgent-warning-balada-injector-malware-targets-popular-wordpress-plugin/
+# Reference: https://www.virustotal.com/gui/ip-address/104.21.94.69/relations
+
+cloudsonicwave.com
+traveltraffic.cc
+host.cloudsonicwave.com
+ttincoming.traveltraffic.cc
