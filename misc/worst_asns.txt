@@ -4351,3 +4351,13 @@
 
 141.98.7.0/24,soliaweb
 185.254.37.0/24,soliaweb
+
+# AS203168
+# Reference: https://ipinfo.io/AS203168
+
+193.222.96.0/24,unknow
+194.33.191.0/24,unknow
+194.48.251.0/24,unknow
+45.128.96.0/24,unknow
+45.88.90.0/24,unknow
+87.120.84.0/24,unknow
