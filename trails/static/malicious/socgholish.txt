@@ -3580,6 +3580,15 @@ qrk.aus.mimico-cooperative.org
 wshks.aus.mimico-cooperative.org
 zofav.aus.mimico-cooperative.org
 
+# Reference: https://twitter.com/mojoesec/status/1767278333882986506
+# Reference: https://www.virustotal.com/gui/ip-address/23.184.48.90/relations
+
+round.fishingreelinvestment.com
+fwaf.round.fishingreelinvestment.com
+gaxn.round.fishingreelinvestment.com
+lws.round.fishingreelinvestment.com
+umo.round.fishingreelinvestment.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
