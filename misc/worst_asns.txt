@@ -4366,3 +4366,11 @@
 # Reference: https://ipinfo.io/AS216078
 
 194.48.250.0/24,kremer-as
+
+# AS210644
+# Reference: https://ipinfo.io/AS210644
+
+109.107.181.0/24,aeza-as
+109.107.189.0/24,aeza-as
+45.138.74.0/24,aeza-as
+45.15.157.0/24,aeza-as
