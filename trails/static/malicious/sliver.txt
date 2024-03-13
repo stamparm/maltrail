@@ -3183,6 +3183,10 @@ baakbrynuwka.login.esethelpdesk.info
 http://3.77.201.228
 3.77.201.228:443
 
+# Reference: https://twitter.com/IronNetTR/status/1767991130652626995
+
+13.48.117.225:443
+
 # Generic
 
 /.sliver-client/
