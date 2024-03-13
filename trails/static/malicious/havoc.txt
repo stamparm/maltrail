@@ -1842,6 +1842,11 @@ wapt.dgcs.cloud
 
 http://24.199.107.91
 
+# Reference: https://twitter.com/1ZRR4H/status/1767775296441221163
+
+http://124.106.197.167
+124.106.197.167:443
+
 # Generic
 
 /Havoc/payload/
