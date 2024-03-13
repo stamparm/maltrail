@@ -9843,6 +9843,25 @@ fonts-assets.com
 
 cdn-analytic.net
 
+# Reference: https://twitter.com/sdcyberresearch/status/1765006091404869790
+# Reference: https://twitter.com/sdcyberresearch/status/1767159363729301667
+
+admission616.clothing
+clay468.loan
+control-tools.com
+dance774.guru
+fault185.cool
+fry708.info
+gettinfo.com
+greed549.deals
+hit243.mobi
+into352.agency
+pet384.date
+punctual501.work
+respect802.gold
+slip136.fyi
+static-cdn.info
+
 # Generic
 
 /assets/lfg.js
