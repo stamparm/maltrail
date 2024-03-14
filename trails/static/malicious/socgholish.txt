@@ -3587,6 +3587,7 @@ round.fishingreelinvestment.com
 fwaf.round.fishingreelinvestment.com
 gaxn.round.fishingreelinvestment.com
 lws.round.fishingreelinvestment.com
+nknsz.round.fishingreelinvestment.com
 umo.round.fishingreelinvestment.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/37.128.207.92/relations
