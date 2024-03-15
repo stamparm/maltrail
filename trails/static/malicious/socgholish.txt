@@ -3594,6 +3594,11 @@ umo.round.fishingreelinvestment.com
 
 welcome.visionaryyouth.org
 
+# Reference: https://twitter.com/seguridadyredes/status/1768574348732895550
+
+themancav.com
+pluralism.themancav.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
