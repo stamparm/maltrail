@@ -9972,6 +9972,11 @@ static.webagencyanalytics.com
 kajuinc.sbs
 videelect.icu
 
+# Reference: https://twitter.com/sdcyberresearch/status/1731683929566933185
+
+indicalive.com
+cdn.indicalive.com
+
 # Generic
 
 /assets/lfg.js
