@@ -10024,6 +10024,11 @@ sec.tagflows.com
 staging.tagflows.com
 tags.tagflows.com
 
+# Reference: https://twitter.com/sdcyberresearch/status/1719367704233005304
+# Reference: https://www.virustotal.com/gui/ip-address/195.35.39.47/relations
+
+query.searchyourservices.com
+
 # Generic
 
 /assets/lfg.js
