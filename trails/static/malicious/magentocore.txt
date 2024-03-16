@@ -9895,6 +9895,11 @@ cdn-googletagmanager.com
 keytoc.online
 cdn.keytoc.online
 
+# Reference: https://twitter.com/sdcyberresearch/status/1757023351510364666
+
+bgxjymfky29ycde.com
+ganalyticsmanager.com
+
 # Generic
 
 /assets/lfg.js
