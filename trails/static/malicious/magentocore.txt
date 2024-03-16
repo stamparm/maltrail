@@ -10029,6 +10029,11 @@ tags.tagflows.com
 
 query.searchyourservices.com
 
+# Reference: https://twitter.com/sdcyberresearch/status/1719001051322306986
+
+vspact.com
+cdn.vspact.com
+
 # Generic
 
 /assets/lfg.js
