@@ -9930,6 +9930,13 @@ lokopon.online
 segtec.store
 cdn.dvtmob.shop
 
+# Reference: https://twitter.com/sdcyberresearch/status/1750155707888890089
+
+portec.shop
+telemob.click
+uydrdig.quest
+zauetc.site
+
 # Generic
 
 /assets/lfg.js
