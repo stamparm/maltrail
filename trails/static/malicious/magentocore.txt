@@ -9889,6 +9889,12 @@ cdn-googletag.online
 
 cdn-googletagmanager.com
 
+# Reference: https://twitter.com/sdcyberresearch/status/1759604161220374745
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.139/relations
+
+keytoc.online
+cdn.keytoc.online
+
 # Generic
 
 /assets/lfg.js
