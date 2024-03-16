@@ -9994,6 +9994,19 @@ arctica.shop
 hxenc.pics
 ultramart.fun
 
+# Reference: https://twitter.com/sdcyberresearch/status/1721537506611527982
+
+gtm-statistic.com
+gtm-statistlc.com
+gtm-statistlcs.com
+gtm-statlstic.com
+gtm-statlstics.com
+gtm-statlstlc.com
+gtmstatlstics.com
+gtstatistic.com
+gtstatistic.info
+idor-marketing.com
+
 # Generic
 
 /assets/lfg.js
