@@ -9984,6 +9984,10 @@ cacheloading.com
 cdn.cacheloading.com
 tracking.services.bz
 
+# Reference: https://twitter.com/sdcyberresearch/status/1726582074394747350
+
+webappanalyzer.com
+
 # Generic
 
 /assets/lfg.js
