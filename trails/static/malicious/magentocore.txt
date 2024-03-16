@@ -10013,6 +10013,17 @@ idor-marketing.com
 safecontentdelivery.com
 csp.safecontentdelivery.com
 
+# Reference: https://twitter.com/sdcyberresearch/status/1718661840161394951
+# Reference: https://www.virustotal.com/gui/ip-address/195.179.237.105/relations
+
+tagflows.com
+tgsms.shop
+cart.tagflows.com
+clients.tagflows.com
+sec.tagflows.com
+staging.tagflows.com
+tags.tagflows.com
+
 # Generic
 
 /assets/lfg.js
