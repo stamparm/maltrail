@@ -9967,6 +9967,11 @@ xploit.im
 webagencyanalytics.com
 static.webagencyanalytics.com
 
+# Reference: https://twitter.com/sdcyberresearch/status/1734198037059138018
+
+kajuinc.sbs
+videelect.icu
+
 # Generic
 
 /assets/lfg.js
