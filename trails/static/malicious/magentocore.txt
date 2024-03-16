@@ -9900,6 +9900,21 @@ cdn.keytoc.online
 bgxjymfky29ycde.com
 ganalyticsmanager.com
 
+# Reference: https://twitter.com/sdcyberresearch/status/1756691225762033841
+# Reference: https://www.virustotal.com/gui/ip-address/5.188.86.197/relations
+
+keepstat.shop
+lazyanalytics.xyz
+onlystat.shop
+protectedtag.sbs
+quickanalytics.cfd
+statkeepr.shop
+tagmanager.digital
+tagmanager.shop
+transtat.pw
+/cdn/absorberr.com.js
+/absorberr.com.js
+
 # Generic
 
 /assets/lfg.js
