@@ -9885,6 +9885,10 @@ wr17716066.respect802.gold
 
 cdn-googletag.online
 
+# Reference: https://www.virustotal.com/gui/ip-address/46.17.248.65/relations
+
+cdn-googletagmanager.com
+
 # Generic
 
 /assets/lfg.js
