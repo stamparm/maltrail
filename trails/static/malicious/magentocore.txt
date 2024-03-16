@@ -9957,6 +9957,10 @@ svzntop.online
 cdn.odinmob.shop
 /karendidion-loader.js
 
+# Reference: https://twitter.com/sdcyberresearch/status/1747262893132001767
+
+xploit.im
+
 # Generic
 
 /assets/lfg.js
