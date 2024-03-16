@@ -9961,6 +9961,12 @@ cdn.odinmob.shop
 
 xploit.im
 
+# Reference: https://twitter.com/sdcyberresearch/status/1745089590631797215
+# Reference: https://www.virustotal.com/gui/ip-address/212.118.53.134/relations
+
+webagencyanalytics.com
+static.webagencyanalytics.com
+
 # Generic
 
 /assets/lfg.js
