@@ -4622,9 +4622,11 @@ yahoo-tracker.com
 
 # Reference: https://twitter.com/MBThreatIntel/status/1376662429229142022
 # Reference: https://twitter.com/rootprivilege/status/1549799944835371008
+# Reference: https://www.virustotal.com/gui/ip-address/185.215.113.111/relations
 # Reference: https://www.virustotal.com/gui/ip-address/194.61.25.77/relations
 # Reference: https://www.virustotal.com/gui/ip-address/77.83.36.33/relations
 
+gstatis.co
 jqueri-web.at
 jqueri.at
 jqueridev.at
