@@ -9937,6 +9937,15 @@ telemob.click
 uydrdig.quest
 zauetc.site
 
+# Reference: https://twitter.com/sdcyberresearch/status/1749404277913600310
+# Reference: https://www.virustotal.com/gui/ip-address/5.252.22.197/relations
+
+googurlcdns.com
+goourlcns.com
+goourlcss.com
+securlfondcss.com
+securlfondocss.com
+
 # Generic
 
 /assets/lfg.js
