@@ -9946,6 +9946,17 @@ goourlcss.com
 securlfondcss.com
 securlfondocss.com
 
+# Reference: https://twitter.com/sdcyberresearch/status/1747263048526758386
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.226/relations
+
+odinmob.shop
+poyaslim.space
+rozmzhen.site
+stenetoc.fun
+svzntop.online
+cdn.odinmob.shop
+/karendidion-loader.js
+
 # Generic
 
 /assets/lfg.js
