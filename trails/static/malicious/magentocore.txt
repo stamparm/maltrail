@@ -9903,6 +9903,8 @@ ganalyticsmanager.com
 # Reference: https://twitter.com/sdcyberresearch/status/1756691225762033841
 # Reference: https://www.virustotal.com/gui/ip-address/5.188.86.197/relations
 
+hypermercado.shop
+jetpacks.shop
 keepstat.shop
 lazyanalytics.xyz
 onlystat.shop
@@ -9912,6 +9914,7 @@ statkeepr.shop
 tagmanager.digital
 tagmanager.shop
 transtat.pw
+wonderz.lol
 /cdn/absorberr.com.js
 /absorberr.com.js
 
