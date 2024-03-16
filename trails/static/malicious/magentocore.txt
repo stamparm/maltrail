@@ -10007,6 +10007,12 @@ gtstatistic.com
 gtstatistic.info
 idor-marketing.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/217.21.77.96/relations
+# Reference: https://www.virustotal.com/gui/ip-address/217.21.77.96/relations
+
+safecontentdelivery.com
+csp.safecontentdelivery.com
+
 # Generic
 
 /assets/lfg.js
