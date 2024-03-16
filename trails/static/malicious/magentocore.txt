@@ -9988,6 +9988,12 @@ tracking.services.bz
 
 webappanalyzer.com
 
+# Reference: https://twitter.com/sdcyberresearch/status/1724079447303737458
+
+arctica.shop
+hxenc.pics
+ultramart.fun
+
 # Generic
 
 /assets/lfg.js
