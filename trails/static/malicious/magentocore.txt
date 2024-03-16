@@ -9881,6 +9881,10 @@ uo68384370.respect802.gold
 uz87619761.respect802.gold
 wr17716066.respect802.gold
 
+# Reference: https://twitter.com/sdcyberresearch/status/1760293613928419397
+
+cdn-googletag.online
+
 # Generic
 
 /assets/lfg.js
