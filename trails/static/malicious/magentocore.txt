@@ -9977,6 +9977,13 @@ videelect.icu
 indicalive.com
 cdn.indicalive.com
 
+# Reference: https://twitter.com/sdcyberresearch/status/1729138740969472433
+# Reference: https://www.virustotal.com/gui/ip-address/82.180.138.247/relations
+
+cacheloading.com
+cdn.cacheloading.com
+tracking.services.bz
+
 # Generic
 
 /assets/lfg.js
