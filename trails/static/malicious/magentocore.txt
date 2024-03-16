@@ -9918,6 +9918,18 @@ wonderz.lol
 /cdn/absorberr.com.js
 /absorberr.com.js
 
+# Reference: https://twitter.com/sdcyberresearch/status/1751986738120028234
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.230/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.247/relations
+
+bomtech.site
+dvtmob.shop
+fantatic.fun
+helcalc.space
+lokopon.online
+segtec.store
+cdn.dvtmob.shop
+
 # Generic
 
 /assets/lfg.js
