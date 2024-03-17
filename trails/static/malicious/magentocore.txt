@@ -10034,6 +10034,10 @@ query.searchyourservices.com
 vspact.com
 cdn.vspact.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/104.21.93.124/relations
+
+gtm-stats.com
+
 # Generic
 
 /assets/lfg.js
