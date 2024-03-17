@@ -7559,19 +7559,30 @@ tpc.cdn-linkedin.info
 # Reference: https://threatfox.abuse.ch/browse/malware/win.dcrat/ (# 2024-01-24)
 
 /26048ad8.php
+/359d80f9.php
 /46636ed2.php
 /500ae1b3.php
+/665cf811.php
 /667f720d.php
+/8a45dff2.php
 /91c007b5.php
 /937b6157.php
+/9625229d.php
+/9b366b94.php
+/9bc7b45d.php
+/9cf11b76.php
+/ab3a3bb6.php
+/adcac1e6.php
 /b0f62e5c.php
 /c2b6ff67.php
+/cce379fc.php
 /db059622.php
 /e3e70db1.php
 /e42a6515.php
 /ee48257d.php
 /f1aba1fe.php
 /f50a15cc.php
+/f8a8b9ed.php
 
 # Reference: https://twitter.com/noexceptcpp/status/1751572303295504461
 # Reference: https://twitter.com/noexceptcpp/status/1751589805647917376
