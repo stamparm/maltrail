@@ -4806,7 +4806,7 @@ analytics.airdns.org
 
 206.204.132.52:8443
 
-# Refeence: https://twitter.com/drb_ra/status/1754605922733740371
+# Reference: https://twitter.com/drb_ra/status/1754605922733740371
 
 34.101.153.147:444
 

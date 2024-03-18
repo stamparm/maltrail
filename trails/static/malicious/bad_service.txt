@@ -1649,7 +1649,7 @@ validcc-shop.be
 walmart-cc.be
 xstuff.cc
 
-# Refereence: https://app.validin.com/axon?find=194.87.45.87
+# Reference: https://app.validin.com/axon?find=194.87.45.87
 
 101-201-dumps-cc-shop-xmpp-jp.online
 alboraaq-account-and-database-dumps-cc-dump-sites-2022.online
