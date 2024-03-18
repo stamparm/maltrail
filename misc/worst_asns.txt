@@ -4189,9 +4189,11 @@
 
 185.81.156.0/22,inu-as
 
+# AS215420
 # AS216289
 # Reference: https://twitter.com/banthisguy9349/status/1757464973867917424
 # Reference: https://twitter.com/banthisguy9349/status/1755498069817188668
+# Reference: https://ipinfo.io/AS215420
 # Reference: https://ipinfo.io/AS216289
 
 147.78.103.0/24,bulletvm
