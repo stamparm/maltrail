@@ -8375,6 +8375,10 @@ cachline.com
 /js/f336fcf927bc87fba9a43a5c5e8cbc74.js
 /f336fcf927bc87fba9a43a5c5e8cbc74.js
 
+# Reference: https://twitter.com/banthisguy9349/status/1769755483768803650
+
+/mimi.ps1
+
 # Generic
 
 /js/altmanluggage.js
