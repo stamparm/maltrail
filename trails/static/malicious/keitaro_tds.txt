@@ -1328,3 +1328,20 @@ yinagoh.0-81.com
 yoshiokafoto.com
 zaarcode.com
 zheka.dnsabr.com
+
+# Reference: https://twitter.com/1ZRR4H/status/1669803100134158336
+
+188.225.60.125:443
+188.225.60.182:443
+188.225.60.21:443
+188.225.60.59:443
+188.225.60.5:443
+188.225.60.64:443
+188.225.60.6:443
+188.225.60.74:443
+188.225.60.97:443
+ggspace.space
+molonlave.team
+sdgqaef.site
+trackmytraff.pro
+pro.dataofpages.com
