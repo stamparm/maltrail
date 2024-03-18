@@ -8379,6 +8379,12 @@ cachline.com
 
 /mimi.ps1
 
+# Reference: https://twitter.com/banthisguy9349/status/1769653638459220391
+
+/cve-2014-4014.c
+/h00lyshit.c
+/poc_v0.c
+
 # Generic
 
 /js/altmanluggage.js
