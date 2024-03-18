@@ -10038,6 +10038,15 @@ cdn.vspact.com
 
 gtm-stats.com
 
+# Reference: https://twitter.com/sdcyberresearch/status/1769712742317817963
+# Reference: https://www.virustotal.com/gui/ip-address/82.202.160.253/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.202.161.192/relations
+
+allquickcdn.com
+easyclickinc.com
+m.easyclickinc.com
+t.allquickcdn.com
+
 # Generic
 
 /assets/lfg.js
