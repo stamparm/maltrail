@@ -195,6 +195,14 @@ machineryideas.com
 
 briefscala.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-03-18-v10554/1469
+
+7commbeta.com
+ausgov.pro
+edulokam.com
+ezshipsy.com
+worldofmantas.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
