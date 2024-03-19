@@ -5213,10 +5213,6 @@ m4a1.pro
 
 sakurafrp.com
 
-# Reference: https://www.virustotal.com/gui/domain/pktriot.net/relations
-
-pktriot.net
-
 # Reference: https://www.virustotal.com/gui/domain/googletestadminwin.com/relations
 
 googletestadminwin.com
