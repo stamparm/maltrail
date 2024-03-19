@@ -3599,6 +3599,27 @@ welcome.visionaryyouth.org
 themancav.com
 pluralism.themancav.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/193.26.115.80/relations
+
+policy.donnafrey.com
+acmj.policy.donnafrey.com
+dkca.policy.donnafrey.com
+ftyz.policy.donnafrey.com
+grqt.policy.donnafrey.com
+jtxj.policy.donnafrey.com
+krenl.policy.donnafrey.com
+ljtu.policy.donnafrey.com
+nilv.policy.donnafrey.com
+oijga.policy.donnafrey.com
+qikae.policy.donnafrey.com
+rjot.policy.donnafrey.com
+skovb.policy.donnafrey.com
+tfpv.policy.donnafrey.com
+uqakr.policy.donnafrey.com
+xugix.policy.donnafrey.com
+zjxwd.policy.donnafrey.com
+zuwy.policy.donnafrey.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
