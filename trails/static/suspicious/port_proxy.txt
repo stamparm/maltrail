@@ -18,12 +18,6 @@ portmapper.myonlineportal.net
 
 natfrp.cloud
 
-# Reference: https://twitter.com/malwrhunterteam/status/1491742434451197958
-# Reference: https://twitter.com/malwrhunterteam/status/1491744530198110213
-
-packetriot.net
-pktriot.net
-
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-02-v10456/1090
 # Reference: https://www.virustotal.com/gui/domain/ngrok-free.app/relations
 # Reference: https://app.validin.com/axon?find=34.211.83.157&type=ip
