@@ -10047,6 +10047,11 @@ easyclickinc.com
 m.easyclickinc.com
 t.allquickcdn.com
 
+# Reference: https://twitter.com/sdcyberresearch/status/1770096876961878253
+
+dfsdjfheuu8.github.io
+susial.github.io
+
 # Generic
 
 /assets/lfg.js
