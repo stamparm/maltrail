@@ -10052,6 +10052,18 @@ t.allquickcdn.com
 dfsdjfheuu8.github.io
 susial.github.io
 
+# Reference: https://twitter.com/sdcyberresearch/status/1770445832128459136
+# Reference: https://www.virustotal.com/gui/ip-address/45.88.3.145/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.88.3.89/relations
+
+helpoton.quest
+looptic.store
+picktoc.online
+sandton.shop
+shtelpenstec.site
+starlanded.click
+/fenchelshades-loader.js
+
 # Generic
 
 /assets/lfg.js
