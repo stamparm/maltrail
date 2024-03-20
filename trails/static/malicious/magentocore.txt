@@ -10062,6 +10062,12 @@ picktoc.online
 sandton.shop
 shtelpenstec.site
 starlanded.click
+cdn.helpoton.quest
+cdn.looptic.store
+cdn.picktoc.online
+cdn.sandton.shop
+cdn.shtelpenstec.site
+cdn.starlanded.click
 /fenchelshades-loader.js
 
 # Generic
