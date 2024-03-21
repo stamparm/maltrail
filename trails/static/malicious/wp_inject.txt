@@ -2404,6 +2404,8 @@ startservicefounds.comapi.startservicefounds.com
 
 # Reference: https://blog.sucuri.net/2024/03/sign1-malware-analysis-campaign-history-indicators-of-compromise.html
 # Reference: https://www.virustotal.com/gui/ip-address/162.0.228.112/relations
+# Reference: https://www.virustotal.com/gui/file/774780f037cb02997b7a262385feb3ef5e9f76a75587cde7af15b415ceb21e3c/detection
+# Reference: https://www.virustotal.com/gui/file/77844112f883cf2cf9b9e4fe49ca7d737705969ef538ad736fd8e19bb2c362d8/detection
 
 24supportkit.com
 365analytics.xyz
