@@ -8389,6 +8389,10 @@ cachline.com
 
 /unam_lib.js
 
+# Reference: https://twitter.com/banthisguy9349/status/1770831512788705496
+
+/winPEAS.ps1
+
 # Generic
 
 /js/altmanluggage.js
