@@ -8624,6 +8624,8 @@ zahidelt.sbs
 zamlmob.pics
 zizitok.shop
 zlakovos.click
+cdn.podobadigit.quest
+ww12.podobadigit.quest
 
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.110.130/relations
 
