@@ -1094,6 +1094,12 @@ supershell.dongling.xyz
 jyq.icu
 met.jyq.icu
 
+# Reference: https://twitter.com/banthisguy9349/status/1770762612873052410
+
+115.204.96.97:8888
+45.200.51.238:8888
+45.200.51.253:8888
+
 # Generic
 
 /supershell/login
