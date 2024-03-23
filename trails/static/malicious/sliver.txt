@@ -3289,8 +3289,15 @@ http://185.196.9.214
 91.92.243.90:31337
 98.71.17.145:443
 
+# Reference: https://twitter.com/banthisguy9349/status/1770751736493363660
+# Reference: https://urlhaus.abuse.ch/url/2788773/
+# Reference: https://urlhaus.abuse.ch/browse.php?search=c826366b8c6a2ef391de6b4a45e117ed3ee27d6aca500e8dd31711e4cc1c890b
 # Reference: https://www.virustotal.com/gui/file/c826366b8c6a2ef391de6b4a45e117ed3ee27d6aca500e8dd31711e4cc1c890b/detection
 
+http://13.58.175.120
+http://13.58.203.5
+http://3.142.54.234
+http://3.144.254.156
 3.22.53.161:19743
 
 # Generic
