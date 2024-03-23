@@ -3300,6 +3300,13 @@ http://3.142.54.234
 http://3.144.254.156
 3.22.53.161:19743
 
+# Reference: https://urlhaus.abuse.ch/browse/tag/Sliver/
+
+http://3.142.54.234
+http://5.252.176.77
+209.145.51.44:443
+vmi1159541.contaboserver.net
+
 # Generic
 
 /.sliver-client/
