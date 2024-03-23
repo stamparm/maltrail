@@ -3307,6 +3307,15 @@ http://5.252.176.77
 209.145.51.44:443
 vmi1159541.contaboserver.net
 
+# Reference: https://threatfox.abuse.ch/browse/malware/win.sliver/ (# 2024-03-23)
+
+http://172.96.137.224
+161.132.38.47:31337
+185.194.140.225:8888
+198.252.107.164:31337
+198.252.107.164:8888
+39.99.251.33:63421
+
 # Generic
 
 /.sliver-client/
