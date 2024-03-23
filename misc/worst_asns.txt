@@ -4273,6 +4273,9 @@
 141.98.10.0/24,hostbaltic
 141.98.11.0/24,hostbaltic
 141.98.8.0/24,hostbaltic
+185.169.4.0/24,hostbaltic
+185.36.81.0/24,hostbaltic
+193.31.6.0/24,hostbaltic
 194.169.175.0/24,hostbaltic
 91.224.92.0/24,hostbaltic
 
