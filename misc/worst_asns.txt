@@ -4386,3 +4386,8 @@
 80.66.75.0/24,kakharov-as
 80.66.77.0/24,kakharov-as
 87.251.79.0/24,kakharov-as
+
+# AS200313
+# Reference: https://ipinfo.io/AS200313
+
+195.242.110.0/23,internet-it
