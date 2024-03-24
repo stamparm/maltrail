@@ -3620,6 +3620,13 @@ xugix.policy.donnafrey.com
 zjxwd.policy.donnafrey.com
 zuwy.policy.donnafrey.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/154.29.75.236/relations
+
+apicachebot.com
+hostmaster.apicachebot.com
+mail.apicachebot.com
+suspicious-noed.absolutecache.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
