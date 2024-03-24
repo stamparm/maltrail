@@ -10072,13 +10072,30 @@ cdn.shtelpenstec.site
 cdn.starlanded.click
 /fenchelshades-loader.js
 
-# Reference: https://threatfox.abuse.ch/ioc/1247075/
-
-treimob.cfd
-
 # Reference: https://threatfox.abuse.ch/ioc/1247074/
+# Reference: https://threatfox.abuse.ch/ioc/1247075/
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.209/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.210/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.211/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.212/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.213/relations
 
+cristech.space
 hopefor.space
+jelint.online
+olynoo.site
+seletec.fun
+stelitech.site
+teolydigi.online
+tolinfore.shop
+tucton.shop
+veltefre.shop
+yelubin.cfd
+yostek.fun
+cdn.hopefor.space
+cdn.jelint.online
+cdn.treimob.cfd
+cdn.tucton.shop
 
 # Generic
 
