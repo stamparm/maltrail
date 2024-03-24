@@ -10072,6 +10072,10 @@ cdn.shtelpenstec.site
 cdn.starlanded.click
 /fenchelshades-loader.js
 
+# Reference: https://threatfox.abuse.ch/ioc/1247075/
+
+treimob.cfd
+
 # Generic
 
 /assets/lfg.js
