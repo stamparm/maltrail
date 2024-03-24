@@ -10076,6 +10076,10 @@ cdn.starlanded.click
 
 treimob.cfd
 
+# Reference: https://threatfox.abuse.ch/ioc/1247074/
+
+hopefor.space
+
 # Generic
 
 /assets/lfg.js
