@@ -976,6 +976,7 @@ douch666.tpddns.net
 # Reference: https://www.virustotal.com/gui/file/000011499d68e56e2c5853567c88c58ee20d38e5df538c9899959a040d49e97e/detection
 
 116.205.4.157:8890
+47.91.170.222:8080
 lingte.cc
 imgsx.lingte.cc
 
