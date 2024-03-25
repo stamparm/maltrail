@@ -3678,9 +3678,21 @@ zlufm.distributors.commdistinc.com
 zrfzb.distributors.commdistinc.com
 
 # Reference: https://twitter.com/threatcat_ch/status/1772255373174468684
+# Reference: https://twitter.com/ValidinLLC/status/1772278217400828174
+# Reference: https://app.validin.com/detail?type=ip&find=146.0.77.153%2F28#tab=resolutions
+# Reference: https://app.validin.com/detail?find=179.60.147.94&type=ip4#tab=resolutions
 # Reference: https://www.virustotal.com/gui/file/3a17861f1584b5dac24b2f0cbee89793a69239592b8bee5fe6fce4923f9c8cf6/detection
 
+alakabaranetworks.com
+applaudcity.com
+aws-geoips-data.net
 cdn-serveq.net
+cdn.next2.cx
+next2.cx
+nkfinsdg.com
+playvideocdn.com
+representativehome.com
+webfullcloudcenter.com
 
 # Generic
 
