@@ -3677,6 +3677,11 @@ zltq.distributors.commdistinc.com
 zlufm.distributors.commdistinc.com
 zrfzb.distributors.commdistinc.com
 
+# Reference: https://twitter.com/threatcat_ch/status/1772255373174468684
+# Reference: https://www.virustotal.com/gui/file/3a17861f1584b5dac24b2f0cbee89793a69239592b8bee5fe6fce4923f9c8cf6/detection
+
+cdn-serveq.net
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
