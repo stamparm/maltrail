@@ -4848,3 +4848,7 @@ analytics.airdns.org
 # Reference: https://twitter.com/drb_ra/status/1765841231597195540
 
 50.31.0.8:8443
+
+# Reference: https://twitter.com/drb_ra/status/1772364147327435177
+
+103.20.192.35:443
