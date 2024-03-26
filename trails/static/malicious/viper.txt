@@ -1244,3 +1244,7 @@
 # Reference: https://twitter.com/banthisguy9349/status/1753112354538279322
 
 http://91.92.241.103
+
+# Reference: https://twitter.com/IronNetTR/status/1772276171532611978
+
+74.48.220.31:60000
