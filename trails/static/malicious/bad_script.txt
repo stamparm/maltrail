@@ -8393,6 +8393,10 @@ cachline.com
 
 /winPEAS.ps1
 
+# Reference: https://twitter.com/threatcat_ch/status/1772714315402912077
+
+/trinity-injector-script.js
+
 # Generic
 
 /js/altmanluggage.js
