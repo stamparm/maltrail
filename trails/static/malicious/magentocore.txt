@@ -10098,6 +10098,11 @@ cdn.jelint.online
 cdn.treimob.cfd
 cdn.tucton.shop
 
+# Reference: https://twitter.com/sdcyberresearch/status/1772611379490382249
+# Reference: https://www.virustotal.com/gui/ip-address/188.119.113.118/relations
+
+statsmetrica.co
+
 # Generic
 
 /assets/lfg.js
