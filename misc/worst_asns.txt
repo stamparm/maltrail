@@ -4391,3 +4391,9 @@
 # Reference: https://ipinfo.io/AS200313
 
 195.242.110.0/23,internet-it
+
+# AS133398
+# Reference: https://urlhaus.abuse.ch/asn/133398
+
+45.125.66.0/24,tele-as
+45.125.67.0/24,tele-as
