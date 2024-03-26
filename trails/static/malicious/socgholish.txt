@@ -3696,6 +3696,11 @@ playvideocdn.com
 representativehome.com
 webfullcloudcenter.com
 
+# Reference: https://twitter.com/utsuk_ladki/status/1772563773317918933
+
+eeatgoodx.com
+stake.libertariancounterpoint.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
