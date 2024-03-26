@@ -2464,6 +2464,13 @@ TixDll
 
 AGCYRNRWWWFZZSWWFWDYDCVDN
 
+# Reference: https://twitter.com/DmitriyMelikov/status/1772661332904468851
+# Reference: https://tria.ge/240326-rg9gdsbh74/behavioral2
+# Reference: https://www.virustotal.com/gui/file/bbdbcec62526b94b38d7ab4e0e794efcc363cd7ec033f39c543c666378c317ea/detection
+
+SSLoad
+SSLoad/1.1
+
 # Misc
 
 information_schema
