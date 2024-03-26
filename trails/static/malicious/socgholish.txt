@@ -3696,6 +3696,17 @@ playvideocdn.com
 representativehome.com
 webfullcloudcenter.com
 
+# Reference: https://twitter.com/Nzc2ZjZjNjY/status/1772626397032219046
+# Reference: https://www.virustotal.com/gui/ip-address/217.12.209.83/relations
+# Reference: https://www.virustotal.com/gui/domain/tiqcdn.net/relations
+
+cdn-iestars.net
+cdn-itdata.net
+tiqcdn.net
+domain.tiqcdn.net
+tags.tiqcdn.net
+usersync.tiqcdn.net
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
