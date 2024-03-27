@@ -6858,6 +6858,7 @@ tpc.cdn-linkedin.info
 
 # Reference: https://threatfox.abuse.ch/browse/malware/win.stealc/
 # Reference: https://github.com/Gi7w0rm/MalwareConfigLists/blob/main/stealc/stealc_c2s_2022_to_2023.txt
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2024-03-27%20FakeUpdates%20IOCs
 # Reference: https://www.virustotal.com/gui/file/041be18344ea8da345923dd5d2421ad79ed888bca4a9ceebe0aa1030c75e5602/detection
 
 /00b977b5ca6bb253.php
@@ -6873,6 +6874,7 @@ tpc.cdn-linkedin.info
 /10bfb33db816f4b6.php
 /11acf293b39e9ca9.php
 /11da1c02f1899731.php
+/13cecbdad86667b0.php
 /14514d160075033b.php
 /14baef17b6d04c23.php
 /155736047db03637.php
