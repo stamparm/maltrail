@@ -4856,3 +4856,7 @@ analytics.airdns.org
 # Reference: https://twitter.com/IronNetTR/status/1772276171532611978
 
 109.107.173.60:443
+
+# Reference: https://twitter.com/drb_ra/status/1773089515847979223
+
+54.196.249.245:443
