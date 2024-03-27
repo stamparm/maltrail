@@ -2029,6 +2029,10 @@ http://8.219.183.36
 92.116.39.245:443
 95.179.171.52:443
 
+# Reference: https://twitter.com/banthisguy9349/status/1773009385259708808
+
+45.87.246.76:8000
+
 # Generic
 
 /Havoc/payload/
