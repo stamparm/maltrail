@@ -10072,6 +10072,7 @@ cdn.shtelpenstec.site
 cdn.starlanded.click
 /fenchelshades-loader.js
 
+# Reference: https://twitter.com/sdcyberresearch/status/1773018548350115936
 # Reference: https://threatfox.abuse.ch/ioc/1247074/
 # Reference: https://threatfox.abuse.ch/ioc/1247075/
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.111.209/relations
@@ -10080,12 +10081,25 @@ cdn.starlanded.click
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.111.212/relations
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.111.213/relations
 
+bepicetn.online
+bupunit.store
+cnejktec.fun
 cristech.space
+gepotich.space
+getepol.space
+hempomot.space
+heubqtec.space
 hopefor.space
 jelint.online
+joykent.online
+mikolec.shop
 olynoo.site
+pilotech.store
 seletec.fun
 stelitech.site
+stuckers.click
+stuckitech.shop
+teersinc.shop
 teolydigi.online
 tolinfore.shop
 treimob.cfd
