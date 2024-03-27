@@ -3316,6 +3316,12 @@ http://172.96.137.224
 198.252.107.164:8888
 39.99.251.33:63421
 
+# Reference: https://twitter.com/malwrhunterteam/status/1772978864144236746
+# Reference: https://www.virustotal.com/gui/file/75d6c6cfe02b33adf293154abd4f07bd554fe025ac00914d94573923489c783f/detection
+
+http://16.162.238.67
+16.162.238.67:443
+
 # Generic
 
 /.sliver-client/
