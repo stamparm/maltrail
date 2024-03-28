@@ -730,6 +730,11 @@ truesecurityservices.io
 vdos-s.co
 zerostresser.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/68.183.181.230/relations
+
+skynetstresser.xyz
+api.skynetstresser.xyz
+
 # Reference: https://twitter.com/banthisguy9349/status/1756635356227649975
 
 http://35.225.165.48
