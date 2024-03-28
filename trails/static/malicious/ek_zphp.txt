@@ -203,6 +203,10 @@ edulokam.com
 ezshipsy.com
 worldofmantas.com
 
+# Reference: https://twitter.com/ValidinLLC/status/1773355013948993727
+
+chumnouyka.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
