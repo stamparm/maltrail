@@ -29,6 +29,7 @@
 
 104.194.79.234:1081
 199.195.250.133:8000
+
 # Reference: https://twitter.com/luc4m/status/1639690470807810048
 
 34.80.59.91:8183
@@ -36,3 +37,8 @@
 # Reference: https://www.virustotal.com/gui/domain/dayzddos.co/relations
 
 dayzddos.co
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-03-26-v10560/1508
+
+asocks.com
+broxy.one
