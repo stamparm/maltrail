@@ -735,6 +735,11 @@ zerostresser.com
 skynetstresser.xyz
 api.skynetstresser.xyz
 
+# Reference: https://twitter.com/banthisguy9349/status/1773297330508169591
+
+141.98.7.228:86
+bbxstresser.llc
+
 # Reference: https://twitter.com/banthisguy9349/status/1756635356227649975
 
 http://35.225.165.48
