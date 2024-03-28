@@ -739,6 +739,10 @@ yandexsupport.ddns.net
 zaza-miner.systems
 zopatolst9.temp.swtest.ru
 
+# Reference: https://www.virustotal.com/gui/ip-address/141.98.7.226/relations
+
+bbx.llc
+
 # Generic
 
 /admin_123/auth.php
