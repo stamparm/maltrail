@@ -740,6 +740,10 @@ api.skynetstresser.xyz
 141.98.7.228:86
 bbxstresser.llc
 
+# Reference: https://twitter.com/banthisguy9349/status/1773297607642673237
+
+brebes-bx.id
+
 # Reference: https://twitter.com/banthisguy9349/status/1756635356227649975
 
 http://35.225.165.48
