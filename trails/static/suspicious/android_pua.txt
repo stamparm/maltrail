@@ -996,3 +996,8 @@ androidapk.biz
 spykontrol.com
 pc.spykontrol.com
 appkontrol.s3.amazonaws.com
+
+# Reference: https://www.humansecurity.com/learn/blog/satori-threat-intelligence-alert-proxylib-and-lumiapps-transform-mobile-devices-into-proxy-nodes
+
+lumiapps.io
+nsignal.net
