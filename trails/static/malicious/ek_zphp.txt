@@ -207,6 +207,10 @@ worldofmantas.com
 
 chumnouyka.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-03-25-v10559/1507
+
+jsluna.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
