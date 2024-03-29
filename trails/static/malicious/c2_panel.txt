@@ -762,6 +762,7 @@ http://49.12.34.122
 http://51.254.220.130
 http://65.109.232.16
 http://95.217.215.100
+nodepanel.uol.ovh
 
 # Generic
 
