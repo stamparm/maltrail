@@ -808,6 +808,7 @@ webstress.xyz
 # Reference: https://pastebin.com/v6fTwbAK
 
 herios-stresser.space
+herios-stress.xyz
 
 # Reference: https://www.linkedin.com/pulse/forums-selling-stolen-credit-card-information-cvv-shops-tissot
 # Reference: https://app.validin.com/axon?type=dom&limit=10000&find=ns1.kak-prigotovit-spagetti.ru (# NS_FOR record)
