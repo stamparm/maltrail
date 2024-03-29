@@ -743,6 +743,26 @@ zopatolst9.temp.swtest.ru
 
 bbx.llc
 
+# Reference: https://twitter.com/DonPasci/status/1773472087316861380
+
+http://116.203.188.167
+http://131.221.33.178
+http://149.56.1.117
+http://149.56.12.233
+http://167.86.127.172
+http://172.111.48.76
+http://18.139.20.165
+http://181.215.46.146
+http://192.99.35.149
+http://206.83.151.7
+http://207.148.83.88
+http://212.87.214.32
+http://45.77.205.78
+http://49.12.34.122
+http://51.254.220.130
+http://65.109.232.16
+http://95.217.215.100
+
 # Generic
 
 /admin_123/auth.php
