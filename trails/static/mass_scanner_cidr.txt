@@ -1094,27 +1094,17 @@
 
 94.102.61.0/24 # criminalip.com
 
+# Reference: https://internet-measurement.com/#ips
+
 87.236.176.0/24 # driftnet.io
 193.163.125.0/24 # driftnet.io
-68.183.53.77/32 # driftnet.io
-104.248.203.191/32 # driftnet.io
-104.248.204.195/32 # driftnet.io
-142.93.191.98/32 # driftnet.io
-157.245.216.203/32 # driftnet.io
-165.22.39.64/32 # driftnet.io
-167.99.209.184/32 # driftnet.io
-188.166.26.88/32 # driftnet.io
-206.189.7.178/32 # driftnet.io
-209.97.152.248/32 # driftnet.io
-2a06:4880::/32 # driftnet.io
-2604:a880:800:10::c4b:f000/124 # driftnet.io
-2604:a880:800:10::c51:a000/124 # driftnet.io
-2604:a880:800:10::c52:d000/124 # driftnet.io
-2604:a880:800:10::c55:5000/124 # driftnet.io
-2604:a880:800:10::c56:b000/124 # driftnet.io
-2a03:b0c0:2:d0::153e:a000/124 # driftnet.io
-2a03:b0c0:2:d0::1576:8000/124 # driftnet.io
-2a03:b0c0:2:d0::1577:7000/124 # driftnet.io
-2a03:b0c0:2:d0::1579:e000/124 # driftnet.io
-2a03:b0c0:2:d0::157c:a000/124 # driftnet.io
-# Reference: https://internet-measurement.com/#ips
+68.183.53.77 # driftnet.io
+104.248.203.191 # driftnet.io
+104.248.204.195 # driftnet.io
+142.93.191.98 # driftnet.io
+157.245.216.203 # driftnet.io
+165.22.39.64 # driftnet.io
+167.99.209.184 # driftnet.io
+188.166.26.88 # driftnet.io
+206.189.7.178 # driftnet.io
+209.97.152.248 # driftnet.io
