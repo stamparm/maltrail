@@ -1093,3 +1093,18 @@
 # Reference: https://github.com/datacenters-network/security/commit/fe8fb8b5a55df1292bbbf71917ec42b5caf9d6ae
 
 94.102.61.0/24 # criminalip.com
+
+# Reference: https://internet-measurement.com/#ips
+
+87.236.176.0/24 # driftnet.io
+193.163.125.0/24 # driftnet.io
+68.183.53.77 # driftnet.io
+104.248.203.191 # driftnet.io
+104.248.204.195 # driftnet.io
+142.93.191.98 # driftnet.io
+157.245.216.203 # driftnet.io
+165.22.39.64 # driftnet.io
+167.99.209.184 # driftnet.io
+188.166.26.88 # driftnet.io
+206.189.7.178 # driftnet.io
+209.97.152.248 # driftnet.io
