@@ -2500,3 +2500,18 @@ yalelodge-shop.su
 z-pay.su
 z-prime.ru
 zeroday-shop.su
+
+# Reference: https://otx.alienvault.com/pulse/65a90b0cfd7d892f1197f724
+
+base-whitelist.com
+dfgdfgqg.com
+inferno-drainer.com
+layer-zero-register.com
+lensprotocol-register.com
+lensprotocol-whitelist.com
+scroll-wl.com
+sei-whitelist.com
+shardeum-whitelist.com
+zk-sync-register.com
+zk-sync-whitelists.com
+zkcync.xyz
