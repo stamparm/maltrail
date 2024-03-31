@@ -2515,3 +2515,10 @@ shardeum-whitelist.com
 zk-sync-register.com
 zk-sync-whitelists.com
 zkcync.xyz
+
+# Reference: https://twitter.com/1ZRR4H/status/1774355839165280493
+# Reference: https://twitter.com/1ZRR4H/status/1774356908897419376
+# Reference: https://www.virustotal.com/gui/file/910077fa834a5a156c40c9dba7637611522c248b1b32d32fef23b42dfab11896/detection
+# Reference: https://www.virustotal.com/gui/file/7c636f1c9e4d9032d66a58f263b3006788047488e00fc26997b915e9d1f174bf/detection
+
+gameshield.io
