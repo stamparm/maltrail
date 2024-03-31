@@ -702,3 +702,17 @@ http://35.73.145.106
 # Reference: https://www.virustotal.com/gui/file/8165798fec8294523f25aedfc6699faad0c5d75f60bc7cefcbb2fa13dbc656e3/detection
 
 vinci-onedrive.azurewebsites.net
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2024-03-31)
+
+http://13.113.189.83
+http://3.112.78.101
+157.230.247.198:443
+185.250.151.246:8443
+46.8.221.19:443
+46.8.221.19:8443
+69.176.89.82:443
+84.246.85.147:443
+88.151.192.114:443
+92.118.112.155:443
+93.66.153.13:9002
