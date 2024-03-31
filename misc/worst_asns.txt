@@ -4397,3 +4397,12 @@
 
 45.125.66.0/24,tele-as
 45.125.67.0/24,tele-as
+
+# AS203727
+# Reference: https://ipinfo.io/AS203727
+
+109.107.182.0/24,altawk
+193.233.255.0/24,altawk
+5.42.92.0/24,altawk
+77.91.124.0/24,altawk
+77.91.68.0/24,altawk
