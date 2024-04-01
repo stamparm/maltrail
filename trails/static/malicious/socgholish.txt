@@ -3766,6 +3766,16 @@ zptom.catching.fishingrealinvestments.com
 
 camps.topgunnbaseball.com
 
+# Reference: https://twitter.com/mojoesec/status/1774861227102999000
+# Reference: https://www.virustotal.com/gui/ip-address/193.26.115.181/relations
+# Reference: https://www.virustotal.com/gui/file/15aee31510eaa09ba1ddd3e5d21ee79f76c67d21b42150ec9d569b6645b8afab/detection
+
+schedule.golfballnutz.com
+exrkk.schedule.golfballnutz.com
+jin.schedule.golfballnutz.com
+kkf.schedule.golfballnutz.com
+knpx.schedule.golfballnutz.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
