@@ -10159,6 +10159,10 @@ g-staticxs.com
 gstatics.org
 sucuriwebtrack.org
 
+# Reference: https://www.virustotal.com/gui/ip-address/198.54.117.197/relations
+
+gstaticss.com
+
 # Generic
 
 /assets/lfg.js
