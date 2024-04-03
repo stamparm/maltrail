@@ -217,6 +217,13 @@ arquivisticalocal.com
 discovus.com
 mtlaikins.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-04-02-v10565/1524
+
+ahryssa.com
+elmworldacademy.com
+foradopicadeiro.com
+techyureka.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
