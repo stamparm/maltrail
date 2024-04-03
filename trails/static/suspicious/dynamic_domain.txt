@@ -3591,3 +3591,7 @@ tpddns.net
 # Reference: https://www.virustotal.com/gui/domain/darkworlds.org/relations
 
 darkworlds.org
+
+# Reference: https://www.virustotal.com/gui/domain/addns.org/relations
+
+addns.org
