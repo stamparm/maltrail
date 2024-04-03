@@ -4872,3 +4872,7 @@ analytics.airdns.org
 # Reference: https://twitter.com/malpulse/status/1775287400463306866
 
 152.42.140.119:9001
+
+# Reference: https://twitter.com/malpulse/status/1775287441605153170
+
+37.37.183.28:3790
