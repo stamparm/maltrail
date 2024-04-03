@@ -10177,6 +10177,13 @@ ads.googlaepis.net
 
 jquerystatic.net
 
+# Reference: https://twitter.com/sdcyberresearch/status/1775561694850297945
+# Reference: https://www.virustotal.com/gui/ip-address/5.230.68.237/relations
+
+gtmetrix.app
+gtadsense.com
+api.gtmetrix.app
+
 # Generic
 
 /assets/lfg.js
