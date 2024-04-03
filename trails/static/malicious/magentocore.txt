@@ -10151,6 +10151,11 @@ jquerystatics.com
 
 jqueurystatic.xyz
 
+# Reference: https://www.virustotal.com/gui/ip-address/195.93.173.18/relations
+
+chimpstatiic.com
+g-staticxs.com
+
 # Generic
 
 /assets/lfg.js
