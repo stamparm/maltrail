@@ -10152,9 +10152,12 @@ jquerystatics.com
 jqueurystatic.xyz
 
 # Reference: https://www.virustotal.com/gui/ip-address/195.93.173.18/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.45.84.11/relations
 
 chimpstatiic.com
 g-staticxs.com
+gstatics.org
+sucuriwebtrack.org
 
 # Generic
 
