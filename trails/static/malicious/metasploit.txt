@@ -4868,3 +4868,7 @@ analytics.airdns.org
 # Reference: https://twitter.com/drb_ra/status/1774902176176853040
 
 109.169.66.125:443
+
+# Reference: https://twitter.com/malpulse/status/1775287400463306866
+
+152.42.140.119:9001
