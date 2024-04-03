@@ -3322,6 +3322,10 @@ http://172.96.137.224
 http://16.162.238.67
 16.162.238.67:443
 
+# Reference: https://twitter.com/malpulse/status/1775286426529087754
+
+132.145.80.201:2376
+
 # Generic
 
 /.sliver-client/
