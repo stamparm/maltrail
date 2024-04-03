@@ -10173,6 +10173,10 @@ gstaticcs.com
 translategog.com
 ads.googlaepis.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.130.146.195/relations
+
+jquerystatic.net
+
 # Generic
 
 /assets/lfg.js
