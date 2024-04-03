@@ -10117,6 +10117,40 @@ cdn.tucton.shop
 
 statsmetrica.co
 
+# Reference: https://blog.sucuri.net/2024/04/magento-shoplift-ecommerce-malware-targets-both-wordpress-magento-cms.html
+# Reference: https://www.virustotal.com/gui/ip-address/195.93.173.80/relations
+# Reference: https://www.virustotal.com/gui/ip-address/37.220.31.58/relations
+# Reference: https://www.virustotal.com/gui/ip-address/38.180.100.104/relations
+# Reference: https://www.virustotal.com/gui/ip-address/38.180.100.134/relations
+# Reference: https://www.virustotal.com/gui/ip-address/38.180.17.55/relations
+
+195.93.173.80:81
+38.180.17.55:81
+bulkmailsms.com
+cloudlayerinsights.com
+jqueurystatics.com
+jqueurystatics.xyz
+jqueurystaticx.com
+jstags.com
+sanzsec.net
+cdn.cloudlayerinsights.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.159.82.57/relations
+
+chlmpstatiic.com
+jqueryoverlay.com
+jqueurystaticx.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.251.90.189/relations
+
+fraudlabzpros.com
+googleinfodata.com
+jquerystatics.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.14.123.101/relations
+
+jqueurystatic.xyz
+
 # Generic
 
 /assets/lfg.js
