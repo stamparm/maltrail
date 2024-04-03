@@ -10124,8 +10124,8 @@ statsmetrica.co
 # Reference: https://www.virustotal.com/gui/ip-address/38.180.100.134/relations
 # Reference: https://www.virustotal.com/gui/ip-address/38.180.17.55/relations
 
-195.93.173.80:81
-38.180.17.55:81
+195.93.173.80:8001
+38.180.17.55:8001
 bulkmailsms.com
 cloudlayerinsights.com
 jqueurystatics.com
