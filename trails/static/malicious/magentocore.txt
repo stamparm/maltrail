@@ -10163,6 +10163,16 @@ sucuriwebtrack.org
 
 gstaticss.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.109.170.47/relations
+
+analitiscs.com
+githubb.info
+golanguag.com
+googlaepis.net
+gstaticcs.com
+translategog.com
+ads.googlaepis.net
+
 # Generic
 
 /assets/lfg.js
