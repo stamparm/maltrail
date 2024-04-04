@@ -1001,3 +1001,7 @@ appkontrol.s3.amazonaws.com
 
 lumiapps.io
 nsignal.net
+
+# Reference: https://www.virustotal.com/gui/file/00baa478e544b007e0563487bd10d95c101e3286a25a1141c8753468a6d730b3/detection
+
+dsss.gq
