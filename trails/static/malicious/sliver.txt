@@ -3326,6 +3326,10 @@ http://16.162.238.67
 
 132.145.80.201:2376
 
+# Reference: https://twitter.com/netresec/status/1775824931499950082
+
+94.156.65.115:8443
+
 # Generic
 
 /.sliver-client/
