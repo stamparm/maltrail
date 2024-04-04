@@ -10184,6 +10184,10 @@ gtmetrix.app
 gtadsense.com
 api.gtmetrix.app
 
+# Reference: https://sansec.io/research/magento-xml-backdoor
+
+halfpriceboxesusa.com/pub/health_check.php
+
 # Generic
 
 /assets/lfg.js
