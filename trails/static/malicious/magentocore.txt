@@ -10188,6 +10188,10 @@ api.gtmetrix.app
 
 halfpriceboxesusa.com/pub/health_check.php
 
+# Reference: https://www.virustotal.com/gui/ip-address/13.38.162.56/relations
+
+tagmanager.ml
+
 # Generic
 
 /assets/lfg.js
