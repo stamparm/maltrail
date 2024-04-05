@@ -4415,3 +4415,12 @@
 45.135.232.0/24,proton66
 45.140.17.0/24,proton66
 91.212.166.0/24,proton66
+
+# AS208476
+# Reference: https://ipinfo.io/AS208476
+
+185.244.26.0/24,privacyfirst
+185.244.29.0/24,privacyfirst
+185.244.30.0/24,privacyfirst
+185.244.31.0/24,privacyfirst
+194.147.140.0/24,privacyfirst
