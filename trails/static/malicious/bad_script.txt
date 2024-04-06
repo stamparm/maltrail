@@ -8403,6 +8403,12 @@ cachline.com
 
 /?guhqvjbk
 
+# Reference: https://www.virustotal.com/gui/ip-address/194.116.214.225/relations
+# Reference: https://www.virustotal.com/gui/file/98f6ecc60e016311511ce920220598b33eb9671e7c71254e76d638d0f2a45883/detection
+
+/kuskus.hta
+/kuskus.ps1
+
 # Generic
 
 /js/altmanluggage.js
