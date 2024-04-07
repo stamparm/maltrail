@@ -10080,6 +10080,7 @@ cdn.starlanded.click
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.111.211/relations
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.111.212/relations
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.111.213/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.65/relations
 
 bepicetn.online
 bupunit.store
@@ -10092,6 +10093,7 @@ heubqtec.space
 hopefor.space
 jelint.online
 joykent.online
+komitic.store
 mikolec.shop
 olynoo.site
 pilotech.store
@@ -10109,6 +10111,7 @@ yelubin.cfd
 yostek.fun
 cdn.hopefor.space
 cdn.jelint.online
+cdn.komitic.store
 cdn.treimob.cfd
 cdn.tucton.shop
 
