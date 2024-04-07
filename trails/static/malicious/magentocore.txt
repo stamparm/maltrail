@@ -10159,6 +10159,12 @@ g-staticxs.com
 gstatics.org
 sucuriwebtrack.org
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.180.221.174/relations
+
+cdnjsdelivr.com
+ww25.cdnjsdelivr.com
+ww38.cdnjsdelivr.com
+
 # Reference: https://www.virustotal.com/gui/ip-address/198.54.117.197/relations
 
 gstaticss.com
