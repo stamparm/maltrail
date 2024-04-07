@@ -10240,6 +10240,16 @@ halfpriceboxesusa.com/pub/health_check.php
 
 tagmanager.ml
 
+# Reference: https://www.virustotal.com/gui/ip-address/193.3.19.162/relations
+
+blind761.asia
+convenient830.cool
+cover351.date
+fine459.dog
+lord479.gold
+old221.asia
+stair151.clinic
+
 # Generic
 
 /assets/lfg.js
