@@ -10111,7 +10111,7 @@ cdn.starlanded.click
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.111.65/relations
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.111.89/relations
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.111.90/relations
-# Refrence: https://www.virustotal.com/gui/ip-address/195.242.111.92/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.92/relations
 
 bepicetn.online
 bupunit.store
