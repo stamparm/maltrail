@@ -8296,6 +8296,10 @@ ultracoolfl.sbs
 
 # Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/03/new-kritec-skimmer
 # Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/11/credit-card-skimming-on-the-rise-for-the-holiday-shopping-season
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.76/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.78/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.80/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.82/relations
 # Reference: https://otx.alienvault.com/pulse/641c8658102b428a20157ffc
 # Reference: https://otx.alienvault.com/pulse/6555e85408ac74ea956c5471
 
@@ -8329,6 +8333,7 @@ boroshtic.click
 bufelec.yachts
 bulkmob.store
 calcdigit.pics
+cegteh.store
 centridig.store
 changeyellow.cfd
 chasoc.quest
@@ -8354,10 +8359,12 @@ denlog.shop
 depeyo.online
 deshvoc.store
 digitstel.site
+divimob.space
 djutech.online
 domelec.shop
 domog.shop
 donashhack.online
+dorojet.store
 dowonderful.store
 druzit.quest
 dujetech.yachts
@@ -8369,6 +8376,7 @@ ecosustain.digital
 effecttec.shop
 efromob.site
 eleconuch.click
+elenots.site
 eluntec.info
 encit.yachts
 enisemol.click
@@ -8389,6 +8397,7 @@ frodetraho.click
 funkomob.sbs
 gachit.yachts
 galeglob.quest
+gambon.shop
 garnimob.sbs
 gastdigit.quest
 gelenhan.online
@@ -8400,6 +8409,7 @@ genertech.pw
 genimmob.online
 genodigit.store
 genstech.shop
+gentop.online
 gerelec.site
 golyadik.site
 golyter.shop
@@ -8413,6 +8423,7 @@ helostop.shop
 helotec.pics
 hemidigit.click
 hemogom.online
+hempomot.space
 henove.store
 heptombo.store
 hhfnsfsga.sbs
@@ -8435,8 +8446,11 @@ jantech.quest
 jestmob.pics
 jetomob.shop
 jezesec.quest
+jondong.online
 jujoc.online
 justlice.store
+kafaben.site
+kajetic.fun
 kalomob.store
 kamitac.shop
 karadigit.quest
@@ -8444,6 +8458,7 @@ keistodigit.pics
 kiligob.site
 kinotec.pics
 klstech.shop
+kolrmob.space
 kontec.quest
 kouelec.cyou
 krasoticmob.space
@@ -8456,11 +8471,13 @@ lehelec.yachts
 lemnidig.shop
 lemtok.store
 lenosmac.shop
+lenton.store
 leritgo.sbs
 lielecef.cyou
 lishetoc.shop
 livepolitical.sbs
 lokotec.quest
+luktoc.online
 mageants.sbs
 metsimob.yachts
 mihayam.shop
@@ -8490,6 +8507,7 @@ oklasdon.online
 oleketec.store
 olinmasot.click
 onitzech.sbs
+optemhop.shop
 osobtech.yachts
 otkridigit.quest
 otpusmob.shop
@@ -8500,6 +8518,7 @@ pershtec.click
 perstech.shop
 petlelec.quest
 pilozol.quest
+pitamec.shop
 plactech.quest
 plasmob.pics
 podbotec.sbs
@@ -8509,6 +8528,7 @@ poptec.sbs
 povomob.shop
 pracelec.yachts
 pricetool.store
+prihot.fun
 prijetech.shop
 prodovjtec.shop
 projectmob.sbs
@@ -8611,6 +8631,7 @@ weitmob.shop
 wellbeingtech.digital
 writefederal.click
 wudutec.shop
+xentech.shop
 xiloditg.yachts
 xorotelec.quest
 yaknatec.pics
@@ -8624,6 +8645,13 @@ zahidelt.sbs
 zamlmob.pics
 zizitok.shop
 zlakovos.click
+cdn.chelotec.quest
+cdn.donashhack.online
+cdn.dorojet.store
+cdn.elenots.site
+cdn.imperel.site
+cdn.kurkumin.click
+cdn.oumymob.shop
 cdn.podobadigit.quest
 ww12.podobadigit.quest
 
@@ -10081,11 +10109,16 @@ cdn.starlanded.click
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.111.212/relations
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.111.213/relations
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.111.65/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.89/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.90/relations
+# Refrence: https://www.virustotal.com/gui/ip-address/195.242.111.92/relations
 
 bepicetn.online
 bupunit.store
+cbynout.online
 cnejktec.fun
 cristech.space
+gemokelt.store
 gepotich.space
 getepol.space
 hempomot.space
@@ -10093,11 +10126,15 @@ heubqtec.space
 hopefor.space
 jelint.online
 joykent.online
+keltsmob.shop
 komitic.store
 mikolec.shop
+nehetech.space
 olynoo.site
 pilotech.store
+rdyttop.fun
 seletec.fun
+skeltit.site
 stelitech.site
 stuckers.click
 stuckitech.shop
@@ -10109,6 +10146,8 @@ tucton.shop
 veltefre.shop
 yelubin.cfd
 yostek.fun
+cdn.cnejktec.fun
+cdn.cosmafit.click
 cdn.hopefor.space
 cdn.jelint.online
 cdn.komitic.store
