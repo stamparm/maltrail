@@ -1874,9 +1874,11 @@ http://5.255.120.28
 98.11.237.48:8888
 
 # Reference: https://threatfox.abuse.ch/browse/malware/win.sliver/ (# 2023-09-19)
+# Reference: https://twitter.com/IronNetTR/status/1777393539044757842
 
 http://92.118.39.25
 114.55.58.137:59317
+118.25.142.205:31337
 118.25.142.205:6553
 119.45.20.55:31337
 119.45.20.55:443
