@@ -4424,3 +4424,10 @@
 185.244.30.0/24,privacyfirst
 185.244.31.0/24,privacyfirst
 194.147.140.0/24,privacyfirst
+
+# AS208312
+# Reference: https://ipinfo.io/AS208312
+
+2.57.149.0/24,redbytes
+213.109.202.0/24,redbytes
+83.97.73.0/24,redbytes
