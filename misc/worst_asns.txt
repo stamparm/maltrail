@@ -4431,3 +4431,16 @@
 2.57.149.0/24,redbytes
 213.109.202.0/24,redbytes
 83.97.73.0/24,redbytes
+
+# AS42624
+# Reference: https://ipinfo.io/AS42624
+# Reference: https://twitter.com/banthisguy9349/status/1777620693821100486
+
+185.196.10.0/24,simplecarrier
+185.196.11.0/24,simplecarrier
+185.196.8.0/24,simplecarrier
+185.196.9.0/24,simplecarrier
+185.208.156.0/24,simplecarrier
+185.208.157.0/24,simplecarrier
+185.208.158.0/24,simplecarrier
+185.208.159.0/24,simplecarrier
