@@ -3776,6 +3776,17 @@ jin.schedule.golfballnutz.com
 kkf.schedule.golfballnutz.com
 knpx.schedule.golfballnutz.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/23.137.253.76/relations
+# Reference: https://twitter.com/mojoesec/status/1777406441940472170
+
+pool.hjdeboer.com
+chf.pool.hjdeboer.com
+dnfb.pool.hjdeboer.com
+ell.pool.hjdeboer.com
+nrrr.pool.hjdeboer.com
+sgm.pool.hjdeboer.com
+xoot.pool.hjdeboer.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
