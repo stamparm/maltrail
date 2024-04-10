@@ -8409,6 +8409,22 @@ cachline.com
 /kuskus.hta
 /kuskus.ps1
 
+# Reference: https://twitter.com/noexceptcpp/status/1778024688066638287
+
+/0Z0EQyFSl1.php
+/C0MGGGwszj.php
+/FLNvwznqBG.php
+/GYf484uMAb.php
+/Hbrugz8LLO.php
+/JL3Li0Iqxh.php
+/bHKluvxJrs.php
+/cEkRoGfySO.php
+/fZsExq7lgF.php
+/glkf7qXdGs.php
+/jq6hd.php
+/kzU3Zt6X5j.php
+/u3jy8V3B1B.php
+
 # Generic
 
 /js/altmanluggage.js
