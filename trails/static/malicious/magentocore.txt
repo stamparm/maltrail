@@ -10252,6 +10252,154 @@ old221.asia
 party257.engineer
 stair151.clinic
 
+# Reference: https://twitter.com/sdcyberresearch/status/1778056754636451903
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.37/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.38/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.53/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.55/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.56/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.57/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.58/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.59/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.60/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.65/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.66/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.67/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.68/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.70/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.75/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.76/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.77/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.79/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.80/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.81/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.82/relations
+
+aimoob.online
+bempiroom.store
+bitudata.site
+cdttech.site
+cemoping.site
+chenklemob.shop
+curvdam.store
+cyetec.click
+depoment.site
+desjardins-auth.one
+eitich.shop
+eiton.click
+eternlis.site
+etransfer.one
+ewopit.online
+furelet.store
+geligen.quest
+gemitil.click
+gentics.site
+getintoch.info
+gsimob.site
+hapist.click
+hasobob.online
+helebanet.online
+heleton.store
+helmidigi.quest
+helurin.shop
+hemopet.quest
+hemytemd.fun
+hepites.store
+interqca.site
+interrqc.site
+intrev.online
+jepenet.space
+jerelink.shop
+jeynoon.online
+jojkatic.shop
+jopstet.shop
+julifmob.click
+kehepics.site
+keldmob.site
+keletenc.site
+keliden.shop
+kelimont.click
+kelkmet.shop
+kelysink.store
+kempetic.space
+kenotic.site
+kentics.store
+kentol.space
+ketipool.click
+kinteko.online
+konpop.store
+lemiguid.online
+leniton.online
+lenupop.click
+lepetewol.quest
+liantis.store
+lompotic.shop
+lootbop.shop
+ltcento.space
+meltetok.online
+militool.click
+miusets.works
+neretec.store
+neyfliixx.com
+outstak.online
+panotek.site
+pertec.store
+prihomob.sbs
+ribudec.click
+sefroyek.link
+sempytol.site
+sfantech.space
+shentech.shop
+sqedigit.quest
+stikitec.site
+stinesimp.email
+stojitoc.online
+tegmob.quest
+tempecan.fun
+teseloc.quest
+tikfonk.network
+tojasm.store
+ubnanet.online
+uelenck.site
+uelkaf.fun
+visken.shop
+woohtik.click
+xentouch.store
+zapteches.shop
+zytrhent.quest
+cdn.curvdam.store
+cdn.deletouch.shop
+cdn.depeyo.online
+cdn.deshvoc.store
+cdn.digitstel.site
+cdn.eiton.click
+cdn.eternlis.site
+cdn.funkomob.sbs
+cdn.furelet.store
+cdn.gafevomp.shop
+cdn.gemofab.store
+cdn.genimmob.online
+cdn.gentics.site
+cdn.henove.store
+cdn.hovarelec.shop
+cdn.intescon.store
+cdn.kelimont.click
+cdn.kiligob.site
+cdn.kritec.pics
+cdn.kruktech.shop
+cdn.ledeehub.shop
+cdn.lootbop.shop
+cdn.metsimob.yachts
+cdn.musatech.quest
+cdn.psyhomob.sbs
+cdn.sfantech.space
+cdn.shokomob.sbs
+cdn.shumtech.shop
+cdn.soplelec.pics
+cdn.timetok.online
+cdn.votedigit.shop
+cdn.wudutec.shop
+
 # Generic
 
 /assets/lfg.js
