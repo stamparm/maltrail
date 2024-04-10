@@ -10400,6 +10400,11 @@ cdn.timetok.online
 cdn.votedigit.shop
 cdn.wudutec.shop
 
+# Reference: https://twitter.com/sdcyberresearch/status/1778050135819157859
+# Reference: https://www.virustotal.com/gui/ip-address/217.117.29.120/relations
+
+9zj.co
+
 # Generic
 
 /assets/lfg.js
