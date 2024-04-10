@@ -10403,7 +10403,6 @@ cdn.wudutec.shop
 # Reference: https://twitter.com/sdcyberresearch/status/1778056754636451903
 
 aluyeq.click
-apissp.cc
 asiment.shop
 beedigit.site
 cesolot.shop
@@ -10426,7 +10425,6 @@ fesget.store
 fetneicks.quest
 fidelec.click
 ganbuz.online
-gafevomp.shop
 gembetec.store
 gemmob.online
 genitek.quest
@@ -10455,6 +10453,7 @@ kiujiru.site
 leboponks.online
 letckoon.shop
 leventinch.store
+linkteches.online
 lotsent.site
 mestec.store
 mongonline.shop
@@ -10479,7 +10478,6 @@ raotic.online
 regvit.site
 rehonin.site
 riztritv.online
-seledigit.store
 shontemp.store
 skiltech.space
 spintec.site
@@ -10500,7 +10498,6 @@ weltic.quest
 wenscomp.click
 xbits.site
 xnopatel.site
-yalodem.space
 ztimuponk.quest
 cdn.asiment.shop
 cdn.cikatic.online
@@ -10533,6 +10530,7 @@ cdn.leboponks.online
 cdn.lenupop.click
 cdn.letckoon.shop
 cdn.leventinch.store
+cdn.linkteches.online
 cdn.lotsent.site
 cdn.mestec.store
 cdn.mongonline.shop
@@ -10551,7 +10549,6 @@ cdn.pracutech.store
 cdn.raotic.online
 cdn.regvit.site
 cdn.riztritv.online
-cdn.seledigit.store
 cdn.skiltech.space
 cdn.spintec.site
 cdn.startech.quest
