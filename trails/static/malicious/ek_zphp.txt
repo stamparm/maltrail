@@ -228,6 +228,32 @@ techyureka.com
 
 fairfurryfriends.com
 
+# Reference: https://threatfox.abuse.ch/browse/tag/SmartApeSG/ (# 2024-04-11)
+
+185.216.70.123:443
+5.181.156.5:443
+ads-quantum.com
+advanceddataenterprise.com
+ahryssa.com
+aljannatquranteach.com
+arquivisticalocal.com
+bbsupplyandsalon.com
+bestopgoespink.com
+bigcuda.com
+briefscala.com
+digestlivepro.com
+discovus.com
+edulokam.com
+emonteiroadm.com
+ezshipsy.com
+fairfurryfriends.com
+gitkonus.com
+infineitsolutions.com
+jsluna.com
+machineryideas.com
+mtlaikins.com
+worldofmantas.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
