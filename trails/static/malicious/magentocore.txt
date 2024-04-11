@@ -10367,6 +10367,7 @@ woohtik.click
 xentouch.store
 zapteches.shop
 zytrhent.quest
+cdn.aifanul.yachts
 cdn.curvdam.store
 cdn.deletouch.shop
 cdn.depeyo.online
@@ -10377,19 +10378,23 @@ cdn.eternlis.site
 cdn.funkomob.sbs
 cdn.furelet.store
 cdn.gafevomp.shop
+cdn.gemitil.click
 cdn.gemofab.store
 cdn.genimmob.online
 cdn.gentics.site
+cdn.hasobob.online
 cdn.henove.store
 cdn.hovarelec.shop
 cdn.intescon.store
 cdn.kehepics.site
+cdn.keldmob.site
 cdn.kelimont.click
 cdn.kiligob.site
 cdn.kritec.pics
 cdn.kruktech.shop
 cdn.ledeehub.shop
 cdn.lemiguid.online
+cdn.lepetewol.quest
 cdn.lootbop.shop
 cdn.metsimob.yachts
 cdn.musatech.quest
@@ -10401,6 +10406,7 @@ cdn.soplelec.pics
 cdn.timetok.online
 cdn.votedigit.shop
 cdn.wudutec.shop
+cdn.xentouch.store
 cdn.zapteches.shop
 
 # Reference: https://twitter.com/sdcyberresearch/status/1778056754636451903
