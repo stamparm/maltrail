@@ -10368,6 +10368,7 @@ xentouch.store
 zapteches.shop
 zytrhent.quest
 cdn.aifanul.yachts
+cdn.cemoping.site
 cdn.curvdam.store
 cdn.deletouch.shop
 cdn.depeyo.online
@@ -10383,14 +10384,17 @@ cdn.gemofab.store
 cdn.genimmob.online
 cdn.gentics.site
 cdn.hasobob.online
+cdn.helebanet.online
 cdn.henove.store
 cdn.hovarelec.shop
 cdn.intescon.store
+cdn.jojkatic.shop
 cdn.kehepics.site
 cdn.keldmob.site
 cdn.kelimont.click
 cdn.kentics.store
 cdn.kiligob.site
+cdn.konpop.store
 cdn.kritec.pics
 cdn.kruktech.shop
 cdn.ledeehub.shop
@@ -10409,6 +10413,7 @@ cdn.shokomob.sbs
 cdn.shumtech.shop
 cdn.soplelec.pics
 cdn.timetok.online
+cdn.uelkaf.fun
 cdn.votedigit.shop
 cdn.wudutec.shop
 cdn.xentouch.store
