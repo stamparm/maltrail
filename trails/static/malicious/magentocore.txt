@@ -10526,6 +10526,8 @@ xnopatel.site
 yalodem.space
 ztimuponk.quest
 cdn.asiment.shop
+cdn.aurelec.shop
+cdn.bespitech.sbs
 cdn.cikatic.online
 cdn.crptohub.shop
 cdn.depoment.site
@@ -10567,6 +10569,7 @@ cdn.norlimp.store
 cdn.noutec.shop
 cdn.oftike.store
 cdn.osnodet.quest
+cdn.otpusmob.shop
 cdn.peqiliq.online
 cdn.petetech.shop
 cdn.pilintik.quest
@@ -10581,6 +10584,7 @@ cdn.skiltech.space
 cdn.spintec.site
 cdn.startech.quest
 cdn.stavmob.click
+cdn.stramdigital.yachts
 cdn.stripe-data.com
 cdn.sweendigit.online
 cdn.tohotic.quest
@@ -10590,6 +10594,7 @@ cdn.uhskleie.online
 cdn.vtumob.store
 cdn.wenscomp.click
 cdn.xbits.site
+cdn.yalomob.pics
 
 # Reference: https://twitter.com/sdcyberresearch/status/1778056754636451903
 
