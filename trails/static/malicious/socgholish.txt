@@ -3787,6 +3787,35 @@ nrrr.pool.hjdeboer.com
 sgm.pool.hjdeboer.com
 xoot.pool.hjdeboer.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/208.91.197.13/relations
+
+loans.fishingreelinvestments.com
+derp.loans.fishingreelinvestments.com
+dvy.loans.fishingreelinvestments.com
+esdbz.loans.fishingreelinvestments.com
+fbo.loans.fishingreelinvestments.com
+ftw.loans.fishingreelinvestments.com
+hee.loans.fishingreelinvestments.com
+hga.loans.fishingreelinvestments.com
+hts.loans.fishingreelinvestments.com
+hvi.loans.fishingreelinvestments.com
+hzypx.loans.fishingreelinvestments.com
+itbc.loans.fishingreelinvestments.com
+iyi.loans.fishingreelinvestments.com
+jefw.loans.fishingreelinvestments.com
+lcbp.loans.fishingreelinvestments.com
+pbf.loans.fishingreelinvestments.com
+qevbw.loans.fishingreelinvestments.com
+rbo.loans.fishingreelinvestments.com
+thmx.loans.fishingreelinvestments.com
+tsk.loans.fishingreelinvestments.com
+usmc.loans.fishingreelinvestments.com
+uvm.loans.fishingreelinvestments.com
+vsedt.loans.fishingreelinvestments.com
+wpda.loans.fishingreelinvestments.com
+ygbo.loans.fishingreelinvestments.com
+yrt.loans.fishingreelinvestments.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
