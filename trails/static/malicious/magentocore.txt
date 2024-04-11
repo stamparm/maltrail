@@ -10401,6 +10401,7 @@ cdn.soplelec.pics
 cdn.timetok.online
 cdn.votedigit.shop
 cdn.wudutec.shop
+cdn.zapteches.shop
 
 # Reference: https://twitter.com/sdcyberresearch/status/1778056754636451903
 
