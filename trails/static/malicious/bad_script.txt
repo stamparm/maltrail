@@ -8425,6 +8425,14 @@ cachline.com
 /kzU3Zt6X5j.php
 /u3jy8V3B1B.php
 
+# Reference: https://twitter.com/RacWatchin8872/status/1778393784809595092
+
+/shell_reverse_tcp.bin
+/shell_reverse_tcp.hta
+/shell_reverse_tcp.ps1
+/shell_reverse_tcp.py
+/shell_reverse_tcp.sh
+
 # Generic
 
 /js/altmanluggage.js
