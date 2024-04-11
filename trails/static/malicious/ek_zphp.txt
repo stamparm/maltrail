@@ -224,6 +224,10 @@ elmworldacademy.com
 foradopicadeiro.com
 techyureka.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-04-08-v10570/1548
+
+fairfurryfriends.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
