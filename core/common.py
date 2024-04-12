@@ -21,6 +21,7 @@ from core.addr import addr_to_int
 from core.addr import int_to_addr
 from core.compat import xrange
 from core.settings import config
+from core.settings import BOGON_IPS
 from core.settings import BOGON_RANGES
 from core.settings import CHECK_CONNECTION_URL
 from core.settings import CDN_RANGES
@@ -146,6 +147,9 @@ def bogon_ip(address):
                 return True
     except (IndexError, ValueError):
         pass
+
+    if address in BOGON_IPS:
+        return True
 
     return False
 
