@@ -4888,3 +4888,7 @@ analytics.airdns.org
 # Reference: https://asec.ahnlab.com/en/64034/
 
 34.124.148.215:9070
+
+# Reference: https://twitter.com/drb_ra/status/1779068743538078187
+
+213.139.205.105:443
