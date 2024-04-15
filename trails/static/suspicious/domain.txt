@@ -5582,3 +5582,7 @@ intelvpn.site
 # Reference: https://www.virustotal.com/gui/ip-address/77.232.142.83/relations
 
 nosuhiyan.site
+
+# Reference: https://www.virustotal.com/gui/domain/iranneda.cfd/relations
+
+iranneda.cfd
