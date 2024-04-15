@@ -5578,3 +5578,7 @@ feja111.de
 # Reference: https://www.virustotal.com/gui/domain/intelvpn.site/relations
 
 intelvpn.site
+
+# Reference: https://www.virustotal.com/gui/ip-address/77.232.142.83/relations
+
+nosuhiyan.site
