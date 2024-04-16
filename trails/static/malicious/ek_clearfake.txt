@@ -219,6 +219,7 @@ alicortech.com
 # Reference: https://threatfox.abuse.ch/browse/tag/ClearFake/ (# 2023-12-04)
 
 acotechgh.com
+akademipraktik.com
 beksystems.com
 brushremovalequipment.com
 concgc.com
