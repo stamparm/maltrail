@@ -3816,6 +3816,14 @@ wpda.loans.fishingreelinvestments.com
 ygbo.loans.fishingreelinvestments.com
 yrt.loans.fishingreelinvestments.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/77.221.149.184/relations
+
+register.arpsychotherapy.com
+rbf.register.arpsychotherapy.com
+slf.register.arpsychotherapy.com
+tfuq.register.arpsychotherapy.com
+uaz.register.arpsychotherapy.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
