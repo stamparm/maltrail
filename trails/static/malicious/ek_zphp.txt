@@ -254,6 +254,13 @@ machineryideas.com
 mtlaikins.com
 worldofmantas.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-04-15-v10575/1568
+
+bid2cart.com
+carlaweishale.com
+hlktradecenter.com
+jhansgansowen.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
