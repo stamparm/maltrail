@@ -17,3 +17,7 @@
 # Reference: https://twitter.com/alexey_firsh/status/1582033602040430592
 
 45.32.74.229:8443
+
+# Reference: https://twitter.com/IronNetTR/status/1779989608710701261
+
+153.92.1.145:49410
