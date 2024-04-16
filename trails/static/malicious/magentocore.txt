@@ -11009,6 +11009,17 @@ web2.alifiroozi.shop
 
 9zj.co
 
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.77.40/relations
+
+jquerybox.com
+jquerypack.com
+jscripty.com
+linktrackr.info
+loggly.info
+pixtracker.info
+thetrackr.info
+vc.jquerybox.com
+
 # Generic
 
 /assets/lfg.js
