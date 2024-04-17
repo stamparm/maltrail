@@ -1005,3 +1005,8 @@ nsignal.net
 # Reference: https://www.virustotal.com/gui/file/00baa478e544b007e0563487bd10d95c101e3286a25a1141c8753468a6d730b3/detection
 
 dsss.gq
+
+# Reference: https://www.virustotal.com/gui/file/7e83453d04b9a28bbf4e618d6ce9c7b3c39ce831ac447345f94d92b10c64a474/detection
+
+truenaira.co
+app.truenaira.co
