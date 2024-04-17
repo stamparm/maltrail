@@ -2920,6 +2920,7 @@ bootstrapcss.online
 cdnbootstrap.host
 cdnbootstrap.store
 dbbootstrap.online
+dbbootstrap.zip
 
 # Reference: https://www.virustotal.com/gui/ip-address/103.73.67.169/relations
 
