@@ -11024,6 +11024,10 @@ vc.jquerybox.com
 
 nightvision.co.nz/wp-content/plugins/js/jquery-1.11.0.js
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.130.45.208/relations
+
+cdnbootstrap.xyz
+
 # Generic
 
 /assets/lfg.js
