@@ -11020,6 +11020,10 @@ pixtracker.info
 thetrackr.info
 vc.jquerybox.com
 
+# Reference: https://twitter.com/sdcyberresearch/status/1780590513852194869
+
+nightvision.co.nz/wp-content/plugins/js/jquery-1.11.0.js
+
 # Generic
 
 /assets/lfg.js
