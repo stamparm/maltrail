@@ -4445,3 +4445,9 @@
 185.208.157.0/24,simplecarrier
 185.208.158.0/24,simplecarrier
 185.208.159.0/24,simplecarrier
+
+# AS50321
+# Reference: https://ipinfo.io/AS50321
+
+88.151.192.0/24,bytes-as
+91.238.104.0/23,bytes-as
