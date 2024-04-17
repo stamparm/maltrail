@@ -261,6 +261,11 @@ carlaweishale.com
 hlktradecenter.com
 jhansgansowen.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-04-16-v10576/1571
+
+barhell.com
+betvanced.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
