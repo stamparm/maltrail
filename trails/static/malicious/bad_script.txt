@@ -8448,6 +8448,11 @@ cachline.com
 /shell_reverse_tcp.py
 /shell_reverse_tcp.sh
 
+# Reference: https://twitter.com/doc_guard/status/1781325713951314119
+# Reference: https://www.virustotal.com/gui/file/b8288968633bcfa46dc1cf1ab6c5b248e6be020184991e82ba8db56676b2e0cf/detection
+
+/basterlord.hta
+
 # Generic
 
 /js/altmanluggage.js
