@@ -1388,3 +1388,8 @@ de-zephyr.miningocean.org
 # Reference: https://www.virustotal.com/gui/file/4821de1d9972b0e89c11d4c5c03406c6daf2a1f4ab951354ff108d7b65151f68/detection
 
 159.203.162.18:3333
+
+# Reference: https://twitter.com/sicehice/status/1781146516905677069
+# Reference: https://twitter.com/sicehice/status/1781146695775986022
+
+195.201.97.156:23333
