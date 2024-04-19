@@ -2394,6 +2394,7 @@ startservicefounds.com
 10start.apistatexperience.com
 api.bestresulttostart.com
 api.startservicefounds.com
+bind.bestresulttostart.com
 dns.startservicefounds.com
 find.bestresulttostart.com
 follow.bestresulttostart.com
@@ -2445,3 +2446,13 @@ tags.stickloader.info
 ads-promo.com
 host-stats.io
 web-hosts.io
+
+# Reference: https://www.virustotal.com/gui/ip-address/104.21.64.161/relations
+
+startfinishthis.com
+back.startfinishthis.com
+board.startfinishthis.com
+finish.startfinishthis.com
+from.startfinishthis.com
+isit.startfinishthis.com
+visit.startfinishthis.com
