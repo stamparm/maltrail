@@ -8535,12 +8535,14 @@ cachline.com
 /gate.phpgate.php
 /ggate.php
 /gggate.php
+/gAy5B.php
 /Invoke-Phant0m.ps1
 /online-dating-verification-card.php
 /ravufgate.php
 /screenshot_gate.php
 /tgate.php
 /testgate.php
+/test_gate0117.php
 /verification-card.php
 /1drvme/
 /payload/openAttach/
