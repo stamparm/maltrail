@@ -2439,3 +2439,9 @@ stat.counter247.live
 streaming.jsonmediapacks.com
 stylesheet.webstaticcdn.com
 tags.stickloader.info
+
+# Reference: https://blog.sucuri.net/2024/04/javascript-malware-switches-to-server-side-redirects-dns-txt-records-tds.html
+
+ads-promo.com
+host-stats.io
+web-hosts.io
