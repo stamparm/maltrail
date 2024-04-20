@@ -4977,3 +4977,7 @@ analytics.airdns.org
 # Reference: https://twitter.com/drb_ra/status/1779611473171390555
 
 185.121.169.168:8443
+
+# Reference: https://twitter.com/drb_ra/status/1781786234773242189
+
+62.169.19.128:443
