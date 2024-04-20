@@ -3381,6 +3381,10 @@ http://16.162.238.67
 38.207.149.96:31337
 68.183.193.39:8888
 
+# Reference: https://www.virustotal.com/gui/file/56560f7a484a98998cfa9ac31978fac2526e7bb04dec1a03533fae0078d84e51/detection
+
+101.132.154.130:8443
+
 # Generic
 
 /.sliver-client/
