@@ -3296,3 +3296,8 @@ crxdragonupdate.com
 # Reference: https://www.virustotal.com/gui/file/bb5ef9f70483ed7c79e37eca9dd136a514a346943edfe2803e27d1f6b262f05a/detection
 
 support.clz.kr
+
+# Reference: https://www.virustotal.com/gui/file/d0fda8c65b04f468c2db458e5ed48f46b715d506903ca4ca6e85fd30eb71896e/detection
+
+srv472339.hstgr.cloud
+/ZeusBrute/version/index.php
