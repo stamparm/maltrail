@@ -8453,6 +8453,10 @@ cachline.com
 
 /basterlord.hta
 
+# Reference: https://twitter.com/malwrhunterteam/status/1782277290363174988
+
+/Cqlqb.hta
+
 # Generic
 
 /js/altmanluggage.js
