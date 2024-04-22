@@ -764,6 +764,10 @@ http://65.109.232.16
 http://95.217.215.100
 nodepanel.uol.ovh
 
+# Reference: https://www.virustotal.com/gui/file/4170a728a436b2755e0751f8392309a0149996b5d48a27c04127a738b8c12cd2/detection
+
+/Server_Panel/public/commands.php
+
 # Generic
 
 /admin_123/auth.php
