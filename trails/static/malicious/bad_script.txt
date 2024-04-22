@@ -8457,6 +8457,10 @@ cachline.com
 
 /Cqlqb.hta
 
+# Reference: https://twitter.com/banthisguy9349/status/1782402749805527142
+
+/exploitw.py
+
 # Generic
 
 /js/altmanluggage.js
