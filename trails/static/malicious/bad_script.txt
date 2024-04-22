@@ -8461,6 +8461,10 @@ cachline.com
 
 /exploitw.py
 
+# Reference: https://twitter.com/banthisguy9349/status/1782401923133354148
+
+/backgroud_attack.php
+
 # Generic
 
 /js/altmanluggage.js
