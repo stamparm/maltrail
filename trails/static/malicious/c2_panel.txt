@@ -768,6 +768,10 @@ nodepanel.uol.ovh
 
 /Server_Panel/public/commands.php
 
+# Reference: https://twitter.com/banthisguy9349/status/1782716186935095743
+
+http://91.92.244.15
+
 # Generic
 
 /admin_123/auth.php
