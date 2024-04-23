@@ -8465,6 +8465,12 @@ cachline.com
 
 /backgroud_attack.php
 
+# Reference: https://twitter.com/doc_guard/status/1782401510350954620
+# Reference: https://app.docguard.io/ed4149d5ac4b15e22b9f240e75638ea3c4da01a021d30ed2d062919159c6a7c9/results/dashboard
+
+/nonendowmentaGen.ps1
+/scragglingiJsW.ps1
+
 # Generic
 
 /js/altmanluggage.js
