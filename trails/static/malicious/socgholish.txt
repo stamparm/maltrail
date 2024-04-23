@@ -3824,6 +3824,22 @@ slf.register.arpsychotherapy.com
 tfuq.register.arpsychotherapy.com
 uaz.register.arpsychotherapy.com
 
+# Reference: https://twitter.com/threatcat_ch/status/1782739184383410325
+# Reference: https://twitter.com/threatcat_ch/status/1782744235411726748
+# Reference: https://www.virustotal.com/gui/ip-address/65.21.119.50/relations
+# Reference: https://www.virustotal.com/gui/file/3c65b9c86eac169a0d20e43b1beee74f20d57274ef300e0be7aca9a9f98090c5/detection
+
+aihere.online
+invite-tls.team
+ipscanadvsf.com
+norunia.com
+notionso.online
+pdftoconvert.online
+screenhate.org
+toconvertpdf.site
+toppdfconverter.org
+transpassional.sbs
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
