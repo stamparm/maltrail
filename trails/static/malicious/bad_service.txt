@@ -766,6 +766,14 @@ orbitalstress.net
 rage.markets
 uptime.dstat.love
 
+# Reference: https://twitter.com/banthisguy9349/status/1782789917384257825
+
+monkey-proxy-999.online
+topboxapi-service.com
+toxicipstresser.cloud
+open.topboxapi-service.com
+protectedby.herios-stress.xyz
+
 # Reference: https://twitter.com/banthisguy9349/status/1756635356227649975
 
 http://35.225.165.48
