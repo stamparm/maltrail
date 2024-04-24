@@ -3301,3 +3301,7 @@ support.clz.kr
 
 srv472339.hstgr.cloud
 /ZeusBrute/version/index.php
+
+# Reference: https://www.virustotal.com/gui/file/005f8aa6648fedeb4d7078c276527d9215c68b5f7caead4f7cbce8abe906c7c2/detection
+
+pichuga-dl.xyz
