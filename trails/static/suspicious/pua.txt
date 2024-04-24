@@ -3302,6 +3302,12 @@ support.clz.kr
 srv472339.hstgr.cloud
 /ZeusBrute/version/index.php
 
+# Reference: https://www.virustotal.com/gui/ip-address/88.208.60.228/relations
 # Reference: https://www.virustotal.com/gui/file/005f8aa6648fedeb4d7078c276527d9215c68b5f7caead4f7cbce8abe906c7c2/detection
+# Reference: https://www.virustotal.com/gui/file/0272643518e3db8b1a448753ab7990ee12ed15f0627d379e6d64edbb70028536/detection
 
+huyakww.info
+mnogolik002.xyz
 pichuga-dl.xyz
+valencia-dl.xyz
+vivinod4.xyz
