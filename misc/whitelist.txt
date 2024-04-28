@@ -3519,9 +3519,11 @@ apps.identrust.com
 nintendo.com
 
 # Reference: https://github.com/stamparm/maltrail/issues/19149#issuecomment-1538605607
+# Reference: https://github.com/stamparm/maltrail/issues/19149#issuecomment-2081468268
 # Reference: https://www.virustotal.com/gui/domain/blackhole.monster/relations
 
 blackhole.monster
+blackhole.s-e-r-v-e-r.pw
 ip.blackhole.monster
 
 # Reference: https://www.virustotal.com/gui/domain/mastodon.xyz/relations
