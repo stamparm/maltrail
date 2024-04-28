@@ -2275,9 +2275,11 @@ cgate.getmygateway.com
 estancia.decentralappps.com
 estancia.stratosbody.com
 finish.lineferaline.com
+ns1.getmygateway.com
 set.lineferaline.com
 stray.stratosbody.com
 vendingbackstage.comgate.getmygateway.com
+xn--stay-p96a.decentralappps.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1747690203941396671
 # Reference: https://www.virustotal.com/gui/ip-address/172.67.185.17/relations
