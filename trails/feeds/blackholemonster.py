@@ -7,7 +7,7 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "https://ip.blackhole.monster/blackhole-today"
+__url__ = "https://blackhole.s-e-r-v-e-r.pw/blackhole-today"
 __info__ = "known attacker"
 __reference__ = "ip.blackhole.monster"
 
