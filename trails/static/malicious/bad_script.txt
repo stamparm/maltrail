@@ -8472,6 +8472,12 @@ cachline.com
 /nonendowmentaGen.ps1
 /scragglingiJsW.ps1
 
+# Reference: https://twitter.com/doc_guard/status/1784961099219018073
+# Reference: https://app.docguard.io/9afa5a1e1448e7469fe0a625ff715e1bff8f7c407d45644445a35b6885d79271/463e66dc-bb30-4273-a94b-b42b6d6729f4/0/results/dashboard
+
+/ifsdjshtx/zxxhttezsnt0pl.php
+/zxxhttezsnt0pl.php
+
 # Generic
 
 /js/altmanluggage.js
