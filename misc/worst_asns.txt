@@ -4451,3 +4451,11 @@
 
 88.151.192.0/24,bytes-as
 91.238.104.0/23,bytes-as
+
+# AS215826
+# Reference: https://ipinfo.io/AS215826
+
+147.45.45.0/24,partner-hosting-ltd
+195.10.205.0/24,partner-hosting-ltd
+91.214.78.0/24,partner-hosting-ltd
+92.42.96.0/24,partner-hosting-ltd
