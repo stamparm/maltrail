@@ -3840,6 +3840,23 @@ toconvertpdf.site
 toppdfconverter.org
 transpassional.sbs
 
+# Reference: https://twitter.com/mojoesec/status/1785382958829801593
+# Reference: https://www.virustotal.com/gui/ip-address/45.88.186.159/relations
+# Reference: https://www.virustotal.com/gui/file/284bc8114d14aff11ea38c2955a4689f369ce3581cc0aac3cc7cabb524d0da3d/detection
+
+demo.betterbuiltdogs.com
+cjj.demo.betterbuiltdogs.com
+dbup.demo.betterbuiltdogs.com
+fet.demo.betterbuiltdogs.com
+ljx.demo.betterbuiltdogs.com
+pbsi.demo.betterbuiltdogs.com
+qvts.demo.betterbuiltdogs.com
+undm.demo.betterbuiltdogs.com
+vmts.demo.betterbuiltdogs.com
+vytzv.demo.betterbuiltdogs.com
+yznkm.demo.betterbuiltdogs.com
+zfd.demo.betterbuiltdogs.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
