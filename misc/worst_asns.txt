@@ -4459,3 +4459,19 @@
 195.10.205.0/24,partner-hosting-ltd
 91.214.78.0/24,partner-hosting-ltd
 92.42.96.0/24,partner-hosting-ltd
+
+# AS210558
+# Reference: https://ipinfo.io/AS210558
+
+185.241.208.0/24,services-1337-gmbh
+194.26.192.0/24,services-1337-gmbh
+203.159.90.0/24,services-1337-gmbh
+2.58.56.0/24,services-1337-gmbh
+45.138.16.0/24,services-1337-gmbh
+45.141.215.0/24,services-1337-gmbh
+45.152.149.0/24,services-1337-gmbh
+45.154.98.0/24,services-1337-gmbh
+45.80.158.0/24,services-1337-gmbh
+45.92.1.0/24,services-1337-gmbh
+45.94.31.0/24,services-1337-gmbh
+91.206.169.0/24,services-1337-gmbh
