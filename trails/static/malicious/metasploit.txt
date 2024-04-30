@@ -5105,7 +5105,10 @@ http://148.135.35.177
 148.135.35.177:90
 
 # Reference: https://twitter.com/banthisguy9349/status/1785242060728995872
+# Reference: https://www.virustotal.com/gui/file/5744b69a1f44af1ec69660442bf7408892a5cd91bfc999b0454c1085048845b2/detection
+# Reference: https://www.virustotal.com/gui/file/3a32e53d2e36f75b831e66d2c793b80bceb7fdd535a018023b6a021fa63235db/detection
 
+185.81.29.119:666
 185.81.29.119:888
 
 # Reference: https://pastebin.com/a26uqytR
