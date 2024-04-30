@@ -14,8 +14,16 @@
 
 
 
-- Version 0.68 -> 0.69 (Upcoming release)
+- Version 0.69 -> 0.70 (Upcoming release)
 
+
+
+
+
+- Version 0.68 -> 0.69 (01 May 2024)
+
+[+] Support of simpleton IPv6 bogon address handling was added
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 - Version 0.67 -> 0.68 (01 Apr 2024)
