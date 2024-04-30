@@ -4475,3 +4475,12 @@
 45.92.1.0/24,services-1337-gmbh
 45.94.31.0/24,services-1337-gmbh
 91.206.169.0/24,services-1337-gmbh
+
+# AS215240
+# Reference: https://ipinfo.io/AS215240
+
+147.78.103.0/24,netresearch
+185.216.70.0/24,netresearch
+93.123.39.0/24,netresearch
+94.156.79.0/24,netresearch
+94.156.8.0/24,netresearch
