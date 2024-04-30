@@ -4633,6 +4633,7 @@ jqueri.at
 jqueridev.at
 jqueriweb.at
 jsdelivr.at
+cdn.jsdelivr.at
 
 # Reference: https://twitter.com/unmaskparasites/status/1377383696009895939
 
