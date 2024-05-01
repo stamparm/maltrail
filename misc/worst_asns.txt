@@ -4484,3 +4484,10 @@
 93.123.39.0/24,netresearch
 94.156.79.0/24,netresearch
 94.156.8.0/24,netresearch
+
+# AS215789
+# Reference: https://ipinfo.io/AS215789
+
+147.45.44.0/24,karinar
+147.45.47.0/24,karinar
+82.115.223.0/24,karinar
