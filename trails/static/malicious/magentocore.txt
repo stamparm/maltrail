@@ -11031,6 +11031,7 @@ nightvision.co.nz/wp-content/plugins/js/jquery-1.11.0.js
 cdnbootstrap.xyz
 
 # Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-04-30-examples-of-web-skimmers.txt
+# Reference: https://www.virustotal.com/gui/ip-address/151.106.96.192/relations
 
 http://212.129.24.246
 analytics-fonts.com
@@ -11101,6 +11102,7 @@ static2-jquery.com
 static3-jquery.com
 static4-jquery.com
 static5-jquery.com
+staticlitcs.com
 staticlitycis.com
 traffic-check.com
 websiteanalytics.top
