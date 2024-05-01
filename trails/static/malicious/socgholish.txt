@@ -3830,15 +3830,24 @@ uaz.register.arpsychotherapy.com
 # Reference: https://www.virustotal.com/gui/file/3c65b9c86eac169a0d20e43b1beee74f20d57274ef300e0be7aca9a9f98090c5/detection
 
 aihere.online
+arunrail.com
+cclining.com
+cclining.org
+d3bk.com
+docufreezer.pro
 invite-tls.team
 ipscanadvsf.com
 norunia.com
 notionso.online
 pdftoconvert.online
+scanner-ip.com
 screenhate.org
+singularityplus.net
 toconvertpdf.site
 toppdfconverter.org
 transpassional.sbs
+zoomis.pro
+zoomus.pro
 
 # Reference: https://twitter.com/mojoesec/status/1785382958829801593
 # Reference: https://www.virustotal.com/gui/ip-address/45.88.186.159/relations
