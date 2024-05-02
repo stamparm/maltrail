@@ -2618,3 +2618,16 @@ cvvsiteshop.buycc.shop
 parceiro.vmcard.top
 validcvvshop.buycc.shop
 vivamelhor.vmcard.top
+
+# Reference: https://www.virustotal.com/gui/ip-address/176.124.192.121/relations
+
+ccshopvalid.ru
+marketonlinecvv.ru
+onlinestorecvv.ru
+onlinestoredumps.ru
+shop-best-track2.ru
+shop-valid-dumps.ru
+storecvvonline.ru
+track2beststore.ru
+track2shopbest.ru
+xdumps.ru
