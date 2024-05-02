@@ -2615,5 +2615,6 @@ ccgoodshop.buycc.shop
 cvvgoodcom.buycc.shop
 cvvproshop.buycc.shop
 cvvsiteshop.buycc.shop
+parceiro.vmcard.top
 validcvvshop.buycc.shop
 vivamelhor.vmcard.top
