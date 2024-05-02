@@ -827,6 +827,32 @@ webstress.xyz
 herios-stresser.space
 herios-stress.xyz
 
+# Reference: https://twitter.com/banthisguy9349/status/1786052915909603332
+# Reference: https://pastebin.com/5tfeQjcY
+
+http://51.75.166.192
+http://51.75.166.193
+47.106.83.71:84
+94.228.168.53.sslip.io
+chryslernetwork.com
+crowservices.link
+cyonstresser.ru
+dev.quickdown.pro
+electro-down.online
+etarras.eu
+etarras.pages.dev
+flooder.cc
+gamebattle.in
+ip192.ip-51-75-166.eu
+ipflooder.com
+profilecard.shop
+shineesp.xyz
+stressst.com
+vnixhost.com
+t.vnixhost.com
+txadmin.gsrp.uk
+zenstresser.com
+
 # Reference: https://www.linkedin.com/pulse/forums-selling-stolen-credit-card-information-cvv-shops-tissot
 # Reference: https://app.validin.com/axon?type=dom&limit=10000&find=ns1.kak-prigotovit-spagetti.ru (# NS_FOR record)
 
