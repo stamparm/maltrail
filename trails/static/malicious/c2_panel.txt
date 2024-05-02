@@ -772,6 +772,19 @@ nodepanel.uol.ovh
 
 http://91.92.244.15
 
+# Reference: https://twitter.com/banthisguy9349/status/1786078682336915883
+# Reference: https://pastebin.com/A8zCtymA
+
+exsacheck.net.tr
+ezik.world
+ixcode.com.tr
+mbwall.com
+mernis.co
+nulled.easymixtr.com
+polnet.store
+primecheck.xyz
+realfowy.com
+
 # Generic
 
 /admin_123/auth.php
