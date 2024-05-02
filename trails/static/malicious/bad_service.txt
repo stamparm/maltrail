@@ -2606,10 +2606,14 @@ gameshield.io
 
 # Reference: https://www.virustotal.com/gui/ip-address/193.106.174.210/relations
 
+bel-credits.site
 buycc.shop
 vmcard.in
 vmcard.top
+ccbuyshop.buycc.shop
+ccgoodshop.buycc.shop
 cvvgoodcom.buycc.shop
 cvvproshop.buycc.shop
 cvvsiteshop.buycc.shop
 validcvvshop.buycc.shop
+vivamelhor.vmcard.top
