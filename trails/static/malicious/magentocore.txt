@@ -11115,7 +11115,9 @@ bootstrapcdn.codes
 jquery.cyou
 jquery.quest
 jquery.sbs
+pinelli90.ga
 pinelli90.ml
+pinelli90.tk
 shopget24.com
 webbootstrapcdn.cfd
 webbootstrapcdn.cloud
