@@ -4518,3 +4518,8 @@
 88.209.254.0/24,maxko
 92.52.217.0/24,maxko
 92.52.218.0/24,maxko
+
+# AS215127
+# Reference: https://ipinfo.io/AS215127
+
+45.81.242.0/24,teapotnet-as
