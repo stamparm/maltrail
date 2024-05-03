@@ -270,6 +270,11 @@ betvanced.com
 
 gnoticiasimparciais.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-04-29-v10585/1603
+
+nanoderecho.com
+pixelread.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
