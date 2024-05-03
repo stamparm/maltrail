@@ -3870,6 +3870,10 @@ zfd.demo.betterbuiltdogs.com
 
 muse.krazzykriss.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/147.45.78.74/relations
+
+premium.davidabostic.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
