@@ -3866,6 +3866,10 @@ vytzv.demo.betterbuiltdogs.com
 yznkm.demo.betterbuiltdogs.com
 zfd.demo.betterbuiltdogs.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.66.248.122/relations
+
+muse.krazzykriss.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
