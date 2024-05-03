@@ -836,21 +836,28 @@ http://51.75.166.193
 94.228.168.53.sslip.io
 chryslernetwork.com
 crowservices.link
+cybervm.net
 cyonstresser.ru
 dev.quickdown.pro
+dstat.hitme1337.pw
 electro-down.online
 etarras.eu
 etarras.pages.dev
 flooder.cc
 gamebattle.in
+hitme1337.pw
 ip192.ip-51-75-166.eu
 ipflooder.com
 profilecard.shop
+serverdown.cc
 shineesp.xyz
+stressbot.io
+stresser.bot
 stressst.com
-vnixhost.com
 t.vnixhost.com
 txadmin.gsrp.uk
+vbooter.pw
+vnixhost.com
 zenstresser.com
 
 # Reference: https://www.linkedin.com/pulse/forums-selling-stolen-credit-card-information-cvv-shops-tissot
