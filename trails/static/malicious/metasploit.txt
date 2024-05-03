@@ -5197,3 +5197,7 @@ http://138.128.245.94
 # Reference: https://twitter.com/RacWatchin8872/status/1785626289606472062
 
 80.99.39.40:4587
+
+# Reference: https://urlhaus.abuse.ch/host/3.131.30.33
+
+http://3.131.30.33
