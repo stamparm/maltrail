@@ -137,6 +137,7 @@ mailchimp.com
 mailprotector.net
 mailshell.net
 mcafee.com
+mediafire.com
 microsoft.com
 msv1.invalid
 multicom.hr
