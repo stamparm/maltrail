@@ -5204,5 +5204,7 @@ http://138.128.245.94
 80.99.39.40:4587
 
 # Reference: https://urlhaus.abuse.ch/host/3.131.30.33
+# Reference: https://twitter.com/banthisguy9349/status/1786365013483303179
 
 http://3.131.30.33
+3.131.30.33:4444
