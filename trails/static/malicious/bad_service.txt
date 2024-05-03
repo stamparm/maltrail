@@ -860,6 +860,43 @@ vbooter.pw
 vnixhost.com
 zenstresser.com
 
+# Reference: https://twitter.com/banthisguy9349/status/1786289391473668257
+
+bin.mentality.cloud
+booterpanel.pages.dev
+by-dostavka.pw
+coinmatrixcrypto.com
+cybervm.ru
+ddosforhire.pages.dev
+dream-stresser.su
+evil-stress.xyz
+freebooter.pages.dev
+frontendv1-evb.pages.dev
+hugostresser.com
+ipbooter.pages.dev
+kmz-down.xyz
+kxstress.us
+ne5de.com
+neostress.cc
+panel.klazsuite.it
+ps4booter.pages.dev
+redstresser.info
+str3ssed.su
+stresse.art
+stresse.net
+stresser.ac
+stresser.heleh.vn
+stresserapp.su
+stressergg.ru
+stresserip.com
+stresserso.ru
+stresserus.com
+stresserus.su
+stressland.ru
+thunderstress.cc
+topstresser.top
+xboxbooter.pages.dev
+
 # Reference: https://www.linkedin.com/pulse/forums-selling-stolen-credit-card-information-cvv-shops-tissot
 # Reference: https://app.validin.com/axon?type=dom&limit=10000&find=ns1.kak-prigotovit-spagetti.ru (# NS_FOR record)
 
