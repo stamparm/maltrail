@@ -8483,6 +8483,12 @@ cachline.com
 /uutyrtrreer/tttggg.php
 /tttggg.php
 
+# Reference: https://twitter.com/JustWantToQ1/status/1787075115823337564
+
+/Anonmy.cmd
+/Anonmy.hta
+/Anonmy.ps1
+
 # Generic
 
 /js/altmanluggage.js
