@@ -11248,6 +11248,12 @@ cdn.znanielec.online
 avitech.site
 cdn.avitech.site
 
+# Reference: https://www.virustotal.com/gui/ip-address/193.3.19.163/relations
+
+googletaganager.com
+img-google-tracker.com
+net-stat.info
+
 # Generic
 
 /assets/lfg.js
