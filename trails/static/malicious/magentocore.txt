@@ -11220,6 +11220,33 @@ cdn.oitool.shop
 cdn.sewloot.click
 cdn.teloom.site
 
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.22/relations
+
+intrgqc.site
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.69/relations
+
+defcleth.click
+cdn.defcleth.click
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.55/relations
+
+nuinetec.store
+setmic.shop
+stabit.click
+vidkimob.quest
+znanielec.online
+cdn.nuinetec.store
+cdn.setmic.shop
+cdn.stabit.click
+cdn.vidkimob.quest
+cdn.znanielec.online
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.56/relations
+
+avitech.site
+cdn.avitech.site
+
 # Generic
 
 /assets/lfg.js
