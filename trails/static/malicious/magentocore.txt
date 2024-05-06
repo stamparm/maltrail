@@ -11202,6 +11202,24 @@ cdn.grutic.store
 cdn.reftop.click
 cdn.yanaloop.shop
 
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.6/relations
+
+feigoton.store
+cdn.feigoton.store
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.14/relations
+
+feitec.online
+jeitoon.quest
+oitool.shop
+sewloot.click
+teloom.site
+cdn.feitec.online
+cdn.jeitoon.quest
+cdn.oitool.shop
+cdn.sewloot.click
+cdn.teloom.site
+
 # Generic
 
 /assets/lfg.js
