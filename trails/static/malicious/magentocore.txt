@@ -11187,6 +11187,21 @@ stackpath.bootstrapcdn.cfd
 tweeny.bootstrapcdn.cloud
 wanderer.pinelli90.ml
 
+# Reference: https://twitter.com/sdcyberresearch/status/1787452025610895713
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.8/relations
+# Refrence: https://app.validin.com/detail?find=195.242.110.8&type=ip4&ref_id=4c17b4e4cd4#tab=resolutions
+
+beztech.site
+clifolink.online
+grutic.store
+reftop.click
+yanaloop.shop
+cdn.beztech.site
+cdn.clifolink.online
+cdn.grutic.store
+cdn.reftop.click
+cdn.yanaloop.shop
+
 # Generic
 
 /assets/lfg.js
