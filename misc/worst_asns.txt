@@ -4523,3 +4523,14 @@
 # Reference: https://ipinfo.io/AS215127
 
 45.81.242.0/24,teapotnet-as
+
+# AS209588
+# Reference: https://ipinfo.io/AS209588
+
+141.98.82.0/24,flyservers-asn
+141.98.83.0/24,flyservers-asn
+141.98.9.0/24,flyservers-asn
+147.78.47.0/24,flyservers-asn
+179.60.147.0/24,flyservers-asn
+81.19.135.0/24,flyservers-asn
+92.51.2.0/24,flyservers-asn
