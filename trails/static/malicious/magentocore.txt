@@ -8667,6 +8667,7 @@ cdn.imperel.site
 cdn.kurkumin.click
 cdn.oumymob.shop
 cdn.podobadigit.quest
+cdn.ukatec.pics
 ww12.podobadigit.quest
 
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.110.130/relations
