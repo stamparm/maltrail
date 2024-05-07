@@ -841,6 +841,12 @@ striperouter.supelle.co
 vps-zap998573-1.zap-srv.com
 zepwk111.uk
 
+# Reference: https://twitter.com/Makesmewanna1/status/1787508657275470156
+
+http://185.112.147.62
+/db/unamewebpanel.db
+/unamewebpanel.db
+
 # Generic
 
 /admin_123/auth.php
