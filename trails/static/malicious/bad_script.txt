@@ -8489,6 +8489,10 @@ cachline.com
 /Anonmy.hta
 /Anonmy.ps1
 
+# Reference: https://twitter.com/Slvlombardo/status/1787524670956146891
+
+/unZIPpeRn.php
+
 # Generic
 
 /js/altmanluggage.js
