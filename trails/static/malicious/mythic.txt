@@ -1761,3 +1761,14 @@ thesolutionmatrix.com
 77.106.68.26:7443
 80.87.206.160:7443
 94.198.54.202:7443
+
+# Reference: https://pastebin.com/WvhSFbkF
+
+104.37.190.52:7443
+149.104.26.229:7443
+158.160.71.51:7443
+64.23.196.210:7443
+c2.rmrf.one
+ip14.ip-51-254-53.eu
+mythic.pcfindercentral.com
+whitedesk.cow-procyon.ts.net
