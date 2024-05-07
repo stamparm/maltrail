@@ -275,6 +275,12 @@ gnoticiasimparciais.com
 nanoderecho.com
 pixelread.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-05-06-v10590/1615
+
+firsho.com
+geronimooficial.com
+thecookoutcaterer.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
