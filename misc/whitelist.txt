@@ -3995,3 +3995,7 @@ ns2.example.com
 # Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/12/new-metastealer-malvertising-campaigns
 
 accounts.google.com
+
+# Reference: https://www.virustotal.com/gui/domain/uploaddeimagens.com.br/relations
+
+uploaddeimagens.com.br
