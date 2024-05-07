@@ -2079,9 +2079,3 @@ http://4.236.52.255
 20.125.108.162:80
 213.175.37.212:445
 67.207.68.224:445
-
-# Reference: https://twitter.com/ginkgo_g/status/1787373903880606193
-# Reference: https://www.virustotal.com/gui/file/c3efbac8ebffcf3d8178ce23e59f3b4978f5a91bf93773889870d45cc1b554b0/detection
-
-79.132.128.47:445
-94.156.8.166:445
