@@ -8493,6 +8493,10 @@ cachline.com
 
 /unZIPpeRn.php
 
+# Reference: https://twitter.com/ShanHolo/status/1787551650493747688
+
+/Shhhloader.py
+
 # Generic
 
 /js/altmanluggage.js
