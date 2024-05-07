@@ -3874,6 +3874,14 @@ muse.krazzykriss.com
 
 premium.davidabostic.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/77.83.199.148/relations
+
+colo.oystergarden.net
+mkpmg.colo.oystergarden.net
+prdyd.colo.oystergarden.net
+ygf.colo.oystergarden.net
+zniup.colo.oystergarden.net
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
