@@ -4534,3 +4534,14 @@
 179.60.147.0/24,flyservers-asn
 81.19.135.0/24,flyservers-asn
 92.51.2.0/24,flyservers-asn
+
+# AS208046
+# Reference: https://ipinfo.io/AS208046
+
+185.196.220.0/24,colocationx-datacenter
+193.142.146.0/24,colocationx-datacenter
+193.142.147.0/24,colocationx-datacenter
+45.134.225.0/24,colocationx-datacenter
+5.253.84.0/24,colocationx-datacenter
+78.142.18.0/24,colocationx-datacenter
+79.124.8.0/24,colocationx-datacenter
