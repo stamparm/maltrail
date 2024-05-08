@@ -11295,6 +11295,13 @@ cdn.heyoumob.shop
 bouncelec.quest
 cdn.bouncelec.quest
 
+# Reference: https://twitter.com/johnk3r/status/1788237228742754537
+# Reference: https://www.virustotal.com/gui/ip-address/104.168.172.213/relations
+# Reference: https://www.virustotal.com/gui/ip-address/142.11.217.47/relations
+
+cdn-staticsv.com
+cdnstack.space
+
 # Generic
 
 /assets/lfg.js
