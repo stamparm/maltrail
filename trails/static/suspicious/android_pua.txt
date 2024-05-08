@@ -1010,3 +1010,8 @@ dsss.gq
 
 truenaira.co
 app.truenaira.co
+
+# Reference: https://www.virustotal.com/gui/file/0006b60beef812e84cdb5003a55cb62f184171d865fc860e3c21264981bb8083/detection
+
+http://47.245.34.200
+121.43.228.180:8583
