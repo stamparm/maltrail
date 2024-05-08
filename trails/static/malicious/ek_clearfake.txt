@@ -242,6 +242,12 @@ awumnf.com
 ulmoyc.com
 zoolclaud.pw
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-05-07-v10591/1617
+
+bandarsport.net
+itemsdostawa.com
+valentinedaycard.com
+
 # Generic
 
 /a3A7qLVn/
