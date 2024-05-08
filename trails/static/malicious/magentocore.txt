@@ -11261,6 +11261,10 @@ googletaganager.com
 img-google-tracker.com
 net-stat.info
 
+# Reference: https://app.validin.com/detail?find=195.242.110.39&type=ip4&ref_id=f0374f717f0#tab=resolutions
+
+cholelec.store
+
 # Generic
 
 /assets/lfg.js
