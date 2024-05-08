@@ -11265,6 +11265,36 @@ net-stat.info
 
 cholelec.store
 
+# Reference: https://app.validin.com/detail?find=195.242.111.28&type=ip4&ref_id=2cc2b7f8bbf#tab=resolutions
+
+pyelend.icu
+cdn.pyelend.icu
+
+# Reference: https://app.validin.com/detail?find=195.242.111.48&type=ip4&ref_id=2cc2b7f8bbf#tab=resolutions
+
+mesdigital.pics
+cdn.mesdigital.pics
+
+# Reference: https://app.validin.com/detail?find=195.242.111.54&type=ip4&ref_id=2cc2b7f8bbf#tab=resolutions
+
+boltec.sbs
+cdn.boltec.sbs
+
+# Reference: https://app.validin.com/detail?find=195.242.111.144&type=ip4&ref_id=2cc2b7f8bbf#tab=resolutions
+
+dvielec.bar
+cdn.dvielec.bar
+
+# Reference: https://app.validin.com/detail?find=195.242.111.216&type=ip4&ref_id=2cc2b7f8bbf#tab=resolutions
+
+heyoumob.shop
+cdn.heyoumob.shop
+
+# Reference: https://app.validin.com/detail?find=195.242.111.220&type=ip4&ref_id=2cc2b7f8bbf#tab=resolutions
+
+bouncelec.quest
+cdn.bouncelec.quest
+
 # Generic
 
 /assets/lfg.js
