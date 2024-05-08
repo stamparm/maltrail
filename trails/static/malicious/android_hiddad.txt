@@ -534,3 +534,7 @@ zustaque.net
 
 ssd4000.top
 541c.ssd4000.top
+
+# Reference: https://www.virustotal.com/gui/file/f2bcb1c18dcfecfd0f40f1880cffded9d0f9778a9124a6ce7e6fa1652eb04f6b/detection
+
+bthcoinbase.cc
