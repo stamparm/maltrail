@@ -3874,6 +3874,7 @@ muse.krazzykriss.com
 
 premium.davidabostic.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-05-06-v10590/1615
 # Reference: https://www.virustotal.com/gui/ip-address/77.83.199.148/relations
 
 colo.oystergarden.net
