@@ -10284,6 +10284,11 @@ cdn.tucton.shop
 
 statsmetrica.co
 
+# Reference: https://twitter.com/sdcyberresearch/status/1788541822953750550
+# Reference: https://www.virustotal.com/gui/ip-address/45.67.34.17/relations
+
+statsmeter.co
+
 # Reference: https://blog.sucuri.net/2024/04/magento-shoplift-ecommerce-malware-targets-both-wordpress-magento-cms.html
 # Reference: https://www.virustotal.com/gui/ip-address/195.93.173.80/relations
 # Reference: https://www.virustotal.com/gui/ip-address/37.220.31.58/relations
