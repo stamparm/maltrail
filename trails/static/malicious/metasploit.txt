@@ -5208,3 +5208,7 @@ http://138.128.245.94
 
 http://3.131.30.33
 3.131.30.33:4444
+
+# Reference: https://www.virustotal.com/gui/file/a03091ab20ef9466513b06ed9d44e085748549363875e585a158c518506a70df/detection
+
+154.202.59.124:5566
