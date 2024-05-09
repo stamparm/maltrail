@@ -248,6 +248,15 @@ bandarsport.net
 itemsdostawa.com
 valentinedaycard.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-05-08-v10592/1622
+
+currentsilverprice.com
+debtavailable.com
+listwisconsin.com
+teachabletutorials.com
+voicelesson.org
+waytowealth.org
+
 # Generic
 
 /a3A7qLVn/
