@@ -730,6 +730,10 @@ opusmedical.info
 94.237.50.44:7443
 94.237.56.207:7443
 
+# Reference: https://www.virustotal.com/gui/file/e8a680635d01de1f753dae851b2a31b9e2c0699e8fb0771b727ebde23a70a214/detection
+
+http://154.202.59.124
+
 # Generic
 
 /covenantuser/
