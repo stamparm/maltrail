@@ -2464,3 +2464,17 @@ finish.startfinishthis.com
 from.startfinishthis.com
 isit.startfinishthis.com
 visit.startfinishthis.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.142.212.163/relations
+
+0first.dataofpages.com
+114.96.0first.dataofpages.com
+142.21four.startperfectsolutions.com
+188.114.96.0first.dataofpages.com
+21four.startperfectsolutions.com
+445.142.21four.startperfectsolutions.com
+96.0first.dataofpages.com
+g.four.startperfectsolutions.com
+repost.statisticsplatform.com
+sf.four.startperfectsolutions.com
+xn--three-hw3b.startperfectsolutions.com
