@@ -4545,3 +4545,29 @@
 5.253.84.0/24,colocationx-datacenter
 78.142.18.0/24,colocationx-datacenter
 79.124.8.0/24,colocationx-datacenter
+
+# AS151796
+# Reference: https://ipinfo.io/AS151796
+# Reference: https://twitter.com/banthisguy9349/status/1788968135141339252
+
+103.153.4.0/24,bignetlimited-as-ap
+103.207.164.0/24,bignetlimited-as-ap
+103.207.165.0/24,bignetlimited-as-ap
+103.207.166.0/24,bignetlimited-as-ap
+103.207.167.0/24,bignetlimited-as-ap
+156.248.53.0/24,bignetlimited-as-ap
+38.181.88.0/24,bignetlimited-as-ap
+38.181.89.0/24,bignetlimited-as-ap
+38.181.91.0/24,bignetlimited-as-ap
+38.181.92.0/24,bignetlimited-as-ap
+38.181.93.0/24,bignetlimited-as-ap
+38.181.94.0/24,bignetlimited-as-ap
+38.181.95.0/24,bignetlimited-as-ap
+38.199.104.0/24,bignetlimited-as-ap
+38.199.105.0/24,bignetlimited-as-ap
+38.199.106.0/24,bignetlimited-as-ap
+38.199.107.0/24,bignetlimited-as-ap
+38.199.108.0/24,bignetlimited-as-ap
+38.199.109.0/24,bignetlimited-as-ap
+38.199.110.0/24,bignetlimited-as-ap
+38.199.111.0/24,bignetlimited-as-ap
