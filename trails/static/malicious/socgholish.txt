@@ -3883,6 +3883,12 @@ prdyd.colo.oystergarden.net
 ygf.colo.oystergarden.net
 zniup.colo.oystergarden.net
 
+# Reference: https://twitter.com/mojoesec/status/1790101412203962465
+# Reference: https://www.virustotal.com/gui/file/05ed08f3354563a05b5affe271c2b520bf7f3545a05373adf8d8ab38af4c29ae/detection
+
+location.oysterfloats.us
+jsbzd.location.oysterfloats.us
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
