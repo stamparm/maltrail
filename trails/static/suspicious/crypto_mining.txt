@@ -1403,3 +1403,11 @@ de-zephyr.miningocean.org
 51.195.138.197:10343
 51.222.200.133:10343
 51.68.137.186:10343
+
+# Reference: https://twitter.com/alex_lanstein/status/1790004557696659522
+# Reference: https://www.virustotal.com/gui/file/57422d7d2c86a15aac59f4d8cda193090c7d7d8b5f4e36dcfcc940fc72daed88/detection
+
+162.19.224.121:10343
+212.47.253.124:10343
+51.15.89.13:10343
+54.37.232.103:10343
