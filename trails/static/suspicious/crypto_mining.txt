@@ -1397,3 +1397,9 @@ de-zephyr.miningocean.org
 # Reference: https://www.virustotal.com/gui/file/c35d5fb22d47e276e38fde699fc3b1e88e60a708d85b6ebea69815dec5d4883e/detection
 
 146.59.154.106:10343
+
+# Reference: https://www.virustotal.com/gui/file/770ea64c26b02dedd8110d516aaebcc5571db40a6e345289258462c2511e8f32/detection
+
+51.195.138.197:10343
+51.222.200.133:10343
+51.68.137.186:10343
