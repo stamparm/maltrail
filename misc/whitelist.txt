@@ -3999,3 +3999,7 @@ accounts.google.com
 # Reference: https://www.virustotal.com/gui/domain/uploaddeimagens.com.br/relations
 
 uploaddeimagens.com.br
+
+# Reference: https://twitter.com/birchb0y/status/1790832044584349756
+
+brew.sh
