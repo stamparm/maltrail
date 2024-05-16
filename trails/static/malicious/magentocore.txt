@@ -11309,6 +11309,11 @@ cdn.bouncelec.quest
 cdn-staticsv.com
 cdnstack.space
 
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.32/relations
+
+voatech.site
+cdn.voatech.site
+
 # Generic
 
 /assets/lfg.js
