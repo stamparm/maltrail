@@ -11314,6 +11314,28 @@ cdnstack.space
 voatech.site
 cdn.voatech.site
 
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.43/relations
+
+aletic.quest
+cdn.aletic.quest
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.110.33/relations
+
+aletic.quest
+gopoot.online
+hierarchy.bond
+kicatop.store
+oepstech.site
+opendigit.shop
+yalomob.click
+cdn.aletic.quest
+cdn.gopoot.online
+cdn.hierarchy.bond
+cdn.kicatop.store
+cdn.oepstech.site
+cdn.opendigit.shop
+cdn.yalomob.click
+
 # Reference: https://www.virustotal.com/gui/domain/goingfatter.com/relations
 
 goingfatter.com
