@@ -11314,6 +11314,10 @@ cdnstack.space
 voatech.site
 cdn.voatech.site
 
+# Reference: https://www.virustotal.com/gui/domain/goingfatter.com/relations
+
+goingfatter.com
+
 # Generic
 
 /assets/lfg.js
