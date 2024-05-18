@@ -285,6 +285,11 @@ thecookoutcaterer.com
 
 libidotechnexus.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-05-17-v10598/1649
+
+chezfur.com
+osiria-agency.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
