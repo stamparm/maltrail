@@ -8403,6 +8403,7 @@ etibuz.shop
 fadyit.pics
 fantodelt.sbs
 fasfad.site
+feerkin.store
 felestech.click
 flagmob.quest
 flattec.sbs
@@ -8415,6 +8416,7 @@ funkomob.sbs
 gachit.yachts
 galeglob.quest
 gambon.shop
+gapsink.shop
 garnimob.sbs
 gastdigit.quest
 gawtech.site
@@ -8463,6 +8465,7 @@ intesres.quest
 irlatok.shop
 istoretc.shop
 jantech.quest
+jartlink.site
 jestmob.pics
 jetomob.shop
 jezesec.quest
@@ -8499,6 +8502,7 @@ lishetoc.shop
 livepolitical.sbs
 lokotec.quest
 luktoc.online
+luterylpen.online
 mageants.sbs
 metsimob.yachts
 mihayam.shop
@@ -8535,6 +8539,7 @@ otkridigit.quest
 otpusmob.shop
 oumymob.shop
 paunit.pics
+peeyol.click
 pelstec.online
 pershtec.click
 perstech.shop
@@ -8577,6 +8582,7 @@ selentech.click
 seletech.markets
 seletmob.online
 semebit.online
+sewit.quest
 sgolen.store
 shakorot.site
 shareeffectiv.yachts
@@ -8655,6 +8661,7 @@ votedigit.shop
 vozvrec.store
 vuroselec.quest
 vushtech.sbs
+wegvilt.site
 weitmob.shop
 wellbeingtech.digital
 writefederal.click
