@@ -8325,6 +8325,7 @@ apexit.yachts
 arastek.online
 aurelec.shop
 autotec.shop
+avergonzareis.dev
 avordic.site
 avtomob.sbs
 babtek.click
@@ -8342,11 +8343,13 @@ beresor.store
 bespitech.sbs
 bibstele.online
 biposou.online
+birtec.quest
 bolotoc.store
 boroshtic.click
 bufelec.yachts
 bulkmob.store
 calcdigit.pics
+canecieseis.contact
 cegteh.store
 centridig.store
 changeyellow.cfd
@@ -8414,6 +8417,7 @@ galeglob.quest
 gambon.shop
 garnimob.sbs
 gastdigit.quest
+gawtech.site
 gelenhan.online
 gelimog.online
 gemdigit.pics
@@ -8432,6 +8436,7 @@ greentechify.digital
 gretit.yachts
 hapermob.shop
 hasekytop.click
+heeopink.shop
 helinit.yachts
 helostop.shop
 helotec.pics
@@ -8445,6 +8450,7 @@ hoohotic.click
 hovarelec.shop
 hustiontec.store
 idopos.shop
+ietinlc.store
 ifilone.site
 igusfil.shop
 imhoelec.yachts
@@ -8474,6 +8480,7 @@ kinotec.pics
 klstech.shop
 kolrmob.space
 kontec.quest
+koremob.site
 kouelec.cyou
 krasoticmob.space
 kritec.pics
@@ -8520,6 +8527,7 @@ oifilon.site
 oklasdon.online
 oleketec.store
 olinmasot.click
+omamint.click
 onitzech.sbs
 optemhop.shop
 osobtech.yachts
@@ -8553,6 +8561,7 @@ ragutech.shop
 rebomob.quest
 regtech.sbs
 resuelec.yachts
+retpin.online
 ribtech.shop
 rozkatech.yachts
 ruepliz.click
@@ -8572,6 +8581,7 @@ sgolen.store
 shakorot.site
 shareeffectiv.yachts
 shellmob.fun
+shestiteek.quest
 shokomob.sbs
 shonowor.site
 shotsmob.sbs
@@ -8608,6 +8618,7 @@ teletouch.click
 temtoch.site
 tenastoc.click
 timetok.online
+tiopot.shop
 tisimy.quest
 tochdigital.pics
 tochelec.quest
@@ -8619,9 +8630,11 @@ tuchtoch.shop
 tuchtok.site
 tuctec.site
 tululudoc.online
+uakachumob.store
 udamos.online
 ukatec.pics
 ulyatec.quest
+undedigit.site
 usespecial.quest
 uznatec.shop
 valetec.pw
@@ -8629,6 +8642,7 @@ vdoxdigit.pics
 vedldeno.store
 verecey.quest
 vetitec.quest
+vinalink.click
 vitalmob.pics
 vjevec.quest
 vkiten.click
@@ -8652,6 +8666,7 @@ yaknatec.pics
 yamatel.store
 yavipustec.online
 yedelec.sbs
+yelobit.online
 yelyotech.pics
 yololive.sbs
 yukmob.store
@@ -8659,15 +8674,30 @@ zahidelt.sbs
 zamlmob.pics
 zizitok.shop
 zlakovos.click
+cdn.avergonzareis.dev
+cdn.birtec.quest
+cdn.canecieseis.contact
 cdn.chelotec.quest
 cdn.donashhack.online
 cdn.dorojet.store
 cdn.elenots.site
+cdn.gawtech.site
+cdn.heeopink.shop
+cdn.ietinlc.store
 cdn.imperel.site
+cdn.koremob.site
 cdn.kurkumin.click
+cdn.omamint.click
 cdn.oumymob.shop
 cdn.podobadigit.quest
+cdn.retpin.online
+cdn.shestiteek.quest
+cdn.tiopot.shop
+cdn.uakachumob.store
 cdn.ukatec.pics
+cdn.undedigit.site
+cdn.vinalink.click
+cdn.yelobit.online
 ww12.podobadigit.quest
 
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.110.130/relations
