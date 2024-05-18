@@ -8511,6 +8511,10 @@ cachline.com
 
 /api6231223321213.js
 
+# Reference: https://x.com/banthisguy9349/status/1791853395352977877
+
+/INDIExploit
+
 # Generic
 
 /js/altmanluggage.js
