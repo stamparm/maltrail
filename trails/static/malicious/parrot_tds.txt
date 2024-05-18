@@ -80,3 +80,7 @@ followcache.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-02-08-v10527/1366
 
 visitscloud.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-05-17-v10598/1649
+
+public.clickstat360.com
