@@ -8688,6 +8688,7 @@ cdn.chelotec.quest
 cdn.donashhack.online
 cdn.dorojet.store
 cdn.elenots.site
+cdn.feerkin.store
 cdn.gawtech.site
 cdn.heeopink.shop
 cdn.ietinlc.store
