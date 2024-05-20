@@ -11377,6 +11377,29 @@ cdn.yalomob.click
 
 goingfatter.com
 
+# Reference: https://x.com/sdcyberresearch/status/1792485034068185295
+# Reference: https://www.virustotal.com/gui/ip-address/45.227.255.221/relations
+
+analytic-content.com
+analytic-metric.com
+analytics-content.com
+analytics-content.eu
+lotilabs.org
+store-content.com
+mail.lotilabs.org
+mail.olimpsport.org
+static.store-content.com
+
+# Reference: https://x.com/sdcyberresearch/status/1792485034068185295
+# Reference: https://www.virustotal.com/gui/ip-address/5.188.86.230/relations
+
+cdnjs.st
+cdnjs.us
+esicm.biz
+lgstd.io
+sitegateproxy.net
+siteimproveanalytics.net
+
 # Generic
 
 /assets/lfg.js
