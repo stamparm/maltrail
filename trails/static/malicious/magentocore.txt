@@ -11402,6 +11402,12 @@ sitegateproxy.net
 siteimproveanalytic.net
 siteimproveanalytics.net
 
+# Reference: https://x.com/sdcyberresearch/status/1792880699164291143
+# Reference: https://www.virustotal.com/gui/ip-address/109.120.134.52/relations
+
+cloud-faststart.com
+emblem-music.com/wp-includes/js/jquery/jquery.query.min.js
+
 # Generic
 
 /assets/lfg.js
