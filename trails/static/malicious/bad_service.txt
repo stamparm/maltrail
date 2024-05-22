@@ -2720,4 +2720,5 @@ admin.cvvunion.tv
 
 # Reference: https://www.virustotal.com/gui/ip-address/5.188.88.85/relations
 
+2crd.cc
 crdclub.su
