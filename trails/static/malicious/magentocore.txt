@@ -11408,6 +11408,15 @@ siteimproveanalytics.net
 cloud-faststart.com
 emblem-music.com/wp-includes/js/jquery/jquery.query.min.js
 
+# Reference: https://www.virustotal.com/gui/ip-address/195.242.111.32/relations
+
+fizpool.online
+iertech.site
+ochelun.quest
+povelec.shop
+uerlock.store
+vehton.click
+
 # Generic
 
 /assets/lfg.js
