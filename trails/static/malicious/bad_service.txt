@@ -2708,3 +2708,8 @@ storecvvonline.ru
 track2beststore.ru
 track2shopbest.ru
 xdumps.ru
+
+# Reference: https://www.virustotal.com/gui/ip-address/193.106.175.210/relations
+
+cvv-union.me
+cvvunion.work
