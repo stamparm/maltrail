@@ -11417,6 +11417,10 @@ povelec.shop
 uerlock.store
 vehton.click
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.141.87.131/relations
+
+cc-check.cash
+
 # Generic
 
 /assets/lfg.js
