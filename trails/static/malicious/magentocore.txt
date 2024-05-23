@@ -11436,6 +11436,15 @@ yelpelint.quest
 
 cc-check.cash
 
+# Reference: https://x.com/sdcyberresearch/status/1793281100992667981
+# Reference: https://www.virustotal.com/gui/ip-address/77.221.152.122/relations
+# Reference: https://www.virustotal.com/gui/ip-address/79.137.203.220/relations
+
+autossl-letsencrypt-demo.com
+catheeweiss.com
+eurochems.org
+sendtouser.com
+
 # Generic
 
 /assets/lfg.js
