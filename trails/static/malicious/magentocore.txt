@@ -11421,16 +11421,24 @@ vehton.click
 
 bezvotic.store
 dramlink.online
+dvestich.online
+evasel.online
 fekipont.shop
+feloontop.click
+fesdeil.shop
 gepkint.quest
 kintech.site
+multqinetic.site
+naverpic.quest
 nehoteep.online
 pektech.site
 sepewoon.click
 sovber.shop
 svepoop.store
 vejfor.click
+xemit.store
 yelpelint.quest
+cdn.fizpool.online
 
 # Reference: https://www.virustotal.com/gui/ip-address/45.141.87.131/relations
 
