@@ -8515,6 +8515,12 @@ cachline.com
 
 /INDIExploit
 
+# Reference: https://x.com/suyog41/status/1793935723961143625
+# Reference: https://www.virustotal.com/gui/file/d2809e3e60e5d9671be8644750ad1b385aaa6b4ff01fef8fc594d81c69275a33/detection
+# Reference: https://www.virustotal.com/gui/file/7b1b332c653d62effffffd27a8da5bf78c0a5e5c1fb04191e0943333671c46c3/detection
+
+/doomsday.ps1
+
 # Generic
 
 /js/altmanluggage.js
