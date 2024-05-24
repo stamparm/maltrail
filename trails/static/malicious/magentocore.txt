@@ -11437,7 +11437,21 @@ svepoop.store
 vejfor.click
 xemit.store
 yelpelint.quest
+cdn.evasel.online
+cdn.feloontop.click
+cdn.fesdeil.shop
 cdn.fizpool.online
+cdn.gapsink.shop
+cdn.iertech.site
+cdn.luterylpen.online
+cdn.multqinetic.site
+cdn.naverpic.quest
+cdn.ochelun.quest
+cdn.peeyol.click
+cdn.povelec.shop
+cdn.sewit.quest
+cdn.uerlock.store
+cdn.wegvilt.site
 
 # Reference: https://www.virustotal.com/gui/ip-address/45.141.87.131/relations
 
