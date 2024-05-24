@@ -53,7 +53,6 @@ truefree.pw
 # Reference: https://www.riskiq.com/blog/labs/magecart-british-airways-breach/
 
 http://89.47.162.248
-baways.com
 
 # Reference: https://www.riskiq.com/blog/labs/magecart-ticketmaster-breach/
 
