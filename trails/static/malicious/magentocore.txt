@@ -11487,6 +11487,7 @@ cdn.sewit.quest
 cdn.svepoop.store
 cdn.uerlock.store
 cdn.wegvilt.site
+cdn.xemit.store
 
 # Reference: https://www.virustotal.com/gui/ip-address/45.141.87.131/relations
 
