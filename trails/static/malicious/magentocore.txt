@@ -11419,6 +11419,7 @@ vehton.click
 # Reference: https://app.validin.com/detail?type=ip&find=195.242.111.0%2F24
 
 bezvotic.store
+chelotech.site
 dramlink.online
 dvestich.online
 evasel.online
@@ -11431,12 +11432,14 @@ multqinetic.site
 naverpic.quest
 nehoteep.online
 pektech.site
+promobet.site
 sepewoon.click
 sovber.shop
 svepoop.store
 vejfor.click
 xemit.store
 yelpelint.quest
+cdn.dramlink.online
 cdn.evasel.online
 cdn.feloontop.click
 cdn.fesdeil.shop
@@ -11450,6 +11453,7 @@ cdn.ochelun.quest
 cdn.peeyol.click
 cdn.povelec.shop
 cdn.sewit.quest
+cdn.svepoop.store
 cdn.uerlock.store
 cdn.wegvilt.site
 
