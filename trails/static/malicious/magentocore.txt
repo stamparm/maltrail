@@ -11430,9 +11430,15 @@ cdn.avitech.site
 
 # Reference: https://www.virustotal.com/gui/ip-address/193.3.19.163/relations
 
+apprised.app
 googletaganager.com
 img-google-tracker.com
 net-stat.info
+netstats.online
+statabalc.icu
+tagfb.tech
+tgdev.online
+trtrapcdn.com
 
 # Reference: https://app.validin.com/detail?find=195.242.110.39&type=ip4&ref_id=f0374f717f0#tab=resolutions
 
