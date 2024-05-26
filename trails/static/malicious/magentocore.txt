@@ -10143,6 +10143,7 @@ zummer.pw
 /absorberr.com.js
 
 # Reference: https://app.validin.com/detail?find=consoashirali9v.gmx.com&type=dom&ref_id=29a788bc11c#tab=dns
+# Reference: https://www.virustotal.com/gui/ip-address/141.98.82.232/relations
 
 bestbid.shop
 bestbidz.shop
@@ -10165,6 +10166,7 @@ mybid.shop
 mybidz.shop
 myoffers.shop
 myofferz.shop
+myownshop.at
 myprize.fun
 myprize.shop
 mysale.digital
@@ -10192,14 +10194,17 @@ topprizez.shop
 topsalez.shop
 uads.digital
 uads.guru
+uads.info
 uads.pw
 uads.space
+uads.store
 winaprize.shop
 winprizes.shop
 wintheprize.shop
 xbid.shop
 xoffer.shop
 xprize.shop
+mail.uads.info
 
 # Reference: https://twitter.com/sdcyberresearch/status/1751986738120028234
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.110.230/relations
