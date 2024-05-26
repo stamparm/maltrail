@@ -897,6 +897,12 @@ thunderstress.cc
 topstresser.top
 xboxbooter.pages.dev
 
+# Reference: https://www.virustotal.com/gui/file/28f7e272e2a72d961eab6b3028bb6a58f292befcac20fb98978444193680b952/detection
+# Reference: https://www.virustotal.com/gui/file/73fa482bc53a658b6d1cc8ad284713ec0306b9d560e5706056982f7d4c3bd4cd/detection
+
+stresse.ru
+stressertech.club
+
 # Reference: https://www.linkedin.com/pulse/forums-selling-stolen-credit-card-information-cvv-shops-tissot
 # Reference: https://app.validin.com/axon?type=dom&limit=10000&find=ns1.kak-prigotovit-spagetti.ru (# NS_FOR record)
 
