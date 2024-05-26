@@ -3453,6 +3453,10 @@ http://16.162.238.67
 79.137.199.78:8888
 91.92.245.195:31337
 
+# Reference: https://www.virustotal.com/gui/file/01cf9e5137481e4146b7650581c7841ae54af16d57327cbfee9305f6bd891b02/detection
+
+cas2.loophole.site
+
 # Generic
 
 /.sliver-client/
