@@ -10211,6 +10211,34 @@ xoffer.shop
 xprize.shop
 mail.uads.info
 
+# Reference: https://www.virustotal.com/gui/ip-address/5.188.62.10/relations
+
+estorages.xyz
+festorage.xyz
+fyvirtual.cyou
+gistore.xyz
+gyxtremum.cyou
+gyyellow.cyou
+gyzambian.cyou
+gyzipper.xyz
+hshady.xyz
+hyanides.xyz
+idistinct.xyz
+jeunseen.xyz
+kexcitinge.xyz
+produmax.tech
+regiduo.icu
+signumo.fun
+tricksting.cfd
+turn.4cast.fun
+ultimans.sbs
+vizzard.space
+voluntee.xyz
+workery.icu
+xtremic.xyz
+yellist.cyou
+zetas.press
+
 # Reference: https://twitter.com/sdcyberresearch/status/1751986738120028234
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.110.230/relations
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.110.247/relations
