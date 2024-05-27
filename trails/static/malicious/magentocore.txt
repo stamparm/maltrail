@@ -11593,6 +11593,51 @@ cdn.uerlock.store
 cdn.wegvilt.site
 cdn.xemit.store
 
+# Reference: https://x.com/sdcyberresearch/status/1795057766865744223
+# Reference: https://www.virustotal.com/gui/ip-address/45.88.3.204/relations
+
+bilerec.online
+damnmob.quest
+fetlicfet.store
+fezelec.click
+gulimob.site
+heliponk.click
+hiperglucemicos.day
+infelec.yachts
+kennidigit.online
+kenttec.shop
+leglink.quest
+nasoltech.site
+novitech.store
+poglink.click
+pospit.site
+prostictec.pw
+raditeches.shop
+tempoticlec.in.net
+turnmob.shop
+velipot.quest
+yekmet.online
+cdn.bilerec.online
+cdn.damnmob.quest
+cdn.fetlicfet.store
+cdn.fezelec.click
+cdn.gulimob.site
+cdn.heliponk.click
+cdn.hiperglucemicos.day
+cdn.kennidigit.online
+cdn.kenttec.shop
+cdn.leglink.quest
+cdn.nasoltech.site
+cdn.novitech.store
+cdn.poglink.click
+cdn.pospit.site
+cdn.prostictec.pw
+cdn.raditeches.shop
+cdn.tempoticlec.in.net
+cdn.turnmob.shop
+cdn.velipot.quest
+cdn.yekmet.online
+
 # Reference: https://www.virustotal.com/gui/ip-address/45.141.87.131/relations
 
 cc-check.cash
