@@ -11621,6 +11621,7 @@ cdn.bilerec.online
 cdn.damnmob.quest
 cdn.fetlicfet.store
 cdn.fezelec.click
+cdn.gepkint.quest
 cdn.gulimob.site
 cdn.heliponk.click
 cdn.hiperglucemicos.day
@@ -11635,6 +11636,7 @@ cdn.prostictec.pw
 cdn.raditeches.shop
 cdn.tempoticlec.in.net
 cdn.turnmob.shop
+cdn.vehton.click
 cdn.velipot.quest
 cdn.yekmet.online
 
