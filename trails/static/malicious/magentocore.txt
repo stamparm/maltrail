@@ -11650,6 +11650,7 @@ arados.monster
 chapotech.store
 chastictop.online
 chelitec.online
+chigomob.online
 coyundearias.xyz
 depiters.store
 dilink.click
@@ -11663,6 +11664,7 @@ fototytrul.online
 frektech.site
 gamakatvet.store
 gelte.site
+gemintele.shop
 gemptech.shop
 glubit.shop
 goalkeeper.pics
@@ -11681,6 +11683,7 @@ joermen.store
 jojtom.store
 joyjon.click
 jyjotec.online
+kapecol.shop
 keluven.quest
 ketbon.quest
 krusswep.online
@@ -11715,6 +11718,7 @@ yakutech.quest
 cdn.chapotech.store
 cdn.chastictop.online
 cdn.chelitec.online
+cdn.chigomob.online
 cdn.coyundearias.xyz
 cdn.delamint.online
 cdn.depiters.store
@@ -11729,6 +11733,7 @@ cdn.feyatic.quest
 cdn.frektech.site
 cdn.gamakatvet.store
 cdn.gelte.site
+cdn.gemintele.shop
 cdn.gemptech.shop
 cdn.glubit.shop
 cdn.goalkeeper.pics
@@ -11745,6 +11750,7 @@ cdn.joermen.store
 cdn.jojtom.store
 cdn.joyjon.click
 cdn.jyjotec.online
+cdn.kapecol.shop
 cdn.keluven.quest
 cdn.ketbon.quest
 cdn.kintech.site
