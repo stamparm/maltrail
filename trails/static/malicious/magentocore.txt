@@ -11577,12 +11577,14 @@ vejfor.click
 xemit.store
 yelpelint.quest
 cdn.dramlink.online
+cdn.dvestich.online
 cdn.evasel.online
 cdn.feloontop.click
 cdn.fesdeil.shop
 cdn.fizpool.online
 cdn.gapsink.shop
 cdn.iertech.site
+cdn.kintech.site
 cdn.luterylpen.online
 cdn.multqinetic.site
 cdn.naverpic.quest
