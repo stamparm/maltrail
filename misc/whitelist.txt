@@ -4004,3 +4004,10 @@ uploaddeimagens.com.br
 # Reference: https://twitter.com/birchb0y/status/1790832044584349756
 
 brew.sh
+
+# Reference: https://github.com/stamparm/maltrail/issues/19259
+# Reference: https://github.com/stamparm/maltrail/commit/916ce06a90227a0f3ab4629aa101417effcc0b47
+
+docusign.net
+polaris.me
+powerdms.com
