@@ -11514,9 +11514,11 @@ goingfatter.com
 
 # Reference: https://x.com/sdcyberresearch/status/1792485034068185295
 # Reference: https://www.virustotal.com/gui/ip-address/45.227.255.221/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.76.28.239/relations
 
 analytic-content.com
 analytic-metric.com
+analytic-tags.com
 analytics-content.com
 analytics-content.eu
 lotilabs.org
