@@ -598,3 +598,7 @@ http://218.28.172.25
 # Reference: https://twitter.com/drb_ra/status/1779038426433454268
 
 163.181.142.111:4505
+
+# Reference: https://x.com/drb_ra/status/1796071510102225241
+
+188.166.116.129:4443
