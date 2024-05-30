@@ -2278,6 +2278,10 @@ http://95.217.210.118
 94.156.65.156:443
 94.156.65.156:4433
 
+# Reference: https://x.com/banthisguy9349/status/1796211325242135021
+
+174.138.24.101:443
+
 # Reference: https://twitter.com/ShanHolo/status/1787551650493747688
 
 /Shhhavoc.py
