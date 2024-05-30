@@ -11818,6 +11818,10 @@ catheeweiss.com
 eurochems.org
 sendtouser.com
 
+# Reference: https://blog.sucuri.net/2024/05/server-side-credit-card-skimmer-lodged-in-obscure-plugin.html
+
+2of.cc
+
 # Generic
 
 /assets/lfg.js
