@@ -1378,6 +1378,10 @@ met.jyq.icu
 89.116.193.177:8888
 97.74.93.173:8888
 
+# Reference: https://x.com/banthisguy9349/status/1796211325242135021
+
+39.100.95.111:8888
+
 # Generic
 
 /supershell/login
