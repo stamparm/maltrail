@@ -2728,3 +2728,11 @@ admin.cvvunion.tv
 
 2crd.cc
 crdclub.su
+
+# Reference: https://www.virustotal.com/gui/domain/ransomware.cc/relations
+
+ransomware.cc
+auth.ransomware.cc
+behaveslike.ransomware.cc
+panel.ransomware.cc
+ww1.ransomware.cc
