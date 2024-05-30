@@ -1605,3 +1605,4 @@ met.jyq.icu
 # Generic
 
 /supershell/login
+/supershell/compile/download/win
