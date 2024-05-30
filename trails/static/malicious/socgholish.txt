@@ -3889,6 +3889,14 @@ zniup.colo.oystergarden.net
 location.oysterfloats.us
 jsbzd.location.oysterfloats.us
 
+# Reference: https://www.esentire.com/blog/fake-browser-updates-delivering-bitrat-and-lumma-stealer
+# Reference: https://www.virustotal.com/gui/ip-address/65.21.119.50/relations
+# Reference: https://www.virustotal.com/gui/file/377e8cbb841c1011a0a0583fc51e169b6411362a8789519fcfe3035def3eb405/detection
+
+chatgpt-app.cloud
+updatess.mooo.com
+mail.norunia.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
