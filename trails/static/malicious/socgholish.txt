@@ -3897,6 +3897,11 @@ chatgpt-app.cloud
 updatess.mooo.com
 mail.norunia.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/173.44.141.51/relations
+# Reference: https://www.virustotal.com/gui/file/00bd0cf7ab5874ed15fb851a2361678b6b1d1d5804ce7262a09a115459514910/detection
+
+scada.paradizeconstruction.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
