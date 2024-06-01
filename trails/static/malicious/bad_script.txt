@@ -8521,6 +8521,10 @@ cachline.com
 
 /doomsday.ps1
 
+# Reference: https://x.com/lontze7/status/1796823844335890633
+
+/20231027094801.php
+
 # Generic
 
 /js/altmanluggage.js
