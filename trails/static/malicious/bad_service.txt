@@ -2728,3 +2728,7 @@ admin.cvvunion.tv
 
 2crd.cc
 crdclub.su
+
+# Reference: https://www.virustotal.com/gui/ip-address/189.164.114.213/relations
+
+cvv-union.at
