@@ -11592,6 +11592,7 @@ cdn.ochelun.quest
 cdn.peeyol.click
 cdn.povelec.shop
 cdn.sewit.quest
+cdn.sovber.shop
 cdn.svepoop.store
 cdn.uerlock.store
 cdn.wegvilt.site
