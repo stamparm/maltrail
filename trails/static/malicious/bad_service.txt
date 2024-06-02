@@ -2733,3 +2733,8 @@ crdclub.su
 
 cvv-union.at
 union-shop.at
+
+# Reference: https://www.virustotal.com/gui/ip-address/151.233.51.166/relations
+
+cashmoneycard.cc
+hollywoodcash.cc
