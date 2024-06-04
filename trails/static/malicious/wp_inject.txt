@@ -2478,3 +2478,13 @@ g.four.startperfectsolutions.com
 repost.statisticsplatform.com
 sf.four.startperfectsolutions.com
 xn--three-hw3b.startperfectsolutions.com
+
+# Reference: https://x.com/unmaskparasites/status/1797695543948513313
+# Reference: https://www.virustotal.com/gui/ip-address/45.9.149.210/relations
+
+rdntocdns.com
+assets.rdntocdns.com
+cdn.rdntocdns.com
+css.rdntocdns.com
+rest1.rdntocdns.com
+rest2.rdntocdns.com
