@@ -8524,8 +8524,11 @@ cachline.com
 
 # Reference: https://x.com/1ZRR4H/status/1797809897800687796
 # Reference: https://x.com/1ZRR4H/status/1798023836186632394
+# Reference: https://x.com/V3n0mStrike/status/1798040558646317552
 
 /inadvisable34.ps1
+/triacidsIO.ps1
+/perikarya30lv.php
 
 # Generic
 
