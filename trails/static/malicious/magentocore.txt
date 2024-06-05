@@ -11716,6 +11716,7 @@ rukutec.store
 saponline.site
 shaapotec.click
 sinketech.shop
+skitech.site
 snvepic.online
 stayoph.click
 sterhook.site
@@ -11808,6 +11809,7 @@ cdn.rukutec.store
 cdn.saponline.site
 cdn.shaapotec.click
 cdn.sinketech.shop
+cdn.skitech.site
 cdn.snvepic.online
 cdn.stayoph.click
 cdn.sudtech.online
