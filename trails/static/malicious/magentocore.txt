@@ -11647,16 +11647,21 @@ cdn.yekmet.online
 
 # Reference: https://app.validin.com/detail?find=45.88.3.0%2F24&type=ip&ref_id=91b18e17fe2#tab=resolutions
 
+ahedoob.shop
+antelec.click
 arados.monster
 chapotech.store
 chastictop.online
 chelitec.online
 chigomob.online
 coyundearias.xyz
+ctotech.store
+cvyatop.online
 depiters.store
 dilink.click
 dipteb.quest
 dostotec.quest
+drgibit.click
 entrelec.store
 febiloot.site
 fenmatc.click
@@ -11693,6 +11698,9 @@ melopic.shop
 metriso.online
 mifelpot.shop
 misdigit.click
+mistlink.online
+mokamob.site
+neznlink.store
 nsnamob.site
 pantech.online
 peerdigit.shop
@@ -11701,21 +11709,30 @@ pershidigit.online
 petloom.quest
 piltech.quest
 pizelec.site
+reshnot.quest
 revqc.online
+rijtech.shop
 rukutec.store
+saponline.site
 shaapotec.click
 sinketech.shop
 snvepic.online
 stayoph.click
 sterhook.site
+sudtech.online
+temninch.site
 tiodigit.shop
+tutic.click
 vafapic.online
 varenmob.store
+vidbent.shop
 weewloop.store
 weponit.site
 wowiatel.shop
 xifelec.click
 yakutech.quest
+zakit.quest
+zarelec.quest
 cdn.avtomob.sbs
 cdn.beatmob.pics
 cdn.bupunit.store
@@ -11723,6 +11740,7 @@ cdn.chapotech.store
 cdn.chastictop.online
 cdn.chekeelec.quest
 cdn.chelitec.online
+cdn.chelotech.site
 cdn.chigomob.online
 cdn.coyundearias.xyz
 cdn.cutele.shop
@@ -11784,12 +11802,15 @@ cdn.pershidigit.online
 cdn.petloom.quest
 cdn.piltech.quest
 cdn.pizelec.site
+cdn.promobet.site
 cdn.rithdigit.cyou
 cdn.rukutec.store
+cdn.saponline.site
 cdn.shaapotec.click
 cdn.sinketech.shop
 cdn.snvepic.online
 cdn.stayoph.click
+cdn.sudtech.online
 cdn.tiodigit.shop
 cdn.tochdigital.pics
 cdn.vafapic.online
