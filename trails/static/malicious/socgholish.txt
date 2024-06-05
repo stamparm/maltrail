@@ -3620,9 +3620,13 @@ xugix.policy.donnafrey.com
 zjxwd.policy.donnafrey.com
 zuwy.policy.donnafrey.com
 
+# Reference: https://x.com/threatcat_ch/status/1798333648099582316
 # Reference: https://www.virustotal.com/gui/ip-address/154.29.75.236/relations
 
 apicachebot.com
+memoryloader.com
+api.memoryloader.com
+load.memoryloader.com
 hostmaster.apicachebot.com
 mail.apicachebot.com
 suspicious-noed.absolutecache.com
