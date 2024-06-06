@@ -5272,3 +5272,10 @@ http://148.135.35.177
 # Reference: https://x.com/drb_ra/status/1795727946252001343
 
 http://188.119.149.240
+
+# Reference: https://x.com/lontze7/status/1798586011724968058
+# Reference: https://www.virustotal.com/gui/file/d21809296054020e4994106723ad08cf8a5b840ea201cc2f72b544b97fc6f339/detection
+
+34.0.133.230:9051
+34.174.239.174:9001
+local.techwall.xyz
