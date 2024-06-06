@@ -11737,6 +11737,7 @@ zarelec.quest
 cdn.avtomob.sbs
 cdn.beatmob.pics
 cdn.bupunit.store
+cdn.ceilyt.click
 cdn.chapotech.store
 cdn.chastictop.online
 cdn.chekeelec.quest
