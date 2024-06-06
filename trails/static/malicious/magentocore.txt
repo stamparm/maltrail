@@ -11793,6 +11793,7 @@ cdn.melopic.shop
 cdn.metriso.online
 cdn.mifelpot.shop
 cdn.misdigit.click
+cdn.mistlink.online
 cdn.noanotech.sbs
 cdn.nsnamob.site
 cdn.odintech.sbs
@@ -11804,6 +11805,7 @@ cdn.petloom.quest
 cdn.piltech.quest
 cdn.pizelec.site
 cdn.promobet.site
+cdn.rijtech.shop
 cdn.rithdigit.cyou
 cdn.rukutec.store
 cdn.saponline.site
@@ -11813,8 +11815,10 @@ cdn.skitech.site
 cdn.snvepic.online
 cdn.stayoph.click
 cdn.sudtech.online
+cdn.temninch.site
 cdn.tiodigit.shop
 cdn.tochdigital.pics
+cdn.tutic.click
 cdn.vafapic.online
 cdn.varenmob.store
 cdn.vejfor.click
@@ -11824,6 +11828,7 @@ cdn.xifelec.click
 cdn.yakutech.quest
 cdn.yololive.sbs
 cdn.zapolmob.sbs
+cdn.zarelec.quest
 
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.110.10/relations
 
