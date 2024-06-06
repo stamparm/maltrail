@@ -3311,3 +3311,8 @@ mnogolik002.xyz
 pichuga-dl.xyz
 valencia-dl.xyz
 vivinod4.xyz
+
+# Reference: https://x.com/suyog41/status/1798572330224132594
+# Reference: https://www.virustotal.com/gui/file/690d111294d46e755ea58ea92f485eac3e56961adf543543f8fca073148e8c5b/detection
+
+helsinki-dtc.com
