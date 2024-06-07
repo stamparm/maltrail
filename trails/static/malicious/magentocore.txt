@@ -11692,6 +11692,8 @@ jyjotec.online
 kapecol.shop
 keluven.quest
 ketbon.quest
+khetech.site
+kretop.click
 krusswep.online
 loopdigit.site
 melopic.shop
@@ -11702,9 +11704,11 @@ mistlink.online
 mokamob.site
 neznlink.store
 nsnamob.site
+obshmob.shop
 pantech.online
 peerdigit.shop
 perelink.click
+perlet.store
 pershidigit.online
 petloom.quest
 piltech.quest
@@ -11727,9 +11731,11 @@ tutic.click
 vafapic.online
 varenmob.store
 vidbent.shop
+vsetech.quest
 weewloop.store
 weponit.site
 wowiatel.shop
+xadirec.site
 xifelec.click
 yakutech.quest
 zakit.quest
@@ -11743,6 +11749,7 @@ cdn.chastictop.online
 cdn.chekeelec.quest
 cdn.chelitec.online
 cdn.chelotech.site
+cdn.chelplink.online
 cdn.chigomob.online
 cdn.coyundearias.xyz
 cdn.cutele.shop
@@ -11786,6 +11793,7 @@ cdn.kapecol.shop
 cdn.keluven.quest
 cdn.ketbon.quest
 cdn.kintech.site
+cdn.kretop.click
 cdn.krusswep.online
 cdn.lavutele.yachts
 cdn.lielecef.cyou
@@ -11797,10 +11805,12 @@ cdn.misdigit.click
 cdn.mistlink.online
 cdn.noanotech.sbs
 cdn.nsnamob.site
+cdn.obshmob.shop
 cdn.odintech.sbs
 cdn.pantech.online
 cdn.peerdigit.shop
 cdn.perelink.click
+cdn.perlet.store
 cdn.pershidigit.online
 cdn.petloom.quest
 cdn.piltech.quest
@@ -11823,8 +11833,10 @@ cdn.tutic.click
 cdn.vafapic.online
 cdn.varenmob.store
 cdn.vejfor.click
+cdn.vsetech.quest
 cdn.weewloop.store
 cdn.weponit.site
+cdn.xadirec.site
 cdn.xifelec.click
 cdn.yakutech.quest
 cdn.yololive.sbs
