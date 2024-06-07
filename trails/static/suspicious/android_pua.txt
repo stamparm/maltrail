@@ -1024,3 +1024,8 @@ http://23.228.77.145
 http://23.228.77.147
 http://23.228.77.148
 http://23.228.77.155
+
+# Reference: https://www.virustotal.com/gui/file/000000a512a847e8ed28fdaf433d6dd601a88d74e5dd7d71bd07817b1ce3a2a2/detection
+
+android.downloadatoz.com
+topdata.downloadatoz.com
