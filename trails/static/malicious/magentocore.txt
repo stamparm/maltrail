@@ -11852,6 +11852,11 @@ sendtouser.com
 
 2of.cc
 
+# Reference: https://x.com/johnk3r/status/1798833023804440593
+# Reference: https://www.virustotal.com/gui/ip-address/108.174.194.122/relations
+
+hlntup.io
+
 # Generic
 
 /assets/lfg.js
