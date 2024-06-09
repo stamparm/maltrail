@@ -4571,3 +4571,11 @@
 38.199.109.0/24,bignetlimited-as-ap
 38.199.110.0/24,bignetlimited-as-ap
 38.199.111.0/24,bignetlimited-as-ap
+
+# AS211138
+# Reference: https://ipinfo.io/AS211138
+
+41.216.182.0/24,privatehosting-net
+41.216.183.0/24,privatehosting-net
+41.216.188.0/24,privatehosting-net
+41.216.189.0/24,privatehosting-net
