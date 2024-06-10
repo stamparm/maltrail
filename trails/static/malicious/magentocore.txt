@@ -11880,6 +11880,11 @@ sendtouser.com
 
 hlntup.io
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.67.231.166/relations
+
+tagmanager.space
+ns1.tagmanager.space
+
 # Generic
 
 /assets/lfg.js
