@@ -11798,6 +11798,7 @@ cdn.jyjotec.online
 cdn.kapecol.shop
 cdn.keluven.quest
 cdn.ketbon.quest
+cdn.khetech.site
 cdn.kintech.site
 cdn.kretop.click
 cdn.krusswep.online
