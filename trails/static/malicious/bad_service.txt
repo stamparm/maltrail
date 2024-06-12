@@ -2738,3 +2738,7 @@ union-shop.at
 
 cashmoneycard.cc
 hollywoodcash.cc
+
+# Reference: https://x.com/DarkWebInformer/status/1800522139680084369
+
+kcc.cat
