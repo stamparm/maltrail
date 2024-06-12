@@ -11576,7 +11576,10 @@ svepoop.store
 vejfor.click
 xemit.store
 yelpelint.quest
+cdn.ctotech.store
+cdn.cvyatop.online
 cdn.dramlink.online
+cdn.drgibit.click
 cdn.dvestich.online
 cdn.evasel.online
 cdn.feloontop.click
@@ -11586,6 +11589,7 @@ cdn.gapsink.shop
 cdn.iertech.site
 cdn.kintech.site
 cdn.luterylpen.online
+cdn.mokamob.site
 cdn.multqinetic.site
 cdn.naverpic.quest
 cdn.ochelun.quest
@@ -11595,6 +11599,7 @@ cdn.sewit.quest
 cdn.sovber.shop
 cdn.svepoop.store
 cdn.uerlock.store
+cdn.vidbent.shop
 cdn.wegvilt.site
 cdn.xemit.store
 
