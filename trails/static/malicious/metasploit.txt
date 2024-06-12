@@ -5279,3 +5279,19 @@ http://188.119.149.240
 34.0.133.230:9051
 34.174.239.174:9001
 local.techwall.xyz
+
+# Reference: https://x.com/drb_ra/status/1800626755008360501
+
+213.139.205.151:443
+
+# Reference: https://x.com/drb_ra/status/1800272360198558105
+
+38.87.197.95:443
+
+# Reference: https://x.com/drb_ra/status/1800272344222429281
+
+94.228.166.29:443
+
+# Reference: https://x.com/drb_ra/status/1800447747947995387
+
+137.175.50.26:443
