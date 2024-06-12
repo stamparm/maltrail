@@ -297,6 +297,10 @@ osiria-agency.com
 burdurpastane.com
 lilygovert91.top
 
+# Reference: https://x.com/Threat_Down/status/1800919313798537505
+
+/cdn-vs/22per.php
+
 # Generic
 
 /cache/ewmrgqnaww.php
