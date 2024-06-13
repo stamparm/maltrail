@@ -5300,3 +5300,7 @@ local.techwall.xyz
 # Reference: https://www.virustotal.com/gui/file/6204db24aac63084e48d32bbf476abf78eeae64e525283ebee7c10d7c46fd7dc/detection
 
 134.17.14.54:52116
+
+# Reference: https://x.com/drb_ra/status/1801355315578871823
+
+86.90.134.118:8080
