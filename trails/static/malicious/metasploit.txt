@@ -5295,3 +5295,8 @@ local.techwall.xyz
 # Reference: https://x.com/drb_ra/status/1800447747947995387
 
 137.175.50.26:443
+
+# Reference: https://x.com/raghav127001/status/1801072160993141240
+# Reference: https://www.virustotal.com/gui/file/6204db24aac63084e48d32bbf476abf78eeae64e525283ebee7c10d7c46fd7dc/detection
+
+134.17.14.54:52116
