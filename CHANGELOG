@@ -17,6 +17,8 @@
 - Version 0.70 -> 0.71 (Upcoming release)
 
 [=] Maltrail docker container run is improved (Issue #19260)
+[=] php-inj detection is improved (Issue #19262)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 - Version 0.69 -> 0.70 (01 Jun 2024)
