@@ -11891,6 +11891,20 @@ hlntup.io
 tagmanager.space
 ns1.tagmanager.space
 
+# Reference: https://x.com/sdcyberresearch/status/1801178651288871147
+# Reference: https://app.validin.com/detail?find=91.202.233.147&type=ip4&ref_id=da1c921fe1c#tab=resolutions
+
+cnv.icu
+cvd.icu
+cvn.icu
+cvv.icu
+dcv.icu
+ndn.icu
+nnv.icu
+nvv.icu
+vcn.icu
+vnv.icu
+
 # Generic
 
 /assets/lfg.js
