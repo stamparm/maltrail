@@ -11906,6 +11906,10 @@ nvv.icu
 vcn.icu
 vnv.icu
 
+# Reference: https://x.com/sdcyberresearch/status/1801186223593005289
+
+kandkca.com/instamojo/instamojo.js
+
 # Generic
 
 /assets/lfg.js
