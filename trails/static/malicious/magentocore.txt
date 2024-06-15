@@ -11209,36 +11209,62 @@ cdnbootstrap.xyz
 # Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-04-30-examples-of-web-skimmers.txt
 # Reference: https://www.virustotal.com/gui/ip-address/151.106.96.192/relations
 # Reference: https://www.virustotal.com/gui/ip-address/176.111.174.248/relations
+# Reference: https://www.virustotal.com/gui/ip-address/176.97.75.105/relations
 # Reference: https://www.virustotal.com/gui/ip-address/78.46.124.156/relations
 # Reference: https://www.virustotal.com/gui/ip-address/78.46.94.189/relations
 
 http://212.129.24.246
 analytics-fonts.com
+api1-bigcommerce.net
 api1-jquery.com
-apple.com-ticket.info
+api11-bigcommerce.com
+api12-bigcommerce.com
+api14-bigcommerce.com
+api16-bigcommerce.com
+api17-bigcommerce.com
+api3-bigcommerce.net
+apn1-bigcommerce.com
+apn10-bigcommerce.com
+apn7-bigcommerce.com
 bootstrapcdn.site
 cdn-dataservice.com
 cdn-getnet.digital
 cdn-google-tag.info
 cdn.nigntboxcdn.com
 cdn.v2board-cdn.tech
+cdn1-bigcommerce.com
 cdn11-bigcommerce.com
+cdn14-bigcommerce.com
+cdn17-bigcommerce.com
+cdn19-bigcommerce.com
+cdn2-bigcommerce.com
 cdn27-bigcommerce.com
+cdn3-bigcommerce.net
+cdn31-bigcommerce.com
 cdn32-bigcommerce.com
+cdn37-bigcommerce.com
+cdn39-bigcommerce.com
 cdn41-bigcommerce.com
 cdn5-cloudflare.com
 cdn6-cloudflare.com
+cdn7-bigcommerce.com
 cdnanalytics.info
+cdnbigcommerce.com
 chatssl.com
 checkdata.info
+checkout-bigcommerce.com
 cloudflary.xyz
 com-checking-valid.com
 com-coincover.com
 com-ticket.info
-controls.wpenginepowered.com
+core11-bigcommerce.com
+core3bigcommerce.com
+core4-bigcommerce.com
 cssjs.lt
 data1-jquery.com
 datacheckcdn.com
+dns-bigcommerce.com
+dns4-bigcommerce.com
 establish-coinbase.com
 estylecdn.co
 fender-analytics.com
@@ -11255,6 +11281,7 @@ jquerycdnbucket.com
 jqueryfact.com
 js-cloudbase.com
 js-cloudserver.com
+js1-bigcommerce.com
 js1-cloudflare.com
 js10-cloudflare.com
 js11-cloudflare.com
@@ -11273,7 +11300,15 @@ payslibrarys.online
 peopleschoice-portal.com
 reserveconfirm.com
 server-css.com
+server1080-bigcommerce.com
+server1791-bigcommerce.com
+server2491-bigcommerce.com
 server2713-bigcommerce.com
+server2714-bigcommerce.com
+server2715-bigcommerce.com
+server2717-bigcommerce.com
+server2791-bigcommerce.com
+server437-bigcommerce.com
 server612-bigcommerce.com
 side-guard.com
 soacabamentos.com
@@ -11287,8 +11322,11 @@ static5-jquery.com
 staticlitcs.com
 staticlitycis.com
 traffic-check.com
+v3-bigcommerce.com
 websiteanalytics.top
+apple.com-ticket.info
 cdn.jquery.host
+controls.wpenginepowered.com
 shop.jquery.host
 
 # Reference: https://www.virustotal.com/gui/ip-address/69.49.230.239/relations
