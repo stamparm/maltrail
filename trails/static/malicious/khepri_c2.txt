@@ -14,6 +14,35 @@ download.ultraedit.info
 ultraedit.ultraedit.vip
 update.dcupdate.net
 
+# Reference: https://www.jamf.com/blog/jtl-malware-pirated-applications/
+# Reference: https://otx.alienvault.com/pulse/65aac89e3c33a04ba8134773
+
+finallshell.cc
+finalshell.cc
+finalshell.me
+macnavicat.com
+rdesktopconnect.com
+rdesktophub.com
+securecrt.cc
+securecrt.vip
+ultraedit.vip
+vscode.digital
+xmindcn.cc
+bd.macnavicat.com
+bd.rdesktopconnect.com
+bd.ultraedit.vip
+bd.vscode.digital
+bd.xmindcn.cc
+ctl01.macnavicat.com
+download.finallshell.cc
+download.finalshell.cc
+download.macnavicat.com
+download.rdesktophub.com
+download.securecrt.vip
+finalshell.finalshell.me
+remote.rdesktopconnect.com
+securecrt.securecrt.cc
+
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-19-v10510/1301
 
 finallshell.cc
