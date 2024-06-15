@@ -11208,6 +11208,9 @@ cdnbootstrap.xyz
 
 # Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-04-30-examples-of-web-skimmers.txt
 # Reference: https://www.virustotal.com/gui/ip-address/151.106.96.192/relations
+# Reference: https://www.virustotal.com/gui/ip-address/176.111.174.248/relations
+# Reference: https://www.virustotal.com/gui/ip-address/78.46.124.156/relations
+# Reference: https://www.virustotal.com/gui/ip-address/78.46.94.189/relations
 
 http://212.129.24.246
 analytics-fonts.com
@@ -11219,6 +11222,7 @@ cdn-getnet.digital
 cdn-google-tag.info
 cdn.nigntboxcdn.com
 cdn.v2board-cdn.tech
+cdn11-bigcommerce.com
 cdn27-bigcommerce.com
 cdn32-bigcommerce.com
 cdn41-bigcommerce.com
@@ -11246,6 +11250,7 @@ is-cloudbase.com
 is-cloudbase.net
 is-cloudbase.org
 jasmineaddis.com
+jquery.host
 jquerycdnbucket.com
 jqueryfact.com
 js-cloudbase.com
@@ -11268,6 +11273,7 @@ payslibrarys.online
 peopleschoice-portal.com
 reserveconfirm.com
 server-css.com
+server2713-bigcommerce.com
 server612-bigcommerce.com
 side-guard.com
 soacabamentos.com
@@ -11282,6 +11288,8 @@ staticlitcs.com
 staticlitycis.com
 traffic-check.com
 websiteanalytics.top
+cdn.jquery.host
+shop.jquery.host
 
 # Reference: https://www.virustotal.com/gui/ip-address/69.49.230.239/relations
 
