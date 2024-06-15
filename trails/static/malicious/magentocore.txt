@@ -11212,6 +11212,7 @@ cdnbootstrap.xyz
 # Reference: https://www.virustotal.com/gui/ip-address/176.97.75.105/relations
 # Reference: https://www.virustotal.com/gui/ip-address/78.46.124.156/relations
 # Reference: https://www.virustotal.com/gui/ip-address/78.46.94.189/relations
+# Reference: https://app.validin.com/detail?find=194.67.193.6&type=ip4&ref_id=881dd3cda85#tab=resolutions
 
 http://212.129.24.246
 analytics-fonts.com
@@ -11319,6 +11320,7 @@ static2-jquery.com
 static3-jquery.com
 static4-jquery.com
 static5-jquery.com
+static6-jquery.com
 staticlitcs.com
 staticlitycis.com
 traffic-check.com
@@ -11327,6 +11329,10 @@ websiteanalytics.top
 apple.com-ticket.info
 cdn.jquery.host
 controls.wpenginepowered.com
+ns1.static5-jquery.com
+ns1.static6-jquery.com
+ns2.static5-jquery.com
+ns2.static6-jquery.com
 shop.jquery.host
 
 # Reference: https://www.virustotal.com/gui/ip-address/69.49.230.239/relations
