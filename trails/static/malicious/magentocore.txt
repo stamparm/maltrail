@@ -11609,6 +11609,7 @@ vehton.click
 
 bezvotic.store
 chelotech.site
+clatech.site
 dramlink.online
 dvestich.online
 evasel.online
@@ -11616,6 +11617,8 @@ fekipont.shop
 feloontop.click
 fesdeil.shop
 gepkint.quest
+goratech.site
+hvilutech.site
 kintech.site
 multqinetic.site
 naverpic.quest
@@ -11623,11 +11626,14 @@ nehoteep.online
 pektech.site
 promobet.site
 sepewoon.click
+shosdigit.site
 sovber.shop
 svepoop.store
+tulubtic.site
 vejfor.click
 xemit.store
 yelpelint.quest
+cdn.clatech.site
 cdn.ctotech.store
 cdn.cvyatop.online
 cdn.dramlink.online
@@ -11638,6 +11644,8 @@ cdn.feloontop.click
 cdn.fesdeil.shop
 cdn.fizpool.online
 cdn.gapsink.shop
+cdn.goratech.site
+cdn.hvilutech.site
 cdn.iertech.site
 cdn.kintech.site
 cdn.luterylpen.online
@@ -11648,8 +11656,10 @@ cdn.ochelun.quest
 cdn.peeyol.click
 cdn.povelec.shop
 cdn.sewit.quest
+cdn.shosdigit.site
 cdn.sovber.shop
 cdn.svepoop.store
+cdn.tulubtic.site
 cdn.uerlock.store
 cdn.vidbent.shop
 cdn.wegvilt.site
