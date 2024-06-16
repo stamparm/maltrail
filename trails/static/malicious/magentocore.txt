@@ -11620,6 +11620,7 @@ gepkint.quest
 goratech.site
 hvilutech.site
 kintech.site
+komezi.site
 multqinetic.site
 naverpic.quest
 nehoteep.online
@@ -11648,6 +11649,7 @@ cdn.goratech.site
 cdn.hvilutech.site
 cdn.iertech.site
 cdn.kintech.site
+cdn.komezi.site
 cdn.luterylpen.online
 cdn.mokamob.site
 cdn.multqinetic.site
