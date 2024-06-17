@@ -2488,3 +2488,4 @@ cdn.rdntocdns.com
 css.rdntocdns.com
 rest1.rdntocdns.com
 rest2.rdntocdns.com
+tmpl.rdntocdns.com
