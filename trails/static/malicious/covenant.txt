@@ -759,6 +759,15 @@ http://154.202.59.124
 77.37.43.47:7443
 93.127.194.22:7443
 
+# Reference: https://cybersecuritynews.com/bondnet-high-performance-bots-c2-server/
+# Reference: https://otx.alienvault.com/pulse/6670c9ec24067e93485c2b73
+# Reference: https://www.virustotal.com/gui/file/f4cd26320d11a064e2c36da8a7b0a4db5c4d820064062b84d7516de038ca753a/detection
+# Reference: https://www.virustotal.com/gui/file/39cc01fd4dc5a45d6d32b26528a6d655c408f40e6d8f7fbb2db0a36c91ecaf45/detection
+# Reference: https://www.virustotal.com/gui/file/3016222e1dadd91229abf6bba6f5c47f48dc88503876df91be19817124296c1c/detection
+
+http://185.141.26.116
+185.141.26.116:8443
+
 # Generic
 
 /covenantuser/
