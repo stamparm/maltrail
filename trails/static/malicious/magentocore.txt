@@ -11815,6 +11815,7 @@ yakutech.quest
 yaznet.site
 zakit.quest
 zarelec.quest
+cdn.antelec.click
 cdn.avtomob.sbs
 cdn.beatmob.pics
 cdn.bupunit.store
@@ -11880,6 +11881,7 @@ cdn.metriso.online
 cdn.mifelpot.shop
 cdn.misdigit.click
 cdn.mistlink.online
+cdn.neznlink.store
 cdn.noanotech.sbs
 cdn.nsnamob.site
 cdn.obshmob.shop
