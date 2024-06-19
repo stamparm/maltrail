@@ -1411,3 +1411,9 @@ de-zephyr.miningocean.org
 212.47.253.124:10343
 51.15.89.13:10343
 54.37.232.103:10343
+
+# Reference: https://www.virustotal.com/gui/file/488385cd54d14790b03fa7c7dc997ebea3f7b2a8499e5927eb437a3791102a77/detection
+
+51.15.89.13:10943
+51.15.89.17:10943
+zeph-eu2.nanopool.org
