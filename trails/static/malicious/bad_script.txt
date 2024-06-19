@@ -8532,6 +8532,10 @@ cachline.com
 
 /hhhmeuuw/rtalvl.php
 
+# Reference: https://blog.sucuri.net/2024/06/socgholish-malware.html
+
+/9659650c81ce1b984c58.js
+
 # Generic
 
 /js/altmanluggage.js
