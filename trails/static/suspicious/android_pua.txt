@@ -1029,3 +1029,7 @@ http://23.228.77.155
 
 android.downloadatoz.com
 topdata.downloadatoz.com
+
+# Reference: https://www.virustotal.com/gui/file/1f0d3e8ca830582c486a17de697b955e3431adf36418cb1ce9ead5089c60b5d7/detection
+
+freefire2021.giize.com
