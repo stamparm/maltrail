@@ -3905,6 +3905,14 @@ mail.norunia.com
 
 scada.paradizeconstruction.com
 
+# Reference: https://x.com/threatcat_ch/status/1803409043660181755
+# Reference: https://www.virustotal.com/gui/ip-address/206.206.123.249/relations
+# Reference: https://app.validin.com/detail?find=206.206.123.249&type=ip4&ref_id=5dcb880f244#tab=resolutions
+
+jsincloud.com
+jswebcache.com
+premium.davidabostic.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
