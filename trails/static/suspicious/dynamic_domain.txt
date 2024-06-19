@@ -3595,3 +3595,7 @@ darkworlds.org
 # Reference: https://www.virustotal.com/gui/domain/addns.org/relations
 
 addns.org
+
+# Reference: https://www.virustotal.com/gui/domain/ddns.nbis.net/relations
+
+ddns.nbis.net
