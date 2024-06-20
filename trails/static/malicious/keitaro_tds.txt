@@ -1345,3 +1345,8 @@ molonlave.team
 sdgqaef.site
 trackmytraff.pro
 pro.dataofpages.com
+
+# Reference: https://x.com/ClearskySec/status/1803783042680406283
+# Reference: https://www.virustotal.com/gui/file/9ac6a80409f30df2803f4f7d50f7ee0773f9d29e7153e68ed7d48897bc4fcc2b/detection
+
+cheekss.click
