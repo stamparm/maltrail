@@ -11718,6 +11718,7 @@ cdn.yekmet.online
 
 ahedoob.shop
 antelec.click
+apartims.shop
 arados.monster
 chapotech.store
 chastictop.online
@@ -11733,11 +11734,13 @@ dipteb.quest
 dostotec.quest
 drgibit.click
 entrelec.store
+eshatic.store
 febiloot.site
 fenmatc.click
 feyatic.quest
 fototytrul.online
 frektech.site
+frothelink.quest
 gamakatvet.store
 gelte.site
 gemintele.shop
@@ -11773,6 +11776,7 @@ mifelpot.shop
 misdigit.click
 mistlink.online
 mokamob.site
+molotech.online
 neznlink.store
 nsnamob.site
 obshmob.shop
@@ -11798,11 +11802,13 @@ stayoph.click
 sterhook.site
 sudtech.online
 temninch.site
+teredigit.click
 tiodigit.shop
 tutic.click
 vafapic.online
 varenmob.store
 vidbent.shop
+vitaloop.site
 vsetech.quest
 vtikgot.site
 weewloop.store
@@ -11816,6 +11822,7 @@ yaznet.site
 zakit.quest
 zarelec.quest
 cdn.antelec.click
+cdn.apartims.shop
 cdn.avtomob.sbs
 cdn.beatmob.pics
 cdn.bupunit.store
@@ -11836,12 +11843,14 @@ cdn.dipteb.quest
 cdn.dostotec.quest
 cdn.dvestich.online
 cdn.entrelec.store
+cdn.eshatic.store
 cdn.fadyit.pics
 cdn.febiloot.site
 cdn.fenmatc.click
 cdn.feyatic.quest
 cdn.flattec.sbs
 cdn.frektech.site
+cdn.frothelink.quest
 cdn.gamakatvet.store
 cdn.gelte.site
 cdn.gemdigit.pics
@@ -11881,6 +11890,7 @@ cdn.metriso.online
 cdn.mifelpot.shop
 cdn.misdigit.click
 cdn.mistlink.online
+cdn.molotech.online
 cdn.neznlink.store
 cdn.noanotech.sbs
 cdn.nsnamob.site
@@ -11908,12 +11918,14 @@ cdn.snvepic.online
 cdn.stayoph.click
 cdn.sudtech.online
 cdn.temninch.site
+cdn.teredigit.click
 cdn.tiodigit.shop
 cdn.tochdigital.pics
 cdn.tutic.click
 cdn.vafapic.online
 cdn.varenmob.store
 cdn.vejfor.click
+cdn.vitaloop.site
 cdn.vsetech.quest
 cdn.vtikgot.site
 cdn.weewloop.store
