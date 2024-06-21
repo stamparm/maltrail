@@ -18,6 +18,7 @@
 
 [=] Maltrail docker container run is improved (Issue #19260)
 [=] php-inj detection is improved (Issue #19262)
+[=] Python 3.12 compability is improved (Issue #19257)
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
