@@ -11996,59 +11996,9 @@ kandkca.com/instamojo/instamojo.js
 # Reference: https://blog.sucuri.net/2024/06/caesar-cipher-skimmer.html
 # Reference: https://app.validin.com/detail?find=NOTHING%20TO%20SEE%20HERE%20(%3A&type=raw&ref_id=038b91e70eb#tab=host_pairs_v2
 
-1api.club
-1api.club.sports-app.xyz
-api-data.xyz
-api-data.xyz.sports-app.xyz
-api-service.one
-api-service.one.sports-app.xyz
-apinetwork.club
-apinetwork.club.sports-app.xyz
-apisports.one
-apisports.one.sports-app.xyz
-autoconfig.node6257.myfcloud.com
-autodiscover.node6257.myfcloud.com
-backendsports.bovadasport.app
-backendsports.xyz
-blogway.xyz
-bovadasport.app
-bovadasport.bovadasport.app
-bovadasport.club
-go-play.xyz
-gomobi.xyz
-ipv6.node6257.myfcloud.com
-mobile2tools.xyz
-node6257.myfcloud.com
-ns1.node6257.myfcloud.com
-ns2.node6257.myfcloud.com
-sports-app.xyz
-sports-data.club
-sports-data.club.sports-app.xyz
-sports-data.xyz
-sports-data.xyz.sports-app.xyz
-sports2app.xyz
-sports2app.xyz.mobile2tools.xyz
-sports2go.xyz
-sports2goxyz.bovadasport.app
-sportsapi.club
-sportsdata.xyz
-sportsdata.xyz.sports-app.xyz
-sportsdev.bovadasport.app
-sportsdev.xyz
-sportsmobile.xyz
-sportsmobile.xyz.mobile2tools.xyz
-trafficapp.xyz
-trafficdelivery.xyz
-trafficfilter.xyz
 googletagmanager4.com
 cdn.googletagmanager4.com
 ws.googletagmanager4.com
-brightaems.com/wp-content/themes/educator-education/css/css.php
-flyfishinguide.co.nz/css/css.php
-ilegkenya.org/acs/css.php
-patilcomputers.com/wp-content/themes/shopic-child/css.php
-shop.care.pistoia.it/wp-content/languages/css.php
-thepioneerbank.com/wp-content/themes/twentytwentytwo/css.php
 
 # Generic
 
