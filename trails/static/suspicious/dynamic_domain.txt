@@ -3603,3 +3603,8 @@ ddns.nbis.net
 # Reference: https://www.virustotal.com/gui/domain/ionexusa.com/relations
 
 ionexusa.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-06-21-v10624/1751/1
+
+manoahinvest.com
+michiganbowling.com
