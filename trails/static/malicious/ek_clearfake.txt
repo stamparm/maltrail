@@ -273,6 +273,10 @@ v7yen47u2e.xyz
 
 s9l0w7n3y5.xyz
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-06-21-v10624/1751/1
+
+ryruhuu3.xyz
+
 # Generic
 
 /a3A7qLVn/
