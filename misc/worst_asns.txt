@@ -4579,3 +4579,8 @@
 41.216.183.0/24,privatehosting-net
 41.216.188.0/24,privatehosting-net
 41.216.189.0/24,privatehosting-net
+
+# AS214961
+# Reference: https://ipinfo.io/AS214961
+
+178.215.236.0/24,stellargroupsas
