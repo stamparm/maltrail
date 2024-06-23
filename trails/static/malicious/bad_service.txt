@@ -2747,7 +2747,3 @@ kcc.cat
 # Reference: https://blog.eclecticiq.com/onnx-store-targeting-financial-institution
 
 onnx.su
-
-# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-06-21-v10624/1751/1
-
-cleanway.5asec.fr
