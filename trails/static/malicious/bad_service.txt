@@ -2747,3 +2747,7 @@ kcc.cat
 # Reference: https://blog.eclecticiq.com/onnx-store-targeting-financial-institution
 
 onnx.su
+
+# Reference: https://x.com/banthisguy9349/status/1804804540387979301
+
+/codecanyon-39029867-mailer-email-marketing-application.zip
