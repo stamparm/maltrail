@@ -301,6 +301,10 @@ lilygovert91.top
 
 /cdn-vs/22per.php
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-06-21-v10624/1751/1
+
+intensedefense300.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
