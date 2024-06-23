@@ -277,6 +277,10 @@ s9l0w7n3y5.xyz
 
 ryruhuu3.xyz
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-06-21-v10624/1751/1
+
+cleanway.5asec.fr
+
 # Generic
 
 /a3A7qLVn/
