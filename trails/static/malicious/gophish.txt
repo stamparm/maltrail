@@ -2588,3 +2588,7 @@ http://91.221.22.159
 74.50.84.238:3333
 74.50.89.62:3333
 85.208.69.48:3333
+
+# Reference: https://x.com/MichalKoczwara/status/1805151354886799808
+
+lamborghini-service.com
