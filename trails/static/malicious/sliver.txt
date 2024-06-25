@@ -3768,6 +3768,11 @@ http://185.130.46.229
 91.199.154.103:34211
 93.95.97.102:443
 
+# Reference: https://x.com/malwrhunterteam/status/1805175514602086559
+# Reference: https://www.virustotal.com/gui/file/844707f44b9dfd2c307dbb5251c95316031ea29ebfe0f9dc9ab104e1230b43f3/detection
+
+154.26.157.62:4444
+
 # Generic
 
 /.sliver-client/
