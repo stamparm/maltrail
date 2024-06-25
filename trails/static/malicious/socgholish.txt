@@ -3913,6 +3913,16 @@ jsincloud.com
 jswebcache.com
 premium.davidabostic.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-06-24-v10626/1760
+
+partners.gloriadeicr.com
+cqfk.partners.gloriadeicr.com
+cud.partners.gloriadeicr.com
+mqa.partners.gloriadeicr.com
+svq.partners.gloriadeicr.com
+wwwf.partners.gloriadeicr.com
+ybo.partners.gloriadeicr.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
