@@ -12000,6 +12000,11 @@ googletagmanager4.com
 cdn.googletagmanager4.com
 ws.googletagmanager4.com
 
+# Reference: https://sansec.io/research/polyfill-supply-chain-attack
+
+googie-anaiytics.com
+kuurza.com
+
 # Generic
 
 /assets/lfg.js
