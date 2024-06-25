@@ -305,6 +305,13 @@ lilygovert91.top
 
 intensedefense300.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-06-24-v10626/1760
+
+bynx.store
+messageflowpro.com
+myoptimasunlab.com
+onecapitalresidences.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
