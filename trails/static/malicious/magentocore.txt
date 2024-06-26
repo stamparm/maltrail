@@ -12005,6 +12005,57 @@ ws.googletagmanager4.com
 googie-anaiytics.com
 kuurza.com
 
+# Reference: https://app.validin.com/detail?type=ip&find=195.242.111.0%2F24#tab=resolutions
+
+amulink.click
+asekick.store
+boencon.click
+dvatop.quest
+feehner.online
+filtecc.quest
+godmic.site
+hityel.store
+huelint.quest
+jaketool.shop
+midimob.shop
+milotech.shop
+natugoon.shop
+noltic.site
+panktech.store
+piolit.site
+pjekloom.click
+povodton.online
+pugatec.site
+serlofet.quest
+vangot.online
+velput.online
+verdigit.click
+yeinc.store
+cdn.amulink.click
+cdn.asekick.store
+cdn.boencon.click
+cdn.dvatop.quest
+cdn.feehner.online
+cdn.filtecc.quest
+cdn.godmic.site
+cdn.hityel.store
+cdn.huelint.quest
+cdn.jaketool.shop
+cdn.midimob.shop
+cdn.milotech.shop
+cdn.natugoon.shop
+cdn.noltic.site
+cdn.panktech.store
+cdn.piolit.site
+cdn.pjekloom.click
+cdn.povodton.online
+cdn.pugatec.site
+cdn.serlofet.quest
+cdn.vangot.online
+cdn.velput.online
+cdn.verdigit.click
+cdn.yeinc.store
+
 # Generic
 
 /assets/lfg.js
