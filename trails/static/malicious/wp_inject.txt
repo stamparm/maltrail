@@ -1820,6 +1820,7 @@ take.specialtaskevents.com
 trace.stratosbody.com
 trend.stablelightway.com
 way.trackersline.com
+stoomawy.stay.linestoget.com
 
 # Reference: https://twitter.com/unmaskparasites/status/1704961690880913816
 # Reference: https://www.virustotal.com/gui/ip-address/88.151.192.254/relations
@@ -1839,9 +1840,13 @@ spot.getmygateway.com
 decentralappps.com
 cdn.decentralappps.com
 cell.decentralappps.com
+maliciousstay.decentralappps.com
 stay.decentralappps.com
 stock.decentralappps.com
+thestay.decentralappps.com
+tostock.decentralappps.com
 way.decentralappps.com
+withstock.decentralappps.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/111.90.141.192/relations
 # Reference: https://www.virustotal.com/gui/ip-address/185.177.94.180/relations
