@@ -1100,8 +1100,7 @@ function _sort(obj) {
 
 function _ipSortingValue(a) {
     var x = "";
-
-    match = a.match(/\d+\.\d+\.\d+\.\d+/);
+    var match = a.match(/\d+\.\d+\.\d+\.\d+/);
     if (match !== null) {
         var m = match[0].split(".");
 
@@ -1129,8 +1128,8 @@ function _ipCompareValues(a, b) {
 function copyEllipsisToClipboard(event) {
     if (event.button === 0) {  // left mouse button
         var target = $(event.target);
-        var text = target.parent().title;
-        var html = target.parent().html();
+        var text = target.parent().title || '';
+        var html = target.parent().html() || '';
         var left = html.search(/^<[^>]*ellipsis/) !== -1;
         var common = html.replace(/<span class="(ipcat|hidden)">[^<]+<\/span>/g, "").replace(/<[^>]+>/g, "");
         if (!text) {
@@ -3004,7 +3003,6 @@ $(document).ready(function() {
 });
 
 function query(date1, date2) {
-    var range = $("#slider").val();
     if (date2 === undefined) {
         var url = location.origin + "/events?date=" + formatDate(date1);
 
