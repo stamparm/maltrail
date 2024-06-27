@@ -3773,6 +3773,15 @@ http://185.130.46.229
 
 154.26.157.62:4444
 
+# Reference: https://www.wordfence.com/blog/2024/06/supply-chain-attack-on-wordpress-org-plugins-leads-to-5-maliciously-compromised-wordpress-plugins/
+# Reference: https://www.virustotal.com/gui/file/e995903a67a47f8f347669d8933ead4b15809a1ba76b13e9d7bf23135cf1ca7d/detection
+# Reference: https://www.virustotal.com/gui/file/3fed5ac225eddb95702e4969f57c434f496fe559afb8411436311a6bd099c88a/detection
+# Reference: https://www.virustotal.com/gui/file/3f99a66b229e1c9a14267c2fd35fd4f7548ba7342bf021426a0e01d0dd7333f8/detection
+# Reference: https://www.virustotal.com/gui/file/051352180a54542eda7080cd438b719351e1e1f04633a3080f8bc2025d47ed21/detection
+
+103.13.28.40:443
+103.13.28.40:53
+
 # Generic
 
 /.sliver-client/
