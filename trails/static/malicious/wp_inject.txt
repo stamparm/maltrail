@@ -2543,3 +2543,68 @@ ilegkenya.org/acs/css.php
 patilcomputers.com/wp-content/themes/shopic-child/css.php
 shop.care.pistoia.it/wp-content/languages/css.php
 thepioneerbank.com/wp-content/themes/twentytwentytwo/css.php
+
+# Reference: https://www.wordfence.com/blog/2024/06/supply-chain-attack-on-wordpress-org-plugins-leads-to-5-maliciously-compromised-wordpress-plugins/
+# Reference: https://www.virustotal.com/gui/file/6c5ee295cec9a1f4518d2f9c12d53251c7b53a1cff3e9d3bd2d01ad03b99df81/detection
+# Reference: https://www.virustotal.com/gui/file/28e145ad13289cbd819ce730f673b27c8b9d49c5488a3796de24eb0f775353c6/detection
+
+http://94.156.79.8
+94.156.79.8:443
+94.156.79.8:999
+
+# Reference: https://twitter.com/unmaskparasites/status/1765144260729618782
+# Reference: https://blog.sucuri.net/2024/02/web3-crypto-malware-angel-drainer.html
+# Reference: https://blog.sucuri.net/2024/03/from-web3-drainer-to-distributed-wordpress-brute-force-attack.html
+
+4378uehdkf.com
+65a044a0023ca.com
+87634rh4r4r3rfekj.com
+billionalr.com
+billlionair.app
+browsersjsfiles.com
+calzoom.com
+cdn-npmjs.com
+cdnjs-storage.com
+chain-connect-api.com
+cloudcdnjs.com
+cloudflare-eth.org
+cloudweb3-api.com
+coingecko-priceapi.com
+dynamic-linx.com
+dynamiclinks.cfd
+dynamiclink.lol
+flashbots-builder.com
+getblocks.org
+giftbeyondwealth.com
+hostpdf.co
+infura-api.com
+io-walletconnect.com
+melstroy.by
+nextcdnjs.com
+newsoutlets.net
+nftfastapi.com
+opensmarketplace.net
+paulmulleracademico.com
+posiit.com
+rpc-ankr.net
+tobaccosoldiers.com
+tradinglabs.app
+unpkgaa.com
+web3-cloudfront.com
+web3modal-api.com
+eth.flashbots-builder.com
+eth.rpc-ankr.net
+highaf.tobaccosoldiers.com
+jscdnweb.pages.dev
+rpc.4378uehdkf.com
+rpc.65a044a0023ca.com
+rpc.87634rh4r4r3rfekj.com
+rpc.chain-connect-api.com
+rpc.cloudweb3-api.com
+rpc.coingecko-priceapi.com
+rpc.getblocks.org
+rpc.infura-api.com
+rpc.io-walletconnect.com
+rpc.web3modal-api.com
+api.nftfastapi.com
+rpc.nftfastapi.com
