@@ -12069,6 +12069,10 @@ tagmanager.network
 ultratags.shop
 zentag.xyz
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.193.125.168/relations
+
+gtagmanager.app
+
 # Generic
 
 /assets/lfg.js
