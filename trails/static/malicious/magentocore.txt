@@ -12056,6 +12056,19 @@ cdn.velput.online
 cdn.verdigit.click
 cdn.yeinc.store
 
+# Reference: https://x.com/sdcyberresearch/status/1800133719464006128
+# Reference: https://www.virustotal.com/gui/ip-address/78.128.112.217/relations
+# Reference: https://app.validin.com/detail?find=78.128.112.217&type=ip4&ref_id=53e84d71645#tab=resolutions
+
+0check.shop
+dbuono.shop
+extrastat.network
+firstat.guru
+nccoastalvolleyball.shop
+tagmanager.network
+ultratags.shop
+zentag.xyz
+
 # Generic
 
 /assets/lfg.js
