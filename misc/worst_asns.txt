@@ -4662,3 +4662,9 @@
 # Reference: https://x.com/banthisguy9349/status/1806739529149083991
 
 95.214.27.0/24,perfecto-as
+
+# AS215476
+# Reference: https://ipinfo.io/AS215476
+# Reference: https://x.com/cymnu/status/1806748606377886101
+
+77.90.185.0/24,insidenetwork
