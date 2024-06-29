@@ -173,6 +173,11 @@ webmail.dnl-l.ooguy.com
 
 miicrossofftonline.nl
 
+# Reference: https://x.com/AvastThreatLabs/status/1806720963205107787
+
+xpfdoc0365090.com
+apps.xpfdoc0365090.com
+
 # Generic
 
 /evilginx-linux-amd64.tar.gz
