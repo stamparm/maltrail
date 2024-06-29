@@ -4656,3 +4656,9 @@
 94.156.189.0/24,belcloud
 94.156.35.0/24,belcloud
 95.169.202.0/24,belcloud
+
+# AS215479
+# Reference: https://ipinfo.io/AS215479
+# Reference: https://x.com/banthisguy9349/status/1806739529149083991
+
+95.214.27.0/24,perfecto-as
