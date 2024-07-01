@@ -14,7 +14,15 @@
 
 
 
-- Version 0.70 -> 0.71 (Upcoming release)
+- Version 0.71 -> 0.72 (Upcoming release)
+
+
+
+
+
+
+
+- Version 0.70 -> 0.71 (01 Jul 2024)
 
 [=] Maltrail docker container run is improved (Issue #19260)
 [=] php-inj detection is improved (Issue #19262)
