@@ -744,3 +744,7 @@ http://54.95.170.58
 94.232.249.87:7444
 barsen.monster
 kurvabbr.pw
+
+# Reference: https://x.com/MichalKoczwara/status/1808039481032786239
+
+splunkapi.com
