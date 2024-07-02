@@ -11976,6 +11976,9 @@ tagmanager.space
 ns1.tagmanager.space
 
 # Reference: https://x.com/sdcyberresearch/status/1801178651288871147
+# Reference: https://x.com/sdcyberresearch/status/1808102569086013847
+# Reference: https://www.virustotal.com/gui/ip-address/141.98.80.82/relations
+# Reference: https://app.validin.com/detail?find=141.98.80.0%2F24&type=ip&ref_id=93c02ace42f#tab=resolutions
 # Reference: https://app.validin.com/detail?find=91.202.233.147&type=ip4&ref_id=da1c921fe1c#tab=resolutions
 
 cnv.icu
@@ -11983,11 +11986,16 @@ cvd.icu
 cvn.icu
 cvv.icu
 dcv.icu
+ddv.icu
+dvv.icu
 ndn.icu
 nnv.icu
 nvv.icu
 vcn.icu
+vdd.icu
+vdv.icu
 vnv.icu
+vvd.icu
 
 # Reference: https://x.com/sdcyberresearch/status/1801186223593005289
 
