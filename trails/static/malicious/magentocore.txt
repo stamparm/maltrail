@@ -12072,6 +12072,7 @@ cdn.yeinc.store
 dbuono.shop
 extrastat.network
 firstat.guru
+globaltag.shop
 nccoastalvolleyball.shop
 tagmanager.network
 ultratags.shop
