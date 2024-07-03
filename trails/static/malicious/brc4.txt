@@ -748,3 +748,7 @@ kurvabbr.pw
 # Reference: https://x.com/MichalKoczwara/status/1808039481032786239
 
 splunkapi.com
+
+# Reference: https://x.com/banthisguy9349/status/1808550048847818947
+
+81.69.248.100:8000
