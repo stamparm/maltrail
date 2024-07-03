@@ -5304,3 +5304,10 @@ local.techwall.xyz
 # Reference: https://x.com/drb_ra/status/1801355315578871823
 
 86.90.134.118:8080
+
+# Reference: https://x.com/banthisguy9349/status/1808552330129723673
+# Reference: https://www.virustotal.com/gui/file/4d2eaca742a1d43705097414144921ae269413efa6a2d978e0dbf8a626da919c/detection
+# Reference: https://www.virustotal.com/gui/file/7d4dc8f8512d1ffd9cd31b7a9daab388e1c3834b5511fd7700759a8109fafd68/detection
+
+103.42.55.251:8080
+103.42.55.251:9999
