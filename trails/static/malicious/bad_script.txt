@@ -6395,6 +6395,7 @@ wildhottiegirls.com
 # Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-01-12-IOCs-from-StealC-activity.txt
 
 /0d8af8f06ba4b880.php
+/108e010e8f91c38c.php
 /273d9c8034a95cb4.php
 /30257e4c371b49a4.php
 /413a030d85acf448.php
