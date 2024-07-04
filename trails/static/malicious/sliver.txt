@@ -2729,6 +2729,7 @@ agent.hacktics.net
 45.84.1.161:443
 
 # Reference: https://twitter.com/banthisguy9349/status/1740345962676318596
+# Reference: https://www.virustotal.com/gui/file/e12f105c99535c11ee6865c3283cab7b03c78879ababf236c1119e642f48973b/detection
 # Reference: https://www.virustotal.com/gui/file/e9affb1839bc0869b9c2c58e3db908edf23f22e9d30e967b0a2d37a0892c343e/detection
 
 http://91.92.253.217
