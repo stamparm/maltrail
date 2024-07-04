@@ -752,3 +752,7 @@ splunkapi.com
 # Reference: https://x.com/banthisguy9349/status/1808550048847818947
 
 81.69.248.100:8000
+
+# Reference: https://x.com/nahamike01/status/1808655269691543684
+
+61.164.242.162:8888
