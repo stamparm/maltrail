@@ -853,6 +853,11 @@ http://185.112.147.62
 http://5.181.156.247
 5.181.156.247:443
 
+# Reference: https://x.com/ViriBack/status/1799920236566909112
+
+http://5.42.65.140
+5.42.65.140:443
+
 # Generic
 
 /admin_123/auth.php
