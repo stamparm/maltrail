@@ -298,8 +298,10 @@ burdurpastane.com
 lilygovert91.top
 
 # Reference: https://x.com/Threat_Down/status/1800919313798537505
+# Reference: https://x.com/banthisguy9349/status/1808866680300249587
 
 /cdn-vs/22per.php
+/cdn-vs/33per.php
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-06-21-v10624/1751/1
 
