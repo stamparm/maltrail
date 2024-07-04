@@ -4668,3 +4668,13 @@
 # Reference: https://x.com/cymnu/status/1806748606377886101
 
 77.90.185.0/24,insidenetwork
+
+# AS216319
+# Reference: https://ipinfo.io/AS216319
+
+45.133.246.0/24,sunhost-as
+77.91.76.0/24,sunhost-as
+77.91.77.0/24,sunhost-as
+85.28.47.0/24,sunhost-as
+94.228.166.0/24,sunhost-as
+94.228.170.0/24,sunhost-as
