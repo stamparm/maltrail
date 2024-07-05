@@ -5311,3 +5311,8 @@ local.techwall.xyz
 
 103.42.55.251:8080
 103.42.55.251:9999
+
+# Reference: https://x.com/malwrhunterteam/status/1809150443265609901
+# Reference: https://www.virustotal.com/gui/file/7b6ba2c78e67f3af279938fa687b371ee3338e56d71ab3b669798914b70fd99b/detection
+
+47.120.34.9:2000
