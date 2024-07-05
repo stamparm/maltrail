@@ -5317,6 +5317,10 @@ local.techwall.xyz
 
 47.120.34.9:2000
 
+# Reference: https://x.com/smica83/status/1809200347262365859
 # Reference: https://www.virustotal.com/gui/file/114c1c8da28c4edbba44748d1a8c92e0c9f6c8c476b562e392c2faf77688819e/detection
+# Reference: https://www.virustotal.com/gui/file/5d57c053a8f47dce808098f0721234c661d8f231164bf36daf49313b5371420d/detection
 
+82.9.14.4:443
 82.9.14.4:4343
+82.9.14.4:8000
