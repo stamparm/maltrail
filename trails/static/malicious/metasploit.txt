@@ -5316,3 +5316,7 @@ local.techwall.xyz
 # Reference: https://www.virustotal.com/gui/file/7b6ba2c78e67f3af279938fa687b371ee3338e56d71ab3b669798914b70fd99b/detection
 
 47.120.34.9:2000
+
+# Reference: https://www.virustotal.com/gui/file/114c1c8da28c4edbba44748d1a8c92e0c9f6c8c476b562e392c2faf77688819e/detection
+
+82.9.14.4:4343
