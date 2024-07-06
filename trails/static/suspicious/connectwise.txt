@@ -35,3 +35,9 @@ instance-m73xwc-relay.screenconnect.com
 
 192.3.176.135:443
 192.3.176.135:8041
+
+# Reference: https://www.virustotal.com/gui/ip-address/110.141.198.161/relations
+# Reference: https://www.virustotal.com/gui/file/238293270bed603b8622b2bb3ae968e09b629c7c3091cc72953463b9f14f299f/detection
+
+abbs.hopto.org
+myabbs.hopto.org
