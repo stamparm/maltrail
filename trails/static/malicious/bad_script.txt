@@ -8496,6 +8496,11 @@ cachline.com
 /pfiigphc.php
 /vlspgbsfjo.php
 
+# Reference: https://x.com/malwareforme/status/1809257799387361422
+# Reference: https://www.virustotal.com/gui/file/45d3063b41fc1d6c8387600e49b6da5c8ec9909ef3636d539ca2a10aec7f3c59/detection
+
+/CertRead.hta
+
 # Generic
 
 /js/altmanluggage.js
