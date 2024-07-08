@@ -9954,6 +9954,7 @@ cdn-analytic.net
 
 # Reference: https://twitter.com/sdcyberresearch/status/1765006091404869790
 # Reference: https://twitter.com/sdcyberresearch/status/1767159363729301667
+# Reference: https://x.com/sdcyberresearch/status/1810322431434727617
 
 admission616.clothing
 clay468.loan
@@ -9970,6 +9971,7 @@ punctual501.work
 respect802.gold
 slip136.fyi
 static-cdn.info
+ao97283204.static-cdn.info
 aw91804586.fault185.cool
 cm2346556.slip136.fyi
 db30325716.dance774.guru
