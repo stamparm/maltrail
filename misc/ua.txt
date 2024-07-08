@@ -2471,6 +2471,13 @@ AGCYRNRWWWFZZSWWFWDYDCVDN
 SSLoad
 SSLoad/1.1
 
+# Reference: https://x.com/suyog41/status/1810268207241982376
+# Reference: https://www.virustotal.com/gui/ip-address/172.81.60.40/relations
+# Reference: https://www.virustotal.com/gui/file/f6d171e79e2fb38b3919011835c8117a1c56788bcf634e69ae67a5e255fb9d58/detection
+# Reference: https://www.virustotal.com/gui/file/14bbe421abe496531f4c63b16881eee23fb2c92b2938335dca1668206882201a/detection
+
+QllXjxbyEvMuARVOztDiSZDNtQQb
+
 # Misc
 
 information_schema
