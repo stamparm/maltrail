@@ -10547,14 +10547,35 @@ tagmanager.ml
 # Reference: https://www.virustotal.com/gui/ip-address/193.3.19.162/relations
 # Reference: https://www.virustotal.com/gui/ip-address/193.3.19.36/relations
 
+adopt447.email
 blind761.asia
+by670.ltd
+classification327.city
+comes236.bar
 convenient830.cool
+course470.digital
 cover351.date
+crowd288.credit
+discomfort972.biz
 fine459.dog
+hunt734.monster
+lessen512.gold
 lord479.gold
+mile359.mobi
+nephew641.asia
+of584.buzz
 old221.asia
+opinion631.guru
 party257.engineer
+plant661.directory
+recommend173.dog
 stair151.clinic
+sun631.ink
+sweat320.asia
+wash856.estate
+waste191.ltd
+wheel194.buzz
+without527.agency
 
 # Reference: https://twitter.com/sdcyberresearch/status/1778056754636451903
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.110.37/relations
