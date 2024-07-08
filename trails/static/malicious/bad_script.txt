@@ -6839,6 +6839,7 @@ tpc.cdn-linkedin.info
 /inject.py
 /inject.vbs
 /inject.wsf
+/inject.xsl
 /injection.asp
 /injection.aspx
 /injection.bat
@@ -6849,6 +6850,7 @@ tpc.cdn-linkedin.info
 /injection.py
 /injection.vbs
 /injection.wsf
+/injection.xsl
 
 # Reference: https://twitter.com/petrovic082/status/1699766482517798930
 
@@ -8512,6 +8514,7 @@ cachline.com
 /0day.py
 /0day.vbs
 /0day.wsf
+/0day.xsl
 
 # Generic
 
