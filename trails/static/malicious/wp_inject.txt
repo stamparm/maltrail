@@ -2905,6 +2905,17 @@ start.apistatexperience.com
 tart.apistatexperience.com
 startservicefounds.comapi.startservicefounds.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/101.99.75.138/relations
+# Reference: https://www.virustotal.com/gui/ip-address/190.123.45.228/relations
+# Reference: https://www.virustotal.com/gui/file/e50f6b96447d64dda24187c651586247c69d004708f75cb744245c7471398f6b/detection
+# Reference: https://www.virustotal.com/gui/file/fb01066660beb228116f341e25ae5d637d79af2817c7a87d74fb5e8d604c1785/detection
+
+edgerapidcdn.com
+globalultracdn.com
+vvordpress.org
+cloud.edgerapidcdn.com
+secure.globalultracdn.com
+
 # Reference: https://blog.sucuri.net/2024/03/sign1-malware-analysis-campaign-history-indicators-of-compromise.html
 # Reference: https://www.virustotal.com/gui/ip-address/162.0.228.112/relations
 # Reference: https://www.virustotal.com/gui/file/774780f037cb02997b7a262385feb3ef5e9f76a75587cde7af15b415ceb21e3c/detection
