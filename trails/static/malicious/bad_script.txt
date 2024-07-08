@@ -6838,6 +6838,7 @@ tpc.cdn-linkedin.info
 /inject.ps1
 /inject.py
 /inject.vbs
+/inject.wsf
 /injection.asp
 /injection.aspx
 /injection.bat
@@ -8500,6 +8501,17 @@ cachline.com
 # Reference: https://www.virustotal.com/gui/file/45d3063b41fc1d6c8387600e49b6da5c8ec9909ef3636d539ca2a10aec7f3c59/detection
 
 /CertRead.hta
+
+# Reference: https://www.virustotal.com/gui/file/8decdfe5e000475d09f077a3d5b06843f1138e307141e0d0433526ae7037731d/detection
+
+/0day.asp
+/0day.aspx
+/0day.bat
+/0day.hta
+/0day.ps1
+/0day.py
+/0day.vbs
+/0day.wsf
 
 # Generic
 
