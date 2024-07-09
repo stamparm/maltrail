@@ -8527,6 +8527,19 @@ cachline.com
 /hooks/och?id=
 /hooks/xxx?id=
 
+# Reference: https://www.virustotal.com/gui/file/0ca46fb10da403fd20317cbd55434388275c7e9abba697ca4c9916f241ff53f6/detection
+
+/powershell_attack.asp
+/powershell_attack.aspx
+/powershell_attack.bat
+/powershell_attack.hta
+/powershell_attack.ps1
+/powershell_attack.py
+/powershell_attack.txt
+/powershell_attack.vbs
+/powershell_attack.wsf
+/powershell_attack.xsl
+
 # Generic
 
 /js/altmanluggage.js
