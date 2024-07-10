@@ -12118,6 +12118,21 @@ zentag.xyz
 
 gtagmanager.app
 
+# Reference: https://app.validin.com/detail?type=ip&find=195.242.111.0%2F24#tab=resolutions (# 2024-07-10)
+
+halyeel.shop
+kanalit.site
+kitlinks.online
+mjeetech.store
+negoon.quest
+veuseel.click
+cdn.halyeel.shop
+cdn.kanalit.site
+cdn.kitlinks.online
+cdn.mjeetech.store
+cdn.negoon.quest
+cdn.veuseel.click
+
 # Generic
 
 /assets/lfg.js
