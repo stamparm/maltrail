@@ -2617,6 +2617,17 @@ seetoo.ossadmin.site
 senesolde.com
 strykercp.com
 
+# Reference: https://x.com/drb_ra/status/1811654200377385220
+# Reference: https://x.com/9823f_/status/1811803065202167967
+
+167.88.32.99:443
+dawpa2000.com
+giggitygiggitygoogle.com
+goasi.com
+halovoltage.biz
+oakleyeng.com
+t11.ca
+
 # Generic
 
 /Havoc/payload/
