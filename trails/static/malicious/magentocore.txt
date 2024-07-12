@@ -12137,6 +12137,26 @@ cdn.veuseel.click
 
 store.statsforapps.com/app/mobile/buildfire/api/api.min.js
 
+# Reference: https://sansec.io/research/cosmicsting-hitting-major-stores
+# Reference: https://www.virustotal.com/gui/ip-address/82.202.165.36/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.202.165.43/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.202.165.48/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.202.165.55/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.202.165.96/relations
+
+quantlive.net
+pomtag.net
+registertime.net
+ruleslaw.org
+staticforce.org
+yotpont.com
+app.ruleslaw.org
+app.staticforce.org
+h.pomtag.net
+js.yotpont.com
+map.registertime.net
+temp.quantlive.net
+
 # Generic
 
 /assets/lfg.js
