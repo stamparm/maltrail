@@ -12144,11 +12144,16 @@ store.statsforapps.com/app/mobile/buildfire/api/api.min.js
 # Reference: https://www.virustotal.com/gui/ip-address/82.202.165.55/relations
 # Reference: https://www.virustotal.com/gui/ip-address/82.202.165.96/relations
 
-quantlive.net
+api4cdn.io
+freedombot.io
+freeview.io
+inpwrd.io
 pomtag.net
+quantlive.net
 registertime.net
 ruleslaw.org
 staticforce.org
+wisepops.co
 yotpont.com
 app.ruleslaw.org
 app.staticforce.org
