@@ -314,6 +314,11 @@ messageflowpro.com
 myoptimasunlab.com
 onecapitalresidences.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-11-v10643/1813
+
+daslkjfhi2.xyz
+luxurycaborental.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
