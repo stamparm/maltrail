@@ -12178,6 +12178,11 @@ jquerylab.pw
 static.jquerycdn.store
 test.jquerylab.pw
 
+# Reference: https://www.virustotal.com/gui/ip-address/5.45.122.116/relations
+
+jquery.space
+static.jquery.space
+
 # Generic
 
 /assets/lfg.js
