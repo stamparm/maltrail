@@ -12166,6 +12166,18 @@ temp.quantlive.net
 
 static-jquery.ga
 
+# Reference: https://www.virustotal.com/gui/ip-address/139.180.219.218/relations
+# Reference: https://www.virustotal.com/gui/ip-address/148.135.91.83/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.61.47.234/relations
+# Reference: https://www.virustotal.com/gui/ip-address/95.179.178.92/relations
+
+analyticsapi.club
+analyticsvisits.com
+jquerycdn.store
+jquerylab.pw
+static.jquerycdn.store
+test.jquerylab.pw
+
 # Generic
 
 /assets/lfg.js
