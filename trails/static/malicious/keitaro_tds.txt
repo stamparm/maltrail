@@ -1350,3 +1350,7 @@ pro.dataofpages.com
 # Reference: https://www.virustotal.com/gui/file/9ac6a80409f30df2803f4f7d50f7ee0773f9d29e7153e68ed7d48897bc4fcc2b/detection
 
 cheekss.click
+
+# Reference: https://www.qurium.org/alerts/exposing-the-evil-empire-of-doppelganger-disinformation/
+
+gooddefr.com
