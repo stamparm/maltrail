@@ -4952,3 +4952,12 @@ rpc.io-walletconnect.com
 rpc.web3modal-api.com
 api.nftfastapi.com
 rpc.nftfastapi.com
+
+# Reference: https://www.virustotal.com/gui/file/673a1a3a262b9b174733ee39810725286368a364ea9ef3f1f3c16ba71ac1f759/detection
+
+developmyredflag.top
+css.developmyredflag.top
+
+# Reference: https://www.virustotal.com/gui/file/096368e99f15b67b136214f4859de989e8f18b86ef563518f543762240ce8e38/detection
+
+kissedthetrain.com
