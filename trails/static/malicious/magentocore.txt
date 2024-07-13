@@ -12162,6 +12162,10 @@ js.yotpont.com
 map.registertime.net
 temp.quantlive.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/195.20.50.188/relations
+
+static-jquery.ga
+
 # Generic
 
 /assets/lfg.js
