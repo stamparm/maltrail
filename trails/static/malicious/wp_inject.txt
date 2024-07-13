@@ -4961,3 +4961,13 @@ css.developmyredflag.top
 # Reference: https://www.virustotal.com/gui/file/096368e99f15b67b136214f4859de989e8f18b86ef563518f543762240ce8e38/detection
 
 kissedthetrain.com
+
+# Reference: https://www.virustotal.com/gui/file/6aca4460bbc5180a3b9c8c56f15e614f09a1d65875dc7449548f19eff4989b04/detection
+# Reference: https://www.virustotal.com/gui/file/c7633415ebd4afc9b49359b6c979770fde32d0f36a883bacd4ddc8a1bf292539/detection
+
+letmeplayformoney.com
+cdn.letmeplayformoney.com
+pr.letmeplayformoney.com
+scr.letmeplayformoney.com
+tmp.letmeplayformoney.com
+vcdn.letmeplayformoney.com
