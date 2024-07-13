@@ -12183,6 +12183,17 @@ test.jquerylab.pw
 jquery.space
 static.jquery.space
 
+# Reference: https://www.virustotal.com/gui/ip-address/134.122.109.150/relations
+
+jqurey.vip
+jsdelivr.autos
+autoscdn.jsdelivr.autos
+cdn.jsdelivr.autos
+dn.jsdelivr.autos
+fcdn.jsdelivr.autos
+magento.setting.gg
+static.jqurey.vip
+
 # Generic
 
 /assets/lfg.js
