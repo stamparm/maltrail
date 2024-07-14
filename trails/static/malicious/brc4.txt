@@ -756,3 +756,15 @@ splunkapi.com
 # Reference: https://x.com/nahamike01/status/1808655269691543684
 
 61.164.242.162:8888
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s.csv
+
+http://13.112.130.229
+http://13.115.70.76
+http://176.34.50.52
+104.129.181.195:443
+143.92.42.200:8443
+148.135.35.239:8443
+185.237.165.247:8443
+206.166.251.107:4443
+206.166.251.107:8443
