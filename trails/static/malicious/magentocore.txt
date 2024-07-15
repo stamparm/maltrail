@@ -12194,6 +12194,11 @@ fcdn.jsdelivr.autos
 magento.setting.gg
 static.jqurey.vip
 
+# Reference: https://x.com/sdcyberresearch/status/1812853003893837885
+# Reference: https://www.virustotal.com/gui/ip-address/77.238.233.189/relations
+
+adsimilar.com
+
 # Generic
 
 /assets/lfg.js
