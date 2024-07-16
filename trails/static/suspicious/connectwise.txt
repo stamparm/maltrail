@@ -57,3 +57,17 @@ sup2.cc771.ru
 212.8.251.119:8041
 ctrl11.xyz
 control.ctrl11.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/94.131.109.18/relations
+
+control.247sup.org
+control.ctrl15.ru
+control.ctrl901.org
+m.mobile911.org
+sup2.bck123.org
+sup2.bck911.org
+sup2.cc771.ru
+sup2.sbk117.ru
+sup2.sc110.ru
+sup2.sc400.ru
+sup2.sp3300.ru
