@@ -55,4 +55,5 @@ sup2.cc771.ru
 # Reference: https://www.virustotal.com/gui/file/7251320890bda33ed7964515d296077541527d0a5b0d167c9593cdb82793dbf4/detection
 
 212.8.251.119:8041
+ctrl11.xyz
 control.ctrl11.xyz
