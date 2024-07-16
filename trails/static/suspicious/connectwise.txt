@@ -41,3 +41,7 @@ instance-m73xwc-relay.screenconnect.com
 
 abbs.hopto.org
 myabbs.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/18068b074d2be4e0d4c575b27f29bed6904230640e65cf2c1c8b088467f93688/detection
+
+sup2.cc771.ru
