@@ -8551,6 +8551,10 @@ cachline.com
 /powershell_attack.wsf
 /powershell_attack.xsl
 
+# Reference: https://x.com/ShanHolo/status/1813149888001011754
+
+/d3l.ps1
+
 # Generic
 
 /js/altmanluggage.js
