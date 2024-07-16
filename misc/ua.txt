@@ -2478,6 +2478,13 @@ SSLoad/1.1
 
 QllXjxbyEvMuARVOztDiSZDNtQQb
 
+# Reference: https://x.com/naumovax/status/1813151432419254656
+# Reference: https://www.ctfiot.com/193014.html
+# Reference: https://tria.ge/240715-lrfzyazfmm/behavioral2
+# Reference: https://www.virustotal.com/gui/file/6afdf4a3088bff045e1998d2dc2863b90d06765abb2dc35c7b93c456b9818e55/detection
+
+kmdjdheyytgebfghehhenegsdfsdf
+
 # Misc
 
 information_schema
