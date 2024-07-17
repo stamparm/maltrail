@@ -2485,6 +2485,12 @@ QllXjxbyEvMuARVOztDiSZDNtQQb
 
 kmdjdheyytgebfghehhenegsdfsdf
 
+# Reference: https://x.com/malwrhunterteam/status/1813311575723511869
+# Reference: https://www.virustotal.com/gui/file/bef99f862b9d7a47bddf9d51121196ab2f25234b38169c49e47a672bf849a7c9/detection
+
+sarabi
+sarabi xor
+
 # Misc
 
 information_schema
