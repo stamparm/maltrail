@@ -12199,6 +12199,21 @@ static.jqurey.vip
 
 adsimilar.com
 
+# Reference: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions
+
+comslet.store
+cvirdot.quest
+kirelit.site
+koontop.click
+redelot.shop
+shemmob.online
+cdn.comslet.store
+cdn.cvirdot.quest
+cdn.kirelit.site
+cdn.koontop.click
+cdn.redelot.shop
+cdn.shemmob.online
+
 # Generic
 
 /assets/lfg.js
