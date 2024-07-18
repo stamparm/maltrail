@@ -8555,6 +8555,10 @@ cachline.com
 
 /d3l.ps1
 
+# Reference: https://x.com/karol_paciorek/status/1813856475670024690
+
+/evil.dtd
+
 # Generic
 
 /js/altmanluggage.js
