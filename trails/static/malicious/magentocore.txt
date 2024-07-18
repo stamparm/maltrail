@@ -12214,6 +12214,21 @@ cdn.koontop.click
 cdn.redelot.shop
 cdn.shemmob.online
 
+# Reference: https://app.validin.com/detail?find=45.88.3.141&type=ip4&ref_id=b806f575d8e#tab=resolutions
+
+ditchdigit.quest
+genotic.shop
+heleveni.cyou
+henotik.click
+komotech.quest
+wenmen.online
+cdn.ditchdigit.quest
+cdn.genotic.shop
+cdn.heleveni.cyou
+cdn.henotik.click
+cdn.komotech.quest
+cdn.wenmen.online
+
 # Generic
 
 /assets/lfg.js
