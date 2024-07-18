@@ -5395,3 +5395,9 @@ http://4.185.58.68
 # Reference: https://x.com/drb_ra/status/1812781940933624173
 
 119.251.162.157:2096
+
+# Reference: https://x.com/karol_paciorek/status/1813856475670024690
+# Reference: https://www.virustotal.com/gui/file/b40cbd2e12141010a38511ffafdf565a777d5ffcc8b8f684f21c0076856ead34/detection
+
+45.55.131.63:8000
+45.55.131.63:9001
