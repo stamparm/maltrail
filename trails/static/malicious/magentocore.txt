@@ -12221,12 +12221,14 @@ genotic.shop
 heleveni.cyou
 henotik.click
 komotech.quest
+santecs.store
 wenmen.online
 cdn.ditchdigit.quest
 cdn.genotic.shop
 cdn.heleveni.cyou
 cdn.henotik.click
 cdn.komotech.quest
+cdn.santecs.store
 cdn.wenmen.online
 
 # Generic
