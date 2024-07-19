@@ -5401,3 +5401,9 @@ http://4.185.58.68
 
 45.55.131.63:8000
 45.55.131.63:9001
+
+# Reference: https://x.com/RacWatchin8872/status/1813904016281378930
+# Reference: https://www.virustotal.com/gui/file/19970cbc1a0cfa1e4d8e1bad65ffbc7f6ff1f2f3c1cd3f5219ee13748d1e3734/detection
+# Reference: https://www.virustotal.com/gui/file/4246f64308d4a2a35552ccf472a490ed609535eadd5cf3f4a303728a485f5140/detection
+
+89.197.154.116:7810
