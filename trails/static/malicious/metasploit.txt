@@ -5409,9 +5409,12 @@ http://4.185.58.68
 89.197.154.116:7810
 
 # Reference: https://x.com/malwrhunterteam/status/1814370019800711223
+# Reference: https://x.com/1ZRR4H/status/1814385517980688543
 # Reference: https://www.virustotal.com/gui/file/22156f918e1777fdd502556582331118f63618cce7a16b24d2ba91eed09e85ff/detection
 # Reference: https://www.virustotal.com/gui/file/832113e18b31afb0718112b130bfb301719785b1cf175c6737321ab50c62a6f5/detection
 
 http://5.8.38.130
 5.8.38.130:443
 5.8.38.130:8000
+lnnostage-group.com.ru
+vpn.lnnostage-group.com.ru
