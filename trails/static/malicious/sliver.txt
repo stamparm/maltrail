@@ -4881,6 +4881,13 @@ http://185.130.46.229
 95.111.212.13:31337
 95.111.213.71:31337
 
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-07-20)
+
+52.196.181.68:8888
+62.84.116.13:62888
+94.237.59.129:30570
+94.237.59.129:31337
+
 # Generic
 
 /.sliver-client/
