@@ -5421,5 +5421,9 @@ vpn.lnnostage-group.com.ru
 
 # Reference: https://x.com/malwrhunterteam/status/1814741118484988272
 # Reference: https://www.virustotal.com/gui/file/e477416cf4c7f6a79b5b0b88d28aff708c6b89f4fb93b775ad2b6f69020680a3/detection
+# Reference: https://www.virustotal.com/gui/file/dd30af386ffadea2207e16cc68d8a52fcb497574fc94be8a4c9bfd013c089360/detection
+# Reference: https://www.virustotal.com/gui/file/4e1d166f0642c2fbac91bb661a117c9724753594341df8177a11612c23c77967/detection
 
 206.41.208.89:4444
+206.41.208.89:4678
+206.41.208.89:8080
