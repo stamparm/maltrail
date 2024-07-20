@@ -2491,6 +2491,12 @@ kmdjdheyytgebfghehhenegsdfsdf
 sarabi
 sarabi xor
 
+# Reference: https://x.com/ViriBack/status/1814702278030332091
+# Reference: https://tria.ge/240720-txe9latdqd/behavioral1
+# Reference: https://www.virustotal.com/gui/file/c2a095bf5b04c0ce7af29aebab583b31d76475b3e15762ba5db956b0a3f717d5/detection
+
+\/xevil\b
+
 # Misc
 
 information_schema
