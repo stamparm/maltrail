@@ -8563,6 +8563,13 @@ cachline.com
 
 /20240416.hta
 
+# Reference: https://x.com/banthisguy9349/status/1814925887906664718
+
+/arc1b7jcFClaP
+/arcUObduhEO
+/arcUObduhRu
+/systray.ps1
+
 # Generic
 
 /js/altmanluggage.js
