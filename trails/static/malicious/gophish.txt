@@ -2592,3 +2592,18 @@ http://91.221.22.159
 # Reference: https://x.com/MichalKoczwara/status/1805151354886799808
 
 lamborghini-service.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv
+
+137.184.90.144:4000
+139.162.46.102:443
+139.59.215.185:4000
+142.93.159.214:3333
+159.65.232.99:3333
+49.51.69.128:4000
+64.176.56.63:3333
+64.23.136.10:4000
+64.23.254.15:4000
+67.205.159.74:4000
+67.207.88.196:4000
+68.183.126.146:4000
