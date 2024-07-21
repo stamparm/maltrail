@@ -2755,3 +2755,7 @@ onnx.su
 # Reference: https://x.com/banthisguy9349/status/1812709201640099877
 
 connect-trojan.org
+
+# Reference: https://x.com/banthisguy9349/status/1814923181343314158
+
+hackforums.to
