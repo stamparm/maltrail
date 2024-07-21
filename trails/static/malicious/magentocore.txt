@@ -11762,6 +11762,7 @@ chigomob.online
 coyundearias.xyz
 ctotech.store
 cvyatop.online
+delamint.online
 depiters.store
 dilink.click
 dipteb.quest
@@ -11775,6 +11776,7 @@ feyatic.quest
 fototytrul.online
 frektech.site
 frothelink.quest
+fudorable.website
 gamakatvet.store
 gelte.site
 gemintele.shop
@@ -11792,6 +11794,7 @@ isolatec.site
 jectop.store
 jegpll.shop
 jeremob.site
+jsmhxfd.online
 joermen.store
 jojtom.store
 joyjon.click
@@ -11812,6 +11815,7 @@ mistlink.online
 mokamob.site
 molotech.online
 neznlink.store
+nishbakh.site
 nsnamob.site
 obshmob.shop
 pantech.online
@@ -11973,6 +11977,7 @@ cdn.yololive.sbs
 cdn.zakit.quest
 cdn.zapolmob.sbs
 cdn.zarelec.quest
+tvd.nishbakh.site
 
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.110.10/relations
 
