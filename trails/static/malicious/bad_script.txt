@@ -8570,6 +8570,10 @@ cachline.com
 /arcUObduhRu
 /systray.ps1
 
+# Reference: https://x.com/RacWatchin8872/status/1815338996005777590
+
+/UIDEIEEN.hta
+
 # Generic
 
 /js/altmanluggage.js
