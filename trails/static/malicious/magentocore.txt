@@ -12032,6 +12032,15 @@ vdv.icu
 vnv.icu
 vvd.icu
 
+# Reference: https://x.com/sdcyberresearch/status/1815380710737522937
+# Reference: https://www.virustotal.com/gui/ip-address/94.131.110.36/relations
+
+vvcv.icu
+vvdv.icu
+vvvc.icu
+vvvd.icu
+vvvn.icu
+
 # Reference: https://x.com/sdcyberresearch/status/1801186223593005289
 
 kandkca.com/instamojo/instamojo.js
