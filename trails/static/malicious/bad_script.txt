@@ -8574,6 +8574,10 @@ cachline.com
 
 /UIDEIEEN.hta
 
+# Reference: https://cert.gov.ua/article/6280129
+
+/RemoteAssistanceSvc.hta
+
 # Generic
 
 /js/altmanluggage.js
