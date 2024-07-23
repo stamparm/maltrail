@@ -624,6 +624,7 @@ stresse.space
 stresser.cam
 stresser.digital
 stressers.io
+stress.mineheaven.org
 
 # Reference: https://twitter.com/banthisguy9349/status/1760315124655566897
 
