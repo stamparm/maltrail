@@ -12139,12 +12139,16 @@ gtagmanager.app
 
 # Reference: https://app.validin.com/detail?type=ip&find=195.242.111.0%2F24#tab=resolutions (# 2024-07-10)
 
+ambidot.click
+bigjet.click
 halyeel.shop
 kanalit.site
 kitlinks.online
 mjeetech.store
 negoon.quest
 veuseel.click
+cdn.ambidot.click
+cdn.bigjet.click
 cdn.halyeel.shop
 cdn.kanalit.site
 cdn.kitlinks.online
