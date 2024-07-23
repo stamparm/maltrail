@@ -2702,6 +2702,11 @@ http://94.232.249.73
 94.156.66.181:443
 94.232.249.73:443
 
+# Reference: https://x.com/JAMESWT_MHT/status/1815399555183034464
+# Reference: https://app.any.run/tasks/7662f569-af72-4c37-a1ed-f4ef3d14c0a7/
+
+74.119.195.176:4443
+
 # Generic
 
 /Havoc/payload/
