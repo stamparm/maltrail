@@ -769,3 +769,8 @@ http://176.34.50.52
 206.166.251.107:4443
 206.166.251.107:8443
 42.192.107.173:5000
+
+# Reference: https://x.com/malwrhunterteam/status/1815713225138143245
+# Reference: https://www.virustotal.com/gui/file/6529e924420db80091f2d132caad8c18f22f9c4c2496e41bf0b3309fd187f508/detection
+
+liveupdatesmonitor.com
