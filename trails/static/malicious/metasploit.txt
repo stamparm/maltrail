@@ -5428,3 +5428,11 @@ vpn.lnnostage-group.com.ru
 206.41.208.89:4444
 206.41.208.89:4678
 206.41.208.89:8080
+
+# Reference: https://x.com/malwrhunterteam/status/1815486937718796724
+# Reference: https://www.virustotal.com/gui/file/f4173b99753bff23d5673f88315fa4bdb5d63e6c56e507781b5a2827663b6d9a/detection
+# Reference: https://www.virustotal.com/gui/file/ebf209bb1c3bad287e6fdc9da832fd9ed42ef0bb999245a2a7a860c9c008905e/detection
+
+102.43.123.109:4674
+156.215.169.222:4674
+knight-kali.ddns.net
