@@ -12250,6 +12250,13 @@ cdn.komotech.quest
 cdn.santecs.store
 cdn.wenmen.online
 
+# Reference: https://x.com/sdcyberresearch/status/1815710792651555218
+# Reference: https://www.virustotal.com/gui/ip-address/45.125.67.12/relations
+
+statistics-for-you.com
+wellfacing.com
+yourmarketingpay.com
+
 # Generic
 
 /assets/lfg.js
