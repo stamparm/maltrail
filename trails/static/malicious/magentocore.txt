@@ -12261,6 +12261,19 @@ statistics-for-you.com
 wellfacing.com
 yourmarketingpay.com
 
+# Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24
+
+fomloop.site
+getrei.store
+hihekic.online
+leftec.quest
+limatop.shop
+cdn.fomloop.site
+cdn.getrei.store
+cdn.hihekic.online
+cdn.leftec.quest
+cdn.limatop.shop
+
 # Generic
 
 /assets/lfg.js
