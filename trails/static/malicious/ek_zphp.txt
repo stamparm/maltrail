@@ -336,6 +336,16 @@ wilderglamour.com
 
 magaanthem.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-06-25-v10627/1764
+
+aetherial.store
+bochka-keitaro.space
+buatywear.store
+chemsentinel.com
+eyesstore.store
+jonmesserartwork.com
+trollsburninginhell.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
