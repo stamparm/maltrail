@@ -290,6 +290,10 @@ daslkjfhi2.shop
 daslkjfhi2.pics
 ndm2398asdlw.shop
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-06-25-v10627/1764
+
+divyjai2.xyz
+
 # Generic
 
 /a3A7qLVn/
