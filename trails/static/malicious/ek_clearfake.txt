@@ -285,6 +285,11 @@ cleanway.5asec.fr
 
 daslkjfhi2.shop
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-18-v10648/1828
+
+daslkjfhi2.pics
+ndm2398asdlw.shop
+
 # Generic
 
 /a3A7qLVn/
