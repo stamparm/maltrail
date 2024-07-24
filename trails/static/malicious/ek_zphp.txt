@@ -319,6 +319,13 @@ onecapitalresidences.com
 daslkjfhi2.xyz
 luxurycaborental.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-23-v10651/1840
+
+2n8rd3zz1.top
+coaching-the-boss.com
+darchrif.com
+knoxvillevideoproductions.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
