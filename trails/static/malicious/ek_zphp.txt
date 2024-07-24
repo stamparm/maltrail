@@ -326,6 +326,12 @@ coaching-the-boss.com
 darchrif.com
 knoxvillevideoproductions.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-17-v10647/1826
+
+oakgrovetraining.com
+shawns-landscaping.com
+wilderglamour.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
