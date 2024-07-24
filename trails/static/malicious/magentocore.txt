@@ -12274,6 +12274,11 @@ cdn.hihekic.online
 cdn.leftec.quest
 cdn.limatop.shop
 
+# Reference: https://x.com/sdcyberresearch/status/1816105654416748722
+# Reference: https://www.virustotal.com/gui/ip-address/91.194.11.108/relations
+
+logicloo.com
+
 # Generic
 
 /assets/lfg.js
