@@ -84,3 +84,7 @@ visitscloud.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-05-17-v10598/1649
 
 public.clickstat360.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-17-v10647/1826
+
+jswebcloud.com
