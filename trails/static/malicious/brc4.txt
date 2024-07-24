@@ -774,3 +774,9 @@ http://176.34.50.52
 # Reference: https://www.virustotal.com/gui/file/6529e924420db80091f2d132caad8c18f22f9c4c2496e41bf0b3309fd187f508/detection
 
 liveupdatesmonitor.com
+
+# Reference: https://x.com/JAMESWT_MHT/status/1816043377990778894
+# Reference: https://www.virustotal.com/gui/file/e1f94ba658acde6223eba8c5f869226a521fb64af7b6259baf06866812f752b6/detection
+# Reference: https://www.virustotal.com/gui/file/241719892a747862ca98f44bbe4b22336fabbafe0cae7e3a8b30d2a9290c48de/detection
+
+haileigh-oakes.com
