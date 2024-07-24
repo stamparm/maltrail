@@ -332,6 +332,10 @@ oakgrovetraining.com
 shawns-landscaping.com
 wilderglamour.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-18-v10648/1828
+
+magaanthem.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
