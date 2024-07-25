@@ -12275,9 +12275,17 @@ cdn.leftec.quest
 cdn.limatop.shop
 
 # Reference: https://x.com/sdcyberresearch/status/1816105654416748722
+# Reference: https://x.com/ValidinLLC/status/1816449533359833160
 # Reference: https://www.virustotal.com/gui/ip-address/91.194.11.108/relations
 
+cdnamgasite.com
+cdnamgastyle.com
+cdnassetsite.com
+cdnjsdev.com
+devblen.com
 logicloo.com
+pixelforgts.com
+techglitc.com
 
 # Generic
 
