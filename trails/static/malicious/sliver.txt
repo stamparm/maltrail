@@ -4889,6 +4889,22 @@ http://185.130.46.229
 94.237.59.129:30570
 94.237.59.129:31337
 
+# Reference: https://x.com/malwrhunterteam/status/1816205644019409118
+# Reference: https://www.virustotal.com/gui/file/99803c845d71b28a20e9dc852379a1897a1523d40db9838c50bce0284f8640c3/detection
+# Reference: https://www.virustotal.com/gui/file/3d1d469d7b6706a500cf3089f5f5a0f7114a89562abe8f169ac28bf05b8993c2/detection
+
+http://15.206.127.215
+15.206.127.215:443
+
+# Reference: https://x.com/malwrhunterteam/status/1816205945271136458
+# Reference: https://www.virustotal.com/gui/file/f68d5e33f7db0a81054e39848b5c3a5dbe3c38ca3b97582b0c5e8c54ccde5983/detection
+# Reference: https://www.virustotal.com/gui/file/b798eac9cee33dad789ae92c7d41d322258755e9727522e110ba05cb3732586f/detection
+# Reference: https://www.virustotal.com/gui/file/9e329853343139ed4f581427573f36b854c56dab27d17a76578068f2a0839342/detection
+# Reference: https://www.virustotal.com/gui/file/710b0caae2103bbd849eea68d04bcfe4524042a03029ef6e19e67f2f96ab4c87/detection
+
+http://172.236.83.83
+172.236.83.83:443
+
 # Generic
 
 /.sliver-client/
