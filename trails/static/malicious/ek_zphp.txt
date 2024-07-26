@@ -346,6 +346,11 @@ eyesstore.store
 jonmesserartwork.com
 trollsburninginhell.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-25-v10653/1848
+
+hhic.top
+imc1.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
