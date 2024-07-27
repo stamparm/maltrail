@@ -858,6 +858,12 @@ http://5.181.156.247
 http://5.42.65.140
 5.42.65.140:443
 
+# Reference: https://x.com/RacWatchin8872/status/1816061547564675214
+
+http://103.26.139.51
+103.26.139.51:443
+admin.sgp.argus-corp.com.br
+
 # Generic
 
 /admin_123/auth.php
