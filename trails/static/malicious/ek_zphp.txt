@@ -351,6 +351,13 @@ trollsburninginhell.com
 hhic.top
 imc1.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-26-v10654/1853
+
+canroura.com
+nijanse.com
+megasena777.top
+novidadesfresquinhas.online
+
 # Generic
 
 /cache/ewmrgqnaww.php
