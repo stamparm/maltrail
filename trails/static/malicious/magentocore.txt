@@ -12169,14 +12169,23 @@ store.statsforapps.com/app/mobile/buildfire/api/api.min.js
 # Reference: https://www.virustotal.com/gui/ip-address/82.202.165.96/relations
 
 api4cdn.io
+bingforce.org
+easttrack.net
+foptimize.net
 freedombot.io
 freeview.io
+gearplace.net
+infiniboosts.com
 inpwrd.io
 pomtag.net
 quantlive.net
 registertime.net
 ruleslaw.org
+saleapi.org
+servicetoast.net
+stackapt.com
 staticforce.org
+wealthleaderinc.com
 wisepops.co
 yotpont.com
 app.ruleslaw.org
