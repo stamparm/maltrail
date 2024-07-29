@@ -12288,6 +12288,11 @@ logicloo.com
 pixelforgts.com
 techglitc.com
 
+# Reference: https://x.com/sdcyberresearch/status/1817910238520959453
+
+click-analytics.net
+corkscrm.com
+
 # Generic
 
 /assets/lfg.js
