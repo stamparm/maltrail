@@ -2760,3 +2760,9 @@ connect-trojan.org
 # Reference: https://x.com/banthisguy9349/status/1814923181343314158
 
 hackforums.to
+
+# Reference: https://app.validin.com/detail?find=Horus%20Protector%20100%25%20FUD%20Crypter%202024&type=raw&ref_id=ac3a0be4a80#tab=host_pairs_v2
+
+fudi.ing
+horus-protector.pro
+vmi1547155.contaboserver.net
