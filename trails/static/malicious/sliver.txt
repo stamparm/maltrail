@@ -4912,6 +4912,11 @@ http://15.206.127.215
 http://172.236.83.83
 172.236.83.83:443
 
+# Reference: https://x.com/banthisguy9349/status/1818008355543154717
+# Reference: https://www.virustotal.com/gui/file/b1eabf499221cb278634248e790f0837a6e6068e9645ffcc3b1c8d61489b3be1/detection
+
+americajobmail.site
+
 # Generic
 
 /.sliver-client/
