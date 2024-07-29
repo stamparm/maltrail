@@ -12301,6 +12301,9 @@ techglitc.com
 
 click-analytics.net
 abbiecrm.com
+adsprep.online
+b2blinkstorage.com
+b2bsolution24.com
 cartflowcrm.com
 cartualcrm.com
 clarkcrm.com
@@ -12314,8 +12317,14 @@ crmprew.com
 crmprove.com
 fastbcrm.com
 octalcrm.com
+quickcartcloud.com
 shopcartcrm.com
+smartcli.org
 smoothb2b.com
+smoothconnect.org
+speedysalestore.com
+speedspree.org
+trustedapi.org
 updatecrm.org
 
 # Generic
