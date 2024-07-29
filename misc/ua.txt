@@ -2497,6 +2497,10 @@ sarabi xor
 
 \/xevil\b
 
+# Reference: https://x.com/naumovax/status/1817905495824327144
+
+User-Agent:Mozilla
+
 # Misc
 
 information_schema
