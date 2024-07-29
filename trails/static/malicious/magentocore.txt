@@ -12291,7 +12291,22 @@ techglitc.com
 # Reference: https://x.com/sdcyberresearch/status/1817910238520959453
 
 click-analytics.net
+abbiecrm.com
+cartflowcrm.com
+cartualcrm.com
+clarkcrm.com
 corkscrm.com
+crmbargs.com
+crmcrown.com
+crmdaps.com
+crmfant.site
+crmgibs.com
+crmprew.com
+crmprove.com
+fastbcrm.com
+octalcrm.com
+shopcartcrm.com
+updatecrm.org
 
 # Generic
 
