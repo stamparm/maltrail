@@ -4011,3 +4011,7 @@ brew.sh
 docusign.net
 polaris.me
 powerdms.com
+
+# Reference: https://github.com/stamparm/maltrail/commit/1bda0a4aea0d0fc6684b8a734d9db393df52c74d
+
+tokenlon.im
