@@ -358,6 +358,12 @@ nijanse.com
 megasena777.top
 novidadesfresquinhas.online
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-29-v10655/1856
+
+astronomicspace.com
+c08d.top
+saxymiss.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
