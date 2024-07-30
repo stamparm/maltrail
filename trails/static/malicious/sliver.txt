@@ -4917,6 +4917,12 @@ http://172.236.83.83
 
 americajobmail.site
 
+# Reference: https://x.com/malwrhunterteam/status/1817825440574169135
+# Reference: https://www.virustotal.com/gui/file/98f24ebc953061aa13b100eb144f9ec8e057738e34da436c9bd514e41e45dee3/detection
+# Reference: https://www.virustotal.com/gui/file/98bb8bf807950a54285609dc8e941eb058a42714990757d33bd090787dfc3dad/detection
+
+154.26.210.97:8888
+
 # Generic
 
 /.sliver-client/
