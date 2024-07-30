@@ -3923,6 +3923,18 @@ svq.partners.gloriadeicr.com
 wwwf.partners.gloriadeicr.com
 ybo.partners.gloriadeicr.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-29-v10655/1856
+# Reference: https://www.virustotal.com/gui/file/57efd223aaecb720177e1f5260a396ddb7b15182a392cc354aff1d9f1f1addd1/detection
+# Reference: https://www.virustotal.com/gui/file/4d3e77fedd259c8a8aa8a17ae2ce97dee90104fee907bca1ac10fb3450921b93/detection
+# Reference: https://www.virustotal.com/gui/file/07056be341c49d3043615c4f21c67bf8568d753037a6ff43db5b23697d29b8ce/detection
+
+living.miraclesofeucharisticjesus.org
+edi.living.miraclesofeucharisticjesus.org
+fxjsm.living.miraclesofeucharisticjesus.org
+gxvk.living.miraclesofeucharisticjesus.org
+ursn.living.miraclesofeucharisticjesus.org
+wgce.living.miraclesofeucharisticjesus.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
