@@ -1417,3 +1417,14 @@ de-zephyr.miningocean.org
 51.15.89.13:10943
 51.15.89.17:10943
 zeph-eu2.nanopool.org
+
+# Reference: https://x.com/malwrhunterteam/status/1818245100251615266
+# Reference: https://www.virustotal.com/gui/file/3bb3dbb608780e8d14193100dd7fcbcd8a68cb43fe2ad705c990fe8015f2a99a/detection
+
+129.226.111.18:33333
+43.129.150.140:33333
+43.129.150.155:33333
+43.129.150.53:33333
+47.76.24.49:33333
+5.161.70.189:33333
+c3.wptask.cyou
