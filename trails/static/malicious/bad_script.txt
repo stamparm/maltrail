@@ -6391,6 +6391,8 @@ wildhottiegirls.com
 /2455818bc570ff.php
 
 # Reference: https://twitter.com/wwp96/status/1628273497708326912
+# Reference: https://x.com/ShanHolo/status/1818541500348707022
+# Reference: https://tria.ge/240715-kmwn6axfpr
 # Reference: https://blog.sekoia.io/stealc-a-copycat-of-vidar-and-raccoon-infostealers-gaining-in-popularity-part-1/
 # Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-01-12-IOCs-from-StealC-activity.txt
 
@@ -6425,6 +6427,7 @@ wildhottiegirls.com
 /de4846fc29f26952.php
 /e2d7d29621e1052a.php
 /f0b7e3704c0051f9.php
+/f3ee98d7eec07fb9.php
 /f9f76ae4bb7811d9.php
 
 # Reference: https://twitter.com/malwrhunterteam/status/1628482090114203649
