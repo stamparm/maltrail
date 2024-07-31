@@ -2766,3 +2766,9 @@ hackforums.to
 fudi.ing
 horus-protector.pro
 vmi1547155.contaboserver.net
+
+# Reference: https://x.com/rabbitinfosec/status/1817547602013061475
+# Reference: https://app.validin.com/detail?type=ip&find=104.244.78.99#tab=host_pairs_v2
+
+hxattack.xyz
+stresser.uno
