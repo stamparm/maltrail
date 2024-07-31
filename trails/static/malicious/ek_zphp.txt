@@ -364,6 +364,12 @@ astronomicspace.com
 c08d.top
 saxymiss.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-30-v10656/1858
+
+megabahis664.com
+saratu.com
+velellablue.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
