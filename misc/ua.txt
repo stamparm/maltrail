@@ -2501,6 +2501,10 @@ sarabi xor
 
 User-Agent:Mozilla
 
+# Reference: https://x.com/malwrhunterteam/status/1818577746861199398
+
+\bMALCJS\b
+
 # Misc
 
 information_schema
