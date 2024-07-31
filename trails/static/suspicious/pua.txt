@@ -3316,3 +3316,8 @@ vivinod4.xyz
 # Reference: https://www.virustotal.com/gui/file/690d111294d46e755ea58ea92f485eac3e56961adf543543f8fca073148e8c5b/detection
 
 helsinki-dtc.com
+
+# Reference: https://x.com/malwrhunterteam/status/1818552423838818526
+# Reference: https://www.virustotal.com/gui/file/f9c071e45e8f9fa30579200ef896c46f2ce249a26311721f2c0a932cb64a358d/detection
+
+mord0r.hopto.org
