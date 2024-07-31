@@ -3321,3 +3321,7 @@ helsinki-dtc.com
 # Reference: https://www.virustotal.com/gui/file/f9c071e45e8f9fa30579200ef896c46f2ce249a26311721f2c0a932cb64a358d/detection
 
 mord0r.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/eacfd543ad19f8edec0588a447777494f1fb7446150fd38ca4ede9e6cfcbf6a8/detection
+
+ec2-54-196-152-208.compute-1.amazonaws.com
