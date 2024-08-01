@@ -12329,6 +12329,12 @@ tikmoneyid.cfd
 trustedapi.org
 updatecrm.org
 
+# Reference: https://www.virustotal.com/gui/domain/cdn-delivery-xyz.com/relations
+
+cdn-delivery-xyz.com
+chu.cdn-delivery-xyz.com
+dir.cdn-delivery-xyz.com
+
 # Generic
 
 /assets/lfg.js
