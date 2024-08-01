@@ -3622,3 +3622,8 @@ utdnews.com
 # Reference: https://www.virustotal.com/gui/domain/eduarmor.com/relations
 
 eduarmor.com
+
+# Reference: https://www.virustotal.com/gui/domain/itzzm.com/relations
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-31-v10657/1862
+
+itzzm.com
