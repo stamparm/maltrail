@@ -2210,11 +2210,13 @@ ZeroStresser Botnet
 # Reference: https://unit42.paloaltonetworks.com/trident-ursa/
 # Reference: https://twitter.com/WhichbufferArda/status/1616895455182442497
 # Reference: https://research.checkpoint.com/2023/malware-spotlight-into-the-trash-analyzing-litterdrifter/
+# Reference: https://securityintelligence.com/x-force/hive0051-all-in-triple-threat/
 
 \bjosephine\b
 \bsnventor\b
 \binsufficient\b
 ::\/\.josephine\/
+;;\/\.jumper\/
 ;;\/\.justly\/
 ;;\/\.insufficient\/
 ;;\/\.snventor\/
