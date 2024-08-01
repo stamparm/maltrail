@@ -5258,3 +5258,16 @@ pr.letmeplayformoney.com
 scr.letmeplayformoney.com
 tmp.letmeplayformoney.com
 vcdn.letmeplayformoney.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.155.184.36/relations
+
+recordsbluemountain.com
+bre.recordsbluemountain.com
+dre.recordsbluemountain.com
+flow.recordsbluemountain.com
+get.recordsbluemountain.com
+go.recordsbluemountain.com
+gogo.recordsbluemountain.com
+page.recordsbluemountain.com
+re.recordsbluemountain.com
+set.recordsbluemountain.com
