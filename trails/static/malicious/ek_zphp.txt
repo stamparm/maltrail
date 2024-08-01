@@ -370,6 +370,10 @@ megabahis664.com
 saratu.com
 velellablue.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-31-v10657/1862
+
+myanswerpronto.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
