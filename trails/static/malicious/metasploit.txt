@@ -5440,3 +5440,7 @@ vpn.lnnostage-group.com.ru
 102.43.123.109:4674
 156.215.169.222:4674
 knight-kali.ddns.net
+
+# Reference: https://x.com/tolisec/status/1819082074760139024
+
+15.206.116.117:8787
