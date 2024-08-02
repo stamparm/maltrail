@@ -4678,3 +4678,11 @@
 85.28.47.0/24,sunhost-as
 94.228.166.0/24,sunhost-as
 94.228.170.0/24,sunhost-as
+
+# Reference: https://x.com/banthisguy9349/status/1819304273613639737
+# Reference: https://ipinfo.io/AS212271
+
+152.89.170.0/24,c1v
+208.65.84.0/24,c1v
+208.65.87.0/24,c1v
+5.59.248.0/21,c1v
