@@ -564,3 +564,7 @@ ljzzrjuate1.com
 notifiednewsmedia.info
 onetouch23.info
 wait4hour.info
+
+# Reference: https://www.virustotal.com/gui/file/1a8bfa423c03db777e3e077f1076b4d6b030cfa74b7b821b2cedb729d15ea1f4/detection
+
+leaukseseem.xyz
