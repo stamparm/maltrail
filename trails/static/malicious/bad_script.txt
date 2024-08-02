@@ -8582,9 +8582,15 @@ cachline.com
 
 /RemoteAssistanceSvc.hta
 
-# Reference:
+# Reference: https://www.virustotal.com/gui/ip-address/1.15.44.211/relations
 
 /m3wtw0.xml
+
+# Reference: https://x.com/500mk500/status/1819325319565758518
+
+/xss.hta
+/xss.js
+/xss.xspf
 
 # Generic
 
