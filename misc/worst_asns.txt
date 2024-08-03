@@ -4692,3 +4692,7 @@
 
 77.91.66.0/24,denale-net
 92.42.102.0/24,denale-net
+
+# Reference: https://ipinfo.io/AS206425
+
+194.36.177.0/24,wai-as
