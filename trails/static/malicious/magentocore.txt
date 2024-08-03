@@ -12335,6 +12335,12 @@ cdn-delivery-xyz.com
 chu.cdn-delivery-xyz.com
 dir.cdn-delivery-xyz.com
 
+# Reference: https://app.validin.com/detail?find=185.196.9.82&type=ip4&ref_id=e7811530e8a#tab=resolutions
+
+gmduftruepaitus.com
+javascript-static.com
+web3work.space
+
 # Generic
 
 /assets/lfg.js
