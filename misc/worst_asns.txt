@@ -4686,3 +4686,9 @@
 208.65.84.0/24,c1v
 208.65.87.0/24,c1v
 5.59.248.0/21,c1v
+
+# Reference: https://x.com/Qur1um/status/1819635586182898003
+# Reference: https://ipinfo.io/AS214891
+
+77.91.66.0/24,denale-net
+92.42.102.0/24,denale-net
