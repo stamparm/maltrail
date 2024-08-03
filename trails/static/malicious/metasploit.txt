@@ -5444,3 +5444,13 @@ knight-kali.ddns.net
 # Reference: https://x.com/tolisec/status/1819082074760139024
 
 15.206.116.117:8787
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/IPPortC2s-30day.csv (# 2024-08-03)
+
+123.20.177.177:55148
+123.20.177.177:55516
+137.175.50.30:443
+45.66.231.137:8443
+51.141.169.72:443
+51.141.169.76:8443
+94.242.61.116:8555
