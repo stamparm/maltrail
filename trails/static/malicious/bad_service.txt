@@ -746,13 +746,26 @@ bbxstresser.llc
 brebes-bx.id
 
 # Reference: https://twitter.com/banthisguy9349/status/1773297607642673237
+# Reference: https://x.com/banthisguy9349/status/1819393857269772320
+# Reference: https://x.com/banthisguy9349/status/1819400254527049908
 # Reference: https://pastebin.com/PGz6A1Nd
 
 0rte.net
+cfx-mirrors.net
+cfxsecurity.app
+cfxsecurity.bet
 cfxsecurity.cc
+cfxsecurity.ru
+cfxsecurity.st
+cfxstress.ru
 cyberflood.ru
+ddoswf.live
+dstat.online
+dstatlove-6qm.pages.dev
+dstatlove.pages.dev
 hexstresser.xyz
 l7stresse.com
+rage.company
 stresslab.su
 vacstresser.ru
 webstress.app
