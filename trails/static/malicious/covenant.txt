@@ -786,8 +786,11 @@ http://185.141.26.116
 
 # Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s.csv
 
+102.212.245.9:7443
+116.2.179.225:7443
 116.2.180.131:7443
 116.2.180.233:7443
+159.65.156.33:7443
 162.55.189.20:7443
 178.18.254.10:7443
 188.166.252.88:7443
