@@ -12128,10 +12128,15 @@ newanalytics.homes
 opentag.lat
 plustat.forum
 quicklnk.asia
+retrostat.autos
+statz.christmas
 tagmanager.guru
 tagmanager.network
+truetag.fit
 ultranalytics.shop
 ultratags.shop
+unitag.info
+virtmarkt.shop
 zentag.xyz
 
 # Reference: https://www.virustotal.com/gui/ip-address/185.193.125.168/relations
