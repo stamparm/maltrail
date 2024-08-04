@@ -2910,11 +2910,19 @@ startservicefounds.comapi.startservicefounds.com
 # Reference: https://www.virustotal.com/gui/file/e50f6b96447d64dda24187c651586247c69d004708f75cb744245c7471398f6b/detection
 # Reference: https://www.virustotal.com/gui/file/fb01066660beb228116f341e25ae5d637d79af2817c7a87d74fb5e8d604c1785/detection
 
+cloudswiftcdn.com
+edgecdnc.com
 edgerapidcdn.com
+gdcstatic.com
 globalultracdn.com
+tnewstraffic.com
 vvordpress.org
+cache.cloudswiftcdn.com
 cloud.edgerapidcdn.com
+cloud.tnewstraffic.com
+secure.gdcstatic.com
 secure.globalultracdn.com
+synd.edgecdnc.com
 
 # Reference: https://blog.sucuri.net/2024/03/sign1-malware-analysis-campaign-history-indicators-of-compromise.html
 # Reference: https://www.virustotal.com/gui/ip-address/162.0.228.112/relations
