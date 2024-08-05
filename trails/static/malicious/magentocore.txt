@@ -12346,6 +12346,11 @@ gmduftruepaitus.com
 javascript-static.com
 web3work.space
 
+# Reference: https://x.com/sdcyberresearch/status/1820463720965009424
+
+naturalcuriosities.com/a.js
+naturalcuriosities.com/obb.js
+
 # Generic
 
 /assets/lfg.js
