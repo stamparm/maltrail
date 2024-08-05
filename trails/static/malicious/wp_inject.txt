@@ -2905,8 +2905,10 @@ start.apistatexperience.com
 tart.apistatexperience.com
 startservicefounds.comapi.startservicefounds.com
 
+# Reference: https://x.com/unmaskparasites/status/1820517755785003231
 # Reference: https://www.virustotal.com/gui/ip-address/101.99.75.138/relations
 # Reference: https://www.virustotal.com/gui/ip-address/190.123.45.228/relations
+# Reference: https://blog.sucuri.net/2024/05/mal-metrica-redirects-users-to-scam-sites.html
 # Reference: https://www.virustotal.com/gui/file/e50f6b96447d64dda24187c651586247c69d004708f75cb744245c7471398f6b/detection
 # Reference: https://www.virustotal.com/gui/file/fb01066660beb228116f341e25ae5d637d79af2817c7a87d74fb5e8d604c1785/detection
 
@@ -2915,13 +2917,24 @@ edgecdnc.com
 edgerapidcdn.com
 gdcstatic.com
 globalultracdn.com
+gocloudmaps.com
+gorapidcdn.com
+gsslcloud.com
+rapidglobalorbit.com
+syndcloud.com
 tnewstraffic.com
 vvordpress.org
 cache.cloudswiftcdn.com
 cloud.edgerapidcdn.com
 cloud.tnewstraffic.com
+content.gorapidcdn.com
+content.streamfastcdn.com
+go.syndcloud.com
+host.gsslcloud.com
+metrics.gocloudmaps.com
 secure.gdcstatic.com
 secure.globalultracdn.com
+static.rapidglobalorbit.com
 synd.edgecdnc.com
 
 # Reference: https://blog.sucuri.net/2024/03/sign1-malware-analysis-campaign-history-indicators-of-compromise.html
