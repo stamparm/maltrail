@@ -5458,3 +5458,7 @@ knight-kali.ddns.net
 # Reference: https://www.virustotal.com/gui/file/1b6db5ecd5e260bbf2161d63ec71708a92b6bb9786e66ff5da71de1213f446f4/detection
 
 185.208.158.203:4444
+
+# Reference: https://www.virustotal.com/gui/file/ee8c89fa7ab0c439369cacfd4bde8e219f184b3bf2d3873491e1bddeff92d3c4/detection
+
+185.208.158.203:5005
