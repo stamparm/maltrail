@@ -870,6 +870,10 @@ http://68.183.92.154
 68.183.92.154:443
 68.183.92.154:3000
 
+# Reference: https://www.virustotal.com/gui/file/72982e83206930e2da3f4887ef09520fbf6937f9475f34620c6a78843c640a65/detection
+
+/Panel//check_panel.php
+
 # Generic
 
 /admin_123/auth.php
