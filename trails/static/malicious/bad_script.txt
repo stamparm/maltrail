@@ -8599,6 +8599,11 @@ cachline.com
 /yvfiubhferwewf/process_l00m.php
 /yvfiubhferwewf/
 
+# Reference: https://x.com/9823f_/status/1820807344638279761
+# Reference: https://urlscan.io/search/#filename%3A%22php_en-e372bb40.js%22
+
+/php_en-e372bb40.js
+
 # Generic
 
 /js/altmanluggage.js
