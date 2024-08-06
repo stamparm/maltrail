@@ -12351,6 +12351,10 @@ web3work.space
 naturalcuriosities.com/a.js
 naturalcuriosities.com/obb.js
 
+# Reference: https://x.com/sdcyberresearch/status/1820837819088040000
+
+productpulsehub.com
+
 # Generic
 
 /assets/lfg.js
