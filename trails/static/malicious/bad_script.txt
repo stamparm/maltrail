@@ -8593,6 +8593,12 @@ cachline.com
 /xss.js
 /xss.xspf
 
+# Reference: https://x.com/Huntio/status/1820797152085582112
+# Reference: https://moonlock.com/loom-macos-stealer
+
+/yvfiubhferwewf/process_l00m.php
+/yvfiubhferwewf/
+
 # Generic
 
 /js/altmanluggage.js
