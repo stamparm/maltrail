@@ -4923,6 +4923,11 @@ americajobmail.site
 
 154.26.210.97:8888
 
+# Reference: https://x.com/raghav127001/status/1820699658634600772
+# Reference: https://www.virustotal.com/gui/file/cc0d49aac8ab71d4cac6ef5aa4cbb95d48a5a3d73cc87f5e72898f357114d761/detection
+
+23.95.107.6:8888
+
 # Generic
 
 /.sliver-client/
