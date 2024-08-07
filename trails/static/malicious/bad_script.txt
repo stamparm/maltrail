@@ -8604,6 +8604,12 @@ cachline.com
 
 /php_en-e372bb40.js
 
+# Reference: https://x.com/lontze7/status/1821042477022822834
+
+/262f6e0.php
+/2f20376.php
+/5edec54.php
+
 # Generic
 
 /js/altmanluggage.js
