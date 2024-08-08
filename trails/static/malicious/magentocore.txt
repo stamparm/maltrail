@@ -12371,6 +12371,21 @@ statlstic.shop
 statmaster.shop
 vodog.shop
 
+# Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24#tab=resolutions
+
+dewoper.click
+kismic.click
+maketech.online
+strodigit.store
+tonamob.quest
+truvit.shop
+cdn.dewoper.click
+cdn.kismic.click
+cdn.maketech.online
+cdn.strodigit.store
+cdn.tonamob.quest
+cdn.truvit.shop
+
 # Generic
 
 /assets/lfg.js
