@@ -71,3 +71,10 @@ sup2.sbk117.ru
 sup2.sc110.ru
 sup2.sc400.ru
 sup2.sp3300.ru
+
+# Reference: https://x.com/doc_guard/status/1821513954100646036
+# Reference: https://app.docguard.io/871e96fc0a955e25288ca9a3e94468b1855b36c9dc0200898e35c049d9275e2e/results/dashboard
+# Reference: https://www.virustotal.com/gui/file/871e96fc0a955e25288ca9a3e94468b1855b36c9dc0200898e35c049d9275e2e/detection
+
+192.3.243.147:8041
+viewertest.buzz
