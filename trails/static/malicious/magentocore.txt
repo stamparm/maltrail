@@ -12386,6 +12386,13 @@ cdn.strodigit.store
 cdn.tonamob.quest
 cdn.truvit.shop
 
+# Reference: https://app.validin.com/detail?type=ip&find=195.242.111.0%2F24#tab=resolutions
+
+helotop.site
+loetec.quest
+cdn.helotop.site
+cdn.loetec.quest
+
 # Generic
 
 /assets/lfg.js
