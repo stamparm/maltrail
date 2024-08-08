@@ -12393,6 +12393,13 @@ loetec.quest
 cdn.helotop.site
 cdn.loetec.quest
 
+# Reference: https://sansec.io/research/magento-wish-list-exploits
+
+http://69.49.246.122
+a.aa4.in
+purplesunrise.com/2.js
+triconville.com/pub/errors/cr.js
+
 # Generic
 
 /assets/lfg.js
