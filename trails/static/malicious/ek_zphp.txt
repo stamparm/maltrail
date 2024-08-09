@@ -385,6 +385,13 @@ myanswerpronto.com
 christmasxdecor.com
 prokopiouefthalia-ltd.site
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-05-v10659/1875
+
+didsit.com
+funnypots.com
+settisourchampion.site
+writeindia.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
