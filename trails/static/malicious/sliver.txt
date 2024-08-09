@@ -4928,6 +4928,11 @@ americajobmail.site
 
 23.95.107.6:8888
 
+# Reference: https://x.com/malwrhunterteam/status/1821809688477941832
+# Reference: https://www.virustotal.com/gui/file/7601841ede7f111005d2bab7ce984283c975425eeb395c8c29a214b2fbe969fe/detection
+
+185.117.75.3:8888
+
 # Generic
 
 /.sliver-client/
