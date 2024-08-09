@@ -3935,6 +3935,51 @@ gxvk.living.miraclesofeucharisticjesus.org
 ursn.living.miraclesofeucharisticjesus.org
 wgce.living.miraclesofeucharisticjesus.org
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-05-v10659/1875
+
+donors.eucharisticjesus.net
+bhuiw.donors.eucharisticjesus.net
+cqp.donors.eucharisticjesus.net
+cwh.donors.eucharisticjesus.net
+cylua.donors.eucharisticjesus.net
+dderp.donors.eucharisticjesus.net
+derp.donors.eucharisticjesus.net
+dhsv.donors.eucharisticjesus.net
+dvo.donors.eucharisticjesus.net
+gdfwj.donors.eucharisticjesus.net
+gdhnc.donors.eucharisticjesus.net
+gjyt.donors.eucharisticjesus.net
+hedo.donors.eucharisticjesus.net
+hmyb.donors.eucharisticjesus.net
+iflui.donors.eucharisticjesus.net
+ikc.donors.eucharisticjesus.net
+iod.donors.eucharisticjesus.net
+jcc.donors.eucharisticjesus.net
+kevjw.donors.eucharisticjesus.net
+kik.donors.eucharisticjesus.net
+lwflf.donors.eucharisticjesus.net
+lzxj.donors.eucharisticjesus.net
+mabs.donors.eucharisticjesus.net
+mlnb.donors.eucharisticjesus.net
+njjmw.donors.eucharisticjesus.net
+odfdt.donors.eucharisticjesus.net
+pvk.donors.eucharisticjesus.net
+tcvwu.donors.eucharisticjesus.net
+them.donors.eucharisticjesus.net
+trsu.donors.eucharisticjesus.net
+tuhys.donors.eucharisticjesus.net
+tyoa.donors.eucharisticjesus.net
+veb.donors.eucharisticjesus.net
+wgaj.donors.eucharisticjesus.net
+wginh.donors.eucharisticjesus.net
+wrag.donors.eucharisticjesus.net
+wzt.donors.eucharisticjesus.net
+xraib.donors.eucharisticjesus.net
+xza.donors.eucharisticjesus.net
+ytrh.donors.eucharisticjesus.net
+zead.donors.eucharisticjesus.net
+zpip.donors.eucharisticjesus.net
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
