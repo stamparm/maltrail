@@ -309,6 +309,11 @@ polikarbonad.xyz
 x52op6gt0i.xyz
 /bvxny6r6
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-05-v10659/1875
+
+dais7nsa.pics
+dais7nsa.shop
+
 # Generic
 
 /a3A7qLVn/
