@@ -2831,3 +2831,7 @@ worldcvv.cc
 mail.tuxedocrew.cc
 mail.worldcvv.cc
 webmail.worldcvv.cc
+
+# Reference: https://x.com/4n6Bexaminer/status/1822281363946381501
+
+haxmac.cc
