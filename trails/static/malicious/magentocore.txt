@@ -12400,6 +12400,19 @@ a.aa4.in
 purplesunrise.com/2.js
 triconville.com/pub/errors/cr.js
 
+# Reference: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions
+
+deqbit.quest
+feurcat.shop
+pealink.store
+shebil.online
+svetmob.click
+cdn.deqbit.quest
+cdn.feurcat.shop
+cdn.pealink.store
+cdn.shebil.online
+cdn.svetmob.click
+
 # Generic
 
 /assets/lfg.js
