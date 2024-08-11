@@ -8631,6 +8631,12 @@ cachline.com
 /jU8OTI-qnvhjeIB0-W7q7EvR4-dacb47a/index.html
 /jU8OTI-qnvhjeIB0-W7q7EvR4-dacb47a/
 
+# Reference: https://x.com/banthisguy9349/status/1822635735494664701
+# Reference: https://www.virustotal.com/gui/file/0bb9e107a5f5f9ad838173ebf222107d37cc1f378fa10f46ad5b2914f19f8e72/detection
+
+/wbinjget?q=
+/wbinjget
+
 # Generic
 
 /js/altmanluggage.js
