@@ -5482,3 +5482,9 @@ http://185.208.158.203
 # Reference: https://www.virustotal.com/gui/file/d8e49a3eb03bb4660c911633838a4a11cd2dd0a3c1c47b1e83fef23b94abd2a6/detection
 
 178.185.76.25:4433
+
+# Reference: https://x.com/raghav127001/status/1822490490526208348
+# Reference: https://www.virustotal.com/gui/file/611321aef572d2454241847dcea0848ffe40c82c6aeeb79f494f99b12a8d4b05/detection
+
+85.209.153.115:7212
+85.209.153.115:7777
