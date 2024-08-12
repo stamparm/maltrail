@@ -12357,14 +12357,17 @@ naturalcuriosities.com/obb.js
 # Reference: https://x.com/sdcyberresearch/status/1820837819088040000
 # Reference: https://x.com/sdcyberresearch/status/1821167470792638621
 # Reference: https://x.com/sdcyberresearch/status/1821167541818884207
+# Reference: https://x.com/sdcyberresearch/status/1822940433712111840
 
 codcraft.shop
 codemingle.shop
+getlnfo.com
 luckycharm.website
 marketexpert.site
 paysysmetrics.com
 pixelsmith.shop
 productpulsehub.com
+reviewharborhub.com
 salesguru.online
 statistall.com
 statlstic.shop
