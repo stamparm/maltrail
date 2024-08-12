@@ -4933,6 +4933,13 @@ americajobmail.site
 
 185.117.75.3:8888
 
+# Reference: https://x.com/EncapsulateJ/status/1823063034459549819
+# Reference: https://www.virustotal.com/gui/file/5f0d0b84ba315978ca1c33e1574041f4b45e81bc4ce7bb34fc31e2f7dc643707/detection
+# Reference: https://www.virustotal.com/gui/file/89976e5160cd9779398219fb2f66827e259c71ec5932f34e6cc246616f4125ce/detection
+
+8.222.186.154:8000
+update-system.bond
+
 # Generic
 
 /.sliver-client/
