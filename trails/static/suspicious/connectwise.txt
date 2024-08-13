@@ -131,3 +131,7 @@ whelp.top
 yg1back.site
 zhelp.top
 zonesc.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/9026cd41431f18e7229f97fc77041c46d86fcd323e2a87e95fe08c699c5946b7/detection
+
+37.221.67.23:8041
