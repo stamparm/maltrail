@@ -311,3 +311,12 @@ csback.giize.com
 # Reference: https://www.virustotal.com/gui/ip-address/79.110.49.62/relations
 
 79.110.49.62:8041
+
+# Reference: https://www.virustotal.com/gui/ip-address/79.110.49.91/relations
+# Reference: https://www.virustotal.com/gui/file/60a48b80e2a35f3c74d2d055f46fd8c323d49efaedf7a7e57d9d5c7eee9b73c8/detection
+# Reference: https://www.virustotal.com/gui/file/c4499d6c4faf0b02d9eeff158d30cb08d1bc2f1a91f1bcdbf506c0dfb93caca6/detection
+# Reference: https://www.virustotal.com/gui/file/dcfd3588fe702c267c481bf726798dc137ec870c7df570410d53c5c95702653f/detection
+# Reference: https://www.virustotal.com/gui/file/f78982e96d3928ac60fb282d9fb1bb67a02c0b7b56fe1376dad99a4bc2a55fde/detection
+
+79.110.49.91:8041
+sisngl21a.ddns.net
