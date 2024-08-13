@@ -188,3 +188,8 @@ http://91.92.240.32
 
 91.92.249.120:8041
 supportservice.zapto.org
+
+# Reference: https://www.virustotal.com/gui/ip-address/91.92.241.134/relations
+
+91.92.241.134:8041
+ltcare.top
