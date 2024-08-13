@@ -214,3 +214,11 @@ whelp.pro
 # Reference: https://www.virustotal.com/gui/ip-address/79.110.49.150/relations
 
 79.110.49.150:8041
+
+# Reference: https://www.virustotal.com/gui/ip-address/94.156.68.73/relations
+# Reference: https://www.virustotal.com/gui/file/47ad9db1315d4daff66f867586b0f3cd4f9bd309e27629a56c9e983ae0f199cf/detection
+
+94.156.68.73:8041
+antwerphouse.be
+hlhelp.site
+jjsjskl221.work.gd
