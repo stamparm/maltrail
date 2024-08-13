@@ -320,3 +320,7 @@ csback.giize.com
 
 79.110.49.91:8041
 sisngl21a.ddns.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/194.59.30.225/relations
+
+194.59.30.225:8041
