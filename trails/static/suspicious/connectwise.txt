@@ -324,3 +324,7 @@ sisngl21a.ddns.net
 # Reference: https://www.virustotal.com/gui/ip-address/194.59.30.225/relations
 
 194.59.30.225:8041
+
+# Reference: https://www.virustotal.com/gui/ip-address/194.59.31.88/relations
+
+194.59.31.88:8041
