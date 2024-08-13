@@ -179,3 +179,7 @@ dts1berckks.loginlink2.site
 dts1berckks.mycoffeehouse.site
 w56d.dts1berckks.loginlink2.site
 w56d.dts1berckks.mycoffeehouse.site
+
+# Reference: https://www.virustotal.com/gui/ip-address/91.92.240.32/relations
+
+http://91.92.240.32
