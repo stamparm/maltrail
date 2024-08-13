@@ -307,3 +307,7 @@ mkp0brkers.loginlink2.site
 cs1backks.site
 cshelp.site
 csback.giize.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/79.110.49.62/relations
+
+79.110.49.62:8041
