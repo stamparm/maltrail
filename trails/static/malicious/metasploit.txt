@@ -5488,3 +5488,7 @@ http://185.208.158.203
 
 85.209.153.115:7212
 85.209.153.115:7777
+
+# Reference: https://www.virustotal.com/gui/file/e9c7f5af9eefe3235d28ea83897f21369cc2a63d361bb02528b018473cecda6d/detection
+
+118.26.38.52:16618
