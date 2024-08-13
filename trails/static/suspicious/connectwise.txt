@@ -222,3 +222,10 @@ whelp.pro
 antwerphouse.be
 hlhelp.site
 jjsjskl221.work.gd
+
+# Reference: https://www.virustotal.com/gui/ip-address/93.185.167.143/relations
+
+93.185.167.143:8041
+mcaresup.com
+dasds21.zapto.org
+mmakk2121.zapto.org
