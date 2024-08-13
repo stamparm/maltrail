@@ -193,3 +193,14 @@ supportservice.zapto.org
 
 91.92.241.134:8041
 ltcare.top
+
+# Reference: https://www.virustotal.com/gui/ip-address/94.156.65.4/relations
+# Reference: https://www.virustotal.com/gui/file/ffe30f14b71c317ca8289bf2c31f9b0b67ac1d503d3fac2ec3cfc834d0af81a8/detection
+
+45.137.20.31:6606
+94.156.65.4:8041
+heistzeedijk.be
+lciuervvoufo87q32uiewo78vl.icu
+vfcq78ogviuywaraj.com
+vfcq78ogviuywaraj.org
+u28m1q342.floki-wallet.com
