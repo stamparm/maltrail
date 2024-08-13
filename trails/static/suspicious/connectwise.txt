@@ -135,3 +135,8 @@ zonesc.ddns.net
 # Reference: https://www.virustotal.com/gui/file/9026cd41431f18e7229f97fc77041c46d86fcd323e2a87e95fe08c699c5946b7/detection
 
 37.221.67.23:8041
+
+# Reference: https://www.virustotal.com/gui/file/15cf939d82a48ef54b00ea86b514970ed8569bd52690eff10ae291baf05a1c12/detection
+
+91.92.247.175:8041
+klhelp.site
