@@ -204,3 +204,9 @@ lciuervvoufo87q32uiewo78vl.icu
 vfcq78ogviuywaraj.com
 vfcq78ogviuywaraj.org
 u28m1q342.floki-wallet.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/91.92.250.238/relations
+
+91.92.250.238:8041
+jhelp.pro
+whelp.pro
