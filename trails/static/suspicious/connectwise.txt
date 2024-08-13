@@ -155,3 +155,7 @@ alert4.be
 sahelp.site
 sshelp.site
 secdlform.work.gd
+
+# Reference: https://www.virustotal.com/gui/file/a650b5afff97f8d03e25b710c2038213c31b1fd06a86e6cbeddf285c1b54ce5e/detection
+
+peritumsolucoes.com
