@@ -275,3 +275,8 @@ scback.theworkpc.com
 91.92.249.254:8041
 bhelp.site
 lhelp.us
+
+# Reference: https://www.virustotal.com/gui/file/8abff3bda93872d3a0021ca38f0909c139245b2c1880c6f2ffa17eb71c0a948e/detection
+# Reference: https://www.virustotal.com/gui/file/c5c633b94ff887a5e8de1d12952a604ffdf7978f941dd7da63b654f84577c4d1/detection
+
+92.243.243:8041
