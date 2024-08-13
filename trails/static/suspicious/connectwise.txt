@@ -168,3 +168,14 @@ peritumsolucoes.com
 
 79.110.49.245:8041
 iiwq24.zapto.org
+
+# Reference: https://www.virustotal.com/gui/ip-address/213.232.235.44/relations
+# Reference: https://www.virustotal.com/gui/file/ac4238aa1a07193232a07b11f8b2425ea38029538f004020adfc268ba6ecb3ff/detection
+
+213.232.235.44:8041
+loginlink2.site
+mycoffeehouse.site
+dts1berckks.loginlink2.site
+dts1berckks.mycoffeehouse.site
+w56d.dts1berckks.loginlink2.site
+w56d.dts1berckks.mycoffeehouse.site
