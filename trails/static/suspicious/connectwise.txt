@@ -88,3 +88,8 @@ viewertest.buzz
 79.110.49.157:8041
 railindiaticket.in
 poyttwq.zapto.org
+
+# Reference: https://www.virustotal.com/gui/file/61e05c1375bf53cfd0b6dc43d73b76e0c76a21829d119cfc410175a91c531be4/detection
+
+45.83.31.11:8041
+web.quasarcomputer.it
