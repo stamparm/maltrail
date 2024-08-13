@@ -280,3 +280,13 @@ lhelp.us
 # Reference: https://www.virustotal.com/gui/file/c5c633b94ff887a5e8de1d12952a604ffdf7978f941dd7da63b654f84577c4d1/detection
 
 92.243.243:8041
+
+# Reference: https://www.virustotal.com/gui/ip-address/94.156.68.119/relations
+# Reference: https://www.virustotal.com/gui/file/0d480e64e68b30a7d645b1cff7d5629d40b202b1fe4df0f9462cae1aa4744210/detection
+# Reference: https://www.virustotal.com/gui/file/56cb4a5dd12f65ab87caf22ea169f0dd4ff2fd7cd4e4c45ad1937a8fdb9414d8/detection
+
+194.59.31.58:8041
+durisoir.be
+ncwindows.be
+rhelp.pro
+dorsibmvy.linkpc.net
