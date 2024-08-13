@@ -284,8 +284,10 @@ lhelp.us
 # Reference: https://www.virustotal.com/gui/ip-address/94.156.68.119/relations
 # Reference: https://www.virustotal.com/gui/file/0d480e64e68b30a7d645b1cff7d5629d40b202b1fe4df0f9462cae1aa4744210/detection
 # Reference: https://www.virustotal.com/gui/file/56cb4a5dd12f65ab87caf22ea169f0dd4ff2fd7cd4e4c45ad1937a8fdb9414d8/detection
+# Reference: https://www.virustotal.com/gui/file/4271578f913369e42a23ef900285641581599c315fb9a2db00fb306c8ee89797/detection
 
 194.59.31.58:8041
+94.156.68.119:8041
 durisoir.be
 ncwindows.be
 rhelp.pro
