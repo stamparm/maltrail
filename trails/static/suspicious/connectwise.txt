@@ -146,3 +146,12 @@ kkkssi21.work.gd
 # Reference: https://www.virustotal.com/gui/file/35819c162bfb5a58bbf39e33da0eaeaabbea63bc41b7663f35060d4424228a93/detection
 
 91.92.241.2:8041
+
+# Reference: https://www.virustotal.com/gui/ip-address/91.92.255.71/relations
+# Reference: https://www.virustotal.com/gui/file/ecd0368f3fdec503981036632383fcc513441e1b22df37fdf84820b8c8a8ac35/detection
+
+91.92.255.71:8041
+alert4.be
+sahelp.site
+sshelp.site
+secdlform.work.gd
