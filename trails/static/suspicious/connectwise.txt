@@ -269,3 +269,9 @@ scback.theworkpc.com
 # Reference: https://www.virustotal.com/gui/file/f6a9e9e1cb89d0d1f32b7112b4bf0aedaed3a5c862d4d83b3638183263b7ce9e/detection
 
 193.26.115.231:5839
+
+# Reference: https://www.virustotal.com/gui/ip-address/91.92.249.254/relations
+
+91.92.249.254:8041
+bhelp.site
+lhelp.us
