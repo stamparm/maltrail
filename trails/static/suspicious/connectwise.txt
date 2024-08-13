@@ -258,3 +258,7 @@ scback.theworkpc.com
 # Reference: https://www.virustotal.com/gui/ip-address/103.35.121.63/relations
 
 103.35.121.63:8041
+
+# Reference: https://www.virustotal.com/gui/ip-address/194.59.30.184/relations
+
+194.59.30.184:8041
