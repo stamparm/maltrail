@@ -160,3 +160,11 @@ secdlform.work.gd
 # Reference: https://www.virustotal.com/gui/file/a650b5afff97f8d03e25b710c2038213c31b1fd06a86e6cbeddf285c1b54ce5e/detection
 
 peritumsolucoes.com
+
+# Reference: https://www.virustotal.com/gui/file/f2056a3a13ffc5c3097d2fd286463433f4c913f38736a91afabe8abea3182d87/detection
+# Reference: https://www.virustotal.com/gui/file/c512ea88b7cf98b368686b9d3708d02426a8bcbc30ee0384e679a30d5fb088c3/detection
+# Reference: https://www.virustotal.com/gui/file/3fa2bb31f169cce2ee77655338e906d24a627a4cfa7f7fc9169d041759dbcf41/detection
+# Reference: https://www.virustotal.com/gui/file/3b0a9cf9d316e8523b845cf126e6997d578d41f8f100569ea8c6bb6f044a5183/detection
+
+79.110.49.245:8041
+iiwq24.zapto.org
