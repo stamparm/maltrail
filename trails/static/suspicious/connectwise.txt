@@ -210,3 +210,7 @@ u28m1q342.floki-wallet.com
 91.92.250.238:8041
 jhelp.pro
 whelp.pro
+
+# Reference: https://www.virustotal.com/gui/ip-address/79.110.49.150/relations
+
+79.110.49.150:8041
