@@ -229,3 +229,9 @@ jjsjskl221.work.gd
 mcaresup.com
 dasds21.zapto.org
 mmakk2121.zapto.org
+
+# Reference: https://www.virustotal.com/gui/ip-address/37.221.67.201/relations
+# Reference: https://www.virustotal.com/gui/file/116b1a8dd9ed4e41da69079aed479c570e86280a66ae193ff23a6c20566d04db/detection
+
+37.221.67.201:8041
+ctback.giize.com
