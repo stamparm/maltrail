@@ -262,3 +262,10 @@ scback.theworkpc.com
 # Reference: https://www.virustotal.com/gui/ip-address/194.59.30.184/relations
 
 194.59.30.184:8041
+
+# Reference: https://www.virustotal.com/gui/file/5480daf2c84e7b26fac6bfb673b083fb8e14452b6ac4b2ab290057e5232f3931/detection
+# Reference: https://www.virustotal.com/gui/file/5c7bd28a10ea4544658d9daa286f7093367a10a47489fb0fd809d8bde113b8a5/detection
+# Reference: https://www.virustotal.com/gui/file/b9d412bebd3eb7db10053aa265f765a3e3ea5e47558f2dd0ea66e0ee5fbf21eb/detection
+# Reference: https://www.virustotal.com/gui/file/f6a9e9e1cb89d0d1f32b7112b4bf0aedaed3a5c862d4d83b3638183263b7ce9e/detection
+
+193.26.115.231:5839
