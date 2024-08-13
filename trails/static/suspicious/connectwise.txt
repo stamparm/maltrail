@@ -299,3 +299,11 @@ mkhelp.site
 tm1back.site
 mkp0brkers.loginlink2.site
 9g5f.mkp0brkers.loginlink2.site
+
+# Reference: https://www.virustotal.com/gui/ip-address/85.239.33.100/relations
+# Reference: https://www.virustotal.com/gui/file/6a1b92eeccfbd93245499b0a6381c69eb03b9ae2b04e8bb1e5a057421e38cb68/detection
+
+85.239.33.100:8041
+cs1backks.site
+cshelp.site
+csback.giize.com
