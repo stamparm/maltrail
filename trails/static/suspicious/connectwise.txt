@@ -142,3 +142,7 @@ zonesc.ddns.net
 91.92.247.175:8041
 klhelp.site
 kkkssi21.work.gd
+
+# Reference: https://www.virustotal.com/gui/file/35819c162bfb5a58bbf39e33da0eaeaabbea63bc41b7663f35060d4424228a93/detection
+
+91.92.241.2:8041
