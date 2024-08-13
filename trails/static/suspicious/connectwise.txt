@@ -78,3 +78,13 @@ sup2.sp3300.ru
 
 192.3.243.147:8041
 viewertest.buzz
+
+# Reference: https://x.com/malwrhunterteam/status/1823262949789544937
+# Reference: https://www.virustotal.com/gui/file/af0c898ab09223b4adb394e52928c835d144106ea382dd21418ae707687e4f76/detection
+# Reference: https://www.virustotal.com/gui/file/9ebc018a2f3fe77b5355c2d9508133505d7ef55f251f13a175615dbf81e26fe9/detection
+# Reference: https://www.virustotal.com/gui/file/666aa713579df90134c83e3297eba42dd7d0d35bb343b9cd94af0793e8f8a0ab/detection
+# Reference: https://www.virustotal.com/gui/file/4e81851729d58f321bb83bdb03200f62bc5ee56e0703b2d609a3923a033d5b53/detection
+
+79.110.49.157:8041
+railindiaticket.in
+poyttwq.zapto.org
