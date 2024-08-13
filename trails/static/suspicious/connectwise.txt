@@ -183,3 +183,8 @@ w56d.dts1berckks.mycoffeehouse.site
 # Reference: https://www.virustotal.com/gui/ip-address/91.92.240.32/relations
 
 http://91.92.240.32
+
+# Reference: https://www.virustotal.com/gui/file/e527f198467dab1c1781e1341af5b1f3881820d778498fa12a0f609e5b8ad7e5/detection
+
+91.92.249.120:8041
+supportservice.zapto.org
