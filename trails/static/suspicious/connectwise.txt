@@ -290,3 +290,12 @@ durisoir.be
 ncwindows.be
 rhelp.pro
 dorsibmvy.linkpc.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/94.103.188.17/relations
+# Reference: https://www.virustotal.com/gui/file/0b09a7d2eddca49171d4e266b73a0170d2cc35ee0b5baa285dc9ca0d1388d8d9/detection
+
+94.103.188.17:8041
+mkhelp.site
+tm1back.site
+mkp0brkers.loginlink2.site
+9g5f.mkp0brkers.loginlink2.site
