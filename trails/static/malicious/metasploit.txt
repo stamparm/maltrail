@@ -5496,3 +5496,7 @@ http://185.208.158.203
 # Reference: https://www.virustotal.com/gui/file/be90cb05a963dae4778b831b370c5ad51cbc1c0534f54649682d87917591cc52/detection
 
 185.208.158.169:443
+
+# Reference: https://www.virustotal.com/gui/file/85421ddd3b528cea1f78bd17b9e8ef9c8c6794cb41676b6a4d9bd7287d52d5f5/detection
+
+185.208.158.169:4444
