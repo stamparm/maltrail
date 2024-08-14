@@ -5508,3 +5508,7 @@ http://185.208.158.203
 # Reference: https://www.virustotal.com/gui/ip-address/185.208.158.169/relations
 
 kfkskkfe.xyz
+
+# Reference: https://x.com/drb_ra/status/1823655848167489802
+
+91.92.254.50:443
