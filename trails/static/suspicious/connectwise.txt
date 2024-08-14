@@ -238,7 +238,7 @@ ctback.giize.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/185.113.8.222/relations
 
-185.113.8.22:8041
+185.113.8.222:8041
 work36pnl99.site
 nrs18.loginlink1.site
 scback.theworkpc.com
