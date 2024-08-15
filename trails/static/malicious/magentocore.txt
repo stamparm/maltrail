@@ -12419,6 +12419,13 @@ cdn.pealink.store
 cdn.shebil.online
 cdn.svetmob.click
 
+# Reference: https://blog.sucuri.net/2024/08/prestashop-gtag-websocket-skimmer.html
+# Reference: https://www.virustotal.com/gui/ip-address/176.113.115.198/relations
+
+iconstaff.top
+cd.iconstaff.top
+cdn.iconstaff.top
+
 # Generic
 
 /assets/lfg.js
