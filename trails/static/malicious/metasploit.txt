@@ -5526,3 +5526,7 @@ kfkskkfe.xyz
 # Reference: https://www.virustotal.com/gui/file/78409c426e8604b26c5b3532486bbaa7dd67c1ea65eb21c406c3bfc453571b14/detection
 
 146.190.90.45:60002
+
+# Reference: https://www.virustotal.com/gui/file/39e2e90687f8d287ac36bbe049cc77662126aa8a0edb045108f144f190526fc9/detection
+
+100.28.171.91:443
