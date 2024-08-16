@@ -5541,3 +5541,11 @@ gogo.recordsbluemountain.com
 page.recordsbluemountain.com
 re.recordsbluemountain.com
 set.recordsbluemountain.com
+
+# Reference: https://www.virustotal.com/gui/file/c33bcd9c3492b71c6ac78eccffa26b6d059274536298cca3436e106c12193e26/detection
+
+restartyourchoices.com
+done.restartyourchoices.com
+iojquery.restartyourchoices.com
+jquery.restartyourchoices.com
+query.restartyourchoices.com
