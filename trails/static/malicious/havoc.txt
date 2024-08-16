@@ -2793,7 +2793,12 @@ http://8.220.219.76
 91.227.114.51:443
 91.92.241.141:82
 
+# Reference: https://x.com/HackingLZ/status/1824236568430690668
+
+136.144.160.175:8080
+
 # Generic
 
 /Havoc/payload/
 /Havoc/payloads/
+/havoc-handler.rc
