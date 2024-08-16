@@ -1789,6 +1789,7 @@ put.clickandanalytics.com
 # Reference: https://www.virustotal.com/gui/ip-address/2.59.222.122/relations
 # Reference: https://www.virustotal.com/gui/ip-address/88.151.192.253/relations
 # Reference: https://www.virustotal.com/gui/ip-address/89.23.103.32/relations
+# Reference: https://www.virustotal.com/gui/file/d9035339d29363e7ae7191b493a6b0c14e6584995f51b4fc3df73b6bf4beedba/detection
 
 linestoget.com
 specialnewspaper.com
@@ -1811,6 +1812,7 @@ go.specialnewspaper.com
 goto.stablelightway.com
 lists.clickandanalytics.com
 needgo.trackersline.com
+rate.specialtaskevents.com
 sleep.stratosbody.com
 spot.scriptsplatform.com
 stay.linestoget.com
