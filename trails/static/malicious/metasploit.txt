@@ -5517,3 +5517,12 @@ kfkskkfe.xyz
 # Reference: https://www.virustotal.com/gui/file/bf5fa08873648f7be26de7bdbf1e07252f285d6deeb21cc8a395882808788805/detection
 
 185.208.158.206:9988
+
+# Reference: https://x.com/malwrhunterteam/status/1824049414341534204
+# Reference: https://www.virustotal.com/gui/file/da1ca1201f9e4ee60706777d9d055e207ef4e3067f93053e7791998638e8442b/detection
+# Reference: https://www.virustotal.com/gui/file/d7e1c5cfec95331a4192f41c4eaa9298095648164f9e7aea941ca12810132a49/detection
+# Reference: https://www.virustotal.com/gui/file/d230ba4e9549752673c2968f11ff37b08ff8311139ce8213c02d31c6952f2f49/detection
+# Reference: https://www.virustotal.com/gui/file/7dab3d202f8d55ed05cde21fc4326d14b3484ce6ebb88378a38a3ddf9faa1649/detection
+# Reference: https://www.virustotal.com/gui/file/78409c426e8604b26c5b3532486bbaa7dd67c1ea65eb21c406c3bfc453571b14/detection
+
+146.190.90.45:60002
