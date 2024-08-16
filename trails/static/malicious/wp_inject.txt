@@ -1914,6 +1914,7 @@ notrobot.top
 
 bridgelinering.com
 colorschemeas.com
+findbestresultss.com
 lightsteper.com
 promsmotion.com
 210net.promsmotion.com
@@ -1935,6 +1936,8 @@ net.promsmotion.com
 page.specialnewspaper.com
 s.specialcraftbox.com
 show.bridgelinering.com
+stay.findbestresultss.com
+tracker.findbestresultss.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/2.59.222.157/relations
 
@@ -2107,16 +2110,25 @@ special.beatifulllhistory.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.79.251/relations
 
+cdntoswitchspirit.com
 forwardstarlight.com
 2frest.greenfastline.com
+comcss.cdntoswitchspirit.com
+cpjs.cdntoswitchspirit.com
+css.cdntoswitchspirit.com
 dominiorest.greenfastline.com
+est.cdntoswitchspirit.com
 fine.lineferaline.com
 follow.forwardstarlight.com
 from.forwardstarlight.com
 from.lineferaline.com
 goto.greenfastline.com
+js.cdntoswitchspirit.com
+malware-iconchest.cdntoswitchspirit.com
+rest.cdntoswitchspirit.com
 rest.lineferaline.com
 reste.greenfastline.com
+s.cdntoswitchspirit.com
 stay.forwardstarlight.com
 step.greenfastline.com
 
