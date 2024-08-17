@@ -4019,3 +4019,7 @@ tokenlon.im
 # Reference: https://www.virustotal.com/gui/domain/myseosucks.com/relations
 
 myseosucks.com
+
+# Reference: https://www.virustotal.com/gui/domain/cloudflarestorage.com/relations
+
+cloudflarestorage.com
