@@ -787,7 +787,7 @@ http://154.202.59.124
 http://185.141.26.116
 185.141.26.116:8443
 
-# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s.csv
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s.csv (# 2024-08-18)
 
 102.212.245.9:7443
 116.2.179.225:7443
@@ -798,8 +798,10 @@ http://185.141.26.116
 178.18.254.10:7443
 188.166.252.88:7443
 195.154.43.21:7443
+3.137.170.244:7443
 45.76.176.147:7443
 5.230.253.211:7443
+54.165.195.193:7443
 54.82.63.198:7443
 88.119.169.47:7443
 93.127.186.172:7443
