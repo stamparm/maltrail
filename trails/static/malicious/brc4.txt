@@ -786,3 +786,14 @@ liveupdatesmonitor.com
 # Reference: https://www.virustotal.com/gui/file/241719892a747862ca98f44bbe4b22336fabbafe0cae7e3a8b30d2a9290c48de/detection
 
 haileigh-oakes.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-08-18)
+
+http://18.177.226.4
+http://54.65.7.247
+114.132.183.203:443
+167.172.89.184:443
+212.64.13.7:443
+38.147.172.226:443
+43.159.193.173:443
+47.237.111.1:443
