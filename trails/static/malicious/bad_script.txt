@@ -8639,6 +8639,12 @@ cachline.com
 /wbinjget?q=
 /wbinjget
 
+# Reference: https://www.joesandbox.com/analysis/1393952#iocs
+# Reference: https://tria.ge/240617-vg68tazhkm/behavioral2
+
+/gAySB.php
+/gAySB.php?cnv_id=
+
 # Generic
 
 /js/altmanluggage.js
