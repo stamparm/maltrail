@@ -956,3 +956,23 @@ http://88.78.149.17
 
 bypassingsecurity.com
 o6tl7ucw4ik5den26omter4k2hllnbzxilp3oscuktvdofeuktb7qqid.onion
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-08-18)
+
+http://148.81.138.15
+http://66.175.210.153
+100.20.51.26:58008
+144.91.86.139:2155
+148.81.138.15:443
+161.35.40.151:8080
+172.105.85.61:3080
+18.158.145.15:443
+185.21.216.147:31010
+193.123.57.133:51029
+198.16.208.3:8888
+3.127.133.106:8080
+44.219.87.13:8080
+44.222.52.24:8080
+52.54.42.29:8080
+74.208.201.158:8080
+91.53.17.96:8080
