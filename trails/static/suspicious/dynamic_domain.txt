@@ -3635,3 +3635,7 @@ elangtama.com
 # Reference: https://www.virustotal.com/gui/domain/dns-dynamic.net/relations
 
 dns-dynamic.net
+
+# Reference: https://www.virustotal.com/gui/domain/fixip.org/relations
+
+fixip.org
