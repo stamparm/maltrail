@@ -3631,3 +3631,7 @@ itzzm.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-19-v10669/1904
 
 elangtama.com
+
+# Reference: https://www.virustotal.com/gui/domain/dns-dynamic.net/relations
+
+dns-dynamic.net
