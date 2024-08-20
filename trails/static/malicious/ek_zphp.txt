@@ -479,6 +479,10 @@ kirklareliliste.cfd
 legderlivesapp.online
 tlymxvx.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-19-v10669/1904
+
+localdominationsystems.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
