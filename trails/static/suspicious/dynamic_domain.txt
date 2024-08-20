@@ -3627,3 +3627,7 @@ eduarmor.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-31-v10657/1862
 
 itzzm.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-19-v10669/1904
+
+elangtama.com
