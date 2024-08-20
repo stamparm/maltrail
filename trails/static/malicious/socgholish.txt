@@ -3980,6 +3980,15 @@ ytrh.donors.eucharisticjesus.net
 zead.donors.eucharisticjesus.net
 zpip.donors.eucharisticjesus.net
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-19-v10669/1904
+# Reference: https://www.virustotal.com/gui/ip-address/178.236.246.252/relations
+
+sponsor.printondemandagency.com
+mvqj.sponsor.printondemandagency.com
+odtym.sponsor.printondemandagency.com
+qqizt.sponsor.printondemandagency.com
+yuzn.sponsor.printondemandagency.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
