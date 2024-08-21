@@ -13,3 +13,4 @@ auvbaiunaiuolinam.com/mailer/alexus.php
 # Generic
 
 /mailer/alexus.php
+/alexusmailer.php
