@@ -3028,6 +3028,7 @@ css.rdntocdns.com
 rest1.rdntocdns.com
 rest2.rdntocdns.com
 tmpl.rdntocdns.com
+wave.rdntocdns.com
 
 # Reference: https://x.com/_cr0n_/status/1811022304651993435
 # Reference: https://www.virustotal.com/gui/ip-address/185.155.186.25/relations
@@ -5571,3 +5572,29 @@ done.restartyourchoices.com
 iojquery.restartyourchoices.com
 jquery.restartyourchoices.com
 query.restartyourchoices.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-21-v10671/1910
+# Reference: https://www.virustotal.com/gui/file/d1536b0cad619b8da779f6be4ea5e50ec3eef59d99d37ce1321083feefc7aa70/detection
+
+blueselectorpage.com
+taskscompletedlists.com
+0.blueselectorpage.com
+1.blueselectorpage.com
+away.taskscompletedlists.com
+come.taskscompletedlists.com
+from.taskscompletedlists.com
+to.taskscompletedlists.com
+
+# Reference: https://www.virustotal.com/gui/file/46093c52adf2b499d112e5cec24179fa2af54a9f890572c31487cf2d2b29f1e9/detection
+
+broworker9s.com
+siteforyou3d.com
+0.siteforyou3d.com
+1.siteforyou3d.com
+2.siteforyou3d.com
+4.siteforyou3d.com
+5.siteforyou3d.com
+6.siteforyou3d.com
+7.siteforyou3d.com
+8.siteforyou3d.com
+9.siteforyou3d.com
