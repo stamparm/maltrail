@@ -483,6 +483,11 @@ tlymxvx.top
 
 localdominationsystems.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-21-v10671/1910
+
+aweland.store
+iprotosample.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
