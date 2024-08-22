@@ -2840,3 +2840,8 @@ haxmac.cc
 # Reference: https://www.virustotal.com/gui/ip-address/81.161.229.4/relations
 
 futurestresser.org
+
+# Reference: https://x.com/MalGamy12/status/1826621858319663565
+# Reference: https://www.virustotal.com/gui/file/6f429ae81ef2b99cd357ae51da315723ab10f3ee54780b82374000cbee430687/detection
+
+x00x.online
