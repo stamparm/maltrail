@@ -21661,3 +21661,7 @@ breavestcardioworkoutsforultimates04526.azurewebsites.net
 
 totalpart.z9.web.core.windows.net
 totalpartningonline.z9.web.core.windows.net
+
+# Reference: https://unit42.paloaltonetworks.com/profiling-detecting-malicious-dns-traffic/
+
+cqk1rt8hubcc73f3775g.networkcyclechain.com
