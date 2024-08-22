@@ -21664,4 +21664,5 @@ totalpartningonline.z9.web.core.windows.net
 
 # Reference: https://unit42.paloaltonetworks.com/profiling-detecting-malicious-dns-traffic/
 
+networkcyclechain.com
 cqk1rt8hubcc73f3775g.networkcyclechain.com
