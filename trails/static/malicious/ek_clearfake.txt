@@ -314,6 +314,10 @@ x52op6gt0i.xyz
 dais7nsa.pics
 dais7nsa.shop
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-21-v10671/1910
+
+expertcloud.xyz
+
 # Generic
 
 /a3A7qLVn/
