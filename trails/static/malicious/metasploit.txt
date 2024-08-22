@@ -5534,3 +5534,11 @@ kfkskkfe.xyz
 # Reference: https://x.com/r3dbU7z/status/1826296896249352456
 
 keylifeofenzyme.com
+
+# Reference: https://x.com/karol_paciorek/status/1826546190013382887
+# Reference: https://www.virustotal.com/gui/file/a9d119206523c7ea560192d17e85661ce82f59071ee8f125b690871920ae78d5/detection
+# Reference: https://www.virustotal.com/gui/file/7ffe92bc740ee5900047ae1351b9b46746c0a5e5d87135f547a4b5fb612cda24/detection
+# Reference: https://www.virustotal.com/gui/file/2bf229266c34f4f75572192aa259a0323b7b4540a5a29cb71a4fad337c620844/detection
+
+202.151.176.76:4444
+202.151.176.76:6666
