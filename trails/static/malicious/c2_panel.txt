@@ -874,6 +874,10 @@ http://68.183.92.154
 
 /Panel//check_panel.php
 
+# Reference: https://x.com/banthisguy9349/status/1826986945035022557
+
+147.45.79.168:3000
+
 # Generic
 
 /admin_123/auth.php
