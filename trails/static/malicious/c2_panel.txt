@@ -875,8 +875,10 @@ http://68.183.92.154
 /Panel//check_panel.php
 
 # Reference: https://x.com/banthisguy9349/status/1826986945035022557
+# Reference: https://search.censys.io/search?q=services.http.response.html_title%3D%22University+of+Oxford%22&resource=hosts
 
 147.45.79.168:3000
+87.251.64.112:3000
 
 # Generic
 
