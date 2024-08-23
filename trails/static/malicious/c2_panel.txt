@@ -880,6 +880,11 @@ http://68.183.92.154
 147.45.79.168:3000
 87.251.64.112:3000
 
+# Reference: https://blog.sucuri.net/2024/08/wordpress-websites-used-to-distribute-clearfake-trojan-malware.html
+
+http://176.59.196.133
+176.59.196.133:443
+
 # Generic
 
 /admin_123/auth.php
