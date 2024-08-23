@@ -799,3 +799,7 @@ http://54.65.7.247
 38.147.172.226:443
 43.159.193.173:443
 47.237.111.1:443
+
+# Reference: https://www.virustotal.com/gui/file/36a028434c55dd9fe73958b563815f52e4cbfebb5115bbd798e6e7270b457f9d/detection
+
+br.libjs.xyz
