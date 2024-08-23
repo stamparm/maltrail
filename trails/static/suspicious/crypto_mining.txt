@@ -1428,3 +1428,9 @@ zeph-eu2.nanopool.org
 47.76.24.49:33333
 5.161.70.189:33333
 c3.wptask.cyou
+
+# Reference: https://www.virustotal.com/gui/file/5f838d04ded091db91c69f7107e43bb0ec1db3b472e75c2d647cd3a53ed6db69/detection
+
+51.195.127.124:7777
+kryptex.network
+xmr.kryptex.network
