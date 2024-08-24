@@ -318,6 +318,10 @@ dais7nsa.shop
 
 expertcloud.xyz
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-23-v10673/1914
+
+skibidirizz.lol
+
 # Generic
 
 /a3A7qLVn/
