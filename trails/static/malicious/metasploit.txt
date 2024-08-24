@@ -5542,3 +5542,10 @@ keylifeofenzyme.com
 
 202.151.176.76:4444
 202.151.176.76:6666
+
+# Reference: https://x.com/ShanHolo/status/1827292314982572216
+# Reference: https://www.virustotal.com/gui/file/d865735fd3361cd6e68a275a5bc18d1fb7785c70e02b941e001be457709e9797/detection
+# Reference: https://www.virustotal.com/gui/file/c971cd66fc098215202b94564b2c9407d7b3af1025fe87f83c6e88c12a781c2b/detection
+
+74.235.106.69:4444
+74.235.106.69:4445
