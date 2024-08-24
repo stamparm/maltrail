@@ -2181,3 +2181,10 @@ http://4.227.79.100
 46.101.194.21:443
 54.245.187.223:445
 68.183.48.144:445
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-08-24)
+
+http://4.236.37.27
+3.252.25.98:445
+34.225.66.209:445
+35.238.17.229:445
