@@ -787,12 +787,14 @@ liveupdatesmonitor.com
 
 haileigh-oakes.com
 
-# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-08-18)
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-08-24)
 
 http://18.177.226.4
+http://43.206.47.12
 http://54.65.7.247
 103.234.72.154:50000
 114.132.183.203:443
+158.247.250.152:50000
 167.172.89.184:443
 167.172.89.184:8443
 212.64.13.7:443
