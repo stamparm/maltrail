@@ -12429,6 +12429,16 @@ iconstaff.top
 cd.iconstaff.top
 cdn.iconstaff.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-23-v10673/1914
+
+analytlx.shop
+artvislon.shop
+datawiz.shop
+deslgnpro.shop
+happywave.shop
+luckipath.shop
+trendset.website
+
 # Generic
 
 /assets/lfg.js
