@@ -488,6 +488,10 @@ localdominationsystems.com
 aweland.store
 iprotosample.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-23-v10673/1914
+
+elmipardaz.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
