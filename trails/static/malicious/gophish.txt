@@ -2623,3 +2623,11 @@ lamborghini-service.com
 31.220.44.127:443
 62.146.181.146:3333
 64.227.67.184:4000
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-08-24)
+
+104.248.116.158:4000
+104.248.13.237:4000
+128.199.1.27:4000
+3.14.79.193:4444
+64.23.148.185:3333
