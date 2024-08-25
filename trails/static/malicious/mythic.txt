@@ -2152,3 +2152,12 @@ http://194.195.122.86
 45.145.229.103:7443
 54.152.126.132:7443
 83.229.120.73:7443
+
+# Reference: https://threatfox.abuse.ch/browse/tag/Mythic/ (# 2024-08-25)
+
+http://34.30.202.89
+54.227.68.178:7443
+83.229.120.73:8443
+gadgetised.com
+totemcontent.com
+usedstuf.com
