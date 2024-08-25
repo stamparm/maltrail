@@ -5549,3 +5549,11 @@ keylifeofenzyme.com
 
 74.235.106.69:4444
 74.235.106.69:4445
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/IPPortC2s-30day.csv (# 2024-08-25)
+
+http://185.208.158.169
+193.3.23.121:443
+206.189.29.110:443
+23.98.137.197:443
+38.180.189.150:443
