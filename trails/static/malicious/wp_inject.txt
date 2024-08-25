@@ -2926,6 +2926,7 @@ startservicefounds.comapi.startservicefounds.com
 # Reference: https://www.virustotal.com/gui/file/e50f6b96447d64dda24187c651586247c69d004708f75cb744245c7471398f6b/detection
 # Reference: https://www.virustotal.com/gui/file/fb01066660beb228116f341e25ae5d637d79af2817c7a87d74fb5e8d604c1785/detection
 
+bestonlinesupplies.com
 cloudswiftcdn.com
 edgecdnc.com
 edgerapidcdn.com
@@ -2946,9 +2947,11 @@ content.gorapidcdn.com
 content.streamfastcdn.com
 go.syndcloud.com
 host.gsslcloud.com
+mail.bestonlinesupplies.com
 metrics.gocloudmaps.com
 secure.gdcstatic.com
 secure.globalultracdn.com
+server.bestonlinesupplies.com
 static.rapidglobalorbit.com
 synd.edgecdnc.com
 
