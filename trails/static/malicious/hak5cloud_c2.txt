@@ -1031,6 +1031,7 @@ c2.fortify.cloud
 c2.glod.lu
 c2.gohydra.net
 c2.hoag.cloud
+c2.hopto.org
 c2.hxk.ch
 c2.ipfreaks.de
 c2.irt-tx.com
