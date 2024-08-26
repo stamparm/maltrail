@@ -12462,6 +12462,19 @@ cdn.roztab.shop
 cdn.samloop.online
 cdn.vitadigit.quest
 
+# Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24#tab=resolutions
+
+erhiteed.site
+geytiit.shop
+jeqvic.quest
+poglot.click
+povemob.store
+cdn.erhiteed.site
+cdn.geytiit.shop
+cdn.jeqvic.quest
+cdn.poglot.click
+cdn.povemob.store
+
 # Reference: https://app.validin.com/detail?type=ip&find=195.242.111.0%2F24#tab=resolutions
 
 cheqseep.online
