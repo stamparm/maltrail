@@ -5557,3 +5557,8 @@ http://185.208.158.169
 206.189.29.110:443
 23.98.137.197:443
 38.180.189.150:443
+
+# Reference: https://x.com/malwrhunterteam/status/1828018239504334909
+# Reference: https://www.virustotal.com/gui/file/fcbcd8eeafb66ae9033b7f09116eac5c27333b6c9e30d9a2be817ec3b72c3c17/detection
+
+baiduchinese.oss-cn-beijing.aliyuncs.com
