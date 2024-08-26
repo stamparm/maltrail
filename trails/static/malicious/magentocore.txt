@@ -12439,6 +12439,29 @@ happywave.shop
 luckipath.shop
 trendset.website
 
+# Reference: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions
+
+gamdev.site
+jirelit.shop
+lhetoyer.store
+logidigit.online
+nesudteq.click
+otroot.quest
+peretec.click
+roztab.shop
+samloop.online
+vitadigit.quest
+cdn.gamdev.site
+cdn.jirelit.shop
+cdn.lhetoyer.store
+cdn.logidigit.online
+cdn.nesudteq.click
+cdn.otroot.quest
+cdn.peretec.click
+cdn.roztab.shop
+cdn.samloop.online
+cdn.vitadigit.quest
+
 # Generic
 
 /assets/lfg.js
