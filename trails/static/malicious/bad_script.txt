@@ -8655,6 +8655,21 @@ cachline.com
 /gAySB.php
 /gAySB.php?cnv_id=
 
+# Reference: https://x.com/malwrhunterteam/status/1828028438407479788
+# Reference: https://www.virustotal.com/gui/file/0077647aa98f096591f70bbd3f1a0364b56c5e39f68ed85509b28a31b2d4f869/detection
+
+/0day.asp
+/0day.aspx
+/0day.bat
+/0day.hta
+/0day.js
+/0day.ps1
+/0day.py
+/0day.txt
+/0day.vbs
+/0day.wsf
+/0day.xsl
+
 # Generic
 
 /js/altmanluggage.js
