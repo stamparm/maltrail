@@ -5103,3 +5103,5 @@ linux.kyun.li
 /sliver-server_linux
 /sliver-server_linux.sig
 /nc-ngrok-sliver-cron.sh
+/sliver-cron.sh
+/ssh-sliver-cron.sh
