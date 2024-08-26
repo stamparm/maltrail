@@ -12462,6 +12462,13 @@ cdn.roztab.shop
 cdn.samloop.online
 cdn.vitadigit.quest
 
+# Reference: https://app.validin.com/detail?type=ip&find=195.242.111.0%2F24#tab=resolutions
+
+cheqseep.online
+dushiotk.store
+cdn.cheqseep.online
+cdn.dushiotk.store
+
 # Generic
 
 /assets/lfg.js
