@@ -805,3 +805,13 @@ http://54.65.7.247
 # Reference: https://www.virustotal.com/gui/file/36a028434c55dd9fe73958b563815f52e4cbfebb5115bbd798e6e7270b457f9d/detection
 
 br.libjs.xyz
+
+# Reference: https://x.com/malwrhunterteam/status/1828024457686061312
+# Reference: https://www.virustotal.com/gui/file/3a1f90acf560c1f5b675fcecb8b172c7eba7190c4f511c59759f2a2ab2c4bdff/detection
+
+dkq4prtotbji7.cloudfront.net
+fifgroup.azureedge.net
+/informasi-perusahaan/informasi-umum
+/informasi-perusahaan
+/informasi-umum
+/mitra-fifgroup
