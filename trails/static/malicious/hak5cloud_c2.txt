@@ -1030,6 +1030,7 @@ c2.emptyinbox.ca
 c2.fortify.cloud
 c2.glod.lu
 c2.gohydra.net
+c2.h7-technologies.com
 c2.hoag.cloud
 c2.hopto.org
 c2.hxk.ch
@@ -1066,6 +1067,7 @@ c2.redc2portal.com
 c2.redteamatx.com
 c2.rehjr.com
 c2.rmenetworks.com
+c2.saltsec.at
 c2.sec.craigasimon.com
 c2.shadowtester.uk
 c2.sr2soc.com
