@@ -5560,8 +5560,10 @@ http://94.156.79.8
 94.156.79.8:999
 
 # Reference: https://twitter.com/unmaskparasites/status/1765144260729618782
+# Reference: https://x.com/raghav127001/status/1826530849178972189
 # Reference: https://blog.sucuri.net/2024/02/web3-crypto-malware-angel-drainer.html
 # Reference: https://blog.sucuri.net/2024/03/from-web3-drainer-to-distributed-wordpress-brute-force-attack.html
+# Reference: https://www.virustotal.com/gui/file/ee4c04a80af6f7e2c2fb2016248bcdf8fcdf0c04552fa60fcb4bd879f8783e9f/detection
 
 4378uehdkf.com
 65a044a0023ca.com
@@ -5577,6 +5579,7 @@ cloudcdnjs.com
 cloudflare-eth.org
 cloudweb3-api.com
 coingecko-priceapi.com
+dynamic-flows.com
 dynamic-linx.com
 dynamiclinks.cfd
 dynamiclink.lol
