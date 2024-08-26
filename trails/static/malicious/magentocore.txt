@@ -12310,7 +12310,6 @@ techglitc.com
 
 # Reference: https://x.com/sdcyberresearch/status/1817910238520959453
 
-click-analytics.net
 abbiecrm.com
 adsprep.online
 b2blinkstorage.com
@@ -12319,14 +12318,17 @@ cartflowcrm.com
 cartfreedom.com
 cartualcrm.com
 clarkcrm.com
+click-analytics.net
 corkscrm.com
 crmbargs.com
 crmcrown.com
 crmdaps.com
 crmfant.site
 crmgibs.com
+crmkrafft.com
 crmprew.com
 crmprove.com
+crmrebss.com
 fastbcrm.com
 octalcrm.com
 quickcartcloud.com
@@ -12334,8 +12336,8 @@ shopcartcrm.com
 smartcli.org
 smoothb2b.com
 smoothconnect.org
-speedysalestore.com
 speedspree.org
+speedysalestore.com
 tikmoneyid.cfd
 trustedapi.org
 updatecrm.org
