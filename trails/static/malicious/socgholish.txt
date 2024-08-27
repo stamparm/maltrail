@@ -3989,6 +3989,26 @@ odtym.sponsor.printondemandagency.com
 qqizt.sponsor.printondemandagency.com
 yuzn.sponsor.printondemandagency.com
 
+# Reference: https://www.virustotal.com/gui/file/9e2a099e6e7ee331f011008436d48c949fede6ac4f6536276b7850b1b31e59bf/detection
+# Reference: https://www.virustotal.com/gui/file/8a4f5c4b6f7446e4f888b009541750cd8dc2c44ea6bdda21da2192c0c5adc45d/detection
+
+contest.printondemandmerchandise.com
+aui.contest.printondemandmerchandise.com
+gca.contest.printondemandmerchandise.com
+hufh.contest.printondemandmerchandise.com
+ipoil.contest.printondemandmerchandise.com
+izc.contest.printondemandmerchandise.com
+ngao.contest.printondemandmerchandise.com
+oxvs.contest.printondemandmerchandise.com
+pmvnh.contest.printondemandmerchandise.com
+pxvr.contest.printondemandmerchandise.com
+qhhj.contest.printondemandmerchandise.com
+qubvs.contest.printondemandmerchandise.com
+rjb.contest.printondemandmerchandise.com
+smog.contest.printondemandmerchandise.com
+ynowk.contest.printondemandmerchandise.com
+zrs.contest.printondemandmerchandise.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
