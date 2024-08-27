@@ -492,6 +492,10 @@ iprotosample.com
 
 elmipardaz.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-26-v10674/1918
+
+birddogerc.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
