@@ -8673,6 +8673,7 @@ cachline.com
 # Reference: https://x.com/banthisguy9349/status/1828499255184552253
 
 /Payload.kt
+/ViewInjectionsad.kt
 
 # Generic
 
