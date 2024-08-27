@@ -5091,6 +5091,11 @@ linux.kyun.li
 54.93.184.206:443
 66.135.8.209:443
 
+# Reference: https://x.com/RacWatchin8872/status/1828455950283370696
+# Reference: https://www.virustotal.com/gui/file/5c26e281b126cd4b4b28c165ac4710d343f5c8e38eab677d6d544030e6dbceda/detection
+
+8.219.57.178:8999
+
 # Generic
 
 /.sliver-client/
