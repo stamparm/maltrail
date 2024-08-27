@@ -322,6 +322,10 @@ expertcloud.xyz
 
 skibidirizz.lol
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-26-v10674/1918
+
+ajsdiaolke.shop
+
 # Generic
 
 /a3A7qLVn/
