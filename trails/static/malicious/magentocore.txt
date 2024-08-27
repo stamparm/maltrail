@@ -12484,6 +12484,15 @@ dushiotk.store
 cdn.cheqseep.online
 cdn.dushiotk.store
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-26-v10674/1918
+
+artickon.shop
+articon.website
+happyllfe.online
+luckkystar.shop
+seilsmart.shop
+selllify.shop
+
 # Generic
 
 /assets/lfg.js
