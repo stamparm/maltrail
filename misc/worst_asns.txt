@@ -4709,3 +4709,10 @@
 80.76.42.0/24,timehost-as
 93.170.123.0/24,timehost-as
 94.103.183.0/24,timehost-as
+
+# Reference: https://x.com/banthisguy9349/status/1827666527555834271
+# Reference: https://ipinfo.io/AS49042
+
+45.14.226.0/24,phanes-networks
+45.148.120.0/24,phanes-networks
+45.148.123.0/24,phanes-networks
