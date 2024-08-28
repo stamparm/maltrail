@@ -8680,6 +8680,13 @@ cachline.com
 gatetodisplaycontent.com
 /3d336374d870f17c9375aee0e6779e7b/invoke.js
 
+# Reference: https://x.com/0Dayhta/status/1828461255784378562
+
+/cd_v2_x64.xsl
+/cd_v2_x86.xsl
+/cd_v4_x64.xsl
+/cd_v4_x86.xsl
+
 # Generic
 
 /js/altmanluggage.js
