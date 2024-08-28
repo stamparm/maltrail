@@ -5096,6 +5096,16 @@ linux.kyun.li
 
 8.219.57.178:8999
 
+# Reference: https://x.com/malwrhunterteam/status/1828667033296228557
+# Reference: https://www.virustotal.com/gui/ip-address/84.246.85.36/relations
+# Reference: https://www.virustotal.com/gui/file/f85c77e8516ed091939080aa7f9c6323c5ce3ffbef9adb635dc9fc1a82c446d0/detection
+# Reference: https://www.virustotal.com/gui/file/7ccb0d8ec4caaaa85c38536797d66c90b95e278c243607ddf4aaae5461dd2e8a/detection
+
+eurotechconnect.com
+redslv241f166bdf98.eurotechconnect.com
+redslv251f166bdf98.eurotechconnect.com
+redslv25sf166bdf98.eurotechconnect.com
+
 # Generic
 
 /.sliver-client/
