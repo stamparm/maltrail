@@ -8675,6 +8675,11 @@ cachline.com
 /Payload.kt
 /ViewInjectionsad.kt
 
+# Reference: https://www.virustotal.com/gui/file/faf05cc7a617e771f061ed131429ccacfe9039634cbd0259c455c3e8baa6a129/detection
+
+gatetodisplaycontent.com
+/3d336374d870f17c9375aee0e6779e7b/invoke.js
+
 # Generic
 
 /js/altmanluggage.js
