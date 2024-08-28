@@ -3644,3 +3644,8 @@ fixip.org
 # Reference: https://www.virustotal.com/gui/domain/flexiblegeeks.com/relations
 
 flexiblegeeks.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-27-v10675/1920
+
+42.ar
+ridespirals.com
