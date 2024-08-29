@@ -2507,6 +2507,10 @@ User-Agent:Mozilla
 
 \bMALCJS\b
 
+# Reference: https://x.com/g0njxa/status/1829177645348860120
+
+NIKMOK
+
 # Misc
 
 information_schema
