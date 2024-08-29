@@ -32,3 +32,8 @@ ngrok-free.dev
 # Reference: https://app.validin.com/axon?find=54.218.37.147&type=ip
 
 hotspotproxy.tk
+
+# Reference: https://x.com/malwrhunterteam/status/1829127614868439316
+# Reference: https://www.virustotal.com/gui/file/d8b11b8b437f83a1ad55c954b4a80081abfaf3c29cbc922d57b76bc20745111a/detection
+
+ngrok.pro
