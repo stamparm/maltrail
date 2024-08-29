@@ -12493,6 +12493,27 @@ luckkystar.shop
 seilsmart.shop
 selllify.shop
 
+# Reference: https://sansec.io/research/cosmicsting-cnext-persistent-backdoor
+
+accept.bar
+amocha.xyz
+cdn-webstats.com
+clearnetfab.net
+fallodick87-78.sbs
+inspectdlet.net
+jqueryuslibs.com
+jstatic201.com
+lererikal.org
+mamatmavali.ru
+nothingillegal.bond
+paie-locli.com
+sellerstat.site
+statsseo.com
+statstoday.org
+vincaolet.xyz
+webexcelsior.org
+cdn.inspectdlet.net
+
 # Generic
 
 /assets/lfg.js
