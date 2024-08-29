@@ -2887,6 +2887,11 @@ http://75.119.136.117
 20.109.43.28:8080
 75.119.136.117:443
 
+# Reference: https://x.com/malwrhunterteam/status/1829109740485349760
+# Reference: https://www.virustotal.com/gui/file/71f409086f2c11bc9736d54810300bd3d5ea8e35f1f8610ca164440deb828de5/detection
+
+nginx-imfi.fcv3.1197883384467965.cn-hangzhou.fc.devsapp.net
+
 # Generic
 
 /Havoc/payload/
