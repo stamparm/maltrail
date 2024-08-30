@@ -885,10 +885,6 @@ http://68.183.92.154
 http://176.59.196.133
 176.59.196.133:443
 
-# Reference: https://x.com/V3n0mStrike/status/1829338282980749453
-
-kaspersky-secure.ru
-
 # Generic
 
 /admin_123/auth.php
