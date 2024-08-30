@@ -5582,3 +5582,7 @@ nosuhiyan.site
 # Reference: https://www.virustotal.com/gui/domain/iranneda.cfd/relations
 
 iranneda.cfd
+
+# Reference: https://www.virustotal.com/gui/domain/ggm.kr/relations
+
+ggm.kr
