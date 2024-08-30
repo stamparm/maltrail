@@ -2512,8 +2512,14 @@ User-Agent:Mozilla
 NIKMOK
 
 # Reference: https://x.com/Jane_0sint/status/1829451117337399719
+# Reference: https://app.any.run/tasks/4a153e23-21c4-4001-93e1-c0aa1ea4e261
 
 Diamotrix
+
+# Reference: https://x.com/Jane_0sint/status/1829452981168718017
+# Reference: https://app.any.run/tasks/2296c79b-a1bb-4f42-b543-ece52d241372
+
+NuclearBot
 
 # Misc
 
