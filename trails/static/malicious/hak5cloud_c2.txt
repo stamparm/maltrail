@@ -993,6 +993,7 @@ authsmtp.safe-netsurfing.com
 autoconfig.svp-hamburg-sportschuetzen.de
 aws.mikzbots.xyz
 baconmcburgerton.com
+beamadmin.com
 bitwars.org
 blisteur.c2.mylittlepwnies.tech
 blupanthr.consulting
@@ -1028,6 +1029,7 @@ c2.dragonflysecurity.com
 c2.drogja.de
 c2.eddiequinn.xyz
 c2.emptyinbox.ca
+c2.flow-sec.de
 c2.fortify.cloud
 c2.glod.lu
 c2.gohydra.net
@@ -1054,6 +1056,7 @@ c2.milot.io
 c2.mjbates.com
 c2.motherduck.net
 c2.mumaw-lab.net
+c2.n0stra.com
 c2.network-protection.com
 c2.nit-solutions.com
 c2.nordcom.ca
@@ -1145,6 +1148,7 @@ fe198.windmilltest.xyz
 finallyhandled.com
 fix1.nask.waw.pl
 fun.marian-schneider.de
+grid.mikemyers.me
 h5.gstreet.duckdns.org
 h5.pass-support.de
 h5c2.h3x.it
