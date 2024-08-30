@@ -820,3 +820,10 @@ fifgroup.azureedge.net
 # Reference: https://www.virustotal.com/gui/file/079e3171048286472cff2b0267cd2d6a90bf9d7f45255f48031bf4bf2ac3b0b4/detection
 
 javaforyouedu.in
+
+# Reference: https://x.com/malwrhunterteam/status/1829130035808059668
+# Reference: https://www.virustotal.com/gui/ip-address/104.234.25.56/relations
+# Reference: https://www.virustotal.com/gui/file/59c2266a4db4250a90592075c32f49dc4341921414d78e9b9b9e092a083ba7a8/detection
+
+1398daufhauidhjkadf.com
+systematictld.com
