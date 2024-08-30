@@ -12443,6 +12443,7 @@ trendset.website
 
 # Reference: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions
 
+creftip.shop
 gamdev.site
 jirelit.shop
 lhetoyer.store
@@ -12453,6 +12454,7 @@ peretec.click
 roztab.shop
 samloop.online
 vitadigit.quest
+cdn.creftip.shop
 cdn.gamdev.site
 cdn.jirelit.shop
 cdn.lhetoyer.store
