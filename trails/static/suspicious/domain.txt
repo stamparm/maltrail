@@ -5586,3 +5586,7 @@ iranneda.cfd
 # Reference: https://www.virustotal.com/gui/domain/ggm.kr/relations
 
 ggm.kr
+
+# Reference: https://www.virustotal.com/gui/domain/ddnss.eu/relations
+
+ddnss.eu
