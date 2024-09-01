@@ -8687,6 +8687,10 @@ gatetodisplaycontent.com
 /cd_v4_x64.xsl
 /cd_v4_x86.xsl
 
+# Reference: https://www.virustotal.com/gui/file/828616945d46a2c161c17d88f0f8dd0b890107ec200551ad9b9836d71833fb6a/detection
+
+/downloadfaxfile28071991.php
+
 # Generic
 
 /js/altmanluggage.js
