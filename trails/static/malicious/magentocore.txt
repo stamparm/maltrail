@@ -12401,8 +12401,10 @@ cdn.truvit.shop
 
 helotop.site
 loetec.quest
+pustmob.online
 cdn.helotop.site
 cdn.loetec.quest
+cdn.pustmob.online
 
 # Reference: https://sansec.io/research/magento-wish-list-exploits
 
