@@ -12516,6 +12516,10 @@ vincaolet.xyz
 webexcelsior.org
 cdn.inspectdlet.net
 
+# Reference: https://x.com/sdcyberresearch/status/1830625427284525061
+
+cdnweb2analytics.com
+
 # Generic
 
 /assets/lfg.js
