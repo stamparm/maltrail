@@ -12520,6 +12520,10 @@ cdn.inspectdlet.net
 
 cdnweb2analytics.com
 
+# Reference: https://www.hybrid-analysis.com/sample/aa1bd1010ab75108b02e4082eed98733013b76e23a0584e33c3467c992e731dd
+
+cdnwebanalytics.com
+
 # Generic
 
 /assets/lfg.js
