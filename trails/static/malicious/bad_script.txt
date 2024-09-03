@@ -8691,6 +8691,16 @@ gatetodisplaycontent.com
 
 /downloadfaxfile28071991.php
 
+# Refernce: https://x.com/StrikeReadyLabs/status/1830774821795274784
+
+/Filex1.hta
+/Filexxx.hta
+/Filexxx2.hta
+/KKKKKKK1.hta
+/x1.hta
+/xxx.hta
+/xxx2.hta
+
 # Generic
 
 /js/altmanluggage.js
