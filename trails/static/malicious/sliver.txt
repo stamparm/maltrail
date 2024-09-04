@@ -5106,6 +5106,10 @@ redslv241f166bdf98.eurotechconnect.com
 redslv251f166bdf98.eurotechconnect.com
 redslv25sf166bdf98.eurotechconnect.com
 
+# Reference: https://www.virustotal.com/gui/file/29128a0bae00d9a38ac8ce26e1d85685b8a7b8c42e45701df8a36d47c33d13fc/detection
+
+23.163.0.72:64335
+
 # Generic
 
 /.sliver-client/
