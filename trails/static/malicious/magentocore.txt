@@ -12526,6 +12526,11 @@ cdnweb2analytics.com
 
 cdnwebanalytics.com
 
+# Reference: https://x.com/sdcyberresearch/status/1831306045274079284
+# Reference: https://www.virustotal.com/gui/ip-address/46.226.160.210/relations
+
+jgueurystatic.xyz
+
 # Generic
 
 /assets/lfg.js
