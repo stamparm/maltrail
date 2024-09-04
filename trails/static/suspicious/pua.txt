@@ -3325,3 +3325,9 @@ mord0r.hopto.org
 # Reference: https://www.virustotal.com/gui/file/eacfd543ad19f8edec0588a447777494f1fb7446150fd38ca4ede9e6cfcbf6a8/detection
 
 ec2-54-196-152-208.compute-1.amazonaws.com
+
+# Reference: https://x.com/malwrhunterteam/status/1831236296791970191
+# Reference: https://www.virustotal.com/gui/file/11c9a475bb7edcdf66f71c04a2481cfa70491bc90d462b5b8d587e895824ffc5/detection
+# Reference: https://www.virustotal.com/gui/file/293366b84dabe9b0a1e84c37659d0bbad2c85b4c4ad9c104923364ad69c6c8b4/detection
+
+192.46.214.232:443
