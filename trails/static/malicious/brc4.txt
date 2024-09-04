@@ -827,3 +827,16 @@ javaforyouedu.in
 
 1398daufhauidhjkadf.com
 systematictld.com
+
+# Reference: https://blog.talosintelligence.com/threat-actors-using-macropack/
+
+http://122.114.10.239
+s-logistics.net
+dns1.s-logistics.net
+dns2.s-logistics.net
+d1209brpqetpa4.cloudfront.net
+d2v6ycjbdzo6ui.cloudfront.net
+d2wpc9lcvgj680.cloudfront.net
+d2z6sfzo660xrm.cloudfront.net
+d3qrqtfazjdt5i.cloudfront.net
+/HubsExtension/Resource/Type/c8d984.php
