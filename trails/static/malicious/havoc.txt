@@ -2892,6 +2892,10 @@ http://75.119.136.117
 
 nginx-imfi.fcv3.1197883384467965.cn-hangzhou.fc.devsapp.net
 
+# Reference: https://blog.talosintelligence.com/threat-actors-using-macropack/
+
+http://122.114.166.92
+
 # Generic
 
 /Havoc/payload/
