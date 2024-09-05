@@ -12445,8 +12445,11 @@ trendset.website
 
 # Reference: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions
 
+cemdigit.click
 creftip.shop
 gamdev.site
+geutes.quest
+jejtol.shop
 jirelit.shop
 lhetoyer.store
 logidigit.online
@@ -12456,8 +12459,12 @@ peretec.click
 roztab.shop
 samloop.online
 vitadigit.quest
+zmimot.shop
+cdn.cemdigit.click
 cdn.creftip.shop
 cdn.gamdev.site
+cdn.geutes.quest
+cdn.jejtol.shop
 cdn.jirelit.shop
 cdn.lhetoyer.store
 cdn.logidigit.online
@@ -12467,6 +12474,7 @@ cdn.peretec.click
 cdn.roztab.shop
 cdn.samloop.online
 cdn.vitadigit.quest
+cdn.zmimot.shop
 
 # Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24#tab=resolutions
 
