@@ -5568,3 +5568,8 @@ baiduchinese.oss-cn-beijing.aliyuncs.com
 # Reference: https://www.virustotal.com/gui/file/8d89a1e4a3e6bfbf7f1e71a7437d62babfec32c5d3326ae14b2642cd24b4be6a/detection
 
 kaczmarskitgroup.pl
+
+# Reference: https://x.com/malwrhunterteam/status/1831433721574260881
+# Reference: https://www.virustotal.com/gui/file/35a4f26e7e9268ee650169250716a8afbf3ee3ded6251ca99c976181ed58d251/detection
+
+52.139.219.121:8088
