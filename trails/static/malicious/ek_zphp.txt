@@ -1,6 +1,8 @@
 # Copyright (c) 2014-2024 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
+# Aliases: SmartApeSG
+
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-04-v10432/1011
 
 amazonascash.com
@@ -503,6 +505,13 @@ financialinvestmentsgrp.com
 # Reference: https://x.com/Max_Mal_/status/1831063028508565836
 
 securityassociationgoa.com
+
+# Reference: https://x.com/silentpush_labs/status/1831716500597809506
+# Reference: https://www.virustotal.com/gui/file/0dc3a40e9f726f18e3ebac92ee5944d9c12b2ee71252f2b711434c3628877ca1/detection
+
+genifyart.com
+howtocleanseptictank.com
+villasara974.com
 
 # Generic
 
