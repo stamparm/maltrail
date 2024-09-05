@@ -5590,3 +5590,7 @@ ggm.kr
 # Reference: https://www.virustotal.com/gui/domain/ddnss.eu/relations
 
 ddnss.eu
+
+# Reference: https://www.virustotal.com/gui/domain/ddns.cam/detection
+
+ddns.cam
