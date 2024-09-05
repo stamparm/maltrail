@@ -11518,12 +11518,29 @@ cdn.avitech.site
 # Reference: https://www.virustotal.com/gui/ip-address/193.3.19.163/relations
 
 apprised.app
+cdn-jquery.space
+cdn.grahamsnaps.com
+cdn.hytchers.be
+cdn.livesell.online
+cdncode.com
+chatonwebsite.com
+crrmdoget.com
 googletaganager.com
+googletagmanagerx.com
+grahamsnaps.com
+hytchers.be
 img-google-tracker.com
+js.mxdnsstatesc.icu
+js.statabalc.icu
+livesell.online
+mxdnsstatesc.icu
+mystats.pw
 net-stat.info
 netstats.online
 statabalc.icu
 tagfb.tech
+taggerlead.com
+tagget.io
 tgdev.online
 trtrapcdn.com
 
