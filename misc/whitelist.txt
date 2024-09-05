@@ -4023,3 +4023,8 @@ myseosucks.com
 # Reference: https://www.virustotal.com/gui/domain/cloudflarestorage.com/relations
 
 cloudflarestorage.com
+
+# Reference: https://github.com/stamparm/aux/issues/13
+# Reference: https://github.com/stamparm/maltrail/commit/7460f550e6b21ad6797e49d855aacc2e6646eee3
+
+slug.vercel.app
