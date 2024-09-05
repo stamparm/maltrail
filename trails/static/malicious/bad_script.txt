@@ -8701,6 +8701,11 @@ gatetodisplaycontent.com
 /xxx.hta
 /xxx2.hta
 
+# Reference: https://www.virustotal.com/gui/file/8d31ed88202e42a456cef92be1da6e91ee89f763b12e9cddca525453a8d86d6c/detection
+
+/elonkat/jyujuytyt.php
+/jyujuytyt.php
+
 # Generic
 
 /js/altmanluggage.js
