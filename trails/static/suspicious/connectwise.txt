@@ -330,3 +330,8 @@ sisngl21a.ddns.net
 # Reference: https://www.virustotal.com/gui/ip-address/194.59.31.88/relations
 
 194.59.31.88:8041
+
+# Reference: https://x.com/malwrhunterteam/status/1831775031220957669
+# Reference: https://www.virustotal.com/gui/file/77a4f959f19592757a9c5f50c0f6187370d35fec575de6c034c94ce88042823b/detection
+
+37.221.64.42:8041
