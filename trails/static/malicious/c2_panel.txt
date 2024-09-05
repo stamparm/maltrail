@@ -885,6 +885,12 @@ http://68.183.92.154
 http://176.59.196.133
 176.59.196.133:443
 
+# Reference: https://search.censys.io/search?q=services.http.response.body_hashes%3D%22sha256%3Ac13fc87d664041f3eb130a63251f4dcf9ad2c4676adb83b16504bfd5ae712fae%22&resource=hosts
+
+161.97.117.117:3000
+38.242.128.92:3000
+75.119.134.111:4000
+
 # Generic
 
 /admin_123/auth.php
