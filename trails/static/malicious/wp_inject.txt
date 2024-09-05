@@ -5752,3 +5752,7 @@ siteforyou3d.com
 7.siteforyou3d.com
 8.siteforyou3d.com
 9.siteforyou3d.com
+
+# Reference: https://www.virustotal.com/gui/file/75aa742410ecbdc3700fc1ff3520952de52f1960426690844c52fc705e819c97/detection
+
+kntsv.nl
