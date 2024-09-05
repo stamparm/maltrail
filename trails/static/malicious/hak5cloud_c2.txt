@@ -1105,6 +1105,7 @@ c2test.ranftler.eu
 c3.planet12industries.tech
 calendar.ozarkmoving.com
 cam-a.com
+cc2.cyriliantsecurity.com
 cdn-picks.sxzxsp.com
 chicago.cloudc2.io
 cl0od-c2.honami.club
@@ -1142,6 +1143,7 @@ dl.cyber-security-lab.net
 dockermgmt.crazykitten.net
 doom.exp101t.me
 dumdiduc2.zarvanjski.de
+e.xploit.one
 epay.jobmost.org
 epicshelter.org
 erebour2c.myddns.me
@@ -1224,6 +1226,7 @@ six1three.com
 smtp.ozarkmoving.com
 smtpout.ozarkmoving.com
 sneel.serveftp.com
+so-soest.com
 squizza.thompsoncare.au
 stats.navisec.io
 stayclassyomg.de
