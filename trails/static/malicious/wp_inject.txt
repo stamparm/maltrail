@@ -732,6 +732,7 @@ developerstatss.ga
 donatelloflowfirstly.ga
 lowerbeforwarden.ml
 trendopportunityfollow.ga
+js.developerstatss.ga
 
 # Reference: https://twitter.com/unmaskparasites/status/1329490824875282432
 # Reference: https://www.virustotal.com/gui/ip-address/217.144.106.108/relations
