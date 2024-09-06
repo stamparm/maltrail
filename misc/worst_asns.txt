@@ -4716,3 +4716,24 @@
 45.14.226.0/24,phanes-networks
 45.148.120.0/24,phanes-networks
 45.148.123.0/24,phanes-networks
+
+# AS39798
+# Reference: https://ipinfo.io/AS39798
+
+185.163.44.0/22,mivocloud
+185.225.16.0/22,mivocloud
+194.180.157.0/24,mivocloud
+194.180.174.0/24,mivocloud
+194.180.191.0/24,mivocloud
+5.181.156.0/24,mivocloud
+5.181.157.0/24,mivocloud
+5.181.158.0/24,mivocloud
+5.181.159.0/24,mivocloud
+5.252.176.0/24,mivocloud
+5.252.177.0/24,mivocloud
+5.252.178.0/24,mivocloud
+5.252.179.0/24,mivocloud
+94.158.244.0/24,mivocloud
+94.158.245.0/24,mivocloud
+94.158.246.0/24,mivocloud
+94.158.247.0/24,mivocloud
