@@ -2847,3 +2847,10 @@ futurestresser.org
 
 x00x.online
 panel.dianecarson.workers.dev
+
+# Reference: https://x.com/SecureSh3ll/status/1832189060275724727
+# Reference: https://app.validin.com/detail?find=JustPaste%20-%20Simple%20Pastebin%20Clone&type=raw&ref_id=d8be89624f8#tab=host_pairs_v2
+
+http://185.196.10.84
+justpaste.xyz
+westtin.com
