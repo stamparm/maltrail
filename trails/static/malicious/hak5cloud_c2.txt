@@ -981,6 +981,7 @@ http://66.175.210.153
 
 172-105-250-105.ip.linodeusercontent.com
 22fathoms.net
+4712-ttyl.org
 49.ip-151-80-57.eu
 4sr.nl
 _tcp.safe-netsurfing.com
@@ -1218,6 +1219,7 @@ red.itsb.se
 redteam-hack.com
 redteam.hocloud.de
 rockybek.cloud
+routermgt.perus-postr.shop
 safe-netsurfing.com
 scrizzledizzle.net
 secure.place
@@ -1246,6 +1248,7 @@ unifi.ddscontracting.co.uk
 uselessbastard.com
 v22019087639994807.supersrv.de
 v2202005110562117746.hotsrv.de
+vi1ops01.internal.inl.io
 vmd71595.contaboserver.net
 vpn.ableit.solutions
 wizeguy.co.il
