@@ -88,3 +88,7 @@ public.clickstat360.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-17-v10647/1826
 
 jswebcloud.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-30-v10678/1926
+
+load.webdatahoster.com
