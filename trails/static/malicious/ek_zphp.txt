@@ -517,6 +517,10 @@ villasara974.com
 
 sofinefitness.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-29-v10677/1924
+
+rentyrooms.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
