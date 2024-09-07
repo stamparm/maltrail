@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2024 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://malasada.tech/the-landupdate808-fake-update-variant/
+
+acsmaterial.com
+backalleybikerepair.com
+careers-advice-online.com
+digimind.nl
+eco-bio-systems.de
+ecohortum.com
+ecowas.int
+edveha.com
+evolverangesolutions.com
+fajardo.inter.edu
+fup.edu.co
+itslife.in
+lauren-nelson.com
+mocanyc.org
+monitor.icef.com
+natlife.de
+netzwerkreklame.de
+razzball.com
+septicfl.com
+sixpoint.com
+sunkissedindecember.com
+thecreativemom.com
+zoomzle.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-29-v10677/1924
+
+tayakay.com
