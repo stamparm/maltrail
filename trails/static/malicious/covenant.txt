@@ -813,6 +813,15 @@ http://185.141.26.116
 205.234.181.199:7443
 88.218.17.230:7443
 
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-07)
+
+13.233.184.247:7443
+13.233.251.64:7443
+13.36.144.221:7443
+157.230.0.31:7443
+172.164.224.6:7443
+98.81.82.117:7443
+
 # Generic
 
 /covenantuser/
