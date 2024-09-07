@@ -12570,6 +12570,11 @@ xtreme.boats
 yesyes.rest
 zend.quest
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-09-02-v10679/1932
+
+creatlva.shop
+sellifypro.com
+
 # Generic
 
 /assets/lfg.js
