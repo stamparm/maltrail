@@ -10208,10 +10208,12 @@ topofferz.shop
 topprizes.shop
 topprizez.shop
 topsalez.shop
+uads.buzz
 uads.club
 uads.digital
 uads.guru
 uads.info
+uads.life
 uads.live
 uads.pw
 uads.shop
@@ -12559,6 +12561,14 @@ cdnwebanalytics.com
 # Reference: https://www.virustotal.com/gui/ip-address/46.226.160.210/relations
 
 jgueurystatic.xyz
+
+# Reference: https://app.validin.com/detail?find=78.128.112.218&type=ip4&ref_id=bdb069571b7#tab=resolutions
+
+tagscart.shop
+wikistat.wiki
+xtreme.boats
+yesyes.rest
+zend.quest
 
 # Generic
 
