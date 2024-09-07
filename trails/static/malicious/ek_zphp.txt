@@ -513,6 +513,10 @@ genifyart.com
 howtocleanseptictank.com
 villasara974.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-30-v10678/1926
+
+sofinefitness.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
