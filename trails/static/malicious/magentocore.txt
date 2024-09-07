@@ -12584,6 +12584,16 @@ metricelevate.com
 pixelia.shop
 secunnet.shop
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-29-v10677/1924
+
+creativeslim.com
+dealhunt.website
+designlq.com
+graphlq.shop
+javaninja.shop
+merchifly.shop
+selloria.shop
+
 # Generic
 
 /assets/lfg.js
