@@ -4009,6 +4009,53 @@ smog.contest.printondemandmerchandise.com
 ynowk.contest.printondemandmerchandise.com
 zrs.contest.printondemandmerchandise.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-09-02-v10679/1932
+
+podcast.lisameyerson.com
+aph.podcast.lisameyerson.com
+awaco.podcast.lisameyerson.com
+bjzvm.podcast.lisameyerson.com
+cshqe.podcast.lisameyerson.com
+derp.podcast.lisameyerson.com
+dld.podcast.lisameyerson.com
+dlovc.podcast.lisameyerson.com
+eohhe.podcast.lisameyerson.com
+fheb.podcast.lisameyerson.com
+fvk.podcast.lisameyerson.com
+gepo.podcast.lisameyerson.com
+gjeh.podcast.lisameyerson.com
+gmh.podcast.lisameyerson.com
+gowuq.podcast.lisameyerson.com
+hfkcs.podcast.lisameyerson.com
+honw.podcast.lisameyerson.com
+hvoq.podcast.lisameyerson.com
+iary.podcast.lisameyerson.com
+jhkdi.podcast.lisameyerson.com
+kvxp.podcast.lisameyerson.com
+lik.podcast.lisameyerson.com
+lllf.podcast.lisameyerson.com
+mlgt.podcast.lisameyerson.com
+mtq.podcast.lisameyerson.com
+mxk.podcast.lisameyerson.com
+myplq.podcast.lisameyerson.com
+nrux.podcast.lisameyerson.com
+nrvc.podcast.lisameyerson.com
+pha.podcast.lisameyerson.com
+qdnxm.podcast.lisameyerson.com
+rfp.podcast.lisameyerson.com
+rhau.podcast.lisameyerson.com
+rjee.podcast.lisameyerson.com
+snrqh.podcast.lisameyerson.com
+spv.podcast.lisameyerson.com
+tpbq.podcast.lisameyerson.com
+uhsp.podcast.lisameyerson.com
+urp.podcast.lisameyerson.com
+vnsg.podcast.lisameyerson.com
+wsyup.podcast.lisameyerson.com
+yhn.podcast.lisameyerson.com
+ypqm.podcast.lisameyerson.com
+yyab.podcast.lisameyerson.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
