@@ -12468,8 +12468,10 @@ gamdev.site
 geutes.quest
 jejtol.shop
 jirelit.shop
+kletec.online
 lhetoyer.store
 logidigit.online
+nelhelp.store
 nesudteq.click
 otroot.quest
 peretec.click
@@ -12483,8 +12485,10 @@ cdn.gamdev.site
 cdn.geutes.quest
 cdn.jejtol.shop
 cdn.jirelit.shop
+cdn.kletec.online
 cdn.lhetoyer.store
 cdn.logidigit.online
+cdn.nelhelp.store
 cdn.nesudteq.click
 cdn.otroot.quest
 cdn.peretec.click
