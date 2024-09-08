@@ -6396,6 +6396,7 @@ wildhottiegirls.com
 # Reference: https://blog.sekoia.io/stealc-a-copycat-of-vidar-and-raccoon-infostealers-gaining-in-popularity-part-1/
 # Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-01-12-IOCs-from-StealC-activity.txt
 
+/072aacac8f68fd5f.php
 /0b92e7ab19e861f9.php
 /0d8af8f06ba4b880.php
 /0e4968fc55367a12.php
@@ -6408,9 +6409,11 @@ wildhottiegirls.com
 /30257e4c371b49a4.php
 /413a030d85acf448.php
 /570d5d5e8678366c.php
+/584d87b5bdba3c10.php
 /587ec30955d49a9c.php
 /6259fdc16222e061.php
 /6842f013779f3d08.php
+/6ecdc9436941ebbd.php
 /73de3362ad1122cd.php
 /752e382b4dcf5e3f.php
 /7a957ef6cc168ff6.php
@@ -6426,6 +6429,7 @@ wildhottiegirls.com
 /9ccb7e7554a07e52.php
 /a066a53ea1064ac7.php
 /a17861b9cb6f1a53.php
+/a27b47225f6019fa.php
 /a8f961c72f0d877c.php
 /b55459c10e99c506.php
 /bca98681abf8e1ab.php
@@ -6440,6 +6444,8 @@ wildhottiegirls.com
 /de4846fc29f26952.php
 /e2d7d29621e1052a.php
 /e6e1bcda8702fc37.php
+/e96ea2db21fa9a1b.php
+/edd20096ecef326d.php
 /f0b7e3704c0051f9.php
 /f3ee98d7eec07fb9.php
 /f9f76ae4bb7811d9.php
