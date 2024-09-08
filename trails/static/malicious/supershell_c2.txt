@@ -2225,6 +2225,12 @@ http://114.55.100.165
 83.229.124.37:8888
 93.177.76.142:8888
 
+# Reference: https://threatfox.abuse.ch/browse/tag/Supershell/ (# 2024-09-08)
+
+124.220.59.2:8888
+154.64.245.174:443
+167.179.108.80:748
+
 # Generic
 
 /supershell/login
