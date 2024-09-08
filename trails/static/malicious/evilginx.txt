@@ -178,6 +178,13 @@ miicrossofftonline.nl
 xpfdoc0365090.com
 apps.xpfdoc0365090.com
 
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-07)
+
+137.184.53.6:3333
+138.197.133.22:4000
+147.182.133.204:3333
+170.64.224.234:4000
+
 # Generic
 
 /evilginx-linux-amd64.tar.gz
