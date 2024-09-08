@@ -2188,3 +2188,11 @@ http://4.236.37.27
 3.252.25.98:445
 34.225.66.209:445
 35.238.17.229:445
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-08)
+
+135.181.220.78:445
+167.179.81.6:443
+176.34.166.126:445
+194.113.72.99:445
+194.182.164.134:443
