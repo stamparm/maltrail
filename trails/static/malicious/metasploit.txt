@@ -5584,3 +5584,11 @@ kaczmarskitgroup.pl
 
 45.9.149.215:4444
 45.9.149.215:64436
+
+# Reference: https://x.com/malwrhunterteam/status/1832518618556272701
+# Reference: https://www.virustotal.com/gui/file/f7f730409f012825780e24acf1959f7c0e29a37a85c21b62d9b235231c94eafb/detection
+# Reference: https://www.virustotal.com/gui/file/5faa2ebc0f77f4e66761a9770c1a184acd1bc65c6d526bdb5ad2c35c0a21cc63/detection
+# Reference: https://www.virustotal.com/gui/file/4362c60cd2b23a19ec2834f9e1dfb232c9c3edc0ee164d64dfc62437c82bcb82/detection
+# Reference: https://www.virustotal.com/gui/file/04f9fee86369d8541102a694cd0bddbae37a2dd2bdbd2df06e91d603b6313b4b/detection
+
+34.41.76.5:443
