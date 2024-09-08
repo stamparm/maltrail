@@ -5592,3 +5592,16 @@ kaczmarskitgroup.pl
 # Reference: https://www.virustotal.com/gui/file/04f9fee86369d8541102a694cd0bddbae37a2dd2bdbd2df06e91d603b6313b4b/detection
 
 34.41.76.5:443
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/IPPortC2s-30day.csv (# 2024-09-08)
+
+103.103.0.208:443
+106.52.211.135:443
+109.186.220.95:8080
+142.171.198.177:443
+159.89.52.59:443
+38.180.148.215:8443
+79.141.169.221:443
+92.204.249.4:8081
+94.247.42.107:443
+94.247.42.107:4443
