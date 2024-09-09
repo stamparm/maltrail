@@ -995,6 +995,7 @@ autoconfig.slg-hafen-hamburg.de
 autoconfig.svp-hamburg-sportschuetzen.de
 aws.mikzbots.xyz
 baconmcburgerton.com
+batcave.pha3t0n.com
 beamadmin.com
 bitwars.org
 blisteur.c2.mylittlepwnies.tech
@@ -1248,6 +1249,7 @@ trapcreates.pw
 tx-sc.com
 u2yfbwnrmkzjmn.flashvps.xyz
 unifi.ddscontracting.co.uk
+updates.westus2.cloudapp.azure.com
 uselessbastard.com
 v22019087639994807.supersrv.de
 v2202005110562117746.hotsrv.de
