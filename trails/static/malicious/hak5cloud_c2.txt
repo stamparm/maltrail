@@ -1194,6 +1194,7 @@ mail.meadowbridgefarms.com
 manmgr.zymptomlabs.com
 markymark7.duckdns.org
 mhconsult.dk
+milkmancam.com
 minion.archmage.tech
 monitor.wintech-systems.co.uk
 monitors.win
@@ -1221,6 +1222,7 @@ redteam-hack.com
 redteam.hocloud.de
 rockybek.cloud
 routermgt.perus-postr.shop
+s3raphirc2.net
 safe-netsurfing.com
 scrizzledizzle.net
 secure.place
