@@ -335,3 +335,8 @@ sisngl21a.ddns.net
 # Reference: https://www.virustotal.com/gui/file/77a4f959f19592757a9c5f50c0f6187370d35fec575de6c034c94ce88042823b/detection
 
 37.221.64.42:8041
+
+# Reference: https://x.com/malwrhunterteam/status/1833086227047723257
+# Reference: https://www.virustotal.com/gui/file/abbb2686d3424253ed4e183c1a2fc86e77c798801766411ee3f54943dbfe0bc3/detection
+
+94.156.65.19:8041
