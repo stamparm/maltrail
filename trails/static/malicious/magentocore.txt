@@ -12594,6 +12594,10 @@ javaninja.shop
 merchifly.shop
 selloria.shop
 
+# Reference: https://x.com/sdcyberresearch/status/1833124334417682447
+
+feedbackharvest.com
+
 # Generic
 
 /assets/lfg.js
