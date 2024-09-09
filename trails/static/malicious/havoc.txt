@@ -2967,6 +2967,13 @@ http://185.198.234.7
 40.116.101.15:8080
 91.92.241.141:8082
 
+# Reference: https://threatfox.abuse.ch/browse/malware/win.havoc/ (# 2025-09-09)
+
+http://23.88.32.34
+172.232.142.127:443
+194.165.16.32:443
+47.76.26.254:443
+
 # Generic
 
 /Havoc/payload/
