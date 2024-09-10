@@ -1033,3 +1033,20 @@ topdata.downloadatoz.com
 # Reference: https://www.virustotal.com/gui/file/1f0d3e8ca830582c486a17de697b955e3431adf36418cb1ce9ead5089c60b5d7/detection
 
 freefire2021.giize.com
+
+# Reference: https://www.virustotal.com/gui/file/a949fca2d77feca5289355487f538ce7c2ea6f97ead82808697e0414d50b4b63/detection
+
+akisinn.info
+akisinn.site
+dewrain.life
+dewrain.site
+vaicore.site
+vaicore.store
+vaicore.xyz
+int.akisinn.info
+int.akisinn.site
+int.dewrain.life
+int.dewrain.site
+int.vaicore.site
+int.vaicore.store
+int.vaicore.xyz
