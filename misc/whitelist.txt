@@ -4028,3 +4028,10 @@ cloudflarestorage.com
 # Reference: https://github.com/stamparm/maltrail/commit/7460f550e6b21ad6797e49d855aacc2e6646eee3
 
 slug.vercel.app
+
+# Reference: https://x.com/Cyber0verload/status/1833422623318933865
+
+1-you.njalla.no
+2-can.njalla.in
+3-get.njalla.fo
+you.can-get-no.info
