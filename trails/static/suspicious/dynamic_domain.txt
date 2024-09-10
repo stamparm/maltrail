@@ -3649,3 +3649,7 @@ flexiblegeeks.com
 
 42.ar
 ridespirals.com
+
+# Reference: https://www.virustotal.com/gui/domain/mydns.jp/relations
+
+mydns.jp
