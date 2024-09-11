@@ -10584,6 +10584,17 @@ wash856.estate
 waste191.ltd
 wheel194.buzz
 without527.agency
+mj27427137.stair151.clinic
+alfatec.taggerlead.com
+anallusar.taggerlead.com
+biosttek.taggerlead.com
+clubmigourmet.taggerlead.com
+datanet.taggerlead.com
+demo.taggerlead.com
+panel.taggerlead.com
+plesk.taggerlead.com
+sararevert.taggerlead.com
+soldemarca.taggerlead.com
 
 # Reference: https://twitter.com/sdcyberresearch/status/1778056754636451903
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.110.37/relations
