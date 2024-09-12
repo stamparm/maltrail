@@ -12609,6 +12609,12 @@ selloria.shop
 
 feedbackharvest.com
 
+# Reference: https://cside.dev/blog/cisco-client-side-magecart-javascript-attack
+# Reference: https://www.virustotal.com/gui/ip-address/82.202.163.229/relations
+
+rextension.net
+app.rextension.net
+
 # Generic
 
 /assets/lfg.js
