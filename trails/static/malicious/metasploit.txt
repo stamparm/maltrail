@@ -5605,3 +5605,10 @@ kaczmarskitgroup.pl
 92.204.249.4:8081
 94.247.42.107:443
 94.247.42.107:4443
+
+# Reference: https://x.com/RacWatchin8872/status/1834170994375774618
+# Reference: https://www.virustotal.com/gui/file/f5865a3503d926843dfa392276681531656f0d5492560953ed65e9608dbc6222/detection
+# Reference: https://www.virustotal.com/gui/file/a33f295649eea0542da21ed408566d07f7c3729c058ff07580326d0a9956aa75/detection
+
+123.60.104.67:32132
+36.138.146.107:8554
