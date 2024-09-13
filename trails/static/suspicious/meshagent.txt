@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2024 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/kddx0178318/status/1834545168403296409
+# Reference: https://app.any.run/tasks/b81c945b-3c42-4385-ba54-331fd7f7b367
+# Reference: https://www.virustotal.com/gui/file/fcbd0b82a5a16a712ca5d39f049f9ee3abeee4462f13a57995c1d1cddf3b0c08/detection
+# Reference: https://www.virustotal.com/gui/file/82d6ffab386dcfad2fbe3916a0bf54e718afeffef27cf1e04e648dbe31fb67aa/detection
+
+64.94.84.70:443
+newtactical.buzz
+mesh.newtactical.buzz
