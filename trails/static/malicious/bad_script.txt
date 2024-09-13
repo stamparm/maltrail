@@ -8712,6 +8712,11 @@ gatetodisplaycontent.com
 /elonkat/jyujuytyt.php
 /jyujuytyt.php
 
+# Reference: https://x.com/kddx0178318/status/1834200990565773334
+# Reference: https://www.virustotal.com/gui/file/48e74d11c58e4942e394f3f16ffe7446c73884b0a5df0fc89c7f2b94a43f4152/detection
+
+/30f5d97a11d32e80.php
+
 # Generic
 
 /js/altmanluggage.js
