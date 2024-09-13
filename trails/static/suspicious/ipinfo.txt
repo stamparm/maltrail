@@ -445,3 +445,8 @@ reallyfreegeoip.org
 # Reference: https://www.virustotal.com/gui/file/5a9dc51122f46633e130716d169dd0c9a00ea5c47a90bf0636e9101183b34185/detection
 
 http://118.184.169.48/dyndns/getip
+
+# Reference: https://www.virustotal.com/gui/file/303bc4bce9555b02d9b1c0b96eb5736561d70fca3b994b353db2cc1b2eca66ca/detection
+
+151.236.9.75:5080
+easyiplookup.com
