@@ -4056,11 +4056,12 @@ yhn.podcast.lisameyerson.com
 ypqm.podcast.lisameyerson.com
 yyab.podcast.lisameyerson.com
 
-# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-08)
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-15)
 
 104.238.179.144:443
 147.45.78.74:443
 162.252.175.41:443
+172.96.10.215:443
 173.44.141.51:443
 178.236.246.252:443
 185.217.197.52:443
@@ -4068,6 +4069,7 @@ yyab.podcast.lisameyerson.com
 193.107.109.18:443
 193.107.109.59:443
 207.148.0.16:443
+217.144.191.125:443
 217.195.153.158:443
 23.95.182.48:443
 45.77.78.73:443
