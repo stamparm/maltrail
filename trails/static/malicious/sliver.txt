@@ -5206,6 +5206,13 @@ http://94.23.84.20
 http://52.156.24.251
 52.156.24.251:8888
 
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-15)
+
+101.35.197.155:7763
+111.180.204.51:8443
+121.127.33.245:443
+147.45.174.167:8080
+
 # Generic
 
 /.sliver-client/
