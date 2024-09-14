@@ -180,6 +180,9 @@ apps.xpfdoc0365090.com
 
 # Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-07)
 
+103.47.226.152:3333
+134.209.32.59:3333
+137.184.38.108:3333
 137.184.53.6:3333
 138.197.133.22:4000
 147.182.133.204:3333
