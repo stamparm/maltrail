@@ -2974,6 +2974,18 @@ http://23.88.32.34
 194.165.16.32:443
 47.76.26.254:443
 
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-14)
+
+142.93.236.252:40056
+142.93.236.252:443
+207.189.164.112:443
+45.152.64.245:443
+45.66.231.229:443
+54.93.40.26:443
+89.187.28.133:443
+91.92.247.158:9090
+
+
 # Generic
 
 /Havoc/payload/
