@@ -5199,6 +5199,13 @@ http://94.23.84.20
 95.169.196.16:31337
 95.169.196.45:31337
 
+# Reference: https://x.com/Huntio/status/1834725458166137332
+# Reference: https://www.virustotal.com/gui/file/2b1e7c36c42eac0d698ddbbebd53f017dab92fe4fabc570ed02b91c3ad89165e/detection
+# Reference: https://www.virustotal.com/gui/file/cdfb1afbd30b1eb484cc0e13caf2dd791429d8e9fbaedee77dce2a5a8e31e540/detection
+
+http://52.156.24.251
+52.156.24.251:8888
+
 # Generic
 
 /.sliver-client/
