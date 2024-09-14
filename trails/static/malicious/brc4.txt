@@ -857,3 +857,10 @@ http://54.248.85.250
 54.70.52.38:443
 80.255.6.12:40000
 81.95.8.165:40000
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-14)
+
+http://13.231.40.125
+http://35.73.247.226
+77.221.149.199:8443
+92.118.112.193:443
