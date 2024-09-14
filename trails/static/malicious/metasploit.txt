@@ -5612,3 +5612,12 @@ kaczmarskitgroup.pl
 
 123.60.104.67:32132
 36.138.146.107:8554
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/IPPortC2s-30day.csv (# 2024-09-16)
+
+148.251.71.148:2222
+151.236.29.64:10443
+203.161.60.68:8080
+217.196.98.142:443
+62.210.28.199:8080
+81.70.199.158:443
