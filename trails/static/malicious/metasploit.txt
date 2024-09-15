@@ -5657,3 +5657,7 @@ kaczmarskitgroup.pl
 # Reference: https://www.virustotal.com/gui/file/bcb8bccfc6ebbf746b1c6004ab2bc8f656c0144276f77a072464a70e995dbe8f/detection
 
 5.180.45.105:1003
+
+# Reference: https://www.virustotal.com/gui/file/69cff855772fffa1207444ca7bcf9fe259d757d67baae4c24d028525c74b3b73/detection
+
+5.180.45.105:2006
