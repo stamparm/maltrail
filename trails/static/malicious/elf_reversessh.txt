@@ -555,3 +555,14 @@ http://8.154.35.6
 47.96.72.100:3232
 50.114.5.82:3232
 83.229.124.37:3232
+
+# Reference: https://www.fortinet.com/blog/threat-research/threat-actors-exploit-geoserver-vulnerability-cve-2024-36401
+# Reference: https://otx.alienvault.com/pulse/66e0b0caffa8120f0871c74b
+# Reference: https://www.virustotal.com/gui/file/9bf642a7e14f0a0b0a784f00a0d1cf590ac60ae5ae378d29d435519f4d9dbf2b/detection
+# Reference: https://www.virustotal.com/gui/file/b67ab1b9b66fdc2c4ed1689698a54a347c2bdd6eaff87039ae337675243670d8/detection
+# Reference: https://www.virustotal.com/gui/file/b80e9466b7bb42959c29546b8c052e67fcaa0f591857617457d5d28348bd8860/detection
+
+181.214.58.14:18201
+181.214.58.14:33231
+181.214.58.14:61231
+/ksofthp
