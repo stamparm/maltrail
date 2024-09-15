@@ -5669,3 +5669,8 @@ kaczmarskitgroup.pl
 # Reference: https://www.virustotal.com/gui/file/2a5627ea51de8ac3c39d5ef46d7719a9b203c91044ae5fc5b09ebbecb984b796/detection
 
 5.180.45.105:9998
+
+# Reference: https://www.virustotal.com/gui/file/05a33e87dc5cc62570d362dedae9466ab145913354dd13a4fdf727cfd5bb43a1/detection
+
+194.59.31.31:1111
+windowshealth.store
