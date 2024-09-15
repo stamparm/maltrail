@@ -1164,6 +1164,7 @@ hak.biboy.icu
 hak.burbachdevelopments.com
 hak5.cybersecure.church
 hak5.krypton.codes
+hak5.myphishserver.com
 hc.agorasecurity.it
 hc2.snowfensive.com
 hcc.reca11.com
@@ -1221,6 +1222,7 @@ r3ds0nia.org
 red.itsb.se
 redteam-hack.com
 redteam.hocloud.de
+rocketisland.net
 rockybek.cloud
 routermgt.perus-postr.shop
 s3raphirc2.net
