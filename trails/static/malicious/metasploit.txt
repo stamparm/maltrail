@@ -5621,3 +5621,7 @@ kaczmarskitgroup.pl
 217.196.98.142:443
 62.210.28.199:8080
 81.70.199.158:443
+
+# Reference: https://www.virustotal.com/gui/file/102736247ed4ab15b8bea298c1d562454d3ab6aff088f87d072c60a2e7fc6346/detection
+
+5.180.45.105:8011
