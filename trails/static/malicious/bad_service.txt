@@ -2854,3 +2854,15 @@ panel.dianecarson.workers.dev
 http://185.196.10.84
 justpaste.xyz
 westtin.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.188.88.252/relations
+
+00code.in
+ccshop.at
+ccshop.in
+ccshop.xyz
+cczauvr.biz
+ch2-status.top
+topgame.biz
+ccshop2jsqvmkhon7hgvuftdhdmftrqrqg6l3cz5deojvbzyw2kjvhid.onion
+gbkir75uwjbxfkpj6mfr7uuigvtqfqwjxpyzg4rkondkt525od2edqqd.onion
