@@ -1434,3 +1434,8 @@ c3.wptask.cyou
 51.195.127.124:7777
 kryptex.network
 xmr.kryptex.network
+
+# Reference: https://www.virustotal.com/gui/file/e23b9cae980fa0271cd0a2301f3d4cb67b55c689fd9e1f499b875f61487fcdce/detection
+
+107.167.83.34:3333
+107.167.92.130:3333
