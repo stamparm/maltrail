@@ -5649,3 +5649,7 @@ kaczmarskitgroup.pl
 
 5.180.45.105:1001
 5.180.45.105:9999
+
+# Reference: https://www.virustotal.com/gui/file/bd9b612102b985bc57be247acb58e51f2dfa0b1a8c3cc2250ebcc1f7315a04c8/detection
+
+5.180.45.105:9001
