@@ -12615,6 +12615,12 @@ feedbackharvest.com
 rextension.net
 app.rextension.net
 
+# Reference: https://x.com/sdcyberresearch/status/1835661136877715670
+
+ads-analysis.net
+jsdelive.com
+sw.jsdelive.com
+
 # Generic
 
 /assets/lfg.js
