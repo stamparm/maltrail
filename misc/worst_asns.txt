@@ -4737,3 +4737,10 @@
 94.158.245.0/24,mivocloud
 94.158.246.0/24,mivocloud
 94.158.247.0/24,mivocloud
+
+# AS215479
+# Reference: https://ipinfo.io/AS215479
+# Reference: https://x.com/banthisguy9349/status/1835339939149496482
+
+178.215.238.0/24,perfecto-as
+95.214.27.0/24,perfecto-as
