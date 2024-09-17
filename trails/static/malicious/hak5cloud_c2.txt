@@ -1114,6 +1114,7 @@ chicago.cloudc2.io
 cl0od-c2.honami.club
 cloud.c2serveraed.com
 cloud.fallingstuff.net
+cloud.legroeder.rocks
 cloud.my-itsme.com
 cloud5.clirsec.com
 cloudc2.americantechsystems.com
@@ -1155,6 +1156,7 @@ finallyhandled.com
 fix1.nask.waw.pl
 fun.marian-schneider.de
 grid.mikemyers.me
+h1.mindseyeit.com
 h5.gstreet.duckdns.org
 h5.pass-support.de
 h5c2.h3x.it
@@ -1260,6 +1262,7 @@ vi1ops01.internal.inl.io
 vmd71595.contaboserver.net
 vpn.ableit.solutions
 wizeguy.co.il
+wolf.support-it.services
 xsjfd.xyz
 youdontgnomemecloud.com
 zaqwsxcderfvbgtyhnmjuiklop.com
