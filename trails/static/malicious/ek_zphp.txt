@@ -878,6 +878,10 @@ yrinvinsible.com
 yshrirambook.online
 zado-shoes.com
 
+# Reference: https://x.com/silentpush_labs/status/1835797849478447240
+
+whizability.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
