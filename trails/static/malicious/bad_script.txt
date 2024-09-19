@@ -8718,6 +8718,10 @@ gatetodisplaycontent.com
 
 /30f5d97a11d32e80.php
 
+# Reference: https://x.com/RacWatchin8872/status/1836777407996448978
+
+/reverse-shell.ps1
+
 # Generic
 
 /js/altmanluggage.js
