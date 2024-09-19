@@ -2872,3 +2872,10 @@ gbkir75uwjbxfkpj6mfr7uuigvtqfqwjxpyzg4rkondkt525od2edqqd.onion
 # Reference: https://x.com/RacWatchin8872/status/1835348116360310968
 
 http://95.214.27.153
+
+# Reference: https://x.com/t43cr0wl3r/status/1816371152199073991
+# Reference: https://www.virustotal.com/gui/ip-address/198.98.53.133/relations
+
+marioc2.online
+marioc2-connect.ddns.net
+swiftapi.ddns.net
