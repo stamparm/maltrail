@@ -566,3 +566,8 @@ http://8.154.35.6
 181.214.58.14:33231
 181.214.58.14:61231
 /ksofthp
+
+# Reference: https://x.com/malwrhunterteam/status/1836673026282193156
+# Reference: https://www.virustotal.com/gui/file/e6e3f77e3e3156ea656e6097509a1b6880f723b78b1575c3e1b074c05e93af1e/detection
+
+104.168.50.203:9932
