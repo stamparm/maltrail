@@ -5213,6 +5213,13 @@ http://52.156.24.251
 121.127.33.245:443
 147.45.174.167:8080
 
+# Reference: https://x.com/malwrhunterteam/status/1837454988278161771
+# Reference: https://www.virustotal.com/gui/file/95514e07be55f4af0069fe428bd2b8b537359e56b5c3e70733117b3e21ab75b1/detection
+# Reference: https://www.virustotal.com/gui/file/d371d17f0d890c8ea10b0dc85e8da12f29c64125e3e066435d482e7a0a33f735/detection
+
+http://167.99.0.168
+vulturescan.com
+
 # Generic
 
 /.sliver-client/
