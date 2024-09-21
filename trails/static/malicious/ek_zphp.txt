@@ -882,6 +882,11 @@ zado-shoes.com
 
 whizability.com
 
+# Reference: https://www.virustotal.com/gui/file/da9d3b086392fc07f53942da35ebd1e739c63f7682f902b45c3dee03646168da/detection
+
+/cdn-vs/data.php
+/cdn-vs/download.php
+
 # Generic
 
 /cache/ewmrgqnaww.php
