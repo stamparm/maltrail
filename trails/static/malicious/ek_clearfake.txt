@@ -1,6 +1,8 @@
 # Copyright (c) 2014-2024 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
+# Aliases: clickfix
+
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-08-28-v10404/902
 
 adqdqqewqewplzoqmzq.site
@@ -406,6 +408,10 @@ whattotext.net
 wikilogistics.wiki
 x8f7a89.pics
 x99y.xyz
+
+# Reference: https://x.com/cocaman/status/1837455373420093755
+
+gertioma.top
 
 # Generic
 
