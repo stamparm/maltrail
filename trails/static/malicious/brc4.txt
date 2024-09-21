@@ -864,3 +864,8 @@ http://13.231.40.125
 http://35.73.247.226
 77.221.149.199:8443
 92.118.112.193:443
+
+# Reference: https://x.com/malwrhunterteam/status/1837467196655640968
+# Reference: https://www.virustotal.com/gui/file/c3f8ebc9cfb7ebe1ebbe3a4210753b271fecf73392fef98519b823a3e7c056c7/detection
+
+plantytime.com
