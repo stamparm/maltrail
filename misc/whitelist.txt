@@ -297,6 +297,7 @@ garr.it
 gigabyte.com
 gimp.org
 googleapis.com
+play.googleapis.com
 google.com
 googlesyndication.com
 gpsonextra.net
