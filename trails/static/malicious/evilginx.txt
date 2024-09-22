@@ -191,6 +191,25 @@ apps.xpfdoc0365090.com
 170.64.224.234:4000
 212.111.43.6:3333
 
+# Reference: https://threatfox.abuse.ch/browse/tag/EvilGinx/ (# 2024-09-22)
+
+account.driddex.shop
+amazon.testfish.dosoos.com
+apis.accountonline.live
+events.api.georgicaautoholding.com
+jobsprogress.pro
+login.monmt.com
+mailsession.com
+monmt.com
+mrdiy.diy
+mrdyi.store
+newscom.today
+o365.zicar.info
+outlook.adminstream.org
+outlook.mailsession.com
+perfectogruop.net
+session.mailsession.com
+
 # Generic
 
 /evilginx-linux-amd64.tar.gz
