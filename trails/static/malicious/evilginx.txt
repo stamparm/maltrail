@@ -178,7 +178,7 @@ miicrossofftonline.nl
 xpfdoc0365090.com
 apps.xpfdoc0365090.com
 
-# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-07)
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-22)
 
 103.47.226.152:3333
 134.209.32.59:3333
@@ -186,7 +186,10 @@ apps.xpfdoc0365090.com
 137.184.53.6:3333
 138.197.133.22:4000
 147.182.133.204:3333
+161.35.232.141:4000
+167.71.81.157:3333
 170.64.224.234:4000
+212.111.43.6:3333
 
 # Generic
 
