@@ -2237,6 +2237,7 @@ microsoft-ofifce.com
 mismo.cc
 mk3-lab.com
 mythic-840.polarbear.dev
+mythic-r-888.polarbear.dev
 mythic-r903.polarbear.dev
 mythic.c2scratch.com
 mythicalconnect.eastus.cloudapp.azure.com
@@ -2248,6 +2249,7 @@ ns2.sg03.tmd.cloud
 ns2.sg04.tmd.cloud
 ns21.sg03.tmd.cloud
 ns3.sg03.tmd.cloud
+pdq-support.fieldertechnology.com
 pie-001.huntelsystems.com
 protocoloceromanchas.com
 quantumcultures.com
@@ -2264,6 +2266,7 @@ staging.rjlawsandsons.com
 stake-cookinggr.com
 summerfi.us
 suspicious-diffie.161-35-113-194.plesk.page
+tempcontrolapi.bmesh.io
 test.security.factorial.dev
 the-mort.net
 tycaq.xyz
