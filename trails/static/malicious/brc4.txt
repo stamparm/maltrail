@@ -869,3 +869,13 @@ http://35.73.247.226
 # Reference: https://www.virustotal.com/gui/file/c3f8ebc9cfb7ebe1ebbe3a4210753b271fecf73392fef98519b823a3e7c056c7/detection
 
 plantytime.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-22)
+
+http://54.178.38.136
+157.230.63.141:443
+164.90.144.91:443
+185.106.176.250:8443
+205.209.126.137:41867
+81.95.8.178:40000
+94.156.67.247:443
