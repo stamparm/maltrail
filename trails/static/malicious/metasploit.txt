@@ -5699,3 +5699,11 @@ http://192.3.98.53
 5.180.45.105:2007
 8.137.96.81:8000
 94.177.123.154:443
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/IPPortC2s-30day.csv (# 2024-09-22)
+
+172.86.80.8:8383
+195.158.82.221:8080
+23.95.73.191:443
+31.7.61.18:4430
+52.255.175.6:8880
