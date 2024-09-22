@@ -12621,6 +12621,11 @@ ads-analysis.net
 jsdelive.com
 sw.jsdelive.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.88.3.11/relations
+
+marenteches.online
+repo.marenteches.online
+
 # Generic
 
 /assets/lfg.js
