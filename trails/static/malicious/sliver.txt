@@ -5242,6 +5242,14 @@ vulturescan.com
 68.183.144.218:31337
 68.183.144.218:8888
 
+# Reference: https://x.com/VirITeXplorer/status/1838236691196182630
+# Reference: https://www.virustotal.com/gui/file/47486ec6627fced4663d52c408f85f6a74cb9f256b4ef111c66e2bc990b271f9/detection
+# Reference: https://www.virustotal.com/gui/file/ff16334c4cbbfed4bfca23436493397d0465c643cce6cbe41426067bb1ce14ff/detection
+
+213.183.54.123:443
+213.183.54.123:8444
+techitzone.ru
+
 # Generic
 
 /.sliver-client/
