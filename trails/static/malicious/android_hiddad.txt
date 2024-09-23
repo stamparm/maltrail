@@ -568,3 +568,17 @@ wait4hour.info
 # Reference: https://www.virustotal.com/gui/file/1a8bfa423c03db777e3e077f1076b4d6b030cfa74b7b821b2cedb729d15ea1f4/detection
 
 leaukseseem.xyz
+
+# Reference: https://securelist.com/necro-trojan-is-back-on-google-play/113881/
+# Reference: https://www.virustotal.com/gui/file/00781c1a26992a98d0a903f92a44a2cf52a70adc55ecce8c488168e7f892055d/detection
+# Reference: https://www.virustotal.com/gui/file/b06fd7a71780e53ac8cfe8a9783b9212f20388251e9199711e3ab0bdf069ef44/detection
+# Reference: https://www.virustotal.com/gui/file/cdccf0798e48a1cbb3accfb3cae4a726ba92a9b7ecc4c0e6b662e1355640c5b6/detection
+
+govsred.buzz
+justbigso.com
+playmods.live
+adoss.spinsok.com
+hsa.govsred.buzz
+oad1.azhituo.com
+oad1.bearsplay.com
+bear-ad.oss-us-west-1.aliyuncs.com
