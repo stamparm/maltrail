@@ -12626,6 +12626,11 @@ sw.jsdelive.com
 marenteches.online
 repo.marenteches.online
 
+# Reference: https://x.com/sdcyberresearch/status/1838222470135833080
+# Reference: https://www.virustotal.com/gui/ip-address/176.124.222.157/relations
+
+cdnstatics.net
+
 # Generic
 
 /assets/lfg.js
