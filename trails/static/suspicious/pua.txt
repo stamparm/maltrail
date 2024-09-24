@@ -3331,3 +3331,20 @@ ec2-54-196-152-208.compute-1.amazonaws.com
 # Reference: https://www.virustotal.com/gui/file/293366b84dabe9b0a1e84c37659d0bbad2c85b4c4ad9c104923364ad69c6c8b4/detection
 
 192.46.214.232:443
+
+# Reference: https://x.com/banthisguy9349/status/1838597449910251943
+# Reference: https://www.joesandbox.com/analysis/1477772/0/html
+
+http://185.132.133.160
+http://185.132.133.163
+http://185.132.133.213
+cleverjumper.com
+openfrost.net
+
+# Generic
+
+/internet_put222.php?id=
+/k_get.php?bot=
+/k_get_new.php?bot=
+/k_put_new.php?id=
+/o_get.php?uid=
