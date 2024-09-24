@@ -413,6 +413,10 @@ x99y.xyz
 
 gertioma.top
 
+# Reference: https://www.proofpoint.com/au/blog/threat-insight/clipboard-compromise-powershell-self-pwn
+
+oazevents.com
+
 # Generic
 
 /a3A7qLVn/
