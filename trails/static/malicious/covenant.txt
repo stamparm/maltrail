@@ -823,6 +823,33 @@ http://185.141.26.116
 45.55.38.145:7443
 98.81.82.117:7443
 
+# Reference: https://www.virustotal.com/gui/file/d6acb9c0e9145574ea900be03b1fa10d7ff0316670f208623ed622c824c2c939/detection
+
+comigoninguempodes.shop
+limpandoacasa.store
+cojct.limpandoacasa.store
+dpqje.limpandoacasa.store
+gzygo.limpandoacasa.store
+immqs.limpandoacasa.store
+jvlma.limpandoacasa.store
+mduhe.limpandoacasa.store
+mmwzw.limpandoacasa.store
+vrmjo.limpandoacasa.store
+vtxtn.limpandoacasa.store
+apczv.comigoninguempodes.shop
+gaxxg.comigoninguempodes.shop
+kmcsn.comigoninguempodes.shop
+leffp.comigoninguempodes.shop
+lvvmj.comigoninguempodes.shop
+ngyfo.comigoninguempodes.shop
+nxlkl.comigoninguempodes.shop
+nzfui.comigoninguempodes.shop
+tcvhd.comigoninguempodes.shop
+terha.comigoninguempodes.shop
+yhpmm.comigoninguempodes.shop
+zlniz.comigoninguempodes.shop
+ztxwf.comigoninguempodes.shop
+
 # Generic
 
 /covenantuser/
