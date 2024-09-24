@@ -8661,6 +8661,15 @@ gatetodisplaycontent.com
 
 /reverse-shell.ps1
 
+# Reference: https://x.com/banthisguy9349/status/1838597449910251943
+# Reference: https://www.joesandbox.com/analysis/1477772/0/html
+
+/internet_put222.php?id=
+/k_get.php?bot=
+/k_get_new.php?bot=
+/k_put_new.php?id=
+/o_get.php?uid=
+
 # Generic
 
 /js/altmanluggage.js
