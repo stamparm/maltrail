@@ -12631,6 +12631,10 @@ repo.marenteches.online
 
 cdnstatics.net
 
+# Reference: https://x.com/sdcyberresearch/status/1838527580678275345
+
+opinionharbor.com
+
 # Generic
 
 /assets/lfg.js
