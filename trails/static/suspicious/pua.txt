@@ -3340,11 +3340,3 @@ http://185.132.133.163
 http://185.132.133.213
 cleverjumper.com
 openfrost.net
-
-# Generic
-
-/internet_put222.php?id=
-/k_get.php?bot=
-/k_get_new.php?bot=
-/k_put_new.php?id=
-/o_get.php?uid=
