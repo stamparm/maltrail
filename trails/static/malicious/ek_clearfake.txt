@@ -417,6 +417,10 @@ gertioma.top
 
 oazevents.com
 
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/security-brief-actor-uses-compromised-accounts-customized-social-engineering
+
+live-samsaratrucking.com
+
 # Generic
 
 /a3A7qLVn/
