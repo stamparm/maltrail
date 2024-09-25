@@ -5250,6 +5250,14 @@ vulturescan.com
 213.183.54.123:8444
 techitzone.ru
 
+# Reference: https://x.com/VirITeXplorer/status/1838877644726677585
+# Reference: https://www.virustotal.com/gui/ip-address/92.243.66.237/relations
+# Reference: https://www.virustotal.com/gui/file/22c5b7c26e4b909eac907e9d31a57e230f6d13096594cf9fdab81e9b30f1d2bb/detection
+# Reference: https://www.virustotal.com/gui/file/d7db68d1a679d6afd4ef90f8747f698eff96f385e36b3a91c543f5438f6c380b/detection
+
+92.243.66.237:8464
+rtxcore.ru
+
 # Generic
 
 /.sliver-client/
