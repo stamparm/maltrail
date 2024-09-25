@@ -2879,3 +2879,8 @@ http://95.214.27.153
 marioc2.online
 marioc2-connect.ddns.net
 swiftapi.ddns.net
+
+# Reference: https://x.com/banthisguy9349/status/1838890030066024731
+# Reference: https://www.virustotal.com/gui/ip-address/185.91.127.76/relations
+
+freeddos.pw
