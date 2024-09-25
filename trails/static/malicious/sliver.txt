@@ -5258,6 +5258,12 @@ techitzone.ru
 92.243.66.237:8464
 rtxcore.ru
 
+# Reference: https://x.com/Gi7w0rm/status/1838951321879068990
+
+1.92.89.193:8888
+/sliver_server
+/sliver_client
+
 # Generic
 
 /.sliver-client/
