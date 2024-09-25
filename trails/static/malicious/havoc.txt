@@ -3111,6 +3111,12 @@ webmail.onlinechase000.duckdns.org
 wiki.game-paradise.de
 z8h.lex.fo
 
+# Reference: https://www.virustotal.com/gui/file/1be047069ed08063ba280dccc9fb13af6856e08f50f1ce52236bff434b0a4f4b/detection
+# Reference: https://www.virustotal.com/gui/file/5eae4826346083deff47bbac8db86f3c1fd3deaaadf051d85e07a97388dcaa66/detection
+
+http://181.215.135.141
+181.215.135.141:443
+
 # Generic
 
 /Havoc/payload/
