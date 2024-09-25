@@ -8670,6 +8670,10 @@ gatetodisplaycontent.com
 /k_put_new.php?id=
 /o_get.php?uid=
 
+# Reference: https://x.com/Gi7w0rm/status/1838827132174115212
+
+/PhishMailer.py
+
 # Generic
 
 /js/altmanluggage.js
