@@ -340,3 +340,10 @@ sisngl21a.ddns.net
 # Reference: https://www.virustotal.com/gui/file/abbb2686d3424253ed4e183c1a2fc86e77c798801766411ee3f54943dbfe0bc3/detection
 
 94.156.65.19:8041
+
+# Reference: https://x.com/malwrhunterteam/status/1838905839966470652
+# Reference: https://www.virustotal.com/gui/file/04a5b7d02fa2155021cabe33dc50066ce1076ba2ed0ee6bd39f2316676665786/detection
+
+194.59.30.201:8041
+voicemail-lakeleft.top
+popwee2.zapto.org
