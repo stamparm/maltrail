@@ -3015,6 +3015,7 @@ http://13.93.69.87
 # Reference: https://app.validin.com/detail?find=f0003fecc5f9c8c2cbac&type=hash#tab=host_pairs_v2
 # Reference: https://www.virustotal.com/gui/file/ae3b7072916b3897e67caa4fd01f589a18643d339e5138c3ba103c47219c0241/detection
 
+147.78.103.165:443
 18.133.180.232:443
 103-152-255-69.cprapid.com
 137-184-45-196.cprapid.com
