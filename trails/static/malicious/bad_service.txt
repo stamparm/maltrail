@@ -2882,5 +2882,7 @@ swiftapi.ddns.net
 
 # Reference: https://x.com/banthisguy9349/status/1838890030066024731
 # Reference: https://www.virustotal.com/gui/ip-address/185.91.127.76/relations
+# Reference: https://app.validin.com/detail?type=dom&find=Freeddos.pw#tab=host_pairs_v2
 
+ddosforhire.su
 freeddos.pw
