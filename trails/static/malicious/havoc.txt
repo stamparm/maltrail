@@ -3013,7 +3013,9 @@ http://13.93.69.87
 97.107.134.79:443
 
 # Reference: https://app.validin.com/detail?find=f0003fecc5f9c8c2cbac&type=hash#tab=host_pairs_v2
+# Reference: https://www.virustotal.com/gui/file/ae3b7072916b3897e67caa4fd01f589a18643d339e5138c3ba103c47219c0241/detection
 
+18.133.180.232:443
 103-152-255-69.cprapid.com
 137-184-45-196.cprapid.com
 137-184-45-196.ipv4.staticdns3.io
@@ -3021,6 +3023,7 @@ http://13.93.69.87
 143-198-143-45.cprapid.com
 161-35-239-147.cprapid.com
 165-227-168-67.cprapid.com
+18-133-180-232.cprapid.com
 74.ip-51-255-45.eu
 abbick.cc
 accerte-grupopmzpromocaoparceiro.if00d.com.br
