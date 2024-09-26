@@ -879,3 +879,8 @@ http://54.178.38.136
 205.209.126.137:41867
 81.95.8.178:40000
 94.156.67.247:443
+
+# Reference: https://x.com/iam_rajhans/status/1839221953980149808
+# Reference: https://www.virustotal.com/gui/file/45257b5cd16d391bc37afe4a6534610cb1bb70c14dbec15b5594ad798d31933f/detection
+
+d19uqbwzyx9r4z.cloudfront.net
