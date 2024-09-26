@@ -2193,6 +2193,7 @@ cpcalendars.liveandlettravel.com
 crm.mngr.me
 demo.norwichdeli.com
 devolutions-distribution.com
+directus.mngr.me
 distracted-engelbart.161-35-113-194.plesk.page
 djp.maxchat.co.id
 ec2-13-58-109-128.us-east-2.compute.amazonaws.com
