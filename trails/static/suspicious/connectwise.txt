@@ -347,3 +347,9 @@ sisngl21a.ddns.net
 194.59.30.201:8041
 voicemail-lakeleft.top
 popwee2.zapto.org
+
+# Reference: https://x.com/malwrhunterteam/status/1839258008204779861
+# Reference: https://www.virustotal.com/gui/file/934a35f92555d0004e1fb78fd91f6dd33036afa329c0900969adb07305231f74/detection
+
+79.110.49.42:8041
+dsmf2.zapto.org
