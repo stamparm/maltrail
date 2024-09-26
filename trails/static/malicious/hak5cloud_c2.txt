@@ -993,6 +993,8 @@ atk.areax.io
 authsmtp.safe-netsurfing.com
 autoconfig.slg-hafen-hamburg.de
 autoconfig.svp-hamburg-sportschuetzen.de
+autodiscover.slg-hafen-hamburg.de
+autodiscover.svp-hamburg-sportschuetzen.de
 aws.mikzbots.xyz
 baconmcburgerton.com
 batcave.pha3t0n.com
@@ -1036,6 +1038,7 @@ c2.flow-sec.de
 c2.fortify.cloud
 c2.glod.lu
 c2.gohydra.net
+c2.gulfport.run
 c2.h7-technologies.com
 c2.hoag.cloud
 c2.hopto.org
@@ -1051,6 +1054,7 @@ c2.ksmtwifi.net
 c2.kwellkorn.de
 c2.lachateau.net
 c2.lusosec.com
+c2.lycheegirl.cloud
 c2.matrix2600.com
 c2.mcglo.io
 c2.mchughcyber.io
@@ -1072,7 +1076,9 @@ c2.ptaas.pt
 c2.ranftler.eu
 c2.redc2portal.com
 c2.redteamatx.com
+c2.rego680.xyz
 c2.rehjr.com
+c2.rggi.cx
 c2.rmenetworks.com
 c2.saltsec.at
 c2.sec.craigasimon.com
@@ -1109,7 +1115,9 @@ c3.planet12industries.tech
 calendar.ozarkmoving.com
 cam-a.com
 cc2.cyriliantsecurity.com
+cc2.exfillabs.com
 cdn-picks.sxzxsp.com
+cheapdivers.com
 chicago.cloudc2.io
 cl0od-c2.honami.club
 cloud.c2serveraed.com
@@ -1264,6 +1272,7 @@ vmd71595.contaboserver.net
 vpn.ableit.solutions
 wizeguy.co.il
 wolf.support-it.services
+xinux.nl
 xsjfd.xyz
 youdontgnomemecloud.com
 zaqwsxcderfvbgtyhnmjuiklop.com
