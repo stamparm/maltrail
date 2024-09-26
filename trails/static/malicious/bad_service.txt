@@ -2944,3 +2944,20 @@ volitystress.vip
 warapi.net
 wrldsecurity.org
 zerostresser.net
+
+# Reference: https://app.validin.com/detail?find=ddosforhire.ru&type=dom&ref_id=742177571af#tab=host_pairs_v2
+
+cloudnode.me
+crtz.top
+cypherservices.org
+ddosforhire.ru
+elitenetwork.su
+enkisecurity.com
+jetstress.su
+lkxstress.su
+netguard.io
+quickdown.su
+streserus.com
+wrldsecurity.ru
+xonnetwork.com
+xstress.ru
