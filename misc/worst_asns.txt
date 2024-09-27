@@ -4744,3 +4744,9 @@
 
 178.215.238.0/24,perfecto-as
 95.214.27.0/24,perfecto-as
+
+#AS39287
+# Reference: https://ipinfo.io/AS39287
+
+185.193.125.0/24,abstract
+185.193.126.0/23,abstract
