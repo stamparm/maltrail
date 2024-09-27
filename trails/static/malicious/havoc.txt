@@ -3136,6 +3136,13 @@ z8h.lex.fo
 http://181.215.135.141
 181.215.135.141:443
 
+# Reference: https://www.virustotal.com/gui/file/482a86391842a2b869ffd38af0dbfa96de7501a92986e644b54d8ae731bdaf64/detection
+# Reference: https://www.virustotal.com/gui/file/ab963f165c5269b14b0275a2b25f2e1110a7e3ca903324e106701a4167026270/detection
+
+http://84.201.150.223
+84.201.150.223:443
+84.201.150.223:8443
+
 # Generic
 
 /Havoc/payload/
