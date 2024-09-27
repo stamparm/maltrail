@@ -5707,3 +5707,9 @@ http://192.3.98.53
 23.95.73.191:443
 31.7.61.18:4430
 52.255.175.6:8880
+
+# Reference: https://x.com/malwrhunterteam/status/1839554342971384012
+# Reference: https://www.virustotal.com/gui/file/e09f6bd400ba7ce4232be37e75338cb7086feff5be9d29e40014cff4b2d7e4d4/detection
+# Reference: https://www.virustotal.com/gui/file/d75994684d5bc04028dca45e93e58f716e06f69f173cf4ab47f9c68d5436a247/detection
+
+45.124.64.27:47159
