@@ -887,6 +887,10 @@ whizability.com
 /cdn-vs/data.php
 /cdn-vs/download.php
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-09-25-v10703/2006
+
+roadrunnersell.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
