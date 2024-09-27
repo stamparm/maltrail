@@ -353,3 +353,8 @@ popwee2.zapto.org
 
 79.110.49.42:8041
 dsmf2.zapto.org
+
+# Reference: https://x.com/x3ph1/status/1839635461834174547
+# Reference: https://www.virustotal.com/gui/file/d9758d5e18b52b45fd061042145486091a059f6faba0097b4b54b66fd48342eb/detection
+
+cs796back3.site
