@@ -3143,6 +3143,10 @@ http://84.201.150.223
 84.201.150.223:443
 84.201.150.223:8443
 
+# Reference: https://www.virustotal.com/gui/ip-address/34.27.109.111/detection
+
+34.27.109.111:443
+
 # Generic
 
 /Havoc/payload/
