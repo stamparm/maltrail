@@ -4377,6 +4377,7 @@
 # Reference: https://ipinfo.io/AS210644
 
 109.107.181.0/24,aeza-as
+109.107.189.0/24,aeza-as
 109.107.190.0/24,aeza-as
 109.120.132.0/23,aeza-as
 109.120.134.0/23,aeza-as
