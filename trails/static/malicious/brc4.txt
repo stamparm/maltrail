@@ -884,3 +884,8 @@ http://54.178.38.136
 # Reference: https://www.virustotal.com/gui/file/45257b5cd16d391bc37afe4a6534610cb1bb70c14dbec15b5594ad798d31933f/detection
 
 d19uqbwzyx9r4z.cloudfront.net
+
+# Reference: https://x.com/malwrhunterteam/status/1839924221201220056
+# Reference: https://www.virustotal.com/gui/file/b67ce96362756c7a8f22e535b6a73aa9edbb84568c591efab378c0e3a5257368/detection
+
+74.50.84.181:443
