@@ -11846,6 +11846,7 @@ mistlink.online
 mokamob.site
 molotech.online
 neznlink.store
+neztec.click
 nishbakh.site
 nsnamob.site
 obshmob.shop
@@ -11961,6 +11962,7 @@ cdn.misdigit.click
 cdn.mistlink.online
 cdn.molotech.online
 cdn.neznlink.store
+cdn.neztec.click
 cdn.noanotech.sbs
 cdn.nsnamob.site
 cdn.obshmob.shop
