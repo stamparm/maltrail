@@ -8679,6 +8679,15 @@ gatetodisplaycontent.com
 /ips_dk0.ps1
 /ips_reverse_https_dk0.ps1
 
+# Reference: https://x.com/banthisguy9349/status/1839929495718932634
+
+/141174.php
+/80gm76k.php
+/adxkylg.php
+/qgadvr0.php
+/xbhde.php
+/yrw2qif.php
+
 # Generic
 
 /js/altmanluggage.js
