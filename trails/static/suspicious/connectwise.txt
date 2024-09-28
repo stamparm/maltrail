@@ -358,3 +358,9 @@ dsmf2.zapto.org
 # Reference: https://www.virustotal.com/gui/file/d9758d5e18b52b45fd061042145486091a059f6faba0097b4b54b66fd48342eb/detection
 
 cs796back3.site
+
+# Reference: https://x.com/banthisguy9349/status/1840097237172457681
+# Reference: https://www.virustotal.com/gui/file/2efd27df3c5458e8c43d6936739fb7a8d2eda10a6fe41d38c6e31703bb384052/detection
+
+91.92.244.246:8041
+microwavesupport.anondns.net
