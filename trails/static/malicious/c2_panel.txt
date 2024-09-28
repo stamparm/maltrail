@@ -891,6 +891,11 @@ http://176.59.196.133
 38.242.128.92:3000
 75.119.134.111:4000
 
+# Reference: https://x.com/banthisguy9349/status/1840097237172457681
+# Reference: https://www.virustotal.com/gui/file/2efd27df3c5458e8c43d6936739fb7a8d2eda10a6fe41d38c6e31703bb384052/detection
+
+http://91.92.244.246
+
 # Generic
 
 /admin_123/auth.php
