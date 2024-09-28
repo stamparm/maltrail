@@ -8674,6 +8674,11 @@ gatetodisplaycontent.com
 
 /PhishMailer.py
 
+# Reference: https://x.com/banthisguy9349/status/1839937406969020433
+
+/ips_dk0.ps1
+/ips_reverse_https_dk0.ps1
+
 # Generic
 
 /js/altmanluggage.js
