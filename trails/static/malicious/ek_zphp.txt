@@ -891,6 +891,12 @@ whizability.com
 
 roadrunnersell.com
 
+# Reference: https://x.com/DaveLikesMalwre/status/1841030772091994495
+# Reference: https://app.validin.com/detail?type=ip&find=193.42.38.131#tab=resolutions
+
+indoprimitiveart.com
+paperbearsweets.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
