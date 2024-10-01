@@ -12479,6 +12479,7 @@ trendset.website
 
 cemdigit.click
 creftip.shop
+ecstatec.store
 gamdev.site
 geutes.quest
 jejtol.shop
@@ -12496,6 +12497,7 @@ vitadigit.quest
 zmimot.shop
 cdn.cemdigit.click
 cdn.creftip.shop
+cdn.ecstatec.store
 cdn.gamdev.site
 cdn.geutes.quest
 cdn.jejtol.shop
