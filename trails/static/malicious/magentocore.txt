@@ -12642,6 +12642,21 @@ cdnstatics.net
 
 opinionharbor.com
 
+# Reference: https://x.com/sdcyberresearch/status/1841114094637568084
+# Reference: https://www.virustotal.com/gui/ip-address/82.197.83.18/relations
+
+addtag.net
+mystatpal.com
+seomgr.com
+statictool.com
+useonline.org
+parent.addtag.net
+ui.addtag.net
+widget.statictool.com
+widget.useonline.org
+sales.mystatpal.com
+stat.mystatpal.com
+
 # Generic
 
 /assets/lfg.js
