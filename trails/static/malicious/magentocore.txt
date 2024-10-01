@@ -12677,6 +12677,37 @@ widget.useonline.org
 sales.mystatpal.com
 stat.mystatpal.com
 
+# Reference: https://sansec.io/research/cosmicsting-fallout
+# Reference: https://app.validin.com/detail?find=158.255.213.172&type=ip4&ref_id=17650ce9986#tab=resolutions
+
+analytisgroup.com
+echomest.com
+quantunnquest.com
+statspots.com
+trendorawin.com
+app.chwine.dev
+bystats.io
+cdn.myshopper.io
+chwine.dev
+consentime.com
+convertpro.org
+fatrade.net
+ge4cdn.com
+hostnotify.io
+img.wisepops.co
+itsemma.io
+m.bingforce.org
+myshopper.io
+sourcetrap.net
+subsales.net
+t.gearplace.net
+tag.convertpro.org
+tag.wealthleaderinc.com
+tr.hostnotify.io
+web.bystats.io
+web.foptimize.net
+youpilot.org
+
 # Generic
 
 /assets/lfg.js
