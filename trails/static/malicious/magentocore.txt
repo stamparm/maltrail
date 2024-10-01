@@ -12274,18 +12274,36 @@ adsimilar.com
 
 # Reference: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions
 
+autocon.store
+bazelec.site
+belmint.quest
 comslet.store
 cvirdot.quest
+drodigit.online
+gordment.click
+hlimbet.site
+karfaet.store
 kirelit.site
 koontop.click
 redelot.shop
 shemmob.online
+sinckick.shop
+vestmic.quest
+cdn.autocon.store
+cdn.bazelec.site
+cdn.belmint.quest
 cdn.comslet.store
 cdn.cvirdot.quest
+cdn.drodigit.online
+cdn.gordment.click
+cdn.hlimbet.site
+cdn.karfaet.store
 cdn.kirelit.site
 cdn.koontop.click
 cdn.redelot.shop
 cdn.shemmob.online
+cdn.sinckick.shop
+cdn.vestmic.quest
 
 # Reference: https://app.validin.com/detail?find=45.88.3.141&type=ip4&ref_id=b806f575d8e#tab=resolutions
 
