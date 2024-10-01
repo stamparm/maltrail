@@ -5265,6 +5265,11 @@ rtxcore.ru
 /sliver_server
 /sliver_client
 
+# Reference: https://thedfirreport.com/2024/09/30/nitrogen-campaign-drops-sliver-and-ends-with-blackcat-ransomware/
+
+194.169.175.134:8443
+194.49.94.18:8443
+
 # Generic
 
 /.sliver-client/
