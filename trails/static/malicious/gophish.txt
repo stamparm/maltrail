@@ -2631,3 +2631,16 @@ lamborghini-service.com
 128.199.1.27:4000
 3.14.79.193:4444
 64.23.148.185:3333
+
+# Reference: https://x.com/MichalKoczwara/status/1840824008117535100
+# Reference: https://app.validin.com/detail?type=ip&find=176.96.227.21#tab=resolutions
+
+176.96.227.21:443
+altinbank.kz
+altunbank.kz
+cko.kz
+endek.kz
+otbasybankk.kz
+fortiauth.altinbank.kz
+mail.altinbank.kz
+mail.altunbank.kz
