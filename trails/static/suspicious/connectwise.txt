@@ -388,3 +388,11 @@ snbcv4.top
 79.110.49.16:8041
 otohelp.top
 mmf351.ddns.net
+
+# Reference: https://x.com/malwrhunterteam/status/1840711918006239456
+# Reference: https://www.virustotal.com/gui/file/9be96842563827373caedce47de8191e2be93f6d3286cf8b4286492be4445cad/detection
+# Reference: https://www.virustotal.com/gui/file/defe3ce55efec3331afaaa98abe87d6a2aa738ddae5b1f840a92368199276023/detection
+
+79.110.49.196:8041
+upphelp.top
+qpkl23.zapto.org
