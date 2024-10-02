@@ -12964,11 +12964,14 @@ vizualis.online
 # Reference: https://app.validin.com/detail?first_seen=2024-09-01&type=ip&find=195.242.110.0%2F24#tab=resolutions
 
 aloteches.click
+aradosetar.top
 avarit.site
 bamgen.store
 beilink.site
+bigdata.name
 bleucot.site
 bomtec.online
+cafemode.shop
 chepolent.online
 chiptoc.site
 cikpit.shop
@@ -12981,9 +12984,11 @@ dvendot.site
 faktech.site
 famitevec.site
 fenotech.shop
+figonowubo.fun
 filintop.store
 galkick.online
 garuelo.quest
+geitetic.online
 gekliop.online
 gemupel.shop
 geopert.shop
@@ -12994,6 +12999,7 @@ gigulom.store
 gitorec.shop
 gorilink.quest
 guqetec.click
+helomint.shop
 helvet.quest
 helyadig.quest
 hlopsinc.quest
@@ -13013,9 +13019,11 @@ keiture.online
 kicyakick.click
 kindigit.quest
 kolutec.shop
+kolutech.site
 koramel.online
 krowlink.quest
 krustop.click
+lemetotic.site
 lenvin.online
 leptirot.store
 leyrec.online
@@ -13023,9 +13031,12 @@ lietec.quest
 loofet.site
 lookeus.shop
 lovdyno.click
+mehagn0me.site
 memotip.site
+mewdot.site
 milidigit.site
 milink.shop
+mojetik.store
 mojtec.quest
 mutech.store
 nasecol.quest
@@ -13035,6 +13046,8 @@ obstrels.online
 omatec.store
 opelink.shop
 operec.site
+opertec.store
+opewinc.site
 oskaloop.quest
 otolink.online
 oulipeec.site
@@ -13060,6 +13073,7 @@ saertech.quest
 sectrans.store
 sedmet.click
 sendig.store
+sendigit.online
 seqirink.click
 setinc.site
 sewtic.shop
@@ -13074,11 +13088,14 @@ sorlinker.click
 starkick.online
 stepfet.click
 stesntec.store
+supelink.store
 sviloon.site
 telifetec.click
 telsinket.site
+tenopont.click
 teonlitic.shop
 tepiyoop.shop
+testexamplesa.online
 tishatec.click
 toketic.shop
 tupulopes.store
@@ -13094,8 +13111,12 @@ vonutec.click
 vremlil.quest
 vtordigit.site
 waslink.shop
+weletec.quest
+welipop.click
 xaraelec.click
+yadislink.shop
 yalowtec.online
+yanetech.online
 yelotic.store
 yelventar.quest
 yoriteh.site
@@ -13103,13 +13124,17 @@ zabkoj.store
 zagalink.store
 zavtielot.shop
 zemeksinc.online
+zenehot.shop
 zirtdigit.site
 cdn.aloteches.click
+cdn.aradosetar.top
 cdn.avarit.site
 cdn.bamgen.store
 cdn.beilink.site
+cdn.bigdata.name
 cdn.bleucot.site
 cdn.bomtec.online
+cdn.cafemode.shop
 cdn.chepolent.online
 cdn.chiptoc.site
 cdn.cikpit.shop
@@ -13122,9 +13147,11 @@ cdn.dvendot.site
 cdn.faktech.site
 cdn.famitevec.site
 cdn.fenotech.shop
+cdn.figonowubo.fun
 cdn.filintop.store
 cdn.galkick.online
 cdn.garuelo.quest
+cdn.geitetic.online
 cdn.gekliop.online
 cdn.gemupel.shop
 cdn.geopert.shop
@@ -13135,6 +13162,7 @@ cdn.gigulom.store
 cdn.gitorec.shop
 cdn.gorilink.quest
 cdn.guqetec.click
+cdn.helomint.shop
 cdn.helvet.quest
 cdn.helyadig.quest
 cdn.hlopsinc.quest
@@ -13154,9 +13182,11 @@ cdn.keiture.online
 cdn.kicyakick.click
 cdn.kindigit.quest
 cdn.kolutec.shop
+cdn.kolutech.site
 cdn.koramel.online
 cdn.krowlink.quest
 cdn.krustop.click
+cdn.lemetotic.site
 cdn.lenvin.online
 cdn.leptirot.store
 cdn.leyrec.online
@@ -13164,9 +13194,12 @@ cdn.lietec.quest
 cdn.loofet.site
 cdn.lookeus.shop
 cdn.lovdyno.click
+cdn.mehagn0me.site
 cdn.memotip.site
+cdn.mewdot.site
 cdn.milidigit.site
 cdn.milink.shop
+cdn.mojetik.store
 cdn.mojtec.quest
 cdn.mutech.store
 cdn.nasecol.quest
@@ -13176,6 +13209,8 @@ cdn.obstrels.online
 cdn.omatec.store
 cdn.opelink.shop
 cdn.operec.site
+cdn.opertec.store
+cdn.opewinc.site
 cdn.oskaloop.quest
 cdn.otolink.online
 cdn.oulipeec.site
@@ -13201,6 +13236,7 @@ cdn.saertech.quest
 cdn.sectrans.store
 cdn.sedmet.click
 cdn.sendig.store
+cdn.sendigit.online
 cdn.seqirink.click
 cdn.setinc.site
 cdn.sewtic.shop
@@ -13215,11 +13251,14 @@ cdn.sorlinker.click
 cdn.starkick.online
 cdn.stepfet.click
 cdn.stesntec.store
+cdn.supelink.store
 cdn.sviloon.site
 cdn.telifetec.click
 cdn.telsinket.site
+cdn.tenopont.click
 cdn.teonlitic.shop
 cdn.tepiyoop.shop
+cdn.testexamplesa.online
 cdn.tishatec.click
 cdn.toketic.shop
 cdn.tupulopes.store
@@ -13235,8 +13274,12 @@ cdn.vonutec.click
 cdn.vremlil.quest
 cdn.vtordigit.site
 cdn.waslink.shop
+cdn.weletec.quest
+cdn.welipop.click
 cdn.xaraelec.click
+cdn.yadislink.shop
 cdn.yalowtec.online
+cdn.yanetech.online
 cdn.yelotic.store
 cdn.yelventar.quest
 cdn.yoriteh.site
@@ -13244,6 +13287,7 @@ cdn.zabkoj.store
 cdn.zagalink.store
 cdn.zavtielot.shop
 cdn.zemeksinc.online
+cdn.zenehot.shop
 cdn.zirtdigit.site
 
 # Generic
