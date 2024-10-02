@@ -381,3 +381,10 @@ kkl22.ddns.net
 sbvhty84.top
 sibjwh5.top
 snbcv4.top
+
+# Reference: https://x.com/malwrhunterteam/status/1840711558764081400
+# Reference: https://www.virustotal.com/gui/file/2f9d98d69de030462125dc18540bc1989b58ea0a26deaf757780035c615589a9/detection
+
+79.110.49.16:8041
+otohelp.top
+mmf351.ddns.net
