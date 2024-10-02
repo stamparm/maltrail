@@ -372,3 +372,12 @@ microwavesupport.anondns.net
 cloudfiles-secure.io
 app.cloudfiles-secure.io
 kkl22.ddns.net
+
+# Reference: https://x.com/malwrhunterteam/status/1840710912329572411
+# Reference: https://www.virustotal.com/gui/file/8f085b24061cd7446a4e53bf2a03d4a35fd39b172c199c3447da1be3d1fc017e/detection
+# Reference: https://www.virustotal.com/gui/file/600c9dbc59ebc82960527f346eb89aeac9383b7b8064bed0ed1826d3975877c2/detection
+
+37.221.64.66:8041
+sbvhty84.top
+sibjwh5.top
+snbcv4.top
