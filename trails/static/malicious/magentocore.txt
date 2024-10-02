@@ -12680,11 +12680,6 @@ stat.mystatpal.com
 # Reference: https://sansec.io/research/cosmicsting-fallout
 # Reference: https://app.validin.com/detail?find=158.255.213.172&type=ip4&ref_id=17650ce9986#tab=resolutions
 
-analytisgroup.com
-echomest.com
-quantunnquest.com
-statspots.com
-trendorawin.com
 app.chwine.dev
 bystats.io
 cdn.myshopper.io
@@ -12707,6 +12702,36 @@ tr.hostnotify.io
 web.bystats.io
 web.foptimize.net
 youpilot.org
+
+# Reference: https://sansec.io/research/cosmicsting#attack-attribution
+
+analytisgroup.com
+analytisweb.com
+bytesbazar.com
+chartismart.com
+codecarawan.com
+cssmagic.shop
+datifyny.com
+desiqnia.shop
+desynlabtech.com
+echomest.com
+horlzonhub.com
+marketiqhub.com
+marketrom.shop
+marketsoilmart.com
+metricsy.shop
+novastraem.com
+quantunnquest.com
+radlantroots.com
+sellwisehub.com
+statify.online
+statspots.com
+techtnee.com
+trendgurupro.com
+trendor.website
+trendorawin.com
+trendori.shop
+vizualis.online
 
 # Generic
 
