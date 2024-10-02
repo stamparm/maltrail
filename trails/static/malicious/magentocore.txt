@@ -12607,6 +12607,7 @@ samloop.online
 serdot.site
 stalentop.shop
 sumreit.quest
+sutevdigit.online
 svinuer.site
 svutech.shop
 teopit.store
@@ -12626,6 +12627,7 @@ yelowpop.fun
 yeltech.store
 yepetok.quest
 yepkit.site
+zapotech.shop
 zmimot.shop
 zumivqiq.click
 cdn.alasink.quest
@@ -12738,6 +12740,7 @@ cdn.samloop.online
 cdn.serdot.site
 cdn.stalentop.shop
 cdn.sumreit.quest
+cdn.sutevdigit.online
 cdn.svinuer.site
 cdn.svutech.shop
 cdn.teopit.store
@@ -12757,6 +12760,7 @@ cdn.yelowpop.fun
 cdn.yeltech.store
 cdn.yepetok.quest
 cdn.yepkit.site
+cdn.zapotech.shop
 cdn.zmimot.shop
 cdn.zumivqiq.click
 
