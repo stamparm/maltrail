@@ -12519,6 +12519,7 @@ chtotop.online
 creftip.shop
 deiporen.click
 demtecer.site
+deqiroos.quest
 deqitec.site
 detemp.shop
 devyarec.click
@@ -12652,6 +12653,7 @@ cdn.chtotop.online
 cdn.creftip.shop
 cdn.deiporen.click
 cdn.demtecer.site
+cdn.deqiroos.quest
 cdn.deqitec.site
 cdn.detemp.shop
 cdn.devyarec.click
