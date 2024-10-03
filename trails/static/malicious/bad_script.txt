@@ -8692,6 +8692,10 @@ gatetodisplaycontent.com
 
 /netbooknewthingsforupdnow.hta
 
+# Reference: https://www.virustotal.com/gui/file/5f7ede06fa8da808f891e29fcfc533fcab3f7e9bc02ad68d0e5b24fe006fcbe5/detection
+
+/IEnetbookupdation.hta
+
 # Generic
 
 /js/altmanluggage.js
