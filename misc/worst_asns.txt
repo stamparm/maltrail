@@ -4848,8 +4848,13 @@
 185.193.125.0/24,abstract
 185.193.126.0/23,abstract
 
-# AS40110
+# AS401120
 # Reference: https://x.com/banthisguy9349/status/1841812306763587678
-# Reference: https://ipinfo.io/AS40110
+# Reference: https://ipinfo.io/AS401120
 
-12.182.253.0/24,cci-asn
+194.48.251.0/24,cheapy-host
+93.123.39.0/24,cheapy-host
+94.156.104.0/24,cheapy-host
+94.156.105.0/24,cheapy-host
+94.156.166.0/24,cheapy-host
+94.156.167.0/24,cheapy-host
