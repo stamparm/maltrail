@@ -889,3 +889,7 @@ d19uqbwzyx9r4z.cloudfront.net
 # Reference: https://www.virustotal.com/gui/file/b67ce96362756c7a8f22e535b6a73aa9edbb84568c591efab378c0e3a5257368/detection
 
 74.50.84.181:443
+
+# Reference: https://github.com/pr0xylife/Latrodectus/blob/main/Latrodectus_03.10.2024.txt
+
+combazarunet.com
