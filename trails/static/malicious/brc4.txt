@@ -893,3 +893,13 @@ d19uqbwzyx9r4z.cloudfront.net
 # Reference: https://github.com/pr0xylife/Latrodectus/blob/main/Latrodectus_03.10.2024.txt
 
 combazarunet.com
+
+# Reference: https://github.com/pr0xylife/Latrodectus/blob/main/Latrodectus_04.10.2024.txt
+# Reference: https://www.virustotal.com/gui/file/07282b92613d88cdeb02dc30835216268c7ec378bb0ff7a08bb280775a8f82c3/detection
+
+141.98.234.114:8042
+185.106.92.80:8042
+82.115.223.150:8042
+obobobo.com
+pobegskichi.com
+sosachwaffen.com
