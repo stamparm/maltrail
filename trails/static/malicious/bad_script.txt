@@ -8696,6 +8696,11 @@ gatetodisplaycontent.com
 
 /IEnetbookupdation.hta
 
+# Reference: https://x.com/banthisguy9349/status/1842246259765088421
+
+/data/1x_stc.js
+/1x_stc.js
+
 # Generic
 
 /js/altmanluggage.js
