@@ -4858,3 +4858,31 @@
 94.156.105.0/24,cheapy-host
 94.156.166.0/24,cheapy-host
 94.156.167.0/24,cheapy-host
+
+# AS401115
+# Reference: https://x.com/banthisguy9349/status/1842549636755497417
+# Reference: https://ipinfo.io/AS401115
+
+87.120.112.0/24,ekabi
+87.120.113.0/24,ekabi
+87.120.114.0/24,ekabi
+87.120.115.0/24,ekabi
+87.120.116.0/24,ekabi
+87.120.117.0/24,ekabi
+87.120.125.0/24,ekabi
+87.120.126.0/24,ekabi
+87.120.127.0/24,ekabi
+
+# AS401116
+# Reference: https://x.com/banthisguy9349/status/1842549636755497417
+# Reference: https://ipinfo.io/AS401116
+
+178.215.224.0/24,nybula
+31.13.224.0/24,nybula
+45.149.241.0/24,nybula
+80.76.51.0/24,nybula
+81.161.238.0/24,nybula
+85.31.47.0/24,nybula
+87.121.86.0/24,nybula
+93.123.109.0/24,nybula
+94.103.125.0/24,nybula
