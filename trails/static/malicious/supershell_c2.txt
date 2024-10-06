@@ -2287,6 +2287,24 @@ http://47.253.35.208
 8.209.219.205:8888
 j7yy873tbfyp.un42.zcwsry.com
 
+# Reference: https://urlhaus.abuse.ch/browse/tag/supershell-c2/ (# 2024-10-06)
+
+156.238.243.161:8080
+43.242.203.214:60000
+91.238.203.71:7237
+admin.antharris.top
+antharris.top
+blog.eeho.cn
+changyg.top
+ciscocdn.com
+cloud.antharris.top
+git.antharris.top
+jp.eeho.cn
+pan.eeho.cn
+park.chuitian.cn
+powercx1.wetolink.com
+rd.chuitian.cn
+
 # Generic
 
 /supershell/login
