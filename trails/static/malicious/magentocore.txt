@@ -13301,6 +13301,48 @@ cdn.zemeksinc.online
 cdn.zenehot.shop
 cdn.zirtdigit.site
 
+# Reference: https://sansec.io/research/cosmicsting
+
+advertiq.shop
+advertispro.com
+advertls.shop
+anality-google.com
+articon.shop
+artistryhab.shop
+brandilift.com
+brandixi.shop
+chartify.shop
+checkout.lat
+codegenesis.shop
+countilancer.com
+countora.shop
+datagen.shop
+datallqs.com
+deslgnhq.com
+desynsy.com
+evaluatemingle.com
+graphig.shop
+graphisprintstudio.com
+graphize.shop
+graphwebpro.com
+happynast.shop
+insightharvesters.com
+joyfullday.shop
+m37gg41n.c5.rs
+marketicsy.com
+marketro.shop
+markettz.com
+myhapperflowers.com
+pixella.shop
+sdtrack.io
+sellllink.com
+selllvibe.com
+sellsageapp.com
+sellspotweb.com
+statdynanics.com
+statify.shop
+styllize.shop
+
 # Generic
 
 /assets/lfg.js
