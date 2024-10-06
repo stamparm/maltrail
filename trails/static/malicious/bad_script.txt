@@ -8701,6 +8701,10 @@ gatetodisplaycontent.com
 /data/1x_stc.js
 /1x_stc.js
 
+# Reference: https://sansec.io/research/cosmicsting
+
+/?exploited=
+
 # Generic
 
 /js/altmanluggage.js
