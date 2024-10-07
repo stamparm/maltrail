@@ -1008,6 +1008,7 @@ c2-demo.hak5.org
 c2-junk.hopto.org
 c2-kraft.de
 c2.2day.es
+c2.2workplace.com
 c2.abc.com.ro
 c2.abqtech.net
 c2.achimhaag.com
@@ -1034,6 +1035,7 @@ c2.dragonflysecurity.com
 c2.drogja.de
 c2.eddiequinn.xyz
 c2.emptyinbox.ca
+c2.finelinesecurity.com
 c2.flow-sec.de
 c2.fortify.cloud
 c2.glod.lu
@@ -1069,9 +1071,11 @@ c2.nit-solutions.com
 c2.nordcom.ca
 c2.notzeus.com
 c2.orion-secure.com
+c2.owo.company
 c2.peaks.dev
 c2.presumptive.ninja
 c2.prjx.de
+c2.psdl.tech
 c2.ptaas.pt
 c2.ranftler.eu
 c2.redc2portal.com
@@ -1119,6 +1123,7 @@ cc2.exfillabs.com
 cdn-picks.sxzxsp.com
 cheapdivers.com
 chicago.cloudc2.io
+circlixa.org
 cl0od-c2.honami.club
 cloud.c2serveraed.com
 cloud.fallingstuff.net
@@ -1142,6 +1147,7 @@ comms.securesandiego.com
 control.strlght.io
 crazyforest.net
 cs.cyber-security-lab.net
+ctwo.brnwx.com
 cyber.gbinvestigations.ca
 cyberkobre.com
 daddydick.click
@@ -1162,6 +1168,7 @@ erebour2c.myddns.me
 fe198.windmilltest.xyz
 finallyhandled.com
 fix1.nask.waw.pl
+fortifiedsolutionstech.com
 fun.marian-schneider.de
 grid.mikemyers.me
 h1.mindseyeit.com
@@ -1203,8 +1210,10 @@ mail.bitwars.org
 mail.brish.net
 mail.meadowbridgefarm.com
 mail.meadowbridgefarms.com
+manage.afaryz.de
 manmgr.zymptomlabs.com
 markymark7.duckdns.org
+mgkbg.com
 mhconsult.dk
 milkmancam.com
 minion.archmage.tech
@@ -1218,8 +1227,12 @@ nantzypantz.com
 nocturnalninja.com
 nucflashloot.com
 nudez.zip
+obuwniczy.lol
+oca.logspool.com
 oortoutpost.tsvit.io
 orion.xs-net.tech
+pandora.bradley.edu
+penetraitors.com
 phishingfactory.com
 pine.ian.sh
 pineapple.daggersec.com
