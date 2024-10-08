@@ -8935,7 +8935,6 @@ gatetodisplaycontent.com
 /screenshot_gate.php
 /tgate.php
 /testgate.php
-/test_gate0117.php
 /verification-card.php
 /1drvme/
 /payload/openAttach/
