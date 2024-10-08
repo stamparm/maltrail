@@ -997,6 +997,7 @@ autodiscover.slg-hafen-hamburg.de
 autodiscover.svp-hamburg-sportschuetzen.de
 aws.mikzbots.xyz
 baconmcburgerton.com
+badmin.cloud
 batcave.pha3t0n.com
 beamadmin.com
 bitwars.org
