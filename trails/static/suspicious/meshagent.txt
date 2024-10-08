@@ -210,3 +210,7 @@ xemir.pw
 xtekrmm.com
 y0833up8tkig.users.rport.io
 zoi-nebulafiles.zoicloud.au
+
+# Reference: https://securelist.com/awaken-likho-apt-new-implant-campaign/114101/
+
+kwazindernuren.com
