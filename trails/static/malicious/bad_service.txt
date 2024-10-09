@@ -2963,8 +2963,11 @@ xonnetwork.com
 xstress.ru
 
 # Reference: https://hunt.io/blog/inside-a-cybercriminal-s-server-ddos-tools-spyware-apks-and-phishing-pages
+# Reference: https://www.virustotal.com/gui/file/0b80a52885e811d0e59318bd5feef640c7b18976c9da51e618de4d2b19b90c07/detection
+# Reference: https://www.virustotal.com/gui/file/666ccd4a45a48bbdd7b32e291436b8fd3104dcd797f4e17e204c18b046fe8077/detection
 
 bgng.io
 billgang.store
+aspect.bgng.io
 condi.bgng.io
 condi.billgang.store
