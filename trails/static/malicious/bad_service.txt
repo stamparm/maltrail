@@ -2964,5 +2964,7 @@ xstress.ru
 
 # Reference: https://hunt.io/blog/inside-a-cybercriminal-s-server-ddos-tools-spyware-apks-and-phishing-pages
 
+bgng.io
 billgang.store
+condi.bgng.io
 condi.billgang.store
