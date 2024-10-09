@@ -5720,3 +5720,10 @@ http://192.3.98.53
 103.43.18.19:88
 45.76.55.148:443
 /_uecRF-rE1mCi4OK52eXyA9-i2584cVh-QxIL
+
+# Reference: https://x.com/sicehice/status/1843773351652929855
+# Reference: https://www.virustotal.com/gui/file/49fd7aa6975630e9899385eca2cedd80afb09a335deb854d61f33f0a0afa9d4a/detection
+
+http://13.212.114.81
+13.212.114.81:443
+eclipse.publicvm.com
