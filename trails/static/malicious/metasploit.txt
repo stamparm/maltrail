@@ -5713,3 +5713,10 @@ http://192.3.98.53
 # Reference: https://www.virustotal.com/gui/file/d75994684d5bc04028dca45e93e58f716e06f69f173cf4ab47f9c68d5436a247/detection
 
 45.124.64.27:47159
+
+# Reference: https://x.com/sicehice/status/1843763601318027560
+# Reference: https://www.virustotal.com/gui/file/c2b8512055bcd2b94f235a56c6add1914d92a2fc78c5cb7c942d3c4496263a68/detection
+
+103.43.18.19:88
+45.76.55.148:443
+/_uecRF-rE1mCi4OK52eXyA9-i2584cVh-QxIL
