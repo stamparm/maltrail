@@ -396,3 +396,10 @@ mmf351.ddns.net
 79.110.49.196:8041
 upphelp.top
 qpkl23.zapto.org
+
+# Reference: https://x.com/malwrhunterteam/status/1844113254706274384
+# Reference: https://www.virustotal.com/gui/file/7de2ed042582642c3b13335ab629eb8758be226bcc6c9103e16985d5d2f76837/detection
+
+194.59.31.199:8041
+noreply-gymnastics.top
+yurre2.zapto.org
