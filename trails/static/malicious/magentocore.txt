@@ -13343,6 +13343,11 @@ statdynanics.com
 statify.shop
 styllize.shop
 
+# Reference: https://x.com/sdcyberresearch/status/1844375964027080808
+# Reference: https://www.virustotal.com/gui/ip-address/38.180.61.99/relations
+
+javalibraryeuro.com
+
 # Generic
 
 /assets/lfg.js
