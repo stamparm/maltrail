@@ -2305,6 +2305,11 @@ park.chuitian.cn
 powercx1.wetolink.com
 rd.chuitian.cn
 
+# Reference: https://x.com/malwrhunterteam/status/1844640625829818705
+# Reference: https://www.virustotal.com/gui/file/de33b8d9694b6b4c44e3459b2151571af5d0e2031551f9f1a70b6db475ba71b2/detection
+
+172.245.184.204:3232
+
 # Generic
 
 /supershell/login
