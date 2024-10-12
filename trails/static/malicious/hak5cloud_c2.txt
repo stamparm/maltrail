@@ -979,6 +979,7 @@ http://66.175.210.153
 
 # Reference: https://app.validin.com/detail?find=57f501d6fee2fdb024795abbdb750ad5&type=hash#tab=host_pairs_v2
 
+159-223-173-63.ipv4.staticdns3.io
 172-105-250-105.ip.linodeusercontent.com
 22fathoms.net
 4712-ttyl.org
@@ -987,6 +988,7 @@ http://66.175.210.153
 _tcp.safe-netsurfing.com
 acc3ss.cc
 accesscloudc2.com
+agent355.culpersec.com
 alpha.sempervespallc.com
 argentcybersolutions.com
 atk.areax.io
@@ -1043,6 +1045,7 @@ c2.glod.lu
 c2.gohydra.net
 c2.gulfport.run
 c2.h7-technologies.com
+c2.hiddenlogic.io
 c2.hoag.cloud
 c2.hopto.org
 c2.hxk.ch
@@ -1053,6 +1056,7 @@ c2.itsystemsec.it
 c2.jcvhome.xyz
 c2.jktech.dev
 c2.jordanchesley.xyz
+c2.juliodellaflora.com
 c2.ksmtwifi.net
 c2.kwellkorn.de
 c2.lachateau.net
@@ -1266,6 +1270,7 @@ stats.navisec.io
 stayclassyomg.de
 telesystemc2.chillepod.com
 terms-of-agreement.com
+test.leofontaine.cloud
 testsite.holyfcknghostone.click
 testwifi.precicom.com
 texascybersecuritytoday.com
@@ -1285,6 +1290,7 @@ v2202005110562117746.hotsrv.de
 vi1ops01.internal.inl.io
 vmd71595.contaboserver.net
 vpn.ableit.solutions
+wh669-management.centralus.cloudapp.azure.com
 wizeguy.co.il
 wolf.support-it.services
 xinux.nl
