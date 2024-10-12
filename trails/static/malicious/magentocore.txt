@@ -13348,6 +13348,18 @@ styllize.shop
 
 javalibraryeuro.com
 
+# Reference: https://guardiansofcyber.com/threats-vulnerabilities/the-mongolian-skimmer-inside-a-javascript-skimming-campaign-using-obfuscation-and-anti-debugging-tactics/
+
+cdn-core.com
+gifcache.com
+common.gifcache.com
+blog.cdn-core.com
+cache.cdn-core.com
+cdn.gifcache.com
+js.cdn-core.com
+sentry.cdn-core.com
+zb.cdn-core.com
+
 # Generic
 
 /assets/lfg.js
