@@ -896,6 +896,15 @@ http://176.59.196.133
 
 http://91.92.244.246
 
+# Reference: https://x.com/s1dhy/status/1844474870274588987
+# Reference: https://www.virustotal.com/gui/file/767a3bec97ac36f5a64eac55bfd9b14ec440ea6fee4c63bc6bfafab7438d8d39/detection
+
+http://149.248.77.215
+mgkr.shop
+portalnfe.digital
+magiker.portalnfe.digital
+magiker.mgkr.shop
+
 # Generic
 
 /admin_123/auth.php
