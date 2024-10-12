@@ -5594,3 +5594,7 @@ ddnss.eu
 # Reference: https://www.virustotal.com/gui/domain/ddns.cam/detection
 
 ddns.cam
+
+# Reference: https://www.virustotal.com/gui/domain/cesy.top/relations
+
+cesy.top
