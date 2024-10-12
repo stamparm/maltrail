@@ -4976,3 +4976,12 @@
 95.182.97.0/24,as56971
 95.182.98.0/24,as56971
 95.182.99.0/24,as56971
+
+# AS 215117
+# Reference: https://ipinfo.io/AS215117
+
+130.250.191.0/24,hosterdaddy
+185.23.253.0/24,hosterdaddy
+194.11.246.0/24,hosterdaddy
+212.232.22.0/24,hosterdaddy
+89.40.31.0/24,hosterdaddy
