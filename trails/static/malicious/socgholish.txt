@@ -4086,6 +4086,13 @@ yyab.podcast.lisameyerson.com
 94.156.248.15:443
 94.156.248.8:443
 
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-10-13)
+
+170.75.167.85:443
+198.98.48.223:443
+216.189.145.234:443
+88.119.175.180:443
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
