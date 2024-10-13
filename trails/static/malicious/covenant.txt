@@ -850,6 +850,19 @@ yhpmm.comigoninguempodes.shop
 zlniz.comigoninguempodes.shop
 ztxwf.comigoninguempodes.shop
 
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-10-13)
+
+107.178.101.250:7443
+138.68.188.35:7443
+144.126.245.91:7443
+154.44.10.197:7443
+185.229.224.244:7443
+185.241.208.167:7443
+37.60.242.208:7443
+46.101.120.37:7443
+51.83.133.9:7443
+54.37.225.27:8443
+
 # Generic
 
 /covenantuser/
