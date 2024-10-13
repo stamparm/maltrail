@@ -210,6 +210,19 @@ outlook.mailsession.com
 perfectogruop.net
 session.mailsession.com
 
+# Reference: https://threatfox.abuse.ch/browse/tag/EvilGinx/ (# 2024-10-13)
+
+134.209.32.140:3333
+134.209.40.17:3333
+137.184.83.183:4000
+161.35.11.78:4000
+161.35.4.145:4000
+165.22.185.225:3333
+167.99.145.60:3333
+46.105.63.11:3333
+62.84.102.226:3333
+85.119.82.36:3333
+
 # Generic
 
 /evilginx-linux-amd64.tar.gz
