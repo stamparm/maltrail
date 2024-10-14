@@ -13365,10 +13365,19 @@ zb.cdn-core.com
 
 gstatlc.org
 
+# Reference: https://sansec.io/research/cosmicsting#group-peschanki%3A-automated-mass-cms-block-updates
 # Reference: https://www.virustotal.com/gui/ip-address/106.14.40.200/relations
 
 http://106.14.40.200
 106.14.40.200:443
+cssucess.com
+desiginfest.com
+designmetrlcs.com
+designospro.com
+desynifynet.com
+htmledge.com
+marketprome.com
+statrackers.com
 
 # Generic
 
