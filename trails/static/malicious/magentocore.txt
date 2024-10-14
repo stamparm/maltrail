@@ -13379,6 +13379,15 @@ htmledge.com
 marketprome.com
 statrackers.com
 
+# Reference: https://x.com/sdcyberresearch/status/1845796766911775076
+
+graphorix.com
+
+# Reference: https://x.com/sdcyberresearch/status/1845813522250264895
+
+elbruho.com
+https://paramascot.com/iframes/spiuk/iframe.php
+
 # Generic
 
 /assets/lfg.js
