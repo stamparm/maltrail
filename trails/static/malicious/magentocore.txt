@@ -13360,6 +13360,11 @@ js.cdn-core.com
 sentry.cdn-core.com
 zb.cdn-core.com
 
+# Reference: https://x.com/sdcyberresearch/status/1845777289151136039
+# Reference: https://www.virustotal.com/gui/ip-address/5.10.250.250/relations
+
+gstatlc.org
+
 # Generic
 
 /assets/lfg.js
