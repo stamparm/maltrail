@@ -904,6 +904,12 @@ yaseraljazeera.com
 thehyperfocus.quest
 tulipmonsellaa.com
 
+# Reference: https://x.com/DaveLikesMalwre/status/1845568293639512262
+# Reference: https://app.validin.com/detail?type=ip&find=98.142.240.228#tab=resolutions
+
+yokaistores.com
+zza5topk1or1.skin
+
 # Generic
 
 /cache/ewmrgqnaww.php
