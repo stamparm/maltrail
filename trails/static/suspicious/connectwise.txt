@@ -403,3 +403,16 @@ qpkl23.zapto.org
 194.59.31.199:8041
 noreply-gymnastics.top
 yurre2.zapto.org
+
+# Reference: https://x.com/malwrhunterteam/status/1845763933807706125
+# Reference: https://app.validin.com/detail?find=176.123.1.130&type=ip4&ref_id=7b15649007d#tab=resolutions
+# Reference: https://www.virustotal.com/gui/file/c06c3d6bcd3eb6e558564e8afecd2ffad463343b9cde299df4c5080bc76456b7/detection
+# Reference: https://www.virustotal.com/gui/file/9724b75d3405ea5ca0412b75e424aee603c1b8d3f4b7316a93e061d024c2c862/detection
+# Reference: https://www.virustotal.com/gui/file/425ab54a2a799c669902ddf13f47bd686ce4d08f1ee0b1bea65a750a3b03cd37/detection
+# Reference: https://www.virustotal.com/gui/file/2d7c15d87ca98d24e82cd1e1dcc81ab93a13e71faa54d47fe88a985615445f4c/detection
+
+176.123.1.130:8880
+bw36back93.site
+bws1backss.site
+loglink9.site
+bw3699.loglink9.site
