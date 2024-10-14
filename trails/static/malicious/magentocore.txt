@@ -13365,6 +13365,11 @@ zb.cdn-core.com
 
 gstatlc.org
 
+# Reference: https://www.virustotal.com/gui/ip-address/106.14.40.200/relations
+
+http://106.14.40.200
+106.14.40.200:443
+
 # Generic
 
 /assets/lfg.js
