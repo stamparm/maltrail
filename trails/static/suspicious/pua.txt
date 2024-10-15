@@ -3340,3 +3340,8 @@ http://185.132.133.163
 http://185.132.133.213
 cleverjumper.com
 openfrost.net
+
+# Reference: https://tria.ge/240928-zfp1csyckc/behavioral1
+
+cherax.menu
+dash.cherax.menu
