@@ -13388,6 +13388,11 @@ graphorix.com
 elbruho.com
 https://paramascot.com/iframes/spiuk/iframe.php
 
+# Reference: https://x.com/sdcyberresearch/status/1846207523117814140
+# Reference: https://www.virustotal.com/gui/ip-address/185.163.204.248/relations
+
+redsys-spain.com
+
 # Generic
 
 /assets/lfg.js
