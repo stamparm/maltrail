@@ -2521,6 +2521,10 @@ Diamotrix
 
 NuclearBot
 
+# Reference: https://tria.ge/240928-zfp1csyckc/behavioral1
+
+Cherax-Loader
+
 # Misc
 
 information_schema
