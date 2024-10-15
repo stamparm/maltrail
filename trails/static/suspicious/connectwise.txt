@@ -416,3 +416,10 @@ bw36back93.site
 bws1backss.site
 loglink9.site
 bw3699.loglink9.site
+
+# Reference: https://x.com/malwrhunterteam/status/1846177965819707774
+# Reference: https://www.virustotal.com/gui/file/f93c9d7f6224261d9909554f6182bd4fe4991cdca6ed46dde4576e2e99d5ebed/detection
+
+79.110.49.185:8041
+kjh231a.zapto.org
+secure.stansup.com
