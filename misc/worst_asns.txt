@@ -4977,7 +4977,7 @@
 95.182.98.0/24,as56971
 95.182.99.0/24,as56971
 
-# AS 215117
+# AS215117
 # Reference: https://ipinfo.io/AS215117
 
 130.250.191.0/24,hosterdaddy
@@ -4985,3 +4985,36 @@
 194.11.246.0/24,hosterdaddy
 212.232.22.0/24,hosterdaddy
 89.40.31.0/24,hosterdaddy
+
+# AS399486
+# Reference: https://ipinfo.io/AS399486
+# Reference: https://x.com/malwrhunterteam/status/1846177965819707774
+
+104.234.204.0/24,virtuo
+104.234.205.0/24,virtuo
+141.11.117.0/24,virtuo
+157.254.164.0/23,virtuo
+157.254.236.0/24,virtuo
+157.254.237.0/24,virtuo
+163.5.106.0/24,virtuo
+163.5.112.0/24,virtuo
+163.5.160.0/24,virtuo
+163.5.169.0/24,virtuo
+163.5.181.0/24,virtuo
+163.5.210.0/24,virtuo
+163.5.32.0/24,virtuo
+163.5.64.0/24,virtuo
+194.59.30.0/24,virtuo
+194.59.31.0/24,virtuo
+205.234.144.0/24,virtuo
+205.234.181.0/24,virtuo
+23.26.76.0/23,virtuo
+38.22.104.0/24,virtuo
+38.69.8.0/22,virtuo
+45.88.91.0/24,virtuo
+66.225.254.0/24,virtuo
+79.110.49.0/24,virtuo
+80.76.49.0/24,virtuo
+83.147.52.0/22,virtuo
+85.209.133.0/24,virtuo
+85.209.176.0/24,virtuo
