@@ -3182,6 +3182,12 @@ http://84.201.150.223
 
 34.27.109.111:443
 
+# Reference: https://x.com/MichalKoczwara/status/1846625221505118382
+# Reference: https://www.virustotal.com/gui/file/c22f0544e29c803d2cacbca3a57617496e3691389e9b65da84c374c90e699433/detection
+
+finances-news.com
+pushservice_api.finances-news.com
+
 # Generic
 
 /Havoc/payload/
