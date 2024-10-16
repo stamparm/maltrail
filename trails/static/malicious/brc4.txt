@@ -923,3 +923,14 @@ http://57.180.68.148
 81.19.141.238:10443
 87.120.127.145:1080
 94.232.247.68:443
+
+# Reference: https://github.com/pr0xylife/Latrodectus/blob/main/Latrodectus_16.10.2024.txt
+# Reference: https://www.virustotal.com/gui/file/0cf42f02249025e69a65c5395e04c3e220cf59cbf02daf1f04b036d740fbf96c/detection
+# Reference: https://www.virustotal.com/gui/file/02e54ffdb478f964dc486197e239c802bffef514bedfa3a30f50f9b8fea8bfbd/detection
+
+185.106.92.108:8810
+185.106.92.109:8810
+185.106.92.110:8810
+berzzuzz.com
+deltaso.com
+soccoc.africa
