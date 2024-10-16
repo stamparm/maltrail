@@ -916,6 +916,39 @@ zza5topk1or1.skin
 firstphliec.com
 oldwetcat.com
 
+# Reference: https://x.com/DaveLikesMalwre/status/1846334550131331455
+# Reference: https://threatfox.abuse.ch/browse/tag/SmartApeSG/ (# 2024-10-16)
+
+5.181.159.143:443
+bailingla.com
+chefspavilion.com
+flyjeta.com
+ggoryo.com
+innerglowjourney.com
+internationalcricketboard.com
+jerescarla.com
+megaarmshop.com
+milan77burn.top
+mtpolice2030.com
+north-residence.com
+notablelibrary.com
+oldwetcat.com
+reputationb.com
+restbycalm.com
+robotprintmoney.com
+simplymecosmetics.com
+sn4k.top
+souguru.com
+tatemosher.com
+tecstify.com
+tratoragricola.com
+uniquetouniquetechnicalservices.com
+unsbrtng.cfd
+vfeevf.com
+virtana-tech.com
+y553488469.top
+zeleitex.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
