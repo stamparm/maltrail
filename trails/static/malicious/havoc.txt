@@ -3190,6 +3190,23 @@ http://84.201.150.223
 finances-news.com
 pushservice_api.finances-news.com
 
+# Reference: https://app.validin.com/detail?find=f0003fecc5f9c8c2cbac&type=hash#tab=host_pairs_v2 (# 2024-10-17)
+
+107.172.88.160:443
+13.251.3.88:443
+193.36.15.250:443
+34.123.158.175:443
+43.154.250.187:443
+49.232.86.118:443
+54.173.235.60:443
+agistaging.dev
+he110w0r1d.com
+libreimport.com
+melontech.io
+revshell.party
+ns1.he110w0r1d.com
+update.revshell.party
+
 # Generic
 
 /Havoc/payload/
