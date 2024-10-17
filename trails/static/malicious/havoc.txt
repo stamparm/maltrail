@@ -2985,9 +2985,11 @@ http://23.88.32.34
 89.187.28.133:443
 91.92.247.158:9090
 
+# Reference: https://x.com/banthisguy9349/status/1846945986435830037
 # Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-22)
 
 http://13.93.69.87
+http://169.1.16.29
 100.42.189.154:443
 146.190.230.162:443
 15.161.134.59:443
