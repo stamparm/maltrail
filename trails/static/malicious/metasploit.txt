@@ -5756,3 +5756,8 @@ http://4.184.219.241
 # Reference: https://www.virustotal.com/gui/file/baa7ae2c332017307c0bd6b5f49c8106e2548f9a36352aa8b6dbc2181d7920de/detection
 
 134.122.176.216:56395
+
+# Reference: https://x.com/karol_paciorek/status/1846892197964124263
+# Reference: https://www.virustotal.com/gui/file/ba619aed58332f8cf8fb93939e6986f9d8b3d0bae3ffa0348dbad5b43c186b19/detection
+
+47.236.122.191:7900
