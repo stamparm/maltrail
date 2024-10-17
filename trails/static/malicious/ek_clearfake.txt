@@ -421,6 +421,12 @@ oazevents.com
 
 live-samsaratrucking.com
 
+# Reference: https://x.com/unmaskparasites/status/1846975894415724807
+# Reference: https://www.godaddy.com/resources/news/threat-actors-push-clickfix-fake-browser-updates-using-stolen-credentials
+
+md928zs.shop
+smolcatkgi.shop
+
 # Generic
 
 /a3A7qLVn/
