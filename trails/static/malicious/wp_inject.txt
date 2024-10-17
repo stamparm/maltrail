@@ -6105,3 +6105,24 @@ siteforyou3d.com
 # Reference: https://www.virustotal.com/gui/file/75aa742410ecbdc3700fc1ff3520952de52f1960426690844c52fc705e819c97/detection
 
 kntsv.nl
+
+# Reference: https://x.com/unmaskparasites/status/1846975894415724807
+# Reference: https://www.godaddy.com/resources/news/threat-actors-push-clickfix-fake-browser-updates-using-stolen-credentials
+
+/wp-content/plugins/admin-bar-customizer/abc-script.js 
+/wp-content/plugins/advanced-user-manager/aum-script.js
+/wp-content/plugins/advanced-widget-manage/awm-script.js
+/wp-content/plugins/content-blocker/cb-script.js
+/wp-content/plugins/custom-css-injector/cci-script.js
+/wp-content/plugins/custom-footer-generator/cfg-script.js
+/wp-content/plugins/custom-login-styler/cls-script.js
+/wp-content/plugins/dynamic-sidebar-manager/dsm-script.js
+/wp-content/plugins/easy-themes-manager/script.js
+/wp-content/plugins/form-builder-pro/fbp-script.js
+/wp-content/plugins/quick-cache-cleaner/qcc-script.js
+/wp-content/plugins/responsive-menu-builder/rmb-script.js
+/wp-content/plugins/seo-optimizer-pro/sop-script.js
+/wp-content/plugins/simple-post-enhancer/spe-script.js
+/wp-content/plugins/social-media-integrator/smi-script.js
+/wp-content/plugins/custom-css-injector/
+/custom-css-injector/
