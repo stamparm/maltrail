@@ -2352,7 +2352,13 @@ rd.chuitian.cn
 8.219.180.167:8888
 83.229.125.53:8888
 
+# Reference: https://x.com/bofheaded/status/1847243364393193923
+# Reference: https://search.censys.io/hosts/106.75.62.123
+
+106.75.62.123:8888
+
 # Generic
 
 /supershell/login
+/supershell/client
 /supershell/compile/download/
