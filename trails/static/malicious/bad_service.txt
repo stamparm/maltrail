@@ -2971,3 +2971,8 @@ billgang.store
 aspect.bgng.io
 condi.bgng.io
 condi.billgang.store
+
+# Reference: https://x.com/GroupIB_TI/status/1674062245091737600
+# Reference: https://x.com/RakeshKrish12/status/1846435698858946780
+
+brok3r7bhcblynwpoymgarr6zwcy4ttfbhkhcmotz4lw2gcsuojgaeqd.onion
