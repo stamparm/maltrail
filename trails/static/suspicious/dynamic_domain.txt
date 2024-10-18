@@ -3653,3 +3653,7 @@ ridespirals.com
 # Reference: https://www.virustotal.com/gui/domain/mydns.jp/relations
 
 mydns.jp
+
+# Reference: https://www.virustotal.com/gui/domain/ddnsgratis.com.br/relations
+
+ddnsgratis.com.br
