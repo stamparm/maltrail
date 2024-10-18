@@ -8851,6 +8851,11 @@ gatetodisplaycontent.com
 /!NB12538z/
 /i40vy0n.php
 
+# Reference: https://x.com/banthisguy9349/status/1847175329120460936
+
+/btc_eng.hta
+/btc_pt.hta
+
 # Generic
 
 /5c0ca79.php
