@@ -5766,3 +5766,8 @@ http://4.184.219.241
 # Reference: https://www.virustotal.com/gui/file/c0dd6289af516f4ccc5d4775f6d73f6ae551d5984e9c463326705f20b7d5b34d/detection
 
 178.61.171.67:1336
+
+# Reference: https://x.com/banthisguy9349/status/1847302435494101214
+# Reference: https://urlhaus.abuse.ch/host/tools.kali.pro.s3.amazonaws.com/
+
+tools.kali.pro.s3.amazonaws.com
