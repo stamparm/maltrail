@@ -8856,6 +8856,25 @@ gatetodisplaycontent.com
 /btc_eng.hta
 /btc_pt.hta
 
+# Reference: https://urlscan.io/search/#page.url%3A%2Fhttps%3F%3A%5C%2F%5C%2F%5B0-9%5C.%5D%2B%5C%2F%5Ba-z0-9%5D%7B16%7D%5C.php%2F
+
+/gadsz15mt25ybi5i.php
+/getnationranking.php
+/index91484101498.php
+/indexholddesktop.php
+/linewindowstrack.php
+/moduloatualizado.php
+/portallockunlock.php
+/processmeterpost.php
+/processorbigload.php
+/processorprivate.php
+/providerphptrack.php
+/pythonsecuretemp.php
+/salepopupklaviyo.php
+/vikashmitralogin.php
+/vmmultiwordpress.php
+/wfgfgf232323900x.php
+
 # Generic
 
 /5c0ca79.php
