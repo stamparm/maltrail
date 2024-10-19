@@ -2481,3 +2481,15 @@ http://46.8.237.247
 94.232.40.36:7443
 94.232.43.221:443
 94.232.43.221:7443
+
+# Reference: https://app.validin.com/detail?find=8fda9d86d62e7121dc00bcd1ae63b077&type=hash#tab=host_pairs_v2
+
+133.ip-51-38-70.eu
+blackpythondeda.duckdns.org
+evilc0rp.xyz
+johndoe.social
+officesupport.us.com
+pidgey.evilc0rp.xyz
+supportgoogle.duckdns.org
+tiendanube-docs.chazki.com
+tiendanube.chazki.com
