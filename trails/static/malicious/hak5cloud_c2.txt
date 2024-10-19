@@ -1489,3 +1489,16 @@ http://159.203.152.65
 91.247.37.151:8080
 96.239.72.91:8080
 98.113.39.82:8080
+
+# Reference: https://app.validin.com/detail?find=57f501d6fee2fdb024795abbdb750ad5&type=hash#tab=host_pairs_v2
+
+641a.eu
+cloudc2.skredderdata.no
+dobbelfemti.no
+eggejakt.xn--dsnes-mra.no
+hak5.cyberforcerd.co.il
+rnicrosoft.live
+securehaven.business
+turtle.redirectplease.com
+update.rnicrosoft.live
+xn--dsnes-mra.no
