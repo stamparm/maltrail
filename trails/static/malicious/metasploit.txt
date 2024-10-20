@@ -5771,3 +5771,7 @@ http://4.184.219.241
 # Reference: https://urlhaus.abuse.ch/host/tools.kali.pro.s3.amazonaws.com/
 
 tools.kali.pro.s3.amazonaws.com
+
+# Reference: https://www.virustotal.com/gui/file/22362ff0973ba7f5f34b8c71aafc75abb7368548bc43bd3ff06f5d0b7edf4aa1/detection
+
+188.166.177.132:443
