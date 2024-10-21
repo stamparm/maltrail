@@ -954,6 +954,10 @@ zeleitex.com
 saveourmalta.com
 vjkillianco.com
 
+# Reference: https://x.com/RussianPanda9xx/status/1848174149224501414
+
+vangviengparamotorcenter.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
