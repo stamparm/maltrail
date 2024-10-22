@@ -5018,3 +5018,22 @@
 83.147.52.0/22,virtuo
 85.209.133.0/24,virtuo
 85.209.176.0/24,virtuo
+
+# AS152586
+# Reference: https://ipinfo.io/AS152586
+
+104.224.52.0/24,kuroit-as-ap
+104.224.53.0/24,kuroit-as-ap
+185.121.27.0/24,kuroit-as-ap
+185.149.24.0/24,kuroit-as-ap
+185.149.25.0/24,kuroit-as-ap
+185.149.26.0/24,kuroit-as-ap
+185.149.27.0/24,kuroit-as-ap
+185.172.38.0/24,kuroit-as-ap
+185.172.39.0/24,kuroit-as-ap
+185.216.72.0/24,kuroit-as-ap
+2.58.201.0/24,kuroit-as-ap
+2.58.202.0/24,kuroit-as-ap
+45.11.230.0/24,kuroit-as-ap
+45.11.231.0/24,kuroit-as-ap
+45.134.111.0/24,kuroit-as-ap
