@@ -2976,3 +2976,8 @@ condi.billgang.store
 # Reference: https://x.com/RakeshKrish12/status/1846435698858946780
 
 brok3r7bhcblynwpoymgarr6zwcy4ttfbhkhcmotz4lw2gcsuojgaeqd.onion
+
+# Reference: https://x.com/g0njxa/status/1848823943953846692
+# Reference: https://app.any.run/tasks/f993b425-a04b-41d0-b760-10ba40dcb819
+
+pastesnip.com
