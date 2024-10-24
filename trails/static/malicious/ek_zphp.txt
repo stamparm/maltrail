@@ -958,6 +958,13 @@ vjkillianco.com
 
 vangviengparamotorcenter.com
 
+# Reference: https://x.com/crep1x/status/1849476769486635496
+# Reference: https://app.validin.com/detail?type=dom&find=dareka4te.shop#tab=host_pairs
+
+dareka4te.shop
+operacionboda.com
+prospaandsalon.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
