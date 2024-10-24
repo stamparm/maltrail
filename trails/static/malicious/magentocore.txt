@@ -13393,6 +13393,39 @@ https://paramascot.com/iframes/spiuk/iframe.php
 
 redsys-spain.com
 
+# Reference: https://app.validin.com/detail?first_seen=2024-10-10&type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2024-10-24)
+
+dogroudig.store
+durgeem.shop
+georips.online
+geyteck.store
+heoturs.fun
+jeyrice.store
+kecicte.sbs
+kresviv.sbs
+lenlink.sbs
+meglink.online
+norkes.shop
+remnit.fun
+souserec.shop
+spasit.site
+uerzit.online
+vosabit.fun
+yapitse.site
+zarotec.site
+cdn.meglink.online
+cdn.kecicte.sbs
+cdn.souserec.shop
+cdn.remnit.fun
+cdn.yapitse.site
+cdn.geyteck.store
+cdn.kresviv.sbs
+cdn.durgeem.shop
+cdn.heoturs.fun
+cdn.dogroudig.store
+cdn.georips.online
+cdn.spasit.site
+
 # Generic
 
 /assets/lfg.js
