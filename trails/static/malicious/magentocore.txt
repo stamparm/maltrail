@@ -13402,6 +13402,7 @@ geyteck.store
 heoturs.fun
 jeyrice.store
 kecicte.sbs
+kopitec.store
 kresviv.sbs
 lenlink.sbs
 meglink.online
@@ -13415,6 +13416,7 @@ yapitse.site
 zarotec.site
 cdn.meglink.online
 cdn.kecicte.sbs
+cdn.kopitec.store
 cdn.souserec.shop
 cdn.remnit.fun
 cdn.yapitse.site
