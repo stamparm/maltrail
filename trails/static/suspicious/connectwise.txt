@@ -435,3 +435,7 @@ wise.access.ly
 
 79.110.49.185:443
 79.110.49.185:8041
+
+# Reference: https://www.virustotal.com/gui/file/a7e518921aba508fad8a0556ce5b3ba992448697022668da2312eaada730b589/detection
+
+wingenuity.dyndns.org
