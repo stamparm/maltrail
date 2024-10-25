@@ -441,6 +441,8 @@ wise.access.ly
 wingenuity.dyndns.org
 
 # Reference: https://www.virustotal.com/gui/file/00db14b6f5112c7a8b81db407923f2d9e37e09d9c9978e2b0fe9022895137161/detection
+# Reference: https://www.virustotal.com/gui/file/47c8a2a05b6797644c3c856caf875cdd01876e75ea3f3894764935a49cb1702f/detection
 
+20.122.97.194:8040
 20.122.97.194:8041
 control.vertilocity.com
