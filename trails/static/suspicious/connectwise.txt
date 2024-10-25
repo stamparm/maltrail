@@ -439,3 +439,8 @@ wise.access.ly
 # Reference: https://www.virustotal.com/gui/file/a7e518921aba508fad8a0556ce5b3ba992448697022668da2312eaada730b589/detection
 
 wingenuity.dyndns.org
+
+# Reference: https://www.virustotal.com/gui/file/00db14b6f5112c7a8b81db407923f2d9e37e09d9c9978e2b0fe9022895137161/detection
+
+20.122.97.194:8041
+control.vertilocity.com
