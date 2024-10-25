@@ -1445,3 +1445,8 @@ xmr.kryptex.network
 195.201.190.170:1230
 salvium.herominers.com
 de.salvium.herominers.com
+
+# Reference: https://www.virustotal.com/gui/file/8a99b284aef50ecd153cc7f2416ac0f3154b32d1e16a93217213ad31c84b138c/detection
+# Reference: https://www.virustotal.com/gui/file/e3801874cc5d57f0f249ba6499d6c870e2a1ed6f695ada3389cbf19ed2c85d6e/detection
+
+141.94.96.144:3333
