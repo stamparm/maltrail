@@ -5038,3 +5038,11 @@
 45.11.230.0/24,kuroit-as-ap
 45.11.231.0/24,kuroit-as-ap
 45.134.111.0/24,kuroit-as-ap
+
+# AS214943
+# Reference: https://ipinfo.io/AS214943
+
+185.216.71.0/24,railnet
+66.63.187.0/24,railnet
+87.120.84.0/24,railnet
+94.156.177.0/24,railnet
