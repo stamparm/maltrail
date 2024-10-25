@@ -13399,6 +13399,7 @@ dogroudig.store
 durgeem.shop
 feitoot.site
 georips.online
+geipets.online
 geyteck.store
 heoturs.fun
 jeyrice.store
@@ -13422,6 +13423,7 @@ cdn.dogroudig.store
 cdn.durgeem.shop
 cdn.feitoot.site
 cdn.georips.online
+cdn.geipets.online
 cdn.geyteck.store
 cdn.heoturs.fun
 cdn.joeqolip.fun
