@@ -423,3 +423,10 @@ bw3699.loglink9.site
 79.110.49.185:8041
 kjh231a.zapto.org
 secure.stansup.com
+
+# Reference: https://x.com/karol_paciorek/status/1849734928935624797
+# Reference: https://www.virustotal.com/gui/file/45f04777c51e93d2534aba941d66f722dc3c1d1991e577b789faaaef0b671eb8/detection
+
+103.35.190.119:443
+103.35.190.119:8041
+wise.access.ly
