@@ -13397,10 +13397,12 @@ redsys-spain.com
 
 dogroudig.store
 durgeem.shop
+feitoot.site
 georips.online
 geyteck.store
 heoturs.fun
 jeyrice.store
+joeqolip.fun
 kecicte.sbs
 kopitec.store
 kresviv.sbs
@@ -13411,22 +13413,28 @@ remnit.fun
 souserec.shop
 spasit.site
 uerzit.online
+vexirec.shop
 vosabit.fun
+wepits.sbs
 yapitse.site
 zarotec.site
-cdn.meglink.online
+cdn.dogroudig.store
+cdn.durgeem.shop
+cdn.feitoot.site
+cdn.georips.online
+cdn.geyteck.store
+cdn.heoturs.fun
+cdn.joeqolip.fun
 cdn.kecicte.sbs
 cdn.kopitec.store
-cdn.souserec.shop
-cdn.remnit.fun
-cdn.yapitse.site
-cdn.geyteck.store
 cdn.kresviv.sbs
-cdn.durgeem.shop
-cdn.heoturs.fun
-cdn.dogroudig.store
-cdn.georips.online
+cdn.meglink.online
+cdn.remnit.fun
+cdn.souserec.shop
 cdn.spasit.site
+cdn.vexirec.shop
+cdn.wepits.sbs
+cdn.yapitse.site
 
 # Generic
 
