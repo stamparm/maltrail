@@ -430,3 +430,8 @@ secure.stansup.com
 103.35.190.119:443
 103.35.190.119:8041
 wise.access.ly
+
+# Reference: https://www.virustotal.com/gui/file/8ddf3420790d946008651c2ba6acb16ecbb57568503f09855c5e2974f475aeed/detection
+
+79.110.49.185:443
+79.110.49.185:8041
