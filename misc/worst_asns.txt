@@ -916,11 +916,55 @@
 
 45.95.168.0/22,maxko
 
-# PONYNET
+# AS53667 PONYNET
 # Reference: https://www.virustotal.com/gui/ip-address/209.141.34.111/relations
 # Reference: https://radar.qrator.net/as53667
+# Reference: https://ipinfo.io/AS53667
 
+104.244.72.0/21,ponynet
+104.244.72.0/24,ponynet
+104.244.73.0/24,ponynet
+104.244.74.0/24,ponynet
+104.244.75.0/24,ponynet
+104.244.77.0/24,ponynet
+104.244.78.0/24,ponynet
+104.244.79.0/24,ponynet
+107.189.0.0/21,ponynet
+107.189.12.0/24,ponynet
+107.189.13.0/24,ponynet
+107.189.14.0/24,ponynet
+107.189.28.0/23,ponynet
+107.189.30.0/23,ponynet
+107.189.8.0/22,ponynet
+107.189.9.0/24,ponynet
+167.88.161.0/24,ponynet
+198.251.80.0/24,ponynet
+198.251.81.0/24,ponynet
+198.251.82.0/24,ponynet
+198.251.83.0/24,ponynet
+198.251.84.0/24,ponynet
+198.251.86.0/24,ponynet
+198.251.87.0/24,ponynet
+198.251.88.0/24,ponynet
+198.251.89.0/24,ponynet
+198.251.90.0/24,ponynet
+198.98.48.0/20,ponynet
+199.19.224.0/22,ponynet
+199.195.248.0/21,ponynet
+205.185.112.0/20,ponynet
+205.185.112.0/24,ponynet
 209.141.32.0/19,ponynet
+209.141.38.0/24,ponynet
+209.141.39.0/24,ponynet
+23.183.80.0/24,ponynet
+23.183.81.0/24,ponynet
+23.183.82.0/24,ponynet
+23.183.83.0/24,ponynet
+23.186.113.0/24,ponynet
+45.61.176.0/21,ponynet
+45.61.184.0/22,ponynet
+45.61.188.0/24,ponynet
+45.61.191.0/24,ponynet
 
 # AS22769 DDOSING-BGP-NETWORK
 # Reference: https://twitter.com/KesaGataMe0/status/1446430614240960516
