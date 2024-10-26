@@ -5775,3 +5775,7 @@ tools.kali.pro.s3.amazonaws.com
 # Reference: https://www.virustotal.com/gui/file/22362ff0973ba7f5f34b8c71aafc75abb7368548bc43bd3ff06f5d0b7edf4aa1/detection
 
 188.166.177.132:443
+
+# Reference: https://www.virustotal.com/gui/file/9fd4c19371695542b32c3affee29c23939e18d6ec52a3d7329fc31bba5c870d6/detection
+
+20.25.126.96:443
