@@ -13410,6 +13410,7 @@ kresviv.sbs
 lenlink.sbs
 meglink.online
 norkes.shop
+paysendmmm.online
 remnit.fun
 souserec.shop
 spasit.site
@@ -13431,6 +13432,7 @@ cdn.kecicte.sbs
 cdn.kopitec.store
 cdn.kresviv.sbs
 cdn.meglink.online
+cdn.paysendmmm.online
 cdn.remnit.fun
 cdn.souserec.shop
 cdn.spasit.site
