@@ -13451,6 +13451,13 @@ cdn.yapitse.site
 
 win-win.work
 
+# Reference: https://x.com/sdcyberresearch/status/1850898932441714774
+# Reference: https://app.validin.com/detail?find=137.74.151.41&type=ip4&ref_id=127115debe2#tab=resolutions
+
+zoonmer.xyz
+cnd.zoonmer.xyz
+js.zoonmer.xyz
+
 # Generic
 
 /assets/lfg.js
