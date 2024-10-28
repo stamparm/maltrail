@@ -10216,12 +10216,15 @@ uads.club
 uads.digital
 uads.guru
 uads.info
+uads.lat
 uads.life
 uads.live
 uads.pw
+uads.rest
 uads.shop
 uads.space
 uads.store
+uads.today
 winaprize.shop
 winprizes.shop
 wintheprize.shop
