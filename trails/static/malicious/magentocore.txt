@@ -13446,6 +13446,11 @@ cdn.vexirec.shop
 cdn.wepits.sbs
 cdn.yapitse.site
 
+# Reference: https://x.com/sdcyberresearch/status/1850897739426541700
+# Reference: https://app.validin.com/detail?find=83.147.18.204&type=ip4&ref_id=ec65632f3ec#tab=resolutions
+
+win-win.work
+
 # Generic
 
 /assets/lfg.js
