@@ -7001,6 +7001,7 @@ transitfex.com
 static.transitfex.com
 
 # Reference: https://twitter.com/EKFiddle/status/1544076272694743040
+# Reference: https://x.com/sdcyberresearch/status/1850896710656049409
 # Reference: https://www.virustotal.com/gui/ip-address/141.98.82.244/relations
 # Reference: https://www.virustotal.com/gui/ip-address/5.188.62.10/relations
 
@@ -7467,6 +7468,8 @@ hxbic.pics
 hxcit.pics
 hxdot.pics
 hxfel.pics
+hxgot.pics
+hxhop.pics
 indid.buzz
 internl.xyz
 intrst.sbs
