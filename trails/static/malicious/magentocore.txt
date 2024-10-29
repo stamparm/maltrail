@@ -12846,6 +12846,11 @@ jgueurystatic.xyz
 2links.blog
 3analytics.buzz
 4casts.one
+5data.world
+6stat.website
+7tags.shop
+8urls.info
+9analytics.ink
 tagscart.shop
 ultrabit.shop
 wikistat.wiki
