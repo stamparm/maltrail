@@ -13465,6 +13465,10 @@ zoonmer.xyz
 cnd.zoonmer.xyz
 js.zoonmer.xyz
 
+# Reference: https://www.virustotal.com/gui/ip-address/94.156.68.148/relations
+
+shopanalyticss.com
+
 # Generic
 
 /assets/lfg.js
