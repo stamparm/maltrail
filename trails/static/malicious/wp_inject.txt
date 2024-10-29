@@ -6126,3 +6126,7 @@ kntsv.nl
 /wp-content/plugins/social-media-integrator/smi-script.js
 /wp-content/plugins/custom-css-injector/
 /custom-css-injector/
+
+# Reference: https://x.com/9823f_/status/1851257589046071574
+
+/wp-includes/css/dist/niil.php
