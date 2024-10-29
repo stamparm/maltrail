@@ -12851,7 +12851,9 @@ jgueurystatic.xyz
 7tags.shop
 8urls.info
 9analytics.ink
+tagsanalytics.shop
 tagscart.shop
+tagsmanager.shop
 ultrabit.shop
 wikistat.wiki
 xtreme.boats
