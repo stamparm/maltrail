@@ -1456,3 +1456,9 @@ de.salvium.herominers.com
 141.95.98.19:2222
 2miners.com
 zeph.2miners.com
+
+# Reference: https://www.virustotal.com/gui/file/ab41e347fec54af86ef8edd98c695a7e856a93a30cd07a89d7669896b419b92b/detection
+
+141.94.23.83:10300
+51.15.65.182:10300
+54.37.232.103:10300
