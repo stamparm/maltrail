@@ -4105,6 +4105,43 @@ winanimperialpower.top
 customer.thewayofmoney.us
 virtual.urban-orthodontics.com
 
+# Reference: https://threatfox.abuse.ch/browse/tag/SocGholish/ (# 2024-10-30)
+
+apistateupdater.com
+circle.innovativecsportal.com
+cive.free.thebitmeister.com
+cxwm.podcast.lisameyerson.com
+czo.free.thebitmeister.com
+djt.free.thebitmeister.com
+drddn.free.thebitmeister.com
+ebjmr.free.thebitmeister.com
+fetchdataajax.com
+free.thebitmeister.com
+house.zionanakwenze.com
+jeju.podcast.lisameyerson.com
+jepw.free.thebitmeister.com
+khu.free.thebitmeister.com
+kvlig.free.thebitmeister.com
+lab.free.thebitmeister.com
+loopconstruct.com
+lpgv.free.thebitmeister.com
+majorbrdide.com
+myvz.free.thebitmeister.com
+nhall.free.thebitmeister.com
+oln.free.thebitmeister.com
+outfit.dianamercer.com
+promiseresolverdev.com
+qdif.free.thebitmeister.com
+qqmb.free.thebitmeister.com
+range.cccinvolve.org
+rooms.fierceatfifty.com
+shades.whatisaweekend.com
+syx.free.thebitmeister.com
+therapy.emergencepsychservices.com
+vryv.free.thebitmeister.com
+wccw.free.thebitmeister.com
+yqf.free.thebitmeister.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
