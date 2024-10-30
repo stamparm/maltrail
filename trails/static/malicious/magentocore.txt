@@ -13469,6 +13469,11 @@ js.zoonmer.xyz
 
 shopanalyticss.com
 
+# Reference: https://x.com/sdcyberresearch/status/1851634572728893823
+
+fb-counter.com
+connect.fb-counter.com
+
 # Generic
 
 /assets/lfg.js
