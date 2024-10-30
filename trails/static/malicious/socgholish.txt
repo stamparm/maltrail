@@ -4093,14 +4093,16 @@ yyab.podcast.lisameyerson.com
 216.189.145.234:443
 88.119.175.180:443
 
-# Reference: https://urlscan.io/result/d192df9c-7d81-4d0e-97a1-0b85ca533a80/
 # Reference: https://x.com/threatcat_ch/status/1851566183876550946
+# Reference: https://x.com/threatcat_ch/status/1851718952121991366
+# Reference: https://urlscan.io/result/d192df9c-7d81-4d0e-97a1-0b85ca533a80/
 
 keenmagwife.live
 objmapper.com
 thewayofmoney.us
 variablescopetool.com
 winanimperialpower.top
+customer.thewayofmoney.us
 virtual.urban-orthodontics.com
 
 # Generic
