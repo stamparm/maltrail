@@ -432,6 +432,12 @@ smolcatkgi.shop
 
 inspyrehomedesign.com
 
+# Reference: https://x.com/joe4security/status/1851914797350019510
+# Reference: https://www.joesandbox.com/analysis/1545769/0/html#deviceScreen
+
+thecopycat.biz
+webdemo.biz
+
 # Generic
 
 /a3A7qLVn/
