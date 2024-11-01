@@ -8881,6 +8881,10 @@ gatetodisplaycontent.com
 
 /sigthief.py
 
+# Reference: https://x.com/StrikeReadyLabs/status/1852338012488634491
+
+/InvestmentAdvisersAct2.hta
+
 # Generic
 
 /5c0ca79.php
