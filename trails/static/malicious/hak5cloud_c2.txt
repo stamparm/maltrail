@@ -1493,10 +1493,17 @@ http://159.203.152.65
 # Reference: https://app.validin.com/detail?find=57f501d6fee2fdb024795abbdb750ad5&type=hash#tab=host_pairs_v2
 
 641a.eu
+ap3xmcserver.com
+c2.amusing.cc
+c2.bitfee.ch
+c2.iron-security.dk
+c2.jdsecurity.ca
+cloudc2.org
 cloudc2.skredderdata.no
 dobbelfemti.no
 eggejakt.xn--dsnes-mra.no
 hak5.cyberforcerd.co.il
+hardware.truvantis.tech
 rnicrosoft.live
 securehaven.business
 turtle.redirectplease.com
