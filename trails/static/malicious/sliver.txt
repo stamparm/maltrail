@@ -5286,6 +5286,11 @@ rtxcore.ru
 45.32.117.209:8888
 78.40.116.248:666
 
+# Reference: https://x.com/RakeshKrish12/status/1851872514793968008
+# Reference: https://www.virustotal.com/gui/file/a7d68938baaf71f6fdb698b71a667544a98c603ff958c1e88f31956456808747/detection
+
+172.96.137.224:7083
+
 # Generic
 
 /.sliver-client/
