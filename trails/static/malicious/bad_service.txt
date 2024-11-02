@@ -2981,3 +2981,7 @@ brok3r7bhcblynwpoymgarr6zwcy4ttfbhkhcmotz4lw2gcsuojgaeqd.onion
 # Reference: https://app.any.run/tasks/f993b425-a04b-41d0-b760-10ba40dcb819
 
 pastesnip.com
+
+# Reference: https://x.com/DarkWebInformer/status/1852512288156139951
+
+socketstresser.pw
