@@ -2493,3 +2493,21 @@ pidgey.evilc0rp.xyz
 supportgoogle.duckdns.org
 tiendanube-docs.chazki.com
 tiendanube.chazki.com
+
+# Reference: https://app.validin.com/detail?find=8fda9d86d62e7121dc00bcd1ae63b077&type=hash&ref_id=0ffe9cdc6a5#tab=host_pairs
+
+0732.aierhn.com
+105.ip-176-31-162.eu
+allckmining.xyz
+findeat.info
+generalbae.com
+lgedgovbd.duckdns.org
+livineasyandraven.com
+mythic-r-876.polarbear.dev
+mythic.officetvm03.com
+myuniqueapp.crabdance.com
+ns1.sendcupons24.shop
+pingmemaybe.xyz
+servicemode.click
+vks19176.ip-176-31-162.eu
+vps-312f1129.vps.ovh.net
