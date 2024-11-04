@@ -214,3 +214,8 @@ zoi-nebulafiles.zoicloud.au
 # Reference: https://securelist.com/awaken-likho-apt-new-implant-campaign/114101/
 
 kwazindernuren.com
+
+# Reference: https://x.com/James_inthe_box/status/1853445030876447060
+# Reference: https://www.virustotal.com/gui/file/db8174175cec245f15f117503fd9e178307fb3763ea7e2e47541e80bfc953746/detection
+
+94.232.43.185:443
