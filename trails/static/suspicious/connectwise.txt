@@ -446,3 +446,11 @@ wingenuity.dyndns.org
 20.122.97.194:8040
 20.122.97.194:8041
 control.vertilocity.com
+
+# Reference: https://www.virustotal.com/gui/file/1790fd36f4bb820a1beed813b836a14fffd18c3c47f00554239a237ed7d442fd/detection
+
+89.187.28.231:443
+89.187.28.231:8041
+docmentsign.ssag00v-0ffical.com
+signdocument.ssag00v-0ffical.com
+wise.dynns.com
