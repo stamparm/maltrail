@@ -13490,7 +13490,6 @@ statnestt.com
 
 # Reference: https://app.validin.com/detail?find=Attention%20Notice&type=raw&ref_id=131c0406d8d#tab=host_pairs
 
-Value
 admatrixclick.com
 adpulsetop.com
 advertiqs.com
