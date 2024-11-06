@@ -8885,6 +8885,10 @@ gatetodisplaycontent.com
 
 /InvestmentAdvisersAct2.hta
 
+# Reference: https://x.com/1ZRR4H/status/1854029075720851965
+
+/inerr.ps1
+
 # Generic
 
 /5c0ca79.php
