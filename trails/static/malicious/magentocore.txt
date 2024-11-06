@@ -13484,6 +13484,10 @@ shopanalyticss.com
 fb-counter.com
 connect.fb-counter.com
 
+# Reference: https://x.com/sdcyberresearch/status/1854186024131268735
+
+statnestt.com
+
 # Generic
 
 /assets/lfg.js
