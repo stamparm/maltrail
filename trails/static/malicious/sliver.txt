@@ -5291,6 +5291,12 @@ rtxcore.ru
 
 172.96.137.224:7083
 
+# Reference: https://x.com/banthisguy9349/status/1854115213835898998
+# Reference: https://www.virustotal.com/gui/file/39b20351bd38a8414fa2a1af3d2f931d8dd3f7e322db7a4e7aa84df24367de5c/detection
+
+185.247.224.8:2344
+185.247.224.8:5559
+
 # Generic
 
 /.sliver-client/
