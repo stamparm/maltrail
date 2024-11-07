@@ -454,3 +454,10 @@ control.vertilocity.com
 docmentsign.ssag00v-0ffical.com
 signdocument.ssag00v-0ffical.com
 wise.dynns.com
+
+# Reference: https://x.com/malwrhunterteam/status/1854456006207484228
+# Reference: https://www.virustotal.com/gui/file/f549e010bf53ced574aac739f55c7785da906cca8c3de02f9271770a8b2645f3/detection
+
+194.59.31.9:8041
+ssagov.cc
+llkt501.ddns.net
