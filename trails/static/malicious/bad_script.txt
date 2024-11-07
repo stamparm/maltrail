@@ -8889,6 +8889,10 @@ gatetodisplaycontent.com
 
 /inerr.ps1
 
+# Reference: https://x.com/banthisguy9349/status/1854575385964368184
+
+/BsO7Pc4leIEmwdV.ps1
+
 # Generic
 
 /5c0ca79.php
