@@ -3223,6 +3223,11 @@ revshell.party
 ns1.he110w0r1d.com
 update.revshell.party
 
+# Reference: https://x.com/banthisguy9349/status/1854575385964368184
+# Reference: https://www.virustotal.com/gui/ip-address/84.247.147.214/relations
+
+84.247.147.214:8443
+
 # Generic
 
 /Havoc/payload/
