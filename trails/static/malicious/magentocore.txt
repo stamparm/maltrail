@@ -13555,6 +13555,10 @@ visualldata.com
 vizualispro.com
 wisedesignls.com
 
+# Reference: https://blog.sucuri.net/2024/11/2024-credit-card-theft-season-arrives.html
+
+cpeciadogfoods.com
+
 # Generic
 
 /assets/lfg.js
