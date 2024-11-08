@@ -8615,6 +8615,14 @@ gatetodisplaycontent.com
 
 /BsO7Pc4leIEmwdV.ps1
 
+# Reference: https://x.com/raghav127001/status/1854686323950629206
+
+/Invoke-Mimi.ps1
+/Invoke-Portscan.ps1
+/Invoke-PowerShellTcpOneLine.ps1
+/Invoke-SessionHUnter.ps1
+/amsibypass.txt
+
 # Generic
 
 /5c0ca79.php
