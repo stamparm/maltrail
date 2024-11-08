@@ -1119,3 +1119,14 @@ podathon.org/shell/
 /zehir4shell.txt
 /zeusshell.rar
 /zeusshell.txt
+
+# Reference: https://x.com/raghav127001/status/1854686323950629206
+
+/multi_revshell.php
+/p0wny_shell.php
+/ps_revshell_gen.py
+/revshell.ps1
+/webshell_f13.php.png
+/webshell_f13_aspx.aspx
+/webshell_f13_form.php
+/webshell_f13_simple.php
