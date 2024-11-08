@@ -461,3 +461,9 @@ wise.dynns.com
 194.59.31.9:8041
 ssagov.cc
 llkt501.ddns.net
+
+# Reference: https://x.com/malwrhunterteam/status/1854881357605822487
+# Reference: https://www.virustotal.com/gui/file/6671f2cb83274541d439b21f917411e1043bd3c0b76946aa4d5875a3f0cc2248/detection
+
+194.110.247.198:8880
+grip08r.top
