@@ -5302,6 +5302,10 @@ rtxcore.ru
 /.sliver-client/
 /.sliver-server/
 /.sliver/
+/sliver_beacon
+/sliver_client
+/sliver_implant
+/sliver_payload
 /sliver-client
 /sliver-client_linux
 /sliver-client_linux.sig
