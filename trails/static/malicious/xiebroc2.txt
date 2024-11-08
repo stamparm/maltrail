@@ -15,6 +15,10 @@
 43.229.154.146:8000
 43.229.154.146:8889
 
+# Reference: https://x.com/Huntio/status/1854814842625867989
+
+38.47.227.55:8890
+
 # Generic
 
 /XiebroC2/TeamServer_linux
