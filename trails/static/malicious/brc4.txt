@@ -934,3 +934,16 @@ http://57.180.68.148
 berzzuzz.com
 deltaso.com
 soccoc.africa
+
+# Reference: https://x.com/malwrhunterteam/status/1854823012798738814
+# Reference: https://www.virustotal.com/gui/file/c96ec96ea29372311cbef1d2b23f0e51b06f1f6184a41da985142929d9fa2f02/detection
+# Reference: https://www.virustotal.com/gui/file/714944899f2b0fe6496ac15359ba90fb9d9891a84111fc7dc3cd5b1093b17347/detection
+
+45.143.166.83:8822
+45.143.166.83:8877
+80.66.76.106:8822
+80.66.76.106:8877
+ergiholim.com
+rolefenik.com
+waffaffa.com
+xomamox.com
