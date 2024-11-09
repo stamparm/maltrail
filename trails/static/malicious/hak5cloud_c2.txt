@@ -1509,3 +1509,13 @@ securehaven.business
 turtle.redirectplease.com
 update.rnicrosoft.live
 xn--dsnes-mra.no
+
+# Reference: https://app.validin.com/detail?find=57f501d6fee2fdb024795abbdb750ad5&type=hash#tab=host_pairs (# 2024-11-09)
+
+anarchistpenguin.org
+c2.nues.network
+ap3xc2authportal.org
+c2.c0mms.1sht.com
+api.cloud-wireless.xyz
+cl0ud-c2.honami.club
+c2.dsgpentest.win
