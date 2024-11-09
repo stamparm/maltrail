@@ -5786,3 +5786,8 @@ tools.kali.pro.s3.amazonaws.com
 
 170.64.158.188:3010
 170.64.158.188:443
+
+# Reference: https://x.com/ShanHolo/status/1855189166729887990
+# Reference: https://www.virustotal.com/gui/file/823c771434d6b1e8dd4092094c1ea44bda8cccf7f864214fa8a89dffa71f25cb/detection
+
+54.158.34.216:8080
