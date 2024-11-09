@@ -48,3 +48,16 @@ d1z6i8y4ytpgjk.cloudfront.net
 
 36.139.160.250:8000
 36.139.160.250:8889
+
+# Reference: https://x.com/malwrhunterteam/status/1854638105719931221
+# Reference: https://www.virustotal.com/gui/ip-address/129.154.205.7/relations
+# Reference: https://www.virustotal.com/gui/file/1cc570ef64e4cdc47d54bbf4e40b6dc47f5f2696c2010405d15a5e2abdfd4f4b/detection
+# Reference: https://www.virustotal.com/gui/file/0acd993292a1a40aaf8058110f6f091844dd46d36691dc35d4314a768f66fd63/detection
+# Reference: https://www.virustotal.com/gui/file/0470933fab460b50192f1a26ac33a32e952208c523a3acebfefb20f908c041f8/detection
+
+eiyou.fun
+jeter.eu.org
+idea.eiyou.fun
+string.eiyou.fun
+idea.jeter.eu.org
+string.jeter.eu.org
