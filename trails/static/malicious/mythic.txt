@@ -2511,3 +2511,12 @@ pingmemaybe.xyz
 servicemode.click
 vks19176.ip-176-31-162.eu
 vps-312f1129.vps.ovh.net
+
+# Reference: https://app.validin.com/detail?find=8fda9d86d62e7121dc00bcd1ae63b077&type=hash#tab=host_pairs
+
+bashaws.com
+bodrangzen.site
+fastlinkapp.com
+m885.holo366.com
+mm80.dspmanag.com
+toteasl.com
