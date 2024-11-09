@@ -3228,6 +3228,42 @@ update.revshell.party
 
 84.247.147.214:8443
 
+# Reference: https://app.validin.com/detail?find=f0003fecc5f9c8c2cbac&type=hash#tab=host_pairs (# 2024-11-09)
+
+139-144-31-55.ip.linodeusercontent.com
+204-48-21-144.ipv4.staticdns3.io
+aadcdn.avina.cloud
+aadcdn.fortinet.app
+account.fortinet.app
+accounts-googleworkspace.com
+admin.lmsdev.mygoodpeople.com
+api.fortinet.app
+api10.fortinet.app
+appincloud.francecentral.cloudapp.azure.com
+avina.cloud
+capitalunionbank.co
+crm.avina.cloud
+dmresorts.co
+getatrade.co.nz
+gosyslygi.su
+gulfcoast.college
+h2875518.stratoserver.net
+host-185-193-126-192.njalla.net
+hostmaster.api.fortinet.app
+htxss.buzz
+login.avina.cloud
+login.dmresorts.co
+owa.gosyslygi.su
+p001.falarmais.com.br
+pogito.com
+portal.avina.cloud
+portal.centralbank.bz
+portal.fortinet.app
+putrahostingxzzx.xyz
+test.ticketsmasters.net
+vps-8c99fe51.vps.ovh.ca
+zynntzy.putrahostingxzzx.xyz
+
 # Generic
 
 /Havoc/payload/
