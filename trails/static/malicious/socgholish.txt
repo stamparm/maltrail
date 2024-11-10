@@ -4142,6 +4142,18 @@ vryv.free.thebitmeister.com
 wccw.free.thebitmeister.com
 yqf.free.thebitmeister.com
 
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-11-10)
+
+172.96.8.206:443
+205.185.119.10:443
+38.180.242.241:443
+45.76.250.221:443
+50.114.37.19:443
+62.60.154.114:443
+86.124.170.114:443
+88.119.175.247:443
+91.240.202.172:443
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
