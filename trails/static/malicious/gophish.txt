@@ -2644,3 +2644,9 @@ otbasybankk.kz
 fortiauth.altinbank.kz
 mail.altinbank.kz
 mail.altunbank.kz
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-11-10)
+
+146.190.53.17:3333
+34.173.10.98:443
+46.101.108.4:3333
