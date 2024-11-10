@@ -947,3 +947,20 @@ ergiholim.com
 rolefenik.com
 waffaffa.com
 xomamox.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-11-10)
+
+http://13.115.99.135
+http://52.69.75.103
+http://54.249.240.178
+http://54.249.244.152
+http://54.250.147.219
+http://57.180.74.95
+104.207.132.109:443
+159.89.105.196:443
+164.90.146.24:443
+165.232.139.231:443
+23.168.152.67:8443
+23.168.152.68:443
+94.156.166.170:1378
+94.232.247.97:21
