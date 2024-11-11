@@ -3234,6 +3234,7 @@ update.revshell.party
 204-48-21-144.ipv4.staticdns3.io
 aadcdn.avina.cloud
 aadcdn.fortinet.app
+acadian.cc
 account.fortinet.app
 accounts-googleworkspace.com
 admin.lmsdev.mygoodpeople.com
@@ -3244,6 +3245,7 @@ avina.cloud
 capitalunionbank.co
 crm.avina.cloud
 dmresorts.co
+dzss.in
 getatrade.co.nz
 gosyslygi.su
 gulfcoast.college
@@ -3255,6 +3257,7 @@ login.avina.cloud
 login.dmresorts.co
 owa.gosyslygi.su
 p001.falarmais.com.br
+pianrun.online
 pogito.com
 portal.avina.cloud
 portal.centralbank.bz
