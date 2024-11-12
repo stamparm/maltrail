@@ -1130,3 +1130,7 @@ podathon.org/shell/
 /webshell_f13_aspx.aspx
 /webshell_f13_form.php
 /webshell_f13_simple.php
+
+# Reference: https://x.com/banthisguy9349/status/1856303206495580231
+
+/shell1.asp
