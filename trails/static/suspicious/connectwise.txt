@@ -484,3 +484,10 @@ lokistorage.xyz
 kinglues.com
 secure.kinglues.com
 t23amma.zapto.org
+
+# Reference: https://x.com/malwrhunterteam/status/1856408735800754302
+# Reference: https://www.virustotal.com/gui/file/ec9320875fe14415e6a5b12ccd957ac36ca6b3349c7357836d896199fcd662ea/detection
+
+37.221.65.47:8880
+acemisn.win
+t285.acemisn.win
