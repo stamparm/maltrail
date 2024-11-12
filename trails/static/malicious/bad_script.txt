@@ -8623,6 +8623,10 @@ gatetodisplaycontent.com
 /Invoke-SessionHUnter.ps1
 /amsibypass.txt
 
+# Reference: https://x.com/alexocheema/status/1856295635143524378
+
+/stage1payload
+
 # Generic
 
 /5c0ca79.php
