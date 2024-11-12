@@ -475,3 +475,12 @@ grip08r.top
 95.164.16.15:8041
 forcloud.xyz
 lokistorage.xyz
+
+# Reference: https://x.com/malwrhunterteam/status/1856395199267872884
+# Reference: https://www.virustotal.com/gui/file/ff829afead15584b5654720ef4985a81f9adab4890485bbf1be4fafb99755b64/detection
+# Reference: https://www.virustotal.com/gui/file/641117163de19c368a6872389725baad7d06e9651d3f3229de2d12cbbcb0cc28/detection
+# Reference: https://www.virustotal.com/gui/file/56c16ac1bae05f5ffc0eaa88c1625e3552a0e43764a434b5e0771caa3fcd9f71/detection
+
+kinglues.com
+secure.kinglues.com
+t23amma.zapto.org
