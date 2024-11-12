@@ -5336,6 +5336,12 @@ http://43.138.184.91
 95.163.222.246:31337
 95.163.222.246:443
 
+# Reference: https://hunt.io/blog/sliver-c2-ligolo-ng-targeting-yc
+
+179.60.149.75:22813
+179.60.149.75:3333
+ycombinator.serveblog.net
+
 # Generic
 
 /.sliver-client/
