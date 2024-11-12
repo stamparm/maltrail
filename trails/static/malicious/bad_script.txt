@@ -8631,6 +8631,10 @@ gatetodisplaycontent.com
 
 /ransom.ps1
 
+# Reference: https://www.fortinet.com/blog/threat-research/new-campaign-uses-remcos-rat-to-exploit-victims
+
+/cookienetbookinetcahce.hta
+
 # Generic
 
 /5c0ca79.php
