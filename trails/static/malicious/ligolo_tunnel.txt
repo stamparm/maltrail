@@ -178,3 +178,7 @@ http://89.110.89.63
 94.237.67.145:9001
 94.237.79.92:4443
 95.111.203.158:4433
+
+# Reference: https://hunt.io/blog/sliver-c2-ligolo-ng-targeting-yc
+
+179.60.149.75:22913
