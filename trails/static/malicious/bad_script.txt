@@ -8627,6 +8627,10 @@ gatetodisplaycontent.com
 
 /stage1payload
 
+# Reference: https://x.com/banthisguy9349/status/1856305175285154036
+
+/ransom.ps1
+
 # Generic
 
 /5c0ca79.php
