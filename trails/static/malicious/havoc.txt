@@ -3418,6 +3418,14 @@ http://67.217.228.206
 98.66.183.110:9443
 98.82.19.152:443
 
+# Reference: https://x.com/k3yp0d/status/1856323584152490337
+# Reference: https://x.com/k3yp0d/status/1856323591178010915
+# Reference: https://x.com/N3wbound/status/1856350392071622770
+# Reference: https://www.virustotal.com/gui/file/852135a46ec74fcb2d3b70989d318cc26ed894c58b77b11fccd127b1bdb948c5/detection
+
+black-friday.homes
+investments-management.com
+
 # Generic
 
 /Havoc/payload/
