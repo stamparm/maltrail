@@ -467,3 +467,11 @@ llkt501.ddns.net
 
 194.110.247.198:8880
 grip08r.top
+
+# Reference: https://x.com/malwrhunterteam/status/1856383222025773346
+# Reference: https://www.virustotal.com/gui/file/29e369f7b7ee09c8b15a8dc133561d4d71e55c100eeff8d7e72d2c6016b179e9/detection
+# Reference: https://www.virustotal.com/gui/file/762e2a16be5fd2a274ba0db78f20d4ba2e6f1b51ed962bd793349bf7de522638/detection
+
+95.164.16.15:8041
+forcloud.xyz
+lokistorage.xyz
