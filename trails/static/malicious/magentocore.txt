@@ -13559,6 +13559,10 @@ wisedesignls.com
 
 cpeciadogfoods.com
 
+# Reference: https://x.com/sansecio/status/1856658781322510420
+
+statepulseapp.com
+
 # Generic
 
 /assets/lfg.js
