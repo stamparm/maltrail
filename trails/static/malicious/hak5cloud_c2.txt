@@ -1513,12 +1513,16 @@ xn--dsnes-mra.no
 # Reference: https://app.validin.com/detail?find=57f501d6fee2fdb024795abbdb750ad5&type=hash#tab=host_pairs (# 2024-11-09)
 
 anarchistpenguin.org
-c2.nues.network
 ap3xc2authportal.org
-c2.c0mms.1sht.com
 api.cloud-wireless.xyz
-cl0ud-c2.honami.club
+c2.c0mms.1sht.com
 c2.dsgpentest.win
+c2.nues.network
+c2.spaceball.one
+cl0ud-c2.honami.club
+meow-it.protosec.ai
+techtech.tsukuyomi.money
+texas.netwide.net
 
 # Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-11-10)
 
