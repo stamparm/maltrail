@@ -8635,6 +8635,14 @@ gatetodisplaycontent.com
 
 /cookienetbookinetcahce.hta
 
+# Reference: https://x.com/byrne_emmy12099/status/1856178461515362623
+# Reference: https://www.virustotal.com/gui/file/36db27f5eb3343cfc72d261d78da44957a49cb6731acb50a96ea5694f4d616c5/detection
+
+/wp-includes/b1tuZmhqZXJbaGZkYmdhbmFkZmhyZmEK.php
+/wp-includes/b1tuZmhqZXJbaGZkYmdhbmFkZmhyZmEKb1.php
+/b1tuZmhqZXJbaGZkYmdhbmFkZmhyZmEK.php
+/b1tuZmhqZXJbaGZkYmdhbmFkZmhyZmEKb1.php
+
 # Generic
 
 /5c0ca79.php
