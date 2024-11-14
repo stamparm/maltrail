@@ -965,6 +965,16 @@ dareka4te.shop
 operacionboda.com
 prospaandsalon.com
 
+# Reference: https://x.com/DaveLikesMalwre/status/1856492975129350485
+
+culinarycanvasgrilling.com
+
+# Reference: https://x.com/DaveLikesMalwre/status/1856494465478996481
+
+culinarycanvasgrilling.com
+junocis.com/work/fix.php
+junocis.com/work/index.php
+
 # Generic
 
 /cache/ewmrgqnaww.php
