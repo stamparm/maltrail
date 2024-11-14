@@ -905,6 +905,10 @@ portalnfe.digital
 magiker.portalnfe.digital
 magiker.mgkr.shop
 
+# Reference: https://x.com/malwrhunterteam/status/1856809492253495385
+
+89.23.102.250:8000
+
 # Generic
 
 /admin_123/auth.php
