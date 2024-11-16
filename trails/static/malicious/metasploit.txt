@@ -5816,3 +5816,22 @@ tools.kali.pro.s3.amazonaws.com
 91.193.18.13:443
 92.118.205.222:443
 93.115.20.113:443
+
+# Reference: https://www.virustotal.com/gui/file/961a0bf3d64d1fb3f954a7ad103b4a92840b3a0f02728c018752423ffe0f9ef8/detection
+
+59.153.164.48:25213
+vip.hb.frp.one
+
+# Reference: https://x.com/malwrhunterteam/status/1857879961052323962
+# Reference: https://www.virustotal.com/gui/file/c441ac3abe3191cbbd84c30265445a594fea6a593a34df4826852dd49eda5ed2/detection
+
+154.37.215.146:8888
+59.153.164.48:16412
+
+# Reference: https://www.virustotal.com/gui/file/3692f26365c838de0db6f0fcb5e806dbf90185977acb1d4fa3946108d3a6fd7e/detection
+
+154.37.215.146:82
+
+# Refernece: https://www.virustotal.com/gui/file/072d2be0684fa70051221b19356c68b0f2129d0bf3f55eff95d8e0d0784d1ac8/detection
+
+154.37.215.146:18852
