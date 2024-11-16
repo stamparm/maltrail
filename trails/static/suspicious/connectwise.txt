@@ -491,3 +491,14 @@ t23amma.zapto.org
 37.221.65.47:8880
 acemisn.win
 t285.acemisn.win
+
+# Reference: https://x.com/malwrhunterteam/status/1857696062703808782
+# Reference: https://www.virustotal.com/gui/file/02662ecf4b875e7ab204e212395900fcf47eb765180260b99f3517ed643bebed/detection
+# Reference: https://www.virustotal.com/gui/file/caf48e2a81a7b6acd412fef11fac9b5b4d716236ba23044bca21681b46511922/detection
+
+173.46.80.52:443
+173.46.80.52:8041
+signdoc.cloud
+todesk.help
+cloud.signdoc.cloud
+yourrldns22.hopto.org
