@@ -4572,6 +4572,8 @@
 5.42.100.0/23,aeza-as
 5.42.102.0/23,aeza-as
 5.42.104.0/23,aeza-as
+91.103.252.0/23,aeza-as
+94.142.138.0/24,aeza-as
 
 # AS216246
 # Reference: https://ipinfo.io/AS216246
