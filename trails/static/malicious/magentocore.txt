@@ -12907,6 +12907,7 @@ repo.marenteches.online
 
 # Reference: https://x.com/sdcyberresearch/status/1838222470135833080
 # Reference: https://www.virustotal.com/gui/ip-address/176.124.222.157/relations
+# Reference: https://www.virustotal.com/gui/ip-address/217.144.184.139/relations
 # Reference: https://app.validin.com/detail?type=dom&find=cdnstatics.net#tab=host_pairs
 
 cdnstaticnetwork.net
