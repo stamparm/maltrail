@@ -13629,6 +13629,10 @@ cdn.slidovodi.fun
 cdn.tripist.online
 cdn.volopert.site
 
+# Reference: https://x.com/sdcyberresearch/status/1858833533663383856
+
+ads-data-verify-v5g3dyhvdq-uc.a.run.app
+
 # Generic
 
 /assets/lfg.js
