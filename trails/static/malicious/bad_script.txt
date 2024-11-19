@@ -8643,6 +8643,11 @@ gatetodisplaycontent.com
 /b1tuZmhqZXJbaGZkYmdhbmFkZmhyZmEK.php
 /b1tuZmhqZXJbaGZkYmdhbmFkZmhyZmEKb1.php
 
+# Reference: https://x.com/cyberfeeddigest/status/1858258809778507868
+
+/emotewipe.ps1
+/emotewipe2.ps1
+
 # Generic
 
 /5c0ca79.php
