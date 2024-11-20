@@ -3432,6 +3432,27 @@ investments-management.com
 http://62.60.239.58
 87.121.61.80:443
 
+# Reference: https://app.validin.com/detail?find=f0003fecc5f9c8c2cbac&type=hash&ref_id=9acf05bd401#tab=host_pairs (# 2024-11-20)
+
+45-14-226-17.cprapid.com
+941999defaf6.seetiehost.de
+adfs.fortinet.app
+azurecloud.live
+cheappricesforedmedicine.com
+cohenandjudaflorda.com
+dc-5483326c413f.seetiehost.de
+dms.x-pt.net
+fortinet.app
+forum.seetiehost.de
+git.geelabs.de
+ip144.ip-178-32-106.eu
+login.fortinet.app
+marketsentinels.shop
+securebank.nl
+serviceaids.cohenandjudaflorda.com
+v22018076557869542.ultrasrv.de
+v2202409234927287665.happysrv.de
+
 # Generic
 
 /Havoc/payload/
