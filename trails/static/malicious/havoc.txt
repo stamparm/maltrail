@@ -3426,6 +3426,12 @@ http://67.217.228.206
 black-friday.homes
 investments-management.com
 
+# Reference: https://x.com/karol_paciorek/status/1859241811941752899
+# Reference: https://www.virustotal.com/gui/file/9c2f38ff50e06b43727c0e61b0fb112c7a623d448f4eb213a68d46362ba9f5a6/detection
+
+http://62.60.239.58
+87.121.61.80:443
+
 # Generic
 
 /Havoc/payload/
