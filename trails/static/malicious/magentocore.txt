@@ -13633,6 +13633,11 @@ cdn.volopert.site
 
 ads-data-verify-v5g3dyhvdq-uc.a.run.app
 
+# Reference: https://x.com/sdcyberresearch/status/1859239170754957317
+
+productprobehub.com
+reviewgatherer.com
+
 # Generic
 
 /assets/lfg.js
