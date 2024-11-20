@@ -972,3 +972,13 @@ http://57.180.74.95
 94.232.40.38:4438
 guaaug.com
 uayyau.com
+
+# Reference: https://x.com/Cryptolaemus1/status/1856774655534637418
+# Reference: https://www.virustotal.com/gui/file/0f23855e56eb6ec760717be43280eeeeaec1aeef939f9ae6a41daf1b8e3bd306/detection
+
+45.143.166.230:9043
+87.120.37.120:9043
+azuredcloud.world
+burjog.com
+memorun.life
+samomol.com
