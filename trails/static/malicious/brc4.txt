@@ -964,3 +964,11 @@ http://57.180.74.95
 23.168.152.68:443
 94.156.166.170:1378
 94.232.247.97:21
+
+# Reference: https://github.com/pr0xylife/Latrodectus/blob/main/Latrodectus_19.11.2024.txt
+# Reference: https://www.virustotal.com/gui/file/14ffcbbfb305287ea15264df3363567f36a26917ae2018af0f40e2009b8a7184/detection
+
+46.249.49.83:4438
+94.232.40.38:4438
+guaaug.com
+uayyau.com
