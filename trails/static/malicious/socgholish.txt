@@ -4154,6 +4154,17 @@ yqf.free.thebitmeister.com
 88.119.175.247:443
 91.240.202.172:443
 
+# Reference: https://x.com/TRACLabs_/status/1859727076124999714
+# Reference: https://www.virustotal.com/gui/ip-address/38.180.136.48/relations
+# Reference: https://www.virustotal.com/gui/file/27909ef2e03908e4c0011acebe377a541e41db03843f5856b5e3e58887d8b79d/detection
+# Reference: https://www.virustotal.com/gui/file/b5c26533650b7da90c162b945533be126b640f4957d6a0376977d6b42e06b3fd/detection
+
+cases.​pcohenlaw.​com
+cxhkh.cases.pcohenlaw.com
+geui.cases.pcohenlaw.com
+kwsww.cases.pcohenlaw.com
+xrqax.cases.pcohenlaw.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
