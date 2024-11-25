@@ -13659,6 +13659,8 @@ reviewgatherer.com
 
 dynamicopenfonts.com
 ecommercesoltic.org
+webtracker.click
+click.webtracker.click
 
 # Generic
 
