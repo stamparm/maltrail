@@ -13654,6 +13654,12 @@ ads-data-verify-v5g3dyhvdq-uc.a.run.app
 productprobehub.com
 reviewgatherer.com
 
+# Reference: https://x.com/sdcyberresearch/status/1861040655922843998
+# Reference: https://www.virustotal.com/gui/ip-address/213.108.22.35/relations
+
+dynamicopenfonts.com
+ecommercesoltic.org
+
 # Generic
 
 /assets/lfg.js
