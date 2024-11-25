@@ -13656,9 +13656,14 @@ reviewgatherer.com
 
 # Reference: https://x.com/sdcyberresearch/status/1861040655922843998
 # Reference: https://www.virustotal.com/gui/ip-address/213.108.22.35/relations
+# Reference: https://app.validin.com/detail?find=204.48.30.229&type=ip4&ref_id=50ba59b1326#tab=resolutions
 
+click-track-adwords-google-cpc-search.ga
 dynamicopenfonts.com
 ecommercesoltic.org
+foodnetwork.buzz
+link-track-cpc.tk
+pogoo.click
 webtracker.click
 click.webtracker.click
 
