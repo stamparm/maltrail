@@ -4165,6 +4165,10 @@ geui.cases.pcohenlaw.com
 kwsww.cases.pcohenlaw.com
 xrqax.cases.pcohenlaw.com
 
+# Reference: https://x.com/TRACLabs_/status/1861073149070041377
+
+dashnex.plexusmarket.fund
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
