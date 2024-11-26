@@ -982,3 +982,12 @@ azuredcloud.world
 burjog.com
 memorun.life
 samomol.com
+
+# Reference: https://x.com/P4nd3m1cb0y/status/1861171310824693892
+
+146.70.213.35:443
+162.254.85.213:443
+162.254.86.108:443
+185.75.240.211:443
+35.161.207.170:443
+84.46.239.89:443
