@@ -1068,7 +1068,6 @@ mysecuritycamera.org
 sytes.net
 serveminecraft.net
 redundantdns.net
-serveirc.com
 enterprisemx.com
 point2this.com
 ilovecollege.info
@@ -1596,7 +1595,6 @@ servegame.com
 servehalflife.com
 servehttp.com
 servehumour.com
-serveirc.com
 serveminecraft.net
 servemp3.com
 servep2p.com
