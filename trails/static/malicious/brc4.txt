@@ -991,3 +991,9 @@ samomol.com
 185.75.240.211:443
 35.161.207.170:443
 84.46.239.89:443
+
+# Reference: https://x.com/malwrhunterteam/status/1861747344770843000
+# Reference: https://www.virustotal.com/gui/file/196b4d327d8cc1fab8d801c19872c0b084d7485aeb1a103396652ff40fae45e1/detection
+
+http://147.45.124.228
+147.45.124.228:443
