@@ -2993,4 +2993,9 @@ apktopng.com
 # Reference: https://x.com/TLP_R3D/status/1857344503704650035
 # Reference: https://www.virustotal.com/gui/ip-address/185.193.125.25/relations
 
- cardersparadise.cc
+cardersparadise.cc
+
+# Reference: https://app.validin.com/detail?find=193.151.136.249&type=ip4&ref_id=f772d7b812d#tab=resolutions
+
+anonkiller.com
+anonkiller.net
