@@ -13667,6 +13667,10 @@ pogoo.click
 webtracker.click
 click.webtracker.click
 
+# Reference: https://x.com/sdcyberresearch/status/1861805574003822765
+
+webdevtools.sa.com
+
 # Generic
 
 /assets/lfg.js
