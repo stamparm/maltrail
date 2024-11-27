@@ -5342,6 +5342,11 @@ http://43.138.184.91
 179.60.149.75:3333
 ycombinator.serveblog.net
 
+# Reference: https://www.virustotal.com/gui/file/d6b7b1234e2380235db197a1924a738b464e87b4fe749348c5662e33fc6aff77/detection
+
+http://45.82.254.63
+45.82.254.63:443
+
 # Generic
 
 /.sliver-client/
