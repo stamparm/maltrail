@@ -4169,6 +4169,11 @@ xrqax.cases.pcohenlaw.com
 
 dashnex.plexusmarket.fund
 
+# Reference: https://x.com/TRACLabs_/status/1862161709353365776
+# Reference: https://www.virustotal.com/gui/ip-address/137.220.63.132/relations
+
+studio.lacrenshawcrossing.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
