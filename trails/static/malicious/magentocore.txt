@@ -13683,6 +13683,10 @@ staticfonts.com
 ustatics.info
 webdevtools.sa.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.196.11.69/relations
+
+magentoplugins.cc
+
 # Generic
 
 /assets/lfg.js
