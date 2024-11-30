@@ -13596,6 +13596,7 @@ interqc.online
 intqc.site
 jadov.store
 jarkit.site
+krtztanik.xyz
 leiuer.store
 loperbit.shop
 nemipoots.sbs
@@ -13606,6 +13607,7 @@ pizvoofes.shop
 portec.online
 raztop.site
 rivtec.online
+safemh.icu
 sealink.fun
 sedevtec.sbs
 sijemit.sbs
@@ -13651,6 +13653,7 @@ cdn.slidovodi.fun
 cdn.tripist.online
 cdn.vidyeolit.online
 cdn.volopert.site
+merajdns.safemh.icu
 
 # Reference: https://x.com/sdcyberresearch/status/1858833533663383856
 
