@@ -1050,3 +1050,14 @@ int.dewrain.site
 int.vaicore.site
 int.vaicore.store
 int.vaicore.xyz
+
+# Reference: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/spyloan-a-global-threat-exploiting-social-engineering/
+
+mykreditandfear.com
+nihxdzzs.com
+pegetloanability.com
+hx.nihxdzzs.com
+prep.preprestamoshol.com
+preprestamoshol.com
+su.mykreditandfear.com
+tlon.pegetloanability.com
