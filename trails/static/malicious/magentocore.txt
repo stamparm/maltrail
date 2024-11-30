@@ -13608,6 +13608,7 @@ portec.online
 raztop.site
 rivtec.online
 safemh.icu
+safemh.lol
 sealink.fun
 sedevtec.sbs
 sijemit.sbs
@@ -13653,6 +13654,7 @@ cdn.slidovodi.fun
 cdn.tripist.online
 cdn.vidyeolit.online
 cdn.volopert.site
+merajd.safemh.lol
 merajdns.safemh.icu
 
 # Reference: https://x.com/sdcyberresearch/status/1858833533663383856
