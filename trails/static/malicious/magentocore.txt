@@ -13591,6 +13591,7 @@ geosepy.site
 geypol.shop
 grunet.online
 guetech.online
+handslegs.site
 heokit.fun
 hoetmob.sbs
 interqc.online
@@ -13599,6 +13600,7 @@ jadov.store
 jarkit.site
 krtztanik.xyz
 leiuer.store
+lntearec.icu
 loperbit.shop
 nemipoots.sbs
 nikhem.shop
@@ -13613,6 +13615,7 @@ safemh.lol
 sealink.fun
 sedevtec.sbs
 sijemit.sbs
+sliceadslvlb.com
 slidovodi.fun
 tripist.online
 vidyeolit.online
@@ -13655,6 +13658,7 @@ cdn.slidovodi.fun
 cdn.tripist.online
 cdn.vidyeolit.online
 cdn.volopert.site
+chairi.handslegs.site
 merajd.safemh.lol
 merajdns.safemh.icu
 
