@@ -13702,6 +13702,38 @@ webdevtools.sa.com
 
 magentoplugins.cc
 
+# Reference: https://app.validin.com/detail?find=89d0ef12d8d583fba8c80cad17e6ef30&type=hash&ref_id=e8c9bfe02ca#tab=host_pairs (# 2024-12-01)
+
+anonguard.shop
+anontech.shop
+brandlx.shop
+countify.shop
+creativemlnd.shop
+creatlveedge.shop
+cssfusion.shop
+datasphare.shop
+dealflnder.shop
+designfiow.shop
+designia.shop
+designls.shop
+graphexpert.shop
+graphiq.shop
+htmlwizard.shop
+htmlworks.shop
+javawizard.shop
+joyfuipath.shop
+marketls.shop
+markettis.shop
+pixelmaster.shop
+quantlfy.shop
+safezonne.shop
+sellboost.shop
+sellifry.shop
+statboost.shop
+stattrek.shop
+trendlfy.shop
+trendweve.shop
+
 # Generic
 
 /assets/lfg.js
