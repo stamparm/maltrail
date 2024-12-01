@@ -8642,6 +8642,16 @@ gatetodisplaycontent.com
 /emotewipe.ps1
 /emotewipe2.ps1
 
+# Reference: https://x.com/malwrhunterteam/status/1862624900592119903
+# Reference: https://www.virustotal.com/gui/file/e29d2bd946212328bcdf783eb434e1b384445f4c466c5231f91a07a315484819/detection
+
+/wp-includes/barasinghaby.ps1
+/wp-includes/neocolonialXAW.php
+/wp-includes/phyllopodan7V7GD.php
+/barasinghaby.ps1
+/neocolonialXAW.php
+/phyllopodan7V7GD.php
+
 # Generic
 
 /5c0ca79.php
