@@ -673,3 +673,8 @@ http://172.235.28.184
 8.222.130.235:3232
 82.156.145.168:3232
 93.127.223.191:3232
+
+# Reference: https://x.com/malwrhunterteam/status/1862633608667644069
+# Reference: https://www.virustotal.com/gui/file/a16682a4049c43700d90a1489a72ca8cd17c26a16369b4b6702847e9f7304f90/detection
+
+45.153.231.36:13675
