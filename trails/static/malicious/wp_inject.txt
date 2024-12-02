@@ -6225,3 +6225,15 @@ videochd4.shop
 videochd5.shop
 videochd6.shop
 videochd7.shop
+
+# Reference: https://www.virustotal.com/gui/file/10083b45547ab7dce90c18376be277b72571fd8c1ce1fee64bb225b73e571626/detection
+
+perfectlinestarter.com
+get.perfectlinestarter.com
+go.perfectlinestarter.com
+ready.perfectlinestarter.com
+records.perfectlinestarter.com
+
+# Reference: https://www.virustotal.com/gui/file/3156e9e14ae1a295d101549b584dee643ac50872f7cc6b216aa78363185f65e5/detection
+
+opendomains.space
