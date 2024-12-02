@@ -6237,3 +6237,19 @@ records.perfectlinestarter.com
 # Reference: https://www.virustotal.com/gui/file/3156e9e14ae1a295d101549b584dee643ac50872f7cc6b216aa78363185f65e5/detection
 
 opendomains.space
+
+# Reference: https://www.virustotal.com/gui/domain/readytocheckline.com/relations
+
+readytocheckline.com
+fr1.readytocheckline.com
+fr2.readytocheckline.com
+genericpoint.readytocheckline.com
+get.readytocheckline.com
+pepoint.readytocheckline.com
+point.readytocheckline.com
+rt1.readytocheckline.com
+set.readytocheckline.com
+sources.readytocheckline.com
+start.readytocheckline.com
+starts.readytocheckline.com
+steper.readytocheckline.com
