@@ -6130,3 +6130,18 @@ kntsv.nl
 # Reference: https://x.com/9823f_/status/1851257589046071574
 
 /wp-includes/css/dist/niil.php
+
+# Reference: https://www.virustotal.com/gui/file/378ea9be097e794b597dc4345043ffdc97276adb46615cf873073c73f5d1aa17/detection
+
+background.apistatexperience.com
+broworker10s.com
+finish.linetowaystrue.com
+linetoslice.com
+linetowaystrue.com
+opdomaines.space
+png.linetoslice.com
+rain.recordsbluemountain.com
+redselectorpage.com
+render.linetowaystrue.com
+start.linetowaystrue.com
+where.linetowaystrue.com
