@@ -13734,6 +13734,11 @@ stattrek.shop
 trendlfy.shop
 trendweve.shop
 
+# Reference: https://x.com/sdcyberresearch/status/1863580218822185269
+# Reference: https://app.validin.com/detail?find=146.70.71.179&type=ip4&ref_id=682c14ec707#tab=resolutions
+
+apistatistic.live
+
 # Generic
 
 /assets/lfg.js
