@@ -6253,3 +6253,20 @@ sources.readytocheckline.com
 start.readytocheckline.com
 starts.readytocheckline.com
 steper.readytocheckline.com
+
+# Reference: https://www.virustotal.com/gui/file/a8866e50386b6fcf4314cdb0a826106d020f4117907cd3ffdee6b00157270ff7/detection
+
+infosystemsllc.com
+participates.cfd
+ulstery.space
+binari.participates.cfd
+dalopt.participates.cfd
+delopt.participates.cfd
+frimok.participates.cfd
+noqcal.participates.cfd
+noqkal.participates.cfd
+tavux.participates.cfd
+vezopa.participates.cfd
+my.ulstery.space
+smart.ulstery.space
+unity.ulstery.space
