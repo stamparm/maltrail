@@ -6273,3 +6273,7 @@ vezopa.participates.cfd
 my.ulstery.space
 smart.ulstery.space
 unity.ulstery.space
+
+# Reference: https://www.virustotal.com/gui/file/bbb3fe6bdd4f8cf00414b77cffc782113ba42e6d7addcee00905de74b1d2eb77/detection
+
+cashmachines.biz
