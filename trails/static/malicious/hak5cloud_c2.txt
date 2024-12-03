@@ -1577,3 +1577,22 @@ http://162.243.197.144
 95.179.135.253:8834
 96.246.38.65:8080
 97.83.150.148:8080
+
+# Reference: https://app.validin.com/detail?find=57f501d6fee2fdb024795abbdb750ad5&type=hash#tab=host_pairs (# 2024-12-03)
+
+c2.abacussysteme.de
+c2.ducky.blue
+c2.keloha-it.com
+c2.seanchiarot.com
+c2.v7e.dev
+cc2.dalhome.xyz
+cloud-c2.fnlqxz.my.id
+cloud.cybershell.link
+cyberc2.sbs
+hak5.zero-dark.io
+hkcloud.cloud
+pwned.icu
+rubixmaster.com
+sec.blooo.dev
+wss.c0mms.1sht.com
+y-files.com
