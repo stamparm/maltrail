@@ -1581,6 +1581,7 @@ http://162.243.197.144
 # Reference: https://app.validin.com/detail?find=57f501d6fee2fdb024795abbdb750ad5&type=hash#tab=host_pairs (# 2024-12-03)
 
 c2.abacussysteme.de
+c2.c0mms.1sht.com
 c2.ducky.blue
 c2.keloha-it.com
 c2.seanchiarot.com
@@ -1589,10 +1590,12 @@ cc2.dalhome.xyz
 cloud-c2.fnlqxz.my.id
 cloud.cybershell.link
 cyberc2.sbs
+cybershell.link
 hak5.zero-dark.io
 hkcloud.cloud
 pwned.icu
 rubixmaster.com
 sec.blooo.dev
+c0mms.1sht.com
 wss.c0mms.1sht.com
 y-files.com
