@@ -997,3 +997,13 @@ samomol.com
 
 http://147.45.124.228
 147.45.124.228:443
+
+# Reference: https://github.com/pr0xylife/Latrodectus/blob/main/Latrodectus_02.12.2024.txt
+# Reference: https://www.virustotal.com/gui/file/f2170f7dc2f97434ef4514ed4272dc8792177038a085f248ba33f9259720afda/detection
+# Reference: https://www.virustotal.com/gui/file/c3baf0446831b6968a30ea23647ac559ee62219f91daae5c1b0a9787f9c860b9/detection
+# Reference: https://www.virustotal.com/gui/file/658b8c47d7193c7c31a2540b2f54fcdfb9298d8346a4ad3be7e684ef946f57a5/detection
+
+103.57.249.207:6542
+94.232.43.224:6542
+huanvn.com
+vutarf.com
