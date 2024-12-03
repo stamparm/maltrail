@@ -3,6 +3,8 @@
 
 # Generic detection for compromised WordPress CMS
 
+# Aliases: balada, baladainjector
+
 # Reference: https://twitter.com/unmaskparasites/status/1355301566933213185
 
 subl.net
