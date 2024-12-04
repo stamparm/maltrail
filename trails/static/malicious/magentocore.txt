@@ -13739,6 +13739,11 @@ trendweve.shop
 
 apistatistic.live
 
+# Reference: https://x.com/sdcyberresearch/status/1864303340403732714
+
+webtagcontrol.com
+api.webtagcontrol.com
+
 # Generic
 
 /assets/lfg.js
