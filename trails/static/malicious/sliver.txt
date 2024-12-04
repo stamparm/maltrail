@@ -5347,6 +5347,10 @@ ycombinator.serveblog.net
 http://45.82.254.63
 45.82.254.63:443
 
+# Reference: https://x.com/banthisguy9349/status/1864265163429261720
+
+136.0.44.4:8000
+
 # Generic
 
 /.sliver-client/
