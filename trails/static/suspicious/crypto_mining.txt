@@ -1462,3 +1462,7 @@ zeph.2miners.com
 141.94.23.83:10300
 51.15.65.182:10300
 54.37.232.103:10300
+
+# Reference: https://www.virustotal.com/gui/file/05a9d7a61ea58700da1cbd17e8cf648339bb2cc4bba7b2c08c949889efb74055/detection
+
+51.15.54.102:14444
