@@ -3872,6 +3872,7 @@ premcloa.shop
 /BB.ps1
 /Invoke-CustomKatz.ps1
 /Invoke-Mimikatz.ps1
+/Invoke-Mimikatz2.ps1
 /powercat.ps1
 /shell.hta
 /shell.ps1
@@ -8659,6 +8660,11 @@ gatetodisplaycontent.com
 # Reference: https://x.com/Gi7w0rm/status/1864308600841068864
 
 /Network4726Man.cmd
+
+# Reference: https://x.com/solostalking/status/1864532060896924136
+
+/azured_decrypt_msol_v2.ps1
+/php_reverse_shell.php
 
 # Generic
 
