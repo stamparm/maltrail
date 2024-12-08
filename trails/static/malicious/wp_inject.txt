@@ -6278,3 +6278,10 @@ unity.ulstery.space
 # Reference: https://www.virustotal.com/gui/file/bbb3fe6bdd4f8cf00414b77cffc782113ba42e6d7addcee00905de74b1d2eb77/detection
 
 cashmachines.biz
+
+# Reference: https://www.virustotal.com/gui/file/139b83dc15a0679b6b42c559ae3c7463fcbd5a4e3a07ab5bf239fe1c459d42fa/detection
+
+tuggest.space
+crypt.tuggest.space
+like.tuggest.space
+tuto.tuggest.space
