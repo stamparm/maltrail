@@ -13756,6 +13756,33 @@ tetsted.com
 wargular.xyz
 windowsupdate.io
 
+# Reference: https://app.validin.com/detail?first_seen=2024-12-01&type=ip&find=45.88.3.0%2F24 (# 2024-12-09)
+
+beopoor.site
+brasei.fun
+cetuopit.online
+gogetec.sbs
+kurmob.site
+leopevit.store
+mojtec.sbs
+pftuotic.fun
+shatink.store
+sobilink.shop
+veofet.shop
+vseyol.online
+cdn.beopoor.site
+cdn.brasei.fun
+cdn.cetuopit.online
+cdn.gogetec.sbs
+cdn.kurmob.site
+cdn.leopevit.store
+cdn.mojtec.sbs
+cdn.pftuotic.fun
+cdn.shatink.store
+cdn.sobilink.shop
+cdn.veofet.shop
+cdn.vseyol.online
+
 # Generic
 
 /assets/lfg.js
