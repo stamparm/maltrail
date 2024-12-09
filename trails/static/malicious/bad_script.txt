@@ -8666,6 +8666,10 @@ gatetodisplaycontent.com
 /azured_decrypt_msol_v2.ps1
 /php_reverse_shell.php
 
+# Reference: https://x.com/banthisguy9349/status/1866121920808419751
+
+/!HELP_SOS.hta
+
 # Generic
 
 /5c0ca79.php
