@@ -13744,6 +13744,18 @@ apistatistic.live
 webtagcontrol.com
 api.webtagcontrol.com
 
+# Reference: https://x.com/sdcyberresearch/status/1866126596983115899
+# Reference: https://app.validin.com/detail?find=192.145.125.142&type=ip4&ref_id=1bd1a6d7787#tab=resolutions
+
+apistats.info
+asd123qwe2.online
+gatetpere.space
+jfixed.com
+lsikaqr.vip
+tetsted.com
+wargular.xyz
+windowsupdate.io
+
 # Generic
 
 /assets/lfg.js
