@@ -13783,6 +13783,19 @@ cdn.sobilink.shop
 cdn.veofet.shop
 cdn.vseyol.online
 
+# Reference: https://app.validin.com/detail?find=195.242.110.161&type=ip4&ref_id=adc7115d423#tab=resolutions
+
+bazgent.shop
+ocajep.fun
+opestat.online
+sgomet.store
+zatrob.sbs
+cdn.bazgent.shop
+cdn.ocajep.fun
+cdn.opestat.online
+cdn.sgomet.store
+cdn.zatrob.sbs
+
 # Generic
 
 /assets/lfg.js
