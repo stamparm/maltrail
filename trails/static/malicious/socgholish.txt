@@ -4174,6 +4174,11 @@ dashnex.plexusmarket.fund
 
 studio.lacrenshawcrossing.com
 
+# Reference: https://x.com/TRACLabs_/status/1866078172489437386
+# Reference: https://www.virustotal.com/gui/ip-address/166.88.159.66/relations
+
+material.​amstillroofing.​com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
