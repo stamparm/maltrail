@@ -2529,6 +2529,10 @@ Cherax-Loader
 
 cur1-agent
 
+# Reference: https://x.com/johnk3r/status/1866144119686602887
+
+AdvancedInstaller
+
 # Misc
 
 information_schema
