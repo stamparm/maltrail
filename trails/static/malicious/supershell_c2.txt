@@ -2504,6 +2504,17 @@ http://194.169.55.8
 67.207.85.215:8888
 93.113.25.146:8888
 
+# Reference: https://x.com/ValidinLLC/status/1867276463453745181
+# Reference: https://app.validin.com/detail?find=Supershell%20-%20%E7%99%BB%E5%BD%95&type=raw&ref_id=95896526833#tab=host_pairs (# 2024-12-13)
+
+113.44.76.80:8888
+18.162.123.213:8888
+8.218.231.53:8888
+api.copilot.aiu.im
+api.gc.aiu.im
+api.git.aiu.im
+copilot-proxy.aiu.im
+
 # Generic
 
 /supershell/login
