@@ -2533,6 +2533,11 @@ cur1-agent
 
 AdvancedInstaller
 
+# Reference: https://x.com/abuse_ch/status/1867512002483978242
+
+President
+PresidentPutin
+
 # Misc
 
 information_schema
