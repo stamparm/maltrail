@@ -8670,6 +8670,10 @@ gatetodisplaycontent.com
 
 /!HELP_SOS.hta
 
+# Reference: https://isc.sans.edu/diary/Exploit+attempts+for+unpatched+Citrix+vulnerability/31446
+
+/script_xen80-mix.php
+
 # Generic
 
 /5c0ca79.php
