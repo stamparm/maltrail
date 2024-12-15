@@ -5835,3 +5835,10 @@ vip.hb.frp.one
 # Refernece: https://www.virustotal.com/gui/file/072d2be0684fa70051221b19356c68b0f2129d0bf3f55eff95d8e0d0784d1ac8/detection
 
 154.37.215.146:18852
+
+# Reference: https://x.com/smica83/status/1868291302162309399
+# Reference: https://search.censys.io/hosts/185.133.251.112
+# Reference: https://www.virustotal.com/gui/file/8570e597dd56272bd52960d75b75de1d5d588f5c3281b213303af06fb6b602ee/detection
+
+185.133.251.112:6969
+185.133.251.112:8888
