@@ -3497,6 +3497,47 @@ serviceaids.cohenandjudaflorda.com
 v22018076557869542.ultrasrv.de
 v2202409234927287665.happysrv.de
 
+# Reference: https://app.validin.com/detail?find=f0003fecc5f9c8c2cbac&type=hash#tab=host_pairs (# 2024-12-15)
+
+adoring-matsumoto.193-239-86-216.plesk.page
+autologon.crsdorg.in
+beautiful-antonelli.193-239-86-216.plesk.page
+browser.crsdorg.in
+cool-mirzakhani.193-239-86-216.plesk.page
+dalgarint.info
+dmrcorg.com
+dreamy-keller.193-239-86-216.plesk.page
+ec2-13-231-152-17.ap-northeast-1.compute.amazonaws.com
+example.secure-d.center
+ext.delightfulgrass-a1c0fe70.canadaeast.azurecontainerapps.io
+friendly-curie.193-239-86-216.plesk.page
+funkytimery.com
+gallant-pike.193-239-86-216.plesk.page
+gallant-wright.193-239-86-216.plesk.page
+gracious-hellman.193-239-86-216.plesk.page
+hopeful-wescoff.193-239-86-216.plesk.page
+inspiring-ramanujan.193-239-86-216.plesk.page
+jovial-galois.193-239-86-216.plesk.page
+login.crsdorg.in
+loving-blackwell.193-239-86-216.plesk.page
+mail.172-208-106-5.cprapid.com
+musing-tesla.193-239-86-216.plesk.page
+ns1.lucidohq.com
+office365.crsdorg.in
+outlook-us.crsdorg.in
+pensive-rosalind.193-239-86-216.plesk.page
+phpmyadmin.geelabs.de
+potatopetal.com
+reporting.crsdorg.in
+rt.mod0.ch
+securemicrosoftonline.in
+sleepy-khorana.193-239-86-216.plesk.page
+troublenm.com
+ulweb.club
+vibrant-mccarthy.193-239-86-216.plesk.page
+vigilant-shamir.193-239-86-216.plesk.page
+wonderful-cannon.193-239-86-216.plesk.page
+
 # Generic
 
 /Havoc/payload/
