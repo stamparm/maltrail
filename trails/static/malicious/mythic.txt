@@ -2645,3 +2645,22 @@ theautomotiveservices.com
 v0c.us
 weave.micrasoftsignin.net-v2-status.net
 weaveworkforce.oktosign.net-v2-status.net
+
+# Reference: https://app.validin.com/detail?find=8fda9d86d62e7121dc00bcd1ae63b077&type=hash#tab=host_pairs (# 2024-12-15)
+
+1.54.41.34.bc.googleusercontent.com
+29604-47823.bacloud.info
+2tf.us
+80-79-4-177.hosted-by-worldstream.net
+bitubi.co.id
+c-73-213-108-128.hsd1.dc.comcast.net
+cpanel.bitubi.co.id
+ec2-34-216-3-35.us-west-2.compute.amazonaws.com
+nflxworkshopdemo.com
+nomad-solution.com
+ol8.us
+oz9.us
+planetf1.net
+red-856.polarbear.dev
+test2.yeezybuy.top
+vader.xw.rs
