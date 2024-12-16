@@ -4183,6 +4183,7 @@ material.​amstillroofing.​com
 # Reference: https://www.virustotal.com/gui/ip-address/38.180.146.6/relations
 # Reference: https://www.virustotal.com/gui/file/8e513dc4b7ddfc0980e41338699d19d3e64ec841a3e2fbf30dfe84d5aa68f827/detection
 
+clients.​dedicatedservicesusa.​com
 sectors.​bowentaxlaw.​com
 axpr.sectors.bowentaxlaw.com
 cobt.sectors.bowentaxlaw.com
@@ -4195,6 +4196,8 @@ uag.sectors.bowentaxlaw.com
 urue.sectors.bowentaxlaw.com
 vlxnj.sectors.bowentaxlaw.com
 zter.sectors.bowentaxlaw.com
+correo.dedicatedservicesusa.com
+hermes.dedicatedservicesusa.com
 
 # Generic
 
