@@ -3651,3 +3651,7 @@ mydns.jp
 # Reference: https://www.virustotal.com/gui/domain/ddnsgratis.com.br/relations
 
 ddnsgratis.com.br
+
+# Reference: https://www.virustotal.com/gui/domain/myddns.biz/relations
+
+myddns.biz
