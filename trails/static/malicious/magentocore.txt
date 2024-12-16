@@ -13804,6 +13804,19 @@ cdn.opestat.online
 cdn.sgomet.store
 cdn.zatrob.sbs
 
+# Reference: https://x.com/sdcyberresearch/status/1868663371870130626
+
+designsetlab.com
+dnflowe.com
+dnsphire.com
+dsgntag.com
+mktcrafter.com
+mktflowe.com
+salecores.com
+saleviewapp.com
+sellboosti.com
+statsalesup.com
+
 # Generic
 
 /assets/lfg.js
