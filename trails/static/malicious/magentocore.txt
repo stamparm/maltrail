@@ -13762,10 +13762,13 @@ beopoor.site
 brasei.fun
 cetuopit.online
 gogetec.sbs
+jaluwtech.store
+kometeches.store
 kurmob.site
 leopevit.store
 mojtec.sbs
 pftuotic.fun
+pvilinket.store
 shatink.store
 sobilink.shop
 unirec.store
@@ -13775,10 +13778,13 @@ cdn.beopoor.site
 cdn.brasei.fun
 cdn.cetuopit.online
 cdn.gogetec.sbs
+cdn.jaluwtech.store
+cdn.kometeches.store
 cdn.kurmob.site
 cdn.leopevit.store
 cdn.mojtec.sbs
 cdn.pftuotic.fun
+cdn.pvilinket.store
 cdn.shatink.store
 cdn.sobilink.shop
 cdn.unirec.store
