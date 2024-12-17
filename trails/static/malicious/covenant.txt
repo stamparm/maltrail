@@ -897,6 +897,11 @@ ztxwf.comigoninguempodes.shop
 74.48.192.231:7443
 85.215.221.231:7443
 
+# Reference: https://x.com/smica83/status/1869018362535460888
+# Reference: https://www.virustotal.com/gui/file/eddc8c1dfd0be5f5848ac8997110fd2cc0456f8cac93deb8366f8beb60d3856b/detection
+
+104.168.48.198:443
+
 # Generic
 
 /covenantuser/
