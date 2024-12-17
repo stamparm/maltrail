@@ -5357,6 +5357,11 @@ http://45.82.254.63
 http://148.66.61.83
 148.66.61.83:31337
 
+# Reference: https://x.com/banthisguy9349/status/1869092864816554132
+# Reference: https://www.virustotal.com/gui/file/8d884e8128b067e822a63c79e99108dec93fb56e3b1a8684eb8f117ceea681c0/detection
+
+172.234.22.17:31337
+
 # Generic
 
 /.sliver-client/
