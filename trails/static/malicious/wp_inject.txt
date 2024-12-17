@@ -6287,5 +6287,7 @@ like.tuggest.space
 tuto.tuggest.space
 
 # Reference: https://x.com/g0njxa/status/1869006978976301540
+# Reference: https://app.validin.com/detail?find=57e79ecb3411edc5e929bf8cda104bde&type=hash&ref_id=ca11cd099d6#tab=host_pairs (# 2024-12-17)
 
 authmycookie.com
+cverifier.top
