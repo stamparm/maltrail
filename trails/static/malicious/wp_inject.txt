@@ -6285,3 +6285,7 @@ tuggest.space
 crypt.tuggest.space
 like.tuggest.space
 tuto.tuggest.space
+
+# Reference: https://x.com/g0njxa/status/1869006978976301540
+
+authmycookie.com
