@@ -5842,3 +5842,10 @@ vip.hb.frp.one
 
 185.133.251.112:6969
 185.133.251.112:8888
+
+# Reference: https://x.com/banthisguy9349/status/1869101580068532689
+# Reference: https://www.virustotal.com/gui/file/7fee5e3b7fe7c8a6c0cef2ae73d8f275063c038d6ebd9a7e43cd86363f094695/detection
+# Reference: https://www.virustotal.com/gui/file/a75f454b10d7352d1e728c9eafa01ee9e2d5a56e915024cfdc499a2041f56339/detection
+
+124.158.5.149:4444
+124.158.5.149:8080
