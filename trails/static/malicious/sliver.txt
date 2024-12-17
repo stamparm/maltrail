@@ -5362,6 +5362,10 @@ http://148.66.61.83
 
 172.234.22.17:31337
 
+# Reference: https://x.com/banthisguy9349/status/1869101580068532689
+
+124.158.5.149:8081
+
 # Generic
 
 /.sliver-client/
