@@ -1007,3 +1007,11 @@ http://147.45.124.228
 94.232.43.224:6542
 huanvn.com
 vutarf.com
+
+# Reference: https://github.com/pr0xylife/Latrodectus/blob/main/Latrodectus_17.12.2024.txt
+# Reference: https://www.virustotal.com/gui/file/1552c43ecf6eeb5e2fe13cc1c25e6bdacf227222afaa9a523d996b6331945505/detection
+
+94.232.40.41:8817
+94.232.46.11:8817
+cronoze.com
+muuxxu.com
