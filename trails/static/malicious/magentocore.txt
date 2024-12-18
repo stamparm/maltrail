@@ -13386,6 +13386,7 @@ zb.cdn-core.com
 # Reference: https://www.virustotal.com/gui/ip-address/5.10.250.250/relations
 
 gstatlc.org
+ssl.gstatlc.org
 
 # Reference: https://sansec.io/research/cosmicsting#group-peschanki%3A-automated-mass-cms-block-updates
 # Reference: https://www.virustotal.com/gui/ip-address/106.14.40.200/relations
