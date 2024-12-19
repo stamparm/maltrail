@@ -13792,6 +13792,33 @@ cdn.unirec.store
 cdn.veofet.shop
 cdn.vseyol.online
 
+# Reference: https://app.validin.com/detail?first_seen=2024-12-12&type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2024-12-19)
+
+bilseo.sbs
+bojtech.online
+feokicn.shop
+gemedig.shop
+iertik.store
+jeiloot.site
+jeorets.site
+keitouc.store
+leopent.fun
+samotech.sbs
+sobolent.online
+wislit.fun
+cdn.bilseo.sbs
+cdn.bojtech.online
+cdn.feokicn.shop
+cdn.gemedig.shop
+cdn.iertik.store
+cdn.jeiloot.site
+cdn.jeorets.site
+cdn.keitouc.store
+cdn.leopent.fun
+cdn.samotech.sbs
+cdn.sobolent.online
+cdn.wislit.fun
+
 # Reference: https://app.validin.com/detail?find=195.242.110.161&type=ip4&ref_id=adc7115d423#tab=resolutions
 
 bazgent.shop
