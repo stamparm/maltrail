@@ -13798,26 +13798,40 @@ bilseo.sbs
 bojtech.online
 feokicn.shop
 gemedig.shop
+getilock.quest
 iertik.store
 jeiloot.site
 jeorets.site
 keitouc.store
 leopent.fun
+presidential.digital
+prizefor.me
+routotech.site
+rubicot.site
 samotech.sbs
 sobolent.online
+vivodit.yachts
 wislit.fun
+zonisnap.site
 cdn.bilseo.sbs
 cdn.bojtech.online
 cdn.feokicn.shop
 cdn.gemedig.shop
+cdn.getilock.quest
 cdn.iertik.store
 cdn.jeiloot.site
 cdn.jeorets.site
 cdn.keitouc.store
 cdn.leopent.fun
+cdn.presidential.digital
+cdn.prizefor.me
+cdn.routotech.site
+cdn.rubicot.site
 cdn.samotech.sbs
 cdn.sobolent.online
+cdn.vivodit.yachts
 cdn.wislit.fun
+cdn.zonisnap.site
 
 # Reference: https://app.validin.com/detail?find=195.242.110.161&type=ip4&ref_id=adc7115d423#tab=resolutions
 
