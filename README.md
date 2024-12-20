@@ -615,6 +615,7 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * [D4 Project](https://www.d4-project.org/2019/09/25/maltrail-integration.html)
 * [BlackArch Linux](https://github.com/BlackArch/blackarch/blob/master/packages/maltrail/PKGBUILD)
 * [Validin LLC](https://twitter.com/ValidinLLC/status/1719666086390517762)
+* [Maltrail Add-on for Splunk](https://splunkbase.splunk.com/app/7211)
 * [GScan](https://github.com/grayddq/GScan) <sup>1</sup>
 * [MalwareWorld](https://www.malwareworld.com/) <sup>1</sup>
 * [oisd | domain blocklist](https://oisd.nl/?p=inc) <sup>1</sup>
