@@ -502,3 +502,8 @@ signdoc.cloud
 todesk.help
 cloud.signdoc.cloud
 yourrldns22.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/564370d9522a479a4ed5c2a9b18f66e289e51e2dbf3ce3920fc3e0ad99e25046/detection
+
+instance-moi41i-relay.screenconnect.com
+server-ovh31444376-relay.screenconnect.com
