@@ -3659,3 +3659,7 @@ myddns.biz
 # Reference: https://www.virustotal.com/gui/domain/jansolo.com/relations
 
 jansolo.com
+
+# Reference: https://www.virustotal.com/gui/domain/vanomania.net/relations
+
+vanomania.net
