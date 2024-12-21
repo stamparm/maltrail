@@ -6291,3 +6291,7 @@ tuto.tuggest.space
 
 authmycookie.com
 cverifier.top
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-24-v10727/2074
+
+topwebsites3d.com
