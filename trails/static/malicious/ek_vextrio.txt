@@ -35,3 +35,7 @@ tiktok.megastok.top
 tiktok.superbowsm.top
 tiktok.supersbows.us
 tiktok.tomorrows.top
+
+# Reference: https://blogs.infoblox.com/threat-intelligence/vextrio-viper-adds-a-new-dns-tds-domain/
+
+airlogs.net
