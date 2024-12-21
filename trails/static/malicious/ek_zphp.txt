@@ -985,6 +985,10 @@ theaeroescorts.com
 raptwinter.shop
 tqshoes.shop
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-22-v10725/2070
+
+deltaldcenter.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
