@@ -15,8 +15,11 @@ webdatatrace.com
 womanflirting.life
 
 # Reference: https://blogs.infoblox.com/cyber-threat-intelligence/cybercrime-central-vextrio-operates-massive-criminal-affiliate-program/
+# Reference: https://insights.infoblox.com/resources-research-report/infoblox-research-report-dns-predators-attack-vipers-hawks-hijack-sitting-ducks-domains
 
+antibot.cloud
 antibotcloud.com
+antibotcloudapi.com
 clicksme.org
 hixastump.com
 megastok.top
@@ -25,6 +28,7 @@ strouchridun.top
 superbowsm.top
 supersbows.us
 tomorrows.top
+vipshopevent.su
 d.strouchridun.top
 go.clicksme.org
 tiktok.megastok.top
