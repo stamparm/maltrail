@@ -636,6 +636,10 @@ zeplavibe.com
 heroic-genie-2b372e.netlify.app
 poetic-pixie-c95fb0.netlify.app
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-21-v10724/2066
+
+srftjwrty6kew.shop
+
 # Generic
 
 /a3A7qLVn/
