@@ -975,6 +975,10 @@ culinarycanvasgrilling.com
 junocis.com/work/fix.php
 junocis.com/work/index.php
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-09-18-v10697/1989
+
+theaeroescorts.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
