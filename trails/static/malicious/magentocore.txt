@@ -13868,6 +13868,10 @@ cdnjsdvcss.com
 debdpkgseclib.com
 logicwploo.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-09-19-v10698/1991
+
+trendpronet.com
+
 # Generic
 
 /assets/lfg.js
