@@ -3655,3 +3655,7 @@ ddnsgratis.com.br
 # Reference: https://www.virustotal.com/gui/domain/myddns.biz/relations
 
 myddns.biz
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-04-v10714/2029
+
+is-very.fun
