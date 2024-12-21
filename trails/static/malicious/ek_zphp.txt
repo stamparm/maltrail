@@ -989,6 +989,11 @@ tqshoes.shop
 
 deltaldcenter.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-24-v10727/2074
+
+adullamglobal.com
+cuansurga.cam
+
 # Generic
 
 /cache/ewmrgqnaww.php
