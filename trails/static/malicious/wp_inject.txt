@@ -6293,5 +6293,32 @@ authmycookie.com
 cverifier.top
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-24-v10727/2074
+# Reference: https://www.virustotal.com/gui/ip-address/134.209.139.16/relations
 
+brodirect10s.com
+brodirect4s.site
+brodirect5s.site
+brodirect8s.com
+brodownload4s.site
+brodownload5s.site
+brodownloads5s.site
+brogetcode10s.cc
+brogetcode8s.cc
+brolink4s.site
+brolink5s.site
+broluckycode4s.site
+broluckycode5s.site
+bromusic5s.site
+broredir4s.site
+broredir5s.site
+brovideos4s.site
+brovideos5s.site
+broweb4s.site
+broweb5s.site
 topwebsites3d.com
+videoforyou3d.com
+yourbestbro3s.site
+yourbestbro4s.site
+yourbestbro5s.site
+yourbrolink3d.com
+yourbrolink4d.com
