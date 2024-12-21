@@ -3655,11 +3655,3 @@ ddnsgratis.com.br
 # Reference: https://www.virustotal.com/gui/domain/myddns.biz/relations
 
 myddns.biz
-
-# Reference: https://www.virustotal.com/gui/domain/jansolo.com/relations
-
-jansolo.com
-
-# Reference: https://www.virustotal.com/gui/domain/vanomania.net/relations
-
-vanomania.net
