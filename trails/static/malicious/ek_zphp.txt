@@ -979,6 +979,12 @@ junocis.com/work/index.php
 
 theaeroescorts.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-16-v10721/2056
+
+10086623.top
+raptwinter.shop
+tqshoes.shop
+
 # Generic
 
 /cache/ewmrgqnaww.php
