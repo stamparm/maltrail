@@ -30,3 +30,7 @@ zoomzle.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-29-v10677/1924
 
 tayakay.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-07-v10715/2033
+
+pushcg.com
