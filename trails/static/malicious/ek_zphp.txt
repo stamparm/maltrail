@@ -994,6 +994,11 @@ deltaldcenter.com
 adullamglobal.com
 cuansurga.cam
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-25-v10728/2076
+
+arubapalmrealtor.com
+cosdfdfrefdch.best
+
 # Generic
 
 /cache/ewmrgqnaww.php
