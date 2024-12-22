@@ -1022,6 +1022,10 @@ mercro.com
 mundiprep.com
 vinsaca.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-05-v10735/2113
+
+chat2cams.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
