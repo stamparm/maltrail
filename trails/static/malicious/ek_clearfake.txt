@@ -640,6 +640,11 @@ poetic-pixie-c95fb0.netlify.app
 
 srftjwrty6kew.shop
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-28-v10729/2083
+
+bigops.s3.us-east-2.amazonaws.com
+youcansay.s3.us-east-2.amazonaws.com
+
 # Generic
 
 /a3A7qLVn/
