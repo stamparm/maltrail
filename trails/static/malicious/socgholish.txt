@@ -4332,6 +4332,45 @@ zhw.staff.plenarykcg.com
 zrdg.staff.plenarykcg.com
 zrggz.staff.plenarykcg.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-25-v10750/2164
+
+lessons.southsidechurchofchristla.org
+ource.scriptsafedata.com
+source.scriptsafedata.com
+aaa.lessons.southsidechurchofchristla.org
+cov.lessons.southsidechurchofchristla.org
+cumd.lessons.southsidechurchofchristla.org
+dwya.lessons.southsidechurchofchristla.org
+ehkhl.lessons.southsidechurchofchristla.org
+esske.lessons.southsidechurchofchristla.org
+flchc.lessons.southsidechurchofchristla.org
+fqpeo.lessons.southsidechurchofchristla.org
+fyvd.lessons.southsidechurchofchristla.org
+hhx.lessons.southsidechurchofchristla.org
+https.lessons.southsidechurchofchristla.org
+ijxm.lessons.southsidechurchofchristla.org
+jwcy.lessons.southsidechurchofchristla.org
+klrag.lessons.southsidechurchofchristla.org
+mdl.lessons.southsidechurchofchristla.org
+mldjx.lessons.southsidechurchofchristla.org
+ncyp.lessons.southsidechurchofchristla.org
+obef.lessons.southsidechurchofchristla.org
+qihdv.lessons.southsidechurchofchristla.org
+qppwq.lessons.southsidechurchofchristla.org
+rnjj.lessons.southsidechurchofchristla.org
+spsl.lessons.southsidechurchofchristla.org
+tew.lessons.southsidechurchofchristla.org
+uske.lessons.southsidechurchofchristla.org
+vcja.lessons.southsidechurchofchristla.org
+yaez.lessons.southsidechurchofchristla.org
+yeuo.lessons.southsidechurchofchristla.org
+yew.lessons.southsidechurchofchristla.org
+yoebo.lessons.southsidechurchofchristla.org
+yxqnj.lessons.southsidechurchofchristla.org
+yyey.lessons.southsidechurchofchristla.org
+zgp.lessons.southsidechurchofchristla.org
+zvymi.lessons.southsidechurchofchristla.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
