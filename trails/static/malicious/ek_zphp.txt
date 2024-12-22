@@ -1003,6 +1003,10 @@ cosdfdfrefdch.best
 
 prepare2swim.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-29-v10730/2087
+
+hdlclub2.cc
+
 # Generic
 
 /cache/ewmrgqnaww.php
