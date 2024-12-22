@@ -1062,6 +1062,10 @@ eegqzvxd.shop
 inayatullah.com
 viralnavigator.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-20-v10746/2151
+
+segurofinalizar.shop
+
 # Generic
 
 /cache/ewmrgqnaww.php
