@@ -4299,6 +4299,39 @@ ysflo.events.socalpocis.org
 zessk.events.socalpocis.org
 zmscf.events.socalpocis.org
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-18-v10744/2147
+
+staff.plenarykcg.com
+ady.staff.plenarykcg.com
+bxf.staff.plenarykcg.com
+drcm.staff.plenarykcg.com
+edb.staff.plenarykcg.com
+evy.staff.plenarykcg.com
+fntkn.staff.plenarykcg.com
+igeha.staff.plenarykcg.com
+jbfrh.staff.plenarykcg.com
+jwvqy.staff.plenarykcg.com
+kuotc.staff.plenarykcg.com
+lnr.staff.plenarykcg.com
+opw.staff.plenarykcg.com
+pcbpy.staff.plenarykcg.com
+pclok.staff.plenarykcg.com
+pzzay.staff.plenarykcg.com
+rgjn.staff.plenarykcg.com
+rmzrc.staff.plenarykcg.com
+rvjmm.staff.plenarykcg.com
+sjwrx.staff.plenarykcg.com
+snk.staff.plenarykcg.com
+syzzz.staff.plenarykcg.com
+utbw.staff.plenarykcg.com
+uukdz.staff.plenarykcg.com
+vdvv.staff.plenarykcg.com
+ycujr.staff.plenarykcg.com
+youxj.staff.plenarykcg.com
+zhw.staff.plenarykcg.com
+zrdg.staff.plenarykcg.com
+zrggz.staff.plenarykcg.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
