@@ -44,3 +44,8 @@ franklinida.com
 
 genhil.com
 tickerwell.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-20-v10746/2151
+
+safigdata.com
+nyciot.com
