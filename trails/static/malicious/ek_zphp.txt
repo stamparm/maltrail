@@ -1026,6 +1026,12 @@ vinsaca.com
 
 chat2cams.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-06-v10736/2117
+
+dailyfragrancedeals.com
+girlsgifs.com
+vicrin.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
