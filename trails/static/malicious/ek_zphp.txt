@@ -1070,6 +1070,11 @@ segurofinalizar.shop
 
 swaceapp.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-22-v10748/2158
+
+16october-etmdeposit329.top
+jaipurraj.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
