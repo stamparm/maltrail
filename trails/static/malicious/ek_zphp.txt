@@ -1007,6 +1007,10 @@ prepare2swim.com
 
 hdlclub2.cc
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-30-v10731/2092
+
+omegaarea.site
+
 # Generic
 
 /cache/ewmrgqnaww.php
