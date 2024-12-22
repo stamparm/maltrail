@@ -2650,3 +2650,9 @@ mail.altunbank.kz
 146.190.53.17:3333
 34.173.10.98:443
 46.101.108.4:3333
+
+# Reference: https://x.com/BlinkzSec/status/1870796207892922755
+# Reference: https://search.censys.io/hosts/64.227.171.144
+
+64.227.171.144:4443
+financeekpmg.com
