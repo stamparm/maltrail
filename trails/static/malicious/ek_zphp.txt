@@ -1048,6 +1048,10 @@ fencingfriends.com
 
 xcdd1003.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-15-v10743/2143
+
+crickout.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
