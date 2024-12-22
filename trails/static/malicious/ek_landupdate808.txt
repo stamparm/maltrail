@@ -34,3 +34,8 @@ tayakay.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-07-v10715/2033
 
 pushcg.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-18-v10744/2147
+
+eliztalks.com
+franklinida.com
