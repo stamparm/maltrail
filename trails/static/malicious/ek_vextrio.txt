@@ -38,3 +38,7 @@ tiktok.tomorrows.top
 # Reference: https://blogs.infoblox.com/threat-intelligence/vextrio-viper-adds-a-new-dns-tds-domain/
 
 airlogs.net
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-12-v10740/2133
+
+omenkid.top
