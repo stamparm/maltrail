@@ -1011,6 +1011,10 @@ hdlclub2.cc
 
 omegaarea.site
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-31-v10732/2096
+
+becreativemind.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
