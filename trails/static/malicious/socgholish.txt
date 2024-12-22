@@ -4252,6 +4252,53 @@ zmv.strategies.mvpstrat.com
 zrn.strategies.mvpstrat.com
 zyf.strategies.mvpstrat.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-11-v10739/2129
+
+events.socalpocis.org
+adj.events.socalpocis.org
+aeyi.events.socalpocis.org
+avc.events.socalpocis.org
+buki.events.socalpocis.org
+bzfp.events.socalpocis.org
+cha.events.socalpocis.org
+chf.events.socalpocis.org
+cms.events.socalpocis.org
+dfg.events.socalpocis.org
+ebbm.events.socalpocis.org
+edah.events.socalpocis.org
+gogju.events.socalpocis.org
+gtj.events.socalpocis.org
+gxq.events.socalpocis.org
+hdqem.events.socalpocis.org
+ixkix.events.socalpocis.org
+jygtq.events.socalpocis.org
+kxqsr.events.socalpocis.org
+lcxsk.events.socalpocis.org
+lzt.events.socalpocis.org
+mbw.events.socalpocis.org
+mep.events.socalpocis.org
+ndur.events.socalpocis.org
+ngfet.events.socalpocis.org
+ntqq.events.socalpocis.org
+oil.events.socalpocis.org
+omrua.events.socalpocis.org
+ppzdn.events.socalpocis.org
+pzhe.events.socalpocis.org
+rrtid.events.socalpocis.org
+sim.events.socalpocis.org
+szgje.events.socalpocis.org
+szl.events.socalpocis.org
+tqne.events.socalpocis.org
+tqqen.events.socalpocis.org
+tuw.events.socalpocis.org
+tzc.events.socalpocis.org
+varu.events.socalpocis.org
+whnhg.events.socalpocis.org
+ygtvv.events.socalpocis.org
+ysflo.events.socalpocis.org
+zessk.events.socalpocis.org
+zmscf.events.socalpocis.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
