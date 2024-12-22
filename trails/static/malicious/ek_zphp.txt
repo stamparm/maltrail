@@ -1036,6 +1036,10 @@ vicrin.com
 
 compugest.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-11-v10739/2129
+
+fdske.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
