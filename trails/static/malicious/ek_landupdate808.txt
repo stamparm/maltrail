@@ -53,3 +53,9 @@ nyciot.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-21-v10747/2154
 
 elizgallery.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-25-v10750/2164
+
+codereviewerss.com
+esaleerugs.com
+ilsotto.com
