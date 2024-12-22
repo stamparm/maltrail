@@ -1052,6 +1052,10 @@ xcdd1003.com
 
 crickout.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-18-v10744/2147
+
+petshopsg.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
