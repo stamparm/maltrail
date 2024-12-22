@@ -1066,6 +1066,10 @@ viralnavigator.com
 
 segurofinalizar.shop
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-21-v10747/2154
+
+swaceapp.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
