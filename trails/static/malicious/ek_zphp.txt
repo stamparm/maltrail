@@ -1040,6 +1040,10 @@ compugest.com
 
 fdske.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-12-v10740/2133
+
+fencingfriends.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
