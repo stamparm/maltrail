@@ -1044,6 +1044,10 @@ fdske.com
 
 fencingfriends.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-13-v10741/2136
+
+xcdd1003.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
