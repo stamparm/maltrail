@@ -49,3 +49,7 @@ tickerwell.com
 
 safigdata.com
 nyciot.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-21-v10747/2154
+
+elizgallery.com
