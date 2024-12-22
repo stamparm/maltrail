@@ -1059,6 +1059,8 @@ petshopsg.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-19-v10745/2148
 
 eegqzvxd.shop
+inayatullah.com
+viralnavigator.com
 
 # Generic
 
