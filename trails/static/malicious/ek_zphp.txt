@@ -999,6 +999,10 @@ cuansurga.cam
 arubapalmrealtor.com
 cosdfdfrefdch.best
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-28-v10729/2083
+
+prepare2swim.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
