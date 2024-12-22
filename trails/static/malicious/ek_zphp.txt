@@ -1032,6 +1032,10 @@ dailyfragrancedeals.com
 girlsgifs.com
 vicrin.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-07-v10737/2120
+
+compugest.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
