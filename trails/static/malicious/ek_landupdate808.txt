@@ -39,3 +39,8 @@ pushcg.com
 
 eliztalks.com
 franklinida.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-19-v10745/2148
+
+genhil.com
+tickerwell.com
