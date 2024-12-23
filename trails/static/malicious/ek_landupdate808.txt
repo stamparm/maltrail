@@ -92,3 +92,9 @@ djnito.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-13-v10805/2263
 
 opgears.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-16-v10808/2270
+
+sdrce.com
+theinb.com
+tibetin.com
