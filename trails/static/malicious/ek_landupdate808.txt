@@ -107,3 +107,8 @@ selmanc.com
 
 calbbs.com
 dsassoc.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-19-v10811/2280
+
+esondent.com
+gwcomics.com
