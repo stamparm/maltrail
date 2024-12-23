@@ -76,3 +76,7 @@ coeshor.com
 
 habfan.com
 iognews.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-10-v10795/2253
+
+dechromo.com
