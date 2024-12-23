@@ -1082,6 +1082,7 @@ reviewtypes.com
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-26-v10753/2171
 
+berandonosas.store
 blaekindustry.com
 weeatsome.com
 
