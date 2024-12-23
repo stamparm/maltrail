@@ -112,3 +112,7 @@ dsassoc.com
 
 esondent.com
 gwcomics.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-20-v10812/2282
+
+hdtele.com
