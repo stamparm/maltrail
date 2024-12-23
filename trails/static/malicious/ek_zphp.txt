@@ -1100,6 +1100,10 @@ bfd78.biz
 chudautu.info
 zeroassoluto.biz
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-03-v10787/2221
+
+q8ds.net
+
 # Generic
 
 /cache/ewmrgqnaww.php
