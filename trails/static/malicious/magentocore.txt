@@ -13872,6 +13872,13 @@ logicwploo.com
 
 trendpronet.com
 
+# Reference: https://x.com/sdcyberresearch/status/1871179192513290460
+# Reference: https://app.validin.com/detail?find=38.180.241.131&type=ip4&ref_id=fb7e106e3b0#tab=resolutions
+
+eurowebmonitortool.com
+onlinechatusbot.com
+webmonitortool.info
+
 # Generic
 
 /assets/lfg.js
