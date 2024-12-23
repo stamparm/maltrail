@@ -13881,6 +13881,11 @@ onlinechatusbot.com
 webmonitortool.info
 webstatusmonitor.store
 
+# Reference: https://bsky.app/profile/sans.ec/post/3ldy6xxz7rk2l
+# Reference: https://x.com/sdcyberresearch/status/1871228710579253746
+
+esaspaceshop.pics
+
 # Generic
 
 /assets/lfg.js
