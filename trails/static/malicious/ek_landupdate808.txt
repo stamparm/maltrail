@@ -67,3 +67,7 @@ nastictac.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-05-v10791/2234
 
 chewels.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-06-v10792/2238
+
+coeshor.com
