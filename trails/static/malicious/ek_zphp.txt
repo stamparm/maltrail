@@ -1143,6 +1143,14 @@ gxgsxy.info
 nilsenfk.biz
 poucette.info
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-16-v10808/2270
+
+businessinsanjose.info
+depostsolo.biz
+pareek.info
+poucette.info
+taktlat.xyz
+
 # Generic
 
 /cache/ewmrgqnaww.php
