@@ -1121,6 +1121,10 @@ casibom.cyou
 dcaa.info
 tasteofgoodness.info
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-09-v10793/2248
+
+jitcom.info
+
 # Generic
 
 /cache/ewmrgqnaww.php
