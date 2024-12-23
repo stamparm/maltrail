@@ -4509,6 +4509,10 @@ mentor.omgwowhq.org
 
 trust.scriptobject.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-17-v10809/2275
+
+clients.dedicatedservicesusa.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
