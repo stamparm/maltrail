@@ -4462,6 +4462,45 @@ terb.material.amstillroofing.com
 vjorq.material.amstillroofing.com
 wmj.material.amstillroofing.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-12-v10800/2257
+
+riders.50kfor50years.com
+agqxp.riders.50kfor50years.com
+ggja.riders.50kfor50years.com
+hbuv.riders.50kfor50years.com
+klaq.riders.50kfor50years.com
+kolw.riders.50kfor50years.com
+lbhz.riders.50kfor50years.com
+lluc.riders.50kfor50years.com
+mjp.riders.50kfor50years.com
+nughk.riders.50kfor50years.com
+oozmo.riders.50kfor50years.com
+ovgt.riders.50kfor50years.com
+pbyit.riders.50kfor50years.com
+qvyvi.riders.50kfor50years.com
+qxxj.riders.50kfor50years.com
+rqeda.riders.50kfor50years.com
+tbq.riders.50kfor50years.com
+tha.riders.50kfor50years.com
+uadew.riders.50kfor50years.com
+uprpi.riders.50kfor50years.com
+usk.riders.50kfor50years.com
+vhnrz.riders.50kfor50years.com
+vhxhm.riders.50kfor50years.com
+vmonh.riders.50kfor50years.com
+wcjp.riders.50kfor50years.com
+wgj.riders.50kfor50years.com
+wswzb.riders.50kfor50years.com
+wyll.riders.50kfor50years.com
+xqlh.riders.50kfor50years.com
+ygj.riders.50kfor50years.com
+ygt.riders.50kfor50years.com
+yoymx.riders.50kfor50years.com
+yxf.riders.50kfor50years.com
+zapz.riders.50kfor50years.com
+zexl.riders.50kfor50years.com
+zqe.riders.50kfor50years.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
