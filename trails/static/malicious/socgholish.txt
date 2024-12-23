@@ -4371,6 +4371,10 @@ yyey.lessons.southsidechurchofchristla.org
 zgp.lessons.southsidechurchofchristla.org
 zvymi.lessons.southsidechurchofchristla.org
 
+# Reference: https://x.com/TRACLabs_/status/1871152723388682404
+
+office.enewlaw.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
