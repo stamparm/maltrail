@@ -4505,6 +4505,10 @@ zqe.riders.50kfor50years.com
 
 mentor.omgwowhq.org
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-16-v10808/2270
+
+trust.scriptobject.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
