@@ -88,3 +88,7 @@ enerjjoy.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-12-v10800/2257
 
 djnito.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-13-v10805/2263
+
+opgears.com
