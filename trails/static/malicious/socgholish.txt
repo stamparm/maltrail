@@ -4407,6 +4407,38 @@ wdrj.trc20.kcgrocks.com
 wihzf.trc20.kcgrocks.com
 ywzu.trc20.kcgrocks.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-05-v10791/2234
+
+law.kimsavagelaw.com
+cujy.law.kimsavagelaw.com
+dqpgb.law.kimsavagelaw.com
+dyt.law.kimsavagelaw.com
+egodu.law.kimsavagelaw.com
+eja.law.kimsavagelaw.com
+fsur.law.kimsavagelaw.com
+ggsp.law.kimsavagelaw.com
+gqatp.law.kimsavagelaw.com
+gvwh.law.kimsavagelaw.com
+ims.law.kimsavagelaw.com
+ivhg.law.kimsavagelaw.com
+jurkw.law.kimsavagelaw.com
+jwoo.law.kimsavagelaw.com
+kul.law.kimsavagelaw.com
+mxq.law.kimsavagelaw.com
+nooo.law.kimsavagelaw.com
+numaz.law.kimsavagelaw.com
+oclc.law.kimsavagelaw.com
+pjs.law.kimsavagelaw.com
+rar.law.kimsavagelaw.com
+sjig.law.kimsavagelaw.com
+tmowh.law.kimsavagelaw.com
+tnpz.law.kimsavagelaw.com
+umkq.law.kimsavagelaw.com
+utg.law.kimsavagelaw.com
+vfaw.law.kimsavagelaw.com
+woc.law.kimsavagelaw.com
+xul.law.kimsavagelaw.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
