@@ -4439,6 +4439,29 @@ vfaw.law.kimsavagelaw.com
 woc.law.kimsavagelaw.com
 xul.law.kimsavagelaw.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-09-v10793/2248
+
+material.amstillroofing.com
+aaa.material.amstillroofing.com
+abuyw.material.amstillroofing.com
+akzht.material.amstillroofing.com
+anl.material.amstillroofing.com
+asg.material.amstillroofing.com
+bxy.material.amstillroofing.com
+cmku.material.amstillroofing.com
+gmmiw.material.amstillroofing.com
+gym.material.amstillroofing.com
+hil.material.amstillroofing.com
+itmto.material.amstillroofing.com
+jetxf.material.amstillroofing.com
+ooeyi.material.amstillroofing.com
+pla.material.amstillroofing.com
+qkn.material.amstillroofing.com
+sqkn.material.amstillroofing.com
+terb.material.amstillroofing.com
+vjorq.material.amstillroofing.com
+wmj.material.amstillroofing.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
