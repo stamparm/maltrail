@@ -4375,6 +4375,38 @@ zvymi.lessons.southsidechurchofchristla.org
 
 office.enewlaw.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-02-v10781/2210
+
+trc20.kcgrocks.com
+aaa.trc20.kcgrocks.com
+aawh.trc20.kcgrocks.com
+ayb.trc20.kcgrocks.com
+bris.trc20.kcgrocks.com
+cdaw.trc20.kcgrocks.com
+chha.trc20.kcgrocks.com
+depd.trc20.kcgrocks.com
+dupcl.trc20.kcgrocks.com
+dvhg.trc20.kcgrocks.com
+dxhe.trc20.kcgrocks.com
+ekn.trc20.kcgrocks.com
+ezj.trc20.kcgrocks.com
+femk.trc20.kcgrocks.com
+fxc.trc20.kcgrocks.com
+hkjak.trc20.kcgrocks.com
+jblz.trc20.kcgrocks.com
+jxv.trc20.kcgrocks.com
+kcmxy.trc20.kcgrocks.com
+lklvj.trc20.kcgrocks.com
+lxdrh.trc20.kcgrocks.com
+nse.trc20.kcgrocks.com
+nuvth.trc20.kcgrocks.com
+oarzj.trc20.kcgrocks.com
+ozdff.trc20.kcgrocks.com
+poj.trc20.kcgrocks.com
+wdrj.trc20.kcgrocks.com
+wihzf.trc20.kcgrocks.com
+ywzu.trc20.kcgrocks.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
