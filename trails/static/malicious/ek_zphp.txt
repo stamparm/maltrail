@@ -1104,6 +1104,10 @@ zeroassoluto.biz
 
 q8ds.net
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-04-v10788/2227
+
+renqidm.info
+
 # Generic
 
 /cache/ewmrgqnaww.php
