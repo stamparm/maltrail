@@ -1125,6 +1125,10 @@ tasteofgoodness.info
 
 jitcom.info
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-10-v10795/2253
+
+lamartesana.info
+
 # Generic
 
 /cache/ewmrgqnaww.php
