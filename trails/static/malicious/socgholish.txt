@@ -4513,6 +4513,32 @@ trust.scriptobject.com
 
 clients.dedicatedservicesusa.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-19-v10811/2280
+
+demo.ezra-ai.com
+agwa.demo.ezra-ai.com
+buuao.demo.ezra-ai.com
+ccjz.demo.ezra-ai.com
+derp.demo.ezra-ai.com
+iopuz.demo.ezra-ai.com
+ipimd.demo.ezra-ai.com
+mkgd.demo.ezra-ai.com
+mnsty.demo.ezra-ai.com
+nibvx.demo.ezra-ai.com
+nsgs.demo.ezra-ai.com
+opa.demo.ezra-ai.com
+sdlru.demo.ezra-ai.com
+tltnx.demo.ezra-ai.com
+uabyu.demo.ezra-ai.com
+uleor.demo.ezra-ai.com
+vbjr.demo.ezra-ai.com
+vzfy.demo.ezra-ai.com
+waz.demo.ezra-ai.com
+wimf.demo.ezra-ai.com
+wyn.demo.ezra-ai.com
+xlu.demo.ezra-ai.com
+xyfe.demo.ezra-ai.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
