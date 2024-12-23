@@ -1151,6 +1151,12 @@ pareek.info
 poucette.info
 taktlat.xyz
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-18-v10810/2278
+
+bladyburger.online
+buylevlen.xyz
+egaolife.info
+
 # Generic
 
 /cache/ewmrgqnaww.php
