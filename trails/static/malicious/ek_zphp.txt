@@ -1161,6 +1161,12 @@ egaolife.info
 
 incms.biz
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-20-v10812/2282
+
+hamptoninnbelton.com
+odziezrobocza.biz
+rossarnold.info
+
 # Generic
 
 /cache/ewmrgqnaww.php
