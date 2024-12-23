@@ -1086,6 +1086,12 @@ berandonosas.store
 blaekindustry.com
 weeatsome.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-27-v10754/2175
+
+erickakingpr.com
+premiosdosul.com
+studioclic53.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
