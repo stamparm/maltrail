@@ -1129,6 +1129,10 @@ jitcom.info
 
 lamartesana.info
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-11-v10796/2254
+
+homeservicephiladelphia.info
+
 # Generic
 
 /cache/ewmrgqnaww.php
