@@ -102,3 +102,8 @@ tibetin.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-17-v10809/2275
 
 selmanc.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-18-v10810/2278
+
+calbbs.com
+dsassoc.com
