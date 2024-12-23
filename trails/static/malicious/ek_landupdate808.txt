@@ -80,3 +80,7 @@ iognews.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-10-v10795/2253
 
 dechromo.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-11-v10796/2254
+
+enerjjoy.com
