@@ -1092,6 +1092,13 @@ erickakingpr.com
 premiosdosul.com
 studioclic53.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-02-v10781/2210
+
+aquabaru.online
+best-net.biz
+bfd78.biz
+chudautu.info
+
 # Generic
 
 /cache/ewmrgqnaww.php
