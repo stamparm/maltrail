@@ -1133,6 +1133,10 @@ lamartesana.info
 
 homeservicephiladelphia.info
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-12-v10800/2257
+
+prajapatisamaj.info
+
 # Generic
 
 /cache/ewmrgqnaww.php
