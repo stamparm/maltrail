@@ -1137,6 +1137,12 @@ homeservicephiladelphia.info
 
 prajapatisamaj.info
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-13-v10805/2263
+
+gxgsxy.info
+nilsenfk.biz
+poucette.info
+
 # Generic
 
 /cache/ewmrgqnaww.php
