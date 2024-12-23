@@ -4,3 +4,8 @@
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-09-24-v10702/2003
 
 mediamic.info
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-13-v10805/2263
+
+adflowtube.com
+ecomicrolab.com
