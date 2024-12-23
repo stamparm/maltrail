@@ -59,3 +59,7 @@ elizgallery.com
 codereviewerss.com
 esaleerugs.com
 ilsotto.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-26-v10753/2171
+
+nastictac.com
