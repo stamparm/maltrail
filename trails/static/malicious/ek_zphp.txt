@@ -1115,6 +1115,12 @@ opravy.biz
 space-cadet.info
 wanconyan.co
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-06-v10792/2238
+
+casibom.cyou
+dcaa.info
+tasteofgoodness.info
+
 # Generic
 
 /cache/ewmrgqnaww.php
