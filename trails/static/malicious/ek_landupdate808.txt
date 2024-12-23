@@ -84,3 +84,7 @@ dechromo.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-11-v10796/2254
 
 enerjjoy.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-12-v10800/2257
+
+djnito.com
