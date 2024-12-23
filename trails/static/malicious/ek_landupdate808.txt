@@ -98,3 +98,7 @@ opgears.com
 sdrce.com
 theinb.com
 tibetin.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-17-v10809/2275
+
+selmanc.com
