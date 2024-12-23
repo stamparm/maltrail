@@ -4501,6 +4501,10 @@ zapz.riders.50kfor50years.com
 zexl.riders.50kfor50years.com
 zqe.riders.50kfor50years.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-13-v10805/2263
+
+mentor.omgwowhq.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
