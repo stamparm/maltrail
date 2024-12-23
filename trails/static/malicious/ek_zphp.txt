@@ -1098,6 +1098,7 @@ aquabaru.online
 best-net.biz
 bfd78.biz
 chudautu.info
+zeroassoluto.biz
 
 # Generic
 
