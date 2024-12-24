@@ -13689,11 +13689,16 @@ webtracker.click
 click.webtracker.click
 
 # Reference: https://x.com/sdcyberresearch/status/1861805574003822765
-# Reference: https://app.validin.com/detail?find=f19be927e0ace610970e44ac0fda9f6bdd0c9267&type=hash&ref_id=293e78771a7#tab=host_pairs
+# Reference: https://app.validin.com/detail?find=f19be927e0ace610970e44ac0fda9f6bdd0c9267&type=hash&ref_id=293e78771a7#tab=host_pairs (# 2024-12-24)
 
 analytics-open.com
+ecofonts.pro
 ecommercesolution.tech
 ecomscan.click
+generateyourlogo.pro
+helpdevtools.world
+opensansfont.com
+perfectdomains.world
 static-fonts.com
 staticfonts.com
 ustatics.info
