@@ -116,3 +116,9 @@ gwcomics.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-20-v10812/2282
 
 hdtele.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-23-v10813/2287
+
+boneyn.com
+satpr.com
+sokrpro.com
