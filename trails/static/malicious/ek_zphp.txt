@@ -1167,6 +1167,11 @@ hamptoninnbelton.com
 odziezrobocza.biz
 rossarnold.info
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-23-v10813/2287
+
+qamar-alsharqia.com
+dcfei.xyz
+
 # Generic
 
 /cache/ewmrgqnaww.php
