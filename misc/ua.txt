@@ -2538,6 +2538,10 @@ AdvancedInstaller
 President
 PresidentPutin
 
+# Reference: https://medium.com/@TomiwaAmuda/unveiling-a-sophisticated-phishing-attack-159a47fe2f18
+
+Zoomer
+
 # Misc
 
 information_schema
