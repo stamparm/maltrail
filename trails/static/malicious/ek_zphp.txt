@@ -1172,6 +1172,12 @@ rossarnold.info
 qamar-alsharqia.com
 dcfei.xyz
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-24-v10816/2293
+
+haimasher.xyz
+suclub.xyz
+we-careu.xyz
+
 # Generic
 
 /cache/ewmrgqnaww.php
