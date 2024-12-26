@@ -1580,23 +1580,48 @@ http://162.243.197.144
 
 # Reference: https://app.validin.com/detail?find=57f501d6fee2fdb024795abbdb750ad5&type=hash#tab=host_pairs (# 2024-12-03)
 
+alfalock.ch
+c-2.uksouth.cloudapp.azure.com
+c0mms.1sht.com
+c2.24-3.zip
 c2.abacussysteme.de
+c2.alfalock.ch
 c2.c0mms.1sht.com
 c2.ducky.blue
+c2.hakpd.ru
 c2.keloha-it.com
+c2.mickool.net
+c2.notcare.de
 c2.seanchiarot.com
+c2.stevenloftus.com
+c2.tecnek.info
 c2.v7e.dev
+c2.zudell.io
+c2l.alfalock.ch
 cc2.dalhome.xyz
 cloud-c2.fnlqxz.my.id
 cloud.cybershell.link
+cloudc2.ignitseq.net
+cloudc2.nechry.net
 cyberc2.sbs
 cybershell.link
+ever6node.elanmask6.info
+groundzer0-home.duckdns.org
 hak5.zero-dark.io
+hak5cloudc2.chpm78.org
+highway.lan-security.de
 hkcloud.cloud
+maps.alfalock.ch
+music.jalusch.ch
+notify.badserver.ninja
+pentestserver.ca
 pwned.icu
+rnsmd.com
 rubixmaster.com
 sec.blooo.dev
-c0mms.1sht.com
+siyp.ca
+slushes.pw
+snakysec.com
 wss.c0mms.1sht.com
 y-files.com
 
