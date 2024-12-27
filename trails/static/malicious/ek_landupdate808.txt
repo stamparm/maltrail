@@ -126,3 +126,8 @@ sokrpro.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-24-v10816/2293
 
 dhusch.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-26-v10817/2296
+
+enethost.com
+fastard.com
