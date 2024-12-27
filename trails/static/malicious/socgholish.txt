@@ -4539,6 +4539,12 @@ wyn.demo.ezra-ai.com
 xlu.demo.ezra-ai.com
 xyfe.demo.ezra-ai.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-26-v10817/2296
+
+stock.letsgoautomotive.com
+qytn.stock.letsgoautomotive.com
+xof.stock.letsgoautomotive.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
