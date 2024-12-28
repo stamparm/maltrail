@@ -1178,6 +1178,10 @@ haimasher.xyz
 suclub.xyz
 we-careu.xyz
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-27-v10818/2299
+
+amcikressimleri.xyz
+
 # Generic
 
 /cache/ewmrgqnaww.php
