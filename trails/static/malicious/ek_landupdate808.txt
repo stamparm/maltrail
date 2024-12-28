@@ -131,3 +131,7 @@ dhusch.com
 
 enethost.com
 fastard.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-27-v10818/2299
+
+discoves.com
