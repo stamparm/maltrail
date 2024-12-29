@@ -13904,6 +13904,33 @@ webstatusmonitor.store
 
 esaspaceshop.pics
 
+# Reference: # Reference: https://app.validin.com/detail?first_seen=2024-12-12&type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2024-12-29)
+
+beiyalo.sbs
+bralink.online
+feodates.fun
+geopyt.online
+izteches.store
+keitint.fun
+meliperk.shop
+noasint.store
+pvetech.site
+shapotech.sbs
+twelai.site
+ulasint.shop
+cdn.beiyalo.sbs
+cdn.bralink.online
+cdn.feodates.fun
+cdn.geopyt.online
+cdn.izteches.store
+cdn.keitint.fun
+cdn.meliperk.shop
+cdn.noasint.store
+cdn.pvetech.site
+cdn.shapotech.sbs
+cdn.twelai.site
+cdn.ulasint.shop
+
 # Generic
 
 /assets/lfg.js
