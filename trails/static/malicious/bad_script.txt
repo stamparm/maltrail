@@ -8767,6 +8767,7 @@ gatetodisplaycontent.com
 /gggate.php
 /gAy5B.php
 /Invoke-Phant0m.ps1
+/jqwery.js
 /online-dating-verification-card.php
 /ravufgate.php
 /screenshot_gate.php
