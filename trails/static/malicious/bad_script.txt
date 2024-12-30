@@ -8682,6 +8682,11 @@ gatetodisplaycontent.com
 /lheqfjem.php
 /ljlgmtqf.php
 
+# Reference: https://x.com/ValidinLLC/status/1873676244392571286
+# Reference: https://www.validin.com/blog/tycoon_2fa_analyzing_and_hunting_phishing-as-a-service_domains/
+
+/res444.php
+
 # Generic
 
 /5c0ca79.php
