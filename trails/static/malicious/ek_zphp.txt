@@ -1182,6 +1182,11 @@ we-careu.xyz
 
 amcikressimleri.xyz
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-30-v10819/2306
+
+eldercity.xyz
+ganhogosi.xyz
+
 # Generic
 
 /cache/ewmrgqnaww.php
