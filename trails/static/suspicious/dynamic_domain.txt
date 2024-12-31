@@ -3663,3 +3663,7 @@ is-very.fun
 # Reference: https://www.virustotal.com/gui/domain/ddns-ip.net/relations
 
 ddns-ip.net
+
+# Reference: https://www.virustotal.com/gui/domain/dnc.su/relations
+
+dnc.su
