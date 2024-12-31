@@ -135,3 +135,8 @@ fastard.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-27-v10818/2299
 
 discoves.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-30-v10819/2306
+
+ambiwa.com
+gcafin.com
