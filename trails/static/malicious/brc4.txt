@@ -1,6 +1,8 @@
 # Copyright (c) 2014-2025 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
+# Aliases: brute ratel
+
 # Reference: https://twitter.com/Unit42_Intel/status/1545207290919264258
 # Reference: https://twitter.com/MichalKoczwara/status/1544403381539717121
 # Reference: https://twitter.com/MichalKoczwara/status/1544566096837152769
@@ -1020,3 +1022,23 @@ muuxxu.com
 # Reference: https://www.virustotal.com/gui/file/ea60a02b914e79c8c108e95cf0e23bea502b5f37f6a57a3fdf0ea0707e75e945/detection
 
 assetmanagement.azureedge.net
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-01-02)
+
+http://13.113.63.238
+http://13.230.79.217
+http://52.193.97.60
+http://52.68.181.183
+http://54.250.141.217
+104.207.132.109:1443
+107.174.0.170:8443
+167.179.104.231:443
+206.233.249.131:443
+34.213.47.69:443
+38.60.245.46:50000
+46.8.226.42:40006
+47.239.236.221:443
+60.204.234.238:53790
+95.169.196.118:443
+95.169.196.36:443
+96.73.26.29:443
