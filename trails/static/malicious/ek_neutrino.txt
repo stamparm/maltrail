@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2024 Maltrail developers (https://github.com/stamparm/maltrail/)
+# Copyright (c) 2014-2025 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
 # Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-06-10-thrones-jon-snow-appears-to-employ-neutrino-exploit-kit/thrones-jon-snow-appears-to-employ-neutrino-exploit-kit.csv
