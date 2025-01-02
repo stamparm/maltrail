@@ -4554,6 +4554,22 @@ gicw.chain.buyclosersonline.com
 ugbhe.chain.buyclosersonline.com
 ztzzj.chain.buyclosersonline.com
 
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-01-02)
+
+137.220.63.132:443
+155.138.206.121:443
+166.88.159.66:443
+170.75.160.84:443
+172.96.10.211:443
+172.96.10.214:443
+198.98.59.241:443
+207.90.238.101:443
+23.146.184.165:443
+38.180.136.48:443
+38.180.146.6:443
+86.124.168.255:443
+88.119.175.152:443
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
