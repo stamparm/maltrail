@@ -1724,3 +1724,13 @@ http://82.66.70.48
 82.66.70.48:443
 96.239.36.16:8080
 98.84.58.121:8080
+
+# Reference: https://app.validin.com/detail?type=hash&find=07e157bb00783c96a2ae2a402c36c588#tab=host_pairs (# 2025-01-03)
+
+c2.citadelofsolitude.com
+c2.jasonbruder.com
+c2.torn-lotus.com
+cnc.pdxits.com
+erichubbard.net
+ge0.works
+vmi1341970.contaboserver.net
