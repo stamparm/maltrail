@@ -13934,6 +13934,15 @@ cdn.shapotech.sbs
 cdn.twelai.site
 cdn.ulasint.shop
 
+# Reference: https://sansec.io/research/google-services-abused-skimming-campaigns
+# Reference: https://www.virustotal.com/gui/ip-address/94.131.105.71/relations
+
+cloudflare-stat.net
+js-stats.com
+montina.it/mx/stripe
+premium.vn/bb/stripe
+udalzira.com/.well-known/cloud.js
+
 # Generic
 
 /assets/lfg.js
