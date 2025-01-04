@@ -6322,3 +6322,15 @@ yourbestbro4s.site
 yourbestbro5s.site
 yourbrolink3d.com
 yourbrolink4d.com
+
+# Reference: https://raw.githubusercontent.com/Gi7w0rm/MalwareConfigLists/refs/heads/main/BaladaInjector/balada_all.txt
+
+browork2er.cc
+browork3er.cc
+broworker1s.com
+broworker4s.com
+broworker5s.com
+broworker6s.com
+broworker7.com
+broworker8s.com
+broworkers5s.com
