@@ -8694,6 +8694,15 @@ gatetodisplaycontent.com
 /trwsfg.ps1
 /vfrcxq.ps1
 
+# Reference: https://x.com/banthisguy9349/status/1875599493967835437
+
+/beans_shel.xml
+/beans_shel1.xml
+/beans_shel2.xml
+/beans_shel3.xml
+/beans_shel4.xml
+/beans_shell.xml
+
 # Generic
 
 /5c0ca79.php
