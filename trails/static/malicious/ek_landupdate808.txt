@@ -140,3 +140,7 @@ discoves.com
 
 ambiwa.com
 gcafin.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-03-v10829/2323
+
+usbkits.com
