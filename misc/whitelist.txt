@@ -4041,3 +4041,8 @@ you.can-get-no.info
 # Reference: https://github.com/MikhailKasimov/validin-phish-feed/commit/09674bfe873e7412391cfc5bba0bfe633f08d846
 
 typeorm.io
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/4767
+
+tau.how
+taubyte.com
