@@ -4046,3 +4046,7 @@ typeorm.io
 
 tau.how
 taubyte.com
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/4771
+
+insomnia.rest
