@@ -2562,6 +2562,14 @@ copilot-proxy.aiu.im
 45.147.26.131:8888
 87.120.113.94:8888
 
+# Reference: https://x.com/skocherhan/status/1875813505292750981
+
+47.103.27.130:8889
+
+# Reference: https://x.com/skocherhan/status/1875817443240857670
+
+113.44.76.80:9000
+
 # Generic
 
 /supershell/login
