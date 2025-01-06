@@ -13944,8 +13944,11 @@ premium.vn/bb/stripe
 udalzira.com/.well-known/cloud.js
 
 # Reference: https://x.com/sdcyberresearch/status/1876212239570706724
+# Reference: https://app.validin.com/detail?find=37.1.211.247&type=ip4&ref_id=0f22ad7c900#tab=resolutions
+# Reference: https://app.validin.com/detail?find=72.5.42.123&type=ip4&ref_id=12fcc4054b0#tab=resolutions
 
 brudget.net
+ebobus.online
 ls1ks.xyz
 schneemann.tech
 sitesupport.vip
