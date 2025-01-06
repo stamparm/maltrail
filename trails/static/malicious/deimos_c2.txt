@@ -1138,3 +1138,19 @@ http://5.189.152.51
 87.122.8.77:443
 87.122.9.169:443
 95.217.13.33:2054
+
+# Reference: https://x.com/skocherhan/status/1876062868564775165
+
+52.178.68.157:443
+52.178.68.157:8443
+6c440069-a034-4c67-829e-c38a124ce230.gwt.cloudapp.net
+azuregateway-6c440069-a034-4c67-829e-c38a124ce230-48824b75731c.gwt.cloudapp.net
+stmm.westeurope.cloudapp.azure.com
+
+# Reference: https://x.com/skocherhan/status/1876059859759841584
+
+alic1.eastasia.cloudapp.azure.com
+
+# Reference: https://x.com/skocherhan/status/1876055649953718345
+
+services.get.dxfeed.com
