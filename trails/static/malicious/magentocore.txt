@@ -13943,6 +13943,14 @@ montina.it/mx/stripe
 premium.vn/bb/stripe
 udalzira.com/.well-known/cloud.js
 
+# Reference: https://x.com/sdcyberresearch/status/1876212239570706724
+
+brudget.net
+ls1ks.xyz
+schneemann.tech
+sitesupport.vip
+cn.ls1ks.xyz
+
 # Generic
 
 /assets/lfg.js
