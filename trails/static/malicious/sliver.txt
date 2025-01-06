@@ -5494,6 +5494,14 @@ http://185.130.46.36
 
 13.113.116.176:31337
 
+# Reference: https://x.com/skocherhan/status/1876090880731619674
+
+61.140.45.63:2376
+
+# Reference: https://x.com/skocherhan/status/1876094803693465636
+
+47.109.142.20:2376
+
 # Generic
 
 /.sliver-client/
