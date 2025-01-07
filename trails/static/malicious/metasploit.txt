@@ -5891,3 +5891,7 @@ http://65.20.104.193
 # Reference: https://x.com/drb_ra/status/1876566642236268895
 
 155.94.204.229:7777
+
+# Reference: https://x.com/drb_ra/status/1876566685454569645
+
+154.216.17.13:443
