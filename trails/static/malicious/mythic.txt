@@ -2793,3 +2793,18 @@ vader.xw.rs
 96.18.247.142:7443
 96.19.122.253:7443
 96.45.189.139:7443
+
+# Reference: https://app.validin.com/detail?find=8fda9d86d62e7121dc00bcd1ae63b077&type=hash#tab=host_pairs (# 2025-01-07)
+
+185-196-8-12.cprapid.com
+62.68.75.16.ip.pph.systems
+adsmartwave.com
+ec2-13-59-178-90.us-east-2.compute.amazonaws.com
+ec2-54-176-66-101.us-west-1.compute.amazonaws.com
+id-formulare-ag-login.myz.info
+ipv6.185-196-8-12.cprapid.com
+m-ag-dkb-login-id.itsaol.com
+mail.185-196-8-12.cprapid.com
+remaxvizion.al
+server2.fireflycamp.net
+serviweb-ag-dkb.itsaol.com
