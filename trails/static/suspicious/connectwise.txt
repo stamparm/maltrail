@@ -507,3 +507,8 @@ yourrldns22.hopto.org
 
 instance-moi41i-relay.screenconnect.com
 server-ovh31444376-relay.screenconnect.com
+
+# Reference: https://www.virustotal.com/gui/file/4c7e52097594650e5c18bea599fbedebcd95a19f2a2f471d061027a8814d062d/detection
+
+185.49.126.188:8041
+lecartomtsuiporto.org
