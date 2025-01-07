@@ -13954,6 +13954,10 @@ schneemann.tech
 sitesupport.vip
 cn.ls1ks.xyz
 
+# Reference: https://www.virustotal.com/gui/ip-address/80.78.28.57/relations
+
+sucuri.ltd
+
 # Generic
 
 /assets/lfg.js
