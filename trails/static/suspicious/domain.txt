@@ -12,6 +12,10 @@
 .gq
 .icu
 
+# Reference: https://github.com/search?q=repo%3Astamparm%2Fmaltrail%20sbs&type=code
+
+.sbs
+
 # Reference: http://www.freenom.com/en/index.html
 
 .cf
