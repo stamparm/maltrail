@@ -3031,8 +3031,10 @@ blankhack.com
 # Reference: https://app.validin.com/detail?find=dysphoria%20C2&type=raw&ref_id=9ec735a61f0#tab=host_pairs (# 2025-01-09)
 # Reference: https://app.validin.com/detail?find=ETHERNAL%20C2&type=raw&ref_id=f9a2f1e705f#tab=host_pairs (# 2025-01-09)
 
+http://46.202.141.141
 http://46.249.49.185
 http://46.249.49.23
+dysphoriac2.ddos
 dysphoriac2.online
 dysphorianetwork.ru
 overload.su
