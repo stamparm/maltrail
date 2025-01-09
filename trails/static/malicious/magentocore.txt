@@ -13958,6 +13958,10 @@ cn.ls1ks.xyz
 
 sucuri.ltd
 
+# Reference: https://x.com/sdcyberresearch/status/1877007825521521129
+
+saurojewelry.com/js/tinybox/tinymod.js
+
 # Generic
 
 /assets/lfg.js
