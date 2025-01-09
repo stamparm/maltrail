@@ -5506,6 +5506,10 @@ http://185.130.46.36
 
 34.126.154.165:2376
 
+# Reference: https://x.com/skocherhan/status/1877328590972277036
+
+api.diamant.crossone.fr
+
 # Generic
 
 /.sliver-client/
