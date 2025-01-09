@@ -3036,3 +3036,5 @@ overload.su
 stresserx.su
 connect.twirlhost.net
 n1.twirlhost.net
+rf934ofm3ofhf349h.workers.dev
+billowing-meadow-f0c1.rf934ofm3ofhf349h.workers.dev
