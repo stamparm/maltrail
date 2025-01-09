@@ -3025,3 +3025,14 @@ happykingofficialrats.com
 # Reference: https://x.com/cyberfeeddigest/status/1875809394065043495
 
 blankhack.com
+
+# Reference: https://x.com/DaveLikesMalwre/status/1877122510371659817
+# Reference: https://www.virustotal.com/gui/ip-address/5.253.247.188/relations
+# Reference: https://app.validin.com/detail?find=dysphoria%20C2&type=raw&ref_id=9ec735a61f0#tab=host_pairs (# 2025-01-09)
+
+dysphoriac2.online
+dysphorianetwork.ru
+overload.su
+stresserx.su
+connect.twirlhost.net
+n1.twirlhost.net
