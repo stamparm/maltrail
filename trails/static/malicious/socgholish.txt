@@ -4570,6 +4570,19 @@ ztzzj.chain.buyclosersonline.com
 86.124.168.255:443
 88.119.175.152:443
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-09-v10834/2338
+# Reference: https://www.virustotal.com/gui/file/d57e9b5dff8131002aade29e2333e732d955d841e23ab0dd1ec73eccfc57d0df/detection
+
+static.buyweatherstriponline.com
+awx.static.buyweatherstriponline.com
+fdab.static.buyweatherstriponline.com
+gpfj.static.buyweatherstriponline.com
+ikqn.static.buyweatherstriponline.com
+oemb.static.buyweatherstriponline.com
+rekt.static.buyweatherstriponline.com
+uybd.static.buyweatherstriponline.com
+yyb.static.buyweatherstriponline.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
