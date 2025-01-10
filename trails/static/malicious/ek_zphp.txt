@@ -1187,6 +1187,11 @@ amcikressimleri.xyz
 eldercity.xyz
 ganhogosi.xyz
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-09-v10834/2338
+
+bingazo.digital
+mffaccessories.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
