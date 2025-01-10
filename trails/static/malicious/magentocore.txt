@@ -13934,6 +13934,19 @@ cdn.shapotech.sbs
 cdn.twelai.site
 cdn.ulasint.shop
 
+# Reference: https://app.validin.com/detail?first_seen=2024-12-12&type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2025-01-10)
+
+aidoppep.shop
+cilseminty.fun
+nafkaut.site
+theufenq.store
+tokoleq.sbs
+cdn.aidoppep.shop
+cdn.cilseminty.fun
+cdn.nafkaut.site
+cdn.theufenq.store
+cdn.tokoleq.sbs
+
 # Reference: https://sansec.io/research/google-services-abused-skimming-campaigns
 # Reference: https://www.virustotal.com/gui/ip-address/94.131.105.71/relations
 
