@@ -13975,6 +13975,10 @@ sucuri.ltd
 
 saurojewelry.com/js/tinybox/tinymod.js
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-09-v10834/2338
+
+chartzend.com
+
 # Generic
 
 /assets/lfg.js
