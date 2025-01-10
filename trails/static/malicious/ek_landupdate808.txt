@@ -144,3 +144,13 @@ gcafin.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-03-v10829/2323
 
 usbkits.com
+
+# Reference: https://app.validin.com/detail?ipv4_filter=AS+399629&header_hash_filter=f0007e9e8bcc49e6b5ea&type=hash&find=4cb2c207d5a9bb582aa3ddd06786d1afa0d8bada#tab=host_pairs (# 2025-01-09)
+
+bapalal.com
+ecrut.com
+mirugby.com
+pursyst.com
+raysre.com
+rc1g3as.top
+xaides.com
