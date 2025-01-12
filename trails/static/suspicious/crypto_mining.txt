@@ -1466,3 +1466,7 @@ zeph.2miners.com
 # Reference: https://www.virustotal.com/gui/file/05a9d7a61ea58700da1cbd17e8cf648339bb2cc4bba7b2c08c949889efb74055/detection
 
 51.15.54.102:14444
+
+# Reference: https://www.virustotal.com/gui/file/a4c4487dcacebf5048b2266233f5645cfe421154f26e6685ced36aa0621037f1/detection
+
+pool-de.supportxmr.com
