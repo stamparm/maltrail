@@ -12078,8 +12078,19 @@ vnv.icu
 vvd.icu
 
 # Reference: https://x.com/sdcyberresearch/status/1815380710737522937
+# Reference: https://x.com/sdcyberresearch/status/1878786203023245478
 # Reference: https://www.virustotal.com/gui/ip-address/94.131.110.36/relations
 
+ccvc.icu
+db13g10.com
+db13g6.com
+db13g7.com
+db13g8.com
+db13g9.com
+googeinfo.com
+inforestele.com
+informrunner.com
+searchnau.com
 vvcv.icu
 vvdv.icu
 vvvc.icu
