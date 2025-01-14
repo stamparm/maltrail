@@ -645,6 +645,53 @@ srftjwrty6kew.shop
 bigops.s3.us-east-2.amazonaws.com
 youcansay.s3.us-east-2.amazonaws.com
 
+# Reference: https://x.com/DaveLikesMalwre/status/1879181121872593194
+# Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw#tab=host_pairs
+
+angelopnavarro.com
+bincbusd.site
+briolaundry.com
+coachcorral.com
+csm4tqs.com
+davidbergergroup.com
+envirotekhomes.com
+essvtch.site
+fatura-pt-fdeldade.site
+fdelidade-pt-com.site
+fdelidade-pt-ng.site
+fdelidadeptosl.site
+fidelidateopt.site
+fidelidept.site
+fidelidlnpt.site
+fididadpt-of.site
+gr-nbd.site
+gravipod.com
+idolmusiclimited.com
+ifuckyourpc.win
+ireneray.net
+jcsalesteam.com
+l1nxx.para.rip
+mapfr-es.site
+mbresidencesbrickell.com
+miabeachwaterfront.com
+mississippiconcretecontractor.com
+nashvillegranite.net
+ndg-id.site
+para.rip
+premiertents.com
+primeden.com
+pt-fdelidade.site
+pt-fdelidader-egisto.site
+pt-fideldideid.site
+pt-fidelilde.site
+roofingcontractorinutah.com
+saltysolssurfschool.com
+thealexteamflorida.com
+treeservicerhodeislandpro.com
+treeserviceshouston.net
+trestlecreekspecklepark.com
+whatcomsoccer.com
+
 # Generic
 
 /a3A7qLVn/
