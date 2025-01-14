@@ -14027,6 +14027,11 @@ cdn.sevemit.shop
 cdn.tvorotech.online
 cdn.volkanti.online
 
+# Reference: https://x.com/sdcyberresearch/status/1879225717789270380
+# Reference: https://www.virustotal.com/gui/ip-address/45.61.151.43/relations
+
+jsmanifestgl.com
+
 # Generic
 
 /assets/lfg.js
