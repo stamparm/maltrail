@@ -14012,6 +14012,21 @@ saurojewelry.com/js/tinybox/tinymod.js
 
 chartzend.com
 
+# Reference: https://app.validin.com/detail?first_seen=2025-01-01&type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2025-01-14)
+
+illopou.store
+lisitec.site
+serteop.fun
+sevemit.shop
+tvorotech.online
+volkanti.online
+cdn.illopou.store
+cdn.lisitec.site
+cdn.serteop.fun
+cdn.sevemit.shop
+cdn.tvorotech.online
+cdn.volkanti.online
+
 # Generic
 
 /assets/lfg.js
