@@ -8703,6 +8703,12 @@ gatetodisplaycontent.com
 /beans_shel4.xml
 /beans_shell.xml
 
+# Reference: https://x.com/Slvlombardo/status/1879619287440413112
+
+/rtaownnow/rrrtttmmmw.php
+/rtaownnow/
+/rrrtttmmmw.php
+
 # Generic
 
 /5c0ca79.php
