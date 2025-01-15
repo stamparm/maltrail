@@ -6334,3 +6334,8 @@ broworker6s.com
 broworker7.com
 broworker8s.com
 broworkers5s.com
+
+# Reference: https://cside.dev/blog/over-5k-wordpress-sites-caught-in-wp3xyz-malware-attack
+# Reference: https://www.virustotal.com/gui/file/6cdb4f3e5285e2bad3b82893e600167ed178514a81d7db84e266c59a6666ae9b/detection
+
+wp3.xyz
