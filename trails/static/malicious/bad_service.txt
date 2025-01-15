@@ -3043,3 +3043,7 @@ connect.twirlhost.net
 n1.twirlhost.net
 rf934ofm3ofhf349h.workers.dev
 billowing-meadow-f0c1.rf934ofm3ofhf349h.workers.dev
+
+# Reference: https://x.com/cyberfeeddigest/status/1879416454577111207
+
+darkexploits.com
