@@ -5514,6 +5514,10 @@ api.diamant.crossone.fr
 
 72.5.43.46:8080
 
+# Reference: https://x.com/skocherhan/status/1879598105303372141
+
+139.159.188.222:31337
+
 # Generic
 
 /.sliver-client/
