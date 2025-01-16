@@ -694,6 +694,12 @@ treeserviceshouston.net
 trestlecreekspecklepark.com
 whatcomsoccer.com
 
+# Reference: https://x.com/ffforward/status/1879889672392040846
+# Reference: https://www.virustotal.com/gui/file/8125ef032eadfc547bcdd2e311a1d4e2cb33e0383c3ac2d8eb40c43bc6d11634/detection
+
+clintonmakes.com
+motel6lax.com
+
 # Generic
 
 /a3A7qLVn/
