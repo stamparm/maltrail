@@ -665,18 +665,23 @@ fidelidept.site
 fidelidlnpt.site
 fididadpt-of.site
 gr-nbd.site
+gr-nboik.site
 gravipod.com
 idolmusiclimited.com
 ifuckyourpc.win
 ireneray.net
 jcsalesteam.com
 l1nxx.para.rip
+lnepytw.site
 mapfr-es.site
+maryrezek.com
 mbresidencesbrickell.com
 miabeachwaterfront.com
 mississippiconcretecontractor.com
 nashvillegranite.net
 ndg-id.site
+nxgengames.com
+page-yoda.blog
 para.rip
 premiertents.com
 primeden.com
@@ -693,6 +698,7 @@ treeservicerhodeislandpro.com
 treeserviceshouston.net
 trestlecreekspecklepark.com
 whatcomsoccer.com
+captcha.nxgengames.com
 
 # Reference: https://x.com/ffforward/status/1879889672392040846
 # Reference: https://www.virustotal.com/gui/file/8125ef032eadfc547bcdd2e311a1d4e2cb33e0383c3ac2d8eb40c43bc6d11634/detection
