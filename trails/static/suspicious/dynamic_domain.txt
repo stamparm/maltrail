@@ -3667,3 +3667,7 @@ ddns-ip.net
 # Reference: https://www.virustotal.com/gui/domain/dnc.su/relations
 
 dnc.su
+
+# Reference: https://www.virustotal.com/gui/domain/ip-ddns.com/relations
+
+ip-ddns.com
