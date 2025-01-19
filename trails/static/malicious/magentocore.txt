@@ -14036,6 +14036,26 @@ cdn.volkanti.online
 jsmanifestgl.com
 jsmanifestgls.com
 
+# Reference: https://app.validin.com/detail?find=Attention%20Notice&type=raw#tab=host_pairs (# 2025-01-19)
+
+dsgnjet.com
+exoticsovokefizzier.lol
+mktvault.com
+rinfohub.lol
+salemape.com
+apis.exoticsovokefizzier.lol
+clients1.exoticsovokefizzier.lol
+clients6.exoticsovokefizzier.lol
+docs.exoticsovokefizzier.lol
+gstatic-fonts.exoticsovokefizzier.lol
+mers.exoticsovokefizzier.lol
+news.exoticsovokefizzier.lol
+optimizationguide-pa.exoticsovokefizzier.lol
+play.exoticsovokefizzier.lol
+securitydomain-pa.exoticsovokefizzier.lol
+www1.exoticsovokefizzier.lol
+www2.exoticsovokefizzier.lol
+
 # Generic
 
 /assets/lfg.js
