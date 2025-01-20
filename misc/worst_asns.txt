@@ -5436,3 +5436,13 @@
 45.227.253.0/24,globallayer
 5.188.86.0/24,globallayer
 5.188.87.0/24,globallayer
+
+# AS47436
+# Reference: https://x.com/banthisguy9349/status/1881419124108382391
+# Reference: https://ipinfo.io/AS47436
+
+195.206.235.0/24,awm
+2.58.85.0/24,awm
+46.37.117.0/24,awm
+5.252.74.0/24,awm
+84.32.231.0/24,awm
