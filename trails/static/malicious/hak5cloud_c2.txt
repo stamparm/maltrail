@@ -1071,6 +1071,7 @@ c2.milot.io
 c2.mjbates.com
 c2.motherduck.net
 c2.mumaw-lab.net
+c2.mylittlepwnies.tech
 c2.n0stra.com
 c2.network-protection.com
 c2.nit-solutions.com
