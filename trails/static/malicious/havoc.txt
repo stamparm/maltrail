@@ -3753,6 +3753,14 @@ http://77.105.161.202
 89.110.99.169:443
 95.179.233.26:443
 
+# Reference: https://x.com/G60930953/status/1880712135980073320
+# Reference: https://www.virustotal.com/gui/file/207b27f4f17802dc951b6300eaeeaed181ee7567526325f940e66242f54d3add/detection
+
+https://47.250.118.131
+47.250.118.131:443
+army-mil.b-cdn.net
+army-mil.zapto.org
+
 # Generic
 
 /Havoc/payload/
