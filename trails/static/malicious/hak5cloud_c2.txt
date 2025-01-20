@@ -1765,3 +1765,25 @@ http://54.212.251.241
 88.98.84.242:8081
 91.53.18.130:8080
 96.250.84.224:8080
+
+# Reference: https://app.validin.com/detail?find=57f501d6fee2fdb024795abbdb750ad5&type=hash&ref_id=b4140eca307#tab=host_pairs (# 2025-01-20)
+
+api.appiimmo.fr
+birdsmusic.org
+bone-bleed.com
+bowsky.net
+c2.3624.ch
+c2.ayva.cloud
+c2.kummer.solutions
+c2.pentesting-uidgaugd2.co.uk
+c2.rudio.cloud
+c2.sterckx-it.be
+c2.syslogic.link
+cloud.vmavs.com
+cloudc2.pen-test.xyz
+devicebackend.gbus.cc
+hhousec2.homefirewalls.net
+ip253.ip-51-254-21.eu
+mcc2.derekmacdonald.net
+pentesting-uidgaugd2.co.uk
+vks7371361.au
