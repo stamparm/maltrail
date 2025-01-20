@@ -706,6 +706,10 @@ captcha.nxgengames.com
 clintonmakes.com
 motel6lax.com
 
+# Reference: https://x.com/JAMESWT_MHT/status/1881346687014449202
+
+proxyyy.pages.dev
+
 # Generic
 
 /a3A7qLVn/
