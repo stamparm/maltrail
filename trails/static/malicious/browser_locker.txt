@@ -21677,3 +21677,8 @@ vtgbcxds1-secondary.z11.web.core.windows.net
 
 /Wi0n62HelpErr0Amr062/index.html
 /Wi0n62HelpErr0Amr062/
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/4953
+
+http://85.26.146.169
+glousism.co.in
