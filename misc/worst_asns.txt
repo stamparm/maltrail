@@ -5460,3 +5460,10 @@
 
 109.206.237.0/24,as-sovycloud
 81.161.230.0/24,as-sovycloud
+
+# AS215789
+# Reference: https://x.com/solostalking/status/1882429535167345080
+# Reference: https://ipinfo.io/AS215789
+
+147.45.44.0/24,karinar
+147.45.47.0/24,karinar
