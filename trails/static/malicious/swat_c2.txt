@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2025 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/bruce_k3tta/status/1880272316653007218
+# Reference: https://app.validin.com/detail?type=raw&find=SWAT+C2+-+Login#tab=host_pairs
+
+69.197.175.10:443
+equitymarket.uk
+xxobox.com
+movie.aspisdata.com
