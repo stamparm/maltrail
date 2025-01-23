@@ -712,6 +712,8 @@ proxyyy.pages.dev
 
 # Reference: https://x.com/solostalking/status/1882429531111522585
 
+http://83.217.209.224
+83.217.209.224:443
 95.179.178.85.sslip.io
 asdasljdlaksd.com
 asideless.com
@@ -737,6 +739,7 @@ licks999999.xyz
 madebybmr.durban
 madebybmr.mov
 madebybmr.org
+milkywayzone.xyz
 minigitapp1.pages.dev
 minigitapp2.pages.dev
 nigga1nigga2.top
