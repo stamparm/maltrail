@@ -12847,6 +12847,7 @@ cdn.inspectdlet.net
 
 fqbe23.xyz
 valhafather.xyz
+browser-security.digital
 data-redirect.biz
 panel-alert-v1.homes
 redirect-security.digital
@@ -13919,6 +13920,7 @@ cdnjsdvcss.com
 chatjsdvcss.com
 chatjssvcss.com
 debdpkgseclib.com
+instaholldatalib.com
 logicwploo.com
 logicwploop.com
 logwplmap.com
@@ -14055,6 +14057,27 @@ play.exoticsovokefizzier.lol
 securitydomain-pa.exoticsovokefizzier.lol
 www1.exoticsovokefizzier.lol
 www2.exoticsovokefizzier.lol
+
+# Reference: https://x.com/Gi7w0rm/status/1882475789335109745
+# Reference: https://gi7w0rm.medium.com/a-beginner-s-guide-to-hunting-web-based-credit-card-skimmers-c820aeee87d6
+
+analyticsseolinks.online
+api-chat.live
+bulforanalysis.online
+cantact.chat
+cdn-statistics.com
+dobrowork.space
+ebatkopat.click
+eeestats.com
+getcssmodals.com
+handsl.org
+jquerywp.xyz
+nc-img.co
+neshion.com
+privatstripp.tech
+store-locator.org
+bc.nc-img.co
+socket.bulforanalysis.online
 
 # Generic
 
