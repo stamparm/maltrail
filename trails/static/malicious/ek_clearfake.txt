@@ -765,6 +765,15 @@ verifying.milkywayzone.xyz
 weibfstaa.com
 xansdrae.com
 
+# Reference: https://x.com/solostalking/status/1882429533212827650
+
+http://147.45.44.201
+147.45.44.201:443
+http://84.32.191.176
+84.32.191.176:443
+dropbox.work.gd
+mail.dropbox.work.gd
+
 # Generic
 
 /a3A7qLVn/
