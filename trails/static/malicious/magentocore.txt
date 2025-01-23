@@ -14061,12 +14061,14 @@ www2.exoticsovokefizzier.lol
 # Reference: https://x.com/Gi7w0rm/status/1882475789335109745
 # Reference: https://gi7w0rm.medium.com/a-beginner-s-guide-to-hunting-web-based-credit-card-skimmers-c820aeee87d6
 # Reference: https://app.validin.com/detail?find=185.208.156.149&type=ip4&ref_id=ee5d8d3de6d#tab=resolutions
+# Reference: https://app.validin.com/detail?find=185.208.158.230&type=ip4&ref_id=14aeaa11986#tab=resolutions
 
 analyticsseolinks.online
 api-chat.live
 bulforanalysis.online
 cantact.chat
 cdn-statistics.com
+dataassociates.online
 dataassociates.org
 dobrowork.space
 ebatkopat.click
@@ -14076,8 +14078,10 @@ handsl.org
 jquerywp.xyz
 nc-img.co
 neshion.com
+privatstripp.com
 privatstripp.tech
 store-locator.org
+storedirect.top
 bc.nc-img.co
 socket.bulforanalysis.online
 
