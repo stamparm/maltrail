@@ -714,6 +714,7 @@ proxyyy.pages.dev
 
 http://83.217.209.224
 83.217.209.224:443
+93-95-230-135.1984.is
 95.179.178.85.sslip.io
 asdasljdlaksd.com
 asideless.com
