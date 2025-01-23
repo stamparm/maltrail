@@ -26496,3 +26496,8 @@ zz.611u.com
 # Reference: https://twitter.com/ps66uk/status/1032177208335450112
 
 occe.com
+
+# Reference: https://x.com/r3dbU7z/status/1810725087064011116
+# Request for Removal of interpol.cc from Maltrail Blocklist [2025-01-23], moving from 'generic_stealer' detection to 'bad_hostory' trail.
+
+interpol.cc
