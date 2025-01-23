@@ -5448,7 +5448,15 @@
 84.32.231.0/24,awm
 
 # AS215208
+# Reference: https://x.com/spamhaus/status/1882384639945302126
 # Reference: https://ipinfo.io/AS215208
 
 45.202.32.0/24,dolphinnetworks
 45.202.35.0/24,dolphinnetworks
+
+# AS401110
+# Reference: https://x.com/spamhaus/status/1882384639945302126
+# Reference: https://ipinfo.io/AS401110
+
+109.206.237.0/24,as-sovycloud
+81.161.230.0/24,as-sovycloud
