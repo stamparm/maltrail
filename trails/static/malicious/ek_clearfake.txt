@@ -777,6 +777,11 @@ dropbox.work.gd
 rhsantander.com
 mail.dropbox.work.gd
 
+# Reference: https://x.com/JAMESWT_MHT/status/1882723100720308508
+
+compltheroomchngnotific.com
+booking.compltheroomchngnotific.com
+
 # Generic
 
 /a3A7qLVn/
