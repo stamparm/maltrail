@@ -3047,3 +3047,7 @@ billowing-meadow-f0c1.rf934ofm3ofhf349h.workers.dev
 # Reference: https://x.com/cyberfeeddigest/status/1879416454577111207
 
 darkexploits.com
+
+# Reference: https://x.com/solostalking/status/1882787940428104099
+
+root67ae74xjxjhrsdde3fcoajocwn6hbk2mrgxmn2uq2pvvfgl7uqid.onion
