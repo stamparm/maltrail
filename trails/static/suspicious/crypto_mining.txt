@@ -1470,3 +1470,21 @@ zeph.2miners.com
 # Reference: https://www.virustotal.com/gui/file/a4c4487dcacebf5048b2266233f5645cfe421154f26e6685ced36aa0621037f1/detection
 
 pool-de.supportxmr.com
+
+# Reference: https://www.virustotal.com/gui/file/9b9232c180b724d451846420deabea387b47f02c7b1dbdcd3bcb2092d75dc322/detection
+
+108.61.205.10:23620
+149.248.63.116:23620
+149.28.186.121:23620
+45.76.145.66:23620
+91.121.209.203:23620
+ultra-pool.com
+kubo.ultra-pool.com
+
+# Reference: https://www.virustotal.com/gui/file/6b54055656fde365b2445fa20efe9759caff7be2c01a33ab1679ee3a78a9005e/detection
+# Reference: https://www.virustotal.com/gui/file/670ebdf514ae0062df47493bc3c938645ce0516b135bd3012e8bf1dbe7374c41/detection
+
+149.248.63.116:5860
+149.28.186.121:5860
+202.91.32.72:5860
+207.148.1.121:5860
