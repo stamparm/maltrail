@@ -782,6 +782,65 @@ mail.dropbox.work.gd
 compltheroomchngnotific.com
 booking.compltheroomchngnotific.com
 
+# Reference: https://x.com/jiriatvirlab/status/1881100360456229017
+# Reference: https://x.com/skocherhan/status/1883019370991071403
+
+airdrop-gettrumpmemes.com
+bsctrumpmeme.fun
+claim-gettrumpmemes.com
+claiming-trump.com
+claimtrump.pages.dev
+claim-trumpmemes.xyz
+click.jittercore.art
+demo222-eh4.pages.dev
+evmtrumpmemes.com
+gameslux.store
+getcommunitytrumpmemes.com
+getrumpmemes.cc
+getrumpmemes.org
+getstrumpmemes.lol
+gettrampmeme.com
+gettrampmeme.org
+gettrampmemes.com
+gettrummpmemes.com
+gettrumpairdrop.web.app
+gettrumpbutthole.com
+gettrumpememes.com
+get-trumpmeme.com
+get-trump-meme.com
+get-trumpmeme.info
+get-trumpmeme.net
+get-trumpmeme.org
+gettrumpmeme.pages.dev
+gettrumpmeme.web.app
+get-trumpmeme.world
+gettrumpmemes.click.jittercore.art
+gettrump-memes.com
+get-trumpmemes.com
+gettrumpmemes.dev
+gettrumpmemes.ink
+gettrumpmemes.me
+gettrumpmemes.run
+gettrumpmemes.shop
+gettrumpmemes.site
+gettrumpmemesnow.com
+gettrumpmemeth.com
+gettrumpmemms.com
+gettrumpmems.com
+gettrupmems.com
+gtetrumpmemes.com
+jittercore.art
+macatrumpmeme.pages.dev
+memetrump.org
+swaggy.pages.dev
+trumclaim.org
+trumpclaim.org
+trumpfair.com
+trumpmeme.info
+trumptokenofficial.com
+website-87e9feb8.quaaludes.io
+worldofdypians.ch
+
 # Generic
 
 /a3A7qLVn/
