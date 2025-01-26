@@ -5460,3 +5460,34 @@
 
 109.206.237.0/24,as-sovycloud
 81.161.230.0/24,as-sovycloud
+
+# AS215439
+# Reference: https://ipinfo.io/AS215439
+
+171.22.31.0/24,play2go-net
+185.216.71.0/24,play2go-net
+185.246.223.0/24,play2go-net
+193.222.99.0/24,play2go-net
+193.25.216.0/24,play2go-net
+193.35.17.0/24,play2go-net
+193.58.121.0/24,play2go-net
+193.58.122.0/24,play2go-net
+194.31.223.0/24,play2go-net
+212.80.7.0/24,play2go-net
+31.13.208.0/24,play2go-net
+45.133.251.0/24,play2go-net
+45.66.228.0/24,play2go-net
+83.143.112.0/24,play2go-net
+84.21.173.0/24,play2go-net
+87.120.165.0/24,play2go-net
+87.120.166.0/24,play2go-net
+87.120.186.0/24,play2go-net
+89.34.219.0/24,play2go-net
+89.39.121.0/24,play2go-net
+93.115.104.0/24,play2go-net
+93.123.84.0/24,play2go-net
+94.156.102.0/24,play2go-net
+94.156.112.0/24,play2go-net
+94.156.115.0/24,play2go-net
+94.156.179.0/24,play2go-net
+94.156.237.0/24,play2go-net
