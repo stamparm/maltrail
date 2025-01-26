@@ -13926,6 +13926,8 @@ logicwploop.com
 logwplmap.com
 stylewpcall.com
 stylewpcoll.com
+stylewpoll.com
+restapi.space
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-09-19-v10698/1991
 
