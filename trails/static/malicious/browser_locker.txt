@@ -21682,3 +21682,7 @@ vtgbcxds1-secondary.z11.web.core.windows.net
 
 http://85.26.146.169
 glousism.co.in
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/4989
+
+ucapsidop.info
