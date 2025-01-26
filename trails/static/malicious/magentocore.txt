@@ -14036,6 +14036,7 @@ cdn.volkanti.online
 # Reference: https://www.virustotal.com/gui/ip-address/45.61.151.43/relations
 
 jsmanifestgl.com
+jsmanifestglls.com
 jsmanifestgls.com
 
 # Reference: https://app.validin.com/detail?find=Attention%20Notice&type=raw#tab=host_pairs (# 2025-01-19)
