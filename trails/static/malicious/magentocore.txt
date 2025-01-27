@@ -14093,6 +14093,11 @@ authx.fecaboo0k.xyz
 bc.nc-img.co
 socket.bulforanalysis.online
 
+# Reference: https://app.validin.com/detail?find=82.202.166.35&type=ip4&ref_id=b861456976a#tab=resolutions
+
+easyanalytic.net
+static.easyanalytic.net
+
 # Generic
 
 /assets/lfg.js
