@@ -4583,6 +4583,11 @@ rekt.static.buyweatherstriponline.com
 uybd.static.buyweatherstriponline.com
 yyb.static.buyweatherstriponline.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-23-v10844/2386
+# Reference: https://www.virustotal.com/gui/file/5d26e6bbeb5235c8d3e1d327681df72f7e9f91e2165b742db00da76278423d24/detection
+
+customer.aaddigitalstrategies.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
