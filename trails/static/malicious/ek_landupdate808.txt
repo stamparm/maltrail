@@ -166,3 +166,7 @@ rystrom.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-24-v10845/2388
 
 sinobz.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-27-v10846/2393
+
+opticna.com
