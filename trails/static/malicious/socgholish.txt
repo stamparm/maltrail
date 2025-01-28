@@ -4588,6 +4588,10 @@ yyb.static.buyweatherstriponline.com
 
 customer.aaddigitalstrategies.com
 
+# Reference: https://www.virustotal.com/gui/file/ae0447bc6ba0fdabbdf832d548879aca2fb1f9f64fe9668bb0a3a469ffc10868/detection
+
+gemini.1stpagegold.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
