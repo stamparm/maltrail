@@ -1196,6 +1196,10 @@ mffaccessories.com
 
 kuishei.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-24-v10845/2388
+
+cialispanettet.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
