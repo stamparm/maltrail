@@ -1200,6 +1200,10 @@ kuishei.top
 
 cialispanettet.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-27-v10846/2393
+
+pictureiol.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
