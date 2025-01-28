@@ -4050,3 +4050,8 @@ taubyte.com
 # Reference: https://github.com/hagezi/dns-blocklists/issues/4771
 
 insomnia.rest
+
+# Reference: https://x.com/infok3k/status/1884197797060341784
+# Reference: https://forums.malwarebytes.com/topic/309197-false-positive/
+
+telega.one
