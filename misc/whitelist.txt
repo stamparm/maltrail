@@ -4055,3 +4055,7 @@ insomnia.rest
 # Reference: https://forums.malwarebytes.com/topic/309197-false-positive/
 
 telega.one
+
+# Reference: https://github.com/stamparm/maltrail/issues/19295
+
+gggtracker.com
