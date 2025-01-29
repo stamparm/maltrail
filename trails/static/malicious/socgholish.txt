@@ -4592,6 +4592,11 @@ customer.aaddigitalstrategies.com
 
 gemini.1stpagegold.com
 
+# Reference: https://x.com/malware_traffic/status/1884476331821326816
+# Reference: https://www.malware-traffic-analysis.net/2025/01/28/index.html
+
+http://147.45.47.98
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
