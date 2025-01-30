@@ -4069,3 +4069,8 @@ s3.us-west-1.wasabisys.com
 
 icloud-content.com
 cvws.icloud-content.com
+
+# Reference: https://github.com/stamparm/maltrail/commit/c145da642c07c76bbdbbed11cc1f30ab3d21cc89
+
+freeapi.free.hr
+freechat.biz.id
