@@ -4078,3 +4078,8 @@ freechat.biz.id
 # Reference: https://github.com/stamparm/maltrail/commit/806f8a49d2423a8b5882f8828c3e2939aff3f76e
 
 telegram.dog
+
+# Reference: https://github.com/stamparm/maltrail/commit/0030faf3247abf7c982011455b794c37266f2094
+
+jamboreeindia.com
+staging.jamboreeindia.com
