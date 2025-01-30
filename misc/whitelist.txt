@@ -4074,3 +4074,7 @@ cvws.icloud-content.com
 
 freeapi.free.hr
 freechat.biz.id
+
+# Reference: https://github.com/stamparm/maltrail/commit/806f8a49d2423a8b5882f8828c3e2939aff3f76e
+
+telegram.dog
