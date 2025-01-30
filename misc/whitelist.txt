@@ -4059,3 +4059,8 @@ telega.one
 # Reference: https://github.com/stamparm/maltrail/issues/19295
 
 gggtracker.com
+
+# Reference: https://github.com/stamparm/maltrail/commit/748e99b23e46e72881bdac7c678278ae6c7ef32f
+
+s3.ap-southeast-1.wasabisys.com
+s3.us-west-1.wasabisys.com
