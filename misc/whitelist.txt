@@ -4064,3 +4064,8 @@ gggtracker.com
 
 s3.ap-southeast-1.wasabisys.com
 s3.us-west-1.wasabisys.com
+
+# Reference: https://github.com/stamparm/maltrail/commit/ff73434d350485510e73ae7fefabc561ac6c75b6
+
+icloud-content.com
+cvws.icloud-content.com
