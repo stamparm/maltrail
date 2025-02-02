@@ -10493,7 +10493,9 @@ jqueurystatics.xyz
 jqueurystaticx.com
 jstags.com
 sanzsec.net
+siteagencyanalytics.com
 cdn.cloudlayerinsights.com
+static.siteagencyanalytics.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/185.159.82.57/relations
 
