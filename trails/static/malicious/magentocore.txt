@@ -14106,6 +14106,21 @@ socket.bulforanalysis.online
 easyanalytic.net
 static.easyanalytic.net
 
+# Reference: https://app.validin.com/detail?first_seen=2025-01-01&type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2025-02-02)
+
+fionest.fun
+gieyloop.shop
+leospeet.store
+meliter.online
+sugtheit.site
+vseshoy.sbs
+cdn.fionest.fun
+cdn.gieyloop.shop
+cdn.leospeet.store
+cdn.meliter.online
+cdn.sugtheit.site
+cdn.vseshoy.sbs
+
 # Generic
 
 /assets/lfg.js
