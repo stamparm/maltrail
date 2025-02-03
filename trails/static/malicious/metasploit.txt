@@ -5895,3 +5895,7 @@ http://65.20.104.193
 # Reference: https://x.com/drb_ra/status/1876566685454569645
 
 154.216.17.13:443
+
+# Reference: https://x.com/JAMESWT_MHT/status/1886343993409110377
+
+147.185.221.25:37743
