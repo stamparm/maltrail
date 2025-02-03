@@ -4083,3 +4083,7 @@ telegram.dog
 
 jamboreeindia.com
 staging.jamboreeindia.com
+
+# Reference: https://github.com/stamparm/maltrail/issues/19296
+
+files-accl.zohopublic.eu
