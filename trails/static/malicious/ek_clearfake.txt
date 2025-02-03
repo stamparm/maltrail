@@ -857,7 +857,9 @@ nurturepetwellness.com
 booking.badrewies-guste.com
 
 # Reference: https://www.malwarebytes.com/blog/news/2025/01/clickfix-vs-traditional-download-in-new-darkgate-campaign
+# Reference: https://app.validin.com/detail?find=ClickUp%20Commerce%20Hub&type=raw&ref_id=ef4f97767ae#tab=host_pairs (# 2025-02-03)
 
+clickup.news
 notionbox.org
 s2notion.com
 
