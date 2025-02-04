@@ -14106,9 +14106,22 @@ authx.fecaboo0k.xyz
 bc.nc-img.co
 socket.bulforanalysis.online
 
+# Reference: https://x.com/salmanvsf/status/1886664402243608717
+# Reference: https://jscrambler.com/blog/stealing-seconds-web-skimmer-compromises-websites
 # Reference: https://app.validin.com/detail?find=82.202.166.35&type=ip4&ref_id=b861456976a#tab=resolutions
 
+augmetrics.org
 easyanalytic.net
+imagechat.net
+pagelook.org
+trade4host.com
+tradewine.net
+app.imagechat.net
+cms.pagelook.org
+common.trade4host.com
+conn.augmetrics.org
+img.tradewine.net
+pp.imagechat.net
 static.easyanalytic.net
 
 # Reference: https://app.validin.com/detail?first_seen=2025-01-01&type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2025-02-02)
