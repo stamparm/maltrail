@@ -3063,3 +3063,7 @@ shop.blackhattoolsandcoursesshop.ru
 # Reference: https://x.com/dyingbreeds_/status/1887043290064670784
 
 xenon.host
+
+# Reference: https://x.com/dyingbreeds_/status/1887058946839466326
+
+http://101.99.92.24
