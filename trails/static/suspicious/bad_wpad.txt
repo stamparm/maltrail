@@ -101,6 +101,8 @@ http://110.110.110.2/wpad.dat
 # Reference: https://github.com/hagezi/dns-blocklists/issues/5091
 
 wpad.casa
+wpad.eco
+wpad.ltda
 wpad.ru
 wpad.top
 wpad.xyz
