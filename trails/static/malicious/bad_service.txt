@@ -3059,3 +3059,7 @@ blackhattoolsandcoursesshop.ru
 directdownloadlink.ru
 themesandpluginsshop.com
 shop.blackhattoolsandcoursesshop.ru
+
+# Reference: https://x.com/dyingbreeds_/status/1887043290064670784
+
+xenon.host
