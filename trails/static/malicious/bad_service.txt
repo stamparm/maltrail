@@ -3067,3 +3067,8 @@ xenon.host
 # Reference: https://x.com/dyingbreeds_/status/1887058946839466326
 
 http://101.99.92.24
+
+# Reference: https://x.com/dyingbreeds_/status/1887071560319521249
+
+http://5.206.224.81
+5.206.224.81:443
