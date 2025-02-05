@@ -1014,7 +1014,7 @@ def init():
         except re.error:
             sys.exit("[!] invalid configuration value for 'REMOTE_SEVERITY_REGEX' ('%s')" % config.REMOTE_SEVERITY_REGEX)
 
-    if config.CAPTURE_FILTER:
+    if config.CAPTURE_FILTER and not config.pcap_file:
         print("[i] setting capture filter '%s'" % config.CAPTURE_FILTER)
         for _cap in _caps:
             try:
@@ -1102,6 +1102,10 @@ def monitor():
         try:
             if datalink == pcapy.DLT_RAW:
                 ip_offset = dlt_offset
+
+            elif datalink == pcapy.PCAP_D_IN:
+                if packet[20:22] in (b"\x00\x21", b"\x00\x57"):  # (IPv4, IPv6)
+                    ip_offset = 22
 
             elif datalink == pcapy.DLT_PPP:
                 if packet[2:4] in (b"\x00\x21", b"\x00\x57"):  # (IPv4, IPv6)
