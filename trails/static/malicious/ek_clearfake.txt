@@ -948,6 +948,12 @@ solve.zera.bet
 solve.zexd.org
 solve.zyde.org
 
+# Reference: https://x.com/DaveLikesMalwre/status/1887660334699192584
+# Reference: https://app.any.run/tasks/9c5f1af8-7b88-4280-8062-251bf4393d37
+
+al3b.duckdns.org
+mine.moroccoex.com
+
 # Generic
 
 /a3A7qLVn/
