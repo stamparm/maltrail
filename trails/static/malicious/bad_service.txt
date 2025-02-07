@@ -3076,3 +3076,8 @@ http://5.206.224.81
 # Reference: https://x.com/cyberfeeddigest/status/1887400117990301861
 
 darkfolder.org
+
+# Reference: https://x.com/DarkWebInformer/status/1887633704627151127
+
+narcoogle.cc
+narcooqom5mfevbeb6gck5tg5y2g2f5grywcu7cp4b3bvsmlvph66wqd.onion
