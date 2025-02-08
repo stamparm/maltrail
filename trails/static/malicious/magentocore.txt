@@ -13750,6 +13750,7 @@ click.webtracker.click
 # Reference: https://x.com/sdcyberresearch/status/1861805574003822765
 # Reference: https://app.validin.com/detail?find=f19be927e0ace610970e44ac0fda9f6bdd0c9267&type=hash&ref_id=293e78771a7#tab=host_pairs (# 2024-12-24)
 
+analyticcoms.com
 analytics-open.com
 ecofonts.pro
 ecommercesolution.tech
@@ -13761,6 +13762,7 @@ perfectdomains.world
 static-fonts.com
 staticfonts.com
 ustatics.info
+webdevelopers.tools
 webdevtools.sa.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/185.196.11.69/relations
