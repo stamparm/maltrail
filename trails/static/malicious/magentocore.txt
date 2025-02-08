@@ -14057,14 +14057,17 @@ jsmanifestgls.com
 # Reference: https://app.validin.com/detail?find=Attention%20Notice&type=raw#tab=host_pairs (# 2025-01-19)
 
 dninsignht.com
+dnmep.com
 dsgnjet.com
 dsgnnest.com
 dsgnsynic.com
 exoticsovokefizzier.lol
+mktflowi.com
 mktvault.com
 rinfohub.lol
 salemape.com
 saletrendio.com
+statspoot.com
 apis.exoticsovokefizzier.lol
 clients1.exoticsovokefizzier.lol
 clients6.exoticsovokefizzier.lol
