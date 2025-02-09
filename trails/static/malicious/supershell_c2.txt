@@ -2606,6 +2606,14 @@ dis.sbai.chat
 47.97.114.229:8888
 94.156.167.51:8888
 
+# Reference: https://x.com/BlinkzSec/status/1888538690755891618
+
+104.214.176.148:8888
+165.154.224.97:8888
+47.237.86.35:3981
+47.90.208.22:8888
+web.nufe.eu.org
+
 # Generic
 
 /supershell/login
