@@ -2808,3 +2808,10 @@ mail.185-196-8-12.cprapid.com
 remaxvizion.al
 server2.fireflycamp.net
 serviweb-ag-dkb.itsaol.com
+
+# Reference: https://x.com/BlinkzSec/status/1888539832428748862
+
+176.31.162.105:3000
+caldera.nit-solutions.com
+control.lancet-app.ru
+dev.riskyclick.shopify.io
