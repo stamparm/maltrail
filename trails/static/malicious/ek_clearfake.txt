@@ -954,6 +954,11 @@ solve.zyde.org
 al3b.duckdns.org
 mine.moroccoex.com
 
+# Reference: https://x.com/skocherhan/status/1888401820063871138
+
+alibbaa.shop
+id0cu93izlqm.objectstorage.mx-monterrey-1.oci.customer-oci.com
+
 # Generic
 
 /a3A7qLVn/
