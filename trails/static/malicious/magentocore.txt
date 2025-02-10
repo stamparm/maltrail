@@ -14201,6 +14201,10 @@ cdn.treclap.quest
 cdn.voilink.site
 cdn.widspe.site
 
+# Reference: https://x.com/sdcyberresearch/status/1888981202641596816
+
+gate2uni.com
+
 # Generic
 
 /assets/lfg.js
