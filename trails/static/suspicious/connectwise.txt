@@ -512,3 +512,10 @@ server-ovh31444376-relay.screenconnect.com
 
 185.49.126.188:8041
 lecartomtsuiporto.org
+
+# Reference: https://www.virustotal.com/gui/file/0f22d0855e79c92d08d8ead4c7caf8e7f96b68399342244d80dc5366c48d93cd/detection
+
+45.126.209.2:443
+45.126.209.2:8041
+e-statement.app
+docs.e-statement.app
