@@ -521,3 +521,8 @@ lecartomtsuiporto.org
 e-statement.app
 doc.e-statement.app
 docs.e-statement.app
+
+# Reference: https://www.virustotal.com/gui/file/a89ccedb7c9e9342cab4afee45595922a02c58b45a92d683b1db031e48e16ad4/detection
+
+45.58.127.222:443
+45.58.127.222:8041
