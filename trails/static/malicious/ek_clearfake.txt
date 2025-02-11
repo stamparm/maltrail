@@ -959,6 +959,13 @@ mine.moroccoex.com
 alibbaa.shop
 id0cu93izlqm.objectstorage.mx-monterrey-1.oci.customer-oci.com
 
+# Reference: https://www.esentire.com/security-advisories/netsupport-rat-clickfix-distribution
+
+eveverify.com
+findkik.com
+lynxcm.com
+sapeconomico.com
+
 # Generic
 
 /a3A7qLVn/
