@@ -1103,10 +1103,6 @@ def monitor():
             if datalink == pcapy.DLT_RAW:
                 ip_offset = dlt_offset
 
-            elif datalink == pcapy.DLT_EN10MB:
-                if packet[20:22] in (b"\x00\x21", b"\x00\x57"):  # (IPv4, IPv6)
-                    ip_offset = 22
-
             elif datalink == pcapy.DLT_PPP:
                 if packet[2:4] in (b"\x00\x21", b"\x00\x57"):  # (IPv4, IPv6)
                     ip_offset = dlt_offset
