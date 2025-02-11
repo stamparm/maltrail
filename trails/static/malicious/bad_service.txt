@@ -3081,3 +3081,9 @@ darkfolder.org
 
 narcoogle.cc
 narcooqom5mfevbeb6gck5tg5y2g2f5grywcu7cp4b3bvsmlvph66wqd.onion
+
+# Referecne: https://x.com/DarkWebInformer/status/1889069495286649103
+# Reference: https://www.virustotal.com/gui/file/893edf0ee31fe48cd48eeec42c12c3c07f73d97530ed6429cbc7af9eda3e9dcf/detection
+
+pshack.net
+pshack.org
