@@ -966,6 +966,13 @@ findkik.com
 lynxcm.com
 sapeconomico.com
 
+# Reference: https://x.com/solostalking/status/1889307324453625988
+# Reference: https://www.virustotal.com/gui/ip-address/147.45.167.128/relations
+
+candy-pdf.com
+myqr-generator.com
+pdftool25.com
+
 # Generic
 
 /a3A7qLVn/
