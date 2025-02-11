@@ -21686,3 +21686,11 @@ glousism.co.in
 # Reference: https://github.com/hagezi/dns-blocklists/issues/4989
 
 ucapsidop.info
+
+# Reference: https://x.com/illegalFawn/status/1889238901723652532
+# Reference: https://app.validin.com/detail?find=45.134.26.44&type=ip4&ref_id=2264c066568#tab=resolutions (# 2025-02-11)
+
+aeludi.cyou
+illudi.cyou
+inludi.cyou
+saludi.cyou
