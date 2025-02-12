@@ -14206,6 +14206,17 @@ cdn.widspe.site
 
 gate2uni.com
 
+# Reference: https://x.com/sdcyberresearch/status/1889641697698607429
+
+dataanalysiscentral.com
+datahubtracker.com
+datainsightstools.com
+datamonitorpro.com
+tagmonitoringhub.com
+trackmanagersite.com
+webtrackingtools.com
+cdn.webtrackingtools.com
+
 # Generic
 
 /assets/lfg.js
