@@ -8625,6 +8625,10 @@ gatetodisplaycontent.com
 /pws1.vbs
 /startupppp.bat
 
+# Reference: https://x.com/solostalking/status/1889733513173172414
+
+/dajkod.ps1
+
 # Generic
 
 /5c0ca79.php
