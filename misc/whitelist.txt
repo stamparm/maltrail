@@ -825,7 +825,6 @@ rbl.efnetrbl.org
 rbl.fasthosts.co.uk
 rbl.interserver.net
 rbl.iprange.net
-rbl.lugh.ch
 rbl.megarbl.net
 rbl.orbitrbl.com
 rbl.polarcomm.net
