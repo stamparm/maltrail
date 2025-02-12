@@ -3087,3 +3087,8 @@ narcooqom5mfevbeb6gck5tg5y2g2f5grywcu7cp4b3bvsmlvph66wqd.onion
 
 pshack.net
 pshack.org
+
+# Reference: https://x.com/GetWinEvent_/status/1889495017737097250
+
+http://191.101.131.115
+offensivenet.com
