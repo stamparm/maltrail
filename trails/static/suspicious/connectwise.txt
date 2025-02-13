@@ -526,3 +526,7 @@ docs.e-statement.app
 
 45.58.127.222:443
 45.58.127.222:8041
+
+# Reference: https://www.virustotal.com/gui/file/1a6564192e0542b58210d3b2cac702b573dc38cccaeaf0c4e04934c28865bee2/detection
+
+slplegalfinance.com
