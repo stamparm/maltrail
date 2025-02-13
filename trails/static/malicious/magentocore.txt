@@ -12905,6 +12905,8 @@ histat.top
 itracking.autos
 jetstat.info
 keytag.rest
+livedirect.my
+openc.shop
 tagsanalytics.shop
 tagscart.shop
 tagsmanager.shop
