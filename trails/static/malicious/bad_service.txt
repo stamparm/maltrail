@@ -3092,3 +3092,7 @@ pshack.org
 
 http://191.101.131.115
 offensivenet.com
+
+# Reference: https://x.com/DarkWebInformer/status/1889418680712437792
+
+purget63s2buffp2zmjwvztixj3e4fygnkxoydgcl24bzxpcyd2cmpid.onion
