@@ -4090,3 +4090,8 @@ files-accl.zohopublic.eu
 # Reference: https://threatfox.abuse.ch/ioc/1338516/
 
 rentry.co
+
+# Reference: https://github.com/stamparm/maltrail/issues/19299
+# Reference: https://otx.alienvault.com/indicator/hostname/d3e54v103j8qbb.cloudfront.net
+
+d3e54v103j8qbb.cloudfront.net
