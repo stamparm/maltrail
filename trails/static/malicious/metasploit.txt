@@ -6051,3 +6051,8 @@ http://65.20.104.193
 # Reference: https://www.virustotal.com/gui/file/056280492708bad57805c4bb6739d65dcfa724ba13a62fa9d2bb5cdce19aeb2f/detection
 
 139.59.240.197:22
+
+# Reference: https://x.com/malwrhunterteam/status/1890327861002739987
+# Reference: https://www.virustotal.com/gui/file/09bc480835114679224d2e98980a85e2f67ab99a682b3a27f45f9ee520ea3b6b/detection
+
+auth.azurestatic.us.kg
