@@ -8634,6 +8634,12 @@ gatetodisplaycontent.com
 /T5Y2B6V32C/index05485643214.php
 /index05485643214.php
 
+# Reference: https://threatfox.abuse.ch/ioc/1403883/
+
+/api/get/inj
+/api/get/inject
+/api/get/injector
+
 # Generic
 
 /5c0ca79.php
