@@ -1257,6 +1257,10 @@ timetracker.rest
 timewatch.work
 workflowtime.click
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-13-v10859/2441
+
+fashionghana.shop
+
 # Generic
 
 /cache/ewmrgqnaww.php
