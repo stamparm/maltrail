@@ -4095,3 +4095,11 @@ rentry.co
 # Reference: https://otx.alienvault.com/indicator/hostname/d3e54v103j8qbb.cloudfront.net
 
 d3e54v103j8qbb.cloudfront.net
+
+# Reference: https://github.com/MikhailKasimov/validin-phish-feed/pull/8
+
+aimr.dev
+appolon.dev
+autoplus.gg
+keyauth.com
+vercel-dns.com
