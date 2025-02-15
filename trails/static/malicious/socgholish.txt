@@ -4597,6 +4597,11 @@ gemini.1stpagegold.com
 
 http://147.45.47.98
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-13-v10859/2441
+# Reference: https://www.virustotal.com/gui/file/e9d40289741116602c57f73b9b42747dd42b3a9bb3ecc965c918cc0844badb22/detection
+
+portal.miaariacademy.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
