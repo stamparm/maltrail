@@ -1258,8 +1258,19 @@ timewatch.work
 workflowtime.click
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-13-v10859/2441
+# Reference: https://app.validin.com/detail?find=33dlidl.tuta.io&type=dom&ref_id=cdaf84d0988#tab=dns
 
+52ecy.shop
+activekala.shop
+catchsx.top
 fashionghana.shop
+juehaicihang01.shop
+naprosynonline.top
+nazblog.top
+parkerlabs.top
+pilulespascher.top
+websitedirectory.top
+youhao5.shop
 
 # Generic
 
