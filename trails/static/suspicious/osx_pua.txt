@@ -61,3 +61,10 @@ idea.eiyou.fun
 string.eiyou.fun
 idea.jeter.eu.org
 string.jeter.eu.org
+
+# Reference: https://x.com/pober58/status/1890853063784538558
+# Reference: https://www.intego.com/mac-security-blog/intego-discovers-undetected-osx-adload-decompiled-python-adware/
+# Reference: https://www.virustotal.com/gui/file/0455b08439cd4d4283865f3120000338d9920aa95e88448dcd3b493cc0720b10/detection
+
+advancedsprint.com
+m.advancedsprint.com
