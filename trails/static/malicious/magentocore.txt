@@ -14297,6 +14297,43 @@ geo.audiencebehaviorinsights.com
 geo.contentengagementhub.com
 geo.customerdatainsights.com
 
+# Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24#tab=resolutions (# 2025-02-16)
+
+ewitool.sbs
+fastec.fun
+feeimob.store
+feopewq.sbs
+geitec.shop
+gtrpoot.site
+houdite.online
+infrecot.fun
+leipets.site
+limsweet.shop
+najatech.sbs
+perheet.site
+qietyts.shop
+qiqtoc.store
+qoerint.online
+teoyey.online
+vulerloq.store
+cdn.ewitool.sbs
+cdn.fastec.fun
+cdn.feeimob.store
+cdn.feopewq.sbs
+cdn.geitec.shop
+cdn.gtrpoot.site
+cdn.houdite.online
+cdn.infrecot.fun
+cdn.leipets.site
+cdn.limsweet.shop
+cdn.najatech.sbs
+cdn.perheet.site
+cdn.qietyts.shop
+cdn.qiqtoc.store
+cdn.qoerint.online
+cdn.teoyey.online
+cdn.vulerloq.store
+
 # Generic
 
 /assets/lfg.js
