@@ -12907,7 +12907,10 @@ jetstat.info
 keytag.rest
 livedirect.my
 metamanager.shop
+nextai.cam
 openc.shop
+openmonitor.rest
+protostat.lat
 tagsanalytics.shop
 tagscart.shop
 tagsmanager.shop
