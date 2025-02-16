@@ -13663,6 +13663,7 @@ grunet.online
 guetech.online
 handslegs.site
 heokit.fun
+hetper.fun
 hoetmob.sbs
 interqc.online
 intqc.site
@@ -13706,6 +13707,7 @@ cdn.geypol.shop
 cdn.grunet.online
 cdn.guetech.online
 cdn.heokit.fun
+cdn.hetper.fun
 cdn.hoetmob.sbs
 cdn.interqc.online
 cdn.intqc.site
