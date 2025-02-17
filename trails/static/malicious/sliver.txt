@@ -5526,6 +5526,11 @@ api.diamant.crossone.fr
 
 202.173.160.66:31337
 
+# Reference: https://x.com/ShanHolo/status/1891412316068950409
+
+3.27.46.197:8000
+3.27.46.197:8888
+
 # Generic
 
 /.sliver-client/
