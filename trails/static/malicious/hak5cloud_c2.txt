@@ -1788,3 +1788,25 @@ ip253.ip-51-254-21.eu
 mcc2.derekmacdonald.net
 pentesting-uidgaugd2.co.uk
 vks7371361.au
+
+# Reference: https://app.validin.com/detail?find=57f501d6fee2fdb024795abbdb750ad5&type=hash#tab=host_pairs (# 2025-02-17)
+
+bashducky.com
+benjidunn.net
+c2.asoik.dev
+c2.bytecake.net
+c2.catanbri.com
+c2.infra.htb.systems
+c2.lettner.tech
+c2.ops.1sht.com
+c2.ravensec.eu
+c2.systemd.de
+cloud-c2.net
+cloudpbx.webservi.net
+compromise-assessment.com
+fog.kisow.org
+hak5.wasacon.net
+lettner.tech
+lynch.gdn
+slumdog.kisow.org
+sparrowc2.chickenkiller.com
