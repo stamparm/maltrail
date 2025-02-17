@@ -14338,7 +14338,9 @@ cdn.teoyey.online
 cdn.vulerloq.store
 
 # Reference: https://x.com/sdcyberresearch/status/1891514677319942233
+# Reference: https://www.virustotal.com/gui/ip-address/77.238.228.157/relations
 
+cdncheckout.com
 dweeseny.com
 pendtoany.com
 sun-any.com
