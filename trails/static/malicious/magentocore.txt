@@ -14337,6 +14337,12 @@ cdn.qoerint.online
 cdn.teoyey.online
 cdn.vulerloq.store
 
+# Reference: https://x.com/sdcyberresearch/status/1891514677319942233
+
+dweeseny.com
+pendtoany.com
+sun-any.com
+
 # Generic
 
 /assets/lfg.js
