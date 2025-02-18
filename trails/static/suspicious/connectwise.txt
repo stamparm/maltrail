@@ -536,3 +536,9 @@ slplegalfinance.com
 
 vahelps.top
 relay.vahelps.top
+
+# Reference: https://x.com/skocherhan/status/1891777481876684879
+# Reference: https://www.virustotal.com/gui/file/670be5276e9cfb8ac71c870902de0e55ca467c8fb3b7b7d993a91112557f9376/detection
+
+instance-mopgxp-relay.screenconnect.com
+server-nix76efd524-relay.screenconnect.com
