@@ -1808,6 +1808,7 @@ fog.kisow.org
 hak5.wasacon.net
 lettner.tech
 lynch.gdn
+phishcatcher.shieldvault.us
 slumdog.kisow.org
 sparrowc2.chickenkiller.com
 
