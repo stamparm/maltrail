@@ -1263,6 +1263,7 @@ workflowtime.click
 52ecy.shop
 activekala.shop
 catchsx.top
+cinaweine.shop
 fashionghana.shop
 juehaicihang01.shop
 naprosynonline.top
@@ -1271,6 +1272,7 @@ parkerlabs.top
 pilulespascher.top
 websitedirectory.top
 youhao5.shop
+zhifubao.icu
 
 # Generic
 
