@@ -14353,6 +14353,12 @@ dweeseny.com
 pendtoany.com
 sun-any.com
 
+# Reference: https://app.validin.com/detail?find=185.208.158.150&type=ip4&ref_id=a01f0301650#tab=resolutions
+
+googletgmanagers.com
+googletgmanagers.online
+heipdescsecuri.store
+
 # Generic
 
 /assets/lfg.js
