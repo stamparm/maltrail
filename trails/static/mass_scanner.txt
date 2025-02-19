@@ -15298,6 +15298,12 @@
 
 185.50.66.1   # ANSSI
 92.154.95.236 # ANSSI
+54.38.103.0 # ANSSI
+54.38.103.1 # ANSSI
+137.74.246.152 # ANSSI
+147.135.160.230 # ANSSI
+80.13.153.140 # ANSSI
+217.108.23.109 # ANSSI
 
 # Reference: https://community.greenbone.net/t/is-greenbone-hacking-me/1134
 
