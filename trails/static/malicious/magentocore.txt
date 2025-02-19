@@ -11659,14 +11659,18 @@ static.store-content.com
 
 # Reference: https://x.com/sdcyberresearch/status/1792485034068185295
 # Reference: https://www.virustotal.com/gui/ip-address/5.188.86.230/relations
+# Reference: https://app.validin.com/detail?find=d6b2747cc7a010c50b34119e9c98947e&type=hash&ref_id=71d565febed#tab=host_pairs (# 2025-02-19)
 
 cdnjs.st
 cdnjs.us
+cdnjs.ws
 esicm.biz
 lgstd.io
 sitegateproxy.net
 siteimproveanalytic.net
 siteimproveanalytics.net
+stores-content.com
+static.stores-content.com
 
 # Reference: https://x.com/sdcyberresearch/status/1792880699164291143
 # Reference: https://www.virustotal.com/gui/ip-address/109.120.134.52/relations
