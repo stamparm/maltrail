@@ -14362,6 +14362,8 @@ heipdescsecuri.store
 # Reference: https://sourcedefense.com/resources/blog/sophisticated-eskimming-campaign-conceals-itself-by-leveraging-stripe-api/
 # Reference: https://app.validin.com/detail?find=f417bdca4b13c39d943fc89c524e0ca26d58fafc&type=hash&ref_id=3e07b116e1c#tab=host_pairs (# 2025-02-20)
 # Reference: https://app.validin.com/detail?find=146.70.101.121&type=ip4&ref_id=f7c5bfb65ed#tab=resolutions (# 2025-02-20)
+# Reference: https://app.validin.com/detail?find=146.70.53.157&type=ip4&ref_id=3e07b116e1c#tab=resolutions (# 2025-02-20)
+# Reference: https://app.validin.com/detail?find=146.70.20.208&type=ip4&ref_id=3e07b116e1c#tab=resolutions (# 2025-02-20)
 # Reference: https://www.virustotal.com/gui/ip-address/149.255.35.143/relations
 
 bsjq-api.store
@@ -14385,12 +14387,25 @@ isjustone.site
 isjustour.site
 jqbs-api.store
 jqbs-api.xyz
+jqbs-bsjq.store
+jqbs-cdn.xyz
 jqbs-cloud-api.xyz
+jqbs-cloud.store
+jqbs-cloud.xyz
 jqbs-get.store
+jqbs-min-api.xyz
+jqbs-min.xyz
+jqbs-online.store
 jqbs-shop.store
+jqbs.online
+jqbs.shop
+jqbs.site
 jqbs.store
+mcduckgroup.shop
+net-3admsv.ml
 nightsong.online
 oneadm.space
+org-3bwl.ml
 ouradm.space
 promo-profit.online
 promo-transfer.site
