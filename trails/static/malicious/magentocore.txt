@@ -14362,9 +14362,13 @@ heipdescsecuri.store
 # Reference: https://sourcedefense.com/resources/blog/sophisticated-eskimming-campaign-conceals-itself-by-leveraging-stripe-api/
 # Reference: https://app.validin.com/detail?find=f417bdca4b13c39d943fc89c524e0ca26d58fafc&type=hash&ref_id=3e07b116e1c#tab=host_pairs (# 2025-02-20)
 # Reference: https://app.validin.com/detail?find=146.70.101.121&type=ip4&ref_id=f7c5bfb65ed#tab=resolutions (# 2025-02-20)
+# Reference: https://www.virustotal.com/gui/ip-address/149.255.35.143/relations
 
+bsjq-api.store
 bsjq-api.xyz
+bsjq-cdn.store
 bsjq-cdn.xyz
+bsjq-checker.store
 bsjq-online.store
 bsjq-papper.xyz
 bsjq-shop.store
@@ -14372,7 +14376,9 @@ bsjq-shop.xyz
 bsjq-store.xyz
 bsjq.online
 bsjq.shop
+bsjq.site
 bsjq.store
+crypto-shop.online
 crypto-shop.site
 greatsong.online
 isjustone.site
