@@ -14359,6 +14359,25 @@ googletgmanagers.com
 googletgmanagers.online
 heipdescsecuri.store
 
+# Reference: https://sourcedefense.com/resources/blog/sophisticated-eskimming-campaign-conceals-itself-by-leveraging-stripe-api/
+# Reference: https://app.validin.com/detail?find=f417bdca4b13c39d943fc89c524e0ca26d58fafc&type=hash&ref_id=3e07b116e1c#tab=host_pairs (# 2025-02-20)
+
+bsjq-online.store
+bsjq.online
+bsjq.store
+greatsong.online
+isjustone.site
+isjustour.site
+jqbs-get.store
+jqbs.store
+nightsong.online
+oneadm.space
+ouradm.space
+promo-profit.online
+promo-transfer.site
+promo-transfer.store
+querysong.online
+
 # Generic
 
 /assets/lfg.js
