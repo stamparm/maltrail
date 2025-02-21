@@ -6823,3 +6823,10 @@ workingfund.buzz
 workingfunds.click
 workingplan.online
 workingtrend.xyz
+
+# Reference: https://www.group-ib.com/blog/fingerprint-heists/
+# Reference: https://app.validin.com/detail?find=147.45.198.161&type=ip4&ref_id=5993ec3dd07#tab=resolutions (# 2025-02-21)
+# Reference: https://app.validin.com/detail?find=185.218.137.137&type=ip4&ref_id=388ef7bde32#tab=resolutions (# 2025-02-21)
+
+niqa.io
+screamedjungle.com
