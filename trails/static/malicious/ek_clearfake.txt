@@ -1490,6 +1490,15 @@ yong4.top
 zigchain-claim.online
 tg.sodium.tools
 
+# Reference: https://www.esentire.com/blog/fake-deepseek-site-infects-mac-users-with-poseidon-stealer
+# Reference: https://github.com/eSentire/iocs/blob/main/PoseidonStealer/PoseidonStealer-2-12-2025.txt
+
+browser-storage.com
+calendly-storage.com
+chatgpt-storage.com
+deepseek-storage.com
+jobstreet-storage.com
+
 # Generic
 
 /a3A7qLVn/
