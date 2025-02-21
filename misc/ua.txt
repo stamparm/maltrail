@@ -2547,6 +2547,13 @@ Zoomer
 FlappyBird
 UNK_FlappyBird
 
+# Reference: https://x.com/naumovax/status/1892941777125966035
+# Reference: https://www.virustotal.com/gui/file/00407ce9ed73474cd85562bf41701ac98e49af2b0f8db2be64f9200a435728b7/detection
+# Reference: https://www.virustotal.com/gui/file/003b014f596ac7e497000ce6825d7dd1731060664e196547819de87b1beeaa0e/detection
+
+\AUSPFR\Z
+UNKNOWNSPFR
+
 # Misc
 
 information_schema
