@@ -3095,3 +3095,9 @@ offensivenet.com
 # Reference: https://x.com/DarkWebInformer/status/1889418680712437792
 
 purget63s2buffp2zmjwvztixj3e4fygnkxoydgcl24bzxpcyd2cmpid.onion
+
+# Reference: https://x.com/salmanvsf/status/1892796042284060793
+
+http://2.59.132.39
+2.59.132.39:1239
+bestonmarket.xyz
