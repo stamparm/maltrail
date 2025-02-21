@@ -3350,3 +3350,13 @@ dash.cherax.menu
 # Reference: https://www.virustotal.com/gui/file/2016ee7c46aa21a217b3a9a9bb3e6a365f88c2e6b89d1160cbaf56f78825d26c/detection
 
 emkei.cz
+
+# Reference: https://x.com/naumovax/status/1892941777125966035
+# Reference: https://www.virustotal.com/gui/file/00407ce9ed73474cd85562bf41701ac98e49af2b0f8db2be64f9200a435728b7/detection
+# Reference: https://www.virustotal.com/gui/file/003b014f596ac7e497000ce6825d7dd1731060664e196547819de87b1beeaa0e/detection
+
+unknownapps.site
+unknownp.one
+auth.unknownapps.site
+auth.unknownp.one
+hwid.unknownapps.site
