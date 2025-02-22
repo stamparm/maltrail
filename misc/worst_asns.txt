@@ -4387,7 +4387,12 @@
 # Reference: https://ipinfo.io/AS34534
 # Reference: https://urlhaus.abuse.ch/asn/34534/
 
+185.157.246.0/24,bullionet
+185.157.247.0/24,bullionet
+193.177.182.0/24,bullionet
+213.5.130.0/24,bullionet
 37.44.238.0/24,bullionet
+37.44.239.0/24,bullionet
 
 # AS207994
 # Reference: https://ipinfo.io/AS207994
