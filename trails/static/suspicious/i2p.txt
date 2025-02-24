@@ -28,4 +28,3 @@ i2p2.no
 i2p.net
 i2pd.xyz
 i2pgit.org
-incognet.io
