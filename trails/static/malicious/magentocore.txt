@@ -14414,6 +14414,11 @@ promo-transfer.site
 promo-transfer.store
 querysong.online
 
+# Reference: https://x.com/sdcyberresearch/status/1894055884294078800
+
+cndcheckjs.com
+secure.cndcheckjs.com
+
 # Generic
 
 /assets/lfg.js
