@@ -8646,6 +8646,32 @@ gatetodisplaycontent.com
 /sfsdfikcdfti9/tsync.bat
 /sfsdfikcdfti9/
 
+# Reference: https://x.com/csideai/status/1892594410149318692
+# Reference: https://cside.dev/blog/over-35-000-websites-targeted-in-full-page-hijack-linking-to-a-chinese-language-gambling-scam
+# Reference: https://app.validin.com/detail?find=db4adf52b330ca1061ff0ef44ef9cdf9&type=hash&ref_id=3d0262671fd#tab=host_pairs (# 2025-02-24)
+
+jb2023js.com
+jbwzzjs.com
+jbwzzzjs.com
+jpb2022.com
+jpbkte.com
+mlbetjs.com
+ptfafa.com
+ptfafajs.com
+sb2023js.com
+sbw9188.com
+sbwzzjs.com
+yb2023js.com
+ybwsjb.com
+ybwworld.com
+ybwzzjs.com
+zuizhongjs.com
+/m_c_b28cd5c86f08a2b35c766fc4390924de.js
+/go/kaiyun1/ky.html
+/js/24/12/7/ky1.js
+/js/25/1/8/ky1.js
+/js/25/2/y/ky3.js
+
 # Generic
 
 /5c0ca79.php
