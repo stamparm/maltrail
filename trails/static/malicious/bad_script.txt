@@ -8650,6 +8650,8 @@ gatetodisplaycontent.com
 # Reference: https://cside.dev/blog/over-35-000-websites-targeted-in-full-page-hijack-linking-to-a-chinese-language-gambling-scam
 # Reference: https://app.validin.com/detail?find=db4adf52b330ca1061ff0ef44ef9cdf9&type=hash&ref_id=3d0262671fd#tab=host_pairs (# 2025-02-24)
 
+15.197.148.33:6002
+3.33.130.190:6002
 jb2023js.com
 jbwzzjs.com
 jbwzzzjs.com
@@ -8666,6 +8668,7 @@ ybwsjb.com
 ybwworld.com
 ybwzzjs.com
 zuizhongjs.com
+p11vt3.vip
 /m_c_b28cd5c86f08a2b35c766fc4390924de.js
 /go/kaiyun1/ky.html
 /js/24/12/7/ky1.js
