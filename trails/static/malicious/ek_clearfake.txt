@@ -1499,6 +1499,12 @@ chatgpt-storage.com
 deepseek-storage.com
 jobstreet-storage.com
 
+# Reference: https://x.com/solostalking/status/1894083043012309018
+
+windows-update.site
+ns1.windows-update.site
+ns2.windows-update.site
+
 # Generic
 
 /a3A7qLVn/
