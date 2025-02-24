@@ -28,3 +28,9 @@ i2p2.no
 i2p.net
 i2pd.xyz
 i2pgit.org
+banana.incognet.io
+netdb.i2p2.no
+reseed-fr.i2pd.xyz
+reseed.diva.exchange
+reseed.i2pgit.org
+reseed2.i2p.net
