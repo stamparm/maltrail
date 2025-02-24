@@ -8640,6 +8640,15 @@ gatetodisplaycontent.com
 /api/get/inject
 /api/get/injector
 
+# Reference: https://x.com/Merlax_/status/1893073216400248974
+
+/cjFuHeYmH01c.html
+/dZAohJEYH01J.html
+/gIbojmsyvH01b.html
+/latigFcmH01M.html
+/myKOJmrYoNIuIH01J.html
+/sQNFyCTHftJH01X.html
+
 # Generic
 
 /5c0ca79.php
