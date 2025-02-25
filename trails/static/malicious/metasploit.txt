@@ -6056,3 +6056,10 @@ http://65.20.104.193
 # Reference: https://www.virustotal.com/gui/file/09bc480835114679224d2e98980a85e2f67ab99a682b3a27f45f9ee520ea3b6b/detection
 
 auth.azurestatic.us.kg
+
+# Reference: https://www.virustotal.com/gui/file/d21f9d460e6b74fb1d97e8e059afb55fa0cfd94801a7b5c9265277d24a8e8d55/detection
+# Reference: https://www.virustotal.com/gui/file/6af20f934a0ba83ad6109a4276ca33bf1f0206bd5dfde4c5c0d35fa3ed9b12da/detection
+# Reference: https://www.virustotal.com/gui/file/44ed65c0431140dec0f1f319fa38e39b8bffa94512bc505de33eb66d4017a4ac/detection
+
+http://80.2.188.222
+80.2.188.222:443
