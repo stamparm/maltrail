@@ -14419,6 +14419,10 @@ querysong.online
 cndcheckjs.com
 secure.cndcheckjs.com
 
+# Reference: https://x.com/sdcyberresearch/status/1894386650031042632
+
+cdn-skins.com
+
 # Generic
 
 /assets/lfg.js
