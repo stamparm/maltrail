@@ -6339,3 +6339,7 @@ broworkers5s.com
 # Reference: https://www.virustotal.com/gui/file/6cdb4f3e5285e2bad3b82893e600167ed178514a81d7db84e266c59a6666ae9b/detection
 
 wp3.xyz
+
+# Reference: https://x.com/cyberfeeddigest/status/1893923236225687947
+
+/wp-admin/0.txt
