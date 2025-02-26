@@ -14464,6 +14464,11 @@ cdn.scattered.cfd
 cdn.unaware.store
 cdn.unkempt.art
 
+# Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24#tab=resolutions (# 2025-02-26)
+
+lily.coupons
+cdn.lily.coupons
+
 # Generic
 
 /assets/lfg.js
