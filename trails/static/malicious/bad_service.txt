@@ -3101,3 +3101,9 @@ purget63s2buffp2zmjwvztixj3e4fygnkxoydgcl24bzxpcyd2cmpid.onion
 http://2.59.132.39
 2.59.132.39:1239
 bestonmarket.xyz
+
+# Reference: https://x.com/CreateFileInt_/status/1894854968114344309
+
+maxbuscas.info
+maxbuscas.io
+maxbuscas.tech
