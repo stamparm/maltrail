@@ -1505,6 +1505,12 @@ windows-update.site
 ns1.windows-update.site
 ns2.windows-update.site
 
+# Reference: https://x.com/solostalking/status/1894754082134643067
+
+gov-tax.icu
+solgiftx.com
+irs.fax.gov-tax.icu
+
 # Generic
 
 /a3A7qLVn/
