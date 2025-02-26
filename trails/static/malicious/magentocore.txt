@@ -14423,6 +14423,47 @@ secure.cndcheckjs.com
 
 cdn-skins.com
 
+# Reference: https://app.validin.com/detail?type=ip&find=195.242.111.0%2F24#tab=resolutions (# 2025-02-26)
+
+absorbing.cam
+acidic.best
+absorbing.cam
+acidic.best
+deep.christmas
+depart.buzz
+emergency.autos
+federation.boats
+necklace.christmas
+scattered.cfd
+unaware.store
+unkempt.art
+deep.christmas
+depart.buzz
+emergency.autos
+necklace.christmas
+scattered.cfd
+unaware.store
+unkempt.art
+cdn.absorbing.cam
+cdn.acidic.best
+cdn.absorbing.cam
+cdn.acidic.best
+cdn.deep.christmas
+cdn.depart.buzz
+cdn.emergency.autos
+cdn.federation.boats
+cdn.necklace.christmas
+cdn.scattered.cfd
+cdn.unaware.store
+cdn.unkempt.art
+cdn.deep.christmas
+cdn.depart.buzz
+cdn.emergency.autos
+cdn.necklace.christmas
+cdn.scattered.cfd
+cdn.unaware.store
+cdn.unkempt.art
+
 # Generic
 
 /assets/lfg.js
