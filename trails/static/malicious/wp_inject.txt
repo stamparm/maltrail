@@ -6343,3 +6343,7 @@ wp3.xyz
 # Reference: https://x.com/cyberfeeddigest/status/1893923236225687947
 
 /wp-admin/0.txt
+
+# Reference: https://blog.sucuri.net/2025/02/fake-wordpress-plugin-impacts-seo-by-injecting-casino-spam.html
+
+jsscript.top
