@@ -14469,6 +14469,19 @@ cdn.unkempt.art
 lily.coupons
 cdn.lily.coupons
 
+# Reference: https://x.com/sdcyberresearch/status/1895166209815126454
+# Reference: https://x.com/sdcyberresearch/status/1895168152750956899
+
+beppixel.top
+fabulo.xyz
+jatesmetrics.xyz
+metrikshot.top
+metrikspixels.xyz
+onkorova.top
+pixelment.xyz
+skrytivzorvi.top
+zametriks.top
+
 # Generic
 
 /assets/lfg.js
