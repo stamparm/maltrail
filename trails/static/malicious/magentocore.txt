@@ -12358,8 +12358,13 @@ cdn.wenmen.online
 
 # Reference: https://x.com/sdcyberresearch/status/1815710792651555218
 # Reference: https://www.virustotal.com/gui/ip-address/45.125.67.12/relations
+# Reference: https://app.validin.com/detail?find=139453fbd538458849d54a40a5a300ae18a6f30c&type=hash&ref_id=37722d4fd81#tab=host_pairs (# 2025-02-28)
 
+morningflexpleasure.com
+reusable-flex.com
+static-open.com
 statistics-for-you.com
+statistics-renew.com
 wellfacing.com
 yourmarketingpay.com
 
