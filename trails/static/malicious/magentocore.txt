@@ -14473,8 +14473,30 @@ cdn.unkempt.art
 
 # Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24#tab=resolutions (# 2025-02-26)
 
+concentration.autos
+courage.boats
+feminist.baby
+feyloot.site
+fritech.fun
+getvisi.store
+gradient.christmas
+kegosei.sbs
 lily.coupons
+reinforce.coupons
+sekleteo.online
+uutop.shop
+cdn.concentration.autos
+cdn.courage.boats
+cdn.feminist.baby
+cdn.feyloot.site
+cdn.fritech.fun
+cdn.getvisi.store
+cdn.gradient.christmas
+cdn.kegosei.sbs
 cdn.lily.coupons
+cdn.reinforce.coupons
+cdn.sekleteo.online
+cdn.uutop.shop
 
 # Reference: https://x.com/sdcyberresearch/status/1895166209815126454
 # Reference: https://x.com/sdcyberresearch/status/1895168152750956899
