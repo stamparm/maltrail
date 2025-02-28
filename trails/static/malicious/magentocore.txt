@@ -14511,6 +14511,17 @@ pixelsouss.xyz
 skrytivzorvi.top
 zametriks.top
 
+# Reference: https://x.com/threatcat_ch/status/1895509272605409437
+# Reference: https://x.com/threatcat_ch/status/1895509278984999200
+# Reference: https://x.com/threatcat_ch/status/1895509296169001223
+# Reference: https://www.virustotal.com/gui/file/db4560b4064b27382130b06daa44db858162f9b0351b7479c4afced611dfe4bf/detection
+# Reference: https://www.virustotal.com/gui/file/63175e45936c56f36c792be294e36a1f43e4d570b1df15ba19b2438b9d7549a5/detection
+# Reference: https://www.virustotal.com/gui/file/5b8b752ba0449f389e2bccc01c827369aabf92d69f807e93ce3f9c38e72b44f6/detection
+# Reference: https://www.virustotal.com/gui/file/269c3da29876ef699589cee7620e9f0d90824af0b96e1a4fa08f3e19031919cd/detection
+# Reference: https://www.virustotal.com/gui/file/17475d5f6dfc07a8e4a1627bc6e274e5714b24fe198c32b688dea20dd4a19320/detection
+
+suckerity.xyz
+
 # Generic
 
 /assets/lfg.js
