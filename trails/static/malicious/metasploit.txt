@@ -6063,3 +6063,9 @@ auth.azurestatic.us.kg
 
 http://80.2.188.222
 80.2.188.222:443
+
+# Reference: https://x.com/skocherhan/status/1896028314126667869
+# Reference: https://www.virustotal.com/gui/file/02263f1bd15e4364a463117bb79c7d7e7e8a75da47006b74ba4c976b34e15c5e/detection
+
+http://192.64.83.210
+192.64.83.210:7890
