@@ -6069,3 +6069,8 @@ http://80.2.188.222
 
 http://192.64.83.210
 192.64.83.210:7890
+
+# Reference: https://x.com/skocherhan/status/1896925159992578166
+# Reference: https://www.virustotal.com/gui/file/4b4f65d0d1906598ce59ed2c3ac9ef01b3dd547442c6d379094d6252242984fc/detection
+
+52.213.53.36:8443
