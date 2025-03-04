@@ -14522,6 +14522,15 @@ zametriks.top
 
 suckerity.xyz
 
+# Reference: https://x.com/sdcyberresearch/status/1896932590076252412
+
+anatech.online
+boyadigit.site
+krinloot.store
+prolinket.shop
+svilock.sbs
+vutfais.fun
+
 # Generic
 
 /assets/lfg.js
