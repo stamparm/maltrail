@@ -6347,3 +6347,8 @@ wp3.xyz
 # Reference: https://blog.sucuri.net/2025/02/fake-wordpress-plugin-impacts-seo-by-injecting-casino-spam.html
 
 jsscript.top
+
+# Reference: https://cside.dev/blog/thousands-of-websites-hit-by-four-backdoors-in-3rd-party-javascript-attack
+
+csyndication.com
+cdn.csyndication.com
