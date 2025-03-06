@@ -6349,7 +6349,13 @@ wp3.xyz
 jsscript.top
 
 # Reference: https://cside.dev/blog/thousands-of-websites-hit-by-four-backdoors-in-3rd-party-javascript-attack
+# Reference: https://app.validin.com/detail?find=ebac4decceffd560ddf0c48c1e45534c&type=hash&ref_id=5eba2f6f756#tab=host_pairs (# 2025-03-06)
 
+cloudsyndication.bz
+cloudsyndication.club
+cloudsyndication.dev
+cloudsyndication.org
+cloudsyndication.xyz
 csyndication.com
 cdn.csyndication.com
 pagead2.csyndication.com
