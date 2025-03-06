@@ -14808,7 +14808,9 @@ cdn.yalmob.shop
 cdn.yeuleli.click
 
 # Reference: https://app.validin.com/detail?type=ip&find=86.54.42.0%2F24#tab=resolutions
+# Reference: https://app.validin.com/detail?find=livintool.cfd&type=dom&ref_id=faf20d0350e#tab=host_pairs
 
+acessofacil.org
 livintool.cfd
 flowerlands.click
 woocommercepro.help
