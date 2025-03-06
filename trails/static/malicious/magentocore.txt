@@ -14821,6 +14821,15 @@ adsanalytics.online
 butcherstool.click
 cheaterchat.website
 
+# Reference: https://app.validin.com/detail?find=babkin_vnuk%20Tech.&type=raw&ref_id=08797f35fbf#tab=host_pairs (# 2025-03-06)
+# Reference: https://app.validin.com/detail?find=185.196.8.147&type=ip4&ref_id=7f153877a63#tab=resolutions (# 2025-03-06)
+
+assurparcel.com
+dellivery-ups.com
+live-info.net
+navigo-carte.com
+tvilogete.tech
+
 # Generic
 
 /assets/lfg.js
