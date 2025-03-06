@@ -14815,6 +14815,12 @@ livintool.cfd
 flowerlands.click
 woocommercepro.help
 
+# Reference: https://app.validin.com/detail?type=ip&find=185.196.10.111#tab=resolutions
+
+adsanalytics.online
+butcherstool.click
+cheaterchat.website
+
 # Generic
 
 /assets/lfg.js
