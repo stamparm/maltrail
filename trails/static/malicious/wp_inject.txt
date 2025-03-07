@@ -6352,10 +6352,12 @@ jsscript.top
 # Reference: https://app.validin.com/detail?find=ebac4decceffd560ddf0c48c1e45534c&type=hash&ref_id=5eba2f6f756#tab=host_pairs (# 2025-03-06)
 
 cloudsyndication.bz
+cloudsyndication.cc
 cloudsyndication.club
 cloudsyndication.dev
 cloudsyndication.me
 cloudsyndication.org
+cloudsyndication.to
 cloudsyndication.xyz
 csyndication.com
 dke.me
@@ -6367,6 +6369,7 @@ ak.dke.me
 aka.cloudsyndication.dev
 api.incdn.me
 cdn.csyndication.com
+cloud.syndication.bz
 information.cloudsyndication.dev
 information.cloudsyndication.org
 pagead2.csyndication.com
