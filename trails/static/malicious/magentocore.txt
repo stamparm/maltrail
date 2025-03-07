@@ -14435,6 +14435,7 @@ cdn-skins.com
 
 absorbing.cam
 acidic.best
+caribean.live
 deep.christmas
 depart.buzz
 emergency.autos
@@ -14452,6 +14453,7 @@ unsightly.autos
 volatile.baby
 cdn.absorbing.cam
 cdn.acidic.best
+cdn.caribean.live
 cdn.deep.christmas
 cdn.depart.buzz
 cdn.emergency.autos
