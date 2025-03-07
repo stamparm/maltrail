@@ -2899,3 +2899,9 @@ tribescale.co
 wall-store.xin.biz.id
 woo-headless-bcknd.utvikl.es
 wxszjwl.com
+
+# Reference: https://x.com/malwrhunterteam/status/1897957945326866616
+# Reference: https://www.virustotal.com/gui/file/2a32d7be1e8dc2127c5ae8c0b74a993d25fdea5a58031587b78254253b198449/detection
+# Reference: https://www.virustotal.com/gui/file/ecbfaead6fd3303a6c26d78cedc858b07504d0c8a11b5587024032168eb5330f/detection
+
+portalaccesowifi.cloud
