@@ -14830,6 +14830,19 @@ live-info.net
 navigo-carte.com
 tvilogete.tech
 
+# Refeence: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2025-03-07)
+
+debt.ink
+eye.coupons
+footstones.pics
+reburials.mom
+wilderness.autos
+cdn.debt.ink
+cdn.eye.coupons
+cdn.footstones.pics
+cdn.reburials.mom
+cdn.wilderness.autos
+
 # Generic
 
 /assets/lfg.js
