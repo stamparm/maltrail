@@ -21694,3 +21694,7 @@ aeludi.cyou
 illudi.cyou
 inludi.cyou
 saludi.cyou
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/5465
+
+ios-privacy.com
