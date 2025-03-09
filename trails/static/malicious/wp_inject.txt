@@ -6384,3 +6384,15 @@ gll.instantcontentflow.com
 # Reference: https://www.virustotal.com/gui/file/c45eafcd560a0351e53b1cfcacc2dd8680d886082b7b637090e49149c7ee7197/detection
 
 spelldeterrent.com
+
+# Reference: https://x.com/malwrhunterteam/status/1898285268647444952
+# Reference: https://www.virustotal.com/gui/file/d2469fa3615ca83da082ccc41da9ff7a4913257af5f977e78e3f27154559c45f/detection
+# ReferencE: https://www.virustotal.com/gui/file/c59fb533002f7a7db4c4cde96d7debc5c9d96fd55881d333a12f6b7ea39683e5/detection
+# Reference: https://www.virustotal.com/gui/file/ab2d99b8086c52141025dc1430d06337e754e0fa9a9989e7f24b7cfd0be52561/detection
+# Reference: https://www.virustotal.com/gui/file/a10dc6149fa3610bd4a78e0db784e918e428c37b8d10dcce21523cdb6bfb9810/detection
+# Reference: https://www.virustotal.com/gui/file/a09721158214a0fc57471a78fe1606bf095a683d2c6c124f01be10e64e568297/detection
+# Reference: https://www.virustotal.com/gui/file/6e7ba7c9f76bbdc9a4babf68bb41d2375b19c5f01f456b381b8974ad07311bd1/detection
+# Reference: https://www.virustotal.com/gui/file/2c4d09e941105fff3bdbde7cf6f72be55a881a14bc5e0a3efcd3efeee92e17af/detection
+# Reference: https://www.virustotal.com/gui/file/1339a8867e8f04e12cc7543c548a33ac7b94dcba591e2da8b9ae2df24687c99e/detection
+
+107.189.29.12:60001
