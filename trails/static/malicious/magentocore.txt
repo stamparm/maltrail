@@ -14437,8 +14437,12 @@ cdn-skins.com
 absorbing.cam
 acidic.best
 caribean.live
+circulates.lol
 deep.christmas
 depart.buzz
+dispead.shop
+ducational.pics
+eduactional.xyz
 emergency.autos
 federation.boats
 healthy.christmas
@@ -14446,6 +14450,7 @@ inexpensive.blog
 lowly.boats
 merciful.beauty
 necklace.christmas
+propagation.beauty
 ragged.biz
 scattered.cfd
 unaware.store
@@ -14455,8 +14460,12 @@ volatile.baby
 cdn.absorbing.cam
 cdn.acidic.best
 cdn.caribean.live
+cdn.circulates.lol
 cdn.deep.christmas
 cdn.depart.buzz
+cdn.dispead.shop
+cdn.ducational.pics
+cdn.eduactional.xyz
 cdn.emergency.autos
 cdn.federation.boats
 cdn.healthy.christmas
@@ -14464,6 +14473,7 @@ cdn.inexpensive.blog
 cdn.lowly.boats
 cdn.merciful.beauty
 cdn.necklace.christmas
+cdn.propagation.beauty
 cdn.ragged.biz
 cdn.scattered.cfd
 cdn.unaware.store
