@@ -5970,6 +5970,94 @@ patilcomputers.com/wp-content/themes/shopic-child/css.php
 shop.care.pistoia.it/wp-content/languages/css.php
 thepioneerbank.com/wp-content/themes/twentytwentytwo/css.php
 
+# Reference: https://www.linkedin.com/posts/aaronmeese_linkedin-is-allowing-some-very-sktetchy-stuff-activity-7304884331821359105-fwtL
+# Reference: https://app.validin.com/detail?find=91.204.209.201&type=ip4&ref_id=46f254742b1#tab=resolutions
+# Reference: https://www.virustotal.com/gui/file/3b0474d63633b76cbdcd6e53eac5e87bca46c736e3e94b2d6221b7a662ea97ac/detection
+# Reference: https://www.virustotal.com/gui/file/4fc89c5a2d28d6c02ed9ce131ed78586744723c8a9144ba3b601029b510d25d9/detection
+# Reference: https://www.virustotal.com/gui/file/6eeaed83e4f490be631b435cd8a34b33996f562ce7cf874821c5c8a51500948b/detection
+# Reference: https://www.virustotal.com/gui/file/aae9dbe9005be632a2e2a95e13a83652155946c95f66e7c00e24641023845956/detection
+# Reference: https://www.virustotal.com/gui/file/d5868c7d17c071f8e3f9b1fcc6d349c6c7d2b9c9b71a53f8a8a34bbdb4ca66e6/detection
+# Reference: https://www.virustotal.com/gui/file/f13b5c7d4c6882f41eea64c5738aeaa7b5d9e61421c9c3727c0a04a969886115/detection
+
+activeejobs.xyz
+activejobs.xyz
+ahadjobs.us
+applycareer.us
+applyjobus.us
+bestactivejobs.us
+bestjobs4u.site
+bestjobshere.xyz
+career.ahadjobs.us
+career.applyjobus.us
+career.enoovia.us
+career.findusjobs.us
+career.indeeo.us
+career.jobdewa.site
+career.jobnotify.us
+career.jobsigma.site
+career.mycareers.us
+career.open2work.site
+career2guru.site
+careeractive.xyz
+careeractives.xyz
+careeradvisory.site
+careerguru.us
+careers.jobmarketing.site
+careersigma.site
+careersstart.site
+desirejobs.xyz
+findajobs.us
+findopenwork.site
+findusjobs.us
+fromusjobs.us
+hello1jobs.xyz
+hellomyjob.us
+indeedcareer.site
+itactivejobs.xyz
+job.careerguru.us
+job.opencareer.us
+jobadvisory.us
+jobapplyhere.site
+jobbulider.us
+jobcareerss.us
+jobdewa.site
+jobmarketing.site
+jobmaster.site
+jobnotify.us
+jobs.applycareer.us
+jobs.career2guru.site
+jobs.careeradvisory.site
+jobs.careersigma.site
+jobs.findopenwork.site
+jobs.indeedcareer.site
+jobs.jobmaster.site
+jobs.nationaljob.us
+jobs.opencareer.site
+jobs.prwisha.us
+jobs.rozee.site
+jobs4you.site
+jobseekers.site
+jobshub.us
+jobsigma.site
+jobsmood.xyz
+mybestjob.xyz
+mycareers.us
+myfirsttjob.xyz
+nationaljob.us
+newcompanyjobs.us
+newyearjobs.us
+open2work.site
+open2work.us
+opencareer.site
+opencareer.us
+openforjob.us
+openforjob.xyz
+papularjobs.xyz
+usjobcenter.us
+usprivatejobs.site
+workfornew.xyz
+workfromhouse.xyz
+
 # Reference: https://www.wordfence.com/blog/2024/06/supply-chain-attack-on-wordpress-org-plugins-leads-to-5-maliciously-compromised-wordpress-plugins/
 # Reference: https://www.virustotal.com/gui/file/6c5ee295cec9a1f4518d2f9c12d53251c7b53a1cff3e9d3bd2d01ad03b99df81/detection
 # Reference: https://www.virustotal.com/gui/file/28e145ad13289cbd819ce730f673b27c8b9d49c5488a3796de24eb0f775353c6/detection
