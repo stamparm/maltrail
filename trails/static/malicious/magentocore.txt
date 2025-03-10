@@ -12926,6 +12926,7 @@ openmonitor.rest
 protostat.lat
 quicktag.wiki
 realstat.today
+statmasters.shop
 tagsanalytics.shop
 tagscart.shop
 tagsmanager.shop
