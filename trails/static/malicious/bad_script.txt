@@ -8673,6 +8673,10 @@ gatetodisplaycontent.com
 /getdatapassmain.php
 /getdatapassqiang.php
 
+# Reference: https://x.com/JAMESWT_MHT/status/1899020613701742638
+
+/50MJLUM311KPUPO3/index.php
+
 # Generic
 
 /5c0ca79.php
