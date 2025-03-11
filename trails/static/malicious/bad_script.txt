@@ -8677,6 +8677,13 @@ gatetodisplaycontent.com
 
 /50MJLUM311KPUPO3/index.php
 
+# Reference: https://x.com/CreateFileInt_/status/1899088994090000727
+
+/api/rastreamento.php?cpf=
+/liberacao/rastreamento.php?cpf=
+/v2/rastreamento.php?cpf=
+/rastreamento.php?cpf=
+
 # Generic
 
 /5c0ca79.php
