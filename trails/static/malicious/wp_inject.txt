@@ -6473,9 +6473,11 @@ gll.instantcontentflow.com
 swiftstreamhub.com
 cloud.swiftstreamhub.com
 
+# Reference: https://x.com/unmaskparasites/status/1899528917519884550
 # Reference: https://www.virustotal.com/gui/file/02737ffc9a2c33741945a5e5fc832913d14c2f418925da298f2a7df03092a98d/detection
 
 api-cdn.icu
+wp-cdn.top
 
 # Reference: https://www.virustotal.com/gui/file/0d0feed4ce01f8f94624cd4f02e8871468a54a22de83fc8d448978a5c3e2e67f/detection
 # Reference: https://www.virustotal.com/gui/file/c45eafcd560a0351e53b1cfcacc2dd8680d886082b7b637090e49149c7ee7197/detection
