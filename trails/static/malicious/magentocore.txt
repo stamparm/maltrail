@@ -14856,6 +14856,17 @@ cdn.footstones.pics
 cdn.reburials.mom
 cdn.wilderness.autos
 
+# Reference: https://x.com/sdcyberresearch/status/1899439149242896851
+
+cla-cdn.com
+clarms.icu
+elem.ltd
+elstat.icu
+estat.icu
+zoho-cdn.com
+zoho-net.com
+mail.elem.ltd
+
 # Generic
 
 /assets/lfg.js
