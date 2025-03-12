@@ -5553,3 +5553,9 @@
 156.228.79.0/24,drei-k-tech-gmbh
 156.228.80.0/24,drei-k-tech-gmbh
 156.228.81.0/24,drei-k-tech-gmbh
+
+# AS214940
+# Reference: https://ipinfo.io/AS214940
+
+195.211.191.0/24,kpronet
+45.144.212.0/24,kpronet
