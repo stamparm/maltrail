@@ -14868,6 +14868,10 @@ zoho-cdn.com
 zoho-net.com
 mail.elem.ltd
 
+# Reference: https://x.com/sdcyberresearch/status/1899823674766565513
+
+grev.io
+
 # Generic
 
 /assets/lfg.js
