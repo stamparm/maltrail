@@ -12367,6 +12367,7 @@ statistics-for-you.com
 statistics-renew.com
 wellfacing.com
 yourmarketingpay.com
+waf-tg.2gc.workers.dev
 
 # Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24
 
