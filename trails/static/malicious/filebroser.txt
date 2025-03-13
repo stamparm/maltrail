@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2025 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://hunt.io/blog/jspspy-filebroser-custom-webshell-management
+# Reference: https://app.validin.com/detail?type=raw&find=%E7%99%BB%E5%BD%95+-+filebroser#tab=host_pairs (# 2025-03-13)
+
+http://120.53.235.154
+http://52.196.227.253
+http://54.238.205.140
+122.152.235.81:8001
+124.235.147.90:8001
+183.196.224.237:8001
+211.155.102.49:8001
+60.25.122.74:8000
+74.48.175.44:8001
