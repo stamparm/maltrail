@@ -6482,6 +6482,7 @@ apipanel1x.xyz
 iogamesl.xyz
 schemapi.com
 wp-cdn.top
+cdn.schemapi.com
 mail.apipanel1x.xyz
 mail.wp-cdn.top
 
