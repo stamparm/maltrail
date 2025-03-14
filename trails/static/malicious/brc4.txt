@@ -1067,3 +1067,18 @@ http://54.95.38.246
 # Reference: https://x.com/skocherhan/status/1883656572305563894
 
 192.3.173.102:8443
+
+# Reference: https://x.com/malwrhunterteam/status/1900533940382740711
+# Reference: https://www.virustotal.com/gui/file/83859acdf4ac22927fa88f715666653807501db6f1865a3657599b4c5d130bb2/detection
+# Reference: https://www.virustotal.com/gui/file/a8a494eafd9b63902a549c9d239d1011fe9f636a6822c331d7d6543b35d2f60c/detection
+# Reference: https://www.virustotal.com/gui/file/ec3ca0877e599ae9c40cbcec51a9a4718114e33d9e2d9d8c72f5f24d7cebdcbf/detection
+
+108.181.182.132:3355
+108.181.182.132:4994
+108.181.182.132:7999
+194.76.227.108:3355
+194.76.227.108:4994
+194.76.227.108:7999
+dimidroli.com
+domskufidona.com
+streameqst.live
