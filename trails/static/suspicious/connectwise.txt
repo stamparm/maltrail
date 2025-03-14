@@ -806,3 +806,9 @@ yxhelp.top
 gbhelp.top
 ydhelp.site
 polarof.ydhelp.site
+
+# Reference: https://www.virustotal.com/gui/file/362d7232931c5b73ffa95a44e8d54ce00c8b34957d2a46a3be7c0bb1fbc3cc0c/detection
+
+5.63.19.239:8880
+ohhelp.top
+mohivre.ohhelp.top
