@@ -545,7 +545,15 @@ server-nix76efd524-relay.screenconnect.com
 
 # Reference: https://x.com/s1dhy/status/1900298352664678907
 # Reference: https://app.validin.com/detail?find=The%20Watch%20Store%20-%20Best%20products%20online&type=raw&ref_id=dbd2fb7a1a4#tab=host_pairs (# 2025-03-14)
+# Reference: https://www.virustotal.com/gui/file/085a9a6aa1b864d2d03ddb0522276f379443184f79cd6ad1826f84c667d372c8/detection
+# Reference: https://www.virustotal.com/gui/file/07b13ab9ff9acbe5505e4661b37364f22d4ab43912963f11c4d2298c5b6c08cd/detection
+# Reference: https://www.virustotal.com/gui/file/12deebf5567ca62a3cd39c4fdf21cc15afbe7276319d0d9cba8c1b2ceb4469c3/detection
+# Reference: https://www.virustotal.com/gui/file/0070551c7d33535743e94b04185c0e104a8160d149ae19af29167d8841291c32/detection
 
+176.123.1.201:8041
+37.221.65.128:8041
+91.208.197.151:8041
+91.208.184.187:8041
 1021.scpanel.org
 acc.jybhelp.top
 acc.mwuhelp.top
@@ -553,6 +561,7 @@ acc.oqhelp.top
 acc.umehelp.top
 archelokipotle.icu
 atchelokipotle.icu
+awntsi960.stream
 backsessions.loglink9.site
 bk92auths830.loglink9.site
 bnhelp.top
@@ -665,6 +674,9 @@ m.tvwhelp.top
 m.xvbhelp.top
 m.yxhelp.top
 marnobish.cyou
+mc1back.site
+molatoriit.icu
+molatoriline.cyou
 molartos.gajrokerist.cyou
 mwuhelp.top
 nexhelp.top
@@ -739,6 +751,7 @@ turivor.edmaduliton.icu
 tvlhelp.top
 tvwhelp.top
 umehelp.top
+wkback.giize.com
 wchelp.top
 web.bxhelp.top
 web.bxihelp.top
