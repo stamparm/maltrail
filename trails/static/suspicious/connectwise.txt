@@ -799,3 +799,10 @@ wk3699.loglink9.site
 wk3699.marnobish.cyou
 xvbhelp.top
 yxhelp.top
+
+# Reference: https://www.virustotal.com/gui/file/21bfbf0cb3f163bc6437bb4632890d66bea081b84a6e789a86f8d25739b48fe9/detection
+
+182.86.133:8880
+gbhelp.top
+ydhelp.site
+polarof.ydhelp.site
