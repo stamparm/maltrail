@@ -6503,3 +6503,7 @@ spelldeterrent.com
 # Reference: https://www.virustotal.com/gui/file/1339a8867e8f04e12cc7543c548a33ac7b94dcba591e2da8b9ae2df24687c99e/detection
 
 107.189.29.12:60001
+
+# Reference: https://www.virustotal.com/gui/domain/profitablecpmrate.com/detection
+
+profitablecpmrate.com
