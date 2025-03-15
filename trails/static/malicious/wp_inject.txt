@@ -6507,3 +6507,7 @@ spelldeterrent.com
 # Reference: https://www.virustotal.com/gui/domain/profitablecpmrate.com/detection
 
 profitablecpmrate.com
+
+# Reference: https://www.virustotal.com/gui/domain/highperformanceformat.com/relations
+
+highperformanceformat.com
