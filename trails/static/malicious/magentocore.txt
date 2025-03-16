@@ -14276,6 +14276,7 @@ metricstoolspro.com
 metricstreamline.com
 pageinsightsmanager.com
 siteanalyticspro.com
+siteinsightspro.com
 sitestattracker.com
 sitetrackerpro.com
 statgeoanalytics.com
@@ -14306,6 +14307,7 @@ api.analyticsmanager.net
 api.datalinkmanager.com
 api.dataoptimizationhub.com
 api.pageinsightsmanager.com
+api.siteinsightspro.com
 api.tracktagcenter.com
 api.tracktagmanager.com
 api.userengagementtracker.com
