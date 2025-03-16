@@ -1511,6 +1511,10 @@ gov-tax.icu
 solgiftx.com
 irs.fax.gov-tax.icu
 
+# Reference: https://x.com/wbmmfq/status/1900942989792604427
+
+verifycation.mooo.com
+
 # Generic
 
 /a3A7qLVn/
