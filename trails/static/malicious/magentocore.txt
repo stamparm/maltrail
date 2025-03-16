@@ -14087,8 +14087,10 @@ jsmanifestgls.com
 
 # Reference: https://app.validin.com/detail?find=Attention%20Notice&type=raw#tab=host_pairs (# 2025-01-19)
 
+bslnfo.com
 dninsignht.com
 dnmep.com
+dsgnbee.com
 dsgncore.com
 dsgnjet.com
 dsgnnest.com
@@ -14100,8 +14102,12 @@ rinfohub.lol
 salemape.com
 saleshifft.com
 saletrendio.com
+snslyticus.com
+starhegc.com
+statihive.com
 statspoot.com
 statvibbe.com
+volemson.com
 apis.exoticsovokefizzier.lol
 clients1.exoticsovokefizzier.lol
 clients6.exoticsovokefizzier.lol
