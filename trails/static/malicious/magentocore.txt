@@ -14519,6 +14519,9 @@ cdn.volatile.baby
 
 # Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24#tab=resolutions (# 2025-02-26)
 
+africasester.click
+bagarthe.pics
+cefo.lol
 concentration.autos
 courage.boats
 feminist.baby
@@ -14528,9 +14531,14 @@ getvisi.store
 gradient.christmas
 kegosei.sbs
 lily.coupons
+rabiei.live
 reinforce.coupons
 sekleteo.online
+slapps.store
 uutop.shop
+cdn.africasester.click
+cdn.bagarthe.pics
+cdn.cefo.lol
 cdn.concentration.autos
 cdn.courage.boats
 cdn.feminist.baby
@@ -14540,8 +14548,10 @@ cdn.getvisi.store
 cdn.gradient.christmas
 cdn.kegosei.sbs
 cdn.lily.coupons
+cdn.rabiei.live
 cdn.reinforce.coupons
 cdn.sekleteo.online
+cdn.slapps.store
 cdn.uutop.shop
 
 # Reference: https://x.com/sdcyberresearch/status/1895166209815126454
