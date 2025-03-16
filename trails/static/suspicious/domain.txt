@@ -16,6 +16,10 @@
 
 .sbs
 
+# Reference: https://github.com/search?q=repo%3Astamparm%2Fmaltrail+%22.xin%22&type=code
+
+.xin
+
 # Reference: http://www.freenom.com/en/index.html
 
 .cf
