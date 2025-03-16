@@ -14918,6 +14918,10 @@ mail.elem.ltd
 
 grev.io
 
+# Reference: https://x.com/threatcat_ch/status/1901290247876452409
+
+keritysuc.xyz
+
 # Generic
 
 /assets/lfg.js
