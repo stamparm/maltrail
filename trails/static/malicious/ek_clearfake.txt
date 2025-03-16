@@ -1515,6 +1515,10 @@ irs.fax.gov-tax.icu
 
 verifycation.mooo.com
 
+# Reference: https://x.com/JAMESWT_MHT/status/1901147192053596414
+
+booking-sup-march4154.com
+
 # Generic
 
 /a3A7qLVn/
