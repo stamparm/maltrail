@@ -14449,6 +14449,7 @@ acrylons.pics
 biscuit.pics
 blackcurrants.online
 caribean.live
+charli.beauty
 circulates.lol
 croissant.mom
 deep.christmas
@@ -14467,10 +14468,13 @@ merciful.beauty
 mobiancy.xyz
 necklace.christmas
 oranger.pics
+phila.world
 propagation.beauty
+raadiot.world
 ragged.biz
 ribber.xyz
 scattered.cfd
+tarin.homes
 unaware.store
 unkempt.art
 unsightly.autos
@@ -14481,6 +14485,7 @@ cdn.acrylons.pics
 cdn.biscuit.pics
 cdn.blackcurrants.online
 cdn.caribean.live
+cdn.charli.beauty
 cdn.circulates.lol
 cdn.croissant.mom
 cdn.deep.christmas
@@ -14499,10 +14504,13 @@ cdn.merciful.beauty
 cdn.mobiancy.xyz
 cdn.necklace.christmas
 cdn.oranger.pics
+cdn.phila.world
 cdn.propagation.beauty
+cdn.raadiot.world
 cdn.ragged.biz
 cdn.ribber.xyz
 cdn.scattered.cfd
+cdn.tarin.homes
 cdn.unaware.store
 cdn.unkempt.ar
 cdn.unkempt.art
