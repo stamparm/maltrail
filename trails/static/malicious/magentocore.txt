@@ -14870,7 +14870,7 @@ live-info.net
 navigo-carte.com
 tvilogete.tech
 
-# Refeence: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2025-03-07)
+# Reference: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2025-03-07)
 
 debt.ink
 eye.coupons
