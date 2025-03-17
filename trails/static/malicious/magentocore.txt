@@ -14925,9 +14925,21 @@ grev.io
 keritysuc.xyz
 
 # Reference: https://x.com/sdcyberresearch/status/1901623816654110729
+# Reference: https://app.validin.com/detail?find=45.67.231.28&type=ip4&ref_id=b696df26cb1#tab=resolutions
 
 googlesindicate.com
+bacbook.online
+bigbrotherrr.fun
+hinlen.shop
+kiberr.online
+merjen.online
+pasba.online
+selbi.online
 strpe.icu
+host.hinlen.shop
+host.pasba.online
+host.selbi.online
+mail.strpe.icu
 
 # Generic
 
