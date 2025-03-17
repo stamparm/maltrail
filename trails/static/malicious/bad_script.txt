@@ -8684,6 +8684,11 @@ gatetodisplaycontent.com
 /v2/rastreamento.php?cpf=
 /rastreamento.php?cpf=
 
+# Reference: https://x.com/salmanvsf/status/1901517210260062360
+# Reference: https://www.virustotal.com/gui/file/d4e60f44103331275740326b4e6016a5f9f84ee2cfb0c2149f9b90530b21e6ef/detection
+
+/Win1234.js
+
 # Generic
 
 /5c0ca79.php
