@@ -14941,6 +14941,19 @@ host.pasba.online
 host.selbi.online
 mail.strpe.icu
 
+# Reference: https://x.com/sdcyberresearch/status/1858833533663383856
+# Reference: https://x.com/sdcyberresearch/status/1901660073451000062
+
+ads-check-v5g3dyhvdq-uc.a.run.app
+ads-checking-v5g3dyhvdq-uc.a.run.app
+ads-collect-v5g3dyhvdq-uc.a.run.app
+ads-collecting-v5g3dyhvdq-uc.a.run.app
+ads-data-verify-v5g3dyhvdq-uc.a.run.app
+ads-google-verification-v5g3dyhvdq-uc.a.run.app
+ads-suggest-v5g3dyhvdq-uc.a.run.app
+ads-suggesting-v5g3dyhvdq-uc.a.run.app
+ads-v5g3dyhvdq-uc.a.run.app
+
 # Generic
 
 /assets/lfg.js
