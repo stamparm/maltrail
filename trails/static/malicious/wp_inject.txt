@@ -709,6 +709,7 @@ trstat.trackstatisticsss.com
 # Reference: https://twitter.com/unmaskparasites/status/1235190676838633477
 
 collectfasttracks.com
+dest.collectfasttracks.com
 
 # Reference: https://twitter.com/felixaime/status/1278600095538262017 (# WPScriptInjection)
 # Reference: https://twitter.com/felixaime/status/1278602674401955846
@@ -1478,6 +1479,7 @@ denzzzelwashington.com
 destinyfernandi.com
 dexterfortune.com
 donaldbackinsky.com
+fast.destinyfernandi.com
 followmyfirst1.com
 generallocationgo.com
 giantttraffic.com
@@ -1502,6 +1504,7 @@ redlabellondon.com
 redrelaxfollow.com
 requestfor4.com
 resolutiondestin.com
+scripts.trasnaltemyrecords.com
 slow.destinyfernandi.com
 speakwithjohns.com
 specialthankselsa.com
@@ -6511,3 +6514,36 @@ profitablecpmrate.com
 # Reference: https://www.virustotal.com/gui/domain/highperformanceformat.com/relations
 
 highperformanceformat.com
+
+# Reference: https://www.godaddy.com/resources/news/dollyway-world-domination
+# Reference: https://www.virustotal.com/gui/file/118a9b810110712beb8ccaf88619fd5971f95fd37d0d920e2db6163bc57438c2/detection
+
+blackentertainments.com
+blueeyeswebsite.com
+cdnwebsiteforyou.biz
+deliverygoodstrategy.com
+dontstopthismusics.com
+2fdrop.dontstopthismusics.com
+analytics.cdnwebsiteforyou.biz
+comdrop.dontstopthismusics.com
+cyoudrop.dontstopthismusics.com
+drop.blackentertainments.com
+drop.dontstopthismusics.com
+for.dontstopthismusics.com
+m.blackentertainments.com
+survey.blackentertainments.com
+
+# Reference: https://www.virustotal.com/gui/file/46809acf183bde3b94d3d2fc9e86c2848e68b4626f2c233920e673de041aed39/detection
+# Reference: https://www.virustotal.com/gui/file/53f9aaa6f757a90d56032f29e2a300922fd3f28911f8c18da087f8b7989eb0d3/detection
+# Reference: https://www.virustotal.com/gui/file/19b7dd9117c51bc7d2998e3b37daa0d411e083c4345f5a052e59c75bd692b5df/detection
+
+deliverynotforme.best
+developfirstline.com
+togetherforwine.com
+0.deliverynotforme.best
+0.togetherforwine.com
+1.deliverynotforme.best
+2.deliverynotforme.best
+3.deliverynotforme.best
+8.togetherforwine.com
+load.developfirstline.com
