@@ -14924,6 +14924,11 @@ grev.io
 
 keritysuc.xyz
 
+# Reference: https://x.com/sdcyberresearch/status/1901623816654110729
+
+googlesindicate.com
+strpe.icu
+
 # Generic
 
 /assets/lfg.js
