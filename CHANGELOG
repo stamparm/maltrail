@@ -14,8 +14,15 @@
 
 
 
-- Version 0.78 -> 0.79 (Upcoming release)
+- Version 0.79 -> 0.80 (Upcoming release)
 
+[!] Fix the bug of using a custom path configuration file (Issue #19304)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 0.78 -> 0.79 (01 Mar 2025)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 - Version 0.77 -> 0.78 (01 Feb 2025)
