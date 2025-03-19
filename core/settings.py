@@ -158,28 +158,8 @@ def _get_total_physmem():
 
     try:
         if IS_WIN:
-            import ctypes
-
-            kernel32 = ctypes.windll.kernel32
-            c_ulong = ctypes.c_ulong
-
-            class MEMORYSTATUS(ctypes.Structure):
-                _fields_ = [
-                    ('dwLength', c_ulong),
-                    ('dwMemoryLoad', c_ulong),
-                    ('dwTotalPhys', c_ulong),
-                    ('dwAvailPhys', c_ulong),
-                    ('dwTotalPageFile', c_ulong),
-                    ('dwAvailPageFile', c_ulong),
-                    ('dwTotalVirtual', c_ulong),
-                    ('dwAvailVirtual', c_ulong)
-                ]
-
-            memory_status = MEMORYSTATUS()
-            memory_status.dwLength = ctypes.sizeof(MEMORYSTATUS)
-            kernel32.GlobalMemoryStatus(ctypes.byref(memory_status))
-
-            retval = memory_status.dwTotalPhys
+            output = subprocess.check_output(['wmic', 'computersystem', 'get', 'TotalPhysicalMemory'], universal_newlines=True)
+            retval = int(output.strip().splitlines()[-1].strip())
         else:
             retval = 1024 * int(re.search(r"(?i)MemTotal:\s+(\d+)\skB", open("/proc/meminfo").read()).group(1))
     except:
