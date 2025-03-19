@@ -161,25 +161,25 @@ def _get_total_physmem():
             import ctypes
 
             kernel32 = ctypes.windll.kernel32
-            c_ulong = ctypes.c_ulong
 
-            class MEMORYSTATUS(ctypes.Structure):
+            class MEMORYSTATUSEX(ctypes.Structure):
                 _fields_ = [
-                    ('dwLength', c_ulong),
-                    ('dwMemoryLoad', c_ulong),
-                    ('dwTotalPhys', c_ulong),
-                    ('dwAvailPhys', c_ulong),
-                    ('dwTotalPageFile', c_ulong),
-                    ('dwAvailPageFile', c_ulong),
-                    ('dwTotalVirtual', c_ulong),
-                    ('dwAvailVirtual', c_ulong)
+                    ('dwLength', ctypes.c_ulong),
+                    ('dwMemoryLoad', ctypes.c_ulong),
+                    ('ullTotalPhys', ctypes.c_ulonglong),
+                    ('ullAvailPhys', ctypes.c_ulonglong),
+                    ('ullTotalPageFile', ctypes.c_ulonglong),
+                    ('ullAvailPageFile', ctypes.c_ulonglong),
+                    ('ullTotalVirtual', ctypes.c_ulonglong),
+                    ('ullAvailVirtual', ctypes.c_ulonglong),
+                    ('ullAvailExtendedVirtual', ctypes.c_ulonglong),
                 ]
 
-            memory_status = MEMORYSTATUS()
-            memory_status.dwLength = ctypes.sizeof(MEMORYSTATUS)
-            kernel32.GlobalMemoryStatus(ctypes.byref(memory_status))
+            memory_status_ex = MEMORYSTATUSEX()
+            memory_status_ex.dwLength = ctypes.sizeof(MEMORYSTATUSEX)
+            kernel32.GlobalMemoryStatusEx(ctypes.byref(memory_status_ex))
 
-            retval = memory_status.dwTotalPhys
+            retval = memory_status_ex.ullTotalPhys
         else:
             retval = 1024 * int(re.search(r"(?i)MemTotal:\s+(\d+)\skB", open("/proc/meminfo").read()).group(1))
     except:
