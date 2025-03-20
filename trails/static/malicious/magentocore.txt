@@ -14966,6 +14966,12 @@ ads-suggest-v5g3dyhvdq-uc.a.run.app
 ads-suggesting-v5g3dyhvdq-uc.a.run.app
 ads-v5g3dyhvdq-uc.a.run.app
 
+# Reference: https://x.com/sdcyberresearch/status/1902756680330346911
+
+fbanalyt.com
+seostat.ltd
+trustplots.com
+
 # Generic
 
 /assets/lfg.js
