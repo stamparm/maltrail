@@ -1519,6 +1519,8 @@ verifycation.mooo.com
 
 booking-sup-march4154.com
 
+# Reference: https://app.validin.com/detail?find=Verify%20Your%20Request&type=raw&ref_id=13dfc70e9c5#tab=host_pairs (# 2025-03-20)
+
 # Generic
 
 /a3A7qLVn/
