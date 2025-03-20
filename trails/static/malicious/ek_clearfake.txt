@@ -1676,6 +1676,53 @@ wallet-sollare.com
 wio-business.com
 wio-io.site
 
+# Reference: https://blog.sekoia.io/clearfakes-new-widespread-variant-increased-web3-exploitation-for-malware-delivery/
+
+http://80.64.30.238
+http://83.217.208.130
+1a-a1.pages.dev
+ads.green-pickle-jo.shop
+b1-c1-k8.pages.dev
+bsdfg-zmp-q-n.shop
+bweqlkjr.shop
+cleaning-devices-k.pages.dev
+cleaning-room-device.shop
+design-x.xyz
+disable-data-collect-ai.pages.dev
+discover-travel-agency.pro
+ert67-o9.pages.dev
+f003.backblazeb2.com
+fresh-orange-juice.pages.dev
+gdfg-23rwe.pages.dev
+ghost-name.pages.dev
+hostme.pages.dev
+human-verify-7u.pages.dev
+hur.bweqlkjr.shop
+iuksdfb-f.shop
+macos-browser-update-5i.pages.dev
+macos-browser-update-9n.pages.dev
+microsoft-dns-reload-1r.pages.dev
+mnjk-jk.bsdfg-zmp-q-n.shop
+nbhg-v.iuksdfb-f.shop
+niopg.pages.dev
+note1.nz7bn.pro
+nz7bn.pro
+recaptcha-verify-1r.pages.dev
+recaptcha-verify-2e.pages.dev
+recaptcha-verify-4h.pro
+recaptcha-verify-9m.pages.dev
+sandbox.yunqof.shop
+sdfwefwg.pages.dev
+sha-11x.pages.dev
+start.cleaning-room-device.shop
+tour-agency-media.pages.dev
+travel.image-gene-saver.it.com
+tumbl.design-x.xyz
+yob.yrwebsdf.shop
+you-insk-bad.pages.dev
+yrwebsdf.shop
+yunqof.shop
+
 # Generic
 
 /a3A7qLVn/
