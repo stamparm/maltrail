@@ -12931,6 +12931,7 @@ statmasters.shop
 tagsanalytics.shop
 tagscart.shop
 tagsmanager.shop
+tagspot.store
 ultrabit.shop
 ultrabyte.shop
 wikistat.wiki
