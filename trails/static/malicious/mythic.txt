@@ -2907,3 +2907,11 @@ wxszjwl.com
 # Reference: https://www.virustotal.com/gui/file/ecbfaead6fd3303a6c26d78cedc858b07504d0c8a11b5587024032168eb5330f/detection
 
 portalaccesowifi.cloud
+
+# Reference: https://x.com/malwrhunterteam/status/1903052269387456845
+# Reference: https://www.virustotal.com/gui/file/6a67b94630c1d49afb8af416ae8498f0472a5f394ea4757392efa909d913eff0/detection
+
+http://134.199.209.199
+http://142.93.165.203
+http://142.93.224.147
+http://161.35.85.95
