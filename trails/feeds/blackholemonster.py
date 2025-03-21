@@ -13,7 +13,7 @@ __reference__ = "ip.blackhole.monster"
 
 def fetch():
     retval = {}
-    content = retrieve_content(__url__)
+    content = retrieve_content(__url__, headers={"User-agent": NAME}) #Fix garbled return data
 
     for line in content.split('\n'):
         line = line.strip()
