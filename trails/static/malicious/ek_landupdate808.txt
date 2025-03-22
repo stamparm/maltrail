@@ -147,12 +147,41 @@ usbkits.com
 
 # Reference: https://app.validin.com/detail?ipv4_filter=AS+399629&header_hash_filter=f0007e9e8bcc49e6b5ea&type=hash&find=4cb2c207d5a9bb582aa3ddd06786d1afa0d8bada#tab=host_pairs (# 2025-01-09)
 
+agretex.com
+akerusa.com
+akmcons.com
 bapalal.com
+cetainc.com
+comtekinc.com
+cyberetc.com
+divexpo.com
 ecrut.com
+harmarpets.com
+iconcss.com
+isogun.com
+macorbur.com
+mallternet.com
+maxcgi.com
 mirugby.com
+netsolut.com
+onlinelas.com
+opteme.com
+paulsss.com
+ppdpharmaco.com
+prpages.com
 pursyst.com
 raysre.com
 rc1g3as.top
+remaxnoc.com
+rimstarintl.com
+samaxwell.com
+srpkoa.com
+sunotels.com
+telback.com
+unclezekes.com
+vononline.com
+willchar.com
+wqenpene.com
 xaides.com
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-09-v10834/2338
