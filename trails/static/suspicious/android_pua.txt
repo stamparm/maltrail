@@ -1061,3 +1061,9 @@ prep.preprestamoshol.com
 preprestamoshol.com
 su.mykreditandfear.com
 tlon.pegetloanability.com
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-03-19-IOCs-for-Chinese-Language-trojanized-installers.txt
+# Reference: https://www.virustotal.com/gui/file/2232612b09b636698afcdb995b822adf21c34fb8979dd63f8d01f0d038acb454/detection
+
+http://1.192.136.196
+http://1.192.136.207
