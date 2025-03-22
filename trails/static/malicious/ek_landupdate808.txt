@@ -177,3 +177,9 @@ opticna.com
 
 indbk.com
 sesraw.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-20-v10887/2545
+
+computertecs.com
+janhugo.com
+vfclan.com
