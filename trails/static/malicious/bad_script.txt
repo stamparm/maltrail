@@ -8704,6 +8704,10 @@ gatetodisplaycontent.com
 /xenn.ps1
 /YG.ps1
 
+# Reference: https://x.com/ShanHolo/status/1902659366051835914
+
+/bestexperienceigotfromtheworldfromthegood.hta
+
 # Generic
 
 /5c0ca79.php
