@@ -8708,6 +8708,11 @@ gatetodisplaycontent.com
 
 /bestexperienceigotfromtheworldfromthegood.hta
 
+# Reference: https://x.com/ShanHolo/status/1902639209153769953
+# Reference: https://www.virustotal.com/gui/file/483b97a047188b7140cf3075506576df8b3300ffa13049405be934d5084fddda/detection
+
+/givenmebestthingsentiretimetogivemebestof.hta
+
 # Generic
 
 /5c0ca79.php
