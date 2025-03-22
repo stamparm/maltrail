@@ -3690,3 +3690,8 @@ silvaharo.com
 # Reference: https://www.virustotal.com/gui/domain/or-g.net/relations
 
 or-g.net
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-03-v10829/2323
+# Reference: https://www.virustotal.com/gui/domain/excuse.ro/relations
+
+excuse.ro
