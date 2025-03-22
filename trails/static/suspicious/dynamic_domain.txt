@@ -3676,10 +3676,17 @@ leteletelelele.com
 
 2vanx.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-20-v10887/2545
 # Reference: https://www.virustotal.com/gui/domain/schrottspiele.de/relations
 
 schrottspiele.de
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-20-v10887/2545
 # Reference: https://www.virustotal.com/gui/domain/silvaharo.com/relations
 
 silvaharo.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-20-v10887/2545
+# Reference: https://www.virustotal.com/gui/domain/or-g.net/relations
+
+or-g.net
