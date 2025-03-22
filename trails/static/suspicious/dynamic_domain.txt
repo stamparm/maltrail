@@ -3675,3 +3675,7 @@ leteletelelele.com
 # Reference: https://www.virustotal.com/gui/domain/2vanx.com/relations
 
 2vanx.com
+
+# Reference: https://www.virustotal.com/gui/domain/schrottspiele.de/relations
+
+schrottspiele.de
