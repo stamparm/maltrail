@@ -3679,3 +3679,7 @@ leteletelelele.com
 # Reference: https://www.virustotal.com/gui/domain/schrottspiele.de/relations
 
 schrottspiele.de
+
+# Reference: https://www.virustotal.com/gui/domain/silvaharo.com/relations
+
+silvaharo.com
