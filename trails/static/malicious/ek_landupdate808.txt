@@ -247,3 +247,7 @@ gardenworksproject.org/wp-admin/maint/nALIELIz.txt
 gardenworksproject.org/wp-admin/maint/QRlqoMji.txt
 loopbackanalytics.com/wp-includes/gdsayy.php
 peritiemilia.com/wp-includes/wasd_wp.php
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-14-v10860/2442
+
+eecsys.com
