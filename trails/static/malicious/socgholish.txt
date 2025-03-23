@@ -4764,6 +4764,11 @@ ceo.cowholesaling.com
 
 hub.unlimitedcashflowevent.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-10-v10856/2427
+# Reference: https://www.virustotal.com/gui/file/e776d69aaab295189dcd2d8724503deeb929539debca30be515429fd4454d3ae/detection
+
+preview.jpainting.ca
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
