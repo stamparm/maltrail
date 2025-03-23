@@ -3730,3 +3730,8 @@ float-zone.com
 # Reference: https://www.virustotal.com/gui/domain/heronquays.com/relations
 
 heronquays.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-10-v10856/2427
+# Reference: https://www.virustotal.com/gui/domain/ultrapanel.us/relations
+
+ultrapanel.us
