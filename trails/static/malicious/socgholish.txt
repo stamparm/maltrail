@@ -4745,6 +4745,11 @@ btctrading.crestlinesolutions.work
 
 newsite.iapmd.org
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-05-v10853/2419
+# Reference: https://www.virustotal.com/gui/file/2ebec8c4294a90c4bc066a90299683ee61cde44653b77a074e35d94db2b6cb98/detection
+
+support.myfirstdealplaybook.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
