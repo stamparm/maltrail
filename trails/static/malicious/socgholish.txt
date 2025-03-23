@@ -4630,6 +4630,53 @@ wdp.zone.ebuilderssource.com
 wvay.zone.ebuilderssource.com
 zycz.zone.ebuilderssource.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-13-v10836/2351
+
+order.buyanemostatonline.com
+aaa.order.buyanemostatonline.com
+bbcv.order.buyanemostatonline.com
+btl.order.buyanemostatonline.com
+ckgag.order.buyanemostatonline.com
+cx.order.buyanemostatonline.com
+cxxhz.order.buyanemostatonline.com
+egqxa.order.buyanemostatonline.com
+envuh.order.buyanemostatonline.com
+gwrwn.order.buyanemostatonline.com
+iajop.order.buyanemostatonline.com
+ibray.order.buyanemostatonline.com
+jzud.order.buyanemostatonline.com
+kol.order.buyanemostatonline.com
+kxwhf.order.buyanemostatonline.com
+mnlvp.order.buyanemostatonline.com
+nalpg.order.buyanemostatonline.com
+niag.order.buyanemostatonline.com
+obdb.order.buyanemostatonline.com
+ogw.order.buyanemostatonline.com
+omu.order.buyanemostatonline.com
+pjop.order.buyanemostatonline.com
+pmiqu.order.buyanemostatonline.com
+qslgh.order.buyanemostatonline.com
+rcx.order.buyanemostatonline.com
+rvua.order.buyanemostatonline.com
+rzhh.order.buyanemostatonline.com
+sip.order.buyanemostatonline.com
+udyqv.order.buyanemostatonline.com
+ulm.order.buyanemostatonline.com
+vpey.order.buyanemostatonline.com
+wamzv.order.buyanemostatonline.com
+wpnci.order.buyanemostatonline.com
+wtcp.order.buyanemostatonline.com
+wvtg.order.buyanemostatonline.com
+wxdu.order.buyanemostatonline.com
+wzse.order.buyanemostatonline.com
+yfbtl.order.buyanemostatonline.com
+ylssf.order.buyanemostatonline.com
+zfw.order.buyanemostatonline.com
+zhh.order.buyanemostatonline.com
+zpu.order.buyanemostatonline.com
+zwxb.order.buyanemostatonline.com
+zxtc.order.buyanemostatonline.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
