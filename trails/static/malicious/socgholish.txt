@@ -4769,6 +4769,11 @@ hub.unlimitedcashflowevent.com
 
 preview.jpainting.ca
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-12-v10858/2435
+# Reference: https://www.virustotal.com/gui/file/fd5a13a9d7f6874a0873b6fdc15e69454fdb2b48b19853c4863d21c6efa368c5/detection
+
+academy.entrepreneurwealthhub.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
