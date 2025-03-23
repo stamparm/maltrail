@@ -3700,3 +3700,8 @@ excuse.ro
 # Reference: https://www.virustotal.com/gui/domain/ultimamilla.cl/relations
 
 ultimamilla.cl
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-20-v10841/2375
+# Reference: https://www.virustotal.com/gui/domain/safira.com.my/relations
+
+safira.com.my
