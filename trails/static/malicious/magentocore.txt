@@ -12924,10 +12924,12 @@ metamanager.shop
 nextai.cam
 openc.shop
 openmonitor.rest
+openstat.cc
 protostat.lat
 quicktag.wiki
 realstat.today
 statmasters.shop
+supertag.info
 tagsanalytics.shop
 tagscart.shop
 tagsmanager.shop
