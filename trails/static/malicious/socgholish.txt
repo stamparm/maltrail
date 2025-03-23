@@ -4677,6 +4677,21 @@ zpu.order.buyanemostatonline.com
 zwxb.order.buyanemostatonline.com
 zxtc.order.buyanemostatonline.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-20-v10841/2375
+
+trial.buyintercomsonline.com
+ctiai.trial.buyintercomsonline.com
+eyi.trial.buyintercomsonline.com
+gcd.trial.buyintercomsonline.com
+hak.trial.buyintercomsonline.com
+huph.trial.buyintercomsonline.com
+kcirl.trial.buyintercomsonline.com
+qzxm.trial.buyintercomsonline.com
+rgtf.trial.buyintercomsonline.com
+uwq.trial.buyintercomsonline.com
+vwi.trial.buyintercomsonline.com
+ybbc.trial.buyintercomsonline.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
