@@ -3715,3 +3715,8 @@ astraltech.org
 # Reference: https://www.virustotal.com/gui/domain/masdiseno.com/relations
 
 masdiseno.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-21-v10842/2377
+# Reference: https://www.virustotal.com/gui/domain/n-et.org/relations
+
+n-et.org
