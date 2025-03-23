@@ -4755,6 +4755,15 @@ support.myfirstdealplaybook.com
 
 ceo.cowholesaling.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-07-v10855/2423
+# Reference: https://www.virustotal.com/gui/file/c8c8f37ee2c561aa834585b6cb8c4b0c24492874041d05d2215abd13a0a4760a/detection
+# Reference: https://www.virustotal.com/gui/file/74ed07bfd0dd7c4200c174d305a79898e6128f2ee4d59f4e2fb87e4844471915/detection
+# Reference: https://www.virustotal.com/gui/file/2c43cd7e1a46220e51ad8393980b35c6b9a745b95207150885d943ee00acf78e/detection
+# Reference: https://www.virustotal.com/gui/file/0dd00aa41d2bd22a0ff2c22c9cc595a8f26f3a5c953747c79636afff20d2d3c9/detection
+# Reference: https://www.virustotal.com/gui/file/071008f97ce8b2578fd384ced6a90dc3bc29fa8e114e2f77b2acf2004f77d027/detection
+
+hub.unlimitedcashflowevent.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
