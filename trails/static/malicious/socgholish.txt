@@ -4732,6 +4732,12 @@ webmail.ebuildingsource.com
 
 cpanel.buyjlindustriesonline.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-03-v10851/2413
+# Reference: https://www.virustotal.com/gui/file/d50b01e26a18bf63288094c34f0e774e37f2bc09ba9e8cfbef81cbf07923ce65/detection
+# Reference: https://www.virustotal.com/gui/file/5dfeee68bb237f318053ccbdb0525b5d3c8d06758a7eda7bea55c807509782f1/detection
+
+btctrading.crestlinesolutions.work
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
