@@ -4606,6 +4606,30 @@ portal.miaariacademy.com
 
 slot.buyaiphoneonline.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-06-v10830/2328
+
+zone.ebuilderssource.com
+aaa.zone.ebuilderssource.com
+awfb.zone.ebuilderssource.com
+aye.zone.ebuilderssource.com
+cyk.zone.ebuilderssource.com
+ddx.zone.ebuilderssource.com
+flyx.zone.ebuilderssource.com
+gkzmk.zone.ebuilderssource.com
+h894.zone.ebuilderssource.com
+htdt.zone.ebuilderssource.com
+hyj.zone.ebuilderssource.com
+mer.zone.ebuilderssource.com
+pfu.zone.ebuilderssource.com
+pzb.zone.ebuilderssource.com
+qjapf.zone.ebuilderssource.com
+vdf.zone.ebuilderssource.com
+vfej.zone.ebuilderssource.com
+vkv.zone.ebuilderssource.com
+wdp.zone.ebuilderssource.com
+wvay.zone.ebuilderssource.com
+zycz.zone.ebuilderssource.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
