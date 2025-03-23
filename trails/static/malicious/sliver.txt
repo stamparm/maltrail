@@ -5531,6 +5531,12 @@ api.diamant.crossone.fr
 3.27.46.197:8000
 3.27.46.197:8888
 
+# Reference: https://x.com/drb_ra/status/1903880761188769945
+# Reference: https://x.com/skocherhan/status/1903884690303373492
+
+91.184.248.46:31337
+91.184.248.46:8000
+
 # Generic
 
 /.sliver-client/
