@@ -4725,6 +4725,13 @@ subscribe.bigeznola.com
 
 webmail.ebuildingsource.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-31-v10850/2408
+# Reference: https://www.virustotal.com/gui/file/d258936eb4ce610a7d079de16850758b065eebad7d1116198749b37641ab0d79/detection
+# Reference: https://www.virustotal.com/gui/file/397a782455c0f91dde7b0547b3d49496c01fd6cdfffb4f4f1f5d0639b7a1d5f6/detection
+# Reference: https://www.virustotal.com/gui/file/35182c52dd4d0fba9b11f56abbe5a498af8331ba263eccfb776b4456b82976b2/detection
+
+cpanel.buyjlindustriesonline.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
