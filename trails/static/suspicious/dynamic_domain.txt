@@ -3720,3 +3720,8 @@ masdiseno.com
 # Reference: https://www.virustotal.com/gui/domain/n-et.org/relations
 
 n-et.org
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-22-v10843/2382
+# Reference: https://www.virustotal.com/gui/domain/float-zone.com/relations
+
+float-zone.com
