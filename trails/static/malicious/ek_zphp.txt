@@ -1277,6 +1277,11 @@ websitedirectory.top
 youhao5.shop
 zhifubao.icu
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-07-v10831/2331
+
+rccgloveinaction.org
+teddyatuluku.org
+
 # Generic
 
 /cache/ewmrgqnaww.php
