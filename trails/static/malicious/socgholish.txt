@@ -4701,6 +4701,18 @@ ifw.crm.bestintownpro.com
 nwynx.crm.bestintownpro.com
 rjk.crm.bestintownpro.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-22-v10843/2382
+
+app.andredenault.com
+apvyg.app.andredenault.com
+flfsv.app.andredenault.com
+hpmd.app.andredenault.com
+irshg.app.andredenault.com
+lxhcl.app.andredenault.com
+nkj.app.andredenault.com
+oey.app.andredenault.com
+ourh.app.andredenault.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
