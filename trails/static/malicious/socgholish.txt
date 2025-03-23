@@ -4718,6 +4718,13 @@ ourh.app.andredenault.com
 
 subscribe.bigeznola.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-29-v10848/2399
+# Reference: https://www.virustotal.com/gui/file/3b44e8410d9d4a3676666b7d2ee3177799ecf806468af6801c1947bd5fdc99eb/detection
+# Reference: https://www.virustotal.com/gui/file/54411095936810f8e4273df7a3eedc496c3a099ef5744e379418007ca86b0ec4/detection
+# Reference: https://www.virustotal.com/gui/file/cf2a69560ede73e4e88b9c223c097dae72bd1a5cfabd7dd6901b51d3f59d8ee5/detection
+
+webmail.ebuildingsource.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
