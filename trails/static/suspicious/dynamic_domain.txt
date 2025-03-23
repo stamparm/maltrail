@@ -3695,3 +3695,8 @@ or-g.net
 # Reference: https://www.virustotal.com/gui/domain/excuse.ro/relations
 
 excuse.ro
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-14-v10837/2356
+# Reference: https://www.virustotal.com/gui/domain/ultimamilla.cl/relations
+
+ultimamilla.cl
