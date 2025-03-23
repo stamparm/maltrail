@@ -4781,6 +4781,20 @@ academy.entrepreneurwealthhub.com
 
 exchange.tuckx.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-18-v10861/2454
+# Reference: https://www.virustotal.com/gui/file/38ba42fe0a49ecefdb150f068809f774c740b5d033647f3a95916ad300b7c4f3/detection
+
+programs.edlester.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-18-v10861/2454
+# Reference: https://www.virustotal.com/gui/file/ecceb4020a0b20a8cd0133a82debb77da930c67e1386d77bd57ebdc00a92c8ab/detection
+# Reference: https://www.virustotal.com/gui/file/c61efef7735edcbbe5cac3bb196081716301666c7220f6155c482761012e194f/detection
+# Reference: https://www.virustotal.com/gui/file/b74c17d99d9f6f74d26a3436c1aa1e066e1ca39d8b0fa1954dbe0a4767697b0c/detection
+# Reference: https://www.virustotal.com/gui/file/7e1a15af44d35c1d33b4c0cd793b03c99cfbc583bbc39163bca9804be28eba4a/detection
+# Reference: https://www.virustotal.com/gui/file/4fcc1a99ccc32080ff48ef3274ffacb9f1ec9f2fa154af44b069287717a06039/detection
+
+certificate.hypnotherapy-training.co.nz
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
