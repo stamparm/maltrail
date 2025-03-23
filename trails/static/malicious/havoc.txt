@@ -3761,6 +3761,14 @@ https://47.250.118.131
 army-mil.b-cdn.net
 army-mil.zapto.org
 
+# Reference: https://x.com/malwrhunterteam/status/1902710467341980017
+# Reference: https://x.com/G60930953/status/1903769185743720903
+# Reference: https://dmpdump.github.io/posts/Unattributed_Downloader_Cambodia/
+# Reference: https://www.virustotal.com/gui/file/23d76c49128994d83f878fd08829d003c2ffcd063d03ec7ff1fe4fe41ffb36c3/detection
+
+easyboxsync.com
+live.easyboxsync.com
+
 # Generic
 
 /Havoc/payload/
