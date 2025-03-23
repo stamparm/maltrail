@@ -4738,6 +4738,13 @@ cpanel.buyjlindustriesonline.com
 
 btctrading.crestlinesolutions.work
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-04-v10852/2417
+# Reference: https://www.virustotal.com/gui/file/569b06e8525e6fb813cb0870d88176e0888076422ad483de3393c527ef0e6850/detection
+# Reference: https://www.virustotal.com/gui/file/47a1648d8e4208ca58c59851c2bb2e0dc0636eff8ac2eebb6de3dfcef4ed3fc6/detection
+# Reference: https://www.virustotal.com/gui/file/4539d6e0e59c3ce2f81b5dfb0dbb827bb0aca53eee96617db3e4a7c1529dcac1/detection
+
+newsite.iapmd.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
