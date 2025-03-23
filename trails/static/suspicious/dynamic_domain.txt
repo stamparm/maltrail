@@ -3740,3 +3740,8 @@ ultrapanel.us
 # Reference: https://www.virustotal.com/gui/domain/serprise.com/relations
 
 serprise.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-18-v10861/2454
+# Reference: https://www.virustotal.com/gui/domain/kendimas.com/relations
+
+kendimas.com
