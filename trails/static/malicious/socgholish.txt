@@ -4774,6 +4774,13 @@ preview.jpainting.ca
 
 academy.entrepreneurwealthhub.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-14-v10860/2442
+# Reference: https://www.virustotal.com/gui/file/d552fe952f696c0fbe541442a0fd8fe110b0edfc92e95b8e5c06840d0793359d/detection
+# Reference: https://www.virustotal.com/gui/file/933173b2c2bf1e79914cf05e2901f1330a15177f2951e52338e6a7baa5a1ab96/detection
+# Reference: https://www.virustotal.com/gui/file/721ddaa60d0212cabd5fa013d13054cca02da05199e25c1020c513957a2fffc8/detection
+
+exchange.tuckx.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
