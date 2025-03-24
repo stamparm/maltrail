@@ -14747,6 +14747,7 @@ voitest.shop
 vouklacrif.fun
 vuemool.store
 vutfais.fun
+waggly.shop
 wheemob.shop
 yadigit.store
 yalmob.shop
@@ -14894,6 +14895,7 @@ cdn.voitest.shop
 cdn.vouklacrif.fun
 cdn.vuemool.store
 cdn.vutfais.fun
+cdn.waggly.shop
 cdn.wheemob.shop
 cdn.yadigit.store
 cdn.yalmob.shop
