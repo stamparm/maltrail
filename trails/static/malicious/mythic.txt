@@ -2915,3 +2915,9 @@ http://134.199.209.199
 http://142.93.165.203
 http://142.93.224.147
 http://161.35.85.95
+
+# Reference: https://x.com/malwrhunterteam/status/1902115802066907642
+# Reference: https://www.virustotal.com/gui/file/918acb9ee8c0f85b371d942e6c8240b7dddb9082b14d621f537ca473f6b7757d/detection
+# Reference: https://www.virustotal.com/gui/file/a5c9ed072145694445396925f362bd94209af04abb1b9e00cc3a400891815f69/detection
+
+http://129.226.161.217
