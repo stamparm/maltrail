@@ -2200,6 +2200,10 @@ post.plastformspecial.com
 
 111.90.148.245:3429
 
+# Reference: https://www.virustotal.com/gui/file/fb379e1327170f00c456a5f9061bd9ebb4c765d036a3208a4594fb5120f1a303/detection
+
+111.90.148.245:5034
+
 # Reference: https://blog.sucuri.net/2023/02/bogus-url-shorteners-redirect-thousands-of-hacked-sites-in-adsense-fraud-campaign.html
 
 filestack.live
