@@ -3360,3 +3360,8 @@ unknownp.one
 auth.unknownapps.site
 auth.unknownp.one
 hwid.unknownapps.site
+
+# Reference: https://www.virustotal.com/gui/file/0292346ee706d14230eecf114adc5cd285d86b3e441870e7c13e841e2067a6f0/detection
+
+livesoftupdate.pw
+du99bxbhloj38.livesoftupdate.pw
