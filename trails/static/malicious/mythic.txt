@@ -1554,7 +1554,6 @@ wtf.creativefolks.dev
 87.121.87.101:7443
 95.164.84.84:7443
 97.151.208.70:7443
-_dmarc.home-vip.xyz
 a95b408d5ca94f4f.home-vip.xyz
 ahv-id-4649.vps.awcloud.nl
 blackhatethicalhacking.com
