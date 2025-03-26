@@ -1553,7 +1553,6 @@ gossushugi.site
 198.58.123.252:443
 
 # Reference: https://twitter.com/drb_ra/status/1565837948142194690
-'
 108.62.118.115:443
 
 # Reference: https://twitter.com/drb_ra/status/1566019012848488452
@@ -4707,7 +4706,6 @@ http://174.138.126.39
 24.144.95.156:443
 
 # Reference: https://twitter.com/drb_ra/status/1732680598362173517
-'
 134.122.200.201:8888
 
 # Reference: https://twitter.com/drb_ra/status/1733586208700178644
