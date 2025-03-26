@@ -1202,7 +1202,6 @@ diary.lojjh.com
 97418.diary.lojjh.com
 99ec.discover.jsfconnections.com
 9c3af.diary.lojjh.com
-_.discover.jsfconnections.com
 a200.discover.jsfconnections.com
 a37e.discover.jsfconnections.com
 a489.discover.jsfconnections.com
