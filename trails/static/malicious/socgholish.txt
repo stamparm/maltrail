@@ -1591,7 +1591,6 @@ vbae32.distributor.techsavvyauto.com
 # Reference: https://twitter.com/bigmacjpg/status/1628447546702983175
 
 calendar.wishmarkets.com
-_.calendar.wishmarkets.com
 152a8.calendar.wishmarkets.com
 1bc71.calendar.wishmarkets.com
 2a0b5.calendar.wishmarkets.com
@@ -1863,7 +1862,6 @@ zcnm.reseller.wonderfulworldblog.com
 
 mercedesbestphoto.store
 picture.mercedesbestphoto.store
-_.picture.mercedesbestphoto.store
 4ef9e.picture.mercedesbestphoto.store
 74ed4.picture.mercedesbestphoto.store
 cba8e.picture.mercedesbestphoto.store
