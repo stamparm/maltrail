@@ -14991,6 +14991,12 @@ fbanalyt.com
 seostat.ltd
 trustplots.com
 
+# Reference: https://x.com/sdcyberresearch/status/1904892067949457917
+# Reference: https://www.virustotal.com/gui/ip-address/82.202.165.155/relations
+
+turnot.io
+static.turnot.io
+
 # Generic
 
 /assets/lfg.js
