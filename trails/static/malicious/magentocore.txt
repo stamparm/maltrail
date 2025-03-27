@@ -14607,8 +14607,10 @@ suckerity.xyz
 # Reference: https://app.validin.com/detail?find=45.133.203.0%2F24&type=ip&ref_id=da5082cc1bb#tab=resolutions (# 2025-03-04)
 
 aaftech.click
+africal.pics
 ambfit.site
 anatech.online
+arabibarba.xyz
 asdfasfwe.online
 auqoit.fun
 barpoc.online
@@ -14617,11 +14619,13 @@ beshtech.click
 bontec.in.net
 borostec.shop
 boyadigit.site
+buttcheek.online
 ceiyeq.site
 cgies.sbs
 chocdelt.sbs
 chotech.fun
 chuvitek.online
+ciconian.beauty
 coiyuip.online
 cometrit.pics
 darlinket.shop
@@ -14635,6 +14639,8 @@ devkint.shop
 diamob.site
 dochtech.cyou
 dodstec.quest
+doritos.homes
+downbeat.lol
 dvrandot.store
 elebim.site
 elounto.site
@@ -14696,6 +14702,7 @@ liudlein.sbs
 louker.sbs
 lqoesoop.store
 miftech.site
+mobiliare.pro
 motivac.shop
 nashosit.yachts
 neiloot.store
@@ -14706,6 +14713,7 @@ oewiol.site
 okolcei.online
 oratotech.sbs
 outec.fun
+overdispersion.world
 pdatiic.quest
 piltie.online
 plohelec.quest
@@ -14714,6 +14722,8 @@ poptele.cyou
 povotec.sbs
 prolinket.shop
 qoerjoon.sbs
+randomly.pics
+recombination.cloud
 sancook.sbs
 secthmob.fun
 seirekt.site
@@ -14728,15 +14738,19 @@ stormei.store
 svilock.sbs
 sysmeit.online
 takdegit.online
+taquito.mom
 tastrmob.store
 techitor.click
 tilpoot.shop
+timbao.shop
+tittering.live
 titutop.site
 toonches.store
 trokit.store
 tutfient.shop
 ucuduc.sbs
 ueputech.fun
+unobservable.lol
 untepol.shop
 veidol.site
 veopeir.fun
@@ -14752,8 +14766,10 @@ yadigit.store
 yalmob.shop
 yeuleli.click
 cdn.aaftech.click
+cdn.africal.pics
 cdn.ambfit.site
 cdn.anatech.online
+cdn.arabibarba.xyz
 cdn.asdfasfwe.online
 cdn.auqoit.fun
 cdn.barpoc.online
@@ -14762,11 +14778,13 @@ cdn.beshtech.click
 cdn.bontec.in.net
 cdn.borostec.shop
 cdn.boyadigit.site
+cdn.buttcheek.online
 cdn.ceiyeq.site
 cdn.cgies.sbs
 cdn.chocdelt.sbs
 cdn.chotech.fun
 cdn.chuvitek.online
+cdn.ciconian.beauty
 cdn.coiyuip.online
 cdn.cometrit.pics
 cdn.darlinket.shop
@@ -14780,6 +14798,8 @@ cdn.devkint.shop
 cdn.diamob.site
 cdn.dochtech.cyou
 cdn.dodstec.quest
+cdn.doritos.homes
+cdn.downbeat.lol
 cdn.dvrandot.store
 cdn.elebim.site
 cdn.elounto.site
@@ -14844,6 +14864,7 @@ cdn.liudlein.sbs
 cdn.louker.sbs
 cdn.lqoesoop.store
 cdn.miftech.site
+cdn.mobiliare.pro
 cdn.motivac.shop
 cdn.nashosit.yachts
 cdn.neiloot.store
@@ -14854,6 +14875,7 @@ cdn.oewiol.site
 cdn.okolcei.online
 cdn.oratotech.sbs
 cdn.outec.fun
+cdn.overdispersion.world
 cdn.pdatiic.quest
 cdn.piltie.online
 cdn.plohelec.quest
@@ -14862,6 +14884,8 @@ cdn.poptele.cyou
 cdn.povotec.sbs
 cdn.prolinket.shop
 cdn.qoerjoon.sbs
+cdn.randomly.pics
+cdn.recombination.cloud
 cdn.sancook.sbs
 cdn.secthmob.fun
 cdn.seirekt.site
@@ -14876,15 +14900,19 @@ cdn.stormei.store
 cdn.svilock.sbs
 cdn.sysmeit.online
 cdn.takdegit.online
+cdn.taquito.mom
 cdn.tastrmob.store
 cdn.techitor.click
 cdn.tilpoot.shop
+cdn.timbao.shop
+cdn.tittering.live
 cdn.titutop.site
 cdn.toonches.store
 cdn.trokit.store
 cdn.tutfient.shop
 cdn.ucuduc.sbs
 cdn.ueputech.fun
+cdn.unobservable.lol
 cdn.untepol.shop
 cdn.veidol.site
 cdn.veopeir.fun
