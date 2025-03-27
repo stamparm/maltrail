@@ -8713,6 +8713,12 @@ gatetodisplaycontent.com
 
 /givenmebestthingsentiretimetogivemebestof.hta
 
+# Reference: https://www.virustotal.com/gui/file/43c102f2db55c353e0e24fdc0e6c935093de02162e7b564f0881453058a0fdcc/detection
+
+/mirrorgate1
+/mirrorgate2
+/mirrorgate3
+
 # Generic
 
 /5c0ca79.php
