@@ -5535,6 +5535,12 @@ api.diamant.crossone.fr
 91.184.248.46:31337
 91.184.248.46:8000
 
+# Reference: https://x.com/malwrhunterteam/status/1905324006317662563
+# Reference: https://www.virustotal.com/gui/file/51b8e13a51d3d77c19c4c5dd7e3ee63bf5e4b36ab020537a6ea948a06dfa7372/detection
+# Reference: https://www.virustotal.com/gui/file/51b8e13a51d3d77c19c4c5dd7e3ee63bf5e4b36ab020537a6ea948a06dfa7372/detection
+
+soctrainingdelivery.blob.core.windows.net
+
 # Generic
 
 /.sliver-client/
