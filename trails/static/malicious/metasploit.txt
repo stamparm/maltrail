@@ -6067,3 +6067,8 @@ http://192.64.83.210
 # Reference: https://www.virustotal.com/gui/file/4b4f65d0d1906598ce59ed2c3ac9ef01b3dd547442c6d379094d6252242984fc/detection
 
 52.213.53.36:8443
+
+# Reference: https://x.com/malwrhunterteam/status/1905325250105278921
+# Reference: https://www.virustotal.com/gui/file/be557bcdd1c238d52d834100c8a9ea7536e3179e42f1fc9eb6286c3c816f1ced/detection
+
+103.137.250.153:3389
