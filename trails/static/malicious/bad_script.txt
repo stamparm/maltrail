@@ -8815,5 +8815,6 @@ gatetodisplaycontent.com
 /payload/openAttach/
 /payload/openAttache/
 /payload/openAttachment/
+/payload/remote/
 /modified_ploader.cpp
 /ploader.cpp
