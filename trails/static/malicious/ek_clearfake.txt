@@ -1725,6 +1725,35 @@ you-insk-bad.pages.dev
 yrwebsdf.shop
 yunqof.shop
 
+# Reference: https://x.com/cloudsek/status/1904799207195894250
+# Reference: https://x.com/salmanvsf/status/1905644338052464796
+# Reference: https://www.cloudsek.com/blog/youtube-creators-under-siege-again-clickflix-technique-fuels-malware-attacks
+
+365-docx.com
+cat-watches-site.xyz
+docs-edit.com
+docx-365.com
+docx-edit.com
+docx-editor.com
+docx-online.com
+docx-share.com
+docx-shared.com
+findfakesnake.xyz
+sync-docx.com
+what-is-game.xyz
+cdn.findfakesnake.xyz
+flowers.what-is-game.xyz
+onedrive.docx-editor.com
+onedrive.docx-online.com
+onedrive.docx-shared.com
+onedrive.office-edit.com
+onedrive.sync-docx.com
+onenote.docs-edit.com
+onenote.docx-share.com
+sharepoint.365-docx.com
+sharepoint.docx-365.com
+sharepoint.docx-edit.com
+
 # Generic
 
 /a3A7qLVn/
