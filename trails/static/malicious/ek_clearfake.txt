@@ -1733,26 +1733,36 @@ yunqof.shop
 cat-watches-site.xyz
 docs-edit.com
 docx-365.com
+docx-clouds.com
 docx-edit.com
 docx-editor.com
 docx-online.com
 docx-share.com
 docx-shared.com
+docx-space.com
 findfakesnake.xyz
+share-docx.com
 sync-docx.com
 what-is-game.xyz
 cdn.findfakesnake.xyz
 flowers.what-is-game.xyz
+ondrive.docx-edit.com
+onedrive.docs-edit.com
 onedrive.docx-editor.com
 onedrive.docx-online.com
 onedrive.docx-shared.com
+onedrive.docx-space.com
 onedrive.office-edit.com
 onedrive.sync-docx.com
 onenote.docs-edit.com
 onenote.docx-share.com
+onenote.docx-space.com
+onenote.sync-docx.com
 sharepoint.365-docx.com
 sharepoint.docx-365.com
 sharepoint.docx-edit.com
+sharepoint.docx-space.com
+sharepoint.sync-docx.com
 
 # Generic
 
