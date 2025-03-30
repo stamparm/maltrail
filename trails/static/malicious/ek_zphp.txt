@@ -1295,6 +1295,10 @@ jkse.shop
 kamagrafr.icu
 milebox.shop
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-25-v10866/2476
+
+socksforrocks.shop
+
 # Generic
 
 /cache/ewmrgqnaww.php
