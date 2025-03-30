@@ -251,3 +251,7 @@ peritiemilia.com/wp-includes/wasd_wp.php
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-14-v10860/2442
 
 eecsys.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-24-v10865/2473
+
+infinett.com
