@@ -13,3 +13,8 @@ cdn2.massearchtraffic.top
 cdn3.massearchtraffic.top
 cdn5.massearchtraffic.top
 kolobsgw.pages.dev
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-21-v10864/2466
+
+allcareservicesga.com
+foxroofinginc.com
