@@ -1315,6 +1315,19 @@ todoarmarios.top
 
 couterfv.top
 
+# Reference:  https://app.validin.com/detail?find=Activitar%20%7C%20Template&type=raw&ref_id=56cf6e715f5#tab=host_pairs (# 2025-03-30)
+
+baihao.shop
+filmlerzltyazilimsx.shop
+gcollect.online
+gmt-a.shop
+kirovsad.online
+movtime76.shop
+primefitnessgroup.online
+pure-nutra.online
+socksforrocks.shop
+study-math.online
+
 # Generic
 
 /cache/ewmrgqnaww.php
