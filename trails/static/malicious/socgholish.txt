@@ -4802,6 +4802,14 @@ seminary.envisionfonddulac.com
 envisionfonddulac.envisionfonddulac.org
 estate.envisionfonddulac.org
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-24-v10865/2473
+# Reference: https://www.virustotal.com/gui/file/2c11f40ff91bba47459749611643ecd03dd53afdcc61c47b7d5fb6dc0595a63c/detection
+# Reference: https://www.virustotal.com/gui/file/8a9b83c125e53dfda4148d26c4bc09c564b7dde85fe848259758061528b0b19d/detection
+# Reference: https://www.virustotal.com/gui/file/9b120c66edbb49669280fe65de1e07f2d445f954f111d8f3ac1781f272a74553/detection
+
+adx-crm.com
+software.adx-crm.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
