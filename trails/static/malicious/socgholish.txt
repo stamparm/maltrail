@@ -4834,6 +4834,12 @@ mail.aestheticfina.com
 
 round.micha.ai
 
+# Reference: https://www.virustotal.com/gui/file/a9c583a71eb9e6d31fa0485bf0b2cebbf3df5f4315f8a7b61a9c937f50bc4ed2/detection
+# Reference: https://www.virustotal.com/gui/file/56e773674a47447c1f04025ccf1fbac0d407489c3f39291f5b03dab133af22b5/detection
+# Reference: https://www.virustotal.com/gui/file/2367b558a20c91959ed177c4f33662ae06d55f63e911c51236c6ac131c5ad4f2/detection
+
+windows.envisionfonddulac.net
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
