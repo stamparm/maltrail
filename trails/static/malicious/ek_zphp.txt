@@ -1311,6 +1311,10 @@ medicamentsbonmarche.top
 menjimmychooonline.top
 todoarmarios.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-28-v10869/2487
+
+couterfv.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
