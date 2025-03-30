@@ -4818,6 +4818,14 @@ software.adx-crm.com
 
 sponsor.sewacanada.org
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-25-v10866/2476
+# Reference: https://www.virustotal.com/gui/file/f6f26ff7ad73e6591b750a28b9ff198bd6895e92d54e5b2d5676c6403553ce00/detection
+# Reference: https://www.virustotal.com/gui/file/7b93800103a52af6b15852da398986d5af56e006dc72c19e98581f3753e455e7/detection
+# Reference: https://www.virustotal.com/gui/file/3bd2cca6e5d5048b469b97aa12d2822bb5a1344a3afc57cb7a3a13f0582d4d95/detection
+# Reference: https://www.virustotal.com/gui/file/1b8d9f1c3ebc42dabe485a910aa939356dc20e6ce34c6d5db51ad7185dd323c4/detection
+
+cluster.buydoorlitesandlouvers.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
