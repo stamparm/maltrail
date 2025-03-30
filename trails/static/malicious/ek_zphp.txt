@@ -1290,6 +1290,11 @@ searchweb.top
 
 jkse.shop
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-24-v10865/2473
+
+kamagrafr.icu
+milebox.shop
+
 # Generic
 
 /cache/ewmrgqnaww.php
