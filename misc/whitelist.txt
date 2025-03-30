@@ -4103,3 +4103,7 @@ appolon.dev
 autoplus.gg
 keyauth.com
 vercel-dns.com
+
+# Reference: https://github.com/MikhailKasimov/validin-phish-feed/commit/f5b5fdc5d3ebe2357e7556fb2cd7c43eb26dd30d
+
+icloud.com
