@@ -4788,6 +4788,14 @@ programs.edlester.com
 
 certificate.hypnotherapy-training.co.nz
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-20-v10863/2464
+# Reference: https://www.virustotal.com/gui/file/90178251ca0b263f1407d71d03727ab603f35d2d02ce5f9e010cf436a5e92741/detection
+# Reference: https://www.virustotal.com/gui/file/781417368f3a70a1bfa3ba0b8e21022a1a414cee918619f62fa4bd977e16f4c8/detection
+# Reference: https://www.virustotal.com/gui/file/4f4757bd44f2dabd4edc21ebc7d6e3d75ed86ca3fa98f452d15578fd1c3f95f5/detection
+# Reference: https://www.virustotal.com/gui/file/325295d3b1fe35a4f68eb39aecae71c35dfc6f96599d3e060dc1326f7562f40c/detection
+
+seminary.envisionfonddulac.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
