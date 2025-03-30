@@ -4796,6 +4796,12 @@ certificate.hypnotherapy-training.co.nz
 
 seminary.envisionfonddulac.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-21-v10864/2466
+# Reference: https://www.virustotal.com/gui/file/f6c62808577052c94f37fc0bef6e4cce8b26230e204265e05c05c44d0ec886a3/detection
+
+envisionfonddulac.envisionfonddulac.org
+estate.envisionfonddulac.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
