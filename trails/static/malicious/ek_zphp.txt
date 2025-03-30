@@ -1299,6 +1299,18 @@ milebox.shop
 
 socksforrocks.shop
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-26-v10867/2481
+# Reference: https://app.validin.com/detail?find=Activitar%20%7C%20Template&type=raw&ref_id=56cf6e715f5#tab=host_pairs (# 2025-03-30)
+
+7serv.top
+99wc.top
+dealermobil.top
+kfzversicherungskosten.top
+khusinhthaidanphuong.top
+medicamentsbonmarche.top
+menjimmychooonline.top
+todoarmarios.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
