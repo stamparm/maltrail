@@ -4826,6 +4826,10 @@ sponsor.sewacanada.org
 
 cluster.buydoorlitesandlouvers.com
 
+# Reference: https://www.virustotal.com/gui/file/b2e1331c8d42a1a3da8ed0d12ec905a0085d22ac75473d3fe3a357c84212054f/detection
+
+mail.aestheticfina.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
