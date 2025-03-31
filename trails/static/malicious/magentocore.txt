@@ -15028,6 +15028,10 @@ trustplots.com
 turnot.io
 static.turnot.io
 
+# Reference: https://x.com/sdcyberresearch/status/1906720953553305780
+
+goosecurlisds.com
+
 # Generic
 
 /assets/lfg.js
