@@ -5582,3 +5582,151 @@
 80.66.76.0/24,gening-as
 80.66.88.0/24,gening-as
 87.251.75.0/24,gening-as
+
+# AS215540
+# Reference: https://ipinfo.io/AS215540
+# Reference: https://www.intrinsec.com/wp-content/uploads/2025/03/TLP-CLEAR-From-espionage-to-PsyOps-Tracking-operations-and-infrastructure-of-UACs-in-2025-EN-1.pdf
+
+109.172.92.0/22,gcs-as
+141.98.233.0/24,gcs-as
+141.98.234.0/24,gcs-as
+145.249.109.0/24,gcs-as
+145.249.115.0/24,gcs-as
+147.45.116.0/24,gcs-as
+147.45.126.0/24,gcs-as
+147.45.177.0/24,gcs-as
+147.45.178.0/24,gcs-as
+147.45.179.0/24,gcs-as
+147.45.200.0/23,gcs-as
+147.45.202.0/23,gcs-as
+147.45.204.0/24,gcs-as
+147.45.217.0/24,gcs-as
+147.45.220.0/24,gcs-as
+147.45.221.0/24,gcs-as
+147.45.49.0/24,gcs-as
+147.45.50.0/24,gcs-as
+147.45.51.0/24,gcs-as
+147.45.60.0/24,gcs-as
+147.45.84.0/24,gcs-as
+147.45.85.0/24,gcs-as
+147.45.86.0/24,gcs-as
+147.45.87.0/24,gcs-as
+160.20.156.0/24,gcs-as
+160.20.157.0/24,gcs-as
+178.22.31.0/24,gcs-as
+185.100.156.0/24,gcs-as
+185.102.114.0/24,gcs-as
+185.111.24.0/24,gcs-as
+185.143.223.0/24,gcs-as
+185.161.251.0/24,gcs-as
+185.182.130.0/24,gcs-as
+185.182.131.0/24,gcs-as
+185.193.89.0/24,gcs-as
+185.247.184.0/24,gcs-as
+185.39.204.0/24,gcs-as
+185.39.207.0/24,gcs-as
+185.42.163.0/24,gcs-as
+185.68.186.0/24,gcs-as
+185.68.187.0/24,gcs-as
+185.71.214.0/24,gcs-as
+185.71.215.0/24,gcs-as
+185.73.180.0/24,gcs-as
+185.73.181.0/24,gcs-as
+185.75.132.0/24,gcs-as
+185.77.138.0/24,gcs-as
+185.77.139.0/24,gcs-as
+185.79.132.0/24,gcs-as
+185.79.133.0/24,gcs-as
+185.88.98.0/24,gcs-as
+185.88.99.0/24,gcs-as
+185.95.228.0/24,gcs-as
+188.130.196.0/22,gcs-as
+188.130.205.0/24,gcs-as
+193.228.128.0/24,gcs-as
+193.233.126.0/24,gcs-as
+193.233.127.0/24,gcs-as
+193.32.176.0/24,gcs-as
+193.38.228.0/24,gcs-as
+193.38.229.0/24,gcs-as
+193.38.230.0/24,gcs-as
+193.38.231.0/24,gcs-as
+193.43.249.0/24,gcs-as
+194.156.102.0/24,gcs-as
+194.156.103.0/24,gcs-as
+194.28.192.0/24,gcs-as
+194.87.216.0/24,gcs-as
+194.87.31.0/24,gcs-as
+194.87.45.0/24,gcs-as
+194.87.71.0/24,gcs-as
+195.133.88.0/24,gcs-as
+212.18.104.0/24,gcs-as
+212.87.222.0/24,gcs-as
+2.59.162.0/24,gcs-as
+2.59.163.0/24,gcs-as
+31.129.22.0/24,gcs-as
+45.129.185.0/24,gcs-as
+45.141.234.0/24,gcs-as
+45.143.200.0/24,gcs-as
+45.151.234.0/24,gcs-as
+45.151.235.0/24,gcs-as
+45.151.61.0/24,gcs-as
+45.82.13.0/24,gcs-as
+45.83.8.0/22,gcs-as
+45.93.213.0/24,gcs-as
+45.93.214.0/24,gcs-as
+45.95.232.0/24,gcs-as
+45.95.233.0/24,gcs-as
+46.29.234.0/24,gcs-as
+46.29.235.0/24,gcs-as
+46.29.238.0/24,gcs-as
+46.8.5.0/24,gcs-as
+5.181.2.0/24,gcs-as
+5.181.3.0/24,gcs-as
+5.253.59.0/24,gcs-as
+5.44.42.0/24,gcs-as
+62.133.60.0/24,gcs-as
+62.133.61.0/24,gcs-as
+62.133.62.0/24,gcs-as
+
+# AS207713
+# Reference: https://ipinfo.io/AS207713
+# Reference: https://www.intrinsec.com/wp-content/uploads/2025/03/TLP-CLEAR-From-espionage-to-PsyOps-Tracking-operations-and-infrastructure-of-UACs-in-2025-EN-1.pdf
+
+147.45.48.0/24,gir-as
+193.233.18.0/24,gir-as
+193.233.48.0/24,gir-as
+193.233.49.0/24,gir-as
+193.233.84.0/24,gir-as
+194.87.218.0/24,gir-as
+212.192.14.0/24,gir-as
+2.59.161.0/24,gir-as
+37.220.86.0/24,gir-as
+45.143.203.0/24,gir-as
+45.151.62.0/24,gir-as
+45.84.2.0/24,gir-as
+62.60.187.0/24,gir-as
+78.153.148.0/24,gir-as
+78.153.149.0/24,gir-as
+87.251.66.0/24,gir-as
+89.23.113.0/24,gir-as
+95.215.108.0/24,gir-as
+
+# AS197414
+# Reference: https://ipinfo.io/AS197414
+# Reference: https://www.intrinsec.com/wp-content/uploads/2025/03/TLP-CLEAR-From-espionage-to-PsyOps-Tracking-operations-and-infrastructure-of-UACs-in-2025-EN-1.pdf
+
+185.170.144.0/24,xhost-internet-solutions
+87.251.64.0/24,xhost-internet-solutions
+
+# AS215428
+# Reference: https://ipinfo.io/AS215428
+# Reference: https://www.intrinsec.com/wp-content/uploads/2025/03/TLP-CLEAR-From-espionage-to-PsyOps-Tracking-operations-and-infrastructure-of-UACs-in-2025-EN-1.pdf
+
+77.105.161.0/24,merox
+87.120.107.0/24,merox
+
+# AS61432
+# Reference: https://ipinfo.io/AS61432
+# Reference: https://www.intrinsec.com/wp-content/uploads/2025/03/TLP-CLEAR-From-espionage-to-PsyOps-Tracking-operations-and-infrastructure-of-UACs-in-2025-EN-1.pdf
+
+185.156.72.0/24, vaiz-as
