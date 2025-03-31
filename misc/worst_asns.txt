@@ -5559,3 +5559,26 @@
 
 195.211.191.0/24,kpronet
 45.144.212.0/24,kpronet
+
+# AS213194
+# Reference: https://ipinfo.io/AS213194
+# Reference: https://threadreaderapp.com/thread/1906642411587051628.html
+# Reference: https://www.intrinsec.com/wp-content/uploads/2025/03/TLP-CLEAR-From-espionage-to-PsyOps-Tracking-operations-and-infrastructure-of-UACs-in-2025-EN-1.pdf
+
+193.37.69.0/24,nechaevds-as
+
+# AS61336
+# Reference: https://ipinfo.io/AS61336
+# Reference: https://threadreaderapp.com/thread/1906642411587051628.html
+# Reference: https://www.intrinsec.com/wp-content/uploads/2025/03/TLP-CLEAR-From-espionage-to-PsyOps-Tracking-operations-and-infrastructure-of-UACs-in-2025-EN-1.pdf
+
+91.247.38.0/24,islandservers-as
+
+# AS213010
+# Reference: https://ipinfo.io/AS213010
+# Reference: https://threadreaderapp.com/thread/1906642411587051628.html
+# Reference: https://www.intrinsec.com/wp-content/uploads/2025/03/TLP-CLEAR-From-espionage-to-PsyOps-Tracking-operations-and-infrastructure-of-UACs-in-2025-EN-1.pdf
+
+80.66.76.0/24,gening-as
+80.66.88.0/24,gening-as
+87.251.75.0/24,gening-as
