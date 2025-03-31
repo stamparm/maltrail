@@ -6072,3 +6072,10 @@ http://192.64.83.210
 # Reference: https://www.virustotal.com/gui/file/be557bcdd1c238d52d834100c8a9ea7536e3179e42f1fc9eb6286c3c816f1ced/detection
 
 103.137.250.153:3389
+
+# Reference: https://x.com/ShanHolo/status/1905584624350220534
+# Reference: https://www.virustotal.com/gui/file/c3579c8d457509c6fbb754d9daadf23bce8e984edf531e16d896827afd500a38/detection
+
+http://4.188.72.122
+4.188.72.122:8080
+73.213.108.128:8081
