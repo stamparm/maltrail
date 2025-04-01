@@ -950,3 +950,9 @@ giotg09.cfd
 gkow3bvr.cfd
 xqwa87.top
 xzaq87.top
+
+# Reference: https://x.com/SquiblydooBlog/status/1907044311814049962
+# Reference: https://www.virustotal.com/gui/file/ca2666c691512aa367c4e57ba0d67a57386fde70fccf97dab8f6f8e974a414a0/detection
+
+195.66.214.70:8041
+microsoftnet.ru
