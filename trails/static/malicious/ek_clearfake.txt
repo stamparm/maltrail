@@ -1764,6 +1764,11 @@ sharepoint.docx-edit.com
 sharepoint.docx-space.com
 sharepoint.sync-docx.com
 
+# Reference: https://x.com/rpargman/status/1906780355132006758
+
+service-faedback.com
+booking.service-faedback.com
+
 # Generic
 
 /a3A7qLVn/
