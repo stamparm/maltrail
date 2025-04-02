@@ -8719,6 +8719,12 @@ gatetodisplaycontent.com
 /mirrorgate2
 /mirrorgate3
 
+# Reference: https://x.com/suyog41/status/1907417166665933268
+# Reference: https://www.virustotal.com/gui/file/7cfa19cb17fe67179b413d9e746bc17d6ca35d6ee92dc686d723523227865069/detection
+
+/xjemqlqirwqru9pkrh3j4ztmf/payments.js
+/xjemqlqirwqru9pkrh3j4ztmf/
+
 # Generic
 
 /5c0ca79.php
