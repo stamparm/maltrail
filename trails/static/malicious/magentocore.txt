@@ -14610,6 +14610,7 @@ suckerity.xyz
 # Reference: https://app.validin.com/detail?find=45.133.203.0%2F24&type=ip&ref_id=da5082cc1bb#tab=resolutions (# 2025-03-04)
 
 aaftech.click
+adolf.pics
 africal.pics
 ambfit.site
 anatech.online
@@ -14626,11 +14627,16 @@ buttcheek.online
 ceiyeq.site
 cgies.sbs
 chocdelt.sbs
+chorean.pics
 chotech.fun
 chuvitek.online
 ciconian.beauty
+clause.mom
 coiyuip.online
 cometrit.pics
+coroplas.shop
+cready.art
+cresh.homes
 darlinket.shop
 deetiot.online
 deldmob.site
@@ -14647,6 +14653,8 @@ downbeat.lol
 dvrandot.store
 elebim.site
 elounto.site
+estategapps.lol
+fanjet.wiki
 fasloor.shop
 fasvet.shop
 fazeu.shop
@@ -14657,6 +14665,7 @@ fesdigit.online
 feutiop.quest
 feylit.store
 fivolink.store
+fungarian.shop
 gbleylot.quest
 geaxint.fun
 geleego.quest
@@ -14678,6 +14687,7 @@ helitot.click
 heopits.online
 hetiper.store
 heutint.site
+hylomys.ink
 idhowtech.sbs
 inshdigit.sbs
 jeytop.site
@@ -14700,10 +14710,12 @@ lamkalm.site
 leipey.store
 leitop.store
 leurtyth.quest
+listindia.live
 liudain.sbs
 liudlein.sbs
 louker.sbs
 lqoesoop.store
+magmative.cloud
 miftech.site
 mobiliare.pro
 motivac.shop
@@ -14722,15 +14734,20 @@ piltie.online
 plohelec.quest
 pokledigital.pics
 poptele.cyou
+posterboards.live
 povotec.sbs
 prolinket.shop
 qoerjoon.sbs
 randomly.pics
 recombination.cloud
+rosenberg.lol
 sancook.sbs
+sciety.online
+secern.club
 secthmob.fun
 seirekt.site
 sewlei.shop
+shalako.site
 shipotop.shop
 sivelec.cyou
 sometech.sbs
@@ -14769,6 +14786,7 @@ yadigit.store
 yalmob.shop
 yeuleli.click
 cdn.aaftech.click
+cdn.adolf.pics
 cdn.africal.pics
 cdn.ambfit.site
 cdn.anatech.online
@@ -14785,11 +14803,16 @@ cdn.buttcheek.online
 cdn.ceiyeq.site
 cdn.cgies.sbs
 cdn.chocdelt.sbs
+cdn.chorean.pics
 cdn.chotech.fun
 cdn.chuvitek.online
 cdn.ciconian.beauty
+cdn.clause.mom
 cdn.coiyuip.online
 cdn.cometrit.pics
+cdn.coroplas.shop
+cdn.cready.art
+cdn.cresh.homes
 cdn.darlinket.shop
 cdn.deetiot.online
 cdn.deldmob.site
@@ -14806,6 +14829,8 @@ cdn.downbeat.lol
 cdn.dvrandot.store
 cdn.elebim.site
 cdn.elounto.site
+cdn.estategapps.lol
+cdn.fanjet.wiki
 cdn.fasloor.shop
 cdn.fasvet.shop
 cdn.fazeu.shop
@@ -14818,6 +14843,7 @@ cdn.feylit.store
 cdn.fivolink.store
 cdn.flagmob.quest
 cdn.flowit.pics
+cdn.fungarian.shop
 cdn.gbleylot.quest
 cdn.geaxint.fun
 cdn.geleego.quest
@@ -14839,6 +14865,7 @@ cdn.helitot.click
 cdn.heopits.online
 cdn.hetiper.store
 cdn.heutint.site
+cdn.hylomys.ink
 cdn.idhowtech.sbs
 cdn.inshdigit.sbs
 cdn.jeytop.site
@@ -14862,10 +14889,12 @@ cdn.lamkalm.site
 cdn.leipey.store
 cdn.leitop.store
 cdn.leurtyth.quest
+cdn.listindia.live
 cdn.liudain.sbs
 cdn.liudlein.sbs
 cdn.louker.sbs
 cdn.lqoesoop.store
+cdn.magmative.cloud
 cdn.miftech.site
 cdn.mobiliare.pro
 cdn.motivac.shop
@@ -14884,15 +14913,20 @@ cdn.piltie.online
 cdn.plohelec.quest
 cdn.pokledigital.pics
 cdn.poptele.cyou
+cdn.posterboards.live
 cdn.povotec.sbs
 cdn.prolinket.shop
 cdn.qoerjoon.sbs
 cdn.randomly.pics
 cdn.recombination.cloud
+cdn.rosenberg.lol
 cdn.sancook.sbs
+cdn.sciety.online
+cdn.secern.club
 cdn.secthmob.fun
 cdn.seirekt.site
 cdn.sewlei.shop
+cdn.shalako.site
 cdn.shipotop.shop
 cdn.sivelec.cyou
 cdn.sometech.sbs
