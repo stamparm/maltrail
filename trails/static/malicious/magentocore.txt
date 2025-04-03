@@ -14715,6 +14715,7 @@ liudain.sbs
 liudlein.sbs
 louker.sbs
 lqoesoop.store
+lufton.xyz
 magmative.cloud
 miftech.site
 mobiliare.pro
@@ -14964,6 +14965,7 @@ cdn.wheemob.shop
 cdn.yadigit.store
 cdn.yalmob.shop
 cdn.yeuleli.click
+fyd.lufton.xyz
 
 # Reference: https://app.validin.com/detail?type=ip&find=86.54.42.0%2F24#tab=resolutions
 # Reference: https://app.validin.com/detail?find=livintool.cfd&type=dom&ref_id=faf20d0350e#tab=host_pairs
