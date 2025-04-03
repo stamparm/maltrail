@@ -15068,6 +15068,10 @@ static.turnot.io
 
 goosecurlisds.com
 
+# Reference: https://www.linkedin.com/posts/sansec_found-defunctdat-on-your-site-oops-youve-activity-7313565459658797056-HDhS/
+
+/pub/defunct.dat
+
 # Generic
 
 /assets/lfg.js
