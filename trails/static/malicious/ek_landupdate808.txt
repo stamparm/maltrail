@@ -255,3 +255,12 @@ eecsys.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-24-v10865/2473
 
 infinett.com
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-04-04-IOCs-forKongTuke-web-inject-leading-to-fake-CAPTHA-page.txt
+
+dixiemgmt.com
+eiesystems.com
+inteklabs.com
+lancasternh.com
+lkcharles.com
+ronsamuel.com
