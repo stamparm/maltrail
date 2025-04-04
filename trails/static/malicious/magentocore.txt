@@ -15019,7 +15019,9 @@ mail.elem.ltd
 grev.io
 
 # Reference: https://x.com/threatcat_ch/status/1901290247876452409
+# Reference: https://app.validin.com/detail?find=89c67878e6f499e1b0e6d15a52d55106&type=hash&ref_id=89e46241d65#tab=host_pairs (# 2025-04-04)
 
+kefersuc.xyz
 keritysuc.xyz
 
 # Reference: https://x.com/sdcyberresearch/status/1901623816654110729
