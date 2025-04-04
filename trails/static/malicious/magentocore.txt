@@ -15020,9 +15020,12 @@ grev.io
 
 # Reference: https://x.com/threatcat_ch/status/1901290247876452409
 # Reference: https://app.validin.com/detail?find=89c67878e6f499e1b0e6d15a52d55106&type=hash&ref_id=89e46241d65#tab=host_pairs (# 2025-04-04)
+# Reference: https://app.validin.com/detail?find=03a4a775001d6dd38250a7f30d9345be&type=hash&ref_id=61ee4e58631#tab=host_pairs (# 2025-04-04)
 
 kefersuc.xyz
 keritysuc.xyz
+kezopersuc.xyz
+redismaker.xyz
 
 # Reference: https://x.com/sdcyberresearch/status/1901623816654110729
 # Reference: https://app.validin.com/detail?find=45.67.231.28&type=ip4&ref_id=b696df26cb1#tab=resolutions
