@@ -1806,6 +1806,7 @@ fidec.icu
 fihoj.icu
 fohatua9.icu
 fyqup.icu
+gekan.icu
 gicaz.icu
 gihua.icu
 giriq.icu
@@ -1853,6 +1854,7 @@ qoqon.icu
 qusixoy6.icu
 quzis.icu
 rajuy.icu
+rezag.icu
 ryqyn.icu
 sabyw.icu
 sacyd.icu
@@ -1875,11 +1877,13 @@ uzuqed.icu
 vased.icu
 viqon.icu
 wedofoe7.icu
+wewit.icu
 wumih.icu
 xamuy.icu
 xelan.icu
 xemyrai6.icu
 xujamio2.icu
+xuxyf.icu
 yonuga.icu
 ysozim.icu
 zahyt.icu
@@ -1944,10 +1948,12 @@ check.tivadiu1.icu
 check.ugarob.icu
 check.uzuqed.icu
 check.vased.icu
+check.wewit.icu
 check.wumih.icu
 check.xamuy.icu
 check.xelan.icu
 check.xujamio2.icu
+check.xuxyf.icu
 check.yonuga.icu
 check.ysozim.icu
 check.zahyt.icu
