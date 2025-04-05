@@ -15079,6 +15079,10 @@ goosecurlisds.com
 
 /pub/defunct.dat
 
+# Reference: https://socket.dev/blog/malicious-pypi-package-targets-woocommerce-stores-with-automated-carding-attacks
+
+railgunmisaka.com
+
 # Generic
 
 /assets/lfg.js
