@@ -1660,6 +1660,7 @@ ze.am
 
 # Reference: https://twitter.com/ScumBots/status/1105050120855449600
 # Reference: https://twitter.com/ScumBots/status/1105461451580420096
+# Reference: https://www.virustotal.com/gui/domain/64bit.kr/relations
 # Reference: https://www.virustotal.com/gui/domain/co19.kr/relations
 # Reference: https://www.virustotal.com/gui/domain/n-e.kr/relations
 # Reference: https://www.virustotal.com/gui/domain/mcv.kr/relations
@@ -1667,6 +1668,7 @@ ze.am
 # Reference: https://www.virustotal.com/gui/file/bb26250228d0068301f81641c235189bd3cb08b9e6cac5d7032c5c2065eb04ff/detection
 # Reference: https://xn--220b31d95hq8o.xn--3e0b707e/
 
+64bit.kr
 co19.kr
 kro.kr
 mcv.kr
