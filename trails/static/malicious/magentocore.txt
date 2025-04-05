@@ -15083,6 +15083,20 @@ goosecurlisds.com
 
 railgunmisaka.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.208.158.60/relations
+
+consultgroup.wiki
+
+# Reference: https://www.virustotal.com/gui/ip-address/176.65.134.26/relations
+
+javascripts-modals.net
+jsloadermodals.com
+online-chatsupport.com
+pluginsconnect.com
+pulsarexp.in
+script-transfering.com
+webchatsupport.online
+
 # Generic
 
 /assets/lfg.js
