@@ -2919,3 +2919,14 @@ http://161.35.85.95
 # Reference: https://www.virustotal.com/gui/file/a5c9ed072145694445396925f362bd94209af04abb1b9e00cc3a400891815f69/detection
 
 http://129.226.161.217
+
+# Reference: https://x.com/malwrhunterteam/status/1908215142698897708
+# Reference: https://x.com/malwrhunterteam/status/1908216684479205667
+# Reference: https://www.virustotal.com/gui/file/ef2056a6724ad654e3c36234863ab34b9e0e6fa3e6f31340682c37dc2c5cb32e/detection
+# Reference: https://www.virustotal.com/gui/file/48f328fedb94ed7a2ce915e3b4f44f45e45b5375f6ed90e2de2e731357bedd8b/detection
+# Reference: https://www.virustotal.com/gui/file/750f0367139bd2e0c6aa02630d8599ac854a38083a5a3733203edb500048dfa7/detection
+
+http://146.190.248.108
+http://159.203.45.201
+http://170.64.184.236
+http://188.166.78.195
