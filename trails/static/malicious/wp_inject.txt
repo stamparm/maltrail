@@ -6589,3 +6589,12 @@ auth.a11ybar.com
 secure-prod.a11ybar.com
 secure.a11ybar.com
 url9476.a11ybar.com
+
+# Reference: https://www.godaddy.com/resources/news/dollyway-malware-history
+
+http://176.113.115.10
+777traffget.site
+co34.space
+compensationsa.xyz
+diathophyltetigid.ga
+sikopersimoasho.ml
