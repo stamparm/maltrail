@@ -3365,3 +3365,10 @@ hwid.unknownapps.site
 
 livesoftupdate.pw
 du99bxbhloj38.livesoftupdate.pw
+
+# Reference: https://www.virustotal.com/gui/file/831e53a134324b52d8cc74e53f78f6792c51e7683c10d587e1a45d062c87227a/detection
+
+finddatao.top
+ndishcor.bid
+secularistsarakolet.site
+get.ndishcor.bid
