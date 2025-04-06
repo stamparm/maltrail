@@ -1342,6 +1342,17 @@ via345.top
 ydh7.shop
 zaheirx.shop
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-10-v10875/2506
+# Reference: https://app.validin.com/detail?type=hash&find=e3a46f20be728d46dac88ec757345713#tab=host_pairs
+
+gmartph.shop
+raneemjin.info
+linksoflondonsale.top
+todocalefactores.top
+viloriterso.icu
+fosvsr.ooguy.com
+projectphp.duckdns.org
+
 # Generic
 
 /cache/ewmrgqnaww.php
