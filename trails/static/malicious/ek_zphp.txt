@@ -1353,6 +1353,10 @@ viloriterso.icu
 fosvsr.ooguy.com
 projectphp.duckdns.org
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-12-v10877/2511
+
+doodstream.shop
+
 # Generic
 
 /cache/ewmrgqnaww.php
