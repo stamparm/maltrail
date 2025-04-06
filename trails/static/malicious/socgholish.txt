@@ -4849,6 +4849,13 @@ exclusive.nobogoods.com
 publication.garyjobeferguson.com
 whcms.greendreamcannabis.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-04-v10871/2494
+# Reference: https://www.virustotal.com/gui/file/c123b36e36b83ffb33e5092a6e13df1b05edc89ac58462ad728d93369d1c8400/detection
+# Reference: https://www.virustotal.com/gui/file/ea44e596ac502027702782ec5477bd884e2d806115e732752ce1547f7d653f7d/detection
+
+kreativelife.net
+cpanel.kreativelife.net
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
