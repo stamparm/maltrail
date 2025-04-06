@@ -1357,6 +1357,10 @@ projectphp.duckdns.org
 
 doodstream.shop
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-14-v10881/2526
+
+glitterygadgets.shop
+
 # Generic
 
 /cache/ewmrgqnaww.php
