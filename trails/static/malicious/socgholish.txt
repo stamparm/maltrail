@@ -4856,6 +4856,12 @@ whcms.greendreamcannabis.com
 kreativelife.net
 cpanel.kreativelife.net
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-05-v10872/2497
+# Reference: https://www.virustotal.com/gui/file/6a6e061526bdd776a70786f5f50cb408a7c27cefeeb9190139fcb0d4e5e7a219/detection
+# Reference: https://www.virustotal.com/gui/file/81a9f9329ab215d854be48382c25da0269c560cb89960a3f5e9ceb7b13ce2d63/detection
+
+nevada.mandros.us
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
