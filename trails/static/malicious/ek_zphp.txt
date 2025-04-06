@@ -1315,7 +1315,7 @@ todoarmarios.top
 
 couterfv.top
 
-# Reference:  https://app.validin.com/detail?find=Activitar%20%7C%20Template&type=raw&ref_id=56cf6e715f5#tab=host_pairs (# 2025-03-30)
+# Reference: https://app.validin.com/detail?find=Activitar%20%7C%20Template&type=raw&ref_id=56cf6e715f5#tab=host_pairs (# 2025-03-30)
 
 baihao.shop
 filmlerzltyazilimsx.shop
@@ -1327,6 +1327,17 @@ primefitnessgroup.online
 pure-nutra.online
 socksforrocks.shop
 study-math.online
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-05-v10872/2497
+
+cialissale.top
+dcdh4.shop
+depechemode.shop
+machine-a-plastifier.com
+rasin.shop
+via345.top
+ydh7.shop
+zaheirx.shop
 
 # Generic
 
