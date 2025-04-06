@@ -6079,3 +6079,8 @@ http://192.64.83.210
 http://4.188.72.122
 4.188.72.122:8080
 73.213.108.128:8081
+
+# Reference: https://x.com/malwrhunterteam/status/1907709571293974698
+# Reference: https://www.virustotal.com/gui/file/0e8993105f9ec0c13990dffc26898994e113ac039b59760260c36554808eb2c3/detection
+
+3pff76b0-9997.brs.devtunnels.ms
