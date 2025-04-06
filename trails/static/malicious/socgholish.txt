@@ -4862,6 +4862,10 @@ cpanel.kreativelife.net
 
 nevada.mandros.us
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-10-v10875/2506
+
+forum.envisionfonddulac.info
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
