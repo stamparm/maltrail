@@ -4874,6 +4874,10 @@ catalog.sjsailboats.com
 
 webmail.denver-computer.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-14-v10881/2526
+
+secure.lme-co.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
