@@ -2999,6 +2999,12 @@ zixit.icu
 zoxog.icu
 zypyd.icu
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-07-v10874/2502
+
+cpth-cant.com
+lydbonkersbimpjc.blogspot.com
+bookimanagerev.com
+
 # Generic
 
 /a3A7qLVn/
