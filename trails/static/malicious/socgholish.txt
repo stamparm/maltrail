@@ -4840,6 +4840,15 @@ round.micha.ai
 
 windows.envisionfonddulac.net
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-03-v10870/2491
+# Reference: https://www.virustotal.com/gui/file/3b08ef18ddb0ace9c08ab3b4b8fad934833752ba9f51949fa6f9160dba9069e1/detection
+# Reference: https://www.virustotal.com/gui/file/0056da862028a3a673c93f205b45dc1725a3281bede3edf5e82f8c94048b81cb/detection
+# Reference: https://www.virustotal.com/gui/file/806e577dab72e5951c7cdfaff6b2c90369650c8bb7b528acf325db26f4711fcb/detection
+
+exclusive.nobogoods.com
+publication.garyjobeferguson.com
+whcms.greendreamcannabis.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
