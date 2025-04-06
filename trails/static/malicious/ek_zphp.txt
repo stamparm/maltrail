@@ -1329,8 +1329,11 @@ socksforrocks.shop
 study-math.online
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-05-v10872/2497
+# Reference: https://app.validin.com/detail?find=193.42.38.97&type=ip4&ref_id=095a4c81505#tab=resolutions (# 2025-04-06)
 
 cialissale.top
+couturella.shop
+cryptohardware.shop
 dcdh4.shop
 depechemode.shop
 machine-a-plastifier.com
