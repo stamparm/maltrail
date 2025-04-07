@@ -2199,11 +2199,13 @@ zoom.getmyssafile.com
 # Reference: https://app.validin.com/detail?find=b09b3df2b9e1b0367f3ce278d8cf5099&type=hash&ref_id=bac6e6ee587#tab=host_pairs (# 2025-04-05)
 
 ayaiu.online
+boruq.icu
 bxqhq.icu
 bzhzm.icu
 celir.icu
 cumys.icu
 datot.icu
+ditez.icu
 dndbv.icu
 duvb.shop
 fasod.icu
