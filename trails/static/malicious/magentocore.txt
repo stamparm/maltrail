@@ -15097,6 +15097,19 @@ pulsarexp.in
 script-transfering.com
 webchatsupport.online
 
+# Reference: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2025-04-07)
+
+ceest.lol
+elaink.xyz
+owse.art
+rowser.live
+thorsdal.online
+cdn.ceest.lol
+cdn.elaink.xyz
+cdn.owse.art
+cdn.rowser.live
+cdn.thorsdal.online
+
 # Generic
 
 /assets/lfg.js
