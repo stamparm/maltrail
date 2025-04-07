@@ -1839,6 +1839,8 @@ nafih.icu
 nagec.icu
 nawym.icu
 nifom.icu
+nikys.icu
+novax.icu
 nuxiy.icu
 nygek.icu
 oegebo.icu
@@ -1878,6 +1880,7 @@ uzuqed.icu
 vased.icu
 viqon.icu
 wedofoe7.icu
+wejyj.icu
 wewit.icu
 wumih.icu
 xamuy.icu
