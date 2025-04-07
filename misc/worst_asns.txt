@@ -4866,9 +4866,24 @@
 # Reference: https://ipinfo.io/AS215826
 
 147.45.45.0/24,partner-hosting-ltd
+185.100.157.0/24,partner-hosting-ltd
+185.102.115.0/24,partner-hosting-ltd
+185.107.74.0/24,partner-hosting-ltd
+185.107.75.0/24,partner-hosting-ltd
+185.177.239.0/24,partner-hosting-ltd
+193.233.112.0/23,partner-hosting-ltd
+193.233.254.0/24,partner-hosting-ltd
+193.68.89.0/24,partner-hosting-ltd
+194.36.177.0/24,partner-hosting-ltd
 195.10.205.0/24,partner-hosting-ltd
+45.150.34.0/24,partner-hosting-ltd
+5.252.153.0/24,partner-hosting-ltd
+5.252.155.0/24,partner-hosting-ltd
+83.217.208.0/24,partner-hosting-ltd
+83.217.209.0/24,partner-hosting-ltd
 91.214.78.0/24,partner-hosting-ltd
 92.42.96.0/24,partner-hosting-ltd
+94.141.122.0/24,partner-hosting-ltd
 
 # AS210558
 # Reference: https://ipinfo.io/AS210558
