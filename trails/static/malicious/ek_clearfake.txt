@@ -2210,6 +2210,7 @@ dndbv.icu
 duvb.shop
 fasod.icu
 gevis.icu
+gihiv.icu
 hbskw.icu
 hdfkc.icu
 hoxif.icu
@@ -2229,6 +2230,7 @@ papeb.icu
 pvhqg.icu
 qukex.icu
 qvdch.icu
+riced.icu
 socek.icu
 somiv.icu
 tuqyq.icu
