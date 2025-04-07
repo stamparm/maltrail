@@ -14403,11 +14403,14 @@ heipdescsecuri.store
 
 # Reference: https://sourcedefense.com/resources/blog/sophisticated-eskimming-campaign-conceals-itself-by-leveraging-stripe-api/
 # Reference: https://app.validin.com/detail?find=f417bdca4b13c39d943fc89c524e0ca26d58fafc&type=hash&ref_id=3e07b116e1c#tab=host_pairs (# 2025-02-20)
+# Reference: https://app.validin.com/detail?find=146.70.101.108&type=ip4&ref_id=3a68ec24d8d#tab=resolutions (# 2025-04-07)
 # Reference: https://app.validin.com/detail?find=146.70.101.121&type=ip4&ref_id=f7c5bfb65ed#tab=resolutions (# 2025-02-20)
 # Reference: https://app.validin.com/detail?find=146.70.53.157&type=ip4&ref_id=3e07b116e1c#tab=resolutions (# 2025-02-20)
 # Reference: https://app.validin.com/detail?find=146.70.20.208&type=ip4&ref_id=3e07b116e1c#tab=resolutions (# 2025-02-20)
 # Reference: https://www.virustotal.com/gui/ip-address/149.255.35.143/relations
 
+bootstrap.rest
+bootstrap.solar
 bsjq-api.store
 bsjq-api.xyz
 bsjq-cdn.store
@@ -14443,6 +14446,7 @@ jqbs.online
 jqbs.shop
 jqbs.site
 jqbs.store
+jquery.rest
 mcduckgroup.shop
 net-3admsv.ml
 nightsong.online
