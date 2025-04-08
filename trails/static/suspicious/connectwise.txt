@@ -965,3 +965,13 @@ microsoftnet.ru
 # Reference: https://www.virustotal.com/gui/file/b388d8aebffc73d04519dbe419f4913de290dffab79095c994391e7bf1fc75c5/detection
 
 sigcare.help
+
+# Reference: https://www.virustotal.com/gui/ip-address/37.221.64.46/relations
+# Reference: https://www.virustotal.com/gui/file/90b50589fd829548ec90764e37bed53386222e530eb8ce153ae81d439c53d24e/detection
+# Reference: https://www.virustotal.com/gui/file/ed39d0627767a119ded2922f05b656ff5178cb23efddea80c0b5bc513fafa869/detection
+
+eng432hg.cfd
+esr4009m.cfd
+fxneok19.top
+icns23.top
+musert6.top
