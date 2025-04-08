@@ -956,3 +956,8 @@ xzaq87.top
 
 195.66.214.70:8041
 microsoftnet.ru
+
+# Reference: https://x.com/ShanHolo/status/1909533969780965829
+# Reference: https://www.virustotal.com/gui/file/29236c0931875e9e75a3df1039b79748a1f2eeef4e39b704b45df1d7b9258d1e/detection
+
+37.221.64.46:8041
