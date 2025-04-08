@@ -5744,4 +5744,10 @@
 # Reference: https://ipinfo.io/AS61432
 # Reference: https://www.intrinsec.com/wp-content/uploads/2025/03/TLP-CLEAR-From-espionage-to-PsyOps-Tracking-operations-and-infrastructure-of-UACs-in-2025-EN-1.pdf
 
-185.156.72.0/24, vaiz-as
+185.156.72.0/24,vaiz-as
+
+# AS399979
+# Reference: https://ipinfo.io/AS399979
+# Reference: https://x.com/spamhaus/status/1909230428470337734
+
+45.139.104.0/24,as-493networking
