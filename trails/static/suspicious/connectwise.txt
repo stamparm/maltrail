@@ -979,3 +979,9 @@ musert6.top
 # Reference: https://www.virustotal.com/gui/ip-address/37.120.237.248/relations
 
 estafatatg.top
+
+# Reference: https://x.com/malwrhunterteam/status/1909886582644940985
+# Reference: https://www.virustotal.com/gui/file/1de1b9eb516a1e570b7137ee18388529773242353b2a14d9c8397de25ede0606/detection
+
+46.253.4.18:8041
+daqqoi1a.anondns.net
