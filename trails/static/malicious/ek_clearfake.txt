@@ -3105,6 +3105,7 @@ join-to-12-homework.cyou
 join-to-12-homework.sbs
 m720fast.cfd
 r360drive.cfd
+x240go.cfd
 y440go.cfd
 z380click.cfd
 
