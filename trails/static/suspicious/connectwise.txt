@@ -975,3 +975,7 @@ esr4009m.cfd
 fxneok19.top
 icns23.top
 musert6.top
+
+# Reference: https://www.virustotal.com/gui/ip-address/37.120.237.248/relations
+
+estafatatg.top
