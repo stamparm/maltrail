@@ -3372,3 +3372,9 @@ finddatao.top
 ndishcor.bid
 secularistsarakolet.site
 get.ndishcor.bid
+
+# Reference: https://x.com/JAMESWT_WT/status/1910556202045411823
+# Reference: https://www.virustotal.com/gui/file/9a3bdc7f41b16ccb32cdcad65376dfad2dd5086c38017c8b80ce4708176cc940/detection
+
+meusams.club
+sso.meusams.club
