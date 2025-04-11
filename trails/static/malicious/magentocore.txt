@@ -15129,17 +15129,27 @@ pulsarexp.in
 script-transfering.com
 webchatsupport.online
 
-# Reference: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2025-04-07)
+# Reference: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2025-04-11)
 
+acrologic.baby
+angineerian.live
+cancy.beauty
 ceest.lol
 elaink.xyz
+fatharfa.xyz
 owse.art
 rowser.live
+syncontic.shop
 thorsdal.online
+cdn.acrologic.baby
+cdn.angineerian.live
+cdn.cancy.beauty
 cdn.ceest.lol
 cdn.elaink.xyz
+cdn.fatharfa.xyz
 cdn.owse.art
 cdn.rowser.live
+cdn.syncontic.shop
 cdn.thorsdal.online
 
 # Generic
