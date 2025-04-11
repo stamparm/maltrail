@@ -5541,6 +5541,16 @@ api.diamant.crossone.fr
 
 soctrainingdelivery.blob.core.windows.net
 
+# Reference: https://x.com/momomopas/status/1910528233692442830
+# Reference: https://x.com/JAMESWT_WT/status/1910660522007015725
+# Reference: https://app.any.run/tasks/1bdc54a2-5927-48a7-a2f7-194fbec65fc6
+# Reference: https://www.virustotal.com/gui/file/28352bf63321ac1eed742b44f54037a6ef3b8db56788a82e9479807cdf793d67/detection
+
+http://45.79.43.128
+45.79.43.128:31337
+45.79.43.128:8443
+45.79.43.128:8888
+
 # Generic
 
 /.sliver-client/
