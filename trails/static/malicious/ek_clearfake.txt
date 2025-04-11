@@ -3134,6 +3134,11 @@ werito.cyou
 world-of-guides.buzz
 younowoutyes.website
 
+# Reference: https://x.com/moneroon/status/1910672445670842395
+# Reference: https://www.virustotal.com/gui/file/63b56da83ddf792c7753515af5e5b25816a54e1fc10bcc6693b7028e645df2a6/detection
+
+signin.clouddomainservice.com
+
 # Generic
 
 /a3A7qLVn/
