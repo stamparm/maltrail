@@ -3879,3 +3879,25 @@ yw.prod.phishing.dev-bb.co.uk
 zdecade.com
 zid.systems
 zjzw.bl0cksec.cn
+
+# Reference: https://hunt.io/blog/gophish-targets-polish-energy-government
+
+auth-nomadelectric.com.pl
+auth.nomadelectri.com
+baza.mnuiak.pl
+bhp.nomadelectri.com
+bhp.xn-nomadelectri-8qb.com
+intelect.pl
+kuchniavikingi.pl
+mercedes-portal.pl
+microsoft-m365.mercedes-portal.pl
+microsoft.nomadelectri.com
+mnuiak.pl
+munaik.pl
+nomad-electric.com
+nomadelectri.com
+pzfd.com.pl
+testin.rqower.solar
+uregov.pl
+xn-nomadelectri-8qb.com
+zdrofit.com.pl
