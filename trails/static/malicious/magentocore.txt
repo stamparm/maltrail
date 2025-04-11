@@ -14265,6 +14265,7 @@ gate2uni.com
 
 # Reference: https://x.com/sdcyberresearch/status/1889641697698607429
 # Reference: https://app.validin.com/detail?find=5d36d75ac57ab2e4760df3b11fd54a43&type=hash&ref_id=050b20284c5#tab=host_pairs
+# Reference: https://app.validin.com/detail?find=5c8c742ef57fadd96852c5a12839be3b&type=hash&ref_id=e8152416730#tab=host_pairs
 
 activitymetrictools.com
 adperformanceanalytics.com
@@ -14286,25 +14287,35 @@ datatracktools.com
 datatrailanalytics.com
 digitalmetricsmanager.com
 geoactivitytracker.com
+geometrictrack.com
 geopulsemetrics.com
 geostatscope.com
 googleetagmanager.com
 insightfultrack.com
+insightscopepro.com
 mapandmetric.com
+metricinsightpro.com
 metricsmonitorpro.com
 metricstoolspro.com
 metricstreamline.com
+monitorstatsnow.com
 pageinsightsmanager.com
+pageintelpro.com
+pagetrackiq.com
 siteanalyticspro.com
 siteinsightspro.com
 sitestattracker.com
 sitetrackerpro.com
+sitetrackhq.com
+statfusionhq.com
 statgeoanalytics.com
+statvisionpro.com
 taganalyticspro.com
 tagmanagersite.com
 tagmanagertools.com
 tagmonitoringhub.com
 trackermanagerpro.com
+tracklyticshub.com
 trackmanagersite.com
 trackmetricshub.com
 trackstatgeo.com
@@ -14313,8 +14324,10 @@ tracktagmanager.com
 userengagementtracker.com
 webanalyticscenter.com
 webinsights360.com
+webmetricflow.com
 webmetricshub.com
 webmetricsmonitor.com
+webmetricsphere.com
 webmetricstool.com
 webstatsinsight.com
 webtrackdashboard.com
@@ -14326,11 +14339,19 @@ webtracktools.com
 api.analyticsmanager.net
 api.datalinkmanager.com
 api.dataoptimizationhub.com
+api.insightscopepro.com
+api.monitorstatsnow.com
 api.pageinsightsmanager.com
+api.pageintelpro.com
+api.pagetrackiq.com
 api.siteinsightspro.com
+api.sitetrackhq.com
+api.statfusionhq.com
+api.statvisionpro.com
 api.tracktagcenter.com
 api.tracktagmanager.com
 api.userengagementtracker.com
+api.webmetricflow.com
 api.webmetricstool.com
 assets.datamonitoringpro.com
 assets.datamonitortools.com
@@ -14345,10 +14366,14 @@ css.datamonitorpro.com
 css.datatracktools.com
 css.tagmanagersite.com
 css.webmetricshub.com
+datahub.metricinsightpro.com
 geo.adperformanceanalytics.com
 geo.audiencebehaviorinsights.com
 geo.contentengagementhub.com
 geo.customerdatainsights.com
+monitor.webmetricsphere.com
+realtime.tracklyticshub.com
+service.geometrictrack.com
 
 # Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24#tab=resolutions (# 2025-02-16)
 
