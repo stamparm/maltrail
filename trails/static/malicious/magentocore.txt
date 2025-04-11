@@ -14316,11 +14316,13 @@ tagmanagertools.com
 tagmonitoringhub.com
 trackermanagerpro.com
 tracklyticshub.com
+tracklyticspro.com
 trackmanagersite.com
 trackmetricshub.com
 trackstatgeo.com
 tracktagcenter.com
 tracktagmanager.com
+trafficinsightly.com
 userengagementtracker.com
 webanalyticscenter.com
 webinsights360.com
@@ -14348,8 +14350,10 @@ api.siteinsightspro.com
 api.sitetrackhq.com
 api.statfusionhq.com
 api.statvisionpro.com
+api.tracklyticspro.com
 api.tracktagcenter.com
 api.tracktagmanager.com
+api.trafficinsightly.com
 api.userengagementtracker.com
 api.webmetricflow.com
 api.webmetricstool.com
@@ -14374,7 +14378,14 @@ geo.customerdatainsights.com
 monitor.webmetricsphere.com
 realtime.tracklyticshub.com
 service.geometrictrack.com
+wsc.insightscopepro.com
+wsc.monitorstatsnow.com
+wsc.pageintelpro.com
 wsc.pagetrackiq.com
+wsc.sitetrackhq.com
+wsc.statfusionhq.com
+wsc.tracklyticspro.com
+wsc.trafficinsightly.com
 
 # Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24#tab=resolutions (# 2025-02-16)
 
