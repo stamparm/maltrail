@@ -14306,6 +14306,7 @@ insightfultrack.com
 insightgeostats.com
 insightscopepro.com
 insightwebstats.com
+magicdomainsearch.com
 mapandmetric.com
 metricinsightpro.com
 metricmappro.com
@@ -14372,6 +14373,7 @@ api.analyticsmanager.net
 api.datalinkmanager.com
 api.dataoptimizationhub.com
 api.insightscopepro.com
+api.magicdomainsearch.com
 api.monitorstatsnow.com
 api.pageinsightsmanager.com
 api.pageintelpro.com
