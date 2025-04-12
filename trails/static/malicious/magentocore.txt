@@ -14401,6 +14401,7 @@ css.datamonitorpro.com
 css.datatracktools.com
 css.tagmanagersite.com
 css.webmetricshub.com
+data.geoinsighttracker.com
 data.geotrackmetrics.com
 datahub.datainsightmap.com
 datahub.metricinsightpro.com
