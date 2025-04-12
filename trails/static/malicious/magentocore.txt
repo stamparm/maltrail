@@ -14718,6 +14718,8 @@ cdn.uutop.shop
 # Reference: https://x.com/sdcyberresearch/status/1909221421567328382
 
 aveopixel.xyz
+megapixelheid.top
+bapepixel.top
 beppixel.top
 canmeriksmonday.xyz
 carefulmetriks.top
@@ -14730,6 +14732,7 @@ jatesmetrics.xyz
 jaysmetricks.top
 jsqlds.top
 megametriks.top
+megapixelheid.top
 metrikshot.top
 metrikspixels.xyz
 moonmetriks.top
