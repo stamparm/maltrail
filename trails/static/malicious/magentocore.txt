@@ -14367,6 +14367,7 @@ webtrackinsights.com
 webtracksphere.com
 webtracktools.com
 worktrackingsystem.com
+api.activitymetrictools.com
 api.analyticsmanager.net
 api.datalinkmanager.com
 api.dataoptimizationhub.com
