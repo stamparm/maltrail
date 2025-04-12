@@ -14381,7 +14381,10 @@ css.tagmanagersite.com
 css.webmetricshub.com
 datahub.metricinsightpro.com
 datahub.tracksitemetrics.com
+datastream.insightwebstats.com
+datastream.webstatvista.com
 dev-api.metricmappro.com
+dev.insightgeostats.com
 geo.adperformanceanalytics.com
 geo.audiencebehaviorinsights.com
 geo.contentengagementhub.com
@@ -14390,8 +14393,11 @@ metrics.insightgeostats.com
 mobile-api.datametricpath.com
 mobile-api.insightwebstats.com
 mobile-api.webstatvista.com
+monitor.tracksitemetrics.com
 monitor.webmetricsphere.com
+notifications.metricmappro.com
 realtime.tracklyticshub.com
+rt.sitetrackmetrics.com
 service.geometrictrack.com
 service.sitetrackmetrics.com
 wsc.insightscopepro.com
