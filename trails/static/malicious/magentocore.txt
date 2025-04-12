@@ -14355,6 +14355,7 @@ webtrackingtools.com
 webtrackinsights.com
 webtracksphere.com
 webtracktools.com
+worktrackingsystem.com
 api.analyticsmanager.net
 api.datalinkmanager.com
 api.dataoptimizationhub.com
@@ -14419,7 +14420,6 @@ service.geometrictrack.com
 service.sitetrackmetrics.com
 stream-ws.webstatscope.com
 stream.webanalyticsgrid.com
-worktrackingsystem.com
 wsc.insightscopepro.com
 wsc.monitorstatsnow.com
 wsc.pageintelpro.com
