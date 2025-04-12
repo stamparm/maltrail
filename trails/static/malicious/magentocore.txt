@@ -14266,10 +14266,13 @@ gate2uni.com
 # Reference: https://x.com/sdcyberresearch/status/1889641697698607429
 # Reference: https://app.validin.com/detail?find=5d36d75ac57ab2e4760df3b11fd54a43&type=hash&ref_id=050b20284c5#tab=host_pairs
 # Reference: https://app.validin.com/detail?find=5c8c742ef57fadd96852c5a12839be3b&type=hash&ref_id=e8152416730#tab=host_pairs
+# Reference: https://app.validin.com/detail?find=9c2df47209a52480dd61ce8fea9cf8bf&type=hash&ref_id=f30f5e8901b#tab=host_pairs
 
 activitymetrictools.com
 adperformanceanalytics.com
 analyticsmanager.net
+analyticsvista.com
+analytixflow.com
 audiencebehaviorinsights.com
 contentengagementhub.com
 customerdatainsights.com
@@ -14284,6 +14287,7 @@ datamonitoringpro.com
 datamonitorpro.com
 datamonitortools.com
 dataoptimizationhub.com
+datatracknest.com
 datatracktools.com
 datatrailanalytics.com
 digitalmetricsmanager.com
@@ -14309,6 +14313,7 @@ pageintelpro.com
 pagetrackiq.com
 siteanalyticspro.com
 siteinsightspro.com
+sitestatflow.com
 sitestattracker.com
 sitetrackerpro.com
 sitetrackhq.com
@@ -14332,12 +14337,15 @@ tracktagmanager.com
 trafficinsightly.com
 userengagementtracker.com
 webanalyticscenter.com
+webanalyticsgrid.com
+webinsightmetrics.com
 webinsights360.com
 webmetricflow.com
 webmetricshub.com
 webmetricsmonitor.com
 webmetricsphere.com
 webmetricstool.com
+webstatscope.com
 webstatsinsight.com
 webstatvista.com
 webtrackdashboard.com
@@ -14345,6 +14353,7 @@ webtrackerhq.com
 webtrackermanager.com
 webtrackingtools.com
 webtrackinsights.com
+webtracksphere.com
 webtracktools.com
 api.analyticsmanager.net
 api.datalinkmanager.com
@@ -14379,8 +14388,10 @@ css.datamonitorpro.com
 css.datatracktools.com
 css.tagmanagersite.com
 css.webmetricshub.com
+data.geotrackmetrics.com
 datahub.metricinsightpro.com
 datahub.tracksitemetrics.com
+datastream.datametricpath.com
 datastream.insightwebstats.com
 datastream.webstatvista.com
 dev-api.metricmappro.com
@@ -14389,17 +14400,26 @@ geo.adperformanceanalytics.com
 geo.audiencebehaviorinsights.com
 geo.contentengagementhub.com
 geo.customerdatainsights.com
+live.analyticsvista.com
+live.datatracknest.com
+media.sitestatflow.com
 metrics.insightgeostats.com
 mobile-api.datametricpath.com
 mobile-api.insightwebstats.com
 mobile-api.webstatvista.com
 monitor.tracksitemetrics.com
 monitor.webmetricsphere.com
+monitor.webtracksphere.com
+notifications.analytixflow.com
 notifications.metricmappro.com
 realtime.tracklyticshub.com
 rt.sitetrackmetrics.com
+rt.webinsightmetrics.com
 service.geometrictrack.com
 service.sitetrackmetrics.com
+stream-ws.webstatscope.com
+stream.webanalyticsgrid.com
+worktrackingsystem.com
 wsc.insightscopepro.com
 wsc.monitorstatsnow.com
 wsc.pageintelpro.com
