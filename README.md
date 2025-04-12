@@ -616,6 +616,7 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * [BlackArch Linux](https://github.com/BlackArch/blackarch/blob/master/packages/maltrail/PKGBUILD)
 * [Validin LLC](https://twitter.com/ValidinLLC/status/1719666086390517762)
 * [Maltrail Add-on for Splunk](https://splunkbase.splunk.com/app/7211)
+* [Maltrail decoder and rules for Wazuh](https://github.com/MikhailKasimov/maltrail-wazuh-decoder-and-rules)
 * [GScan](https://github.com/grayddq/GScan) <sup>1</sup>
 * [MalwareWorld](https://www.malwareworld.com/) <sup>1</sup>
 * [oisd | domain blocklist](https://oisd.nl/?p=inc) <sup>1</sup>
