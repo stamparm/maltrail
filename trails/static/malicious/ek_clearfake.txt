@@ -3160,9 +3160,11 @@ partner-id125481.com
 
 amoliera.org
 analytiwave.com
+closecufre.com
 flargyard.com
 goclouder.com
 secuclauf.com
+security.closecufre.com
 security.flargyard.com
 security.secuclauf.com
 
