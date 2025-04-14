@@ -1727,9 +1727,12 @@ yunqof.shop
 
 # Reference: https://x.com/cloudsek/status/1904799207195894250
 # Reference: https://x.com/salmanvsf/status/1905644338052464796
+# Reference: https://x.com/salmanvsf/status/1911714728231211095
 # Reference: https://www.cloudsek.com/blog/youtube-creators-under-siege-again-clickflix-technique-fuels-malware-attacks
+# Reference: https://www.virustotal.com/gui/file/afa819c9427731d716d4516f2943555f24ef13207f75134986ae0b67a0471b84/detection
 
 365-docx.com
+cart-newlocate.xyz
 cat-watches-site.xyz
 docs-edit.com
 docx-365.com
@@ -1741,9 +1744,11 @@ docx-share.com
 docx-shared.com
 docx-space.com
 findfakesnake.xyz
+office-note.com
 share-docx.com
 sync-docx.com
 what-is-game.xyz
+cdn.cart-newlocate.xyz
 cdn.findfakesnake.xyz
 flowers.what-is-game.xyz
 ondrive.docx-edit.com
@@ -1753,6 +1758,7 @@ onedrive.docx-online.com
 onedrive.docx-shared.com
 onedrive.docx-space.com
 onedrive.office-edit.com
+onedrive.office-note.com
 onedrive.sync-docx.com
 onenote.docs-edit.com
 onenote.docx-share.com
@@ -1762,6 +1768,7 @@ sharepoint.365-docx.com
 sharepoint.docx-365.com
 sharepoint.docx-edit.com
 sharepoint.docx-space.com
+sharepoint.office-note.com
 sharepoint.sync-docx.com
 
 # Reference: https://x.com/rpargman/status/1906780355132006758
