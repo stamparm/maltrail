@@ -3156,7 +3156,9 @@ cpthclks.info
 partner-id125481.com
 
 # Reference: https://x.com/Gi7w0rm/status/1911838153654042718
+# Reference: https://www.virustotal.com/gui/file/b9adae0c45fae156183d42b1fba8e916bf3d1c796136e1a36eb8193a1b7ea001/detection
 
+amoliera.org
 analytiwave.com
 flargyard.com
 goclouder.com
