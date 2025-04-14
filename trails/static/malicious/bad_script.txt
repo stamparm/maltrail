@@ -8747,6 +8747,10 @@ gatetodisplaycontent.com
 /get_bot_commands.php
 /register_bot.php
 
+# Reference: https://x.com/JAMESWT_WT/status/1911848010692108367
+
+/netsapp.ps1
+
 # Generic
 
 /5c0ca79.php
