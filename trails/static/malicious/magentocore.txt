@@ -11314,6 +11314,7 @@ cdnbigcommerce.com
 chatssl.com
 checkdata.info
 checkout-bigcommerce.com
+cloudflare-ns1.com
 cloudflary.xyz
 com-checking-valid.com
 com-coincover.com
@@ -11381,6 +11382,7 @@ static3-jquery.com
 static4-jquery.com
 static5-jquery.com
 static6-jquery.com
+static7-jquery.com
 staticlitcs.com
 staticlitycis.com
 traffic-check.com
@@ -11393,6 +11395,8 @@ ns1.static5-jquery.com
 ns1.static6-jquery.com
 ns2.static5-jquery.com
 ns2.static6-jquery.com
+ns1.static7-jquery.com
+ns2.static7-jquery.com
 shop.jquery.host
 
 # Reference: https://www.virustotal.com/gui/ip-address/69.49.230.239/relations
