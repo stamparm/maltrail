@@ -3155,6 +3155,13 @@ signin.clouddomainservice.com
 cpthclks.info
 partner-id125481.com
 
+# Reference: https://x.com/Gi7w0rm/status/1911838153654042718
+
+analytiwave.com
+flargyard.com
+goclouder.com
+security.flargyard.com
+
 # Generic
 
 /a3A7qLVn/
