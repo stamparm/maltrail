@@ -5751,3 +5751,17 @@
 # Reference: https://x.com/spamhaus/status/1909230428470337734
 
 45.139.104.0/24,as-493networking
+
+# AS207279
+# Reference: https://ipinfo.io/AS207279
+
+109.206.239.0/24,markahost-telekomunikasyon-limited-sirketi
+193.37.40.0/24,markahost-telekomunikasyon-limited-sirketi
+193.38.34.0/24,markahost-telekomunikasyon-limited-sirketi
+213.238.182.0/24,markahost-telekomunikasyon-limited-sirketi
+45.143.99.0/24,markahost-telekomunikasyon-limited-sirketi
+77.92.154.0/24,markahost-telekomunikasyon-limited-sirketi
+78.135.87.0/24,markahost-telekomunikasyon-limited-sirketi
+79.110.51.0/24,markahost-telekomunikasyon-limited-sirketi
+85.117.239.0/24,markahost-telekomunikasyon-limited-sirketi
+94.154.162.0/24,markahost-telekomunikasyon-limited-sirketi
