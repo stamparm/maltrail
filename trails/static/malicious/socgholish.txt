@@ -4878,6 +4878,11 @@ webmail.denver-computer.com
 
 secure.lme-co.com
 
+# Reference: https://x.com/malwrhunterteam/status/1912061717393056022
+# Reference: https://www.virustotal.com/gui/file/5fb78448a8d27c2c38b9d2104740c2bb920bb28a146411dad816f82595a9b8cf/detection
+
+mops.dzierzgon.pl/wp-admin/admin-ajax.php
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
