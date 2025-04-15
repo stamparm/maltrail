@@ -3168,6 +3168,11 @@ security.closecufre.com
 security.flargyard.com
 security.secuclauf.com
 
+# Reference: https://x.com/joe4security/status/1912072320392310805
+# Reference: https://www.joesandbox.com/analysis/1665160/0/html
+
+newflave.rf.gd
+
 # Generic
 
 /a3A7qLVn/
