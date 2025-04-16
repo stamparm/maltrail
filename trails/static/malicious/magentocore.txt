@@ -14470,7 +14470,9 @@ stream.sitemetricpro.com
 stream.webanalyticsgrid.com
 user-api.analytixflow.com
 user-api.sitestatflow.com
+ws.digitalmetricsmanager.com
 ws.trackwebtrends.com
+ws.watchlyze.com
 wsc.insightscopepro.com
 wsc.monitorstatsnow.com
 wsc.pageintelpro.com
