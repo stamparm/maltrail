@@ -15315,6 +15315,19 @@ cdn.thorsdal.online
 cdn.tintype.baby
 cdn.unfiled.digital
 
+# Reference: https://x.com/sdcyberresearch/status/1912416825691738248
+# Reference: https://app.validin.com/detail?find=94.154.35.233&type=ip4&ref_id=6323618bf31#tab=resolutions (# 2025-04-16)
+
+epos-internal.com
+js-privacy-essentials.com
+js-privacy-shield.com
+js-privacy-solutions.com
+js-secure-analyze.xyz
+js-security-essentials.com
+js-security-shield.com
+js-security-solutions.com
+js-ware-secure.com
+
 # Generic
 
 /assets/lfg.js
