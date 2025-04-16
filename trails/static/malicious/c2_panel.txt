@@ -918,6 +918,10 @@ http://94.103.125.100
 185.193.125.220:3000
 185.193.125.226:3000
 
+# Reference: https://www.virustotal.com/gui/file/19a610efdf9693350e5b9eea2959b328c74dda894c87ee55955a3a1a4967c0fb/detection
+
+/never/lookinto/it/panel/uploads/
+
 # Generic
 
 /admin_123/auth.php
