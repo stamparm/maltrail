@@ -14354,6 +14354,7 @@ tracktagmanager.com
 trackwebtrends.com
 trafficinsightly.com
 userengagementtracker.com
+watchlyze.com
 webanalyticscenter.com
 webanalyticsgrid.com
 webinsightmetrics.com
@@ -14395,6 +14396,7 @@ api.tracktagcenter.com
 api.tracktagmanager.com
 api.trafficinsightly.com
 api.userengagementtracker.com
+api.watchlyze.com
 api.webmetricflow.com
 api.webmetricstool.com
 assets.datamonitoringpro.com
