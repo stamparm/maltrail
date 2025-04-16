@@ -15327,6 +15327,8 @@ js-security-essentials.com
 js-security-shield.com
 js-security-solutions.com
 js-ware-secure.com
+ns1.js-ware-secure.com
+ns2.js-ware-secure.com
 
 # Generic
 
