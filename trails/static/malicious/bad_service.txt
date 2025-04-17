@@ -3109,7 +3109,7 @@ maxbuscas.info
 maxbuscas.io
 maxbuscas.tech
 
-# Reference: https://pilot.validin.com/detail?find=46.173.214.120&type=ip4&ref_id=b8692d418e4#tab=resolutions (# 2025-03-10)
+# Reference: https://app.validin.com/detail?find=46.173.214.120&type=ip4&ref_id=b8692d418e4#tab=resolutions (# 2025-03-10)
 
 2pac.su
 2tracks.ru
