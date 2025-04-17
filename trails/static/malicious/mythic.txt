@@ -2935,3 +2935,9 @@ http://188.166.78.195
 # Reference: https://www.virustotal.com/gui/file/e16867c07676fbbfbcf22671e0fb2d90905e871c315d40c3388a1c1edceaa744/detection
 
 http://170.64.176.152
+
+# Reference: https://x.com/malwrhunterteam/status/1912630667076141495
+# Reference: https://www.virustotal.com/gui/file/a2ffcaf180400a332d5ad06338b3528cf22a16486d8027ee21be503a9690aefb/detection
+
+http://142.93.225.19
+http://188.166.231.83
