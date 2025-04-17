@@ -6487,7 +6487,7 @@ information.cloudsyndication.org
 pagead2.csyndication.com
 tx.dke.me
 
-# Reference: https://pilot.validin.com/detail?find=e58f78e85f2e3af9350dd7d1c909a95f&type=hash&ref_id=6ccab8d90f1#tab=host_pairs (# 2025-03-06)
+# Reference: https://app.validin.com/detail?find=e58f78e85f2e3af9350dd7d1c909a95f&type=hash&ref_id=6ccab8d90f1#tab=host_pairs (# 2025-03-06)
 
 instantcontentflow.com
 gll.instantcontentflow.com
