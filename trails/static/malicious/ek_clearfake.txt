@@ -1374,7 +1374,7 @@ zwxhm.icu
 zxdsq.site
 zyfu.site
 
-# Reference: https://pilot.validin.com/detail?find=Safeguard&type=raw&ref_id=c7749314e0d#tab=host_pairs (# 2025-02-15)
+# Reference: https://app.validin.com/detail?find=Safeguard&type=raw&ref_id=c7749314e0d#tab=host_pairs (# 2025-02-15)
 
 0012939283203ga71yq1q27g1s79s02l0291.xyz
 0dy.me
