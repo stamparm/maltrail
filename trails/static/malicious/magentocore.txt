@@ -12363,8 +12363,11 @@ static-jquery.ga
 
 analyticsapi.club
 analyticsvisits.com
+analyticsvisits.xyz
 jquerycdn.store
 jquerylab.pw
+ns1.analyticsvisits.xyz
+ns2.analyticsvisits.xyz
 static.jquerycdn.store
 test.jquerylab.pw
 
