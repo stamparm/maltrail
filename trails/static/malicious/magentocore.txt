@@ -14063,15 +14063,19 @@ chatjsdvcss.com
 chatjssvcss.com
 cspreport.org
 debdpkgseclib.com
+epscsp.shop
+goljsdofls.com
 instaholldatalib.com
 logicwploo.com
 logicwploop.com
 logwplmap.com
 reportcsp.com
+reportls.org
+reportscsp.shop
+restapi.space
 stylewpcall.com
 stylewpcoll.com
 stylewpoll.com
-restapi.space
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-09-19-v10698/1991
 
