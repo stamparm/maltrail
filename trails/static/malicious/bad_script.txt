@@ -8751,6 +8751,13 @@ gatetodisplaycontent.com
 
 /netsapp.ps1
 
+# Reference: https://x.com/malwrhunterteam/status/1913154621456998719
+# Reference: https://www.virustotal.com/gui/file/6a82e620fdcc5e11e5aa776bd70c120dfb83a921d89edcfe40ed899d227e2ff1/detection
+
+/windowsDefenderAnalyst.ps1
+/windowsDefenderAnalyst.vbs
+/windowsOutside.ps1
+
 # Generic
 
 /5c0ca79.php
