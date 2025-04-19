@@ -15422,6 +15422,34 @@ js-ware-secure.com
 ns1.js-ware-secure.com
 ns2.js-ware-secure.com
 
+# Reference: https://www.linkedin.com/posts/sansec_as-roma-hacked-customer-data-stolen-activity-7318954317091139584-I-I2
+# Reference: https://app.validin.com/detail?find=c4de6c3ba65486e8efb0c03ecbb7a05f&type=hash&ref_id=55d77e463f4#tab=host_pairs (# 2025-04-20)
+
+bootrow.com
+businesssale.net
+foodtiket.io
+imgweb.net
+lookround.org
+mapchat.us
+profapi.com
+redtransfer.net
+subgraphic.com
+app.mapchat.us
+cms.imgweb.net
+cpanel.imgweb.net
+cpcalendars.imgweb.net
+cpcontacts.imgweb.net
+h.redtransfer.net
+img.bootrow.com
+js.lookround.org
+mail.imgweb.net
+static.profapi.com
+top.businesssale.net
+up.foodtiket.io
+web.subgraphic.com
+webdisk.imgweb.net
+webmail.imgweb.net
+
 # Generic
 
 /assets/lfg.js
