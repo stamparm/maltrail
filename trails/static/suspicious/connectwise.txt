@@ -985,3 +985,8 @@ estafatatg.top
 
 46.253.4.18:8041
 daqqoi1a.anondns.net
+
+# Reference: https://www.virustotal.com/gui/file/1e2dafc987f4a4f9c8a95b9ca5718fc6158ee83dc4dfca11ee6a14d92029d2fd/detection
+
+downloadinvoice.online
+mail.downloadinvoice.online
