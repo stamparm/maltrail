@@ -3306,6 +3306,22 @@ wordpress.secure-service.pro
 wp.secure-service.pro
 zwaait.nl
 
+# Reference: https://x.com/skocherhan/status/1912941291857490015
+
+partner-id-68567577.com
+partner-id128125.com
+partner-id345871.com
+partner-id3695.com
+partner-id3695.world
+partner-id42.world
+partner-id651315.com
+partner-id7192.world
+partner-id729.com
+partner-id7292.world
+partner-id742.world
+partner-id755421.com
+partner-id985.world
+
 # Generic
 
 /a3A7qLVn/
