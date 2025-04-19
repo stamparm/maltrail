@@ -990,3 +990,11 @@ daqqoi1a.anondns.net
 
 downloadinvoice.online
 mail.downloadinvoice.online
+
+# Reference: https://x.com/malwrhunterteam/status/1912844429074870554
+# Reference: https://www.virustotal.com/gui/file/0cb307270691981c2708b84462375ef703975cafd89c120ede3aeda8ae754e2e/detection
+
+172.81.132.12:8041
+securedocumentfiledownload.com
+mail.securedocumentfiledownload.com
+relay.securedocumentfiledownload.com
