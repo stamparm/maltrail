@@ -8765,6 +8765,16 @@ gatetodisplaycontent.com
 /api/ban_hwid.php
 /api/ban_hwid.php?hwid=
 
+# Reference: https://x.com/James_inthe_box/status/1912864102504153100
+
+/bagnew.ps1
+/bagsnake.ps1
+/big7.ps1
+/blacksheep.ps1
+/devnew.ps1
+/k22.ps1
+/sir.ps1
+
 # Generic
 
 /5c0ca79.php
