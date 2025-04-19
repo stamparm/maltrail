@@ -15424,28 +15424,37 @@ ns2.js-ware-secure.com
 
 # Reference: https://www.linkedin.com/posts/sansec_as-roma-hacked-customer-data-stolen-activity-7318954317091139584-I-I2
 # Reference: https://app.validin.com/detail?find=c4de6c3ba65486e8efb0c03ecbb7a05f&type=hash&ref_id=55d77e463f4#tab=host_pairs (# 2025-04-20)
+# Reference: https://app.validin.com/detail?find=dffc7fb6dde0148922a0c6a8b97da3f1&type=hash&ref_id=46c342442c5#tab=host_pairs (# 2025-04-20)
+# Reference: https://app.validin.com/detail?find=188.127.246.83&type=ip4&ref_id=1d271ff1756#tab=resolutions (# 2025-04-20)
+# Reference: https://app.validin.com/detail?find=91.199.137.135&type=ip4&ref_id=1d271ff1756#tab=resolutions (# 2025-04-20)
 
 bootrow.com
 businesssale.net
+flowmanager.org
 foodtiket.io
 imgweb.net
 lookround.org
 mapchat.us
+matsmap.com
 profapi.com
 redtransfer.net
+scdnwire.com
 subgraphic.com
 app.mapchat.us
 cms.imgweb.net
 cpanel.imgweb.net
 cpcalendars.imgweb.net
 cpcontacts.imgweb.net
+h.matsmap.com
 h.redtransfer.net
 img.bootrow.com
 js.lookround.org
 mail.imgweb.net
+media.scdnwire.com
 static.profapi.com
 top.businesssale.net
 up.foodtiket.io
+web.flowmanager.org
 web.subgraphic.com
 webdisk.imgweb.net
 webmail.imgweb.net
