@@ -1854,26 +1854,44 @@ http://72.23.229.75
 96.246.154.99:8080
 96.250.173.19:8080
 
-# Reference: https://app.validin.com/detail?type=hash&find=57f501d6fee2fdb024795abbdb750ad5#tab=host_pairs (# 2025-03-26)
+# Reference: https://app.validin.com/detail?type=hash&find=57f501d6fee2fdb024795abbdb750ad5#tab=host_pairs (# 2025-04-19)
 
 139-144-31-16.ip.linodeusercontent.com
 172-105-5-222.ip.linodeusercontent.com
+173-255-248-36.ip.linodeusercontent.com
 3050.duckdns.org
 asuna-c2.glfyinfra.net
+base.danclark.net
 bear.sytes.net
 bunkerdoor.com
+c2.bentlybro.com
 c2.hackbox.se
 c2.istealyourdomain.org
+c2.lukastheblack.net
+c2.netqa.de
+c2.op-center.com
+c2.rh-dev.io
 c2.swisscheesesecurity.net
+c2.test.you-tor.com
 cloudc2labor.org
 evil.genysis.xyz
 fountaine.me
 fqhcit.duckdns.org
+geospacial.ironhorse.dev
 gungnir-nebula.viewdns.net
+h5.redwolfpack.nl
 h5c2.istormsolutions.online
+hades.theunderworldproject.net
+heartichokehack.com
+jasper.sempervespallc.com
 kona.principe.ai
+myc2syn.com
 nguard-c2-01.ngmass.co
+orioncomms.net
 pawel-szychowski.online
+r3-prime.com
 rmhollingsworth.com
 skyeboo.com
+smfpine.duckdns.org
 vps.vdmt.au
+widicloudc2.duckdns.org
