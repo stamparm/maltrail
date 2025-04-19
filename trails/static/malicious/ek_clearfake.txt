@@ -3473,6 +3473,7 @@ hosam.icu
 huquw.icu
 hyjaz.icu
 jexem.icu
+kizav.icu
 kolac.icu
 kubab.icu
 kyrap.icu
@@ -3520,8 +3521,10 @@ vasih.icu
 vefim.icu
 vegyt.icu
 voded.icu
+volez.icu
 vosyr.icu
 vuces.icu
+vukyp.icu
 vysub.icu
 wetad.icu
 wewum.icu
