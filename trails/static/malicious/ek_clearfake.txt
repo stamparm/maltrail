@@ -3308,18 +3308,41 @@ zwaait.nl
 
 # Reference: https://x.com/skocherhan/status/1912941291857490015
 
+partner-id-1177539.com
+partner-id-6456457.com
+partner-id-67111982.com
+partner-id-6856757.com
 partner-id-68567577.com
+partner-id-7053271.com
+partner-id-7695265.com
+partner-id-769795.com
+partner-id-799272685.com
+partner-id-7992975.com
+partner-id-805746.com
+partner-id-8073451.com
+partner-id-807451.com
+partner-id-9993112.com
 partner-id128125.com
+partner-id2341.info
+partner-id29834.com
 partner-id345871.com
+partner-id365411.com
 partner-id3695.com
 partner-id3695.world
+partner-id369551.com
 partner-id42.world
+partner-id435.info
 partner-id651315.com
+partner-id655421.com
 partner-id7192.world
 partner-id729.com
+partner-id729.world
 partner-id7292.world
 partner-id742.world
+partner-id751.world
 partner-id755421.com
+partner-id834.world
+partner-id9832.info
 partner-id985.world
 
 # Generic
