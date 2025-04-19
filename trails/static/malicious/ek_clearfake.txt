@@ -3344,6 +3344,9 @@ partner-id755421.com
 partner-id834.world
 partner-id9832.info
 partner-id985.world
+booking.partner-id345871.com
+booking.partner-id365411.com
+booking.partner-id651315.com
 
 # Generic
 
