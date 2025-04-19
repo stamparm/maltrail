@@ -8758,6 +8758,13 @@ gatetodisplaycontent.com
 /windowsDefenderAnalyst.vbs
 /windowsOutside.ps1
 
+# Reference: https://x.com/skocherhan/status/1913384431437451757
+# Reference: https://app.validin.com/detail?find=AKEY%20PRIVATE%20-%20Admin%20Login&type=raw (# 2025-04-19)
+# Reference: https://www.virustotal.com/gui/file/0b9a9159e8411d495218794fe8c1448ee9738ba1a0ac683aedceea280da7e0fd/detection
+
+/api/ban_hwid.php
+/api/ban_hwid.php?hwid=
+
 # Generic
 
 /5c0ca79.php
