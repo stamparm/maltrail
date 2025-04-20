@@ -3615,3 +3615,7 @@ webpaloalto.com
 webpaloaltovpn.com
 webvpnpaloalto.com
 wwwciscoweb.com
+
+# Reference: https://x.com/banthisguy9349/status/1913914362705617113
+
+envs.sh
