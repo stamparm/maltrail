@@ -5765,3 +5765,12 @@
 79.110.51.0/24,markahost-telekomunikasyon-limited-sirketi
 85.117.239.0/24,markahost-telekomunikasyon-limited-sirketi
 94.154.162.0/24,markahost-telekomunikasyon-limited-sirketi
+
+# AS213355
+# Reference: https://ipinfo.io/AS213355
+
+185.39.17.0/24,hgn-as
+193.176.23.0/24,hgn-as
+45.129.196.0/24,hgn-as
+80.64.16.0/24,hgn-as
+88.214.48.0/24,hgn-as
