@@ -3946,6 +3946,54 @@ zvtc.barev.icu
 partlet-id739847.com
 booking.partlet-id739847.com
 
+# Reference: https://darkatlas.io/blog/delivering-trojans-via-clickfix-captcha
+# Reference: https://app.validin.com/detail?find=Checking%20if%20you%20are%20human&type=raw&ref_id=043c2826360#tab=host_pairs (# 2025-04-20)
+
+admin-booking-login.cfd
+authentifycheck.com
+booking-guset.help
+booking-verification.help
+bookingguesthelp.cfd
+bookinghelpguestr.cfd
+bookinglooking.cfd
+bookisnd.it.com
+booklngsecurity.com
+bookpart1.com
+bookpartn.com
+bookskkas.xyz
+captcha-cf.com
+cf-captcha.com
+cfcaptcha.com
+cfcaptchas.com
+cfcloudcaptcha.com
+cl0udflare-verif-7645723.com
+cloud.zispp.org
+coffeepointperu.com
+dignow.org
+dlcrypt.net
+fhdfgsdfdsfsd.cfd
+fhfhjfhjfhejejrre.cfd
+globaltalent.icu
+kap.magicitbd.com
+kmspico.1fin.uz
+lllyoutube.com
+mail.captcha-cf.com
+mail.cfcaptcha.com
+mail.janchowk.com
+makeitwork.pages.dev
+rambox.org
+rmsattendvisitor.world
+roomsattende99918.world
+roomsverif99824.world
+royaltrucklog.com
+scrollcoin.org
+talentdock.world
+talentstack.icu
+verefication3123.world
+viperrat.pages.dev
+youtube-watch-vwt16hzkwhdy.com
+youtude.net
+
 # Generic
 
 /a3A7qLVn/
