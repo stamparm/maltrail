@@ -4382,8 +4382,9 @@
 # AS56873
 # Reference: https://ipinfo.io/AS51381
 # Reference: https://ipinfo.io/AS56873
+# Note: as-names eliteteam-peering-az1 and eliteteam-antiddos => eliteteam
 
-185.215.113.0/24,eliteteam-peering-az1
+185.215.113.0/24,eliteteam
 
 # AS34534
 # Reference: https://ipinfo.io/AS34534
