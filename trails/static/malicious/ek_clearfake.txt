@@ -3719,6 +3719,7 @@ colaj.icu
 coonl.barev.icu
 ctcb.barev.icu
 ctkz5f5a.barev.icu
+cufyz.icu
 cuved.icu
 cuxor.icu
 cybaf.icu
@@ -3781,6 +3782,7 @@ jhkq5w6q.barev.icu
 jon7rrka.barev.icu
 jpaom.barev.icu
 k2mr2ye5.barev.icu
+kajec.icu
 kf34.barev.icu
 kizav.icu
 klg8.barev.icu
@@ -3798,6 +3800,7 @@ l7k847z1.barev.icu
 l84ghdtl.barev.icu
 lapib.icu
 lemox.icu
+letoq.icu
 lezum.icu
 lgqecaxb.barev.icu
 lomac.icu
@@ -3820,6 +3823,7 @@ napef.icu
 nejoc.icu
 nejyd.icu
 nokuv.icu
+nosux.icu
 nplsjlwh.barev.icu
 ns1.symad.icu
 o4rkv4bk.barev.icu
@@ -3836,6 +3840,7 @@ pejel.icu
 pifos.icu
 pikip.icu
 pilod.icu
+pivum.icu
 pivyt.icu
 pnkvip0u.barev.icu
 pppfc.barev.icu
