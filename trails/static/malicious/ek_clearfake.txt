@@ -3941,6 +3941,11 @@ zezar.icu
 zho629fj.barev.icu
 zvtc.barev.icu
 
+# Reference: https://x.com/JAMESWT_WT/status/1913828664027869377
+
+partlet-id739847.com
+booking.partlet-id739847.com
+
 # Generic
 
 /a3A7qLVn/
