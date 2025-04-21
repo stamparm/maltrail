@@ -3743,6 +3743,7 @@ er7q.barev.icu
 f77lo.barev.icu
 fafot.icu
 faneg.icu
+faqyw.icu
 farur.icu
 favop.icu
 fdzkl.barev.icu
@@ -3781,6 +3782,7 @@ jfyac.barev.icu
 jhkq5w6q.barev.icu
 jon7rrka.barev.icu
 jpaom.barev.icu
+juket.icu
 k2mr2ye5.barev.icu
 kajec.icu
 kf34.barev.icu
@@ -3807,6 +3809,7 @@ lomac.icu
 lukus.icu
 lvmkb.barev.icu
 lvvjo.barev.icu
+lygal.icu
 lysyz.icu
 mavew.icu
 mbcrylvx.barev.icu
@@ -3850,8 +3853,10 @@ q8igcta1.barev.icu
 qevub.icu
 qg0u3izv.barev.icu
 qicon.icu
+qisoz.icu
 qngud.barev.icu
 qolun.icu
+qonit.icu
 qowot.icu
 qpmuq.barev.icu
 qutyd.icu
@@ -3865,6 +3870,7 @@ rlvwc.barev.icu
 rmbsr8vn.barev.icu
 rozox.icu
 rulix.icu
+rutaw.icu
 rxpqz.barev.icu
 s1k6n.barev.icu
 s3pv.barev.icu
@@ -3913,11 +3919,13 @@ wltrr.barev.icu
 wolum.icu
 wyham.icu
 wysaf.icu
+wyxam.icu
 wyzof.icu
 x44n.barev.icu
 xasad.icu
 xbiz.barev.icu
 xi6cgl96.barev.icu
+xisav.icu
 xiwaj.icu
 xiwuc.icu
 xorhbg90.barev.icu
