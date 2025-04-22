@@ -758,3 +758,16 @@ http://95.179.157.77
 46.17.40.151:3232
 47.90.204.77:3232
 8.218.120.126:3232
+
+# Reference: https://x.com/malwrhunterteam/status/1914632170129309952
+# Reference: https://www.virustotal.com/gui/file/ea41b2bf1064efcb6196bb79b40c5158fc339a36a3d3ddee68c822d797895b4e/detection
+# Reference: https://www.virustotal.com/gui/file/954ddbff642215fd4ff9f49b448ebf2af8dec383fdd502f215a235e0bb672656/detection
+# Reference: https://www.virustotal.com/gui/file/7fa83dfa709e259c3732b90dcd2b309fac7a1e4b9355403aa4271c07aa5ce87c/detection
+# Reference: https://www.virustotal.com/gui/file/0ba404c5c509c96e832dd053e81feaf618df860fbed785ed83c775ec6495630b/detection
+
+119.42.148.188:2443
+43.159.18.135:2333
+rcs.google-status.net
+yc.as.ipidea.online
+kfpt-stud.oss-cn-hangzhou.aliyuncs.com
+/1fc1e882c0b0e35218119802a535cbdf_shellcode
