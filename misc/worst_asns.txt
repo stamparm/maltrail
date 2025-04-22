@@ -5777,3 +5777,13 @@
 45.129.196.0/24,hgn-as
 80.64.16.0/24,hgn-as
 88.214.48.0/24,hgn-as
+
+# AS213511
+# Reference: https://x.com/spamhaus/status/1914643262360465417
+# Reference: https://ipinfo.io/AS213511
+
+87.120.126.0/24,vsvk
+87.120.127.0/24,vsvk
+92.119.196.0/24,vsvk
+92.119.197.0/24,vsvk
+94.156.167.0/24,vsvk
