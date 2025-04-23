@@ -3727,6 +3727,7 @@ cuxor.icu
 cybaf.icu
 d0aj.barev.icu
 d2pr.barev.icu
+dafeq.icu
 dbxl5zi0.barev.icu
 debul.icu
 dehoz.icu
@@ -3842,6 +3843,7 @@ oq51b.barev.icu
 p43p.barev.icu
 p4b0.barev.icu
 pafoc.icu
+palid.icu
 pawol.icu
 pebeg.icu
 pedyg.icu
