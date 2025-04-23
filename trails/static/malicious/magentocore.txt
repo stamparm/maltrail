@@ -14569,8 +14569,10 @@ wsc.pageintelpro.com
 wsc.pagetrackiq.com
 wsc.sitetrackhq.com
 wsc.statfusionhq.com
+wsc.statvisionpro.com
 wsc.tracklyticspro.com
 wsc.trafficinsightly.com
+wsc.webmetricflow.com
 
 # Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24#tab=resolutions (# 2025-02-16)
 
