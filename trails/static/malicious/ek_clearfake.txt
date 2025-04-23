@@ -4242,6 +4242,11 @@ ytdownload.resources.ink
 
 booking-refguestitem-09064111.com
 
+# Reference: https://x.com/NullPwner/status/1915082128364020085
+
+ifkurmotherharder.cyou
+ifkursisterhard.com
+
 # Generic
 
 /a3A7qLVn/
