@@ -4012,6 +4012,7 @@ verefication3123.world
 viperrat.pages.dev
 youtube-watch-vwt16hzkwhdy.com
 youtude.net
+cloudflare.eclassexperts.com
 
 # Reference: https://threatfox.abuse.ch/browse/tag/FakeCaptcha/ (# 2025-04-20)
 
