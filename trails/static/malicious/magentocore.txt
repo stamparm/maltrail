@@ -14406,6 +14406,7 @@ metricsmonitorpro.com
 metricstoolspro.com
 metricstreamline.com
 metrictrendhub.com
+monitloop.com
 monitorstatsnow.com
 pageinsightsmanager.com
 pageintelpro.com
@@ -14468,6 +14469,7 @@ api.datalinkmanager.com
 api.dataoptimizationhub.com
 api.insightscopepro.com
 api.magicdomainsearch.com
+api.monitloop.com
 api.monitorstatsnow.com
 api.pageinsightsmanager.com
 api.pageintelpro.com
