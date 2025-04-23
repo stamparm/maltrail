@@ -6084,3 +6084,9 @@ http://4.188.72.122
 # Reference: https://www.virustotal.com/gui/file/0e8993105f9ec0c13990dffc26898994e113ac039b59760260c36554808eb2c3/detection
 
 3pff76b0-9997.brs.devtunnels.ms
+
+# Reference: https://x.com/malwrhunterteam/status/1915116398172324079
+# Reference: https://www.virustotal.com/gui/file/8fe3e96e9cd905a6050b8f3a121db541c83886ae2cd76b04fe99800f8e283c30/detection
+
+1.70.251.110:443
+81.70.251.110:443
