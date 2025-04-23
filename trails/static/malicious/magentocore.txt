@@ -14704,8 +14704,11 @@ cdn-skins.com
 absorbing.cam
 acidic.best
 acrylons.pics
+africt.art
+alpinedata.ink
 biscuit.pics
 blackcurrants.online
+cafelamontana.life
 caribean.live
 charli.beauty
 circulates.lol
@@ -14722,12 +14725,14 @@ healthy.christmas
 hematoid.cash
 inexpensive.blog
 lowly.boats
+macau.lol
 marmalade.homes
 merciful.beauty
 mobiancy.xyz
 necklace.christmas
 oranger.pics
 phila.world
+powersonal.online
 propagation.beauty
 raadiot.world
 ragged.biz
@@ -14738,11 +14743,15 @@ unaware.store
 unkempt.art
 unsightly.autos
 volatile.baby
+zauberkiste.xyz
 cdn.absorbing.cam
 cdn.acidic.best
 cdn.acrylons.pics
+cdn.africt.art
+cdn.alpinedata.ink
 cdn.biscuit.pics
 cdn.blackcurrants.online
+cdn.cafelamontana.life
 cdn.caribean.live
 cdn.charli.beauty
 cdn.circulates.lol
@@ -14759,12 +14768,14 @@ cdn.healthy.christmas
 cdn.hematoid.cash
 cdn.inexpensive.blog
 cdn.lowly.boats
+cdn.macau.lol
 cdn.marmalade.homes
 cdn.merciful.beauty
 cdn.mobiancy.xyz
 cdn.necklace.christmas
 cdn.oranger.pics
 cdn.phila.world
+cdn.powersonal.online
 cdn.propagation.beauty
 cdn.raadiot.world
 cdn.ragged.biz
@@ -14776,6 +14787,7 @@ cdn.unkempt.ar
 cdn.unkempt.art
 cdn.unsightly.autos
 cdn.volatile.baby
+cdn.zauberkiste.xyz
 
 # Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24#tab=resolutions (# 2025-02-26)
 
