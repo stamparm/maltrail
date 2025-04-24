@@ -4248,6 +4248,12 @@ booking-refguestitem-09064111.com
 ifkurmotherharder.cyou
 ifkursisterhard.com
 
+
+# Reference: https://x.com/NullPwner/status/1915467035037061578
+
+http://3.15.137.25
+3.15.137.25:443
+
 # Generic
 
 /a3A7qLVn/
