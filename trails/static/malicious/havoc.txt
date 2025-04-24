@@ -3870,6 +3870,12 @@ vmd163234.contaboserver.net
 x007.xyz
 z996.xyz
 
+# Reference: https://x.com/NullPwner/status/1915467035037061578
+# Reference: https://www.virustotal.com/gui/file/8e56af917cb649665d57b6b8a19ddaa5c814039e42c9e19e4464a0565e6c5450/detection
+
+http://96.126.124.158
+barrysploitbucket.s3.us-west-2.amazonaws.com
+
 # Generic
 
 /Havoc/payload/
