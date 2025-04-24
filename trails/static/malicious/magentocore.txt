@@ -14057,6 +14057,7 @@ statsalesup.com
 
 # Reference: https://x.com/sdcyberresearch/status/1868974963274973325
 # Reference: https://www.virustotal.com/gui/ip-address/45.61.132.99/relations
+# Reference: https://app.validin.com/detail?find=193.43.134.191&type=ip4&ref_id=381fecf60a2#tab=resolutions (# 2025-04-)
 # Reference: https://app.validin.com/detail?find=19fe6b1334b2035cedcaa692ac77b550&type=hash&ref_id=f73fc343e2b#tab=host_pairs (# 2024-12-17)
 
 bbpjsuporte.pro
@@ -14074,6 +14075,7 @@ logicwploop.com
 logwplmap.com
 reportcsp.com
 reportls.org
+reportjquery.shop
 reportscsp.shop
 restapi.space
 stylewpcall.com
