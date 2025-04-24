@@ -6090,9 +6090,3 @@ http://4.188.72.122
 
 1.70.251.110:443
 81.70.251.110:443
-
-# Reference: https://x.com/NullPwner/status/1915467035037061578
-# Reference: https://www.virustotal.com/gui/file/8e56af917cb649665d57b6b8a19ddaa5c814039e42c9e19e4464a0565e6c5450/detection
-
-http://96.126.124.158
-barrysploitbucket.s3.us-west-2.amazonaws.com
