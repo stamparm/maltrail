@@ -4327,6 +4327,12 @@ roomapartmentchek.com
 roomcheck-id58.com
 stresspreventie-twente.nl
 
+# Reference: https://x.com/SI_FalconTeam/status/1915790818037698870
+
+gutenortherad.click
+koonenmagaziner.click
+clients.contology.com
+
 # Generic
 
 /a3A7qLVn/
