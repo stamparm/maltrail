@@ -13640,8 +13640,11 @@ cdn.yenmac.site
 win-win.work
 
 # Reference: https://x.com/sdcyberresearch/status/1850898932441714774
+# Reference: https://app.validin.com/detail?find=athanasiusg.gmail.com&type=dom#tab=dns
 # Reference: https://app.validin.com/detail?find=137.74.151.41&type=ip4&ref_id=127115debe2#tab=resolutions
+# Reference: https://app.validin.com/detail?find=195.82.146.71&type=ip4&ref_id=aac1a37e53d#tab=resolutions
 
+cdn-tagger.com
 zoonmer.xyz
 cnd.zoonmer.xyz
 js.zoonmer.xyz
