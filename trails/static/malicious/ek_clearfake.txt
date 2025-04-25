@@ -2114,6 +2114,8 @@ zircult-app.com
 
 # Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw&ref_id=17d30666c74#tab=host_pairs (# 2025-04-04)
 
+202409.live
+4256.live
 46-247-108-86.cprapid.com
 50-116-38-215.ip.linodeusercontent.com
 abizz0.ssafileaccess.ru
@@ -2132,6 +2134,7 @@ boa-verify-account.pages.dev
 callwiegand.com
 cdn.securedmicrosoft365.com
 cold-limit-4543.malith.workers.dev
+comnfigrationclientpanel.securessafiles.ru
 contentwaves.com
 courses-ai.com
 cpak25sjz.ssafileaccess.ru
@@ -2141,10 +2144,12 @@ drmarlenemd.com
 dt57pmy.ssafileaccess.ru
 elnas.com
 fi3leas.ssafileaccess.ru
+g-recaptcha.live
 gosw01uw.ssafileaccess.ru
 greenbayconcretecontractor.com
 h8z7mz.ssafileaccess.ru
 hasll.com.my
+haushawihakanwj.z13.web.core.windows.net
 hbnievis.com
 hcaz2.ssafileaccess.ru
 i9xir.24secur.ru
@@ -2156,9 +2161,11 @@ juliokoppel.org
 leak-my-tits.linkpc.net
 ledgersecurity.paulvanross.com
 lifesabeacham.com
+likeme.co.in
 login.securedmicrosoft365.com
 lovingcaredisabilityservices.com.au
 lwh3632.github.io
+m2ds.securessadownloads.ru
 mail.46-247-108-86.cprapid.com
 mail.agbzstore.com
 mail.hbnievis.com
@@ -2175,19 +2182,21 @@ ogfbbstore.com
 onsiterecon.com
 outlook.securedmicrosoft365.com
 polarclaw.bot.fiatpro.org
+ranchiled.com
 rbjs0ej.ssafileaccess.ru
 recapatchav2.pages.dev
 recaptcha.365deals.tech
+recaptcha.parlomo.co.uk
 recaptcha.xtendservices.tech
 riverview-pools.com
 scaryterry.space
 securessadownloads.ru
-m2ds.securessadownloads.ru
 small-truth-45f8.malith.workers.dev
 ssnagov-report.claimbestdeals.com
 statement.getmyssafile.com
 statement.myssafile.com
 storage.securedmicrosoft365.com
+stuauathaztja1hsu.z13.web.core.windows.net
 support.havlv.us
 telegram-connect.org
 test.paulvanross.com
