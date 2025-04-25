@@ -15488,11 +15488,13 @@ imgweb.net
 lookround.org
 mapchat.us
 matsmap.com
+primechart.org
 profapi.com
 redtransfer.net
 scdnwire.com
 subgraphic.com
 app.mapchat.us
+app.primechart.org
 cms.imgweb.net
 cpanel.imgweb.net
 cpcalendars.imgweb.net
