@@ -3766,9 +3766,11 @@ fegag.icu
 firoc.icu
 fukuq.icu
 fwj1vk2f.barev.icu
+fywuk.icu
 g36sh.barev.icu
 g7fyh.barev.icu
 gcfl6yea.barev.icu
+ginoz.icu
 gubuj.icu
 guqev.icu
 gutom.icu
@@ -3782,6 +3784,7 @@ heva1hb3.barev.icu
 hiwou.barev.icu
 hixya.icu
 hmjpk.barev.icu
+hobir.icu
 hosam.icu
 huquw.icu
 huwaq.icu
@@ -3815,6 +3818,7 @@ klg8.barev.icu
 kolac.icu
 ktqv.barev.icu
 kubab.icu
+kuqob.top
 kural.icu
 kuve.barev.icu
 kv2l.barev.icu
@@ -3925,8 +3929,10 @@ siuyp.barev.icu
 slp9n.barev.icu
 smgoccbh.barev.icu
 symad.icu
+tafoz.press
 talup.icu
 tazaz.icu
+tepud.icu
 tidag.icu
 timov.icu
 toa6.barev.icu
