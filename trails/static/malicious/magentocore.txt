@@ -12980,6 +12980,7 @@ cdnwebanalytics.com
 jgueurystatic.xyz
 
 # Reference: https://app.validin.com/detail?find=78.128.112.218&type=ip4&ref_id=bdb069571b7#tab=resolutions
+# Reference: https://app.validin.com/detail?find=78.128.112.221&type=ip4&ref_id=a93a4c303e6#tab=resolutions
 
 0tags.info
 1stat.today
@@ -13023,10 +13024,16 @@ tagspot.store
 ultrabit.shop
 ultrabyte.shop
 ultracart.shop
+uniquemask.homes
+vectors.guru
+webstat.help
 wikistat.wiki
+xtras.work
 xtreme.boats
+yestat.website
 yesyes.rest
 zend.quest
+zerotag.cc
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-09-02-v10679/1932
 
