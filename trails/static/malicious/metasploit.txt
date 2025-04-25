@@ -6095,3 +6095,6 @@ http://4.188.72.122
 # Reference: https://www.virustotal.com/gui/file/35b8281e499b0779bae22150dac254ddaa71b012c02fe4710ade2188e73f55be/detection
 
 147.93.111.114:4444
+gamestakes.club
+botpay.gamestakes.club
+payment.gamestakes.club
