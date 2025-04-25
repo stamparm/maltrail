@@ -4337,6 +4337,7 @@ clients.contology.com
 
 autoatendimento-apj-acesso.online
 autoatendimento-apj-acesso.site
+download-caixa-plugin.com
 plugin-securycx.com
 
 # Generic
