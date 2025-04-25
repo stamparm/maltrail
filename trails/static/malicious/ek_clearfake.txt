@@ -4333,6 +4333,12 @@ gutenortherad.click
 koonenmagaziner.click
 clients.contology.com
 
+# Reference: https://x.com/OwnerProcessID_/status/1915855368044913021
+
+autoatendimento-apj-acesso.online
+autoatendimento-apj-acesso.site
+plugin-securycx.com
+
 # Generic
 
 /a3A7qLVn/
