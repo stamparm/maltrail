@@ -13022,6 +13022,7 @@ tagsmanager.shop
 tagspot.store
 ultrabit.shop
 ultrabyte.shop
+ultracart.shop
 wikistat.wiki
 xtreme.boats
 yesyes.rest
