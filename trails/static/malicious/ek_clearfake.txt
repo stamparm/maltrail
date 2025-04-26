@@ -4736,6 +4736,10 @@ ziwel.icu
 zuxod.icu
 zywig.icu
 
+# Reference: https://x.com/DaveLikesMalwre/status/1916202694932316656
+
+angrybirds.world
+
 # Generic
 
 /a3A7qLVn/
