@@ -34,3 +34,8 @@
 93.82.24.249:8000
 emdr-traumatherapie.info
 thiscode.info
+
+# Reference: https://github.com/eSentire/iocs/blob/main/RansomHub/RansomHub-iocs-2025-03-28.txt
+
+172.210.82.245:8000
+38.146.28.93:8000
