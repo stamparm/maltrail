@@ -1134,3 +1134,7 @@ podathon.org/shell/
 # Reference: https://x.com/banthisguy9349/status/1856303206495580231
 
 /shell1.asp
+
+# Reference: https://x.com/nextronresearch/status/1916860589978120572
+
+/nzwcnktc.jsp
