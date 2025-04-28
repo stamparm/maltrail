@@ -15536,14 +15536,23 @@ webmail.imgweb.net
 
 guardadefense.com
 security-woocommerce.com
+woocommerce-alert.com
 woocommerce-api.com
 woocommerce-check.com
 woocommerce-dev.com
 woocommerce-help.com
+woocommerce-info.com
+woocommerce-monitor.com
 woocommerce-patch.com
+woocommerce-safety.com
+woocommerce-scan.com
+woocommerce-secure.com
 woocommerce-security.com
 woocommerce-server.com
 woocommerce-services.com
+woocommerce-shield.com
+woocommerce-status.com
+woocommerce-updates.com
 wpappdevelopment.org
 wpcloudservices.org
 wpdevnetwork.org
