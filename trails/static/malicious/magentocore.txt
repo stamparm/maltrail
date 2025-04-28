@@ -12446,6 +12446,7 @@ cdn.wenmen.online
 # Reference: https://www.virustotal.com/gui/ip-address/45.125.67.12/relations
 # Reference: https://app.validin.com/detail?find=139453fbd538458849d54a40a5a300ae18a6f30c&type=hash&ref_id=37722d4fd81#tab=host_pairs (# 2025-02-28)
 
+jewelryhomenyc.com
 morningflexpleasure.com
 reusable-flex.com
 static-open.com
