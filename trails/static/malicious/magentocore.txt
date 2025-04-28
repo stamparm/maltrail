@@ -14367,8 +14367,13 @@ cdn.voilink.site
 cdn.widspe.site
 
 # Reference: https://x.com/sdcyberresearch/status/1888981202641596816
+# Reference: https://x.com/sdcyberresearch/status/1916789605501649330
+# Reference: https://www.virustotal.com/gui/ip-address/85.209.128.106/relations
+# Reference: https://www.virustotal.com/gui/ip-address/94.232.249.234/relations
 
+g2uni.com
 gate2uni.com
+uniinform.com
 
 # Reference: https://x.com/sdcyberresearch/status/1889641697698607429
 # Reference: https://app.validin.com/detail?find=5d36d75ac57ab2e4760df3b11fd54a43&type=hash&ref_id=050b20284c5#tab=host_pairs
