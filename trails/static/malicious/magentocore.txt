@@ -15526,6 +15526,39 @@ web.subgraphic.com
 webdisk.imgweb.net
 webmail.imgweb.net
 
+# Reference: https://patchstack.com/articles/fake-security-vulnerability-phishing-campaign-targets-woocommerce-users/
+# Reference: https://app.validin.com/detail?find=ec798f07ee6774932f2beadd1b9ad5b9&type=hash&ref_id=202b58f8a9e#tab=host_pairs
+
+guardadefense.com
+security-woocommerce.com
+woocommerce-api.com
+woocommerce-check.com
+woocommerce-dev.com
+woocommerce-help.com
+woocommerce-patch.com
+woocommerce-security.com
+woocommerce-server.com
+woocommerce-services.com
+wpappdevelopment.org
+wpcloudservices.org
+wpdevnetwork.org
+wptechsolutions.org
+xn--oocommerce-9gc.com
+xn--wocommerce-q3b.com
+xn--wocommerce-r3b.com
+xn--woocmmerce-t3b.com
+xn--woocommece-26b.com
+xn--woocommece-g6b.com
+xn--woocommerc-0mb.com
+xn--woocommerc-rlb.com
+xn--woocommere-7ib.com
+xn--woocommere-lib.com
+xn--woocommrce-olb.com
+xn--woocommrce-xmb.com
+xn--wooommerce-1ib.com
+xn--wooommerce-fib.com
+xn--wooommerce-shb.com
+
 # Generic
 
 /assets/lfg.js
