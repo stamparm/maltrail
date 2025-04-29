@@ -4767,6 +4767,15 @@ zywig.icu
 
 angrybirds.world
 
+# Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw#tab=host_pairs (# 2025-04-29)
+
+247supportsolutions.com
+haushawihakanwj-secondary.z13.web.core.windows.net
+highspring.247supportsolutions.com
+kashmir-maryam.com
+pgaestateltd.com
+zfbezhefbzhbdfbzdufbuzbdf.pages.dev
+
 # Generic
 
 /a3A7qLVn/
