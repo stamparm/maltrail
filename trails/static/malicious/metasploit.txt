@@ -6098,3 +6098,7 @@ http://4.188.72.122
 gamestakes.club
 botpay.gamestakes.club
 payment.gamestakes.club
+
+# Reference: https://www.virustotal.com/gui/file/0f7151fcf846948d901942ff567e91091026597319052fa0ffd88c17541f3bf6/detection
+
+195.239.174.11:4444
