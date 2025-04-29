@@ -8775,6 +8775,22 @@ gatetodisplaycontent.com
 /k22.ps1
 /sir.ps1
 
+# Reference: https://urlhaus.abuse.ch/host/176.65.144.23/ (# 2025-04-29)
+
+/ddddd.ps1
+/k.ps1
+/king.ps1
+/kingg.ps1
+/kinngg.ps1
+/kk.ps1
+/kkk.ps1
+/kkkk.ps1
+/marcus.ps1
+/marcusss.ps1
+/marr.ps1
+/sirdeeeeee.ps1
+/sirrrrrdeeeee.ps1
+
 # Generic
 
 /5c0ca79.php
