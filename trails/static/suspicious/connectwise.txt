@@ -998,3 +998,9 @@ mail.downloadinvoice.online
 securedocumentfiledownload.com
 mail.securedocumentfiledownload.com
 relay.securedocumentfiledownload.com
+
+# Reference: https://x.com/TeamDreier/status/1917134627182948591
+# Reference: https://www.virustotal.com/gui/file/2318850b2f87746e8af7fb74578e21fd0ea620c100cad1555074cc26a5ffba7f/detection
+
+37.221.65.224:8880
+mugtrimol37.top
