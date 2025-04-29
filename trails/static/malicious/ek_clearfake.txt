@@ -4778,12 +4778,18 @@ zfbezhefbzhbdfbzdufbuzbdf.pages.dev
 
 # Reference: https://x.com/skocherhan/status/1917177880519262223
 # Reference: https://www.virustotal.com/gui/ip-address/46.19.66.121/relations
+# Reference: https://app.validin.com/detail?find=b5903cdd0f6c15ebaa7891d70f1145b1&type=hash&ref_id=8609365112d#tab=host_pairs (# 2025-04-29)
 
+adm-booking-sign.com
 api-notification-centeriones.com
 bookig-agreementapil042025.com
 booking-agreementaprilreviews042025.com
 booking-agreementstatementapril0225.com
+booking-confview-doc-00097503843.com
+booking-reservationsdetail-id0025911.com
 booking-viewdocdetails-0975031.com
+reserv-captchaapril04152025.com
+test-74939captcha.world
 
 # Generic
 
