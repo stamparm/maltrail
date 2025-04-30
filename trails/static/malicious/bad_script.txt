@@ -8791,6 +8791,10 @@ gatetodisplaycontent.com
 /sirdeeeeee.ps1
 /sirrrrrdeeeee.ps1
 
+# Reference: https://any.run/cybersecurity-blog/pentagon-stealer-malware-analysis/
+
+/wallet_injection
+
 # Generic
 
 /5c0ca79.php
