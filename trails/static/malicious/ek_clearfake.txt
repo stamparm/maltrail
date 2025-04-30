@@ -4334,10 +4334,16 @@ koonenmagaziner.click
 clients.contology.com
 
 # Reference: https://x.com/OwnerProcessID_/status/1915855368044913021
+# Reference: https://x.com/OwnerProcessID_/status/1917558834761195782
 
 autoatendimento-apj-acesso.online
 autoatendimento-apj-acesso.site
 download-caixa-plugin.com
+juridica-autoatendimento-c-ai-xa.com
+juridica-autoatendimento-ca-i-xa.com
+juridica-autoatendimento-ca-i-xa.online
+juridica-autoatendimento-loginx.com
+juridica-autoatendimento-sa-n-tander.com
 plugin-securycx.com
 
 # Reference: https://threatfox.abuse.ch/browse/tag/ClearFake/ (# 2025-04-26)
