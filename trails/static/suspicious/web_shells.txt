@@ -1142,3 +1142,8 @@ podathon.org/shell/
 # Reference: https://x.com/JustWantToQ1/status/1917153425315278860
 
 /shellwin.py
+
+# Reference: https://x.com/cyb3rops/status/1917112018978456026
+
+/irj/cache.jsp
+/irj/helper.jsp
