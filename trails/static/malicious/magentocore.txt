@@ -12984,12 +12984,14 @@ jgueurystatic.xyz
 # Reference: https://app.validin.com/detail?find=78.128.112.221&type=ip4&ref_id=a93a4c303e6#tab=resolutions
 
 0tags.info
+0test.my
 1stat.today
 2links.blog
 3analytics.buzz
 4casts.one
 5data.world
 6stat.website
+7luckyones.click
 7tags.shop
 8urls.info
 9analytics.ink
