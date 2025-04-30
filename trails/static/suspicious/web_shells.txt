@@ -1138,3 +1138,7 @@ podathon.org/shell/
 # Reference: https://x.com/nextronresearch/status/1916860589978120572
 
 /nzwcnktc.jsp
+
+# Reference: https://x.com/JustWantToQ1/status/1917153425315278860
+
+/shellwin.py
