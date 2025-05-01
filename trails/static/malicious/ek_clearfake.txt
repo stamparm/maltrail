@@ -4833,6 +4833,7 @@ test-74939captcha.world
 
 partner-id892374.com
 partner-id897123.com
+parnters-secure.com
 booking.partner-id892374.com
 booking.partner-id897123.com
 
