@@ -14916,6 +14916,7 @@ africal.pics
 ambfit.site
 anatech.online
 arabibarba.xyz
+artisantool.click
 asdfasfwe.online
 auqoit.fun
 barpoc.online
@@ -14966,6 +14967,7 @@ fesdigit.online
 feutiop.quest
 feylit.store
 fivolink.store
+fleurssoleti.buzz
 fungarian.shop
 gbleylot.quest
 geaxint.fun
@@ -14981,6 +14983,7 @@ giftok.site
 goletec.store
 gragit.shop
 gutloon.online
+healtervice.info
 heipet.shop
 helaapit.shop
 heletec.cyou
@@ -15020,10 +15023,12 @@ lufton.xyz
 magmative.cloud
 miftech.site
 mobiliare.pro
+moralia.pro
 motivac.shop
 nashosit.yachts
 neiloot.store
 neobilet.online
+newsbooks.live
 niesraz.fun
 nikllop.online
 nycteris.bar
@@ -15032,6 +15037,7 @@ okolcei.online
 oratotech.sbs
 outec.fun
 overdispersion.world
+patelspice.life
 pdatiic.quest
 piltie.online
 plohelec.quest
@@ -15095,6 +15101,7 @@ cdn.africal.pics
 cdn.ambfit.site
 cdn.anatech.online
 cdn.arabibarba.xyz
+cdn.artisantool.click
 cdn.asdfasfwe.online
 cdn.auqoit.fun
 cdn.barpoc.online
@@ -15146,6 +15153,7 @@ cdn.feutiop.quest
 cdn.feylit.store
 cdn.fivolink.store
 cdn.flagmob.quest
+cdn.fleurssoleti.buzz
 cdn.flowit.pics
 cdn.fungarian.shop
 cdn.gbleylot.quest
@@ -15162,6 +15170,7 @@ cdn.giftok.site
 cdn.goletec.store
 cdn.gragit.shop
 cdn.gutloon.online
+cdn.healtervice.info
 cdn.heipet.shop
 cdn.helaapit.shop
 cdn.heletec.cyou
@@ -15201,10 +15210,12 @@ cdn.lqoesoop.store
 cdn.magmative.cloud
 cdn.miftech.site
 cdn.mobiliare.pro
+cdn.moralia.pro
 cdn.motivac.shop
 cdn.nashosit.yachts
 cdn.neiloot.store
 cdn.neobilet.online
+cdn.newsbooks.live
 cdn.niesraz.fun
 cdn.nikllop.online
 cdn.nycteris.bar
@@ -15213,6 +15224,7 @@ cdn.okolcei.online
 cdn.oratotech.sbs
 cdn.outec.fun
 cdn.overdispersion.world
+cdn.patelspice.life
 cdn.pdatiic.quest
 cdn.piltie.online
 cdn.plohelec.quest
