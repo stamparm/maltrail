@@ -11622,6 +11622,15 @@ knooblegooble.com
 pixeltracker.me
 static-queue.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/84.32.84.33/relations
+
+cdn-statics.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/23.254.243.40/relations
+
+cdn-rocket.io
+multichainconnect.net
+
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.110.32/relations
 
 voatech.site
