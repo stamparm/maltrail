@@ -11612,9 +11612,15 @@ cdn.bouncelec.quest
 # Reference: https://twitter.com/johnk3r/status/1788237228742754537
 # Reference: https://www.virustotal.com/gui/ip-address/104.168.172.213/relations
 # Reference: https://www.virustotal.com/gui/ip-address/142.11.217.47/relations
+# Reference: https://app.validin.com/detail?type=hash&find=579d1a808db2353c8a0a8883f97e2e81db6b3f10#tab=host_pairs (# 2025-05-01)
 
 cdn-staticsv.com
+cdn-universal.events
+cdns-static.com
 cdnstack.space
+knooblegooble.com
+pixeltracker.me
+static-queue.net
 
 # Reference: https://www.virustotal.com/gui/ip-address/195.242.110.32/relations
 
