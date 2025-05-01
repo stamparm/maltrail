@@ -10232,6 +10232,7 @@ wintheprize.shop
 xbid.shop
 xoffer.shop
 xprize.shop
+analytic.uads.buzz
 mail.uads.info
 
 # Reference: https://www.virustotal.com/gui/ip-address/5.188.62.10/relations
