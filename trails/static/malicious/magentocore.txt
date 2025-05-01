@@ -15415,17 +15415,21 @@ boyleus.shop
 cancy.beauty
 ceest.lol
 chassidic.homes
+clove.beauty
+clove.pics
 cosmogonic.lol
 creepydata.world
 cyanotypes.lol
 elaink.xyz
 fatharfa.xyz
+flaming.homes
 folklorish.cfd
 halke.cam
 hasidim.pics
 inaeiger.click
 indolatifical.lol
 kehillah.lol
+maple.boats
 midin.pics
 naswef.online
 owse.art
@@ -15433,6 +15437,7 @@ pefcoot.fun
 photographs.beauty
 pliofilm.best
 poetical.world
+roads.mom
 roosting.site
 rowser.live
 shamanic.pro
@@ -15443,6 +15448,7 @@ thorsdal.online
 tintype.baby
 unfiled.digital
 veirq.store
+wills.lol
 cdn.acrologic.baby
 cdn.aiprice.cc
 cdn.angineerian.live
@@ -15453,17 +15459,21 @@ cdn.boyleus.shop
 cdn.cancy.beauty
 cdn.ceest.lol
 cdn.chassidic.homes
+cdn.clove.beauty
+cdn.clove.pics
 cdn.cosmogonic.lol
 cdn.creepydata.world
 cdn.cyanotypes.lol
 cdn.elaink.xyz
 cdn.fatharfa.xyz
+cdn.flaming.homes
 cdn.folklorish.cfd
 cdn.halke.cam
 cdn.hasidim.pics
 cdn.inaeiger.click
 cdn.indolatifical.lol
 cdn.kehillah.lol
+cdn.maple.boats
 cdn.midin.pics
 cdn.naswef.online
 cdn.owse.art
@@ -15471,6 +15481,7 @@ cdn.pefcoot.fun
 cdn.photographs.beauty
 cdn.pliofilm.best
 cdn.poetical.world
+cdn.roads.mom
 cdn.roosting.site
 cdn.rowser.live
 cdn.shamanic.pro
@@ -15481,6 +15492,7 @@ cdn.thorsdal.online
 cdn.tintype.baby
 cdn.unfiled.digital
 cdn.veirq.store
+cdn.wills.lol
 
 # Reference: https://x.com/sdcyberresearch/status/1912416825691738248
 # Reference: https://app.validin.com/detail?find=94.154.35.233&type=ip4&ref_id=6323618bf31#tab=resolutions (# 2025-04-16)
