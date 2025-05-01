@@ -15416,6 +15416,15 @@ script-transfering.com
 webchatsupport.online
 webjs-cms.com
 
+# Reference: https://app.validin.com/detail?find=185.208.156.201&type=ip4&ref_id=42f63d6373a#tab=host_pairs (# 2025-05-01)
+
+webjs-cms.online
+
+# Reference: https://app.validin.com/detail?find=185.196.11.100&type=ip4&ref_id=23ca33e4924#tab=resolutions (# 2025-05-01)
+
+communityhelper.store
+showroomadmin.wiki
+
 # Reference: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2025-04-11)
 
 acrologic.baby
