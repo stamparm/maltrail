@@ -4827,6 +4827,15 @@ booking-viewdocdetails-0975031.com
 reserv-captchaapril04152025.com
 test-74939captcha.world
 
+# Reference: https://x.com/JAMESWT_WT/status/1917985199112986652
+# Reference: https://app.any.run/tasks/5972a8c5-5b87-4579-9cc5-8bc268abd6c0
+# Reference: https://app.any.run/tasks/d9ba419a-d1cd-4912-b114-74a8f0416c75
+
+partner-id892374.com
+partner-id897123.com
+booking.partner-id892374.com
+booking.partner-id897123.com
+
 # Generic
 
 /a3A7qLVn/
