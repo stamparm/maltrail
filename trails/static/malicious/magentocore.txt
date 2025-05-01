@@ -15421,8 +15421,11 @@ webjs-cms.com
 webjs-cms.online
 
 # Reference: https://app.validin.com/detail?find=185.196.11.100&type=ip4&ref_id=23ca33e4924#tab=resolutions (# 2025-05-01)
+# Reference: https://app.validin.com/detail?find=a427293b9f24f4147c5e52ba63638401&type=hash&ref_id=23ca33e4924#tab=host_pairs (# 2025-05-01)
 
+accueildisclosure.com
 communityhelper.store
+optionhoraire.com
 showroomadmin.wiki
 
 # Reference: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2025-04-11)
