@@ -3846,3 +3846,8 @@ vn5socks.su
 voldemort.su
 vonux.ru
 yesbro.su
+
+# Reference: https://x.com/DarkWebInformer/status/1916873978997543142
+
+breachforums.sx
+ncf7birtagvnoo73fnkxg2qayj5v76sijxlc65mvdewdruiwmkfofeyd.onion
