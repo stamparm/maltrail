@@ -2970,23 +2970,45 @@ wiki.statisticsong.com
 zdm.statisticsong.com
 antimalware.api.statisticsong.com
 
-# Reference: https://twitter.com/unmaskparasites/status/1744851979392950312
+# Reference: https://x.com/unmaskparasites/status/1744851979392950312
+# Reference: https://patchstack.com/articles/fake-security-vulnerability-phishing-campaign-targets-woocommerce-users/
+# Reference: https://app.validin.com/detail?find=ec798f07ee6774932f2beadd1b9ad5b9&type=hash&ref_id=202b58f8a9e#tab=host_pairs
+# Reference: https://app.validin.com/detail?find=%2Fplugins%2Fhuman-verification-challenge%2Finvalid&type=raw&ref_id=2c81fb14284#tab=host_pairs (# 2025-05-02)
 
+app-wordpress.org
 ca.en-wordpress.org
 db-wordpress.org
+dev-wordpress.org
+dk-wordpress.org
+dk.dk-wordpress.org
 en-us.db-wordpress.org
 en-us.host-wordpress.org
+en-us.tech-wordpress.org
 en-us.web-wordpress.org
 en-wordpress.org
 en.ca-wordpress.org
 en.uk-wordpress.org
 en.us-wordpress.org
+fr-wordpress.org
+fr.fr-wordpress.org
 gb.en-wordpress.org
+guardadefense.com
+jp.app-wordpress.org
 host-wordpress.org
+pl-wordpress.org
+pl.pl-wordpress.org
+protcve.com
+sg.dev-wordpress.org
+tech-wordpress.org
 uk-wordpress.org
 us-en-wordpress.org
 us.en-wordpress.org
+viatcve.com
 web-wordpress.org
+wpappdevelopment.org
+wpcloudservices.org
+wpdevnetwork.org
+wptechsolutions.org
 
 # Reference: https://securityonline.info/urgent-warning-balada-injector-malware-targets-popular-wordpress-plugin/
 # Reference: https://www.virustotal.com/gui/ip-address/104.21.94.69/relations
