@@ -466,7 +466,7 @@ In the following screenshot, a run of popular SQLi vulnerability tool [sqlmap](h
 
 #### Port scanning
 
-In case of too many connection attempts toward considerable amount of different TCP ports, Maltrail will warn about the potential port scanning, as a result of its heuristic mechanism detection. If the following screenshot such warning(s) can be found for a run of popular port scanning tool [nmap](https://nmap.org/):
+In case of too many connection attempts toward considerable amount of different TCP ports, Maltrail will warn about the potential port scanning, as a result of its heuristic mechanism detection. In the following screenshot such warning(s) can be found for a run of popular port scanning tool [nmap](https://nmap.org/):
 
 ![nmap scan](https://i.imgur.com/VS7L2A3.png)
 
