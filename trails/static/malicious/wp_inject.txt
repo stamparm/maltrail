@@ -2975,9 +2975,14 @@ antimalware.api.statisticsong.com
 # Reference: https://app.validin.com/detail?find=ec798f07ee6774932f2beadd1b9ad5b9&type=hash&ref_id=202b58f8a9e#tab=host_pairs
 # Reference: https://app.validin.com/detail?find=%2Fplugins%2Fhuman-verification-challenge%2Finvalid&type=raw&ref_id=2c81fb14284#tab=host_pairs (# 2025-05-02)
 
+alerts-wordpress.org
 app-wordpress.org
+assistance-wordpress.org
 ca.en-wordpress.org
+ch-wordpress.org
+contact-wordpress.org
 db-wordpress.org
+de-wordpress.org
 de-2-wordpress.org
 de.de-2-wordpress.org
 dev-wordpress.org
@@ -2991,18 +2996,34 @@ en-wordpress.org
 en.ca-wordpress.org
 en.uk-wordpress.org
 en.us-wordpress.org
+es-wordpress.org
+es-2-wordpress.org
+fr-2-wordpress.org
 fr-wordpress.org
 fr.fr-wordpress.org
 gb.en-wordpress.org
 guardadefense.com
 jp.app-wordpress.org
+helpline-wordpress.org
 host-wordpress.org
+info-wordpress.org
+inquiries-wordpress.org
+it-wordpress.org
+it-2-wordpress.org
+nl-wordpress.org
+nl-2-wordpress.org
+notices-wordpress.org
+notify-wordpress.org
 pl-wordpress.org
 pl.pl-wordpress.org
 protcve.com
+reports-wordpress.org
+se-wordpress.org
 sg.dev-wordpress.org
 tech-wordpress.org
 uk-wordpress.org
+updates-wordpress.org
+us-wordpress.org
 us-en-wordpress.org
 us.en-wordpress.org
 viatcve.com
