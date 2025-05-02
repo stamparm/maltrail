@@ -270,3 +270,7 @@ ronsamuel.com
 
 pdmfg.com
 wccdefense.com
+
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/yet-another-nodejs-backdoor-yanb-a-modern-challenge/
+
+compralibri.com
