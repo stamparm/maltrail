@@ -15600,7 +15600,6 @@ alert-woocommerce.com
 cloud-woocommerce.com
 dev-woocommerce.com
 email-woocommerce.com
-guardadefense.com
 helpdesk-woocommerce.com
 offerlab-woocommerce.com
 patch-woocommerce.com
@@ -15647,10 +15646,6 @@ woocommerce-shield.com
 woocommerce-status.com
 woocommerce-system.com
 woocommerce-updates.com
-wpappdevelopment.org
-wpcloudservices.org
-wpdevnetwork.org
-wptechsolutions.org
 xn--oocommerce-9gc.com
 xn--wocommerce-q3b.com
 xn--wocommerce-r3b.com
