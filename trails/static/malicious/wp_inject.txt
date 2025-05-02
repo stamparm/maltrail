@@ -2978,6 +2978,8 @@ antimalware.api.statisticsong.com
 app-wordpress.org
 ca.en-wordpress.org
 db-wordpress.org
+de-2-wordpress.org
+de.de-2-wordpress.org
 dev-wordpress.org
 dk-wordpress.org
 dk.dk-wordpress.org
