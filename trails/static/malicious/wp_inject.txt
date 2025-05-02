@@ -6556,6 +6556,7 @@ w3l.icu
 wp-cdn.top
 cdn.schemapi.com
 mail.apipanel1x.xyz
+mail.w3l.icu
 mail.wp-cdn.top
 
 # Reference: https://www.virustotal.com/gui/file/0d0feed4ce01f8f94624cd4f02e8871468a54a22de83fc8d448978a5c3e2e67f/detection
