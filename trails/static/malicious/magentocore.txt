@@ -15598,9 +15598,11 @@ webmail.imgweb.net
 admin-woocommerce.com
 alert-woocommerce.com
 cloud-woocommerce.com
+dev-woocommerce.com
 email-woocommerce.com
 guardadefense.com
 helpdesk-woocommerce.com
+offerlab-woocommerce.com
 patch-woocommerce.com
 scan-woocommerce.com
 secure-woocommerce.com
@@ -15608,6 +15610,7 @@ security-woocommerce.com
 send-woocommerce.com
 service-woocommerce.com
 tech-woocommerce.com
+update-woocommerce.com
 updates-woocommerce.com
 woocommerce-alert.com
 woocommerce-alerts.com
@@ -15663,6 +15666,7 @@ xn--woocommrce-xmb.com
 xn--wooommerce-1ib.com
 xn--wooommerce-fib.com
 xn--wooommerce-shb.com
+api.dev-woocommerce.com
 
 # Generic
 
