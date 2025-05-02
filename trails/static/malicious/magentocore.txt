@@ -4535,10 +4535,12 @@ bulder.online
 # Reference: https://twitter.com/sansecio/status/1367404202461450244
 # Reference: https://twitter.com/unmaskparasites/status/1370579966069383168
 # Reference: https://urlscan.io/result/293c311f-900b-4662-9b5d-c1d0b11cead7/
+# Reference: https://blog.sucuri.net/2022/06/smilodon-credit-card-skimming-malware-shifts-to-wordpress.html
 # Reference: https://www.virustotal.com/gui/ip-address/195.123.217.18/relations
 # Reference: https://www.virustotal.com/gui/ip-address/83.166.246.34/relations
 
 facedook.host
+javasources.net
 predator.host
 pathc.space
 redorn.space
