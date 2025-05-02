@@ -60,7 +60,7 @@ sslproxies, talosintelligence, torproject, trickbot, turris, urlhaus,
 viriback, vxvault, zeustrackermonitor, zeustrackerurl, etc.
 ```
 
-As of static entries, the trails for the following malicious entities (e.g. malware C&Cs or sinkholes) have been manually included (from various AV reports and personal research):
+As for static entries, the trails for the following malicious entities (e.g. malware C&Cs or sinkholes) have been manually included (from various AV reports and personal research):
 
 ```
 1ms0rry, 404, 9002, aboc, absent, ab, acbackdoor, acridrain, activeagent, 
@@ -128,9 +128,9 @@ Fully functional demo pages with collected real-life threats can be found [here]
 
 To run Maltrail properly, [Python](http://www.python.org/download/) **2.6**, **2.7** or **3.x** is required on \*nix/BSD system, together with installed [pcapy-ng](https://pypi.org/project/pcapy-ng/) package.
 
-**NOTE:** Using of ```pcapy``` lib instead of ```pcapy-ng``` can lead to incorrect work of Maltrail, especially on **Python 3.x** environments. [Examples](https://github.com/stamparm/maltrail/issues?q=label%3Apcapy-ng-related+is%3Aclosed).
+**NOTE:** Use of ```pcapy``` lib instead of ```pcapy-ng``` can lead to incorrect work of Maltrail, especially on **Python 3.x** environments. [Examples](https://github.com/stamparm/maltrail/issues?q=label%3Apcapy-ng-related+is%3Aclosed).
 
-- **Sensor** component requires at least 1GB of RAM to run in single-process mode or more if run in multiprocessing mode, depending on the value used for option `CAPTURE_BUFFER`. Additionally, **Sensor** component (in general case) requires administrative/root privileges.
+- **Sensor** component requires at least 1GB of RAM to run in single-process mode or more if run in multiprocessing mode, depending on the value used for option `CAPTURE_BUFFER`. Additionally, **Sensor** component (in the general case) requires administrative/root privileges.
 
 - **Server** component does not have any special requirements.
 
@@ -211,7 +211,7 @@ Sensor's configuration can be found inside the `maltrail.conf` file's section `[
 
 If option `USE_MULTIPROCESSING` is set to `true` then all CPU cores will be used. One core will be used only for packet capture (with appropriate affinity, IO priority and nice level settings), while other cores will be used for packet processing. Otherwise, everything will be run on a single core. Option `USE_FEED_UPDATES` can be used to turn off the trail updates from feeds altogether (and just use the provided static ones). Option `UPDATE_PERIOD` contains the number of seconds between each automatic trails update (Note: default value is set to `86400` (i.e. one day)) by using definitions inside the `trails` directory (Note: both **Sensor** and **Server** take care of the trails update). Option `CUSTOM_TRAILS_DIR` can be used by user to provide location of directory containing the custom trails (`*.txt`) files.
 
-Option `USE_HEURISTICS` turns on heuristic mechanisms (e.g. `long domain name (suspicious)`, `excessive no such domain name (suspicious)`, `direct .exe download (suspicious)`, etc.), potentially introducing false positives. Option `CAPTURE_BUFFER` presents a total memory (in bytes of percentage of total physical memory) to be used in case of multiprocessing mode for storing packet capture in a ring buffer for further processing by non-capturing processes. Option `MONITOR_INTERFACE` should contain the name of the capturing interface. Use value `any` to capture from all interfaces (if OS supports this). Option `CAPTURE_FILTER` should contain the network capture (`tcpdump`) filter to skip the uninteresting packets and ease the capturing process. Option `SENSOR_NAME` contains the name that should be appearing inside the events `sensor_name` value, so the event from one sensor could be distinguished from the other. If option `LOG_SERVER` is set, then all events are being sent remotely to the **Server**, otherwise they are stored directly into the logging directory set with option `LOG_DIR`, which can be found inside the `maltrail.conf` file's section `[All]`. In case that the option `UPDATE_SERVER` is set, then all the trails are being pulled from the given location, otherwise they are being updated from trails definitions located inside the installation itself.
+Option `USE_HEURISTICS` turns on heuristic mechanisms (e.g. `long domain name (suspicious)`, `excessive no such domain name (suspicious)`, `direct .exe download (suspicious)`, etc.), potentially introducing false positives. Option `CAPTURE_BUFFER` presents a total memory (in bytes or percentage of total physical memory) to be used in case of multiprocessing mode for storing packet capture in a ring buffer for further processing by non-capturing processes. Option `MONITOR_INTERFACE` should contain the name of the capturing interface. Use value `any` to capture from all interfaces (if OS supports this). Option `CAPTURE_FILTER` should contain the network capture (`tcpdump`) filter to skip the uninteresting packets and ease the capturing process. Option `SENSOR_NAME` contains the name that should be appearing inside the events `sensor_name` value, so the event from one sensor could be distinguished from the other. If option `LOG_SERVER` is set, then all events are being sent remotely to the **Server**, otherwise they are stored directly into the logging directory set with option `LOG_DIR`, which can be found inside the `maltrail.conf` file's section `[All]`. In case that the option `UPDATE_SERVER` is set, then all the trails are being pulled from the given location, otherwise they are being updated from trails definitions located inside the installation itself.
 
 Options `SYSLOG_SERVER` and/or `LOGSTASH_SERVER` can be used to send sensor events (i.e. log data) to non-Maltrail servers. In case of `SYSLOG_SERVER`, event data will be sent in CEF (*Common Event Format*) format to UDP (e.g. Syslog) service listening at the given address (e.g. `192.168.2.107:514`), while in case of `LOGSTASH_SERVER` event data will be sent in JSON format to UDP (e.g. Logstash) service listening at the given address (e.g. `192.168.2.107:5000`).
 
@@ -258,7 +258,7 @@ iptables -I INPUT -m set --match-set maltrail src -j DROP
 ```
 
 Option `BLACKLIST` allows to build regular expressions to apply on one field. For each rule, the syntax is : `<field> <control> <regexp>` where :
-* `field` indicates the field to compage, it can be: `src_ip`,`src_port`,`dst_ip`,`dst_port`,`protocol`,`type`,`trail` or `filter`.
+* `field` indicates the field to compare, it can be: `src_ip`,`src_port`,`dst_ip`,`dst_port`,`protocol`,`type`,`trail` or `filter`.
 * `control` can be either `~` for *matches* or `!~` for *doesn't match*
 * `regexp` is the regular expression to apply to the field.
 Chain another rule with the `and` keyword (the `or` keyword is not supported, just add a line for this).
@@ -275,9 +275,9 @@ BLACKLIST_OUT
 BLACKLIST_IN
     src_ip ~ ^192.168. and filter ~ malware
 ```
-The way to build ipset blacklist is the same (see above) excepted that URLs will be `/blacklist/in` and `/blacklist/out` in our example.
+The way to build ipset blacklist is the same (see above) except that URLs will be `/blacklist/in` and `/blacklist/out` in our example.
 
-Same as for **Sensor**, when running the **Server** (e.g. `python server.py`) for the first time and/or after a longer period of non-running, if option `USE_SERVER_UPDATE_TRAILS` is set to `true`, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). Its basic function is to store the log entries inside the logging directory (i.e. option `LOG_DIR` inside the `maltrail.conf` file's section `[All]`) and provide the web reporting interface for presenting those same entries to the end-user (Note: there is no need install the 3rd party web server packages like Apache):
+Same as for **Sensor**, when running the **Server** (e.g. `python server.py`) for the first time and/or after a longer period of non-running, if option `USE_SERVER_UPDATE_TRAILS` is set to `true`, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). Its basic function is to store the log entries inside the logging directory (i.e. option `LOG_DIR` inside the `maltrail.conf` file's section `[All]`) and provide the web reporting interface for presenting those same entries to the end-user (Note: there is no need to install the 3rd party web server packages like Apache):
 
 ![Server run](https://i.imgur.com/GHdGPw7.png)
 
@@ -337,7 +337,7 @@ In the following section some of the "usual suspects" scenarios will be describe
 
 #### Mass scans
 
-Mass scans is a fairly common phenomenon where individuals and/or organizations give themselves a right to scan the whole 0.0.0.0/0 IP range (i.e. whole Internet) on a daily basis, with disclaimer where they say that if you don't like it then you should contact them privately to be skipped from future scans. 
+Mass scans are a fairly common phenomenon where individuals and/or organizations give themselves a right to scan the whole 0.0.0.0/0 IP range (i.e. whole Internet) on a daily basis, with disclaimer where they say that if you don't like it then you should contact them privately to be skipped from future scans. 
 
 ![Shodan FileZilla results](https://i.imgur.com/nwOwLP9.png)
 
@@ -466,7 +466,7 @@ In the following screenshot, a run of popular SQLi vulnerability tool [sqlmap](h
 
 #### Port scanning
 
-In case of too many connection attempts toward considerable amount of different TCP ports, Maltrail will warn about the potential port scanning, as a result of its heuristic mechanism detection. It the following screenshot such warning(s) can be found for a run of popular port scanning tool [nmap](https://nmap.org/):
+In case of too many connection attempts toward considerable amount of different TCP ports, Maltrail will warn about the potential port scanning, as a result of its heuristic mechanism detection. In the following screenshot such warning(s) can be found for a run of popular port scanning tool [nmap](https://nmap.org/):
 
 ![nmap scan](https://i.imgur.com/VS7L2A3.png)
 
