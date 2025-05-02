@@ -3026,7 +3026,7 @@ updates-wordpress.org
 us-wordpress.org
 us-en-wordpress.org
 us.en-wordpress.org
-viatcve.com
+viacve.com
 web-wordpress.org
 wpappdevelopment.org
 wpcloudservices.org
