@@ -15590,27 +15590,59 @@ web.subgraphic.com
 webdisk.imgweb.net
 webmail.imgweb.net
 
+# Reference: https://x.com/500mk500/status/1916792029926805969
+# Reference: https://x.com/TLP_R3D/status/1918169164210110786
 # Reference: https://patchstack.com/articles/fake-security-vulnerability-phishing-campaign-targets-woocommerce-users/
 # Reference: https://app.validin.com/detail?find=ec798f07ee6774932f2beadd1b9ad5b9&type=hash&ref_id=202b58f8a9e#tab=host_pairs
 
+admin-woocommerce.com
+alert-woocommerce.com
+cloud-woocommerce.com
+email-woocommerce.com
 guardadefense.com
+helpdesk-woocommerce.com
+patch-woocommerce.com
+scan-woocommerce.com
+secure-woocommerce.com
 security-woocommerce.com
+send-woocommerce.com
+service-woocommerce.com
+tech-woocommerce.com
+updates-woocommerce.com
 woocommerce-alert.com
+woocommerce-alerts.com
 woocommerce-api.com
+woocommerce-auth.com
+woocommerce-care.com
 woocommerce-check.com
+woocommerce-checks.com
+woocommerce-client.com
+woocommerce-desk.com
 woocommerce-dev.com
+woocommerce-emails.com
+woocommerce-fix.com
 woocommerce-help.com
+woocommerce-helpdesk.com
 woocommerce-info.com
+woocommerce-mailer.com
+woocommerce-maintenance.com
 woocommerce-monitor.com
+woocommerce-notification.com
+woocommerce-notify.com
 woocommerce-patch.com
+woocommerce-post.com
+woocommerce-response.com
+woocommerce-safe.com
 woocommerce-safety.com
 woocommerce-scan.com
+woocommerce-sec.com
 woocommerce-secure.com
 woocommerce-security.com
 woocommerce-server.com
 woocommerce-services.com
 woocommerce-shield.com
 woocommerce-status.com
+woocommerce-system.com
 woocommerce-updates.com
 wpappdevelopment.org
 wpcloudservices.org
