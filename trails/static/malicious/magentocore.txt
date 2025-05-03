@@ -15458,6 +15458,7 @@ webjs-cms.com
 
 # Reference: https://app.validin.com/detail?find=185.208.156.201&type=ip4&ref_id=42f63d6373a#tab=host_pairs (# 2025-05-01)
 
+organisationdejour.com
 webjs-cms.online
 
 # Reference: https://app.validin.com/detail?find=185.196.11.100&type=ip4&ref_id=23ca33e4924#tab=resolutions (# 2025-05-01)
