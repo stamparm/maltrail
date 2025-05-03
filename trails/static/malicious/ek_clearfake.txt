@@ -1791,6 +1791,7 @@ jarringshrink.shop
 alosym.icu
 aytuna.icu
 azaler.icu
+bebir.press
 bejoq.icu
 bopuc.icu
 bufok.icu
@@ -1845,11 +1846,14 @@ ledax.icu
 libij.icu
 ligaz.icu
 lipog.icu
+lysez.press
 maxec.icu
+mebwg.press
 mipak.icu
 munyw.icu
 nafih.icu
 nagec.icu
+napgh.press
 nawym.icu
 nifom.icu
 nikys.icu
@@ -1899,6 +1903,7 @@ wumih.icu
 xamuy.icu
 xelan.icu
 xemyrai6.icu
+xeqnm.press
 xujamio2.icu
 xuxyf.icu
 yonuga.icu
@@ -1906,6 +1911,8 @@ ysozim.icu
 zahyt.icu
 zaqob.icu
 zeryjeo6.icu
+zimwl.press
+zivad.press
 zymol.icu
 zynyx.icu
 check.alosym.icu
@@ -3630,6 +3637,7 @@ babuc.icu
 barev.icu
 baruy.icu
 becyz.icu
+beksr.press
 bm8gv9le.barev.icu
 bo8ia.barev.icu
 bogig.icu
@@ -3637,6 +3645,7 @@ bscvir5o.barev.icu
 bugix.icu
 bugyx.icu
 buqoc.icu
+campsitegradually.ru
 carin.icu
 casog.icu
 ccbn.barev.icu
@@ -3741,9 +3750,11 @@ cisyn.icu
 codux.icu
 colaj.icu
 coonl.barev.icu
+coxyz.press
 ctcb.barev.icu
 ctkz5f5a.barev.icu
 ctpzd.press
+cubuj.press
 cufyz.icu
 cuved.icu
 cuxor.icu
@@ -3755,6 +3766,8 @@ dbxl5zi0.barev.icu
 debul.icu
 dehoz.icu
 didey.icu
+dimmergauntlet.ru
+divoc.press
 djbaz.barev.icu
 dk873.barev.icu
 dmlfq.press
@@ -3815,12 +3828,14 @@ j382q.barev.icu
 j6uu.barev.icu
 j7p47.barev.icu
 jahoc.icu
+jaweh.press
 jelif.top
 jemyq.icu
 jexem.icu
 jezyq.press
 jfyac.barev.icu
 jhkq5w6q.barev.icu
+jiduh.press
 jon7rrka.barev.icu
 jpaom.barev.icu
 juhup.icu
@@ -3860,6 +3875,7 @@ lvvjo.barev.icu
 lwhkr.press
 lygal.icu
 lyqej.press
+lysez.press
 lysyz.icu
 mavew.icu
 mbcrylvx.barev.icu
@@ -3869,6 +3885,7 @@ mopoj.icu
 mujan.icu
 mulaq.icu
 munen.icu
+muvom.press
 mylan.press
 mypah.press
 myryh.icu
@@ -3880,11 +3897,13 @@ nejoc.icu
 nejyd.icu
 nokuv.icu
 nosux.icu
+novow.press
 nplsjlwh.barev.icu
 ns1.symad.icu
 nuwof.icu
 nuxul.icu
 nynoj.icu
+nysew.press
 o4rkv4bk.barev.icu
 oflta.barev.icu
 olirq.barev.icu
@@ -3898,6 +3917,7 @@ pawol.icu
 pebeg.icu
 pedyg.icu
 pejel.icu
+pepjm.press
 pepuq.icu
 pifos.icu
 pikip.icu
@@ -3960,8 +3980,10 @@ talup.icu
 tazaz.icu
 tepud.icu
 tidag.icu
+tighn.press
 timov.icu
 toa6.barev.icu
+tolaj.press
 tumyr.icu
 ty9p.barev.icu
 tycok.icu
@@ -3994,6 +4016,7 @@ vysub.icu
 vytoz.press
 vyzap.icu
 w162.barev.icu
+wakor.press
 wetad.icu
 wewum.icu
 wltrr.barev.icu
@@ -4001,12 +4024,14 @@ wolum.icu
 wrltc.press
 wunep.icu
 wyham.icu
+wykvn.press
 wysaf.icu
 wyxam.icu
 wyzof.icu
 x44n.barev.icu
 xasad.icu
 xbiz.barev.icu
+xeqnm.press
 xi6cgl96.barev.icu
 xisav.icu
 xiwaj.icu
@@ -4031,6 +4056,7 @@ zebat.icu
 zevyg.icu
 zezar.icu
 zho629fj.barev.icu
+zifnk.press
 zvtc.barev.icu
 
 # Reference: https://x.com/JAMESWT_WT/status/1913828664027869377
