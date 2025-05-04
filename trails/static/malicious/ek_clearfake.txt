@@ -4944,6 +4944,25 @@ sunderteck.com
 wp.elbordo.com.mx
 wp.laestacion.org.mx
 
+# Reference: https://threatfox.abuse.ch/browse/tag/FakeCaptcha/ (# 2025-05-04)
+
+admin-protect.help
+banki.kancelariaoxford.pl
+blockinsight.net
+booking.partdet-id839847.com
+chaintraderx.com
+cloudflare.eradigitalibl.com
+cloudflareapage.pages.dev
+fansly.ad
+partdet-id839847.com
+pumpcommunity.pages.dev
+pumpfunaaexposed.pages.dev
+realtorpichardo.com
+scollonllc.it.com
+sky-shiiyu.moe
+travelersi.com
+we-will.servegame.com
+
 # Generic
 
 /a3A7qLVn/
