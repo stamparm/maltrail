@@ -4877,6 +4877,11 @@ booking.partner-id897123.com
 
 sennheiser.ad
 
+# Reference: https://app.validin.com/detail?type=raw&find=Verify+you+are+human#tab=host_pairs
+
+namoet.de
+matrix.namoet.de
+
 # Generic
 
 /a3A7qLVn/
