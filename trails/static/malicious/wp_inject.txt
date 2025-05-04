@@ -6646,3 +6646,7 @@ co34.space
 compensationsa.xyz
 diathophyltetigid.ga
 sikopersimoasho.ml
+
+# Reference: https://www.wordfence.com/blog/2025/04/interesting-wordpress-malware-disguised-as-legitimate-anti-malware-plugin/
+
+45.61.136.85:5555
