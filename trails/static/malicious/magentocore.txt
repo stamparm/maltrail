@@ -15690,6 +15690,11 @@ xn--wooommerce-fib.com
 xn--wooommerce-shb.com
 api.dev-woocommerce.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/67.217.228.244/relations
+
+cdn-moonpay.com
+cdn-namecheap.com
+
 # Generic
 
 /assets/lfg.js
