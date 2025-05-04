@@ -4927,6 +4927,23 @@ yuun.pages.dev
 z1z.pages.dev
 zynof.press
 
+# Reference: https://app.validin.com/detail?find=edc1d53342cfcd8bfd1f&type=hash#tab=host_pairs (# 2025-05-04)
+
+365-blanka.com
+api.sunderteck.com
+biz-controllhub.com
+cpeclara.com
+dash.nextagc.com
+hr-controllhubs.com
+hr-overview.com
+minder-info.com
+myapd.org
+online.prolinkik.com
+pay-overviews.com
+sunderteck.com
+wp.elbordo.com.mx
+wp.laestacion.org.mx
+
 # Generic
 
 /a3A7qLVn/
