@@ -4889,6 +4889,44 @@ sennheiser.ad
 namoet.de
 matrix.namoet.de
 
+# Reference: https://threatfox.abuse.ch/browse/tag/ClearFake/ (# 2025-05-04)
+
+app.bytevista.cloud
+app2.bytevista.cloud
+barbellblurry.today
+bluetroniq.vip
+bytevista.cloud
+dasopdoaodoaoaoao.com
+fodxj.press
+ho8.pages.de
+hywod.press
+javascript-67t.pages.dev
+jumstor.cloud
+marinescoatsnow.click
+min-js-lib.pages.dev
+ms2.rybos.fun
+necscar.pro
+otototototoqqlfk.com
+paralegalchemicals.run
+pigshow.digital
+relmake.pages.dev
+rybos.fun
+salorttactical.top
+sofyf.press
+spiritismprotozoan.bet
+stat.bluetroniq.vip
+taciq.press
+tnop.pages.dev
+tuboos.pages.dev
+u1.barbellblurry.today
+u1.paralegalchemicals.run
+u1.spiritismprotozoan.bet
+xelop.press
+yoloff.pages.dev
+yuun.pages.dev
+z1z.pages.dev
+zynof.press
+
 # Generic
 
 /a3A7qLVn/
