@@ -4873,6 +4873,10 @@ parnters-secure.com
 booking.partner-id892374.com
 booking.partner-id897123.com
 
+# Reference: https://x.com/NullPwner/status/1918969367586275803
+
+sennheiser.ad
+
 # Generic
 
 /a3A7qLVn/
