@@ -4830,13 +4830,22 @@ zywig.icu
 
 angrybirds.world
 
-# Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw#tab=host_pairs (# 2025-04-29)
+# Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw#tab=host_pairs (# 2025-05-04)
 
 247supportsolutions.com
+aiolocksmithstpetersburg.com
+curvygirlliz.com
+facilfi.com
+fancontrol.pro
+fantuner.pro
 haushawihakanwj-secondary.z13.web.core.windows.net
 highspring.247supportsolutions.com
 kashmir-maryam.com
+live-wallpaper.top
+nahamcon2025asdasd.pages.dev
 pgaestateltd.com
+rraae.cedia.edu.ec
+windows-update.zip
 zfbezhefbzhbdfbzdufbuzbdf.pages.dev
 
 # Reference: https://x.com/skocherhan/status/1917177880519262223
