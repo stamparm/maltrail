@@ -4967,6 +4967,11 @@ we-will.servegame.com
 
 lbkequityexchange.com
 
+# Reference: https://x.com/NullPwner/status/1919423538525503624
+# Reference: https://badbyte.io/infostealer-macos-etherhiding/
+
+technavix.cloud
+
 # Generic
 
 /a3A7qLVn/
