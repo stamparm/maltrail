@@ -14615,6 +14615,7 @@ rt.sitetrackmetrics.com
 rt.trackanalytica.com
 rt.webinsightmetrics.com
 sandbox.datainsightdeck.com
+scopews.datatrackscope.com
 server.trackmetricline.com
 service.analyticsgeotrack.com
 service.geometrictrack.com
