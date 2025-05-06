@@ -14482,6 +14482,7 @@ taganalyticspro.com
 tagmanagersite.com
 tagmanagertools.com
 tagmonitoringhub.com
+tagtactix.com
 trackanalytica.com
 trackermanagerpro.com
 trackgeotrends.com
@@ -14561,7 +14562,9 @@ cdn.webtrackingtools.com
 css.datamonitorpro.com
 css.datatracktools.com
 css.tagmanagersite.com
+cdn.tagtactix.com
 css.webmetricshub.com
+dashws.insightdashflow.com
 data.geoinsighttracker.com
 data.geotrackmetrics.com
 datahub.datainsightmap.com
@@ -14587,10 +14590,12 @@ geo.adperformanceanalytics.com
 geo.audiencebehaviorinsights.com
 geo.contentengagementhub.com
 geo.customerdatainsights.com
+gridws.siteinsightgrid.com
 hub.trendmetriczone.com
 internal-api.analyticsvista.com
 live.analyticsvista.com
 live.datatracknest.com
+live.trackmetricline.com
 media.sitestatflow.com
 metrics.geoinsighttracker.com
 metrics.insightgeostats.com
@@ -14625,6 +14630,7 @@ service.webinsightmetrics.com
 staging.webtrendmatrix.com
 static.trackwebtrends.com
 storage.statpulsecenter.com
+stream.datainsightdeck.com
 stream-ws.webstatscope.com
 stream.sitemetricpro.com
 stream.webanalyticsgrid.com
