@@ -14112,6 +14112,7 @@ logicwploop.com
 logwplmap.com
 reportcsp.com
 reportls.org
+reportjquery.com
 reportjquery.shop
 reportscsp.shop
 restapi.space
