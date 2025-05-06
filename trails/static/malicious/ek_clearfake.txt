@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2025 Maltrail developers (https://github.com/stamparm/maltrail/)
+ # Copyright (c) 2014-2025 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
 # Aliases: clickfix
@@ -5040,6 +5040,14 @@ tifaouineshop.com
 unitednebras.com
 yukeetrading.com
 zonasport.com.mx
+
+# Reference: https://x.com/NullPwner/status/1919852181454311832
+# Reference: https://www.virustotal.com/gui/file/7edadd2866022eea6e41904c5c632989f9cccfbd824ee200a2d8bd29c855f074/detection
+# Reference: https://www.virustotal.com/gui/file/a224a35002afb6114ea479d21c6fcaae7bf0fa94bdbcfb276b5fcdd551fb15f0/detection
+
+overallwobbly.ru
+e.overallwobbly.ru
+nc1.overallwobbly.ru
 
 # Generic
 
