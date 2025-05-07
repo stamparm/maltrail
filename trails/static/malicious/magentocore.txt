@@ -4645,6 +4645,7 @@ yahoo-tracker.com
 # Reference: https://www.virustotal.com/gui/ip-address/185.215.113.111/relations
 # Reference: https://www.virustotal.com/gui/ip-address/194.61.25.77/relations
 # Reference: https://www.virustotal.com/gui/ip-address/77.83.36.33/relations
+# Reference: https://app.validin.com/detail?find=9af4e56ebcbf5cde0d3581b1900fc6ca&type=hash&ref_id=7ef8db303a5#tab=host_pairs (# 2025-05-07)
 
 gstatis.co
 jqueri-web.at
@@ -4652,6 +4653,7 @@ jqueri.at
 jqueridev.at
 jqueriweb.at
 jsdelivr.at
+maps-gstatic.com
 cdn.jsdelivr.at
 
 # Reference: https://twitter.com/unmaskparasites/status/1377383696009895939
