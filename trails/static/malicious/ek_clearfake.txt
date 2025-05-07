@@ -5049,6 +5049,47 @@ overallwobbly.ru
 e.overallwobbly.ru
 nc1.overallwobbly.ru
 
+# Reference: https://x.com/JAMESWT_WT/status/1919926783316558250
+# Reference: https://app.validin.com/detail?find=%2Fwin&type=raw&ref_id=9009bfead23#tab=host_pairs (# 2025-05-07)
+# Reference: https://app.any.run/tasks/c5de5d98-26ce-40a0-be15-2b04646b6c86
+
+getsverif.com
+ggetsvverif.com
+1nspiricity.com
+booking-lossitresn.com
+bookitemlosses.com
+booklilostsupp.com
+booklng-id068734.it.com
+booklng-id440574.it.com
+booklng-id494714.com
+booklng-id534807.it.com
+booklng-id564875.it.com
+booklostticket.com
+extanet-parter.com
+extnet-parter.com
+extrent-resviews.com
+parnter-id28934.com
+partner-reseview.com
+pather-cancels.com
+pathers-respons.com
+property-id157434.it.com
+property-id357436.it.com
+property-id675431.it.com
+property-id956430.it.com
+room-i3938053.com
+room-id039054.com
+room-id439574.shop
+room-id739053.com
+room-id893905.com
+rsvn-i5934053.com
+rsvn-id339757.com
+rsvn-id439456.com
+rsvn-id739057.com
+rsvn-id835055.com
+secrue-id90183.com
+secure-partnet.com
+www-slbc.com
+
 # Generic
 
 /a3A7qLVn/
