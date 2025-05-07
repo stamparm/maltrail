@@ -14866,43 +14866,63 @@ cdn.unsightly.autos
 cdn.volatile.baby
 cdn.zauberkiste.xyz
 
-# Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24#tab=resolutions (# 2025-02-26)
+# Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24#tab=resolutions (# 2025-05-07)
 
 africasester.click
 bagarthe.pics
+boracape.click
+brasnovo.world
+brasnovo.xyz
 cefo.lol
 concentration.autos
 courage.boats
+datahil.pics
 feminist.baby
 feyloot.site
 fritech.fun
 getvisi.store
 gradient.christmas
+jademountain.sbs
 kegosei.sbs
 lily.coupons
+nordichealth.wiki
 rabiei.live
+reggio.world
 reinforce.coupons
 runfoloink.online
+sandscomp.cam
 sekleteo.online
+slappliam.art
 slapps.store
+tropicaldreams.xyz
 uutop.shop
 cdn.africasester.click
 cdn.bagarthe.pics
+cdn.boracape.click
+cdn.brasnovo.world
+cdn.brasnovo.xyz
 cdn.cefo.lol
 cdn.concentration.autos
 cdn.courage.boats
+cdn.datahil.pics
 cdn.feminist.baby
 cdn.feyloot.site
 cdn.fritech.fun
 cdn.getvisi.store
 cdn.gradient.christmas
+cdn.jademountain.sbs
 cdn.kegosei.sbs
 cdn.lily.coupons
+cdn.nordichealth.wiki
 cdn.rabiei.live
+cdn.reggio.world
 cdn.reinforce.coupons
 cdn.runfoloink.online
+cdn.sandscomp.cam
 cdn.sekleteo.online
+cdn.slappliam.art
 cdn.slapps.store
+cdn.tropicaldreams.xyz
 cdn.uutop.shop
 
 # Reference: https://x.com/sdcyberresearch/status/1895166209815126454
