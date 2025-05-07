@@ -780,6 +780,26 @@ orbitalstress.net
 rage.markets
 uptime.dstat.love
 
+# Reference: https://app.validin.com/detail?find=stresser.cat&type=dom&ref_id=5eed4b49c74#tab=host_pairs (# 2025-05-07)
+
+stresser.baby
+stresser.beauty
+stresser.boats
+stresser.cat
+stresser.charity
+stresser.cheap
+stresser.directory
+stresser.foundation
+stresser.gives
+stresser.homes
+stresser.makeup
+stresser.mom
+stresser.motorcycles
+stresser.support
+stresser.team
+stresser.work
+stresser.yachts
+
 # Reference: https://twitter.com/banthisguy9349/status/1782789917384257825
 
 topboxapi-service.com
