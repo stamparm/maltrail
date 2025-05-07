@@ -986,18 +986,10 @@ estafatatg.top
 46.253.4.18:8041
 daqqoi1a.anondns.net
 
-# Reference: https://www.virustotal.com/gui/file/1e2dafc987f4a4f9c8a95b9ca5718fc6158ee83dc4dfca11ee6a14d92029d2fd/detection
-
-downloadinvoice.online
-mail.downloadinvoice.online
-
 # Reference: https://x.com/malwrhunterteam/status/1912844429074870554
 # Reference: https://www.virustotal.com/gui/file/0cb307270691981c2708b84462375ef703975cafd89c120ede3aeda8ae754e2e/detection
 
 172.81.132.12:8041
-securedocumentfiledownload.com
-mail.securedocumentfiledownload.com
-relay.securedocumentfiledownload.com
 
 # Reference: https://x.com/TeamDreier/status/1917134627182948591
 # Reference: https://www.virustotal.com/gui/file/2318850b2f87746e8af7fb74578e21fd0ea620c100cad1555074cc26a5ffba7f/detection
@@ -1018,5 +1010,3 @@ wutam.zapto.org
 
 45.154.98.184:8041
 masc-001.cloudscontroller.es
-
-
