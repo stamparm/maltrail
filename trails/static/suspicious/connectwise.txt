@@ -1012,3 +1012,11 @@ mugtrimol37.top
 
 79.110.49.57:8041
 wutam.zapto.org
+
+# Reference: https://x.com/1ZRR4H/status/1920043172203290912
+# Reference: https://www.virustotal.com/gui/file/c02dc41e95f8b3493cf0643ee99fcf918bcda28e667ad8315dbeeaab73fdf468/detection
+
+45.154.98.184:8041
+masc-001.cloudscontroller.es
+
+
