@@ -5100,6 +5100,16 @@ secure-partnet.com
 step-panel-web.live
 you2mp3.live
 
+# Reference: https://x.com/NullPwner/status/1921156379059847602
+# Reference: https://app.validin.com/detail?find=Checking%20if%20you%20are%20human&type=raw&ref_id=cd88c7e98d6#tab=host_pairs (# 2025-05-10)
+
+akurasiibl.com
+apartamentverifpro.com
+charleskeith.it.com
+traderai.name
+urmomonchain.xyz
+din.akurasiibl.com
+
 # Generic
 
 /a3A7qLVn/
