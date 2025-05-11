@@ -1010,3 +1010,8 @@ wutam.zapto.org
 
 45.154.98.184:8041
 masc-001.cloudscontroller.es
+
+# Reference: https://www.virustotal.com/gui/file/1018343762ac5d34af5763772fe5aab4df377d3a659e705b152da74509bf5603/detection
+
+185.132.177.127:8041
+strangercloud.pro
