@@ -5055,8 +5055,10 @@ nc1.overallwobbly.ru
 
 # Reference: https://x.com/JAMESWT_WT/status/1919926783316558250
 # Reference: https://app.validin.com/detail?find=%2Fwin&type=raw&ref_id=9009bfead23#tab=host_pairs (# 2025-05-07)
+# Reference: https://app.validin.com/detail?find=2cde7f3beeeb9d3a76e5e847c3ee80c3&type=hash&ref_id=b44ace55f87#tab=host_pairs (# 2025-05-12)
 # Reference: https://app.any.run/tasks/c5de5d98-26ce-40a0-be15-2b04646b6c86
 
+apartamentverifprooo.com
 getsverif.com
 ggetsvverif.com
 1nspiricity.com
