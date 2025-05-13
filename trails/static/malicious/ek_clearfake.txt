@@ -5123,7 +5123,9 @@ book-available.com
 # Reference: https://app.any.run/tasks/c55103b4-f32e-418e-a313-5a94a9acd8ba
 # Reference: https://www.virustotal.com/gui/ip-address/109.69.62.228/relations
 # Reference: https://www.virustotal.com/gui/ip-address/62.60.227.65/relations
+# Reference: https://www.joesandbox.com/analysis/1688631/0/html
 
+asdkjczxmeuw.click
 bookhub-id12231.com
 bookhub-id12731.com
 bookhub-id13731.com
@@ -5131,10 +5133,26 @@ bookhub-id148731.com
 bookhub-id18731.com
 getsveriff.com
 getsveriff.xyz
+hsjafklweqmn.click
+lkjzmxnqpwer.click
+lksmzqwenxop.click
 mznvqiweurty.click
+nmasdqwpeiru.click
 partnthub-id19731.com
 plmzxqwieruo.click
+qowuensmzxcv.click
+qpeuwmxnzvka.click
+qpwalskdjzmx.click
 qweiozmnxvla.click
+qwenmzlxktyu.click
+vxmnsdkjweqz.click
+wqemzxncpiou.click
+xnzwoeirplad.click
+xpoiwnzqlaks.click
+zbqwmnzxopru.click
+zcnvqpweoriu.click
+zmxncvaoiwqe.click
+zxvnqwejlkgh.click
 
 # Generic
 
