@@ -15738,6 +15738,10 @@ api.dev-woocommerce.com
 cdn-moonpay.com
 cdn-namecheap.com
 
+# Reference: https://x.com/sdcyberresearch/status/1922224943262994457
+
+dcmplugins.com
+
 # Generic
 
 /assets/lfg.js
