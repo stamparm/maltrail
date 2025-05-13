@@ -5112,6 +5112,13 @@ traderai.name
 urmomonchain.xyz
 din.akurasiibl.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1922185649056100727
+# Reference: https://github.com/km3dg3/IOCs/blob/main/2025-05-12%20%7C%20UNK%20Stealer%20%7C%20Booking%20ClickFix
+# Reference: https://www.virustotal.com/gui/file/5c02bfe719c33a92eeb98c5e871f109b9b0f47b16b37969149f7e8bf052487aa/detection
+
+apioeaesr.icu
+book-available.com
+
 # Generic
 
 /a3A7qLVn/
