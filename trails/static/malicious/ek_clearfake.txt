@@ -5180,6 +5180,13 @@ booking.chaeckotherooms.com
 booking.patheer-guesters.com
 booking.complaintsguest.com
 
+# Reference: https://x.com/skocherhan/status/1922316933048807601
+
+reportingreserv54458.world
+reqstgustrfldg.world
+rprtgustrfdroms.world
+viewmsrfd992945.world
+
 # Generic
 
 /a3A7qLVn/
