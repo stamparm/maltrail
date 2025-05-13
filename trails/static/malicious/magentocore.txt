@@ -15739,7 +15739,9 @@ cdn-moonpay.com
 cdn-namecheap.com
 
 # Reference: https://x.com/sdcyberresearch/status/1922224943262994457
+# Reference: https://www.virustotal.com/gui/ip-address/195.123.226.191/relations
 
+cmretailing.com
 dcmplugins.com
 
 # Generic
