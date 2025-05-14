@@ -5110,9 +5110,13 @@ you2mp3.live
 akurasiibl.com
 apartamentverifpro.com
 charleskeith.it.com
+consultorwebapps.business
+din.akurasiibl.com
+pivqmane.com
+sparkdexx.pages.dev
+suportes16.consultorwebapps.business
 traderai.name
 urmomonchain.xyz
-din.akurasiibl.com
 
 # Reference: https://x.com/JAMESWT_WT/status/1922185649056100727
 # Reference: https://github.com/km3dg3/IOCs/blob/main/2025-05-12%20%7C%20UNK%20Stealer%20%7C%20Booking%20ClickFix
