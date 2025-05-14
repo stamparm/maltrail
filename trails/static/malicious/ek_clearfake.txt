@@ -5187,6 +5187,11 @@ reqstgustrfldg.world
 rprtgustrfdroms.world
 viewmsrfd992945.world
 
+# Reference: https://x.com/SquiblydooBlog/status/1922375875548320203
+# Reference: https://www.virustotal.com/gui/file/94479572d99e07c50d39c46c8a96843e1c8ae80ce126ae3ba4c4fd223e3d731a/detection
+
+rekx.live
+
 # Generic
 
 /a3A7qLVn/
