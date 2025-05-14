@@ -3871,3 +3871,9 @@ yesbro.su
 
 breachforums.sx
 ncf7birtagvnoo73fnkxg2qayj5v76sijxlc65mvdewdruiwmkfofeyd.onion
+
+# Reference: https://x.com/JustWantToQ1/status/1922482370923393410
+# Reference: https://app.validin.com/detail?find=Integrated%20Exploit%20Builder&type=raw&ref_id=a192cfec30b#tab=host_pairs (# 2025-05-14)
+
+179.43.176.47:3000
+179.43.176.47:5000
