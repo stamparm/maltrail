@@ -14712,6 +14712,8 @@ heipdescsecuri.store
 # Reference: https://app.validin.com/detail?find=146.70.20.208&type=ip4&ref_id=3e07b116e1c#tab=resolutions (# 2025-02-20)
 # Reference: https://www.virustotal.com/gui/ip-address/149.255.35.143/relations
 
+adsvscrypto.online
+adsvscrypto.store
 bootstrap.rest
 bootstrap.solar
 bsjq-api.store
