@@ -15641,9 +15641,11 @@ profapi.com
 redtransfer.net
 scdnwire.com
 subgraphic.com
+televersion.net
 app.mapchat.us
 app.primechart.org
 cms.imgweb.net
+cms.televersion.net
 cpanel.imgweb.net
 cpcalendars.imgweb.net
 cpcontacts.imgweb.net
