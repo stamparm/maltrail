@@ -15746,6 +15746,12 @@ cdn-namecheap.com
 cmretailing.com
 dcmplugins.com
 
+# Reference: https://x.com/sdcyberresearch/status/1922953897557025102
+# Reference: https://www.virustotal.com/gui/ip-address/185.38.19.75/relations
+
+telechargent.com
+css.telechargent.com
+
 # Generic
 
 /assets/lfg.js
