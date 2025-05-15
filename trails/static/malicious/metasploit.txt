@@ -6107,3 +6107,9 @@ payment.gamestakes.club
 # Reference: https://www.virustotal.com/gui/file/c74da06de4760c3f075b4f4e13b712fecf972c8f2c508eb097c967705a1138e5/detection
 
 82.11.37.181:8448
+
+# Reference: https://x.com/skocherhan/status/1923084136601837858
+# Reference: https://www.virustotal.com/gui/file/0597b1e994c88ea5a66aa6a1efc98c6c51bf7bd49ab60d95976a3895669ea4db/detection
+
+13.52.223.143:19256
+54.219.245.49:19256
