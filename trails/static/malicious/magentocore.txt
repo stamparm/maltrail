@@ -15748,9 +15748,12 @@ dcmplugins.com
 
 # Reference: https://x.com/sdcyberresearch/status/1922953897557025102
 # Reference: https://www.virustotal.com/gui/ip-address/185.38.19.75/relations
+# Reference: https://app.validin.com/detail?find=e4804b3b63a0868b2e15&type=hash&ref_id=9d5ea4704be#tab=host_pairs (# 2025-05-15)
 
+allwebsolution.org
 telechargent.com
 css.telechargent.com
+web.allwebsolution.org
 
 # Generic
 
