@@ -14789,6 +14789,7 @@ absorbing.cam
 acidic.best
 acrylons.pics
 africt.art
+airplayer.live
 alpinedata.ink
 biscuit.pics
 blackcurrants.online
@@ -14832,6 +14833,7 @@ cdn.absorbing.cam
 cdn.acidic.best
 cdn.acrylons.pics
 cdn.africt.art
+cdn.airplayer.live
 cdn.alpinedata.ink
 cdn.biscuit.pics
 cdn.blackcurrants.online
