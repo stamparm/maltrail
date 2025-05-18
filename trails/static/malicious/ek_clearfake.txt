@@ -5209,6 +5209,23 @@ guestreviewes.com
 hkfasfsafg.click
 lbnte.com
 
+# Reference: https://pilot.validin.com/detail?find=%2Fwin&type=raw&ref_id=95f00a4c680#tab=host_pairs (# 2025-05-18)
+# Reference: https://pilot.validin.com/detail?find=edc1a0d79bb40ab8ba8c&type=hash&ref_id=dcb429bca05#tab=host_pairs (# 2025-05-18)
+
+allin99max.co
+badreviewes.com
+book-reservation3498.com
+bookhotel-id898435.com
+bookilostess.com
+bookinlosesitemr.com
+cheakrewies.com
+evllo.icu
+guest-badreviewes.com
+payhexx.com
+rewardesbook.com
+rewiesbadbood.com
+smoovision.com
+
 # Generic
 
 /a3A7qLVn/
