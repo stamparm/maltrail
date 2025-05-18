@@ -5212,6 +5212,7 @@ lbnte.com
 # Reference: https://pilot.validin.com/detail?find=%2Fwin&type=raw&ref_id=95f00a4c680#tab=host_pairs (# 2025-05-18)
 # Reference: https://pilot.validin.com/detail?find=edc1a0d79bb40ab8ba8c&type=hash&ref_id=dcb429bca05#tab=host_pairs (# 2025-05-18)
 
+admingusestraprefers.com
 allin99max.co
 badreviewes.com
 book-reservation3498.com
@@ -5219,12 +5220,38 @@ bookhotel-id898435.com
 bookilostess.com
 bookinlosesitemr.com
 cheakrewies.com
+checkrewiesgusta.com
+connect-hub.world
 evllo.icu
+extrasnetgstrhtmil.com
 guest-badreviewes.com
+helpguestrevies.com
+hotelaccountad.com
 payhexx.com
+prewiev-ide564301.com
+recomplientotherhotel.com
+resolve-lostproperty.com
 rewardesbook.com
 rewiesbadbood.com
+rewiesidenficar.org
+rewiewe-cheksdin.com
+rewiewsforhotelportal.com
+slavaukraini.pages.dev
 smoovision.com
+booking.admingusestraprefers.com
+booking.checkrewiesgusta.com
+booking.connect-hub.world
+booking.extrasnetgstrhtmil.com
+booking.helpguestrevies.com
+booking.hotelaccountad.com
+booking.prewiev-ide564301.com
+booking.recomplientotherhotel.com
+booking.resolve-lostproperty.com
+booking.rewiesidenficar.org
+booking.rewiewe-cheksdin.com
+booking.rewiewsforhotelportal.com
+slavaukraini.pages.dev
+suw.staging.mediavita.co.uk
 
 # Generic
 
