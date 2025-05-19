@@ -5209,8 +5209,8 @@ guestreviewes.com
 hkfasfsafg.click
 lbnte.com
 
-# Reference: https://pilot.validin.com/detail?find=%2Fwin&type=raw&ref_id=95f00a4c680#tab=host_pairs (# 2025-05-18)
-# Reference: https://pilot.validin.com/detail?find=edc1a0d79bb40ab8ba8c&type=hash&ref_id=dcb429bca05#tab=host_pairs (# 2025-05-18)
+# Reference: https://app.validin.com/detail?find=%2Fwin&type=raw&ref_id=95f00a4c680#tab=host_pairs (# 2025-05-18)
+# Reference: https://app.validin.com/detail?find=edc1a0d79bb40ab8ba8c&type=hash&ref_id=dcb429bca05#tab=host_pairs (# 2025-05-18)
 
 admingusestraprefers.com
 allin99max.co
