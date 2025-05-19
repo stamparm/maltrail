@@ -4107,3 +4107,7 @@ vercel-dns.com
 # Reference: https://github.com/MikhailKasimov/validin-phish-feed/commit/f5b5fdc5d3ebe2357e7556fb2cd7c43eb26dd30d
 
 icloud.com
+
+# Reference: https://github.com/stamparm/maltrail/commit/569eecae9e987f44dd81c7a3a007f1b9bed17eab
+
+steamcommunity.com
