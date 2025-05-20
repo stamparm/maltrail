@@ -5285,6 +5285,8 @@ confirm-id4.click
 confirm-id5.click
 confirm-id6.click
 confirm-id7.click
+confirm-id8.click
+confirm-id9.click
 
 # Generic
 
