@@ -5193,9 +5193,19 @@ rprtgustrfdroms.world
 viewmsrfd992945.world
 
 # Reference: https://x.com/SquiblydooBlog/status/1922375875548320203
+# Reference: https://x.com/Unit42_Intel/status/1924866530195427372
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-05-16-IOCs-on-recent-ClickFix-activity.txt
 # Reference: https://www.virustotal.com/gui/file/94479572d99e07c50d39c46c8a96843e1c8ae80ce126ae3ba4c4fd223e3d731a/detection
 
+atri.live
+bjeb.live
+cqsf.live
+dlux.live
+ekoz.live
 rekx.live
+thob.live
+b.ekoz.live
+m.bjeb.live
 
 # Reference: https://x.com/JAMESWT_WT/status/1923634721566728326
 # Reference: https://app.any.run/tasks/beeeceb6-4c62-4145-adbd-9b1307458441
