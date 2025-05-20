@@ -5253,6 +5253,12 @@ booking.rewiewsforhotelportal.com
 slavaukraini.pages.dev
 suw.staging.mediavita.co.uk
 
+# Reference: https://x.com/BlinkzSec/status/1924665165863084282
+# Reference: https://urlquery.net/report/fe5ec15e-e7ce-43ba-8312-8fb0977f856f
+
+circlejobs.page.link
+pub-5f0c5bf2b4ca48d6bc6e75876a259889.r2.dev
+
 # Generic
 
 /a3A7qLVn/
