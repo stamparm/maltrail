@@ -5260,7 +5260,9 @@ circlejobs.page.link
 pub-5f0c5bf2b4ca48d6bc6e75876a259889.r2.dev
 
 # Reference: https://x.com/JAMESWT_WT/status/1924724266597052580
+# Reference: https://www.virustotal.com/gui/ip-address/89.110.93.160/relations
 
+aaso12.duckdns.org
 aasso12.duckdns.org
 beeno.online
 capchacklickbot.com
@@ -5270,6 +5272,7 @@ ckickbotupd.com
 coinbasexpromotion.com
 confirm-id10.click
 demo.beeno.online
+dfjkhdsljkfhsd.com
 logistica10.grupotecnomax.com
 paygovision.icu
 rblx.sale
