@@ -5275,6 +5275,7 @@ paygovision.icu
 rblx.sale
 
 # Reference: https://x.com/skocherhan/status/1924758355777646621
+# Reference: https://www.virustotal.com/gui/ip-address/92.53.90.165/relations
 
 apartamentverifproo.com
 apartamentverifprooof.com
@@ -5288,6 +5289,7 @@ confirm-id6.click
 confirm-id7.click
 confirm-id8.click
 confirm-id9.click
+confirmid8.click
 
 # Generic
 
