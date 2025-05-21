@@ -5568,11 +5568,6 @@ dahhh.cn
 
 stephan.nrw
 
-# Reference: https://twitter.com/Glacius_/status/1727968223088214182
-# Reference: https://www.virustotal.com/gui/ip-address/5.230.54.3/relations
-
-donwloaded.com
-
 # Reference: https://www.virustotal.com/gui/domain/feja111.de/relations
 
 feja111.de
