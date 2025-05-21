@@ -5553,6 +5553,16 @@ confirmation-id9887363474.com
 confirmation-id9971.com
 confirmations-id47877182.com
 
+# Reference: https://app.validin.com/lookalikes?limit=1000&lookback=90&depth=2&find=%2F%5Econfirm%2B-id%5B0-9%5D%2B.com%24%2F (# 2025-05-21)
+
+confirm-id12678.com
+confirm-id4653.com
+confirm-id4792.com
+confirm-id6149.com
+confirm-id7594.com
+confirm-id9594.com
+confirm-id959493827.com
+
 # Generic
 
 /a3A7qLVn/
