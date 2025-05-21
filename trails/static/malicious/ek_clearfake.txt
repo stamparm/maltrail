@@ -5305,6 +5305,50 @@ confirm-id8.click
 confirm-id9.click
 confirmid8.click
 
+# Reference: https://app.validin.com/lookalikes?limit=1000&lookback=90&depth=2&find=%2F%5Ebook%5Ba-z%5D%2B-id%5B0-9%5D%2B.com%24%2F (# 2025-05-21)
+
+booking-id01.com
+booking-id1384.com
+booking-id1784.com
+booking-id1984.com
+booking-id2232.com
+booking-id234.com
+booking-id293.com
+booking-id3084.com
+booking-id3192491.com
+booking-id33.com
+booking-id3334.com
+booking-id3344.com
+booking-id335.com
+booking-id3384.com
+booking-id3584.com
+booking-id4084.com
+booking-id4584.com
+booking-id46391.com
+booking-id475.com
+booking-id4814.com
+booking-id4984.com
+booking-id53281.com
+booking-id5489.com
+booking-id5784.com
+booking-id673.com
+booking-id7842.com
+booking-id8281.com
+booking-id8288.com
+booking-id8293.com
+booking-id845.com
+booking-id8478.com
+booking-id852.com
+booking-id87812.com
+booking-id882.com
+booking-id8918.com
+booking-id8931.com
+booking-id9284.com
+booking-id9348.com
+booking-id9483.com
+booking-id9486.com
+booking-id9784.com
+
 # Generic
 
 /a3A7qLVn/
