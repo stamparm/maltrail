@@ -2,5 +2,34 @@
 # See the file 'LICENSE' for copying permission
 
 # Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-05-20-IOCs-for-AdaptixC2-activity.txt
+# Reference: https://app.validin.com/detail?find=7c6372580a9e78e8caff7ba50ef859aa&type=hash&ref_id=9f05271ed4b#tab=host_pairs (# 2025-05-22)
 
+192.153.57.9.sslip.io
+23-227-203-191.cprapid.com
+adaptcia.com
+adoring-chatelet.46-21-153-154.plesk.page
+amounn.com
+api2.utkic.ir
+arvest.restoreasec.com
+boursoacces.com
+casaslab.com
+community.christmas
+doamin.cc
+ecstatic-mcclintock.46-21-153-154.plesk.page
+express1solutions.com
+flashfrontlinefeed.com
+frejuop.live
+iorestore.com
+ip189.ip-51-254-238.eu
+joycas.live
+nwzd-csg.com
+orange3room.com
+pushtruelab.com
+restoreasec.com
+sunshinemoment.com
+td.express1solutions.com
+td.iorestore.com
+td.restoreasec.com
+td1.express1solutions.com
+td3.express1solutions.com
 tech-system.online
