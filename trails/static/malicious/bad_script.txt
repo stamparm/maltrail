@@ -8795,6 +8795,14 @@ gatetodisplaycontent.com
 
 /wallet_injection
 
+# Reference: https://x.com/malwrhunterteam/status/1925495994885509270
+# Reference: https://www.virustotal.com/gui/file/ef4da18aaf928751600c50d7128777ac36c793a71c34d6ac393200c0c4271556/detection
+# Reference: https://www.virustotal.com/gui/file/6a9e794381463c3eb947e4dcf075854f0a842f2eecfbfd3ed5358c4a8b4d0810/detection
+# Reference: https://www.virustotal.com/gui/file/5854c6560fe3bf47cad820d55fa798385439821c8c87b5b0df83995df320ab5b/detection
+
+/brahmachariN6lXL.php
+/unspectacularvM84Z.php
+
 # Generic
 
 /5c0ca79.php
