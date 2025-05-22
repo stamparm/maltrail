@@ -3067,3 +3067,10 @@ http://170.64.176.152
 
 http://142.93.225.19
 http://188.166.231.83
+
+# Reference: https://x.com/malwrhunterteam/status/1925293286123540864
+# Reference: https://www.virustotal.com/gui/file/3688c97136bca0f0e32c6cf8679e75e98e71db0e0c06212b09bf21ff1b24954f/detection
+
+http://206.189.157.192
+206.189.157.192:443
+/hvuj42C9hMMsJIseTfJZ000Z
