@@ -2554,6 +2554,10 @@ UNK_FlappyBird
 \AUSPFR\Z
 UNKNOWNSPFR
 
+# Reference: https://x.com/setThreatTitle/status/1925231534555996499
+
+Keydrop.io
+
 # Misc
 
 information_schema
