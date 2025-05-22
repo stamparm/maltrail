@@ -37,3 +37,24 @@ td1.express1solutions.com
 td3.express1solutions.com
 tech-system.online
 trucks-taxesrefund02.com
+
+# Reference: https://app.validin.com/detail?find=ERROR%20404%20-%20Nothing%20Found&type=raw&ref_id=9fcec45d347#tab=host_pairs (# 2025-05-22)
+
+172-235-52-96.ip.linodeusercontent.com
+bbb-appwrite.jonkerdd.nl
+bbb.jonkerdd.nl
+darkgem.duckdns.org
+dha-events.com
+ethachu21.com
+feutjezelf.jonkerdd.nl
+fireservice.direct.quickconnect.to
+ip87-106-112-18.pbiaas.com
+jelly.gaiznco.dk
+jonkerdd.nl
+mail.main-amarayuk.store
+main-amarayuk.store
+pattysergio.com
+proxy.jonkerdd.nl
+risinglightministries.org
+streamlineanalytics.net
+torrent.gaiznco.dk
