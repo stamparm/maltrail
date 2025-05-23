@@ -5567,6 +5567,57 @@ confirm-id7594.com
 confirm-id9594.com
 confirm-id959493827.com
 
+# Reference: https://app.validin.com/detail?find=Verify%20Your%20Request&type=raw#tab=host_pairs (# 2025-05-23)
+
+apidnschangerdmnd.com
+brightbitebox.com
+brightbytesite.com
+buildfromstar.com
+building-and-forum.com
+destoripsforicos.com
+destormestor.com
+destroiporland.com
+domain-from-home.com
+everygooodnews.com
+formxinvestor.com
+formxinvestors.com
+forum-and-building.com
+forum-from-hero.com
+gestordeconfort.com
+greenpulsebase.com
+greenpulseland.com
+healthboostspot.com
+home-and-forum.com
+homebuildstars.com
+homeregisterediclude.com
+homestarbuild.com
+icludehomeregistered.com
+icluderegisteredhome.com
+isthecapital.com
+lamejoropcionn.com
+morebitro.com
+mxbankerspro.com
+mxbankpro.com
+mxoilinvest.com
+oxygenisempty.com
+payment-verify.com
+portalinorapair.com
+proprtrmsvstr.world
+registeredhomeiclude.com
+registeredicludehome.com
+romanbankro.com
+rombankro.com
+rominvesi.com
+rominvestitor.com
+somparlaned.com
+termorina.com
+verif-proccess.com
+verification-proccess.com
+verilication-proccess.com
+verlfication-process.com
+voidinsoul.com
+voidtheboxs.com
+
 # Generic
 
 /a3A7qLVn/
