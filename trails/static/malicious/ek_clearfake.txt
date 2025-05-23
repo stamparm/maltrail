@@ -5618,6 +5618,15 @@ verlfication-process.com
 voidinsoul.com
 voidtheboxs.com
 
+# Reference: https://app.validin.com/detail?find=Verify%20You%20Are%20Human&type=raw#tab=host_pairs (# 2025-05-23)
+
+143242.xyz
+bestwoork.pages.dev
+goopit100000000000.pages.dev
+howtotellyourchild.com
+rotallution.com
+successchaserstars.com
+
 # Generic
 
 /a3A7qLVn/
