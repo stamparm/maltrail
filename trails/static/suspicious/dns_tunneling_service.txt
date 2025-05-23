@@ -5,3 +5,7 @@
 
 packetriot.net
 pktriot.net
+
+# Reference: https://blog.eclecticiq.com/china-nexus-threat-actor-actively-exploiting-ivanti-endpoint-manager-mobile-cve-2025-4428-vulnerability
+
+dnstunnel.run
