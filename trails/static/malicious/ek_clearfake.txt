@@ -5627,6 +5627,32 @@ howtotellyourchild.com
 rotallution.com
 successchaserstars.com
 
+# Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw#tab=host_pairs (# 2025-5-23)
+
+aiolocksmithclearwater.com
+btecperu.com
+chicagosgreentrappers.com
+inmobiliariagrupogemar.com
+linoszczel.com.pl
+mail.modelnasuma.hr
+mail.southfloridarodentcontrol.com
+mail.wallstolife.com
+modelnasuma.hr
+new-fazewith.pro
+removebeesnow.com
+removerodentsnow.com
+rodentcontrolchicago.com
+savvybracket.com
+sklep-paren.pl
+socialmatterz.com
+solara-support.github.io
+southfloridarodentcontrol.com
+sparklifegh.org
+tobu.ee
+uvcdc.com
+villascostabrava.club
+wallstolife.com
+
 # Generic
 
 /a3A7qLVn/
