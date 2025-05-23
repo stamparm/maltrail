@@ -2558,6 +2558,13 @@ UNKNOWNSPFR
 
 Keydrop.io
 
+# Reference: https://x.com/MalGamy12/status/1925962073504125211
+# Reference: https://www.nextron-systems.com/2025/05/23/katz-stealer-threat-analysis/
+# Reference: https://www.virustotal.com/gui/file/85f2455dfe4edd531a7074bd3ad2b49d065b42e9caa5129a075728961767b6b7/detection
+# Reference: https://www.virustotal.com/gui/file/0ae5909ec67708788039bf92462649c1191315df94778b514037d9a0052410df/detection
+
+katz-ontop
+
 # Misc
 
 information_schema
