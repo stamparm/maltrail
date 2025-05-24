@@ -3747,3 +3747,8 @@ serprise.com
 # Reference: https://www.virustotal.com/gui/domain/kendimas.com/relations
 
 kendimas.com
+
+# Reference: https://x.com/skocherhan/status/1926170864724107555
+# Reference: https://www.virustotal.com/gui/file/5865e0cd40a0ae90b7626ac54b8e5a0838301eaf452fe4688f2378d711f168cc/detection
+
+ddnskey.com
