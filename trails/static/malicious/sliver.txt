@@ -5551,6 +5551,12 @@ http://45.79.43.128
 45.79.43.128:8443
 45.79.43.128:8888
 
+# Reference: https://x.com/TLP_R3D/status/1926147062552223856
+# Reference: https://www.virustotal.com/gui/file/df3e59bc863c4fb92461daf5b2c3f3b28af9be4c220687c9c5df78c2598c1b30/detection
+
+pakistancode.com
+cdn1.pakistancode.com
+
 # Generic
 
 /.sliver-client/
