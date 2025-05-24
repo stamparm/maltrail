@@ -3877,3 +3877,9 @@ ncf7birtagvnoo73fnkxg2qayj5v76sijxlc65mvdewdruiwmkfofeyd.onion
 
 179.43.176.47:3000
 179.43.176.47:5000
+
+# Reference: https://x.com/banthisguy9349/status/1926170677071007948
+# Reference: https://app.validin.com/detail?find=Devil-Traff&type=raw&ref_id=705f57945a7#tab=host_pairs (# 2025-05-24)
+
+devil-traff.cc
+devfront.devil-traff.cc
