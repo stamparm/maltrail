@@ -5649,6 +5649,14 @@ uvcdc.com
 villascostabrava.club
 wallstolife.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1926128492334268483
+# Reference: https://app.validin.com/detail?find=63c848e2f8f2ea28ad48861ddcc9c7e9&type=hash&ref_id=5747996fb16#tab=host_pairs (# 2025-05-24)
+
+bkngrvff.com
+bkngrvffy.com
+getsybkng.com
+getsyv.com
+
 # Generic
 
 /a3A7qLVn/
