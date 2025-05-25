@@ -1019,3 +1019,7 @@ gitcloud.pro
 openkorcloud.pro
 remotecloud.pro
 strangercloud.pro
+
+# Reference: https://x.com/skocherhan/status/1926169395090301031
+
+screenconnectwise.com
