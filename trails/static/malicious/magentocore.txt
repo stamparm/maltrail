@@ -14093,14 +14093,17 @@ cdn.zatrob.sbs
 
 # Reference: https://x.com/sdcyberresearch/status/1868663371870130626
 
+analyzerq.com
 designsetlab.com
 dnflowe.com
 dnsphire.com
 dsgntag.com
+dsgnxl.com
 mktcrafter.com
 mktflowe.com
 salecores.com
 saleviewapp.com
+salewizi.com
 sellboosti.com
 statsalesup.com
 
