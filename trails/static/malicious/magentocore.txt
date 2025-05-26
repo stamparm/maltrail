@@ -13010,6 +13010,7 @@ jgueurystatic.xyz
 
 0tags.info
 0test.my
+1onebigshop.it.com
 1stat.today
 2links.blog
 3analytics.buzz
@@ -13023,14 +13024,18 @@ jgueurystatic.xyz
 9analytics.ink
 9circle.today
 analytz.info
+antiqshp.work
+beautymania.tattoo
 brinder.wiki
 builder.motorcycles
+celimax.digital
 coworkin.art
 crowdspace.shop
 directs.bond
 dofabrics.asia
 enrgy.cam
 fieldmans.fit
+gigatag.info
 grossbar.shop
 histat.top
 itracking.autos
@@ -13054,6 +13059,7 @@ tagspot.store
 ultrabit.shop
 ultrabyte.shop
 ultracart.shop
+ultrasys.shop
 uniquemask.homes
 vectors.guru
 webstat.help
