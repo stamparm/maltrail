@@ -241,6 +241,13 @@ session.mailsession.com
 45.56.69.210:3333
 93.95.228.242:3333
 
+# Reference: https://x.com/MichalKoczwara/status/1926722005199470620
+
+mlcrosofft.com
+ads.mlcrosofft.com
+sso.mlcrosofft.com
+ssoo.mlcrosofft.com
+
 # Generic
 
 /evilginx-linux-amd64.tar.gz
