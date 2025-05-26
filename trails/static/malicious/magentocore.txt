@@ -15653,6 +15653,7 @@ ns2.js-ware-secure.com
 # Reference: https://app.validin.com/detail?find=91.199.137.135&type=ip4&ref_id=1d271ff1756#tab=resolutions (# 2025-04-20)
 
 bootrow.com
+brandsocket.net
 businesssale.net
 flowmanager.org
 foodtiket.io
@@ -15684,6 +15685,7 @@ media.scdnwire.com
 static.profapi.com
 top.businesssale.net
 up.foodtiket.io
+web.brandsocket.net
 web.flowmanager.org
 web.subgraphic.com
 webdisk.imgweb.net
