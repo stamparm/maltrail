@@ -5675,6 +5675,64 @@ bullxtrade.lol
 globalminute.xyz
 t-axiom.trade
 
+# Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw#tab=host_pairs (# 2025-05-26)
+
+bullpas.ru
+captcha.zip
+not-malware.zip
+prodcount.life
+9o7fiy.bullpas.ru
+g43e0x.bullpas.ru
+g43og.bullpas.ru
+
+# Reference: https://app.validin.com/detail?find=Verify%20You%20Are%20Human&type=raw#tab=host_pairs (# 2025-05-26)
+
+flipdish.workers.dev
+hcaptcha-verification.flipdish.workers.dev
+
+# Reference: https://www.virustotal.com/gui/ip-address/144.172.93.112/relations
+
+doc.masplenedigitalworld.com
+doc.northamericanlockandsafe.com
+docs.cryptellegram.com
+docs.desaindigital.com
+docs.morlockaerospace.com
+docs.scmdatasolution.com
+docs.yourdigitaldoc.com
+invites.cryptellegram.com
+invites.desaindigital.com
+invites.digitalmediac.com
+invites.yourdigitaldoc.com
+invtes.cryptellegram.com
+member.rkfd.com
+opt.aweejobby.com
+project.yourdigitaldoc.com
+projectsview.yourdigitaldoc.com
+r.serverpit.com
+secureinvites.unids.com
+share.ionexusa.com
+share.lczipper.com
+share.yourdigitaldoc.com
+shared.anteus.com
+shared.araccius.com
+shared.cryptellegram.com
+shared.docuprint.com.ar
+shared.protelecon.com
+shared.teamradicus.com
+shared.thrilladesign.com
+shared.yourdigitaldoc.com
+shares.cryptellegram.com
+shares.yourdigitaldoc.com
+signed.anteus.com
+signed.araccius.com
+signed.desaindigital.com
+
+# Reference: https://app.validin.com/detail?find=Verify%20Your%20Request&type=raw#tab=host_pairs (# 2025-05-26)
+
+tetraflowarmdo.com
+verific-processing.com
+viriffic-processing.com
+
 # Generic
 
 /a3A7qLVn/
