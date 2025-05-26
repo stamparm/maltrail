@@ -15791,6 +15791,12 @@ web.allwebsolution.org
 
 sentrymap.us
 
+# Reference: https://www.virustotal.com/gui/ip-address/38.180.193.241/relations
+
+cdn-hosts.com
+jsonpackageusapi.com
+phppackageeuro.com
+
 # Generic
 
 /assets/lfg.js
