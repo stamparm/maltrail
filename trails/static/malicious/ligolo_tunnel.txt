@@ -270,3 +270,7 @@ http://87.120.126.52
 95.111.215.79:9999
 95.111.216.38:443
 95.111.217.194:4433
+
+# Reference: https://www.elastic.co/security-labs/betting-on-bots
+
+38.54.125.192:8080
