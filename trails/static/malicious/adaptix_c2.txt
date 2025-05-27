@@ -57,6 +57,7 @@ fireservice.direct.quickconnect.to
 ip87-106-112-18.pbiaas.com
 jelly.gaiznco.dk
 jonkerdd.nl
+karwanonline.com
 mail.main-amarayuk.store
 main-amarayuk.store
 pattysergio.com
@@ -64,3 +65,4 @@ proxy.jonkerdd.nl
 risinglightministries.org
 streamlineanalytics.net
 torrent.gaiznco.dk
+vpn519529427.softether.net
