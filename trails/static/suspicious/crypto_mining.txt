@@ -1491,3 +1491,7 @@ kubo.ultra-pool.com
 149.28.186.121:5860
 202.91.32.72:5860
 207.148.1.121:5860
+
+# Reference: https://www.virustotal.com/gui/domain/friendspool.club/relations
+
+friendspool.club
