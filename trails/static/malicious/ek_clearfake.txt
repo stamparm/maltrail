@@ -5989,6 +5989,31 @@ reviews-guest-id661723.com
 reviews-visitant-id34112.com
 x-booking-verification.com
 
+# Reference: https://app.validin.com/detail?find=a74e030ac377778fee184a91df439d9d&type=hash&ref_id=b35110cd44a#tab=host_pairs (# 2025-05-29)
+
+admin-bookingid4421623.com
+admin-helpdesk-robot.com
+admin-robot-property.com
+aioporsts.icu
+apioekjsem.icu
+apiooeris.icu
+attendbokngres.world
+book-no-robot.blog
+booking-customer-helpdesk.com
+complaintguest32342.com
+complaintguestid12452.com
+complaintsguest562423.com
+complaintsguestid73246.com
+extranet-no-bot.cloud
+helpdesk-booking.com
+hotel-review-guest41882.com
+recaptcha-passinfo.com
+reservationguestid62356.com
+reservationid641264737.com
+review-guest-id87130.com
+stayattends.world
+visitorstays.world
+
 # Generic
 
 /a3A7qLVn/
