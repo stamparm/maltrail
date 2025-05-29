@@ -5927,6 +5927,13 @@ vxxrwj0leq.complaingustase.com
 extranet-listing.com
 booking.extranet-listing.com
 
+# Reference: https://www.trellix.com/blogs/research/cfo-spear-phishing-netbird-attack/
+
+cloud-ed980.firebaseapp.com
+googl-6c11f.firebaseapp.com
+onlineview-5e3cf.web.app
+web-16fe.app
+
 # Generic
 
 /a3A7qLVn/
