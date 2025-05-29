@@ -5936,6 +5936,19 @@ googl-6c11f.firebaseapp.com
 onlineview-5e3cf.web.app
 web-16fe.app
 
+# Reference: https://x.com/JAMESWT_WT/status/1928140983318769836
+# Reference: https://app.validin.com/detail?find=c0ca17c6487f6d0b5b27d0965745b496&type=hash&ref_id=3c1e8cb878c#tab=host_pairs (# 2025-05-29)
+
+aagolden.icu
+apiklrdgd.icu
+apioeks.icu
+apioeser.icu
+apioetdr.icu
+apioofse.icu
+apiyurtrr.icu
+admin-booking-captcha.com
+extranet-adminbooking.com
+
 # Generic
 
 /a3A7qLVn/
