@@ -5949,6 +5949,46 @@ apiyurtrr.icu
 admin-booking-captcha.com
 extranet-adminbooking.com
 
+# Referecne: https://x.com/skocherhan/status/1928155425054286044
+# Reference: https://www.virustotal.com/gui/ip-address/193.233.127.131/relations
+
+activestay.world
+admin-bookingcomplaintguestid61423.com
+admin-bookingid5421623.com
+admin-bookingid6421623.com
+adminbookingid62342723.com
+apiaesae.icu
+apiklrdgd.icu
+apioeaesr.icu
+apioeslr.icu
+apioofse.icu
+attenvisitroom.world
+bkroomingsrvcs.world
+book-available.com
+book-view-reserve.com
+booking.hotel-review-guest41882.com
+bookng-supportdesk.com
+checkbkinghelp.world
+guest-reviews-id73991.com
+guests-review-id783661.com
+recaptcha-pass-info.com
+reservation-id4464234.com
+reservationid341264737.com
+reservationid441264737.com
+reservationid541264737.com
+reservationsfailed-id34361264.com
+reservationsfailed-id44361264.com
+reservationsfailed-id54361264.com
+reservationsfailed-id64361264.com
+reservhub.world
+resvisitshub.world
+review-guests-id32031.com
+review-hotel-id15492.com
+review-visitor-id56391.com
+reviews-guest-id661723.com
+reviews-visitant-id34112.com
+x-booking-verification.com
+
 # Generic
 
 /a3A7qLVn/
