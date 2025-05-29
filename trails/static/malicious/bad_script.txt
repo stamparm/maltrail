@@ -8807,6 +8807,8 @@ gatetodisplaycontent.com
 
 /payload/callback.hta
 /payload/callback.ps1
+/payload/payload.hta
+/payload/payload.ps1
 
 # Generic
 
