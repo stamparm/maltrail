@@ -15802,6 +15802,8 @@ phppackageeuro.com
 # Reference: https://www.virustotal.com/gui/ip-address/104.21.27.193/relations
 
 kof.one
+box2.kof.one
+mago.kof.one
 
 # Generic
 
