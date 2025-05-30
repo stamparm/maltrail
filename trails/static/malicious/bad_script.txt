@@ -8810,7 +8810,7 @@ gatetodisplaycontent.com
 /payload/payload.hta
 /payload/payload.ps1
 /payload/runner.hta
-t/payload/runner.ps1
+/payload/runner.ps1
 
 # Generic
 
