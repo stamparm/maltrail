@@ -15799,6 +15799,10 @@ cdn-hosts.com
 jsonpackageusapi.com
 phppackageeuro.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/104.21.27.193/relations
+
+kof.one
+
 # Generic
 
 /assets/lfg.js
