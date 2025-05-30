@@ -6018,6 +6018,13 @@ review-guest-id87130.com
 stayattends.world
 visitorstays.world
 
+# Reference: https://x.com/JAMESWT_WT/status/1928306522880160045
+
+paid-confirmations.com
+property-paids.com
+booking.property-paids.com
+booking.paid-confirmations.com
+
 # Generic
 
 /a3A7qLVn/
