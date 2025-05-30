@@ -6275,9 +6275,12 @@ azneisoa.icu
 
 # Reference: https://app.validin.com/lookalikes?limit=1000&lookback=90&depth=2&find=%2F%5Eapi%5Ba-z%5D%7B5%2C6%7D%5C.icu%2F (# 2025-05-30)
 
+apiconnect.icu
 apifabric.icu
+apilikewzh.icu
 apioeses.icu
 apiopwer.icu
+apisoversa.icu
 apiversr.icu
 
 # Generic
