@@ -5703,6 +5703,7 @@ docs.desaindigital.com
 docs.morlockaerospace.com
 docs.scmdatasolution.com
 docs.yourdigitaldoc.com
+emails.sortadrunk.org
 invites.cryptellegram.com
 invites.desaindigital.com
 invites.digitalmediac.com
@@ -5713,6 +5714,7 @@ opt.aweejobby.com
 project.yourdigitaldoc.com
 projectsview.yourdigitaldoc.com
 r.serverpit.com
+register.biljobs.com
 secureinvites.unids.com
 share.ionexusa.com
 share.lczipper.com
@@ -5722,6 +5724,7 @@ shared.araccius.com
 shared.cryptellegram.com
 shared.docuprint.com.ar
 shared.protelecon.com
+shared.signalhut.com
 shared.teamradicus.com
 shared.thrilladesign.com
 shared.yourdigitaldoc.com
@@ -5730,6 +5733,7 @@ shares.yourdigitaldoc.com
 signed.anteus.com
 signed.araccius.com
 signed.desaindigital.com
+web.unids.com
 
 # Reference: https://app.validin.com/detail?find=Verify%20Your%20Request&type=raw#tab=host_pairs (# 2025-05-26)
 
