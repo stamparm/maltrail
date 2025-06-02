@@ -1710,6 +1710,7 @@ zunostores.su
 
 # Reference: https://twitter.com/nao_sec/status/1266773287733825537
 # Reference: https://x.com/p3bt3b/status/1929178150585385223
+# Reference: https://x.com/blackorbird/status/1929407129515119014
 # Reference: https://app.any.run/tasks/6ed3b407-889f-4165-bd04-4a9f73b46dee/
 # Reference: https://krebsonsecurity.com/2023/06/why-malware-crypting-services-deserve-more-scrutiny/
 # Reference: https://otx.alienvault.com/pulse/64944c08e39f6f341f7add45
@@ -1721,6 +1722,7 @@ bile.ru
 crypt.guru
 cryptor.biz
 cryptor.live
+getcrypt.shop
 mobile-soft.su
 thelib.ru
 thelibrary.ru
