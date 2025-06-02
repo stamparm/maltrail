@@ -7092,6 +7092,32 @@ booking.zero-item.com
 dskfsfsdf.com
 duwesfm.com
 
+# Reference: https://x.com/Gi7w0rm/status/1929439628290834579
+# Reference: https://gi7w0rm.medium.com/hulucaptcha-an-example-of-a-fakecaptcha-framework-9f50eeeb2e6d
+
+anallyticsnodde.com
+analyticnodes.com
+clodaflare.com
+clodujflare.com
+cloflguared.com
+cloofalerg.com
+cloudstwr.com
+clouodgrd.com
+flclodshield.com
+flearegaurdc.com
+flflaegaurd.com
+shieldclouds.com
+security.clodaflare.com
+security.clodujflare.com
+security.cloflguared.com
+security.cloofalerg.com
+security.cloudstwr.com
+security.clouodgrd.com
+security.flclodshield.com
+security.flearegaurdc.com
+security.flflaegaurd.com
+security.shieldclouds.com
+
 # Generic
 
 /a3A7qLVn/
