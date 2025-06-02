@@ -7095,6 +7095,8 @@ duwesfm.com
 # Reference: https://x.com/Gi7w0rm/status/1929439628290834579
 # Reference: https://gi7w0rm.medium.com/hulucaptcha-an-example-of-a-fakecaptcha-framework-9f50eeeb2e6d
 
+amoliera.com
+amoliera.info
 anallyticsnodde.com
 analyticnodes.com
 clodaflare.com
@@ -7107,6 +7109,15 @@ flclodshield.com
 flearegaurdc.com
 flflaegaurd.com
 shieldclouds.com
+sopeited.com
+sopeited.info
+sopeited.org
+core.amoliera.com
+core.amoliera.info
+core.amoliera.org
+core.sopeited.com
+core.sopeited.info
+core.sopeited.org
 security.clodaflare.com
 security.clodujflare.com
 security.cloflguared.com
