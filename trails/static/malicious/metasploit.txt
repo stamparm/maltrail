@@ -6119,3 +6119,10 @@ payment.gamestakes.club
 
 62.171.158.126:5162
 62.171.158.126:8081
+
+# Reference: https://x.com/malwrhunterteam/status/1929496792225267873
+# Reference: https://www.virustotal.com/gui/file/f03555aba342fbaa2649f459428c0c4c1d957479804132f5d09f431da69a8da4/detection
+
+196.251.81.144:49152
+akamaitechlogics.com
+cdn.akamaitechlogics.com
