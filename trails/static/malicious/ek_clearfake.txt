@@ -7086,6 +7086,12 @@ booking.www-75949.com
 booking.zen-lens.com
 booking.zero-item.com
 
+# Reference: https://x.com/skocherhan/status/1929351490830770204
+# Reference: https://app.any.run/tasks/a9b50e06-3c31-4134-ba87-5f3e855c4477
+
+dskfsfsdf.com
+duwesfm.com
+
 # Generic
 
 /a3A7qLVn/
