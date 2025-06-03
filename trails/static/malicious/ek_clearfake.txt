@@ -7133,6 +7133,24 @@ security.shieldclouds.com
 
 bookingreserv.com
 
+# Reference: https://x.com/skocherhan/status/1929760314868093258
+
+checking-service.com-delivery.org
+claim2pizzas.com
+com-delivery.org
+com-tracking.cyou
+fax.gov-tax.icu
+fedex.com-tracking.cyou
+gov-tax.cfd
+gov-tax.icu
+irs.fax.gov-tax.icu
+irs.gov-tax.cfd
+irs.org.gov-tax.icu
+kdori.xyz
+m.usadockfile.live
+org.gov-tax.icu
+usadockfile.live
+
 # Generic
 
 /a3A7qLVn/
