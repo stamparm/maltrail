@@ -7129,6 +7129,10 @@ security.flearegaurdc.com
 security.flflaegaurd.com
 security.shieldclouds.com
 
+# Reference: https://x.com/skocherhan/status/1929759005070782647
+
+bookingreserv.com
+
 # Generic
 
 /a3A7qLVn/
