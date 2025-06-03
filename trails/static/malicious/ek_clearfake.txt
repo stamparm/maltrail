@@ -7151,6 +7151,43 @@ m.usadockfile.live
 org.gov-tax.icu
 usadockfile.live
 
+# Reference: https://app.validin.com/detail?find=Checking%20if%20you%20are%20human&type=raw#tab=host_pairs (# 2025-06-03)
+
+cloudtflare.com
+coinbasepromo.com
+coinbasepromotional.com
+coinbasepromotions.com
+confirm-id11.click
+confirm-id13.click
+confirm-id17.com
+confirm-id18.click
+confirmation.click
+e-qualibat.com
+live-app.cx
+rabonet.xyz
+jenkins.confirmation.click
+test.confirmation.click
+verif.rabonet.xyz
+
+# Reference: https://app.validin.com/detail?find=6018807017afead14417566f975ffdb4&type=hash#tab=host_pairs (# 2025-06-03)
+
+adminbookingverify.com
+com-feedback.life
+hmfm88.xyz
+neverforever.space
+booking.com-feedback.life
+room.hmfm88.xyz
+scam1.neverforever.space
+
+# Reference: https://app.validin.com/detail?find=edc1a0d79bb40ab8ba8c&type=hash#tab=host_pairs (# 2025-06-03)
+
+oneddge.com
+onmevvs.com
+
+# Reference: https://app.validin.com/detail?find=63c848e2f8f2ea28ad48861ddcc9c7e9&type=hash#tab=host_pairs (# 2025-06-03)
+
+bookneg.com
+
 # Generic
 
 /a3A7qLVn/
