@@ -1023,3 +1023,66 @@ strangercloud.pro
 # Reference: https://x.com/skocherhan/status/1926169395090301031
 
 screenconnectwise.com
+
+# Reference: https://x.com/salmanvsf/status/1929409485828665805
+# Reference: https://x.com/salmanvsf/status/1929410077490069911
+# Reference: https://app.validin.com/detail?find=%5Cr%5Cn%5CtvBzone%5Cr%5Cn&type=raw&ref_id=8137e896861#tab=host_pairs (# 2025-06-04)
+# Reference: https://www.virustotal.com/gui/file/29b21f91a4b9354a14b40fa3640a5a06a1be650fb09047972804d72a64cf9320/detection
+# Reference: https://www.virustotal.com/gui/file/30999cbfd69010bddb597ff22cadb9123c1509f337a4dc444ccd8b3990a61848/detection
+# Reference: https://www.virustotal.com/gui/file/3681efdb7704b9a82776de216d18d5173f0c12f538facfb62dd616072413d524/detection
+
+104.219.236.77:8041
+172.96.140.100:8041
+94.154.173.145:8041
+adobedownloads.top
+bookinginvoiceview.top
+coinbaba.top
+docaccesshub.top
+docviewersecure.com
+downloadcenter.top
+filesdonwloads.com
+getdocsaccess.top
+myssadownloadcenter.top
+myssadownloader.top
+saltuta.com
+sharefile-secure.com
+ssa-alertgateway.com
+ssa-checkmail.com
+ssa-client-docs.com
+ssa-clientauth.com
+ssa-clientcenter.com
+ssa-downloadstatement.top
+ssa-getyourstatement.top
+ssa-statementsalerts.top
+ssacenter.top
+ssadownloader.top
+ssadownloaders.top
+ssafile-notifications.com
+ssapopup.top
+statmentdownload.top
+statmentfront.com
+statmentfront.top
+thomsonreutersdownload.top
+thomsonreutersmedia.top
+thomsonreuterstax.top
+access.ssa-clientcenter.com
+auth.ssa-clientauth.com
+client.ssa-checkmail.com
+connect.ssa-alertgateway.com
+download.docviewersecure.com
+download.sharefile-secure.com
+download.ssafile-notifications.com
+downloads.adobedownloads.top
+dual.saltuta.com
+login.ssa-client-docs.com
+mail.coinbaba.top
+mail.downloadcenter.top
+mail.filesdonwloads.com
+mail.myssadownloadcenter.top
+mail.ssacenter.top
+mail.ssapopup.top
+mail.statmentfront.com
+mail.thomsonreutersdownload.top
+relay.filesdonwloads.com
+tax.thomsonreutersmedia.top
+webmail.thomsonreuterstax.top
