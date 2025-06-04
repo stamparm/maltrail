@@ -5557,6 +5557,12 @@ http://45.79.43.128
 pakistancode.com
 cdn1.pakistancode.com
 
+# Reference: https://x.com/malwrhunterteam/status/1930193165698400663
+# Reference: https://www.virustotal.com/gui/file/ac0da0bc1e952e33f4da24b13eb21bed435e66fa2422a143af1b296de4418554/detection
+# Reference: https://www.virustotal.com/gui/file/a3ec8a096e4e3361adf7dab2dfb9ed48a399b283828e96856393ec3dde23113f/detection
+
+192.210.239.160:8885
+
 # Generic
 
 /.sliver-client/
