@@ -2565,6 +2565,11 @@ Keydrop.io
 
 katz-ontop
 
+# Reference: https://x.com/suyog41/status/1929535228101435622
+# Reference: https://www.virustotal.com/gui/file/6bc703d3b1b4a6b42dd069eb8950bdfab134431be67bd5a3023cc260d2779e31/detection
+
+DiabloNetTop
+
 # Misc
 
 information_schema
