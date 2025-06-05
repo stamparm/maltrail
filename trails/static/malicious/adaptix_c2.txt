@@ -67,3 +67,7 @@ risinglightministries.org
 streamlineanalytics.net
 torrent.gaiznco.dk
 vpn519529427.softether.net
+
+# Reference: https://x.com/ViriBack/status/1930351693356548499
+
+144.172.106.67:8000
