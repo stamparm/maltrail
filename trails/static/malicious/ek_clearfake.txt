@@ -7158,6 +7158,8 @@ usadockfile.live
 
 # Reference: https://app.validin.com/detail?find=Checking%20if%20you%20are%20human&type=raw#tab=host_pairs (# 2025-06-03)
 
+cloud-flare-verify.com
+cloudflare-check.com
 cloudtflare.com
 coinbasepromo.com
 coinbasepromotional.com
@@ -7169,7 +7171,10 @@ confirm-id18.click
 confirmation.click
 e-qualibat.com
 live-app.cx
+protectbyflare.com
 rabonet.xyz
+trade-services.info
+wubook.cloud
 jenkins.confirmation.click
 test.confirmation.click
 verif.rabonet.xyz
