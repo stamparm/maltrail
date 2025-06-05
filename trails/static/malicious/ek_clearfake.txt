@@ -7220,6 +7220,11 @@ so9lbe0p08b697j.org
 tl29fsxzm0yjed0.org
 x0yb94ew7p0qz2p.org
 
+# Reference: https://app.validin.com/detail?type=raw&find=Verify+you+are+human#tab=host_pairs (# 2025-06-05)
+
+aminolabz.com
+cursedcaptchas.com
+
 # Generic
 
 /a3A7qLVn/
