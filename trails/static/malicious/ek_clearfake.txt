@@ -7249,6 +7249,12 @@ roomcheck-id5853.com
 roomcheker.com
 verifyouaparntament.com
 
+# Reference: https://x.com/skocherhan/status/1930694299533910353
+
+antibot-check.icu
+captha-secure.com
+re-capcha.cfd
+
 # Generic
 
 /a3A7qLVn/
