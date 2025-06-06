@@ -7263,6 +7263,22 @@ reviewe-statusofpay.com
 tokneeg.com
 booking.reviewe-statusofpay.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1931026029579063564
+# Reference: https://x.com/skocherhan/status/1931038262191132761
+
+admin-extranet-captha.com
+arcapalet.com
+basementleather.com
+bktfvaq.com
+bookreservfadrwer-customer.com
+clubhousechronicle.com
+confirmationofjune0306-updateinfo.com
+facilitymaintgroup.com
+ginger-leigh.com
+reserv-message-09503123.com
+rockrentalks.com
+view-reservation-0848833.com
+
 # Generic
 
 /a3A7qLVn/
