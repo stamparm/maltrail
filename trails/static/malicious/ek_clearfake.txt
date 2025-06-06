@@ -7255,6 +7255,14 @@ antibot-check.icu
 captha-secure.com
 re-capcha.cfd
 
+# Reference: https://x.com/JAMESWT_WT/status/1930828986700980565
+
+bokneeg.com
+bokneg.com
+reviewe-statusofpay.com
+tokneeg.com
+booking.reviewe-statusofpay.com
+
 # Generic
 
 /a3A7qLVn/
