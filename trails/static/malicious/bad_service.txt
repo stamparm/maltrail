@@ -2202,7 +2202,10 @@ maincvv.cc
 maincvv.top
 
 # Reference: https://app.validin.com/axon?source=DNS&type=ip&find=5.253.61.144
+# Reference: https://app.validin.com/detail?find=46.173.214.180&type=ip4&ref_id=a11c50dceb7#tab=resolutions (# 2025-06-06)
 
+bosscards.in
+bosscards.life
 sniffedcc.at
 sniffedcc.me
 
