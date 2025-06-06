@@ -4883,6 +4883,11 @@ secure.lme-co.com
 
 mops.dzierzgon.pl/wp-admin/admin-ajax.php
 
+# Reference: https://www.virustotal.com/gui/file/02bb686a62b4c1b6d5bbd9c72fea86dda4721603dae34f5abcac7bcd0d04d1c0/detection
+# Reference: https://www.virustotal.com/gui/file/0038abaf2d815caa1ae38a373b6362a77e5f4c9c9a9f786af157d4186f936d26/detection
+
+cpanel.imirp.co.uk
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
