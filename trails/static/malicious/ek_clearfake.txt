@@ -7315,8 +7315,19 @@ unq-at.sbs
 usddt.icu
 
 # Reference: https://www.cloudsek.com/blog/amos-variant-distributed-via-clickfix-in-spectrum-themed-dynamic-delivery-campaign-by-russian-speaking-hackers
+# Reference: https://app.validin.com/detail?find=40d1c6bdfa99e57bba65b98ad5799d75&type=hash&ref_id=3e2037bc608#tab=host_pairs (# 2025-06-06)
 
+841932-comcast.com
+841932-sasktels.com
+841932-spectrumwireless.com
+841932-tmo.com
+841932-verizion.com
+894721-att.com
+app-axiom.trade
+cetus-zone.network
 cf-verifi.pages.dev
+cloud891.com
+panel-comcast.com
 panel-spectrum.net
 rugme.cat
 spectrum-ticket.net
