@@ -1132,3 +1132,8 @@ http://57.181.102.240
 8.217.196.192:443
 93.66.148.225:9002
 93.71.143.16:9002
+
+# Reference: https://x.com/SBousseaden/status/1930754413741646200
+# Reference: https://www.virustotal.com/gui/file/4350994cb7d895bba32b6ec2c3163df6e6214ade3877d87c6f2dea3e00d48300/detection
+
+45.227.253.10:9543
