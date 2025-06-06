@@ -2134,6 +2134,7 @@ cvv.sale
 cvv.zone
 
 # Reference: https://twitter.com/banthisguy9349/status/1729542452518723838
+# Reference: https://x.com/skocherhan/status/1930839666263028226
 # Reference: https://www.virustotal.com/gui/ip-address/80.66.64.135/relations
 
 cvv-shop.ru
@@ -2141,8 +2142,11 @@ freshcvv.ru
 octavian.su
 privatehub.at
 privatehub.top
+prt-status.link
 t12shopp.su
 track2cvv.su
+rcdbexajnjd4zaw4puq55qzohb22gvbwjndzqoasgsees6uop4qawiad.onion
+t6chca2x2vknwq7f74rvcn75p6osboqtyptipuvbexbtxykpv376gtad.onion
 
 # Reference: https://app.validin.com/axon?source=DNS&type=ip&find=95.214.26.23
 
@@ -3888,11 +3892,3 @@ ncf7birtagvnoo73fnkxg2qayj5v76sijxlc65mvdewdruiwmkfofeyd.onion
 
 devil-traff.cc
 devfront.devil-traff.cc
-
-# Reference: https://x.com/skocherhan/status/1930839666263028226
-
-privatehub.at
-privatehub.top
-prt-status.link
-rcdbexajnjd4zaw4puq55qzohb22gvbwjndzqoasgsees6uop4qawiad.onion
-t6chca2x2vknwq7f74rvcn75p6osboqtyptipuvbexbtxykpv376gtad.onion
