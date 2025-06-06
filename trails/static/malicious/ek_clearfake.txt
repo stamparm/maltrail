@@ -7314,6 +7314,13 @@ unlqa-osterreich.space
 unq-at.sbs
 usddt.icu
 
+# Reference: https://www.cloudsek.com/blog/amos-variant-distributed-via-clickfix-in-spectrum-themed-dynamic-delivery-campaign-by-russian-speaking-hackers
+
+cf-verifi.pages.dev
+panel-spectrum.net
+rugme.cat
+spectrum-ticket.net
+
 # Generic
 
 /a3A7qLVn/
