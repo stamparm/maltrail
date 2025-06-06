@@ -18,7 +18,7 @@ def fetch():
 
     if __check__ in content:
         for line in content.split('\n'):
-            line = line.strip()
+            line = line.split('#')[0].strip()
             if not line or line.startswith('#') or '.' not in line:
                 continue
             retval[line] = (__info__, __reference__)
