@@ -6608,7 +6608,7 @@ survey.blackentertainments.com
 
 deliverynotforme.best
 developfirstline.com
-developfirstlineх.com
+developfirstlinex.com
 togetherforwine.com
 0.deliverynotforme.best
 0.togetherforwine.com
@@ -6618,7 +6618,7 @@ togetherforwine.com
 8.togetherforwine.com
 load.developfirstline.com
 track.developfirstline.com
-track.developfirstlineх.com
+track.developfirstlinex.com
 
 # Reference: https://www.virustotal.com/gui/domain/a11ybar.com/relations
 # Reference: https://www.virustotal.com/gui/domain/ian029dkl3osl930sian.club/relations

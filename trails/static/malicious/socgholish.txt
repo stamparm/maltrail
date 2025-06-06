@@ -4152,7 +4152,7 @@ yqf.free.thebitmeister.com
 # Reference: https://www.virustotal.com/gui/file/27909ef2e03908e4c0011acebe377a541e41db03843f5856b5e3e58887d8b79d/detection
 # Reference: https://www.virustotal.com/gui/file/b5c26533650b7da90c162b945533be126b640f4957d6a0376977d6b42e06b3fd/detection
 
-cases.​pcohenlaw.​com
+cases.pcohenlaw.com
 cxhkh.cases.pcohenlaw.com
 geui.cases.pcohenlaw.com
 kwsww.cases.pcohenlaw.com
@@ -4170,14 +4170,14 @@ studio.lacrenshawcrossing.com
 # Reference: https://x.com/TRACLabs_/status/1866078172489437386
 # Reference: https://www.virustotal.com/gui/ip-address/166.88.159.66/relations
 
-material.​amstillroofing.​com
+material.amstillroofing.com
 
 # Reference: https://x.com/TRACLabs_/status/1868788183112315339
 # Reference: https://www.virustotal.com/gui/ip-address/38.180.146.6/relations
 # Reference: https://www.virustotal.com/gui/file/8e513dc4b7ddfc0980e41338699d19d3e64ec841a3e2fbf30dfe84d5aa68f827/detection
 
-clients.​dedicatedservicesusa.​com
-sectors.​bowentaxlaw.​com
+clients.dedicatedservicesusa.com
+sectors.bowentaxlaw.com
 axpr.sectors.bowentaxlaw.com
 cobt.sectors.bowentaxlaw.com
 fgmtp.sectors.bowentaxlaw.com
