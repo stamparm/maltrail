@@ -7279,6 +7279,15 @@ reserv-message-09503123.com
 rockrentalks.com
 view-reservation-0848833.com
 
+# Reference: https://x.com/skocherhan/status/1931066524628119730
+
+bookingadmin-updateofmay2705.com
+breserve-custommessagehelp.com
+empowerhouseproject.org
+makersdc.com
+tektiks.com
+view-reservation.com
+
 # Generic
 
 /a3A7qLVn/
