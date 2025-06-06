@@ -7288,6 +7288,32 @@ makersdc.com
 tektiks.com
 view-reservation.com
 
+# Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw&ref_id=13a7cb93b25#tab=host_pairs (# 2025-06-06)
+
+at-unq.space
+bozei.aarkernerse.com
+completz.aarkernerse.com
+facebook.serveo.net
+iine-twg.space
+iinetw-og.space
+iino-tw-ag.space
+jan.aarkernerse.com
+newreleasenow.com
+odash.aarkernerse.com
+og-unlqa.space
+osterreich-unqla-ag.space
+phantomsec.servehttp.com
+platform-online-test.com
+softdeploy.xyz
+tools-booster.com
+tradermate.net
+trusteepius-airdrop.club
+unlqa-at.space
+unlqa-nat.space
+unlqa-osterreich.space
+unq-at.sbs
+usddt.icu
+
 # Generic
 
 /a3A7qLVn/
