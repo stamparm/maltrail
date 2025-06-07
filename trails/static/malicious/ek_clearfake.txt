@@ -7342,6 +7342,10 @@ rupert.cf-session.cloud
 
 elite-vpn.com
 
+# Reference: https://x.com/skocherhan/status/1931193668318192117
+
+streamfast.sbs
+
 # Generic
 
 /a3A7qLVn/
