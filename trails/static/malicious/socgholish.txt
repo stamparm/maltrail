@@ -4965,6 +4965,10 @@ cpanel.gemstonebookkeepingservices.com
 
 chamberscertifiedbookkeeping.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-16-v10907/2636
+
+signin.certifiedbk.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
