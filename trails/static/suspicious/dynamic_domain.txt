@@ -3756,3 +3756,7 @@ ddnskey.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-27-v10892/2576
 
 0000004.xyz
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-03-v10897/2592
+
+daveengineer.com
