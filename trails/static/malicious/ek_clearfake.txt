@@ -7337,6 +7337,11 @@ spectrum-ticket.net
 cf-session.cloud
 rupert.cf-session.cloud
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-06-v10943/2795
+# Reference: https://app.validin.com/detail?find=Elite%20VPN%20-%20Secure%20and%20Fast%20Connection&type=raw&ref_id=35902a1833b#tab=host_pairs (# 2025-06-07)
+
+elite-vpn.com
+
 # Generic
 
 /a3A7qLVn/
