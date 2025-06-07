@@ -3174,7 +3174,6 @@ uno-cdn-update.buzz
 velvet5nssrv.shop
 wakapundaa.shop
 werito.cyou
-world-of-guides.buzz
 younowoutyes.website
 
 # Reference: https://x.com/moneroon/status/1910672445670842395
