@@ -1535,6 +1535,10 @@ nelsonsys.com
 
 nypipeline.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-10-v10902/2615
+
+rajjas.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
