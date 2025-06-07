@@ -4902,6 +4902,11 @@ staff.tompsettsportslaw.com
 
 music.homesalemedia.com
 
+# Reference: https://www.virustotal.com/gui/file/56fe165a28973515ea541b17e531bca3e74fb5f5bb2dc70b93c24831c8662cba/detection
+# Reference: https://www.virustotal.com/gui/file/f47d64fbd205aaad4590f95291c650a8d7e83a309f0d7d291f3aad1b3a46f1e3/detection
+
+images.briansmallwood.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
