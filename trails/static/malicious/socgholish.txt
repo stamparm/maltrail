@@ -4961,6 +4961,10 @@ cloud.emeraldpinesenterprises.com
 
 cpanel.gemstonebookkeepingservices.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-14-v10904/2625
+
+chamberscertifiedbookkeeping.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
