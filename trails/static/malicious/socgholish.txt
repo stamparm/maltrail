@@ -4895,6 +4895,13 @@ cpanel.imirp.co.uk
 
 staff.tompsettsportslaw.com
 
+# Reference: https://www.virustotal.com/gui/file/865ef5729878a9227bb016cf164d088bef04ce5ac1171267a0ea27b0108af149/detection
+# Reference: https://www.virustotal.com/gui/file/a7224dfef21bbd2907f752744151c2634aac25f331ac3a84ed65a9ad2753de77/detection
+# Reference: https://www.virustotal.com/gui/file/b112d5bfde617275e50a06ed232612f149b250c5759171733e9972283d62d1e1/detection
+# Reference: https://www.virustotal.com/gui/file/b40a54f694ff3b7233476242955294db945918d59659baf8db8ac01912b8e184/detection
+
+music.homesalemedia.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
