@@ -4919,6 +4919,12 @@ roundcube.lamoillerealtors.com
 
 pa-portal.premierhomeviews.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-02-v10896/2590
+# Reference: https://www.virustotal.com/gui/file/15215ead7382922b95fbaa075375f2b179df87e1edbb1f33abc703e6d74a6535/detection
+# Reference: https://www.virustotal.com/gui/file/7070c0964fa845daa5ce2fd312de513ed23bc5c17a7a462ea1e30394ed494f90/detection
+
+secure.novelty-press.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
