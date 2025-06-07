@@ -1521,6 +1521,10 @@ iafec.com
 
 webproinc.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-07-v10899/2599
+
+lapsack.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
