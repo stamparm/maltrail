@@ -7512,6 +7512,11 @@ verfy-res-en.icu
 verifcation-reserv-872651.com
 view-my-form.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-14-v10904/2625
+
+buildit-right.buzz
+cdn-upload-files.buzz
+
 # Generic
 
 /a3A7qLVn/
