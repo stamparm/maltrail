@@ -4888,6 +4888,13 @@ mops.dzierzgon.pl/wp-admin/admin-ajax.php
 
 cpanel.imirp.co.uk
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-25-v10890/2569
+# Reference: https://www.virustotal.com/gui/file/fe21f7d46d3f21142560dfbc7b5f94ec7f8ebff239d984f7d95b0b6fe9fbc9cd/detection
+# Reference: https://www.virustotal.com/gui/file/bf8fdee791b4d129d23636a283cccf372d3ad55a57c60e8e3e28a9a3a6ea3983/detection
+# Reference: https://www.virustotal.com/gui/file/56f8e860f1ce5887d0a3ac32f49dd0a58a2191080dc76e0f2ef9fbbcad3992d7/detection
+
+staff.tompsettsportslaw.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
