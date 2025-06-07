@@ -4941,6 +4941,10 @@ landing.survival-kitz.com
 
 phpmyadmin.emeraldpineventures.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-07-v10899/2599
+
+myvrhost.viottoholdings.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
