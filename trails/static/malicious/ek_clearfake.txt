@@ -7346,6 +7346,29 @@ elite-vpn.com
 
 streamfast.sbs
 
+# Reference: https://x.com/skocherhan/status/1931109031726436484
+
+293841.website
+admin-extr-net.com
+auclairgazette.com
+booking-reviewsguestpriv-10101960546.com
+bs2besct.at
+ch1.s3.fr-par.scw.cloud
+dosyaindir.orhec.com
+gifts-storepowered.top
+monar.s3.pl-waw.scw.cloud
+payment-confrm.293841.website
+pepecat.net
+proccess-verify.com
+recaptcha.ink
+recaptchaonline.top
+safetyplaceforme.com
+terms-and-conditions.online
+testingg-3h4.pages.dev
+verify-me-first-to-continue-m-14.ht
+whengta6.xyz
+youtube-updates.com
+
 # Generic
 
 /a3A7qLVn/
