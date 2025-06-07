@@ -4953,6 +4953,10 @@ customer.adroitbookkeepingsolutions.com
 
 members.viottoenterprises.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-10-v10902/2615
+
+cloud.emeraldpinesenterprises.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
