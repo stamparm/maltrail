@@ -4925,6 +4925,14 @@ pa-portal.premierhomeviews.com
 
 secure.novelty-press.com
 
+# Reference: https://app.validin.com/detail?find=303c42db5b7152000cf696795d605ac2&type=hash&ref_id=9a8ba8c1b58#tab=host_pairs (# 2025-06-07)
+
+apple-department.info
+haesenlu.physio-pro.app
+linkdirectpage.info
+paypal-securelogin.com
+wsimple.info
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
