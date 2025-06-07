@@ -15826,6 +15826,10 @@ mago.kof.one
 
 scripts.peachseo.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.a240ce2a.bundle.min.js
 
+# Reference: https://www.virustotal.com/gui/ip-address/109.120.138.149/relations
+
+italicfonts.org
+
 # Generic
 
 /assets/lfg.js
