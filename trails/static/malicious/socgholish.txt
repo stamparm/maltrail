@@ -4907,6 +4907,10 @@ music.homesalemedia.com
 
 images.briansmallwood.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-28-v10893/2579
+
+beta.buildersdroneview.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
