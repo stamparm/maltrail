@@ -4933,6 +4933,10 @@ linkdirectpage.info
 paypal-securelogin.com
 wsimple.info
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-03-v10897/2592
+
+landing.survival-kitz.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
