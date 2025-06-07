@@ -4949,6 +4949,10 @@ myvrhost.viottoholdings.com
 
 customer.adroitbookkeepingsolutions.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-09-v10901/2610
+
+members.viottoenterprises.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
