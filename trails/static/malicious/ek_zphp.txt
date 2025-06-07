@@ -1517,6 +1517,10 @@ korektell.com
 
 iafec.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-03-v10897/2592
+
+webproinc.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
