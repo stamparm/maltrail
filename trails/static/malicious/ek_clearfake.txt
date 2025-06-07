@@ -7332,6 +7332,11 @@ panel-spectrum.net
 rugme.cat
 spectrum-ticket.net
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-06-v10943/2795
+
+cf-session.cloud
+rupert.cf-session.cloud
+
 # Generic
 
 /a3A7qLVn/
