@@ -5014,6 +5014,10 @@ progress.moneymatrixonline.com
 
 feedback.5moves2monetizechallenge.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-05-v10920/2706
+
+order.meetandeatsac.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
