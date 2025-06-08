@@ -5065,6 +5065,12 @@ alifsemi.com
 
 fork.trace467.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-27-v10934/2770
+
+donation.benjaminssoldiers.com
+images.nashbashracing.com
+promo.summat10n.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
