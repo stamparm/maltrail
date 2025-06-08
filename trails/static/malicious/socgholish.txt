@@ -5071,6 +5071,11 @@ donation.benjaminssoldiers.com
 images.nashbashracing.com
 promo.summat10n.org
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-28-v10935/2774
+
+feedback.jjsbootjack.com
+prepare.adroitbookkeeping.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
