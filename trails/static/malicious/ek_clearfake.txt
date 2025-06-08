@@ -7525,6 +7525,12 @@ life223.center
 peripl.app
 dashboard.peripl.app
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-08-v10923/2721
+
+wwwc1oudflare.com
+wwwcioudflare.com
+wwwcloudfiare.com
+
 # Generic
 
 /a3A7qLVn/
