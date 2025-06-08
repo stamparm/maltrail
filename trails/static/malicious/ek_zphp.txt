@@ -1634,6 +1634,11 @@ pielsteel.top
 
 chaojiwang.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-30-v10937/2779
+
+3dmaine.com
+kanshuwang.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
