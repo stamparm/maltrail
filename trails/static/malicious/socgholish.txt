@@ -5018,6 +5018,10 @@ feedback.5moves2monetizechallenge.com
 
 order.meetandeatsac.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-06-v10921/2709
+
+email.gwlawgroupattorneys.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
