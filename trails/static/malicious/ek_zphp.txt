@@ -1548,6 +1548,11 @@ waxworkx.com
 
 jagsrus.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-18-v10909/2641
+
+grrlspace.com
+lynmor.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
