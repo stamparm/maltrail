@@ -5092,6 +5092,10 @@ pre-order.chablalker.com
 
 grapheno.us
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-04-v10940/2790
+
+cpanel.doggiefountain.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
