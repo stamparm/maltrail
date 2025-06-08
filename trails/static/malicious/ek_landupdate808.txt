@@ -279,3 +279,8 @@ compralibri.com
 
 mrdltd.com
 vickmarine.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-25-v10914/2668
+
+ronthom.com
+teklits.com
