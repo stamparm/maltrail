@@ -1600,6 +1600,10 @@ motocyclenews.top
 linhua97.top
 soap2dayfree.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-14-v10927/2734
+
+pravaix.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
