@@ -1612,6 +1612,10 @@ regopramide.top
 
 k2bsc.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-21-v10932/2752
+
+avodaride.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
