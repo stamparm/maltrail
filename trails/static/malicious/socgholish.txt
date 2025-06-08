@@ -5010,6 +5010,10 @@ portal.bottomlinepracticesolutions.com
 
 progress.moneymatrixonline.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-02-v10919/2699
+
+feedback.5moves2monetizechallenge.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
