@@ -5036,6 +5036,10 @@ oceandentalcare.com
 roammco.com
 photoreport.roamdetail.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-14-v10927/2734
+
+beginning.sparkattraction.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
