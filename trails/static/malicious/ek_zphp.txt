@@ -1584,6 +1584,13 @@ amxdh1.icu
 
 yourcialsupply.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-07-v10922/2714
+
+christianlouboutin2017.top
+jerseysus.top
+levciavia.top
+watchesbest.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
