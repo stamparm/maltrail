@@ -7534,6 +7534,7 @@ wwwcloudfiare.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-15-v10928/2738
 
 memelock.app
+pump.fun.ong
 
 # Generic
 
