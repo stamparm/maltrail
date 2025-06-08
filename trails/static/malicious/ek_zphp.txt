@@ -1580,6 +1580,10 @@ xelesex.top
 ace-project.org
 amxdh1.icu
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-30-v10917/2687
+
+yourcialsupply.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
