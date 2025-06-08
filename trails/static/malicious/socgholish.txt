@@ -5084,6 +5084,10 @@ robstuder.com
 
 cpanel.help4dad.org
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-02-v10938/2783
+
+pre-order.chablalker.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
