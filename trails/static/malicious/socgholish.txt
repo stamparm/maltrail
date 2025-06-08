@@ -4969,6 +4969,10 @@ chamberscertifiedbookkeeping.com
 
 signin.certifiedbk.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-18-v10909/2641
+
+booking.driveawayrentals.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
