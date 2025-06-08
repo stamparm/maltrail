@@ -4986,6 +4986,10 @@ secure.gatecollegesystem.com
 
 ishimotors.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-24-v10913/2664
+
+promo.kimmwhite.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
