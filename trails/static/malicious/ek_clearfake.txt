@@ -7518,6 +7518,11 @@ optitc.com
 signature908.golf
 cdn.optitc.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-29-v10916/2684
+
+aloud745.asia
+life223.center
+
 # Generic
 
 /a3A7qLVn/
