@@ -332,3 +332,7 @@ adwwworks.com
 dnsg-windows-ds-data.live
 dnsgowindows-ds.org
 windowsmsn-cn.live
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-30-v10937/2779
+
+anichind.com
