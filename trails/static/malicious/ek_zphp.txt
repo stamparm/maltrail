@@ -1571,6 +1571,10 @@ mtowner.com
 
 jiezishijie.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-28-v10915/2678
+
+xelesex.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
