@@ -5040,6 +5040,10 @@ photoreport.roamdetail.com
 
 beginning.sparkattraction.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-15-v10928/2738
+
+rivercitymech.biz
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
