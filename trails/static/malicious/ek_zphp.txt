@@ -1575,6 +1575,11 @@ jiezishijie.top
 
 xelesex.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-29-v10916/2684
+
+ace-project.org
+amxdh1.icu
+
 # Generic
 
 /cache/ewmrgqnaww.php
