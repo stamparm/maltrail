@@ -1630,6 +1630,10 @@ zt45gg.top
 
 pielsteel.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-29-v10936/2777
+
+chaojiwang.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
