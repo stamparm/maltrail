@@ -321,3 +321,7 @@ itrtruck.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-19-v10930/2746
 
 chproduct.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-21-v10932/2752
+
+dnsgo-windowsds.live
