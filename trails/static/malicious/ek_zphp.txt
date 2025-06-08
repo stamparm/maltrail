@@ -1639,6 +1639,10 @@ chaojiwang.top
 3dmaine.com
 kanshuwang.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-02-v10938/2783
+
+techradar.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
