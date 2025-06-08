@@ -1626,6 +1626,10 @@ losartan.top
 syavsp5.top
 zt45gg.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-28-v10935/2774
+
+pielsteel.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
