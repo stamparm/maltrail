@@ -5061,6 +5061,10 @@ app.nerduptechnology.com
 
 alifsemi.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-22-v10933/2759
+
+fork.trace467.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
