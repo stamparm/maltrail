@@ -5022,6 +5022,10 @@ order.meetandeatsac.com
 
 email.gwlawgroupattorneys.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-07-v10922/2714
+
+charity.cafedantorels.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
