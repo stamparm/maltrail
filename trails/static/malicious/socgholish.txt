@@ -5057,6 +5057,10 @@ feedback.greeneconsultinggroup.com
 
 app.nerduptechnology.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-21-v10932/2752
+
+alifsemi.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
