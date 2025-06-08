@@ -7522,6 +7522,8 @@ cdn.optitc.com
 
 aloud745.asia
 life223.center
+peripl.app
+dashboard.peripl.app
 
 # Generic
 
