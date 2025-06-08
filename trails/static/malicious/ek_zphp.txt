@@ -1608,6 +1608,10 @@ pravaix.top
 
 regopramide.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-20-v10931/2747
+
+k2bsc.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
