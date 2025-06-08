@@ -4973,6 +4973,10 @@ signin.certifiedbk.com
 
 booking.driveawayrentals.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-21-v10910/2650
+
+cpanel.freein-deed.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
