@@ -7511,6 +7511,13 @@ view-my-form.com
 four-meme.dev
 reddit.co.im
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-24-v10913/2664
+
+corner427.space
+optitc.com
+signature908.golf
+cdn.optitc.com
+
 # Generic
 
 /a3A7qLVn/
