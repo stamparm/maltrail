@@ -1591,6 +1591,10 @@ jerseysus.top
 levciavia.top
 watchesbest.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-08-v10923/2721
+
+motocyclenews.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
