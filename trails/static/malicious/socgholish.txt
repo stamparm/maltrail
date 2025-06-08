@@ -5044,6 +5044,10 @@ beginning.sparkattraction.com
 
 rivercitymech.biz
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-16-v10929/2740
+
+kmmagency.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
