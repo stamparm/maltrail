@@ -5628,7 +5628,7 @@ howtotellyourchild.com
 rotallution.com
 successchaserstars.com
 
-# Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw#tab=host_pairs (# 2025-5-23)
+# Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw#tab=host_pairs (# 2025-05-23)
 
 aiolocksmithclearwater.com
 btecperu.com
@@ -5692,9 +5692,13 @@ t-axiom.trade
 
 bullpas.ru
 captcha.zip
+dell-premiumaccess.com
+evernoteweb.ink
 not-malware.zip
 prodcount.life
+unq-ag-at.space
 9o7fiy.bullpas.ru
+access.dell-premiumaccess.com
 g43e0x.bullpas.ru
 g43og.bullpas.ru
 
