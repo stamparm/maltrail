@@ -1647,6 +1647,10 @@ techradar.top
 
 baihuah.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-10-v10947/2811
+
+chromeparts.icu
+
 # Generic
 
 /cache/ewmrgqnaww.php
