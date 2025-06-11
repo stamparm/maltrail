@@ -12952,6 +12952,8 @@ selllify.shop
 
 # Reference: https://x.com/sdcyberresearch/status/1932826555761250667
 # Reference: https://sansec.io/research/cosmicsting-cnext-persistent-backdoor
+# Reference: https://www.virustotal.com/gui/ip-address/38.180.90.92/relations
+# Reference: https://www.virustotal.com/gui/ip-address/38.180.93.5/relations
 
 accept.bar
 amocha.xyz
@@ -12960,6 +12962,7 @@ clearnetfab.net
 fallodick87-78.sbs
 gistatics.com
 inspectdlet.net
+jquerypackageus.com
 jqueryuslibs.com
 jstatic201.com
 lererikal.org
