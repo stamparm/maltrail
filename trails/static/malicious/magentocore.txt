@@ -15586,6 +15586,7 @@ clove.beauty
 clove.pics
 cosmogonic.lol
 creepydata.world
+cruis.club
 cyanotypes.lol
 elaink.xyz
 fatharfa.xyz
@@ -15630,6 +15631,7 @@ cdn.clove.beauty
 cdn.clove.pics
 cdn.cosmogonic.lol
 cdn.creepydata.world
+cdn.cruis.club
 cdn.cyanotypes.lol
 cdn.elaink.xyz
 cdn.fatharfa.xyz
