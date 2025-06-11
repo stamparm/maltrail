@@ -12950,6 +12950,7 @@ luckkystar.shop
 seilsmart.shop
 selllify.shop
 
+# Reference: https://x.com/sdcyberresearch/status/1932826555761250667
 # Reference: https://sansec.io/research/cosmicsting-cnext-persistent-backdoor
 
 accept.bar
@@ -12957,6 +12958,7 @@ amocha.xyz
 cdn-webstats.com
 clearnetfab.net
 fallodick87-78.sbs
+gistatics.com
 inspectdlet.net
 jqueryuslibs.com
 jstatic201.com
