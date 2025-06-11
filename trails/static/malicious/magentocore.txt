@@ -14916,11 +14916,14 @@ cdn.zauberkiste.xyz
 # Reference: https://app.validin.com/detail?type=ip&find=195.242.110.0%2F24#tab=resolutions (# 2025-05-07)
 
 africasester.click
+ations.lol
 bagarthe.pics
 boracape.click
 brasnovo.world
 brasnovo.xyz
 brassu.xyz
+busicssciency.xyz
+busing.mom
 cefo.lol
 concentration.autos
 courage.boats
@@ -14930,10 +14933,12 @@ feyloot.site
 fritech.fun
 getvisi.store
 gradient.christmas
+hould.world
 howerfun.pics
 intellert.beauty
 jademountain.sbs
 kegosei.sbs
+landsout.store
 lily.coupons
 nordichealth.wiki
 pharinell.shop
@@ -14950,11 +14955,14 @@ slavyan.lol
 tropicaldreams.xyz
 uutop.shop
 cdn.africasester.click
+cdn.ations.lol
 cdn.bagarthe.pics
 cdn.boracape.click
 cdn.brasnovo.world
 cdn.brasnovo.xyz
 cdn.brassu.xyz
+cdn.busicssciency.xyz
+cdn.busing.mom
 cdn.cefo.lol
 cdn.concentration.autos
 cdn.courage.boats
@@ -14964,10 +14972,12 @@ cdn.feyloot.site
 cdn.fritech.fun
 cdn.getvisi.store
 cdn.gradient.christmas
+cdn.hould.world
 cdn.howerfun.pics
 cdn.intellert.beauty
 cdn.jademountain.sbs
 cdn.kegosei.sbs
+cdn.landsout.store
 cdn.lily.coupons
 cdn.nordichealth.wiki
 cdn.pharinell.shop
