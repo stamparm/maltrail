@@ -5096,6 +5096,12 @@ grapheno.us
 
 cpanel.doggiefountain.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-10-v10947/2811
+
+publynx.com
+billing.roofnrack.us
+dev.couplesparks.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
