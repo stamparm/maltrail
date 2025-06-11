@@ -7577,6 +7577,33 @@ http://91.212.166.205
 http://91.219.23.148
 http://94.159.105.149
 
+# Reference: https://app.validin.com/detail?find=Checking%20if%20you%20are%20human&type=raw&ref_id=7311363a0bc#tab=host_pairs (# 2025-06-11)
+
+aborsimanjur.com
+accarda.com
+ahbwh1325asdw.shop
+aslidomino.info
+aslidomino.online
+aslidomino.org
+aslidomino.pro
+aslidomino.site
+banlieuefashion.com
+bekingslot.org
+berkahpoker.co
+berkahpoker.org
+betingslot-2024.com
+betingslot-amp.cfd
+clod-fiare-verify.com
+cpcontacts.tadawina.sa
+daihocdongthap.com
+ftp.daihocdongthap.com
+mail.daihocdongthap.com
+mexc-excange.com
+mikon.ink
+rtp-betingslots.store
+trading-view-desktops.com
+tradingviiew.us.com
+
 # Generic
 
 /a3A7qLVn/
