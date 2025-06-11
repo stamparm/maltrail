@@ -7604,6 +7604,46 @@ rtp-betingslots.store
 trading-view-desktops.com
 tradingviiew.us.com
 
+# Reference: https://app.validin.com/lookalikes?limit=1000&lookback=90&depth=2&find=%2F%5Ebooking-%5Ba-z%5D%2B-%5B0-9a-z%5D%2B%5C.com%24%2F (# 2025-06-11)
+
+booking-adriana-cavtat.com
+booking-apartments-pay.com
+booking-aprilreviewstir-9650233.com
+booking-buddy-land.com
+booking-confirmation-981621.com
+booking-confirmation-983421.com
+booking-confirmation-983621.com
+booking-confirmation-id0000.com
+booking-confirmation-id0101.com
+booking-confirmation-id1222.com
+booking-confirmation-id1237.com
+booking-confirmation-id1289.com
+booking-confirmation-id1337.com
+booking-confirmation-id1545.com
+booking-confirmation-id5555.com
+booking-confirmation-id6666.com
+booking-confirmation-id84371.com
+booking-confirmation-id8888.com
+booking-confirmation-id9999.com
+booking-confviewdoc-09650043.com
+booking-confviewdocum-0079495902.com
+booking-customer-support.com
+booking-id-5482047.com
+booking-listings-531745.com
+booking-listings-531746.com
+booking-listings-531767.com
+booking-listings-532737.com
+booking-marchreview-09039503.com
+booking-online-helpdesk.com
+booking-partner-contact.com
+booking-payment-8439.com
+booking-res-3546734672.com
+booking-reservationsdetail-id0025912.com
+booking-reservupdate-2905.com
+booking-update-id1963.com
+booking-verification-42345525.com
+booking-verification-46345525.com
+
 # Generic
 
 /a3A7qLVn/
