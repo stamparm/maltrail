@@ -7554,6 +7554,14 @@ booking.updatse-propertyid.com
 
 quanthic.cloud
 
+# Reference: https://app.validin.com/lookalikes?lookback=180&depth=2&find=%2F%5Ersvn-id%5B0-9%5D%2B%5C.com%24%2F (# 2025-06-11)
+
+rsvn-id316489.com
+rsvn-id32012.com
+rsvn-id892144.com
+rsvn-id892734.com
+rsvn-id982374.com
+
 # Generic
 
 /a3A7qLVn/
