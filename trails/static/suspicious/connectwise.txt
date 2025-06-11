@@ -1086,3 +1086,8 @@ mail.thomsonreutersdownload.top
 relay.filesdonwloads.com
 tax.thomsonreutersmedia.top
 webmail.thomsonreuterstax.top
+
+# Reference: https://x.com/JAMESWT_WT/status/1932721686828232936
+# Reference: https://app.any.run/tasks/a09f30b7-e6c0-4bfb-a3bd-1a003dd6b515
+
+45.8.125.163:8041
