@@ -7564,7 +7564,17 @@ rsvn-id892734.com
 rsvn-id982374.com
 
 # Reference: https://x.com/skocherhan/status/1932693537256067092
+# Reference: https://x.com/Sh4dow3x3/status/1932707661767737770
+# Reference: https://app.validin.com/detail?find=Verify%20Your%20Request&type=raw&ref_id=7311363a0bc#tab=host_pairs (# 2025-06-11)
 
+http://168.100.11.172
+http://185.196.8.60
+http://185.208.159.102
+http://213.108.198.156
+http://83.219.248.37
+http://91.212.166.204
+http://91.212.166.205
+http://91.219.23.148
 http://94.159.105.149
 
 # Generic
