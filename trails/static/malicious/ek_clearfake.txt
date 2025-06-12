@@ -7884,6 +7884,7 @@ booking.confirmation-id78991.com
 booking.confirmation-id842526.com
 booking.confirmation-id8523.com
 booking.confirmation-reservation.com
+checkconfirmatlon.com
 com-confirmacion.life
 com-confirmation.life
 confirm-id0209.quest
@@ -7986,8 +7987,10 @@ confirmation-id2789.com
 confirmation-id28573.com
 confirmation-id31985.com
 confirmation-id32018.com
+confirmation-id3270.cfd
 confirmation-id3452.com
 confirmation-id34719.com
+confirmation-id34743.cfd
 confirmation-id3638.com
 confirmation-id3719.com
 confirmation-id38427.com
@@ -8011,6 +8014,7 @@ confirmation-id45919.com
 confirmation-id470297.com
 confirmation-id47183.world
 confirmation-id47236.com
+confirmation-id4813.cfd
 confirmation-id48194.com
 confirmation-id4828.com
 confirmation-id49.com
@@ -8101,6 +8105,7 @@ confirmation-id93817.com
 confirmation-id94108.com
 confirmation-id947195.com
 confirmation-id94725.com
+confirmation-id9483.cfd
 confirmation-id98013.com
 confirmation-id98172.com
 confirmation-id9823.com
