@@ -7644,6 +7644,10 @@ booking-update-id1963.com
 booking-verification-42345525.com
 booking-verification-46345525.com
 
+# Reference: https://www.linkedin.com/posts/jeromesegura_reminder-not-all-verify-you-are-human-and-activity-7338692891004891136-0IdA
+
+bnpparibas.top
+
 # Generic
 
 /a3A7qLVn/
