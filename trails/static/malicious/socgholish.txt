@@ -5102,6 +5102,10 @@ publynx.com
 billing.roofnrack.us
 dev.couplesparks.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-11-v10948/2815
+
+secure.nashbashmotorsports.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
