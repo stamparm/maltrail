@@ -3877,6 +3877,12 @@ z996.xyz
 http://96.126.124.158
 barrysploitbucket.s3.us-west-2.amazonaws.com
 
+# Reference: https://x.com/smica83/status/1933222651964674377
+# Reference: https://www.virustotal.com/gui/file/24004da32632b49dd4a17cd8bca6b6780d0a1d78e78b59bce704f88be91fbdc4/detection
+
+login-sync.com
+onedrive.login-sync.com
+
 # Generic
 
 /Havoc/payload/
