@@ -2761,6 +2761,10 @@ web.nufe.eu.org
 88.151.195.187:8888
 94.158.247.5:8888
 
+# Reference: https://x.com/BlinkzSec/status/1933150940653400452
+
+161.97.138.238:8888
+
 # Generic
 
 /supershell/login
