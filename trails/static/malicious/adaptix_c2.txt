@@ -126,3 +126,10 @@ picasosoftai.shop
 regularisations-1507505075-contraventions-assurances.com
 sign.in.apple.id.apple.com.verification.authentification-id.galaxyswat.com
 ty.muatay.live
+
+# Reference: https://www.security.com/threat-intelligence/fog-ransomware-attack
+
+66.112.216.232:443
+97.64.81.119:443
+protoflint.com
+amanda.protoflint.com
