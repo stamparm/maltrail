@@ -1651,6 +1651,10 @@ baihuah.top
 
 chromeparts.icu
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-12-v10949/2818
+
+forging.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
