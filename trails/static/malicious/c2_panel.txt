@@ -922,6 +922,10 @@ http://94.103.125.100
 
 /never/lookinto/it/panel/uploads/
 
+# Reference: https://x.com/ViriBack/status/1930348698388611192
+
+http://85.234.100.245
+
 # Generic
 
 /admin_123/auth.php
