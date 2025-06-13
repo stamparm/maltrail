@@ -333,3 +333,7 @@ ncmtraders.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-11-v10948/2815
 
 leftykreh.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-12-v10949/2818
+
+hillcoweb.com
