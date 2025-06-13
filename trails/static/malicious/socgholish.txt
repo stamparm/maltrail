@@ -5106,6 +5106,10 @@ dev.couplesparks.com
 
 secure.nashbashmotorsports.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-12-v10949/2818
+
+files.myamericanmadestory.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
