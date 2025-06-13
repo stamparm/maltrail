@@ -1091,3 +1091,10 @@ webmail.thomsonreuterstax.top
 # Reference: https://app.any.run/tasks/a09f30b7-e6c0-4bfb-a3bd-1a003dd6b515
 
 45.8.125.163:8041
+
+# Reference: https://x.com/Racco42/status/1933264279915872491
+# Reference: https://www.virustotal.com/gui/file/1031843e07a2a4cd33ffc03af4ff5db22014faba5e7b4639533db0202a3d261a/detection
+
+104.219.239.56:8041
+descozoomll.store
+relay.descozoomll.store
