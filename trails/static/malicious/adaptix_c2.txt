@@ -99,6 +99,7 @@ x6iye.site
 # Reference: https://app.validin.com/detail?find=7c6372580a9e78e8caff7ba50ef859aa&type=hash&ref_id=3da1e49c681#tab=host_pairs (# 2025-06-13)
 
 46-21-153-154.plesk.page
+1874290-coinbase.com
 518912-coinbase.com
 689535ed-3.b-cdn.net
 adaptix.redteamops.org
