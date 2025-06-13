@@ -10498,6 +10498,7 @@ statsmeter.co
 38.180.17.55:8001
 bulkmailsms.com
 cloudlayerinsights.com
+fixer-api.com
 jqueurystatics.com
 jqueurystatics.xyz
 jqueurystaticx.com
