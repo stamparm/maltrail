@@ -8145,6 +8145,11 @@ octorate-confirm.com
 stayconfirm-6429.com
 vodafone-confirmation-order.cfd
 
+# Reference: https://www.malware-traffic-analysis.net/2025/06/13/index.html
+# Reference: https://www.virustotal.com/gui/file/d5872a864d614773a8e9f29ac58b4d9e66e8878a2425e95d5fd7db4385bc6dfd/detection
+
+hillcoweb.com
+
 # Generic
 
 /a3A7qLVn/
