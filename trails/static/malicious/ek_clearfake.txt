@@ -7902,6 +7902,7 @@ booking.confirmation-id842526.com
 booking.confirmation-id8523.com
 booking.confirmation-reservation.com
 checkconfirmatlon.com
+com-cardholders-verification.com
 com-confirmacion.life
 com-confirmation.life
 confirm-id0209.quest
@@ -8141,8 +8142,18 @@ confirmationstay-08599283.com
 confirmres4567654id.com
 full-confirmation-reservation.world
 full-request-confirmation.world
+guestsverify-booking.com
+hotels-verification.com
+idverify-booking.com
 octorate-confirm.com
+reserve-verif2025.world
 stayconfirm-6429.com
+verif-reservaton-trip.com
+verify-guest-booking.com
+verify-trip.com
+verifycards-booking.com
+verifyguest-cardhotel.com
+verifyguests-booking.com
 vodafone-confirmation-order.cfd
 
 # Reference: https://www.malware-traffic-analysis.net/2025/06/13/index.html
