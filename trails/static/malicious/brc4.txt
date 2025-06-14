@@ -1137,3 +1137,19 @@ http://57.181.102.240
 # Reference: https://www.virustotal.com/gui/file/4350994cb7d895bba32b6ec2c3163df6e6214ade3877d87c6f2dea3e00d48300/detection
 
 45.227.253.10:9543
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-06-14)
+
+http://13.114.64.131
+http://13.115.238.27
+http://18.177.128.103
+http://18.178.98.166
+http://18.181.128.244
+http://43.207.26.109
+http://54.238.60.218
+13.59.118.129:443
+161.35.238.129:443
+3.255.173.2:443
+34.244.7.74:443
+46.101.106.2:443
+54.210.52.218:443
