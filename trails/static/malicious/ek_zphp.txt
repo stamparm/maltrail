@@ -1655,6 +1655,10 @@ chromeparts.icu
 
 forging.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-13-v10950/2822
+
+universaltechnology.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
