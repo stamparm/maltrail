@@ -6126,3 +6126,7 @@ payment.gamestakes.club
 196.251.81.144:49152
 akamaitechlogics.com
 cdn.akamaitechlogics.com
+
+# Reference: https://x.com/M4lcode/status/1933873099604185196
+
+20.243.255.185:443
