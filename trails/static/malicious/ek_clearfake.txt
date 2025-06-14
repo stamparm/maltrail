@@ -8161,6 +8161,17 @@ vodafone-confirmation-order.cfd
 
 hillcoweb.com
 
+# Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw#tab=host_pairs (# 2025-06-14)
+
+a-hk.space
+admin.onemedcare.com
+hkcr.space
+jolnet.site
+mail.tradewithbridges.net
+tradewithbridges.net
+unlqa-ag-osterrelch.space
+unlqaosterrelch-ag.space
+
 # Generic
 
 /a3A7qLVn/
