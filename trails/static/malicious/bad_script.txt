@@ -8812,6 +8812,11 @@ gatetodisplaycontent.com
 /payload/runner.hta
 /payload/runner.ps1
 
+# Reference: https://x.com/banthisguy9349/status/1934267500541190271
+
+/amsibypass.ps1
+/c2.ps1
+
 # Generic
 
 /5c0ca79.php
