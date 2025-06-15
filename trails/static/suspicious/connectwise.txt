@@ -1098,3 +1098,10 @@ webmail.thomsonreuterstax.top
 104.219.239.56:8041
 descozoomll.store
 relay.descozoomll.store
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/6483
+# Reference: https://bazaar.abuse.ch/sample/e019d5ed2b97db0305cd0b9096e3f21fe24d86c1d92fa287795546028a4370c8/
+# Reference: https://tria.ge/250615-lwwaessm13/behavioral1
+
+51.38.106.140:8041
+globaltrendmakers.com
