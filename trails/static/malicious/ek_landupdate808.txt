@@ -1,6 +1,8 @@
 # Copyright (c) 2014-2025 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
+# Aliases: TAG-124
+
 # Reference: https://malasada.tech/the-landupdate808-fake-update-variant/
 
 acsmaterial.com
