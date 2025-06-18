@@ -8609,6 +8609,10 @@ wilhelminapark.quest
 xhtef-clqui-sebs.click
 zirt-evnmb-ddfq.icu
 
+# Reference: https://x.com/bluish_red_/status/1935078897475002838
+
+clients.dealeronlinemarketing.com
+
 # Generic
 
 /a3A7qLVn/
