@@ -1659,6 +1659,10 @@ forging.top
 
 universaltechnology.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-16-v10951/2826
+
+6hms.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
