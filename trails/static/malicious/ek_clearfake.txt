@@ -8622,6 +8622,14 @@ mycssch.space
 os-unlqa-at.space
 unlqa-osterrelchat.space
 
+# Reference: https://www.malware-traffic-analysis.net/2025/06/18/index.html
+# Reference: https://app.validin.com/detail?find=193.111.208.2&type=ip4&ref_id=e42b7b06152#tab=resolutions
+
+lqsword.top
+newbalancesport.top
+sneakermall.top
+youtubevideo.top
+
 # Generic
 
 /a3A7qLVn/
