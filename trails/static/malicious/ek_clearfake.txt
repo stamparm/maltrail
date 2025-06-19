@@ -8613,6 +8613,15 @@ zirt-evnmb-ddfq.icu
 
 clients.dealeronlinemarketing.com
 
+# Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw#tab=host_pairs (# 2025-06-19)
+
+css-ch-ag.space
+mycss-ag.space
+mycss-ch.space
+mycssch.space
+os-unlqa-at.space
+unlqa-osterrelchat.space
+
 # Generic
 
 /a3A7qLVn/
