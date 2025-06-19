@@ -5802,3 +5802,15 @@
 # Reference: https://ipinfo.io/AS47105
 
 195.82.146.0/24,dedbropro
+
+# AS207184
+# Reference: https://ipinfo.io/AS207184
+
+104.250.163.0/24,telchak-as
+172.94.96.0/24,telchak-as
+172.94.99.0/24,telchak-as
+192.253.248.0/24,telchak-as
+206.123.128.0/24,telchak-as
+206.123.145.0/24,telchak-as
+45.74.10.0/24,telchak-as
+45.74.16.0/24,telchak-as
