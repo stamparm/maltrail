@@ -5796,3 +5796,9 @@
 92.119.196.0/24,vsvk
 92.119.197.0/24,vsvk
 94.156.167.0/24,vsvk
+
+# AS47105
+# Reference: https://x.com/ShanHolo/status/1935633832411090991
+# Reference: https://ipinfo.io/AS47105
+
+195.82.146.0/24,dedbropro
