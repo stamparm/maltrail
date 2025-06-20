@@ -5814,3 +5814,9 @@
 206.123.145.0/24,telchak-as
 45.74.10.0/24,telchak-as
 45.74.16.0/24,telchak-as
+
+# AS213790
+# Reference: https://ipinfo.io/AS213790
+
+185.93.89.0/24,limitednetwork-as
+45.146.130.0/24,limitednetwork-as
