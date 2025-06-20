@@ -5653,9 +5653,15 @@ wallstolife.com
 
 # Reference: https://x.com/JAMESWT_WT/status/1926128492334268483
 # Reference: https://x.com/skocherhan/status/1927978955652616210
+# Reference: https://raw.githubusercontent.com/Zimperium/IOC/refs/heads/master/2025-06-Virtualization/c2.csv
 # Reference: https://app.validin.com/detail?find=63c848e2f8f2ea28ad48861ddcc9c7e9&type=hash&ref_id=5747996fb16#tab=host_pairs (# 2025-05-24)
 
 bamerokisa.top
+fagolamasa.top
+fakafuko.top
+fanovara.top
+santarigo.top
+vankopar.top
 bkngrvff.com
 bkngrvffy.com
 bkngvff.com
