@@ -5114,6 +5114,11 @@ files.myamericanmadestory.com
 
 47.130.8.25:443
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-17-v10952/2834
+
+cpanel.realizr.today
+specification.saferunion.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
