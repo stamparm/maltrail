@@ -3905,6 +3905,7 @@ apkcrypter.net
 helius-crypter.com
 
 # Reference: https://x.com/solostalking/status/1936401367242784983
+# Reference: https://x.com/volrant136/status/1936501218618048988
 # Reference: https://app.validin.com/detail?find=%3A%3A%22og%3Atitle%22%3A%3A%22Inferno%20Drainer%20Panel%22&type=raw&ref_id=a74d8e8edc3#tab=host_pairs
 
 http://156.254.6.7
@@ -3918,6 +3919,7 @@ http://89.147.110.181
 http://91.202.4.167
 inferno-drainer.to
 inferno-panel.net
+inferno-templates.com
 leading-xzbc-101.com
 ace-panel.top
 dashboardonf.pages.dev
