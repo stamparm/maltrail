@@ -3899,3 +3899,7 @@ devfront.devil-traff.cc
 # Reference: https://x.com/setThreatTitle/status/1936403525199679887
 
 apkcrypter.net
+
+# Reference: https://x.com/setThreatTitle/status/1936401684156346453
+
+helius-crypter.com
