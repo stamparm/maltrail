@@ -3903,3 +3903,21 @@ apkcrypter.net
 # Reference: https://x.com/setThreatTitle/status/1936401684156346453
 
 helius-crypter.com
+
+# Reference: https://x.com/solostalking/status/1936401367242784983
+# Reference: https://app.validin.com/detail?find=%3A%3A%22og%3Atitle%22%3A%3A%22Inferno%20Drainer%20Panel%22&type=raw&ref_id=a74d8e8edc3#tab=host_pairs
+
+http://156.254.6.7
+http://185.254.199.5
+http://195.160.222.145
+http://37.114.41.184
+http://45.11.56.191
+http://45.12.2.116
+http://45.135.232.142
+http://89.147.110.181
+http://91.202.4.167
+inferno-drainer.to
+inferno-panel.net
+leading-xzbc-101.com
+ace-panel.top
+dashboardonf.pages.dev
