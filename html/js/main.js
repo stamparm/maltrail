@@ -1311,7 +1311,7 @@ function initDetails() {
                         var stored = $.jStorage.get(STORAGE_KEY_EDIT_ALIASES);
                         if (stored !== null) {
                             if (data in stored)
-                                data = "<span class='ipcat'>" + stored[data] + "</span>" + data;
+                                data = "<span class='ipcat'>" + escapeHtml(stored[data]) + "</span>" + data;
                         }
                     }
                     return data;
