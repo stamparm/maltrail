@@ -8642,6 +8642,34 @@ newbalancesport.top
 sneakermall.top
 youtubevideo.top
 
+# Reference: https://app.validin.com/detail?find=Booking.com%20-%20Partner%20Hub&type=raw#tab=host_pairs (# 2025-06-23)
+
+39eastimages.com
+angkorwatdaytour.com
+bukure.jp
+cattlemanslp.com
+fitnessplayground.org
+hostmaster.theconnectiv.com
+huntset.com
+kabataanparty.com
+mail.topiknugroho.com
+mataradja.org
+mobotgradstudents.org
+myirslawyer.com
+oc-freestyle.com
+onlinedesignapp.pro
+priere-pour-la-france.com
+reserve-checkout1.sbs
+riskoes.com
+ssr-lawyers.com
+startuplogic.pro
+theconnectiv.com
+thesmtore.com
+topiknugroho.com
+wiki.theconnectiv.com
+ww3.huntset.com
+xquc9.myirslawyer.com
+
 # Generic
 
 /a3A7qLVn/
