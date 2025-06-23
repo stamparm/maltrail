@@ -14,9 +14,22 @@
 
 
 
-- Version 0.80 -> 0.81 (Upcoming release)
+- Version 0.82 -> 0.83 (Upcoming release)
+
+[!] Fix the bug of self-stored XSS in aliases (Issue #19321)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
+
+- Version 0.81 -> 0.82 (01 Jun 2025)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.80 -> 0.81 (01 May 2025)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
