@@ -14807,6 +14807,9 @@ promo-profit.online
 promo-transfer.site
 promo-transfer.store
 querysong.online
+thisisourparadise.site
+thisisourparadise.space
+thisisourparadise.store
 
 # Reference: https://x.com/sdcyberresearch/status/1894055884294078800
 
