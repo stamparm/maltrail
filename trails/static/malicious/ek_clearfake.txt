@@ -8670,6 +8670,15 @@ wiki.theconnectiv.com
 ww3.huntset.com
 xquc9.myirslawyer.com
 
+# Reference: https://app.validin.com/lookalikes?limit=1000&lookback=90&depth=2&find=%2F%5Econfirm-id%5B0-9%5D%7B2%2C%7D.%5Ba-z%5D%7B3%2C%7D%24%2F (# 2025-06-23)
+
+confirm-id104.icu
+confirm-id1606.info
+confirm-id2298.world
+confirm-id472.com
+confirm-id549.com
+confirm-id93.sbs
+
 # Generic
 
 /a3A7qLVn/
