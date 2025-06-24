@@ -6650,3 +6650,19 @@ sikopersimoasho.ml
 # Reference: https://www.wordfence.com/blog/2025/04/interesting-wordpress-malware-disguised-as-legitimate-anti-malware-plugin/
 
 45.61.136.85:5555
+
+# Reference: https://www.wordfence.com/blog/2025/06/a-deep-dive-into-a-modular-malware-family/
+
+api-service-188910982.website
+blastergallery.com
+chaolingtech.com
+contentsdeliverystat.com
+deliveryrange.pro
+emojiselect.info
+graphiccloudcontent.com
+imageresizefix.com
+imagifytext.com
+internetmemoryservice.com
+staticdelivery.net
+vectorimagefabric.com
+vectorizegraphic.com
