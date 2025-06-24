@@ -2570,6 +2570,10 @@ katz-ontop
 
 DiabloNetTop
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-23-v10955/2843
+
+Microsoft Edge/1.0
+
 # Misc
 
 information_schema
