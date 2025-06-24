@@ -14,3 +14,8 @@ dnstunnel.run
 
 btunnel.in
 btunnel.co.in
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-23-v10955/2843
+
+localto.net
+localtonet.com
