@@ -8679,6 +8679,12 @@ confirm-id472.com
 confirm-id549.com
 confirm-id93.sbs
 
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/amatera-stealer-rebranded-acr-stealer-improved-evasion-sophistication
+
+cbrw.ru
+cv.cbrw.ru
+tt.cbrw.ru
+
 # Generic
 
 /a3A7qLVn/
