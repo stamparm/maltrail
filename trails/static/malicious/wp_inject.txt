@@ -6666,3 +6666,4 @@ internetmemoryservice.com
 staticdelivery.net
 vectorimagefabric.com
 vectorizegraphic.com
+api.staticdelivery.net
