@@ -5124,6 +5124,10 @@ specification.saferunion.com
 stirngo.com
 app.symphoniabags.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-23-v10955/2843
+
+photo.suziestuder.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
