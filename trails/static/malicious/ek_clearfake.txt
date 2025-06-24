@@ -8693,6 +8693,11 @@ tt.cbrw.ru
 3560guest-booking.com
 8657guest-booking.com
 bookedsshostel25.world
+booking.confirmation-id1718.com
+booking.confirmation-id627881.com
+booking.confirmation-id7421.com
+booking.confirmation-id93437.com
+bookingcustomserres-0398547.com
 bookreserve-cust456434.com
 cardverify0115-booking.com
 cardverify1205-booking.com
@@ -8701,14 +8706,36 @@ cardverify4551-booking.com
 cardverify56535-booking.com
 cardverify72701-booking.com
 cardverify7705-booking.com
+checkreservationdata.world
+clonfrm-regrlv-today.com
+complt-reservation39421.com
+confirmation-id1422213.com
 confirmation-id1718.com
+confirmation-id271551.com
+confirmation-id5542.com
 confirmation-id627881.com
 confirmation-id7421.com
+confirmation-id834763.com
+confirmation-id86722.info
 confirmation-id93437.com
+confirmation-stay-12798284.com
+confirmation-stayment456295811.cfd
+confirmationstay-508499321.com
+confirmationstay-990582398.com
+dsytr-mloit-aqpolrt.com
+es-pacemento.com
+es-placements.com
 guestverify12411-booking.com
 guestverify36141-booking.com
 guestverify5116-booking.com
 guestverify768411-booking.com
+help-desk-customer.com
+id5262911.live
+moneygram-safereceiving.online
+reservation3725.com
+secure-bezahlung.cfd
+travel-dot.cfd
+verifiaction-9372.rest
 verifyguest11215-booking.com
 verifyguest1415-booking.com
 verifyguest26535-booking.com
@@ -8718,11 +8745,11 @@ verifyguest72125-booking.com
 verifyguest8765-booking.com
 verifyguest9125-booking.com
 verifyguets1548-booking.com
-booking.confirmation-id1718.com
-booking.confirmation-id627881.com
-booking.confirmation-id7421.com
-booking.confirmation-id93437.com
-bookingcustomserres-0398547.com
+vtunk-port-kalsyz.com
+westernunion-safepay.sbs
+yourreservation54235.com
+zaoljqwer-csf.world
+zoandl-ikeytr-bzakl.com
 
 # Generic
 
