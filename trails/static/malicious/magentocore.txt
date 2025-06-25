@@ -11896,6 +11896,7 @@ metriso.online
 mifelpot.shop
 misdigit.click
 mistlink.online
+mjadmin.news
 mokamob.site
 molotech.online
 nastech.store
@@ -12014,6 +12015,7 @@ cdn.metriso.online
 cdn.mifelpot.shop
 cdn.misdigit.click
 cdn.mistlink.online
+cdn.mjadmin.news
 cdn.molotech.online
 cdn.nastech.store
 cdn.neznlink.store
