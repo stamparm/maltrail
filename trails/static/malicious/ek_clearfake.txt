@@ -9301,6 +9301,11 @@ you-inreac.icu
 you-inreac.lol
 you-inreac.world
 
+# Reference: https://x.com/SquiblydooBlog/status/1937835364376621436
+# Reference: https://app.any.run/tasks/4cbe2772-ea72-4442-bfff-8e30f0986e69
+
+conceptwo.com
+
 # Generic
 
 /a3A7qLVn/
