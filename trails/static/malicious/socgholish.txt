@@ -5132,6 +5132,10 @@ photo.suziestuder.com
 
 folders.emeraldpinesolutions.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-25-v10957/2846
+
+cpanel.productdevelopmentplan.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
