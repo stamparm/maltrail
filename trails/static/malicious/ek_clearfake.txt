@@ -9322,6 +9322,26 @@ srcvrsf.com
 
 cardverify4651-booking.com
 
+# Reference: https://app.validin.com/lookalikes?lookback=90&depth=2&find=%2F%5Ecardverify%5B0-9%5D%2B-booking.com%24%2F (# 2025-06-27)
+
+cardverify061-booking.com
+cardverify0805-booking.com
+cardverify14061-booking.com
+cardverify17545-booking.com
+cardverify21101-booking.com
+cardverify22101-booking.com
+cardverify5156001-booking.com
+cardverify54951-booking.com
+cardverify55101-booking.com
+cardverify564301-booking.com
+cardverify5661-booking.com
+cardverify58701-booking.com
+cardverify6301-booking.com
+cardverify7651-booking.com
+cardverify87951-booking.com
+cardverify88151-booking.com
+cardverify9735-booking.com
+
 # Generic
 
 /a3A7qLVn/
