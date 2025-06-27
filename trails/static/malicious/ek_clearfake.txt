@@ -9479,6 +9479,11 @@ update-id87637.com
 update-id9764.com
 wubook-reserve.com
 
+# Reference: https://github.com/malware-traffic/indicators/blob/main/2025-06-27-IOCs-for-SmartApeSG-to-ClickFix-page-to-NetSupport-RAT.txt
+
+palcomp3.top
+sjm1024.site
+
 # Generic
 
 /a3A7qLVn/
