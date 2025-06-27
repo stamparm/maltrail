@@ -5136,6 +5136,10 @@ folders.emeraldpinesolutions.com
 
 cpanel.productdevelopmentplan.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-26-v10958/2851
+
+ai.lanpdt.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
