@@ -7760,8 +7760,11 @@ booking.confirmation-id891733.com
 booking.confirmation-id9384025.com
 booking.confirmation-id94706.com
 booking.confirmation-id98711.com
+booking.id-4212633.com
 bookingid291784671.sbs
 bookingverification.click
+bookingverification.world
+cardverif-booking.help
 cardverif-booking.icu
 cardverif-booking.world
 cardverificati0n.icu
@@ -7837,6 +7840,8 @@ confirmation-id891733.com
 confirmation-id9384025.com
 confirmation-id94706.com
 confirmation-id98711.com
+confirmed-id234224.cfd
+econtpay.shop
 facebookmoney.world
 flightbooking-vhr-hw.pages.dev
 guestbookingmanagement365.com
@@ -7845,11 +7850,15 @@ hotelbookcheckin.space
 hotelesbookedes2025.com
 hoteleybookedes2025.com
 hoteleybookedes2025.world
+id-confirm-reserve.com
+id627181.live
 monat-verif.world
 notebooksbilliger-ms.com
 rebook-room.click
 reservation-booking.icu
+reservation-id23461.com
 simple-bookingit.com
+spbooking-supporting643563456.com
 verif-hillpark-hotel.com
 verif336433guest-booking.com
 verifguest375673-booking.com
@@ -7900,6 +7909,7 @@ verifyguets85238-booking.com
 verifyguets8948-booking.com
 verifyguets96118-booking.com
 verifyguets97678-booking.com
+via-bezahlung.de
 
 # Reference: https://app.validin.com/detail?type=hash&find=20e7bb2706bbaf38c90ea99336e81c8e#tab=host_pairs (# 2025-06-12)
 
