@@ -9317,6 +9317,11 @@ h1dd-page.com
 offshort-page.com
 srcvrsf.com
 
+# Reference: https://x.com/skocherhan/status/1938325482698903668
+# Reference: https://www.virustotal.com/gui/ip-address/185.156.72.73/relations
+
+cardverify4651-booking.com
+
 # Generic
 
 /a3A7qLVn/
