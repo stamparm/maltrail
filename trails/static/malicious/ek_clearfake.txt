@@ -9439,6 +9439,46 @@ reservation-id9310943.com
 reservation-id9351.quest
 reservation-id9543.quest
 
+# Reference: https://app.validin.com/detail?find=b2b7f86ff065fe710ab6fc2dcc2df528&type=hash&ref_id=c2ed09965f9#tab=host_pairs (# 2025-06-27)
+
+2020000542.world
+booking-id25034931.com
+com-kaanihotels.com
+com-reservations.live
+confirm-id0625.com
+confirm-id2506.com
+confirm-reserve.help
+confirmation-id12925.info
+confirmation-id3223.world
+confirmation-id44719.top
+confirmation-id4914.world
+confirmation-id64651.site
+confirmation-id64651.world
+confirmation-id7205.world
+confirmation-one.click
+confirmation-reserve.world
+confirmation0426.info
+confirmed-id65437.world
+fix-070172999.world
+fix95400073.world
+hotelcs-43019.com
+hotelic-7684.com
+hotels-info0592.com
+id-32455.world
+id-35222.world
+id-428282.com
+id-436277.com
+id-4531455.world
+id-463677.com
+id-4652666.com
+id-6362.world
+reserve-confirmation.com
+update-id4937.com
+update-id8673.com
+update-id87637.com
+update-id9764.com
+wubook-reserve.com
+
 # Generic
 
 /a3A7qLVn/
