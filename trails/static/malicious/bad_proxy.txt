@@ -42,3 +42,9 @@ dayzddos.co
 
 asocks.com
 broxy.one
+
+# Reference: https://www.malware-traffic-analysis.net/2025/06/26/index.html
+# Reference: https://www.virustotal.com/gui/file/cdfa264eeb65a8b3ea2e49b248c7cb689899d3f9da2483d293365fdf1912313e/detection
+
+144.172.112.32:16443
+metallurgify.com
