@@ -9486,6 +9486,23 @@ wubook-reserve.com
 palcomp3.top
 sjm1024.site
 
+# Reference: https://app.validin.com/lookalikes?limit=1000&lookback=90&depth=2&find=%2F%5Ereservation-%5B0-9%5D%2B%5C.com%24%2F (# 2025-06-28)
+
+reservation-086983924.com
+reservation-09320491.com
+reservation-1190584923.com
+reservation-362374653.com
+reservation-462657343.com
+reservation-4673436.com
+reservation-5463235321.com
+reservation-546345321.com
+reservation-5564732421.com
+reservation-564234442.com
+reservation-587542321.com
+reservation-6265634621.com
+reservation-637433521.com
+reservation-8190584923.com
+
 # Generic
 
 /a3A7qLVn/
