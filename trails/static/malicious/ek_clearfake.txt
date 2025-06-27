@@ -9415,6 +9415,28 @@ cardverify87951-booking.com
 cardverify88151-booking.com
 cardverify9735-booking.com
 
+# Reference: https://app.validin.com/lookalikes?lookback=90&depth=2&find=%2F%5Ereservation-id%5B0-9%5D%2B%5C.%5Ba-z%5D%7B2%2C%7D%24%2F (# 2025-06-27)
+
+reservation-id0207.quest
+reservation-id0209.quest
+reservation-id0958.quest
+reservation-id1859.quest
+reservation-id1899.quest
+reservation-id2194.quest
+reservation-id2312.world
+reservation-id25673.world
+reservation-id445893.world
+reservation-id44589345.world
+reservation-id4513.quest
+reservation-id4918.quest
+reservation-id7552.quest
+reservation-id8191.quest
+reservation-id9051.quest
+reservation-id93103943.com
+reservation-id9310943.com
+reservation-id9351.quest
+reservation-id9543.quest
+
 # Generic
 
 /a3A7qLVn/
