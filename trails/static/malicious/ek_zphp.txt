@@ -1659,6 +1659,10 @@ universaltechnology.top
 
 6hms.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-26-v10958/2851
+
+franquicias.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
