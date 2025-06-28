@@ -6667,3 +6667,7 @@ staticdelivery.net
 vectorimagefabric.com
 vectorizegraphic.com
 api.staticdelivery.net
+
+# Reference: https://cert.orange.pl/aktualnosci/zainfekuj-sie-sam-kampania-clickfix/
+
+/wp-assets-optimizer.html
