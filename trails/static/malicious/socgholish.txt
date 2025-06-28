@@ -5140,6 +5140,10 @@ cpanel.productdevelopmentplan.com
 
 ai.lanpdt.org
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-27-v10959/2857
+
+m.cpa2go.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
