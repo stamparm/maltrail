@@ -9667,6 +9667,10 @@ westernunion-transaction.icu
 willisau-br.com
 youandthesea-id8842.world
 
+# Reference: https://cert.orange.pl/aktualnosci/zainfekuj-sie-sam-kampania-clickfix/
+
+was-logistics.com
+
 # Generic
 
 /a3A7qLVn/
