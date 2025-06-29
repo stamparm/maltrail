@@ -8817,6 +8817,42 @@ gatetodisplaycontent.com
 /amsibypass.ps1
 /c2.ps1
 
+# Reference: https://x.com/MalwareUtkonos/status/1939124294547656775
+# Reference: https://gist.github.com/utkonos/16210fb50ff0f587bca74383b1ee2c03
+
+asetar.info
+kopela.info
+kumisecream.com
+slivwelll.com
+vovantrafline.com
+service.sxcservice.com
+apiklo.weebly.com
+booidentity.weebly.com
+cclasgig.weebly.com
+dadxo.weebly.com
+dikiep.weebly.com
+fotumix.weebly.com
+fundsloki.weebly.com
+generatorraf.weebly.com
+grosinfinity.weebly.com
+gulufoundation.weebly.com
+incomeer.weebly.com
+klolove.weebly.com
+liocaribbean.weebly.com
+lomipatient.weebly.com
+lopamoving.weebly.com
+netbooth.weebly.com
+oseads.weebly.com
+privacymain.weebly.com
+queenhor.weebly.com
+racingfoz.weebly.com
+snomonster.weebly.com
+tooneon.weebly.com
+torodd.weebly.com
+warehouseple.weebly.com
+wescommunications.weebly.com
+zenlio.weebly.com
+
 # Generic
 
 /5c0ca79.php
