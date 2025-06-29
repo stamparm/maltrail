@@ -10812,6 +10812,10 @@ zeniq.net
 ziyvn.com
 zpdumka.in
 
+# Reference: https://app.validin.com/detail?find=b2b7f86ff065fe710ab6fc2dcc2df528&type=hash&ref_id=b12a29c8995#tab=host_pairs (# 2025-06-29)
+
+confirmation-id1704.com
+
 # Generic
 
 /a3A7qLVn/
