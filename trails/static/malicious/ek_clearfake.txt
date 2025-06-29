@@ -10829,6 +10829,19 @@ confirmation-id1728.com
 confirmation-id7346.com
 id452345881.world
 
+# Reference: https://app.validin.com/detail?find=dd0be7d2331c7bc3d50e45d8e66690fb&type=hash&ref_id=759a86bdce4#tab=host_pairs (# 2025-06-29)
+
+edailnice.com
+edalinice.com
+evinjetaa.com
+guestverify51312-booking.com
+id42939.world
+nxiokl-alzert-anfert.com
+verif35623guest-booking.com
+verify5142card-booking.com
+verify531card-booking.com
+vinguettes.com
+
 # Generic
 
 /a3A7qLVn/
