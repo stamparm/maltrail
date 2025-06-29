@@ -347,3 +347,18 @@ cellinifurniture.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-24-v10956/2844
 
 swedrent.com
+
+# Reference: https://threatfox.abuse.ch/browse/tag/LandUpdate808/ (# 2025-06-29)
+
+abtsi.com
+czzz.com
+dealmakerwealthsociety.com
+dncoding.com
+fjcad.com
+hydroquebec-client.info
+kemrox.com
+pemalite.com
+piedsmontlaw.com
+rshank.com
+vpn289280989.v4.softether.net
+z-v2-071924.kailib.com
