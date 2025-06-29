@@ -7712,6 +7712,7 @@ booking.confirmation-id1437352.com
 booking.confirmation-id1437354.com
 booking.confirmation-id1437355.com
 booking.confirmation-id1711.com
+booking.confirmation-id1722.com
 booking.confirmation-id1729.com
 booking.confirmation-id1730.com
 booking.confirmation-id1734.com
@@ -7903,6 +7904,7 @@ confirmation-id91843.com
 confirmation-id9384025.com
 confirmation-id94706.com
 confirmation-id98711.com
+confirmation6422.com
 confirmed-id234224.cfd
 confirmed-id65437.world
 econtpay.shop
@@ -7911,6 +7913,7 @@ flightbooking-vhr-hw.pages.dev
 guestbookingmanagement365.com
 hold-booking.com
 hotelbookcheckin.space
+hotelerbookeds2025.world
 hotelesbookedes2025.com
 hoteleybookedes2025.com
 hoteleybookedes2025.world
@@ -7920,6 +7923,7 @@ id627181.live
 monat-verif.world
 notebooksbilliger-ms.com
 rebook-room.click
+recpalacmet-esre.com
 reservation-booking.icu
 reservation-id23461.com
 simple-bookingit.com
@@ -7977,6 +7981,7 @@ verifyguets8948-booking.com
 verifyguets96118-booking.com
 verifyguets97678-booking.com
 via-bezahlung.de
+webhotelslim-5903.com
 
 # Reference: https://app.validin.com/detail?type=hash&find=20e7bb2706bbaf38c90ea99336e81c8e#tab=host_pairs (# 2025-06-12)
 
