@@ -10814,7 +10814,15 @@ zpdumka.in
 
 # Reference: https://app.validin.com/detail?find=b2b7f86ff065fe710ab6fc2dcc2df528&type=hash&ref_id=b12a29c8995#tab=host_pairs (# 2025-06-29)
 
+confirmation-i88842.com
+confirmation-id1525.com
 confirmation-id1704.com
+confirmation-id1715.com
+confirmation-id1720.com
+confirmation-id1723.com
+confirmation-id1728.com
+confirmation-id7346.com
+id452345881.world
 
 # Generic
 
