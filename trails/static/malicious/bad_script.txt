@@ -1,6 +1,8 @@
 # Copyright (c) 2014-2025 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
+# Aliases: JSFiretruck
+
 # Reference: https://blog.alyac.co.kr/2347
 
 /ChromSrch.egg
@@ -8818,7 +8820,7 @@ gatetodisplaycontent.com
 /c2.ps1
 
 # Reference: https://x.com/MalwareUtkonos/status/1939124294547656775
-# Reference: https://gist.github.com/utkonos/16210fb50ff0f587bca74383b1ee2c03
+# Reference: https://gist.github.com/utkonos/16210fb50ff0f587bca74383b1ee2c03 (# JSFiretruck)
 
 asetar.info
 kopela.info
