@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2025 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/solostalking/status/1939628534680408263
+# Reference: https://app.validin.com/detail?find=386547e38831d121c095e200036b64fa&type=hash&ref_id=a502a36d3e8#tab=host_pairs (# 2025-06-30)
+
+3.254.138.41:443
+34.243.136.156:443
+citrix-cloud.de
+workbenefit.net
