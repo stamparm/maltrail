@@ -5680,22 +5680,26 @@ wallstolife.com
 # Reference: https://app.validin.com/detail?find=63c848e2f8f2ea28ad48861ddcc9c7e9&type=hash&ref_id=5747996fb16#tab=host_pairs (# 2025-05-24)
 
 bamerokisa.top
+bkngrvff.com
+bkngrvffy.com
+bkngvff.com
+bksvrf.com
 fagolamasa.top
 fakafuko.top
 fanovara.top
+getsybkng.com
+getsyv.com
+gettrys.com
 gmsdown.top
+knmvrf.com
 mavoposa.top
 mp3indir.top
 santarigo.top
 silenced.store
 vankopar.top
+vfutok.com
+vrfstx.com
 yeramukosa.top
-bkngrvff.com
-bkngrvffy.com
-bkngvff.com
-getsybkng.com
-getsyv.com
-gettrys.com
 
 # Reference: https://x.com/skocherhan/status/1926229346194215061
 
@@ -10843,6 +10847,11 @@ verif35623guest-booking.com
 verify5142card-booking.com
 verify531card-booking.com
 vinguettes.com
+
+# Reference: https://x.com/silentpush/status/1939655116879213013
+
+extranets-inbox.com
+booking.extranets-inbox.com
 
 # Generic
 
