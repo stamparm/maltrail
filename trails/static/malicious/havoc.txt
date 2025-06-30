@@ -4520,6 +4520,10 @@ http://96.9.125.165
 96.9.125.165:443
 98.71.32.5:443
 
+# Reference: https://x.com/G60930953/status/1939506390692774384
+
+djlmwd9b-80.euw.devtunnels.ms
+
 # Generic
 
 /Havoc/payload/
