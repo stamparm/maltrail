@@ -7,6 +7,7 @@
 
 3.254.138.41:443
 34.243.136.156:443
+34.247.176.225:443
 citrix-cloud.de
 officialparisolympics.com
 workbenefit.net
