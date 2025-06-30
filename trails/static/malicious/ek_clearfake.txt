@@ -10850,7 +10850,9 @@ vinguettes.com
 
 # Reference: https://x.com/silentpush/status/1939655116879213013
 
+extranet-get-reserve.com
 extranets-inbox.com
+extranet-reserve-id.com
 booking.extranets-inbox.com
 
 # Generic
