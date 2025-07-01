@@ -10906,6 +10906,10 @@ extranets-inbox.com
 extranet-reserve-id.com
 booking.extranets-inbox.com
 
+# Reference: https://app.validin.com/detail?find=91.92.46.181&type=ip4&ref_id=2da4ef55172#tab=resolutions
+
+checkguests-via-booking.com
+
 # Generic
 
 /a3A7qLVn/
