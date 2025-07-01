@@ -7806,6 +7806,7 @@ cardverif-booking.help
 cardverif-booking.icu
 cardverif-booking.world
 cardverificati0n.icu
+cardverify1101-booking.com
 cardverify54311-booking.com
 cardverify564891-booking.com
 cardverify586411-booking.com
@@ -7915,6 +7916,7 @@ confirmed-id234224.cfd
 confirmed-id65437.world
 econtpay.shop
 facebookmoney.world
+fedexpay-receive.cfd
 flightbooking-vhr-hw.pages.dev
 guestbookingmanagement365.com
 hold-booking.com
