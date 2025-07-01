@@ -10910,6 +10910,12 @@ booking.extranets-inbox.com
 
 checkguests-via-booking.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1940105088909156724
+# Reference: https://app.any.run/tasks/db5dcd0d-dfce-4d97-a56c-d8193e22500d
+
+apiordrg.icu
+complaint-id53216336.com
+
 # Generic
 
 /a3A7qLVn/
