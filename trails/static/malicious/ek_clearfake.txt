@@ -9455,10 +9455,24 @@ reservation-id9310943.com
 reservation-id9351.quest
 reservation-id9543.quest
 
-# Reference: https://app.validin.com/detail?find=b2b7f86ff065fe710ab6fc2dcc2df528&type=hash&ref_id=c2ed09965f9#tab=host_pairs (# 2025-06-27)
+# Reference: https://app.validin.com/detail?find=b2b7f86ff065fe710ab6fc2dcc2df528&type=hash&ref_id=c2ed09965f9#tab=host_pairs (# 2025-07-02)
 
 2020000542.world
 booking-id25034931.com
+booking.confirmation-id1739.com
+booking.confirmation-id1760.com
+booking.confirmation-id1766.com
+booking.confirmation-id1772.com
+booking.confirmation-id1792.com
+booking.confirmation-id1852.com
+booking.confirmation-id2579.com
+booking.confirmation-id41240.com
+booking.confirmation-id52044.com
+booking.confirmation-id7105.com
+booking.confirmation-id7192.com
+cardverify8901-booking.com
+cardverify9701-booking.com
+com-confirm77424.click
 com-kaanihotels.com
 com-reservations.live
 confirm-id0625.com
@@ -9467,11 +9481,22 @@ confirm-reserve.help
 confirmation-id12925.info
 confirmation-id1722.com
 confirmation-id1738.com
+confirmation-id1739.com
+confirmation-id1760.com
+confirmation-id1766.com
+confirmation-id1772.com
+confirmation-id1792.com
+confirmation-id1852.com
+confirmation-id2579.com
 confirmation-id3223.world
+confirmation-id41240.com
 confirmation-id44719.top
 confirmation-id4914.world
+confirmation-id52044.com
 confirmation-id64651.site
 confirmation-id64651.world
+confirmation-id7105.com
+confirmation-id7192.com
 confirmation-id7205.world
 confirmation-id8272.com
 confirmation-id9858.com
