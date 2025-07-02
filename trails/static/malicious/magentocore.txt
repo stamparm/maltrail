@@ -15863,6 +15863,11 @@ scripts.peachseo.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.
 
 italicfonts.org
 
+# Reference: https://x.com/sdcyberresearch/status/1940410275355832331
+
+clicktrack01.com
+jartrack01.com
+
 # Generic
 
 /assets/lfg.js
