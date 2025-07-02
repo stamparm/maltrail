@@ -1117,3 +1117,11 @@ downloadsharedfiledocumentationt6758nhffvip.click
 
 162.19.161.200:8041
 cuttingedgetechworks.com
+
+# Reference: https://x.com/tuckner/status/1940269058198483149
+# Reference: https://www.virustotal.com/gui/file/9fd97eeebe80e8c4418ed07a2e13fc2b1e28a14482818bf2b90770bf78eefc0c/detection
+
+144.172.112.84:8041
+angelic.su
+lmfao.su
+relay.lmfao.su
