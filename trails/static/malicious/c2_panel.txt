@@ -926,6 +926,16 @@ http://94.103.125.100
 
 http://85.234.100.245
 
+# Reference: https://x.com/skocherhan/status/1940320477228278051
+
+/webpanel/panel/admin.php
+/webpanel/panel/auth.php
+/webpanel/panel/index.php
+/webpanel/panel/login.php
+/webpanel/panel/gate.php
+/webpanel/panel/page.php
+/webpanel/panel/panel.php
+
 # Generic
 
 /admin_123/auth.php
