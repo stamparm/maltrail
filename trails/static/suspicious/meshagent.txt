@@ -224,3 +224,9 @@ kwazindernuren.com
 
 152.67.84.123:443
 152.67.84.123:8080
+
+# Generic
+
+/Meshcleaner.exe
+/Meshcleaner.exe.bak
+/Meshcleaner.exe.bak2
