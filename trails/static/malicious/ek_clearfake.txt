@@ -7806,7 +7806,9 @@ cardverif-booking.help
 cardverif-booking.icu
 cardverif-booking.world
 cardverificati0n.icu
+cardverify0801-booking.com
 cardverify1101-booking.com
+cardverify3701-booking.com
 cardverify54311-booking.com
 cardverify564891-booking.com
 cardverify586411-booking.com
