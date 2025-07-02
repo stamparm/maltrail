@@ -219,3 +219,8 @@ kwazindernuren.com
 # Reference: https://www.virustotal.com/gui/file/db8174175cec245f15f117503fd9e178307fb3763ea7e2e47541e80bfc953746/detection
 
 94.232.43.185:443
+
+# Reference: https://x.com/WhichbufferArda/status/1940451607558361286
+
+152.67.84.123:443
+152.67.84.123:8080
