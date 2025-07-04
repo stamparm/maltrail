@@ -4662,3 +4662,12 @@ sr7pv7n5x.com
 supapush.net
 whoumtefie.com
 wighingly.com
+
+# Reference: https://x.com/hiphoponelove_/status/1941006042571461112
+# Reference: https://www.humansecurity.com/learn/blog/satori-threat-intelligence-alert-iconads/
+# Reference: https://www.virustotal.com/gui/file/dede1cd255e16c3e33b9aa2cb9e1f7c4a4de9e2522434acd88de7c4aee094648/detection
+
+airway.hiddenfinders.com
+beye.poshoverwatch.com
+wag.hiddenfinders.com
+windmill.photofiledetect.com
