@@ -2977,6 +2977,15 @@ warapi.net
 wrldsecurity.org
 zerostresser.net
 
+# Reference: https://x.com/BlinkzSec/status/1941482459939602802
+
+boatsc2.sell.app
+elitestress.st
+elitestresser.club
+nightmare-stresser.com
+ultimateshop.pw
+wdtp.eu.org
+
 # Reference: https://app.validin.com/detail?find=ddosforhire.ru&type=dom&ref_id=742177571af#tab=host_pairs_v2
 
 cloudnode.me
