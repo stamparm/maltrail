@@ -203,3 +203,23 @@ va.saverara.live
 vhg.servcloudmsft.online
 xsjl7932.top
 xxcdn.wuyoukm.top
+
+# Reference: https://app.validin.com/detail?find=7c6372580a9e78e8caff7ba50ef859aa&type=hash#tab=host_pairs (# 2025-07-05)
+
+23-227-199-53.cprapid.com
+app.mahjongways2.xyz
+celebrum-approuk.nl
+diazsquare.com
+electrum-sol.top
+escueladeelementos.com
+first.biosdmd.live
+gh.kilopas.live
+gh.nougouk.live
+id-manulife.com
+kilopas.live
+mahjongways2.info
+mahjongways2.xyz
+mail.mahjongways2.info
+nougouk.live
+oauth2-sdrive-goocle.com
+pressconferencesimulator.com
