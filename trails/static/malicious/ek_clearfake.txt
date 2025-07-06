@@ -7693,6 +7693,7 @@ bnpparibas.top
 book-octrate.com
 bookedehotelle2025.com
 bookedhotel42025.world
+booking-confirmation-id7357131.com
 booking-customerprices341241.com
 booking-guestingreservation53672.com
 booking-guestingreservations295912.com
@@ -7758,6 +7759,7 @@ booking.confirmation-id52363.com
 booking.confirmation-id5384685.com
 booking.confirmation-id53942.com
 booking.confirmation-id543556.com
+booking.confirmation-id566323.com
 booking.confirmation-id612452.com
 booking.confirmation-id61871.com
 booking.confirmation-id6234643734.com
@@ -7808,7 +7810,9 @@ cardverif-booking.world
 cardverificati0n.icu
 cardverify0801-booking.com
 cardverify1101-booking.com
+cardverify2401-booking.com
 cardverify3701-booking.com
+cardverify5301-booking.com
 cardverify54311-booking.com
 cardverify564891-booking.com
 cardverify586411-booking.com
@@ -7831,6 +7835,7 @@ confirmation-id14373449.com
 confirmation-id1437352.com
 confirmation-id1437354.com
 confirmation-id1437355.com
+confirmation-id1642.com
 confirmation-id1711.com
 confirmation-id1729.com
 confirmation-id1730.com
@@ -7861,6 +7866,7 @@ confirmation-id2748.com
 confirmation-id33151.com
 confirmation-id3940.com
 confirmation-id4219.com
+confirmation-id43210.live
 confirmation-id4438.com
 confirmation-id453467.com
 confirmation-id4568.com
@@ -7900,6 +7906,7 @@ confirmation-id79522.com
 confirmation-id79523.com
 confirmation-id81723.com
 confirmation-id827242.com
+confirmation-id83454.com
 confirmation-id8421.com
 confirmation-id84723.com
 confirmation-id8634538.com
@@ -7914,15 +7921,19 @@ confirmation-id9384025.com
 confirmation-id94706.com
 confirmation-id98711.com
 confirmation6422.com
+confirmed-booking2913.com
+confirmed-booking9832.com
 confirmed-id234224.cfd
 confirmed-id65437.world
 econtpay.shop
+euro56.click
 facebookmoney.world
 fedexpay-receive.cfd
 flightbooking-vhr-hw.pages.dev
 guestbookingmanagement365.com
 hold-booking.com
 hotelbookcheckin.space
+hotelerbooked2025.world
 hotelerbookeds2025.world
 hotelesbookedes2025.com
 hoteleybookedes2025.com
@@ -7932,10 +7943,12 @@ id-confirm-reserve.com
 id627181.live
 monat-verif.world
 notebooksbilliger-ms.com
+propertyalm-sourse.com
 rebook-room.click
 recpalacmet-esre.com
 reservation-booking.icu
 reservation-id23461.com
+reservation8794.com
 simple-bookingit.com
 spbooking-supporting643563456.com
 verif-hillpark-hotel.com
@@ -7991,6 +8004,7 @@ verifyguets8948-booking.com
 verifyguets96118-booking.com
 verifyguets97678-booking.com
 via-bezahlung.de
+webhotelslim-5190.com
 webhotelslim-5903.com
 
 # Reference: https://app.validin.com/detail?type=hash&find=20e7bb2706bbaf38c90ea99336e81c8e#tab=host_pairs (# 2025-06-12)
