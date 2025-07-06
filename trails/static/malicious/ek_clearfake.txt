@@ -11066,6 +11066,15 @@ verify77155-booking.com
 verify87325-booking.com
 verifyrequest-booking.com
 
+# Reference: https://github.com/hagezi/dns-blocklists/issues/6630
+
+digiopiaseochatsend.com
+expmidclk.com
+verify-clients.com
+api.digiopiaseochatsend.com
+click-eu-v4.expmidclk.com
+click-v4.expmidclk.com
+
 # Generic
 
 /a3A7qLVn/
