@@ -2978,12 +2978,26 @@ wrldsecurity.org
 zerostresser.net
 
 # Reference: https://x.com/BlinkzSec/status/1941482459939602802
+# Reference: https://app.validin.com/detail?find=9f3631f7680c58e0601f6e27fc1bd307&type=hash&ref_id=33a5c8f1084#tab=host_pairs (# 2025-07-06)
 
 boatsc2.sell.app
 elitestress.st
 elitestresser.club
 nightmare-stresser.com
+ultimate-shops.cc
+ultimate-shops.com
+ultimate-shops.to
+ultimate-webshops.nl
+ultimateshop.asia
+ultimateshop.co.in
+ultimateshop.in
+ultimateshop.is
 ultimateshop.pw
+ultimateshops.in
+ultimateshops.net
+ultimateshops.shop
+ultimateshops.store
+ultimeteshops.to
 wdtp.eu.org
 
 # Reference: https://app.validin.com/detail?find=ddosforhire.ru&type=dom&ref_id=742177571af#tab=host_pairs_v2
