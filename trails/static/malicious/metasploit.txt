@@ -6131,3 +6131,11 @@ cdn.akamaitechlogics.com
 # Reference: https://x.com/M4lcode/status/1933873099604185196
 
 20.243.255.185:443
+
+# Reference: https://x.com/skocherhan/status/1942059895110476231
+# Reference: https://www.virustotal.com/gui/file/141464eeffa4618b389cf9faa1d98652110dfe655f13bdbbe5035a86cfd96116/detection
+# Reference: https://www.virustotal.com/gui/file/995d233afb182ec8a10688e135c83f6ace14c6478adb31795a9a9471c0a57bc1/detection
+
+http://13.50.225.235
+13.50.225.235:4444
+jardario.ddns.net
