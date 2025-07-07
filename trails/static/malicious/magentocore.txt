@@ -15874,6 +15874,16 @@ italicfonts.org
 clicktrack01.com
 jartrack01.com
 
+# Reference: https://x.com/sdcyberresearch/status/1942191553125986566
+# Reference: https://app.validin.com/detail?find=38.180.234.198&type=ip4&ref_id=674553ef1ec#tab=resolutions
+# Reference: https://www.virustotal.com/gui/ip-address/95.164.53.82/relations
+
+anagi.net
+cdn-server.online
+dorton.org
+globalmi.net
+support-serv.xyz
+
 # Generic
 
 /assets/lfg.js
