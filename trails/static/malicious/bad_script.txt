@@ -8864,6 +8864,14 @@ zenlio.weebly.com
 /RazerPartners.hta
 /RazerPartnersPromo.hta
 
+# Reference: https://x.com/skocherhan/status/1942045447515668972
+
+/loader.ps1
+/ploader.ps1
+/x11s.hta
+/x11s1.hta
+/xS2cxsWavs.hta
+
 # Generic
 
 /5c0ca79.php
