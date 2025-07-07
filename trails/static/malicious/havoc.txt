@@ -4524,6 +4524,10 @@ http://96.9.125.165
 
 djlmwd9b-80.euw.devtunnels.ms
 
+# Reference: https://x.com/skocherhan/status/1942045447515668972
+
+http://178.62.48.123
+
 # Generic
 
 /Havoc/payload/
