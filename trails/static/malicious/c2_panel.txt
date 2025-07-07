@@ -936,6 +936,10 @@ http://85.234.100.245
 /webpanel/panel/page.php
 /webpanel/panel/panel.php
 
+# Reference: https://x.com/hanzohattori91/status/1942267932223979960
+
+http://179.43.176.38
+
 # Generic
 
 /admin_123/auth.php
