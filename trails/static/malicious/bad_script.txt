@@ -8859,6 +8859,11 @@ zenlio.weebly.com
 
 /3c7b.js
 
+# Reference: https://x.com/skocherhan/status/1942053746344632411
+
+/RazerPartners.hta
+/RazerPartnersPromo.hta
+
 # Generic
 
 /5c0ca79.php
