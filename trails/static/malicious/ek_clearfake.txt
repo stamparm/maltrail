@@ -12741,6 +12741,10 @@ znicely.com
 biggreenegg-sale.com
 blggreenegg.shop
 
+# Reference: https://x.com/skocherhan/status/1942351627534454950
+
+pub-992aa27fc7f7497ebe2f613a4855cdb4.r2.dev
+
 # Generic
 
 /a3A7qLVn/
