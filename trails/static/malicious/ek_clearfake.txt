@@ -7700,6 +7700,7 @@ booking-guestingreservations295912.com
 booking-id032931.com
 booking-supporting643563456.com
 booking.confirm-reservation.com
+booking.confirmation-id1012.com
 booking.confirmation-id1175.com
 booking.confirmation-id1176.com
 booking.confirmation-id1177.com
@@ -7777,6 +7778,7 @@ booking.confirmation-id65262663341.com
 booking.confirmation-id66235233.com
 booking.confirmation-id67123.com
 booking.confirmation-id7126.com
+booking.confirmation-id725906.com
 booking.confirmation-id72891.com
 booking.confirmation-id7396.com
 booking.confirmation-id75262.com
@@ -7801,6 +7803,7 @@ booking.confirmation-id891733.com
 booking.confirmation-id91843.com
 booking.confirmation-id9384025.com
 booking.confirmation-id94706.com
+booking.confirmation-id95644648.com
 booking.confirmation-id9732884648.com
 booking.confirmation-id98711.com
 booking.id-4212633.com
@@ -7811,10 +7814,13 @@ cardverif-booking.help
 cardverif-booking.icu
 cardverif-booking.world
 cardverificati0n.icu
+cardverify07971-booking.com
 cardverify0801-booking.com
+cardverify09901-booking.com
 cardverify1101-booking.com
 cardverify2401-booking.com
 cardverify3701-booking.com
+cardverify4601-booking.com
 cardverify5301-booking.com
 cardverify54311-booking.com
 cardverify564891-booking.com
@@ -7822,6 +7828,7 @@ cardverify586411-booking.com
 cbookindata.com
 cbookindate.com
 confirm-reservation.com
+confirmation-id1012.com
 confirmation-id1175.com
 confirmation-id1176.com
 confirmation-id1177.com
@@ -7899,6 +7906,7 @@ confirmation-id65262663341.com
 confirmation-id66235233.com
 confirmation-id67123.com
 confirmation-id7126.com
+confirmation-id725906.com
 confirmation-id72891.com
 confirmation-id7396.com
 confirmation-id75262.com
@@ -7924,10 +7932,12 @@ confirmation-id891733.com
 confirmation-id91843.com
 confirmation-id9384025.com
 confirmation-id94706.com
+confirmation-id95644648.com
 confirmation-id9732884648.com
 confirmation-id98711.com
 confirmation6422.com
 confirmed-booking2913.com
+confirmed-booking8315.com
 confirmed-booking9832.com
 confirmed-id234224.cfd
 confirmed-id65437.world
@@ -7938,6 +7948,7 @@ fedexpay-receive.cfd
 flightbooking-vhr-hw.pages.dev
 guestbookingmanagement365.com
 hold-booking.com
+hotel-confermation-35837.com
 hotelberghang-id423.world
 hotelbookcheckin.space
 hotelerbooked2025.world
@@ -7954,6 +7965,7 @@ notebooksbilliger-ms.com
 propertyalm-sourse.com
 rebook-room.click
 recpalacmet-esre.com
+reserv-conf-today6543.com
 reservation-booking.icu
 reservation-id23461.com
 reservation8794.com
@@ -8012,6 +8024,8 @@ verifyguets8948-booking.com
 verifyguets96118-booking.com
 verifyguets97678-booking.com
 via-bezahlung.de
+vignetten-payment.info
+webhotelslim-4201.com
 webhotelslim-5190.com
 webhotelslim-5903.com
 western-union.click
