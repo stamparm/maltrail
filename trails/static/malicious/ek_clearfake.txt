@@ -12766,13 +12766,111 @@ pub-992aa27fc7f7497ebe2f613a4855cdb4.r2.dev
 
 alababababa.cloud
 
-# Reference: https://app.validin.com/detail?find=Verify%20%7C%20Coinbase&type=raw&ref_id=66e15143fe9#tab=host_pairs (# 3035-07-09)
+# Reference: https://app.validin.com/detail?find=Verify%20%7C%20Coinbase&type=raw&ref_id=66e15143fe9#tab=host_pairs (# 2025-07-09)
 
 coinbasepromoted.com
 
 # Reference: https://x.com/skocherhan/status/1942704424067191228
 
 nnhood.com
+
+# Reference: https://x.com/galkofahi/status/1942860565493235974
+# Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw&ref_id=37a9c99f316#tab=host_pairs (# 2025-07-09)
+
+2025lodgements.org
+57437coinbase.com
+accessmentof025takeback.com
+advanzla-de.space
+advanzlade.space
+aiilanzsk.space
+angrywojak.com
+antgob.com
+australiaqovlodgementservces.online
+australiaqovlodgmentservces.com
+australiaqovlodgmentservces.net
+australiaqovlodgmentservces.org
+barclays.device-registration.com
+binancesecured.com
+blogcryptonews.net
+borger.minoversigt.com
+brugeroversigt.com
+cancel-device-helpdesk.com
+change-primary-improve.com
+charleschwabcontrols.sbs
+charleschwabpro.sbs
+charleschwabriskcontrol.sbs
+check-app-reader.com
+citi-app-remove.com
+cptch.pages.dev
+credltkarma.help
+cuacuonsieuem.com
+device-registration.com
+devicecheckers.com
+eharmonys.icu
+eopyy-gr.space
+eurobkgr.space
+eurogr.space
+fidelitysupportcenter.sbs
+gast.ro
+gastro.al
+gastro.cy
+gastro.hu
+gastro.la
+gastro.mt
+gastro.pe
+gastro.pt
+gastro.qa
+gastro.tf
+gastro.tw
+gastro.uk
+gastro.us
+gastronet.pl
+gosafekey.com
+grbkeur.space
+greuro.space
+iinepoytw.space
+ip-online.sbs
+jpchase-online.sbs
+ledgerdeviceauth.com
+ledgerdevicediagnostic.com
+ledgerstatushelp.com
+liveadminoffice.com
+lokalkunde.com
+lx-bil.com
+m.sdahjaojmfr.shop
+micrsooftteams.com
+minoversigt.com
+mobile-auth-system.com
+mobilepay.brugeroversigt.com
+navydsf.com
+netands.com
+number-app-review.com
+oab-fidelity08secure.com
+orixertech.space
+owa.sdahjaojmfr.shop
+pathwayadventures.net
+phantom.ajalo.com
+primary-app-registration.com
+primary-device-helpdesk.com
+primary-device-system.com
+primary-mobile-system.com
+review-app-number.com
+sants-secure.com
+santsecure-review.com
+schwabriskmanagement.sbs
+sdahjaojmfr.shop
+secure-primary-device.com
+securedocumentsystem.com
+servcentesport.online
+servicesaustralia-report.com
+shop.fradi.hu
+spk-rueckbuchung.online
+spotify-dk.com
+trezorsuiteapp.online
+tsb.device-review.com
+verrifyidmetaxportal.com
+viewhousedocuments.com
+viewportalfolder.com
 
 # Generic
 
