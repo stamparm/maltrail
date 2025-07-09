@@ -12887,6 +12887,50 @@ fruitsupply.site
 healthylivinggg.site
 tinylinkcloud.online
 
+# Reference: https://app.validin.com/detail?find=91.212.166.213&type=ip4&ref_id=0bbe79a785b#tab=resolutions (# 2025-07-09)
+
+2025lodgements.com
+2025lodgements.info
+2025lodgements.net
+2025lodgements.online
+2025lodgements.site
+2025olinelodgments.com
+2025olinelodgments.net
+2025olinelodgments.org
+24x7bovportal.com
+australiacentralizedinfo.com
+auth-mobile-system.com
+avaliar-cgd.com
+brentohd.com
+business-revolutsupport.com
+cgd-confirmar-avaliar.com
+charleschwabinformation.sbs
+device-auth-system.com
+fidelityassistance.sbs
+fideltyonlineservices.sbs
+fideltysecurityservices.sbs
+fideltysecuritysupport.sbs
+fideltyservicesupport.sbs
+frertywu.com
+kyber-interfacing.com
+ledger-restoreapi.com
+ledger-safecheck-device-verification.digital
+mipopularespronline.com
+mtryeuwutr.com
+myausspoyservc.online
+myservlceausref.online
+myyrteuwieyrp.com
+paypal-aktualisieren.online
+primary-phone-review.com
+robinhood-supportchat.com
+sageais.com
+santander-support-corporate.com
+securemybarclayaps.com
+so-support-web.top
+standrelea.com
+vermogengroeiadviseurs.com
+wealthsimple-livechat.com
+
 # Generic
 
 /a3A7qLVn/
