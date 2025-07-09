@@ -12931,6 +12931,10 @@ standrelea.com
 vermogengroeiadviseurs.com
 wealthsimple-livechat.com
 
+# Reference: https://x.com/galkofahi/status/1942930216633995370
+
+162.246.17.133:443
+
 # Generic
 
 /a3A7qLVn/
