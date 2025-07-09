@@ -12805,6 +12805,7 @@ cptch.pages.dev
 credltkarma.help
 cuacuonsieuem.com
 device-registration.com
+device-review.com
 devicecheckers.com
 eharmonys.icu
 eopyy-gr.space
