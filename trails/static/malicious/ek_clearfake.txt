@@ -12843,6 +12843,7 @@ gastro.us
 gastronet.pl
 gosafekey.com
 grbkeur.space
+greurbk.space
 greuro.space
 iinepoytw.space
 ip-online.sbs
@@ -12850,6 +12851,7 @@ jpchase-online.sbs
 kyber-interfacing.com
 ledgerdeviceauth.com
 ledgerdevicediagnostic.com
+ledgerlivesuite.com
 ledgerstatushelp.com
 liveadminoffice.com
 lokalkunde.com
@@ -12863,6 +12865,7 @@ navydsf.com
 netands.com
 number-app-review.com
 oab-fidelity08secure.com
+opt4secure.us
 orixertech.space
 owa.sdahjaojmfr.shop
 pathwayadventures.net
