@@ -7326,9 +7326,11 @@ makersdc.com
 tektiks.com
 view-reservation.com
 
+# Reference: https://x.com/silentpush/status/1943264171862212901
 # Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw&ref_id=13a7cb93b25#tab=host_pairs (# 2025-06-06)
 
 at-unq.space
+axetrade-capital.com
 bozei.aarkernerse.com
 completz.aarkernerse.com
 facebook.serveo.net
