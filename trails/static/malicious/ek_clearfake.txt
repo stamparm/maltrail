@@ -13047,6 +13047,18 @@ id42525671.world
 id492927521.world
 visitor-security.icu
 
+# Reference: https://x.com/1nt3l_hunt/status/1943347144741786019
+
+176.98.185.102:443
+complaintguestid6169.com
+complaintguestid635.com
+complaintguestid64313.com
+complaintguestid6534.com
+complaintguestid681.com
+complaintguestid78531.com
+complaintguestid88531.com
+complaintguestid98531.com
+
 # Generic
 
 /a3A7qLVn/
