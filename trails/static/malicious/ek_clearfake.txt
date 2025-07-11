@@ -4085,6 +4085,7 @@ booking.partlet-id739847.com
 # Reference: https://app.validin.com/detail?find=Checking%20if%20you%20are%20human&type=raw&ref_id=043c2826360#tab=host_pairs (# 2025-04-20)
 
 admin-booking-login.cfd
+anru33-bukti.com
 authentifycheck.com
 booking-guset.help
 booking-verification.help
@@ -4096,6 +4097,7 @@ booklngsecurity.com
 bookpart1.com
 bookpartn.com
 bookskkas.xyz
+buahdaily.site
 captcha-cf.com
 cf-captcha.com
 cfcaptcha.com
@@ -4103,13 +4105,17 @@ cfcaptchas.com
 cfcloudcaptcha.com
 cl0udflare-verif-7645723.com
 cloud.zispp.org
+cloudflare.eclassexperts.com
 coffeepointperu.com
 computonline.xyz
 dignow.org
+dimanjasport.site
 dlcrypt.net
 fhdfgsdfdsfsd.cfd
 fhfhjfhjfhejejrre.cfd
 globaltalent.icu
+hondansr250.site
+kaibigan.site
 kap.magicitbd.com
 kmspico.1fin.uz
 lllyoutube.com
@@ -4117,6 +4123,7 @@ mail.captcha-cf.com
 mail.cfcaptcha.com
 mail.janchowk.com
 makeitwork.pages.dev
+new.digitologica.com
 rambox.org
 rmsattendvisitor.world
 roomsattende99918.world
@@ -4130,7 +4137,6 @@ verefication3123.world
 viperrat.pages.dev
 youtube-watch-vwt16hzkwhdy.com
 youtude.net
-cloudflare.eclassexperts.com
 
 # Reference: https://threatfox.abuse.ch/browse/tag/FakeCaptcha/ (# 2025-04-20)
 
