@@ -13148,6 +13148,19 @@ trezorwebsuite.com
 verifyidmetaxportal.com
 verifyyidmetaxportal.com
 
+# Reference: https://app.validin.com/detail?find=104.194.133.20&type=ip4&ref_id=418f787774c#tab=resolutions
+
+charleschwab.sbs
+chwabwealthmanagement.sbs
+evalidatteirstax.com
+fideltyhelp.sbs
+fideltyriskcontrol.sbs
+fideltysecuritycontrol.sbs
+mcentreacessport.online
+mocnteracespot.online
+myauspoynotlce.online
+myrefaunotlceserv.online
+
 # Generic
 
 /a3A7qLVn/
