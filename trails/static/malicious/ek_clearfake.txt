@@ -13077,6 +13077,29 @@ complaintguestid78531.com
 complaintguestid88531.com
 complaintguestid98531.com
 
+# Reference: https://app.validin.com/detail?find=194.87.216.222&type=ip4&ref_id=80a5eebab3d#tab=resolutions
+
+activebkingres.world
+activerooming.world
+admin-book-captcha.com
+admin-captcha-book.com
+admin-property-captcha.com
+admin-property-robot.com
+apretlyverfa.com
+apretverly.com
+aprtverify.com
+attndvisitornotices.world
+avisitorpropertrm.world
+bad-guest-reviewsid77182.com
+booking-reservate.com
+comlpaintguestid22342.com
+commbkingdesk.world
+commbkinghub.world
+complaintguestbookingid541262.com
+complaintguestbookingid641262.com
+complaintguestbookingid741262.com
+verifuaprt.com
+
 # Generic
 
 /a3A7qLVn/
