@@ -13110,6 +13110,44 @@ verifuaprt.com
 clickfixsim.carsonww.com
 clickfixsim.pages.dev
 
+# Reference: https://app.validin.com/detail?find=91.212.166.213&type=ip4&ref_id=f718e63b6dc#tab=resolutions (# 2025-07-11)
+
+2024-25returnaccessment.info
+businessonline-login.com
+f9deliy.com.de
+fidelitycustomersms.sbs
+fidelitysecurecommunications.sbs
+fidelitysecurityserver.sbs
+fidelitysmstexting.sbs
+fideltycustomer-textsecure.sbs
+fideltyinvestmentstext.sbs
+fideltymessaginghelp.sbs
+fideltypilotserver.sbs
+fideltyrestriction-help.sbs
+fideltysecureserver.sbs
+fideltysmservices.sbs
+hostgphotosalbums.com
+ledger-officially.com
+ledgerapiportal.com
+ledgerrepaircheck.com
+lloyds.businessonline-login.com
+mail-japan.sbs
+myclaimlodgment.com
+myclaimlodgment.net
+myclaimlodgment.org
+mycntrellnkauservc.online
+paypal-aktualisieren.com
+renew-mobile-primary.com
+renew-primary-helpdesk.com
+s-pushtan-aktualisieren.com
+s-pushtan-aktualisieren.online
+servaccessport.online
+trezor-officially.com
+trezorapiportal.com
+trezorwebsuite.com
+verifyidmetaxportal.com
+verifyyidmetaxportal.com
+
 # Generic
 
 /a3A7qLVn/
