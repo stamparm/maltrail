@@ -1018,6 +1018,12 @@ vutarf.com
 cronoze.com
 muuxxu.com
 
+# Reference: https://x.com/vmray/status/1943638986255147103
+# Reference: https://www.vmray.com/analyses/Latrodectus-version-2-2-Whenasked/report/network.html
+# Reference: https://www.virustotal.com/gui/file/5ec37444f9ead97f89b74b0b0ee6707bd67a61cb1ad1aa7f5ba85613b722cf4a/detection
+
+mnkcr.com
+
 # Reference: https://x.com/smica83/status/1870090463610302821
 # Reference: https://www.virustotal.com/gui/file/ea60a02b914e79c8c108e95cf0e23bea502b5f37f6a57a3fdf0ea0707e75e945/detection
 
