@@ -13100,6 +13100,12 @@ complaintguestbookingid641262.com
 complaintguestbookingid741262.com
 verifuaprt.com
 
+# Reference: https://x.com/Fact_Finder03/status/1943612387690487839
+# Reference: https://app.validin.com/detail?find=ClickFix%20Demo&type=raw&ref_id=2b737f933f6#tab=host_pairs (# 2025-07-11)
+
+clickfixsim.carsonww.com
+clickfixsim.pages.dev
+
 # Generic
 
 /a3A7qLVn/
