@@ -13176,16 +13176,24 @@ clickfixsim.pages.dev
 # Reference: https://app.validin.com/detail?find=91.212.166.213&type=ip4&ref_id=f718e63b6dc#tab=resolutions (# 2025-07-11)
 
 2024-25returnaccessment.info
+aundircetsevire.com.de
+aundircetsevres.online
 businessonline-login.com
+centreservrport.online
+de-privatkunden.com
 f9deliy.com.de
 fidelitycustomersms.sbs
 fidelitysecurecommunications.sbs
 fidelitysecurityserver.sbs
 fidelitysmstexting.sbs
 fideltycustomer-textsecure.sbs
+fideltydatabasehelp.sbs
 fideltyinvestmentstext.sbs
+fideltyknowledgeserver.sbs
 fideltymessaginghelp.sbs
 fideltypilotserver.sbs
+fideltypublicsecurity.sbs
+fideltypublictext.sbs
 fideltyrestriction-help.sbs
 fideltysecureserver.sbs
 fideltysmservices.sbs
@@ -13195,16 +13203,19 @@ ledgerapiportal.com
 ledgerrepaircheck.com
 lloyds.businessonline-login.com
 mail-japan.sbs
+myauxservcnotlce.online
 myclaimlodgment.com
 myclaimlodgment.net
 myclaimlodgment.org
 mycntrellnkauservc.online
+mymedcntressionservc.online
 paypal-aktualisieren.com
 renew-mobile-primary.com
 renew-primary-helpdesk.com
 s-pushtan-aktualisieren.com
 s-pushtan-aktualisieren.online
 servaccessport.online
+sessionidme-ssogov.com
 trezor-officially.com
 trezorapiportal.com
 trezorwebsuite.com
