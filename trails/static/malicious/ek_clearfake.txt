@@ -7226,13 +7226,19 @@ verif.rabonet.xyz
 
 # Reference: https://app.validin.com/detail?find=6018807017afead14417566f975ffdb4&type=hash#tab=host_pairs (# 2025-06-03)
 
+2pan.ru
 adminbookingverify.com
+adonlss.com
+booking-refund.expertinquiry.com
+booking.com-feedback.life
+booking.com-information.live
 com-feedback.life
 hmfm88.xyz
+info-request-confirm-booking.com
 neverforever.space
-booking.com-feedback.life
 room.hmfm88.xyz
 scam1.neverforever.space
+secure-booking.app
 
 # Reference: https://app.validin.com/detail?find=edc1a0d79bb40ab8ba8c&type=hash#tab=host_pairs (# 2025-06-03)
 
