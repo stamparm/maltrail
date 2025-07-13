@@ -13241,6 +13241,14 @@ mocnteracespot.online
 myauspoynotlce.online
 myrefaunotlceserv.online
 
+# Reference: https://x.com/soursecc/status/1944186706128732634
+
+http://77.105.164.95
+extra-book3.com
+extranethelpid612.com
+admin.extra-book3.com
+booking.extranethelpid612.com
+
 # Generic
 
 /a3A7qLVn/
