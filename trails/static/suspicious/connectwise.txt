@@ -1137,3 +1137,10 @@ heoshi.toutfmi.de
 83.136.210.220:8041
 estatementcore.org
 srevers.estatementcore.org
+
+# Reference: https://x.com/skocherhan/status/1944846176626561394
+# Reference: https://app.any.run/tasks/688ec863-77e6-4ab4-ae7a-75f6f36b190b
+
+83.136.209.172:8041
+ledgerverifvxy.com
+oo.ledgerverifvxy.com
