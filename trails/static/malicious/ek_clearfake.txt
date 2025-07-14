@@ -7738,6 +7738,7 @@ booking.confirmation-id14373449.com
 booking.confirmation-id1437352.com
 booking.confirmation-id1437354.com
 booking.confirmation-id1437355.com
+booking.confirmation-id1586.com
 booking.confirmation-id1625.com
 booking.confirmation-id1711.com
 booking.confirmation-id1722.com
@@ -7822,6 +7823,7 @@ booking.confirmation-id889424.com
 booking.confirmation-id891723.com
 booking.confirmation-id891733.com
 booking.confirmation-id91843.com
+booking.confirmation-id937857.com
 booking.confirmation-id9384025.com
 booking.confirmation-id94706.com
 booking.confirmation-id95644648.com
@@ -7839,6 +7841,8 @@ cardverify07971-booking.com
 cardverify0801-booking.com
 cardverify09901-booking.com
 cardverify1101-booking.com
+cardverify11071-booking.com
+cardverify19251-booking.com
 cardverify2401-booking.com
 cardverify3701-booking.com
 cardverify4601-booking.com
@@ -7846,6 +7850,7 @@ cardverify5301-booking.com
 cardverify54311-booking.com
 cardverify564891-booking.com
 cardverify586411-booking.com
+cardverify64991-booking.com
 cbookindata.com
 cbookindate.com
 confirm-reservation.com
@@ -7866,8 +7871,10 @@ confirmation-id14373449.com
 confirmation-id1437352.com
 confirmation-id1437354.com
 confirmation-id1437355.com
+confirmation-id1586.com
 confirmation-id1625.com
 confirmation-id1642.com
+confirmation-id1673.com
 confirmation-id1711.com
 confirmation-id1729.com
 confirmation-id1730.com
@@ -7951,6 +7958,7 @@ confirmation-id889424.com
 confirmation-id891723.com
 confirmation-id891733.com
 confirmation-id91843.com
+confirmation-id937857.com
 confirmation-id9384025.com
 confirmation-id94706.com
 confirmation-id95644648.com
@@ -7962,6 +7970,7 @@ confirmed-booking8315.com
 confirmed-booking9832.com
 confirmed-id234224.cfd
 confirmed-id65437.world
+dpd-dostava.space
 econtpay.shop
 euro56.click
 facebookmoney.world
@@ -7982,6 +7991,7 @@ id-confirm-reserve.com
 id627181.live
 monat-verif.world
 moneygram-safepay.site
+my-travel.top
 notebooksbilliger-ms.com
 propertyalm-sourse.com
 rebook-room.click
@@ -7990,6 +8000,7 @@ reserv-conf-today6543.com
 reservation-booking.icu
 reservation-id23461.com
 reservation8794.com
+secure-payment.cfd
 simple-bookingit.com
 spbooking-supporting643563456.com
 verif-hillpark-hotel.com
@@ -8045,6 +8056,7 @@ verifyguets8948-booking.com
 verifyguets96118-booking.com
 verifyguets97678-booking.com
 via-bezahlung.de
+via-secure.de
 vignetten-payment.info
 webhotelslim-4201.com
 webhotelslim-5190.com
