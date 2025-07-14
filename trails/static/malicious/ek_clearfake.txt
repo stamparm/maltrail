@@ -13303,6 +13303,13 @@ extranethelpid612.com
 admin.extra-book3.com
 booking.extranethelpid612.com
 
+# Reference: https://app.validin.com/detail?find=%2Fvalidate-nohuman.php%3Fredirect%3D%2F&type=raw#tab=host_pairs (# 2025-07-14)
+
+idsessionaccount.net
+onlineencryptedmessages.cfd
+onlinemessages893.cfd
+tiips-au.com
+
 # Generic
 
 /a3A7qLVn/
