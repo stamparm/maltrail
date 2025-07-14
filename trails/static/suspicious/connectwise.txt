@@ -1129,3 +1129,11 @@ relay.lmfao.su
 # Reference: https://x.com/skocherhan/status/1941030364543426634
 
 heoshi.toutfmi.de
+
+# Reference: https://x.com/smica83/status/1944495834458173941
+# Reference: https://tria.ge/250713-x591qatp13/behavioral1
+# Reference: https://www.virustotal.com/gui/file/7bde3ff036169c47cfceea6bbf239a1ff15a5d9a40f70b662ca9dce74382c364/detection
+
+83.136.210.220:8041
+estatementcore.org
+srevers.estatementcore.org
