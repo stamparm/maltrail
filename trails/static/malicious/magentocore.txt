@@ -15884,6 +15884,13 @@ dorton.org
 globalmi.net
 support-serv.xyz
 
+# Reference: https://x.com/sdcyberresearch/status/1944696520055378180
+# Reference: https://app.validin.com/detail?find=19fe6b1334b2035cedcaa692ac77b550&type=hash&ref_id=f6592434d3c#tab=host_pairs (# 2025-07-14)
+
+cloudfastlist.shop
+fastjsdev.shop
+scheduledcss.shop
+
 # Generic
 
 /assets/lfg.js
