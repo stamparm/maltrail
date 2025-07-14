@@ -362,3 +362,7 @@ piedsmontlaw.com
 rshank.com
 vpn289280989.v4.softether.net
 z-v2-071924.kailib.com
+
+# Reference: https://x.com/skocherhan/status/1944624974318449135
+
+smithenv.com
