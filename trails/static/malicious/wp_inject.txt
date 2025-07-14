@@ -6729,6 +6729,11 @@ api.staticdelivery.net
 # Reference: https://patchstack.com/articles/critical-malware-found-in-gravityforms-official-plugin-site
 # Reference: https://www.virustotal.com/gui/ip-address/185.193.89.19/relations
 # Reference: https://www.virustotal.com/gui/ip-address/185.243.113.108/relations
+# Reference: https://app.validin.com/lookalikes?lookback=90&depth=2&find=gravityapi (# 2025-07-14)
 
+gravityapi.ai
+gravityapi.co
+gravityapi.dev
 gravityapi.io
+gravityapi.net
 gravityapi.org
