@@ -13113,6 +13113,15 @@ wealthsimple-livechat.com
 
 # Reference: https://app.validin.com/detail?find=dd0be7d2331c7bc3d50e45d8e66690fb&type=hash&ref_id=2dafd6d9025#tab=host_pairs (# 2025-07-10)
 
+booking.confirmation-id1512.com
+booking.confirmation-id1532.com
+booking.confirmation-id1533.com
+booking.confirmation-id1535.com
+booking.confirmation-id1539.com
+booking.confirmation-id1562.com
+booking.confirmation-id1587.com
+booking.confirmation-id1591.com
+booking.confirmation-id1593.com
 booking.confirmation-id1612.com
 booking.confirmation-id1613.com
 booking.confirmation-id1617.com
@@ -13123,14 +13132,17 @@ booking.confirmation-id1627.com
 booking.confirmation-id1628.com
 booking.confirmation-id1631.com
 booking.confirmation-id1636.com
+booking.confirmation-id1638.com
 booking.confirmation-id1640.com
 booking.confirmation-id1641.com
 booking.confirmation-id1645.com
 booking.confirmation-id1649.com
+booking.confirmation-id1650.com
 booking.confirmation-id1653.com
 booking.confirmation-id1657.com
 booking.confirmation-id1659.com
 booking.confirmation-id1672.com
+booking.confirmation-id1676.com
 booking.confirmation-id1679.com
 booking.confirmation-id1681.com
 booking.confirmation-id1682.com
@@ -13138,6 +13150,7 @@ booking.confirmation-id1686.com
 booking.confirmation-id1689.com
 booking.confirmation-id1694.com
 booking.confirmation-id1697.com
+booking.confirmation-id1804.com
 booking.confirmation-id1836.com
 booking.confirmation-id1837.com
 booking.confirmation-id191888.com
@@ -13148,7 +13161,9 @@ booking.confirmation-id40201.com
 booking.confirmation-id501328648.com
 booking.confirmation-id5345899.com
 booking.confirmation-id62741.com
+booking.confirmation-id6596.com
 booking.confirmation-id70723.com
+booking.confirmation-id7496.com
 booking.confirmation-id79526.com
 booking.confirmation-id79527.com
 booking.confirmation-id81263.com
@@ -13157,6 +13172,16 @@ booking.confirmation-id8491.com
 booking.confirmation-id8733.com
 booking.confirmation-id918811.com
 booking.confirmation-id93235.com
+confirm-reserve.cloud
+confirmation-id1512.com
+confirmation-id1532.com
+confirmation-id1533.com
+confirmation-id1535.com
+confirmation-id1539.com
+confirmation-id1562.com
+confirmation-id1587.com
+confirmation-id1591.com
+confirmation-id1593.com
 confirmation-id1612.com
 confirmation-id1613.com
 confirmation-id1617.com
@@ -13167,14 +13192,17 @@ confirmation-id1627.com
 confirmation-id1628.com
 confirmation-id1631.com
 confirmation-id1636.com
+confirmation-id1638.com
 confirmation-id1640.com
 confirmation-id1641.com
 confirmation-id1645.com
 confirmation-id1649.com
+confirmation-id1650.com
 confirmation-id1653.com
 confirmation-id1657.com
 confirmation-id1659.com
 confirmation-id1672.com
+confirmation-id1676.com
 confirmation-id1679.com
 confirmation-id1681.com
 confirmation-id1682.com
@@ -13182,6 +13210,7 @@ confirmation-id1686.com
 confirmation-id1689.com
 confirmation-id1694.com
 confirmation-id1697.com
+confirmation-id1804.com
 confirmation-id1836.com
 confirmation-id1837.com
 confirmation-id191888.com
@@ -13190,7 +13219,9 @@ confirmation-id2718.com
 confirmation-id29848.com
 confirmation-id40201.com
 confirmation-id62741.com
+confirmation-id6596.com
 confirmation-id70723.com
+confirmation-id7496.com
 confirmation-id79526.com
 confirmation-id79527.com
 confirmation-id81263.com
