@@ -13376,6 +13376,16 @@ booknsvrf.com
 hotel-statuspay.com
 booking.hotel-statuspay.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1945010308004684281
+# Reference: https://app.validin.com/detail?find=31.59.58.87&type=ip4&ref_id=11a4fe526aa#tab=resolutions
+
+admin-cancelreserv-cstmrs.com
+admin-captcha-properties-095908401.com
+admin-captcha-properties.com
+admin-extranetrsvrv-cstmrs.com
+admin-extranetupdating2208.com
+admin-update-extranet.com
+
 # Generic
 
 /a3A7qLVn/
