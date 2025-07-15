@@ -13394,6 +13394,16 @@ confsvisitor-missing-items.com
 guesting-servicesid91202.com
 view-reservation-883772736.com
 
+# Reference: https://x.com/volrant136/status/1945171306955075826
+# Reference: https://app.validin.com/detail?find=6b11d5dcb5c224972366bf1b2457982d&type=hash&ref_id=c745355972a#tab=host_pairs (# 2025-07-15)
+# Reference: https://app.validin.com/detail?find=glynneathdental.com&type=dom&ref_id=c745355972a#tab=host_pairs (# LOCATION_DOMAIN-HOST 2025-07-15)
+
+hokidunia777.com
+starslot753.com
+wajik777.rest
+mainslot88gohan.com
+playbook88z.com
+
 # Generic
 
 /a3A7qLVn/
