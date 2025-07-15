@@ -13363,6 +13363,15 @@ http://179.43.176.77
 179.43.176.77:443
 hrdepartments.org
 
+# Reference: https://x.com/JAMESWT_WT/status/1945119433975800000
+# Reference: https://app.validin.com/detail?find=195.133.49.180&type=ip4&ref_id=14641296540#tab=resolutions
+
+8eh18dhq9wd.click
+bknsdom.com
+booknsvrf.com
+hotel-statuspay.com
+booking.hotel-statuspay.com
+
 # Generic
 
 /a3A7qLVn/
