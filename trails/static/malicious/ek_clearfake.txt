@@ -13314,6 +13314,12 @@ tiips-au.com
 
 admin-properties-captcha.com
 
+# Reference: https://x.com/soursecc/status/1945022079859847260
+
+http://179.43.176.77
+179.43.176.77:443
+hrdepartments.org
+
 # Generic
 
 /a3A7qLVn/
