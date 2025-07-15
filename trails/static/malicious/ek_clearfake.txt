@@ -13385,6 +13385,7 @@ admin-captcha-properties.com
 admin-extranetrsvrv-cstmrs.com
 admin-extranetupdating2208.com
 admin-update-extranet.com
+mitace.com
 
 # Reference: https://app.validin.com/detail?find=46.173.214.179&type=ip4&ref_id=109d1d5ec31#tab=resolutions
 
