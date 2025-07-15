@@ -13310,6 +13310,10 @@ onlineencryptedmessages.cfd
 onlinemessages893.cfd
 tiips-au.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1945010308004684281
+
+admin-properties-captcha.com
+
 # Generic
 
 /a3A7qLVn/
