@@ -4026,3 +4026,12 @@ x.airgbg.com
 # Reference: https://x.com/1ZRR4H/status/1942640765894603200
 
 64.137.9.118:4334
+
+# Reference: https://x.com/PrakkiSathwik/status/1945102076725371202
+# Reference: https://www.virustotal.com/gui/file/9d9e93b7b9043f280e0866447dada3adadca295af67b7051cd9ab3b0156f3541/detection
+# Reference: https://www.virustotal.com/gui/file/4c607f5e641810e940c93fef07de3c548773457fddde81bfc3b0d043ec60a6e6/detection
+
+http://128.199.29.110
+http://165.227.149.208
+http://178.128.204.138
+http://64.227.189.57
