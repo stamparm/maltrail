@@ -223,3 +223,8 @@ mail.mahjongways2.info
 nougouk.live
 oauth2-sdrive-goocle.com
 pressconferencesimulator.com
+
+# Reference: https://x.com/CyberGhost13337/status/1945083485619716555
+# Reference: https://www.virustotal.com/gui/file/b89e567949e9c47b4bae5f12f23a58944fba7cbba666e39ba9c7dc531ed8ccdd/detection
+
+67.211.222.140:4455
