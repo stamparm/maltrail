@@ -975,10 +975,6 @@ http://172.93.100.138
 fascism.pages.dev
 ytpage-1st.pages.dev
 
-# Reference: https://app.validin.com/detail?find=Stresser%20Colch%E9%AE%A1s&type=raw&ref_id=0a5d0ba91eb#tab=host_pairs (# 2025-07-16)
-
-stressercolchoes.com.br
-
 # Reference: https://www.linkedin.com/pulse/forums-selling-stolen-credit-card-information-cvv-shops-tissot
 # Reference: https://app.validin.com/axon?type=dom&limit=10000&find=ns1.kak-prigotovit-spagetti.ru (# NS_FOR record)
 
