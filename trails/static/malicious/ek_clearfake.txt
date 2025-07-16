@@ -13481,8 +13481,15 @@ yblock.me
 185.100.157.217:85
 
 # Reference: https://x.com/galkofahi/status/1945459290778525788
+# Reference: https://app.validin.com/detail?find=438a5b8436dc05a16c96ebf7627515d4&type=hash&ref_id=cd18e61c32b#tab=host_pairs (# 2025-07-16)
 
+24k-markets.com
+axetrade-capital.com
+fizmofx-markets.com
 upwardstrend.net
+mail.axetrade-capital.com
+mail.fizmofx-markets.com
+mail.upwardstrend.net
 
 # Generic
 
