@@ -942,6 +942,43 @@ stressertech.club
 aurastresser.com
 ultrastresser.com
 
+# Reference: https://app.validin.com/detail?find=Stresser%20-%20Professional%20Load%20Testing%20Platform&type=raw&ref_id=0a5d0ba91eb#tab=host_pairs (# 2025-07-16)
+
+stresser.ink
+
+# Reference: https://app.validin.com/detail?find=Stresser%20by%20Rendzz%20-%20GB%20Version&type=raw&ref_id=0a5d0ba91eb#tab=host_pairs (# 2025-07-16)
+
+stresser.ddos.rendzz.web.id
+
+# Reference: https://app.validin.com/detail?find=Stresser%20-%20%231%20IP%20Stresser%20%26%20Booter%20Service&type=raw&ref_id=0a5d0ba91eb#tab=host_pairs (# 2025-07-16)
+
+stresser.icu
+
+# Reference: https://app.validin.com/detail?find=Stresser%20X%20-%20Advanced%20Dashboard&type=raw&ref_id=0a5d0ba91eb#tab=host_pairs (# 2025-07-16)
+
+onestress.fun
+
+# Reference: https://app.validin.com/detail?find=Stresser%20Tech%20-%20Stresser%20service%20Layer%204%20%26%207&type=raw&ref_id=0a5d0ba91eb#tab=host_pairs (# 2025-07-16)
+
+http://212.87.213.145
+
+# Reference: https://app.validin.com/detail?find=Stresser%20%7C%20Login&type=raw&ref_id=0a5d0ba91eb#tab=host_pairs (# 2025-07-16)
+
+http://103.193.176.66
+
+# Reference: https://app.validin.com/detail?find=Stresser%20Website%20%7C%20Best%20IP%20Stresser&type=raw&ref_id=0a5d0ba91eb#tab=host_pairs (# 2025-07-16)
+
+http://172.93.100.138
+
+# Reference: https://app.validin.com/detail?find=Stresser%20website&type=raw&ref_id=0a5d0ba91eb#tab=host_pairs (# 2025-07-16)
+
+fascism.pages.dev
+ytpage-1st.pages.dev
+
+# Reference: https://app.validin.com/detail?find=Stresser%20Colch%E9%AE%A1s&type=raw&ref_id=0a5d0ba91eb#tab=host_pairs (# 2025-07-16)
+
+stressercolchoes.com.br
+
 # Reference: https://www.linkedin.com/pulse/forums-selling-stolen-credit-card-information-cvv-shops-tissot
 # Reference: https://app.validin.com/axon?type=dom&limit=10000&find=ns1.kak-prigotovit-spagetti.ru (# NS_FOR record)
 
