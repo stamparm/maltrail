@@ -13491,6 +13491,11 @@ mail.axetrade-capital.com
 mail.fizmofx-markets.com
 mail.upwardstrend.net
 
+# Reference: https://x.com/soursecc/status/1945619776124195191
+
+generali-fx.com
+mail.generali-fx.com
+
 # Generic
 
 /a3A7qLVn/
