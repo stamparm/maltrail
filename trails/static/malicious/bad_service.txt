@@ -936,6 +936,12 @@ xboxbooter.pages.dev
 stresse.ru
 stressertech.club
 
+# Reference: https://x.com/BlinkzSec/status/1945419746100326589
+# Reference: https://app.validin.com/detail?find=%3A%3A%3A%22author%22%3A%22IP%20Stresser%22&type=raw&ref_id=55e5dd9d389#tab=host_pairs (# 2025-07-16)
+
+aurastresser.com
+ultrastresser.com
+
 # Reference: https://www.linkedin.com/pulse/forums-selling-stolen-credit-card-information-cvv-shops-tissot
 # Reference: https://app.validin.com/axon?type=dom&limit=10000&find=ns1.kak-prigotovit-spagetti.ru (# NS_FOR record)
 
