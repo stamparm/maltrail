@@ -940,6 +940,19 @@ http://85.234.100.245
 
 http://179.43.176.38
 
+# Reference: https://x.com/Fact_Finder03/status/1945390504939835790
+# Reference: https://app.validin.com/detail?find=FiercePhish%20%26raquo%3B%20Login&type=raw&ref_id=7e8f2ef48cf#tab=host_pairs (# 2025-07-16)
+
+http://130.61.123.235
+http://167.99.63.100
+http://172.179.232.129
+http://20.120.241.142
+http://20.83.253.202
+http://208.113.133.120
+http://35.234.172.162
+http://51.210.151.63
+http://54.175.184.74
+
 # Generic
 
 /admin_123/auth.php
