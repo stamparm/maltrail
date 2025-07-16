@@ -1144,3 +1144,9 @@ srevers.estatementcore.org
 83.136.209.172:8041
 ledgerverifvxy.com
 oo.ledgerverifvxy.com
+
+# Reference: https://x.com/skocherhan/status/1945624507118460947
+# Reference: https://www.virustotal.com/gui/file/5788f173de09e2024a17654d1963314c16bc8c4ef5e509e4fe3c7f309108d136/detection
+
+38.69.15.242:443
+microsoftcdnlicense.putinswin.es
