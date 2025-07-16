@@ -6737,3 +6737,14 @@ gravityapi.dev
 gravityapi.io
 gravityapi.net
 gravityapi.org
+
+# Reference: https://blog.sucuri.net/2025/07/stealthy-php-malware-uses-zip-archive-to-redirect-wordpress-visitors.html
+# Refeence: https://www.virustotal.com/gui/ip-address/174.128.225.188/relations
+
+enturbioaj.xyz
+icercanokt.xyz
+slponentq.xyz
+asanythe.slponentq.xyz
+oqmetrix.icercanokt.xyz
+wditemqy.enturbioaj.xyz
+yzsurfar.icercanokt.xyz
