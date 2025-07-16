@@ -13476,6 +13476,10 @@ tempo123.biz
 totolotre.org
 yblock.me
 
+# Reference: https://x.com/Fact_Finder03/status/1945384472087773319
+
+185.100.157.217:85
+
 # Generic
 
 /a3A7qLVn/
