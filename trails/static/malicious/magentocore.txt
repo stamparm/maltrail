@@ -15891,6 +15891,12 @@ cloudfastlist.shop
 fastjsdev.shop
 scheduledcss.shop
 
+# Reference: https://x.com/sdcyberresearch/status/1945816300539785718
+
+cloudflariz.com
+shop-update.com
+mail.cloudflariz.com
+
 # Generic
 
 /assets/lfg.js
