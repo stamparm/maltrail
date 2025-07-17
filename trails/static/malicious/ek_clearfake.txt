@@ -13497,6 +13497,23 @@ mail.upwardstrend.net
 generali-fx.com
 mail.generali-fx.com
 
+# Reference: https://x.com/galkofahi/status/1945732448282636577
+# Reference: https://app.validin.com/detail?find=45.95.2.40&type=ip4&ref_id=98e33057cd4#tab=resolutions
+
+471813-blockfi.com
+516356-celsius.com
+735714-ftx.com
+831764-bittrex.com
+918453-voyager.com
+book-auth.cloud
+book-reg.cloud
+ipfs-tech.com
+client.471813-blockfi.com
+client.516356-celsius.com
+client.735714-ftx.com
+client.831764-bittrex.com
+client.918453-voyager.com
+
 # Generic
 
 /a3A7qLVn/
