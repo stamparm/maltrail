@@ -13514,6 +13514,12 @@ client.735714-ftx.com
 client.831764-bittrex.com
 client.918453-voyager.com
 
+# Reference: https://x.com/solostalking/status/1946058071928610950
+
+blazing-cloud.com
+madeinci.ci
+cloudflare.blazing-cloud.com
+
 # Generic
 
 /a3A7qLVn/
