@@ -158,7 +158,29 @@ cd maltrail
 sudo python3 sensor.py
 ```
 
-- For **Docker** environment instructions can be found [here](docker).
+- For **Docker**
+
+Use the attached `docker-compose.yml` or `docker run` as follows:
+
+```sh
+cd /usr/local/src
+sudo git clone https://github.com/stamparm/maltrail.git
+cd maltrail
+docker build -t maltrail .
+wget https://raw.githubusercontent.com/stamparm/maltrail/master/maltrail.conf
+# Edit the config
+sudo $EDITOR /etc/maltrail.conf
+# Start the sensor
+docker run -d --name maltrail-sensor --net=host --privileged -v /var/log/maltrail:/var/log/maltrail -v /etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro maltrail sensor.py
+# Start the server
+docker run -d --name maltrail-sensor --port 8338:8338/tcp --port 8337:8337/udp -v /var/log/maltrail:/var/log/maltrail -v /etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro maltrail server.py
+```
+
+Don't forget to put interfaces in promiscuous mode as needed: 
+
+```sh
+for dev in $(ifconfig | grep mtu | grep -Eo '^\w+'); do ifconfig $dev promisc; done
+```
 
 ![Sensor](https://i.imgur.com/E9tt2ek.png)
 
