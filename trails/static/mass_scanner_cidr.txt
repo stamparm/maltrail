@@ -580,6 +580,9 @@
 167.94.138.0/24 # censys.io
 167.94.145.0/24 # censys.io
 167.94.146.0/24 # censys.io
+199.45.154.0/24 # censys.io
+199.45.155.0/24 # censys.io
+206.168.34.0/24 # censys.io
 167.99.103.0/24 # binaryedge.ninja
 167.99.106.0/24 # binaryedge.ninja
 167.99.108.0/24 # binaryedge.ninja
