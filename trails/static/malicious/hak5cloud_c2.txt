@@ -1734,7 +1734,7 @@ erichubbard.net
 ge0.works
 vmi1341970.contaboserver.net
 
-# Refrence: https://github.com/drb-ra/C2IntelFeeds/blob/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-01-20)
+# Reference: https://github.com/drb-ra/C2IntelFeeds/blob/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-01-20)
 
 http://46.101.78.109
 http://54.212.251.241

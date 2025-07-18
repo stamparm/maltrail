@@ -6740,7 +6740,7 @@ gravityapi.org
 
 # Reference: https://blog.sucuri.net/2025/07/stealthy-php-malware-uses-zip-archive-to-redirect-wordpress-visitors.html
 # Reference: https://www.virustotal.com/gui/ip-address/142.54.171.253/relations
-# Refeence: https://www.virustotal.com/gui/ip-address/174.128.225.188/relations
+# Reference: https://www.virustotal.com/gui/ip-address/174.128.225.188/relations
 
 enturbioaj.xyz
 enwipesk.xyz
