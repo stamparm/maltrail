@@ -580,6 +580,9 @@
 167.94.138.0/24 # censys.io
 167.94.145.0/24 # censys.io
 167.94.146.0/24 # censys.io
+199.45.154.0/24 # censys.io
+199.45.155.0/24 # censys.io
+206.168.34.0/24 # censys.io
 167.99.103.0/24 # binaryedge.ninja
 167.99.106.0/24 # binaryedge.ninja
 167.99.108.0/24 # binaryedge.ninja
@@ -1108,3 +1111,20 @@
 188.166.26.88 # driftnet.io
 206.189.7.178 # driftnet.io
 209.97.152.248 # driftnet.io
+
+# Reference: http://dixon.probe.onyphe.net/ip-ranges.txt
+
+91.196.152.0/24 # probe.onyphe.net
+91.231.89.0/24 # probe.onyphe.net
+195.184.76.0/24 # probe.onyphe.net
+91.230.168.0/24 # probe.onyphe.net
+91.134.185.80/28 # probe.onyphe.net
+79.137.65.46/32 # probe.onyphe.net
+51.254.49.96/28 # probe.onyphe.net
+139.99.35.32/28 # probe.onyphe.net
+15.235.189.144/28 # probe.onyphe.net
+45.43.33.210/32 # probe.onyphe.net
+45.43.33.218/32 # probe.onyphe.net
+149.202.99.192/28 # probe.onyphe.net
+94.23.117.80/28 # probe.onyphe.net
+5.196.200.240/28 # probe.onyphe.net
