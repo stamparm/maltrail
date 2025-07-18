@@ -359,6 +359,21 @@ ssoo.mlcrosofft.com
 91.209.135.88:4000
 93.177.109.20:3333
 
+# Reference: https://x.com/solostalking/status/1946069612090495059
+# Reference: https://app.validin.com/detail?find=Login%20%C2%B7%20OXF%20Panel&type=raw&ref_id=72f38ae3a48#tab=host_pairs (# 2025-07-18)
+
+176.65.134.138:4000
+176.65.140.81:4000
+194.195.122.86:4000
+20.200.144.201:4000
+206.123.145.218:4000
+40.89.209.119:4000
+45.74.16.75:4000
+45.74.16.91:4000
+45.83.28.66:4000
+45.83.28.67:4000
+51.89.242.47:4000
+
 # Generic
 
 /evilginx-linux-amd64.tar.gz
