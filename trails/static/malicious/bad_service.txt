@@ -3992,3 +3992,8 @@ http://172.94.96.203
 http://176.65.150.59
 172.94.96.203:443
 176.65.150.59:443
+
+# Reference: https://app.validin.com/detail?find=%3A%3A%3A%22description%22%3A%22High-capacity%20Layer%204%20%26%207%20DDoS%20testing%20service%20with%20custom%20bypass%20tech%20and%20global%20SLA.%22&type=raw&ref_id=8a14b4c3d73#tab=host_pairs (# 2025-07-18)
+
+http://181.215.205.205
+reaperstress.com
