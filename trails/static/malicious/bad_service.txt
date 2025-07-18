@@ -3985,3 +3985,10 @@ inferno-templates.com
 leading-xzbc-101.com
 ace-panel.top
 dashboardonf.pages.dev
+
+# Reference: https://app.validin.com/detail?find=Gorilla%20Stress%20%E2%80%93%20Advanced%20IP%20Stresser%20%26%20DDoS-for-Hire&type=raw&ref_id=9e672e5f78a#tab=host_responses (# 2025-07-18)
+
+http://172.94.96.203
+http://176.65.150.59
+172.94.96.203:443
+176.65.150.59:443
