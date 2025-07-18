@@ -158,48 +158,6 @@ cd maltrail
 sudo python3 sensor.py
 ```
 
-- For **Docker**
-
-Download maltrail:
-
-```sh
-cd /usr/local/src
-sudo git clone https://github.com/stamparm/maltrail.git
-cd maltrail
-sudo wget -P /etc https://raw.githubusercontent.com/stamparm/maltrail/master/maltrail.conf
-# Edit the config
-sudo $EDITOR /etc/maltrail.conf
-```
-
-Start the container with `docker compose`: 
-
-```sh
-# For the sensor
-docker compose up -d sensor
-# For the server
-docker compose up -d server
-# For both
-docker compose up -d
-# Update image regularly
-docker compose down --remove-orphans
-docker compose build
-docker compose up -d
-```
-
-... or with `docker run`
-
-```sh
-# Build image
-docker build -t maltrail .
-# Start the sensor
-docker run -d --name maltrail-sensor --restart=unless-stopped --net=host --privileged -v /var/log/maltrail:/var/log/maltrail -v /etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro maltrail sensor.py
-# Start the server
-docker run -d --name maltrail-server --restart=unless-stopped --port 8338:8338/tcp --port 8337:8337/udp -v /var/log/maltrail:/var/log/maltrail -v /etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro maltrail server.py
-# Update the image regularly
-sudo git pull
-docker build -t maltrail .
-```
-
 Don't forget to put interfaces in promiscuous mode as needed: 
 
 ```sh
@@ -217,6 +175,50 @@ python server.py
 ```
 
 ![Server](https://i.imgur.com/loGW6GA.png)
+
+- For **Docker**
+
+Download maltrail:
+
+```sh
+cd /usr/local/src
+sudo git clone https://github.com/stamparm/maltrail.git
+cd maltrail
+sudo wget -P /etc https://raw.githubusercontent.com/stamparm/maltrail/master/maltrail.conf
+# Edit the config
+sudo $EDITOR /etc/maltrail.conf
+```
+
+Start the container(s) with `docker run`: 
+
+```sh
+# Build image
+docker build -t maltrail .
+# Start the sensor
+docker run -d --name maltrail-sensor --restart=unless-stopped --net=host --privileged -v /var/log/maltrail:/var/log/maltrail -v /etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro maltrail sensor.py
+# Start the server
+docker run -d --name maltrail-server --restart=unless-stopped --port 8338:8338/tcp --port 8337:8337/udp -v /var/log/maltrail:/var/log/maltrail -v /etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro maltrail server.py
+# Update the image regularly
+sudo git pull
+docker build -t maltrail .
+```
+
+... or with `docker compose`:
+
+```sh
+# For the sensor
+docker compose up -d sensor
+# For the server
+docker compose up -d server
+# For both
+docker compose up -d
+# Update image regularly
+docker compose down --remove-orphans
+docker compose build
+docker compose up -d
+```
+
+Don't edit the `docker-compose.yml` file directly, as this will be overwritten by `git pull`.  Instead, copy it to `docker-compose.override.yml` and edit that file; it is included in this repo's `.gitignore`.  
 
 To test that everything is up and running execute the following:
 
