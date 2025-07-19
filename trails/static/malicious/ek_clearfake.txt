@@ -7811,6 +7811,7 @@ booking.confirmation-id65262663341.com
 booking.confirmation-id66235233.com
 booking.confirmation-id67123.com
 booking.confirmation-id7126.com
+booking.confirmation-id7196.com
 booking.confirmation-id725906.com
 booking.confirmation-id72891.com
 booking.confirmation-id7396.com
@@ -7824,6 +7825,7 @@ booking.confirmation-id79523.com
 booking.confirmation-id81723.com
 booking.confirmation-id827242.com
 booking.confirmation-id8421.com
+booking.confirmation-id8423853.com
 booking.confirmation-id84723.com
 booking.confirmation-id8524.com
 booking.confirmation-id8634538.com
@@ -7833,6 +7835,7 @@ booking.confirmation-id888456424.com
 booking.confirmation-id889424.com
 booking.confirmation-id891723.com
 booking.confirmation-id891733.com
+booking.confirmation-id91603.com
 booking.confirmation-id91843.com
 booking.confirmation-id937857.com
 booking.confirmation-id9384025.com
@@ -7842,12 +7845,16 @@ booking.confirmation-id9732884648.com
 booking.confirmation-id98711.com
 booking.id-4212633.com
 bookingid291784671.sbs
+bookingsecureguestrefund.com
 bookingverification.click
 bookingverification.world
 cardverif-booking.help
 cardverif-booking.icu
 cardverif-booking.world
 cardverificati0n.icu
+cardverify0031-booking.com
+cardverify007991-booking.com
+cardverify00881-booking.com
 cardverify07971-booking.com
 cardverify0801-booking.com
 cardverify09901-booking.com
@@ -7856,12 +7863,16 @@ cardverify11071-booking.com
 cardverify19251-booking.com
 cardverify2401-booking.com
 cardverify3701-booking.com
+cardverify4231-booking.com
 cardverify4601-booking.com
 cardverify5301-booking.com
 cardverify54311-booking.com
 cardverify564891-booking.com
 cardverify586411-booking.com
+cardverify60491-booking.com
 cardverify64991-booking.com
+cardverify921-booking.com
+cardverify9391-booking.com
 cbookindata.com
 cbookindate.com
 confirm-reservation.com
@@ -7945,6 +7956,7 @@ confirmation-id65262663341.com
 confirmation-id66235233.com
 confirmation-id67123.com
 confirmation-id7126.com
+confirmation-id7196.com
 confirmation-id725906.com
 confirmation-id72891.com
 confirmation-id7396.com
@@ -7959,6 +7971,7 @@ confirmation-id81723.com
 confirmation-id827242.com
 confirmation-id83454.com
 confirmation-id8421.com
+confirmation-id8423853.com
 confirmation-id84723.com
 confirmation-id8524.com
 confirmation-id8634538.com
@@ -7968,6 +7981,7 @@ confirmation-id888456424.com
 confirmation-id889424.com
 confirmation-id891723.com
 confirmation-id891733.com
+confirmation-id91603.com
 confirmation-id91843.com
 confirmation-id937857.com
 confirmation-id9384025.com
@@ -8012,6 +8026,7 @@ reservation-booking.icu
 reservation-id23461.com
 reservation8794.com
 secure-payment.cfd
+sicher-bezahlen.cfd
 simple-bookingit.com
 spbooking-supporting643563456.com
 verif-hillpark-hotel.com
@@ -8070,9 +8085,11 @@ via-bezahlung.de
 via-secure.de
 vignetten-payment.info
 webhotelslim-4201.com
+webhotelslim-4501.com
 webhotelslim-5190.com
 webhotelslim-5903.com
 western-union.click
+westernunion-internationalpayment.icu
 
 # Reference: https://app.validin.com/detail?type=hash&find=20e7bb2706bbaf38c90ea99336e81c8e#tab=host_pairs (# 2025-06-12)
 
