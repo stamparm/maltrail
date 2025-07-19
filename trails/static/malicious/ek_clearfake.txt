@@ -7245,9 +7245,20 @@ secure-booking.app
 oneddge.com
 onmevvs.com
 
-# Reference: https://app.validin.com/detail?find=63c848e2f8f2ea28ad48861ddcc9c7e9&type=hash#tab=host_pairs (# 2025-06-03)
+# Reference: https://app.validin.com/detail?find=63c848e2f8f2ea28ad48861ddcc9c7e9&type=hash#tab=host_pairs (# 2025-07-19)
 
+bknsverf.com
 bookneg.com
+mhiaohcaffs.click
+mvrfbkn.com
+mvvbkn.com
+stream.radio-zhizn.ru
+tbkncon.com
+tfhiashfavfa.click
+tvrfbookn.com
+with-nz.com
+xbkvrfn.com
+xfjaksfjasdfa.click
 
 # Reference: https://x.com/JAMESWT_WT/status/1930185550733946941
 # Reference: https://www.virustotal.com/gui/ip-address/179.61.219.132/relations
