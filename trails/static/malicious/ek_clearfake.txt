@@ -13520,6 +13520,18 @@ blazing-cloud.com
 madeinci.ci
 cloudflare.blazing-cloud.com
 
+# Reference: https://x.com/soursecc/status/1946327350574203252
+
+akwatic-hotel.ci
+ardiellifornasa.ge
+bleulab.ci
+clasoftmedia.ci
+gomezmontero.eu
+gtl.ci
+javiergomezmontero.eu
+rafelink.life
+retcap.eu
+
 # Generic
 
 /a3A7qLVn/
