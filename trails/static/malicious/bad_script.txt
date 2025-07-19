@@ -8872,6 +8872,10 @@ zenlio.weebly.com
 /x11s1.hta
 /xS2cxsWavs.hta
 
+# Reference: https://app.validin.com/detail?find=powershell%20-nop%20-c%20%22iex(New-Object%20Net.WebClient).DownloadString(%27https%3A%2F%2Fraw.githubusercontent.com%2Fkaywoz%2Fbluestuff%2Fmain%2Fpowershell%2FPayload-nonsense.ps1%27)%22&type=raw&ref_id=5c1a9b34db7 (# 2025-07-19)
+
+/Payload-nonsense.ps1
+
 # Generic
 
 /5c0ca79.php
