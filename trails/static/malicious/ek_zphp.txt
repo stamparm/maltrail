@@ -1282,7 +1282,7 @@ zhifubao.icu
 rccgloveinaction.org
 teddyatuluku.org
 
-# Refeence: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-20-v10863/2464
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-20-v10863/2464
 
 searchweb.top
 
