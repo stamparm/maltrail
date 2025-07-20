@@ -228,3 +228,40 @@ pressconferencesimulator.com
 # Reference: https://www.virustotal.com/gui/file/b89e567949e9c47b4bae5f12f23a58944fba7cbba666e39ba9c7dc531ed8ccdd/detection
 
 67.211.222.140:4455
+
+# Reference: https://app.validin.com/detail?find=7c6372580a9e78e8caff7ba50ef859aa&type=hash#tab=host_pairs (# 2025-07-20)
+
+146-70-24-153.cprapid.com
+acn-it32.com
+admin.mahjongways2.xyz
+anysimpleword.com
+api.mahjongways2.xyz
+blog.mahjongways2.info
+cdn.real-de.myddns.rocks
+cg.likerpiker.live
+demo.mahjongways2.info
+demo2.mahjongways2.info
+dev.mahjongways2.xyz
+imap.netstore.com
+isd.servcloudmsft.online
+kuravluatinore.greajoe.live
+localhost.mahjongways2.info
+mail.gdjianpeng.store
+mail.hen-sim.store
+mail.pts-qc.store
+mail.sepstar-eti.online
+msd.servcloudmsft.online
+notexistsdemo2.mahjongways2.info
+outlook.netstore.net
+pop.netstore.com
+pop.netstore.net
+postcorestat.nanatechs.live
+purepowersolutions.us
+quedastaji.firetom.live
+scalagermine.adwinoe.live
+sdad.rockuopa.live
+sharepoint.unicredit.zip
+test.0b0.pub
+totihyo.live
+windowsupdate.help
+ywb.servcloudmsft.online
