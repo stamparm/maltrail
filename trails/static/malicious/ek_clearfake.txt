@@ -13632,6 +13632,10 @@ javiergomezmontero.eu
 rafelink.life
 retcap.eu
 
+# Reference: https://x.com/galkofahi/status/1946850488709685625
+
+http://89.23.97.179
+
 # Generic
 
 /a3A7qLVn/
