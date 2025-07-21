@@ -1147,3 +1147,12 @@ podathon.org/shell/
 
 /irj/cache.jsp
 /irj/helper.jsp
+
+# Reference: https://x.com/ShanHolo/status/1947187266968789165
+# Reference: https://x.com/andrewdanis/status/1946661591140778435
+# Reference: https://research.eye.security/sharepoint-under-siege/
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-07-19-Microsoft-SharePoint-vulnerabilities-CVE-2025-49704-and-49706.txt
+# Reference: https://www.virustotal.com/gui/file/92bb4ddb98eeaf11fc15bb32e71d0a63256a0ed826a03ba293ce3a8bf057a514/detection
+
+/_layouts/15/spinstall0.aspx
+/spinstall0.aspx
