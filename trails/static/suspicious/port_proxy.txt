@@ -38,7 +38,7 @@ hotspotproxy.tk
 
 ngrok.pro
 
-# Reference: https://pilot.validin.com/detail?find=ngrok%20-%20Online%20in%20One%20Line&type=raw&ref_id=c3be71a968e#tab=host_pairs (# 2025-06-26)
+# Reference: https://app.validin.com/detail?find=ngrok%20-%20Online%20in%20One%20Line&type=raw&ref_id=c3be71a968e#tab=host_pairs (# 2025-06-26)
 
 dev-ngrok.com
 stage-ngrok.com
