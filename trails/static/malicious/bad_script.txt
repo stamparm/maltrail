@@ -8876,6 +8876,10 @@ zenlio.weebly.com
 
 /Payload-nonsense.ps1
 
+# Reference: https://x.com/galkofahi/status/1947202313950474245
+
+/test-obf.ps1
+
 # Generic
 
 /5c0ca79.php
