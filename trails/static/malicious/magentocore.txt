@@ -15898,7 +15898,10 @@ shop-update.com
 mail.cloudflariz.com
 
 # Reference: https://x.com/sdcyberresearch/status/1947227311478034814
+# Refereence: https://app.validin.com/detail?find=e5c1988433bb8590b948&type=hash&ref_id=e202aff5280#tab=host_pairs (# 2025-07-21)
 
+antiddos-protection.net
+mmercadolibre.com
 kk.land
 
 # Generic
