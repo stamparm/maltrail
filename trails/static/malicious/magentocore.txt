@@ -15897,6 +15897,10 @@ cloudflariz.com
 shop-update.com
 mail.cloudflariz.com
 
+# Reference: https://x.com/sdcyberresearch/status/1947227311478034814
+
+kk.land
+
 # Generic
 
 /assets/lfg.js
