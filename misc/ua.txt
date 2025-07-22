@@ -2574,6 +2574,10 @@ DiabloNetTop
 
 Microsoft Edge/1.0
 
+# Reference: https://x.com/SimoKohonen/status/1947541823481594295
+
+OnlyScans
+
 # Misc
 
 information_schema
