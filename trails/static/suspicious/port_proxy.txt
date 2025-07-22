@@ -42,3 +42,8 @@ ngrok.pro
 
 dev-ngrok.com
 stage-ngrok.com
+
+# Reference: https://github.com/stamparm/maltrail/issues/19330
+# Reference: https://github.com/ekzhang/bore
+
+bore.pub
