@@ -8921,6 +8921,7 @@ booking-confirmation-id73545.com
 booking-confirmation-id73552.com
 booking-confirmation-id73553.com
 booking-confirmation-id73554.com
+booking-supporting6435634564.com
 booking.confirmation-id1610.com
 booking.confirmation-id1634.com
 booking.confirmation-id1663.com
@@ -8976,6 +8977,7 @@ confirmation-id1634.com
 confirmation-id1663.com
 confirmation-id1718.com
 confirmation-id271551.com
+confirmation-id3456828.com
 confirmation-id3901.com
 confirmation-id4343345.com
 confirmation-id501328648.com
@@ -9002,6 +9004,7 @@ guestverify5116-booking.com
 guestverify768411-booking.com
 help-desk-customer.com
 id5262911.live
+italypayments.site
 moneygram-safereceiving.online
 reservation3725.com
 reservations-hotel.com
