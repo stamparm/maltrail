@@ -516,6 +516,7 @@ login.quarles.exploreainow.com
 login.secprojectapptest.xyz
 login.teams.m365.acenm.com
 login.thecrabsterchief.work
+login.usersettings.gianteaglepharmacy.it.com
 login.zalopay.site
 login1-sow.com
 login1.miicrosofts.org
@@ -651,6 +652,7 @@ upsite.up-edu-mx.shop
 usa.appauthservice.online
 usa.miicrosofts.org
 usaa.miicrosofts.org
+usersettings.gianteaglepharmacy.it.com
 video.appauthservice.online
 vn3hg.miicrosofts.org
 vn3hg.offfec.me
