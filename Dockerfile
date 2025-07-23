@@ -1,7 +1,8 @@
 FROM python:3
 WORKDIR /opt/maltrail
-
+ENV PYTHONWARNINGS=ignore
 # Update OS
+
 RUN apt-get update && apt-get upgrade -y
 
 # Install dependencies
