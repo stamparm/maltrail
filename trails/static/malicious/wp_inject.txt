@@ -6784,3 +6784,8 @@ babychecker.xyz
 seka-amp5.com
 sekabetgiris.click
 sekabetgirislink.com
+
+# Reference: https://www.virustotal.com/gui/domain/125700.shop/detection
+
+125700.shop
+cdn.125700.shop
