@@ -374,6 +374,13 @@ ssoo.mlcrosofft.com
 45.83.28.67:4000
 51.89.242.47:4000
 
+# Reference: https://x.com/BlinkzSec/status/1948015815501938851
+
+164.92.199.192:4000
+43.162.116.186:4000
+43.162.122.245:4000
+43.162.123.118:4000
+
 # Generic
 
 /evilginx-linux-amd64.tar.gz
