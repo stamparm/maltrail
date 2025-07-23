@@ -5,7 +5,7 @@ WORKDIR /opt/maltrail
 RUN apt-get update && apt-get upgrade -y
 
 # Install dependencies
-RUN apt-get install -y libpcap-dev
+RUN apt-get install -y libpcap-dev cron
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
