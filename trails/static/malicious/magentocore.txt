@@ -15904,6 +15904,12 @@ antiddos-protection.net
 mmercadolibre.com
 kk.land
 
+# Reference: https://x.com/sdcyberresearch/status/1947994404901265579
+
+backupper.pro
+brilliantyor.com
+staticpaycloud.com
+
 # Generic
 
 /assets/lfg.js
