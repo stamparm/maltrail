@@ -6772,3 +6772,15 @@ ufeightyonehp.raygun.top
 wditemqy.enturbioaj.xyz
 yzsurfar.icercanokt.xyz
 zpcoarseyf.enturbioaj.xyz
+
+# Reference: https://blog.sucuri.net/2025/07/uncovering-a-stealthy-wordpress-backdoor-in-mu-plugins.html
+# Reference: https://app.validin.com/detail?find=eef34d90564665e86104e93143e22052&type=hash&ref_id=7c5e7091d6f#tab=host_pairs (# 2025-07-23)
+# Reference: https://app.validin.com/detail?find=W%2F%2233-Mt3XSbigbnhsci059eWiXwA6mWo%22&type=raw&ref_id=7c5e7091d6f#tab=host_pairs (# 2025-07-23)
+
+1870y4rr4y3d1k757673q.xyz
+arderphon.org
+asyabahisgiris.vip
+babychecker.xyz
+seka-amp5.com
+sekabetgiris.click
+sekabetgirislink.com
