@@ -15918,6 +15918,10 @@ backupper.pro
 brilliantyor.com
 staticpaycloud.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/85.192.27.0/relations
+
+svgstatic.org
+
 # Generic
 
 /assets/lfg.js
