@@ -13733,6 +13733,11 @@ norotbot-meta.com
 notrobot-metahorizon.com
 recaptcha-loginmeta.com
 recaptcha-metahorizon.com
+kakiem.xyz
+api.kakiem.xyz
+nam.kakiem.xyz
+elephant.nam.kakiem.xyz
+api.elephant.nam.kakiem.xyz
 
 # Generic
 
