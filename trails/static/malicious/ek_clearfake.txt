@@ -13719,6 +13719,21 @@ uxpilot.site
 worldsweb.xyz
 signed.scmdatasolution.com
 
+# Reference: https://x.com/GenThreatLabs/status/1948386666969751833
+
+antibot-meta.com
+autobypass-meta.com
+captcha-loginmeta.com
+clearcapcha.com
+facefbook.com
+loginpage-meta.com
+meta-captcha.com
+ncaptcha-meta.com
+norotbot-meta.com
+notrobot-metahorizon.com
+recaptcha-loginmeta.com
+recaptcha-metahorizon.com
+
 # Generic
 
 /a3A7qLVn/
