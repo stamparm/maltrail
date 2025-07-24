@@ -13697,6 +13697,28 @@ retcap.eu
 
 http://89.23.97.179
 
+# Reference: https://app.validin.com/detail?find=Verify%20You%20Are%20Human&type=raw&ref_id=f1f3056ec74#tab=host_pairs (# 2025-07-24)
+
+accs.finance
+alibaba6secure.com
+farmport.io
+framer-ai.website
+hcaptcha-verification-dev.developers-6c4.workers.dev
+incomm-secure.com
+internal-networks.com
+lovense-store.online
+meshy-ai.website
+office365-cloud-hub.com
+scmdatasolution.com
+sp-x.co
+test.agugai.kz
+the5ers.site
+tlpacc.co
+typerkplatforms.com
+uxpilot.site
+worldsweb.xyz
+signed.scmdatasolution.com
+
 # Generic
 
 /a3A7qLVn/
