@@ -5754,6 +5754,8 @@ g43og.bullpas.ru
 
 # Reference: https://app.validin.com/detail?find=Verify%20You%20Are%20Human&type=raw#tab=host_pairs (# 2025-05-26)
 
+cryptomessenger.io
+searchandfly.net
 flipdish.workers.dev
 hcaptcha-verification.flipdish.workers.dev
 
