@@ -13973,6 +13973,7 @@ opensansfont.com
 perfectdomains.world
 static-fonts.com
 staticfonts.com
+svgstatic.com
 ustatics.info
 webdevelopers.tools
 webdevtools.sa.com
