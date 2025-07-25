@@ -361,7 +361,11 @@ http://199.192.17.158
 sprut.pw
 
 # Reference: https://twitter.com/3xp0rtblog/status/1282765407066230785
+# Reference: https://x.com/RakeshKrish12/status/1948241229147218254
 
+breachforums.is
+theazot.icu
+theazot.xyz
 xss.is
 
 # Reference: https://app.any.run/tasks/51d9c835-850d-4632-83d9-f9f7dfb43699/
