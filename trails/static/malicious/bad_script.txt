@@ -8976,10 +8976,8 @@ zenlio.weebly.com
 /online-dating-verification-card.php
 /postgreexploit.py
 /ravufgate.php
-/revshell.php
 /screenshot_gate.php
 /shell.hta
-/shell.php
 /shell2.php
 /tgate.php
 /testgate.php
