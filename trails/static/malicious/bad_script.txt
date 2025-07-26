@@ -8953,6 +8953,7 @@ zenlio.weebly.com
 /DllQueVaiNoClient.pyc
 /dating-verification-card.php
 /evreigate.php
+/exploit.py
 /fcc-authenticazione.php
 /g-analytic.js
 /gate_tor.php
@@ -8974,7 +8975,11 @@ zenlio.weebly.com
 /jqwery.js
 /online-dating-verification-card.php
 /ravufgate.php
+/revshell.php
 /screenshot_gate.php
+/shell.hta
+/shell.php
+/shell2.php
 /tgate.php
 /testgate.php
 /verification-card.php
