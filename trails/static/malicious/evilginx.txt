@@ -667,6 +667,24 @@ ywnjb.offfec.me
 zalopay.site
 zdassets.loginpaxful.posteid-a365.com
 
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-07-26)
+
+http://13.61.105.64
+http://194.180.158.14
+103.124.105.76:4000
+104.193.69.173:443
+13.210.249.235:3333
+144.172.117.108:443
+159.223.109.10:3333
+18.221.91.216:3333
+196.251.72.3:4000
+3.106.188.239:3333
+35.228.18.60:3333
+45.9.149.15:4000
+8.218.222.240:443
+82.29.72.11:4000
+95.217.15.168:3333
+
 # Generic
 
 /evilginx-linux-amd64.tar.gz
