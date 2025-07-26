@@ -5144,6 +5144,10 @@ ai.lanpdt.org
 
 m.cpa2go.com
 
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-07-26)
+
+184.162.20.43:443
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
