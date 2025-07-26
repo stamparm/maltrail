@@ -768,6 +768,7 @@ podathon.org/shell/
 /revshell.php
 /revshell.py
 /revshell.pyc
+/revshellmail.php
 
 # Reference: https://twitter.com/bad_packets/status/1470914982405545986
 
