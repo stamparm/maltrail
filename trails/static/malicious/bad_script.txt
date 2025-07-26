@@ -8880,6 +8880,10 @@ zenlio.weebly.com
 
 /test-obf.ps1
 
+# Reference: https://x.com/smica83/status/1948657982016729224
+
+/WindowsUpdateService.ps1
+
 # Generic
 
 /5c0ca79.php
