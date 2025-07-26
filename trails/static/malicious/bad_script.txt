@@ -8882,7 +8882,8 @@ zenlio.weebly.com
 
 # Reference: https://x.com/smica83/status/1948657982016729224
 
-/WindowsUpdateService.ps1
+/windowsupdateservice.ps1
+/windowsupdateservice.vbs
 
 # Generic
 
