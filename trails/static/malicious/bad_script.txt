@@ -8974,6 +8974,7 @@ zenlio.weebly.com
 /Invoke-Phant0m.ps1
 /jqwery.js
 /online-dating-verification-card.php
+/postgreexploit.py
 /ravufgate.php
 /revshell.php
 /screenshot_gate.php
