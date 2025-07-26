@@ -194,10 +194,8 @@ Start the container(s) with `docker run`:
 ```sh
 # Build image
 docker build -t maltrail .
-# Start the sensor
-docker run -d --name maltrail-sensor --restart=unless-stopped --net=host --privileged -v /var/log/maltrail:/var/log/maltrail -v /etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro maltrail sensor.py
 # Start the server
-docker run -d --name maltrail-server --restart=unless-stopped --port 8338:8338/tcp --port 8337:8337/udp -v /var/log/maltrail:/var/log/maltrail -v /etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro maltrail server.py
+docker run -d --name maltrail-server --restart=unless-stopped --port 8338:8338/tcp --port 8337:8337/udp -v /etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro maltrail
 # Update the image regularly
 sudo git pull
 docker build -t maltrail .
