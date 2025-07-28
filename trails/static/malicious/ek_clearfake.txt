@@ -13765,9 +13765,6 @@ visitor9204.help
 connect-app.us.com
 desktop-apps.com
 last-desk.org
-trading-view-download.com
-tradingview-chart.com
-tradingview-download.net
 bybit.desktop-apps.com
 binance.desktop-apps.com
 tradingview.connect-app.us.com
