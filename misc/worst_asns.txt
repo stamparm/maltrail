@@ -5820,3 +5820,11 @@
 
 185.93.89.0/24,limitednetwork-as
 45.146.130.0/24,limitednetwork-as
+
+# AS209290
+# Reference: https://ipinfo.io/AS209290
+# Reference: https://x.com/abuse_ch/status/1949808703927906424
+
+178.22.24.0/24,galeon-as
+217.119.139.0/24,galeon-as
+45.132.49.0/24,galeon-as
