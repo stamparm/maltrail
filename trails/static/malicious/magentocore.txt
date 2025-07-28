@@ -13091,6 +13091,7 @@ ultrasys.shop
 uniquemask.homes
 vectors.guru
 vspec.info
+vtec.live
 webstat.help
 wikistat.wiki
 xtras.work
