@@ -7730,13 +7730,20 @@ bnpparibas.top
 
 6453verifycard-booking.com
 book-octrate.com
+bookconfirmid-1.com
+bookconfirmid-2.com
+bookconfirmid-4.com
 bookedehotelle2025.com
 bookedhotel42025.world
+booking-confirmation-id73546.com
+booking-confirmation-id73547.com
 booking-confirmation-id7357131.com
+booking-confirmation2913.com
 booking-customerprices341241.com
 booking-guestingreservation53672.com
 booking-guestingreservations295912.com
 booking-id032931.com
+booking-reservation.icu
 booking-supporting643563456.com
 booking.confirm-reservation.com
 booking.confirmation-id1012.com
@@ -7744,6 +7751,7 @@ booking.confirmation-id1175.com
 booking.confirmation-id1176.com
 booking.confirmation-id1177.com
 booking.confirmation-id1243613.com
+booking.confirmation-id1268.com
 booking.confirmation-id129.com
 booking.confirmation-id14332452.com
 booking.confirmation-id1437340.com
@@ -7791,6 +7799,7 @@ booking.confirmation-id33151.com
 booking.confirmation-id3940.com
 booking.confirmation-id4219.com
 booking.confirmation-id4438.com
+booking.confirmation-id4481.com
 booking.confirmation-id453467.com
 booking.confirmation-id4568.com
 booking.confirmation-id4810.com
@@ -7860,16 +7869,22 @@ cardverif-booking.help
 cardverif-booking.icu
 cardverif-booking.world
 cardverificati0n.icu
+cardverify0030-booking.com
 cardverify0031-booking.com
 cardverify007991-booking.com
 cardverify00881-booking.com
+cardverify0307-booking.com
+cardverify0601-booking.com
+cardverify0690-booking.com
 cardverify07971-booking.com
 cardverify0801-booking.com
+cardverify0960-booking.com
 cardverify09901-booking.com
 cardverify1101-booking.com
 cardverify11071-booking.com
 cardverify19251-booking.com
 cardverify2401-booking.com
+cardverify3060-booking.com
 cardverify3701-booking.com
 cardverify4231-booking.com
 cardverify4601-booking.com
@@ -7879,6 +7894,7 @@ cardverify564891-booking.com
 cardverify586411-booking.com
 cardverify60491-booking.com
 cardverify64991-booking.com
+cardverify6771-booking.com
 cardverify921-booking.com
 cardverify9391-booking.com
 cbookindata.com
@@ -7889,6 +7905,7 @@ confirmation-id1175.com
 confirmation-id1176.com
 confirmation-id1177.com
 confirmation-id1243613.com
+confirmation-id1268.com
 confirmation-id129.com
 confirmation-id14332452.com
 confirmation-id1437340.com
@@ -7921,6 +7938,7 @@ confirmation-id178716.com
 confirmation-id1788.com
 confirmation-id1795.com
 confirmation-id1864.com
+confirmation-id1901.com
 confirmation-id2137.com
 confirmation-id215712643.com
 confirmation-id2167.com
@@ -8004,7 +8022,10 @@ confirmed-booking8315.com
 confirmed-booking9832.com
 confirmed-id234224.cfd
 confirmed-id65437.world
+data-universal.live
 dpd-dostava.space
+econtpay-receiveshop.life
+econtpay.monster
 econtpay.shop
 euro56.click
 facebookmoney.world
@@ -8020,20 +8041,25 @@ hotelerbookeds2025.world
 hotelesbookedes2025.com
 hoteleybookedes2025.com
 hoteleybookedes2025.world
+hotelsadriana.com
 id-4212633.com
 id-confirm-reserve.com
+id3352112.live
 id627181.live
 monat-verif.world
 moneygram-safepay.site
 my-travel.top
 notebooksbilliger-ms.com
+page28455.com
 propertyalm-sourse.com
 rebook-room.click
+recarga-es.site
 recpalacmet-esre.com
 reserv-conf-today6543.com
 reservation-booking.icu
 reservation-id23461.com
 reservation8794.com
+ricarica-it.site
 secure-payment.cfd
 sicher-bezahlen.cfd
 simple-bookingit.com
@@ -8099,6 +8125,7 @@ webhotelslim-5190.com
 webhotelslim-5903.com
 western-union.click
 westernunion-internationalpayment.icu
+westernunion-safepayment.digital
 
 # Reference: https://app.validin.com/detail?type=hash&find=20e7bb2706bbaf38c90ea99336e81c8e#tab=host_pairs (# 2025-06-12)
 
