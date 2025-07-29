@@ -653,6 +653,8 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * David Brush
 * @Godwottery
 * Chris Wild (@briskets)
+* Keith Irwin (@ki9us)
+* Simon Szustkowski (@simonszu)
 
 ## Third-party integrations
 
