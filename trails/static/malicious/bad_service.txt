@@ -362,11 +362,13 @@ sprut.pw
 
 # Reference: https://twitter.com/3xp0rtblog/status/1282765407066230785
 # Reference: https://x.com/RakeshKrish12/status/1948241229147218254
+# Reference: https://x.com/WhichbufferArda/status/1950136842444997102
 
 breachforums.is
 theazot.icu
 theazot.xyz
 xss.is
+xssforum7mmh3n56inuf2h73hvhnzobi7h2ytb3gvklrfqm7ut3xdnyd.onion
 
 # Reference: https://app.any.run/tasks/51d9c835-850d-4632-83d9-f9f7dfb43699/
 # Reference: http://xmr-services.com/
