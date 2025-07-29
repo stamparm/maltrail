@@ -32,7 +32,9 @@ jobs:
         run: |
           docker push ghcr.io/${{ github.repository_owner }}/maltrail:${{ env.TAG }}
 
-      - name: Optional: Also tag latest
+      - name: Tag and push image as latest
+        if: success()
         run: |
           docker tag ghcr.io/${{ github.repository_owner }}/maltrail:${{ env.TAG }} ghcr.io/${{ github.repository_owner }}/maltrail:latest
           docker push ghcr.io/${{ github.repository_owner }}/maltrail:latest
+
