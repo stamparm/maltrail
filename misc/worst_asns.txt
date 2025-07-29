@@ -5818,6 +5818,7 @@
 # AS213790
 # Reference: https://ipinfo.io/AS213790
 
+104.250.164.0/24,limitednetwork-as
 185.93.89.0/24,limitednetwork-as
 45.146.130.0/24,limitednetwork-as
 
