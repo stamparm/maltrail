@@ -16,7 +16,7 @@
 
 - Version 0.83 -> 0.84 (Upcoming release)
 
-[=] Multiple improvements for Maltrail in Docker (Issue #19323)
+[=] Multiple improvements for Maltrail in Docker (Issues #19323, #19325)
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
