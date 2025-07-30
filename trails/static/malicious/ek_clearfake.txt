@@ -14528,6 +14528,13 @@ wemoips.com
 wepolix.com
 zdravaprehrana.ba
 
+# Reference: https://x.com/JAMESWT_WT/status/1950480775373308031
+
+admin-properties-captcha-extranet.com
+bstkmonitorscap.com
+cryptoprinto.com
+thebeckwithkitchen.com
+
 # Generic
 
 /a3A7qLVn/
