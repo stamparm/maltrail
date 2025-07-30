@@ -1150,3 +1150,9 @@ oo.ledgerverifvxy.com
 
 38.69.15.242:443
 microsoftcdnlicense.putinswin.es
+
+# Reference: https://x.com/SquiblydooBlog/status/1950522054362698134
+# Reference: https://www.virustotal.com/gui/file/464b3f10df5c6353b2c84ff3191726de03bcb56642471b0898fb0cb8cffa7fb2/detection
+
+41.216.188.120:8041
+relay.akudown.com
