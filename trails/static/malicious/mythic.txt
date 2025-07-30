@@ -4308,3 +4308,9 @@ zzcoldstores.northeurope.cloudapp.azure.com
 87.228.114.68:7443
 89.32.41.47:7443
 91.108.125.15:7443
+
+# Reference: https://x.com/SinghSoodeep/status/1950458333858832513
+# Reference: https://www.virustotal.com/gui/file/4b9208f5e2322a228d99e3b3ca642131bc08d677728fbe50a57de78959dc63c9/detection
+
+http://134.122.75.150
+http://209.38.207.232
