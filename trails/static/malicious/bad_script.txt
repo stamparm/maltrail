@@ -8886,9 +8886,12 @@ zenlio.weebly.com
 /windowsupdateservice.vbs
 
 # Reference: https://x.com/BlinkzSec/status/1950561656867582300
+# Reference: https://x.com/JAMESWT_WT/status/1950594741705355436
 # Reference: https://urlhaus.abuse.ch/url/3593127/
 
+/js/GYnHx.js
 /js/yO5EW.js
+/GYnHx.js
 /yO5EW.js
 
 # Generic
