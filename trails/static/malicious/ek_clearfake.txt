@@ -14535,6 +14535,16 @@ bstkmonitorscap.com
 cryptoprinto.com
 thebeckwithkitchen.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1950603942301225155
+# Reference: https://app.any.run/tasks/d54b5566-ab96-4efb-be35-30e310b17605
+# Reference: https://pilot.validin.com/detail?find=45.141.86.84&type=ip4&ref_id=63ad2787c9d#tab=resolutions
+
+admin-captcha-properties-095908403.com
+admin-extranetrsvrv-cstmrv.com
+bqkngsrepovies.com
+extranet-cancelledreserv4758.com
+mistyexycapt.com
+
 # Generic
 
 /a3A7qLVn/
