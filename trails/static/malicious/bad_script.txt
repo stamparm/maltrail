@@ -8885,6 +8885,12 @@ zenlio.weebly.com
 /windowsupdateservice.ps1
 /windowsupdateservice.vbs
 
+# Reference: https://x.com/BlinkzSec/status/1950561656867582300
+# Reference: https://urlhaus.abuse.ch/url/3593127/
+
+/js/yO5EW.js
+/yO5EW.js
+
 # Generic
 
 /5c0ca79.php
