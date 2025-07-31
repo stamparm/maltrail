@@ -14546,6 +14546,17 @@ bqkngsrepovies.com
 extranet-cancelledreserv4758.com
 mistyexycapt.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1950817121128058889
+# Reference: https://app.any.run/tasks/31b77bd9-0ff2-4bca-83ea-cf208a351900
+# Reference: https://app.any.run/tasks/efd591c5-5f35-4120-885b-c03ed75d02a5
+
+reservation-id2481.com
+reservation-id3198.com
+reservation-id8159.com
+booking.reservation-id2481.com
+booking.reservation-id3198.com
+booking.reservation-id8159.com
+
 # Generic
 
 /a3A7qLVn/
