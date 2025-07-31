@@ -14533,6 +14533,7 @@ zdravaprehrana.ba
 admin-properties-captcha-extranet.com
 bstkmonitorscap.com
 cryptoprinto.com
+qmabkngserccaptura.org
 thebeckwithkitchen.com
 
 # Reference: https://x.com/JAMESWT_WT/status/1950603942301225155
