@@ -6789,3 +6789,7 @@ sekabetgirislink.com
 
 125700.shop
 cdn.125700.shop
+
+# Reference: https://www.virustotal.com/gui/file/0e11d61eea17f99d19f5a5854c0c8defd83c74953443147eac8bbb1506a63200/detection
+
+advertipros.com
