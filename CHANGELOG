@@ -18,6 +18,7 @@
 
 [=] Multiple improvements for Maltrail in Docker (Issues #19323, #19325)
 [=] Multiple updates and optimizations for regular static trails and the whitelist
+[-] Removing defunct blacklist (Issue #19339)
 
 
 - Version 0.82 -> 0.83 (01 Jul 2025)
