@@ -6799,10 +6799,24 @@ advertipros.com
 
 rosition.my.id
 a0k9aqwv.rosition.my.id
+blebiprol.rosition.my.id
+blechuchuglachudop.rosition.my.id
+blubachaberubachaki.rosition.my.id
+busaprikarumeraba.rosition.my.id
 dusechobletasosu.rosition.my.id
 gletishikachoshe.rosition.my.id
-natolasenuglud.rosition.my.id
+kaboshinish.rosition.my.id
+kudotatrog.rosition.my.id
+kutolapremotretro.rosition.my.id
+likachivik.rosition.my.id
+muravoshononotri.rosition.my.id
+praprutranumechukake.rosition.my.id
+raminaru.rosition.my.id
+shimoshasoribu.rosition.my.id
 shorimuglorusalisha.rosition.my.id
+sokuchiki.rosition.my.id
+trapromablun.rosition.my.id
+treviblenutokeglubu.rosition.my.id
 
 # Reference: https://www.virustotal.com/gui/ip-address/67.212.173.77/relations
 
@@ -6810,3 +6824,5 @@ agitted.shop
 sundard.shop
 contrar.agitted.shop
 denough.sundard.shop
+
+
