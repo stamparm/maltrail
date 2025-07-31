@@ -21698,3 +21698,27 @@ saludi.cyou
 # Reference: https://github.com/hagezi/dns-blocklists/issues/5465
 
 ios-privacy.com
+
+# Reference: https://www.virustotal.com/gui/file/a82c4eb2d3082afb98537324bd2122c76dc0ae3412dfefafcf7b58c4131c4744/detection
+# Reference: https://www.virustotal.com/gui/file/f1029d116d6a2de72b33a792a9621f11d0bddff0c0fd0604398408dbcf8ce9a5/detection
+
+rosition.my.id
+a0k9aqwv.rosition.my.id
+blebiprol.rosition.my.id
+blechuchuglachudop.rosition.my.id
+blubachaberubachaki.rosition.my.id
+busaprikarumeraba.rosition.my.id
+dusechobletasosu.rosition.my.id
+gletishikachoshe.rosition.my.id
+kaboshinish.rosition.my.id
+kudotatrog.rosition.my.id
+kutolapremotretro.rosition.my.id
+likachivik.rosition.my.id
+muravoshononotri.rosition.my.id
+praprutranumechukake.rosition.my.id
+raminaru.rosition.my.id
+shimoshasoribu.rosition.my.id
+shorimuglorusalisha.rosition.my.id
+sokuchiki.rosition.my.id
+trapromablun.rosition.my.id
+treviblenutokeglubu.rosition.my.id
