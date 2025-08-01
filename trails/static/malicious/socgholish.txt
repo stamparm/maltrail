@@ -5148,6 +5148,13 @@ m.cpa2go.com
 
 184.162.20.43:443
 
+# Reference: https://x.com/YungBinary/status/1951306227562033354
+# Reference: https://www.virustotal.com/gui/ip-address/45.56.162.61/relations
+# Reference: https://www.esentire.com/blog/unpacking-shadowcoils-ransomhub-ex-affiliate-credential-harvesting-tool
+# Reference: https://github.com/eSentire/iocs/blob/main/ShadowCoil/ShadowCoil-IoCs-07-24-2025.txt
+
+app.novationseo.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
