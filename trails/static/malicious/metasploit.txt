@@ -6178,3 +6178,10 @@ http://103.105.103.3
 8.138.233.120:8443
 82.118.20.29:443
 85.86.208.60:8443
+
+# Reference: https://www.virustotal.com/gui/file/eecf36ae7f9bb7de0d81bc9d3bab29608e2fcbbce88d97430edf51582e57ba3e/detection
+# Reference: https://www.virustotal.com/gui/file/d2cc7954097cad1013b92842b267a271d3ee23365e6307c19d24f292c12f10f9/detection
+# Reference: https://www.virustotal.com/gui/file/ba4e4998c63eb854586c479c2e7fbbb8f60ad85cbbb46b8194dd08ced1d84b48/detection
+# Reference: https://www.virustotal.com/gui/file/4028209693ebde52a89f70b53ed757ae3a33cddabbfcb3f8343e5132f783ea5b/detection
+
+107.189.18.66:4444
