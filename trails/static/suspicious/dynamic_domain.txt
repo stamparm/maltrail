@@ -3768,3 +3768,7 @@ ddnss.ch
 # Reference: https://www.virustotal.com/gui/domain/mydns.bz/relations
 
 mydns.bz
+
+# Reference: https://www.virustotal.com/gui/domain/live-on.net/relations
+
+live-on.net
