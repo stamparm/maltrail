@@ -1067,3 +1067,8 @@ tlon.pegetloanability.com
 
 http://1.192.136.196
 http://1.192.136.207
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/6913
+# Reference: https://www.virustotal.com/gui/file/c62a99449d7adc6f2005c665272db711fdc8ce95307bc557d6be069cc524f799/detection
+
+vanced.to
