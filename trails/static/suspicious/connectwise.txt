@@ -1156,3 +1156,9 @@ microsoftcdnlicense.putinswin.es
 
 41.216.188.120:8041
 relay.akudown.com
+
+# Reference: https://x.com/abuse_ch/status/1952401259375337589
+# Referecne: https://www.virustotal.com/gui/file/7b609924bfb9edfbc69cd7394ce44d944c75ed62ad72465b2710bd4dc59aabc1/detection
+
+51.89.204.89:8041
+wakilamakila.com
