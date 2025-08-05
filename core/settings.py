@@ -27,6 +27,7 @@ VERSION = "0.84"
 HOMEPAGE = "https://maltrail.github.io"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
+IS_LINUX = "linux" in PLATFORM
 IS_SENSOR = "sensor" in sys.argv[0]
 USER_AGENT = "%s/%s (%s/py%s/x%d)" % (NAME, VERSION, re.sub(r"\d$", "", sys.platform), sys.version.split(' ')[0], struct.calcsize('P') * 8)
 DATE_FORMAT = "%Y-%m-%d"
@@ -206,10 +207,11 @@ def _get_total_physmem():
             pass
 
     if not retval:
-        try:
-            retval = 1024 * int(re.search(r"KiB Mem:\s*\x1b[^\s]+\s*(\d+)", subprocess.check_output("top -n 1", shell=True, stderr=subprocess.STDOUT)).group(1))
-        except:
-            pass
+        if IS_LINUX:
+            try:
+                retval = 1024 * int(re.search(r"KiB Mem:\s*\x1b[^\s]+\s*(\d+)", subprocess.check_output("top -n 1", shell=True, stderr=subprocess.STDOUT)).group(1))
+            except:
+                pass
 
     return retval
 
