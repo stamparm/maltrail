@@ -178,36 +178,25 @@ python server.py
 
 - For **Docker**
 
-Download maltrail:
+Currently only the server is available as a container image.
 
-```sh
-cd /usr/local/src
-sudo git clone https://github.com/stamparm/maltrail.git
-cd maltrail
-sudo wget -P /etc https://raw.githubusercontent.com/stamparm/maltrail/master/maltrail.conf
-# Edit the config
-sudo $EDITOR /etc/maltrail.conf
-```
-
-Start the container(s) with `docker run`: 
+Start the container with `docker run`: 
 
 ```sh
 # Build image
-docker build -t maltrail .
 # Start the server
-docker run -d --name maltrail-server --restart=unless-stopped --port 8338:8338/tcp --port 8337:8337/udp -v /etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro maltrail
+docker run -d --name maltrail --restart=unless-stopped --port 8338:8338/tcp --port 8337:8337/udp -v /etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro ghcr.io/stamparm/maltrail:latest
 # Update the image regularly
-sudo git pull
-docker build -t maltrail .
+docker stop maltrail
+docker pull ghcr.io/stamparm/maltrail:latest
+docker start maltrail
 ```
+
+If you need a fixed version, change the `docker run` command to not start `ghcr.io/stamparm/maltrail:latest` but for example `ghcr.io/stamparm/maltrail:0.84`
 
 ... or with `docker compose`:
 
 ```sh
-# For the sensor
-docker compose up -d sensor
-# For the server
-docker compose up -d server
 # For both
 docker compose up -d
 # Update image regularly
