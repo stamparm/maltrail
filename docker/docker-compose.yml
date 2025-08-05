@@ -1,16 +1,16 @@
 services:
 
-  sensor:
-    container_name: maltrail-sensor
-    build: .
-    command: sensor.py
-    restart: unless-stopped
-    network_mode: host
-    privileged: true
-    volumes:
-      - "/etc/localtime:/etc/localtime:ro"
-      - "/etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro"
-      - "/var/log/maltrail:/var/log/maltrail"
+  # sensor:
+  #   container_name: maltrail-sensor
+  #   build: .
+  #   command: sensor.py
+  #   restart: unless-stopped
+  #   network_mode: host
+  #   privileged: true
+  #   volumes:
+  #     - "/etc/localtime:/etc/localtime:ro"
+  #     - "/etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro"
+  #     - "/var/log/maltrail:/var/log/maltrail"
     
   server:
     container_name: maltrail-server
