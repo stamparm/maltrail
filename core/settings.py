@@ -180,7 +180,16 @@ def _get_total_physmem():
 
     if not retval:
         try:
-            retval = int(re.search(r"hw\.(physmem|memsize):\s*(\d+)", subprocess.check_output("sysctl hw", shell=True, stderr=subprocess.STDOUT)).group(2))
+            output = subprocess.check_output(['sysctl', '-n', 'hw.memsize'], universal_newlines=True, stderr=subprocess.PIPE)
+            retval = int(output.strip())
+        except:
+            pass
+
+    if not retval:
+        try:
+            # Fallback to original sysctl regex method for other BSD systems
+            output = subprocess.check_output("sysctl hw", shell=True, stderr=subprocess.STDOUT, universal_newlines=True)
+            retval = int(re.search(r"hw\.(physmem|memsize):\s*(\d+)", output).group(2))
         except:
             pass
 
