@@ -4124,3 +4124,16 @@ zeaqeccyd2.darkforums.st
 # Reference: https://urlscan.io/result/01985696-1128-7218-a151-5d34c5c1a12c/
 
 grams.top
+
+# Reference: https://x.com/BlinkzSec/status/1952497025464824214
+# Reference: https://app.validin.com/detail?find=%20SPAM%20TELEGRAM&type=raw&ref_id=3f12f0f0ff6#tab=host_pairs (# 2025-08-05)
+
+cdspam.btwo.my.id
+kontolmemekpecah.goodsite.my.id
+kontolodon.btwo.my.id
+mem.btwo.my.id
+memberilaiks.btwo.my.id
+memberilaiks.goodsite.my.id
+memol.btwo.my.id
+sijelek.btwo.my.id
+varhadgoblok.goodsite.my.id
