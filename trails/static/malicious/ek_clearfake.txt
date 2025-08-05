@@ -14836,6 +14836,11 @@ booking.reservation-id2481.com
 booking.reservation-id3198.com
 booking.reservation-id8159.com
 
+# Reference: https://www.trendmicro.com/en_us/research/25/g/lumma-stealer-returns.html
+# Reference: https://documents.trendmicro.com/assets/txt/newLummastealer_Blog_IOCsbj7a3x3.txt
+
+vfy2.help
+
 # Generic
 
 /a3A7qLVn/
