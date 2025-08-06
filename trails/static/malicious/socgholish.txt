@@ -5155,6 +5155,14 @@ m.cpa2go.com
 
 app.novationseo.com
 
+# Reference: https://www.silentpush.com/blog/socgholish/
+
+cp.envisionfonddulac.biz
+docs.nynovation.com
+download.romeropizza.com
+images.therunningink.com
+mgmt.studerandson.us
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
