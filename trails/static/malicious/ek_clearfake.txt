@@ -7234,7 +7234,6 @@ verif.rabonet.xyz
 
 # Reference: https://app.validin.com/detail?find=6018807017afead14417566f975ffdb4&type=hash#tab=host_pairs (# 2025-06-03)
 
-2pan.ru
 adminbookingverify.com
 adonlss.com
 booking-refund.expertinquiry.com
