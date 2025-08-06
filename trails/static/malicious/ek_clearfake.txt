@@ -14841,6 +14841,12 @@ booking.reservation-id8159.com
 
 vfy2.help
 
+# Reference: https://x.com/JAMESWT_WT/status/1952729228975153388
+# Reference: https://app.any.run/tasks/6ecc79a1-a83f-4297-bc8c-bfb84e46d54d
+
+settings-reserve.com
+booking.settings-reserve.com
+
 # Generic
 
 /a3A7qLVn/
