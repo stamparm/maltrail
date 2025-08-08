@@ -14914,6 +14914,26 @@ vfy2.help
 settings-reserve.com
 booking.settings-reserve.com
 
+# Reference: https://github.com/hagezi/dns-blocklists/issues/6944
+
+admin-extranetrsvrv-captcha.com
+badrewie-extranet.com
+capchabot.cc
+cf-unstable.media
+claud-rewies.com
+dmnbkv.com
+extrantpage-stats.com
+irinaparaschiv.com
+iyyta.com
+mdmvrfd.com
+reply-youtube.com
+secures-extranet.com
+vrijetijdwinkel.nl
+youtube-site.com
+youtude-apprv.com
+booking.extrantpage-stats.com
+booking.groupse-extranet.com
+
 # Generic
 
 /a3A7qLVn/
