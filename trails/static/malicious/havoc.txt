@@ -5190,6 +5190,11 @@ http://54.188.179.41
 91.214.78.134:443
 93.95.231.28:443
 
+# Reference: https://www.fortinet.com/blog/threat-research/havoc-sharepoint-with-microsoft-graph-api-turns-into-fud-c2
+# Reference: https://www.virustotal.com/gui/file/2fcf83c80bf77a388fad8b11afdef875d8ccb810c60e34377c4cee82daa26ac7/detection
+
+hao771.sharepoint.com
+
 # Generic
 
 /Havoc/payload/
