@@ -8894,6 +8894,14 @@ zenlio.weebly.com
 /GYnHx.js
 /yO5EW.js
 
+# Reference: https://x.com/BlinkzSec/status/1954200067339882732
+# Reference: https://urlhaus.abuse.ch/host/162.248.53.119/
+
+/c2-callback
+/enable-rdp.ps1
+/port-check.ps1
+/rev-shell.ps1
+
 # Generic
 
 /5c0ca79.php
