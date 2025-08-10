@@ -15011,6 +15011,14 @@ youtude-apprv.com
 booking.extrantpage-stats.com
 booking.groupse-extranet.com
 
+# Reference: https://x.com/skocherhan/status/1954291568539521168
+
+brokenmommah.com
+confirmation-id1231.com
+filllrooominfo.com
+guestcheck0442-booking.com
+booking.confirmation-id1231.com
+
 # Generic
 
 /a3A7qLVn/
