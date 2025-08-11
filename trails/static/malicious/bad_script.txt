@@ -8902,6 +8902,61 @@ zenlio.weebly.com
 /port-check.ps1
 /rev-shell.ps1
 
+# Reference: https://x.com/BlinkzSec/status/1954963598205391364
+# Reference: https://urlhaus.abuse.ch/host/files.catbox.moe/ (# 2025-08-11)
+
+/17wzez.ps1
+/1nl3hc.ps1
+/1y70f1.ps1
+/2cy9wa.ps1
+/2y6fw1.ps1
+/3gor9i.ps1
+/3yb2zi.ps1
+/45qt92.ps1
+/4tzo43.ps1
+/79wgg6.ps1
+/8yh3e3.ps1
+/9gat3x.ps1
+/9rj9f3.ps1
+/b06gt5.ps1
+/b1uf2z.ps1
+/cia7id.ps1
+/d9bi50.ps1
+/ei5hyq.ps1
+/et18ob.ps1
+/fz2xmo.ps1
+/g49vy4.ps1
+/g8wt4y.ps1
+/gd3nrr.ps1
+/izoft0.ps1
+/kj00kw.ps1
+/kl0sz4.ps1
+/km5328.ps1
+/kx005t.ps1
+/l11se7.ps1
+/l18oc0.ps1
+/lrdj3s.ps1
+/m5ixin.ps1
+/ne9m5w.ps1
+/ntm9ag.ps1
+/q8ynky.ps1
+/qivmzx.ps1
+/qjv06a.ps1
+/qqlgou.ps1
+/qrz18p.ps1
+/r8qjpc.ps1
+/sobl4d.ps1
+/tt6634.ps1
+/ugok5m.ps1
+/v0y9uq.ps1
+/vj11kv.ps1
+/vqhzwh.ps1
+/x5swnw.ps1
+/x75eie.ps1
+/yfz4t5.ps1
+/yoomcy.ps1
+/yr53yk.ps1
+
 # Generic
 
 /5c0ca79.php
