@@ -15947,6 +15947,14 @@ staticpaycloud.com
 
 svgstatic.org
 
+# Reference: https://x.com/sdcyberresearch/status/1954917161681457152
+
+elementatorprof.info
+ghanamusthi.xyz
+jscode.cloud
+orristhekyone.site
+wsocket.store
+
 # Generic
 
 /assets/lfg.js
