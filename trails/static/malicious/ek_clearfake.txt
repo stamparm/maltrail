@@ -15030,6 +15030,12 @@ filllrooominfo.com
 guestcheck0442-booking.com
 booking.confirmation-id1231.com
 
+# Reference: https://github.com/hagezi/dns-blocklists/issues/6961
+
+cuanauntungan.xyz
+desetftinvncial.co
+youtube-apprv.com
+
 # Generic
 
 /a3A7qLVn/
