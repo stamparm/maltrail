@@ -15948,11 +15948,18 @@ staticpaycloud.com
 svgstatic.org
 
 # Reference: https://x.com/sdcyberresearch/status/1954917161681457152
+# Reference: https://www.virustotal.com/gui/ip-address/89.208.113.79/relations
+# Reference: https://www.virustotal.com/gui/ip-address/94.140.114.137/relations
+# Reference: https://www.virustotal.com/gui/ip-address/94.140.114.19/relations
 
 elementatorprof.info
 ghanamusthi.xyz
+jsanalytic.cloud
 jscode.cloud
+jsstat.cloud
 orristhekyone.site
+neritetarnerbi.xyz
+ppheaimondon.site
 wsocket.store
 
 # Generic
