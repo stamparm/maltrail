@@ -15046,6 +15046,10 @@ allworldinmymo.cloud
 daskldalkdalskdktktk.cloud
 jdaklsjdklajsldkjd.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/87.120.93.72/relations
+
+archeckfix.com
+
 # Generic
 
 /a3A7qLVn/
