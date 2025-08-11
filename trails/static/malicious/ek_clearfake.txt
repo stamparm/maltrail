@@ -15031,11 +15031,20 @@ guestcheck0442-booking.com
 booking.confirmation-id1231.com
 
 # Reference: https://github.com/hagezi/dns-blocklists/issues/6961
+# Reference: https://www.virustotal.com/gui/file/9ae5a7437fd0ac0e05302a3b328852f7b5200b46e2ab5ed003d8b10c0902e084/detection
 
 cuanauntungan.xyz
 desetftinvncial.co
 youtube-apprv.com
 zincheckyou.cloud
+
+# Reference: https://www.virustotal.com/gui/file/f3f93121729cf4510559602d47a2ec2dd822f8987da24658bc3521e967b81951/detection
+# Reference: https://www.virustotal.com/gui/file/e22c15676b6cef674edc6cf27e22b9c05defb9c9f196372d16680ecd7bd9a49d/detection
+# Reference: https://www.virustotal.com/gui/file/9ae5a7437fd0ac0e05302a3b328852f7b5200b46e2ab5ed003d8b10c0902e084/detection
+
+allworldinmymo.cloud
+daskldalkdalskdktktk.cloud
+jdaklsjdklajsldkjd.com
 
 # Generic
 
