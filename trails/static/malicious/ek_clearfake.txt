@@ -5763,10 +5763,13 @@ hcaptcha-verification.flipdish.workers.dev
 # Reference: https://www.virustotal.com/gui/ip-address/144.172.93.112/relations
 
 doc.masplenedigitalworld.com
+doc.morlockaerospace.com
 doc.northamericanlockandsafe.com
+doc.propertyshots.com
 docs.cryptellegram.com
 docs.desaindigital.com
 docs.morlockaerospace.com
+docs.northamericanlockandsafe.com
 docs.scmdatasolution.com
 docs.yourdigitaldoc.com
 emails.sortadrunk.org
@@ -5779,6 +5782,7 @@ member.rkfd.com
 opt.aweejobby.com
 project.yourdigitaldoc.com
 projectsview.yourdigitaldoc.com
+protected.mudchute.com
 r.serverpit.com
 register.biljobs.com
 secureinvites.unids.com
@@ -5789,9 +5793,12 @@ shared.anteus.com
 shared.araccius.com
 shared.cryptellegram.com
 shared.docuprint.com.ar
+shared.lintelgt.com
 shared.protelecon.com
+shared.runyeard.com
 shared.signalhut.com
 shared.teamradicus.com
+shared.techartsserver.com
 shared.thrilladesign.com
 shared.yourdigitaldoc.com
 shares.cryptellegram.com
@@ -5799,6 +5806,8 @@ shares.yourdigitaldoc.com
 signed.anteus.com
 signed.araccius.com
 signed.desaindigital.com
+signed.klockars.com
+solution.ionexusa.com
 web.unids.com
 
 # Reference: https://app.validin.com/detail?find=Verify%20Your%20Request&type=raw#tab=host_pairs (# 2025-05-26)
