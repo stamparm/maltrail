@@ -15953,6 +15953,7 @@ svgstatic.org
 # Reference: https://www.virustotal.com/gui/ip-address/94.140.114.19/relations
 
 elementatorprof.info
+elementatorstati.site
 ghanamusthi.xyz
 jsanalytic.cloud
 jscode.cloud
