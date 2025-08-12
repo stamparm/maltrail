@@ -15064,6 +15064,19 @@ archeckfix.com
 www-account-booking.com
 restric-access.www-account-booking.com
 
+# Reference: https://www.virustotal.com/gui/file/6b52aaa2c741abdf9432bd3d9a2be3bfed0df131d3e259def9057dc21260eff4/detection
+
+admin-captcha-properties-09118403.com
+admin-extranetrsvrv-cstmrq.com
+extranet-admin-reservations2951.com
+reservation-124235256.live
+reservation-1923653482.live
+reservation-436328954.live
+reservation-45236215682.com
+reservation-462354282.live
+reservation-6324562126.live
+reservation-786543224.live
+
 # Generic
 
 /a3A7qLVn/
