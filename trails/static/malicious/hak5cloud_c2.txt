@@ -1878,6 +1878,7 @@ c2.danclark.net
 c2.dualzit.nl
 c2.gatewaycsb.co
 c2.hackbox.se
+c2.homelabs.pro
 c2.huntergulley.com
 c2.insecurity.be
 c2.istealyourdomain.org
@@ -1886,9 +1887,13 @@ c2.lukastheblack.net
 c2.mushou.de
 c2.netqa.de
 c2.nifty-is.com
+c2.onbudget.gr
+c2.ondrejsramek.cz
 c2.op-center.com
 c2.rh-dev.io
 c2.sccs.limited
+c2.securedge.live
+c2.sneel.net
 c2.swisscheesesecurity.net
 c2.tabris2025.duckdns.org
 c2.test.you-tor.com
@@ -1898,8 +1903,10 @@ c2.wuncler-security.xyz
 c2.zerobrainsystems.de
 c2server.uksouth.cloudapp.azure.com
 c3.daigle.cc
+cloud-c2.poneycorp.fr
 cloud.mikebosland.com
 cloud2.mikebosland.com
+cloudc2.click
 cloudc2.velkura.online
 cloudc2labor.org
 cpanel.biotechcm.com
@@ -1913,6 +1920,7 @@ cpcontacts.marketstallco.com.au
 cpcontacts.polishedcontent.com.au
 cyber.jp.net
 dashbord.thebeastdev.dk
+democ2.aspirets.com
 dev.avemquirks.com.au
 dev.cliftonspringsgolfclub.com.au
 dev.marketstallco.com.au
@@ -1937,6 +1945,8 @@ h5.redwolfpack.nl
 h5c2.istormsolutions.online
 hackconway.com
 hades.theunderworldproject.net
+hak5.area404.nl
+hak5.byronwai.xyz
 heartichokehack.com
 hk5.8eer.in
 ishimoo.redherringdigital.com.au
@@ -1977,10 +1987,12 @@ staging.redherringdigital.com.au
 store.vipers.dk
 suanite-se.fracturelabs.red
 task.thebeastdev.dk
+techlebox.net
 thegrazingfox.redherringdigital.com.au
 theloveshop.me
 tracker.thebeastdev.dk
 uat.marketstallco.com.au
+v1202504268565335359.yourpserver.net
 vault.thebeastdev.dk
 vmi350204.corjol.nl
 vmi579810.contaboserver.net
@@ -2001,6 +2013,7 @@ widicloudc2.duckdns.org
 williamstownfc.au
 xktc2.net
 yarraville.redherringdigital.com.au
+zammad.marxup.de
 
 # Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-06-14)
 
