@@ -15303,6 +15303,16 @@ elternrat-bezaarau.ch
 ministrycanvapro.com
 t4t-solutions.com
 
+# Reference: https://x.com/1ZRR4H/status/1955712146907476468
+# Reference: https://www.virustotal.com/gui/file/0b0dd3ec8d729222e9041377aa4cf64d22d69eaba1999c1c4cd30dfdac32e14a/detection
+
+captchamicrosoft.com
+copilotmicrosoftus.com
+api.captchamicrosoft.com
+logs.captchamicrosoft.com
+logs.copilotmicrosoftus.com
+papi.copilotmicrosoftus.com
+
 # Generic
 
 /a3A7qLVn/
