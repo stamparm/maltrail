@@ -15232,6 +15232,11 @@ visitor885061.help
 visitor9204.help
 visitor952816.help
 
+# Reference: https://x.com/Fact_Finder03/status/1955574944567574731
+# Reference: https://urlscan.io/result/0198a2f2-948f-71ee-b2e4-8476ea8c8a44/
+
+capazmente.com
+
 # Generic
 
 /a3A7qLVn/
