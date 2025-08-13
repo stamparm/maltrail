@@ -2578,6 +2578,11 @@ Microsoft Edge/1.0
 
 OnlyScans
 
+# Reference: https://x.com/naumovax/status/1939722076262203490
+
+DataSender
+Zephyr-Downloader
+
 # Misc
 
 information_schema
