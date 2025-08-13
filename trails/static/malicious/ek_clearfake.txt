@@ -15206,6 +15206,21 @@ reservation-462354282.live
 reservation-6324562126.live
 reservation-786543224.live
 
+# Reference: https://x.com/ValidinLLC/status/1955336311918956865
+
+complaintform-id2587.help
+complaintform-id9205.help
+extranet-manage.help
+formcomplaint-id8173.help
+reservation-id129245.help
+reservation-id2417.help
+visitor31740.help
+visitor577832.help
+visitor86326.help
+visitor885061.help
+visitor9204.help
+visitor952816.help
+
 # Generic
 
 /a3A7qLVn/
