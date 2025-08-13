@@ -15237,6 +15237,43 @@ visitor952816.help
 
 capazmente.com
 
+# Reference: https://app.validin.com/detail?find=Checking%20if%20you%20are%20human&type=raw&ref_id=80bddb168d2#tab=host_pairs (# 2025-08-13)
+
+account.pendantkart.in
+animefam.site
+architekturschmiede.com
+autodiscover.fnfworld.com
+bhavitutors.com
+clickuhome.com.hk
+cpcalendars.techtop24.com
+cuanaofficial.xyz
+dcnmjewels.com
+digitechx.in
+email.closeoutstocks.com
+fidiabags.it
+fnfworld.com
+follow.techtop24.com
+gesundeswasser.co
+gmcjalgaon.org
+gotize.com
+hydrotherm.mobi
+hydrothermhotwatersystems.com.au
+it885.com
+martinpintado.com
+otticaramoni.com
+pflbx.sonoportal.com
+revistadiversidadcultural.com
+robobotics.eu
+scholairehub.com
+scillarodriguez.com
+sdkksdk.icu
+showcase.mesutronic.de
+techtop24.com
+tutorspecialneeds.bhavitutors.com
+webdisk.techtop24.com
+wl2001s.cn.eu.org
+wl2001s.uk.eu.org
+
 # Generic
 
 /a3A7qLVn/
