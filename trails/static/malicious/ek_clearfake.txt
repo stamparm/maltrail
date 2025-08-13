@@ -15296,6 +15296,13 @@ proadvancehub.com
 signatrustup.com
 tersmoles.com
 
+# Reference: https://app.validin.com/detail?find=137815fd81617dcc986bfb8a42f472cb&type=hash&ref_id=80bddb168d2#tab=host_pairs (# 2025-08-13)
+
+bharatnamkeens.com
+elternrat-bezaarau.ch
+ministrycanvapro.com
+t4t-solutions.com
+
 # Generic
 
 /a3A7qLVn/
