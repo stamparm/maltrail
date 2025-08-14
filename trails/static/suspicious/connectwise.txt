@@ -1162,3 +1162,9 @@ relay.akudown.com
 
 51.89.204.89:8041
 wakilamakila.com
+
+# Reference: https://x.com/marsomx_/status/1956030476625313889
+# Reference: https://www.virustotal.com/gui/file/6eb97a0f7fe52f2cd9bdf02b5c0858c17e66c69d7d3cebf093c8e024366fe141/detection
+
+144.172.103.247:8041
+relay.year000001.com
