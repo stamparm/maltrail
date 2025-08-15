@@ -15965,6 +15965,15 @@ neritetarnerbi.xyz
 ppheaimondon.site
 wsocket.store
 
+# Reference: https://x.com/csideai/status/1948802854308782471
+# Reference: https://app.validin.com/detail?type=hash&find=0e829cc271bdcdfe9b25c06d9ae10c7a#tab=host_pairs (# 2025-08-15)
+# Reference: https://app.validin.com/detail?find=6f98e7ef8dc5672e4f85e84c7d68d6b2&type=hash&ref_id=c4e3993f306#tab=host_pairs (# 2025-08-15)
+
+heimerikszenit.top
+meriksshadowfiend.top
+pixelnotinggo.top
+pixelnowsearchae.top
+
 # Generic
 
 /assets/lfg.js
