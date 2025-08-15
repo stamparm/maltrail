@@ -7480,6 +7480,7 @@ hxint.pics
 hxjet.pics
 hxkit.pics
 hxlot.pics
+hxmax.pics
 indid.buzz
 internl.xyz
 intrst.sbs
