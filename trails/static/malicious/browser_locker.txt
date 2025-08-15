@@ -21722,3 +21722,7 @@ shorimuglorusalisha.rosition.my.id
 sokuchiki.rosition.my.id
 trapromablun.rosition.my.id
 treviblenutokeglubu.rosition.my.id
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/7000
+
+thebathory.online
