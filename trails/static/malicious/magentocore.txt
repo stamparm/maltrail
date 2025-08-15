@@ -15972,9 +15972,83 @@ wsocket.store
 # Reference: https://x.com/csideai/status/1948802854308782471
 # Reference: https://app.validin.com/detail?type=hash&find=0e829cc271bdcdfe9b25c06d9ae10c7a#tab=host_pairs (# 2025-08-15)
 # Reference: https://app.validin.com/detail?find=6f98e7ef8dc5672e4f85e84c7d68d6b2&type=hash&ref_id=c4e3993f306#tab=host_pairs (# 2025-08-15)
+# Reference: https://app.validin.com/lookalikes?limit=1000&lookback=90&depth=2&find=%2F%5E%5Ba-z%5D%7B0%2C%7Dmeriks%5Ba-z%5D%2B%5C.top%24%2F (# 2025-08-15)
 
+antimeriksbuy.top
+followmeriksshop.top
+goldenmeriksapple.top
 heimerikszenit.top
+meriksalienspace.top
+meriksbanormute.top
+meriksbattle.top
+meriksbeginsmart.top
+meriksbrobronze.top
+merikscanditation.top
+merikscanuseeme.top
+merikschecked.top
+merikscheriks.top
+meriksconditioner.top
+meriksdawnwest.top
+meriksdjonsina.top
+meriksferious.top
+meriksfreefire.top
+meriksgalaxytv.top
+meriksgamecs.top
+meriksgivechance.top
+meriksglobalelite.top
+meriksglobusmore.top
+meriksgoblinnike.top
+meriksgoblinsquad.top
+merikshaisenberg.top
+meriksiceger.top
+meriksimbalance.top
+meriksitiliano.top
+merikslimons.top
+meriksmanager.top
+meriksmoonsun.top
+meriksnewplayer.top
+meriksnewstuff.top
+meriksoldmoney.top
+meriksonevsone.top
+meriksoperstyle.top
+merikspentruzeche.top
+meriksplatinum.top
+meriksrainstreet.top
+meriksralph.top
+meriksrespondeble.top
+meriksscouteronly.top
+meriksscream.top
+merikssearchglobal.top
+merikssecondtimer.top
+meriksseshka.top
 meriksshadowfiend.top
+meriksshedule.top
+meriksshikflow.top
+meriksshmeriks.top
+merikssimplegood.top
+meriksslowlyemotion.top
+merikssmackthat.top
+merikssmarttvchese.top
+merikssmothing.top
+merikssmurfik.top
+merikssnowbord.top
+merikssnowfails.top
+merikssnowfollballs.top
+merikssporttvshow.top
+merikssrezforme.top
+meriksstandart.top
+meriksstantion.top
+meriksstarbucks.top
+meriksstaylife.top
+meriksstreamer.top
+merikstoppalace.top
+merikstranki.top
+meriksvalentineday.top
+meriksviber.top
+meriksvilverelite.top
+meriksvinusuela.top
+meriksxenonlight.top
+meriksyoutuber.top
 pixelnonefoll.top
 pixelnothingrich.top
 pixelnotinggo.top
@@ -15986,6 +16060,8 @@ pixelnowcheked.top
 pixelnowrestart.top
 pixelnowsearchae.top
 pixelnowsellerorbuyer.top
+twomeriksone.top
+wowmerikswoman.top
 
 # Generic
 
