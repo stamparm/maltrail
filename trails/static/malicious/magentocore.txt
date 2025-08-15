@@ -15975,9 +15975,16 @@ wsocket.store
 # Reference: https://app.validin.com/lookalikes?limit=1000&lookback=90&depth=2&find=%2F%5E%5Ba-z%5D%7B0%2C%7Dmeriks%5Ba-z%5D%2B%5C.top%24%2F (# 2025-08-15)
 
 antimeriksbuy.top
+emberpixel.top
+errormeriks.top
+fishpixelnow.top
 followmeriksshop.top
+garrypixelpotter.top
 goldenmeriksapple.top
 heimerikszenit.top
+histonmeriks.top
+kezmeriksfight.top
+manymeriks.top
 meriksalienspace.top
 meriksbanormute.top
 meriksbattle.top
@@ -16049,6 +16056,11 @@ meriksvilverelite.top
 meriksvinusuela.top
 meriksxenonlight.top
 meriksyoutuber.top
+pixelbronestill.top
+pixelcrocodile.top
+pixelelephant.top
+pixelitpedia.top
+pixellaser.top
 pixelnonefoll.top
 pixelnothingrich.top
 pixelnotinggo.top
@@ -16060,8 +16072,16 @@ pixelnowcheked.top
 pixelnowrestart.top
 pixelnowsearchae.top
 pixelnowsellerorbuyer.top
+pixelreqiuemfast.top
+pixelskodaoctavia.top
+pixelslowermode.top
+rainbowpixel.top
+teampixelspeak.top
 twomeriksone.top
+utilitymeriks.top
 wowmerikswoman.top
+yorumerikschannel.top
+zaimmeriks.top
 
 # Generic
 
