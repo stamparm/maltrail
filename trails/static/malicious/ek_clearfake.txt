@@ -15389,6 +15389,12 @@ pub-c5664ef0fef349aa93c4efdd43c308ae.r2.dev
 smart-icloud-doc-explorer-97db42.netlify.app
 talent-recruitment.online
 
+# Reference: https://x.com/skocherhan/status/1956101871174553606
+
+cloudfile-documents.pages.dev
+executive-board-recruitment.pages.dev
+netexplorer-documents-579f34-5b1840a5.netlify.app
+
 # Generic
 
 /a3A7qLVn/
