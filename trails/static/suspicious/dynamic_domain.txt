@@ -3777,6 +3777,10 @@ live-on.net
 
 server-on.net
 
+# Reference: https://www.virustotal.com/gui/domain/keyword-on.net/relations
+
+keyword-on.net
+
 # Reference: https://www.virustotal.com/gui/domain/duckdns.com/relations
 
 duckdns.com
