@@ -15946,6 +15946,7 @@ kk.land
 
 backupper.info
 backupper.pro
+geoterbang.site
 staticpaycloud.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/85.192.27.0/relations
