@@ -3784,3 +3784,7 @@ keyword-on.net
 # Reference: https://www.virustotal.com/gui/domain/duckdns.com/relations
 
 duckdns.com
+
+# Reference: https://www.virustotal.com/gui/domain/mydns.tw/relations
+
+mydns.tw
