@@ -15942,9 +15942,10 @@ mmercadolibre.com
 kk.land
 
 # Reference: https://x.com/sdcyberresearch/status/1947994404901265579
+# Reference: https://app.validin.com/detail?find=141.98.6.103&type=ip4&ref_id=8aeef8d30be#tab=resolutions
 
+backupper.info
 backupper.pro
-brilliantyor.com
 staticpaycloud.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/85.192.27.0/relations
