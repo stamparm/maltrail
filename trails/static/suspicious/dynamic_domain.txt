@@ -3788,3 +3788,7 @@ duckdns.com
 # Reference: https://www.virustotal.com/gui/domain/mydns.tw/relations
 
 mydns.tw
+
+# Reference: https://www.virustotal.com/gui/domain/1cooldns.com/relations
+
+1cooldns.com
