@@ -15427,6 +15427,50 @@ cloudfile-documents.pages.dev
 executive-board-recruitment.pages.dev
 netexplorer-documents-579f34-5b1840a5.netlify.app
 
+# Reference: https://x.com/Fact_Finder03/status/1956699843436409125
+
+autoexchange.space
+bullxone.com
+capcut.media
+checkerdex.com
+cryptoguardwallx.com
+cryptoguardwallx.pages.dev
+cryptolaughs.com
+cryptolaughs.pages.dev
+dexsearch.us
+exchangehub.pages.dev
+gateway-dexscreener.com
+keeponmoving.pages.dev
+kick.sbs
+kickkick.pages.dev
+kontel.me
+lolsite.pages.dev
+madeinsol.pages.dev
+marketscan.club
+marketscan.gold
+memeguard.app
+memeguard.pages.dev
+plaintext.pages.dev
+protectrug.com
+protectrug2.pages.dev
+pump-scanner.xyz
+pumpknnnnnnnng.fun
+pumpscanner.pages.dev
+redirect-twitch.video
+rugpullcommunity.com
+screenshot0x938f.pages.dev
+searchdex.pages.dev
+sitefixed.pages.dev
+solscan-88h.pages.dev
+solscan.is
+soltrencher.com
+sunlook.fun
+sunlooksss.pages.dev
+tokenscan.club
+trendingarchine.com
+trendingarchine.pages.dev
+twitch.nyc
+
 # Generic
 
 /a3A7qLVn/
