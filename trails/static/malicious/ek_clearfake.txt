@@ -15478,6 +15478,38 @@ revers-id-5641-extranet.com
 wfuekov.com
 booking.revers-id-5641-extranet.com
 
+# Reference: https://app.validin.com/detail?find=Checking%20if%20you%20are%20human&type=raw&ref_id=2d3c9aa583c#tab=host_pairs (# 2025-08-17)
+
+anupamsmusic.com
+asmicareer.com
+bansiexim.com
+creatorssky.com
+dixonomfs.com
+dmmediacamp.com
+drkaustubhgupta.com
+ecardsonlines.com
+elirezpharma.com
+evodigital.com.au
+ezygoaustralia.com.au
+febgp6.webpractice.in
+fudgeshop.com.au
+halderstudio.in
+helpmateforyou.com
+kneheatingcooling.com
+lorvennmanagements.com.ecardsonlines.com
+mail.creatorssky.com
+mail.dixonomfs.com
+mail.evodigital.com.au
+minhajautorepair-ae.oam.pgs.mybluehostin.me
+otticaramoni.it
+projectnightcode.com
+promo.solebs.com
+sharanilodge.com
+shiveginternational.com
+starshavedreams.com
+stayrecipes.com
+univsense.com
+
 # Generic
 
 /a3A7qLVn/
