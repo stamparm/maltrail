@@ -4111,3 +4111,7 @@ icloud.com
 # Reference: https://github.com/stamparm/maltrail/commit/569eecae9e987f44dd81c7a3a007f1b9bed17eab
 
 steamcommunity.com
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/7019
+
+ptt.cc
