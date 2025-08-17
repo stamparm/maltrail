@@ -8957,6 +8957,13 @@ zenlio.weebly.com
 /yoomcy.ps1
 /yr53yk.ps1
 
+# reference: https://securityaffairs.com/181203/cyber-crime/encrypthub-abuses-brave-support-in-new-campaign-exploiting-msc-eviltwin-flaw.html
+
+/payload/build.hta
+/payload/build.ps1
+/payload/shell.hta
+/payload/shell.ps1
+
 # Generic
 
 /5c0ca79.php
