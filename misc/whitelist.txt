@@ -4115,3 +4115,7 @@ steamcommunity.com
 # Reference: https://github.com/hagezi/dns-blocklists/issues/7019
 
 ptt.cc
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/7021
+
+transfer.zip
