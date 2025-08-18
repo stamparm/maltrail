@@ -3804,3 +3804,7 @@ youpc.ro
 # Reference: https://www.virustotal.com/gui/domain/apps.dj/relations
 
 apps.dj
+
+# Reference: https://www.virustotal.com/gui/domain/pakasak.com/relations
+
+pakasak.com
