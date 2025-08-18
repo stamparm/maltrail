@@ -3800,3 +3800,7 @@ minecraft.pe
 # Reference: https://www.virustotal.com/gui/domain/youpc.ro/relations
 
 youpc.ro
+
+# Reference: https://www.virustotal.com/gui/domain/apps.dj/relations
+
+apps.dj
