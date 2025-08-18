@@ -3796,3 +3796,7 @@ mydns.tw
 # Reference: https://www.virustotal.com/gui/domain/minecraft.pe/relations
 
 minecraft.pe
+
+# Reference: https://www.virustotal.com/gui/domain/youpc.ro/relations
+
+youpc.ro
