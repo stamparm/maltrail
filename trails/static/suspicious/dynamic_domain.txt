@@ -3792,3 +3792,7 @@ mydns.tw
 # Reference: https://www.virustotal.com/gui/domain/1cooldns.com/relations
 
 1cooldns.com
+
+# Reference: https://www.virustotal.com/gui/domain/minecraft.pe/relations
+
+minecraft.pe
