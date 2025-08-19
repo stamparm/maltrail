@@ -3382,3 +3382,10 @@ sso.meusams.club
 # Reference: https://www.virustotal.com/gui/file/86fefb67b3ffa6096e6e17d48a543c6e3b82a1a983b2d7853a4444fc6623a39c/detection
 
 phat-atc.site
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-08-19-IOCs-for-Chrome-extensions-leading-to-adware-or-PUP.txt
+
+owhit.com
+pixatab.xyz
+pixatab.xyz.evh.nqp.temporary.site
+play.owhit.com
