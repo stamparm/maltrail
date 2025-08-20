@@ -171,3 +171,9 @@ like.tuggest.space
 tuto.tuggest.space
 /?u=7mkpd0d
 /?u=h2xkd0x
+
+# Reference: https://x.com/unmaskparasites/status/1958243635373469954
+# Reference: https://app.validin.com/detail?find=a21621661d22af84afe0e04658ee4f05&type=hash&ref_id=21c83f41697#tab=host_pairs (# 2025-08-21)
+
+heiyata.shop
+silufei.shop
