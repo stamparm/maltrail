@@ -15898,6 +15898,11 @@ kof.one
 box2.kof.one
 mago.kof.one
 
+# Reference: https://x.com/_eremit4/status/1957969714740699221
+# Reference: https://www.virustotal.com/gui/ip-address/104.21.48.1/relations
+
+anl.is
+
 # Reference: https://x.com/sdcyberresearch/status/1929892055020401016
 
 scripts.peachseo.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.a240ce2a.bundle.min.js
