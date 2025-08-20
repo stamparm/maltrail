@@ -7740,11 +7740,14 @@ bnpparibas.top
 # Reference: https://app.validin.com/detail?find=27d0999bd3ff56b19ff48cbea5284031&type=hash&ref_id=d036bf3a9ab#tab=host_pairs (# 2025-07-28)
 
 1-stvilla-confirm-booking.com
+1-stvilla-reservation-completion.com
 6453verifycard-booking.com
 abhotelscompany.com
 acceptroominfo.com
 airbnb-booking-confirmation.com
 ant-artel.com
+approve-reserve-id.com
+ayodyaresort.com
 bezahlen-c.com
 bh-id8524.com
 bksuppor-65363con.com
@@ -7788,6 +7791,7 @@ booking.confirmation-i56431381.com
 booking.confirmation-i6441329.com
 booking.confirmation-i673327.com
 booking.confirmation-i77632134.com
+booking.confirmation-id028u89.com
 booking.confirmation-id0312.com
 booking.confirmation-id0819.com
 booking.confirmation-id091188.com
@@ -7988,7 +7992,9 @@ booking.confirmation-id1788.com
 booking.confirmation-id1795.com
 booking.confirmation-id17983252.com
 booking.confirmation-id1812.com
+booking.confirmation-id1822.com
 booking.confirmation-id1823.com
+booking.confirmation-id1832.com
 booking.confirmation-id18320.com
 booking.confirmation-id1842.com
 booking.confirmation-id1844.com
@@ -8033,10 +8039,12 @@ booking.confirmation-id34211.com
 booking.confirmation-id3464564.com
 booking.confirmation-id35747.com
 booking.confirmation-id38120.com
+booking.confirmation-id38124.com
 booking.confirmation-id3817.com
 booking.confirmation-id38814.com
 booking.confirmation-id3940.com
 booking.confirmation-id4121.com
+booking.confirmation-id4212.com
 booking.confirmation-id4219.com
 booking.confirmation-id423400.com
 booking.confirmation-id4312.com
@@ -8057,6 +8065,7 @@ booking.confirmation-id4568.com
 booking.confirmation-id4711.world
 booking.confirmation-id4810.com
 booking.confirmation-id4814.com
+booking.confirmation-id4814.world
 booking.confirmation-id48329.com
 booking.confirmation-id48610.com
 booking.confirmation-id48619.com
@@ -8121,6 +8130,7 @@ booking.confirmation-id7365.com
 booking.confirmation-id7396.com
 booking.confirmation-id742363.com
 booking.confirmation-id74821.com
+booking.confirmation-id752523.com
 booking.confirmation-id75262.com
 booking.confirmation-id7582.com
 booking.confirmation-id7699.com
@@ -8170,6 +8180,7 @@ booking.confirmation-id871234.com
 booking.confirmation-id87456.com
 booking.confirmation-id88127.com
 booking.confirmation-id8864.com
+booking.confirmation-id88755.com
 booking.confirmation-id888456424.com
 booking.confirmation-id889424.com
 booking.confirmation-id891723.com
@@ -8206,6 +8217,7 @@ booking.confirmation-id9gs73xh.com
 booking.confrimation-id81238.com
 booking.id-4212633.com
 booking.idconfirmation-839744.com
+bookingdevcustomer425234.com
 bookingid291784671.sbs
 bookingsecureguestrefund.com
 bookingverification.click
@@ -8239,6 +8251,7 @@ cardverify0172-booking.com
 cardverify0307-booking.com
 cardverify03110-booking.com
 cardverify03190-booking.com
+cardverify03211-booking.com
 cardverify03350-booking.com
 cardverify0337-booking.com
 cardverify03411-booking.com
@@ -8247,6 +8260,7 @@ cardverify03470-booking.com
 cardverify035-booking.com
 cardverify0365-booking.com
 cardverify0411-booking.com
+cardverify041131-booking.com
 cardverify04170-booking.com
 cardverify0430-booking.com
 cardverify0432-booking.com
@@ -8280,6 +8294,7 @@ cardverify085-booking.com
 cardverify08691-booking.com
 cardverify0891-booking.com
 cardverify0905-booking.com
+cardverify0907-booking.com
 cardverify0937-booking.com
 cardverify0960-booking.com
 cardverify0965-booking.com
@@ -8303,17 +8318,24 @@ cardverify14534-booking.com
 cardverify1461-booking.com
 cardverify147-booking.com
 cardverify19251-booking.com
+cardverify20255-booking.com
 cardverify2146-booking.com
+cardverify21510-booking.com
 cardverify2401-booking.com
 cardverify24356-booking.com
+cardverify2441-booking.com
 cardverify2451-booking.com
 cardverify25210-booking.com
+cardverify2710-booking.com
 cardverify3007-booking.com
 cardverify3060-booking.com
+cardverify3254-expedia.com
 cardverify3349-booking.com
 cardverify3452-booking.com
 cardverify35321-booking.com
+cardverify35643-booking.com
 cardverify35681-booking.com
+cardverify3572-expedia.com
 cardverify3641-booking.com
 cardverify3699-booking.com
 cardverify3701-booking.com
@@ -8332,11 +8354,15 @@ cardverify44352-booking.com
 cardverify44511-booking.com
 cardverify44514-booking.com
 cardverify4457472-booking.com
+cardverify447556-booking.com
+cardverify45-booking.com
 cardverify451-booking.com
 cardverify45115-booking.com
 cardverify45204booking.com
 cardverify4522-booking.com
 cardverify4531-booking.com
+cardverify4532-booking.com
+cardverify45414-booking.com
 cardverify45421-booking.com
 cardverify455-booking.com
 cardverify4560-booking.com
@@ -8345,20 +8371,25 @@ cardverify4601-booking.com
 cardverify463222-booking.com
 cardverify46435-booking.com
 cardverify465724-booking.com
+cardverify47532-booking.com
 cardverify47552-booking.com
 cardverify4871-booking.com
 cardverify51340-booking.com
 cardverify5231-booking.com
 cardverify5301-booking.com
+cardverify53131-booking.com
+cardverify53631-booking.com
 cardverify54220-booking.com
 cardverify54311-booking.com
 cardverify55151-booking.com
 cardverify55217-booking.com
 cardverify55322-booking.com
 cardverify55764-booking.com
+cardverify5610-booking.com
 cardverify56344-booking.com
 cardverify564891-booking.com
 cardverify5674-booking.com
+cardverify568-booking.com
 cardverify5685-booking.com
 cardverify586411-booking.com
 cardverify60491-booking.com
@@ -8371,15 +8402,19 @@ cardverify6675-booking.com
 cardverify6771-booking.com
 cardverify6920-expedia.com
 cardverify745463-booking.com
+cardverify7510-booking.com
 cardverify76404-booking.com
 cardverify76509-booking.com
+cardverify7657-booking.com
 cardverify7657-expedia.com
 cardverify77674-booking.com
 cardverify7789-booking.com
 cardverify78004-booking.com
+cardverify7842-booking.com
 cardverify78421-booking.com
 cardverify7854-booking.com
 cardverify790-booking.com
+cardverify8607-expedia.com
 cardverify887-booking.com
 cardverify9090-booking.com
 cardverify921-booking.com
@@ -8391,6 +8426,7 @@ cardverify9800-booking.com
 cardverify9930-booking.com
 cbookindata.com
 cbookindate.com
+checkyourstayaddguestinservicereserv.com
 com-3.ru
 com-designated.cyou
 com-implement.cfd
@@ -8424,6 +8460,7 @@ confirmation-i56431381.com
 confirmation-i6441329.com
 confirmation-i673327.com
 confirmation-i77632134.com
+confirmation-id028u89.com
 confirmation-id0312.com
 confirmation-id0819.com
 confirmation-id091188.com
@@ -8625,7 +8662,9 @@ confirmation-id1788.com
 confirmation-id1795.com
 confirmation-id17983252.com
 confirmation-id1812.com
+confirmation-id1822.com
 confirmation-id1823.com
+confirmation-id1832.com
 confirmation-id18320.com
 confirmation-id1842.com
 confirmation-id1844.com
@@ -8670,10 +8709,12 @@ confirmation-id34211.com
 confirmation-id3464564.com
 confirmation-id35747.com
 confirmation-id38120.com
+confirmation-id38124.com
 confirmation-id3817.com
 confirmation-id38814.com
 confirmation-id3940.com
 confirmation-id4121.com
+confirmation-id4212.com
 confirmation-id4219.com
 confirmation-id423400.com
 confirmation-id4312.com
@@ -8694,6 +8735,7 @@ confirmation-id4568.com
 confirmation-id4711.world
 confirmation-id4810.com
 confirmation-id4814.com
+confirmation-id4814.world
 confirmation-id48329.com
 confirmation-id48610.com
 confirmation-id48619.com
@@ -8757,6 +8799,7 @@ confirmation-id7365.com
 confirmation-id7396.com
 confirmation-id742363.com
 confirmation-id74821.com
+confirmation-id752523.com
 confirmation-id75262.com
 confirmation-id7582.com
 confirmation-id7699.com
@@ -8807,6 +8850,7 @@ confirmation-id871234.com
 confirmation-id87456.com
 confirmation-id88127.com
 confirmation-id8864.com
+confirmation-id88755.com
 confirmation-id888456424.com
 confirmation-id889424.com
 confirmation-id891723.com
@@ -8879,6 +8923,8 @@ get-ms.info
 get-started-en.com
 getting-voucher.com
 gfyuu88hhhj.com
+good-pmsmtp.com
+guest-checkin.com
 guestbookingmanagement365.com
 guestverify1060-booking.com
 guestverify1600-booking.com
@@ -8906,6 +8952,8 @@ hotelsadriana.com
 hotles-mediacell.com
 id-00113.com
 id-00122.com
+id-00921.com
+id-01125.com
 id-01244.com
 id-12102.com
 id-346229.com
@@ -8970,6 +9018,7 @@ number-315155.com
 olallahomes.com
 page-secure-check.world
 page28455.com
+pass-imapticket.com
 payment-vignette.com
 payment-vignette.shop
 process-reserve-room.com
