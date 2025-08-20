@@ -2583,6 +2583,11 @@ OnlyScans
 DataSender
 Zephyr-Downloader
 
+# Reference: https://x.com/1ZRR4H/status/1958181978479419430
+
+BQTLock
+BQTLockClient
+
 # Misc
 
 information_schema
