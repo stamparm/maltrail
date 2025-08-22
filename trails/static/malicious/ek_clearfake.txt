@@ -15742,6 +15742,30 @@ zi7x.fit
 zi7x.pages.dev
 zolo2.pages.dev
 
+# Reference: https://app.validin.com/detail?type=raw&find=Verify+Your+Request#tab=host_pairs (# 2025-08-22)
+
+adult.cheahpartners.com
+adult.digitologica.com
+autodiscover.mindcer.com
+booking.confirmation-id2479.com
+cheahpartners.com
+cloudflare.cheahpartners.com
+confirmation-id2479.com
+cpanel.mindcer.com
+cpcalendars.mindcer.com
+cpcontacts.mindcer.com
+digitologica.com
+evafiv.com
+extranet-message.com
+idealista.properties-captcha.com
+mail.mindcer.com
+mindcer.com
+properties-captcha.com
+sitcminder.com
+submub.xyz
+verif.submub.xyz
+webmail.mindcer.com
+
 # Generic
 
 /a3A7qLVn/
