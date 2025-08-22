@@ -15679,6 +15679,15 @@ upfilenew.cc
 
 complete-to-continue.pages.dev
 
+# Reference: https://x.com/JAMESWT_WT/status/1958791720696442915
+# Reference: https://app.any.run/tasks/531740ae-2028-460a-8f72-5619340584c6
+# Reference: https://www.virustotal.com/gui/file/394815e0810e98475a7426328e00f07a580ed25cc3ccc004d88d6dff2ebcd094/detection
+# Reference: https://www.virustotal.com/gui/file/52edd70eaccfa789abf02f7a9964610c72c74ba9ac405404356ac6152becf601/detection
+
+close-accrsreviwer.com
+lastreviewe-acces.com
+booking.close-accrsreviwer.com
+
 # Generic
 
 /a3A7qLVn/
