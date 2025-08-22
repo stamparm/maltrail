@@ -15782,6 +15782,14 @@ vrfdbknx.com
 xbkvn.com
 xreservbk.com
 
+# Reference: https://x.com/k3dg3/status/1958946948100366384
+# Reference: https://app.any.run/tasks/0470f871-f655-4d8f-8f1f-daf4ec4ff28e
+# Reference: https://www.virustotal.com/gui/file/0e9d984f980ceffb846946a8926e1d69abf2d07a6b710b8f8c802026ba3bbdb4/detection
+# Reference: https://www.virustotal.com/gui/file/ba218f1f45c012ffd5d5c9da88f6e873c7f3ab101cd8e0716051e9b191650669/detection
+
+boiksal.com
+update-reques898665.com
+
 # Generic
 
 /a3A7qLVn/
