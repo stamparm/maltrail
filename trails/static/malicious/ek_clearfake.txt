@@ -15766,6 +15766,22 @@ submub.xyz
 verif.submub.xyz
 webmail.mindcer.com
 
+# Refeerence: https://app.validin.com/detail?find=63c848e2f8f2ea28ad48861ddcc9c7e9&type=hash&ref_id=7278918e5a4#tab=host_pairs (# 2025-08-22)
+
+bknvrfdn.com
+boknsvrf.com
+booknvrd.com
+booktconn.com
+bookvrff.com
+hmonzo.online
+ibookvrfn.com
+vbookd.com
+vbookvrfd.com
+vrfdbkns.com
+vrfdbknx.com
+xbkvn.com
+xreservbk.com
+
 # Generic
 
 /a3A7qLVn/
