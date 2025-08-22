@@ -8964,6 +8964,10 @@ zenlio.weebly.com
 /payload/shell.hta
 /payload/shell.ps1
 
+# Reference: https://app.validin.com/detail?find=wesrdx345.js&type=dom&ref_id=5ce92182d9c#tab=host_pairs (# 2025-08-22)
+
+/wesrdx345.js
+
 # Generic
 
 /5c0ca79.php
