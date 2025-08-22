@@ -14109,11 +14109,6 @@ blggreenegg.shop
 
 pub-992aa27fc7f7497ebe2f613a4855cdb4.r2.dev
 
-# Reference: https://x.com/skocherhan/status/1942342670770171933
-# Reference: https://x.com/1nt3l_hunt/status/1942526633535300021
-
-alababababa.cloud
-
 # Reference: https://app.validin.com/detail?find=Verify%20%7C%20Coinbase&type=raw&ref_id=66e15143fe9#tab=host_pairs (# 2025-07-09)
 
 coinbasepromoted.com
