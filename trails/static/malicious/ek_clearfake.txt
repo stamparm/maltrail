@@ -15805,6 +15805,14 @@ booking.revers-id43561-extranet.com
 booking.revers-id5413-extranet.com
 booking.revers-id992-extranet.com
 
+# Reference: https://x.com/Securityinbits/status/1959215408902554046
+# Reference: https://app.validin.com/detail?find=%F0%9D%98%B3%F0%9D%98%A6%F0%9D%98%A4%F0%9D%98%88%F0%9D%98%97%F0%9D%99%8FC%F0%9D%98%8F%F0%9D%98%88%20%E2%85%A4%EF%BC%95&type=raw&ref_id=20899b9a4a0#tab=host_pairs (# 2025-08-24)
+
+cdnpoint.guru
+cdnspot.org
+nextpage-gwg.pages.dev
+obbpage.pages.dev
+
 # Generic
 
 /a3A7qLVn/
