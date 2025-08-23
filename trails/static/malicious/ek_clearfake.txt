@@ -15785,6 +15785,26 @@ xreservbk.com
 boiksal.com
 update-reques898665.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1959198084556267909
+# Reference: https://app.any.run/tasks/56cc97d3-31e4-4b6f-aa99-ec2f28e7182d
+
+manage-id1470-extranet.com
+partner-id5863-extranet.com
+revers-id250-extranet.com
+revers-id2891-extranet.com
+revers-id3152-extranet.com
+revers-id43561-extranet.com
+revers-id5413-extranet.com
+revers-id992-extranet.com
+booking.manage-id1470-extranet.com
+booking.partner-id5863-extranet.com
+booking.revers-id250-extranet.com
+booking.revers-id2891-extranet.com
+booking.revers-id3152-extranet.com
+booking.revers-id43561-extranet.com
+booking.revers-id5413-extranet.com
+booking.revers-id992-extranet.com
+
 # Generic
 
 /a3A7qLVn/
