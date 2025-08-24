@@ -15822,6 +15822,16 @@ derko-meru.online
 mein-lonos-cloude.de
 selonufiremul.online
 
+# Reference: https://x.com/JAMESWT_WT/status/1959664749635129351
+# Reference: https://app.any.run/tasks/32ec087a-72d1-41ea-a5a9-6e531343e3ca
+
+com-restrict.cc
+antibot.com-restrict.cc
+googie.com-restrict.cc
+recaptcha.antibot.com-restrict.cc
+cam.recaptcha.antibot.com-restrict.cc
+google.cam.recaptcha.antibot.com-restrict.cc
+
 # Generic
 
 /a3A7qLVn/
