@@ -15814,11 +15814,13 @@ nextpage-gwg.pages.dev
 obbpage.pages.dev
 
 # Reference: https://www.microsoft.com/en-us/security/blog/2025/08/21/think-before-you-clickfix-analyzing-the-clickfix-social-engineering-technique/
+# Reference: https://www.virustotal.com/gui/ip-address/85.209.154.82/relations
 
 access-ssa-gov.es
 binancepizza.info
 derko-meru.online
 mein-lonos-cloude.de
+selonufiremul.online
 
 # Generic
 
