@@ -15863,6 +15863,7 @@ selonufiremul.online
 
 # Reference: https://x.com/JAMESWT_WT/status/1959664749635129351
 # Reference: https://app.any.run/tasks/32ec087a-72d1-41ea-a5a9-6e531343e3ca
+# Reference: https://www.virustotal.com/gui/file/fe701c864a620c0a598111ef3244c6ad820eea90d5d8df35c082a41455edafbc/detection
 
 com-restrict.cc
 antibot.com-restrict.cc
