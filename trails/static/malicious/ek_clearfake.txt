@@ -15813,6 +15813,13 @@ cdnspot.org
 nextpage-gwg.pages.dev
 obbpage.pages.dev
 
+# Reference: https://www.microsoft.com/en-us/security/blog/2025/08/21/think-before-you-clickfix-analyzing-the-clickfix-social-engineering-technique/
+
+access-ssa-gov.es
+binancepizza.info
+derko-meru.online
+mein-lonos-cloude.de
+
 # Generic
 
 /a3A7qLVn/
