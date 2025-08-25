@@ -4150,3 +4150,7 @@ scarfacec2.xyz
 
 venom.software
 venomsoftwares.net
+
+# Reference: https://x.com/Fact_Finder03/status/1959854566603727266
+
+777ddos.vercel.app
