@@ -15886,6 +15886,13 @@ secure-check-1.pages.dev
 secure-check-71w.pages.dev
 turns-verify.pages.dev
 
+# Reference: https://x.com/JAMESWT_WT/status/1959874333704130804
+
+update-info1463736.com
+update-info164926.com
+update-info1656.com
+update-info926.com
+
 # Generic
 
 /a3A7qLVn/
