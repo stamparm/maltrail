@@ -11692,6 +11692,7 @@ mail.olimpsport.org
 static.store-content.com
 
 # Reference: https://x.com/sdcyberresearch/status/1792485034068185295
+# Reference: https://x.com/sdcyberresearch/status/1959983743239676217
 # Reference: https://www.virustotal.com/gui/ip-address/5.188.86.230/relations
 # Reference: https://app.validin.com/detail?find=d6b2747cc7a010c50b34119e9c98947e&type=hash&ref_id=71d565febed#tab=host_pairs (# 2025-02-19)
 # Reference: https://app.validin.com/detail?find=179.60.147.85&type=ip4&ref_id=b8cf6bcc858#tab=resolutions (# 2025-02-19)
@@ -11704,6 +11705,7 @@ lgstd.io
 lgstd.net
 logstash.in
 logstorage.in
+pubanalytics.net
 sitegateproxy.net
 siteimproveanalytic.net
 siteimproveanalytics.net
