@@ -6185,3 +6185,9 @@ http://103.105.103.3
 # Reference: https://www.virustotal.com/gui/file/4028209693ebde52a89f70b53ed757ae3a33cddabbfcb3f8343e5132f783ea5b/detection
 
 107.189.18.66:4444
+
+# Reference: https://x.com/ShanHolo/status/1959885287636570469
+# Reference: https://www.virustotal.com/gui/file/6c5e4dfd7a4e71750357a39aada7ace7e3a191ee047369fd3f7bd4881a4f117d/detection
+
+http://66.179.83.142
+66.179.83.142:4444
