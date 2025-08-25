@@ -15872,6 +15872,11 @@ recaptcha.antibot.com-restrict.cc
 cam.recaptcha.antibot.com-restrict.cc
 google.cam.recaptcha.antibot.com-restrict.cc
 
+# Reference: https://x.com/k3yp0d/status/1959853255074189455
+# Reference: https://app.any.run/tasks/eb4538dc-7efc-4e8c-a642-cc1251eba849
+
+secure-check-1.pages.dev
+
 # Generic
 
 /a3A7qLVn/
