@@ -1072,3 +1072,10 @@ http://1.192.136.207
 # Reference: https://www.virustotal.com/gui/file/c62a99449d7adc6f2005c665272db711fdc8ce95307bc557d6be069cc524f799/detection
 
 vanced.to
+
+# Reference: https://www.virustotal.com/gui/file/91a2af45e0827114a3c0b7cdfb358977198b1602016b8dc0ca7fff3e57e736d9/detection
+
+73ed366d3137ec936bd60b1184467776.com
+demaldefaces.top
+postback.info
+chigoe.demaldefaces.top
