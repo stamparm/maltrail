@@ -1168,3 +1168,39 @@ wakilamakila.com
 
 144.172.103.247:8041
 relay.year000001.com
+
+# Reference: https://x.com/JAMESWT_WT/status/1960283809477243216
+# Reference: https://www.virustotal.com/gui/file/12d3504f377f673e1f5650ade99c0ebcf9b0af507c96f139f9348867f26b61a2/detection
+
+94.154.173.175:8041
+e-statement.estate
+download.e-statement.estate
+
+# Reference: https://x.com/JAMESWT_WT/status/1960283809477243216
+# Reference: https://www.virustotal.com/gui/file/365ca650741c3cf589edee90743c0735624cd9c3c20d80a864857333e389c605/detection
+
+208.91.189.188:8041
+service.e-statement.estate
+
+# Reference: https://x.com/JAMESWT_WT/status/1960283809477243216
+# Reference: https://www.virustotal.com/gui/file/aae9aeae9cad1d3f39698f3e63f06ea1158d59ba9d076ce82591b21600ee91c3/detection
+
+45.94.31.249:8041
+innocreed.com
+hn-sec.innocreed.com
+
+# Reference: https://www.virustotal.com/gui/file/0039dacefc20c81307960be130a21ea92996fa88b2fa4a65096125c7192af51d/detection
+
+157.173.114.46:8041
+assets.innocreed.com
+
+# Reference: https://x.com/JAMESWT_WT/status/1960283809477243216
+# Reference: https://www.virustotal.com/gui/file/31a07098bfe39478c80d7df9962f2948056686b48f4cc4051b56328fe8a06785/detection
+
+45.81.23.155:8041
+bmw320ikaka.co
+
+# Reference: https://www.virustotal.com/gui/file/0d2145930215e9e276f5aa663fd85c265e38f3fa7a9a103c625075c1e5263c30/detection
+
+2.58.56.163:8041
+vtsec.innocreed.com
