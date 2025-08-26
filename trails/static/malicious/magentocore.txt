@@ -15904,6 +15904,7 @@ mago.kof.one
 # Reference: https://www.virustotal.com/gui/ip-address/104.21.48.1/relations
 
 anl.is
+snf.is
 
 # Reference: https://x.com/sdcyberresearch/status/1929892055020401016
 
