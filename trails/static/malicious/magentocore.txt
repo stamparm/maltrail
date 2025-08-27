@@ -16103,13 +16103,21 @@ zaimmeriks.top
 # Reference: https://app.validin.com/detail?find=d6bc8c6022d37ffd6acbbb53e200e714&type=hash&ref_id=6f40c2b0525#tab=host_pairs (# 2025-08-27)
 # Reference: https://app.validin.com/detail?find=829d74aa5bdd9687b61b062aca432811&type=hash&ref_id=6f40c2b0525#tab=host_pairs (# 2025-08-27)
 
+ajax-jquery.com
+bf-core.com
+cloud-ajax.com
 partywirks.club
+paysafe.global
+sale5shop.com
+sale7shop.com
+wrist-sale.com
 www-static.com
 7064b8afd9509a0f.b-cdn.net
 ads.cdn-f.net
+asd1.lazyno1.net
 hostmaster.c-ads.net
-tws.cdn-f.net
 mail.partywirks.club
+tws.cdn-f.net
 
 # Generic
 
