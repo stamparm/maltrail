@@ -9393,7 +9393,9 @@ good-pmsmtp.com
 guest-checkin.com
 guestbookingmanagement365.com
 guestverify1060-booking.com
+guestverify13042-booking.com
 guestverify15013-booking.com
+guestverify1573-booking.com
 guestverify1600-booking.com
 guestverify1643-booking.com
 guestverify1930-booking.com
@@ -9401,7 +9403,9 @@ guestverify2025-booking.com
 guestverify2100-booking.com
 guestverify2640-booking.com
 guestverify5313-booking.com
+guestverify56142-booking.com
 guestverify59914-booking.com
+guestverify7542-booking.com
 hold-booking.com
 holidaybeachresort.cfd
 holidaybeachresort.sbs
