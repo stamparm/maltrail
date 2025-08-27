@@ -8972,6 +8972,10 @@ zenlio.weebly.com
 
 /3g2bzgrevl.hta
 
+# Reference: https://www.virustotal.com/gui/file/337d8eaca7f3fbb8694dbb907568888e44e53ef83e25ffa2dd3ea676cf8cf0d3/detection
+
+/3e2w.js
+
 # Generic
 
 /5c0ca79.php
