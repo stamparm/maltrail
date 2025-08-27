@@ -16099,6 +16099,11 @@ wowmerikswoman.top
 yorumerikschannel.top
 zaimmeriks.top
 
+# Reference: https://x.com/sdcyberresearch/status/1960679898021806340
+
+7064b8afd9509a0f.b-cdn.net
+tws.cdn-f.net
+
 # Generic
 
 /assets/lfg.js
