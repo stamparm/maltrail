@@ -16306,6 +16306,7 @@ google.cam.recaptcha.antibot.com-restrict.cc
 # Reference: https://x.com/k3yp0d/status/1959853255074189455
 # Reference: https://app.any.run/tasks/eb4538dc-7efc-4e8c-a642-cc1251eba849
 
+bentlio.pages.dev
 cdn-verify.pages.dev
 cdnservice.ink
 check-l1v.pages.dev
@@ -16319,6 +16320,7 @@ secure-3gn.pages.dev
 secure-check-1.pages.dev
 secure-check-2.pages.dev
 secure-check-71w.pages.dev
+sparrjhgril.live
 turns-verify.pages.dev
 
 # Reference: https://x.com/JAMESWT_WT/status/1959874333704130804
