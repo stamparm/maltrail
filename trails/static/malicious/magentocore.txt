@@ -13080,6 +13080,7 @@ livedirect.my
 metamanager.shop
 monstr.cv
 nextai.cam
+nops.asia
 openc.shop
 openmonitor.rest
 openstat.cc
@@ -13101,6 +13102,7 @@ ultrasys.shop
 uniquemask.homes
 vectors.guru
 vspec.info
+vsys.digital
 vtec.live
 webstat.help
 wikistat.wiki
