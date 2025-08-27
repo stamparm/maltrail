@@ -16100,9 +16100,16 @@ yorumerikschannel.top
 zaimmeriks.top
 
 # Reference: https://x.com/sdcyberresearch/status/1960679898021806340
+# Reference: https://app.validin.com/detail?find=d6bc8c6022d37ffd6acbbb53e200e714&type=hash&ref_id=6f40c2b0525#tab=host_pairs (# 2025-08-27)
+# Reference: https://app.validin.com/detail?find=829d74aa5bdd9687b61b062aca432811&type=hash&ref_id=6f40c2b0525#tab=host_pairs (# 2025-08-27)
 
+partywirks.club
+www-static.com
 7064b8afd9509a0f.b-cdn.net
+ads.cdn-f.net
+hostmaster.c-ads.net
 tws.cdn-f.net
+mail.partywirks.club
 
 # Generic
 
