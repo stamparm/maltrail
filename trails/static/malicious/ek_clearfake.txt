@@ -16123,6 +16123,7 @@ kickkick.pages.dev
 kontel.me
 lolsite.pages.dev
 madeinsol.pages.dev
+mahjovalis.com
 marketscan.club
 marketscan.gold
 memeguard.app
