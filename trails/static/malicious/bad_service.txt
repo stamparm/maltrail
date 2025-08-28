@@ -4154,3 +4154,7 @@ venomsoftwares.net
 # Reference: https://x.com/Fact_Finder03/status/1959854566603727266
 
 777ddos.vercel.app
+
+# Reference: https://x.com/Fact_Finder03/status/1960947896741970381
+
+versal.codes
