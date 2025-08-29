@@ -7149,6 +7149,12 @@ http://194.87.254.162
 96.9.124.251:443
 99.71.156.88:31337
 
+# Reference: https://x.com/midnight_comms/status/1961409525052813461
+# Reference: https://urlscan.io/result/0198f5d9-b7a3-7519-a1d5-0480c6581be2/
+
+http://181.223.9.36
+181.223.9.36:9000
+
 # Generic
 
 /.sliver-client/
