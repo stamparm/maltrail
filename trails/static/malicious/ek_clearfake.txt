@@ -16813,6 +16813,19 @@ javascriptbasics.com
 prototypechain.com
 typescripttools.com
 
+# Reference: https://app.validin.com/detail?find=4091125af7ba2d3d5760efbb5c7f4ac9&type=hash&ref_id=16c3f642e2c#tab=host_pairs (# 2025-08-29)
+
+booking.confirmation-i5377363.com
+booking.confirmation-id339188.com
+confirmation-i5377363.com
+confirmation-id339188.com
+confirmation-id5011.world
+confirmation-id8831.com
+dpd-hr.id103201.com
+id103201.com
+refresh-details.cfd
+reservation-id3957.com
+
 # Generic
 
 /a3A7qLVn/
