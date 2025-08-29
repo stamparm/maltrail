@@ -6191,3 +6191,9 @@ http://103.105.103.3
 
 http://66.179.83.142
 66.179.83.142:4444
+
+# Reference: https://x.com/smica83/status/1961317890985959661
+# Reference: https://tria.ge/250829-hef8dstjz3/behavioral1
+# Reference: https://www.virustotal.com/gui/file/06786e9f55e3a7e1f73b015856aeae9f78bb2db6599d526533e9ef81d5441b47/detection
+
+13.200.54.243:13830
