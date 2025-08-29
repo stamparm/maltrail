@@ -16786,9 +16786,12 @@ zemplee.com
 info-guest44567645.com
 
 # Reference: https://threatfox.abuse.ch/ioc/1576336/
+# Reference: https://www.virustotal.com/gui/ip-address/185.221.215.106/relations
 # Reference: https://gist.githubusercontent.com/danslo/1ee79d806493d779c2e5213a0bda8b4f/raw/e8b386f9eb9ec48cb370c72f6c52550b263ce22d/gistfile1.txt
 
+debuggingscripts.com
 javascriptbasics.com
+typescripttools.com
 
 # Generic
 
