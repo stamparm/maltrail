@@ -16829,6 +16829,18 @@ id103201.com
 refresh-details.cfd
 reservation-id3957.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1961650667266699661
+# Reference: https://app.any.run/tasks/1688a379-2663-41d6-ad41-9879d2b57345
+
+admin-extranetadm-captcha.com
+admin-extranetmnxz-captcha.com
+bknqsercise.com
+pocketspilot.com
+socketharbor.com
+sqwqwasresbkng.com
+tcpforge.com
+unitycommunityliving.com
+
 # Generic
 
 /a3A7qLVn/
