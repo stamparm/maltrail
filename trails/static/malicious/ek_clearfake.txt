@@ -16956,6 +16956,20 @@ xabialvarado.com
 xpiatendimento24hrs.xyz
 xpl-tokenupdate.xyz
 
+# Reference: https://app.validin.com/detail?find=Verify%20you%20are%20human&type=raw#tab=host_pairs (# 2025-08-30)
+
+energymedia.cz
+energyobchod.cz
+energystudio.cz
+jogadnes.cz
+jogakonference.cz
+jogavirtual.cz
+lcddispleje.cz
+powerjoga.sk
+poweryoga.cz
+t-service.mcprotect.net
+yogaworld.cz
+
 # Generic
 
 /a3A7qLVn/
