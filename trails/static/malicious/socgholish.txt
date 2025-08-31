@@ -5163,6 +5163,10 @@ download.romeropizza.com
 images.therunningink.com
 mgmt.studerandson.us
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-30-v10960/2860
+
+sample.tcroadgear.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
