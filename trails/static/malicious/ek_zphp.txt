@@ -1663,6 +1663,24 @@ universaltechnology.top
 
 franquicias.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-07-02-v10962/2867
+# Reference: https://app.validin.com/detail?find=85.239.34.205&type=ip4&ref_id=f730b1bd85c#tab=host_pairs (# 2025-08-31)
+
+anoteryo.top
+ashesplayer.top
+bflixto.top
+buyedmeds.top
+buylisinopril.top
+cozartan.top
+guosong.top
+healthcareplans.top
+kazumaka.top
+langwonet.top
+musicdownloader.top
+parisforrent.top
+patekphillipwatches.top
+warpdrive.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
