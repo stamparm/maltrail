@@ -16971,6 +16971,22 @@ poweryoga.cz
 t-service.mcprotect.net
 yogaworld.cz
 
+# Reference: https://www.malware-traffic-analysis.net/2025/08/20/index.html
+# Reference: https://app.validin.com/detail?find=dieselfilters.com&type=dom#tab=host_pairs (# 2025-08-31)
+
+bialball.com
+cf-2-up.com
+cocacola-brandy.net
+domainweel.com
+filmezz.top
+googletagamnager.com
+islonline.org
+moruk.xyz
+trendings.top
+villahome.top
+wandan.top
+woop-bicks.com
+
 # Generic
 
 /a3A7qLVn/
