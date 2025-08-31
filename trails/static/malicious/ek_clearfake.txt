@@ -16987,6 +16987,18 @@ villahome.top
 wandan.top
 woop-bicks.com
 
+# Reference: https://app.validin.com/detail?find=4383d7d159112bc295a9281778418268&type=hash&ref_id=92f96419c9a#tab=host_pairs (# 2025-08-31)
+
+briancoffspace.site
+brick-simple.com
+divisionglobals.com
+fisksgroup.com
+hope2cooling.com
+imperiumcables.org
+liruo.top
+precisions-fg.com
+smoking-hot.net
+
 # Generic
 
 /a3A7qLVn/
