@@ -16111,6 +16111,7 @@ zaimmeriks.top
 
 ajax-jquery.com
 bf-core.com
+c-ads.net
 cloud-ajax.com
 partywirks.club
 paysafe.global
@@ -16126,7 +16127,9 @@ mail.partywirks.club
 tws.cdn-f.net
 
 # Reference: https://x.com/sdcyberresearch/status/1962465392636383380
+# Reference: https://www.virustotal.com/gui/domain/cdn-f.net/relations
 
+cdn-f.net
 ssl.cdn-f.net
 
 # Generic
