@@ -17031,6 +17031,15 @@ vip.uptomac.com
 vps.uptomac.com
 yaksha-activewinner.xyz
 
+# Reference: https://x.com/volrant136/status/1962202717742645385
+# Reference: https://x.com/_JohnHammond/status/1962178626780074362
+# Reference: https://app.validin.com/detail?find=Jumper%20%7C%20Multi-Chain%20Bridging%20%26%20Swapping&type=raw&ref_id=cd1a13d3841#tab=host_pairs (# 2025-09-01)
+
+jumper-eso.pages.dev
+jumperexchange-eth.com
+puffpufffi.pages.dev
+teamsonsoft.com
+
 # Generic
 
 /a3A7qLVn/
