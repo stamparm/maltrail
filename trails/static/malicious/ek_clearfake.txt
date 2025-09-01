@@ -17006,7 +17006,9 @@ smoking-hot.net
 http://45.32.133.19
 
 # Reference: https://x.com/HuntYethHounds/status/1959167870379634985
+# Reference: https://www.virustotal.com/gui/ip-address/185.82.200.150/relations
 # Reference: https://app.validin.com/detail?find=23dbe6d09adf71177a17f4d6b3144af31908e8d608aa2208622237c10d021b52&type=hash&ref_id=fb5bf8e8e16#tab=host_pairs (# 2025-09-01)
+# Reference: https://app.validin.com/detail?find=34fcc14ec9fbb9bcff5dd0802f4e8b10&type=hash&ref_id=fb5bf8e8e16#tab=host_pairs (# 2025-09-01)
 
 addidas-wear.com
 api.uptomac.com
@@ -17015,8 +17017,12 @@ appates.com
 britainsbroadcastingnews.com
 crm.uptomac.com
 dev.uptomac.com
+goalheadline.com
+ledgerhelpcontact.com
+ledgerportals.com
 log.uptomac.com
 momuus.com
+nettflixservice.com
 new-yorktimes.com
 offers-special.com
 uptomac.com
