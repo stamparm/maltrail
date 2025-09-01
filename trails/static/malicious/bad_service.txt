@@ -4162,3 +4162,7 @@ versal.codes
 # Reference: https://x.com/DarkWebInformer/status/1962315358758642052
 
 uwb25d43nnzerbozmtviwn7unn7ku226tpsjyhy5n4st5cf3d4mtflqd.onion
+
+# Reference: https://x.com/DarkWebInformer/status/1962327603588878435
+
+verified3vr2kdbnza6c3e5ak4z5xmtti4hx36dfg3kbi6pwekztvsqd.onion
