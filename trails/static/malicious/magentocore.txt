@@ -16125,6 +16125,10 @@ hostmaster.c-ads.net
 mail.partywirks.club
 tws.cdn-f.net
 
+# Reference: https://x.com/sdcyberresearch/status/1962465392636383380
+
+ssl.cdn-f.net
+
 # Generic
 
 /assets/lfg.js
