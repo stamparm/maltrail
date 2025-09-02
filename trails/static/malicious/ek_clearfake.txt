@@ -9628,10 +9628,15 @@ verifycard0135-booking.com
 verifycard0822-booking.com
 verifycard0851-booking.com
 verifycard12512-booking.com
+verifycard13419-booking.com
+verifycard14589-booking.com
 verifycard1516-booking.com
+verifycard1863-booking.com
 verifycard2212-agoda.com
+verifycard2313-booking.com
 verifycard3262-booking.com
 verifycard3411-booking.com
+verifycard4184-booking.com
 verifycard4251-booking.com
 verifycard42773-booking.com
 verifycard43135-booking.com
@@ -9645,6 +9650,7 @@ verifycard5341-booking.com
 verifycard5413-booking.com
 verifycard5531-booking.com
 verifycard5651-booking.com
+verifycard58864-booking.com
 verifycard6219-booking.com
 verifycard631-booking.com
 verifycard6411-booking.com
@@ -9653,6 +9659,7 @@ verifycard6531-booking.com
 verifycard662-agoda.com
 verifycard6712-agoda.com
 verifycard689681-booking.com
+verifycard7823-booking.com
 verifycard8436-booking.com
 verifycard84526-booking.com
 verifycard8543-booking.com
