@@ -9624,6 +9624,7 @@ verify52412card-booking.com
 verify535241card-booking.com
 verify553441card-booking.com
 verify6132guest-booking.com
+verifycard-agoda.com
 verifycard0135-booking.com
 verifycard0822-booking.com
 verifycard0851-booking.com
