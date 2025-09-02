@@ -1204,3 +1204,10 @@ bmw320ikaka.co
 
 2.58.56.163:8041
 vtsec.innocreed.com
+
+# Reference: https://x.com/FalconFeedsio/status/1962824775765762514
+# Reference: https://www.virustotal.com/gui/file/958d5af9ea6c928fd608b22254de9acc143cdedd2b3e6cc0c5299c5336e71ec4/detection
+# Reference: https://www.virustotal.com/gui/file/87665069462eb9d819154f6e8d818cfce6eb3b70245e4a1e84dce3441913e837/detection
+
+bfvfuausfo.me
+wmjlive.top
