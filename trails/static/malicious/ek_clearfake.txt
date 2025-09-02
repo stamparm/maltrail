@@ -17591,7 +17591,9 @@ ytaminsie.com
 
 # Reference: https://app.validin.com/detail?find=9f787910919809a34d8c3e3c2d5a6676&type=hash&ref_id=b85d03c2d9c#tab=host_pairs (# 2025-09-02)
 
+booking.confirmation-id83783881.com
 com-reservationid.live
+confirmation-id83783881.com
 goldenalcalacloudz.com
 id-853787.com
 lionsotelcloudz.com
@@ -17600,6 +17602,7 @@ otelroyal.com
 pay-laderach.pro
 rhrkajangcloudz.com
 upadaterenow.com
+v-illagebled.com
 verifycard077-guestcheck.com
 verifyguest53115-booking.com
 webhotelslim.com
