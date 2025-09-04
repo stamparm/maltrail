@@ -17619,6 +17619,12 @@ verifycard077-guestcheck.com
 verifyguest53115-booking.com
 webhotelslim.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1963463508353286359
+# Reference: https://app.any.run/tasks/b007ae14-b021-4d3d-9e71-7f3b2d5fa508
+
+update-guest554456767.com
+update-info442.com
+
 # Generic
 
 /a3A7qLVn/
