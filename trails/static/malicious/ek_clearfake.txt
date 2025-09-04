@@ -17625,6 +17625,23 @@ webhotelslim.com
 update-guest554456767.com
 update-info442.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1963657077408030796
+# Reference: https://app.any.run/tasks/e48e3de8-d94f-42e8-91ab-afb52675888d
+# Reference: https://app.validin.com/detail?find=b5903cdd0f6c15ebaa7891d70f1145b1&type=hash&ref_id=d3b51a19feb#tab=host_pairs (# 2025-09-04)
+
+admin-extranetmngrxz-captcha.com
+admin-extranetrservq-cstmrq.com
+agreement-confirmationofmay.com
+bkngssercise.com
+booking-agreementstatementapril0429.com
+confvisitor-viewnew-783927.com
+emprotel.net.bo
+extranet-admin-reservationssept.com
+gritysocial.com
+guestinfoview-updated1905.com
+notificationsofagreement-confirmatioinmay.com
+otroparking.com
+
 # Generic
 
 /a3A7qLVn/
