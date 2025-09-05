@@ -17642,6 +17642,21 @@ guestinfoview-updated1905.com
 notificationsofagreement-confirmatioinmay.com
 otroparking.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1963825407939006749
+# Reference: https://www.malware-traffic-analysis.net/2025/09/03/index.html
+# Reference: https://app.validin.com/detail?find=365109fe4eee6f9d6c415ed71939d5f20d1eba50&type=hash&ref_id=2b776e63e5f#tab=host_pairs (# 2025-09-05)
+
+ballhognation.store
+boxedbabyhaven.store
+cribcluttercures.store
+cribsidecarryco.store
+infantinnovation.store
+littleboxedlives.store
+louglas.com
+pintsizeparcels.store
+spagettisavvy.store
+squishystoragesolutions.store
+
 # Generic
 
 /a3A7qLVn/
