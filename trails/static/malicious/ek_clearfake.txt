@@ -17713,6 +17713,23 @@ bioomx.com
 bkkil.com
 bliokdf.com
 
+# Reference: https://app.validin.com/detail?find=84.21.189.108&type=ip4&ref_id=0d995eb31f8#tab=resolutions (# 2025-09-05)
+
+bad-hotel-review4811023.com
+bad-review-hotel459013.com
+bad-review-hotel486192.com
+bcloud-cphc.com
+bloaiwee.cfd
+bloiakw.world
+booking-verify-id-874264.top
+edwardmiladen.com
+free-cancellations.com
+hotel-review-id4871395.com
+kaito.cfd
+property-id-753418.top
+reviews-hotel-id48913.com
+secured-manager-install.top
+
 # Generic
 
 /a3A7qLVn/
