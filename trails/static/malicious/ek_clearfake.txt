@@ -17705,6 +17705,14 @@ squishystoragesolutions.store
 sweetboxsolutions.store
 maintaining-shelter-bailey-ordinance.trycloudflare.com
 
+# Reference: https://www.esentire.com/blog/new-botnet-emerges-from-the-shadows-nightshadec2
+
+bikbal.com
+bioakw.com
+bioomx.com
+bkkil.com
+bliokdf.com
+
 # Generic
 
 /a3A7qLVn/
