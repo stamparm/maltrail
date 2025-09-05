@@ -8994,6 +8994,10 @@ zenlio.weebly.com
 
 /generate?payload=
 
+# Reference: https://www.malware-traffic-analysis.net/2025/09/03/index.html
+
+/4r2w.js
+
 # Generic
 
 /5c0ca79.php
