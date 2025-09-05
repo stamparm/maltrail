@@ -17647,15 +17647,21 @@ otroparking.com
 # Reference: https://app.validin.com/detail?find=365109fe4eee6f9d6c415ed71939d5f20d1eba50&type=hash&ref_id=2b776e63e5f#tab=host_pairs (# 2025-09-05)
 
 ballhognation.store
+blessedboxofbabies.store
+boxedbabycom.store
 boxedbabyhaven.store
+bundleblessings.store
+crawlercrateinc.store
 cribcluttercures.store
 cribsidecarryco.store
 infantinnovation.store
 littleboxedlives.store
 louglas.com
+mamaspagetti.store
 pintsizeparcels.store
 spagettisavvy.store
 squishystoragesolutions.store
+sweetboxsolutions.store
 maintaining-shelter-bailey-ordinance.trycloudflare.com
 
 # Generic
