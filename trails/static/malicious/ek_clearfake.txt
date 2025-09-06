@@ -15087,6 +15087,7 @@ wealthsimple-livechat.com
 
 # Reference: https://app.validin.com/detail?find=dd0be7d2331c7bc3d50e45d8e66690fb&type=hash&ref_id=2dafd6d9025#tab=host_pairs (# 2025-07-10)
 
+booking.confirmation-id1192188.com
 booking.confirmation-id1512.com
 booking.confirmation-id1522.com
 booking.confirmation-id1527.com
@@ -15142,6 +15143,7 @@ booking.confirmation-id1694.com
 booking.confirmation-id1697.com
 booking.confirmation-id1698.com
 booking.confirmation-id1804.com
+booking.confirmation-id182997.com
 booking.confirmation-id1836.com
 booking.confirmation-id1837.com
 booking.confirmation-id191888.com
@@ -15150,6 +15152,7 @@ booking.confirmation-id2718.com
 booking.confirmation-id29848.com
 booking.confirmation-id32178.com
 booking.confirmation-id32478.com
+booking.confirmation-id33125.com
 booking.confirmation-id343242.com
 booking.confirmation-id40201.com
 booking.confirmation-id501328648.com
@@ -15159,17 +15162,25 @@ booking.confirmation-id62741.com
 booking.confirmation-id6596.com
 booking.confirmation-id6889813.com
 booking.confirmation-id70723.com
+booking.confirmation-id74127.com
 booking.confirmation-id7496.com
 booking.confirmation-id79526.com
 booking.confirmation-id79527.com
 booking.confirmation-id81263.com
 booking.confirmation-id8253.com
+booking.confirmation-id8437.com
+booking.confirmation-id8472.com
 booking.confirmation-id8491.com
 booking.confirmation-id8733.com
+booking.confirmation-id88123.com
+booking.confirmation-id889188.com
 booking.confirmation-id918811.com
 booking.confirmation-id93235.com
+booking.confirmation-id9912.com
+booking.confirmation-id9924.com
 com-validations.cfd
 confirm-reserve.cloud
+confirmation-id1192188.com
 confirmation-id1512.com
 confirmation-id1522.com
 confirmation-id1527.com
@@ -15225,6 +15236,7 @@ confirmation-id1694.com
 confirmation-id1697.com
 confirmation-id1698.com
 confirmation-id1804.com
+confirmation-id182997.com
 confirmation-id1836.com
 confirmation-id1837.com
 confirmation-id191888.com
@@ -15233,6 +15245,7 @@ confirmation-id2718.com
 confirmation-id29848.com
 confirmation-id32178.com
 confirmation-id32478.com
+confirmation-id33125.com
 confirmation-id343242.com
 confirmation-id40201.com
 confirmation-id6106.com
@@ -15240,15 +15253,22 @@ confirmation-id62741.com
 confirmation-id6596.com
 confirmation-id6889813.com
 confirmation-id70723.com
+confirmation-id74127.com
 confirmation-id7496.com
 confirmation-id79526.com
 confirmation-id79527.com
 confirmation-id81263.com
 confirmation-id8253.com
+confirmation-id8437.com
+confirmation-id8472.com
 confirmation-id8491.com
 confirmation-id8733.com
+confirmation-id88123.com
+confirmation-id889188.com
 confirmation-id918811.com
 confirmation-id93235.com
+confirmation-id9912.com
+confirmation-id9924.com
 confirmation-res58113.com
 id42525671.world
 id44775893.com
