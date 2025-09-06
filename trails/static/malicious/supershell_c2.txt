@@ -3221,6 +3221,10 @@ http://43.133.217.169
 
 110.42.32.88:8888
 
+# Reference: https://x.com/Fact_Finder03/status/1964236390062759978
+
+118.89.85.96:8888
+
 # Generic
 
 /supershell/login
