@@ -4318,3 +4318,9 @@ http://209.38.207.232
 # Reference: https://x.com/solostalking/status/1958146598585905328
 
 185.117.91.141:7443
+
+# Reference: https://x.com/malwrhunterteam/status/1963853220775698692
+# Reference: https://www.virustotal.com/gui/file/9feb4d4d275c4b57b9185d50bd41a3259d331b23ca90242ec2b0b1f8048d7de5/detection
+# Reference: https://www.virustotal.com/gui/file/4186c021fa5fc05090f9bf21c2dc2ba2738a616908a761fa5db8fd27ee5045c7/detection
+
+87.254.212.120:8080
