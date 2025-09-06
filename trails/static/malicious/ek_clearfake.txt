@@ -648,14 +648,22 @@ youcansay.s3.us-east-2.amazonaws.com
 # Reference: https://x.com/DaveLikesMalwre/status/1879181121872593194
 # Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw#tab=host_pairs
 
+activesignal-mrks.com
+ag-er.space
 angelopnavarro.com
 bincbusd.site
+bkeb.space
 briolaundry.com
+captcha.nxgengames.com
 coachcorral.com
 csm4tqs.com
 davidbergergroup.com
 envirotekhomes.com
+er-bk.space
 essvtch.site
+eurbk.space
+eurob-gr.space
+excursionsfinder.com
 fatura-pt-fdeldade.site
 fdelidade-pt-com.site
 fdelidade-pt-ng.site
@@ -664,9 +672,14 @@ fidelidateopt.site
 fidelidept.site
 fidelidlnpt.site
 fididadpt-of.site
+freseniusonline.xyz
+goaicrytdgpro.net
+gr-erb.space
+gr-euro.space
 gr-nbd.site
 gr-nboik.site
 gravipod.com
+grebid.space
 idolmusiclimited.com
 ifuckyourpc.win
 ireneray.net
@@ -674,6 +687,12 @@ jcsalesteam.com
 kaldi.run
 l1nxx.para.rip
 lnepytw.site
+login.freseniusonline.xyz
+mail.activesignal-mrks.com
+mail.excursionsfinder.com
+mail.goaicrytdgpro.net
+mail.recruitmentselby.com
+mail.smrtaitrd.net
 mapfr-es.site
 maryrezek.com
 mbresidencesbrickell.com
@@ -681,7 +700,9 @@ miabeachwaterfront.com
 mississippiconcretecontractor.com
 nashvillegranite.net
 ndg-id.site
+novob.space
 nxgengames.com
+outlook.freseniusonline.xyz
 page-yoda.blog
 para.rip
 premiertents.com
@@ -690,9 +711,14 @@ pt-fdelidade.site
 pt-fdelidader-egisto.site
 pt-fideldideid.site
 pt-fidelilde.site
+recaptcha.quizoracle.com
+recaptcha.twin3.ai
+recruitmentselby.com
 roofingcontractorinutah.com
 saltysolssurfschool.com
 segurateam.com
+smrtaitrd.net
+smrtaitrd.net.smrtaitrd.com
 thealexteamflorida.com
 theworthgrouppalmbeach.com
 treeservicerhodeislandpro.com
@@ -700,7 +726,9 @@ treeserviceshouston.net
 trestlecreekspecklepark.com
 wallpaper-engine.pro
 whatcomsoccer.com
-captcha.nxgengames.com
+yesildaglar.com.tr
+zaiando-at.space
+zaiandoat.space
 
 # Reference: https://x.com/ffforward/status/1879889672392040846
 # Reference: https://www.virustotal.com/gui/file/8125ef032eadfc547bcdd2e311a1d4e2cb33e0383c3ac2d8eb40c43bc6d11634/detection
