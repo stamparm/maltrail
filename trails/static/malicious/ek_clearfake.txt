@@ -15087,6 +15087,9 @@ wealthsimple-livechat.com
 
 # Reference: https://app.validin.com/detail?find=dd0be7d2331c7bc3d50e45d8e66690fb&type=hash&ref_id=2dafd6d9025#tab=host_pairs (# 2025-07-10)
 
+agoda-live.live
+bahhpa-id2528.com
+bg-d94716.icu
 booking.confirmation-id1192188.com
 booking.confirmation-id1512.com
 booking.confirmation-id1522.com
@@ -15178,6 +15181,8 @@ booking.confirmation-id918811.com
 booking.confirmation-id93235.com
 booking.confirmation-id9912.com
 booking.confirmation-id9924.com
+com-ld44391939.sbs
+com-ld4994993.sbs
 com-validations.cfd
 confirm-reserve.cloud
 confirmation-id1192188.com
@@ -15270,9 +15275,32 @@ confirmation-id93235.com
 confirmation-id9912.com
 confirmation-id9924.com
 confirmation-res58113.com
+dd75231.com
+dd98652.com
+econt.bg-d94716.icu
+glercomandre.com
+guestinserviceportalreservationcheckadd.com
+guestverify2146-booking.com
+hotelfazendavista.com
+hotelresrevcnfrm.com
+id-00423.com
+id-96123.com
+id-guestcheck.com
 id42525671.world
 id44775893.com
 id492927521.world
+monboutiquehotel.icu
+page0309.help
+page0309.live
+paygate-way.com
+piccolonare-ex.com
+property-753418.com
+upadate-cheksnow.com
+v-eterental.com
+verify34451-guestcheck.com
+verify5441-guestcheck.com
+verifyguest4158-agoda.com
+verifyid-guestcheck.com
 visitor-security.icu
 
 # Reference: https://x.com/1nt3l_hunt/status/1943347144741786019
