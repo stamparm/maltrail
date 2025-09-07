@@ -12082,7 +12082,6 @@ kfvtabwl.iliad.onl
 kgpmask.club
 kidowice.pl
 kocatepemarket.com
-kora-nabytek.cz
 kutipanhutang.cdnmts.org
 kwizklash.com
 l5x71r.com
@@ -17383,21 +17382,6 @@ weeksroll.net
 xabialvarado.com
 xpiatendimento24hrs.xyz
 xpl-tokenupdate.xyz
-
-# Reference: https://app.validin.com/detail?find=Verify%20you%20are%20human&type=raw#tab=host_pairs (# 2025-08-30)
-
-energymedia.cz
-energyobchod.cz
-energystudio.cz
-greenstrawberry.cz
-jogadnes.cz
-jogakonference.cz
-jogavirtual.cz
-lcddispleje.cz
-powerjoga.sk
-poweryoga.cz
-t-service.mcprotect.net
-yogaworld.cz
 
 # Reference: https://www.malware-traffic-analysis.net/2025/08/20/index.html
 # Reference: https://app.validin.com/detail?find=dieselfilters.com&type=dom#tab=host_pairs (# 2025-08-31)
