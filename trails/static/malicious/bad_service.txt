@@ -4189,4 +4189,5 @@ ddos.su
 maxstresser.com
 stormer.su
 stressers.su
+tstresser.ru
 zstresser.su
