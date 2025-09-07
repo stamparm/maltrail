@@ -4182,3 +4182,11 @@ froststresser.com
 soormer.su
 stressers.org
 unknownbooter.su
+
+# Reference: https://app.validin.com/detail?find=zstresser.su&type=dom&ref_id=a7abd341162#tab=host_pairs (# 2025-09-07)
+
+ddos.su
+maxstresser.com
+stormer.su
+stressers.su
+zstresser.su
