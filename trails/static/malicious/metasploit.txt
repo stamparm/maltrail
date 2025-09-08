@@ -6197,3 +6197,7 @@ http://66.179.83.142
 # Reference: https://www.virustotal.com/gui/file/06786e9f55e3a7e1f73b015856aeae9f78bb2db6599d526533e9ef81d5441b47/detection
 
 13.200.54.243:13830
+
+# Reference: https://www.virustotal.com/gui/file/1ab4e4044a67c7a10f54a109ab17fdbb73b13b29841b0cdf3f0fed63c2d6e1f3/detection
+
+http://179.60.150.151
