@@ -16135,35 +16135,22 @@ ssl.cdn-f.net
 # Reference: https://x.com/sdcyberresearch/status/1965014900562133381
 # Reference: https://app.validin.com/detail?find=1db0a111dde8011b8e8d76fafadb0e02&type=hash&ref_id=1e46789fd1d#tab=host_pairs (# 2025-09-08)
 
-9sweb.com
-advantatop.com
-alltogethergaming.com
 artistyhub.com
-chartswave.com
-cybencove.com
 datasetboost.com
 digitalldawn.com
 graphistat.com
-investoeye.com
-lp89bot.com
 marketedweb.com
 marketiapro.com
 mystatisic.com
 onlinedefenceshield.com
 sallesnxt.com
-sdpsic.com
 selideck.com
 selledgehub.com
 sellorashop.com
 sellsparkw.com
-sewasini.com
-shodashsanskar.com
-sqeeqy.com
 statrisse.com
 statspots.com
 stattmark.com
-styloriaworks.com
-trendsninja.com
 webstatusis.com
 wessist.com
 wwwgyoutube.com
