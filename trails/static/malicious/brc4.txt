@@ -1176,3 +1176,7 @@ http://54.95.193.41
 45.77.79.169:4444
 46.8.120.229:443
 98.70.49.169:443
+
+# Reference: https://www.virustotal.com/gui/file/64a95de2783a97160bac6914ee07a42cdd154a0e33abc3b1b62c7bafdce24c0c/detection
+
+5.188.86.233:8080
