@@ -16155,6 +16155,10 @@ webstatusis.com
 wessist.com
 wwwgyoutube.com
 
+# Reference: https://x.com/sdcyberresearch/status/1965736554820739163
+
+e31692e26753a0cb.b-cdn.net
+
 # Generic
 
 /assets/lfg.js
