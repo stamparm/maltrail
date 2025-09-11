@@ -17972,6 +17972,12 @@ property-id-753418.top
 reviews-hotel-id48913.com
 secured-manager-install.top
 
+# Reference: https://x.com/JAMESWT_WT/status/1965852489431101746
+# Reference: https://app.any.run/tasks/699ff313-cac1-4b6b-ab9a-3e3783de5501
+
+extranet-captcha-id9321.com
+booking.extranet-captcha-id9321.com
+
 # Generic
 
 /a3A7qLVn/
