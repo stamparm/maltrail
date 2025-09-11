@@ -17904,6 +17904,7 @@ update-info442.com
 # Reference: https://x.com/JAMESWT_WT/status/1963657077408030796
 # Reference: https://app.any.run/tasks/e48e3de8-d94f-42e8-91ab-afb52675888d
 # Reference: https://app.validin.com/detail?find=b5903cdd0f6c15ebaa7891d70f1145b1&type=hash&ref_id=d3b51a19feb#tab=host_pairs (# 2025-09-04)
+# Reference: https://app.validin.com/detail?find=392e09ecab64c043cccf236d29a514a5a50eb737&type=hash&ref_id=75dac3405fc#tab=host_pairs (# 2025-09-11)
 
 admin-extranet-reservationsexp.com
 admin-extranetadmns-captcha.com
@@ -17914,6 +17915,7 @@ bkngssercise.com
 booking-agreementstatementapril0429.com
 booking.admin-extranet-reservationsexp.com
 confvisitor-viewnew-783927.com
+ctrlcapaserc.com
 emprotel.net.bo
 extranet-admin-reservationssept.com
 gritysocial.com
