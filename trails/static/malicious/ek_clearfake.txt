@@ -18015,6 +18015,10 @@ secured-manager-install.top
 extranet-captcha-id9321.com
 booking.extranet-captcha-id9321.com
 
+# Reference: https://x.com/solostalking/status/1966422069719236743
+
+128.140.70.83:8080
+
 # Generic
 
 /a3A7qLVn/
