@@ -532,3 +532,7 @@ trasnfond.ro
 worldmailconnect.com
 yourtencent.com
 zuopir.com
+
+# Reference: https://x.com/Xanderuxsf5/status/1966107951661293977
+
+43.209.175.55:7010
