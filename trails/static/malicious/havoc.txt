@@ -5195,6 +5195,13 @@ http://54.188.179.41
 
 hao771.sharepoint.com
 
+# Reference: https://x.com/midnight_comms/status/1966618103023861883
+# Reference: https://www.virustotal.com/gui/file/534af8897745ae7f6fc509d191bd66c28b3c5485b35fcaeeb50dbe6fb19060a1/detection
+# Reference: https://www.virustotal.com/gui/file/ce6be19320eb7c037d2a65726bebd27f88faa99216d15362ad1941a744a0ea03/detection
+
+91.245.255.43:17866
+91.245.255.43:8765
+
 # Generic
 
 /Havoc/payload/
