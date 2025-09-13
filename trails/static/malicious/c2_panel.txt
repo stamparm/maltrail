@@ -953,6 +953,10 @@ http://35.234.172.162
 http://51.210.151.63
 http://54.175.184.74
 
+# Reference: https://www.virustotal.com/gui/file/1265745ab3319faea343b0eebb9f90cf73b916199bc013359053e28f47365dfb/detection
+
+/pico/Panel/gate.php
+
 # Generic
 
 /admin_123/auth.php
