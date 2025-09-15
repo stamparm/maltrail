@@ -13058,6 +13058,7 @@ discoveryrover.info
 dofabrics.asia
 dolsstores.blog
 doorsandwindowsuk.store
+dorei.website
 ecocoe.info
 enrgy.cam
 esst.cc
@@ -13067,6 +13068,7 @@ fieldmans.fit
 gigatag.info
 grossbar.shop
 gsmsa.pro
+h5.opshop.cc
 histat.top
 humn.pro
 ibmpc.cc
@@ -13084,9 +13086,13 @@ nops.asia
 openc.shop
 openmonitor.rest
 openstat.cc
+opshop.cc
 protostat.lat
+pshp.live
+qrapp.asia
 quicktag.wiki
 realstat.today
+rmark.lat
 statmasters.shop
 supertag.info
 tagsanalytics.shop
