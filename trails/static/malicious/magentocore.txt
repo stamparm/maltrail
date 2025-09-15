@@ -16159,6 +16159,20 @@ wwwgyoutube.com
 
 e31692e26753a0cb.b-cdn.net
 
+# Reference: https://x.com/sdcyberresearch/status/1967530667019010127
+
+cc-analytics.com
+cc-analytis.com
+getejs.com
+getnjs.com
+getvjs.com
+jgetjs.com
+pstatics.com
+util-analytics.com
+utilanalytics.com
+youtuber-dashboardwme.pro
+accounts.youtuber-dashboardwme.pro
+
 # Generic
 
 /assets/lfg.js
