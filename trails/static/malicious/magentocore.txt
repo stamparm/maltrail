@@ -16166,12 +16166,23 @@ cc-analytis.com
 getejs.com
 getnjs.com
 getvjs.com
+i-statics.com
+itstatics.com
 jgetjs.com
+jstatics.com
+ostatics.com
 pstatics.com
+qstatics.com
+rstatics.com
+sstatics.com
+ustatics.com
 util-analytics.com
 utilanalytics.com
+wstatics.com
 youtuber-dashboardwme.pro
+ystatics.com
 accounts.youtuber-dashboardwme.pro
+api.sstatics.com
 
 # Generic
 
