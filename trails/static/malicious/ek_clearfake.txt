@@ -18081,6 +18081,20 @@ booking.extranet-captcha-id9321.com
 
 128.140.70.83:8080
 
+# Reference: https://www.acronis.com/en/tru/posts/filefix-in-the-wild-new-filefix-campaign-goes-beyond-poc-and-leverages-steganography/
+
+elprogresofood.com
+mastercompu.com
+meta-software-worldwide.com
+thanjainatural.com
+windows-software-downloads.com
+windows-software-updates.cc
+windows-software-updates.com
+facebook.meta-software-worldwide.com
+facebook.windows-software-downloads.com
+facebook.windows-software-updates.cc
+facebook.windows-software-updates.com
+
 # Generic
 
 /a3A7qLVn/
