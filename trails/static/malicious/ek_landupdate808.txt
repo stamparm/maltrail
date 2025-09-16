@@ -370,3 +370,7 @@ smithenv.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-09-11-v11013/3030
 
 mtmra.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-09-15-v11015/3033
+
+webcre8.com
