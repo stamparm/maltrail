@@ -3820,3 +3820,7 @@ govt.hu
 # Reference: https://www.virustotal.com/gui/domain/gurdit.com/relations
 
 gurdit.com
+
+# Reference: https://www.virustotal.com/gui/domain/is-a-good.dev/relations
+
+is-a-good.dev
