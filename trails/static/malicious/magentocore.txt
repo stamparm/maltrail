@@ -16193,6 +16193,11 @@ ystatics.com
 accounts.youtuber-dashboardwme.pro
 api.sstatics.com
 
+# Reference: https://x.com/sdcyberresearch/status/1968293903712539006
+
+roadtheapp.com
+store.roadtheapp.com
+
 # Generic
 
 /assets/lfg.js
