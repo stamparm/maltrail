@@ -16194,8 +16194,25 @@ accounts.youtuber-dashboardwme.pro
 api.sstatics.com
 
 # Reference: https://x.com/sdcyberresearch/status/1968293903712539006
+# Reference: https://app.validin.com/detail?find=6cd5b8b194c15542c2610a34dd25f8bd&type=hash&ref_id=d2e03137ed9#tab=host_pairs (# 2025-09-17)
 
+chatsup.us
+hotapps.app
+hubsport.io
+imgwick.net
+pcapredict.pro
+rainb.io
+regnapps.app
 roadtheapp.com
+schemaapp.pro
+shiftshops.app
+511.schemaapp.pro
+app.hubsport.io
+cdn.hotapps.app
+claim.imgwick.net
+f.shiftshops.app
+state.pcapredict.pro
+store.rainb.io
 store.roadtheapp.com
 
 # Generic
