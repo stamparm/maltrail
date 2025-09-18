@@ -16636,14 +16636,24 @@ google.cam.recaptcha.antibot.com-restrict.cc
 # Reference: https://app.any.run/tasks/eb4538dc-7efc-4e8c-a642-cc1251eba849
 
 bentlio.pages.dev
+bexy66let.pages.dev
 cdn-verify.pages.dev
+cdngenerateload.pages.dev
 cdnservice.ink
 check-l1v.pages.dev
 discoomfit.art
 eastern-7tf.pages.dev
+festyfit55.pages.dev
+fiasko45.pages.dev
+fijixetern.pages.dev
+forsec55.pages.dev
 get-verification.pages.dev
 goneon.best
+katdening1.pages.dev
+mkva.pages.dev
+mokv.pages.dev
 nextroper.icu
+noloading.pages.dev
 rollingroyce.pages.dev
 rollsgoyard.pages.dev
 secuda.pages.dev
@@ -16652,10 +16662,14 @@ secure-check-1.pages.dev
 secure-check-2.pages.dev
 secure-check-71w.pages.dev
 secured-verification.pages.dev
+slovana221.pages.dev
 sparrjhgril.live
 sparrowgril.it.com
 swv-edb.pages.dev
+teksonai.pages.dev
+thekite000.pages.dev
 turns-verify.pages.dev
+verifproceeding.pages.dev
 
 # Reference: https://x.com/JAMESWT_WT/status/1959874333704130804
 
