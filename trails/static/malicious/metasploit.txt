@@ -6201,3 +6201,7 @@ http://66.179.83.142
 # Reference: https://www.virustotal.com/gui/file/1ab4e4044a67c7a10f54a109ab17fdbb73b13b29841b0cdf3f0fed63c2d6e1f3/detection
 
 http://179.60.150.151
+
+# Reference: https://x.com/drb_ra/status/1968643814286893250
+
+185.112.83.63:443
