@@ -5830,28 +5830,42 @@
 217.119.139.0/24,galeon-as
 45.132.49.0/24,galeon-as
 
-# Reference: https://thehackernews.com/2025/09/ukrainian-network-fdn3-launches-massive.html?utm_source=dlvr.it&utm_medium=twitter
-# Reference: https://ipinfo.io/AS211736
 # AS211736
+# Reference: https://ipinfo.io/AS211736
+# Reference: https://thehackernews.com/2025/09/ukrainian-network-fdn3-launches-massive.html?utm_source=dlvr.it&utm_medium=twitter
 
 185.156.73.0/24,fdn3
 88.210.63.0/24,fdn3
 92.63.197.0/24,fdn3
 
-# Reference: https://thehackernews.com/2025/09/ukrainian-network-fdn3-launches-massive.html
-# Reference: https://ipinfo.io/AS210848
 # AS210848
+# Reference: https://ipinfo.io/AS210848
+# Reference: https://thehackernews.com/2025/09/ukrainian-network-fdn3-launches-massive.html
 
 185.156.74.0/24,tk-net
 185.193.88.0/24,tk-net
 31.43.191.0/24,tk-net
 
-# Reference: https://thehackernews.com/2025/09/ukrainian-network-fdn3-launches-massive.html
-# Reference: https://ipinfo.io/AS200195
 # AS200195
+# Reference: https://ipinfo.io/AS200195
+# Reference: https://thehackernews.com/2025/09/ukrainian-network-fdn3-launches-massive.html
 
 176.98.182.0/24,verasel
 176.98.183.0/24,verasel
 185.40.4.0/24,verasel
 45.123.190.0/24,verasel
 45.143.201.0/24,verasel
+
+# AS209800
+# Reference: https://ipinfo.io/AS209800
+# Reference: https://urlhaus.abuse.ch/asn/209800/
+
+158.94.208.0/22,metaspinner-asn
+178.16.52.0/24,metaspinner-asn
+178.16.53.0/24,metaspinner-asn
+178.16.54.0/24,metaspinner-asn
+178.16.55.0/24,metaspinner-asn
+91.92.240.0/24,metaspinner-asn
+91.92.241.0/24,metaspinner-asn
+91.92.242.0/24,metaspinner-asn
+91.92.243.0/24,metaspinner-asn
