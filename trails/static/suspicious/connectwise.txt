@@ -1211,3 +1211,9 @@ vtsec.innocreed.com
 
 bfvfuausfo.me
 wmjlive.top
+
+# Reference: https://levelblue.com/blogs/security-essentials/asyncrat-in-action-fileless-malware-techniques-and-analysis-of-a-remote-access-trojan
+# Reference: https://www.virustotal.com/gui/file/09f15a6d9e38e5dc99e3b5787d09a1b2c8b7dc042562935b49250083a9d00ac5/detection
+
+shipperzone.online
+relay.shipperzone.online
