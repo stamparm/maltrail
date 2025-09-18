@@ -1,7 +1,7 @@
 # Copyright (c) 2014-2025 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
-# Aliases: TAG-124
+# Aliases: TAG-124, kongtuke
 
 # Reference: https://malasada.tech/the-landupdate808-fake-update-variant/
 
@@ -374,3 +374,59 @@ mtmra.com
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-09-15-v11015/3033
 
 webcre8.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/js.kongtuke/ (# 2025-09-18)
+
+http://147.45.45.177
+http://188.245.105.73
+http://188.245.167.86
+144.31.221.122:6060
+144.31.221.126:6060
+144.31.221.37:6060
+144.31.221.75:6060
+144.31.221.82:6060
+144.31.221.84:6060
+144.31.221.88:6060
+85.209.129.105:6060
+a82523.top
+bernnaum.com
+bradtae.com
+captchaverift.com
+choutek.com
+cloud-flaer-verif.com
+colliel.live
+comparisons-builder-loves-ratios.trycloudflare.com
+considering-infringement-subject-myself.trycloudflare.com
+cute-pudding-05af50.netlify.app
+deathmatchuk.com
+devindicator.dev
+eomaguera.com
+ferry-addressed-adams-vice.trycloudflare.com
+ffclive.com
+florence-hrs-savage-serial.trycloudflare.com
+genuine-seahorse-f5e9c4.netlify.app
+geology-gilbert-domain-thesaurus.trycloudflare.com
+homeeick.com
+homemick.live
+ichmidt.com
+industries-ii-wine-details.trycloudflare.com
+joebesser.com
+johnoton.live
+logical-whose-niagara-durable.trycloudflare.com
+math1st.com
+mersinet.com
+mtmra.com
+murphkirk.com
+okunevv.com
+porsasystem.com
+rfwklaw.com
+saewh.com
+tchmitt.live
+tmello.com
+unique-kataifi-8d2aac.netlify.app
+valentine-platform-wood-examination.trycloudflare.com
+vcsinfo.com
+webcre8.com
+wilwinson.com
+windowsmsncn.org
+z98123.top
