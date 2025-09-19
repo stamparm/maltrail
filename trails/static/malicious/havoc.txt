@@ -5202,6 +5202,14 @@ hao771.sharepoint.com
 91.245.255.43:17866
 91.245.255.43:8765
 
+# Reference: https://x.com/malwrhunterteam/status/1968946899039224197
+# Reference: https://www.virustotal.com/gui/file/9036ae120b3e6cfccbd60440da5df402eaa8ea307fb62b42bea624ad34df7b24/detection
+
+45.79.175.160:443
+45.79.175.160:8080
+bigtrashbandit.com
+eternalpeaceflame.org
+
 # Generic
 
 /Havoc/payload/
