@@ -1681,6 +1681,10 @@ parisforrent.top
 patekphillipwatches.top
 warpdrive.top
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-09-18-v11019/3042
+
+retiregenz.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
