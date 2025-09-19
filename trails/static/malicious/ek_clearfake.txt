@@ -18109,6 +18109,16 @@ facebook.windows-software-downloads.com
 facebook.windows-software-updates.cc
 facebook.windows-software-updates.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1968934473740833091
+# Reference: https://app.any.run/tasks/0df667b4-b779-483b-933d-a9b78fc41b75
+
+com-check-recent-activity.cfd
+com-sign-in.world
+maut-swiss.com
+booking.com-check-recent-activity.cfd
+booking.com-sign-in.world
+dcxfgrawaws.blogspot.com
+
 # Generic
 
 /a3A7qLVn/
