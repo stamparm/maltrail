@@ -18113,11 +18113,15 @@ facebook.windows-software-updates.com
 # Reference: https://x.com/JAMESWT_WT/status/1968934473740833091
 # Reference: https://app.any.run/tasks/0df667b4-b779-483b-933d-a9b78fc41b75
 # Reference: https://app.validin.com/detail?find=e4c2ba2491cb5a850165&type=hash&ref_id=fdaeaec9da3#tab=host_pairs (# 2025-09-19)
+# Reference: https://app.validin.com/detail?find=e782b3a63cc00f526fff&type=hash&ref_id=743f9bca32f#tab=host_pairs (# 2025-09-19)
 
 com-check-recent-activity.cfd
 com-sign-in.world
+ecrunija.cfd
+invitation-confirm.com
 maut-swiss.com
 nexchain.eu
+wezarix.de
 booking.com-check-recent-activity.cfd
 booking.com-sign-in.world
 dcxfgrawaws.blogspot.com
