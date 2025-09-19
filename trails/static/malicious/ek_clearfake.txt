@@ -18121,6 +18121,12 @@ booking.com-check-recent-activity.cfd
 booking.com-sign-in.world
 dcxfgrawaws.blogspot.com
 
+# Reference: https://x.com/ShanHolo/status/1968584438750605694
+
+365-portal.net
+thisisrecruitment.eu
+tickets-sarstedt.365-portal.net
+
 # Generic
 
 /a3A7qLVn/
