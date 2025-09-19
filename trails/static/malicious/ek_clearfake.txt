@@ -18116,8 +18116,10 @@ facebook.windows-software-updates.com
 # Reference: https://app.validin.com/detail?find=e782b3a63cc00f526fff&type=hash&ref_id=743f9bca32f#tab=host_pairs (# 2025-09-19)
 # Reference: https://app.validin.com/detail?find=3a0980f1ba1675e2bb2231ca94d39558&type=hash&ref_id=06c2a0d5617#tab=host_pairs (# 2025-09-19)
 # Reference: https://app.validin.com/detail?find=e682fe36d1ae618a5c0d&type=hash&ref_id=35f5a7ab266#tab=host_pairs (# 2025-09-19)
+# Reference: https://app.validin.com/detail?find=e5c2435ecf3d32101df8&type=hash&ref_id=35f5a7ab266#tab=host_pairs (# 2025-09-19)
 
 alpine-roads.cfd
+bg-confirm-id2333747232.cfd
 bg-reservation-pay.world
 com-check-recent-activity.cfd
 com-meetup.com
