@@ -4112,8 +4112,7 @@ booking.partlet-id739847.com
 # Reference: https://darkatlas.io/blog/delivering-trojans-via-clickfix-captcha
 # Reference: https://app.validin.com/detail?find=Checking%20if%20you%20are%20human&type=raw&ref_id=043c2826360#tab=host_pairs (# 2025-04-20)
 
-80.253.249.186:5504
-admin-booking-login.cfd
+365-drive.com
 anru33-bukti.com
 authentifycheck.com
 booking-guset.help
