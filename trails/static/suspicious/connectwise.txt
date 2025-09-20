@@ -1217,10 +1217,3 @@ wmjlive.top
 
 shipperzone.online
 relay.shipperzone.online
-
-# Reference: https://hunt.io/blog/asyncrat-screenconnect-open-directory-campaigns
-
-vdpanxxs.top
-vixgstxpnl.top
-dp.vdpanxxs.top
-sc.vdpanxxs.top
