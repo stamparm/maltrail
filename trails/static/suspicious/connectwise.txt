@@ -1219,8 +1219,12 @@ shipperzone.online
 relay.shipperzone.online
 
 # Reference: https://hunt.io/blog/asyncrat-screenconnect-open-directory-campaigns
+# Reference: https://www.virustotal.com/gui/file/082f2e0b5bfef1475e5dcf7c4df132da0842dd452bc5b1a82c13a3d714d89f6f/detection
 
+uniupdate.net
 vdpanxxs.top
 vixgstxpnl.top
 dp.vdpanxxs.top
 sc.vdpanxxs.top
+galusa.ac.mz
+verify.uniupdate.net
