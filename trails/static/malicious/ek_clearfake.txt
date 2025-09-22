@@ -18665,6 +18665,11 @@ mail.trojan-bot.me
 mediator.avocatmilitaruc.ro
 proteamgroup.info.datasenter.no
 
+# Reference: https://x.com/JAMESWT_WT/status/1969978128270491924
+
+adminbookingplus.com
+bkknvf.com
+
 # Generic
 
 /a3A7qLVn/
