@@ -4230,3 +4230,12 @@ test.zionist.site
 ufw.ovh
 unprotected.uwuhost.ru
 www-twitch.live
+
+# Reference: https://www.darktrace.com/blog/shadowv2-an-emerging-ddos-for-hire-botnet
+# Reference: https://app.validin.com/detail?find=ae971f9614644fa961846daa6b40a691&type=hash&ref_id=a7858f5a7ee#tab=host_pairs (# 2025-09-23)
+# Reference: https://www.virustotal.com/gui/file/1b552d19a3083572bc433714dfbc2b75eb6930a644696dedd600f9bd755042f6/detection
+# Reference: https://www.virustotal.com/gui/file/1f70c78c018175a3e4fa2b3822f1a3bd48a3b923d1fbdeaa5446960ca8133e9c/detection
+
+aurozacloud.xyz
+shadowstresser.info
+shadow.aurozacloud.xyz
