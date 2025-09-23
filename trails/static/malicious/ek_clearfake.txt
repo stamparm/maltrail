@@ -18786,6 +18786,11 @@ proteamgroup.info.datasenter.no
 adminbookingplus.com
 bkknvf.com
 
+# Reference: https://www.linkedin.com/posts/bradley-duncan-13477868_smartapesg-filefix-clickfix-activity-7375975759116611584-xtrZ
+# Reference: https://www.virustotal.com/gui/ip-address/45.61.128.209/relations
+
+founderevo.com
+
 # Generic
 
 /a3A7qLVn/
