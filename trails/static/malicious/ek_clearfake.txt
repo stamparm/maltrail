@@ -18793,8 +18793,10 @@ founderevo.com
 
 # Reference: https://x.com/P4nd3m1cb0y/status/1970796711816605782
 # Reference: https://urlscan.io/result/01997cb9-c2a3-746f-95b2-d36cd1006a2d/
+# Fortinet - Compliance checker
 
 http://3.73.38.245
+fc-checker.dlccdn.com
 
 # Generic
 
