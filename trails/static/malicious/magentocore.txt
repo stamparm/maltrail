@@ -13079,6 +13079,7 @@ keytag.rest
 kfcd.site
 lipo.wtf
 livedirect.my
+megastat.shop
 metamanager.shop
 monstr.cv
 nextai.cam
@@ -13099,6 +13100,7 @@ tagsanalytics.shop
 tagscart.shop
 tagsmanager.shop
 tagspot.store
+terap.app
 ultrabit.shop
 ultrabyte.shop
 ultracart.shop
@@ -13106,6 +13108,7 @@ ultramain.shop
 ultramesh.shop
 ultrasys.shop
 uniquemask.homes
+unis.my
 vectors.guru
 vspec.info
 vsys.digital
@@ -13114,6 +13117,7 @@ webstat.help
 wikistat.wiki
 xtras.work
 xtreme.boats
+xztv.me
 yestat.website
 yesyes.rest
 zend.quest
