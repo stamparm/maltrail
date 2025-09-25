@@ -18748,6 +18748,7 @@ facebook.windows-software-updates.com
 alpine-roads.cfd
 bg-confirm-id2333747232.cfd
 bg-reservation-pay.world
+com-antibot.us
 com-check-recent-activity.cfd
 com-meetup.com
 com-sign-in.world
@@ -18767,6 +18768,7 @@ vignette-shop.cfd
 wezarix.de
 booking.com-check-recent-activity.cfd
 booking.com-sign-in.world
+cloudflare.com-antibot.us
 dcxfgrawaws.blogspot.com
 
 # Reference: https://x.com/ShanHolo/status/1968584438750605694
