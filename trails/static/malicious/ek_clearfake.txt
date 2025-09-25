@@ -18834,6 +18834,10 @@ founderevo.com
 http://3.73.38.245
 fc-checker.dlccdn.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/93.152.230.79/relations
+
+sites-phantom.com
+
 # Generic
 
 /a3A7qLVn/
