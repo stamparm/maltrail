@@ -14829,8 +14829,13 @@ bsjq.online
 bsjq.shop
 bsjq.site
 bsjq.store
+criptosucker.space
+criptosucker.store
 crypto-shop.online
 crypto-shop.site
+cryptosuck.online
+freestylershop.space
+freestylershop.store
 greatsong.online
 isjustone.site
 isjustour.site
@@ -14860,6 +14865,9 @@ jquery.digital
 jquery.monster
 jquery.rest
 mcduckgroup.shop
+megaappshop.space
+megaappshop.store
+megapetshop.space
 net-3admsv.ml
 nightsong.online
 oneadm.space
@@ -14872,6 +14880,12 @@ querysong.online
 thisisourparadise.site
 thisisourparadise.space
 thisisourparadise.store
+thisisourpeace.site
+thisisourpeace.space
+thisisourpeace.store
+thisisourplace.site
+thisisourplace.space
+thisisourplace.store
 
 # Reference: https://x.com/sdcyberresearch/status/1894055884294078800
 
