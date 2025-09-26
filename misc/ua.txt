@@ -2588,6 +2588,12 @@ Zephyr-Downloader
 BQTLock
 BQTLockClient
 
+# Reference: https://x.com/abuse_ch/status/1971574897521336553
+
+Kamasers
+Kamasers C2 Client
+System Updater/5.0
+
 # Misc
 
 information_schema
