@@ -18941,6 +18941,11 @@ fc-checker.dlccdn.com
 
 sites-phantom.com
 
+# Reference: https://x.com/solostalking/status/1971560418041819283
+
+185.132.176.238:443
+share-belfercenter.info
+
 # Generic
 
 /a3A7qLVn/
