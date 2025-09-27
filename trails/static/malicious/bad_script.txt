@@ -9003,6 +9003,10 @@ zenlio.weebly.com
 
 /ololo.aspx
 
+# Reference: https://www.virustotal.com/gui/file/c3f451354de6fe675f1c756733208fc6739ebb3603449b68a1c41419d952944b/detection
+
+/verygreatwaygtogivebestnoticingoptional.hta
+
 # Generic
 
 /5c0ca79.php
