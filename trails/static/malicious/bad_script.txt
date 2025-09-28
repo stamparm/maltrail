@@ -9113,3 +9113,6 @@ zenlio.weebly.com
 /payload/remote/
 /modified_ploader.cpp
 /ploader.cpp
+/snakeyaml-memshell/
+/yaml-payload/
+/yaml-payload-for_Win/
