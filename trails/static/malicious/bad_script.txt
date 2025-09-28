@@ -9102,6 +9102,7 @@ zenlio.weebly.com
 /screenshot_gate.php
 /shell.hta
 /shell2.php
+/shellcode_test.txt
 /tgate.php
 /testgate.php
 /verification-card.php
