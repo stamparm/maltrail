@@ -9074,6 +9074,7 @@ zenlio.weebly.com
 /DllQueVaiNoClient.py
 /DllQueVaiNoClient.pyc
 /dating-verification-card.php
+/encrypted_shellcode.txt
 /evreigate.php
 /exploit.py
 /fcc-authenticazione.php
