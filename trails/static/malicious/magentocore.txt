@@ -11391,6 +11391,7 @@ soacabamentos.com
 ssl-google-analytics.com
 statefiarm.com
 static1-jquery.com
+static11-jquery.com
 static2-jquery.com
 static3-jquery.com
 static4-jquery.com
@@ -11407,6 +11408,8 @@ cdn.jquery.host
 controls.wpenginepowered.com
 ns1.cloudflare-js5.com
 ns2.cloudflare-js5.com
+ns1.static11-jquery.com
+ns2.static11-jquery.com
 ns1.static5-jquery.com
 ns1.static6-jquery.com
 ns2.static5-jquery.com
