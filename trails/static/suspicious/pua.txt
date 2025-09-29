@@ -3389,3 +3389,7 @@ owhit.com
 pixatab.xyz
 pixatab.xyz.evh.nqp.temporary.site
 play.owhit.com
+
+# Reference: https://www.virustotal.com/gui/file/83a871c1cafc6d14dc799e0c277aeaa36c50d42ea9f5f5ef5f01b35ae0fedaa7/detection
+
+mvploader.net
