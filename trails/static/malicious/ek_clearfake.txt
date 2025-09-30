@@ -19229,6 +19229,57 @@ yerouktras.eu
 bo0king.co
 account.bo0king.co
 
+# Reference: https://www.virustotal.com/gui/ip-address/144.31.193.106/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.221.213.62/relations
+
+plainfenassociates.com
+quietshalecompany.com
+a.plainfenassociates.com
+admin.plainfenassociates.com
+api.plainfenassociates.com
+app.plainfenassociates.com
+app2.plainfenassociates.com
+apps1.plainfenassociates.com
+auth1.plainfenassociates.com
+billing.plainfenassociates.com
+brsp.plainfenassociates.com
+connect.plainfenassociates.com
+demo.plainfenassociates.com
+desktops2.plainfenassociates.com
+dev.plainfenassociates.com
+gamma.plainfenassociates.com
+login.plainfenassociates.com
+login1.plainfenassociates.com
+m.plainfenassociates.com
+media.plainfenassociates.com
+mobile.plainfenassociates.com
+myapps.plainfenassociates.com
+myapps2.plainfenassociates.com
+office.plainfenassociates.com
+plainfenassociates.com
+plsp.plainfenassociates.com
+portal.plainfenassociates.com
+qa.plainfenassociates.com
+rd2.plainfenassociates.com
+rds1.plainfenassociates.com
+rds2.plainfenassociates.com
+rdweb1.plainfenassociates.com
+remote2.plainfenassociates.com
+remoteapp1.plainfenassociates.com
+secure.plainfenassociates.com
+ssl2.plainfenassociates.com
+sslvpn.plainfenassociates.com
+sslvpn1.plainfenassociates.com
+staging.plainfenassociates.com
+terminal2.plainfenassociates.com
+test.plainfenassociates.com
+testing.plainfenassociates.com
+virtualaccess2.plainfenassociates.com
+vpn-portal.plainfenassociates.com
+web1.plainfenassociates.com
+web2.plainfenassociates.com
+webmail.plainfenassociates.com
+
 # Generic
 
 /a3A7qLVn/
