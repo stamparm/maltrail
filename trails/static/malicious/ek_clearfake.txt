@@ -19061,6 +19061,11 @@ test.order-7901027.com
 test.order523542.com
 yerouktras.eu
 
+# Reference: https://x.com/JAMESWT_WT/status/1972690379066474773
+
+bo0king.co
+account.bo0king.co
+
 # Generic
 
 /a3A7qLVn/
