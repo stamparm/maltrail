@@ -18476,6 +18476,7 @@ fideltyonlinesecure.sbs
 fideltyportfoliohelp.sbs
 fideltyportfolioprofile.sbs
 fideltyportfoliosupport.sbs
+fideltyportfoliotexts.sbs
 fideltypremiumsupport.sbs
 fideltypublicnotice.sbs
 fideltyrequest-help.sbs
