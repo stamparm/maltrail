@@ -1180,3 +1180,29 @@ http://54.95.193.41
 # Reference: https://www.virustotal.com/gui/file/64a95de2783a97160bac6914ee07a42cdd154a0e33abc3b1b62c7bafdce24c0c/detection
 
 5.188.86.233:8080
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-10-05)
+
+http://13.115.109.98
+http://18.182.173.57
+http://35.75.149.18
+http://35.75.178.12
+http://35.79.147.99
+http://35.79.211.69
+http://52.194.178.241
+http://52.194.63.154
+http://52.197.117.100
+http://52.68.99.67
+http://52.69.230.91
+http://54.238.45.243
+http://54.65.57.175
+http://54.92.35.242
+http://54.95.36.98
+http://57.182.172.83
+http://57.182.176.173
+http://57.182.82.20
+144.91.103.204:8080
+178.16.55.52:9090
+207.180.216.244:8443
+35.161.118.138:443
+5.183.219.132:443
