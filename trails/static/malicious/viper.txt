@@ -2530,3 +2530,11 @@ http://216.118.101.97
 # Reference: https://x.com/FalconFeedsio/status/1962824775765762514
 
 8.140.53.30:60000
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-10-05)
+
+106.55.104.79:60000
+124.221.221.58:60000
+129.28.29.138:60000
+47.113.147.96:60000
+47.86.97.42:60000
