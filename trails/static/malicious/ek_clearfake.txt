@@ -19546,6 +19546,12 @@ web1.plainfenassociates.com
 web2.plainfenassociates.com
 webmail.plainfenassociates.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1975243977977983255
+
+blkiesf.com
+request44456776.com
+/apip/f/f0X
+
 # Generic
 
 /a3A7qLVn/
