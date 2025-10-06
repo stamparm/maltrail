@@ -16248,6 +16248,14 @@ state.pcapredict.pro
 store.rainb.io
 store.roadtheapp.com
 
+# Reference: https://x.com/sdcyberresearch/status/1975162966082228471
+
+css-animations.online
+uesrghawg.info
+cdn.uesrghawg.info
+click.uesrghwg.info
+style.css-animations.online
+
 # Generic
 
 /assets/lfg.js
