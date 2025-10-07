@@ -19552,6 +19552,14 @@ blkiesf.com
 request44456776.com
 /apip/f/f0X
 
+# Reference: https://x.com/solostalking/status/1975415603948327049
+# CLASS_0_HASH-HOST=0c4cfcafd9f575b9639af789bcdbc4aa
+
+cfjeff20perc.pages.dev
+crypto-copilot.com
+guard-google.com
+xerovent.org
+
 # Generic
 
 /a3A7qLVn/
