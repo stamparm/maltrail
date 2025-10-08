@@ -21730,3 +21730,9 @@ thebathory.online
 # Reference: https://github.com/hagezi/dns-blocklists/issues/7003
 
 melirlediase.com
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/7572
+
+ghv-protect.pro
+d3itcaanaffc73b65cvg.ghv-protect.pro
+d3itd42naffc73b65pfg.ghv-protect.pro
