@@ -15939,8 +15939,10 @@ mago.kof.one
 
 # Reference: https://x.com/_eremit4/status/1957969714740699221
 # Reference: https://www.virustotal.com/gui/ip-address/104.21.48.1/relations
+# Reference: https://www.virustotal.com/gui/ip-address/104.21.65.136/relations
 
 anl.is
+eqp.is
 snf.is
 
 # Reference: https://x.com/sdcyberresearch/status/1929892055020401016
