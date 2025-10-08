@@ -16506,12 +16506,14 @@ proadvancehub.com
 signatrustup.com
 tersmoles.com
 
+# Reference: https://unit42.paloaltonetworks.com/clickfix-generator-first-of-its-kind/
 # Reference: https://app.validin.com/detail?find=137815fd81617dcc986bfb8a42f472cb&type=hash&ref_id=80bddb168d2#tab=host_pairs (# 2025-08-13)
 
 bharatnamkeens.com
 crm.jskymedia.com
 elternrat-bezaarau.ch
 ergonart.gr
+favorite-hotels.com
 gaalmozes.ro
 growsearch.in
 kdap-amea.gr
