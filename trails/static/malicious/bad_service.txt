@@ -4239,3 +4239,12 @@ www-twitch.live
 aurozacloud.xyz
 shadowstresser.info
 shadow.aurozacloud.xyz
+
+# Reference: https://www.ransomlook.io/market/breachforums%20(v3)
+
+breached26tezcofqla4adzyn22notfqwcac7gpbrleg4usehljwkgqd.onion
+breached4lhlibrqmzj7h2n4unu7wdzkg7gczcggufbqufwmmdraiyqd.onion
+breachedetbw6gnud64wvuld3xkyrrbz5eijhvjbbix72izpegjdvcyd.onion
+breachedhr2hxxranvbogkth63cpxwdcelsetui4uqavejvsqes4thid.onion
+breachedm6qqmtc2ksrdhhtdr6o4erzudgx4blvkcxhyeruudtibizqd.onion
+breachforums.st
