@@ -19682,6 +19682,16 @@ crypto-copilot.com
 guard-google.com
 xerovent.org
 
+# Reference: https://x.com/cyber_ra1/status/1976170806637101401
+
+365-docs.com
+booking-verif.com
+booking-verification.click
+fallmusicfestival.com
+oncallsolutions.co
+snapvault.live
+solidnews.pro
+
 # Generic
 
 /a3A7qLVn/
