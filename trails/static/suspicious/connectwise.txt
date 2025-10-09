@@ -1228,3 +1228,10 @@ dp.vdpanxxs.top
 sc.vdpanxxs.top
 galusa.ac.mz
 verify.uniupdate.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.43.11.138/relations
+
+45.43.11.138:443
+arise-angles.live
+simplyvisual.top
+techscript.support
