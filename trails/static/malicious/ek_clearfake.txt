@@ -19686,6 +19686,7 @@ xerovent.org
 # Reference: https://www.virustotal.com/gui/ip-address/77.110.118.11/relations
 # CLASS_0_HASH-HOST=1f0324acec43709eb03cfad22848e960
 
+77.110.118.11:443
 365-docs.cfd
 365-docs.com
 365-docs.online
