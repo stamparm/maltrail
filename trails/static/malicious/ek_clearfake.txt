@@ -19706,6 +19706,10 @@ tripvoyagehub.com
 tripvoyagehub.org
 onedrive.365-docs.com
 
+# Reference: https://urlscan.io/result/0199c7e9-d7bf-723d-b408-717eec77ea4f/
+
+simmexcontrol.com
+
 # Generic
 
 /a3A7qLVn/
