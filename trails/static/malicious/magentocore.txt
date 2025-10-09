@@ -16259,6 +16259,16 @@ cdn.uesrghawg.info
 click.uesrghwg.info
 style.css-animations.online
 
+# Reference: https://x.com/_eremit4/status/1976050532021420314
+# BANNER_0_HASH-HOST=9fc453fd20645c4628d9ce386ffcbf5d
+# BANNER_0_HASH-HOST=df1fb9c560251dae625583d67ef1639b
+
+googletegmaneger.com
+myconvertr.com
+cdn-googlemanager.com
+secure-endpoint-v2.com
+cdn.myconvertr.com
+
 # Generic
 
 /assets/lfg.js
