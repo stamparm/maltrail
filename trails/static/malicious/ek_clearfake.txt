@@ -19683,14 +19683,26 @@ guard-google.com
 xerovent.org
 
 # Reference: https://x.com/cyber_ra1/status/1976170806637101401
+# Reference: https://www.virustotal.com/gui/ip-address/77.110.118.11/relations
 
+365-docs.cfd
 365-docs.com
+365-docs.online
 booking-verif.com
 booking-verification.click
+booking-verification.site
+documenti-drive.com
+esb-hotels.com
 fallmusicfestival.com
+localstayguide.com
 oncallsolutions.co
+photo-library.live
+quiz-s-pankki.cyou
 snapvault.live
 solidnews.pro
+tripvoyagehub.com
+tripvoyagehub.org
+onedrive.365-docs.com
 
 # Generic
 
