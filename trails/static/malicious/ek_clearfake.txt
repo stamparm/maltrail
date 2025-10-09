@@ -19684,6 +19684,7 @@ xerovent.org
 
 # Reference: https://x.com/cyber_ra1/status/1976170806637101401
 # Reference: https://www.virustotal.com/gui/ip-address/77.110.118.11/relations
+# CLASS_0_HASH-HOST=1f0324acec43709eb03cfad22848e960
 
 365-docs.cfd
 365-docs.com
@@ -19695,6 +19696,7 @@ documenti-drive.com
 esb-hotels.com
 fallmusicfestival.com
 localstayguide.com
+mywebhook.sbs
 oncallsolutions.co
 photo-library.live
 quiz-s-pankki.cyou
