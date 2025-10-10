@@ -4248,3 +4248,7 @@ breachedetbw6gnud64wvuld3xkyrrbz5eijhvjbbix72izpegjdvcyd.onion
 breachedhr2hxxranvbogkth63cpxwdcelsetui4uqavejvsqes4thid.onion
 breachedm6qqmtc2ksrdhhtdr6o4erzudgx4blvkcxhyeruudtibizqd.onion
 breachforums.st
+
+# Reference: https://x.com/AustinLarsen_/status/1976419198105702559
+
+breachforums.hn
