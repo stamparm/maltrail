@@ -251,3 +251,8 @@ suvfix.us
 tenty247.top
 wdhelp.live
 wdhelp.us
+
+# Reference: https://x.com/c_APT_ure/status/1976384898794651826
+# Reference: https://www.virustotal.com/gui/file/5879d31ba880a8bf0825ed666ce82913b53830be8ab8f20ea22702f4202ff789/detection
+
+http://96.44.159.135
