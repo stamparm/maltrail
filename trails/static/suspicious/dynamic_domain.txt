@@ -3824,3 +3824,7 @@ gurdit.com
 # Reference: https://www.virustotal.com/gui/domain/is-a-good.dev/relations
 
 is-a-good.dev
+
+# Reference: https://www.virustotal.com/gui/domain/mydns.vc/relations
+
+mydns.v
