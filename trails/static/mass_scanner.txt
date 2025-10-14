@@ -641,12 +641,6 @@
 146.185.25.188 # scanners.labs.rapid7.com
 146.185.25.189 # scanners.labs.rapid7.com
 146.185.25.190 # scanners.labs.rapid7.com
-    
-204.42.253.2 # openresolverproject.org
-204.42.253.130 # opensnmpproject.org
-204.42.253.131 # openntpproject.org
-204.42.253.132 # openssdpproject.org
-204.42.254.5 # openresolverproject.org
 
 141.212.121.1 # researchscan001.eecs.umich.edu
 141.212.121.2 # researchscan002.eecs.umich.edu
