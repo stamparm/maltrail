@@ -13097,6 +13097,7 @@ qrapp.asia
 quicktag.wiki
 realstat.today
 rmark.lat
+spendless.guru
 statmasters.shop
 supertag.info
 tagsanalytics.shop
@@ -13116,6 +13117,7 @@ vectors.guru
 vspec.info
 vsys.digital
 vtec.live
+vvwv.dev
 webstat.help
 wikistat.wiki
 xtras.work
