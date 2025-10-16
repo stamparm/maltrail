@@ -9011,6 +9011,10 @@ zenlio.weebly.com
 
 /mc55tP.ps1
 
+# Reference: https://x.com/smica83/status/1978771256762606024
+
+/stage0.ps1
+
 # Generic
 
 /5c0ca79.php
