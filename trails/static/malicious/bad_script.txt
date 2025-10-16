@@ -9015,6 +9015,16 @@ zenlio.weebly.com
 
 /stage0.ps1
 
+# Reference: https://x.com/smica83/status/1978880380187938929
+# Reference: https://www.virustotal.com/gui/file/84f6f3a7c219b94c9689601a4b179880b12d661f38456f38f3b4e197566855f2/detection
+# Reference: https://www.virustotal.com/gui/file/b67fb83392e59d2c62ba606c44cfaa9141d98bd7fed7028539b5ea70cc24ed87/detection
+# Reference: https://www.virustotal.com/gui/file/cc5366e31fdaaad3fda3936f9ba67fce2e9c38f34c0607bea1a3855189edd4c0/detection
+
+/crajja/mask.ps1
+/crajja/weeder.ps1
+/k2a1a/mask.ps1
+/k2a1a/weeder.ps1
+
 # Generic
 
 /5c0ca79.php
