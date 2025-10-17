@@ -9030,6 +9030,11 @@ zenlio.weebly.com
 
 /dcfx8eu84759rt48dfgdf8734jhj535h458dfg87834jrh3458fdg834tret3tbfdg8344385fd.hta
 
+# Reference: https://www.virustotal.com/gui/file/45861cfb823fb2a2d59f697e13623934c635fc8bceb9af5f282343fd224dfab2/detection
+
+/sc9ddc73jjhfjsh8cxs0d9xc23hjhj5j6jhj8bh876hfdf90gd900vb90brt90t0yr09asd03sfd0f0sd.hta
+/sc9ddc73jjhfjsh8cxs0d9xc23hjhj5j6jhj8bh876hfdf90gd900vb90brt90t0yr09asd03sfd0f0sd.txt
+
 # Generic
 
 /5c0ca79.php
