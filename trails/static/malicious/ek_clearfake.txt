@@ -21403,6 +21403,13 @@ simmexcontrol.com
 
 abstractoffieldtrialofblackgram.com
 
+# Reference: https://www.joesecurity.org/reports/report-4991369.html
+
+cptchdm.icu
+fgsclsite.icu
+gcloudfs.icu
+gclouds.icu
+
 # Generic
 
 /a3A7qLVn/
