@@ -1,7 +1,7 @@
 # Copyright (c) 2014-2025 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
-# Aliases: clickfix, filefix, storm-1865
+# Aliases: clickfix, filefix, storm-1865, unc5142
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-08-28-v10404/902
 
