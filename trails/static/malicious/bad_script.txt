@@ -3298,10 +3298,6 @@ tunacan-812.tk
 /salem123aas.php
 /admin/config.php?password%5B0%5D=Inje3t0r3-Seraj
 
-# Reference: https://twitter.com/abel1ma/status/1324477543001415680
-
-/f.php#～
-
 # Reference: https://www.virustotal.com/gui/file/33a7196538a17da13cc67b31162c14d0f3f473816b98f75f01709eda2b1464a7/detection
 
 /power.php?getserver=
