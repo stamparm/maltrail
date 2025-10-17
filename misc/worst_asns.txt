@@ -5875,3 +5875,19 @@
 # Reference: https://x.com/banthisguy9349/status/1969684170583527485
 
 176.46.158.0/24,sf-digitalservices
+
+# AS 213373
+# Reference: https://ipinfo.io/AS213373
+
+109.205.187.0/24,ipconnect
+146.19.173.0/24,ipconnect
+149.3.170.0/24,ipconnect
+164.215.103.0/24,ipconnect
+164.215.98.0/24,ipconnect
+2.56.10.0/24,ipconnect
+45.141.56.0/24,ipconnect
+45.141.58.0/24,ipconnect
+45.141.59.0/24,ipconnect
+46.23.109.0/24,ipconnect
+5.178.0.0/24,ipconnect
+85.203.26.0/24,ipconnect
