@@ -9025,6 +9025,11 @@ zenlio.weebly.com
 /k2a1a/mask.ps1
 /k2a1a/weeder.ps1
 
+# Reference: https://x.com/smica83/status/1978017659720532478
+# Reference: https://www.virustotal.com/gui/file/42f2626005f1e359d33861b55b62681f52274e02283279fcc3e54be3ee52ffa3/detection
+
+/dcfx8eu84759rt48dfgdf8734jhj535h458dfg87834jrh3458fdg834tret3tbfdg8344385fd.hta
+
 # Generic
 
 /5c0ca79.php
