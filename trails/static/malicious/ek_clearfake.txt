@@ -10814,6 +10814,7 @@ booking.confirmation-id28961.com
 booking.confirmation-id4343345.com
 booking.confirmation-id6254.com
 booking.confirmation-id627881.com
+booking.confirmation-id71482.com
 booking.confirmation-id7421.com
 booking.confirmation-id78532.com
 booking.confirmation-id91248.com
@@ -10893,6 +10894,7 @@ confirmation-id627881.com
 confirmation-id62883.com
 confirmation-id643467569.com
 confirmation-id64434569.com
+confirmation-id71482.com
 confirmation-id71902.com
 confirmation-id7421.com
 confirmation-id78532.com
@@ -10925,14 +10927,19 @@ confirmation1119-booking.com
 confirmation1181-booking.com
 confirmation1881-booking.com
 confirmation202-booking.com
+confirmation2107-booking.com
 confirmation299-booking.com
 confirmation342-booking.com
+confirmation4383-booking.com
+confirmation7725-booking.com
 confirmation8181-booking.com
 confirmation8324-booking.com
 confirmation8665-booking.com
 confirmation8722-booking.com
 confirmation887-booking.com
 confirmation9025-booking.com
+confirmation9201-booking.com
+confirmation9618-booking.com
 confirmation974-booking.com
 confirmation984-booking.com
 confirmation9912-booking.com
@@ -10940,6 +10947,8 @@ confirmation992-booking.com
 confirmationstay-508499321.com
 confirmationstay-990582398.com
 confirmed-booking2284.com
+dpd-alb.site
+dpd-albsafe.live
 dpd-rs.click
 dsytr-mloit-aqpolrt.com
 es-pacemento.com
@@ -10979,6 +10988,7 @@ guestverify5116-booking.com
 guestverify768411-booking.com
 help-desk-customer.com
 holiday-guest.world
+hoteldarmounirbook.com
 hoteleuropebiv.com
 hydeparklane-merchant.com
 id099-guestcheck.com
