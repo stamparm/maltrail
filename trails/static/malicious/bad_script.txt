@@ -7169,7 +7169,7 @@ tpc.cdn-linkedin.info
 
 # Reference: https://www.virustotal.com/gui/file/ed73c5b9cfcc18b8a58f936dd2cf5009599512654ea159b4ccbc479c208063cb/detection
 
-/b%20kzioe%20f.php
+# /b%20kzioe%20f.php
 /zg0p9xfcjshtr.php
 
 # Reference: https://www.virustotal.com/gui/file/dcab1d8358b8402218c1015e4e14820c976f15a8d5a8fa16220383e8e39687da/detection
