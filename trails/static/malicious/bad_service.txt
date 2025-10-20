@@ -4252,3 +4252,10 @@ breachforums.st
 # Reference: https://x.com/AustinLarsen_/status/1976419198105702559
 
 breachforums.hn
+
+# Reference: https://urlscan.io/result/019a017b-6c70-755f-b3e9-ad7da3406814/
+# META-HOST=:::"apple-mobile-web-app-title":"Zerdium"
+# META-HOST=:::::"og:title"::"Zerdium Cryptor - #1 C# Crypter"
+
+zerdium.me
+ilovechicken.pages.dev
