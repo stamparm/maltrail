@@ -16273,7 +16273,6 @@ secure-endpoint-v2.com
 cdn.myconvertr.com
 
 # Reference: https://x.com/sdcyberresearch/status/1980619281361436948
-# Reference: https://www.volexity.com/blog/2021/12/07/xe-group-exposed-8-years-of-hacking-card-skimming-for-profit/
 # Reference: https://www.virustotal.com/gui/ip-address/76.223.26.96/relations
 # Reference: https://www.virustotal.com/gui/file/cede310567508275b775bfa4d170c3e20a0faf0124b31c975c5360dcce620c31/detection
 # BANNER_0_HASH-HOST=a70f9384abe7996ab2389f10626f2466
@@ -16281,11 +16280,73 @@ cdn.myconvertr.com
 
 cdnstring.com
 npqam.com
-object.fm
 objectst.in
 thawte.cam
 tmdate.com
 tmstring.com
+
+# Reference: https://www.volexity.com/blog/2021/12/07/xe-group-exposed-8-years-of-hacking-card-skimming-for-profit/
+# Reference: https://github.com/volexity/threat-intel/blob/main/2021/2021-12-06%20-%20XEGroup/indicators/indicators.csv
+
+addthiis.com
+addthiis.net
+adfs.xegroups.com
+amazon.xegroups.com
+baucua.com
+buygetdiscount.com
+ccn.xegroups.com
+cf.addthiis.com
+dongtanphat.com
+email.paycashs.com
+emvnhim.com
+ftp.paycashs.com
+ftp.xework.com
+guiquare.com
+hegpt.com
+imap.xegroups.com
+loinhuancao.com
+mail.paycashs.com
+mail.restapi.xegroups.com
+mail.xegroups.com
+mail.xeminer.com
+mail.xework.com
+mylanshop.com
+noithatgiare.com
+ns1.paycashs.com
+ns1.restapi.xegroups.com
+ns1.subinput.com
+ns1.xegroups.com
+ns1.xeminer.com
+ns1.xework.com
+ns2.amazon.xegroups.com
+ns2.object.fm
+ns2.paycashs.com
+ns2.xegroups.com
+ns2.xeminer.com
+ns2.xework.com
+object.fm
+object.sbs
+paycashs.com
+restapi.xegroups.com
+s7.addthiis.com
+sanmuaban.com
+sanmuaban.net
+secure.subinput.com
+subinput.com
+va00.addthiis.com
+vhimne.com
+vp2-addthiis.com
+webmail.object.fm
+webmail.paycashs.com
+webmail.xegroups.com
+woodofvietnam.com
+xeadult.com
+xedob.com
+xegroups.com
+xemembers.com
+xeminer.com
+xeson.net
+xework.com
 
 # Generic
 
