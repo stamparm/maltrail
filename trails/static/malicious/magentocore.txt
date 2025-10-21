@@ -16347,6 +16347,11 @@ xemembers.com
 xeminer.com
 xeson.net
 xework.com
+ajax.googleapis.com.hivnd.com
+google-analytics.com.hivnd.com
+ns1.hivnd.com
+ns2.hivnd.com
+verify.authorize.net.hivnd.com
 
 # Generic
 
