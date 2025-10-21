@@ -16273,12 +16273,15 @@ secure-endpoint-v2.com
 cdn.myconvertr.com
 
 # Reference: https://x.com/sdcyberresearch/status/1980619281361436948
+# Reference: https://www.volexity.com/blog/2021/12/07/xe-group-exposed-8-years-of-hacking-card-skimming-for-profit/
+# Reference: https://www.virustotal.com/gui/ip-address/76.223.26.96/relations
 # Reference: https://www.virustotal.com/gui/file/cede310567508275b775bfa4d170c3e20a0faf0124b31c975c5360dcce620c31/detection
 # BANNER_0_HASH-HOST=a70f9384abe7996ab2389f10626f2466
 # BANNER_0_HASH-HOST=e19097712f322a4d5b065303d87fc89f
 
 cdnstring.com
 npqam.com
+object.fm
 objectst.in
 thawte.cam
 tmdate.com
