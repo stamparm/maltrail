@@ -21991,6 +21991,12 @@ fgsclsite.icu
 gcloudfs.icu
 gclouds.icu
 
+# Reference: https://x.com/Reid0nly/status/1980416054204723413
+
+hollywoodquarterly.com
+mawp.us
+xpoalswwkjddsljsy.com
+
 # Generic
 
 /a3A7qLVn/
