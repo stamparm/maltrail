@@ -2594,6 +2594,10 @@ Kamasers
 Kamasers C2 Client
 System Updater/5.0
 
+# Reference: https://x.com/AzakaSekai_/status/1969294757978652947
+
+HijackBot
+
 # Misc
 
 information_schema
