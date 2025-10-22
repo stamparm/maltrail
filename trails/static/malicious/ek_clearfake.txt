@@ -22384,6 +22384,11 @@ xcvcxoipoeww.site
 xmcniiadpwqw.site
 xpoalswwkjddsljsy.com
 
+# Reference: https://x.com/Fact_Finder03/status/1980859538699087944
+
+94.74.164.208:443
+cloudflare-captcha.net
+
 # Generic
 
 /a3A7qLVn/
