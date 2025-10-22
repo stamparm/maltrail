@@ -1235,3 +1235,13 @@ verify.uniupdate.net
 arise-angles.live
 simplyvisual.top
 techscript.support
+
+# Reference: https://x.com/JAMESWT_WT/status/1980880531568099818
+# Reference: https://www.virustotal.com/gui/file/1aeca54be00400bcff6c3259c3acde1e3142e9cc8f4be4fef352b70c90bdc27f/detection
+# Reference: https://www.virustotal.com/gui/file/6342a6b2c991d7953d24c2787fcfc63cc00b120d235abd700aecdf11b0fe0b73/detection
+# Reference: https://www.virustotal.com/gui/file/75010da01904bbd5f99c6907389138c81d2cd3963a3b966ff1ff806497e96195/detection
+# Reference: https://www.virustotal.com/gui/file/b5ac2e3e22480fdfb4268d17120be6d45e146e90a55997edf62fc15a60118105/detection
+# Reference: https://www.virustotal.com/gui/file/ca052718653d9e29e76650670c61a17290b9641041e22e433548068b2244c841/detection
+
+207.231.111.45:8041
+maxpanel.duckdns.org
