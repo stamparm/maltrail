@@ -22546,6 +22546,11 @@ cloudflare-captcha.net
 review-caseid.com
 booking.review-caseid.com
 
+# Reference: https://x.com/salmanvsf/status/1980908408296599630
+
+capchk.org
+api.capchk.org
+
 # Generic
 
 /a3A7qLVn/
