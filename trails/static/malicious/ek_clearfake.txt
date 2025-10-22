@@ -22392,6 +22392,11 @@ http://94.74.164.208
 94.74.164.208:443
 cloudflare-captcha.net
 
+# Reference: https://x.com/JAMESWT_WT/status/1981032559275278629
+
+review-caseid.com
+booking.review-caseid.com
+
 # Generic
 
 /a3A7qLVn/
