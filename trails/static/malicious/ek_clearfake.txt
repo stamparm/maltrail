@@ -22582,6 +22582,11 @@ booking.review-caseid.com
 capchk.org
 api.capchk.org
 
+# Reference: https://x.com/Malwar3Ninja/status/1981312742108877115
+
+38.242.212.5:3000
+acbproxy.vip
+
 # Generic
 
 /a3A7qLVn/
