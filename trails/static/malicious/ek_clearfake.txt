@@ -22591,6 +22591,28 @@ acbproxy.vip
 
 a09ee3dc53f6a9f461a45bac946c5a09ee3dc453f6a9f461a5bac946c.pages.dev
 
+# Reference: https://x.com/smica83/status/1981415822418727268
+# HEADER_HASH-HOST=e6820867d504e270838b
+
+booking-documents.com
+booking.com-reactivate.de
+booking.com-recovery.de
+cloudflare.com-captcha.de
+cloudflare.com-verification.de
+com-captcha.de
+com-reactivate.de
+com-reactivate.eu
+com-recovery.de
+com-redir.eu
+com-sign-in.de
+com-verification.de
+homesite-efu.live
+lcfc-documents.eu
+zoom-meetup.eu
+zoom-redirect.eu
+zoom.com-redir.eu
+zoomesss.com
+
 # Generic
 
 /a3A7qLVn/
