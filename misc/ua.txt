@@ -2598,6 +2598,11 @@ System Updater/5.0
 
 HijackBot
 
+# Reference: https://x.com/YungBinary/status/1981108948498333900
+
+Custom C++
+Custom C++ HTTP Client/1.0
+
 # Misc
 
 information_schema
