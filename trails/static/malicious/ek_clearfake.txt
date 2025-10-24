@@ -22608,6 +22608,7 @@ com-sign-in.de
 com-verification.de
 homesite-efu.live
 lcfc-documents.eu
+zoom-connect.eu
 zoom-meetup.eu
 zoom-redirect.eu
 zoom.com-redir.eu
