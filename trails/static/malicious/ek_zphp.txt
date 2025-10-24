@@ -1685,6 +1685,15 @@ warpdrive.top
 
 retiregenz.com
 
+# Reference: https://www.esentire.com/blog/unpacking-netsupport-rat-loaders-delivered-via-clickfix
+
+2beinflow.com
+cuenten.com
+fivepathways.com
+freaner.com
+gcsglaw.com
+surethinks.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
