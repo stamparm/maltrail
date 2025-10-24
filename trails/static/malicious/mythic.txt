@@ -4589,3 +4589,8 @@ http://209.38.207.232
 # Reference: https://x.com/DonPasci/status/1975956137922179154
 
 159.198.36.237:443
+
+# Reference: https://x.com/malwrhunterteam/status/1981677973788033439
+# Reference: https://www.virustotal.com/gui/file/e0bbae0176649920bdeb0dc5a16cf71e010550e711e4c400d2f72cb83db5451b/detection
+
+rh-ansible-prd.com
