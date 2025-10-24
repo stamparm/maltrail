@@ -1686,6 +1686,7 @@ warpdrive.top
 retiregenz.com
 
 # Reference: https://www.esentire.com/blog/unpacking-netsupport-rat-loaders-delivered-via-clickfix
+# Reference: https://github.com/eSentire/iocs/blob/main/NetSupport/NetSupport-IoCs_10-15-2025.txt
 
 2beinflow.com
 cuenten.com
