@@ -1245,3 +1245,10 @@ techscript.support
 
 207.231.111.45:8041
 maxpanel.duckdns.org
+
+# Reference: https://x.com/SquiblydooBlog/status/1982168217083863470
+# Reference: https://www.virustotal.com/gui/file/41849f9995d6ee46154e2b3ad48c64546c14de8e47930819335893c319ea3dab/detection
+
+193.111.117.195:443
+193.111.117.195:8041
+nwrstghbwrtjynrsfghberth.com
