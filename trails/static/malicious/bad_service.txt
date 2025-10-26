@@ -4263,3 +4263,7 @@ ilovechicken.pages.dev
 # Reference: https://x.com/cyberfeeddigest/status/1981996657328751063
 
 xperttechy.cc
+
+# Reference: https://www.virustotal.com/gui/ip-address/193.233.113.143/relations
+
+pythiascrypter.live
