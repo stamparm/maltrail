@@ -13645,9 +13645,11 @@ sentry.cdn-core.com
 zb.cdn-core.com
 
 # Reference: https://x.com/sdcyberresearch/status/1845777289151136039
+# Reference: https://x.com/sdcyberresearch/status/1982754972497502340
 # Reference: https://www.virustotal.com/gui/ip-address/5.10.250.250/relations
 
 gstatlc.org
+jqeury.net
 ssl.gstatlc.org
 
 # Reference: https://sansec.io/research/cosmicsting#group-peschanki%3A-automated-mass-cms-block-updates
