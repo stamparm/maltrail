@@ -23527,6 +23527,12 @@ zoom-redirect.eu
 zoom.com-redir.eu
 zoomesss.com
 
+# Reference: https://x.com/Fact_Finder03/status/1983062716261753046
+
+http://128.254.204.230
+http://92.53.69.246
+mail.lkpwebster.com
+
 # Generic
 
 /a3A7qLVn/
