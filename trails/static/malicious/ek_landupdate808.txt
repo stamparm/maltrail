@@ -429,3 +429,14 @@ vcsinfo.com
 wilwinson.com
 windowsmsncn.org
 z98123.top
+
+# Reference: https://www.virustotal.com/gui/ip-address/141.98.6.28/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.66.27.67/relations
+# Reference: https://www.virustotal.com/gui/file/0163bc688504d4cb19ff42eb24ca1a77e01b0f37adb16415a5f2d79ca132bcd3/detection
+# Reference: https://www.virustotal.com/gui/file/c1aa2b72365e21cea0d8546dd5e6b7ebb397b4a796944c188f7eff8b04e9b2ad/detection
+# Reference: https://www.virustotal.com/gui/file/fd152793620f7d50f18588d0920383073a9379fafd4112704644b5f580617eb0/detection
+
+bryncoed.com
+hlherb.com
+pcdcinc.com
+sessomania.com
