@@ -1695,6 +1695,10 @@ freaner.com
 gcsglaw.com
 surethinks.com
 
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-10-28-v11050/3094
+
+prajsm.com
+
 # Generic
 
 /cache/ewmrgqnaww.php
