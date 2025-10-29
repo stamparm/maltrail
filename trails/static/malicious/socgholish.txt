@@ -5176,11 +5176,6 @@ cpanel.thekooljack.com
 184.162.20.200:443
 46.137.225.200:443
 
-# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-10-28-v11050/3094
-
-cpanel.sayyesmovement.ca
-global.coachmyresume.com
-
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
