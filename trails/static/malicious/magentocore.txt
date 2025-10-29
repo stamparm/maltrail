@@ -13067,6 +13067,7 @@ enrgy.cam
 esst.cc
 fastn.best
 fatno.tech
+ferrix.shop
 fieldmans.fit
 gigatag.info
 grossbar.shop
@@ -13110,6 +13111,7 @@ ultrabyte.shop
 ultracart.shop
 ultramain.shop
 ultramesh.shop
+ultranite.shop
 ultrasys.shop
 uniquemask.homes
 unis.my
@@ -13123,10 +13125,12 @@ wikistat.wiki
 xtras.work
 xtreme.boats
 xztv.me
+yesok.life
 yestat.website
 yesyes.rest
 zend.quest
 zerotag.cc
+zivert.top
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-09-02-v10679/1932
 
