@@ -16355,6 +16355,10 @@ ns1.hivnd.com
 ns2.hivnd.com
 verify.authorize.net.hivnd.com
 
+# Reference: https://x.com/sdcyberresearch/status/1983483103902613894
+
+discord.com/api/webhooks/1354279778441629867/
+
 # Generic
 
 /assets/lfg.js
