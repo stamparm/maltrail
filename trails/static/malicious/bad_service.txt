@@ -4267,3 +4267,8 @@ xperttechy.cc
 # Reference: https://www.virustotal.com/gui/ip-address/193.233.113.143/relations
 
 pythiascrypter.live
+
+# Reference: https://x.com/Fact_Finder03/status/1983478979081482290
+# TITLE-HOST=Xanax C2 - Next-gen botnet with massive power
+
+botnet.rip
