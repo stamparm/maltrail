@@ -9047,6 +9047,12 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /minimiza.ps1
 /probando.ps1
 
+# Reference: https://x.com/smica83/status/1983569768285151337
+# Reference: https://x.com/JAMESWT_WT/status/1983836794472034357
+# Reference: https://www.virustotal.com/gui/file/00a560e18e85d51aeb0b0b93b36757a73cf6da811dd36541f9c7bb5f287254fb/detection
+
+/dadaasads_new.ps1
+
 # Generic
 
 /5c0ca79.php
