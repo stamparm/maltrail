@@ -4272,3 +4272,7 @@ pythiascrypter.live
 # TITLE-HOST=Xanax C2 - Next-gen botnet with massive power
 
 botnet.rip
+
+# Reference: https://x.com/cyberfeeddigest/status/1983818743990952031
+
+ratshop.pro
