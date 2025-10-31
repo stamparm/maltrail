@@ -4276,3 +4276,13 @@ botnet.rip
 # Reference: https://x.com/cyberfeeddigest/status/1983818743990952031
 
 ratshop.pro
+
+# Reference: https://x.com/Fact_Finder03/status/1984150772528116187
+
+kodein.cc
+
+# Reference: https://x.com/Fact_Finder03/status/1984155026038858018
+
+metricz.cc
+metricz.pages.dev
+vire.cc
