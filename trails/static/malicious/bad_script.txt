@@ -9053,6 +9053,10 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 
 /dadaasads_new.ps1
 
+# Reference: https://x.com/BlinkzSec/status/1984562610772087157
+
+/zalupa.ps1
+
 # Generic
 
 /5c0ca79.php
