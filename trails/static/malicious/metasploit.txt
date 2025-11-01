@@ -6249,3 +6249,9 @@ http://43.160.252.15
 91.239.78.168:8443
 92.221.243.132:443
 95.111.222.229:8000
+
+# Reference: https://x.com/smica83/status/1984690698457673750
+# Reference: https://www.virustotal.com/gui/file/f568efd55b22a01cf6dbe85b46dadaa027d19e698ae770296c35f551864d0054/detection
+
+145.223.79.199:7377
+is25.in
