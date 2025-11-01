@@ -43,3 +43,8 @@ thiscode.info
 # Reference: https://x.com/volrant136/status/1982461882096394505
 
 91.92.241.27:444
+
+# Reference: https://x.com/JAMESWT_WT/status/1984580600079032774
+# Reference: https://app.any.run/tasks/941a7833-ac70-417d-9fc8-ddef285f1dc1
+
+91.92.241.143:443
