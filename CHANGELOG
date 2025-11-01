@@ -14,7 +14,13 @@
 
 
 
-- Version 0.86 -> 0.87 (Upcoming release)
+- Version 0.87 -> 0.88 (Upcoming release)
+
+
+
+
+
+- Version 0.86 -> 0.87 (01 Nov 2025)
 
 [=] "potential sql injection" heur is improved (Issue #19356)
 [=] Multiple updates and optimizations for regular static trails and the whitelist
