@@ -1254,3 +1254,10 @@ maxpanel.duckdns.org
 193.111.117.195:8041
 nwrstghbwrtjynrsfghberth.com
 ubdfvugite.com
+
+# Reference: https://x.com/smica83/status/1984606107503886704
+# Reference: https://tria.ge/251101-p7r9padk4y/behavioral2
+# Reference: https://www.virustotal.com/gui/file/5645151f65cec6b95a67885cd35e2edaa473ea3bca9d676ab178c7822731cad2/detection
+
+instance-wipwm8-relay.screenconnect.com
+server-ovh30010035-relay.screenconnect.com
