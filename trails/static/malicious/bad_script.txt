@@ -9057,6 +9057,15 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 
 /zalupa.ps1
 
+# Reference: https://x.com/smica83/status/1985032767365849598
+# Reference: https://www.virustotal.com/gui/file/c011f71a30177b61fd2d4bfce7057ef3f3c3b9e455f0eda2789d563a7a548d2b/detection
+# Reference: https://www.virustotal.com/gui/file/ff2dc7d90d6da16ea6d0692faa911017a60ea67935e9235bf06a43c0f1e89951/detection
+
+/sss04n111k/
+/sss04n111k/draft.ps1
+/wipyck/chiffonierfencing.ps1
+/chiffonierfencing.ps1
+
 # Generic
 
 /5c0ca79.php
