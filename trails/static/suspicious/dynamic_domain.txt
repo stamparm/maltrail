@@ -3827,4 +3827,8 @@ is-a-good.dev
 
 # Reference: https://www.virustotal.com/gui/domain/mydns.vc/relations
 
-mydns.v
+mydns.vc
+
+# Reference: https://www.virustotal.com/gui/domain/fpr.net/relations
+
+fpr.net
