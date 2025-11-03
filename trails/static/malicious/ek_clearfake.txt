@@ -24120,11 +24120,13 @@ cdn-hs.com
 cdn-stats.com
 cnd-analytics.com
 east-report.com
+mango-apple.in
 north-cdn.com
 reports-cdn.com
 south-cdn.com
 stat-hs.com
 west-report.com
+wizeconnect.io
 
 # Generic
 
