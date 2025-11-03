@@ -24113,6 +24113,19 @@ quiz.bloomreach-products.com
 mricsvalidcentraldocumentzone.ru
 phebeschool.org
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.143.203.225/relations
+
+analyzehost.com
+cdn-hs.com
+cdn-stats.com
+cnd-analytics.com
+east-report.com
+north-cdn.com
+reports-cdn.com
+south-cdn.com
+stat-hs.com
+west-report.com
+
 # Generic
 
 /a3A7qLVn/
