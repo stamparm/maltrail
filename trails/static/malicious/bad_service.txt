@@ -4286,3 +4286,7 @@ kodein.cc
 metricz.cc
 metricz.pages.dev
 vire.cc
+
+# Reference: https://x.com/AUZombie/status/1984063854490595340
+
+blackhattoolsandcoursesshop.cc
