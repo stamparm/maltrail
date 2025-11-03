@@ -23980,6 +23980,28 @@ update-guest4398317809.com
 update-guest500356643.com
 update-guest657434355.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1985284372967084192
+# Reference: https://www.virustotal.com/gui/ip-address/144.31.194.191/relations
+# Reference: https://www.virustotal.com/gui/ip-address/212.113.120.182/relations
+
+2fanotifications-captchareserv0809.com
+admin-extranet-resedit.com
+admin-extranetcaptchanzx.com
+amavpscontsusp.com
+bqkaminsiaq.com
+bqknsieasrs.com
+confirmation-id5204619.com
+confirmation-id64839.com
+extranet-reservation-edit.com
+huipotsqa.com
+joisaicmsnas.com
+maservwebh.agency
+mccp-logistics.com
+mccplogma.com
+mirelyww.com
+vopqmsyya.com
+whooamisercisea.com
+
 # Generic
 
 /a3A7qLVn/
