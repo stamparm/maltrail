@@ -16369,6 +16369,10 @@ verify.authorize.net.hivnd.com
 
 discord.com/api/webhooks/1354279778441629867/
 
+# Reference: https://x.com/sdcyberresearch/status/1985331962660167993
+
+m-stripe.vercel.app
+
 # Generic
 
 /assets/lfg.js
