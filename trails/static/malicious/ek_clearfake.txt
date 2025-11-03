@@ -8753,6 +8753,8 @@ bookingverification.click
 bookingverification.world
 bookncheck.com
 breservemng-hurug5223.com
+buytickets-park.com
+bwh-hotelgroup-reservation84312684.com
 cardcheck0312-booking.com
 cardverif-booking.help
 cardverif-booking.icu
@@ -9308,6 +9310,7 @@ confirmation-id378389.com
 confirmation-id38120.com
 confirmation-id38124.com
 confirmation-id3817.com
+confirmation-id3852293015.com
 confirmation-id3854.com
 confirmation-id38814.com
 confirmation-id3940.com
@@ -9363,6 +9366,7 @@ confirmation-id5384685.com
 confirmation-id5389.com
 confirmation-id53942.com
 confirmation-id5418091.com
+confirmation-id542121.site
 confirmation-id542312.com
 confirmation-id543556.com
 confirmation-id5471.com
@@ -9619,9 +9623,11 @@ confirmation21005-booking.com
 confirmation211-booking.com
 confirmation3023-booking.com
 confirmation3225-booking.com
+confirmation35-booking.com
 confirmation3680-booking.com
 confirmation3690-booking.com
 confirmation3943-booking.com
+confirmation41-booking.com
 confirmation5429-booking.com
 confirmation552-booking.com
 confirmation5682.com
@@ -9632,8 +9638,13 @@ confirmation6739-booking.com
 confirmation6821-booking.com
 confirmation6930-booking.com
 confirmation8102-booking.com
+confirmation87418-booking.com
 confirmation9138-booking.com
+confirmation9202-booking.com
 confirmation9213-booking.com
+confirmation9428-booking.com
+confirmation96192-booking.com
+confirmation9758-booking.com
 confirmation9941-booking.com
 confirmation9955-booking.com
 confirmationmanagerres-324425.com
@@ -9651,10 +9662,12 @@ confldbookable.com
 confrimation-id81238.com
 confrm-resergv48513.com
 confrm-reserv542135.com
+data-reservation.cloud
 data-universal.live
 details-reform.com
 detailsconfirm.world
 detailshotel.world
+djistorecheckout.site
 djwjheued89ewo.com
 dol-booking.homes
 dpd-dostava.space
@@ -9688,10 +9701,14 @@ gleversfarmguste.com
 good-pmsmtp.com
 gotransit-pay.shop
 guest-checkin.com
+guest-confirm091233.com
 guest-confirm09211.com
 guest-confirm099233.com
+guest-confirm2211.com
+guest-confirm31264.com
 guest-confirm63391.com
 guest-confirm921.com
+guest-confirm9312.com
 guest-manager.world
 guest03442-booking.com
 guest0731-booking.com
@@ -9937,6 +9954,8 @@ page3009.shop
 palaciodemonjarazes.com
 pass-imapticket.com
 payment-mobile.shop
+payment-network.cfd
+payment-network.site
 payment-vignette.com
 payment-vignette.shop
 pro-registration.world
@@ -16067,21 +16086,37 @@ auth-primary-device.com
 businesslogin-online.com
 changenows.io
 charleschwabmanagement.sbs
+connectsantanderchat.com
+customerpriorityportal.digital
 docsignd.top
 exquisiteevents.net
 fideltyinvestmentnotice.sbs
 freeolinelodgmentservces.com
 gatewaytaxlogin.com
+hsbc.mobilehelpmt.com
+hsbc.portal170.com
+hsbc.securekeypage.com
 idsessionaccount.net
+intcorpqb0-ox2dc.com
+ledgerdiagnostics-scan.com
 ledgerlivesupport.center
+mobilehelpmt.com
 onlineencryptedmessages.cfd
 onlinemessages893.cfd
+portal170.com
 ref12922bov.com
 review-here-update.com
+reviseonline-ausoffice.com.de
+scs-review.com
+scs-supports.com
+secureconnex-uscu.com
 securedmessages89.cfd
+securekeypage.com
+skyeline.network
 tiips-au.com
 trezorsuiteonlineweb3.com
 validacaoviaverde.com
+ver08charlea.com
 
 # Reference: https://x.com/JAMESWT_WT/status/1945010308004684281
 
