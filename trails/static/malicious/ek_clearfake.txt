@@ -24593,6 +24593,7 @@ abstractoffieldtrialofblackgram.com
 # Reference: https://www.joesecurity.org/reports/report-4991369.html
 
 cptchdm.icu
+fdlkewebsite.icu
 fgsclsite.icu
 gcloudfs.icu
 gclouds.icu
