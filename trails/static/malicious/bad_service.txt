@@ -4293,3 +4293,10 @@ blackhattoolsandcoursesshop.cc
 blackhattoolsandcoursesshop.net
 blackhattoolsandcoursesshop2.ru
 shop.blackhattoolsandcoursesshop.cc
+
+# Reference: https://x.com/IntelOpsV3/status/1983442666529665533
+
+breachsta.rs
+breachstars.hn
+breachstars.st
+bstars.st
