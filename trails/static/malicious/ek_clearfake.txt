@@ -16081,6 +16081,7 @@ booking.extranethelpid612.com
 
 # Reference: https://app.validin.com/detail?find=%2Fvalidate-nohuman.php%3Fredirect%3D%2F&type=raw#tab=host_pairs (# 2025-07-14)
 
+appointmentservicegatewayato0support.digital
 areaviaverde.com
 auth-primary-device.com
 businesslogin-online.com
@@ -16115,6 +16116,7 @@ securekeypage.com
 skyeline.network
 tiips-au.com
 trezorsuiteonlineweb3.com
+trumpbigbeautifulgiveaway.digital
 validacaoviaverde.com
 ver08charlea.com
 
