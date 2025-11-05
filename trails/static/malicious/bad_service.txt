@@ -4295,7 +4295,9 @@ blackhattoolsandcoursesshop2.ru
 shop.blackhattoolsandcoursesshop.cc
 
 # Reference: https://x.com/IntelOpsV3/status/1983442666529665533
+# META-HOST=::"og:description"::"The premier databreach discussion &amp; leaks forum."
 
+breachforums.lol
 breachsta.rs
 breachstars.hn
 breachstars.st
