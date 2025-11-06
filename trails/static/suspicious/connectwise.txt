@@ -1261,3 +1261,9 @@ ubdfvugite.com
 
 instance-wipwm8-relay.screenconnect.com
 server-ovh30010035-relay.screenconnect.com
+
+# Reference: https://x.com/1ZRR4H/status/1986185679794028637
+# Reference: https://www.virustotal.com/gui/file/26fbda92490b8ab92a28b709b11b31361266714200fa8954f91bb0bbc96e9c2a/detection
+
+51.89.107.107:8041
+ip107.ip-51-89-107.eu
