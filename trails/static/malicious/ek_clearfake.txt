@@ -24539,6 +24539,7 @@ admin-extranetadmns-captcha.com
 admin-extranetmngrxz-captcha.com
 admin-extranetrservq-cstmrq.com
 agreement-confirmationofmay.com
+bkngpropadm.com
 bkngssercise.com
 booking-agreementstatementapril0429.com
 booking.admin-extranet-reservationsexp.com
@@ -25205,6 +25206,11 @@ verification-oncall.com
 verlflcatlon-trulst.com
 verlfy8-trulst.com
 vr-sicherheit.cfd
+
+# Reference: https://blog.sekoia.io/phishing-campaigns-i-paid-twice-targeting-booking-com-hotels-and-customers/
+
+cabinet-ifc.cm
+cabinetifc.com
 
 # Generic
 
