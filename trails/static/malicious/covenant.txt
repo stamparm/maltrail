@@ -981,6 +981,20 @@ ztxwf.comigoninguempodes.shop
 76.29.173.227:7443
 83.229.83.138:7443
 
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-11-08)
+
+144.91.125.213:7443
+154.44.10.42:7443
+155.94.144.226:7443
+158.69.199.68:7443
+159.223.201.35:7443
+185.102.115.146:7443
+185.137.92.3:7443
+196.251.84.127:7443
+20.83.180.169:7443
+89.58.30.49:7443
+91.98.136.44:7443
+
 # Generic
 
 /covenantuser/
