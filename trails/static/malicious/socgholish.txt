@@ -5176,6 +5176,10 @@ cpanel.thekooljack.com
 184.162.20.200:443
 46.137.225.200:443
 
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-11-08)
+
+157.112.78.134:443
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
