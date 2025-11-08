@@ -2538,3 +2538,9 @@ http://216.118.101.97
 129.28.29.138:60000
 47.113.147.96:60000
 47.86.97.42:60000
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-11-08)
+
+157.20.104.71:60000
+217.160.25.65:60000
+23.94.44.214:60000
