@@ -25751,6 +25751,13 @@ vr-sicherheit.cfd
 cabinet-ifc.cm
 cabinetifc.com
 
+# Reference: https://x.com/JAMESWT_WT/status/1987818695909945690
+# Reference: https://app.any.run/tasks/b99fc3e2-00b3-457d-a1b5-b00b15f4c781
+
+bookqwi.com
+extranetfeedback.com
+booking.extranetfeedback.com
+
 # Generic
 
 /a3A7qLVn/
