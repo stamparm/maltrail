@@ -504,3 +504,7 @@ zidongsaodiji.com
 # Reference: https://www.virustotal.com/gui/ip-address/185.49.68.206/relations
 
 edentista.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/64.190.113.60/relations
+
+virtvan.com
