@@ -3393,3 +3393,10 @@ play.owhit.com
 # Reference: https://www.virustotal.com/gui/file/83a871c1cafc6d14dc799e0c277aeaa36c50d42ea9f5f5ef5f01b35ae0fedaa7/detection
 
 mvploader.net
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/7973
+# Reference: https://www.virustotal.com/gui/file/0cea0bbc5baf77278ac516525de7eca38af7459fb0e5d950ed41199ae1c8aab9/detection
+# Reference: https://www.virustotal.com/gui/file/022b17b3d5b72aae22a7fd8d51167fa8c48ee4880be813df82e9b8bc04e66e23/detection
+
+searchnowexpert.com
+yfdnzfa.com
