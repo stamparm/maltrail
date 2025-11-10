@@ -7790,6 +7790,10 @@ http://45.201.216.131
 96.9.212.93:31337
 96.9.212.93:8888
 
+# Reference: https://x.com/BlinkzSec/status/1987941758605410707
+
+185.208.156.168:8000
+
 # Generic
 
 /.sliver-client/
