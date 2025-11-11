@@ -25767,8 +25767,22 @@ booking.com-captcha.eu
 italianrecipesformoms.blogspot.com
 
 # Reference: https://x.com/Crose_96/status/1976799349779972472
+# HEADER_HASH-HOST=ff21475f73a0d54ec7b6
 
+ameridentalnj.com
+dekalco.com
+enantarautoescuela.com
+flickershine.com
+gaiapropertybali.com
+gomyhealth.com
+instantifix.com
 kitsapkids.com
+moolihai.com
+nasiol.com
+newgenerationvoices.com
+rdledu.com
+sino-memory.com
+triumphpropertythailand.com
 
 # Generic
 
