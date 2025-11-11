@@ -16380,6 +16380,17 @@ discord.com/api/webhooks/1354279778441629867/
 
 m-stripe.vercel.app
 
+# Reference: https://www.virustotal.com/gui/file/b009cec84e7471ea648d7331e81b9c931c2cd58e671fcd8dd1a32a546982d9ae/detection
+# Reference: https://www.virustotal.com/gui/file/8855e2c8a722e1520c33ecfa9962b07d919f75514479dc60243af956f1ae1887/detection
+# Reference: https://www.virustotal.com/gui/file/011244520d9adddd83830759311619a2af9cb6430c8627c782dea7ad1533e486/detection
+
+elementorupdate.live
+
+# Reference: https://www.virustotal.com/gui/ip-address/194.165.16.54/relations
+
+dataconnector.online
+inovationsolution.info
+
 # Generic
 
 /assets/lfg.js
