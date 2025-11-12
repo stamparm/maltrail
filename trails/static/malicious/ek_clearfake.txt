@@ -24600,6 +24600,7 @@ aulinkedservices-access.de.com
 aumedi-care.com.de
 auoffice-taxreport.com.de
 auonline-services.com.de
+auscrypto-con.org
 auservices-authorization.net
 ausignincomeg0vport.top
 aussclamsqovservce.info
@@ -24609,11 +24610,14 @@ authentication-device-verification.com
 auzscentreservlce.com
 bankid.digisikkerhet.com
 bankid.minsikkerhet.com
+barclays-livechat.com
 barharbor.dash-web.com
 base-crypcoin.com.de
 bendigohelp.com
 billls-payservices.io
 bine30092025.com
+bitcoin-hyper.info
+bitcoin-hyper.org
 bitgetcentrehelp.app
 bloxlink.app
 bloxlink.cfd
@@ -24683,6 +24687,7 @@ confirmed-primary-device.com
 connections-trezor.com
 consumer.aktuell-reaktiv-28321.com
 consumer.aktuell-reaktiv-38848.com
+consumeractivation.co
 copilotdocumentsviewonline.com
 copilotshareddocumentsonline.com
 correos-mexico.app
@@ -24691,6 +24696,7 @@ crypto.8888248817.com
 customer-user-token.com
 czplxttl.com
 dash-web.com
+deleristeen.com
 dendofyerincomretun.info
 deservicedcenre.info
 deutsche.aktuell-reaktiv-22492.com
@@ -24711,6 +24717,7 @@ dpsold-auth.com
 e-webdashboard.com
 e-webdashboard.online
 ellipalcheck.com
+emlmrktn.com
 entropy-trezor.io
 entuser.com
 entview.online
@@ -24726,6 +24733,7 @@ etradetexthelp.sbs
 etradetextnotifications.sbs
 ettradelocalhelp.sbs
 ettradepublicsupport.sbs
+eu-mkt.com
 exodusportal.com
 fidelitymobilesupport.sbs
 fidelitysafe.info
@@ -24778,6 +24786,7 @@ fixunited.com
 fnfantasy.com
 forendoftheyear2025txlodg.top
 frische-lieferung-de.com
+geto2networks.com
 ggbmxmf.com
 go-auserevi.sbs
 go-ausrev.sbs
@@ -24790,6 +24799,7 @@ helpwithexodus.com
 hercbh.online
 hotboyuptown.cfd
 hrconnectfilesent.org
+hsbc.securekeymt.com
 ibnab-tsandcs-policy.cfd
 ibnabcomau-secura.cfd
 idaib-auth.com
@@ -24798,8 +24808,10 @@ iib-nabtrade-comm-au.cfd
 incmyservicesat00go.digital
 incomeservices-review.com.de
 infoqovservces.com
+inquiry-add-reader.com
 inservicesapproveupdateat00access.sbs
 internal-taxreview.com.de
+investschwab.help
 iumln.lat
 ixnfolodgemention.info
 jehdjahanzjns4949.com
@@ -24887,6 +24899,7 @@ mscryptcampainx.com
 msottlllc.com
 myamendnow.com
 myauonlinegovsystem.net
+myausaccountsupport.com
 mydataonlnemygov.sbs
 mygovdtaservce.sbs
 myhra.agency
@@ -24899,6 +24912,7 @@ mytax551return.top
 mytaxrevenueid-meservices.com.de
 mytrustwalletcare.com
 nabcentral.com
+nabcentralupdates.site
 nabinfixpay.com
 nabweblive.com
 natynutinal.info
@@ -24920,6 +24934,8 @@ noticefromteam1.help
 noticefromteam10ldnati0nal.xyz
 noticefromteam3.cfd
 noticofassesmentendofyear.online
+nt-am.com
+nt-au.com
 number-authentication.com
 numbsants.com
 o2agreetolatest-terms.com
@@ -24986,6 +25002,7 @@ recent-reader-review.com
 recent-removal-review.com
 recordfilings-ausupport.com
 recoverledgerdesk.com
+register-mobile-auth.com
 relai-express.com
 relai-suivis.com
 relais-coli.com
@@ -25003,6 +25020,7 @@ relay-points.com
 remove-latest-update.com
 renew-primary-auth.com
 renew-primary-system.com
+renew-secure-auth.com
 reservixerupdater.info
 reservpaortart.info
 resolve-upgrade-inquiry.com
@@ -25027,6 +25045,8 @@ santsreviewed.com
 sbbakuda.com
 schwabhelp.sbs
 schwabsafteyinfomation.sbs
+schwabverify.help
+scs-person.com
 scs-personal.com
 scs-update.com
 scs-updated.com
@@ -25091,6 +25111,7 @@ trezorsuiteappweb.io
 trezortroubleshoot.com
 troubleshootledger.com
 trust-connectwallet.com
+trusteerapport.com
 trustwalletaus.app
 trustwalletconnect.com
 trustwallettupdates.sbs
@@ -25112,7 +25133,9 @@ verifyyouridentityonline.com
 versandpaket-de.com
 viewshareddesk.com
 viewsharedfile.com
+viewsharedfilesonlineauthorised.com
 viewsharedspace.com
+virginmoney-support.com
 vm-user-support.com
 vmrolk27567.com
 vr-sicherheit.live
@@ -25123,6 +25146,7 @@ wcllsfargo.com
 weeksroll.net
 wfdeactivation.com
 wirelessdiagnoser.com
+woofipro.com
 xabialvarado.com
 xitwy.com
 xpiatendimento24hrs.xyz
