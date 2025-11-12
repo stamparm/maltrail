@@ -4302,3 +4302,27 @@ breachsta.rs
 breachstars.hn
 breachstars.st
 bstars.st
+
+# Reference: https://app.validin.com/detail?find=StanCo%20and%20Istanco&type=raw&ref_id=8ac3ae7827c#tab=rdap (# 2025-11-12)
+
+cactusstress.st
+crownstresser.st
+enzostress.st
+goliathstress.st
+goofystress.st
+gostress.st
+hypnostress.st
+influxstress.st
+ipstresser.st
+krebstresser.st
+rebirthstress.st
+returnstress.st
+satellitestresser.st
+silencestresser.st
+stresscat.st
+uniquestress.st
+uniquestresser.st
+vapestresser.st
+vaxstresser.st
+webstresser.st
+zerostress.st
