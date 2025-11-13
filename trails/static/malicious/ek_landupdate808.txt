@@ -515,3 +515,7 @@ virtvan.com
 icloucl.net
 reechel.com
 reviews-icloud.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/193.149.180.42/relations
+
+nakaizu.com
