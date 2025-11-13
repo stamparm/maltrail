@@ -6255,3 +6255,8 @@ http://43.160.252.15
 
 145.223.79.199:7377
 is25.in
+
+# Reference: https://x.com/smica83/status/1988943285235372344
+# Reference: https://www.virustotal.com/gui/file/2672a4331bbd162dcd1fe17d0d3798060414ac48311d73435719ed4f47171637/detection
+
+31.130.147.55:4444
