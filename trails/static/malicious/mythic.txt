@@ -4694,3 +4694,12 @@ http://65.109.89.93
 95.113.180.193:7443
 95.113.181.31:7443
 95.179.238.145:7443
+
+# Reference: https://x.com/1ZRR4H/status/1988654842051432596
+# Reference: https://www.linkedin.com/posts/bestuzhev_clickfix-activity-7394807512052547584-w3p1
+# Reference: https://www.virustotal.com/gui/ip-address/100.26.145.36/relations
+# Reference: https://www.virustotal.com/gui/file/20b7583bd7587b7fef0d1bbf30decda4b96f3582d576041a7f98683eb4fda650/detection
+# BANNER_0_HASH-HOST=8fda9d86d62e7121dc00bcd1ae63b077
+
+100.26.145.36:443
+100.26.145.36:8443
