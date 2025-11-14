@@ -27578,11 +27578,17 @@ xpolkfsddlswwkjddsljsy.com
 7i091.online
 amber3.run-c-you.online
 csp.jocijyu.ru
-dtc.jocijyu.ru
 nybypuy2.ru
 vaw3.du2iv.ru
 wave73.bas9.ru
 ykgw2.online
+
+# Reference: https://app.validin.com/detail?find=c6d6bf33880fec405502150efe4229d7&type=hash&ref_id=020578bc9c2#tab=host_pairs (# 2025-11-14)
+
+hecynya.ru
+dtc.jocijyu.ru
+md.hecynya.ru
+tf.hecynya.ru
 
 # Generic
 
