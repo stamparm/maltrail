@@ -6260,3 +6260,11 @@ is25.in
 # Reference: https://www.virustotal.com/gui/file/2672a4331bbd162dcd1fe17d0d3798060414ac48311d73435719ed4f47171637/detection
 
 31.130.147.55:4444
+
+# Reference: https://x.com/malwrhunterteam/status/1989803044184494100
+# Reference: https://www.virustotal.com/gui/file/7f9287600a3ed58023bdac64aece1da8d77fc16adab0dbf10ff1000376cd2f6b/detection
+# Reference: https://www.virustotal.com/gui/file/50a829e2914ffa2599669470cadfdf2aa50df4e70ad2cc538171c2212f490564/detection
+# Reference: https://www.virustotal.com/gui/file/767e2209f5c31e0357b3d2ea95e4cccebdb502ff3d0e89eeab14bdbb8ec6b702/detection
+# Reference: https://www.virustotal.com/gui/file/776d15f29aa123657c1893845360b1e98cdb73ea9b3b4183cef0dfa24678d8cf/detection
+
+176.223.142.8:7777
