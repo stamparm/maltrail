@@ -29494,6 +29494,20 @@ yourrodday5.xyz
 yourroddays4.xyz
 yourroddays5.xyz
 
+# Reference: https://x.com/solostalking/status/1990086918701269441
+# Reference: https://x.com/solostalking/status/1990086915094155536
+# BANNER_0_HASH-HOST=a94311b5daa2e2d2c7e552980e98f913
+
+http://164.92.196.181
+http://64.225.65.255
+64.225.65.255:443
+gmailprimary.com
+googleprimary.com
+my-bmo.com
+primary-tmobile.com
+security-chase.com
+security-jpm.com
+
 # Generic
 
 /a3A7qLVn/
