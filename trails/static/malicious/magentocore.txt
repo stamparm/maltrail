@@ -16396,6 +16396,10 @@ elementorupdate.live
 dataconnector.online
 inovationsolution.info
 
+# Reference: https://x.com/sdcyberresearch/status/1990727780405850278
+
+foxicpeak.com
+
 # Generic
 
 /assets/lfg.js
