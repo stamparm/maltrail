@@ -16397,8 +16397,17 @@ dataconnector.online
 inovationsolution.info
 
 # Reference: https://x.com/sdcyberresearch/status/1990727780405850278
+# BANNER_0_HASH-HOST=bef0b5382eca3552499158187a405a95
 
+artisttrydata.com
 foxicpeak.com
+hiviefox.com
+metrixinsig.com
+mttrcs.com
+salecrafft.com
+smsboxs.com
+worokshub.com
+zenithneest.com
 
 # Generic
 
