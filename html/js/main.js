@@ -998,7 +998,7 @@ function searchTipToTab(query) {
         // Browser has allowed it to be opened
         win.focus();
     } else {
-        // Broswer has blocked it
+        // Browser has blocked it
         alert('Please allow popups for this site');
     }
 }
