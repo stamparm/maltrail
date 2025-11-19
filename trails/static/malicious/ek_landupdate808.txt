@@ -525,3 +525,7 @@ nakaizu.com
 apraadhi.com
 golflinksltd.com
 omgtelecom.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/64.95.13.162/relations
+
+ukhorizons.com
