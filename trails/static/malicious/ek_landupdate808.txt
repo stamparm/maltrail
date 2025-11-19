@@ -519,3 +519,9 @@ reviews-icloud.com
 # Reference: https://www.virustotal.com/gui/ip-address/193.149.180.42/relations
 
 nakaizu.com
+
+# Reference: https://www.virustotal.com/gui/file/3765fad885151a3b6055104aab0b36b53aca42c1c5c5ed3f1721c721c3085a39/detection
+
+apraadhi.com
+golflinksltd.com
+omgtelecom.com
