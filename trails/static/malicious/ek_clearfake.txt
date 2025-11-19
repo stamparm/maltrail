@@ -30046,6 +30046,11 @@ primary-tmobile.com
 security-chase.com
 security-jpm.com
 
+# Reference: https://x.com/solostalking/status/1991018224067002822
+# CLASS_0_HASH-HOST=7ce42ba84073449e77e969a8bdd0e95a
+
+re-capchaa.click
+
 # Generic
 
 /a3A7qLVn/
