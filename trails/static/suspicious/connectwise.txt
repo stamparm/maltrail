@@ -1267,3 +1267,11 @@ server-ovh30010035-relay.screenconnect.com
 
 51.89.107.107:8041
 ip107.ip-51-89-107.eu
+
+# Reference: https://x.com/smica83/status/1991410477013037241
+# Reference: https://www.virustotal.com/gui/file/4445986136de12d6617252db732eae62145a1ef0db5f42e28f687b8d472924cf/detection
+# Reference: https://www.virustotal.com/gui/file/a316d5310f1e5f12415b740ce2c7e3988635f404a451716a9a85cf7ba93684aa/detection
+# Reference: https://www.virustotal.com/gui/file/fc7ee0a9cffabfd03e1b972bcbfd4504289482f86c83c391165ebe5253995ef9/detection
+
+176.123.6.71:8041
+statcom.top
