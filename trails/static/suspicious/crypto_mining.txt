@@ -1495,3 +1495,7 @@ kubo.ultra-pool.com
 # Reference: https://www.virustotal.com/gui/domain/friendspool.club/relations
 
 friendspool.club
+
+# Reference: https://www.virustotal.com/gui/file/a8ae600d922f800e997019b60fe446a5a4d7b126981791963616bb0e3fa470b5/detection
+
+51.38.65.123:10343
